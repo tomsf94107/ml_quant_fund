@@ -13,7 +13,6 @@ from sklearn.metrics import classification_report, accuracy_score
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
-# import alpaca_trade_api as tradeapi  # Optional: only needed if auto-trading is enabled
 import matplotlib.pyplot as plt
 
 # ---- Helper: RSI ----
@@ -37,6 +36,8 @@ def compute_macd(data):
 # ---- Helper: Metrics ----
 def compute_backtest_metrics(df):
     returns = df['Strategy'].pct_change().dropna()
+    if returns.empty:
+        return 0, 0, 0
     sharpe = np.sqrt(252) * returns.mean() / returns.std()
     max_drawdown = ((df['Strategy'] / df['Strategy'].cummax()) - 1).min()
     cagr = (df['Strategy'].iloc[-1] / df['Strategy'].iloc[0]) ** (252 / len(df)) - 1
@@ -72,6 +73,10 @@ if st.button("🚀 Run Strategy"):
         X = df[features]
         y = df['Target']
 
+        if len(X) < 50:
+            st.warning(f"Not enough data to train model for {ticker}. Skipping.")
+            continue
+
         X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False, test_size=0.2)
 
         model = XGBClassifier(max_depth=3, learning_rate=0.1, use_label_encoder=False, eval_metric='logloss')
@@ -96,12 +101,16 @@ if st.button("🚀 Run Strategy"):
         st.metric("Max Drawdown", f"{max_dd:.2%}")
         st.metric("CAGR", f"{cagr:.2%}")
 
-        st.line_chart(df_test[['Strategy', 'Market']])
+        if all(col in df_test.columns for col in ['Strategy', 'Market']):
+            st.line_chart(df_test[['Strategy', 'Market']])
+        else:
+            st.warning("Missing one or both columns: 'Strategy', 'Market'. Cannot plot chart.")
+
         st.download_button(f"📥 Download CSV - {ticker}", df_test.to_csv().encode(), file_name=f"{ticker}_strategy.csv")
 
         if enable_email:
             latest = df_test.iloc[-1]
-            if latest['Signal'] == 1 and latest['Prob'] > 0.7:
+            if 'Signal' in latest and latest['Signal'] == 1 and latest['Prob'] > 0.7:
                 try:
                     from_email = os.getenv("EMAIL_SENDER")
                     to_email = os.getenv("EMAIL_RECEIVER")
@@ -122,7 +131,11 @@ if st.button("🚀 Run Strategy"):
         if enable_trading:
             try:
                 import alpaca_trade_api as tradeapi
-                alpaca = tradeapi.REST(os.getenv("ALPACA_KEY"), os.getenv("ALPACA_SECRET"), "https://paper-api.alpaca.markets")
+                alpaca = tradeapi.REST(
+                    os.getenv("ALPACA_KEY"),
+                    os.getenv("ALPACA_SECRET"),
+                    "https://paper-api.alpaca.markets"
+                )
                 alpaca.submit_order(symbol=ticker, qty=1, side='buy', type='market', time_in_force='gtc')
                 st.warning(f"Auto-trade submitted for {ticker}.")
             except Exception as e:
