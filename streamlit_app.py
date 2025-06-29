@@ -1,3 +1,4 @@
+# streamlit_app.py
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -13,6 +14,7 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 import alpaca_trade_api as tradeapi
+import matplotlib.pyplot as plt
 
 # ---- Helper: RSI ----
 def compute_rsi(series, window=14):
@@ -32,27 +34,39 @@ def compute_macd(data):
     data['Signal'] = data['MACD'].ewm(span=9, adjust=False).mean()
     return data
 
+# ---- Helper: Metrics ----
+def compute_backtest_metrics(df):
+    returns = df['Strategy'].pct_change().dropna()
+    sharpe = np.sqrt(252) * returns.mean() / returns.std()
+    max_drawdown = ((df['Strategy'] / df['Strategy'].cummax()) - 1).min()
+    cagr = (df['Strategy'].iloc[-1] / df['Strategy'].iloc[0]) ** (252/len(df)) - 1
+    return sharpe, max_drawdown, cagr
+
 # ---- Streamlit UI ----
+st.set_page_config(layout="wide")
 st.title("📈 ML-Based Stock Strategy Backtester")
 
-ticker = st.text_input("Enter stock ticker:", "AAPL").upper()
-start_date = st.date_input("Start date", pd.to_datetime("2018-01-01"))
-end_date = st.date_input("End date", datetime.today())
+with st.sidebar:
+    tickers = st.text_input("Enter comma-separated tickers:", "AAPL,MSFT").upper().split(',')
+    start_date = st.date_input("Start date", pd.to_datetime("2018-01-01"))
+    end_date = st.date_input("End date", datetime.today())
+    enable_trading = st.toggle("⚠️ Enable Auto-Trading (Alpaca)", value=False)
+    enable_email = st.toggle("📧 Send Email Alerts", value=True)
 
-enable_trading = st.toggle("⚠️ Enable Auto-Trading (Alpaca)", value=False)
+if st.button("🚀 Run Strategy"):
+    for ticker in tickers:
+        st.subheader(f"📊 {ticker} Strategy")
+        df = yf.download(ticker, start=start_date, end=end_date)
 
-if st.button("Run Strategy"):
-    df = yf.download(ticker, start=start_date, end=end_date)
-    
-    if df.empty:
-        st.error("⚠️ No data found for this ticker and date range.")
-    else:
+        if df.empty:
+            st.warning(f"No data for {ticker}.")
+            continue
+
         df = df.dropna()
         df['Return_1D'] = df['Adj Close'].pct_change()
         df['Target'] = (df['Return_1D'].shift(-1) > 0).astype(int)
         df['RSI'] = compute_rsi(df['Adj Close'])
-        df = compute_macd(df)
-        df = df.dropna()
+        df = compute_macd(df).dropna()
 
         features = ['RSI', 'MACD', 'Signal']
         X = df[features]
@@ -65,7 +79,6 @@ if st.button("Run Strategy"):
 
         y_pred = model.predict(X_test)
         y_prob = model.predict_proba(X_test)[:, 1]
-        acc = accuracy_score(y_test, y_pred)
 
         df_test = df.iloc[-len(y_test):].copy()
         df_test['Pred'] = y_pred
@@ -75,38 +88,41 @@ if st.button("Run Strategy"):
         df_test['Market'] = df_test['Return_1D']
         df_test[['Strategy', 'Market']] = (1 + df_test[['Strategy', 'Market']]).cumprod()
 
-        st.metric("Model Accuracy", f"{acc:.2f}")
+        acc = accuracy_score(y_test, y_pred)
+        sharpe, max_dd, cagr = compute_backtest_metrics(df_test)
+
+        st.metric("Accuracy", f"{acc:.2f}")
+        st.metric("Sharpe Ratio", f"{sharpe:.2f}")
+        st.metric("Max Drawdown", f"{max_dd:.2%}")
+        st.metric("CAGR", f"{cagr:.2%}")
+
         st.line_chart(df_test[['Strategy', 'Market']])
+        st.download_button(f"📥 Download CSV - {ticker}", df_test.to_csv().encode(), file_name=f"{ticker}_strategy.csv")
 
-        with st.expander("See raw classification report"):
-            st.text(classification_report(y_test, y_pred))
-
-        # Email alert
-        latest = df_test.iloc[-1]
-        if latest['Signal'] == 1 and latest['Prob'] > 0.7:
-            try:
-                from_email = os.getenv("EMAIL_SENDER")
-                to_email = os.getenv("EMAIL_RECEIVER")
-                password = os.getenv("EMAIL_PASSWORD")
-
-                msg = MIMEText(f"High-confidence BUY signal for {ticker} with prob={latest['Prob']:.2f}")
-                msg["Subject"] = f"Trading Alert: {ticker}"
-                msg["From"] = from_email
-                msg["To"] = to_email
-
-                with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-                    server.login(from_email, password)
-                    server.send_message(msg)
-
-                st.success("✅ Email alert sent.")
-            except Exception as e:
-                st.error(f"Email alert failed: {e}")
-
-            # Alpaca auto-trading
-            if enable_trading:
+        if enable_email:
+            latest = df_test.iloc[-1]
+            if latest['Signal'] == 1 and latest['Prob'] > 0.7:
                 try:
-                    alpaca = tradeapi.REST(os.getenv("ALPACA_KEY"), os.getenv("ALPACA_SECRET"), "https://paper-api.alpaca.markets")
-                    alpaca.submit_order(symbol=ticker, qty=1, side='buy', type='market', time_in_force='gtc')
-                    st.warning("🚨 Auto-trade executed via Alpaca")
+                    from_email = os.getenv("EMAIL_SENDER")
+                    to_email = os.getenv("EMAIL_RECEIVER")
+                    password = os.getenv("EMAIL_PASSWORD")
+
+                    msg = MIMEText(f"High-confidence BUY signal for {ticker} with prob={latest['Prob']:.2f}")
+                    msg['Subject'] = f"Trading Alert: {ticker}"
+                    msg['From'] = from_email
+                    msg['To'] = to_email
+
+                    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+                        server.login(from_email, password)
+                        server.send_message(msg)
+                    st.success(f"Email alert sent for {ticker}.")
                 except Exception as e:
-                    st.error(f"Alpaca trade failed: {e}")
+                    st.error(f"Email failed for {ticker}: {e}")
+
+        if enable_trading:
+            try:
+                alpaca = tradeapi.REST(os.getenv("ALPACA_KEY"), os.getenv("ALPACA_SECRET"), "https://paper-api.alpaca.markets")
+                alpaca.submit_order(symbol=ticker, qty=1, side='buy', type='market', time_in_force='gtc')
+                st.warning(f"Auto-trade submitted for {ticker}.")
+            except Exception as e:
+                st.error(f"Alpaca error for {ticker}: {e}")
