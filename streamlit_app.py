@@ -13,7 +13,7 @@ from sklearn.metrics import classification_report, accuracy_score
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
-import alpaca_trade_api as tradeapi
+# import alpaca_trade_api as tradeapi
 import matplotlib.pyplot as plt
 
 # ---- Helper: RSI ----
