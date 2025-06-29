@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import accuracy_score
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
@@ -36,12 +36,12 @@ def compute_macd(data):
 # ---- Helper: Metrics ----
 def compute_backtest_metrics(df):
     returns = df['Strategy'].pct_change().dropna()
-    if returns.empty:
-        return 0, 0, 0
+    if returns.empty or returns.std() == 0:
+        return 0.0, 0.0, 0.0
     sharpe = np.sqrt(252) * returns.mean() / returns.std()
-    max_drawdown = ((df['Strategy'] / df['Strategy'].cummax()) - 1).min()
+    max_dd = ((df['Strategy'] / df['Strategy'].cummax()) - 1).min()
     cagr = (df['Strategy'].iloc[-1] / df['Strategy'].iloc[0]) ** (252 / len(df)) - 1
-    return sharpe, max_drawdown, cagr
+    return sharpe, max_dd, cagr
 
 # ---- Streamlit UI ----
 st.set_page_config(layout="wide")
@@ -63,13 +63,17 @@ if st.button("🚀 Run Strategy"):
             st.warning(f"No valid data for {ticker}.")
             continue
 
-        df = df.dropna()
         df['Return_1D'] = df['Close'].pct_change()
         df['Target'] = (df['Return_1D'].shift(-1) > 0).astype(int)
         df['RSI'] = compute_rsi(df['Close'])
-        df = compute_macd(df).dropna()
+        df = compute_macd(df)
+        df.dropna(inplace=True)
 
         features = ['RSI', 'MACD', 'Signal']
+        if not all(col in df.columns for col in features):
+            st.warning(f"Missing features for {ticker}. Skipping.")
+            continue
+
         X = df[features]
         y = df['Target']
 
@@ -91,26 +95,28 @@ if st.button("🚀 Run Strategy"):
         df_test['Signal'] = (df_test['Prob'] > 0.7).astype(int)
         df_test['Strategy'] = df_test['Signal'].shift(1) * df_test['Return_1D']
         df_test['Market'] = df_test['Return_1D']
+        df_test.dropna(subset=['Strategy', 'Market'], inplace=True)
         df_test[['Strategy', 'Market']] = (1 + df_test[['Strategy', 'Market']]).cumprod()
 
-        if not df_test[['Strategy', 'Market']].replace([np.inf, -np.inf], np.nan).dropna().empty:
-            acc = accuracy_score(y_test, y_pred)
-            sharpe, max_dd, cagr = compute_backtest_metrics(df_test)
+        acc = accuracy_score(y_test, y_pred)
+        sharpe, max_dd, cagr = compute_backtest_metrics(df_test)
 
-            st.metric("Accuracy", f"{acc:.2f}")
-            st.metric("Sharpe Ratio", f"{sharpe:.2f}")
-            st.metric("Max Drawdown", f"{max_dd:.2%}")
-            st.metric("CAGR", f"{cagr:.2%}")
+        st.metric("Accuracy", f"{acc:.2f}")
+        st.metric("Sharpe Ratio", f"{sharpe:.2f}")
+        st.metric("Max Drawdown", f"{max_dd:.2%}")
+        st.metric("CAGR", f"{cagr:.2%}")
 
+        # Safe plotting
+        if all(col in df_test.columns for col in ['Strategy', 'Market']) and not df_test[['Strategy', 'Market']].isnull().values.any():
             st.line_chart(df_test[['Strategy', 'Market']])
         else:
-            st.warning(f"{ticker}: Strategy or Market returns are invalid (likely NaN or inf). Skipping metrics/chart.")
+            st.warning("Chart skipped: Missing or invalid values in 'Strategy' or 'Market' columns.")
 
         st.download_button(f"📥 Download CSV - {ticker}", df_test.to_csv().encode(), file_name=f"{ticker}_strategy.csv")
 
         if enable_email:
-            latest = df_test.iloc[-1]
-            if 'Signal' in latest and latest['Signal'] == 1 and latest['Prob'] > 0.7:
+            latest = df_test.iloc[-1] if not df_test.empty else {}
+            if isinstance(latest, pd.Series) and latest.get('Signal') == 1 and latest.get('Prob', 0) > 0.7:
                 try:
                     from_email = os.getenv("EMAIL_SENDER")
                     to_email = os.getenv("EMAIL_RECEIVER")
