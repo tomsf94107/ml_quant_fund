@@ -93,18 +93,18 @@ if st.button("🚀 Run Strategy"):
         df_test['Market'] = df_test['Return_1D']
         df_test[['Strategy', 'Market']] = (1 + df_test[['Strategy', 'Market']]).cumprod()
 
-        acc = accuracy_score(y_test, y_pred)
-        sharpe, max_dd, cagr = compute_backtest_metrics(df_test)
+        if not df_test[['Strategy', 'Market']].replace([np.inf, -np.inf], np.nan).dropna().empty:
+            acc = accuracy_score(y_test, y_pred)
+            sharpe, max_dd, cagr = compute_backtest_metrics(df_test)
 
-        st.metric("Accuracy", f"{acc:.2f}")
-        st.metric("Sharpe Ratio", f"{sharpe:.2f}")
-        st.metric("Max Drawdown", f"{max_dd:.2%}")
-        st.metric("CAGR", f"{cagr:.2%}")
+            st.metric("Accuracy", f"{acc:.2f}")
+            st.metric("Sharpe Ratio", f"{sharpe:.2f}")
+            st.metric("Max Drawdown", f"{max_dd:.2%}")
+            st.metric("CAGR", f"{cagr:.2%}")
 
-        if all(col in df_test.columns for col in ['Strategy', 'Market']):
             st.line_chart(df_test[['Strategy', 'Market']])
         else:
-            st.warning("Missing one or both columns: 'Strategy', 'Market'. Cannot plot chart.")
+            st.warning(f"{ticker}: Strategy or Market returns are invalid (likely NaN or inf). Skipping metrics/chart.")
 
         st.download_button(f"📥 Download CSV - {ticker}", df_test.to_csv().encode(), file_name=f"{ticker}_strategy.csv")
 
