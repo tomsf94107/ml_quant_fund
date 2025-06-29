@@ -95,8 +95,19 @@ if st.button("🚀 Run Strategy"):
         df_test['Signal'] = (df_test['Prob'] > 0.7).astype(int)
         df_test['Strategy'] = df_test['Signal'].shift(1) * df_test['Return_1D']
         df_test['Market'] = df_test['Return_1D']
-        df_test.dropna(subset=['Strategy', 'Market'], inplace=True)
-        df_test[['Strategy', 'Market']] = (1 + df_test[['Strategy', 'Market']]).cumprod()
+
+        # SAFETY FIX for KeyError + cumprod
+        required_cols = ['Strategy', 'Market']
+        if all(col in df_test.columns for col in required_cols):
+            df_test = df_test.dropna(subset=required_cols)
+            if not df_test.empty:
+                df_test[required_cols] = (1 + df_test[required_cols]).cumprod()
+            else:
+                st.warning(f"{ticker}: Not enough data after cleaning. Skipping.")
+                continue
+        else:
+            st.warning(f"{ticker}: Missing one of 'Strategy' or 'Market'. Skipping.")
+            continue
 
         acc = accuracy_score(y_test, y_pred)
         sharpe, max_dd, cagr = compute_backtest_metrics(df_test)
@@ -106,14 +117,16 @@ if st.button("🚀 Run Strategy"):
         st.metric("Max Drawdown", f"{max_dd:.2%}")
         st.metric("CAGR", f"{cagr:.2%}")
 
-        # Safe plotting
-        if all(col in df_test.columns for col in ['Strategy', 'Market']) and not df_test[['Strategy', 'Market']].isnull().values.any():
+        # Safe charting
+        if not df_test.empty:
             st.line_chart(df_test[['Strategy', 'Market']])
         else:
-            st.warning("Chart skipped: Missing or invalid values in 'Strategy' or 'Market' columns.")
+            st.warning("Chart skipped due to empty data.")
 
+        # Download
         st.download_button(f"📥 Download CSV - {ticker}", df_test.to_csv().encode(), file_name=f"{ticker}_strategy.csv")
 
+        # Email
         if enable_email:
             latest = df_test.iloc[-1] if not df_test.empty else {}
             if isinstance(latest, pd.Series) and latest.get('Signal') == 1 and latest.get('Prob', 0) > 0.7:
@@ -134,6 +147,7 @@ if st.button("🚀 Run Strategy"):
                 except Exception as e:
                     st.error(f"Email failed for {ticker}: {e}")
 
+        # Alpaca
         if enable_trading:
             try:
                 import alpaca_trade_api as tradeapi
