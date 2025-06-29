@@ -13,7 +13,7 @@ from sklearn.metrics import classification_report, accuracy_score
 from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
-# import alpaca_trade_api as tradeapi
+# import alpaca_trade_api as tradeapi  # Optional: only needed if auto-trading is enabled
 import matplotlib.pyplot as plt
 
 # ---- Helper: RSI ----
@@ -39,7 +39,7 @@ def compute_backtest_metrics(df):
     returns = df['Strategy'].pct_change().dropna()
     sharpe = np.sqrt(252) * returns.mean() / returns.std()
     max_drawdown = ((df['Strategy'] / df['Strategy'].cummax()) - 1).min()
-    cagr = (df['Strategy'].iloc[-1] / df['Strategy'].iloc[0]) ** (252/len(df)) - 1
+    cagr = (df['Strategy'].iloc[-1] / df['Strategy'].iloc[0]) ** (252 / len(df)) - 1
     return sharpe, max_drawdown, cagr
 
 # ---- Streamlit UI ----
@@ -56,16 +56,16 @@ with st.sidebar:
 if st.button("🚀 Run Strategy"):
     for ticker in tickers:
         st.subheader(f"📊 {ticker} Strategy")
-        df = yf.download(ticker, start=start_date, end=end_date)
+        df = yf.download(ticker, start=start_date, end=end_date, auto_adjust=True)
 
-        if df.empty:
-            st.warning(f"No data for {ticker}.")
+        if df.empty or 'Close' not in df.columns:
+            st.warning(f"No valid data for {ticker}.")
             continue
 
         df = df.dropna()
-        df['Return_1D'] = df['Adj Close'].pct_change()
+        df['Return_1D'] = df['Close'].pct_change()
         df['Target'] = (df['Return_1D'].shift(-1) > 0).astype(int)
-        df['RSI'] = compute_rsi(df['Adj Close'])
+        df['RSI'] = compute_rsi(df['Close'])
         df = compute_macd(df).dropna()
 
         features = ['RSI', 'MACD', 'Signal']
@@ -121,6 +121,7 @@ if st.button("🚀 Run Strategy"):
 
         if enable_trading:
             try:
+                import alpaca_trade_api as tradeapi
                 alpaca = tradeapi.REST(os.getenv("ALPACA_KEY"), os.getenv("ALPACA_SECRET"), "https://paper-api.alpaca.markets")
                 alpaca.submit_order(symbol=ticker, qty=1, side='buy', type='market', time_in_force='gtc')
                 st.warning(f"Auto-trade submitted for {ticker}.")
