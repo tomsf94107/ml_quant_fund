@@ -1,5 +1,5 @@
 #forecast v1.4 with the datetime fix applied to prevent the merge error, and all recent logic 
-# including logging, forecasting, intraday prediction, and auto-retraining:
+# including logging, forecasting, intraday prediction, and auto-retraining
 
 import os
 import pandas as pd
