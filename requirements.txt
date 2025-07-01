@@ -13,3 +13,4 @@ transformers
 xgboost
 yfinance
 watchdog
+prophet
