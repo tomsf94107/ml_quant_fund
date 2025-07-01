@@ -1,3 +1,7 @@
+#sentiment_app v2
+
+# sentiment_app.py v2.1 — with password protection and dependency fix
+
 import os
 import datetime
 import requests
@@ -19,6 +23,7 @@ def check_login():
 
 check_login()
 
+# ✅ Environment
 os.environ["SSL_CERT_FILE"] = certifi.where()
 load_dotenv()
 
@@ -123,6 +128,7 @@ def render_sector_sentiment():
         st.dataframe(df)
         st.bar_chart(df)
 
+# ✅ Streamlit UI
 st.title("🧠 Live Stock Sentiment Analyzer")
 st.caption(f"🕒 Updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
