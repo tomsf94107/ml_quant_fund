@@ -1,3 +1,7 @@
+#sentiment_app v2
+
+# sentiment_app.py v2.1 — with password protection and dependency fix
+
 import os
 import datetime
 import requests
@@ -11,10 +15,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# 🔐 Password Protection
+def check_login():
+    password = st.text_input("Enter password:", type="password")
+    if password != st.secrets.get("app_password", "MlQ@nt@072025"):
+        st.stop()
+
+check_login()
+
 # ✅ Environment
 os.environ["SSL_CERT_FILE"] = certifi.where()
 load_dotenv()
-st.success(f"✅ SSL_CERT_FILE set to: {os.environ['SSL_CERT_FILE']}")
 
 FINBERT_PATH = "yiyanghkust/finbert-tone"
 SECTORS = {

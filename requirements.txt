@@ -8,3 +8,5 @@ numpy
 matplotlib
 scikit-learn
 shap
+transformers
+torch
