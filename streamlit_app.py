@@ -1,4 +1,3 @@
-# streamlit_app.py
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -19,6 +18,14 @@ import matplotlib.pyplot as plt
 import base64
 import tempfile
 import zipfile
+
+# 🔐 Password Protection
+def check_login():
+    password = st.text_input("Enter password:", type="password")
+    if password != st.secrets.get("app_password", "MlQ@nt@072025"):
+        st.stop()
+
+check_login()
 
 # ---- Helper: RSI ----
 def compute_rsi(series, window=14):
@@ -60,7 +67,7 @@ if "live_signals" not in st.session_state:
     st.session_state["live_signals"] = {}
 
 if st.button("🚀 Run Strategy"):
-    st.subheader("📡 Live Signals Dashboard")
+    st.subheader("📱 Live Signals Dashboard")
     for tkr, val in st.session_state["live_signals"].items():
         signal = "🟢 BUY" if val["signal"] == 1 else "🔴 HOLD"
         st.markdown(f"**{tkr}** → {signal} ({val['confidence']*100:.1f}%)")
@@ -132,7 +139,7 @@ if st.button("🚀 Run Strategy"):
             st.line_chart(df_test[['Strategy', 'Market']])
 
         csv = df_test.to_csv(index=False).encode()
-        st.download_button(f"📥 Download CSV - {ticker}", csv, file_name=f"{ticker}_strategy.csv")
+        st.download_button(f"📅 Download CSV - {ticker}", csv, file_name=f"{ticker}_strategy.csv")
         log_files.append((f"{ticker}_strategy.csv", csv))
 
         if enable_email and not df_test.empty:
