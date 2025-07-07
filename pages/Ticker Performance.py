@@ -91,7 +91,8 @@ def save_forecast_tickers(ticker_list):
 def load_accuracy_log_from_gsheet():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds = ServiceAccountCredentials.from_json_keyfile_name("keys/mlquan-0515c30186b6.json", scope)
+        creds_dict = st.secrets["gcp_service_account"]  # ✅ Already a dict
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         sheet = client.open("forecast_evaluation_log").sheet1
         data = sheet.get_all_records()
