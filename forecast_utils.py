@@ -1,4 +1,4 @@
-# v2.2 forecast_utils.py — Prophet Forecasting + Google Sheets via st.secrets (Streamlit Cloud ready)
+# v2.3 forecast_utils.py — Prophet Forecasting + Google Sheets via st.secrets (Streamlit Cloud ready)
 
 import os
 import json
@@ -26,7 +26,7 @@ os.makedirs(EVAL_DIR, exist_ok=True)
 def get_gsheet_logger():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds_dict = json.loads(st.secrets["gcp_service_account"])
+        creds_dict = st.secrets["gcp_service_account"]  # Already a dict!
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         return client.open(GSHEET_NAME).sheet1
