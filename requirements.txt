@@ -15,3 +15,5 @@ yfinance
 watchdog
 prophet
 plotly
+gspread
+oauth2client
