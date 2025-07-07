@@ -1,6 +1,7 @@
-# v2.2 forecast_utils.py — Streamlit Secrets + Google Sheets + Robust Forecasting
+# v2.2 forecast_utils.py — Prophet Forecasting + Google Sheets via st.secrets (Streamlit Cloud ready)
 
 import os
+import json
 import pandas as pd
 import numpy as np
 from prophet import Prophet
@@ -8,10 +9,10 @@ from datetime import datetime, timedelta
 import yfinance as yf
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
-# Google Sheets support
+# Google Sheets via Streamlit Secrets
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 import streamlit as st
+from oauth2client.service_account import ServiceAccountCredentials
 
 # -------- Paths --------
 LOG_DIR = "forecast_logs"
@@ -25,12 +26,12 @@ os.makedirs(EVAL_DIR, exist_ok=True)
 def get_gsheet_logger():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        gcp_creds = st.secrets["gcp_service_account"]
-        creds = ServiceAccountCredentials.from_json_keyfile_dict(gcp_creds, scope)
+        creds_dict = json.loads(st.secrets["gcp_service_account"])
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         return client.open(GSHEET_NAME).sheet1
     except Exception as e:
-        print(f"❌ Sheets auth failed: {e}")
+        st.error(f"❌ Sheets auth failed: {e}")
         return None
 
 def log_eval_to_gsheet(ticker, mae, mse, r2):
@@ -39,9 +40,9 @@ def log_eval_to_gsheet(ticker, mae, mse, r2):
         try:
             now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             sheet.append_row([now, ticker, round(mae, 2), round(mse, 2), round(r2, 4)])
-            print(f"✅ Logged to Google Sheets: {ticker}")
+            st.success(f"✅ Logged to Google Sheets: {ticker}")
         except Exception as e:
-            print(f"⚠️ Sheets logging failed: {e}")
+            st.warning(f"⚠️ Sheets logging failed: {e}")
 
 # -------- 3-Month Forecast --------
 def forecast_price_trend(ticker: str, start_date=None, end_date=None, period_months=3, log_results=True):
