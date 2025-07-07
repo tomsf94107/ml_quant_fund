@@ -1,8 +1,9 @@
-#v1/ 2_Forecast_Accuracy_Dashboard.py
+# v2.0 — 2_Forecast_Accuracy_Dashboard.py (uses st.secrets for Google Sheets auth)
 
 import pandas as pd
 import streamlit as st
 import gspread
+import json
 from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(layout="wide")
@@ -15,8 +16,8 @@ def load_accuracy_log_from_gsheet():
             "https://spreadsheets.google.com/feeds",
             "https://www.googleapis.com/auth/drive"
         ]
-        creds = ServiceAccountCredentials.from_json_keyfile_name(
-            "keys/mlquan-0515c30186b6.json", scope)
+        creds_dict = json.loads(st.secrets["gcp_service_account"])
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         sheet = client.open("forecast_evaluation_log").sheet1
         data = sheet.get_all_records()
