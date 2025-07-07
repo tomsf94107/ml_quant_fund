@@ -1,4 +1,4 @@
-# v2.4 forecast_utils.py — Streamlit Secrets Integration (No JSON file)
+# v2.5 forecast_utils.py — Streamlit Secrets + Forecast Helpers
 
 import os
 import pandas as pd
@@ -17,6 +17,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 LOG_DIR = "forecast_logs"
 EVAL_DIR = "forecast_eval"
 GSHEET_NAME = "forecast_evaluation_log"
+TICKER_FILE = "tickers.csv"
 
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)
@@ -25,7 +26,7 @@ os.makedirs(EVAL_DIR, exist_ok=True)
 def get_gsheet_logger():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds_dict = st.secrets["gcp_service_account"]  # ✅ already a dict
+        creds_dict = st.secrets["gcp_service_account"]
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
         client = gspread.authorize(creds)
         return client.open(GSHEET_NAME).sheet1
@@ -43,7 +44,7 @@ def log_eval_to_gsheet(ticker, mae, mse, r2):
         except Exception as e:
             st.warning(f"⚠️ Sheets logging failed: {e}")
 
-# -------- 3-Month Forecast --------
+# -------- Forecast Functions --------
 def forecast_price_trend(ticker: str, start_date=None, end_date=None, period_months=3, log_results=True):
     if end_date is None:
         end_date = datetime.today()
@@ -78,7 +79,6 @@ def forecast_price_trend(ticker: str, start_date=None, end_date=None, period_mon
 
     return result_df, None
 
-# -------- Intraday Heuristic Forecast --------
 def forecast_today_movement(ticker: str, log_results=True):
     df = yf.download(ticker, period="7d", interval="1h", auto_adjust=True)
     if df.empty or 'Close' not in df:
@@ -151,10 +151,19 @@ def auto_retrain_forecast_model(ticker: str):
     else:
         row.to_csv(eval_path, index=False)
 
-    # Google Sheets logging
     log_eval_to_gsheet(ticker, mae, mse, r2)
 
-# -------- Direction Accuracy --------
+def run_auto_retrain_all(ticker_list=None):
+    if ticker_list is None:
+        ticker_list = load_forecast_tickers()
+    for tkr in ticker_list:
+        try:
+            print(f"🔁 Retraining: {tkr}")
+            auto_retrain_forecast_model(tkr)
+        except Exception as e:
+            print(f"❌ Error retraining {tkr}: {e}")
+
+# -------- Accuracy Tracker --------
 def compute_rolling_accuracy(log_path):
     df = pd.read_csv(log_path, parse_dates=['ds']).sort_values('ds')
     if 'yhat' not in df.columns or 'actual' not in df.columns:
@@ -167,21 +176,21 @@ def compute_rolling_accuracy(log_path):
     df['30d_accuracy'] = df['correct'].rolling(window=30).mean()
     return df[['ds', '7d_accuracy', '30d_accuracy', 'correct']]
 
-# -------- Batch Retrain --------
-def run_auto_retrain_all(ticker_list=None):
-    if ticker_list is None:
-        ticker_list = ["AAPL", "MSFT"]
-    for tkr in ticker_list:
-        try:
-            print(f"🔁 Retraining: {tkr}")
-            auto_retrain_forecast_model(tkr)
-        except Exception as e:
-            print(f"❌ Error retraining {tkr}: {e}")
-
-# -------- Latest Forecast Log Finder --------
 def get_latest_forecast_log(ticker: str):
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{ticker}_")]
     if not logs:
         return None
     latest = sorted(logs)[-1]
     return os.path.join(LOG_DIR, latest)
+
+# -------- Ticker Management --------
+def load_forecast_tickers():
+    if not os.path.exists(TICKER_FILE):
+        return ["AAPL", "MSFT"]
+    with open(TICKER_FILE, "r") as f:
+        return [line.strip().upper() for line in f if line.strip()]
+
+def save_forecast_tickers(ticker_list):
+    with open(TICKER_FILE, "w") as f:
+        for tkr in ticker_list:
+            f.write(tkr.strip().upper() + "\n")
