@@ -1,8 +1,9 @@
-# v2.2 — 2_Forecast_Accuracy_Dashboard.py with st.secrets integration
+#v3 with Batch Retrain tool added on sidebar
 
 import pandas as pd
 import streamlit as st
 from forecast_utils import get_gsheet_logger
+from forecast_utils import run_auto_retrain_all, load_forecast_tickers
 
 st.set_page_config(layout="wide")
 st.title("📊 Forecast Accuracy Dashboard")
