@@ -1,4 +1,4 @@
-# v8 - Adds Forecast Ticker Manager UI to v7
+# v10 - Combines v8 and v9 into one master version with SHAP patch
 
 import os
 from dotenv import load_dotenv
@@ -20,6 +20,8 @@ import matplotlib.pyplot as plt
 import base64
 import tempfile
 import zipfile
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 from forecast_utils import (
     forecast_price_trend,
@@ -70,7 +72,7 @@ def plot_shap(model, X_test):
     explainer = shap.Explainer(model)
     shap_values = explainer(X_test)
     st.write("Feature Importance (SHAP)")
-    fig, ax = plt.subplots()
+    fig = plt.figure(figsize=(8, 4))
     shap.plots.beeswarm(shap_values, max_display=5, show=False)
     st.pyplot(fig)
 
@@ -86,6 +88,18 @@ def save_forecast_tickers(ticker_list):
         for tkr in ticker_list:
             f.write(tkr.strip().upper() + "\n")
 
+def load_accuracy_log_from_gsheet():
+    try:
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_name("keys/mlquan-0515c30186b6.json", scope)
+        client = gspread.authorize(creds)
+        sheet = client.open("forecast_evaluation_log").sheet1
+        data = sheet.get_all_records()
+        return pd.DataFrame(data)
+    except Exception as e:
+        st.error(f"⚠️ Failed to load Google Sheet: {e}")
+        return pd.DataFrame()
+
 # 🔐 Password Protection
 def check_login():
     password = st.text_input("Enter password:", type="password")
@@ -96,11 +110,11 @@ check_login()
 # ---- Streamlit UI ----
 st.set_page_config(layout="wide")
 st_autorefresh(interval=5 * 60 * 1000, key="refresh")
-st.title("\ud83d\udcc8 ML-Based Stock Strategy Dashboard")
-st.caption(f"\ud83d\udd52 Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+st.title("📈 ML-Based Stock Strategy Dashboard")
+st.caption(f"🕒 Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
 # ---- Forecast Section ----
-with st.expander("\ud83d\udcc5 Forecast Price Trends (Prophet Model)"):
+with st.expander("📅 Forecast Price Trends (Prophet Model)"):
     ticker_input = st.text_input("Enter a ticker for 3-month forecast", "AAPL")
     if ticker_input:
         auto_retrain_forecast_model(ticker_input.upper())
@@ -109,11 +123,11 @@ with st.expander("\ud83d\udcc5 Forecast Price Trends (Prophet Model)"):
         if err:
             st.warning(err)
         else:
-            st.subheader(f"\ud83d\uddd3\ufe0f 3-Month Price Forecast for {ticker_input.upper()}")
+            st.subheader(f"🗓️ 3-Month Price Forecast for {ticker_input.upper()}")
             future_df = forecast_df[forecast_df['ds'] > pd.Timestamp.today()]
             st.line_chart(future_df.set_index("ds")[["yhat", "yhat_lower", "yhat_upper"]])
 
-            st.subheader("\ud83d\uddd3\ufe0f Today's Movement Prediction")
+            st.subheader("🗓️ Today's Movement Prediction")
             movement, err2 = forecast_today_movement(ticker_input.upper())
             if err2:
                 st.warning(err2)
@@ -123,7 +137,7 @@ with st.expander("\ud83d\udcc5 Forecast Price Trends (Prophet Model)"):
             log_path = get_latest_forecast_log(ticker_input.upper())
             if log_path:
                 df_acc = compute_rolling_accuracy(log_path)
-                st.subheader("\ud83d\udcc8 Rolling Forecast Accuracy")
+                st.subheader("📈 Rolling Forecast Accuracy")
                 fig, ax = plt.subplots(figsize=(8, 4))
                 ax.plot(df_acc["ds"], df_acc["7d_accuracy"], label="7-Day Accuracy")
                 ax.plot(df_acc["ds"], df_acc["30d_accuracy"], label="30-Day Accuracy")
@@ -131,11 +145,12 @@ with st.expander("\ud83d\udcc5 Forecast Price Trends (Prophet Model)"):
                 ax.set_ylim(0, 1.05)
                 ax.legend()
                 st.pyplot(fig)
+
                 latest = df_acc.iloc[-1]
                 if latest['correct']:
-                    st.success("\u2705 Latest forecast direction was correct!")
+                    st.success("✅ Latest forecast direction was correct!")
                 else:
-                    st.error("\u274c Latest forecast direction was wrong.")
+                    st.error("❌ Latest forecast direction was wrong.")
 
 # ---- Sidebar Config ----
 with st.sidebar:
@@ -143,14 +158,14 @@ with st.sidebar:
     start_date = st.date_input("Start date", pd.to_datetime("2018-01-01"))
     end_date = st.date_input("End date", datetime.today())
     confidence_threshold = st.slider("Confidence threshold", 0.5, 0.99, 0.7)
-    enable_email = st.toggle("\ud83d\udce7 Send Email Alerts", value=True)
-    enable_zip_download = st.toggle("\ud83d\udce6 Download ZIP of all results", value=True)
-    enable_shap = st.toggle("\ud83d\udcca Show SHAP Explainability", value=True)
+    enable_email = st.toggle("📧 Send Email Alerts", value=True)
+    enable_zip_download = st.toggle("📦 Download ZIP of all results", value=True)
+    enable_shap = st.toggle("📊 Show SHAP Explainability", value=True)
 
-    with st.expander("\ud83d\udccb Manage Forecast Tickers"):
+    with st.expander("📋 Manage Forecast Tickers"):
         curr = "\n".join(load_forecast_tickers())
         tick_edit = st.text_area("Edit tickers (one per line):", curr, height=150)
-        if st.button("\ud83d\udcc2 Save Tickers"):
+        if st.button("💾 Save Tickers"):
             save_forecast_tickers(tick_edit.split("\n"))
             st.success("tickers.csv updated!")
         st.caption("tickers.csv should be in your project root, one ticker per line, no header.")
@@ -159,15 +174,15 @@ log_files = []
 if "live_signals" not in st.session_state:
     st.session_state["live_signals"] = {}
 
-# ---- Strategy Execution Section (unchanged) ----
-if st.button("\ud83d\ude80 Run Strategy"):
-    st.subheader("\ud83d\udcf1 Live Signals Dashboard")
+# ---- Strategy Execution Section ----
+if st.button("🚀 Run Strategy"):
+    st.subheader("📱 Live Signals Dashboard")
     for tkr, val in st.session_state["live_signals"].items():
-        signal = "\ud83d\udfe2 BUY" if val["signal"] == 1 else "\ud83d\udd34 HOLD"
+        signal = "🟢 BUY" if val["signal"] == 1 else "🔴 HOLD"
         st.markdown(f"**{tkr}** → {signal} ({val['confidence']*100:.1f}%)")
 
     for ticker in tickers:
-        st.subheader(f"\ud83d\udcca {ticker} Strategy")
+        st.subheader(f"📊 {ticker} Strategy")
         df = yf.download(ticker, start=start_date, end=end_date, auto_adjust=True)
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = ['_'.join(col).strip() for col in df.columns.values]
@@ -202,7 +217,7 @@ if st.button("\ud83d\ude80 Run Strategy"):
         st.line_chart(df_test[['Strategy', 'Market']])
 
         csv = df_test.to_csv(index=False).encode()
-        st.download_button(f"\ud83d\uddc5\ufe0f Download CSV - {ticker}", csv, file_name=f"{ticker}_strategy.csv")
+        st.download_button(f"🗕️ Download CSV - {ticker}", csv, file_name=f"{ticker}_strategy.csv")
         log_files.append((f"{ticker}_strategy.csv", csv))
 
         if enable_email and not df_test.empty:
@@ -225,4 +240,17 @@ if st.button("\ud83d\ude80 Run Strategy"):
                     zipf.writestr(filename, content)
             with open(tmp_zip.name, "rb") as f:
                 b64 = base64.b64encode(f.read()).decode()
-                st.markdown(f'<a href="data:application/zip;base64,{b64}" download="strategy_logs.zip">\ud83d\udce6 Download All Logs as ZIP</a>', unsafe_allow_html=True)
+                st.markdown(f'<a href="data:application/zip;base64,{b64}" download="strategy_logs.zip">📦 Download All Logs as ZIP</a>', unsafe_allow_html=True)
+
+# ---- Accuracy Dashboard ----
+st.subheader("📊 Forecast Accuracy Dashboard (from Google Sheet)")
+acc_df = load_accuracy_log_from_gsheet()
+if not acc_df.empty:
+    acc_df['timestamp'] = pd.to_datetime(acc_df['timestamp'])
+    acc_df = acc_df.sort_values("timestamp", ascending=False)
+
+    st.dataframe(acc_df)
+
+    st.line_chart(acc_df.set_index("timestamp")[["mae", "mse", "r2"]])
+else:
+    st.warning("No forecast accuracy data found.")
