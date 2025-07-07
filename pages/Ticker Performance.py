@@ -1,4 +1,4 @@
-# v5.2 - Forecast + Auto-Retrain Integration (Fixed datetime merge)
+# v10 - Combines v8 and v9 into one master version with SHAP patch
 
 import os
 from dotenv import load_dotenv
@@ -20,18 +20,91 @@ import matplotlib.pyplot as plt
 import base64
 import tempfile
 import zipfile
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
 from forecast_utils import (
     forecast_price_trend,
     forecast_today_movement,
     auto_retrain_forecast_model,
+    compute_rolling_accuracy,
+    get_latest_forecast_log
 )
+
+# -------------------- Helper Functions --------------------
+def train_model(df, features, target_col):
+    X = df[features]
+    y = df[target_col]
+    X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False, test_size=0.2)
+    model = XGBClassifier(max_depth=3, learning_rate=0.1, use_label_encoder=False, eval_metric='logloss')
+    model.fit(X_train, y_train)
+    return model, X_test, y_test
+
+def evaluate_strategy(df, y_test, y_pred, y_prob, threshold):
+    df_test = df.iloc[-len(y_test):].copy()
+    df_test['Pred'] = y_pred
+    df_test['Prob'] = y_prob
+    df_test['Signal'] = (df_test['Prob'] > threshold).astype(int)
+    df_test['Strategy'] = df_test['Signal'].shift(1) * df_test['Return_1D']
+    df_test['Market'] = df_test['Return_1D']
+    df_test.dropna(subset=['Strategy', 'Market'], inplace=True)
+    df_test[['Strategy', 'Market']] = (1 + df_test[['Strategy', 'Market']]).cumprod()
+    acc = accuracy_score(y_test, y_pred)
+    sharpe = np.sqrt(252) * df_test['Strategy'].pct_change().mean() / df_test['Strategy'].pct_change().std()
+    max_dd = ((df_test['Strategy'] / df_test['Strategy'].cummax()) - 1).min()
+    cagr = (df_test['Strategy'].iloc[-1] / df_test['Strategy'].iloc[0]) ** (252 / len(df_test)) - 1
+    return df_test, acc, sharpe, max_dd, cagr
+
+def send_alert_email(ticker, prob):
+    try:
+        msg = MIMEText(f"High-confidence BUY signal for {ticker} with prob={prob:.2f}")
+        msg['Subject'] = f"Trading Alert: {ticker}"
+        msg['From'] = os.getenv("EMAIL_SENDER")
+        msg['To'] = os.getenv("EMAIL_RECEIVER")
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(os.getenv("EMAIL_SENDER"), os.getenv("EMAIL_PASSWORD"))
+            server.send_message(msg)
+        st.success(f"Email alert sent for {ticker}.")
+    except Exception as e:
+        st.error(f"Email failed: {e}")
+
+def plot_shap(model, X_test):
+    explainer = shap.Explainer(model)
+    shap_values = explainer(X_test)
+    st.write("Feature Importance (SHAP)")
+    fig = plt.figure(figsize=(8, 4))
+    shap.plots.beeswarm(shap_values, max_display=5, show=False)
+    st.pyplot(fig)
+
+def load_forecast_tickers():
+    path = "tickers.csv"
+    if not os.path.exists(path):
+        return ["AAPL", "MSFT"]
+    with open(path, "r") as f:
+        return [line.strip().upper() for line in f if line.strip()]
+
+def save_forecast_tickers(ticker_list):
+    with open("tickers.csv", "w") as f:
+        for tkr in ticker_list:
+            f.write(tkr.strip().upper() + "\n")
+
+def load_accuracy_log_from_gsheet():
+    try:
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds = ServiceAccountCredentials.from_json_keyfile_name("keys/mlquan-0515c30186b6.json", scope)
+        client = gspread.authorize(creds)
+        sheet = client.open("forecast_evaluation_log").sheet1
+        data = sheet.get_all_records()
+        return pd.DataFrame(data)
+    except Exception as e:
+        st.error(f"⚠️ Failed to load Google Sheet: {e}")
+        return pd.DataFrame()
 
 # 🔐 Password Protection
 def check_login():
     password = st.text_input("Enter password:", type="password")
     if password != st.secrets.get("app_password", "MlQ@nt@072025"):
         st.stop()
-
 check_login()
 
 # ---- Streamlit UI ----
@@ -43,11 +116,8 @@ st.caption(f"🕒 Last updated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 # ---- Forecast Section ----
 with st.expander("📅 Forecast Price Trends (Prophet Model)"):
     ticker_input = st.text_input("Enter a ticker for 3-month forecast", "AAPL")
-
     if ticker_input:
-        # Auto retrain every time forecast section is touched
         auto_retrain_forecast_model(ticker_input.upper())
-
     if st.button("Run Forecast"):
         forecast_df, err = forecast_price_trend(ticker_input.upper())
         if err:
@@ -64,6 +134,24 @@ with st.expander("📅 Forecast Price Trends (Prophet Model)"):
             else:
                 st.success(movement)
 
+            log_path = get_latest_forecast_log(ticker_input.upper())
+            if log_path:
+                df_acc = compute_rolling_accuracy(log_path)
+                st.subheader("📈 Rolling Forecast Accuracy")
+                fig, ax = plt.subplots(figsize=(8, 4))
+                ax.plot(df_acc["ds"], df_acc["7d_accuracy"], label="7-Day Accuracy")
+                ax.plot(df_acc["ds"], df_acc["30d_accuracy"], label="30-Day Accuracy")
+                ax.set_ylabel("Accuracy")
+                ax.set_ylim(0, 1.05)
+                ax.legend()
+                st.pyplot(fig)
+
+                latest = df_acc.iloc[-1]
+                if latest['correct']:
+                    st.success("✅ Latest forecast direction was correct!")
+                else:
+                    st.error("❌ Latest forecast direction was wrong.")
+
 # ---- Sidebar Config ----
 with st.sidebar:
     tickers = st.text_input("Enter comma-separated tickers:", "AAPL,MSFT").upper().split(',')
@@ -74,11 +162,19 @@ with st.sidebar:
     enable_zip_download = st.toggle("📦 Download ZIP of all results", value=True)
     enable_shap = st.toggle("📊 Show SHAP Explainability", value=True)
 
+    with st.expander("📋 Manage Forecast Tickers"):
+        curr = "\n".join(load_forecast_tickers())
+        tick_edit = st.text_area("Edit tickers (one per line):", curr, height=150)
+        if st.button("💾 Save Tickers"):
+            save_forecast_tickers(tick_edit.split("\n"))
+            st.success("tickers.csv updated!")
+        st.caption("tickers.csv should be in your project root, one ticker per line, no header.")
+
 log_files = []
 if "live_signals" not in st.session_state:
     st.session_state["live_signals"] = {}
 
-# ---- Run Strategy Section ----
+# ---- Strategy Execution Section ----
 if st.button("🚀 Run Strategy"):
     st.subheader("📱 Live Signals Dashboard")
     for tkr, val in st.session_state["live_signals"].items():
@@ -88,10 +184,8 @@ if st.button("🚀 Run Strategy"):
     for ticker in tickers:
         st.subheader(f"📊 {ticker} Strategy")
         df = yf.download(ticker, start=start_date, end=end_date, auto_adjust=True)
-
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = ['_'.join(col).strip() for col in df.columns.values]
-
         close_col = f'Close_{ticker}' if f'Close_{ticker}' in df.columns else 'Close'
         if close_col not in df.columns:
             st.warning(f"Missing expected column {close_col} in {ticker}.")
@@ -110,34 +204,11 @@ if st.button("🚀 Run Strategy"):
             st.warning(f"Missing features for {ticker}. Skipping.")
             continue
 
-        X = df[features]
-        y = df['Target']
-
-        if len(X) < 50:
-            st.warning(f"Not enough data to train model for {ticker}. Skipping.")
-            continue
-
-        X_train, X_test, y_train, y_test = train_test_split(X, y, shuffle=False, test_size=0.2)
-        model = XGBClassifier(max_depth=3, learning_rate=0.1, use_label_encoder=False, eval_metric='logloss')
-        model.fit(X_train, y_train)
-
+        model, X_test, y_test = train_model(df, features, 'Target')
         y_pred = model.predict(X_test)
         y_prob = model.predict_proba(X_test)[:, 1]
 
-        df_test = df.iloc[-len(y_test):].copy()
-        df_test['Pred'] = y_pred
-        df_test['Prob'] = y_prob
-        df_test['Signal'] = (df_test['Prob'] > confidence_threshold).astype(int)
-        df_test['Strategy'] = df_test['Signal'].shift(1) * df_test['Return_1D']
-        df_test['Market'] = df_test['Return_1D']
-
-        df_test.dropna(subset=['Strategy', 'Market'], inplace=True)
-        df_test[['Strategy', 'Market']] = (1 + df_test[['Strategy', 'Market']]).cumprod()
-
-        acc = accuracy_score(y_test, y_pred)
-        sharpe = np.sqrt(252) * df_test['Strategy'].pct_change().mean() / df_test['Strategy'].pct_change().std()
-        max_dd = ((df_test['Strategy'] / df_test['Strategy'].cummax()) - 1).min()
-        cagr = (df_test['Strategy'].iloc[-1] / df_test['Strategy'].iloc[0]) ** (252 / len(df_test)) - 1
+        df_test, acc, sharpe, max_dd, cagr = evaluate_strategy(df, y_test, y_pred, y_prob, confidence_threshold)
 
         st.metric("Accuracy", f"{acc:.2f}")
         st.metric("Sharpe Ratio", f"{sharpe:.2f}")
@@ -152,26 +223,10 @@ if st.button("🚀 Run Strategy"):
         if enable_email and not df_test.empty:
             latest = df_test.iloc[-1]
             if latest['Signal'] == 1 and latest['Prob'] > confidence_threshold:
-                try:
-                    msg = MIMEText(f"High-confidence BUY signal for {ticker} with prob={latest['Prob']:.2f}")
-                    msg['Subject'] = f"Trading Alert: {ticker}"
-                    msg['From'] = os.getenv("EMAIL_SENDER")
-                    msg['To'] = os.getenv("EMAIL_RECEIVER")
-
-                    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-                        server.login(os.getenv("EMAIL_SENDER"), os.getenv("EMAIL_PASSWORD"))
-                        server.send_message(msg)
-                    st.success(f"Email alert sent for {ticker}.")
-                except Exception as e:
-                    st.error(f"Email failed: {e}")
+                send_alert_email(ticker, latest['Prob'])
 
         if enable_shap:
-            explainer = shap.Explainer(model)
-            shap_values = explainer(X_test)
-            st.write("Feature Importance (SHAP)")
-            fig, ax = plt.subplots()
-            shap.plots.beeswarm(shap_values, max_display=5, show=False)
-            st.pyplot(fig)
+            plot_shap(model, X_test)
 
         st.session_state["live_signals"][ticker] = {
             "signal": int(df_test.iloc[-1]["Signal"]),
@@ -186,3 +241,16 @@ if st.button("🚀 Run Strategy"):
             with open(tmp_zip.name, "rb") as f:
                 b64 = base64.b64encode(f.read()).decode()
                 st.markdown(f'<a href="data:application/zip;base64,{b64}" download="strategy_logs.zip">📦 Download All Logs as ZIP</a>', unsafe_allow_html=True)
+
+# ---- Accuracy Dashboard ----
+st.subheader("📊 Forecast Accuracy Dashboard (from Google Sheet)")
+acc_df = load_accuracy_log_from_gsheet()
+if not acc_df.empty:
+    acc_df['timestamp'] = pd.to_datetime(acc_df['timestamp'])
+    acc_df = acc_df.sort_values("timestamp", ascending=False)
+
+    st.dataframe(acc_df)
+
+    st.line_chart(acc_df.set_index("timestamp")[["mae", "mse", "r2"]])
+else:
+    st.warning("No forecast accuracy data found.")
