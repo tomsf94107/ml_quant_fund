@@ -1,23 +1,36 @@
-# v2.0 — 3_Signal_Leaderboard.py (Streamlit + local CSV forecast_eval/forecast_evals.csv)
+# v2.1 — 3_Signal_Leaderboard.py (reads from Google Sheets via Streamlit Secrets)
 
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
-
-EVAL_CSV_PATH = "forecast_eval/forecast_evals.csv"
+import json
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 st.set_page_config(layout="wide")
 st.title("📊 Signal Leaderboard")
 
-if not os.path.exists(EVAL_CSV_PATH):
-    st.warning("No evaluation logs found yet.")
+# -------- Load Data from Google Sheets --------
+def load_eval_data_from_gsheet():
+    try:
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        creds_dict = json.loads(st.secrets["gcp_service_account"])
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+        client = gspread.authorize(creds)
+        sheet = client.open("forecast_evaluation_log").sheet1
+        data = sheet.get_all_records()
+        return pd.DataFrame(data)
+    except Exception as e:
+        st.error(f"❌ Failed to load evaluation logs from Google Sheets: {e}")
+        return pd.DataFrame()
+
+df = load_eval_data_from_gsheet()
+if df.empty:
+    st.warning("No evaluation data found.")
     st.stop()
 
-# ---- Load evaluation data ----
-df = pd.read_csv(EVAL_CSV_PATH, parse_dates=["timestamp"])
-
-# ---- Sidebar filters ----
+# -------- Sidebar Filters --------
+df["timestamp"] = pd.to_datetime(df["timestamp"])
 with st.sidebar:
     st.header("📂 Filters")
     tickers = sorted(df["ticker"].unique())
@@ -27,14 +40,14 @@ with st.sidebar:
         [df["timestamp"].min().date(), df["timestamp"].max().date()]
     )
 
-# ---- Apply filters ----
+# -------- Apply Filters --------
 filtered = df[
     (df["ticker"].isin(selected)) &
     (df["timestamp"].dt.date >= date_range[0]) &
     (df["timestamp"].dt.date <= date_range[1])
 ]
 
-# ---- Show only latest score per ticker ----
+# -------- Latest Per Ticker --------
 latest_df = (
     filtered.sort_values("timestamp")
     .groupby("ticker")
@@ -48,7 +61,7 @@ st.dataframe(
     use_container_width=True
 )
 
-# ---- Visual Comparison ----
+# -------- Visual Leaderboard --------
 st.subheader("📈 Visual Comparison")
 metric = st.selectbox("Select metric to rank", ["mae", "mse", "r2"])
 
@@ -60,6 +73,6 @@ ax.set_ylabel("Ticker")
 ax.set_title(f"Latest {metric.upper()} by Ticker")
 st.pyplot(fig)
 
-# ---- Download button ----
+# -------- Download --------
 csv = latest_df.to_csv(index=False).encode()
 st.download_button("📥 Download Latest Metrics", csv, file_name="latest_forecast_scores.csv")
