@@ -15,6 +15,9 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+st.set_page_config(page_title="Sentiment Analyzer", layout="wide")
+
 # 🔐 Password Protection
 def check_login():
     password = st.text_input("Enter password:", type="password")
