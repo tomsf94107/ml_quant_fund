@@ -1,6 +1,7 @@
-# v2.1 forecast_utils.py — Robust Prophet Forecasting + Google Sheets + CSV Logging
+# v2.2 forecast_utils.py — Prophet Forecasting + Google Sheets (via Streamlit Secrets) + CSV Logging
 
 import os
+import json
 import pandas as pd
 import numpy as np
 from prophet import Prophet
@@ -10,13 +11,13 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Google Sheets support
 import gspread
+import streamlit as st
 from oauth2client.service_account import ServiceAccountCredentials
 
 # -------- Paths --------
 LOG_DIR = "forecast_logs"
 EVAL_DIR = "forecast_eval"
 GSHEET_NAME = "forecast_evaluation_log"
-GSHEET_CRED_PATH = "keys/mlquan-0515c30186b6.json"
 
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(EVAL_DIR, exist_ok=True)
@@ -25,7 +26,8 @@ os.makedirs(EVAL_DIR, exist_ok=True)
 def get_gsheet_logger():
     try:
         scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds = ServiceAccountCredentials.from_json_keyfile_name(GSHEET_CRED_PATH, scope)
+        gsheet_creds = json.loads(str(st.secrets["gsheets"]))  # Load from Streamlit secrets
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(gsheet_creds, scope)
         client = gspread.authorize(creds)
         return client.open(GSHEET_NAME).sheet1
     except Exception as e:
