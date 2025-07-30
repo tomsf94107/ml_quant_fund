@@ -5,7 +5,7 @@ import streamlit as st
 from forecast_utils import get_gsheet_logger
 from forecast_utils import run_auto_retrain_all, load_forecast_tickers
 
-st.set_page_config(layout="wide")
+
 st.title("📊 Forecast Accuracy Dashboard")
 
 # ---- Load Data from Google Sheet ----

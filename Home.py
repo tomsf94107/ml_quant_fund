@@ -1,11 +1,11 @@
+# Home.py
 import streamlit as st
-from send_email import send_email_alert
 
-st.title("📊 ML Quant Fund Dashboard")
-st.markdown("Welcome to the ML Quant Fund App! Use the sidebar to access different tools and dashboards.")
+st.set_page_config(
+    page_title="ML Quant Fund",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-st.subheader("📧 Email Alert Test")
-
-if st.button("🚨 Send Test Email"):
-    send_email_alert("Test Alert", "✅ This is a test from Streamlit Cloud.")
-    st.success("Test email sent! Check your inbox.")
+st.title("📊 ML Quant Dashboard")
+st.markdown("Welcome to the ML Quant Forecasting Platform.")

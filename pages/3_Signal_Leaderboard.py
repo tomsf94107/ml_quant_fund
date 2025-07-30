@@ -7,7 +7,7 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-st.set_page_config(layout="wide")
+
 st.title("📊 Signal Leaderboard")
 
 # -------- Load Data from Google Sheets --------
