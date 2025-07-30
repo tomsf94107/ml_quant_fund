@@ -11,6 +11,8 @@ def load_tickers(path="tickers.csv"):
 
 def main():
     print("🚀 Starting scheduled retraining...")
+    print("📂 Current working directory:", os.getcwd())  # <-- moved here
+
     tickers = load_tickers()
     print(f"🔍 Loaded tickers: {tickers}")
     if not tickers:
@@ -25,15 +27,13 @@ def main():
         print("❌ eval_df is not a DataFrame")
         return
 
-
     if not eval_df.empty:
-        os.makedirs("ml_quant_fund", exist_ok=True)  # Ensure folder exists
+        os.makedirs("ml_quant_fund", exist_ok=True)
         output_path = os.path.join("ml_quant_fund", "forecast_metrics.csv")
         eval_df.to_csv(output_path, index=False)
         print("📈 Saved forecast_metrics.csv at:", output_path)
     else:
         print("⚠️ No evaluation metrics to save.")
-
 
     print("✅ Retraining complete.")
 
