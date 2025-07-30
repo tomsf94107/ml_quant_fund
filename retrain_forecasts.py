@@ -23,11 +23,12 @@ def main():
         print(f"📊 eval_df shape: {eval_df.shape}")
     else:
         print("❌ eval_df is not a DataFrame")
+        return
 
-    if isinstance(eval_df, pd.DataFrame) and not eval_df.empty:
-        eval_df.to_csv("forecast_metrics.csv", index=False)
-        print("📈 Saved forecast_metrics.csv for upload.")
-        print("📁 forecast_metrics.csv exists?", os.path.exists("forecast_metrics.csv"))
+    if not eval_df.empty:
+        output_path = os.path.join(os.getcwd(), "forecast_metrics.csv")
+        eval_df.to_csv(output_path, index=False)
+        print("📈 Saved forecast_metrics.csv at:", output_path)
     else:
         print("⚠️ No evaluation metrics to save.")
 

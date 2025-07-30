@@ -1,4 +1,4 @@
-# v2.1 — 3_Signal_Leaderboard.py (reads from Google Sheets via Streamlit Secrets)
+# v2.2 — 3_Signal_Leaderboard.py (reads from Google Sheets via Streamlit Secrets)
 
 import streamlit as st
 import pandas as pd
@@ -7,7 +7,7 @@ import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-
+st.set_page_config(layout="wide")
 st.title("📊 Signal Leaderboard")
 
 # -------- Load Data from Google Sheets --------
