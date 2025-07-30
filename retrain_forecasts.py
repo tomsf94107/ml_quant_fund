@@ -16,8 +16,17 @@ def main():
         print("⚠️ No tickers found.")
         return
 
-    run_auto_retrain_all(tickers)
+    eval_df = run_auto_retrain_all(tickers)
+
+    # ✅ Save evaluation results for GitHub Actions to upload
+    if isinstance(eval_df, pd.DataFrame) and not eval_df.empty:
+        eval_df.to_csv("forecast_metrics.csv", index=False)
+        print("📈 Saved forecast_metrics.csv for upload.")
+    else:
+        print("⚠️ No evaluation metrics to save.")
+
     print("✅ Retraining complete.")
+
 
 if __name__ == "__main__":
     main()
