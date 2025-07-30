@@ -1,23 +1,34 @@
+# send_email.py — alert utility for extreme sentiment/signals
+
 import smtplib
 import ssl
 from email.message import EmailMessage
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
+try:
+    import streamlit as st
+    EMAIL_USER = st.secrets.get("atom.v.nguyen@gmail.com")
+    EMAIL_PASS = st.secrets.get("iqyq aknx rtfx sxhq")
+    EMAIL_TO = st.secrets.get("atom.v.nguyen@gmail.com", EMAIL_USER)
+except:
+    from dotenv import load_dotenv
+    load_dotenv()
+    EMAIL_USER = os.getenv("atom.v.nguyen@gmail.com")
+    EMAIL_PASS = os.getenv("iqyq aknx rtfx sxhq")
+    EMAIL_TO = os.getenv("atom.v.nguyen@gmail.com", EMAIL_USER)
 
-def send_trade_email(subject, content):
-    email_sender = os.getenv("atom.v.nguyen@gmail.com")
-    email_password = os.getenv("iqyq aknx rtfx sxhq")
-    email_receiver = os.getenv("atom.v.nguyen@gmail.com")  # send to yourself for now
-
+def send_email_alert(subject: str, body: str, to: str = EMAIL_TO):
     msg = EmailMessage()
-    msg['From'] = email_sender
-    msg['To'] = email_receiver
-    msg['Subject'] = subject
-    msg.set_content(content)
+    msg["From"] = EMAIL_USER
+    msg["To"] = to
+    msg["Subject"] = subject
+    msg.set_content(body)
 
     context = ssl.create_default_context()
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
-        smtp.login(email_sender, email_password)
-        smtp.send_message(msg)
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
+            smtp.login(EMAIL_USER, EMAIL_PASS)
+            smtp.send_message(msg)
+        print("✅ Email sent.")
+    except Exception as e:
+        print(f"❌ Failed to send email: {e}")
