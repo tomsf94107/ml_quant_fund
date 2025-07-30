@@ -1,4 +1,3 @@
-# retrain_forecasts.py
 import pandas as pd
 import os
 from forecast_utils import run_auto_retrain_all
@@ -28,12 +27,10 @@ def main():
         return
 
     if not eval_df.empty:
-        os.makedirs("ml_quant_fund", exist_ok=True)
-        output_path = os.path.join("ml_quant_fund", "forecast_metrics.csv")
+        output_path = "forecast_metrics.csv"  # ✅ Save to root
         eval_df.to_csv(output_path, index=False)
         print("📈 Saved forecast_metrics.csv at:", output_path)
 
-        # ✅ Add this check to confirm creation
         if os.path.exists(output_path):
             print("✅ File successfully created at:", output_path)
         else:
