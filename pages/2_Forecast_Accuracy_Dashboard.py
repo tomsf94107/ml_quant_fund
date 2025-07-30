@@ -1,46 +1,112 @@
-#v3 with Batch Retrain tool added on sidebar
+# v3.2 — Forecast Accuracy Dashboard (Merged Final Version)
 
 import pandas as pd
 import streamlit as st
-from forecast_utils import get_gsheet_logger
-from forecast_utils import run_auto_retrain_all, load_forecast_tickers
+import matplotlib.pyplot as plt
+import os
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from forecast_utils import get_gsheet_logger, run_auto_retrain_all
 
-
+st.set_page_config(layout="wide")
 st.title("📊 Forecast Accuracy Dashboard")
 
-# ---- Load Data from Google Sheet ----
+# ---- Load from Google Sheets ----
 def load_accuracy_log_from_gsheet():
-    try:
-        sheet = get_gsheet_logger()
-        data = sheet.get_all_records()
-        return pd.DataFrame(data)
-    except Exception as e:
-        st.error(f"❌ Failed to load forecast logs: {e}")
-        return pd.DataFrame()
+    sheet = get_gsheet_logger()
+    data = sheet.get_all_records()
+    return pd.DataFrame(data)
 
-acc_df = load_accuracy_log_from_gsheet()
+# ---- Fallback: Local Forecast Logs ----
+def load_eval_data_from_csv():
+    dfs = []
+    folder = "forecast_logs"
+    if not os.path.exists(folder):
+        return pd.DataFrame()
+    for file in os.listdir(folder):
+        if file.endswith("_xgb_log.csv"):
+            df = pd.read_csv(os.path.join(folder, file))
+            dfs.append(df)
+    return pd.concat(dfs, ignore_index=True) if dfs else pd.DataFrame()
+
+# ---- Try Sheets First ----
+try:
+    acc_df = load_accuracy_log_from_gsheet()
+    source = "Google Sheets ✅"
+except Exception as e:
+    st.warning(f"⚠️ Google Sheets failed: {e}")
+    acc_df = load_eval_data_from_csv()
+    source = "Local CSV fallback 🗂"
+
 if acc_df.empty:
+    st.error("❌ No accuracy data found.")
     st.stop()
 
-# ---- Clean + Process ----
+st.caption(f"📂 Data Source: {source}")
+
+# ---- Sidebar Controls ----
 acc_df['timestamp'] = pd.to_datetime(acc_df['timestamp'])
-acc_df = acc_df.sort_values("timestamp", ascending=False)
+with st.sidebar:
+    st.header("📂 Filters")
+    tickers = sorted(acc_df["ticker"].unique())
+    selected = st.multiselect("Select tickers", tickers, default=tickers)
+    date_range = st.date_input(
+        "Select date range",
+        [acc_df["timestamp"].min().date(), acc_df["timestamp"].max().date()]
+    )
+    if st.button("🔁 Run Batch Retrain"):
+        run_auto_retrain_all()
+        st.success("✅ Batch retrain complete!")
 
-# ---- Per-Ticker Filter ----
-unique_tickers = acc_df['ticker'].unique().tolist()
-def_tickers = unique_tickers[:5]
-selected = st.multiselect("Select tickers to view:", unique_tickers, default=def_tickers)
-acc_df = acc_df[acc_df['ticker'].isin(selected)]
+# ---- Apply Filters ----
+filtered = acc_df[
+    (acc_df["ticker"].isin(selected)) &
+    (acc_df["timestamp"].dt.date >= date_range[0]) &
+    (acc_df["timestamp"].dt.date <= date_range[1])
+]
 
-# ---- Show Only Latest Per Ticker ----
-latest_only = st.checkbox("Show only latest log per ticker", value=True)
-if latest_only:
-    acc_df = acc_df.sort_values("timestamp", ascending=False).drop_duplicates(subset="ticker", keep="first")
+if filtered.empty:
+    st.warning("⚠️ No logs match current filters.")
+    st.stop()
 
-# ---- View Table + Charts ----
-st.dataframe(acc_df.reset_index(drop=True))
+# ---- Latest Metrics Per Ticker ----
+latest_df = (
+    filtered.sort_values("timestamp")
+    .groupby("ticker")
+    .tail(1)
+    .sort_values("r2", ascending=False)
+)
 
-if not acc_df.empty:
-    st.subheader("📈 Trend Over Time")
-    chart_df = acc_df.sort_values("timestamp")
-    st.line_chart(chart_df.set_index("timestamp")[["mae", "mse", "r2"]])
+# ---- Calculate delta_r2 (improvement vs previous log) ----
+latest_df["delta_r2"] = latest_df["r2"] - (
+    filtered.groupby("ticker")["r2"]
+    .nth(-2)
+    .reindex(latest_df["ticker"])
+    .values
+)
+
+st.subheader("🏅 Latest Forecast Performance Per Ticker")
+st.dataframe(
+    latest_df.set_index("ticker")[["timestamp", "mae", "mse", "r2", "delta_r2"]],
+    use_container_width=True
+)
+
+# ---- Metric Comparison Chart ----
+st.subheader("📈 Visual Comparison")
+metric = st.selectbox("Select metric to compare", ["mae", "mse", "r2", "delta_r2"])
+
+fig, ax = plt.subplots(figsize=(10, 5))
+sorted_df = latest_df.sort_values(metric, ascending=(metric != "r2" and metric != "delta_r2"))
+ax.barh(sorted_df["ticker"], sorted_df[metric], color="skyblue")
+ax.set_xlabel(metric.upper())
+ax.set_title(f"{metric.upper()} by Ticker")
+st.pyplot(fig)
+
+# ---- Trend Chart ----
+st.subheader("📉 Trend Over Time")
+chart_df = filtered.sort_values("timestamp")
+st.line_chart(chart_df.set_index("timestamp")[["mae", "mse", "r2"]])
+
+# ---- Download ----
+csv = latest_df.to_csv(index=False).encode()
+st.download_button("📥 Download Latest Accuracy Log", csv, file_name="latest_forecast_scores.csv")
