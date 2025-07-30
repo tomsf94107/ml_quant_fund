@@ -31,9 +31,9 @@ jobs:
         with:
           name: forecast-logs
           path: forecast_logs/
-          
+
       - name: 📊 Upload evaluation metrics
         uses: actions/upload-artifact@v4
         with:
           name: forecast-metrics
-          path: ml_quant_fund/forecast_metrics.csv  # ✅ Corrected path
+          path: forecast_metrics.csv  # ✅ Now matches updated script location
