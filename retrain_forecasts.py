@@ -27,7 +27,8 @@ def main():
         return
 
     if not eval_df.empty:
-        output_path = "forecast_metrics.csv"  # ✅ Save to root
+        os.makedirs("ml_quant_fund", exist_ok=True)  # Make sure folder exists
+        output_path = os.path.join("ml_quant_fund", "forecast_metrics.csv")
         eval_df.to_csv(output_path, index=False)
         print("📈 Saved forecast_metrics.csv at:", output_path)
 
@@ -35,8 +36,6 @@ def main():
             print("✅ File successfully created at:", output_path)
         else:
             print("❌ File was NOT found after saving!")
-    else:
-        print("⚠️ No evaluation metrics to save.")
 
     print("✅ Retraining complete.")
 
