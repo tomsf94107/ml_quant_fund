@@ -27,12 +27,11 @@ def main():
     if isinstance(eval_df, pd.DataFrame) and not eval_df.empty:
         eval_df.to_csv("forecast_metrics.csv", index=False)
         print("📈 Saved forecast_metrics.csv for upload.")
+        print("📁 forecast_metrics.csv exists?", os.path.exists("forecast_metrics.csv"))
     else:
         print("⚠️ No evaluation metrics to save.")
 
     print("✅ Retraining complete.")
-
-
 
 if __name__ == "__main__":
     main()
