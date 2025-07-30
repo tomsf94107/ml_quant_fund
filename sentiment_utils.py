@@ -1,188 +1,118 @@
-# v2.3 forecast_utils.py — Prophet Forecasting + Google Sheets via st.secrets (Streamlit Cloud ready)
+# sentiment_utils.py v3.4-final — adds ticker None/empty guard in fetch_news_titles()
 
 import os
-import json
+import datetime
+import requests
+import certifi
 import pandas as pd
-import numpy as np
-from prophet import Prophet
-from datetime import datetime, timedelta
-import yfinance as yf
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+import csv
+import torch
+from collections import Counter
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-# Google Sheets via Streamlit Secrets
-import gspread
-import streamlit as st
-from oauth2client.service_account import ServiceAccountCredentials
+# ✅ Optional: load from .env if not running in Streamlit
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except:
+    pass
 
-# -------- Paths --------
-LOG_DIR = "forecast_logs"
-EVAL_DIR = "forecast_eval"
-GSHEET_NAME = "forecast_evaluation_log"
+# ✅ Streamlit secrets fallback
+try:
+    import streamlit as st
+    ST_SECRETS = st.secrets
+except ImportError:
+    ST_SECRETS = {}
 
-os.makedirs(LOG_DIR, exist_ok=True)
-os.makedirs(EVAL_DIR, exist_ok=True)
+# ✅ SSL Fix (macOS crash fix)
+os.environ["SSL_CERT_FILE"] = certifi.where()
 
-# -------- Google Sheets Utils --------
-def get_gsheet_logger():
+# ✅ Load FinBERT once (cached)
+FINBERT_PATH = "yiyanghkust/finbert-tone"
+_tokenizer = None
+_model = None
+
+def load_finbert():
+    global _tokenizer, _model
+    if _tokenizer is None or _model is None:
+        _tokenizer = AutoTokenizer.from_pretrained(FINBERT_PATH)
+        _model = AutoModelForSequenceClassification.from_pretrained(FINBERT_PATH)
+    return _tokenizer, _model
+
+# ✅ Helper: summarize predictions
+def summarize_sentiments(sentiments: list[str]) -> dict:
+    counter = Counter(sentiments)
+    total = sum(counter.values())
+    return {
+        "positive": round(counter["positive"] / total * 100, 2) if total else 0.0,
+        "neutral": round(counter["neutral"] / total * 100, 2) if total else 0.0,
+        "negative": round(counter["negative"] / total * 100, 2) if total else 0.0,
+    }
+
+# ✅ News fetcher with fallback
+def fetch_news_titles(ticker: str) -> list[str]:
+    if not ticker or not isinstance(ticker, str):
+        print("⚠️ fetch_news_titles() received invalid or empty ticker.")
+        return []
+
+    api_key = os.getenv("NEWS_API_KEY") or ST_SECRETS.get("NEWS_API_KEY")
+    if not api_key:
+        raise RuntimeError("❌ Missing NEWS_API_KEY in environment or Streamlit secrets.")
+
+    url = f"https://newsapi.org/v2/everything?q={ticker}&apiKey={api_key}&pageSize=10&sortBy=publishedAt"
     try:
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        creds_dict = st.secrets["gcp_service_account"]  # Already a dict!
-        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
-        client = gspread.authorize(creds)
-        return client.open(GSHEET_NAME).sheet1
+        res = requests.get(url, timeout=5)
+        res.raise_for_status()
+        articles = res.json().get("articles", [])
+        return [
+            (a.get("title") or "") + " " + (a.get("description") or "")
+            for a in articles if a.get("title") or a.get("description")
+        ]
     except Exception as e:
-        st.error(f"❌ Sheets auth failed: {e}")
-        return None
+        print(f"❌ NewsAPI error: {e}")
+        return []
 
-def log_eval_to_gsheet(ticker, mae, mse, r2):
-    sheet = get_gsheet_logger()
-    if sheet:
-        try:
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            sheet.append_row([now, ticker, round(mae, 2), round(mse, 2), round(r2, 4)])
-            st.success(f"✅ Logged to Google Sheets: {ticker}")
-        except Exception as e:
-            st.warning(f"⚠️ Sheets logging failed: {e}")
+# ✅ FinBERT scorer (returns score polarity)
+def analyze_with_finbert(texts: list[str]):
+    tokenizer, model = load_finbert()
+    inputs = tokenizer(texts, padding=True, truncation=True, max_length=512, return_tensors="pt")
+    with torch.no_grad():
+        outputs = model(**inputs)
+    probs = torch.nn.functional.softmax(outputs.logits, dim=-1)
+    return probs[:, 2] - probs[:, 0]
 
-# -------- 3-Month Forecast --------
-def forecast_price_trend(ticker: str, start_date=None, end_date=None, period_months=3, log_results=True):
-    if end_date is None:
-        end_date = datetime.today()
-    if start_date is None:
-        start_date = end_date - timedelta(days=5 * 365)
+# ✅ Main function: get sentiment for ticker
+def get_sentiment_scores(ticker: str, log_to_csv=False) -> dict:
+    try:
+        news = fetch_news_titles(ticker)
+        if not news:
+            return {"positive": 0.0, "neutral": 0.0, "negative": 0.0}
 
-    df = yf.download(ticker, start=start_date, end=end_date, auto_adjust=True)
-    if df.empty or 'Close' not in df:
-        return None, f"No data found for {ticker}"
-    if len(df) < 60:
-        return None, f"⚠️ Not enough historical data for {ticker} (min 60 rows)"
+        scores = analyze_with_finbert(news)
+        sentiments = []
+        for s in scores.tolist():
+            if s >= 0.05:
+                sentiments.append("positive")
+            elif s <= -0.05:
+                sentiments.append("negative")
+            else:
+                sentiments.append("neutral")
 
-    df_prophet = df[['Close']].reset_index()
-    df_prophet.columns = ['ds', 'y']
+        summary = summarize_sentiments(sentiments)
 
-    model = Prophet(daily_seasonality=True)
-    model.fit(df_prophet)
+        if log_to_csv:
+            today = datetime.datetime.now().strftime("%Y-%m-%d")
+            filename = "sentiment_scores.csv"
+            file_exists = os.path.isfile(filename)
+            with open(filename, mode="a", newline="") as f:
+                writer = csv.writer(f)
+                if not file_exists:
+                    writer.writerow(["date", "ticker", "positive", "neutral", "negative"])
+                writer.writerow([today, ticker, summary["positive"], summary["neutral"], summary["negative"]])
 
-    future = model.make_future_dataframe(periods=period_months * 30)
-    forecast = model.predict(future)
-    if forecast.empty or 'yhat' not in forecast.columns:
-        return None, f"⚠️ Forecast failed for {ticker} — Prophet output invalid"
+        print(f"✅ {ticker} Sentiment: {summary}")
+        return summary
 
-    result_df = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-    actuals = df[['Close']].reset_index()
-    actuals.columns = ['ds', 'actual']
-    result_df = pd.merge(result_df, actuals, on='ds', how='left')
-
-    if log_results:
-        log_path = os.path.join(LOG_DIR, f"forecast_{ticker}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
-        result_df.to_csv(log_path, index=False)
-
-    return result_df, None
-
-# -------- Intraday Heuristic Forecast --------
-def forecast_today_movement(ticker: str, log_results=True):
-    df = yf.download(ticker, period="7d", interval="1h", auto_adjust=True)
-    if df.empty or 'Close' not in df:
-        return None, "No intraday data available"
-
-    df['Return'] = df['Close'].pct_change()
-    df['Trend'] = df['Return'].rolling(window=3).mean()
-    latest_trend = df['Trend'].iloc[-1]
-    latest_pct = df['Return'].iloc[-1] * 100 if not np.isnan(df['Return'].iloc[-1]) else 0
-
-    if latest_trend > 0.001:
-        signal = f"📈 Likely Uptrend Today ({latest_pct:.2f}%)"
-    elif latest_trend < -0.001:
-        signal = f"📉 Likely Downtrend Today ({latest_pct:.2f}%)"
-    else:
-        signal = f"🔄 Flat or Unclear Trend ({latest_pct:.2f}%)"
-
-    if log_results:
-        log_path = os.path.join(LOG_DIR, f"intraday_{ticker}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
-        df.to_csv(log_path)
-
-    return signal, None
-
-# -------- Evaluation / Retrain --------
-def auto_retrain_forecast_model(ticker: str):
-    logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{ticker}_")]
-    if not logs:
-        print(f"⏭️ Skipping {ticker} — no forecast logs.")
-        return
-
-    latest_log = sorted(logs)[-1]
-    forecast_df = pd.read_csv(os.path.join(LOG_DIR, latest_log))
-    forecast_df['ds'] = pd.to_datetime(forecast_df['ds'])
-
-    start = forecast_df['ds'].min()
-    end = forecast_df['ds'].max()
-    actuals = yf.download(ticker, start=start, end=end, auto_adjust=True)
-    if actuals.empty or 'Close' not in actuals:
-        print(f"⚠️ Skipping {ticker} — no actual price data.")
-        return
-
-    actual_df = actuals[['Close']].reset_index()
-    actual_df.columns = ['ds', 'actual']
-    actual_df['ds'] = pd.to_datetime(actual_df['ds'])
-
-    joined = pd.merge(forecast_df, actual_df, on='ds', how='inner')
-    if 'actual' not in joined.columns or 'yhat' not in joined.columns:
-        print(f"⚠️ Skipping {ticker} — joined data missing 'actual' or 'yhat' columns.")
-        return
-
-    y_true = joined['actual']
-    y_pred = joined['yhat']
-    mse = mean_squared_error(y_true, y_pred)
-    mae = mean_absolute_error(y_true, y_pred)
-    r2 = r2_score(y_true, y_pred)
-
-    print(f"[{ticker}] Forecast Evaluation — MAE: {mae:.2f}, MSE: {mse:.2f}, R²: {r2:.2f}")
-
-    # Local CSV Backup
-    eval_path = os.path.join(EVAL_DIR, "forecast_evals.csv")
-    row = pd.DataFrame([{
-        "timestamp": datetime.now(),
-        "ticker": ticker,
-        "mae": mae,
-        "mse": mse,
-        "r2": r2
-    }])
-    if os.path.exists(eval_path):
-        row.to_csv(eval_path, mode="a", header=False, index=False)
-    else:
-        row.to_csv(eval_path, index=False)
-
-    # Google Sheets logging
-    log_eval_to_gsheet(ticker, mae, mse, r2)
-
-# -------- Direction Accuracy --------
-def compute_rolling_accuracy(log_path):
-    df = pd.read_csv(log_path, parse_dates=['ds']).sort_values('ds')
-    if 'yhat' not in df.columns or 'actual' not in df.columns:
-        print(f"⚠️ Skipping accuracy calc — missing columns in {log_path}")
-        return pd.DataFrame()
-    df['pred_direction'] = df['yhat'].diff().apply(lambda x: 1 if x > 0 else -1)
-    df['actual_direction'] = df['actual'].diff().apply(lambda x: 1 if x > 0 else -1)
-    df['correct'] = df['pred_direction'] == df['actual_direction']
-    df['7d_accuracy'] = df['correct'].rolling(window=7).mean()
-    df['30d_accuracy'] = df['correct'].rolling(window=30).mean()
-    return df[['ds', '7d_accuracy', '30d_accuracy', 'correct']]
-
-# -------- Batch Retrain --------
-def run_auto_retrain_all(ticker_list=None):
-    if ticker_list is None:
-        ticker_list = ["AAPL", "MSFT"]
-    for tkr in ticker_list:
-        try:
-            print(f"🔁 Retraining: {tkr}")
-            auto_retrain_forecast_model(tkr)
-        except Exception as e:
-            print(f"❌ Error retraining {tkr}: {e}")
-
-# -------- Latest Forecast Log Finder --------
-def get_latest_forecast_log(ticker: str):
-    logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{ticker}_")]
-    if not logs:
-        return None
-    latest = sorted(logs)[-1]
-    return os.path.join(LOG_DIR, latest)
+    except Exception as e:
+        print(f"Sentiment error for {ticker}: {e}")
+        return {"positive": 0.0, "neutral": 0.0, "negative": 0.0}
