@@ -28,13 +28,13 @@ jobs:
           python retrain_forecasts.py
 
       - name: 📤 Upload updated logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: forecast-logs
           path: forecast_logs/
 
-      - name: 📤 Upload evaluation metrics
-        uses: actions/upload-artifact@v3
+      - name: 📊 Upload evaluation metrics
+        uses: actions/upload-artifact@v4
         with:
           name: forecast-metrics
           path: forecast_metrics.csv
