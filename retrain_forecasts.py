@@ -12,13 +12,18 @@ def load_tickers(path="tickers.csv"):
 def main():
     print("🚀 Starting scheduled retraining...")
     tickers = load_tickers()
+    print(f"🔍 Loaded tickers: {tickers}")
     if not tickers:
         print("⚠️ No tickers found.")
         return
 
     eval_df = run_auto_retrain_all(tickers)
 
-    # ✅ Save evaluation results for GitHub Actions to upload
+    if isinstance(eval_df, pd.DataFrame):
+        print(f"📊 eval_df shape: {eval_df.shape}")
+    else:
+        print("❌ eval_df is not a DataFrame")
+
     if isinstance(eval_df, pd.DataFrame) and not eval_df.empty:
         eval_df.to_csv("forecast_metrics.csv", index=False)
         print("📈 Saved forecast_metrics.csv for upload.")
@@ -26,6 +31,7 @@ def main():
         print("⚠️ No evaluation metrics to save.")
 
     print("✅ Retraining complete.")
+
 
 
 if __name__ == "__main__":
