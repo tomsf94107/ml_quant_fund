@@ -1,19 +1,20 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v17.8  •  “best-of-both” – combines all v17.6 features + v17.7 fixes
+#  v17.9  •  Added sys.path fix for Streamlit import issues
 # ────────────────────────────────────────────────────────────────────────────
 import os, sys, io, zipfile, base64, tempfile
 from dotenv import load_dotenv
 load_dotenv()
 
-sys.path.append(os.path.abspath("."))
+# 🔧 NEW FIX — ensure root path is added for module imports in Streamlit
+dir_above = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+if dir_above not in sys.path:
+    sys.path.append(dir_above)
 
 # ----- numeric / plotting ----------------------------------------------------
-
 import numpy as np
 # ----- compatibility shims for NumPy ≥2.0 -------------------------------
 if not hasattr(np, "bool"): np.bool = np.bool_   # already in your file
 if not hasattr(np, "int"):  np.int  = int        # ← add this line
-
 
 import pandas as pd
 import matplotlib.pyplot as plt
