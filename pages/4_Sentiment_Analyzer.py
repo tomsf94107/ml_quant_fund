@@ -1,6 +1,4 @@
-#sentiment_app v2
-
-# sentiment_app.py v2.1 — with password protection and dependency fix
+# sentiment_app.py v2.2 — Secure, with sector sentiment, fallback, metrics
 
 import os
 import datetime
@@ -15,9 +13,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
-st.set_page_config(page_title="Sentiment Analyzer", layout="wide")
-
 # 🔐 Password Protection
 def check_login():
     password = st.text_input("Enter password:", type="password")
@@ -26,7 +21,12 @@ def check_login():
 
 check_login()
 
-# ✅ Environment
+# ✅ Title
+st.set_page_config(page_title="Sentiment Analyzer", layout="wide")
+st.title("🧠 Live Stock Sentiment Analyzer")
+st.caption(f"🕒 Updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+# ✅ Setup
 os.environ["SSL_CERT_FILE"] = certifi.where()
 load_dotenv()
 
@@ -37,6 +37,7 @@ SECTORS = {
     "Healthcare": ["PFE", "JNJ", "MRK", "UNH"]
 }
 
+# ✅ Cache Resources
 @st.cache_resource(show_spinner="🔁 Loading FinBERT...")
 def load_finbert():
     tokenizer = AutoTokenizer.from_pretrained(FINBERT_PATH)
@@ -47,6 +48,9 @@ def load_finbert():
 def load_fallback():
     return pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
 
+FALLBACK_MODEL = load_fallback()  # Load once at top level
+
+# ✅ Sentiment Helpers
 def summarize_sentiments(sentiments: list[str]) -> dict:
     counter = Counter(sentiments)
     total = sum(counter.values())
@@ -96,19 +100,19 @@ def get_sentiment_scores(ticker: str) -> dict:
     except Exception as e:
         st.warning(f"⚠️ FinBERT failed, using fallback: {e}")
         try:
-            fallback = load_fallback()
-            sentiments = [s["label"].lower() for s in fallback(news)]
+            sentiments = [s["label"].lower() for s in FALLBACK_MODEL(news)]
         except Exception as fallback_e:
             st.error(f"❌ Fallback model failed: {fallback_e}")
             return {"news": {"positive": 0, "neutral": 0, "negative": 0}}
     return {"news": summarize_sentiments(sentiments)}
 
+# ✅ UI Helpers
 def generate_summary(name: str, sentiment: dict):
     pos = sentiment['positive']
     neg = sentiment['negative']
     neu = sentiment['neutral']
     mood = "bullish 📈" if pos > max(neg, neu) else "bearish 📉" if neg > max(pos, neu) else "mixed ⚖️"
-    return f"🗣️ For **{name}**, sentiment is currently *{mood}* — {pos}% 👍, {neu}% 😐, {neg}% 👎."
+    return f"🗣️ For **{name}**, sentiment is *{mood}* — {pos}% 👍, {neu}% 😐, {neg}% 👎."
 
 def plot_price_trend(ticker: str):
     data = yf.download(ticker, period="5d", interval="1h")
@@ -117,6 +121,7 @@ def plot_price_trend(ticker: str):
         return
     st.line_chart(data["Close"], use_container_width=True)
 
+# ✅ Sector-Level Summary
 def render_sector_sentiment():
     st.subheader("🏢 Sector-wide Sentiment View")
     sector_results = defaultdict(dict)
@@ -131,20 +136,27 @@ def render_sector_sentiment():
         st.dataframe(df)
         st.bar_chart(df)
 
-# ✅ Streamlit UI
-st.title("🧠 Live Stock Sentiment Analyzer")
-st.caption(f"🕒 Updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-
+# ✅ Main Ticker Sentiment
 ticker = st.text_input("Enter ticker (e.g., AAPL, MSFT):", value="AAPL")
 if st.button("Analyze"):
     with st.status(f"Analyzing sentiment for: {ticker.upper()}...", expanded=True):
         sentiment = get_sentiment_scores(ticker)
         st.success("✅ Analysis done.")
+
+        st.markdown("### 📊 Sentiment Breakdown")
+        col1, col2, col3 = st.columns(3)
+        col1.metric("👍 Positive", f"{sentiment['news']['positive']}%")
+        col2.metric("😐 Neutral", f"{sentiment['news']['neutral']}%")
+        col3.metric("👎 Negative", f"{sentiment['news']['negative']}%")
+
         st.bar_chart(sentiment["news"])
-        st.markdown("#### 💬 Summary")
+
+        st.markdown("### 💬 Summary")
         st.markdown(generate_summary(ticker.upper(), sentiment["news"]))
-        st.markdown("#### 💹 Price Trend")
+
+        st.markdown("### 💹 Price Trend")
         plot_price_trend(ticker)
 
+# ✅ Sector View
 st.divider()
 render_sector_sentiment()

@@ -136,7 +136,7 @@ def load_accuracy_log_from_gsheet():
         return pd.DataFrame()
 
 # ──────────────────────────  UI Config   ────────────────────────────────────
-st.set_page_config(layout="wide", page_title="ML Quant Dashboard")
+
 st_autorefresh(interval=5 * 60 * 1000, key="auto-refresh")
 st.title("📈 ML-Based Stock Strategy Dashboard")
 st.caption(f"🕒 Last updated {datetime.now():%Y-%m-%d %H:%M:%S}")
