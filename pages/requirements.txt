@@ -1,0 +1,24 @@
+certifi
+matplotlib
+numpy>=1.23,<2.0
+pandas
+python-dotenv
+requests
+scikit-learn
+shap==0.44.1
+streamlit==1.35.0
+streamlit-autorefresh
+torch
+transformers
+xgboost
+yfinance
+watchdog
+prophet
+plotly
+gspread
+oauth2client
+cmdstanpy
+pillow
+pandas-ta==0.3.14b0
+openpyxl         # if you ever export to Excel
+stqdm            # if you want Streamlit progress bars
