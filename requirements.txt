@@ -22,7 +22,7 @@ google-auth==2.40.3
 google-auth-oauthlib==1.2.2
 gspread==6.2.1
 hf-xet==1.1.5
-holidays==0.77
+holidays==0.25
 httplib2==0.22.0
 huggingface-hub==0.34.3
 idna==3.10
@@ -91,3 +91,5 @@ yfinance==0.2.65
 python-dotenv==1.0.1
 shap==0.45.0
 numpy==1.26.4
+streamlit-extras==0.4.1 
+numba==0.59.1
