@@ -13,7 +13,7 @@ prophet==1.1.7           # OK on Python<=3.11
 cmdstanpy==1.2.5
 transformers==4.54.1
 tokenizers==0.21.4
-torch==2.3.0+cpu         # latest CPU wheel on PyPI
+torch==2.3.0         # latest CPU wheel on PyPI
 huggingface-hub==0.34.3
 
 # --- viz / UI ---
