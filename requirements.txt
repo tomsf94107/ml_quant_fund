@@ -1,25 +1,33 @@
 # ───────── core ─────────────────────────────────────────────
-setuptools==69.5.1          # keep first – uv/pip rely on it
-python-dotenv==1.0.1        # env-vars for secrets
+setuptools==69.5.1
+python-dotenv==1.0.1
 
 # ───────── data stack ───────────────────────────────────────
-numpy==1.26.4               # latest 1.x wheel → fast install
+numpy==1.26.4
 pandas==2.3.1
-scikit-learn==1.7.1         # still pure wheel on Py 3.11
-xgboost==1.7.6              # binary wheel, no compile step
+scikit-learn==1.7.1
+xgboost==1.7.6
+
+# ───────── modelling / sentiment ────────────────────────────
+prophet==1.1.7
+cmdstanpy==1.2.5
+transformers==4.54.1
+tokenizers==0.21.4
+torch==2.7.1          # CPU wheel – fine on Streamlit Cloud
+huggingface-hub==0.34.3
 
 # ───────── viz / UI ─────────────────────────────────────────
 streamlit==1.47.1
-streamlit-extras==0.4.7     # pin to a Py 3.11 wheel
+streamlit-extras==0.4.7
 altair==5.5.0
 matplotlib==3.10.3
 
 # ───────── helpers ──────────────────────────────────────────
-yfinance==0.2.65            # market data
-pandas_ta==0.3.14b0         # technical indicators (pure-python)
-holidays==0.25              # US trading-day calendar
-tqdm==4.67.1                # nice progress bars
-requests==2.32.4            # HTTP backbone
+yfinance==0.2.65
+pandas_ta==0.3.14b0
+holidays==0.25
+tqdm==4.67.1
+requests==2.32.4
 
 # ───────── Google-Sheets logging (optional) ────────────────
 gspread==6.2.1
@@ -28,5 +36,9 @@ google-auth==2.40.3
 google-auth-oauthlib==1.2.2
 
 # ───────── misc runtimes  ──────────────────────────────────
-fsspec==2024.6.1            # file-like I/O used by pandas
-tenacity==9.1.2             # retry decorator
+fsspec==2024.6.1
+tenacity==9.1.2
+
+# ───────── SHAP (post-NumPy-2 fix) ─────────────────────────
+scikit-image==0.22.0   # needed by shap on NumPy 1.26+
+shap==0.45.0
