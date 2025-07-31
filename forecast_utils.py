@@ -1,4 +1,4 @@
-# v4.4 – created core.helpers_xgb import train_xgb_predict
+# v4.5 – the NaN-guard/zero-fill block before m.fit()
 # ─────────────────────────────────────────────────────────────────────────────
 import os
 from datetime import datetime, timedelta
@@ -156,8 +156,28 @@ def forecast_price_trend(tkr, start_date=None, end_date=None,
     m = Prophet(daily_seasonality=True)
     for reg in ["sent_positive", "sent_neutral", "sent_negative"]:
         m.add_regressor(reg)
-    m.fit(dfp)
+    
+    # ------------------------------------------------------------------
+    # 🛠 1. Guard against missing sentiment columns / NaNs
+    # ------------------------------------------------------------------
+    sent_cols = ["sent_positive", "sent_neutral", "sent_negative"]
 
+    # If the columns are missing (e.g. older logs) – create them full of 0s
+    for c in sent_cols:
+        if c not in dfp.columns:
+            dfp[c] = 0.0
+
+    # Fill any NaNs with 0 so Prophet doesn't raise "Found NaN"
+    dfp[sent_cols] = dfp[sent_cols].fillna(0)
+
+    # Optional: skip Prophet entirely if *all* sentiment values are still 0
+    if dfp[sent_cols].sum().sum() == 0:
+        return None, "No sentiment data for the selected period – showing price-only forecast soon."
+
+    # ------------------------------------------------------------------
+    # 2. Fit the model
+    # ------------------------------------------------------------------
+    m.fit(dfp)
     future = m.make_future_dataframe(periods=int(period_months*30))
     last_sent = dfp[["sent_positive", "sent_neutral", "sent_negative"]].iloc[-1]
     for reg in last_sent.index:      # keep sentiment constant into future
