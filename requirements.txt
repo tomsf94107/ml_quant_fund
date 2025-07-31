@@ -42,3 +42,6 @@ tenacity==9.1.2
 # --- SHAP ---
 scikit-image==0.22.0
 shap==0.45.0
+
+# --- auto refresh ----
+streamlit-autorefresh==1.0.1
