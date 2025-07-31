@@ -158,21 +158,26 @@ def forecast_price_trend(tkr, start_date=None, end_date=None,
         m.add_regressor(reg)
     
     # ------------------------------------------------------------------
-    # 🛠 1. Guard against missing sentiment columns / NaNs
+    # 🛠 1. # 🛡️  NaN-guard for sentiment columns
     # ------------------------------------------------------------------
-    sent_cols = ["sent_positive", "sent_neutral", "sent_negative"]
 
-    # If the columns are missing (e.g. older logs) – create them full of 0s
+
+    sent_cols = ["sent_positive", "sent_neutral", "sent_negative"]
     for c in sent_cols:
         if c not in dfp.columns:
             dfp[c] = 0.0
-
-    # Fill any NaNs with 0 so Prophet doesn't raise "Found NaN"
     dfp[sent_cols] = dfp[sent_cols].fillna(0)
 
-    # Optional: skip Prophet entirely if *all* sentiment values are still 0
-    if dfp[sent_cols].sum().sum() == 0:
-        return None, "No sentiment data for the selected period – showing price-only forecast soon."
+    # ---------------------------------------------------------------
+    # Decide whether there is *meaningful* sentiment to use
+    # ---------------------------------------------------------------
+    use_sent = dfp[sent_cols].sum().sum() != 0
+
+    # Build the Prophet model
+    m = Prophet(daily_seasonality=True)
+    if use_sent:
+        for reg in sent_cols:
+            m.add_regressor(reg)
 
     # ------------------------------------------------------------------
     # 2. Fit the model
