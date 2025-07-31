@@ -1,4 +1,4 @@
-# v4.1 – Core TA & Market Context
+# v4.2 – add SHAP and stabilize
 
 import os
 from datetime import datetime, timedelta
@@ -507,5 +507,24 @@ def run_auto_retrain_all(tickers):
         print("⚠️ No evaluation dataframes to combine.")
         return pd.DataFrame(columns=["ticker", "mae", "mse", "r2"])
 
+# ================= Try to import SHAP safely  ==================================
+try:
+    import shap
+    SHAP_AVAILABLE = True
+except Exception as e:
+    print("⚠️ SHAP import failed:", e)
+    SHAP_AVAILABLE = False
+
+def plot_shap(model, X, top_n=10):
+    if not SHAP_AVAILABLE:
+        print("⚠️ SHAP not available, skipping plot.")
+        return
+
+    try:
+        explainer = shap.Explainer(model, X)
+        shap_values = explainer(X)
+        shap.plots.bar(shap_values[:, :top_n])
+    except Exception as e:
+        print(f"❌ SHAP plot failed: {e}")
 
 # ==============================================================================
