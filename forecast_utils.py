@@ -480,12 +480,32 @@ def save_forecast_tickers(ticker_list):
             f.write(tkr.strip().upper() + "\n")
 
 
-def run_auto_retrain_all(ticker_list=None):
-    if ticker_list is None:
-        ticker_list = load_forecast_tickers()
-    for tkr in ticker_list:
+def run_auto_retrain_all(tickers):
+    import pandas as pd
+
+    eval_df_list = []
+
+    for ticker in tickers:
         try:
-            auto_retrain_forecast_model(tkr)
+            print(f"🔄 Retraining: {ticker}")
+            df = auto_retrain_forecast_model(ticker)  # returns eval DataFrame
+            if isinstance(df, pd.DataFrame):
+                eval_df_list.append(df)
+                print(f"✅ {ticker} retrained — shape: {df.shape}")
+            else:
+                print(f"⚠️ No evaluation returned for {ticker}")
         except Exception as e:
-            print(f"❌ Retrain error for {tkr}: {e}")
+            print(f"❌ Error retraining {ticker}: {e}")
+
+    print("📌 Inside run_auto_retrain_all — eval_df_list length:", len(eval_df_list))
+
+    if eval_df_list:
+        combined_df = pd.concat(eval_df_list, ignore_index=True)
+        print(f"📊 Combined eval_df shape: {combined_df.shape}")
+        return combined_df
+    else:
+        print("⚠️ No evaluation dataframes to combine.")
+        return pd.DataFrame(columns=["ticker", "mae", "mse", "r2"])
+
+
 # ==============================================================================
