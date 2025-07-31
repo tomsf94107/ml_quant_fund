@@ -19,10 +19,10 @@ if not hasattr(np, "int"):  np.int  = int        # ← add this line
 import pandas as pd
 import matplotlib.pyplot as plt
 import altair as alt
-import shap
 from sklearn.metrics import accuracy_score
 from datetime import datetime, date
 from core.helpers_xgb import train_xgb_predict  
+
 
 # ----- web / app -------------------------------------------------------------
 import streamlit as st
@@ -48,11 +48,21 @@ from forecast_utils import (
 )
 
 # ──────────────────────────  AUTH  ───────────────────────────────────────────
+
+
 def check_login():
+    if st.session_state.get("auth_ok"):
+        return                 # already authenticated
+
     pwd = st.text_input("Enter password:", type="password")
-    if pwd != st.secrets.get("app_password", "MlQ@nt@072025"):
+    if pwd == "":
         st.stop()
-check_login()
+    if pwd != st.secrets.get("app_password", "MlQ@nt@072025"):
+        st.error("❌ Wrong password")
+        st.stop()
+
+    st.session_state["auth_ok"] = True
+
 
 # ──────────────────────────  EMAIL  ──────────────────────────────────────────
 def send_alert_email(ticker: str, prob: float):
@@ -77,6 +87,7 @@ def plot_shap(model, X):
     • avoids utf-8 decode errors by passing a callable (model.predict)
     """
     try:
+        import shap
         # ── 0. sanity checks ────────────────────────────────────────────
         if X is None or len(X) == 0:
             st.warning("⚠️ No rows for SHAP.")
