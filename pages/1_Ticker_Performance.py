@@ -22,6 +22,7 @@ import altair as alt
 import shap
 from sklearn.metrics import accuracy_score
 from datetime import datetime, date
+from core.helpers_xgb import train_xgb_predict  
 
 # ----- web / app -------------------------------------------------------------
 import streamlit as st
@@ -38,7 +39,6 @@ from oauth2client.service_account import ServiceAccountCredentials
 # ----- your core utils -------------------------------------------------------
 from forecast_utils import (
     build_feature_dataframe,
-    train_xgb_predict,
     forecast_price_trend,
     forecast_today_movement,
     auto_retrain_forecast_model,
