@@ -91,5 +91,5 @@ yfinance==0.2.65
 python-dotenv==1.0.1
 shap==0.45.0
 numpy==1.26.4
-streamlit-extras==0.4.1 
+streamlit-extras==0.4.7 
 numba==0.59.1
