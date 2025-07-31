@@ -1,7 +1,5 @@
+# v4.4 – created core.helpers_xgb import train_xgb_predict
 # ─────────────────────────────────────────────────────────────────────────────
-# v4.3 – sentiment-aware XGB & Prophet · SHAP-safe · keeps all v4.2 helpers.  #
-# ─────────────────────────────────────────────────────────────────────────────
-
 import os
 from datetime import datetime, timedelta
 import numpy as np
@@ -19,6 +17,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from sentiment_utils import get_sentiment_scores
 from send_email import send_email_alert
+from core.helpers_xgb import train_xgb_predict
 
 # ─────────── PATHS / CONSTANTS ───────────────────────────────────────────────
 LOG_DIR, EVAL_DIR, INTRA_DIR = "forecast_logs", "forecast_eval", "logs"
@@ -121,34 +120,7 @@ def build_feature_dataframe(ticker: str,
     return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
 
 # ─────────── XGBOOST WITH SENTIMENT FEATURES ────────────────────────────────
-def _ensure_return(df):
-    if "Close" in df:
-        df["Return"] = df["Close"].pct_change()
-    elif "Return_1D" in df:
-        df["Return"] = df["Return_1D"]
-    else:
-        raise ValueError("Missing price return")
-    return df
 
-def train_xgb_predict(df: pd.DataFrame, horizon: int = 1):
-    df = _ensure_return(df)
-    df["Target"] = df["Close"].shift(-horizon)
-
-    base_feats = ["Close", "MA5", "MA10", "MA20", "Return"]
-    sent_feats = [c for c in df.columns if c.startswith("sent_")]
-    features   = base_feats + sent_feats
-    df = df.dropna(subset=features + ["Target"])
-
-    if len(df) < 10:
-        lp = df["Close"].iloc[-1]
-        return None, df[["Close"]].tail(3), None, [lp]*3, "⚠️ Fallback prediction"
-
-    X, y = df[features], df["Target"]
-    Xtr, Xts, ytr, yts = train_test_split(X, y, shuffle=False, test_size=0.2)
-    model = XGBRegressor(n_estimators=100)
-    model.fit(Xtr, ytr)
-    y_pred = model.predict(Xts)
-    return model, Xts, yts, y_pred, None
 
 def safe_train_xgb_with_retries(tkr, start=None, end=None,
                                 init_look=180, max_look=720, step=180):
