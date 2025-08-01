@@ -25,11 +25,8 @@ def fetch_congress_trades(ticker: str) -> pd.DataFrame:
     if not QUIVER_API_KEY:
         raise RuntimeError("Missing QUIVER_API_KEY for QuiverCongress ETL")
 
-    # NOTE: use the correct path with '/congress/trading'
-    url = (
-        "https://api.quiverquant.com/beta/historical/congress/trading"
-        f"?ticker={ticker}"
-    )
+    # ⚠️ Use the *congresstrading* endpoint (no slash)
+    url = f"https://api.quiverquant.com/beta/historical/congresstrading?ticker={ticker}"
     headers = {"Authorization": f"Token {QUIVER_API_KEY}"}
     resp = requests.get(url, headers=headers, timeout=8)
     resp.raise_for_status()
@@ -49,8 +46,8 @@ def fetch_congress_trades(ticker: str) -> pd.DataFrame:
     agg = (
         df.groupby("ds")
           .agg(
-              congress_net_shares      = ("shares", "sum"),
-              congress_active_members = ("memberName", "nunique"),
+             congress_net_shares      = ("shares", "sum"),
+             congress_active_members = ("memberName", "nunique")
           )
           .reset_index()
     )
