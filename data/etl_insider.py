@@ -1,81 +1,65 @@
-# data/etl_insider.py
-
 import os
-import re
-import requests
 import pandas as pd
 import feedparser
 from datetime import datetime
-from typing import List
+try:
+    import streamlit as st
+    ST_SECRETS = st.secrets
+except ImportError:
+    ST_SECRETS = {}
 
-# reuse your SEC headers (must include User-Agent with your contact info)
-from sentiment_utils import SEC_EDGAR_HEADERS
+SEC_HEADERS = {
+    "User-Agent": "MLQuantFund/0.1 (contact: your@email.com)"
+}
 
-
-def fetch_insider_trades(ticker: str, count: int = 20) -> pd.DataFrame:
+def fetch_insider_trades(ticker: str, count: int = 40) -> pd.DataFrame:
     """
-    Pull the most recent `count` Form 4 filings for `ticker` from SEC EDGAR.
-    Returns a DataFrame with columns:
-      - ds            : filing datetime (date)
-      - net_shares    : positive for net buys, negative for net sells
-      - num_buy_tx    : count of buy transactions
-      - num_sell_tx   : count of sell transactions
+    Fetch recent Form 4 insider trades from SEC RSS feed.
+    Returns a DataFrame with:
+      - ds: date
+      - net_shares: total shares bought - sold
+      - num_buy_tx: number of buy transactions
+      - num_sell_tx: number of sell transactions
     """
-    # Build the Atom feed URL for Form 4 filings
+    cik = ticker.upper()
     url = (
-        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&"
-        f"CIK={ticker}&type=4&owner=include&count={count}&output=atom"
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany"
+        f"&CIK={cik}&type=4&owner=only&count={count}&output=atom"
     )
 
-    resp = requests.get(url, headers=SEC_EDGAR_HEADERS, timeout=8)
-    resp.raise_for_status()
+    try:
+        feed = feedparser.parse(url)
+        trades = []
+        for entry in feed.entries:
+            title = entry.get("title", "").lower()
+            date = entry.get("updated", "") or entry.get("published", "")
+            ds = pd.to_datetime(date).date() if date else None
+            if not ds:
+                continue
+            buy = "purchase" in title or "buy" in title
+            sell = "sale" in title or "sell" in title
+            net = 0
+            if buy and not sell:
+                net = 1
+            elif sell and not buy:
+                net = -1
+            trades.append({"ds": ds, "net_shares": net, "buy": int(buy), "sell": int(sell)})
 
-    feed = feedparser.parse(resp.text)
-    records: List[dict] = []
+        if not trades:
+            return pd.DataFrame()
 
-    for entry in feed.entries:
-        # parse the filing date
-        try:
-            ds = datetime.strptime(entry.published, "%Y-%m-%dT%H:%M:%SZ")
-        except Exception:
-            continue
-
-        # fetch the raw XML version of the filing
-        filing_url = entry.link.replace("-index.htm", ".xml")
-        xml = requests.get(filing_url, headers=SEC_EDGAR_HEADERS, timeout=8).text
-
-        # sum up all Acquired vs Disposed shares
-        buy_shares  = sum(
-            int(x.replace(",", ""))
-            for x in re.findall(
-                r"<transactionAcquiredDisposedCode>\s*Acquired\s*</transactionAcquiredDisposedCode>.*?<transactionShares>\s*([\d,]+)\s*</transactionShares>",
-                xml,
-                flags=re.S,
-            )
+        df = pd.DataFrame(trades)
+        agg = (
+            df.groupby("ds")
+              .agg(
+                  net_shares=("net_shares", "sum"),
+                  num_buy_tx=("buy", "sum"),
+                  num_sell_tx=("sell", "sum"),
+              )
+              .reset_index()
         )
-        sell_shares = sum(
-            int(x.replace(",", ""))
-            for x in re.findall(
-                r"<transactionAcquiredDisposedCode>\s*Disposed\s*</transactionAcquiredDisposedCode>.*?<transactionShares>\s*([\d,]+)\s*</transactionShares>",
-                xml,
-                flags=re.S,
-            )
-        )
+        return agg
 
-        # count number of buy vs sell transactions
-        buy_count  = len(re.findall(r"<transactionAcquiredDisposedCode>\s*Acquired\s*</transactionAcquiredDisposedCode>", xml))
-        sell_count = len(re.findall(r"<transactionAcquiredDisposedCode>\s*Disposed\s*</transactionAcquiredDisposedCode>", xml))
-
-        records.append({
-            "ds": ds.date(),
-            "net_shares": buy_shares - sell_shares,
-            "num_buy_tx": buy_count,
-            "num_sell_tx": sell_count,
-        })
-
-    # build and return a date-sorted DataFrame
-    df = pd.DataFrame(records)
-    if df.empty:
-        return df
-
-    return df.sort_values("ds").reset_index(drop=True)
+    except Exception as e:
+        print(f"❌ Insider ETL error for {ticker}: {e}")
+        return pd.DataFrame()
