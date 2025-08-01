@@ -297,7 +297,7 @@ def _finbert_polarity(texts: List[str]) -> List[float]:
 # Public API
 # ------------------------------------------------------------------
 
-ef get_sentiment_scores(
+def get_sentiment_scores(
     ticker: str,
     sources: List[str] | None = None,
     *,
