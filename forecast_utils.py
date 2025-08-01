@@ -1,31 +1,28 @@
-# v4.5 – add Congress Trades + Insider Trades
-# ─────────────────────────────────────────────────────────────────────────────
+# forecast_utils.py v4.6 – add Congress Trades + Insider Trades
+# ---------------------------------------------------------------------------
 import os
 from datetime import datetime, timedelta
+
 import numpy as np
 import pandas as pd
 import yfinance as yf
 from prophet import Prophet
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import (
-    mean_absolute_error, mean_squared_error, r2_score
-)
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from xgboost import XGBRegressor
 import pandas_ta as ta
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+
 from sentiment_utils import get_sentiment_scores
 from send_email import send_email_alert
 from core.helpers_xgb import train_xgb_predict
-from data.etl_congress import fetch_congress_trades
-from data.etl_insider  import fetch_insider_trades
+#from data.etl_congress import fetch_congress_trades
+from data.etl_insider import fetch_insider_trades
 
-
-# ──────────────────────────────────────────────────────────────────────────── 
-# ─           PATHS / CONSTANTS                                              ─
-# ──────────────────────────────────────────────────────────────────────────── 
-
+# ────────────────────────────────────────────────────────────────────────────
+# Paths / Constants
 LOG_DIR, EVAL_DIR, INTRA_DIR = "forecast_logs", "forecast_eval", "logs"
 GSHEET_NAME, TICKER_FILE     = "forecast_evaluation_log", "tickers.csv"
 SPY_TICKER, SECTOR_ETF       = "SPY", "XLK"
@@ -34,13 +31,15 @@ VOL_LOOKBACK_Z               = 20
 for _d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
     os.makedirs(_d, exist_ok=True)
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# ─           GOOGLE-SHEETS LOGGER                                           ─
-# ──────────────────────────────────────────────────────────────────────────── 
+# ────────────────────────────────────────────────────────────────────────────
+# Google Sheets Logger
+# ---------------------------------------------------------------------------
 def _get_gsheet_logger():
     try:
-        scope = ["https://spreadsheets.google.com/feeds",
-                 "https://www.googleapis.com/auth/drive"]
+        scope = [
+            "https://spreadsheets.google.com/feeds",
+            "https://www.googleapis.com/auth/drive",
+        ]
         creds = ServiceAccountCredentials.from_json_keyfile_dict(
             st.secrets["gcp_service_account"], scope
         )
@@ -49,27 +48,34 @@ def _get_gsheet_logger():
         st.error(f"❌ Sheets auth failed: {e}")
         return None
 
+
 def log_eval_to_gsheet(tkr, mae, mse, r2):
     sh = _get_gsheet_logger()
     if not sh:
         return
     try:
-        sh.append_row([datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                       tkr, round(mae, 2), round(mse, 2), round(r2, 4)])
+        sh.append_row([
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            tkr,
+            round(mae, 2),
+            round(mse, 2),
+            round(r2, 4),
+        ])
     except Exception as e:
         st.warning(f"⚠️ Sheets logging failed: {e}")
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# ─           FEATURE-ENGINEERING                                            ─
-# ──────────────────────────────────────────────────────────────────────────── 
-
-def build_feature_dataframe(ticker: str,
-                            start=None,
-                            end=None,
-                            lookback: int = 180,
-                            min_rows: int = 200) -> pd.DataFrame:
+# ────────────────────────────────────────────────────────────────────────────
+# Feature-Engineering
+# ---------------------------------------------------------------------------
+def build_feature_dataframe(
+    ticker: str,
+    start=None,
+    end=None,
+    lookback: int = 180,
+    min_rows: int = 200
+) -> pd.DataFrame:
     """
-    Download OHLCV → congressional + insider trades → TA → context → sentiment → clean.
+    Download OHLCV → congressional + insider trades → TA → market context → sentiment → clean.
     """
     # 1) Download price history
     if start and end:
@@ -86,14 +92,14 @@ def build_feature_dataframe(ticker: str,
         return pd.DataFrame()
 
     # 2) Congressional trades (Q6)
-    try:
-        cong = fetch_congress_trades(ticker).set_index("ds")
-        df["congress_net_shares"]     = cong["congress_net_shares"].reindex(df.index, method="ffill").fillna(0)
-        df["congress_active_members"] = cong["congress_active_members"].reindex(df.index, method="ffill").fillna(0)
-    except Exception as e:
-        print(f"⚠️ Congress ETL error for {ticker}: {e}")
-        df["congress_net_shares"]     = 0
-        df["congress_active_members"] = 0
+    #try:
+    #    cong = fetch_congress_trades(ticker).set_index("ds")
+    #    df["congress_net_shares"]     = cong["congress_net_shares"].reindex(df.index, method="ffill").fillna(0)
+    #    df["congress_active_members"] = cong["congress_active_members"].reindex(df.index, method="ffill").fillna(0)
+    #except Exception as e:
+    #    print(f"⚠️ Congress ETL error for {ticker}: {e}")
+    #    df["congress_net_shares"]     = 0
+    #    df["congress_active_members"] = 0
 
     # 3) Insider trades (Q5)
     try:
@@ -111,27 +117,26 @@ def build_feature_dataframe(ticker: str,
     df["Return_1D"] = df["Close"].pct_change()
     for w in (5, 10, 20):
         df[f"MA{w}"] = df["Close"].rolling(w).mean()
-
     try:
-        df["RSI14"]   = ta.rsi(df["Close"], length=14)
-        macd          = ta.macd(df["Close"])
+        df["RSI14"] = ta.rsi(df["Close"], length=14)
+        macd = ta.macd(df["Close"])
         if not macd.empty:
-            df["MACD"], df["MACD_sig"] = macd.iloc[:,0], macd.iloc[:,1]
+            df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
         df["BB_width"] = ta.bbands(df["Close"])["BBP_20_2.0"]
         df["ATR"]      = ta.atr(df["High"], df["Low"], df["Close"])
     except Exception:
         pass
 
-    # 5) Volume & market context (unchanged)
+    # 5) Volume & market context
     if "Volume" in df and df["Volume"].notna().all():
         df["VWAP"]      = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
         df["OBV"]       = ta.obv(df["Close"], df["Volume"])
-        df["vol_zscore"]= (df["Volume"] - df["Volume"].rolling(VOL_LOOKBACK_Z).mean()) \
-                            / df["Volume"].rolling(VOL_LOOKBACK_Z).std()
+        df["vol_zscore"] = (
+            df["Volume"] - df["Volume"].rolling(VOL_LOOKBACK_Z).mean()
+        ) / df["Volume"].rolling(VOL_LOOKBACK_Z).std()
     for etf in (SPY_TICKER, SECTOR_ETF):
         try:
-            ret = yf.download(etf, start=df.index.min(), end=df.index.max(),
-                              auto_adjust=True)["Close"].pct_change()
+            ret = yf.download(etf, start=df.index.min(), end=df.index.max(), auto_adjust=True)["Close"].pct_change()
             df[f"{etf}_ret"] = ret
         except Exception:
             df[f"{etf}_ret"] = np.nan
@@ -139,20 +144,19 @@ def build_feature_dataframe(ticker: str,
     # 6) Sentiment features
     try:
         sent = get_sentiment_scores(ticker, sources=None)
-        for k,v in sent.items():
+        for k, v in sent.items():
             df[f"sent_{k}"] = v
-        if sent.get("positive",0)>70 or sent.get("negative",0)>70:
+        if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
             send_email_alert(f"Sentiment Alert: {ticker}", f"{sent}")
     except Exception as e:
         print(f"⚠️ Sentiment error for {ticker}: {e}")
 
-    # 7) Final cleanup: ensure core MAs exist
-    return df.dropna(subset=["Close","MA5","MA10","MA20"])
+    # 7) Final cleanup: ensure core MA columns exist
+    return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])  
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# -           XGBOOST WITH SENTIMENT FEATURES                                ─
 # ────────────────────────────────────────────────────────────────────────────
-
+# XGBoost with sentiment & extra features
+# ---------------------------------------------------------------------------
 def safe_train_xgb_with_retries(tkr, start=None, end=None,
                                 init_look=180, max_look=720, step=180):
     look = init_look
@@ -168,10 +172,9 @@ def safe_train_xgb_with_retries(tkr, start=None, end=None,
             look += step
     raise ValueError(f"❌ Model failed after {max_look}d")
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# -           PROPHET WITH SENTIMENT REGRESSO                                ─
 # ────────────────────────────────────────────────────────────────────────────
-
+# Prophet with optional regressors
+# ---------------------------------------------------------------------------
 def forecast_price_trend(tkr, start_date=None, end_date=None,
                          period_months: int = 3, log_results: bool = True):
     end_date   = end_date or datetime.today()
@@ -180,62 +183,49 @@ def forecast_price_trend(tkr, start_date=None, end_date=None,
     if df.empty:
         return None, "No data"
 
-    dfp = (df[["Close"]].rename(columns={"Close": "y"})
-                     .assign(ds=df.index)
-                     .reset_index(drop=True))
-    for col in ["sent_positive", "sent_neutral", "sent_negative"]:
-        dfp[col] = pd.to_numeric(df.get(col, np.nan), errors="coerce")
-    dfp.fillna(method="ffill", inplace=True)
+    # prepare df for Prophet
+    dfp = df[["Close"]].rename(columns={"Close": "y"})
+    dfp = dfp.assign(ds=df.index).reset_index(drop=True)
 
-    m = Prophet(daily_seasonality=True)
-    for reg in ["sent_positive", "sent_neutral", "sent_negative"]:
-        m.add_regressor(reg)
-    
-    # ------------------------------------------------------------------
-    # 🛠 1. # 🛡️  NaN-guard for sentiment columns
-    # ------------------------------------------------------------------
-
-
+    # ensure sentiment regs exist and no NaNs
     sent_cols = ["sent_positive", "sent_neutral", "sent_negative"]
     for c in sent_cols:
-        if c not in dfp.columns:
-            dfp[c] = 0.0
-    dfp[sent_cols] = dfp[sent_cols].fillna(0)
+        dfp[c] = pd.to_numeric(df.get(c, 0), errors="coerce").fillna(0)
 
-    # ---------------------------------------------------------------
-    # Decide whether there is *meaningful* sentiment to use
-    # ---------------------------------------------------------------
-    use_sent = dfp[sent_cols].sum().sum() != 0
+    # choose regressors: sentiment + macro/extras if present
+    extra_regs = [
+        "congress_net_shares", "congress_active_members",
+        "insider_net_shares",   "insider_buy_count",   "insider_sell_count"
+    ]
+    regs = sent_cols + [r for r in extra_regs if r in dfp.columns]
 
-    # Build the Prophet model
     m = Prophet(daily_seasonality=True)
-    if use_sent:
-        for reg in sent_cols:
-            m.add_regressor(reg)
+    for reg in regs:
+        m.add_regressor(reg)
 
-    # ------------------------------------------------------------------
-    # 2. Fit the model
-    # ------------------------------------------------------------------
     m.fit(dfp)
     future = m.make_future_dataframe(periods=int(period_months*30))
-    last_sent = dfp[["sent_positive", "sent_neutral", "sent_negative"]].iloc[-1]
-    for reg in last_sent.index:      # keep sentiment constant into future
-        future[reg] = last_sent[reg]
+    last = dfp[regs].iloc[-1]
+    for reg in regs:
+        future[reg] = last[reg]
 
     fcst = m.predict(future)
     res  = fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]].merge(
-        dfp[["ds", "y"]].rename(columns={"y": "actual"}), on="ds", how="left"
+        dfp[["ds", "y"]].rename(columns={"y": "actual"}),
+        on="ds", how="left"
     )
     if log_results:
-        res.to_csv(os.path.join(LOG_DIR,
-                   f"forecast_{tkr}_{datetime.now():%Y%m%d_%H%M%S}.csv"),
-                   index=False)
+        res.to_csv(
+            os.path.join(
+                LOG_DIR,
+                f"forecast_{tkr}_{datetime.now():%Y%m%d_%H%M%S}.csv"
+            ), index=False
+        )
     return res, None
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# -      (UNCHANGED) INTRADAY + FORECAST COMBO                               ─
 # ────────────────────────────────────────────────────────────────────────────
-
+# Intraday + ML combo (unchanged)
+# ---------------------------------------------------------------------------
 def forecast_today_movement(ticker: str, start=None, end=None,
                             log_results: bool = True) -> tuple[str, str]:
     intraday_msg = ""
@@ -254,8 +244,12 @@ def forecast_today_movement(ticker: str, start=None, end=None,
         else:
             intraday_msg = f"🔄 Flat or Unclear Trend ({latest:.2f}%)"
         if log_results:
-            df_intra.to_csv(os.path.join(
-                INTRA_DIR, f"intraday_{ticker}_{datetime.now():%Y%m%d_%H%M%S}.csv"))
+            df_intra.to_csv(
+                os.path.join(
+                    INTRA_DIR,
+                    f"intraday_{ticker}_{datetime.now():%Y%m%d_%H%M%S}.csv"
+                )
+            )
     except Exception as e:
         intraday_msg = f"⚠️ Intraday error: {e}"
 
@@ -268,18 +262,19 @@ def forecast_today_movement(ticker: str, start=None, end=None,
         else:
             up = yhat[-1] > Xts.iloc[-1]["Close"]
         direction = "🟢 ML Forecast: Up" if up else "🔴 ML Forecast: Down"
-        if fb_note: direction += f"\n{fb_note}"
+        if fb_note:
+            direction += f"\n{fb_note}"
         return intraday_msg + " + " + direction, ""
     except Exception as e:
         return intraday_msg, f"❌ Model error: {e}"
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# -      EVAL, LOGGING & RETRAIN WRAPPERS (UNCHANGED)                        ─
 # ────────────────────────────────────────────────────────────────────────────
-
-def _latest_log(ticker):  # same as v4.2
+# Eval, logging & retrain wrappers (unchanged)
+# ---------------------------------------------------------------------------
+def _latest_log(ticker):
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{ticker}_")]
     return os.path.join(LOG_DIR, sorted(logs)[-1]) if logs else None
+
 
 def auto_retrain_forecast_model(tkr):
     log_path = _latest_log(tkr)
@@ -291,13 +286,12 @@ def auto_retrain_forecast_model(tkr):
     mae = mean_absolute_error(df["actual"], df["yhat"])
     mse = mean_squared_error(df["actual"], df["yhat"])
     r2  = r2_score(df["actual"], df["yhat"])
-    row = pd.DataFrame([[datetime.now(), tkr, mae, mse, r2]],
-                       columns=["timestamp", "ticker", "mae", "mse", "r2"])
+    row = pd.DataFrame([[datetime.now(), tkr, mae, mse, r2]], columns=["timestamp","ticker","mae","mse","r2"])
     eval_path = os.path.join(EVAL_DIR, "forecast_evals.csv")
-    row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path),
-               index=False)
+    row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path), index=False)
     log_eval_to_gsheet(tkr, mae, mse, r2)
     return row
+
 
 def run_auto_retrain_all(ticker_list):
     evals = []
@@ -306,18 +300,16 @@ def run_auto_retrain_all(ticker_list):
         df = auto_retrain_forecast_model(tkr)
         if isinstance(df, pd.DataFrame):
             evals.append(df)
-    return (pd.concat(evals, ignore_index=True)
-            if evals else pd.DataFrame(columns=["ticker", "mae", "mse", "r2"]))
+    return pd.concat(evals, ignore_index=True) if evals else pd.DataFrame(columns=["ticker","mae","mse","r2"])
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# -            SHAP OPTIONAL PLOTTER                                         ─
 # ────────────────────────────────────────────────────────────────────────────
-
+# SHAP Optional Plotter (unchanged)
+# ---------------------------------------------------------------------------
 try:
     import shap
     SHAP_AVAILABLE = True
 except Exception as e:
-    print("⚠️ SHAP import failed:", e)
+    print(f"⚠️ SHAP import failed: {e}")
     SHAP_AVAILABLE = False
 
 def plot_shap(model, X, top_n: int = 10):
@@ -331,17 +323,16 @@ def plot_shap(model, X, top_n: int = 10):
     except Exception as e:
         print(f"❌ SHAP plot failed: {e}")
 
-# ──────────────────────────────────────────────────────────────────────────── 
-# -          EVERYTHING ELSE (load/save tickers, accuracy helpers)           ─
 # ────────────────────────────────────────────────────────────────────────────
-
+# Load/save tickers & accuracy helpers (unchanged)
+# ---------------------------------------------------------------------------
 def get_latest_forecast_log(tkr, log_dir=LOG_DIR):
     logs = [f for f in os.listdir(log_dir) if f.startswith(f"forecast_{tkr.upper()}_")]
     return os.path.join(log_dir, sorted(logs)[-1]) if logs else None
 
 def load_forecast_tickers():
     if not os.path.exists(TICKER_FILE):
-        return ["AAPL", "MSFT"]
+        return ["AAPL","MSFT"]
     return [ln.strip().upper() for ln in open(TICKER_FILE) if ln.strip()]
 
 def save_forecast_tickers(tkr_list):
@@ -351,11 +342,11 @@ def save_forecast_tickers(tkr_list):
 
 def compute_rolling_accuracy(log_path):
     df = pd.read_csv(log_path, parse_dates=["ds"]).sort_values("ds")
-    if {"yhat", "actual"} - set(df.columns):
+    if {"yhat","actual"} - set(df.columns):
         return pd.DataFrame()
     df["pred_direction"]   = df["yhat"].diff().gt(0).mul(1).sub(df["yhat"].diff().le(0))
     df["actual_direction"] = df["actual"].diff().gt(0).mul(1).sub(df["actual"].diff().le(0))
     df["correct"]          = df["pred_direction"] == df["actual_direction"]
     df["7d_accuracy"]      = df["correct"].rolling(7).mean()
     df["30d_accuracy"]     = df["correct"].rolling(30).mean()
-    return df[["ds", "7d_accuracy", "30d_accuracy", "correct"]]
+    return df[["ds","7d_accuracy","30d_accuracy","correct"]]
