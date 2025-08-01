@@ -21,14 +21,14 @@ def fetch_congress_trades(ticker: str) -> pd.DataFrame:
       - congress_net_shares: +shares for buys, -shares for sells
       - congress_active_members: number of unique members trading that day
     """
-    if not QUIVER_API_KEY:
-        raise RuntimeError("Missing QUIVER_API_KEY for QuiverCongress ETL")
+    if not Q_KEY:
+        raise RuntimeError("Missing Q_KEY for QuiverCongress ETL")
 
     url = (
         "https://api.quiverquant.com/beta/historical/congresstrading"
         f"?ticker={ticker}"
     )
-    headers = {"Authorization": f"Token {QUIVER_API_KEY}"}
+    headers = {"Authorization": f"Token {Q_KEY}"}
     resp = requests.get(url, headers=headers, timeout=8)
     resp.raise_for_status()
     data = resp.json()  # list of trade dicts
