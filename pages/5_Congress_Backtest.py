@@ -1,16 +1,57 @@
+# pages/5_Congress_Trading.py
+
 import streamlit as st
-from core.backtest_congress import backtest_congress_signal
 import pandas as pd
+from data.etl_congress import fetch_congress_trades
+from core.backtest_congress import backtest_congress_signal
 
-st.title("📊 Congress Trading Backtest")
-ticker = st.text_input("Ticker", "AAPL").upper()
-threshold = st.number_input("Buy threshold (net shares)", value=0)
+# Page config
+st.set_page_config(page_title="Congress Trading Dashboard", layout="wide")
 
-if st.button("Run Backtest"):
-    df = backtest_congress_signal(ticker, threshold)
-    if df.empty:
-        st.warning("No data or congress feature missing.")
+# Title and description
+st.title("🏛️ Congress Trading Dashboard")
+st.markdown(
+    "The Stock Trading on Congressional Knowledge Act requires U.S. Senators and Representatives to "
+    "publicly file any financial transaction within 45 days. Here we pull those disclosures, show recent "
+    "aggregate trading activity for a symbol, and backtest a simple long-short strategy based on their trades."
+)
+
+# Sidebar inputs
+st.sidebar.header("🔍 Search & Settings")
+ticker = st.sidebar.text_input("Stock ticker", "AAPL").upper()
+threshold = st.sidebar.number_input(
+    "Net shares threshold for long signal", min_value=-100000, max_value=100000, value=0, step=100
+)
+run = st.sidebar.button("Fetch & Backtest")
+
+if run:
+    with st.spinner(f"Loading Congress trades for {ticker}..."):
+        try:
+            trades = fetch_congress_trades(ticker)
+        except Exception as e:
+            st.error(f"Error fetching trades: {e}")
+            st.stop()
+
+    if trades.empty:
+        st.warning("No congressional trades found for this ticker.")
     else:
-        st.line_chart(df, use_container_width=True)
-        final = df.iloc[-1]
-        st.metric("Strategy vs Bench", f"{final['cumstrat']:.2f}", f"vs {final['cumbench']:.2f}")
+        st.subheader("📋 Recent Aggregated Trades")
+        # show last 10 days of aggregated net shares and active members
+        st.dataframe(trades.tail(10).reset_index(), use_container_width=True)
+
+        st.subheader("📈 Backtest: Congress Long-Short Strategy")
+        bt = backtest_congress_signal(ticker, threshold)
+        if bt.empty:
+            st.warning("Backtest returned no data.")
+        else:
+            st.line_chart(bt[['cumstrat','cumbench']], use_container_width=True)
+
+        # Performance metrics
+        final = bt.iloc[-1]
+        strat_return = (final['cumstrat'] - 1) * 100
+        bench_return = (final['cumbench'] - 1) * 100
+        c1, c2 = st.columns(2)
+        c1.metric("Strategy Cumulative Return", f"{strat_return:.2f}%")
+        c2.metric("Benchmark Cumulative Return", f"{bench_return:.2f}%")
+else:
+    st.info("Use the sidebar to enter a ticker and click Fetch & Backtest.")
