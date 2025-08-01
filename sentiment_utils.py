@@ -191,6 +191,7 @@ def _sec_edgar_titles(ticker: str, count: int = 40) -> List[str]:
         print(f"❌ SEC EDGAR RSS error for {ticker}: {ex}")
         return []
 
+
 # ------------------------------------------------------------------
 # Marketaux news endpoint
 # ------------------------------------------------------------------
@@ -198,24 +199,33 @@ def _marketaux_titles(ticker: str, page_size: int = 20) -> List[str]:
     token = os.getenv("MARKETAUX_API_KEY") or ST_SECRETS.get("MARKETAUX_API_KEY")
     if not token:
         return []
-    url = ("https://api.marketaux.com/v1/news/all?"
-           f"api_token={token}&symbols={ticker}&limit={page_size}")
+
+    url = (
+        "https://api.marketaux.com/v1/news/all?"
+        f"api_token={token}&symbols={ticker}&limit={page_size}"
+    )  # ← closing parenthesis here
+
     try:
         arts = requests.get(url, timeout=6).json().get("data", [])
-        return [a.get("title","") for a in arts if a.get("title")]
+        return [a.get("title", "") for a in arts if a.get("title")]
     except Exception as ex:
         print(f"❌ Marketaux error for {ticker}: {ex}")
         return []
 
+
 # ------------------------------------------------------------------
 # Alpha Vantage News & Sentiment (beta)
 # ------------------------------------------------------------------
+
 def _alpha_vantage_titles(ticker: str) -> List[str]:
     key = os.getenv("ALPHA_VANTAGE_KEY") or ST_SECRETS.get("ALPHA_VANTAGE_KEY")
     if not key:
         return []
-    url = ("https://www.alphavantage.co/query?"
-           f"function=NEWS_SENTIMENT&tickers={ticker}&apikey={key}")
+    url = (
+        "https://www.alphavantage.co/query?"
+        f"function=NEWS_SENTIMENT&tickers={ticker}&apikey={key}"
+    )
+
     try:
         feed = requests.get(url, timeout=8).json().get("feed", [])
         return [f.get("title","") for f in feed if f.get("title")]
