@@ -22,12 +22,12 @@ def fetch_congress_trades(ticker: str) -> pd.DataFrame:
       - congress_net_shares: +shares for buys, -shares for sells
       - congress_active_members: number of unique members trading that day
     """
-    # ← check the right variable name
     if not QUIVER_API_KEY:
         raise RuntimeError("Missing QUIVER_API_KEY for QuiverCongress ETL")
 
+    # NOTE: use the correct path with '/congress/trading'
     url = (
-        "https://api.quiverquant.com/beta/historical/congresstrading"
+        "https://api.quiverquant.com/beta/historical/congress/trading"
         f"?ticker={ticker}"
     )
     headers = {"Authorization": f"Token {QUIVER_API_KEY}"}
@@ -49,8 +49,8 @@ def fetch_congress_trades(ticker: str) -> pd.DataFrame:
     agg = (
         df.groupby("ds")
           .agg(
-             congress_net_shares       = ("shares", "sum"),
-             congress_active_members  = ("memberName", "nunique")
+              congress_net_shares      = ("shares", "sum"),
+              congress_active_members = ("memberName", "nunique"),
           )
           .reset_index()
     )
