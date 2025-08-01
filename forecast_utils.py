@@ -1,4 +1,4 @@
-# v4.5 – the NaN-guard/zero-fill block before m.fit()
+# v4.5 – add Congress Trades + Insider Trades
 # ─────────────────────────────────────────────────────────────────────────────
 import os
 from datetime import datetime, timedelta
@@ -18,8 +18,14 @@ from oauth2client.service_account import ServiceAccountCredentials
 from sentiment_utils import get_sentiment_scores
 from send_email import send_email_alert
 from core.helpers_xgb import train_xgb_predict
+from data.etl_congress import fetch_congress_trades
+from data.etl_insider  import fetch_insider_trades
 
-# ─────────── PATHS / CONSTANTS ───────────────────────────────────────────────
+
+# ──────────────────────────────────────────────────────────────────────────── 
+# ─           PATHS / CONSTANTS                                              ─
+# ──────────────────────────────────────────────────────────────────────────── 
+
 LOG_DIR, EVAL_DIR, INTRA_DIR = "forecast_logs", "forecast_eval", "logs"
 GSHEET_NAME, TICKER_FILE     = "forecast_evaluation_log", "tickers.csv"
 SPY_TICKER, SECTOR_ETF       = "SPY", "XLK"
@@ -28,7 +34,9 @@ VOL_LOOKBACK_Z               = 20
 for _d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
     os.makedirs(_d, exist_ok=True)
 
-# ─────────── GOOGLE-SHEETS LOGGER ────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────── 
+# ─           GOOGLE-SHEETS LOGGER                                           ─
+# ──────────────────────────────────────────────────────────────────────────── 
 def _get_gsheet_logger():
     try:
         scope = ["https://spreadsheets.google.com/feeds",
@@ -51,16 +59,19 @@ def log_eval_to_gsheet(tkr, mae, mse, r2):
     except Exception as e:
         st.warning(f"⚠️ Sheets logging failed: {e}")
 
-# ─────────── FEATURE-ENGINEERING ─────────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────── 
+# ─           FEATURE-ENGINEERING                                            ─
+# ──────────────────────────────────────────────────────────────────────────── 
+
 def build_feature_dataframe(ticker: str,
                             start=None,
                             end=None,
                             lookback: int = 180,
                             min_rows: int = 200) -> pd.DataFrame:
     """
-    Download OHLCV data → add TA, market context & daily sentiment.
-    Returns clean DataFrame (may be empty if data is inadequate).
+    Download OHLCV → congressional + insider trades → TA → context → sentiment → clean.
     """
+    # 1) Download price history
     if start and end:
         df = yf.download(ticker, start=start, end=end, auto_adjust=True)
         if len(df) < min_rows:
@@ -74,7 +85,29 @@ def build_feature_dataframe(ticker: str,
     if df.empty or "Close" not in df:
         return pd.DataFrame()
 
-    # Basic TA
+    # 2) Congressional trades (Q6)
+    try:
+        cong = fetch_congress_trades(ticker).set_index("ds")
+        df["congress_net_shares"]     = cong["congress_net_shares"].reindex(df.index, method="ffill").fillna(0)
+        df["congress_active_members"] = cong["congress_active_members"].reindex(df.index, method="ffill").fillna(0)
+    except Exception as e:
+        print(f"⚠️ Congress ETL error for {ticker}: {e}")
+        df["congress_net_shares"]     = 0
+        df["congress_active_members"] = 0
+
+    # 3) Insider trades (Q5)
+    try:
+        ins = fetch_insider_trades(ticker).set_index("ds")
+        df["insider_net_shares"] = ins["net_shares"].reindex(df.index, method="ffill").fillna(0)
+        df["insider_buy_count"]  = ins["num_buy_tx"].reindex(df.index, method="ffill").fillna(0)
+        df["insider_sell_count"] = ins["num_sell_tx"].reindex(df.index, method="ffill").fillna(0)
+    except Exception as e:
+        print(f"⚠️ Insider ETL error for {ticker}: {e}")
+        df["insider_net_shares"] = 0
+        df["insider_buy_count"]  = 0
+        df["insider_sell_count"] = 0
+
+    # 4) Basic technicals
     df["Return_1D"] = df["Close"].pct_change()
     for w in (5, 10, 20):
         df[f"MA{w}"] = df["Close"].rolling(w).mean()
@@ -83,21 +116,18 @@ def build_feature_dataframe(ticker: str,
         df["RSI14"]   = ta.rsi(df["Close"], length=14)
         macd          = ta.macd(df["Close"])
         if not macd.empty:
-            df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
+            df["MACD"], df["MACD_sig"] = macd.iloc[:,0], macd.iloc[:,1]
         df["BB_width"] = ta.bbands(df["Close"])["BBP_20_2.0"]
         df["ATR"]      = ta.atr(df["High"], df["Low"], df["Close"])
     except Exception:
-        pass  # If pandas-ta throws, just keep NaNs
+        pass
 
-    # Volume & market context
+    # 5) Volume & market context (unchanged)
     if "Volume" in df and df["Volume"].notna().all():
-        df["VWAP"] = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
-        df["OBV"]  = ta.obv(df["Close"], df["Volume"])
-        df["vol_zscore"] = (
-            df["Volume"].sub(df["Volume"].rolling(VOL_LOOKBACK_Z).mean())
-                        .div(df["Volume"].rolling(VOL_LOOKBACK_Z).std())
-        )
-
+        df["VWAP"]      = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
+        df["OBV"]       = ta.obv(df["Close"], df["Volume"])
+        df["vol_zscore"]= (df["Volume"] - df["Volume"].rolling(VOL_LOOKBACK_Z).mean()) \
+                            / df["Volume"].rolling(VOL_LOOKBACK_Z).std()
     for etf in (SPY_TICKER, SECTOR_ETF):
         try:
             ret = yf.download(etf, start=df.index.min(), end=df.index.max(),
@@ -106,21 +136,22 @@ def build_feature_dataframe(ticker: str,
         except Exception:
             df[f"{etf}_ret"] = np.nan
 
-    # Sentiment
+    # 6) Sentiment features
     try:
-        sent = get_sentiment_scores(ticker)                # {pos,neu,neg}
-        for k, v in sent.items():                          # add as flat cols
+        sent = get_sentiment_scores(ticker, sources=None)
+        for k,v in sent.items():
             df[f"sent_{k}"] = v
-        if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
+        if sent.get("positive",0)>70 or sent.get("negative",0)>70:
             send_email_alert(f"Sentiment Alert: {ticker}", f"{sent}")
     except Exception as e:
         print(f"⚠️ Sentiment error for {ticker}: {e}")
 
-    # Drop if any of the core MA columns still NaN
-    return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
+    # 7) Final cleanup: ensure core MAs exist
+    return df.dropna(subset=["Close","MA5","MA10","MA20"])
 
-# ─────────── XGBOOST WITH SENTIMENT FEATURES ────────────────────────────────
-
+# ──────────────────────────────────────────────────────────────────────────── 
+# -           XGBOOST WITH SENTIMENT FEATURES                                ─
+# ────────────────────────────────────────────────────────────────────────────
 
 def safe_train_xgb_with_retries(tkr, start=None, end=None,
                                 init_look=180, max_look=720, step=180):
@@ -137,7 +168,10 @@ def safe_train_xgb_with_retries(tkr, start=None, end=None,
             look += step
     raise ValueError(f"❌ Model failed after {max_look}d")
 
-# ─────────── PROPHET WITH SENTIMENT REGRESSORS ───────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────── 
+# -           PROPHET WITH SENTIMENT REGRESSO                                ─
+# ────────────────────────────────────────────────────────────────────────────
+
 def forecast_price_trend(tkr, start_date=None, end_date=None,
                          period_months: int = 3, log_results: bool = True):
     end_date   = end_date or datetime.today()
@@ -198,7 +232,10 @@ def forecast_price_trend(tkr, start_date=None, end_date=None,
                    index=False)
     return res, None
 
-# ─────────── (UNCHANGED) INTRADAY + FORECAST COMBO ───────────────────────────
+# ──────────────────────────────────────────────────────────────────────────── 
+# -      (UNCHANGED) INTRADAY + FORECAST COMBO                               ─
+# ────────────────────────────────────────────────────────────────────────────
+
 def forecast_today_movement(ticker: str, start=None, end=None,
                             log_results: bool = True) -> tuple[str, str]:
     intraday_msg = ""
@@ -236,7 +273,10 @@ def forecast_today_movement(ticker: str, start=None, end=None,
     except Exception as e:
         return intraday_msg, f"❌ Model error: {e}"
 
-# ─────────── EVAL, LOGGING & RETRAIN WRAPPERS (UNCHANGED) ────────────────────
+# ──────────────────────────────────────────────────────────────────────────── 
+# -      EVAL, LOGGING & RETRAIN WRAPPERS (UNCHANGED)                        ─
+# ────────────────────────────────────────────────────────────────────────────
+
 def _latest_log(ticker):  # same as v4.2
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{ticker}_")]
     return os.path.join(LOG_DIR, sorted(logs)[-1]) if logs else None
@@ -269,7 +309,10 @@ def run_auto_retrain_all(ticker_list):
     return (pd.concat(evals, ignore_index=True)
             if evals else pd.DataFrame(columns=["ticker", "mae", "mse", "r2"]))
 
-# ─────────── SHAP OPTIONAL PLOTTER ───────────────────────────────────────────
+# ──────────────────────────────────────────────────────────────────────────── 
+# -            SHAP OPTIONAL PLOTTER                                         ─
+# ────────────────────────────────────────────────────────────────────────────
+
 try:
     import shap
     SHAP_AVAILABLE = True
@@ -288,7 +331,10 @@ def plot_shap(model, X, top_n: int = 10):
     except Exception as e:
         print(f"❌ SHAP plot failed: {e}")
 
-# ─────────── EVERYTHING ELSE (load/save tickers, accuracy helpers) UNCHANGED ─
+# ──────────────────────────────────────────────────────────────────────────── 
+# -          EVERYTHING ELSE (load/save tickers, accuracy helpers)           ─
+# ────────────────────────────────────────────────────────────────────────────
+
 def get_latest_forecast_log(tkr, log_dir=LOG_DIR):
     logs = [f for f in os.listdir(log_dir) if f.startswith(f"forecast_{tkr.upper()}_")]
     return os.path.join(log_dir, sorted(logs)[-1]) if logs else None
