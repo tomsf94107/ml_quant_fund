@@ -223,30 +223,64 @@ def _alpha_vantage_titles(ticker: str) -> List[str]:
         print(f"❌ AlphaVantage error for {ticker}: {ex}")
         return []
 
+
 # ------------------------------------------------------------------
 # Aggregator
 # ------------------------------------------------------------------
 MAX_HEADLINES = 80
 
-def fetch_news_titles(ticker: str) -> List[str]:
+def fetch_news_titles(
+    ticker: str,
+    sources: List[str] | None = None,    # ← optional filter
+    **kwargs,
+) -> List[str]:
+    """Aggregates headlines from our 9 free sources, filtered & capped."""
+    ALL_SRCS = {
+        "NewsAPI":    lambda: _newsapi_titles(
+                            ticker,
+                            os.getenv("NEWS_API_KEY") or ST_SECRETS.get("NEWS_API_KEY"),
+                            kwargs.get("page_size", 30)
+                        ),
+        "Google":     lambda: _google_news_titles(
+                            ticker,
+                            kwargs.get("max_items", 50)
+                        ),
+        "Yahoo":      lambda: _yahoo_finance_titles(ticker),
+        "Reddit":     lambda: _reddit_titles(
+                            ticker,
+                            kwargs.get("limit", 20)
+                        ),
+        "Pushshift":  lambda: _pushshift_titles(
+                            ticker,
+                            kwargs.get("size", 30)
+                        ),
+        "StockTwits": lambda: _stocktwits_titles(ticker),
+        "EDGAR":      lambda: _sec_edgar_titles(
+                            ticker,
+                            kwargs.get("count", 40)
+                        ),
+        "Marketaux":  lambda: _marketaux_titles(
+                            ticker,
+                            kwargs.get("page_size", 20)
+                        ),
+        "AlphaV":     lambda: _alpha_vantage_titles(ticker),
+    }
+
     if not ticker:
         return []
+
+    # Default to all sources if none selected
+    pick = sources or list(ALL_SRCS.keys())
+
     titles: List[str] = []
-    key = os.getenv("NEWS_API_KEY") or ST_SECRETS.get("NEWS_API_KEY")
-    if key:
-        titles += _newsapi_titles(ticker, key)
-    titles += _google_news_titles(ticker)
-    titles += _yahoo_finance_titles(ticker)
-    time.sleep(random.uniform(0.2, 0.5))
-    titles += _reddit_titles(ticker)
-    titles += _pushshift_titles(ticker)
-    titles += _stocktwits_titles(ticker)
-    titles += _sec_edgar_titles(ticker)
-    titles += _marketaux_titles(ticker)
-    titles += _alpha_vantage_titles(ticker)
-    # clean & dedupe & cap
+    for src in pick:
+        fetch_fn = ALL_SRCS.get(src)
+        if fetch_fn:
+            titles += fetch_fn()
+
+    # Dedupe, filter too-short strings, and cap
     cleaned = {t.strip() for t in titles if t and len(t) > 15}
-    return list(cleaned)[:MAX_HEADLINES]
+    return list(cleaned)[: kwargs.get("max_headlines", MAX_HEADLINES)]
 
 # ------------------------------------------------------------------
 # FinBERT inference
@@ -262,18 +296,38 @@ def _finbert_polarity(texts: List[str]) -> List[float]:
 # ------------------------------------------------------------------
 # Public API
 # ------------------------------------------------------------------
-def get_sentiment_scores(ticker: str, *, log_to_csv: bool = False) -> Dict[str, float]:
-    """Return percent breakdown of positive/neutral/negative (sum≈100)."""
+
+ef get_sentiment_scores(
+    ticker: str,
+    sources: List[str] | None = None,
+    *,
+    log_to_csv: bool = False
+) -> Dict[str, float]:
+    """
+    Return percent breakdown of positive/neutral/negative (sum≈100).
+    Optional `sources` list filters which feeds to include.
+    """
     try:
-        headlines = fetch_news_titles(ticker)
+        # ← pass the user’s source filter here
+        headlines = fetch_news_titles(ticker, sources=sources)
+
         if not headlines:
             return {"positive": 0.0, "neutral": 0.0, "negative": 0.0}
+
         pol = _finbert_polarity(headlines)
-        labels = ["positive" if p>=0.05 else "negative" if p<=-0.05 else "neutral" for p in pol]
+        labels = [
+            "positive" if p >= 0.05
+            else "negative" if p <= -0.05
+            else "neutral"
+            for p in pol
+        ]
         summary = _summarise(labels)
+
         if log_to_csv:
             _log_to_csv(ticker, summary)
+
         return summary
+
     except Exception as ex:
         print(f"❌ Sentiment pipeline error for {ticker}: {ex}")
         return {"positive": 0.0, "neutral": 0.0, "negative": 0.0}
@@ -281,6 +335,7 @@ def get_sentiment_scores(ticker: str, *, log_to_csv: bool = False) -> Dict[str, 
 # ------------------------------------------------------------------
 # CSV logger (optional)
 # ------------------------------------------------------------------
+
 def _log_to_csv(ticker: str, summary: Dict[str, float]) -> None:
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     fname = "sentiment_scores.csv"
