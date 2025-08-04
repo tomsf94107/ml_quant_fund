@@ -4,6 +4,8 @@ import io
 import zipfile
 import os
 import json
+import gspread
+from google.oauth2.service_account import Credentials
 
 st.set_page_config(page_title="🗂 SEC Auto-Merger Tool", layout="wide")
 st.title("🗂 SEC Auto-Merger + Cleaner Tool")
@@ -19,7 +21,6 @@ def load_cik_to_ticker():
 def load_sector_mapping():
     df = pd.read_csv("data/ticker_sector_industry.csv")
     return df.set_index("ticker").to_dict(orient="index")
-
 
 @st.cache_data(show_spinner=False)
 def clean_merge_sec_file(target_df, submission_df, cik_map, sector_map):
@@ -44,6 +45,33 @@ def clean_merge_sec_file(target_df, submission_df, cik_map, sector_map):
     # Clean up
     merged.dropna(axis=1, how="all", inplace=True)
     return merged
+
+@st.cache_resource(show_spinner=False)
+def init_gsheet_client():
+    creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"])
+    return gspread.authorize(creds)
+
+def push_to_gsheet(trans_df, hold_df, sheet_title="Insider_Trading_Logs"):
+    gc = init_gsheet_client()
+    try:
+        sh = gc.create(sheet_title)
+        st.success(f"✅ Created new Google Sheet: {sheet_title}")
+    except Exception as e:
+        st.error(f"❌ Failed to create sheet: {e}")
+        return
+
+    try:
+        worksheet1 = sh.sheet1
+        worksheet1.update_title("Insider_Transactions")
+        worksheet1.update([trans_df.columns.values.tolist()] + trans_df.values.tolist())
+
+        worksheet2 = sh.add_worksheet(title="Insider_Holdings", rows="100", cols="20")
+        worksheet2.update([hold_df.columns.values.tolist()] + hold_df.values.tolist())
+
+        sheet_url = sh.url
+        st.success(f"📤 Pushed to Google Sheets! [Open Sheet]({sheet_url})")
+    except Exception as e:
+        st.error(f"❌ Failed to update worksheet: {e}")
 
 uploaded_files = st.file_uploader("📥 Upload your SEC files (.tsv):", type=["tsv"], accept_multiple_files=True)
 
@@ -95,3 +123,7 @@ if uploaded_files:
             # Download
             st.download_button("📤 Download Transactions CSV", merged_trans.to_csv(index=False), file_name="Insider_Transactions_Merged_CLEAN.csv")
             st.download_button("📤 Download Holdings CSV", merged_hold.to_csv(index=False), file_name="Insider_Holdings_Merged_CLEAN.csv")
+
+            # Google Sheets push
+            if st.button("📤 Push to Google Sheets"):
+                push_to_gsheet(merged_trans, merged_hold)
