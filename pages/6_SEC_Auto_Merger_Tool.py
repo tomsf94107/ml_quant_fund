@@ -1,96 +1,97 @@
 import streamlit as st
 import pandas as pd
 import io
+import zipfile
+import os
+import json
 
-st.set_page_config(page_title="🛠 SEC Auto Merger Tool", layout="wide")
+st.set_page_config(page_title="🗂 SEC Auto-Merger Tool", layout="wide")
+st.title("🗂 SEC Auto-Merger + Cleaner Tool")
+st.caption("Upload raw SEC `.tsv` files — we'll merge, clean, and enrich them with sector + ticker info.")
 
-st.title("🛠 SEC Auto Merger + Cleaner")
-st.markdown("Upload raw SEC `.tsv` files to auto-merge and clean them into two final outputs:")
+@st.cache_data(show_spinner=False)
+def load_cik_to_ticker():
+    with open("data/cik_to_ticker.json") as f:
+        data = json.load(f)
+    return {str(v["cik_str"]).zfill(10): v["ticker"] for v in data.values()}
 
-st.markdown("""
-- ✅ `Insider_Transactions_Merged_CLEAN.csv`  
-- ✅ `Insider_Holdings_Merged_CLEAN.csv`
-""")
-
-# Upload files
-sub_file = st.file_uploader("📄 Upload SUBMISSION.tsv", type=["tsv"], key="sub")
-trans_file = st.file_uploader("📄 Upload NONDERIV_TRANS.tsv", type=["tsv"], key="trans")
-hold_file = st.file_uploader("📄 Upload NONDERIV_HOLDING.tsv", type=["tsv"], key="hold")
+@st.cache_data(show_spinner=False)
+def load_sector_mapping():
+    df = pd.read_csv("data/ticker_sector_industry.csv")
+    return df.set_index("ticker").to_dict(orient="index")
 
 
 @st.cache_data(show_spinner=False)
-def clean_merge_sec_file(target_df, submission_df):
-    # Standardize column names
-    target_df.columns = target_df.columns.str.lower()
-    submission_df.columns = submission_df.columns.str.lower()
-
-    # Check for required column
-    if "accession_number" not in target_df.columns:
-        raise ValueError("❌ 'accession_number' missing in the uploaded target file.")
-    if "accession_number" not in submission_df.columns:
-        raise ValueError("❌ 'accession_number' missing in the uploaded submission file.")
-
+def clean_merge_sec_file(target_df, submission_df, cik_map, sector_map):
     # Merge
-    merged = target_df.merge(submission_df, on="accession_number", how="left")
+    if "ACCESSION_NUMBER" not in target_df.columns or "ACCESSION_NUMBER" not in submission_df.columns:
+        st.error("❌ 'ACCESSION_NUMBER' column missing in one of the uploaded files.")
+        st.stop()
+
+    merged = target_df.merge(submission_df, on="ACCESSION_NUMBER", how="left")
+
+    # CIK → Ticker
+    merged["cik"] = merged["ISSUERCIK"].astype(str).str.zfill(10)
+    merged["ticker"] = merged["cik"].map(cik_map)
+
+    # Add sector/industry
+    merged["sector"] = merged["ticker"].map(lambda t: sector_map.get(t, {}).get("sector"))
+    merged["industry"] = merged["ticker"].map(lambda t: sector_map.get(t, {}).get("industry"))
+
+    # Parse date
+    merged["filed_date"] = pd.to_datetime(merged["FILING_DATE"], errors="coerce")
+
+    # Clean up
     merged.dropna(axis=1, how="all", inplace=True)
-
-    # Fill reporting owner name if missing
-    if "reportingownername" in merged.columns:
-        merged["reportingownername"] = merged["reportingownername"].fillna(
-            merged.get("reporting_owner_name", "")
-        )
-
-    # Create filed_date
-    if "formfiled" in merged.columns:
-        merged["filed_date"] = pd.to_datetime(merged["formfiled"], errors='coerce')
-    else:
-        merged["filed_date"] = pd.NaT
-
     return merged
 
+uploaded_files = st.file_uploader("📥 Upload your SEC files (.tsv):", type=["tsv"], accept_multiple_files=True)
 
-if sub_file and trans_file and hold_file:
-    try:
-        sub_df = pd.read_csv(sub_file, sep="\t", low_memory=False)
-        trans_df = pd.read_csv(trans_file, sep="\t", low_memory=False)
-        hold_df = pd.read_csv(hold_file, sep="\t", low_memory=False)
+if uploaded_files:
+    with st.spinner("Processing uploaded files..."):
+        file_dict = {f.name.lower(): f for f in uploaded_files}
+        sub_file = file_dict.get("submission.tsv")
+        trans_file = file_dict.get("nonderiv_trans.tsv")
+        hold_file = file_dict.get("nonderiv_holding.tsv")
 
-        # Merge both sets
-        merged_trans = clean_merge_sec_file(trans_df, sub_df)
-        merged_hold = clean_merge_sec_file(hold_df, sub_df)
-
-        st.success("✅ Files successfully merged and cleaned!")
-
-        # Date filter
-        if not merged_trans["filed_date"].isna().all():
-            start_date = st.date_input("Start Date", merged_trans["filed_date"].min().date())
-            end_date = st.date_input("End Date", merged_trans["filed_date"].max().date())
-            filtered_trans = merged_trans[
-                (merged_trans["filed_date"] >= pd.to_datetime(start_date)) &
-                (merged_trans["filed_date"] <= pd.to_datetime(end_date))
-            ]
+        if not (sub_file and trans_file and hold_file):
+            st.error("Please upload all 3 files: `SUBMISSION.tsv`, `NONDERIV_TRANS.tsv`, and `NONDERIV_HOLDING.tsv`.")
         else:
-            start_date = st.date_input("Start Date")
-            end_date = st.date_input("End Date")
-            filtered_trans = merged_trans
+            sub_df = pd.read_csv(sub_file, sep="\t", low_memory=False)
+            trans_df = pd.read_csv(trans_file, sep="\t", low_memory=False)
+            hold_df = pd.read_csv(hold_file, sep="\t", low_memory=False)
 
-        # Display preview
-        st.subheader("📄 Preview: Merged Insider Transactions")
-        st.dataframe(filtered_trans.head(50), use_container_width=True)
+            cik_map = load_cik_to_ticker()
+            sector_map = load_sector_mapping()
 
-        st.subheader("📄 Preview: Merged Insider Holdings")
-        st.dataframe(merged_hold.head(50), use_container_width=True)
+            merged_trans = clean_merge_sec_file(trans_df, sub_df, cik_map, sector_map)
+            merged_hold = clean_merge_sec_file(hold_df, sub_df, cik_map, sector_map)
 
-        # Export buttons
-        trans_csv = filtered_trans.to_csv(index=False).encode("utf-8")
-        hold_csv = merged_hold.to_csv(index=False).encode("utf-8")
+            st.success("✅ Files successfully merged and cleaned!")
 
-        st.download_button("⬇️ Download Insider_Transactions_Merged_CLEAN.csv", trans_csv,
-                           "Insider_Transactions_Merged_CLEAN.csv", "text/csv")
-        st.download_button("⬇️ Download Insider_Holdings_Merged_CLEAN.csv", hold_csv,
-                           "Insider_Holdings_Merged_CLEAN.csv", "text/csv")
+            # Filter
+            tickers = sorted(merged_trans["ticker"].dropna().unique())
+            with st.expander("🔍 Optional: Filter Results"):
+                selected_ticker = st.selectbox("Filter by Ticker", ["All"] + tickers)
+                start_date = st.date_input("Start Date", merged_trans["filed_date"].min().date())
+                end_date = st.date_input("End Date", merged_trans["filed_date"].max().date())
 
-    except Exception as e:
-        st.error(f"❌ Error during processing: {e}")
-else:
-    st.info("👆 Upload all 3 `.tsv` files above to begin.")
+                def apply_filter(df):
+                    df = df[df["filed_date"].between(pd.Timestamp(start_date), pd.Timestamp(end_date))]
+                    if selected_ticker != "All":
+                        df = df[df["ticker"] == selected_ticker]
+                    return df
+
+                merged_trans = apply_filter(merged_trans)
+                merged_hold = apply_filter(merged_hold)
+
+            # Display
+            st.subheader("📄 Cleaned Transactions")
+            st.dataframe(merged_trans)
+
+            st.subheader("📄 Cleaned Holdings")
+            st.dataframe(merged_hold)
+
+            # Download
+            st.download_button("📤 Download Transactions CSV", merged_trans.to_csv(index=False), file_name="Insider_Transactions_Merged_CLEAN.csv")
+            st.download_button("📤 Download Holdings CSV", merged_hold.to_csv(index=False), file_name="Insider_Holdings_Merged_CLEAN.csv")
