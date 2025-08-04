@@ -1,3 +1,8 @@
+
+import os, sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+
 import streamlit as st
 import pandas as pd
 import io
@@ -10,6 +15,21 @@ from google.oauth2.service_account import Credentials
 st.set_page_config(page_title="🗂 SEC Auto-Merger Tool", layout="wide")
 st.title("🗂 SEC Auto-Merger + Cleaner Tool")
 st.caption("Upload raw SEC `.tsv` files — we'll merge, clean, and enrich them with sector + ticker info.")
+
+with st.expander("🧪 Insider Trade Data Test"):
+    test_ticker = st.text_input("Enter a Ticker to Test", "AAPL")
+
+    from data.etl_insider import fetch_insider_trades
+
+    if st.button("🔍 Load Insider Data"):
+        df_insider = fetch_insider_trades(test_ticker)
+        if df_insider.empty:
+            st.warning("⚠️ No insider data found.")
+        else:
+            st.success(f"✅ Loaded {len(df_insider)} rows of insider data.")
+            st.dataframe(df_insider)
+            st.line_chart(df_insider.set_index("ds")[["num_buy_tx", "num_sell_tx"]])
+
 
 @st.cache_data(show_spinner=False)
 def load_cik_to_ticker():
