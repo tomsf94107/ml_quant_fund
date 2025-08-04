@@ -1,8 +1,9 @@
-# forecast_utils.py v4.6 – add Congress Trades + Insider Trades
-# ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------
+# forecast_utils.py v4.7 – Supports dual GSheet tabs for insider trades
+# ---------------------------------------------------------------------
+
 import os
 from datetime import datetime, timedelta
-
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -18,43 +19,32 @@ from oauth2client.service_account import ServiceAccountCredentials
 from sentiment_utils import get_sentiment_scores
 from send_email import send_email_alert
 from core.helpers_xgb import train_xgb_predict
-#from data.etl_congress import fetch_congress_trades
-from data.etl_insider import fetch_insider_trades
 
-# ────────────────────────────────────────────────────────────────────────────
-# Paths / Constants
+# ─────────────────────────────────────────────────────────────────────────────
 LOG_DIR, EVAL_DIR, INTRA_DIR = "forecast_logs", "forecast_eval", "logs"
-GSHEET_NAME, TICKER_FILE     = "forecast_evaluation_log", "tickers.csv"
+GSHEET_EVAL_LOG              = "forecast_evaluation_log"
+GSHEET_INSIDER_DATA          = "Insider_Trades_Data"
+TICKER_FILE                  = "tickers.csv"
 SPY_TICKER, SECTOR_ETF       = "SPY", "XLK"
 VOL_LOOKBACK_Z               = 20
 
 for _d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
     os.makedirs(_d, exist_ok=True)
 
-# ────────────────────────────────────────────────────────────────────────────
-# Google Sheets Logger
-# ---------------------------------------------------------------------------
-def _get_gsheet_logger():
-    try:
-        scope = [
-            "https://spreadsheets.google.com/feeds",
-            "https://www.googleapis.com/auth/drive",
-        ]
-        creds = ServiceAccountCredentials.from_json_keyfile_dict(
-            st.secrets["gcp_service_account"], scope
-        )
-        return gspread.authorize(creds).open(GSHEET_NAME).sheet1
-    except Exception as e:
-        st.error(f"❌ Sheets auth failed: {e}")
-        return None
-
+# ─────────────────────────────────────────────────────────────────────────────
+# Google Sheets Utility
+# -----------------------------------------------------------------------------
+def _get_gsheet(sheet_name, tab_index=0):
+    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gcp_service_account"], scope)
+    client = gspread.authorize(creds)
+    sheet = client.open(sheet_name)
+    return sheet.get_worksheet(tab_index)
 
 def log_eval_to_gsheet(tkr, mae, mse, r2):
-    sh = _get_gsheet_logger()
-    if not sh:
-        return
     try:
-        sh.append_row([
+        sheet = _get_gsheet(GSHEET_EVAL_LOG)
+        sheet.append_row([
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             tkr,
             round(mae, 2),
@@ -64,20 +54,38 @@ def log_eval_to_gsheet(tkr, mae, mse, r2):
     except Exception as e:
         st.warning(f"⚠️ Sheets logging failed: {e}")
 
-# ────────────────────────────────────────────────────────────────────────────
-# Feature-Engineering
-# ---------------------------------------------------------------------------
-def build_feature_dataframe(
-    ticker: str,
-    start=None,
-    end=None,
-    lookback: int = 180,
-    min_rows: int = 200
-) -> pd.DataFrame:
-    """
-    Download OHLCV → congressional + insider trades → TA → market context → sentiment → clean.
-    """
-    # 1) Download price history
+# ─────────────────────────────────────────────────────────────────────────────
+# Insider Trade Loader from GSheet
+# -----------------------------------------------------------------------------
+def fetch_insider_trades(ticker: str) -> pd.DataFrame:
+    try:
+        trans = _get_gsheet(GSHEET_INSIDER_DATA, tab_index=0).get_all_records()
+        hold  = _get_gsheet(GSHEET_INSIDER_DATA, tab_index=1).get_all_records()
+        df = pd.DataFrame(trans + hold)
+        if df.empty or "ticker" not in df.columns or "TRANS_DATE" not in df.columns:
+            return pd.DataFrame()
+
+        df = df[df["ticker"].str.upper() == ticker.upper()]
+        df["ds"] = pd.to_datetime(df["TRANS_DATE"], errors="coerce").dt.date
+        df["net_shares"] = pd.to_numeric(df.get("net_shares", 0), errors="coerce").fillna(0)
+        df["num_buy_tx"] = pd.to_numeric(df.get("num_buy_tx", 0), errors="coerce").fillna(0)
+        df["num_sell_tx"] = pd.to_numeric(df.get("num_sell_tx", 0), errors="coerce").fillna(0)
+        return (
+            df.groupby("ds")
+              .agg(net_shares=("net_shares", "sum"),
+                   num_buy_tx=("num_buy_tx", "sum"),
+                   num_sell_tx=("num_sell_tx", "sum"))
+              .reset_index()
+              .set_index("ds")
+        )
+    except Exception as e:
+        st.error(f"❌ Insider GSheet load failed: {e}")
+        return pd.DataFrame()
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Feature Engineering
+# -----------------------------------------------------------------------------
+def build_feature_dataframe(ticker, start=None, end=None, lookback=180, min_rows=200):
     if start and end:
         df = yf.download(ticker, start=start, end=end, auto_adjust=True)
         if len(df) < min_rows:
@@ -91,49 +99,39 @@ def build_feature_dataframe(
     if df.empty or "Close" not in df:
         return pd.DataFrame()
 
-    # 2) Congressional trades (Q6)
-    #try:
-    #    cong = fetch_congress_trades(ticker).set_index("ds")
-    #    df["congress_net_shares"]     = cong["congress_net_shares"].reindex(df.index, method="ffill").fillna(0)
-    #    df["congress_active_members"] = cong["congress_active_members"].reindex(df.index, method="ffill").fillna(0)
-    #except Exception as e:
-    #    print(f"⚠️ Congress ETL error for {ticker}: {e}")
-    #    df["congress_net_shares"]     = 0
-    #    df["congress_active_members"] = 0
-
-    # 3) Insider trades (Q5)
+    # Insider trades
     try:
-        ins = fetch_insider_trades(ticker).set_index("ds")
+        ins = fetch_insider_trades(ticker)
         df["insider_net_shares"] = ins["net_shares"].reindex(df.index, method="ffill").fillna(0)
         df["insider_buy_count"]  = ins["num_buy_tx"].reindex(df.index, method="ffill").fillna(0)
         df["insider_sell_count"] = ins["num_sell_tx"].reindex(df.index, method="ffill").fillna(0)
     except Exception as e:
-        print(f"⚠️ Insider ETL error for {ticker}: {e}")
+        print(f"⚠️ Insider load error: {e}")
         df["insider_net_shares"] = 0
         df["insider_buy_count"]  = 0
         df["insider_sell_count"] = 0
 
-    # 4) Basic technicals
     df["Return_1D"] = df["Close"].pct_change()
     for w in (5, 10, 20):
         df[f"MA{w}"] = df["Close"].rolling(w).mean()
+
     try:
         df["RSI14"] = ta.rsi(df["Close"], length=14)
         macd = ta.macd(df["Close"])
         if not macd.empty:
             df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
         df["BB_width"] = ta.bbands(df["Close"])["BBP_20_2.0"]
-        df["ATR"]      = ta.atr(df["High"], df["Low"], df["Close"])
+        df["ATR"] = ta.atr(df["High"], df["Low"], df["Close"])
     except Exception:
         pass
 
-    # 5) Volume & market context
     if "Volume" in df and df["Volume"].notna().all():
-        df["VWAP"]      = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
-        df["OBV"]       = ta.obv(df["Close"], df["Volume"])
+        df["VWAP"] = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
+        df["OBV"]  = ta.obv(df["Close"], df["Volume"])
         df["vol_zscore"] = (
             df["Volume"] - df["Volume"].rolling(VOL_LOOKBACK_Z).mean()
         ) / df["Volume"].rolling(VOL_LOOKBACK_Z).std()
+
     for etf in (SPY_TICKER, SECTOR_ETF):
         try:
             ret = yf.download(etf, start=df.index.min(), end=df.index.max(), auto_adjust=True)["Close"].pct_change()
@@ -141,19 +139,18 @@ def build_feature_dataframe(
         except Exception:
             df[f"{etf}_ret"] = np.nan
 
-    # 6) Sentiment features
+    # Sentiment
     try:
-        sent = get_sentiment_scores(ticker, sources=None)
+        sent = get_sentiment_scores(ticker)
         for k, v in sent.items():
             df[f"sent_{k}"] = v
         if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
             send_email_alert(f"Sentiment Alert: {ticker}", f"{sent}")
     except Exception as e:
         print(f"⚠️ Sentiment error for {ticker}: {e}")
-
-    # 7) Final cleanup: ensure core MA columns exist
-    return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])  
-
+	
+	# Final cleanup: ensure core MA columns exist
+    return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
 # ────────────────────────────────────────────────────────────────────────────
 # XGBoost with sentiment & extra features
 # ---------------------------------------------------------------------------
@@ -350,3 +347,8 @@ def compute_rolling_accuracy(log_path):
     df["7d_accuracy"]      = df["correct"].rolling(7).mean()
     df["30d_accuracy"]     = df["correct"].rolling(30).mean()
     return df[["ds","7d_accuracy","30d_accuracy","correct"]]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# XGBoost/Prophet/Intraday/Logging/SHAP remain unchanged from your v4.6
+# Only insider trade sourcing changed from local TSV → Google Sheets
+# ─────────────────────────────────────────────────────────────────────────────
