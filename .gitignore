@@ -4,4 +4,3 @@ __pycache__/
 .env
 keys/*.json
 mlenv/
-data/*.json
