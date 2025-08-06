@@ -17,8 +17,8 @@ try:
 except ImportError:
     ST_SECRETS = {}
 
-CIK_MAP        = load_cik_to_ticker_map()
-LOCAL_XLSX     = os.path.join("data", "Insider_Trades_Data.xlsx")
+CIK_MAP         = load_cik_to_ticker_map()
+LOCAL_XLSX      = os.path.join(PROJ, "data", "Insider_Trades_Data.xlsx")
 
 GSHEET_NAME      = "Insider_Trades_Data"
 TAB_TRANSACTIONS = "Insider_Transactions"
