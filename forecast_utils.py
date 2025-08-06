@@ -1,4 +1,4 @@
-# forecast_utils.py v4.9 – add insider trading + holdings to Forecast
+# forecast_utils.py v5.0 – add get_latest_forecast_log
 # ---------------------------------------------------------------------------
 
 import os
@@ -366,3 +366,11 @@ def compute_rolling_accuracy(log_path: str):
     df["7d_accuracy"]      = df["correct"].rolling(7).mean()
     df["30d_accuracy"]     = df["correct"].rolling(30).mean()
     return df[["ds", "7d_accuracy", "30d_accuracy", "correct"]]
+
+def get_latest_forecast_log(tkr: str, log_dir: str = LOG_DIR) -> str | None:
+    """
+    Return the path to the most recent forecast CSV for a given ticker.
+    """
+    logs = [f for f in os.listdir(log_dir) if f.startswith(f"forecast_{tkr}_")]
+    return os.path.join(log_dir, sorted(logs)[-1]) if logs else None
+
