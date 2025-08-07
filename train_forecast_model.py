@@ -37,35 +37,32 @@ FEATURE_COLUMNS = BASE_FEATURES + INSIDER_FEATURES
 MODEL_DIR = "models"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
-
-def prepare_with_insider(ticker: str):
-    # 1) build price & tech + targets
+def prepare_with_insider(ticker):
     df = build_feature_dataframe(ticker)
-    df = add_forecast_targets(df, horizon_days=(1, 3, 5))
+    try:
+        ins = fetch_insider_trades(ticker, mode="sheet-first")
+        # detect date column
+        if "ds" in ins.columns:
+            ins_date_col = "ds"
+        elif "date" in ins.columns:
+            ins_date_col = "date"
+        else:
+            # nothing to merge
+            raise KeyError(f"No date column in insider trades: {ins.columns.tolist()!r}")
 
-    # ensure we have a date column
-    if "date" not in df.columns:
-        df = df.reset_index().rename(columns={"index": "date"})
+        # parse and normalize
+        ins[ins_date_col] = pd.to_datetime(ins[ins_date_col]).dt.normalize()
+        ins_ts = ins.set_index(ins_date_col)["net_shares"].to_dict()
 
-    df["date"] = pd.to_datetime(df["date"])
+        # map into df
+        df["insider_net_shares"] = (
+            df["date"].dt.normalize().map(ins_ts).fillna(0).astype(float)
+        )
+    except Exception as e:
+        print(f"⚠️ prepare_with_insider: insider merge failed for {ticker}: {e}")
+        df["insider_net_shares"] = 0.0
 
-    # 2) pull insider trades
-    ins = fetch_insider_trades(ticker, mode="sheet-first")
-    ins = ins.rename(columns={"ds": "date", "net_shares": "insider_net_shares"})
-    ins["date"] = pd.to_datetime(ins["date"])
-
-    # 3) merge
-    df = df.merge(ins[["date", "insider_net_shares"]], on="date", how="left")
-    df["insider_net_shares"] = df["insider_net_shares"].fillna(0.0)
-
-    # 4) rolling summaries
-    df["insider_7d"]  = df["insider_net_shares"].rolling(window=7).sum().fillna(0)
-    df["insider_21d"] = df["insider_net_shares"].rolling(window=21).sum().fillna(0)
-
-    # drop any rows missing our base features or targets
-    df = df.dropna(subset=BASE_FEATURES + TARGET_COLUMNS)
     return df
-
 
 def train_model_for_ticker(ticker):
     print(f"\n=== {ticker} ===")
