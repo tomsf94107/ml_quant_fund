@@ -1,12 +1,19 @@
-# data/etl_insider.py_v1.3
+# data/etl_insider.py
 
-import os, sys
-# ensure project root is on sys.path
+import os
+import sys
+
+# ── ensure project root is on sys.path ────────────────────────────────────────
 ROOT = os.path.abspath(os.path.join(__file__, os.pardir))
 PROJ = os.path.abspath(os.path.join(ROOT, os.pardir))
 if PROJ not in sys.path:
     sys.path.append(PROJ)
 
+# ── locate the local Excel fallback sitting next to THIS file ─────────────────
+DATA_DIR   = os.path.dirname(__file__)
+LOCAL_XLSX = os.path.join(DATA_DIR, "Insider_Trades_Data.xlsx")
+
+# ── imports ───────────────────────────────────────────────────────────────────
 import pandas as pd
 import feedparser
 from data.utils_cik import load_cik_to_ticker_map
@@ -18,22 +25,27 @@ except ImportError:
     ST_SECRETS = {}
 
 CIK_MAP         = load_cik_to_ticker_map()
-LOCAL_XLSX      = os.path.join(PROJ, "data", "Insider_Trades_Data.xlsx")
-
-GSHEET_NAME      = "Insider_Trades_Data"
+GSHEET_NAME     = "Insider_Trades_Data"
 TAB_TRANSACTIONS = "Insider_Transactions"
 
 
 def fetch_insider_trades(ticker: str, mode: str = "sheet-first") -> pd.DataFrame:
+    """
+    Fetch insider trades for a ticker.
+      mode:
+        - sheet-first: try Google Sheet
+        - rss:         SEC RSS feed
+        - excel:       fallback to local Excel
+    """
     ticker = ticker.upper().strip()
 
-    # 1) Sheet
+    # 1) sheet-first
     if mode in ("sheet-first", "sheet"):
         df = _fetch_from_sheet(ticker)
         if not df.empty:
             return df
 
-    # 2) RSS
+    # 2) RSS (if sheet-first or explicit 'rss')
     if mode in ("sheet-first", "rss"):
         df = _fetch_from_rss(ticker)
         if not df.empty:
@@ -55,8 +67,8 @@ def _fetch_from_sheet(ticker: str) -> pd.DataFrame:
                 "https://www.googleapis.com/auth/drive",
             ],
         )
-        gc = gspread.authorize(creds)
-        ws = gc.open(GSHEET_NAME).worksheet(TAB_TRANSACTIONS)
+        client = gspread.authorize(creds)
+        ws = client.open(GSHEET_NAME).worksheet(TAB_TRANSACTIONS)
         df = pd.DataFrame(ws.get_all_records())
 
         # normalize headers
@@ -90,18 +102,24 @@ def _fetch_from_sheet(ticker: str) -> pd.DataFrame:
 
         def classify(r):
             c, s = r["code"], r["shares"]
-            if c in ("P","M","A","G","F"): return (s, 1, 0)
-            if c == "S":                   return (-s, 0, 1)
-            return (0,0,0)
+            if c in ("P","M","A","G","F"):
+                return (s, 1, 0)
+            if c == "S":
+                return (-s, 0, 1)
+            return (0, 0, 0)
 
         triples = df.apply(classify, axis=1, result_type="expand")
-        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = triples[0], triples[1], triples[2]
+        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = (
+            triples[0], triples[1], triples[2]
+        )
 
         return (
             df.groupby("ds")
-              .agg(net_shares=("net_shares","sum"),
-                   num_buy_tx=("num_buy_tx","sum"),
-                   num_sell_tx=("num_sell_tx","sum"))
+              .agg(
+                  net_shares  = ("net_shares",  "sum"),
+                  num_buy_tx  = ("num_buy_tx",  "sum"),
+                  num_sell_tx = ("num_sell_tx", "sum"),
+              )
               .reset_index()
         )
 
@@ -120,15 +138,16 @@ def _fetch_from_rss(ticker: str, count: int = 40) -> pd.DataFrame:
         feed = feedparser.parse(url)
         trades = []
         for e in feed.entries:
-            title = e.get("title","").lower()
-            date  = e.get("updated","") or e.get("published","")
+            title = e.get("title", "").lower()
+            date  = e.get("updated", "") or e.get("published", "")
             ds    = pd.to_datetime(date).date() if date else None
-            if not ds: continue
+            if not ds:
+                continue
 
             buy  = "purchase" in title or "buy"  in title
             sell = "sale"    in title or "sell" in title
             net  = 1 if buy and not sell else -1 if sell and not buy else 0
-            trades.append({"ds":ds, "net_shares":net, "buy":int(buy), "sell":int(sell)})
+            trades.append({"ds": ds, "net_shares": net, "buy": int(buy), "sell": int(sell)})
 
         if not trades:
             return pd.DataFrame()
@@ -136,11 +155,14 @@ def _fetch_from_rss(ticker: str, count: int = 40) -> pd.DataFrame:
         dfx = pd.DataFrame(trades)
         return (
             dfx.groupby("ds")
-               .agg(net_shares=("net_shares","sum"),
-                    num_buy_tx=("buy","sum"),
-                    num_sell_tx=("sell","sum"))
+               .agg(
+                   net_shares  = ("net_shares", "sum"),
+                   num_buy_tx  = ("buy",       "sum"),
+                   num_sell_tx = ("sell",      "sum"),
+               )
                .reset_index()
         )
+
     except Exception as e:
         print("❌ RSS fetch error for", ticker, e)
         return pd.DataFrame()
@@ -149,6 +171,7 @@ def _fetch_from_rss(ticker: str, count: int = 40) -> pd.DataFrame:
 def _fetch_from_excel(ticker: str) -> pd.DataFrame:
     try:
         df = pd.read_excel(LOCAL_XLSX, sheet_name=TAB_TRANSACTIONS)
+
         # normalize headers
         df.columns = [
             c.strip().upper().replace(" ", "_").replace("-", "_")
@@ -179,20 +202,33 @@ def _fetch_from_excel(ticker: str) -> pd.DataFrame:
         df["code"]   = df[code_col].str.strip().str.upper()
 
         def classify(r):
-            if r["code"] in ("P","M","A","G","F"): return (r["shares"],1,0)
-            if r["code"] == "S":                   return (-r["shares"],0,1)
-            return (0,0,0)
+            if r["code"] in ("P","M","A","G","F"):
+                return (r["shares"], 1, 0)
+            if r["code"] == "S":
+                return (-r["shares"], 0, 1)
+            return (0, 0, 0)
 
         triples = df.apply(classify, axis=1, result_type="expand")
-        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = triples[0], triples[1], triples[2]
+        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = (
+            triples[0], triples[1], triples[2]
+        )
 
         return (
             df.groupby("ds")
-              .agg(net_shares=("net_shares","sum"),
-                   num_buy_tx=("num_buy_tx","sum"),
-                   num_sell_tx=("num_sell_tx","sum"))
+              .agg(
+                  net_shares  = ("net_shares",  "sum"),
+                  num_buy_tx  = ("num_buy_tx",  "sum"),
+                  num_sell_tx = ("num_sell_tx", "sum"),
+              )
               .reset_index()
         )
+
     except Exception as e:
-        print("❌ Excel fallback error for", ticker, e)
+        print(f"❌ Excel fallback error for {ticker}: {e}")
         return pd.DataFrame()
+
+
+# ── quick test when running directly ─────────────────────────────────────────
+if __name__ == "__main__":
+    print("looking for:", LOCAL_XLSX)
+    print("exists? ", os.path.exists(LOCAL_XLSX))
