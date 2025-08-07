@@ -1,5 +1,5 @@
-# v1.5 forecast_feature_engineering.py
-# Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
+# v1.6 forecast_feature_engineering.py
+# Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, Insider Trades, and Pandemic Regime Dummy
 
 import pandas as pd
 import numpy as np
@@ -26,6 +26,11 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     # reset + rename
     df = df.reset_index()
     df.rename(columns={"Date": "date", "Close": "close", "Volume": "volume"}, inplace=True)
+
+    # --- Pandemic Regime Dummy ---
+    # mark pandemic period (Mar 2020–Dec 2023)
+    df["is_pandemic"] = ((df["date"] >= "2020-03-01") &
+                          (df["date"] <= "2023-12-31")).astype(int)
 
     # sanity check
     for col in ("date", "close", "volume"):
