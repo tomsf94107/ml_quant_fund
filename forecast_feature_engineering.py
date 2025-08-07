@@ -1,4 +1,4 @@
-# v1.5 forecast_feature_engineering.py
+# v1.9 forecast_feature_engineering.py
 # Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
 
 import pandas as pd
@@ -59,17 +59,17 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     df["macd"]        = ema12 - ema26
     df["macd_signal"] = df["macd"].ewm(span=9, adjust=False).mean()
 
-    # --- Bollinger Bands (20-day) ---
-    ma20 = df["ma_20"]
-    std20 = df["close"].rolling(window=20).std()
-    df["bollinger_upper"] = ma20 + 2 * std20
-    df["bollinger_lower"] = ma20 - 2 * std20
-    df["bollinger_width"] = (df["bollinger_upper"] - df["bollinger_lower"]) / ma20
+    # --- Bollinger Bands (20-day) using local variables ---
+    ma20_local = df["close"].rolling(window=20).mean()
+    std20_local = df["close"].rolling(window=20).std()
+    df["bollinger_upper"] = ma20_local + 2 * std20_local
+    df["bollinger_lower"] = ma20_local - 2 * std20_local
+    df["bollinger_width"] = (df["bollinger_upper"] - df["bollinger_lower"]) / ma20_local
 
-    # --- Volume Spike Detection ---
-    vol_mean20 = df["volume"].rolling(window=20).mean()
-    vol_std20  = df["volume"].rolling(window=20).std()
-    df["volume_zscore"] = (df["volume"] - vol_mean20) / vol_std20
+    # --- Volume Spike Detection using local variables ---
+    vol_mean_local = df["volume"].rolling(window=20).mean()
+    vol_std_local  = df["volume"].rolling(window=20).std()
+    df["volume_zscore"] = (df["volume"] - vol_mean_local) / vol_std_local
     df["volume_spike"]  = (df["volume_zscore"] > 2).astype(int)
 
     # --- Optional: Sentiment Placeholder ---
