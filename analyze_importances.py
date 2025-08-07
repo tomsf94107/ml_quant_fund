@@ -37,9 +37,17 @@ def load_feature_importances(model_dir):
         with open(path, "rb") as f:
             model = pickle.load(f)
         imp = model.feature_importances_
-        if len(imp) != len(FEATURE_NAMES):
+        # handle legacy models missing pandemic dummy
+        expected = len(FEATURE_NAMES)
+        if len(imp) == expected - 1:
+            # insert zero for is_pandemic feature
+            idx = FEATURE_NAMES.index("is_pandemic")
+            imp = list(imp)
+            imp.insert(idx, 0.0)
+            imp = pd.np.array(imp)
+        if len(imp) != expected:
             raise ValueError(f"Feature length mismatch for {model_name}: "
-                             f"expected {len(FEATURE_NAMES)}, got {len(imp)}")
+                             f"expected {expected}, got {len(imp)}")
         record = pd.Series(imp, index=FEATURE_NAMES, name=model_name)
         records.append(record)
 
