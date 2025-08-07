@@ -33,27 +33,28 @@ def load_feature_importances(model_dir):
         raise SystemExit(f"No model files found in '{model_dir}'")
 
     records = []
+    expected = len(FEATURE_NAMES)
+
     for path in model_paths:
         model_name = os.path.basename(path).replace(".pkl", "")
         with open(path, "rb") as f:
             model = pickle.load(f)
-        imp = model.feature_importances_
-        # handle legacy models missing pandemic dummy
-        expected = len(FEATURE_NAMES)
-        if len(imp) == expected - 1:
-            # insert zero for is_pandemic feature
-            idx = FEATURE_NAMES.index("is_pandemic")
-            imp = list(imp)
-            imp.insert(idx, 0.0)
-            imp = pd.np.array(imp)
-        if len(imp) != expected:
-            raise ValueError(f"Feature length mismatch for {model_name}: "
-                             f"expected {expected}, got {len(imp)}")
-        record = pd.Series(imp, index=FEATURE_NAMES, name=model_name)
-        records.append(record)
+        imp = list(model.feature_importances_)  # cast to list for easier insertion
 
-    df_imp = pd.DataFrame(records)
-    return df_imp
+        # if this model is missing the pandemic feature, pad a zero
+        if len(imp) == expected - 1:
+            idx = FEATURE_NAMES.index("is_pandemic")
+            imp.insert(idx, 0.0)
+
+        imp = np.array(imp)  # use numpy array here
+        if len(imp) != expected:
+            raise ValueError(
+                f"Feature length mismatch for {model_name}: expected {expected}, got {len(imp)}"
+            )
+
+        records.append(pd.Series(imp, index=FEATURE_NAMES, name=model_name))
+
+    return pd.DataFrame(records)
 
 # -------------------- Main --------------------
 if __name__ == "__main__":
