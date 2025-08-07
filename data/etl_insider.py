@@ -24,39 +24,34 @@ try:
 except ImportError:
     ST_SECRETS = {}
 
-CIK_MAP          = load_cik_to_ticker_map()
-GSHEET_NAME      = "Insider_Trades_Data"
-TAB_TRANSACTIONS = "Insider_Transactions"
-
-# ── DEBUG: show what secrets & files we actually see at runtime ──────────────
-st.write("🔑 ST_SECRETS keys:", list(ST_SECRETS.keys()))
-st.write("🗄 gcp_service_account creds:", ST_SECRETS.get("gcp_service_account"))
-st.write("📦 Excel file exists at", LOCAL_XLSX, "?", os.path.exists(LOCAL_XLSX))
+# ── constants ────────────────────────────────────────────────────────────────
+CIK_MAP           = load_cik_to_ticker_map()
+GSHEET_NAME       = "Insider_Trades_Data"
+TAB_TRANSACTIONS  = "Insider_Transactions"
 
 
 def fetch_insider_trades(ticker: str, mode: str = "sheet-first") -> pd.DataFrame:
     """
     Fetch insider trades for a ticker.
       mode:
-        - sheet-first: try Google Sheet
-        - rss:         SEC RSS feed
-        - excel:       fallback to local Excel
+        - sheet-first: try Google Sheet → RSS → Excel
+        - sheet:       only Google Sheet
+        - rss:         only RSS
+        - excel:       only Excel fallback
     """
     ticker = ticker.upper().strip()
 
-    # 1) sheet-first
     if mode in ("sheet-first", "sheet"):
         df = _fetch_from_sheet(ticker)
         if not df.empty:
             return df
 
-    # 2) RSS (if sheet-first or explicit 'rss')
     if mode in ("sheet-first", "rss"):
         df = _fetch_from_rss(ticker)
         if not df.empty:
             return df
 
-    # 3) Excel fallback
+    # finally Excel fallback
     return _fetch_from_excel(ticker)
 
 
@@ -76,10 +71,6 @@ def _fetch_from_sheet(ticker: str) -> pd.DataFrame:
         ws = client.open(GSHEET_NAME).worksheet(TAB_TRANSACTIONS)
         df = pd.DataFrame(ws.get_all_records())
 
-        # ── DEBUG: show raw sheet rows & columns ──────────────────────────────
-        st.write("📋 Raw sheet records (first 5):", df.head())
-        st.write("🔠 Sheet columns:", df.columns.tolist())
-
         # normalize headers
         df.columns = [
             c.strip().upper().replace(" ", "_").replace("-", "_")
@@ -98,12 +89,10 @@ def _fetch_from_sheet(ticker: str) -> pd.DataFrame:
         ticker_col = find_col(["ISSUER", "SYMBOL"]) or find_col(["TICKER"])
 
         if not all([date_col, shares_col, code_col, ticker_col]):
-            st.error(f"❌ Missing sheet columns: {date_col}, {shares_col}, {code_col}, {ticker_col}")
-            return pd.DataFrame()
+            return pd.DataFrame()  # sheet shape changed?
 
         df = df[df[ticker_col].str.upper().str.strip() == ticker]
         if df.empty:
-            st.warning(f"⚠️ No rows in sheet matching ticker {ticker}")
             return pd.DataFrame()
 
         df["ds"]     = pd.to_datetime(df[date_col], errors="coerce").dt.date
@@ -119,7 +108,9 @@ def _fetch_from_sheet(ticker: str) -> pd.DataFrame:
             return (0, 0, 0)
 
         triples = df.apply(classify, axis=1, result_type="expand")
-        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = triples[0], triples[1], triples[2]
+        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = (
+            triples[0], triples[1], triples[2]
+        )
 
         return (
             df.groupby("ds")
@@ -131,8 +122,7 @@ def _fetch_from_sheet(ticker: str) -> pd.DataFrame:
               .reset_index()
         )
 
-    except Exception as e:
-        st.error(f"❌ Exception during Google Sheet fetch for {ticker}: {e}")
+    except Exception:
         return pd.DataFrame()
 
 
@@ -171,8 +161,7 @@ def _fetch_from_rss(ticker: str, count: int = 40) -> pd.DataFrame:
                .reset_index()
         )
 
-    except Exception as e:
-        st.error(f"❌ RSS fetch error for {ticker}: {e}")
+    except Exception:
         return pd.DataFrame()
 
 
@@ -198,7 +187,6 @@ def _fetch_from_excel(ticker: str) -> pd.DataFrame:
         ticker_col = find_col(["ISSUER", "SYMBOL"]) or find_col(["TICKER"])
 
         if not all([date_col, shares_col, code_col, ticker_col]):
-            st.error(f"❌ Missing excel columns: {date_col}, {shares_col}, {code_col}, {ticker_col}")
             return pd.DataFrame()
 
         df = df[df[ticker_col].str.upper().str.strip() == ticker]
@@ -217,7 +205,9 @@ def _fetch_from_excel(ticker: str) -> pd.DataFrame:
             return (0, 0, 0)
 
         triples = df.apply(classify, axis=1, result_type="expand")
-        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = triples[0], triples[1], triples[2]
+        df["net_shares"], df["num_buy_tx"], df["num_sell_tx"] = (
+            triples[0], triples[1], triples[2]
+        )
 
         return (
             df.groupby("ds")
@@ -229,12 +219,9 @@ def _fetch_from_excel(ticker: str) -> pd.DataFrame:
               .reset_index()
         )
 
-    except Exception as e:
-        st.error(f"❌ Excel fallback error for {ticker}: {e}")
+    except Exception:
         return pd.DataFrame()
 
 
-# ── quick test when running directly ─────────────────────────────────────────
 if __name__ == "__main__":
-    print("looking for:", LOCAL_XLSX)
-    print("exists? ", os.path.exists(LOCAL_XLSX))
+    print("Looking for:", LOCAL_XLSX, "→ exists?", os.path.exists(LOCAL_XLSX))
