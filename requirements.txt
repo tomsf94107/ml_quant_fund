@@ -38,6 +38,7 @@ google-auth-oauthlib==1.2.2
 # --- misc runtimes ---
 fsspec==2024.6.1
 tenacity==9.1.2
+openpyxl>=3.0.0
 
 # --- sentiments --- 
 feedparser==6.0.11
