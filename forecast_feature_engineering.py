@@ -79,13 +79,22 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     # --- Insider-Trades Feature ---
     try:
         ins = fetch_insider_trades(ticker, mode="sheet-first")
-        ins_ts = ins.set_index("ds")["net_shares"]
-        df["insider_net_shares"] = df["date"].dt.date.map(lambda d: ins_ts.get(d, 0))
+        # detect which column holds dates
+        if 'ds' in ins.columns:
+            date_col = 'ds'
+        elif 'date' in ins.columns:
+            date_col = 'date'
+        else:
+            raise ValueError(f"No date column in insider trades: {list(ins.columns)}")
+        # ensure datetime
+        ins[date_col] = pd.to_datetime(ins[date_col])
+        ins_ts = ins.set_index(date_col)["net_shares"]
+        df["insider_net_shares"] = df["date"].dt.normalize().map(ins_ts.to_dict()).fillna(0).astype(float)
     except Exception as e:
         print(f"⚠️ Insider trades merge failed for {ticker}: {e}")
         df["insider_net_shares"] = 0
 
-    # drop NaNs from rolling/rsi/macd windows
+    # drop NaNs from rolling/rsi/macd windows from rolling/rsi/macd windows
     df.dropna(inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
