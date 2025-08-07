@@ -59,7 +59,8 @@ def prepare_with_insider(ticker):
                .astype(float)
         )
     except Exception as e:
-        print(f"⚠️ prepare_with_insider: insider merge failed for {ticker}: {e}")
+        # No insider trade information available
+        print(f"⚠️ No insider trade info for {ticker}")
         df["insider_net_shares"] = 0.0
 
     # rolling insider aggregates
