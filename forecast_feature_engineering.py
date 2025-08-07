@@ -84,28 +84,11 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
             date_col = 'ds'
         elif 'date' in ins.columns:
             date_col = 'date'
+        elif 'filed_date' in ins.columns:
+            date_col = 'filed_date'
         else:
             raise ValueError(f"No date column in insider trades: {list(ins.columns)}")
         # ensure datetime
         ins[date_col] = pd.to_datetime(ins[date_col])
-        ins_ts = ins.set_index(date_col)["net_shares"]
-        df["insider_net_shares"] = df["date"].dt.normalize().map(ins_ts.to_dict()).fillna(0).astype(float)
-    except Exception as e:
-        print(f"⚠️ Insider trades merge failed for {ticker}: {e}")
-        df["insider_net_shares"] = 0
-
-    # drop NaNs from rolling/rsi/macd windows from rolling/rsi/macd windows
-    df.dropna(inplace=True)
-    df.reset_index(drop=True, inplace=True)
-    return df
-
-
-# -------------------- Target Generator --------------------
-def add_forecast_targets(df: pd.DataFrame, horizon_days=(1, 3)):
-    df = df.copy()
-    for h in horizon_days:
-        return_col = f"return_{h}d"
-        if return_col not in df.columns:
-            df[return_col] = df["close"].pct_change(periods=h)
-        df[f"target_{h}d"] = (df[return_col].shift(-h) > 0).astype(int)
-    return df
+        ins_ts = ins.set_index(date_col)["net_shares"].to_dict()
+        df["insider_net_shares"] = df["date"].dt.normalize().map(ins_ts).fillna(0).astype(float)
