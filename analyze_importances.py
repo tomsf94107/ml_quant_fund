@@ -1,9 +1,12 @@
 # analyze_importances.py
 # Updated to include pandemic dummy feature in feature importance analysis
+# and to write timestamped snapshots for historical tracking
 
 import os
 import glob
 import pickle
+from datetime import datetime
+
 import pandas as pd
 import numpy as np
 
@@ -39,6 +42,7 @@ def load_feature_importances(model_dir):
         model_name = os.path.basename(path).replace(".pkl", "")
         with open(path, "rb") as f:
             model = pickle.load(f)
+
         imp = list(model.feature_importances_)  # cast to list for easier insertion
 
         # if this model is missing the pandemic feature, pad a zero
@@ -69,3 +73,9 @@ if __name__ == "__main__":
     # 3. Save to CSV
     df_importances.to_csv(FEATURE_IMPORTANCES_CSV)
     print(f"\n✅ Saved feature importances to {FEATURE_IMPORTANCES_CSV}")
+
+    # 4. Also write a timestamped snapshot for historical tracking
+    today = datetime.today().strftime("%Y-%m-%d")
+    snapshot_path = os.path.join(MODEL_DIR, f"feature_importances_summary_{today}.csv")
+    df_importances.to_csv(snapshot_path)
+    print(f"✏️  Wrote snapshot: {snapshot_path}")
