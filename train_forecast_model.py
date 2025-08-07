@@ -1,5 +1,3 @@
-# train_forecast_model_v1.2
-
 import os
 import pickle
 
@@ -15,12 +13,13 @@ from data.etl_insider import fetch_insider_trades
 TICKERS = [
     "NVO", "AAPL", "PFE", "NFLX", "AMD", "NVDA", "PYPL", "GOOG", "SMCI",
     "CNC", "CRWD", "META", "MRNA", "DDOG", "UNH", "SHOP", "PLTR", "TSM",
-    "FIG","SNOW","TSM","MP","OPEN","DUOL","BSX","SMCI","JNJ","AXP","TSLA","SHOP"
-    ,"ZM","META"
+    "FIG", "SNOW", "MP", "OPEN", "DUOL", "BSX", "JNJ", "AXP", "TSLA",
+    "ZM"
 ]
 
-TARGET_COLUMNS  = ["target_1d", "target_3d", "target_5d"]
-BASE_FEATURES   = [
+# Targets and features
+TARGET_COLUMNS   = ["target_1d", "target_3d", "target_5d"]
+BASE_FEATURES    = [
     "close", "volume",
     "return_1d", "return_3d", "return_5d",
     "ma_5", "ma_10", "ma_20",
@@ -31,38 +30,47 @@ BASE_FEATURES   = [
     "sentiment_score",
 ]
 INSIDER_FEATURES = ["insider_net_shares", "insider_7d", "insider_21d"]
-
-FEATURE_COLUMNS = BASE_FEATURES + INSIDER_FEATURES
+FEATURE_COLUMNS  = BASE_FEATURES + INSIDER_FEATURES
 
 MODEL_DIR = "models"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
+
 def prepare_with_insider(ticker):
     df = build_feature_dataframe(ticker)
+
+    # merge insider net shares
     try:
         ins = fetch_insider_trades(ticker, mode="sheet-first")
-        # detect date column
         if "ds" in ins.columns:
-            ins_date_col = "ds"
+            date_col = "ds"
         elif "date" in ins.columns:
-            ins_date_col = "date"
+            date_col = "date"
+        elif "filed_date" in ins.columns:
+            date_col = "filed_date"
         else:
-            # nothing to merge
-            raise KeyError(f"No date column in insider trades: {ins.columns.tolist()!r}")
-
-        # parse and normalize
-        ins[ins_date_col] = pd.to_datetime(ins[ins_date_col]).dt.normalize()
-        ins_ts = ins.set_index(ins_date_col)["net_shares"].to_dict()
-
-        # map into df
+            raise KeyError(f"No date column in insider trades: {ins.columns.tolist()}")
+        ins[date_col] = pd.to_datetime(ins[date_col]).dt.normalize()
+        ins_ts = ins.set_index(date_col)["net_shares"].to_dict()
         df["insider_net_shares"] = (
-            df["date"].dt.normalize().map(ins_ts).fillna(0).astype(float)
+            df["date"].dt.normalize()
+               .map(ins_ts)
+               .fillna(0.0)
+               .astype(float)
         )
     except Exception as e:
         print(f"⚠️ prepare_with_insider: insider merge failed for {ticker}: {e}")
         df["insider_net_shares"] = 0.0
 
+    # rolling insider aggregates
+    df["insider_7d"]  = df["insider_net_shares"].rolling(window=7,  min_periods=1).sum()
+    df["insider_21d"] = df["insider_net_shares"].rolling(window=21, min_periods=1).sum()
+
+    # generate forecast targets for 1,3,5 days
+    df = add_forecast_targets(df, horizon_days=(1, 3, 5))
+
     return df
+
 
 def train_model_for_ticker(ticker):
     print(f"\n=== {ticker} ===")
@@ -73,28 +81,26 @@ def train_model_for_ticker(ticker):
             print(f"⚠️  Missing {target_col} for {ticker}, skipping.")
             continue
 
-        # select X/y
         X = df[FEATURE_COLUMNS]
         y = df[target_col]
 
-        # split
+        # split chronologically
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=0.2, random_state=42, shuffle=False
         )
 
-        # train
+        # train classifier
         model = XGBClassifier(use_label_encoder=False, eval_metric="logloss", random_state=42)
         model.fit(X_train, y_train)
 
-        # eval
+        # evaluate
         y_pred = model.predict(X_test)
         acc    = accuracy_score(y_test, y_pred)
 
-        # persist
+        # save model
         model_path = os.path.join(MODEL_DIR, f"{ticker}_{target_col}.pkl")
         with open(model_path, "wb") as f:
             pickle.dump(model, f)
-
         print(f"✅ {ticker} | {target_col:<10} — Acc: {acc:.3f} → {model_path}")
 
 
