@@ -1,8 +1,9 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v17.9  •  Added sys.path fix for Streamlit import issues
+#  v18.0  •  Added sys.path fix for Streamlit import issues + Importances tab
 # ────────────────────────────────────────────────────────────────────────────
 import os, sys, io, zipfile, base64, tempfile
 from dotenv import load_dotenv
+from PIL import Image
 load_dotenv()
 
 # 🔧 NEW FIX — ensure root path is added for module imports in Streamlit
@@ -23,6 +24,7 @@ from sklearn.metrics import accuracy_score
 from datetime import datetime, date
 from core.helpers_xgb import train_xgb_predict  
 
+# ----- PIL for chart uploads ------------------------------------------------
 
 # ----- web / app -------------------------------------------------------------
 import streamlit as st
@@ -47,12 +49,36 @@ from forecast_utils import (
     run_auto_retrain_all,
 )
 
-# ──────────────────────────  AUTH  ───────────────────────────────────────────
+# ──────────────────────────  IMPORTANCES TAB  ─────────────────────────────────
+def show_importances_tab():
+    st.title("📈 Feature Importances Over Time")
+    img_dir = "charts"
+    img_filename = "importances_over_time.png"
+    img_path = os.path.join(img_dir, img_filename)
 
+    if os.path.exists(img_path):
+        st.image(img_path, caption="7-Day Rolling Feature Importances", use_column_width=True)
+        last_mod = os.path.getmtime(img_path)
+        st.markdown(f"**Last updated:** {datetime.fromtimestamp(last_mod):%Y-%m-%d %H:%M}")
+    else:
+        st.warning(f"No chart found at `{img_path}`.")
+        uploaded_file = st.file_uploader(
+            "Upload a feature importances chart (PNG/JPG):", type=["png", "jpg", "jpeg"]
+        )
+        if uploaded_file:
+            img = Image.open(uploaded_file)
+            st.image(img, caption="Uploaded Feature Importances Chart", use_column_width=True)
+            if st.button("Save chart to disk"):
+                os.makedirs(img_dir, exist_ok=True)
+                with open(img_path, "wb") as f:
+                    f.write(uploaded_file.getbuffer())
+                st.success(f"Chart saved to `{img_path}`!")
+
+# ──────────────────────────  AUTH  ───────────────────────────────────────────
 
 def check_login():
     if st.session_state.get("auth_ok"):
-        return                 # already authenticated
+        return  # already authenticated
 
     pwd = st.text_input("Enter password:", type="password")
     if pwd == "":
@@ -62,7 +88,6 @@ def check_login():
         st.stop()
 
     st.session_state["auth_ok"] = True
-
 
 # ──────────────────────────  EMAIL  ──────────────────────────────────────────
 def send_alert_email(ticker: str, prob: float):
@@ -77,47 +102,30 @@ def send_alert_email(ticker: str, prob: float):
     except Exception as e:
         st.error(f"Email failed: {e}")
 
-
 # ──────────────────────────  SHAP VIS  ───────────────────────────────────────
 def plot_shap(model, X):
-    """
-    Safe SHAP plot for XGBoost models.
-
-    • works with XGBRegressor / XGBClassifier
-    • avoids utf-8 decode errors by passing a callable (model.predict)
-    """
     try:
         import shap
-        # ── 0. sanity checks ────────────────────────────────────────────
         if X is None or len(X) == 0:
             st.warning("⚠️ No rows for SHAP.")
             return
-
-        # keep only numeric, finite values
         X_num = (
             X.select_dtypes(include=[np.number])
-              .replace([np.inf, -np.inf], np.nan)
-              .dropna()
-              .astype("float64")
+             .replace([np.inf, -np.inf], np.nan)
+             .dropna()
+             .astype("float64")
         )
         if X_num.empty:
             st.warning("⚠️ No valid numeric features for SHAP.")
             return
-
-        # ── 1. build explainer with callable ----------------------------
-        # use up to 100 rows of background to keep it fast
         bg = shap.sample(X_num, min(100, len(X_num)), random_state=0)
-
-        explainer   = shap.Explainer(model.predict, bg)   # <– note the callable
+        explainer   = shap.Explainer(model.predict, bg)
         shap_values = explainer(X_num)
-
-        # ── 2. bar summary plot ----------------------------------------
         st.subheader("🔍 SHAP Feature Importance")
         fig = plt.figure()
         shap.plots.bar(shap_values, max_display=10, show=False)
         st.pyplot(fig)
         plt.clf()
-
     except Exception as e:
         st.error(f"❌ SHAP failed: {e}")
 
@@ -147,40 +155,48 @@ def load_accuracy_log_from_gsheet():
         st.error(f"⚠️ G-Sheet load failed: {e}")
         return pd.DataFrame()
 
-# ──────────────────────────  UI Config   ────────────────────────────────────
-
+# ──────────────────────────  UI CONFIG  ─────────────────────────────────────
 st_autorefresh(interval=5 * 60 * 1000, key="auto-refresh")
+
+# Page selector
+pages = ["Dashboard", "Importances Over Time"]
+page = st.sidebar.radio("Go to", pages)
+if page == "Importances Over Time":
+    show_importances_tab()
+    st.stop()
+
 st.title("📈 ML-Based Stock Strategy Dashboard")
 st.caption(f"🕒 Last updated {datetime.now():%Y-%m-%d %H:%M:%S}")
 
 # ──────────────────────────  SIDEBAR  ────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## 📆 Date Range")
-    start_date = st.date_input("Start date", value=date(2025, 3, 1))
-    end_date   = st.date_input("End date",   value=date(2025, 7, 20))
+    if page == "Dashboard":
+        st.markdown("## 📆 Date Range")
+        start_date = st.date_input("Start date", value=date(2025, 3, 1))
+        end_date   = st.date_input("End date",   value=date(2025, 7, 20))
 
-    st.markdown("## 🧠 Forecasting Model")
-    model_choice = st.radio(
-        "Select Model",
-        ["XGBoost (Short Term) [Recommended]", "Prophet (Long Term)"], 0
-    )
+        st.markdown("## 🧠 Forecasting Model")
+        model_choice = st.radio(
+            "Select Model",
+            ["XGBoost (Short Term) [Recommended]", "Prophet (Long Term)"], 0
+        )
 
-    st.markdown("## 🛠️ Data Tools")
-    if st.button("⚙️ Populate All Forecast Logs"):
-        run_auto_retrain_all()
-        st.success("✅ Logs populated!")
+        st.markdown("## 🛠️ Data Tools")
+        if st.button("⚙️ Populate All Forecast Logs"):
+            run_auto_retrain_all()
+            st.success("✅ Logs populated!")
 
-    tickers              = st.text_input("Tickers (comma-sep)", "AAPL,MSFT").upper().split(",")
-    confidence_threshold = st.slider("Confidence threshold", 0.5, 0.99, 0.7)
-    enable_email         = st.toggle("📧 Email alerts", True)
-    enable_shap          = st.toggle("🔍 SHAP explainability", True)
-    enable_zip_download  = st.toggle("📦 ZIP of results", True)
+        tickers              = st.text_input("Tickers (comma-sep)", "AAPL,MSFT").upper().split(",")
+        confidence_threshold = st.slider("Confidence threshold", 0.5, 0.99, 0.7)
+        enable_email         = st.toggle("📧 Email alerts", True)
+        enable_shap          = st.toggle("🔍 SHAP explainability", True)
+        enable_zip_download  = st.toggle("📦 ZIP of results", True)
 
-    with st.expander("📋 Manage ticker list"):
-        txt = st.text_area("One ticker per line", "\n".join(load_forecast_tickers()), height=140)
-        if st.button("💾 Save tickers"):
-            save_forecast_tickers(txt.splitlines())
-            st.success("Saved.")
+        with st.expander("📋 Manage ticker list"):
+            txt = st.text_area("One ticker per line", "\n".join(load_forecast_tickers()), height=140)
+            if st.button("💾 Save tickers"):
+                save_forecast_tickers(txt.splitlines())
+                st.success("Saved.")
 
 # ═════════════════════════  FORECAST SECTION  ════════════════════════════════
 
@@ -384,3 +400,4 @@ else:
     acc_df["timestamp"] = pd.to_datetime(acc_df["timestamp"])
     st.dataframe(acc_df.sort_values("timestamp", ascending=False))
     st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
+
