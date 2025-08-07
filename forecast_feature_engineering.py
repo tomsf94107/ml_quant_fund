@@ -1,4 +1,4 @@
-# v2.5 forecast_feature_engineering.py
+# v1.5 forecast_feature_engineering.py
 # Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
 
 import pandas as pd
