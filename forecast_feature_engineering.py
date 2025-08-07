@@ -1,4 +1,4 @@
-# v2.0 forecast_feature_engineering.py
+# v2.1 forecast_feature_engineering.py
 # Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
 
 import pandas as pd
@@ -64,16 +64,17 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     std20 = df["close"].rolling(window=20).std()
     df["bollinger_upper"] = ma20 + 2 * std20
     df["bollinger_lower"] = ma20 - 2 * std20
-    # compute width as Series and join to df
-    boll_width = ((df["bollinger_upper"] - df["bollinger_lower"]) / ma20).rename("bollinger_width")
+    boll_width = (df["bollinger_upper"] - df["bollinger_lower"]) / ma20
+    boll_width.name = "bollinger_width"
     df = df.join(boll_width)
 
     # --- Volume Spike Detection ---
     vol_mean = df["volume"].rolling(window=20).mean()
     vol_std  = df["volume"].rolling(window=20).std()
-    vol_z = ((df["volume"] - vol_mean) / vol_std).rename("volume_zscore")
+    vol_z = (df["volume"] - vol_mean) / vol_std
+    vol_z.name = "volume_zscore"
     df = df.join(vol_z)
-    df["volume_spike"] = (df["volume_zscore"] > 2).astype(int)
+    df["volume_spike"]  = (df["volume_zscore"] > 2).astype(int)
 
     # --- Optional: Sentiment Placeholder ---
     df["sentiment_score"] = 0.0  # TODO: plug in real sentiment pipeline
