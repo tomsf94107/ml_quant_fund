@@ -1,5 +1,6 @@
-# v1.6 forecast_feature_engineering.py
-# Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, Insider Trades, and Pandemic Regime Dummy
+# v1.7 forecast_feature_engineering.py
+# Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder,
+# Insider Trades via SQLite aggregates, and Pandemic Regime Dummy
 
 import pandas as pd
 import numpy as np
@@ -7,9 +8,26 @@ import yfinance as yf
 import sqlite3
 from datetime import datetime
 
-# 1) bring in our insider-trades extractor
-from data.etl_insider import fetch_insider_trades
-
+# -------------------- Load Insiders --------------------
+def load_insider_flows(ticker: str, db_path="insider_trades.db") -> pd.DataFrame:
+    """
+    Returns a DataFrame with columns:
+      - date (datetime)
+      - net_shares
+      - insider_7d
+      - insider_21d
+    for the given ticker.
+    """
+    conn = sqlite3.connect(db_path)
+    query = """
+      SELECT date, net_shares, insider_7d, insider_21d
+        FROM insider_flows
+       WHERE ticker = ?
+    ORDER BY date
+    """
+    df = pd.read_sql(query, conn, params=(ticker,), parse_dates=["date"])
+    conn.close()
+    return df
 
 # -------------------- Feature Builder --------------------
 def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None):
@@ -66,7 +84,7 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     df["macd_signal"] = df["macd"].ewm(span=9, adjust=False).mean()
 
     # --- Bollinger Bands (20-day) ---
-    ma20 = df["close"].rolling(window=20).mean()
+    ma20  = df["close"].rolling(window=20).mean()
     std20 = df["close"].rolling(window=20).std()
     df["bollinger_upper"] = ma20 + 2 * std20
     df["bollinger_lower"] = ma20 - 2 * std20
@@ -81,36 +99,21 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     # --- Optional: Sentiment Placeholder ---
     df["sentiment_score"] = 0.0  # TODO: plug in real sentiment pipeline
 
-    # --- Insider-Trades Feature ---
+    # --- Insider-Trades Feature via SQLite aggregates ---
     try:
-        ins = fetch_insider_trades(ticker, mode="sheet-first")
-        if "ds" in ins.columns:
-            date_col = "ds"
-        elif "date" in ins.columns:
-            date_col = "date"
-        elif "filed_date" in ins.columns:
-            date_col = "filed_date"
-        else:
-            raise ValueError(f"No date column in insider trades: {list(ins.columns)}")
+        ins_df = load_insider_flows(ticker)
+        ins_df.set_index("date", inplace=True)
+        df["insider_net_shares"] = df["date"].map(ins_df["net_shares"]).fillna(0.0)
+        df["insider_7d"]         = df["date"].map(ins_df["insider_7d"]).fillna(0.0)
+        df["insider_21d"]        = df["date"].map(ins_df["insider_21d"]).fillna(0.0)
+    except Exception as e:
+        print(f"⚠️ Insider-flows merge failed for {ticker}: {e}")
+        df["insider_net_shares"] = df["insider_7d"] = df["insider_21d"] = 0.0
 
-        ins[date_col] = pd.to_datetime(ins[date_col]).dt.normalize()
-        ins_ts = ins.set_index(date_col)["net_shares"].to_dict()
-        df["insider_net_shares"] = (
-            df["date"].dt.normalize()
-               .map(ins_ts)
-               .fillna(0.0)
-               .astype(float)
-        )
-    except Exception:
-        # no insider trade data
-        print(f"⚠️ No insider trade info for {ticker}")
-        df["insider_net_shares"] = 0.0
-
-    # drop NaNs from rolling/rsi/macd windows
+    # drop NaNs from initial windows
     df.dropna(inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
-
 
 # -------------------- Target Generator --------------------
 def add_forecast_targets(df: pd.DataFrame, horizon_days=(1, 3)):
