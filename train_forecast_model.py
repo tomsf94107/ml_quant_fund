@@ -1,4 +1,4 @@
-# train_forecast_model_v1.3
+# train_forecast_model.py
 
 import os
 import pickle
@@ -33,7 +33,6 @@ BASE_FEATURES    = [
 ]
 
 INSIDER_FEATURES = ["insider_net_shares", "insider_7d", "insider_21d"]
-
 FEATURE_COLUMNS  = BASE_FEATURES + INSIDER_FEATURES
 
 MODEL_DIR = "models"
@@ -41,9 +40,9 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 
 
 def prepare_with_insider_and_targets(ticker: str):
-    # build features (incl. pandemic dummy & insider flows)
+    # build all features (price, pandemic dummy, insider flows…)
     df = build_feature_dataframe(ticker)
-    # add forecast targets for 1/3/5-day
+    # add binary up/down targets
     df = add_forecast_targets(df, horizon_days=(1, 3, 5))
     return df
 
@@ -53,7 +52,13 @@ def train_model_for_ticker(ticker: str):
     try:
         df = prepare_with_insider_and_targets(ticker)
     except ValueError as e:
+        # e.g. yf.download found no data
         print(f"⚠️  Skipping {ticker}: {e}")
+        return
+
+    # skip if no rows remain
+    if df.shape[0] == 0:
+        print(f"⚠️  Skipping {ticker}: no data after feature engineering")
         return
 
     for target_col in TARGET_COLUMNS:
