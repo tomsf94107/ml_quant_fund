@@ -52,9 +52,9 @@ from forecast_utils import (
 # ──────────────────────────  IMPORTANCES TAB  ─────────────────────────────────
 def show_importances_tab():
     st.title("📈 Feature Importances Over Time")
-    img_dir = "charts"
+    img_dir      = "charts"
     img_filename = "importances_over_time.png"
-    img_path = os.path.join(img_dir, img_filename)
+    img_path     = os.path.join(img_dir, img_filename)
 
     if os.path.exists(img_path):
         st.image(img_path, caption="7-Day Rolling Feature Importances", use_column_width=True)
@@ -73,6 +73,14 @@ def show_importances_tab():
                 with open(img_path, "wb") as f:
                     f.write(uploaded_file.getbuffer())
                 st.success(f"Chart saved to `{img_path}`!")
+
+    # ── Regenerate on demand ──────────────────────────────────────────────
+    if st.button("🔄 Regenerate importances"):
+        with st.spinner("Recomputing…"):
+            os.system("python evaluate_importances_over_time.py")
+        st.success("✅ Done! Refreshing view…")
+        st.experimental_rerun()
+
 
 # ──────────────────────────  AUTH  ───────────────────────────────────────────
 
