@@ -1,4 +1,4 @@
-# v2.2 forecast_feature_engineering.py
+# v2.3 forecast_feature_engineering.py
 # Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
 
 import pandas as pd
@@ -64,15 +64,13 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     std20 = df["close"].rolling(window=20).std()
     df["bollinger_upper"] = ma20 + 2 * std20
     df["bollinger_lower"] = ma20 - 2 * std20
-    boll_width = (df["bollinger_upper"] - df["bollinger_lower"]) / ma20
-    # assign via values to avoid merge/index issues
-    df["bollinger_width"] = boll_width.values
+    # width = (upper - lower) / ma20 = 4 * std20 / ma20
+    df["bollinger_width"] = 4 * std20 / ma20
 
     # --- Volume Spike Detection ---
     vol_mean = df["volume"].rolling(window=20).mean()
     vol_std  = df["volume"].rolling(window=20).std()
-    vol_z = (df["volume"] - vol_mean) / vol_std
-    df["volume_zscore"] = vol_z.values
+    df["volume_zscore"] = (df["volume"] - vol_mean) / vol_std
     df["volume_spike"]  = (df["volume_zscore"] > 2).astype(int)
 
     # --- Optional: Sentiment Placeholder ---
@@ -82,8 +80,7 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     try:
         ins = fetch_insider_trades(ticker, mode="sheet-first")
         ins_ts = ins.set_index("ds")["net_shares"]
-        insider_series = df["date"].dt.date.map(lambda d: ins_ts.get(d, 0))
-        df["insider_net_shares"] = insider_series
+        df["insider_net_shares"] = df["date"].dt.date.map(lambda d: ins_ts.get(d, 0))
     except Exception as e:
         print(f"⚠️ Insider trades merge failed for {ticker}: {e}")
         df["insider_net_shares"] = 0
