@@ -1,4 +1,4 @@
-# v2.4 forecast_feature_engineering.py
+# v2.5 forecast_feature_engineering.py
 # Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
 
 import pandas as pd
@@ -95,8 +95,9 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
                .fillna(0.0)
                .astype(float)
         )
-    except Exception as e:
-        print(f"⚠️ Insider trades merge failed for {ticker}: {e}")
+    except Exception:
+        # no insider trade data
+        print(f"⚠️ No insider trade info for {ticker}")
         df["insider_net_shares"] = 0.0
 
     # drop NaNs from rolling/rsi/macd windows
