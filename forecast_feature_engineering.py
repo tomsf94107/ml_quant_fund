@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 import yfinance as yf
+import sqlite3
 from datetime import datetime
 
 # 1) bring in our insider-trades extractor
