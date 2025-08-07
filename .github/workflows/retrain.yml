@@ -2,15 +2,18 @@ name: Daily Forecast Retraining
 
 on:
   schedule:
-    - cron: '0 1 * * *'  # Runs every day at 01:00 UTC
-  workflow_dispatch:     # Allows manual trigger
+    - cron: '0 1 * * *'     # Runs every day at 01:00 UTC
+  workflow_dispatch:       # Allows manual trigger
 
 jobs:
   retrain:
     runs-on: ubuntu-latest
+
     steps:
       - name: 📦 Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0     # needed for pushing commits
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
@@ -24,9 +27,9 @@ jobs:
 
       - name: 🔁 Run forecast retraining
         run: |
-          python retrain_forecasts.py
+          python train_forecast_model_v1.3.py
 
-      - name: 📤 Upload updated logs
+      - name: 📤 Upload forecast logs
         uses: actions/upload-artifact@v4
         with:
           name: forecast-logs
@@ -36,4 +39,12 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: forecast-metrics
-          path: forecast_metrics.csv  # ✅ Now matches updated script location
+          path: forecast_metrics.csv
+
+      - name: 💾 Commit updated models
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add models/*.pkl
+          git commit -m "Auto-retrain models: $(date --utc +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
