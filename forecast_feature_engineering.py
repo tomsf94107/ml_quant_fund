@@ -1,4 +1,4 @@
-# v1.9 forecast_feature_engineering.py
+# v2.0 forecast_feature_engineering.py
 # Enhanced with Bollinger, Volume Spikes, Sentiment Placeholder, and Insider Trades
 
 import pandas as pd
@@ -59,18 +59,21 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     df["macd"]        = ema12 - ema26
     df["macd_signal"] = df["macd"].ewm(span=9, adjust=False).mean()
 
-    # --- Bollinger Bands (20-day) using local variables ---
-    ma20_local = df["close"].rolling(window=20).mean()
-    std20_local = df["close"].rolling(window=20).std()
-    df["bollinger_upper"] = ma20_local + 2 * std20_local
-    df["bollinger_lower"] = ma20_local - 2 * std20_local
-    df["bollinger_width"] = (df["bollinger_upper"] - df["bollinger_lower"]) / ma20_local
+    # --- Bollinger Bands (20-day) ---
+    ma20 = df["close"].rolling(window=20).mean()
+    std20 = df["close"].rolling(window=20).std()
+    df["bollinger_upper"] = ma20 + 2 * std20
+    df["bollinger_lower"] = ma20 - 2 * std20
+    # compute width as Series and join to df
+    boll_width = ((df["bollinger_upper"] - df["bollinger_lower"]) / ma20).rename("bollinger_width")
+    df = df.join(boll_width)
 
-    # --- Volume Spike Detection using local variables ---
-    vol_mean_local = df["volume"].rolling(window=20).mean()
-    vol_std_local  = df["volume"].rolling(window=20).std()
-    df["volume_zscore"] = (df["volume"] - vol_mean_local) / vol_std_local
-    df["volume_spike"]  = (df["volume_zscore"] > 2).astype(int)
+    # --- Volume Spike Detection ---
+    vol_mean = df["volume"].rolling(window=20).mean()
+    vol_std  = df["volume"].rolling(window=20).std()
+    vol_z = ((df["volume"] - vol_mean) / vol_std).rename("volume_zscore")
+    df = df.join(vol_z)
+    df["volume_spike"] = (df["volume_zscore"] > 2).astype(int)
 
     # --- Optional: Sentiment Placeholder ---
     df["sentiment_score"] = 0.0  # TODO: plug in real sentiment pipeline
@@ -79,12 +82,13 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     try:
         ins = fetch_insider_trades(ticker, mode="sheet-first")
         ins_ts = ins.set_index("ds")["net_shares"]
-        df["insider_net_shares"] = df["date"].dt.date.map(lambda d: ins_ts.get(d, 0))
+        insider_series = df["date"].dt.date.map(lambda d: ins_ts.get(d, 0))
+        df["insider_net_shares"] = insider_series
     except Exception as e:
         print(f"⚠️ Insider trades merge failed for {ticker}: {e}")
         df["insider_net_shares"] = 0
 
-    # drop NaNs from rolling computations
+    # drop NaNs from rolling/rsi/macd windows
     df.dropna(inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
