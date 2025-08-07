@@ -6,7 +6,7 @@ import numpy as np
 import yfinance as yf
 from datetime import datetime
 
-# 1) bring in our insider‐trades extractor
+# 1) bring in our insider‑trades extractor
 from data.etl_insider import fetch_insider_trades
 
 
@@ -54,40 +54,39 @@ def build_feature_dataframe(ticker: str, start_date="2018-01-01", end_date=None)
     df["rsi_14"] = 100 - (100 / (1 + rs))
 
     # MACD
-    ema12          = df["close"].ewm(span=12, adjust=False).mean()
-    ema26          = df["close"].ewm(span=26, adjust=False).mean()
-    df["macd"]     = ema12 - ema26
+    ema12              = df["close"].ewm(span=12, adjust=False).mean()
+    ema26              = df["close"].ewm(span=26, adjust=False).mean()
+    df["macd"]        = ema12 - ema26
     df["macd_signal"] = df["macd"].ewm(span=9, adjust=False).mean()
 
-    # --- Bollinger Bands (20-day) using local Series to avoid DataFrame assignment issues ---
-    ma20_local = df["close"].rolling(window=20).mean()
-    std20_local = df["close"].rolling(window=20).std()
-    df["bollinger_upper"] = ma20_local + 2 * std20_local
-    df["bollinger_lower"] = ma20_local - 2 * std20_local
-    df["bollinger_width"] = (df["bollinger_upper"] - df["bollinger_lower"]) / ma20_local
+    # --- Bollinger Bands (20-day) ---
+    # reuse df['ma_20'] (Series) and compute std
+    df["std_20"] = df["close"].rolling(window=20).std()
+    df["bollinger_upper"] = df["ma_20"] + 2 * df["std_20"]
+    df["bollinger_lower"] = df["ma_20"] - 2 * df["std_20"]
+    df["bollinger_width"] = (df["bollinger_upper"] - df["bollinger_lower"]) / df["ma_20"]
+    df.drop(columns=["std_20"], inplace=True)
 
     # --- Volume Spike Detection ---
-    vol_mean20 = df["volume"].rolling(window=20).mean()
-    vol_std20  = df["volume"].rolling(window=20).std()
-    df["volume_zscore"] = (df["volume"] - vol_mean20) / vol_std20
+    df["vol_mean_20"] = df["volume"].rolling(window=20).mean()
+    df["vol_std_20"]  = df["volume"].rolling(window=20).std()
+    df["volume_zscore"] = (df["volume"] - df["vol_mean_20"]) / df["vol_std_20"]
     df["volume_spike"]  = (df["volume_zscore"] > 2).astype(int)
+    df.drop(columns=["vol_mean_20", "vol_std_20"], inplace=True)
 
     # --- Optional: Sentiment Placeholder ---
     df["sentiment_score"] = 0.0  # TODO: plug in real sentiment pipeline
 
-    # --- NEW: Insider‐Trades Feature ---
-    # fetch and align net insider flow
+    # --- NEW: Insider‑Trades Feature ---
     try:
         ins = fetch_insider_trades(ticker, mode="sheet-first")
-        # map each row’s date to the net_shares (fill missing dates with 0)
         ins_ts = ins.set_index("ds")["net_shares"]
         df["insider_net_shares"] = df["date"].dt.date.map(lambda d: ins_ts.get(d, 0))
     except Exception as e:
-        # if anything goes wrong, still include the column but zero‐fill
-        print(f"⚠️   Insider trades merge failed for {ticker}: {e}")
+        print(f"⚠️ Insider trades merge failed for {ticker}: {e}")
         df["insider_net_shares"] = 0
 
-    # drop any remaining NaNs from the rolling/rsi/macd windows
+    # drop NaNs from rolling computations
     df.dropna(inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
