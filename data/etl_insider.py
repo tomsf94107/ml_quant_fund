@@ -28,6 +28,10 @@ CIK_MAP         = load_cik_to_ticker_map()
 GSHEET_NAME     = "Insider_Trades_Data"
 TAB_TRANSACTIONS = "Insider_Transactions"
 
+st.write("ST_SECRETS keys:", list(ST_SECRETS.keys()))
+st.write("gcp_service_account creds:", ST_SECRETS.get("gcp_service_account"))
+st.write("Excel file exists at", LOCAL_XLSX, "?", os.path.exists(LOCAL_XLSX))
+
 
 def fetch_insider_trades(ticker: str, mode: str = "sheet-first") -> pd.DataFrame:
     """
