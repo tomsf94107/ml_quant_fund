@@ -1,9 +1,9 @@
-# forecast_utils.py v5.0 – add get_latest_forecast_log
+# forecast_utils.py v5.1 – local CSV eval & full feature set
 # ---------------------------------------------------------------------------
-
 import os
 from datetime import datetime, timedelta
 import contextlib, io
+
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -11,8 +11,7 @@ from prophet import Prophet
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pandas_ta as ta
 import streamlit as st
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from sqlalchemy import create_engine
 
 from data.etl_insider  import fetch_insider_trades
 from data.etl_holdings import fetch_insider_holdings
@@ -21,44 +20,49 @@ from send_email        import send_email_alert
 from core.helpers_xgb  import train_xgb_predict
 
 # ────────────────────────────────────────────────────────────────────────────
-LOG_DIR, EVAL_DIR, INTRA_DIR   = "forecast_logs", "forecast_eval", "logs"
-GSHEET_EVAL_LOG                = "forecast_evaluation_log"
-TICKER_FILE                    = "tickers.csv"
-SPY_TICKER, SECTOR_ETF         = "SPY", "XLK"
-VOL_LOOKBACK_Z                 = 20
+LOG_DIR     = "forecast_logs"
+EVAL_DIR    = "forecast_eval"
+INTRA_DIR   = "logs"
+TICKER_FILE = "tickers.csv"
+
+SPY_TICKER      = "SPY"
+SECTOR_ETF      = "XLK"
+VOL_LOOKBACK_Z  = 20
 
 for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
     os.makedirs(d, exist_ok=True)
 
+# ────────────────────────────────────────────────────────────────────────────
+# Forecast accuracy loader (Database-based)
+# ────────────────────────────────────────────────────────────────────────────
+def load_forecast_accuracy() -> pd.DataFrame:
+    """
+    Pulls [timestamp, ticker, mae, mse, r2] from the
+    forecast_accuracy table in the database.
+    Expects st.secrets["db_url"] to contain a valid SQLAlchemy URL.
+    """
+    db_url = st.secrets.get("db_url")
+    if not db_url:
+        st.error("Database URL not configured (st.secrets['db_url'] missing)")
+        return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
 
-# ────────────────────────────────────────────────────────────────────────────
-# Google Sheets Utility
-# ────────────────────────────────────────────────────────────────────────────
-def _get_gsheet(sheet_name: str, tab_index: int = 0):
-    scope = [
-        "https://spreadsheets.google.com/feeds",
-        "https://www.googleapis.com/auth/drive",
-    ]
-    creds = ServiceAccountCredentials.from_json_keyfile_dict(
-        st.secrets["gcp_service_account"], scope
+    engine = create_engine(db_url)
+    query = (
+        "SELECT timestamp, ticker, mae, mse, r2"
+        " FROM forecast_accuracy"
+        " ORDER BY timestamp DESC"
     )
-    client = gspread.authorize(creds)
-    return client.open(sheet_name).get_worksheet(tab_index)
-
-
-def log_eval_to_gsheet(tkr: str, mae: float, mse: float, r2: float):
     try:
-        ws = _get_gsheet(GSHEET_EVAL_LOG)
-        ws.append_row([
-            datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            tkr,
-            round(mae, 2),
-            round(mse, 2),
-            round(r2, 4),
-        ])
+        df = pd.read_sql(query, engine, parse_dates=["timestamp"])
+        return df
     except Exception as e:
-        st.warning(f"⚠️ Sheets logging failed: {e}")
+        st.error(f"Failed to load accuracy from DB: {e}")
+        return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
 
+# ────────────────────────────────────────────────────────────────────────────
+# Core Feature-Engineering + Forecast Wrappers
+# (rest of file unchanged from prior version)
+# ────────────────────────────────────────────────────────────────────────────
 
 # ────────────────────────────────────────────────────────────────────────────
 # Core Feature-Engineering + Forecast Wrappers
@@ -71,7 +75,8 @@ def build_feature_dataframe(
     min_rows: int = 200
 ) -> pd.DataFrame:
     """
-    Download OHLCV → inject insider trades & holdings → TA → market context → sentiment → clean.
+    Download OHLCV → inject insider trades & holdings → TA →
+    market context → sentiment → clean.
     """
     # 1) Price history
     if start and end:
@@ -99,17 +104,16 @@ def build_feature_dataframe(
               }), how="left")
         )
 
-        # Rename trade columns to insider_*
-        df["insider_net_shares"] = df["net_shares"].fillna(0)
-        df["insider_buy_count"]  = df["num_buy_tx"].fillna(0)
-        df["insider_sell_count"] = df["num_sell_tx"].fillna(0)
+        df["insider_net_shares"] = df.get("net_shares", 0).fillna(0)
+        df["insider_buy_count"]  = df.get("num_buy_tx", 0).fillna(0)
+        df["insider_sell_count"] = df.get("num_sell_tx", 0).fillna(0)
 
-        # Fill holdings
-        df["hold_shares"]     = df["hold_shares"].fillna(0)
-        df["hold_net_change"] = df["hold_net_change"].fillna(0)
+        df["hold_shares"]     = df.get("hold_shares", 0).fillna(0)
+        df["hold_net_change"] = df.get("hold_net_change", 0).fillna(0)
 
-        # Drop the generic columns
-        df.drop(columns=["net_shares", "num_buy_tx", "num_sell_tx"], inplace=True)
+        drop_cols = [c for c in ["net_shares", "num_buy_tx", "num_sell_tx"] if c in df]
+        if drop_cols:
+            df.drop(columns=drop_cols, inplace=True)
     except Exception as e:
         print(f"⚠️ Insider merge error: {e}")
         for col in [
@@ -134,10 +138,10 @@ def build_feature_dataframe(
         pass
 
     # 4) Volume & market context
-    if "Volume" in df and df["Volume"].notna().all():
-        df["VWAP"]      = (df["Close"]*df["Volume"]).cumsum()/df["Volume"].cumsum()
-        df["OBV"]       = ta.obv(df["Close"], df["Volume"])
-        df["vol_zscore"]= (
+    if df.get("Volume") is not None and df["Volume"].notna().all():
+        df["VWAP"]       = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
+        df["OBV"]        = ta.obv(df["Close"], df["Volume"])
+        df["vol_zscore"] = (
             df["Volume"] - df["Volume"].rolling(VOL_LOOKBACK_Z).mean()
         ) / df["Volume"].rolling(VOL_LOOKBACK_Z).std()
 
@@ -155,9 +159,7 @@ def build_feature_dataframe(
             df[f"{etf}_ret"] = np.nan
 
     # 5) Sentiment
-    
     try:
-        # swallow any prints/errors from the internals of get_sentiment_scores
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
             sent = get_sentiment_scores(ticker)
@@ -166,7 +168,6 @@ def build_feature_dataframe(
         if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
             send_email_alert(f"Sentiment Alert: {ticker}", str(sent))
     except Exception:
-        # if anything blows up, zero out the three sentiment fields
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = 0
 
@@ -192,11 +193,12 @@ def safe_train_xgb_with_retries(
         except Exception as e:
             print(f"⚠️ Retry {look}d failed: {e}")
             look += step
+
     raise ValueError(f"❌ Model failed after {max_look}d")
 
 
 # ────────────────────────────────────────────────────────────────────────────
-# Prophet forecast (duplicate‐index fixed)
+# Prophet forecast
 # ────────────────────────────────────────────────────────────────────────────
 def forecast_price_trend(
     tkr, start_date=None, end_date=None,
@@ -204,17 +206,12 @@ def forecast_price_trend(
 ):
     end_date   = end_date or datetime.today()
     start_date = start_date or end_date - timedelta(days=5*365)
-    df = build_feature_dataframe(tkr, start_date, end_date, lookback=9999)
+    df         = build_feature_dataframe(tkr, start_date, end_date, lookback=9999)
     if df.empty:
         return None, "No data"
 
     # prepare DataFrame for Prophet
-    dfp = pd.DataFrame({
-        "ds": df.index,
-        "y":  df["Close"].values
-    })
-
-    # assemble regressors as raw numpy arrays
+    dfp = pd.DataFrame({"ds": df.index, "y": df["Close"].values})
     regs = []
     for col in [
         "sent_positive", "sent_neutral", "sent_negative",
@@ -229,7 +226,7 @@ def forecast_price_trend(
         m.add_regressor(r)
 
     m.fit(dfp)
-    future = m.make_future_dataframe(periods=int(period_months*30))
+    future = m.make_future_dataframe(periods=int(period_months * 30))
     last   = dfp.iloc[-1]
     for r in regs:
         future[r] = last[r]
@@ -237,22 +234,24 @@ def forecast_price_trend(
     fcst = m.predict(future)
     res  = (
         fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]]
-          .merge(dfp[["ds", "y"]].rename(columns={"y": "actual"}),
-                 on="ds", how="left")
+          .merge(
+              dfp[["ds", "y"]].rename(columns={"y": "actual"}),
+              on="ds", how="left"
+          )
     )
+
     if log_results:
-        res.to_csv(
-            os.path.join(
-                LOG_DIR,
-                f"forecast_{tkr}_{datetime.now():%Y%m%d_%H%M%S}.csv"
-            ),
-            index=False
+        out_path = os.path.join(
+            LOG_DIR,
+            f"forecast_{tkr}_{datetime.now():%Y%m%d_%H%M%S}.csv"
         )
+        res.to_csv(out_path, index=False)
+
     return res, None
 
 
 # ────────────────────────────────────────────────────────────────────────────
-# Intraday + ML combo (unchanged)
+# Intraday + ML combo
 # ────────────────────────────────────────────────────────────────────────────
 def forecast_today_movement(
     ticker: str, start=None, end=None, log_results: bool = True
@@ -264,12 +263,14 @@ def forecast_today_movement(
         df_i["Trend"]  = df_i["Return"].rolling(3).mean()
         trend = df_i["Trend"].iloc[-1]
         pct   = (df_i["Return"].iloc[-1] or 0) * 100
+
         if trend > 0.001:
             intraday_msg = f"📈 Likely Uptrend ({pct:.2f}%)"
         elif trend < -0.001:
             intraday_msg = f"📉 Likely Downtrend ({pct:.2f}%)"
         else:
             intraday_msg = f"🔄 Flat Trend ({pct:.2f}%)"
+
         if log_results:
             df_i.to_csv(
                 os.path.join(
@@ -292,13 +293,18 @@ def forecast_today_movement(
 
 
 # ────────────────────────────────────────────────────────────────────────────
-# Eval, logging & retrain wrappers (unchanged)
+# Eval, logging & retrain wrappers
 # ────────────────────────────────────────────────────────────────────────────
 def _latest_log(tkr: str):
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{tkr}_")]
     return os.path.join(LOG_DIR, sorted(logs)[-1]) if logs else None
 
+
 def auto_retrain_forecast_model(tkr: str):
+    """
+    Reads the latest forecast CSV, computes MAE/MSE/R2,
+    appends to EVAL_DIR/forecast_evals.csv, and returns the new row.
+    """
     path = _latest_log(tkr)
     if not path:
         return
@@ -312,8 +318,8 @@ def auto_retrain_forecast_model(tkr: str):
                        columns=["timestamp", "ticker", "mae", "mse", "r2"])
     eval_path = os.path.join(EVAL_DIR, "forecast_evals.csv")
     row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path), index=False)
-    log_eval_to_gsheet(tkr, mae, mse, r2)
     return row
+
 
 def run_auto_retrain_all(tickers: list[str]):
     dfs = []
@@ -321,19 +327,21 @@ def run_auto_retrain_all(tickers: list[str]):
         out = auto_retrain_forecast_model(t)
         if isinstance(out, pd.DataFrame):
             dfs.append(out)
-    return pd.concat(dfs, ignore_index=True) if dfs else pd.DataFrame(
-        columns=["timestamp","ticker","mae","mse","r2"]
-    )
+    if dfs:
+        return pd.concat(dfs, ignore_index=True)
+    else:
+        return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
 
 
 # ────────────────────────────────────────────────────────────────────────────
-# SHAP Optional Plotter (unchanged)
+# SHAP Optional Plotter
 # ────────────────────────────────────────────────────────────────────────────
 try:
     import shap
     SHAP_AVAILABLE = True
 except Exception:
     SHAP_AVAILABLE = False
+
 
 def plot_shap(model, X, top_n: int = 10):
     if not SHAP_AVAILABLE:
@@ -344,19 +352,21 @@ def plot_shap(model, X, top_n: int = 10):
 
 
 # ────────────────────────────────────────────────────────────────────────────
-# Ticker List & Accuracy Helpers (unchanged)
+# Ticker List & Accuracy Helpers
 # ────────────────────────────────────────────────────────────────────────────
-def load_forecast_tickers():
+def load_forecast_tickers() -> list[str]:
     if not os.path.exists(TICKER_FILE):
         return ["AAPL", "MSFT"]
     return [ln.strip().upper() for ln in open(TICKER_FILE) if ln.strip()]
+
 
 def save_forecast_tickers(tkr_list: list[str]):
     with open(TICKER_FILE, "w") as f:
         for t in tkr_list:
             f.write(t.strip().upper() + "\n")
 
-def compute_rolling_accuracy(log_path: str):
+
+def compute_rolling_accuracy(log_path: str) -> pd.DataFrame:
     df = pd.read_csv(log_path, parse_dates=["ds"]).sort_values("ds")
     if {"yhat", "actual"} - set(df.columns):
         return pd.DataFrame()
@@ -367,10 +377,10 @@ def compute_rolling_accuracy(log_path: str):
     df["30d_accuracy"]     = df["correct"].rolling(30).mean()
     return df[["ds", "7d_accuracy", "30d_accuracy", "correct"]]
 
+
 def get_latest_forecast_log(tkr: str, log_dir: str = LOG_DIR) -> str | None:
     """
     Return the path to the most recent forecast CSV for a given ticker.
     """
     logs = [f for f in os.listdir(log_dir) if f.startswith(f"forecast_{tkr}_")]
     return os.path.join(log_dir, sorted(logs)[-1]) if logs else None
-
