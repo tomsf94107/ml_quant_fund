@@ -1,8 +1,8 @@
 name: Seed Forecast Accuracy
 
 on:
+  workflow_dispatch:    # enable “Run workflow” button in GitHub UI
   schedule:
-    # Every night at 00:00 UTC
     - cron: '0 0 * * *'
 
 jobs:
