@@ -1,0 +1,43 @@
+name: Seed Forecast Accuracy
+
+on:
+  schedule:
+    # Every night at 00:00 UTC
+    - cron: '0 0 * * *'
+
+jobs:
+  seed-accuracy-db:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Seed accuracy DB
+        working-directory: forecast_eval
+        run: |
+          chmod +x seed_db.py
+          ./seed_db.py
+
+      - name: Commit & push seeded DB
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Move the generated DB into the repo root
+          mv forecast_accuracy.db ../
+          cd ..
+          git add forecast_accuracy.db
+          git commit -m "📈 Nightly: update forecast_accuracy.db"
+          git push
+        env:
+          # If you need a token with write access, use the default GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
