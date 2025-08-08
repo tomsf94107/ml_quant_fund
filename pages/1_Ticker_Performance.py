@@ -32,6 +32,12 @@ from streamlit_autorefresh import st_autorefresh
 import smtplib
 from email.mime.text import MIMEText
 
+
+## TEST
+
+st.write("🔑 accuracy_db_url:", st.secrets.get("accuracy_db_url"))
+
+
 # ----- your core utils -------------------------------------------------------
 from forecast_utils import (
     build_feature_dataframe,
@@ -394,7 +400,7 @@ else:
     st.dataframe(acc_df.sort_values("timestamp", ascending=False))
     # line chart
     st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])  
-    
+
 st.subheader("📊 Forecast Accuracy Dashboard")
 acc_df = load_forecast_accuracy()
 if acc_df.empty:
