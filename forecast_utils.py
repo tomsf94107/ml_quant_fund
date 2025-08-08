@@ -11,7 +11,7 @@ from prophet import Prophet
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pandas_ta as ta
 import streamlit as st
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 from data.etl_insider  import fetch_insider_trades
 from data.etl_holdings import fetch_insider_holdings
@@ -37,33 +37,36 @@ for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
 # ────────────────────────────────────────────────────────────────────────────
 
 def load_forecast_accuracy() -> pd.DataFrame:
-    """
-    Pulls [timestamp, ticker, mae, mse, r2] from the
-    forecast_accuracy table in the database.
-    Expects st.secrets["accuracy_db_url"] to contain a valid SQLAlchemy URL.
-    """
     db_url = st.secrets.get("accuracy_db_url")
     if not db_url:
-        st.error("Database URL not configured (st.secrets['accuracy_db_url'] missing)")
+        st.error("Database URL not configured (accuracy_db_url missing)")
         return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
 
     engine = create_engine(db_url)
+
+    # ◾ Ensure the table exists (no-op if it already does):
+    with engine.begin() as conn:
+        conn.execute(text("""
+            CREATE TABLE IF NOT EXISTS forecast_accuracy (
+                timestamp TEXT,
+                ticker     TEXT,
+                mae        FLOAT,
+                mse        FLOAT,
+                r2         FLOAT
+            )
+        """))
+
     query = """
         SELECT timestamp, ticker, mae, mse, r2
           FROM forecast_accuracy
       ORDER BY timestamp DESC
     """
     try:
-        df = pd.read_sql(query, engine, parse_dates=["timestamp"])
-        return df
+        return pd.read_sql(query, engine, parse_dates=["timestamp"])
     except Exception as e:
         st.error(f"Failed to load accuracy from DB: {e}")
         return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
 
-# ────────────────────────────────────────────────────────────────────────────
-# Core Feature-Engineering + Forecast Wrappers
-# (rest of file unchanged from prior version)
-# ────────────────────────────────────────────────────────────────────────────
 
 # ────────────────────────────────────────────────────────────────────────────
 # Core Feature-Engineering + Forecast Wrappers
