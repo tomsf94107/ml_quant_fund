@@ -372,7 +372,6 @@ if st.button("🚀 Run Strategy"):
                            mime="application/zip")
 
 # ═════════════════════════  ACCURACY DASHBOARD  ════════════════════════════════
-
 st.subheader("📊 Forecast Accuracy Dashboard")
 acc_df = load_forecast_accuracy()
 if acc_df.empty:
@@ -394,4 +393,15 @@ else:
     # data table
     st.dataframe(acc_df.sort_values("timestamp", ascending=False))
     # line chart
-    st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])    
+    st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])  
+    
+st.subheader("📊 Forecast Accuracy Dashboard")
+acc_df = load_forecast_accuracy()
+if acc_df.empty:
+    st.warning("No accuracy data found.")
+else:
+    st.dataframe(acc_df.sort_values("timestamp", ascending=False))
+    st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
+
+
+  
