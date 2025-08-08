@@ -35,23 +35,24 @@ for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
 # ────────────────────────────────────────────────────────────────────────────
 # Forecast accuracy loader (Database-based)
 # ────────────────────────────────────────────────────────────────────────────
+
 def load_forecast_accuracy() -> pd.DataFrame:
     """
     Pulls [timestamp, ticker, mae, mse, r2] from the
     forecast_accuracy table in the database.
-    Expects st.secrets["db_url"] to contain a valid SQLAlchemy URL.
+    Expects st.secrets["accuracy_db_url"] to contain a valid SQLAlchemy URL.
     """
-    db_url = st.secrets.get("db_url")
+    db_url = st.secrets.get("accuracy_db_url")
     if not db_url:
-        st.error("Database URL not configured (st.secrets['db_url'] missing)")
+        st.error("Database URL not configured (st.secrets['accuracy_db_url'] missing)")
         return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
 
     engine = create_engine(db_url)
-    query = (
-        "SELECT timestamp, ticker, mae, mse, r2"
-        " FROM forecast_accuracy"
-        " ORDER BY timestamp DESC"
-    )
+    query = """
+        SELECT timestamp, ticker, mae, mse, r2
+          FROM forecast_accuracy
+      ORDER BY timestamp DESC
+    """
     try:
         df = pd.read_sql(query, engine, parse_dates=["timestamp"])
         return df
