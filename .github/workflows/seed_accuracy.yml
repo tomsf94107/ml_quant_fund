@@ -25,8 +25,8 @@ jobs:
       - name: Seed accuracy DB
         working-directory: forecast_eval
         run: |
-          chmod +x seed_db.py
-          ./seed_db.py
+          chmod +x forecast_eval/seed_db.py
+          python forecast_eval/seed_db.py
 
       - name: Commit & push seeded DB
         run: |
