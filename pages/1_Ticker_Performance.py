@@ -32,12 +32,6 @@ from streamlit_autorefresh import st_autorefresh
 import smtplib
 from email.mime.text import MIMEText
 
-
-## TEST
-
-st.write("🔑 accuracy_db_url:", st.secrets.get("accuracy_db_url"))
-
-
 # ----- your core utils -------------------------------------------------------
 from forecast_utils import (
     build_feature_dataframe,

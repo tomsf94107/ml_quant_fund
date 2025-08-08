@@ -36,7 +36,8 @@ for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
 # Forecast accuracy loader (Database-based)
 # ────────────────────────────────────────────────────────────────────────────
 # assuming you set root = project root at top of your file:
-root = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
+root = os.path.abspath(os.path.dirname(__file__))
 
 def load_forecast_accuracy() -> pd.DataFrame:
     db_url = st.secrets.get("accuracy_db_url")
@@ -44,11 +45,14 @@ def load_forecast_accuracy() -> pd.DataFrame:
         st.error("Database URL not configured (accuracy_db_url missing)")
         return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
 
-    # Build absolute file path for SQLite
-    # strip off the sqlite:/// prefix and join to root:
+    # Build absolute file path under the repo root
     rel_path = db_url.replace("sqlite:///", "")
     abs_path = os.path.join(root, rel_path)
-    engine   = create_engine(f"sqlite:///{abs_path}")
+
+    # DEBUG: confirm the file
+    st.write("🔍 accuracy DB file:", abs_path)
+
+    engine = create_engine(f"sqlite:///{abs_path}")
 
     # Ensure the table exists
     with engine.begin() as conn:
@@ -69,8 +73,7 @@ def load_forecast_accuracy() -> pd.DataFrame:
       ORDER BY timestamp DESC
     """
     try:
-        df = pd.read_sql(query, engine, parse_dates=["timestamp"])
-        return df
+        return pd.read_sql(query, engine, parse_dates=["timestamp"])
     except Exception as e:
         st.error(f"Failed to load accuracy from DB: {e}")
         return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
