@@ -1,5 +1,5 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.1  •  sys.path fix, NumPy shims, Importances tab & DB-based accuracy
+#  v18.2  •  added Accuracy Dashboard for forecast accuracy
 # ────────────────────────────────────────────────────────────────────────────
 import os, sys, io, zipfile, base64, tempfile, glob
 from dotenv import load_dotenv
@@ -194,6 +194,12 @@ with st.sidebar:
                 save_forecast_tickers(txt.splitlines())
                 st.success("Saved.")
 
+        # ── ACCURACY FILTERS ───────────────────────────────────────────
+        st.markdown("## 📈 Accuracy Filters")
+        options  = load_forecast_tickers()
+        selected = st.multiselect("Filter by ticker", options, default=options)
+        st.session_state["acc_ticker_filter"] = selected
+
 # ──────────────────────────  FORECAST SECTION  ─────────────────────────────────
 with st.expander("🗕️ Forecast Price Trends"):
     tkr_in        = st.text_input("Enter a ticker", "AAPL")
@@ -366,10 +372,26 @@ if st.button("🚀 Run Strategy"):
                            mime="application/zip")
 
 # ═════════════════════════  ACCURACY DASHBOARD  ════════════════════════════════
+
 st.subheader("📊 Forecast Accuracy Dashboard")
 acc_df = load_forecast_accuracy()
 if acc_df.empty:
     st.warning("No accuracy data found.")
 else:
+    # apply ticker filter
+    sel = st.session_state.get("acc_ticker_filter", [])
+    if sel:
+        acc_df = acc_df[acc_df["ticker"].isin(sel)]
+
+    # summary metrics
+    avg_mae = acc_df["mae"].mean()
+    avg_mse = acc_df["mse"].mean()
+    avg_r2  = acc_df["r2"].mean()
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Avg MAE", f"{avg_mae:.3f}")
+    c2.metric("Avg MSE", f"{avg_mse:.3f}")
+    c3.metric("Avg R²",  f"{avg_r2 :.3f}")
+    # data table
     st.dataframe(acc_df.sort_values("timestamp", ascending=False))
-    st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
+    # line chart
+    st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])    
