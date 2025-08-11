@@ -42,32 +42,28 @@ jobs:
           echo "forecast_eval/:"; ls -la forecast_eval || true
           echo "CSV at repo root?"; test -f forecast_metrics.csv && echo "✅ found" || echo "❌ missing"
 
+      - name: Show seed_db.py header & help
+        working-directory: forecast_eval
+        run: |
+          sed -n '1,120p' seed_db.py || true
+          python -u seed_db.py --help || true
+
       - name: Seed accuracy DB
         working-directory: forecast_eval
         run: |
           set -euxo pipefail
-          # Expect the CSV at repo root (one level up from forecast_eval/)
           CSV="../forecast_metrics.csv"
           if [ ! -f "$CSV" ]; then
             echo "No $CSV found; nothing to seed. Exiting cleanly."
             exit 0
           fi
-
-          # Show argparse help if available (ignore failure)
-          python -u seed_db.py --help || true
-
-          # Try common invocation styles; only proceeds if one succeeds
-          ( python -u seed_db.py --csv "$CSV" --out forecast_accuracy.db ) \
-          || ( python -u seed_db.py "$CSV" forecast_accuracy.db ) \
-          || ( python -u seed_db.py )
-
-          # Ensure the DB exists before continuing
+          # Preferred invocation; adjust if --help shows different flags
+          python -u seed_db.py --csv "$CSV" --out forecast_accuracy.db
           test -f forecast_accuracy.db
 
       - name: Move DB to repo root
         working-directory: forecast_eval
-        run: |
-          mv -f forecast_accuracy.db ..
+        run: mv -f forecast_accuracy.db ..
 
       - name: Commit & push seeded DB
         if: success()
