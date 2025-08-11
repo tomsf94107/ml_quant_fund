@@ -35,80 +35,43 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Sanity check paths
+      - name: Sanity check
         run: |
           echo "CWD: $(pwd)"
-          echo "Top-level:"
           ls -la
-          echo "forecast_eval/:"
-          ls -la forecast_eval || true
-          echo "CSV at repo root?"
-          test -f forecast_metrics.csv && echo "✅ found" || echo "❌ missing"
-
-      - name: Show seed_db.py header & help
-        working-directory: forecast_eval
-        run: |
-          sed -n '1,140p' seed_db.py || true
-          echo "---- seed_db.py --help ----"
-          python -u seed_db.py --help || true
-          echo "---------------------------"
-
-      - name: Seed accuracy DB (auto-detect flags)
-        working-directory: forecast_eval
-        run: |
-          set -euo pipefail
-          CSV="../forecast_metrics.csv"
-          OUT="forecast_accuracy.db"
-
-          # If metrics CSV isn't present yet, don't fail the pipeline
-          if [ ! -f "$CSV" ]; then
-            echo "No $CSV found; nothing to seed. Exiting cleanly."
+          if [ -f forecast_metrics.csv ]; then
+            echo "✅ forecast_metrics.csv found:"
+            head -n 5 forecast_metrics.csv || true
+          else
+            echo "⚠️ forecast_metrics.csv not found; nothing to seed. Exiting 0."
             exit 0
           fi
 
-          # Detect possible input/output flags from argparse declarations
-          IN_FLAG=""
-          OUT_FLAG=""
-          grep -q -- "--csv"     seed_db.py && IN_FLAG="--csv"
-          [ -z "${IN_FLAG}" ] && grep -q -- "--metrics" seed_db.py && IN_FLAG="--metrics"
-          [ -z "${IN_FLAG}" ] && grep -q -- "--input"   seed_db.py && IN_FLAG="--input"
-
-          grep -q -- "--out"     seed_db.py && OUT_FLAG="--out"
-          [ -z "${OUT_FLAG}" ] && grep -q -- "--db"       seed_db.py && OUT_FLAG="--db"
-          [ -z "${OUT_FLAG}" ] && grep -q -- "--output"   seed_db.py && OUT_FLAG="--output"
-          [ -z "${OUT_FLAG}" ] && grep -q -- "--db-path"  seed_db.py && OUT_FLAG="--db-path"
-
-          echo "Detected flags: IN='${IN_FLAG:-positional}' OUT='${OUT_FLAG:-positional}'"
-
-          set +e
-          if [ -n "$IN_FLAG" ] && [ -n "$OUT_FLAG" ]; then
-            python -u seed_db.py "$IN_FLAG" "$CSV" "$OUT_FLAG" "$OUT"
-            code=$?
-          elif [ -n "$IN_FLAG" ]; then
-            python -u seed_db.py "$IN_FLAG" "$CSV"
-            code=$?
-          else
-            python -u seed_db.py "$CSV" "$OUT"
-            code=$?
-          fi
-          set -e
-          echo "seed_db.py exit code: $code"
-
-          # If the call failed, but DB exists, continue; otherwise fail
-          if [ $code -ne 0 ] && [ ! -f "$OUT" ]; then
-            echo "Seeding failed and no DB produced."
-            exit $code
-          fi
-
-          # Ensure DB exists before continuing
-          test -f "$OUT" && echo "✅ Produced $OUT"
-
-      - name: Move DB to repo root
-        working-directory: forecast_eval
-        run: mv -f forecast_accuracy.db ..
+      - name: Build/Update forecast_accuracy.db (inline)
+        run: |
+          set -euxo pipefail
+          python - <<'PY'
+          import os, sqlite3, pandas as pd, datetime as dt, pathlib, sys
+          root = pathlib.Path(os.getcwd())
+          csv_path = root / "forecast_metrics.csv"
+          if not csv_path.exists():
+              print("No CSV; nothing to do."); sys.exit(0)
+          df = pd.read_csv(csv_path)
+          if df.empty:
+              print("Empty CSV; nothing to seed."); sys.exit(0)
+          # Add an ingestion timestamp
+          if "ingested_at" not in df.columns:
+              df["ingested_at"] = dt.datetime.utcnow().isoformat(timespec="seconds") + "Z"
+          db_path = root / "forecast_accuracy.db"
+          con = sqlite3.connect(db_path)
+          # Write/replace a simple table named 'metrics'
+          df.to_sql("metrics", con, if_exists="replace", index=False)
+          con.commit(); con.close()
+          print(f"✅ Wrote {len(df)} rows to {db_path}")
+          PY
+          test -s forecast_accuracy.db
 
       - name: Commit & push seeded DB
-        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
