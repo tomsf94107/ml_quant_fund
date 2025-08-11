@@ -38,21 +38,17 @@ jobs:
 
       - name: Sanity check paths
         run: |
-          echo "Current working directory:"
-          pwd
-          echo "Top-level files:"
-          ls -la
-          echo "Tree view of repo (first 200 lines):"
-          ls -R | head -n 200
-          echo "Checking ml_quant_fund folder if it exists:"
-          ls -la ml_quant_fund || true
+          echo "Current working directory:"; pwd
+          echo "Top-level files:"; ls -la
+          echo "Tree view of repo (first 200 lines):"; ls -R | head -n 200
+          echo "Checking ml_quant_fund folder if it exists:"; ls -la ml_quant_fund || true
 
       - name: Prepare output folders
         run: |
           mkdir -p forecast_logs models
-          # create a placeholder so later steps don't fail if there are no metrics
+          # placeholder so later steps don't fail if there are no metrics
           touch forecast_metrics.csv
-      
+
       - name: Run forecast retraining (tolerant if metrics exist)
         run: |
           set +e
@@ -60,13 +56,12 @@ jobs:
           code=$?
           set -e
           echo "retrain exit code: $code"
-          # If Python failed but metrics exist and are non-empty, continue
           if [ $code -ne 0 ] && [ ! -s forecast_metrics.csv ]; then
-            echo "No metrics file produced; failing job."
+            echo "No metrics produced; failing job."
             exit $code
           fi
-          echo "Proceeding despite exit $code because metrics file exists."      
-      
+          echo "Proceeding despite exit $code because metrics file exists."
+
       - name: Upload forecast logs (always)
         if: always()
         uses: actions/upload-artifact@v4
@@ -81,12 +76,35 @@ jobs:
           name: forecast-metrics
           path: forecast_metrics.csv
 
-      - name: Commit updated models (only on success)
-        if: success()
+      - name: Commit & push updated outputs (rebase + retry)
+        if: always()
         run: |
+          set -eux
+          BRANCH="${GITHUB_REF_NAME:-main}"
+
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
-          # include both model files and metrics CSV
-          git add models/*.pkl forecast_metrics.csv 2>/dev/null || true
-          git commit -m "Auto-retrain models: $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
-          git push
+
+          # Stage only if present
+          [ -d models ] && ls models/*.pkl 1>/dev/null 2>&1 && git add models/*.pkl || true
+          [ -s forecast_metrics.csv ] && git add forecast_metrics.csv || true
+
+          # If nothing to commit, exit cleanly
+          git diff --cached --quiet && { echo "No changes to commit."; exit 0; }
+
+          git commit -m "Auto-retrain: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+          # Rebase on latest main and retry push up to 3 times to avoid non-FF errors
+          for attempt in 1 2 3; do
+            git fetch origin "$BRANCH"
+            ( git rebase "origin/$BRANCH" || { git rebase --abort || true; } )
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Push succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Push failed (attempt $attempt); retrying in 5s…"
+            sleep 5
+          done
+
+          echo "Final push attempt failed."
+          exit 1
