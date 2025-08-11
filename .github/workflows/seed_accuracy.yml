@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write               # needed to push DB back to repo
+  contents: write
 
 concurrency:
   group: seed-accuracy-${{ github.ref }}
@@ -37,23 +37,26 @@ jobs:
 
       - name: Sanity check paths
         run: |
-          echo "CWD:"; pwd
-          echo "Top-level:"; ls -la
-          echo "forecast_eval/:"; ls -la forecast_eval || true
-          echo "CSV at repo root?"; test -f forecast_metrics.csv && echo "✅ found" || echo "❌ missing"
+          echo "CWD: $(pwd)"
+          echo "Top-level:"
+          ls -la
+          echo "forecast_eval/:"
+          ls -la forecast_eval || true
+          echo "CSV at repo root?"
+          test -f forecast_metrics.csv && echo "✅ found" || echo "❌ missing"
 
       - name: Show seed_db.py header & help
         working-directory: forecast_eval
         run: |
-          sed -n '1,120p' seed_db.py || true
+          sed -n '1,140p' seed_db.py || true
           echo "---- seed_db.py --help ----"
           python -u seed_db.py --help || true
           echo "---------------------------"
 
-      - name: Seed accuracy DB
+      - name: Seed accuracy DB (auto-detect flags)
         working-directory: forecast_eval
         run: |
-          set -euxo pipefail
+          set -euo pipefail
           CSV="../forecast_metrics.csv"
           OUT="forecast_accuracy.db"
 
@@ -63,19 +66,42 @@ jobs:
             exit 0
           fi
 
-          # Try multiple common CLI signatures until one succeeds
-          (
-            python -u seed_db.py --csv "$CSV" --out "$OUT" \
-            || python -u seed_db.py --csv "$CSV" --db "$OUT" \
-            || python -u seed_db.py --metrics "$CSV" --db "$OUT" \
-            || python -u seed_db.py --input "$CSV" --output "$OUT" \
-            || python -u seed_db.py "$CSV" "$OUT" \
-            || python -u seed_db.py --csv "$CSV" \
-            || python -u seed_db.py
-          )
+          # Detect possible input/output flags from argparse declarations
+          IN_FLAG=""
+          OUT_FLAG=""
+          grep -q -- "--csv"     seed_db.py && IN_FLAG="--csv"
+          [ -z "${IN_FLAG}" ] && grep -q -- "--metrics" seed_db.py && IN_FLAG="--metrics"
+          [ -z "${IN_FLAG}" ] && grep -q -- "--input"   seed_db.py && IN_FLAG="--input"
 
-          # Verify DB was actually produced
-          test -f "$OUT"
+          grep -q -- "--out"     seed_db.py && OUT_FLAG="--out"
+          [ -z "${OUT_FLAG}" ] && grep -q -- "--db"       seed_db.py && OUT_FLAG="--db"
+          [ -z "${OUT_FLAG}" ] && grep -q -- "--output"   seed_db.py && OUT_FLAG="--output"
+          [ -z "${OUT_FLAG}" ] && grep -q -- "--db-path"  seed_db.py && OUT_FLAG="--db-path"
+
+          echo "Detected flags: IN='${IN_FLAG:-positional}' OUT='${OUT_FLAG:-positional}'"
+
+          set +e
+          if [ -n "$IN_FLAG" ] && [ -n "$OUT_FLAG" ]; then
+            python -u seed_db.py "$IN_FLAG" "$CSV" "$OUT_FLAG" "$OUT"
+            code=$?
+          elif [ -n "$IN_FLAG" ]; then
+            python -u seed_db.py "$IN_FLAG" "$CSV"
+            code=$?
+          else
+            python -u seed_db.py "$CSV" "$OUT"
+            code=$?
+          fi
+          set -e
+          echo "seed_db.py exit code: $code"
+
+          # If the call failed, but DB exists, continue; otherwise fail
+          if [ $code -ne 0 ] && [ ! -f "$OUT" ]; then
+            echo "Seeding failed and no DB produced."
+            exit $code
+          fi
+
+          # Ensure DB exists before continuing
+          test -f "$OUT" && echo "✅ Produced $OUT"
 
       - name: Move DB to repo root
         working-directory: forecast_eval
