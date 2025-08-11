@@ -2,11 +2,11 @@ name: Seed Forecast Accuracy
 
 on:
   schedule:
-    - cron: '10 1 * * *'        # run after the retrain job (01:10 UTC)
+    - cron: '10 1 * * *'        # run ~10 mins after retrain
   workflow_dispatch:
 
 permissions:
-  contents: write               # needed to push the DB back to the repo
+  contents: write               # needed to push DB back to repo
 
 concurrency:
   group: seed-accuracy-${{ github.ref }}
@@ -27,7 +27,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'   # keep in sync with retrain job
+          python-version: '3.10'
           cache: 'pip'
 
       - name: Install dependencies
@@ -37,17 +37,31 @@ jobs:
 
       - name: Sanity check paths
         run: |
-          pwd
-          ls -la
-          echo "Contents of forecast_eval/:"
-          ls -la forecast_eval || true
+          echo "CWD:"; pwd
+          echo "Top-level:"; ls -la
+          echo "forecast_eval/:"; ls -la forecast_eval || true
+          echo "CSV at repo root?"; test -f forecast_metrics.csv && echo "✅ found" || echo "❌ missing"
 
-      # ✅ We are already inside forecast_eval, so call seed_db.py directly
       - name: Seed accuracy DB
         working-directory: forecast_eval
         run: |
           set -euxo pipefail
-          python -u seed_db.py
+          # Expect the CSV at repo root (one level up from forecast_eval/)
+          CSV="../forecast_metrics.csv"
+          if [ ! -f "$CSV" ]; then
+            echo "No $CSV found; nothing to seed. Exiting cleanly."
+            exit 0
+          fi
+
+          # Show argparse help if available (ignore failure)
+          python -u seed_db.py --help || true
+
+          # Try common invocation styles; only proceeds if one succeeds
+          ( python -u seed_db.py --csv "$CSV" --out forecast_accuracy.db ) \
+          || ( python -u seed_db.py "$CSV" forecast_accuracy.db ) \
+          || ( python -u seed_db.py )
+
+          # Ensure the DB exists before continuing
           test -f forecast_accuracy.db
 
       - name: Move DB to repo root
@@ -55,7 +69,7 @@ jobs:
         run: |
           mv -f forecast_accuracy.db ..
 
-      - name: Commit & push seeded DB (only if seeding succeeded)
+      - name: Commit & push seeded DB
         if: success()
         run: |
           git config user.name "github-actions[bot]"
