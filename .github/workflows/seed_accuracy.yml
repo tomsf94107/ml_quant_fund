@@ -2,7 +2,7 @@ name: Seed Forecast Accuracy
 
 on:
   schedule:
-    - cron: '10 1 * * *'        # run ~10 mins after retrain
+    - cron: '10 1 * * *'        # ~10 mins after retrain
   workflow_dispatch:
 
 permissions:
@@ -46,20 +46,36 @@ jobs:
         working-directory: forecast_eval
         run: |
           sed -n '1,120p' seed_db.py || true
+          echo "---- seed_db.py --help ----"
           python -u seed_db.py --help || true
+          echo "---------------------------"
 
       - name: Seed accuracy DB
         working-directory: forecast_eval
         run: |
           set -euxo pipefail
           CSV="../forecast_metrics.csv"
+          OUT="forecast_accuracy.db"
+
+          # If metrics CSV isn't present yet, don't fail the pipeline
           if [ ! -f "$CSV" ]; then
             echo "No $CSV found; nothing to seed. Exiting cleanly."
             exit 0
           fi
-          # Preferred invocation; adjust if --help shows different flags
-          python -u seed_db.py --csv "$CSV" --out forecast_accuracy.db
-          test -f forecast_accuracy.db
+
+          # Try multiple common CLI signatures until one succeeds
+          (
+            python -u seed_db.py --csv "$CSV" --out "$OUT" \
+            || python -u seed_db.py --csv "$CSV" --db "$OUT" \
+            || python -u seed_db.py --metrics "$CSV" --db "$OUT" \
+            || python -u seed_db.py --input "$CSV" --output "$OUT" \
+            || python -u seed_db.py "$CSV" "$OUT" \
+            || python -u seed_db.py --csv "$CSV" \
+            || python -u seed_db.py
+          )
+
+          # Verify DB was actually produced
+          test -f "$OUT"
 
       - name: Move DB to repo root
         working-directory: forecast_eval
