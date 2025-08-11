@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: "1"
-      GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}  # if needed
+      GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}  # if needed by your code
 
     steps:
       - name: Checkout repo
@@ -42,7 +42,7 @@ jobs:
           pwd
           echo "Top-level files:"
           ls -la
-          echo "Tree view of repo:"
+          echo "Tree view of repo (first 200 lines):"
           ls -R | head -n 200
           echo "Checking ml_quant_fund folder if it exists:"
           ls -la ml_quant_fund || true
@@ -50,13 +50,14 @@ jobs:
       - name: Prepare output folders
         run: |
           mkdir -p forecast_logs models
+          # create a placeholder so later steps don't fail if there are no metrics
           touch forecast_metrics.csv
 
       - name: Run forecast retraining
         run: |
           set -euxo pipefail
           python -u retrain_forecasts.py
-          # If it lives in a subfolder:
+          # If it lives in a subfolder instead, use:
           # python -u ml_quant_fund/retrain_forecasts.py
 
       - name: Upload forecast logs (always)
@@ -78,6 +79,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
-          git add models/*.pkl 2>/dev/null || true
+          # include both model files and metrics CSV
+          git add models/*.pkl forecast_metrics.csv 2>/dev/null || true
           git commit -m "Auto-retrain models: $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
           git push
