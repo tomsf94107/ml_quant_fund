@@ -1,8 +1,10 @@
-# forecast_utils.py v5.1 – local CSV eval & full feature set
+# forecast_utils.py v5.2 – add Risk calendar
 # ---------------------------------------------------------------------------
 import os
 from datetime import datetime, timedelta
 import contextlib, io
+
+
 
 import numpy as np
 import pandas as pd
@@ -12,7 +14,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pandas_ta as ta
 import streamlit as st
 from sqlalchemy import create_engine, text
-
+from events_risk import build_risk_features
 from data.etl_insider  import fetch_insider_trades
 from data.etl_holdings import fetch_insider_holdings
 from sentiment_utils   import get_sentiment_scores
@@ -91,7 +93,7 @@ def build_feature_dataframe(
 ) -> pd.DataFrame:
     """
     Download OHLCV → inject insider trades & holdings → TA →
-    market context → sentiment → clean.
+    market context → sentiment → risk features → clean.
     """
     # 1) Price history
     if start and end:
@@ -107,7 +109,7 @@ def build_feature_dataframe(
     if df.empty or "Close" not in df:
         return pd.DataFrame()
 
-    # 2) Inject insider trades + holdings, then rename
+    # 2) Inject insider trades + holdings
     try:
         ins_trades = fetch_insider_trades(ticker).set_index("ds")
         ins_holds  = fetch_insider_holdings(ticker).set_index("ds")
@@ -118,30 +120,23 @@ def build_feature_dataframe(
                   "net_change": "hold_net_change"
               }), how="left")
         )
-
         df["insider_net_shares"] = df.get("net_shares", 0).fillna(0)
         df["insider_buy_count"]  = df.get("num_buy_tx", 0).fillna(0)
         df["insider_sell_count"] = df.get("num_sell_tx", 0).fillna(0)
-
-        df["hold_shares"]     = df.get("hold_shares", 0).fillna(0)
-        df["hold_net_change"] = df.get("hold_net_change", 0).fillna(0)
-
+        df["hold_shares"]        = df.get("hold_shares", 0).fillna(0)
+        df["hold_net_change"]    = df.get("hold_net_change", 0).fillna(0)
         drop_cols = [c for c in ["net_shares", "num_buy_tx", "num_sell_tx"] if c in df]
-        if drop_cols:
-            df.drop(columns=drop_cols, inplace=True)
+        if drop_cols: df.drop(columns=drop_cols, inplace=True)
     except Exception as e:
         print(f"⚠️ Insider merge error: {e}")
-        for col in [
-            "insider_net_shares", "insider_buy_count", "insider_sell_count",
-            "hold_shares", "hold_net_change"
-        ]:
+        for col in ["insider_net_shares","insider_buy_count","insider_sell_count",
+                    "hold_shares","hold_net_change"]:
             df[col] = 0
 
     # 3) Technical indicators
     df["Return_1D"] = df["Close"].pct_change()
     for w in (5, 10, 20):
         df[f"MA{w}"] = df["Close"].rolling(w).mean()
-
     try:
         df["RSI14"] = ta.rsi(df["Close"], length=14)
         macd = ta.macd(df["Close"])
@@ -186,7 +181,29 @@ def build_feature_dataframe(
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = 0
 
-    # 6) Final cleanup
+    # 6) Risk features (⭐ before return)
+    try:
+        # derive a safe date range if start/end were not passed
+        risk_start = start if start else df.index.min().date()
+        risk_end   = end   if end   else df.index.max().date()
+        risk = build_risk_features(
+            risk_start - timedelta(days=3),
+            risk_end   + timedelta(days=3),
+            use_fmp=True, use_finnhub=True
+        )
+        df = df.copy()
+        df["date"] = pd.to_datetime(df.index).date
+        df = df.merge(risk, on="date", how="left").drop(columns=["date"])
+        for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]:
+            if c not in df: df[c] = 0
+        df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]] = \
+            df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]].fillna(0)
+    except Exception as e:
+        print(f"⚠️ Risk features failed: {e}")
+        for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]:
+            df[c] = 0
+
+    # 7) Final cleanup / return
     return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
 
 
