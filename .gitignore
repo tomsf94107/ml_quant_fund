@@ -14,3 +14,4 @@ forecast_logs/
 pages/logs/
 data/
 artifacts/
+.streamlit/secrets.toml
