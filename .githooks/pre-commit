@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+max=50000000
+files=$(git diff --cached --name-only --diff-filter=ACM)
+for f in $files; do
+  [ -f "$f" ] || continue
+  size=$(wc -c <"$f")
+  if [ "$size" -gt "$max" ]; then
+    echo "❌ $f is larger than 50MB; add to .gitignore or store outside Git."
+    exit 1
+  fi
+done
