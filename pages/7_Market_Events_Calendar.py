@@ -20,6 +20,8 @@ st.caption(
     "Use filters on the left to focus on what matters."
 )
 
+
+
 # ------------------------------------------------------------
 # Helpers & constants
 # ------------------------------------------------------------
@@ -304,8 +306,6 @@ def export_ics(df: pd.DataFrame) -> str:
         ])
     ics_lines.append("END:VCALENDAR")
     return "\n".join(ics_lines)
-
-
 def compute_risk_score(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return pd.DataFrame(columns=["date", "risk"])
@@ -330,17 +330,20 @@ impact_sel = st.sidebar.multiselect("Impact levels", options=IMPACT_LEVELS, defa
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Live data providers (optional)")
-use_fmp = st.sidebar.checkbox("Use FinancialModelingPrep (Economic)")
-use_finnhub = st.sidebar.checkbox("Use Finnhub (Earnings & IPO)")
 
+# Read secrets first
 fmp_key = _get_secret("providers", "fmp_api_key") or _get_secret("FMP_API_KEY")
 finnhub_key = _get_secret("providers", "finnhub_token") or _get_secret("FINNHUB_TOKEN")
 
-st.sidebar.caption("Set secrets in .streamlit/secrets.toml, e.g.
+# Toggles (auto-on if keys exist)
+use_fmp = st.sidebar.checkbox("Use FinancialModelingPrep (Economic)", value=bool(fmp_key))
+use_finnhub = st.sidebar.checkbox("Use Finnhub (Earnings & IPO)", value=bool(finnhub_key))
+
+st.sidebar.caption("""Set secrets in .streamlit/secrets.toml, e.g.
 
 [providers]
 fmp_api_key='YOUR_FMP_KEY'
-finnhub_token='YOUR_FINNHUB_TOKEN'")
+finnhub_token='YOUR_FINNHUB_TOKEN'""")
 
 st.sidebar.markdown("---")
 st.sidebar.subheader("Add a custom event")
@@ -397,14 +400,21 @@ if use_finnhub:
         ipo_df = fetch_ipo_finnhub(start_date, end_date, finnhub_key)
         frames.extend([earn_df, ipo_df])
 
-manual_df = pd.DataFrame(st.session_state.manual_events) if st.session_state.manual_events else pd.DataFrame()
+manual_df = (
+    pd.DataFrame(st.session_state.manual_events)
+    if st.session_state.manual_events else pd.DataFrame()
+)
 frames.append(manual_df)
 
-all_df = pd.concat([f for f in frames if f is not None and not f.empty], ignore_index=True) if any(frames) else pd.DataFrame()
+# ✅ Safe concat (avoid truth-testing DataFrames)
+_valid = [f for f in frames if isinstance(f, pd.DataFrame) and not f.empty]
+all_df = pd.concat(_valid, ignore_index=True) if _valid else pd.DataFrame()
 
 # Filter
 if not all_df.empty:
-    all_df = all_df[all_df["category"].isin(category_sel) & all_df["impact"].isin(impact_sel)]
+    all_df = all_df[
+        all_df["category"].isin(category_sel) & all_df["impact"].isin(impact_sel)
+    ]
 
 # ------------------------------------------------------------
 # Layout: Risk overview + Timeline + Upcoming table
@@ -443,10 +453,8 @@ with col2:
         )
 
 with st.expander("⚙️ Integration hooks"):
-    st.markdown(
-        "- **Risk adjustments**: `compute_risk_score()` can feed a 48–72h risk weight into your strategy.
-"
-        "- **Live feeds**: Toggle providers in the sidebar; add keys in `secrets.toml`.
-"
-        "- **Extendable**: Add more providers (Polygon, Trading Economics) by mapping to the same schema."
-    )
+    st.markdown("""- **Risk adjustments**: `compute_risk_score()` can feed a 48–72h risk weight into your strategy.
+- **Live feeds**: Toggle providers in the sidebar; add keys in `secrets.toml`.
+- **Extendable**: Add more providers (Polygon, Trading Economics) by mapping to the same schema.""")
+
+
