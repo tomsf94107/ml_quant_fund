@@ -303,8 +303,7 @@ def export_ics(df: pd.DataFrame) -> str:
             "END:VEVENT",
         ])
     ics_lines.append("END:VCALENDAR")
-    return "
-".join(ics_lines)
+    return "\n".join(ics_lines)
 
 
 def compute_risk_score(df: pd.DataFrame) -> pd.DataFrame:
