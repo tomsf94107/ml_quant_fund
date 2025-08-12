@@ -5,3 +5,12 @@ __pycache__/
 keys/*.json
 mlenv/
 data/*.json
+
+*.db
+forecast.db
+insider_trades.db
+logs/
+forecast_logs/
+pages/logs/
+data/
+artifacts/
