@@ -1,0 +1,39 @@
+name: Generate Feature Importances Chart
+
+# Triggers: daily at 05:00 UTC, plus manual runs
+on:
+  schedule:
+    - cron:  '0 5 * * *'       # every day at 05:00 UTC
+  workflow_dispatch:           # allows manual runs from the GitHub UI
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout your code
+      - uses: actions/checkout@v3
+
+      # 2. Set up Python environment
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          pip install pandas matplotlib
+
+      # 4. Run the importances script
+      - name: Generate importances chart
+        run: python evaluate_importances_over_time.py
+
+      # 5. Commit & push the updated PNG
+      - name: Commit and push chart
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add charts/importances_over_time.png
+          git diff --quiet --exit-code || git commit -m "chore: update importances chart [skip ci]"
+          git push

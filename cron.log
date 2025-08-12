@@ -1,0 +1,3 @@
+2025-08-11 22:12:51.343 python[28888:16360162] error messaging the mach port for IMKCFRunLoopWakeUpReliable
+/Users/atomnguyen/.pyenv/versions/3.10.13/lib/python3.10/site-packages/matplotlib/backend_bases.py:2934: FutureWarning: Period with BDay freq is deprecated and will be removed in a future version. Use a DatetimeIndex with BDay freq instead.
+  s = event.inaxes.format_coord(event.xdata, event.ydata)
