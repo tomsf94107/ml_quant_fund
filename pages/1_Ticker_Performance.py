@@ -1,19 +1,19 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.2  •  added Accuracy Dashboard for forecast accuracy
+#  v18.3  •  added risk event calendar + risk-aware signals
 # ────────────────────────────────────────────────────────────────────────────
 import os, sys, io, zipfile, base64, tempfile, glob
 from dotenv import load_dotenv
 from PIL import Image
 load_dotenv()
 
-# 🔧 NEW FIX — ensure root path is added for module imports in Streamlit
+# 🔧 ensure root path is added for module imports in Streamlit
 dir_above = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 if dir_above not in sys.path:
     sys.path.append(dir_above)
 
 # ----- numeric / plotting ----------------------------------------------------
 import numpy as np
-# ----- compatibility shims for NumPy ≥2.0 -------------------------------
+# ----- compatibility shims for NumPy ≥2.0 -----------------------------------
 if not hasattr(np, "bool"): np.bool = np.bool_
 if not hasattr(np, "int"):  np.int  = int
 
@@ -21,8 +21,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import altair as alt
 from sklearn.metrics import accuracy_score
-from datetime import datetime, date
-from core.helpers_xgb import train_xgb_predict  
+from datetime import datetime, date, timedelta
 
 # ----- web / app -------------------------------------------------------------
 import streamlit as st
@@ -44,7 +43,7 @@ from forecast_utils import (
     load_forecast_accuracy,     # ← DB-backed loader
 )
 
-# ──────────────────────────  IMPORTANCES TAB  ─────────────────────────────────
+# ──────────────────────────  IMPORTANCES TAB  ────────────────────────────────
 importances_dir = "charts"
 models_dir      = "models"
 def show_importances_tab():
@@ -200,7 +199,15 @@ with st.sidebar:
         selected = st.multiselect("Filter by ticker", options, default=options)
         st.session_state["acc_ticker_filter"] = selected
 
-# ──────────────────────────  FORECAST SECTION  ─────────────────────────────────
+# ──────────────────────────  RISK BADGE (from calendar page)  ───────────────
+risk_info = st.session_state.get("event_risk_next72")
+if risk_info:
+    st.metric("Next 72h Event Risk", f'{risk_info["label"]} ({risk_info["score"]})')
+risk_mult = {"Low": 1.00, "Medium": 0.92, "High": 0.85}.get(
+    risk_info["label"], 1.00
+) if risk_info else 1.00
+
+# ──────────────────────────  FORECAST SECTION  ───────────────────────────────
 with st.expander("🗕️ Forecast Price Trends"):
     tkr_in        = st.text_input("Enter a ticker", "AAPL")
     forecast_days = st.slider("📅 Horizon (days)", 1, 90, 15)
@@ -210,7 +217,7 @@ with st.expander("🗕️ Forecast Price Trends"):
         tkr = tkr_in.upper()
         err = None
 
-        # ── 1. Generate forecast_df ─────────────────────────────────────────
+        # ── 1. Generate forecast_df ───────────────────────────────────────
         if use_prophet:
             forecast_df, err = forecast_price_trend(
                 tkr, period_months=int(forecast_days / 30)
@@ -245,7 +252,7 @@ with st.expander("🗕️ Forecast Price Trends"):
                 st.error(f"❌ XGBoost failed: {e}")
                 st.stop()
 
-        # ── 2. Display / chart ─────────────────────────────────────────────
+        # ── 2. Display / chart ───────────────────────────────────────────
         if err:
             st.warning(err)
         elif forecast_df.empty:
@@ -276,30 +283,31 @@ with st.expander("🗕️ Forecast Price Trends"):
                 use_container_width=True,
             )
 
-            # ── 3. Intraday / ML movement ────────────────────────────────
+            # ── 3. Intraday / ML movement ──────────────────────────────
             st.subheader("🗓️ Today's Movement Prediction")
             move_msg, move_err = forecast_today_movement(tkr, start=start_date, end=end_date)
-            if move_err:    # ✅ explicit branch – nothing returned
+            if move_err:
                 st.warning(move_err)
             else:
                 st.success(move_msg)
 
-# ──────────────────────────  STRATEGY SECTION  ─────────────────────────────────
+# ──────────────────────────  STRATEGY SECTION  ───────────────────────────────
 if "live_signals" not in st.session_state:
     st.session_state["live_signals"] = {}
 
 if st.button("🚀 Run Strategy"):
-     
     # ---- dashboard of last run ---------------------------------------------
     st.subheader("📱 Live Signals Dashboard")
     for k, v in st.session_state["live_signals"].items():
         sig = "🟢 BUY" if v["signal"] else "🔴 HOLD"
         st.markdown(f"**{k}** → {sig} ({v['confidence']*100:.1f}%)")
     csv_buffers = []
+
     # ─── per-ticker loop ──────────────────────────────────────────────
     for raw in tickers:
         tkr = raw.strip().upper()
-        if not tkr: continue
+        if not tkr:
+            continue
         st.subheader(f"📊 {tkr} Strategy")
         try:
             # -------- data + model -----------------------------------
@@ -310,10 +318,11 @@ if st.button("🚀 Run Strategy"):
                 st.warning("⚠️ Model returned no predictions.")
                 continue
 
-            # -------- results frame ----------------------------------    
+            # -------- results frame ----------------------------------
             df_test = df.iloc[-len(y_test):].copy()
-            df_test["Prob"]   = y_prob
-            df_test["Signal"] = (df_test["Prob"] > confidence_threshold).astype(int)
+            df_test["Prob"]     = y_prob
+            df_test["Prob_eff"] = df_test["Prob"] * risk_mult  # risk-aware probability
+            df_test["Signal"]   = (df_test["Prob_eff"] > confidence_threshold).astype(int)
             df_test["Strategy"] = df_test["Signal"].shift(1) * df_test["Return_1D"]
             df_test["Market"]   = df_test["Return_1D"]
             df_test.dropna(subset=["Strategy","Market"], inplace=True)
@@ -328,10 +337,11 @@ if st.button("🚀 Run Strategy"):
             mdd   = ((df_test["Strategy"]/df_test["Strategy"].cummax())-1).min()
             cagr  = (df_test["Strategy"].iloc[-1]/df_test["Strategy"].iloc[0])**(252/len(df_test))-1
 
-            st.metric("Accuracy", f"{acc:.2f}")
-            st.metric("Sharpe",   f"{sharpe:.2f}" if not np.isnan(sharpe) else "nan")
-            st.metric("Max DD",   f"{mdd:.2%}")
-            st.metric("CAGR",     f"{cagr:.2%}")
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric("Accuracy", f"{acc:.2f}")
+            c2.metric("Sharpe",   f"{sharpe:.2f}" if not np.isnan(sharpe) else "nan")
+            c3.metric("Max DD",   f"{mdd:.2%}")
+            c4.metric("CAGR",     f"{cagr:.2%}")
 
             # ---- plot ------------------------------------------------------
             if {"Strategy","Market"}.issubset(df_test.columns) and not df_test.empty:
@@ -346,16 +356,23 @@ if st.button("🚀 Run Strategy"):
             csv_buffers.append((f"{tkr}_strategy.csv", csv_bytes))
 
             # ---- email -----------------------------------------------------
-            if enable_email and df_test.iloc[-1]["Signal"]==1 and pd.notna(df_test.iloc[-1]["Prob"]) and df_test.iloc[-1]["Prob"]>confidence_threshold:
-                send_alert_email(tkr, float(df_test.iloc[-1]["Prob"]))
+            if (
+                enable_email
+                and df_test.iloc[-1]["Signal"] == 1
+                and pd.notna(df_test.iloc[-1]["Prob_eff"])
+                and df_test.iloc[-1]["Prob_eff"] > confidence_threshold
+            ):
+                send_alert_email(tkr, float(df_test.iloc[-1]["Prob_eff"]))
             
             # ---- SHAP ------------------------------------------------------
-            if enable_shap: plot_shap(model, X_test)
+            if enable_shap:
+                plot_shap(model, X_test)
 
             # ---- live dashboard state -------------------------------------
+            eff_conf = df_test.iloc[-1].get("Prob_eff", df_test.iloc[-1]["Prob"])
             st.session_state["live_signals"][tkr] = {
                 "signal": int(df_test.iloc[-1]["Signal"]),
-                "confidence": float(df_test.iloc[-1]["Prob"]) if pd.notna(df_test.iloc[-1]["Prob"]) else 0.0
+                "confidence": float(eff_conf) if pd.notna(eff_conf) else 0.0
             }
 
         except Exception as e:
@@ -365,13 +382,14 @@ if st.button("🚀 Run Strategy"):
     if enable_zip_download and csv_buffers:
         zbuf = io.BytesIO()
         with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
-            for fname, data in csv_buffers: zf.writestr(fname, data)
+            for fname, data in csv_buffers:
+                zf.writestr(fname, data)
         st.download_button("📦 Download ALL as ZIP",
                            zbuf.getvalue(),
                            file_name="strategy_exports.zip",
                            mime="application/zip")
 
-# ═════════════════════════  ACCURACY DASHBOARD  ════════════════════════════════
+# ═════════════════════════  ACCURACY DASHBOARD  ═════════════════════════════
 st.subheader("📊 Forecast Accuracy Dashboard")
 acc_df = load_forecast_accuracy()
 if acc_df.empty:
@@ -390,9 +408,12 @@ else:
     c1.metric("Avg MAE", f"{avg_mae:.3f}")
     c2.metric("Avg MSE", f"{avg_mse:.3f}")
     c3.metric("Avg R²",  f"{avg_r2 :.3f}")
+
     # data table
     st.dataframe(acc_df.sort_values("timestamp", ascending=False))
-    # line chart
-    st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])  
 
-  
+    # line chart
+    try:
+        st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
+    except Exception:
+        st.warning("Could not render accuracy line chart (check timestamp dtype).")
