@@ -423,9 +423,13 @@ col0, = st.columns([1])
 with col0:
     risk_df = compute_risk_score(all_df) if not all_df.empty else pd.DataFrame(columns=["date","risk"])
     if not risk_df.empty:
-        st.subheader("Event Risk (next days)")
-        fig_risk = px.bar(risk_df, x="date", y="risk", title=None, labels={"risk":"Weighted events"})
-        st.plotly_chart(fig_risk, use_container_width=True)
+        horizon = date.today() + timedelta(days=3)  # 72h
+        risk72 = int(risk_df[risk_df["date"] <= horizon]["risk"].sum())
+        label = "Low" if risk72 < 3 else ("Medium" if risk72 < 6 else "High")
+        st.session_state["event_risk_next72"] = {"score": risk72, "label": label}
+    else:
+        st.session_state.pop("event_risk_next72", None)
+
 
 col1, col2 = st.columns([2, 1], gap="large")
 with col1:
