@@ -42,7 +42,7 @@ from forecast_utils import (
     run_auto_retrain_all,
     load_forecast_accuracy,     # ← DB-backed loader
 )
-
+from core.helpers_xgb import train_xgb_predict
 # ──────────────────────────  IMPORTANCES TAB  ────────────────────────────────
 importances_dir = "charts"
 models_dir      = "models"
@@ -313,6 +313,27 @@ if st.button("🚀 Run Strategy"):
             # -------- data + model -----------------------------------
             df = build_feature_dataframe(tkr, start=start_date, end=end_date)
             model, X_test, y_test, y_pred, y_prob = train_xgb_predict(df)
+            
+            # Build confidence proxy if helper didn't return one
+            if y_prob is None and y_pred is not None and X_test is not None and len(y_pred) == len(X_test):
+                pred = pd.Series(y_pred, index=X_test.index)
+                close_now = X_test["Close"]
+                pred_ret  = (pred - close_now) / close_now
+
+                # volatility proxy using ATR; fallback to ~2% if missing
+                atr = df.loc[X_test.index, "ATR"] if "ATR" in df.columns else pd.Series(0.02, index=X_test.index)
+                vol = (atr / close_now).replace([np.inf, -np.inf], np.nan)
+                vol = vol.fillna(atr.median() / max(1e-8, close_now.median()))
+
+                # squash to (0,1) via sigmoid; k tunes sharpness
+                k = 3.0
+                z = pred_ret / vol.replace(0, np.nan).fillna(vol.median())
+                y_prob = (1.0 / (1.0 + np.exp(-k * z))).clip(0.0, 1.0).values
+
+            # final fallback
+            if y_prob is None:
+                y_prob = np.full(len(y_pred), np.nan)
+
             if y_prob is None: y_prob = [np.nan]*len(y_pred)
             if y_test is None or len(y_test)==0:
                 st.warning("⚠️ Model returned no predictions.")
@@ -411,9 +432,11 @@ else:
 
     # data table
     st.dataframe(acc_df.sort_values("timestamp", ascending=False))
-
+    
     # line chart
     try:
+        acc_df["timestamp"] = pd.to_datetime(acc_df["timestamp"], errors="coerce")
         st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
     except Exception:
         st.warning("Could not render accuracy line chart (check timestamp dtype).")
+    
