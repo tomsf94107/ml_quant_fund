@@ -41,14 +41,24 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
+
+
       - name: Generate feature importances
         env:
           PYTHONUNBUFFERED: "1"
         run: |
           set -e
           mkdir -p charts
-          # 👇 update this path/args to your actual script if different
-          python scripts/generate_importances.py --out charts/feature_importances.png
+          if [ -f scripts/generate_importances.py ]; then
+            python scripts/generate_importances.py --out charts/feature_importances.png --top 25
+          elif [ -f tools/generate_importances.py ]; then
+            python tools/generate_importances.py --out charts/feature_importances.png --top 25
+          else
+            echo "No generator script found. Skipping."
+            exit 0
+          fi
+
+
 
       - name: Commit & push changes (if any)
         uses: stefanzweifel/git-auto-commit-action@v5
