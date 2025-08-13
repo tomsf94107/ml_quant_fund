@@ -15,3 +15,6 @@ pages/logs/
 data/
 artifacts/
 .streamlit/secrets.toml
+!forecast_metrics.csv
+/forecast_logs/*
+!/forecast_logs/.gitkeep
