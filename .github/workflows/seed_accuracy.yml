@@ -37,6 +37,7 @@ jobs:
 
       - name: Sanity check
         run: |
+          set -euxo pipefail
           echo "CWD: $(pwd)"
           ls -la
           if [ -f forecast_metrics.csv ]; then
@@ -59,22 +60,64 @@ jobs:
           df = pd.read_csv(csv_path)
           if df.empty:
               print("Empty CSV; nothing to seed."); sys.exit(0)
+
           # Add an ingestion timestamp
           if "ingested_at" not in df.columns:
               df["ingested_at"] = dt.datetime.utcnow().isoformat(timespec="seconds") + "Z"
+
           db_path = root / "forecast_accuracy.db"
           con = sqlite3.connect(db_path)
-          # Write/replace a simple table named 'metrics'
-          df.to_sql("metrics", con, if_exists="replace", index=False)
-          con.commit(); con.close()
+          try:
+              # Light housekeeping for better reliability/perf
+              con.execute("PRAGMA journal_mode=WAL;")
+              con.execute("PRAGMA synchronous=NORMAL;")
+              con.execute("PRAGMA temp_store=MEMORY;")
+              con.execute("PRAGMA cache_size=-20000;")  # ~20MB cache
+
+              # Write/replace a simple table named 'metrics'
+              df.to_sql("metrics", con, if_exists="replace", index=False)
+
+              # Create an index if a 'ticker' column exists (case-insensitive check)
+              cols = {c.lower() for c in df.columns}
+              if "ticker" in cols:
+                  con.execute("CREATE INDEX IF NOT EXISTS idx_metrics_ticker ON metrics(ticker);")
+
+              con.execute("ANALYZE;")
+              con.commit()
+          finally:
+              con.close()
+
           print(f"✅ Wrote {len(df)} rows to {db_path}")
           PY
           test -s forecast_accuracy.db
 
-      - name: Commit & push seeded DB
+      - name: Upload forecast_accuracy.db (artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forecast-accuracy-db
+          path: forecast_accuracy.db
+          if-no-files-found: ignore
+
+      - name: Commit & push seeded DB (rebase + retry)
         run: |
+          set -eux
+          BRANCH="${GITHUB_REF_NAME:-main}"
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
           git add forecast_accuracy.db
-          git commit -m "Nightly: update forecast_accuracy.db ($(date -u +'%Y-%m-%d'))" || echo "No changes to commit"
-          git push
+          # Exit quietly if nothing changed
+          git commit -m "Nightly: update forecast_accuracy.db ($(date -u +'%Y-%m-%d'))" || exit 0
+
+          # Rebase on latest and retry push to avoid non-fast-forward failures
+          for attempt in 1 2 3; do
+            git fetch origin "$BRANCH"
+            git rebase "origin/$BRANCH" || { git rebase --abort || true; }
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Push succeeded on attempt $attempt"; exit 0
+            fi
+            echo "Push failed (attempt $attempt); retrying in 5s…"
+            sleep 5
+          done
+
+          echo "Final push attempt failed."; exit 1
