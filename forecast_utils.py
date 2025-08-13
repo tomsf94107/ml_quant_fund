@@ -14,10 +14,10 @@ from sqlalchemy import create_engine, text
 from prophet import Prophet
 
 # ────────────────────────────────────────────────────────────────────────────
-# Robust imports (works with or without package prefix)
+# Robust imports (package first; fallback to sibling modules via sys.path shim)
 # ────────────────────────────────────────────────────────────────────────────
 try:
-    # package-style
+    # package-style (recommended when ml_quant_fund/ has __init__.py)
     from ml_quant_fund.core.feature_utils import finalize_features
     from ml_quant_fund.data.etl_insider import fetch_insider_trades
     from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
@@ -26,7 +26,12 @@ try:
     from ml_quant_fund.sentiment_utils import get_sentiment_scores
     from ml_quant_fund.send_email import send_email_alert
 except ModuleNotFoundError:
-    # repo-root style
+    # repo-root style (ensure this file's directory is on sys.path)
+    import sys as _sys
+    _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+    if _THIS_DIR not in _sys.path:
+        _sys.path.insert(0, _THIS_DIR)
+
     from core.feature_utils import finalize_features
     from data.etl_insider import fetch_insider_trades
     from data.etl_holdings import fetch_insider_holdings
