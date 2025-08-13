@@ -1,39 +1,62 @@
+# .github/workflows/generate-importances.yml
 name: Generate Feature Importances Chart
 
-# Triggers: daily at 05:00 UTC, plus manual runs
 on:
   schedule:
-    - cron:  '0 5 * * *'       # every day at 05:00 UTC
-  workflow_dispatch:           # allows manual runs from the GitHub UI
+    - cron: "0 6 * * *"   # daily at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-importances-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Checkout your code
-      - uses: actions/checkout@v3
-
-      # 2. Set up Python environment
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          python-version: '3.10'
+          persist-credentials: true  # keep token so commit/push works
 
-      # 3. Install dependencies
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: |
-          pip install pandas matplotlib
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
-      # 4. Run the importances script
-      - name: Generate importances chart
-        run: python evaluate_importances_over_time.py
-
-      # 5. Commit & push the updated PNG
-      - name: Commit and push chart
+      - name: Generate feature importances
+        env:
+          PYTHONUNBUFFERED: "1"
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add charts/importances_over_time.png
-          git diff --quiet --exit-code || git commit -m "chore: update importances chart [skip ci]"
-          git push
+          set -e
+          mkdir -p charts
+          # 👇 update this path/args to your actual script if different
+          python scripts/generate_importances.py --out charts/feature_importances.png
+
+      - name: Commit & push changes (if any)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ci): update feature importances chart"
+          branch: ${{ github.ref_name }}
+          file_pattern: |
+            charts/*.png
+            charts/*.svg
+            charts/*.json
+            charts/*.csv
