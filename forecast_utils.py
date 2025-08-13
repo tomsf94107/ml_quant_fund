@@ -1,38 +1,28 @@
-# forecast_utils.py v5.2 – insider via SQLite + risk calendar
+# forecast_utils.py v5.3 – risk calendar integration + tidy DB loader
 # ---------------------------------------------------------------------------
 import os
+import io
+import contextlib
 from datetime import datetime, timedelta
-import contextlib, io
 
 import numpy as np
 import pandas as pd
 import yfinance as yf
-from prophet import Prophet
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import pandas_ta as ta
 import streamlit as st
 from sqlalchemy import create_engine, text
+from prophet import Prophet
 
+# local modules
 from events_risk import build_risk_features
-from data.etl_insider  import fetch_insider_trades
+from data.etl_insider import fetch_insider_trades
 from data.etl_holdings import fetch_insider_holdings
-from sentiment_utils   import get_sentiment_scores
-from send_email        import send_email_alert
-from core.helpers_xgb  import train_xgb_predict
+from sentiment_utils import get_sentiment_scores
+from send_email import send_email_alert
+from core.helpers_xgb import train_xgb_predict
 
 # ────────────────────────────────────────────────────────────────────────────
-def _coerce_to_ds_index(df: pd.DataFrame) -> pd.DataFrame:
-    """Normalize a frame that has any date-like column to index 'ds' (datetime)."""
-    if df is None or df.empty:
-        return pd.DataFrame()
-    for c in ("ds", "date", "Date", "timestamp"):
-        if c in df.columns:
-            out = df.rename(columns={c: "ds"}).copy()
-            out["ds"] = pd.to_datetime(out["ds"], errors="coerce")
-            out = out.dropna(subset=["ds"]).sort_values("ds")
-            return out.set_index("ds")
-    return pd.DataFrame()
-
+# Paths & constants
 # ────────────────────────────────────────────────────────────────────────────
 LOG_DIR     = "forecast_logs"
 EVAL_DIR    = "forecast_eval"
@@ -46,49 +36,58 @@ VOL_LOOKBACK_Z  = 20
 for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
     os.makedirs(d, exist_ok=True)
 
+# repo-local root for relative DB paths
+ROOT = os.path.abspath(os.path.dirname(__file__))
+
+
 # ────────────────────────────────────────────────────────────────────────────
-# Forecast accuracy loader (Database-based)
+# Accuracy DB loader (SQLite by default; overridable via secrets)
 # ────────────────────────────────────────────────────────────────────────────
-root = os.path.abspath(os.path.dirname(__file__))
+def _resolve_sqlite_path(db_url: str) -> str:
+    """
+    Accepts 'sqlite:///relative_or_abs_path'. Returns absolute file path.
+    """
+    if not db_url.startswith("sqlite:///"):
+        raise ValueError("Only sqlite URLs are supported, e.g. sqlite:///forecast_accuracy.db")
+    path = db_url.replace("sqlite:///", "", 1)
+    if os.path.isabs(path):
+        return path
+    return os.path.join(ROOT, path)
+
 
 def load_forecast_accuracy() -> pd.DataFrame:
-    db_url = st.secrets.get("accuracy_db_url")
-    if not db_url:
-        st.error("Database URL not configured (accuracy_db_url missing)")
-        return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
-
-    # Build absolute file path under the repo root
-    rel_path = db_url.replace("sqlite:///", "")
-    abs_path = os.path.join(root, rel_path)
-
-    # DEBUG
-    st.write("🔍 accuracy DB file:", abs_path)
-
-    engine = create_engine(f"sqlite:///{abs_path}")
-
-    # Ensure the table exists
-    with engine.begin() as conn:
-        conn.execute(text("""
-            CREATE TABLE IF NOT EXISTS forecast_accuracy (
-                timestamp TEXT,
-                ticker     TEXT,
-                mae        FLOAT,
-                mse        FLOAT,
-                r2         FLOAT
-            )
-        """))
-
-    # Load the data
-    query = """
-        SELECT timestamp, ticker, mae, mse, r2
-          FROM forecast_accuracy
-      ORDER BY timestamp DESC
     """
+    Load accuracy rows from SQLite table forecast_accuracy.
+    Secrets key: accuracy_db_url (defaults to sqlite:///forecast_accuracy.db)
+    """
+    db_url = st.secrets.get("accuracy_db_url", "sqlite:///forecast_accuracy.db")
     try:
+        abs_path = _resolve_sqlite_path(db_url)
+        engine = create_engine(f"sqlite:///{abs_path}")
+
+        # Ensure table exists
+        with engine.begin() as conn:
+            conn.execute(text("""
+                CREATE TABLE IF NOT EXISTS forecast_accuracy (
+                    timestamp TEXT,
+                    ticker    TEXT,
+                    mae       FLOAT,
+                    mse       FLOAT,
+                    r2        FLOAT
+                )
+            """))
+
+        # Load it
+        query = """
+            SELECT timestamp, ticker, mae, mse, r2
+            FROM forecast_accuracy
+            ORDER BY timestamp DESC
+        """
         return pd.read_sql(query, engine, parse_dates=["timestamp"])
     except Exception as e:
         st.error(f"Failed to load accuracy from DB: {e}")
-        return pd.DataFrame(columns=["timestamp","ticker","mae","mse","r2"])
+        return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Core Feature-Engineering + Forecast Wrappers
@@ -101,7 +100,8 @@ def build_feature_dataframe(
     min_rows: int = 200
 ) -> pd.DataFrame:
     """
-    Download OHLCV → insider (trades/holdings) → TA → market context → sentiment → risk → clean.
+    Download OHLCV → inject insider trades & holdings → TA →
+    market context → sentiment → risk features → clean.
     """
     # 1) Price history
     if start and end:
@@ -117,29 +117,28 @@ def build_feature_dataframe(
     if df.empty or "Close" not in df:
         return pd.DataFrame()
 
-    # 2) Insider trades + holdings (SQLite-backed)
+    # 2) Inject insider trades + holdings
     try:
-        trades_raw = fetch_insider_trades(ticker)           # expects cols: ds, insider_net_shares, insider_buy_count, insider_sell_count
-        holds_raw  = fetch_insider_holdings(ticker)         # expects cols: ds, hold_shares, hold_net_change
+        ins_trades = fetch_insider_trades(ticker).set_index("ds")  # expects ds column
+        ins_holds  = fetch_insider_holdings(ticker).set_index("ds")
+        df = (
+            df.join(ins_trades, how="left")
+              .join(ins_holds.rename(columns={
+                  "shares":     "hold_shares",
+                  "net_change": "hold_net_change"
+              }), how="left")
+        )
 
-        ins_trades = _coerce_to_ds_index(trades_raw)
-        ins_holds  = _coerce_to_ds_index(holds_raw)
-
-        if not ins_trades.empty:
-            keep_cols = [c for c in ["insider_net_shares","insider_buy_count","insider_sell_count"] if c in ins_trades.columns]
-            df = df.join(ins_trades[keep_cols], how="left")
-        if not ins_holds.empty:
-            keep_cols = [c for c in ["hold_shares","hold_net_change"] if c in ins_holds.columns]
-            df = df.join(ins_holds[keep_cols], how="left")
-
-        # defaults
-        for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
-            if col not in df.columns:
-                df[col] = 0
-            df[col] = df[col].fillna(0)
+        # standardize expected cols
+        df["insider_net_shares"] = df.get("insider_net_shares", 0).fillna(0)
+        df["insider_buy_count"]  = df.get("insider_buy_count", 0).fillna(0)
+        df["insider_sell_count"] = df.get("insider_sell_count", 0).fillna(0)
+        df["hold_shares"]        = df.get("hold_shares", 0).fillna(0)
+        df["hold_net_change"]    = df.get("hold_net_change", 0).fillna(0)
     except Exception as e:
         print(f"⚠️ Insider merge error: {e}")
-        for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
+        for col in ["insider_net_shares","insider_buy_count","insider_sell_count",
+                    "hold_shares","hold_net_change"]:
             df[col] = 0
 
     # 3) Technical indicators
@@ -149,10 +148,10 @@ def build_feature_dataframe(
     try:
         df["RSI14"] = ta.rsi(df["Close"], length=14)
         macd = ta.macd(df["Close"])
-        if isinstance(macd, pd.DataFrame) and not macd.empty:
+        if macd is not None and not macd.empty:
             df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
         bb = ta.bbands(df["Close"])
-        if isinstance(bb, pd.DataFrame) and "BBP_20_2.0" in bb.columns:
+        if bb is not None and "BBP_20_2.0" in bb.columns:
             df["BB_width"] = bb["BBP_20_2.0"]
         df["ATR"] = ta.atr(df["High"], df["Low"], df["Close"])
     except Exception:
@@ -160,15 +159,12 @@ def build_feature_dataframe(
 
     # 4) Volume & market context
     if "Volume" in df.columns and df["Volume"].notna().any():
-        df["VWAP"]       = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
-        try:
-            df["OBV"]    = ta.obv(df["Close"], df["Volume"])
-        except Exception:
-            df["OBV"]    = np.nan
         with np.errstate(divide="ignore", invalid="ignore"):
-            mu = df["Volume"].rolling(VOL_LOOKBACK_Z).mean()
-            sd = df["Volume"].rolling(VOL_LOOKBACK_Z).std()
-            df["vol_zscore"] = (df["Volume"] - mu) / sd
+            df["VWAP"]       = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
+        df["OBV"]        = ta.obv(df["Close"], df["Volume"])
+        df["vol_zscore"] = (
+            df["Volume"] - df["Volume"].rolling(VOL_LOOKBACK_Z).mean()
+        ) / df["Volume"].rolling(VOL_LOOKBACK_Z).std()
 
     for etf in (SPY_TICKER, SECTOR_ETF):
         try:
@@ -196,21 +192,21 @@ def build_feature_dataframe(
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = 0
 
-    # 6) Risk features (⭐ before return)
+    # 6) Risk features
     try:
-        # derive a safe date range if start/end were not passed
         risk_start = start if start else df.index.min().date()
         risk_end   = end   if end   else df.index.max().date()
         risk = build_risk_features(
             risk_start - timedelta(days=3),
             risk_end   + timedelta(days=3),
             use_fmp=True, use_finnhub=True
-        )
+        )  # expects columns: date, risk_today, risk_next_1d, risk_next_3d, risk_prev_1d
         df = df.copy()
         df["date"] = pd.to_datetime(df.index).date
         df = df.merge(risk, on="date", how="left").drop(columns=["date"])
         for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]:
-            if c not in df: df[c] = 0
+            if c not in df.columns:
+                df[c] = 0
         df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]] = \
             df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]].fillna(0)
     except Exception as e:
@@ -219,7 +215,9 @@ def build_feature_dataframe(
             df[c] = 0
 
     # 7) Final cleanup / return
+    df = df.replace([np.inf, -np.inf], np.nan)
     return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # XGBoost wrapper with retries
@@ -239,7 +237,9 @@ def safe_train_xgb_with_retries(
         except Exception as e:
             print(f"⚠️ Retry {look}d failed: {e}")
             look += step
+
     raise ValueError(f"❌ Model failed after {max_look}d")
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Prophet forecast
@@ -278,14 +278,19 @@ def forecast_price_trend(
     fcst = m.predict(future)
     res  = (
         fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]]
-          .merge(dfp[["ds", "y"]].rename(columns={"y": "actual"}), on="ds", how="left")
+          .merge(dfp[["ds", "y"]].rename(columns={"y": "actual"}),
+                 on="ds", how="left")
     )
 
     if log_results:
-        out_path = os.path.join(LOG_DIR, f"forecast_{tkr}_{datetime.now():%Y%m%d_%H%M%S}.csv")
+        out_path = os.path.join(
+            LOG_DIR,
+            f"forecast_{tkr}_{datetime.now():%Y%m%d_%H%M%S}.csv"
+        )
         res.to_csv(out_path, index=False)
 
     return res, None
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Intraday + ML combo
@@ -309,7 +314,9 @@ def forecast_today_movement(
             intraday_msg = f"🔄 Flat Trend ({pct:.2f}%)"
 
         if log_results:
-            df_i.to_csv(os.path.join(INTRA_DIR, f"intraday_{ticker}_{datetime.now():%Y%m%d_%H%M%S}.csv"))
+            df_i.to_csv(
+                os.path.join(INTRA_DIR, f"intraday_{ticker}_{datetime.now():%Y%m%d_%H%M%S}.csv")
+            )
     except Exception as e:
         intraday_msg = f"⚠️ Intraday error: {e}"
 
@@ -323,12 +330,14 @@ def forecast_today_movement(
     except Exception as e:
         return intraday_msg, f"❌ Model error: {e}"
 
+
 # ────────────────────────────────────────────────────────────────────────────
 # Eval, logging & retrain wrappers
 # ────────────────────────────────────────────────────────────────────────────
 def _latest_log(tkr: str):
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{tkr}_")]
     return os.path.join(LOG_DIR, sorted(logs)[-1]) if logs else None
+
 
 def auto_retrain_forecast_model(tkr: str):
     """
@@ -341,14 +350,20 @@ def auto_retrain_forecast_model(tkr: str):
     df_e = pd.read_csv(path).dropna(subset=["yhat", "actual"])
     if df_e.empty:
         return
-    mae = mean_absolute_error(df_e["actual"], df_e["yhat"])
-    mse = mean_squared_error(df_e["actual"], df_e["yhat"])
-    r2  = r2_score(df_e["actual"], df_e["yhat"])
+    mae = ((df_e["actual"] - df_e["yhat"]).abs()).mean()
+    mse = ((df_e["actual"] - df_e["yhat"])**2).mean()
+    # r2 manual (avoid importing again)
+    ss_res = ((df_e["actual"] - df_e["yhat"])**2).sum()
+    ss_tot = ((df_e["actual"] - df_e["actual"].mean())**2).sum()
+    r2  = 1 - ss_res/ss_tot if ss_tot else np.nan
+
     row = pd.DataFrame([[datetime.now(), tkr, mae, mse, r2]],
                        columns=["timestamp", "ticker", "mae", "mse", "r2"])
+    os.makedirs(EVAL_DIR, exist_ok=True)
     eval_path = os.path.join(EVAL_DIR, "forecast_evals.csv")
     row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path), index=False)
     return row
+
 
 def run_auto_retrain_all(tickers: list[str]):
     dfs = []
@@ -361,8 +376,9 @@ def run_auto_retrain_all(tickers: list[str]):
     else:
         return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
 
+
 # ────────────────────────────────────────────────────────────────────────────
-# SHAP Optional Plotter
+# SHAP Optional Plotter (kept minimal; use in UI helper)
 # ────────────────────────────────────────────────────────────────────────────
 try:
     import shap
@@ -370,12 +386,14 @@ try:
 except Exception:
     SHAP_AVAILABLE = False
 
+
 def plot_shap(model, X, top_n: int = 10):
     if not SHAP_AVAILABLE:
         return
     expl = shap.Explainer(model, X)
     vals = expl(X)
     shap.plots.bar(vals[:, :top_n])
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Ticker List & Accuracy Helpers
@@ -385,10 +403,12 @@ def load_forecast_tickers() -> list[str]:
         return ["AAPL", "MSFT"]
     return [ln.strip().upper() for ln in open(TICKER_FILE) if ln.strip()]
 
+
 def save_forecast_tickers(tkr_list: list[str]):
     with open(TICKER_FILE, "w") as f:
         for t in tkr_list:
             f.write(t.strip().upper() + "\n")
+
 
 def compute_rolling_accuracy(log_path: str) -> pd.DataFrame:
     df = pd.read_csv(log_path, parse_dates=["ds"]).sort_values("ds")
@@ -401,7 +421,10 @@ def compute_rolling_accuracy(log_path: str) -> pd.DataFrame:
     df["30d_accuracy"]     = df["correct"].rolling(30).mean()
     return df[["ds", "7d_accuracy", "30d_accuracy", "correct"]]
 
+
 def get_latest_forecast_log(tkr: str, log_dir: str = LOG_DIR) -> str | None:
-    """Return the path to the most recent forecast CSV for a given ticker."""
+    """
+    Return the path to the most recent forecast CSV for a given ticker.
+    """
     logs = [f for f in os.listdir(log_dir) if f.startswith(f"forecast_{tkr}_")]
     return os.path.join(log_dir, sorted(logs)[-1]) if logs else None

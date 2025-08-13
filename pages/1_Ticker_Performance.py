@@ -1,19 +1,21 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.3  •  added risk event calendar + risk-aware signals
+#  v18.4  •  added risk event calendar + risk-aware signals
 # ────────────────────────────────────────────────────────────────────────────
-import os, sys, io, zipfile, base64, tempfile, glob
+
+# ── Path bootstrap (repo root) ─────────────────────────────────────────────
+from pathlib import Path
+import sys
+ROOT = Path(__file__).resolve().parents[1]  # repo root (parent of /pages)
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+# stdlib / third-party
+import os, io, zipfile, glob
 from dotenv import load_dotenv
-from PIL import Image
 load_dotenv()
 
-# 🔧 ensure root path is added for module imports in Streamlit
-dir_above = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-if dir_above not in sys.path:
-    sys.path.append(dir_above)
-
-# ----- numeric / plotting ----------------------------------------------------
 import numpy as np
-# ----- compatibility shims for NumPy ≥2.0 -----------------------------------
+# NumPy ≥2.0 shims (safe no-ops on <2.0)
 if not hasattr(np, "bool"): np.bool = np.bool_
 if not hasattr(np, "int"):  np.int  = int
 
@@ -23,15 +25,13 @@ import altair as alt
 from sklearn.metrics import accuracy_score
 from datetime import datetime, date, timedelta
 
-# ----- web / app -------------------------------------------------------------
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
 
-# ----- email -----------------------------------------------------------------
 import smtplib
 from email.mime.text import MIMEText
 
-# ----- your core utils -------------------------------------------------------
+# local modules
 from forecast_utils import (
     build_feature_dataframe,
     forecast_price_trend,
@@ -40,38 +40,36 @@ from forecast_utils import (
     compute_rolling_accuracy,
     get_latest_forecast_log,
     run_auto_retrain_all,
-    load_forecast_accuracy,     # ← DB-backed loader
+    load_forecast_accuracy,
 )
-from core.helpers_xgb import train_xgb_predict
-# ──────────────────────────  IMPORTANCES TAB  ────────────────────────────────
+from core.helpers_xgb import train_xgb_predict, RISK_ALPHA
+
+
+# ──────────────────────────  IMPORTANCES TAB  ───────────────────────────────
 importances_dir = "charts"
 models_dir      = "models"
+
 def show_importances_tab():
     st.title("📈 Feature Importances Over Time")
-    img_filename = "importances_over_time.png"
-    img_path     = os.path.join(importances_dir, img_filename)
+    img_path = os.path.join(importances_dir, "importances_over_time.png")
 
-    # Display chart if exists
     if os.path.exists(img_path):
         st.image(img_path, caption="7-Day Rolling Feature Importances", use_column_width=True)
         last_mod = os.path.getmtime(img_path)
         st.markdown(f"**Last updated:** {datetime.fromtimestamp(last_mod):%Y-%m-%d %H:%M}")
     else:
         st.warning(f"No chart found at `{img_path}`.")
-        uploaded_file = st.file_uploader(
-            "Upload a feature importances chart (PNG/JPG):", type=["png", "jpg", "jpeg"]
-        )
+        uploaded_file = st.file_uploader("Upload a feature importances chart (PNG/JPG):",
+                                         type=["png", "jpg", "jpeg"])
         if uploaded_file and st.button("Save chart to disk"):
             os.makedirs(importances_dir, exist_ok=True)
             with open(img_path, "wb") as f:
                 f.write(uploaded_file.getbuffer())
             st.success(f"Chart saved to `{img_path}`!")
 
-    # Surface top-5 features from latest summary
-    summary_files = sorted(
-        glob.glob(os.path.join(models_dir, "feature_importances_summary_*.csv"))
-    )
-    root_summary = os.path.join(models_dir, "feature_importances_summary.csv")
+    # surface top-5 features from latest summary
+    summary_files = sorted(glob.glob(os.path.join(models_dir, "feature_importances_summary_*.csv")))
+    root_summary  = os.path.join(models_dir, "feature_importances_summary.csv")
     if not summary_files and os.path.exists(root_summary):
         summary_files = [root_summary]
 
@@ -88,7 +86,8 @@ def show_importances_tab():
         except Exception:
             st.warning("Could not load feature-importances summary for top features.")
 
-# ──────────────────────────  AUTH  ───────────────────────────────────────────
+
+# ──────────────────────────  AUTH (optional)  ───────────────────────────────
 def check_login():
     if st.session_state.get("auth_ok"):
         return
@@ -100,7 +99,8 @@ def check_login():
         st.stop()
     st.session_state["auth_ok"] = True
 
-# ──────────────────────────  EMAIL  ──────────────────────────────────────────
+
+# ──────────────────────────  EMAIL  ─────────────────────────────────────────
 def send_alert_email(ticker: str, prob: float):
     try:
         msg = MIMEText(f"High-confidence BUY signal for {ticker} (p={prob:.2f})")
@@ -113,7 +113,8 @@ def send_alert_email(ticker: str, prob: float):
     except Exception as e:
         st.error(f"Email failed: {e}")
 
-# ──────────────────────────  SHAP VIS  ───────────────────────────────────────
+
+# ──────────────────────────  SHAP VIS  ──────────────────────────────────────
 def plot_shap(model, X):
     try:
         import shap
@@ -140,7 +141,8 @@ def plot_shap(model, X):
     except Exception as e:
         st.error(f"❌ SHAP failed: {e}")
 
-# ──────────────────────────  TICKER LIST  ────────────────────────────────────
+
+# ──────────────────────────  TICKER LIST  ───────────────────────────────────
 def load_forecast_tickers():
     return (open("tickers.csv").read().splitlines()
             if os.path.exists("tickers.csv") else ["AAPL", "MSFT"])
@@ -150,10 +152,10 @@ def save_forecast_tickers(lst):
         for t in lst:
             f.write(t.strip().upper() + "\n")
 
+
 # ──────────────────────────  UI CONFIG  ─────────────────────────────────────
 st_autorefresh(interval=5 * 60 * 1000, key="auto-refresh")
 
-# Page selector
 pages = ["Dashboard", "Importances Over Time"]
 page = st.sidebar.radio("Go to", pages)
 if page == "Importances Over Time":
@@ -163,7 +165,7 @@ if page == "Importances Over Time":
 st.title("📈 ML-Based Stock Strategy Dashboard")
 st.caption(f"🕒 Last updated {datetime.now():%Y-%m-%d %H:%M:%S}")
 
-# ──────────────────────────  SIDEBAR  ────────────────────────────────────────
+# ──────────────────────────  SIDEBAR  ───────────────────────────────────────
 with st.sidebar:
     if page == "Dashboard":
         st.markdown("## 📆 Date Range")
@@ -182,7 +184,7 @@ with st.sidebar:
             st.success("✅ Logs populated!")
 
         tickers              = st.text_input("Tickers (comma-sep)", "AAPL,MSFT").upper().split(",")
-        confidence_threshold = st.slider("Confidence threshold", 0.5, 0.99, 0.7)
+        confidence_threshold = st.slider("Confidence threshold", 0.5, 0.99, 0.79)
         enable_email         = st.toggle("📧 Email alerts", True)
         enable_shap          = st.toggle("🔍 SHAP explainability", True)
         enable_zip_download  = st.toggle("📦 ZIP of results", True)
@@ -193,11 +195,13 @@ with st.sidebar:
                 save_forecast_tickers(txt.splitlines())
                 st.success("Saved.")
 
-        # ── ACCURACY FILTERS ───────────────────────────────────────────
         st.markdown("## 📈 Accuracy Filters")
         options  = load_forecast_tickers()
         selected = st.multiselect("Filter by ticker", options, default=options)
         st.session_state["acc_ticker_filter"] = selected
+
+        st.markdown("## 🛡️ Risk Gate")
+        block_tau = st.slider("Block entries when risk_next_3d ≥", 0, 6, 3, 1)
 
 # ──────────────────────────  RISK BADGE (from calendar page)  ───────────────
 risk_info = st.session_state.get("event_risk_next72")
@@ -217,27 +221,23 @@ with st.expander("🗕️ Forecast Price Trends"):
         tkr = tkr_in.upper()
         err = None
 
-        # ── 1. Generate forecast_df ───────────────────────────────────────
         if use_prophet:
             forecast_df, err = forecast_price_trend(
                 tkr, period_months=int(forecast_days / 30)
             )
             model_used = "Prophet"
-        else:   # XGBoost short-term path
+        else:
             base_df = build_feature_dataframe(tkr, start=start_date, end=end_date)
             try:
                 _, _, _, y_pred, _ = train_xgb_predict(
                     base_df, horizon_days=forecast_days
                 )
-
-                # recent 60-day history for context
                 recent = (
                     base_df[["Close"]]
                     .tail(60)
                     .reset_index()
                     .rename(columns={"Date": "ds", "Close": "actual"})
                 )
-
                 futr = pd.DataFrame({
                     "ds":          pd.date_range(datetime.today(), periods=len(y_pred)),
                     "yhat":        y_pred,
@@ -245,14 +245,12 @@ with st.expander("🗕️ Forecast Price Trends"):
                     "yhat_upper":  np.nan,
                     "actual":      np.nan,
                 })
-
                 forecast_df = pd.concat([recent, futr], ignore_index=True)
                 model_used  = "XGBoost"
             except Exception as e:
                 st.error(f"❌ XGBoost failed: {e}")
                 st.stop()
 
-        # ── 2. Display / chart ───────────────────────────────────────────
         if err:
             st.warning(err)
         elif forecast_df.empty:
@@ -283,7 +281,6 @@ with st.expander("🗕️ Forecast Price Trends"):
                 use_container_width=True,
             )
 
-            # ── 3. Intraday / ML movement ──────────────────────────────
             st.subheader("🗓️ Today's Movement Prediction")
             move_msg, move_err = forecast_today_movement(tkr, start=start_date, end=end_date)
             if move_err:
@@ -296,67 +293,83 @@ if "live_signals" not in st.session_state:
     st.session_state["live_signals"] = {}
 
 if st.button("🚀 Run Strategy"):
-    # ---- dashboard of last run ---------------------------------------------
     st.subheader("📱 Live Signals Dashboard")
     for k, v in st.session_state["live_signals"].items():
         sig = "🟢 BUY" if v["signal"] else "🔴 HOLD"
         st.markdown(f"**{k}** → {sig} ({v['confidence']*100:.1f}%)")
     csv_buffers = []
 
-    # ─── per-ticker loop ──────────────────────────────────────────────
     for raw in tickers:
         tkr = raw.strip().upper()
         if not tkr:
             continue
+
         st.subheader(f"📊 {tkr} Strategy")
         try:
-            # -------- data + model -----------------------------------
+            # -------- data --------------------------------------------
             df = build_feature_dataframe(tkr, start=start_date, end=end_date)
+
+            # ---- risk diagnostics -----------------------------------
+            risk_cols = [c for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"] if c in df.columns]
+            with st.expander("🛡️ Risk diagnostics", expanded=False):
+                if risk_cols:
+                    nz = (df[risk_cols] != 0).mean().rename("nonzero_frac").round(3)
+                    c1, c2 = st.columns([1,1])
+                    c1.write("Non-zero fraction by column")
+                    c1.dataframe(nz.to_frame(), use_container_width=True)
+                    c2.write("Last 10 risk rows")
+                    c2.dataframe(df[risk_cols].tail(10), use_container_width=True)
+                else:
+                    st.info("No risk columns present on the training dataframe.")
+                st.caption(f"Training down-weight alpha: {RISK_ALPHA}")
+
+            # -------- model -------------------------------------------
             model, X_test, y_test, y_pred, y_prob = train_xgb_predict(df)
-            
+
             # Build confidence proxy if helper didn't return one
             if y_prob is None and y_pred is not None and X_test is not None and len(y_pred) == len(X_test):
                 pred = pd.Series(y_pred, index=X_test.index)
                 close_now = X_test["Close"]
                 pred_ret  = (pred - close_now) / close_now
-
-                # volatility proxy using ATR; fallback to ~2% if missing
                 atr = df.loc[X_test.index, "ATR"] if "ATR" in df.columns else pd.Series(0.02, index=X_test.index)
                 vol = (atr / close_now).replace([np.inf, -np.inf], np.nan)
-                vol = vol.fillna(atr.median() / max(1e-8, close_now.median()))
-
-                # squash to (0,1) via sigmoid; k tunes sharpness
+                vol = vol.fillna(atr.median() / max(1e-8, float(close_now.median())))
                 k = 3.0
                 z = pred_ret / vol.replace(0, np.nan).fillna(vol.median())
                 y_prob = (1.0 / (1.0 + np.exp(-k * z))).clip(0.0, 1.0).values
 
-            # final fallback
             if y_prob is None:
                 y_prob = np.full(len(y_pred), np.nan)
 
-            if y_prob is None: y_prob = [np.nan]*len(y_pred)
-            if y_test is None or len(y_test)==0:
+            if y_test is None or len(y_test) == 0:
                 st.warning("⚠️ Model returned no predictions.")
                 continue
 
             # -------- results frame ----------------------------------
             df_test = df.iloc[-len(y_test):].copy()
+
+            # optional block gate by event risk
+            gate = (df_test.get("risk_next_3d", pd.Series(0, index=df_test.index)) >= block_tau)
+            df_test["GateBlock"] = gate.astype(int)
+
             df_test["Prob"]     = y_prob
-            df_test["Prob_eff"] = df_test["Prob"] * risk_mult  # risk-aware probability
-            df_test["Signal"]   = (df_test["Prob_eff"] > confidence_threshold).astype(int)
+            df_test["Prob_eff"] = df_test["Prob"] * risk_mult  # global 72h multiplier
+            # block entries on high upcoming risk
+            df_test["Signal"]   = ((df_test["Prob_eff"] > confidence_threshold) & (~gate)).astype(int)
+
             df_test["Strategy"] = df_test["Signal"].shift(1) * df_test["Return_1D"]
             df_test["Market"]   = df_test["Return_1D"]
             df_test.dropna(subset=["Strategy","Market"], inplace=True)
-            df_test[["Strategy","Market"]] = (1+df_test[["Strategy","Market"]]).cumprod()
+            df_test[["Strategy","Market"]] = (1 + df_test[["Strategy","Market"]]).cumprod()
 
-            # ---- metrics ---------------------------------------------------
-            y_dir_true = (y_test.diff()>0).astype(int).iloc[1:]
-            y_dir_pred = (pd.Series(y_pred,index=y_test.index).diff()>0).astype(int).iloc[1:]
+            # ---- metrics --------------------------------------------
+            y_dir_true = (y_test.diff() > 0).astype(int).iloc[1:]
+            y_dir_pred = (pd.Series(y_pred, index=y_test.index).diff() > 0).astype(int).iloc[1:]
             acc  = accuracy_score(y_dir_true, y_dir_pred)
             strat_ret = df_test["Strategy"].pct_change()
-            sharpe = np.sqrt(252)*strat_ret.mean()/strat_ret.std() if strat_ret.std() else np.nan
-            mdd   = ((df_test["Strategy"]/df_test["Strategy"].cummax())-1).min()
-            cagr  = (df_test["Strategy"].iloc[-1]/df_test["Strategy"].iloc[0])**(252/len(df_test))-1
+            sharpe = np.sqrt(252) * strat_ret.mean() / strat_ret.std() if strat_ret.std() else np.nan
+            mdd   = ((df_test["Strategy"] / df_test["Strategy"].cummax()) - 1).min()
+            cagr  = (df_test["Strategy"].iloc[-1] / df_test["Strategy"].iloc[0]) ** (252 / len(df_test)) - 1
 
             c1, c2, c3, c4 = st.columns(4)
             c1.metric("Accuracy", f"{acc:.2f}")
@@ -364,19 +377,19 @@ if st.button("🚀 Run Strategy"):
             c3.metric("Max DD",   f"{mdd:.2%}")
             c4.metric("CAGR",     f"{cagr:.2%}")
 
-            # ---- plot ------------------------------------------------------
+            # ---- plot ------------------------------------------------
             if {"Strategy","Market"}.issubset(df_test.columns) and not df_test.empty:
                 st.line_chart(df_test[["Strategy","Market"]])
             else:
                 st.warning("⚠️ Strategy series empty – insufficient rows.")
 
-            # ---- downloads -------------------------------------------------
+            # ---- downloads ------------------------------------------
             csv_bytes = df_test.to_csv(index=False).encode()
             st.download_button(f"🗅 CSV – {tkr}", csv_bytes,
                                file_name=f"{tkr}_strategy.csv", mime="text/csv")
             csv_buffers.append((f"{tkr}_strategy.csv", csv_bytes))
 
-            # ---- email -----------------------------------------------------
+            # ---- email ----------------------------------------------
             if (
                 enable_email
                 and df_test.iloc[-1]["Signal"] == 1
@@ -384,12 +397,12 @@ if st.button("🚀 Run Strategy"):
                 and df_test.iloc[-1]["Prob_eff"] > confidence_threshold
             ):
                 send_alert_email(tkr, float(df_test.iloc[-1]["Prob_eff"]))
-            
-            # ---- SHAP ------------------------------------------------------
+
+            # ---- SHAP -----------------------------------------------
             if enable_shap:
                 plot_shap(model, X_test)
 
-            # ---- live dashboard state -------------------------------------
+            # ---- live dashboard state -------------------------------
             eff_conf = df_test.iloc[-1].get("Prob_eff", df_test.iloc[-1]["Prob"])
             st.session_state["live_signals"][tkr] = {
                 "signal": int(df_test.iloc[-1]["Signal"]),
@@ -416,12 +429,10 @@ acc_df = load_forecast_accuracy()
 if acc_df.empty:
     st.warning("No accuracy data found.")
 else:
-    # apply ticker filter
     sel = st.session_state.get("acc_ticker_filter", [])
     if sel:
         acc_df = acc_df[acc_df["ticker"].isin(sel)]
 
-    # summary metrics
     avg_mae = acc_df["mae"].mean()
     avg_mse = acc_df["mse"].mean()
     avg_r2  = acc_df["r2"].mean()
@@ -430,13 +441,8 @@ else:
     c2.metric("Avg MSE", f"{avg_mse:.3f}")
     c3.metric("Avg R²",  f"{avg_r2 :.3f}")
 
-    # data table
-    st.dataframe(acc_df.sort_values("timestamp", ascending=False))
-    
-    # line chart
     try:
         acc_df["timestamp"] = pd.to_datetime(acc_df["timestamp"], errors="coerce")
         st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
     except Exception:
         st.warning("Could not render accuracy line chart (check timestamp dtype).")
-    
