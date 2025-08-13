@@ -18,3 +18,8 @@ artifacts/
 !forecast_metrics.csv
 /forecast_logs/*
 !/forecast_logs/.gitkeep
+# Ignore all logs in the folder…
+/forecast_logs/*
+# …but keep the folder itself and the keep file
+!/forecast_logs/
+!/forecast_logs/.gitkeep
