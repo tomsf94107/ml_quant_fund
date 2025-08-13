@@ -25,3 +25,18 @@ artifacts/
 !/forecast_logs/.gitkeep
 !forecast_accuracy.db
 !forecast_accuracy.db
+
+# --- allow python modules in ignored folders ---
+!data/**/*.py
+!data/**/__init__.py
+!core/**/*.py
+!core/**/__init__.py
+
+# --- ignore sqlite sidecars & local artifacts ---
+*.db-shm
+*.db-wal
+logs/
+forecast_logs/
+pages/logs/
+IGN
+
