@@ -1,88 +1,67 @@
-# scripts/generate_importances.py
-import argparse, glob, os, pickle, math
+#!/usr/bin/env python3
+import argparse, glob, os, pickle
 from collections import defaultdict
-
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def load_importances_from_model(path):
+def load_importances(path):
     try:
         with open(path, "rb") as f:
             model = pickle.load(f)
     except Exception as e:
-        print(f"[skip] failed to load {path}: {e}")
+        print(f"[skip] {path}: {e}")
         return {}
-
-    # Try scikit-learn style
     if hasattr(model, "feature_importances_"):
-        imp = model.feature_importances_
-        # Try to get names; fall back to f0..fn
-        names = getattr(model, "feature_names_in_", None)
-        if names is None:
-            names = [f"f{i}" for i in range(len(imp))]
-        return {str(n): float(v) for n, v in zip(names, imp)}
-
-    # Try XGBoost style
+        names = getattr(model, "feature_names_in_", None) or [f"f{i}" for i in range(len(model.feature_importances_))]
+        return {str(n): float(v) for n, v in zip(names, model.feature_importances_)}
     try:
         booster = getattr(model, "get_booster", lambda: None)()
         if booster:
-            # gain-based importances (more stable)
             score = booster.get_score(importance_type="gain")
-            # keys can be "f0", "f1", ...; convert values to float
-            return {k: float(v) for k, v in score.items()}
+            return {str(k): float(v) for k, v in score.items()}
     except Exception as e:
         print(f"[warn] xgboost get_score failed for {path}: {e}")
-
-    print(f"[skip] no importances found in {path}")
     return {}
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--models_glob", default="models/*.pkl", help="Glob for model files")
-    ap.add_argument("--out", default="charts/feature_importances.png", help="Output chart path")
-    ap.add_argument("--csv", default="charts/feature_importances.csv", help="Also write CSV")
-    ap.add_argument("--top", type=int, default=25, help="Top-N features")
+    ap.add_argument("--models_glob", default="models/*.pkl")
+    ap.add_argument("--out", default="charts/feature_importances.png")
+    ap.add_argument("--csv", default="charts/feature_importances.csv")
+    ap.add_argument("--top", type=int, default=25)
     args = ap.parse_args()
 
     files = sorted(glob.glob(args.models_glob))
     if not files:
-        print(f"No model files matched {args.models_glob}. Nothing to do.")
-        # Exit 0 so CI doesn’t fail when models aren’t present
+        print(f"No models matched {args.models_glob}. Exiting 0.")
         return
 
-    agg = defaultdict(float)
-    n_models = 0
+    agg = defaultdict(float); nmodels = 0
     for p in files:
-        imp = load_importances_from_model(p)
-        if imp:
-            n_models += 1
-            # normalize per model to avoid bias from model scale
-            total = sum(imp.values()) or 1.0
-            for k, v in imp.items():
-                agg[k] += (v / total)
+        imp = load_importances(p)
+        if not imp: continue
+        nmodels += 1
+        total = sum(imp.values()) or 1.0
+        for k, v in imp.items():
+            agg[k] += v / total  # normalize per model
 
-    if n_models == 0:
-        print("Loaded 0 models with usable importances. Exiting.")
+    if nmodels == 0:
+        print("No usable importances found. Exiting 0.")
         return
 
-    # average across models
-    for k in list(agg.keys()):
-        agg[k] /= n_models
-
-    df = (
-        pd.DataFrame({"feature": list(agg.keys()), "importance": list(agg.values())})
-        .sort_values("importance", ascending=False)
-        .head(args.top)
-    )
+    for k in list(agg): agg[k] /= nmodels
 
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     os.makedirs(os.path.dirname(args.csv), exist_ok=True)
+
+    df = (pd.DataFrame({"feature": list(agg.keys()), "importance": list(agg.values())})
+          .sort_values("importance", ascending=False)
+          .head(args.top))
     df.to_csv(args.csv, index=False)
 
     plt.figure(figsize=(10, 6))
     plt.barh(df["feature"][::-1], df["importance"][::-1])
-    plt.title(f"Average Feature Importance (across {n_models} models)")
+    plt.title(f"Average Feature Importance (across {nmodels} models)")
     plt.xlabel("Normalized importance")
     plt.tight_layout()
     plt.savefig(args.out, dpi=200)
@@ -90,3 +69,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
