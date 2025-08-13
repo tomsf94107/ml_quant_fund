@@ -1,10 +1,10 @@
-# forecast_utils.py v5.4 – risk calendar integration + tidy DB loader + finalize_features
+# forecast_utils.py v5.4 – risk calendar integration + tidy DB loader
 # ---------------------------------------------------------------------------
 import os
 import io
 import contextlib
 from datetime import datetime, timedelta
-from core.feature_utils import finalize_features
+
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -13,13 +13,27 @@ import streamlit as st
 from sqlalchemy import create_engine, text
 from prophet import Prophet
 
-# local modules
-from events_risk import build_risk_features
-from data.etl_insider import fetch_insider_trades
-from data.etl_holdings import fetch_insider_holdings
-from sentiment_utils import get_sentiment_scores
-from send_email import send_email_alert
-from core.helpers_xgb import train_xgb_predict
+# ────────────────────────────────────────────────────────────────────────────
+# Robust imports (works with or without package prefix)
+# ────────────────────────────────────────────────────────────────────────────
+try:
+    # package-style
+    from ml_quant_fund.core.feature_utils import finalize_features
+    from ml_quant_fund.data.etl_insider import fetch_insider_trades
+    from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
+    from ml_quant_fund.core.helpers_xgb import train_xgb_predict
+    from ml_quant_fund.events_risk import build_risk_features
+    from ml_quant_fund.sentiment_utils import get_sentiment_scores
+    from ml_quant_fund.send_email import send_email_alert
+except ModuleNotFoundError:
+    # repo-root style
+    from core.feature_utils import finalize_features
+    from data.etl_insider import fetch_insider_trades
+    from data.etl_holdings import fetch_insider_holdings
+    from core.helpers_xgb import train_xgb_predict
+    from events_risk import build_risk_features
+    from sentiment_utils import get_sentiment_scores
+    from send_email import send_email_alert
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
@@ -38,7 +52,6 @@ for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
 
 # repo-local root for relative DB paths
 ROOT = os.path.abspath(os.path.dirname(__file__))
-
 
 # ────────────────────────────────────────────────────────────────────────────
 # Accuracy DB loader (SQLite by default; overridable via secrets)
@@ -88,7 +101,6 @@ def load_forecast_accuracy() -> pd.DataFrame:
         st.error(f"Failed to load accuracy from DB: {e}")
         return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
 
-
 # ────────────────────────────────────────────────────────────────────────────
 # Core Feature-Engineering + Forecast Wrappers
 # ────────────────────────────────────────────────────────────────────────────
@@ -99,6 +111,7 @@ def _to_datetime(obj):
         return pd.to_datetime(obj)
     except Exception:
         return None
+
 
 def build_feature_dataframe(
     ticker: str,
@@ -292,7 +305,6 @@ def build_feature_dataframe(
     # Keep rows that have basics for model/plotting
     return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
 
-
 # ────────────────────────────────────────────────────────────────────────────
 # XGBoost wrapper with retries
 # ────────────────────────────────────────────────────────────────────────────
@@ -315,7 +327,6 @@ def safe_train_xgb_with_retries(
             look += step
 
     raise ValueError(f"❌ Model failed after {max_look}d")
-
 
 # ────────────────────────────────────────────────────────────────────────────
 # Prophet forecast
@@ -367,7 +378,6 @@ def forecast_price_trend(
 
     return res, None
 
-
 # ────────────────────────────────────────────────────────────────────────────
 # Intraday + ML combo
 # ────────────────────────────────────────────────────────────────────────────
@@ -408,13 +418,13 @@ def forecast_today_movement(
     except Exception as e:
         return intraday_msg, f"❌ Model error: {e}"
 
-
 # ────────────────────────────────────────────────────────────────────────────
 # Eval, logging & retrain wrappers
 # ────────────────────────────────────────────────────────────────────────────
 def _latest_log(tkr: str):
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{tkr}_")]
     return os.path.join(LOG_DIR, sorted(logs)[-1]) if logs else None
+
 
 def auto_retrain_forecast_model(tkr: str):
     """
@@ -443,6 +453,7 @@ def auto_retrain_forecast_model(tkr: str):
     row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path), index=False)
     return row
 
+
 def run_auto_retrain_all(tickers: list[str]):
     dfs = []
     for t in tickers:
@@ -453,7 +464,6 @@ def run_auto_retrain_all(tickers: list[str]):
         return pd.concat(dfs, ignore_index=True)
     else:
         return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
-
 
 # ────────────────────────────────────────────────────────────────────────────
 # SHAP Optional Plotter (kept minimal; use in UI helper)
@@ -471,7 +481,6 @@ def plot_shap(model, X, top_n: int = 10):
     expl = shap.Explainer(model, X)
     vals = expl(X)
     shap.plots.bar(vals[:, :top_n])
-
 
 # ────────────────────────────────────────────────────────────────────────────
 # Ticker List & Accuracy Helpers
