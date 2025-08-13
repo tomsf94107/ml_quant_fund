@@ -1,69 +1,108 @@
-# retrain_forecasts.py
+#!/usr/bin/env python3
+"""
+Nightly/Manual retrain entrypoint.
 
-import os
-import sys
-import json
-import traceback
-import pathlib
-import logging
+Guarantees:
+- Writes a run log to forecast_logs/retrain_<UTC>.log
+- Writes a JSON summary to forecast_logs/summary_<UTC>.json
+- Always creates forecast_metrics.csv (headers if no data)
+- Exits 0 for "nothing to do" cases; 1 only for real failures
+
+Env knobs (optional):
+- FORCE_RETRAIN=1        -> retrain all loaded tickers even if no prior logs
+- TICKER_FILE=<path>     -> override tickers.csv location
+- OUTPUT_PATH=<path>     -> override forecast_metrics.csv path
+- LOG_LEVEL=INFO|DEBUG   -> override logging level
+- GCP_SERVICE_ACCOUNT    -> passed through for any downstream code
+"""
+
+import os, sys, json, traceback, pathlib, logging, datetime as dt, tempfile, shutil
 from typing import List
 
-# ✅ Make logs stream immediately in Actions
+# Fast log streaming in Actions
 os.environ.setdefault("PYTHONUNBUFFERED", "1")
-
-# ✅ Disable SHAP for stability during batch retrain
+# Disable SHAP during batch retrain for stability
 os.environ["DISABLE_SHAP"] = "1"
 
-# ------------------------------------------------------------------------------
-# Setup: stable working directory, logging, required folders
-# ------------------------------------------------------------------------------
 ROOT = pathlib.Path(__file__).resolve().parent
 os.chdir(ROOT)
 
+# ---------- configuration ----------
+TICKER_FILE = os.getenv("TICKER_FILE", "tickers.csv")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "forecast_metrics.csv")
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
+
+# GCP service account passthrough if used elsewhere
+if os.getenv("GCP_SERVICE_ACCOUNT"):
+    os.environ["GCP_SERVICE_ACCOUNT_JSON"] = os.getenv("GCP_SERVICE_ACCOUNT")
+
+# ---------- logging (console + file) ----------
 logging.basicConfig(
-    level=logging.INFO,
+    level=getattr(logging, LOG_LEVEL, logging.INFO),
     format="%(asctime)s %(levelname)s %(message)s",
 )
 
-for p in ["forecast_logs", "models"]:
-    pathlib.Path(p).mkdir(parents=True, exist_ok=True)
+log_dir = pathlib.Path("forecast_logs")
+log_dir.mkdir(parents=True, exist_ok=True)
 
-TICKER_FILE = "tickers.csv"
-OUTPUT_PATH = "forecast_metrics.csv"
+ts = dt.datetime.utcnow().strftime("%Y%m%d_%H%M%SZ")
+file_log_path = log_dir / f"retrain_{ts}.log"
+fh = logging.FileHandler(file_log_path, encoding="utf-8")
+fh.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+logging.getLogger().addHandler(fh)
+logging.info("File logging enabled → %s", file_log_path)
 
-# If running in Actions and you pass a JSON secret, surface it for your code.
-GCP_SVC = os.getenv("GCP_SERVICE_ACCOUNT")
-if GCP_SVC:
+# Run summary (always written)
+stats = {
+    "timestamp_utc": ts,
+    "cwd": str(ROOT),
+    "loaded": 0,
+    "with_log": 0,
+    "retrained": 0,
+    "no_log": [],
+    "errors": {},
+    "force_retrain": os.getenv("FORCE_RETRAIN") == "1",
+    "ticker_file": TICKER_FILE,
+    "output_path": OUTPUT_PATH,
+    "github_sha": os.getenv("GITHUB_SHA"),
+    "github_ref": os.getenv("GITHUB_REF"),
+}
+
+# ---------- safe helpers ----------
+def _write_csv_atomic(df, path: str):
+    """Write CSV atomically to avoid partial files on abrupt termination."""
+    tmp = pathlib.Path(tempfile.mkstemp(prefix="metrics_", suffix=".csv")[1])
     try:
-        # Some helper libs expect a file; others can read from env
-        os.environ["GCP_SERVICE_ACCOUNT_JSON"] = GCP_SVC
-        logging.info("GCP service account detected in environment.")
-    except Exception:
-        logging.warning("Could not expose GCP service account to env.")
+        df.to_csv(tmp, index=False)
+        shutil.move(str(tmp), path)
+    finally:
+        try:
+            tmp.unlink(missing_ok=True)  # py3.8+: ignore type checker
+        except Exception:
+            pass
 
-# ------------------------------------------------------------------------------
-# Imports that depend on repo path come after we pin CWD
-# ------------------------------------------------------------------------------
+
+# ---------- imports that rely on repo path ----------
 try:
     import pandas as pd
     from forecast_utils import run_auto_retrain_all, _latest_log, forecast_today_movement
 except Exception as e:
-    logging.error("Failed to import modules. CWD=%s", os.getcwd())
-    logging.error("sys.path=%s", sys.path)
-    logging.error("Import error: %s", e)
+    logging.error("Import failure: %s", e)
     traceback.print_exc()
+    # still write summary
+    with open(log_dir / f"summary_{ts}.json", "w", encoding="utf-8") as f:
+        json.dump({**stats, "errors": {"__import__": str(e)}}, f, indent=2)
     sys.exit(1)
 
-# ------------------------------------------------------------------------------
-# Helpers
-# ------------------------------------------------------------------------------
-def load_tickers(path: str = TICKER_FILE) -> List[str]:
-    if not os.path.exists(path):
-        logging.error("❌ tickers.csv not found at %s", path)
+
+# ---------- IO ----------
+def load_tickers(path=TICKER_FILE) -> List[str]:
+    p = pathlib.Path(path)
+    if not p.exists():
+        logging.error("tickers.csv not found at %s", p)
         return []
-    with open(path, "r") as f:
-        out = [line.strip().upper() for line in f if line.strip()]
-    return out
+    with p.open("r", encoding="utf-8") as fh_:
+        return [ln.strip().upper() for ln in fh_ if ln.strip()]
 
 
 def latest_log_exists(ticker: str) -> bool:
@@ -73,42 +112,45 @@ def latest_log_exists(ticker: str) -> bool:
         logging.warning("latest_log check failed for %s: %s", ticker, e)
         return False
 
-# ------------------------------------------------------------------------------
-# Main
-# ------------------------------------------------------------------------------
+
+# ---------- main ----------
 def main() -> int:
-    logging.info("🚀 Starting scheduled retraining…")
-    logging.info("📂 Working directory: %s", os.getcwd())
+    logging.info("🚀 Starting scheduled retraining… CWD=%s", os.getcwd())
 
-    raw_tickers = load_tickers()
-    logging.info("🔍 Loaded %d tickers: %s", len(raw_tickers), raw_tickers)
+    raw = load_tickers()
+    stats["loaded"] = len(raw)
+    logging.info("🔍 Loaded %d tickers: %s", len(raw), raw)
 
-    if not raw_tickers:
-        logging.warning("⚠️ No tickers found in %s. Exiting.", TICKER_FILE)
-        # Graceful exit (0) so the cron doesn’t alert if list is intentionally empty
+    if not raw:
+        logging.warning("No tickers found — writing header CSV and exiting 0.")
+        _write_csv_atomic(pd.DataFrame(columns=["ticker", "mae", "mse", "r2"]), OUTPUT_PATH)
         return 0
 
     tickers_to_retrain: List[str] = []
 
-    # Ensure each ticker has at least one fresh log
-    for ticker in raw_tickers:
+    for t in raw:
         try:
-            if not latest_log_exists(ticker):
-                logging.info("📉 No forecast log for %s — generating one…", ticker)
+            if not latest_log_exists(t):
+                logging.info("No forecast log for %s — generating one…", t)
                 try:
-                    forecast_today_movement(ticker)
+                    forecast_today_movement(t)
                 except Exception as e:
-                    logging.warning("Failed initial forecast for %s: %s", ticker, e)
-
-            if latest_log_exists(ticker):
-                tickers_to_retrain.append(ticker)
+                    logging.warning("Initial forecast failed for %s: %s", t, e)
+            if latest_log_exists(t):
+                tickers_to_retrain.append(t)
+                stats["with_log"] += 1
             else:
-                logging.warning("❌ Still no log for %s — skipping.", ticker)
+                stats["no_log"].append(t)
         except Exception as e:
-            logging.warning("Ticker precheck failed for %s: %s", ticker, e)
+            stats["errors"][t] = str(e)
+
+    if not tickers_to_retrain and os.getenv("FORCE_RETRAIN") == "1":
+        logging.info("FORCE_RETRAIN=1 — retraining all loaded tickers.")
+        tickers_to_retrain = raw[:]
 
     if not tickers_to_retrain:
-        logging.warning("⚠️ No tickers with valid logs. Nothing to retrain.")
+        logging.warning("No tickers with valid logs — writing header CSV and exiting 0.")
+        _write_csv_atomic(pd.DataFrame(columns=["ticker", "mae", "mse", "r2"]), OUTPUT_PATH)
         return 0
 
     logging.info("🔁 Final tickers for retraining: %s", tickers_to_retrain)
@@ -121,39 +163,40 @@ def main() -> int:
         return 1
 
     if not isinstance(eval_df, pd.DataFrame):
-        logging.error("❌ eval_df is not a DataFrame — aborting.")
+        logging.error("eval_df is not a DataFrame")
         return 1
 
     logging.info("📊 eval_df shape: %s", getattr(eval_df, "shape", None))
 
     try:
         if not eval_df.empty:
-            eval_df.to_csv(OUTPUT_PATH, index=False)
-            logging.info("📈 Saved forecast_metrics.csv → %s", OUTPUT_PATH)
+            _write_csv_atomic(eval_df, OUTPUT_PATH)
+            stats["retrained"] = (
+                int(eval_df["ticker"].nunique()) if "ticker" in eval_df.columns else len(tickers_to_retrain)
+            )
+            logging.info("Saved metrics → %s", OUTPUT_PATH)
         else:
-            logging.warning("⚠️ No evaluation metrics — writing fallback CSV.")
-            pd.DataFrame(columns=["ticker", "mae", "mse", "r2"]).to_csv(OUTPUT_PATH, index=False)
-            logging.info("📝 Wrote empty forecast_metrics.csv with headers.")
+            _write_csv_atomic(pd.DataFrame(columns=["ticker", "mae", "mse", "r2"]), OUTPUT_PATH)
+            logging.warning("Empty eval_df — wrote header CSV.")
     except Exception as e:
-        logging.error("Failed writing %s: %s", OUTPUT_PATH, e)
+        logging.error("Failed to write %s: %s", OUTPUT_PATH, e)
         traceback.print_exc()
         return 1
 
-    if os.path.exists(OUTPUT_PATH):
-        logging.info("✅ File successfully created at: %s", OUTPUT_PATH)
-    else:
-        logging.error("❌ File was NOT found after saving!")
-        return 1
-
-    logging.info("✅ Retraining complete.")
     return 0
 
 
 if __name__ == "__main__":
+    code = 1
     try:
         code = main()
-        sys.exit(code)
-    except Exception as e:
-        logging.error("Retrain FAILED: %s", e)
-        traceback.print_exc()
-        sys.exit(1)
+    finally:
+        # always write summary JSON
+        try:
+            summary_path = pathlib.Path("forecast_logs") / f"summary_{ts}.json"
+            with open(summary_path, "w", encoding="utf-8") as f:
+                json.dump(stats, f, indent=2)
+            logging.info("Wrote run summary JSON → %s", summary_path)
+        except Exception as e:
+            logging.error("Failed to write summary JSON: %s", e)
+    sys.exit(code)
