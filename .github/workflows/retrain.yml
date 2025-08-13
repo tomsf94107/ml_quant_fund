@@ -2,7 +2,7 @@ name: Daily Forecast Retraining
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # Runs every day at 01:00 UTC
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 permissions:
@@ -17,16 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PYTHONUNBUFFERED: "1"
-      GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}  # if needed by your code
+      GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+      FORCE_RETRAIN: "1"         # optional: retrain even if no prior logs
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           cache: 'pip'
@@ -36,17 +34,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Sanity check paths
-        run: |
-          echo "Current working directory:"; pwd
-          echo "Top-level files:"; ls -la
-          echo "Tree view of repo (first 200 lines):"; ls -R | head -n 200
-          echo "Checking ml_quant_fund folder if it exists:"; ls -la ml_quant_fund || true
-
       - name: Prepare output folders
         run: |
           mkdir -p forecast_logs models
-          # placeholder so later steps don't fail if there are no metrics
           touch forecast_metrics.csv
 
       - name: Run forecast retraining (tolerant if metrics exist)
@@ -62,14 +52,15 @@ jobs:
           fi
           echo "Proceeding despite exit $code because metrics file exists."
 
-      - name: Upload forecast logs (always)
+      - name: Upload forecast logs (if any)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: forecast-logs
           path: forecast_logs/
+          if-no-files-found: ignore
 
-      - name: Upload evaluation metrics (always)
+      - name: Upload forecast metrics
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -81,30 +72,25 @@ jobs:
         run: |
           set -eux
           BRANCH="${GITHUB_REF_NAME:-main}"
-
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
 
-          # Stage only if present
           [ -d models ] && ls models/*.pkl 1>/dev/null 2>&1 && git add models/*.pkl || true
           [ -s forecast_metrics.csv ] && git add forecast_metrics.csv || true
 
-          # If nothing to commit, exit cleanly
           git diff --cached --quiet && { echo "No changes to commit."; exit 0; }
-
           git commit -m "Auto-retrain: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 
-          # Rebase on latest main and retry push up to 3 times to avoid non-FF errors
           for attempt in 1 2 3; do
             git fetch origin "$BRANCH"
-            ( git rebase "origin/$BRANCH" || { git rebase --abort || true; } )
+            # stash & rebase to handle "unstaged changes" case
+            git stash push -u -m "ci-stash" || true
+            git rebase "origin/$BRANCH" || { git rebase --abort || true; }
+            git stash pop || true
             if git push origin "HEAD:$BRANCH"; then
-              echo "Push succeeded on attempt $attempt"
-              exit 0
+              echo "Push succeeded on attempt $attempt"; exit 0
             fi
             echo "Push failed (attempt $attempt); retrying in 5s…"
             sleep 5
           done
-
-          echo "Final push attempt failed."
-          exit 1
+          echo "Final push attempt failed."; exit 1
