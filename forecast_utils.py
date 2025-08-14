@@ -1,4 +1,4 @@
-# forecast_utils.py v5.4 – risk calendar integration + tidy DB loader
+# forecast_utils.py v5.4 – risk calendar integration + tidy DB loader (robust imports)
 # ---------------------------------------------------------------------------
 import os
 import io
@@ -14,10 +14,10 @@ from sqlalchemy import create_engine, text
 from prophet import Prophet
 
 # ────────────────────────────────────────────────────────────────────────────
-# Robust imports (package first; fallback to sibling modules via sys.path shim)
+# Robust imports (ALWAYS use ml_quant_fund.* to avoid 'data' module conflicts)
 # ────────────────────────────────────────────────────────────────────────────
 try:
-    # package-style (recommended when ml_quant_fund/ has __init__.py)
+    # Package-style (preferred)
     from ml_quant_fund.core.feature_utils import finalize_features
     from ml_quant_fund.data.etl_insider import fetch_insider_trades
     from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
@@ -26,19 +26,27 @@ try:
     from ml_quant_fund.sentiment_utils import get_sentiment_scores
     from ml_quant_fund.send_email import send_email_alert
 except ModuleNotFoundError:
-    # repo-root style (ensure this file's directory is on sys.path)
-    import sys as _sys
-    _THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-    if _THIS_DIR not in _sys.path:
-        _sys.path.insert(0, _THIS_DIR)
+    # Fallback: ensure parent-of-repo is on sys.path, and create a namespace
+    import sys, types
+    _THIS_DIR   = os.path.dirname(os.path.abspath(__file__))           # .../ml_quant_fund
+    _PARENT_DIR = os.path.dirname(_THIS_DIR)                           # .../
+    if _PARENT_DIR not in sys.path:
+        sys.path.insert(0, _PARENT_DIR)
 
-    from core.feature_utils import finalize_features
-    from data.etl_insider import fetch_insider_trades
-    from data.etl_holdings import fetch_insider_holdings
-    from core.helpers_xgb import train_xgb_predict
-    from events_risk import build_risk_features
-    from sentiment_utils import get_sentiment_scores
-    from send_email import send_email_alert
+    # Create a namespace package at runtime if needed (PEP 420-ish workaround)
+    if "ml_quant_fund" not in sys.modules:
+        pkg = types.ModuleType("ml_quant_fund")
+        pkg.__path__ = [_THIS_DIR]
+        sys.modules["ml_quant_fund"] = pkg
+
+    # Now import ONLY via ml_quant_fund.*, never top-level 'data'
+    from ml_quant_fund.core.feature_utils import finalize_features
+    from ml_quant_fund.data.etl_insider import fetch_insider_trades
+    from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
+    from ml_quant_fund.core.helpers_xgb import train_xgb_predict
+    from ml_quant_fund.events_risk import build_risk_features
+    from ml_quant_fund.sentiment_utils import get_sentiment_scores
+    from ml_quant_fund.send_email import send_email_alert
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
