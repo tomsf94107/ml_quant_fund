@@ -1,23 +1,22 @@
 # forecast_utils.py v5.5 – risk calendar + tidy DB loader + tz-safe insider joins
 # ---------------------------------------------------------------------------
-import os
-import io
-import contextlib
-from datetime import datetime, timedelta
+import os, sys, types, importlib.util
 
-import numpy as np
-import pandas as pd
-import yfinance as yf
-import pandas_ta as ta
-import streamlit as st
-from sqlalchemy import create_engine, text
-from prophet import Prophet
+def _load_module_from(rel_path: str, fullname: str):
+    """Load a module by file path (last-resort fallback)."""
+    base = os.path.dirname(os.path.abspath(__file__))  # …/ml_quant_fund
+    path = os.path.join(base, rel_path)
+    if not os.path.exists(path):
+        raise ModuleNotFoundError(fullname)
+    spec = importlib.util.spec_from_file_location(fullname, path)
+    mod = importlib.util.module_from_spec(spec)
+    sys.modules[fullname] = mod
+    assert spec.loader is not None
+    spec.loader.exec_module(mod)
+    return mod
 
-# ────────────────────────────────────────────────────────────────────────────
-# Robust imports: RELATIVE first (package context), then absolute fallback
-# ────────────────────────────────────────────────────────────────────────────
+# 1) Try RELATIVE imports (package context)
 try:
-    # When this file is imported as part of the ml_quant_fund package
     from .core.feature_utils import finalize_features
     from .data.etl_insider import fetch_insider_trades
     from .data.etl_holdings import fetch_insider_holdings
@@ -25,9 +24,10 @@ try:
     from .events_risk import build_risk_features
     from .sentiment_utils import get_sentiment_scores
     from .send_email import send_email_alert
-except Exception:
+    _IMPORT_MODE = "relative"
+except ImportError:
+    # 2) Try ABSOLUTE package imports
     try:
-        # Absolute (package) imports
         from ml_quant_fund.core.feature_utils import finalize_features
         from ml_quant_fund.data.etl_insider import fetch_insider_trades
         from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
@@ -35,25 +35,43 @@ except Exception:
         from ml_quant_fund.events_risk import build_risk_features
         from ml_quant_fund.sentiment_utils import get_sentiment_scores
         from ml_quant_fund.send_email import send_email_alert
-    except ModuleNotFoundError:
-        # Path shim: add parent-of-repo, then import absolute package names
-        import sys, types, os as _os
-        _THIS_DIR = _os.path.dirname(_os.path.abspath(__file__))   # …/ml_quant_fund
-        _PARENT   = _os.path.dirname(_THIS_DIR)                   # …/
-        if _PARENT not in sys.path:
-            sys.path.insert(0, _PARENT)
+        _IMPORT_MODE = "absolute"
+    except ImportError:
+        # 3) FINAL FALLBACK: add parent-of-repo and file-load modules
+        pkg_dir = os.path.dirname(os.path.abspath(__file__))  # …/ml_quant_fund
+        parent  = os.path.dirname(pkg_dir)                    # …/
+        if parent not in sys.path:
+            sys.path.insert(0, parent)
         if "ml_quant_fund" not in sys.modules:
             pkg = types.ModuleType("ml_quant_fund")
-            pkg.__path__ = [_THIS_DIR]
+            pkg.__path__ = [pkg_dir]
             sys.modules["ml_quant_fund"] = pkg
 
-        from ml_quant_fund.core.feature_utils import finalize_features
-        from ml_quant_fund.data.etl_insider import fetch_insider_trades
-        from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
-        from ml_quant_fund.core.helpers_xgb import train_xgb_predict
-        from ml_quant_fund.events_risk import build_risk_features
-        from ml_quant_fund.sentiment_utils import get_sentiment_scores
-        from ml_quant_fund.send_email import send_email_alert
+        finalize_features      = _load_module_from("core/feature_utils.py",
+                                                   "ml_quant_fund.core.feature_utils").finalize_features
+        _etl_insider_mod       = _load_module_from("data/etl_insider.py",
+                                                   "ml_quant_fund.data.etl_insider")
+        _etl_holdings_mod      = _load_module_from("data/etl_holdings.py",
+                                                   "ml_quant_fund.data.etl_holdings")
+        fetch_insider_trades   = _etl_insider_mod.fetch_insider_trades
+        fetch_insider_holdings = _etl_holdings_mod.fetch_insider_holdings
+        train_xgb_predict      = _load_module_from("core/helpers_xgb.py",
+                                                   "ml_quant_fund.core.helpers_xgb").train_xgb_predict
+        build_risk_features    = _load_module_from("events_risk.py",
+                                                   "ml_quant_fund.events_risk").build_risk_features
+        get_sentiment_scores   = _load_module_from("sentiment_utils.py",
+                                                   "ml_quant_fund.sentiment_utils").get_sentiment_scores
+        send_email_alert       = _load_module_from("send_email.py",
+                                                   "ml_quant_fund.send_email").send_email_alert
+        _IMPORT_MODE = "path-fallback"
+
+# (Optional) debug print; comment out if noisy
+try:
+    import streamlit as st
+    st.write(f"forecast_utils import mode: {_IMPORT_MODE}")
+except Exception:
+    pass
+
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
