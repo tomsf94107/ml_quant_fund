@@ -1,4 +1,4 @@
-# forecast_utils.py v5.4 – risk calendar integration + tidy DB loader (robust imports)
+# forecast_utils.py v5.5 – risk calendar + tidy DB loader + tz-safe insider joins
 # ---------------------------------------------------------------------------
 import os
 import io
@@ -14,39 +14,46 @@ from sqlalchemy import create_engine, text
 from prophet import Prophet
 
 # ────────────────────────────────────────────────────────────────────────────
-# Robust imports (ALWAYS use ml_quant_fund.* to avoid 'data' module conflicts)
+# Robust imports: RELATIVE first (package context), then absolute fallback
 # ────────────────────────────────────────────────────────────────────────────
 try:
-    # Package-style (preferred)
-    from ml_quant_fund.core.feature_utils import finalize_features
-    from ml_quant_fund.data.etl_insider import fetch_insider_trades
-    from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
-    from ml_quant_fund.core.helpers_xgb import train_xgb_predict
-    from ml_quant_fund.events_risk import build_risk_features
-    from ml_quant_fund.sentiment_utils import get_sentiment_scores
-    from ml_quant_fund.send_email import send_email_alert
-except ModuleNotFoundError:
-    # Fallback: ensure parent-of-repo is on sys.path, and create a namespace
-    import sys, types
-    _THIS_DIR   = os.path.dirname(os.path.abspath(__file__))           # .../ml_quant_fund
-    _PARENT_DIR = os.path.dirname(_THIS_DIR)                           # .../
-    if _PARENT_DIR not in sys.path:
-        sys.path.insert(0, _PARENT_DIR)
+    # When this file is imported as part of the ml_quant_fund package
+    from .core.feature_utils import finalize_features
+    from .data.etl_insider import fetch_insider_trades
+    from .data.etl_holdings import fetch_insider_holdings
+    from .core.helpers_xgb import train_xgb_predict
+    from .events_risk import build_risk_features
+    from .sentiment_utils import get_sentiment_scores
+    from .send_email import send_email_alert
+except Exception:
+    try:
+        # Absolute (package) imports
+        from ml_quant_fund.core.feature_utils import finalize_features
+        from ml_quant_fund.data.etl_insider import fetch_insider_trades
+        from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
+        from ml_quant_fund.core.helpers_xgb import train_xgb_predict
+        from ml_quant_fund.events_risk import build_risk_features
+        from ml_quant_fund.sentiment_utils import get_sentiment_scores
+        from ml_quant_fund.send_email import send_email_alert
+    except ModuleNotFoundError:
+        # Path shim: add parent-of-repo, then import absolute package names
+        import sys, types, os as _os
+        _THIS_DIR = _os.path.dirname(_os.path.abspath(__file__))   # …/ml_quant_fund
+        _PARENT   = _os.path.dirname(_THIS_DIR)                   # …/
+        if _PARENT not in sys.path:
+            sys.path.insert(0, _PARENT)
+        if "ml_quant_fund" not in sys.modules:
+            pkg = types.ModuleType("ml_quant_fund")
+            pkg.__path__ = [_THIS_DIR]
+            sys.modules["ml_quant_fund"] = pkg
 
-    # Create a namespace package at runtime if needed (PEP 420-ish workaround)
-    if "ml_quant_fund" not in sys.modules:
-        pkg = types.ModuleType("ml_quant_fund")
-        pkg.__path__ = [_THIS_DIR]
-        sys.modules["ml_quant_fund"] = pkg
-
-    # Now import ONLY via ml_quant_fund.*, never top-level 'data'
-    from ml_quant_fund.core.feature_utils import finalize_features
-    from ml_quant_fund.data.etl_insider import fetch_insider_trades
-    from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
-    from ml_quant_fund.core.helpers_xgb import train_xgb_predict
-    from ml_quant_fund.events_risk import build_risk_features
-    from ml_quant_fund.sentiment_utils import get_sentiment_scores
-    from ml_quant_fund.send_email import send_email_alert
+        from ml_quant_fund.core.feature_utils import finalize_features
+        from ml_quant_fund.data.etl_insider import fetch_insider_trades
+        from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
+        from ml_quant_fund.core.helpers_xgb import train_xgb_predict
+        from ml_quant_fund.events_risk import build_risk_features
+        from ml_quant_fund.sentiment_utils import get_sentiment_scores
+        from ml_quant_fund.send_email import send_email_alert
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
@@ -154,44 +161,49 @@ def build_feature_dataframe(
     if df.empty or "Close" not in df.columns:
         return pd.DataFrame()
 
-    # 2) Inject insider trades + holdings (join on date index)
+    # 2) Inject insider trades + holdings (join on date index; normalize tz)
     try:
-        ins_trades = fetch_insider_trades(ticker)  # expects a 'ds' column
+        ins_trades = fetch_insider_trades(ticker)  # expects 'ds'
         ins_holds  = fetch_insider_holdings(ticker)
 
-        if not ins_trades.empty and "ds" in ins_trades.columns:
-            ins_trades = ins_trades.copy()
-            ins_trades["ds"] = pd.to_datetime(ins_trades["ds"])
-            ins_trades = ins_trades.set_index("ds")
+        # Ensure price index is tz-naive (enforce)
+        try:
+            df.index = pd.to_datetime(df.index, utc=False)
+            df.index = df.index.tz_localize(None)
+        except Exception:
+            pass
 
-        if not ins_holds.empty and "ds" in ins_holds.columns:
-            ins_holds = ins_holds.copy()
-            ins_holds["ds"] = pd.to_datetime(ins_holds["ds"])
-            ins_holds = ins_holds.set_index("ds")
+        def _prep(ins: pd.DataFrame) -> pd.DataFrame:
+            if isinstance(ins, pd.DataFrame) and not ins.empty and "ds" in ins.columns:
+                ins = ins.copy()
+                ins["ds"] = pd.to_datetime(ins["ds"], errors="coerce", utc=True)
+                ins["ds"] = ins["ds"].dt.tz_localize(None)
+                ins = ins.dropna(subset=["ds"]).set_index("ds").sort_index()
+                return ins
+            return pd.DataFrame()
 
-        df = df.join(ins_trades, how="left")
+        ins_trades = _prep(ins_trades)
+        ins_holds  = _prep(ins_holds)
+
+        if not ins_trades.empty:
+            df = df.join(ins_trades, how="left")
+
         if not ins_holds.empty:
             df = df.join(
-                ins_holds.rename(columns={
-                    "shares":     "hold_shares",
-                    "net_change": "hold_net_change"
-                }),
+                ins_holds.rename(columns={"shares": "hold_shares", "net_change": "hold_net_change"}),
                 how="left"
             )
 
         # standardize/ensure expected cols exist, then fillna(0)
-        for col in ["insider_net_shares", "insider_buy_count", "insider_sell_count",
-                    "hold_shares", "hold_net_change"]:
+        need = ["insider_net_shares", "insider_buy_count", "insider_sell_count",
+                "hold_shares", "hold_net_change"]
+        for col in need:
             if col not in df.columns:
                 df[col] = 0
-        df[["insider_net_shares","insider_buy_count","insider_sell_count",
-            "hold_shares","hold_net_change"]] = \
-            df[["insider_net_shares","insider_buy_count","insider_sell_count",
-                "hold_shares","hold_net_change"]].fillna(0)
+        df[need] = df[need].fillna(0)
     except Exception as e:
         print(f"⚠️ Insider merge error: {e}")
-        for col in ["insider_net_shares","insider_buy_count","insider_sell_count",
-                    "hold_shares","hold_net_change"]:
+        for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
             df[col] = 0
 
     # Ensure chronology after joins
@@ -225,7 +237,6 @@ def build_feature_dataframe(
 
         macd = ta.macd(df["Close"])
         if macd is not None and not macd.empty:
-            # convention: first two columns are MACD & signal
             df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
 
         # Bollinger with fallback (finalize_features will also fill if still missing)
@@ -246,7 +257,7 @@ def build_feature_dataframe(
         vol = df["Volume"].fillna(0)
         pv  = (df["Close"] * vol).cumsum()
         vc  = vol.cumsum().replace(0, np.nan)  # guard against early zeros
-        df["VWAP"] = (pv / vc).fillna(method="bfill")
+        df["VWAP"] = (pv / vc).bfill()
 
         try:
             df["OBV"] = ta.obv(df["Close"], df["Volume"])
@@ -293,7 +304,7 @@ def build_feature_dataframe(
             risk_start - timedelta(days=3),
             risk_end   + timedelta(days=3),
             use_fmp=True, use_finnhub=True
-        )  # expects columns: date, risk_today, risk_next_1d, risk_next_3d, risk_prev_1d
+        )  # expects: date, risk_today, risk_next_1d, risk_next_3d, risk_prev_1d
 
         risk = risk.copy()
         risk["date"] = pd.to_datetime(risk["date"]).dt.date
