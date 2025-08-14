@@ -53,5 +53,6 @@ streamlit-autorefresh==1.0.1
 
 #insider trades
 feedparser>=6.0.0
-SQLAlchemy>=1.4
+SQLAlchemy>=2.0
+
 

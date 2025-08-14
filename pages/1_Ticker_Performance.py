@@ -1,16 +1,17 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.4  •  added risk event calendar + risk-aware signals
+#  v18.5  •  added risk event calendar + risk-aware signals
 # ────────────────────────────────────────────────────────────────────────────
 
-# ── Path bootstrap (repo root) ─────────────────────────────────────────────
-from pathlib import Path
-import sys
-ROOT = Path(__file__).resolve().parents[1]  # repo root (parent of /pages)
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+# ── Path bootstrap (ensure parent of repo is importable) ────────────────────
+import os, sys
+_THIS   = os.path.abspath(__file__)
+_REPO   = os.path.dirname(os.path.dirname(_THIS))   # …/ml_quant_fund
+_PARENT = os.path.dirname(_REPO)                    # …/
+if _PARENT not in sys.path:
+    sys.path.insert(0, _PARENT)
 
 # stdlib / third-party
-import os, io, zipfile, glob
+import io, zipfile, glob
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -27,22 +28,22 @@ from datetime import datetime, date, timedelta
 
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
-
 import smtplib
 from email.mime.text import MIMEText
 
-# local modules
-from forecast_utils import (
+# ── Project imports (package style ONLY) ─────────────────────────────────────
+from ml_quant_fund.forecast_utils import (
     build_feature_dataframe,
     forecast_price_trend,
     forecast_today_movement,
+    plot_shap,
     auto_retrain_forecast_model,
     compute_rolling_accuracy,
     get_latest_forecast_log,
     run_auto_retrain_all,
     load_forecast_accuracy,
 )
-from core.helpers_xgb import train_xgb_predict, RISK_ALPHA
+from ml_quant_fund.core.helpers_xgb import train_xgb_predict, RISK_ALPHA
 
 
 # ──────────────────────────  IMPORTANCES TAB  ───────────────────────────────
