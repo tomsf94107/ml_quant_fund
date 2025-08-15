@@ -3,3 +3,5 @@ headless = true
 enableCORS = false
 port = 8501
 
+[server]
+fileWatcherType = "poll"
