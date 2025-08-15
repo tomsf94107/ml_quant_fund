@@ -2,11 +2,15 @@
 # ---------------------------------------------------------------------------
 import os, sys, types, importlib.util
 
-def _load_module_from(rel_path: str, fullname: str):
-    """Load a module by file path (last-resort fallback)."""
-    base = os.path.dirname(os.path.abspath(__file__))  # …/ml_quant_fund
-    path = os.path.join(base, rel_path)
-    if not os.path.exists(path):
+def _find_file(base_dir: str, filename: str) -> str | None:
+    """Return first path under base_dir whose basename == filename."""
+    for root, _, files in os.walk(base_dir):
+        if filename in files:
+            return os.path.join(root, filename)
+    return None
+
+def _load_by_path(path: str, fullname: str):
+    if not path or not os.path.exists(path):
         raise ModuleNotFoundError(fullname)
     spec = importlib.util.spec_from_file_location(fullname, path)
     mod = importlib.util.module_from_spec(spec)
@@ -15,8 +19,8 @@ def _load_module_from(rel_path: str, fullname: str):
     spec.loader.exec_module(mod)
     return mod
 
-# 1) Try RELATIVE imports (package context)
 try:
+    # 1) Relative (when imported as part of package)
     from .core.feature_utils import finalize_features
     from .data.etl_insider import fetch_insider_trades
     from .data.etl_holdings import fetch_insider_holdings
@@ -24,10 +28,9 @@ try:
     from .events_risk import build_risk_features
     from .sentiment_utils import get_sentiment_scores
     from .send_email import send_email_alert
-    _IMPORT_MODE = "relative"
 except ImportError:
-    # 2) Try ABSOLUTE package imports
     try:
+        # 2) Absolute (ml_quant_fund.*)
         from ml_quant_fund.core.feature_utils import finalize_features
         from ml_quant_fund.data.etl_insider import fetch_insider_trades
         from ml_quant_fund.data.etl_holdings import fetch_insider_holdings
@@ -35,43 +38,47 @@ except ImportError:
         from ml_quant_fund.events_risk import build_risk_features
         from ml_quant_fund.sentiment_utils import get_sentiment_scores
         from ml_quant_fund.send_email import send_email_alert
-        _IMPORT_MODE = "absolute"
     except ImportError:
-        # 3) FINAL FALLBACK: add parent-of-repo and file-load modules
-        pkg_dir = os.path.dirname(os.path.abspath(__file__))  # …/ml_quant_fund
-        parent  = os.path.dirname(pkg_dir)                    # …/
-        if parent not in sys.path:
-            sys.path.insert(0, parent)
+        # 3) Recursive path fallback
+        PKG_DIR = os.path.dirname(os.path.abspath(__file__))  # …/ml_quant_fund
+        PARENT  = os.path.dirname(PKG_DIR)
+        if PARENT not in sys.path:
+            sys.path.insert(0, PARENT)
         if "ml_quant_fund" not in sys.modules:
-            pkg = types.ModuleType("ml_quant_fund")
-            pkg.__path__ = [pkg_dir]
+            pkg = types.ModuleType("ml_quant_fund"); pkg.__path__ = [PKG_DIR]
             sys.modules["ml_quant_fund"] = pkg
 
-        finalize_features      = _load_module_from("core/feature_utils.py",
-                                                   "ml_quant_fund.core.feature_utils").finalize_features
-        _etl_insider_mod       = _load_module_from("data/etl_insider.py",
-                                                   "ml_quant_fund.data.etl_insider")
-        _etl_holdings_mod      = _load_module_from("data/etl_holdings.py",
-                                                   "ml_quant_fund.data.etl_holdings")
-        fetch_insider_trades   = _etl_insider_mod.fetch_insider_trades
-        fetch_insider_holdings = _etl_holdings_mod.fetch_insider_holdings
-        train_xgb_predict      = _load_module_from("core/helpers_xgb.py",
-                                                   "ml_quant_fund.core.helpers_xgb").train_xgb_predict
-        build_risk_features    = _load_module_from("events_risk.py",
-                                                   "ml_quant_fund.events_risk").build_risk_features
-        get_sentiment_scores   = _load_module_from("sentiment_utils.py",
-                                                   "ml_quant_fund.sentiment_utils").get_sentiment_scores
-        send_email_alert       = _load_module_from("send_email.py",
-                                                   "ml_quant_fund.send_email").send_email_alert
-        _IMPORT_MODE = "path-fallback"
+        feat_mod   = _load_by_path(_find_file(PKG_DIR, "feature_utils.py"),
+                                   "ml_quant_fund.core.feature_utils")
+        finalize_features = getattr(feat_mod, "finalize_features")
 
-# (Optional) debug print; comment out if noisy
-try:
-    import streamlit as st
-    st.write(f"forecast_utils import mode: {_IMPORT_MODE}")
-except Exception:
-    pass
+        etli_path  = _find_file(PKG_DIR, "etl_insider.py")
+        etlh_path  = _find_file(PKG_DIR, "etl_holdings.py")
+        if not etli_path:
+            raise ModuleNotFoundError("ml_quant_fund.data.etl_insider")
+        if not etlh_path:
+            raise ModuleNotFoundError("ml_quant_fund.data.etl_holdings")
 
+        etli_mod   = _load_by_path(etli_path, "ml_quant_fund.data.etl_insider")
+        etlh_mod   = _load_by_path(etlh_path, "ml_quant_fund.data.etl_holdings")
+        fetch_insider_trades   = getattr(etli_mod, "fetch_insider_trades")
+        fetch_insider_holdings = getattr(etlh_mod, "fetch_insider_holdings")
+
+        hxgb_mod   = _load_by_path(_find_file(PKG_DIR, "helpers_xgb.py"),
+                                   "ml_quant_fund.core.helpers_xgb")
+        train_xgb_predict = getattr(hxgb_mod, "train_xgb_predict")
+
+        risk_mod   = _load_by_path(_find_file(PKG_DIR, "events_risk.py"),
+                                   "ml_quant_fund.events_risk")
+        build_risk_features = getattr(risk_mod, "build_risk_features")
+
+        sent_mod   = _load_by_path(_find_file(PKG_DIR, "sentiment_utils.py"),
+                                   "ml_quant_fund.sentiment_utils")
+        get_sentiment_scores = getattr(sent_mod, "get_sentiment_scores")
+
+        mail_mod   = _load_by_path(_find_file(PKG_DIR, "send_email.py"),
+                                   "ml_quant_fund.send_email")
+        send_email_alert = getattr(mail_mod, "send_email_alert")
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
