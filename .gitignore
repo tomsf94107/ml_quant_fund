@@ -1,42 +1,30 @@
-.env
-.venv
+# ─── OS / editor junk ────────────────────────────────────────────────────────
+.DS_Store
+*.pyc
 __pycache__/
-.env
-keys/*.json
-mlenv/
-data/*.json
 
-*.db
-forecast.db
-insider_trades.db
+# ─── Environments & secrets ──────────────────────────────────────────────────
+.venv/
+.env
+mlenv/
+.streamlit/secrets.toml
+keys/*.json
+
+# ─── Logs & run outputs ─────────────────────────────────────────────────────
 logs/
 forecast_logs/
+forecast_eval/
 pages/logs/
-data/
 artifacts/
-.streamlit/secrets.toml
-!forecast_metrics.csv
-/forecast_logs/*
-!/forecast_logs/.gitkeep
-# Ignore all logs in the folder…
-/forecast_logs/*
-# …but keep the folder itself and the keep file
-!/forecast_logs/
-!/forecast_logs/.gitkeep
-!forecast_accuracy.db
-!forecast_accuracy.db
 
-# --- allow python modules in ignored folders ---
-!data/**/*.py
-!data/**/__init__.py
-!core/**/*.py
-!core/**/__init__.py
-
-# --- ignore sqlite sidecars & local artifacts ---
+# ─── Databases (keep only the one we need) ───────────────────────────────────
+*.db
 *.db-shm
 *.db-wal
-logs/
-forecast_logs/
-pages/logs/
-IGN
+!forecast_accuracy.db
 
+# ─── Data folder: ignore everything by default, keep Python modules ──────────
+data/*
+!data/__init__.py
+!data/*.py
+!data/**/*.py
