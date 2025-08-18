@@ -18,11 +18,13 @@ jobs:
     env:
       TZ: UTC
       PYTHONUNBUFFERED: "1"
+      # App secrets / APIs (set these in repo secrets if you use them)
       GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
       FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+      # Accuracy DB location used by retrain_forecasts.py
       ACCURACY_DB_URL: sqlite:///forecast_accuracy.db
-      FORCE_RETRAIN: "1"
+      FORCE_RETRAIN: "1"   # optional: retrain even if no prior logs
 
     steps:
       - name: Checkout
@@ -41,13 +43,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set PYTHONPATH (so ml_quant_fund imports work)
+      # ✅ Use source directly; don't try to pip-install the repo
+      - name: Set PYTHONPATH (so imports find your code)
         run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
 
       - name: Prepare output folders
         run: |
           mkdir -p forecast_logs models
-          : > forecast_metrics.csv
+          [ -f forecast_metrics.csv ] || echo "timestamp,ticker,mae,mse,r2" > forecast_metrics.csv
 
       - name: Run forecast retraining (tolerant if metrics exist)
         run: |
@@ -56,6 +59,8 @@ jobs:
           code=$?
           set -e
           echo "retrain exit code: $code"
+          echo "── forecast_logs contents ──"
+          ls -lah forecast_logs || true
           if [ $code -ne 0 ] && [ ! -s forecast_metrics.csv ]; then
             echo "No metrics produced; failing job."
             exit $code
@@ -78,6 +83,7 @@ jobs:
           path: forecast_metrics.csv
           if-no-files-found: ignore
 
+      # --- Commit ONLY the DB; never commit models/charts/metrics ---
       - name: Commit & push updated DB only (rebase + retry)
         if: always()
         run: |
@@ -86,8 +92,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Stage ONLY forecast_accuracy.db (explicit allow in .gitignore)
           git add forecast_accuracy.db || true
 
+          # Guard: ensure nothing else is staged (prevents artifacts slipping in)
           ALLOWED_REGEX='^forecast_accuracy\.db$'
           if git diff --cached --name-only | grep -Ev "$ALLOWED_REGEX" | grep -E '.'; then
             echo "❌ Disallowed files staged. Aborting commit."
@@ -95,6 +103,7 @@ jobs:
             exit 1
           fi
 
+          # No DB changes? exit cleanly.
           git diff --cached --quiet && { echo "No DB changes to commit."; exit 0; }
 
           git commit -m "Nightly: update forecast_accuracy.db ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
