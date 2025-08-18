@@ -1,6 +1,6 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.6  •  compat wrappers for start/end args, safe accuracy multiselect,
-#           recent-history plotting fix, small safety tweaks
+#  v18.6  •  robust col picking (Close/close/Adj Close), compat wrappers for
+#           start/end args, safe accuracy multiselect, small safety tweaks
 # ────────────────────────────────────────────────────────────────────────────
 
 # ── Path bootstrap (ensure parent of repo is importable) ────────────────────
@@ -49,6 +49,22 @@ try:
     from loader import load_eval_logs_from_forecast_db
 except Exception:
     load_eval_logs_from_forecast_db = None  # fallback handled below
+
+# ──────────────────────────  HELPERS  ────────────────────────────────────────
+def pick_col(df: pd.DataFrame, candidates) -> str | None:
+    """Return first matching column name (case-insensitive)."""
+    if df is None or df.empty: return None
+    cols = list(df.columns)
+    for c in candidates:
+        if c in df.columns:  # exact
+            return c
+    # case-insensitive map
+    lower_map = {c.lower(): c for c in cols}
+    for c in candidates:
+        cl = c.lower()
+        if cl in lower_map:
+            return lower_map[cl]
+    return None
 
 # ──────────────────────────  IMPORTANCES TAB  ───────────────────────────────
 importances_dir = "charts"
@@ -219,7 +235,6 @@ def _as_ymd(d):
 def build_features_compat(tkr, start, end):
     """Call build_feature_dataframe with whatever signature it has."""
     try:
-        # Try to detect param names
         params = set(inspect.signature(build_feature_dataframe).parameters.keys())
         if {"start_date", "end_date"} & params:
             return build_feature_dataframe(tkr, start_date=start, end_date=end)
@@ -227,7 +242,6 @@ def build_features_compat(tkr, start, end):
             return build_feature_dataframe(tkr, start=start, end=end)
     except Exception:
         pass
-    # Fallback attempts
     try:
         return build_feature_dataframe(tkr, start, end)  # positional
     except TypeError:
@@ -277,17 +291,19 @@ with st.expander("🗕️ Forecast Price Trends"):
                 _, _, _, y_pred, _ = train_xgb_predict(
                     base_df, horizon_days=forecast_days
                 )
-                # Use explicit date column if present
-                if "date" in base_df.columns and "close" in base_df.columns:
-                    recent = base_df[["date", "close"]].tail(60).rename(
-                        columns={"date": "ds", "close": "actual"}
+                # choose columns robustly
+                date_col  = pick_col(base_df, ["date", "Date", "ds"])
+                close_col = pick_col(base_df, ["close", "Close", "Adj Close", "AdjClose", "adj_close"])
+                if date_col and close_col:
+                    recent = base_df[[date_col, close_col]].tail(60).rename(
+                        columns={date_col: "ds", close_col: "actual"}
                     )
                 else:
-                    recent = (
-                        base_df[["close"]]
-                        .tail(60)
-                        .reset_index()
-                        .rename(columns={"index": "ds", "close": "actual"})
+                    temp = base_df.reset_index()
+                    idx  = pick_col(temp, ["date", "Date", "index"])
+                    ccol = pick_col(temp, ["close", "Close"])
+                    recent = temp[[idx, ccol]].tail(60).rename(
+                        columns={idx: "ds", ccol: "actual"}
                     )
                 futr = pd.DataFrame({
                     "ds":          pd.date_range(datetime.today(), periods=len(y_pred)),
@@ -387,13 +403,11 @@ if st.button("🚀 Run Strategy"):
             # Build confidence proxy if helper didn't return one
             if y_prob is None and y_pred is not None and X_test is not None and len(y_pred) == len(X_test):
                 pred = pd.Series(y_pred, index=X_test.index)
-                close_col = "Close" if "Close" in X_test.columns else ("close" if "close" in X_test.columns else None)
-                if close_col is None:
-                    close_now = pd.Series(1.0, index=X_test.index)  # fallback to neutral
-                else:
-                    close_now = X_test[close_col]
+                close_col = pick_col(X_test, ["Close", "close"])
+                close_now = X_test[close_col] if close_col else pd.Series(1.0, index=X_test.index)
                 pred_ret  = (pred - close_now) / close_now.replace(0, np.nan)
-                atr = df.loc[X_test.index, "ATR"] if "ATR" in df.columns else pd.Series(0.02, index=X_test.index)
+                atr_col   = pick_col(df, ["ATR", "atr"])
+                atr       = df.loc[X_test.index, atr_col] if atr_col else pd.Series(0.02, index=X_test.index)
                 vol = (atr / close_now).replace([np.inf, -np.inf], np.nan)
                 vol = vol.fillna(atr.median() / max(1e-8, float(close_now.median())))
                 k = 3.0
@@ -421,7 +435,8 @@ if st.button("🚀 Run Strategy"):
             df_test["Signal"] = ((df_test["Prob_eff"] > confidence_threshold) & (~gate)).astype(int)
 
             # ---- RETURNS (use these for metrics) ----
-            ret_mkt   = df_test.get("return_1d", pd.Series(0, index=df_test.index)).fillna(0)
+            ret_col  = pick_col(df_test, ["return_1d", "Return_1D", "ret_1d"])
+            ret_mkt  = df_test[ret_col].fillna(0) if ret_col else pd.Series(0, index=df_test.index)
             ret_strat = (df_test["Signal"].shift(1).fillna(0) * ret_mkt)  # avoid look-ahead
 
             # ---- EQUITY (use for plotting, DD, CAGR) ----
