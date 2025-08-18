@@ -28,3 +28,8 @@ data/*
 !data/__init__.py
 !data/*.py
 !data/**/*.py
+
+# Artifacts
+models/
+charts/
+feature_importances_summary*.csv
