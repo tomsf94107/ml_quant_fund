@@ -1,4 +1,4 @@
-# sentiment_utils.py  v3.7  — add StockTwits, SEC EDGAR, Marketaux, AlphaVantage
+# sentiment_utils.py  v3.8  — CI-safe secrets; no Streamlit import at import time
 # ---------------------------------------------------------------------
 # Free-only sentiment pipeline.  Headline sources:
 #   1. NewsAPI (if key present)
@@ -19,7 +19,7 @@ from collections import Counter
 from typing import List, Dict
 
 import feedparser            # RSS/Atom parser (pure-python)
-import yfinance as yf         # Yahoo Finance client
+import yfinance as yf        # Yahoo Finance client
 import torch
 from transformers import (
     AutoTokenizer,
@@ -27,7 +27,7 @@ from transformers import (
 )
 
 # ------------------------------------------------------------------
-# Optional .env + Streamlit secrets support
+# Optional .env support (no Streamlit import here)
 # ------------------------------------------------------------------
 try:
     from dotenv import load_dotenv
@@ -35,14 +35,24 @@ try:
 except Exception:
     pass
 
-try:
-    import streamlit as st
-    ST_SECRETS = st.secrets  # type: ignore
-except Exception:
-    ST_SECRETS = {}
-
 # certifi fix for some OSes
 os.environ["SSL_CERT_FILE"] = certifi.where()
+
+# ------------------------------------------------------------------
+# CI-safe secret getter: ENV first; on GitHub Actions never import streamlit
+# ------------------------------------------------------------------
+def _get_secret(name: str) -> str | None:
+    v = os.getenv(name)
+    if v:
+        return v
+    # In CI, do not import streamlit at all (avoids TOML parse)
+    if os.getenv("GITHUB_ACTIONS") == "true":
+        return None
+    try:
+        import streamlit as st  # lazy (UI runtime only)
+        return st.secrets.get(name)  # type: ignore
+    except Exception:
+        return None
 
 # ------------------------------------------------------------------
 # FinBERT (lazy-loaded singleton)
@@ -75,7 +85,9 @@ def _summarise(sentiments: List[str]) -> Dict[str, float]:
 # ------------------------------------------------------------------
 _NEWS_HEADERS = {"User-Agent": "ml-quant-sentiment/0.4"}
 
-def _newsapi_titles(ticker: str, api_key: str, page_size: int = 30) -> List[str]:
+def _newsapi_titles(ticker: str, api_key: str | None, page_size: int = 30) -> List[str]:
+    if not api_key:
+        return []
     url = ("https://newsapi.org/v2/everything?"
            f"q={ticker}&apiKey={api_key}&pageSize={page_size}&sortBy=publishedAt")
     try:
@@ -182,7 +194,6 @@ def _sec_edgar_titles(ticker: str, count: int = 40) -> List[str]:
         f"CIK={ticker}&type=&owner=exclude&count={count}&output=atom"
     )
     try:
-        # ↓ use SEC_EDGAR_HEADERS here
         r = requests.get(url, headers=SEC_EDGAR_HEADERS, timeout=8)
         r.raise_for_status()
         feed = feedparser.parse(r.text)
@@ -191,20 +202,17 @@ def _sec_edgar_titles(ticker: str, count: int = 40) -> List[str]:
         print(f"❌ SEC EDGAR RSS error for {ticker}: {ex}")
         return []
 
-
 # ------------------------------------------------------------------
 # Marketaux news endpoint
 # ------------------------------------------------------------------
 def _marketaux_titles(ticker: str, page_size: int = 20) -> List[str]:
-    token = os.getenv("MARKETAUX_API_KEY") or ST_SECRETS.get("MARKETAUX_API_KEY")
+    token = _get_secret("MARKETAUX_API_KEY")
     if not token:
         return []
-
     url = (
         "https://api.marketaux.com/v1/news/all?"
         f"api_token={token}&symbols={ticker}&limit={page_size}"
-    )  # ← closing parenthesis here
-
+    )
     try:
         arts = requests.get(url, timeout=6).json().get("data", [])
         return [a.get("title", "") for a in arts if a.get("title")]
@@ -212,27 +220,23 @@ def _marketaux_titles(ticker: str, page_size: int = 20) -> List[str]:
         print(f"❌ Marketaux error for {ticker}: {ex}")
         return []
 
-
 # ------------------------------------------------------------------
 # Alpha Vantage News & Sentiment (beta)
 # ------------------------------------------------------------------
-
 def _alpha_vantage_titles(ticker: str) -> List[str]:
-    key = os.getenv("ALPHA_VANTAGE_KEY") or ST_SECRETS.get("ALPHA_VANTAGE_KEY")
+    key = _get_secret("ALPHA_VANTAGE_KEY")
     if not key:
         return []
     url = (
         "https://www.alphavantage.co/query?"
         f"function=NEWS_SENTIMENT&tickers={ticker}&apikey={key}"
     )
-
     try:
         feed = requests.get(url, timeout=8).json().get("feed", [])
         return [f.get("title","") for f in feed if f.get("title")]
     except Exception as ex:
         print(f"❌ AlphaVantage error for {ticker}: {ex}")
         return []
-
 
 # ------------------------------------------------------------------
 # Aggregator
@@ -248,7 +252,7 @@ def fetch_news_titles(
     ALL_SRCS = {
         "NewsAPI":    lambda: _newsapi_titles(
                             ticker,
-                            os.getenv("NEWS_API_KEY") or ST_SECRETS.get("NEWS_API_KEY"),
+                            _get_secret("NEWS_API_KEY"),
                             kwargs.get("page_size", 30)
                         ),
         "Google":     lambda: _google_news_titles(
@@ -306,7 +310,6 @@ def _finbert_polarity(texts: List[str]) -> List[float]:
 # ------------------------------------------------------------------
 # Public API
 # ------------------------------------------------------------------
-
 def get_sentiment_scores(
     ticker: str,
     sources: List[str] | None = None,
@@ -318,7 +321,6 @@ def get_sentiment_scores(
     Optional `sources` list filters which feeds to include.
     """
     try:
-        # ← pass the user’s source filter here
         headlines = fetch_news_titles(ticker, sources=sources)
 
         if not headlines:
@@ -345,7 +347,6 @@ def get_sentiment_scores(
 # ------------------------------------------------------------------
 # CSV logger (optional)
 # ------------------------------------------------------------------
-
 def _log_to_csv(ticker: str, summary: Dict[str, float]) -> None:
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     fname = "sentiment_scores.csv"

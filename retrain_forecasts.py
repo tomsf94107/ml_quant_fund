@@ -88,6 +88,13 @@ def _write_csv_atomic(df, path: str):
         except Exception:
             pass
 
+def _latest_forecast_log_exists(_latest_log_fn, ticker: str) -> bool:
+    try:
+        return bool(_latest_log_fn(ticker))
+    except Exception as e:
+        logging.warning("latest_log check failed for %s: %s", ticker, e)
+        return False
+
 # ---------- robust import of project utils (no Streamlit) ----------
 def _ensure_pkg_path():
     # Allow both installed package (pip install -e .) and source checkout
@@ -102,9 +109,13 @@ try:
     import numpy as np
     # Prefer package import; fall back to flat import only if needed
     try:
-        from ml_quant_fund.forecast_utils import run_auto_retrain_all, _latest_log, forecast_today_movement
+        from ml_quant_fund.forecast_utils import (
+            run_auto_retrain_all, _latest_log, forecast_price_trend
+        )
     except Exception:
-        from forecast_utils import run_auto_retrain_all, _latest_log, forecast_today_movement  # type: ignore
+        from forecast_utils import (
+            run_auto_retrain_all, _latest_log, forecast_price_trend  # type: ignore
+        )
 except Exception as e:
     logging.error("Import failure: %s", e)
     traceback.print_exc()
@@ -153,11 +164,25 @@ def load_tickers(path=TICKER_FILE) -> List[str]:
     with p.open("r", encoding="utf-8") as fh_:
         return [ln.strip().upper() for ln in fh_ if ln.strip()]
 
-def latest_log_exists(ticker: str) -> bool:
+# ---------- generate a usable forecast log ----------
+def _generate_forecast_log(ticker: str) -> bool:
+    """
+    Create forecast_logs/forecast_<TICKER>_<TS>.csv with yhat+actual
+    using Prophet path. Returns True on success.
+    """
     try:
-        return bool(_latest_log(ticker))
+        res, err = forecast_price_trend(ticker, period_months=3, log_results=True)
+        if err or res is None:
+            logging.warning("Prophet forecast failed for %s: %s", ticker, err or "unknown")
+            return False
+        # Sanity: ensure expected columns exist
+        missing = {"yhat", "actual"} - set(res.columns)
+        if missing:
+            logging.warning("Forecast for %s missing columns: %s", ticker, missing)
+            return False
+        return True
     except Exception as e:
-        logging.warning("latest_log check failed for %s: %s", ticker, e)
+        logging.warning("Initial forecast threw for %s: %s", ticker, e)
         return False
 
 # ---------- main ----------
@@ -176,13 +201,16 @@ def main() -> int:
     tickers_to_retrain: List[str] = []
     for t in raw:
         try:
-            if not latest_log_exists(t):
-                logging.info("No forecast log for %s — generating one…", t)
+            if not _latest_forecast_log_exists(_latest_log, t):
+                logging.info("No forecast log for %s — generating one via Prophet…", t)
+                ok = _generate_forecast_log(t)
+                # optional: list directory once after trying
                 try:
-                    forecast_today_movement(t, log_results=True)
-                except Exception as e:
-                    logging.warning("Initial forecast failed for %s: %s", t, e)
-            if latest_log_exists(t):
+                    newest = sorted((ROOT / "forecast_logs").glob(f"forecast_{t}_*.csv"))[-1]
+                    logging.info("Newest forecast log for %s: %s", t, newest.name)
+                except Exception:
+                    pass
+            if _latest_forecast_log_exists(_latest_log, t):
                 tickers_to_retrain.append(t)
                 stats["with_log"] += 1
             else:
