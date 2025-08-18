@@ -1,9 +1,32 @@
-# forecast_utils.py v5.5 – risk calendar + tidy DB loader + tz-safe insider joins
+# forecast_utils.py v5.6 – risk calendar + tidy DB loader (no Streamlit import)
 # ---------------------------------------------------------------------------
-import os, sys, types, importlib.util
+from __future__ import annotations
+
+import os, sys, types, importlib.util, io, contextlib
+from datetime import datetime, timedelta
+
+import numpy as np
 import pandas as pd
+import yfinance as yf
 
+# Optional TA; keep soft import to avoid hard failure
+try:
+    import pandas_ta as ta  # noqa
+except Exception:
+    ta = None  # finalize_features should tolerate missing TA columns
 
+# Prophet (optional; used in forecast_price_trend)
+try:
+    from prophet import Prophet  # type: ignore
+except Exception:
+    Prophet = None  # graceful fallback below
+
+# SQLAlchemy for SQLite access
+from sqlalchemy import create_engine, text
+
+# ────────────────────────────────────────────────────────────────────────────
+# Dynamic imports / fallbacks for project modules
+# ────────────────────────────────────────────────────────────────────────────
 def _find_file(base_dir: str, filename: str) -> str | None:
     """Return first path under base_dir whose basename == filename."""
     for root, _, files in os.walk(base_dir):
@@ -101,7 +124,7 @@ for d in (LOG_DIR, EVAL_DIR, INTRA_DIR):
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 # ────────────────────────────────────────────────────────────────────────────
-# Accuracy DB loader (SQLite by default; overridable via secrets)
+# Accuracy DB loader (SQLite by default; overridable by caller)
 # ────────────────────────────────────────────────────────────────────────────
 def _resolve_sqlite_path(db_url: str) -> str:
     """
@@ -115,12 +138,12 @@ def _resolve_sqlite_path(db_url: str) -> str:
     return os.path.join(ROOT, path)
 
 
-def load_forecast_accuracy() -> pd.DataFrame:
+def load_forecast_accuracy(db_url: str = "sqlite:///forecast_accuracy.db") -> pd.DataFrame:
     """
     Load accuracy rows from SQLite table forecast_accuracy.
-    Secrets key: accuracy_db_url (defaults to sqlite:///forecast_accuracy.db)
+    Pass a SQLAlchemy-style URL (only sqlite supported here).
+    Example (Streamlit):  load_forecast_accuracy(st.secrets.get("accuracy_db_url", "sqlite:///forecast_accuracy.db"))
     """
-    db_url = st.secrets.get("accuracy_db_url", "sqlite:///forecast_accuracy.db")
     try:
         abs_path = _resolve_sqlite_path(db_url)
         engine = create_engine(f"sqlite:///{abs_path}")
@@ -143,9 +166,10 @@ def load_forecast_accuracy() -> pd.DataFrame:
             FROM forecast_accuracy
             ORDER BY timestamp DESC
         """
-        return pd.read_sql(query, engine, parse_dates=["timestamp"])
+        df = pd.read_sql(query, engine, parse_dates=["timestamp"])
+        return df
     except Exception as e:
-        st.error(f"Failed to load accuracy from DB: {e}")
+        print(f"[load_forecast_accuracy] Failed: {e}")
         return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -195,16 +219,14 @@ def build_feature_dataframe(
 
         # Ensure price index is tz-naive (enforce)
         try:
-            df.index = pd.to_datetime(df.index, utc=False)
-            df.index = df.index.tz_localize(None)
+            df.index = pd.to_datetime(df.index, utc=False).tz_localize(None)
         except Exception:
             pass
 
         def _prep(ins: pd.DataFrame) -> pd.DataFrame:
             if isinstance(ins, pd.DataFrame) and not ins.empty and "ds" in ins.columns:
                 ins = ins.copy()
-                ins["ds"] = pd.to_datetime(ins["ds"], errors="coerce", utc=True)
-                ins["ds"] = ins["ds"].dt.tz_localize(None)
+                ins["ds"] = pd.to_datetime(ins["ds"], errors="coerce", utc=True).dt.tz_localize(None)
                 ins = ins.dropna(subset=["ds"]).set_index("ds").sort_index()
                 return ins
             return pd.DataFrame()
@@ -259,25 +281,25 @@ def build_feature_dataframe(
     for w in (5, 10, 20):
         df[f"MA{w}"] = df["Close"].rolling(w).mean()
 
-    try:
-        df["RSI14"] = ta.rsi(df["Close"], length=14)
+    if ta is not None:
+        try:
+            df["RSI14"] = ta.rsi(df["Close"], length=14)
 
-        macd = ta.macd(df["Close"])
-        if macd is not None and not macd.empty:
-            df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
+            macd = ta.macd(df["Close"])
+            if macd is not None and not macd.empty:
+                df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
 
-        # Bollinger with fallback (finalize_features will also fill if still missing)
-        bb = ta.bbands(df["Close"])
-        if isinstance(bb, pd.DataFrame) and not bb.empty:
-            if "BBP_20_2.0" in bb.columns:
-                df["BB_width"] = bb["BBP_20_2.0"]
-            elif {"BBU_20_2.0", "BBL_20_2.0"}.issubset(bb.columns):
-                with np.errstate(divide="ignore", invalid="ignore"):
-                    df["BB_width"] = (bb["BBU_20_2.0"] - bb["BBL_20_2.0"]) / df["Close"]
-
-        df["ATR"] = ta.atr(df["High"], df["Low"], df["Close"])
-    except Exception:
-        pass
+            # Bollinger with fallback (finalize_features will also fill if still missing)
+            bb = ta.bbands(df["Close"])
+            if isinstance(bb, pd.DataFrame) and not bb.empty:
+                if "BBP_20_2.0" in bb.columns:
+                    df["BB_width"] = bb["BBP_20_2.0"]
+                elif {"BBU_20_2.0", "BBL_20_2.0"}.issubset(bb.columns):
+                    with np.errstate(divide="ignore", invalid="ignore"):
+                        df["BB_width"] = (bb["BBU_20_2.0"] - bb["BBL_20_2.0"]) / df["Close"]
+            df["ATR"] = ta.atr(df["High"], df["Low"], df["Close"])
+        except Exception:
+            pass
 
     # 4) Volume & market context
     if "Volume" in df.columns and df["Volume"].notna().any():
@@ -286,10 +308,11 @@ def build_feature_dataframe(
         vc  = vol.cumsum().replace(0, np.nan)  # guard against early zeros
         df["VWAP"] = (pv / vc).bfill()
 
-        try:
-            df["OBV"] = ta.obv(df["Close"], df["Volume"])
-        except Exception:
-            df["OBV"] = np.nan
+        if ta is not None:
+            try:
+                df["OBV"] = ta.obv(df["Close"], df["Volume"])
+            except Exception:
+                df["OBV"] = np.nan
 
         with np.errstate(divide="ignore", invalid="ignore"):
             roll_mean = df["Volume"].rolling(VOL_LOOKBACK_Z).mean()
@@ -386,6 +409,9 @@ def forecast_price_trend(
     tkr, start_date=None, end_date=None,
     period_months: int = 3, log_results: bool = True
 ):
+    if Prophet is None:
+        return None, "Prophet not available"
+
     end_date   = end_date or datetime.today()
     start_date = start_date or end_date - timedelta(days=5*365)
     df         = build_feature_dataframe(tkr, start_date, end_date, lookback=9999)
@@ -443,7 +469,7 @@ def forecast_today_movement(
         df_i["Return"] = df_i["Close"].pct_change()
         df_i["Trend"]  = df_i["Return"].rolling(3).mean()
         trend = df_i["Trend"].iloc[-1]
-        pct   = (df_i["Return"].iloc[-1] or 0) * 100
+        pct   = float(df_i["Return"].iloc[-1] or 0) * 100
 
         if trend > 0.001:
             intraday_msg = f"📈 Likely Uptrend ({pct:.2f}%)"
@@ -461,7 +487,8 @@ def forecast_today_movement(
 
     try:
         mdl, Xts, _, yhat, fb = safe_train_xgb_with_retries(ticker, start, end)
-        up = yhat[-1] > (Xts.iloc[-1]["Close"] if Xts is not None and not Xts.empty else 0)
+        last_close = Xts.iloc[-1]["Close"] if Xts is not None and not Xts.empty else 0
+        up = yhat[-1] > last_close
         direction = "🟢 ML Forecast Up" if up else "🔴 ML Forecast Down"
         if fb:
             direction += f" ({fb})"
@@ -520,7 +547,7 @@ def run_auto_retrain_all(tickers: list[str]):
 # SHAP Optional Plotter (kept minimal; use in UI helper)
 # ────────────────────────────────────────────────────────────────────────────
 try:
-    import shap
+    import shap  # noqa
     SHAP_AVAILABLE = True
 except Exception:
     SHAP_AVAILABLE = False

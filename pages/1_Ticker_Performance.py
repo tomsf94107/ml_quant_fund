@@ -424,26 +424,44 @@ if st.button("🚀 Run Strategy"):
                            file_name="strategy_exports.zip",
                            mime="application/zip")
 
-# ═════════════════════════  ACCURACY DASHBOARD  ═════════════════════════════
+# ═════════════════════════  📊 ACCURACY DASHBOARD  ═════════════════════════════
+
 st.subheader("📊 Forecast Accuracy Dashboard")
-acc_df = load_forecast_accuracy()
+
+# Option 1: pass DB URL from Streamlit into the util (no Streamlit import in forecast_utils.py)
+db_url = st.secrets.get("accuracy_db_url", "sqlite:///forecast_accuracy.db")
+acc_df = load_forecast_accuracy(db_url)
+
 if acc_df.empty:
-    st.warning("No accuracy data found.")
+    st.info("No accuracy data found yet.")
 else:
-    sel = st.session_state.get("acc_ticker_filter", [])
+    # --- Normalize dtypes & sort ---
+    acc_df["timestamp"] = pd.to_datetime(acc_df["timestamp"], errors="coerce")
+    for c in ["mae", "mse", "r2"]:
+        if c in acc_df.columns:
+            acc_df[c] = pd.to_numeric(acc_df[c], errors="coerce")
+    acc_df = acc_df.sort_values("timestamp")
+
+    # --- Ticker filter with session persistence ---
+    default_sel = st.session_state.get("acc_ticker_filter", [])
+    sel = st.multiselect(
+        "Filter tickers",
+        options=sorted(acc_df["ticker"].dropna().unique().tolist()),
+        default=default_sel,
+    )
     if sel:
         acc_df = acc_df[acc_df["ticker"].isin(sel)]
+        st.session_state["acc_ticker_filter"] = sel
 
-    avg_mae = acc_df["mae"].mean()
-    avg_mse = acc_df["mse"].mean()
-    avg_r2  = acc_df["r2"].mean()
+    # --- Summary metrics ---
     c1, c2, c3 = st.columns(3)
-    c1.metric("Avg MAE", f"{avg_mae:.3f}")
-    c2.metric("Avg MSE", f"{avg_mse:.3f}")
-    c3.metric("Avg R²",  f"{avg_r2 :.3f}")
+    c1.metric("Avg MAE", f"{acc_df['mae'].mean(skipna=True):.3f}")
+    c2.metric("Avg MSE", f"{acc_df['mse'].mean(skipna=True):.3f}")
+    c3.metric("Avg R²",  f"{acc_df['r2'].mean(skipna=True):.3f}")
 
-    try:
-        acc_df["timestamp"] = pd.to_datetime(acc_df["timestamp"], errors="coerce")
-        st.line_chart(acc_df.set_index("timestamp")[["mae","mse","r2"]])
-    except Exception:
-        st.warning("Could not render accuracy line chart (check timestamp dtype).")
+    # --- Line chart (guard against empty) ---
+    chart_df = acc_df.set_index("timestamp")[["mae", "mse", "r2"]].dropna(how="all")
+    if not chart_df.empty:
+        st.line_chart(chart_df)
+    else:
+        st.warning("No numeric accuracy data to plot yet.")
