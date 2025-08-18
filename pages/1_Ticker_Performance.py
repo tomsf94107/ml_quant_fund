@@ -310,19 +310,32 @@ if st.button("🚀 Run Strategy"):
             # -------- data --------------------------------------------
             df = build_feature_dataframe(tkr, start=start_date, end=end_date)
 
-            # ---- risk diagnostics -----------------------------------
-            risk_cols = [c for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"] if c in df.columns]
+
+            # ---- Risk diagnostics (UI) ----
             with st.expander("🛡️ Risk diagnostics", expanded=False):
-                if risk_cols:
-                    nz = (df[risk_cols] != 0).mean().rename("nonzero_frac").round(3)
-                    c1, c2 = st.columns([1,1])
-                    c1.write("Non-zero fraction by column")
-                    c1.dataframe(nz.to_frame(), use_container_width=True)
-                    c2.write("Last 10 risk rows")
-                    c2.dataframe(df[risk_cols].tail(10), use_container_width=True)
+                # If your DataFrame has a different name, replace `df` below.
+                if "df" not in locals() and "df" not in globals():
+                    st.info("No data frame available yet.")
+                elif df is None or df.empty:
+                    st.info("No price/feature data loaded.")
                 else:
-                    st.info("No risk columns present on the training dataframe.")
-                st.caption(f"Training down-weight alpha: {RISK_ALPHA}")
+                    risk_cols = ["risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d"]
+                    avail = [c for c in risk_cols if c in df.columns]
+
+                    if not avail:
+                        st.warning("Risk columns are missing from the feature frame.")
+                    else:
+                        # Fraction of non-zero entries per column
+                        nz = (df[avail].fillna(0) != 0).mean().rename("nonzero_frac").to_frame()
+
+                        # Show raw last rows without coercing index to datetime (avoids 1970-01-01)
+                        last = df[avail].dropna(how="all").tail(10)
+
+                        c1, c2 = st.columns(2)
+                        with c1:
+                            st.dataframe(nz.style.format({"nonzero_frac": "{:.2%}"}))
+                        with c2:
+                            st.dataframe(last)
 
             # -------- model -------------------------------------------
             model, X_test, y_test, y_pred, y_prob = train_xgb_predict(df)
@@ -349,43 +362,67 @@ if st.button("🚀 Run Strategy"):
             # -------- results frame ----------------------------------
             df_test = df.iloc[-len(y_test):].copy()
 
-            # optional block gate by event risk
+            # optional gate by event risk
             gate = (df_test.get("risk_next_3d", pd.Series(0, index=df_test.index)) >= block_tau)
             df_test["GateBlock"] = gate.astype(int)
 
             df_test["Prob"]     = y_prob
             df_test["Prob_eff"] = df_test["Prob"] * risk_mult  # global 72h multiplier
-            # block entries on high upcoming risk
-            df_test["Signal"]   = ((df_test["Prob_eff"] > confidence_threshold) & (~gate)).astype(int)
 
-            df_test["Strategy"] = df_test["Signal"].shift(1) * df_test["Return_1D"]
-            df_test["Market"]   = df_test["Return_1D"]
-            df_test.dropna(subset=["Strategy","Market"], inplace=True)
-            df_test[["Strategy","Market"]] = (1 + df_test[["Strategy","Market"]]).cumprod()
+            # trade signal (enter long only when confident and not gated)
+            df_test["Signal"] = ((df_test["Prob_eff"] > confidence_threshold) & (~gate)).astype(int)
+
+            # ---- RETURNS (use these for metrics) ----
+            ret_mkt   = df_test["Return_1D"].fillna(0)
+            ret_strat = (df_test["Signal"].shift(1).fillna(0) * ret_mkt)  # avoid look-ahead
+
+            # ---- EQUITY (use for plotting, DD, CAGR) ----
+            eq_mkt   = (1 + ret_mkt).cumprod()
+            eq_strat = (1 + ret_strat).cumprod()
 
             # ---- metrics --------------------------------------------
+            # Directional accuracy (on prices)
             y_dir_true = (y_test.diff() > 0).astype(int).iloc[1:]
             y_dir_pred = (pd.Series(y_pred, index=y_test.index).diff() > 0).astype(int).iloc[1:]
-            acc  = accuracy_score(y_dir_true, y_dir_pred)
-            strat_ret = df_test["Strategy"].pct_change()
-            sharpe = np.sqrt(252) * strat_ret.mean() / strat_ret.std() if strat_ret.std() else np.nan
-            mdd   = ((df_test["Strategy"] / df_test["Strategy"].cummax()) - 1).min()
-            cagr  = (df_test["Strategy"].iloc[-1] / df_test["Strategy"].iloc[0]) ** (252 / len(df_test)) - 1
+            acc = accuracy_score(y_dir_true, y_dir_pred)
+
+            # Sharpe on returns (annualized)
+            ann = 252
+            mu  = ret_strat.mean()
+            sd  = ret_strat.std(ddof=1)
+            sharpe = np.sqrt(ann) * mu / sd if sd and not np.isnan(sd) else np.nan
+
+            # Max drawdown on equity
+            mdd = (eq_strat / eq_strat.cummax() - 1).min()
+
+            # CAGR from equity
+            n_days = max(1, len(eq_strat))
+            cagr = (eq_strat.iloc[-1]) ** (ann / n_days) - 1
+
+            # Extra sanity metrics
+            trades = ((df_test["Signal"] == 1) & (df_test["Signal"].shift(1) != 1)).sum()
+            exposure = float(df_test["Signal"].mean())  # fraction of days invested
+            wins = ret_strat[ret_strat > 0].sum()
+            loss = -ret_strat[ret_strat < 0].sum()
+            profit_factor = (wins / loss) if loss > 0 else np.nan
 
             c1, c2, c3, c4 = st.columns(4)
             c1.metric("Accuracy", f"{acc:.2f}")
             c2.metric("Sharpe",   f"{sharpe:.2f}" if not np.isnan(sharpe) else "nan")
             c3.metric("Max DD",   f"{mdd:.2%}")
             c4.metric("CAGR",     f"{cagr:.2%}")
+            st.caption(f"Trades: {int(trades)} • Exposure: {exposure:.1%} • Profit factor: {profit_factor:.2f}")
 
             # ---- plot ------------------------------------------------
-            if {"Strategy","Market"}.issubset(df_test.columns) and not df_test.empty:
-                st.line_chart(df_test[["Strategy","Market"]])
-            else:
-                st.warning("⚠️ Strategy series empty – insufficient rows.")
+            plot_df = pd.DataFrame({"Strategy": eq_strat, "Market": eq_mkt})
+            st.line_chart(plot_df)
 
             # ---- downloads ------------------------------------------
-            csv_bytes = df_test.to_csv(index=False).encode()
+            csv_bytes = pd.concat(
+                [df_test[["Signal","Prob","Prob_eff","GateBlock"]], 
+                 ret_strat.rename("StrategyRet"), 
+                 eq_strat.rename("Strategy")], axis=1
+            ).to_csv(index=True).encode()
             st.download_button(f"🗅 CSV – {tkr}", csv_bytes,
                                file_name=f"{tkr}_strategy.csv", mime="text/csv")
             csv_buffers.append((f"{tkr}_strategy.csv", csv_bytes))
