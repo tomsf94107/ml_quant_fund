@@ -345,7 +345,7 @@ def build_feature_dataframe(
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = 0
 
-    # 6) Risk features (align on date key safely)
+    # 6) Risk features (robust join on normalized date)
     try:
         risk_start = (start_dt.date() if start_dt is not None else df.index.min().date())
         risk_end   = (end_dt.date()   if end_dt   is not None else df.index.max().date())
@@ -354,20 +354,34 @@ def build_feature_dataframe(
             risk_start - timedelta(days=3),
             risk_end   + timedelta(days=3),
             use_fmp=True, use_finnhub=True
-        )  # expects: date, risk_today, risk_next_1d, risk_next_3d, risk_prev_1d
+        )  # expects: columns ['date','risk_today','risk_next_1d','risk_next_3d','risk_prev_1d']
 
+        # Normalize keys to tz-naive midnight
         risk = risk.copy()
-        risk["date"] = pd.to_datetime(risk["date"]).dt.date
+        risk["date"] = pd.to_datetime(risk["date"], errors="coerce")\
+                            .dt.tz_localize(None)\
+                            .dt.normalize()
 
         df = df.copy()
-        df["date"] = pd.to_datetime(df.index).date
-        df = df.merge(risk, on="date", how="left").drop(columns=["date"])
+        df["date"] = pd.to_datetime(df.index, errors="coerce")\
+                        .tz_localize(None)\
+                        .normalize()
 
-        for c in ["risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d"]:
+        # Join on normalized date
+        risk_idxed = risk.set_index("date")
+        df = df.join(risk_idxed, on="date", how="left").drop(columns=["date"])
+
+        # Ensure columns exist and fill NaN
+        for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]:
             if c not in df.columns:
                 df[c] = 0
         df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]] = \
             df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]].fillna(0)
+
+        # Optional debug
+        if os.getenv("RISK_DEBUG") == "1":
+            nz = (df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]] != 0).sum().to_dict()
+            print("risk nonzero counts:", nz)
     except Exception as e:
         print(f"⚠️ Risk features failed: {e}")
         for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]:
