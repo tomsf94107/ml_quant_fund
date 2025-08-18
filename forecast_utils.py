@@ -1,4 +1,4 @@
-# forecast_utils.py v5.6 – risk calendar + tidy DB loader (no Streamlit import)
+# forecast_utils.py v5.6 – risk calendar + tidy DB loader + lazy email import
 # ---------------------------------------------------------------------------
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ except Exception:
 from sqlalchemy import create_engine, text
 
 # ────────────────────────────────────────────────────────────────────────────
-# Dynamic imports / fallbacks for project modules
+# Dynamic imports / fallbacks for project modules (NO email import here)
 # ────────────────────────────────────────────────────────────────────────────
 def _find_file(base_dir: str, filename: str) -> str | None:
     """Return first path under base_dir whose basename == filename."""
@@ -52,7 +52,6 @@ try:
     from .core.helpers_xgb import train_xgb_predict
     from .events_risk import build_risk_features
     from .sentiment_utils import get_sentiment_scores
-    from .send_email import send_email_alert
 except ImportError:
     try:
         # 2) Absolute (ml_quant_fund.*)
@@ -62,7 +61,6 @@ except ImportError:
         from ml_quant_fund.core.helpers_xgb import train_xgb_predict
         from ml_quant_fund.events_risk import build_risk_features
         from ml_quant_fund.sentiment_utils import get_sentiment_scores
-        from ml_quant_fund.send_email import send_email_alert
     except ImportError:
         # 3) Recursive path fallback
         PKG_DIR = os.path.dirname(os.path.abspath(__file__))  # …/ml_quant_fund
@@ -101,9 +99,22 @@ except ImportError:
                                    "ml_quant_fund.sentiment_utils")
         get_sentiment_scores = getattr(sent_mod, "get_sentiment_scores")
 
-        mail_mod   = _load_by_path(_find_file(PKG_DIR, "send_email.py"),
-                                   "ml_quant_fund.send_email")
-        send_email_alert = getattr(mail_mod, "send_email_alert")
+# Lazy email import to avoid pulling Streamlit into CI
+def _maybe_email(subject: str, body: str):
+    send = None
+    # Try relative and absolute imports, but only inside this function
+    try:
+        from .send_email import send_email_alert as send  # type: ignore
+    except Exception:
+        try:
+            from ml_quant_fund.send_email import send_email_alert as send  # type: ignore
+        except Exception:
+            send = None
+    if send:
+        try:
+            send(subject, body)
+        except Exception:
+            pass
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
@@ -332,7 +343,7 @@ def build_feature_dataframe(
         except Exception:
             df[f"{etf}_ret"] = np.nan
 
-    # 5) Sentiment (quiet errors; add simple alert on extremes)
+    # 5) Sentiment (quiet errors; email alert is lazy/no-op in CI)
     try:
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
@@ -340,7 +351,7 @@ def build_feature_dataframe(
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = sent.get(k, 0)
         if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
-            send_email_alert(f"Sentiment Alert: {ticker}", str(sent))
+            _maybe_email(f"Sentiment Alert: {ticker}", str(sent))
     except Exception:
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = 0
