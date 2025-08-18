@@ -1,5 +1,6 @@
 # ─── OS / editor junk ────────────────────────────────────────────────────────
 .DS_Store
+Thumbs.db
 *.pyc
 __pycache__/
 
@@ -29,11 +30,10 @@ data/*
 !data/*.py
 !data/**/*.py
 
-# Artifacts
-models/
-charts/
-feature_importances_summary*.csv
+# ─── Jupyter junk ───────────────────────────────────────────────────────────
+.ipynb_checkpoints/
 
+# ─── Artifacts ──────────────────────────────────────────────────────────────
 models/
 charts/
 feature_importances_summary*.csv
