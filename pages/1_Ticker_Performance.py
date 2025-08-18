@@ -471,7 +471,6 @@ if st.button("🚀 Run Strategy"):
                            mime="application/zip")
 
 # ═════════════════════════  📊 ACCURACY DASHBOARD  ═════════════════════════════
-
 st.subheader("📊 Forecast Accuracy Dashboard")
 
 @st.cache_data(ttl=300)
@@ -498,18 +497,22 @@ else:
     for c in ["mae", "mse", "r2", "confidence"]:
         if c in acc_df.columns:
             acc_df[c] = pd.to_numeric(acc_df[c], errors="coerce")
+    acc_df["ticker"] = acc_df["ticker"].astype(str).str.upper()  # normalize BEFORE options
     acc_df = acc_df.dropna(subset=["date"]).sort_values("date")
 
-    # --- Ticker filter with session persistence ---
-    default_sel = st.session_state.get("acc_ticker_filter", [])
+    # --- Ticker filter with session persistence (SAFE) ---
+    options = sorted(acc_df["ticker"].dropna().unique().tolist())
+    prev = st.session_state.get("acc_ticker_filter", [])
+    prev = [t for t in prev if t in options]   # ensure defaults ⊆ options
+
     sel = st.multiselect(
         "Filter tickers",
-        options=sorted(acc_df["ticker"].dropna().unique().tolist()),
-        default=default_sel or None,
+        options=options,
+        default=prev,   # never pass None
     )
+    st.session_state["acc_ticker_filter"] = sel
     if sel:
-        acc_df = acc_df[acc_df["ticker"].isin([s.upper() for s in sel])]
-        st.session_state["acc_ticker_filter"] = sel
+        acc_df = acc_df[acc_df["ticker"].isin(sel)]
 
     # --- Summary metrics ---
     c1, c2, c3 = st.columns(3)
