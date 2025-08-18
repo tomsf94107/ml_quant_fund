@@ -2,7 +2,7 @@ name: Daily Forecast Retraining
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 1 * * *'   # 01:00 UTC nightly
   workflow_dispatch:
 
 permissions:
@@ -18,13 +18,16 @@ jobs:
     env:
       PYTHONUNBUFFERED: "1"
       GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
-      FORCE_RETRAIN: "1"         # optional: retrain even if no prior logs
+      FORCE_RETRAIN: "1"   # optional: retrain even if no prior logs
 
     steps:
-      - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           cache: 'pip'
@@ -37,7 +40,7 @@ jobs:
       - name: Prepare output folders
         run: |
           mkdir -p forecast_logs models
-          touch forecast_metrics.csv
+          : > forecast_metrics.csv
 
       - name: Run forecast retraining (tolerant if metrics exist)
         run: |
@@ -66,8 +69,10 @@ jobs:
         with:
           name: forecast-metrics
           path: forecast_metrics.csv
+          if-no-files-found: ignore
 
-      - name: Commit & push updated outputs (rebase + retry)
+      # --- Commit ONLY the DB; never commit models/charts/metrics ---
+      - name: Commit & push updated DB only (rebase + retry)
         if: always()
         run: |
           set -eux
@@ -75,18 +80,25 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "actions@github.com"
 
-          [ -d models ] && ls models/*.pkl 1>/dev/null 2>&1 && git add models/*.pkl || true
-          [ -s forecast_metrics.csv ] && git add forecast_metrics.csv || true
+          # Stage ONLY forecast_accuracy.db (explicit allow in .gitignore)
+          git add forecast_accuracy.db || true
 
-          git diff --cached --quiet && { echo "No changes to commit."; exit 0; }
-          git commit -m "Auto-retrain: $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          # Guard: ensure nothing else is staged (prevents artifacts slipping in)
+          ALLOWED_REGEX='^forecast_accuracy\.db$'
+          if git diff --cached --name-only | grep -Ev "$ALLOWED_REGEX" | grep -E '.'; then
+            echo "❌ Disallowed files staged. Aborting commit."
+            git diff --cached --name-only | cat
+            exit 1
+          fi
+
+          # No DB changes? exit cleanly.
+          git diff --cached --quiet && { echo "No DB changes to commit."; exit 0; }
+
+          git commit -m "Nightly: update forecast_accuracy.db ($(date -u +'%Y-%m-%dT%H:%M:%SZ'))"
 
           for attempt in 1 2 3; do
             git fetch origin "$BRANCH"
-            # stash & rebase to handle "unstaged changes" case
-            git stash push -u -m "ci-stash" || true
-            git rebase "origin/$BRANCH" || { git rebase --abort || true; }
-            git stash pop || true
+            git pull --rebase origin "$BRANCH" || true
             if git push origin "HEAD:$BRANCH"; then
               echo "Push succeeded on attempt $attempt"; exit 0
             fi

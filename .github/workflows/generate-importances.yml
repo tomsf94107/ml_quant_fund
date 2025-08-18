@@ -3,11 +3,11 @@ name: Generate Feature Importances Chart
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # daily at 06:00 UTC
+    - cron: "0 6 * * *"     # daily at 06:00 UTC
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: generate-importances-${{ github.ref }}
@@ -17,11 +17,15 @@ jobs:
   build:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    env:
+      PYTHONUNBUFFERED: "1"
+      MPLBACKEND: "Agg"     # headless matplotlib
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # keep token so commit/push works
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -33,39 +37,101 @@ jobs:
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: ${{ runner.os }}-pip-
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          pip install xgboost matplotlib pandas scikit-learn
+          # Ensure these are present for loading models and plotting
+          pip install numpy pandas matplotlib scikit-learn xgboost joblib
 
-
-
-      - name: Generate feature importances
-        env:
-          PYTHONUNBUFFERED: "1"
+      - name: Generate feature importances (robust, inline)
         run: |
           set -e
-          mkdir -p charts
-          if [ -f scripts/generate_importances.py ]; then
-            python scripts/generate_importances.py --out charts/feature_importances.png --top 25
-          elif [ -f tools/generate_importances.py ]; then
-            python tools/generate_importances.py --out charts/feature_importances.png --top 25
-          else
-            echo "No generator script found. Skipping."
-            exit 0
-          fi
+          python - <<'PY'
+          import os, glob, sys
+          import numpy as np
+          import pandas as pd
+          import joblib
+          import matplotlib.pyplot as plt
 
+          os.makedirs("charts", exist_ok=True)
 
+          model_paths = sorted(glob.glob("models/*.pkl"))
+          if not model_paths:
+            print("No models/*.pkl found; skipping chart generation.")
+            sys.exit(0)
 
-      - name: Commit & push changes (if any)
-        uses: stefanzweifel/git-auto-commit-action@v5
+          rows = []
+          for mp in model_paths:
+            try:
+              model = joblib.load(mp)
+            except Exception as e:
+              print(f"Warning: failed to load {mp}: {e}")
+              continue
+
+            fi = getattr(model, "feature_importances_", None)
+            if fi is None:
+              # Not all models expose feature_importances_ (e.g., some pipelines)
+              print(f"Info: {os.path.basename(mp)} has no feature_importances_; skipping.")
+              continue
+
+            # Handle feature names robustly; avoid numpy truthiness errors
+            names = None
+            if hasattr(model, "feature_names_in_"):
+              try:
+                names = list(getattr(model, "feature_names_in_"))
+              except Exception:
+                names = None
+
+            if names is None or len(names) != len(fi):
+              names = [f"f{i}" for i in range(len(fi))]
+
+            df = pd.DataFrame({"feature": names, "importance": np.asarray(fi, dtype=float)})
+            df["model"] = os.path.basename(mp)
+            rows.append(df)
+
+          if not rows:
+            print("No importances collected from any model; skipping chart generation.")
+            sys.exit(0)
+
+          imp = pd.concat(rows, ignore_index=True)
+
+          # Aggregate mean importance across models
+          agg = (imp.groupby("feature", as_index=False)["importance"]
+                    .mean()
+                    .sort_values("importance", ascending=False))
+
+          # Save summary CSV
+          summary_csv = "charts/feature_importances_summary.csv"
+          agg.to_csv(summary_csv, index=False)
+          print(f"Wrote {summary_csv} with {len(agg)} rows")
+
+          # Plot top-N as horizontal bar chart
+          TOP_N = int(os.environ.get("TOP_N_IMPORTANCES", "25"))
+          top = agg.head(TOP_N)
+
+          plt.figure()
+          top.set_index("feature")["importance"].plot(kind="barh")
+          plt.gca().invert_yaxis()
+          plt.title(f"Mean Feature Importance (Top {TOP_N})")
+          plt.xlabel("Importance")
+          plt.tight_layout()
+          out_png = "charts/feature_importances.png"
+          plt.savefig(out_png, dpi=160)
+          print(f"Wrote {out_png}")
+          PY
+
+      - name: Upload charts as artifacts (no git commit)
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "chore(ci): update feature importances chart"
-          branch: ${{ github.ref_name }}
-          file_pattern: |
+          name: feature-importances
+          path: |
             charts/*.png
             charts/*.svg
             charts/*.json
             charts/*.csv
+          if-no-files-found: ignore
