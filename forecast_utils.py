@@ -1,6 +1,8 @@
 # forecast_utils.py v5.5 – risk calendar + tidy DB loader + tz-safe insider joins
 # ---------------------------------------------------------------------------
 import os, sys, types, importlib.util
+import pandas as pd
+
 
 def _find_file(base_dir: str, filename: str) -> str | None:
     """Return first path under base_dir whose basename == filename."""
