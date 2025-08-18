@@ -1,6 +1,6 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.6  •  fixes: accuracy DB loader (SQLite), start/end params, return_1d
-#          robust confidence proxy (Close/close), small safety tweaks
+#  v18.6  •  compat wrappers for start/end args, safe accuracy multiselect,
+#           recent-history plotting fix, small safety tweaks
 # ────────────────────────────────────────────────────────────────────────────
 
 # ── Path bootstrap (ensure parent of repo is importable) ────────────────────
@@ -12,7 +12,7 @@ if _PARENT not in sys.path:
     sys.path.insert(0, _PARENT)
 
 # stdlib / third-party
-import io, zipfile, glob
+import io, zipfile, glob, inspect
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -25,7 +25,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import altair as alt
 from sklearn.metrics import accuracy_score
-from datetime import datetime, date, timedelta
+from datetime import datetime, date
 
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
@@ -215,6 +215,45 @@ risk_mult = {"Low": 1.00, "Medium": 0.92, "High": 0.85}.get(
 def _as_ymd(d):
     return pd.to_datetime(d).date().isoformat() if pd.notnull(pd.to_datetime(d, errors="coerce")) else None
 
+# ──────────────────────────  COMPAT WRAPPERS  ───────────────────────────────
+def build_features_compat(tkr, start, end):
+    """Call build_feature_dataframe with whatever signature it has."""
+    try:
+        # Try to detect param names
+        params = set(inspect.signature(build_feature_dataframe).parameters.keys())
+        if {"start_date", "end_date"} & params:
+            return build_feature_dataframe(tkr, start_date=start, end_date=end)
+        if {"start", "end"} & params:
+            return build_feature_dataframe(tkr, start=start, end=end)
+    except Exception:
+        pass
+    # Fallback attempts
+    try:
+        return build_feature_dataframe(tkr, start, end)  # positional
+    except TypeError:
+        try:
+            return build_feature_dataframe(tkr, start_date=start, end_date=end)
+        except TypeError:
+            return build_feature_dataframe(tkr, start=start, end=end)
+
+def today_move_compat(tkr, start, end):
+    """Call forecast_today_movement with flexible args."""
+    try:
+        params = set(inspect.signature(forecast_today_movement).parameters.keys())
+        if {"start_date", "end_date"} & params:
+            return forecast_today_movement(tkr, start_date=start, end_date=end)
+        if {"start", "end"} & params:
+            return forecast_today_movement(tkr, start=start, end=end)
+    except Exception:
+        pass
+    try:
+        return forecast_today_movement(tkr, start, end)  # positional
+    except TypeError:
+        try:
+            return forecast_today_movement(tkr, start_date=start, end_date=end)
+        except TypeError:
+            return forecast_today_movement(tkr)
+
 # ──────────────────────────  FORECAST SECTION  ───────────────────────────────
 with st.expander("🗕️ Forecast Price Trends"):
     tkr_in        = st.text_input("Enter a ticker", "AAPL")
@@ -231,22 +270,25 @@ with st.expander("🗕️ Forecast Price Trends"):
             )
             model_used = "Prophet"
         else:
-            # FIX: correct param names to match build_feature_dataframe
-            base_df = build_feature_dataframe(
-                tkr,
-                start_date=_as_ymd(start_date),
-                end_date=_as_ymd(end_date),
+            base_df = build_features_compat(
+                tkr, _as_ymd(start_date), _as_ymd(end_date)
             )
             try:
                 _, _, _, y_pred, _ = train_xgb_predict(
                     base_df, horizon_days=forecast_days
                 )
-                recent = (
-                    base_df[["close"]]
-                    .tail(60)
-                    .reset_index()
-                    .rename(columns={"index": "ds", "close": "actual"})
-                )
+                # Use explicit date column if present
+                if "date" in base_df.columns and "close" in base_df.columns:
+                    recent = base_df[["date", "close"]].tail(60).rename(
+                        columns={"date": "ds", "close": "actual"}
+                    )
+                else:
+                    recent = (
+                        base_df[["close"]]
+                        .tail(60)
+                        .reset_index()
+                        .rename(columns={"index": "ds", "close": "actual"})
+                    )
                 futr = pd.DataFrame({
                     "ds":          pd.date_range(datetime.today(), periods=len(y_pred)),
                     "yhat":        y_pred,
@@ -290,9 +332,8 @@ with st.expander("🗕️ Forecast Price Trends"):
             )
 
             st.subheader("🗓️ Today's Movement Prediction")
-            # FIX: correct param names for forecast_today_movement
-            move_msg, move_err = forecast_today_movement(
-                tkr, start_date=_as_ymd(start_date), end_date=_as_ymd(end_date)
+            move_msg, move_err = today_move_compat(
+                tkr, _as_ymd(start_date), _as_ymd(end_date)
             )
             if move_err:
                 st.warning(move_err)
@@ -318,9 +359,8 @@ if st.button("🚀 Run Strategy"):
         st.subheader(f"📊 {tkr} Strategy")
         try:
             # -------- data --------------------------------------------
-            # FIX: correct param names
-            df = build_feature_dataframe(
-                tkr, start_date=_as_ymd(start_date), end_date=_as_ymd(end_date)
+            df = build_features_compat(
+                tkr, _as_ymd(start_date), _as_ymd(end_date)
             )
 
             # ---- Risk diagnostics (UI) ----
@@ -381,7 +421,6 @@ if st.button("🚀 Run Strategy"):
             df_test["Signal"] = ((df_test["Prob_eff"] > confidence_threshold) & (~gate)).astype(int)
 
             # ---- RETURNS (use these for metrics) ----
-            # FIX: correct column name (lowercase)
             ret_mkt   = df_test.get("return_1d", pd.Series(0, index=df_test.index)).fillna(0)
             ret_strat = (df_test["Signal"].shift(1).fillna(0) * ret_mkt)  # avoid look-ahead
 
@@ -390,27 +429,21 @@ if st.button("🚀 Run Strategy"):
             eq_strat = (1 + ret_strat).cumprod()
 
             # ---- metrics --------------------------------------------
-            # Directional accuracy (on price direction)
             y_dir_true = (y_test.diff() > 0).astype(int).iloc[1:]
             y_dir_pred = (pd.Series(y_pred, index=y_test.index).diff() > 0).astype(int).iloc[1:]
             acc = accuracy_score(y_dir_true, y_dir_pred) if len(y_dir_true) == len(y_dir_pred) and len(y_dir_true) > 0 else float("nan")
 
-            # Sharpe on returns (annualized)
             ann = 252
             mu  = ret_strat.mean()
             sd  = ret_strat.std(ddof=1)
             sharpe = np.sqrt(ann) * mu / sd if sd and not np.isnan(sd) else np.nan
 
-            # Max drawdown on equity
             mdd = (eq_strat / eq_strat.cummax() - 1).min()
-
-            # CAGR from equity
             n_days = max(1, len(eq_strat))
             cagr = (eq_strat.iloc[-1]) ** (ann / n_days) - 1
 
-            # Extra sanity metrics
             trades = ((df_test["Signal"] == 1) & (df_test["Signal"].shift(1) != 1)).sum()
-            exposure = float(df_test["Signal"].mean())  # fraction of days invested
+            exposure = float(df_test["Signal"].mean())
             wins = ret_strat[ret_strat > 0].sum()
             loss = -ret_strat[ret_strat < 0].sum()
             profit_factor = (wins / loss) if loss > 0 else np.nan
@@ -422,11 +455,9 @@ if st.button("🚀 Run Strategy"):
             c4.metric("CAGR",     f"{cagr:.2%}")
             st.caption(f"Trades: {int(trades)} • Exposure: {exposure:.1%} • Profit factor: {profit_factor:.2f}")
 
-            # ---- plot ------------------------------------------------
             plot_df = pd.DataFrame({"Strategy": eq_strat, "Market": eq_mkt})
             st.line_chart(plot_df)
 
-            # ---- downloads ------------------------------------------
             csv_bytes = pd.concat(
                 [df_test[["Signal","Prob","Prob_eff","GateBlock"]],
                  ret_strat.rename("StrategyRet"),
@@ -436,7 +467,6 @@ if st.button("🚀 Run Strategy"):
                                file_name=f"{tkr}_strategy.csv", mime="text/csv")
             csv_buffers.append((f"{tkr}_strategy.csv", csv_bytes))
 
-            # ---- email ----------------------------------------------
             if (
                 enable_email
                 and df_test.iloc[-1]["Signal"] == 1
@@ -445,11 +475,9 @@ if st.button("🚀 Run Strategy"):
             ):
                 send_alert_email(tkr, float(df_test.iloc[-1]["Prob_eff"]))
 
-            # ---- SHAP -----------------------------------------------
             if enable_shap:
                 plot_shap_local(model, X_test)
 
-            # ---- live dashboard state -------------------------------
             eff_conf = df_test.iloc[-1].get("Prob_eff", df_test.iloc[-1]["Prob"])
             st.session_state["live_signals"][tkr] = {
                 "signal": int(df_test.iloc[-1]["Signal"]),
@@ -459,7 +487,6 @@ if st.button("🚀 Run Strategy"):
         except Exception as e:
             st.error(f"⚠️ {tkr}: {e}")
 
-    # ---- ZIP download ------------------------------------------------------
     if enable_zip_download and csv_buffers:
         zbuf = io.BytesIO()
         with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
@@ -475,52 +502,46 @@ st.subheader("📊 Forecast Accuracy Dashboard")
 
 @st.cache_data(ttl=300)
 def get_accuracy_logs(db_path: str | None = None):
-    # prefer local SQLite loader if available
     if load_eval_logs_from_forecast_db is not None:
         try:
             return load_eval_logs_from_forecast_db(db_path=db_path)
         except Exception as e:
             st.warning(f"SQLite load failed: {e}")
-    # fallback: empty frame with expected columns
     return pd.DataFrame(columns=["date","ticker","mae","mse","r2","model","confidence"])
 
-# You can also pass an absolute path via env var FORECAST_ACCURACY_DB
 abs_db = os.getenv("FORECAST_ACCURACY_DB", None)
 acc_df = get_accuracy_logs(db_path=abs_db)
 
 if acc_df.empty:
     st.info("No accuracy data found yet.")
 else:
-    # --- Normalize dtypes & sort ---
     acc_df = acc_df.copy()
     acc_df["date"] = pd.to_datetime(acc_df["date"], errors="coerce")
     for c in ["mae", "mse", "r2", "confidence"]:
         if c in acc_df.columns:
             acc_df[c] = pd.to_numeric(acc_df[c], errors="coerce")
-    acc_df["ticker"] = acc_df["ticker"].astype(str).str.upper()  # normalize BEFORE options
+    acc_df["ticker"] = acc_df["ticker"].astype(str).str.upper()
     acc_df = acc_df.dropna(subset=["date"]).sort_values("date")
 
-    # --- Ticker filter with session persistence (SAFE) ---
+    # SAFE multiselect (defaults ⊆ options)
     options = sorted(acc_df["ticker"].dropna().unique().tolist())
     prev = st.session_state.get("acc_ticker_filter", [])
-    prev = [t for t in prev if t in options]   # ensure defaults ⊆ options
+    prev = [t for t in prev if t in options]
 
     sel = st.multiselect(
         "Filter tickers",
         options=options,
-        default=prev,   # never pass None
+        default=prev,
     )
     st.session_state["acc_ticker_filter"] = sel
     if sel:
         acc_df = acc_df[acc_df["ticker"].isin(sel)]
 
-    # --- Summary metrics ---
     c1, c2, c3 = st.columns(3)
     c1.metric("Avg MAE", f"{acc_df['mae'].mean(skipna=True):.3f}" if "mae" in acc_df else "—")
     c2.metric("Avg MSE", f"{acc_df['mse'].mean(skipna=True):.3f}" if "mse" in acc_df else "—")
     c3.metric("Avg R²",  f"{acc_df['r2'].mean(skipna=True):.3f}"  if "r2"  in acc_df else "—")
 
-    # --- Line chart (guard against empty) ---
     chart_cols = [c for c in ["mae","mse","r2"] if c in acc_df.columns]
     chart_df = acc_df.set_index("date")[chart_cols].dropna(how="all") if chart_cols else pd.DataFrame()
     if not chart_df.empty:
