@@ -1,4 +1,4 @@
-# sentiment_utils.py  v3.8  — CI-safe secrets; no Streamlit import at import time
+# sentiment_utils.py  v3.9  — CI-safe secrets; no Streamlit import at import time
 # ---------------------------------------------------------------------
 # Free-only sentiment pipeline.  Headline sources:
 #   1. NewsAPI (if key present)
@@ -10,6 +10,7 @@
 #   7. SEC EDGAR RSS (Atom feed of filings)
 #   8. Marketaux news endpoint
 #   9. AlphaVantage News & Sentiment (beta)
+#  10. New York Times Article Search API  ← NEW
 # Headlines deduped and capped at 80, then scored by FinBERT.
 # ---------------------------------------------------------------------
 
@@ -239,6 +240,51 @@ def _alpha_vantage_titles(ticker: str) -> List[str]:
         return []
 
 # ------------------------------------------------------------------
+# NEW YORK TIMES Article Search (NEW)
+# ------------------------------------------------------------------
+_NYT_HEADERS = {"User-Agent": "ml-quant-sentiment/nyt/0.1"}
+
+def _nyt_titles(ticker: str, max_items: int = 20) -> List[str]:
+    """
+    Fetch up to `max_items` headlines from NYT Article Search.
+    Requires env/secret NYT_API_KEY. We query newest first and
+    concatenate headline + abstract for better FinBERT context.
+    """
+    key = _get_secret("NYT_API_KEY")
+    if not key:
+        return []
+
+    base = "https://api.nytimes.com/svc/search/v2/articlesearch.json"
+    titles: List[str] = []
+    page = 0
+    # NYT Article Search returns up to 10 docs per page; keep <=2 pages by default
+    try:
+        while len(titles) < max_items and page < 2:
+            params = {
+                "q": ticker,
+                "sort": "newest",
+                "page": page,
+                "api-key": key,
+            }
+            r = requests.get(base, params=params, headers=_NYT_HEADERS, timeout=8)
+            r.raise_for_status()
+            docs = (r.json().get("response", {}) or {}).get("docs", []) or []
+            if not docs:
+                break
+            for d in docs:
+                head = ((d.get("headline") or {}).get("main") or "").strip()
+                abstract = (d.get("abstract") or d.get("snippet") or "").strip()
+                txt = f"{head} {abstract}".strip()
+                if txt:
+                    titles.append(txt)
+            page += 1
+            time.sleep(0.2)  # be polite
+    except Exception as ex:
+        print(f"❌ NYT error for {ticker}: {ex}")
+
+    return titles[:max_items]
+
+# ------------------------------------------------------------------
 # Aggregator
 # ------------------------------------------------------------------
 MAX_HEADLINES = 80
@@ -248,7 +294,7 @@ def fetch_news_titles(
     sources: List[str] | None = None,    # ← optional filter
     **kwargs,
 ) -> List[str]:
-    """Aggregates headlines from our 9 free sources, filtered & capped."""
+    """Aggregates headlines from our free sources, filtered & capped."""
     ALL_SRCS = {
         "NewsAPI":    lambda: _newsapi_titles(
                             ticker,
@@ -278,6 +324,10 @@ def fetch_news_titles(
                             kwargs.get("page_size", 20)
                         ),
         "AlphaV":     lambda: _alpha_vantage_titles(ticker),
+        "NYTimes":    lambda: _nyt_titles(           # ← NEW
+                            ticker,
+                            kwargs.get("max_items", 20)
+                        ),
     }
 
     if not ticker:

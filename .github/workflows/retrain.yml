@@ -25,6 +25,7 @@ jobs:
       # Accuracy DB location used by retrain_forecasts.py
       ACCURACY_DB_URL: sqlite:///forecast_accuracy.db
       FORCE_RETRAIN: "1"   # optional: retrain even if no prior logs
+      NYT_API_KEY: ${{ secrets.NYT_API_KEY }}
 
     steps:
       - name: Checkout

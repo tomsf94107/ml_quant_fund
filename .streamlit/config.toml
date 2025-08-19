@@ -3,4 +3,7 @@ headless = true
 enableCORS = false
 port = 8501
 fileWatcherType = "poll"
-TOML
+
+# Optional theme block
+[theme]
+base = "light"
