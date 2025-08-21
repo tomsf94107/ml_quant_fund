@@ -524,8 +524,18 @@ def get_accuracy_logs(db_path: str | None = None):
             st.warning(f"SQLite load failed: {e}")
     return pd.DataFrame(columns=["date","ticker","mae","mse","r2","model","confidence"])
 
+# You can override with FORECAST_ACCURACY_DB
 abs_db = os.getenv("FORECAST_ACCURACY_DB", None)
 acc_df = get_accuracy_logs(db_path=abs_db)
+
+# (Optional) quick debug — now that acc_df exists
+with st.expander("🔧 Accuracy datasource debug", expanded=False):
+    st.write("Rows loaded:", len(acc_df))
+    if not acc_df.empty:
+        st.write("Date range:", acc_df["date"].min(), "→", acc_df["date"].max())
+        st.dataframe(
+            acc_df.sort_values("date")[["date","ticker","mae","mse","r2"]].tail(5)
+        )
 
 if acc_df.empty:
     st.info("No accuracy data found yet.")
@@ -543,11 +553,7 @@ else:
     prev = st.session_state.get("acc_ticker_filter", [])
     prev = [t for t in prev if t in options]
 
-    sel = st.multiselect(
-        "Filter tickers",
-        options=options,
-        default=prev,
-    )
+    sel = st.multiselect("Filter tickers", options=options, default=prev)
     st.session_state["acc_ticker_filter"] = sel
     if sel:
         acc_df = acc_df[acc_df["ticker"].isin(sel)]
@@ -563,3 +569,4 @@ else:
         st.line_chart(chart_df)
     else:
         st.warning("No numeric accuracy data to plot yet.")
+
