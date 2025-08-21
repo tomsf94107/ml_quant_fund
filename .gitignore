@@ -37,3 +37,4 @@ data/*
 models/
 charts/
 feature_importances_summary*.csv
+forecast_accuracy.db
