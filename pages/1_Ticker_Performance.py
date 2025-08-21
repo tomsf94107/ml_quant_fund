@@ -1,6 +1,6 @@
 # ────────────────────────────────────────────────────────────────────────────
-#  v18.6  •  robust col picking (Close/close/Adj Close), compat wrappers for
-#           start/end args, safe accuracy multiselect, small safety tweaks
+#  v18.7  •  robust col picking (Close/close/Adj Close), compat wrappers for
+#           start/end args, safe accuracy multiselect, cached accuracy loader
 # ────────────────────────────────────────────────────────────────────────────
 
 # ── Path bootstrap (ensure parent of repo is importable) ────────────────────
@@ -43,22 +43,17 @@ from ml_quant_fund.forecast_utils import (
     run_auto_retrain_all,
 )
 from ml_quant_fund.core.helpers_xgb import train_xgb_predict, RISK_ALPHA
-
-# NEW: use local SQLite accuracy loader (root/loader.py)
-try:
-    from loader import load_eval_logs_from_forecast_db
-except Exception:
-    load_eval_logs_from_forecast_db = None  # fallback handled below
+from ml_quant_fund.accuracy_sink import load_accuracy_any  # import only (no top-level DB calls)
 
 # ──────────────────────────  HELPERS  ────────────────────────────────────────
 def pick_col(df: pd.DataFrame, candidates) -> str | None:
     """Return first matching column name (case-insensitive)."""
-    if df is None or df.empty: return None
+    if df is None or df.empty:
+        return None
     cols = list(df.columns)
     for c in candidates:
         if c in df.columns:  # exact
             return c
-    # case-insensitive map
     lower_map = {c.lower(): c for c in cols}
     for c in candidates:
         cl = c.lower()
@@ -80,8 +75,10 @@ def show_importances_tab():
         st.markdown(f"**Last updated:** {datetime.fromtimestamp(last_mod):%Y-%m-%d %H:%M}")
     else:
         st.warning(f"No chart found at `{img_path}`.")
-        uploaded_file = st.file_uploader("Upload a feature importances chart (PNG/JPG):",
-                                         type=["png", "jpg", "jpeg"])
+        uploaded_file = st.file_uploader(
+            "Upload a feature importances chart (PNG/JPG):",
+            type=["png", "jpg", "jpeg"]
+        )
         if uploaded_file and st.button("Save chart to disk"):
             os.makedirs(importances_dir, exist_ok=True)
             with open(img_path, "wb") as f:
@@ -478,8 +475,12 @@ if st.button("🚀 Run Strategy"):
                  ret_strat.rename("StrategyRet"),
                  eq_strat.rename("Strategy")], axis=1
             ).to_csv(index=True).encode()
-            st.download_button(f"🗅 CSV – {tkr}", csv_bytes,
-                               file_name=f"{tkr}_strategy.csv", mime="text/csv")
+            st.download_button(
+                f"🗅 CSV – {tkr}",
+                csv_bytes,
+                file_name=f"{tkr}_strategy.csv",
+                mime="text/csv"
+            )
             csv_buffers.append((f"{tkr}_strategy.csv", csv_bytes))
 
             if (
@@ -507,35 +508,36 @@ if st.button("🚀 Run Strategy"):
         with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
             for fname, data in csv_buffers:
                 zf.writestr(fname, data)
-        st.download_button("📦 Download ALL as ZIP",
-                           zbuf.getvalue(),
-                           file_name="strategy_exports.zip",
-                           mime="application/zip")
+        st.download_button(
+            "📦 Download ALL as ZIP",
+            zbuf.getvalue(),
+            file_name="strategy_exports.zip",
+            mime="application/zip"
+        )
 
-# ═════════════════════════  📊 ACCURACY DASHBOARD  ═════════════════════════════
+# ═════════ ACCURACY DASHBOARD (cached loader) ═════════
 st.subheader("📊 Forecast Accuracy Dashboard")
 
 @st.cache_data(ttl=300)
-def get_accuracy_logs(db_path: str | None = None):
-    if load_eval_logs_from_forecast_db is not None:
+def get_acc_df():
+    # Prefer Postgres via ACCURACY_DSN; load_accuracy_any falls back to SQLite if unset
+    df = load_accuracy_any()
+    if df.empty:
+        # Optional explicit fallback: load a specific local SQLite file if provided
         try:
-            return load_eval_logs_from_forecast_db(db_path=db_path)
-        except Exception as e:
-            st.warning(f"SQLite load failed: {e}")
-    return pd.DataFrame(columns=["date","ticker","mae","mse","r2","model","confidence"])
+            from loader import load_eval_logs_from_forecast_db
+            df = load_eval_logs_from_forecast_db(os.getenv("FORECAST_ACCURACY_DB"))
+        except Exception:
+            pass
+    return df
 
-# You can override with FORECAST_ACCURACY_DB
-abs_db = os.getenv("FORECAST_ACCURACY_DB", None)
-acc_df = get_accuracy_logs(db_path=abs_db)
+acc_df = get_acc_df()
 
-# (Optional) quick debug — now that acc_df exists
 with st.expander("🔧 Accuracy datasource debug", expanded=False):
     st.write("Rows loaded:", len(acc_df))
     if not acc_df.empty:
         st.write("Date range:", acc_df["date"].min(), "→", acc_df["date"].max())
-        st.dataframe(
-            acc_df.sort_values("date")[["date","ticker","mae","mse","r2"]].tail(5)
-        )
+        st.dataframe(acc_df.sort_values("date")[["date","ticker","mae","mse","r2"]].tail(5))
 
 if acc_df.empty:
     st.info("No accuracy data found yet.")
@@ -548,11 +550,8 @@ else:
     acc_df["ticker"] = acc_df["ticker"].astype(str).str.upper()
     acc_df = acc_df.dropna(subset=["date"]).sort_values("date")
 
-    # SAFE multiselect (defaults ⊆ options)
     options = sorted(acc_df["ticker"].dropna().unique().tolist())
-    prev = st.session_state.get("acc_ticker_filter", [])
-    prev = [t for t in prev if t in options]
-
+    prev = [t for t in st.session_state.get("acc_ticker_filter", []) if t in options]
     sel = st.multiselect("Filter tickers", options=options, default=prev)
     st.session_state["acc_ticker_filter"] = sel
     if sel:
@@ -569,4 +568,3 @@ else:
         st.line_chart(chart_df)
     else:
         st.warning("No numeric accuracy data to plot yet.")
-

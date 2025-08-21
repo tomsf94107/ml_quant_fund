@@ -1,8 +1,9 @@
 [server]
 headless = true
-enableCORS = false
-port = 8501
+# enableXsrfProtection defaults to true; keep it.
+# Remove or comment out any `enableCORS` override.
 fileWatcherType = "poll"
+port = 8501
 
 # Optional theme block
 [theme]

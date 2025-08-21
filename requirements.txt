@@ -55,4 +55,8 @@ streamlit-autorefresh==1.0.1
 feedparser>=6.0.0
 SQLAlchemy>=2.0
 
+#NEON DB PostgreSQL
+psycopg2-binary>=2.9
+
+
 

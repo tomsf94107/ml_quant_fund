@@ -1,4 +1,5 @@
-# forecast_utils.py v5.6 – risk calendar + tidy DB loader + lazy email import
+# forecast_utils.py v5.7 – env-guarded sentiment/insiders, smarter risk key use,
+#                          Neon accuracy logging kept; SQLite loader unchanged
 # ---------------------------------------------------------------------------
 from __future__ import annotations
 
@@ -21,8 +22,19 @@ try:
 except Exception:
     Prophet = None  # graceful fallback below
 
-# SQLAlchemy for SQLite access
+# SQLAlchemy for SQLite access (for legacy accuracy loader below)
 from sqlalchemy import create_engine, text
+
+# ────────────────────────────────────────────────────────────────────────────
+# Environment flags (let CLI disable network/secret-heavy bits)
+# ────────────────────────────────────────────────────────────────────────────
+NO_SENTIMENT = os.getenv("NO_SENTIMENT", "0") == "1"
+NO_INSIDERS  = os.getenv("NO_INSIDERS",  "0") == "1"
+DEBUG_FU     = os.getenv("FORECAST_UTILS_DEBUG", "0") == "1"
+
+def _dbg(msg: str):
+    if DEBUG_FU:
+        print(f"[forecast_utils] {msg}")
 
 # ────────────────────────────────────────────────────────────────────────────
 # Dynamic imports / fallbacks for project modules (NO email import here)
@@ -102,7 +114,6 @@ except ImportError:
 # Lazy email import to avoid pulling Streamlit into CI
 def _maybe_email(subject: str, body: str):
     send = None
-    # Try relative and absolute imports, but only inside this function
     try:
         from .send_email import send_email_alert as send  # type: ignore
     except Exception:
@@ -115,6 +126,30 @@ def _maybe_email(subject: str, body: str):
             send(subject, body)
         except Exception:
             pass
+
+# ────────────────────────────────────────────────────────────────────────────
+# Accuracy sink (Neon/Postgres via ACCURACY_DSN, fallback to SQLite)
+# ────────────────────────────────────────────────────────────────────────────
+try:
+    from ml_quant_fund.accuracy_sink import log_accuracy  # writes to Neon if DSN set
+except Exception:
+    def log_accuracy(*args, **kwargs):  # no-op if sink unavailable
+        return
+
+def _compute_and_log_accuracy(ticker: str, y_true: np.ndarray, y_pred: np.ndarray,
+                              model: str = "XGBoost (Short Term)", confidence: float = 1.0):
+    """Compute MAE/MSE/R² and push one row to the accuracy sink."""
+    try:
+        from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+        mae = float(mean_absolute_error(y_true, y_pred))
+        mse = float(mean_squared_error(y_true, y_pred))
+        try:
+            r2  = float(r2_score(y_true, y_pred))
+        except Exception:
+            r2  = float("nan")
+        log_accuracy(ticker, mae, mse, r2, model=model, confidence=confidence)
+    except Exception as e:
+        print(f"[accuracy_sink] log failed: {e}")
 
 # ────────────────────────────────────────────────────────────────────────────
 # Paths & constants
@@ -148,12 +183,9 @@ def _resolve_sqlite_path(db_url: str) -> str:
         return path
     return os.path.join(ROOT, path)
 
-
 def load_forecast_accuracy(db_url: str = "sqlite:///forecast_accuracy.db") -> pd.DataFrame:
     """
     Load accuracy rows from SQLite table forecast_accuracy.
-    Pass a SQLAlchemy-style URL (only sqlite supported here).
-    Example (Streamlit):  load_forecast_accuracy(st.secrets.get("accuracy_db_url", "sqlite:///forecast_accuracy.db"))
     """
     try:
         abs_path = _resolve_sqlite_path(db_url)
@@ -194,7 +226,6 @@ def _to_datetime(obj):
     except Exception:
         return None
 
-
 def build_feature_dataframe(
     ticker: str,
     start=None,
@@ -203,8 +234,11 @@ def build_feature_dataframe(
     min_rows: int = 200
 ) -> pd.DataFrame:
     """
-    Download OHLCV → inject insider trades & holdings → TA →
-    market context → sentiment → risk features → clean.
+    Download OHLCV → (optionally) insiders → TA → market context →
+    (optionally) sentiment → risk features → finalize.
+    Use env flags to skip heavy bits during CLI runs:
+      - NO_INSIDERS=1  → skip insider fetch/merge
+      - NO_SENTIMENT=1 → skip news/sentiment
     """
     # 1) Price history
     start_dt = _to_datetime(start)
@@ -223,48 +257,53 @@ def build_feature_dataframe(
     if df.empty or "Close" not in df.columns:
         return pd.DataFrame()
 
-    # 2) Inject insider trades + holdings (join on date index; normalize tz)
-    try:
-        ins_trades = fetch_insider_trades(ticker)  # expects 'ds'
-        ins_holds  = fetch_insider_holdings(ticker)
-
-        # Ensure price index is tz-naive (enforce)
-        try:
-            df.index = pd.to_datetime(df.index, utc=False).tz_localize(None)
-        except Exception:
-            pass
-
-        def _prep(ins: pd.DataFrame) -> pd.DataFrame:
-            if isinstance(ins, pd.DataFrame) and not ins.empty and "ds" in ins.columns:
-                ins = ins.copy()
-                ins["ds"] = pd.to_datetime(ins["ds"], errors="coerce", utc=True).dt.tz_localize(None)
-                ins = ins.dropna(subset=["ds"]).set_index("ds").sort_index()
-                return ins
-            return pd.DataFrame()
-
-        ins_trades = _prep(ins_trades)
-        ins_holds  = _prep(ins_holds)
-
-        if not ins_trades.empty:
-            df = df.join(ins_trades, how="left")
-
-        if not ins_holds.empty:
-            df = df.join(
-                ins_holds.rename(columns={"shares": "hold_shares", "net_change": "hold_net_change"}),
-                how="left"
-            )
-
-        # standardize/ensure expected cols exist, then fillna(0)
-        need = ["insider_net_shares", "insider_buy_count", "insider_sell_count",
-                "hold_shares", "hold_net_change"]
-        for col in need:
-            if col not in df.columns:
-                df[col] = 0
-        df[need] = df[need].fillna(0)
-    except Exception as e:
-        print(f"⚠️ Insider merge error: {e}")
+    # 2) (Optional) Inject insider trades + holdings
+    if NO_INSIDERS:
+        _dbg("insiders disabled via NO_INSIDERS=1")
         for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
             df[col] = 0
+    else:
+        try:
+            ins_trades = fetch_insider_trades(ticker)  # expects 'ds'
+            ins_holds  = fetch_insider_holdings(ticker)
+
+            # Ensure price index tz-naive
+            try:
+                df.index = pd.to_datetime(df.index, utc=False).tz_localize(None)
+            except Exception:
+                pass
+
+            def _prep(ins: pd.DataFrame) -> pd.DataFrame:
+                if isinstance(ins, pd.DataFrame) and not ins.empty and "ds" in ins.columns:
+                    ins = ins.copy()
+                    ins["ds"] = pd.to_datetime(ins["ds"], errors="coerce", utc=True).dt.tz_localize(None)
+                    ins = ins.dropna(subset=["ds"]).set_index("ds").sort_index()
+                    return ins
+                return pd.DataFrame()
+
+            ins_trades = _prep(ins_trades)
+            ins_holds  = _prep(ins_holds)
+
+            if not ins_trades.empty:
+                df = df.join(ins_trades, how="left")
+
+            if not ins_holds.empty:
+                df = df.join(
+                    ins_holds.rename(columns={"shares": "hold_shares", "net_change": "hold_net_change"}),
+                    how="left"
+                )
+
+            # ensure expected cols exist → fillna(0)
+            need = ["insider_net_shares", "insider_buy_count", "insider_sell_count",
+                    "hold_shares", "hold_net_change"]
+            for col in need:
+                if col not in df.columns:
+                    df[col] = 0
+            df[need] = df[need].fillna(0)
+        except Exception as e:
+            print(f"⚠️ Insider merge error: {e}")
+            for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
+                df[col] = 0
 
     # Ensure chronology after joins
     df.sort_index(inplace=True)
@@ -283,7 +322,7 @@ def build_feature_dataframe(
     df["insider_flow_7d"]  = df["insider_net_shares"].rolling(7,  min_periods=1).sum()
     df["insider_flow_21d"] = df["insider_net_shares"].rolling(21, min_periods=1).sum()
 
-    # activity intensity (how many days had any insider action)
+    # activity intensity
     df["insider_activity_7d"]  = (df["insider_net_shares"] != 0).rolling(7,  min_periods=1).sum()
     df["insider_activity_21d"] = (df["insider_net_shares"] != 0).rolling(21, min_periods=1).sum()
 
@@ -300,7 +339,7 @@ def build_feature_dataframe(
             if macd is not None and not macd.empty:
                 df["MACD"], df["MACD_sig"] = macd.iloc[:, 0], macd.iloc[:, 1]
 
-            # Bollinger with fallback (finalize_features will also fill if still missing)
+            # Bollinger with fallback (finalize_features may also fill)
             bb = ta.bbands(df["Close"])
             if isinstance(bb, pd.DataFrame) and not bb.empty:
                 if "BBP_20_2.0" in bb.columns:
@@ -343,29 +382,39 @@ def build_feature_dataframe(
         except Exception:
             df[f"{etf}_ret"] = np.nan
 
-    # 5) Sentiment (quiet errors; email alert is lazy/no-op in CI)
-    try:
-        buf = io.StringIO()
-        with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
-            sent = get_sentiment_scores(ticker)  # expected dict of percentages
-        for k in ("positive", "neutral", "negative"):
-            df[f"sent_{k}"] = sent.get(k, 0)
-        if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
-            _maybe_email(f"Sentiment Alert: {ticker}", str(sent))
-    except Exception:
+    # 5) (Optional) Sentiment
+    if NO_SENTIMENT:
+        _dbg("sentiment disabled via NO_SENTIMENT=1")
         for k in ("positive", "neutral", "negative"):
             df[f"sent_{k}"] = 0
+    else:
+        try:
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
+                sent = get_sentiment_scores(ticker)  # expected dict of percentages
+            for k in ("positive", "neutral", "negative"):
+                df[f"sent_{k}"] = sent.get(k, 0)
+            if sent.get("positive", 0) > 70 or sent.get("negative", 0) > 70:
+                _maybe_email(f"Sentiment Alert: {ticker}", str(sent))
+        except Exception as e:
+            print(f"⚠️ Sentiment error: {e}")
+            for k in ("positive", "neutral", "negative"):
+                df[f"sent_{k}"] = 0
 
     # 6) Risk features (robust join on normalized date)
     try:
         risk_start = (start_dt.date() if start_dt is not None else df.index.min().date())
         risk_end   = (end_dt.date()   if end_dt   is not None else df.index.max().date())
 
+        # auto-detect API availability unless explicitly disabled
+        use_fmp      = (os.getenv("NO_FMP", "0") != "1") and bool(os.getenv("FMP_API_KEY"))
+        use_finnhub  = (os.getenv("NO_FINNHUB", "0") != "1") and bool(os.getenv("FINNHUB_API_KEY"))
+
         risk = build_risk_features(
             risk_start - timedelta(days=3),
             risk_end   + timedelta(days=3),
-            use_fmp=True, use_finnhub=True
-        )  # expects: columns ['date','risk_today','risk_next_1d','risk_next_3d','risk_prev_1d']
+            use_fmp=use_fmp, use_finnhub=use_finnhub
+        )  # expects: ['date','risk_today','risk_next_1d','risk_next_3d','risk_prev_1d']
 
         # Normalize keys to tz-naive midnight
         risk = risk.copy()
@@ -389,7 +438,6 @@ def build_feature_dataframe(
         df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]] = \
             df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]].fillna(0)
 
-        # Optional debug
         if os.getenv("RISK_DEBUG") == "1":
             nz = (df[["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]] != 0).sum().to_dict()
             print("risk nonzero counts:", nz)
@@ -398,14 +446,12 @@ def build_feature_dataframe(
         for c in ["risk_today","risk_next_1d","risk_next_3d","risk_prev_1d"]:
             df[c] = 0
 
-    # 7) Finalize & return (chronology/VWAP/BB-fallback/cleanup/memory)
+    # 7) Finalize & return
     df = finalize_features(df)
-
-    # Keep rows that have basics for model/plotting
     return df.dropna(subset=["Close", "MA5", "MA10", "MA20"])
 
 # ────────────────────────────────────────────────────────────────────────────
-# XGBoost wrapper with retries
+# XGBoost wrapper with retries  (logs accuracy on success)
 # ────────────────────────────────────────────────────────────────────────────
 def safe_train_xgb_with_retries(
     tkr, start=None, end=None,
@@ -420,6 +466,14 @@ def safe_train_xgb_with_retries(
             mdl, Xts, yts, yhat, fb = train_xgb_predict(df)
             if yhat is None or len(yhat) == 0:
                 raise ValueError("empty pred")
+
+            # ✅ log accuracy if we have a valid eval set
+            if yts is not None and yhat is not None and len(yts) == len(yhat):
+                _compute_and_log_accuracy(
+                    tkr, np.asarray(yts), np.asarray(yhat),
+                    model="XGBoost (Short Term)", confidence=1.0
+                )
+
             return mdl, Xts, yts, yhat, fb
         except Exception as e:
             print(f"⚠️ Retry {look}d failed: {e}")
@@ -522,40 +576,68 @@ def forecast_today_movement(
         return intraday_msg, f"❌ Model error: {e}"
 
 # ────────────────────────────────────────────────────────────────────────────
-# Eval, logging & retrain wrappers
+# Eval, logging & retrain wrappers (Prophet CSV or XGB fallback)
 # ────────────────────────────────────────────────────────────────────────────
 def _latest_log(tkr: str):
     logs = [f for f in os.listdir(LOG_DIR) if f.startswith(f"forecast_{tkr}_")]
     return os.path.join(LOG_DIR, sorted(logs)[-1]) if logs else None
 
-
 def auto_retrain_forecast_model(tkr: str):
     """
-    Reads the latest forecast CSV, computes MAE/MSE/R2,
-    appends to EVAL_DIR/forecast_evals.csv, and returns the new row.
+    Prefer logging from the most recent Prophet forecast CSV if present.
+    If not, run a quick XGB eval and log MAE/MSE/R² instead.
     """
+    # 1) Prophet CSV path (if any)
     path = _latest_log(tkr)
-    if not path:
-        return
-    df_e = pd.read_csv(path).dropna(subset=["yhat", "actual"])
-    if df_e.empty:
-        return
 
-    err = df_e["actual"] - df_e["yhat"]
-    mae = err.abs().mean()
-    mse = (err**2).mean()
-    # r2 manual (avoid importing again)
-    ss_res = (err**2).sum()
-    ss_tot = ((df_e["actual"] - df_e["actual"].mean())**2).sum()
-    r2 = 1 - ss_res/ss_tot if ss_tot else np.nan
+    # 1a) If CSV exists, compute metrics from it
+    if path and os.path.exists(path):
+        df_e = pd.read_csv(path).dropna(subset=["yhat", "actual"])
+        if not df_e.empty:
+            err = df_e["actual"] - df_e["yhat"]
+            mae = float(err.abs().mean())
+            mse = float((err**2).mean())
+            ss_res = float((err**2).sum())
+            ss_tot = float(((df_e["actual"] - df_e["actual"].mean())**2).sum())
+            r2 = float(1 - ss_res/ss_tot) if ss_tot else float("nan")
 
-    row = pd.DataFrame([[datetime.now(), tkr, mae, mse, r2]],
-                       columns=["timestamp", "ticker", "mae", "mse", "r2"])
-    os.makedirs(EVAL_DIR, exist_ok=True)
-    eval_path = os.path.join(EVAL_DIR, "forecast_evals.csv")
-    row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path), index=False)
-    return row
+            row = pd.DataFrame([[datetime.now(), tkr, mae, mse, r2]],
+                               columns=["timestamp", "ticker", "mae", "mse", "r2"])
+            os.makedirs(EVAL_DIR, exist_ok=True)
+            eval_path = os.path.join(EVAL_DIR, "forecast_evals.csv")
+            row.to_csv(eval_path, mode="a", header=not os.path.exists(eval_path), index=False)
 
+            # Prophet-generated forecast → log as Prophet
+            try:
+                log_accuracy(tkr, mae, mse, r2, model="Prophet", confidence=1.0)
+            except Exception as e:
+                print(f"[accuracy_sink] log failed: {e}")
+
+            return row
+
+    # 2) Fallback: run XGB quickly and log its metrics
+    try:
+        mdl, Xts, yts, yhat, _ = safe_train_xgb_with_retries(tkr, init_look=360, max_look=720, step=180)
+        if yts is not None and yhat is not None and len(yts) == len(yhat):
+            _compute_and_log_accuracy(
+                tkr, np.asarray(yts), np.asarray(yhat),
+                model="XGBoost (Short Term)", confidence=1.0
+            )
+            # return a small DataFrame for UI parity
+            from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+            mae = float(mean_absolute_error(yts, yhat))
+            mse = float(mean_squared_error(yts, yhat))
+            try:
+                r2 = float(r2_score(yts, yhat))
+            except Exception:
+                r2 = float("nan")
+            return pd.DataFrame([[datetime.now(), tkr, mae, mse, r2]],
+                                columns=["timestamp", "ticker", "mae", "mse", "r2"])
+    except Exception as e:
+        print(f"[auto_retrain_forecast_model] XGB fallback failed: {e}")
+
+    # Nothing to log
+    return pd.DataFrame(columns=["timestamp", "ticker", "mae", "mse", "r2"])
 
 def run_auto_retrain_all(tickers: list[str]):
     dfs = []
@@ -577,7 +659,6 @@ try:
 except Exception:
     SHAP_AVAILABLE = False
 
-
 def plot_shap(model, X, top_n: int = 10):
     if not SHAP_AVAILABLE or model is None or X is None or X.empty:
         return
@@ -593,12 +674,10 @@ def load_forecast_tickers() -> list[str]:
         return ["AAPL", "MSFT"]
     return [ln.strip().upper() for ln in open(TICKER_FILE) if ln.strip()]
 
-
 def save_forecast_tickers(tkr_list: list[str]):
     with open(TICKER_FILE, "w") as f:
         for t in tkr_list:
             f.write(t.strip().upper() + "\n")
-
 
 def compute_rolling_accuracy(log_path: str) -> pd.DataFrame:
     df = pd.read_csv(log_path, parse_dates=["ds"]).sort_values("ds")
@@ -610,7 +689,6 @@ def compute_rolling_accuracy(log_path: str) -> pd.DataFrame:
     df["7d_accuracy"]      = df["correct"].rolling(7).mean()
     df["30d_accuracy"]     = df["correct"].rolling(30).mean()
     return df[["ds", "7d_accuracy", "30d_accuracy", "correct"]]
-
 
 def get_latest_forecast_log(tkr: str, log_dir: str = LOG_DIR) -> str | None:
     """
