@@ -1,14 +1,21 @@
-# forecast_utils.py v5.7 – env-guarded sentiment/insiders, smarter risk key use,
+# forecast_utils.py v5.8 – insider rolling features via insider_features,
+#                          env-guarded sentiment/insiders, smarter risk key use,
 #                          Neon accuracy logging kept; SQLite loader unchanged
 # ---------------------------------------------------------------------------
+
 from __future__ import annotations
 
 import os, sys, types, importlib.util, io, contextlib
 from datetime import datetime, timedelta
-
 import numpy as np
 import pandas as pd
 import yfinance as yf
+
+# Insider feature builders
+from insider_features import (
+    build_daily_insider_features,  # kept for future use (final_daily path)
+    add_rolling_insider_features,  # actively used below
+)
 
 # Optional TA; keep soft import to avoid hard failure
 try:
@@ -226,6 +233,15 @@ def _to_datetime(obj):
     except Exception:
         return None
 
+def _normalize_date_index(idx: pd.Index) -> pd.DatetimeIndex:
+    """Normalize any DatetimeIndex to tz-naive midnight for joining."""
+    di = pd.to_datetime(idx, errors="coerce")
+    try:
+        di = di.tz_localize(None)
+    except Exception:
+        pass
+    return di.normalize()
+
 def build_feature_dataframe(
     ticker: str,
     start=None,
@@ -234,7 +250,7 @@ def build_feature_dataframe(
     min_rows: int = 200
 ) -> pd.DataFrame:
     """
-    Download OHLCV → (optionally) insiders → TA → market context →
+    Download OHLCV → (optionally) insiders (daily + rolling via insider_features) → TA → market context →
     (optionally) sentiment → risk features → finalize.
     Use env flags to skip heavy bits during CLI runs:
       - NO_INSIDERS=1  → skip insider fetch/merge
@@ -257,58 +273,109 @@ def build_feature_dataframe(
     if df.empty or "Close" not in df.columns:
         return pd.DataFrame()
 
-    # 2) (Optional) Inject insider trades + holdings
+    # Ensure price index tz-naive midnight (important for joins)
+    df.index = _normalize_date_index(df.index)
+
+    # 2) (Optional) Inject insider trades + holdings, then derive rolling features
     if NO_INSIDERS:
         _dbg("insiders disabled via NO_INSIDERS=1")
-        for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
-            df[col] = 0
+        insider_cols = [
+            "insider_net_shares","insider_buy_count","insider_sell_count",
+            "hold_shares","hold_net_change",
+            # derived namespace from insider_features
+            "ins_net_shares","ins_net_shares_7d","ins_net_shares_30d",
+            "ins_buy_ct","ins_sell_ct","ins_buy_ct_7d","ins_sell_ct_7d",
+            "ins_holdings_delta","ins_holdings_delta_7d","ins_holdings_delta_30d",
+            "ins_exec_or_large_flag","ins_large_or_exec_7d","ins_large_or_exec_30d",
+            "ins_buy_minus_sell_ct","ins_abs_net_shares",
+            "ins_net_shares_norm","ins_holdings_delta_norm",
+            "ins_pressure_7d","ins_pressure_30d","ins_pressure_30d_z"
+        ]
+        for c in insider_cols:
+            df[c] = 0
     else:
         try:
-            ins_trades = fetch_insider_trades(ticker)  # expects 'ds'
-            ins_holds  = fetch_insider_holdings(ticker)
+            # Pull raw insider series (your ETL returns daily series indexed by 'ds')
+            ins_trades = fetch_insider_trades(ticker)   # expected to include columns like: insider_net_shares, insider_buy_count, insider_sell_count, 'ds'
+            ins_holds  = fetch_insider_holdings(ticker) # expected to include columns like: shares, net_change, 'ds'
 
-            # Ensure price index tz-naive
-            try:
-                df.index = pd.to_datetime(df.index, utc=False).tz_localize(None)
-            except Exception:
-                pass
-
-            def _prep(ins: pd.DataFrame) -> pd.DataFrame:
-                if isinstance(ins, pd.DataFrame) and not ins.empty and "ds" in ins.columns:
+            def _prep_idxed(ins: pd.DataFrame, date_col: str = "ds") -> pd.DataFrame:
+                if isinstance(ins, pd.DataFrame) and not ins.empty and (date_col in ins.columns):
                     ins = ins.copy()
-                    ins["ds"] = pd.to_datetime(ins["ds"], errors="coerce", utc=True).dt.tz_localize(None)
-                    ins = ins.dropna(subset=["ds"]).set_index("ds").sort_index()
+                    ins[date_col] = pd.to_datetime(ins[date_col], errors="coerce")
+                    ins[date_col] = _normalize_date_index(ins[date_col])
+                    ins = ins.dropna(subset=[date_col]).set_index(date_col).sort_index()
                     return ins
                 return pd.DataFrame()
 
-            ins_trades = _prep(ins_trades)
-            ins_holds  = _prep(ins_holds)
+            ins_trades = _prep_idxed(ins_trades, "ds")
+            ins_holds  = _prep_idxed(ins_holds,  "ds")
 
+            # Join raw ETL outputs onto price df (keeps legacy columns for continuity)
             if not ins_trades.empty:
                 df = df.join(ins_trades, how="left")
-
             if not ins_holds.empty:
                 df = df.join(
                     ins_holds.rename(columns={"shares": "hold_shares", "net_change": "hold_net_change"}),
                     how="left"
                 )
 
-            # ensure expected cols exist → fillna(0)
-            need = ["insider_net_shares", "insider_buy_count", "insider_sell_count",
-                    "hold_shares", "hold_net_change"]
-            for col in need:
+            # Ensure expected legacy cols exist
+            base_need = ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]
+            for col in base_need:
                 if col not in df.columns:
                     df[col] = 0
-            df[need] = df[need].fillna(0)
+            df[base_need] = df[base_need].fillna(0)
+
+            # ── Derive modern insider features via insider_features.add_rolling_insider_features ──
+            # Build minimal price frame for the helper (must contain ticker/date and ideally Close)
+            price_df = pd.DataFrame({
+                "ticker": ticker,
+                "date":   df.index.date,
+                "close":  df["Close"].values
+            })
+            # Synthesize a daily insider frame compatible with add_rolling_insider_features
+            insider_daily_df = pd.DataFrame({
+                "ticker":        ticker,
+                "date":          df.index.date,
+                "net_shares":    df["insider_net_shares"].fillna(0).values,
+                "num_buy_tx":    df["insider_buy_count"].fillna(0).values,
+                "num_sell_tx":   df["insider_sell_count"].fillna(0).values,
+                "holdings_delta":df["hold_net_change"].fillna(0).values,
+                # exec/large flags unavailable at this stage → default 0 (function tolerates)
+            })
+
+            # Run the rolling feature builder
+            enriched = add_rolling_insider_features(price_df, insider_daily_df)
+
+            # Merge enriched insider namespaced columns back onto df by date
+            enriched.index = pd.to_datetime(enriched["date"])
+            enriched.index = _normalize_date_index(enriched.index)
+
+            cols_to_merge = [c for c in enriched.columns if c.startswith("ins_")]
+            df = df.join(enriched[cols_to_merge], how="left")
+            df[cols_to_merge] = df[cols_to_merge].fillna(0)
+
         except Exception as e:
             print(f"⚠️ Insider merge error: {e}")
-            for col in ["insider_net_shares","insider_buy_count","insider_sell_count","hold_shares","hold_net_change"]:
-                df[col] = 0
+            # Fall back to zeros to keep pipeline stable
+            for c in [
+                "insider_net_shares","insider_buy_count","insider_sell_count",
+                "hold_shares","hold_net_change",
+                "ins_net_shares","ins_net_shares_7d","ins_net_shares_30d",
+                "ins_buy_ct","ins_sell_ct","ins_buy_ct_7d","ins_sell_ct_7d",
+                "ins_holdings_delta","ins_holdings_delta_7d","ins_holdings_delta_30d",
+                "ins_exec_or_large_flag","ins_large_or_exec_7d","ins_large_or_exec_30d",
+                "ins_buy_minus_sell_ct","ins_abs_net_shares",
+                "ins_net_shares_norm","ins_holdings_delta_norm",
+                "ins_pressure_7d","ins_pressure_30d","ins_pressure_30d_z"
+            ]:
+                df[c] = 0
 
     # Ensure chronology after joins
     df.sort_index(inplace=True)
 
-    # --- Insider feature engineering (after merge) -----------------------
+    # --- Legacy insider feature engineering (kept for continuity; works alongside namespaced) ---
     def _signed_log1p(x):
         return np.sign(x) * np.log1p(np.abs(x))
 
@@ -378,6 +445,7 @@ def build_feature_dataframe(
                 auto_adjust=True,
                 progress=False
             )["Close"]
+            etf_price.index = _normalize_date_index(etf_price.index)
             df[f"{etf}_ret"] = etf_price.pct_change()
         except Exception:
             df[f"{etf}_ret"] = np.nan
@@ -423,9 +491,7 @@ def build_feature_dataframe(
                             .dt.normalize()
 
         df = df.copy()
-        df["date"] = pd.to_datetime(df.index, errors="coerce")\
-                        .tz_localize(None)\
-                        .normalize()
+        df["date"] = df.index
 
         # Join on normalized date
         risk_idxed = risk.set_index("date")
@@ -502,7 +568,9 @@ def forecast_price_trend(
     regs = []
     for col in [
         "sent_positive", "sent_neutral", "sent_negative",
-        "insider_net_shares", "insider_buy_count", "insider_sell_count"
+        "insider_net_shares", "insider_buy_count", "insider_sell_count",
+        # Optionally include modern namespaced insider signals (robust to missing):
+        "ins_pressure_30d_z", "ins_large_or_exec_7d", "ins_net_shares_7d"
     ]:
         if col in df.columns:
             dfp[col] = df[col].values
