@@ -2,7 +2,7 @@ name: Daily Forecast Retraining
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # 01:00 UTC nightly
+    - cron: {}
   workflow_dispatch:
 
 permissions:

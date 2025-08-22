@@ -1,0 +1,81 @@
+name: Nightly Ops (Accuracy → Conditional Retrain)
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # 01:00 UTC nightly
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nightly-ops-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TZ: UTC
+  PYTHONUNBUFFERED: "1"
+  NO_SENTIMENT: "1"   # avoid slow flaky external calls while CI-ing
+  NO_INSIDERS: "1"
+
+jobs:
+  log-accuracy:
+    runs-on: ubuntu-latest
+    env:
+      ACCURACY_DSN: ${{ secrets.ACCURACY_DSN }}   # <-- Neon DSN (required)
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Make repo importable
+        run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+      - name: Log accuracy to Neon
+        run: |
+          export PYTHONPATH="$GITHUB_WORKSPACE"
+          python scripts/log_accuracy_batch.py
+
+  retrain-if-degraded:
+    needs: log-accuracy
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      ACCURACY_DSN: ${{ secrets.ACCURACY_DSN }}
+      # Optional thresholds your script can read (tune as you like):
+      DEGRADE_WINDOW_DAYS: "7"
+      MAE_WORSE_PCT: "25"       # >25% worse than trailing window
+      R2_MIN: "0.15"            # or whatever your floor is
+      # Any model/data provider keys your training uses:
+      FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+      FMP_API_KEY:     ${{ secrets.FMP_API_KEY }}
+      NYT_API_KEY:     ${{ secrets.NYT_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: "pip"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Make repo importable
+        run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+      - name: Retrain only if degraded
+        run: |
+          export PYTHONPATH="$GITHUB_WORKSPACE"
+          python scripts/retrain_if_degraded.py
+      - name: Upload forecast logs (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forecast-logs
+          path: forecast_logs/
+          if-no-files-found: ignore

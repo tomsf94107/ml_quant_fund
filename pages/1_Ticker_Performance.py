@@ -177,6 +177,7 @@ if page == "Importances Over Time":
 
 st.title("📈 ML-Based Stock Strategy Dashboard")
 st.caption(f"🕒 Last updated {datetime.now():%Y-%m-%d %H:%M:%S}")
+st.button("🔄 Refresh accuracy cache", on_click=st.cache_data.clear)
 
 # ──────────────────────────  SIDEBAR  ───────────────────────────────────────
 with st.sidebar:
@@ -520,21 +521,30 @@ st.subheader("📊 Forecast Accuracy Dashboard")
 
 @st.cache_data(ttl=300)
 def get_acc_df():
-    # Prefer Postgres via ACCURACY_DSN; load_accuracy_any falls back to SQLite if unset
-    df = load_accuracy_any()
+    # Prefer Postgres via ACCURACY_DSN
+    src = "Neon/Postgres" if os.getenv("ACCURACY_DSN") else "SQLite"
+    df = pd.DataFrame()
+    try:
+        df = load_accuracy_any()  # uses ACCURACY_DSN if set
+    except Exception as e:
+        st.warning(f"Postgres load failed: {e}")
+        df = pd.DataFrame()
+
+    # Fallback to local SQLite if Postgres returned nothing
     if df.empty:
-        # Optional explicit fallback: load a specific local SQLite file if provided
         try:
             from loader import load_eval_logs_from_forecast_db
             df = load_eval_logs_from_forecast_db(os.getenv("FORECAST_ACCURACY_DB"))
+            src = "SQLite"
         except Exception:
-            pass
-    return df
+            src = "None"
+            df = pd.DataFrame(columns=["date","ticker","mae","mse","r2","model","confidence"])
+    return df, src
 
-acc_df = get_acc_df()
+acc_df, source = get_acc_df()
 
 with st.expander("🔧 Accuracy datasource debug", expanded=False):
-    st.write("Rows loaded:", len(acc_df))
+    st.write("Source:", source, "| rows:", len(acc_df))
     if not acc_df.empty:
         st.write("Date range:", acc_df["date"].min(), "→", acc_df["date"].max())
         st.dataframe(acc_df.sort_values("date")[["date","ticker","mae","mse","r2"]].tail(5))
@@ -568,3 +578,4 @@ else:
         st.line_chart(chart_df)
     else:
         st.warning("No numeric accuracy data to plot yet.")
+
