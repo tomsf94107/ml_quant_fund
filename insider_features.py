@@ -1,137 +1,157 @@
-# insider_features.py
-import pandas as pd
+# ml_quant_fund/insider_features.py
+# Minimal, robust insider feature builders used by the UI.
+
+from __future__ import annotations
 import numpy as np
-
-REQUIRED_INSIDER_COLS = [
-    "ticker","filed_date","net_shares","num_buy_tx","num_sell_tx",
-    "num_exercise_like","max_txn_value_usd","any_exec_trade","large_tx_flag","holdings_delta"
-]
-
-def _ensure_dt(df, col="filed_date"):
-    d = df.copy()
-    if col in d.columns:
-        d[col] = pd.to_datetime(d[col], errors="coerce").dt.date
-    return d
+import pandas as pd
 
 def build_daily_insider_features(final_daily: pd.DataFrame) -> pd.DataFrame:
     """
-    Input (from ETL merge step):
-      final_daily columns:
-        ['ticker','filed_date','net_shares','num_buy_tx','num_sell_tx','num_exercise_like',
-         'max_txn_value_usd','any_exec_trade','large_tx_flag','holdings_delta']
-    Output: daily insider feature frame (same grain: ticker+date)
+    Normalize ETL 'final_daily' into one row per (ticker, date) with basic columns the UI expects.
+    Expected (but optional) columns in final_daily:
+      - filed_date/date, ticker
+      - net_shares, num_buy_tx, num_sell_tx, holdings_delta
+      - any_exec_trade, large_tx_flag, max_txn_value_usd
     """
-    if final_daily is None or len(final_daily) == 0:
-        return pd.DataFrame(columns=["ticker","date"])
+    if final_daily is None or final_daily.empty:
+        return pd.DataFrame(columns=[
+            "ticker","date","ins_net_shares","ins_buy_ct","ins_sell_ct",
+            "ins_holdings_delta","any_exec_trade","large_tx_flag","max_txn_value_usd"
+        ])
 
-    d = final_daily.copy()
-    # normalize schema
-    d = _ensure_dt(d, "filed_date").rename(columns={"filed_date":"date"})
-    # Safety: keep only known columns if present
-    keep = ["ticker","date"] + [c for c in REQUIRED_INSIDER_COLS if c in final_daily.columns and c not in ["ticker","filed_date"]]
-    d = d[keep].copy()
+    df = final_daily.copy()
 
-    # Base daily signals
-    d["exec_or_large_tx_flag"] = (d.get("any_exec_trade", False).astype(bool) | d.get("large_tx_flag", False).astype(bool)).astype(int)
-    d["buy_minus_sell_ct"] = d.get("num_buy_tx", 0) - d.get("num_sell_tx", 0)
-    d["abs_net_shares"] = d.get("net_shares", 0).abs()
+    # Ensure date & ticker
+    if "filed_date" in df.columns:
+        df["date"] = pd.to_datetime(df["filed_date"], errors="coerce").dt.date
+    elif "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce").dt.date
+    else:
+        raise ValueError("final_daily must include 'filed_date' or 'date'.")
 
-    # Done—return daily level; rolling will be computed after joining with a full date index
-    return d
+    if "ticker" not in df.columns:
+        raise ValueError("final_daily must include 'ticker'.")
 
-def add_rolling_insider_features(price_df: pd.DataFrame, insider_daily_df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Inputs:
-      price_df: columns ['ticker','date', ...] daily calendar for each ticker (no gaps preferred)
-      insider_daily_df: output of build_daily_insider_features()
-    Returns:
-      price_df with insider features merged + rolling aggregates.
-    """
-    if insider_daily_df is None or len(insider_daily_df) == 0:
-        # return original with empty cols to keep downstream stable
-        out = price_df.copy()
-        for c in [
-            "ins_net_shares","ins_buy_ct","ins_sell_ct","ins_holdings_delta",
-            "ins_exec_or_large_flag","ins_buy_minus_sell_ct","ins_abs_net_shares",
-            "ins_net_shares_7d","ins_net_shares_30d",
-            "ins_buy_ct_7d","ins_sell_ct_7d",
-            "ins_holdings_delta_7d","ins_holdings_delta_30d",
-            "ins_pressure_7d","ins_pressure_30d",
-            "ins_large_or_exec_7d","ins_large_or_exec_30d"
-        ]:
-            out[c] = 0
-        return out
-
-    d = insider_daily_df.copy()
-    d = _ensure_dt(d, "date")
-
-    # Rename to namespaced columns before merge
-    rename_map = {
-        "net_shares": "ins_net_shares",
-        "num_buy_tx": "ins_buy_ct",
-        "num_sell_tx": "ins_sell_ct",
-        "holdings_delta": "ins_holdings_delta",
-        "exec_or_large_tx_flag": "ins_exec_or_large_flag",
-        "buy_minus_sell_ct": "ins_buy_minus_sell_ct",
-        "abs_net_shares": "ins_abs_net_shares",
+    # Ensure the numeric/flag columns exist
+    defaults = {
+        "net_shares": 0.0,
+        "num_buy_tx": 0.0,
+        "num_sell_tx": 0.0,
+        "holdings_delta": 0.0,
+        "any_exec_trade": 0,
+        "large_tx_flag": 0,
+        "max_txn_value_usd": 0.0,
     }
-    d = d.rename(columns=rename_map)
+    for c, v in defaults.items():
+        if c not in df.columns:
+            df[c] = v
 
-    # Merge onto price_df
-    out = price_df.copy()
-    out["date"] = pd.to_datetime(out["date"], errors="coerce").dt.date
+    # Coerce numerics & flags
+    num_cols = ["net_shares","num_buy_tx","num_sell_tx","holdings_delta","max_txn_value_usd"]
+    for c in num_cols:
+        df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0.0)
+
+    for c in ["any_exec_trade","large_tx_flag"]:
+        df[c] = (pd.to_numeric(df[c], errors="coerce").fillna(0) > 0).astype(int)
+
+    # Aggregate to daily
+    agg = (
+        df.groupby(["ticker","date"], as_index=False)
+          .agg(
+              net_shares        = ("net_shares","sum"),
+              ins_buy_ct        = ("num_buy_tx","sum"),
+              ins_sell_ct       = ("num_sell_tx","sum"),
+              ins_holdings_delta= ("holdings_delta","sum"),
+              any_exec_trade    = ("any_exec_trade","max"),
+              large_tx_flag     = ("large_tx_flag","max"),
+              max_txn_value_usd = ("max_txn_value_usd","max"),
+          )
+    )
+    agg = agg.rename(columns={"net_shares": "ins_net_shares"})
+    return agg
+
+def _roll_sum(s: pd.Series, window: int, minp: int = 1) -> pd.Series:
+    return s.rolling(window, min_periods=minp).sum()
+
+def add_rolling_insider_features(px_df: pd.DataFrame, daily_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Merge price calendar with daily insider features and add rolling aggregates:
+      - ins_net_shares_{7d,30d}
+      - ins_buy_ct_{7d,30d}, ins_sell_ct_{7d,30d}
+      - ins_large_or_exec_7d
+      - ins_pressure_30d, ins_pressure_30d_z
+      - PLUS derived daily columns expected elsewhere:
+        * ins_exec_or_large_flag  (alias of any_exec_trade OR large_tx_flag)
+        * ins_buy_minus_sell_ct   (ins_buy_ct - ins_sell_ct)
+        * ins_abs_net_shares      (abs(ins_net_shares))
+    """
+    if px_df is None or px_df.empty:
+        return pd.DataFrame()
+
+    cal = px_df.copy()
+    cal["date"] = pd.to_datetime(cal["date"], errors="coerce").dt.date
+    if "ticker" not in cal.columns:
+        cal["ticker"] = cal.get("Ticker", cal.get("symbol", ""))
+
+    d = daily_df.copy() if isinstance(daily_df, pd.DataFrame) else pd.DataFrame()
+    if d.empty:
+        d = pd.DataFrame(columns=[
+            "ticker","date","ins_net_shares","ins_buy_ct","ins_sell_ct",
+            "ins_holdings_delta","any_exec_trade","large_tx_flag","max_txn_value_usd"
+        ])
     d["date"] = pd.to_datetime(d["date"], errors="coerce").dt.date
 
-    out = out.merge(d, on=["ticker","date"], how="left")
+    m = cal.merge(d, on=["ticker","date"], how="left")
 
-    # Fill NA after merge
-    fill_zeros = [
-        "ins_net_shares","ins_buy_ct","ins_sell_ct","ins_holdings_delta",
-        "ins_exec_or_large_flag","ins_buy_minus_sell_ct","ins_abs_net_shares"
-    ]
-    out[fill_zeros] = out[fill_zeros].fillna(0)
+    # Ensure numeric/flag columns exist
+    for c in ["ins_net_shares","ins_buy_ct","ins_sell_ct","ins_holdings_delta","any_exec_trade","large_tx_flag"]:
+        if c not in m.columns:
+            m[c] = 0
+        m[c] = pd.to_numeric(m[c], errors="coerce").fillna(0)
 
-    # Optional normalization if you have float shares or market cap.
-    # Provide either 'shares_outstanding' or 'market_cap' in price_df.
-    if "shares_outstanding" in out.columns:
-        so = out["shares_outstanding"].replace({0:np.nan})
-        out["ins_net_shares_norm"] = out["ins_net_shares"] / so
-        out["ins_holdings_delta_norm"] = out["ins_holdings_delta"] / so
-    elif "market_cap" in out.columns and "close" in out.columns:
-        # Convert shares via market_cap/price as rough proxy
-        shares_proxy = (out["market_cap"] / out["close"]).replace({0:np.nan})
-        out["ins_net_shares_norm"] = out["ins_net_shares"] / shares_proxy
-        out["ins_holdings_delta_norm"] = out["ins_holdings_delta"] / shares_proxy
-    else:
-        out["ins_net_shares_norm"] = 0.0
-        out["ins_holdings_delta_norm"] = 0.0
+    # Base flags
+    m["is_large_or_exec"] = ((m["any_exec_trade"] > 0) | (m["large_tx_flag"] > 0)).astype(int)
 
-    # Rolling features per ticker
-    out = out.sort_values(["ticker","date"])
-    def roll(group):
-        g = group.copy()
-        g["ins_net_shares_7d"] = g["ins_net_shares"].rolling(7, min_periods=1).sum()
-        g["ins_net_shares_30d"] = g["ins_net_shares"].rolling(30, min_periods=1).sum()
-        g["ins_buy_ct_7d"] = g["ins_buy_ct"].rolling(7, min_periods=1).sum()
-        g["ins_sell_ct_7d"] = g["ins_sell_ct"].rolling(7, min_periods=1).sum()
-        g["ins_holdings_delta_7d"] = g["ins_holdings_delta"].rolling(7, min_periods=1).sum()
-        g["ins_holdings_delta_30d"] = g["ins_holdings_delta"].rolling(30, min_periods=1).sum()
-        g["ins_large_or_exec_7d"] = g["ins_exec_or_large_flag"].rolling(7, min_periods=1).sum()
-        g["ins_large_or_exec_30d"] = g["ins_exec_or_large_flag"].rolling(30, min_periods=1).sum()
+    # --- Derived daily columns REQUIRED elsewhere ---
+    m["ins_exec_or_large_flag"] = m["is_large_or_exec"].astype(int)
+    m["ins_buy_minus_sell_ct"]  = (m["ins_buy_ct"] - m["ins_sell_ct"]).astype(float)
+    m["ins_abs_net_shares"]     = m["ins_net_shares"].abs().astype(float)
 
-        # Insider pressure = net_shares + 0.5*holdings_delta + 0.25*buy_minus_sell_ct (tunable)
-        base = g["ins_net_shares"] + 0.5*g["ins_holdings_delta"] + 0.25*g["ins_buy_minus_sell_ct"]
-        g["ins_pressure_7d"] = base.rolling(7, min_periods=1).sum()
-        g["ins_pressure_30d"] = base.rolling(30, min_periods=1).sum()
+    m = m.sort_values(["ticker","date"])
 
-        # Optionally z-score normalize rolling insider pressure per ticker
-        g["ins_pressure_30d_z"] = (g["ins_pressure_30d"] - g["ins_pressure_30d"].rolling(120, min_periods=20).mean()) / (
-            g["ins_pressure_30d"].rolling(120, min_periods=20).std(ddof=0)
-        )
+    def _roll_sum(s: pd.Series, window: int, minp: int = 1) -> pd.Series:
+        return s.rolling(window, min_periods=minp).sum()
+
+    def _by_ticker(g: pd.DataFrame) -> pd.DataFrame:
+        g = g.copy()
+        # Rolling sums (~trading-day windows by row count)
+        g["ins_net_shares_7d"]    = _roll_sum(g["ins_net_shares"], 7)
+        g["ins_net_shares_30d"]   = _roll_sum(g["ins_net_shares"], 30)
+        g["ins_buy_ct_7d"]        = _roll_sum(g["ins_buy_ct"], 7)
+        g["ins_buy_ct_30d"]       = _roll_sum(g["ins_buy_ct"], 30)
+        g["ins_sell_ct_7d"]       = _roll_sum(g["ins_sell_ct"], 7)
+        g["ins_sell_ct_30d"]      = _roll_sum(g["ins_sell_ct"], 30)
+        g["ins_large_or_exec_7d"] = _roll_sum(g["is_large_or_exec"], 7)
+
+        # Pressure: z-score of 30d flow (optionally scaled by shares_outstanding)
+        base = g["ins_net_shares_30d"].astype(float)
+        if "shares_outstanding" in g.columns and g["shares_outstanding"].notna().any():
+            denom = pd.to_numeric(g["shares_outstanding"], errors="coerce").replace(0, np.nan)
+            base = base / denom
+
+        mean180 = base.rolling(180, min_periods=30).mean()
+        std180  = base.rolling(180, min_periods=30).std(ddof=0)
+        g["ins_pressure_30d"]   = base
+        g["ins_pressure_30d_z"] = (base - mean180) / std180.replace(0, np.nan)
+
         return g
 
-    out = out.groupby("ticker", group_keys=False).apply(roll)
+    out = m.groupby("ticker", group_keys=False).apply(_by_ticker)
 
-    # Final NA safety
-    out = out.fillna(0)
+    # Guarantee the three expected columns exist even if groupby path changed
+    for c in ["ins_exec_or_large_flag","ins_buy_minus_sell_ct","ins_abs_net_shares"]:
+        if c not in out.columns:
+            out[c] = 0
+
     return out
+
