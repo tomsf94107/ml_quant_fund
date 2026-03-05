@@ -1,0 +1,29 @@
+# Secrets — NEVER commit
+.streamlit/secrets.toml
+
+# Large model files — retrain on deployment
+models/saved/*.joblib
+models/saved/*.pkl
+
+# Databases — local only
+*.db
+*.sqlite
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Mac junk
+.DS_Store
+**/.DS_Store
+
+# Env
+.env
+.venv
+venv/
+
+# Alerts __init__ (wrong name)
+alerts/alerts__init__.py

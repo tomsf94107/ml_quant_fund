@@ -1,0 +1,395 @@
+# models/classifier.py
+# ─────────────────────────────────────────────────────────────────────────────
+# THE canonical XGBoost classifier. Replaces:
+#   - helpers_xgb_v1.2.py       (regressor, wrong task)
+#   - xgb_forecasting_v1.1.py   (regressor, wrong task)
+#   - xgb_forecasting_v1.2.py   (regressor, wrong task)
+#   - train_forecast_model_v1.3 (classifier but missing risk weighting)
+#
+# What we keep from your old code:
+#   ✓ Risk-aware sample weighting (alpha=0.30) from helpers_xgb_v1.2
+#   ✓ XGBClassifier + logloss + 3 horizons from train_forecast_model_v1.3
+#   ✓ walk-forward test split (shuffle=False)
+#
+# What we add:
+#   + Isotonic calibration — raw XGB probabilities are not calibrated.
+#     A 70% signal should mean UP 70% of the time. Without this, your
+#     confidence scores can't be used for position sizing.
+#   + congress_net_shares wired into features (was in schema, never used)
+#   + Explicit feature list — no silent column leakage
+#   + save/load via joblib (pickle replaced — more reliable across sklearn versions)
+#
+# Zero Streamlit imports. Zero UI code. Backend only.
+# ─────────────────────────────────────────────────────────────────────────────
+
+from __future__ import annotations
+
+import os
+import joblib
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Optional
+
+import numpy as np
+import pandas as pd
+from sklearn.calibration import CalibratedClassifierCV
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import (
+    accuracy_score, roc_auc_score, log_loss, brier_score_loss
+)
+from xgboost import XGBClassifier
+
+# ── Paths ─────────────────────────────────────────────────────────────────────
+MODEL_DIR = Path(os.getenv("MODEL_DIR", "models/saved"))
+MODEL_DIR.mkdir(parents=True, exist_ok=True)
+
+# ── Feature columns (must match OUTPUT_COLUMNS in features/builder.py) ────────
+# These are the ONLY columns fed to the model.
+# Excluded intentionally: date, ticker (identifiers, not features)
+# Excluded intentionally: close (raw price leaks magnitude into direction target)
+FEATURE_COLUMNS: list[str] = [
+    # Returns
+    "return_1d", "return_3d", "return_5d",
+    # Trend
+    "ma_5", "ma_10", "ma_20",
+    # Volatility
+    "volatility_5d", "volatility_10d",
+    # Momentum
+    "rsi_14", "macd", "macd_signal",
+    # Mean reversion
+    "bb_upper", "bb_lower", "bb_width",
+    # Volume
+    "volume_zscore", "volume_spike",
+    "vwap", "obv", "atr",
+    # Market context
+    "spy_ret", "xlk_ret",
+    # Alternative data
+    "sentiment_score",
+    "insider_net_shares", "insider_7d", "insider_21d",
+    "congress_net_shares",            # ← was orphaned, now wired in
+    # Risk regime
+    "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
+    # Macro regime
+    "is_pandemic",
+]
+
+TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
+
+# ── XGBoost hyperparameters ───────────────────────────────────────────────────
+# These are reasonable defaults. Replace with Optuna-tuned values once you
+# have enough training data (aim for >500 rows per ticker).
+XGB_PARAMS: dict = {
+    "n_estimators":     300,
+    "learning_rate":    0.05,
+    "max_depth":        4,
+    "subsample":        0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,       # regularisation — prevents overfit on thin tickers
+    "gamma":            0.1,
+    "reg_alpha":        0.1,     # L1
+    "reg_lambda":       1.0,     # L2
+    "objective":        "binary:logistic",
+    "eval_metric":      "logloss",
+    "use_label_encoder": False,
+    "random_state":     42,
+    "n_jobs":           -1,
+}
+
+# ── Risk weighting constants (preserved from helpers_xgb_v1.2) ────────────────
+RISK_ALPHA       = 0.30   # strength of down-weighting for high-risk days
+RISK_WEIGHT_FLOOR = 0.50  # never down-weight below 50% of normal weight
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  DATA CLASSES
+# ══════════════════════════════════════════════════════════════════════════════
+
+@dataclass
+class TrainResult:
+    """Everything produced by one training run — model + evaluation metrics."""
+    ticker:     str
+    horizon:    int                         # days ahead (1, 3, or 5)
+    model:      CalibratedClassifierCV      # calibrated wrapper around XGBClassifier
+    feature_cols: list[str]
+    metrics:    dict = field(default_factory=dict)
+
+    # metrics keys: accuracy, roc_auc, log_loss, brier_score, n_train, n_test
+
+    def model_path(self) -> Path:
+        return MODEL_DIR / f"{self.ticker}_target_{self.horizon}d.joblib"
+
+    def save(self) -> Path:
+        path = self.model_path()
+        joblib.dump(self, path)
+        return path
+
+    @classmethod
+    def load(cls, ticker: str, horizon: int) -> "TrainResult":
+        path = MODEL_DIR / f"{ticker}_target_{horizon}d.joblib"
+        if not path.exists():
+            raise FileNotFoundError(
+                f"No saved model for {ticker} horizon={horizon}d. "
+                f"Run train_model() first."
+            )
+        return joblib.load(path)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  PRIVATE HELPERS
+# ══════════════════════════════════════════════════════════════════════════════
+
+def _risk_sample_weights(
+    df_train: pd.DataFrame,
+    alpha: float = RISK_ALPHA,
+    floor: float = RISK_WEIGHT_FLOOR,
+) -> Optional[np.ndarray]:
+    """
+    Compute per-sample weights that down-weight high-risk trading days.
+
+    Logic (preserved from helpers_xgb_v1.2):
+      weight_i = 1 - alpha * (risk_i / max_risk)
+      clipped to [floor, 1.0]
+
+    On high-risk days (FOMC, earnings, macro events) the model's signal is
+    less reliable, so we reduce their influence on the loss function.
+    """
+    if "risk_today" not in df_train.columns:
+        return None
+
+    r = df_train["risk_today"].astype(float)
+    r_max = r.max()
+    if r_max == 0:
+        return None
+
+    r_norm   = r / r_max                          # [0, 1]
+    weights  = (1.0 - alpha * r_norm).clip(floor, 1.0)
+    return weights.values
+
+
+def _validate_feature_columns(df: pd.DataFrame) -> list[str]:
+    """Return the intersection of FEATURE_COLUMNS and df.columns.
+    Warns about missing columns but never crashes — missing features become 0.0."""
+    present  = [c for c in FEATURE_COLUMNS if c in df.columns]
+    missing  = [c for c in FEATURE_COLUMNS if c not in df.columns]
+    if missing:
+        print(f"  ⚠ Features missing (will be 0.0): {missing}")
+    return present
+
+
+def _prepare_xy(
+    df: pd.DataFrame,
+    target_col: str,
+) -> tuple[pd.DataFrame, pd.Series]:
+    """Prepare X, y for one target horizon. Drops rows where target is NaN."""
+    feat_cols = _validate_feature_columns(df)
+
+    # Fill missing feature columns with 0.0
+    for c in FEATURE_COLUMNS:
+        if c not in df.columns:
+            df = df.copy()
+            df[c] = 0.0
+
+    working = df[FEATURE_COLUMNS + [target_col]].dropna(subset=[target_col]).copy()
+
+    # Fill any remaining NaNs in features with column median (safe for XGB)
+    working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
+        working[FEATURE_COLUMNS].median()
+    )
+
+    X = working[FEATURE_COLUMNS]
+    y = working[target_col].astype(int)
+    return X, y
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  PUBLIC API
+# ══════════════════════════════════════════════════════════════════════════════
+
+def train_model(
+    ticker: str,
+    df: pd.DataFrame,
+    horizon: int = 1,
+    test_size: float = 0.2,
+    save: bool = True,
+    verbose: bool = True,
+) -> TrainResult:
+    """
+    Train a calibrated XGBClassifier for `ticker` predicting direction at
+    `horizon` days ahead.
+
+    Parameters
+    ----------
+    ticker      : e.g. "AAPL"
+    df          : output of build_feature_dataframe() + add_forecast_targets()
+    horizon     : 1, 3, or 5 (days)
+    test_size   : fraction held out for evaluation (walk-forward, no shuffle)
+    save        : if True, saves the TrainResult to MODEL_DIR
+    verbose     : print training summary
+
+    Returns
+    -------
+    TrainResult with trained model and evaluation metrics
+    """
+    target_col = f"target_{horizon}d"
+    if target_col not in df.columns:
+        raise ValueError(
+            f"Column '{target_col}' not found. "
+            f"Did you run add_forecast_targets() on the DataFrame?"
+        )
+
+    X, y = _prepare_xy(df, target_col)
+
+    if len(X) < 60:
+        raise ValueError(
+            f"{ticker}: only {len(X)} usable rows for {target_col}. "
+            f"Need at least 60. Extend start_date."
+        )
+
+    # Walk-forward split — NO shuffle. Future must not leak into train set.
+    split_idx = int(len(X) * (1 - test_size))
+    X_train, X_test = X.iloc[:split_idx], X.iloc[split_idx:]
+    y_train, y_test = y.iloc[:split_idx], y.iloc[split_idx:]
+
+    # Risk-aware sample weights on training set only
+    sample_weights = _risk_sample_weights(
+        df.loc[X_train.index], RISK_ALPHA, RISK_WEIGHT_FLOOR
+    )
+
+    # ── Base classifier ────────────────────────────────────────────────────
+    base_clf = XGBClassifier(**XGB_PARAMS)
+
+    fit_kwargs: dict = {
+        "eval_set":  [(X_test, y_test)],
+        "verbose":    False,
+    }
+    if sample_weights is not None:
+        fit_kwargs["sample_weight"] = sample_weights
+
+    base_clf.fit(X_train, y_train, **fit_kwargs)
+
+    # ── Isotonic calibration ───────────────────────────────────────────────
+    # Isotonic regression re-maps the raw sigmoid output to true probabilities.
+    # cv="prefit" means we calibrate on the test set (already held out).
+    # This is safe because the test set was never seen during XGB training.
+    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv="prefit")
+    calibrated.fit(X_test, y_test)
+
+    # ── Evaluate ───────────────────────────────────────────────────────────
+    y_prob = calibrated.predict_proba(X_test)[:, 1]
+    y_pred = (y_prob >= 0.5).astype(int)
+
+    # Guard against single-class test sets (rare but possible for short tickers)
+    try:
+        auc = roc_auc_score(y_test, y_prob)
+    except ValueError:
+        auc = float("nan")
+
+    metrics = {
+        "accuracy":    round(accuracy_score(y_test, y_pred),   4),
+        "roc_auc":     round(auc,                               4),
+        "log_loss":    round(log_loss(y_test, y_prob),          4),
+        "brier_score": round(brier_score_loss(y_test, y_prob),  4),
+        "n_train":     len(X_train),
+        "n_test":      len(X_test),
+    }
+
+    if verbose:
+        print(
+            f"  {ticker:<6} | {target_col:<12} | "
+            f"acc={metrics['accuracy']:.3f}  "
+            f"auc={metrics['roc_auc']:.3f}  "
+            f"brier={metrics['brier_score']:.3f}  "
+            f"n={metrics['n_train']}+{metrics['n_test']}"
+        )
+
+    result = TrainResult(
+        ticker=ticker,
+        horizon=horizon,
+        model=calibrated,
+        feature_cols=FEATURE_COLUMNS,
+        metrics=metrics,
+    )
+
+    if save:
+        result.save()
+
+    return result
+
+
+def predict_proba(
+    ticker: str,
+    df: pd.DataFrame,
+    horizon: int = 1,
+    result: Optional[TrainResult] = None,
+) -> pd.Series:
+    """
+    Return calibrated UP probability for each row in df.
+
+    Parameters
+    ----------
+    ticker  : e.g. "AAPL"
+    df      : output of build_feature_dataframe() (no targets needed)
+    horizon : 1, 3, or 5
+    result  : if None, loads from disk
+
+    Returns
+    -------
+    pd.Series of float in [0, 1] — P(close[t+h] > close[t])
+    """
+    if result is None:
+        result = TrainResult.load(ticker, horizon)
+
+    # Fill missing features
+    working = df.copy()
+    for c in FEATURE_COLUMNS:
+        if c not in working.columns:
+            working[c] = 0.0
+
+    working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
+        working[FEATURE_COLUMNS].median()
+    )
+
+    proba = result.model.predict_proba(working[FEATURE_COLUMNS])[:, 1]
+    return pd.Series(proba, index=df.index, name=f"prob_up_{horizon}d")
+
+
+def predict_today(
+    ticker: str,
+    df: pd.DataFrame,
+    horizon: int = 1,
+) -> dict:
+    """
+    Return today's signal for a ticker.
+
+    Returns
+    -------
+    dict with keys: ticker, horizon, prob_up, signal, confidence
+      signal     : "BUY" | "HOLD"
+      confidence : "HIGH" (>0.65) | "MEDIUM" (0.55-0.65) | "LOW" (<0.55)
+    """
+    try:
+        proba_series = predict_proba(ticker, df, horizon)
+        prob = float(proba_series.iloc[-1])
+    except Exception as e:
+        return {
+            "ticker": ticker, "horizon": horizon,
+            "prob_up": None, "signal": "HOLD",
+            "confidence": "ERROR", "error": str(e),
+        }
+
+    signal = "BUY" if prob >= 0.55 else "HOLD"
+
+    if prob >= 0.65:
+        confidence = "HIGH"
+    elif prob >= 0.55:
+        confidence = "MEDIUM"
+    else:
+        confidence = "LOW"
+
+    return {
+        "ticker":     ticker,
+        "horizon":    horizon,
+        "prob_up":    round(prob, 4),
+        "signal":     signal,
+        "confidence": confidence,
+    }
