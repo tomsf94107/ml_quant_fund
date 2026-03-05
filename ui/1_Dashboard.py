@@ -59,6 +59,18 @@ from accuracy.sink import (
 #  PAGE CONFIG
 # ══════════════════════════════════════════════════════════════════════════════
 
+# ── Startup: train models if missing (Streamlit Cloud first deploy) ──────────
+import sys as _sys
+import os as _os
+_sys.path.insert(0, _os.path.abspath(_os.path.join(_os.path.dirname(__file__), "..")))
+try:
+    from startup import models_are_trained, run_startup
+    if not models_are_trained():
+        with st.spinner("⚙️ First launch — training models (10-15 min)... Please wait."):
+            run_startup(verbose=True)
+except Exception as _e:
+    st.warning(f"Startup check failed: {_e}")
+
 st.set_page_config(
     page_title="ML Quant Fund",
     page_icon="📈",
