@@ -103,7 +103,6 @@ def tune_ticker_horizon(
             "reg_alpha":        trial.suggest_float("reg_alpha", 0.0, 2.0),
             "reg_lambda":       trial.suggest_float("reg_lambda", 0.5, 5.0),
             "objective": "binary:logistic", "eval_metric": "logloss",
-            "use_label_encoder": False, "random_state": 42, "n_jobs": -1, "verbosity": 0,
         }
         aucs = []
         for tr, val in tscv.split(X):
@@ -121,8 +120,7 @@ def tune_ticker_horizon(
                                  sampler=optuna.samplers.TPESampler(seed=42))
     study.optimize(xgb_obj, n_trials=n_trials, timeout=timeout, show_progress_bar=False)
     best_xgb = study.best_params
-    best_xgb.update({"objective": "binary:logistic", "eval_metric": "logloss",
-                      "use_label_encoder": False, "random_state": 42, "n_jobs": -1})
+    best_xgb.update({"objective": "binary:logistic", "eval_metric": "logloss", "random_state": 42, "n_jobs": -1})
     result["xgb_params"]   = best_xgb
     result["best_xgb_auc"] = round(study.best_value, 4)
     if verbose:

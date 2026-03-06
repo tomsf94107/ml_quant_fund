@@ -94,7 +94,6 @@ XGB_PARAMS: dict = {
     "reg_lambda":       1.0,     # L2
     "objective":        "binary:logistic",
     "eval_metric":      "logloss",
-    "use_label_encoder": False,
     "random_state":     42,
     "n_jobs":           -1,
 }
@@ -293,9 +292,9 @@ def train_model(
 
     # ── Isotonic calibration ───────────────────────────────────────────────
     # Isotonic regression re-maps the raw sigmoid output to true probabilities.
-    # cv="prefit" means we calibrate on the test set (already held out).
+    # cv=5 means we calibrate on the test set (already held out).
     # This is safe because the test set was never seen during XGB training.
-    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv="prefit")
+    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv=5)
     calibrated.fit(X_test, y_test)
 
     # ── Evaluate ───────────────────────────────────────────────────────────
