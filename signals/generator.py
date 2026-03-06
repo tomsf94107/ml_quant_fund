@@ -246,6 +246,18 @@ def generate_signals(
         except Exception:
             sent_mult = 1.0
 
+    # ── Options flow multiplier ───────────────────────────────────────────────
+    # Unusual call activity boosts probability; unusual put activity cuts it.
+    # Only applied to today's signal (live), not backtest history.
+    options_mult = 1.0
+    try:
+        from features.options_flow import get_options_signal, options_score_to_multiplier
+        opts = get_options_signal(ticker)
+        if not opts.get("error") and opts.get("flow_score") is not None:
+            options_mult = options_score_to_multiplier(opts["flow_score"])
+    except Exception:
+        options_mult = 1.0
+
     # ── 1. Get calibrated probabilities ──────────────────────────────────────
     try:
         # Use ensemble if available, fall back to XGB-only
@@ -302,8 +314,8 @@ def generate_signals(
 
     # ── 4. Today's signal (use unshifted — this is forward-looking) ───────────
     today_prob      = float(sdf["prob"].iloc[-1])
-    # Apply risk multiplier + sentiment multiplier + regime multiplier
-    today_prob_eff  = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult
+    # Apply risk + sentiment + regime + options flow multipliers
+    today_prob_eff  = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
     today_signal    = (
