@@ -246,11 +246,17 @@ def generate_signals(
         except Exception:
             sent_mult = 1.0
 
+
+    # ETFs don't have options flow, short interest, or analyst data
+    _ETFS = {"SLV", "GLD", "SPY", "QQQ", "TLT", "IWM", "XLF", "XLE", "VIX"}
+    _is_etf = ticker.upper() in _ETFS
+
     # ── Options flow multiplier ───────────────────────────────────────────────
     # Unusual call activity boosts probability; unusual put activity cuts it.
     # Only applied to today's signal (live), not backtest history.
     options_mult = 1.0
     try:
+        if _is_etf: raise Exception('ETF skip')
         from features.options_flow import get_options_signal, options_score_to_multiplier
         opts = get_options_signal(ticker)
         if not opts.get("error") and opts.get("flow_score") is not None:
@@ -263,6 +269,7 @@ def generate_signals(
     # Shorts rapidly increasing = bearish trap → cut probability
     squeeze_mult = 1.0
     try:
+        if _is_etf: raise Exception('ETF skip')
         from features.short_interest import short_interest_to_multiplier
         squeeze_mult = short_interest_to_multiplier(ticker)
     except Exception:
