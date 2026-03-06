@@ -27,3 +27,4 @@ venv/
 
 # Alerts __init__ (wrong name)
 alerts/alerts__init__.py
+.streamlit/secrets.toml

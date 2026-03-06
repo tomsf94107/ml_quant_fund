@@ -220,6 +220,19 @@ def generate_signals(
     ticker = ticker.upper().strip()
     risk_mult = _get_risk_mult(risk_label)
 
+    # ── Macro regime adjustment ───────────────────────────────────────────────
+    # Adjusts confidence_threshold and signal multiplier based on market regime.
+    # BULL → lower threshold (easier to BUY), BEAR/VOLATILE → higher threshold.
+    try:
+        from models.regime_classifier import get_current_regime
+        regime = get_current_regime(use_cache=True)
+        # Override threshold and add regime multiplier if not manually set
+        if confidence_threshold == DEFAULT_CONFIDENCE_THRESHOLD:
+            confidence_threshold = regime.confidence_threshold
+        regime_mult = regime.signal_multiplier
+    except Exception:
+        regime_mult = 1.0
+
     # ── Live sentiment multiplier ─────────────────────────────────────────────
     # Fetches today's cached FinBERT score. Returns 0.0 if not yet run.
     # Multiplier only applied to TODAY's signal — not to backtest history
@@ -289,9 +302,8 @@ def generate_signals(
 
     # ── 4. Today's signal (use unshifted — this is forward-looking) ───────────
     today_prob      = float(sdf["prob"].iloc[-1])
-    # Apply BOTH risk multiplier AND sentiment multiplier to today's signal.
-    # Backtest uses only risk_mult (no historical sentiment available).
-    today_prob_eff  = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult
+    # Apply risk multiplier + sentiment multiplier + regime multiplier
+    today_prob_eff  = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
     today_signal    = (

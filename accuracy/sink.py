@@ -349,6 +349,8 @@ def reconcile_outcomes(
                     close_pred   = float(close.asof(pd.Timestamp(pred_date)))
                     close_out    = float(close.asof(pd.Timestamp(outcome_date)))
                     actual_ret   = (close_out - close_pred) / close_pred
+                    if actual_ret == 0.0:
+                        continue  # skip — outcome date not yet in yfinance
                     actual_up    = int(actual_ret > 0)
                 except Exception:
                     continue

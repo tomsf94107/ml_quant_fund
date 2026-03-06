@@ -214,11 +214,17 @@ def train_ensemble(
     base_xgb.fit(X_train, y_train, **fit_kw)
 
     cal_xgb = CalibratedClassifierCV(base_xgb, method="isotonic", cv=5)
-    cal_xgb.fit(X_val, y_val)
+    cal_xgb.fit(X_train, y_train)
 
-    # ── Train LightGBM ────────────────────────────────────────────────────────
+    # ── Train LightGBM — use tuned params if available ────────────────────────
+    tuned_lgb = lgb_params or get_params_for(ticker, horizon, "lgb") if hasattr(get_params_for, '__call__') else lgb_params
+    try:
+        from models.tuner import get_params_for as _gp
+        tuned_lgb = lgb_params or _gp(ticker, horizon, model="lgb")
+    except Exception:
+        tuned_lgb = lgb_params
     cal_lgb = _train_lgbm(X_train, y_train, X_val, y_val,
-                           params=lgb_params, sample_weights=sw)
+                           params=tuned_lgb, sample_weights=sw)
 
     # ── Optimal blend weights ─────────────────────────────────────────────────
     p_xgb   = cal_xgb.predict_proba(X_val)[:, 1]

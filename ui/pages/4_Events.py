@@ -11,6 +11,7 @@ if _ROOT not in sys.path:
 from datetime import date, datetime, timedelta
 from typing import Dict, List, Optional
 
+import altair as alt
 import pandas as pd
 import requests
 import streamlit as st

@@ -231,6 +231,17 @@ if risk_info:
     col1, col2 = st.columns([1, 5])
     col1.metric("Next 72h Risk", f"{risk_info['label']} ({risk_info['score']})")
 
+# ── Macro regime badge ────────────────────────────────────────────────────────
+try:
+    import sys, os
+    _ui_root = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+    if _ui_root not in sys.path:
+        sys.path.insert(0, _ui_root)
+    from ui.components.regime_widget import render_regime_widget
+    render_regime_widget()
+except Exception as e:
+    st.caption(f"Regime widget unavailable: {e}")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  RUN STRATEGY

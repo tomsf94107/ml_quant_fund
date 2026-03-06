@@ -1,20 +1,22 @@
 # models/tuner.py
 # ─────────────────────────────────────────────────────────────────────────────
-# Optuna hyperparameter tuning for XGBoost classifiers.
-# Finds optimal params per ticker — replaces hardcoded XGB_PARAMS defaults.
+# Optuna hyperparameter tuner for the ML Quant Fund XGBoost + LightGBM models.
 #
-# Run once after you have enough data:
-#   python -m models.tuner --tickers AAPL NVDA TSLA --horizon 1
-#   python -m models.tuner --all --horizon 1   # tune all tickers
+# Usage:
+#   python -m models.tuner                         # tune all tickers
+#   python -m models.tuner --tickers AAPL NVDA     # tune specific tickers
+#   python -m models.tuner --trials 50             # more trials = better params
+#   python -m models.tuner --horizon 1             # tune only 1d horizon
+#   python -m models.tuner --retune                # re-tune already-tuned tickers
 #
-# Results saved to models/saved/tuned_params.json
-# train_all.py automatically uses tuned params if available.
+# Install: pip install optuna lightgbm
 # ─────────────────────────────────────────────────────────────────────────────
 
 from __future__ import annotations
 
+import argparse
 import json
-import os
+import time
 import warnings
 from datetime import datetime
 from pathlib import Path
@@ -25,215 +27,231 @@ import pandas as pd
 
 warnings.filterwarnings("ignore")
 
-MODEL_DIR   = Path(os.getenv("MODEL_DIR", "models/saved"))
-PARAMS_FILE = MODEL_DIR / "tuned_params.json"
-N_TRIALS    = 50    # 50 trials per ticker/horizon — good balance of speed vs quality
+MODEL_DIR   = Path("models/saved")
+PARAMS_FILE = MODEL_DIR / "best_params.json"
+MODEL_DIR.mkdir(parents=True, exist_ok=True)
+
+DEFAULT_TRIALS  = 40
+DEFAULT_TIMEOUT = 120
+CV_SPLITS       = 5
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-#  OPTUNA OBJECTIVE
-# ══════════════════════════════════════════════════════════════════════════════
-
-def _objective(trial, X_train, y_train, X_val, y_val, sample_weights=None):
-    """Optuna objective — maximize ROC-AUC on validation set."""
-    from xgboost import XGBClassifier
-    from sklearn.calibration import CalibratedClassifierCV
-    from sklearn.metrics import roc_auc_score
-
-    params = {
-        "n_estimators":     trial.suggest_int("n_estimators", 100, 500),
-        "learning_rate":    trial.suggest_float("learning_rate", 0.01, 0.2, log=True),
-        "max_depth":        trial.suggest_int("max_depth", 3, 7),
-        "subsample":        trial.suggest_float("subsample", 0.6, 1.0),
-        "colsample_bytree": trial.suggest_float("colsample_bytree", 0.5, 1.0),
-        "min_child_weight": trial.suggest_int("min_child_weight", 1, 10),
-        "gamma":            trial.suggest_float("gamma", 0.0, 1.0),
-        "reg_alpha":        trial.suggest_float("reg_alpha", 0.0, 2.0),
-        "reg_lambda":       trial.suggest_float("reg_lambda", 0.0, 2.0),
-        "objective":        "binary:logistic",
-        "eval_metric":      "logloss",
-        "use_label_encoder": False,
-        "random_state":     42,
-        "n_jobs":           -1,
-    }
-
-    try:
-        clf = XGBClassifier(**params)
-        fit_kwargs = {"eval_set": [(X_val, y_val)], "verbose": False}
-        if sample_weights is not None:
-            fit_kwargs["sample_weight"] = sample_weights
-        clf.fit(X_train, y_train, **fit_kwargs)
-
-        cal = CalibratedClassifierCV(clf, method="isotonic", cv="prefit")
-        cal.fit(X_val, y_val)
-
-        y_prob = cal.predict_proba(X_val)[:, 1]
-        return roc_auc_score(y_val, y_prob)
-    except Exception:
-        return 0.5
+def load_best_params() -> dict:
+    if PARAMS_FILE.exists():
+        with open(PARAMS_FILE) as f:
+            return json.load(f)
+    return {}
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-#  TUNE ONE TICKER
-# ══════════════════════════════════════════════════════════════════════════════
+def save_best_params(params: dict):
+    params["_updated"] = datetime.utcnow().isoformat()
+    with open(PARAMS_FILE, "w") as f:
+        json.dump(params, f, indent=2)
 
-def tune_ticker(
+
+def get_params_for(ticker: str, horizon: int, model: str = "xgb") -> Optional[dict]:
+    """Return best tuned params or None if not yet tuned."""
+    all_params = load_best_params()
+    key   = f"{ticker}_{horizon}d"
+    entry = all_params.get(key, {})
+    return entry.get(f"{model}_params", None)
+
+
+def tune_ticker_horizon(
     ticker:   str,
     df:       pd.DataFrame,
-    horizon:  int = 1,
-    n_trials: int = N_TRIALS,
+    horizon:  int,
+    n_trials: int = DEFAULT_TRIALS,
+    timeout:  int = DEFAULT_TIMEOUT,
     verbose:  bool = True,
 ) -> dict:
-    """
-    Run Optuna on one ticker/horizon. Returns best params dict.
-    """
-    try:
-        import optuna
-        optuna.logging.set_verbosity(optuna.logging.WARNING)
-    except ImportError:
-        print("  ⚠ Optuna not installed. Run: pip install optuna")
-        return {}
+    import optuna
+    optuna.logging.set_verbosity(optuna.logging.WARNING)
 
-    from models.classifier import FEATURE_COLUMNS, _prepare_xy, _risk_sample_weights
+    from sklearn.model_selection import TimeSeriesSplit
+    from sklearn.metrics import roc_auc_score
+    from xgboost import XGBClassifier
+    from features.builder import add_forecast_targets
+    from models.classifier import FEATURE_COLUMNS
 
     target_col = f"target_{horizon}d"
-    if target_col not in df.columns:
-        print(f"  ⚠ {ticker}: no {target_col} column")
+    df_h = add_forecast_targets(df.copy(), horizons=(horizon,))
+    df_h = df_h.dropna(subset=[target_col] + [c for c in FEATURE_COLUMNS if c in df_h.columns])
+
+    feat_cols = [c for c in FEATURE_COLUMNS if c in df_h.columns]
+    X = df_h[feat_cols].values.astype(np.float32)
+    y = df_h[target_col].values.astype(int)
+
+    if len(X) < 150:
+        if verbose:
+            print(f"  ⚠ {ticker} h={horizon}d: only {len(X)} rows, skipping")
         return {}
 
-    # Fill missing features
-    working = df.copy()
-    for c in FEATURE_COLUMNS:
-        if c not in working.columns:
-            working[c] = 0.0
+    tscv = TimeSeriesSplit(n_splits=CV_SPLITS)
+    result = {}
 
-    X, y = _prepare_xy(working, target_col)
-    if len(X) < 100:
-        print(f"  ⚠ {ticker}: only {len(X)} rows — skipping tune")
-        return {}
-
-    split = int(len(X) * 0.8)
-    X_train, X_val = X.iloc[:split], X.iloc[split:]
-    y_train, y_val = y.iloc[:split], y.iloc[split:]
-
-    sw = _risk_sample_weights(working.loc[X_train.index])
+    # ── XGBoost ───────────────────────────────────────────────────────────────
+    def xgb_obj(trial):
+        p = {
+            "n_estimators":     trial.suggest_int("n_estimators", 100, 600),
+            "learning_rate":    trial.suggest_float("learning_rate", 0.01, 0.15, log=True),
+            "max_depth":        trial.suggest_int("max_depth", 3, 7),
+            "subsample":        trial.suggest_float("subsample", 0.6, 1.0),
+            "colsample_bytree": trial.suggest_float("colsample_bytree", 0.5, 1.0),
+            "min_child_weight": trial.suggest_int("min_child_weight", 1, 20),
+            "gamma":            trial.suggest_float("gamma", 0.0, 1.0),
+            "reg_alpha":        trial.suggest_float("reg_alpha", 0.0, 2.0),
+            "reg_lambda":       trial.suggest_float("reg_lambda", 0.5, 5.0),
+            "objective": "binary:logistic", "eval_metric": "logloss",
+            "use_label_encoder": False, "random_state": 42, "n_jobs": -1, "verbosity": 0,
+        }
+        aucs = []
+        for tr, val in tscv.split(X):
+            clf = XGBClassifier(**p)
+            clf.fit(X[tr], y[tr], eval_set=[(X[val], y[val])], verbose=False)
+            prob = clf.predict_proba(X[val])[:, 1]
+            if len(np.unique(y[val])) == 2:
+                aucs.append(roc_auc_score(y[val], prob))
+        return np.mean(aucs) if aucs else 0.5
 
     if verbose:
-        print(f"  {ticker} horizon={horizon}d — running {n_trials} trials...")
-
+        print(f"  XGB ({n_trials} trials)...", end=" ", flush=True)
+    t0 = time.time()
     study = optuna.create_study(direction="maximize",
                                  sampler=optuna.samplers.TPESampler(seed=42))
-    study.optimize(
-        lambda t: _objective(t, X_train, y_train, X_val, y_val, sw),
-        n_trials=n_trials,
-        show_progress_bar=False,
-    )
-
-    best = study.best_params
-    best_auc = study.best_value
-
-    # Add fixed params
-    best["objective"]         = "binary:logistic"
-    best["eval_metric"]       = "logloss"
-    best["use_label_encoder"] = False
-    best["random_state"]      = 42
-    best["n_jobs"]            = -1
-
+    study.optimize(xgb_obj, n_trials=n_trials, timeout=timeout, show_progress_bar=False)
+    best_xgb = study.best_params
+    best_xgb.update({"objective": "binary:logistic", "eval_metric": "logloss",
+                      "use_label_encoder": False, "random_state": 42, "n_jobs": -1})
+    result["xgb_params"]   = best_xgb
+    result["best_xgb_auc"] = round(study.best_value, 4)
     if verbose:
-        print(f"    ✓ Best AUC={best_auc:.4f}  depth={best['max_depth']}  "
-              f"lr={best['learning_rate']:.4f}  n={best['n_estimators']}")
+        print(f"AUC={study.best_value:.4f} ({time.time()-t0:.0f}s)")
 
-    return best
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-#  SAVE / LOAD TUNED PARAMS
-# ══════════════════════════════════════════════════════════════════════════════
-
-def save_tuned_params(ticker: str, horizon: int, params: dict,
-                       path: Path = PARAMS_FILE) -> None:
-    existing = load_all_tuned_params(path)
-    key = f"{ticker}_{horizon}d"
-    existing[key] = {"params": params, "tuned_at": datetime.utcnow().isoformat()}
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as f:
-        json.dump(existing, f, indent=2)
-
-
-def load_all_tuned_params(path: Path = PARAMS_FILE) -> dict:
-    if not path.exists():
-        return {}
+    # ── LightGBM ──────────────────────────────────────────────────────────────
     try:
-        with open(path) as f:
-            return json.load(f)
-    except Exception:
-        return {}
+        import lightgbm as lgb  # noqa: F401
 
+        def lgb_obj(trial):
+            p = {
+                "n_estimators":      trial.suggest_int("n_estimators", 100, 600),
+                "learning_rate":     trial.suggest_float("learning_rate", 0.01, 0.15, log=True),
+                "max_depth":         trial.suggest_int("max_depth", 3, 8),
+                "num_leaves":        trial.suggest_int("num_leaves", 15, 127),
+                "subsample":         trial.suggest_float("subsample", 0.6, 1.0),
+                "colsample_bytree":  trial.suggest_float("colsample_bytree", 0.5, 1.0),
+                "min_child_samples": trial.suggest_int("min_child_samples", 5, 50),
+                "reg_alpha":         trial.suggest_float("reg_alpha", 0.0, 2.0),
+                "reg_lambda":        trial.suggest_float("reg_lambda", 0.0, 5.0),
+                "objective": "binary", "metric": "auc",
+                "random_state": 42, "n_jobs": -1, "verbose": -1,
+            }
+            aucs = []
+            for tr, val in tscv.split(X):
+                clf = lgb.LGBMClassifier(**p)
+                clf.fit(X[tr], y[tr], eval_set=[(X[val], y[val])])
+                prob = clf.predict_proba(X[val])[:, 1]
+                if len(np.unique(y[val])) == 2:
+                    aucs.append(roc_auc_score(y[val], prob))
+            return np.mean(aucs) if aucs else 0.5
 
-def get_params_for(ticker: str, horizon: int,
-                    path: Path = PARAMS_FILE) -> Optional[dict]:
-    """Return tuned params for ticker/horizon, or None if not tuned yet."""
-    data = load_all_tuned_params(path)
-    key  = f"{ticker}_{horizon}d"
-    entry = data.get(key)
-    return entry["params"] if entry else None
+        if verbose:
+            print(f"  LGB ({n_trials} trials)...", end=" ", flush=True)
+        t0 = time.time()
+        study2 = optuna.create_study(direction="maximize",
+                                      sampler=optuna.samplers.TPESampler(seed=42))
+        study2.optimize(lgb_obj, n_trials=n_trials, timeout=timeout, show_progress_bar=False)
+        best_lgb = study2.best_params
+        best_lgb.update({"objective": "binary", "metric": "auc",
+                          "random_state": 42, "n_jobs": -1, "verbose": -1})
+        result["lgb_params"]   = best_lgb
+        result["best_lgb_auc"] = round(study2.best_value, 4)
+        if verbose:
+            print(f"AUC={study2.best_value:.4f} ({time.time()-t0:.0f}s)")
+    except ImportError:
+        if verbose:
+            print("  LightGBM not installed, skipping")
 
+    return result
 
-# ══════════════════════════════════════════════════════════════════════════════
-#  BATCH TUNER
-# ══════════════════════════════════════════════════════════════════════════════
 
 def tune_all(
-    tickers:  list[str],
-    horizons: list[int] = [1, 3, 5],
-    n_trials: int = N_TRIALS,
-    verbose:  bool = True,
-) -> dict:
-    """Tune all tickers and save params. Returns summary dict."""
-    from features.builder import build_feature_dataframe, add_forecast_targets
+    tickers:       list[str],
+    horizons:      tuple[int, ...] = (1, 3, 5),
+    n_trials:      int = DEFAULT_TRIALS,
+    timeout:       int = DEFAULT_TIMEOUT,
+    skip_existing: bool = True,
+):
+    from features.builder import build_feature_dataframe
 
-    results = {}
+    all_params = load_best_params()
+    total = len(tickers) * len(horizons)
+    done  = 0
+
+    print(f"\n{'═'*60}")
+    print(f"  Optuna Tuning — {len(tickers)} tickers × {len(horizons)} horizons")
+    print(f"  Trials: {n_trials} per combo  |  TimeSeriesSplit CV={CV_SPLITS}")
+    print(f"{'═'*60}")
 
     for ticker in tickers:
+        print(f"\n{'─'*60}\n  {ticker}\n{'─'*60}")
         try:
-            df = build_feature_dataframe(ticker)
-            df = add_forecast_targets(df)
+            df = build_feature_dataframe(ticker, start_date="2018-01-01",
+                                          include_sentiment=False)
         except Exception as e:
-            print(f"  ⚠ {ticker}: feature build failed — {e}")
+            print(f"  ✗ Feature build failed: {e}")
             continue
 
-        for horizon in horizons:
-            key = f"{ticker}_{horizon}d"
-            params = tune_ticker(ticker, df, horizon=horizon,
-                                  n_trials=n_trials, verbose=verbose)
-            if params:
-                save_tuned_params(ticker, horizon, params)
-                results[key] = params
+        for h in horizons:
+            key = f"{ticker}_{h}d"
+            if skip_existing and key in all_params:
+                xgb_auc = all_params[key].get("best_xgb_auc", "?")
+                print(f"  ↷ {ticker} h={h}d already tuned (XGB={xgb_auc}), skipping")
+                continue
 
-    return results
+            try:
+                res = tune_ticker_horizon(ticker, df, h,
+                                           n_trials=n_trials, timeout=timeout)
+                if res:
+                    all_params[key] = res
+                    save_best_params(all_params)
+                    print(f"  ✓ saved  XGB={res.get('best_xgb_auc','?')}  "
+                          f"LGB={res.get('best_lgb_auc','?')}")
+            except Exception as e:
+                print(f"  ✗ failed: {e}")
+            done += 1
 
+    print(f"\n{'═'*60}")
+    print(f"  DONE — {done}/{total} combos tuned")
+    print(f"  Saved → {PARAMS_FILE}")
+    print(f"{'═'*60}\n")
 
-# ══════════════════════════════════════════════════════════════════════════════
-#  CLI
-# ══════════════════════════════════════════════════════════════════════════════
+    rows = [{"key": k,
+             "XGB AUC": v.get("best_xgb_auc", "—"),
+             "LGB AUC": v.get("best_lgb_auc", "—")}
+            for k, v in all_params.items() if not k.startswith("_")]
+    if rows:
+        print(pd.DataFrame(rows).sort_values("XGB AUC", ascending=False).to_string(index=False))
+
 
 if __name__ == "__main__":
-    import argparse
-    from models.train_all import DEFAULT_TICKERS
+    import sys
+    sys.path.insert(0, str(Path(__file__).parent.parent))
 
-    parser = argparse.ArgumentParser(description="Optuna hyperparameter tuning")
-    parser.add_argument("--tickers",  nargs="+", default=None)
-    parser.add_argument("--all",      action="store_true",
-                        help="Tune all tickers in DEFAULT_TICKERS")
-    parser.add_argument("--horizons", nargs="+", type=int, default=[1, 3, 5])
-    parser.add_argument("--trials",   type=int, default=N_TRIALS)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--tickers", nargs="+")
+    parser.add_argument("--horizon", type=int)
+    parser.add_argument("--trials",  type=int, default=DEFAULT_TRIALS)
+    parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT)
+    parser.add_argument("--retune",  action="store_true")
     args = parser.parse_args()
 
-    tickers = DEFAULT_TICKERS if args.all else (args.tickers or DEFAULT_TICKERS[:5])
+    if args.tickers:
+        tickers = [t.upper() for t in args.tickers]
+    else:
+        p = Path("tickers.txt")
+        tickers = [t.strip().upper() for t in p.read_text().splitlines() if t.strip()] \
+                  if p.exists() else ["AAPL", "NVDA", "TSLA", "AMD"]
 
-    print(f"\nOptuna tuning: {len(tickers)} tickers × {args.horizons} horizons")
-    print(f"Trials per model: {args.trials}")
-    print(f"Estimated time: ~{len(tickers) * len(args.horizons) * args.trials * 0.3 / 60:.0f} minutes\n")
-
-    results = tune_all(tickers, horizons=args.horizons, n_trials=args.trials)
-    print(f"\nDone. {len(results)} models tuned → saved to {PARAMS_FILE}")
+    horizons = (args.horizon,) if args.horizon else (1, 3, 5)
+    tune_all(tickers, horizons, args.trials, args.timeout, not args.retune)

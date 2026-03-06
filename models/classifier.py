@@ -99,6 +99,25 @@ XGB_PARAMS: dict = {
     "n_jobs":           -1,
 }
 
+def _get_xgb_params(ticker: str, horizon: int) -> dict:
+    """Return Optuna-tuned params if available, else XGB_PARAMS defaults."""
+    try:
+        from models.tuner import get_params_for
+        tuned = get_params_for(ticker, horizon, model="xgb")
+        if tuned:
+            return tuned
+    except Exception:
+        pass
+    return XGB_PARAMS.copy()
+
+def _get_lgb_params(ticker: str, horizon: int) -> Optional[dict]:
+    """Return Optuna-tuned LightGBM params if available, else None."""
+    try:
+        from models.tuner import get_params_for
+        return get_params_for(ticker, horizon, model="lgb")
+    except Exception:
+        return None
+
 # ── Risk weighting constants (preserved from helpers_xgb_v1.2) ────────────────
 RISK_ALPHA       = 0.30   # strength of down-weighting for high-risk days
 RISK_WEIGHT_FLOOR = 0.50  # never down-weight below 50% of normal weight
@@ -259,8 +278,9 @@ def train_model(
         df.loc[X_train.index], RISK_ALPHA, RISK_WEIGHT_FLOOR
     )
 
-    # ── Base classifier ────────────────────────────────────────────────────
-    base_clf = XGBClassifier(**XGB_PARAMS)
+    # ── Base classifier — use Optuna-tuned params if available ────────────────
+    xgb_params = _get_xgb_params(ticker, horizon)
+    base_clf = XGBClassifier(**xgb_params)
 
     fit_kwargs: dict = {
         "eval_set":  [(X_test, y_test)],
@@ -275,7 +295,7 @@ def train_model(
     # Isotonic regression re-maps the raw sigmoid output to true probabilities.
     # cv="prefit" means we calibrate on the test set (already held out).
     # This is safe because the test set was never seen during XGB training.
-    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv=5)
+    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv="prefit")
     calibrated.fit(X_test, y_test)
 
     # ── Evaluate ───────────────────────────────────────────────────────────

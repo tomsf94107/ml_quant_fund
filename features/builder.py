@@ -43,7 +43,24 @@ import yfinance as yf
 # ── Constants ─────────────────────────────────────────────────────────────────
 SPY_TICKER      = "SPY"
 SECTOR_ETF      = "XLK"
+VIX_TICKER      = "^VIX"
 VOL_LOOKBACK    = 20        # sessions for volume z-score
+
+# Sector ETF map — stock → best matching sector ETF
+SECTOR_ETF_MAP = {
+    "AAPL": "XLK", "MSFT": "XLK", "NVDA": "XLK", "AMD": "XLK",
+    "GOOG": "XLK", "META": "XLK", "CRM": "XLK", "CRWD": "XLK",
+    "DDOG": "XLK", "SNOW": "XLK", "DUOL": "XLK",
+    "TSLA": "XLY", "AMZN": "XLY", "SHOP": "XLY",
+    "AAPL": "XLK",
+    "JNJ": "XLV", "PFE": "XLV", "UNH": "XLV", "MRNA": "XLV",
+    "NVO": "XLV", "BSX": "XLV", "CNC": "XLV",
+    "AXP": "XLF", "PYPL": "XLF",
+    "MP": "XLB", "SLV": "XLB",
+    "NFLX": "XLC", "ZM": "XLC",
+    "PLTR": "XLK", "SMCI": "XLK", "TSM": "XLK",
+    "RZLV": "XLK", "CRCL": "XLK",
+}
 INSIDER_DB      = os.getenv("INSIDER_DB_PATH", "insider_trades.db")
 CONGRESS_DB     = os.getenv("CONGRESS_DB_PATH", "congress_trades.db")
 
@@ -71,6 +88,17 @@ OUTPUT_COLUMNS = [
     "eps_surprise", "rev_surprise",
     "days_to_earnings",
     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
+    # ── NEW v2 features ──────────────────────────────────────────────────────
+    "return_20d", "return_60d",          # medium-term momentum
+    "ma_50",                             # 50-day MA
+    "ma5_above_ma20", "ma20_above_ma50", # MA crossover signals
+    "high_52w_ratio", "low_52w_ratio",   # distance from 52w extremes
+    "bb_pct",                            # BB position (0=at lower, 1=at upper)
+    "rsi_above_70", "rsi_below_30",      # RSI extreme flags
+    "obv_trend",                         # OBV vs 10d OBV mean
+    "vix_close", "vix_ret",              # market fear gauge
+    "sector_rel_ret",                    # stock return - sector ETF return
+    "day_of_week", "is_month_end",       # calendar effects
 ]
 
 
@@ -104,8 +132,10 @@ def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
 
 
 def _market_return(etf: str, start: str, end: str,
-                   index: pd.Index) -> pd.Series:
-    """Fetch ETF daily return, reindexed to match the main df's date index."""
+                   index: pd.Index, return_close: bool = False):
+    """Fetch ETF daily return, reindexed to match the main df's date index.
+    If return_close=True, returns a DataFrame with both 'close' and 'ret' columns.
+    """
     try:
         tmp = yf.download(etf, start=start, end=end,
                           auto_adjust=True, progress=False)
@@ -114,9 +144,17 @@ def _market_return(etf: str, start: str, end: str,
         tmp = tmp.reset_index()
         tmp.columns = [c.strip().lower() for c in tmp.columns]
         tmp["date"] = pd.to_datetime(tmp["date"]).dt.date
-        ret = tmp.set_index("date")["close"].pct_change()
-        return ret.reindex(index).rename(f"{etf.lower()}_ret")
+        tmp = tmp.set_index("date")
+        close_s = tmp["close"].reindex(index).ffill()
+        ret_s   = close_s.pct_change().rename(f"{etf.lower()}_ret")
+        if return_close:
+            return pd.DataFrame({"close": close_s.values, "ret": ret_s.values},
+                                 index=index)
+        return ret_s
     except Exception:
+        if return_close:
+            return pd.DataFrame({"close": np.full(len(index), 20.0),
+                                  "ret":   np.zeros(len(index))}, index=index)
         return pd.Series(np.nan, index=index, name=f"{etf.lower()}_ret")
 
 
@@ -354,6 +392,58 @@ def build_feature_dataframe(
     df["is_pandemic"] = (
         (dates_ts >= PANDEMIC_START) & (dates_ts <= PANDEMIC_END)
     ).astype(int)
+
+    # ── 12. NEW v2 features ───────────────────────────────────────────────────
+
+    # Medium-term momentum
+    df["return_20d"] = c.pct_change(20)
+    df["return_60d"] = c.pct_change(60)
+
+    # MA50 and crossover signals
+    df["ma_50"]           = c.rolling(50).mean()
+    df["ma5_above_ma20"]  = (df["ma_5"] > df["ma_20"]).astype(int)
+    df["ma20_above_ma50"] = (df["ma_20"] > df["ma_50"]).astype(int)
+
+    # 52-week high/low ratios
+    high_52w = c.rolling(252).max()
+    low_52w  = c.rolling(252).min()
+    df["high_52w_ratio"] = (c / high_52w.replace(0, np.nan)) - 1.0   # 0 = at 52w high
+    df["low_52w_ratio"]  = (c / low_52w.replace(0, np.nan)) - 1.0    # 0 = at 52w low
+
+    # BB position (0 = at lower band, 1 = at upper band)
+    bb_range = (df["bb_upper"] - df["bb_lower"]).replace(0, np.nan)
+    df["bb_pct"] = (c - df["bb_lower"]) / bb_range
+
+    # RSI extreme flags
+    df["rsi_above_70"] = (df["rsi_14"] > 70).astype(int)
+    df["rsi_below_30"] = (df["rsi_14"] < 30).astype(int)
+
+    # OBV trend (OBV minus its 10d mean, normalized by std)
+    obv_ma  = df["obv"].rolling(10).mean()
+    obv_std = df["obv"].rolling(10).std().replace(0, np.nan)
+    df["obv_trend"] = (df["obv"] - obv_ma) / obv_std
+
+    # VIX
+    try:
+        vix_raw = _market_return(VIX_TICKER, start_str, end_str, date_index,
+                                  return_close=True)
+        df["vix_close"] = vix_raw["close"].values if "close" in vix_raw.columns else 20.0
+        df["vix_ret"]   = vix_raw["ret"].values   if "ret"   in vix_raw.columns else 0.0
+    except Exception:
+        df["vix_close"] = 20.0
+        df["vix_ret"]   = 0.0
+
+    # Sector-relative return (stock 1d return minus its sector ETF return)
+    sector_sym = SECTOR_ETF_MAP.get(ticker, SECTOR_ETF)
+    try:
+        sec_ret = _market_return(sector_sym, start_str, end_str, date_index)
+        df["sector_rel_ret"] = df["return_1d"].values - sec_ret.values
+    except Exception:
+        df["sector_rel_ret"] = 0.0
+
+    # Calendar effects
+    df["day_of_week"]  = pd.to_datetime(df["date"]).dt.dayofweek   # 0=Mon 4=Fri
+    df["is_month_end"] = pd.to_datetime(df["date"]).dt.is_month_end.astype(int)
 
     # ── 12. Enforce output schema ─────────────────────────────────────────────
     # Add any missing columns as 0.0
