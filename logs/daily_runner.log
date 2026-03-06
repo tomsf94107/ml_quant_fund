@@ -1,0 +1,237 @@
+2026-03-07 00:50:38,104  INFO  ============================================================
+2026-03-07 00:50:38,104  INFO    Daily Runner — 2026-03-07
+2026-03-07 00:50:38,104  INFO  ============================================================
+2026-03-07 00:50:38,104  INFO  Weekend — skipping run
+2026-03-07 01:05:46,803  INFO  ============================================================
+2026-03-07 01:05:46,804  INFO    Daily Runner — 2026-03-07
+2026-03-07 01:05:46,804  INFO  ============================================================
+2026-03-07 01:05:46,804  INFO  Weekend — skipping run
+2026-03-07 01:06:04,651  INFO  ============================================================
+2026-03-07 01:06:04,652  INFO    Daily Runner — 2026-03-07
+2026-03-07 01:06:04,652  INFO  ============================================================
+2026-03-07 01:06:04,652  INFO  Tickers: 31
+2026-03-07 01:06:05,762  INFO  Regime: VOLATILE (VIX=26.7  threshold=65%)
+2026-03-07 01:06:05,762  INFO  [ 1/31] AAPL
+2026-03-07 01:06:09,154  WARNING  DB log failed for AAPL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:09,154  INFO    ⚪ HOLD h=1d  prob=56.7%  eff=35.9%
+2026-03-07 01:06:09,572  WARNING  DB log failed for AAPL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:09,572  INFO    ⚪ HOLD h=3d  prob=62.4%  eff=39.5%
+2026-03-07 01:06:10,002  WARNING  DB log failed for AAPL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:10,002  INFO    ⚪ HOLD h=5d  prob=44.9%  eff=28.4%
+2026-03-07 01:06:12,004  INFO  [ 2/31] AMD
+2026-03-07 01:06:14,847  WARNING  DB log failed for AMD: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:14,847  INFO    ⚪ HOLD h=1d  prob=66.3%  eff=45.7%
+2026-03-07 01:06:15,379  WARNING  DB log failed for AMD: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:15,379  INFO    ⚪ HOLD h=3d  prob=64.7%  eff=44.6%
+2026-03-07 01:06:15,884  WARNING  DB log failed for AMD: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:15,884  INFO    ⚪ HOLD h=5d  prob=53.6%  eff=37.0%
+2026-03-07 01:06:17,888  INFO  [ 3/31] AXP
+2026-03-07 01:06:20,704  WARNING  DB log failed for AXP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:20,704  INFO    ⚪ HOLD h=1d  prob=45.2%  eff=26.8%
+2026-03-07 01:06:21,157  WARNING  DB log failed for AXP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:21,157  INFO    ⚪ HOLD h=3d  prob=56.2%  eff=33.4%
+2026-03-07 01:06:21,706  WARNING  DB log failed for AXP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:21,706  INFO    ⚪ HOLD h=5d  prob=60.7%  eff=36.0%
+2026-03-07 01:06:23,710  INFO  [ 4/31] BSX
+2026-03-07 01:06:26,551  WARNING  DB log failed for BSX: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:26,551  INFO    ⚪ HOLD h=1d  prob=54.9%  eff=37.9%
+2026-03-07 01:06:27,052  WARNING  DB log failed for BSX: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:27,052  INFO    ⚪ HOLD h=3d  prob=61.6%  eff=42.5%
+2026-03-07 01:06:27,547  WARNING  DB log failed for BSX: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:27,548  INFO    ⚪ HOLD h=5d  prob=63.7%  eff=43.9%
+2026-03-07 01:06:29,552  INFO  [ 5/31] CNC
+2026-03-07 01:06:32,217  WARNING  DB log failed for CNC: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:32,217  INFO    ⚪ HOLD h=1d  prob=56.5%  eff=39.0%
+2026-03-07 01:06:32,718  WARNING  DB log failed for CNC: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:32,718  INFO    ⚪ HOLD h=3d  prob=53.2%  eff=36.7%
+2026-03-07 01:06:33,283  WARNING  DB log failed for CNC: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:33,283  INFO    ⚪ HOLD h=5d  prob=56.4%  eff=38.9%
+2026-03-07 01:06:35,287  INFO  [ 6/31] CRCL
+2026-03-07 01:06:37,793  WARNING  DB log failed for CRCL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:37,793  INFO    ⚪ HOLD h=1d  prob=44.3%  eff=35.2%
+2026-03-07 01:06:38,222  WARNING  DB log failed for CRCL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:38,222  INFO    ⚪ HOLD h=3d  prob=50.0%  eff=39.8%
+2026-03-07 01:06:38,652  WARNING  DB log failed for CRCL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:38,652  INFO    ⚪ HOLD h=5d  prob=54.3%  eff=43.2%
+2026-03-07 01:06:40,653  INFO  [ 7/31] CRWD
+2026-03-07 01:06:43,382  WARNING  DB log failed for CRWD: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:43,383  INFO    ⚪ HOLD h=1d  prob=52.2%  eff=34.6%
+2026-03-07 01:06:43,851  WARNING  DB log failed for CRWD: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:43,851  INFO    ⚪ HOLD h=3d  prob=59.3%  eff=39.3%
+2026-03-07 01:06:44,431  WARNING  DB log failed for CRWD: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:44,431  INFO    ⚪ HOLD h=5d  prob=53.4%  eff=35.4%
+2026-03-07 01:06:46,436  INFO  [ 8/31] DDOG
+2026-03-07 01:06:49,161  WARNING  DB log failed for DDOG: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:49,162  INFO    ⚪ HOLD h=1d  prob=47.7%  eff=32.9%
+2026-03-07 01:06:49,627  WARNING  DB log failed for DDOG: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:49,627  INFO    ⚪ HOLD h=3d  prob=51.9%  eff=35.8%
+2026-03-07 01:06:50,118  WARNING  DB log failed for DDOG: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:50,119  INFO    ⚪ HOLD h=5d  prob=47.9%  eff=33.0%
+2026-03-07 01:06:52,123  INFO  [ 9/31] DUOL
+2026-03-07 01:06:54,814  WARNING  DB log failed for DUOL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:54,815  INFO    ⚪ HOLD h=1d  prob=50.7%  eff=42.6%
+2026-03-07 01:06:55,251  WARNING  DB log failed for DUOL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:55,251  INFO    ⚪ HOLD h=3d  prob=40.4%  eff=33.9%
+2026-03-07 01:06:55,747  WARNING  DB log failed for DUOL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:06:55,747  INFO    ⚪ HOLD h=5d  prob=37.6%  eff=31.6%
+2026-03-07 01:06:57,751  INFO  [10/31] GOOG
+2026-03-07 01:07:00,388  WARNING  DB log failed for GOOG: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:00,388  INFO    ⚪ HOLD h=1d  prob=54.8%  eff=52.3%
+2026-03-07 01:07:00,874  WARNING  DB log failed for GOOG: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:00,874  INFO    ⚪ HOLD h=3d  prob=58.1%  eff=55.4%
+2026-03-07 01:07:01,430  WARNING  DB log failed for GOOG: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:01,430  INFO    ⚪ HOLD h=5d  prob=57.3%  eff=54.7%
+2026-03-07 01:07:03,432  INFO  [11/31] JNJ
+2026-03-07 01:07:06,334  WARNING  DB log failed for JNJ: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:06,335  INFO    ⚪ HOLD h=1d  prob=54.5%  eff=32.3%
+2026-03-07 01:07:06,864  WARNING  DB log failed for JNJ: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:06,864  INFO    ⚪ HOLD h=3d  prob=62.3%  eff=36.9%
+2026-03-07 01:07:07,468  WARNING  DB log failed for JNJ: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:07,468  INFO    ⚪ HOLD h=5d  prob=56.0%  eff=33.2%
+2026-03-07 01:07:09,473  INFO  [12/31] META
+2026-03-07 01:07:12,324  WARNING  DB log failed for META: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:12,324  INFO    ⚪ HOLD h=1d  prob=51.7%  eff=35.6%
+2026-03-07 01:07:12,835  WARNING  DB log failed for META: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:12,836  INFO    ⚪ HOLD h=3d  prob=58.6%  eff=40.4%
+2026-03-07 01:07:13,468  WARNING  DB log failed for META: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:13,468  INFO    ⚪ HOLD h=5d  prob=64.2%  eff=44.3%
+2026-03-07 01:07:15,470  INFO  [13/31] MP
+2026-03-07 01:07:18,133  WARNING  DB log failed for MP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:18,133  INFO    ⚪ HOLD h=1d  prob=42.0%  eff=29.5%
+2026-03-07 01:07:18,574  WARNING  DB log failed for MP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:18,574  INFO    ⚪ HOLD h=3d  prob=49.3%  eff=34.6%
+2026-03-07 01:07:19,020  WARNING  DB log failed for MP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:19,020  INFO    ⚪ HOLD h=5d  prob=47.4%  eff=33.4%
+2026-03-07 01:07:21,023  INFO  [14/31] MRNA
+2026-03-07 01:07:23,748  WARNING  DB log failed for MRNA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:23,748  INFO    ⚪ HOLD h=1d  prob=56.0%  eff=42.4%
+2026-03-07 01:07:24,247  WARNING  DB log failed for MRNA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:24,247  INFO    ⚪ HOLD h=3d  prob=47.4%  eff=35.8%
+2026-03-07 01:07:24,832  WARNING  DB log failed for MRNA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:24,832  INFO    ⚪ HOLD h=5d  prob=57.6%  eff=43.6%
+2026-03-07 01:07:26,833  INFO  [15/31] MSFT
+2026-03-07 01:07:29,454  WARNING  DB log failed for MSFT: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:29,454  INFO    ⚪ HOLD h=1d  prob=68.3%  eff=47.1%
+2026-03-07 01:07:29,896  WARNING  DB log failed for MSFT: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:29,896  INFO    ⚪ HOLD h=3d  prob=55.3%  eff=38.1%
+2026-03-07 01:07:30,362  WARNING  DB log failed for MSFT: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:30,362  INFO    ⚪ HOLD h=5d  prob=54.5%  eff=37.6%
+2026-03-07 01:07:32,367  INFO  [16/31] NFLX
+2026-03-07 01:07:35,186  WARNING  DB log failed for NFLX: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:35,186  INFO    ⚪ HOLD h=1d  prob=46.2%  eff=30.6%
+2026-03-07 01:07:35,661  WARNING  DB log failed for NFLX: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:35,661  INFO    ⚪ HOLD h=3d  prob=47.9%  eff=31.8%
+2026-03-07 01:07:36,112  WARNING  DB log failed for NFLX: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:36,112  INFO    ⚪ HOLD h=5d  prob=38.4%  eff=25.4%
+2026-03-07 01:07:38,114  INFO  [17/31] NVDA
+2026-03-07 01:07:40,830  WARNING  DB log failed for NVDA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:40,830  INFO    ⚪ HOLD h=1d  prob=57.9%  eff=43.3%
+2026-03-07 01:07:41,378  WARNING  DB log failed for NVDA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:41,378  INFO    ⚪ HOLD h=3d  prob=69.4%  eff=51.9%
+2026-03-07 01:07:41,819  WARNING  DB log failed for NVDA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:41,819  INFO    ⚪ HOLD h=5d  prob=69.6%  eff=52.1%
+2026-03-07 01:07:43,821  INFO  [18/31] NVO
+2026-03-07 01:07:46,677  WARNING  DB log failed for NVO: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:46,677  INFO    ⚪ HOLD h=1d  prob=66.2%  eff=51.5%
+2026-03-07 01:07:47,163  WARNING  DB log failed for NVO: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:47,163  INFO    ⚪ HOLD h=3d  prob=56.2%  eff=43.8%
+2026-03-07 01:07:47,647  WARNING  DB log failed for NVO: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:47,648  INFO    ⚪ HOLD h=5d  prob=55.0%  eff=42.8%
+2026-03-07 01:07:49,653  INFO  [19/31] OPEN
+2026-03-07 01:07:52,183  WARNING  DB log failed for OPEN: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:52,183  INFO    ⚪ HOLD h=1d  prob=53.7%  eff=37.0%
+2026-03-07 01:07:52,600  WARNING  DB log failed for OPEN: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:52,600  INFO    ⚪ HOLD h=3d  prob=51.2%  eff=35.3%
+2026-03-07 01:07:53,017  WARNING  DB log failed for OPEN: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:53,017  INFO    ⚪ HOLD h=5d  prob=43.3%  eff=29.8%
+2026-03-07 01:07:55,018  INFO  [20/31] PFE
+2026-03-07 01:07:57,886  WARNING  DB log failed for PFE: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:57,887  INFO    ⚪ HOLD h=1d  prob=57.9%  eff=39.9%
+2026-03-07 01:07:58,379  WARNING  DB log failed for PFE: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:58,379  INFO    ⚪ HOLD h=3d  prob=56.5%  eff=39.0%
+2026-03-07 01:07:58,872  WARNING  DB log failed for PFE: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:07:58,872  INFO    ⚪ HOLD h=5d  prob=59.9%  eff=41.3%
+2026-03-07 01:08:00,874  INFO  [21/31] PLTR
+2026-03-07 01:08:03,686  WARNING  DB log failed for PLTR: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:03,686  INFO    ⚪ HOLD h=1d  prob=52.1%  eff=34.9%
+2026-03-07 01:08:04,339  WARNING  DB log failed for PLTR: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:04,340  INFO    ⚪ HOLD h=3d  prob=56.0%  eff=37.5%
+2026-03-07 01:08:04,947  WARNING  DB log failed for PLTR: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:04,947  INFO    ⚪ HOLD h=5d  prob=55.7%  eff=37.3%
+2026-03-07 01:08:06,952  INFO  [22/31] PYPL
+2026-03-07 01:08:09,609  WARNING  DB log failed for PYPL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:09,609  INFO    ⚪ HOLD h=1d  prob=55.8%  eff=39.6%
+2026-03-07 01:08:10,065  WARNING  DB log failed for PYPL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:10,065  INFO    ⚪ HOLD h=3d  prob=50.3%  eff=35.7%
+2026-03-07 01:08:10,579  WARNING  DB log failed for PYPL: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:10,579  INFO    ⚪ HOLD h=5d  prob=44.5%  eff=31.6%
+2026-03-07 01:08:12,584  INFO  [23/31] RZLV
+2026-03-07 01:08:16,556  WARNING  DB log failed for RZLV: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:16,556  INFO    ⚪ HOLD h=1d  prob=63.2%  eff=57.5%
+2026-03-07 01:08:17,516  WARNING  DB log failed for RZLV: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:17,516  INFO    ⚪ HOLD h=3d  prob=59.3%  eff=54.0%
+2026-03-07 01:08:18,651  WARNING  DB log failed for RZLV: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:18,651  INFO    ⚪ HOLD h=5d  prob=59.6%  eff=54.2%
+2026-03-07 01:08:20,654  INFO  [24/31] SHOP
+2026-03-07 01:08:25,989  WARNING  DB log failed for SHOP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:25,989  INFO    ⚪ HOLD h=1d  prob=52.5%  eff=35.2%
+2026-03-07 01:08:27,010  WARNING  DB log failed for SHOP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:27,010  INFO    ⚪ HOLD h=3d  prob=43.5%  eff=29.1%
+2026-03-07 01:08:28,289  WARNING  DB log failed for SHOP: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:28,289  INFO    ⚪ HOLD h=5d  prob=56.9%  eff=38.1%
+2026-03-07 01:08:30,291  INFO  [25/31] SLV
+2026-03-07 01:08:35,877  WARNING  DB log failed for SLV: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:35,878  INFO    ⚪ HOLD h=1d  prob=61.7%  eff=52.4%
+2026-03-07 01:08:37,308  WARNING  DB log failed for SLV: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:37,308  INFO    ⚪ HOLD h=3d  prob=52.5%  eff=44.7%
+2026-03-07 01:08:38,333  WARNING  DB log failed for SLV: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:38,333  INFO    ⚪ HOLD h=5d  prob=75.4%  eff=64.1%
+2026-03-07 01:08:40,334  INFO  [26/31] SMCI
+2026-03-07 01:08:45,772  WARNING  DB log failed for SMCI: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:45,772  INFO    ⚪ HOLD h=1d  prob=48.8%  eff=36.3%
+2026-03-07 01:08:46,898  WARNING  DB log failed for SMCI: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:46,898  INFO    ⚪ HOLD h=3d  prob=48.0%  eff=35.8%
+2026-03-07 01:08:48,091  WARNING  DB log failed for SMCI: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:48,091  INFO    ⚪ HOLD h=5d  prob=54.7%  eff=40.7%
+2026-03-07 01:08:50,096  INFO  [27/31] SNOW
+2026-03-07 01:08:55,307  WARNING  DB log failed for SNOW: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:55,307  INFO    ⚪ HOLD h=1d  prob=54.2%  eff=38.5%
+2026-03-07 01:08:56,570  WARNING  DB log failed for SNOW: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:56,570  INFO    ⚪ HOLD h=3d  prob=54.0%  eff=38.3%
+2026-03-07 01:08:57,569  WARNING  DB log failed for SNOW: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:08:57,569  INFO    ⚪ HOLD h=5d  prob=49.0%  eff=34.8%
+2026-03-07 01:08:59,572  INFO  [28/31] TSLA
+2026-03-07 01:09:04,909  WARNING  DB log failed for TSLA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:04,909  INFO    ⚪ HOLD h=1d  prob=60.1%  eff=38.0%
+2026-03-07 01:09:06,212  WARNING  DB log failed for TSLA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:06,212  INFO    ⚪ HOLD h=3d  prob=44.5%  eff=28.2%
+2026-03-07 01:09:07,275  WARNING  DB log failed for TSLA: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:07,275  INFO    ⚪ HOLD h=5d  prob=51.9%  eff=32.8%
+2026-03-07 01:09:09,279  INFO  [29/31] TSM
+2026-03-07 01:09:14,612  WARNING  DB log failed for TSM: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:14,614  INFO    ⚪ HOLD h=1d  prob=63.2%  eff=47.3%
+2026-03-07 01:09:16,014  WARNING  DB log failed for TSM: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:16,014  INFO    ⚪ HOLD h=3d  prob=65.5%  eff=49.0%
+2026-03-07 01:09:17,066  WARNING  DB log failed for TSM: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:17,066  INFO    ⚪ HOLD h=5d  prob=73.9%  eff=55.3%
+2026-03-07 01:09:19,068  INFO  [30/31] UNH
+2026-03-07 01:09:24,835  WARNING  DB log failed for UNH: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:24,836  INFO    ⚪ HOLD h=1d  prob=63.7%  eff=42.6%
+2026-03-07 01:09:26,230  WARNING  DB log failed for UNH: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:26,230  INFO    ⚪ HOLD h=3d  prob=57.0%  eff=38.2%
+2026-03-07 01:09:27,243  WARNING  DB log failed for UNH: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:27,243  INFO    ⚪ HOLD h=5d  prob=64.1%  eff=43.0%
+2026-03-07 01:09:29,248  INFO  [31/31] ZM
+2026-03-07 01:09:32,184  WARNING  DB log failed for ZM: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:32,184  INFO    ⚪ HOLD h=1d  prob=59.7%  eff=39.6%
+2026-03-07 01:09:32,667  WARNING  DB log failed for ZM: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:32,667  INFO    ⚪ HOLD h=3d  prob=46.7%  eff=31.0%
+2026-03-07 01:09:33,183  WARNING  DB log failed for ZM: log_prediction() got an unexpected keyword argument 'prob'
+2026-03-07 01:09:33,183  INFO    ⚪ HOLD h=5d  prob=68.6%  eff=45.5%
+2026-03-07 01:09:35,184  INFO  
+============================================================
+2026-03-07 01:09:35,185  INFO    DONE — 93 signals, 0 BUY, 0 failed
+2026-03-07 01:09:35,185  INFO    No BUY signals today (regime may be suppressing signals)
+2026-03-07 01:09:35,189  INFO    Summary saved → /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/signals_2026-03-07.json
+2026-03-07 01:09:35,189  INFO  ============================================================
+

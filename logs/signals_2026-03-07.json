@@ -1,0 +1,853 @@
+{
+  "date": "2026-03-07",
+  "regime": {
+    "label": "VOLATILE",
+    "confidence": 0.34,
+    "confidence_threshold": 0.65,
+    "signal_multiplier": 0.85,
+    "vix": 26.739999771118164
+  },
+  "n_signals": 93,
+  "n_buy": 0,
+  "n_failed": 0,
+  "buy_signals": [],
+  "all_signals": [
+    {
+      "ticker": "AAPL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5672,
+      "prob_eff": 0.3591,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AAPL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6237,
+      "prob_eff": 0.3949,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AAPL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4488,
+      "prob_eff": 0.2841,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AMD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6634,
+      "prob_eff": 0.4574,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AMD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6466,
+      "prob_eff": 0.4459,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AMD",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5359,
+      "prob_eff": 0.3695,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AXP",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4524,
+      "prob_eff": 0.2684,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AXP",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5622,
+      "prob_eff": 0.3336,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "AXP",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6069,
+      "prob_eff": 0.3601,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "BSX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5489,
+      "prob_eff": 0.3785,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "BSX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.616,
+      "prob_eff": 0.4248,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "BSX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6372,
+      "prob_eff": 0.4393,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CNC",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5652,
+      "prob_eff": 0.3897,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CNC",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5321,
+      "prob_eff": 0.3669,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CNC",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5635,
+      "prob_eff": 0.3885,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CRCL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4429,
+      "prob_eff": 0.3523,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CRCL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5,
+      "prob_eff": 0.3978,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CRCL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5429,
+      "prob_eff": 0.4319,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CRWD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5224,
+      "prob_eff": 0.3464,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CRWD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.593,
+      "prob_eff": 0.3932,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "CRWD",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5343,
+      "prob_eff": 0.3542,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "DDOG",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4771,
+      "prob_eff": 0.3289,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "DDOG",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5191,
+      "prob_eff": 0.3579,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "DDOG",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4789,
+      "prob_eff": 0.3302,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "DUOL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5066,
+      "prob_eff": 0.4258,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "DUOL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4037,
+      "prob_eff": 0.3393,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "DUOL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.376,
+      "prob_eff": 0.316,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "GOOG",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5482,
+      "prob_eff": 0.5233,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "GOOG",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5805,
+      "prob_eff": 0.5542,
+      "confidence": "MEDIUM",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "GOOG",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.573,
+      "prob_eff": 0.5471,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "JNJ",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.545,
+      "prob_eff": 0.3234,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "JNJ",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6225,
+      "prob_eff": 0.3694,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "JNJ",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5599,
+      "prob_eff": 0.3323,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "META",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5166,
+      "prob_eff": 0.3562,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "META",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5861,
+      "prob_eff": 0.4041,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "META",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.642,
+      "prob_eff": 0.4427,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MP",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4202,
+      "prob_eff": 0.2955,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MP",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4928,
+      "prob_eff": 0.3465,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MP",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4743,
+      "prob_eff": 0.3335,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MRNA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5598,
+      "prob_eff": 0.4236,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MRNA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4737,
+      "prob_eff": 0.3584,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MRNA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5757,
+      "prob_eff": 0.4356,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MSFT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.683,
+      "prob_eff": 0.4709,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MSFT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.553,
+      "prob_eff": 0.3813,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "MSFT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5452,
+      "prob_eff": 0.3759,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NFLX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4617,
+      "prob_eff": 0.3061,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NFLX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4792,
+      "prob_eff": 0.3177,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NFLX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3836,
+      "prob_eff": 0.2543,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NVDA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5791,
+      "prob_eff": 0.4332,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NVDA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6942,
+      "prob_eff": 0.5193,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NVDA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6963,
+      "prob_eff": 0.5208,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NVO",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.662,
+      "prob_eff": 0.515,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NVO",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5624,
+      "prob_eff": 0.4375,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "NVO",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5497,
+      "prob_eff": 0.4276,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "OPEN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5369,
+      "prob_eff": 0.3702,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "OPEN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5117,
+      "prob_eff": 0.3528,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "OPEN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4329,
+      "prob_eff": 0.2985,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PFE",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5793,
+      "prob_eff": 0.3994,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PFE",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.565,
+      "prob_eff": 0.3896,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PFE",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.599,
+      "prob_eff": 0.413,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PLTR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5206,
+      "prob_eff": 0.3486,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PLTR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5602,
+      "prob_eff": 0.3751,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PLTR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5572,
+      "prob_eff": 0.3731,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PYPL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5584,
+      "prob_eff": 0.3961,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PYPL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5034,
+      "prob_eff": 0.3571,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "PYPL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4452,
+      "prob_eff": 0.3158,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "RZLV",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6318,
+      "prob_eff": 0.5747,
+      "confidence": "MEDIUM",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "RZLV",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5933,
+      "prob_eff": 0.5396,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "RZLV",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.596,
+      "prob_eff": 0.542,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SHOP",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5252,
+      "prob_eff": 0.3517,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SHOP",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4351,
+      "prob_eff": 0.2914,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SHOP",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5688,
+      "prob_eff": 0.3809,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SLV",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6169,
+      "prob_eff": 0.5244,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SLV",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5255,
+      "prob_eff": 0.4467,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SLV",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.7544,
+      "prob_eff": 0.6413,
+      "confidence": "MEDIUM",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SMCI",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4879,
+      "prob_eff": 0.3634,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SMCI",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4802,
+      "prob_eff": 0.3577,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SMCI",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5466,
+      "prob_eff": 0.4071,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SNOW",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.542,
+      "prob_eff": 0.3845,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SNOW",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5396,
+      "prob_eff": 0.3828,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "SNOW",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4898,
+      "prob_eff": 0.3475,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "TSLA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6006,
+      "prob_eff": 0.3803,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "TSLA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4451,
+      "prob_eff": 0.2818,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "TSLA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5187,
+      "prob_eff": 0.3284,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "TSM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6321,
+      "prob_eff": 0.4728,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "TSM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6549,
+      "prob_eff": 0.4898,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "TSM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.7392,
+      "prob_eff": 0.5529,
+      "confidence": "MEDIUM",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "UNH",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6369,
+      "prob_eff": 0.4265,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "UNH",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5702,
+      "prob_eff": 0.3818,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "UNH",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6414,
+      "prob_eff": 0.4295,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "ZM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5974,
+      "prob_eff": 0.3961,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "ZM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4672,
+      "prob_eff": 0.3097,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    },
+    {
+      "ticker": "ZM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6856,
+      "prob_eff": 0.4545,
+      "confidence": "LOW",
+      "run_date": "2026-03-07"
+    }
+  ]
+}

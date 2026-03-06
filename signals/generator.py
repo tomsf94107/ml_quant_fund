@@ -258,6 +258,16 @@ def generate_signals(
     except Exception:
         options_mult = 1.0
 
+    # ── Short interest / squeeze multiplier ───────────────────────────────────
+    # High short interest + BUY signal = potential squeeze → boost probability
+    # Shorts rapidly increasing = bearish trap → cut probability
+    squeeze_mult = 1.0
+    try:
+        from features.short_interest import short_interest_to_multiplier
+        squeeze_mult = short_interest_to_multiplier(ticker)
+    except Exception:
+        squeeze_mult = 1.0
+
     # ── 1. Get calibrated probabilities ──────────────────────────────────────
     try:
         # Use ensemble if available, fall back to XGB-only
@@ -314,8 +324,8 @@ def generate_signals(
 
     # ── 4. Today's signal (use unshifted — this is forward-looking) ───────────
     today_prob      = float(sdf["prob"].iloc[-1])
-    # Apply risk + sentiment + regime + options flow multipliers
-    today_prob_eff  = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult
+    # Apply risk + sentiment + regime + options flow + squeeze multipliers
+    today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
     today_signal    = (
