@@ -59,6 +59,9 @@ def train_one_ticker(
     # Build features once, reuse for all horizons
     try:
         df = build_feature_dataframe(ticker, start_date=TRAIN_START)
+        # Fallback for tickers with shorter history (IPO after 2018)
+        if df.empty or len(df) < 200:
+            df = build_feature_dataframe(ticker, start_date="2020-01-01")
         df = add_forecast_targets(df, horizons=horizons)
     except Exception as e:
         print(f"  ✗ Feature build failed: {e}")
