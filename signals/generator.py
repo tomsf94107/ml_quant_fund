@@ -257,10 +257,17 @@ def generate_signals(
     options_mult = 1.0
     try:
         if _is_etf: raise Exception('ETF skip')
-        from features.options_flow import get_options_signal, options_score_to_multiplier
-        opts = get_options_signal(ticker)
-        if not opts.get("error") and opts.get("flow_score") is not None:
-            options_mult = options_score_to_multiplier(opts["flow_score"])
+        import signal as _sig
+        def _timeout(s,f): raise TimeoutError()
+        _sig.signal(_sig.SIGALRM, _timeout)
+        _sig.alarm(5)
+        try:
+            from features.options_flow import get_options_signal, options_score_to_multiplier
+            opts = get_options_signal(ticker)
+            if not opts.get("error") and opts.get("flow_score") is not None:
+                options_mult = options_score_to_multiplier(opts["flow_score"])
+        finally:
+            _sig.alarm(0)
     except Exception:
         options_mult = 1.0
 
@@ -270,8 +277,15 @@ def generate_signals(
     squeeze_mult = 1.0
     try:
         if _is_etf: raise Exception('ETF skip')
-        from features.short_interest import short_interest_to_multiplier
-        squeeze_mult = short_interest_to_multiplier(ticker)
+        import signal as _sig2
+        def _timeout2(s,f): raise TimeoutError()
+        _sig2.signal(_sig2.SIGALRM, _timeout2)
+        _sig2.alarm(5)
+        try:
+            from features.short_interest import short_interest_to_multiplier
+            squeeze_mult = short_interest_to_multiplier(ticker)
+        finally:
+            _sig2.alarm(0)
     except Exception:
         squeeze_mult = 1.0
 
