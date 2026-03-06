@@ -67,6 +67,10 @@ OUTPUT_COLUMNS = [
     "congress_net_shares",
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
     "is_pandemic",
+    # Earnings surprise
+    "eps_surprise", "rev_surprise",
+    "days_to_earnings",
+    "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
 ]
 
 
@@ -318,17 +322,29 @@ def build_feature_dataframe(
     else:
         df["sentiment_score"] = 0.0
 
-    # ── 8. Insider flows ──────────────────────────────────────────────────────
+    # ── 8. Earnings surprise features ────────────────────────────────────────
+    try:
+        from data.etl_earnings import load_earnings_features
+        earn = load_earnings_features(ticker, date_index)
+        for col in ["eps_surprise", "rev_surprise", "days_to_earnings",
+                    "post_earnings_1d", "post_earnings_3d", "post_earnings_5d"]:
+            df[col] = earn[col].values if col in earn.columns else 0.0
+    except Exception:
+        for col in ["eps_surprise", "rev_surprise", "days_to_earnings",
+                    "post_earnings_1d", "post_earnings_3d", "post_earnings_5d"]:
+            df[col] = 0.0
+
+    # ── 9. Insider flows ──────────────────────────────────────────────────────
     ins_net, ins_7d, ins_21d = _load_insider(ticker, date_index)
     df["insider_net_shares"] = ins_net.values
     df["insider_7d"]         = ins_7d.values
     df["insider_21d"]        = ins_21d.values
 
-    # ── 9. Congressional trading ──────────────────────────────────────────────
+    # ── 10. Congressional trading ──────────────────────────────────────────────
     congress = _load_congress(ticker, date_index)
     df["congress_net_shares"] = congress.values
 
-    # ── 10. Risk flags ────────────────────────────────────────────────────────
+    # ── 11. Risk flags ────────────────────────────────────────────────────────
     risk = _load_risk_flags(date_index)
     for col in ["risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d"]:
         df[col] = risk[col].values if col in risk.columns else 0.0

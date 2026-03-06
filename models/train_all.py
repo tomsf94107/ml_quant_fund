@@ -25,6 +25,7 @@ from features.builder import build_feature_dataframe, add_forecast_targets
 from models.classifier import (
     train_model, TARGET_HORIZONS, MODEL_DIR
 )
+from models.ensemble import train_ensemble
 
 # ── Ticker universe (your original 28 + room to grow) ─────────────────────────
 DEFAULT_TICKERS: list[str] = [
@@ -93,6 +94,15 @@ def train_one_ticker(
                 "accuracy": None, "roc_auc": None,
                 "brier_score": None, "n_train": None,
             })
+            continue
+
+        # Train ensemble (XGBoost + LightGBM) if lightgbm is available
+        try:
+            train_ensemble(ticker, df, horizon=h, verbose=verbose)
+        except ImportError:
+            pass  # lightgbm not installed — skip silently
+        except Exception as e:
+            print(f"  ⚠ Ensemble failed for {ticker} h={h}d: {e}")
 
     return rows
 
@@ -116,6 +126,15 @@ def train_all(
     print(f"  Start   : {TRAIN_START}")
     print(f"  Started : {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"{'═'*60}")
+
+    # Run earnings ETL first — fetches latest EPS/revenue surprises
+    print("  Fetching earnings data...")
+    try:
+        from data.etl_earnings import run_earnings_etl
+        run_earnings_etl(tickers, verbose=False)
+        print("  ✓ Earnings data updated")
+    except Exception as e:
+        print(f"  ⚠ Earnings ETL failed (continuing without): {e}")
 
     all_rows = []
     for ticker in tickers:
@@ -166,9 +185,19 @@ if __name__ == "__main__":
         "--quiet", action="store_true",
         help="Suppress per-model output",
     )
+    parser.add_argument(
+        "--tune", action="store_true",
+        help="Run Optuna hyperparameter tuning before training",
+    )
     args = parser.parse_args()
 
     horizons = (args.horizon,) if args.horizon else TARGET_HORIZONS
+
+    if args.tune:
+        print("\nRunning Optuna tuning first...")
+        from models.tuner import tune_all
+        tune_all(args.tickers or DEFAULT_TICKERS, horizons=list(horizons))
+
     train_all(
         tickers=args.tickers,
         horizons=horizons,

@@ -71,6 +71,10 @@ FEATURE_COLUMNS: list[str] = [
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
     # Macro regime
     "is_pandemic",
+    # Earnings surprise (high-impact signal)
+    "eps_surprise", "rev_surprise",
+    "days_to_earnings",
+    "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
 ]
 
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)

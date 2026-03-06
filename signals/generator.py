@@ -235,7 +235,12 @@ def generate_signals(
 
     # ── 1. Get calibrated probabilities ──────────────────────────────────────
     try:
-        prob_series = predict_proba(ticker, df, horizon=horizon, result=result)
+        # Use ensemble if available, fall back to XGB-only
+        try:
+            from models.ensemble import predict_proba_ensemble
+            prob_series = predict_proba_ensemble(ticker, df, horizon=horizon)
+        except Exception:
+            prob_series = predict_proba(ticker, df, horizon=horizon, result=result)
     except Exception as e:
         # Return a safe error result rather than crashing the whole dashboard
         empty_metrics = BacktestMetrics(
