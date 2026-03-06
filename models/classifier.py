@@ -275,7 +275,7 @@ def train_model(
     # Isotonic regression re-maps the raw sigmoid output to true probabilities.
     # cv="prefit" means we calibrate on the test set (already held out).
     # This is safe because the test set was never seen during XGB training.
-    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv="prefit")
+    calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv=5)
     calibrated.fit(X_test, y_test)
 
     # ── Evaluate ───────────────────────────────────────────────────────────

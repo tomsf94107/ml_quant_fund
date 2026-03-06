@@ -121,7 +121,7 @@ def _train_lgbm(X_train, y_train, X_val, y_val,
 
     clf.fit(X_train, y_train, **fit_kwargs)
 
-    cal = CalibratedClassifierCV(clf, method="isotonic", cv="prefit")
+    cal = CalibratedClassifierCV(clf, method="isotonic", cv=5)
     cal.fit(X_val, y_val)
     return cal
 
@@ -213,7 +213,7 @@ def train_ensemble(
         fit_kw["sample_weight"] = sw
     base_xgb.fit(X_train, y_train, **fit_kw)
 
-    cal_xgb = CalibratedClassifierCV(base_xgb, method="isotonic", cv="prefit")
+    cal_xgb = CalibratedClassifierCV(base_xgb, method="isotonic", cv=5)
     cal_xgb.fit(X_val, y_val)
 
     # ── Train LightGBM ────────────────────────────────────────────────────────
