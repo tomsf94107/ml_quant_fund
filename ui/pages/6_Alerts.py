@@ -147,7 +147,10 @@ try:
             if data.empty:
                 continue
             if hasattr(data.columns, 'get_level_values'):
-                data.columns = data.columns.get_level_values(0)
+                if 'Close' in data.columns.get_level_values(0):
+                    data.columns = data.columns.get_level_values(0)
+                else:
+                    data.columns = data.columns.get_level_values(1)
             prev  = float(data["Close"].iloc[-25]) if len(data) >= 25 else float(data["Close"].iloc[0])
             curr  = float(data["Close"].iloc[-1])
             chg   = (curr - prev) / prev * 100

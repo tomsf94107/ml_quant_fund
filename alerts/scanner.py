@@ -322,7 +322,12 @@ def check_commodities(conn: sqlite3.Connection,
                 continue
 
             if isinstance(data.columns, pd.MultiIndex):
-                data.columns = data.columns.get_level_values(0)
+                # MultiIndex: level 0 = field (Close/Open), level 1 = ticker
+                # OR level 0 = ticker, level 1 = field — check which is which
+                if "Close" in data.columns.get_level_values(0):
+                    data.columns = data.columns.get_level_values(0)
+                else:
+                    data.columns = data.columns.get_level_values(1)
 
             prev_close = float(data["Close"].iloc[-2])  # yesterday close
             latest     = float(data["Close"].iloc[-1])  # today close
