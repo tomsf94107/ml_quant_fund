@@ -376,9 +376,9 @@ if st.button("🚀 Run Strategy", type="primary"):
       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
       *{{box-sizing:border-box;margin:0;padding:0;}}
       .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
-      .ft-head{{display:grid;grid-template-columns:80px 65px 95px 130px 105px 105px 105px 75px 75px;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+      .ft-head{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
       .ft-head span{{text-align:right;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
-      .ft-row{{display:grid;grid-template-columns:80px 65px 95px 130px 105px 105px 105px 75px 75px;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+      .ft-row{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
       .ft-row:hover{{background:#13131f;}}
       .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
       .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
