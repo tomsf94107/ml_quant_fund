@@ -336,6 +336,165 @@ if st.button("🚀 Run Strategy", type="primary"):
         if enable_email and r.today_signal == "BUY" and r.today_prob_eff >= 0.65:
             _send_alert(r.ticker, r.today_prob_eff, horizon)
 
+    # ── Forecast table ────────────────────────────────────────────────────────
+    st.subheader("🎯 Price Forecast Table")
+
+    import pandas as pd
+    forecast_rows = []
+    for r in signal_summary:
+        exp_ret = r.expected_return or 0.0
+        forecast_rows.append({
+            "Ticker":       r.ticker,
+            "Signal":       r.today_signal,
+            "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
+            "Prob Eff":     f"{r.today_prob_eff:.1%}",
+            "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
+            "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
+            "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
+            "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
+            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
+        })
+
+    fdf = pd.DataFrame(forecast_rows)
+
+    def _color_signal(val):
+        if val == "BUY":  return "color: #22c55e; font-weight: bold"
+        return "color: #94a3b8"
+
+    def _color_exp(val):
+        if val == "—": return ""
+        try:
+            n = float(val.replace("%","").replace("+",""))
+            return "color: #22c55e" if n >= 0 else "color: #ef4444"
+        except: return ""
+
+    # ── Styled forecast table via HTML component ─────────────────────────────
+    import json
+    signals_json = json.dumps(forecast_rows)
+    html = f"""
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+      *{{box-sizing:border-box;margin:0;padding:0;}}
+      .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
+      .ft-head{{display:grid;grid-template-columns:80px 65px 95px 130px 105px 105px 105px 75px 75px;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+      .ft-head span{{text-align:right;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
+      .ft-row{{display:grid;grid-template-columns:80px 65px 95px 130px 105px 105px 105px 75px 75px;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+      .ft-row:hover{{background:#13131f;}}
+      .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
+      .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
+      .ft-row span:nth-child(2){{justify-content:flex-start;}}
+      .badge{{font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;}}
+      .buy{{color:#22c55e;background:#052e16;border:1px solid #166534;}}
+      .hold{{color:#f59e0b;background:#1a1008;border:1px solid #7c4a00;}}
+      .sell{{color:#ef4444;background:#1c0a0a;border:1px solid #7f1d1d;}}
+      .up{{color:#22c55e !important;}}
+      .dn{{color:#ef4444 !important;}}
+      .dim{{color:#64748b !important;}}
+      .prob-col{{display:flex;flex-direction:column;gap:3px;align-items:flex-end;}}
+      .bar-bg{{width:70px;height:3px;background:#1e1e2e;border-radius:2px;overflow:hidden;}}
+      .bar-fill{{height:100%;border-radius:2px;}}
+      .legend{{margin-top:10px;padding:10px 14px;background:#0d0d18;border:1px solid #1e1e2e;border-radius:6px;font-size:11px;color:#4a5568;line-height:1.8;}}
+    </style>
+    <div class="ft">
+      <div class="ft-head">
+        <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
+        <span>PROB EFF</span><span>TARGET ▲</span><span>TARGET ▼</span>
+        <span>EXP RETURN</span><span>ATR</span><span>SHARPE</span>
+      </div>
+      <div id="tbody"></div>
+    </div>
+    <div class="legend">
+      📖 &nbsp;
+      <span style="color:#22c55e">▲ Target = price + ATR</span> &nbsp;·&nbsp;
+      <span style="color:#ef4444">▼ Target = price − ATR</span> &nbsp;·&nbsp;
+      <span style="color:#94a3b8">Exp Return = prob-weighted gain/loss</span> &nbsp;·&nbsp;
+      <span style="color:#3b82f6">Bar = prob vs threshold</span>
+    </div>
+    <script>
+      const data = {signals_json};
+      const tbody = document.getElementById('tbody');
+      data.forEach(r => {{
+        const prob = parseFloat(r['Prob Eff']);
+        const exp  = parseFloat(r['Exp Return']);
+        const sh   = parseFloat(r['Sharpe']);
+        const sig  = r['Signal'];
+        const bc   = prob >= 65 ? '#22c55e' : prob >= 55 ? '#f59e0b' : '#3b82f6';
+        const sc   = sh >= 2 ? '#22c55e' : sh >= 1 ? '#f59e0b' : '#ef4444';
+        const badgeClass = sig==='BUY' ? 'buy' : sig==='SELL' ? 'sell' : 'hold';
+        const row = document.createElement('div');
+        row.className = 'ft-row';
+        row.innerHTML = `
+          <span>${{r.Ticker}}</span>
+          <span><span class="badge ${{badgeClass}}">${{sig}}</span></span>
+          <span>${{r.Price}}</span>
+          <span>
+            <div class="prob-col">
+              <span style="color:#94a3b8;font-size:12px">${{r['Prob Eff']}}</span>
+              <div class="bar-bg"><div class="bar-fill" style="width:${{Math.min(prob,100)}}%;background:${{bc}}"></div></div>
+              <span style="font-size:9px;color:#2d3748">threshold: 65%</span>
+            </div>
+          </span>
+          <span class="up">${{r['Target ▲']}}</span>
+          <span class="dn">${{r['Target ▼']}}</span>
+          <span style="color:${{exp>=0?'#22c55e':'#ef4444'}};font-weight:500">${{r['Exp Return']}}</span>
+          <span class="dim">${{r.ATR}}</span>
+          <span style="color:${{sc}};font-weight:500">${{r.Sharpe}}</span>
+        `;
+        tbody.appendChild(row);
+      }});
+    </script>
+    """
+    st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True) * 44, 800), scrolling=True)
+
+    # ── How to read this table ────────────────────────────────────────────────
+    with st.expander("📖 How to read the Forecast Table", expanded=False):
+        st.markdown("""
+**SIGNAL** — BUY or HOLD.
+- **BUY** fires when `Prob Eff` exceeds the confidence threshold (default 65% in VOLATILE regime, 55% in NEUTRAL).
+- **HOLD** means wait — either probability is too low or the regime is suppressing the signal.
+
+**PRICE** — Today's closing price. This is the price the model used to generate the forecast.
+
+**PROB EFF** — The model's confidence that this stock goes UP over the next `horizon` days, after all signal adjustments:
+```
+Raw ML prob × regime multiplier × sentiment × options flow × short interest
+```
+- Above threshold → BUY
+- Below threshold → HOLD
+- Currently in VOLATILE regime, threshold = 65%
+
+**TARGET ▲** — Where the stock is likely to go if it moves UP.
+Calculated as: `current price + ATR × √horizon`
+Example: NVDA at $121 with ATR $5.35 → Target ▲ = $126.35
+
+**TARGET ▼** — Where it goes if it moves DOWN.
+Calculated as: `current price − ATR × √horizon`
+This is your downside risk if the signal is wrong.
+
+**EXP RETURN** — Probability-weighted expected return. The single most actionable number:
+```
+= (Prob_eff × upside%) − ((1 − Prob_eff) × downside%)
+```
+- **Positive (green)** = model expects to make money → worth watching
+- **Negative (red)** = model expects to lose money → stay out
+- Right now all negative because VOLATILE regime is suppressing prob_eff below 50%
+
+**ATR** — Average True Range. How much this stock moves on a typical day in dollars.
+- Low ATR (e.g. NVO $3.73) = stable, lower risk
+- High ATR (e.g. TSLA $13.09) = volatile, bigger swings both ways
+
+**SHARPE** — Historical risk-adjusted return from backtesting.
+- Above 2.0 = excellent (green)
+- 1.0–2.0 = good (yellow)
+- Below 1.0 = poor (red)
+
+---
+**When to act:**
+1. Exp Return turns **green** on a ticker
+2. Prob Eff crosses the threshold → **BUY fires**
+3. Regime shifts from VOLATILE → NEUTRAL/BULL (threshold drops from 65% → 55%)
+""")
+
     # ── Per-ticker detail ─────────────────────────────────────────────────────
     for result in signal_summary:
         with st.expander(f"📊 {result.ticker} — Detail", expanded=False):
@@ -442,9 +601,9 @@ else:
         acc_df[["ticker", "horizon", "accuracy", "roc_auc",
                 "brier_score", "n_predictions"]]
         .style.format({
-            "accuracy":    "{:.1%}",
-            "roc_auc":     "{:.3f}",
-            "brier_score": "{:.3f}",
+            "accuracy":    lambda x: f"{x:.1%}" if x is not None and str(x) != 'nan' else "N/A",
+            "roc_auc":     lambda x: f"{x:.3f}" if x is not None and str(x) != 'nan' else "N/A",
+            "brier_score": lambda x: f"{x:.3f}" if x is not None and str(x) != 'nan' else "N/A",
         }),
         use_container_width=True,
     )
