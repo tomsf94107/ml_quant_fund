@@ -269,6 +269,12 @@ def check_stock_moves(conn: sqlite3.Connection, tickers: list[str],
 
             if isinstance(data.columns, pd.MultiIndex):
                 data.columns = data.columns.get_level_values(0)
+            # Ensure Close column exists after MultiIndex fix
+            if "Close" not in data.columns:
+                close_cols = [c for c in data.columns if "close" in str(c).lower()]
+                if not close_cols:
+                    continue
+                data = data.rename(columns={close_cols[0]: "Close"})
 
             open_price  = float(data["Close"].iloc[0])
             latest      = float(data["Close"].iloc[-1])
