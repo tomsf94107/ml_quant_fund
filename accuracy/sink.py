@@ -305,8 +305,18 @@ def reconcile_outcomes(
 
     # Filter to predictions whose outcome date has passed
     pending["prediction_date"] = pd.to_datetime(pending["prediction_date"]).dt.date
+    def _add_trading_days(start_date, n_days):
+        """Add n trading days (Mon-Fri) to a date, skipping weekends."""
+        d = start_date
+        added = 0
+        while added < n_days:
+            d += timedelta(days=1)
+            if d.weekday() < 5:  # Mon-Fri
+                added += 1
+        return d
+
     pending["outcome_date"] = pending.apply(
-        lambda r: r["prediction_date"] + timedelta(days=int(r["horizon"])),
+        lambda r: _add_trading_days(r["prediction_date"], int(r["horizon"])),
         axis=1
     )
     due = pending[pending["outcome_date"] <= as_of]
@@ -410,7 +420,7 @@ def update_accuracy_cache(
     now  = datetime.utcnow().isoformat()
 
     for (ticker, horizon), grp in joined.groupby(["ticker", "horizon"]):
-        if len(grp) < 5:   # not enough data for meaningful metrics
+        if len(grp) < 1:   # not enough data for meaningful metrics
             continue
 
         y_true = grp["actual_up"].astype(int)

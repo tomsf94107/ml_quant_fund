@@ -88,15 +88,17 @@ def _color_accuracy(val):
     if val >= 0.55:  return "color: #ffab00"
     return "color: #ff1744"
 
+display_df = acc_df[["ticker", "accuracy", "roc_auc", "brier_score", "n_predictions"]].copy()
+display_df["roc_auc"] = display_df["roc_auc"].fillna(float("nan"))
 styled = (
-    acc_df[["ticker", "accuracy", "roc_auc", "brier_score", "n_predictions"]]
+    display_df
     .style
     .format({
         "accuracy":    "{:.1%}",
-        "roc_auc":     "{:.3f}",
+        "roc_auc":     lambda x: f"{x:.3f}" if x == x else "N/A",
         "brier_score": "{:.3f}",
     })
-    .applymap(_color_accuracy, subset=["accuracy"])
+    .map(_color_accuracy, subset=["accuracy"])
 )
 st.dataframe(styled, use_container_width=True, hide_index=True)
 
