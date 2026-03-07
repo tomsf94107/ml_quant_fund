@@ -444,7 +444,7 @@ if st.button("🚀 Run Strategy", type="primary"):
       }});
     </script>
     """
-    st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True) * 44, 800), scrolling=True)
+    st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
 
     # ── How to read this table ────────────────────────────────────────────────
     with st.expander("📖 How to read the Forecast Table", expanded=False):
