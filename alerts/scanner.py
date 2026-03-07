@@ -52,7 +52,7 @@ DEFAULT_INTERVAL_MIN      = 30     # scan every 30 minutes by default
 COMMODITY_TICKERS = {
     "CL=F":  "Crude Oil (WTI)",
     "GC=F":  "Gold",
-    "SI=F":  "Silver",
+    "SLV":   "Silver",
     "NG=F":  "Natural Gas",
     "ZW=F":  "Wheat",
     "DX-Y.NYB": "US Dollar Index",
@@ -307,7 +307,8 @@ def check_commodities(conn: sqlite3.Connection,
 
     for sym, name in COMMODITY_TICKERS.items():
         try:
-            data = yf.download(sym, period="2d", interval="1h",
+            # Use daily data for reliable prev close vs current price
+            data = yf.download(sym, period="5d", interval="1d",
                                progress=False, auto_adjust=True)
             if data.empty or len(data) < 2:
                 continue
@@ -315,8 +316,8 @@ def check_commodities(conn: sqlite3.Connection,
             if isinstance(data.columns, pd.MultiIndex):
                 data.columns = data.columns.get_level_values(0)
 
-            prev_close = float(data["Close"].iloc[-25]) if len(data) >= 25 else float(data["Close"].iloc[0])
-            latest     = float(data["Close"].iloc[-1])
+            prev_close = float(data["Close"].iloc[-2])  # yesterday close
+            latest     = float(data["Close"].iloc[-1])  # today close
             pct_change = (latest - prev_close) / prev_close * 100
 
             if abs(pct_change) >= threshold_pct:
