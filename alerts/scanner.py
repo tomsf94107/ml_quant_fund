@@ -50,11 +50,13 @@ DEFAULT_INTERVAL_MIN      = 30     # scan every 30 minutes by default
 
 # Commodity tickers
 COMMODITY_TICKERS = {
-    "CL=F":  "Crude Oil (WTI)",
-    "GC=F":  "Gold",
-    "SLV":   "Silver",
-    "NG=F":  "Natural Gas",
-    "ZW=F":  "Wheat",
+    "CL=F":     "Crude Oil (WTI)",
+    "GC=F":     "Gold (Futures)",
+    "AAAU":     "Gold (ETF)",
+    "SI=F":     "Silver (Futures)",
+    "SLV":      "Silver (ETF)",
+    "NG=F":     "Natural Gas",
+    "ZW=F":     "Wheat",
     "DX-Y.NYB": "US Dollar Index",
 }
 
