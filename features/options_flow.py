@@ -148,7 +148,9 @@ def get_options_signal(
         expiries = _get_nearest_expiries(tkr, n=3)
         if not expiries:
             result["error"] = "No options data available"
-            return result
+            try: _cf.write_text(json.dumps(result))
+    except: pass
+    return result
 
         # Aggregate across nearest expiries
         all_calls, all_puts = [], []

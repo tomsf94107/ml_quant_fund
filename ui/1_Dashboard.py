@@ -247,6 +247,9 @@ except Exception as e:
 #  RUN STRATEGY
 # ══════════════════════════════════════════════════════════════════════════════
 
+use_cache = st.toggle("⚡ Use cached signals (faster)", value=False,
+    help="Load last run results instead of re-fetching all data. Updates every hour automatically.")
+
 if st.button("🚀 Run Strategy", type="primary"):
 
     csv_buffers   = []
