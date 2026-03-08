@@ -119,6 +119,12 @@ class SignalResult:
     today_prob_eff:  float          # after risk multiplier
     metrics:         BacktestMetrics
     error:           Optional[str] = None
+    # ── Price forecast fields ─────────────────────────────────────────
+    current_price:   Optional[float] = None
+    price_target_up: Optional[float] = None
+    price_target_dn: Optional[float] = None
+    expected_return: Optional[float] = None
+    atr:             Optional[float] = None
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -355,6 +361,21 @@ def generate_signals(
         else "HOLD"
     )
 
+    # Price forecast using ATR
+    current_price   = float(df["close"].iloc[-1]) if "close" in df.columns else None
+    atr_val         = float(df["atr"].iloc[-1])   if "atr"   in df.columns else None
+    price_target_up = None
+    price_target_dn = None
+    expected_return = None
+    if current_price and atr_val:
+        import math
+        move            = atr_val * math.sqrt(horizon)
+        price_target_up = round(current_price + move, 2)
+        price_target_dn = round(current_price - move, 2)
+        expected_return = round(
+            (today_prob_eff * move - (1 - today_prob_eff) * move) / current_price, 4
+        )
+
     return SignalResult(
         ticker=ticker,
         horizon=horizon,
@@ -364,6 +385,11 @@ def generate_signals(
         today_prob_eff=round(today_prob_eff, 4),
         metrics=metrics,
         error=None,
+        current_price=round(current_price, 2) if current_price else None,
+        price_target_up=price_target_up,
+        price_target_dn=price_target_dn,
+        expected_return=expected_return,
+        atr=round(atr_val, 4) if atr_val else None,
     )
 
 
