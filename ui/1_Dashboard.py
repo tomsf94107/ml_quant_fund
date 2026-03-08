@@ -260,10 +260,13 @@ if st.button("🚀 Run Strategy", type="primary"):
 
         # ── 1. Build features ─────────────────────────────────────────────────
         try:
-            df = build_feature_dataframe(
+            @st.cache_data(ttl=3600)
+            def _cached_features(t, s, e):
+                return build_feature_dataframe(t, start_date=s, end_date=e)
+            df = _cached_features(
                 tkr,
-                start_date=start_date.isoformat(),
-                end_date=end_date.isoformat(),
+                start_date.isoformat(),
+                end_date.isoformat(),
             )
         except Exception as e:
             st.warning(f"⚠️ {tkr}: feature build failed — {e}")
