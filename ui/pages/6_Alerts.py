@@ -160,6 +160,7 @@ ET = pytz.timezone("America/New_York")
 _now = datetime.now(ET).strftime("%Y-%m-%d %H:%M ET")
 st.subheader("🛢️ Live Commodity Prices")
 st.caption(f"Last fetched: {_now}")
+st.caption("🟢 RISK ON = investors confident, buying stocks & commodities → bullish  ·  🔴 RISK OFF = investors scared, fleeing to safety → bearish  ·  ⚪ Neutral = move below threshold")
 
 try:
     import yfinance as yf
