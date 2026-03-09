@@ -171,11 +171,17 @@ try:
                                progress=False, auto_adjust=True)
             if data.empty:
                 continue
-            if hasattr(data.columns, 'get_level_values'):
+            if isinstance(data.columns, __import__('pandas').MultiIndex):
                 if 'Close' in data.columns.get_level_values(0):
                     data.columns = data.columns.get_level_values(0)
-                else:
+                elif 'Close' in data.columns.get_level_values(1):
                     data.columns = data.columns.get_level_values(1)
+                else:
+                    # Flatten and pick Close column explicitly
+                    data.columns = ['_'.join([str(c) for c in col]).strip('_') for col in data.columns]
+                    close_cols = [c for c in data.columns if 'close' in c.lower()]
+                    if close_cols:
+                        data = data.rename(columns={close_cols[0]: 'Close'})
             prev  = float(data["Close"].iloc[-2])  # last business day
             curr  = float(data["Close"].iloc[-1])   # today
             chg   = (curr - prev) / prev * 100
