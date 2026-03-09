@@ -11,6 +11,26 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+import shutil, os
+from datetime import datetime, date
+import pytz
+
+def _auto_clear_stale_cache():
+    """Clear commodity/options cache if it's from a previous trading day."""
+    ET = pytz.timezone("America/New_York")
+    now_et = datetime.now(ET)
+    cache_dirs = ["data/cache/options", "data/cache/commodities"]
+    for cd in cache_dirs:
+        if not os.path.exists(cd):
+            continue
+        for f in os.listdir(cd):
+            fpath = os.path.join(cd, f)
+            mtime = datetime.fromtimestamp(os.path.getmtime(fpath), tz=ET)
+            # If file is from a previous calendar day, delete it
+            if mtime.date() < now_et.date():
+                os.remove(fpath)
+
+_auto_clear_stale_cache()
 from streamlit_autorefresh import st_autorefresh
 
 from alerts.scanner import (
@@ -134,7 +154,12 @@ st.divider()
 
 
 # ── Live commodity prices ─────────────────────────────────────────────────────
+from datetime import datetime
+import pytz
+ET = pytz.timezone("America/New_York")
+_now = datetime.now(ET).strftime("%Y-%m-%d %H:%M ET")
 st.subheader("🛢️ Live Commodity Prices")
+st.caption(f"Last fetched: {_now}")
 
 try:
     import yfinance as yf
