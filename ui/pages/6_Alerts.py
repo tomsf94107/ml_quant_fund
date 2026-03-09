@@ -167,7 +167,7 @@ try:
     rows = []
     for sym in syms:
         try:
-            data = yf.download(sym, period="2d", interval="1h",
+            data = yf.download(sym, period="5d", interval="1d",
                                progress=False, auto_adjust=True)
             if data.empty:
                 continue
@@ -176,8 +176,8 @@ try:
                     data.columns = data.columns.get_level_values(0)
                 else:
                     data.columns = data.columns.get_level_values(1)
-            prev  = float(data["Close"].iloc[-25]) if len(data) >= 25 else float(data["Close"].iloc[0])
-            curr  = float(data["Close"].iloc[-1])
+            prev  = float(data["Close"].iloc[-2])  # last business day
+            curr  = float(data["Close"].iloc[-1])   # today
             chg   = (curr - prev) / prev * 100
             rows.append({
                 "Commodity": COMMODITY_TICKERS[sym],
