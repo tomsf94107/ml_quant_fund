@@ -275,3 +275,25 @@ def run_daily():
 
 if __name__ == "__main__":
     run_daily()
+
+def log_intraday_snapshot():
+    """Log intraday features at market close for future intraday model training."""
+    import json
+    from pathlib import Path
+    from features.intraday_builder import get_all_intraday_signals
+    from datetime import datetime
+    import pytz
+
+    ET = pytz.timezone("America/New_York")
+    today = datetime.now(ET).strftime("%Y-%m-%d")
+    tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
+
+    signals = get_all_intraday_signals(tickers)
+
+    # Save to intraday history
+    out = Path("data/intraday_history")
+    out.mkdir(parents=True, exist_ok=True)
+    outfile = out / f"{today}.json"
+    with open(outfile, "w") as f:
+        json.dump(signals, f)
+    print(f"Intraday snapshot saved: {outfile} ({len(signals)} tickers)")
