@@ -95,6 +95,7 @@ OUTPUT_COLUMNS = [
     "high_52w_ratio", "low_52w_ratio",   # distance from 52w extremes
     "bb_pct",                            # BB position (0=at lower, 1=at upper)
     "rsi_above_70", "rsi_below_30",      # RSI extreme flags
+    "vwap_dev_eod", "vol_surge_eod", "intraday_momentum",  # intraday-derived
     "obv_trend",                         # OBV vs 10d OBV mean
     "vix_close", "vix_ret",              # market fear gauge
     "sector_rel_ret",                    # stock return - sector ETF return
@@ -417,6 +418,17 @@ def build_feature_dataframe(
     # RSI extreme flags
     df["rsi_above_70"] = (df["rsi_14"] > 70).astype(int)
     df["rsi_below_30"] = (df["rsi_14"] < 30).astype(int)
+
+    # ── Intraday-derived daily features ──────────────────────────────────────
+    # vwap_dev_eod: how far close was from VWAP at end of day
+    df["vwap_dev_eod"] = (c - df["vwap"]) / df["vwap"].replace(0, np.nan)
+
+    # vol_surge_eod: today's volume vs 20d average
+    vol_avg = v.rolling(20).mean().replace(0, np.nan)
+    df["vol_surge_eod"] = v / vol_avg
+
+    # intraday_momentum: vwap_dev weighted by vol_surge
+    df["intraday_momentum"] = df["vwap_dev_eod"] * df["vol_surge_eod"].fillna(1)
 
     # OBV trend (OBV minus its 10d mean, normalized by std)
     obv_ma  = df["obv"].rolling(10).mean()

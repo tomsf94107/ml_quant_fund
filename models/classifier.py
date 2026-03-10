@@ -75,6 +75,8 @@ FEATURE_COLUMNS: list[str] = [
     "eps_surprise", "rev_surprise",
     "days_to_earnings",
     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
+    # Intraday-derived daily features
+    "vwap_dev_eod", "vol_surge_eod", "intraday_momentum",
 ]
 
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
