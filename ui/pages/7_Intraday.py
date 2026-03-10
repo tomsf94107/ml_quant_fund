@@ -45,8 +45,12 @@ if not tickers:
     st.info("Select at least one ticker.")
     st.stop()
 
+@st.cache_data(ttl=60)  # cache 60 seconds
+def _fetch_signals(tickers_tuple):
+    return [get_intraday_signal(t) for t in tickers_tuple]
+
 with st.spinner("Fetching intraday data..."):
-    signals = [get_intraday_signal(t) for t in tickers]
+    signals = _fetch_signals(tuple(tickers))
 
 def fmt_signal(s, p):
     if s == "UP":   return f"UP ({p:.0%})"
@@ -92,12 +96,12 @@ if strong:
         avg_prob      = sum(s[f"prob_{h}"] for h in ["1hr","2hr","4hr"]) / 3
         icon          = "🟢" if direction == "UP" else "🔴"
 
-        with st.expander(f"{icon} {s['ticker']} — {direction} ({avg_prob:.0%} avg)", expanded=True):
-            c1, c2, c3, c4 = st.columns(4)
-            c1.metric("Price",     f"${s['current_price']:.2f}")
-            c2.metric("RSI",       f"{s['rsi_14']:.1f}" if s["rsi_14"] else "—")
-            c3.metric("VWAP Dev",  f"{s['vwap_dev']:+.2f}%" if s["vwap_dev"] is not None else "—")
-            c4.metric("Vol Surge", f"{s['vol_surge']:.2f}x"  if s["vol_surge"] else "—")
+        price_str  = f"${s['current_price']:.2f}" if s["current_price"] else "—"
+        rsi_str    = f"{s['rsi_14']:.1f}"            if s["rsi_14"]     else "—"
+        vwap_str   = f"{s['vwap_dev']:+.2f}%"        if s["vwap_dev"] is not None else "—"
+        vsurge_str = f"{s['vol_surge']:.2f}x"        if s["vol_surge"] else "—"
+        with st.expander(f"{icon} {s['ticker']} — {direction} ({avg_prob:.0%} avg) · {price_str}", expanded=True):
+            st.write(f"**Price:** {price_str} &nbsp;&nbsp; **RSI:** {rsi_str} &nbsp;&nbsp; **VWAP Dev:** {vwap_str} &nbsp;&nbsp; **Vol Surge:** {vsurge_str}")
             st.markdown(f"""
 | Horizon | Signal | Confidence |
 |---------|--------|------------|

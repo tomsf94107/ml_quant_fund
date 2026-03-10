@@ -38,16 +38,24 @@ def build_intraday_features(ticker: str) -> pd.DataFrame:
     if data.empty:
         return pd.DataFrame()
 
-    # Fix MultiIndex — yfinance returns (field, ticker) MultiIndex
+    # Fix MultiIndex — extract only the fields we need explicitly
     if isinstance(data.columns, pd.MultiIndex):
-        # level 0 = field (Close/High/Low), level 1 = ticker
-        if "Close" in data.columns.get_level_values(0):
-            data.columns = data.columns.get_level_values(0)
-        elif "Close" in data.columns.get_level_values(1):
-            data.columns = data.columns.get_level_values(1)
-        else:
-            # Flatten: take only the field part
-            data.columns = [str(col[0]) for col in data.columns]
+        # Build a flat DataFrame by extracting each field directly
+        flat = {}
+        for field in ["Close", "High", "Low", "Open", "Volume"]:
+            # Try (field, ticker) format
+            if (field, ticker) in data.columns:
+                flat[field] = data[(field, ticker)]
+            # Try (ticker, field) format
+            elif (ticker, field) in data.columns:
+                flat[field] = data[(ticker, field)]
+            # Try field in level 0
+            elif field in data.columns.get_level_values(0):
+                flat[field] = data.xs(field, axis=1, level=0).iloc[:, 0]
+            # Try field in level 1
+            elif field in data.columns.get_level_values(1):
+                flat[field] = data.xs(field, axis=1, level=1).iloc[:, 0]
+        data = pd.DataFrame(flat, index=data.index)
 
     df = data.copy()
     df.index = pd.to_datetime(df.index)
