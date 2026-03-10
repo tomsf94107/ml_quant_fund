@@ -448,8 +448,15 @@ def build_feature_dataframe(
     # Sector-relative return (stock 1d return minus its sector ETF return)
     sector_sym = SECTOR_ETF_MAP.get(ticker, SECTOR_ETF)
     try:
-        sec_ret = _market_return(sector_sym, start_str, end_str, date_index)
-        df["sector_rel_ret"] = df["return_1d"].values - sec_ret.values
+        import signal as _signal
+        def _timeout_handler(signum, frame): raise TimeoutError()
+        _signal.signal(_signal.SIGALRM, _timeout_handler)
+        _signal.alarm(8)  # 8 second timeout
+        try:
+            sec_ret = _market_return(sector_sym, start_str, end_str, date_index)
+            df["sector_rel_ret"] = df["return_1d"].values - sec_ret.values
+        finally:
+            _signal.alarm(0)
     except Exception:
         df["sector_rel_ret"] = 0.0
 
