@@ -452,6 +452,55 @@ if st.button("🚀 Run Strategy", type="primary"):
     """
     st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
 
+    # ── Intraday Signals ──────────────────────────────────────────────────────
+    st.subheader("⚡ Intraday Signals")
+    st.caption("Real-time 1hr / 2hr / 4hr momentum signals · Last trading day data when market closed")
+
+    try:
+        from features.intraday_builder import get_all_intraday_signals, is_market_open
+        intraday_tickers = [r.ticker for r in signal_summary]
+        with st.spinner("Loading intraday signals..."):
+            intra_sigs = get_all_intraday_signals(intraday_tickers)
+
+        sig_lkp = {s["ticker"]: s for s in intra_sigs}
+
+        def _isig_fmt(s, p):
+            if s == "UP":   return f"🟢 UP ({p:.0%})"
+            if s == "DOWN": return f"🔴 DOWN ({p:.0%})"
+            return f"⚪ NEUTRAL ({p:.0%})"
+
+        intra_rows = []
+        for t in intraday_tickers:
+            s = sig_lkp.get(t)
+            if not s or not s.get("current_price"):
+                continue
+            intra_rows.append({
+                "Ticker":    s["ticker"],
+                "Price":     f"${s['current_price']:.2f}",
+                "RSI":       f"{s['rsi_14']:.1f}"       if s["rsi_14"]           else "—",
+                "VWAP Dev":  f"{s['vwap_dev']:+.2f}%"   if s["vwap_dev"] is not None else "—",
+                "Vol Surge": f"{s['vol_surge']:.2f}x"   if s["vol_surge"]        else "—",
+                "1hr":       _isig_fmt(s["signal_1hr"],  s["prob_1hr"]),
+                "2hr":       _isig_fmt(s["signal_2hr"],  s["prob_2hr"]),
+                "4hr":       _isig_fmt(s["signal_4hr"],  s["prob_4hr"]),
+            })
+
+        if intra_rows:
+            st.dataframe(pd.DataFrame(intra_rows), use_container_width=True, hide_index=True)
+        else:
+            st.info("No intraday data available.")
+
+        # Strong signals callout
+        strong = [s for s in intra_sigs if
+            sum(1 for h in ["signal_1hr","signal_2hr","signal_4hr"] if s[h] in ("UP","DOWN")) >= 2
+            and s.get("current_price")
+        ]
+        if strong:
+            st.caption(f"🔥 {len(strong)} tickers with strong directional signals → see Intraday page for details")
+
+    except Exception as e:
+        st.warning(f"Intraday signals unavailable: {e}")
+
     # ── How to read this table ────────────────────────────────────────────────
     with st.expander("📖 How to read the Forecast Table", expanded=False):
         st.markdown("""
