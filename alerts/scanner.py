@@ -548,3 +548,89 @@ if __name__ == "__main__":
 
             print(f"  Next scan in {args.interval} minutes...")
             time.sleep(args.interval * 60)
+
+
+def check_intraday_flip_alerts(tickers: list[str] = None) -> int:
+    """
+    Fire alert when a ticker flips from NEUTRAL to UP intraday.
+    Designed to catch EOD BUY signals getting intraday confirmation.
+    """
+    import sqlite3
+    from features.intraday_builder import get_all_intraday_signals
+    from signals.generator import generate_signals
+    from features.builder import build_feature_dataframe
+
+    if tickers is None:
+        tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
+
+    conn = sqlite3.connect("alerts.db")
+    fired = 0
+
+    # Get current intraday signals
+    intra_sigs = get_all_intraday_signals(tickers)
+    sig_lkp    = {s["ticker"]: s for s in intra_sigs}
+
+    for ticker in tickers:
+        try:
+            s = sig_lkp.get(ticker)
+            if not s or not s.get("current_price"):
+                continue
+
+            i1 = s["signal_1hr"]
+            i2 = s["signal_2hr"]
+            p1 = s["prob_1hr"]
+            up_votes = [i1, i2, s["signal_4hr"]].count("UP")
+
+            # Get EOD signal
+            try:
+                df  = build_feature_dataframe(ticker, start_date="2024-01-01", training_mode=True)
+                eod = generate_signals(ticker=ticker, df=df, horizon=1)
+                eod_sig  = eod.today_signal
+                eod_prob = eod.today_prob_eff
+            except Exception:
+                eod_sig  = "HOLD"
+                eod_prob = 0.5
+
+            # Alert: EOD BUY + intraday flips UP
+            if eod_sig == "BUY" and up_votes >= 2 and p1 >= 0.60:
+                if not _already_alerted(conn, "INTRADAY_FLIP_UP", ticker, hours=4):
+                    _save_alert(conn, "INTRADAY_FLIP_UP", "HIGH", ticker,
+                        f"{ticker} intraday confirmed BUY signal",
+                        f"EOD BUY {eod_prob:.0%} + Intraday UP ({p1:.0%}) — both timeframes agree. "
+                        f"Price: ${s['current_price']:.2f} | RSI: {s['rsi_14']:.1f} | "
+                        f"VWAP Dev: {s['vwap_dev']:+.2f}% | Vol Surge: {s['vol_surge']:.2f}x",
+                        eod_prob)
+                    fire_alert(
+                        f"🔥 {ticker} BOTH BULLISH — EOD BUY confirmed by intraday",
+                        f"EOD prob {eod_prob:.0%} + intraday all UP ({p1:.0%}) | Price: ${s['current_price']:.2f}",
+                        severity="HIGH", ticker=ticker
+                    )
+                    fired += 1
+
+            # Alert: EOD BUY + intraday DOWN (conflict warning)
+            dn_votes = [i1, s["signal_2hr"], s["signal_4hr"]].count("DOWN")
+            if eod_sig == "BUY" and dn_votes >= 2:
+                if not _already_alerted(conn, "INTRADAY_CONFLICT", ticker, hours=4):
+                    _save_alert(conn, "INTRADAY_CONFLICT", "MEDIUM", ticker,
+                        f"{ticker} intraday conflicts with EOD BUY",
+                        f"EOD BUY {eod_prob:.0%} but intraday DOWN ({p1:.0%}) — "
+                        f"day traders selling into the signal. Wait for intraday to recover.",
+                        eod_prob)
+                    fired += 1
+
+            # Alert: HOLD but intraday strongly UP (watch list breakout)
+            if eod_sig == "HOLD" and up_votes == 3 and p1 >= 0.65:
+                if not _already_alerted(conn, "INTRADAY_BREAKOUT", ticker, hours=4):
+                    _save_alert(conn, "INTRADAY_BREAKOUT", "MEDIUM", ticker,
+                        f"{ticker} intraday breakout — all 3 horizons UP",
+                        f"EOD HOLD {eod_prob:.0%} but all intraday horizons UP ({p1:.0%}). "
+                        f"Watch for EOD signal to follow. Price: ${s['current_price']:.2f}",
+                        p1)
+                    fired += 1
+
+        except Exception:
+            pass
+
+    conn.commit()
+    conn.close()
+    return fired
