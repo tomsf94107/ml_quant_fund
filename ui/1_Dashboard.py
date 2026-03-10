@@ -705,6 +705,49 @@ This is your downside risk if the signal is wrong.
 st.divider()
 st.subheader("📊 Live Prediction Accuracy")
 
+# ── EOD + Intraday Accuracy Tables ───────────────────────────────────────────
+acc_tab1, acc_tab2 = st.tabs(["📅 EOD Model Accuracy", "⚡ Intraday Accuracy"])
+
+with acc_tab1:
+    try:
+        from accuracy.sink import get_eod_accuracy_summary
+        eod_acc = get_eod_accuracy_summary()
+        if eod_acc:
+            edf = pd.DataFrame(eod_acc)
+            edf["accuracy"]   = edf["accuracy"].apply(lambda x: f"{x:.1%}" if x is not None else "N/A")
+            edf["avg_return"] = edf["avg_return"].apply(lambda x: f"{x:+.2%}" if x is not None else "N/A")
+            edf.columns = ["Ticker", "# Outcomes", "Accuracy (BUY/SELL)", "Avg Return"]
+            st.dataframe(edf, use_container_width=True, hide_index=True)
+            valid = [r for r in eod_acc if r["accuracy"] is not None]
+            if valid:
+                avg = sum(r["accuracy"] for r in valid) / len(valid)
+                st.caption(f"Overall EOD accuracy: {avg:.1%} across {len(valid)} tickers with BUY/SELL signals")
+        else:
+            st.info("No EOD accuracy data yet.")
+    except Exception as e:
+        st.warning(f"EOD accuracy unavailable: {e}")
+
+with acc_tab2:
+    try:
+        from accuracy.sink import get_intraday_accuracy_summary, reconcile_intraday_outcomes
+        reconcile_intraday_outcomes()
+        intra_acc = get_intraday_accuracy_summary()
+        if intra_acc:
+            idf = pd.DataFrame(intra_acc)
+            idf["accuracy"] = idf["accuracy"].apply(lambda x: f"{x:.1%}" if x is not None else "N/A")
+            idf["horizon_hr"] = idf["horizon_hr"].apply(lambda x: f"{x}hr")
+            idf = idf.drop(columns=["computed_at"])
+            idf.columns = ["Ticker", "Horizon", "Accuracy", "# Predictions"]
+            st.dataframe(idf, use_container_width=True, hide_index=True)
+            valid = [r for r in intra_acc if r["accuracy"] is not None]
+            if valid:
+                avg = sum(r["accuracy"] for r in valid) / len(valid)
+                st.caption(f"Overall intraday accuracy: {avg:.1%} · Needs 5+ outcomes per ticker to be meaningful")
+        else:
+            st.info("No intraday accuracy data yet — check back after market hours once outcomes are reconciled.")
+    except Exception as e:
+        st.warning(f"Intraday accuracy unavailable: {e}")
+
 @st.cache_data(ttl=300)
 def _load_accuracy(horizon_filter):
     try:

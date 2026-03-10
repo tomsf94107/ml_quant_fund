@@ -278,14 +278,16 @@ if __name__ == "__main__":
 
 def log_intraday_snapshot():
     """Log intraday features at market close for future intraday model training."""
-    import json
+    import json, sqlite3
     from pathlib import Path
     from features.intraday_builder import get_all_intraday_signals
     from datetime import datetime
     import pytz
 
     ET = pytz.timezone("America/New_York")
-    today = datetime.now(ET).strftime("%Y-%m-%d")
+    now_et = datetime.now(ET)
+    today  = now_et.strftime("%Y-%m-%d")
+    ts     = now_et.strftime("%Y-%m-%dT%H:%M:%S")
     tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
 
     signals = get_all_intraday_signals(tickers)
@@ -297,3 +299,30 @@ def log_intraday_snapshot():
     with open(outfile, "w") as f:
         json.dump(signals, f)
     print(f"Intraday snapshot saved: {outfile} ({len(signals)} tickers)")
+
+    # Log predictions to accuracy.db
+    try:
+        conn = sqlite3.connect("accuracy.db")
+        logged = 0
+        for s in signals:
+            if not s.get("current_price") or s.get("error"):
+                continue
+            for hr, sig_key, prob_key in [(1,"signal_1hr","prob_1hr"),
+                                           (2,"signal_2hr","prob_2hr"),
+                                           (4,"signal_4hr","prob_4hr")]:
+                try:
+                    conn.execute("""
+                        INSERT OR IGNORE INTO intraday_predictions
+                        (ticker, prediction_ts, prediction_date, price_at_pred,
+                         horizon_hr, prob_up, signal, created_at)
+                        VALUES (?,?,?,?,?,?,?,?)
+                    """, (s["ticker"], ts, today, s["current_price"],
+                          hr, s[prob_key], s[sig_key], ts))
+                    logged += 1
+                except Exception:
+                    pass
+        conn.commit()
+        conn.close()
+        print(f"Logged {logged} intraday predictions to accuracy.db")
+    except Exception as e:
+        print(f"Failed to log intraday predictions: {e}")

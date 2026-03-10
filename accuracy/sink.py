@@ -605,3 +605,134 @@ if __name__ == "__main__":
                        "n_predictions"]].to_string(index=False))
         else:
             print("  No data yet — run predictions first")
+
+
+def reconcile_intraday_outcomes():
+    """
+    Match intraday predictions with actual prices 1hr/2hr/4hr later.
+    Run this periodically during market hours.
+    """
+    import sqlite3, yfinance as yf
+    from datetime import datetime, timedelta
+    import pytz
+
+    ET  = pytz.timezone("America/New_York")
+    now = datetime.now(ET)
+    db  = sqlite3.connect("accuracy.db")
+
+    # Get unreconciled predictions
+    rows = db.execute("""
+        SELECT p.ticker, p.prediction_ts, p.horizon_hr, p.price_at_pred, p.signal
+        FROM intraday_predictions p
+        LEFT JOIN intraday_outcomes o
+            ON p.ticker=o.ticker AND p.prediction_ts=o.prediction_ts
+               AND p.horizon_hr=o.horizon_hr
+        WHERE o.id IS NULL
+    """).fetchall()
+
+    reconciled = 0
+    for ticker, pred_ts, horizon_hr, price_at_pred, signal in rows:
+        try:
+            pred_dt  = datetime.fromisoformat(pred_ts).replace(tzinfo=ET)
+            outcome_dt = pred_dt + timedelta(hours=horizon_hr)
+            if outcome_dt > now:
+                continue  # not yet
+
+            # Fetch actual price at outcome time
+            tk   = yf.Ticker(ticker)
+            hist = tk.history(period="5d", interval="5m")
+            if hist.empty:
+                continue
+
+            hist.index = hist.index.tz_convert(ET)
+            # Find closest bar to outcome_dt
+            diffs = abs(hist.index - outcome_dt)
+            idx   = diffs.argmin()
+            if diffs[idx].total_seconds() > 3600:
+                continue  # too far from target time
+
+            price_at_outcome = float(hist["Close"].iloc[idx])
+            actual_return    = (price_at_outcome - price_at_pred) / price_at_pred
+            actual_up        = 1 if actual_return > 0 else 0
+            ts_now           = now.strftime("%Y-%m-%dT%H:%M:%S")
+
+            db.execute("""
+                INSERT OR IGNORE INTO intraday_outcomes
+                (ticker, prediction_ts, horizon_hr, outcome_ts,
+                 price_at_pred, price_at_outcome, actual_return, actual_up, created_at)
+                VALUES (?,?,?,?,?,?,?,?,?)
+            """, (ticker, pred_ts, horizon_hr,
+                  outcome_dt.strftime("%Y-%m-%dT%H:%M:%S"),
+                  price_at_pred, price_at_outcome,
+                  actual_return, actual_up, ts_now))
+            reconciled += 1
+        except Exception:
+            pass
+
+    db.commit()
+
+    # Update accuracy cache
+    tickers = [r[0] for r in db.execute("SELECT DISTINCT ticker FROM intraday_outcomes").fetchall()]
+    for ticker in tickers:
+        for hr in [1, 2, 4]:
+            rows2 = db.execute("""
+                SELECT p.signal, o.actual_up
+                FROM intraday_predictions p
+                JOIN intraday_outcomes o
+                    ON p.ticker=o.ticker AND p.prediction_ts=o.prediction_ts
+                       AND p.horizon_hr=o.horizon_hr
+                WHERE p.ticker=? AND p.horizon_hr=?
+            """, (ticker, hr)).fetchall()
+            if len(rows2) < 3:
+                continue
+            correct = sum(1 for sig, up in rows2
+                         if (sig=="UP" and up==1) or (sig=="DOWN" and up==0) or (sig=="NEUTRAL"))
+            acc = correct / len(rows2)
+            db.execute("""
+                INSERT OR REPLACE INTO intraday_accuracy_cache
+                (ticker, horizon_hr, accuracy, n_predictions, computed_at)
+                VALUES (?,?,?,?,?)
+            """, (ticker, hr, acc, len(rows2), datetime.now(ET).strftime("%Y-%m-%dT%H:%M:%S")))
+
+    db.commit()
+    db.close()
+    print(f"Reconciled {reconciled} intraday outcomes")
+    return reconciled
+
+
+def get_intraday_accuracy_summary() -> list[dict]:
+    """Return accuracy summary for display in dashboard."""
+    import sqlite3
+    db  = sqlite3.connect("accuracy.db")
+    rows = db.execute("""
+        SELECT ticker, horizon_hr, accuracy, n_predictions, computed_at
+        FROM intraday_accuracy_cache
+        ORDER BY ticker, horizon_hr
+    """).fetchall()
+    db.close()
+    return [{"ticker": r[0], "horizon_hr": r[1], "accuracy": r[2],
+             "n_predictions": r[3], "computed_at": r[4]} for r in rows]
+
+
+def get_eod_accuracy_summary() -> list[dict]:
+    """Return EOD accuracy summary for display."""
+    import sqlite3
+    db = sqlite3.connect("accuracy.db")
+    rows = db.execute("""
+        SELECT p.ticker,
+               COUNT(*) as n,
+               ROUND(AVG(CASE WHEN (p.signal='BUY' AND o.actual_up=1)
+                               OR (p.signal='SELL' AND o.actual_up=0) THEN 1.0
+                          WHEN p.signal='HOLD' THEN NULL
+                          ELSE 0.0 END), 3) as accuracy,
+               ROUND(AVG(o.actual_return), 4) as avg_return
+        FROM predictions p
+        JOIN outcomes o ON p.ticker=o.ticker
+            AND p.prediction_date=o.prediction_date
+            AND p.horizon=o.horizon
+        WHERE p.horizon=1
+        GROUP BY p.ticker
+        ORDER BY accuracy DESC NULLS LAST
+    """).fetchall()
+    db.close()
+    return [{"ticker": r[0], "n": r[1], "accuracy": r[2], "avg_return": r[3]} for r in rows]
