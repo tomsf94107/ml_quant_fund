@@ -28,3 +28,8 @@ venv/
 # Alerts __init__ (wrong name)
 alerts/alerts__init__.py
 .streamlit/secrets.toml
+data/cache/
+data/intraday_history/
+logs/
+models/saved/regime_cache.json
+data/cache/alpha/
