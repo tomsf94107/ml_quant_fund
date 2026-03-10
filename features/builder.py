@@ -100,6 +100,12 @@ OUTPUT_COLUMNS = [
     "vix_close", "vix_ret",              # market fear gauge
     "sector_rel_ret",                    # stock return - sector ETF return
     "day_of_week", "is_month_end",       # calendar effects
+    # ── NEW v3 features ──────────────────────────────────────────────────────
+    "premarket_gap",                     # open vs prev close
+    "es_overnight",                      # S&P500 futures overnight move
+    "iv_skew_snap", "pc_ratio_snap",     # options IV skew + put/call ratio
+    "analyst_upside", "analyst_buy_pct", "analyst_mult",  # analyst revisions
+    "finbert_sentiment", "finbert_mult", # FinBERT NLP sentiment
 ]
 
 
@@ -258,6 +264,7 @@ def build_feature_dataframe(
     start_date: str | date = "2018-01-01",
     end_date:   str | date | None = None,
     include_sentiment: bool = True,    # reads from SQLite cache, 0.0 if no data
+    training_mode: bool = False,       # if True, skip slow live API calls
 ) -> pd.DataFrame:
     """
     Build the canonical feature DataFrame for `ticker`.
@@ -294,6 +301,11 @@ def build_feature_dataframe(
 
     # ── 3. Price-based features ───────────────────────────────────────────────
     c = df["close"]
+    o = df["open"] if "open" in df.columns else c  # open price
+
+    # ── Pre-market gap ────────────────────────────────────────────────────────
+    # How much did stock gap up/down from yesterday's close to today's open
+    df["premarket_gap"] = (o - c.shift(1)) / c.shift(1)
 
     df["return_1d"] = c.pct_change(1)
     df["return_3d"] = c.pct_change(3)
@@ -436,6 +448,13 @@ def build_feature_dataframe(
     df["obv_trend"] = (df["obv"] - obv_ma) / obv_std
 
     # VIX
+    # ── Overnight futures (S&P500 futures ES=F) ─────────────────────────────
+    try:
+        es_ret = _market_return("ES=F", start_str, end_str, date_index)
+        df["es_overnight"] = es_ret.values
+    except Exception:
+        df["es_overnight"] = 0.0
+
     try:
         vix_raw = _market_return(VIX_TICKER, start_str, end_str, date_index,
                                   return_close=True)
@@ -444,6 +463,74 @@ def build_feature_dataframe(
     except Exception:
         df["vix_close"] = 20.0
         df["vix_ret"]   = 0.0
+
+    # ── FinBERT NLP sentiment ────────────────────────────────────────────────
+    if training_mode:
+        df["finbert_sentiment"] = 0.0
+        df["finbert_mult"]      = 1.0
+    else:
+        try:
+            from data.alpha_sources import get_earnings_call_sentiment
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as ex:
+                fut = ex.submit(get_earnings_call_sentiment, ticker)
+                try:
+                    nlp = fut.result(timeout=10)
+                    df["finbert_sentiment"] = nlp.get("sentiment_score")      or 0.0
+                    df["finbert_mult"]      = nlp.get("earnings_multiplier") or 1.0
+                except Exception:
+                    df["finbert_sentiment"] = 0.0
+                    df["finbert_mult"]      = 1.0
+        except Exception:
+            df["finbert_sentiment"] = 0.0
+            df["finbert_mult"]      = 1.0
+
+    # ── Analyst revisions ────────────────────────────────────────────────────
+    if training_mode:
+        df["analyst_upside"]  = 0.0
+        df["analyst_buy_pct"] = 0.5
+        df["analyst_mult"]    = 1.0
+    else:
+        try:
+            from data.alpha_sources import get_analyst_revisions
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as ex:
+                fut = ex.submit(get_analyst_revisions, ticker)
+                try:
+                    analyst = fut.result(timeout=5)
+                    df["analyst_upside"]    = analyst.get("target_upside")      or 0.0
+                    df["analyst_buy_pct"]   = analyst.get("buy_pct")             or 0.5
+                    df["analyst_mult"]      = analyst.get("analyst_multiplier")  or 1.0
+                except Exception:
+                    df["analyst_upside"]  = 0.0
+                    df["analyst_buy_pct"] = 0.5
+                    df["analyst_mult"]    = 1.0
+        except Exception:
+            df["analyst_upside"]  = 0.0
+            df["analyst_buy_pct"] = 0.5
+            df["analyst_mult"]    = 1.0
+
+    # ── Options IV skew (daily snapshot) ─────────────────────────────────────
+    if training_mode:
+        df["iv_skew_snap"]  = 0.0
+        df["pc_ratio_snap"] = 1.0
+    else:
+        try:
+            from features.options_flow import get_options_signal
+            import functools, concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as ex:
+                fut = ex.submit(get_options_signal, ticker)
+                try:
+                    opt = fut.result(timeout=5)
+                    iv_skew_val = opt.get("iv_skew") or 0.0
+                    pc_ratio_val = opt.get("put_call_ratio") or 1.0
+                except Exception:
+                    iv_skew_val, pc_ratio_val = 0.0, 1.0
+            df["iv_skew_snap"]   = iv_skew_val
+            df["pc_ratio_snap"]  = pc_ratio_val
+        except Exception:
+            df["iv_skew_snap"]  = 0.0
+            df["pc_ratio_snap"] = 1.0
 
     # Sector-relative return (stock 1d return minus its sector ETF return)
     sector_sym = SECTOR_ETF_MAP.get(ticker, SECTOR_ETF)

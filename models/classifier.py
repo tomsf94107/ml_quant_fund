@@ -77,6 +77,14 @@ FEATURE_COLUMNS: list[str] = [
     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
     # Intraday-derived daily features
     "vwap_dev_eod", "vol_surge_eod", "intraday_momentum",
+    # Pre-market & overnight
+    "premarket_gap", "es_overnight",
+    # Options IV
+    "iv_skew_snap", "pc_ratio_snap",
+    # Analyst revisions
+    "analyst_upside", "analyst_buy_pct", "analyst_mult",
+    # FinBERT NLP
+    "finbert_sentiment", "finbert_mult",
 ]
 
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
