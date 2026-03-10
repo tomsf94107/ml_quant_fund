@@ -29,8 +29,14 @@ else:
 
 col_ctrl1, col_ctrl2 = st.columns([3, 1])
 with col_ctrl1:
-    DEFAULT_TICKERS = ["NVDA","AAPL","TSLA","META","MSFT","AMD","PLTR","TSM","NVO","CRWD","SHOP","NFLX"]
-    tickers = st.multiselect("Tickers to scan", options=DEFAULT_TICKERS, default=DEFAULT_TICKERS[:8])
+    # Load from same tickers.txt as main dashboard
+    _root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+    _ticker_file = os.path.join(_root, "tickers.txt")
+    if os.path.exists(_ticker_file):
+        ALL_TICKERS = [t.strip() for t in open(_ticker_file).readlines() if t.strip()]
+    else:
+        ALL_TICKERS = ["NVDA","AAPL","TSLA","META","MSFT","AMD","PLTR","TSM","NVO","CRWD"]
+    tickers = st.multiselect("Tickers to scan", options=ALL_TICKERS, default=ALL_TICKERS)
 with col_ctrl2:
     st.write("")
     st.button("Refresh Now", type="primary", use_container_width=True)
