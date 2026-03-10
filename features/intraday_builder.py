@@ -175,3 +175,106 @@ def get_intraday_signal(ticker: str) -> dict:
         result["error"] = str(e)
 
     return result
+
+
+def get_all_intraday_signals(tickers: list) -> list:
+    """
+    Batch download all tickers at once to avoid yfinance per-ticker caching issues.
+    """
+    import yfinance as yf
+    import pandas as pd
+
+    # Download all at once
+    raw = yf.download(
+        tickers, period="2d", interval="5m",
+        progress=False, auto_adjust=True, group_by="ticker"
+    )
+
+    results = []
+    for ticker in tickers:
+        try:
+            # Extract this ticker's data
+            if isinstance(raw.columns, pd.MultiIndex):
+                if ticker in raw.columns.get_level_values(0):
+                    df = raw[ticker].copy()
+                elif ticker in raw.columns.get_level_values(1):
+                    df = raw.xs(ticker, axis=1, level=1).copy()
+                else:
+                    results.append(get_intraday_signal(ticker))
+                    continue
+            else:
+                df = raw.copy()
+
+            if df.empty or "Close" not in df.columns:
+                results.append(get_intraday_signal(ticker))
+                continue
+
+            # Get last trading day
+            df.index = pd.to_datetime(df.index)
+            if df.index.tzinfo:
+                df.index = df.index.tz_convert(ET)
+            last_date = df.index[-1].date()
+            df = df[df.index.date == last_date]
+
+            if len(df) < 5:
+                results.append(get_intraday_signal(ticker))
+                continue
+
+            # Compute features inline
+            df = df.copy()
+            df["return_5m"]  = df["Close"].pct_change()
+            df["return_1hr"] = df["Close"].pct_change(12)
+            df["return_2hr"] = df["Close"].pct_change(24)
+            df["vol_surge"]  = df["Volume"] / df["Volume"].rolling(12).mean()
+            df["vwap"]       = (df["Close"] * df["Volume"]).cumsum() / df["Volume"].cumsum()
+            df["vwap_dev"]   = (df["Close"] - df["vwap"]) / df["vwap"]
+            delta = df["Close"].diff()
+            gain  = delta.clip(lower=0).rolling(14).mean()
+            loss  = (-delta.clip(upper=0)).rolling(14).mean()
+            rs    = gain / loss.replace(0, float("nan"))
+            df["rsi_14"] = 100 - (100 / (1 + rs))
+            df["momentum_score"] = (
+                df["return_1hr"].fillna(0) * 0.4 +
+                df["vwap_dev"].fillna(0)   * 0.3 +
+                ((df["rsi_14"].fillna(50) - 50) / 50) * 0.3
+            )
+
+            last = df.iloc[-1]
+            mom  = float(last.get("momentum_score", 0) or 0)
+            rsi  = float(last.get("rsi_14", 50) or 50)
+            vdev = float(last.get("vwap_dev", 0) or 0)
+            vsur = float(last.get("vol_surge", 1) or 1)
+            mso  = minutes_since_open()
+
+            def mom_to_prob(m, scale=8):
+                return round(1 / (1 + np.exp(-m * scale)), 3)
+
+            p1 = mom_to_prob(mom)
+            p2 = mom_to_prob(mom * 0.6 + float(last.get("return_2hr", 0) or 0) * 0.4)
+            late = min(mso / 390, 1.0)
+            p4 = mom_to_prob(mom * (1 - late * 0.4) + vdev * late * -2)
+
+            def prob_to_signal(p):
+                if p >= 0.60: return "UP"
+                if p <= 0.40: return "DOWN"
+                return "NEUTRAL"
+
+            results.append({
+                "ticker":           ticker,
+                "current_price":    round(float(last["Close"]), 2),
+                "vwap":             round(float(last["vwap"]), 2),
+                "vwap_dev":         round(vdev * 100, 2),
+                "rsi_14":           round(rsi, 1),
+                "vol_surge":        round(vsur, 2),
+                "momentum_score":   round(mom, 4),
+                "prob_1hr": p1, "prob_2hr": p2, "prob_4hr": p4,
+                "signal_1hr": prob_to_signal(p1),
+                "signal_2hr": prob_to_signal(p2),
+                "signal_4hr": prob_to_signal(p4),
+                "minutes_since_open": mso,
+                "market_open": is_market_open(),
+                "error": None,
+            })
+        except Exception as e:
+            results.append(get_intraday_signal(ticker))
+    return results

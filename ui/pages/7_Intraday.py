@@ -6,7 +6,7 @@ import pandas as pd
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
-from features.intraday_builder import get_intraday_signal, is_market_open, minutes_since_open
+from features.intraday_builder import get_intraday_signal, get_all_intraday_signals, is_market_open, minutes_since_open
 from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 import pytz
@@ -45,12 +45,13 @@ if not tickers:
     st.info("Select at least one ticker.")
     st.stop()
 
-@st.cache_data(ttl=60)  # cache 60 seconds
-def _fetch_signals(tickers_tuple):
-    return [get_intraday_signal(t) for t in tickers_tuple]
-
 with st.spinner("Fetching intraday data..."):
-    signals = _fetch_signals(tuple(tickers))
+    signals = get_all_intraday_signals(tickers)
+
+# Debug — show raw prices
+with st.expander("🐛 Debug — raw prices", expanded=False):
+    for sig in signals:
+        st.write(f"{sig['ticker']}: ${sig['current_price']} | error: {sig.get('error')}")
 
 def fmt_signal(s, p):
     if s == "UP":   return f"UP ({p:.0%})"
@@ -60,9 +61,15 @@ def fmt_signal(s, p):
 st.subheader("Signal Summary")
 st.caption("UP = bullish momentum · DOWN = bearish · NEUTRAL = no clear direction")
 
+# Build lookup by ticker first to avoid any positional shifting
+sig_lookup = {s["ticker"]: s for s in signals}
 rows = []
-for sig in signals:
-    if not sig.get("current_price"):
+for t in tickers:
+    sig = sig_lookup.get(t)
+    if not sig or not sig.get("current_price"):
+        rows.append({"Ticker": t, "Price": "—", "RSI": "—",
+                     "VWAP Dev": "—", "Vol Surge": "—",
+                     "1hr": "—", "2hr": "—", "4hr": "—"})
         continue
     rows.append({
         "Ticker":    sig["ticker"],
@@ -76,7 +83,12 @@ for sig in signals:
     })
 
 if rows:
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    df_rows = pd.DataFrame(rows)
+    # Debug — show first 5 rows before rendering
+    with st.expander("🐛 Debug — table rows", expanded=False):
+        for _, r in df_rows.iterrows():
+            st.write(f"{r['Ticker']}: {r['Price']}")
+    st.dataframe(df_rows, use_container_width=True, hide_index=True)
 else:
     st.warning("No intraday data available.")
 
