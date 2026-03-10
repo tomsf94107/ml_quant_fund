@@ -452,51 +452,83 @@ if st.button("🚀 Run Strategy", type="primary"):
     """
     st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
 
-    # ── Intraday Signals ──────────────────────────────────────────────────────
-    st.subheader("⚡ Intraday Signals")
-    st.caption("Real-time 1hr / 2hr / 4hr momentum signals · Last trading day data when market closed")
+    # ── Intraday Signals + Alignment Table ───────────────────────────────────
+    st.subheader("⚡ Intraday Signals & EOD Alignment")
+    st.caption("Compares EOD model signal with intraday 1hr/2hr/4hr momentum · tickers from your strategy run")
 
     try:
         from features.intraday_builder import get_all_intraday_signals, is_market_open
         intraday_tickers = [r.ticker for r in signal_summary]
+
         with st.spinner("Loading intraday signals..."):
             intra_sigs = get_all_intraday_signals(intraday_tickers)
 
-        sig_lkp = {s["ticker"]: s for s in intra_sigs}
+        sig_lkp  = {s["ticker"]: s for s in intra_sigs}
+        eod_lkp  = {r.ticker: r for r in signal_summary}
 
         def _isig_fmt(s, p):
             if s == "UP":   return f"🟢 UP ({p:.0%})"
             if s == "DOWN": return f"🔴 DOWN ({p:.0%})"
-            return f"⚪ NEUTRAL ({p:.0%})"
+            return f"⚪ NTRL ({p:.0%})"
 
-        intra_rows = []
+        def _alignment(eod_sig, i1, i2, i4):
+            up = [i1,i2,i4].count("UP")
+            dn = [i1,i2,i4].count("DOWN")
+            if eod_sig == "BUY"  and up >= 2: return "🔥 BOTH BULLISH"
+            if eod_sig == "SELL" and dn >= 2: return "🔥 BOTH BEARISH"
+            if eod_sig == "BUY"  and dn >= 2: return "⚠️ CONFLICT"
+            if eod_sig == "SELL" and up >= 2: return "⚠️ CONFLICT"
+            if up >= 2: return "📈 INTRA BULL"
+            if dn >= 2: return "📉 INTRA BEAR"
+            return "➖ NEUTRAL"
+
+        align_rows = []
         for t in intraday_tickers:
             s = sig_lkp.get(t)
-            if not s or not s.get("current_price"):
+            e = eod_lkp.get(t)
+            if not s or not e or not s.get("current_price"):
                 continue
-            intra_rows.append({
-                "Ticker":    s["ticker"],
+            i1 = s["signal_1hr"]; i2 = s["signal_2hr"]; i4 = s["signal_4hr"]
+            align_rows.append({
+                "Ticker":    t,
                 "Price":     f"${s['current_price']:.2f}",
-                "RSI":       f"{s['rsi_14']:.1f}"       if s["rsi_14"]           else "—",
-                "VWAP Dev":  f"{s['vwap_dev']:+.2f}%"   if s["vwap_dev"] is not None else "—",
-                "Vol Surge": f"{s['vol_surge']:.2f}x"   if s["vol_surge"]        else "—",
-                "1hr":       _isig_fmt(s["signal_1hr"],  s["prob_1hr"]),
-                "2hr":       _isig_fmt(s["signal_2hr"],  s["prob_2hr"]),
-                "4hr":       _isig_fmt(s["signal_4hr"],  s["prob_4hr"]),
+                "EOD Signal": e.today_signal,
+                "EOD Prob":  f"{e.today_prob_eff:.0%}",
+                "1hr":       _isig_fmt(i1, s["prob_1hr"]),
+                "2hr":       _isig_fmt(i2, s["prob_2hr"]),
+                "4hr":       _isig_fmt(i4, s["prob_4hr"]),
+                "Alignment": _alignment(e.today_signal, i1, i2, i4),
             })
 
-        if intra_rows:
-            st.dataframe(pd.DataFrame(intra_rows), use_container_width=True, hide_index=True)
+        if align_rows:
+            adf = pd.DataFrame(align_rows)
+
+            # Sort: BOTH BULLISH first, then INTRA BULL, NEUTRAL, CONFLICT, INTRA BEAR
+            sort_order = {"🔥 BOTH BULLISH": 0, "📈 INTRA BULL": 1, "➖ NEUTRAL": 2,
+                          "⚠️ CONFLICT": 3, "📉 INTRA BEAR": 4, "🔥 BOTH BEARISH": 5}
+            adf["_sort"] = adf["Alignment"].map(sort_order).fillna(9)
+            adf = adf.sort_values("_sort").drop(columns=["_sort"])
+
+            st.dataframe(adf, use_container_width=True, hide_index=True)
+
+            # Summary counts
+            counts = adf["Alignment"].value_counts()
+            summary_parts = [f"{v}× {k}" for k,v in counts.items()]
+            st.caption("  ·  ".join(summary_parts))
+
+            with st.expander("📖 How to read Alignment", expanded=False):
+                st.markdown("""
+| Alignment | Meaning | Action |
+|-----------|---------|--------|
+| 🔥 BOTH BULLISH | EOD=BUY + Intraday UP | Highest conviction entry |
+| 🔥 BOTH BEARISH | EOD=SELL + Intraday DOWN | Highest conviction avoid |
+| 📈 INTRA BULL | EOD=HOLD but intraday momentum UP | Watch — may break out |
+| 📉 INTRA BEAR | EOD=HOLD but intraday momentum DOWN | Avoid short-term |
+| ⚠️ CONFLICT | EOD and intraday disagree | Wait for clarity |
+| ➖ NEUTRAL | No strong signal in either direction | Hold current position |
+""")
         else:
             st.info("No intraday data available.")
-
-        # Strong signals callout
-        strong = [s for s in intra_sigs if
-            sum(1 for h in ["signal_1hr","signal_2hr","signal_4hr"] if s[h] in ("UP","DOWN")) >= 2
-            and s.get("current_price")
-        ]
-        if strong:
-            st.caption(f"🔥 {len(strong)} tickers with strong directional signals → see Intraday page for details")
 
     except Exception as e:
         st.warning(f"Intraday signals unavailable: {e}")
