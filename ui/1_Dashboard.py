@@ -527,6 +527,49 @@ if st.button("🚀 Run Strategy", type="primary"):
 | ⚠️ CONFLICT | EOD and intraday disagree | Wait for clarity |
 | ➖ NEUTRAL | No strong signal in either direction | Hold current position |
 """)
+
+            # ── Live interpretation ───────────────────────────────────────────
+            st.subheader("🧠 Live Interpretation")
+
+            both_bull = [r["Ticker"] for r in align_rows if r["Alignment"] == "🔥 BOTH BULLISH"]
+            both_bear = [r["Ticker"] for r in align_rows if r["Alignment"] == "🔥 BOTH BEARISH"]
+            intra_bull = [r["Ticker"] for r in align_rows if r["Alignment"] == "📈 INTRA BULL"]
+            intra_bear = [r["Ticker"] for r in align_rows if r["Alignment"] == "📉 INTRA BEAR"]
+            conflict   = [r["Ticker"] for r in align_rows if r["Alignment"] == "⚠️ CONFLICT"]
+            eod_buys   = [r for r in align_rows if r["EOD Signal"] == "BUY"]
+
+            if both_bull:
+                tickers_str = ", ".join(both_bull)
+                st.success(f"🔥 **Highest conviction BUY:** {tickers_str} — EOD model AND intraday both bullish. Strongest entry signal.")
+
+            if both_bear:
+                tickers_str = ", ".join(both_bear)
+                st.error(f"🔥 **Highest conviction AVOID:** {tickers_str} — EOD model AND intraday both bearish.")
+
+            if eod_buys and not both_bull:
+                for r in eod_buys:
+                    t = r["Ticker"]
+                    p = r["EOD Prob"]
+                    al = r["Alignment"]
+                    if al == "➖ NEUTRAL":
+                        st.info(f"✅ **{t} EOD BUY ({p})** — Model confident but intraday neutral. Valid entry, no intraday confirmation yet. Consider waiting for intraday to turn UP.")
+                    elif al == "⚠️ CONFLICT":
+                        st.warning(f"⚠️ **{t} EOD BUY ({p}) but intraday bearish** — Conflicting signals. Reduce position size or wait.")
+
+            if intra_bull and not both_bull:
+                tickers_str = ", ".join(intra_bull)
+                st.info(f"📈 **Watch list:** {tickers_str} — Intraday momentum bullish but EOD model cautious. If EOD prob rises above threshold tomorrow, these become BUY candidates.")
+
+            if intra_bear:
+                tickers_str = ", ".join(intra_bear)
+                st.warning(f"📉 **Avoid short-term:** {tickers_str} — Intraday momentum bearish. Even if EOD signal fires BUY, day traders are selling. Wait for intraday to recover.")
+
+            if conflict:
+                tickers_str = ", ".join(conflict)
+                st.warning(f"⚠️ **Conflicting signals:** {tickers_str} — EOD and intraday disagree. Hold off until signals align.")
+
+            if not both_bull and not eod_buys and not intra_bull:
+                st.info("No strong directional signals right now. Market is in a wait-and-see mode.")
         else:
             st.info("No intraday data available.")
 
