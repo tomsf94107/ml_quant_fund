@@ -38,13 +38,16 @@ def build_intraday_features(ticker: str) -> pd.DataFrame:
     if data.empty:
         return pd.DataFrame()
 
-    # Fix MultiIndex
+    # Fix MultiIndex — yfinance returns (field, ticker) MultiIndex
     if isinstance(data.columns, pd.MultiIndex):
-        data.columns = (
-            data.columns.get_level_values(0)
-            if "Close" in data.columns.get_level_values(0)
-            else data.columns.get_level_values(1)
-        )
+        # level 0 = field (Close/High/Low), level 1 = ticker
+        if "Close" in data.columns.get_level_values(0):
+            data.columns = data.columns.get_level_values(0)
+        elif "Close" in data.columns.get_level_values(1):
+            data.columns = data.columns.get_level_values(1)
+        else:
+            # Flatten: take only the field part
+            data.columns = [str(col[0]) for col in data.columns]
 
     df = data.copy()
     df.index = pd.to_datetime(df.index)
