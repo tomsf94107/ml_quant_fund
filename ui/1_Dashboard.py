@@ -24,6 +24,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 import os, sys
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.timezone import now_et
 from datetime import date, datetime, timedelta
 
