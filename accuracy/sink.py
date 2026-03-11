@@ -24,6 +24,7 @@ from __future__ import annotations
 import os
 import sqlite3
 from contextlib import contextmanager
+from utils.timezone import now_et, today_et, ts_et
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Iterator, Optional
@@ -224,7 +225,7 @@ def log_prediction(
         """, (
             ticker.upper(), str(prediction_date), horizon,
             float(prob_up), signal, confidence, model_version,
-            datetime.utcnow().isoformat(),
+            ts_et(),
         ))
 
 
@@ -240,7 +241,7 @@ def log_predictions_batch(rows: list[dict]) -> int:
         return 0
     init_db()
     p = _placeholder()
-    now = datetime.utcnow().isoformat()
+    now = ts_et()
     records = [
         (
             r["ticker"].upper(),
@@ -329,7 +330,7 @@ def reconcile_outcomes(
 
     # Fetch actual returns
     written = 0
-    now = datetime.utcnow().isoformat()
+    now = ts_et()
 
     for ticker, group in due.groupby("ticker"):
         min_date = group["prediction_date"].min() - timedelta(days=2)
@@ -356,12 +357,13 @@ def reconcile_outcomes(
                 outcome_date = row["outcome_date"]
 
                 try:
-                    close_pred   = float(close.asof(pd.Timestamp(pred_date)))
-                    close_out    = float(close.asof(pd.Timestamp(outcome_date)))
-                    actual_ret   = (close_out - close_pred) / close_pred
+                    # Did stock go UP on prediction_date?
+                    day_open  = float(px["Open"].squeeze().asof(pd.Timestamp(pred_date)))
+                    day_close = float(close.asof(pd.Timestamp(pred_date)))
+                    actual_ret = (day_close - day_open) / day_open
                     if actual_ret == 0.0:
-                        continue  # skip — outcome date not yet in yfinance
-                    actual_up    = int(actual_ret > 0)
+                        continue
+                    actual_up = int(actual_ret > 0)
                 except Exception:
                     continue
 
@@ -417,7 +419,7 @@ def update_accuracy_cache(
     joined = joined[joined["prediction_date"] >= cutoff]
 
     rows = []
-    now  = datetime.utcnow().isoformat()
+    now  = ts_et()
 
     for (ticker, horizon), grp in joined.groupby(["ticker", "horizon"]):
         if len(grp) < 1:   # not enough data for meaningful metrics
@@ -614,10 +616,8 @@ def reconcile_intraday_outcomes():
     """
     import sqlite3, yfinance as yf
     from datetime import datetime, timedelta
-    import pytz
-
-    ET  = pytz.timezone("America/New_York")
-    now = datetime.now(ET)
+    from utils.timezone import now_et, ET
+    now = now_et()
     db  = sqlite3.connect("accuracy.db")
 
     # Get unreconciled predictions
@@ -736,3 +736,72 @@ def get_eod_accuracy_summary() -> list[dict]:
     """).fetchall()
     db.close()
     return [{"ticker": r[0], "n": r[1], "accuracy": r[2], "avg_return": r[3]} for r in rows]
+
+
+def get_spy_relative_accuracy() -> list[dict]:
+    """
+    Compare HOLD ticker returns vs SPY return each day.
+    Shows whether the model identifies outperformers even when signal=HOLD.
+    """
+    import sqlite3, yfinance as yf
+    import pandas as pd
+    from utils.timezone import today_et
+
+    db = sqlite3.connect("accuracy.db")
+    rows = db.execute("""
+        SELECT p.ticker, p.prediction_date, p.signal, p.prob_up,
+               o.actual_return, o.actual_up
+        FROM predictions p
+        JOIN outcomes o ON p.ticker=o.ticker 
+            AND p.prediction_date=o.prediction_date
+            AND p.horizon=o.horizon
+        WHERE p.horizon=1
+        ORDER BY p.prediction_date
+    """).fetchall()
+    db.close()
+
+    if not rows:
+        return []
+
+    df = pd.DataFrame(rows, columns=["ticker","date","signal","prob_up","actual_return","actual_up"])
+    df["date"] = pd.to_datetime(df["date"])
+
+    # Fetch SPY returns
+    min_date = df["date"].min().strftime("%Y-%m-%d")
+    max_date = (df["date"].max() + pd.Timedelta(days=2)).strftime("%Y-%m-%d")
+    min_date_ext = (df["date"].min() - pd.Timedelta(days=5)).strftime("%Y-%m-%d")
+    try:
+        spy = yf.download("SPY", start=min_date_ext, end=max_date,
+                          auto_adjust=True, progress=False)
+        if isinstance(spy.columns, pd.MultiIndex):
+            spy.columns = spy.columns.get_level_values(0)
+        spy["spy_ret"] = spy["Close"].pct_change()
+        spy = spy[["spy_ret"]].reset_index()
+        spy.columns = ["date", "spy_ret"]
+        spy["date"] = pd.to_datetime(spy["date"])
+    except Exception:
+        return []
+
+    df = df.merge(spy, on="date", how="left")
+    df = df.dropna(subset=["spy_ret"])  # remove non-trading days
+    df["vs_spy"] = df["actual_return"] - df["spy_ret"]
+
+    # Summary by date
+    results = []
+    for date, grp in df.groupby("date"):
+        spy_ret = grp["spy_ret"].iloc[0]
+        avg_ret = grp["actual_return"].mean()
+        avg_vs_spy = grp["vs_spy"].mean()
+        pct_beat = (grp["vs_spy"] > 0).mean()
+        buys = grp[grp["signal"] == "BUY"]
+        buy_acc = (buys["actual_up"] == 1).mean() if len(buys) > 0 else None
+        results.append({
+            "date":        date.strftime("%Y-%m-%d"),
+            "spy_ret":     round(spy_ret, 4),
+            "avg_ret":     round(avg_ret, 4),
+            "avg_vs_spy":  round(avg_vs_spy, 4),
+            "pct_beat_spy": round(pct_beat, 3),
+            "n_buy":       len(buys),
+            "buy_acc":     round(buy_acc, 3) if buy_acc is not None else None,
+        })
+    return results

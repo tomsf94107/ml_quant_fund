@@ -24,6 +24,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 import os, sys
+from utils.timezone import now_et
 from datetime import date, datetime, timedelta
 
 # ── Path bootstrap ────────────────────────────────────────────────────────────
@@ -108,7 +109,7 @@ def _send_alert(ticker: str, prob: float, horizon: int):
             f"Ticker  : {ticker}\n"
             f"Horizon : {horizon}d\n"
             f"Prob(up): {prob:.1%}\n"
-            f"Time    : {datetime.now():%Y-%m-%d %H:%M}"
+            f"Time    : {now_et().strftime('%Y-%m-%d %H:%M ET')}"
         )
         msg["Subject"] = f"🟢 BUY signal · {ticker}"
         msg["From"]    = os.getenv("EMAIL_SENDER", "")
@@ -220,7 +221,7 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════════════════════
 
 st.title("📈 ML Quant Fund")
-st.caption(f"🕒 {datetime.now():%Y-%m-%d %H:%M:%S}")
+st.caption(f"🕒 {now_et().strftime('%Y-%m-%d %H:%M:%S ET')}")
 
 # ── Event risk badge (set by Page 7 — calendar) ──────────────────────────────
 risk_info  = st.session_state.get("event_risk_next72")
@@ -710,7 +711,9 @@ acc_tab1, acc_tab2 = st.tabs(["📅 EOD Model Accuracy", "⚡ Intraday Accuracy"
 
 with acc_tab1:
     try:
-        from accuracy.sink import get_eod_accuracy_summary
+        from accuracy.sink import get_eod_accuracy_summary, get_spy_relative_accuracy
+        
+        # BUY/SELL accuracy
         eod_acc = get_eod_accuracy_summary()
         if eod_acc:
             edf = pd.DataFrame(eod_acc)
@@ -721,9 +724,32 @@ with acc_tab1:
             valid = [r for r in eod_acc if r["accuracy"] is not None]
             if valid:
                 avg = sum(r["accuracy"] for r in valid) / len(valid)
-                st.caption(f"Overall EOD accuracy: {avg:.1%} across {len(valid)} tickers with BUY/SELL signals")
+                st.caption(f"Overall BUY/SELL accuracy: {avg:.1%} · Only {sum(r['n'] for r in eod_acc if r['accuracy'] is not None)} BUY/SELL signals so far — need 60+ for statistical significance")
         else:
             st.info("No EOD accuracy data yet.")
+
+        # SPY-relative accuracy
+        st.markdown("---")
+        st.markdown("**📊 Daily Performance vs SPY**")
+        st.caption("Are our tickers outperforming the market each day? More meaningful than BUY accuracy with small sample.")
+        spy_acc = get_spy_relative_accuracy()
+        if spy_acc:
+            sdf = pd.DataFrame(spy_acc)
+            sdf["spy_ret"]      = sdf["spy_ret"].apply(lambda x: f"{x:+.2%}")
+            sdf["avg_ret"]      = sdf["avg_ret"].apply(lambda x: f"{x:+.2%}")
+            sdf["avg_vs_spy"]   = sdf["avg_vs_spy"].apply(lambda x: f"{x:+.2%}")
+            sdf["pct_beat_spy"] = sdf["pct_beat_spy"].apply(lambda x: f"{x:.0%}")
+            sdf["buy_acc"]      = sdf["buy_acc"].apply(lambda x: f"{x:.0%}" if x is not None else "—")
+            sdf.columns = ["Date","SPY Return","Avg Return","Avg vs SPY","% Beat SPY","# BUYs","BUY Acc"]
+            st.dataframe(sdf, use_container_width=True, hide_index=True)
+            avg_vs_spy = sum(r["avg_vs_spy"] for r in spy_acc) / len(spy_acc)
+            avg_beat   = sum(r["pct_beat_spy"] for r in spy_acc) / len(spy_acc)
+            if avg_vs_spy > 0:
+                st.success(f"✅ On average our tickers beat SPY by {avg_vs_spy:+.2%} per day · {avg_beat:.0%} of tickers beat SPY")
+            else:
+                st.warning(f"⚠️ On average our tickers underperform SPY by {avg_vs_spy:+.2%} per day")
+        else:
+            st.info("No SPY comparison data yet.")
     except Exception as e:
         st.warning(f"EOD accuracy unavailable: {e}")
 
