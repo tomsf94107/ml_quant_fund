@@ -25,6 +25,7 @@ import os
 import sys
 import time
 import logging
+from utils.timezone import now_et, today_et, ts_et
 from datetime import datetime, date
 from pathlib import Path
 
@@ -131,7 +132,7 @@ def send_email_alert(buy_signals: list[dict]):
         if not smtp_user or not smtp_pass:
             return
 
-        lines = [f"ML Quant Fund — Daily BUY Signals\n{datetime.now().strftime('%Y-%m-%d %H:%M')}\n"]
+        lines = [f"ML Quant Fund — Daily BUY Signals\n{now_et().strftime('%Y-%m-%d %H:%M ET')}\n"]
         for s in buy_signals:
             lines.append(
                 f"  {s['ticker']:6s}  h={s['horizon']}d  "
@@ -160,7 +161,7 @@ def send_email_alert(buy_signals: list[dict]):
 # ══════════════════════════════════════════════════════════════════════════════
 
 def run_daily():
-    run_date = datetime.now().strftime("%Y-%m-%d")
+    run_date = today_et()
     log.info(f"{'='*60}")
     log.info(f"  Daily Runner — {run_date}")
     log.info(f"{'='*60}")
@@ -274,6 +275,12 @@ def run_daily():
 
 
 if __name__ == "__main__":
+    # Guard: only run on US trading days (Mon-Fri ET, excluding holidays)
+    from utils.timezone import now_et
+    now = now_et()
+    if now.weekday() >= 5:  # Saturday=5, Sunday=6 in ET
+        print(f"Skipping — not a trading day ({now.strftime('%A %Y-%m-%d ET')})")
+        exit(0)
     run_daily()
 
 def log_intraday_snapshot():
@@ -281,7 +288,8 @@ def log_intraday_snapshot():
     import json, sqlite3
     from pathlib import Path
     from features.intraday_builder import get_all_intraday_signals
-    from datetime import datetime
+    from utils.timezone import now_et, today_et, ts_et
+from datetime import datetime
     import pytz
 
     ET = pytz.timezone("America/New_York")
