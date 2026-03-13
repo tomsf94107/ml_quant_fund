@@ -429,7 +429,14 @@ def update_accuracy_cache(
         y_prob = grp["prob_up"].astype(float)
         y_pred = (y_prob >= 0.55).astype(int)
 
-        accuracy = float((y_true == y_pred).mean())
+        # Only score BUY/SELL signals — HOLD is not directional
+        directional = grp[grp["signal"].isin(["BUY", "SELL"])]
+        if len(directional) == 0:
+            accuracy = None
+        else:
+            acc_true = directional["actual_up"].astype(int)
+            acc_pred = (directional["signal"] == "BUY").astype(int)
+            accuracy = float((acc_true == acc_pred).mean())
 
         try:
             auc = float(roc_auc_score(y_true, y_prob))
@@ -445,7 +452,7 @@ def update_accuracy_cache(
             "ticker":        ticker,
             "horizon":       horizon,
             "window_days":   window_days,
-            "accuracy":      round(accuracy, 4),
+            "accuracy":      round(accuracy, 4) if accuracy is not None else None,
             "roc_auc":       round(auc, 4) if auc is not None else None,
             "brier_score":   round(brier, 4) if brier is not None else None,
             "n_predictions": len(grp),
