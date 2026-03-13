@@ -634,25 +634,33 @@ def reconcile_intraday_outcomes():
     reconciled = 0
     for ticker, pred_ts, horizon_hr, price_at_pred, signal in rows:
         try:
-            pred_dt  = datetime.fromisoformat(pred_ts).replace(tzinfo=ET)
+            pred_dt  = ET.localize(datetime.fromisoformat(pred_ts))
             outcome_dt = pred_dt + timedelta(hours=horizon_hr)
             if outcome_dt > now:
                 continue  # not yet
 
             # Fetch actual price at outcome time
-            tk   = yf.Ticker(ticker)
-            hist = tk.history(period="5d", interval="5m")
+            import pandas as pd
+            hist = yf.download(ticker,
+                               start=outcome_dt.strftime("%Y-%m-%d"),
+                               end=(outcome_dt + timedelta(days=1)).strftime("%Y-%m-%d"),
+                               interval="1m", auto_adjust=True, progress=False)
             if hist.empty:
                 continue
-
+            if isinstance(hist.columns, pd.MultiIndex):
+                hist.columns = hist.columns.get_level_values(0)
             hist.index = hist.index.tz_convert(ET)
-            # Find closest bar to outcome_dt
-            diffs = abs(hist.index - outcome_dt)
-            idx   = diffs.argmin()
-            if diffs[idx].total_seconds() > 3600:
-                continue  # too far from target time
-
-            price_at_outcome = float(hist["Close"].iloc[idx])
+            close = hist["Close"].squeeze()
+            if outcome_dt.tzinfo is None:
+                outcome_dt = ET.localize(outcome_dt)
+            if outcome_dt.hour >= 16:
+                # After market close — use last available price
+                price_at_outcome = float(close.iloc[-1])
+            else:
+                idx = close.index.get_indexer([outcome_dt], method="nearest")[0]
+                if abs((close.index[idx] - outcome_dt).total_seconds()) > 3600:
+                    continue
+                price_at_outcome = float(close.iloc[idx])
             actual_return    = (price_at_outcome - price_at_pred) / price_at_pred
             actual_up        = 1 if actual_return > 0 else 0
             ts_now           = now.strftime("%Y-%m-%dT%H:%M:%S")
