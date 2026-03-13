@@ -284,12 +284,20 @@ if __name__ == "__main__":
     run_daily()
 
 def log_intraday_snapshot():
-    """Log intraday features at market close for future intraday model training."""
+    """Log intraday snapshot at market open (9:30am ET). Skip if market not open."""
     import json, sqlite3
     from pathlib import Path
     from features.intraday_builder import get_all_intraday_signals
     from utils.timezone import now_et as _now_et, today_et, ts_et
     now_et_dt = _now_et()
+    # Guard: only run during market hours (9:30am - 4:00pm ET, Mon-Fri)
+    if now_et_dt.weekday() >= 5:
+        print(f"Skipping snapshot — weekend ({now_et_dt.strftime('%A ET')})")
+        return
+    market_open_hour = now_et_dt.hour * 60 + now_et_dt.minute
+    if market_open_hour < 9*60+30 or market_open_hour > 16*60:
+        print(f"Skipping snapshot — outside market hours ({now_et_dt.strftime('%H:%M ET')})")
+        return
     today  = now_et_dt.strftime("%Y-%m-%d")
     ts     = now_et_dt.strftime("%Y-%m-%dT%H:%M:%S")
     tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
