@@ -351,9 +351,17 @@ if st.button("🚀 Run Strategy", type="primary"):
     forecast_rows = []
     for r in signal_summary:
         exp_ret = r.expected_return or 0.0
+        # Lean: direction implied by prob_up regardless of BUY/HOLD/SELL
+        prob = r.today_prob_eff
+        if prob >= 0.65:   lean = "⬆️ Strong UP"
+        elif prob >= 0.55: lean = "⬆️ Weak UP"
+        elif prob >= 0.45: lean = "⬇️ Weak DOWN"
+        else:              lean = "⬇️ Strong DOWN"
+
         forecast_rows.append({
             "Ticker":       r.ticker,
             "Signal":       r.today_signal,
+            "Lean":         lean,
             "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
             "Prob Eff":     f"{r.today_prob_eff:.1%}",
             "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
