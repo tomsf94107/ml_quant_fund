@@ -561,10 +561,8 @@ def load_prediction_history(
         return df
 
     df["prediction_date"] = pd.to_datetime(df["prediction_date"])
-    df["correct"] = (
-        ((df["signal"] == "BUY")  & (df["actual_up"] == 1)) |
-        ((df["signal"] == "HOLD") & (df["actual_up"] == 0))
-    ).astype(int)
+    # Score directionally: prob_up > 0.5 means predicting UP
+    df["correct"] = ((df["prob_up"] > 0.5) == (df["actual_up"] == 1)).astype(int)
 
     return df
 
