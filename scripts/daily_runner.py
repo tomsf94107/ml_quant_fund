@@ -283,6 +283,17 @@ if __name__ == "__main__":
         exit(0)
     run_daily()
 
+    # Auto-reconcile EOD outcomes after predictions are logged
+    print("\nAuto-reconciling EOD outcomes...")
+    try:
+        from accuracy.sink import reconcile_outcomes, update_accuracy_cache
+        n = reconcile_outcomes()
+        print(f"Reconciled: {n} new outcomes")
+        df = update_accuracy_cache()
+        print(f"Accuracy cache updated: {len(df)} rows")
+    except Exception as e:
+        print(f"Reconcile failed: {e}")
+
 def log_intraday_snapshot():
     """Log intraday snapshot at market open (9:30am ET). Skip if market not open."""
     import json, sqlite3
