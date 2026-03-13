@@ -24,6 +24,7 @@ import smtplib
 import sqlite3
 import subprocess
 import time
+from utils.timezone import now_et
 from datetime import date, datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -110,7 +111,7 @@ def _init_db() -> sqlite3.Connection:
 def _already_alerted(conn: sqlite3.Connection, trigger_type: str,
                      ticker: Optional[str], window_minutes: int = 60) -> bool:
     """Avoid duplicate alerts — check if same trigger fired within window."""
-    cutoff = (datetime.utcnow() - timedelta(minutes=window_minutes)).isoformat()
+    cutoff = (now_et() - timedelta(minutes=window_minutes)).strftime('%Y-%m-%dT%H:%M:%S')
     row = conn.execute("""
         SELECT id FROM alerts
         WHERE trigger_type = ? AND (ticker = ? OR ticker IS NULL)
@@ -126,7 +127,7 @@ def _save_alert(conn: sqlite3.Connection, trigger_type: str, severity: str,
         INSERT INTO alerts (timestamp, trigger_type, severity, ticker,
                             headline, detail, value, notified)
         VALUES (?, ?, ?, ?, ?, ?, ?, 1)
-    """, (datetime.utcnow().isoformat(), trigger_type, severity,
+    """, (now_et().strftime('%Y-%m-%dT%H:%M:%S'), trigger_type, severity,
           ticker, headline, detail, value))
     conn.commit()
     return cur.lastrowid
@@ -471,7 +472,7 @@ def load_recent_alerts(hours: int = 24) -> pd.DataFrame:
     """Load recent alerts from DB for the dashboard page."""
     if not ALERTS_DB.exists():
         return pd.DataFrame()
-    cutoff = (datetime.utcnow() - timedelta(hours=hours)).isoformat()
+    cutoff = (now_et() - timedelta(hours=hours)).strftime('%Y-%m-%dT%H:%M:%S')
     try:
         conn = sqlite3.connect(ALERTS_DB)
         df   = pd.read_sql("""

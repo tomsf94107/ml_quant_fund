@@ -288,14 +288,10 @@ def log_intraday_snapshot():
     import json, sqlite3
     from pathlib import Path
     from features.intraday_builder import get_all_intraday_signals
-    from utils.timezone import now_et, today_et, ts_et
-from datetime import datetime
-    import pytz
-
-    ET = pytz.timezone("America/New_York")
-    now_et = datetime.now(ET)
-    today  = now_et.strftime("%Y-%m-%d")
-    ts     = now_et.strftime("%Y-%m-%dT%H:%M:%S")
+    from utils.timezone import now_et as _now_et, today_et, ts_et
+    now_et_dt = _now_et()
+    today  = now_et_dt.strftime("%Y-%m-%d")
+    ts     = now_et_dt.strftime("%Y-%m-%dT%H:%M:%S")
     tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
 
     signals = get_all_intraday_signals(tickers)
