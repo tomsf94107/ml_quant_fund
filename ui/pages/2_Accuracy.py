@@ -226,12 +226,19 @@ else:
 
     # Raw table
     with st.expander("🧾 Raw prediction history"):
+        display = hist[["prediction_date", "prob_up", "signal",
+                        "confidence", "actual_up", "actual_return", "correct"]].copy()
+        display["predicted"] = display["prob_up"].apply(lambda x: "⬆️ UP" if x > 0.5 else "⬇️ DOWN")
+        display["actual"]    = display["actual_up"].apply(lambda x: "⬆️ UP" if x == 1 else "⬇️ DOWN")
+        display["correct"]   = display["correct"].apply(lambda x: "✅" if x == 1 else "❌")
+        display = display[["prediction_date", "prob_up", "predicted", "actual",
+                           "actual_return", "correct", "signal", "confidence"]]
+        display.columns = ["Date", "Prob Up", "Predicted", "Actual",
+                          "Return", "Correct", "Signal", "Confidence"]
         st.dataframe(
-            hist[["prediction_date", "prob_up", "signal",
-                  "confidence", "actual_up", "actual_return", "correct"]]
-            .style.format({
-                "prob_up":       "{:.1%}",
-                "actual_return": "{:.2%}",
+            display.style.format({
+                "Prob Up": "{:.1%}",
+                "Return":  "{:.2%}",
             }),
             use_container_width=True,
             hide_index=True,
