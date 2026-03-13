@@ -295,6 +295,22 @@ def generate_signals(
     except Exception:
         squeeze_mult = 1.0
 
+    # ── Intraday momentum multiplier ─────────────────────────────────────────
+    # If stock is moving UP intraday → boost prob_eff slightly
+    # If stock is moving DOWN intraday → cut prob_eff slightly
+    intraday_mult = 1.0
+    try:
+        from features.intraday_builder import get_all_intraday_signals
+        intra = get_all_intraday_signals([ticker])
+        sig = intra.get(ticker, {})
+        momentum = sig.get("intraday_momentum", 0.0)
+        if momentum is not None and momentum == momentum:  # not NaN
+            # Scale: momentum of +0.01 → 1.02x boost, -0.01 → 0.98x penalty
+            # Cap at ±5% adjustment
+            intraday_mult = min(max(1.0 + (momentum * 2), 0.95), 1.05)
+    except Exception:
+        intraday_mult = 1.0
+
     # ── 1. Get calibrated probabilities ──────────────────────────────────────
     try:
         # Use ensemble if available, fall back to XGB-only
@@ -352,7 +368,7 @@ def generate_signals(
     # ── 4. Today's signal (use unshifted — this is forward-looking) ───────────
     today_prob      = float(sdf["prob"].iloc[-1])
     # Apply risk + sentiment + regime + options flow + squeeze multipliers
-    today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult
+    today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
     today_signal    = (
