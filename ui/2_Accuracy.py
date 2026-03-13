@@ -15,6 +15,7 @@ from datetime import date, timedelta
 from accuracy.sink import (
     load_accuracy, load_prediction_history,
     reconcile_outcomes, update_accuracy_cache,
+    get_spy_relative_accuracy, get_eod_accuracy_summary,
 )
 
 st.set_page_config(page_title="Forecast Accuracy", page_icon="🎯", layout="wide")
@@ -54,17 +55,69 @@ with st.sidebar:
 def _load(horizon, window_days):
     return load_accuracy(horizon=horizon, window_days=window_days)
 
+# Auto-reconcile on page load
+with st.spinner("Reconciling outcomes..."):
+    try:
+        n = reconcile_outcomes()
+        if n > 0:
+            st.success(f"✓ {n} new outcomes reconciled")
+    except Exception:
+        pass
+
 acc_df = _load(horizon, window_days)
 
+# ── SPY-relative accuracy (always show) ──────────────────────────────────────
+st.subheader("📊 Daily Performance vs SPY")
+st.caption("Are our tickers outperforming the market? More meaningful than BUY accuracy with small sample size.")
+try:
+    spy_results = get_spy_relative_accuracy()
+    if spy_results:
+        sdf = pd.DataFrame(spy_results)
+        sdf["spy_ret"]       = sdf["spy_ret"].apply(lambda x: f"{x:+.2%}" if x == x else "N/A")
+        sdf["avg_ret"]       = sdf["avg_ret"].apply(lambda x: f"{x:+.2%}")
+        sdf["avg_vs_spy"]    = sdf["avg_vs_spy"].apply(lambda x: f"{x:+.2%}" if x == x else "N/A")
+        sdf["pct_beat_spy"]  = sdf["pct_beat_spy"].apply(lambda x: f"{x:.0%}" if x == x else "N/A")
+        sdf["buy_acc"]       = sdf["buy_acc"].apply(lambda x: f"{x:.0%}" if x is not None else "—")
+        sdf.columns = ["Date","SPY Return","Avg Ticker Return","Avg vs SPY","% Beat SPY","# BUYs","BUY Acc"]
+        st.dataframe(sdf, use_container_width=True, hide_index=True)
+
+        valid = [r for r in spy_results if r["avg_vs_spy"] == r["avg_vs_spy"]]
+        if valid:
+            avg_vs_spy = sum(r["avg_vs_spy"] for r in valid) / len(valid)
+            avg_beat   = sum(r["pct_beat_spy"] for r in valid) / len(valid)
+            col1, col2 = st.columns(2)
+            col1.metric("Avg daily alpha vs SPY", f"{avg_vs_spy:+.2%}")
+            col2.metric("% of tickers beating SPY", f"{avg_beat:.0%}")
+except Exception as e:
+    st.warning(f"SPY comparison unavailable: {e}")
+
+st.markdown("---")
+
+# ── BUY/SELL signal accuracy ──────────────────────────────────────────────────
+st.subheader("🎯 BUY/SELL Signal Accuracy")
+st.caption("Only meaningful after 60+ BUY/SELL signals across different market conditions.")
+try:
+    eod_acc = get_eod_accuracy_summary()
+    if eod_acc:
+        edf = pd.DataFrame(eod_acc)
+        edf["accuracy"]   = edf["accuracy"].apply(lambda x: f"{x:.1%}" if x is not None else "N/A")
+        edf["avg_return"] = edf["avg_return"].apply(lambda x: f"{x:+.2%}" if x is not None else "N/A")
+        edf.columns = ["Ticker", "# Outcomes", "Accuracy", "Avg Return"]
+        st.dataframe(edf, use_container_width=True, hide_index=True)
+        valid = [r for r in eod_acc if r["accuracy"] is not None]
+        total_buys = sum(r["n"] for r in valid)
+        if valid:
+            avg = sum(r["accuracy"] for r in valid) / len(valid)
+            st.caption(f"Overall: {avg:.1%} across {total_buys} BUY/SELL signals · Need 60+ for statistical significance")
+    else:
+        st.info("No BUY/SELL signals recorded yet.")
+except Exception as e:
+    st.warning(f"BUY/SELL accuracy unavailable: {e}")
+
+st.markdown("---")
+st.subheader("📈 Model Accuracy Cache")
 if acc_df.empty:
-    st.info(
-        "No accuracy data yet.\n\n"
-        "**How to get data:**\n"
-        "1. Run the strategy on the Dashboard page (this logs predictions)\n"
-        "2. Wait for the horizon to pass (1, 3, or 5 days)\n"
-        "3. Click **Reconcile outcomes** in the sidebar\n"
-        "4. Click **Recompute accuracy cache**"
-    )
+    st.info("Run **Reconcile outcomes** then **Recompute accuracy cache** in the sidebar to populate this section.")
     st.stop()
 
 # ── KPI row ───────────────────────────────────────────────────────────────────

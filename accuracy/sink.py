@@ -716,15 +716,14 @@ def get_intraday_accuracy_summary() -> list[dict]:
 
 
 def get_eod_accuracy_summary() -> list[dict]:
-    """Return EOD accuracy summary for display."""
+    """Score all predictions: prob_up>0.5 = predicting UP."""
     import sqlite3
     db = sqlite3.connect("accuracy.db")
     rows = db.execute("""
         SELECT p.ticker,
                COUNT(*) as n,
-               ROUND(AVG(CASE WHEN (p.signal='BUY' AND o.actual_up=1)
-                               OR (p.signal='SELL' AND o.actual_up=0) THEN 1.0
-                          WHEN p.signal='HOLD' THEN NULL
+               ROUND(AVG(CASE WHEN (p.prob_up > 0.5 AND o.actual_up=1)
+                               OR (p.prob_up <= 0.5 AND o.actual_up=0) THEN 1.0
                           ELSE 0.0 END), 3) as accuracy,
                ROUND(AVG(o.actual_return), 4) as avg_return
         FROM predictions p
