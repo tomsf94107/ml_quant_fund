@@ -1,0 +1,18 @@
+
+=== REMINDER: 60-DAY INTRADAY MODEL ===
+Date set: 2026-03-13
+Due: ~2026-05-13
+
+After 60 days of intraday snapshots (collected at 9:30am ET daily),
+retrain a proper XGBoost model for 1hr/2hr/4hr predictions using:
+- vwap_dev, vol_surge, momentum_score, rsi_14
+- return_1hr, return_2hr (when available)
+- market regime, time of day
+
+Current signals are momentum-based heuristics — not ML predictions.
+Decision point: which horizon (1hr/2hr/4hr) is most accurate?
+
+Files to check:
+- data/intraday_history/*.json
+- accuracy.db → intraday_predictions + intraday_outcomes tables
+======================================
