@@ -29,10 +29,18 @@ from models.ensemble import train_ensemble
 
 # ── Ticker universe (your original 28 + room to grow) ─────────────────────────
 DEFAULT_TICKERS: list[str] = [
-    "NVO",  "AAPL", "PFE",  "NFLX", "AMD",  "NVDA", "PYPL", "GOOG",
-    "SMCI", "CNC",  "CRWD", "META", "MRNA", "DDOG", "UNH",  "SHOP",
-    "PLTR", "TSM",  "FIG",  "SNOW", "MP",   "OPEN", "DUOL", "BSX",
-    "JNJ",  "AXP",  "TSLA", "ZM",
+    "AAPL", "ABNB", "ABT", "ADSK", "AI", "ALK", "AMPX", "AMZN",
+    "APLD", "ARM", "ASAN", "ASTS", "AXP", "AZN", "BA", "BETR",
+    "BNED", "BRKR", "BSX", "CAVA", "CI", "CNC", "COST", "CRCL",
+    "CRM", "CRWD", "CRWV", "CYBR", "DDOG", "DNA", "DUOL", "ETSY",
+    "FIG", "FIVN", "FSLY", "FTNT", "GM", "GME", "GOOG", "HUM",
+    "HY", "INSM", "INTC", "IREN", "JNJ", "KVUE", "LLY", "LULU",
+    "LYFT", "META", "MP", "MRNA", "MSFT", "MU", "NET", "NFLX",
+    "NIO", "NOK", "NVDA", "NVMI", "NVO", "OKLO", "ONTO", "OPEN",
+    "ORIC", "PFE", "PL", "PLTR", "PUBM", "PYPL", "QS", "QUBT",
+    "QURE", "ROKU", "ROST", "S", "SENS", "SHOP", "SMCI", "SMMT",
+    "SNOW", "TEAM", "TGT", "TJX", "TPR", "TSLA", "TSM", "UAL",
+    "UNH", "USAR", "V", "VKTX", "VZ", "WMT", "XYZ", "ZM",
 ]
 
 TRAIN_START = "2018-01-01"   # 6+ years gives good regime diversity
