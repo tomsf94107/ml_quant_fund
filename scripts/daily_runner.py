@@ -61,7 +61,7 @@ SLEEP_BETWEEN = 2.0      # seconds between tickers (avoid rate limits)
 
 def is_trading_day() -> bool:
     """Return True if today is a weekday (basic check, ignores holidays)."""
-    return date.today().weekday() < 5
+    return today_et().weekday() < 5
 
 
 def load_tickers() -> list[str]:
