@@ -51,7 +51,7 @@ log = logging.getLogger(__name__)
 # ── Config ────────────────────────────────────────────────────────────────────
 HORIZONS      = [1, 3, 5]
 TRAIN_START   = "2022-01-01"
-BUY_THRESHOLD = 0.55     # minimum prob_eff to alert
+BUY_THRESHOLD = 0.70     # minimum prob_eff to alert
 SLEEP_BETWEEN = 2.0      # seconds between tickers (avoid rate limits)
 
 
