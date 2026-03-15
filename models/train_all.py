@@ -29,7 +29,7 @@ from models.ensemble import train_ensemble
 
 # ── Ticker universe (your original 28 + room to grow) ─────────────────────────
 DEFAULT_TICKERS: list[str] = [
-    "AAPL", "ABNB", "ABT", "ADSK", "AI", "ALK", "AMPX", "AMZN",
+    "AAPL", "ABNB", "ABT", "ADSK", "AI", "AMD", "ALK", "AMPX", "AMZN",
     "APLD", "ARM", "ASAN", "ASTS", "AXP", "AZN", "BA", "BETR",
     "BNED", "BRKR", "BSX", "CAVA", "CI", "CNC", "COST", "CRCL",
     "CRM", "CRWD", "CRWV", "CYBR", "DDOG", "DNA", "DUOL", "ETSY",
