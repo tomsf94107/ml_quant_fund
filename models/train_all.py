@@ -31,7 +31,7 @@ from models.ensemble import train_ensemble
 DEFAULT_TICKERS: list[str] = [
     "AAPL", "ABNB", "ABT", "ADSK", "AI", "AMD", "ALK", "AMPX", "AMZN",
     "APLD", "ARM", "ASAN", "ASTS", "AXP", "AZN", "BA", "BETR",
-    "BNED", "BRKR", "BSX", "CAVA", "CI", "CNC", "COST", "CRCL",
+    "BNED", "BRKR", "BSX", "CAVA", "CI", "CNC", "COST",
     "CRM", "CRWD", "CYBR", "DDOG", "DNA", "DUOL", "ETSY",
     "FIVN", "FSLY", "FTNT", "GM", "GME", "GOOG", "HUM",
     "HY", "INSM", "INTC", "IREN", "JNJ", "KVUE", "LLY", "LULU",
