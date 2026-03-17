@@ -361,7 +361,7 @@ def reconcile_outcomes(
                     day_open  = float(px["Open"].squeeze().asof(pd.Timestamp(pred_date)))
                     day_close = float(close.asof(pd.Timestamp(pred_date)))
                     actual_ret = (day_close - day_open) / day_open
-                    if actual_ret == 0.0:
+                    if actual_ret == 0.0 or actual_ret != actual_ret:
                         continue
                     actual_up = int(actual_ret > 0)
                 except Exception:
