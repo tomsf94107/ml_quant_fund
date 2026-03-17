@@ -98,6 +98,7 @@ OUTPUT_COLUMNS = [
     "vwap_dev_eod", "vol_surge_eod", "intraday_momentum",  # intraday-derived
     "obv_trend",                         # OBV vs 10d OBV mean
     "vix_close", "vix_ret",              # market fear gauge
+    "oil_ret", "oil_spy_corr",           # crude oil price signal
     "sector_rel_ret",                    # stock return - sector ETF return
     "day_of_week", "is_month_end",       # calendar effects
     # ── NEW v3 features ──────────────────────────────────────────────────────
@@ -464,6 +465,14 @@ def build_feature_dataframe(
         df["vix_close"] = 20.0
         df["vix_ret"]   = 0.0
 
+    # ── Crude oil (USO as proxy for WTI) ────────────────────────────────────
+    try:
+        oil_raw = _market_return("USO", start_str, end_str, date_index)
+        df["oil_ret"] = oil_raw.values
+        df["oil_spy_corr"] = df["oil_ret"].rolling(20).corr(df["return_1d"]).fillna(0)
+    except Exception:
+        df["oil_ret"]      = 0.0
+        df["oil_spy_corr"] = 0.0
     # ── FinBERT NLP sentiment ────────────────────────────────────────────────
     if training_mode:
         df["finbert_sentiment"] = 0.0

@@ -85,6 +85,7 @@ FEATURE_COLUMNS: list[str] = [
     "analyst_upside", "analyst_buy_pct", "analyst_mult",
     # FinBERT NLP
     "finbert_sentiment", "finbert_mult",
+    "oil_ret", "oil_spy_corr",          # crude oil signal
 ]
 
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
