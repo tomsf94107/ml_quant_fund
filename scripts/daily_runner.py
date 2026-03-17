@@ -193,7 +193,7 @@ def run_daily():
 
             for horizon in HORIZONS:
                 try:
-                    sig = generate_signals(ticker, df, horizon=horizon)
+                    sig = generate_signals(ticker, df, horizon=horizon, confidence_threshold=BUY_THRESHOLD)
 
                     result = {
                         "ticker":     ticker,

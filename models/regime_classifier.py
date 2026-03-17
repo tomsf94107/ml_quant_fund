@@ -133,7 +133,7 @@ def _fetch_regime_data(lookback_days: int = 252) -> Optional[pd.DataFrame]:
     end   = datetime.today().strftime("%Y-%m-%d")
     start = (datetime.today() - timedelta(days=lookback_days + 30)).strftime("%Y-%m-%d")
 
-    tickers = ["SPY", "^VIX", "TLT", "GLD", "^GSPC"]
+    tickers = ["SPY", "^VIX", "TLT", "GLD", "^GSPC", "USO"]
     try:
         raw = yf.download(tickers, start=start, end=end,
                            auto_adjust=True, progress=False)
@@ -241,7 +241,7 @@ def _classify_regime(features: dict) -> RegimeSignal:
     up_days    = features.get("spy_up_days_pct", 0.5)
 
     # ── VOLATILE: VIX >= 30 or extreme moves ──────────────────────────────────
-    if vix >= 30 or vix_pct >= 85:
+    if vix >= 25 or vix_pct >= 80:
         confidence = max(0.30, min(1.0, (vix - 20) / 20))
         cfg = REGIME_CONFIG["VOLATILE"]
         return RegimeSignal(
