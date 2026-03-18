@@ -405,12 +405,47 @@ else:
 
     st.html(html)
 
-    rm = st.selectbox("Remove position", [""] + owned)
-    if rm and st.button(f"Remove {rm}", type="secondary"):
-        portfolio["positions"] = [p for p in positions if p["ticker"] != rm]
-        save_sync(portfolio)
-        st.success(f"Removed {rm}")
-        st.rerun()
+    # ── Edit / Remove per position ────────────────────────────────────────────
+    st.markdown("**Edit or remove a position**")
+    edit_options = [f"{e['t']} ({e['p'].get('account','')}/{e['p'].get('platform','')})" for e in enriched]
+    edit_choice  = st.selectbox("Select position", [""] + edit_options, key="edit_sel")
+
+    if edit_choice:
+        idx = edit_options.index(edit_choice)
+        ep  = enriched[idx]["p"]
+
+        with st.form("edit_pos"):
+            st.markdown(f"**Editing: {ep['ticker']}**")
+            ec1, ec2, ec3, ec4, ec5, ec6 = st.columns([2, 1, 1, 2, 2, 2])
+            e_shares   = ec1.number_input("Shares",      min_value=0.0, step=1.0,  value=float(ep.get("shares",0)))
+            e_cost     = ec2.number_input("Avg cost ($)", min_value=0.0, step=0.01, value=float(ep.get("avg_cost",0)))
+            e_acct     = ec3.selectbox("Account",   ["Traditional","Roth IRA","Other"],
+                                        index=["Traditional","Roth IRA","Other"].index(ep.get("account","Traditional")) if ep.get("account") in ["Traditional","Roth IRA","Other"] else 0)
+            e_platform = ec4.selectbox("Platform",  ["Fidelity","Robinhood","Other"],
+                                        index=["Fidelity","Robinhood","Other"].index(ep.get("platform","Fidelity")) if ep.get("platform") in ["Fidelity","Robinhood","Other"] else 0)
+            e_note     = ec5.text_input("Note", value=ep.get("note",""))
+            ec6.markdown("&nbsp;")
+
+            save_btn, remove_btn = st.columns(2)
+            if save_btn.form_submit_button("Save changes"):
+                ep["shares"]   = e_shares
+                ep["avg_cost"] = e_cost
+                ep["account"]  = e_acct
+                ep["platform"] = e_platform
+                ep["note"]     = e_note
+                portfolio["positions"] = positions
+                save_sync(portfolio)
+                st.success(f"Updated {ep['ticker']}")
+                st.rerun()
+            if remove_btn.form_submit_button("Remove position", type="secondary"):
+                portfolio["positions"] = [p for p in positions if not (
+                    p["ticker"] == ep["ticker"] and
+                    p.get("account") == ep.get("account") and
+                    p.get("platform") == ep.get("platform")
+                )]
+                save_sync(portfolio)
+                st.success(f"Removed {ep['ticker']}")
+                st.rerun()
 
     st.divider()
 
