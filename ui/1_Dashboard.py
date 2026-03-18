@@ -155,6 +155,17 @@ with st.sidebar:
     block_tau            = st.slider("Block when risk_next_3d ≥",
                                      0, 6, DEFAULT_BLOCK_TAU, 1)
 
+    st.markdown("## 💼 Portfolio")
+    portfolio_value = st.number_input(
+        "Portfolio value ($)",
+        min_value=10000,
+        max_value=10000000,
+        value=300000,
+        step=10000,
+        help="Your Fidelity account value — used for position sizing"
+    )
+    st.caption(f"Max position: ${portfolio_value * 0.30:,.0f} (30%) | Min: ${portfolio_value * 0.05:,.0f} (5%)")
+
     st.markdown("## 📧 Alerts")
     enable_email = st.toggle("Email alerts on BUY", value=True)
 
@@ -551,6 +562,23 @@ if st.button("🚀 Run Strategy", type="primary"):
             if both_bull:
                 tickers_str = ", ".join(both_bull)
                 st.success(f"🔥 **Highest conviction BUY:** {tickers_str} — EOD model AND intraday both bullish. Strongest entry signal.")
+                try:
+                    from signals.position_sizer import get_position_size
+                    for ticker_b in both_bull:
+                        row = next((r for r in results if r.get("ticker") == ticker_b), None)
+                        if row:
+                            pos = get_position_size(
+                                ticker=ticker_b,
+                                prob_eff=float(row.get("prob_eff", 0.7)),
+                                confidence=row.get("confidence", "HIGH"),
+                                portfolio_value=portfolio_value,
+                                current_price=row.get("current_price"),
+                            )
+                            if pos.final_pct > 0:
+                                shares_str = f" (~{pos.shares} shares)" if pos.shares else ""
+                                st.info(f"📐 **{ticker_b} suggested size:** {pos.final_pct*100:.1f}% = ${pos.dollars:,.0f}{shares_str}")
+                except Exception:
+                    pass
 
             if both_bear:
                 tickers_str = ", ".join(both_bear)
