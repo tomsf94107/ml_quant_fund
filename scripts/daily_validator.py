@@ -323,6 +323,70 @@ def check_price_accuracy(
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
+    """
+    Try to fetch recent price for each ticker.
+    If yfinance returns no data, flag as possibly delisted.
+    If fix=True, remove from tickers.txt and move to watchlist.txt.
+    """
+    log(f"Checking for delisted tickers across {len(tickers)} tickers...")
+    delisted = []
+
+    for ticker in tickers:
+        try:
+            raw = yf.download(ticker, period="5d", auto_adjust=True, progress=False)
+            if raw.empty:
+                delisted.append(ticker)
+        except Exception:
+            delisted.append(ticker)
+
+    if delisted:
+        log(f"  ❌ Possibly delisted: {delisted}")
+        if fix:
+            # Remove from tickers.txt
+            if TICKERS_FILE.exists():
+                lines = [t for t in TICKERS_FILE.read_text().splitlines() if t.strip() and t.strip() not in delisted]
+                TICKERS_FILE.write_text("\n".join(lines) + "\n")
+            # Append to watchlist.txt
+            watchlist = Path("watchlist.txt")
+            existing = set(watchlist.read_text().splitlines()) if watchlist.exists() else set()
+            new_entries = [t for t in delisted if t not in existing]
+            if new_entries:
+                with open(watchlist, "a") as f:
+                    f.write("\n".join(new_entries) + "\n")
+            log(f"  ✅ Moved {delisted} to watchlist.txt, removed from tickers.txt")
+            desktop_alert(
+                "ML Quant Fund — Delisted Tickers",
+                f"Moved to watchlist: {', '.join(delisted)} — update train_all.py manually"
+            )
+    else:
+        log(f"  ✅ All {len(tickers)} tickers have active price data")
+
+    return {"delisted": len(delisted), "tickers": delisted, "fixed": len(delisted) if fix else 0}
+
+
+def check_log_sizes(max_mb: float = 10.0) -> dict:
+    """Flag log files that exceed max_mb and truncate if needed."""
+    log(f"Checking log file sizes (max {max_mb}MB)...")
+    large_logs = []
+
+    for log_file in LOG_DIR.glob("*.log"):
+        size_mb = log_file.stat().st_size / (1024 * 1024)
+        if size_mb > max_mb:
+            large_logs.append({"file": log_file.name, "size_mb": round(size_mb, 1)})
+            log(f"  ⚠ {log_file.name}: {size_mb:.1f}MB — truncating to last 10000 lines")
+            # Keep last 10000 lines
+            lines = log_file.read_text(errors="ignore").splitlines()
+            log_file.write_text("\n".join(lines[-10000:]) + "\n")
+
+    if large_logs:
+        log(f"  ✅ Truncated {len(large_logs)} oversized log files")
+    else:
+        log(f"  ✅ All log files within size limits")
+
+    return {"large_logs": len(large_logs), "details": large_logs}
+
+
 def run_validator(days: int = 30, fix: bool = True, ticker: str | None = None):
     LOG_DIR.mkdir(exist_ok=True)
 
@@ -345,13 +409,15 @@ def run_validator(days: int = 30, fix: bool = True, ticker: str | None = None):
     results["signals"]  = check_signal_labels(conn, days, fix)
     results["nulls"]    = check_null_outcomes(conn, days, fix)
     results["prices"]   = check_price_accuracy(tickers, conn, days, fix)
+    results["delisted"] = check_delisted_tickers(tickers, fix)
+    results["logs"]     = check_log_sizes()
 
     # Rebuild accuracy cache if anything was fixed
     total_fixed = sum(v.get("fixed", 0) for v in results.values())
     if total_fixed > 0 and fix:
         log(f"\nRebuilding accuracy cache ({total_fixed} fixes applied)...")
         try:
-            import sys; sys.path.insert(0, "."); from accuracy.sink import update_accuracy_cache
+            from accuracy.sink import update_accuracy_cache
             update_accuracy_cache()
             log("  ✅ Accuracy cache rebuilt")
         except Exception as e:
@@ -365,6 +431,8 @@ def run_validator(days: int = 30, fix: bool = True, ticker: str | None = None):
     log(f"  Signal labels     : {results['signals']['bad_labels']} wrong, {results['signals']['fixed']} fixed")
     log(f"  NULL outcomes     : {results['nulls']['null_outcomes']} found, {results['nulls']['fixed']} fixed")
     log(f"  Price errors      : {results['prices']['wrong']}/{results['prices']['checked']} wrong, {results['prices']['fixed']} fixed")
+    log(f"  Delisted tickers  : {results['delisted']['delisted']} found, {results['delisted']['fixed']} removed")
+    log(f"  Large log files   : {results['logs']['large_logs']} truncated")
     log("=" * 60)
 
     # Desktop alert if issues found
@@ -372,7 +440,8 @@ def run_validator(days: int = 30, fix: bool = True, ticker: str | None = None):
         results["ghosts"]["ghosts"] +
         results["signals"]["bad_labels"] +
         results["nulls"]["null_outcomes"] +
-        results["prices"]["wrong"]
+        results["prices"]["wrong"] +
+        results["delisted"]["delisted"]
     )
     if total_issues > 0 and not fix:
         desktop_alert(

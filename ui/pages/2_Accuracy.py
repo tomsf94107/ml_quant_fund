@@ -55,14 +55,19 @@ with st.sidebar:
 def _load(horizon, window_days):
     return load_accuracy(horizon=horizon, window_days=window_days)
 
-# Auto-reconcile on page load
-with st.spinner("Reconciling outcomes..."):
-    try:
-        n = reconcile_outcomes()
-        if n > 0:
-            st.success(f"✓ {n} new outcomes reconciled")
-    except Exception:
-        pass
+# Auto-reconcile on page load — only after market close (4 PM ET)
+import pytz as _pytz
+from datetime import datetime as _dt
+_now_et = _dt.now(_pytz.timezone("America/New_York"))
+_after_close = _now_et.hour >= 16 or (_now_et.weekday() >= 5)
+if _after_close:
+    with st.spinner("Reconciling outcomes..."):
+        try:
+            n = reconcile_outcomes()
+            if n > 0:
+                st.success(f"✓ {n} new outcomes reconciled")
+        except Exception:
+            pass
 
 acc_df = _load(horizon, window_days)
 
