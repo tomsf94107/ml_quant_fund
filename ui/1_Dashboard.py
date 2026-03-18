@@ -181,10 +181,13 @@ with st.sidebar:
     if col_b.button("❌ Clear"):
         st.session_state["selected_tickers"] = []
 
+    # Filter saved tickers to only those still in tickers.txt
+    saved = st.session_state.get("selected_tickers", all_tickers)
+    valid_saved = [t for t in saved if t in all_tickers]
     tickers = st.multiselect(
         "Select tickers to run",
         options=all_tickers,
-        default=st.session_state.get("selected_tickers", all_tickers),
+        default=valid_saved,
         key="selected_tickers",
     )
 
@@ -269,6 +272,10 @@ if st.button("🚀 Run Strategy", type="primary"):
     pred_log_rows = []
     signal_summary = []
 
+    @st.cache_data(ttl=3600)
+    def _cached_features(t, s, e):
+        return build_feature_dataframe(t, start_date=s, end_date=e)
+
     progress = st.progress(0, text="Building features...")
 
     for i, tkr in enumerate(tickers):
@@ -276,9 +283,6 @@ if st.button("🚀 Run Strategy", type="primary"):
 
         # ── 1. Build features ─────────────────────────────────────────────────
         try:
-            @st.cache_data(ttl=3600)
-            def _cached_features(t, s, e):
-                return build_feature_dataframe(t, start_date=s, end_date=e)
             df = _cached_features(
                 tkr,
                 start_date.isoformat(),
