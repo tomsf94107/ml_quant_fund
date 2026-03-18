@@ -188,20 +188,7 @@ c5.metric("Last updated",     portfolio.get("last_updated", "—"))
 st.divider()
 
 # ── Settings ──────────────────────────────────────────────────────────────────
-with st.expander("⚙️ Portfolio settings & security"):
-    col_a, col_b = st.columns(2)
-    new_val  = col_a.number_input("Total portfolio value ($)", min_value=10000,
-                                   max_value=10_000_000, value=int(port_val), step=1000)
-    new_cash = col_b.number_input("Cash on hand ($)", min_value=0,
-                                   max_value=int(new_val), value=int(cash), step=1000)
-    if st.button("Save settings"):
-        portfolio["portfolio_value"] = new_val
-        portfolio["cash"]            = new_cash
-        save_sync(portfolio)
-        st.success("Saved")
-        st.rerun()
-
-    st.divider()
+with st.expander("⚙️ Security settings"):
     st.markdown("**Change password**")
     cc1, cc2, cc3 = st.columns(3)
     op = cc1.text_input("Current password", type="password", key="op")
@@ -226,28 +213,50 @@ with st.expander("⚙️ Portfolio settings & security"):
 
 st.divider()
 
+# ── Quick update portfolio value & cash ──────────────────────────────────────
+with st.form("quick_update"):
+    st.markdown("### Portfolio overview")
+    qu1, qu2 = st.columns(2)
+    qu_val  = qu1.number_input("Total portfolio value ($)", min_value=10000,
+                                max_value=10_000_000, value=int(port_val), step=1000)
+    qu_cash = qu2.number_input("Cash on hand ($)", min_value=0,
+                                max_value=int(qu_val), value=int(cash), step=1000)
+    if st.form_submit_button("Update"):
+        portfolio["portfolio_value"] = qu_val
+        portfolio["cash"]            = qu_cash
+        save_sync(portfolio)
+        st.success("Updated")
+        st.rerun()
+
+st.divider()
+
 # ── Add position ──────────────────────────────────────────────────────────────
 st.markdown("### Add / update position")
 with st.form("add_pos"):
-    fc1, fc2, fc3, fc4 = st.columns([2, 1, 1, 2])
-    new_t = fc1.text_input("Ticker", placeholder="AAPL").upper().strip()
-    new_s = fc2.number_input("Shares", min_value=0.0, step=1.0)
-    new_c = fc3.number_input("Avg cost ($)", min_value=0.0, step=0.01)
-    new_n = fc4.text_input("Note", placeholder="optional")
+    fc1, fc2, fc3, fc4, fc5, fc6 = st.columns([2, 1, 1, 2, 2, 2])
+    new_t        = fc1.text_input("Ticker", placeholder="AAPL").upper().strip()
+    new_s        = fc2.number_input("Shares", min_value=0.0, step=1.0)
+    new_c        = fc3.number_input("Avg cost ($)", min_value=0.0, step=0.01)
+    new_acct     = fc4.selectbox("Account", ["Traditional", "Roth IRA", "Other"])
+    new_platform = fc5.selectbox("Platform", ["Fidelity", "Robinhood", "Other"])
+    new_n        = fc6.text_input("Note", placeholder="optional")
     if st.form_submit_button("Add position") and new_t and new_s > 0 and new_c > 0:
-        existing = next((p for p in positions if p["ticker"] == new_t), None)
+        existing = next((p for p in positions if p["ticker"] == new_t
+                         and p.get("account") == new_acct
+                         and p.get("platform") == new_platform), None)
         if existing:
             os_ = float(existing["shares"]); oc = float(existing["avg_cost"])
             ts  = os_ + new_s
             existing["shares"]   = ts
             existing["avg_cost"] = round((os_*oc + new_s*new_c) / ts, 4)
             if new_n: existing["note"] = new_n
-            st.success(f"Updated {new_t}")
+            st.success(f"Updated {new_t} ({new_acct} / {new_platform})")
         else:
             positions.append({"ticker": new_t, "shares": new_s, "avg_cost": new_c,
+                               "account": new_acct, "platform": new_platform,
                                "added": str(date.today()), "note": new_n,
                                "current_price": new_c})
-            st.success(f"Added {new_t}")
+            st.success(f"Added {new_t} ({new_acct} / {new_platform})")
         portfolio["positions"] = positions
         save_sync(portfolio)
         st.rerun()
@@ -292,18 +301,20 @@ else:
         pnl_pct = pnl / (sh*ac) * 100 if sh*ac > 0 else 0
 
         rows.append({
-            "Ticker":  t,
-            "Shares":  sh,
-            "Avg $":   f"${ac:.2f}",
-            "Price":   f"${cp:.2f}",
-            "Value":   f"${sh*cp:,.0f}",
-            "P&L":     f"${pnl:+,.0f} ({pnl_pct:+.1f}%)",
-            "1d":      sig_label(s1, p1),
-            "3d":      sig_label(s3, p3),
-            "5d":      sig_label(s5, p5),
-            "Conf":    bc,
-            "Action":  suggestion(t, bs, bp, bc, port_val, cp, True),
-            "Note":    p.get("note",""),
+            "Ticker":   t,
+            "Account":  p.get("account", "—"),
+            "Platform": p.get("platform", "—"),
+            "Shares":   sh,
+            "Avg $":    f"${ac:.2f}",
+            "Price":    f"${cp:.2f}",
+            "Value":    f"${sh*cp:,.0f}",
+            "P&L":      f"${pnl:+,.0f} ({pnl_pct:+.1f}%)",
+            "1d":       sig_label(s1, p1),
+            "3d":       sig_label(s3, p3),
+            "5d":       sig_label(s5, p5),
+            "Conf":     bc,
+            "Action":   suggestion(t, bs, bp, bc, port_val, cp, True),
+            "Note":     p.get("note",""),
         })
 
     portfolio["positions"] = positions
