@@ -33,3 +33,4 @@ data/intraday_history/
 logs/
 models/saved/regime_cache.json
 data/cache/alpha/
+.portfolio.enc
