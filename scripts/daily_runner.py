@@ -166,6 +166,12 @@ def run_daily():
     log.info(f"  Daily Runner — {run_date}")
     log.info(f"{'='*60}")
 
+    now = now_et()
+    market_hour = now.hour * 60 + now.minute
+    if market_hour < 20*60 or market_hour > 22*60:
+        log.info(f"Skipping — outside run window ({now.strftime("%H:%M ET")})")
+        return
+
     if not is_trading_day():
         log.info("Weekend — skipping run")
         return
