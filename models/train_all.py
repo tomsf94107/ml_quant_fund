@@ -38,7 +38,7 @@ DEFAULT_TICKERS: list[str] = [
     "LYFT", "META", "MP", "MRNA", "MSFT", "MU", "NET", "NFLX",
     "NIO", "NOK", "NVDA", "NVMI", "NVO", "OKLO", "ONTO", "OPEN",
     "ORIC", "PFE", "PL", "PLTR", "PUBM", "PYPL", "QS", "QUBT",
-    "QURE", "ROKU", "ROST", "S", "SENS", "SHOP", "SMCI", "SMMT",
+    "QURE", "ROKU", "ROST", "S", "SENS", "SHOP", "SMCI", "SLV", "SMMT",
     "SNOW", "TEAM", "TGT", "TJX", "TPR", "TSLA", "TSM", "UAL",
     "UNH", "USAR", "V", "VKTX", "VZ", "WMT", "XYZ", "ZM",
 ]
