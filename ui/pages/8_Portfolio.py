@@ -263,63 +263,147 @@ with st.form("add_pos"):
 
 st.divider()
 
-# ── Current positions ─────────────────────────────────────────────────────────
+# ── Current positions — card layout ──────────────────────────────────────────
+CARD_CSS = """
+<style>
+.port-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:14px 18px;margin-bottom:10px;display:grid;grid-template-columns:80px 1fr 1fr 180px 180px;align-items:center;gap:16px}
+.port-ticker{font-size:20px;font-weight:500;letter-spacing:0.02em}
+.port-info{display:flex;flex-direction:column;gap:3px}
+.port-main{font-size:14px}
+.port-sub{font-size:12px;color:var(--color-text-secondary)}
+.port-pnl-up{color:var(--color-text-success);font-size:15px;font-weight:500}
+.port-pnl-dn{color:var(--color-text-danger);font-size:15px;font-weight:500}
+.port-sigs{display:flex;gap:8px;align-items:center}
+.port-sig{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:52px}
+.port-sig-lbl{font-size:10px;color:var(--color-text-tertiary)}
+.port-sig-val{font-size:12px;font-weight:500;padding:3px 8px;border-radius:6px;text-align:center}
+.sv-buy{background:var(--color-background-success);color:var(--color-text-success)}
+.sv-up{background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.sv-dn{background:#FCEBEB;color:#A32D2D}
+.port-action{text-align:right}
+.pa-add{display:inline-block;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:500;background:var(--color-background-success);color:var(--color-text-success)}
+.pa-hold{display:inline-block;padding:6px 14px;border-radius:8px;font-size:13px;background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.pa-sell{display:inline-block;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:500;background:#FCEBEB;color:#A32D2D}
+.pa-trim{display:inline-block;padding:6px 14px;border-radius:8px;font-size:13px;background:var(--color-background-warning);color:var(--color-text-warning)}
+.acct-hdr{display:flex;align-items:center;gap:10px;margin:20px 0 10px;padding-bottom:8px;border-bottom:1.5px solid var(--color-border-secondary)}
+.ab-trad{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;background:#EAF3DE;color:#3B6D11}
+.ab-roth{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;background:#E6F1FB;color:#185FA5}
+.ab-other{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;background:var(--color-background-secondary);color:var(--color-text-secondary)}
+.alert-sell{background:#FCEBEB;border:0.5px solid #F09595;border-radius:8px;padding:10px 16px;margin-bottom:8px;font-size:13px;color:#A32D2D}
+.alert-buy{background:var(--color-background-success);border:0.5px solid var(--color-border-success);border-radius:8px;padding:10px 16px;margin-bottom:8px;font-size:13px;color:var(--color-text-success)}
+</style>
+"""
+
 if not positions:
     st.info("No positions yet — add one above.")
 else:
-    st.markdown("### Current positions — signals & suggestions")
+    st.markdown("### Current positions")
     owned = [p["ticker"] for p in positions]
 
     with st.spinner("Loading signals..."):
         sigs = fetch_signals(tuple(owned))
 
-    rows = []
+    # Build enriched position data
+    enriched = []
     for p in positions:
-        t     = p["ticker"]
-        sh    = float(p.get("shares", 0))
-        ac    = float(p.get("avg_cost", 0))
-        ts    = sigs[sigs["ticker"] == t] if not sigs.empty else pd.DataFrame()
+        t  = p["ticker"]
+        sh = float(p.get("shares", 0))
+        ac = float(p.get("avg_cost", 0))
+        ts = sigs[sigs["ticker"] == t] if not sigs.empty else pd.DataFrame()
 
         cp = ac
         if not ts.empty and ts.iloc[0]["price"]:
             cp = float(ts.iloc[0]["price"])
             p["current_price"] = cp
 
-        def gs(h):
-            if ts.empty: return "N/A", 0.5, 0.5, "LOW"
-            r = ts[ts["horizon"] == h]
+        def _gs(h, _ts=ts):
+            if _ts.empty: return "N/A", 0.5, 0.5, "LOW"
+            r = _ts[_ts["horizon"] == h]
             if r.empty: return "N/A", 0.5, 0.5, "LOW"
             row = r.iloc[0]
             return row["signal"], float(row["prob_up"]), float(row["prob_eff"]), row["confidence"]
 
-        s1,p1,pe1,c1 = gs(1); s3,p3,pe3,c3 = gs(3); s5,p5,pe5,c5 = gs(5)
+        s1,p1,pe1,c1 = _gs(1); s3,p3,pe3,c3 = _gs(3); s5,p5,pe5,c5 = _gs(5)
         bc = c1 if c1=="HIGH" else (c3 if c3=="HIGH" else c5)
         bs = s1 if c1=="HIGH" else (s3 if c3=="HIGH" else s5)
         bp = pe1 if c1=="HIGH" else (pe3 if c3=="HIGH" else pe5)
-
         pnl = sh * (cp - ac)
         pnl_pct = pnl / (sh*ac) * 100 if sh*ac > 0 else 0
+        act = suggestion(t, bs, bp, bc, port_val, cp, True)
 
-        rows.append({
-            "Ticker":   t,
-            "Account":  p.get("account", "—"),
-            "Platform": p.get("platform", "—"),
-            "Shares":   sh,
-            "Avg $":    f"${ac:.2f}",
-            "Price":    f"${cp:.2f}",
-            "Value":    f"${sh*cp:,.0f}",
-            "P&L":      f"${pnl:+,.0f} ({pnl_pct:+.1f}%)",
-            "1d":       sig_label(s1, p1),
-            "3d":       sig_label(s3, p3),
-            "5d":       sig_label(s5, p5),
-            "Conf":     bc,
-            "Action":   suggestion(t, bs, bp, bc, port_val, cp, True),
-            "Note":     p.get("note",""),
+        enriched.append({
+            "p": p, "t": t, "sh": sh, "ac": ac, "cp": cp,
+            "s1":s1,"p1":p1,"s3":s3,"p3":p3,"s5":s5,"p5":p5,
+            "bc":bc, "act":act, "pnl":pnl, "pnl_pct":pnl_pct,
         })
 
     portfolio["positions"] = positions
     save_sync(portfolio)
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+
+    # Build alert banners
+    sell_list = [e["t"] for e in enriched if "selling" in e["act"].lower()]
+    buy_list  = [f"{e['t']} ({e['act']})" for e in enriched if "Add" in e["act"]]
+
+    html = CARD_CSS
+    if buy_list:
+        html += f'<div class="alert-buy">★ {" · ".join(buy_list)}</div>'
+    if sell_list:
+        html += f'<div class="alert-sell">▼ {", ".join(sell_list)} — model suggests selling</div>'
+
+    # Group by account
+    from itertools import groupby
+    sorted_e = sorted(enriched, key=lambda x: (x["p"].get("account",""), x["p"].get("platform","")))
+    groups = {}
+    for e in sorted_e:
+        key = (e["p"].get("account","Other"), e["p"].get("platform",""))
+        groups.setdefault(key, []).append(e)
+
+    for (acct, plat), group in groups.items():
+        ab_cls = "ab-trad" if acct == "Traditional" else ("ab-roth" if acct == "Roth IRA" else "ab-other")
+        html += f'<div class="acct-hdr"><span class="{ab_cls}">{acct}</span><span style="font-size:12px;color:var(--color-text-tertiary)">{plat}</span></div>'
+
+        for e in group:
+            # Left border color
+            if "selling" in e["act"].lower():  border = "#F09595"
+            elif "Add" in e["act"]:            border = "var(--color-border-success)"
+            else:                              border = "var(--color-border-tertiary)"
+
+            pnl_cls = "port-pnl-up" if e["pnl"] >= 0 else "port-pnl-dn"
+            pnl_str = f"${e['pnl']:+,.0f} ({e['pnl_pct']:+.1f}%)"
+
+            def sig_html(sig, prob):
+                pct = f"{prob*100:.0f}%"
+                if sig == "BUY": return f'<div class="port-sig-val sv-buy">&#x1F7E2; {pct}</div>'
+                cls = "sv-up" if prob >= 0.5 else "sv-dn"
+                arr = "&#x2B06;" if prob >= 0.5 else "&#x2B07;"
+                return f'<div class="port-sig-val {cls}">{arr} {pct}</div>'
+
+            act = e["act"]
+            if "Add" in act:       act_cls, act_html = "pa-add", act
+            elif "selling" in act: act_cls, act_html = "pa-sell", act
+            elif "trim" in act.lower(): act_cls, act_html = "pa-trim", act
+            else:                  act_cls, act_html = "pa-hold", act
+
+            note = e["p"].get("note","")
+            note_html = f'<span style="font-size:11px;color:var(--color-text-tertiary)"> · {note}</span>' if note else ""
+
+            html += f"""
+<div class="port-card" style="border-left:3px solid {border}">
+  <div class="port-ticker">{e["t"]}</div>
+  <div class="port-info">
+    <div class="port-main">{e["sh"]:g} shares @ ${e["ac"]:.2f}{note_html}</div>
+    <div class="port-sub">Value ${e["sh"]*e["cp"]:,.0f} · now ${e["cp"]:.2f}</div>
+  </div>
+  <div class="{pnl_cls}">{pnl_str}</div>
+  <div class="port-sigs">
+    <div class="port-sig"><div class="port-sig-lbl">1d</div>{sig_html(e["s1"],e["p1"])}</div>
+    <div class="port-sig"><div class="port-sig-lbl">3d</div>{sig_html(e["s3"],e["p3"])}</div>
+    <div class="port-sig"><div class="port-sig-lbl">5d</div>{sig_html(e["s5"],e["p5"])}</div>
+  </div>
+  <div class="port-action"><span class="{act_cls}">{act_html}</span></div>
+</div>"""
+
+    st.html(html)
 
     rm = st.selectbox("Remove position", [""] + owned)
     if rm and st.button(f"Remove {rm}", type="secondary"):
