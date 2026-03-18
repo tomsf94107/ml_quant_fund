@@ -194,6 +194,7 @@ def run_daily():
         try:
             from features.builder import build_feature_dataframe
             from signals.generator import generate_signals
+            from signals.position_sizer import get_position_size, get_portfolio_value, format_plan, get_portfolio_plan
 
             df = build_feature_dataframe(ticker, start_date=TRAIN_START)
 
@@ -224,6 +225,23 @@ def run_daily():
                     )
 
                     if sig.today_signal == "BUY":
+                        # Add position sizing
+                        try:
+                            from signals.position_sizer import get_position_size, get_portfolio_value
+                            pv  = get_portfolio_value()
+                            pos = get_position_size(
+                                ticker=ticker,
+                                prob_eff=sig.today_prob_eff,
+                                confidence=result["confidence"],
+                                portfolio_value=pv,
+                                current_price=result.get("current_price"),
+                            )
+                            result["position_pct"]     = pos.final_pct
+                            result["position_dollars"]  = pos.dollars
+                            result["position_shares"]   = pos.shares
+                            result["position_rationale"] = pos.rationale
+                        except Exception as pe:
+                            log.warning(f"  Position sizing failed: {pe}")
                         buy_signals.append(result)
                         log.info(f"  🟢 BUY  h={horizon}d  "
                                  f"prob={sig.today_prob:.1%}  "
@@ -250,8 +268,13 @@ def run_daily():
     if buy_signals:
         log.info(f"\n  🟢 BUY SIGNALS TODAY:")
         for s in buy_signals:
+            pos_str = ""
+            if s.get("position_dollars"):
+                pos_str = f"  size={s['position_pct']*100:.1f}% (${s['position_dollars']:,.0f})"
+                if s.get("position_shares"):
+                    pos_str += f" ~{s['position_shares']} shares"
             log.info(f"    {s['ticker']:6s} h={s['horizon']}d  "
-                     f"eff={s['prob_eff']:.1%}  conf={s['confidence']}")
+                     f"eff={s['prob_eff']:.1%}  conf={s['confidence']}{pos_str}")
         send_desktop_alert(
             "ML Quant Fund",
             f"{len(buy_signals)} BUY signal(s): "

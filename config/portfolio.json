@@ -1,0 +1,9 @@
+{
+  "portfolio_value": 300000,
+  "note": "Update this manually with your current Fidelity account value",
+  "last_updated": "2026-03-18",
+  "open_positions": {
+    "comment": "Add your current open positions here",
+    "positions": []
+  }
+}
