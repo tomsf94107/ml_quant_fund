@@ -358,8 +358,8 @@ def reconcile_outcomes(
 
                 try:
                     # Did stock go UP on prediction_date?
-                    day_open  = float(px["Open"].squeeze().asof(pd.Timestamp(pred_date)))
-                    day_close = float(close.asof(pd.Timestamp(pred_date)))
+                    open_series = px["Open"].squeeze(); open_series.index = pd.to_datetime(open_series.index).tz_localize(None); day_open = float(open_series.asof(pd.Timestamp(pred_date)))
+                    close2 = close.copy(); close2.index = pd.to_datetime(close2.index).tz_localize(None); day_close = float(close2.asof(pd.Timestamp(pred_date)))
                     actual_ret = (day_close - day_open) / day_open
                     if actual_ret == 0.0 or actual_ret != actual_ret:
                         continue
