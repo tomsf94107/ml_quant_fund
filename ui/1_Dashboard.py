@@ -340,6 +340,26 @@ if st.button("🚀 Run Strategy", type="primary"):
     # DISPLAY RESULTS
     # ─────────────────────────────────────────────────────────────────────────
 
+    # ── Price sanity check ───────────────────────────────────────────────────
+    # Fetch ground truth prices and flag any crossovers/stale prices
+    try:
+        import yfinance as yf
+        all_syms = [r.ticker for r in signal_summary]
+        raw_px = yf.download(all_syms, period="2d", auto_adjust=True, progress=False)
+        if hasattr(raw_px.columns, "levels"):
+            raw_px = raw_px["Close"]
+        latest_px = raw_px.iloc[-1].to_dict() if not raw_px.empty else {}
+        for r in signal_summary:
+            true_price = latest_px.get(r.ticker)
+            if true_price and r.current_price:
+                diff_pct = abs(true_price - r.current_price) / true_price
+                if diff_pct > 0.10:  # >10% off = price crossover
+                    st.warning(f"⚠️ {r.ticker}: price mismatch — model used ${r.current_price:.2f}, market says ${true_price:.2f}. Refreshing data.")
+                    # Force refresh by clearing cache for this ticker
+                    _cached_features.clear()
+    except Exception as _pe:
+        pass  # price check is best-effort, never crash the dashboard
+
     if not signal_summary:
         st.error("No signals generated. Check tickers and date range.")
         st.stop()
@@ -506,6 +526,18 @@ if st.button("🚀 Run Strategy", type="primary"):
             if up >= 2: return "📈 INTRA BULL"
             if dn >= 2: return "📉 INTRA BEAR"
             return "➖ NEUTRAL"
+
+        # Intraday price sanity check
+        intra_price_issues = []
+        for t in intraday_tickers:
+            s = sig_lkp.get(t)
+            e = eod_lkp.get(t)
+            if s and e and s.get("current_price") and e.current_price:
+                diff = abs(s["current_price"] - e.current_price) / e.current_price
+                if diff > 0.10:
+                    intra_price_issues.append(f"{t} (intraday ${s['current_price']:.2f} vs EOD ${e.current_price:.2f})")
+        if intra_price_issues:
+            st.warning(f"⚠️ Intraday price mismatch on: {', '.join(intra_price_issues)}")
 
         align_rows = []
         for t in intraday_tickers:
