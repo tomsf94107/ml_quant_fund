@@ -152,7 +152,8 @@ def get_intraday_signal(ticker: str) -> dict:
         # 1hr signal — most sensitive to recent momentum
         p1 = mom_to_prob(mom * 1.0)
         # 2hr signal — smoother, uses 2hr return
-        ret_2hr = float(last.get("return_2hr", 0) or 0)
+        ret_2hr = last.get("return_2hr", 0) or 0
+        ret_2hr = 0 if ret_2hr != ret_2hr else float(ret_2hr)  # NaN check
         p2 = mom_to_prob((mom * 0.6 + ret_2hr * 0.4))
         # 4hr signal — rest of day, mean-revert toward VWAP
         # If late in day (>180min), mean reversion more likely

@@ -1,15 +1,15 @@
 {
   "label": "VOLATILE",
-  "confidence": 0.47,
+  "confidence": 0.3,
   "confidence_threshold": 0.65,
   "signal_multiplier": 0.85,
   "block_tau": 2,
   "description": "Volatile/choppy market \u2014 high VIX, no clear trend. Very selective.",
-  "computed_at": "2026-03-09T09:25:04.029686",
-  "spy_trend_20d": -0.026411036986092373,
-  "spy_trend_60d": -0.012697845375981065,
-  "vix_level": 29.489999771118164,
-  "vix_percentile": 99.47916666666666,
+  "computed_at": "2026-03-18T06:18:52.723816",
+  "spy_trend_20d": -0.02258520522848495,
+  "spy_trend_60d": -0.0054663851744198855,
+  "vix_level": 22.3700008392334,
+  "vix_percentile": 91.75257731958763,
   "bond_signal": "NEUTRAL",
   "breadth_signal": "MIXED"
 }
