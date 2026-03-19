@@ -98,9 +98,12 @@ def log_prediction_to_db(
     try:
         from accuracy.sink import log_prediction
         log_prediction(
-            ticker=ticker, horizon=horizon,
-            signal=signal, prob=prob, prob_eff=prob_eff,
-            run_date=run_date,
+            ticker=ticker,
+            prediction_date=run_date,
+            horizon=horizon,
+            prob_up=prob_eff,
+            signal=signal,
+            confidence="HIGH" if prob_eff >= 0.70 else "MEDIUM" if prob_eff >= 0.55 else "LOW",
         )
     except Exception as e:
         log.warning(f"DB log failed for {ticker}: {e}")
