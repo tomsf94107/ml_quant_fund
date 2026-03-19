@@ -275,14 +275,23 @@ if st.button("🚀 Run Strategy", type="primary"):
     from concurrent.futures import ThreadPoolExecutor, as_completed
     import threading
 
-    @st.cache_data(ttl=3600)
-    def _cached_features(t, s, e):
-        return build_feature_dataframe(t, start_date=s, end_date=e)
+    _feature_cache = {}
+    _cache_lock    = threading.Lock()
+
+    def _get_features(t, s, e):
+        key = (t, s, e)
+        with _cache_lock:
+            if key in _feature_cache:
+                return _feature_cache[key]
+        df = build_feature_dataframe(t, start_date=s, end_date=e)
+        with _cache_lock:
+            _feature_cache[key] = df
+        return df
 
     # ── Parallel worker — no st.* calls inside ────────────────────────────────
     def _process_ticker(tkr):
         try:
-            df = _cached_features(
+            df = _get_features(
                 tkr,
                 start_date.isoformat(),
                 end_date.isoformat(),
