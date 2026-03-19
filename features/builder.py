@@ -302,9 +302,7 @@ def build_feature_dataframe(
 
     # ── 3. Price-based features ───────────────────────────────────────────────
     c = df["close"]
-    if isinstance(c, pd.DataFrame): c = c.iloc[:, 0]
-    _o = df["open"] if "open" in df.columns else c
-    o = _o.iloc[:, 0] if isinstance(_o, pd.DataFrame) else _o
+    o = df["open"] if "open" in df.columns else c  # open price
 
     # ── Pre-market gap ────────────────────────────────────────────────────────
     # How much did stock gap up/down from yesterday's close to today's open

@@ -281,6 +281,7 @@ if st.button("🚀 Run Strategy", type="primary"):
     for i, tkr in enumerate(tickers):
         progress.progress(i / len(tickers), text=f"Processing {tkr}...")
 
+        # ── 1. Build features ─────────────────────────────────────────────────
         try:
             df = _cached_features(
                 tkr,
@@ -295,6 +296,7 @@ if st.button("🚀 Run Strategy", type="primary"):
             st.warning(f"⚠️ {tkr}: no data returned")
             continue
 
+        # ── 2. Generate signals ───────────────────────────────────────────────
         result = generate_signals(
             ticker=tkr,
             df=df,
@@ -310,6 +312,7 @@ if st.button("🚀 Run Strategy", type="primary"):
 
         signal_summary.append(result)
 
+        # ── 3. Log prediction ─────────────────────────────────────────────────
         confidence_str = (
             "HIGH"   if result.today_prob_eff >= 0.65 else
             "MEDIUM" if result.today_prob_eff >= 0.55 else
@@ -400,7 +403,7 @@ if st.button("🚀 Run Strategy", type="primary"):
             "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
             "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
             "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
-            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if (not np.isnan(r.metrics.sharpe) and r.metrics.n_trades >= 5) else ("—" if r.metrics.n_trades == 0 else f"~{r.metrics.sharpe:.2f}*"),
+            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
         })
 
     fdf = pd.DataFrame(forecast_rows)
