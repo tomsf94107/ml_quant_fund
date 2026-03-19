@@ -272,78 +272,42 @@ if st.button("🚀 Run Strategy", type="primary"):
     pred_log_rows = []
     signal_summary = []
 
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    import threading
+    @st.cache_data(ttl=3600)
+    def _cached_features(t, s, e):
+        return build_feature_dataframe(t, start_date=s, end_date=e)
 
-    _feature_cache = {}
-    _cache_lock    = threading.Lock()
+    progress = st.progress(0, text="Building features...")
 
-    def _get_features(t, s, e):
-        key = (t, s, e)
-        with _cache_lock:
-            if key in _feature_cache:
-                return _feature_cache[key]
-        df = build_feature_dataframe(t, start_date=s, end_date=e)
-        with _cache_lock:
-            _feature_cache[key] = df
-        return df
+    for i, tkr in enumerate(tickers):
+        progress.progress(i / len(tickers), text=f"Processing {tkr}...")
 
-    # ── Parallel worker — no st.* calls inside ────────────────────────────────
-    def _process_ticker(tkr):
         try:
-            df = _get_features(
+            df = _cached_features(
                 tkr,
                 start_date.isoformat(),
                 end_date.isoformat(),
             )
-            if df.empty:
-                return tkr, None, f"{tkr}: no data returned"
-
-            result = generate_signals(
-                ticker=tkr,
-                df=df,
-                horizon=horizon,
-                confidence_threshold=confidence_threshold,
-                block_tau=block_tau,
-                risk_label=risk_label,
-            )
-            if result.error:
-                return tkr, None, f"{tkr}: {result.error}"
-            return tkr, result, None
-        except Exception as ex:
-            return tkr, None, f"{tkr}: {ex}"
-
-    progress = st.progress(0, text="Building features (parallel)...")
-    completed  = 0
-    lock       = threading.Lock()
-    results_map = {}
-    warnings   = []
-
-    MAX_WORKERS = 1
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(_process_ticker, tkr): tkr for tkr in tickers}
-        for future in as_completed(futures):
-            tkr, result, warn = future.result()
-            with lock:
-                completed += 1
-                progress.progress(completed / len(tickers),
-                                  text=f"Processed {completed}/{len(tickers)} tickers...")
-                if warn:
-                    warnings.append(warn)
-                if result:
-                    results_map[tkr] = result
-
-    progress.progress(1.0, text="Done.")
-
-    # Show warnings after all threads finish (safe to call st.* here)
-    for w in warnings:
-        st.warning(f"⚠️ {w}")
-
-    # Preserve original ticker order
-    for tkr in tickers:
-        if tkr not in results_map:
+        except Exception as e:
+            st.warning(f"⚠️ {tkr}: feature build failed — {e}")
             continue
-        result = results_map[tkr]
+
+        if df.empty:
+            st.warning(f"⚠️ {tkr}: no data returned")
+            continue
+
+        result = generate_signals(
+            ticker=tkr,
+            df=df,
+            horizon=horizon,
+            confidence_threshold=confidence_threshold,
+            block_tau=block_tau,
+            risk_label=risk_label,
+        )
+
+        if result.error:
+            st.warning(f"⚠️ {tkr}: {result.error}")
+            continue
+
         signal_summary.append(result)
 
         confidence_str = (
@@ -359,6 +323,8 @@ if st.button("🚀 Run Strategy", type="primary"):
             "signal":          result.today_signal,
             "confidence":      confidence_str,
         })
+
+    progress.progress(1.0, text="Done.")
 
     # ── Log all predictions to DB ─────────────────────────────────────────────
     if pred_log_rows:
