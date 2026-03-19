@@ -97,7 +97,8 @@ def fetch_latest(ticker: str) -> dict | None:
         prev   = raw.iloc[-2] if len(raw) >= 2 else raw.iloc[-1]
         close      = float(latest["Close"])
         prev_close = float(prev["Close"])
-        day_ret    = (float(latest["Close"]) - float(latest["Open"])) / float(latest["Open"])
+        open_price = float(latest["Open"])
+        day_ret    = (float(latest["Close"]) - open_price) / open_price if open_price != 0 else 0.0
         daily_ret  = (close - prev_close) / prev_close
         return {
             "date":       raw.index[-1].date(),
