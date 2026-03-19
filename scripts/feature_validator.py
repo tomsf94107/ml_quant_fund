@@ -378,6 +378,136 @@ def check_feature_pipeline(fix: bool) -> dict:
     return {"issues": len(issues), "details": issues}
 
 
+# ── Check 6: Full Universe Price Cross-check ──────────────────────────────────
+
+def check_all_ticker_prices() -> dict:
+    """
+    Fetch real-time prices for ALL tickers in tickers.txt via yfinance,
+    then compare against what build_feature_dataframe returns for each.
+    Catches crossover bugs (GOOG getting GME's price) and stale data.
+    Runs on all tickers — not just the spot-check sample.
+    """
+    if not TICKERS_FILE.exists():
+        log("  ⚠ tickers.txt not found — skipping full price check")
+        return {"issues": 0, "details": []}
+
+    tickers = [t.strip() for t in TICKERS_FILE.read_text().splitlines() if t.strip()]
+    log(f"Checking live prices for all {len(tickers)} tickers...")
+
+    issues   = []
+    today    = today_et()
+
+    # Step 1 — fetch all prices in one batch call
+    try:
+        raw = yf.download(tickers, period="3d", auto_adjust=True, progress=False)
+        if isinstance(raw.columns, pd.MultiIndex):
+            if "Close" in raw.columns.get_level_values(0):
+                closes = raw["Close"].copy()
+            elif "Close" in raw.columns.get_level_values(1):
+                closes = raw.xs("Close", axis=1, level=1).copy()
+            else:
+                closes = raw.iloc[:, raw.columns.get_level_values(0) == "Close"].copy()
+        else:
+            closes = raw[["Close"]].copy() if "Close" in raw.columns else raw.copy()
+        closes.index = pd.to_datetime(closes.index).tz_localize(None).normalize()
+        # Filter out all-NaN columns
+        closes = closes.dropna(axis=1, how="all")
+        ground_truth = closes.iloc[-1].dropna().to_dict()
+        log(f"  Fetched {len(ground_truth)}/{len(tickers)} ground truth prices from yfinance")
+        # For any missing tickers, fetch individually
+        missing_now = [t for t in tickers if t not in ground_truth]
+        if missing_now:
+            log(f"  Retrying {len(missing_now)} missing tickers individually...")
+            for t in missing_now:
+                try:
+                    r = yf.download(t, period="3d", auto_adjust=True, progress=False)
+                    if not r.empty:
+                        if isinstance(r.columns, pd.MultiIndex):
+                            r.columns = r.columns.get_level_values(0)
+                        ground_truth[t] = float(r["Close"].iloc[-1])
+                except Exception:
+                    pass
+        log(f"  Final ground truth: {len(ground_truth)}/{len(tickers)} tickers")
+    except Exception as e:
+        log(f"  ❌ Batch price fetch failed: {e}")
+        return {"issues": 1, "details": [{"issue": str(e)}]}
+
+    # Step 2 — compare against feature pipeline prices
+    crossed  = []
+    stale    = []
+    missing  = []
+
+    for ticker in tickers:
+        true_price = ground_truth.get(ticker)
+        if true_price is None or (isinstance(true_price, float) and np.isnan(true_price)):
+            missing.append(ticker)
+            log(f"  ⚠ {ticker}: no ground truth price from yfinance")
+            continue
+
+        try:
+            from features.builder import build_feature_dataframe
+            df = build_feature_dataframe(ticker, start_date="2025-01-01", training_mode=True)
+            if df.empty:
+                stale.append(ticker)
+                log(f"  ❌ {ticker}: feature pipeline returned empty DataFrame")
+                continue
+
+            feat_price = float(df["close"].iloc[-1])
+            feat_date  = df["date"].iloc[-1]
+
+            # Check price crossover (>10% difference = likely bug)
+            diff_pct = abs(feat_price - true_price) / true_price
+            if diff_pct > 0.10:
+                crossed.append({
+                    "ticker":     ticker,
+                    "feat_price": round(feat_price, 2),
+                    "true_price": round(true_price, 2),
+                    "diff_pct":   round(diff_pct * 100, 1),
+                })
+                log(f"  ❌ {ticker}: PRICE CROSSOVER — feature=${feat_price:.2f} actual=${true_price:.2f} ({diff_pct*100:.1f}% diff)")
+                issues.append({"ticker": ticker, "issue": f"crossover: feat={feat_price:.2f} true={true_price:.2f}"})
+            else:
+                log(f"  ✅ {ticker}: ${feat_price:.2f} ≈ ${true_price:.2f} ({diff_pct*100:.1f}% diff)")
+
+            # Check freshness
+            try:
+                days_old = (today - feat_date).days if hasattr(feat_date, 'days') else (today - date.fromisoformat(str(feat_date)[:10])).days
+                if today.weekday() < 5 and days_old > 2:
+                    stale.append(ticker)
+                    log(f"  ❌ {ticker}: feature data is {days_old} days old")
+                    issues.append({"ticker": ticker, "issue": f"stale: {days_old} days old"})
+            except Exception:
+                pass
+
+        except Exception as e:
+            log(f"  ⚠ {ticker}: could not check — {e}")
+
+    # Summary
+    if crossed:
+        log(f"\n  ❌ PRICE CROSSOVERS DETECTED ({len(crossed)} tickers):")
+        for c in crossed:
+            log(f"     {c['ticker']}: feature=${c['feat_price']} actual=${c['true_price']} ({c['diff_pct']}% off)")
+        desktop_alert(
+            "ML Quant Fund — Price Crossover Alert",
+            f"Price crossover on {len(crossed)} tickers: {', '.join(c['ticker'] for c in crossed[:5])}. Check feature_validator.log"
+        )
+    if stale:
+        log(f"  ❌ Stale features: {stale}")
+    if missing:
+        log(f"  ⚠ No yfinance data: {missing}")
+
+    if not issues:
+        log(f"  ✅ All {len(tickers)} ticker prices verified — no crossovers or stale data")
+
+    return {
+        "issues":  len(issues),
+        "crossed": len(crossed),
+        "stale":   len(stale),
+        "missing": len(missing),
+        "details": issues,
+    }
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def run_feature_validator(fix: bool = True):
@@ -396,6 +526,7 @@ def run_feature_validator(fix: bool = True):
     results["prices"]   = check_ticker_prices(fix)
     results["earnings"] = check_earnings_calendar()
     results["pipeline"] = check_feature_pipeline(fix)
+    results["allprices"] = check_all_ticker_prices()
 
     # Summary
     total_issues = (
@@ -403,7 +534,8 @@ def run_feature_validator(fix: bool = True):
         results["regime"]["issues"] +
         results["prices"]["issues"] +
         results["earnings"]["warnings"] +
-        results["pipeline"]["issues"]
+        results["pipeline"]["issues"] +
+        results["allprices"]["issues"]
     )
 
     log("\n" + "=" * 60)
@@ -414,6 +546,7 @@ def run_feature_validator(fix: bool = True):
     log(f"  Ticker prices     : {results['prices']['issues']} issues")
     log(f"  Earnings warnings : {results['earnings']['warnings']} upcoming")
     log(f"  Feature pipeline  : {results['pipeline']['issues']} issues")
+    log(f"  Full price check  : {results['allprices']['crossed']} crossovers, {results['allprices']['stale']} stale, {results['allprices']['missing']} missing")
     log("=" * 60)
 
     if total_issues > 0:
