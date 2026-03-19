@@ -425,7 +425,7 @@ if st.button("🚀 Run Strategy", type="primary"):
             "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
             "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
             "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
-            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
+            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if (not np.isnan(r.metrics.sharpe) and r.metrics.n_trades >= 5) else ("—" if r.metrics.n_trades == 0 else f"~{r.metrics.sharpe:.2f}*"),
         })
 
     fdf = pd.DataFrame(forecast_rows)
