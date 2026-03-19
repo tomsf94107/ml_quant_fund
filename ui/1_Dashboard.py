@@ -268,6 +268,10 @@ use_cache = st.toggle("⚡ Use cached signals (faster)", value=False,
 
 if st.button("🚀 Run Strategy", type="primary"):
 
+    if not tickers:
+        st.error("No tickers selected — please select at least one ticker in the sidebar.")
+        st.stop()
+
     csv_buffers   = []
     pred_log_rows = []
     signal_summary = []
