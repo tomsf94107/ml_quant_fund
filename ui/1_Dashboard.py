@@ -319,7 +319,7 @@ if st.button("🚀 Run Strategy", type="primary"):
     results_map = {}
     warnings   = []
 
-    MAX_WORKERS = min(4, len(tickers))
+    MAX_WORKERS = min(2, len(tickers))
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         futures = {executor.submit(_process_ticker, tkr): tkr for tkr in tickers}
         for future in as_completed(futures):
