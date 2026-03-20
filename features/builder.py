@@ -99,6 +99,8 @@ OUTPUT_COLUMNS = [
     "obv_trend",                         # OBV vs 10d OBV mean
     "vix_close", "vix_ret",              # market fear gauge
     "oil_ret", "oil_spy_corr",           # crude oil price signal
+    "dxy_ret", "yield_10y", "fear_greed", "beta_60d",
+    "short_ratio", "short_pct_float",
     "sector_rel_ret",                    # stock return - sector ETF return
     "day_of_week", "is_month_end",       # calendar effects
     # ── NEW v3 features ──────────────────────────────────────────────────────
@@ -354,6 +356,66 @@ def build_feature_dataframe(
     xlk = _market_return(SECTOR_ETF, start_str, end_str, date_index)
     df["spy_ret"] = spy.values
     df["xlk_ret"] = xlk.values
+
+    # ── 6b. Macro features — DXY, 10Y yield, Fear & Greed, Beta, Short interest ──
+    # DXY (US Dollar index)
+    try:
+        _dxy = _market_return("DX-Y.NYB", start_str, end_str, date_index)
+        df["dxy_ret"] = _dxy.fillna(0.0).values
+    except Exception:
+        df["dxy_ret"] = 0.0
+
+    # 10Y Treasury yield
+    try:
+        tnx_raw = yf.download("^TNX", start=start_str, end=end_str,
+                               auto_adjust=True, progress=False)
+        if not tnx_raw.empty:
+            if isinstance(tnx_raw.columns, pd.MultiIndex):
+                tnx_raw.columns = tnx_raw.columns.get_level_values(0)
+            tnx_raw.index = pd.to_datetime(tnx_raw.index).normalize()
+            tnx_series = tnx_raw["Close"].squeeze() / 100.0
+            tnx_map = {d.date(): v for d, v in tnx_series.items()}
+            df["yield_10y"] = df["date"].map(tnx_map).ffill().fillna(0.04)
+        else:
+            df["yield_10y"] = 0.04
+    except Exception:
+        df["yield_10y"] = 0.04
+
+    # Fear & Greed Index (alternative.me — updated daily)
+    try:
+        import requests as _req
+        _fg = _req.get("https://api.alternative.me/fng/?limit=1",
+                       headers={"User-Agent": "MLQuantFund/1.0"}, timeout=5)
+        if _fg.status_code == 200:
+            _fg_val = float(_fg.json()["data"][0]["value"]) / 100.0
+        else:
+            _fg_val = 0.5
+        df["fear_greed"] = _fg_val
+    except Exception:
+        df["fear_greed"] = 0.5
+
+    # 60-day rolling beta vs SPY
+    try:
+        _spy_ret = pd.Series(spy.values, index=df.index)
+        _stk_ret = c.pct_change()
+        _cov = _stk_ret.rolling(60).cov(_spy_ret)
+        _var = _spy_ret.rolling(60).var()
+        df["beta_60d"] = (_cov / _var.replace(0, np.nan)).fillna(1.0)
+    except Exception:
+        df["beta_60d"] = 1.0
+
+    # Short interest ratio (from yfinance — updates bi-weekly)
+    try:
+        if not training_mode:
+            _info = yf.Ticker(ticker).info
+            df["short_ratio"]   = float(_info.get("shortRatio") or 0.0)
+            df["short_pct_float"] = float(_info.get("shortPercentOfFloat") or 0.0)
+        else:
+            df["short_ratio"]   = 0.0
+            df["short_pct_float"] = 0.0
+    except Exception:
+        df["short_ratio"]   = 0.0
+        df["short_pct_float"] = 0.0
 
     # ── 7. Sentiment — reads from SQLite cache (run etl_sentiment.py daily) ────
     # Historical rows default to 0.0 (no past headlines available).
