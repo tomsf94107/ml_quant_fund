@@ -19,6 +19,8 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 from __future__ import annotations
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import json
 import os
@@ -171,7 +173,7 @@ def run_daily():
 
     now = now_et()
     market_hour = now.hour * 60 + now.minute
-    if market_hour < 20*60 or market_hour > 22*60:
+    if market_hour < 20*60 or market_hour > 24*60:
         log.info(f"Skipping — outside run window ({now.strftime('%H:%M ET')})")
         return
 
@@ -345,7 +347,27 @@ def log_intraday_snapshot():
     ts     = now_et_dt.strftime("%Y-%m-%dT%H:%M:%S")
     tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
 
+    # First attempt — batch download
     signals = get_all_intraday_signals(tickers)
+
+    # Retry failed tickers individually
+    failed = [s["ticker"] for s in signals if not s.get("current_price") or s.get("error") == "No intraday data"]
+    if failed:
+        print(f"  Retrying {len(failed)} tickers individually...")
+        import time
+        retry_signals = []
+        for tkr in failed:
+            try:
+                s = get_all_intraday_signals([tkr])
+                if s and s[0].get("current_price"):
+                    retry_signals.append(s[0])
+                time.sleep(0.5)
+            except Exception:
+                pass
+        retry_map = {s["ticker"]: s for s in retry_signals}
+        signals = [retry_map.get(s["ticker"], s) for s in signals]
+        valid = sum(1 for s in signals if s.get("current_price"))
+        print(f"  After retry: {valid}/{len(signals)} tickers with data")
 
     # Save to intraday history
     out = Path("data/intraday_history")
