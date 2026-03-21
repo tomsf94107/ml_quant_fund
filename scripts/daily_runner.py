@@ -347,6 +347,13 @@ def log_intraday_snapshot():
     ts     = now_et_dt.strftime("%Y-%m-%dT%H:%M:%S")
     tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
 
+    # Wait until at least 5 minutes after open so 5-min bars exist
+    mins = minutes_since_open()
+    if mins < 5:
+        wait_secs = (5 - mins) * 60 + 30
+        print(f"  Waiting {wait_secs}s for first 5-min bar to populate...")
+        import time; time.sleep(wait_secs)
+
     # First attempt — batch download
     signals = get_all_intraday_signals(tickers)
 
