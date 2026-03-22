@@ -1,6 +1,5 @@
-# ui/5_Sentiment.py
-# Sentiment control panel — run FinBERT on selected tickers, view scores.
-# Manual override for breaking news. Shows last update time per ticker.
+# ui/pages/5_Sentiment.py
+# Sentiment dashboard — Anthropic API daily scores with accuracy tracking
 
 import os, sys
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
@@ -8,6 +7,7 @@ if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
 import sqlite3
+import json
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
@@ -15,316 +15,192 @@ import pandas as pd
 import altair as alt
 import streamlit as st
 
-from data.etl_sentiment import (
-    run_sentiment_etl, load_sentiment_scores,
-    DB_PATH, DEFAULT_SOURCES, SOURCES_WITH_KEYS, _current_time_slot,
-)
-
 st.set_page_config(page_title="Sentiment", page_icon="📰", layout="wide")
-st.title("📰 Sentiment Control Panel")
-st.caption("FinBERT scoring across 10 news sources. Select tickers and run on demand or on schedule.")
+st.title("📰 Sentiment Dashboard")
+st.caption("Daily news sentiment scored by Anthropic API. Decays Mon=100% → Fri=0%. ~$0.12/day for 92 tickers.")
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-def _load_tickers() -> list[str]:
-    path = Path(_ROOT) / "tickers.txt"
-    if path.exists():
-        return [t.strip().upper() for t in path.read_text().splitlines() if t.strip()]
-    return ["AAPL", "NVDA", "TSLA", "AMD"]
+SENT_DB = Path(_ROOT) / "data" / "sentiment.db"
+ACC_DB  = Path(_ROOT) / "accuracy.db"
 
-
-def _load_latest_scores() -> pd.DataFrame:
-    """Load the most recent sentiment score per ticker from the DB."""
-    if not DB_PATH.exists():
-        return pd.DataFrame()
+def _load_latest() -> pd.DataFrame:
+    if not SENT_DB.exists(): return pd.DataFrame()
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(SENT_DB)
         df = pd.read_sql("""
-            SELECT ticker, date, time_slot, score,
-                   positive_pct, negative_pct, neutral_pct,
-                   n_headlines, sources_used, created_at
-            FROM sentiment_scores
-            WHERE id IN (
-                SELECT MAX(id) FROM sentiment_scores GROUP BY ticker
-            )
-            ORDER BY score DESC
+            SELECT ticker, score_date, sentiment_score, sentiment_label,
+                   confidence, headlines
+            FROM monday_sentiment
+            WHERE id IN (SELECT MAX(id) FROM monday_sentiment GROUP BY ticker)
+            ORDER BY sentiment_score DESC
         """, conn)
         conn.close()
         return df
     except Exception:
         return pd.DataFrame()
 
-
-def _load_history(ticker: str, days: int = 14) -> pd.DataFrame:
-    cutoff = (date.today() - timedelta(days=days)).isoformat()
-    if not DB_PATH.exists():
-        return pd.DataFrame()
+def _load_history(days: int = 30) -> pd.DataFrame:
+    if not SENT_DB.exists(): return pd.DataFrame()
     try:
-        conn = sqlite3.connect(DB_PATH)
+        cutoff = (date.today() - timedelta(days=days)).isoformat()
+        conn = sqlite3.connect(SENT_DB)
         df = pd.read_sql("""
-            SELECT date, time_slot, score, positive_pct, negative_pct, n_headlines
-            FROM sentiment_scores
-            WHERE ticker = ? AND date >= ?
-            ORDER BY date, time_slot
-        """, conn, params=(ticker.upper(), cutoff))
+            SELECT ticker, score_date, sentiment_score, sentiment_label, confidence
+            FROM monday_sentiment WHERE score_date >= ?
+            ORDER BY score_date DESC
+        """, conn, params=(cutoff,))
         conn.close()
-        df["date"] = pd.to_datetime(df["date"])
         return df
     except Exception:
         return pd.DataFrame()
 
+def _load_accuracy_by_sentiment() -> pd.DataFrame:
+    """Compare accuracy on days with bullish vs bearish sentiment."""
+    if not SENT_DB.exists() or not ACC_DB.exists(): return pd.DataFrame()
+    try:
+        conn_s = sqlite3.connect(SENT_DB)
+        conn_a = sqlite3.connect(ACC_DB)
+        sent = pd.read_sql("SELECT ticker, score_date, sentiment_label, sentiment_score FROM monday_sentiment", conn_s)
+        preds = pd.read_sql("""
+            SELECT p.ticker, p.prediction_date, p.prob_up,
+                   o.actual_return,
+                   CASE WHEN o.actual_return > 0 THEN 1 ELSE 0 END as actual_up,
+                   CASE WHEN (p.prob_up > 0.5 AND o.actual_return > 0) OR
+                             (p.prob_up <= 0.5 AND o.actual_return <= 0)
+                   THEN 1 ELSE 0 END as correct
+            FROM predictions p
+            JOIN outcomes o ON p.ticker=o.ticker
+                AND p.prediction_date=o.prediction_date
+                AND p.horizon=o.horizon
+            WHERE p.horizon=1
+        """, conn_a)
+        conn_s.close()
+        conn_a.close()
 
-def _available_sources() -> list[str]:
-    """Return sources that are usable (free or have keys configured)."""
-    free = ["Google", "Yahoo", "StockTwits", "EDGAR", "Reddit"]
-    keyed = [s for s, key in SOURCES_WITH_KEYS.items() if os.getenv(key) or
-             (hasattr(st, "secrets") and st.secrets.get(key))]
-    return free + keyed
+        merged = preds.merge(sent, left_on=["ticker","prediction_date"],
+                             right_on=["ticker","score_date"], how="inner")
+        if merged.empty: return pd.DataFrame()
 
+        summary = merged.groupby("sentiment_label").agg(
+            count=("correct","count"),
+            accuracy=("correct","mean"),
+            avg_return=("actual_return","mean")
+        ).reset_index()
+        summary["accuracy"] = summary["accuracy"].round(3)
+        summary["avg_return"] = summary["avg_return"].round(4)
+        return summary
+    except Exception:
+        return pd.DataFrame()
 
-# ── Sidebar: source status ────────────────────────────────────────────────────
-with st.sidebar:
-    st.markdown("## 🔌 Source Status")
-    free_srcs  = ["Google", "Yahoo", "StockTwits", "EDGAR", "Reddit"]
-    keyed_srcs = list(SOURCES_WITH_KEYS.keys())
+# ── Summary metrics ───────────────────────────────────────────────────────────
+df = _load_latest()
 
-    for s in free_srcs:
-        st.markdown(f"🟢 **{s}** — free")
+if df.empty:
+    st.info("No sentiment data yet. Run scripts/daily_sentiment.py to populate.")
+    st.stop()
 
-    for s, key in SOURCES_WITH_KEYS.items():
-        has_key = bool(os.getenv(key) or st.secrets.get(key, None))
-        icon    = "🟢" if has_key else "🔴"
-        label   = "active" if has_key else f"add `{key}` to secrets.toml"
-        st.markdown(f"{icon} **{s}** — {label}")
+bullish = len(df[df["sentiment_label"] == "BULLISH"])
+bearish = len(df[df["sentiment_label"] == "BEARISH"])
+neutral = len(df[df["sentiment_label"] == "NEUTRAL"])
+latest_date = df["score_date"].max()
 
-    st.markdown("---")
-    st.markdown("## ⏰ Schedule")
-    st.caption("""Run `crontab -e` and add:
-```
-0  6  * * 1-5  cd ~/Desktop/ML_Quant_Fund && python -m data.etl_sentiment
-0 12  * * 1-5  cd ~/Desktop/ML_Quant_Fund && python -m data.etl_sentiment
-45 15 * * 1-5  cd ~/Desktop/ML_Quant_Fund && python -m data.etl_sentiment
-```
-This covers pre-market, midday, and close.""")
+m1, m2, m3, m4 = st.columns(4)
+m1.metric("Last scored", latest_date)
+m2.metric("Bullish", bullish, f"{bullish/len(df):.0%}")
+m3.metric("Bearish", bearish, f"{bearish/len(df):.0%}")
+m4.metric("Neutral", neutral, f"{neutral/len(df):.0%}")
 
+st.markdown("---")
 
-# ══════════════════════════════════════════════════════════════════════════════
-#  CURRENT SCORES TABLE
-# ══════════════════════════════════════════════════════════════════════════════
+# ── Accuracy by sentiment label ───────────────────────────────────────────────
+st.subheader("📐 Accuracy by sentiment")
+st.caption("Does sentiment predict next-day direction? Green = sentiment helps, Red = hurts.")
 
-st.subheader("📊 Latest Scores")
-
-scores_df = _load_latest_scores()
-
-if scores_df.empty:
-    st.info("No sentiment data yet. Run sentiment below to get started.")
+acc_df = _load_accuracy_by_sentiment()
+if not acc_df.empty and acc_df["count"].sum() >= 10:
+    for _, row in acc_df.iterrows():
+        col1, col2, col3, col4 = st.columns([2,2,2,3])
+        icon = "🟢" if row["sentiment_label"] == "BULLISH" else "🔴" if row["sentiment_label"] == "BEARISH" else "⚪"
+        col1.markdown(f"{icon} **{row['sentiment_label']}**")
+        col2.metric("Accuracy", f"{row['accuracy']:.1%}")
+        col3.metric("Avg return", f"{row['avg_return']:+.2%}")
+        col4.metric("Samples", int(row["count"]))
 else:
-    scores_df["created_at"] = pd.to_datetime(scores_df["created_at"])
-    minutes_ago = ((datetime.utcnow() - scores_df["created_at"]).dt.total_seconds() / 60).round(0)
-    scores_df["updated"] = minutes_ago.apply(
-        lambda m: f"{int(m)}m ago" if m < 60
-        else f"{int(m//60)}h {int(m%60)}m ago"
-    )
+    st.info(f"Need 10+ matched predictions to show accuracy. Currently {acc_df['count'].sum() if not acc_df.empty else 0} matched.")
 
-    def _sentiment_bar(score: float) -> str:
-        filled = int(abs(score) * 10)
-        bar    = "█" * filled + "░" * (10 - filled)
-        return f"{'📈' if score >= 0 else '📉'} {bar} {score:+.3f}"
+st.markdown("---")
 
-    scores_df["sentiment"] = scores_df["score"].apply(_sentiment_bar)
+# ── Top signals today ─────────────────────────────────────────────────────────
+col_bull, col_bear = st.columns(2)
 
-    st.dataframe(
-        scores_df[["ticker", "sentiment", "positive_pct", "negative_pct",
-                   "n_headlines", "time_slot", "updated"]]
-        .style.format({
-            "positive_pct": "{:.0f}%",
-            "negative_pct": "{:.0f}%",
-        }),
-        use_container_width=True,
-        hide_index=True,
-    )
-
-    # Bull/Bear bar chart
-    chart = (
-        alt.Chart(scores_df)
-        .mark_bar()
-        .encode(
-            x=alt.X("ticker:N", sort="-y", title="Ticker"),
-            y=alt.Y("score:Q",  title="Sentiment Score (-1 to +1)"),
-            color=alt.condition(
-                "datum.score >= 0",
-                alt.value("#00c853"),
-                alt.value("#ff1744"),
-            ),
-            tooltip=[
-                "ticker",
-                alt.Tooltip("score:Q",        format="+.3f"),
-                alt.Tooltip("positive_pct:Q", format=".0f", title="Positive %"),
-                alt.Tooltip("negative_pct:Q", format=".0f", title="Negative %"),
-                "n_headlines",
-                "time_slot",
-                "updated",
-            ],
-        )
-        .properties(height=300, title="Current Sentiment Score by Ticker")
-    )
-    st.altair_chart(chart, use_container_width=True)
-
-
-st.divider()
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-#  MANUAL RUN PANEL
-# ══════════════════════════════════════════════════════════════════════════════
-
-st.subheader("🚀 Run Sentiment Now")
-st.caption("Use this for breaking news — Trump tariff tweet, Fed surprise, Ukraine escalation, earnings miss, etc.")
-
-all_tickers    = _load_tickers()
-active_sources = _available_sources()
-
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    selected_tickers = st.multiselect(
-        "Select tickers to score",
-        options=all_tickers,
-        default=all_tickers[:5],   # default to first 5 to avoid freezing
-        help="Select only the tickers you care about. Each takes ~4 seconds.",
-    )
-
-    selected_sources = st.multiselect(
-        "Sources to use",
-        options=active_sources,
-        default=active_sources,
-        help="Deselect slow sources if you need results fast.",
-    )
-
-with col2:
-    slot_override = st.selectbox(
-        "Label this run as",
-        ["auto-detect", "pre_market", "midday", "close", "intraday", "breaking_news"],
-        help="Intraday/breaking_news won't overwrite scheduled slots.",
-    )
-    force_rerun = st.checkbox(
-        "Force re-run",
-        value=False,
-        help="Re-run even if this slot is already cached today.",
-    )
-
-# Estimate time
-est_seconds = len(selected_tickers) * 4
-est_label   = f"~{est_seconds}s" if est_seconds < 60 else f"~{est_seconds//60}m {est_seconds%60}s"
-
-st.caption(f"⏱ Estimated time: **{est_label}** for {len(selected_tickers)} ticker(s)")
-
-if st.button("▶️ Run Sentiment Now", type="primary", disabled=not selected_tickers):
-    slot = None if slot_override == "auto-detect" else slot_override
-    results = {}
-
-    progress = st.progress(0, text="Starting FinBERT...")
-    status   = st.empty()
-
-    for i, tkr in enumerate(selected_tickers):
-        progress.progress(i / len(selected_tickers), text=f"Scoring {tkr}...")
-        status.caption(f"Running {tkr} ({i+1}/{len(selected_tickers)})")
-
-        try:
-            r = run_sentiment_etl(
-                tickers=[tkr],
-                sources=selected_sources,
-                time_slot=slot,
-                force=force_rerun,
-                verbose=False,
-            )
-            results.update(r)
-        except Exception as e:
-            st.warning(f"⚠️ {tkr}: {e}")
-
-    progress.progress(1.0, text="Done.")
-    status.empty()
-
-    if results:
-        st.success(f"✓ Scored {len(results)} tickers")
-        result_rows = [
-            {"ticker": t, "score": s,
-             "signal": "📈 Bullish" if s > 0.1 else ("📉 Bearish" if s < -0.1 else "➡️ Neutral")}
-            for t, s in sorted(results.items(), key=lambda x: x[1], reverse=True)
-        ]
-        st.dataframe(
-            pd.DataFrame(result_rows)
-            .style.format({"score": "{:+.3f}"}),
-            use_container_width=True,
-            hide_index=True,
-        )
-        st.rerun()
-
-
-st.divider()
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-#  SENTIMENT HISTORY
-# ══════════════════════════════════════════════════════════════════════════════
-
-st.subheader("📈 Sentiment History")
-
-if not scores_df.empty:
-    hist_ticker = st.selectbox(
-        "Ticker",
-        options=scores_df["ticker"].tolist(),
-        key="hist_ticker",
-    )
-    hist_days = st.slider("Days back", 3, 30, 14)
-    hist_df   = _load_history(hist_ticker, days=hist_days)
-
-    if hist_df.empty:
-        st.info(f"No history for {hist_ticker} yet.")
+with col_bull:
+    st.subheader("🟢 Most bullish today")
+    top_bull = df[df["sentiment_label"]=="BULLISH"].head(10)
+    if not top_bull.empty:
+        for _, row in top_bull.iterrows():
+            headlines = json.loads(row["headlines"]) if row["headlines"] else []
+            with st.expander(f"{row['ticker']} — score={row['sentiment_score']:+.2f} conf={row['confidence']:.1f}"):
+                for h in headlines[:3]:
+                    st.caption(f"• {h}")
     else:
-        hist_df["label"] = hist_df["date"].dt.strftime("%m-%d") + " " + hist_df["time_slot"]
+        st.info("No bullish signals today")
 
-        line = (
-            alt.Chart(hist_df)
-            .mark_line(point=True)
-            .encode(
-                x=alt.X("date:T", title="Date"),
-                y=alt.Y("score:Q", title="Sentiment Score",
-                        scale=alt.Scale(domain=[-1, 1])),
-                color=alt.Color("time_slot:N", title="Slot"),
-                tooltip=[
-                    "date:T", "time_slot",
-                    alt.Tooltip("score:Q",        format="+.3f"),
-                    alt.Tooltip("positive_pct:Q", format=".0f", title="Pos%"),
-                    alt.Tooltip("negative_pct:Q", format=".0f", title="Neg%"),
-                    "n_headlines",
-                ],
-            )
-            .properties(height=300, title=f"{hist_ticker} — Sentiment Over Time")
-        )
+with col_bear:
+    st.subheader("🔴 Most bearish today")
+    top_bear = df[df["sentiment_label"]=="BEARISH"].sort_values("sentiment_score").head(10)
+    if not top_bear.empty:
+        for _, row in top_bear.iterrows():
+            headlines = json.loads(row["headlines"]) if row["headlines"] else []
+            with st.expander(f"{row['ticker']} — score={row['sentiment_score']:+.2f} conf={row['confidence']:.1f}"):
+                for h in headlines[:3]:
+                    st.caption(f"• {h}")
+    else:
+        st.info("No bearish signals today")
 
-        zero = alt.Chart(pd.DataFrame({"y": [0]})).mark_rule(
-            strokeDash=[4, 4], color="gray", opacity=0.5
-        ).encode(y="y:Q")
+st.markdown("---")
 
-        st.altair_chart((line + zero).interactive(), use_container_width=True)
-else:
-    st.info("Run sentiment first to see history.")
+# ── Full table with filters ───────────────────────────────────────────────────
+st.subheader("📋 All tickers")
+fc1, fc2, fc3 = st.columns(3)
+label_filter = fc1.selectbox("Label", ["ALL","BULLISH","BEARISH","NEUTRAL"])
+min_conf     = fc2.slider("Min confidence", 0.0, 1.0, 0.0, 0.1)
+show_all     = fc3.checkbox("Show all", value=False)
 
+filtered = df.copy()
+if label_filter != "ALL":
+    filtered = filtered[filtered["sentiment_label"] == label_filter]
+filtered = filtered[filtered["confidence"] >= min_conf]
+if not show_all:
+    filtered = filtered.head(10)
 
-# ══════════════════════════════════════════════════════════════════════════════
-#  ADD NEWS_API KEY REMINDER
-# ══════════════════════════════════════════════════════════════════════════════
+# Build card HTML
+CARD_CSS = """<style>
+.sent-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);
+border-radius:10px;padding:10px 16px;margin-bottom:6px;display:grid;
+grid-template-columns:70px 90px 80px 80px 1fr;align-items:center;gap:12px}
+.sent-hdr{background:var(--color-background-secondary);border-radius:8px;padding:6px 16px;
+display:grid;grid-template-columns:70px 90px 80px 80px 1fr;gap:12px;margin-bottom:6px}
+</style>"""
 
-if not os.getenv("NEWS_API_KEY") and not st.secrets.get("NEWS_API_KEY", None):
-    with st.expander("💡 Enable NewsAPI for geopolitical coverage"):
-        st.markdown("""
-**NewsAPI** adds Reuters, AP, Bloomberg summaries, WSJ — critical for current macro environment
-(Trump tariffs, Ukraine/Russia, China tensions, Fed speak).
+html = CARD_CSS
+html += '<div class="sent-hdr"><span style="font-size:11px;color:var(--color-text-secondary)">Ticker</span><span style="font-size:11px;color:var(--color-text-secondary)">Label</span><span style="font-size:11px;color:var(--color-text-secondary)">Score</span><span style="font-size:11px;color:var(--color-text-secondary)">Confidence</span><span style="font-size:11px;color:var(--color-text-secondary)">Headlines</span></div>'
 
-1. Get a free key at **newsapi.org** (100 req/day free, $50/month for more)
-2. Add to your `.streamlit/secrets.toml`:
-```toml
-NEWS_API_KEY = "your_key_here"
-```
-3. Restart the app — NewsAPI will be automatically enabled as a source.
-""")
+for _, row in filtered.iterrows():
+    label = row["sentiment_label"]
+    border = "#3B6D11" if label=="BULLISH" else "#A32D2D" if label=="BEARISH" else "#888780"
+    label_color = "color:var(--color-text-success)" if label=="BULLISH" else "color:var(--color-text-danger)" if label=="BEARISH" else "color:var(--color-text-secondary)"
+    score_color = "color:var(--color-text-success)" if row["sentiment_score"]>0 else "color:var(--color-text-danger)" if row["sentiment_score"]<0 else ""
+    headlines = json.loads(row["headlines"]) if row["headlines"] else []
+    first_headline = headlines[0][:60]+"..." if headlines else "—"
+
+    html += f"""<div class="sent-card" style="border-left:3px solid {border}">
+  <div style="font-size:16px;font-weight:500">{row['ticker']}</div>
+  <div style="font-size:13px;{label_color}">{label}</div>
+  <div style="font-size:14px;font-weight:500;{score_color}">{row['sentiment_score']:+.2f}</div>
+  <div style="font-size:13px;color:var(--color-text-secondary)">{row['confidence']:.1f}</div>
+  <div style="font-size:12px;color:var(--color-text-secondary)">{first_headline}</div>
+</div>"""
+
+st.html(html)
+
+st.markdown("---")
+st.caption(f"Sentiment scored daily at 3 PM Vietnam time (4 AM ET) via Anthropic API · {len(df)} tickers · ~$0.12/day")
