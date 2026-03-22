@@ -71,53 +71,173 @@ if _after_close:
 
 acc_df = _load(horizon, window_days)
 
-# ── SPY-relative accuracy (always show) ──────────────────────────────────────
+# ── SPY-relative accuracy ─────────────────────────────────────────────────────
 st.subheader("📊 Daily Performance vs SPY")
-st.caption("Are our tickers outperforming the market? More meaningful than BUY accuracy with small sample size.")
+st.caption("Green = our tickers beat the market that day. Focus on the Alpha column — it shows edge over SPY.")
 try:
     spy_results = get_spy_relative_accuracy()
     if spy_results:
-        sdf = pd.DataFrame(spy_results)
-        sdf["spy_ret"]       = sdf["spy_ret"].apply(lambda x: f"{x:+.2%}" if x == x else "N/A")
-        sdf["avg_ret"]       = sdf["avg_ret"].apply(lambda x: f"{x:+.2%}")
-        sdf["avg_vs_spy"]    = sdf["avg_vs_spy"].apply(lambda x: f"{x:+.2%}" if x == x else "N/A")
-        sdf["pct_beat_spy"]  = sdf["pct_beat_spy"].apply(lambda x: f"{x:.0%}" if x == x else "N/A")
-        sdf["buy_acc"]       = sdf["buy_acc"].apply(lambda x: f"{x:.0%}" if x is not None else "—")
-        sdf.columns = ["Date","SPY Return","Avg Ticker Return","Avg vs SPY","% Beat SPY","# BUYs","BUY Acc"]
-        st.dataframe(sdf, use_container_width=True, hide_index=True)
-
+        sdf_raw = pd.DataFrame(spy_results)
         valid = [r for r in spy_results if r["avg_vs_spy"] == r["avg_vs_spy"]]
         if valid:
             avg_vs_spy = sum(r["avg_vs_spy"] for r in valid) / len(valid)
             avg_beat   = sum(r["pct_beat_spy"] for r in valid) / len(valid)
-            col1, col2 = st.columns(2)
-            col1.metric("Avg daily alpha vs SPY", f"{avg_vs_spy:+.2%}")
-            col2.metric("% of tickers beating SPY", f"{avg_beat:.0%}")
+            days_beating = sum(1 for r in valid if r["pct_beat_spy"] >= 0.5)
+            m1, m2, m3 = st.columns(3)
+            m1.metric("Avg daily alpha vs SPY", f"{avg_vs_spy:+.2%}", f"across {len(valid)} trading days")
+            m2.metric("Days beating SPY", f"{days_beating}/{len(valid)}", f"{days_beating/len(valid):.0%} of days")
+            m3.metric("Avg tickers beating SPY", f"{avg_beat:.0%}")
+
+        st.markdown("---")
+
+        # Build card HTML
+        show_all_spy = st.session_state.get("show_all_spy", False)
+        display_rows = spy_results if show_all_spy else spy_results[:10]
+
+        CARD_CSS = """<style>
+.spy-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);
+border-radius:12px;padding:12px 18px;margin-bottom:7px;display:grid;
+grid-template-columns:90px 1fr 1fr 1fr 90px;align-items:center;gap:12px}
+.spy-hdr{background:var(--color-background-secondary);border-radius:8px;padding:8px 18px;margin-bottom:7px;
+display:grid;grid-template-columns:90px 1fr 1fr 1fr 90px;gap:12px}
+.spy-lbl{font-size:11px;color:var(--color-text-secondary)}
+.spy-date{font-size:13px;font-weight:500}
+.spy-val{font-size:14px}
+.spy-alpha-up{font-size:15px;font-weight:500;color:var(--color-text-success)}
+.spy-alpha-dn{font-size:15px;font-weight:500;color:var(--color-text-danger)}
+.beat-good{padding:2px 10px;border-radius:20px;font-size:11px;font-weight:500;background:#EAF3DE;color:#3B6D11}
+.beat-bad{padding:2px 10px;border-radius:20px;font-size:11px;font-weight:500;background:#FCEBEB;color:#A32D2D}
+.beat-mid{padding:2px 10px;border-radius:20px;font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary)}
+</style>"""
+
+        html = CARD_CSS
+        html += '<div class="spy-hdr"><span class="spy-lbl">Date</span><span class="spy-lbl">SPY return</span><span class="spy-lbl">Our avg return</span><span class="spy-lbl">Alpha vs SPY</span><span class="spy-lbl">Beat SPY?</span></div>'
+
+        for r in display_rows:
+            alpha = r.get("avg_vs_spy")
+            beat  = r.get("pct_beat_spy", 0)
+            spy_r = r.get("spy_ret", 0)
+            avg_r = r.get("avg_ret", 0)
+            if alpha != alpha: continue
+
+            border = "#3B6D11" if alpha > 0 else "#A32D2D"
+            alpha_cls = "spy-alpha-up" if alpha > 0 else "spy-alpha-dn"
+            spy_col = "color:var(--color-text-success)" if spy_r > 0 else "color:var(--color-text-danger)"
+            avg_col = "color:var(--color-text-success)" if avg_r > 0 else "color:var(--color-text-danger)"
+
+            if beat >= 0.60:   beat_cls, beat_txt = "beat-good", f"{beat:.0%} beat"
+            elif beat >= 0.40: beat_cls, beat_txt = "beat-mid",  f"{beat:.0%} beat"
+            else:              beat_cls, beat_txt = "beat-bad",  f"{beat:.0%} beat"
+
+            html += f"""<div class="spy-card" style="border-left:3px solid {border}">
+  <div class="spy-date">{r['date']}</div>
+  <div class="spy-val" style="{spy_col}">{spy_r:+.2%}</div>
+  <div class="spy-val" style="{avg_col}">{avg_r:+.2%}</div>
+  <div class="{alpha_cls}">{alpha:+.2%}</div>
+  <div><span class="{beat_cls}">{beat_txt}</span></div>
+</div>"""
+
+        st.html(html)
+
+        col_exp, col_filt = st.columns([1,1])
+        if len(spy_results) > 10:
+            label = f"Show all {len(spy_results)} days" if not show_all_spy else "Show top 10 only"
+            if col_exp.button(label, key="spy_expand"):
+                st.session_state["show_all_spy"] = not show_all_spy
+                st.rerun()
 except Exception as e:
     st.warning(f"SPY comparison unavailable: {e}")
 
 st.markdown("---")
 
 # ── BUY/SELL signal accuracy ──────────────────────────────────────────────────
-st.subheader("🎯 BUY/SELL Signal Accuracy")
-st.caption("Only meaningful after 60+ BUY/SELL signals across different market conditions.")
+st.subheader("🎯 BUY signal accuracy by ticker")
+st.caption("Only tickers with 2+ signals shown. Accuracy needs 30+ signals per ticker to be meaningful — treat these as early data only.")
 try:
     eod_acc = get_eod_accuracy_summary()
     if eod_acc:
-        edf = pd.DataFrame(eod_acc)
-        edf["accuracy"]   = edf["accuracy"].apply(lambda x: f"{x:.1%}" if x is not None else "N/A")
-        edf["avg_return"] = edf["avg_return"].apply(lambda x: f"{x:+.2%}" if x is not None else "N/A")
-        edf.columns = ["Ticker", "# Outcomes", "Accuracy", "Avg Return"]
-        st.dataframe(edf, use_container_width=True, hide_index=True)
         valid = [r for r in eod_acc if r["accuracy"] is not None]
-        total_buys = sum(r["n"] for r in valid)
-        if valid:
-            avg = sum(r["accuracy"] for r in valid) / len(valid)
-            st.caption(f"Overall: {avg:.1%} across {total_buys} BUY/SELL signals · Need 60+ for statistical significance")
+        total_signals = sum(r["n"] for r in valid)
+        overall_acc   = sum(r["accuracy"] for r in valid) / len(valid) if valid else 0
+
+        m1, m2, m3 = st.columns(3)
+        m1.metric("Overall BUY accuracy", f"{overall_acc:.1%}", f"{total_signals} total signals")
+        m2.metric("Tickers with signals", len(valid))
+        m3.metric("Statistical significance", "Not yet" if total_signals < 200 else "Borderline",
+                  f"Need 60+ per ticker")
+
+        st.markdown("---")
+
+        # Filter controls
+        fc1, fc2, fc3 = st.columns(3)
+        min_signals = fc1.selectbox("Min signals", [1, 2, 5, 10], index=1, key="min_sig")
+        sort_by     = fc2.selectbox("Sort by", ["Accuracy ↓", "Accuracy ↑", "Signals ↓", "Avg return ↓"], key="sort_by")
+        show_all_buy = st.session_state.get("show_all_buy", False)
+
+        filtered = [r for r in valid if r["n"] >= min_signals]
+        if sort_by == "Accuracy ↓":   filtered.sort(key=lambda x: x["accuracy"], reverse=True)
+        elif sort_by == "Accuracy ↑": filtered.sort(key=lambda x: x["accuracy"])
+        elif sort_by == "Signals ↓":  filtered.sort(key=lambda x: x["n"], reverse=True)
+        elif sort_by == "Avg return ↓": filtered.sort(key=lambda x: x.get("avg_return",0) or 0, reverse=True)
+
+        display_buy = filtered if show_all_buy else filtered[:10]
+
+        BUY_CSS = """<style>
+.buy-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);
+border-radius:12px;padding:12px 16px;margin-bottom:7px;display:grid;
+grid-template-columns:80px 55px 1fr 100px 110px;align-items:center;gap:12px}
+.buy-hdr{background:var(--color-background-secondary);border-radius:8px;padding:8px 16px;margin-bottom:7px;
+display:grid;grid-template-columns:80px 55px 1fr 100px 110px;gap:12px}
+.buy-ticker{font-size:17px;font-weight:500}
+.acc-bar{height:6px;border-radius:3px;background:var(--color-border-tertiary);overflow:hidden;margin-top:4px}
+.acc-fill{height:100%;border-radius:3px}
+.rel-good{padding:2px 10px;border-radius:20px;font-size:11px;font-weight:500;background:#EAF3DE;color:#3B6D11}
+.rel-warn{padding:2px 10px;border-radius:20px;font-size:11px;background:#FAEEDA;color:#854F0B}
+.rel-bad{padding:2px 10px;border-radius:20px;font-size:11px;background:#FCEBEB;color:#A32D2D}
+.rel-neu{padding:2px 10px;border-radius:20px;font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary)}
+</style>"""
+
+        html2 = BUY_CSS
+        html2 += '<div class="buy-hdr"><span class="spy-lbl">Ticker</span><span class="spy-lbl">Signals</span><span class="spy-lbl">Accuracy</span><span class="spy-lbl">Avg return</span><span class="spy-lbl">Reliability</span></div>'
+
+        for r in display_buy:
+            acc = r["accuracy"]
+            n   = r["n"]
+            ret = r.get("avg_return") or 0
+            acc_pct = acc * 100
+            bar_color = "#639922" if acc >= 0.60 else "#EF9F27" if acc >= 0.50 else "#E24B4A"
+            ret_col = "color:var(--color-text-success)" if ret > 0 else "color:var(--color-text-danger)"
+            border  = "#3B6D11" if acc >= 0.60 else "#EF9F27" if acc >= 0.50 else "#A32D2D"
+
+            if n >= 30:    rel_cls, rel_txt = "rel-good", "Reliable"
+            elif n >= 10:  rel_cls, rel_txt = "rel-warn", "Early data"
+            else:          rel_cls, rel_txt = "rel-neu",  "Too few"
+
+            html2 += f"""<div class="buy-card" style="border-left:3px solid {border}">
+  <div class="buy-ticker">{r['ticker']}</div>
+  <div style="font-size:13px;color:var(--color-text-secondary)">{n}</div>
+  <div>
+    <div style="font-size:14px;font-weight:500;color:{bar_color}">{acc:.1%}</div>
+    <div class="acc-bar"><div class="acc-fill" style="width:{min(acc_pct,100):.0f}%;background:{bar_color}"></div></div>
+  </div>
+  <div style="font-size:14px;{ret_col}">{ret:+.2%}</div>
+  <div><span class="{rel_cls}">{rel_txt}</span></div>
+</div>"""
+
+        st.html(html2)
+
+        col_exp2, _ = st.columns([1,2])
+        if len(filtered) > 10:
+            label2 = f"Show all {len(filtered)} tickers" if not show_all_buy else "Show top 10 only"
+            if col_exp2.button(label2, key="buy_expand"):
+                st.session_state["show_all_buy"] = not show_all_buy
+                st.rerun()
+
+        st.caption(f"Overall: {overall_acc:.1%} across {total_signals} BUY signals · Need 60+ per ticker for statistical significance · Check back May 1 2026")
     else:
-        st.info("No BUY/SELL signals recorded yet.")
+        st.info("No BUY signals recorded yet.")
 except Exception as e:
-    st.warning(f"BUY/SELL accuracy unavailable: {e}")
+    st.warning(f"BUY accuracy unavailable: {e}")
 
 st.markdown("---")
 st.subheader("📈 Model Accuracy Cache")
