@@ -336,17 +336,19 @@ else:
 
     hist["rolling_acc"] = hist["correct"].rolling(10, min_periods=3).mean()
 
-    # Simple bar chart
+    hist["one"] = 1.0
+
+    bar_size = max(12, min(40, 400 // max(len(hist), 1)))
+
+    # Full height bars colored by correct/wrong
     bars = (
         alt.Chart(hist)
-        .mark_bar(size=max(8, min(30, 300 // max(len(hist), 1))))
+        .mark_bar(size=bar_size)
         .encode(
-            x=alt.X("prediction_date:N", title="Date",
-                    sort=None,
+            x=alt.X("prediction_date:N", title="Date", sort=None,
                     axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
-            y=alt.Y("prob_up:Q", title="Predicted confidence",
-                    scale=alt.Scale(domain=[0, 1]),
-                    axis=alt.Axis(format=".0%")),
+            y=alt.Y("one:Q", title="", axis=None,
+                    scale=alt.Scale(domain=[0, 1])),
             color=alt.condition(
                 "datum.correct == 1",
                 alt.value("#3B6D11"),
@@ -362,36 +364,33 @@ else:
         )
     )
 
-    # 50% reference line
-    ref_df = pd.DataFrame({"y": [0.5]})
-    ref = alt.Chart(ref_df).mark_rule(
-        color="#888780", strokeDash=[4, 4], strokeWidth=1.5
-    ).encode(y=alt.Y("y:Q", scale=alt.Scale(domain=[0, 1])))
-
     # Rolling accuracy line
     hist2 = hist.dropna(subset=["rolling_acc"])
+    layers = [bars]
     if len(hist2) >= 3:
         line = (
             alt.Chart(hist2)
-            .mark_line(color="#378ADD", strokeWidth=2, interpolate="monotone")
+            .mark_line(color="#378ADD", strokeWidth=2.5, interpolate="monotone")
             .encode(
                 x=alt.X("prediction_date:N", sort=None),
-                y=alt.Y("rolling_acc:Q", scale=alt.Scale(domain=[0, 1])),
+                y=alt.Y("rolling_acc:Q", title="Rolling accuracy",
+                        scale=alt.Scale(domain=[0, 1]),
+                        axis=alt.Axis(format=".0%")),
                 tooltip=[alt.Tooltip("rolling_acc:Q", format=".1%", title="10d rolling acc")],
             )
         )
-        final_chart = alt.layer(bars, ref, line)
-    else:
-        final_chart = alt.layer(bars, ref)
+        layers.append(line)
 
     st.altair_chart(
-        final_chart.properties(
-            title=f"{sel_ticker} — {horizon}d · bar height=confidence · green=correct · red=wrong",
+        alt.layer(*layers)
+        .resolve_scale(y="independent")
+        .properties(
+            title=f"{sel_ticker} — {horizon}d predictions · green=correct · red=wrong",
             height=chart_height,
         ),
         use_container_width=True,
     )
-    st.caption("Dashed line = 50% baseline. Blue line = 10-day rolling accuracy (shows after 3+ predictions).")
+    st.caption("Blue line = 10-day rolling accuracy. Green = correct prediction. Red = wrong.")
 
     # Raw table
     with st.expander("🧾 Raw prediction history"):
