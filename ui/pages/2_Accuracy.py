@@ -304,51 +304,83 @@ st.altair_chart(chart, use_container_width=True)
 
 # ── Trend chart for selected ticker ───────────────────────────────────────────
 st.subheader("📈 Accuracy Over Time")
-sel_ticker = st.selectbox("Select ticker", acc_df["ticker"].tolist())
-days_back  = st.slider("Days back", 30, 180, 90, step=10)
+st.caption("One bar per trading day — green = correct prediction, red = wrong. Use filters to zoom in.")
+
+tc1, tc2, tc3 = st.columns([2, 1, 1])
+sel_ticker = tc1.selectbox("Ticker", acc_df["ticker"].tolist(), key="trend_ticker")
+days_back  = tc2.selectbox("Period", [14, 30, 60, 90, 180], index=1,
+                            format_func=lambda x: f"Last {x} days", key="trend_days")
+show_expanded = tc3.selectbox("View", ["Compact", "Expanded"], key="trend_view")
 
 hist = load_prediction_history(sel_ticker, horizon=horizon, days=days_back)
 
 if hist.empty:
     st.info(f"No prediction history for {sel_ticker} yet.")
 else:
-    hist["rolling_acc"] = hist["correct"].rolling(20, min_periods=5).mean()
-
     hist["prediction_date"] = hist["prediction_date"].astype(str).str[:10]
-    base = alt.Chart(hist).encode(
-        x=alt.X("prediction_date:N", title="Date", axis=alt.Axis(labelAngle=-45))
+    hist["correct_label"]   = hist["correct"].apply(lambda x: "Correct" if x == 1 else "Wrong")
+    hist["return_pct"]      = hist["actual_return"].apply(lambda x: f"{x:+.2%}" if pd.notna(x) else "N/A")
+    hist["prob_pct"]        = hist["prob_up"].apply(lambda x: f"{x:.1%}" if pd.notna(x) else "N/A")
+
+    total    = len(hist)
+    correct  = hist["correct"].sum()
+    acc_live = correct / total if total > 0 else 0
+
+    sm1, sm2, sm3, sm4 = st.columns(4)
+    sm1.metric("Predictions", total)
+    sm2.metric("Correct", f"{int(correct)}")
+    sm3.metric("Live accuracy", f"{acc_live:.1%}")
+    sm4.metric("Avg return", f"{hist['actual_return'].mean():+.2%}" if hist['actual_return'].notna().any() else "N/A")
+
+    chart_height = 200 if show_expanded == "Compact" else 350
+
+    bar_chart = (
+        alt.Chart(hist)
+        .mark_bar(cornerRadiusTopLeft=2, cornerRadiusTopRight=2)
+        .encode(
+            x=alt.X("prediction_date:N", title="Date",
+                    axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
+            y=alt.Y("prob_up:Q", title="Predicted probability",
+                    scale=alt.Scale(domain=[0, 1]),
+                    axis=alt.Axis(format=".0%")),
+            color=alt.condition(
+                "datum.correct == 1",
+                alt.value("#3B6D11"),
+                alt.value("#A32D2D"),
+            ),
+            tooltip=[
+                alt.Tooltip("prediction_date:N", title="Date"),
+                alt.Tooltip("prob_up:Q", format=".1%", title="Predicted prob"),
+                alt.Tooltip("correct_label:N", title="Result"),
+                alt.Tooltip("return_pct:N", title="Actual return"),
+                alt.Tooltip("signal:N", title="Signal"),
+            ],
+        )
+        .properties(
+            title=f"{sel_ticker} — {horizon}d predictions (green=correct, red=wrong)",
+            height=chart_height,
+        )
     )
 
-    acc_line = base.mark_line(color="#00c853").encode(
-        y=alt.Y("rolling_acc:Q", title="Rolling 20-day Accuracy",
-                scale=alt.Scale(domain=[0, 1])),
-        tooltip=["prediction_date:N",
-                 alt.Tooltip("rolling_acc:Q", format=".1%"),
-                 "signal:N", "actual_up:Q"],
-    )
-
-    signal_pts = base.mark_circle(size=30).encode(
-        y=alt.Y("prob_up:Q", title="Predicted Prob"),
-        color=alt.condition(
-            "datum.actual_up == 1",
-            alt.value("#00c853"),
-            alt.value("#ff1744"),
-        ),
-        tooltip=["prediction_date:N",
-                 alt.Tooltip("prob_up:Q", format=".1%"),
-                 "signal:N", "actual_up:Q",
-                 alt.Tooltip("actual_return:Q", format=".2%")],
+    # Rolling accuracy line
+    hist["rolling_acc"] = hist["correct"].rolling(10, min_periods=3).mean()
+    line_chart = (
+        alt.Chart(hist)
+        .mark_line(color="#378ADD", strokeWidth=2)
+        .encode(
+            x=alt.X("prediction_date:N"),
+            y=alt.Y("rolling_acc:Q", scale=alt.Scale(domain=[0, 1])),
+            tooltip=[alt.Tooltip("rolling_acc:Q", format=".1%", title="10-day rolling acc")],
+        )
     )
 
     st.altair_chart(
-        alt.layer(acc_line, signal_pts)
-        .resolve_scale(y="independent")
-        .properties(
-            title=f"{sel_ticker} — Predicted Probability vs Actual Outcome",
-            height=350,
-        ),
+        alt.layer(bar_chart, line_chart)
+        .resolve_scale(y="shared")
+        .properties(height=chart_height),
         use_container_width=True,
     )
+    st.caption("Blue line = 10-day rolling accuracy. Bar height = predicted confidence. Green/red = correct/wrong.")
 
     # Raw table
     with st.expander("🧾 Raw prediction history"):
