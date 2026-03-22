@@ -257,3 +257,155 @@ else:
         mime="text/csv",
         key="dl_acc",
     )
+
+
+# ── Calibration Analysis ──────────────────────────────────────────────────────
+st.divider()
+st.subheader("📐 Model Calibration")
+st.caption("A well-calibrated model's predicted probability matches actual win rate. If we say 70% confidence, it should win 70% of the time.")
+
+try:
+    import sqlite3
+    import numpy as np
+
+    conn = sqlite3.connect("accuracy.db")
+    cal_df = pd.read_sql("""
+        SELECT
+            ROUND(p.prob_up, 1) as prob_bucket,
+            COUNT(*) as n,
+            ROUND(AVG(CASE WHEN o.actual_return > 0 THEN 1.0 ELSE 0.0 END), 4) as actual_win_rate
+        FROM predictions p
+        JOIN outcomes o ON p.ticker=o.ticker
+            AND p.prediction_date=o.prediction_date
+            AND p.horizon=o.horizon
+        WHERE p.prob_up IS NOT NULL
+        GROUP BY ROUND(p.prob_up, 1)
+        ORDER BY prob_bucket
+    """, conn)
+    conn.close()
+
+    if not cal_df.empty:
+        # Metrics
+        total = cal_df["n"].sum()
+        weighted_win = (cal_df["actual_win_rate"] * cal_df["n"]).sum() / total
+        high_conf = cal_df[cal_df["prob_bucket"] >= 0.70]
+        high_conf_win = (high_conf["actual_win_rate"] * high_conf["n"]).sum() / high_conf["n"].sum() if not high_conf.empty else None
+        high_conf_n = high_conf["n"].sum() if not high_conf.empty else 0
+
+        # Calibration error (mean absolute deviation from diagonal)
+        cal_df["error"] = abs(cal_df["prob_bucket"] - cal_df["actual_win_rate"])
+        mean_cal_error = (cal_df["error"] * cal_df["n"]).sum() / total
+        cal_label = "Good" if mean_cal_error < 0.05 else "Fair" if mean_cal_error < 0.10 else "Poor"
+
+        cc1, cc2, cc3, cc4 = st.columns(4)
+        cc1.metric("Total predictions", f"{total:,}")
+        cc2.metric("Overall win rate", f"{weighted_win:.1%}")
+        if high_conf_win is not None:
+            cc3.metric(f"High conf win rate (n={high_conf_n})",
+                      f"{high_conf_win:.1%}",
+                      delta=f"{'needs more data' if high_conf_n < 30 else ''}")
+        cc4.metric("Calibration", cal_label,
+                  delta=f"error={mean_cal_error:.1%}")
+
+        st.markdown("---")
+
+        # Chart
+        col_chart, col_table = st.columns([2, 1])
+
+        with col_chart:
+            # Build calibration chart data
+            chart_data = cal_df.copy()
+            chart_data["perfect"] = chart_data["prob_bucket"]
+            chart_data["bucket_label"] = chart_data["prob_bucket"].apply(lambda x: f"{x:.0%}")
+
+            base = alt.Chart(chart_data)
+
+            # Perfect calibration line
+            perfect_line = base.mark_line(
+                color="#E24B4A", strokeDash=[5, 5], strokeWidth=1.5
+            ).encode(
+                x=alt.X("prob_bucket:Q", title="Predicted probability",
+                        scale=alt.Scale(domain=[0.1, 1.0]),
+                        axis=alt.Axis(format=".0%")),
+                y=alt.Y("perfect:Q", title="Actual win rate",
+                        scale=alt.Scale(domain=[0.0, 1.0]),
+                        axis=alt.Axis(format=".0%")),
+            )
+
+            # Actual points sized by n
+            actual_points = base.mark_circle(color="#378ADD", opacity=0.7).encode(
+                x=alt.X("prob_bucket:Q"),
+                y=alt.Y("actual_win_rate:Q"),
+                size=alt.Size("n:Q", scale=alt.Scale(range=[50, 800]),
+                              legend=alt.Legend(title="Sample count")),
+                tooltip=[
+                    alt.Tooltip("prob_bucket:Q", format=".0%", title="Predicted"),
+                    alt.Tooltip("actual_win_rate:Q", format=".1%", title="Actual win rate"),
+                    alt.Tooltip("n:Q", title="Sample count"),
+                    alt.Tooltip("error:Q", format=".1%", title="Calibration error"),
+                ]
+            )
+
+            chart = alt.layer(perfect_line, actual_points).properties(
+                title="Calibration plot — predicted vs actual win rate (bubble size = sample count)",
+                height=350,
+            )
+            st.altair_chart(chart, use_container_width=True)
+
+        with col_table:
+            st.markdown("**Calibration by bucket**")
+            display_cal = cal_df[["prob_bucket", "n", "actual_win_rate", "error"]].copy()
+            display_cal.columns = ["Predicted", "Count", "Actual", "Error"]
+
+            def color_error(val):
+                if val < 0.05: return "color: #3B6D11"
+                if val < 0.10: return "color: #854F0B"
+                return "color: #A32D2D"
+
+            st.dataframe(
+                display_cal.style
+                    .format({"Predicted": "{:.0%}", "Actual": "{:.1%}", "Error": "{:.1%}"})
+                    .applymap(color_error, subset=["Error"]),
+                use_container_width=True,
+                hide_index=True,
+            )
+
+        # Key finding
+        st.markdown("---")
+        st.markdown("**Key finding**")
+
+        min_n_bucket = cal_df["n"].min()
+        max_n_bucket = cal_df["n"].max()
+        dominant_bucket = cal_df.loc[cal_df["n"].idxmax(), "prob_bucket"]
+        dominant_win = cal_df.loc[cal_df["n"].idxmax(), "actual_win_rate"]
+
+        if high_conf_n < 30:
+            finding = f"""
+The model has **{total} total predictions** graded so far, but high-confidence buckets (≥70%) have only **{high_conf_n} samples** —
+far too few to draw conclusions. The bulk of predictions ({cal_df.loc[cal_df['n'].idxmax(), 'n']} samples) sit in the
+{dominant_bucket:.0%} confidence bucket with a {dominant_win:.1%} actual win rate, close to the 50% baseline.
+
+**What this means:** We cannot yet distinguish model skill from random chance. Calibration requires 50+ samples per
+bucket to be statistically meaningful. Current mean calibration error is {mean_cal_error:.1%} ({cal_label}).
+
+**Action:** Continue collecting live predictions. Revisit calibration on **Apr 26 2026** when intraday data
+and on **May 1 2026** when EOD SELL signal data reaches minimum sample thresholds.
+            """
+        else:
+            if mean_cal_error < 0.05:
+                finding = f"""
+The model is **well-calibrated** with a mean error of {mean_cal_error:.1%}. Predicted probabilities closely
+match actual win rates across all buckets. High-confidence signals (≥70%) win {high_conf_win:.1%} of the time
+on {high_conf_n} samples — this is statistically meaningful and supports trusting the BUY threshold.
+            """
+            else:
+                finding = f"""
+The model shows **poor calibration** (mean error {mean_cal_error:.1%}). High-confidence signals (≥70%) are
+winning only {high_conf_win:.1%} — below their predicted rate. Consider lowering the BUY threshold or
+recalibrating the model's output probabilities using Platt scaling.
+            """
+
+        st.info(finding.strip())
+
+except Exception as e:
+    st.warning(f"Calibration data unavailable: {e}")
