@@ -432,9 +432,12 @@ def build_feature_dataframe(
         conn_sent.close()
         if sent_row:
             # Decay sentiment signal over the week — full strength Monday, zero by Friday
-            from utils.timezone import today_et
-            dow = today_et().weekday()  # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
-            decay = max(0.0, 1.0 - (dow * 0.25))  # Mon=1.0, Tue=0.75, Wed=0.5, Thu=0.25, Fri=0.0
+            from utils.timezone import now_et
+            dow = now_et().weekday()  # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri, 5=Sat, 6=Sun
+            if dow >= 5:  # weekend — treat as Monday (preparing for next week)
+                decay = 1.0
+            else:
+                decay = max(0.0, 1.0 - (dow * 0.25))  # Mon=1.0, Tue=0.75, Wed=0.5, Thu=0.25, Fri=0.0
             df["monday_sentiment"] = sent_row[0] * sent_row[1] * decay
         else:
             df["monday_sentiment"] = 0.0
