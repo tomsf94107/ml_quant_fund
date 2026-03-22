@@ -38,6 +38,7 @@ from typing import Optional
 
 import numpy as np
 import pandas as pd
+import sqlite3
 import yfinance as yf
 
 # ── Constants ─────────────────────────────────────────────────────────────────
@@ -100,7 +101,7 @@ OUTPUT_COLUMNS = [
     "vix_close", "vix_ret",              # market fear gauge
     "oil_ret", "oil_spy_corr",           # crude oil price signal
     "dxy_ret", "yield_10y", "fear_greed", "beta_60d",
-    "short_ratio", "short_pct_float",
+    "short_ratio", "short_pct_float", "vix_term_structure", "monday_sentiment",
     "sector_rel_ret",                    # stock return - sector ETF return
     "day_of_week", "is_month_end",       # calendar effects
     # ── NEW v3 features ──────────────────────────────────────────────────────
@@ -365,6 +366,33 @@ def build_feature_dataframe(
     except Exception:
         df["dxy_ret"] = 0.0
 
+    # VIX term structure — VIX/VIX3M ratio (Hull Chapter 20)
+    # ratio > 1 = inverted = acute panic (short-term fear > long-term) = mean reverting, less dangerous
+    # ratio < 1 = normal = sustained fear = more dangerous, suppresses BUY signals harder
+    try:
+        _vix3m = yf.download("^VIX3M", start=start_str, end=end_str,
+                              auto_adjust=True, progress=False)
+        _vix_raw = yf.download("^VIX", start=start_str, end=end_str,
+                               auto_adjust=True, progress=False)
+        if not _vix3m.empty and not _vix_raw.empty:
+            if isinstance(_vix3m.columns, pd.MultiIndex):
+                _vix3m.columns = _vix3m.columns.get_level_values(0)
+            if isinstance(_vix_raw.columns, pd.MultiIndex):
+                _vix_raw.columns = _vix_raw.columns.get_level_values(0)
+            _vix3m.index = pd.to_datetime(_vix3m.index).normalize()
+            _vix_raw.index = pd.to_datetime(_vix_raw.index).normalize()
+            _vix3m_s = _vix3m["Close"].squeeze()
+            _vix_s   = _vix_raw["Close"].squeeze()
+            _ratio   = (_vix_s / _vix3m_s).dropna()
+            _ratio_map = {d.date(): v for d, v in _ratio.items()}
+            df["vix_term_structure"] = df["date"].map(_ratio_map).ffill().fillna(1.0)
+        else:
+            df["vix_term_structure"] = 1.0
+    except Exception:
+        df["vix_term_structure"] = 1.0
+
+
+
     # 10Y Treasury yield
     try:
         tnx_raw = yf.download("^TNX", start=start_str, end=end_str,
@@ -393,6 +421,25 @@ def build_feature_dataframe(
         df["fear_greed"] = _fg_val
     except Exception:
         df["fear_greed"] = 0.5
+
+    # Monday sentiment score (Anthropic API — scored Sunday night)
+    try:
+        conn_sent = sqlite3.connect("data/sentiment.db")
+        sent_row = conn_sent.execute("""
+            SELECT sentiment_score, confidence FROM monday_sentiment
+            WHERE ticker=? ORDER BY score_date DESC LIMIT 1
+        """, (ticker,)).fetchone()
+        conn_sent.close()
+        if sent_row:
+            # Decay sentiment signal over the week — full strength Monday, zero by Friday
+            from utils.timezone import today_et
+            dow = today_et().weekday()  # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri
+            decay = max(0.0, 1.0 - (dow * 0.25))  # Mon=1.0, Tue=0.75, Wed=0.5, Thu=0.25, Fri=0.0
+            df["monday_sentiment"] = sent_row[0] * sent_row[1] * decay
+        else:
+            df["monday_sentiment"] = 0.0
+    except Exception:
+        df["monday_sentiment"] = 0.0
 
     # 60-day rolling beta vs SPY
     try:
