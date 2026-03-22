@@ -19,8 +19,10 @@ st.set_page_config(page_title="Sentiment", page_icon="📰", layout="wide")
 st.title("📰 Sentiment Dashboard")
 st.caption("Daily news sentiment scored by Anthropic API. Decays Mon=100% → Fri=0%. ~$0.12/day for 92 tickers.")
 
-SENT_DB = Path(_ROOT) / "data" / "sentiment.db"
-ACC_DB  = Path(_ROOT) / "accuracy.db"
+# Always resolve to project root (2 levels up from ui/pages/)
+_PROJECT_ROOT = Path(__file__).parent.parent.parent
+SENT_DB = _PROJECT_ROOT / "data" / "sentiment.db"
+ACC_DB  = _PROJECT_ROOT / "accuracy.db"
 
 def _load_latest() -> pd.DataFrame:
     if not SENT_DB.exists(): return pd.DataFrame()
