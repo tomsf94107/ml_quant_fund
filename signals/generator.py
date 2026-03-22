@@ -61,6 +61,30 @@ def _get_sentiment_mult(sentiment_score: float) -> float:
             return mult
     return 0.78  # floor
 
+# ── Fear & Greed multiplier ───────────────────────────────────────────────────
+# When market is in Extreme Fear (F&G < 25), Howard Marks says second-level
+# thinkers buy — everyone else is selling, so good stocks are cheap.
+# When market is Extreme Greed (F&G > 75), crowd is overconfident — be cautious.
+def _get_fear_greed_mult() -> float:
+    """Fetch Fear & Greed index and return a probability multiplier.
+    Extreme Fear (<25)  → boost BUY signals by up to 8%
+    Neutral (25-75)     → no adjustment
+    Extreme Greed (>75) → cut BUY signals by up to 8%
+    """
+    try:
+        import requests
+        r = requests.get("https://api.alternative.me/fng/?limit=1",
+                        headers={"User-Agent": "MLQuantFund/1.0"}, timeout=5)
+        if r.status_code == 200:
+            score = float(r.json()["data"][0]["value"])
+            if score < 15:   return 1.08   # Extreme Fear — strong boost
+            if score < 25:   return 1.05   # Fear — mild boost
+            if score > 85:   return 0.92   # Extreme Greed — strong cut
+            if score > 75:   return 0.95   # Greed — mild cut
+        return 1.0
+    except Exception:
+        return 1.0
+
 # ── Risk multiplier table (preserved from old dashboard) ──────────────────────
 # Applied to raw probability to down-scale confidence on high-risk days.
 # Low / Medium / High maps to the event_risk_next72 label from the calendar page.
@@ -367,8 +391,11 @@ def generate_signals(
 
     # ── 4. Today's signal (use unshifted — this is forward-looking) ───────────
     today_prob      = float(sdf["prob"].iloc[-1])
-    # Apply risk + sentiment + regime + options flow + squeeze multipliers
-    today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult
+    # Fear & Greed multiplier (Howard Marks second-level thinking)
+    fg_mult = _get_fear_greed_mult()
+
+    # Apply risk + sentiment + regime + options flow + squeeze + fear/greed multipliers
+    today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
     today_signal    = (
