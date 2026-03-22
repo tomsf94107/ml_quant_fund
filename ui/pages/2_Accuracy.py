@@ -344,7 +344,7 @@ else:
         .mark_bar()
         .encode(
             x=alt.X("prediction_date:N", title="Date", sort=None,
-                    axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
+                    axis=alt.Axis(labelAngle=0, labelFontSize=13, labelPadding=8)),
             y=alt.Y("bar_val:Q", title="",
                     scale=alt.Scale(domain=[0, 1]),
                     axis=None),
@@ -371,7 +371,8 @@ else:
             alt.Chart(hist2)
             .mark_line(color="#378ADD", strokeWidth=2.5, interpolate="monotone")
             .encode(
-                x=alt.X("prediction_date:N", sort=None),
+                x=alt.X("prediction_date:N", sort=None,
+                        axis=alt.Axis(labelAngle=0, labelFontSize=13, labelPadding=8)),
                 y=alt.Y("rolling_acc:Q",
                         scale=alt.Scale(domain=[0, 1]),
                         axis=alt.Axis(format=".0%", title="Rolling accuracy")),
