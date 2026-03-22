@@ -314,14 +314,15 @@ if hist.empty:
 else:
     hist["rolling_acc"] = hist["correct"].rolling(20, min_periods=5).mean()
 
+    hist["prediction_date"] = hist["prediction_date"].astype(str).str[:10]
     base = alt.Chart(hist).encode(
-        x=alt.X("prediction_date:O", title="Date", axis=alt.Axis(labelAngle=-45))
+        x=alt.X("prediction_date:N", title="Date", axis=alt.Axis(labelAngle=-45))
     )
 
     acc_line = base.mark_line(color="#00c853").encode(
         y=alt.Y("rolling_acc:Q", title="Rolling 20-day Accuracy",
                 scale=alt.Scale(domain=[0, 1])),
-        tooltip=["prediction_date:O",
+        tooltip=["prediction_date:N",
                  alt.Tooltip("rolling_acc:Q", format=".1%"),
                  "signal:N", "actual_up:Q"],
     )
@@ -333,7 +334,7 @@ else:
             alt.value("#00c853"),
             alt.value("#ff1744"),
         ),
-        tooltip=["prediction_date:O",
+        tooltip=["prediction_date:N",
                  alt.Tooltip("prob_up:Q", format=".1%"),
                  "signal:N", "actual_up:Q",
                  alt.Tooltip("actual_return:Q", format=".2%")],
