@@ -335,27 +335,22 @@ else:
     chart_height = 200 if show_expanded == "Compact" else 350
 
     hist["rolling_acc"] = hist["correct"].rolling(10, min_periods=3).mean()
-    hist["one"] = 1.0
 
-    # Bar chart — full height bars, green=correct red=wrong
-    bar_chart = (
+    # Simple bar chart
+    bars = (
         alt.Chart(hist)
-        .mark_bar(cornerRadiusTopLeft=3, cornerRadiusTopRight=3, size=18)
+        .mark_bar(size=max(8, min(30, 300 // max(len(hist), 1))))
         .encode(
             x=alt.X("prediction_date:N", title="Date",
+                    sort=None,
                     axis=alt.Axis(labelAngle=-45, labelFontSize=11)),
-            y=alt.Y("one:Q", title="",
+            y=alt.Y("prob_up:Q", title="Predicted confidence",
                     scale=alt.Scale(domain=[0, 1]),
-                    axis=None),
+                    axis=alt.Axis(format=".0%")),
             color=alt.condition(
                 "datum.correct == 1",
                 alt.value("#3B6D11"),
                 alt.value("#A32D2D"),
-            ),
-            opacity=alt.condition(
-                "datum.correct == 1",
-                alt.value(0.85),
-                alt.value(0.7),
             ),
             tooltip=[
                 alt.Tooltip("prediction_date:N", title="Date"),
@@ -367,34 +362,36 @@ else:
         )
     )
 
-    # Rolling accuracy line overlay
-    line_chart = (
-        alt.Chart(hist)
-        .mark_line(color="#378ADD", strokeWidth=2.5, interpolate="monotone")
-        .encode(
-            x=alt.X("prediction_date:N"),
-            y=alt.Y("rolling_acc:Q",
-                    scale=alt.Scale(domain=[0, 1]),
-                    axis=alt.Axis(format=".0%", title="Rolling accuracy")),
-            tooltip=[alt.Tooltip("rolling_acc:Q", format=".1%", title="10-day rolling acc")],
-        )
-    )
+    # 50% reference line
+    ref_df = pd.DataFrame({"y": [0.5]})
+    ref = alt.Chart(ref_df).mark_rule(
+        color="#888780", strokeDash=[4, 4], strokeWidth=1.5
+    ).encode(y=alt.Y("y:Q", scale=alt.Scale(domain=[0, 1])))
 
-    # Reference line at 50%
-    ref = alt.Chart(pd.DataFrame({"y": [0.5]})).mark_rule(
-        color="#888780", strokeDash=[4, 4], strokeWidth=1
-    ).encode(y="y:Q")
+    # Rolling accuracy line
+    hist2 = hist.dropna(subset=["rolling_acc"])
+    if len(hist2) >= 3:
+        line = (
+            alt.Chart(hist2)
+            .mark_line(color="#378ADD", strokeWidth=2, interpolate="monotone")
+            .encode(
+                x=alt.X("prediction_date:N", sort=None),
+                y=alt.Y("rolling_acc:Q", scale=alt.Scale(domain=[0, 1])),
+                tooltip=[alt.Tooltip("rolling_acc:Q", format=".1%", title="10d rolling acc")],
+            )
+        )
+        final_chart = alt.layer(bars, ref, line)
+    else:
+        final_chart = alt.layer(bars, ref)
 
     st.altair_chart(
-        alt.layer(bar_chart, ref, line_chart)
-        .resolve_scale(y="independent")
-        .properties(
-            title=f"{sel_ticker} — {horizon}d predictions · green=correct · red=wrong · blue line=10d rolling accuracy",
+        final_chart.properties(
+            title=f"{sel_ticker} — {horizon}d · bar height=confidence · green=correct · red=wrong",
             height=chart_height,
         ),
         use_container_width=True,
     )
-    st.caption("Dashed line = 50% baseline. Blue line = 10-day rolling accuracy.")
+    st.caption("Dashed line = 50% baseline. Blue line = 10-day rolling accuracy (shows after 3+ predictions).")
 
     # Raw table
     with st.expander("🧾 Raw prediction history"):
