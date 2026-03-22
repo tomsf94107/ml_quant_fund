@@ -5,11 +5,11 @@
   "signal_multiplier": 0.85,
   "block_tau": 2,
   "description": "Volatile/choppy market \u2014 high VIX, no clear trend. Very selective.",
-  "computed_at": "2026-03-21T04:41:50.181196",
+  "computed_at": "2026-03-22T16:11:24.587367",
   "spy_trend_20d": -0.046965477853111226,
   "spy_trend_60d": -0.05468159936118644,
   "vix_level": 26.780000686645508,
-  "vix_percentile": 97.9381443298969,
+  "vix_percentile": 97.92746113989638,
   "bond_signal": "RISK_ON",
   "breadth_signal": "MIXED"
 }
