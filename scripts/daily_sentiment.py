@@ -123,21 +123,11 @@ def run_monday_sentiment():
     _init_db(conn)
 
     scored = 0
-    skipped = 0
     bullish = 0
     bearish = 0
 
     for i, ticker in enumerate(tickers, 1):
         try:
-            # Check if already scored today
-            existing = conn.execute(
-                "SELECT id FROM monday_sentiment WHERE ticker=? AND score_date=?",
-                (ticker, today)
-            ).fetchone()
-            if existing:
-                skipped += 1
-                continue
-
             headlines = _get_headlines(ticker, days_back=3)
             result    = _score_sentiment(ticker, headlines, client)
 
@@ -166,7 +156,7 @@ def run_monday_sentiment():
             log.error(f"{ticker}: {e}")
 
     conn.close()
-    log.info(f"Done — {scored} scored, {skipped} skipped, {bullish} bullish, {bearish} bearish")
+    log.info(f"Done — {scored} scored, {bullish} bullish, {bearish} bearish")
     return scored
 
 if __name__ == "__main__":
