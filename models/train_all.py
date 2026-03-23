@@ -28,20 +28,13 @@ from models.classifier import (
 from models.ensemble import train_ensemble
 
 # ── Ticker universe (your original 28 + room to grow) ─────────────────────────
+# Always read from tickers.txt — single source of truth
+from pathlib import Path as _Path
+_TICKERS_FILE = _Path(__file__).parent.parent / "tickers.txt"
 DEFAULT_TICKERS: list[str] = [
-    "AAPL", "ABNB", "ABT", "ADSK", "AI", "AMD", "ALK", "AMPX", "AMZN",
-    "APLD", "ARM", "ASAN", "ASTS", "AXP", "AZN", "BA", "BETR",
-    "BNED", "BRKR", "BSX", "CAVA", "CI", "CNC", "COST",
-    "CRM", "CRWD", "DDOG", "DNA", "DUOL", "ETSY",
-    "FIVN", "FSLY", "FTNT", "GM", "GME", "GOOG", "HUM",
-    "HY", "INSM", "INTC", "IREN", "JNJ", "KVUE", "LLY", "LULU",
-    "LYFT", "META", "MP", "MRNA", "MSFT", "MU", "NET", "NFLX",
-    "NIO", "NOK", "NVDA", "NVMI", "NVO", "OKLO", "ONTO", "OPEN",
-    "ORIC", "PFE", "PL", "PLTR", "PUBM", "PYPL", "QS", "QUBT",
-    "QURE", "ROKU", "ROST", "S", "SENS", "SHOP", "SMCI", "SLV", "SMMT",
-    "SNOW", "TEAM", "TGT", "TJX", "TPR", "TSLA", "TSM", "UAL",
-    "UNH", "USAR", "V", "VKTX", "VZ", "WMT", "XYZ", "ZM",
-]
+    t.strip() for t in _TICKERS_FILE.read_text().splitlines()
+    if t.strip() and not t.startswith("#")
+] if _TICKERS_FILE.exists() else []
 
 TRAIN_START = "2018-01-01"   # 6+ years gives good regime diversity
 
