@@ -205,4 +205,5 @@ for _, row in filtered.iterrows():
 st.html(html)
 
 st.markdown("---")
-st.caption(f"Sentiment scored daily at 3 PM Vietnam time (4 AM ET) via Anthropic API · {len(df)} tickers · ~$0.12/day")
+tickers_count = len([t.strip() for t in open(_PROJECT_ROOT / "tickers.txt").readlines() if t.strip()])
+st.caption(f"Sentiment scored daily at 3 PM Vietnam time (4 AM ET) via Anthropic API · {tickers_count} tickers · ~$0.13/day")
