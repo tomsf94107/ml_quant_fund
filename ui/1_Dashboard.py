@@ -260,13 +260,99 @@ except Exception as e:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+#  CACHE LOADING HELPERS
+# ══════════════════════════════════════════════════════════════════════════════
+
+import json as _json
+from types import SimpleNamespace as _NS
+
+_CACHE_PATH = os.path.join(_ROOT, "data", "signals_cache.json")
+
+
+def _load_signals_cache():
+    """Load data/signals_cache.json. Returns (data_dict, generated_at_str) or (None, None)."""
+    if not os.path.exists(_CACHE_PATH):
+        return None, None
+    try:
+        with open(_CACHE_PATH) as _f:
+            _d = _json.load(_f)
+        return _d, _d.get("generated_at")
+    except Exception:
+        return None, None
+
+
+def _cache_to_signal_summary(cache_data, sel_horizon, sel_tickers, conf_threshold):
+    """Convert cache JSON to list of SimpleNamespace objects mimicking SignalResult."""
+    results = []
+    for s in cache_data.get("signals", []):
+        if s.get("horizon") != sel_horizon:
+            continue
+        if sel_tickers and s.get("ticker") not in sel_tickers:
+            continue
+        sharpe_val = s.get("sharpe")
+        metrics = _NS(
+            sharpe=        float(sharpe_val)         if sharpe_val is not None else float("nan"),
+            max_drawdown=  float(s.get("max_drawdown", float("nan"))),
+            cagr=          float(s.get("cagr",          float("nan"))),
+            accuracy=      float(s.get("accuracy",      float("nan"))),
+            n_trades=      s.get("n_trades", 0),
+            profit_factor= float(s.get("profit_factor", float("nan"))),
+        )
+        prob_eff = s.get("prob_eff", 0.0)
+        today_signal = s.get("signal", "HOLD")
+        # Re-apply confidence threshold (user may have adjusted slider)
+        if prob_eff < conf_threshold:
+            today_signal = "HOLD"
+        results.append(_NS(
+            ticker=          s["ticker"],
+            horizon=         sel_horizon,
+            today_signal=    today_signal,
+            today_prob=      s.get("prob", prob_eff),
+            today_prob_eff=  prob_eff,
+            current_price=   s.get("current_price"),
+            price_target_up= s.get("price_target_up"),
+            price_target_dn= s.get("price_target_dn"),
+            expected_return= s.get("expected_return"),
+            atr=             s.get("atr"),
+            metrics=         metrics,
+            error=           None,
+        ))
+    return results
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 #  RUN STRATEGY
 # ══════════════════════════════════════════════════════════════════════════════
 
-use_cache = st.toggle("⚡ Use cached signals (faster)", value=False,
-    help="Load last run results instead of re-fetching all data. Updates every hour automatically.")
+_cache_data, _cache_ts = _load_signals_cache()
+_cache_available = _cache_data is not None
 
-if st.button("🚀 Run Strategy", type="primary"):
+# ── Cache status bar ──────────────────────────────────────────────────────────
+_c_left, _c_right = st.columns([3, 1])
+if _cache_available:
+    try:
+        _ts_fmt = datetime.fromisoformat(_cache_ts).strftime("%Y-%m-%d %H:%M ET")
+    except Exception:
+        _ts_fmt = _cache_ts or "unknown"
+    _c_left.info(f"📦 Cached signals from **{_ts_fmt}** — showing pre-computed results")
+else:
+    _c_left.warning("⚠️ No cache found — click **Refresh Live** to generate signals")
+
+_refresh_live = _c_right.button("🔄 Refresh Live", type="primary",
+    help="Re-run signal generation for all selected tickers (takes a few minutes)")
+
+# ── Decide mode ───────────────────────────────────────────────────────────────
+_use_cache = _cache_available and not _refresh_live
+
+if _use_cache:
+    signal_summary = _cache_to_signal_summary(
+        _cache_data, horizon, tickers, confidence_threshold
+    )
+    if not signal_summary:
+        st.warning("Cache has no signals for the selected horizon/tickers. Click Refresh Live.")
+        st.stop()
+
+elif _refresh_live:
 
     if not tickers:
         st.error("No tickers selected — please select at least one ticker in the sidebar.")
@@ -340,245 +426,294 @@ if st.button("🚀 Run Strategy", type="primary"):
         except Exception as e:
             st.warning(f"Prediction logging failed: {e}")
 
-    # ─────────────────────────────────────────────────────────────────────────
-    # DISPLAY RESULTS
-    # ─────────────────────────────────────────────────────────────────────────
-
-    # ── Price sanity check ───────────────────────────────────────────────────
-    # Fetch ground truth prices and flag any crossovers/stale prices
+    # ── Save dashboard cache so next visit loads instantly ────────────────────
     try:
-        import yfinance as yf
-        all_syms = [r.ticker for r in signal_summary]
-        raw_px = yf.download(all_syms, period="2d", auto_adjust=True, progress=False)
-        if hasattr(raw_px.columns, "levels"):
-            raw_px = raw_px["Close"]
-        latest_px = raw_px.iloc[-1].to_dict() if not raw_px.empty else {}
-        for r in signal_summary:
-            true_price = latest_px.get(r.ticker)
-            if true_price and r.current_price:
-                diff_pct = abs(true_price - r.current_price) / true_price
-                if diff_pct > 0.10:  # >10% off = price crossover
-                    st.warning(f"⚠️ {r.ticker}: price mismatch — model used ${r.current_price:.2f}, market says ${true_price:.2f}. Refreshing data.")
-                    # Force refresh by clearing cache for this ticker
-                    _cached_features.clear()
-    except Exception as _pe:
-        pass  # price check is best-effort, never crash the dashboard
+        import json as _json_save
+        import os as _os_save
+        _cache_save_path = _os_save.path.join(_ROOT, "data", "signals_cache.json")
+        _os_save.makedirs(_os_save.path.dirname(_cache_save_path), exist_ok=True)
+        _cache_entries = []
+        for _r in signal_summary:
+            _cache_entries.append({
+                "ticker":          _r.ticker,
+                "horizon":         _r.horizon,
+                "signal":          _r.today_signal,
+                "prob":            _r.today_prob,
+                "prob_eff":        _r.today_prob_eff,
+                "current_price":   _r.current_price,
+                "price_target_up": _r.price_target_up,
+                "price_target_dn": _r.price_target_dn,
+                "expected_return": _r.expected_return,
+                "atr":             _r.atr,
+                "sharpe":          _r.metrics.sharpe        if _r.metrics else None,
+                "max_drawdown":    _r.metrics.max_drawdown  if _r.metrics else None,
+                "cagr":            _r.metrics.cagr          if _r.metrics else None,
+                "accuracy":        _r.metrics.accuracy      if _r.metrics else None,
+                "n_trades":        _r.metrics.n_trades      if _r.metrics else None,
+                "profit_factor":   _r.metrics.profit_factor if _r.metrics else None,
+            })
+        with open(_cache_save_path, "w") as _cf:
+            _json_save.dump({
+                "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
+                "date":         date.today().isoformat(),
+                "signals":      _cache_entries,
+            }, _cf, indent=2)
+    except Exception as _ce:
+        pass  # cache save is best-effort
 
-    if not signal_summary:
-        st.error("No signals generated. Check tickers and date range.")
-        st.stop()
+    # ─────────────────────────────────────────────────────────────────────────
 
-    # ── Signal cards ──────────────────────────────────────────────────────────
-    st.subheader("📡 Live Signals")
-    cols = st.columns(min(len(signal_summary), 4))
-    for i, r in enumerate(signal_summary):
-        col = cols[i % 4]
-        badge = _confidence_badge(confidence_str)
-        signal_color = "🟢" if r.today_signal == "BUY" else "🔴"
-        col.metric(
-            label=r.ticker,
-            value=f"{signal_color} {r.today_signal}",
-            delta=f"p={r.today_prob_eff:.1%}  {badge}",
-        )
-        if enable_email and r.today_signal == "BUY" and r.today_prob_eff >= 0.65:
-            _send_alert(r.ticker, r.today_prob_eff, horizon)
+else:
+    st.info("No cached signals yet. Click **Refresh Live** to generate signals.")
+    st.stop()
 
-    # ── Forecast table ────────────────────────────────────────────────────────
-    st.subheader("🎯 Price Forecast Table")
+# DISPLAY RESULTS
+# ─────────────────────────────────────────────────────────────────────────
 
-    import pandas as pd
-    forecast_rows = []
+# ── Price sanity check ───────────────────────────────────────────────────
+# Fetch ground truth prices and flag any crossovers/stale prices
+try:
+    import yfinance as yf
+    all_syms = [r.ticker for r in signal_summary]
+    raw_px = yf.download(all_syms, period="2d", auto_adjust=True, progress=False)
+    if hasattr(raw_px.columns, "levels"):
+        raw_px = raw_px["Close"]
+    latest_px = raw_px.iloc[-1].to_dict() if not raw_px.empty else {}
     for r in signal_summary:
-        exp_ret = r.expected_return or 0.0
-        # Lean: direction implied by prob_up regardless of BUY/HOLD/SELL
-        prob = r.today_prob_eff
-        if prob >= 0.65:   lean = "⬆️ Strong UP"
-        elif prob >= 0.55: lean = "⬆️ Weak UP"
-        elif prob >= 0.45: lean = "⬇️ Weak DOWN"
-        else:              lean = "⬇️ Strong DOWN"
+        true_price = latest_px.get(r.ticker)
+        if true_price and r.current_price:
+            diff_pct = abs(true_price - r.current_price) / true_price
+            if diff_pct > 0.10:  # >10% off = price crossover
+                st.warning(f"⚠️ {r.ticker}: price mismatch — model used ${r.current_price:.2f}, market says ${true_price:.2f}. Refreshing data.")
+                # Force refresh by clearing cache for this ticker
+                try:
+                    _cached_features.clear()
+                except Exception:
+                    pass
+except Exception as _pe:
+    pass  # price check is best-effort, never crash the dashboard
 
-        forecast_rows.append({
-            "Ticker":       r.ticker,
-            "Signal":       r.today_signal,
-            "Lean":         lean,
-            "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
-            "Prob Eff":     f"{r.today_prob_eff:.1%}",
-            "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
-            "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
-            "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
-            "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
-            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
+if not signal_summary:
+    st.error("No signals generated. Check tickers and date range.")
+    st.stop()
+
+# ── Signal cards ──────────────────────────────────────────────────────────
+_sig_label = "📦 Cached Signals" if _use_cache else "📡 Live Signals"
+st.subheader(_sig_label)
+cols = st.columns(min(len(signal_summary), 4))
+for i, r in enumerate(signal_summary):
+    col = cols[i % 4]
+    confidence_str = (
+        "HIGH"   if r.today_prob_eff >= 0.65 else
+        "MEDIUM" if r.today_prob_eff >= 0.55 else
+        "LOW"
+    )
+    badge = _confidence_badge(confidence_str)
+    signal_color = "🟢" if r.today_signal == "BUY" else "🔴"
+    col.metric(
+        label=r.ticker,
+        value=f"{signal_color} {r.today_signal}",
+        delta=f"p={r.today_prob_eff:.1%}  {badge}",
+    )
+    if enable_email and r.today_signal == "BUY" and r.today_prob_eff >= 0.65:
+        _send_alert(r.ticker, r.today_prob_eff, horizon)
+
+# ── Forecast table ────────────────────────────────────────────────────────
+st.subheader("🎯 Price Forecast Table")
+
+import pandas as pd
+forecast_rows = []
+for r in signal_summary:
+    exp_ret = r.expected_return or 0.0
+    # Lean: direction implied by prob_up regardless of BUY/HOLD/SELL
+    prob = r.today_prob_eff
+    if prob >= 0.65:   lean = "⬆️ Strong UP"
+    elif prob >= 0.55: lean = "⬆️ Weak UP"
+    elif prob >= 0.45: lean = "⬇️ Weak DOWN"
+    else:              lean = "⬇️ Strong DOWN"
+
+    forecast_rows.append({
+        "Ticker":       r.ticker,
+        "Signal":       r.today_signal,
+        "Lean":         lean,
+        "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
+        "Prob Eff":     f"{r.today_prob_eff:.1%}",
+        "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
+        "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
+        "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
+        "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
+        "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
+    })
+
+fdf = pd.DataFrame(forecast_rows)
+
+def _color_signal(val):
+    if val == "BUY":  return "color: #22c55e; font-weight: bold"
+    return "color: #94a3b8"
+
+def _color_exp(val):
+    if val == "—": return ""
+    try:
+        n = float(val.replace("%","").replace("+",""))
+        return "color: #22c55e" if n >= 0 else "color: #ef4444"
+    except: return ""
+
+# ── Styled forecast table via HTML component ─────────────────────────────
+import json
+signals_json = json.dumps(forecast_rows)
+html = f"""
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
+  *{{box-sizing:border-box;margin:0;padding:0;}}
+  .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
+  .ft-head{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+  .ft-head span{{text-align:right;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
+  .ft-row{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+  .ft-row:hover{{background:#13131f;}}
+  .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
+  .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
+  .ft-row span:nth-child(2){{justify-content:flex-start;}}
+  .badge{{font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;}}
+  .buy{{color:#22c55e;background:#052e16;border:1px solid #166534;}}
+  .hold{{color:#f59e0b;background:#1a1008;border:1px solid #7c4a00;}}
+  .sell{{color:#ef4444;background:#1c0a0a;border:1px solid #7f1d1d;}}
+  .up{{color:#22c55e !important;}}
+  .dn{{color:#ef4444 !important;}}
+  .dim{{color:#64748b !important;}}
+  .prob-col{{display:flex;flex-direction:column;gap:3px;align-items:flex-end;}}
+  .bar-bg{{width:70px;height:3px;background:#1e1e2e;border-radius:2px;overflow:hidden;}}
+  .bar-fill{{height:100%;border-radius:2px;}}
+  .legend{{margin-top:10px;padding:10px 14px;background:#0d0d18;border:1px solid #1e1e2e;border-radius:6px;font-size:11px;color:#4a5568;line-height:1.8;}}
+</style>
+<div class="ft">
+  <div class="ft-head">
+    <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
+    <span>PROB EFF</span><span>TARGET ▲</span><span>TARGET ▼</span>
+    <span>EXP RETURN</span><span>ATR</span><span>SHARPE</span>
+  </div>
+  <div id="tbody"></div>
+</div>
+<div class="legend">
+  📖 &nbsp;
+  <span style="color:#22c55e">▲ Target = price + ATR</span> &nbsp;·&nbsp;
+  <span style="color:#ef4444">▼ Target = price − ATR</span> &nbsp;·&nbsp;
+  <span style="color:#94a3b8">Exp Return = prob-weighted gain/loss</span> &nbsp;·&nbsp;
+  <span style="color:#3b82f6">Bar = prob vs threshold</span>
+</div>
+<script>
+  const data = {signals_json};
+  const tbody = document.getElementById('tbody');
+  data.forEach(r => {{
+    const prob = parseFloat(r['Prob Eff']);
+    const exp  = parseFloat(r['Exp Return']);
+    const sh   = parseFloat(r['Sharpe']);
+    const sig  = r['Signal'];
+    const bc   = prob >= 65 ? '#22c55e' : prob >= 55 ? '#f59e0b' : '#3b82f6';
+    const sc   = sh >= 2 ? '#22c55e' : sh >= 1 ? '#f59e0b' : '#ef4444';
+    const badgeClass = sig==='BUY' ? 'buy' : sig==='SELL' ? 'sell' : 'hold';
+    const row = document.createElement('div');
+    row.className = 'ft-row';
+    row.innerHTML = `
+      <span>${{r.Ticker}}</span>
+      <span><span class="badge ${{badgeClass}}">${{sig}}</span></span>
+      <span>${{r.Price}}</span>
+      <span>
+        <div class="prob-col">
+          <span style="color:#94a3b8;font-size:12px">${{r['Prob Eff']}}</span>
+          <div class="bar-bg"><div class="bar-fill" style="width:${{Math.min(prob,100)}}%;background:${{bc}}"></div></div>
+          <span style="font-size:9px;color:#2d3748">threshold: 65%</span>
+        </div>
+      </span>
+      <span class="up">${{r['Target ▲']}}</span>
+      <span class="dn">${{r['Target ▼']}}</span>
+      <span style="color:${{exp>=0?'#22c55e':'#ef4444'}};font-weight:500">${{r['Exp Return']}}</span>
+      <span class="dim">${{r.ATR}}</span>
+      <span style="color:${{sc}};font-weight:500">${{r.Sharpe}}</span>
+    `;
+    tbody.appendChild(row);
+  }});
+</script>
+"""
+st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
+
+# ── Intraday Signals + Alignment Table ───────────────────────────────────
+st.subheader("⚡ Intraday Signals & EOD Alignment")
+st.caption("Compares EOD model signal with intraday 1hr/2hr/4hr momentum · tickers from your strategy run")
+
+try:
+    from features.intraday_builder import get_all_intraday_signals, is_market_open
+    intraday_tickers = [r.ticker for r in signal_summary]
+
+    with st.spinner("Loading intraday signals..."):
+        intra_sigs = get_all_intraday_signals(intraday_tickers)
+
+    sig_lkp  = {s["ticker"]: s for s in intra_sigs}
+    eod_lkp  = {r.ticker: r for r in signal_summary}
+
+    def _isig_fmt(s, p):
+        if s == "UP":   return f"🟢 UP ({p:.0%})"
+        if s == "DOWN": return f"🔴 DOWN ({p:.0%})"
+        return f"⚪ NTRL ({p:.0%})"
+
+    def _alignment(eod_sig, i1, i2, i4):
+        up = [i1,i2,i4].count("UP")
+        dn = [i1,i2,i4].count("DOWN")
+        if eod_sig == "BUY"  and up >= 2: return "🔥 BOTH BULLISH"
+        if eod_sig == "SELL" and dn >= 2: return "🔥 BOTH BEARISH"
+        if eod_sig == "BUY"  and dn >= 2: return "⚠️ CONFLICT"
+        if eod_sig == "SELL" and up >= 2: return "⚠️ CONFLICT"
+        if up >= 2: return "📈 INTRA BULL"
+        if dn >= 2: return "📉 INTRA BEAR"
+        return "➖ NEUTRAL"
+
+    # Intraday price sanity check
+    intra_price_issues = []
+    for t in intraday_tickers:
+        s = sig_lkp.get(t)
+        e = eod_lkp.get(t)
+        if s and e and s.get("current_price") and e.current_price:
+            diff = abs(s["current_price"] - e.current_price) / e.current_price
+            if diff > 0.10:
+                intra_price_issues.append(f"{t} (intraday ${s['current_price']:.2f} vs EOD ${e.current_price:.2f})")
+    if intra_price_issues:
+        st.warning(f"⚠️ Intraday price mismatch on: {', '.join(intra_price_issues)}")
+
+    align_rows = []
+    for t in intraday_tickers:
+        s = sig_lkp.get(t)
+        e = eod_lkp.get(t)
+        if not s or not e or not s.get("current_price"):
+            continue
+        i1 = s["signal_1hr"]; i2 = s["signal_2hr"]; i4 = s["signal_4hr"]
+        align_rows.append({
+            "Ticker":    t,
+            "Price":     f"${s['current_price']:.2f}",
+            "EOD Signal": e.today_signal,
+            "EOD Prob":  f"{e.today_prob_eff:.0%}",
+            "1hr":       _isig_fmt(i1, s["prob_1hr"]),
+            "2hr":       _isig_fmt(i2, s["prob_2hr"]),
+            "4hr":       _isig_fmt(i4, s["prob_4hr"]),
+            "Alignment": _alignment(e.today_signal, i1, i2, i4),
         })
 
-    fdf = pd.DataFrame(forecast_rows)
+    if align_rows:
+        adf = pd.DataFrame(align_rows)
 
-    def _color_signal(val):
-        if val == "BUY":  return "color: #22c55e; font-weight: bold"
-        return "color: #94a3b8"
+        # Sort: BOTH BULLISH first, then INTRA BULL, NEUTRAL, CONFLICT, INTRA BEAR
+        sort_order = {"🔥 BOTH BULLISH": 0, "📈 INTRA BULL": 1, "➖ NEUTRAL": 2,
+                      "⚠️ CONFLICT": 3, "📉 INTRA BEAR": 4, "🔥 BOTH BEARISH": 5}
+        adf["_sort"] = adf["Alignment"].map(sort_order).fillna(9)
+        adf = adf.sort_values("_sort").drop(columns=["_sort"])
 
-    def _color_exp(val):
-        if val == "—": return ""
-        try:
-            n = float(val.replace("%","").replace("+",""))
-            return "color: #22c55e" if n >= 0 else "color: #ef4444"
-        except: return ""
+        st.dataframe(adf, use_container_width=True, hide_index=True)
 
-    # ── Styled forecast table via HTML component ─────────────────────────────
-    import json
-    signals_json = json.dumps(forecast_rows)
-    html = f"""
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
-      *{{box-sizing:border-box;margin:0;padding:0;}}
-      .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
-      .ft-head{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
-      .ft-head span{{text-align:right;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
-      .ft-row{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
-      .ft-row:hover{{background:#13131f;}}
-      .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
-      .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
-      .ft-row span:nth-child(2){{justify-content:flex-start;}}
-      .badge{{font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;}}
-      .buy{{color:#22c55e;background:#052e16;border:1px solid #166534;}}
-      .hold{{color:#f59e0b;background:#1a1008;border:1px solid #7c4a00;}}
-      .sell{{color:#ef4444;background:#1c0a0a;border:1px solid #7f1d1d;}}
-      .up{{color:#22c55e !important;}}
-      .dn{{color:#ef4444 !important;}}
-      .dim{{color:#64748b !important;}}
-      .prob-col{{display:flex;flex-direction:column;gap:3px;align-items:flex-end;}}
-      .bar-bg{{width:70px;height:3px;background:#1e1e2e;border-radius:2px;overflow:hidden;}}
-      .bar-fill{{height:100%;border-radius:2px;}}
-      .legend{{margin-top:10px;padding:10px 14px;background:#0d0d18;border:1px solid #1e1e2e;border-radius:6px;font-size:11px;color:#4a5568;line-height:1.8;}}
-    </style>
-    <div class="ft">
-      <div class="ft-head">
-        <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
-        <span>PROB EFF</span><span>TARGET ▲</span><span>TARGET ▼</span>
-        <span>EXP RETURN</span><span>ATR</span><span>SHARPE</span>
-      </div>
-      <div id="tbody"></div>
-    </div>
-    <div class="legend">
-      📖 &nbsp;
-      <span style="color:#22c55e">▲ Target = price + ATR</span> &nbsp;·&nbsp;
-      <span style="color:#ef4444">▼ Target = price − ATR</span> &nbsp;·&nbsp;
-      <span style="color:#94a3b8">Exp Return = prob-weighted gain/loss</span> &nbsp;·&nbsp;
-      <span style="color:#3b82f6">Bar = prob vs threshold</span>
-    </div>
-    <script>
-      const data = {signals_json};
-      const tbody = document.getElementById('tbody');
-      data.forEach(r => {{
-        const prob = parseFloat(r['Prob Eff']);
-        const exp  = parseFloat(r['Exp Return']);
-        const sh   = parseFloat(r['Sharpe']);
-        const sig  = r['Signal'];
-        const bc   = prob >= 65 ? '#22c55e' : prob >= 55 ? '#f59e0b' : '#3b82f6';
-        const sc   = sh >= 2 ? '#22c55e' : sh >= 1 ? '#f59e0b' : '#ef4444';
-        const badgeClass = sig==='BUY' ? 'buy' : sig==='SELL' ? 'sell' : 'hold';
-        const row = document.createElement('div');
-        row.className = 'ft-row';
-        row.innerHTML = `
-          <span>${{r.Ticker}}</span>
-          <span><span class="badge ${{badgeClass}}">${{sig}}</span></span>
-          <span>${{r.Price}}</span>
-          <span>
-            <div class="prob-col">
-              <span style="color:#94a3b8;font-size:12px">${{r['Prob Eff']}}</span>
-              <div class="bar-bg"><div class="bar-fill" style="width:${{Math.min(prob,100)}}%;background:${{bc}}"></div></div>
-              <span style="font-size:9px;color:#2d3748">threshold: 65%</span>
-            </div>
-          </span>
-          <span class="up">${{r['Target ▲']}}</span>
-          <span class="dn">${{r['Target ▼']}}</span>
-          <span style="color:${{exp>=0?'#22c55e':'#ef4444'}};font-weight:500">${{r['Exp Return']}}</span>
-          <span class="dim">${{r.ATR}}</span>
-          <span style="color:${{sc}};font-weight:500">${{r.Sharpe}}</span>
-        `;
-        tbody.appendChild(row);
-      }});
-    </script>
-    """
-    st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
+        # Summary counts
+        counts = adf["Alignment"].value_counts()
+        summary_parts = [f"{v}× {k}" for k,v in counts.items()]
+        st.caption("  ·  ".join(summary_parts))
 
-    # ── Intraday Signals + Alignment Table ───────────────────────────────────
-    st.subheader("⚡ Intraday Signals & EOD Alignment")
-    st.caption("Compares EOD model signal with intraday 1hr/2hr/4hr momentum · tickers from your strategy run")
-
-    try:
-        from features.intraday_builder import get_all_intraday_signals, is_market_open
-        intraday_tickers = [r.ticker for r in signal_summary]
-
-        with st.spinner("Loading intraday signals..."):
-            intra_sigs = get_all_intraday_signals(intraday_tickers)
-
-        sig_lkp  = {s["ticker"]: s for s in intra_sigs}
-        eod_lkp  = {r.ticker: r for r in signal_summary}
-
-        def _isig_fmt(s, p):
-            if s == "UP":   return f"🟢 UP ({p:.0%})"
-            if s == "DOWN": return f"🔴 DOWN ({p:.0%})"
-            return f"⚪ NTRL ({p:.0%})"
-
-        def _alignment(eod_sig, i1, i2, i4):
-            up = [i1,i2,i4].count("UP")
-            dn = [i1,i2,i4].count("DOWN")
-            if eod_sig == "BUY"  and up >= 2: return "🔥 BOTH BULLISH"
-            if eod_sig == "SELL" and dn >= 2: return "🔥 BOTH BEARISH"
-            if eod_sig == "BUY"  and dn >= 2: return "⚠️ CONFLICT"
-            if eod_sig == "SELL" and up >= 2: return "⚠️ CONFLICT"
-            if up >= 2: return "📈 INTRA BULL"
-            if dn >= 2: return "📉 INTRA BEAR"
-            return "➖ NEUTRAL"
-
-        # Intraday price sanity check
-        intra_price_issues = []
-        for t in intraday_tickers:
-            s = sig_lkp.get(t)
-            e = eod_lkp.get(t)
-            if s and e and s.get("current_price") and e.current_price:
-                diff = abs(s["current_price"] - e.current_price) / e.current_price
-                if diff > 0.10:
-                    intra_price_issues.append(f"{t} (intraday ${s['current_price']:.2f} vs EOD ${e.current_price:.2f})")
-        if intra_price_issues:
-            st.warning(f"⚠️ Intraday price mismatch on: {', '.join(intra_price_issues)}")
-
-        align_rows = []
-        for t in intraday_tickers:
-            s = sig_lkp.get(t)
-            e = eod_lkp.get(t)
-            if not s or not e or not s.get("current_price"):
-                continue
-            i1 = s["signal_1hr"]; i2 = s["signal_2hr"]; i4 = s["signal_4hr"]
-            align_rows.append({
-                "Ticker":    t,
-                "Price":     f"${s['current_price']:.2f}",
-                "EOD Signal": e.today_signal,
-                "EOD Prob":  f"{e.today_prob_eff:.0%}",
-                "1hr":       _isig_fmt(i1, s["prob_1hr"]),
-                "2hr":       _isig_fmt(i2, s["prob_2hr"]),
-                "4hr":       _isig_fmt(i4, s["prob_4hr"]),
-                "Alignment": _alignment(e.today_signal, i1, i2, i4),
-            })
-
-        if align_rows:
-            adf = pd.DataFrame(align_rows)
-
-            # Sort: BOTH BULLISH first, then INTRA BULL, NEUTRAL, CONFLICT, INTRA BEAR
-            sort_order = {"🔥 BOTH BULLISH": 0, "📈 INTRA BULL": 1, "➖ NEUTRAL": 2,
-                          "⚠️ CONFLICT": 3, "📉 INTRA BEAR": 4, "🔥 BOTH BEARISH": 5}
-            adf["_sort"] = adf["Alignment"].map(sort_order).fillna(9)
-            adf = adf.sort_values("_sort").drop(columns=["_sort"])
-
-            st.dataframe(adf, use_container_width=True, hide_index=True)
-
-            # Summary counts
-            counts = adf["Alignment"].value_counts()
-            summary_parts = [f"{v}× {k}" for k,v in counts.items()]
-            st.caption("  ·  ".join(summary_parts))
-
-            with st.expander("📖 How to read Alignment", expanded=False):
-                st.markdown("""
+        with st.expander("📖 How to read Alignment", expanded=False):
+            st.markdown("""
 | Alignment | Meaning | Action |
 |-----------|---------|--------|
 | 🔥 BOTH BULLISH | EOD=BUY + Intraday UP | Highest conviction entry |
@@ -589,74 +724,74 @@ if st.button("🚀 Run Strategy", type="primary"):
 | ➖ NEUTRAL | No strong signal in either direction | Hold current position |
 """)
 
-            # ── Live interpretation ───────────────────────────────────────────
-            st.subheader("🧠 Live Interpretation")
+        # ── Live interpretation ───────────────────────────────────────────
+        st.subheader("🧠 Live Interpretation")
 
-            both_bull = [r["Ticker"] for r in align_rows if r["Alignment"] == "🔥 BOTH BULLISH"]
-            both_bear = [r["Ticker"] for r in align_rows if r["Alignment"] == "🔥 BOTH BEARISH"]
-            intra_bull = [r["Ticker"] for r in align_rows if r["Alignment"] == "📈 INTRA BULL"]
-            intra_bear = [r["Ticker"] for r in align_rows if r["Alignment"] == "📉 INTRA BEAR"]
-            conflict   = [r["Ticker"] for r in align_rows if r["Alignment"] == "⚠️ CONFLICT"]
-            eod_buys   = [r for r in align_rows if r["EOD Signal"] == "BUY"]
+        both_bull = [r["Ticker"] for r in align_rows if r["Alignment"] == "🔥 BOTH BULLISH"]
+        both_bear = [r["Ticker"] for r in align_rows if r["Alignment"] == "🔥 BOTH BEARISH"]
+        intra_bull = [r["Ticker"] for r in align_rows if r["Alignment"] == "📈 INTRA BULL"]
+        intra_bear = [r["Ticker"] for r in align_rows if r["Alignment"] == "📉 INTRA BEAR"]
+        conflict   = [r["Ticker"] for r in align_rows if r["Alignment"] == "⚠️ CONFLICT"]
+        eod_buys   = [r for r in align_rows if r["EOD Signal"] == "BUY"]
 
-            if both_bull:
-                tickers_str = ", ".join(both_bull)
-                st.success(f"🔥 **Highest conviction BUY:** {tickers_str} — EOD model AND intraday both bullish. Strongest entry signal.")
-                try:
-                    from signals.position_sizer import get_position_size
-                    for ticker_b in both_bull:
-                        row = next((r for r in results if r.get("ticker") == ticker_b), None)
-                        if row:
-                            pos = get_position_size(
-                                ticker=ticker_b,
-                                prob_eff=float(row.get("prob_eff", 0.7)),
-                                confidence=row.get("confidence", "HIGH"),
-                                portfolio_value=portfolio_value,
-                                current_price=row.get("current_price"),
-                            )
-                            if pos.final_pct > 0:
-                                shares_str = f" (~{pos.shares} shares)" if pos.shares else ""
-                                st.info(f"📐 **{ticker_b} suggested size:** {pos.final_pct*100:.1f}% = ${pos.dollars:,.0f}{shares_str}")
-                except Exception:
-                    pass
+        if both_bull:
+            tickers_str = ", ".join(both_bull)
+            st.success(f"🔥 **Highest conviction BUY:** {tickers_str} — EOD model AND intraday both bullish. Strongest entry signal.")
+            try:
+                from signals.position_sizer import get_position_size
+                for ticker_b in both_bull:
+                    row = next((r for r in results if r.get("ticker") == ticker_b), None)
+                    if row:
+                        pos = get_position_size(
+                            ticker=ticker_b,
+                            prob_eff=float(row.get("prob_eff", 0.7)),
+                            confidence=row.get("confidence", "HIGH"),
+                            portfolio_value=portfolio_value,
+                            current_price=row.get("current_price"),
+                        )
+                        if pos.final_pct > 0:
+                            shares_str = f" (~{pos.shares} shares)" if pos.shares else ""
+                            st.info(f"📐 **{ticker_b} suggested size:** {pos.final_pct*100:.1f}% = ${pos.dollars:,.0f}{shares_str}")
+            except Exception:
+                pass
 
-            if both_bear:
-                tickers_str = ", ".join(both_bear)
-                st.error(f"🔥 **Highest conviction AVOID:** {tickers_str} — EOD model AND intraday both bearish.")
+        if both_bear:
+            tickers_str = ", ".join(both_bear)
+            st.error(f"🔥 **Highest conviction AVOID:** {tickers_str} — EOD model AND intraday both bearish.")
 
-            if eod_buys and not both_bull:
-                for r in eod_buys:
-                    t = r["Ticker"]
-                    p = r["EOD Prob"]
-                    al = r["Alignment"]
-                    if al == "➖ NEUTRAL":
-                        st.info(f"✅ **{t} EOD BUY ({p})** — Model confident but intraday neutral. Valid entry, no intraday confirmation yet. Consider waiting for intraday to turn UP.")
-                    elif al == "⚠️ CONFLICT":
-                        st.warning(f"⚠️ **{t} EOD BUY ({p}) but intraday bearish** — Conflicting signals. Reduce position size or wait.")
+        if eod_buys and not both_bull:
+            for r in eod_buys:
+                t = r["Ticker"]
+                p = r["EOD Prob"]
+                al = r["Alignment"]
+                if al == "➖ NEUTRAL":
+                    st.info(f"✅ **{t} EOD BUY ({p})** — Model confident but intraday neutral. Valid entry, no intraday confirmation yet. Consider waiting for intraday to turn UP.")
+                elif al == "⚠️ CONFLICT":
+                    st.warning(f"⚠️ **{t} EOD BUY ({p}) but intraday bearish** — Conflicting signals. Reduce position size or wait.")
 
-            if intra_bull and not both_bull:
-                tickers_str = ", ".join(intra_bull)
-                st.info(f"📈 **Watch list:** {tickers_str} — Intraday momentum bullish but EOD model cautious. If EOD prob rises above threshold tomorrow, these become BUY candidates.")
+        if intra_bull and not both_bull:
+            tickers_str = ", ".join(intra_bull)
+            st.info(f"📈 **Watch list:** {tickers_str} — Intraday momentum bullish but EOD model cautious. If EOD prob rises above threshold tomorrow, these become BUY candidates.")
 
-            if intra_bear:
-                tickers_str = ", ".join(intra_bear)
-                st.warning(f"📉 **Avoid short-term:** {tickers_str} — Intraday momentum bearish. Even if EOD signal fires BUY, day traders are selling. Wait for intraday to recover.")
+        if intra_bear:
+            tickers_str = ", ".join(intra_bear)
+            st.warning(f"📉 **Avoid short-term:** {tickers_str} — Intraday momentum bearish. Even if EOD signal fires BUY, day traders are selling. Wait for intraday to recover.")
 
-            if conflict:
-                tickers_str = ", ".join(conflict)
-                st.warning(f"⚠️ **Conflicting signals:** {tickers_str} — EOD and intraday disagree. Hold off until signals align.")
+        if conflict:
+            tickers_str = ", ".join(conflict)
+            st.warning(f"⚠️ **Conflicting signals:** {tickers_str} — EOD and intraday disagree. Hold off until signals align.")
 
-            if not both_bull and not eod_buys and not intra_bull:
-                st.info("No strong directional signals right now. Market is in a wait-and-see mode.")
-        else:
-            st.info("No intraday data available.")
+        if not both_bull and not eod_buys and not intra_bull:
+            st.info("No strong directional signals right now. Market is in a wait-and-see mode.")
+    else:
+        st.info("No intraday data available.")
 
-    except Exception as e:
-        st.warning(f"Intraday signals unavailable: {e}")
+except Exception as e:
+    st.warning(f"Intraday signals unavailable: {e}")
 
-    # ── How to read this table ────────────────────────────────────────────────
-    with st.expander("📖 How to read the Forecast Table", expanded=False):
-        st.markdown("""
+# ── How to read this table ────────────────────────────────────────────────
+with st.expander("📖 How to read the Forecast Table", expanded=False):
+    st.markdown("""
 **SIGNAL** — BUY or HOLD.
 - **BUY** fires when `Prob Eff` exceeds the confidence threshold (default 65% in VOLATILE regime, 55% in NEUTRAL).
 - **HOLD** means wait — either probability is too low or the regime is suppressing the signal.
@@ -703,77 +838,77 @@ This is your downside risk if the signal is wrong.
 3. Regime shifts from VOLATILE → NEUTRAL/BULL (threshold drops from 65% → 55%)
 """)
 
-    # ── Per-ticker detail ─────────────────────────────────────────────────────
-    for result in signal_summary:
-        with st.expander(f"📊 {result.ticker} — Detail", expanded=False):
-            m = result.metrics
+# ── Per-ticker detail ─────────────────────────────────────────────────────
+for result in signal_summary:
+    with st.expander(f"📊 {result.ticker} — Detail", expanded=False):
+        m = result.metrics
 
-            # Backtest KPIs
-            c1, c2, c3, c4 = st.columns(4)
-            c1.metric("Sharpe",   f"{m.sharpe:.2f}"       if not np.isnan(m.sharpe)       else "—")
-            c2.metric("Max DD",   f"{m.max_drawdown:.1%}"  if not np.isnan(m.max_drawdown) else "—")
-            c3.metric("CAGR",     f"{m.cagr:.1%}"          if not np.isnan(m.cagr)         else "—")
-            c4.metric("Accuracy", f"{m.accuracy:.1%}"      if not np.isnan(m.accuracy)     else "—")
+        # Backtest KPIs
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Sharpe",   f"{m.sharpe:.2f}"       if not np.isnan(m.sharpe)       else "—")
+        c2.metric("Max DD",   f"{m.max_drawdown:.1%}"  if not np.isnan(m.max_drawdown) else "—")
+        c3.metric("CAGR",     f"{m.cagr:.1%}"          if not np.isnan(m.cagr)         else "—")
+        c4.metric("Accuracy", f"{m.accuracy:.1%}"      if not np.isnan(m.accuracy)     else "—")
 
-            st.caption(
-                f"Trades: {m.n_trades} · "
-                f"Exposure: {m.exposure:.1%} · "
-                f"Profit factor: {m.profit_factor:.2f}"
-                if not np.isnan(m.profit_factor) else
-                f"Trades: {m.n_trades} · Exposure: {m.exposure:.1%}"
-            )
-
-            # Equity curve
-            sdf = result.signal_df.copy()
-            sdf["date"] = pd.to_datetime(sdf["date"])
-            sdf = sdf.sort_values("date")
-
-            ret_strat = (sdf["signal"] * sdf["return_1d"]).fillna(0)
-            ret_mkt   = sdf["return_1d"].fillna(0)
-            eq = pd.DataFrame({
-                "Strategy": (1 + ret_strat).cumprod(),
-                "Market":   (1 + ret_mkt).cumprod(),
-            }, index=sdf["date"]).dropna()
-
-            st.line_chart(eq)
-
-            # Signal table (last 20 rows)
-            show_cols = [c for c in
-                ["date", "close", "prob", "prob_eff", "signal_raw", "gate_block"]
-                if c in sdf.columns]
-            st.dataframe(
-                sdf[show_cols].tail(20).style.format({
-                    "close":    "{:.2f}",
-                    "prob":     "{:.1%}",
-                    "prob_eff": "{:.1%}",
-                }),
-                use_container_width=True,
-            )
-
-            # CSV buffer for ZIP
-            csv_bytes = sdf.to_csv(index=False).encode()
-            st.download_button(
-                f"⬇️ CSV — {result.ticker}",
-                csv_bytes,
-                file_name=f"{result.ticker}_signals.csv",
-                mime="text/csv",
-                key=f"csv_{result.ticker}",
-            )
-            csv_buffers.append((f"{result.ticker}_signals.csv", csv_bytes))
-
-    # ── ZIP download ──────────────────────────────────────────────────────────
-    if enable_zip and csv_buffers:
-        zbuf = io.BytesIO()
-        with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
-            for fname, data in csv_buffers:
-                zf.writestr(fname, data)
-        st.download_button(
-            "📦 Download ALL as ZIP",
-            zbuf.getvalue(),
-            file_name="signals_export.zip",
-            mime="application/zip",
-            key="zip_all",
+        st.caption(
+            f"Trades: {m.n_trades} · "
+            f"Exposure: {m.exposure:.1%} · "
+            f"Profit factor: {m.profit_factor:.2f}"
+            if not np.isnan(m.profit_factor) else
+            f"Trades: {m.n_trades} · Exposure: {m.exposure:.1%}"
         )
+
+        # Equity curve
+        sdf = result.signal_df.copy()
+        sdf["date"] = pd.to_datetime(sdf["date"])
+        sdf = sdf.sort_values("date")
+
+        ret_strat = (sdf["signal"] * sdf["return_1d"]).fillna(0)
+        ret_mkt   = sdf["return_1d"].fillna(0)
+        eq = pd.DataFrame({
+            "Strategy": (1 + ret_strat).cumprod(),
+            "Market":   (1 + ret_mkt).cumprod(),
+        }, index=sdf["date"]).dropna()
+
+        st.line_chart(eq)
+
+        # Signal table (last 20 rows)
+        show_cols = [c for c in
+            ["date", "close", "prob", "prob_eff", "signal_raw", "gate_block"]
+            if c in sdf.columns]
+        st.dataframe(
+            sdf[show_cols].tail(20).style.format({
+                "close":    "{:.2f}",
+                "prob":     "{:.1%}",
+                "prob_eff": "{:.1%}",
+            }),
+            use_container_width=True,
+        )
+
+        # CSV buffer for ZIP
+        csv_bytes = sdf.to_csv(index=False).encode()
+        st.download_button(
+            f"⬇️ CSV — {result.ticker}",
+            csv_bytes,
+            file_name=f"{result.ticker}_signals.csv",
+            mime="text/csv",
+            key=f"csv_{result.ticker}",
+        )
+        csv_buffers.append((f"{result.ticker}_signals.csv", csv_bytes))
+
+# ── ZIP download ──────────────────────────────────────────────────────────
+if enable_zip and csv_buffers:
+    zbuf = io.BytesIO()
+    with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
+        for fname, data in csv_buffers:
+            zf.writestr(fname, data)
+    st.download_button(
+        "📦 Download ALL as ZIP",
+        zbuf.getvalue(),
+        file_name="signals_export.zip",
+        mime="application/zip",
+        key="zip_all",
+    )
 
 
 # ══════════════════════════════════════════════════════════════════════════════

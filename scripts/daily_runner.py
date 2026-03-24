@@ -208,15 +208,26 @@ def run_daily():
                     sig = generate_signals(ticker, df, horizon=horizon, confidence_threshold=BUY_THRESHOLD)
 
                     result = {
-                        "ticker":     ticker,
-                        "horizon":    horizon,
-                        "signal":     sig.today_signal,
-                        "prob":       sig.today_prob,
-                        "prob_eff":   sig.today_prob_eff,
-                        "confidence": "HIGH" if sig.today_prob_eff >= 0.70
-                                      else "MEDIUM" if sig.today_prob_eff >= BUY_THRESHOLD
-                                      else "LOW",
-                        "run_date":   run_date,
+                        "ticker":          ticker,
+                        "horizon":         horizon,
+                        "signal":          sig.today_signal,
+                        "prob":            sig.today_prob,
+                        "prob_eff":        sig.today_prob_eff,
+                        "confidence":      "HIGH" if sig.today_prob_eff >= 0.70
+                                           else "MEDIUM" if sig.today_prob_eff >= BUY_THRESHOLD
+                                           else "LOW",
+                        "run_date":        run_date,
+                        "current_price":   sig.current_price,
+                        "price_target_up": sig.price_target_up,
+                        "price_target_dn": sig.price_target_dn,
+                        "expected_return": sig.expected_return,
+                        "atr":             sig.atr,
+                        "sharpe":          round(sig.metrics.sharpe, 3)        if sig.metrics and not (sig.metrics.sharpe != sig.metrics.sharpe) else None,
+                        "max_drawdown":    round(sig.metrics.max_drawdown, 4)  if sig.metrics else None,
+                        "cagr":            round(sig.metrics.cagr, 4)          if sig.metrics else None,
+                        "accuracy":        round(sig.metrics.accuracy, 4)      if sig.metrics else None,
+                        "n_trades":        sig.metrics.n_trades                if sig.metrics else None,
+                        "profit_factor":   round(sig.metrics.profit_factor, 3) if sig.metrics else None,
                     }
                     results.append(result)
 
@@ -303,6 +314,18 @@ def run_daily():
     with open(summary_path, "w") as f:
         json.dump(summary, f, indent=2)
     log.info(f"  Summary saved → {summary_path}")
+
+    # Save dashboard cache (data/signals_cache.json) — loaded by default in 1_Dashboard.py
+    cache_path = ROOT / "data" / "signals_cache.json"
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    dashboard_cache = {
+        "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
+        "date":         run_date,
+        "signals":      results,
+    }
+    with open(cache_path, "w") as f:
+        json.dump(dashboard_cache, f, indent=2)
+    log.info(f"  Dashboard cache saved → {cache_path}")
     log.info(f"{'='*60}\n")
 
     return summary
