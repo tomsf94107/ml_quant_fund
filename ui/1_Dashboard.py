@@ -904,7 +904,7 @@ for result in signal_summary:
         csv_buffers.append((f"{result.ticker}_signals.csv", csv_bytes))
 
 # ── ZIP download ──────────────────────────────────────────────────────────
-if enable_zip and csv_buffers:
+if enable_zip and 'csv_buffers' in locals() and csv_buffers:
     zbuf = io.BytesIO()
     with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
         for fname, data in csv_buffers:
