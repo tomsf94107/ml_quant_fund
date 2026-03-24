@@ -63,7 +63,11 @@ SLEEP_BETWEEN = 2.0      # seconds between tickers (avoid rate limits)
 
 def is_trading_day() -> bool:
     """Return True if today is a weekday (basic check, ignores holidays)."""
-    return today_et().weekday() < 5
+    from datetime import date as _date
+    t = today_et()
+    if isinstance(t, str):
+        return _date.fromisoformat(t).weekday() < 5
+    return t.weekday() < 5
 
 
 def load_tickers() -> list[str]:
@@ -173,7 +177,8 @@ def run_daily():
 
     now = now_et()
     market_hour = now.hour * 60 + now.minute
-    if market_hour < 20*60 or market_hour > 24*60:
+    force = "--force" in sys.argv
+    if not force and (market_hour < 20*60 or market_hour > 24*60):
         log.info(f"Skipping — outside run window ({now.strftime('%H:%M ET')})")
         return
 
