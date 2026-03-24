@@ -3,3 +3,4 @@ models/saved/*.pkl filter=lfs diff=lfs merge=lfs -text
 models/saved/*target*.joblib filter=lfs diff=lfs merge=lfs -text
 models/saved/*regime*.joblib filter=lfs diff=lfs merge=lfs -text
 models/saved/*ensemble*.joblib filter=lfs diff=lfs merge=lfs -text
+models/saved/*ensemble*.joblib filter=lfs diff=lfs merge=lfs -text
