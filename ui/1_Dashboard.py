@@ -648,6 +648,12 @@ try:
     from features.intraday_builder import get_all_intraday_signals, is_market_open
     intraday_tickers = [r.ticker for r in signal_summary]
 
+    if _use_cache:
+        st.info("📦 Intraday signals not available in cache mode. Click **🔄 Refresh Live** to see alignment.")
+        raise StopIteration  # skip rest of try block
+    if _use_cache:
+        st.info("📦 Intraday signals not available in cache mode. Click **🔄 Refresh Live** to see alignment.")
+        raise StopIteration  # skip rest of try block
     with st.spinner("Loading intraday signals..."):
         intra_sigs = get_all_intraday_signals(intraday_tickers)
 
