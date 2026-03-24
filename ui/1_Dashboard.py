@@ -863,6 +863,9 @@ for result in signal_summary:
         )
 
         # Equity curve
+        if not hasattr(result, 'signal_df') or result.signal_df is None:
+            st.info("Signal detail not available in cached mode. Click Refresh Live for full detail.")
+            continue
         sdf = result.signal_df.copy()
         sdf["date"] = pd.to_datetime(sdf["date"])
         sdf = sdf.sort_values("date")
