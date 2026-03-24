@@ -245,6 +245,58 @@ def run_daily():
                         run_date=run_date,
                     )
 
+                    # Log features used for this prediction
+                    try:
+                        last = df.iloc[-1]
+                        from accuracy.sink import _get_conn
+                        with _get_conn() as _fc:
+                            _fc.execute("""
+                                INSERT OR REPLACE INTO prediction_features
+                                (ticker, prediction_date, horizon,
+                                 oil_ret, oil_spy_corr, spy_ret, xlk_ret,
+                                 dxy_ret, yield_10y, vix_close, vix_ret,
+                                 vix_term_structure, fear_greed,
+                                 rsi_14, macd, bb_pct, atr, vol_surge_eod, obv_trend,
+                                 return_1d, return_5d, return_20d,
+                                 premarket_gap, intraday_momentum,
+                                 iv_skew_snap, pc_ratio_snap,
+                                 monday_sentiment, beta_60d, short_ratio,
+                                 sector_rel_ret, created_at)
+                                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                            """, (
+                                ticker, str(run_date), horizon,
+                                float(last.get("oil_ret", 0)),
+                                float(last.get("oil_spy_corr", 0)),
+                                float(last.get("spy_ret", 0)),
+                                float(last.get("xlk_ret", 0)),
+                                float(last.get("dxy_ret", 0)),
+                                float(last.get("yield_10y", 0)),
+                                float(last.get("vix_close", 0)),
+                                float(last.get("vix_ret", 0)),
+                                float(last.get("vix_term_structure", 1)),
+                                float(last.get("fear_greed", 0.5)),
+                                float(last.get("rsi_14", 50)),
+                                float(last.get("macd", 0)),
+                                float(last.get("bb_pct", 0.5)),
+                                float(last.get("atr", 0)),
+                                float(last.get("vol_surge_eod", 0)),
+                                float(last.get("obv_trend", 0)),
+                                float(last.get("return_1d", 0)),
+                                float(last.get("return_5d", 0)),
+                                float(last.get("return_20d", 0)),
+                                float(last.get("premarket_gap", 0)),
+                                float(last.get("intraday_momentum", 0)),
+                                float(last.get("iv_skew_snap", 0)),
+                                float(last.get("pc_ratio_snap", 1)),
+                                float(last.get("monday_sentiment", 0)),
+                                float(last.get("beta_60d", 1)),
+                                float(last.get("short_ratio", 0)),
+                                float(last.get("sector_rel_ret", 0)),
+                                str(run_date),
+                            ))
+                    except Exception as _fe:
+                        pass  # feature logging is best-effort
+
                     if sig.today_signal == "BUY":
                         # Add position sizing
                         try:
