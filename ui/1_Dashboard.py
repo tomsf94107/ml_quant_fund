@@ -329,7 +329,7 @@ _cache_data, _cache_ts = _load_signals_cache()
 _cache_available = _cache_data is not None
 
 # ── Cache status bar ──────────────────────────────────────────────────────────
-_c_left, _c_right = st.columns([3, 1])
+_c_left, _c_mid, _c_right = st.columns([3, 1, 1])
 if _cache_available:
     try:
         _ts_fmt = datetime.fromisoformat(_cache_ts).strftime("%Y-%m-%d %H:%M ET")
