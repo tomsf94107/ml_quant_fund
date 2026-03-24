@@ -297,6 +297,7 @@ def _cache_to_signal_summary(cache_data, sel_horizon, sel_tickers, conf_threshol
             accuracy=      float(s.get("accuracy",      float("nan"))),
             n_trades=      s.get("n_trades", 0),
             profit_factor= float(s.get("profit_factor", float("nan"))),
+            exposure=      float(s.get("exposure", float("nan"))),
         )
         prob_eff = s.get("prob_eff", 0.0)
         today_signal = s.get("signal", "HOLD")
@@ -338,6 +339,9 @@ if _cache_available:
 else:
     _c_left.warning("⚠️ No cache found — click **Refresh Live** to generate signals")
 
+_run_cache = _c_mid.button("📦 Run Strategy", type="secondary",
+    help="Load signals from last cache instantly",
+    disabled=not _cache_available)
 _refresh_live = _c_right.button("🔄 Refresh Live", type="primary",
     help="Re-run signal generation for all selected tickers (takes a few minutes)")
 
