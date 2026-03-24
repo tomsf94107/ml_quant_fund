@@ -843,18 +843,19 @@ This is your downside risk if the signal is wrong.
 """)
 
 # ── Per-ticker detail ─────────────────────────────────────────────────────
-_d1, _d2 = st.columns([2, 1])
-_detail_search = _d1.text_input("🔍 Filter ticker details", placeholder="Type ticker name...", key="detail_filter")
-_detail_sig_filter = _d2.selectbox("Signal", ["ALL", "BUY", "HOLD"], key="detail_sig_filter")
+# ── Per-ticker detail ─────────────────────────────────────────────────────
+if _use_cache:
+    st.info("📦 Ticker detail charts not available in cache mode. Click **🔄 Refresh Live** to see full detail.")
+    detail_results = []
+else:
+    _d1, _d2 = st.columns([2, 1])
+    _detail_search = _d1.text_input("🔍 Filter ticker", placeholder="Type ticker name...", key="detail_filter")
+    _detail_sig_filter = _d2.selectbox("Signal", ["ALL", "BUY", "HOLD"], key="detail_sig_filter")
+    detail_results = [r for r in signal_summary
+                     if (not _detail_search or _detail_search.upper() in r.ticker.upper())
+                     and (_detail_sig_filter == "ALL" or r.today_signal == _detail_sig_filter)]
 
-for result in signal_summary:
-    if _detail_search and _detail_search.upper() not in result.ticker.upper():
-        continue
-    if _detail_sig_filter != "ALL" and result.today_signal != _detail_sig_filter:
-        continue
-    if not hasattr(result, 'signal_df') or result.signal_df is None:
-        st.info(f"📦 {result.ticker}: detail not available in cache mode. Click Refresh Live.")
-        continue
+for result in detail_results:
     with st.expander(f"📊 {result.ticker} — Detail", expanded=False):
         m = result.metrics
 
