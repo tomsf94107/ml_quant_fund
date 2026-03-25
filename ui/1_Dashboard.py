@@ -458,7 +458,7 @@ elif _refresh_live:
             })
         with open(_cache_save_path, "w") as _cf:
             _json_save.dump({
-                "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
+                "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
                 "date":         date.today().isoformat(),
                 "signals":      _cache_entries,
             }, _cf, indent=2)
