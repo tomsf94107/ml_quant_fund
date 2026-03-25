@@ -346,7 +346,15 @@ _refresh_live = _c_right.button("🔄 Refresh Live", type="primary",
     help="Re-run signal generation for all selected tickers (takes a few minutes)")
 
 # ── Decide mode ───────────────────────────────────────────────────────────────
-_use_cache = _cache_available and not _refresh_live
+# Use session state to persist refresh intent across reruns
+if _refresh_live:
+    st.session_state["_mode"] = "live"
+    st.cache_data.clear()
+elif _run_cache:
+    st.session_state["_mode"] = "cache"
+
+_mode = st.session_state.get("_mode", "cache" if _cache_available else "live")
+_use_cache = (_mode == "cache") and _cache_available
 
 if _use_cache:
     signal_summary = _cache_to_signal_summary(
@@ -356,7 +364,7 @@ if _use_cache:
         st.warning("Cache has no signals for the selected horizon/tickers. Click Refresh Live.")
         st.stop()
 
-elif _refresh_live:
+elif _mode == "live":
 
     if not tickers:
         st.error("No tickers selected — please select at least one ticker in the sidebar.")
@@ -366,8 +374,6 @@ elif _refresh_live:
     import sys as _sys
     if "--force" not in _sys.argv:
         _sys.argv.append("--force")
-    # Clear feature cache so fresh data is fetched
-    st.cache_data.clear()
 
     csv_buffers   = []
     pred_log_rows = []
