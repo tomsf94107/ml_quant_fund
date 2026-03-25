@@ -515,7 +515,7 @@ try:
         if true_price and r.current_price:
             diff_pct = abs(true_price - r.current_price) / true_price
             if diff_pct > 0.10:  # >10% off = price crossover
-                st.warning(f"⚠️ {r.ticker}: price mismatch — model used ${r.current_price:.2f}, market says ${true_price:.2f}. Refreshing data.")
+                st.warning(f"⚠️ {r.ticker}: price mismatch — model used {r.current_price:.2f}, market says {true_price:.2f}")
                 # Force refresh by clearing cache for this ticker
                 try:
                     _cached_features.clear()
