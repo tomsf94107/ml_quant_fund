@@ -502,28 +502,25 @@ else:
 # ─────────────────────────────────────────────────────────────────────────
 
 # ── Price sanity check ───────────────────────────────────────────────────
-# Fetch ground truth prices and flag any crossovers/stale prices
-try:
-    import yfinance as yf
-    all_syms = [r.ticker for r in signal_summary]
-    raw_px = yf.download(all_syms, period="2d", auto_adjust=True, progress=False)
-    if hasattr(raw_px.columns, "levels"):
-        raw_px = raw_px["Close"]
-    latest_px = raw_px.iloc[-1].to_dict() if not raw_px.empty else {}
-    for r in signal_summary:
-        true_price = latest_px.get(r.ticker)
-        if true_price and r.current_price:
-            diff_pct = abs(true_price - r.current_price) / true_price
-            if diff_pct > 0.10:  # >10% off = price crossover
-                st.warning(f"⚠️ {r.ticker}: price mismatch — model used {r.current_price:.2f}, market says {true_price:.2f}")
-                # Force refresh by clearing cache for this ticker
-                try:
-                    _cached_features.clear()
-                except Exception:
-                    pass
-except Exception as _pe:
-    pass  # price check is best-effort, never crash the dashboard
+# Fetch ground truth prices and flag stale cache prices (live mode only)
+if not _use_cache:
+    try:
+        import yfinance as yf
+        all_syms = [r.ticker for r in signal_summary]
+        raw_px = yf.download(all_syms, period="2d", auto_adjust=True, progress=False)
+        if hasattr(raw_px.columns, "levels"):
+            raw_px = raw_px["Close"]
+        latest_px = raw_px.iloc[-1].to_dict() if not raw_px.empty else {}
+        for r in signal_summary:
+            true_price = latest_px.get(r.ticker)
+            if true_price and r.current_price:
+                diff_pct = abs(true_price - r.current_price) / true_price
+                if diff_pct > 0.10:
+                    st.warning(f"⚠️ {r.ticker}: price mismatch — model used {r.current_price:.2f}, market says {true_price:.2f}")
+    except Exception:
+        pass  # price check is best-effort
 
+    
 if not signal_summary:
     st.error("No signals generated. Check tickers and date range.")
     st.stop()
