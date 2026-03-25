@@ -362,6 +362,11 @@ elif _refresh_live:
         st.error("No tickers selected — please select at least one ticker in the sidebar.")
         st.stop()
 
+    # Bypass time guard — user explicitly clicked Refresh Live
+    import sys as _sys
+    if "--force" not in _sys.argv:
+        _sys.argv.append("--force")
+
     csv_buffers   = []
     pred_log_rows = []
     signal_summary = []
@@ -458,7 +463,7 @@ elif _refresh_live:
             })
         with open(_cache_save_path, "w") as _cf:
             _json_save.dump({
-                "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+                "generated_at": __import__('pytz').timezone('America/New_York').localize(__import__('datetime').datetime.now()).strftime("%Y-%m-%dT%H:%M:%S"),
                 "date":         date.today().isoformat(),
                 "signals":      _cache_entries,
             }, _cf, indent=2)
@@ -488,7 +493,7 @@ try:
         if true_price and r.current_price:
             diff_pct = abs(true_price - r.current_price) / true_price
             if diff_pct > 0.10:  # >10% off = price crossover
-                st.warning(f"⚠️ {r.ticker}: price mismatch — model used ${r.current_price:.2f}, market says ${true_price:.2f}. Refreshing data.")
+                st.warning(f"⚠️ {r.ticker}: price mismatch — model used {r.current_price:.2f}, market says {true_price:.2f}")
                 # Force refresh by clearing cache for this ticker
                 try:
                     _cached_features.clear()
