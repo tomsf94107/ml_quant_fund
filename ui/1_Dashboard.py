@@ -345,6 +345,26 @@ def _cache_to_signal_summary(cache_data, sel_horizon, sel_tickers, conf_threshol
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+#  CACHE HELPERS
+# ══════════════════════════════════════════════════════════════════════════════
+import json as _jc, pytz as _ptz
+_CPATH = os.path.join(_ROOT, "data", "signals_cache.json")
+
+def _read_cache():
+    try:
+        if not os.path.exists(_CPATH): return None
+        with open(_CPATH) as _f: return _jc.load(_f)
+    except: return None
+
+def _write_cache(sigs):
+    try:
+        os.makedirs(os.path.dirname(_CPATH), exist_ok=True)
+        ts = datetime.now(_ptz.timezone("America/New_York")).strftime("%Y-%m-%dT%H:%M:%S")
+        with open(_CPATH, "w") as _f:
+            _jc.dump({"generated_at": ts, "signals": sigs}, _f, indent=2)
+    except: pass
+
+# ══════════════════════════════════════════════════════════════════════════════
 #  RUN STRATEGY
 # ══════════════════════════════════════════════════════════════════════════════
 
