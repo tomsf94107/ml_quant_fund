@@ -368,28 +368,20 @@ def _write_cache(sigs):
 #  RUN STRATEGY
 # ══════════════════════════════════════════════════════════════════════════════
 
-_cache_data, _cache_ts = _load_signals_cache()
-_cache_available = _cache_data is not None
-
-# ── Cache status bar ──────────────────────────────────────────────────────────
+# ── Cache status + buttons ───────────────────────────────────────────────────
+_cache = _read_cache()
 _c_left, _c_mid, _c_right = st.columns([3, 1, 1])
-if _cache_available:
-    try:
-        _ts_fmt = datetime.fromisoformat(_cache_ts).strftime("%Y-%m-%d %H:%M ET")
-    except Exception:
-        _ts_fmt = _cache_ts or "unknown"
-    _c_left.info(f"📦 Cached signals from **{_ts_fmt}** — showing pre-computed results")
+if _cache:
+    _ts = _cache.get("generated_at", "?")
+    _c_left.info(f"📦 Cached signals from **{_ts} ET** — showing pre-computed results")
 else:
     _c_left.warning("⚠️ No cache found — click **Refresh Live** to generate signals")
 
-_run_cache = _c_mid.button("📦 Run Strategy", type="secondary",
-    help="Load signals from last cache instantly",
-    disabled=not _cache_available)
-_refresh_live = _c_right.button("🔄 Refresh Live", type="primary",
-    help="Re-run signal generation for all selected tickers (takes a few minutes)")
+_run_cache   = _c_mid.button("📦 Run Strategy", type="secondary",
+    disabled=not bool(_cache))
+_refresh_live = _c_right.button("🔄 Refresh Live", type="primary")
 
-# ── Decide mode ───────────────────────────────────────────────────────────────
-_use_cache = _cache_available and not _refresh_live
+_use_cache = False
 
 if _use_cache:
     signal_summary = _cache_to_signal_summary(
