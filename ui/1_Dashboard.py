@@ -73,6 +73,29 @@ try:
 except Exception as _e:
     st.warning(f"Startup check failed: {_e}")
 
+
+import json as _json_cache
+from pathlib import Path as _Path_cache
+import pytz as _pytz_cache
+
+_CACHE_PATH = os.path.join(_ROOT, "data", "signals_cache.json")
+
+def _load_cache():
+    try:
+        if not os.path.exists(_CACHE_PATH): return None
+        with open(_CACHE_PATH) as f: return _json_cache.load(f)
+    except: return None
+
+def _save_cache(signals, generated_at):
+    try:
+        os.makedirs(os.path.dirname(_CACHE_PATH), exist_ok=True)
+        with open(_CACHE_PATH, "w") as f:
+            _json_cache.dump({"generated_at": generated_at, "signals": signals}, f, indent=2)
+    except: pass
+
+def _et_now():
+    return _datetime.datetime.now(_pytz_cache.timezone("America/New_York")).strftime("%Y-%m-%dT%H:%M:%S")
+
 st.set_page_config(
     page_title="ML Quant Fund",
     page_icon="📈",
@@ -346,15 +369,7 @@ _refresh_live = _c_right.button("🔄 Refresh Live", type="primary",
     help="Re-run signal generation for all selected tickers (takes a few minutes)")
 
 # ── Decide mode ───────────────────────────────────────────────────────────────
-# Use session state to persist refresh intent across reruns
-if _refresh_live:
-    st.session_state["_mode"] = "live"
-    st.cache_data.clear()
-elif _run_cache:
-    st.session_state["_mode"] = "cache"
-
-_mode = st.session_state.get("_mode", "cache" if _cache_available else "live")
-_use_cache = (_mode == "cache") and _cache_available
+_use_cache = _cache_available and not _refresh_live
 
 if _use_cache:
     signal_summary = _cache_to_signal_summary(
@@ -364,16 +379,11 @@ if _use_cache:
         st.warning("Cache has no signals for the selected horizon/tickers. Click Refresh Live.")
         st.stop()
 
-elif _mode == "live":
+elif _refresh_live:
 
     if not tickers:
         st.error("No tickers selected — please select at least one ticker in the sidebar.")
         st.stop()
-
-    # Bypass time guard — user explicitly clicked Refresh Live
-    import sys as _sys
-    if "--force" not in _sys.argv:
-        _sys.argv.append("--force")
 
     csv_buffers   = []
     pred_log_rows = []
@@ -443,40 +453,24 @@ elif _mode == "live":
         except Exception as e:
             st.warning(f"Prediction logging failed: {e}")
 
-    # ── Save dashboard cache so next visit loads instantly ────────────────────
-    try:
-        import json as _json_save
-        import os as _os_save
-        _cache_save_path = _os_save.path.join(_ROOT, "data", "signals_cache.json")
-        _os_save.makedirs(_os_save.path.dirname(_cache_save_path), exist_ok=True)
-        _cache_entries = []
-        for _r in signal_summary:
-            _cache_entries.append({
-                "ticker":          _r.ticker,
-                "horizon":         _r.horizon,
-                "signal":          _r.today_signal,
-                "prob":            _r.today_prob,
-                "prob_eff":        _r.today_prob_eff,
-                "current_price":   _r.current_price,
-                "price_target_up": _r.price_target_up,
-                "price_target_dn": _r.price_target_dn,
-                "expected_return": _r.expected_return,
-                "atr":             _r.atr,
-                "sharpe":          _r.metrics.sharpe        if _r.metrics else None,
-                "max_drawdown":    _r.metrics.max_drawdown  if _r.metrics else None,
-                "cagr":            _r.metrics.cagr          if _r.metrics else None,
-                "accuracy":        _r.metrics.accuracy      if _r.metrics else None,
-                "n_trades":        _r.metrics.n_trades      if _r.metrics else None,
-                "profit_factor":   _r.metrics.profit_factor if _r.metrics else None,
-            })
-        with open(_cache_save_path, "w") as _cf:
-            _json_save.dump({
-                "generated_at": __import__('pytz').timezone('America/New_York').localize(__import__('datetime').datetime.now()).strftime("%Y-%m-%dT%H:%M:%S"),
-                "date":         date.today().isoformat(),
-                "signals":      _cache_entries,
-            }, _cf, indent=2)
-    except Exception as _ce:
-        pass  # cache save is best-effort
+    # ── Save dashboard cache ─────────────────────────────────────────────────
+    _write_cache([{
+        "ticker": _r.ticker, "horizon": _r.horizon,
+        "signal": _r.today_signal, "prob": _r.today_prob,
+        "prob_eff": _r.today_prob_eff,
+        "current_price": _r.current_price,
+        "price_target_up": _r.price_target_up,
+        "price_target_dn": _r.price_target_dn,
+        "expected_return": _r.expected_return,
+        "atr": _r.atr,
+        "sharpe": _r.metrics.sharpe if _r.metrics else None,
+        "max_drawdown": _r.metrics.max_drawdown if _r.metrics else None,
+        "cagr": _r.metrics.cagr if _r.metrics else None,
+        "accuracy": _r.metrics.accuracy if _r.metrics else None,
+        "n_trades": _r.metrics.n_trades if _r.metrics else None,
+        "profit_factor": _r.metrics.profit_factor if _r.metrics else None,
+        "exposure": _r.metrics.exposure if _r.metrics else None,
+    } for _r in signal_summary])
 
     # ─────────────────────────────────────────────────────────────────────────
 
@@ -501,7 +495,7 @@ try:
         if true_price and r.current_price:
             diff_pct = abs(true_price - r.current_price) / true_price
             if diff_pct > 0.10:  # >10% off = price crossover
-                st.warning(f"⚠️ {r.ticker}: price mismatch — model used {r.current_price:.2f}, market says {true_price:.2f}")
+                st.warning(f"⚠️ {r.ticker}: price mismatch — model used ${r.current_price:.2f}, market says ${true_price:.2f}. Refreshing data.")
                 # Force refresh by clearing cache for this ticker
                 try:
                     _cached_features.clear()
@@ -661,12 +655,6 @@ try:
     from features.intraday_builder import get_all_intraday_signals, is_market_open
     intraday_tickers = [r.ticker for r in signal_summary]
 
-    if _use_cache:
-        st.info("📦 Intraday signals not available in cache mode. Click **🔄 Refresh Live** to see alignment.")
-        raise StopIteration  # skip rest of try block
-    if _use_cache:
-        st.info("📦 Intraday signals not available in cache mode. Click **🔄 Refresh Live** to see alignment.")
-        raise StopIteration  # skip rest of try block
     with st.spinner("Loading intraday signals..."):
         intra_sigs = get_all_intraday_signals(intraday_tickers)
 
@@ -862,19 +850,7 @@ This is your downside risk if the signal is wrong.
 """)
 
 # ── Per-ticker detail ─────────────────────────────────────────────────────
-# ── Per-ticker detail ─────────────────────────────────────────────────────
-if _use_cache:
-    st.info("📦 Ticker detail charts not available in cache mode. Click **🔄 Refresh Live** to see full detail.")
-    detail_results = []
-else:
-    _d1, _d2 = st.columns([2, 1])
-    _detail_search = _d1.text_input("🔍 Filter ticker", placeholder="Type ticker name...", key="detail_filter")
-    _detail_sig_filter = _d2.selectbox("Signal", ["ALL", "BUY", "HOLD"], key="detail_sig_filter")
-    detail_results = [r for r in signal_summary
-                     if (not _detail_search or _detail_search.upper() in r.ticker.upper())
-                     and (_detail_sig_filter == "ALL" or r.today_signal == _detail_sig_filter)]
-
-for result in detail_results:
+for result in signal_summary:
     with st.expander(f"📊 {result.ticker} — Detail", expanded=False):
         m = result.metrics
 
@@ -935,7 +911,7 @@ for result in detail_results:
         csv_buffers.append((f"{result.ticker}_signals.csv", csv_bytes))
 
 # ── ZIP download ──────────────────────────────────────────────────────────
-if enable_zip and 'csv_buffers' in locals() and csv_buffers:
+if enable_zip and csv_buffers:
     zbuf = io.BytesIO()
     with zipfile.ZipFile(zbuf, "w", zipfile.ZIP_DEFLATED) as zf:
         for fname, data in csv_buffers:
