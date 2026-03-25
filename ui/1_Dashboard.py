@@ -372,7 +372,7 @@ def _write_cache(sigs):
 _cache = _read_cache()
 _c_left, _c_mid, _c_right = st.columns([3, 1, 1])
 if _cache:
-    _ts = _cache.get("generated_at", "?")
+    _ts = _cache.get("generated_at", "?").replace("T", " ")
     _c_left.info(f"📦 Cached signals from **{_ts} ET** — showing pre-computed results")
 else:
     _c_left.warning("⚠️ No cache found — click **Refresh Live** to generate signals")
@@ -381,14 +381,43 @@ _run_cache   = _c_mid.button("📦 Run Strategy", type="secondary",
     disabled=not bool(_cache))
 _refresh_live = _c_right.button("🔄 Refresh Live", type="primary")
 
-_use_cache = False
+# ── Decide mode ───────────────────────────────────────────────────────────────
+if not _run_cache and not _refresh_live:
+    if _cache:
+        st.info("Click **📦 Run Strategy** to load cached signals, or **🔄 Refresh Live** for fresh data.")
+    else:
+        st.info("No cache yet. Click **🔄 Refresh Live** to generate signals.")
+    st.stop()
+
+_use_cache = _run_cache and bool(_cache)
 
 if _use_cache:
-    signal_summary = _cache_to_signal_summary(
-        _cache_data, horizon, tickers, confidence_threshold
-    )
+    from types import SimpleNamespace as _NS
+    signal_summary = []
+    for s in _cache.get("signals", []):
+        if s.get("horizon") != horizon: continue
+        if tickers and s.get("ticker") not in tickers: continue
+        _peff = s.get("prob_eff", 0.0)
+        _sig = s.get("signal","HOLD") if _peff >= confidence_threshold else "HOLD"
+        _m = _NS(sharpe=float(s.get("sharpe") or "nan"),
+                 max_drawdown=float(s.get("max_drawdown") or "nan"),
+                 cagr=float(s.get("cagr") or "nan"),
+                 accuracy=float(s.get("accuracy") or "nan"),
+                 n_trades=s.get("n_trades") or 0,
+                 profit_factor=float(s.get("profit_factor") or "nan"),
+                 exposure=float(s.get("exposure") or "nan"))
+        signal_summary.append(_NS(
+            ticker=s["ticker"], horizon=horizon,
+            today_signal=_sig, today_prob=s.get("prob",0),
+            today_prob_eff=_peff,
+            current_price=s.get("current_price"),
+            price_target_up=s.get("price_target_up"),
+            price_target_dn=s.get("price_target_dn"),
+            expected_return=s.get("expected_return"),
+            atr=s.get("atr"), metrics=_m, error=None, signal_df=None,
+        ))
     if not signal_summary:
-        st.warning("Cache has no signals for the selected horizon/tickers. Click Refresh Live.")
+        st.warning("No signals in cache for selected filters. Click Refresh Live.")
         st.stop()
 
 elif _refresh_live:
