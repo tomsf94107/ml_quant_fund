@@ -366,6 +366,8 @@ elif _refresh_live:
     import sys as _sys
     if "--force" not in _sys.argv:
         _sys.argv.append("--force")
+    # Clear feature cache so fresh data is fetched
+    st.cache_data.clear()
 
     csv_buffers   = []
     pred_log_rows = []
