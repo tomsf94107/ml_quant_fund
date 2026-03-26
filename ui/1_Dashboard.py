@@ -512,6 +512,7 @@ elif _refresh_live:
         "profit_factor": _r.metrics.profit_factor if _r.metrics else None,
         "exposure": _r.metrics.exposure if _r.metrics else None,
     } for _r in signal_summary])
+    st.rerun()  # auto-reload cache after live run
 
     # ─────────────────────────────────────────────────────────────────────────
 
