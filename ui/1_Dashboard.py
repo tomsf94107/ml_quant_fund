@@ -382,12 +382,18 @@ _run_cache   = _c_mid.button("📦 Run Strategy", type="secondary",
 _refresh_live = _c_right.button("🔄 Refresh Live", type="primary")
 
 # ── Decide mode ───────────────────────────────────────────────────────────────
-if not _run_cache and not _refresh_live:
+_auto_load = st.session_state.pop("auto_load_cache", False)
+
+if not _run_cache and not _refresh_live and not _auto_load:
     if _cache:
         st.info("Click **📦 Run Strategy** to load cached signals, or **🔄 Refresh Live** for fresh data.")
     else:
         st.info("No cache yet. Click **🔄 Refresh Live** to generate signals.")
     st.stop()
+
+# Auto-load after Refresh Live completes
+if _auto_load:
+    _run_cache = True
 
 _use_cache = _run_cache and bool(_cache)
 
@@ -512,6 +518,7 @@ elif _refresh_live:
         "profit_factor": _r.metrics.profit_factor if _r.metrics else None,
         "exposure": _r.metrics.exposure if _r.metrics else None,
     } for _r in signal_summary])
+    st.session_state["auto_load_cache"] = True
     st.rerun()  # auto-reload cache after live run
 
     # ─────────────────────────────────────────────────────────────────────────
