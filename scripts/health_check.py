@@ -107,6 +107,17 @@ def main():
         check("Accuracy", False, "no outcomes to score")
         all_ok = False
 
+    # 7. Intraday predictions populated (skip weekends)
+    import datetime as dt
+    today_wd = datetime.now().weekday()  # 0=Mon, 6=Sun
+    if today_wd < 5:  # only check on weekdays
+        n_intra = con.execute(
+            "SELECT COUNT(DISTINCT ticker) FROM intraday_predictions WHERE prediction_date=?",
+            (str(last_date),)
+        ).fetchone()[0]
+        ok = check("Intraday predictions", n_intra >= 90, f"{n_intra} tickers for {last_date} (expect ~101)")
+        all_ok = all_ok and ok
+
     con.close()
 
     print("=" * 60)
