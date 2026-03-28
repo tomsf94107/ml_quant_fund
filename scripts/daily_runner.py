@@ -412,7 +412,7 @@ def log_intraday_snapshot():
     """Log intraday snapshot at market open (9:30am ET). Skip if market not open."""
     import json, sqlite3
     from pathlib import Path
-    from features.intraday_builder import get_all_intraday_signals
+    from features.intraday_builder import get_all_intraday_signals, minutes_since_open
     from utils.timezone import now_et as _now_et, today_et, ts_et
     now_et_dt = _now_et()
     # Guard: only run during market hours (9:30am - 4:00pm ET, Mon-Fri)
