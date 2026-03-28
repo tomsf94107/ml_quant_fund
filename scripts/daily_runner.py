@@ -448,7 +448,7 @@ def log_intraday_snapshot():
                 s = get_all_intraday_signals([tkr])
                 if s and s[0].get("current_price"):
                     retry_signals.append(s[0])
-                time.sleep(0.5)
+                time.sleep(2)
             except Exception:
                 pass
         retry_map = {s["ticker"]: s for s in retry_signals}
