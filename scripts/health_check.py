@@ -14,11 +14,21 @@ ROOT = Path(__file__).resolve().parent.parent
 DB   = ROOT / "accuracy.db"
 
 def get_last_trading_date():
-    """Return yesterday, or Friday if today is Monday."""
+    """
+    Return the most recent trading date the cron should have populated.
+    Cron runs 7 AM Vietnam Tue-Sat (= Mon-Fri 8 PM ET).
+    So on Monday Vietnam, last completed run was Friday.
+    On Tue-Sat Vietnam, check today.
+    On Sunday Vietnam, check Friday.
+    """
     today = datetime.now().date()
-    if today.weekday() == 0:  # Monday
+    if today.weekday() == 0:  # Monday Vietnam -> check Friday
         return today - timedelta(days=3)
-    return today - timedelta(days=1)
+    if today.weekday() == 5:  # Saturday Vietnam -> check today (Fri ET)
+        return today - timedelta(days=1)
+    if today.weekday() == 6:  # Sunday Vietnam -> check Friday
+        return today - timedelta(days=2)
+    return today  # Tue-Sat Vietnam -> check today
 
 def check(label, passed, detail=""):
     status = "✅" if passed else "❌"
