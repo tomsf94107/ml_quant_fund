@@ -169,7 +169,7 @@ def send_email_alert(buy_signals: list[dict]):
 #  MAIN RUNNER
 # ══════════════════════════════════════════════════════════════════════════════
 
-def run_daily():
+def run_daily(force: bool = False):
     run_date = today_et()
     log.info(f"{'='*60}")
     log.info(f"  Daily Runner — {run_date}")
@@ -177,7 +177,6 @@ def run_daily():
 
     now = now_et()
     market_hour = now.hour * 60 + now.minute
-    force = "--force" in sys.argv
     if not force and (market_hour < 20*60 or market_hour > 24*60):
         log.info(f"Skipping — outside run window ({now.strftime('%H:%M ET')})")
         return
