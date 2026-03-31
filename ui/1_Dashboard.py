@@ -396,6 +396,7 @@ if _auto_load:
     _run_cache = True
 
 _use_cache = _run_cache and bool(_cache)
+csv_buffers = []
 
 if _use_cache:
     from types import SimpleNamespace as _NS
