@@ -269,6 +269,64 @@ def log_predictions_batch(rows: list[dict]) -> int:
 #  WRITE: RECONCILE OUTCOMES
 # ══════════════════════════════════════════════════════════════════════════════
 
+
+def _fetch_price_fallback(ticker: str, start_date, end_date) -> "pd.DataFrame | None":
+    """
+    Fallback price fetcher: tries Polygon.io then Alpha Vantage when yfinance fails.
+    Returns DataFrame with Open/Close columns indexed by date, or None if all fail.
+    """
+    import requests
+    import pandas as pd
+
+    POLYGON_KEY = "pvpkxx6PRbgfvepY33Ao_bi4iNMY1pPz"
+    AV_KEY      = "XX4T4AIT98GEF3K8"
+
+    # --- Polygon.io ---
+    try:
+        url = (f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/"
+               f"{start_date}/{end_date}?adjusted=true&sort=asc&limit=50&apiKey={POLYGON_KEY}")
+        r = requests.get(url, timeout=10)
+        data = r.json()
+        if data.get("resultsCount", 0) > 0:
+            rows = []
+            for bar in data["results"]:
+                rows.append({
+                    "Date":  pd.Timestamp(bar["t"], unit="ms", tz="UTC").tz_localize(None).normalize(),
+                    "Open":  bar["o"],
+                    "Close": bar["c"],
+                })
+            df = pd.DataFrame(rows).set_index("Date")
+            print(f"  ✅ Polygon fallback succeeded for {ticker}")
+            return df
+    except Exception as e:
+        print(f"  ⚠ Polygon failed for {ticker}: {e}")
+
+    # --- Alpha Vantage ---
+    try:
+        url = (f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED"
+               f"&symbol={ticker}&outputsize=compact&apikey={AV_KEY}")
+        r = requests.get(url, timeout=10)
+        data = r.json()
+        ts = data.get("Time Series (Daily)", {})
+        if ts:
+            rows = []
+            for date_str, vals in ts.items():
+                d = pd.Timestamp(date_str)
+                if pd.Timestamp(str(start_date)) <= d <= pd.Timestamp(str(end_date)):
+                    rows.append({
+                        "Date":  d,
+                        "Open":  float(vals["1. open"]),
+                        "Close": float(vals["5. adjusted close"]),
+                    })
+            if rows:
+                df = pd.DataFrame(rows).set_index("Date").sort_index()
+                print(f"  ✅ Alpha Vantage fallback succeeded for {ticker}")
+                return df
+    except Exception as e:
+        print(f"  ⚠ Alpha Vantage failed for {ticker}: {e}")
+
+    return None
+
 def reconcile_outcomes(
     tickers: list[str] | None = None,
     as_of:   date | None = None,
@@ -344,11 +402,15 @@ def reconcile_outcomes(
             if isinstance(px.columns, pd.MultiIndex):
                 px.columns = px.columns.get_level_values(0)
             if px.empty:
-                continue
+                raise ValueError("Empty yfinance response")
             close = px["Close"].squeeze()
         except Exception as e:
-            print(f"  ⚠ Could not fetch prices for {ticker}: {e}")
-            continue
+            print(f"  ⚠ yfinance failed for {ticker}: {e} — trying fallbacks")
+            px = _fetch_price_fallback(ticker, min_date, max_date)
+            if px is None:
+                print(f"  ⚠ All sources failed for {ticker}")
+                continue
+            close = px["Close"].squeeze()
 
         with _get_conn() as conn:
             cur = conn.cursor()
@@ -358,12 +420,32 @@ def reconcile_outcomes(
 
                 try:
                     # Did stock go UP on prediction_date?
-                    open_series = px["Open"].squeeze(); open_series.index = pd.to_datetime(open_series.index).tz_localize(None); day_open = float(open_series.asof(pd.Timestamp(pred_date)))
-                    close2 = close.copy(); close2.index = pd.to_datetime(close2.index).tz_localize(None); day_close = float(close2.asof(pd.Timestamp(pred_date)))
-                    actual_ret = (day_close - day_open) / day_open
-                    if actual_ret == 0.0 or actual_ret != actual_ret:
+                    try:
+                        # Score using open→close on prediction_date
+                        open_series = px["Open"]
+                        if isinstance(open_series, pd.DataFrame):
+                            open_series = open_series.iloc[:, 0]
+                        open_series = open_series.copy()
+                        open_series.index = pd.to_datetime(open_series.index).tz_localize(None)
+
+                        close_series = px["Close"]
+                        if isinstance(close_series, pd.DataFrame):
+                            close_series = close_series.iloc[:, 0]
+                        close_series = close_series.copy()
+                        close_series.index = pd.to_datetime(close_series.index).tz_localize(None)
+
+                        pred_ts = pd.Timestamp(pred_date)
+                        day_open  = float(open_series.asof(pred_ts))
+                        day_close = float(close_series.asof(pred_ts))
+
+                        if day_open == 0:
+                            continue
+                        actual_ret = (day_close - day_open) / day_open
+                        if actual_ret != actual_ret:
+                            continue
+                        actual_up = int(actual_ret > 0)
+                    except Exception:
                         continue
-                    actual_up = int(actual_ret > 0)
                 except Exception:
                     continue
 
