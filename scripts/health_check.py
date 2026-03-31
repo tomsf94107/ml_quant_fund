@@ -15,20 +15,21 @@ DB   = ROOT / "accuracy.db"
 
 def get_last_trading_date():
     """
-    Return the most recent trading date the cron should have populated.
-    Cron runs 7 AM Vietnam Tue-Sat (= Mon-Fri 8 PM ET).
-    So on Monday Vietnam, last completed run was Friday.
-    On Tue-Sat Vietnam, check today.
-    On Sunday Vietnam, check Friday.
+    Return the most recent prediction_date actually in the DB.
+    This is the safest approach — no timezone math needed.
     """
+    import sqlite3
+    con = sqlite3.connect(DB)
+    result = con.execute(
+        "SELECT MAX(prediction_date) FROM predictions"
+    ).fetchone()[0]
+    con.close()
+    if result:
+        from datetime import date
+        return date.fromisoformat(result)
+    # Fallback
     today = datetime.now().date()
-    if today.weekday() == 0:  # Monday Vietnam -> check Friday
-        return today - timedelta(days=3)
-    if today.weekday() == 5:  # Saturday Vietnam -> check today (Fri ET)
-        return today - timedelta(days=1)
-    if today.weekday() == 6:  # Sunday Vietnam -> check Friday
-        return today - timedelta(days=2)
-    return today  # Tue-Sat Vietnam -> check today
+    return today - timedelta(days=1)
 
 def check(label, passed, detail=""):
     status = "✅" if passed else "❌"
