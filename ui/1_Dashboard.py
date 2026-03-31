@@ -1101,7 +1101,7 @@ else:
             st.altair_chart(chart, use_container_width=True)
 
     # Reconcile button (run manually or set on a schedule)
-    if st.button("🔁 Reconcile outcomes now"):
+    if not os.environ.get("STREAMLIT_SHARING_MODE") and st.button("🔁 Reconcile outcomes now"):
         with st.spinner("Fetching actual outcomes..."):
             try:
                 n = reconcile_outcomes()
