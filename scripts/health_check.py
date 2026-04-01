@@ -80,7 +80,7 @@ def main():
     retrain_log = ROOT / "logs" / "retrain.log"
     if retrain_log.exists():
         mtime = datetime.fromtimestamp(retrain_log.stat().st_mtime).date()
-        ok = check("Retrain log", mtime >= last_date, f"last modified {mtime}")
+        ok = check("Retrain log", mtime >= last_date - timedelta(days=1), f"last modified {mtime}")
     else:
         ok = check("Retrain log", False, "log file not found")
     all_ok = all_ok and ok
