@@ -23,3 +23,7 @@ $PYTHON scripts/daily_validator.py --days 30 --fix >> $LOG/validator.log 2>&1
 echo "--- Step 4 DONE $(date) ---" >> $LOG/pipeline.log
 
 echo "=== PIPELINE DONE $(date) ===" >> $LOG/pipeline.log
+
+# Save pre-sentiment snapshot for A/B test
+cp $ROOT/data/signals_cache.json $ROOT/data/ab_cache_A.json
+echo "Saved A/B snapshot A (pre-sentiment)" >> $LOG/pipeline.log
