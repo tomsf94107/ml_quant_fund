@@ -1,6 +1,6 @@
 #!/bin/bash
 PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python
-ROOT=~/Desktop/ML_Quant_Fund
+ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund
 LOG=$ROOT/logs
 cd $ROOT
 
