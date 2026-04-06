@@ -16,3 +16,4 @@ Files to check:
 - data/intraday_history/*.json
 - accuracy.db → intraday_predictions + intraday_outcomes tables
 ======================================
+May 13 — Before training intraday XGBoost: modify intraday_builder.py to also save raw features (rsi_14, vwap_dev, momentum_score, vol_surge, return_1hr, return_2hr) per ticker per snapshot to a CSV or SQLite table for training data
