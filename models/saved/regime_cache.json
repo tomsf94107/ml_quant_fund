@@ -5,7 +5,7 @@
   "signal_multiplier": 0.85,
   "block_tau": 2,
   "description": "Volatile/choppy market \u2014 high VIX, no clear trend. Very selective.",
-  "computed_at": "2026-04-07T09:28:49.197829",
+  "computed_at": "2026-04-08T06:47:19.725816",
   "spy_trend_20d": -0.025860657919550722,
   "spy_trend_60d": -0.041740471734656115,
   "vix_level": 24.170000076293945,
