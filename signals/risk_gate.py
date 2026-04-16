@@ -4,15 +4,11 @@ Builds daily risk flags for the training pipeline.
 risk_today = 1 on high-impact event days (FOMC, CPI, jobs, earnings, VIX spikes)
            = 0 on normal days
 
-These flags feed into _risk_sample_weights() in models/classifier.py
-to down-weight unreliable high-risk training samples.
-
 Option B: real event flags — takes over from VIX proxy (Option A) going forward.
 """
 import pandas as pd
 import numpy as np
 
-# FOMC meeting dates
 FOMC_DATES = [
     "2024-01-31", "2024-03-20", "2024-05-01", "2024-06-12",
     "2024-07-31", "2024-09-18", "2024-11-07", "2024-12-18",
@@ -21,7 +17,6 @@ FOMC_DATES = [
     "2026-01-29", "2026-03-19", "2026-05-07", "2026-06-18",
 ]
 
-# CPI release dates
 CPI_DATES = [
     "2024-01-11", "2024-02-13", "2024-03-12", "2024-04-10",
     "2024-05-15", "2024-06-12", "2024-07-11", "2024-08-14",
@@ -32,7 +27,6 @@ CPI_DATES = [
     "2026-01-15", "2026-02-12", "2026-03-12", "2026-04-10",
 ]
 
-# VIX single-day spike threshold
 VIX_SPIKE_PCT = 0.20
 
 
@@ -50,19 +44,16 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
     df.index = pd.to_datetime(df.index)
     df["risk_today"] = 0.0
 
-    # Mark FOMC dates
     for d in FOMC_DATES:
         ts = pd.Timestamp(d)
         if ts in df.index:
             df.loc[ts, "risk_today"] = 1.0
 
-    # Mark CPI dates
     for d in CPI_DATES:
         ts = pd.Timestamp(d)
         if ts in df.index:
             df.loc[ts, "risk_today"] = 1.0
 
-    # Mark VIX spike days
     try:
         vix = yf.download("^VIX", start=str(start_date), end=str(end_date),
                           progress=False, auto_adjust=True)
@@ -77,7 +68,6 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
     except Exception:
         pass
 
-    # Build lead/lag columns
     df["risk_next_1d"] = df["risk_today"].shift(-1).fillna(0)
     df["risk_next_3d"] = df["risk_today"].rolling(3).max().shift(-3).fillna(0)
     df["risk_prev_1d"] = df["risk_today"].shift(1).fillna(0)
