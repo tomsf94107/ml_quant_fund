@@ -1,15 +1,15 @@
 {
-  "label": "VOLATILE",
-  "confidence": 0.3,
-  "confidence_threshold": 0.65,
-  "signal_multiplier": 0.85,
-  "block_tau": 2,
-  "description": "Volatile/choppy market \u2014 high VIX, no clear trend. Very selective.",
-  "computed_at": "2026-04-08T06:47:19.725816",
-  "spy_trend_20d": -0.025860657919550722,
-  "spy_trend_60d": -0.041740471734656115,
-  "vix_level": 24.170000076293945,
-  "vix_percentile": 89.63730569948186,
-  "bond_signal": "RISK_ON",
-  "breadth_signal": "MIXED"
+  "label": "BULL",
+  "confidence": 0.57,
+  "confidence_threshold": 0.52,
+  "signal_multiplier": 1.05,
+  "block_tau": 4,
+  "description": "Bull market \u2014 trending up, low vol. Lower entry bar.",
+  "computed_at": "2026-04-16T09:28:17.722470",
+  "spy_trend_20d": 0.06111236848538515,
+  "spy_trend_60d": 0.035820935966041745,
+  "vix_level": 18.170000076293945,
+  "vix_percentile": 65.64102564102564,
+  "bond_signal": "NEUTRAL",
+  "breadth_signal": "STRONG"
 }
