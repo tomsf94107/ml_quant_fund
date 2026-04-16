@@ -175,28 +175,49 @@ def _risk_sample_weights(
     df_train: pd.DataFrame,
     alpha: float = RISK_ALPHA,
     floor: float = RISK_WEIGHT_FLOOR,
+    recency_factor: float = 3.0,
+    recency_days: int = 60,
 ) -> Optional[np.ndarray]:
     """
-    Compute per-sample weights that down-weight high-risk trading days.
-
-    Logic (preserved from helpers_xgb_v1.2):
-      weight_i = 1 - alpha * (risk_i / max_risk)
-      clipped to [floor, 1.0]
-
-    On high-risk days (FOMC, earnings, macro events) the model's signal is
-    less reliable, so we reduce their influence on the loss function.
+    Compute per-sample weights combining:
+    1. Recency weighting: last 60 days get 3x more weight so models
+       adapt faster to current regime (e.g. tariff shock, VIX spike).
+    2. Risk weighting: down-weight high-risk days like FOMC/earnings.
+    Both are combined multiplicatively and normalized.
     """
-    if "risk_today" not in df_train.columns:
-        return None
+    n = len(df_train)
 
-    r = df_train["risk_today"].astype(float)
-    r_max = r.max()
-    if r_max == 0:
-        return None
+    # --- Recency weights ---
+    recency_weights = np.ones(n)
+    if n > recency_days:
+        recency_weights[-recency_days:] = recency_factor
+    recency_weights = recency_weights / recency_weights.mean()
 
-    r_norm   = r / r_max                          # [0, 1]
-    weights  = (1.0 - alpha * r_norm).clip(floor, 1.0)
-    return weights.values
+    # --- Risk weights ---
+    risk_weights = None
+
+    # Option B: use real event flags if available and non-zero
+    if "risk_today" in df_train.columns:
+        r = df_train["risk_today"].astype(float)
+        if r.max() > 0:
+            r_norm = r / r.max()
+            risk_weights = (1.0 - alpha * r_norm).clip(floor, 1.0).values
+
+    # Option A: fall back to VIX proxy if risk_today is missing or all zeros
+    if risk_weights is None and "vix_close" in df_train.columns:
+        vix = df_train["vix_close"].astype(float)
+        vix_weights = np.ones(n)
+        vix_weights[vix > 30] = 0.50           # high risk
+        vix_weights[(vix > 20) & (vix <= 30)] = 0.75  # medium risk
+        risk_weights = vix_weights
+
+    if risk_weights is None:
+        return recency_weights
+
+    # --- Combine and normalize ---
+    combined = recency_weights * risk_weights
+    combined = combined / combined.mean()
+    return combined
 
 
 def _validate_feature_columns(df: pd.DataFrame) -> list[str]:
