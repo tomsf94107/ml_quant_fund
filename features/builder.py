@@ -110,6 +110,11 @@ OUTPUT_COLUMNS = [
     "iv_skew_snap", "pc_ratio_snap",     # options IV skew + put/call ratio
     "analyst_upside", "analyst_buy_pct", "analyst_mult",  # analyst revisions
     "finbert_sentiment", "finbert_mult", # FinBERT NLP sentiment
+    # ── NEW v4 features ──────────────────────────────────────────────────────
+    "vix_5d_above_25",          # binary: VIX > 25 for 5 consecutive days
+    "semi_etf_momentum_60d",    # SMH ETF 60-day cumulative return
+    "igv_vs_sp500_ret_30d",     # IGV vs SPY 30-day spread (software regime)
+    "lqd_hyg_spread",           # credit stress: LQD vs HYG 30d spread
 ]
 
 
@@ -671,6 +676,45 @@ def build_feature_dataframe(
     # Calendar effects
     df["day_of_week"]  = pd.to_datetime(df["date"]).dt.dayofweek   # 0=Mon 4=Fri
     df["is_month_end"] = pd.to_datetime(df["date"]).dt.is_month_end.astype(int)
+
+    # ── 11b. Regime / credit features ───────────────────────────────────────
+    # VIX 5d above 25 binary flag
+    try:
+        _vix_s2 = pd.Series(df["vix_close"].values, index=df.index)
+        df["vix_5d_above_25"] = (_vix_s2 > 25).rolling(5).min().fillna(0).astype(int)
+    except Exception:
+        df["vix_5d_above_25"] = 0
+
+    # SMH 60d momentum (semiconductor ETF regime)
+    try:
+        _smh = _market_return("SMH", start_str, end_str, date_index)
+        _smh_s = pd.Series(_smh.values, index=df.index)
+        df["semi_etf_momentum_60d"] = _smh_s.rolling(60).sum().fillna(0.0)
+    except Exception:
+        df["semi_etf_momentum_60d"] = 0.0
+
+    # IGV vs SPY 30d spread (software sector vs market)
+    try:
+        _igv = _market_return("IGV", start_str, end_str, date_index)
+        _igv_s = pd.Series(_igv.values, index=df.index)
+        _spy_s = pd.Series(spy.values, index=df.index)
+        df["igv_vs_sp500_ret_30d"] = (
+            _igv_s.rolling(30).sum() - _spy_s.rolling(30).sum()
+        ).fillna(0.0)
+    except Exception:
+        df["igv_vs_sp500_ret_30d"] = 0.0
+
+    # Credit stress proxy: LQD vs HYG 30d spread
+    try:
+        _lqd = _market_return("LQD", start_str, end_str, date_index)
+        _hyg = _market_return("HYG", start_str, end_str, date_index)
+        _lqd_s = pd.Series(_lqd.values, index=df.index)
+        _hyg_s = pd.Series(_hyg.values, index=df.index)
+        df["lqd_hyg_spread"] = (
+            _lqd_s.rolling(30).sum() - _hyg_s.rolling(30).sum()
+        ).fillna(0.0)
+    except Exception:
+        df["lqd_hyg_spread"] = 0.0
 
     # ── 12. Enforce output schema ─────────────────────────────────────────────
     # Add any missing columns as 0.0

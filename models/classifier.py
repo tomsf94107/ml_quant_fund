@@ -107,6 +107,9 @@ FEATURE_COLUMNS: list[str] = [
     "sector_rel_ret",
     # Calendar
     "day_of_week", "is_month_end",
+    # Regime + credit features
+    "vix_5d_above_25", "semi_etf_momentum_60d",
+    "igv_vs_sp500_ret_30d", "lqd_hyg_spread",
 ]
 
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
