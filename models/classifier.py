@@ -86,6 +86,27 @@ FEATURE_COLUMNS: list[str] = [
     # FinBERT NLP
     "finbert_sentiment", "finbert_mult",
     "oil_ret", "oil_spy_corr",          # crude oil signal
+    # Extended returns
+    "return_20d", "return_60d",
+    # Extended trend
+    "ma_50", "ma5_above_ma20", "ma20_above_ma50",
+    # 52-week range
+    "high_52w_ratio", "low_52w_ratio",
+    # Extended momentum
+    "bb_pct", "rsi_above_70", "rsi_below_30",
+    # Volume trend
+    "obv_trend",
+    # Macro
+    "vix_close", "vix_ret", "dxy_ret", "yield_10y",
+    "fear_greed", "vix_term_structure",
+    # Risk/positioning
+    "beta_60d", "short_ratio", "short_pct_float",
+    # Sentiment
+    "monday_sentiment",
+    # Relative performance
+    "sector_rel_ret",
+    # Calendar
+    "day_of_week", "is_month_end",
 ]
 
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
