@@ -285,6 +285,150 @@ def options_score_to_multiplier(flow_score: float) -> float:
         return 1.0 + (flow_score * 0.15)   # up to -15%
 
 
+# ══════════════════════════════════════════════════════════════════════════════
+#  POLYGON-BASED: TRUE 25-DELTA SKEW + IV RANK
+#  Requires Polygon Options add-on. Falls back to yfinance if 403.
+# ══════════════════════════════════════════════════════════════════════════════
+
+import os as _os
+_POLYGON_KEY = _os.getenv("POLYGON_API_KEY", "pvpkxx6PRbgfvepY33Ao_bi4iNMY1pPz")
+
+
+def get_25delta_skew(ticker: str) -> dict:
+    """
+    Compute true 25-delta put/call IV skew via Polygon Options API.
+    skew_25d = IV(25-delta put) - IV(25-delta call)
+    Positive skew = puts more expensive = bearish lean = smart money hedging.
+
+    Returns dict with:
+        skew_25d     : float (positive = bearish, negative = bullish)
+        put_iv_25d   : implied vol of 25-delta put
+        call_iv_25d  : implied vol of 25-delta call
+        iv_rank      : where current ATM IV sits vs 52-week range (0-100)
+        skew_signal  : "BEARISH" | "NEUTRAL" | "BULLISH"
+        error        : error message if failed
+    """
+    import requests as _req
+
+    result = {
+        "ticker":      ticker.upper(),
+        "skew_25d":    None,
+        "put_iv_25d":  None,
+        "call_iv_25d": None,
+        "iv_rank":     None,
+        "skew_signal": "NEUTRAL",
+        "error":       None,
+    }
+
+    try:
+        url = (
+            f"https://api.polygon.io/v3/snapshot/options/{ticker}"
+            f"?limit=250&apiKey={_POLYGON_KEY}"
+        )
+        r = _req.get(url, timeout=10)
+
+        if r.status_code == 403:
+            result["error"] = "Polygon Options add-on required for 25-delta skew"
+            return result
+        if r.status_code != 200:
+            result["error"] = f"Polygon API error: {r.status_code}"
+            return result
+
+        chain = r.json().get("results", [])
+        if not chain:
+            result["error"] = "Empty options chain"
+            return result
+
+        calls = [c for c in chain if c.get("details", {}).get("contract_type") == "call"]
+        puts  = [c for c in chain if c.get("details", {}).get("contract_type") == "put"]
+
+        def _nearest_delta(contracts, target=0.25):
+            valid = [c for c in contracts
+                     if c.get("greeks", {}).get("delta") is not None
+                     and c.get("implied_volatility") is not None]
+            if not valid:
+                return None
+            return min(valid,
+                       key=lambda x: abs(abs(x["greeks"]["delta"]) - target))
+
+        put_25  = _nearest_delta(puts,  0.25)
+        call_25 = _nearest_delta(calls, 0.25)
+
+        if put_25 and call_25:
+            put_iv  = put_25["implied_volatility"]
+            call_iv = call_25["implied_volatility"]
+            skew    = round(put_iv - call_iv, 4)
+
+            result["skew_25d"]    = skew
+            result["put_iv_25d"]  = round(put_iv, 4)
+            result["call_iv_25d"] = round(call_iv, 4)
+
+            if skew > 0.03:
+                result["skew_signal"] = "BEARISH"
+            elif skew < -0.02:
+                result["skew_signal"] = "BULLISH"
+            else:
+                result["skew_signal"] = "NEUTRAL"
+
+        # IV rank — ATM call IV vs 52-week range
+        atm_calls = sorted(calls, key=lambda x: abs(x.get("greeks", {}).get("delta", 0) - 0.5))
+        if atm_calls:
+            atm_iv = atm_calls[0].get("implied_volatility")
+            if atm_iv:
+                ivs = [c["implied_volatility"] for c in calls
+                       if c.get("implied_volatility")]
+                if len(ivs) >= 5:
+                    iv_min, iv_max = min(ivs), max(ivs)
+                    if iv_max > iv_min:
+                        result["iv_rank"] = round(
+                            (atm_iv - iv_min) / (iv_max - iv_min) * 100, 1
+                        )
+
+    except Exception as e:
+        result["error"] = str(e)
+
+    return result
+
+
+def get_enhanced_options_signal(ticker: str, current_price=None) -> dict:
+    """
+    Enhanced options signal combining:
+    1. yfinance-based flow signal (always available)
+    2. Polygon 25-delta skew + IV rank (when Polygon Options available)
+
+    Returns merged signal dict with all fields from both sources.
+    """
+    # Get base yfinance signal
+    base = get_options_signal(ticker, current_price)
+
+    # Try Polygon enhancement
+    poly = get_25delta_skew(ticker)
+
+    if poly.get("error") is None and poly.get("skew_25d") is not None:
+        # Polygon succeeded — override iv_skew with delta-adjusted version
+        base["iv_skew_25d"]   = poly["skew_25d"]
+        base["put_iv_25d"]    = poly["put_iv_25d"]
+        base["call_iv_25d"]   = poly["call_iv_25d"]
+        base["iv_rank"]       = poly["iv_rank"]
+        base["skew_25d_signal"] = poly["skew_signal"]
+
+        # Update flow score with 25-delta skew signal
+        skew_signal_map = {"BULLISH": 1, "NEUTRAL": 0, "BEARISH": -1}
+        poly_adj = skew_signal_map[poly["skew_signal"]] * 0.15
+        base["flow_score"] = round(
+            min(max(base["flow_score"] + poly_adj, -1.0), 1.0), 3
+        )
+    else:
+        base["iv_skew_25d"]     = None
+        base["put_iv_25d"]      = None
+        base["call_iv_25d"]     = None
+        base["iv_rank"]         = None
+        base["skew_25d_signal"] = "NEUTRAL"
+        base["polygon_error"]   = poly.get("error")
+
+    return base
+
+
 if __name__ == "__main__":
     import sys
     sys.path.insert(0, ".")
