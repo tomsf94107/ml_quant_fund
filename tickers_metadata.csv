@@ -1,0 +1,127 @@
+ticker,bucket,tier,thesis,notes
+AAPL,Core Silicon,core,2,Hyperscaler customer — AI inference demand
+ABNB,Consumer Tech,tactical,4,AI disruption exposure — travel booking
+ABT,Healthcare,tactical,4,Diversifier — non-AI
+ADSK,Enterprise Software,tactical,4,AI capturer — design/engineering
+AI,Enterprise Software,lotto,4,C3.ai — pure AI play high beta
+ALK,Consumer,tactical,4,Macro diversifier
+AMD,Core Silicon,core,2,GPU alternative to NVDA — custom silicon
+AMPX,Energy Storage,lotto,3,Physical AI adjacent — battery tech
+AMZN,Hyperscaler,core,1,AWS capex — AI infrastructure
+APLD,Neoclouds,lotto,4,High-beta AI infrastructure
+ARM,Core Silicon,core,2,CPU/NPU IP — every AI chip uses ARM
+ASAN,Enterprise Software,lotto,4,SaaS victim — seat count risk
+ASTS,Space Tech,lotto,3,High-beta speculative
+AXP,Financials,tactical,4,Macro diversifier
+AZN,Healthcare,tactical,4,Diversifier
+BA,Industrials,tactical,4,Macro diversifier
+BETR,Consumer,lotto,4,High beta speculative
+BRKR,Scientific Instruments,tactical,4,Semiconductor equipment adjacent
+BSX,Healthcare,tactical,4,Diversifier
+CAVA,Consumer,lotto,4,High beta speculative
+CI,Healthcare,tactical,4,Diversifier
+CNC,Healthcare,tactical,4,Diversifier
+COST,Consumer,tactical,4,Macro diversifier
+CRM,Enterprise Software,secondary,4,AI capturer — Salesforce Einstein
+CRWD,Cybersecurity,secondary,4,AI budget capturer — security
+DDOG,Enterprise Software,secondary,4,AI capturer — data/observability moat
+DNA,Biotech,lotto,3,Physical AI adjacent — synthetic biology
+DUOL,SaaS Victim,lotto,4,Seat-count vulnerability — AI language models
+ETSY,Consumer,tactical,4,SaaS victim — AI disruption
+FIVN,SaaS Victim,lotto,4,Seat-count vulnerability — contact center AI
+FSLY,Infrastructure,lotto,4,Edge compute — AI delivery
+FTNT,Cybersecurity,secondary,4,AI budget capturer — security
+GM,Automotive,tactical,3,Physical AI — autonomous vehicles
+GME,Consumer,lotto,4,High beta speculative
+GOOG,Hyperscaler,core,1,Search + GCP capex — AI infrastructure
+HUM,Healthcare,tactical,4,Diversifier
+HY,Financials,lotto,4,High beta speculative
+INSM,Biotech,lotto,4,High beta speculative
+INTC,Core Silicon,tactical,2,Restructuring — foundry bet
+IREN,Neoclouds,lotto,4,High-beta AI infrastructure
+JNJ,Healthcare,tactical,4,Diversifier
+KVUE,Consumer,tactical,4,Macro diversifier
+LLY,Healthcare,secondary,4,AI drug discovery — GLP-1 leader
+LULU,Consumer,tactical,4,Macro diversifier
+LYFT,Consumer,tactical,3,Physical AI — autonomous vehicle exposure
+META,Hyperscaler,core,1,MTIA ASIC + capex — AI infrastructure
+MP,Materials,secondary,1,Rare earth — AI hardware supply chain
+MRNA,Biotech,tactical,4,AI drug discovery adjacent
+MSFT,Hyperscaler,core,1,Azure + OpenAI — AI infrastructure
+MU,Memory,core,1,HBM — sold out through 2027
+NET,Infrastructure,secondary,4,AI capturer — networking/security moat
+NFLX,Consumer Tech,tactical,4,AI content recommendation
+NIO,Automotive,lotto,3,Physical AI — China EV
+NOK,Networking,tactical,2,Telecom infrastructure
+NVDA,Core Silicon,core,2,GPU dominance — AI training/inference
+NVMI,Semiconductor Equipment,secondary,1,Advanced packaging inspection
+NVO,Healthcare,secondary,4,GLP-1 — AI drug discovery adjacent
+OKLO,Nuclear,lotto,1,SMR — power for AI datacenters
+ONTO,Semiconductor Equipment,secondary,1,Advanced packaging inspection
+OPEN,PropTech,lotto,4,High beta speculative
+ORIC,Biotech,lotto,4,High beta speculative
+PFE,Healthcare,tactical,4,Diversifier
+PL,Space Tech,lotto,3,AI satellite imagery
+PLTR,Enterprise Software,secondary,4,AI capturer — highest multiple risk
+PUBM,Ad Tech,lotto,4,SaaS victim — AI disruption
+PYPL,Fintech,tactical,4,AI disruption exposure
+QS,Energy Storage,lotto,3,Physical AI adjacent — solid state battery
+QUBT,Quantum Computing,lotto,3,Physical AI adjacent — quantum
+QURE,Biotech,lotto,4,High beta speculative
+ROKU,Consumer Tech,lotto,4,SaaS victim — streaming AI disruption
+ROST,Consumer,tactical,4,Macro diversifier
+S,Cybersecurity,tactical,4,AI budget capturer
+SHOP,E-commerce,secondary,4,AI capturer — commerce infrastructure
+SLV,Commodities,tactical,1,Silver — AI hardware demand (conductors)
+SMCI,Server Hardware,secondary,1,AI server infrastructure
+SMMT,Biotech,lotto,4,High beta speculative
+SNOW,Enterprise Software,secondary,4,AI capturer — data/analytics moat
+TEAM,Enterprise Software,tactical,4,AI capturer — dev tools
+TGT,Consumer,tactical,4,Macro diversifier
+TJX,Consumer,tactical,4,Macro diversifier
+TPR,Consumer,tactical,4,Macro diversifier
+TSLA,Physical AI,secondary,3,Optimus + FSD — 2027 positioning
+TSM,Core Silicon,core,1,TSMC — foundry for all AI chips
+UAL,Consumer,tactical,4,Macro diversifier
+UNH,Healthcare,tactical,4,Diversifier
+USAR,Defense,lotto,3,AI defense spending
+V,Financials,tactical,4,Macro diversifier
+VKTX,Biotech,lotto,4,High beta speculative
+VZ,Telecom,tactical,2,AI networking infrastructure
+WMT,Consumer,tactical,4,Macro diversifier
+XYZ,Fintech,lotto,4,High beta speculative
+ZM,SaaS Victim,tactical,4,Seat-count vulnerability — AI meetings
+SPY,Market ETF,core,0,Benchmark — S&P 500
+QQQ,Market ETF,core,0,Benchmark — Nasdaq 100
+GLD,Commodities,tactical,0,Macro hedge — gold
+XLF,Sector ETF,tactical,0,Financials sector
+XLE,Sector ETF,tactical,0,Energy sector
+XLV,Sector ETF,tactical,0,Healthcare sector
+XLI,Sector ETF,tactical,0,Industrials sector
+XLU,Sector ETF,tactical,0,Utilities sector
+COIN,Crypto,lotto,4,High beta — crypto/AI narrative
+AVGO,Custom Silicon,core,2,Google TPU + Meta MTIA ASICs — multi-year backlog
+ANET,Networking,core,2,Scale-out ethernet — AI data center spine
+AMAT,Semi Equipment,core,1,Etch/deposition — every fab needs it
+LRCX,Semi Equipment,core,1,Etch equipment — HBM manufacturing
+VRT,Power/Cooling,core,1,Data center cooling — sold out 2026
+ETN,Power/Industrial,core,1,Power management — AI data centers
+NOW,Enterprise Software,secondary,4,AI capturer — workflow automation moat
+EQIX,DC REIT,secondary,1,Data center REIT — AI infrastructure
+DLR,DC REIT,secondary,1,Data center REIT — AI infrastructure
+WDC,Memory,secondary,1,NAND/HDD — AI storage
+STX,Memory,secondary,1,HDD — AI storage at scale
+ASML,Semi Equipment,core,1,EUV monopoly — 18-month lead times
+GEV,Power,core,1,GE Vernova — gas turbines sold out 2028
+CEG,Nuclear,core,1,Constellation Energy — nuclear power for AI
+VST,Power,secondary,1,Vistra — power generation for AI
+LIN,Industrial Gases,core,1,Linde — chip fabs need industrial gases
+MRVL,Custom Silicon,secondary,2,AWS/MSFT ASICs — custom silicon inflection
+ALAB,Networking,secondary,2,Astera Labs — PCIe/CXL AI connectivity
+CLS,Networking,secondary,2,Celestica — AI server/networking ODM
+SYM,Physical AI,lotto,3,Symbotic — warehouse robotics
+MNDY,SaaS Victim,lotto,4,Monday.com — seat-count vulnerability
+FVRR,SaaS Victim,lotto,4,Fiverr — AI freelance disruption victim
+APD,Industrial Gases,secondary,1,Air Products — chip fab gases
+EME,Infrastructure,secondary,1,EMCOR — data center electrical construction
+WCC,Infrastructure,secondary,1,Wesco — electrical distribution for data centers
