@@ -145,6 +145,7 @@ class TrainResult:
     model:      CalibratedClassifierCV      # calibrated wrapper around XGBClassifier
     feature_cols: list[str]
     metrics:    dict = field(default_factory=dict)
+    feature_importances: dict = field(default_factory=dict)
 
     # metrics keys: accuracy, roc_auc, log_loss, brier_score, n_train, n_test
 
@@ -322,6 +323,13 @@ def train_model(
 
     base_clf.fit(X_train, y_train, **fit_kwargs)
 
+    # ── Extract feature importances (gain-based) ───────────────────────────
+    try:
+        raw_imp = base_clf.get_booster().get_score(importance_type="gain")
+        feature_importances = {f: raw_imp.get(f, 0.0) for f in FEATURE_COLUMNS}
+    except Exception:
+        feature_importances = {}
+
     # ── Isotonic calibration ───────────────────────────────────────────────
     # Isotonic regression re-maps the raw sigmoid output to true probabilities.
     # cv=5 means we calibrate on the test set (already held out).
@@ -363,6 +371,7 @@ def train_model(
         model=calibrated,
         feature_cols=FEATURE_COLUMNS,
         metrics=metrics,
+        feature_importances=feature_importances,
     )
 
     if save:

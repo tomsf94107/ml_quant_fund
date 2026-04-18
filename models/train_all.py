@@ -79,6 +79,14 @@ def train_one_ticker(
         t0 = time.time()
         try:
             result = train_model(ticker, df, horizon=h, verbose=verbose)
+
+            # Save feature importances to DB
+            try:
+                from models.importance_tracker import save_feature_importance
+                save_feature_importance(ticker, h, result.feature_importances)
+            except Exception:
+                pass  # non-critical, never block training
+
             rows.append({
                 "ticker":      ticker,
                 "horizon":     h,
