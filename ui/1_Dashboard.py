@@ -80,6 +80,19 @@ import pytz as _pytz_cache
 
 _CACHE_PATH = os.path.join(_ROOT, "data", "signals_cache.json")
 
+# Load ticker metadata for bucket/tier display
+def _load_meta() -> dict:
+    try:
+        import pandas as _pm
+        _mp = os.path.join(_ROOT, "tickers_metadata.csv")
+        if os.path.exists(_mp):
+            _df = _pm.read_csv(_mp)
+            return _df.set_index("ticker").to_dict("index")
+    except Exception:
+        pass
+    return {}
+_TICKER_META = _load_meta()
+
 def _load_cache():
     try:
         if not os.path.exists(_CACHE_PATH): return None
@@ -601,6 +614,8 @@ for r in signal_summary:
         "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
         "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
         "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
+        "Bucket":       _TICKER_META.get(r.ticker, {}).get("bucket", "—"),
+        "Tier":         _TICKER_META.get(r.ticker, {}).get("tier", "—"),
     })
 
 fdf = pd.DataFrame(forecast_rows)

@@ -12,6 +12,18 @@ import altair as alt
 import streamlit as st
 from datetime import date, timedelta
 
+import os as _os
+def _load_accuracy_meta() -> dict:
+    try:
+        import pandas as _pm
+        _mp = _os.path.join(_ROOT, "tickers_metadata.csv")
+        if _os.path.exists(_mp):
+            _df = _pm.read_csv(_mp)
+            return _df.set_index("ticker").to_dict("index")
+    except Exception:
+        pass
+    return {}
+
 from accuracy.sink import (
     load_accuracy, load_prediction_history,
     reconcile_outcomes, update_accuracy_cache,
@@ -19,6 +31,7 @@ from accuracy.sink import (
 )
 
 st.set_page_config(page_title="Forecast Accuracy", page_icon="🎯", layout="wide")
+_TICKER_META = _load_accuracy_meta()
 st.title("🎯 Forecast Accuracy Dashboard")
 st.caption("Live prediction accuracy — how often the model was actually right after the fact.")
 
@@ -132,6 +145,43 @@ st.caption(
     "**ROC-AUC**: higher is better (0.5 = random, 1.0 = perfect)."
 )
 
+# ── Accuracy by Bucket ───────────────────────────────────────────────────────
+st.subheader("🪣 Accuracy by Bucket")
+if not acc_df.empty and _TICKER_META:
+    acc_df["bucket"] = acc_df["ticker"].map(lambda t: _TICKER_META.get(t, {}).get("bucket", "Unknown"))
+    acc_df["tier"]   = acc_df["ticker"].map(lambda t: _TICKER_META.get(t, {}).get("tier", "Unknown"))
+
+    bucket_acc = (
+        acc_df.groupby("bucket")
+        .agg(avg_accuracy=("accuracy","mean"), n_tickers=("ticker","count"))
+        .reset_index()
+        .sort_values("avg_accuracy", ascending=False)
+    )
+    tier_acc = (
+        acc_df.groupby("tier")
+        .agg(avg_accuracy=("accuracy","mean"), n_tickers=("ticker","count"))
+        .reset_index()
+        .sort_values("avg_accuracy", ascending=False)
+    )
+
+    col_b, col_t = st.columns(2)
+    with col_b:
+        st.caption("By Bucket")
+        st.dataframe(
+            bucket_acc.style.format({"avg_accuracy": "{:.1%}"}),
+            use_container_width=True, hide_index=True
+        )
+    with col_t:
+        st.caption("By Tier")
+        st.dataframe(
+            tier_acc.style.format({"avg_accuracy": "{:.1%}"}),
+            use_container_width=True, hide_index=True
+        )
+else:
+    st.info("Add tickers_metadata.csv to see bucket-level accuracy.")
+
+st.markdown("---")
+
 # ── Leaderboard table ─────────────────────────────────────────────────────────
 st.subheader("📋 Accuracy by Ticker")
 
@@ -142,7 +192,7 @@ def _color_accuracy(val):
     return "color: #ff1744"
 
 styled = (
-    acc_df[["ticker", "accuracy", "roc_auc", "brier_score", "n_predictions"]]
+    acc_df[["ticker", "bucket", "tier", "accuracy", "roc_auc", "brier_score", "n_predictions"]]
     .style
     .format({
         "accuracy":    "{:.1%}",

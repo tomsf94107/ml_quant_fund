@@ -31,6 +31,28 @@ from models.classifier import (
     TrainResult, predict_proba, FEATURE_COLUMNS
 )
 
+def _load_ticker_metadata() -> dict:
+    """Load tickers_metadata.csv → {ticker: {bucket, tier, thesis}}"""
+    try:
+        import pandas as _pd
+        from pathlib import Path as _Path
+        _p = _Path(__file__).parent.parent / "tickers_metadata.csv"
+        if _p.exists():
+            _df = _pd.read_csv(_p)
+            return _df.set_index("ticker").to_dict("index")
+    except Exception:
+        pass
+    return {}
+
+_TICKER_METADATA = _load_ticker_metadata()
+
+TIER_THRESHOLD_DELTA = {
+    "core":      0.00,
+    "secondary": 0.00,
+    "tactical":  0.00,
+    "lotto":    +0.05,   # lotto names need +5% more conviction to BUY
+}
+
 # ── Sentiment multiplier table ────────────────────────────────────────────────
 # Maps sentiment score [-1, +1] to a probability multiplier.
 # Strong negative news down-weights BUY signals. Strong positive amplifies them.
@@ -263,6 +285,21 @@ def generate_signals(
     except Exception:
         regime_mult = 1.0
 
+    # ── Tier-aware threshold + VIX suppression ──────────────────────────────
+    # Lotto tier needs higher conviction; suppressed in VIX > 25 regime
+    _meta     = _TICKER_METADATA.get(ticker, {})
+    _tier     = _meta.get("tier", "tactical")
+    _tier_delta = TIER_THRESHOLD_DELTA.get(_tier, 0.0)
+    confidence_threshold = confidence_threshold + _tier_delta
+
+    # VIX regime suppression — lotto suppressed above 25, both above 30
+    _vix_now = float(df["vix_close"].iloc[-1]) if "vix_close" in df.columns else 20.0
+    _suppress = False
+    if _vix_now > 30 and _tier in ("lotto",):
+        _suppress = True
+    elif _vix_now > 25 and _tier == "lotto":
+        _suppress = True
+
     # ── Live sentiment multiplier ─────────────────────────────────────────────
     # Fetches today's cached FinBERT score. Returns 0.0 if not yet run.
     # Multiplier only applied to TODAY's signal — not to backtest history
@@ -400,7 +437,7 @@ def generate_signals(
     today_gated     = bool(gate.iloc[-1])
     today_signal    = (
         "BUY"
-        if today_prob_eff > confidence_threshold and not today_gated
+        if today_prob_eff > confidence_threshold and not today_gated and not _suppress
         else "HOLD"
     )
 
