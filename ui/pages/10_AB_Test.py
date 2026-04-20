@@ -3,7 +3,7 @@
 # Compares Run A (no UW) vs Run B (UW enhanced) and sentiment pre/post
 
 import os, sys
-_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
 if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
