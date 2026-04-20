@@ -96,6 +96,17 @@ def get_regime_info() -> dict:
                 "signal_multiplier": 1.0, "vix": 20.0}
 
 
+def load_watchlist() -> list[str]:
+    """Load watchlist tickers — predictions only, excluded from accuracy scoring."""
+    p = ROOT / "tickers_watchlist.txt"
+    if not p.exists():
+        return []
+    return [
+        t.strip().upper() for t in p.read_text().splitlines()
+        if t.strip() and not t.startswith("#")
+    ]
+
+
 def log_prediction_to_db(
     ticker: str, horizon: int, signal: str,
     prob: float, prob_eff: float, run_date: str,
@@ -379,6 +390,56 @@ def run_daily(force: bool = False):
     with open(cache_path, "w") as f:
         json.dump(dashboard_cache, f, indent=2)
     log.info(f"  Dashboard cache saved → {cache_path}")
+
+    # ── Watchlist predictions (no accuracy logging) ────────────────
+    watchlist = load_watchlist()
+    if watchlist:
+        log.info(f"Watchlist: {len(watchlist)} tickers")
+        watchlist_results = []
+        for ticker in watchlist:
+            try:
+                from features.builder import build_feature_dataframe
+                from signals.generator import generate_signals
+                df = build_feature_dataframe(ticker, start_date=TRAIN_START)
+                for horizon in HORIZONS:
+                    try:
+                        sig = generate_signals(ticker, df, horizon=horizon,
+                                               confidence_threshold=BUY_THRESHOLD)
+                        watchlist_results.append({
+                            "ticker":          ticker,
+                            "horizon":         horizon,
+                            "signal":          sig.today_signal,
+                            "prob":            sig.today_prob,
+                            "prob_eff":        sig.today_prob_eff,
+                            "confidence":      "HIGH" if sig.today_prob_eff >= 0.70
+                                               else "MEDIUM" if sig.today_prob_eff >= BUY_THRESHOLD
+                                               else "LOW",
+                            "run_date":        run_date,
+                            "current_price":   sig.current_price,
+                            "price_target_up": sig.price_target_up,
+                            "price_target_dn": sig.price_target_dn,
+                            "expected_return": sig.expected_return,
+                            "atr":             sig.atr,
+                            "sharpe":          round(sig.metrics.sharpe, 3) if sig.metrics and sig.metrics.sharpe == sig.metrics.sharpe else None,
+                            "is_watchlist":    True,
+                        })
+                        log.info(f"  WATCHLIST {ticker} {horizon}d: {sig.today_signal} ({sig.today_prob_eff:.1%})")
+                    except Exception as e:
+                        log.warning(f"  WATCHLIST {ticker} {horizon}d failed: {e}")
+            except Exception as e:
+                log.warning(f"  WATCHLIST {ticker} failed: {e}")
+
+        if watchlist_results:
+            wl_cache_path = ROOT / "data" / "watchlist_cache.json"
+            wl_cache_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(wl_cache_path, "w") as f:
+                json.dump({
+                    "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
+                    "date":         run_date,
+                    "signals":      watchlist_results,
+                }, f, indent=2, default=str)
+            log.info(f"  Watchlist cache saved → {wl_cache_path}")
+
     log.info(f"{'='*60}\n")
 
     return summary
