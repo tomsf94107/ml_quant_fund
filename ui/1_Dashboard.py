@@ -745,6 +745,42 @@ html = f"""
 """
 st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
 
+# ── Watchlist Section ─────────────────────────────────────────────────────
+import json as _json
+from pathlib import Path as _Path
+_wl_cache = _Path(_ROOT) / "data" / "watchlist_cache.json"
+if _wl_cache.exists():
+    try:
+        _wl_data = _json.loads(_wl_cache.read_text())
+        _wl_sigs = [s for s in _wl_data.get("signals", []) if s.get("horizon") == 1]
+        if _wl_sigs:
+            st.markdown("---")
+            st.subheader("👀 Watchlist")
+            st.caption("Predictions only — excluded from accuracy scoring. Volatile tickers for monitoring.")
+            _wl_rows = []
+            for s in _wl_sigs:
+                _wl_rows.append({
+                    "Ticker":   s.get("ticker", ""),
+                    "Signal":   s.get("signal", ""),
+                    "Prob Eff": f"{s.get('prob_eff', 0)*100:.1f}%",
+                    "Price":    f"${s.get('current_price', 0):.2f}" if s.get("current_price") else "—",
+                    "Target ▲": f"${s.get('price_target_up', 0):.2f}" if s.get("price_target_up") else "—",
+                    "Target ▼": f"${s.get('price_target_dn', 0):.2f}" if s.get("price_target_dn") else "—",
+                    "Exp Ret":  f"{s.get('expected_return', 0)*100:+.2f}%" if s.get("expected_return") else "—",
+                })
+            _wldf = pd.DataFrame(_wl_rows)
+            def _wl_color(val):
+                if val == "BUY":  return "color: #22c55e; font-weight: bold"
+                if val == "SELL": return "color: #ef4444; font-weight: bold"
+                return "color: #94a3b8"
+            st.dataframe(
+                _wldf.style.applymap(_wl_color, subset=["Signal"]),
+                use_container_width=True, hide_index=True
+            )
+            st.caption(f"Last updated: {_wl_data.get('generated_at', '—')}")
+    except Exception as _e:
+        pass
+
 # ── Intraday Signals + Alignment Table ───────────────────────────────────
 st.subheader("⚡ Intraday Signals & EOD Alignment")
 st.caption("Compares EOD model signal with intraday 1hr/2hr/4hr momentum · tickers from your strategy run")
