@@ -10,6 +10,118 @@ import pytz
 
 ET = pytz.timezone("America/New_York")
 
+import os, sqlite3
+from pathlib import Path
+
+_DB_PATH = Path(__file__).parent.parent / "accuracy.db"
+_UW_KEY  = os.getenv("UW_API_KEY", "")
+_UW_HDRS = {"Authorization": f"Bearer {_UW_KEY}"}
+
+
+def _fetch_and_save_uw_today(ticker: str) -> dict:
+    """
+    Fetch fresh dark pool + skew for today from UW API.
+    Saves to DB overwriting today's entry.
+    Returns {"dp_ratio": float, "skew_25d": float}
+    """
+    from datetime import date as _date
+    import requests as _req
+
+    today     = str(_date.today())
+    dp_ratio  = 0.0
+    skew_25d  = 0.0
+
+    try:
+        r = _req.get(
+            f"https://api.unusualwhales.com/api/darkpool/{ticker}",
+            headers=_UW_HDRS, params={"date": today}, timeout=8
+        )
+        if r.status_code == 200:
+            trades    = r.json().get("data", [])
+            total_vol = float(trades[0].get("volume", 0)) if trades else 0
+            dp_vol    = sum(float(t.get("size", 0)) for t in trades)
+            if total_vol > 0:
+                dp_ratio = round(dp_vol / total_vol, 4)
+
+            from datetime import datetime as _dt
+            now = _dt.now().isoformat()
+            with sqlite3.connect(_DB_PATH) as conn:
+                conn.execute("""
+                    INSERT OR REPLACE INTO dark_pool_history
+                        (date, ticker, dp_ratio, dp_volume, total_volume, dp_signal, created_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                """, (today, ticker, dp_ratio, int(dp_vol), int(total_vol),
+                      "HIGH" if dp_ratio > 0.50 else "LOW" if dp_ratio < 0.25 else "NORMAL",
+                      now))
+                conn.commit()
+    except Exception:
+        pass
+
+    try:
+        import statistics as _stat
+        r2 = _req.get(
+            f"https://api.unusualwhales.com/api/stock/{ticker}/option-contracts",
+            headers=_UW_HDRS, timeout=8
+        )
+        if r2.status_code == 200:
+            chain = r2.json().get("data", [])
+
+            def _is_call(c):
+                sym = c.get("option_symbol", "")
+                for i, ch in enumerate(sym):
+                    if ch in ("C", "P") and i > 2:
+                        return ch == "C"
+                return False
+
+            calls = [c for c in chain if _is_call(c) and c.get("implied_volatility")
+                     and float(c.get("implied_volatility", 0)) > 0]
+            puts  = [c for c in chain if not _is_call(c) and c.get("implied_volatility")
+                     and float(c.get("implied_volatility", 0)) > 0]
+
+            if calls and puts:
+                calls_s  = sorted(calls, key=lambda x: int(x.get("volume", 0)), reverse=True)
+                puts_s   = sorted(puts,  key=lambda x: int(x.get("volume", 0)), reverse=True)
+                call_iv  = _stat.median([float(c["implied_volatility"]) for c in calls_s[:5]])
+                put_iv   = _stat.median([float(p["implied_volatility"]) for p in puts_s[:5]])
+                skew_25d = round(put_iv - call_iv, 4)
+
+                signal = "BEARISH" if skew_25d > 0.03 else "BULLISH" if skew_25d < -0.02 else "NEUTRAL"
+                all_ivs = [float(c["implied_volatility"]) for c in calls if c.get("implied_volatility")]
+                iv_rank = None
+                if len(all_ivs) >= 5:
+                    import statistics as _s
+                    atm_iv = _s.median(all_ivs)
+                    iv_min, iv_max = min(all_ivs), max(all_ivs)
+                    if iv_max > iv_min:
+                        iv_rank = round((atm_iv - iv_min) / (iv_max - iv_min) * 100, 1)
+
+                from datetime import datetime as _dt2
+                now2 = _dt2.now().isoformat()
+                with sqlite3.connect(_DB_PATH) as conn:
+                    conn.execute("""
+                        INSERT OR REPLACE INTO options_skew_history
+                            (date, ticker, skew_25d, put_iv_25d, call_iv_25d,
+                             iv_rank, skew_signal, created_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (today, ticker, skew_25d, round(put_iv, 4),
+                          round(call_iv, 4), iv_rank, signal, now2))
+                    conn.commit()
+    except Exception:
+        pass
+
+    return {"dp_ratio": dp_ratio, "skew_25d": skew_25d}
+
+
+def _dp_skew_to_mult(dp_ratio: float, skew_25d: float) -> float:
+    """
+    Convert dark pool ratio + skew to a combined intraday multiplier.
+    Applied to prob_eff after momentum-based probability.
+    """
+    dp_mult   = 1.05 if dp_ratio > 0.60 else 1.02 if dp_ratio > 0.40 else 0.98 if dp_ratio < 0.20 else 1.0
+    skew_mult = 0.92 if skew_25d > 0.03 else 1.05 if skew_25d < -0.02 else 1.0
+    combined  = dp_mult * skew_mult
+    return round(min(max(combined, 0.85), 1.15), 4)
+
 
 def is_market_open() -> bool:
     now = datetime.now(ET)
@@ -165,6 +277,19 @@ def get_intraday_signal(ticker: str) -> dict:
             if p <= 0.40: return "DOWN"
             return "NEUTRAL"
 
+        # Apply dark pool + skew multiplier
+        try:
+            uw = _fetch_and_save_uw_today(ticker)
+            mult = _dp_skew_to_mult(uw["dp_ratio"], uw["skew_25d"])
+            p1 = round(min(max(p1 * mult, 0.05), 0.95), 3)
+            p2 = round(min(max(p2 * mult, 0.05), 0.95), 3)
+            p4 = round(min(max(p4 * mult, 0.05), 0.95), 3)
+            result["dp_ratio"]  = uw["dp_ratio"]
+            result["skew_25d"]  = uw["skew_25d"]
+            result["uw_mult"]   = mult
+        except Exception:
+            pass
+
         result["prob_1hr"]    = p1
         result["prob_2hr"]    = p2
         result["prob_4hr"]    = p4
@@ -260,6 +385,21 @@ def get_all_intraday_signals(tickers: list) -> list:
                 if p <= 0.40: return "DOWN"
                 return "NEUTRAL"
 
+            # Apply dark pool + skew multiplier
+            dp_ratio_val = 0.0
+            skew_25d_val = 0.0
+            uw_mult_val  = 1.0
+            try:
+                uw = _fetch_and_save_uw_today(ticker)
+                uw_mult_val  = _dp_skew_to_mult(uw["dp_ratio"], uw["skew_25d"])
+                dp_ratio_val = uw["dp_ratio"]
+                skew_25d_val = uw["skew_25d"]
+                p1 = round(min(max(p1 * uw_mult_val, 0.05), 0.95), 3)
+                p2 = round(min(max(p2 * uw_mult_val, 0.05), 0.95), 3)
+                p4 = round(min(max(p4 * uw_mult_val, 0.05), 0.95), 3)
+            except Exception:
+                pass
+
             results.append({
                 "ticker":           ticker,
                 "current_price":    round(float(last["Close"]), 2),
@@ -274,6 +414,9 @@ def get_all_intraday_signals(tickers: list) -> list:
                 "signal_4hr": prob_to_signal(p4),
                 "minutes_since_open": mso,
                 "market_open": is_market_open(),
+                "dp_ratio":  dp_ratio_val,
+                "skew_25d":  skew_25d_val,
+                "uw_mult":   uw_mult_val,
                 "error": None,
             })
         except Exception as e:
