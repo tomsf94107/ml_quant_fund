@@ -212,6 +212,51 @@ def _vwap(close: pd.Series, volume: pd.Series) -> pd.Series:
 
 # ── Optional signal loaders (all return pd.Series indexed by date) ───────────
 
+def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series]:
+    """
+    Load insider trades from Unusual Whales API.
+    Falls back to SQLite if UW fails.
+    """
+    zeros = pd.Series(0.0, index=dates, name="insider_net_shares")
+    try:
+        import requests as _rq
+        uw_key = os.getenv("UW_API_KEY", "")
+        if not uw_key:
+            raise Exception("No UW key")
+        headers = {"Authorization": f"Bearer {uw_key}"}
+        url = f"https://api.unusualwhales.com/api/insider/{ticker}/ticker-flow"
+        r = _rq.get(url, headers=headers, timeout=10)
+        if r.status_code != 200:
+            raise Exception(f"UW API error: {r.status_code}")
+        trades = r.json().get("data", [])
+        if not trades:
+            raise Exception("No insider data")
+
+        rows = []
+        for t in trades:
+            try:
+                rows.append({
+                    "date":       pd.Timestamp(t["date"]).date(),
+                    "net_shares": float(t.get("quantity", 0)) *
+                                  (1 if t.get("transaction_type","").upper() == "BUY" else -1)
+                })
+            except Exception:
+                continue
+
+        if not rows:
+            raise Exception("No parseable trades")
+
+        idf = pd.DataFrame(rows).groupby("date")["net_shares"].sum()
+        idf.index = pd.to_datetime(idf.index)
+        net   = idf.reindex(dates).fillna(0.0).rename("insider_net_shares")
+        roll7 = net.rolling(7,  min_periods=1).sum().rename("insider_7d")
+        roll21= net.rolling(21, min_periods=1).sum().rename("insider_21d")
+        return net, roll7, roll21
+
+    except Exception:
+        return zeros, zeros.rename("insider_7d"), zeros.rename("insider_21d")
+
+
 def _load_insider(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series]:
     """Load insider net_shares, 7d rolling, 21d rolling from SQLite."""
     zeros = pd.Series(0.0, index=dates)
@@ -504,7 +549,7 @@ def build_feature_dataframe(
             df[col] = 0.0
 
     # ── 9. Insider flows ──────────────────────────────────────────────────────
-    ins_net, ins_7d, ins_21d = _load_insider(ticker, date_index)
+    ins_net, ins_7d, ins_21d = _load_insider_uw(ticker, date_index)
     df["insider_net_shares"] = ins_net.values
     df["insider_7d"]         = ins_7d.values
     df["insider_21d"]        = ins_21d.values

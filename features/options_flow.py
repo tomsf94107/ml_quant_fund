@@ -291,12 +291,16 @@ def options_score_to_multiplier(flow_score: float) -> float:
 # ══════════════════════════════════════════════════════════════════════════════
 
 import os as _os
-_POLYGON_KEY = _os.getenv("POLYGON_API_KEY", "pvpkxx6PRbgfvepY33Ao_bi4iNMY1pPz")
+import requests as _req
+
+_UW_KEY     = _os.getenv("UW_API_KEY", "")
+_UW_HEADERS = {"Authorization": f"Bearer {_UW_KEY}"}
+_UW_BASE    = "https://api.unusualwhales.com"
 
 
 def get_25delta_skew(ticker: str) -> dict:
     """
-    Compute true 25-delta put/call IV skew via Polygon Options API.
+    Compute true 25-delta put/call IV skew via Unusual Whales API.
     skew_25d = IV(25-delta put) - IV(25-delta call)
     Positive skew = puts more expensive = bearish lean = smart money hedging.
 
@@ -308,8 +312,6 @@ def get_25delta_skew(ticker: str) -> dict:
         skew_signal  : "BEARISH" | "NEUTRAL" | "BULLISH"
         error        : error message if failed
     """
-    import requests as _req
-
     result = {
         "ticker":      ticker.upper(),
         "skew_25d":    None,
@@ -321,42 +323,43 @@ def get_25delta_skew(ticker: str) -> dict:
     }
 
     try:
-        url = (
-            f"https://api.polygon.io/v3/snapshot/options/{ticker}"
-            f"?limit=250&apiKey={_POLYGON_KEY}"
-        )
-        r = _req.get(url, timeout=10)
+        # Get options chain snapshot from UW
+        url = f"{_UW_BASE}/api/stock/{ticker}/option-contracts"
+        r = _req.get(url, headers=_UW_HEADERS, timeout=10)
 
+        if r.status_code == 401:
+            result["error"] = "Invalid UW API key"
+            return result
         if r.status_code == 403:
-            result["error"] = "Polygon Options add-on required for 25-delta skew"
+            result["error"] = "UW API plan does not include options"
             return result
         if r.status_code != 200:
-            result["error"] = f"Polygon API error: {r.status_code}"
+            result["error"] = f"UW API error: {r.status_code}"
             return result
 
-        chain = r.json().get("results", [])
+        chain = r.json().get("data", [])
         if not chain:
             result["error"] = "Empty options chain"
             return result
 
-        calls = [c for c in chain if c.get("details", {}).get("contract_type") == "call"]
-        puts  = [c for c in chain if c.get("details", {}).get("contract_type") == "put"]
+        calls = [c for c in chain if c.get("type", "").lower() == "call"]
+        puts  = [c for c in chain if c.get("type", "").lower() == "put"]
 
         def _nearest_delta(contracts, target=0.25):
             valid = [c for c in contracts
-                     if c.get("greeks", {}).get("delta") is not None
-                     and c.get("implied_volatility") is not None]
+                     if c.get("delta") is not None
+                     and c.get("iv") is not None]
             if not valid:
                 return None
             return min(valid,
-                       key=lambda x: abs(abs(x["greeks"]["delta"]) - target))
+                       key=lambda x: abs(abs(float(x["delta"])) - target))
 
         put_25  = _nearest_delta(puts,  0.25)
         call_25 = _nearest_delta(calls, 0.25)
 
         if put_25 and call_25:
-            put_iv  = put_25["implied_volatility"]
-            call_iv = call_25["implied_volatility"]
+            put_iv  = float(put_25["iv"])
+            call_iv = float(call_25["iv"])
             skew    = round(put_iv - call_iv, 4)
 
             result["skew_25d"]    = skew
@@ -370,13 +373,13 @@ def get_25delta_skew(ticker: str) -> dict:
             else:
                 result["skew_signal"] = "NEUTRAL"
 
-        # IV rank — ATM call IV vs 52-week range
-        atm_calls = sorted(calls, key=lambda x: abs(x.get("greeks", {}).get("delta", 0) - 0.5))
+        # IV rank from ATM options
+        atm_calls = sorted(calls,
+                           key=lambda x: abs(float(x.get("delta", 0)) - 0.5))
         if atm_calls:
-            atm_iv = atm_calls[0].get("implied_volatility")
+            atm_iv = float(atm_calls[0].get("iv", 0))
             if atm_iv:
-                ivs = [c["implied_volatility"] for c in calls
-                       if c.get("implied_volatility")]
+                ivs = [float(c["iv"]) for c in calls if c.get("iv")]
                 if len(ivs) >= 5:
                     iv_min, iv_max = min(ivs), max(ivs)
                     if iv_max > iv_min:

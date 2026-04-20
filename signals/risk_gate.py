@@ -1,14 +1,17 @@
-"""
-signals/risk_gate.py
-Builds daily risk flags for the training pipeline.
-risk_today = 1 on high-impact event days (FOMC, CPI, jobs, earnings, VIX spikes)
-           = 0 on normal days
+# signals/risk_gate.py
+# Builds daily risk flags for the training pipeline.
+# Primary: Unusual Whales economic calendar API
+# Fallback: hardcoded FOMC/CPI dates + VIX spike detection
 
-Option B: real event flags — takes over from VIX proxy (Option A) going forward.
-"""
+import os
 import pandas as pd
 import numpy as np
+import requests
 
+UW_API_KEY = os.getenv("UW_API_KEY", "")
+HEADERS    = {"Authorization": f"Bearer {UW_API_KEY}"}
+
+# Fallback hardcoded dates
 FOMC_DATES = [
     "2024-01-31", "2024-03-20", "2024-05-01", "2024-06-12",
     "2024-07-31", "2024-09-18", "2024-11-07", "2024-12-18",
@@ -30,12 +33,37 @@ CPI_DATES = [
 VIX_SPIKE_PCT = 0.20
 
 
+def _get_uw_economic_calendar(start_date: str, end_date: str) -> list[str]:
+    """
+    Fetch high-impact event dates from Unusual Whales economic calendar.
+    Returns list of date strings where risk = 1.
+    Falls back to empty list if API fails.
+    """
+    try:
+        url = "https://api.unusualwhales.com/api/market/economic-calendar"
+        params = {"from": start_date, "to": end_date}
+        r = requests.get(url, headers=HEADERS, params=params, timeout=10)
+
+        if r.status_code != 200:
+            return []
+
+        events = r.json().get("data", [])
+        # Flag HIGH impact events only
+        high_impact_dates = [
+            e["date"][:10] for e in events
+            if e.get("impact", "").upper() in ("HIGH", "CRITICAL")
+        ]
+        return high_impact_dates
+
+    except Exception:
+        return []
+
+
 def build_risk_features(start_date, end_date) -> pd.DataFrame:
     """
     Build daily risk flags between start_date and end_date.
-    Returns DataFrame with columns:
-        risk_today, risk_next_1d, risk_next_3d, risk_prev_1d
-    Indexed by business day dates.
+    Uses UW economic calendar as primary source.
+    Falls back to hardcoded FOMC/CPI + VIX spike detection.
     """
     import yfinance as yf
 
@@ -44,16 +72,21 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
     df.index = pd.to_datetime(df.index)
     df["risk_today"] = 0.0
 
-    for d in FOMC_DATES:
-        ts = pd.Timestamp(d)
-        if ts in df.index:
-            df.loc[ts, "risk_today"] = 1.0
+    # Primary: UW economic calendar
+    uw_dates = _get_uw_economic_calendar(str(start_date), str(end_date))
+    if uw_dates:
+        for d in uw_dates:
+            ts = pd.Timestamp(d)
+            if ts in df.index:
+                df.loc[ts, "risk_today"] = 1.0
+    else:
+        # Fallback: hardcoded FOMC + CPI dates
+        for d in FOMC_DATES + CPI_DATES:
+            ts = pd.Timestamp(d)
+            if ts in df.index:
+                df.loc[ts, "risk_today"] = 1.0
 
-    for d in CPI_DATES:
-        ts = pd.Timestamp(d)
-        if ts in df.index:
-            df.loc[ts, "risk_today"] = 1.0
-
+    # Always add VIX spike days
     try:
         vix = yf.download("^VIX", start=str(start_date), end=str(end_date),
                           progress=False, auto_adjust=True)
@@ -61,7 +94,7 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
             if hasattr(vix.columns, 'get_level_values'):
                 vix.columns = vix.columns.get_level_values(0)
             vix_close = vix["Close"].squeeze()
-            vix_ret = vix_close.pct_change().abs()
+            vix_ret   = vix_close.pct_change().abs()
             for d in vix_ret[vix_ret > VIX_SPIKE_PCT].index:
                 if d in df.index:
                     df.loc[d, "risk_today"] = 1.0
