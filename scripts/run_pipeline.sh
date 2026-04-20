@@ -24,6 +24,10 @@ echo "--- Step 4 DONE $(date) ---" >> $LOG/pipeline.log
 
 echo "=== PIPELINE DONE $(date) ===" >> $LOG/pipeline.log
 
+# Save UW snapshot (dark pool + options skew)
+$PYTHON scripts/daily_uw_snapshot.py >> $LOG/uw_snapshot.log 2>&1
+echo "UW snapshot saved" >> $LOG/pipeline.log
+
 # Save pre-sentiment snapshot for A/B test
 cp $ROOT/data/signals_cache.json $ROOT/data/ab_cache_A.json
 echo "Saved A/B snapshot A (pre-sentiment)" >> $LOG/pipeline.log
