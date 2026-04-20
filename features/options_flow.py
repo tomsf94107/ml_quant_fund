@@ -342,50 +342,53 @@ def get_25delta_skew(ticker: str) -> dict:
             result["error"] = "Empty options chain"
             return result
 
-        calls = [c for c in chain if c.get("type", "").lower() == "call"]
-        puts  = [c for c in chain if c.get("type", "").lower() == "put"]
+        # Parse call/put from option symbol (e.g. AAPL260417C00270000)
+        def _is_call(c):
+            sym = c.get("option_symbol", "")
+            return "C" in sym[10:] if len(sym) > 10 else False
 
-        def _nearest_delta(contracts, target=0.25):
-            valid = [c for c in contracts
-                     if c.get("delta") is not None
-                     and c.get("iv") is not None]
-            if not valid:
-                return None
-            return min(valid,
-                       key=lambda x: abs(abs(float(x["delta"])) - target))
+        calls = [c for c in chain if _is_call(c) and c.get("implied_volatility")]
+        puts  = [c for c in chain if not _is_call(c) and c.get("implied_volatility")]
 
-        put_25  = _nearest_delta(puts,  0.25)
-        call_25 = _nearest_delta(calls, 0.25)
+        if not calls or not puts:
+            result["error"] = "No calls or puts with IV data"
+            return result
 
-        if put_25 and call_25:
-            put_iv  = float(put_25["iv"])
-            call_iv = float(call_25["iv"])
-            skew    = round(put_iv - call_iv, 4)
+        # Sort by volume to find most active strikes (proxy for ~25 delta)
+        # Most active OTM options tend to cluster around 25 delta
+        calls_sorted = sorted(calls, key=lambda x: int(x.get("volume", 0)), reverse=True)
+        puts_sorted  = sorted(puts,  key=lambda x: int(x.get("volume", 0)), reverse=True)
 
-            result["skew_25d"]    = skew
-            result["put_iv_25d"]  = round(put_iv, 4)
-            result["call_iv_25d"] = round(call_iv, 4)
+        # Use top 5 most active and take median IV
+        import statistics
+        top_call_ivs = [float(c["implied_volatility"]) for c in calls_sorted[:5]]
+        top_put_ivs  = [float(p["implied_volatility"]) for p in puts_sorted[:5]]
 
-            if skew > 0.03:
-                result["skew_signal"] = "BEARISH"
-            elif skew < -0.02:
-                result["skew_signal"] = "BULLISH"
-            else:
-                result["skew_signal"] = "NEUTRAL"
+        call_iv = statistics.median(top_call_ivs)
+        put_iv  = statistics.median(top_put_ivs)
+        skew    = round(put_iv - call_iv, 4)
 
-        # IV rank from ATM options
-        atm_calls = sorted(calls,
-                           key=lambda x: abs(float(x.get("delta", 0)) - 0.5))
-        if atm_calls:
-            atm_iv = float(atm_calls[0].get("iv", 0))
-            if atm_iv:
-                ivs = [float(c["iv"]) for c in calls if c.get("iv")]
-                if len(ivs) >= 5:
-                    iv_min, iv_max = min(ivs), max(ivs)
-                    if iv_max > iv_min:
-                        result["iv_rank"] = round(
-                            (atm_iv - iv_min) / (iv_max - iv_min) * 100, 1
-                        )
+        result["skew_25d"]    = skew
+        result["put_iv_25d"]  = round(put_iv, 4)
+        result["call_iv_25d"] = round(call_iv, 4)
+
+        if skew > 0.03:
+            result["skew_signal"] = "BEARISH"
+        elif skew < -0.02:
+            result["skew_signal"] = "BULLISH"
+        else:
+            result["skew_signal"] = "NEUTRAL"
+
+        # IV rank — ATM call IV vs all calls
+        all_ivs = [float(c["implied_volatility"]) for c in calls if c.get("implied_volatility")]
+        if len(all_ivs) >= 5:
+            atm_iv  = statistics.median(all_ivs)
+            iv_min  = min(all_ivs)
+            iv_max  = max(all_ivs)
+            if iv_max > iv_min:
+                result["iv_rank"] = round(
+                    (atm_iv - iv_min) / (iv_max - iv_min) * 100, 1
+                )
 
     except Exception as e:
         result["error"] = str(e)

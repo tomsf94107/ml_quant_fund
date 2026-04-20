@@ -63,9 +63,10 @@ def get_dark_pool_ratio(
             result["error"] = "No dark pool trades returned"
             return result
 
-        total_vol = sum(float(t.get("size", 0)) for t in trades)
-        dp_vol    = sum(float(t.get("size", 0)) for t in trades
-                        if t.get("venue", "").upper() in ("FINRA", "OTC", "DARK"))
+        # All trades returned are already dark pool trades
+        # volume field = total market volume for the day
+        dp_vol    = sum(float(t.get("size", 0)) for t in trades)
+        total_vol = float(trades[0].get("volume", 0)) if trades else 0
 
         if total_vol == 0:
             result["error"] = "Zero total volume"
