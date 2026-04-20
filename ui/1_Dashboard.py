@@ -640,7 +640,10 @@ html = f"""
   *{{box-sizing:border-box;margin:0;padding:0;}}
   .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
   .ft-head{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
-  .ft-head span{{text-align:right;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
+  .ft-head span{{text-align:right;cursor:pointer;user-select:none;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
+  .ft-head span:hover{{color:#94a3b8;}}
+  .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
+  .ft-head span.sort-desc::after{{content:" ▼";font-size:8px;}}
   .ft-row{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
   .ft-row:hover{{background:#13131f;}}
   .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
@@ -674,9 +677,22 @@ html = f"""
   <span style="color:#3b82f6">Bar = prob vs threshold</span>
 </div>
 <script>
-  const data = {signals_json};
+  let data = {signals_json};
+  let sortCol = null;
+  let sortDir = 1;
   const tbody = document.getElementById('tbody');
-  data.forEach(r => {{
+  const headers = document.querySelectorAll('.ft-head span');
+  const colKeys = ['Ticker','Signal','Price','Prob Eff','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
+
+  function parseVal(v) {{
+    if (!v || v === '—') return -Infinity;
+    const n = parseFloat(String(v).replace(/[%$+]/g,''));
+    return isNaN(n) ? String(v) : n;
+  }}
+
+  function renderRows() {{
+    tbody.innerHTML = '';
+    data.forEach(r => {{
     const prob = parseFloat(r['Prob Eff']);
     const exp  = parseFloat(r['Exp Return']);
     const sh   = parseFloat(r['Sharpe']);
@@ -704,7 +720,27 @@ html = f"""
       <span style="color:${{sc}};font-weight:500">${{r.Sharpe}}</span>
     `;
     tbody.appendChild(row);
+    }});
+  }}
+
+  headers.forEach((h, i) => {{
+    h.style.cursor = 'pointer';
+    h.addEventListener('click', () => {{
+      headers.forEach(x => x.classList.remove('sort-asc','sort-desc'));
+      if (sortCol === i) {{ sortDir *= -1; }} else {{ sortCol = i; sortDir = 1; }}
+      h.classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
+      data.sort((a, b) => {{
+        const va = parseVal(a[colKeys[i]]);
+        const vb = parseVal(b[colKeys[i]]);
+        if (va < vb) return -1 * sortDir;
+        if (va > vb) return 1 * sortDir;
+        return 0;
+      }});
+      renderRows();
+    }});
   }});
+
+  renderRows();
 </script>
 """
 st.components.v1.html(html, height=min(80 + len(forecast_rows) * 44, 800), scrolling=True)
