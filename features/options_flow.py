@@ -345,7 +345,13 @@ def get_25delta_skew(ticker: str) -> dict:
         # Parse call/put from option symbol (e.g. AAPL260417C00270000)
         def _is_call(c):
             sym = c.get("option_symbol", "")
-            return "C" in sym[10:] if len(sym) > 10 else False
+            # Format: {TICKER}{YYMMDD}{C/P}{STRIKE}
+            # C/P is always after the 6-digit date — find it by scanning for C or P
+            # after position 6 from the end of the strike price section
+            for i, ch in enumerate(sym):
+                if ch in ("C", "P") and i > 2:
+                    return ch == "C"
+            return False
 
         calls = [c for c in chain if _is_call(c) and c.get("implied_volatility")]
         puts  = [c for c in chain if not _is_call(c) and c.get("implied_volatility")]
