@@ -64,7 +64,7 @@ def _get_conn() -> Iterator:
                 "Run: pip install psycopg2-binary"
             )
     else:
-        conn = sqlite3.connect(SQLITE_PATH)
+        conn = sqlite3.connect(SQLITE_PATH, timeout=30)
 
     try:
         yield conn
@@ -701,7 +701,7 @@ def reconcile_intraday_outcomes():
     from datetime import datetime, timedelta
     from utils.timezone import now_et, ET
     now = now_et()
-    db  = sqlite3.connect("accuracy.db")
+    db  = sqlite3.connect("accuracy.db", timeout=30)
 
     # Get unreconciled predictions
     rows = db.execute("""
@@ -794,7 +794,7 @@ def reconcile_intraday_outcomes():
 def get_intraday_accuracy_summary() -> list[dict]:
     """Return accuracy summary for display in dashboard."""
     import sqlite3
-    db  = sqlite3.connect("accuracy.db")
+    db  = sqlite3.connect("accuracy.db", timeout=30)
     rows = db.execute("""
         SELECT ticker, horizon_hr, accuracy, n_predictions, computed_at
         FROM intraday_accuracy_cache
@@ -808,7 +808,7 @@ def get_intraday_accuracy_summary() -> list[dict]:
 def get_eod_accuracy_summary() -> list[dict]:
     """Score all predictions: prob_up>0.5 = predicting UP."""
     import sqlite3
-    db = sqlite3.connect("accuracy.db")
+    db = sqlite3.connect("accuracy.db", timeout=30)
     rows = db.execute("""
         SELECT p.ticker,
                COUNT(*) as n,
@@ -837,7 +837,7 @@ def get_spy_relative_accuracy() -> list[dict]:
     import pandas as pd
     from utils.timezone import today_et
 
-    db = sqlite3.connect("accuracy.db")
+    db = sqlite3.connect("accuracy.db", timeout=30)
     rows = db.execute("""
         SELECT p.ticker, p.prediction_date, p.signal, p.prob_up,
                o.actual_return, o.actual_up
