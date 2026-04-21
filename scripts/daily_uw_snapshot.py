@@ -70,6 +70,12 @@ def load_tickers() -> list[str]:
         t.strip() for t in tickers_file.read_text().splitlines()
         if t.strip() and not t.startswith("#")
     ]
+    # Add watchlist tickers
+    wl_file = ROOT / "tickers_watchlist.txt"
+    if wl_file.exists():
+        wl = [t.strip().upper() for t in wl_file.read_text().splitlines()
+              if t.strip() and not t.startswith("#")]
+        tickers = list(dict.fromkeys(tickers + wl))
     # Skip ETFs for options skew (no options data)
     return tickers
 
