@@ -318,8 +318,8 @@ def generate_signals(
     _ETFS = {"SLV", "GLD", "SPY", "QQQ", "TLT", "IWM", "XLF", "XLE", "VIX"}
     _is_etf = ticker.upper() in _ETFS
 
-    # ── Options flow multiplier ───────────────────────────────────────────────
-    # Unusual call activity boosts probability; unusual put activity cuts it.
+    # ── UW signals multiplier ────────────────────────────────────────────────
+    # Combines: options flow alerts + market tide + OI change + institutional
     # Only applied to today's signal (live), not backtest history.
     options_mult = 1.0
     try:
@@ -327,12 +327,11 @@ def generate_signals(
         import signal as _sig
         def _timeout(s,f): raise TimeoutError()
         _sig.signal(_sig.SIGALRM, _timeout)
-        _sig.alarm(5)
+        _sig.alarm(15)
         try:
-            from features.options_flow import get_options_signal, options_score_to_multiplier
-            opts = get_options_signal(ticker)
-            if not opts.get("error") and opts.get("flow_score") is not None:
-                options_mult = options_score_to_multiplier(opts["flow_score"])
+            from features.uw_signals import get_combined_uw_multiplier
+            uw = get_combined_uw_multiplier(ticker)
+            options_mult = uw["combined"]
         finally:
             _sig.alarm(0)
     except Exception:
