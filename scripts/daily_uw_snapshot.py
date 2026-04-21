@@ -59,6 +59,22 @@ def init_tables():
         conn.execute("CREATE INDEX IF NOT EXISTS idx_dp_ticker ON dark_pool_history(ticker)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_skew_date ON options_skew_history(date)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_skew_ticker ON options_skew_history(ticker)")
+
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS institutional_history (
+                id           INTEGER PRIMARY KEY AUTOINCREMENT,
+                date         TEXT NOT NULL,
+                ticker       TEXT NOT NULL,
+                inst_score   REAL,
+                units_changed INTEGER,
+                inst_signal  TEXT NOT NULL,
+                filing_date  TEXT,
+                created_at   TEXT NOT NULL,
+                UNIQUE(date, ticker)
+            )
+        """)
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_inst_date ON institutional_history(date)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_inst_ticker ON institutional_history(ticker)")
         conn.commit()
 
     print("Tables ready")
@@ -150,6 +166,25 @@ def run_snapshot(snapshot_date: str = None):
             else:
                 print(f"skew=ETF")
 
+            # Institutional ownership (quarterly — cache weekly)
+            try:
+                from features.uw_signals import get_institutional_score
+                inst = get_institutional_score(ticker)
+                if inst.get("error") is None and inst.get("inst_score") is not None:
+                    conn.execute("""
+                        INSERT OR REPLACE INTO institutional_history
+                            (date, ticker, inst_score, units_changed, inst_signal, filing_date, created_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
+                    """, (snapshot_date, ticker, inst["inst_score"],
+                          inst["units_changed"], inst["inst_signal"],
+                          inst["filing_date"], now))
+                    print(f"inst={inst['inst_signal']}", end=" ")
+                else:
+                    print(f"inst=err", end=" ")
+            except Exception:
+                print(f"inst=err", end=" ")
+            print()
+
             # Rate limit — 120 req/min = 0.5s per ticker
             time.sleep(0.5)
 
@@ -158,6 +193,7 @@ def run_snapshot(snapshot_date: str = None):
     print(f"\n{'='*60}")
     print(f"  Dark pool:  {dp_ok} ok  {dp_fail} failed")
     print(f"  Skew:       {skew_ok} ok  {skew_fail} failed")
+    print(f"  Institutional: saved to DB")
     print(f"{'='*60}\n")
 
 
