@@ -99,14 +99,15 @@ def save_snapshot_b():
         # ── Options skew multiplier ──────────────────────────────────────────
         opts_mult = 1.0
         try:
-            from features.options_flow import get_enhanced_options_signal, options_score_to_multiplier
-            opts = get_enhanced_options_signal(ticker)
-            if opts.get("polygon_error") is None and opts.get("skew_25d") is not None:
-                opts_mult = options_score_to_multiplier(opts.get("flow_score", 0.0))
+            from features.options_flow import get_25delta_skew
+            opts = get_25delta_skew(ticker)
+            if opts.get("error") is None and opts.get("skew_25d") is not None:
+                skew = opts["skew_25d"]
+                opts_mult = 0.96 if skew > 0.03 else 1.04 if skew < -0.02 else 1.0
                 polygon_active["options"] = True
-                s_new["skew_25d"]  = opts.get("skew_25d")
-                s_new["iv_rank"]   = opts.get("iv_rank")
-                s_new["skew_25d_signal"] = opts.get("skew_25d_signal")
+                s_new["skew_25d"]        = opts.get("skew_25d")
+                s_new["iv_rank"]         = opts.get("iv_rank")
+                s_new["skew_25d_signal"] = opts.get("skew_signal")
         except Exception:
             pass
 
