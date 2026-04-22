@@ -75,6 +75,24 @@ def init_tables():
         """)
         conn.execute("CREATE INDEX IF NOT EXISTS idx_inst_date ON institutional_history(date)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_inst_ticker ON institutional_history(ticker)")
+
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS earnings_cache (
+                id              INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker          TEXT NOT NULL,
+                report_date     TEXT NOT NULL,
+                report_time     TEXT,
+                expected_move   REAL,
+                pre_drift_3d    REAL,
+                post_drift_3d   REAL,
+                actual_eps      REAL,
+                est_eps         REAL,
+                updated_at      TEXT NOT NULL,
+                UNIQUE(ticker, report_date)
+            )
+        """)
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_earn_ticker ON earnings_cache(ticker)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_earn_date ON earnings_cache(report_date)")
         conn.commit()
 
     print("Tables ready")
@@ -194,6 +212,52 @@ def run_snapshot(snapshot_date: str = None):
     print(f"  Dark pool:  {dp_ok} ok  {dp_fail} failed")
     print(f"  Skew:       {skew_ok} ok  {skew_fail} failed")
     print(f"  Institutional: saved to DB")
+
+    # ── Earnings cache ────────────────────────────────────────────────────
+    print("  Fetching earnings calendar from UW...")
+    uw_key  = os.getenv("UW_API_KEY", "")
+    uw_hdrs = {"Authorization": f"Bearer {uw_key}"}
+    earn_ok = earn_fail = 0
+
+    with sqlite3.connect(DB_PATH) as conn:
+        for ticker in tickers:
+            try:
+                r = requests.get(
+                    f"https://api.unusualwhales.com/api/earnings/{ticker}",
+                    headers=uw_hdrs, timeout=8
+                )
+                if r.status_code != 200:
+                    earn_fail += 1
+                    time.sleep(0.3)
+                    continue
+                data = r.json().get("data", [])
+                for e in data:
+                    rd = e.get("report_date", "")
+                    if not rd:
+                        continue
+                    exp_move  = float(e.get("expected_move_perc", 0) or 0)
+                    pre_drift = float(e.get("pre_earnings_move_3d", 0) or 0) if e.get("pre_earnings_move_3d") else None
+                    post_drift= float(e.get("post_earnings_move_3d", 0) or 0) if e.get("post_earnings_move_3d") else None
+                    try:
+                        actual_eps = float(e.get("actual_eps") or 0) if e.get("actual_eps") else None
+                        est_eps    = float(e.get("street_mean_est") or 0) if e.get("street_mean_est") else None
+                    except Exception:
+                        actual_eps = est_eps = None
+                    conn.execute("""
+                        INSERT OR REPLACE INTO earnings_cache
+                            (ticker, report_date, report_time, expected_move,
+                             pre_drift_3d, post_drift_3d, actual_eps, est_eps, updated_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (ticker, rd, e.get("report_time",""), exp_move,
+                          pre_drift, post_drift, actual_eps, est_eps, now))
+                earn_ok += 1
+                time.sleep(0.3)
+            except Exception:
+                earn_fail += 1
+                time.sleep(0.3)
+        conn.commit()
+
+    print(f"  Earnings:   {earn_ok} ok  {earn_fail} failed")
     print(f"{'='*60}\n")
 
 
