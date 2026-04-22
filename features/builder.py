@@ -89,6 +89,7 @@ OUTPUT_COLUMNS = [
     "eps_surprise", "rev_surprise",
     "days_to_earnings",
     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
+    "expected_move_perc", "pre_earnings_drift", "post_earnings_drift", "is_earnings_week",
     # ── NEW v2 features ──────────────────────────────────────────────────────
     "return_20d", "return_60d",          # medium-term momentum
     "ma_50",                             # 50-day MA
@@ -538,14 +539,21 @@ def build_feature_dataframe(
 
     # ── 8. Earnings surprise features ────────────────────────────────────────
     try:
-        from data.etl_earnings import load_earnings_features
+        from data.etl_earnings import load_earnings_features, load_uw_earnings_features
         earn = load_earnings_features(ticker, date_index)
         for col in ["eps_surprise", "rev_surprise", "days_to_earnings",
                     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d"]:
             df[col] = earn[col].values if col in earn.columns else 0.0
+        # UW earnings — richer features
+        uw_earn = load_uw_earnings_features(ticker, date_index)
+        for col in ["expected_move_perc", "pre_earnings_drift",
+                    "post_earnings_drift", "is_earnings_week"]:
+            df[col] = uw_earn[col].values if col in uw_earn.columns else 0.0
     except Exception:
         for col in ["eps_surprise", "rev_surprise", "days_to_earnings",
-                    "post_earnings_1d", "post_earnings_3d", "post_earnings_5d"]:
+                    "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
+                    "expected_move_perc", "pre_earnings_drift",
+                    "post_earnings_drift", "is_earnings_week"]:
             df[col] = 0.0
 
     # ── 9. Insider flows ──────────────────────────────────────────────────────

@@ -360,3 +360,91 @@ if __name__ == "__main__":
     results = run_earnings_etl(tickers)
     total = sum(results.values())
     print(f"\nDone. {total} total earnings records cached.")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  UW EARNINGS FEATURES — richer than yfinance
+# ══════════════════════════════════════════════════════════════════════════════
+
+def load_uw_earnings_features(
+    ticker:     str,
+    date_index: pd.Index,
+) -> pd.DataFrame:
+    """
+    Load earnings features from Unusual Whales API.
+    Adds 3 features not available in yfinance:
+      - expected_move_perc  : options-implied expected move % for next earnings
+      - pre_earnings_drift  : avg pre-earnings move 3d (historical)
+      - post_earnings_drift : avg post-earnings move 3d (historical)
+
+    Falls back to zeros if UW unavailable.
+    """
+    import os, requests
+
+    default = pd.DataFrame({
+        "expected_move_perc":  0.0,
+        "pre_earnings_drift":  0.0,
+        "post_earnings_drift": 0.0,
+        "is_earnings_week":    0.0,
+    }, index=date_index)
+
+    try:
+        key     = os.getenv("UW_API_KEY", "")
+        if not key:
+            return default
+
+        headers = {"Authorization": f"Bearer {key}"}
+        r = requests.get(
+            f"https://api.unusualwhales.com/api/earnings/{ticker}",
+            headers=headers, timeout=10
+        )
+        if r.status_code != 200:
+            return default
+
+        data = r.json().get("data", [])
+        if not data:
+            return default
+
+        # Get next earnings date and expected move
+        today = pd.Timestamp.today().normalize()
+        future = [d for d in data if pd.Timestamp(d["report_date"]) >= today]
+        next_report = future[0] if future else None
+
+        # Historical pre/post earnings moves
+        historical = [d for d in data
+                      if d.get("pre_earnings_move_3d") is not None
+                      and d.get("post_earnings_move_3d") is not None]
+
+        avg_pre  = 0.0
+        avg_post = 0.0
+        if historical:
+            avg_pre  = float(sum(float(d["pre_earnings_move_3d"])  for d in historical[-8:]) / len(historical[-8:]))
+            avg_post = float(sum(float(d["post_earnings_move_3d"]) for d in historical[-8:]) / len(historical[-8:]))
+
+        result = pd.DataFrame(index=date_index)
+        result["pre_earnings_drift"]  = avg_pre
+        result["post_earnings_drift"] = avg_post
+
+        # Expected move for upcoming earnings
+        if next_report:
+            exp_move = float(next_report.get("expected_move_perc", 0) or 0)
+            next_ts  = pd.Timestamp(next_report["report_date"])
+            # Apply expected move only in the 10 days before earnings
+            result["expected_move_perc"] = 0.0
+            dates = pd.to_datetime(date_index)
+            mask  = (dates >= next_ts - pd.Timedelta(days=10)) & (dates <= next_ts)
+            result.loc[mask, "expected_move_perc"] = exp_move
+
+            # is_earnings_week — within 5 days of next earnings
+            result["is_earnings_week"] = 0.0
+            mask2 = (dates >= next_ts - pd.Timedelta(days=5)) & (dates <= next_ts + pd.Timedelta(days=2))
+            result.loc[mask2, "is_earnings_week"] = 1.0
+        else:
+            result["expected_move_perc"] = 0.0
+            result["is_earnings_week"]   = 0.0
+
+        result.index = date_index
+        return result
+
+    except Exception as e:
+        return default
