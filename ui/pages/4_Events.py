@@ -1,368 +1,440 @@
-# ui/4_Events.py
-# Market Events Calendar — forward-looking risk calendar.
-# Mostly preserved from 7_Market_Events_Calendar_v1_1.py.
-# Changes: removed set_page_config conflict, cleaned imports, kept all good logic.
+# ui/pages/4_Events.py
+# Market Events Calendar — upgraded to use Unusual Whales for all data.
+# Sources:
+#   - Economic calendar: UW /api/market/economic-calendar
+#   - Earnings: UW /api/earnings/{ticker} (filtered to your 126 tickers)
+#   - FDA calendar: UW /api/market/fda-calendar (biotech tickers)
+#   - Risk score: passed to Dashboard signal gate via session state
 
 import os, sys
-_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, os.pardir))
 if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
+import json
+import sqlite3
 from datetime import date, datetime, timedelta
-from typing import Dict, List, Optional
+from pathlib import Path
+from typing import Optional
 
 import altair as alt
 import pandas as pd
 import requests
 import streamlit as st
 
-try:
-    import plotly.express as px
-    HAS_PLOTLY = True
-except ImportError:
-    HAS_PLOTLY = False
-
 st.set_page_config(
     page_title="Market Events Calendar",
-    page_icon="🗓️",
+    page_icon="📅",
     layout="wide",
 )
 
-st.title("🗓️ Market Events Calendar")
-st.caption(
-    "Forward-looking calendar of market-moving events. "
-    "Feeds risk score into the Dashboard's signal gate."
-)
+st.title("📅 Market Events Calendar")
+st.caption("Forward-looking calendar — earnings, economic events, FDA calendar. Feeds risk gate into Dashboard.")
 
-# ── Constants ─────────────────────────────────────────────────────────────────
-CATEGORIES = [
-    "Fed/Rate", "Economic", "Earnings",
-    "IPO/Lockup", "OPEC/Energy", "Geopolitics",
-    "Options/Holiday", "Company-Specific",
-]
-IMPACT_LEVELS = ["Low", "Medium", "High"]
-Event = Dict[str, object]
+UW_KEY   = os.getenv("UW_API_KEY", "")
+HDRS     = {"Authorization": f"Bearer {UW_KEY}"}
+BASE_URL = "https://api.unusualwhales.com"
+DB_PATH  = Path(_ROOT) / "accuracy.db"
 
-# ── Secret helper ─────────────────────────────────────────────────────────────
-def _get_secret(*keys: str) -> Optional[str]:
+BIOTECH_TICKERS = {"ORIC", "VKTX", "QURE", "INSM", "MRNA", "BRKR"}
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+def _load_tickers() -> list[str]:
+    p = Path(_ROOT) / "tickers.txt"
+    tickers = [t.strip().upper() for t in p.read_text().splitlines()
+               if t.strip() and not t.startswith("#")] if p.exists() else []
+    wl = Path(_ROOT) / "tickers_watchlist.txt"
+    if wl.exists():
+        tickers += [t.strip().upper() for t in wl.read_text().splitlines()
+                    if t.strip() and not t.startswith("#")]
+    return list(dict.fromkeys(tickers))
+
+
+def _load_meta() -> dict:
     try:
-        cur = st.secrets
-        for k in keys:
-            cur = cur[k]
-        return cur if isinstance(cur, str) else None
+        mp = Path(_ROOT) / "tickers_metadata.csv"
+        if mp.exists():
+            df = pd.read_csv(mp)
+            return df.set_index("ticker").to_dict("index")
     except Exception:
-        if len(keys) == 1:
-            return st.secrets.get(keys[0])
-    return None
+        pass
+    return {}
 
-# ── Live data fetchers ────────────────────────────────────────────────────────
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_economic_fmp(start: date, end: date, api_key: str) -> pd.DataFrame:
-    url = "https://financialmodelingprep.com/api/v3/economic_calendar"
+
+_META    = _load_meta()
+_TICKERS = _load_tickers()
+
+
+# ── UW Data fetchers ──────────────────────────────────────────────────────────
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_uw_economic_calendar(start: str, end: str) -> pd.DataFrame:
     try:
-        r = requests.get(url, params={
-            "from": start.isoformat(), "to": end.isoformat(), "apikey": api_key
-        }, timeout=15)
-        r.raise_for_status()
-        data = r.json() or []
-    except Exception as e:
-        st.warning(f"FMP error: {e}")
+        r = requests.get(f"{BASE_URL}/api/market/economic-calendar",
+                         headers=HDRS,
+                         params={"from": start, "to": end},
+                         timeout=10)
+        if r.status_code != 200:
+            return pd.DataFrame()
+        data = r.json().get("data", [])
+        rows = []
+        for e in data:
+            impact = e.get("impact", "Low")
+            rows.append({
+                "title":    e.get("name", e.get("event", "Economic Event")),
+                "category": "Economic",
+                "date":     e.get("date", "")[:10],
+                "time":     e.get("time", ""),
+                "impact":   "High" if impact in ("HIGH", "CRITICAL") else
+                            "Medium" if impact == "MEDIUM" else "Low",
+                "source":   "UW",
+                "tickers":  "SPY, QQQ, TLT",
+                "notes":    f"country={e.get('country','')} forecast={e.get('forecast','')} prev={e.get('previous','')}",
+            })
+        return pd.DataFrame(rows)
+    except Exception:
         return pd.DataFrame()
 
-    rows = []
-    for it in data:
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_uw_earnings_all(tickers: tuple, days_forward: int = 60) -> pd.DataFrame:
+    """Fetch earnings for all tickers from UW. Cached 1 hour."""
+    today     = date.today()
+    cutoff    = today + timedelta(days=days_forward)
+    rows      = []
+
+    for ticker in tickers:
         try:
-            when = datetime.fromisoformat(it["date"].replace("Z", "+00:00"))
+            r = requests.get(f"{BASE_URL}/api/earnings/{ticker}",
+                             headers=HDRS, timeout=8)
+            if r.status_code != 200:
+                continue
+            data = r.json().get("data", [])
+            for e in data:
+                rd = e.get("report_date", "")
+                if not rd:
+                    continue
+                try:
+                    rd_date = date.fromisoformat(rd)
+                except Exception:
+                    continue
+                if not (today <= rd_date <= cutoff):
+                    continue
+
+                exp_move   = float(e.get("expected_move_perc", 0) or 0)
+                pre_drift  = float(e.get("pre_earnings_move_3d", 0) or 0) if e.get("pre_earnings_move_3d") else None
+                post_drift = float(e.get("post_earnings_move_3d", 0) or 0) if e.get("post_earnings_move_3d") else None
+                actual_eps = e.get("actual_eps")
+                est_eps    = e.get("street_mean_est")
+                days_away  = (rd_date - today).days
+
+                bucket = _META.get(ticker, {}).get("bucket", "—")
+                tier   = _META.get(ticker, {}).get("tier", "—")
+
+                # BUY suppression flag
+                suppress = False
+                suppress_reason = ""
+                if days_away <= 2 and post_drift is not None and post_drift < 0:
+                    suppress = True
+                    suppress_reason = f"Neg post-drift ({post_drift:.1%})"
+                elif days_away <= 2 and exp_move > 0.08:
+                    suppress = True
+                    suppress_reason = f"High uncertainty (±{exp_move:.1%})"
+
+                rows.append({
+                    "ticker":        ticker,
+                    "bucket":        bucket,
+                    "tier":          tier,
+                    "report_date":   rd,
+                    "report_time":   e.get("report_time", ""),
+                    "days_away":     days_away,
+                    "expected_move": f"±{exp_move:.1%}" if exp_move else "—",
+                    "pre_drift":     f"{pre_drift:+.1%}" if pre_drift is not None else "—",
+                    "post_drift":    f"{post_drift:+.1%}" if post_drift is not None else "—",
+                    "suppress_buy":  suppress,
+                    "suppress_reason": suppress_reason,
+                    "actual_eps":    actual_eps,
+                    "est_eps":       est_eps,
+                    "is_earnings_week": days_away <= 5,
+                    "impact":        "High" if ticker in {"AAPL","MSFT","GOOGL","AMZN","META","NVDA","TSLA"} else "Medium",
+                })
         except Exception:
             continue
-        imp = it.get("impact", "")
-        impact = "High" if "High" in imp else ("Medium" if "Medium" in imp else "Low")
-        notes = "; ".join(
-            f"{k.title()}: {it[k]}" for k in ("country", "actual", "estimate", "previous")
-            if it.get(k) not in (None, "")
-        )
-        rows.append({
-            "title": it.get("event", "Economic Event"),
-            "category": "Economic",
-            "start": when,
-            "end": when + timedelta(minutes=30),
-            "impact": impact,
-            "source": "FMP",
-            "tickers": "SPY, QQQ",
-            "notes": notes,
-        })
-    return pd.DataFrame(rows)
+
+    return pd.DataFrame(rows) if rows else pd.DataFrame()
 
 
-@st.cache_data(ttl=300, show_spinner=False)
-def fetch_earnings_finnhub(start: date, end: date, token: str) -> pd.DataFrame:
+@st.cache_data(ttl=3600, show_spinner=False)
+def fetch_uw_fda_calendar(start: str, end: str) -> pd.DataFrame:
     try:
-        r = requests.get(
-            "https://finnhub.io/api/v1/calendar/earnings",
-            params={"from": start.isoformat(), "to": end.isoformat(), "token": token},
-            timeout=15,
-        )
-        r.raise_for_status()
-        items = r.json().get("earningsCalendar") or []
-    except Exception as e:
-        st.warning(f"Finnhub earnings error: {e}")
+        r = requests.get(f"{BASE_URL}/api/market/fda-calendar",
+                         headers=HDRS, timeout=10)
+        if r.status_code != 200:
+            return pd.DataFrame()
+        data = r.json().get("data", [])
+        rows = []
+        for e in data:
+            ed = e.get("date", e.get("catalyst_date", ""))[:10]
+            if not ed or not (start <= ed <= end):
+                continue
+            ticker = e.get("ticker", e.get("symbol", ""))
+            if ticker and ticker.upper() not in _TICKERS and ticker.upper() not in BIOTECH_TICKERS:
+                continue
+            rows.append({
+                "title":    e.get("catalyst", e.get("drug_name", "FDA Event")),
+                "ticker":   ticker.upper() if ticker else "—",
+                "date":     ed,
+                "category": "FDA",
+                "impact":   "High",
+                "notes":    e.get("catalyst_type", e.get("notes", "")),
+            })
+        return pd.DataFrame(rows)
+    except Exception:
         return pd.DataFrame()
-
-    rows = []
-    for it in items:
-        d = it.get("date")
-        if not d:
-            continue
-        try:
-            base = datetime.fromisoformat(d)
-        except Exception:
-            continue
-        hint = (it.get("time") or "").lower()
-        when = base.replace(hour=16 if hint == "amc" else 8 if hint == "bmo" else 13)
-        sym  = it.get("symbol", "?")
-        rows.append({
-            "title":    f"Earnings: {sym}",
-            "category": "Earnings",
-            "start":    when,
-            "end":      when + timedelta(hours=1),
-            "impact":   "High" if sym in ("AAPL","MSFT","GOOGL","AMZN","META","NVDA","TSLA") else "Medium",
-            "source":   "Finnhub",
-            "tickers":  sym,
-            "notes":    "; ".join(f"{k}={it[k]}" for k in
-                        ("epsEstimate","epsActual","revenueEstimate","revenueActual")
-                        if it.get(k) not in (None, "")),
-        })
-    return pd.DataFrame(rows)
-
-
-# ── Seed events (always shown, no API needed) ─────────────────────────────────
-def seed_sample_events(start: date, end: date) -> List[Event]:
-    span = (end - start).days
-    base = datetime.combine(start, datetime.min.time())
-    samples = [
-        {
-            "title": "FOMC Rate Decision",
-            "category": "Fed/Rate",
-            "start": base + timedelta(days=min(14, max(1, span // 3))),
-            "end":   base + timedelta(days=min(14, max(1, span // 3)), hours=2),
-            "impact": "High",
-            "source": "Fed",
-            "tickers": "SPY, TLT, GLD",
-            "notes": "Rate decision + press conference. High volatility expected.",
-        },
-        {
-            "title": "CPI Release",
-            "category": "Economic",
-            "start": base + timedelta(days=min(7, max(1, span // 5)), hours=8, minutes=30),
-            "end":   base + timedelta(days=min(7, max(1, span // 5)), hours=9),
-            "impact": "High",
-            "source": "BLS",
-            "tickers": "SPY, TLT, XLF",
-            "notes": "Consumer Price Index — key inflation signal.",
-        },
-        {
-            "title": "Mega-Cap Earnings",
-            "category": "Earnings",
-            "start": base + timedelta(days=min(10, max(1, span // 4)), hours=16),
-            "end":   base + timedelta(days=min(10, max(1, span // 4)), hours=17),
-            "impact": "High",
-            "source": "Company",
-            "tickers": "AAPL, MSFT, NVDA",
-            "notes": "Earnings call 30–60min after close.",
-        },
-        {
-            "title": "Options Expiration",
-            "category": "Options/Holiday",
-            "start": base + timedelta(days=min(18, max(1, span // 2))),
-            "end":   base + timedelta(days=min(18, max(1, span // 2)), hours=1),
-            "impact": "Medium",
-            "source": "CBOE",
-            "tickers": "SPY, QQQ, IWM",
-            "notes": "Monthly options expiry — elevated vol possible.",
-        },
-    ]
-    return [e for e in samples if start <= e["start"].date() <= end]
 
 
 # ── Risk score ────────────────────────────────────────────────────────────────
-def compute_risk_score(df: pd.DataFrame) -> pd.DataFrame:
-    if df.empty:
-        return pd.DataFrame(columns=["date", "risk"])
-    w = {"Low": 1, "Medium": 2, "High": 3}
-    tmp = df.copy()
-    tmp["date"] = pd.to_datetime(tmp["start"]).dt.date
-    tmp["w"]    = tmp["impact"].map(lambda x: w.get(str(x), 1))
-    return tmp.groupby("date")["w"].sum().reset_index().rename(columns={"w": "risk"})
-
-
-# ── ICS export ────────────────────────────────────────────────────────────────
-def export_ics(df: pd.DataFrame) -> str:
-    fmt = lambda dt: dt.strftime("%Y%m%dT%H%M%S")
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//MLQuant//Market Events//EN"]
-    for _, r in df.iterrows():
-        lines += [
-            "BEGIN:VEVENT",
-            f"DTSTAMP:{fmt(datetime.utcnow())}",
-            f"DTSTART:{fmt(r['start'])}",
-            f"DTEND:{fmt(r['end'])}",
-            f"SUMMARY:{r['title']}",
-            f"CATEGORIES:{r['category']}",
-            f"DESCRIPTION:Impact={r['impact']} | Tickers={r['tickers']} | {r['notes']}",
-            "END:VEVENT",
-        ]
-    lines.append("END:VCALENDAR")
-    return "\n".join(lines)
+def compute_risk_score(econ_df: pd.DataFrame, earn_df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    if not econ_df.empty:
+        w = {"Low": 1, "Medium": 2, "High": 3}
+        for _, r in econ_df.iterrows():
+            rows.append({"date": r["date"], "score": w.get(r["impact"], 1)})
+    if not earn_df.empty:
+        for _, r in earn_df.iterrows():
+            rows.append({"date": r["report_date"], "score": 2})
+    if not rows:
+        return pd.DataFrame(columns=["date", "score"])
+    df = pd.DataFrame(rows)
+    return df.groupby("date")["score"].sum().reset_index()
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.header("🔍 Filters")
-    window_days  = st.slider("Days forward", 7, 90, 45)
-    start_date   = st.date_input("Start", value=date.today())
-    end_date     = start_date + timedelta(days=window_days)
-    category_sel = st.multiselect("Categories", CATEGORIES, default=CATEGORIES)
-    impact_sel   = st.multiselect("Impact",     IMPACT_LEVELS, default=IMPACT_LEVELS)
-
+    st.markdown("## ⚙️ Settings")
+    days_forward = st.slider("Days forward", 7, 90, 45)
+    show_econ    = st.checkbox("Economic events", value=True)
+    show_earn    = st.checkbox("Earnings", value=True)
+    show_fda     = st.checkbox("FDA calendar", value=True)
+    show_suppress= st.checkbox("Show suppressed tickers only", value=False)
     st.markdown("---")
-    st.subheader("🔌 Live data (optional)")
-    fmp_key     = _get_secret("FMP_API_KEY")     or _get_secret("providers", "fmp_api_key")
-    finnhub_key = _get_secret("FINNHUB_TOKEN")   or _get_secret("providers", "finnhub_token")
-    use_fmp     = st.checkbox("FinancialModelingPrep (Economic)", value=bool(fmp_key))
-    use_finnhub = st.checkbox("Finnhub (Earnings)",               value=bool(finnhub_key))
+    if st.button("🔄 Refresh data"):
+        st.cache_data.clear()
+        st.rerun()
 
-    if not fmp_key and not finnhub_key:
-        st.caption(
-            "Add to secrets.toml to enable live feeds:\n"
-            "```\nFMP_API_KEY = '...'\nFINNHUB_TOKEN = '...'\n```"
-        )
 
-    st.markdown("---")
-    st.subheader("➕ Add custom event")
-    with st.form("add_event"):
-        e_title    = st.text_input("Title")
-        e_cat      = st.selectbox("Category", CATEGORIES)
-        e_date     = st.date_input("Date", value=start_date)
-        e_time     = st.time_input("Time")
-        e_impact   = st.selectbox("Impact", IMPACT_LEVELS, index=1)
-        e_tickers  = st.text_input("Tickers")
-        e_notes    = st.text_area("Notes", height=80)
-        submitted  = st.form_submit_button("Add")
+# ── Date range ────────────────────────────────────────────────────────────────
+today    = date.today()
+end_date = today + timedelta(days=days_forward)
+start_s  = today.isoformat()
+end_s    = end_date.isoformat()
 
-if "manual_events" not in st.session_state:
-    st.session_state["manual_events"] = []
 
-if submitted and e_title:
-    dt = datetime.combine(e_date, e_time)
-    st.session_state["manual_events"].append({
-        "title": e_title, "category": e_cat,
-        "start": dt, "end": dt + timedelta(hours=1),
-        "impact": e_impact, "source": "Manual",
-        "tickers": e_tickers, "notes": e_notes,
-    })
-    st.success(f"Added: {e_title}")
+# ── Load data ─────────────────────────────────────────────────────────────────
+with st.spinner("Loading from Unusual Whales..."):
+    econ_df = fetch_uw_economic_calendar(start_s, end_s) if show_econ else pd.DataFrame()
+    earn_df = fetch_uw_earnings_all(tuple(_TICKERS), days_forward) if show_earn else pd.DataFrame()
+    fda_df  = fetch_uw_fda_calendar(start_s, end_s) if show_fda else pd.DataFrame()
 
-# ── Assemble events ───────────────────────────────────────────────────────────
-frames = [pd.DataFrame(seed_sample_events(start_date, end_date))]
 
-if use_fmp and fmp_key:
-    frames.append(fetch_economic_fmp(start_date, end_date, fmp_key))
-elif use_fmp:
-    st.warning("FMP enabled but no API key found in secrets.")
+# ── KPIs ──────────────────────────────────────────────────────────────────────
+c1, c2, c3, c4 = st.columns(4)
+c1.metric("Earnings upcoming", len(earn_df) if not earn_df.empty else 0, f"next {days_forward} days")
+c2.metric("Earnings this week", len(earn_df[earn_df["days_away"] <= 5]) if not earn_df.empty else 0)
+c3.metric("BUY suppressed", len(earn_df[earn_df["suppress_buy"]]) if not earn_df.empty else 0, "near-term earnings")
+c4.metric("Economic events", len(econ_df) if not econ_df.empty else 0, f"next {days_forward} days")
 
-if use_finnhub and finnhub_key:
-    frames.append(fetch_earnings_finnhub(start_date, end_date, finnhub_key))
-elif use_finnhub:
-    st.warning("Finnhub enabled but no token found in secrets.")
+st.markdown("---")
 
-if st.session_state["manual_events"]:
-    frames.append(pd.DataFrame(st.session_state["manual_events"]))
 
-valid  = [f for f in frames if isinstance(f, pd.DataFrame) and not f.empty]
-all_df = pd.concat(valid, ignore_index=True) if valid else pd.DataFrame()
-
-if not all_df.empty:
-    all_df = all_df[
-        all_df["category"].isin(category_sel) &
-        all_df["impact"].isin(impact_sel)
-    ].sort_values("start").reset_index(drop=True)
-
-# ── Compute + store 72h risk in session state (read by Dashboard) ─────────────
-risk_df = compute_risk_score(all_df) if not all_df.empty else pd.DataFrame(columns=["date","risk"])
+# ── Risk score + session state ────────────────────────────────────────────────
+risk_df = compute_risk_score(econ_df, earn_df)
 if not risk_df.empty:
-    horizon72 = date.today() + timedelta(days=3)
-    risk72    = int(risk_df[risk_df["date"] <= horizon72]["risk"].sum())
+    horizon72 = (today + timedelta(days=3)).isoformat()
+    risk72    = int(risk_df[risk_df["date"] <= horizon72]["score"].sum())
     label     = "Low" if risk72 < 3 else ("Medium" if risk72 < 6 else "High")
+    color     = {"Low": "🟢", "Medium": "🟡", "High": "🔴"}[label]
     st.session_state["event_risk_next72"] = {"score": risk72, "label": label}
-    color = {"Low": "🟢", "Medium": "🟡", "High": "🔴"}[label]
-    st.metric("Next 72h Event Risk", f"{color} {label}", delta=f"score = {risk72}")
-else:
-    st.session_state.pop("event_risk_next72", None)
+    st.info(f"**Next 72h event risk:** {color} {label} (score={risk72}) — fed into Dashboard signal gate")
 
-st.caption("This risk score is passed to the Dashboard to down-weight signals on high-risk days.")
-st.divider()
 
-# ── Timeline ──────────────────────────────────────────────────────────────────
-col1, col2 = st.columns([2, 1], gap="large")
+# ── Tab layout ────────────────────────────────────────────────────────────────
+tab1, tab2, tab3, tab4 = st.tabs(["📊 Earnings", "📉 Economic", "💊 FDA", "🌡️ Risk heatmap"])
 
-with col1:
-    st.subheader("📅 Timeline")
-    if all_df.empty:
-        st.info("No events match current filters.")
-    elif not HAS_PLOTLY:
-        st.warning("Install plotly for timeline: `pip install plotly`")
+
+# ════════════════════════════════════════
+# TAB 1 — EARNINGS
+# ════════════════════════════════════════
+with tab1:
+    st.subheader("Earnings calendar — your tickers")
+    st.caption("Sorted by days until report. BUY suppression fires when post-drift is negative or expected move >8%.")
+
+    if earn_df.empty:
+        st.info("No earnings data. Check UW API key or try refreshing.")
     else:
-        fig = px.timeline(
-            all_df,
-            x_start="start", x_end="end", y="category",
-            color="impact",
-            color_discrete_map={"High": "#ff1744", "Medium": "#ffab00", "Low": "#00c853"},
-            hover_data=["title", "tickers", "notes", "source"],
-            title="Upcoming Market Events",
+        display = earn_df.copy()
+        if show_suppress:
+            display = display[display["suppress_buy"]]
+
+        display["time"] = display["report_time"].apply(
+            lambda x: "🌅 pre" if "pre" in str(x).lower() else "🌙 post"
         )
-        fig.update_yaxes(autorange="reversed")
-        fig.update_layout(height=480, legend_title_text="Impact")
-        st.plotly_chart(fig, use_container_width=True)
+        display["suppress"] = display.apply(
+            lambda r: f"❌ {r['suppress_reason']}" if r["suppress_buy"] else "✅ OK", axis=1
+        )
 
-with col2:
-    st.subheader("📋 Upcoming events")
-    if all_df.empty:
-        st.info("No events.")
-    else:
-        display = all_df.copy()
-        display["start"] = pd.to_datetime(display["start"]).dt.strftime("%m-%d %H:%M")
+        show_cols = ["ticker", "bucket", "tier", "report_date", "time",
+                     "days_away", "expected_move", "pre_drift", "post_drift", "suppress"]
+        show_df = display[show_cols].copy()
+        show_df.columns = ["Ticker", "Bucket", "Tier", "Date", "Time",
+                           "Days away", "Exp move", "Pre drift", "Post drift", "Signal"]
+
+        def _color_signal(val):
+            if "❌" in str(val): return "color: #E24B4A; font-weight: 500"
+            if "✅" in str(val): return "color: #1D9E75"
+            return ""
+
+        def _color_drift(val):
+            if val == "—": return ""
+            try:
+                n = float(str(val).replace("%","").replace("+",""))
+                return "color: #1D9E75" if n > 0 else "color: #E24B4A"
+            except Exception:
+                return ""
+
         st.dataframe(
-            display[["start", "title", "category", "impact", "tickers"]],
-            use_container_width=True,
-            hide_index=True,
+            show_df.style
+            .applymap(_color_signal, subset=["Signal"])
+            .applymap(_color_drift,  subset=["Pre drift", "Post drift"]),
+            use_container_width=True, hide_index=True,
         )
 
-        ics = export_ics(all_df)
-        st.download_button(
-            "📥 Export .ics",
-            data=ics,
-            file_name="market_events.ics",
-            mime="text/calendar",
-            key="dl_ics",
+        # Suppress summary
+        suppressed = earn_df[earn_df["suppress_buy"]]
+        if not suppressed.empty:
+            st.markdown("---")
+            st.warning(f"⚠️ {len(suppressed)} tickers have BUY suppressed due to upcoming earnings:")
+            st.write(", ".join(suppressed["ticker"].tolist()))
+
+        # Week view
+        st.markdown("---")
+        st.subheader("This week")
+        this_week = earn_df[earn_df["days_away"] <= 5].sort_values("days_away")
+        if not this_week.empty:
+            cols = st.columns(min(len(this_week), 5))
+            for i, (_, row) in enumerate(this_week.iterrows()):
+                with cols[i % 5]:
+                    color = "#FCEBEB" if row["suppress_buy"] else "#EAF3DE"
+                    tcolor = "#A32D2D" if row["suppress_buy"] else "#3B6D11"
+                    st.markdown(f"""
+                    <div style="background:{color};border-radius:8px;padding:10px;margin-bottom:8px;">
+                        <b style="color:{tcolor};font-size:15px">{row['ticker']}</b><br>
+                        <span style="font-size:12px;color:#5F5E5A">{row['report_date']} · {row['report_time']}</span><br>
+                        <span style="font-size:12px">Exp: {row['expected_move']}</span>
+                    </div>
+                    """, unsafe_allow_html=True)
+        else:
+            st.info("No earnings this week.")
+
+
+# ════════════════════════════════════════
+# TAB 2 — ECONOMIC
+# ════════════════════════════════════════
+with tab2:
+    st.subheader("Economic events — Unusual Whales calendar")
+    st.caption("FOMC, CPI, NFP, GDP and other market-moving macro events.")
+
+    if econ_df.empty:
+        st.info("No economic events data. Check UW API key.")
+    else:
+        def _color_impact(val):
+            if val == "High":   return "color: #E24B4A; font-weight: 500"
+            if val == "Medium": return "color: #BA7517; font-weight: 500"
+            return "color: #3B6D11"
+
+        display = econ_df[["date","time","title","impact","tickers","notes"]].copy()
+        display.columns = ["Date","Time","Event","Impact","Tickers","Notes"]
+        st.dataframe(
+            display.style.applymap(_color_impact, subset=["Impact"]),
+            use_container_width=True, hide_index=True,
         )
 
-# ── Risk heatmap ──────────────────────────────────────────────────────────────
-if not risk_df.empty:
-    st.subheader("🌡️ Daily Risk Score")
-    risk_df["date"] = pd.to_datetime(risk_df["date"])
-    risk_chart = (
-        alt.Chart(risk_df)
-        .mark_bar()
-        .encode(
-            x=alt.X("date:T", title="Date"),
-            y=alt.Y("risk:Q", title="Risk Score"),
-            color=alt.Color(
-                "risk:Q",
-                scale=alt.Scale(scheme="redyellowgreen", reverse=True, domain=[0, 9]),
-                legend=None,
+
+# ════════════════════════════════════════
+# TAB 3 — FDA
+# ════════════════════════════════════════
+with tab3:
+    st.subheader("FDA calendar — biotech tickers")
+    st.caption("PDUFA dates and catalyst events for biotech tickers in your watchlist.")
+
+    if fda_df.empty:
+        st.info("No FDA events found for your tickers in this period.")
+    else:
+        st.dataframe(
+            fda_df[["date","ticker","title","category","notes"]].rename(
+                columns={"date":"Date","ticker":"Ticker","title":"Catalyst",
+                         "category":"Type","notes":"Notes"}
             ),
-            tooltip=["date:T", "risk:Q"],
+            use_container_width=True, hide_index=True,
         )
-        .properties(height=200, title="Higher = more market-moving events that day")
-    )
-    import altair as alt
-    st.altair_chart(risk_chart, use_container_width=True)
+
+
+# ════════════════════════════════════════
+# TAB 4 — RISK HEATMAP
+# ════════════════════════════════════════
+with tab4:
+    st.subheader("Daily risk score heatmap")
+    st.caption("Higher = more market-moving events that day. Feeds into Dashboard signal gate.")
+
+    if not risk_df.empty:
+        risk_df["date"] = pd.to_datetime(risk_df["date"])
+        chart = (
+            alt.Chart(risk_df)
+            .mark_bar()
+            .encode(
+                x=alt.X("date:T", title="Date"),
+                y=alt.Y("score:Q", title="Risk score"),
+                color=alt.Color(
+                    "score:Q",
+                    scale=alt.Scale(scheme="redyellowgreen", reverse=True, domain=[0, 9]),
+                    legend=None,
+                ),
+                tooltip=["date:T", "score:Q"],
+            )
+            .properties(height=250)
+        )
+        st.altair_chart(chart, use_container_width=True)
+
+        st.markdown("---")
+        st.subheader("ICS export")
+        if not earn_df.empty:
+            lines = ["BEGIN:VCALENDAR", "VERSION:2.0"]
+            for _, r in earn_df.iterrows():
+                dt = r["report_date"].replace("-","")
+                lines += [
+                    "BEGIN:VEVENT",
+                    f"DTSTART:{dt}",
+                    f"DTEND:{dt}",
+                    f"SUMMARY:Earnings: {r['ticker']} ({r['report_time']})",
+                    f"DESCRIPTION:Exp move {r['expected_move']} | post drift {r['post_drift']}",
+                    "END:VEVENT",
+                ]
+            if not econ_df.empty:
+                for _, r in econ_df.iterrows():
+                    dt = r["date"].replace("-","")
+                    lines += [
+                        "BEGIN:VEVENT",
+                        f"DTSTART:{dt}",
+                        f"DTEND:{dt}",
+                        f"SUMMARY:{r['title']} [{r['impact']}]",
+                        "END:VEVENT",
+                    ]
+            lines.append("END:VCALENDAR")
+            st.download_button(
+                "📥 Export .ics",
+                data="\n".join(lines),
+                file_name="market_events.ics",
+                mime="text/calendar",
+            )
+    else:
+        st.info("No risk data available.")
