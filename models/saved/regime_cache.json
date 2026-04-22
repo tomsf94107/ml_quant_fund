@@ -1,15 +1,15 @@
 {
   "label": "BULL",
-  "confidence": 0.71,
+  "confidence": 0.57,
   "confidence_threshold": 0.52,
   "signal_multiplier": 1.05,
   "block_tau": 4,
   "description": "Bull market \u2014 trending up, low vol. Lower entry bar.",
-  "computed_at": "2026-04-20T09:38:16.533361",
-  "spy_trend_20d": 0.09493193738365391,
-  "spy_trend_60d": 0.03352697009923333,
-  "vix_level": 17.479999542236328,
-  "vix_percentile": 58.549222797927456,
+  "computed_at": "2026-04-22T08:04:30.024597",
+  "spy_trend_20d": 0.07792649037755783,
+  "spy_trend_60d": 0.0191602872960821,
+  "vix_level": 19.5,
+  "vix_percentile": 72.3076923076923,
   "bond_signal": "NEUTRAL",
   "breadth_signal": "STRONG"
 }
