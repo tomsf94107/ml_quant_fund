@@ -321,14 +321,85 @@ def inst_score_to_multiplier(inst_score: float) -> float:
 # COMBINED SIGNAL
 # ══════════════════════════════════════════════════════════════════════
 
+# Module-level cache for market-wide signals (fetched once per run)
+_MW_CACHE = {"tide": None, "flow_alerts": None, "oi": None, "ts": None}
+
+
+def _get_marketwide_cached() -> dict:
+    """Fetch market-wide signals once and cache for 5 minutes."""
+    from datetime import datetime
+    now = datetime.now()
+    if _MW_CACHE["ts"] is not None:
+        age_mins = (now - _MW_CACHE["ts"]).total_seconds() / 60
+        if age_mins < 5:
+            return _MW_CACHE
+
+    # Refresh cache
+    _MW_CACHE["tide"]        = get_market_tide()
+    _MW_CACHE["flow_alerts"] = _get_flow_alerts_raw()
+    _MW_CACHE["oi"]          = _get_oi_raw()
+    _MW_CACHE["ts"]          = now
+    return _MW_CACHE
+
+
+def _get_flow_alerts_raw() -> list:
+    """Fetch raw flow alerts once."""
+    try:
+        r = requests.get(f"{BASE_URL}/api/option-trades/flow-alerts",
+                         headers=HEADERS, timeout=10)
+        return r.json().get("data", []) if r.status_code == 200 else []
+    except Exception:
+        return []
+
+
+def _get_oi_raw() -> list:
+    """Fetch raw OI change data once."""
+    try:
+        r = requests.get(f"{BASE_URL}/api/market/oi-change",
+                         headers=HEADERS, timeout=10)
+        return r.json().get("data", []) if r.status_code == 200 else []
+    except Exception:
+        return []
+
+
 def get_combined_uw_multiplier(ticker: str) -> dict:
     """
     Fetch all 4 UW signals and return combined multiplier.
-    Used in generator.py after model prediction.
+    Market-wide signals (tide, flow, OI) fetched ONCE and cached.
+    Institutional reads from DB. No per-ticker API calls for market-wide data.
     """
-    flow  = get_options_flow_score(ticker)
-    tide  = get_market_tide()
-    oi    = get_oi_change_score(ticker)
+    # Get market-wide signals from cache (1 API call total, not 126)
+    mw    = _get_marketwide_cached()
+    tide  = mw["tide"]
+
+    # Compute per-ticker flow score from cached alerts
+    alerts    = mw["flow_alerts"]
+    t_alerts  = [a for a in alerts if a.get("ticker","").upper() == ticker.upper()]
+    bull_prem = sum(float(a.get("total_premium",0) or 0) for a in t_alerts if a.get("type","").lower()=="call")
+    bear_prem = sum(float(a.get("total_premium",0) or 0) for a in t_alerts if a.get("type","").lower()=="put")
+    total_p   = bull_prem + bear_prem
+    flow_score= round((bull_prem - bear_prem) / total_p, 4) if total_p > 0 else 0.0
+    flow      = {
+        "flow_score":   flow_score,
+        "flow_signal":  "BULLISH" if flow_score > 0.3 else "BEARISH" if flow_score < -0.3 else "NEUTRAL",
+        "alert_count":  len(t_alerts),
+    }
+
+    # Compute per-ticker OI score from cached data
+    oi_data   = mw["oi"]
+    t_oi      = [d for d in oi_data if d.get("underlying_symbol","").upper() == ticker.upper()]
+    if t_oi:
+        oi_chg    = sum(float(d.get("oi_change",0) or 0) for d in t_oi)
+        days_inc  = max(int(d.get("days_of_oi_increases",0) or 0) for d in t_oi)
+        oi_score  = min(days_inc / 5.0, 1.0) * (1 if oi_chg > 0 else -1)
+    else:
+        oi_score  = 0.0
+    oi = {
+        "oi_score":  round(oi_score, 4),
+        "oi_signal": "BULLISH" if oi_score > 0.4 else "BEARISH" if oi_score < -0.4 else "NEUTRAL",
+    }
+
+    # Institutional from DB (no API call)
     inst  = get_institutional_score(ticker)
 
     flow_mult = flow_score_to_multiplier(flow["flow_score"])
