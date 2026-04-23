@@ -442,9 +442,25 @@ if __name__ == "__main__":
 # ══════════════════════════════════════════════════════════════════════════════
 
 def get_short_interest_score(ticker: str) -> dict:
-    """Short interest % float + days to cover from UW."""
+    """Short interest % float + days to cover — reads from DB cache first."""
     result = {"si_float": 0.0, "days_to_cover": 0.0,
               "si_signal": "NEUTRAL", "error": None}
+    try:
+        from datetime import timedelta
+        cutoff = str(date.today() - timedelta(days=14))
+        with sqlite3.connect(DB_PATH) as conn:
+            row = conn.execute("""
+                SELECT si_float, days_to_cover, si_signal
+                FROM short_interest_cache WHERE ticker=? AND market_date>=?
+                ORDER BY market_date DESC LIMIT 1
+            """, (ticker, cutoff)).fetchone()
+        if row:
+            result["si_float"]      = row[0] or 0.0
+            result["days_to_cover"] = row[1] or 0.0
+            result["si_signal"]     = row[2] or "NEUTRAL"
+            return result
+    except Exception:
+        pass
     try:
         r = requests.get(f"{BASE_URL}/api/shorts/{ticker}/interest-float/v2",
                          headers=HEADERS, timeout=8)
@@ -584,9 +600,8 @@ def get_extended_uw_multiplier(ticker: str) -> dict:
 
 def get_seasonality_features(ticker: str) -> dict:
     """
-    Monthly seasonality features from UW.
-    Returns avg_change and positive_months_perc for current month.
-    These are model features — added to builder.py FEATURE_COLUMNS.
+    Monthly seasonality features — reads from DB cache first.
+    Falls back to live UW API if DB empty.
     """
     result = {
         "seasonal_avg_return":    0.0,
@@ -594,6 +609,20 @@ def get_seasonality_features(ticker: str) -> dict:
         "seasonal_signal":        "NEUTRAL",
         "error":                  None,
     }
+    month = date.today().month
+    try:
+        with sqlite3.connect(DB_PATH) as conn:
+            row = conn.execute("""
+                SELECT avg_change, positive_months_perc, seasonal_signal
+                FROM seasonality_cache WHERE ticker=? AND month=?
+            """, (ticker, month)).fetchone()
+        if row:
+            result["seasonal_avg_return"]   = row[0] or 0.0
+            result["seasonal_positive_pct"] = row[1] or 0.5
+            result["seasonal_signal"]       = row[2] or "NEUTRAL"
+            return result
+    except Exception:
+        pass
     try:
         r = requests.get(
             f"{BASE_URL}/api/seasonality/{ticker}/monthly",
@@ -622,8 +651,8 @@ def get_seasonality_features(ticker: str) -> dict:
 
 def get_analyst_score(ticker: str) -> dict:
     """
-    Analyst rating changes from UW screener.
-    Upgrades = bullish signal. Downgrades = bearish signal.
+    Analyst rating changes — reads from DB cache first.
+    Falls back to live UW API if DB empty.
     """
     result = {
         "analyst_score":   0.0,
@@ -633,6 +662,25 @@ def get_analyst_score(ticker: str) -> dict:
         "analyst_signal":  "NEUTRAL",
         "error":           None,
     }
+    try:
+        from datetime import timedelta
+        cutoff = str(date.today() - timedelta(days=7))
+        with sqlite3.connect(DB_PATH) as conn:
+            row = conn.execute("""
+                SELECT analyst_score, upgrades_30d, downgrades_30d,
+                       avg_target, analyst_signal
+                FROM analyst_cache WHERE ticker=? AND date>=?
+                ORDER BY date DESC LIMIT 1
+            """, (ticker, cutoff)).fetchone()
+        if row:
+            result["analyst_score"]   = row[0] or 0.0
+            result["upgrades_30d"]    = row[1] or 0
+            result["downgrades_30d"]  = row[2] or 0
+            result["avg_target"]      = row[3] or 0.0
+            result["analyst_signal"]  = row[4] or "NEUTRAL"
+            return result
+    except Exception:
+        pass
     try:
         r = requests.get(
             f"{BASE_URL}/api/screener/analysts",
@@ -677,14 +725,28 @@ def get_analyst_score(ticker: str) -> dict:
 
 def get_ftd_score(ticker: str) -> dict:
     """
-    Failures to deliver from UW.
-    High FTDs = naked short pressure = potential squeeze.
+    Failures to deliver — reads from DB cache first.
+    Falls back to live UW API if DB empty.
     """
     result = {
         "ftd_shares":  0,
         "ftd_signal":  "NEUTRAL",
         "error":       None,
     }
+    try:
+        from datetime import timedelta
+        cutoff = str(date.today() - timedelta(days=7))
+        with sqlite3.connect(DB_PATH) as conn:
+            row = conn.execute("""
+                SELECT ftd_shares, ftd_signal FROM ftd_cache
+                WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1
+            """, (ticker, cutoff)).fetchone()
+        if row:
+            result["ftd_shares"] = row[0] or 0
+            result["ftd_signal"] = row[1] or "NEUTRAL"
+            return result
+    except Exception:
+        pass
     try:
         r = requests.get(
             f"{BASE_URL}/api/shorts/{ticker}/ftds",

@@ -94,6 +94,60 @@ def init_tables():
         """)
         conn.execute("CREATE INDEX IF NOT EXISTS idx_earn_ticker ON earnings_cache(ticker)")
         conn.execute("CREATE INDEX IF NOT EXISTS idx_earn_date ON earnings_cache(report_date)")
+
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS short_interest_cache (
+                id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker      TEXT NOT NULL,
+                market_date TEXT NOT NULL,
+                si_float    REAL,
+                days_to_cover REAL,
+                si_signal   TEXT,
+                updated_at  TEXT NOT NULL,
+                UNIQUE(ticker, market_date)
+            )
+        """)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS seasonality_cache (
+                id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker               TEXT NOT NULL,
+                month                INTEGER NOT NULL,
+                avg_change           REAL,
+                positive_months_perc REAL,
+                seasonal_signal      TEXT,
+                updated_at           TEXT NOT NULL,
+                UNIQUE(ticker, month)
+            )
+        """)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS analyst_cache (
+                id              INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker          TEXT NOT NULL,
+                date            TEXT NOT NULL,
+                analyst_score   REAL,
+                upgrades_30d    INTEGER,
+                downgrades_30d  INTEGER,
+                avg_target      REAL,
+                analyst_signal  TEXT,
+                updated_at      TEXT NOT NULL,
+                UNIQUE(ticker, date)
+            )
+        """)
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS ftd_cache (
+                id         INTEGER PRIMARY KEY AUTOINCREMENT,
+                ticker     TEXT NOT NULL,
+                date       TEXT NOT NULL,
+                ftd_shares INTEGER,
+                ftd_signal TEXT,
+                updated_at TEXT NOT NULL,
+                UNIQUE(ticker, date)
+            )
+        """)
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_si_ticker ON short_interest_cache(ticker)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_seas_ticker ON seasonality_cache(ticker)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_analyst_ticker ON analyst_cache(ticker)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_ftd_ticker ON ftd_cache(ticker)")
         conn.commit()
 
     print("Tables ready")
@@ -260,6 +314,149 @@ def run_snapshot(snapshot_date: str = None):
         conn.commit()
 
     print(f"  Earnings:   {earn_ok} ok  {earn_fail} failed")
+
+    # ── Short interest cache ──────────────────────────────────────────────
+    print("  Fetching short interest...")
+    si_ok = si_fail = 0
+    with sqlite3.connect(DB_PATH) as conn:
+        for ticker in tickers:
+            try:
+                r = requests.get(
+                    f"https://api.unusualwhales.com/api/shorts/{ticker}/interest-float/v2",
+                    headers=uw_hdrs, timeout=8
+                )
+                if r.status_code != 200:
+                    si_fail += 1
+                    time.sleep(0.2)
+                    continue
+                data = r.json().get("data", [])
+                if data:
+                    d = data[0]
+                    si_float = float(d.get("si_float", 0) or 0)
+                    dtc      = float(d.get("days_to_cover", 0) or 0)
+                    sig      = "SQUEEZE" if si_float > 0.20 and dtc > 5 else                                "HIGH_SHORT" if si_float > 0.10 else                                "LOW_SHORT" if si_float < 0.02 else "NEUTRAL"
+                    conn.execute("""
+                        INSERT OR REPLACE INTO short_interest_cache
+                            (ticker, market_date, si_float, days_to_cover, si_signal, updated_at)
+                        VALUES (?,?,?,?,?,?)
+                    """, (ticker, d.get("market_date", snapshot_date),
+                          si_float, dtc, sig, now))
+                    si_ok += 1
+                else:
+                    si_fail += 1
+                time.sleep(0.2)
+            except Exception as earn_err:
+                si_fail += 1
+                time.sleep(0.2)
+        conn.commit()
+    print(f"  Short interest: {si_ok} ok  {si_fail} failed")
+
+    # ── Seasonality cache ─────────────────────────────────────────────────
+    print("  Fetching seasonality...")
+    from datetime import date as _date
+    current_month = _date.today().month
+    seas_ok = seas_fail = 0
+    with sqlite3.connect(DB_PATH) as conn:
+        for ticker in tickers:
+            try:
+                r = requests.get(
+                    f"https://api.unusualwhales.com/api/seasonality/{ticker}/monthly",
+                    headers=uw_hdrs, timeout=8
+                )
+                if r.status_code != 200:
+                    seas_fail += 1
+                    time.sleep(0.2)
+                    continue
+                data = r.json().get("data", [])
+                for m in data:
+                    month    = int(m.get("month", 0))
+                    avg_ret  = float(m.get("avg_change", 0) or 0)
+                    pos_pct  = float(m.get("positive_months_perc", 0.5) or 0.5)
+                    sig      = "BULLISH" if avg_ret > 0.02 and pos_pct > 0.6 else                                "BEARISH" if avg_ret < -0.02 and pos_pct < 0.4 else "NEUTRAL"
+                    conn.execute("""
+                        INSERT OR REPLACE INTO seasonality_cache
+                            (ticker, month, avg_change, positive_months_perc,
+                             seasonal_signal, updated_at)
+                        VALUES (?,?,?,?,?,?)
+                    """, (ticker, month, avg_ret, pos_pct, sig, now))
+                seas_ok += 1
+                time.sleep(0.2)
+            except Exception:
+                seas_fail += 1
+                time.sleep(0.2)
+        conn.commit()
+    print(f"  Seasonality:    {seas_ok} ok  {seas_fail} failed")
+
+    # ── Analyst cache ─────────────────────────────────────────────────────
+    print("  Fetching analyst ratings...")
+    from datetime import datetime as _dt, timedelta as _td
+    cutoff_dt = (_dt.now() - _td(days=30)).isoformat()
+    anal_ok = anal_fail = 0
+    with sqlite3.connect(DB_PATH) as conn:
+        for ticker in tickers:
+            try:
+                r = requests.get(
+                    f"https://api.unusualwhales.com/api/screener/analysts",
+                    headers=uw_hdrs, params={"ticker": ticker}, timeout=8
+                )
+                if r.status_code != 200:
+                    anal_fail += 1
+                    time.sleep(0.2)
+                    continue
+                data    = r.json().get("data", [])
+                recent  = [d for d in data if d.get("timestamp","") >= cutoff_dt]
+                upgrades   = sum(1 for d in recent if d.get("action","").lower() in
+                                ("upgrade","initiated","reiterated") and
+                                d.get("recommendation","").lower() in ("buy","strong buy","outperform"))
+                downgrades = sum(1 for d in recent if d.get("action","").lower() == "downgrade")
+                targets    = [float(d["target"]) for d in recent if d.get("target")]
+                avg_tgt    = sum(targets)/len(targets) if targets else 0.0
+                score      = (upgrades - downgrades) / max(len(recent), 1)
+                sig        = "BULLISH" if score > 0.2 else "BEARISH" if score < -0.2 else "NEUTRAL"
+                conn.execute("""
+                    INSERT OR REPLACE INTO analyst_cache
+                        (ticker, date, analyst_score, upgrades_30d,
+                         downgrades_30d, avg_target, analyst_signal, updated_at)
+                    VALUES (?,?,?,?,?,?,?,?)
+                """, (ticker, snapshot_date, round(score,4),
+                      upgrades, downgrades, round(avg_tgt,2), sig, now))
+                anal_ok += 1
+                time.sleep(0.2)
+            except Exception:
+                anal_fail += 1
+                time.sleep(0.2)
+        conn.commit()
+    print(f"  Analyst:        {anal_ok} ok  {anal_fail} failed")
+
+    # ── FTD cache ─────────────────────────────────────────────────────────
+    print("  Fetching FTDs...")
+    ftd_ok = ftd_fail = 0
+    with sqlite3.connect(DB_PATH) as conn:
+        for ticker in tickers:
+            try:
+                r = requests.get(
+                    f"https://api.unusualwhales.com/api/shorts/{ticker}/ftds",
+                    headers=uw_hdrs, timeout=8
+                )
+                if r.status_code != 200:
+                    ftd_fail += 1
+                    time.sleep(0.2)
+                    continue
+                data        = r.json().get("data", [])
+                recent_ftds = sum(int(d.get("quantity", 0) or 0) for d in data[:5])
+                sig         = "HIGH" if recent_ftds > 500_000 else                               "ELEVATED" if recent_ftds > 100_000 else "NORMAL"
+                conn.execute("""
+                    INSERT OR REPLACE INTO ftd_cache
+                        (ticker, date, ftd_shares, ftd_signal, updated_at)
+                    VALUES (?,?,?,?,?)
+                """, (ticker, snapshot_date, recent_ftds, sig, now))
+                ftd_ok += 1
+                time.sleep(0.2)
+            except Exception:
+                ftd_fail += 1
+                time.sleep(0.2)
+        conn.commit()
+    print(f"  FTDs:           {ftd_ok} ok  {ftd_fail} failed")
     print(f"{'='*60}\n")
 
 
