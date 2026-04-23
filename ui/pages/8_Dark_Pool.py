@@ -154,8 +154,44 @@ st.dataframe(
 
 st.markdown("---")
 
+# ── Legend ────────────────────────────────────────────────────────────────────
+with st.expander("📖 How to read dark pool + skew signals", expanded=False):
+    col_a, col_b = st.columns(2)
+    with col_a:
+        st.markdown("""
+**HIGH DP + BEARISH skew** 🔴
+Institutions selling in dark + buying puts.
+→ ❌ Avoid BUY — likely distribution. Multiplier: 0.93x
 
-# ── Combined signal ───────────────────────────────────────────────────────────
+**HIGH DP + BULLISH skew** 🟢
+Institutions accumulating + calls dominant.
+→ ✅ Strong BUY confirmation. Multiplier: 1.07x
+        """)
+    with col_b:
+        st.markdown("""
+**LOW DP + BULLISH skew** 🟡
+Retail momentum, no institutional backing.
+→ ⚠️ Weaker BUY — less reliable. Multiplier: 1.02x
+
+**LOW DP + BEARISH skew** ⚪
+Low activity + defensive positioning.
+→ ❌ Skip — no conviction. Multiplier: 0.97x
+        """)
+    st.markdown("---")
+    st.markdown("""
+**Dark pool ratio:** HIGH >50% · NORMAL 25-50% · LOW <25%
+
+**Skew 25d:** Negative = calls pricier (bullish) · Positive = puts pricier (bearish)
+
+**IV rank:** 0-100 scale — low = cheap options · high = expensive options
+
+**Source:** Unusual Whales API — FINRA ATS data, updated daily after market close.
+    """)
+
+st.markdown("---")
+
+
+# ── Combined signal ────────────────────────────────────────────────────────
 st.subheader("🎯 Combined signal — high DP + bearish skew = potential distribution")
 
 if "skew_signal" in merged.columns:
