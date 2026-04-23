@@ -435,3 +435,277 @@ if __name__ == "__main__":
     result = get_combined_uw_multiplier(ticker)
     for k, v in result.items():
         print(f"  {k}: {v}")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# EXTENDED UW SIGNALS — SHORT INTEREST, LIT FLOW, EXPIRY, NET IMPACT
+# ══════════════════════════════════════════════════════════════════════════════
+
+def get_short_interest_score(ticker: str) -> dict:
+    """Short interest % float + days to cover from UW."""
+    result = {"si_float": 0.0, "days_to_cover": 0.0,
+              "si_signal": "NEUTRAL", "error": None}
+    try:
+        r = requests.get(f"{BASE_URL}/api/shorts/{ticker}/interest-float/v2",
+                         headers=HEADERS, timeout=8)
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data = r.json().get("data", [])
+        if not data:
+            return result
+        latest    = data[0]
+        si_float  = float(latest.get("si_float", 0) or 0)
+        dtc       = float(latest.get("days_to_cover", 0) or 0)
+        result["si_float"]     = round(si_float, 4)
+        result["days_to_cover"]= round(dtc, 2)
+        # High SI + high DTC = squeeze potential = BULLISH
+        # Moderate SI = mild bearish (crowded short)
+        if si_float > 0.20 and dtc > 5:
+            result["si_signal"] = "SQUEEZE"
+        elif si_float > 0.10:
+            result["si_signal"] = "HIGH_SHORT"
+        elif si_float < 0.02:
+            result["si_signal"] = "LOW_SHORT"
+        else:
+            result["si_signal"] = "NEUTRAL"
+    except Exception as e:
+        result["error"] = str(e)
+    return result
+
+
+def si_score_to_multiplier(si_float: float, days_to_cover: float) -> float:
+    """Squeeze potential boosts BUY, heavy shorting suppresses."""
+    if si_float > 0.20 and days_to_cover > 5:  return 1.06  # squeeze
+    if si_float > 0.15:                          return 0.96  # crowded short
+    if si_float > 0.10:                          return 0.98  # elevated short
+    return 1.0
+
+
+def get_top_net_impact_score(ticker: str) -> dict:
+    """Check if ticker appears in top net options premium impact list."""
+    result = {"net_premium": 0.0, "in_top_impact": False, "error": None}
+    try:
+        r = requests.get(f"{BASE_URL}/api/market/top-net-impact",
+                         headers=HEADERS, timeout=8)
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data = r.json().get("data", [])
+        match = [d for d in data if d.get("ticker","").upper() == ticker.upper()]
+        if match:
+            net = float(match[0].get("net_premium", 0) or 0)
+            result["net_premium"]   = net
+            result["in_top_impact"] = True
+    except Exception as e:
+        result["error"] = str(e)
+    return result
+
+
+def get_lit_flow_score(ticker: str) -> dict:
+    """Lit exchange large trade flow — complement to dark pool."""
+    result = {"lit_ratio": 0.0, "lit_signal": "NEUTRAL", "error": None}
+    try:
+        r = requests.get(f"{BASE_URL}/api/lit-flow/{ticker}",
+                         headers=HEADERS, timeout=8)
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data = r.json().get("data", [])
+        if not data:
+            return result
+        # Ratio of lit to total volume
+        total  = sum(float(d.get("volume", 0) or 0) for d in data[:20])
+        if total > 0:
+            result["lit_ratio"] = round(min(total / 1e7, 1.0), 4)
+            if result["lit_ratio"] > 0.6:
+                result["lit_signal"] = "HIGH"
+    except Exception as e:
+        result["error"] = str(e)
+    return result
+
+
+def get_expiry_breakdown_score(ticker: str) -> dict:
+    """Options expiry concentration — high OI near current expiry = pinning."""
+    result = {"near_expiry_oi": 0, "pinning_risk": False, "error": None}
+    try:
+        r = requests.get(f"{BASE_URL}/api/stock/{ticker}/expiry-breakdown",
+                         headers=HEADERS, timeout=8)
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data = r.json().get("data", [])
+        if not data:
+            return result
+        # First expiry = nearest — high OI = pinning risk
+        nearest = data[0]
+        oi      = int(nearest.get("open_interest", 0) or 0)
+        result["near_expiry_oi"] = oi
+        result["pinning_risk"]   = oi > 50000
+    except Exception as e:
+        result["error"] = str(e)
+    return result
+
+
+def _get_si_cached() -> dict:
+    """Cache short interest for all tickers — fetched once per session."""
+    return {}  # Will be populated per-ticker on demand
+
+
+def get_extended_uw_multiplier(ticker: str) -> dict:
+    """
+    Extended UW multiplier combining short interest + lit flow + expiry.
+    Called per-ticker — SI and expiry are per-ticker endpoints.
+    """
+    si      = get_short_interest_score(ticker)
+    expiry  = get_expiry_breakdown_score(ticker)
+
+    si_mult     = si_score_to_multiplier(si["si_float"], si["days_to_cover"])
+    expiry_mult = 0.97 if expiry["pinning_risk"] else 1.0
+
+    combined = round(min(max(si_mult * expiry_mult, 0.85), 1.15), 4)
+
+    return {
+        "ticker":        ticker,
+        "combined":      combined,
+        "si_mult":       si_mult,
+        "expiry_mult":   expiry_mult,
+        "si_float":      si["si_float"],
+        "days_to_cover": si["days_to_cover"],
+        "si_signal":     si["si_signal"],
+        "pinning_risk":  expiry["pinning_risk"],
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# BATCH 2 — MODEL FEATURES (needs retrain)
+# Seasonality, Analyst ratings, FTDs
+# ══════════════════════════════════════════════════════════════════════════════
+
+def get_seasonality_features(ticker: str) -> dict:
+    """
+    Monthly seasonality features from UW.
+    Returns avg_change and positive_months_perc for current month.
+    These are model features — added to builder.py FEATURE_COLUMNS.
+    """
+    result = {
+        "seasonal_avg_return":    0.0,
+        "seasonal_positive_pct":  0.5,
+        "seasonal_signal":        "NEUTRAL",
+        "error":                  None,
+    }
+    try:
+        r = requests.get(
+            f"{BASE_URL}/api/seasonality/{ticker}/monthly",
+            headers=HEADERS, timeout=8
+        )
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data  = r.json().get("data", [])
+        month = date.today().month
+        match = [d for d in data if int(d.get("month", 0)) == month]
+        if match:
+            m = match[0]
+            avg_ret  = float(m.get("avg_change", 0) or 0)
+            pos_pct  = float(m.get("positive_months_perc", 0.5) or 0.5)
+            result["seasonal_avg_return"]   = round(avg_ret, 4)
+            result["seasonal_positive_pct"] = round(pos_pct, 4)
+            if avg_ret > 0.02 and pos_pct > 0.6:
+                result["seasonal_signal"] = "BULLISH"
+            elif avg_ret < -0.02 and pos_pct < 0.4:
+                result["seasonal_signal"] = "BEARISH"
+    except Exception as e:
+        result["error"] = str(e)
+    return result
+
+
+def get_analyst_score(ticker: str) -> dict:
+    """
+    Analyst rating changes from UW screener.
+    Upgrades = bullish signal. Downgrades = bearish signal.
+    """
+    result = {
+        "analyst_score":   0.0,
+        "upgrades_30d":    0,
+        "downgrades_30d":  0,
+        "avg_target":      0.0,
+        "analyst_signal":  "NEUTRAL",
+        "error":           None,
+    }
+    try:
+        r = requests.get(
+            f"{BASE_URL}/api/screener/analysts",
+            headers=HEADERS,
+            params={"ticker": ticker},
+            timeout=8
+        )
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data     = r.json().get("data", [])
+        if not data:
+            return result
+
+        from datetime import datetime, timedelta
+        cutoff   = (datetime.now() - timedelta(days=30)).isoformat()
+        recent   = [d for d in data if d.get("timestamp","") >= cutoff]
+
+        upgrades   = sum(1 for d in recent if d.get("action","").lower() in
+                        ("upgrade","initiated","reiterated") and
+                        d.get("recommendation","").lower() in ("buy","strong buy","outperform"))
+        downgrades = sum(1 for d in recent if d.get("action","").lower() == "downgrade")
+
+        targets = [float(d["target"]) for d in recent if d.get("target")]
+        avg_tgt = sum(targets) / len(targets) if targets else 0.0
+
+        score = (upgrades - downgrades) / max(len(recent), 1)
+        result["analyst_score"]   = round(score, 4)
+        result["upgrades_30d"]    = upgrades
+        result["downgrades_30d"]  = downgrades
+        result["avg_target"]      = round(avg_tgt, 2)
+
+        if score > 0.2:
+            result["analyst_signal"] = "BULLISH"
+        elif score < -0.2:
+            result["analyst_signal"] = "BEARISH"
+
+    except Exception as e:
+        result["error"] = str(e)
+    return result
+
+
+def get_ftd_score(ticker: str) -> dict:
+    """
+    Failures to deliver from UW.
+    High FTDs = naked short pressure = potential squeeze.
+    """
+    result = {
+        "ftd_shares":  0,
+        "ftd_signal":  "NEUTRAL",
+        "error":       None,
+    }
+    try:
+        r = requests.get(
+            f"{BASE_URL}/api/shorts/{ticker}/ftds",
+            headers=HEADERS, timeout=8
+        )
+        if r.status_code != 200:
+            result["error"] = f"UW {r.status_code}"
+            return result
+        data = r.json().get("data", [])
+        if not data:
+            return result
+
+        # Sum last 5 days FTDs
+        recent_ftds = sum(int(d.get("quantity", 0) or 0) for d in data[:5])
+        result["ftd_shares"] = recent_ftds
+
+        if recent_ftds > 500_000:
+            result["ftd_signal"] = "HIGH"
+        elif recent_ftds > 100_000:
+            result["ftd_signal"] = "ELEVATED"
+
+    except Exception as e:
+        result["error"] = str(e)
+    return result

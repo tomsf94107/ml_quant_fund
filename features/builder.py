@@ -556,6 +556,25 @@ def build_feature_dataframe(
                     "post_earnings_drift", "is_earnings_week"]:
             df[col] = 0.0
 
+    # ── UW extended features — seasonality, analyst, FTDs ─────────────────
+    try:
+        from features.uw_signals import (
+            get_seasonality_features, get_analyst_score, get_ftd_score
+        )
+        seas    = get_seasonality_features(ticker)
+        analyst = get_analyst_score(ticker)
+        ftd     = get_ftd_score(ticker)
+        df["seasonal_avg_return"]   = seas["seasonal_avg_return"]
+        df["seasonal_positive_pct"] = seas["seasonal_positive_pct"]
+        df["analyst_score"]         = analyst["analyst_score"]
+        df["upgrades_30d"]          = float(analyst["upgrades_30d"])
+        df["downgrades_30d"]        = float(analyst["downgrades_30d"])
+        df["ftd_shares"]            = float(ftd["ftd_shares"]) / 1e6
+    except Exception:
+        for col in ["seasonal_avg_return","seasonal_positive_pct",
+                    "analyst_score","upgrades_30d","downgrades_30d","ftd_shares"]:
+            df[col] = 0.0
+
     # ── 9. Insider flows ──────────────────────────────────────────────────────
     ins_net, ins_7d, ins_21d = _load_insider_uw(ticker, date_index)
     df["insider_net_shares"] = ins_net.values
