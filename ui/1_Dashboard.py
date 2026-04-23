@@ -399,10 +399,11 @@ _auto_load = st.session_state.pop("auto_load_cache", False)
 
 if not _run_cache and not _refresh_live and not _auto_load:
     if _cache:
-        st.info("Click **📦 Run Strategy** to load cached signals, or **🔄 Refresh Live** for fresh data.")
+        # Auto-load cache on page open — no button click needed
+        _run_cache = True
     else:
         st.info("No cache yet. Click **🔄 Refresh Live** to generate signals.")
-    st.stop()
+        st.stop()
 
 # Auto-load after Refresh Live completes
 if _auto_load:
