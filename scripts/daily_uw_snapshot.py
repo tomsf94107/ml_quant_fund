@@ -14,6 +14,7 @@ import sys
 import os
 import sqlite3
 import time
+import requests
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -252,7 +253,8 @@ def run_snapshot(snapshot_date: str = None):
                           pre_drift, post_drift, actual_eps, est_eps, now))
                 earn_ok += 1
                 time.sleep(0.3)
-            except Exception:
+            except Exception as earn_err:
+                print(f"  {ticker} earnings error: {earn_err}")
                 earn_fail += 1
                 time.sleep(0.3)
         conn.commit()
