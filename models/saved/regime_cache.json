@@ -5,11 +5,11 @@
   "signal_multiplier": 1.05,
   "block_tau": 4,
   "description": "Bull market \u2014 trending up, low vol. Lower entry bar.",
-  "computed_at": "2026-04-23T09:21:19.418524",
-  "spy_trend_20d": 0.0828080966504261,
-  "spy_trend_60d": 0.025395567162709298,
-  "vix_level": 18.920000076293945,
-  "vix_percentile": 68.2051282051282,
+  "computed_at": "2026-04-24T12:35:58.074718",
+  "spy_trend_20d": 0.09821882638678314,
+  "spy_trend_60d": 0.02151912625919361,
+  "vix_level": 19.309999465942383,
+  "vix_percentile": 71.28205128205128,
   "bond_signal": "NEUTRAL",
   "breadth_signal": "STRONG"
 }

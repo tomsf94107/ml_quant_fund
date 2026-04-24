@@ -502,6 +502,7 @@ elif _refresh_live:
             "prediction_date": date.today().isoformat(),
             "horizon":         horizon,
             "prob_up":         result.today_prob_eff,
+            "prob_raw":        result.today_prob,
             "signal":          result.today_signal,
             "confidence":      confidence_str,
         })
