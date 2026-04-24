@@ -184,7 +184,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full"):
     tickers = load_tickers()
 
     from features.dark_pool import get_dark_pool_ratio
-    from features.options_flow import get_25delta_skew
+    from features.massive_options import get_25delta_skew_with_fallback as get_25delta_skew
 
     from datetime import datetime
     now = datetime.now().isoformat()

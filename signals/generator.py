@@ -340,7 +340,7 @@ def generate_signals(
         try:
             from features.uw_signals import get_combined_uw_multiplier
             from features.dark_pool import get_dark_pool_ratio, dark_pool_to_multiplier
-            from features.options_flow import get_25delta_skew
+            from features.massive_options import get_25delta_skew_with_fallback as get_25delta_skew
 
             if _is_market_hours:
                 # Live API during market hours
