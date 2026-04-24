@@ -461,32 +461,8 @@ def get_short_interest_score(ticker: str) -> dict:
             return result
     except Exception:
         pass
-    try:
-        r = requests.get(f"{BASE_URL}/api/shorts/{ticker}/interest-float/v2",
-                         headers=HEADERS, timeout=8)
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
-            return result
-        data = r.json().get("data", [])
-        if not data:
-            return result
-        latest    = data[0]
-        si_float  = float(latest.get("si_float", 0) or 0)
-        dtc       = float(latest.get("days_to_cover", 0) or 0)
-        result["si_float"]     = round(si_float, 4)
-        result["days_to_cover"]= round(dtc, 2)
-        # High SI + high DTC = squeeze potential = BULLISH
-        # Moderate SI = mild bearish (crowded short)
-        if si_float > 0.20 and dtc > 5:
-            result["si_signal"] = "SQUEEZE"
-        elif si_float > 0.10:
-            result["si_signal"] = "HIGH_SHORT"
-        elif si_float < 0.02:
-            result["si_signal"] = "LOW_SHORT"
-        else:
-            result["si_signal"] = "NEUTRAL"
-    except Exception as e:
-        result["error"] = str(e)
+    # No live API fallback — DB only
+    result["error"] = "No SI data in DB yet — run uwsnapshot first"
     return result
 
 
@@ -623,29 +599,8 @@ def get_seasonality_features(ticker: str) -> dict:
             return result
     except Exception:
         pass
-    try:
-        r = requests.get(
-            f"{BASE_URL}/api/seasonality/{ticker}/monthly",
-            headers=HEADERS, timeout=8
-        )
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
-            return result
-        data  = r.json().get("data", [])
-        month = date.today().month
-        match = [d for d in data if int(d.get("month", 0)) == month]
-        if match:
-            m = match[0]
-            avg_ret  = float(m.get("avg_change", 0) or 0)
-            pos_pct  = float(m.get("positive_months_perc", 0.5) or 0.5)
-            result["seasonal_avg_return"]   = round(avg_ret, 4)
-            result["seasonal_positive_pct"] = round(pos_pct, 4)
-            if avg_ret > 0.02 and pos_pct > 0.6:
-                result["seasonal_signal"] = "BULLISH"
-            elif avg_ret < -0.02 and pos_pct < 0.4:
-                result["seasonal_signal"] = "BEARISH"
-    except Exception as e:
-        result["error"] = str(e)
+    # No live API fallback — DB only to avoid burning API calls during retrain
+    result["error"] = "No seasonality data in DB yet — run uwsnapshot first"
     return result
 
 
@@ -681,45 +636,8 @@ def get_analyst_score(ticker: str) -> dict:
             return result
     except Exception:
         pass
-    try:
-        r = requests.get(
-            f"{BASE_URL}/api/screener/analysts",
-            headers=HEADERS,
-            params={"ticker": ticker},
-            timeout=8
-        )
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
-            return result
-        data     = r.json().get("data", [])
-        if not data:
-            return result
-
-        from datetime import datetime, timedelta
-        cutoff   = (datetime.now() - timedelta(days=30)).isoformat()
-        recent   = [d for d in data if d.get("timestamp","") >= cutoff]
-
-        upgrades   = sum(1 for d in recent if d.get("action","").lower() in
-                        ("upgrade","initiated","reiterated") and
-                        d.get("recommendation","").lower() in ("buy","strong buy","outperform"))
-        downgrades = sum(1 for d in recent if d.get("action","").lower() == "downgrade")
-
-        targets = [float(d["target"]) for d in recent if d.get("target")]
-        avg_tgt = sum(targets) / len(targets) if targets else 0.0
-
-        score = (upgrades - downgrades) / max(len(recent), 1)
-        result["analyst_score"]   = round(score, 4)
-        result["upgrades_30d"]    = upgrades
-        result["downgrades_30d"]  = downgrades
-        result["avg_target"]      = round(avg_tgt, 2)
-
-        if score > 0.2:
-            result["analyst_signal"] = "BULLISH"
-        elif score < -0.2:
-            result["analyst_signal"] = "BEARISH"
-
-    except Exception as e:
-        result["error"] = str(e)
+    # No live API fallback — DB only
+    result["error"] = "No analyst data in DB yet — run uwsnapshot first"
     return result
 
 
@@ -747,27 +665,6 @@ def get_ftd_score(ticker: str) -> dict:
             return result
     except Exception:
         pass
-    try:
-        r = requests.get(
-            f"{BASE_URL}/api/shorts/{ticker}/ftds",
-            headers=HEADERS, timeout=8
-        )
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
-            return result
-        data = r.json().get("data", [])
-        if not data:
-            return result
-
-        # Sum last 5 days FTDs
-        recent_ftds = sum(int(d.get("quantity", 0) or 0) for d in data[:5])
-        result["ftd_shares"] = recent_ftds
-
-        if recent_ftds > 500_000:
-            result["ftd_signal"] = "HIGH"
-        elif recent_ftds > 100_000:
-            result["ftd_signal"] = "ELEVATED"
-
-    except Exception as e:
-        result["error"] = str(e)
+    # No live API fallback — DB only
+    result["error"] = "No FTD data in DB yet — run uwsnapshot first"
     return result
