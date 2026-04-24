@@ -50,6 +50,17 @@ def save_feature_importance(ticker: str, horizon: int, importances: dict, retrai
                 VALUES (?, ?, ?, ?, ?, ?, ?)
             """, (ticker, horizon, date_str, feature, float(importance), rank, now))
             written += 1
+        # Update SHAP importance if provided
+        if shap_importances:
+            for feat, shap_val in shap_importances.items():
+                try:
+                    conn.execute("""
+                        UPDATE feature_importance_history
+                        SET shap_importance = ?
+                        WHERE ticker=? AND horizon=? AND feature=? AND retrain_date=?
+                    """, (float(shap_val), ticker, horizon, feat, date_str))
+                except Exception:
+                    pass
         conn.commit()
     return written
 

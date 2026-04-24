@@ -83,7 +83,7 @@ def train_one_ticker(
             # Save feature importances to DB
             try:
                 from models.importance_tracker import save_feature_importance
-                save_feature_importance(ticker, h, result.feature_importances)
+                save_feature_importance(ticker, h, result.feature_importances, shap_importances=result.shap_importances)
             except Exception:
                 pass  # non-critical, never block training
 
