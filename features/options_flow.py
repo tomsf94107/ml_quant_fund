@@ -333,6 +333,19 @@ def get_25delta_skew(ticker: str) -> dict:
         if r.status_code == 403:
             result["error"] = "UW API plan does not include options"
             return result
+        if r.status_code == 429:
+            # Rate limited — fall back to yfinance
+            try:
+                yf_sig = get_options_signal(result["ticker"])
+                if yf_sig.get("iv_skew") is not None:
+                    result["skew_25d"]    = round(yf_sig["iv_skew"], 4)
+                    result["skew_signal"] = "BEARISH" if yf_sig["iv_skew"] > 0.03 else "BULLISH" if yf_sig["iv_skew"] < -0.02 else "NEUTRAL"
+                    result["iv_rank"]     = yf_sig.get("iv_rank")
+                    result["error"]       = None
+                    result["source"]      = "YFINANCE_FALLBACK"
+            except Exception:
+                result["error"] = "Rate limited + yfinance fallback failed"
+            return result
         if r.status_code != 200:
             result["error"] = f"UW API error: {r.status_code}"
             return result

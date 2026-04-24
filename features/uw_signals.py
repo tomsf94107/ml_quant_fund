@@ -42,6 +42,9 @@ def get_options_flow_score(ticker: str) -> dict:
             f"{BASE_URL}/api/option-trades/flow-alerts",
             headers=HEADERS, timeout=10
         )
+        if r.status_code == 429:
+            result["error"] = "Rate limited"
+            return result  # Return neutral
         if r.status_code != 200:
             result["error"] = f"UW API error: {r.status_code}"
             return result
@@ -109,10 +112,15 @@ def flow_score_to_multiplier(flow_score: float) -> float:
 # 2. MARKET TIDE
 # ══════════════════════════════════════════════════════════════════════
 
+def _is_rate_limited(status_code: int) -> bool:
+    return status_code == 429
+
+
 def get_market_tide() -> dict:
     """
     Get today's market tide — net call vs put premium across entire market.
     Positive = bullish market flow. Negative = bearish.
+    Returns neutral on rate limit — non-critical signal.
     """
     result = {
         "tide_score":       0.0,
@@ -127,6 +135,9 @@ def get_market_tide() -> dict:
             f"{BASE_URL}/api/market/market-tide",
             headers=HEADERS, timeout=10
         )
+        if r.status_code == 429:
+            result["error"] = "Rate limited"
+            return result  # Return neutral — non-critical
         if r.status_code != 200:
             result["error"] = f"UW API error: {r.status_code}"
             return result

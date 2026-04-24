@@ -14,6 +14,35 @@ BASE_URL   = "https://api.unusualwhales.com"
 HEADERS    = {"Authorization": f"Bearer {UW_API_KEY}"}
 
 
+def _get_dark_pool_from_db(ticker: str, trade_date: str, result: dict) -> dict:
+    """Fallback to DB when UW API is rate limited."""
+    try:
+        import sqlite3
+        from pathlib import Path
+        from datetime import timedelta
+        db = Path(__file__).parent.parent / "accuracy.db"
+        cutoff = str((date.today() - timedelta(days=3)).isoformat())
+        with sqlite3.connect(db, timeout=30) as conn:
+            row = conn.execute("""
+                SELECT dp_ratio, dp_volume, total_volume, dp_signal
+                FROM dark_pool_history
+                WHERE ticker=? AND date>=?
+                ORDER BY date DESC LIMIT 1
+            """, (ticker, cutoff)).fetchone()
+        if row:
+            result["dp_ratio"]     = row[0]
+            result["dp_volume"]    = row[1]
+            result["total_volume"] = row[2]
+            result["dp_signal"]    = row[3]
+            result["error"]        = None
+            result["source"]       = "DB_FALLBACK"
+        else:
+            result["error"] = "Rate limited + no DB data"
+    except Exception as e:
+        result["error"] = f"DB fallback failed: {e}"
+    return result
+
+
 def get_dark_pool_ratio(
     ticker: str,
     trade_date: Optional[str] = None,
@@ -52,6 +81,9 @@ def get_dark_pool_ratio(
         if r.status_code == 403:
             result["error"] = "UW API plan does not include dark pool"
             return result
+        if r.status_code == 429:
+            # Rate limited — fall back to DB
+            return _get_dark_pool_from_db(ticker, trade_date, result)
         if r.status_code != 200:
             result["error"] = f"UW API error: {r.status_code}"
             return result
