@@ -170,6 +170,7 @@ class TrainResult:
     feature_cols: list[str]
     metrics:    dict = field(default_factory=dict)
     feature_importances: dict = field(default_factory=dict)
+    shap_importances:    dict = field(default_factory=dict)
 
     # metrics keys: accuracy, roc_auc, log_loss, brier_score, n_train, n_test
 
@@ -347,12 +348,31 @@ def train_model(
 
     base_clf.fit(X_train, y_train, **fit_kwargs)
 
-    # ── Extract feature importances (gain-based) ───────────────────────────
+    # ── Extract feature importances (gain-based + SHAP) ────────────────────
     try:
         raw_imp = base_clf.get_booster().get_score(importance_type="gain")
         feature_importances = {f: raw_imp.get(f, 0.0) for f in FEATURE_COLUMNS}
     except Exception:
         feature_importances = {}
+
+    # SHAP values — more accurate importance than gain
+    shap_importances = {}
+    try:
+        import shap
+        explainer   = shap.TreeExplainer(base_clf)
+        # Use test set for SHAP (smaller sample = faster)
+        sample_size = min(200, len(X_test))
+        X_sample    = X_test.iloc[:sample_size] if hasattr(X_test, "iloc") else X_test[:sample_size]
+        shap_values = explainer.shap_values(X_sample)
+        # Mean absolute SHAP value per feature = global importance
+        import numpy as np
+        mean_abs_shap = np.abs(shap_values).mean(axis=0)
+        for i, feat in enumerate(FEATURE_COLUMNS):
+            if i < len(mean_abs_shap):
+                shap_importances[feat] = float(mean_abs_shap[i])
+    except Exception as e:
+        shap_importances = {}
+        print(f"  SHAP calculation failed: {e}")
 
     # ── Isotonic calibration ───────────────────────────────────────────────
     # Isotonic regression re-maps the raw sigmoid output to true probabilities.
@@ -396,6 +416,7 @@ def train_model(
         feature_cols=FEATURE_COLUMNS,
         metrics=metrics,
         feature_importances=feature_importances,
+        shap_importances=shap_importances,
     )
 
     if save:
