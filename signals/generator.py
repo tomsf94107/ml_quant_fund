@@ -319,19 +319,54 @@ def generate_signals(
     _is_etf = ticker.upper() in _ETFS
 
     # ── UW signals multiplier ────────────────────────────────────────────────
-    # Combines: options flow alerts + market tide + OI change + institutional
-    # Only applied to today's signal (live), not backtest history.
+    # During market hours: calls live API for dark pool + skew
+    # Pre/post market: reads from DB only — zero API calls
     options_mult = 1.0
     try:
         if _is_etf: raise Exception('ETF skip')
         import signal as _sig
+        from datetime import datetime
+        import pytz
+        _ET  = pytz.timezone("America/New_York")
+        _now = datetime.now(_ET)
+        _market_open  = _now.replace(hour=9,  minute=30, second=0, microsecond=0)
+        _market_close = _now.replace(hour=16, minute=0,  second=0, microsecond=0)
+        _is_market_hours = (_market_open <= _now <= _market_close
+                            and _now.weekday() < 5)
+
         def _timeout(s,f): raise TimeoutError()
         _sig.signal(_sig.SIGALRM, _timeout)
         _sig.alarm(15)
         try:
             from features.uw_signals import get_combined_uw_multiplier
-            uw = get_combined_uw_multiplier(ticker)
-            options_mult = uw["combined"]
+            from features.dark_pool import get_dark_pool_ratio, dark_pool_to_multiplier
+            from features.options_flow import get_25delta_skew
+
+            if _is_market_hours:
+                # Live API during market hours
+                uw = get_combined_uw_multiplier(ticker)
+                options_mult = uw["combined"]
+            else:
+                # DB only pre/post market — read from dark_pool_history + options_skew_history
+                import sqlite3
+                from pathlib import Path
+                from datetime import date, timedelta
+                _db = Path(__file__).parent.parent / "accuracy.db"
+                _cutoff = str(date.today() - timedelta(days=1))
+                with sqlite3.connect(_db, timeout=30) as _conn:
+                    _dp = _conn.execute("""
+                        SELECT dp_ratio FROM dark_pool_history
+                        WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1
+                    """, (ticker, _cutoff)).fetchone()
+                    _sk = _conn.execute("""
+                        SELECT skew_25d FROM options_skew_history
+                        WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1
+                    """, (ticker, _cutoff)).fetchone()
+                _dp_ratio  = _dp[0] if _dp else 0.0
+                _skew_25d  = _sk[0] if _sk else 0.0
+                _dp_mult   = dark_pool_to_multiplier(_dp_ratio)
+                _skew_mult = 0.92 if _skew_25d > 0.03 else 1.05 if _skew_25d < -0.02 else 1.0
+                options_mult = round(min(max(_dp_mult * _skew_mult, 0.85), 1.15), 4)
         finally:
             _sig.alarm(0)
     except Exception:
