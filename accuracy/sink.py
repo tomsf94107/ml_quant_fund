@@ -248,6 +248,7 @@ def log_predictions_batch(rows: list[dict]) -> int:
             str(r["prediction_date"]),
             int(r["horizon"]),
             float(r["prob_up"]),
+            (float(r["prob_raw"]) if r.get("prob_raw") is not None else None),
             r["signal"],
             r["confidence"],
             r.get("model_version", "v1"),
@@ -258,9 +259,9 @@ def log_predictions_batch(rows: list[dict]) -> int:
     with _get_conn() as conn:
         conn.cursor().executemany(f"""
             INSERT OR REPLACE INTO predictions
-                (ticker, prediction_date, horizon, prob_up,
+                (ticker, prediction_date, horizon, prob_up, prob_raw,
                  signal, confidence, model_version, created_at)
-            VALUES ({p},{p},{p},{p},{p},{p},{p},{p})
+            VALUES ({p},{p},{p},{p},{p},{p},{p},{p},{p})
         """, records)
     return len(records)
 

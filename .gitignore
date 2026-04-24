@@ -34,3 +34,9 @@ logs/
 models/saved/regime_cache.json
 data/cache/alpha/
 .portfolio.enc
+# Trained models — regenerated from training pipeline
+models/*.joblib
+models/*/*.joblib
+# Reports — regenerated from scripts
+reports/*.csv
+reports/*.log
