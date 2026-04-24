@@ -346,6 +346,29 @@ def generate_signals(
                 # Live API during market hours
                 uw = get_combined_uw_multiplier(ticker)
                 options_mult = uw["combined"]
+
+                # Save fresh skew to DB so future reads have latest data
+                try:
+                    _skew_result = get_25delta_skew(ticker)
+                    if _skew_result.get("skew_25d") is not None:
+                        import sqlite3
+                        from pathlib import Path
+                        from datetime import date, datetime
+                        _db = Path(__file__).parent.parent / "accuracy.db"
+                        with sqlite3.connect(_db, timeout=30) as _conn:
+                            _conn.execute("""
+                                INSERT OR REPLACE INTO options_skew_history
+                                    (date, ticker, skew_25d, iv_rank, skew_signal, source, created_at)
+                                VALUES (?, ?, ?, ?, ?, ?, ?)
+                            """, (str(date.today()), ticker,
+                                  _skew_result["skew_25d"],
+                                  _skew_result.get("iv_rank"),
+                                  _skew_result.get("skew_signal", "NEUTRAL"),
+                                  _skew_result.get("source", "live"),
+                                  datetime.now().isoformat()))
+                            _conn.commit()
+                except Exception:
+                    pass  # Non-critical — skew still used for prediction
             else:
                 # DB only pre/post market — read from dark_pool_history + options_skew_history
                 import sqlite3
