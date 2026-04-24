@@ -492,9 +492,12 @@ def generate_signals(
     today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
+    # Walk-forward CV (Apr 2026) showed h=1 has no edge (AUC 0.51, BUY hit 46%).
+    # Require much higher prob_eff for h=1 BUY to avoid negative-edge signals.
+    _h1_floor       = 0.80 if horizon == 1 else confidence_threshold
     today_signal    = (
         "BUY"
-        if today_prob_eff > confidence_threshold and not today_gated and not _suppress
+        if today_prob_eff > _h1_floor and not today_gated and not _suppress
         else "HOLD"
     )
 
