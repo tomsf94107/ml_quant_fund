@@ -1,0 +1,2 @@
+ticker,horizon,n_folds,accuracy_mean,accuracy_std,auc_mean,brier_mean,buy_hit_55_mean,buy_n_55_total,pos_rate_mean
+AAPL,1,24,0.5079,0.0454,0.5198,0.2608,0.5456,514,0.5304
