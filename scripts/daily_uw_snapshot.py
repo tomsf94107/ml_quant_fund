@@ -463,6 +463,41 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full"):
                 time.sleep(0.2)
         conn.commit()
     print(f"  FTDs:           {ftd_ok} ok  {ftd_fail} failed")
+
+    # ── Wikipedia pageviews (FREE) ────────────────────────────────────────
+    print("  Fetching Wikipedia pageviews...")
+    from features.alt_data import init_wiki_table, fetch_wiki_pageviews, save_wiki_to_db, WIKI_MAPPING
+    init_wiki_table()
+    wiki_ok = wiki_skip = 0
+    for ticker in tickers:
+        if ticker.upper() not in WIKI_MAPPING:
+            wiki_skip += 1
+            continue
+        try:
+            pv = fetch_wiki_pageviews(ticker, days_back=30)
+            if pv:
+                save_wiki_to_db(ticker, pv)
+                wiki_ok += 1
+            time.sleep(0.1)  # Wikipedia: 100 req/sec limit, be nice
+        except Exception:
+            pass
+    print(f"  Wikipedia:      {wiki_ok} ok  {wiki_skip} no mapping")
+
+    # ── SEC 8-K filings (FREE) ────────────────────────────────────────────
+    print("  Fetching SEC 8-K filings...")
+    from features.alt_data import init_sec_table, fetch_recent_8k, save_8k_to_db
+    init_sec_table()
+    sec_ok = sec_fail = 0
+    for ticker in tickers:
+        try:
+            filings = fetch_recent_8k(ticker, days_back=30)
+            if filings:
+                save_8k_to_db(ticker, filings)
+                sec_ok += 1
+            time.sleep(0.2)  # SEC: 10 req/sec limit
+        except Exception:
+            sec_fail += 1
+    print(f"  SEC 8-K:        {sec_ok} ok  {sec_fail} failed")
     print(f"{'='*60}\n")
 
 
