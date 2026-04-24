@@ -277,9 +277,25 @@ def get_intraday_signal(ticker: str) -> dict:
             if p <= 0.40: return "DOWN"
             return "NEUTRAL"
 
-        # Apply dark pool + skew multiplier
+        # Apply dark pool + skew multiplier — live API only during market hours
         try:
-            uw = _fetch_and_save_uw_today(ticker)
+            if is_market_open():
+                uw = _fetch_and_save_uw_today(ticker)
+            else:
+                # Read from DB pre/post market
+                import sqlite3
+                from pathlib import Path
+                from datetime import date, timedelta
+                _db = Path(__file__).parent.parent / "accuracy.db"
+                _cutoff = str(date.today() - timedelta(days=1))
+                with sqlite3.connect(_db, timeout=30) as _conn:
+                    _dp = _conn.execute(
+                        "SELECT dp_ratio FROM dark_pool_history WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1",
+                        (ticker, _cutoff)).fetchone()
+                    _sk = _conn.execute(
+                        "SELECT skew_25d FROM options_skew_history WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1",
+                        (ticker, _cutoff)).fetchone()
+                uw = {"dp_ratio": _dp[0] if _dp else 0.0, "skew_25d": _sk[0] if _sk else 0.0}
             mult = _dp_skew_to_mult(uw["dp_ratio"], uw["skew_25d"])
             p1 = round(min(max(p1 * mult, 0.05), 0.95), 3)
             p2 = round(min(max(p2 * mult, 0.05), 0.95), 3)
@@ -385,12 +401,27 @@ def get_all_intraday_signals(tickers: list) -> list:
                 if p <= 0.40: return "DOWN"
                 return "NEUTRAL"
 
-            # Apply dark pool + skew multiplier
+            # Apply dark pool + skew multiplier — live API only during market hours
             dp_ratio_val = 0.0
             skew_25d_val = 0.0
             uw_mult_val  = 1.0
             try:
-                uw = _fetch_and_save_uw_today(ticker)
+                if is_market_open():
+                    uw = _fetch_and_save_uw_today(ticker)
+                else:
+                    import sqlite3
+                    from pathlib import Path
+                    from datetime import date, timedelta
+                    _db = Path(__file__).parent.parent / "accuracy.db"
+                    _cutoff = str(date.today() - timedelta(days=1))
+                    with sqlite3.connect(_db, timeout=30) as _conn:
+                        _dp = _conn.execute(
+                            "SELECT dp_ratio FROM dark_pool_history WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1",
+                            (ticker, _cutoff)).fetchone()
+                        _sk = _conn.execute(
+                            "SELECT skew_25d FROM options_skew_history WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1",
+                            (ticker, _cutoff)).fetchone()
+                    uw = {"dp_ratio": _dp[0] if _dp else 0.0, "skew_25d": _sk[0] if _sk else 0.0}
                 uw_mult_val  = _dp_skew_to_mult(uw["dp_ratio"], uw["skew_25d"])
                 dp_ratio_val = uw["dp_ratio"]
                 skew_25d_val = uw["skew_25d"]
