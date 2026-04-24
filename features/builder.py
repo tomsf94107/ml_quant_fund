@@ -355,8 +355,13 @@ def build_feature_dataframe(
     date_index = pd.Index(df["date"])
 
     # ── 3. Price-based features ───────────────────────────────────────────────
+    # Ensure Series (not DataFrame if duplicate columns exist)
     c = df["close"]
-    o = df["open"] if "open" in df.columns else c  # open price
+    if hasattr(c, "columns"):  # it's a DataFrame (duplicate "close" columns)
+        c = c.iloc[:, 0]
+    o = df["open"] if "open" in df.columns else c
+    if hasattr(o, "columns"):  # it's a DataFrame (duplicate "open" columns)
+        o = o.iloc[:, 0]
 
     # ── Pre-market gap ────────────────────────────────────────────────────────
     # How much did stock gap up/down from yesterday's close to today's open
