@@ -172,7 +172,7 @@ def load_tickers() -> list[str]:
 ETF_LIST = {"SPY","QQQ","GLD","SLV","XLF","XLE","XLV","XLI","XLU"}
 
 
-def run_snapshot(snapshot_date: str = None):
+def run_snapshot(snapshot_date: str = None, mode: str = "full"):
     if snapshot_date is None:
         snapshot_date = str(date.today() - timedelta(days=1))
 
@@ -267,6 +267,12 @@ def run_snapshot(snapshot_date: str = None):
     print(f"  Dark pool:  {dp_ok} ok  {dp_fail} failed")
     print(f"  Skew:       {skew_ok} ok  {skew_fail} failed")
     print(f"  Institutional: saved to DB")
+
+    # ── Skip slow signals in post_market mode ────────────────────────────
+    if mode == "post_market":
+        print(f"  Mode: post_market — dark pool + skew only")
+        print(f"{'='*60}\n")
+        return
 
     # ── Earnings cache ────────────────────────────────────────────────────
     print("  Fetching earnings calendar from UW...")
@@ -464,5 +470,7 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=None, help="Date YYYY-MM-DD (default: yesterday)")
+    parser.add_argument("--mode", default="full", choices=["full", "post_market"],
+                        help="full = all signals, post_market = dark pool + skew only")
     args = parser.parse_args()
-    run_snapshot(args.date)
+    run_snapshot(args.date, mode=args.mode)
