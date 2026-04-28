@@ -1,0 +1,48 @@
+#!/bin/bash
+# scripts/pipeline_C_preopen.sh
+# ─────────────────────────────────────────────────────────────────────────────
+# PRE-OPEN FRESH RUNFUND
+# Runs 8 PM VN (9 AM ET) Mon-Fri — 30 min before US market open
+# Refreshes live UW signals and re-generates today's signal with fresh data
+# Uses the model trained by Pipeline B that morning
+# ─────────────────────────────────────────────────────────────────────────────
+#   Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)
+#   Stage 2: Run daily predictions again with fresh live features
+# ─────────────────────────────────────────────────────────────────────────────
+
+set -euo pipefail
+
+ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund
+PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python
+DATE_TAG=$(date +%Y%m%d)
+LOGDIR=$ROOT/logs/pipeline_C_$DATE_TAG
+mkdir -p "$LOGDIR"
+
+cd $ROOT
+source /Users/atomnguyen/.zshrc 2>/dev/null || true
+
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOGDIR/pipeline.log"
+}
+
+fail() {
+    log "FAILED at $1"
+    osascript -e "display notification \"Pipeline C failed at $1\" with title \"ML Quant Fund\"" 2>/dev/null || true
+    exit 1
+}
+
+log "=== PIPELINE C START ==="
+
+# ── Stage 1: UW full snapshot ────────────────────────────────────────────────
+log "Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)"
+$PYTHON scripts/daily_uw_snapshot.py --mode full \
+    > "$LOGDIR/01_uw_snap.log" 2>&1 || fail "Stage 1 (uw_snapshot)"
+log "Stage 1 OK"
+
+# ── Stage 2: Fresh runfund ───────────────────────────────────────────────────
+log "Stage 2: Daily runner (fresh signals with live UW data)"
+$PYTHON -c "import sys; sys.path.insert(0,'.'); from scripts.daily_runner import run_daily; run_daily()" \
+    > "$LOGDIR/02_daily_runner.log" 2>&1 || fail "Stage 2 (daily_runner)"
+log "Stage 2 OK"
+
+log "=== PIPELINE C COMPLETE ==="

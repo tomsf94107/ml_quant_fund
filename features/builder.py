@@ -216,22 +216,18 @@ def _vwap(close: pd.Series, volume: pd.Series) -> pd.Series:
 def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series]:
     """
     Load insider trades from Unusual Whales API.
-    Falls back to SQLite if UW fails.
+    Routed through features.uw_client (market-hours gated). On gate-closed /
+    rate-limited / failed, falls through to _load_insider (SQLite).
     """
     zeros = pd.Series(0.0, index=dates, name="insider_net_shares")
     try:
-        import requests as _rq
-        uw_key = os.getenv("UW_API_KEY", "")
-        if not uw_key:
-            raise Exception("No UW key")
-        headers = {"Authorization": f"Bearer {uw_key}"}
-        url = f"https://api.unusualwhales.com/api/insider/{ticker}/ticker-flow"
-        r = _rq.get(url, headers=headers, timeout=10)
-        if r.status_code != 200:
-            raise Exception(f"UW API error: {r.status_code}")
-        trades = r.json().get("data", [])
+        from features.uw_client import uw_get
+        payload = uw_get(f"/api/insider/{ticker}/ticker-flow")
+        if payload is None:
+            return _load_insider(ticker, dates)
+        trades = payload.get("data", [])
         if not trades:
-            raise Exception("No insider data")
+            return _load_insider(ticker, dates)
 
         rows = []
         for t in trades:
@@ -245,7 +241,7 @@ def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series
                 continue
 
         if not rows:
-            raise Exception("No parseable trades")
+            return _load_insider(ticker, dates)
 
         idf = pd.DataFrame(rows).groupby("date")["net_shares"].sum()
         idf.index = pd.to_datetime(idf.index)
@@ -255,7 +251,7 @@ def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series
         return net, roll7, roll21
 
     except Exception:
-        return zeros, zeros.rename("insider_7d"), zeros.rename("insider_21d")
+        return _load_insider(ticker, dates)
 
 
 def _load_insider(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series]:

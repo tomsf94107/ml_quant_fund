@@ -4,17 +4,18 @@
 #   2. Market tide — market-wide call/put flow
 #   3. OI change — open interest change as GEX proxy
 #   4. Institutional ownership — quarterly holdings change
+#
+# All UW access routed through features.uw_client (market-hours gated,
+# daily-budget tracked, 429/5xx retry). Outside market hours every call
+# short-circuits to neutral defaults — no API burn during 7 AM VN retrain.
 
-import os
 import sqlite3
-import requests
 from datetime import date, datetime
 from pathlib import Path
 
-UW_KEY   = os.getenv("UW_API_KEY", "")
-HEADERS  = {"Authorization": f"Bearer {UW_KEY}"}
-BASE_URL = "https://api.unusualwhales.com"
-DB_PATH  = Path(__file__).parent.parent / "accuracy.db"
+from features.uw_client import uw_get
+
+DB_PATH = Path(__file__).parent.parent / "accuracy.db"
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -38,19 +39,13 @@ def get_options_flow_score(ticker: str) -> dict:
         "error":           None,
     }
     try:
-        r = requests.get(
-            f"{BASE_URL}/api/option-trades/flow-alerts",
-            headers=HEADERS, timeout=10
-        )
-        if r.status_code == 429:
-            result["error"] = "Rate limited"
+        payload = uw_get("/api/option-trades/flow-alerts")
+        if payload is None:
+            result["error"] = "UW skipped (market closed or rate limited)"
             return result  # Return neutral
-        if r.status_code != 200:
-            result["error"] = f"UW API error: {r.status_code}"
-            return result
 
         alerts = [
-            a for a in r.json().get("data", [])
+            a for a in payload.get("data", [])
             if a.get("ticker", "").upper() == ticker.upper()
         ]
 
@@ -112,15 +107,11 @@ def flow_score_to_multiplier(flow_score: float) -> float:
 # 2. MARKET TIDE
 # ══════════════════════════════════════════════════════════════════════
 
-def _is_rate_limited(status_code: int) -> bool:
-    return status_code == 429
-
-
 def get_market_tide() -> dict:
     """
     Get today's market tide — net call vs put premium across entire market.
     Positive = bullish market flow. Negative = bearish.
-    Returns neutral on rate limit — non-critical signal.
+    Returns neutral on rate limit / market-closed — non-critical signal.
     """
     result = {
         "tide_score":       0.0,
@@ -131,18 +122,12 @@ def get_market_tide() -> dict:
         "error":            None,
     }
     try:
-        r = requests.get(
-            f"{BASE_URL}/api/market/market-tide",
-            headers=HEADERS, timeout=10
-        )
-        if r.status_code == 429:
-            result["error"] = "Rate limited"
+        payload = uw_get("/api/market/market-tide")
+        if payload is None:
+            result["error"] = "UW skipped (market closed or rate limited)"
             return result  # Return neutral — non-critical
-        if r.status_code != 200:
-            result["error"] = f"UW API error: {r.status_code}"
-            return result
 
-        data = r.json().get("data", [])
+        data = payload.get("data", [])
         if not data:
             result["error"] = "No market tide data"
             return result
@@ -209,16 +194,13 @@ def get_oi_change_score(ticker: str) -> dict:
         "error":       None,
     }
     try:
-        r = requests.get(
-            f"{BASE_URL}/api/market/oi-change",
-            headers=HEADERS, timeout=10
-        )
-        if r.status_code != 200:
-            result["error"] = f"UW API error: {r.status_code}"
+        payload = uw_get("/api/market/oi-change")
+        if payload is None:
+            result["error"] = "UW skipped (market closed or rate limited)"
             return result
 
         data = [
-            d for d in r.json().get("data", [])
+            d for d in payload.get("data", [])
             if d.get("underlying_symbol", "").upper() == ticker.upper()
         ]
 
@@ -279,15 +261,12 @@ def get_institutional_score(ticker: str) -> dict:
         "error":          None,
     }
     try:
-        r = requests.get(
-            f"{BASE_URL}/api/institution/{ticker}/ownership",
-            headers=HEADERS, timeout=10
-        )
-        if r.status_code != 200:
-            result["error"] = f"UW API error: {r.status_code}"
+        payload = uw_get(f"/api/institution/{ticker}/ownership")
+        if payload is None:
+            result["error"] = "UW skipped (market closed or rate limited)"
             return result
 
-        data = r.json().get("data", [])
+        data = payload.get("data", [])
         if not data:
             result["error"] = "No institutional data"
             return result
@@ -354,21 +333,19 @@ def _get_marketwide_cached() -> dict:
 
 
 def _get_flow_alerts_raw() -> list:
-    """Fetch raw flow alerts once."""
+    """Fetch raw flow alerts once. Returns [] outside market hours."""
     try:
-        r = requests.get(f"{BASE_URL}/api/option-trades/flow-alerts",
-                         headers=HEADERS, timeout=10)
-        return r.json().get("data", []) if r.status_code == 200 else []
+        payload = uw_get("/api/option-trades/flow-alerts")
+        return payload.get("data", []) if payload else []
     except Exception:
         return []
 
 
 def _get_oi_raw() -> list:
-    """Fetch raw OI change data once."""
+    """Fetch raw OI change data once. Returns [] outside market hours."""
     try:
-        r = requests.get(f"{BASE_URL}/api/market/oi-change",
-                         headers=HEADERS, timeout=10)
-        return r.json().get("data", []) if r.status_code == 200 else []
+        payload = uw_get("/api/market/oi-change")
+        return payload.get("data", []) if payload else []
     except Exception:
         return []
 
@@ -489,12 +466,11 @@ def get_top_net_impact_score(ticker: str) -> dict:
     """Check if ticker appears in top net options premium impact list."""
     result = {"net_premium": 0.0, "in_top_impact": False, "error": None}
     try:
-        r = requests.get(f"{BASE_URL}/api/market/top-net-impact",
-                         headers=HEADERS, timeout=8)
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
+        payload = uw_get("/api/market/top-net-impact", timeout=8)
+        if payload is None:
+            result["error"] = "UW skipped"
             return result
-        data = r.json().get("data", [])
+        data = payload.get("data", [])
         match = [d for d in data if d.get("ticker","").upper() == ticker.upper()]
         if match:
             net = float(match[0].get("net_premium", 0) or 0)
@@ -509,12 +485,11 @@ def get_lit_flow_score(ticker: str) -> dict:
     """Lit exchange large trade flow — complement to dark pool."""
     result = {"lit_ratio": 0.0, "lit_signal": "NEUTRAL", "error": None}
     try:
-        r = requests.get(f"{BASE_URL}/api/lit-flow/{ticker}",
-                         headers=HEADERS, timeout=8)
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
+        payload = uw_get(f"/api/lit-flow/{ticker}", timeout=8)
+        if payload is None:
+            result["error"] = "UW skipped"
             return result
-        data = r.json().get("data", [])
+        data = payload.get("data", [])
         if not data:
             return result
         # Ratio of lit to total volume
@@ -532,12 +507,11 @@ def get_expiry_breakdown_score(ticker: str) -> dict:
     """Options expiry concentration — high OI near current expiry = pinning."""
     result = {"near_expiry_oi": 0, "pinning_risk": False, "error": None}
     try:
-        r = requests.get(f"{BASE_URL}/api/stock/{ticker}/expiry-breakdown",
-                         headers=HEADERS, timeout=8)
-        if r.status_code != 200:
-            result["error"] = f"UW {r.status_code}"
+        payload = uw_get(f"/api/stock/{ticker}/expiry-breakdown", timeout=8)
+        if payload is None:
+            result["error"] = "UW skipped"
             return result
-        data = r.json().get("data", [])
+        data = payload.get("data", [])
         if not data:
             return result
         # First expiry = nearest — high OI = pinning risk

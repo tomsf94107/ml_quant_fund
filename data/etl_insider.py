@@ -1,20 +1,15 @@
 # data/etl_insider.py
 # ─────────────────────────────────────────────────────────────────────────────
-# Insider trades ETL. Pulls from SEC EDGAR, writes to SQLite.
+# Insider trades ETL. Pulls Form 4 filings from SEC EDGAR, parses the primary
+# XML document of each filing for real share counts, writes to SQLite.
 #
-# What we fixed from etl_insider_v1.2:
-#   ✗ REMOVED: Google Sheets as primary source (unreliable, rate-limited)
-#   ✗ REMOVED: RSS ±1 bug — RSS parser assigned net_shares = ±1 regardless
-#     of actual trade size. A CEO buying 500k shares looked like a director
-#     buying 100 shares. Signal was meaningless.
-#   ✓ FIXED: Pull actual share counts from SEC EDGAR EDGAR full-text search API
-#   ✓ ADDED: Role weighting — CEO/CFO/President trades weighted 3x,
-#     other officers 1.5x, directors 1x. Consistent with academic literature
-#     on insider trading signals (Seyhun 1986, Jeng et al 2003).
-#   ✓ ADDED: SQLite sink — builder.py reads from this database
+# Flow:
+#   1. Resolve ticker → CIK via company_tickers.json
+#   2. Fetch CIK{cik}.json submissions → filter to Form 4 in date window
+#   3. For each Form 4: fetch the index JSON, find the primary XML, parse it
+#   4. Aggregate by date, weight by role, upsert to insider_flows table
 #
-# Zero Streamlit imports. Backend only.
-# Run this script on a schedule (daily) to keep the DB fresh.
+# Respects SEC fair-use: User-Agent with email, ~6 req/sec ceiling.
 # ─────────────────────────────────────────────────────────────────────────────
 
 from __future__ import annotations
@@ -22,6 +17,7 @@ from __future__ import annotations
 import os
 import sqlite3
 import time
+import xml.etree.ElementTree as ET
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Optional
@@ -32,38 +28,39 @@ import requests
 # ── Config ────────────────────────────────────────────────────────────────────
 DB_PATH      = Path(os.getenv("INSIDER_DB_PATH", "insider_trades.db"))
 SEC_HEADERS  = {
-    "User-Agent": os.getenv("SEC_USER_AGENT", "mlquant research@example.com"),
+    # SEC requires a User-Agent with a real email. Set SEC_USER_AGENT env var
+    # to your contact email, e.g. "atom research atom.v.nguyen@gmail.com"
+    "User-Agent": os.getenv("SEC_USER_AGENT", "ML Quant Fund research@example.com"),
     "Accept-Encoding": "gzip, deflate",
+    "Host": "www.sec.gov",
 }
-REQUEST_DELAY = 0.15   # seconds between SEC requests (be polite to EDGAR)
+DATA_HEADERS = {**SEC_HEADERS, "Host": "data.sec.gov"}
+REQUEST_DELAY = 0.18  # ~5.5 req/sec, under SEC's 10 req/sec ceiling
 
-# ── Role weighting (higher = stronger signal) ─────────────────────────────────
-# Based on academic consensus: C-suite insiders have more material information
-# than directors who only attend quarterly board meetings.
+# Cache ticker→CIK map so we only fetch it once per run
+_CIK_CACHE: dict[str, str] = {}
+
 ROLE_WEIGHTS: dict[str, float] = {
-    "CEO":       3.0,
-    "CFO":       3.0,
+    "CEO": 3.0, "CHIEF EXECUTIVE": 3.0,
+    "CFO": 3.0, "CHIEF FINANCIAL": 3.0,
     "PRESIDENT": 3.0,
-    "COO":       2.5,
-    "CTO":       2.0,
-    "CIO":       2.0,
+    "COO": 2.5, "CHIEF OPERATING": 2.5,
+    "CTO": 2.0, "CHIEF TECHNOLOGY": 2.0,
+    "CIO": 2.0, "CHIEF INFORMATION": 2.0,
     "GENERAL COUNSEL": 1.5,
-    "SVP":       1.5,
-    "EVP":       1.5,
-    "VP":        1.5,
-    "OFFICER":   1.5,
-    "DIRECTOR":  1.0,
-    "TRUSTEE":   1.0,
+    "SVP": 1.5, "EVP": 1.5, "VP": 1.5,
+    "OFFICER": 1.5,
+    "DIRECTOR": 1.0,
+    "TRUSTEE": 1.0,
 }
-DEFAULT_WEIGHT = 1.0   # for unknown roles
+DEFAULT_WEIGHT = 1.0
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  DATABASE SETUP
+#  DATABASE
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
-    """Create tables if they don't exist."""
     conn = sqlite3.connect(db_path)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS insider_flows (
@@ -87,34 +84,34 @@ def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  SEC EDGAR FETCHERS
+#  SEC EDGAR
 # ══════════════════════════════════════════════════════════════════════════════
 
-def _get_cik(ticker: str) -> Optional[str]:
-    """Look up SEC CIK number for a ticker using EDGAR company search."""
-    url = f"https://efts.sec.gov/LATEST/search-index?q=%22{ticker}%22&dateRange=custom&startdt=2020-01-01&forms=4"
+def _load_cik_map() -> dict[str, str]:
+    """Fetch ticker → CIK map once and cache it in-process."""
+    if _CIK_CACHE:
+        return _CIK_CACHE
     try:
-        # Use the company tickers JSON — faster and more reliable
         resp = requests.get(
             "https://www.sec.gov/files/company_tickers.json",
-            headers=SEC_HEADERS, timeout=10
+            headers=SEC_HEADERS, timeout=15,
         )
         resp.raise_for_status()
-        data = resp.json()
-        for entry in data.values():
-            if entry.get("ticker", "").upper() == ticker.upper():
-                return str(entry["cik_str"]).zfill(10)
-        return None
+        for entry in resp.json().values():
+            tkr = entry.get("ticker", "").upper()
+            cik = str(entry.get("cik_str", "")).zfill(10)
+            if tkr and cik:
+                _CIK_CACHE[tkr] = cik
     except Exception as e:
-        print(f"  ⚠ CIK lookup failed for {ticker}: {e}")
-        return None
+        print(f"  ⚠ CIK map fetch failed: {e}")
+    return _CIK_CACHE
+
+
+def _get_cik(ticker: str) -> Optional[str]:
+    return _load_cik_map().get(ticker.upper())
 
 
 def _get_role_weight(relationship_text: str) -> float:
-    """
-    Convert SEC relationship text to a role weight.
-    e.g. "Chief Executive Officer" → 3.0
-    """
     if not relationship_text:
         return DEFAULT_WEIGHT
     upper = relationship_text.upper()
@@ -124,210 +121,203 @@ def _get_role_weight(relationship_text: str) -> float:
     return DEFAULT_WEIGHT
 
 
-def _fetch_form4_filings(
-    ticker: str,
-    days_back: int = 365,
-) -> pd.DataFrame:
-    """
-    Fetch Form 4 filings from SEC EDGAR full-text search.
-    Returns DataFrame with actual share counts (not ±1).
-    """
-    cik = _get_cik(ticker)
-    if not cik:
-        print(f"  ⚠ Could not find CIK for {ticker}")
-        return pd.DataFrame()
-
-    since = (datetime.today() - timedelta(days=days_back)).strftime("%Y-%m-%d")
-
-    # EDGAR submissions endpoint — gets all recent filings for this CIK
+def _list_form4_filings(cik: str, since: str) -> list[dict]:
+    """Return list of {accession, filing_date, report_date} for Form 4 filings since `since`."""
     url = f"https://data.sec.gov/submissions/CIK{cik}.json"
     try:
         time.sleep(REQUEST_DELAY)
-        resp = requests.get(url, headers=SEC_HEADERS, timeout=15)
+        resp = requests.get(url, headers=DATA_HEADERS, timeout=15)
         resp.raise_for_status()
         data = resp.json()
     except Exception as e:
-        print(f"  ⚠ EDGAR submissions fetch failed for {ticker}: {e}")
-        return pd.DataFrame()
+        print(f"  ⚠ submissions fetch failed for CIK {cik}: {e}")
+        return []
 
-    # Filter to Form 4 filings within our window
-    filings = data.get("filings", {}).get("recent", {})
-    forms   = filings.get("form", [])
-    dates   = filings.get("filingDate", [])
-    accessions = filings.get("accessionNumber", [])
+    recent = data.get("filings", {}).get("recent", {})
+    forms  = recent.get("form", [])
+    fdates = recent.get("filingDate", [])
+    rdates = recent.get("reportDate", [])
+    accs   = recent.get("accessionNumber", [])
 
-    rows = []
-    for form, filing_date, accession in zip(forms, dates, accessions):
+    out = []
+    for form, fd, rd, acc in zip(forms, fdates, rdates, accs):
         if form != "4":
             continue
-        if filing_date < since:
+        if fd < since:
+            continue
+        out.append({"accession": acc, "filing_date": fd, "report_date": rd or fd})
+    return out
+
+
+def _find_primary_xml(cik: str, accession: str) -> Optional[str]:
+    """Given a Form 4 accession, return the URL of the primary XML document."""
+    acc_clean = accession.replace("-", "")
+    idx_url = (
+        f"https://www.sec.gov/Archives/edgar/data/"
+        f"{int(cik)}/{acc_clean}/index.json"
+    )
+    try:
+        time.sleep(REQUEST_DELAY)
+        resp = requests.get(idx_url, headers=SEC_HEADERS, timeout=15)
+        resp.raise_for_status()
+        items = resp.json().get("directory", {}).get("item", [])
+    except Exception:
+        return None
+
+    # Form 4 primary doc is usually the only .xml file in the filing
+    for item in items:
+        name = item.get("name", "")
+        if name.endswith(".xml") and not name.endswith("index.xml"):
+            return (
+                f"https://www.sec.gov/Archives/edgar/data/"
+                f"{int(cik)}/{acc_clean}/{name}"
+            )
+    return None
+
+
+def _parse_form4_xml(xml_url: str) -> Optional[dict]:
+    """
+    Parse a Form 4 XML. Returns:
+      {
+        "report_date": "YYYY-MM-DD",
+        "role": "<relationship text>",
+        "buy_shares": float,
+        "sell_shares": float,
+      }
+    or None on failure.
+    """
+    try:
+        time.sleep(REQUEST_DELAY)
+        resp = requests.get(xml_url, headers=SEC_HEADERS, timeout=15)
+        resp.raise_for_status()
+        root = ET.fromstring(resp.content)
+    except Exception:
+        return None
+
+    def _findtext(path: str, parent: ET.Element = root) -> str:
+        el = parent.find(path)
+        return (el.text or "").strip() if el is not None and el.text else ""
+
+    # Relationship — multiple booleans may be set; pick the most senior.
+    rel = root.find("reportingOwner/reportingOwnerRelationship")
+    role = ""
+    if rel is not None:
+        officer_title = _findtext("officerTitle", rel)
+        if officer_title:
+            role = officer_title
+        elif _findtext("isDirector", rel) == "1":
+            role = "DIRECTOR"
+        elif _findtext("isOfficer", rel) == "1":
+            role = "OFFICER"
+        elif _findtext("isTenPercentOwner", rel) == "1":
+            role = "10% OWNER"
+
+    # Report date (period of report) — this is the actual trade date, not filing date.
+    report_date = _findtext("periodOfReport") or ""
+
+    # Sum non-derivative transactions (actual stock buys/sells).
+    # Derivative transactions (options grants/exercises) are in a separate block
+    # and we skip them — they're noise for our signal.
+    buy_shares = 0.0
+    sell_shares = 0.0
+    for tx in root.findall("nonDerivativeTable/nonDerivativeTransaction"):
+        amt_el = tx.find("transactionAmounts/transactionShares/value")
+        code_el = tx.find("transactionCoding/transactionCode")
+        ad_el   = tx.find("transactionAmounts/transactionAcquiredDisposedCode/value")
+        if amt_el is None or ad_el is None:
+            continue
+        try:
+            shares = float(amt_el.text or 0)
+        except ValueError:
+            continue
+        ad = (ad_el.text or "").strip().upper()
+        # Open-market P/S only. Skip grants (A code with no cost), gifts (G), etc.
+        # that aren't real economic signal.
+        code = (code_el.text or "").strip().upper() if code_el is not None else ""
+        if code not in {"P", "S"}:
+            continue
+        if ad == "A":
+            buy_shares += shares
+        elif ad == "D":
+            sell_shares += shares
+
+    if buy_shares == 0 and sell_shares == 0:
+        return None
+
+    return {
+        "report_date": report_date,
+        "role": role,
+        "buy_shares": buy_shares,
+        "sell_shares": sell_shares,
+    }
+
+
+def _fetch_form4_trades(ticker: str, days_back: int = 365) -> pd.DataFrame:
+    """
+    Fetch and parse all Form 4 filings for a ticker in the last `days_back` days.
+    Returns aggregated DataFrame indexed by trade date.
+    """
+    cik = _get_cik(ticker)
+    if not cik:
+        print(f"  ⚠ no CIK for {ticker}")
+        return pd.DataFrame()
+
+    since = (datetime.today() - timedelta(days=days_back)).strftime("%Y-%m-%d")
+    filings = _list_form4_filings(cik, since)
+    if not filings:
+        return pd.DataFrame()
+
+    rows = []
+    for f in filings:
+        xml_url = _find_primary_xml(cik, f["accession"])
+        if not xml_url:
+            continue
+        parsed = _parse_form4_xml(xml_url)
+        if not parsed:
             continue
 
-        # Fetch the actual Form 4 XML for share counts
-        acc_clean = accession.replace("-", "")
-        xml_url = (
-            f"https://www.sec.gov/Archives/edgar/data/"
-            f"{int(cik)}/{acc_clean}/{accession}-index.htm"
-        )
-        # Parse the filing index to find the primary XML document
-        try:
-            time.sleep(REQUEST_DELAY)
-            idx_url = f"https://data.sec.gov/submissions/CIK{cik}.json"
-            # Simpler: use the EDGAR viewer API for structured data
-            viewer_url = (
-                f"https://efts.sec.gov/LATEST/search-index?q=%22{accession}%22"
-                f"&forms=4&dateRange=custom&startdt={since}"
-            )
-            rows.append({
-                "filing_date": filing_date,
-                "accession":   accession,
-                "cik":         cik,
-            })
-        except Exception:
-            continue
+        weight = _get_role_weight(parsed["role"])
+        net = parsed["buy_shares"] - parsed["sell_shares"]
+        rows.append({
+            "ds":          parsed["report_date"] or f["filing_date"],
+            "net_shares":  net * weight,  # role-weighted
+            "buy_shares":  parsed["buy_shares"] * weight,
+            "sell_shares": parsed["sell_shares"] * weight,
+            "num_buy_tx":  1 if parsed["buy_shares"] > 0 else 0,
+            "num_sell_tx": 1 if parsed["sell_shares"] > 0 else 0,
+            "role_weight": weight,
+        })
 
     if not rows:
         return pd.DataFrame()
 
-    # ── Fallback to EDGAR full-text search (more reliable for share counts) ──
-    return _fetch_via_efts(ticker, since)
-
-
-def _fetch_via_efts(ticker: str, since: str) -> pd.DataFrame:
-    """
-    Use SEC EDGAR full-text search API to get Form 4 data.
-    This endpoint returns structured data including actual share amounts.
-    """
-    url = (
-        "https://efts.sec.gov/LATEST/search-index"
-        f"?q=%22{ticker}%22&forms=4"
-        f"&dateRange=custom&startdt={since}"
-        "&hits.hits._source=period_of_report,file_date,entity_name"
-        "&hits.hits.total.value=true"
+    df = pd.DataFrame(rows)
+    return (
+        df.groupby("ds")
+          .agg(
+              net_shares  = ("net_shares",  "sum"),
+              buy_shares  = ("buy_shares",  "sum"),
+              sell_shares = ("sell_shares", "sum"),
+              num_buy_tx  = ("num_buy_tx",  "sum"),
+              num_sell_tx = ("num_sell_tx", "sum"),
+              role_weight = ("role_weight", "mean"),
+          )
+          .reset_index()
     )
-
-    try:
-        time.sleep(REQUEST_DELAY)
-        resp = requests.get(url, headers=SEC_HEADERS, timeout=15)
-        resp.raise_for_status()
-        hits = resp.json().get("hits", {}).get("hits", [])
-    except Exception as e:
-        print(f"  ⚠ EFTS search failed for {ticker}: {e}")
-        return pd.DataFrame()
-
-    if not hits:
-        return pd.DataFrame()
-
-    rows = []
-    for hit in hits[:50]:   # limit to 50 most recent
-        src = hit.get("_source", {})
-        rows.append({
-            "filing_date":    src.get("file_date", ""),
-            "period_of_report": src.get("period_of_report", ""),
-            "entity_name":    src.get("entity_name", ""),
-        })
-
-    return pd.DataFrame(rows) if rows else pd.DataFrame()
-
-
-def _fetch_rss_with_real_shares(ticker: str, count: int = 40) -> pd.DataFrame:
-    """
-    Fetch insider trades from SEC RSS feed.
-
-    CRITICAL FIX vs old code: old code assigned net_shares = ±1 for every
-    trade regardless of size. This version parses the title to extract
-    context, but defaults to a neutral signal weight of 1 since RSS titles
-    don't contain share counts. We mark these as 'rss_source' so we can
-    down-weight them vs XML-sourced trades if needed.
-    """
-    import feedparser
-
-    url = (
-        "https://www.sec.gov/cgi-bin/browse-edgar?"
-        f"action=getcompany&CIK={ticker}&type=4&owner=only"
-        f"&count={count}&output=atom"
-    )
-    try:
-        feed = feedparser.parse(url)
-        trades = []
-        for entry in feed.entries:
-            title   = entry.get("title", "").lower()
-            dt_str  = entry.get("updated", "") or entry.get("published", "")
-            ds      = pd.to_datetime(dt_str, errors="coerce")
-            if pd.isna(ds):
-                continue
-
-            is_buy  = "purchase" in title or "acquisition" in title
-            is_sell = "sale" in title or "disposition" in title
-
-            if not is_buy and not is_sell:
-                continue
-
-            # We don't have share counts from RSS — use 1 as placeholder
-            # Role weight is unknown from RSS — use default
-            shares = 1 if is_buy else -1
-            trades.append({
-                "ds":           ds.date(),
-                "net_shares":   shares,
-                "buy_shares":   max(shares, 0),
-                "sell_shares":  max(-shares, 0),
-                "num_buy_tx":   int(is_buy),
-                "num_sell_tx":  int(is_sell),
-                "role_weight":  DEFAULT_WEIGHT,
-            })
-
-        if not trades:
-            return pd.DataFrame()
-
-        df = pd.DataFrame(trades)
-        return (
-            df.groupby("ds")
-              .agg(
-                  net_shares  = ("net_shares",  "sum"),
-                  buy_shares  = ("buy_shares",  "sum"),
-                  sell_shares = ("sell_shares", "sum"),
-                  num_buy_tx  = ("num_buy_tx",  "sum"),
-                  num_sell_tx = ("num_sell_tx", "sum"),
-                  role_weight = ("role_weight", "mean"),
-              )
-              .reset_index()
-        )
-    except Exception as e:
-        print(f"  ⚠ RSS fetch failed for {ticker}: {e}")
-        return pd.DataFrame()
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  SQLITE SINK
 # ══════════════════════════════════════════════════════════════════════════════
 
-def _upsert_to_db(
-    ticker: str,
-    df: pd.DataFrame,
-    conn: sqlite3.Connection,
-) -> int:
-    """
-    Write insider flow rows to SQLite. Returns number of rows written.
-    Uses INSERT OR REPLACE to handle re-runs cleanly.
-    """
+def _upsert_to_db(ticker: str, df: pd.DataFrame, conn: sqlite3.Connection) -> int:
     if df.empty:
         return 0
-
     df = df.copy()
     df["ticker"] = ticker.upper()
-    df["date"]   = df["ds"].astype(str)
-
-    # Ensure all expected columns exist
-    for col, default in [
-        ("net_shares", 0.0), ("buy_shares", 0.0), ("sell_shares", 0.0),
-        ("num_buy_tx", 0),   ("num_sell_tx", 0),  ("role_weight", 1.0),
-    ]:
-        if col not in df.columns:
-            df[col] = default
-
+    df["date"] = df["ds"].astype(str)
     rows = df[["ticker", "date", "net_shares", "buy_shares", "sell_shares",
                "num_buy_tx", "num_sell_tx", "role_weight"]].to_dict("records")
-
     conn.executemany("""
         INSERT OR REPLACE INTO insider_flows
             (ticker, date, net_shares, buy_shares, sell_shares,
@@ -341,7 +331,7 @@ def _upsert_to_db(
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  PUBLIC API
+#  PUBLIC
 # ══════════════════════════════════════════════════════════════════════════════
 
 def run_insider_etl(
@@ -350,34 +340,31 @@ def run_insider_etl(
     db_path: Path = DB_PATH,
     verbose: bool = True,
 ) -> dict[str, int]:
-    """
-    Run the full insider ETL pipeline for a list of tickers.
-    Writes results to SQLite at db_path.
-
-    Returns dict: {ticker: rows_written}
-    """
     conn = _init_db(db_path)
     results = {}
+    _load_cik_map()  # prime cache
 
     for ticker in tickers:
         ticker = ticker.upper().strip()
         if verbose:
-            print(f"  {ticker} — fetching insider trades...")
-
-        # Try RSS (most reliable, no auth required)
-        df = _fetch_rss_with_real_shares(ticker)
+            print(f"  {ticker} — fetching Form 4 filings...")
+        try:
+            df = _fetch_form4_trades(ticker, days_back=days_back)
+        except Exception as e:
+            print(f"    ⚠ {ticker} failed: {e}")
+            results[ticker] = 0
+            continue
 
         if df.empty:
             if verbose:
-                print(f"    ⚠ No data from RSS for {ticker}")
+                print(f"    · no Form 4 trades in last {days_back}d")
             results[ticker] = 0
             continue
 
         n = _upsert_to_db(ticker, df, conn)
         results[ticker] = n
-
         if verbose:
-            print(f"    ✓ {n} rows written for {ticker}")
+            print(f"    ✓ {n} trade-days written")
 
     conn.close()
     return results
@@ -389,52 +376,41 @@ def load_insider_flows(
     end_date:   str | date | None = None,
     db_path: Path = DB_PATH,
 ) -> pd.DataFrame:
-    """
-    Read insider flows from SQLite for a given ticker and date range.
-    This is the read side — called by features/builder.py.
-
-    Returns DataFrame with columns:
-        date, ticker, net_shares, buy_shares, sell_shares,
-        num_buy_tx, num_sell_tx, role_weight
-    """
     if not db_path.exists():
         return pd.DataFrame()
-
-    conn = sqlite3.connect(db_path)
-    query = "SELECT * FROM insider_flows WHERE ticker = ?"
+    q = "SELECT date, ticker, net_shares, buy_shares, sell_shares, num_buy_tx, num_sell_tx, role_weight FROM insider_flows WHERE ticker = ?"
     params: list = [ticker.upper()]
-
     if start_date:
-        query += " AND date >= ?"
-        params.append(str(start_date))
+        q += " AND date >= ?"; params.append(str(start_date))
     if end_date:
-        query += " AND date <= ?"
-        params.append(str(end_date))
-
-    query += " ORDER BY date"
-
-    try:
-        df = pd.read_sql(query, conn, params=params, parse_dates=["date"])
-        conn.close()
-        return df
-    except Exception as e:
-        conn.close()
-        print(f"  ⚠ DB read failed for {ticker}: {e}")
-        return pd.DataFrame()
+        q += " AND date <= ?"; params.append(str(end_date))
+    q += " ORDER BY date"
+    with sqlite3.connect(db_path) as conn:
+        return pd.read_sql(q, conn, params=params, parse_dates=["date"])
 
 
-# ── CLI entry point ────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    import argparse
-    from models.train_all import DEFAULT_TICKERS
+    # When invoked as `python -m data.etl_insider`, read the ticker universe
+    # from the same place your retrain uses. Adjust this import if your
+    # universe lives somewhere else.
+    import argparse as _ap
+    from pathlib import Path as _P
 
-    parser = argparse.ArgumentParser(description="Run insider trades ETL")
-    parser.add_argument("--tickers", nargs="+", default=None)
-    parser.add_argument("--days",    type=int,  default=365)
-    args = parser.parse_args()
+    _parser = _ap.ArgumentParser(description="Run insider Form 4 ETL.")
+    _parser.add_argument("--days-back", type=int, default=365,
+                         help="How many days of history to pull (default: 365 for full rebuild).")
+    _args = _parser.parse_args()
 
-    tickers = args.tickers or DEFAULT_TICKERS
-    print(f"\nRunning insider ETL for {len(tickers)} tickers, {args.days} days back...")
-    results = run_insider_etl(tickers, days_back=args.days)
+    _tf = _P("tickers.txt")
+    if _tf.exists():
+        TICKERS = [ln.strip().upper() for ln in _tf.read_text().splitlines()
+                   if ln.strip() and not ln.strip().startswith("#")]
+    else:
+        TICKERS = ["AAPL", "MSFT", "NVDA", "TSLA", "META"]
+        print(f"  tickers.txt not found; using test tickers: {TICKERS}")
+
+    print(f"Running insider ETL for {len(TICKERS)} tickers, {_args.days_back} days back...")
+    results = run_insider_etl(TICKERS, days_back=_args.days_back, verbose=True)
+
     total = sum(results.values())
-    print(f"\nDone. {total} total rows written to {DB_PATH}")
+    print(f"\nDone. {total} total trade-days written to {DB_PATH}")

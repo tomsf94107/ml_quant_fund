@@ -6,10 +6,8 @@
 import os
 import pandas as pd
 import numpy as np
-import requests
 
-UW_API_KEY = os.getenv("UW_API_KEY", "")
-HEADERS    = {"Authorization": f"Bearer {UW_API_KEY}"}
+from features.uw_client import uw_get
 
 # Fallback hardcoded dates
 FOMC_DATES = [
@@ -40,14 +38,14 @@ def _get_uw_economic_calendar(start_date: str, end_date: str) -> list[str]:
     Falls back to empty list if API fails.
     """
     try:
-        url = "https://api.unusualwhales.com/api/market/economic-calendar"
-        params = {"from": start_date, "to": end_date}
-        r = requests.get(url, headers=HEADERS, params=params, timeout=10)
+        payload = uw_get(
+            "/api/market/economic-calendar",
+            params={"from": start_date, "to": end_date},
+        )
+        if payload is None:
+            return []  # FOMC_DATES hardcoded list below is the real fallback
 
-        if r.status_code != 200:
-            return []
-
-        events = r.json().get("data", [])
+        events = payload.get("data", [])
         # Flag HIGH impact events only
         high_impact_dates = [
             e["date"][:10] for e in events

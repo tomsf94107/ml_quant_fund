@@ -1,0 +1,23 @@
+{
+  "realtime_start": "2026-04-16",
+  "realtime_end": "2026-04-16",
+  "seriess": [
+    {
+      "id": "INDPRO",
+      "realtime_start": "2026-04-16",
+      "realtime_end": "2026-04-16",
+      "title": "Industrial Production: Total Index",
+      "observation_start": "1919-01-01",
+      "observation_end": "2026-03-01",
+      "frequency": "Monthly",
+      "frequency_short": "M",
+      "units": "Index 2017=100",
+      "units_short": "Index 2017=100",
+      "seasonal_adjustment": "Seasonally Adjusted",
+      "seasonal_adjustment_short": "SA",
+      "last_updated": "2026-04-16 08:23:16-05",
+      "popularity": 82,
+      "notes": "explanatory notes (https://www.federalreserve.gov/releases/g17/About.htm) issued by the Board of Governors. For recent updates, see the  announcements (https://www.federalreserve.gov/feeds/g17.html) issued by the Board of Governors.</p>"
+    }
+  ]
+}

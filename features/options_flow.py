@@ -209,38 +209,48 @@ def get_options_signal(
                 result["iv_skew_signal"] = "BULLISH"
             elif skew > 0.05:
                 result["iv_skew_signal"] = "BEARISH"
-            else:
-                result["iv_skew_signal"] = "NEUTRAL"
-
-        # ── Unusual volume ─────────────────────────────────────────────────────
-        call_oi  = calls_df["openInterest"].fillna(0).sum()
-        put_oi   = puts_df["openInterest"].fillna(0).sum()
-        if call_oi > 0 and call_vol / call_oi > VOL_OI_SPIKE:
-            result["unusual_calls"] = True
-        if put_oi > 0 and put_vol / put_oi > VOL_OI_SPIKE:
-            result["unusual_puts"] = True
 
         # ── Max pain ───────────────────────────────────────────────────────────
         if max_pain_prices:
-            mp = float(np.median(max_pain_prices))
-            result["max_pain"] = round(mp, 2)
-            if current_price and mp:
-                result["max_pain_distance"] = round((current_price - mp) / mp, 4)
+            avg_pain = float(np.median(max_pain_prices))
+            result["max_pain"] = round(avg_pain, 2)
+            if current_price:
+                result["max_pain_distance"] = round(
+                    (current_price - avg_pain) / avg_pain, 4
+                )
 
-        # ── Combined flow score ────────────────────────────────────────────────
-        # Score from -1 (bearish) to +1 (bullish)
+        # ── Unusual volume (vol > 2x open interest) ────────────────────────────
+        call_oi = calls_df["openInterest"].fillna(0).sum()
+        put_oi  = puts_df["openInterest"].fillna(0).sum()
+
+        if call_oi > 0 and (call_vol / call_oi) > VOL_OI_SPIKE:
+            result["unusual_calls"] = True
+        if put_oi > 0 and (put_vol / put_oi) > VOL_OI_SPIKE:
+            result["unusual_puts"] = True
+
+        # ── Composite flow score (-1.0 to +1.0) ────────────────────────────────
         score = 0.0
-        signal_map = {"BULLISH": 1, "NEUTRAL": 0, "BEARISH": -1}
+        if result["pc_signal"] == "BULLISH":
+            score += 0.4
+        elif result["pc_signal"] == "BEARISH":
+            score -= 0.4
 
-        score += signal_map[result["pc_signal"]]    * 0.40   # PC ratio weighted most
-        score += signal_map[result["iv_skew_signal"]] * 0.30  # IV skew
-        if result["unusual_calls"]: score += 0.20             # unusual call activity
-        if result["unusual_puts"]:  score -= 0.20             # unusual put activity
+        if result["iv_skew_signal"] == "BULLISH":
+            score += 0.3
+        elif result["iv_skew_signal"] == "BEARISH":
+            score -= 0.3
 
+        if result["unusual_calls"]:
+            score += 0.3
+        if result["unusual_puts"]:
+            score -= 0.3
+
+        score = max(-1.0, min(1.0, score))
         result["flow_score"] = round(score, 3)
-        if score >= 0.30:
+
+        if score > 0.3:
             result["flow_signal"] = "BULLISH"
-        elif score <= -0.30:
+        elif score < -0.3:
             result["flow_signal"] = "BEARISH"
         else:
             result["flow_signal"] = "NEUTRAL"
@@ -251,21 +261,14 @@ def get_options_signal(
     return result
 
 
-def get_options_signals_batch(
-    tickers: list[str],
-    verbose: bool = True,
-) -> pd.DataFrame:
-    """
-    Fetch options signals for multiple tickers.
-    Returns DataFrame with one row per ticker.
-    """
+def batch_options_signals(tickers: list) -> pd.DataFrame:
+    """Compute options flow signals for a list of tickers."""
     rows = []
     for ticker in tickers:
-        if verbose:
-            print(f"  {ticker}...", end=" ", flush=True)
         sig = get_options_signal(ticker)
         rows.append(sig)
-        if verbose:
+        if not sig.get("error"):
+            print(f"{ticker}: ", end="")
             print(f"{sig['flow_signal']} (score={sig['flow_score']:+.2f})")
     return pd.DataFrame(rows)
 
@@ -286,16 +289,12 @@ def options_score_to_multiplier(flow_score: float) -> float:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-#  POLYGON-BASED: TRUE 25-DELTA SKEW + IV RANK
-#  Requires Polygon Options add-on. Falls back to yfinance if 403.
+#  UW-BASED: TRUE 25-DELTA SKEW + IV RANK
+#  Routes through features.uw_client (market-hours gated).
+#  Falls back to yfinance get_options_signal if UW skipped/failed.
 # ══════════════════════════════════════════════════════════════════════════════
 
-import os as _os
-import requests as _req
-
-_UW_KEY     = _os.getenv("UW_API_KEY", "")
-_UW_HEADERS = {"Authorization": f"Bearer {_UW_KEY}"}
-_UW_BASE    = "https://api.unusualwhales.com"
+from features.uw_client import uw_get
 
 
 def get_25delta_skew(ticker: str) -> dict:
@@ -323,34 +322,28 @@ def get_25delta_skew(ticker: str) -> dict:
     }
 
     try:
-        # Get options chain snapshot from UW
-        url = f"{_UW_BASE}/api/stock/{ticker}/option-contracts"
-        r = _req.get(url, headers=_UW_HEADERS, timeout=10)
+        # uw_client enforces market-hours gate, daily budget, 429/5xx retry.
+        # Returns None when gate closed, budget exhausted, or all retries fail.
+        data = uw_get(f"/api/stock/{ticker}/option-contracts")
 
-        if r.status_code == 401:
-            result["error"] = "Invalid UW API key"
-            return result
-        if r.status_code == 403:
-            result["error"] = "UW API plan does not include options"
-            return result
-        if r.status_code == 429:
-            # Rate limited — fall back to yfinance
+        if data is None:
+            # Market closed / rate limited / failed — try yfinance fallback.
             try:
                 yf_sig = get_options_signal(result["ticker"])
                 if yf_sig.get("iv_skew") is not None:
                     result["skew_25d"]    = round(yf_sig["iv_skew"], 4)
-                    result["skew_signal"] = "BEARISH" if yf_sig["iv_skew"] > 0.03 else "BULLISH" if yf_sig["iv_skew"] < -0.02 else "NEUTRAL"
-                    result["iv_rank"]     = yf_sig.get("iv_rank")
-                    result["error"]       = None
-                    result["source"]      = "YFINANCE_FALLBACK"
+                    result["skew_signal"] = (
+                        "BEARISH" if yf_sig["iv_skew"] > 0.03
+                        else "BULLISH" if yf_sig["iv_skew"] < -0.02
+                        else "NEUTRAL"
+                    )
+                    result["iv_rank"] = yf_sig.get("iv_rank")
+                    result["source"]  = "YFINANCE_FALLBACK"
             except Exception:
-                result["error"] = "Rate limited + yfinance fallback failed"
-            return result
-        if r.status_code != 200:
-            result["error"] = f"UW API error: {r.status_code}"
+                result["error"] = "UW skipped + yfinance fallback failed"
             return result
 
-        chain = r.json().get("data", [])
+        chain = data.get("data", [])
         if not chain:
             result["error"] = "Empty options chain"
             return result
@@ -419,18 +412,18 @@ def get_enhanced_options_signal(ticker: str, current_price=None) -> dict:
     """
     Enhanced options signal combining:
     1. yfinance-based flow signal (always available)
-    2. Polygon 25-delta skew + IV rank (when Polygon Options available)
+    2. UW 25-delta skew + IV rank (when UW is available)
 
     Returns merged signal dict with all fields from both sources.
     """
     # Get base yfinance signal
     base = get_options_signal(ticker, current_price)
 
-    # Try Polygon enhancement
+    # Try UW enhancement
     poly = get_25delta_skew(ticker)
 
     if poly.get("error") is None and poly.get("skew_25d") is not None:
-        # Polygon succeeded — override iv_skew with delta-adjusted version
+        # UW succeeded — override iv_skew with delta-adjusted version
         base["iv_skew_25d"]   = poly["skew_25d"]
         base["put_iv_25d"]    = poly["put_iv_25d"]
         base["call_iv_25d"]   = poly["call_iv_25d"]

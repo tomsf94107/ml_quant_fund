@@ -200,6 +200,9 @@ def log_prediction(
     signal:          str,
     confidence:      str,
     model_version:   str = "v1",
+    is_watchlist:    bool = False,
+    tier:            str = "tactical",
+    prob_raw:        float | None = None,
 ) -> None:
     """
     Log a single prediction. Called every time generate_signals() runs.
@@ -209,23 +212,28 @@ def log_prediction(
     ticker          : e.g. "AAPL"
     prediction_date : the date the prediction was made (today)
     horizon         : 1, 3, or 5 days
-    prob_up         : calibrated P(up) from the model
+    prob_up         : effective probability AFTER multipliers
+    prob_raw        : raw calibrated P(up) BEFORE multipliers (None if not provided)
     signal          : "BUY" | "HOLD"
     confidence      : "HIGH" | "MEDIUM" | "LOW"
     model_version   : model identifier for tracking regressions
+    is_watchlist    : True for watchlist tickers (excluded from main accuracy)
+    tier            : "core" | "secondary" | "tactical" | "lotto"
     """
     init_db()
     p = _placeholder()
     with _get_conn() as conn:
         conn.cursor().execute(f"""
             INSERT OR REPLACE INTO predictions
-                (ticker, prediction_date, horizon, prob_up,
-                 signal, confidence, model_version, created_at)
-            VALUES ({p},{p},{p},{p},{p},{p},{p},{p})
+                (ticker, prediction_date, horizon, prob_up, prob_raw,
+                 signal, confidence, model_version, created_at, is_watchlist, tier)
+            VALUES ({p},{p},{p},{p},{p},{p},{p},{p},{p},{p},{p})
         """, (
             ticker.upper(), str(prediction_date), horizon,
-            float(prob_up), signal, confidence, model_version,
-            ts_et(),
+            float(prob_up),
+            float(prob_raw) if prob_raw is not None else None,
+            signal, confidence, model_version,
+            ts_et(), 1 if is_watchlist else 0, tier,
         ))
 
 
@@ -494,6 +502,7 @@ def update_accuracy_cache(
               ON p.ticker = o.ticker
              AND p.prediction_date = o.prediction_date
              AND p.horizon = o.horizon
+            WHERE p.is_watchlist = 0
         """, conn)
 
     if joined.empty:
@@ -822,11 +831,48 @@ def get_eod_accuracy_summary() -> list[dict]:
             AND p.prediction_date=o.prediction_date
             AND p.horizon=o.horizon
         WHERE p.horizon=1
+          AND p.is_watchlist=0
         GROUP BY p.ticker
         ORDER BY accuracy DESC NULLS LAST
     """).fetchall()
     db.close()
     return [{"ticker": r[0], "n": r[1], "accuracy": r[2], "avg_return": r[3]} for r in rows]
+
+
+def get_accuracy_by_tier(horizon: int = 1, days: int = 90) -> list[dict]:
+    """
+    Compute accuracy breakdown by tier (core, secondary, tactical, lotto).
+    Excludes watchlist tickers. Useful for evaluating whether lotto suppression
+    rules are working.
+    """
+    import sqlite3
+    from datetime import date, timedelta
+
+    cutoff = (date.today() - timedelta(days=days)).isoformat()
+    db = sqlite3.connect("accuracy.db", timeout=30)
+    rows = db.execute("""
+        SELECT p.tier,
+               p.signal,
+               COUNT(*) as n,
+               SUM(CASE WHEN o.actual_return > 0 THEN 1 ELSE 0 END) as wins,
+               ROUND(100.0 * SUM(CASE WHEN o.actual_return > 0 THEN 1 ELSE 0 END) / COUNT(*), 1) as hit_pct,
+               ROUND(AVG(o.actual_return) * 100, 2) as avg_ret_pct
+        FROM predictions p
+        JOIN outcomes o ON p.ticker=o.ticker
+            AND p.prediction_date=o.prediction_date
+            AND p.horizon=o.horizon
+        WHERE p.horizon=?
+          AND p.is_watchlist=0
+          AND p.prediction_date >= ?
+        GROUP BY p.tier, p.signal
+        ORDER BY p.tier, p.signal
+    """, (horizon, cutoff)).fetchall()
+    db.close()
+    return [
+        {"tier": r[0], "signal": r[1], "n": r[2], "wins": r[3],
+         "hit_pct": r[4], "avg_ret_pct": r[5]}
+        for r in rows
+    ]
 
 
 def get_spy_relative_accuracy() -> list[dict]:
@@ -847,6 +893,7 @@ def get_spy_relative_accuracy() -> list[dict]:
             AND p.prediction_date=o.prediction_date
             AND p.horizon=o.horizon
         WHERE p.horizon=1
+          AND p.is_watchlist=0
         ORDER BY p.prediction_date
     """).fetchall()
     db.close()

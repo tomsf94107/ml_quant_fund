@@ -1,0 +1,23 @@
+{
+  "realtime_start": "2026-04-22",
+  "realtime_end": "2026-04-22",
+  "seriess": [
+    {
+      "id": "ISRATIO",
+      "realtime_start": "2026-04-22",
+      "realtime_end": "2026-04-22",
+      "title": "Total Business: Inventories to Sales Ratio",
+      "observation_start": "1992-01-01",
+      "observation_end": "2026-02-01",
+      "frequency": "Monthly, End of Period",
+      "frequency_short": "M",
+      "units": "Ratio",
+      "units_short": "Ratio",
+      "seasonal_adjustment": "Seasonally Adjusted",
+      "seasonal_adjustment_short": "SA",
+      "last_updated": "2026-04-21 09:01:44-05",
+      "popularity": 60,
+      "notes": "Effective June 14, 2001, data were reconstructed to reflect the switch from the Standard Industrial Classification (SIC) system to the North American Industry Classification System (NAICS)."
+    }
+  ]
+}

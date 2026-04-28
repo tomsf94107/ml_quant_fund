@@ -110,6 +110,8 @@ def load_watchlist() -> list[str]:
 def log_prediction_to_db(
     ticker: str, horizon: int, signal: str,
     prob: float, prob_eff: float, run_date: str,
+    is_watchlist: bool = False,
+    tier: str = "tactical",
 ):
     """Log prediction to accuracy.db for later reconciliation."""
     try:
@@ -119,8 +121,11 @@ def log_prediction_to_db(
             prediction_date=run_date,
             horizon=horizon,
             prob_up=prob_eff,
+            prob_raw=prob,
             signal=signal,
             confidence="HIGH" if prob_eff >= 0.70 else "MEDIUM" if prob_eff >= 0.55 else "LOW",
+            is_watchlist=is_watchlist,
+            tier=tier,
         )
     except Exception as e:
         log.warning(f"DB log failed for {ticker}: {e}")
@@ -244,12 +249,15 @@ def run_daily(force: bool = False):
                     results.append(result)
 
                     # Log to accuracy DB
+                    from signals.generator import _TICKER_METADATA
+                    _tier = _TICKER_METADATA.get(ticker, {}).get("tier", "tactical")
                     log_prediction_to_db(
                         ticker=ticker, horizon=horizon,
                         signal=sig.today_signal,
                         prob=sig.today_prob,
                         prob_eff=sig.today_prob_eff,
                         run_date=run_date,
+                        tier=_tier,
                     )
 
                     # Log features used for this prediction
@@ -424,6 +432,18 @@ def run_daily(force: bool = False):
                             "is_watchlist":    True,
                         })
                         log.info(f"  WATCHLIST {ticker} {horizon}d: {sig.today_signal} ({sig.today_prob_eff:.1%})")
+                        from signals.generator import _TICKER_METADATA
+                        _tier = _TICKER_METADATA.get(ticker, {}).get("tier", "tactical")
+                        log_prediction_to_db(
+                            ticker=ticker,
+                            horizon=horizon,
+                            signal=sig.today_signal,
+                            prob=sig.today_prob,
+                            prob_eff=sig.today_prob_eff,
+                            run_date=run_date,
+                            is_watchlist=True,
+                            tier=_tier,
+                        )
                     except Exception as e:
                         log.warning(f"  WATCHLIST {ticker} {horizon}d failed: {e}")
             except Exception as e:
@@ -522,15 +542,27 @@ def log_intraday_snapshot():
     print(f"Intraday snapshot saved: {outfile} ({len(signals)} tickers)")
 
     # Log predictions to accuracy.db
+    skipped_no_price = []
+    skipped_error    = []
+    skipped_missing_keys = []
+    skipped_db_error = []
     try:
         conn = sqlite3.connect("accuracy.db")
         logged = 0
         for s in signals:
-            if not s.get("current_price") or s.get("error"):
+            if s.get("error"):
+                skipped_error.append((s.get("ticker", "?"), s.get("error")))
+                continue
+            if not s.get("current_price"):
+                skipped_no_price.append(s.get("ticker", "?"))
                 continue
             for hr, sig_key, prob_key in [(1,"signal_1hr","prob_1hr"),
                                            (2,"signal_2hr","prob_2hr"),
                                            (4,"signal_4hr","prob_4hr")]:
+                # Check the per-horizon keys actually exist before inserting
+                if sig_key not in s or prob_key not in s:
+                    skipped_missing_keys.append((s["ticker"], hr))
+                    continue
                 try:
                     conn.execute("""
                         INSERT OR IGNORE INTO intraday_predictions
@@ -540,10 +572,29 @@ def log_intraday_snapshot():
                     """, (s["ticker"], ts, today, s["current_price"],
                           hr, s[prob_key], s[sig_key], ts))
                     logged += 1
-                except Exception:
-                    pass
+                except Exception as e:
+                    skipped_db_error.append((s["ticker"], hr, str(e)[:80]))
         conn.commit()
         conn.close()
         print(f"Logged {logged} intraday predictions to accuracy.db")
+
+        # Surface failures so they're not silent
+        if skipped_no_price:
+            sample = ", ".join(skipped_no_price[:10])
+            extra  = f" (+{len(skipped_no_price)-10} more)" if len(skipped_no_price) > 10 else ""
+            print(f"  WARN  {len(skipped_no_price)} tickers skipped (no current_price): {sample}{extra}")
+        if skipped_error:
+            sample = "; ".join(f"{t}={e[:40]}" for t, e in skipped_error[:5])
+            extra  = f" (+{len(skipped_error)-5} more)" if len(skipped_error) > 5 else ""
+            print(f"  WARN  {len(skipped_error)} tickers skipped (snapshot error): {sample}{extra}")
+        if skipped_missing_keys:
+            counts = {}
+            for t, hr in skipped_missing_keys:
+                counts[t] = counts.get(t, 0) + 1
+            sample_tkrs = list(counts.keys())[:10]
+            print(f"  WARN  {len(skipped_missing_keys)} (ticker,horizon) pairs missing prediction keys; affected tickers: {sample_tkrs}")
+        if skipped_db_error:
+            sample = "; ".join(f"{t}/h{hr}={e[:40]}" for t, hr, e in skipped_db_error[:3])
+            print(f"  WARN  {len(skipped_db_error)} DB insert failures: {sample}")
     except Exception as e:
         print(f"Failed to log intraday predictions: {e}")

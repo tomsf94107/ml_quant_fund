@@ -1,0 +1,22 @@
+{
+  "realtime_start": "2026-03-31",
+  "realtime_end": "2026-03-31",
+  "seriess": [
+    {
+      "id": "JTSQUR",
+      "realtime_start": "2026-03-31",
+      "realtime_end": "2026-03-31",
+      "title": "Quits: Total Nonfarm",
+      "observation_start": "2000-12-01",
+      "observation_end": "2026-02-01",
+      "frequency": "Monthly",
+      "frequency_short": "M",
+      "units": "Rate",
+      "units_short": "Rate",
+      "seasonal_adjustment": "Seasonally Adjusted",
+      "seasonal_adjustment_short": "SA",
+      "last_updated": "2026-03-31 09:11:34-05",
+      "popularity": 59
+    }
+  ]
+}

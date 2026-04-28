@@ -1,25 +1,21 @@
 # features/dark_pool.py
 # Dark pool ratio via Unusual Whales API.
-# Endpoint: GET /api/darkpool/{ticker}
-# Requires: Unusual Whales API Basic ($125/mo)
+# All UW access routed through features.uw_client (market-hours gated,
+# daily-budget tracked, 429/5xx retry). On gate-closed / rate-limited /
+# failed, falls back to dark_pool_history SQLite table.
 
 from __future__ import annotations
-import os
-import requests
 from datetime import date, timedelta
 from typing import Optional
 
-UW_API_KEY = os.getenv("UW_API_KEY", "")
-BASE_URL   = "https://api.unusualwhales.com"
-HEADERS    = {"Authorization": f"Bearer {UW_API_KEY}"}
+from features.uw_client import uw_get
 
 
 def _get_dark_pool_from_db(ticker: str, trade_date: str, result: dict) -> dict:
-    """Fallback to DB when UW API is rate limited."""
+    """Fallback to DB when UW API is unavailable (market closed, rate limited, or error)."""
     try:
         import sqlite3
         from pathlib import Path
-        from datetime import timedelta
         db = Path(__file__).parent.parent / "accuracy.db"
         cutoff = str((date.today() - timedelta(days=3)).isoformat())
         with sqlite3.connect(db, timeout=30) as conn:
@@ -37,7 +33,7 @@ def _get_dark_pool_from_db(ticker: str, trade_date: str, result: dict) -> dict:
             result["error"]        = None
             result["source"]       = "DB_FALLBACK"
         else:
-            result["error"] = "Rate limited + no DB data"
+            result["error"] = "UW skipped + no DB data"
     except Exception as e:
         result["error"] = f"DB fallback failed: {e}"
     return result
@@ -71,32 +67,21 @@ def get_dark_pool_ratio(
     }
 
     try:
-        url = f"{BASE_URL}/api/darkpool/{ticker}"
-        params = {"date": trade_date}
-        r = requests.get(url, headers=HEADERS, params=params, timeout=10)
-
-        if r.status_code == 401:
-            result["error"] = "Invalid UW API key"
-            return result
-        if r.status_code == 403:
-            result["error"] = "UW API plan does not include dark pool"
-            return result
-        if r.status_code == 429:
-            # Rate limited — fall back to DB
+        # uw_client enforces market-hours gate, daily budget, and 429/5xx retry.
+        # Returns None when gate is closed, budget exhausted, or all retries fail.
+        data = uw_get(
+            f"/api/darkpool/{ticker}",
+        )
+        if data is None:
             return _get_dark_pool_from_db(ticker, trade_date, result)
-        if r.status_code != 200:
-            result["error"] = f"UW API error: {r.status_code}"
-            return result
 
-        data = r.json()
         trades = data.get("data", [])
-
         if not trades:
             result["error"] = "No dark pool trades returned"
             return result
 
-        # All trades returned are already dark pool trades
-        # volume field = total market volume for the day
+        # All trades returned are already dark pool trades.
+        # volume field = total market volume for the day.
         dp_vol    = sum(float(t.get("size", 0)) for t in trades)
         total_vol = float(trades[0].get("volume", 0)) if trades else 0
 

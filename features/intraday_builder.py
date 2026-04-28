@@ -25,19 +25,19 @@ def _fetch_and_save_uw_today(ticker: str) -> dict:
     Returns {"dp_ratio": float, "skew_25d": float}
     """
     from datetime import date as _date
-    import requests as _req
+    from features.uw_client import uw_get
 
     today     = str(_date.today())
     dp_ratio  = 0.0
     skew_25d  = 0.0
 
     try:
-        r = _req.get(
-            f"https://api.unusualwhales.com/api/darkpool/{ticker}",
-            headers=_UW_HDRS, params={"date": today}, timeout=8
+        payload = uw_get(
+            f"/api/darkpool/{ticker}",
+            timeout=8,
         )
-        if r.status_code == 200:
-            trades    = r.json().get("data", [])
+        if payload is not None:
+            trades    = payload.get("data", [])
             total_vol = float(trades[0].get("volume", 0)) if trades else 0
             dp_vol    = sum(float(t.get("size", 0)) for t in trades)
             if total_vol > 0:
@@ -59,12 +59,13 @@ def _fetch_and_save_uw_today(ticker: str) -> dict:
 
     try:
         import statistics as _stat
-        r2 = _req.get(
-            f"https://api.unusualwhales.com/api/stock/{ticker}/option-contracts",
-            headers=_UW_HDRS, timeout=8
+        from features.uw_client import uw_get
+        payload2 = uw_get(
+            f"/api/stock/{ticker}/option-contracts",
+            timeout=8,
         )
-        if r2.status_code == 200:
-            chain = r2.json().get("data", [])
+        if payload2 is not None:
+            chain = payload2.get("data", [])
 
             def _is_call(c):
                 sym = c.get("option_symbol", "")

@@ -93,19 +93,6 @@ def _load_meta() -> dict:
     return {}
 _TICKER_META = _load_meta()
 
-def _load_cache():
-    try:
-        if not os.path.exists(_CACHE_PATH): return None
-        with open(_CACHE_PATH) as f: return _json_cache.load(f)
-    except: return None
-
-def _save_cache(signals, generated_at):
-    try:
-        os.makedirs(os.path.dirname(_CACHE_PATH), exist_ok=True)
-        with open(_CACHE_PATH, "w") as f:
-            _json_cache.dump({"generated_at": generated_at, "signals": signals}, f, indent=2)
-    except: pass
-
 def _et_now():
     return _datetime.datetime.now(_pytz_cache.timezone("America/New_York")).strftime("%Y-%m-%dT%H:%M:%S")
 
@@ -302,78 +289,24 @@ except Exception as e:
 import json as _json
 from types import SimpleNamespace as _NS
 
-_CACHE_PATH = os.path.join(_ROOT, "data", "signals_cache.json")
-
-
-def _load_signals_cache():
-    """Load data/signals_cache.json. Returns (data_dict, generated_at_str) or (None, None)."""
-    if not os.path.exists(_CACHE_PATH):
-        return None, None
-    try:
-        with open(_CACHE_PATH) as _f:
-            _d = _json.load(_f)
-        return _d, _d.get("generated_at")
-    except Exception:
-        return None, None
-
-
-def _cache_to_signal_summary(cache_data, sel_horizon, sel_tickers, conf_threshold):
-    """Convert cache JSON to list of SimpleNamespace objects mimicking SignalResult."""
-    results = []
-    for s in cache_data.get("signals", []):
-        if s.get("horizon") != sel_horizon:
-            continue
-        if sel_tickers and s.get("ticker") not in sel_tickers:
-            continue
-        sharpe_val = s.get("sharpe")
-        metrics = _NS(
-            sharpe=        float(sharpe_val)         if sharpe_val is not None else float("nan"),
-            max_drawdown=  float(s.get("max_drawdown", float("nan"))),
-            cagr=          float(s.get("cagr",          float("nan"))),
-            accuracy=      float(s.get("accuracy",      float("nan"))),
-            n_trades=      s.get("n_trades", 0),
-            profit_factor= float(s.get("profit_factor", float("nan"))),
-            exposure=      float(s.get("exposure", float("nan"))),
-        )
-        prob_eff = s.get("prob_eff", 0.0)
-        today_signal = s.get("signal", "HOLD")
-        # Re-apply confidence threshold (user may have adjusted slider)
-        if prob_eff < conf_threshold:
-            today_signal = "HOLD"
-        results.append(_NS(
-            ticker=          s["ticker"],
-            horizon=         sel_horizon,
-            today_signal=    today_signal,
-            today_prob=      s.get("prob", prob_eff),
-            today_prob_eff=  prob_eff,
-            current_price=   s.get("current_price"),
-            price_target_up= s.get("price_target_up"),
-            price_target_dn= s.get("price_target_dn"),
-            expected_return= s.get("expected_return"),
-            atr=             s.get("atr"),
-            metrics=         metrics,
-            error=           None,
-        ))
-    return results
-
-
 # ══════════════════════════════════════════════════════════════════════════════
-#  CACHE HELPERS
+#  CACHE HELPERS — read/write data/signals_cache.json
+#  Refresh Live writes here. Run Strategy reads here. Same file, single source of truth.
+#  _CACHE_PATH is defined once at the top of this file (around line 81).
 # ══════════════════════════════════════════════════════════════════════════════
 import json as _jc, pytz as _ptz
-_CPATH = os.path.join(_ROOT, "data", "signals_cache.json")
 
 def _read_cache():
     try:
-        if not os.path.exists(_CPATH): return None
-        with open(_CPATH) as _f: return _jc.load(_f)
+        if not os.path.exists(_CACHE_PATH): return None
+        with open(_CACHE_PATH) as _f: return _jc.load(_f)
     except: return None
 
 def _write_cache(sigs):
     try:
-        os.makedirs(os.path.dirname(_CPATH), exist_ok=True)
+        os.makedirs(os.path.dirname(_CACHE_PATH), exist_ok=True)
         ts = datetime.now(_ptz.timezone("America/New_York")).strftime("%Y-%m-%dT%H:%M:%S")
-        with open(_CPATH, "w") as _f:
+        with open(_CACHE_PATH, "w") as _f:
             _jc.dump({"generated_at": ts, "signals": sigs}, _f, indent=2)
     except: pass
 
@@ -789,10 +722,37 @@ st.caption("Compares EOD model signal with intraday 1hr/2hr/4hr momentum · tick
 
 try:
     from features.intraday_builder import get_all_intraday_signals, is_market_open
+    import json
+    from pathlib import Path
+    from datetime import date as _date
+
     intraday_tickers = [r.ticker for r in signal_summary]
 
-    with st.spinner("Loading intraday signals..."):
-        intra_sigs = get_all_intraday_signals(intraday_tickers)
+    # Read latest intraday snapshot from cron (22:00 VN / 11:00 ET)
+    # Use most recent file, not today's — handles VN/ET date crossover
+    _snap_dir = Path("data/intraday_history")
+    _snap_files = sorted(_snap_dir.glob("*.json")) if _snap_dir.exists() else []
+    _snap_path = _snap_files[-1] if _snap_files else None
+    intra_sigs = []
+    _snap_ts = None
+    if _snap_path and _snap_path.exists():
+        try:
+            with open(_snap_path) as _f:
+                _snap = json.load(_f)
+            intra_sigs = _snap.get("signals", []) if isinstance(_snap, dict) else _snap
+            if isinstance(_snap, dict):
+                _snap_ts = _snap.get("generated_at", "—")
+            else:
+                from datetime import datetime as _dt
+                _snap_ts = _dt.fromtimestamp(_snap_path.stat().st_mtime).strftime("%H:%M VN")
+        except Exception:
+            intra_sigs = []
+
+    if intra_sigs:
+        st.caption(f"📦 Loaded from snapshot: {_snap_ts} · {len(intra_sigs)} tickers (refresh dashboard cron at 22:00 VN to update)")
+    else:
+        with st.spinner("No snapshot — fetching live intraday signals (slow)..."):
+            intra_sigs = get_all_intraday_signals(intraday_tickers)
 
     sig_lkp  = {s["ticker"]: s for s in intra_sigs}
     eod_lkp  = {r.ticker: r for r in signal_summary}

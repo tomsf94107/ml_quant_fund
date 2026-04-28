@@ -15,14 +15,19 @@ DB   = ROOT / "accuracy.db"
 
 def get_last_trading_date():
     """
-    Return the most recent prediction_date actually in the DB.
-    This is the safest approach — no timezone math needed.
+    Return the most recent prediction_date with a real run (>= 50 rows).
+    Filters out test/sentinel rows from manual pipeline runs.
     """
     import sqlite3
     con = sqlite3.connect(DB)
-    result = con.execute(
-        "SELECT MAX(prediction_date) FROM predictions"
-    ).fetchone()[0]
+    result = con.execute("""
+        SELECT prediction_date FROM predictions
+        GROUP BY prediction_date
+        HAVING COUNT(*) >= 50
+        ORDER BY prediction_date DESC
+        LIMIT 1
+    """).fetchone()
+    result = result[0] if result else None
     con.close()
     if result:
         from datetime import date
@@ -77,21 +82,30 @@ def main():
     all_ok = all_ok and ok
 
     # 4. Retrain log is fresh
-    retrain_log = ROOT / "logs" / "retrain.log"
-    if retrain_log.exists():
+    # Find newest 02_train_all.log across all pipeline_B_* folders
+    pipeline_b_logs = sorted((ROOT / "logs").glob("pipeline_B_*/02_train_all.log"))
+    if pipeline_b_logs:
+        retrain_log = pipeline_b_logs[-1]
         mtime = datetime.fromtimestamp(retrain_log.stat().st_mtime).date()
-        ok = check("Retrain log", mtime >= last_date - timedelta(days=1), f"last modified {mtime}")
+        ok = check("Retrain log", mtime >= last_date - timedelta(days=1),
+                   f"last modified {mtime} ({retrain_log.parent.name})")
     else:
-        ok = check("Retrain log", False, "log file not found")
+        ok = check("Retrain log", False, "no pipeline_B logs found")
     all_ok = all_ok and ok
 
     # 5. daily_runner log is fresh
-    runner_log = ROOT / "logs" / "daily_runner.log"
-    if runner_log.exists():
+    # Newest daily_runner output across pipeline B (stage 3) and pipeline C (stage 2)
+    runner_candidates = (
+        list((ROOT / "logs").glob("pipeline_B_*/03_daily_runner.log")) +
+        list((ROOT / "logs").glob("pipeline_C_*/02_daily_runner.log"))
+    )
+    if runner_candidates:
+        runner_log = max(runner_candidates, key=lambda p: p.stat().st_mtime)
         mtime = datetime.fromtimestamp(runner_log.stat().st_mtime).date()
-        ok = check("daily_runner log", mtime >= last_date, f"last modified {mtime}")
+        ok = check("daily_runner log", mtime >= last_date,
+                   f"last modified {mtime} ({runner_log.parent.name})")
     else:
-        ok = check("daily_runner log", False, "log file not found")
+        ok = check("daily_runner log", False, "no pipeline_B/C runner logs found")
     all_ok = all_ok and ok
 
     # 6. Accuracy check — last 3 days average

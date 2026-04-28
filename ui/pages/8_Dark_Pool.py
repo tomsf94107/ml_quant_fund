@@ -11,7 +11,7 @@ import sqlite3
 import pandas as pd
 import altair as alt
 import streamlit as st
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 DB_PATH = Path(_ROOT) / "accuracy.db"
@@ -35,37 +35,46 @@ _META = _load_meta()
 
 
 @st.cache_data(ttl=300)
-def load_dark_pool(days: int = 30) -> pd.DataFrame:
+def load_dark_pool(days: int = 30):
+    """Returns (df, last_db_update, fetched_at). last_db_update = max created_at in result rows."""
+    fetched_at = datetime.now()
     if not DB_PATH.exists():
-        return pd.DataFrame()
+        return pd.DataFrame(), None, fetched_at
     try:
-        cutoff = str(date.today() - timedelta(days=days))
+        # Minimum 4-day lookback so weekends/holidays still catch last trading day
+        effective_days = max(days, 4)
+        cutoff = str(date.today() - timedelta(days=effective_days))
         conn = sqlite3.connect(DB_PATH)
         df = pd.read_sql(
             "SELECT * FROM dark_pool_history WHERE date >= ? ORDER BY date DESC, dp_ratio DESC",
             conn, params=[cutoff]
         )
+        last_db_update = df["created_at"].max() if not df.empty and "created_at" in df.columns else None
         conn.close()
-        return df
+        return df, last_db_update, fetched_at
     except Exception:
-        return pd.DataFrame()
+        return pd.DataFrame(), None, fetched_at
 
 
 @st.cache_data(ttl=300)
-def load_skew(days: int = 30) -> pd.DataFrame:
+def load_skew(days: int = 30):
+    """Returns (df, last_db_update, fetched_at)."""
+    fetched_at = datetime.now()
     if not DB_PATH.exists():
-        return pd.DataFrame()
+        return pd.DataFrame(), None, fetched_at
     try:
-        cutoff = str(date.today() - timedelta(days=days))
+        effective_days = max(days, 4)
+        cutoff = str(date.today() - timedelta(days=effective_days))
         conn = sqlite3.connect(DB_PATH)
         df = pd.read_sql(
             "SELECT * FROM options_skew_history WHERE date >= ? ORDER BY date DESC",
             conn, params=[cutoff]
         )
+        last_db_update = df["created_at"].max() if not df.empty and "created_at" in df.columns else None
         conn.close()
-        return df
+        return df, last_db_update, fetched_at
     except Exception:
-        return pd.DataFrame()
+        return pd.DataFrame(), None, fetched_at
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
@@ -82,8 +91,17 @@ with st.sidebar:
 
 
 # ── Load data ─────────────────────────────────────────────────────────────────
-dp_df   = load_dark_pool(days=days_back)
-skew_df = load_skew(days=days_back)
+dp_df, dp_last_update, dp_fetched_at = load_dark_pool(days=days_back)
+skew_df, skew_last_update, skew_fetched_at = load_skew(days=days_back)
+
+# Freshness indicator
+_freshness_parts = []
+if dp_last_update:
+    _freshness_parts.append(f"📊 DB updated: `{dp_last_update[:19].replace('T', ' ')} VN`")
+if dp_fetched_at:
+    _freshness_parts.append(f"💾 Cache fetched: `{dp_fetched_at.strftime('%Y-%m-%d %H:%M:%S')} VN`")
+if _freshness_parts:
+    st.caption(" · ".join(_freshness_parts))
 
 if dp_df.empty:
     st.warning("No dark pool data yet. Run: uwsnapshot --date YYYY-MM-DD")
