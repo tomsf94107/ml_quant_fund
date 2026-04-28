@@ -40,6 +40,7 @@ import numpy as np
 import pandas as pd
 import sqlite3
 import yfinance as yf
+from features import massive_client as mc
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 SPY_TICKER      = "SPY"
@@ -125,7 +126,7 @@ OUTPUT_COLUMNS = [
 
 def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
     """Download OHLCV from yfinance and flatten any MultiIndex columns."""
-    df = yf.download(ticker, start=start, end=end, auto_adjust=True, progress=False)
+    df = mc.download(ticker, start=start, end=end, auto_adjust=True, progress=False)
     if df.empty:
         raise ValueError(f"yfinance returned no data for {ticker} ({start} → {end})")
 
@@ -154,7 +155,7 @@ def _market_return(etf: str, start: str, end: str,
     If return_close=True, returns a DataFrame with both 'close' and 'ret' columns.
     """
     try:
-        tmp = yf.download(etf, start=start, end=end,
+        tmp = mc.download(etf, start=start, end=end,
                           auto_adjust=True, progress=False)
         if isinstance(tmp.columns, pd.MultiIndex):
             tmp.columns = tmp.columns.get_level_values(0)
@@ -509,7 +510,7 @@ def build_feature_dataframe(
     # Short interest ratio (from yfinance — updates bi-weekly)
     try:
         if not training_mode:
-            _info = yf.Ticker(ticker).info
+            _info = mc.get_short_interest(ticker)
             df["short_ratio"]   = float(_info.get("shortRatio") or 0.0)
             df["short_pct_float"] = float(_info.get("shortPercentOfFloat") or 0.0)
         else:

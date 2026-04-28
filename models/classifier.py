@@ -26,6 +26,18 @@ from __future__ import annotations
 
 import os
 import joblib
+
+from functools import lru_cache as _lru_cache
+
+@_lru_cache(maxsize=None)
+def _cached_joblib_load(path_str):
+    """Cache joblib.load results across calls. Models are immutable post-train.
+    
+    Cache key is the file path string. First call loads from disk; subsequent
+    calls return the cached object. Reduces disk I/O during pipeline runs that
+    re-load the same models repeatedly.
+    """
+    return joblib.load(path_str)
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -190,7 +202,7 @@ class TrainResult:
                 f"No saved model for {ticker} horizon={horizon}d. "
                 f"Run train_model() first."
             )
-        return joblib.load(path)
+        return _cached_joblib_load(str(path))
 
 
 # ══════════════════════════════════════════════════════════════════════════════

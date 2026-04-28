@@ -404,17 +404,18 @@ def reconcile_outcomes(
         max_date  = group["outcome_date"].max() + timedelta(days=2)
 
         try:
-            px = yf.download(
+            from features import massive_client as mc
+            px = mc.download(
                 ticker, start=str(min_date), end=str(max_date),
                 auto_adjust=True, progress=False
             )
             if isinstance(px.columns, pd.MultiIndex):
                 px.columns = px.columns.get_level_values(0)
             if px.empty:
-                raise ValueError("Empty yfinance response")
+                raise ValueError("Empty Massive response")
             close = px["Close"].squeeze()
         except Exception as e:
-            print(f"  ⚠ yfinance failed for {ticker}: {e} — trying fallbacks")
+            print(f"  ⚠ Massive primary failed for {ticker}: {e} — trying yfinance/fallbacks")
             px = _fetch_price_fallback(ticker, min_date, max_date)
             if px is None:
                 print(f"  ⚠ All sources failed for {ticker}")
@@ -733,7 +734,8 @@ def reconcile_intraday_outcomes():
 
             # Fetch actual price at outcome time
             import pandas as pd
-            hist = yf.download(ticker,
+            from features import massive_client as mc
+            hist = mc.download(ticker,
                                start=outcome_dt.strftime("%Y-%m-%d"),
                                end=(outcome_dt + timedelta(days=1)).strftime("%Y-%m-%d"),
                                interval="1m", auto_adjust=True, progress=False)
@@ -909,7 +911,8 @@ def get_spy_relative_accuracy() -> list[dict]:
     max_date = (df["date"].max() + pd.Timedelta(days=2)).strftime("%Y-%m-%d")
     min_date_ext = (df["date"].min() - pd.Timedelta(days=5)).strftime("%Y-%m-%d")
     try:
-        spy = yf.download("SPY", start=min_date_ext, end=max_date,
+        from features import massive_client as mc
+        spy = mc.download("SPY", start=min_date_ext, end=max_date,
                           auto_adjust=True, progress=False)
         if isinstance(spy.columns, pd.MultiIndex):
             spy.columns = spy.columns.get_level_values(0)

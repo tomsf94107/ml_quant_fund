@@ -19,6 +19,18 @@ from __future__ import annotations
 
 import os
 import joblib
+
+from functools import lru_cache as _lru_cache
+
+@_lru_cache(maxsize=None)
+def _cached_joblib_load(path_str):
+    """Cache joblib.load results across calls. Models are immutable post-train.
+    
+    Cache key is the file path string. First call loads from disk; subsequent
+    calls return the cached object. Reduces disk I/O during pipeline runs that
+    re-load the same models repeatedly.
+    """
+    return joblib.load(path_str)
 import warnings
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -61,7 +73,7 @@ class EnsembleResult:
         path = MODEL_DIR / f"{ticker}_ensemble_{horizon}d.joblib"
         if not path.exists():
             raise FileNotFoundError(f"No ensemble model for {ticker} {horizon}d")
-        return joblib.load(path)
+        return _cached_joblib_load(str(path))
 
     def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
         """Weighted average of XGB and LGB probabilities."""

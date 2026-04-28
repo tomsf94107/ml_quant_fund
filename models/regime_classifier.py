@@ -129,13 +129,14 @@ REGIME_CONFIG = {
 def _fetch_regime_data(lookback_days: int = 252) -> Optional[pd.DataFrame]:
     """Fetch SPY, VIX, TLT, GLD for regime analysis."""
     import yfinance as yf
+    from features import massive_client as mc
 
     end   = datetime.today().strftime("%Y-%m-%d")
     start = (datetime.today() - timedelta(days=lookback_days + 30)).strftime("%Y-%m-%d")
 
     tickers = ["SPY", "^VIX", "TLT", "GLD", "^GSPC", "USO"]
     try:
-        raw = yf.download(tickers, start=start, end=end,
+        raw = mc.download(tickers, start=start, end=end,
                            auto_adjust=True, progress=False)
         if isinstance(raw.columns, pd.MultiIndex):
             close = raw["Close"].copy()
@@ -408,13 +409,14 @@ def get_regime_history(lookback_days: int = 252) -> pd.DataFrame:
     Useful for backtesting and the regime history chart.
     """
     import yfinance as yf
+    from features import massive_client as mc
 
     end   = datetime.today().strftime("%Y-%m-%d")
     start = (datetime.today() - timedelta(days=lookback_days + 60)).strftime("%Y-%m-%d")
 
     try:
         tickers = ["SPY", "^VIX", "TLT"]
-        raw  = yf.download(tickers, start=start, end=end,
+        raw  = mc.download(tickers, start=start, end=end,
                             auto_adjust=True, progress=False)
         if isinstance(raw.columns, pd.MultiIndex):
             close = raw["Close"].copy()

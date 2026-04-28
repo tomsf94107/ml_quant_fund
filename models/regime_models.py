@@ -27,6 +27,18 @@ from pathlib import Path
 from typing import Optional
 
 import joblib
+
+from functools import lru_cache as _lru_cache
+
+@_lru_cache(maxsize=None)
+def _cached_joblib_load(path_str):
+    """Cache joblib.load results across calls. Models are immutable post-train.
+    
+    Cache key is the file path string. First call loads from disk; subsequent
+    calls return the cached object. Reduces disk I/O during pipeline runs that
+    re-load the same models repeatedly.
+    """
+    return joblib.load(path_str)
 import numpy as np
 import pandas as pd
 from sklearn.calibration import CalibratedClassifierCV
@@ -108,7 +120,8 @@ def label_regimes(df: pd.DataFrame) -> pd.Series:
 
     # Download SPY + VIX
     try:
-        raw = yf.download(["SPY", "^VIX", "TLT"], start=start, end=end,
+        from features import massive_client as mc
+        raw = mc.download(["SPY", "^VIX", "TLT"], start=start, end=end,
                            auto_adjust=True, progress=False)
         if isinstance(raw.columns, pd.MultiIndex):
             close = raw["Close"].copy()
@@ -273,7 +286,7 @@ def load_regime_model(
 ) -> Optional[dict]:
     """Load a saved regime model. Returns None if not found."""
     path = regime_model_path(ticker, regime, horizon)
-    return joblib.load(path) if path.exists() else None
+    return _cached_joblib_load(str(path)) if path.exists() else None
 
 
 # ══════════════════════════════════════════════════════════════════════════════

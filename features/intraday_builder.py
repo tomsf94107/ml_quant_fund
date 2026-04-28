@@ -5,6 +5,7 @@ momentum, VWAP deviation, RSI, volume surge for 1hr/2hr/4hr horizons.
 import pandas as pd
 import numpy as np
 import yfinance as yf
+from features import massive_client as mc
 from datetime import datetime
 import pytz
 
@@ -144,7 +145,7 @@ def build_intraday_features(ticker: str) -> pd.DataFrame:
     Fetch today's 5-min bars and compute intraday features.
     Returns DataFrame with one row per 5-min bar.
     """
-    data = yf.download(
+    data = mc.download(
         ticker, period="2d", interval="5m",
         progress=False, auto_adjust=True
     )
@@ -322,15 +323,15 @@ def get_intraday_signal(ticker: str) -> dict:
 
 def get_all_intraday_signals(tickers: list) -> list:
     """
-    Batch download all tickers at once to avoid yfinance per-ticker caching issues.
+    Batch download all tickers at once via Massive (replaces yfinance).
     """
-    import yfinance as yf
+    from features import massive_client as mc
     import pandas as pd
 
     # Download all at once
-    raw = yf.download(
+    raw = mc.download(
         tickers, period="2d", interval="5m",
-        progress=False, auto_adjust=True, group_by="ticker"
+        progress=False, auto_adjust=True
     )
 
     results = []
