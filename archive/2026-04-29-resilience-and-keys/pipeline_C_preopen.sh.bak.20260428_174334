@@ -2,19 +2,15 @@
 # scripts/pipeline_C_preopen.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # PRE-OPEN FRESH RUNFUND
-# Runs 7:30 PM VN (8:30 AM ET) Mon-Fri — ~1 hour before US market open
-# Chains sentiment + UW snapshot + fresh daily runner predictions
+# Runs 8 PM VN (9 AM ET) Mon-Fri — 30 min before US market open
+# Refreshes live UW signals and re-generates today's signal with fresh data
 # Uses the model trained by Pipeline B that morning
 # ─────────────────────────────────────────────────────────────────────────────
-#   Stage 0: Daily sentiment scoring (~5-8 min, non-critical, continues on fail)
 #   Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)
 #   Stage 2: Run daily predictions again with fresh live features
 # ─────────────────────────────────────────────────────────────────────────────
 
 set -euo pipefail
-
-# Cron compatibility: explicit PATH so homebrew tools (timeout, etc.) are found
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund
 PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python
@@ -36,24 +32,6 @@ fail() {
 }
 
 log "=== PIPELINE C START ==="
-
-# ── Stage 0: Daily sentiment (non-critical, 15-min timeout) ──────────────────
-log "Stage 0: Daily sentiment scoring"
-SENT_START=$(date +%s)
-if timeout 900 $PYTHON scripts/daily_sentiment.py \
-    > "$LOGDIR/00_sentiment.log" 2>&1; then
-    SENT_DUR=$(($(date +%s) - SENT_START))
-    log "Stage 0 OK (${SENT_DUR}s)"
-else
-    SENT_RC=$?
-    SENT_DUR=$(($(date +%s) - SENT_START))
-    if [ $SENT_RC -eq 124 ]; then
-        log "Stage 0 TIMEOUT after 15min (continuing anyway)"
-    else
-        log "Stage 0 FAILED rc=$SENT_RC (continuing anyway, sentiment is non-critical)"
-    fi
-    osascript -e "display notification \"Pipeline C: sentiment failed (continuing)\" with title \"ML Quant Fund\"" 2>/dev/null || true
-fi
 
 # ── Stage 1: UW full snapshot ────────────────────────────────────────────────
 log "Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)"

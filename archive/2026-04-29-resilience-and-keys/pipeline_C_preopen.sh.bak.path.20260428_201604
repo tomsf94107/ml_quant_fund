@@ -13,9 +13,6 @@
 
 set -euo pipefail
 
-# Cron compatibility: explicit PATH so homebrew tools (timeout, etc.) are found
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-
 ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund
 PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python
 DATE_TAG=$(date +%Y%m%d)

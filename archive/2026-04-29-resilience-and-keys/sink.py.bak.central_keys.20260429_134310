@@ -287,7 +287,7 @@ def _fetch_price_fallback(ticker: str, start_date, end_date) -> "pd.DataFrame | 
     import requests
     import pandas as pd
 
-    from config.keys import MASSIVE_API_KEY as POLYGON_KEY
+    POLYGON_KEY = "pvpkxx6PRbgfvepY33Ao_bi4iNMY1pPz"
     AV_KEY      = "XX4T4AIT98GEF3K8"
 
     # --- Polygon.io ---

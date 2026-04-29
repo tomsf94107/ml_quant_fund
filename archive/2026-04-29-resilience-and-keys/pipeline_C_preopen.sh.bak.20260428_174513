@@ -13,9 +13,6 @@
 
 set -euo pipefail
 
-# Cron compatibility: explicit PATH so homebrew tools (timeout, etc.) are found
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-
 ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund
 PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python
 DATE_TAG=$(date +%Y%m%d)
@@ -36,24 +33,6 @@ fail() {
 }
 
 log "=== PIPELINE C START ==="
-
-# ── Stage 0: Daily sentiment (non-critical, 15-min timeout) ──────────────────
-log "Stage 0: Daily sentiment scoring"
-SENT_START=$(date +%s)
-if timeout 900 $PYTHON scripts/daily_sentiment.py \
-    > "$LOGDIR/00_sentiment.log" 2>&1; then
-    SENT_DUR=$(($(date +%s) - SENT_START))
-    log "Stage 0 OK (${SENT_DUR}s)"
-else
-    SENT_RC=$?
-    SENT_DUR=$(($(date +%s) - SENT_START))
-    if [ $SENT_RC -eq 124 ]; then
-        log "Stage 0 TIMEOUT after 15min (continuing anyway)"
-    else
-        log "Stage 0 FAILED rc=$SENT_RC (continuing anyway, sentiment is non-critical)"
-    fi
-    osascript -e "display notification \"Pipeline C: sentiment failed (continuing)\" with title \"ML Quant Fund\"" 2>/dev/null || true
-fi
 
 # ── Stage 1: UW full snapshot ────────────────────────────────────────────────
 log "Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)"

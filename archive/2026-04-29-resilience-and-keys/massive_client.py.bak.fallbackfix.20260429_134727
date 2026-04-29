@@ -248,9 +248,9 @@ def _download_single(ticker, start_str, end_str, mult, span, auto_adjust):
     except Exception as e:
         # Massive failed all retries — try yfinance fallback for this ticker
         log.warning(f"massive failed for {ticker} after retries, falling back to yfinance: {e}")
-        return _download_yfinance(ticker, start_str, end_str,
-                                  f"{mult}{span[0]}" if span != "day" else "1d",
-                                  auto_adjust)
+        return _download_yfinance_fallback(ticker, start_str, end_str,
+                                           f"{mult}{span[0]}" if span != "day" else "1d",
+                                           auto_adjust)
 
     if data.get("resultsCount", 0) == 0 or not data.get("results"):
         log.warning(f"massive: no data for {ticker} {start_str} to {end_str}")
