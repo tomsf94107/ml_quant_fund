@@ -17,3 +17,35 @@ Files to check:
 - accuracy.db → intraday_predictions + intraday_outcomes tables
 ======================================
 May 13 — Before training intraday XGBoost: modify intraday_builder.py to also save raw features (rsi_14, vwap_dev, momentum_score, vol_surge, return_1hr, return_2hr) per ticker per snapshot to a CSV or SQLite table for training data
+
+---
+2026-04-30 (Vietnam time): Shipped XGBoost regularization fix to models/classifier.py.
+
+Changes:
+  n_estimators 300 -> 30
+  learning_rate 0.05 -> 0.1
+  max_depth 4 -> 2
+  reg_lambda 1.0 -> 10.0
+
+Backup: models/saved.bak.before_simplification_20260430/
+
+Validation evidence:
+  - Walk-forward backtest (5-fold, 5d embargo): OOS AUC 0.555 vs 0.518 baseline
+  - Full 79-feature leak audit: 68/68 features clean, no leakage detected
+  - Per-horizon backtest: 1d=0.556, 3d=0.550, 5d=0.539 pooled OOS
+  - Calibration plot before fix: dots flat ~50% at all confidence buckets
+
+Tripwires (any -> roll back):
+  - 14d rolling live AUC stays below 0.52 (expected ~0.54-0.55)
+  - 14d rolling BUY accuracy stays below 50%
+  - Calibration plot dots remain flat after 21 days
+Decision date: May 14, 2026
+
+Rollback procedure if needed:
+  1. cp -r models/saved.bak.before_simplification_20260430/* models/saved/
+  2. Revert XGB_PARAMS in models/classifier.py to old values
+  3. Note in journal what we observed and why we rolled back
+
+Next steps after observation window:
+  - If live AUC ~0.54+ -> start alpha_transformations integration (Mid-May plan)
+  - If live AUC unchanged -> investigate train/predict data pipeline divergence

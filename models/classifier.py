@@ -130,15 +130,15 @@ TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
 # These are reasonable defaults. Replace with Optuna-tuned values once you
 # have enough training data (aim for >500 rows per ticker).
 XGB_PARAMS: dict = {
-    "n_estimators":     300,
-    "learning_rate":    0.05,
-    "max_depth":        4,
+    "n_estimators":     30,
+    "learning_rate":    0.1,
+    "max_depth":        2,
     "subsample":        0.8,
     "colsample_bytree": 0.8,
     "min_child_weight": 5,       # regularisation — prevents overfit on thin tickers
     "gamma":            0.1,
     "reg_alpha":        0.1,     # L1
-    "reg_lambda":       1.0,     # L2
+    "reg_lambda":       10.0,     # L2
     "objective":        "binary:logistic",
     "eval_metric":      "logloss",
     "random_state":     42,
