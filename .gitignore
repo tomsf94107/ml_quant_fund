@@ -40,3 +40,12 @@ models/*/*.joblib
 # Reports — regenerated from scripts
 reports/*.csv
 reports/*.log
+
+# === Backup hygiene (added 2026-05-01) ===
+*.bak
+*.bak.*
+*.bak_*
+models/saved.bak*/
+*.db.bak.*
+patch_*.py
+archive/
