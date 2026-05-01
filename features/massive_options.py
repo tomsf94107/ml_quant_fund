@@ -14,7 +14,7 @@ from typing import Optional
 
 import requests
 
-BASE_URL    = "https://api.massive.com"
+BASE_URL    = "https://api.polygon.io"
 API_KEY     = os.getenv("MASSIVE_API_KEY", "")
 
 
@@ -78,12 +78,12 @@ def get_25delta_skew_massive(ticker: str, current_price: float = None,
     try:
         # Get current price if not provided (use yfinance as free lookup)
         if current_price is None:
-            import yfinance as yf
-            t = yf.Ticker(ticker)
-            current_price = t.info.get("regularMarketPrice") or t.info.get("currentPrice")
+            from features.yf_resilient import safe_ticker_info, safe_ticker_history
+            info = safe_ticker_info(ticker) or {}
+            current_price = info.get("regularMarketPrice") or info.get("currentPrice")
             if not current_price:
-                hist = t.history(period="1d")
-                if not hist.empty:
+                hist = safe_ticker_history(ticker, period="1d")
+                if hist is not None and not hist.empty:
                     current_price = float(hist["Close"].iloc[-1])
             if not current_price:
                 result["error"] = "Could not get current price"
@@ -169,42 +169,46 @@ def get_25delta_skew_massive(ticker: str, current_price: float = None,
 
 def get_25delta_skew_with_fallback(ticker: str, current_price: float = None) -> dict:
     """
-    Primary: Massive (real Greeks).
-    Fallback: UW if Massive fails.
-    Final fallback: yfinance.
+    Primary: Unusual Whales (real Greeks per strike, delta-aware skew calc).
+    Fallback 1: Massive Greeks (currently returns empty on Options Starter tier;
+                future-proofed for Options Advanced upgrade).
+
+    Note: yfinance is intentionally NOT in the fallback chain. yfinance/curl_cffi
+    has crashed Pipeline B via cumulative DNS retry failures (segfault on the
+    C extension thread pool). UW + Massive cover all needs without yfinance.
+
+    If both UW and Massive fail, returns skew_25d=None. Callers (builder.py,
+    generator.py) treat None as 0.0 (neutral skew), so missing data degrades
+    gracefully without crashing the pipeline.
     """
-    # Try Massive first
-    result = get_25delta_skew_massive(ticker, current_price)
-    if result.get("skew_25d") is not None and result.get("error") is None:
-        return result
-
-    # Fallback to UW
+    # Try UW first (primary — real per-strike Greeks/IV)
     try:
-        from features.options_flow import get_25delta_skew as get_uw_skew
-        uw_result = get_uw_skew(ticker)
+        from features.uw_options import get_25delta_skew_uw
+        uw_result = get_25delta_skew_uw(ticker, current_price)
         if uw_result.get("skew_25d") is not None and uw_result.get("error") is None:
-            uw_result["source"] = "unusual_whales"
             return uw_result
-    except Exception:
-        pass
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).warning(f"UW skew failed for {ticker}: {e}")
 
-    # Final fallback to yfinance
+    # Fallback: Massive Greeks (empty on Starter, populated on Advanced)
     try:
-        from features.options_flow import get_options_signal
-        yf_result = get_options_signal(ticker)
-        if yf_result.get("iv_skew") is not None:
-            return {
-                "ticker":      ticker,
-                "skew_25d":    round(yf_result["iv_skew"], 4),
-                "iv_rank":     yf_result.get("iv_rank"),
-                "skew_signal": "BEARISH" if yf_result["iv_skew"] > 0.03 else "BULLISH" if yf_result["iv_skew"] < -0.02 else "NEUTRAL",
-                "source":      "yfinance",
-                "error":       None,
-            }
-    except Exception:
-        pass
+        massive_result = get_25delta_skew_massive(ticker, current_price)
+        if massive_result.get("skew_25d") is not None and massive_result.get("error") is None:
+            return massive_result
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).warning(f"Massive skew failed for {ticker}: {e}")
 
-    return result  # Return Massive error result if all fallbacks failed
+    # All sources failed — return clean None result
+    return {
+        "ticker":      ticker,
+        "skew_25d":    None,
+        "iv_rank":     None,
+        "skew_signal": "NEUTRAL",
+        "source":      "none",
+        "error":       "All skew sources failed (UW + Massive)",
+    }
 
 
 def skew_to_multiplier(skew_25d: float) -> float:

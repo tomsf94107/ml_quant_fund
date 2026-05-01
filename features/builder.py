@@ -412,31 +412,41 @@ def build_feature_dataframe(
     df["xlk_ret"] = xlk.values
 
     # ── 6b. Macro features — DXY, 10Y yield, Fear & Greed, Beta, Short interest ──
-    # DXY (US Dollar index)
+    # DXY via FRED Trade Weighted USD Index (DTWEXBGS) — replaces yfinance
     try:
-        _dxy = _market_return("DX-Y.NYB", start_str, end_str, date_index)
-        df["dxy_ret"] = _dxy.fillna(0.0).values
+        from features.fred_client import fred_get_as_series
+        _dxy_series = fred_get_as_series("DTWEXBGS", start=start_str, end=end_str)
+        if _dxy_series is not None and not _dxy_series.empty:
+            # FRED gives index level — compute daily returns
+            _dxy_ret = _dxy_series.pct_change().fillna(0.0)
+            _dxy_map = {d.date(): v for d, v in _dxy_ret.items()}
+            df["dxy_ret"] = df["date"].map(_dxy_map).fillna(0.0).values
+        else:
+            df["dxy_ret"] = 0.0
     except Exception:
         df["dxy_ret"] = 0.0
 
     # VIX term structure — VIX/VIX3M ratio (Hull Chapter 20)
     # ratio > 1 = inverted = acute panic (short-term fear > long-term) = mean reverting, less dangerous
     # ratio < 1 = normal = sustained fear = more dangerous, suppresses BUY signals harder
+    # VIX from FRED (VIXCLS, official CBOE redistribution)
+    # VIX3M from yfinance (CBOE proprietary, FRED doesn't have it) - uses resilient wrapper
     try:
-        _vix3m = yf.download("^VIX3M", start=start_str, end=end_str,
-                              auto_adjust=True, progress=False)
-        _vix_raw = yf.download("^VIX", start=start_str, end=end_str,
-                               auto_adjust=True, progress=False)
-        if not _vix3m.empty and not _vix_raw.empty:
-            if isinstance(_vix3m.columns, pd.MultiIndex):
-                _vix3m.columns = _vix3m.columns.get_level_values(0)
-            if isinstance(_vix_raw.columns, pd.MultiIndex):
-                _vix_raw.columns = _vix_raw.columns.get_level_values(0)
-            _vix3m.index = pd.to_datetime(_vix3m.index).normalize()
-            _vix_raw.index = pd.to_datetime(_vix_raw.index).normalize()
-            _vix3m_s = _vix3m["Close"].squeeze()
-            _vix_s   = _vix_raw["Close"].squeeze()
-            _ratio   = (_vix_s / _vix3m_s).dropna()
+        from features.fred_client import fred_get_as_series
+        from features.yf_resilient import safe_yf_download
+
+        _vix_s = fred_get_as_series("VIXCLS", start=start_str, end=end_str)
+        _vix3m_raw = safe_yf_download("^VIX3M", start=start_str, end=end_str,
+                                       auto_adjust=True, progress=False)
+
+        if (_vix_s is not None and not _vix_s.empty
+            and _vix3m_raw is not None and not _vix3m_raw.empty):
+            if isinstance(_vix3m_raw.columns, pd.MultiIndex):
+                _vix3m_raw.columns = _vix3m_raw.columns.get_level_values(0)
+            _vix3m_raw.index = pd.to_datetime(_vix3m_raw.index).normalize()
+            _vix3m_s = _vix3m_raw["Close"].squeeze()
+
+            _ratio = (_vix_s / _vix3m_s).dropna()
             _ratio_map = {d.date(): v for d, v in _ratio.items()}
             df["vix_term_structure"] = df["date"].map(_ratio_map).ffill().fillna(1.0)
         else:
@@ -446,15 +456,13 @@ def build_feature_dataframe(
 
 
 
-    # 10Y Treasury yield
+    # 10Y Treasury yield via FRED DGS10 (replaces yfinance ^TNX)
+    # DGS10 is already in % (e.g. 4.25), divide by 100 to match yfinance ^TNX format (0.0425)
     try:
-        tnx_raw = yf.download("^TNX", start=start_str, end=end_str,
-                               auto_adjust=True, progress=False)
-        if not tnx_raw.empty:
-            if isinstance(tnx_raw.columns, pd.MultiIndex):
-                tnx_raw.columns = tnx_raw.columns.get_level_values(0)
-            tnx_raw.index = pd.to_datetime(tnx_raw.index).normalize()
-            tnx_series = tnx_raw["Close"].squeeze() / 100.0
+        from features.fred_client import fred_get_as_series
+        tnx_series = fred_get_as_series("DGS10", start=start_str, end=end_str)
+        if tnx_series is not None and not tnx_series.empty:
+            tnx_series = tnx_series / 100.0  # Convert % to decimal
             tnx_map = {d.date(): v for d, v in tnx_series.items()}
             df["yield_10y"] = df["date"].map(tnx_map).ffill().fillna(0.04)
         else:
@@ -710,26 +718,42 @@ def build_feature_dataframe(
             df["analyst_buy_pct"] = 0.5
             df["analyst_mult"]    = 1.0
 
-    # ── Options IV skew (daily snapshot) ─────────────────────────────────────
+    # ── Options IV skew + PC ratio (daily snapshot via UW) ───────────────────
+    # Migration 2026-05-01: replaced yfinance options_flow with UW endpoints
+    # to eliminate Pipeline B crashes from yfinance/curl_cffi thread pool corruption.
+    # UW provides real per-strike Greeks (skew) and aggregated volume (PC ratio).
     if training_mode:
         df["iv_skew_snap"]  = 0.0
         df["pc_ratio_snap"] = 1.0
     else:
+        # IV skew via UW (with Massive fallback for future Advanced upgrade)
         try:
-            from features.options_flow import get_options_signal
-            import functools, concurrent.futures
+            from features.massive_options import get_25delta_skew_with_fallback
+            import concurrent.futures
             with concurrent.futures.ThreadPoolExecutor() as ex:
-                fut = ex.submit(get_options_signal, ticker)
+                fut = ex.submit(get_25delta_skew_with_fallback, ticker)
                 try:
-                    opt = fut.result(timeout=5)
-                    iv_skew_val = opt.get("iv_skew") or 0.0
-                    pc_ratio_val = opt.get("put_call_ratio") or 1.0
+                    skew_result = fut.result(timeout=10)
+                    iv_skew_val = skew_result.get("skew_25d") or 0.0
                 except Exception:
-                    iv_skew_val, pc_ratio_val = 0.0, 1.0
-            df["iv_skew_snap"]   = iv_skew_val
-            df["pc_ratio_snap"]  = pc_ratio_val
+                    iv_skew_val = 0.0
+            df["iv_skew_snap"] = iv_skew_val
         except Exception:
-            df["iv_skew_snap"]  = 0.0
+            df["iv_skew_snap"] = 0.0
+
+        # PC ratio via UW options-volume endpoint
+        try:
+            from features.uw_options import get_pc_ratio_uw
+            import concurrent.futures
+            with concurrent.futures.ThreadPoolExecutor() as ex:
+                fut = ex.submit(get_pc_ratio_uw, ticker)
+                try:
+                    pc_result = fut.result(timeout=10)
+                    pc_ratio_val = pc_result.get("pc_ratio") or 1.0
+                except Exception:
+                    pc_ratio_val = 1.0
+            df["pc_ratio_snap"] = pc_ratio_val
+        except Exception:
             df["pc_ratio_snap"] = 1.0
 
     # Sector-relative return (stock 1d return minus its sector ETF return)
