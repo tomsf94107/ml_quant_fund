@@ -49,3 +49,174 @@ Rollback procedure if needed:
 Next steps after observation window:
   - If live AUC ~0.54+ -> start alpha_transformations integration (Mid-May plan)
   - If live AUC unchanged -> investigate train/predict data pipeline divergence
+
+---
+2026-05-01 ~02:00 (Vietnam): Paused mid-deployment.
+
+Current state:
+- models/classifier.py: XGB_PARAMS edited (committed at 4c1f11a), shipped to GitHub
+- models/saved/: ROLLED BACK to pre-edit state from .bak/ directory
+- Live predictions: still using OLD params (300/4/0.05/1.0) — verified AAPL
+- Reason for pause: discovered models/ensemble.py also has its own LGB params at line
+  111 that weren't regularized. Ensemble is 70% LGB, 30% XGB per AAPL_ensemble_1d
+  weights, so XGB-only fix would be partial. Live predictions come from
+  predict_proba_ensemble (signals/generator.py:460-461), not target models.
+
+Tomorrow's work:
+- Apply matching regularization to LGB in models/ensemble.py line 111-122:
+    n_estimators 300 -> 30
+    learning_rate 0.05 -> 0.1
+    max_depth 5 -> 2
+    num_leaves 31 -> 4
+    reg_lambda 1.0 -> 10.0
+- Verify with sed -n '100,135p' models/ensemble.py
+- Then run full retraining: python -m models.train_all
+- Verify both target and ensemble models have correct params
+- Delete stale training_report.csv before retrain so we get fresh metrics
+- Watch dashboard for 14 days as planned
+
+Diagnostics confirmed today:
+- Walk-forward backtest: train 0.99 vs test 0.518 (massive overfit, no leak)
+- Regularized walk-forward: train 0.78 vs test 0.555 (gap closes 0.47 -> 0.20)
+- Full 79-feature leak audit: 0 LEAK_LIKELY, 0 SUSPICIOUS, all features clean
+- AAPL_target with new params: test AUC 0.83 (single 80/20 split, no embargo)
+- AAPL_ensemble with old LGB: test AUC 0.94 (LGB still overfitting)
+
+Backup intact: models/saved.bak.before_simplification_20260430/ (812 files)
+
+---
+2026-05-01 ~02:00 (Vietnam): Paused mid-deployment. Here's where we stopped.
+
+CURRENT STATE:
+- models/classifier.py: XGB_PARAMS edited (commit 4c1f11a, pushed to GitHub)
+- models/saved/: ROLLED BACK to pre-edit state from .bak/ directory
+- Live predictions: still using OLD params (300/4/0.05/1.0) — verified AAPL
+- Backup intact: models/saved.bak.before_simplification_20260430/ (812 files)
+
+WHY WE PAUSED:
+Live predictions come from predict_proba_ensemble (signals/generator.py:460-461),
+not from individual target models. The ensemble is XGB (30% weight) + LightGBM (70%).
+We regularized the XGB but LightGBM in models/ensemble.py:111 still has old params.
+Shipping XGB-only would leave 70% of the prediction unregularized.
+
+TOMORROW'S WORK (4 STEPS, ~25 MINUTES):
+
+Step 1 — Edit LGB params in models/ensemble.py (around line 111-122):
+  Run these 5 sed commands one at a time:
+
+    sed -i '' 's/"n_estimators":     300,/"n_estimators":     30,/' models/ensemble.py
+    sed -i '' 's/"learning_rate":    0.05,/"learning_rate":    0.1,/' models/ensemble.py
+    sed -i '' 's/"max_depth":        5,/"max_depth":        2,/' models/ensemble.py
+    sed -i '' 's/"num_leaves":       31,/"num_leaves":       4,/' models/ensemble.py
+    sed -i '' 's/"reg_lambda":       1.0,/"reg_lambda":       10.0,/' models/ensemble.py
+
+Step 2 — Verify LGB edits took effect:
+    sed -n '100,135p' models/ensemble.py
+  Expected new values: n_estimators=30, learning_rate=0.1, max_depth=2,
+                       num_leaves=4, reg_lambda=10.0
+
+Step 3 — Delete stale training_report.csv so we get fresh metrics:
+    rm models/saved/training_report.csv
+
+Step 4 — Run full retraining (~10-15 min):
+    ~/.pyenv/versions/ml_quant_310/bin/python -m models.train_all
+
+Step 5 — Verify both target AND ensemble for AAPL have new params:
+    ~/.pyenv/versions/ml_quant_310/bin/python << 'INNER'
+    import joblib
+    t = joblib.load('models/saved/AAPL_target_1d.joblib')
+    p = t.model.calibrated_classifiers_[0].estimator.get_params()
+    print(f'target XGB: n_est={p["n_estimators"]}, depth={p["max_depth"]}, lambda={p["reg_lambda"]}')
+    e = joblib.load('models/saved/AAPL_ensemble_1d.joblib')
+    print(f'ensemble: xgb_weight={e.weights["xgb"]}, lgb_weight={e.weights["lgb"]}')
+    print(f'ensemble metrics: AUC={e.metrics["roc_auc"]}')
+    INNER
+
+  Expected: target XGB shows 30/2/10.0, ensemble AUC drops from 0.94 toward ~0.65-0.75
+
+Step 6 — Commit and push the LGB edit:
+    git add models/ensemble.py journal.txt
+    git commit -m "Regularize LightGBM in ensemble.py to match XGB"
+    git push
+
+DIAGNOSTICS CONFIRMED TODAY (don't redo these):
+- Walk-forward backtest: train 0.99 vs test 0.518 (massive overfit, no leak)
+- Regularized walk-forward: train 0.78 vs test 0.555 (gap closes 0.47 -> 0.20)
+- Full 79-feature leak audit: 0 LEAK_LIKELY, 0 SUSPICIOUS, all features clean
+- AAPL_target with new params alone: test AUC 0.83
+- AAPL_ensemble with old LGB: test AUC 0.94 (LGB carrying overfit)
+
+TRIPWIRE (after retrain ships):
+- 14d rolling live AUC must reach 0.52+ (expected ~0.54-0.55)
+- 14d rolling BUY accuracy must reach 50%+
+- Calibration plot dots must start curving toward diagonal
+- Decision date: ~14 days from when you ship the LGB fix
+- If tripwires fail: rollback procedure same as before — restore from
+  models/saved.bak.before_simplification_20260430/ and revert ensemble.py params
+
+---
+2026-05-01 ~16:00 (Vietnam): Big day. Two major fixes shipped.
+
+1. LIGHTGBM REGULARIZATION (completes yesterday's XGB regularization)
+   - models/ensemble.py:_train_lgbm params edited to match XGB shape
+     (30 trees, depth 2, num_leaves 4, lambda 10)
+   - Was the missing 70% of the prediction (LGB weight in ensemble)
+   - Yesterday rolled back; today shipped properly
+
+2. UW OPTIONS MIGRATION (eliminates Pipeline B crash mode)
+   - Pipeline B crashed this morning at 07:42 (FIVN ticker, ~42 in)
+   - Root cause: cumulative yfinance/curl_cffi thread pool corruption
+     from progressive DNS retry failures
+   - Diagnosed: not OOM, not network outage, not data-driven
+   - Pattern: getaddrinfo() thread failed to start, silent C-extension crash
+   - Confirmed Massive Options Starter does NOT return Greeks/IV
+     (despite pricing page claiming so)
+   - UW Basic upgraded to annual: 40K req/day (was 20K)
+   - Created features/uw_options.py: 25-delta skew + PC ratio via UW
+   - Updated massive_options.py: UW first, Massive fallback, no yfinance
+   - Updated builder.py: routes options through UW path
+   - yfinance fully removed from options chain path
+   - Only ^VIX3M still uses yfinance (via safe_yf_download)
+
+System state after today:
+- models/classifier.py: XGB regularized (commit 4c1f11a, yesterday)
+- models/ensemble.py: LGB regularized (today's commit 1)
+- features/uw_options.py: NEW (today's commit 2)
+- features/massive_options.py: UW first (today's commit 2)
+- features/builder.py: UW options path (today's commit 2)
+- models/saved/: full 125-ticker retrain ran on May 1 14:43
+
+Backups in place:
+- models/saved.bak.before_simplification_20260430 (yesterday's pre-XGB state)
+- models/saved.bak.before_lgb_fix_20260501 (today's mid-state)
+- models/saved.bak.before_uw_migration_test (just before UW retrain)
+- features/builder.py.bak.HEAD_pre_FRED_pre_UW (clean baseline)
+- features/massive_options.py.bak.before_uw_swap (post-patch, mislabeled)
+
+14-day observation window starts when Pipeline B runs tomorrow morning
+on the new code. Tripwires:
+- 14d rolling live AUC must reach 0.52+ (target 0.55-0.60)
+- 14d rolling BUY accuracy must reach 50%+
+- Calibration plot dots must curve toward diagonal
+- UW rate-limit warnings should not fire (500 calls/day << 40K limit)
+- No yfinance segfaults in Pipeline B logs
+- Decision date: ~May 15 2026
+
+Sentiment chat coordination:
+- Their FRED migration (Day 1) preserved
+- Their FinBERT formula fix lands tomorrow morning
+- yfinance migration was on our side; complete now
+- ^VIX3M still on yfinance is acceptable (one fail-safe-wrapped call)
+
+If tripwires fail (live AUC stays at 0.510):
+- Rollback both commits via git revert
+- Restore models from models/saved.bak.before_uw_migration_test/
+- Pipeline B runs on yesterday's models
+- Reassess whether overfitting was actually the issue or something else
+
+What's deferred (separate work):
+- massive_client.py:189, :336 still call raw yfinance (low volume, fail safely)
+- 4 yfinance 404 errors at Pipeline B startup (cosmetic, non-blocking)
+- iv_skew_snap=0.0 silent fallback when both UW + Massive fail
+- train_all.py training_mode flag (current behavior preserved intentionally)
+- alpha_transformations integration (mid-May per Gap_Check_and_Roadmap)
