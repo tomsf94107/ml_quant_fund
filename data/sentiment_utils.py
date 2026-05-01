@@ -67,6 +67,15 @@ def _load_finbert():
     if _tokenizer is None or _model is None:
         _tokenizer = AutoTokenizer.from_pretrained(_FINBERT_MODEL)
         _model     = AutoModelForSequenceClassification.from_pretrained(_FINBERT_MODEL)
+        # Guard: id2label ordering has bitten this code twice (Mar 5, Apr 30 2026).
+        # Formula at scoring site assumes this exact mapping. If the upstream model
+        # changes, fail loudly here rather than silently produce inverted scores.
+        expected = {0: 'Neutral', 1: 'Positive', 2: 'Negative'}
+        assert _model.config.id2label == expected, (
+            f"FinBERT id2label changed: got {_model.config.id2label}, "
+            f"expected {expected}. Re-verify scoring formula at line ~376 "
+            f"before continuing."
+        )
         # Force CPU — fixes segfault on Apple Silicon (MPS backend instability)
         _model = _model.to("cpu")
         _model.eval()
@@ -373,7 +382,10 @@ def _finbert_polarity(texts: List[str], batch_size: int = 16) -> List[float]:
         with torch.no_grad():
             logits = mdl(**batch).logits
         probs = torch.nn.functional.softmax(logits, dim=-1)
-        all_scores.extend((probs[:, 2] - probs[:, 0]).tolist())
+        # yiyanghkust/finbert-tone: id2label = {0:Neutral, 1:Positive, 2:Negative}
+        # Score = P(positive) - P(negative). Range ~[-1, +1].
+        # See _load_finbert() for the assertion that locks this label ordering.
+        all_scores.extend((probs[:, 1] - probs[:, 2]).tolist())
 
     return all_scores
 
