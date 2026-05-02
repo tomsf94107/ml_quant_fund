@@ -411,3 +411,122 @@ Pattern noted for future debugging:
 - Safe assumption: any yfinance call that fires per-ticker can exhaust
   thread pool at 125-ticker scale, even if individual call seems light
 
+
+================================================================================
+2026-05-03 00:35 VN — get_sentiment_score_detailed shipped (commit 563d879)
+================================================================================
+
+Pure addition to data/etl_sentiment.py. Returns per-source breakdown for
+ticker+date: combined score, {source: score} dict, time_slot, absolute
+agreement metric, n_sources count.
+
+Smoke test AAPL May 1:
+  score=0.525, claude=0.85, finbert=0.20, agreement=0.65, slot=pre_market
+First useful disagreement data point of the FinBERT post-fix observation
+period (Day 1).
+
+Skipped from the original three orphan changes:
+  - _current_time_slot ET timezone refactor (zoneinfo)
+  - get_sentiment_score rewrite (combined finbert+claude approach)
+Both deferred — not needed tonight, can be revisited if wanted.
+
+CONTAMINATION CLEANUP COMPLETE
+- a9a3d10 (contaminated): force-push removed
+- bb2494e (clean is_corrupted filter): on origin
+- 563d879 (get_sentiment_score_detailed): on origin
+- Local working tree synced to origin/research-track
+
+---
+2026-05-02 ~midnight (Vietnam): Saturday evening continuation.
+
+After the macro cache fix shipped (commit 5458524 earlier today), continued
+with three additional work items:
+
+1. WORLDQUANT PHASE 2.1 — FEATURE CORRELATION CULL
+   - Wrote scripts/feature_correlation_cull.py
+   - Ran on prediction_features table (8,187 rows, 27 features)
+   - Found 11 redundant pairs above rho=0.7
+   - Top redundancies: vix_term_structure rho=0.98 with vix_close,
+     sector_rel_ret rho=0.94 with return_1d, xlk_ret rho=0.88 with spy_ret
+   - Investigated vix_term_structure and sector_rel_ret as suspected bugs
+   - Both confirmed NOT bugs — high correlations are mathematically
+     explainable (VIX and VIX3M co-move; daily stock moves dominate sector
+     beta). Implementations are correct.
+   - Output saved: logs/feature_audits/feature_correlation_cull_20260502_231048.txt
+   - No drops yet — defer until Phase 2.2 alpha transformations applied
+   
+   Side finding: prediction_features only logs 27 of 79 production features.
+   So walk_forward.py (which reads from prediction_features) was scope-limited
+   to 27. The Apr 30 OOS AUC of 0.518 is on a feature subset, not full system.
+   audit_full_features.py uses build_feature_dataframe directly — that's the
+   honest one. Should fix walk_forward.py to match.
+
+2. IS_CORRUPTED FILTER (commit bb2494e)
+   - Sentiment chat shipped is_corrupted column on sentiment.db.sentiment_scores
+     table (257 rows Feb 4 -> Mar 8 marked is_corrupted=1 for FinBERT bug)
+   - Their fix didn't update load_sentiment_scores in data/etl_sentiment.py
+   - Added filter: AND (is_corrupted = 0 OR is_corrupted IS NULL) to BOTH
+     outer query and inner MAX(id) subquery
+   - IS NULL clause covers rows pre-dating the column addition
+   - Filter must be in inner subquery too — otherwise inner could pick MAX(id)
+     of a corrupted row, then outer filter excludes whole date
+   - Validated on AAPL: pre-corruption window returns 0 rows correctly,
+     recent window returns clean rows
+   
+   Impact: tiny (0.1-0.5% of training data per ticker). Today's third retrain
+   wasn't needed since impact is negligible on regularized depth-2 trees.
+
+3. FORCE-PUSH SURGERY (commit a9a3d10 -> bb2494e -> 563d879)
+   - Original is_corrupted commit a9a3d10 swept up sentiment chat's three
+     uncommitted changes from working tree:
+       a. _current_time_slot ET timezone refactor
+       b. get_sentiment_score rewrite (combined finbert+claude)
+       c. NEW get_sentiment_score_detailed function (~60 lines)
+   - Verified via git log -S that these were FIRST introduced in a9a3d10
+     (not in any prior commit) — confirmed sentiment chat had them
+     uncommitted on disk
+   - Decision: split via C-revert. Force-push clean is_corrupted-only commit,
+     return their three changes to "uncommitted in working tree" state for
+     them to commit themselves
+   - Coordination: messaged sentiment chat with evidence and proposed action.
+     They confirmed the changes were theirs, agreed to force-push approach.
+   - Executed surgery:
+       - git reset --soft HEAD~1 (commit gone, changes stay)
+       - cp /tmp backup of pre-patch + post-patch state
+       - git checkout HEAD -- data/etl_sentiment.py (clean state)
+       - Re-applied is_corrupted patch only
+       - Verified diff = ONLY 4 lines (filter comment + 2 filter clauses)
+       - git push --force-with-lease
+   - Sentiment chat selected "just get_sentiment_score_detailed" from their
+     three changes — skipped the time_slot and get_sentiment_score work
+   - Pasted that function to them via chat. They committed (563d879) and
+     pushed.
+   - I pulled. Final state: HEAD at 563d879, working tree clean.
+
+LESSONS LEARNED (worth keeping):
+- ALWAYS git status + git diff before git add. Tonight's whole mess started
+  because git add data/etl_sentiment.py swept up uncommitted edits from
+  another session.
+- Trust but verify cross-chat coordination. Sentiment chat insisted "no fix
+  needed, nothing to fix" — git log -S proved otherwise. Cheap verification
+  beats blind trust.
+- Force-push with lease, not force. --force-with-lease refuses to overwrite
+  if origin moved while you were working — adds safety check.
+- When two AI sessions edit the same file, they must coordinate via commits,
+  not via working-tree state. The file shouldn't be modified-but-uncommitted
+  for extended periods across sessions.
+
+WHAT'S DEFERRED FOR TOMORROW/MONDAY:
+- Phase 2.2 alpha_transformations wiring (weekend project)
+- Phase 2.3 per-alpha fitness scoring (weekend project)
+- Fix walk_forward.py to use build_feature_dataframe (audit scope issue)
+- Decide actions on the 11 redundant feature pairs (defer to post-Phase-2.2)
+
+MONDAY MORNING (May 4 07:00 Vietnam) PIPELINE B EXPECTATIONS:
+- Should complete cleanly all 125 tickers (no DNS crashes, no FAILED)
+- Trains on regularized models (XGB+LGB)
+- UW options data path (no yfinance options)
+- Cached macro indicators (no yfinance VIX/ES=F per-ticker)
+- is_corrupted-filtered sentiment training data
+- 14-day observation window starts properly with full universe coverage
+
