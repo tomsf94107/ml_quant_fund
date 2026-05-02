@@ -358,3 +358,90 @@ def get_prev_close(ticker):
     except Exception as e:
         log.warning(f"prev_close failed for {ticker}: {e}")
     return None
+# ─────────────────────────────────────────────────────────────────────────────
+# APPEND THIS BLOCK to the END of features/massive_client.py
+# Adds /v3/trades and /v3/quotes methods used by features/institutional_ingest.py
+# ─────────────────────────────────────────────────────────────────────────────
+
+from datetime import datetime as _dt, timezone as _tz
+
+TRADES_PAGE_LIMIT = 50000  # Massive max per request
+QUOTES_PAGE_LIMIT = 50000
+
+
+def _to_ns(dt: _dt) -> int:
+    """Convert UTC datetime to nanosecond timestamp."""
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=_tz.utc)
+    return int(dt.timestamp() * 1e9)
+
+
+def list_trades(ticker: str, start: _dt, end: _dt) -> List[dict]:
+    """
+    Fetch all trades for ticker in [start, end) UTC window via Massive /v3/trades.
+
+    Pagination handled via next_url. Returns list of trade dicts with at minimum:
+        sip_timestamp (int ns), price, size, exchange, conditions
+    """
+    _check_key()
+
+    start_ns = _to_ns(start)
+    end_ns = _to_ns(end)
+
+    url = f"{BASE_URL}/v3/trades/{ticker.upper()}"
+    params = {
+        "timestamp.gte": start_ns,
+        "timestamp.lt":  end_ns,
+        "limit":         TRADES_PAGE_LIMIT,
+        "order":         "asc",
+        "sort":          "timestamp",
+        "apiKey":        API_KEY,
+    }
+
+    all_trades: List[dict] = []
+    page_count = 0
+    max_pages = 1000  # safety cap; ~50M trades
+
+    while page_count < max_pages:
+        data = _request_with_retry(url, params, timeout=30)
+        if not data:
+            break
+        results = data.get("results", []) or []
+        all_trades.extend(results)
+        page_count += 1
+
+        next_url = data.get("next_url")
+        if not next_url or not results:
+            break
+        # next_url already encodes filter params; we just append the API key
+        url = next_url
+        params = {"apiKey": API_KEY}
+
+    return all_trades
+
+
+def get_quote_at(ticker: str, sip_ts_ns: int,
+                 lookback_ns: int = 60_000_000_000) -> Optional[dict]:
+    """
+    Fetch the most recent NBBO quote at-or-before sip_ts_ns (nanoseconds).
+
+    Looks back up to `lookback_ns` (default 60s) for an active quote.
+    Returns dict with bid_price / ask_price (and other fields) or None.
+    """
+    _check_key()
+
+    url = f"{BASE_URL}/v3/quotes/{ticker.upper()}"
+    params = {
+        "timestamp.lte": sip_ts_ns,
+        "timestamp.gte": sip_ts_ns - lookback_ns,
+        "limit":         1,
+        "order":         "desc",
+        "sort":          "timestamp",
+        "apiKey":        API_KEY,
+    }
+
+    data = _request_with_retry(url, params, timeout=10)
+    if not data:
+        return None
+    results = data.get("results", []) or []
+    return results[0] if results else None

@@ -13,3 +13,4 @@ python-dotenv>=1.0.0
 psycopg2-binary>=2.9.0
 plotly>=5.18.0
 streamlit-autorefresh>=0.0.1
+streamlit-aggrid>=1.0.5

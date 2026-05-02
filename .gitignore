@@ -49,3 +49,7 @@ models/saved.bak*/
 *.db.bak.*
 patch_*.py
 archive/
+
+# institutional_trades.db SQLite WAL files
+institutional_trades.db-shm
+institutional_trades.db-wal
