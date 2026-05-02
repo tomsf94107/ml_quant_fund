@@ -147,18 +147,44 @@ def load_alerts_7d() -> pd.DataFrame:
 
 
 def get_insider_state_db() -> dict:
+    """
+    Returns last refresh metadata. Prefers insider_raw_scraper_state (populated
+    by the new per-transaction scraper); falls back to insider_scraper_state
+    (populated by the legacy aggregator / alerts classifier) if the raw table
+    doesn't exist yet.
+    """
     if not INSIDER_DB.exists():
         return {}
     conn = sqlite3.connect(INSIDER_DB)
     try:
-        row = conn.execute(
-            "SELECT last_poll_at FROM insider_scraper_state WHERE id = 1"
-        ).fetchone()
-    except sqlite3.OperationalError:
-        return {}
+        # Preferred: raw scraper state
+        try:
+            row = conn.execute(
+                """SELECT last_poll_at, last_row_count, last_ticker_count
+                     FROM insider_raw_scraper_state WHERE id = 1"""
+            ).fetchone()
+            if row and row[0]:
+                return {
+                    "last_poll_at": row[0],
+                    "last_row_count": row[1],
+                    "last_ticker_count": row[2],
+                    "source": "raw_scraper",
+                }
+        except sqlite3.OperationalError:
+            pass
+
+        # Fallback: legacy table
+        try:
+            row = conn.execute(
+                "SELECT last_poll_at FROM insider_scraper_state WHERE id = 1"
+            ).fetchone()
+            if row and row[0]:
+                return {"last_poll_at": row[0], "source": "legacy"}
+        except sqlite3.OperationalError:
+            pass
     finally:
         conn.close()
-    return {"last_poll_at": row[0] if row else None}
+    return {}
 
 
 @st.cache_data(ttl=30)
@@ -218,19 +244,30 @@ def get_inst_state_db() -> dict:
 # ─── Background ingest workers ───────────────────────────────────────────────
 
 def _worker_insider(days_back: int):
-    _set_insider(status="running", progress=0.0, message="Starting insider ETL...")
+    _set_insider(status="running", progress=0.0, message="Starting insider raw scraper...")
     try:
-        from data.etl_insider import run_insider_etl
+        from data.etl_insider_raw import run_insider_raw_etl
         tickers = load_tickers()
         if not tickers:
             _set_insider(status="error", message="No tickers loaded from tickers.txt")
             return
-        results = run_insider_etl(tickers, days_back=days_back, verbose=False)
+
+        n_tickers = len(tickers)
+
+        def cb(ticker: str, idx: int, total: int, frac: float):
+            overall = (idx + frac) / total if total else 0.0
+            _set_insider(
+                status="running",
+                progress=min(overall, 1.0),
+                message=f"[{idx+1}/{total}] {ticker} ({frac*100:.0f}%)"
+            )
+
+        results = run_insider_raw_etl(tickers, days_back=days_back, progress_cb=cb)
         total = sum(results.values())
         active = sum(1 for v in results.values() if v > 0)
         _set_insider(
             status="done", progress=1.0,
-            message=f"✓ Refreshed: {total} trade-days written across {active} tickers"
+            message=f"✓ Refreshed: {total:,} new transactions across {active}/{n_tickers} tickers"
         )
     except Exception as e:
         _set_insider(status="error", message=f"✗ Error: {e}")
@@ -405,7 +442,28 @@ with tab_insider:
     with f3:
         csuite_only = st.checkbox("✓ C-suite only", key="insider_csuite_only")
 
-    f4, f5, f6 = st.columns([2, 1, 1])
+    # Form 4 transaction code labels (UI shows label, SQL filters on letter)
+    TX_CODE_LABELS = {
+        "P": "P · open buy",
+        "S": "S · open sell",
+        "M": "M · option exercise",
+        "A": "A · grant/award",
+        "F": "F · tax withholding",
+        "G": "G · gift",
+        "D": "D · disposed to issuer",
+        "C": "C · derivative conversion",
+        "X": "X · other",
+    }
+    AD_LABELS = {"A": "A · acquired", "D": "D · disposed"}
+
+    # Initialize defaults once: P, S, M selected on first render
+    if "insider_tx_codes_init" not in st.session_state:
+        st.session_state["insider_tx_codes"] = [
+            TX_CODE_LABELS["P"], TX_CODE_LABELS["S"], TX_CODE_LABELS["M"],
+        ]
+        st.session_state["insider_tx_codes_init"] = True
+
+    f4, f5, f6, f6b = st.columns([2, 1.2, 3.5, 0.4])
     with f4:
         role_tier = st.multiselect(
             "Role tier",
@@ -414,19 +472,47 @@ with tab_insider:
             key="insider_role_tier",
         )
     with f5:
-        side_filter = st.multiselect(
+        side_filter_labels = st.multiselect(
             "A/D",
-            options=["A", "D"],
+            options=list(AD_LABELS.values()),
             default=[],
             key="insider_ad",
         )
+        side_filter = [s.split(" · ")[0] for s in side_filter_labels] if side_filter_labels else []
     with f6:
-        tx_codes = st.multiselect(
-            "Tx code",
-            options=["P", "S", "A", "M", "F", "G", "D", "C", "X"],
-            default=[],
+        tx_codes_labels = st.multiselect(
+            "Transaction type",
+            options=list(TX_CODE_LABELS.values()),
             key="insider_tx_codes",
         )
+        tx_codes = [lbl.split(" · ")[0] for lbl in tx_codes_labels] if tx_codes_labels else []
+    with f6b:
+        st.markdown("""<div style='padding-top: 28px;'></div>""", unsafe_allow_html=True)
+        with st.popover("ⓘ"):
+            st.markdown("""
+**Form 4 transaction codes**
+
+| Code | Meaning |
+|---|---|
+| **P · open buy** | Open-market purchase. Insider used own cash. **Strongest bullish signal.** |
+| **S · open sell** | Open-market sale for cash. Bearish but noisy — often scheduled 10b5-1 plans. |
+| **M · option exercise** | Exercised options into shares. Meaningful only when shares are held. |
+| **A · grant** | Compensation award. Not an economic decision by the insider. |
+| **F · tax withholding** | Shares withheld to cover tax on a vest/exercise. Mechanical. |
+| **G · gift** | Transfer to family or charity. Mostly neutral. |
+| **D · disposed to issuer** | Sold back to company (e.g. buyback participation). Rare. |
+| **C · derivative conversion** | Conversion of derivative (warrants → stock). Mechanical. |
+| **X · other** | Non-standard transaction. Read the filing for context. |
+
+*Defaults P, S, M are selected because they capture the economically
+meaningful insider trades. A, F, G are typically execution-mechanics noise
+but available when needed.*
+
+**Acquired / Disposed (A/D)** is the direction of the share movement,
+independent of the transaction code. An option exercise (M code) is always
+A (acquired), even if the insider sells immediately after — that follow-on
+sale prints as a separate row with code S, A/D=D.
+            """)
 
     f7, f8 = st.columns([2, 2])
     with f7:
