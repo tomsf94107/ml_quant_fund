@@ -371,3 +371,43 @@ Pattern noted for future debugging:
 - Safe assumption: any yfinance call that fires per-ticker can exhaust
   thread pool at 125-ticker scale, even if individual call seems light
 
+
+---
+2026-05-02 ~23:00 (Vietnam): Pipeline B crash mode #2 fixed.
+
+Background:
+- Yesterday May 1 we shipped UW options migration thinking that resolved
+  Pipeline B's DNS thread exhaustion crashes
+- This morning May 2, Pipeline B crashed AGAIN at GEV (ticker 47/125)
+- Same crash signature: yfinance ^VIX/ES=F getaddrinfo() thread failures
+- Root cause was incomplete diagnosis yesterday: we eliminated yfinance
+  from options chain, but missed per-ticker macro fetches
+
+What was missed yesterday:
+- features/builder.py:_market_return calls mc.download for 10 macro symbols
+- mc.download routes unsupported symbols (^VIX, ES=F) to yfinance fallback
+- Each ticker triggers ~10 macro fetches; ~46 tickers exhaust DNS pool
+
+Fix:
+- Module-level _MACRO_CACHE dict in builder.py
+- _get_macro_cached() helper wraps mc.download with cache lookup
+- _market_return uses cache (covers SPY, XLK, ^VIX, ES=F, USO, SMH,
+  IGV, LQD, HYG)
+- ^VIX3M block also uses cache (was using safe_yf_download with 60s TTL
+  which is too short for 30+ min Pipeline B run)
+- 1,250 yfinance calls per run -> ~10 yfinance calls per run
+
+Validation:
+- 5-ticker unit test: cache fills with 10 entries on first ticker, holds
+  steady on subsequent. GEV (this morning's crash victim) builds in 7.9s.
+- 54-ticker integration test: 162 models trained, 0 failed
+- Full 125-ticker retrain in progress at commit time
+
+Pattern noted for future debugging:
+- Yesterday's "fix" was correct but incomplete
+- DNS thread exhaustion can be triggered from MULTIPLE call paths
+- Lesson: when fixing a "yfinance crashes Pipeline B" issue, audit ALL
+  call sites at once, not just the most obvious one
+- Safe assumption: any yfinance call that fires per-ticker can exhaust
+  thread pool at 125-ticker scale, even if individual call seems light
+
