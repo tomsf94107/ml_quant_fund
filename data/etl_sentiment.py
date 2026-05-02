@@ -352,6 +352,71 @@ def get_sentiment_score(
         return 0.0
 
 
+def get_sentiment_score_detailed(
+    ticker:  str,
+    as_of:   date | None = None,
+    db_path: Path = DB_PATH,
+) -> dict:
+    """
+    Like get_sentiment_score but returns full diagnostic info:
+        {
+            'score': combined score,
+            'sources': dict of source -> score (e.g. {'finbert': 0.14, 'claude': 0.30}),
+            'time_slot': which time_slot was used,
+            'agreement': abs difference between sources (if both exist),
+            'n_sources': how many scorers contributed,
+        }
+
+    Used by dashboards and AB testing to see WHY a score is what it is.
+    """
+    as_of = as_of or date.today()
+    result = {
+        'score': 0.0,
+        'sources': {},
+        'time_slot': None,
+        'agreement': None,
+        'n_sources': 0,
+    }
+
+    if not db_path.exists():
+        return result
+
+    conn = sqlite3.connect(db_path)
+    try:
+        row = conn.execute("""
+            SELECT time_slot FROM sentiment_scores
+            WHERE ticker=? AND date=?
+            ORDER BY created_at DESC LIMIT 1
+        """, (ticker.upper(), str(as_of))).fetchone()
+
+        if row:
+            latest_slot = row[0]
+            result['time_slot'] = latest_slot
+
+            scores = conn.execute("""
+                SELECT score, source FROM sentiment_scores
+                WHERE ticker=? AND date=? AND time_slot=?
+            """, (ticker.upper(), str(as_of), latest_slot)).fetchall()
+
+            for s, src in scores:
+                result['sources'][src or 'unknown'] = float(s)
+
+            result['n_sources'] = len(result['sources'])
+            if result['n_sources'] > 0:
+                result['score'] = sum(result['sources'].values()) / result['n_sources']
+            if result['n_sources'] == 2:
+                vals = list(result['sources'].values())
+                result['agreement'] = abs(vals[0] - vals[1])
+
+        conn.close()
+        return result
+
+    except Exception:
+        conn.close()
+        return result
+
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 #  CLI
 # ══════════════════════════════════════════════════════════════════════════════
