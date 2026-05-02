@@ -272,13 +272,17 @@ def load_sentiment_scores(
 
     conn  = sqlite3.connect(db_path)
     # Get latest score per day (most recent time_slot wins)
+    # Filter is_corrupted=1 rows (257 FinBERT-bug rows Feb 4 -> Mar 8 2026)
+    # IS NULL covers rows from before the column was added.
     query = """
         SELECT date, ticker, score, positive_pct, negative_pct, n_headlines
         FROM sentiment_scores
         WHERE ticker = ?
+        AND (is_corrupted = 0 OR is_corrupted IS NULL)
         AND id IN (
             SELECT MAX(id) FROM sentiment_scores
             WHERE ticker = ?
+            AND (is_corrupted = 0 OR is_corrupted IS NULL)
             GROUP BY date
         )
     """
