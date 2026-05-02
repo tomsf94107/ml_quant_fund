@@ -220,3 +220,154 @@ What's deferred (separate work):
 - iv_skew_snap=0.0 silent fallback when both UW + Massive fail
 - train_all.py training_mode flag (current behavior preserved intentionally)
 - alpha_transformations integration (mid-May per Gap_Check_and_Roadmap)
+
+================================================================================
+2026-04-30 EOD — FinBERT formula bug resolution + sentiment landscape audit
+================================================================================
+
+CORE FIX
+- data/sentiment_utils.py:_finbert_polarity formula was probs[:,2] - probs[:,0]
+  = Negative - Neutral, under yiyanghkust/finbert-tone label ordering
+  {0:Neutral, 1:Positive, 2:Negative}. Directionally inverted.
+- Patched to probs[:,1] - probs[:,2] = Positive - Negative.
+- Verified on known headlines: +1.00 / -0.69 / ~0.
+- Added id2label assertion guard in _load_finbert().
+- Commit: 810414e on research-track. Pushed.
+
+ORIGINAL HANDOFF FRAMING WAS WRONG IN TWO WAYS
+1. Said bug "broke Mar 5". Actually broken since Feb 4 (file's first commit).
+   Single rebuild commit 515fcca on 2026-03-06; formula unchanged across it.
+2. Said "Mar 5 -> Apr 30 sentiment is wrong, needs rescore." Actually FinBERT
+   path was DORMANT Mar 9 -> Apr 29 — zero rows written to sentiment_scores
+   in that window. Real corruption footprint is only 257 rows, Feb 4 -> Mar 8.
+
+DATA CORRUPTION FLAG
+- sentiment.db.sentiment_scores: ALTER ADD COLUMN is_corrupted INTEGER DEFAULT 0
+- 257 rows Feb 4 -> Mar 8 source='finbert' flagged is_corrupted=1
+- Today's 125 (Claude) + 125 (FinBERT) clean, is_corrupted=0
+- Rescore decision: DROP. No recoverable source headlines, news APIs unreliable
+  for historical text past 7-30 days. Stored pos/neg/neu_pct are headline-count
+  breakdowns not softmax — mathematical inversion infeasible.
+
+SECOND FINBERT FORMULA NEAR-MISS
+- Earlier in evening I anchored on ProsusAI/finbert id2label
+  ({0:positive, 1:negative, 2:neutral}) and was about to direct a patch to
+  probs[:,0] - probs[:,1]. Production model is yiyanghkust/finbert-tone with
+  different label ordering. Caught only because we did grep + sed on the
+  loader before patching. Would have been bug round 3 if shipped.
+- Lesson: verify the actual model identifier in production code before
+  reasoning about its label order.
+
+monday_sentiment (separate table, separate scorer — Claude API, not FinBERT)
+- NOT affected by FinBERT bug. Different code path entirely.
+- Health: Mar 23 -> Apr 30, 28 score_dates, 125-126 tickers/day, last write
+  tonight 19:28. Label distribution last 30d: BULL 43%/NEU 38%/BEAR 18%.
+- Pre-Mar 23: monday_sentiment table didn't exist; feature was structurally
+  0.0 via features/builder.py:506 exception fallback. Models trained on
+  Mar 5 -> Mar 22 saw monday_sentiment as constant zero — relevant for
+  WorldQuant's training-window feature-importance analysis.
+- New tickers (24 added Apr 17): scored daily since Apr 22, ~9 days history.
+- Cleaned WCCBYND ghost (4 rows, empty NEUTRAL placeholders from a transient
+  universe state Apr 21-24) and orphan WCC row.
+- WorldQuant chat's Apr 30 ablation result (monday_sentiment negative
+  importance) stands as real measurement on clean data — not bug artifact.
+
+DUAL-WRITE FABRICATED PERCENTAGES (heads-up, not bug)
+- daily_sentiment.py dual-write to sentiment_scores (source='claude') stores
+  fabricated pos/neg/neu_pct from label+confidence: BULLISH ->
+  pos=conf*100, neg=(1-conf)*30, neu=(1-conf)*70. Not real distributions.
+- Fine for signal-generator's purposes. Risk only if downstream consumer
+  treats these columns as ground truth comparable across sources.
+
+PENDING / DEFERRED
+- Day 2 sentiment plan: passive observation tomorrow as planned.
+- May 1: SELL signal validation query (existing milestone, unrelated).
+- Day 4-5: disagreement-aware ensemble (waiting on observation data).
+- WorldQuant walk-forward audit: unblocked on this fix.
+- monday_sentiment drop decision: deferred to post-observation ablation
+  comparing finbert_sentiment + monday_sentiment combinations.
+
+================================================================================
+2026-05-02 17:40 VN — Pipeline B Saturday run failed at GEV (47/125)
+================================================================================
+
+CAUSE
+- yfinance DNS thread exhaustion fetching ^VIX + ES=F per-ticker
+- Error: getaddrinfo() thread failed to start (curl 6)
+- macOS thread pool exhausted after ~46 tickers x 2 indices
+
+WHAT WORKED
+- 46 tickers retrained cleanly (AAPL -> FVRR alphabetically)
+- AUCs strong: 0.80-0.89 range across 1d/3d/5d horizons
+- All 46 saved to models/saved/
+
+WHAT DIDN'T
+- GEV onwards (79 tickers) did not retrain today
+- Old joblib files still present, so Pipeline C tonight is fine
+- Hybrid state: 46 fresh + 79 from Friday's training
+
+ROOT CAUSE FIX (WorldQuant lane)
+- models/train_all.py fetches ^VIX and ES=F per-ticker
+- Should cache once at start of run, pass cached frames to each ticker
+- ~10-line change
+
+ACTION
+- Flagged WorldQuant chat for fix before Monday 07:00 VN
+- Monday's auto-cron will retry full 125 — same wall expected without cache fix
+- No urgent action required tonight; Pipeline C runs on hybrid models OK
+
+PENDING
+- Relay handoff message to WorldQuant chat
+- Monday morning: verify Pipeline B succeeded; if same crash, manual rerun once train_all.py is patched
+
+---
+2026-05-02 ~23:00 (Vietnam): Pipeline B crash mode #2 fixed.
+
+Background:
+- Yesterday May 1 we shipped UW options migration thinking that resolved
+  Pipeline B's DNS thread exhaustion crashes
+- This morning May 2, Pipeline B crashed AGAIN at GEV (ticker 47/125)
+- Same crash signature: yfinance ^VIX/ES=F getaddrinfo() thread failures
+- Root cause was incomplete diagnosis yesterday: we eliminated yfinance
+  from options chain, but missed per-ticker macro fetches
+
+What was missed yesterday:
+- features/builder.py:_market_return calls mc.download for 10 macro symbols
+- mc.download routes unsupported symbols (^VIX, ES=F) to yfinance fallback
+- Each ticker triggers ~10 macro fetches; ~46 tickers exhaust DNS pool
+
+Fix:
+- Module-level _MACRO_CACHE dict in builder.py
+- _get_macro_cached() helper wraps mc.download with cache lookup
+- _market_return uses cache (covers SPY, XLK, ^VIX, ES=F, USO, SMH,
+  IGV, LQD, HYG)
+- ^VIX3M block also uses cache (was using safe_yf_download with 60s TTL
+  which is too short for 30+ min Pipeline B run)
+- 1,250 yfinance calls per run -> ~10 yfinance calls per run
+
+Validation:
+- 5-ticker unit test: cache fills with 10 entries on first ticker, holds
+  steady on subsequent. GEV (this morning's crash victim) builds in 7.9s.
+- 54-ticker integration test: 162 models trained, 0 failed
+- Build times: 14.9s first ticker, 7.9-11.8s subsequent
+
+Status:
+- Commit 5458524 pushed to research-track
+- builder.py.bak.before_macro_cache backup in place
+- Models from this morning's partial run (46 tickers A-FVRR) intact
+- Models from yesterday's full retrain (all 125) intact
+
+Pipeline B Monday May 4 07:00 Vietnam:
+- Should complete cleanly on all 125 tickers
+- 14-day observation window starts Monday
+- If crashes recur, root cause is something other than macros — would
+  need to investigate massive_client.py:189, :336 yfinance call sites
+
+Pattern noted for future debugging:
+- Yesterday's "fix" was correct but incomplete
+- DNS thread exhaustion can be triggered from MULTIPLE call paths
+- Lesson: when fixing a "yfinance crashes Pipeline B" issue, audit ALL
+  call sites at once, not just the most obvious one
+- Safe assumption: any yfinance call that fires per-ticker can exhaust
+  thread pool at 125-ticker scale, even if individual call seems light
+
