@@ -149,14 +149,29 @@ def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
     return df
 
 
+# ── Macro indicator cache ──────────────────────────────────────────────────
+# Caches ^VIX, ES=F, ^VIX3M (and any other macro symbol) at module level so
+# Pipeline B fetches each macro ONCE per process run, not per ticker.
+# Was causing curl_cffi DNS thread exhaustion ~ticker 47 (May 2 2026 incident).
+_MACRO_CACHE: dict[str, "pd.DataFrame"] = {}
+
+def _get_macro_cached(symbol: str, start: str, end: str) -> "pd.DataFrame":
+    """Fetch a macro symbol via mc.download, cached for the process lifetime.
+    Returns a deep copy so callers can mutate freely."""
+    key = f"{symbol}|{start}|{end}"
+    if key not in _MACRO_CACHE:
+        _MACRO_CACHE[key] = mc.download(symbol, start=start, end=end,
+                                         auto_adjust=True, progress=False)
+    return _MACRO_CACHE[key].copy()
+
+
 def _market_return(etf: str, start: str, end: str,
                    index: pd.Index, return_close: bool = False):
     """Fetch ETF daily return, reindexed to match the main df's date index.
     If return_close=True, returns a DataFrame with both 'close' and 'ret' columns.
     """
     try:
-        tmp = mc.download(etf, start=start, end=end,
-                          auto_adjust=True, progress=False)
+        tmp = _get_macro_cached(etf, start, end)
         if isinstance(tmp.columns, pd.MultiIndex):
             tmp.columns = tmp.columns.get_level_values(0)
         tmp = tmp.reset_index()
@@ -436,8 +451,9 @@ def build_feature_dataframe(
         from features.yf_resilient import safe_yf_download
 
         _vix_s = fred_get_as_series("VIXCLS", start=start_str, end=end_str)
-        _vix3m_raw = safe_yf_download("^VIX3M", start=start_str, end=end_str,
-                                       auto_adjust=True, progress=False)
+        # Use cached fetch instead of safe_yf_download (60s TTL was too short
+        # for full Pipeline B run; module cache lasts the whole process)
+        _vix3m_raw = _get_macro_cached("^VIX3M", start_str, end_str)
 
         if (_vix_s is not None and not _vix_s.empty
             and _vix3m_raw is not None and not _vix3m_raw.empty):
