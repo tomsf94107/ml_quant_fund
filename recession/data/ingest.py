@@ -473,6 +473,66 @@ def ingest_derived(
             })
         return out
 
+
+    if spec.feature_name == "COVID_DUMMY":
+        # Deterministic: 1 if observation_month in [2020-03, 2021-12] inclusive,
+        # else 0. No FRED fetch needed. We still emit a row per month within
+        # the requested [start, end] window so downstream join logic works.
+        from datetime import date as _date
+        out = []
+        cur_year, cur_month = int(start[:4]), int(start[5:7])
+        end_year, end_month = int(end[:4]), int(end[5:7])
+        while (cur_year, cur_month) <= (end_year, end_month):
+            month_iso = f"{cur_year:04d}-{cur_month:02d}-01"
+            in_window = (
+                (cur_year == 2020 and cur_month >= 3) or
+                (cur_year == 2021)
+            )
+            out.append({
+                "date":         month_iso,
+                "value":        1.0 if in_window else 0.0,
+                "vintage_date": month_iso,   # known instantly
+            })
+            # increment month
+            if cur_month == 12:
+                cur_year, cur_month = cur_year + 1, 1
+            else:
+                cur_month += 1
+        return out
+
+    if spec.feature_name == "NEAR_TERM_FORWARD":
+        # v1 proxy for Engstrom-Sharpe near-term forward spread.
+        # True implementation uses 6q-ahead implied 3m forward minus current 3m.
+        # For v1 we approximate as: (DGS3MO_t+18m) - DGS3MO_t — i.e., the
+        # backward-looking 18-month change as a directional proxy. This
+        # captures the "policy expectation reversal" signal the paper
+        # describes without requiring full forward-curve construction.
+        # v2 should compute proper forwards from the Treasury curve.
+        dgs3mo = client.observations("DGS3MO", start=start, end=end,
+                                      force_refresh=force_refresh)
+        dgs3mo_m = aggregate_to_monthly(dgs3mo, "eop")
+        by_month = {r["date"]: r["value"] for r in dgs3mo_m if r["value"] is not None}
+        sorted_months = sorted(by_month)
+        out = []
+        for m in sorted_months:
+            # Find the value 18 months ago
+            y, mo = int(m[:4]), int(m[5:7])
+            mo -= 18
+            while mo <= 0:
+                y -= 1
+                mo += 12
+            past_iso = f"{y:04d}-{mo:02d}-01"
+            past_v = by_month.get(past_iso)
+            if past_v is None:
+                continue
+            current_v = by_month[m]
+            out.append({
+                "date":         m,
+                "value":        current_v - past_v,
+                "vintage_date": add_days_iso(m, spec.publication_lag_days),
+            })
+        return out
+
     raise NotImplementedError(f"No derivation for {spec.feature_name}")
 
 
@@ -519,9 +579,24 @@ def ingest_targets(
     # ---- T2: SPX 15% drawdown ----
     summary_t2 = {"target_id": "T2", "n_inserted": 0, "status": "ok"}
     try:
-        sp = client.observations("SP500", start=start, end=end,
-                                 force_refresh=force_refresh)
-        sp_monthly = aggregate_to_monthly(sp, "eop")
+        # T2 reads SP500 from v_features_latest (the manual SP500 ingest
+        # writes there from sp500_history.csv, sourced from Yahoo via the
+        # one-time bootstrap script). Previously this called FRED directly,
+        # which only has ~10y of SP500 history and gave T2 only 6 events.
+        cur = conn.execute(
+            """SELECT observation_month AS date, value
+               FROM v_features_latest
+               WHERE feature_name = 'SP500'
+                 AND observation_month >= ? AND observation_month <= ?
+               ORDER BY observation_month""",
+            (start, end),
+        )
+        sp_monthly = [{"date": row[0], "value": row[1]} for row in cur.fetchall()]
+        if not sp_monthly:
+            raise RuntimeError(
+                "No SP500 rows in features_monthly. T2 requires SP500 to be "
+                "ingested first; run bootstrap_sp500_history.py once if needed."
+            )
         # Compute 12-month rolling max and check drawdown
         rows = []
         values = [r["value"] for r in sp_monthly]

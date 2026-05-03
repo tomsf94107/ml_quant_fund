@@ -124,6 +124,58 @@ FEATURES_REGISTRY_SEED = [
      "Memory contract price index (NAND + DRAM blended)",
      "TRENDFORCE", None,       0, 30, "none", "2010-01",
      "Monthly; composite of NAND and DRAM contract prices"),
+
+    # ─────────────────────────────────────────────────────────────────────
+    # v1.1 / v1.1.1 additions (Step 3.5, May 2026)
+    # ─────────────────────────────────────────────────────────────────────
+
+    # Tier 1: Yield curve additions
+    ("T10Y2Y",       1, "yield_credit", "10y - 2y Treasury spread (Engstrom-Sharpe)",
+     "FRED",   "T10Y2Y",          0, 1, "none", "1976-06",
+     "Daily; complements T10Y3M"),
+    ("NEAR_TERM_FORWARD", 1, "yield_credit",
+     "Near-term forward rate spread (Engstrom-Sharpe 2018)",
+     "DERIVED", None,             0, 1, "none", "1982-01",
+     "v1 proxy from DGS3MO; v2 should use full forward curve"),
+
+    # Tier 2: Labor expansion
+    ("CCSA",         2, "labor", "Continued unemployment claims, weekly",
+     "ALFRED", "CCSA",            1, 7, "none", "1967-01",
+     "Coincident; restricted to h=0/1/3 per v1.1.1"),
+    ("AWHMAN",       2, "labor", "Avg weekly hours, manufacturing",
+     "ALFRED", "AWHMAN",          1, 10, "none", "1939-01",
+     "LEI component; restricted to h=0/1/3"),
+    ("TEMPHELPS",    2, "labor", "Temporary help services employment",
+     "ALFRED", "TEMPHELPS",       1, 10, "none", "1990-01",
+     "Layoffs in temp help lead broader layoffs by 2-3 months"),
+    ("JTSLDR",       2, "labor", "JOLTS layoffs and discharges rate",
+     "ALFRED", "JTSLDR",          1, 35, "none", "2000-12",
+     "Pairs with JTSQUR for Beveridge-curve coverage"),
+
+    # Tier 9: Housing
+    ("UMCSENT",      9, "housing", "Univ. Michigan Consumer Sentiment",
+     "FRED",   "UMCSENT",         0, 30, "none", "1952-11",
+     "Substitute for HOMENSA (not on FRED) and HPSI (discontinued). "
+     "1952+ history; FRED Blog uses it as HPSI comparable."),
+    ("EXHOSLUSM495S", 9, "housing", "Existing home sales (NAR via FRED)",
+     "ALFRED", "EXHOSLUSM495S",   1, 21, "none", "1999-01",
+     "Pure housing-market quantity"),
+
+    # Tier 10: Inflation
+    ("CPILFESL",     10, "inflation", "Core CPI (ex food and energy)",
+     "ALFRED", "CPILFESL",        1, 14, "yoy_pct", "1957-01",
+     "YoY transformation"),
+    ("PCEPILFE",     10, "inflation", "Core PCE (Fed preferred gauge)",
+     "ALFRED", "PCEPILFE",        1, 30, "yoy_pct", "1959-01",
+     "YoY transformation"),
+    ("CES0500000003", 10, "inflation", "Avg hourly earnings, total private",
+     "ALFRED", "CES0500000003",   1, 10, "yoy_pct", "2006-03",
+     "Wage growth proxy; YoY transformation"),
+
+    # Tier 11: Engineered (1 shippable now; 3 more in Steps 3.7/4)
+    ("COVID_DUMMY",  11, "engineered", "Binary 1 if 2020-03..2021-12 else 0",
+     "DERIVED", None,             0, 0, "none", "1960-01",
+     "Per brief §G15; absorbs COVID structural break"),
 ]
 
 

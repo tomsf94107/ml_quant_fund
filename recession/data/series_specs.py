@@ -47,6 +47,10 @@ class SeriesSpec:
     publication_lag_days: int             # for fred_latest: vintage_date = obs_date + lag
     derived_from:       tuple[str, ...] = ()    # for fetch_method='derived'
     notes:              str = ""
+    # v1.1.1 addition (Change A): which model horizons may use this feature.
+    # Default = available everywhere. Labor / coincident features get restricted.
+    # h=0 = M5 coincident regime model. h=1, h=3, h=6, h=12 = forecast horizons.
+    eligible_horizons:  tuple[str, ...] = ("h=0", "h=1", "h=3", "h=6", "h=12")
 
     def __post_init__(self) -> None:
         # Cross-validate
@@ -58,7 +62,9 @@ class SeriesSpec:
 
 
 # -----------------------------------------------------------------------------
-# The 21 feature specs (matches features_registry seed in db/migrate.py)
+# The 32 feature specs (matches features_registry seed in db/migrate.py).
+# v1.0 = 21 features. v1.1.1 Step 3.5 adds 11 (4 labor, 2 housing, 3 inflation,
+# 2 term-structure, 1 COVID dummy). Steps 3.7/4 will add 4 more.
 # -----------------------------------------------------------------------------
 #
 # Decisions encoded here:
@@ -300,11 +306,16 @@ SERIES_SPECS: list[SeriesSpec] = [
     SeriesSpec(
         feature_name="COPPER_GOLD",
         fred_series_id=None,
-        fetch_method="derived",
+        # Both London Bullion gold series (AM + PM) discontinued from FRED in 2025.
+        # GOLDAMGBD228NLBM and GOLDPMGBD228NLBM both return 400 Bad Request.
+        # Without a working gold series there's no copper/gold ratio to compute.
+        # Deferred to v2 — when revived, source gold from Yahoo (GC=F futures),
+        # LBMA direct, or another vendor.
+        fetch_method="skip_v1",
         native_frequency="monthly",
         aggregation="eop",
         publication_lag_days=1,
-        derived_from=("PCOPPUSDM", "GOLDPMGBD228NLBM"),
+        derived_from=(),  # cleared — no operative inputs in v1
         notes="Ratio of monthly copper price to monthly gold price. "
               "Switched to PM gold fix in v1.0.1; AM fix discontinued by FRED.",
     ),
@@ -338,6 +349,153 @@ SERIES_SPECS: list[SeriesSpec] = [
         publication_lag_days=30,
         notes="TrendForce; paid subscription.",
     ),
+
+    # =========================================================================
+    # v1.1 / v1.1.1 additions — Step 3.5 (May 2026)
+    # =========================================================================
+
+    # Tier 1: Yield curve & credit (additions)
+    SeriesSpec(
+        feature_name="T10Y2Y",
+        fred_series_id="T10Y2Y",
+        fetch_method="fred_latest",
+        native_frequency="daily",
+        aggregation="eop",
+        publication_lag_days=1,
+        notes="10y - 2y Treasury spread. Engstrom-Sharpe (2018) showed near-term "
+              "forward dominates this for forecasting, but T10Y2Y is widely watched "
+              "and complements T10Y3M.",
+    ),
+    SeriesSpec(
+        feature_name="NEAR_TERM_FORWARD",
+        fred_series_id=None,
+        fetch_method="derived",
+        native_frequency="daily",
+        aggregation="eop",
+        publication_lag_days=1,
+        derived_from=("DGS3MO",),
+        notes="Engstrom-Sharpe (2018) near-term forward: 6q-ahead implied 3m rate "
+              "minus current 3m rate. For v1 we proxy this with a simple "
+              "differenced DGS3MO; full implementation in v2 would use forwards "
+              "implied from the Treasury yield curve.",
+    ),
+
+    # Tier 2: Labor expansion. All tagged eligible_horizons = ('h=0','h=1','h=3')
+    # per v1.1.1 Change A — labor features are coincident, not 12-month leading.
+    SeriesSpec(
+        feature_name="CCSA",
+        fred_series_id="CCSA",
+        fetch_method="fred_alfred",        # claims get small revisions
+        native_frequency="weekly",
+        aggregation="avg",                 # average across weeks in month
+        publication_lag_days=7,
+        eligible_horizons=("h=0", "h=1", "h=3"),
+        notes="Continued claims, weekly. Coincident labor signal; "
+              "restrict to short horizons per v1.1.1 Change A.",
+    ),
+    SeriesSpec(
+        feature_name="AWHMAN",
+        fred_series_id="AWHMAN",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=10,
+        eligible_horizons=("h=0", "h=1", "h=3"),
+        notes="Avg weekly hours, manufacturing. Conference Board LEI component. "
+              "Coincident-to-short-leading.",
+    ),
+    SeriesSpec(
+        feature_name="TEMPHELPS",
+        fred_series_id="TEMPHELPS",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=10,
+        eligible_horizons=("h=0", "h=1", "h=3"),
+        notes="Temporary help employment. Layoffs in temp help typically "
+              "lead broader layoffs by 2-3 months. Short-leading.",
+    ),
+    SeriesSpec(
+        feature_name="JTSLDR",
+        fred_series_id="JTSLDR",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=35,
+        eligible_horizons=("h=0", "h=1", "h=3"),
+        notes="JOLTS layoffs rate. Pairs with JTSQUR for full Beveridge "
+              "curve coverage. Coincident.",
+    ),
+
+    # Tier 9: Housing (NEW)
+    SeriesSpec(
+        feature_name="UMCSENT",
+        fred_series_id="UMCSENT",
+        fetch_method="fred_latest",        # source is delayed by 1mo per FRED
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=30,
+        notes="Univ. Michigan Consumer Sentiment. Substitutes for HOMENSA "
+              "(NAHB) — not on FRED — and FMNHSHPSIUS (Fannie Mae HPSI) — "
+              "added April 2025, discontinued. UMCSENT has 1952+ history "
+              "and the FRED Blog uses it as the comparable to HPSI. "
+              "Captures consumer caution as a leading recession indicator.",
+    ),
+    SeriesSpec(
+        feature_name="EXHOSLUSM495S",
+        fred_series_id="EXHOSLUSM495S",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=21,
+        notes="Existing home sales (NAR via FRED). Pure housing-market quantity, "
+              "complements UMCSENT's sentiment angle.",
+    ),
+
+    # Tier 10: Inflation (NEW)
+    SeriesSpec(
+        feature_name="CPILFESL",
+        fred_series_id="CPILFESL",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=14,
+        notes="Core CPI (ex food and energy). Use YoY transform downstream "
+              "(detrend_method='yoy_pct' in features_registry).",
+    ),
+    SeriesSpec(
+        feature_name="PCEPILFE",
+        fred_series_id="PCEPILFE",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=30,
+        notes="Core PCE (Fed's preferred inflation gauge). Use YoY transform.",
+    ),
+    SeriesSpec(
+        feature_name="CES0500000003",
+        fred_series_id="CES0500000003",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=10,
+        notes="Average hourly earnings, total private (wage growth proxy). "
+              "Use YoY transform.",
+    ),
+
+    # Tier 11: Engineered features (one shippable in Step 3.5)
+    SeriesSpec(
+        feature_name="COVID_DUMMY",
+        fred_series_id=None,
+        fetch_method="derived",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=0,
+        derived_from=("USREC",),     # arbitrary placeholder; not actually used
+        notes="Binary: 1 for 2020-03 through 2021-12 inclusive, else 0. "
+              "Per brief §G15, included to absorb COVID structural break. "
+              "Implementation: deterministic from observation_month, no FRED fetch.",
+    ),
 ]
 
 
@@ -347,7 +505,7 @@ SERIES_SPECS: list[SeriesSpec] = [
 
 SPECS_BY_NAME: dict[str, SeriesSpec] = {s.feature_name: s for s in SERIES_SPECS}
 
-assert len(SERIES_SPECS) == 21, f"Expected 21 specs, got {len(SERIES_SPECS)}"
+assert len(SERIES_SPECS) == 33, f"Expected 33 specs (21 v1.0 + 11 v1.1.1 + 1 SP500-from-csv), got {len(SERIES_SPECS)}"
 
 
 def get_spec(feature_name: str) -> SeriesSpec:
