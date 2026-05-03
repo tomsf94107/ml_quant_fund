@@ -518,6 +518,40 @@ SERIES_SPECS: list[SeriesSpec] = [
               "license-restricted). Strong housing leading indicator — directly "
               "affects construction employment and residential GDP.",
     ),
+    # =========================================================================
+    # v1.1.1 Step 3.7 — SP500 derived features (May 3 2026)
+    # =========================================================================
+    # Raw SP500 in level form is non-stationary; the exploration showed it
+    # fails the pre-recession behavior test (1/8 episodes). The derived forms
+    # below are stationary and make SP500 actually useful as a feature.
+    #
+    # SP500_DRAWDOWN_12M is also the input to T2 (≥15% drawdown target). After
+    # this step, T2 reads this feature instead of recomputing inline.
+
+    SeriesSpec(
+        feature_name="SP500_RET_12M",
+        fred_series_id=None,
+        fetch_method="derived",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=0,
+        derived_from=("SP500",),
+        notes="12-month log return of SP500. log(SP500_t / SP500_{t-12}). "
+              "Stationary equity-momentum signal for h=6/h=12 forecasts.",
+    ),
+    SeriesSpec(
+        feature_name="SP500_DRAWDOWN_12M",
+        fred_series_id=None,
+        fetch_method="derived",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=0,
+        derived_from=("SP500",),
+        notes="Distance below 12-month rolling max. SP500_t / max(SP500_{t-11..t}) - 1. "
+              "Range [-1, 0]. T2 (drawdown target) reads this column. "
+              "Also feeds T5 (market stress): condition fires when value ≤ -0.10.",
+    ),
+
 
 ]
 
@@ -528,7 +562,7 @@ SERIES_SPECS: list[SeriesSpec] = [
 
 SPECS_BY_NAME: dict[str, SeriesSpec] = {s.feature_name: s for s in SERIES_SPECS}
 
-assert len(SERIES_SPECS) == 34, f"Expected 34 specs (33 prior + 1 HSN1F substitute for EXHOSLUSM495S), got {len(SERIES_SPECS)}"
+assert len(SERIES_SPECS) == 36, f"Expected 36 specs (34 prior + 2 SP500 derivations), got {len(SERIES_SPECS)}"
 
 
 def get_spec(feature_name: str) -> SeriesSpec:

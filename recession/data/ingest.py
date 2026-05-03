@@ -474,6 +474,84 @@ def ingest_derived(
         return out
 
 
+
+    if spec.feature_name == "SP500_RET_12M":
+        # 12-month log return of SP500. Reads from features_monthly (already
+        # ingested by manual SP500 step) rather than re-fetching from FRED.
+        import math
+        # Use the connection passed via outer scope: we need the raw SP500 series.
+        # The cleanest approach: read SP500 from v_features_latest via the
+        # database connection. This handler is called from within the run_pipeline
+        # which has the conn — but ingest_derived signature doesn't pass it.
+        # Workaround: read SP500 history via FredClient cache (it's cached after
+        # the manual step) by going through the DB.
+        # Actually, simplest: open the DB directly here. The path is fixed.
+        import sqlite3 as _sqlite
+        from pathlib import Path as _Path
+        db = _sqlite.connect(_Path.cwd() / "recession.db")
+        cur = db.execute(
+            """SELECT observation_month, value FROM v_features_latest
+               WHERE feature_name = 'SP500'
+                 AND observation_month >= ? AND observation_month <= ?
+               ORDER BY observation_month""",
+            (start, end),
+        )
+        sp_monthly = [(row[0], row[1]) for row in cur.fetchall()]
+        db.close()
+        by_month = {d: v for d, v in sp_monthly if v is not None and v > 0}
+        sorted_months = sorted(by_month)
+        out = []
+        for m in sorted_months:
+            # find value 12 months ago
+            y, mo = int(m[:4]), int(m[5:7])
+            mo -= 12
+            if mo <= 0:
+                y -= 1
+                mo += 12
+            past_iso = f"{y:04d}-{mo:02d}-01"
+            past_v = by_month.get(past_iso)
+            if past_v is None or past_v <= 0:
+                continue
+            ret = math.log(by_month[m] / past_v)
+            out.append({
+                "date":         m,
+                "value":        ret,
+                "vintage_date": m,   # known same day as SP500
+            })
+        return out
+
+    if spec.feature_name == "SP500_DRAWDOWN_12M":
+        # SP500_t / max(SP500_{t-11..t}) - 1. Range [-1, 0].
+        import sqlite3 as _sqlite
+        from pathlib import Path as _Path
+        db = _sqlite.connect(_Path.cwd() / "recession.db")
+        cur = db.execute(
+            """SELECT observation_month, value FROM v_features_latest
+               WHERE feature_name = 'SP500'
+                 AND observation_month >= ? AND observation_month <= ?
+               ORDER BY observation_month""",
+            (start, end),
+        )
+        sp_monthly = [(row[0], row[1]) for row in cur.fetchall()]
+        db.close()
+        # iterate with 12-month trailing window
+        out = []
+        for i in range(len(sp_monthly)):
+            window = sp_monthly[max(0, i - 11): i + 1]   # trailing 12 months inclusive
+            cur_date, cur_val = sp_monthly[i]
+            valid_vals = [v for _, v in window if v is not None]
+            if not valid_vals or cur_val is None:
+                continue
+            rolling_max = max(valid_vals)
+            if rolling_max <= 0:
+                continue
+            drawdown = cur_val / rolling_max - 1.0
+            out.append({
+                "date":         cur_date,
+                "value":        drawdown,
+                "vintage_date": cur_date,
+            })
+        return out
     if spec.feature_name == "COVID_DUMMY":
         # Deterministic: 1 if observation_month in [2020-03, 2021-12] inclusive,
         # else 0. No FRED fetch needed. We still emit a row per month within
@@ -623,6 +701,76 @@ def ingest_targets(
         summary_t2["error"]  = str(e)
         logger.error("FAIL T2 Drawdown      — %s", e)
     summaries.append(summary_t2)
+
+
+    # ---- T5: Market Stress (v1.1.1) ----
+    # Reads 4 conditions from v_features_latest:
+    #   T10Y3M < 0
+    #   BAA10Y > 3.5
+    #   NFCI > 0.25
+    #   SP500_DRAWDOWN_12M ≤ -0.10
+    # T5 = 1 if 2 or more conditions fire, else 0.
+    # Calibration goal: T5 fires in 5-25% of months matching known stress periods.
+    summary_t5 = {"target_id": "T5", "n_inserted": 0, "status": "ok"}
+    try:
+        cur = conn.execute(
+            """SELECT observation_month, feature_name, value
+               FROM v_features_latest
+               WHERE feature_name IN
+                 ('T10Y3M', 'BAA10Y', 'NFCI', 'SP500_DRAWDOWN_12M')
+                 AND observation_month >= ? AND observation_month <= ?
+               ORDER BY observation_month, feature_name""",
+            (start, end),
+        )
+        # pivot to {month: {feature: value}}
+        from collections import defaultdict
+        panel = defaultdict(dict)
+        for row in cur.fetchall():
+            panel[row[0]][row[1]] = row[2]
+
+        rows = []
+        n_fires_each = {"T10Y3M": 0, "BAA10Y": 0, "NFCI": 0, "SP500_DRAWDOWN_12M": 0}
+        for month in sorted(panel):
+            f = panel[month]
+            # Skip months where any of the 4 inputs is missing — can't compute T5.
+            # T5 is only well-defined from BAA10Y's start (1986+) onward.
+            if not all(k in f and f[k] is not None for k in
+                       ("T10Y3M", "BAA10Y", "NFCI", "SP500_DRAWDOWN_12M")):
+                continue
+            cond_yc   = f["T10Y3M"] < 0
+            cond_ba   = f["BAA10Y"] > 3.5
+            cond_nfci = f["NFCI"] > 0.25
+            cond_dd   = f["SP500_DRAWDOWN_12M"] <= -0.10
+            if cond_yc:   n_fires_each["T10Y3M"] += 1
+            if cond_ba:   n_fires_each["BAA10Y"] += 1
+            if cond_nfci: n_fires_each["NFCI"] += 1
+            if cond_dd:   n_fires_each["SP500_DRAWDOWN_12M"] += 1
+
+            n_fired = sum([cond_yc, cond_ba, cond_nfci, cond_dd])
+            label = 1 if n_fired >= 2 else 0
+            note = (f"T10Y3M={f['T10Y3M']:.2f} BAA10Y={f['BAA10Y']:.2f} "
+                    f"NFCI={f['NFCI']:.2f} DD={f['SP500_DRAWDOWN_12M']:.3f} "
+                    f"n_fired={n_fired}")
+            rows.append({
+                "date":              month,
+                "announcement_date": add_days_iso(month, 1),
+                "label":             label,
+                "notes":             note,
+            })
+        if not dry_run:
+            summary_t5["n_inserted"] = insert_target(conn, "T5", rows)
+        n_events = sum(r["label"] for r in rows)
+        pct = 100.0 * n_events / max(len(rows), 1)
+        logger.info("OK   T5 Market Stress rows=%4d inserted=%4d events=%d (%.1f%%)",
+                    len(rows), summary_t5["n_inserted"], n_events, pct)
+        logger.info("     T5 component fires: T10Y3M<0=%d  BAA10Y>3.5=%d  NFCI>0.25=%d  DD≤-10%%=%d",
+                    n_fires_each["T10Y3M"], n_fires_each["BAA10Y"],
+                    n_fires_each["NFCI"], n_fires_each["SP500_DRAWDOWN_12M"])
+    except Exception as e:
+        summary_t5["status"] = "error"
+        summary_t5["error"]  = str(e)
+        logger.error("FAIL T5 Market Stress — %s", e)
+    summaries.append(summary_t5)
 
     # ---- T3: deferred to Step 3 ----
     logger.info("SKIP T3 AI Kill-Switch — deferred to Step 3 (triggers ingestion)")

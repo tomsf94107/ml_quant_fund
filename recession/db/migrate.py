@@ -181,6 +181,16 @@ FEATURES_REGISTRY_SEED = [
     ("COVID_DUMMY",  11, "engineered", "Binary 1 if 2020-03..2021-12 else 0",
      "DERIVED", None,             0, 0, "none", "1960-01",
      "Per brief §G15; absorbs COVID structural break"),
+    # v1.1.1 Step 3.7 — SP500 derivations
+    ("SP500_RET_12M",      4, "financial_conditions",
+     "12-month log return of SP500",
+     "DERIVED", None,             0, 0, "none", "1961-01",
+     "log(SP500_t / SP500_{t-12}); stationary equity-momentum signal"),
+    ("SP500_DRAWDOWN_12M", 4, "financial_conditions",
+     "Distance below 12-month rolling max of SP500",
+     "DERIVED", None,             0, 0, "none", "1960-01",
+     "SP500_t / max(SP500_{t-11..t}) - 1. T2 reads this; T5 condition uses ≤ -0.10."),
+
 ]
 
 
@@ -225,6 +235,14 @@ TARGETS_REGISTRY_SEED = [
      "of T1/T2/T3 fires, so it is biased upward. Use only as 'any-target-firing' alarm.",
      "2010-01", None,
      "Useful for risk-management view; do not use for sizing or calibration tests."),
+    ("T5", "Market Stress", "binary_composite",
+     "Binary 1 if 2 or more of 4 absolute-threshold conditions fire: "
+     "T10Y3M<0, BAA10Y>3.5, NFCI>0.25, SP500_DRAWDOWN_12M ≤ -0.10",
+     0, None, "1986-01", None,
+     "v1.1.1 layer separating market stress from NBER recessions. "
+     "Calibrated to fire 5-25% of months matching 2008-09, 2020, 2022, etc. "
+     "Available from 1986 (BAA10Y series start)."),
+
 ]
 
 
