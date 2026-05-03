@@ -530,3 +530,197 @@ MONDAY MORNING (May 4 07:00 Vietnam) PIPELINE B EXPECTATIONS:
 - is_corrupted-filtered sentiment training data
 - 14-day observation window starts properly with full universe coverage
 
+
+═══════════════════════════════════════════════════════════════════════════════
+2026-05-03 SUNDAY (Vietnam) — Productivity day. Six commits shipped.
+═══════════════════════════════════════════════════════════════════════════════
+
+Started the morning checking on Saturday's force-push surgery (sentiment chat
+shipped 563d879 cleanly, all sentiment work loop closed). Pulled their commit,
+working tree clean.
+
+Then a productive Sunday with three substantive workstreams:
+
+═══════════════════════════════════════════════════════════════════════════════
+1. FITNESS SCORING (first run ever)
+═══════════════════════════════════════════════════════════════════════════════
+
+Ran analysis/fitness_scorer.py (existed since Apr 29 but never executed).
+Per-ticker mode: 92 (ticker, horizon) models scored — only h=1 has enough live
+obs (≥30). Per-sector mode: 32 sectors aggregated.
+
+Key findings:
+  - Mean fitness 0.78, median 0.44, ~25% NEGATIVE (losing money)
+  - Top tickers: AMD 27.5, HUM 13.2, PL 10.7, SMMT 10.3, NFLX 10.3
+  - h=3 and h=5 have insufficient live observations to score meaningfully
+
+Sector edge map (real findings worth acting on):
+  TOP (defensible edge):
+    Core Silicon  fitness=8.55  (6 tickers, 226 obs, sharpe 3.42)
+    Materials     fitness=8.31  (1 ticker MP, 40 obs, sharpe 2.92)
+    Ad Tech       fitness=8.12  (1 ticker PUBM, 33 obs, sharpe 2.86)
+    Consumer Tech fitness=6.00  (3 tickers, 106 obs, sharpe 3.38)
+
+  BOTTOM (actively losing):
+    Healthcare    fitness=0.37  (11 tickers, 405 obs, sharpe NEGATIVE -0.34)
+    Networking    fitness=0.00  (1 ticker, sharpe 0.00)
+    PropTech      fitness=-0.005 (1 ticker, slightly losing)
+
+Outputs saved: fitness.csv, fitness_sector.csv, accuracy.db.fitness_scores table.
+
+Implication: 25% of models are negative-fitness. Production currently weights
+all 92 equally. Filtering by fitness > 0 is a clean unshipped win — defer to
+next weekend.
+
+═══════════════════════════════════════════════════════════════════════════════
+2. STATEFUL HYSTERESIS (commit 4376a13 + 85bde7d)
+═══════════════════════════════════════════════════════════════════════════════
+
+Asymmetric entry vs exit thresholds in signals/generator.py.
+
+Threshold design (data-driven from May 3 distribution audit):
+  ENTRY: {h=1: 0.80, h=3: 0.60, h=5: 0.60}
+  EXIT:  {h=1: 0.65, h=3: 0.50, h=5: 0.50}
+
+Day-over-day prob_up noise structure (audited):
+  median |change| = 0.046
+  90th percentile = 0.128
+  95th percentile = 0.160
+
+Gap rationale: 0.10 entry-exit gap (h=3, h=5) ≈ 2x median noise, filters most
+random walk. 0.15 gap (h=1) ≈ 3x median noise, appropriate for noisier
+short-horizon model.
+
+Backtest on 9,411 historical predictions:
+  h=3: signal flips 641 -> 249 (-61%), BUY days 1336 -> 1235 (-7.6%)
+  h=5: signal flips 565 -> 242 (-57%), BUY days 1339 -> 1244 (-7.1%)
+  h=1: minimal flip change (24 -> 22) but BUY days 13 -> 26 (extended
+       hold-through after rare 0.80 entries — correct hysteresis behavior)
+
+Implementation: new helper _lookup_yesterday_signal(ticker, horizon, as_of)
+queries accuracy.db.predictions (read-only) for prior signal. Edge cases
+(no DB, no prior, error) return None which caller treats as HOLD.
+
+Plus scripts/threshold_review.py (commit 85bde7d) — re-runnable monthly audit
+of prob_up distribution + signal frequency at each threshold + current
+ENTRY/EXIT constants for review.
+
+═══════════════════════════════════════════════════════════════════════════════
+3. POINT-IN-TIME HONEST WALK-FORWARD (commits 7b6f3e9 + 39a4733)
+═══════════════════════════════════════════════════════════════════════════════
+
+The big one. WorldQuant principle (Finding Alphas Ch. 8): walk-forward
+backtests are worse than useless if they have leaks. Old walk_forward.py
+read from prediction_features table (~27 cols) — fast but scope-limited.
+
+Real audit found 3 leak vectors in stored-data feature loaders that needed
+patches:
+
+  PATCH 1: load_sentiment_scores — added as_of parameter that filters
+           by created_at. sentiment_scores already had created_at column
+           (good).
+
+  PATCH 2: insider_flows table needed schema migration — NO created_at
+           column existed. Added column, backfilled 2,580 historical rows
+           with γ logic (trade_date + 2 business days, matching SEC Form 4
+           filing rule). Updated _upsert_to_db to stamp created_at at
+           insert time. Updated _init_db CREATE TABLE for fresh installs.
+
+  PATCH 3: _load_insider in builder.py — added as_of parameter, branches
+           query: with as_of -> WHERE created_at <= ?, without -> original.
+
+  PATCH 4: load_earnings_features — added as_of parameter, filters both
+           earnings_surprises (created_at) and earnings_calendar (updated_at).
+
+  PATCH 5: builder.py wiring — passes end_date as as_of to all PIT-aware
+           loaders. Critical: when training_mode=True, skips LIVE API calls
+           (load_uw_earnings_features, _load_insider_uw) entirely and routes
+           to PIT-filtered SQLite paths.
+
+  PATCH 6: analysis/walk_forward.py — new function load_panel_pit() that
+           calls build_feature_dataframe(end_date=prediction_date,
+           training_mode=True) for each unique (ticker, prediction_date),
+           takes the last row as features as-of that date. New CLI flags
+           --pit and --limit. Backward compat: load_panel without --pit
+           still works.
+
+Backups created (all preserved):
+  data/etl_sentiment.py.bak.before_asof
+  data/etl_insider.py.bak.before_asof
+  data/etl_earnings.py.bak.before_asof
+  features/builder.py.bak.before_pit_wiring
+  analysis/walk_forward.py.bak.before_pit
+  insider_trades.db.bak.before_asof_20260503_144503
+
+Live walk-forward run launched:
+  Started: 15:19:52 Vietnam Sunday May 3
+  PID: 56037 (caffeinate PID: 56036)
+  Outcomes: 8,273 total, 3,739 unique (ticker, prediction_date) pairs
+  Estimated runtime: ~18.7 hours (finishes ~Mon 10am Vietnam)
+  Log: logs/walkforward/run_20260503_1519.log
+  Output CSV: logs/walkforward/pit_all_20260503_1519_folds.csv
+  Backfill mode: γ (date + 2 business days)
+
+═══════════════════════════════════════════════════════════════════════════════
+DEFERRED (side projects worth not losing)
+═══════════════════════════════════════════════════════════════════════════════
+
+A. SENSITIVITY TEST on backfill mode
+   Once γ run completes (~Mon 10am), re-run walk_forward twice more:
+   - α: exclude NULL created_at rows (most conservative)
+   - β: backfill NULL created_at with row's date (optimistic)
+   Compare AUC across α/β/γ. If <0.01 difference: insider data isn't doing
+   real work. If >0.02: matters, need to address more carefully.
+   Each re-run = another ~19 hours. Total 3 nights of compute.
+
+B. FITNESS-BASED SIGNAL FILTERING
+   25% of models have negative fitness. Filter signals at consumer (not
+   generator) — read accuracy.db.fitness_scores, suppress BUY when source
+   model has fitness <= 0. ~10-line change. Low risk, real impact. Defer to
+   next weekend.
+
+C. PARALLEL PIPELINE B and C
+   Original goal for today, deferred to next weekend in favor of walk-forward
+   priority. Important risks identified that need dedicated time:
+   - macro cache loses benefit with multiprocessing (need shared state via
+     multiprocessing.Manager or pre-warm via init args)
+   - SQLite writer lock contention with N workers (need WAL mode or
+     queue writer)
+   - PyTorch MPS not safe with fork start_method (must use spawn)
+   - Memory pressure: 10 workers × ~3GB per ticker = 30GB on a 38GB machine
+   Realistic implementation: 4-6 hours focused work next weekend.
+
+═══════════════════════════════════════════════════════════════════════════════
+LESSONS WORTH KEEPING
+═══════════════════════════════════════════════════════════════════════════════
+
+- The Apr 29 Gap_Check_and_Roadmap doc was ASPIRATIONAL — it claimed
+  alpha_transformations.py, neutralizer.py, BRAIN_replication.md,
+  Finding_Alphas_Summary.md, Sector_Integration_Guide.md exist on disk.
+  Verified via filesystem search May 3: NONE exist. Project memory
+  propagated this fiction for two days. Always verify documentation
+  against filesystem before planning.
+
+- Phase 2 alpha multiplier work is BUILD FROM SCRATCH (~4 weekends),
+  not "wire in existing code" as memory implied.
+
+- Live AUC = 0.510 is the honest number to optimize against. 0.967 was
+  training AUC with feature/target leakage. Walk-forward will give us
+  the most honest answer in ~19 hours.
+
+- Python's stdout is buffered by default. For long-running background
+  jobs that need progress visibility, ALWAYS use python -u (unbuffered).
+  Lost 90 seconds today restarting a run that wasn't writing to its log.
+
+- Always git status + git diff before git add. Saved us today even
+  though we forgot Saturday.
+
+═══════════════════════════════════════════════════════════════════════════════
+COMMITS TODAY
+═══════════════════════════════════════════════════════════════════════════════
+
+  39a4733  Add load_panel_pit for honest walk-forward
+  7b6f3e9  Add point-in-time honesty to feature loaders
+  85bde7d  Add monthly threshold review script for hysteresis tuning
+  4376a13  Add stateful hysteresis to BUY/HOLD signal generation
+  6df132b  Update journal: Saturday evening
