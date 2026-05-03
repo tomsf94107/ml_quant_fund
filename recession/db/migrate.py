@@ -157,9 +157,14 @@ FEATURES_REGISTRY_SEED = [
      "FRED",   "UMCSENT",         0, 30, "none", "1952-11",
      "Substitute for HOMENSA (not on FRED) and HPSI (discontinued). "
      "1952+ history; FRED Blog uses it as HPSI comparable."),
-    ("EXHOSLUSM495S", 9, "housing", "Existing home sales (NAR via FRED)",
-     "ALFRED", "EXHOSLUSM495S",   1, 21, "none", "1999-01",
-     "Pure housing-market quantity"),
+    ("EXHOSLUSM495S", 9, "housing", "Existing home sales (NAR via FRED) — DEFERRED v2",
+     "FRED", "EXHOSLUSM495S",     0, 21, "none", "1999-01",
+     "DEFERRED: NAR rolling-window license; only 13 months available. "
+     "Replaced by HSN1F. Row kept for documentation."),
+    ("HSN1F",         9, "housing", "New One Family Houses Sold (Census/HUD)",
+     "ALFRED", "HSN1F",            1, 25, "none", "1963-01",
+     "Public domain Census/HUD; full vintage history on ALFRED. "
+     "Replaces EXHOSLUSM495S which is NAR-licensed."),
 
     # Tier 10: Inflation
     ("CPILFESL",     10, "inflation", "Core CPI (ex food and energy)",

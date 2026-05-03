@@ -444,20 +444,19 @@ SERIES_SPECS: list[SeriesSpec] = [
     SeriesSpec(
         feature_name="EXHOSLUSM495S",
         fred_series_id="EXHOSLUSM495S",
-        # Switched from fred_alfred → fred_latest after the initial Step 3.5
-        # ingest hit ALFRED 400 ("Series not found in ALFRED but may exist in
-        # FRED"). NAR's existing-home-sales series doesn't have its vintage
-        # history maintained on ALFRED — only the latest series. We accept the
-        # loss of vintage-aware backtesting for this one series; NAR revisions
-        # tend to be small.
-        fetch_method="fred_latest",
+        # SKIPPED in v1.1.1 (May 3 2026): NAR licenses existing-home-sales to
+        # FRED with a rolling 1-year window restriction. Both fred_alfred (400)
+        # and fred_latest (only 13 monthly rows) hit this wall. Replaced by
+        # HSN1F (Census/HUD New One Family Houses Sold, public domain, full
+        # 1963+ history). Spec row preserved for documentation; can revisit
+        # in v2 if NAR licensing changes or if we pay for direct NAR access.
+        fetch_method="skip_v1",
         native_frequency="monthly",
         aggregation="eop",
         publication_lag_days=21,
-        notes="Existing home sales (NAR via FRED). Pure housing-market quantity. "
-              "Note: not vintage-aware (ALFRED returns 404 for this series); "
-              "uses latest revision throughout history. Acceptable trade-off "
-              "since NAR revisions are typically small.",
+        notes="DEFERRED to v2: NAR rolling-window license restriction limits "
+              "FRED data to ~13 months. Replaced by HSN1F (Census/HUD new-home "
+              "sales) for v1.1.1 housing channel.",
     ),
 
     # Tier 10: Inflation (NEW)
@@ -504,6 +503,22 @@ SERIES_SPECS: list[SeriesSpec] = [
               "Per brief §G15, included to absorb COVID structural break. "
               "Implementation: deterministic from observation_month, no FRED fetch.",
     ),
+    # Tier 9: Housing — HSN1F substitute for EXHOSLUSM495S (May 3 2026).
+    # Census/HUD new-home-sales, public domain, full 1963+ history. Better
+    # leading indicator than existing-home-sales (drives construction GDP).
+    SeriesSpec(
+        feature_name="HSN1F",
+        fred_series_id="HSN1F",
+        fetch_method="fred_alfred",
+        native_frequency="monthly",
+        aggregation="eop",
+        publication_lag_days=25,
+        notes="New One Family Houses Sold (Census/HUD via FRED). Public domain; "
+              "full vintage history on ALFRED. Replaces EXHOSLUSM495S (NAR, "
+              "license-restricted). Strong housing leading indicator — directly "
+              "affects construction employment and residential GDP.",
+    ),
+
 ]
 
 
@@ -513,7 +528,7 @@ SERIES_SPECS: list[SeriesSpec] = [
 
 SPECS_BY_NAME: dict[str, SeriesSpec] = {s.feature_name: s for s in SERIES_SPECS}
 
-assert len(SERIES_SPECS) == 33, f"Expected 33 specs (21 v1.0 + 11 v1.1.1 + 1 SP500-from-csv), got {len(SERIES_SPECS)}"
+assert len(SERIES_SPECS) == 34, f"Expected 34 specs (33 prior + 1 HSN1F substitute for EXHOSLUSM495S), got {len(SERIES_SPECS)}"
 
 
 def get_spec(feature_name: str) -> SeriesSpec:
