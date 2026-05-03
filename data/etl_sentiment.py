@@ -259,6 +259,7 @@ def load_sentiment_scores(
     start_date: str | date | None = None,
     end_date:   str | date | None = None,
     db_path:    Path = DB_PATH,
+    as_of:      str | date | None = None,
 ) -> pd.DataFrame:
     """
     Read cached sentiment scores for a ticker over a date range.
@@ -294,6 +295,12 @@ def load_sentiment_scores(
     if end_date:
         query += " AND date <= ?"
         params.append(str(end_date))
+
+    # Point-in-time honesty: only include scores that were COMPUTED on or
+    # before as_of. Prevents leaks from rescores/backfills.
+    if as_of is not None:
+        query += " AND created_at <= ?"
+        params.append(str(as_of))
 
     query += " ORDER BY date"
 

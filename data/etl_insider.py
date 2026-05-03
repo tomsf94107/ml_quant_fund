@@ -73,6 +73,7 @@ def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
             num_buy_tx  INTEGER NOT NULL DEFAULT 0,
             num_sell_tx INTEGER NOT NULL DEFAULT 0,
             role_weight REAL    NOT NULL DEFAULT 1.0,
+            created_at  TEXT,
             UNIQUE(ticker, date)
         )
     """)
@@ -316,15 +317,21 @@ def _upsert_to_db(ticker: str, df: pd.DataFrame, conn: sqlite3.Connection) -> in
     df = df.copy()
     df["ticker"] = ticker.upper()
     df["date"] = df["ds"].astype(str)
+    # Stamp created_at at insert time for point-in-time honesty.
+    # _upsert_to_db is called when SEC Form 4 filings have been parsed and we
+    # are recording the flow. created_at = now (when the row entered our DB).
+    from datetime import datetime as _dt
+    _now = _dt.utcnow().isoformat()
+    df["created_at"] = _now
     rows = df[["ticker", "date", "net_shares", "buy_shares", "sell_shares",
-               "num_buy_tx", "num_sell_tx", "role_weight"]].to_dict("records")
+               "num_buy_tx", "num_sell_tx", "role_weight", "created_at"]].to_dict("records")
     conn.executemany("""
         INSERT OR REPLACE INTO insider_flows
             (ticker, date, net_shares, buy_shares, sell_shares,
-             num_buy_tx, num_sell_tx, role_weight)
+             num_buy_tx, num_sell_tx, role_weight, created_at)
         VALUES
             (:ticker, :date, :net_shares, :buy_shares, :sell_shares,
-             :num_buy_tx, :num_sell_tx, :role_weight)
+             :num_buy_tx, :num_sell_tx, :role_weight, :created_at)
     """, rows)
     conn.commit()
     return len(rows)

@@ -237,6 +237,7 @@ def load_earnings_features(
     ticker:     str,
     date_index: pd.Index,       # DatetimeIndex or date index from builder.py
     db_path:    Path = DB_PATH,
+    as_of:      str | date | None = None,
 ) -> pd.DataFrame:
     """
     Build a daily earnings feature DataFrame aligned to date_index.
@@ -266,18 +267,34 @@ def load_earnings_features(
     try:
         conn = sqlite3.connect(db_path)
 
-        # Load surprise history
-        hist = pd.read_sql("""
-            SELECT report_date, eps_surprise, rev_surprise
-            FROM earnings_surprises
-            WHERE ticker = ?
-            ORDER BY report_date
-        """, conn, params=(ticker.upper(),))
+        # Load surprise history (point-in-time honest when as_of is set)
+        if as_of is not None:
+            hist = pd.read_sql("""
+                SELECT report_date, eps_surprise, rev_surprise
+                FROM earnings_surprises
+                WHERE ticker = ?
+                  AND (created_at IS NULL OR created_at <= ?)
+                ORDER BY report_date
+            """, conn, params=(ticker.upper(), str(as_of)))
+        else:
+            hist = pd.read_sql("""
+                SELECT report_date, eps_surprise, rev_surprise
+                FROM earnings_surprises
+                WHERE ticker = ?
+                ORDER BY report_date
+            """, conn, params=(ticker.upper(),))
 
-        # Load next earnings date
-        cal = pd.read_sql("""
-            SELECT next_date FROM earnings_calendar WHERE ticker = ?
-        """, conn, params=(ticker.upper(),))
+        # Load next earnings date (point-in-time: only as known on as_of)
+        if as_of is not None:
+            cal = pd.read_sql("""
+                SELECT next_date FROM earnings_calendar
+                WHERE ticker = ?
+                  AND (updated_at IS NULL OR updated_at <= ?)
+            """, conn, params=(ticker.upper(), str(as_of)))
+        else:
+            cal = pd.read_sql("""
+                SELECT next_date FROM earnings_calendar WHERE ticker = ?
+            """, conn, params=(ticker.upper(),))
         conn.close()
 
         if hist.empty:

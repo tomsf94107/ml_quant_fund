@@ -270,15 +270,24 @@ def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series
         return _load_insider(ticker, dates)
 
 
-def _load_insider(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series]:
+def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None) -> tuple[pd.Series, pd.Series, pd.Series]:
     """Load insider net_shares, 7d rolling, 21d rolling from SQLite."""
     zeros = pd.Series(0.0, index=dates)
     try:
         conn = sqlite3.connect(INSIDER_DB)
-        df = pd.read_sql(
-            "SELECT date, net_shares FROM insider_flows WHERE ticker = ? ORDER BY date",
-            conn, params=(ticker.upper(),), parse_dates=["date"]
-        )
+        if as_of is not None:
+            # Point-in-time honesty: filter by created_at (γ backfill: trade_date + 2 BD)
+            df = pd.read_sql(
+                "SELECT date, net_shares FROM insider_flows "
+                "WHERE ticker = ? AND (created_at IS NULL OR created_at <= ?) "
+                "ORDER BY date",
+                conn, params=(ticker.upper(), str(as_of)), parse_dates=["date"]
+            )
+        else:
+            df = pd.read_sql(
+                "SELECT date, net_shares FROM insider_flows WHERE ticker = ? ORDER BY date",
+                conn, params=(ticker.upper(),), parse_dates=["date"]
+            )
         conn.close()
         if df.empty:
             return zeros.copy(), zeros.copy(), zeros.copy()
@@ -551,7 +560,8 @@ def build_feature_dataframe(
     if include_sentiment:
         try:
             from data.etl_sentiment import load_sentiment_scores
-            sent_df = load_sentiment_scores(ticker, start_date=start_str, end_date=end_str)
+            # Point-in-time honest: filter to scores known on or before end_date
+            sent_df = load_sentiment_scores(ticker, start_date=start_str, end_date=end_str, as_of=end_str)
             if not sent_df.empty:
                 sent_df["date"] = pd.to_datetime(sent_df["date"]).dt.date
                 sent_map = sent_df.set_index("date")["score"].to_dict()
@@ -566,15 +576,21 @@ def build_feature_dataframe(
     # ── 8. Earnings surprise features ────────────────────────────────────────
     try:
         from data.etl_earnings import load_earnings_features, load_uw_earnings_features
-        earn = load_earnings_features(ticker, date_index)
+        # Point-in-time honest: only use earnings rows known on or before end_date
+        earn = load_earnings_features(ticker, date_index, as_of=end_str)
         for col in ["eps_surprise", "rev_surprise", "days_to_earnings",
                     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d"]:
             df[col] = earn[col].values if col in earn.columns else 0.0
-        # UW earnings — richer features
-        uw_earn = load_uw_earnings_features(ticker, date_index)
-        for col in ["expected_move_perc", "pre_earnings_drift",
-                    "post_earnings_drift", "is_earnings_week"]:
-            df[col] = uw_earn[col].values if col in uw_earn.columns else 0.0
+        # UW earnings — richer features (LIVE API, skipped in training_mode for PIT honesty)
+        if not training_mode:
+            uw_earn = load_uw_earnings_features(ticker, date_index)
+            for col in ["expected_move_perc", "pre_earnings_drift",
+                        "post_earnings_drift", "is_earnings_week"]:
+                df[col] = uw_earn[col].values if col in uw_earn.columns else 0.0
+        else:
+            for col in ["expected_move_perc", "pre_earnings_drift",
+                        "post_earnings_drift", "is_earnings_week"]:
+                df[col] = 0.0
     except Exception:
         for col in ["eps_surprise", "rev_surprise", "days_to_earnings",
                     "post_earnings_1d", "post_earnings_3d", "post_earnings_5d",
@@ -602,7 +618,11 @@ def build_feature_dataframe(
             df[col] = 0.0
 
     # ── 9. Insider flows ──────────────────────────────────────────────────────
-    ins_net, ins_7d, ins_21d = _load_insider_uw(ticker, date_index)
+    # In training_mode, skip the LIVE UW API and go directly to SQLite with PIT filter
+    if training_mode:
+        ins_net, ins_7d, ins_21d = _load_insider(ticker, date_index, as_of=end_str)
+    else:
+        ins_net, ins_7d, ins_21d = _load_insider_uw(ticker, date_index)
     df["insider_net_shares"] = ins_net.values
     df["insider_7d"]         = ins_7d.values
     df["insider_21d"]        = ins_21d.values
