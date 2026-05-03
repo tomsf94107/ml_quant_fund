@@ -208,7 +208,7 @@ SERIES_SPECS: list[SeriesSpec] = [
         native_frequency="monthly",
         aggregation="eop",
         publication_lag_days=20,
-        derived_from=("GACDFSA066MSFRBPHI", "GACDISA066MSFRBNY", "BACTSAMFRBDAL"),
+        derived_from=("GACDISA066MSFRBPHI", "BACTSAMFRBNY", "MFCURRGENACDISA"),
         notes="3-region Fed mfg composite (substitute for ISM PMI). "
               "Diffusion-index scaled, centered at 0. Auto-degrades to "
               "available subseries when some don't have history yet.",
@@ -227,13 +227,27 @@ SERIES_SPECS: list[SeriesSpec] = [
     ),
     SeriesSpec(
         feature_name="SP500",
-        fred_series_id="SP500",
-        fetch_method="fred_latest",
+        fred_series_id=None,
+        # Switched from fred_latest to manual (Yahoo→CSV→manual reader) in
+        # v1.0.4 / v1.1.1.
+        # Reason: FRED's SP500 only goes back to ~2015 (121 monthly obs), which
+        # gave T2 only 6 drawdown events — too few for any meaningful backtest.
+        # Survey of paid sources confirms none have deep SPX history:
+        #   - Massive (Polygon) Indices: launched March 2023 (~3 yr history)
+        #   - Unusual Whales: focused on options flow, not deep index data
+        # Yahoo's ^GSPC has daily history back to 1928 but yfinance is flaky.
+        # Architecture: bootstrap_sp500_history.py runs yfinance ONCE,
+        # writes a permanent CSV at recession/data/sp500_history.csv that's
+        # committed to git. manual_sources.fetch_sp500 reads that CSV.
+        # yfinance is never used at runtime. Future months top up via FRED.
+        fetch_method="manual",
         native_frequency="daily",
         aggregation="eop",
         publication_lag_days=1,
-        notes="FRED's SP500 only goes back ~10y; for longer history use Yahoo "
-              "or a vendor in a follow-up.",
+        notes="SP500 monthly EOP from committed CSV "
+              "(recession/data/sp500_history.csv). Bootstrap once via "
+              "bootstrap_sp500_history.py. With full history T2 should "
+              "capture ~12-15 drawdown events post-1960.",
     ),
     SeriesSpec(
         feature_name="DTWEXBGS",
@@ -286,15 +300,13 @@ SERIES_SPECS: list[SeriesSpec] = [
     SeriesSpec(
         feature_name="COPPER_GOLD",
         fred_series_id=None,
-        # Both London Bullion gold series (AM + PM) discontinued from FRED in 2025.
-        # No FRED replacement exists. Deferred to v2: implement Yahoo Finance
-        # ingestion (GC=F gold futures or GLD ETF) alongside copper from FRED.
-        fetch_method="skip_v1",
+        fetch_method="derived",
         native_frequency="monthly",
         aggregation="eop",
         publication_lag_days=1,
-        notes="v2: needs alternative gold source (Yahoo GC=F or GLD ETF). "
-              "Risk-on/off signal currently captured by HY OAS + NFCI + DXY.",
+        derived_from=("PCOPPUSDM", "GOLDPMGBD228NLBM"),
+        notes="Ratio of monthly copper price to monthly gold price. "
+              "Switched to PM gold fix in v1.0.1; AM fix discontinued by FRED.",
     ),
     SeriesSpec(
         feature_name="DCOILWTICO",
