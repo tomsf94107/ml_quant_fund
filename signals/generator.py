@@ -22,7 +22,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import date
+from pathlib import Path
 from typing import Optional
+import sqlite3
 
 import numpy as np
 import pandas as pd
@@ -240,6 +243,66 @@ def _compute_backtest_metrics(
 # ══════════════════════════════════════════════════════════════════════════════
 #  PUBLIC API
 # ══════════════════════════════════════════════════════════════════════════════
+
+# ──────────────────────────────────────────────────────────────────────
+# Hysteresis support: look up yesterday's signal for stateful logic
+# ──────────────────────────────────────────────────────────────────────
+
+# Asymmetric thresholds for entry vs exit (data-driven from threshold
+# distribution audit on May 3 2026). Entry is high bar; exit is lower
+# to filter day-to-day noise (~0.05 median noise, gap of ~0.10 = 2x noise).
+HYSTERESIS_ENTRY = {1: 0.80, 3: 0.60, 5: 0.60}  # need >this to flip HOLD->BUY
+HYSTERESIS_EXIT  = {1: 0.65, 3: 0.50, 5: 0.50}  # need >this to stay in BUY
+
+# Default DB path for signal lookup
+_ACCURACY_DB = Path("accuracy.db")
+
+
+def _lookup_yesterday_signal(
+    ticker:  str,
+    horizon: int,
+    as_of:   Optional[str] = None,
+    db_path: Path = _ACCURACY_DB,
+) -> Optional[str]:
+    """Look up the most recent prior signal for (ticker, horizon).
+
+    Used for stateful hysteresis: if yesterday=BUY, use lower exit threshold;
+    if yesterday=HOLD/None, use higher entry threshold.
+
+    Args:
+        ticker:   e.g. "AAPL"
+        horizon:  1, 3, or 5
+        as_of:    "YYYY-MM-DD" string. None = today. Looks STRICTLY before this.
+        db_path:  path to accuracy.db (read-only access)
+
+    Returns:
+        "BUY" or "HOLD" if a prior signal exists.
+        None if no DB, no prior signals, or any error (caller treats as HOLD).
+    """
+    if not db_path.exists():
+        return None
+
+    if as_of is None:
+        as_of_str = str(date.today())
+    else:
+        as_of_str = str(as_of)
+
+    try:
+        conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+        row = conn.execute("""
+            SELECT signal FROM predictions
+            WHERE ticker = ?
+              AND horizon = ?
+              AND prediction_date < ?
+              AND signal IS NOT NULL
+            ORDER BY prediction_date DESC, created_at DESC
+            LIMIT 1
+        """, (ticker.upper(), int(horizon), as_of_str)).fetchone()
+        conn.close()
+        return row[0] if row else None
+    except Exception:
+        return None
+
 
 def generate_signals(
     ticker:               str,
@@ -492,12 +555,26 @@ def generate_signals(
     today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
     today_gated     = bool(gate.iloc[-1])
-    # Walk-forward CV (Apr 2026) showed h=1 has no edge (AUC 0.51, BUY hit 46%).
-    # Require much higher prob_eff for h=1 BUY to avoid negative-edge signals.
-    _h1_floor       = 0.80 if horizon == 1 else confidence_threshold
+
+    # Stateful hysteresis (May 3 2026): asymmetric entry vs exit thresholds.
+    # If yesterday was BUY, stay in BUY unless prob_eff drops below EXIT bar.
+    # If yesterday was HOLD/None, only flip to BUY if prob_eff clears ENTRY bar.
+    # Wider deadband (entry-exit gap) reduces turnover from day-to-day noise.
+    # Walk-forward CV showed h=1 has no edge -> entry kept at 0.80.
+    _entry_thresh = HYSTERESIS_ENTRY.get(horizon, 0.60)
+    _exit_thresh  = HYSTERESIS_EXIT.get(horizon, 0.50)
+    _yesterday    = _lookup_yesterday_signal(ticker, horizon)
+
+    if _yesterday == "BUY":
+        # In a position: only exit if conviction has clearly degraded
+        _floor = _exit_thresh
+    else:
+        # Not in a position (HOLD or no history): need clean entry
+        _floor = _entry_thresh
+
     today_signal    = (
         "BUY"
-        if today_prob_eff > _h1_floor and not today_gated and not _suppress
+        if today_prob_eff > _floor and not today_gated and not _suppress
         else "HOLD"
     )
 
