@@ -133,8 +133,12 @@ def purged_kfold_indices(
         embargo_lo = test_dates.min() - embargo_td
         embargo_hi = test_dates.max() + embargo_td
 
-        # Train = all rows whose date is BEFORE embargo_lo OR AFTER embargo_hi
-        train_mask = (dates < embargo_lo) | (dates > embargo_hi)
+        # Train = all rows STRICTLY BEFORE embargo_lo (no future data leak).
+        # Fixed May 3 2026: previous version used `< embargo_lo | > embargo_hi`
+        # which is k-fold CV, not walk-forward. K-fold lets the model train on
+        # rows from AFTER the test window, which is a look-ahead leak for
+        # time-series. True walk-forward only allows past data in training.
+        train_mask = (dates < embargo_lo)
         train_pos = np.where(train_mask.values)[0]
 
         if len(train_pos) >= MIN_TRAIN_ROWS and len(test_pos) >= MIN_TEST_ROWS:
