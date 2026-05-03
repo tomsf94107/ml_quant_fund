@@ -444,12 +444,20 @@ SERIES_SPECS: list[SeriesSpec] = [
     SeriesSpec(
         feature_name="EXHOSLUSM495S",
         fred_series_id="EXHOSLUSM495S",
-        fetch_method="fred_alfred",
+        # Switched from fred_alfred → fred_latest after the initial Step 3.5
+        # ingest hit ALFRED 400 ("Series not found in ALFRED but may exist in
+        # FRED"). NAR's existing-home-sales series doesn't have its vintage
+        # history maintained on ALFRED — only the latest series. We accept the
+        # loss of vintage-aware backtesting for this one series; NAR revisions
+        # tend to be small.
+        fetch_method="fred_latest",
         native_frequency="monthly",
         aggregation="eop",
         publication_lag_days=21,
-        notes="Existing home sales (NAR via FRED). Pure housing-market quantity, "
-              "complements UMCSENT's sentiment angle.",
+        notes="Existing home sales (NAR via FRED). Pure housing-market quantity. "
+              "Note: not vintage-aware (ALFRED returns 404 for this series); "
+              "uses latest revision throughout history. Acceptable trade-off "
+              "since NAR revisions are typically small.",
     ),
 
     # Tier 10: Inflation (NEW)
