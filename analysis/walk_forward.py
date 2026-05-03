@@ -198,6 +198,147 @@ def load_panel(
     return df.reset_index(drop=True)
 
 
+def load_panel_pit(
+    db_path: Path,
+    horizon: Optional[int] = None,
+    since: Optional[str] = None,
+    limit: Optional[int] = None,
+    verbose: bool = True,
+    progress_every: int = 50,
+) -> pd.DataFrame:
+    """Load outcomes joined with FRESHLY-BUILT point-in-time features.
+
+    For each row in the outcomes table, this calls:
+        build_feature_dataframe(ticker, end_date=prediction_date,
+                                 training_mode=True)
+    and takes the LAST row (= features as of prediction_date with
+    no future leak from sentiment/insider/earnings).
+
+    This is the HONEST panel — replaces the prediction_features-table
+    query in load_panel(), which was scope-limited to ~27 features
+    captured at prediction time.
+
+    SLOW. Each call to build_feature_dataframe is ~10-20 seconds.
+    For 7,500 outcomes × 18s = ~37 hours runtime.
+
+    Args:
+        db_path:        accuracy.db path
+        horizon:        filter to specific horizon (1, 3, or 5)
+        since:          ISO date string — only use predictions on/after
+        limit:          for testing — only process first N outcomes
+        verbose:        print progress
+        progress_every: print progress line every N rows
+
+    Returns:
+        DataFrame with same shape as load_panel():
+        ticker, prediction_date, horizon, actual_return, actual_up,
+        and ~80 feature columns from build_feature_dataframe.
+    """
+    from features.builder import build_feature_dataframe
+    import time as _time
+
+    conn = sqlite3.connect(str(db_path))
+
+    # Load outcomes only — features come from build_feature_dataframe
+    query = """
+        SELECT ticker, prediction_date, horizon, actual_return, actual_up
+        FROM outcomes
+        WHERE actual_return IS NOT NULL
+          AND actual_up IS NOT NULL
+    """
+    params: list = []
+    if horizon is not None:
+        query += " AND horizon = ?"
+        params.append(horizon)
+    if since:
+        query += " AND prediction_date >= ?"
+        params.append(since)
+    query += " ORDER BY ticker, prediction_date, horizon"
+
+    if limit is not None:
+        query += f" LIMIT {int(limit)}"
+
+    outcomes = pd.read_sql(query, conn, params=params)
+    conn.close()
+
+    if outcomes.empty:
+        return outcomes
+
+    if verbose:
+        print(f"  PIT panel: processing {len(outcomes):,} outcomes...")
+        n_unique_pairs = outcomes[["ticker", "prediction_date"]].drop_duplicates().shape[0]
+        print(f"  Unique (ticker, prediction_date) pairs: {n_unique_pairs:,}")
+        print(f"  Estimated runtime: ~{n_unique_pairs * 18 / 3600:.1f} hours")
+
+    rows = []
+    fail_count = 0
+    t0 = _time.time()
+
+    # Group by (ticker, prediction_date) so we only build features once
+    # even if there are multiple horizons for the same date.
+    grouped = outcomes.groupby(["ticker", "prediction_date"])
+
+    for i, ((ticker, pred_date), group) in enumerate(grouped, 1):
+        try:
+            df_features = build_feature_dataframe(
+                ticker,
+                end_date=str(pred_date),
+                training_mode=True,
+            )
+            if df_features.empty:
+                fail_count += 1
+                continue
+            # Take features at the prediction_date (last row of as-of panel)
+            feat_row = df_features.iloc[-1].to_dict()
+            # Strip non-feature metadata that build_feature_dataframe injects
+            feat_row.pop("date", None)
+            feat_row.pop("ticker", None)
+            # Add one row per horizon for this (ticker, pred_date)
+            for _, outcome_row in group.iterrows():
+                row = {
+                    "ticker": ticker,
+                    "prediction_date": pred_date,
+                    "horizon": int(outcome_row["horizon"]),
+                    "actual_return": float(outcome_row["actual_return"]),
+                    "actual_up": int(outcome_row["actual_up"]),
+                    **feat_row,
+                }
+                rows.append(row)
+        except Exception as e:
+            fail_count += 1
+            if verbose and fail_count < 10:
+                print(f"  ! {ticker} {pred_date}: {e}")
+            continue
+
+        if verbose and i % progress_every == 0:
+            elapsed = _time.time() - t0
+            rate = i / elapsed
+            remaining = (len(grouped) - i) / rate if rate > 0 else 0
+            print(
+                f"  [{i:,}/{len(grouped):,}] "
+                f"({rate:.2f}/s, {remaining/3600:.1f}h remaining, "
+                f"{fail_count} failed)"
+            )
+
+    if not rows:
+        if verbose:
+            print(f"  PIT panel: 0 successful rows ({fail_count} failures)")
+        return pd.DataFrame()
+
+    df = pd.DataFrame(rows)
+    df["prediction_date"] = pd.to_datetime(df["prediction_date"])
+    df = df.reset_index(drop=True)
+
+    if verbose:
+        elapsed = _time.time() - t0
+        print(
+            f"  PIT panel: {len(df):,} rows, {fail_count} failed, "
+            f"elapsed {elapsed/3600:.2f}h"
+        )
+
+    return df
+
+
 def detect_feature_cols(df: pd.DataFrame) -> List[str]:
     """Return numeric columns that look like features (not metadata)."""
     return [
@@ -542,10 +683,24 @@ def main() -> None:
                         help="Subsample size for ablation (default: 20000)")
     parser.add_argument("--csv-prefix", default=None,
                         help="If set, write CSVs with this prefix")
+    parser.add_argument("--pit", action="store_true",
+                        help="Use point-in-time honest features via "
+                             "build_feature_dataframe per outcome (SLOW: 37h+)")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="(Testing) only process first N outcomes")
     args = parser.parse_args()
 
-    print(f"Loading panel from {args.db}...")
-    df = load_panel(args.db, horizon=args.horizon, since=args.since)
+    if args.pit:
+        print(f"Loading PIT panel from {args.db} (this is the slow honest one)...")
+        df = load_panel_pit(
+            args.db,
+            horizon=args.horizon,
+            since=args.since,
+            limit=args.limit,
+        )
+    else:
+        print(f"Loading panel from {args.db}...")
+        df = load_panel(args.db, horizon=args.horizon, since=args.since)
     if df.empty:
         print("No data after filters. Exiting.")
         return
