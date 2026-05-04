@@ -29,6 +29,10 @@ from typing import Optional, Union, List
 import pandas as pd
 import requests
 
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+_session = requests.Session()
+
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://api.polygon.io"
@@ -84,7 +88,7 @@ def _request_with_retry(url, params, timeout=15, max_retries=6):
     last_err = None
     for attempt in range(max_retries):
         try:
-            r = requests.get(url, params=params, timeout=timeout)
+            r = _session.get(url, params=params, timeout=timeout)
             if r.status_code == 200:
                 return r.json()
             if r.status_code == 429 or 500 <= r.status_code < 600:

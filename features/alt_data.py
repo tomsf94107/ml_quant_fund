@@ -14,6 +14,10 @@ import requests
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+_session = requests.Session()
+
 DB_PATH = Path(__file__).parent.parent / "accuracy.db"
 
 # Ticker → Wikipedia article name mapping for major tickers
@@ -101,7 +105,7 @@ def fetch_wiki_pageviews(ticker: str, days_back: int = 30) -> list:
         f"{start.strftime('%Y%m%d')}/{end.strftime('%Y%m%d')}"
     )
     try:
-        r = requests.get(url, headers={"User-Agent": "ML-Quant-Fund/1.0"}, timeout=10)
+        r = _session.get(url, headers={"User-Agent": "ML-Quant-Fund/1.0"}, timeout=10)
         if r.status_code != 200:
             return []
         data = r.json().get("items", [])
@@ -217,7 +221,7 @@ def get_cik_for_ticker(ticker: str) -> str:
     """Lookup SEC CIK number for a ticker. Cached locally."""
     # SEC company tickers file is free
     try:
-        r = requests.get(
+        r = _session.get(
             "https://www.sec.gov/files/company_tickers.json",
             headers={"User-Agent": "ML-Quant-Fund research@example.com"},
             timeout=10,
@@ -243,7 +247,7 @@ def fetch_recent_8k(ticker: str, days_back: int = 30) -> list:
         return []
 
     try:
-        r = requests.get(
+        r = _session.get(
             f"https://data.sec.gov/submissions/CIK{cik}.json",
             headers={"User-Agent": "ML-Quant-Fund research@example.com"},
             timeout=10,

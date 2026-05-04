@@ -91,36 +91,21 @@ def _check_rate_limits(headers: dict, path: str) -> None:
 
 
 def _uw_get(path: str, params: Optional[dict] = None) -> Optional[dict]:
-    """Generic UW API GET with retry. Returns parsed JSON or None on failure."""
-    if not UW_API_KEY:
-        log.warning("UW_API_KEY not set")
-        return None
+    """Generic UW API GET, routed through centralized uw_client.
 
-    url = f"{UW_BASE_URL}{path}"
-    last_err = None
-    for attempt in range(MAX_RETRIES):
-        try:
-            r = requests.get(
-                url, headers=_uw_headers(),
-                params=params, timeout=DEFAULT_TIMEOUT,
-            )
-            if r.status_code == 200:
-                _check_rate_limits(r.headers, path)
-                return r.json()
-            elif r.status_code == 429:
-                log.warning(f"UW rate limited on {path}; backing off")
-                time.sleep(RETRY_BACKOFF * (2 ** attempt))
-                continue
-            elif r.status_code in (401, 403):
-                log.error(f"UW auth error {r.status_code} on {path}")
-                return None
-            else:
-                last_err = f"HTTP {r.status_code}: {r.text[:120]}"
-        except requests.exceptions.RequestException as e:
-            last_err = str(e)
-        time.sleep(RETRY_BACKOFF * (2 ** attempt))
-    log.warning(f"UW {path} failed after {MAX_RETRIES} retries: {last_err}")
-    return None
+    FIXED May 4 2026: previously used raw requests.get() per call — no
+    Session reuse, fresh DNS lookup every time. After ~80 tickers in
+    Pipeline B Stage 3, curl_cffi DNS thread pool exhausted, crashing
+    daily_runner mid-run (e.g. May 4 crash at USAR ticker 86). Now
+    delegates to uw_client.uw_get which has a module-level
+    requests.Session() reused across all UW calls.
+
+    options endpoints are HISTORICAL data so we pass
+    allow_outside_market=True to bypass the market-hours gate.
+    """
+    from features.uw_client import uw_get
+    return uw_get(path, params=params, allow_outside_market=True,
+                  max_retries=MAX_RETRIES, timeout=DEFAULT_TIMEOUT)
 
 
 def _parse_expiry_from_symbol(symbol: str) -> Optional[str]:

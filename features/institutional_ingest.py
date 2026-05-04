@@ -24,6 +24,10 @@ from typing import Callable, Optional
 
 import requests
 
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+_session = requests.Session()
+
 # ─── Auth ────────────────────────────────────────────────────────────────────
 # Try config.keys first (matches the pattern used by massive_client.py), then env.
 try:
@@ -156,7 +160,7 @@ def _uw_get(path: str, params: Optional[dict] = None,
     last_exc = None
     for attempt in range(max_retries):
         try:
-            r = requests.get(f"{UW_BASE}{path}", headers=headers,
+            r = _session.get(f"{UW_BASE}{path}", headers=headers,
                              params=params, timeout=timeout)
             if r.status_code == 200:
                 return r.json()

@@ -34,6 +34,12 @@ from models.classifier import (
     TrainResult, predict_proba, FEATURE_COLUMNS
 )
 
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+import requests as _requests_for_session
+_session = _requests_for_session.Session()
+
+
 def _load_ticker_metadata() -> dict:
     """Load tickers_metadata.csv → {ticker: {bucket, tier, thesis}}"""
     try:
@@ -97,8 +103,7 @@ def _get_fear_greed_mult() -> float:
     Extreme Greed (>75) → cut BUY signals by up to 8%
     """
     try:
-        import requests
-        r = requests.get("https://api.alternative.me/fng/?limit=1",
+        r = _session.get("https://api.alternative.me/fng/?limit=1",
                         headers={"User-Agent": "MLQuantFund/1.0"}, timeout=5)
         if r.status_code == 200:
             score = float(r.json()["data"][0]["value"])

@@ -20,6 +20,10 @@ import numpy as np
 from datetime import date, timedelta
 from typing import Optional
 
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+_session = requests.Session()
+
 POLYGON_API_KEY = os.getenv("POLYGON_API_KEY", "pvpkxx6PRbgfvepY33Ao_bi4iNMY1pPz")
 BASE_URL = "https://api.polygon.io"
 
@@ -45,7 +49,7 @@ def get_minute_bars(
         f"?adjusted=true&sort=asc&limit=50000"
         f"&apiKey={POLYGON_API_KEY}"
     )
-    r = requests.get(url, timeout=15)
+    r = _session.get(url, timeout=15)
     if r.status_code == 403:
         raise PermissionError("Polygon Stocks Starter plan required for minute bars")
     if r.status_code != 200:

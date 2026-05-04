@@ -35,6 +35,12 @@ import pandas as pd
 # Set DATABASE_URL in environment for Postgres:
 #   postgresql://user:password@host:5432/dbname
 # If not set, falls back to SQLite.
+
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+import requests as _requests_for_session
+_session = _requests_for_session.Session()
+
 DATABASE_URL = os.getenv("DATABASE_URL", "")
 SQLITE_PATH  = Path(os.getenv("ACCURACY_DB_PATH", "accuracy.db"))
 
@@ -294,7 +300,7 @@ def _fetch_price_fallback(ticker: str, start_date, end_date) -> "pd.DataFrame | 
     try:
         url = (f"https://api.polygon.io/v2/aggs/ticker/{ticker}/range/1/day/"
                f"{start_date}/{end_date}?adjusted=true&sort=asc&limit=50&apiKey={POLYGON_KEY}")
-        r = requests.get(url, timeout=10)
+        r = _session.get(url, timeout=10)
         data = r.json()
         if data.get("resultsCount", 0) > 0:
             rows = []
@@ -314,7 +320,7 @@ def _fetch_price_fallback(ticker: str, start_date, end_date) -> "pd.DataFrame | 
     try:
         url = (f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED"
                f"&symbol={ticker}&outputsize=compact&apikey={AV_KEY}")
-        r = requests.get(url, timeout=10)
+        r = _session.get(url, timeout=10)
         data = r.json()
         ts = data.get("Time Series (Daily)", {})
         if ts:

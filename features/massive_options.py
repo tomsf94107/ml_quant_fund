@@ -14,6 +14,10 @@ from typing import Optional
 
 import requests
 
+# Module-level Session for connection reuse (DNS pool conservation).
+# Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
+_session = requests.Session()
+
 BASE_URL    = "https://api.polygon.io"
 API_KEY     = os.getenv("MASSIVE_API_KEY", "")
 
@@ -42,7 +46,7 @@ def _get_snapshot(ticker: str, contract_type: str = None,
         params["expiration_date.lte"] = exp_max
 
     try:
-        r = requests.get(f"{BASE_URL}/v3/snapshot/options/{ticker}",
+        r = _session.get(f"{BASE_URL}/v3/snapshot/options/{ticker}",
                          params=params, timeout=10)
         if r.status_code != 200:
             return []
