@@ -17,6 +17,16 @@ st.set_page_config(page_title="Intraday Signals", page_icon="⚡", layout="wide"
 st.title("⚡ Intraday Signals")
 st.caption("1hr / 2hr / 4hr direction signals based on momentum, VWAP, RSI, volume surge.")
 
+st.error(
+    "⚠️ **DO NOT TRADE OFF THESE SIGNALS** — May 4 2026 validation (n=3,879 over 30 days) "
+    "found UP/DOWN/NEUTRAL outputs are statistically inverted in some horizons "
+    "(DOWN h=1 = 39% acc, UP h=4 = 44% acc — both worse than random). "
+    "Root cause: hand-tuned momentum formula, no learned model, no regime awareness. "
+    "Technical indicators below (RSI, VWAP Dev, Vol Surge) are factual computations and remain useful for human review. "
+    "See `docs/intraday/INTRADAY_GAP_ANALYSIS_2026_05_04.md` for full diagnosis. "
+    "Proper XGBoost retrain pending."
+)
+
 now_et = datetime.now(ET)
 market_open = is_market_open()
 mso = minutes_since_open()
