@@ -67,20 +67,36 @@ def get_short_interest(ticker: str) -> dict:
     }
 
     try:
-        import yfinance as yf
-        info = yf.Ticker(ticker).info
+        # FIXED May 4 2026: replaced yfinance with UW.
+        # yfinance.Ticker(X).info uses curl_cffi with its own DNS pool that
+        # exhausts after ~80 calls in Pipeline B Stage 3. UW routes through
+        # centralized uw_client (shared Session, no DNS exhaustion) and
+        # includes historical short interest so we get prior month data
+        # without an extra call.
+        from features.uw_client import uw_get
+        payload = uw_get(
+            f"/api/shorts/{ticker}/interest-float/v2",
+            allow_outside_market=True,
+        )
+        if not payload or not payload.get("data"):
+            result["error"] = "UW returned no short interest data"
+            return result
 
-        # Extract short interest fields
-        short_ratio      = info.get("shortRatio")         # days to cover
-        short_pct_float  = info.get("shortPercentOfFloat") # 0.0 - 1.0
-        shares_short     = info.get("sharesShort")
-        shares_short_prior = info.get("sharesShortPriorMonth")
+        data = payload["data"]
+        latest = data[0] if data else {}
+        prior  = data[1] if len(data) > 1 else {}
+
+        # UW returns days_to_cover as string, si_float as string fraction
+        short_ratio       = float(latest.get("days_to_cover", 0)) if latest.get("days_to_cover") else None
+        short_pct_float   = float(latest.get("si_float", 0)) if latest.get("si_float") else None
+        shares_short      = int(latest.get("short_interest", 0)) if latest.get("short_interest") else None
+        shares_short_prior = int(prior.get("short_interest", 0)) if prior.get("short_interest") else None
 
         if short_ratio is not None:
-            result["short_ratio"] = round(float(short_ratio), 2)
+            result["short_ratio"] = round(short_ratio, 2)
 
         if short_pct_float is not None:
-            result["short_pct_float"] = round(float(short_pct_float), 4)
+            result["short_pct_float"] = round(short_pct_float, 4)
 
         if shares_short is not None:
             result["shares_short"] = int(shares_short)

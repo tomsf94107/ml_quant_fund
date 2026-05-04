@@ -85,10 +85,13 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
                 df.loc[ts, "risk_today"] = 1.0
 
     # Always add VIX spike days
+    # FIXED May 4 2026: route through yf_resilient to avoid DNS exhaustion.
+    # Called per-ticker via _load_risk_flags, so 125 calls per Pipeline B run.
     try:
-        vix = yf.download("^VIX", start=str(start_date), end=str(end_date),
-                          progress=False, auto_adjust=True)
-        if not vix.empty:
+        from features.yf_resilient import safe_yf_download
+        vix = safe_yf_download(["^VIX"], start=str(start_date), end=str(end_date),
+                               progress=False, auto_adjust=True)
+        if vix is not None and not vix.empty:
             if hasattr(vix.columns, 'get_level_values'):
                 vix.columns = vix.columns.get_level_values(0)
             vix_close = vix["Close"].squeeze()
