@@ -429,15 +429,14 @@ def reconcile_outcomes(
                 outcome_date = row["outcome_date"]
 
                 try:
-                    # Did stock go UP on prediction_date?
+                    # Score using close[prediction_date] -> close[outcome_date].
+                    # FIXED May 4 2026: previous version (commit 8bcb44c, Mar 31)
+                    # scored same-day open->close for every horizon, making the
+                    # horizon dimension meaningless and producing direction-wrong
+                    # labels in many cases (e.g., NVDA Apr 15 stored +1.18% when
+                    # actual close-to-close return was -0.26%). All outcomes
+                    # written between Mar 31 - May 4 need to be regenerated.
                     try:
-                        # Score using open→close on prediction_date
-                        open_series = px["Open"]
-                        if isinstance(open_series, pd.DataFrame):
-                            open_series = open_series.iloc[:, 0]
-                        open_series = open_series.copy()
-                        open_series.index = pd.to_datetime(open_series.index).tz_localize(None)
-
                         close_series = px["Close"]
                         if isinstance(close_series, pd.DataFrame):
                             close_series = close_series.iloc[:, 0]
@@ -445,12 +444,15 @@ def reconcile_outcomes(
                         close_series.index = pd.to_datetime(close_series.index).tz_localize(None)
 
                         pred_ts = pd.Timestamp(pred_date)
-                        day_open  = float(open_series.asof(pred_ts))
-                        day_close = float(close_series.asof(pred_ts))
+                        out_ts  = pd.Timestamp(outcome_date)
+                        price_at_pred    = float(close_series.asof(pred_ts))
+                        price_at_outcome = float(close_series.asof(out_ts))
 
-                        if day_open == 0:
+                        if price_at_pred == 0 or price_at_pred != price_at_pred:
                             continue
-                        actual_ret = (day_close - day_open) / day_open
+                        if price_at_outcome != price_at_outcome:
+                            continue
+                        actual_ret = (price_at_outcome - price_at_pred) / price_at_pred
                         if actual_ret != actual_ret:
                             continue
                         actual_up = int(actual_ret > 0)
