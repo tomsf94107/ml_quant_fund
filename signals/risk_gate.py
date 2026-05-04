@@ -36,7 +36,17 @@ def _get_uw_economic_calendar(start_date: str, end_date: str) -> list[str]:
     Fetch high-impact event dates from Unusual Whales economic calendar.
     Returns list of date strings where risk = 1.
     Falls back to empty list if API fails.
+
+    May 4 2026: Added env var ML_QUANT_SKIP_UW_CALENDAR=1 escape hatch.
+    Walk-forward training calls build_feature_dataframe per (ticker, date)
+    pair = thousands of UW calls in tight succession. UW per-minute rate
+    limit triggers 429 loops that hang the run. Set env var to skip UW
+    entirely and rely on hardcoded FOMC_DATES + CPI_DATES fallback.
     """
+    import os
+    if os.environ.get("ML_QUANT_SKIP_UW_CALENDAR") == "1":
+        return []  # falls back to hardcoded FOMC/CPI in build_risk_features
+
     try:
         payload = uw_get(
             "/api/market/economic-calendar",

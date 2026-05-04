@@ -124,22 +124,60 @@ def fred_get(series_id: str,
     return None
 
 
+# Module-level cache for fred_get_as_series, keyed by series_id only.
+# FRED historical data is immutable for past dates, so we fetch the
+# WIDEST range on first call (start through today), cache it, and slice
+# in memory for subsequent calls.
+#
+# Walk-forward calls build_feature_dataframe 3,739 times with varying
+# end_date. Without this cache, that produced 11,217 FRED API calls
+# triggering server-side rate limits (HTTP 500). Now produces 3 FRED
+# calls total per process (one per series_id used).
+# Added May 4 2026.
+_FRED_FULL_SERIES_CACHE: dict = {}
+
+
 def fred_get_as_series(series_id: str,
                        start: Optional[str] = None,
                        end: Optional[str] = None) -> Optional[pd.Series]:
     """
     Convenience wrapper: returns indexed pd.Series (index=date, values=value).
     Returns None on failure, empty Series if no data.
+
+    May 4 2026: Caches the FULL series_id history at module level on first
+    call, then slices in memory for the requested [start, end] range.
+    Eliminates rate-limit issues during walk-forward where the same series
+    is requested with different end_dates thousands of times.
     """
-    df = fred_get(series_id, start=start, end=end)
-    if df is None:
+    if series_id not in _FRED_FULL_SERIES_CACHE:
+        # First call for this series — fetch widest possible range.
+        # FRED's default range is full history; passing start=None gets it.
+        full_series = fred_get(series_id, start=None, end=None)
+        if full_series is None:
+            _FRED_FULL_SERIES_CACHE[series_id] = None
+        elif full_series.empty:
+            _FRED_FULL_SERIES_CACHE[series_id] = pd.Series(dtype=float)
+        else:
+            s = full_series.set_index("date")["value"]
+            s.index = pd.to_datetime(s.index).normalize()
+            _FRED_FULL_SERIES_CACHE[series_id] = s
+
+    cached = _FRED_FULL_SERIES_CACHE[series_id]
+    if cached is None:
         return None
-    if df.empty:
+    if cached.empty:
         return pd.Series(dtype=float)
 
-    s = df.set_index("date")["value"]
-    s.index = pd.to_datetime(s.index).normalize()
-    return s
+    # Slice to requested range
+    result = cached
+    if start is not None:
+        start_ts = pd.to_datetime(start).normalize()
+        result = result[result.index >= start_ts]
+    if end is not None:
+        end_ts = pd.to_datetime(end).normalize()
+        result = result[result.index <= end_ts]
+
+    return result.copy()
 
 
 # Quick test (run as script)
