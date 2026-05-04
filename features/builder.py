@@ -155,14 +155,47 @@ def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
 # Was causing curl_cffi DNS thread exhaustion ~ticker 47 (May 2 2026 incident).
 _MACRO_CACHE: dict[str, "pd.DataFrame"] = {}
 
+
 def _get_macro_cached(symbol: str, start: str, end: str) -> "pd.DataFrame":
     """Fetch a macro symbol via mc.download, cached for the process lifetime.
-    Returns a deep copy so callers can mutate freely."""
-    key = f"{symbol}|{start}|{end}"
-    if key not in _MACRO_CACHE:
-        _MACRO_CACHE[key] = mc.download(symbol, start=start, end=end,
-                                         auto_adjust=True, progress=False)
-    return _MACRO_CACHE[key].copy()
+    Returns a deep copy so callers can mutate freely.
+
+    May 4 2026 V2: Cache key is `symbol` only. First call fetches the WIDEST
+    range from `start` through today, caches the full DataFrame, and slices
+    in memory for the [start, end] requested by caller.
+
+    V1 (key=symbol|start|end) was broken for walk-forward where end_date
+    varies per call → cache always missed → thousands of fresh API calls →
+    rate limits. Macro/OHLCV historical data is immutable so caching the
+    widest range is correct.
+    """
+    if symbol not in _MACRO_CACHE:
+        # First call for this symbol — fetch widest range (start through today)
+        from datetime import date as _date
+        widest_end = _date.today().strftime("%Y-%m-%d")
+        _MACRO_CACHE[symbol] = mc.download(
+            symbol, start=start, end=widest_end,
+            auto_adjust=True, progress=False,
+        )
+
+    full = _MACRO_CACHE[symbol]
+    if full is None or full.empty:
+        return full.copy() if full is not None else pd.DataFrame()
+
+    # Slice cached full-range DataFrame to [start, end]
+    sliced = full
+    try:
+        if start is not None:
+            start_ts = pd.to_datetime(start)
+            sliced = sliced.loc[sliced.index >= start_ts]
+        if end is not None:
+            end_ts = pd.to_datetime(end)
+            sliced = sliced.loc[sliced.index <= end_ts]
+    except Exception:
+        # If index isn't datetime, fall back to returning full DataFrame
+        pass
+
+    return sliced.copy()
 
 
 def _market_return(etf: str, start: str, end: str,
