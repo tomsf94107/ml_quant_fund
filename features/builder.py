@@ -124,13 +124,62 @@ OUTPUT_COLUMNS = [
 #  PRIVATE HELPERS
 # ══════════════════════════════════════════════════════════════════════════════
 
+# Per-ticker OHLCV cache, keyed by ticker only.
+# Walk-forward calls _download 3,739 times (one per outcome). Without this
+# cache that's 3,739 fresh Massive API calls per process, triggering rate
+# limits and yfinance fallback hangs. With this cache, 3,739 calls become
+# ~125 (one per unique ticker), each subsequent call slicing from memory.
+# OHLCV historical data is immutable so caching the widest range is safe.
+# Added May 5 2026.
+_TICKER_OHLCV_CACHE: dict[str, "pd.DataFrame"] = {}
+
+
 def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
-    """Download OHLCV from yfinance and flatten any MultiIndex columns."""
-    df = mc.download(ticker, start=start, end=end, auto_adjust=True, progress=False)
+    """Download OHLCV from yfinance/Massive and flatten any MultiIndex columns.
+
+    May 5 2026: Per-ticker module-level cache with full-range fetch on first
+    call, in-memory slice for subsequent calls. Same V2 pattern as FRED and
+    _MACRO_CACHE. Eliminates rate-limit issues during walk-forward where the
+    same ticker is fetched thousands of times with varying end_dates.
+    """
+    if ticker not in _TICKER_OHLCV_CACHE:
+        # First call for this ticker — fetch widest range (start through today)
+        from datetime import date as _date
+        widest_end = _date.today().strftime("%Y-%m-%d")
+        full_df = mc.download(
+            ticker, start=start, end=widest_end,
+            auto_adjust=True, progress=False,
+        )
+        if full_df.empty:
+            raise ValueError(f"yfinance returned no data for {ticker} ({start} → {widest_end})")
+
+        # Flatten MultiIndex once at cache time
+        if isinstance(full_df.columns, pd.MultiIndex):
+            full_df.columns = full_df.columns.get_level_values(0)
+
+        _TICKER_OHLCV_CACHE[ticker] = full_df
+
+    full = _TICKER_OHLCV_CACHE[ticker]
+
+    # Slice cached DataFrame to requested [start, end]
+    df = full
+    try:
+        if start is not None:
+            start_ts = pd.to_datetime(start)
+            df = df.loc[df.index >= start_ts]
+        if end is not None:
+            end_ts = pd.to_datetime(end)
+            df = df.loc[df.index <= end_ts]
+    except Exception:
+        # If index isn't datetime, return full DataFrame unchanged
+        pass
+
+    df = df.copy()
+
     if df.empty:
         raise ValueError(f"yfinance returned no data for {ticker} ({start} → {end})")
 
-    # Flatten MultiIndex (yfinance sometimes returns ('Close', 'AAPL') style)
+    # Note: MultiIndex flattening already done at cache time, but check defensively
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = df.columns.get_level_values(0)
 
