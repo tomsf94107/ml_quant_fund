@@ -370,14 +370,35 @@ def _extract_8k_text(cik: str, accn: str, max_chars: int = 3000) -> Optional[str
         return None
 
 
+# Module-level FinBERT pipeline singleton.
+# Loaded once on first use, reused for all subsequent calls.
+# Forces device=-1 (CPU) because:
+#   1. MPS leaks GPU memory across pipeline calls (caused daily_runner OOM
+#      at ticker ~59 on May 5 2026 — same fix as sentiment_utils._load_finbert)
+#   2. Apple Silicon MPS backend has known instabilities with transformers
+# Added May 5 2026.
+_FINBERT_PIPE = None
+
+
 def _run_finbert(text: str) -> float:
-    """Run FinBERT on text, return score -1 to +1."""
+    """Run FinBERT on text, return score -1 to +1.
+
+    May 5 2026: Pipeline cached at module level + forced to CPU. Previously
+    created fresh pipeline per call, loading 440MB model to MPS each time
+    with no release, causing OOM kill of daily_runner at ~ticker 59.
+    """
+    global _FINBERT_PIPE
     try:
-        from transformers import pipeline
-        pipe = pipeline("text-classification",
-                        model="ProsusAI/finbert",
-                        truncation=True, max_length=512)
-        result = pipe(text[:512])[0]
+        if _FINBERT_PIPE is None:
+            from transformers import pipeline
+            _FINBERT_PIPE = pipeline(
+                "text-classification",
+                model="ProsusAI/finbert",
+                truncation=True,
+                max_length=512,
+                device=-1,  # CPU — avoid MPS memory leak
+            )
+        result = _FINBERT_PIPE(text[:512])[0]
         label  = result["label"].lower()
         score  = result["score"]
         return score if label == "positive" else (-score if label == "negative" else 0.0)
