@@ -390,6 +390,13 @@ def _run_finbert(text: str) -> float:
     global _FINBERT_PIPE
     try:
         if _FINBERT_PIPE is None:
+            import torch
+            # Force single-threaded — prevents PyTorch thread pool deadlock when
+            # _run_finbert is called from inside ThreadPoolExecutor (which is
+            # how features/builder.py wraps get_earnings_call_sentiment).
+            # Same fix as sentiment_utils._load_finbert. Without this, PyTorch's
+            # at::parallel_for inside index_select_cpu_ deadlocks on macOS.
+            torch.set_num_threads(1)
             from transformers import pipeline
             _FINBERT_PIPE = pipeline(
                 "text-classification",
