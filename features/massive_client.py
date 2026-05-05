@@ -342,20 +342,30 @@ def get_ticker_info(ticker):
 
 def get_short_interest(ticker):
     """
-    Short interest data. NOT in Massive Stocks Developer plan.
-    Falls back to yfinance for this specific data point.
+    Short interest data via UW (replaces yfinance May 5 2026).
+    UW endpoint /api/shorts/{ticker}/interest-float/v2 — root cause of
+    daily_runner crashes today (USAR/GEV/NVMI). yfinance.Ticker(t).info
+    accumulates curl_cffi thread state until getaddrinfo() fails natively.
+    Returns yfinance-shaped dict for backward compatibility.
     """
     try:
-        import yfinance as yf
-        info = yf.Ticker(ticker).info
+        from features.uw_client import uw_get
+        data = uw_get(f"/api/shorts/{ticker}/interest-float/v2")
+        if not data:
+            return {}
+        items = data.get("data", []) if isinstance(data, dict) else []
+        if not items:
+            return {}
+        latest = items[0]
+        prior = items[1] if len(items) > 1 else {}
         return {
-            "shortPercentOfFloat":   info.get("shortPercentOfFloat"),
-            "shortRatio":            info.get("shortRatio"),
-            "sharesShort":           info.get("sharesShort"),
-            "sharesShortPriorMonth": info.get("sharesShortPriorMonth"),
+            "shortPercentOfFloat":   float(latest.get("si_float")) if latest.get("si_float") else None,
+            "shortRatio":            float(latest.get("days_to_cover")) if latest.get("days_to_cover") else None,
+            "sharesShort":           int(latest.get("short_interest")) if latest.get("short_interest") else None,
+            "sharesShortPriorMonth": int(prior.get("short_interest")) if prior.get("short_interest") else None,
         }
     except Exception as e:
-        log.warning(f"yfinance short interest failed for {ticker}: {e}")
+        log.warning(f"UW short interest failed for {ticker}: {e}")
         return {}
 
 

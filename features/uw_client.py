@@ -105,17 +105,14 @@ class UWClient:
         db_fallback: Optional[Callable[[], Any]] = None,
         max_retries: int = 3,
         timeout: float = 15.0,
-        allow_outside_market: bool = False,
     ) -> Any:
-        # 1) Market-hours gate
-        if not allow_outside_market and not is_market_open():
-            logger.info(
-                "uw.skip reason=market_closed endpoint=%s fallback=%s",
-                endpoint, db_fallback is not None,
-            )
-            return db_fallback() if db_fallback else None
+        # Market-hours gate REMOVED May 5 2026 — UW data is non-realtime for
+        # most endpoints (insider, options Greeks, short interest, economic
+        # calendar). The gate was causing daily_runner / Pipeline C to skip
+        # data that IS available off-hours. Daily budget gate below is the
+        # real protection.
 
-        # 2) Daily budget gate
+        # Daily budget gate
         try:
             self._reserve_call()
         except UWDailyLimitError as e:
@@ -174,7 +171,7 @@ def uw_get(
     db_fallback: Optional[Callable[[], Any]] = None,
     max_retries: int = 3,
     timeout: float = 15.0,
-    allow_outside_market: bool = False,
+    allow_outside_market: bool = True,  # IGNORED May 5 2026 (gate removed) — kept for backward-compat
 ) -> Any:
     """Single entry point for all UW GET calls.
 
@@ -189,5 +186,4 @@ def uw_get(
         db_fallback=db_fallback,
         max_retries=max_retries,
         timeout=timeout,
-        allow_outside_market=allow_outside_market,
     )
