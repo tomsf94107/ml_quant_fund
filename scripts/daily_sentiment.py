@@ -19,8 +19,8 @@ import urllib.request
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-import yfinance as yf
 import anthropic
+# yfinance replaced by yf_resilient May 5 2026 — prevents curl_cffi DNS exhaustion
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
 log = logging.getLogger(__name__)
@@ -131,10 +131,14 @@ def _get_headlines(ticker: str, days_back: int = 3) -> list[str]:
     except Exception as e:
         log.debug(f"Google News RSS failed for {ticker}: {e}")
 
-    # --- Source 3: yfinance ---
+    # --- Source 3: yfinance via resilient wrapper ---
     try:
-        t    = yf.Ticker(ticker)
-        news = t.news or []
+        from features.yf_resilient import _retry_yf_call
+        def _get_news():
+            import yfinance as yf
+            return yf.Ticker(ticker).news or []
+        news = _retry_yf_call(_get_news, label=f"yf.Ticker({ticker}).news") or []
+        t = None  # not needed below
         for item in news[:15]:
             inner   = item.get("content", item)
             pub_str = inner.get("pubDate", "") or inner.get("displayTime", "")

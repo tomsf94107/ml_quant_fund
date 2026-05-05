@@ -13,7 +13,10 @@ from datetime import datetime, date
 from pathlib import Path
 
 import requests
-import yfinance as yf
+import yfinance as yf  # KEEP for type compat
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from features.yf_resilient import safe_yf_download
 import pandas as pd
 import pytz
 
@@ -77,7 +80,7 @@ def send_alert(title: str, message: str, level: str = "WARNING"):
 
 def check_vix_spike() -> tuple:
     try:
-        vix = yf.download("^VIX", period="1d", interval="1m", progress=False, auto_adjust=True)
+        vix = safe_yf_download(["^VIX"], period="1d", interval="1m", auto_adjust=True) or pd.DataFrame()
         if vix.empty or len(vix) < 5:
             return False, "VIX: no data"
         if hasattr(vix.columns, "get_level_values"):
@@ -136,7 +139,7 @@ def check_put_sweeps() -> tuple:
 
 def check_spy_vwap() -> tuple:
     try:
-        spy = yf.download("SPY", period="1d", interval="5m", progress=False, auto_adjust=True)
+        spy = safe_yf_download(["SPY"], period="1d", interval="5m", auto_adjust=True) or pd.DataFrame()
         if spy.empty or len(spy) < 10:
             return False, "VWAP: no data"
         if hasattr(spy.columns, "get_level_values"):

@@ -44,10 +44,12 @@ def _init_db(conn):
     conn.commit()
 
 def _get_headlines(ticker: str, days_back: int = 3) -> list[str]:
-    """Fetch recent news headlines for a ticker via yfinance."""
+    """Fetch recent news headlines via yf_resilient (May 5 2026 — DNS leak fix)."""
     try:
-        t = yf.Ticker(ticker)
-        news = t.news or []
+        from features.yf_resilient import _retry_yf_call
+        def _get_news():
+            return yf.Ticker(ticker).news or []
+        news = _retry_yf_call(_get_news, label=f"yf.Ticker({ticker}).news") or []
         cutoff = datetime.now() - timedelta(days=days_back)
         headlines = []
         for item in news[:10]:

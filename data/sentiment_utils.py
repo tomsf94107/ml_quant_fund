@@ -132,8 +132,12 @@ def _google_news_titles(ticker: str, max_items: int = 50) -> List[str]:
 # Yahoo Finance
 # ------------------------------------------------------------------
 def _yahoo_finance_titles(ticker: str) -> List[str]:
+    """Yahoo news via yf_resilient (May 5 2026 — DNS leak fix)."""
     try:
-        items = yf.Ticker(ticker).news or []
+        from features.yf_resilient import _retry_yf_call
+        def _get_news():
+            return yf.Ticker(ticker).news or []
+        items = _retry_yf_call(_get_news, label=f"yf.Ticker({ticker}).news") or []
         return [n.get("title","") for n in items if n.get("title")]
     except Exception as ex:
         print(f"❌ Yahoo news error for {ticker}: {ex}")

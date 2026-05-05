@@ -64,7 +64,13 @@ def get_analyst_revisions(ticker: str) -> dict:
     }
 
     try:
-        tkr  = yf.Ticker(ticker)
+        # yf_resilient wrapper — May 5 2026 (curl_cffi DNS exhaustion fix)
+        from features.yf_resilient import _retry_yf_call
+        def _make_ticker():
+            return yf.Ticker(ticker)
+        tkr  = _retry_yf_call(_make_ticker, label=f"yf.Ticker({ticker})")
+        if tkr is None:
+            return result
         info = tkr.info
 
         # Current price

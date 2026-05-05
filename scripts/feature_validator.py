@@ -40,7 +40,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytz
-import yfinance as yf
+import yfinance as yf  # KEEP for type compat — only used via yf_resilient now
+from features.yf_resilient import safe_yf_download
 
 sys.path.insert(0, ".")
 
@@ -89,7 +90,7 @@ def desktop_alert(title: str, message: str):
 def fetch_latest(ticker: str) -> dict | None:
     """Fetch latest OHLCV + return for a ticker."""
     try:
-        raw = yf.download(ticker, period="5d", auto_adjust=True, progress=False)
+        raw = safe_yf_download([ticker], period="5d", auto_adjust=True) or pd.DataFrame()
         if raw.empty:
             return None
         if isinstance(raw.columns, pd.MultiIndex):
@@ -402,7 +403,7 @@ def check_all_ticker_prices() -> dict:
 
     # Step 1 — fetch all prices in one batch call
     try:
-        raw = yf.download(tickers, period="3d", auto_adjust=True, progress=False)
+        raw = safe_yf_download(tickers, period="3d", auto_adjust=True) or pd.DataFrame()
         if isinstance(raw.columns, pd.MultiIndex):
             if "Close" in raw.columns.get_level_values(0):
                 closes = raw["Close"].copy()
@@ -423,7 +424,7 @@ def check_all_ticker_prices() -> dict:
             log(f"  Retrying {len(missing_now)} missing tickers individually...")
             for t in missing_now:
                 try:
-                    r = yf.download(t, period="3d", auto_adjust=True, progress=False)
+                    r = safe_yf_download([t], period="3d", auto_adjust=True) or pd.DataFrame()
                     if not r.empty:
                         if isinstance(r.columns, pd.MultiIndex):
                             r.columns = r.columns.get_level_values(0)

@@ -4,7 +4,7 @@ momentum, VWAP deviation, RSI, volume surge for 1hr/2hr/4hr horizons.
 """
 import pandas as pd
 import numpy as np
-import yfinance as yf
+# yfinance import removed May 5 2026 — uses massive_client.mc for OHLCV
 from features import massive_client as mc
 from datetime import datetime
 import pytz

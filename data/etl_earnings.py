@@ -77,12 +77,14 @@ def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _fetch_earnings(ticker: str) -> tuple[pd.DataFrame, Optional[date]]:
-    """
-    Fetch earnings history and next earnings date from yfinance.
-    Returns (history_df, next_date).
-    """
+    """Fetch earnings via yf_resilient (May 5 2026 — DNS leak fix)."""
     try:
-        t = yf.Ticker(ticker)
+        from features.yf_resilient import _retry_yf_call
+        def _make_ticker():
+            return yf.Ticker(ticker)
+        t = _retry_yf_call(_make_ticker, label=f"yf.Ticker({ticker}) earnings")
+        if t is None:
+            return pd.DataFrame(), None
 
         # Earnings history
         hist = t.earnings_history

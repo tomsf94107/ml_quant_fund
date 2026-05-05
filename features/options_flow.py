@@ -134,14 +134,22 @@ def get_options_signal(
     }
 
     try:
-        import yfinance as yf
-        tkr = yf.Ticker(ticker)
+        # Use yf_resilient to prevent curl_cffi DNS exhaustion (May 5 2026)
+        from features.yf_resilient import _retry_yf_call, safe_ticker_history
+        def _make_ticker():
+            import yfinance as yf
+            return yf.Ticker(ticker)
+        tkr = _retry_yf_call(_make_ticker, label=f"yf.Ticker({ticker})")
+        if tkr is None:
+            result["error"] = "yf.Ticker creation failed"
+            return result
 
-        # Get current price if not provided
+        # Get current price if not provided — use safe wrapper
         if current_price is None:
             try:
-                hist = tkr.history(period="1d")
-                current_price = float(hist["Close"].iloc[-1]) if not hist.empty else None
+                hist = safe_ticker_history(ticker, period="1d")
+                if hist is not None and not hist.empty:
+                    current_price = float(hist["Close"].iloc[-1])
             except Exception:
                 pass
 

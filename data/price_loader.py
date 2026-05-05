@@ -40,19 +40,20 @@ def load_prices(
     if end_date is None:
         end_date = datetime.today().strftime("%Y-%m-%d")
 
+    # yf_resilient wrapper — May 5 2026 (curl_cffi DNS exhaustion fix)
     try:
-        raw = yf.download(
-            ticker,
+        from features.yf_resilient import safe_yf_download
+        raw = safe_yf_download(
+            [ticker],
             start=str(start_date),
             end=str(end_date),
             auto_adjust=True,
-            progress=False,
         )
     except Exception as e:
         print(f"  ⚠ yfinance download failed for {ticker}: {e}")
         return pd.DataFrame()
 
-    if raw.empty:
+    if raw is None or raw.empty:
         return pd.DataFrame()
 
     # Flatten MultiIndex columns (yfinance quirk with single ticker)

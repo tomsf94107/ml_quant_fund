@@ -43,7 +43,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytz
-import yfinance as yf
+import yfinance as yf  # KEEP for type compat — only used via yf_resilient now
+from features.yf_resilient import safe_yf_download
 
 # ── Config ────────────────────────────────────────────────────────────────────
 DB_PATH        = Path("accuracy.db")
@@ -82,16 +83,15 @@ def is_trading_day(d: date) -> bool:
 
 
 def fetch_prices(ticker: str, start: date, end: date) -> pd.DataFrame | None:
-    """Fetch OHLCV from yfinance with timezone-normalized index."""
+    """Fetch OHLCV via yf_resilient (May 5 2026 — prevents curl_cffi DNS leak)."""
     try:
-        raw = yf.download(
-            ticker,
+        raw = safe_yf_download(
+            [ticker],
             start=str(start - timedelta(days=5)),
             end=str(end + timedelta(days=2)),
             auto_adjust=True,
-            progress=False,
         )
-        if raw.empty:
+        if raw is None or raw.empty:
             return None
         if isinstance(raw.columns, pd.MultiIndex):
             raw.columns = raw.columns.get_level_values(0)
@@ -336,7 +336,7 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
 
     for ticker in tickers:
         try:
-            raw = yf.download(ticker, period="5d", auto_adjust=True, progress=False)
+            raw = safe_yf_download([ticker], period="5d", auto_adjust=True) or pd.DataFrame()
             if raw.empty:
                 delisted.append(ticker)
         except Exception:
