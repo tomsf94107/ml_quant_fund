@@ -190,7 +190,7 @@ def send_email_alert(buy_signals: list[dict]):
 #  MAIN RUNNER
 # ══════════════════════════════════════════════════════════════════════════════
 
-def run_daily(force: bool = False):
+def run_daily(force: bool = False, start_from: str = None):
     run_date = today_et()
     log.info(f"{'='*60}")
     log.info(f"  Daily Runner — {run_date}")
@@ -205,6 +205,15 @@ def run_daily(force: bool = False):
 
     tickers = load_tickers()
     log.info(f"Tickers: {len(tickers)}")
+
+    # start_from support — May 5 2026 (resume after crash)
+    if start_from is not None:
+        if start_from in tickers:
+            idx = tickers.index(start_from)
+            tickers = tickers[idx:]
+            log.info(f"Starting from {start_from} (skipping first {idx} tickers, {len(tickers)} remaining)")
+        else:
+            log.warning(f"start_from={start_from} not in tickers list — running all")
 
     # Get regime
     regime = get_regime_info()
@@ -445,16 +454,34 @@ def run_daily(force: bool = False):
     log.info(f"  Summary saved → {summary_path}")
 
     # Save dashboard cache (data/signals_cache.json) — loaded by default in 1_Dashboard.py
+    # MERGE-MODE May 5 2026: if cache already exists for the same date, merge new
+    # results in instead of overwriting. Protects against partial runs (e.g. resume
+    # via start_from=) wiping out earlier ticker data.
     cache_path = ROOT / "data" / "signals_cache.json"
     cache_path.parent.mkdir(parents=True, exist_ok=True)
+
+    merged_signals = list(results)
+    if cache_path.exists():
+        try:
+            with open(cache_path) as f:
+                existing = json.load(f)
+            if existing.get("date") == run_date and isinstance(existing.get("signals"), list):
+                new_keys = {(s.get("ticker"), s.get("horizon")) for s in results}
+                preserved = [s for s in existing["signals"]
+                             if (s.get("ticker"), s.get("horizon")) not in new_keys]
+                merged_signals = preserved + list(results)
+                log.info(f"  Cache merge: {len(preserved)} preserved + {len(results)} new = {len(merged_signals)} total")
+        except Exception as e:
+            log.warning(f"  Cache merge failed, will overwrite: {e}")
+
     dashboard_cache = {
         "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
         "date":         run_date,
-        "signals":      results,
+        "signals":      merged_signals,
     }
     with open(cache_path, "w") as f:
         json.dump(dashboard_cache, f, indent=2)
-    log.info(f"  Dashboard cache saved → {cache_path}")
+    log.info(f"  Dashboard cache saved → {cache_path} ({len(merged_signals)} signals)")
 
     # ── Watchlist predictions (no accuracy logging) ────────────────
     watchlist = load_watchlist()
