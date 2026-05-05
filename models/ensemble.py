@@ -22,7 +22,7 @@ import joblib
 
 from functools import lru_cache as _lru_cache
 
-@_lru_cache(maxsize=None)
+@_lru_cache(maxsize=20)
 def _cached_joblib_load(path_str):
     """Cache joblib.load results across calls. Models are immutable post-train.
     
