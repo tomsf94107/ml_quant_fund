@@ -15,6 +15,7 @@
 from __future__ import annotations
 import json
 import os
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")  # MUST be before transformers/torch import
 import time
 import warnings
 from datetime import datetime, timedelta
@@ -390,7 +391,8 @@ def _run_finbert(text: str) -> float:
     global _FINBERT_PIPE
     try:
         if _FINBERT_PIPE is None:
-            import torch
+            import os, torch
+            os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")  # prevent fork+threads deadlock
             # Force single-threaded — prevents PyTorch thread pool deadlock when
             # _run_finbert is called from inside ThreadPoolExecutor (which is
             # how features/builder.py wraps get_earnings_call_sentiment).

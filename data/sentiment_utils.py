@@ -21,6 +21,8 @@ from typing import List, Dict
 
 import feedparser            # RSS/Atom parser (pure-python)
 import yfinance as yf        # Yahoo Finance client
+import os
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")  # MUST be before transformers import
 import torch
 from transformers import (
     AutoTokenizer,

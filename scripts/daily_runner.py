@@ -1,3 +1,6 @@
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 #!/usr/bin/env python3
 # scripts/daily_runner.py
 # ─────────────────────────────────────────────────────────────────────────────
@@ -210,13 +213,65 @@ def run_daily(force: bool = False):
     results       = []
     failed        = []
 
+    # Memory diagnostic added May 5 2026 — find secondary leak after
+    # FinBERT MPS fix (commits 06bab4d + 25004eb). RSS was growing
+    # ~17MB/ticker, OOM-killing process at ticker 59-65.
+    # Set DAILY_RUNNER_FORCE_GC=1 to also try gc.collect() each iter.
+    import os as _mem_os
+    import gc as _mem_gc
+    import subprocess as _mem_sp
+    _MEM_FORCE_GC = _mem_os.environ.get("DAILY_RUNNER_FORCE_GC", "0") == "1"
+
+    def _mem_rss_mb():
+        try:
+            r = _mem_sp.run(["ps", "-o", "rss=", "-p", str(_mem_os.getpid())],
+                            capture_output=True, text=True, timeout=2)
+            return int(r.stdout.strip()) // 1024
+        except Exception:
+            return -1
+
+    _mem_start = _mem_rss_mb()
+    log.info(f"[mem] LOOP START RSS={_mem_start}MB force_gc={_MEM_FORCE_GC}")
+
     for i, ticker in enumerate(tickers, 1):
+        # Memory log AFTER previous ticker completed (skipped on i=1)
+        if i > 1:
+            _mem_curr = _mem_rss_mb()
+            _mem_delta = _mem_curr - _mem_start
+            _mem_per = _mem_delta / (i - 1)
+            log.info(f"[mem] before-ticker-{i} RSS={_mem_curr}MB total_delta=+{_mem_delta}MB avg=+{_mem_per:.1f}MB/ticker")
+            if _MEM_FORCE_GC:
+                _mem_gc.collect()
+                _mem_post_gc = _mem_rss_mb()
+                _mem_freed = _mem_curr - _mem_post_gc
+                log.info(f"[mem] post-gc RSS={_mem_post_gc}MB freed={_mem_freed}MB")
+
         log.info(f"[{i:2d}/{len(tickers)}] {ticker}")
 
         try:
             from features.builder import build_feature_dataframe
             from signals.generator import generate_signals
             from signals.position_sizer import get_position_size, get_portfolio_value, format_plan, get_portfolio_plan
+
+            # Pre-check: skip tickers with no Massive data BEFORE triggering
+            # any feature build. Otherwise the yfinance fallback chain runs,
+            # exhausts curl_cffi thread pool, and crashes the process at the
+            # next ^VIX download. Added May 5 2026 (USAR/XYZ killed runs at
+            # ticker 86 silently via getaddrinfo() thread failure).
+            try:
+                from features import massive_client as _mc_check
+                _check_df = _mc_check.download(ticker, start="2024-12-01", end="2025-01-01",
+                                                auto_adjust=True, progress=False)
+                if _check_df.empty:
+                    log.warning(f"  ⚠ {ticker} has no Massive data — skipping (avoid yfinance fallback chain)")
+                    failed.append(ticker)
+                    time.sleep(SLEEP_BETWEEN)
+                    continue
+            except Exception as _check_e:
+                log.warning(f"  ⚠ {ticker} pre-check failed: {_check_e} — skipping")
+                failed.append(ticker)
+                time.sleep(SLEEP_BETWEEN)
+                continue
 
             df = build_feature_dataframe(ticker, start_date=TRAIN_START)
 
