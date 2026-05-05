@@ -188,13 +188,23 @@ def download(
 
 
 def _download_yfinance(ticker, start_str, end_str, interval, auto_adjust):
-    """Fallback fetch via yfinance for index symbols not in Massive."""
-    import yfinance as yf
-    df = yf.download(ticker, start=start_str, end=end_str,
-                     interval=interval, auto_adjust=auto_adjust, progress=False)
-    if df.empty:
+    """Fallback fetch via yfinance for index symbols not in Massive.
+
+    May 5 2026: Routes through yf_resilient.safe_yf_download instead of raw
+    yf.download. Prevents curl_cffi DNS thread pool exhaustion that was
+    crashing daily_runner mid-run with 'getaddrinfo() thread failed to start'.
+
+    safe_yf_download pre-checks DNS, returns None on failure, retries with
+    backoff. Memory #29 protocol: fixing the underlying primitive protects
+    all callers (builder._get_macro_cached, regime_classifier, etc.) instead
+    of patching individual call sites.
+    """
+    from features.yf_resilient import safe_yf_download
+    df = safe_yf_download([ticker], start=start_str, end=end_str,
+                          interval=interval, auto_adjust=auto_adjust)
+    if df is None or df.empty:
         return pd.DataFrame(columns=["Open", "High", "Low", "Close", "Volume"])
-    # Flatten MultiIndex if yfinance returned one
+    # Flatten MultiIndex if returned (multi-ticker calls have it)
     if isinstance(df.columns, pd.MultiIndex):
         df.columns = df.columns.get_level_values(0)
     df.index.name = "Date"
