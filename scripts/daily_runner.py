@@ -1,6 +1,3 @@
-import os
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
-
 #!/usr/bin/env python3
 # scripts/daily_runner.py
 # ─────────────────────────────────────────────────────────────────────────────
@@ -22,6 +19,11 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 # ─────────────────────────────────────────────────────────────────────────────
 
 from __future__ import annotations
+
+# Set BEFORE any transformers/HuggingFace imports load.
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
