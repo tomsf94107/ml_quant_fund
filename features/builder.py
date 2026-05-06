@@ -204,6 +204,36 @@ def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
 # Was causing curl_cffi DNS thread exhaustion ~ticker 47 (May 2 2026 incident).
 _MACRO_CACHE: dict[str, "pd.DataFrame"] = {}
 
+# ── Provider circuit breaker (May 6 2026) ─────────────────────────────────
+# Per ChatGPT walk-forward consult. When a provider+symbol fetch fails,
+# mark it disabled for 30 min. Prevents walk-forward (~thousands of calls)
+# from hitting the same doomed call repeatedly.
+import time as _time_mod
+_PROVIDER_FAILURE_CACHE: dict[tuple[str, str], tuple[float, str]] = {}
+_PROVIDER_FAILURE_TTL = 30 * 60  # 30 minutes
+
+
+def _provider_disabled(provider: str, symbol: str) -> bool:
+    """Check if (provider, symbol) is in failure cooldown."""
+    key = (provider, symbol)
+    item = _PROVIDER_FAILURE_CACHE.get(key)
+    if not item:
+        return False
+    failed_at, _err = item
+    if _time_mod.time() - failed_at > _PROVIDER_FAILURE_TTL:
+        _PROVIDER_FAILURE_CACHE.pop(key, None)
+        return False
+    return True
+
+
+def _mark_provider_failure(provider: str, symbol: str, err: Exception) -> None:
+    """Mark (provider, symbol) as failed; will skip for 30 min."""
+    _PROVIDER_FAILURE_CACHE[(provider, symbol)] = (_time_mod.time(), repr(err))
+    import logging
+    logging.getLogger(__name__).warning(
+        f"provider.circuit_mark provider={provider} symbol={symbol} err={err!r}"
+    )
+
 
 def _get_macro_cached(symbol: str, start: str, end: str) -> "pd.DataFrame":
     """Fetch a macro symbol via mc.download, cached for the process lifetime.
@@ -219,13 +249,24 @@ def _get_macro_cached(symbol: str, start: str, end: str) -> "pd.DataFrame":
     widest range is correct.
     """
     if symbol not in _MACRO_CACHE:
+        # Circuit breaker: skip if recently failed (May 6 2026)
+        if _provider_disabled("macro", symbol):
+            import logging
+            logging.getLogger(__name__).warning(
+                f"_get_macro_cached: skipping {symbol} (in failure cooldown)"
+            )
+            return pd.DataFrame()
         # First call for this symbol — fetch widest range (start through today)
         from datetime import date as _date
         widest_end = _date.today().strftime("%Y-%m-%d")
-        _MACRO_CACHE[symbol] = mc.download(
-            symbol, start=start, end=widest_end,
-            auto_adjust=True, progress=False,
-        )
+        try:
+            _MACRO_CACHE[symbol] = mc.download(
+                symbol, start=start, end=widest_end,
+                auto_adjust=True, progress=False,
+            )
+        except Exception as e:
+            _mark_provider_failure("macro", symbol, e)
+            _MACRO_CACHE[symbol] = pd.DataFrame()  # cache the empty so we don't retry
 
     full = _MACRO_CACHE[symbol]
     if full is None or full.empty:
