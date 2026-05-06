@@ -190,7 +190,7 @@ def send_email_alert(buy_signals: list[dict]):
 #  MAIN RUNNER
 # ══════════════════════════════════════════════════════════════════════════════
 
-def run_daily(force: bool = False, start_from: str = None):
+def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
     run_date = today_et()
     log.info(f"{'='*60}")
     log.info(f"  Daily Runner — {run_date}")
@@ -214,6 +214,15 @@ def run_daily(force: bool = False, start_from: str = None):
             log.info(f"Starting from {start_from} (skipping first {idx} tickers, {len(tickers)} remaining)")
         else:
             log.warning(f"start_from={start_from} not in tickers list — running all")
+
+    # end_at support — May 6 2026 (subprocess batching)
+    if end_at is not None:
+        if end_at in tickers:
+            idx_end = tickers.index(end_at)
+            tickers = tickers[:idx_end + 1]  # inclusive
+            log.info(f"Stopping at {end_at} (inclusive). Batch size: {len(tickers)}")
+        else:
+            log.warning(f"end_at={end_at} not in tickers list — running to end")
 
     # Get regime
     regime = get_regime_info()
