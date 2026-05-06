@@ -1,0 +1,3383 @@
+{
+  "generated_at": "2026-05-01T00:55:14.848302",
+  "date": "2026-04-30",
+  "use_sentiment": false,
+  "label": "A_sentiment_off",
+  "signals": [
+    {
+      "ticker": "AAPL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5469,
+      "prob_eff": 0.6189,
+      "run_date": "2026-04-30",
+      "current_price": 272.42
+    },
+    {
+      "ticker": "AAPL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4616,
+      "prob_eff": 0.5224,
+      "run_date": "2026-04-30",
+      "current_price": 272.42
+    },
+    {
+      "ticker": "AAPL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5489,
+      "prob_eff": 0.6212,
+      "run_date": "2026-04-30",
+      "current_price": 272.42
+    },
+    {
+      "ticker": "ABNB",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5184,
+      "prob_eff": 0.512,
+      "run_date": "2026-04-30",
+      "current_price": 140.77
+    },
+    {
+      "ticker": "ABNB",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5393,
+      "prob_eff": 0.5325,
+      "run_date": "2026-04-30",
+      "current_price": 140.77
+    },
+    {
+      "ticker": "ABNB",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4556,
+      "prob_eff": 0.4499,
+      "run_date": "2026-04-30",
+      "current_price": 140.77
+    },
+    {
+      "ticker": "ABT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5646,
+      "prob_eff": 0.5801,
+      "run_date": "2026-04-30",
+      "current_price": 90.61
+    },
+    {
+      "ticker": "ABT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5656,
+      "prob_eff": 0.5811,
+      "run_date": "2026-04-30",
+      "current_price": 90.61
+    },
+    {
+      "ticker": "ABT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5134,
+      "prob_eff": 0.5275,
+      "run_date": "2026-04-30",
+      "current_price": 90.61
+    },
+    {
+      "ticker": "ADSK",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5415,
+      "prob_eff": 0.5564,
+      "run_date": "2026-04-30",
+      "current_price": 235.92
+    },
+    {
+      "ticker": "ADSK",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5192,
+      "prob_eff": 0.5335,
+      "run_date": "2026-04-30",
+      "current_price": 235.92
+    },
+    {
+      "ticker": "ADSK",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4842,
+      "prob_eff": 0.4975,
+      "run_date": "2026-04-30",
+      "current_price": 235.92
+    },
+    {
+      "ticker": "AI",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4545,
+      "prob_eff": 0.5276,
+      "run_date": "2026-04-30",
+      "current_price": 8.86
+    },
+    {
+      "ticker": "AI",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3253,
+      "prob_eff": 0.3777,
+      "run_date": "2026-04-30",
+      "current_price": 8.86
+    },
+    {
+      "ticker": "AI",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3755,
+      "prob_eff": 0.4359,
+      "run_date": "2026-04-30",
+      "current_price": 8.86
+    },
+    {
+      "ticker": "ALAB",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.54,
+      "prob_eff": 0.5826,
+      "run_date": "2026-04-30",
+      "current_price": 194.3
+    },
+    {
+      "ticker": "ALAB",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6235,
+      "prob_eff": 0.6726,
+      "run_date": "2026-04-30",
+      "current_price": 194.3
+    },
+    {
+      "ticker": "ALAB",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5895,
+      "prob_eff": 0.6359,
+      "run_date": "2026-04-30",
+      "current_price": 194.3
+    },
+    {
+      "ticker": "ALK",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5038,
+      "prob_eff": 0.5118,
+      "run_date": "2026-04-30",
+      "current_price": 39.08
+    },
+    {
+      "ticker": "ALK",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5318,
+      "prob_eff": 0.5403,
+      "run_date": "2026-04-30",
+      "current_price": 39.08
+    },
+    {
+      "ticker": "ALK",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.556,
+      "prob_eff": 0.5649,
+      "run_date": "2026-04-30",
+      "current_price": 39.08
+    },
+    {
+      "ticker": "AMAT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5388,
+      "prob_eff": 0.5213,
+      "run_date": "2026-04-30",
+      "current_price": 390.64
+    },
+    {
+      "ticker": "AMAT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5472,
+      "prob_eff": 0.5295,
+      "run_date": "2026-04-30",
+      "current_price": 390.64
+    },
+    {
+      "ticker": "AMAT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.575,
+      "prob_eff": 0.5564,
+      "run_date": "2026-04-30",
+      "current_price": 390.64
+    },
+    {
+      "ticker": "AMD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5824,
+      "prob_eff": 0.5752,
+      "run_date": "2026-04-30",
+      "current_price": 348.27
+    },
+    {
+      "ticker": "AMD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5257,
+      "prob_eff": 0.5191,
+      "run_date": "2026-04-30",
+      "current_price": 348.27
+    },
+    {
+      "ticker": "AMD",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5138,
+      "prob_eff": 0.5074,
+      "run_date": "2026-04-30",
+      "current_price": 348.27
+    },
+    {
+      "ticker": "AMPX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4161,
+      "prob_eff": 0.3848,
+      "run_date": "2026-04-30",
+      "current_price": 21.02
+    },
+    {
+      "ticker": "AMPX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4987,
+      "prob_eff": 0.4611,
+      "run_date": "2026-04-30",
+      "current_price": 21.02
+    },
+    {
+      "ticker": "AMPX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4425,
+      "prob_eff": 0.4092,
+      "run_date": "2026-04-30",
+      "current_price": 21.02
+    },
+    {
+      "ticker": "AMZN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.432,
+      "prob_eff": 0.4347,
+      "run_date": "2026-04-30",
+      "current_price": 259.39
+    },
+    {
+      "ticker": "AMZN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3907,
+      "prob_eff": 0.3932,
+      "run_date": "2026-04-30",
+      "current_price": 259.39
+    },
+    {
+      "ticker": "AMZN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3542,
+      "prob_eff": 0.3564,
+      "run_date": "2026-04-30",
+      "current_price": 259.39
+    },
+    {
+      "ticker": "ANET",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5208,
+      "prob_eff": 0.5247,
+      "run_date": "2026-04-30",
+      "current_price": 170.9
+    },
+    {
+      "ticker": "ANET",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5458,
+      "prob_eff": 0.5499,
+      "run_date": "2026-04-30",
+      "current_price": 170.9
+    },
+    {
+      "ticker": "ANET",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.555,
+      "prob_eff": 0.5592,
+      "run_date": "2026-04-30",
+      "current_price": 170.9
+    },
+    {
+      "ticker": "APD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5227,
+      "prob_eff": 0.5162,
+      "run_date": "2026-04-30",
+      "current_price": 295.18
+    },
+    {
+      "ticker": "APD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6136,
+      "prob_eff": 0.6059,
+      "run_date": "2026-04-30",
+      "current_price": 295.18
+    },
+    {
+      "ticker": "APD",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.7033,
+      "prob_eff": 0.6945,
+      "run_date": "2026-04-30",
+      "current_price": 295.18
+    },
+    {
+      "ticker": "APLD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4558,
+      "prob_eff": 0.4917,
+      "run_date": "2026-04-30",
+      "current_price": 34.7
+    },
+    {
+      "ticker": "APLD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3129,
+      "prob_eff": 0.3376,
+      "run_date": "2026-04-30",
+      "current_price": 34.7
+    },
+    {
+      "ticker": "APLD",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3399,
+      "prob_eff": 0.3667,
+      "run_date": "2026-04-30",
+      "current_price": 34.7
+    },
+    {
+      "ticker": "ARM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4261,
+      "prob_eff": 0.4292,
+      "run_date": "2026-04-30",
+      "current_price": 214.37
+    },
+    {
+      "ticker": "ARM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.528,
+      "prob_eff": 0.532,
+      "run_date": "2026-04-30",
+      "current_price": 214.37
+    },
+    {
+      "ticker": "ARM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5568,
+      "prob_eff": 0.561,
+      "run_date": "2026-04-30",
+      "current_price": 214.37
+    },
+    {
+      "ticker": "ASAN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5069,
+      "prob_eff": 0.5468,
+      "run_date": "2026-04-30",
+      "current_price": 6.3
+    },
+    {
+      "ticker": "ASAN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.53,
+      "prob_eff": 0.5718,
+      "run_date": "2026-04-30",
+      "current_price": 6.3
+    },
+    {
+      "ticker": "ASAN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4154,
+      "prob_eff": 0.4481,
+      "run_date": "2026-04-30",
+      "current_price": 6.3
+    },
+    {
+      "ticker": "ASML",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5405,
+      "prob_eff": 0.5445,
+      "run_date": "2026-04-30",
+      "current_price": 1437.17
+    },
+    {
+      "ticker": "ASML",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4672,
+      "prob_eff": 0.4707,
+      "run_date": "2026-04-30",
+      "current_price": 1437.17
+    },
+    {
+      "ticker": "ASML",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5015,
+      "prob_eff": 0.5053,
+      "run_date": "2026-04-30",
+      "current_price": 1437.17
+    },
+    {
+      "ticker": "ASTS",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5113,
+      "prob_eff": 0.5627,
+      "run_date": "2026-04-30",
+      "current_price": 72.81
+    },
+    {
+      "ticker": "ASTS",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4983,
+      "prob_eff": 0.5484,
+      "run_date": "2026-04-30",
+      "current_price": 72.81
+    },
+    {
+      "ticker": "ASTS",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.399,
+      "prob_eff": 0.4391,
+      "run_date": "2026-04-30",
+      "current_price": 72.81
+    },
+    {
+      "ticker": "AVGO",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4941,
+      "prob_eff": 0.5077,
+      "run_date": "2026-04-30",
+      "current_price": 413.3
+    },
+    {
+      "ticker": "AVGO",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4409,
+      "prob_eff": 0.453,
+      "run_date": "2026-04-30",
+      "current_price": 413.3
+    },
+    {
+      "ticker": "AVGO",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4466,
+      "prob_eff": 0.4589,
+      "run_date": "2026-04-30",
+      "current_price": 413.3
+    },
+    {
+      "ticker": "AXP",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5221,
+      "prob_eff": 0.5364,
+      "run_date": "2026-04-30",
+      "current_price": 322.44
+    },
+    {
+      "ticker": "AXP",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5962,
+      "prob_eff": 0.6125,
+      "run_date": "2026-04-30",
+      "current_price": 322.44
+    },
+    {
+      "ticker": "AXP",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4552,
+      "prob_eff": 0.4677,
+      "run_date": "2026-04-30",
+      "current_price": 322.44
+    },
+    {
+      "ticker": "AZN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4435,
+      "prob_eff": 0.4557,
+      "run_date": "2026-04-30",
+      "current_price": 189.07
+    },
+    {
+      "ticker": "AZN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5081,
+      "prob_eff": 0.522,
+      "run_date": "2026-04-30",
+      "current_price": 189.07
+    },
+    {
+      "ticker": "AZN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5619,
+      "prob_eff": 0.5773,
+      "run_date": "2026-04-30",
+      "current_price": 189.07
+    },
+    {
+      "ticker": "BA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4888,
+      "prob_eff": 0.4827,
+      "run_date": "2026-04-30",
+      "current_price": 229.09
+    },
+    {
+      "ticker": "BA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6014,
+      "prob_eff": 0.5939,
+      "run_date": "2026-04-30",
+      "current_price": 229.09
+    },
+    {
+      "ticker": "BA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5074,
+      "prob_eff": 0.5011,
+      "run_date": "2026-04-30",
+      "current_price": 229.09
+    },
+    {
+      "ticker": "BETR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5022,
+      "prob_eff": 0.5418,
+      "run_date": "2026-04-30",
+      "current_price": 41.2
+    },
+    {
+      "ticker": "BETR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3686,
+      "prob_eff": 0.3977,
+      "run_date": "2026-04-30",
+      "current_price": 41.2
+    },
+    {
+      "ticker": "BETR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4415,
+      "prob_eff": 0.4763,
+      "run_date": "2026-04-30",
+      "current_price": 41.2
+    },
+    {
+      "ticker": "BRKR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4864,
+      "prob_eff": 0.5146,
+      "run_date": "2026-04-30",
+      "current_price": 35.85
+    },
+    {
+      "ticker": "BRKR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6164,
+      "prob_eff": 0.652,
+      "run_date": "2026-04-30",
+      "current_price": 35.85
+    },
+    {
+      "ticker": "BRKR",
+      "horizon": 5,
+      "signal": "BUY",
+      "prob": 0.7192,
+      "prob_eff": 0.7608,
+      "run_date": "2026-04-30",
+      "current_price": 35.85
+    },
+    {
+      "ticker": "BSX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4601,
+      "prob_eff": 0.4727,
+      "run_date": "2026-04-30",
+      "current_price": 57.16
+    },
+    {
+      "ticker": "BSX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.56,
+      "prob_eff": 0.5753,
+      "run_date": "2026-04-30",
+      "current_price": 57.16
+    },
+    {
+      "ticker": "BSX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5316,
+      "prob_eff": 0.5462,
+      "run_date": "2026-04-30",
+      "current_price": 57.16
+    },
+    {
+      "ticker": "CAVA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5774,
+      "prob_eff": 0.6229,
+      "run_date": "2026-04-30",
+      "current_price": 93.59
+    },
+    {
+      "ticker": "CAVA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4975,
+      "prob_eff": 0.5367,
+      "run_date": "2026-04-30",
+      "current_price": 93.59
+    },
+    {
+      "ticker": "CAVA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6206,
+      "prob_eff": 0.6695,
+      "run_date": "2026-04-30",
+      "current_price": 93.59
+    },
+    {
+      "ticker": "CEG",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5505,
+      "prob_eff": 0.5327,
+      "run_date": "2026-04-30",
+      "current_price": 311.92
+    },
+    {
+      "ticker": "CEG",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5403,
+      "prob_eff": 0.5228,
+      "run_date": "2026-04-30",
+      "current_price": 311.92
+    },
+    {
+      "ticker": "CEG",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4865,
+      "prob_eff": 0.4708,
+      "run_date": "2026-04-30",
+      "current_price": 311.92
+    },
+    {
+      "ticker": "CI",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.526,
+      "prob_eff": 0.5404,
+      "run_date": "2026-04-30",
+      "current_price": 291.1
+    },
+    {
+      "ticker": "CI",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4521,
+      "prob_eff": 0.4645,
+      "run_date": "2026-04-30",
+      "current_price": 291.1
+    },
+    {
+      "ticker": "CI",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.266,
+      "prob_eff": 0.2733,
+      "run_date": "2026-04-30",
+      "current_price": 291.1
+    },
+    {
+      "ticker": "CLS",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5393,
+      "prob_eff": 0.5541,
+      "run_date": "2026-04-30",
+      "current_price": 394.08
+    },
+    {
+      "ticker": "CLS",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5719,
+      "prob_eff": 0.5876,
+      "run_date": "2026-04-30",
+      "current_price": 394.08
+    },
+    {
+      "ticker": "CLS",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.546,
+      "prob_eff": 0.5609,
+      "run_date": "2026-04-30",
+      "current_price": 394.08
+    },
+    {
+      "ticker": "CNC",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5328,
+      "prob_eff": 0.5475,
+      "run_date": "2026-04-30",
+      "current_price": 53.66
+    },
+    {
+      "ticker": "CNC",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4039,
+      "prob_eff": 0.415,
+      "run_date": "2026-04-30",
+      "current_price": 53.66
+    },
+    {
+      "ticker": "CNC",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3694,
+      "prob_eff": 0.3795,
+      "run_date": "2026-04-30",
+      "current_price": 53.66
+    },
+    {
+      "ticker": "COIN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3828,
+      "prob_eff": 0.3933,
+      "run_date": "2026-04-30",
+      "current_price": 186.51
+    },
+    {
+      "ticker": "COIN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5483,
+      "prob_eff": 0.5633,
+      "run_date": "2026-04-30",
+      "current_price": 186.51
+    },
+    {
+      "ticker": "COIN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5741,
+      "prob_eff": 0.5899,
+      "run_date": "2026-04-30",
+      "current_price": 186.51
+    },
+    {
+      "ticker": "COST",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5012,
+      "prob_eff": 0.515,
+      "run_date": "2026-04-30",
+      "current_price": 1013.0
+    },
+    {
+      "ticker": "COST",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4447,
+      "prob_eff": 0.4569,
+      "run_date": "2026-04-30",
+      "current_price": 1013.0
+    },
+    {
+      "ticker": "COST",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5026,
+      "prob_eff": 0.5164,
+      "run_date": "2026-04-30",
+      "current_price": 1013.0
+    },
+    {
+      "ticker": "CRM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5484,
+      "prob_eff": 0.5572,
+      "run_date": "2026-04-30",
+      "current_price": 175.46
+    },
+    {
+      "ticker": "CRM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4991,
+      "prob_eff": 0.5071,
+      "run_date": "2026-04-30",
+      "current_price": 175.46
+    },
+    {
+      "ticker": "CRM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4241,
+      "prob_eff": 0.4309,
+      "run_date": "2026-04-30",
+      "current_price": 175.46
+    },
+    {
+      "ticker": "CRWD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5313,
+      "prob_eff": 0.5458,
+      "run_date": "2026-04-30",
+      "current_price": 443.63
+    },
+    {
+      "ticker": "CRWD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6205,
+      "prob_eff": 0.6375,
+      "run_date": "2026-04-30",
+      "current_price": 443.63
+    },
+    {
+      "ticker": "CRWD",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5497,
+      "prob_eff": 0.5648,
+      "run_date": "2026-04-30",
+      "current_price": 443.63
+    },
+    {
+      "ticker": "DDOG",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5412,
+      "prob_eff": 0.5236,
+      "run_date": "2026-04-30",
+      "current_price": 132.43
+    },
+    {
+      "ticker": "DDOG",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4539,
+      "prob_eff": 0.4392,
+      "run_date": "2026-04-30",
+      "current_price": 132.43
+    },
+    {
+      "ticker": "DDOG",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.505,
+      "prob_eff": 0.4886,
+      "run_date": "2026-04-30",
+      "current_price": 132.43
+    },
+    {
+      "ticker": "DLR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4406,
+      "prob_eff": 0.4263,
+      "run_date": "2026-04-30",
+      "current_price": 199.09
+    },
+    {
+      "ticker": "DLR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3674,
+      "prob_eff": 0.3555,
+      "run_date": "2026-04-30",
+      "current_price": 199.09
+    },
+    {
+      "ticker": "DLR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4385,
+      "prob_eff": 0.4243,
+      "run_date": "2026-04-30",
+      "current_price": 199.09
+    },
+    {
+      "ticker": "DNA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3894,
+      "prob_eff": 0.412,
+      "run_date": "2026-04-30",
+      "current_price": 8.51
+    },
+    {
+      "ticker": "DNA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.2973,
+      "prob_eff": 0.3145,
+      "run_date": "2026-04-30",
+      "current_price": 8.51
+    },
+    {
+      "ticker": "DNA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.2724,
+      "prob_eff": 0.2881,
+      "run_date": "2026-04-30",
+      "current_price": 8.51
+    },
+    {
+      "ticker": "DUOL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4541,
+      "prob_eff": 0.4899,
+      "run_date": "2026-04-30",
+      "current_price": 108.63
+    },
+    {
+      "ticker": "DUOL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4065,
+      "prob_eff": 0.4385,
+      "run_date": "2026-04-30",
+      "current_price": 108.63
+    },
+    {
+      "ticker": "DUOL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4813,
+      "prob_eff": 0.5192,
+      "run_date": "2026-04-30",
+      "current_price": 108.63
+    },
+    {
+      "ticker": "EME",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6521,
+      "prob_eff": 0.67,
+      "run_date": "2026-04-30",
+      "current_price": 895.78
+    },
+    {
+      "ticker": "EME",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6281,
+      "prob_eff": 0.6454,
+      "run_date": "2026-04-30",
+      "current_price": 895.78
+    },
+    {
+      "ticker": "EME",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6607,
+      "prob_eff": 0.6788,
+      "run_date": "2026-04-30",
+      "current_price": 895.78
+    },
+    {
+      "ticker": "EQIX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5205,
+      "prob_eff": 0.5037,
+      "run_date": "2026-04-30",
+      "current_price": 1069.63
+    },
+    {
+      "ticker": "EQIX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6185,
+      "prob_eff": 0.5984,
+      "run_date": "2026-04-30",
+      "current_price": 1069.63
+    },
+    {
+      "ticker": "EQIX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.595,
+      "prob_eff": 0.5757,
+      "run_date": "2026-04-30",
+      "current_price": 1069.63
+    },
+    {
+      "ticker": "ETN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.525,
+      "prob_eff": 0.508,
+      "run_date": "2026-04-30",
+      "current_price": 430.27
+    },
+    {
+      "ticker": "ETN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5299,
+      "prob_eff": 0.5127,
+      "run_date": "2026-04-30",
+      "current_price": 430.27
+    },
+    {
+      "ticker": "ETN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5309,
+      "prob_eff": 0.5137,
+      "run_date": "2026-04-30",
+      "current_price": 430.27
+    },
+    {
+      "ticker": "ETSY",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4911,
+      "prob_eff": 0.5298,
+      "run_date": "2026-04-30",
+      "current_price": 64.97
+    },
+    {
+      "ticker": "ETSY",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4004,
+      "prob_eff": 0.4319,
+      "run_date": "2026-04-30",
+      "current_price": 64.97
+    },
+    {
+      "ticker": "ETSY",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4409,
+      "prob_eff": 0.4757,
+      "run_date": "2026-04-30",
+      "current_price": 64.97
+    },
+    {
+      "ticker": "FIVN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5039,
+      "prob_eff": 0.4876,
+      "run_date": "2026-04-30",
+      "current_price": 16.86
+    },
+    {
+      "ticker": "FIVN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4766,
+      "prob_eff": 0.4611,
+      "run_date": "2026-04-30",
+      "current_price": 16.86
+    },
+    {
+      "ticker": "FIVN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4626,
+      "prob_eff": 0.4476,
+      "run_date": "2026-04-30",
+      "current_price": 16.86
+    },
+    {
+      "ticker": "FSLY",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4894,
+      "prob_eff": 0.5029,
+      "run_date": "2026-04-30",
+      "current_price": 24.97
+    },
+    {
+      "ticker": "FSLY",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5295,
+      "prob_eff": 0.544,
+      "run_date": "2026-04-30",
+      "current_price": 24.97
+    },
+    {
+      "ticker": "FSLY",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5711,
+      "prob_eff": 0.5868,
+      "run_date": "2026-04-30",
+      "current_price": 24.97
+    },
+    {
+      "ticker": "FTNT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5885,
+      "prob_eff": 0.5562,
+      "run_date": "2026-04-30",
+      "current_price": 84.44
+    },
+    {
+      "ticker": "FTNT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5623,
+      "prob_eff": 0.5315,
+      "run_date": "2026-04-30",
+      "current_price": 84.44
+    },
+    {
+      "ticker": "FTNT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5029,
+      "prob_eff": 0.4753,
+      "run_date": "2026-04-30",
+      "current_price": 84.44
+    },
+    {
+      "ticker": "FVRR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3237,
+      "prob_eff": 0.3492,
+      "run_date": "2026-04-30",
+      "current_price": 11.63
+    },
+    {
+      "ticker": "FVRR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.2554,
+      "prob_eff": 0.2755,
+      "run_date": "2026-04-30",
+      "current_price": 11.63
+    },
+    {
+      "ticker": "FVRR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4331,
+      "prob_eff": 0.4672,
+      "run_date": "2026-04-30",
+      "current_price": 11.63
+    },
+    {
+      "ticker": "GEV",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5265,
+      "prob_eff": 0.5094,
+      "run_date": "2026-04-30",
+      "current_price": 1087.52
+    },
+    {
+      "ticker": "GEV",
+      "horizon": 3,
+      "signal": "BUY",
+      "prob": 0.7888,
+      "prob_eff": 0.7632,
+      "run_date": "2026-04-30",
+      "current_price": 1087.52
+    },
+    {
+      "ticker": "GEV",
+      "horizon": 5,
+      "signal": "BUY",
+      "prob": 0.7305,
+      "prob_eff": 0.7069,
+      "run_date": "2026-04-30",
+      "current_price": 1087.52
+    },
+    {
+      "ticker": "GLD",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5388,
+      "prob_eff": 0.5658,
+      "run_date": "2026-04-30",
+      "current_price": 423.69
+    },
+    {
+      "ticker": "GLD",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6222,
+      "prob_eff": 0.6533,
+      "run_date": "2026-04-30",
+      "current_price": 423.69
+    },
+    {
+      "ticker": "GLD",
+      "horizon": 5,
+      "signal": "BUY",
+      "prob": 0.729,
+      "prob_eff": 0.7655,
+      "run_date": "2026-04-30",
+      "current_price": 423.69
+    },
+    {
+      "ticker": "GM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5172,
+      "prob_eff": 0.5107,
+      "run_date": "2026-04-30",
+      "current_price": 76.92
+    },
+    {
+      "ticker": "GM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5492,
+      "prob_eff": 0.5424,
+      "run_date": "2026-04-30",
+      "current_price": 76.92
+    },
+    {
+      "ticker": "GM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5081,
+      "prob_eff": 0.5018,
+      "run_date": "2026-04-30",
+      "current_price": 76.92
+    },
+    {
+      "ticker": "GME",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3309,
+      "prob_eff": 0.35,
+      "run_date": "2026-04-30",
+      "current_price": 24.61
+    },
+    {
+      "ticker": "GME",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4805,
+      "prob_eff": 0.5083,
+      "run_date": "2026-04-30",
+      "current_price": 24.61
+    },
+    {
+      "ticker": "GME",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4834,
+      "prob_eff": 0.5114,
+      "run_date": "2026-04-30",
+      "current_price": 24.61
+    },
+    {
+      "ticker": "GOOG",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5308,
+      "prob_eff": 0.5342,
+      "run_date": "2026-04-30",
+      "current_price": 374.67
+    },
+    {
+      "ticker": "GOOG",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.59,
+      "prob_eff": 0.5462,
+      "run_date": "2026-04-30",
+      "current_price": 374.67
+    },
+    {
+      "ticker": "GOOG",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5777,
+      "prob_eff": 0.5349,
+      "run_date": "2026-04-30",
+      "current_price": 374.67
+    },
+    {
+      "ticker": "HUM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5421,
+      "prob_eff": 0.557,
+      "run_date": "2026-04-30",
+      "current_price": 239.35
+    },
+    {
+      "ticker": "HUM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5545,
+      "prob_eff": 0.5697,
+      "run_date": "2026-04-30",
+      "current_price": 239.35
+    },
+    {
+      "ticker": "HUM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6719,
+      "prob_eff": 0.6903,
+      "run_date": "2026-04-30",
+      "current_price": 239.35
+    },
+    {
+      "ticker": "HY",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4826,
+      "prob_eff": 0.4959,
+      "run_date": "2026-04-30",
+      "current_price": 39.98
+    },
+    {
+      "ticker": "HY",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5111,
+      "prob_eff": 0.5251,
+      "run_date": "2026-04-30",
+      "current_price": 39.98
+    },
+    {
+      "ticker": "HY",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4551,
+      "prob_eff": 0.4676,
+      "run_date": "2026-04-30",
+      "current_price": 39.98
+    },
+    {
+      "ticker": "INSM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5371,
+      "prob_eff": 0.5518,
+      "run_date": "2026-04-30",
+      "current_price": 136.37
+    },
+    {
+      "ticker": "INSM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5237,
+      "prob_eff": 0.5381,
+      "run_date": "2026-04-30",
+      "current_price": 136.37
+    },
+    {
+      "ticker": "INSM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6248,
+      "prob_eff": 0.642,
+      "run_date": "2026-04-30",
+      "current_price": 136.37
+    },
+    {
+      "ticker": "INTC",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4626,
+      "prob_eff": 0.4943,
+      "run_date": "2026-04-30",
+      "current_price": 93.4
+    },
+    {
+      "ticker": "INTC",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4791,
+      "prob_eff": 0.512,
+      "run_date": "2026-04-30",
+      "current_price": 93.4
+    },
+    {
+      "ticker": "INTC",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4541,
+      "prob_eff": 0.4851,
+      "run_date": "2026-04-30",
+      "current_price": 93.4
+    },
+    {
+      "ticker": "IREN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3772,
+      "prob_eff": 0.3875,
+      "run_date": "2026-04-30",
+      "current_price": 44.03
+    },
+    {
+      "ticker": "IREN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5726,
+      "prob_eff": 0.5883,
+      "run_date": "2026-04-30",
+      "current_price": 44.03
+    },
+    {
+      "ticker": "IREN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4821,
+      "prob_eff": 0.4953,
+      "run_date": "2026-04-30",
+      "current_price": 44.03
+    },
+    {
+      "ticker": "JNJ",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5003,
+      "prob_eff": 0.514,
+      "run_date": "2026-04-30",
+      "current_price": 230.33
+    },
+    {
+      "ticker": "JNJ",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4728,
+      "prob_eff": 0.4858,
+      "run_date": "2026-04-30",
+      "current_price": 230.33
+    },
+    {
+      "ticker": "JNJ",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5017,
+      "prob_eff": 0.5155,
+      "run_date": "2026-04-30",
+      "current_price": 230.33
+    },
+    {
+      "ticker": "KVUE",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5589,
+      "prob_eff": 0.5743,
+      "run_date": "2026-04-30",
+      "current_price": 17.41
+    },
+    {
+      "ticker": "KVUE",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5405,
+      "prob_eff": 0.5553,
+      "run_date": "2026-04-30",
+      "current_price": 17.41
+    },
+    {
+      "ticker": "KVUE",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5666,
+      "prob_eff": 0.5821,
+      "run_date": "2026-04-30",
+      "current_price": 17.41
+    },
+    {
+      "ticker": "LIN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5265,
+      "prob_eff": 0.5094,
+      "run_date": "2026-04-30",
+      "current_price": 506.36
+    },
+    {
+      "ticker": "LIN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6071,
+      "prob_eff": 0.5875,
+      "run_date": "2026-04-30",
+      "current_price": 506.36
+    },
+    {
+      "ticker": "LIN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6056,
+      "prob_eff": 0.586,
+      "run_date": "2026-04-30",
+      "current_price": 506.36
+    },
+    {
+      "ticker": "LLY",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5,
+      "prob_eff": 0.5138,
+      "run_date": "2026-04-30",
+      "current_price": 934.98
+    },
+    {
+      "ticker": "LLY",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3474,
+      "prob_eff": 0.3569,
+      "run_date": "2026-04-30",
+      "current_price": 934.98
+    },
+    {
+      "ticker": "LLY",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5211,
+      "prob_eff": 0.5354,
+      "run_date": "2026-04-30",
+      "current_price": 934.98
+    },
+    {
+      "ticker": "LRCX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5446,
+      "prob_eff": 0.5269,
+      "run_date": "2026-04-30",
+      "current_price": 255.8
+    },
+    {
+      "ticker": "LRCX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5745,
+      "prob_eff": 0.5558,
+      "run_date": "2026-04-30",
+      "current_price": 255.8
+    },
+    {
+      "ticker": "LRCX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6007,
+      "prob_eff": 0.5813,
+      "run_date": "2026-04-30",
+      "current_price": 255.8
+    },
+    {
+      "ticker": "LULU",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5094,
+      "prob_eff": 0.4929,
+      "run_date": "2026-04-30",
+      "current_price": 137.67
+    },
+    {
+      "ticker": "LULU",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4938,
+      "prob_eff": 0.4778,
+      "run_date": "2026-04-30",
+      "current_price": 137.67
+    },
+    {
+      "ticker": "LULU",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5308,
+      "prob_eff": 0.5136,
+      "run_date": "2026-04-30",
+      "current_price": 137.67
+    },
+    {
+      "ticker": "LYFT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5925,
+      "prob_eff": 0.5733,
+      "run_date": "2026-04-30",
+      "current_price": 14.09
+    },
+    {
+      "ticker": "LYFT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.7126,
+      "prob_eff": 0.6895,
+      "run_date": "2026-04-30",
+      "current_price": 14.09
+    },
+    {
+      "ticker": "LYFT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4507,
+      "prob_eff": 0.4361,
+      "run_date": "2026-04-30",
+      "current_price": 14.09
+    },
+    {
+      "ticker": "META",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5496,
+      "prob_eff": 0.5873,
+      "run_date": "2026-04-30",
+      "current_price": 608.0
+    },
+    {
+      "ticker": "META",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5361,
+      "prob_eff": 0.5728,
+      "run_date": "2026-04-30",
+      "current_price": 608.0
+    },
+    {
+      "ticker": "META",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5042,
+      "prob_eff": 0.5387,
+      "run_date": "2026-04-30",
+      "current_price": 608.0
+    },
+    {
+      "ticker": "MNDY",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5219,
+      "prob_eff": 0.5362,
+      "run_date": "2026-04-30",
+      "current_price": 65.15
+    },
+    {
+      "ticker": "MNDY",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4859,
+      "prob_eff": 0.4992,
+      "run_date": "2026-04-30",
+      "current_price": 65.15
+    },
+    {
+      "ticker": "MNDY",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5295,
+      "prob_eff": 0.544,
+      "run_date": "2026-04-30",
+      "current_price": 65.15
+    },
+    {
+      "ticker": "MP",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3813,
+      "prob_eff": 0.3918,
+      "run_date": "2026-04-30",
+      "current_price": 64.25
+    },
+    {
+      "ticker": "MP",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.2017,
+      "prob_eff": 0.2072,
+      "run_date": "2026-04-30",
+      "current_price": 64.25
+    },
+    {
+      "ticker": "MP",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4034,
+      "prob_eff": 0.4145,
+      "run_date": "2026-04-30",
+      "current_price": 64.25
+    },
+    {
+      "ticker": "MRNA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5325,
+      "prob_eff": 0.5633,
+      "run_date": "2026-04-30",
+      "current_price": 46.73
+    },
+    {
+      "ticker": "MRNA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4879,
+      "prob_eff": 0.5161,
+      "run_date": "2026-04-30",
+      "current_price": 46.73
+    },
+    {
+      "ticker": "MRNA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5838,
+      "prob_eff": 0.6175,
+      "run_date": "2026-04-30",
+      "current_price": 46.73
+    },
+    {
+      "ticker": "MRVL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5315,
+      "prob_eff": 0.5355,
+      "run_date": "2026-04-30",
+      "current_price": 164.23
+    },
+    {
+      "ticker": "MRVL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5081,
+      "prob_eff": 0.5119,
+      "run_date": "2026-04-30",
+      "current_price": 164.23
+    },
+    {
+      "ticker": "MRVL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5157,
+      "prob_eff": 0.5195,
+      "run_date": "2026-04-30",
+      "current_price": 164.23
+    },
+    {
+      "ticker": "MSFT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4951,
+      "prob_eff": 0.5137,
+      "run_date": "2026-04-30",
+      "current_price": 399.46
+    },
+    {
+      "ticker": "MSFT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5459,
+      "prob_eff": 0.5664,
+      "run_date": "2026-04-30",
+      "current_price": 399.46
+    },
+    {
+      "ticker": "MSFT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5657,
+      "prob_eff": 0.5868,
+      "run_date": "2026-04-30",
+      "current_price": 399.46
+    },
+    {
+      "ticker": "MU",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4793,
+      "prob_eff": 0.5319,
+      "run_date": "2026-04-30",
+      "current_price": 510.6
+    },
+    {
+      "ticker": "MU",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5867,
+      "prob_eff": 0.6511,
+      "run_date": "2026-04-30",
+      "current_price": 510.6
+    },
+    {
+      "ticker": "MU",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5825,
+      "prob_eff": 0.6463,
+      "run_date": "2026-04-30",
+      "current_price": 510.6
+    },
+    {
+      "ticker": "NET",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5293,
+      "prob_eff": 0.5438,
+      "run_date": "2026-04-30",
+      "current_price": 206.26
+    },
+    {
+      "ticker": "NET",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5843,
+      "prob_eff": 0.6003,
+      "run_date": "2026-04-30",
+      "current_price": 206.26
+    },
+    {
+      "ticker": "NET",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.493,
+      "prob_eff": 0.5065,
+      "run_date": "2026-04-30",
+      "current_price": 206.26
+    },
+    {
+      "ticker": "NFLX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4936,
+      "prob_eff": 0.5071,
+      "run_date": "2026-04-30",
+      "current_price": 93.11
+    },
+    {
+      "ticker": "NFLX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4717,
+      "prob_eff": 0.4847,
+      "run_date": "2026-04-30",
+      "current_price": 93.11
+    },
+    {
+      "ticker": "NFLX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4299,
+      "prob_eff": 0.4417,
+      "run_date": "2026-04-30",
+      "current_price": 93.11
+    },
+    {
+      "ticker": "NIO",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4662,
+      "prob_eff": 0.479,
+      "run_date": "2026-04-30",
+      "current_price": 6.33
+    },
+    {
+      "ticker": "NIO",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4249,
+      "prob_eff": 0.4366,
+      "run_date": "2026-04-30",
+      "current_price": 6.33
+    },
+    {
+      "ticker": "NIO",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4069,
+      "prob_eff": 0.4181,
+      "run_date": "2026-04-30",
+      "current_price": 6.33
+    },
+    {
+      "ticker": "NOK",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.426,
+      "prob_eff": 0.4287,
+      "run_date": "2026-04-30",
+      "current_price": 12.74
+    },
+    {
+      "ticker": "NOK",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4683,
+      "prob_eff": 0.4713,
+      "run_date": "2026-04-30",
+      "current_price": 12.74
+    },
+    {
+      "ticker": "NOK",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4323,
+      "prob_eff": 0.435,
+      "run_date": "2026-04-30",
+      "current_price": 12.74
+    },
+    {
+      "ticker": "NOW",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5483,
+      "prob_eff": 0.5305,
+      "run_date": "2026-04-30",
+      "current_price": 86.74
+    },
+    {
+      "ticker": "NOW",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5269,
+      "prob_eff": 0.5098,
+      "run_date": "2026-04-30",
+      "current_price": 86.74
+    },
+    {
+      "ticker": "NOW",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4728,
+      "prob_eff": 0.4575,
+      "run_date": "2026-04-30",
+      "current_price": 86.74
+    },
+    {
+      "ticker": "NVDA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5442,
+      "prob_eff": 0.5645,
+      "run_date": "2026-04-30",
+      "current_price": 200.5
+    },
+    {
+      "ticker": "NVDA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6375,
+      "prob_eff": 0.6614,
+      "run_date": "2026-04-30",
+      "current_price": 200.5
+    },
+    {
+      "ticker": "NVDA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6123,
+      "prob_eff": 0.6352,
+      "run_date": "2026-04-30",
+      "current_price": 200.5
+    },
+    {
+      "ticker": "NVMI",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5868,
+      "prob_eff": 0.5678,
+      "run_date": "2026-04-30",
+      "current_price": 499.92
+    },
+    {
+      "ticker": "NVMI",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5643,
+      "prob_eff": 0.546,
+      "run_date": "2026-04-30",
+      "current_price": 499.92
+    },
+    {
+      "ticker": "NVMI",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6017,
+      "prob_eff": 0.5822,
+      "run_date": "2026-04-30",
+      "current_price": 499.92
+    },
+    {
+      "ticker": "NVO",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5538,
+      "prob_eff": 0.569,
+      "run_date": "2026-04-30",
+      "current_price": 42.5
+    },
+    {
+      "ticker": "NVO",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5783,
+      "prob_eff": 0.5942,
+      "run_date": "2026-04-30",
+      "current_price": 42.5
+    },
+    {
+      "ticker": "NVO",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5834,
+      "prob_eff": 0.5994,
+      "run_date": "2026-04-30",
+      "current_price": 42.5
+    },
+    {
+      "ticker": "OKLO",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4853,
+      "prob_eff": 0.4487,
+      "run_date": "2026-04-30",
+      "current_price": 70.22
+    },
+    {
+      "ticker": "OKLO",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3654,
+      "prob_eff": 0.3379,
+      "run_date": "2026-04-30",
+      "current_price": 70.22
+    },
+    {
+      "ticker": "OKLO",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3674,
+      "prob_eff": 0.3397,
+      "run_date": "2026-04-30",
+      "current_price": 70.22
+    },
+    {
+      "ticker": "ONTO",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4654,
+      "prob_eff": 0.4781,
+      "run_date": "2026-04-30",
+      "current_price": 292.97
+    },
+    {
+      "ticker": "ONTO",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5078,
+      "prob_eff": 0.5217,
+      "run_date": "2026-04-30",
+      "current_price": 292.97
+    },
+    {
+      "ticker": "ONTO",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5044,
+      "prob_eff": 0.5182,
+      "run_date": "2026-04-30",
+      "current_price": 292.97
+    },
+    {
+      "ticker": "OPEN",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4416,
+      "prob_eff": 0.4954,
+      "run_date": "2026-04-30",
+      "current_price": 5.26
+    },
+    {
+      "ticker": "OPEN",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4848,
+      "prob_eff": 0.5438,
+      "run_date": "2026-04-30",
+      "current_price": 5.26
+    },
+    {
+      "ticker": "OPEN",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4339,
+      "prob_eff": 0.4868,
+      "run_date": "2026-04-30",
+      "current_price": 5.26
+    },
+    {
+      "ticker": "ORIC",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4695,
+      "prob_eff": 0.5065,
+      "run_date": "2026-04-30",
+      "current_price": 9.66
+    },
+    {
+      "ticker": "ORIC",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4424,
+      "prob_eff": 0.4772,
+      "run_date": "2026-04-30",
+      "current_price": 9.66
+    },
+    {
+      "ticker": "ORIC",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6101,
+      "prob_eff": 0.6581,
+      "run_date": "2026-04-30",
+      "current_price": 9.66
+    },
+    {
+      "ticker": "PFE",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5178,
+      "prob_eff": 0.532,
+      "run_date": "2026-04-30",
+      "current_price": 26.73
+    },
+    {
+      "ticker": "PFE",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4655,
+      "prob_eff": 0.4782,
+      "run_date": "2026-04-30",
+      "current_price": 26.73
+    },
+    {
+      "ticker": "PFE",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5154,
+      "prob_eff": 0.5296,
+      "run_date": "2026-04-30",
+      "current_price": 26.73
+    },
+    {
+      "ticker": "PL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5155,
+      "prob_eff": 0.5193,
+      "run_date": "2026-04-30",
+      "current_price": 35.78
+    },
+    {
+      "ticker": "PL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3793,
+      "prob_eff": 0.3822,
+      "run_date": "2026-04-30",
+      "current_price": 35.78
+    },
+    {
+      "ticker": "PL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4332,
+      "prob_eff": 0.4364,
+      "run_date": "2026-04-30",
+      "current_price": 35.78
+    },
+    {
+      "ticker": "PLTR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4518,
+      "prob_eff": 0.4546,
+      "run_date": "2026-04-30",
+      "current_price": 138.36
+    },
+    {
+      "ticker": "PLTR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5037,
+      "prob_eff": 0.5069,
+      "run_date": "2026-04-30",
+      "current_price": 138.36
+    },
+    {
+      "ticker": "PLTR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5094,
+      "prob_eff": 0.5126,
+      "run_date": "2026-04-30",
+      "current_price": 138.36
+    },
+    {
+      "ticker": "PUBM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5963,
+      "prob_eff": 0.6127,
+      "run_date": "2026-04-30",
+      "current_price": 9.53
+    },
+    {
+      "ticker": "PUBM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6953,
+      "prob_eff": 0.7143,
+      "run_date": "2026-04-30",
+      "current_price": 9.53
+    },
+    {
+      "ticker": "PUBM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6237,
+      "prob_eff": 0.6408,
+      "run_date": "2026-04-30",
+      "current_price": 9.53
+    },
+    {
+      "ticker": "PYPL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5695,
+      "prob_eff": 0.5624,
+      "run_date": "2026-04-30",
+      "current_price": 49.95
+    },
+    {
+      "ticker": "PYPL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4959,
+      "prob_eff": 0.4897,
+      "run_date": "2026-04-30",
+      "current_price": 49.95
+    },
+    {
+      "ticker": "PYPL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4495,
+      "prob_eff": 0.4438,
+      "run_date": "2026-04-30",
+      "current_price": 49.95
+    },
+    {
+      "ticker": "QQQ",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4775,
+      "prob_eff": 0.5014,
+      "run_date": "2026-04-30",
+      "current_price": 664.2
+    },
+    {
+      "ticker": "QQQ",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5003,
+      "prob_eff": 0.5254,
+      "run_date": "2026-04-30",
+      "current_price": 664.2
+    },
+    {
+      "ticker": "QQQ",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5638,
+      "prob_eff": 0.592,
+      "run_date": "2026-04-30",
+      "current_price": 664.2
+    },
+    {
+      "ticker": "QS",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.3829,
+      "prob_eff": 0.389,
+      "run_date": "2026-04-30",
+      "current_price": 7.21
+    },
+    {
+      "ticker": "QS",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3699,
+      "prob_eff": 0.3758,
+      "run_date": "2026-04-30",
+      "current_price": 7.21
+    },
+    {
+      "ticker": "QS",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4017,
+      "prob_eff": 0.4081,
+      "run_date": "2026-04-30",
+      "current_price": 7.21
+    },
+    {
+      "ticker": "QUBT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5019,
+      "prob_eff": 0.5487,
+      "run_date": "2026-04-30",
+      "current_price": 8.87
+    },
+    {
+      "ticker": "QUBT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4733,
+      "prob_eff": 0.5175,
+      "run_date": "2026-04-30",
+      "current_price": 8.87
+    },
+    {
+      "ticker": "QUBT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3965,
+      "prob_eff": 0.4335,
+      "run_date": "2026-04-30",
+      "current_price": 8.87
+    },
+    {
+      "ticker": "QURE",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4736,
+      "prob_eff": 0.5109,
+      "run_date": "2026-04-30",
+      "current_price": 19.6
+    },
+    {
+      "ticker": "QURE",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4764,
+      "prob_eff": 0.5139,
+      "run_date": "2026-04-30",
+      "current_price": 19.6
+    },
+    {
+      "ticker": "QURE",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5065,
+      "prob_eff": 0.5464,
+      "run_date": "2026-04-30",
+      "current_price": 19.6
+    },
+    {
+      "ticker": "ROKU",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5254,
+      "prob_eff": 0.5083,
+      "run_date": "2026-04-30",
+      "current_price": 114.09
+    },
+    {
+      "ticker": "ROKU",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5309,
+      "prob_eff": 0.5137,
+      "run_date": "2026-04-30",
+      "current_price": 114.09
+    },
+    {
+      "ticker": "ROKU",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5295,
+      "prob_eff": 0.5124,
+      "run_date": "2026-04-30",
+      "current_price": 114.09
+    },
+    {
+      "ticker": "ROST",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5075,
+      "prob_eff": 0.5215,
+      "run_date": "2026-04-30",
+      "current_price": 227.88
+    },
+    {
+      "ticker": "ROST",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4895,
+      "prob_eff": 0.5029,
+      "run_date": "2026-04-30",
+      "current_price": 227.88
+    },
+    {
+      "ticker": "ROST",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5643,
+      "prob_eff": 0.5798,
+      "run_date": "2026-04-30",
+      "current_price": 227.88
+    },
+    {
+      "ticker": "S",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6586,
+      "prob_eff": 0.6767,
+      "run_date": "2026-04-30",
+      "current_price": 14.12
+    },
+    {
+      "ticker": "S",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.372,
+      "prob_eff": 0.3822,
+      "run_date": "2026-04-30",
+      "current_price": 14.12
+    },
+    {
+      "ticker": "S",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4251,
+      "prob_eff": 0.4368,
+      "run_date": "2026-04-30",
+      "current_price": 14.12
+    },
+    {
+      "ticker": "SHOP",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5221,
+      "prob_eff": 0.5208,
+      "run_date": "2026-04-30",
+      "current_price": 120.51
+    },
+    {
+      "ticker": "SHOP",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5357,
+      "prob_eff": 0.5344,
+      "run_date": "2026-04-30",
+      "current_price": 120.51
+    },
+    {
+      "ticker": "SHOP",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5763,
+      "prob_eff": 0.5749,
+      "run_date": "2026-04-30",
+      "current_price": 120.51
+    },
+    {
+      "ticker": "SLV",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6191,
+      "prob_eff": 0.65,
+      "run_date": "2026-04-30",
+      "current_price": 66.5
+    },
+    {
+      "ticker": "SLV",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5557,
+      "prob_eff": 0.5835,
+      "run_date": "2026-04-30",
+      "current_price": 66.5
+    },
+    {
+      "ticker": "SLV",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6015,
+      "prob_eff": 0.6316,
+      "run_date": "2026-04-30",
+      "current_price": 66.5
+    },
+    {
+      "ticker": "SMCI",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.493,
+      "prob_eff": 0.4846,
+      "run_date": "2026-04-30",
+      "current_price": 27.23
+    },
+    {
+      "ticker": "SMCI",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4793,
+      "prob_eff": 0.4712,
+      "run_date": "2026-04-30",
+      "current_price": 27.23
+    },
+    {
+      "ticker": "SMCI",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5084,
+      "prob_eff": 0.4998,
+      "run_date": "2026-04-30",
+      "current_price": 27.23
+    },
+    {
+      "ticker": "SMMT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4835,
+      "prob_eff": 0.5602,
+      "run_date": "2026-04-30",
+      "current_price": 22.11
+    },
+    {
+      "ticker": "SMMT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4341,
+      "prob_eff": 0.5029,
+      "run_date": "2026-04-30",
+      "current_price": 22.11
+    },
+    {
+      "ticker": "SMMT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4218,
+      "prob_eff": 0.4887,
+      "run_date": "2026-04-30",
+      "current_price": 22.11
+    },
+    {
+      "ticker": "SNOW",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5484,
+      "prob_eff": 0.5306,
+      "run_date": "2026-04-30",
+      "current_price": 135.58
+    },
+    {
+      "ticker": "SNOW",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5234,
+      "prob_eff": 0.5065,
+      "run_date": "2026-04-30",
+      "current_price": 135.58
+    },
+    {
+      "ticker": "SNOW",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5059,
+      "prob_eff": 0.4895,
+      "run_date": "2026-04-30",
+      "current_price": 135.58
+    },
+    {
+      "ticker": "SPY",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5009,
+      "prob_eff": 0.5259,
+      "run_date": "2026-04-30",
+      "current_price": 715.44
+    },
+    {
+      "ticker": "SPY",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.601,
+      "prob_eff": 0.6311,
+      "run_date": "2026-04-30",
+      "current_price": 715.44
+    },
+    {
+      "ticker": "SPY",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6365,
+      "prob_eff": 0.6684,
+      "run_date": "2026-04-30",
+      "current_price": 715.44
+    },
+    {
+      "ticker": "STX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5151,
+      "prob_eff": 0.5189,
+      "run_date": "2026-04-30",
+      "current_price": 647.92
+    },
+    {
+      "ticker": "STX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6016,
+      "prob_eff": 0.6061,
+      "run_date": "2026-04-30",
+      "current_price": 647.92
+    },
+    {
+      "ticker": "STX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5953,
+      "prob_eff": 0.5997,
+      "run_date": "2026-04-30",
+      "current_price": 647.92
+    },
+    {
+      "ticker": "SYM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4851,
+      "prob_eff": 0.5731,
+      "run_date": "2026-04-30",
+      "current_price": 58.69
+    },
+    {
+      "ticker": "SYM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.402,
+      "prob_eff": 0.4749,
+      "run_date": "2026-04-30",
+      "current_price": 58.69
+    },
+    {
+      "ticker": "SYM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4235,
+      "prob_eff": 0.5004,
+      "run_date": "2026-04-30",
+      "current_price": 58.69
+    },
+    {
+      "ticker": "TEAM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4913,
+      "prob_eff": 0.5047,
+      "run_date": "2026-04-30",
+      "current_price": 67.19
+    },
+    {
+      "ticker": "TEAM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5287,
+      "prob_eff": 0.5432,
+      "run_date": "2026-04-30",
+      "current_price": 67.19
+    },
+    {
+      "ticker": "TEAM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5161,
+      "prob_eff": 0.5303,
+      "run_date": "2026-04-30",
+      "current_price": 67.19
+    },
+    {
+      "ticker": "TGT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5564,
+      "prob_eff": 0.5717,
+      "run_date": "2026-04-30",
+      "current_price": 129.11
+    },
+    {
+      "ticker": "TGT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4756,
+      "prob_eff": 0.4887,
+      "run_date": "2026-04-30",
+      "current_price": 129.11
+    },
+    {
+      "ticker": "TGT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5378,
+      "prob_eff": 0.5525,
+      "run_date": "2026-04-30",
+      "current_price": 129.11
+    },
+    {
+      "ticker": "TJX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4872,
+      "prob_eff": 0.5006,
+      "run_date": "2026-04-30",
+      "current_price": 156.62
+    },
+    {
+      "ticker": "TJX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4787,
+      "prob_eff": 0.4918,
+      "run_date": "2026-04-30",
+      "current_price": 156.62
+    },
+    {
+      "ticker": "TJX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.542,
+      "prob_eff": 0.5569,
+      "run_date": "2026-04-30",
+      "current_price": 156.62
+    },
+    {
+      "ticker": "TPR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4707,
+      "prob_eff": 0.4836,
+      "run_date": "2026-04-30",
+      "current_price": 143.98
+    },
+    {
+      "ticker": "TPR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5233,
+      "prob_eff": 0.5376,
+      "run_date": "2026-04-30",
+      "current_price": 143.98
+    },
+    {
+      "ticker": "TPR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4518,
+      "prob_eff": 0.4642,
+      "run_date": "2026-04-30",
+      "current_price": 143.98
+    },
+    {
+      "ticker": "TSLA",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5255,
+      "prob_eff": 0.5491,
+      "run_date": "2026-04-30",
+      "current_price": 378.23
+    },
+    {
+      "ticker": "TSLA",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4822,
+      "prob_eff": 0.5038,
+      "run_date": "2026-04-30",
+      "current_price": 378.23
+    },
+    {
+      "ticker": "TSLA",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5386,
+      "prob_eff": 0.5628,
+      "run_date": "2026-04-30",
+      "current_price": 378.23
+    },
+    {
+      "ticker": "TSM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5211,
+      "prob_eff": 0.5198,
+      "run_date": "2026-04-30",
+      "current_price": 394.63
+    },
+    {
+      "ticker": "TSM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5936,
+      "prob_eff": 0.5921,
+      "run_date": "2026-04-30",
+      "current_price": 394.63
+    },
+    {
+      "ticker": "TSM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5707,
+      "prob_eff": 0.5692,
+      "run_date": "2026-04-30",
+      "current_price": 394.63
+    },
+    {
+      "ticker": "UAL",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4727,
+      "prob_eff": 0.4574,
+      "run_date": "2026-04-30",
+      "current_price": 89.67
+    },
+    {
+      "ticker": "UAL",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5366,
+      "prob_eff": 0.5192,
+      "run_date": "2026-04-30",
+      "current_price": 89.67
+    },
+    {
+      "ticker": "UAL",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4324,
+      "prob_eff": 0.4184,
+      "run_date": "2026-04-30",
+      "current_price": 89.67
+    },
+    {
+      "ticker": "UNH",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5607,
+      "prob_eff": 0.5537,
+      "run_date": "2026-04-30",
+      "current_price": 370.35
+    },
+    {
+      "ticker": "UNH",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5363,
+      "prob_eff": 0.5296,
+      "run_date": "2026-04-30",
+      "current_price": 370.35
+    },
+    {
+      "ticker": "UNH",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5965,
+      "prob_eff": 0.5891,
+      "run_date": "2026-04-30",
+      "current_price": 370.35
+    },
+    {
+      "ticker": "USAR",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5845,
+      "prob_eff": 0.5525,
+      "run_date": "2026-04-30",
+      "current_price": 25.13
+    },
+    {
+      "ticker": "USAR",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4432,
+      "prob_eff": 0.4189,
+      "run_date": "2026-04-30",
+      "current_price": 25.13
+    },
+    {
+      "ticker": "USAR",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.3777,
+      "prob_eff": 0.357,
+      "run_date": "2026-04-30",
+      "current_price": 25.13
+    },
+    {
+      "ticker": "V",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5501,
+      "prob_eff": 0.5652,
+      "run_date": "2026-04-30",
+      "current_price": 330.96
+    },
+    {
+      "ticker": "V",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5251,
+      "prob_eff": 0.5395,
+      "run_date": "2026-04-30",
+      "current_price": 330.96
+    },
+    {
+      "ticker": "V",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4403,
+      "prob_eff": 0.4524,
+      "run_date": "2026-04-30",
+      "current_price": 330.96
+    },
+    {
+      "ticker": "VKTX",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5621,
+      "prob_eff": 0.6642,
+      "run_date": "2026-04-30",
+      "current_price": 30.29
+    },
+    {
+      "ticker": "VKTX",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5465,
+      "prob_eff": 0.6457,
+      "run_date": "2026-04-30",
+      "current_price": 30.29
+    },
+    {
+      "ticker": "VKTX",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4821,
+      "prob_eff": 0.5696,
+      "run_date": "2026-04-30",
+      "current_price": 30.29
+    },
+    {
+      "ticker": "VRT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5379,
+      "prob_eff": 0.5527,
+      "run_date": "2026-04-30",
+      "current_price": 325.62
+    },
+    {
+      "ticker": "VRT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5907,
+      "prob_eff": 0.6069,
+      "run_date": "2026-04-30",
+      "current_price": 325.62
+    },
+    {
+      "ticker": "VRT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5568,
+      "prob_eff": 0.5721,
+      "run_date": "2026-04-30",
+      "current_price": 325.62
+    },
+    {
+      "ticker": "VST",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4433,
+      "prob_eff": 0.4554,
+      "run_date": "2026-04-30",
+      "current_price": 158.4
+    },
+    {
+      "ticker": "VST",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5129,
+      "prob_eff": 0.527,
+      "run_date": "2026-04-30",
+      "current_price": 158.4
+    },
+    {
+      "ticker": "VST",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5616,
+      "prob_eff": 0.577,
+      "run_date": "2026-04-30",
+      "current_price": 158.4
+    },
+    {
+      "ticker": "VZ",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.483,
+      "prob_eff": 0.5161,
+      "run_date": "2026-04-30",
+      "current_price": 47.48
+    },
+    {
+      "ticker": "VZ",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5439,
+      "prob_eff": 0.5812,
+      "run_date": "2026-04-30",
+      "current_price": 47.48
+    },
+    {
+      "ticker": "VZ",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6267,
+      "prob_eff": 0.6696,
+      "run_date": "2026-04-30",
+      "current_price": 47.48
+    },
+    {
+      "ticker": "WDC",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5369,
+      "prob_eff": 0.5195,
+      "run_date": "2026-04-30",
+      "current_price": 433.06
+    },
+    {
+      "ticker": "WDC",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5877,
+      "prob_eff": 0.5687,
+      "run_date": "2026-04-30",
+      "current_price": 433.06
+    },
+    {
+      "ticker": "WDC",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.6819,
+      "prob_eff": 0.6598,
+      "run_date": "2026-04-30",
+      "current_price": 433.06
+    },
+    {
+      "ticker": "WMT",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.558,
+      "prob_eff": 0.5962,
+      "run_date": "2026-04-30",
+      "current_price": 131.65
+    },
+    {
+      "ticker": "WMT",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5474,
+      "prob_eff": 0.5849,
+      "run_date": "2026-04-30",
+      "current_price": 131.65
+    },
+    {
+      "ticker": "WMT",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5333,
+      "prob_eff": 0.5698,
+      "run_date": "2026-04-30",
+      "current_price": 131.65
+    },
+    {
+      "ticker": "XLE",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5684,
+      "prob_eff": 0.5968,
+      "run_date": "2026-04-30",
+      "current_price": 59.37
+    },
+    {
+      "ticker": "XLE",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6179,
+      "prob_eff": 0.6488,
+      "run_date": "2026-04-30",
+      "current_price": 59.37
+    },
+    {
+      "ticker": "XLE",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5606,
+      "prob_eff": 0.5886,
+      "run_date": "2026-04-30",
+      "current_price": 59.37
+    },
+    {
+      "ticker": "XLF",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5242,
+      "prob_eff": 0.5504,
+      "run_date": "2026-04-30",
+      "current_price": 52.08
+    },
+    {
+      "ticker": "XLF",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.5933,
+      "prob_eff": 0.623,
+      "run_date": "2026-04-30",
+      "current_price": 52.08
+    },
+    {
+      "ticker": "XLF",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5779,
+      "prob_eff": 0.6067,
+      "run_date": "2026-04-30",
+      "current_price": 52.08
+    },
+    {
+      "ticker": "XLI",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.5674,
+      "prob_eff": 0.583,
+      "run_date": "2026-04-30",
+      "current_price": 174.13
+    },
+    {
+      "ticker": "XLI",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.6134,
+      "prob_eff": 0.6302,
+      "run_date": "2026-04-30",
+      "current_price": 174.13
+    },
+    {
+      "ticker": "XLI",
+      "horizon": 5,
+      "signal": "BUY",
+      "prob": 0.7004,
+      "prob_eff": 0.7196,
+      "run_date": "2026-04-30",
+      "current_price": 174.13
+    },
+    {
+      "ticker": "XLU",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.6476,
+      "prob_eff": 0.6654,
+      "run_date": "2026-04-30",
+      "current_price": 46.45
+    },
+    {
+      "ticker": "XLU",
+      "horizon": 3,
+      "signal": "BUY",
+      "prob": 0.7233,
+      "prob_eff": 0.7432,
+      "run_date": "2026-04-30",
+      "current_price": 46.45
+    },
+    {
+      "ticker": "XLU",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5253,
+      "prob_eff": 0.5397,
+      "run_date": "2026-04-30",
+      "current_price": 46.45
+    },
+    {
+      "ticker": "XLV",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4445,
+      "prob_eff": 0.4301,
+      "run_date": "2026-04-30",
+      "current_price": 146.03
+    },
+    {
+      "ticker": "XLV",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.4559,
+      "prob_eff": 0.4411,
+      "run_date": "2026-04-30",
+      "current_price": 146.03
+    },
+    {
+      "ticker": "XLV",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.5981,
+      "prob_eff": 0.5787,
+      "run_date": "2026-04-30",
+      "current_price": 146.03
+    },
+    {
+      "ticker": "XYZ",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4396,
+      "prob_eff": 0.4516,
+      "run_date": "2026-04-30",
+      "current_price": 69.84
+    },
+    {
+      "ticker": "XYZ",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3345,
+      "prob_eff": 0.3437,
+      "run_date": "2026-04-30",
+      "current_price": 69.84
+    },
+    {
+      "ticker": "XYZ",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.2952,
+      "prob_eff": 0.3033,
+      "run_date": "2026-04-30",
+      "current_price": 69.84
+    },
+    {
+      "ticker": "ZM",
+      "horizon": 1,
+      "signal": "HOLD",
+      "prob": 0.4471,
+      "prob_eff": 0.4326,
+      "run_date": "2026-04-30",
+      "current_price": 96.78
+    },
+    {
+      "ticker": "ZM",
+      "horizon": 3,
+      "signal": "HOLD",
+      "prob": 0.3789,
+      "prob_eff": 0.3666,
+      "run_date": "2026-04-30",
+      "current_price": 96.78
+    },
+    {
+      "ticker": "ZM",
+      "horizon": 5,
+      "signal": "HOLD",
+      "prob": 0.4315,
+      "prob_eff": 0.4175,
+      "run_date": "2026-04-30",
+      "current_price": 96.78
+    }
+  ]
+}
