@@ -63,7 +63,7 @@ log "Stage 1 OK"
 
 # ── Stage 2: Fresh runfund ───────────────────────────────────────────────────
 log "Stage 2: Daily runner (fresh signals with live UW data)"
-$PYTHON -c "import sys; sys.path.insert(0,'.'); from scripts.daily_runner import run_daily; run_daily()" \
+$PYTHON -m scripts.daily_runner_batched \
     > "$LOGDIR/02_daily_runner.log" 2>&1 || fail "Stage 2 (daily_runner)"
 log "Stage 2 OK"
 
