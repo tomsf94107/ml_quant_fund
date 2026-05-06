@@ -227,6 +227,10 @@ def main() -> None:
     ap.add_argument("--horizon", type=int, default=1, choices=[1, 3, 5])
     ap.add_argument("--tickers-file", type=str, default="tickers.txt")
     ap.add_argument("--start", type=str, default="2018-01-01")
+    ap.add_argument("--start-from", type=str, default=None,
+                    help="batch slice start ticker (subprocess batching)")
+    ap.add_argument("--end-at", type=str, default=None,
+                    help="batch slice end ticker (inclusive, subprocess batching)")
     args = ap.parse_args()
 
     if args.all:
@@ -236,6 +240,16 @@ def main() -> None:
         tickers = [args.ticker]
     else:
         ap.error("pass --ticker TICKER or --all")
+
+    # Subprocess batching slice (May 6 2026)
+    if args.start_from:
+        if args.start_from in tickers:
+            tickers = tickers[tickers.index(args.start_from):]
+            print(f"Starting from {args.start_from}")
+    if args.end_at:
+        if args.end_at in tickers:
+            tickers = tickers[:tickers.index(args.end_at) + 1]
+            print(f"Ending at {args.end_at} (inclusive). Slice: {len(tickers)} tickers")
 
     summaries, per_folds = [], []
     for t in tickers:
@@ -254,7 +268,14 @@ def main() -> None:
     if summaries:
         summary_df = pd.DataFrame(summaries)
         out_s = REPORT_DIR / f"walkforward_summary_h{args.horizon}.csv"
-        summary_df.to_csv(out_s, index=False)
+        write_header = not out_s.exists()
+        summary_df.to_csv(out_s, mode='a' if not write_header else 'w',
+                          header=write_header, index=False)
+        # Persist to DB (May 6 2026)
+        try:
+            _write_summary_to_db(summary_df, args.horizon)
+        except Exception as e:
+            print(f"  ⚠ DB write failed: {e}")
         print(f"\nSummary → {out_s}")
         print(f"  Mean accuracy across tickers: {summary_df['accuracy_mean'].mean():.4f}")
         print(f"  Mean AUC across tickers:      {summary_df['auc_mean'].mean():.4f}")
@@ -264,7 +285,9 @@ def main() -> None:
     if per_folds:
         pf_all = pd.concat(per_folds, ignore_index=True)
         out_p = REPORT_DIR / f"walkforward_folds_h{args.horizon}.csv"
-        pf_all.to_csv(out_p, index=False)
+        write_header = not out_p.exists()
+        pf_all.to_csv(out_p, mode='a' if not write_header else 'w',
+                      header=write_header, index=False)
         print(f"Per-fold → {out_p}")
 
 
