@@ -54,6 +54,43 @@ REPORT_DIR = Path("reports")
 REPORT_DIR.mkdir(exist_ok=True)
 
 
+# DB persistence (May 6 2026) — write walk-forward results to accuracy.db
+import sqlite3 as _sql_wf
+from datetime import date as _date_wf
+_DB_PATH = Path(__file__).parent.parent / "accuracy.db"
+
+
+def _write_summary_to_db(df, horizon: int) -> None:
+    """Persist walk-forward summary to accuracy.db.walk_forward_history."""
+    if df is None or df.empty:
+        return
+    run_date = _date_wf.today().strftime("%Y-%m-%d")
+    rows = []
+    for _, r in df.iterrows():
+        buy_hit = r.get("buy_hit_55_mean", None)
+        if pd.isna(buy_hit):
+            buy_hit = None
+        rows.append((
+            run_date, r["ticker"], horizon,
+            float(r.get("accuracy_mean", 0.0)),
+            float(r.get("auc_mean", 0.0)),
+            float(buy_hit) if buy_hit is not None else None,
+            int(r.get("buy_n_55_total", 0)),
+            float(r.get("pos_rate_mean", 0.0)),
+            int(r.get("folds", 0)),
+        ))
+    with _sql_wf.connect(str(_DB_PATH)) as conn:
+        conn.executemany("""
+            INSERT OR REPLACE INTO walk_forward_history
+                (run_date, ticker, horizon, accuracy, auc, buy_hit_55,
+                 buy_n_55, pos_rate, folds)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, rows)
+        conn.commit()
+    print(f"  → DB: wrote {len(rows)} rows for h={horizon} (run_date={run_date})")
+
+
+
 def _make_folds(
     n: int,
     min_train: int,
