@@ -31,9 +31,51 @@ import requests
 
 # Module-level Session for connection reuse (DNS pool conservation).
 # Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
-_session = requests.Session()
-
 log = logging.getLogger(__name__)
+
+import urllib.parse
+from requests.adapters import HTTPAdapter
+
+# Reset-aware session per ChatGPT walk-forward consult (May 6 2026).
+_session: "requests.Session | None" = None
+_session_generation = 0
+
+
+def _new_session() -> requests.Session:
+    s = requests.Session()
+    adapter = HTTPAdapter(
+        pool_connections=4,
+        pool_maxsize=4,
+        pool_block=True,
+        max_retries=0,
+    )
+    s.mount("https://", adapter)
+    s.mount("http://", adapter)
+    s.headers.update({"User-Agent": "ML_Quant_Fund/1.0"})
+    return s
+
+
+def _reset_session(reason: str) -> None:
+    global _session, _session_generation
+    old = _session
+    _session_generation += 1
+    _session = _new_session()
+    if old is not None:
+        try:
+            old.close()
+        except Exception:
+            pass
+    log.warning(f"massive.session_reset reason={reason} generation={_session_generation}")
+
+
+def _redact_url(url: str) -> str:
+    parsed = urllib.parse.urlsplit(url)
+    q = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+    q = [(k, "REDACTED" if k.lower() in {"apikey", "api_key"} else v) for k, v in q]
+    return urllib.parse.urlunsplit(parsed._replace(query=urllib.parse.urlencode(q)))
+
+
+_reset_session("init")
 
 BASE_URL = "https://api.polygon.io"
 from config.keys import MASSIVE_API_KEY as API_KEY
@@ -83,26 +125,61 @@ def _normalize_date(d) -> str:
     raise ValueError(f"Cannot normalize date: {type(d)} {d}")
 
 
-def _request_with_retry(url, params, timeout=15, max_retries=6):
-    """GET with retry on 429/5xx and exponential backoff."""
+def _request_with_retry(url, params, timeout=(5, 20), max_retries=3):
+    """
+    GET with bounded retry. Resets Session after timeout/connection errors so
+    stale pooled connections do not poison long-running processes (walk-forward).
+
+    May 6 2026: Reduced from 6 retries to 3, bounded backoff to 8s, added
+    session reset on network failure per ChatGPT consult.
+    Old behavior could waste 90 sec per bad URL (6 retries × 15s timeout).
+    """
     last_err = None
     for attempt in range(max_retries):
+        t0 = time.perf_counter()
         try:
             r = _session.get(url, params=params, timeout=timeout)
+            elapsed = time.perf_counter() - t0
+            safe_url = _redact_url(r.url)
+            log.info(
+                f"massive.http attempt={attempt} status={r.status_code} "
+                f"elapsed={elapsed:.3f}s gen={_session_generation} url={safe_url}"
+            )
             if r.status_code == 200:
                 return r.json()
             if r.status_code == 429 or 500 <= r.status_code < 600:
-                wait = 2 ** attempt
-                log.warning(f"massive.retry status={r.status_code} attempt={attempt} wait={wait}s")
-                time.sleep(wait)
+                last_err = RuntimeError(f"Massive HTTP {r.status_code}: {safe_url}")
+                try:
+                    r.close()
+                finally:
+                    if 500 <= r.status_code < 600:
+                        _reset_session(f"http_{r.status_code}")
+                time.sleep(min(2 ** attempt, 8))
                 continue
-            log.error(f"massive.error status={r.status_code} url={url[:80]} body={r.text[:200]}")
+            log.error(f"massive.error status={r.status_code} url={safe_url} body={r.text[:200]}")
             r.raise_for_status()
+        except requests.Timeout as e:
+            elapsed = time.perf_counter() - t0
+            last_err = e
+            log.warning(
+                f"massive.timeout attempt={attempt} elapsed={elapsed:.3f}s "
+                f"gen={_session_generation} url={_redact_url(url)} err={e!r}"
+            )
+            _reset_session("timeout")
+            time.sleep(min(2 ** attempt, 8))
+        except requests.ConnectionError as e:
+            elapsed = time.perf_counter() - t0
+            last_err = e
+            log.warning(
+                f"massive.connection_error attempt={attempt} elapsed={elapsed:.3f}s "
+                f"gen={_session_generation} url={_redact_url(url)} err={e!r}"
+            )
+            _reset_session("connection_error")
+            time.sleep(min(2 ** attempt, 8))
         except requests.RequestException as e:
             last_err = e
-            wait = 2 ** attempt
-            log.warning(f"massive.network attempt={attempt} wait={wait}s err={e}")
-            time.sleep(wait)
+            log.warning(f"massive.request_exception attempt={attempt} err={e!r}")
+            time.sleep(min(2 ** attempt, 8))
     raise RuntimeError(f"Massive API failed after {max_retries} retries: {last_err}")
 
 
