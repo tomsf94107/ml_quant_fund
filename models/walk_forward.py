@@ -77,7 +77,7 @@ def _write_summary_to_db(df, horizon: int) -> None:
             float(buy_hit) if buy_hit is not None else None,
             int(r.get("buy_n_55_total", 0)),
             float(r.get("pos_rate_mean", 0.0)),
-            int(r.get("folds", 0)),
+            int(r.get("n_folds", r.get("folds", 0))),
         ))
     with _sql_wf.connect(str(_DB_PATH)) as conn:
         conn.executemany("""
