@@ -50,13 +50,13 @@ log "Stage 1 OK (Pipeline A completed at $(stat -f '%Sm' "$MARKER"))"
 #   if [ "$(date +%u)" -eq 7 ]; then ... fi   # only on Sundays
 # For now, keeps your daily retrain behavior but with proper sequencing.
 log "Stage 2: Retrain all models"
-$PYTHON -m models.train_all \
+$PYTHON -m models.train_all_batched \
     > "$LOGDIR/02_train_all.log" 2>&1 || fail "Stage 2 (train_all)"
 log "Stage 2 OK"
 
 # ── Stage 3: Daily predictions ───────────────────────────────────────────────
 log "Stage 3: Daily runner (generates today's signals)"
-$PYTHON -c "import sys; sys.path.insert(0,'.'); from scripts.daily_runner import run_daily; run_daily()" \
+$PYTHON -m scripts.daily_runner_batched \
     > "$LOGDIR/03_daily_runner.log" 2>&1 || fail "Stage 3 (daily_runner)"
 log "Stage 3 OK"
 

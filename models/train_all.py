@@ -155,9 +155,12 @@ def train_all(
 
     report = pd.DataFrame(all_rows)
 
-    # Save report
+    # Save report — append-mode if file exists (subprocess batching).
+    # First batch creates the file; subsequent batches append rows.
     report_path = MODEL_DIR / "training_report.csv"
-    report.to_csv(report_path, index=False)
+    write_header = not report_path.exists()
+    report.to_csv(report_path, mode='a' if not write_header else 'w',
+                  header=write_header, index=False)
 
     # Print summary
     ok    = report[report["status"] == "OK"]

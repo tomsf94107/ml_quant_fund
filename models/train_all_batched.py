@@ -59,6 +59,13 @@ def main():
     n = len(tickers)
     print(f"Loaded {n} tickers")
 
+    # Clear stale training_report.csv so batches append fresh.
+    # Without this, batches would append to old report from previous day.
+    report_path = ROOT / "models" / "saved" / "training_report.csv"
+    if report_path.exists():
+        report_path.unlink()
+        print(f"Cleared stale {report_path.name}")
+
     batches = []
     for i in range(0, n, BATCH_SIZE):
         chunk = tickers[i:i + BATCH_SIZE]
