@@ -393,7 +393,7 @@ def check_all_ticker_prices() -> dict:
     """
     if not TICKERS_FILE.exists():
         log("  ⚠ tickers.txt not found — skipping full price check")
-        return {"issues": 0, "details": []}
+        return {"issues": 0, "details": [], "crossed": 0, "stale": 0, "missing": 0}
 
     tickers = [t.strip() for t in TICKERS_FILE.read_text().splitlines() if t.strip()]
     log(f"Checking live prices for all {len(tickers)} tickers...")
@@ -434,7 +434,7 @@ def check_all_ticker_prices() -> dict:
         log(f"  Final ground truth: {len(ground_truth)}/{len(tickers)} tickers")
     except Exception as e:
         log(f"  ❌ Batch price fetch failed: {e}")
-        return {"issues": 1, "details": [{"issue": str(e)}]}
+        return {"issues": 1, "details": [{"issue": str(e)}], "crossed": 0, "stale": 0, "missing": 0}
 
     # Step 2 — compare against feature pipeline prices
     crossed  = []
