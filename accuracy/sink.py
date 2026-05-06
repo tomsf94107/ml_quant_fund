@@ -371,6 +371,8 @@ def reconcile_outcomes(
              AND p.prediction_date = o.prediction_date
              AND p.horizon = o.horizon
             WHERE o.id IS NULL
+               OR (o.actual_return = 0 AND o.actual_up = 0
+                   AND date(o.outcome_date) <= date('now', '-1 day'))
         """
         pending = pd.read_sql(query, conn)
 
@@ -457,6 +459,15 @@ def reconcile_outcomes(
                         if price_at_pred == 0 or price_at_pred != price_at_pred:
                             continue
                         if price_at_outcome != price_at_outcome:
+                            continue
+                        # Verify outcome_date row actually exists in data
+                        # (asof() falls back to last available row, can give 0.0
+                        # if Massive hasn't published outcome_date yet)
+                        actual_pred_idx = close_series.loc[:pred_ts].index[-1]
+                        actual_out_idx  = close_series.loc[:out_ts].index[-1]
+                        if (actual_pred_idx == actual_out_idx 
+                            and pred_ts.date() != out_ts.date()):
+                            # Outcome data not yet published — try again next reconcile
                             continue
                         actual_ret = (price_at_outcome - price_at_pred) / price_at_pred
                         if actual_ret != actual_ret:
