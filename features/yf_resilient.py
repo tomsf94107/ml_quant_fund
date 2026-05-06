@@ -36,6 +36,36 @@ import pandas as pd
 
 log = logging.getLogger(__name__)
 
+# Disable yfinance's internal retry loop — we handle retries ourselves.
+# Without this, yfinance retries N times INSIDE our retry loop, multiplying
+# wait time. Per ChatGPT walk-forward consult May 6 2026.
+_YF_CONFIG_APPLIED = False
+def _apply_yf_config():
+    global _YF_CONFIG_APPLIED
+    if _YF_CONFIG_APPLIED:
+        return
+    try:
+        import yfinance as yf
+        if hasattr(yf, "config"):
+            try:
+                yf.config.network.retries = 0
+            except Exception:
+                pass
+            try:
+                yf.config.debug.hide_exceptions = False
+            except Exception:
+                pass
+        _YF_CONFIG_APPLIED = True
+    except Exception as e:
+        log.warning(f"Could not apply yfinance config: {e}")
+
+
+# Allow disabling yfinance entirely under PIT walk-forward.
+# Default: yfinance fallback enabled.
+import os
+ALLOW_YF_FALLBACK = os.getenv("ML_QUANT_ALLOW_YFINANCE_FALLBACK", "1") == "1"
+
+
 # DNS check cache (avoid hammering resolver — cache for 60 sec)
 _dns_cache: dict[str, tuple[bool, float]] = {}
 _DNS_CACHE_TTL = 60.0  # seconds
@@ -78,6 +108,12 @@ def _retry_yf_call(func, *args, label: str = "yf_call", **kwargs):
     Catches ALL exceptions and returns None if all retries fail.
     Pre-checks DNS to avoid C-level segfaults.
     """
+    # Honor PIT-mode disable flag (May 6 2026)
+    if not ALLOW_YF_FALLBACK:
+        log.warning(f"{label}: skipped (ML_QUANT_ALLOW_YFINANCE_FALLBACK=0)")
+        return None
+    # Apply yfinance global config on first call
+    _apply_yf_config()
     if not yahoo_dns_check():
         log.warning(f"{label}: skipped (Yahoo DNS unreachable)")
         return None
@@ -150,7 +186,15 @@ def safe_yf_download(tickers, start=None, end=None, **kwargs) -> Optional[pd.Dat
     """
     Replacement for yf.download(tickers, ...)
     Returns None if DNS fails or all retries fail.
+
+    May 6 2026: forces threads=False, timeout=20, auto_adjust=False to remove
+    hidden concurrency and bound per-call wait. Per ChatGPT walk-forward consult.
     """
+    kwargs.setdefault("threads", False)
+    kwargs.setdefault("timeout", 20)
+    kwargs.setdefault("progress", False)
+    kwargs.setdefault("auto_adjust", False)
+
     def _call():
         import yfinance as yf
         return yf.download(tickers, start=start, end=end, **kwargs)
