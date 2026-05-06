@@ -15,6 +15,22 @@ Usage (CLI):
     python -m models.walk_forward --all --horizon 1
 """
 from __future__ import annotations
+
+# Faulthandler — dump all thread tracebacks every 60 sec to find hangs.
+# Added May 6 2026 per ChatGPT walk-forward debug consult. If walk_forward
+# hangs, logs/walk_forward_stacks.log shows where it's stuck.
+# Trigger manually: kill -USR1 <PID>
+import faulthandler
+import os
+import signal
+from pathlib import Path as _Path
+_Path("logs").mkdir(exist_ok=True)
+_STACK_LOG = open("logs/walk_forward_stacks.log", "a", buffering=1)
+faulthandler.enable(file=_STACK_LOG, all_threads=True)
+faulthandler.dump_traceback_later(60, repeat=True, file=_STACK_LOG)
+if hasattr(signal, "SIGUSR1"):
+    faulthandler.register(signal.SIGUSR1, file=_STACK_LOG, all_threads=True)
+
 import argparse
 from pathlib import Path
 from typing import Optional, Tuple
