@@ -344,19 +344,35 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
 
     if delisted:
         log(f"  ❌ Possibly delisted: {delisted}")
-        if fix:
+        # SAFETY GUARD (May 7 2026): refuse to mass-wipe.
+        # Bug May 7 2026: yfinance returned empty for ALL 125 tickers due to
+        # transient API issues, daily_validator wiped tickers.txt entirely.
+        # Real delisting is rare — usually 1-2 tickers per quarter.
+        wipe_pct = (len(delisted) / max(1, len(tickers))) * 100
+        if fix and wipe_pct > 10.0:
+            log(f"  🛑 ABORT — would remove {wipe_pct:.0f}% of tickers ({len(delisted)}/{len(tickers)})")
+            log(f"     This usually means a yfinance/network outage, not real delisting.")
+            log(f"     NOT modifying tickers.txt. Re-run validator manually after verifying.")
+            desktop_alert(
+                "ML Quant Fund — Delisted Check ABORTED",
+                f"Would remove {wipe_pct:.0f}% — likely API outage, not real delistings. Manual review required."
+            )
+        elif fix:
             # Remove from tickers.txt
             if TICKERS_FILE.exists():
                 lines = [t for t in TICKERS_FILE.read_text().splitlines() if t.strip() and t.strip() not in delisted]
                 TICKERS_FILE.write_text("\n".join(lines) + "\n")
-            # Append to watchlist.txt
-            watchlist = Path("watchlist.txt")
-            existing = set(watchlist.read_text().splitlines()) if watchlist.exists() else set()
+            # FIXED filename (May 7 2026): was "watchlist.txt" (orphan), now correct file
+            watchlist = Path("tickers_watchlist.txt")
+            existing = set()
+            if watchlist.exists():
+                existing = set(line.strip() for line in watchlist.read_text().splitlines()
+                               if line.strip() and not line.startswith("#"))
             new_entries = [t for t in delisted if t not in existing]
             if new_entries:
                 with open(watchlist, "a") as f:
                     f.write("\n".join(new_entries) + "\n")
-            log(f"  ✅ Moved {delisted} to watchlist.txt, removed from tickers.txt")
+            log(f"  ✅ Moved {delisted} to tickers_watchlist.txt, removed from tickers.txt")
             desktop_alert(
                 "ML Quant Fund — Delisted Tickers",
                 f"Moved to watchlist: {', '.join(delisted)} — update train_all.py manually"
