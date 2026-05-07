@@ -601,6 +601,26 @@ def generate_signals(
     # Apply risk + sentiment + regime + options flow + squeeze + fear/greed multipliers
     today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
+
+    # CONFIDENCE CAP (May 7 2026, Sprint 1 Day 1):
+    # h=3 and h=5 measured INVERTED at prob_up >= 0.70 per May 7 SHAP analysis.
+    # Mid-confidence (40-60%) wins more than high-confidence (>70%) in these
+    # horizons. Cap eff probability at 0.65 — refuses to claim high confidence
+    # in measurably-wrong regions. h=1 NOT capped (not inverted, AUC 0.51).
+    # Validated by: baselines/calibration_baseline_20260507_1539.md
+    # Diagnostic:   baselines/shap_inversion_synthesis_20260507.md
+    INVERSION_HORIZONS = {3, 5}
+    CONFIDENCE_CAP = 0.65
+    if horizon in INVERSION_HORIZONS and today_prob_eff > CONFIDENCE_CAP:
+        _original_eff = today_prob_eff
+        today_prob_eff = CONFIDENCE_CAP
+        import logging as _logging_cap
+        _log_cap = _logging_cap.getLogger("signals.generator")
+        _log_cap.info(
+            f"  ⚠ {ticker} h={horizon}d confidence capped: "
+            f"{_original_eff:.4f} -> {CONFIDENCE_CAP:.4f} "
+            f"(h={horizon} inverted region per May 7 SHAP)"
+        )
     today_gated     = bool(gate.iloc[-1])
 
     # Stateful hysteresis (May 3 2026): asymmetric entry vs exit thresholds.
