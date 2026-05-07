@@ -67,7 +67,7 @@ FEATURE_COLUMNS: list[str] = [
     # Volatility
     "volatility_5d", "volatility_10d",
     # Momentum
-    "rsi_14", "macd", "macd_signal",
+    "rsi_14", "macd",
     # Mean reversion
     "bb_upper", "bb_lower", "bb_width",
     # Volume
@@ -90,13 +90,13 @@ FEATURE_COLUMNS: list[str] = [
     # Intraday-derived daily features
     "vwap_dev_eod", "vol_surge_eod", "intraday_momentum",
     # Pre-market & overnight
-    "premarket_gap", "es_overnight",
+    "premarket_gap",
     # Options IV
     "iv_skew_snap", "pc_ratio_snap",
     # Analyst revisions
     "analyst_upside", "analyst_buy_pct", "analyst_mult",
     # FinBERT NLP
-    "finbert_sentiment", "finbert_mult",
+    "finbert_sentiment",
     "oil_ret", "oil_spy_corr",          # crude oil signal
     # Extended returns
     "return_20d", "return_60d",
