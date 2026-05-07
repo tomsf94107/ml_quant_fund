@@ -40,6 +40,48 @@ import requests as _requests_for_session
 _session = _requests_for_session.Session()
 
 
+def _check_fitness_filter(ticker: str, horizon: int) -> "Optional[float]":
+    """
+    Fitness-based BUY suppression filter (Step 3 of WorldQuant Roadmap).
+
+    Returns:
+        - fitness (float, negative): if model has been scored AND has negative
+          fitness → caller should suppress BUY
+        - None: model not yet scored OR fitness is non-negative → allow BUY
+
+    Per Option B (May 7 2026): only h=1 currently has full MIN_OBS=30 coverage.
+    The fitness_scores table only contains h=1 rows, so h=3/h=5 always return
+    None (no filter applied). After May 22 2026 (when h=3/h=5 cross MIN_OBS=30
+    naturally), re-run fitness_scorer to populate all 3 horizons. Filter then
+    applies uniformly.
+
+    Reads from accuracy.db.fitness_scores (populated by analysis.fitness_scorer).
+    Fails open on any error — never suppresses due to DB issues.
+    """
+    try:
+        from pathlib import Path as _Path
+        _db = _Path(__file__).parent.parent / "accuracy.db"
+        if not _db.exists():
+            return None
+        _conn = sqlite3.connect(str(_db))
+        try:
+            _row = _conn.execute(
+                "SELECT fitness FROM fitness_scores WHERE ticker=? AND horizon=?",
+                (ticker.upper(), int(horizon)),
+            ).fetchone()
+        finally:
+            _conn.close()
+        if _row is None:
+            return None  # not scored — don't filter (h=3/h=5 today)
+        _fitness = float(_row[0])
+        if _fitness < 0:
+            return _fitness  # bad model — suppress
+        return None  # good model — allow
+    except Exception:
+        return None  # any error — fail open (allow BUY)
+
+
+
 def _load_ticker_metadata() -> dict:
     """Load tickers_metadata.csv → {ticker: {bucket, tier, thesis}}"""
     try:
@@ -582,6 +624,22 @@ def generate_signals(
         if today_prob_eff > _floor and not today_gated and not _suppress
         else "HOLD"
     )
+
+    # FITNESS FILTER (May 7 2026, WorldQuant Roadmap Step 3):
+    # Suppress BUY when source model has negative fitness in fitness_scores.
+    # Today only h=1 is scored (MIN_OBS=30 coverage). H=3/h=5 will join after
+    # ~May 22 when their data accumulates. Until then, h=3/h=5 always pass
+    # through unfiltered (helper returns None for un-scored horizons).
+    if today_signal == "BUY":
+        _bad_fitness = _check_fitness_filter(ticker, horizon)
+        if _bad_fitness is not None:
+            today_signal = "HOLD"
+            import logging as _logging_fitness
+            _log_fitness = _logging_fitness.getLogger("signals.generator")
+            _log_fitness.warning(
+                f"  ⚠ {ticker} h={horizon}d BUY suppressed — "
+                f"model fitness={_bad_fitness:.2f} (negative)"
+            )
 
     # Price forecast using ATR
     current_price   = float(df["close"].iloc[-1]) if "close" in df.columns else None
