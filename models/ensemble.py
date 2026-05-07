@@ -133,8 +133,10 @@ def _train_lgbm(X_train, y_train, X_val, y_val,
 
     clf.fit(X_train, y_train, **fit_kwargs)
 
+    # FIXED May 7 2026: was cal.fit(X_val, y_val) — leaked val labels into
+    # calibrator that's then evaluated against val. Now uses train.
     cal = CalibratedClassifierCV(clf, method="isotonic", cv=5)
-    cal.fit(X_val, y_val)
+    cal.fit(X_train, y_train)
     return cal
 
 
@@ -205,12 +207,23 @@ def train_ensemble(
 
     X, y = _prepare_xy(working, target_col)
 
-    if len(X) < 100:
-        raise ValueError(f"{ticker}: only {len(X)} rows — need at least 100")
+    if len(X) < 150:
+        raise ValueError(f"{ticker}: only {len(X)} rows — need at least 150 for 3-way split")
 
-    split    = int(len(X) * (1 - test_size))
-    X_train  = X.iloc[:split];  X_val  = X.iloc[split:]
-    y_train  = y.iloc[:split];  y_val  = y.iloc[split:]
+    # THREE-WAY TEMPORAL SPLIT (May 7 2026, Sprint 1 leak fix):
+    # Old: train/val (60/20). Val was used for: XGB early stop, LGBM
+    # calibrator, blend weights, AND reported AUC. Inflated AUC ~0.30.
+    # New: train/val/test (60/20/20). Test holdout NEVER touched in training.
+    # Reported AUC is honest — should match walk_forward OOS.
+    n = len(X)
+    train_end = int(n * 0.60)
+    val_end   = int(n * 0.80)
+    X_train = X.iloc[:train_end]
+    X_val   = X.iloc[train_end:val_end]
+    X_test  = X.iloc[val_end:]
+    y_train = y.iloc[:train_end]
+    y_val   = y.iloc[train_end:val_end]
+    y_test  = y.iloc[val_end:]
 
     sw = _risk_sample_weights(working.loc[X_train.index])
 
@@ -239,28 +252,35 @@ def train_ensemble(
                            params=tuned_lgb, sample_weights=sw)
 
     # ── Optimal blend weights ─────────────────────────────────────────────────
-    p_xgb   = cal_xgb.predict_proba(X_val)[:, 1]
-    p_lgb   = cal_lgb.predict_proba(X_val)[:, 1]
-    weights = _optimal_weights(p_xgb, p_lgb, y_val.values)
-
-    # ── Evaluate ensemble ─────────────────────────────────────────────────────
+    # Tune blend weights on VAL (allowed)
+    p_xgb_val = cal_xgb.predict_proba(X_val)[:, 1]
+    p_lgb_val = cal_lgb.predict_proba(X_val)[:, 1]
+    weights   = _optimal_weights(p_xgb_val, p_lgb_val, y_val.values)
     w_xgb, w_lgb = weights
-    p_ens   = w_xgb * p_xgb + w_lgb * p_lgb
-    y_pred  = (p_ens >= 0.5).astype(int)
+
+    # ── Evaluate on TEST holdout (NEVER seen in training) ────────────────────
+    # FIXED May 7 2026: was evaluated on X_val/y_val, but val was used for
+    # calibrator fits + blend weight optimization. AUC was inflated.
+    # Test holdout gives honest AUC matching walk_forward OOS.
+    p_xgb_test = cal_xgb.predict_proba(X_test)[:, 1]
+    p_lgb_test = cal_lgb.predict_proba(X_test)[:, 1]
+    p_ens      = w_xgb * p_xgb_test + w_lgb * p_lgb_test
+    y_pred     = (p_ens >= 0.5).astype(int)
 
     try:
-        auc = roc_auc_score(y_val, p_ens)
+        auc = roc_auc_score(y_test, p_ens)
     except Exception:
         auc = float("nan")
 
     metrics = {
-        "accuracy":    round(accuracy_score(y_val, y_pred),   4),
+        "accuracy":    round(accuracy_score(y_test, y_pred),   4),
         "roc_auc":     round(auc,                              4),
-        "brier_score": round(brier_score_loss(y_val, p_ens),  4),
+        "brier_score": round(brier_score_loss(y_test, p_ens),  4),
         "xgb_weight":  w_xgb,
         "lgb_weight":  w_lgb,
         "n_train":     len(X_train),
-        "n_test":      len(X_val),
+        "n_val":       len(X_val),
+        "n_test":      len(X_test),
     }
 
     if verbose:
