@@ -61,6 +61,15 @@
 - [ ] **Walk_forward purged k-fold audit** — find the 0.84 → 0.50 leak
 - [ ] **Survivorship bias audit** — add 20-50 historical delisted tickers
 
+- [ ] **ETF endpoint 404 diagnosis + skip** (May 8, BEFORE Pipeline C 19:00 VN)
+  - Issue: ~18 cosmetic ERRORs per daily_runner run on ETFs (SPY, QQQ, GLD, SLV, etc)
+  - UW endpoint 404s for ETFs (no insider/earnings/etc data — ETF doesn't have those)
+  - Pattern: occurs between /api/market/economic-calendar and /api/stock/{T}/stock-state
+  - Fix: identify endpoint, add ETF skip via tickers_metadata.csv
+  - Saves: ~44 UW calls/day on rate-limited Basic plan
+  - Cleans: pipecheck "1 log file with errors" false alarm
+  - DEADLINE: ship before Pipeline C 19:00 VN tomorrow May 8
+
 ### Week 2 (May 14-21)
 
 - [ ] **Vol-adjusted target labels** (return > 0.5σ instead of return > 0)
