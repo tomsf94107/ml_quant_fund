@@ -1,0 +1,233 @@
+{
+  "captured_at": "2026-05-07T15:39:35.538859",
+  "captured_for": "Pre-walk_forward Sunday May 10 baseline; post 76-feature retrain",
+  "context": "Models retrained May 7 with 76 features (commit 8da4953); fitness filter shipped (commit 919541b)",
+  "total_predictions_scored": 9664,
+  "date_range": {
+    "min": "2026-03-05",
+    "max": "2026-05-05"
+  },
+  "by_horizon": {
+    "h1": {
+      "n_predictions": 4117,
+      "roc_auc": 0.5053,
+      "brier_score": 0.2582,
+      "ece": 0.0726,
+      "high_conf_n": 95,
+      "high_conf_actual_win_rate": 0.4947,
+      "mid_conf_actual_win_rate": 0.4812,
+      "high_conf_actual_win_rate_full": 0.4947,
+      "calibration_inverted": false,
+      "calibration_table": [
+        {
+          "bin": "[0.1, 0.2)",
+          "n": 2,
+          "pred_mean": 0.1687,
+          "actual_win": 0.0,
+          "diff": -0.1687
+        },
+        {
+          "bin": "[0.2, 0.3)",
+          "n": 31,
+          "pred_mean": 0.2674,
+          "actual_win": 0.3871,
+          "diff": 0.1197
+        },
+        {
+          "bin": "[0.3, 0.4)",
+          "n": 296,
+          "pred_mean": 0.3677,
+          "actual_win": 0.5169,
+          "diff": 0.1492
+        },
+        {
+          "bin": "[0.4, 0.5)",
+          "n": 1412,
+          "pred_mean": 0.4578,
+          "actual_win": 0.483,
+          "diff": 0.0252
+        },
+        {
+          "bin": "[0.5, 0.6)",
+          "n": 1622,
+          "pred_mean": 0.5482,
+          "actual_win": 0.4797,
+          "diff": -0.0685
+        },
+        {
+          "bin": "[0.6, 0.7)",
+          "n": 659,
+          "pred_mean": 0.6352,
+          "actual_win": 0.5144,
+          "diff": -0.1208
+        },
+        {
+          "bin": "[0.7, 0.8)",
+          "n": 80,
+          "pred_mean": 0.7335,
+          "actual_win": 0.5125,
+          "diff": -0.221
+        },
+        {
+          "bin": "[0.8, 0.9)",
+          "n": 12,
+          "pred_mean": 0.8259,
+          "actual_win": 0.4167,
+          "diff": -0.4092
+        },
+        {
+          "bin": "[0.9, 1.0)",
+          "n": 3,
+          "pred_mean": 0.9393,
+          "actual_win": 0.3333,
+          "diff": -0.606
+        }
+      ]
+    },
+    "h3": {
+      "n_predictions": 2900,
+      "roc_auc": 0.4894,
+      "brier_score": 0.2602,
+      "ece": 0.0733,
+      "high_conf_n": 184,
+      "high_conf_actual_win_rate": 0.5,
+      "mid_conf_actual_win_rate": 0.5393,
+      "high_conf_actual_win_rate_full": 0.5,
+      "calibration_inverted": true,
+      "calibration_table": [
+        {
+          "bin": "[0.1, 0.2)",
+          "n": 2,
+          "pred_mean": 0.1886,
+          "actual_win": 0.5,
+          "diff": 0.3114
+        },
+        {
+          "bin": "[0.2, 0.3)",
+          "n": 14,
+          "pred_mean": 0.2686,
+          "actual_win": 0.4286,
+          "diff": 0.16
+        },
+        {
+          "bin": "[0.3, 0.4)",
+          "n": 146,
+          "pred_mean": 0.3666,
+          "actual_win": 0.5753,
+          "diff": 0.2088
+        },
+        {
+          "bin": "[0.4, 0.5)",
+          "n": 757,
+          "pred_mean": 0.458,
+          "actual_win": 0.5231,
+          "diff": 0.0651
+        },
+        {
+          "bin": "[0.5, 0.6)",
+          "n": 1151,
+          "pred_mean": 0.5496,
+          "actual_win": 0.55,
+          "diff": 0.0003
+        },
+        {
+          "bin": "[0.6, 0.7)",
+          "n": 646,
+          "pred_mean": 0.638,
+          "actual_win": 0.5077,
+          "diff": -0.1303
+        },
+        {
+          "bin": "[0.7, 0.8)",
+          "n": 162,
+          "pred_mean": 0.7339,
+          "actual_win": 0.4877,
+          "diff": -0.2463
+        },
+        {
+          "bin": "[0.8, 0.9)",
+          "n": 20,
+          "pred_mean": 0.8318,
+          "actual_win": 0.6,
+          "diff": -0.2318
+        },
+        {
+          "bin": "[0.9, 1.0)",
+          "n": 2,
+          "pred_mean": 0.9221,
+          "actual_win": 0.5,
+          "diff": -0.4221
+        }
+      ]
+    },
+    "h5": {
+      "n_predictions": 2647,
+      "roc_auc": 0.4737,
+      "brier_score": 0.2636,
+      "ece": 0.0931,
+      "high_conf_n": 226,
+      "high_conf_actual_win_rate": 0.5,
+      "mid_conf_actual_win_rate": 0.5556,
+      "high_conf_actual_win_rate_full": 0.5,
+      "calibration_inverted": true,
+      "calibration_table": [
+        {
+          "bin": "[0.2, 0.3)",
+          "n": 13,
+          "pred_mean": 0.2718,
+          "actual_win": 0.5385,
+          "diff": 0.2667
+        },
+        {
+          "bin": "[0.3, 0.4)",
+          "n": 188,
+          "pred_mean": 0.3682,
+          "actual_win": 0.617,
+          "diff": 0.2488
+        },
+        {
+          "bin": "[0.4, 0.5)",
+          "n": 694,
+          "pred_mean": 0.4569,
+          "actual_win": 0.5418,
+          "diff": 0.0849
+        },
+        {
+          "bin": "[0.5, 0.6)",
+          "n": 935,
+          "pred_mean": 0.5501,
+          "actual_win": 0.5658,
+          "diff": 0.0157
+        },
+        {
+          "bin": "[0.6, 0.7)",
+          "n": 591,
+          "pred_mean": 0.643,
+          "actual_win": 0.5296,
+          "diff": -0.1133
+        },
+        {
+          "bin": "[0.7, 0.8)",
+          "n": 200,
+          "pred_mean": 0.7353,
+          "actual_win": 0.51,
+          "diff": -0.2253
+        },
+        {
+          "bin": "[0.8, 0.9)",
+          "n": 25,
+          "pred_mean": 0.831,
+          "actual_win": 0.44,
+          "diff": -0.391
+        },
+        {
+          "bin": "[0.9, 1.0)",
+          "n": 1,
+          "pred_mean": 0.9046,
+          "actual_win": 0.0,
+          "diff": -0.9046
+        }
+      ]
+    }
+  }
+}
