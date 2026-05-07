@@ -338,9 +338,19 @@ def train_model(
         )
 
     # Walk-forward split — NO shuffle. Future must not leak into train set.
-    split_idx = int(len(X) * (1 - test_size))
-    X_train, X_test = X.iloc[:split_idx], X.iloc[split_idx:]
-    y_train, y_test = y.iloc[:split_idx], y.iloc[split_idx:]
+    # THREE-WAY TEMPORAL SPLIT (May 7 2026, Sprint 1 leak fix):
+    # Old: train/test (80/20). Test was used for: XGB early-stop eval_set,
+    # calibrator fit, AND reported AUC. Inflated AUC by ~0.30.
+    # New: train/val/test (60/20/20). Test holdout NEVER touched in training.
+    n = len(X)
+    train_end = int(n * 0.60)
+    val_end   = int(n * 0.80)
+    X_train = X.iloc[:train_end]
+    X_val   = X.iloc[train_end:val_end]
+    X_test  = X.iloc[val_end:]
+    y_train = y.iloc[:train_end]
+    y_val   = y.iloc[train_end:val_end]
+    y_test  = y.iloc[val_end:]
 
     # Risk-aware sample weights on training set only
     sample_weights = _risk_sample_weights(
@@ -352,7 +362,9 @@ def train_model(
     base_clf = XGBClassifier(**xgb_params)
 
     fit_kwargs: dict = {
-        "eval_set":  [(X_test, y_test)],
+        # FIXED May 7 2026: was [(X_test, y_test)] — early stopping decisions
+        # leaked test labels via training termination. Now uses val.
+        "eval_set":  [(X_val, y_val)],
         "verbose":    False,
     }
     if sample_weights is not None:
@@ -388,12 +400,14 @@ def train_model(
 
     # ── Isotonic calibration ───────────────────────────────────────────────
     # Isotonic regression re-maps the raw sigmoid output to true probabilities.
-    # cv=5 means we calibrate on the test set (already held out).
-    # This is safe because the test set was never seen during XGB training.
+    # FIXED May 7 2026: was calibrated.fit(X_test, y_test) — calibrator
+    # learned val/test labels then was evaluated on same labels. Direct leak.
+    # Old comment claimed safe because XGB hadn't seen test, but calibrator
+    # learning + eval on same set IS the leak. Now: calibrate on train.
     calibrated = CalibratedClassifierCV(base_clf, method="isotonic", cv=5)
-    calibrated.fit(X_test, y_test)
+    calibrated.fit(X_train, y_train)
 
-    # ── Evaluate ───────────────────────────────────────────────────────────
+    # ── Evaluate on TEST holdout (NEVER touched in training) ──────────────
     y_prob = calibrated.predict_proba(X_test)[:, 1]
     y_pred = (y_prob >= 0.5).astype(int)
 
