@@ -342,6 +342,8 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
         except Exception:
             delisted.append(ticker)
 
+    actual_removed = 0
+    aborted = False
     if delisted:
         log(f"  ❌ Possibly delisted: {delisted}")
         # SAFETY GUARD (May 7 2026): refuse to mass-wipe.
@@ -350,6 +352,7 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
         # Real delisting is rare — usually 1-2 tickers per quarter.
         wipe_pct = (len(delisted) / max(1, len(tickers))) * 100
         if fix and wipe_pct > 10.0:
+            aborted = True
             log(f"  🛑 ABORT — would remove {wipe_pct:.0f}% of tickers ({len(delisted)}/{len(tickers)})")
             log(f"     This usually means a yfinance/network outage, not real delisting.")
             log(f"     NOT modifying tickers.txt. Re-run validator manually after verifying.")
@@ -372,6 +375,7 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
             if new_entries:
                 with open(watchlist, "a") as f:
                     f.write("\n".join(new_entries) + "\n")
+            actual_removed = len(delisted)
             log(f"  ✅ Moved {delisted} to tickers_watchlist.txt, removed from tickers.txt")
             desktop_alert(
                 "ML Quant Fund — Delisted Tickers",
@@ -380,7 +384,12 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
     else:
         log(f"  ✅ All {len(tickers)} tickers have active price data")
 
-    return {"delisted": len(delisted), "tickers": delisted, "fixed": len(delisted) if fix else 0}
+    return {
+        "delisted": len(delisted),
+        "tickers": delisted,
+        "fixed": actual_removed,
+        "aborted": aborted,
+    }
 
 
 def check_log_sizes(max_mb: float = 10.0) -> dict:
@@ -449,7 +458,10 @@ def run_validator(days: int = 30, fix: bool = True, ticker: str | None = None):
     log(f"  Signal labels     : {results['signals']['bad_labels']} wrong, {results['signals']['fixed']} fixed")
     log(f"  NULL outcomes     : {results['nulls']['null_outcomes']} found, {results['nulls']['fixed']} fixed")
     log(f"  Price errors      : {results['prices']['wrong']}/{results['prices']['checked']} wrong, {results['prices']['fixed']} fixed")
-    log(f"  Delisted tickers  : {results['delisted']['delisted']} found, {results['delisted']['fixed']} removed")
+    if results['delisted'].get('aborted'):
+        log(f"  Delisted tickers  : {results['delisted']['delisted']} flagged, 0 removed (safety guard ABORTED — likely API outage)")
+    else:
+        log(f"  Delisted tickers  : {results['delisted']['delisted']} found, {results['delisted']['fixed']} removed")
     log(f"  Large log files   : {results['logs']['large_logs']} truncated")
     log("=" * 60)
 
