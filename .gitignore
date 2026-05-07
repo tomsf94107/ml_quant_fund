@@ -53,3 +53,14 @@ archive/
 # institutional_trades.db SQLite WAL files
 institutional_trades.db-shm
 institutional_trades.db-wal
+
+# Step 4 correlation analysis artifacts (May 7 2026) — diagnostic only
+feature_correlation_full.csv
+feature_panel_sample.csv
+
+# Model backup directories (~350MB each, would bloat repo)
+models/saved/backup_before_*/
+
+# Local fitness scoring CSV (regenerated weekly via cron)
+fitness.csv
+fitness_relaxed.csv
