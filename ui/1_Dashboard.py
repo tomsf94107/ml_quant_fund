@@ -375,100 +375,99 @@ if _use_cache:
         st.stop()
 
 elif _refresh_live:
+    # REFACTORED May 7 2026: Refresh Live now spawns daily_runner_batched
+    # subprocess (same as runfund) — single source of truth for signal
+    # generation. All today's fixes (pre-check, Massive-only, batching)
+    # automatically apply. UI uses existing auto_load_cache path on completion.
+    import subprocess as _sub
+    import os as _os
+    import re as _re
+    import time as _time
+    _ROOT_DIR = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    _PYTHON   = "/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python"
 
-    if not tickers:
-        st.error("No tickers selected — please select at least one ticker in the sidebar.")
+    progress = st.progress(0.0, text="Starting daily_runner_batched (3 batches x 42 tickers)...")
+    status_box = st.empty()
+    log_box = st.empty()
+    log_lines = []
+
+    try:
+        proc = _sub.Popen(
+            [_PYTHON, "-m", "scripts.daily_runner_batched"],
+            cwd=_ROOT_DIR,
+            stdout=_sub.PIPE,
+            stderr=_sub.STDOUT,
+            text=True,
+            bufsize=1,
+        )
+
+        ticker_re   = _re.compile(r"\u2500\u2500\s+([A-Z]{1,5})\s+h=(\d+)d\s+\u2500\u2500")
+        batch_re    = _re.compile(r"BATCH\s+(\d+)/(\d+)")
+        exit_re     = _re.compile(r"BATCH\s+(\d+)/(\d+):\s+exit=(\d+),\s+elapsed=([\d.]+)s")
+        done_re     = _re.compile(r"DONE\s+\u2014\s+(\d+)\s+signals,\s+(\d+)\s+BUY,\s+(\d+)\s+failed")
+        all_done_re = _re.compile(r"ALL BATCHES COMPLETE")
+
+        current_batch = 0
+        total_batches = 3
+        tickers_in_batch = 0
+
+        for line in proc.stdout:
+            line = line.rstrip()
+            log_lines.append(line)
+            if len(log_lines) > 15:
+                log_lines = log_lines[-15:]
+
+            m = exit_re.search(line)
+            if m:
+                bn = m.group(1)
+                progress.progress(float(bn) / total_batches,
+                    text=f"Batch {bn}/{total_batches} done (exit={m.group(3)}, {float(m.group(4)):.0f}s)")
+                continue
+
+            m = batch_re.search(line)
+            if m and "exit=" not in line:
+                current_batch = int(m.group(1))
+                progress.progress((current_batch - 1) / total_batches,
+                    text=f"Batch {current_batch}/{total_batches} starting...")
+                continue
+
+            m = ticker_re.search(line)
+            if m:
+                tickers_in_batch += 1
+                base = (current_batch - 1) / total_batches
+                within = min(tickers_in_batch / 42.0, 1.0) / total_batches
+                progress.progress(min(base + within, 0.99),
+                    text=f"Batch {current_batch}/{total_batches} - {m.group(1)}")
+                continue
+
+            m = done_re.search(line)
+            if m:
+                status_box.info(
+                    f"Batch {current_batch}: {m.group(1)} signals, "
+                    f"{m.group(2)} BUY, {m.group(3)} failed"
+                )
+                tickers_in_batch = 0
+                continue
+
+            if all_done_re.search(line):
+                progress.progress(1.0, text="ALL BATCHES COMPLETE")
+
+            log_box.code("\n".join(log_lines), language="text")
+
+        proc.wait()
+        if proc.returncode != 0:
+            st.error(f"daily_runner_batched exited with code {proc.returncode}")
+            st.stop()
+
+    except Exception as _e:
+        st.error(f"Subprocess failed: {_e}")
         st.stop()
 
-    csv_buffers   = []
-    pred_log_rows = []
-    signal_summary = []
-
-    @st.cache_data(ttl=3600)
-    def _cached_features(t, s, e):
-        return build_feature_dataframe(t, start_date=s, end_date=e)
-
-    progress = st.progress(0, text="Building features...")
-
-    for i, tkr in enumerate(tickers):
-        progress.progress(i / len(tickers), text=f"Processing {tkr}...")
-
-        # ── 1. Build features ─────────────────────────────────────────────────
-        try:
-            df = _cached_features(
-                tkr,
-                start_date.isoformat(),
-                end_date.isoformat(),
-            )
-        except Exception as e:
-            st.warning(f"⚠️ {tkr}: feature build failed — {e}")
-            continue
-
-        if df.empty:
-            st.warning(f"⚠️ {tkr}: no data returned")
-            continue
-
-        # ── 2. Generate signals ───────────────────────────────────────────────
-        result = generate_signals(
-            ticker=tkr,
-            df=df,
-            horizon=horizon,
-            confidence_threshold=confidence_threshold,
-            block_tau=block_tau,
-            risk_label=risk_label,
-        )
-
-        if result.error:
-            st.warning(f"⚠️ {tkr}: {result.error}")
-            continue
-
-        signal_summary.append(result)
-
-        # ── 3. Log prediction ─────────────────────────────────────────────────
-        confidence_str = (
-            "HIGH"   if result.today_prob_eff >= 0.65 else
-            "MEDIUM" if result.today_prob_eff >= 0.55 else
-            "LOW"
-        )
-        pred_log_rows.append({
-            "ticker":          tkr,
-            "prediction_date": date.today().isoformat(),
-            "horizon":         horizon,
-            "prob_up":         result.today_prob_eff,
-            "prob_raw":        result.today_prob,
-            "signal":          result.today_signal,
-            "confidence":      confidence_str,
-        })
-
-    progress.progress(1.0, text="Done.")
-
-    # ── Log all predictions to DB ─────────────────────────────────────────────
-    if pred_log_rows:
-        try:
-            log_predictions_batch(pred_log_rows)
-        except Exception as e:
-            st.warning(f"Prediction logging failed: {e}")
-
-    # ── Save dashboard cache ─────────────────────────────────────────────────
-    _write_cache([{
-        "ticker": _r.ticker, "horizon": _r.horizon,
-        "signal": _r.today_signal, "prob": _r.today_prob,
-        "prob_eff": _r.today_prob_eff,
-        "current_price": _r.current_price,
-        "price_target_up": _r.price_target_up,
-        "price_target_dn": _r.price_target_dn,
-        "expected_return": _r.expected_return,
-        "atr": _r.atr,
-        "sharpe": _r.metrics.sharpe if _r.metrics else None,
-        "max_drawdown": _r.metrics.max_drawdown if _r.metrics else None,
-        "cagr": _r.metrics.cagr if _r.metrics else None,
-        "accuracy": _r.metrics.accuracy if _r.metrics else None,
-        "n_trades": _r.metrics.n_trades if _r.metrics else None,
-        "profit_factor": _r.metrics.profit_factor if _r.metrics else None,
-        "exposure": _r.metrics.exposure if _r.metrics else None,
-    } for _r in signal_summary])
+    progress.progress(1.0, text="Done. Reloading cache...")
+    status_box.success("Signals refreshed via daily_runner_batched. Reloading dashboard...")
+    _time.sleep(1)
     st.session_state["auto_load_cache"] = True
-    st.rerun()  # auto-reload cache after live run
+    st.rerun()
 
     # ─────────────────────────────────────────────────────────────────────────
 
