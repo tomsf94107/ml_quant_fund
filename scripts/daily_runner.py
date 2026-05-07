@@ -280,7 +280,12 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
             # ticker 86 silently via getaddrinfo() thread failure).
             try:
                 from features import massive_client as _mc_check
-                _check_df = _mc_check.download(ticker, start="2024-12-01", end="2025-01-01",
+                # Use recent 30-day window — was hardcoded 2024-12 which is stale,
+                # caused USAR/XYZ false-skips since they came onto Polygon after that.
+                from datetime import date as _date_chk, timedelta as _td_chk
+                _chk_end = _date_chk.today().strftime("%Y-%m-%d")
+                _chk_start = (_date_chk.today() - _td_chk(days=30)).strftime("%Y-%m-%d")
+                _check_df = _mc_check.download(ticker, start=_chk_start, end=_chk_end,
                                                 auto_adjust=True, progress=False)
                 if _check_df.empty:
                     log.warning(f"  ⚠ {ticker} has no Massive data — skipping (avoid yfinance fallback chain)")

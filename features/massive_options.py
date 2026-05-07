@@ -80,17 +80,22 @@ def get_25delta_skew_massive(ticker: str, current_price: float = None,
         return result
 
     try:
-        # Get current price if not provided (use yfinance as free lookup)
+        # Get current price if not provided. Use Massive (paid + reliable) for
+        # tickers per Atom rule (May 7 2026): yfinance ONLY for indexes (^VIX etc).
         if current_price is None:
-            from features.yf_resilient import safe_ticker_info, safe_ticker_history
-            info = safe_ticker_info(ticker) or {}
-            current_price = info.get("regularMarketPrice") or info.get("currentPrice")
-            if not current_price:
-                hist = safe_ticker_history(ticker, period="1d")
+            from features import massive_client as _mc
+            from datetime import date as _date_p, timedelta as _td_p
+            _p_end = _date_p.today().strftime("%Y-%m-%d")
+            _p_start = (_date_p.today() - _td_p(days=10)).strftime("%Y-%m-%d")
+            try:
+                hist = _mc.download(ticker, start=_p_start, end=_p_end,
+                                    auto_adjust=True, progress=False)
                 if hist is not None and not hist.empty:
                     current_price = float(hist["Close"].iloc[-1])
+            except Exception as _e:
+                pass
             if not current_price:
-                result["error"] = "Could not get current price"
+                result["error"] = f"Could not get current price for {ticker} from Massive"
                 return result
 
         # Target expiration ~30 days out
