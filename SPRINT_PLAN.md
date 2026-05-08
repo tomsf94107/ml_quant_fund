@@ -39,6 +39,18 @@
 29. Every bug fix includes regression test plan
 30. When Atom pushes back, listen
 31. Always test solutions before permanent implementation
+32. Audit related code before every patch (grep for same pattern across codebase, not just direct fix site)
+33. Run end-to-end test before commit — never claim fix works without smoke-testing the full path
+34. Build pre-commit audit infrastructure (scripts/precommit_audit.sh) and require its passage
+35. Treat any auto-fix or auto-modify operation as DESTRUCTIVE — must require explicit flag (--fix, FORCE=1) and log to audit_skips.log if bypassed
+36. Verify deadline triggers before treating as urgent (e.g. confirm Pipeline C runs the validator before pre-19:00 panic)
+37. Run the SPRINT_PLAN rule checklist (Rules 1-43) before sending any response with a recommendation, options, or fix proposal — this rule is the meta-enforcement
+38. Use ONE labeling scheme per message — don't mix A/B/C with 1/2/3 in the same response
+39. Systematic comparison required for >1 option — each option must list: what changes (concrete files), production impact, technical debt impact, risk level with reasoning, time estimate
+40. Recommendation consistency check — re-read analysis after writing recommendation. If they contradict, STOP and fix one of them
+41. Anchoring detection — if recommending the smallest/easiest option, explicitly verify: does smaller scope leave technical debt? does it require future re-litigation? is the larger option actually low-risk too?
+42. Label hygiene — when introducing letters/numbers, define inline ("Option A: <description>"), don't reference letters by position alone
+43. No asymmetric analysis — equal analysis depth on all options. Asymmetric analysis (5 paragraphs on C, 2 sentences on A) = biased recommendation
 
 ---
 
