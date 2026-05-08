@@ -33,7 +33,7 @@ with st.sidebar:
     st.markdown("## ⚙️ Settings")
     horizon              = st.selectbox("Signal horizon", [1, 3, 5],
                                          format_func=lambda x: f"{x}d")
-    confidence_threshold = st.slider("Min confidence threshold", 0.50, 0.95, 0.55, 0.01)
+    confidence_threshold = st.slider("Min confidence threshold", 0.50, 0.95, 0.70, 0.01)
     high_conf_threshold  = st.slider("High-confidence BUY threshold", 0.60, 0.95, 0.70, 0.01)
     include_hold_alerts  = st.toggle("Alert on HOLD signals you hold", value=True)
 

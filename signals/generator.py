@@ -167,7 +167,7 @@ RISK_MULTIPLIER: dict[str, float] = {
 }
 
 # ── Signal thresholds ─────────────────────────────────────────────────────────
-DEFAULT_CONFIDENCE_THRESHOLD = 0.55   # Prob_eff must exceed this for BUY
+DEFAULT_CONFIDENCE_THRESHOLD = 0.70   # Prob_eff must exceed this for BUY (aligned May 8 2026 — was 0.55)
 DEFAULT_BLOCK_TAU             = 3     # block entry when risk_next_3d >= this
 
 
@@ -383,7 +383,7 @@ def generate_signals(
     ticker               : e.g. "AAPL"
     df                   : output of build_feature_dataframe() — no targets needed
     horizon              : 1, 3, or 5 days
-    confidence_threshold : Prob_eff must exceed this to generate BUY (default 0.55)
+    confidence_threshold : Prob_eff must exceed this to generate BUY (default 0.70)
     block_tau            : block entry when risk_next_3d >= this (default 3)
     risk_label           : global 72h event risk from calendar page
                            ("Low" | "Medium" | "High" | None)
