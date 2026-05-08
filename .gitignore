@@ -64,10 +64,3 @@ models/saved/backup_before_*/
 # Local fitness scoring CSV (regenerated weekly via cron)
 fitness.csv
 fitness_relaxed.csv
-
-# Runtime data + outputs (auto-generated)
-data/sentiment.db
-data/signals_cache.json
-data/watchlist_cache.json
-fitness.csv
-models/saved/training_report.csv
