@@ -222,6 +222,20 @@ class SignalResult:
     expected_return: Optional[float] = None
     atr:             Optional[float] = None
 
+    # ── Schema v2 multiplier breakdown (May 8 2026) ──────────────────
+    # Exposed for: validator reconstruction, Sprint 2 ablation studies,
+    # tier system audit. All Optional — None means generator didn't compute
+    # them (error path or skipped helper).
+    today_risk_mult:         Optional[float] = None
+    today_sent_mult:         Optional[float] = None
+    today_regime_mult:       Optional[float] = None
+    today_options_mult:      Optional[float] = None
+    today_squeeze_mult:      Optional[float] = None
+    today_intraday_mult:     Optional[float] = None
+    today_fg_mult:           Optional[float] = None
+    today_gate_block:        Optional[int]   = None  # 0/1
+    today_prob_eff_uncapped: Optional[float] = None  # pre-confidence-cap
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PRIVATE HELPERS
@@ -560,6 +574,7 @@ def generate_signals(
             signal_df=pd.DataFrame(),
             today_signal="HOLD", today_prob=0.0, today_prob_eff=0.0,
             metrics=empty_metrics, error=str(e),
+            # Schema v2: error path leaves multipliers as None (default)
         )
 
     # ── 2. Build signal frame ─────────────────────────────────────────────────
@@ -601,6 +616,9 @@ def generate_signals(
     # Apply risk + sentiment + regime + options flow + squeeze + fear/greed multipliers
     today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
+
+    # Schema v2: capture pre-cap value for SHAP / Sprint 2 audit
+    today_prob_eff_uncapped = today_prob_eff
 
     # CONFIDENCE CAP (May 7 2026, Sprint 1 Day 1):
     # h=3 and h=5 measured INVERTED at prob_up >= 0.70 per May 7 SHAP analysis.
@@ -690,6 +708,16 @@ def generate_signals(
         price_target_dn=price_target_dn,
         expected_return=expected_return,
         atr=round(atr_val, 4) if atr_val else None,
+        # Schema v2 multiplier breakdown (May 8 2026)
+        today_risk_mult=round(float(risk_mult), 4),
+        today_sent_mult=round(float(sent_mult), 4),
+        today_regime_mult=round(float(regime_mult), 4),
+        today_options_mult=round(float(options_mult), 4),
+        today_squeeze_mult=round(float(squeeze_mult), 4),
+        today_intraday_mult=round(float(intraday_mult), 4),
+        today_fg_mult=round(float(fg_mult), 4),
+        today_gate_block=1 if today_gated else 0,
+        today_prob_eff_uncapped=round(float(today_prob_eff_uncapped), 4),
     )
 
 

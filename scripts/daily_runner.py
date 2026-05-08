@@ -117,6 +117,16 @@ def log_prediction_to_db(
     prob: float, prob_eff: float, run_date: str,
     is_watchlist: bool = False,
     tier: str = "tactical",
+    # ── Schema v2 fields (May 8 2026): multiplier audit + reconstruction ──
+    risk_mult:         float | None = None,
+    sent_mult:         float | None = None,
+    regime_mult:       float | None = None,
+    options_mult:      float | None = None,
+    squeeze_mult:      float | None = None,
+    intraday_mult:     float | None = None,
+    fg_mult:           float | None = None,
+    gate_block:        int   | None = None,
+    prob_eff_uncapped: float | None = None,
 ):
     """Log prediction to accuracy.db for later reconciliation."""
     try:
@@ -131,6 +141,16 @@ def log_prediction_to_db(
             confidence="HIGH" if prob_eff >= 0.70 else "MEDIUM" if prob_eff >= 0.55 else "LOW",
             is_watchlist=is_watchlist,
             tier=tier,
+            # Schema v2 pass-through:
+            risk_mult=risk_mult,
+            sent_mult=sent_mult,
+            regime_mult=regime_mult,
+            options_mult=options_mult,
+            squeeze_mult=squeeze_mult,
+            intraday_mult=intraday_mult,
+            fg_mult=fg_mult,
+            gate_block=gate_block,
+            prob_eff_uncapped=prob_eff_uncapped,
         )
     except Exception as e:
         log.warning(f"DB log failed for {ticker}: {e}")
@@ -337,6 +357,16 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                         prob=sig.today_prob,
                         prob_eff=sig.today_prob_eff,
                         run_date=run_date,
+                        # Schema v2 multiplier breakdown:
+                        risk_mult=sig.today_risk_mult,
+                        sent_mult=sig.today_sent_mult,
+                        regime_mult=sig.today_regime_mult,
+                        options_mult=sig.today_options_mult,
+                        squeeze_mult=sig.today_squeeze_mult,
+                        intraday_mult=sig.today_intraday_mult,
+                        fg_mult=sig.today_fg_mult,
+                        gate_block=sig.today_gate_block,
+                        prob_eff_uncapped=sig.today_prob_eff_uncapped,
                         tier=_tier,
                     )
 
@@ -538,6 +568,16 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                             signal=sig.today_signal,
                             prob=sig.today_prob,
                             prob_eff=sig.today_prob_eff,
+                            # Schema v2 multiplier breakdown:
+                            risk_mult=sig.today_risk_mult,
+                            sent_mult=sig.today_sent_mult,
+                            regime_mult=sig.today_regime_mult,
+                            options_mult=sig.today_options_mult,
+                            squeeze_mult=sig.today_squeeze_mult,
+                            intraday_mult=sig.today_intraday_mult,
+                            fg_mult=sig.today_fg_mult,
+                            gate_block=sig.today_gate_block,
+                            prob_eff_uncapped=sig.today_prob_eff_uncapped,
                             run_date=run_date,
                             is_watchlist=True,
                             tier=_tier,

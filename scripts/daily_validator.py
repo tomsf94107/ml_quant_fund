@@ -7,14 +7,20 @@ Checks every ticker in tickers.txt every day:
   1. Price sanity      — re-fetches actual open/close prices and compares
                          stored actual_return against ground truth
   2. Ghost predictions — flags predictions on weekends/market holidays
-  3. Signal integrity  — ensures BUY label matches prob_up >= BUY_THRESHOLD
+  3. Signal integrity  — flags BUY/HOLD inconsistencies (NON-DESTRUCTIVE
+                         since May 8 2026 — see schema v2 fix)
   4. NULL/NaN guard    — flags outcomes with missing actual_return
   5. Off-by-one check  — detects timezone bugs (return sign inverted vs price)
 
-Auto-fixes:
-  - Wrong signal labels (BUY → HOLD if prob_up < BUY_THRESHOLD)
+Auto-fixes (DESTRUCTIVE):
   - Bad outcomes (deletes and re-reconciles affected ticker/dates)
   - Ghost predictions (deletes weekend/holiday rows)
+
+Non-destructive (warning only, May 8 2026):
+  - Signal labels — logs warnings but does NOT modify signal column.
+    Validator cannot reliably reconstruct generator's BUY decision (which
+    includes hysteresis from yesterday's signal). Logs mismatches for
+    manual review only.
 
 Writes report to logs/validator.log
 Sends desktop notification if manual action needed.
@@ -50,7 +56,14 @@ from features.yf_resilient import safe_yf_download
 DB_PATH        = Path("accuracy.db")
 TICKERS_FILE   = Path("tickers.txt")
 LOG_DIR        = Path("logs")
-BUY_THRESHOLD  = 0.70
+# FIXED May 8 2026: was 0.70 — destroyed 70 legitimate BUYs (May 7 cron).
+# Generator uses DEFAULT_CONFIDENCE_THRESHOLD=0.55. DB column "prob_up"
+# actually stores prob_EFF (post-multiplier) per sink.py docstring.
+# Now reads from generator for single-source-of-truth.
+try:
+    from signals.generator import DEFAULT_CONFIDENCE_THRESHOLD as BUY_THRESHOLD
+except ImportError:
+    BUY_THRESHOLD = 0.55  # fallback if import fails
 ET             = pytz.timezone("America/New_York")
 RETURN_TOL     = 0.001   # 0.1% tolerance for return comparison
 PRICE_TOL      = 0.005   # 0.5% tolerance for price comparison
@@ -163,40 +176,84 @@ def check_ghost_predictions(conn: sqlite3.Connection, days: int, fix: bool) -> d
 
 
 def check_signal_labels(conn: sqlite3.Connection, days: int, fix: bool) -> dict:
-    """Ensure BUY label matches prob_up >= BUY_THRESHOLD."""
-    log(f"Checking signal label integrity (BUY_THRESHOLD={BUY_THRESHOLD})...")
+    """
+    Flag signal label inconsistencies. NON-DESTRUCTIVE (May 8 2026).
+
+    Background: Generator's BUY decision is:
+        BUY if (prob_eff > threshold AND NOT gate_block) OR
+               (yesterday=BUY AND prob_eff > exit_threshold)   # hysteresis
+
+    Threshold subtlety (May 8 2026):
+      - Generator default: DEFAULT_CONFIDENCE_THRESHOLD = 0.55
+      - Production override in daily_runner: BUY_THRESHOLD = 0.70
+      - Confidence cap on h=3/h=5: prob_eff capped at 0.65
+      - This validator uses 0.55 (the library default) for the lower
+        bound check. False positives are possible — for example,
+        h=3/h=5 BUYs that survived via hysteresis with prob_eff=0.65
+        will pass validation but the 0.70 production threshold check
+        wouldn't match. This is acceptable since validator is
+        non-destructive (warnings only).
+
+    DB column 'prob_up' stores prob_eff (post-multiplier).
+    DB column 'gate_block' stores 0/1 for event-risk block (added May 8 2026).
+    Hysteresis state is NOT stored — cannot be reconstructed.
+
+    What this check does:
+      - For ROWS WITH gate_block populated (post-migration):
+          Flag BUY rows where (prob_up < threshold OR gate_block == 1)
+          → these are unambiguously inconsistent with generator's logic
+      - For HOLDs with prob_up >= threshold: SKIP (could be hysteresis exit)
+      - For ROWS WITH gate_block NULL (pre-migration): SKIP entirely
+        (cannot reconstruct without gate_block info)
+      - NEVER UPDATE the signal column (--fix flag does NOT modify rows)
+
+    Why non-destructive: prior version (commit a1415e3) destroyed legitimate
+    BUYs (70 on 2026-05-07, 212 cumulative). Validator cannot reliably
+    reconstruct generator's full decision logic.
+    """
+    log(f"Checking signal label integrity (threshold={BUY_THRESHOLD}, "
+        f"NON-DESTRUCTIVE since May 8 2026)...")
     cutoff = (date.today() - timedelta(days=days)).isoformat()
 
-    bad_buys = conn.execute("""
-        SELECT id, ticker, prediction_date, prob_up, signal
+    # Schema-aware: only check rows where gate_block is populated.
+    # Pre-migration rows (gate_block IS NULL) are skipped.
+    inconsistent_buys = conn.execute("""
+        SELECT id, ticker, prediction_date, horizon, prob_up, signal,
+               gate_block
         FROM predictions
         WHERE prediction_date >= ?
           AND signal = 'BUY'
-          AND prob_up < ?
+          AND gate_block IS NOT NULL
+          AND (prob_up < ? OR gate_block = 1)
     """, (cutoff, BUY_THRESHOLD)).fetchall()
 
-    bad_holds = conn.execute("""
-        SELECT id, ticker, prediction_date, prob_up, signal
-        FROM predictions
+    skipped_old = conn.execute("""
+        SELECT COUNT(*) AS n FROM predictions
         WHERE prediction_date >= ?
-          AND signal = 'HOLD'
-          AND prob_up >= ?
-    """, (cutoff, BUY_THRESHOLD)).fetchall()
+          AND gate_block IS NULL
+    """, (cutoff,)).fetchone()
+    skipped_old_count = skipped_old["n"] if skipped_old else 0
 
-    issues = len(bad_buys) + len(bad_holds)
-    if issues:
-        log(f"  ❌ Found {len(bad_buys)} BUY signals below threshold, {len(bad_holds)} HOLD signals above threshold")
-        if fix:
-            for row in bad_buys:
-                conn.execute("UPDATE predictions SET signal='HOLD' WHERE id=?", (row["id"],))
-            for row in bad_holds:
-                conn.execute("UPDATE predictions SET signal='BUY' WHERE id=?", (row["id"],))
-            conn.commit()
-            log(f"  ✅ Fixed {issues} signal labels")
+    if inconsistent_buys:
+        log(f"  ⚠ Found {len(inconsistent_buys)} BUY rows inconsistent with "
+            f"generator logic (prob_up < {BUY_THRESHOLD} OR gate_block=1)")
+        log(f"    First 5 inconsistencies:")
+        for row in inconsistent_buys[:5]:
+            log(f"      {row['ticker']:<8} h={row['horizon']} "
+                f"{row['prediction_date']} prob_up={row['prob_up']:.4f} "
+                f"gate_block={row['gate_block']}")
+        log(f"  ℹ NON-DESTRUCTIVE: signal column NOT modified.")
+        log(f"  ℹ If pattern persists, investigate generator → sink data path.")
     else:
-        log(f"  ✅ All signal labels are correct")
+        log(f"  ✅ All schema-v2 signal labels consistent with generator logic")
 
-    return {"bad_labels": issues, "fixed": issues if fix else 0}
+    if skipped_old_count > 0:
+        log(f"  ℹ Skipped {skipped_old_count} pre-migration rows "
+            f"(gate_block IS NULL — added May 8 2026)")
+
+    # Always returns 0 for "fixed" since we never modify
+    return {"bad_labels": len(inconsistent_buys), "fixed": 0,
+            "skipped_old_schema": skipped_old_count}
 
 
 def check_null_outcomes(conn: sqlite3.Connection, days: int, fix: bool) -> dict:

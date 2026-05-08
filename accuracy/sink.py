@@ -193,6 +193,27 @@ def init_db() -> None:
         ]:
             cur.execute(stmt)
 
+        # ── Schema v2 auto-migration (May 8 2026) ────────────────────────────
+        # Adds 9 columns for multiplier audit + validator reconstruction.
+        # Idempotent: skips columns that already exist.
+        # Companion script: scripts/migrate_predictions_v2.py
+        _V2_COLUMNS = [
+            ("risk_mult",         "REAL"),
+            ("sent_mult",         "REAL"),
+            ("regime_mult",       "REAL"),
+            ("options_mult",      "REAL"),
+            ("squeeze_mult",      "REAL"),
+            ("intraday_mult",     "REAL"),
+            ("fg_mult",           "REAL"),
+            ("gate_block",        "INTEGER"),
+            ("prob_eff_uncapped", "REAL"),
+        ]
+        cur.execute("PRAGMA table_info(predictions)")
+        _existing_cols = {row[1] for row in cur.fetchall()}
+        for _col, _typ in _V2_COLUMNS:
+            if _col not in _existing_cols:
+                cur.execute(f"ALTER TABLE predictions ADD COLUMN {_col} {_typ}")
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  WRITE: LOG PREDICTIONS
@@ -209,6 +230,16 @@ def log_prediction(
     is_watchlist:    bool = False,
     tier:            str = "tactical",
     prob_raw:        float | None = None,
+    # ── Schema v2 fields (May 8 2026): multiplier breakdown + reconstruction ──
+    risk_mult:         float | None = None,
+    sent_mult:         float | None = None,
+    regime_mult:       float | None = None,
+    options_mult:      float | None = None,
+    squeeze_mult:      float | None = None,
+    intraday_mult:     float | None = None,
+    fg_mult:           float | None = None,
+    gate_block:        int   | None = None,
+    prob_eff_uncapped: float | None = None,
 ) -> None:
     """
     Log a single prediction. Called every time generate_signals() runs.
@@ -225,6 +256,17 @@ def log_prediction(
     model_version   : model identifier for tracking regressions
     is_watchlist    : True for watchlist tickers (excluded from main accuracy)
     tier            : "core" | "secondary" | "tactical" | "lotto"
+
+    Schema v2 fields (May 8 2026, all None for backward compat):
+    risk_mult         : event risk multiplier (typically [0.78, 1.10])
+    sent_mult         : sentiment multiplier (1.0 if no sentiment data)
+    regime_mult       : market regime multiplier (BULL=1.05, BEAR=0.92, VOLATILE=0.65)
+    options_mult      : options flow multiplier (clipped [0.85, 1.15])
+    squeeze_mult      : short squeeze multiplier (1.0 if no UW data)
+    intraday_mult     : intraday momentum multiplier (clipped [0.95, 1.05])
+    fg_mult           : fear/greed multiplier
+    gate_block        : 0/1 was BUY blocked by event risk?
+    prob_eff_uncapped : prob_eff before confidence cap (for SHAP analysis)
     """
     init_db()
     p = _placeholder()
@@ -232,14 +274,26 @@ def log_prediction(
         conn.cursor().execute(f"""
             INSERT OR REPLACE INTO predictions
                 (ticker, prediction_date, horizon, prob_up, prob_raw,
-                 signal, confidence, model_version, created_at, is_watchlist, tier)
-            VALUES ({p},{p},{p},{p},{p},{p},{p},{p},{p},{p},{p})
+                 signal, confidence, model_version, created_at, is_watchlist, tier,
+                 risk_mult, sent_mult, regime_mult, options_mult, squeeze_mult,
+                 intraday_mult, fg_mult, gate_block, prob_eff_uncapped)
+            VALUES ({p},{p},{p},{p},{p},{p},{p},{p},{p},{p},{p},
+                    {p},{p},{p},{p},{p},{p},{p},{p},{p})
         """, (
             ticker.upper(), str(prediction_date), horizon,
             float(prob_up),
             float(prob_raw) if prob_raw is not None else None,
             signal, confidence, model_version,
             ts_et(), 1 if is_watchlist else 0, tier,
+            float(risk_mult)         if risk_mult         is not None else None,
+            float(sent_mult)         if sent_mult         is not None else None,
+            float(regime_mult)       if regime_mult       is not None else None,
+            float(options_mult)      if options_mult      is not None else None,
+            float(squeeze_mult)      if squeeze_mult      is not None else None,
+            float(intraday_mult)     if intraday_mult     is not None else None,
+            float(fg_mult)           if fg_mult           is not None else None,
+            int(gate_block)          if gate_block        is not None else None,
+            float(prob_eff_uncapped) if prob_eff_uncapped is not None else None,
         ))
 
 
