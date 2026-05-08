@@ -32,7 +32,7 @@ def init_importance_table() -> None:
         conn.execute("CREATE INDEX IF NOT EXISTS idx_fim_date ON feature_importance_history(retrain_date)")
         conn.commit()
 
-def save_feature_importance(ticker: str, horizon: int, importances: dict, retrain_date=None) -> int:
+def save_feature_importance(ticker: str, horizon: int, importances: dict, retrain_date=None, shap_importances: dict | None = None) -> int:
     if not importances:
         return 0
     retrain_date = retrain_date or date.today()
