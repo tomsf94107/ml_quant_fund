@@ -439,7 +439,7 @@ def generate_signals(
 
 
     # ETFs don't have options flow, short interest, or analyst data
-    _ETFS = {"SLV", "GLD", "SPY", "QQQ", "TLT", "IWM", "XLF", "XLE", "VIX"}
+    _ETFS = {"SLV", "GLD", "SPY", "QQQ", "TLT", "IWM", "XLF", "XLE", "VIX", "XLI", "XLU", "XLV"}
     _is_etf = ticker.upper() in _ETFS
 
     # ── UW signals multiplier ────────────────────────────────────────────────
