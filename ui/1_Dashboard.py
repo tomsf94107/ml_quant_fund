@@ -268,7 +268,8 @@ risk_mult  = {"Low": 1.00, "Medium": 0.92, "High": 0.85}.get(risk_label, 1.00)
 
 if risk_info:
     col1, col2 = st.columns([1, 5])
-    col1.metric("Next 72h Risk", f"{risk_info['label']} ({risk_info['score']})")
+    col1.metric("Next 72h Risk", f"{risk_info['label']} ({risk_info['score']})",
+                help="Event risk score for the next 72 hours from earnings, Fed/CPI, and FDA calendars. Higher = more uncertainty around upcoming dates.")
 
 # ── Macro regime badge ────────────────────────────────────────────────────────
 try:
@@ -951,10 +952,14 @@ for result in signal_summary:
 
         # Backtest KPIs
         c1, c2, c3, c4 = st.columns(4)
-        c1.metric("Sharpe",   f"{m.sharpe:.2f}"       if not np.isnan(m.sharpe)       else "—")
-        c2.metric("Max DD",   f"{m.max_drawdown:.1%}"  if not np.isnan(m.max_drawdown) else "—")
-        c3.metric("CAGR",     f"{m.cagr:.1%}"          if not np.isnan(m.cagr)         else "—")
-        c4.metric("Accuracy", f"{m.accuracy:.1%}"      if not np.isnan(m.accuracy)     else "—")
+        c1.metric("Sharpe",   f"{m.sharpe:.2f}"       if not np.isnan(m.sharpe)       else "—",
+                  help="Annualized risk-adjusted return. Returns ÷ volatility, scaled to 252 trading days. Sharpe > 1 is good; > 2 is excellent.")
+        c2.metric("Max DD",   f"{m.max_drawdown:.1%}"  if not np.isnan(m.max_drawdown) else "—",
+                  help="Maximum peak-to-trough drawdown over the backtest period. Smaller is better. -20% means down 20% at the worst point before recovery.")
+        c3.metric("CAGR",     f"{m.cagr:.1%}"          if not np.isnan(m.cagr)         else "—",
+                  help="Compound Annual Growth Rate. The single yearly return that, compounded, produces the backtest's total return.")
+        c4.metric("Accuracy", f"{m.accuracy:.1%}"      if not np.isnan(m.accuracy)     else "—",
+                  help="Fraction of predictions where direction (up/down) matched actual outcome. 50% = coin flip. Current realistic ceiling for retail equity ML is ~55%.")
 
         st.caption(
             f"Trades: {m.n_trades} · "
@@ -1113,9 +1118,12 @@ if acc_df.empty:
     )
 else:
     c1, c2, c3 = st.columns(3)
-    c1.metric("Avg Accuracy",  f"{acc_df['accuracy'].mean():.1%}")
-    c2.metric("Avg ROC-AUC",   f"{acc_df['roc_auc'].mean():.3f}")
-    c3.metric("Avg Brier",     f"{acc_df['brier_score'].mean():.3f}")
+    c1.metric("Avg Accuracy",  f"{acc_df['accuracy'].mean():.1%}",
+              help="Mean accuracy across all tickers in the universe. Walk-forward baseline (May 9): h=1 0.5172, h=3 0.4994, h=5 0.5071.")
+    c2.metric("Avg ROC-AUC",   f"{acc_df['roc_auc'].mean():.3f}",
+              help="Receiver Operating Characteristic Area Under Curve. Measures ranking quality: 0.5 = random, 1.0 = perfect. Walk-forward baseline: 0.52.")
+    c3.metric("Avg Brier",     f"{acc_df['brier_score'].mean():.3f}",
+              help="Brier score = mean squared error between predicted probability and actual outcome. Lower is better. 0.25 = uninformative.")
 
     st.dataframe(
         acc_df[["ticker", "horizon", "accuracy", "roc_auc",
