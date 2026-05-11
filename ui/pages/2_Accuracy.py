@@ -84,9 +84,12 @@ try:
             avg_beat   = sum(r["pct_beat_spy"] for r in valid) / len(valid)
             days_beating = sum(1 for r in valid if r["pct_beat_spy"] >= 0.5)
             m1, m2, m3 = st.columns(3)
-            m1.metric("Avg daily alpha vs SPY", f"{avg_vs_spy:+.2%}", f"across {len(valid)} trading days")
-            m2.metric("Days beating SPY", f"{days_beating}/{len(valid)}", f"{days_beating/len(valid):.0%} of days")
-            m3.metric("Avg tickers beating SPY", f"{avg_beat:.0%}")
+            m1.metric("Avg daily alpha vs SPY", f"{avg_vs_spy:+.2%}", f"across {len(valid)} trading days",
+                      help="Mean of (model BUY pick daily return − SPY daily return) across all trading days. Positive = system beats SPY.")
+            m2.metric("Days beating SPY", f"{days_beating}/{len(valid)}", f"{days_beating/len(valid):.0%} of days",
+                      help="Number of trading days where the BUY-tickers basket outperformed SPY. >50% is the bar for systematic edge.")
+            m3.metric("Avg tickers beating SPY", f"{avg_beat:.0%}",
+                      help="On the average day, what fraction of BUY tickers beat SPY. 50% = coin flip per name.")
 
         st.markdown("---")
 
@@ -161,10 +164,13 @@ try:
         overall_acc   = sum(r["accuracy"] for r in valid) / len(valid) if valid else 0
 
         m1, m2, m3 = st.columns(3)
-        m1.metric("Overall BUY accuracy", f"{overall_acc:.1%}", f"{total_signals} total signals")
-        m2.metric("Tickers with signals", len(valid))
+        m1.metric("Overall BUY accuracy", f"{overall_acc:.1%}", f"{total_signals} total signals",
+                  help="Fraction of BUY signals where actual return was positive. 50% = coin flip.")
+        m2.metric("Tickers with signals", len(valid),
+                  help="Distinct tickers that produced at least one BUY signal in the window.")
         m3.metric("Statistical significance", "Not yet" if total_signals < 200 else "Borderline",
-                  f"Need 60+ per ticker")
+                  f"Need 60+ per ticker",
+                  help="Crude rule of thumb: ~60+ signals/ticker before per-ticker accuracy is meaningful. Wilson 95% CI on aggregate at n>=200.")
 
         st.markdown("---")
 
@@ -247,10 +253,14 @@ if acc_df.empty:
 
 # ── KPI row ───────────────────────────────────────────────────────────────────
 c1, c2, c3, c4 = st.columns(4)
-c1.metric("Tickers tracked",  len(acc_df))
-c2.metric("Avg Accuracy",     f"{acc_df['accuracy'].mean():.1%}")
-c3.metric("Avg ROC-AUC",      f"{acc_df['roc_auc'].mean():.3f}")
-c4.metric("Avg Brier Score",  f"{acc_df['brier_score'].mean():.3f}")
+c1.metric("Tickers tracked",  len(acc_df),
+          help="Total tickers with at least one prediction in the accuracy cache.")
+c2.metric("Avg Accuracy",     f"{acc_df['accuracy'].mean():.1%}",
+          help="Unweighted mean of per-ticker directional accuracy. Walk-forward May 9: h=1 0.5172 / h=3 0.4994 / h=5 0.5071.")
+c3.metric("Avg ROC-AUC",      f"{acc_df['roc_auc'].mean():.3f}",
+          help="Ranking quality: 0.5 = random, 1.0 = perfect. Walk-forward baseline ~0.52.")
+c4.metric("Avg Brier Score",  f"{acc_df['brier_score'].mean():.3f}",
+          help="Mean squared error between predicted probability and outcome. Lower is better. 0.25 = uninformative.")
 
 st.caption(
     "**Brier score**: lower is better (0 = perfect, 0.25 = random). "
@@ -327,10 +337,14 @@ else:
     acc_live = correct / total if total > 0 else 0
 
     sm1, sm2, sm3, sm4 = st.columns(4)
-    sm1.metric("Predictions", total)
-    sm2.metric("Correct", f"{int(correct)}")
-    sm3.metric("Live accuracy", f"{acc_live:.1%}")
-    sm4.metric("Avg return", f"{hist['actual_return'].mean():+.2%}" if hist['actual_return'].notna().any() else "N/A")
+    sm1.metric("Predictions", total,
+                   help="Total predictions logged for the selected ticker in the visible date range.")
+    sm2.metric("Correct", f"{int(correct)}",
+                   help="Number of predictions where direction (up/down) matched the actual outcome.")
+    sm3.metric("Live accuracy", f"{acc_live:.1%}",
+                   help="Accuracy computed live from outcomes table, not from cached aggregates.")
+    sm4.metric("Avg return", f"{hist['actual_return'].mean():+.2%}" if hist['actual_return'].notna().any() else "N/A",
+                   help="Mean realized return across all predictions in the window (close-to-close on the prediction horizon).")
 
     chart_height = 200 if show_expanded == "Compact" else 350
 
@@ -461,8 +475,10 @@ try:
         cal_label = "Good" if mean_cal_error < 0.05 else "Fair" if mean_cal_error < 0.10 else "Poor"
 
         cc1, cc2, cc3, cc4 = st.columns(4)
-        cc1.metric("Total predictions", f"{total:,}")
-        cc2.metric("Overall win rate", f"{weighted_win:.1%}")
+        cc1.metric("Total predictions", f"{total:,}",
+                   help="Total predictions used to build the calibration curve.")
+        cc2.metric("Overall win rate", f"{weighted_win:.1%}",
+                   help="Weighted average actual win rate across all probability buckets.")
         if high_conf_win is not None:
             cc3.metric(f"High conf win rate (n={high_conf_n})",
                       f"{high_conf_win:.1%}",

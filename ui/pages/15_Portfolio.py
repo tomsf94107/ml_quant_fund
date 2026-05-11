@@ -178,12 +178,17 @@ total_cost = sum(float(p.get("shares",0)) * float(p.get("avg_cost",0)) for p in 
 
 # ── Metrics ───────────────────────────────────────────────────────────────────
 c1, c2, c3, c4, c5 = st.columns(5)
-c1.metric("Portfolio value",  f"${port_val:,.0f}")
-c2.metric("Cash on hand",     f"${cash:,.0f}", f"{cash/port_val*100:.1f}%")
-c3.metric("Invested",         f"${invested:,.0f}", f"{len(positions)} positions")
+c1.metric("Portfolio value",  f"${port_val:,.0f}",
+          help="Total account value: cash + invested positions at current market prices.")
+c2.metric("Cash on hand",     f"${cash:,.0f}", f"{cash/port_val*100:.1f}%",
+          help="Uninvested capital. The delta shows cash as percent of portfolio value.")
+c3.metric("Invested",         f"${invested:,.0f}", f"{len(positions)} positions",
+          help="Capital currently deployed across positions. Sum of (shares × avg_cost) per position.")
 c4.metric("Unrealised P&L",   f"${total_pnl:+,.0f}",
-          f"{total_pnl/total_cost*100:+.2f}%" if total_cost > 0 else "—")
-c5.metric("Last updated",     portfolio.get("last_updated", "—"))
+          f"{total_pnl/total_cost*100:+.2f}%" if total_cost > 0 else "—",
+          help="Mark-to-market gain/loss on open positions (current_price - avg_cost). Realized P&L on Trade Log page.")
+c5.metric("Last updated",     portfolio.get("last_updated", "—"),
+          help="Date of the most recent portfolio edit (manual entry, position add, or position update).")
 
 st.divider()
 
