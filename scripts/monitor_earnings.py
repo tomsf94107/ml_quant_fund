@@ -25,11 +25,11 @@ Usage:
     export EDGAR_USER_AGENT="Your Name your.real.email@yourdomain.com"
     export MASSIVE_API_KEY="..."   # optional
 
-    python scripts/monitor_earnings.py                       # default 4 tickers
+    python scripts/monitor_earnings.py                       # default 8 tickers
     python scripts/monitor_earnings.py --tickers NVDA DDOG   # subset
     python scripts/monitor_earnings.py --tickers NVDA --since 2026-04-01
 
-Default ticker universe: NVDA, DDOG, SMCI, OPEN.
+Default ticker universe: NVDA, DDOG, SMCI, OKLO, QUBT, CRWD, SNOW, NVMI.
 Cron-compatible. Returns nonzero on hard failure; soft-fails per-endpoint.
 """
 
@@ -86,15 +86,48 @@ TICKER_CONFIG: dict[str, dict] = {
         "shares_out": 345_000_000,
         "news_search_term": "Datadog DDOG",
     },
-    "OPEN": {
-        "sector_etf": "XHB",     # SPDR Homebuilders ETF (closest for iBuyer)
-        "earnings_date": "2026-05-07",  # AMC 5 PM ET, confirmed
+    "OKLO": {
+        "sector_etf": "URA",     # Global X Uranium ETF (closest sector proxy)
+        "earnings_date": "2026-05-12",  # AMC, confirmed (Q1 2026)
         "earnings_time": "AMC",
         "fiscal_q": "Q1 2026",
-        "shares_out": 755_000_000,
-        # OPEN as ticker is too generic for Google News — use company name
-        "news_search_term": "Opendoor OPEN stock",
+        "shares_out": 150_000_000,  # ~150M (verify; share count grows post-SPAC)
+        "news_search_term": "Oklo nuclear OKLO stock",
     },
+    "QUBT": {
+        "sector_etf": "QTUM",    # Defiance Quantum ETF
+        "earnings_date": "2026-05-11",  # AMC 4:30 PM ET, confirmed via PR
+        "earnings_time": "AMC",
+        "fiscal_q": "Q1 2026",
+        "shares_out": 245_000_000,  # ~245M (mkt cap ~$2.23B / ~$9 price)
+        "news_search_term": "Quantum Computing QUBT stock",
+    },
+    "CRWD": {
+        "sector_etf": "CIBR",    # First Trust Cybersecurity ETF
+        "earnings_date": "2026-06-03",  # AMC, estimate (UW: Jun 2, others Jun 9)
+        "earnings_time": "AMC",
+        "fiscal_q": "Q1 FY27",
+        "shares_out": 260_000_000,  # ~260M diluted (per company guidance)
+        "news_search_term": "CrowdStrike CRWD",
+    },
+    "SNOW": {
+        "sector_etf": "IGV",     # iShares Software ETF
+        "earnings_date": "2026-05-27",  # AMC 2 PM PT, confirmed via PR
+        "earnings_time": "AMC",
+        "fiscal_q": "Q1 FY27",
+        "shares_out": 335_000_000,
+        "news_search_term": "Snowflake SNOW stock",
+    },
+    "NVMI": {
+        "sector_etf": "SMH",     # VanEck Semiconductors (NVMI = semi metrology)
+        "earnings_date": "2026-05-14",  # BMO 8:30 AM ET, confirmed via 6-K
+        "earnings_time": "BMO",
+        "fiscal_q": "Q1 2026",
+        "shares_out": 33_000_000,
+        "news_search_term": "Nova metrology NVMI",
+    },
+    
+
 }
 
 DEFAULT_TICKERS = list(TICKER_CONFIG.keys())
@@ -129,7 +162,7 @@ def is_in_quiet_period(ticker: str) -> bool:
     return d is not None and 0 <= d <= 14
 
 # Signal thresholds. These names range from megacap (NVDA $200+, ~225M shares/day)
-# to small-cap (OPEN ~$3, several million shares/day). Thresholds below are
+# to small-cap (NVMI, low ADV). Thresholds below are
 # absolute USD; sections that compute relative metrics use ratios instead.
 DARKPOOL_BLOCK_MIN_USD = 1_000_000      # individual print to be "block" worthy
 DARKPOOL_DAILY_AGGREGATE_USD = 25_000_000  # heavy day on a typical mid/large
@@ -1052,7 +1085,7 @@ def section_institutional(conn: sqlite3.Connection, ticker: str) -> None:
     shares_out = _get_shares_outstanding(ticker)
 
     # Calibrate the "meaningful" threshold per ticker. A $50M position is
-    # routine for NVDA (3T market cap) but huge for OPEN (3B market cap).
+    # routine for NVDA (3T market cap) but huge for NVMI (~$7B market cap).
     # New rule: position is "meaningful" if it represents >= 0.5% of shares
     # outstanding, OR >= $50M for tickers where shares-out couldn't be fetched.
     NEW_HOLDER_PCT_THRESHOLD = 0.005  # 0.5% of shares out
@@ -2078,7 +2111,11 @@ SECTOR_COHORTS: dict[str, list[str]] = {
     "NVDA": ["AVGO", "AMD", "MRVL", "TSM"],
     "SMCI": ["DELL", "HPE", "ANET", "AVGO"],
     "DDOG": ["MDB", "SNOW", "NET", "TEAM"],
-    "OPEN": ["Z", "RDFN", "ZG"],
+    "OKLO": ["SMR", "NNE", "LEU", "BWXT"],
+    "QUBT": ["IONQ", "QBTS", "RGTI", "ARQQ"],
+    "CRWD": ["PANW", "ZS", "S", "FTNT"],
+    "SNOW": ["DDOG", "MDB", "NET", "TEAM"],
+    "NVMI": ["KLAC", "AMAT", "LRCX", "ONTO"],
 }
 
 
@@ -2176,7 +2213,7 @@ MACRO_NEWS_QUERIES: list[tuple[str, str]] = [
 
 # Ticker-specific macro topics. Macro news is most actionable when it's
 # about the thing that moves THIS ticker. NVDA cares about chip export
-# controls; OPEN cares about mortgage rates. Keep queries narrow.
+# controls; NVMI cares about semi-cycle headlines. Keep queries narrow.
 TICKER_MACRO_CONTEXT: dict[str, list[str]] = {
     "NVDA": [
         "AI chip China export controls",
@@ -2188,9 +2225,23 @@ TICKER_MACRO_CONTEXT: dict[str, list[str]] = {
     "DDOG": [
         "cloud spending enterprise software AI budget",
     ],
-    "OPEN": [
-        "mortgage rates housing market",
-        "Fed rate cut homebuilders housing",
+    "OKLO": [
+        "small modular reactor SMR nuclear policy",
+        "AI data center power demand",
+    ],
+    "QUBT": [
+        "quantum computing breakthrough government funding",
+    ],
+    "CRWD": [
+        "cybersecurity spending CISO budget",
+        "ransomware breach incident",
+    ],
+    "SNOW": [
+        "cloud spending enterprise software AI budget",
+    ],
+    "NVMI": [
+        "semiconductor capex foundry equipment",
+        "TSMC Samsung Intel fab investment",
     ],
 }
 
@@ -2431,7 +2482,7 @@ def section_news(ticker: str) -> None:
 
     # Ticker-specific macro context. Different topic stream from "ticker
     # stock" — picks up macro stories that affect this name uniquely.
-    # E.g. NVDA gets China chip export controls; OPEN gets mortgage rates.
+    # E.g. NVDA gets China chip export controls; NVMI gets semi-cycle headlines.
     macro_queries = TICKER_MACRO_CONTEXT.get(ticker.upper(), [])
     macro_cutoff = (date.today() - timedelta(days=7)).isoformat()
     for query in macro_queries:
