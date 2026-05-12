@@ -49,8 +49,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytz
-import yfinance as yf  # KEEP for type compat — only used via yf_resilient now
-from features.yf_resilient import safe_yf_download
+# yfinance removed for ticker prices (May 12 2026 — Issue B fix per memory #6).
+# Architecture rule: Massive for ticker OHLCV, yfinance for indexes ONLY.
+# Pre-fix: validator overwrote sink's Massive-sourced prices with yfinance
+# values, "fixing" ~390/day correct outcomes into wrong ones.
+from features import massive_client as _mc
+from features.yf_resilient import safe_yf_download  # KEEP for any future index check
 
 # ── Config ────────────────────────────────────────────────────────────────────
 DB_PATH        = Path("accuracy.db")
@@ -96,13 +100,21 @@ def is_trading_day(d: date) -> bool:
 
 
 def fetch_prices(ticker: str, start: date, end: date) -> pd.DataFrame | None:
-    """Fetch OHLCV via yf_resilient (May 5 2026 — prevents curl_cffi DNS leak)."""
+    """Fetch OHLCV from Massive (May 12 2026 — Issue B fix per memory #6).
+
+    Architecture rule: Massive for ticker prices, yfinance for indexes only.
+    Pre-fix: validator used safe_yf_download which routes to raw yfinance.
+    yfinance and sink's Massive source naturally diverge (different
+    adjustment policies, snapshot times). Validator's auto-fix was
+    overwriting sink's correct Massive prices with diverged yfinance values.
+    """
     try:
-        raw = safe_yf_download(
-            [ticker],
+        raw = _mc.download(
+            ticker,
             start=str(start - timedelta(days=5)),
             end=str(end + timedelta(days=2)),
             auto_adjust=True,
+            progress=False,
         )
         if raw is None or raw.empty:
             return None
@@ -116,16 +128,35 @@ def fetch_prices(ticker: str, start: date, end: date) -> pd.DataFrame | None:
         return None
 
 
-def compute_return(px: pd.DataFrame, pred_date: date) -> float | None:
-    """Compute open→close return for a given date."""
-    ts = pd.Timestamp(pred_date)
+def _add_trading_days(start_date: date, n_days: int) -> date:
+    """Add n trading days (Mon-Fri) to a date. Mirrors sink.reconcile_outcomes."""
+    d = start_date
+    added = 0
+    while added < n_days:
+        d += timedelta(days=1)
+        if d.weekday() < 5:
+            added += 1
+    return d
+
+
+def compute_return(px: pd.DataFrame, pred_date: date, horizon: int) -> float | None:
+    """Compute close[T] → close[T + horizon trading days] return.
+
+    Fixed May 12 2026 to match sink.reconcile_outcomes (memory #19, May 4).
+    Pre-fix used same-day open→close, which disagreed with stored values
+    (which are N-day forward close-to-close returns). Validator's auto-fix
+    was overwriting correct stored values with wrong same-day returns.
+    """
     try:
-        day_open  = float(px["Open"].asof(ts))
-        day_close = float(px["Close"].asof(ts))
-        if day_open == 0 or np.isnan(day_open) or np.isnan(day_close):
+        outcome_date = _add_trading_days(pred_date, horizon)
+        pred_ts    = pd.Timestamp(pred_date)
+        outcome_ts = pd.Timestamp(outcome_date)
+        close_pred    = float(px["Close"].asof(pred_ts))
+        close_outcome = float(px["Close"].asof(outcome_ts))
+        if close_pred == 0 or np.isnan(close_pred) or np.isnan(close_outcome):
             return None
-        ret = (day_close - day_open) / day_open
-        if ret != ret:  # NaN check
+        ret = (close_outcome - close_pred) / close_pred
+        if ret != ret:
             return None
         return ret
     except Exception:
@@ -300,9 +331,10 @@ def check_price_accuracy(
     wrong_details = []
 
     for ticker in tickers:
-        # Get stored outcomes for this ticker
+        # Get stored outcomes for this ticker — include horizon for proper return computation
+        # Fixed May 12 2026: was comparing same-day returns to N-day forward returns
         rows = conn.execute("""
-            SELECT o.id, o.prediction_date, o.actual_return, o.actual_up
+            SELECT o.id, o.prediction_date, o.horizon, o.actual_return, o.actual_up
             FROM outcomes o
             WHERE o.ticker = ?
               AND date(o.prediction_date) >= ?
@@ -312,9 +344,11 @@ def check_price_accuracy(
         if not rows:
             continue
 
-        # Fetch prices once per ticker
+        # Fetch prices once per ticker — extend max_date by max horizon (5d)
+        # so we have close[T+horizon] for all outcomes. Trading days, with buffer.
         min_date = date.fromisoformat(rows[0]["prediction_date"][:10])
-        max_date = date.fromisoformat(rows[-1]["prediction_date"][:10])
+        max_pred_date = date.fromisoformat(rows[-1]["prediction_date"][:10])
+        max_date = _add_trading_days(max_pred_date, 5)
         px = fetch_prices(ticker, min_date, max_date)
         if px is None:
             log(f"  ⚠ Could not fetch prices for {ticker} — skipping")
@@ -325,7 +359,7 @@ def check_price_accuracy(
             pred_date = date.fromisoformat(row["prediction_date"][:10])
             total_checked += 1
 
-            true_ret = compute_return(px, pred_date)
+            true_ret = compute_return(px, pred_date, int(row["horizon"]))
             if true_ret is None:
                 continue
 
@@ -391,10 +425,17 @@ def check_delisted_tickers(tickers: list[str], fix: bool) -> dict:
     log(f"Checking for delisted tickers across {len(tickers)} tickers...")
     delisted = []
 
+    # May 12 2026: route through Massive per memory #6. Pre-fix used
+    # safe_yf_download which falsely flagged all 125 tickers as delisted
+    # when yfinance had transient outages (SAFETY GUARD was always saving us).
+    from datetime import date as _date_chk, timedelta as _td_chk
+    _chk_end = _date_chk.today().strftime("%Y-%m-%d")
+    _chk_start = (_date_chk.today() - _td_chk(days=7)).strftime("%Y-%m-%d")
     for ticker in tickers:
         try:
-            raw = safe_yf_download([ticker], period="5d", auto_adjust=True) or pd.DataFrame()
-            if raw.empty:
+            raw = _mc.download(ticker, start=_chk_start, end=_chk_end,
+                               auto_adjust=True, progress=False)
+            if raw is None or raw.empty:
                 delisted.append(ticker)
         except Exception:
             delisted.append(ticker)
