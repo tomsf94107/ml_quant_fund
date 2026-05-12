@@ -28,13 +28,29 @@ from models.classifier import (
 from models.ensemble import train_ensemble
 
 # ── Ticker universe (your original 28 + room to grow) ─────────────────────────
-# Always read from tickers.txt — single source of truth
+# Read from tickers.txt (main universe) AND tickers_watchlist.txt (watchlist).
+# Watchlist tickers need fresh models so daily_runner's watchlist loop produces
+# real predictions instead of 0.0 (feature_names mismatch on stale models).
+# Bug fixed May 11 2026 — prior to this, watchlist was excluded from training
+# and stuck on May 1 stale models.
 from pathlib import Path as _Path
-_TICKERS_FILE = _Path(__file__).parent.parent / "tickers.txt"
-DEFAULT_TICKERS: list[str] = [
-    t.strip() for t in _TICKERS_FILE.read_text().splitlines()
-    if t.strip() and not t.startswith("#")
-] if _TICKERS_FILE.exists() else []
+_TICKERS_FILE   = _Path(__file__).parent.parent / "tickers.txt"
+_WATCHLIST_FILE = _Path(__file__).parent.parent / "tickers_watchlist.txt"
+
+
+def _read_ticker_file(path: _Path) -> list[str]:
+    if not path.exists():
+        return []
+    return [
+        t.strip() for t in path.read_text().splitlines()
+        if t.strip() and not t.startswith("#")
+    ]
+
+
+# Dedupe via dict.fromkeys to preserve order (main first, watchlist appended)
+DEFAULT_TICKERS: list[str] = list(dict.fromkeys(
+    _read_ticker_file(_TICKERS_FILE) + _read_ticker_file(_WATCHLIST_FILE)
+))
 
 TRAIN_START = "2018-01-01"   # 6+ years gives good regime diversity
 
