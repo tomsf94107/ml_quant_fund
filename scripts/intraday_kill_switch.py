@@ -139,7 +139,11 @@ def check_put_sweeps() -> tuple:
 
 def check_spy_vwap() -> tuple:
     try:
-        spy = safe_yf_download(["SPY"], period="1d", interval="5m", auto_adjust=True) or pd.DataFrame()
+        # May 12 2026 — Massive for SPY (memory #6, SPY is ETF not index)
+        from features import massive_client as _mc
+        spy = _mc.download("SPY", period="1d", interval="5m", auto_adjust=True, progress=False)
+        if spy is None:
+            spy = pd.DataFrame()
         if spy.empty or len(spy) < 10:
             return False, "VWAP: no data"
         if hasattr(spy.columns, "get_level_values"):

@@ -40,8 +40,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytz
-import yfinance as yf  # KEEP for type compat — only used via yf_resilient now
-from features.yf_resilient import safe_yf_download
+# yfinance removed for ticker prices (May 12 2026 — Day 9 audit sweep
+# closing gaps from c7a269e May 7 + e73daac May 12). Architecture rule:
+# Massive for ticker OHLCV, yfinance for indexes only.
+from features import massive_client as _mc
+from features.yf_resilient import safe_yf_download  # KEEP for any future index check
 
 sys.path.insert(0, ".")
 
@@ -88,9 +91,11 @@ def desktop_alert(title: str, message: str):
 
 
 def fetch_latest(ticker: str) -> dict | None:
-    """Fetch latest OHLCV + return for a ticker."""
+    """Fetch latest OHLCV + return for a ticker via Massive (memory #6)."""
     try:
-        raw = safe_yf_download([ticker], period="5d", auto_adjust=True) or pd.DataFrame()
+        raw = _mc.download(ticker, period="5d", auto_adjust=True, progress=False)
+        if raw is None:
+            raw = pd.DataFrame()
         if raw.empty:
             return None
         if isinstance(raw.columns, pd.MultiIndex):
@@ -401,9 +406,19 @@ def check_all_ticker_prices() -> dict:
     issues   = []
     today    = today_et()
 
-    # Step 1 — fetch all prices in one batch call
+    # Step 1 — fetch all prices via Massive (loop, no bulk endpoint)
+    # May 12 2026 — was safe_yf_download bulk, now per-ticker Massive
     try:
-        raw = safe_yf_download(tickers, period="3d", auto_adjust=True) or pd.DataFrame()
+        frames = []
+        for _t in tickers:
+            try:
+                _df = _mc.download(_t, period="3d", auto_adjust=True, progress=False)
+                if _df is not None and not _df.empty:
+                    _df.columns = pd.MultiIndex.from_product([_df.columns, [_t]])
+                    frames.append(_df)
+            except Exception:
+                continue
+        raw = pd.concat(frames, axis=1) if frames else pd.DataFrame()
         if isinstance(raw.columns, pd.MultiIndex):
             if "Close" in raw.columns.get_level_values(0):
                 closes = raw["Close"].copy()
@@ -424,7 +439,9 @@ def check_all_ticker_prices() -> dict:
             log(f"  Retrying {len(missing_now)} missing tickers individually...")
             for t in missing_now:
                 try:
-                    r = safe_yf_download([t], period="3d", auto_adjust=True) or pd.DataFrame()
+                    r = _mc.download(t, period="3d", auto_adjust=True, progress=False)
+                    if r is None:
+                        r = pd.DataFrame()
                     if not r.empty:
                         if isinstance(r.columns, pd.MultiIndex):
                             r.columns = r.columns.get_level_values(0)

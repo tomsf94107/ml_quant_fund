@@ -144,10 +144,12 @@ def get_options_signal(
             result["error"] = "yf.Ticker creation failed"
             return result
 
-        # Get current price if not provided — use safe wrapper
+        # Get current price via Massive — May 12 2026 (memory #6)
+        # yf.Ticker() above kept for options chains (no Massive equivalent)
         if current_price is None:
             try:
-                hist = safe_ticker_history(ticker, period="1d")
+                from features import massive_client as _mc
+                hist = _mc.download(ticker, period="5d", auto_adjust=True, progress=False)
                 if hist is not None and not hist.empty:
                     current_price = float(hist["Close"].iloc[-1])
             except Exception:
