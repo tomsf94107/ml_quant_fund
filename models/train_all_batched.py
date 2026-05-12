@@ -20,13 +20,32 @@ ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
 PYTHON = "/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python"
-TICKERS_FILE = ROOT / "tickers.txt"
+TICKERS_FILE   = ROOT / "tickers.txt"
+WATCHLIST_FILE = ROOT / "tickers_watchlist.txt"
 BATCH_SIZE = 42  # safely below death zone of ~99 tickers
 
 
-def load_tickers():
-    return [t.strip() for t in TICKERS_FILE.read_text().splitlines()
+def _read_ticker_file(path):
+    """Read a one-ticker-per-line file, skip blanks and comments."""
+    if not path.exists():
+        return []
+    return [t.strip() for t in path.read_text().splitlines()
             if t.strip() and not t.startswith("#")]
+
+
+def load_tickers():
+    """Load main universe + watchlist, dedupe via dict.fromkeys.
+
+    May 12 2026 — sibling fix to commit 9ee9d6f in train_all.py.
+    Without this, Pipeline B (which uses train_all_batched.py at
+    07:00 VN Tue-Sat) silently excludes watchlist tickers like
+    BYND/RZLV from retraining. They drift onto stale models when
+    the feature set changes (e.g. May 7 76→79 feature ship caused
+    feature_names mismatch errors and prob_up=0.0 outputs).
+    """
+    return list(dict.fromkeys(
+        _read_ticker_file(TICKERS_FILE) + _read_ticker_file(WATCHLIST_FILE)
+    ))
 
 
 def run_batch(tickers_subset: list[str], batch_label: str) -> int:
