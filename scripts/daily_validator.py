@@ -66,8 +66,13 @@ LOG_DIR        = Path("logs")
 # Now reads from generator for single-source-of-truth.
 try:
     from signals.generator import DEFAULT_CONFIDENCE_THRESHOLD as BUY_THRESHOLD
+    from signals.generator import HYSTERESIS_EXIT, _lookup_yesterday_signal
+    _HYSTERESIS_AVAILABLE = True
 except ImportError:
     BUY_THRESHOLD = 0.55  # fallback if import fails
+    HYSTERESIS_EXIT = {1: 0.65, 3: 0.50, 5: 0.50}  # match generator constants
+    _lookup_yesterday_signal = None
+    _HYSTERESIS_AVAILABLE = False
 ET             = pytz.timezone("America/New_York")
 RETURN_TOL     = 0.001   # 0.1% tolerance for return comparison
 PRICE_TOL      = 0.005   # 0.5% tolerance for price comparison
@@ -248,7 +253,14 @@ def check_signal_labels(conn: sqlite3.Connection, days: int, fix: bool) -> dict:
 
     # Schema-aware: only check rows where gate_block is populated.
     # Pre-migration rows (gate_block IS NULL) are skipped.
-    inconsistent_buys = conn.execute("""
+    #
+    # May 12 2026: hysteresis-aware filtering.
+    # Generator uses asymmetric ENTRY/EXIT thresholds per commit 4376a13.
+    # When yesterday=BUY for (ticker, h), today's prob_up only needs to
+    # exceed HYSTERESIS_EXIT (0.65/0.50/0.50 for h=1/3/5) to stay BUY.
+    # Without this, validator falsely flags every legitimate
+    # hysteresis-stay as 'inconsistent' (was 122 daily false positives).
+    candidate_buys = conn.execute("""
         SELECT id, ticker, prediction_date, horizon, prob_up, signal,
                gate_block
         FROM predictions
@@ -258,6 +270,71 @@ def check_signal_labels(conn: sqlite3.Connection, days: int, fix: bool) -> dict:
           AND (prob_up < ? OR gate_block = 1)
     """, (cutoff, BUY_THRESHOLD)).fetchall()
 
+    # Second-pass filter: drop rows that are valid generator decisions
+    #
+    # Two categories of "false positives" from the OR clause above:
+    #   1. Hysteresis stays: yesterday=BUY + today's prob_up >= EXIT thresh
+    #   2. Confidence-capped BUYs: prob_up=0.65 exact (capped from higher
+    #      uncapped value per generator L632-634 INVERSION_HORIZONS).
+    #      Pre-cap value may have exceeded ENTRY threshold legitimately.
+    #
+    # We need prob_eff_uncapped to assess category 2. Re-fetch with that col.
+    candidate_ids = [r["id"] for r in candidate_buys]
+    if candidate_ids:
+        placeholders = ",".join("?" * len(candidate_ids))
+        rows_with_uncapped = conn.execute(f"""
+            SELECT id, ticker, prediction_date, horizon, prob_up,
+                   prob_eff_uncapped, signal, gate_block
+            FROM predictions
+            WHERE id IN ({placeholders})
+        """, candidate_ids).fetchall()
+    else:
+        rows_with_uncapped = []
+
+    inconsistent_buys = []
+    hysteresis_stays = 0
+    capped_legit = 0
+    for row in rows_with_uncapped:
+        # gate_block=1 is always inconsistent (event-risk override)
+        if row["gate_block"] == 1:
+            inconsistent_buys.append(row)
+            continue
+
+        horizon_int = int(row["horizon"])
+        exit_thresh  = HYSTERESIS_EXIT.get(horizon_int, 0.50)
+        entry_thresh = 0.80 if horizon_int == 1 else 0.60  # HYSTERESIS_ENTRY
+
+        # Category 1: hysteresis stay (yesterday=BUY + prob_up >= EXIT)
+        prior = None
+        if _HYSTERESIS_AVAILABLE:
+            try:
+                prior = _lookup_yesterday_signal(
+                    ticker=row["ticker"],
+                    horizon=horizon_int,
+                    as_of=row["prediction_date"][:10],
+                )
+            except Exception:
+                pass
+        if prior == "BUY" and row["prob_up"] >= exit_thresh:
+            hysteresis_stays += 1
+            continue
+
+        # Category 2: confidence-capped BUY (prob_up == cap, uncapped >= ENTRY)
+        # Generator caps at 0.65 for INVERSION_HORIZONS (h=3, h=5) when
+        # uncapped > 0.65. Pre-cap value drives the decision.
+        uncapped = row["prob_eff_uncapped"]
+        if uncapped is not None:
+            try:
+                uncapped_f = float(uncapped)
+                if uncapped_f >= entry_thresh and row["prob_up"] < BUY_THRESHOLD:
+                    capped_legit += 1
+                    continue  # legitimate fresh BUY, was capped down post-decision
+            except (ValueError, TypeError):
+                pass
+
+        # Remaining: genuine inconsistency
+        inconsistent_buys.append(row)
+
     skipped_old = conn.execute("""
         SELECT COUNT(*) AS n FROM predictions
         WHERE prediction_date >= ?
@@ -265,9 +342,17 @@ def check_signal_labels(conn: sqlite3.Connection, days: int, fix: bool) -> dict:
     """, (cutoff,)).fetchone()
     skipped_old_count = skipped_old["n"] if skipped_old else 0
 
+    if hysteresis_stays > 0:
+        log(f"  ℹ Filtered out {hysteresis_stays} valid hysteresis-stay "
+            f"BUYs (yesterday=BUY + prob_up>=HYSTERESIS_EXIT)")
+    if capped_legit > 0:
+        log(f"  ℹ Filtered out {capped_legit} confidence-capped BUYs "
+            f"(prob_eff_uncapped>=ENTRY but stored prob_up<{BUY_THRESHOLD})")
+
     if inconsistent_buys:
         log(f"  ⚠ Found {len(inconsistent_buys)} BUY rows inconsistent with "
-            f"generator logic (prob_up < {BUY_THRESHOLD} OR gate_block=1)")
+            f"generator logic (prob_up < {BUY_THRESHOLD} OR gate_block=1, "
+            f"after hysteresis filter)")
         log(f"    First 5 inconsistencies:")
         for row in inconsistent_buys[:5]:
             log(f"      {row['ticker']:<8} h={row['horizon']} "
@@ -284,7 +369,9 @@ def check_signal_labels(conn: sqlite3.Connection, days: int, fix: bool) -> dict:
 
     # Always returns 0 for "fixed" since we never modify
     return {"bad_labels": len(inconsistent_buys), "fixed": 0,
-            "skipped_old_schema": skipped_old_count}
+            "skipped_old_schema": skipped_old_count,
+            "hysteresis_stays_filtered": hysteresis_stays,
+            "capped_legit_filtered": capped_legit}
 
 
 def check_null_outcomes(conn: sqlite3.Connection, days: int, fix: bool) -> dict:

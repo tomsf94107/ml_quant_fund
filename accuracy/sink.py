@@ -219,6 +219,89 @@ def init_db() -> None:
 #  WRITE: LOG PREDICTIONS
 # ══════════════════════════════════════════════════════════════════════════════
 
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  SIGNAL INTEGRITY GUARD (May 12 2026)
+#  Defense-in-depth: validates BUY claims before persist, regardless of writer.
+#  Mirrors generator.py hysteresis logic at L660.
+# ══════════════════════════════════════════════════════════════════════════════
+_HYSTERESIS_ENTRY = {1: 0.80, 3: 0.60, 5: 0.60}
+_HYSTERESIS_EXIT  = {1: 0.65, 3: 0.50, 5: 0.50}
+_CONFIDENCE_CAP   = 0.65
+
+
+def _validate_buy_signal(
+    ticker: str,
+    horizon: int,
+    prob_up: float,
+    signal: str,
+    prediction_date: str,
+    prob_eff_uncapped: float | None = None,
+    conn=None,
+) -> tuple[str, bool]:
+    """
+    Validate a claimed BUY against hysteresis + ENTRY/EXIT thresholds.
+
+    Returns (validated_signal, was_downgraded). If downgraded, signal flips
+    BUY → HOLD. Mirrors generator.py L660 decision logic exactly.
+    """
+    if signal != "BUY":
+        return signal, False  # only validate BUY claims
+
+    h = int(horizon)
+    entry_thresh = _HYSTERESIS_ENTRY.get(h, 0.60)
+    exit_thresh  = _HYSTERESIS_EXIT.get(h, 0.50)
+    prob = float(prob_up)
+
+    # Path 1: prob_up clears ENTRY → fresh BUY, valid regardless of history
+    if prob >= entry_thresh:
+        return "BUY", False
+
+    # Path 2: prob_up == CONFIDENCE_CAP and uncapped value >= ENTRY → legit cap
+    if (prob_eff_uncapped is not None
+            and abs(prob - _CONFIDENCE_CAP) < 1e-6
+            and float(prob_eff_uncapped) >= entry_thresh):
+        return "BUY", False
+
+    # Path 3: prob_up >= EXIT and yesterday was BUY → hysteresis stay
+    if prob >= exit_thresh:
+        prior_signal = None
+        try:
+            close_after = conn is None
+            if conn is None:
+                conn = _get_conn().__enter__() if False else None
+                import sqlite3 as _sql
+                conn = _sql.connect(f"file:{SQLITE_PATH}?mode=ro", uri=True)
+            row = conn.execute("""
+                SELECT signal FROM predictions
+                WHERE ticker = ?
+                  AND horizon = ?
+                  AND prediction_date < ?
+                  AND signal IS NOT NULL
+                ORDER BY prediction_date DESC, created_at DESC
+                LIMIT 1
+            """, (ticker.upper(), h, str(prediction_date))).fetchone()
+            prior_signal = row[0] if row else None
+            if close_after:
+                try: conn.close()
+                except Exception: pass
+        except Exception:
+            prior_signal = None
+        if prior_signal == "BUY":
+            return "BUY", False  # legitimate hysteresis stay
+
+    # No valid path → downgrade
+    import logging as _logging_sig
+    _log_sig = _logging_sig.getLogger("accuracy.sink.integrity")
+    _log_sig.warning(
+        f"⚠ SIGNAL INTEGRITY: {ticker} h={h} {prediction_date} BUY → HOLD "
+        f"(prob_up={prob:.4f} < ENTRY={entry_thresh:.2f}, "
+        f"uncapped={prob_eff_uncapped}, yesterday!=BUY)"
+    )
+    return "HOLD", True
+
+
+
 def log_prediction(
     ticker:          str,
     prediction_date: str | date,
@@ -271,6 +354,15 @@ def log_prediction(
     init_db()
     p = _placeholder()
     with _get_conn() as conn:
+        # Defense-in-depth: validate BUY claim before persist (May 12 2026)
+        signal, _was_downgraded = _validate_buy_signal(
+            ticker=ticker, horizon=horizon, prob_up=prob_up, signal=signal,
+            prediction_date=prediction_date, prob_eff_uncapped=prob_eff_uncapped,
+            conn=conn,
+        )
+        if _was_downgraded:
+            # Update confidence label too (was MEDIUM/HIGH for a BUY, now LOW)
+            confidence = "LOW"
         conn.cursor().execute(f"""
             INSERT OR REPLACE INTO predictions
                 (ticker, prediction_date, horizon, prob_up, prob_raw,
@@ -325,6 +417,32 @@ def log_predictions_batch(rows: list[dict]) -> int:
         for r in rows
     ]
     with _get_conn() as conn:
+        # Defense-in-depth: validate each row's BUY claim before batch insert
+        _validated_records = []
+        _downgrade_count = 0
+        for rec in records:
+            # rec tuple: (ticker, prediction_date, horizon, prob_up, prob_raw,
+            #             signal, confidence, model_version, created_at)
+            _t, _pd, _h, _pu, _pr, _sig, _conf, _mv, _ca = rec
+            _new_sig, _was_down = _validate_buy_signal(
+                ticker=_t, horizon=_h, prob_up=_pu, signal=_sig,
+                prediction_date=_pd, prob_eff_uncapped=None, conn=conn,
+            )
+            if _was_down:
+                _downgrade_count += 1
+                _validated_records.append(
+                    (_t, _pd, _h, _pu, _pr, _new_sig, "LOW", _mv, _ca)
+                )
+            else:
+                _validated_records.append(rec)
+        if _downgrade_count > 0:
+            import logging as _logging_batch
+            _log_batch = _logging_batch.getLogger("accuracy.sink.integrity")
+            _log_batch.warning(
+                f"⚠ BATCH INTEGRITY: {_downgrade_count} of {len(records)} "
+                f"BUY signals downgraded to HOLD"
+            )
+        records = _validated_records
         conn.cursor().executemany(f"""
             INSERT OR REPLACE INTO predictions
                 (ticker, prediction_date, horizon, prob_up, prob_raw,
