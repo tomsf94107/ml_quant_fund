@@ -2,7 +2,7 @@
 # scripts/pipeline_A_ingest.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # POST-CLOSE INGEST PIPELINE
-# Runs 3 AM VN (4 PM ET prev day) Tue-Sat
+# Runs 16:00 ET Mon-Fri (was 03:00 VN before ET migration)
 # Populates DB tables that Pipeline B's retrain/predict reads from
 # ─────────────────────────────────────────────────────────────────────────────
 #   Stage 1: Insider ETL (incremental, 7-day window — fast)

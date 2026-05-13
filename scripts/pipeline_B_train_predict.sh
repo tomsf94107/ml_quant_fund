@@ -2,7 +2,7 @@
 # scripts/pipeline_B_train_predict.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # TRAIN + PREDICT PIPELINE
-# Runs 7 AM VN (8 PM ET prev day) Tue-Sat
+# Runs 20:00 ET Mon-Fri (was 07:00 VN before ET migration)
 # Uses DBs populated by Pipeline A
 # ─────────────────────────────────────────────────────────────────────────────
 #   Stage 1: Dependency check — Pipeline A must have completed today

@@ -2,7 +2,7 @@
 # scripts/pipeline_C_preopen.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # PRE-OPEN FRESH RUNFUND
-# Runs 7:30 PM VN (8:30 AM ET) Mon-Fri — ~1 hour before US market open
+# Runs 08:00 ET Mon-Fri — ~90 min before US market open (was 19:00 VN before ET migration)
 # Chains sentiment + UW snapshot + fresh daily runner predictions
 # Uses the model trained by Pipeline B that morning
 # ─────────────────────────────────────────────────────────────────────────────
