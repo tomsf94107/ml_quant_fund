@@ -1,0 +1,106 @@
+# This file is exported from `crontab -l` after the VN-revert on May 13 2026.
+# Source of truth: install via `crontab scripts/crontab_VN_anchored.txt`
+# DST shift will need manual editing each Mar/Nov (US-EDT vs EST).
+
+MAILTO=""
+# ─────────────────────────────────────────────────────────────────────────────
+# All times are SYSTEM LOCAL (Vietnam, UTC+7), encoded to fire at desired
+# US-Eastern moments. macOS BSD cron does NOT respect TZ= variable for
+# schedule interpretation. Hence VN-anchored times throughout.
+#
+# Conversion: ET + 11h = VN during US-EDT (Mar-Nov, CURRENTLY ACTIVE)
+#             ET + 12h = VN during US-EST (Nov-Mar) — NEEDS SHIFT each DST
+#
+# Pipelines (Mon-Fri ET = Tue-Sat VN for evening pipelines):
+#   16:00 ET → 03:00 VN  Pipeline A  data ingest
+#   17:00 ET → 04:00 VN  Pipeline D  alpha panel
+#   20:00 ET → 07:00 VN  Pipeline B  train + predict
+#   08:00 ET → 19:00 VN  Pipeline C  pre-open (Mon-Fri same day VN)
+# ─────────────────────────────────────────────────────────────────────────────
+# Crontab for ML Quant Fund — sequenced pipelines
+# Replace your existing crontab with this. Back up first:
+#   crontab -l > ~/Desktop/crontab_backup_$(date +%Y%m%d).txt
+#
+# Then install:
+#   crontab /path/to/this/file
+#
+# Verify:
+#   crontab -l
+# ─────────────────────────────────────────────────────────────────────────────
+
+# API keys — REPLACE with your new rotated keys
+UW_API_KEY=YOUR_UW_KEY_HERE
+MASSIVE_API_KEY=YOUR_MASSIVE_KEY_HERE
+ANTHROPIC_API_KEY=YOUR_ANTHROPIC_KEY_HERE
+SEC_USER_AGENT=YOUR_NAME your@email.com
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Monday reconcile reminder (keep as-is)
+0 14 * * 0 osascript -e 'display notification "Go to localhost:8501 Accuracy Reconcile outcomes" with title "ML Quant Fund Monday Reconcile"'
+
+# Wake Mac at 2:50 AM Vietnam (before Pipeline A)
+50 2 * * 2-6 caffeinate -t 28800
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PIPELINE A — post-close ingest (3 AM VN = 4 PM ET prev day, Tue-Sat)
+0 3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_A_ingest.sh
+0 4 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_D_alpha_panel.sh
+# Economic calendar refresh — Mon/Wed/Fri 15:55 ET (5 min before Pipeline A)
+# Populates accuracy.db.economic_calendar (45 days forward) for risk_gate + Events page
+55 2 * * 2,4,6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/refresh_economic_calendar.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/refresh_econ_cal.log 2>&1
+
+# PIPELINE B — retrain + predict (7 AM VN = 8 PM ET prev day, Tue-Sat)
+# Depends on Pipeline A completing. Will refuse to run if A's marker is missing.
+0 7 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_B_train_predict.sh
+
+# PIPELINE C — pre-open fresh runfund (8 PM VN = 9 AM ET, Mon-Fri)
+0 19 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_C_preopen.sh
+
+# WEEKLY full insider ETL (Sun 4 AM VN) — full 365-day rebuild
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Independent monitors (unchanged — these don't need sequencing)
+
+# Health check — 1 PM Vietnam (2 AM ET)
+0 13 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/health_check.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/health_check.log 2>&1
+
+# Sentiment — 7:30 PM Vietnam (8:30 AM ET)
+
+# Intraday snapshot — 10 PM Vietnam (11 AM ET)
+30 20 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/intraday_snapshot_cron.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_snapshot.log 2>&1
+
+# Intraday alerts — every 30 min during market hours
+*/30 20-23 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from alerts.scanner import check_intraday_flip_alerts; check_intraday_flip_alerts()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_alerts.log 2>&1
+*/30 0-3 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from alerts.scanner import check_intraday_flip_alerts; check_intraday_flip_alerts()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_alerts.log 2>&1
+
+# Intraday reconcile (3x per day to catch all closes)
+30 21 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from accuracy.sink import reconcile_intraday_outcomes; reconcile_intraday_outcomes()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_reconcile.log 2>&1
+30 22 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from accuracy.sink import reconcile_intraday_outcomes; reconcile_intraday_outcomes()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_reconcile.log 2>&1
+30 0 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from accuracy.sink import reconcile_intraday_outcomes; reconcile_intraday_outcomes()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_reconcile.log 2>&1
+
+# Kill switch — every 5 min during market hours
+*/5 20-23 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/intraday_kill_switch_cron.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/kill_switch_alerts.log 2>&1
+*/5 0-3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/intraday_kill_switch_cron.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/kill_switch_alerts.log 2>&1
+
+# Walk-forward validation — Sunday 02:00-03:00 VN (off-hours, no pipeline conflict)
+# Each horizon ~16 min. Total ~50 min Sunday compute. Writes to accuracy.db.walk_forward_history
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SUNDAY MAINTENANCE — 1-hour spacing for clean memory reclamation
+# ─────────────────────────────────────────────────────────────────────────────
+# 02:00 walk_forward h=1 (~16 min)
+0 1 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 1 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h1.log 2>&1
+
+# 03:00 walk_forward h=3 (~17 min)
+0 2 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 3 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h3.log 2>&1
+
+# 04:00 walk_forward h=5 (~15 min)
+0 3 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 5 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h5.log 2>&1
+
+# 05:00 weekly insider full ETL (~3 min)
+0 4 * * 1 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/weekly_insider_full.sh
+
+# 06:00 fitness_scorer (~5 min) — naturally extends Step 3 BUY-suppression
+# filter as h=3/h=5 cross MIN_OBS=30 (~May 22)
+0 5 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m analysis.fitness_scorer --db accuracy.db --write-table --csv fitness.csv >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/fitness_scorer_weekly.log 2>&1
+

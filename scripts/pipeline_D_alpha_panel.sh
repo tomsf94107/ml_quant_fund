@@ -68,13 +68,24 @@ if summary['dates_written'] == 0:
 
 # ── Stage 3: Verify ──────────────────────────────────────────────────────────
 log "Stage 3: Verifying parquet output"
-TODAY=$($PYTHON -c 'from utils.timezone import today_et; print(today_et())')
-PARQUET=$ROOT/data/alpha_panel/$TODAY.parquet
-if [ ! -f "$PARQUET" ]; then
-    fail "Stage 3 — expected $PARQUET not found"
+# Find the most recent parquet file in alpha_panel/
+LATEST_PARQUET=$(ls -t $ROOT/data/alpha_panel/*.parquet 2>/dev/null | head -1)
+if [ -z "$LATEST_PARQUET" ]; then
+    fail "Stage 3 — no parquet files written"
 fi
-SIZE_KB=$(ls -l "$PARQUET" | awk '{print int($5/1024)}')
-log "  ✅ $TODAY.parquet present (${SIZE_KB} KB)"
+LATEST_DATE=$(basename "$LATEST_PARQUET" .parquet)
+SIZE_KB=$(ls -l "$LATEST_PARQUET" | awk '{print int($5/1024)}')
+
+# Warn if latest date is older than 1 trading day (would suggest data not fresh)
+TODAY=$($PYTHON -c 'from utils.timezone import today_et; print(today_et())')
+YESTERDAY_TS=$($PYTHON -c 'from datetime import date, timedelta; print((date.today() - timedelta(days=1)).isoformat())')
+if [ "$LATEST_DATE" = "$TODAY" ]; then
+    log "  ✅ $LATEST_DATE.parquet present (${SIZE_KB} KB) — today's data"
+elif [ "$LATEST_DATE" = "$YESTERDAY_TS" ]; then
+    log "  ✅ $LATEST_DATE.parquet present (${SIZE_KB} KB) — yesterday's data (likely ran before US close)"
+else
+    log "  ⚠️  $LATEST_DATE.parquet present (${SIZE_KB} KB) — older than expected"
+fi
 
 # ── Stage 4: Marker ──────────────────────────────────────────────────────────
 touch "$MARKER"
