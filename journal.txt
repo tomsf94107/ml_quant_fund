@@ -960,3 +960,341 @@ COMMITS THIS WEEK
     73c585e  feat(earnings): expand monitor 4→8 tickers
     d7fa1a0  feat(ui):       Trade Log page (Day 5)
     4ef7d69  feat(pnl):      FIFO realized P&L tab (Day 6)
+
+═══════════════════════════════════════════════════════════════════════════════
+DAY 7-8-9 LOG (May 11-12 2026)
+═══════════════════════════════════════════════════════════════════════════════
+
+May 11 (Monday) — Day 7 + Day 8 commits added:
+  94a4fd9  feat(ui):       Dashboard tooltips (8 metrics) — Day 7
+  6ef7f87  docs(journal):  Week 1 retrospective
+  183f7c0  feat(ui):       Accuracy + Portfolio tooltips (21 metrics) — Day 8
+
+May 12 (Tuesday) — emergency cleanup session:
+  9ee9d6f  fix(train_all): include watchlist tickers in retraining universe
+  e73daac  fix(daily_validator): use Massive + close-to-close horizon return
+
+═══════════════════════════════════════════════════════════════════════════════
+MAY 12 BUG-HUNT INCIDENT — VALIDATOR WAS DESTROYING SINK'S CORRECT VALUES
+═══════════════════════════════════════════════════════════════════════════════
+
+Discovered Mon evening during Pipeline C verification: BYND and RZLV
+predictions showed "HOLD 0.0%" on Dashboard.
+
+Investigation chain:
+  1. BYND/RZLV models stuck at May 1 timestamps (stale)
+  2. Reason: models/train_all.py L31 only reads tickers.txt,
+     watchlist tickers were excluded from retraining
+  3. After May 7-8 feature-set expansion (76→79 features),
+     stale watchlist models couldn't process new features
+  4. generate_signals raised "feature_names mismatch" → returned 0.0
+  5. Fix shipped (9ee9d6f), watchlist now in training universe
+
+THEN deeper investigation while retraining:
+
+  6. daily_validator log showed "390 prices fixed" daily —
+     turns out validator was OVERWRITING sink's correct values
+  7. Two-bug compound:
+     Bug A: validator used yfinance (architecture rule violation,
+            memory #6 — Massive for tickers, yfinance for indexes only)
+     Bug B: validator's compute_return used same-day open→close,
+            while sink writes close[T]→close[T+horizon] per memory #19
+
+  8. Both fixed in single commit e73daac:
+     - imports: from features import massive_client as _mc
+     - fetch_prices(): _mc.download() instead of safe_yf_download
+     - compute_return(): now takes horizon, computes close→close
+     - check_price_accuracy: SELECT includes o.horizon
+     - check_delisted_tickers: _mc.download() instead of yfinance
+
+DOWNSTREAM REPAIR done same day:
+  - Outcomes table wiped (10,798 rows) and re-reconciled clean (10,697 rows)
+  - Verification:
+      AAPL 2026-05-01: stored 0.459/0.459/0.459 → now -1.182/+2.631/+4.705 ✅
+      AAPL 2026-04-15: stored 3.203/3.203/3.203 → now -1.137/+2.485/+2.530 ✅
+  - Random smoke check: all (ticker, date) tuples show non-zero horizon
+    spread (was uniformly 0 before)
+  - Validator dry-run post-clean: 0/6630 prices wrong (was 396 before)
+  - Full retrain ran on clean labels (~30 min)
+
+SCOPE OF PRE-FIX DAMAGE (rolled back):
+  - All outcomes between Apr 28 and May 11 were nightly-overwritten
+    with validator's buggy same-day open→close values
+  - All 3 horizons had identical actual_return per (ticker, date)
+  - Walk-forward AUC May 9 baseline (0.520) used corrupted labels
+  - Fitness scores (commit 919541b) used corrupted labels
+  - Today's morning retrain (commit before clean labels) used corrupted labels
+
+═══════════════════════════════════════════════════════════════════════════════
+ROOT CAUSE PATTERN — AUDIT GAP
+═══════════════════════════════════════════════════════════════════════════════
+
+Two architecture rule violations both stem from same audit gap:
+
+  May 4 reconcile_outcomes fix (memory #19, commit d6b3ac6)
+    → fixed accuracy/sink.py
+    → daily_validator's compute_return function was missed
+
+  May 7 yfinance→Massive ship (memory #22, commit c7a269e)
+    → fixed daily_runner, builder, options_flow
+    → daily_validator and feature_validator were missed
+
+Per Rule 32 / Rule 9 (patch protocol): when fixing an architectural
+rule violation, grep for ALL siblings of the same bug class across
+the codebase BEFORE declaring fix complete.
+
+ENFORCEMENT (added today): for any architecture rule violation, the
+post-fix verification MUST include:
+  grep -rn "<pattern>" --include="*.py" .
+to confirm no remaining instances. Document found vs fixed.
+
+═══════════════════════════════════════════════════════════════════════════════
+DAY 9 BACKLOG (Wednesday May 13, post-clean state)
+═══════════════════════════════════════════════════════════════════════════════
+
+REMAINING AUDIT GAPS (yfinance violators per tonight's audit):
+  ⚠ scripts/feature_validator.py:93   single-ticker price fetch
+  ⚠ scripts/feature_validator.py:406  bulk ticker prices
+  ⚠ scripts/feature_validator.py:427  per-ticker retry
+  ⚠ scripts/intraday_kill_switch.py:142  SPY (ETF — Massive serves it)
+  ⚠ data/price_loader.py:45          ticker prices
+  ⚠ features/options_flow.py:138     safe_ticker_history — verify scope
+
+Same pattern as daily_validator fix tonight. Single sweep commit.
+
+VALIDATOR HYSTERESIS BLINDNESS (deferred from Day 8):
+  Validator flags 122 BUY rows daily as "inconsistent" because
+  prob_up < 0.7 threshold doesn't know about HYSTERESIS_EXIT thresholds.
+  Already NON-DESTRUCTIVE (signal column not modified), so cosmetic.
+  Fix: read yesterday's signal, use HYSTERESIS_EXIT (0.50 for h=3,
+  0.65 for h=1) when yesterday=BUY.
+
+POST-CLEAN VALIDATION:
+  - Re-run walk-forward on clean labels (~50 min)
+  - Re-run fitness_scorer on clean labels
+  - Update Dashboard accuracy KPIs (should auto-update)
+  - Compare h=1/h=3/h=5 AUC vs May 9 corrupted baseline
+
+WEEKLY CRON:
+  - Tue Pipeline B (07:00 VN, May 12) — verify clean labels survive
+  - Sat walk-forward (Sun 02:00 VN) — first clean baseline
+
+═══════════════════════════════════════════════════════════════════════════════
+LESSONS REINFORCED
+═══════════════════════════════════════════════════════════════════════════════
+
+1. "Bigger file = canonical" is anchoring (Rule 41).
+   Discovered tonight: ui/2_Accuracy.py at 50KB is dead code.
+   ui/pages/2_Accuracy.py at 27KB is live. Streamlit only
+   auto-discovers ui/pages/*.py for sidebar rendering.
+
+2. Memory entries can describe intent, not actual production state.
+   Memory #19 said "May 4 reconcile_outcomes fixed" — true at the
+   sink.py code level. False at the production-data-on-disk level
+   because validator nightly destroyed sink's correct writes.
+
+3. Auto-fix flags must be paired with destructive-action audits.
+   --fix=True in daily_validator silently destroyed correct data
+   for 14+ days. Validator's auto-fix logic itself was wrong.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PIT WALK-FORWARD ON CLEAN LABELS — May 12 2026 16:37 VN
+═══════════════════════════════════════════════════════════════════════════════
+
+Ran analysis.walk_forward --mode backtest --embargo 5 --pit
+Took 1.82 hours to rebuild PIT panel (10,697 outcomes × 79 features built
+fresh per prediction date via builder.build_feature_dataframe).
+
+RESULT — first honest baseline since corruption began:
+
+Per-fold:
+  fold 1: train n=1294  test n=2139  train_auc=0.9744  test_auc=0.5298  gap=0.444
+  fold 2: train n=3112  test n=2139  train_auc=0.9405  test_auc=0.5162  gap=0.424
+  fold 3: train n=5233  test n=2139  train_auc=0.9104  test_auc=0.4979  gap=0.413
+  fold 4: train n=7414  test n=2141  train_auc=0.8873  test_auc=0.5800  gap=0.307
+
+Overall:
+  n_oos                  8,558
+  pooled_oos_auc         0.486
+  pooled_oos_acc         0.487
+  pooled_oos_brier       0.304
+  mean_train_auc         0.928
+  mean_test_auc          0.531
+  auc_gap                0.397
+  Target positive class  57.1% (mild class imbalance)
+
+Diagnosis (script's own read):
+  - Massive train→test AUC gap of 0.397 (model fits noise)
+  - OOS AUC 0.531 mean per-fold = real but weak
+  - Strategy: combine many weak alphas (Finding Alphas Ch. 10)
+
+═══════════════════════════════════════════════════════════════════════════════
+WHAT THIS RESULT MEANS
+═══════════════════════════════════════════════════════════════════════════════
+
+Previous "OOS ~0.520" reference (memory #19 pre-update):
+  - Based on CORRUPTED labels (validator destroying sink's writes nightly)
+  - Based on 27-feature subset (prediction_features TABLE)
+  - Trustworthiness: low
+
+May 12 verified baseline:
+  - Clean close-to-close horizon labels (sink fix + validator fix shipped)
+  - Full 79-feature point-in-time panel
+  - Trustworthiness: high
+  - Pooled OOS AUC: 0.486
+  - Mean per-fold AUC: 0.531
+
+The system as-is has tiny statistical edge above coin flip (~3% in
+per-fold mean). Not enough to overcome transaction costs in current form.
+
+Path forward, per script diagnosis + Gap_Check Part 5:
+  TUNING the current model harder → won't help (already overfit by 0.397)
+  WORLDQUANT PIVOT → 17 alpha transformations × 79 features → ~1,300 candidate
+                     alphas → cull by correlation → combine via neutralizer
+  Phase 2 drafts already exist (memory #11):
+    /mnt/user-data/uploads/alpha_transformations.py
+    /mnt/user-data/uploads/neutralizer.py
+    /mnt/user-data/uploads/BRAIN_replication.md
+    /mnt/user-data/uploads/Finding_Alphas_Summary.md
+
+═══════════════════════════════════════════════════════════════════════════════
+TODAY'S COMPLETE COMMIT LIST (May 11-12 2026)
+═══════════════════════════════════════════════════════════════════════════════
+
+May 11 (Mon):
+  94a4fd9  feat(ui):       Dashboard tooltips (Day 7)
+  183f7c0  feat(ui):       Accuracy + Portfolio tooltips (Day 8)
+
+May 12 (Tue) — bug-hunt + cleanup session:
+  9ee9d6f  fix(train_all):       include watchlist tickers
+  e73daac  fix(daily_validator): Massive + close-to-close horizon return
+  c4eabf4  fix(train_all_batched): sibling watchlist fix for Pipeline B
+
+═══════════════════════════════════════════════════════════════════════════════
+DAY 9 BACKLOG STATUS UPDATE
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ DONE today (was Day 9):
+  - Re-run walk-forward on clean labels — verified honest baseline
+  - Reconcile clean outcomes — done at 13:30 VN
+  - Full clean-label retrain — done at 14:30 VN via batched runner
+
+⏳ STILL Day 9 (postponed to actual Day 9 / next session):
+  - Re-run fitness_scorer on clean labels (~5 min)
+    Memory #16 reminder ~May 22 for MIN_OBS=30 — but base re-run useful now
+  - Yfinance sweep across remaining files:
+      scripts/feature_validator.py (3 sites, cosmetic — no DB writes)
+      scripts/intraday_kill_switch.py:142 SPY
+      data/price_loader.py:45
+      features/options_flow.py:138 (verify scope first)
+  - Validator hysteresis blindness (cosmetic, 122 BUY rows logged daily)
+
+
+
+═══════════════════════════════════════════════════════════════════════════════
+DAY 10 — May 13 ET (Wednesday) — Marathon continuation
+═══════════════════════════════════════════════════════════════════════════════
+
+11 commits today, multiple scope areas:
+
+CRONTAB MIGRATION:
+  - All 19 cron schedules migrated to TZ=America/New_York
+  - Pipelines anchored ET: A=16:00 ET, B=20:00 ET, C=08:00 ET
+  - Backup at ~/Desktop/crontab_backup_pre_ET_20260513_1253.txt
+  - DST auto-handled
+
+B-CLEANUP BACKLOG (4 items done):
+  a5232e3  feat(events): DB-backed economic calendar, kill per-call UW fetches
+           - scripts/refresh_economic_calendar.py — M/W/F 15:55 ET cron
+           - UW field mapping: time(ISO datetime), event(title), prev(not previous), 
+             impact ABSENT (derived via keyword heuristic)
+           - ui/pages/4_Events.py reads from accuracy.db.economic_calendar
+           - signals/risk_gate.py DB-backed (falls back to FOMC_DATES + CPI_DATES)
+           - ui/4_Events.py dead duplicate deleted
+  16096d2  feat(events): remove FDA tab — UW endpoint stale (2011-2022 data)
+           - fda_calendar table left in DB (zero cost, available if biotech focus added)
+           - Tabs reduced 4 → 3 (Earnings/Economic/Risk heatmap)
+
+C — INTRADAY HEURISTIC GATES:
+  b52576d  feat(intraday): heuristic gates + wider NEUTRAL band
+           - features/intraday_builder.py: 3 layered gates per memory #19 plan C
+             1. NEUTRAL band widened 0.40/0.60 → 0.35/0.65
+             2. VIX>=25 gate (suppresses signals during fear regime)
+             3. Time-of-day gate (suppress 09:30-10:00 + 15:30-16:00 ET)
+           - Each independently togglable via env var:
+             ML_QUANT_INTRADAY_SKIP_VIX=1, ML_QUANT_INTRADAY_SKIP_TOD=1
+           - Both label sites (L278+L402) updated symmetrically
+           - Verification ~02:30 ET: VIX gate inactive (vix=17.99), 
+             TOD gate inactive (pre-market), AAPL signals all NEUTRAL
+             (probs 0.456-0.469 in widened band) — gates working
+  REVIEW DUE: ~May 25 after 10 trading days. Compare new distribution
+              vs memory #18 baseline (DOWN h=1 at 39% inverted).
+
+D — SPRINT 1 DRAWDOWN TRACKER:
+  1ac2842  feat(drawdown): Sprint 1 drawdown tracker + Portfolio UI integration
+           - analysis/drawdown_tracker.py: log_snapshot, get_current_status,
+             get_history, classify_drawdown helpers
+           - DRAWDOWN_RULES per AI playbook §11.1: NORMAL → STOP_NEW → 
+             EXIT_LOTTO → EXIT_TACTICAL → REDUCE_CORE → FULL_RISK_OFF
+           - Wired into ui/pages/15_Portfolio.py: status banner, 
+             📸 Snapshot button, Peak value metric, drawdown history chart
+           - Manual snapshot (not cron) — portfolio.json XOR-encrypted with 
+             password, cron can't decrypt
+           - INFORMATIONAL only: does NOT block signal generation
+           - 8/8 classify_drawdown threshold tests pass
+           - Atom plans to enter trades manually every Sunday weekly session
+
+E — SPRINT 2 STAGE 1: ALPHA TRANSFORMATION OPERATORS:
+  88359eb  feat(alphas): Sprint 2 Stage 1 — alpha transformation operators
+           - features/alpha_transformations.py: 17 operators per Finding Alphas Ch. 10
+           - Cross-sectional: cs_rank, cs_zscore, cs_mean, cs_std, cs_demean
+           - Time-series: ts_mean, ts_std, ts_rank, ts_delta, ts_corr, ts_max, 
+             ts_min, ts_argmax, ts_decay_linear, ts_sma
+           - Pointwise: signed_power, scale
+           - Group: group_neutralize, indneutralize
+           - ALPHA_OPS registry with default windows for explode_panel
+           - 24/24 pytest tests pass in 0.24s (shape, NaN, no-lookahead, math, 
+             alias, registry callability)
+           - pytest 9.0.3 installed into ml_quant_310 env
+           - Memory #11 corrected: drafts never existed, built from scratch
+
+E — SPRINT 2 STAGE 3: CORRELATION CULL SCRIPT:
+  0fb6692  feat(alphas): Sprint 2 Stage 3 — correlation cull script + baseline
+           - scripts/correlation_cull.py with two modes:
+             --from-db: reads 27-col prediction_features table
+             --from-builder: builds full 83-feature panel via build_feature_dataframe 
+                             on 30 sampled tickers (seed=42)
+           - Ran full 83-feature cull on 30 tickers × 573 days = 17,190 samples
+           - Found 53 correlated pairs at |ρ|>=0.7:
+             * MA family (ma_5↔ma_10↔ma_20↔ma_50↔bb_upper↔bb_lower↔vwap all ρ>0.95)
+             * finbert_sentiment ≡ finbert_mult (ρ=1.000)
+             * spy_ret ↔ es_overnight (ρ=0.977)
+             * macd ↔ macd_signal (ρ=0.958)
+           - Greedy suggested 23 drops, BUT some are wrong (spy_ret, xlk_ret are
+             fundamental factors that shouldn't be dropped)
+           - Decision DEFERRED per Atom — revisit with ablation data + post-Stage-2
+           - Baseline CSV at reports/correlation_cull_full83.csv (gitignored)
+
+GAP CHECK RESULTS (post-evening):
+  - May 12 had 8 BUY signals with prob_up<0.60 → ALL LEGITIMATE 
+    hysteresis exits (h=3/5, yesterday_signal=BUY, prob_eff in EXIT band).
+    Sink guard 89ea780 working correctly. No bugs.
+  - tickers_metadata.csv has 'bucket' not 'sector' — group_neutralize uses bucket
+  - pyarrow installed (parquet support ready for build_alpha_panel)
+  - Stage 2 design: Option B chosen (architectural — new panel-level builder)
+    NOT Option A (per-ticker partial). Real WorldQuant pattern with full cs_* ops.
+
+STAGE 2 STATUS: NOT STARTED (next session)
+  - Per-ticker build_feature_dataframe can't do cross-sectional ops 
+    (needs panel-shape: rows=dates, cols=tickers)
+  - Plan: new analysis/build_alpha_panel.py module, builds wide panel 
+    per feature, applies all 17 ops, writes to parquet
+  - Behind flag ML_QUANT_USE_ALPHA_PANEL=1
+  - Cost estimate: ~31 min per nightly run
+
+POSTPONED FROM DAY 9:
+  - fitness_scorer on clean labels (~5 min)
+  - Validator hysteresis blindness fix (cosmetic)
+
+═══════════════════════════════════════════════════════════════════════════════
