@@ -216,6 +216,63 @@ def build_intraday_features(ticker: str) -> pd.DataFrame:
     return df.dropna(subset=["Close"])
 
 
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  INTRADAY HEURISTIC GATES (May 13 2026)
+#  Suppress signals to NEUTRAL when market regime is unfavorable.
+#  Per memory #18 finding: intraday DOWN h=1 at 39% accuracy (inverted).
+# ══════════════════════════════════════════════════════════════════════════════
+_VIX_FEAR_THRESHOLD = 25.0
+_OPENING_MINUTES    = 30   # first 30 min after open
+_CLOSING_MINUTES    = 30   # last 30 min before close
+
+
+def _check_vix_gate() -> tuple[bool, float]:
+    """
+    Returns (gate_active, vix_level). gate_active=True means suppress signals.
+    Falls back to gate_active=False if VIX unavailable (don't over-suppress).
+    """
+    import os
+    if os.environ.get("ML_QUANT_INTRADAY_SKIP_VIX") == "1":
+        return False, 0.0
+    try:
+        from features.yf_resilient import safe_yf_download
+        vix_df = safe_yf_download(["^VIX"], period="1d", interval="5m", auto_adjust=True)
+        if vix_df is None or vix_df.empty:
+            return False, 0.0
+        if hasattr(vix_df.columns, "get_level_values"):
+            vix_df.columns = vix_df.columns.get_level_values(0)
+        vix_close = float(vix_df["Close"].dropna().iloc[-1])
+        return (vix_close >= _VIX_FEAR_THRESHOLD), vix_close
+    except Exception:
+        return False, 0.0
+
+
+def _check_tod_gate() -> tuple[bool, str]:
+    """
+    Returns (gate_active, reason). True = suppress (opening or closing window).
+    """
+    import os
+    if os.environ.get("ML_QUANT_INTRADAY_SKIP_TOD") == "1":
+        return False, "skipped"
+    try:
+        now = datetime.now(ET)
+        open_time  = now.replace(hour=9,  minute=30, second=0, microsecond=0)
+        close_time = now.replace(hour=16, minute=0,  second=0, microsecond=0)
+        if now < open_time:
+            return False, "pre-market"
+        mins_since_open  = (now - open_time).total_seconds() / 60
+        mins_until_close = (close_time - now).total_seconds() / 60
+        if mins_since_open < _OPENING_MINUTES:
+            return True, f"opening-window ({mins_since_open:.0f}min after open)"
+        if 0 < mins_until_close < _CLOSING_MINUTES:
+            return True, f"closing-window ({mins_until_close:.0f}min before close)"
+        return False, "mid-day"
+    except Exception:
+        return False, "error"
+
+
+
 def get_intraday_signal(ticker: str) -> dict:
     """
     Returns intraday signals for 1hr, 2hr, 4hr horizons.
@@ -274,9 +331,23 @@ def get_intraday_signal(ticker: str) -> dict:
         late_day_factor = min(mso / 390, 1.0)  # 390 = full trading day mins
         p4 = mom_to_prob(mom * (1 - late_day_factor * 0.4) + vdev * late_day_factor * -2)
 
+        # Heuristic gates: VIX-fear + opening/closing windows force NEUTRAL.
+        # NEUTRAL band widened 0.40/0.60 → 0.35/0.65 (memory #18 fix).
+        _vix_gate, _vix_val = _check_vix_gate()
+        _tod_gate, _tod_reason = _check_tod_gate()
+        _force_neutral = _vix_gate or _tod_gate
+        if _force_neutral:
+            import logging as _logging_gate
+            _log_gate = _logging_gate.getLogger("intraday.gate")
+            _log_gate.info(
+                f"  ⚪ {ticker} intraday signals → NEUTRAL "
+                f"(vix={_vix_val:.1f} gate={_vix_gate}, tod={_tod_reason})"
+            )
+
         def prob_to_signal(p):
-            if p >= 0.60: return "UP"
-            if p <= 0.40: return "DOWN"
+            if _force_neutral: return "NEUTRAL"
+            if p >= 0.65: return "UP"
+            if p <= 0.35: return "DOWN"
             return "NEUTRAL"
 
         # Apply dark pool + skew multiplier — live API only during market hours
@@ -398,9 +469,23 @@ def get_all_intraday_signals(tickers: list) -> list:
             late = min(mso / 390, 1.0)
             p4 = mom_to_prob(mom * (1 - late * 0.4) + vdev * late * -2)
 
+            # Heuristic gates: VIX-fear + opening/closing windows force NEUTRAL.
+            # NEUTRAL band widened 0.40/0.60 → 0.35/0.65 (memory #18 fix).
+            _vix_gate, _vix_val = _check_vix_gate()
+            _tod_gate, _tod_reason = _check_tod_gate()
+            _force_neutral = _vix_gate or _tod_gate
+            if _force_neutral:
+                import logging as _logging_gate
+                _log_gate = _logging_gate.getLogger("intraday.gate")
+                _log_gate.info(
+                    f"  ⚪ {ticker} intraday signals → NEUTRAL "
+                    f"(vix={_vix_val:.1f} gate={_vix_gate}, tod={_tod_reason})"
+                )
+
             def prob_to_signal(p):
-                if p >= 0.60: return "UP"
-                if p <= 0.40: return "DOWN"
+                if _force_neutral: return "NEUTRAL"
+                if p >= 0.65: return "UP"
+                if p <= 0.35: return "DOWN"
                 return "NEUTRAL"
 
             # Apply dark pool + skew multiplier — live API only during market hours
