@@ -1,4 +1,4 @@
-# ui/pages/8_Portfolio.py
+# ui/pages/15_Portfolio.py
 # ─────────────────────────────────────────────────────────────────────────────
 # Private portfolio tracker — positions never stored in git or DB.
 # Encrypted local file only, password protected.
@@ -18,6 +18,9 @@ import pandas as pd
 import streamlit as st
 
 from utils.timezone import now_et
+from analysis.drawdown_tracker import (
+    log_snapshot, get_current_status, get_history, classify_drawdown
+)
 
 PORTFOLIO_FILE = Path(".portfolio.enc")
 SALT           = b"mlquantfund_salt_v1"
@@ -175,6 +178,67 @@ invested   = port_val - cash
 
 total_pnl  = sum(float(p.get("shares",0)) * (float(p.get("current_price", p.get("avg_cost",0))) - float(p.get("avg_cost",0))) for p in positions)
 total_cost = sum(float(p.get("shares",0)) * float(p.get("avg_cost",0)) for p in positions)
+
+# ── Drawdown status banner (Sprint 1, May 13 2026) ────────────────────────────
+_dd_status = get_current_status()
+_status = _dd_status.get("status", "NO_DATA")
+_rule   = _dd_status.get("rule", "")
+_dd_pct = _dd_status.get("drawdown_pct", 0.0)
+
+# Color-code by status severity
+_dd_color = {
+    "NORMAL":         ("🟢", "#1D9E75"),
+    "STOP_NEW":       ("🟡", "#BA7517"),
+    "EXIT_LOTTO":     ("🟠", "#E08B2D"),
+    "EXIT_TACTICAL":  ("🔴", "#E24B4A"),
+    "REDUCE_CORE":    ("🔴", "#A32D2D"),
+    "FULL_RISK_OFF":  ("⛔", "#7A1818"),
+    "NO_DATA":        ("⚪", "#888888"),
+    "ERROR":          ("⚠️", "#888888"),
+}.get(_status, ("⚪", "#888888"))
+
+_dd_col1, _dd_col2, _dd_col3 = st.columns([3, 2, 2])
+with _dd_col1:
+    if _status == "NO_DATA":
+        st.markdown(f"### {_dd_color[0]} Drawdown status: **NO DATA**")
+        st.caption(_rule)
+    else:
+        st.markdown(
+            f"### {_dd_color[0]} Drawdown status: "
+            f"<span style='color:{_dd_color[1]}'>**{_status}**</span> "
+            f"({_dd_pct*100:+.1f}%)",
+            unsafe_allow_html=True,
+        )
+        st.caption(f"**Rule:** {_rule}")
+        st.caption(f"As of: {_dd_status.get('snapshot_date', '—')}")
+with _dd_col2:
+    if st.button("📸 Snapshot drawdown",
+                 help="Logs current portfolio value to drawdown history. "
+                      "Updates peak tracking and recomputes drawdown status."):
+        try:
+            _snap = log_snapshot(
+                portfolio_value=port_val,
+                cash=cash,
+                positions_count=len(positions),
+                notes=f"Manual snapshot from Portfolio page",
+            )
+            st.success(
+                f"Logged: ${_snap['portfolio_value']:,.0f} "
+                f"(peak ${_snap['peak_value']:,.0f}, "
+                f"dd {_snap['drawdown_pct']*100:+.2f}%) → {_snap['status']}"
+            )
+            st.rerun()
+        except Exception as _e:
+            st.error(f"Snapshot failed: {_e}")
+with _dd_col3:
+    if _status != "NO_DATA":
+        st.metric(
+            "Peak value",
+            f"${_dd_status.get('peak_value', 0):,.0f}",
+            help="Highest portfolio value ever logged. Drawdown % is measured from this peak.",
+        )
+
+st.divider()
 
 # ── Metrics ───────────────────────────────────────────────────────────────────
 c1, c2, c3, c4, c5 = st.columns(5)
@@ -490,3 +554,44 @@ else:
 
 st.divider()
 st.caption(f"Encrypted at `{PORTFOLIO_FILE.absolute()}` | Never in git | {now_et().strftime('%Y-%m-%d %H:%M ET')}")
+
+
+# ── Drawdown history (Sprint 1, May 13 2026) ──────────────────────────────────
+st.divider()
+st.subheader("📉 Drawdown history")
+st.caption("Last 90 days of snapshots. Visit this page weekly to log a snapshot.")
+
+_history = get_history(days_back=90)
+if not _history:
+    st.info(
+        "No drawdown snapshots logged yet. Click **📸 Snapshot drawdown** above "
+        "after entering this week's trades to start tracking."
+    )
+else:
+    import pandas as _pd_dd
+    _hist_df = _pd_dd.DataFrame(_history)
+    _hist_df["drawdown_pct_pct"] = _hist_df["drawdown_pct"] * 100
+
+    # Two-panel chart: portfolio_value (top) and drawdown_pct (bottom)
+    st.markdown("**Portfolio value over time**")
+    st.line_chart(
+        _hist_df.set_index("snapshot_date")[["portfolio_value", "peak_value"]],
+        height=200,
+    )
+    st.markdown("**Drawdown % from peak**")
+    st.area_chart(
+        _hist_df.set_index("snapshot_date")[["drawdown_pct_pct"]],
+        height=150,
+        color="#E24B4A",
+    )
+
+    # Status timeline table
+    st.markdown("**Recent snapshots**")
+    _display = _hist_df[["snapshot_date", "portfolio_value", "peak_value",
+                         "drawdown_pct_pct", "status"]].copy()
+    _display.columns = ["Date", "Portfolio $", "Peak $", "Drawdown %", "Status"]
+    _display = _display.sort_values("Date", ascending=False).head(20)
+    _display["Portfolio $"] = _display["Portfolio $"].apply(lambda x: f"${x:,.0f}")
+    _display["Peak $"]      = _display["Peak $"].apply(lambda x: f"${x:,.0f}")
+    _display["Drawdown %"]  = _display["Drawdown %"].apply(lambda x: f"{x:+.2f}%")
+    st.dataframe(_display, use_container_width=True, hide_index=True)
