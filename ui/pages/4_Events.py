@@ -3,7 +3,6 @@
 # Sources:
 #   - Economic calendar: UW /api/market/economic-calendar
 #   - Earnings: UW /api/earnings/{ticker} (filtered to your 126 tickers)
-#   - FDA calendar: UW /api/market/fda-calendar (biotech tickers)
 #   - Risk score: passed to Dashboard signal gate via session state
 
 import os, sys
@@ -29,7 +28,7 @@ st.set_page_config(
 )
 
 st.title("📅 Market Events Calendar")
-st.caption("Forward-looking calendar — earnings, economic events, FDA calendar. Feeds risk gate into Dashboard.")
+st.caption("Forward-looking calendar — earnings and economic events. Feeds risk gate into Dashboard.")
 
 UW_KEY   = os.getenv("UW_API_KEY", "")
 HDRS     = {"Authorization": f"Bearer {UW_KEY}"}
@@ -178,34 +177,6 @@ def fetch_uw_earnings_all(tickers: tuple, days_forward: int = 60) -> pd.DataFram
 
 
 @st.cache_data(ttl=3600, show_spinner=False)
-def fetch_uw_fda_calendar(start: str, end: str) -> pd.DataFrame:
-    try:
-        r = requests.get(f"{BASE_URL}/api/market/fda-calendar",
-                         headers=HDRS, timeout=10)
-        if r.status_code != 200:
-            return pd.DataFrame()
-        data = r.json().get("data", [])
-        rows = []
-        for e in data:
-            ed = e.get("date", e.get("catalyst_date", ""))[:10]
-            if not ed or not (start <= ed <= end):
-                continue
-            ticker = e.get("ticker", e.get("symbol", ""))
-            if ticker and ticker.upper() not in _TICKERS and ticker.upper() not in BIOTECH_TICKERS:
-                continue
-            rows.append({
-                "title":    e.get("catalyst", e.get("drug_name", "FDA Event")),
-                "ticker":   ticker.upper() if ticker else "—",
-                "date":     ed,
-                "category": "FDA",
-                "impact":   "High",
-                "notes":    e.get("catalyst_type", e.get("notes", "")),
-            })
-        return pd.DataFrame(rows)
-    except Exception:
-        return pd.DataFrame()
-
-
 # ── Risk score ────────────────────────────────────────────────────────────────
 def compute_risk_score(econ_df: pd.DataFrame, earn_df: pd.DataFrame) -> pd.DataFrame:
     rows = []
@@ -228,7 +199,6 @@ with st.sidebar:
     days_forward = st.slider("Days forward", 7, 90, 45)
     show_econ    = st.checkbox("Economic events", value=True)
     show_earn    = st.checkbox("Earnings", value=True)
-    show_fda     = st.checkbox("FDA calendar", value=True)
     show_suppress= st.checkbox("Show suppressed tickers only", value=False)
     st.markdown("---")
     if st.button("🔄 Refresh data"):
@@ -247,7 +217,6 @@ end_s    = end_date.isoformat()
 with st.spinner("Loading from Unusual Whales..."):
     econ_df = fetch_uw_economic_calendar(start_s, end_s) if show_econ else pd.DataFrame()
     earn_df = fetch_uw_earnings_all(tuple(_TICKERS), days_forward) if show_earn else pd.DataFrame()
-    fda_df  = fetch_uw_fda_calendar(start_s, end_s) if show_fda else pd.DataFrame()
 
 
 # ── KPIs ──────────────────────────────────────────────────────────────────────
@@ -272,7 +241,7 @@ if not risk_df.empty:
 
 
 # ── Tab layout ────────────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4 = st.tabs(["📊 Earnings", "📉 Economic", "💊 FDA", "🌡️ Risk heatmap"])
+tab1, tab2, tab3 = st.tabs(["📊 Earnings", "📉 Economic", "🌡️ Risk heatmap"])
 
 
 # ════════════════════════════════════════
@@ -374,28 +343,9 @@ with tab2:
 
 
 # ════════════════════════════════════════
-# TAB 3 — FDA
-# ════════════════════════════════════════
-with tab3:
-    st.subheader("FDA calendar — biotech tickers")
-    st.caption("PDUFA dates and catalyst events for biotech tickers in your watchlist.")
-
-    if fda_df.empty:
-        st.info("No FDA events found for your tickers in this period.")
-    else:
-        st.dataframe(
-            fda_df[["date","ticker","title","category","notes"]].rename(
-                columns={"date":"Date","ticker":"Ticker","title":"Catalyst",
-                         "category":"Type","notes":"Notes"}
-            ),
-            use_container_width=True, hide_index=True,
-        )
-
-
-# ════════════════════════════════════════
 # TAB 4 — RISK HEATMAP
 # ════════════════════════════════════════
-with tab4:
+with tab3:
     st.subheader("Daily risk score heatmap")
     st.caption("Higher = more market-moving events that day. Feeds into Dashboard signal gate.")
 
