@@ -33,35 +33,36 @@ VIX_SPIKE_PCT = 0.20
 
 def _get_uw_economic_calendar(start_date: str, end_date: str) -> list[str]:
     """
-    Fetch high-impact event dates from Unusual Whales economic calendar.
+    Read high-impact event dates from accuracy.db.economic_calendar.
     Returns list of date strings where risk = 1.
-    Falls back to empty list if API fails.
+    
+    May 13 2026: Switched from live UW fetch to DB read.
+    Was making per-ticker, per-training-run UW API calls (~1250/week wasted).
+    DB refreshed 3x/week M/W/F by scripts/refresh_economic_calendar.py.
+    Worst-case staleness: 2 days. For 3-day-ahead risk_next_3d gate, fine.
+    
+    Falls back to empty list if DB unavailable → hardcoded FOMC_DATES + 
+    CPI_DATES fallback in build_risk_features takes over.
 
-    May 4 2026: Added env var ML_QUANT_SKIP_UW_CALENDAR=1 escape hatch.
-    Walk-forward training calls build_feature_dataframe per (ticker, date)
-    pair = thousands of UW calls in tight succession. UW per-minute rate
-    limit triggers 429 loops that hang the run. Set env var to skip UW
-    entirely and rely on hardcoded FOMC_DATES + CPI_DATES fallback.
+    ML_QUANT_SKIP_UW_CALENDAR=1 env var still honored for explicit bypass.
     """
     import os
     if os.environ.get("ML_QUANT_SKIP_UW_CALENDAR") == "1":
-        return []  # falls back to hardcoded FOMC/CPI in build_risk_features
+        return []
 
     try:
-        payload = uw_get(
-            "/api/market/economic-calendar",
-            params={"from": start_date, "to": end_date},
-        )
-        if payload is None:
-            return []  # FOMC_DATES hardcoded list below is the real fallback
-
-        events = payload.get("data", [])
-        # Flag HIGH impact events only
-        high_impact_dates = [
-            e["date"][:10] for e in events
-            if e.get("impact", "").upper() in ("HIGH", "CRITICAL")
-        ]
-        return high_impact_dates
+        import sqlite3
+        from pathlib import Path
+        db_path = Path(__file__).parent.parent / "accuracy.db"
+        if not db_path.exists():
+            return []
+        with sqlite3.connect(f"file:{db_path}?mode=ro", uri=True) as conn:
+            rows = conn.execute("""
+                SELECT DISTINCT event_date FROM economic_calendar
+                WHERE event_date >= ? AND event_date <= ?
+                  AND impact = 'High'
+            """, (start_date, end_date)).fetchall()
+        return [r[0] for r in rows]
 
     except Exception:
         return []

@@ -69,30 +69,43 @@ _TICKERS = _load_tickers()
 # ── UW Data fetchers ──────────────────────────────────────────────────────────
 @st.cache_data(ttl=3600, show_spinner=False)
 def fetch_uw_economic_calendar(start: str, end: str) -> pd.DataFrame:
+    """
+    Read economic events from accuracy.db.economic_calendar.
+    Populated M/W/F by scripts/refresh_economic_calendar.py via cron.
+    
+    May 13 2026: Switched from live UW fetch to DB read to eliminate
+    per-page-view UW API calls. DB refreshes 3x/week (M/W/F 15:55 ET).
+    Worst-case staleness: 2 days (acceptable for risk_gate's 3-day window).
+    """
+    import sqlite3
+    from pathlib import Path
+    db_path = Path(__file__).parent.parent.parent / "accuracy.db"
     try:
-        r = requests.get(f"{BASE_URL}/api/market/economic-calendar",
-                         headers=HDRS,
-                         params={"from": start, "to": end},
-                         timeout=10)
-        if r.status_code != 200:
+        with sqlite3.connect(f"file:{db_path}?mode=ro", uri=True) as conn:
+            conn.row_factory = sqlite3.Row
+            rows = conn.execute("""
+                SELECT event_date, event_time, title, impact, country, forecast, previous
+                FROM economic_calendar
+                WHERE event_date >= ? AND event_date <= ?
+                ORDER BY event_date, event_time
+            """, (start, end)).fetchall()
+        
+        if not rows:
             return pd.DataFrame()
-        data = r.json().get("data", [])
-        rows = []
-        for e in data:
-            impact = e.get("impact", "Low")
-            rows.append({
-                "title":    e.get("name", e.get("event", "Economic Event")),
-                "category": "Economic",
-                "date":     e.get("date", "")[:10],
-                "time":     e.get("time", ""),
-                "impact":   "High" if impact in ("HIGH", "CRITICAL") else
-                            "Medium" if impact == "MEDIUM" else "Low",
-                "source":   "UW",
-                "tickers":  "SPY, QQQ, TLT",
-                "notes":    f"country={e.get('country','')} forecast={e.get('forecast','')} prev={e.get('previous','')}",
-            })
-        return pd.DataFrame(rows)
-    except Exception:
+        
+        return pd.DataFrame([{
+            "title":    r["title"],
+            "category": "Economic",
+            "date":     r["event_date"],
+            "time":     r["event_time"] or "",
+            "impact":   r["impact"],
+            "source":   "DB (UW)",
+            "tickers":  "SPY, QQQ, TLT",
+            "notes":    f"country={r['country']} forecast={r['forecast']} prev={r['previous']}",
+        } for r in rows])
+    except Exception as ex:
+        import streamlit as _st_err
+        _st_err.warning(f"economic_calendar DB read failed: {ex}")
         return pd.DataFrame()
 
 
