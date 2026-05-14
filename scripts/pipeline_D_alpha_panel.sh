@@ -77,8 +77,8 @@ LATEST_DATE=$(basename "$LATEST_PARQUET" .parquet)
 SIZE_KB=$(ls -l "$LATEST_PARQUET" | awk '{print int($5/1024)}')
 
 # Warn if latest date is older than 1 trading day (would suggest data not fresh)
-TODAY=$($PYTHON -c 'from utils.timezone import today_et; print(today_et())')
-YESTERDAY_TS=$($PYTHON -c 'from datetime import date, timedelta; print((date.today() - timedelta(days=1)).isoformat())')
+TODAY=$(TZ=America/New_York date +%Y-%m-%d)
+YESTERDAY_TS=$(TZ=America/New_York date -v-1d +%Y-%m-%d)
 if [ "$LATEST_DATE" = "$TODAY" ]; then
     log "  ✅ $LATEST_DATE.parquet present (${SIZE_KB} KB) — today's data"
 elif [ "$LATEST_DATE" = "$YESTERDAY_TS" ]; then
