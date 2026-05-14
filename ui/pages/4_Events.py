@@ -1,8 +1,10 @@
 # ui/pages/4_Events.py
-# Market Events Calendar — upgraded to use Unusual Whales for all data.
+# Market Events Calendar — DB-backed (UW data refreshed nightly).
 # Sources:
-#   - Economic calendar: UW /api/market/economic-calendar
-#   - Earnings: UW /api/earnings/{ticker} (filtered to your 126 tickers)
+#   - Economic calendar: accuracy.db.economic_calendar
+#     (refreshed M/W/F by scripts/refresh_economic_calendar.py)
+#   - Earnings: accuracy.db.earnings_calendar JOIN earnings_cache
+#     (refreshed daily by scripts/refresh_earnings_calendar.py)
 #   - Risk score: passed to Dashboard signal gate via session state
 
 import os, sys
@@ -110,68 +112,98 @@ def fetch_uw_economic_calendar(start: str, end: str) -> pd.DataFrame:
 
 @st.cache_data(ttl=3600, show_spinner=False)
 def fetch_uw_earnings_all(tickers: tuple, days_forward: int = 60) -> pd.DataFrame:
-    """Fetch earnings for all tickers from UW. Cached 1 hour."""
-    today     = date.today()
-    cutoff    = today + timedelta(days=days_forward)
-    rows      = []
+    """
+    Read earnings from accuracy.db.earnings_calendar (joined with
+    earnings_cache for est_eps / drift fields).
 
-    for ticker in tickers:
-        try:
-            r = requests.get(f"{BASE_URL}/api/earnings/{ticker}",
-                             headers=HDRS, timeout=8)
-            if r.status_code != 200:
-                continue
-            data = r.json().get("data", [])
-            for e in data:
-                rd = e.get("report_date", "")
-                if not rd:
-                    continue
-                try:
-                    rd_date = date.fromisoformat(rd)
-                except Exception:
-                    continue
-                if not (today <= rd_date <= cutoff):
-                    continue
+    Populated daily by scripts/refresh_earnings_calendar.py via cron.
 
-                exp_move   = float(e.get("expected_move_perc", 0) or 0)
-                pre_drift  = float(e.get("pre_earnings_move_3d", 0) or 0) if e.get("pre_earnings_move_3d") else None
-                post_drift = float(e.get("post_earnings_move_3d", 0) or 0) if e.get("post_earnings_move_3d") else None
-                actual_eps = e.get("actual_eps")
-                est_eps    = e.get("street_mean_est")
-                days_away  = (rd_date - today).days
+    May 14 2026: Switched from per-ticker UW API calls (128 calls/refresh)
+    to a single DB read. earnings_calendar is materialized from
+    earnings_cache, which is itself maintained by daily_uw_snapshot.py.
+    Worst-case staleness: 1 day (acceptable for forward calendar).
 
-                bucket = _META.get(ticker, {}).get("bucket", "—")
-                tier   = _META.get(ticker, {}).get("tier", "—")
+    Returns same schema as the prior live fetcher so downstream code
+    (Tab "Earnings Calendar" filters, suppress_buy alerts) is unchanged.
+    """
+    import sqlite3
+    from pathlib import Path
+    db_path = Path(__file__).parent.parent.parent / "accuracy.db"
 
-                # BUY suppression flag
-                suppress = False
-                suppress_reason = ""
-                if days_away <= 2 and post_drift is not None and post_drift < 0:
-                    suppress = True
-                    suppress_reason = f"Neg post-drift ({post_drift:.1%})"
-                elif days_away <= 2 and exp_move > 0.08:
-                    suppress = True
-                    suppress_reason = f"High uncertainty (±{exp_move:.1%})"
+    try:
+        with sqlite3.connect(f"file:{db_path}?mode=ro", uri=True) as conn:
+            df_raw = pd.read_sql("""
+                SELECT
+                    cal.ticker,
+                    cal.next_date     AS report_date,
+                    cal.next_time     AS report_time,
+                    cal.expected_move,
+                    cal.days_until    AS days_away,
+                    cache.actual_eps,
+                    cache.est_eps,
+                    cache.pre_drift_3d  AS pre_drift_raw,
+                    cache.post_drift_3d AS post_drift_raw
+                FROM earnings_calendar cal
+                LEFT JOIN earnings_cache cache
+                  ON cal.ticker = cache.ticker
+                 AND cal.next_date = cache.report_date
+                WHERE cal.days_until <= ?
+                  AND cal.ticker IN ({})
+                ORDER BY cal.days_until
+            """.format(",".join(["?"] * len(tickers))),
+                conn,
+                params=(days_forward, *tickers))
+    except Exception as ex:
+        import streamlit as _st_err
+        _st_err.warning(f"earnings_calendar DB read failed: {ex}")
+        return pd.DataFrame()
 
-                rows.append({
-                    "ticker":        ticker,
-                    "bucket":        bucket,
-                    "tier":          tier,
-                    "report_date":   rd,
-                    "report_time":   e.get("report_time", ""),
-                    "days_away":     days_away,
-                    "expected_move": f"±{exp_move:.1%}" if exp_move else "—",
-                    "pre_drift":     f"{pre_drift:+.1%}" if pre_drift is not None else "—",
-                    "post_drift":    f"{post_drift:+.1%}" if post_drift is not None else "—",
-                    "suppress_buy":  suppress,
-                    "suppress_reason": suppress_reason,
-                    "actual_eps":    actual_eps,
-                    "est_eps":       est_eps,
-                    "is_earnings_week": days_away <= 5,
-                    "impact":        "High" if ticker in {"AAPL","MSFT","GOOGL","AMZN","META","NVDA","TSLA"} else "Medium",
-                })
-        except Exception:
-            continue
+    if df_raw.empty:
+        return pd.DataFrame()
+
+    rows = []
+    mega_caps = {"AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"}
+    for _, r in df_raw.iterrows():
+        ticker      = r["ticker"]
+        exp_move    = float(r["expected_move"] or 0)
+        days_away   = int(r["days_away"])
+        pre_raw     = r["pre_drift_raw"]
+        post_raw    = r["post_drift_raw"]
+        pre_drift   = float(pre_raw)  if pre_raw  is not None else None
+        post_drift  = float(post_raw) if post_raw is not None else None
+        actual_eps  = r["actual_eps"]
+        est_eps     = r["est_eps"]
+
+        bucket = _META.get(ticker, {}).get("bucket", "—")
+        tier   = _META.get(ticker, {}).get("tier", "—")
+
+        # BUY suppression: same logic as live version
+        suppress = False
+        suppress_reason = ""
+        if days_away <= 2 and post_drift is not None and post_drift < 0:
+            suppress = True
+            suppress_reason = f"Neg post-drift ({post_drift:.1%})"
+        elif days_away <= 2 and exp_move > 0.08:
+            suppress = True
+            suppress_reason = f"High uncertainty (±{exp_move:.1%})"
+
+        rows.append({
+            "ticker":           ticker,
+            "bucket":           bucket,
+            "tier":             tier,
+            "report_date":      r["report_date"],
+            "report_time":      r["report_time"] or "",
+            "days_away":        days_away,
+            "expected_move":    f"±{exp_move:.1%}" if exp_move else "—",
+            "pre_drift":        f"{pre_drift:+.1%}" if pre_drift is not None else "—",
+            "post_drift":       f"{post_drift:+.1%}" if post_drift is not None else "—",
+            "suppress_buy":     suppress,
+            "suppress_reason":  suppress_reason,
+            "actual_eps":       actual_eps,
+            "est_eps":          est_eps,
+            "is_earnings_week": days_away <= 5,
+            "impact":           "High" if ticker in mega_caps else "Medium",
+        })
 
     return pd.DataFrame(rows) if rows else pd.DataFrame()
 
