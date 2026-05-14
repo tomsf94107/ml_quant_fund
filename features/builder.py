@@ -371,10 +371,11 @@ def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series
         rows = []
         for t in trades:
             try:
+                # UW "volume" field is pre-signed: positive for buy, negative for sell.
+                # See features/uw_client docs for /api/insider/{ticker}/ticker-flow schema.
                 rows.append({
                     "date":       pd.Timestamp(t["date"]).date(),
-                    "net_shares": float(t.get("quantity", 0)) *
-                                  (1 if t.get("transaction_type","").upper() == "BUY" else -1)
+                    "net_shares": float(t.get("volume", 0))
                 })
             except Exception:
                 continue
@@ -402,7 +403,7 @@ def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None)
             # Point-in-time honesty: filter by created_at (γ backfill: trade_date + 2 BD)
             df = pd.read_sql(
                 "SELECT date, net_shares FROM insider_flows "
-                "WHERE ticker = ? AND (created_at IS NULL OR created_at <= ?) "
+                "WHERE ticker = ? AND (created_at IS NULL OR DATE(created_at) <= ?) "
                 "ORDER BY date",
                 conn, params=(ticker.upper(), str(as_of)), parse_dates=["date"]
             )

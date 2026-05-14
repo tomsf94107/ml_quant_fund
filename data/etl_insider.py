@@ -317,12 +317,11 @@ def _upsert_to_db(ticker: str, df: pd.DataFrame, conn: sqlite3.Connection) -> in
     df = df.copy()
     df["ticker"] = ticker.upper()
     df["date"] = df["ds"].astype(str)
-    # Stamp created_at at insert time for point-in-time honesty.
-    # _upsert_to_db is called when SEC Form 4 filings have been parsed and we
-    # are recording the flow. created_at = now (when the row entered our DB).
-    from datetime import datetime as _dt
-    _now = _dt.utcnow().isoformat()
-    df["created_at"] = _now
+    # Point-in-time honest: created_at = when the fact became publicly
+    # knowable, not when we ingested it. Convention is trade_date + 2 BD
+    # (matches SEC Form 4 filing window). See utils/pit_helpers.knowable_at.
+    from utils.pit_helpers import knowable_at
+    df["created_at"] = df["date"].apply(knowable_at)
     rows = df[["ticker", "date", "net_shares", "buy_shares", "sell_shares",
                "num_buy_tx", "num_sell_tx", "role_weight", "created_at"]].to_dict("records")
     conn.executemany("""
