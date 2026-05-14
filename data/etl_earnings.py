@@ -33,7 +33,10 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
+from utils.pit_helpers import knowable_at
+
 DB_PATH = Path(os.getenv("EARNINGS_DB_PATH", "earnings.db"))
+ACCURACY_DB_PATH = Path(os.getenv("ACCURACY_DB_PATH", "accuracy.db"))
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -172,7 +175,7 @@ def _parse_earnings_history(ticker: str, hist: pd.DataFrame) -> list[dict]:
                 "rev_actual":       rev_actual,
                 "rev_estimate":     rev_estimate,
                 "rev_surprise":     rev_surprise,
-                "created_at":       now,
+                "created_at":       knowable_at(report_date),
             })
         except Exception:
             continue
@@ -275,7 +278,7 @@ def load_earnings_features(
                 SELECT report_date, eps_surprise, rev_surprise
                 FROM earnings_surprises
                 WHERE ticker = ?
-                  AND (created_at IS NULL OR created_at <= ?)
+                  AND (created_at IS NULL OR DATE(created_at) <= ?)
                 ORDER BY report_date
             """, conn, params=(ticker.upper(), str(as_of)))
         else:
@@ -286,18 +289,36 @@ def load_earnings_features(
                 ORDER BY report_date
             """, conn, params=(ticker.upper(),))
 
-        # Load next earnings date (point-in-time: only as known on as_of)
-        if as_of is not None:
-            cal = pd.read_sql("""
-                SELECT next_date FROM earnings_calendar
-                WHERE ticker = ?
-                  AND (updated_at IS NULL OR updated_at <= ?)
-            """, conn, params=(ticker.upper(), str(as_of)))
-        else:
-            cal = pd.read_sql("""
-                SELECT next_date FROM earnings_calendar WHERE ticker = ?
-            """, conn, params=(ticker.upper(),))
         conn.close()
+
+        # Next earnings date — sourced from accuracy.db.earnings_cache (the
+        # source of truth maintained by daily_uw_snapshot.py). The legacy
+        # earnings.db.earnings_calendar table is empty (yfinance-era artifact).
+        cal = pd.DataFrame()
+        try:
+            cal_conn = sqlite3.connect(ACCURACY_DB_PATH)
+            if as_of is not None:
+                cal = pd.read_sql("""
+                    SELECT MIN(report_date) AS next_date
+                    FROM earnings_cache
+                    WHERE ticker = ?
+                      AND report_date > ?
+                      AND (updated_at IS NULL OR DATE(updated_at) <= ?)
+                """, cal_conn, params=(ticker.upper(), str(as_of), str(as_of)))
+            else:
+                _today = datetime.utcnow().strftime("%Y-%m-%d")
+                cal = pd.read_sql("""
+                    SELECT MIN(report_date) AS next_date
+                    FROM earnings_cache
+                    WHERE ticker = ?
+                      AND report_date > ?
+                """, cal_conn, params=(ticker.upper(), _today))
+            cal_conn.close()
+            # MIN() returns one row with NULL when no match; treat as empty
+            if cal.empty or cal["next_date"].iloc[0] is None:
+                cal = pd.DataFrame()
+        except Exception:
+            cal = pd.DataFrame()
 
         if hist.empty:
             return default
@@ -334,9 +355,11 @@ def load_earnings_features(
                 pass
 
         if next_date:
-            result["days_to_earnings"] = (
-                pd.Timestamp(next_date) - result.index
-            ).days.clip(0, 999)
+            # TimedeltaIndex.days is a pd.Index (no .clip method).
+            # Wrap in np.clip which works on any array-like.
+            result["days_to_earnings"] = np.clip(
+                (pd.Timestamp(next_date) - result.index).days, 0, 999
+            )
         else:
             result["days_to_earnings"] = 999.0
 
