@@ -82,6 +82,160 @@ def _check_fitness_filter(ticker: str, horizon: int) -> "Optional[float]":
 
 
 
+def _lookup_earnings_calendar(
+    ticker:  str,
+    db_path: "Optional[Path]" = None,
+) -> "Optional[dict]":
+    """
+    Read accuracy.db.earnings_calendar for `ticker`.
+
+    Returns:
+        - {"days_until": int, "expected_move": float}  if upcoming earnings found
+        - None                                          if no row OR any error
+
+    Populated daily by scripts/refresh_earnings_calendar.py (D3 shipped May 14 2026).
+    Read-only access; fails open on any error.
+    """
+    try:
+        from pathlib import Path as _Path
+        _db = db_path if db_path is not None else (_Path(__file__).parent.parent / "accuracy.db")
+        if not _db.exists():
+            return None
+        _conn = sqlite3.connect(f"file:{_db}?mode=ro", uri=True)
+        try:
+            _row = _conn.execute(
+                "SELECT days_until, expected_move FROM earnings_calendar WHERE ticker = ?",
+                (ticker.upper(),),
+            ).fetchone()
+        finally:
+            _conn.close()
+        if _row is None:
+            return None
+        return {
+            "days_until":    int(_row[0]) if _row[0] is not None else None,
+            "expected_move": float(_row[1]) if _row[1] is not None else None,
+        }
+    except Exception:
+        return None  # fail open — allow BUY
+
+
+# Thresholds for the three earnings-proximity rules.
+# These would have blocked OKLO + SNOW on May 14 2026 — both confirmed
+# false positives where the model output BUY despite bearish setups.
+#
+# Rule 1 uses a SLIDING THRESHOLD (sized May 15 2026 from real distribution
+# of upcoming earnings, n=22 in 0-21d window):
+#   - Close to earnings (0-7d):  any meaningful IV ≥ 8% triggers
+#   - Wider window (8-14d):     only EXTREME IV ≥ 12% triggers
+#   - Outside 14d:              never triggers Rule 1
+# Rationale: 73% of pre-earnings tickers have IV ≥ 8% (normal),
+# only 18% have IV ≥ 12% (genuine outliers like SNOW, MRVL, ASAN).
+_EARNPROX_RULE1A_DAYS         = 7       # earnings in <= 7d → quiet period
+_EARNPROX_RULE1A_EXP_MOVE_MIN = 0.08    # AND IV >= 8% → high uncertainty
+_EARNPROX_RULE1B_DAYS         = 14      # earnings in <= 14d
+_EARNPROX_RULE1B_EXP_MOVE_MIN = 0.12    # AND IV >= 12% → extreme uncertainty
+_EARNPROX_RULE2_EPS_MIN      = -0.15   # eps_surprise < -15% → big miss
+_EARNPROX_RULE2_NEXT_MIN_D   = 60      # AND next earnings > 60d → no near-term catalyst
+_EARNPROX_RULE3_DAYS         = 14      # earnings in <= 14d
+_EARNPROX_RULE3_INSIDER_MAX  = -50000  # AND insider_21d < -50k shares (selling)
+_EARNPROX_RULE3_SHORT_MIN    = 0.10    # AND short_pct_float > 10%
+
+
+def _check_earnings_proximity_filter(
+    ticker:      str,
+    features_df: "Optional[pd.DataFrame]" = None,
+    db_path:     "Optional[Path]" = None,
+) -> "Optional[dict]":
+    """
+    Three-rule BUY suppression filter for earnings-related risk.
+
+    Returns:
+        - dict {"rule": str, "reason": str}  if any rule fires → suppress BUY
+        - None                                if all rules pass → allow BUY
+
+    Rules (return on first hit):
+
+      Rule 1 — EARNINGS_PROXIMITY (sliding threshold)
+        Tier A: days_until <= 7  AND expected_move >= 8%
+                → Pre-earnings quiet period, any meaningful IV
+        Tier B: days_until <= 14 AND expected_move >= 12%
+                → 2 weeks out, only EXTREME IV indicates real risk
+        Would have blocked SNOW (12d, 13.7% IV → Tier B) and CAVA, ZM,
+        NIO (≤7d, ≥8% IV → Tier A) on May 15 2026.
+
+      Rule 2 — POST_EARNINGS_DAMAGE
+        eps_surprise < -15% AND next earnings > 60d
+        → Just reported a big miss with no near-term catalyst to bounce.
+          Would have blocked OKLO today (eps_surprise -65%, next 88d).
+
+      Rule 3 — PRE_EARNINGS_BEARISH
+        days_until_earnings <= 14 AND insider_21d < -50k AND short_pct_float > 10%
+        → Pre-earnings bearish positioning: officers selling + shorts piling in.
+
+    Fails open on any error (returns None — allow BUY).
+
+    Mirrors the signature pattern of _check_fitness_filter().
+    """
+    try:
+        # All three rules need calendar context
+        cal = _lookup_earnings_calendar(ticker, db_path=db_path)
+
+        days_until = None
+        exp_move   = None
+        if cal is not None:
+            days_until = cal.get("days_until")
+            exp_move   = cal.get("expected_move")
+
+        # Rule 1: Earnings proximity with sliding-threshold expected move
+        # Tier A: close to earnings, lower IV bar (any meaningful uncertainty)
+        # Tier B: further out, higher IV bar (only extreme uncertainty)
+        if days_until is not None and exp_move is not None:
+            _r1a_fires = (days_until <= _EARNPROX_RULE1A_DAYS
+                          and exp_move >= _EARNPROX_RULE1A_EXP_MOVE_MIN)
+            _r1b_fires = (days_until <= _EARNPROX_RULE1B_DAYS
+                          and exp_move >= _EARNPROX_RULE1B_EXP_MOVE_MIN)
+            if _r1a_fires or _r1b_fires:
+                _tier = "A" if _r1a_fires else "B"
+                return {
+                    "rule":   "EARNINGS_PROXIMITY",
+                    "reason": (f"Earnings in {days_until}d, expected move "
+                               f"+/-{exp_move:.1%} (tier {_tier})"),
+                }
+
+        # Rules 2 + 3 need feature values
+        if features_df is None or len(features_df) == 0:
+            return None
+
+        last = features_df.iloc[-1]
+        eps             = float(last.get("eps_surprise", 0.0) or 0.0)
+        insider_21d_val = float(last.get("insider_21d",  0.0) or 0.0)
+        short_pct       = float(last.get("short_pct_float", 0.0) or 0.0)
+
+        # Rule 2: Post-earnings damage with no near-term catalyst
+        if (eps < _EARNPROX_RULE2_EPS_MIN
+            and (days_until is None or days_until > _EARNPROX_RULE2_NEXT_MIN_D)):
+            next_str = f"{days_until}d" if days_until is not None else "unknown"
+            return {
+                "rule":   "POST_EARNINGS_DAMAGE",
+                "reason": f"Recent EPS miss {eps:.1%}, next report in {next_str}",
+            }
+
+        # Rule 3: Pre-earnings bearish setup
+        if (days_until is not None
+            and days_until <= _EARNPROX_RULE3_DAYS
+            and insider_21d_val < _EARNPROX_RULE3_INSIDER_MAX
+            and short_pct       > _EARNPROX_RULE3_SHORT_MIN):
+            return {
+                "rule":   "PRE_EARNINGS_BEARISH",
+                "reason": (f"Pre-earnings bear setup: insider {insider_21d_val:,.0f}, "
+                           f"short {short_pct:.1%}, earnings in {days_until}d"),
+            }
+
+        return None
+    except Exception:
+        return None  # fail open — allow BUY
+
+
 def _load_ticker_metadata() -> dict:
     """Load tickers_metadata.csv → {ticker: {bucket, tier, thesis}}"""
     try:
@@ -677,6 +831,24 @@ def generate_signals(
             _log_fitness.warning(
                 f"  ⚠ {ticker} h={horizon}d BUY suppressed — "
                 f"model fitness={_bad_fitness:.2f} (negative)"
+            )
+
+    # EARNINGS-PROXIMITY FILTER (May 15 2026, D6 defensive layer):
+    # Suppress BUY when ticker is in a risky earnings window:
+    #   Rule 1: earnings <= 7d AND expected_move >= 8% (high-IV quiet period)
+    #   Rule 2: recent eps_surprise < -15% AND next earnings > 60d (post-miss)
+    #   Rule 3: earnings <= 14d AND insider selling AND short_pct > 10% (bearish setup)
+    # Would have blocked OKLO (95% BUY on -3.5% intraday) and SNOW (BUY on -1.1% day)
+    # on May 14 2026 — both confirmed false positives vs independent analysis.
+    if today_signal == "BUY":
+        _earn_block = _check_earnings_proximity_filter(ticker, df)
+        if _earn_block is not None:
+            today_signal = "HOLD"
+            import logging as _logging_earn
+            _log_earn = _logging_earn.getLogger("signals.generator")
+            _log_earn.warning(
+                f"  ⚠ {ticker} h={horizon}d BUY suppressed — "
+                f"earnings gate [{_earn_block['rule']}]: {_earn_block['reason']}"
             )
 
     # Price forecast using ATR

@@ -74,17 +74,30 @@ def refresh(db_path: Path = DB_PATH, verbose: bool = False) -> tuple[int, int]:
     now_iso = datetime.now().isoformat()
 
     with sqlite3.connect(db_path) as conn:
-        # Source query: per-ticker MIN(report_date) > today
-        # Use a window function to grab full row with the MIN date
+        # Source query: per-ticker FRESHEST future entry.
+        #
+        # UW maintains multiple rows per ticker when earnings dates shift
+        # (tentative date pre-announced, then confirmed/moved). The OLDER
+        # tentative row stays in earnings_cache, so picking MIN(report_date)
+        # gives the STALE date. Verified May 15 2026: 13/114 tickers had
+        # duplicate future rows (CRWD, SNOW, QUBT, AI, ASAN, AVGO, CAVA,
+        # MRVL, NIO, PL, ROST, S, ZM).
+        #
+        # Fix: pick row with MAX(updated_at) per ticker. Tiebreaker is
+        # soonest report_date (rare, only when same daily_uw_snapshot
+        # writes both rows in one run).
         rows = conn.execute("""
             SELECT ticker, report_date, report_time, expected_move
-            FROM earnings_cache
-            WHERE (ticker, report_date) IN (
-                SELECT ticker, MIN(report_date)
+            FROM (
+                SELECT ticker, report_date, report_time, expected_move,
+                       ROW_NUMBER() OVER (
+                           PARTITION BY ticker
+                           ORDER BY updated_at DESC, report_date ASC
+                       ) AS rn
                 FROM earnings_cache
                 WHERE report_date > ?
-                GROUP BY ticker
             )
+            WHERE rn = 1
         """, (today,)).fetchall()
 
         # Compute days_until and upsert

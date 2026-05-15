@@ -48,6 +48,10 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Economic calendar refresh — Mon/Wed/Fri 15:55 ET (5 min before Pipeline A)
 # Populates accuracy.db.economic_calendar (45 days forward) for risk_gate + Events page
 55 2 * * 2,4,6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/refresh_economic_calendar.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/refresh_econ_cal.log 2>&1
+# Earnings calendar refresh — Mon/Wed/Fri 16:45 ET (45 min after Pipeline A start)
+# Materializes accuracy.db.earnings_calendar from earnings_cache (which Pipeline A
+# populates via daily_uw_snapshot.py). Feeds D6 earnings-proximity gate + Events page.
+45 3 * * 2,4,6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/refresh_earnings_calendar.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/refresh_earnings_cal.log 2>&1
 
 # PIPELINE B — retrain + predict (7 AM VN = 8 PM ET prev day, Tue-Sat)
 # Depends on Pipeline A completing. Will refuse to run if A's marker is missing.
