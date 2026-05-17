@@ -683,6 +683,13 @@ def main() -> None:
                         help="Embargo days between train and test (default: 5)")
     parser.add_argument("--top-features", type=int, default=None,
                         help="Limit ablation to top N features (by variance)")
+    parser.add_argument("--config", default="default",
+                        choices=["default", "production"],
+                        help="XGB params: 'default' = walk_forward's loose "
+                             "DEFAULT_XGB_PARAMS (reproduces the 0.928 "
+                             "baseline); 'production' = models.classifier "
+                             "XGB_PARAMS (heavily regularized, the honest "
+                             "number for the model actually traded).")
     parser.add_argument("--sample", type=int, default=20000,
                         help="Subsample size for ablation (default: 20000)")
     parser.add_argument("--csv-prefix", default=None,
@@ -720,8 +727,24 @@ def main() -> None:
     if args.mode in ("backtest", "all"):
         print(f"\nRunning walk-forward backtest "
               f"(n_folds={args.folds}, embargo={args.embargo}d)...")
+        # W2 step 1: resolve XGB config. 'production' pulls the REAL
+        # regularized params from models.classifier so the two never drift
+        # (imported locally — avoids classifier.py's heavy import chain
+        # unless production config is actually requested).
+        _model_params = None
+        if args.config == "production":
+            from models.classifier import XGB_PARAMS as _PROD_PARAMS
+            _model_params = dict(_PROD_PARAMS)
+            print(f"  [config=production] using models.classifier.XGB_PARAMS: "
+                  f"max_depth={_model_params.get('max_depth')}, "
+                  f"n_estimators={_model_params.get('n_estimators')}, "
+                  f"reg_lambda={_model_params.get('reg_lambda')}")
+        else:
+            print("  [config=default] using walk_forward DEFAULT_XGB_PARAMS "
+                  "(loose — reproduces the 0.928 baseline)")
         folds_df, overall = walk_forward_backtest(
             df, feature_cols, n_folds=args.folds, embargo=args.embargo,
+            model_params=_model_params,
         )
         print_backtest_report(folds_df, overall)
         if args.csv_prefix:
