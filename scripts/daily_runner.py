@@ -36,6 +36,20 @@ from utils.timezone import now_et, today_et, ts_et
 from datetime import datetime, date
 from pathlib import Path
 
+
+def _ensure_institutional_columns(conn):
+    """Idempotent: add 4 institutional feature columns to prediction_features
+    if absent. Safe to call every run. See builder.py audit notes (May 17)."""
+    _inst_cols = ("inst_block_buy_sell_7d", "inst_signed_flow_30d",
+                  "inst_auction_imbal_5d", "inst_signed_flow_5d")
+    existing = {row[1] for row in
+                conn.execute("PRAGMA table_info(prediction_features)")}
+    for col in _inst_cols:
+        if col not in existing:
+            conn.execute(
+                f"ALTER TABLE prediction_features ADD COLUMN {col} REAL")
+
+
 # ── Path setup ────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
@@ -223,6 +237,16 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
         log.info("Weekend — skipping run")
         return
 
+    # One-time schema migration: ensure prediction_features has the 4
+    # institutional feature columns (no-op if already present). Mirrors the
+    # best-effort error policy of the feature-logging INSERT below.
+    try:
+        from accuracy.sink import _get_conn
+        with _get_conn() as _mc:
+            _ensure_institutional_columns(_mc)
+    except Exception:
+        pass
+
     tickers = load_tickers()
     log.info(f"Tickers: {len(tickers)}")
 
@@ -373,6 +397,14 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                     # Log features used for this prediction
                     try:
                         last = df.iloc[-1]
+                        # Institutional features for logging. NaN/absent -> None
+                        # -> SQLite NULL. Flag OFF: columns absent -> all None.
+                        _inst_for_log = {}
+                        for _c in ("inst_block_buy_sell_7d", "inst_signed_flow_30d",
+                                   "inst_auction_imbal_5d", "inst_signed_flow_5d"):
+                            _v = last.get(_c, None)
+                            _inst_for_log[_c] = (
+                                float(_v) if _v is not None and _v == _v else None)
                         from accuracy.sink import _get_conn
                         with _get_conn() as _fc:
                             _fc.execute("""
@@ -386,8 +418,11 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                                  premarket_gap, intraday_momentum,
                                  iv_skew_snap, pc_ratio_snap,
                                  monday_sentiment, beta_60d, short_ratio,
-                                 sector_rel_ret, created_at)
-                                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                                 sector_rel_ret,
+                                 inst_block_buy_sell_7d, inst_signed_flow_30d,
+                                 inst_auction_imbal_5d, inst_signed_flow_5d,
+                                 created_at)
+                                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                             """, (
                                 ticker, str(run_date), horizon,
                                 float(last.get("oil_ret", 0)),
@@ -417,6 +452,10 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                                 float(last.get("beta_60d", 1)),
                                 float(last.get("short_ratio", 0)),
                                 float(last.get("sector_rel_ret", 0)),
+                                _inst_for_log.get("inst_block_buy_sell_7d"),
+                                _inst_for_log.get("inst_signed_flow_30d"),
+                                _inst_for_log.get("inst_auction_imbal_5d"),
+                                _inst_for_log.get("inst_signed_flow_5d"),
                                 str(run_date),
                             ))
                     except Exception as _fe:

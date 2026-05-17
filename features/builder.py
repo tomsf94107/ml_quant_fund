@@ -119,6 +119,27 @@ OUTPUT_COLUMNS = [
     "lqd_hyg_spread",           # credit stress: LQD vs HYG 30d spread
 ]
 
+# ── Institutional darkpool features (UW Lee-Ready flow) ──────────────────────
+# Audit-validated May 17 2026 (n=458, 3 rounds). 4 of 8 candidates survived:
+#   inst_block_buy_sell_7d  p=0.0017  max|rho|=0.34 vs 87-feat panel
+#   inst_signed_flow_30d    p=0.011   max|rho|=0.17
+#   inst_auction_imbal_5d   p=0.014   max|rho|=0.20
+#   inst_signed_flow_5d     p=0.18    max|rho|=0.19  (kept for timescale div.)
+# Dropped: block_notional_7d (rho=0.64 price-scale proxy), block_count_7d
+#   (p=0.72 no signal), dp_signed_flow_5d (redundant), sweep_count_7d (zero).
+# Gated: when OFF (default) these are NOT in OUTPUT_COLUMNS -- true no-op,
+# existing 303 models unaffected. Flip ML_QUANT_INST_FEATURES=1 before a
+# Pipeline B retrain to bake them into the next model generation.
+_INST_FEATURES_ENABLED = os.environ.get("ML_QUANT_INST_FEATURES", "0") == "1"
+_INST_FEATURE_COLS = [
+    "inst_block_buy_sell_7d",
+    "inst_signed_flow_30d",
+    "inst_auction_imbal_5d",
+    "inst_signed_flow_5d",
+]
+if _INST_FEATURES_ENABLED:
+    OUTPUT_COLUMNS = OUTPUT_COLUMNS + _INST_FEATURE_COLS
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PRIVATE HELPERS
@@ -973,6 +994,30 @@ def build_feature_dataframe(
         ).fillna(0.0)
     except Exception:
         df["lqd_hyg_spread"] = 0.0
+
+    # ── 11c. Institutional darkpool features (UW Lee-Ready flow) ──────────────
+    # New data axis: signed institutional flow from UW darkpool prints.
+    # PIT-honest -- institutional_features uses STRICT trade_date < as_of_date.
+    # Reads local SQLite (institutional_trades.db), NOT a live API, so the same
+    # path is correct in training_mode and live mode (no branch needed).
+    #
+    # DELIBERATE HOUSE-STYLE DEVIATION: surrounding blocks fall back to 0.0.
+    # This block falls back to np.nan because:
+    #   (1) inst_block_buy_sell_7d's neutral is 1.0, not 0.0 -- a 0.0 fill would
+    #       code as "extremely bearish blocks" and mislead the model.
+    #   (2) XGBoost handles NaN natively (learns optimal split direction).
+    #   (3) ~5% of rows have no institutional data; NaN preserves "unknown".
+    # MUST run before the OUTPUT_COLUMNS enforcement below.
+    if _INST_FEATURES_ENABLED:
+        try:
+            from features.institutional_features import get_institutional_features
+            _inst = get_institutional_features(ticker, end_str)
+            for _col in _INST_FEATURE_COLS:
+                _val = _inst.get(_col, None)
+                df[_col] = float(_val) if _val is not None else np.nan
+        except Exception:
+            for _col in _INST_FEATURE_COLS:
+                df[_col] = np.nan
 
     # ── 12. Enforce output schema ─────────────────────────────────────────────
     # Add any missing columns as 0.0
