@@ -44,6 +44,17 @@ TRADING_DAYS_PER_YEAR = 252
 MIN_OBS = 30
 TURNOVER_FLOOR = 0.125
 
+# Transaction cost model (Sprint W1, May 17 2026).
+# Flat round-trip cost charged per unit of position change. position is in
+# [-1, 1] (long-short) or [0, 1] (long-only); a full 0->1 entry incurs
+# COST_PER_UNIT_TURNOVER_BPS basis points, a partial change pro-rata.
+# 10 bps ~= 5 bps per side: a defensible retail all-in estimate (commission
+# ~0 + spread + small impact) for liquid US equities. Tunable; spread-aware
+# per-ticker cost is a deliberate v2. Env override: ML_QUANT_COST_BPS.
+import os as _os_cost
+COST_PER_UNIT_TURNOVER_BPS = float(_os_cost.environ.get("ML_QUANT_COST_BPS", "10.0"))
+_COST_RATE = COST_PER_UNIT_TURNOVER_BPS / 10_000.0  # bps -> decimal
+
 
 # ---------------------------------------------------------------------------
 # Data classes
@@ -61,6 +72,7 @@ class FitnessRow:
     sharpe: float
     turnover: float
     fitness: float
+    gross_annualized_return: float = 0.0
 
 
 # ---------------------------------------------------------------------------
@@ -124,7 +136,16 @@ def compute_group_fitness(g: pd.DataFrame, mode: str) -> Optional[FitnessRow]:
 
     g = g.sort_values("prediction_date").reset_index(drop=True).copy()
     g["position"] = position_from_prob(g["prob_up"], mode)
-    g["strat_ret"] = g["position"] * g["actual_return"]
+    g["gross_ret"] = g["position"] * g["actual_return"]
+
+    # Per-bar transaction cost (Sprint W1). Cost at each bar is proportional
+    # to the position change entering that bar; the first bar is charged for
+    # establishing the initial position. strat_ret = gross - cost, so every
+    # downstream metric (mean, vol, sharpe, win_rate) is net-of-cost.
+    pos_change = g["position"].diff().abs()
+    pos_change.iloc[0] = abs(float(g["position"].iloc[0]))  # initial entry
+    g["bar_cost"] = pos_change * _COST_RATE
+    g["strat_ret"] = g["gross_ret"] - g["bar_cost"]
 
     active = g[g["position"] != 0]
     if len(active) == 0:
@@ -138,8 +159,12 @@ def compute_group_fitness(g: pd.DataFrame, mode: str) -> Optional[FitnessRow]:
     annualized_vol = bar_vol * math.sqrt(bars_per_year)
     sharpe = annualized_return / annualized_vol if annualized_vol > 0 else 0.0
 
+    # turnover excludes the initial-entry bar — it measures ongoing churn
     pos_diff = g["position"].diff().abs().dropna()
     turnover = float(pos_diff.mean()) if len(pos_diff) > 0 else 0.0
+
+    # gross annualized return (pre-cost), persisted for cost-drag attribution
+    gross_annualized_return = float(g["gross_ret"].mean()) * bars_per_year
 
     fitness = math.sqrt(abs(annualized_return) / max(turnover, TURNOVER_FLOOR)) * sharpe
 
@@ -154,6 +179,7 @@ def compute_group_fitness(g: pd.DataFrame, mode: str) -> Optional[FitnessRow]:
         sharpe=sharpe,
         turnover=turnover,
         fitness=fitness,
+        gross_annualized_return=gross_annualized_return,
     )
 
 
@@ -233,6 +259,7 @@ def aggregate_to_sector(
             "total_n_obs": int(group["n_obs"].sum()),
             "win_rate": weighted_avg(group, "win_rate"),
             "annualized_return": weighted_avg(group, "annualized_return"),
+            "gross_annualized_return": weighted_avg(group, "gross_annualized_return"),
             "annualized_vol": weighted_avg(group, "annualized_vol"),
             "sharpe": weighted_avg(group, "sharpe"),
             "turnover": weighted_avg(group, "turnover"),
