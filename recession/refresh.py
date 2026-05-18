@@ -103,11 +103,29 @@ def refresh(db_path: Path | None = None,
                 f"recession_prob({latest_month:%Y-%m})="
                 f"{latest_proba:.4f}")
         _append_log(log_path, line)
+
+        # check the latest probability for a threshold crossing and
+        # raise an alert if it crossed up into a higher-risk band
+        alert_result = None
+        try:
+            from recession.alert import check_alert
+            alert_result = check_alert(
+                latest_proba, f"{latest_month:%Y-%m}")
+            if alert_result["alerted"]:
+                _append_log(log_path,
+                            f"[{stamp}] -> ALERT RAISED: "
+                            f"{alert_result['message']}")
+        except Exception as e:
+            # an alert-system failure must never break the refresh itself
+            _append_log(log_path,
+                        f"[{stamp}] WARN   alert check failed: {e}")
+
         return {
             "ok": True,
             "latest_month": latest_month,
             "latest_proba": latest_proba,
             "message": line,
+            "alert": alert_result,
         }
     except Exception as e:
         tb = traceback.format_exc(limit=3)

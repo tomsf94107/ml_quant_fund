@@ -64,3 +64,8 @@ models/saved/backup_before_*/
 # Local fitness scoring CSV (regenerated weekly via cron)
 fitness.csv
 fitness_relaxed.csv
+recession/refresh_log.txt
+recession/cron.log
+recession/recession_alerts.log
+recession/recession_alerts.log
+recession/recession_alert_state.json
