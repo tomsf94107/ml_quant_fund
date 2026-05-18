@@ -169,7 +169,15 @@ def hamilton_detrend(
 
     # Compute residuals at the target indices
     cycle = pd.Series(np.nan, index=s.index, name=s.name)
-    Y_hat = X @ beta
+    # np.matmul can emit spurious divide-by-zero / overflow / invalid
+    # RuntimeWarnings from its internal SIMD kernels even when the result
+    # is correct (known NumPy quirk, esp. macOS Accelerate builds). X'X
+    # here is well-conditioned (condition number ~2e5), so the warning is
+    # a false alarm. errstate suppresses only the warning, not arithmetic;
+    # the result is byte-identical. A genuinely degenerate X is still
+    # caught by the lstsq LinAlgError guard and the min_obs guard above.
+    with np.errstate(divide="ignore", over="ignore", invalid="ignore"):
+        Y_hat = X @ beta
     residuals = Y - Y_hat
     for idx, resid in zip(rows_target_idx, residuals):
         cycle.iloc[idx] = resid
