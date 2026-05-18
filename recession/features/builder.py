@@ -190,7 +190,8 @@ class FeaturePipeline:
         # and transform() both inherit the stable index automatically — no
         # separate patch needed at their reindex sites.
         target_axis = PL.load_targets(
-            self.target, self.horizon, db_path=self.db_path
+            self.target, self.horizon,
+            as_of=str(self.as_of), db_path=self.db_path,
         ).index
         stable_index = self._raw.index.union(target_axis).sort_values()
         self._raw = self._raw.reindex(stable_index)
@@ -246,9 +247,13 @@ class FeaturePipeline:
 
         # --- Step 3: empirical at-risk thresholds (fit on train rows) ---
         self._empirical_thresholds = {}
-        # Need the target on the same train rows to fit thresholds
+        # Need the target on the same train rows to fit thresholds.
+        # PIT: pass the training cutoff as as_of so the thresholds are fit
+        # only on recession labels that had actually been ANNOUNCED by the
+        # cutoff — NBER dates a recession with a long announcement lag.
         y_train = PL.load_targets(
-            self.target, self.horizon, db_path=self.db_path
+            self.target, self.horizon,
+            as_of=str(cutoff), db_path=self.db_path,
         )
         y_train = y_train.reindex(train_transformed.index)
 
@@ -329,8 +334,16 @@ class FeaturePipeline:
             db_path=self.db_path,
         )
 
-        # Step 8: join target, assemble
-        y = PL.load_targets(self.target, self.horizon, db_path=self.db_path)
+        # Step 8: join target, assemble.
+        # NOTE: this y is loaded WITHOUT as_of — deliberately. It is the
+        # series the harness SCORES against (the realised outcome). Test
+        # labels must be the final, true recession dates; PIT-restricting
+        # them would score a late-announced recession as a non-recession.
+        # PIT restriction applies to TRAINING labels only (see fit():
+        # y_train uses as_of=train_cutoff). Train on what was known then;
+        # score against what actually happened.
+        y = PL.load_targets(self.target, self.horizon,
+                            db_path=self.db_path)
         y = y.reindex(panel.index)
 
         return FeatureResult(

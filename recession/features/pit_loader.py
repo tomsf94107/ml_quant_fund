@@ -332,6 +332,7 @@ def load_targets(
     *,
     obs_month_min: Optional[str] = None,
     obs_month_max: Optional[str] = None,
+    as_of: Optional[str] = None,
     db_path: Path = DEFAULT_DB_PATH,
 ) -> pd.Series:
     """Load target labels, shifted forward by `horizon`.
@@ -340,15 +341,26 @@ def load_targets(
     month M has the label of T1 at month M+12. This is the value the
     model is trying to PREDICT given features known at M.
 
-    Note: targets are NOT filtered by as_of here. Targets are only used
-    in TRAINING, where you fit on past targets and predict future. The
-    caller (walk-forward harness) is responsible for not feeding the
-    model labels from after its training cutoff.
+    POINT-IN-TIME CORRECTNESS (as_of).
+    NBER recession dates are announced with a long lag (often 6-12 months
+    after the fact) and can be revised. targets_monthly may therefore hold
+    several vintages of the same observation_month, each with its own
+    announcement_date. If `as_of` is given, only labels ANNOUNCED ON OR
+    BEFORE as_of are considered, and the most recent such vintage is used
+    — the label as it was known at as_of. If `as_of` is None, the latest
+    vintage of every month is used (the fully-revised, as-known-today
+    label) — appropriate only for display/inference, never for training a
+    historical fold.
+
+    The walk-forward harness must pass as_of = the fold's training cutoff
+    when loading TRAINING labels, so a fold cannot train on a recession
+    date that had not yet been announced at the cutoff.
 
     Args:
         target: 'T1', 'T2', or 'T5'.
         horizon: 'h=0' (no shift), 'h=1' (1 month ahead), etc.
         obs_month_min/max: range filter on observation_month BEFORE shift.
+        as_of: point-in-time cutoff on announcement_date (see above).
         db_path: SQLite path.
 
     Returns:
@@ -357,21 +369,43 @@ def load_targets(
     """
     conn = sqlite3.connect(db_path)
     try:
-        cur = conn.execute(
-            """SELECT t.observation_month, t.label
-               FROM targets_monthly t
-               INNER JOIN (
-                   SELECT target_id, observation_month, MAX(announcement_date) AS max_ann
-                   FROM targets_monthly
-                   WHERE target_id = ?
-                   GROUP BY target_id, observation_month
-               ) latest
-                 ON t.target_id = latest.target_id
-                 AND t.observation_month = latest.observation_month
-                 AND t.announcement_date = latest.max_ann
-               WHERE t.target_id = ?""",
-            (target, target),
-        )
+        if as_of is not None:
+            # point-in-time: only vintages announced on or before as_of,
+            # then the most recent of those per observation_month
+            cur = conn.execute(
+                """SELECT t.observation_month, t.label
+                   FROM targets_monthly t
+                   INNER JOIN (
+                       SELECT target_id, observation_month,
+                              MAX(announcement_date) AS max_ann
+                       FROM targets_monthly
+                       WHERE target_id = ? AND announcement_date <= ?
+                       GROUP BY target_id, observation_month
+                   ) latest
+                     ON t.target_id = latest.target_id
+                     AND t.observation_month = latest.observation_month
+                     AND t.announcement_date = latest.max_ann
+                   WHERE t.target_id = ?""",
+                (target, as_of, target),
+            )
+        else:
+            # no PIT cutoff: latest (fully-revised) vintage per month
+            cur = conn.execute(
+                """SELECT t.observation_month, t.label
+                   FROM targets_monthly t
+                   INNER JOIN (
+                       SELECT target_id, observation_month,
+                              MAX(announcement_date) AS max_ann
+                       FROM targets_monthly
+                       WHERE target_id = ?
+                       GROUP BY target_id, observation_month
+                   ) latest
+                     ON t.target_id = latest.target_id
+                     AND t.observation_month = latest.observation_month
+                     AND t.announcement_date = latest.max_ann
+                   WHERE t.target_id = ?""",
+                (target, target),
+            )
         rows = cur.fetchall()
     finally:
         conn.close()

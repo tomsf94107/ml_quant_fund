@@ -201,6 +201,7 @@ def run_combination(
          if r.mean_fold_auc is not None),
         key=lambda kv: kv[1], default=(None, None),
     )
+    m1_auc = singles["M1"].mean_fold_auc if "M1" in singles else None
     if ens_auc is not None and best_single[1] is not None:
         delta = ens_auc - best_single[1]
         mean_corr = None
@@ -209,19 +210,56 @@ def run_combination(
             m = corr.to_numpy()
             off = m[~np.eye(len(m), dtype=bool)]
             mean_corr = float(np.mean(off))
+
+        # Is the numeric "best single" ROBUSTLY better than M1, or is its
+        # edge inside the seed-noise band? M3/M4 are stochastic — Step 7/8
+        # found their seed spreads ~0.05 / ~0.03, so a sub-~0.03 edge over
+        # M1 is not a real improvement, just a lucky seed. M2 is
+        # deterministic but lost to M1 outright. So "best single" for a
+        # PRODUCTION choice is M1 unless another model clears the band.
+        SEED_NOISE_BAND = 0.03
+        best_name, best_auc = best_single
+        edge_over_m1 = (best_auc - m1_auc
+                        if m1_auc is not None else None)
+        robustly_best = (
+            best_name == "M1"
+            or (edge_over_m1 is not None
+                and edge_over_m1 > SEED_NOISE_BAND)
+        )
+
         if delta > 0.01:
-            verdict = (f"Ensemble beats best single ({best_single[0]}) by "
+            verdict = (f"Ensemble beats best single ({best_name}) by "
                        f"{delta:+.4f} — combination adds value.")
         else:
             cstr = (f" Mean inter-model correlation {mean_corr:.3f} — "
-                    f"models are highly correlated, "
-                    f"so averaging cannot cancel mistakes."
+                    f"models are highly correlated, so averaging cannot "
+                    f"cancel mistakes."
                     if mean_corr is not None else "")
-            verdict = (
-                f"Ensemble does NOT beat best single ({best_single[0]} "
-                f"{best_single[1]:.4f}); delta {delta:+.4f}.{cstr} "
-                f"FINDING: at T1/h=12 the models are too correlated to "
-                f"benefit from combination — ship the single model M1.")
+            if robustly_best and best_name != "M1":
+                # a non-M1 model genuinely, robustly leads
+                verdict = (
+                    f"Ensemble does NOT beat best single ({best_name} "
+                    f"{best_auc:.4f}); delta {delta:+.4f}.{cstr} "
+                    f"FINDING: combination adds nothing; the production "
+                    f"choice is {best_name}.")
+            else:
+                # the numeric top model's edge over M1 (if any) is inside
+                # the seed-noise band — not a robust improvement
+                edge_note = ""
+                if best_name != "M1" and edge_over_m1 is not None:
+                    edge_note = (
+                        f" Numeric top model {best_name} "
+                        f"({best_auc:.4f}) leads M1 ({m1_auc:.4f}) by "
+                        f"only {edge_over_m1:+.4f} — inside its "
+                        f"seed-noise band (~{SEED_NOISE_BAND}), so not a "
+                        f"robust improvement.")
+                verdict = (
+                    f"Ensemble does NOT beat best single; delta "
+                    f"{delta:+.4f}.{cstr}{edge_note} FINDING: at T1/h=12 "
+                    f"the models are too correlated to benefit from "
+                    f"combination, and no model robustly beats M1 — ship "
+                    f"the single model M1 (simplest, and the robust "
+                    f"choice).")
     else:
         verdict = "(insufficient scoreable folds for a verdict)"
 
