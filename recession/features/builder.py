@@ -169,6 +169,33 @@ class FeaturePipeline:
             db_path=self.db_path,
         )
         self._registry_tiers = PCA_MOD.load_registry_tiers(self.db_path)
+
+        # --- Stabilise the row axis on a TARGET-defined index ---
+        # BUG FIX (Rule 1 — fix the class at its root): pit_loader builds the
+        # panel index from a SQL pivot of whichever features were loaded, so
+        # the row axis was a side effect of feature_subset. Loading only a
+        # late-starting feature (e.g. T10Y3M, ~1982) gave a short panel;
+        # loading a long one (INDPRO, 1960) gave a long panel. The target y
+        # was then reindexed onto that panel index, so y's length changed
+        # with feature selection — breaking the walk-forward harness's
+        # "identical folds" guarantee.
+        #
+        # The row axis of a (target, horizon) cell must be defined by the
+        # TARGET, not the features. We reindex the raw panel onto the union
+        # of the target's months and the panel's own months. Features that
+        # don't exist for a month become NaN (correct — they're absent);
+        # no labelled target month is ever dropped because a feature started
+        # late. Downstream code already masks on y.notna() / X.notna(), so
+        # NaN feature cells are handled. Fixing the axis here means fit()
+        # and transform() both inherit the stable index automatically — no
+        # separate patch needed at their reindex sites.
+        target_axis = PL.load_targets(
+            self.target, self.horizon, db_path=self.db_path
+        ).index
+        stable_index = self._raw.index.union(target_axis).sort_values()
+        self._raw = self._raw.reindex(stable_index)
+        self._raw.index.name = "observation_month"
+
         # Precompute column transforms once — deterministic, fold-invariant.
         self._transformed = self._apply_column_transforms(self._raw)
         return self
