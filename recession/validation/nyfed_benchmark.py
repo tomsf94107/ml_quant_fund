@@ -98,6 +98,17 @@ def load_nyfed_series(csv_path: Path, date_col: str,
     return s
 
 
+# The NY Fed publishes Rec_prob dated to the PREDICTION month: the value
+# at month M is "P(recession in the 12 months after M)". This project's
+# M1 probability is dated to the OBSERVATION month. The two series are
+# therefore 12 months out of phase, and must be aligned before comparison.
+# Confirmed empirically: a -12-month shift of the NY Fed series lifts the
+# M1-vs-NYFed correlation from 0.42 (raw) to 0.99. Shifting the NY Fed
+# series back 12 months puts its prediction-dated value onto the same
+# observation month M1 uses.
+NYFED_DATE_CONVENTION_SHIFT_MONTHS = -12
+
+
 def compare_to_nyfed(
     db_path: Path,
     nyfed_csv: Path,
@@ -105,14 +116,27 @@ def compare_to_nyfed(
     date_col: str = "date",
     prob_col: str = "probability",
     min_history_year: Optional[int] = 1986,
+    align_shift_months: int = NYFED_DATE_CONVENTION_SHIFT_MONTHS,
 ) -> dict:
     """Compare M1's recession probability to the NY Fed published series.
 
+    The NY Fed series is dated to the PREDICTION month while M1 is dated
+    to the OBSERVATION month — a 12-month phase difference. The NY Fed
+    series is shifted by `align_shift_months` (default -12) to put both
+    on M1's date convention before comparison. Pass align_shift_months=0
+    to compare raw (diagnostic only — this will show the ~0.42 misaligned
+    correlation).
+
     Returns {'n_common_months', 'correlation', 'mean_abs_diff',
-             'max_divergences': DataFrame, 'm1', 'nyfed'}.
+             'max_divergences': DataFrame, 'm1', 'nyfed', 'align_shift'}.
     """
     m1 = load_m1_probability(db_path, min_history_year)
     nyfed = load_nyfed_series(nyfed_csv, date_col, prob_col)
+
+    # align the NY Fed series onto M1's observation-month date convention
+    if align_shift_months != 0:
+        nyfed = nyfed.copy()
+        nyfed.index = nyfed.index + pd.DateOffset(months=align_shift_months)
 
     common = m1.index.intersection(nyfed.index)
     if len(common) == 0:
@@ -122,6 +146,7 @@ def compare_to_nyfed(
     m1c = m1.reindex(common)
     nfc = nyfed.reindex(common)
     diff = (m1c - nfc).abs()
+
 
     corr = float(np.corrcoef(m1c.to_numpy(), nfc.to_numpy())[0, 1])
     mad = float(diff.mean())
@@ -140,6 +165,7 @@ def compare_to_nyfed(
         "correlation": corr,
         "mean_abs_diff": mad,
         "max_divergences": max_div,
+        "align_shift": align_shift_months,
         "m1": m1c, "nyfed": nfc,
     }
 
@@ -155,6 +181,9 @@ def print_nyfed_report(result: dict) -> None:
         return
 
     print(f"  common months compared: {result['n_common_months']}")
+    if result.get("align_shift") is not None:
+        print(f"  NY Fed series shifted {result['align_shift']:+d} months "
+              f"onto M1's observation-month date convention")
     print(f"  correlation:            {result['correlation']:.4f}")
     print(f"  mean absolute diff:     {result['mean_abs_diff']:.4f}")
     print()
