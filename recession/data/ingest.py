@@ -215,6 +215,30 @@ def insert_features(
     return cur.rowcount
 
 
+def count_would_insert(
+    conn: sqlite3.Connection,
+    feature_name: str,
+    rows: list,
+) -> int:
+    """Dry-run companion to insert_features: count how many rows WOULD be
+    newly inserted, without writing. insert_features uses INSERT OR IGNORE,
+    so a row inserts only if its (feature_name, observation_month,
+    vintage_date) primary key is not already present."""
+    if not rows:
+        return 0
+    n_new = 0
+    for r in rows:
+        cur = conn.execute(
+            """SELECT 1 FROM features_monthly
+               WHERE feature_name = ? AND observation_month = ?
+                 AND vintage_date = ? LIMIT 1""",
+            (feature_name, month_floor(r["date"]), r["vintage_date"]),
+        )
+        if cur.fetchone() is None:
+            n_new += 1
+    return n_new
+
+
 def insert_target(
     conn: sqlite3.Connection,
     target_id: str,
@@ -354,6 +378,10 @@ def ingest_feature(
         if not dry_run:
             n_inserted = insert_features(conn, spec.feature_name, monthly, pull_date)
             summary["n_inserted"] = n_inserted
+        else:
+            summary["n_inserted"] = count_would_insert(
+                conn, spec.feature_name, monthly)
+            summary["dry_run"] = True
 
         logger.info(
             "OK   %-22s %-12s raw=%4d monthly=%4d inserted=%4d",
