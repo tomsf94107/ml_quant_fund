@@ -189,3 +189,72 @@ already captures the available signal.
 
 *Pre-registered. Do not edit on the basis of a result. Amendments must be
 dated, reasoned, and appended — never overwrite.*
+
+---
+
+## AMENDMENT 1 — Experiment A Result (dated 2026-05-19)
+
+*Appended per the amendment rule above. The pre-registered design was not
+changed; this records the outcome.*
+
+### Raw two-gate result
+
+| Test | Gate 1 (LR p < 0.00714) | Gate 2 (AUC edge > 0.03) | Both gates |
+|---|---|---|---|
+| EBP @ h=12 | pass (p=0.00002) | fail (edge -0.019) | no |
+| EBP @ h=6 | pass (p~0.000) | pass (edge +0.113) | **pass** |
+| EBP @ h=3 | pass (p~0.000) | pass (edge +0.116) | **pass** |
+| NEAR_TERM_FORWARD @ h=12 | pass (p=0.00421) | fail (edge -0.102) | no |
+| BAA10Y @ h=12 | fail (p=0.104) | fail (edge -0.027) | no |
+| ICSA @ h=3 | fail (p=0.166) | fail (edge -0.245) | no |
+| T10Y2Y @ h=12 | fail (p=0.759) | fail (edge -0.009) | no |
+
+On the two pre-registered gates alone, EBP passed at h=6 and h=3.
+
+### The robustness check overturns the EBP pass
+
+The pre-registration (section 6) requires a passed candidate be re-tested
+before being wired in. The `robustness_check` (fold-by-fold + sub-period,
+the correct check for a deterministic logit — a seed strip is meaningless
+for a non-stochastic model) found EBP's apparent edge is **NOT robust**:
+
+- EBP h=3: per-fold edge +0.27..+0.80 on every fold whose test window
+  contains the 2008 GFC; -0.19..-0.56 on every fold whose window contains
+  the 2020 COVID recession. First-half mean +0.54, second-half -0.24.
+- EBP h=6: the same pattern (first-half +0.34, second-half -0.08).
+
+The "+0.11 mean edge" that passed Gate 2 is the average of a large
+positive (credit-driven 2008) and a large negative (pandemic 2020). It
+describes no actual regime.
+
+### Interpretation — and its honest limit
+
+EBP is the excess bond premium — a credit-market stress signal. It
+predicted the 2008 *credit* crisis strongly and mispredicted the 2020
+*pandemic* recession. The literature supports a mechanism: the Fed's
+March-2020 corporate-bond facilities deliberately suppressed credit-
+channel transmission, so EBP stopped reflecting fundamentals during
+COVID. This makes EBP **regime-conditional** — informative for credit-
+driven downturns, unreliable when the channel is absent or policy-
+suppressed.
+
+**Limit:** this rests on n=2 recessions in the EBP-testable window. The
+*decision* (do not wire EBP into a single linear model) is robust — a
+feature with one-good/one-bad OOS evidence has not earned a model slot.
+The *narrative* (credit-crisis predictor) is economically plausible and
+literature-consistent but not statistically proven on two events.
+
+### Final Experiment A verdict
+
+**The pre-registered null outcome holds.** No candidate carries robust
+recession signal beyond the M1 yield curve. HA1's apparent support (EBP
+at a short horizon) is overturned by the robustness check; HA2
+(NEAR_TERM_FORWARD beats the term spread) and HA3 (ICSA at h=3) are
+falsified. The 6-feature core stands; EBP is NOT wired into any model.
+
+### Follow-on (not part of Experiment A)
+
+EBP is unreliable as a model *feature* but informative as a monitored
+*indicator*. It is therefore added to a credit-watch monitoring panel
+(see `recession/credit_watch.py`), not to M1-M5 — the same predict-vs-
+monitor distinction the recession alert system already embodies.
