@@ -51,6 +51,8 @@ import numpy as np
 import pandas as pd
 
 from recession.models.m1_probit import run_m1
+from recession.models.m2_logit import run_m2
+from recession.features.pit_loader import load_targets
 
 
 # default warning thresholds for the sweep
@@ -142,91 +144,209 @@ def false_alarm_rate(
     threshold: float,
     *,
     horizon_months: int = 12,
+    recovery_months: int = 6,
 ) -> dict:
-    """How often the warning fires WITHOUT a recession following.
+    """Classifier-quality metrics for a recession warning at one threshold.
 
-    A warning month is a month with proba >= threshold. It is a FALSE
-    alarm if no recession onset occurs within the next horizon_months.
+    Two different, both-meaningful rates are returned — they answer
+    different questions and have different denominators:
 
-    Returns {'n_warning_months', 'n_false_alarm_months', 'false_alarm_rate'}.
+    ROC FALSE-POSITIVE RATE (`fpr`) — the literature standard.
+      false-positive months / ALL eligible expansion months.
+      "Of all the calm months, how often did the model wrongly flag?"
+      This is 1 - specificity. Its denominator is the (large, stable)
+      count of expansion months, so it does NOT blow up just because a
+      low threshold flags many months. This is the rate the recession-
+      forecasting literature (Berge-Jorda, the Fed ROC studies) uses,
+      and the rate that makes the Kuiper score TPR - FPR well-defined.
+
+    WARNING RELIABILITY (`warning_reliability_false_rate`) — precision-
+      style. false-alarm months / WARNING months. "When the model
+      flags, how often is it wrong?" Meaningful, but its denominator is
+      the flagged months, so a low threshold inflates it. Reported, but
+      it is NOT the FPR and must not be used as one.
+
+    TRUE-POSITIVE RATE (`tpr`) — true-positive months / all eligible
+      pre-recession months. The ROC partner of `fpr`.
+
+    A month is classed as a warning if proba >= threshold. Eligibility:
+    months that are IN a recession, or within `recovery_months` after a
+    recession ended, are EXCLUDED from all denominators — per Richmond/
+    Fed practice, the in-recession and choppy-recovery months are
+    ambiguous and pollute the rates. A warning month is a TRUE positive
+    if a recession onset falls within the next `horizon_months`.
+
+    Returns {'n_warning_months', 'n_false_alarm_months',
+             'false_alarm_rate' (== warning_reliability_false_rate, kept
+             for backward compatibility), 'warning_reliability_false_rate',
+             'fpr', 'tpr', 'n_expansion_months', 'n_pre_recession_months'}.
     """
     proba = proba.dropna().sort_index()
     labels = labels.dropna().astype(int).sort_index()
     onsets = set(find_recession_onsets(labels))
 
-    warning_months = proba[proba >= threshold].index
-    n_warning = len(warning_months)
-    n_false = 0
-    for m in warning_months:
-        # is there an onset within the next horizon_months?
+    # months where a recession ENDED (1 -> 0 transition) — for the
+    # post-recession recovery exclusion window
+    ends = []
+    prev_val = None
+    for month, val in labels.items():
+        if prev_val == 1 and val == 0:
+            ends.append(month)
+        prev_val = val
+
+    def _in_recession(m):
+        return m in labels.index and labels.loc[m] == 1
+
+    def _in_recovery(m):
+        return any(e < m <= e + pd.DateOffset(months=recovery_months)
+                   for e in ends)
+
+    def _onset_within(m):
         window_end = m + pd.DateOffset(months=horizon_months)
-        has_onset = any(m < o <= window_end for o in onsets)
-        # also not a false alarm if we are already IN a recession
-        in_recession = (m in labels.index and labels.loc[m] == 1)
-        if not has_onset and not in_recession:
-            n_false += 1
+        return any(m < o <= window_end for o in onsets)
+
+    # classify every month with a prediction
+    n_warning = 0
+    n_false = 0                      # warning, eligible, no onset following
+    n_tp = 0                         # warning, eligible, onset following
+    n_expansion = 0                  # eligible months with NO onset following
+    n_pre_recession = 0              # eligible months WITH an onset following
+    for m in proba.index:
+        # eligibility: drop in-recession and recovery-window months
+        if _in_recession(m) or _in_recovery(m):
+            continue
+        is_warning = proba.loc[m] >= threshold
+        has_onset = _onset_within(m)
+        if has_onset:
+            n_pre_recession += 1
+            if is_warning:
+                n_tp += 1
+        else:
+            n_expansion += 1
+            if is_warning:
+                n_false += 1
+        if is_warning:
+            n_warning += 1
+
+    warning_reliability_false = (n_false / n_warning) if n_warning else None
+    fpr = (n_false / n_expansion) if n_expansion else None
+    tpr = (n_tp / n_pre_recession) if n_pre_recession else None
+
     return {
         "n_warning_months": n_warning,
         "n_false_alarm_months": n_false,
-        "false_alarm_rate": (n_false / n_warning) if n_warning else None,
+        # backward-compatible key — equals the warning-reliability rate
+        "false_alarm_rate": warning_reliability_false,
+        "warning_reliability_false_rate": warning_reliability_false,
+        "fpr": fpr,
+        "tpr": tpr,
+        "n_expansion_months": n_expansion,
+        "n_pre_recession_months": n_pre_recession,
     }
 
 
 # =============================================================================
 # The driver
+def _horizon_to_months(horizon: str) -> int:
+    """Parse a horizon string ('h=3', 'h=12') to a month count.
+    Used to size the false-alarm window to the model's horizon."""
+    try:
+        return int(str(horizon).split("=")[1])
+    except (IndexError, ValueError):
+        return 12          # safe default — the conventional 12m window
+
+
 # =============================================================================
 
 def run_lead_time_analysis(
     target: str = "T1",
     horizon: str = "h=12",
     *,
+    model: str = "M1",
     min_history_year: Optional[int] = 1986,
     db_path: Optional[Path] = None,
     thresholds: Optional[list[float]] = None,
     **walk_forward_kwargs,
 ) -> dict:
-    """Run M1 through the walk-forward harness, pool its OOS predictions,
-    and characterise lead time + false alarms across a threshold sweep.
+    """Run a model through the walk-forward harness, pool its OOS
+    predictions, and characterise lead time + false alarms across a
+    threshold sweep.
+
+    `model` selects which model's OOS predictions to analyse:
+      'M1' (default) — the yield-curve probit. Correct for h=12.
+      'M2'           — the 4-feature macro logit. B-track established M2
+                       as the short-horizon model; use 'M2' for h=3/h=6.
+    Defaulting to 'M1' keeps every existing caller unchanged.
 
     Returns {'sweep': {threshold: {...}}, 'onsets': [...],
-             'n_oos_months': int}.
+             'n_oos_months': int, 'proba': Series, 'actual': Series,
+             'model': str}.
     """
     if thresholds is None:
         thresholds = LEAD_TIME_THRESHOLDS
 
-    # M1 OOS predictions via the harness
-    m1_results = run_m1(target=target, horizon=horizon,
-                        min_history_year=min_history_year, db_path=db_path,
-                        **walk_forward_kwargs)
-    m1 = m1_results["m1"]
+    # route to the requested model's runner; both return a dict with a
+    # WalkForwardResult under a model-specific key.
+    if model == "M1":
+        run_out = run_m1(target=target, horizon=horizon,
+                         min_history_year=min_history_year,
+                         db_path=db_path, **walk_forward_kwargs)
+        wf = run_out["m1"]
+    elif model == "M2":
+        run_out = run_m2(target=target, horizon=horizon,
+                         min_history_year=min_history_year,
+                         db_path=db_path, **walk_forward_kwargs)
+        wf = run_out["m2"]
+    else:
+        raise ValueError(f"unknown model {model!r} — expected 'M1' or 'M2'")
 
     # pool OOS fold predictions into one month-indexed Series
     dates, probs, actuals = [], [], []
-    for fold in m1.folds:
+    for fold in wf.folds:
         dates.extend(pd.to_datetime(fold.test_dates))
         probs.extend(fold.test_proba)
         actuals.extend(fold.test_actual)
     if not dates:
         return {"sweep": {}, "onsets": [], "n_oos_months": 0,
-                "error": "no OOS predictions"}
+                "error": "no OOS predictions", "model": model}
 
     proba = pd.Series(probs, index=pd.DatetimeIndex(dates)).sort_index()
     # overlapping folds can repeat a month — average duplicates
     proba = proba.groupby(proba.index).mean()
-    actual = pd.Series(actuals, index=pd.DatetimeIndex(dates)).sort_index()
-    actual = actual.groupby(actual.index).max()
 
-    onsets = find_recession_onsets(actual)
+    # `actual` here is the model's TARGET — at h>0 it is the forward-
+    # shifted "recession within h months" series. It is NOT the realized
+    # recession state, so onsets read off it land h months early. For
+    # onset dates and false-alarm scoring we need the REALIZED label
+    # (h=0). Load it and restrict to the OOS span.
+    load_kwargs = {}
+    if db_path is not None:
+        load_kwargs["db_path"] = Path(db_path)
+    realized = load_targets(target, "h=0", **load_kwargs)
+    realized = realized.dropna().astype(int).sort_index()
+    realized = realized[(realized.index >= proba.index.min())
+                        & (realized.index <= proba.index.max())]
+
+    onsets = find_recession_onsets(realized)
+
+    # the false-alarm window is matched to the horizon: a warning is
+    # legitimate if a recession follows within ~the horizon length (a
+    # warning from an h=3 model need only be right about the next ~3
+    # months, not 12).
+    fa_horizon_months = _horizon_to_months(horizon)
 
     sweep = {}
     for thr in thresholds:
         lt = measure_lead_times(proba, onsets, thr)
-        fa = false_alarm_rate(proba, actual, thr)
+        # false alarms scored against the REALIZED label, horizon-matched
+        fa = false_alarm_rate(proba, realized, thr,
+                              horizon_months=fa_horizon_months)
         sweep[thr] = {**lt, **fa}
 
     return {"sweep": sweep, "onsets": onsets,
             "n_oos_months": len(proba),
-            "proba": proba, "actual": actual}
+            "proba": proba, "actual": realized, "model": model,
+            "fa_horizon_months": fa_horizon_months}
 
 
 def print_lead_time_report(results: dict) -> None:
