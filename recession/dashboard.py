@@ -31,7 +31,20 @@ separate, unvalidated logic.
 """
 from __future__ import annotations
 
+import sys
 from pathlib import Path
+
+# --- import path shim --------------------------------------------------
+# Streamlit runs this script with recession/ (the script's own directory)
+# on sys.path, NOT the project root. The dashboard imports the `recession`
+# PACKAGE (from recession.models... etc), which lives one level up. So we
+# add the project root to sys.path before those imports run. This makes
+# `streamlit run recession/dashboard.py` work from any directory.
+# (sys.path insertion in an app entrypoint is the standard fix for a
+# Streamlit app that lives inside a package.)
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
 import numpy as np
 import pandas as pd
