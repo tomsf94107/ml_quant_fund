@@ -362,3 +362,204 @@ def print_experiment_a_report(report: dict) -> None:
         print("  signal among the five strongest named rivals. This is")
         print("  the pre-registered null outcome — a valid finding.")
     print("=" * 74)
+
+
+# =============================================================================
+# Robustness check — fold-by-fold + sub-period (Experiment A, post-pass step)
+# =============================================================================
+
+def robustness_check(
+    candidate: str,
+    target: str = "T1",
+    horizon: str = "h=12",
+    *,
+    db_path: Optional[Path] = None,
+    min_history_year: Optional[int] = 1986,
+    **walk_forward_kwargs,
+) -> dict:
+    """Robustness check for a candidate that PASSED Gate 2.
+
+    A passed Gate-2 edge is a MEAN over walk-forward folds. This asks
+    whether that mean is broad-based or concentrated. The model
+    (M1+candidate, an M1Probit logit) is deterministic, so a seed strip
+    is meaningless here — the right checks for a deterministic model are:
+
+      FOLD-BY-FOLD : for every fold where BOTH M1 and M1+candidate have a
+        defined (two-class) AUC, the per-fold edge. Reports how many
+        folds the candidate helped vs hurt, and the min/median/max edge.
+        A robust edge helps most folds; a fragile one is one or two big
+        folds carrying the mean.
+
+      SUB-PERIOD : folds split into first-half vs second-half of the
+        test-date span. A robust edge holds in both halves; a
+        regime-specific one shows up in only one.
+
+    Mirrors gate2_oos_auc's harness setup exactly (same shared axis, same
+    M1Probit model) so the numbers reconcile with the Gate-2 result.
+
+    Returns a dict with per-fold edges, the helped/hurt counts, the
+    sub-period split, and a verdict.
+    """
+    feats = [BASELINE_FEATURE, candidate]
+
+    build_kwargs = {}
+    if db_path is not None:
+        build_kwargs["db_path"] = db_path
+    if min_history_year is not None:
+        build_kwargs["min_history_year"] = min_history_year
+    try:
+        probe = build_feature_dataframe(
+            target=target, horizon=horizon,
+            as_of="today", train_cutoff="today",
+            feature_subset=feats, **build_kwargs,
+        )
+    except Exception as e:
+        return {"candidate": candidate, "horizon": horizon,
+                "error": f"could not build features: {e}"}
+    cols = [c for c in feats if c in probe.X.columns]
+    if BASELINE_FEATURE not in cols or candidate not in cols:
+        return {"candidate": candidate, "horizon": horizon,
+                "error": f"missing column(s): need {feats}, got {cols}"}
+    axis = probe.X.index[probe.X[cols].notna().all(axis=1)]
+
+    common = dict(target=target, horizon=horizon,
+                  min_history_year=min_history_year, db_path=db_path,
+                  restrict_to_months=axis, **walk_forward_kwargs)
+
+    base = walk_forward(
+        model_factory=M1Probit, feature_subset=[BASELINE_FEATURE],
+        model_columns=[BASELINE_FEATURE],
+        model_name=f"M1 ({horizon})", **common,
+    )
+    augmented = walk_forward(
+        model_factory=M1Probit, feature_subset=feats,
+        model_columns=feats,
+        model_name=f"M1+{candidate} ({horizon})", **common,
+    )
+
+    # pair folds by fold_index; keep only folds where BOTH have a
+    # defined (two-class) AUC — a None AUC means a single-class test
+    # window and cannot be compared.
+    base_by_idx = {f.fold_index: f for f in base.folds}
+    aug_by_idx = {f.fold_index: f for f in augmented.folds}
+    paired = []
+    for idx in sorted(set(base_by_idx) & set(aug_by_idx)):
+        bf, af = base_by_idx[idx], aug_by_idx[idx]
+        if bf.auc is None or af.auc is None:
+            continue
+        paired.append({
+            "fold_index": idx,
+            "test_start": af.test_start, "test_end": af.test_end,
+            "auc_base": bf.auc, "auc_aug": af.auc,
+            "edge": af.auc - bf.auc,
+        })
+
+    if not paired:
+        return {"candidate": candidate, "horizon": horizon,
+                "error": "no folds with a defined AUC in both models"}
+
+    edges = [p["edge"] for p in paired]
+    helped = sum(1 for e in edges if e > 0)
+    hurt = sum(1 for e in edges if e < 0)
+    tied = sum(1 for e in edges if e == 0)
+    edges_sorted = sorted(edges)
+    n = len(edges_sorted)
+    median_edge = (edges_sorted[n // 2] if n % 2
+                   else 0.5 * (edges_sorted[n // 2 - 1]
+                               + edges_sorted[n // 2]))
+
+    # sub-period split: first half vs second half of the paired folds
+    # (folds are time-ordered by fold_index → expanding walk-forward)
+    mid = n // 2
+    first_half = [p["edge"] for p in paired[:mid]] if mid else []
+    second_half = [p["edge"] for p in paired[mid:]]
+    fh_mean = sum(first_half) / len(first_half) if first_half else None
+    sh_mean = sum(second_half) / len(second_half) if second_half else None
+
+    mean_edge = sum(edges) / len(edges)
+    # robust if the candidate helps a clear majority of folds AND both
+    # sub-period means are positive
+    majority_helped = helped >= 0.6 * n
+    both_halves_positive = (fh_mean is not None and fh_mean > 0
+                            and sh_mean is not None and sh_mean > 0)
+    robust = majority_helped and both_halves_positive
+
+    if robust:
+        verdict = (f"{candidate} @ {horizon}: edge is ROBUST — helps "
+                   f"{helped}/{n} folds, and both sub-periods are "
+                   f"positive (first-half {fh_mean:+.4f}, second-half "
+                   f"{sh_mean:+.4f}). The mean edge is broad-based, not "
+                   f"carried by a few folds. Cleared for wiring in.")
+    elif majority_helped and not both_halves_positive:
+        verdict = (f"{candidate} @ {horizon}: edge helps {helped}/{n} "
+                   f"folds but is REGIME-CONCENTRATED — one sub-period "
+                   f"carries it (first-half {fh_mean:+.4f}, second-half "
+                   f"{sh_mean:+.4f}). Treat with caution; the edge may "
+                   f"not hold out of the regime that produced it.")
+    elif not majority_helped and both_halves_positive:
+        verdict = (f"{candidate} @ {horizon}: both sub-periods positive "
+                   f"but the edge helps only {helped}/{n} folds — the "
+                   f"mean is carried by a minority of large-edge folds. "
+                   f"FRAGILE; not a clean robust pass.")
+    else:
+        verdict = (f"{candidate} @ {horizon}: edge is NOT robust — helps "
+                   f"only {helped}/{n} folds; sub-periods first-half "
+                   f"{fh_mean:+.4f}, second-half {sh_mean:+.4f}. The "
+                   f"Gate-2 mean does not hold up fold-by-fold.")
+
+    return {
+        "candidate": candidate, "horizon": horizon,
+        "n_paired_folds": n,
+        "mean_edge": mean_edge, "median_edge": median_edge,
+        "min_edge": edges_sorted[0], "max_edge": edges_sorted[-1],
+        "helped": helped, "hurt": hurt, "tied": tied,
+        "first_half_mean": fh_mean, "second_half_mean": sh_mean,
+        "folds": paired,
+        "robust": robust,
+        "verdict": verdict,
+        "error": None,
+    }
+
+
+def print_robustness_report(result: dict) -> None:
+    """Print the robustness-check report."""
+    print("=" * 74)
+    print(f"ROBUSTNESS CHECK — {result.get('candidate')} @ "
+          f"{result.get('horizon')}")
+    print("=" * 74)
+    if result.get("error"):
+        print(f"  ERROR: {result['error']}")
+        print("=" * 74)
+        return
+
+    print(f"  paired folds (AUC defined in both models): "
+          f"{result['n_paired_folds']}")
+    print(f"  per-fold edge — mean {result['mean_edge']:+.4f}  "
+          f"median {result['median_edge']:+.4f}  "
+          f"min {result['min_edge']:+.4f}  max {result['max_edge']:+.4f}")
+    print(f"  candidate helped {result['helped']} folds, "
+          f"hurt {result['hurt']}, tied {result['tied']}")
+    fh, sh = result["first_half_mean"], result["second_half_mean"]
+    print(f"  sub-period: first-half mean edge "
+          f"{fh:+.4f}" if fh is not None else "  sub-period: first-half n/a")
+    print(f"              second-half mean edge "
+          f"{sh:+.4f}" if sh is not None else "              second-half n/a")
+    print()
+    print(f"  {'fold':>5} {'test window':>24} {'M1 AUC':>9} "
+          f"{'+cand AUC':>10} {'edge':>9}")
+    for p in result["folds"]:
+        win = f"{p['test_start']}..{p['test_end']}"
+        print(f"  {p['fold_index']:>5} {win:>24} {p['auc_base']:>9.4f} "
+              f"{p['auc_aug']:>10.4f} {p['edge']:>+9.4f}")
+    print()
+    print("-" * 74)
+    words = result["verdict"].split()
+    line = "  "
+    for w in words:
+        if len(line) + len(w) + 1 > 72:
+            print(line); line = "  " + w
+        else:
+            line += (" " if line.strip() else "") + w
+    if line.strip():
+        print(line)
+    print("=" * 74)
