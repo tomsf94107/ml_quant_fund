@@ -2,134 +2,107 @@
 
 *The feature audit (recession/validation/feature_audit.py) found 7
 features registered in `features_registry` with NO data in
-`features_monthly`. They are kept (not deleted) — each is a deliberate,
-recorded intent. This document is the sourcing plan: why each is empty,
-exactly where the data comes from, how hard it is, and the concrete next
-step.*
-
-The 7 split into three difficulty tiers.
+`features_monthly`. This document records the truth about each — and the
+truth, established by reading `recession/data/series_specs.py`, is that
+**none of the 7 is an accidental gap.** They fall into two groups, both
+the result of deliberate, documented decisions.*
 
 ---
 
-## TIER 1 — Easy: standard FRED series, just not pulled yet
+## GROUP 1 — Deprecated: replaced, the replacement is already live (3)
 
-These have no obstacle at all. They are ordinary FRED series; the
-ingestion pipeline simply was never pointed at them. Each is one FRED
-series ID. Closing these is a short job — run the project's existing FRED
-ingestion for these three series IDs.
+These three were each evaluated, found to have a data-source problem, and
+**replaced with a better series that is already wired in and populated.**
+The empty registry rows are kept only as foreign-key anchors and as a
+record of the decision — `features_monthly.feature_name` has a foreign
+key to `features_registry`, and `recession/tests/test_schema.py` uses one
+of these names as a vintage-test fixture, so the rows are NOT deleted.
+They are instead **marked DEPRECATED in their registry description**, so
+the feature audit reports them as a resolved decision, not an open gap.
 
-| Feature | FRED series ID | What it is | Recession relevance |
-|---|---|---|---|
-| `BAMLH0A0HYM2` | BAMLH0A0HYM2 | ICE BofA US High Yield Option-Adjusted Spread | Credit-market stress. Widening HY spreads are a classic recession lead — arguably the strongest of the three. |
-| `USSLIND` | USSLIND | Leading Index for the United States (Philadelphia Fed, state-level aggregate) | A composite leading indicator — purpose-built to lead the cycle. |
-| `EXHOSLUSM495S` | EXHOSLUSM495S | Existing Home Sales | Housing turns before the broad economy; a real-activity lead. |
+| Empty feature | Replaced by (live, populated) | Why replaced |
+|---|---|---|
+| `BAMLH0A0HYM2` | **`BAA10Y`** | ICE BofA license change (Apr 2026) capped BAMLH0A0HYM2 to 3 years rolling history. BAA10Y (Moody's Baa - 10y Treasury) covers the same credit-stress role, daily back to 1986, no licensing risk. |
+| `USSLIND` | **`CFNAI`** | USSLIND (Conference Board LEI) was discontinued / went stale. CFNAI (Chicago Fed National Activity Index) covers the same real-activity-lead role. |
+| `EXHOSLUSM495S` | **`HSN1F`** | EXHOSLUSM495S (existing home sales, NAR-licensed) has no vintage history on ALFRED. HSN1F (new one-family house sales) has full ALFRED vintage history - required for honest point-in-time backtests. |
 
-**Next step (Tier 1):** run the project's FRED ingestion script for these
-three series IDs. They are daily/monthly FRED series with long history —
-ingestion should be routine. After ingestion, re-run the feature audit:
-they move from "empty" to "populated", and become candidates for the
-feature-testing experiments (A / B).
-
----
-
-## TIER 2 — Engineered: must be computed, not downloaded
-
-| Feature | Inputs | What it is | Status |
-|---|---|---|---|
-| `COPPER_GOLD` | a copper price series + a gold price series | The copper-to-gold ratio — a market-based growth/risk gauge ("Dr. Copper" up with growth; gold up with risk aversion). | **Build DONE** — `recession/features/derive_copper_gold.py`. |
-
-There is no single FRED "copper/gold" series, so `COPPER_GOLD` must be
-derived. `derive_copper_gold.py` does this: it reads a copper price
-series and a gold price series from `features_monthly`, computes the
-ratio per month (PIT-safe — derived vintage = the later of the two input
-vintages), and writes `COPPER_GOLD`.
-
-**Next step (Tier 2):** the derivation needs its two INPUTS in the DB
-first. Ingest a copper price series (FRED `PCOPPUSDM` — Global Price of
-Copper) and a gold price series (FRED `GOLDAMGBD228NLBM` — Gold Fixing
-Price, London) via the FRED ingestion. Then run:
-
-    python -c "from recession.features.derive_copper_gold import derive_copper_gold; \
-        r = derive_copper_gold(db_path='recession.db'); print(r['message'])"
-
-`derive_copper_gold` auto-detects the input series names; if the DB uses
-other names, pass `copper_feature=` / `gold_feature=` explicitly. Run with
-`dry_run=True` first to preview.
+**Action: none beyond marking.** The replacements are live. The audit, once
+the descriptions are tagged `DEPRECATED`, reports these correctly and
+does not re-flag them. Do NOT re-ingest these series - `BAMLH0A0HYM2` in
+particular would fail (the license change is why it is empty), and all
+three would duplicate a role already filled.
 
 ---
 
-## TIER 3 — Hard: data is not cleanly or freely available
+## GROUP 2 — Deliberately deferred to v2: `skip_v1` (4)
 
-These are genuine data-engineering / data-procurement projects. They are
-NOT quick fixes, and this document does not pretend otherwise. Each entry
-records the honest options so the decision is informed.
+These four carry `fetch_method="skip_v1"` in `series_specs.py` - the
+project's explicit "out of scope for v1, on purpose" marker. They are
+genuine future work, not oversights. Each entry below records the honest
+sourcing options.
 
-### `CHINA_CREDIT_IMPULSE` (tier: global)
+### `COPPER_GOLD` (tier 7, global) — engineered feature, blocked
+- **What it is:** the copper-to-gold price ratio - a market-based
+  growth/risk gauge.
+- **Why deferred:** both London Bullion gold series on FRED
+  (`GOLDAMGBD228NLBM`, `GOLDPMGBD228NLBM`) were discontinued in 2025 and
+  now return HTTP 400. Without a working gold series there is no ratio to
+  compute. `series_specs.py` sets `derived_from=()` (cleared) and
+  `fetch_method="skip_v1"`.
+- **v2 fix:** source gold from an alternative - Yahoo Finance (`GC=F`
+  futures), LBMA direct, or a data vendor. The derivation code is already
+  written and tested: `recession/features/derive_copper_gold.py` (it
+  reads a copper series and a gold series from `features_monthly`,
+  computes the PIT-safe ratio, and writes `COPPER_GOLD`). It is
+  **v2-ready** - it only needs a working gold series ingested first.
+
+### `CHINA_CREDIT_IMPULSE` (tier 7, global)
 - **What it is:** the change in new credit flow as a share of GDP in
-  China — a widely-watched global growth lead.
-- **Why empty:** there is no clean, free, single public series. It is
-  constructed from China's Total Social Financing (TSF) and GDP.
-- **Sourcing options:**
-  1. **Construct it.** PBoC publishes TSF (aggregate financing) and GDP.
-     The credit impulse = 12-month change in (new credit / GDP). This is
-     buildable from public PBoC/NBS data — but the data is awkward to
-     pull (no clean API like FRED), and methodology choices (flow vs
-     stock, seasonal adjustment) materially affect the result.
-  2. **Buy it.** Bloomberg and some research providers publish a
-     ready-made China credit impulse series — paid.
-  3. **Proxy it.** Use a cleaner adjacent series as a stand-in (e.g. a
-     China activity proxy already on FRED). Lower fidelity.
-- **Recommended:** defer. Revisit only if the feature-testing experiments
-  show the `global` tier matters; if so, start with option 1
-  (construct from public TSF data) and validate before trusting it.
+  China - a global growth lead.
+- **Why deferred:** no clean free public series. Constructed from China's
+  Total Social Financing and GDP; methodology choices matter.
+- **v2 options:** (1) construct from public PBoC/NBS TSF data; (2) buy a
+  ready-made series (Bloomberg / research vendor); (3) proxy with a
+  cleaner adjacent China-activity series.
 
-### `HYPERSCALER_CAPEX_YOY` (tier: ai_cycle)
-- **What it is:** year-over-year growth in hyperscaler (cloud) capital
-  expenditure — an AI-cycle demand signal.
-- **Why empty:** this is not a macro series at all. It comes from
-  individual company earnings reports (MSFT, GOOGL, AMZN, META).
-- **Sourcing options:**
-  1. **Manual / scraped quarterly update** from the four hyperscalers'
-     earnings releases. Low frequency (quarterly), small effort per
-     update, but ongoing.
-  2. **Buy** an aggregated capex dataset from a financial-data vendor.
-- **Honest scope note:** this feature originated in the *equity* project's
-  AI investment thesis. Whether it belongs in a *recession* model is a
-  real question — an AI-capex slowdown is a sector signal, not obviously
-  a US-recession lead. Recommended: defer, and decide if it is in scope
-  for the recession model at all before investing in sourcing it.
+### `HYPERSCALER_CAPEX_YOY` (tier 8, ai_cycle)
+- **What it is:** YoY growth in hyperscaler (cloud) capital expenditure.
+- **Why deferred:** not a macro series - it comes from individual company
+  earnings reports (MSFT, GOOGL, AMZN, META).
+- **Scope question first:** this feature originated in the *equity*
+  project's AI investment thesis. Before sourcing it, decide whether an
+  AI-capex signal belongs in a *recession* model at all.
 
-### `MEMORY_CONTRACT_PX` (tier: ai_cycle)
-- **What it is:** memory (DRAM/NAND) contract prices — a semiconductor /
+### `MEMORY_CONTRACT_PX` (tier 8, ai_cycle)
+- **What it is:** memory (DRAM/NAND) contract prices - a semiconductor /
   AI-cycle indicator.
-- **Why empty:** industry data, not macro. Published by industry sources
-  such as TrendForce / DRAMeXchange — largely paid.
-- **Sourcing options:**
-  1. **Buy** the industry data feed.
-  2. **Proxy** with a public semiconductor-related series.
-- **Honest scope note:** same as `HYPERSCALER_CAPEX_YOY` — this is an
-  equity-thesis feature. Recommended: defer; decide scope first.
+- **Why deferred:** industry data (TrendForce / DRAMeXchange), largely
+  paid; not a macro series.
+- **Scope question first:** same as `HYPERSCALER_CAPEX_YOY` - an
+  equity-thesis feature; decide recession-model scope before sourcing.
 
 ---
 
-## SUMMARY — recommended order
+## SUMMARY
 
-1. **Tier 1 (3 features)** — `BAMLH0A0HYM2`, `USSLIND`, `EXHOSLUSM495S`.
-   Routine FRED ingestion. Do these first; `BAMLH0A0HYM2` (high-yield
-   spread) is the highest-value of the three.
-2. **Tier 2 (`COPPER_GOLD`)** — ingest its two FRED inputs (`PCOPPUSDM`,
-   `GOLDAMGBD228NLBM`), then run the derivation script. Code is done.
-3. **Tier 3 (3 features)** — `CHINA_CREDIT_IMPULSE`,
-   `HYPERSCALER_CAPEX_YOY`, `MEMORY_CONTRACT_PX`. Genuine projects.
-   Defer until the feature-testing experiments show whether the `global`
-   and `ai_cycle` tiers carry signal — and, for the two `ai_cycle`
-   features, decide first whether they belong in a recession model at
-   all rather than the equity project.
+- **Group 1 (3 features)** - already solved. Replacements `BAA10Y`,
+  `CFNAI`, `HSN1F` are live and populated. The registry rows are kept as
+  FK anchors and marked `DEPRECATED`. No further action.
+- **Group 2 (4 features)** - deliberate v2 work. `COPPER_GOLD` is the
+  closest (code done, needs a gold series). The other three are genuine
+  data-procurement decisions, and the two `ai_cycle` features need a
+  scope decision first.
 
-**Discipline note.** Ingesting a feature does not make it useful — it
-makes it *testable*. After any of these is populated, it must go through
-the same pre-registered, walk-forward validation as every other feature
-before any model uses it. The constraint on the model is not missing
-data; it is *untested* data — there are already 25 populated-but-untested
-features. Sourcing new data and testing existing data are separate jobs;
-do not let the first outrun the second.
+**Discipline note.** The project's real opportunity is not these 7 empty
+rows - it is the **25 populated-but-untested features** already in the
+database (EBP, NEAR_TERM_FORWARD, ICSA, SAHMREALTIME, T10Y2Y, and more).
+Testing existing data outranks sourcing new data. Sourcing a feature
+makes it *testable*, not *useful*; only pre-registered, walk-forward
+validation makes it useful.
+
+---
+
+*Corrected after reading `series_specs.py`: an earlier version of this
+document mistakenly framed the 7 as a single ingestion to-do list. The
+specs show 3 are deprecated-with-live-replacements and 4 are deliberate
+`skip_v1` deferrals. This version reflects the code.*

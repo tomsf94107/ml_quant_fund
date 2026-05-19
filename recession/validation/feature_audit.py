@@ -103,11 +103,11 @@ def _models_using(feature: str) -> list[str]:
 
 def load_registry(db_path: Path) -> list[dict]:
     """Load every feature from features_registry. Returns a list of
-    {feature_name, tier, tier_label, is_active}."""
+    {feature_name, tier, tier_label, description, is_active}."""
     conn = sqlite3.connect(db_path)
     try:
         rows = conn.execute(
-            """SELECT feature_name, tier, tier_label, is_active
+            """SELECT feature_name, tier, tier_label, description, is_active
                FROM features_registry
                ORDER BY tier, feature_name"""
         ).fetchall()
@@ -115,9 +115,25 @@ def load_registry(db_path: Path) -> list[dict]:
         conn.close()
     return [
         {"feature_name": r[0], "tier": r[1], "tier_label": r[2],
-         "is_active": bool(r[3])}
+         "description": r[3] or "", "is_active": bool(r[4])}
         for r in rows
     ]
+
+
+# a feature whose registry description carries one of these tags has been
+# deliberately deprecated or deferred — it is NOT plain "dead weight". The
+# audit reports these in their own bucket so a resolved decision is not
+# re-flagged as an open gap.
+_DEPRECATION_TAGS = ("DEPRECATED", "DEFERRED", "REPLACED BY", "SKIP_V1")
+
+
+def _deprecation_note(description: str) -> Optional[str]:
+    """If the description carries a deprecation/deferral tag, return the
+    description (the recorded reason); else None."""
+    upper = (description or "").upper()
+    if any(tag in upper for tag in _DEPRECATION_TAGS):
+        return description
+    return None
 
 
 def run_feature_audit(db_path: Optional[Path] = None) -> dict:
@@ -125,8 +141,13 @@ def run_feature_audit(db_path: Optional[Path] = None) -> dict:
 
     Returns:
         {'registry': [...],            # every registry feature, classified
-         'live': [...],                # bucket 1
-         'registry_only': [...],       # bucket 2 — defined, never wired in
+         'live': [...],                # bucket 1 — used by a model
+         'registry_only': [...],       # bucket 2 — defined, never wired in,
+                                       #   and NOT deprecated (a real gap)
+         'deprecated': [...],          # bucket 2b — registry-only but the
+                                       #   description marks it deprecated/
+                                       #   deferred (a resolved decision,
+                                       #   not an open gap)
          'known_dead': [...],          # bucket 3 — used but found dead
          'used_not_in_registry': [...] # a model uses a feature the
                                        #   registry does not define (a real
@@ -140,7 +161,7 @@ def run_feature_audit(db_path: Optional[Path] = None) -> dict:
     registry_names = {f["feature_name"] for f in registry}
     model_features = _all_model_features()
 
-    live, registry_only, known_dead = [], [], []
+    live, registry_only, deprecated, known_dead = [], [], [], []
 
     for f in registry:
         name = f["feature_name"]
@@ -154,8 +175,17 @@ def run_feature_audit(db_path: Optional[Path] = None) -> dict:
                 known_dead.append({**entry, "dead_where": where,
                                    "dead_finding": finding})
         else:
-            entry["bucket"] = "REGISTRY-ONLY"
-            registry_only.append(entry)
+            # not used by any model — but is it a genuine gap, or a
+            # deliberately deprecated/deferred feature? The description
+            # tag decides.
+            note = _deprecation_note(f["description"])
+            if note is not None:
+                entry["bucket"] = "DEPRECATED"
+                entry["deprecation_note"] = note
+                deprecated.append(entry)
+            else:
+                entry["bucket"] = "REGISTRY-ONLY"
+                registry_only.append(entry)
 
     # integrity check: a model feature set names something the registry
     # does not define. This should be empty; if not, it is a real bug.
@@ -166,21 +196,28 @@ def run_feature_audit(db_path: Optional[Path] = None) -> dict:
     for f in registry:
         name = f["feature_name"]
         users = _models_using(name)
-        bucket = "LIVE" if users else "REGISTRY-ONLY"
-        if name in KNOWN_DEAD_FINDINGS and users:
-            bucket = "LIVE (known-dead @ "\
-                     f"{KNOWN_DEAD_FINDINGS[name][0]})"
+        if users:
+            bucket = "LIVE"
+            if name in KNOWN_DEAD_FINDINGS:
+                bucket = "LIVE (known-dead @ "\
+                         f"{KNOWN_DEAD_FINDINGS[name][0]})"
+        elif _deprecation_note(f["description"]) is not None:
+            bucket = "DEPRECATED"
+        else:
+            bucket = "REGISTRY-ONLY"
         classified.append({**f, "models": users, "bucket": bucket})
 
     return {
         "registry": classified,
         "live": live,
         "registry_only": registry_only,
+        "deprecated": deprecated,
         "known_dead": known_dead,
         "used_not_in_registry": used_not_in_registry,
         "n_registry": len(registry),
         "n_live": len(live),
         "n_registry_only": len(registry_only),
+        "n_deprecated": len(deprecated),
     }
 
 
@@ -191,7 +228,8 @@ def print_feature_audit(audit: dict) -> None:
     print("=" * 72)
     print(f"  registry features: {audit['n_registry']}   "
           f"live: {audit['n_live']}   "
-          f"registry-only (dead weight): {audit['n_registry_only']}")
+          f"registry-only (genuine gap): {audit['n_registry_only']}   "
+          f"deprecated: {audit.get('n_deprecated', 0)}")
     print()
     print(f"  {'feature':>16} {'tier':>5} {'active':>7}  "
           f"{'bucket':<28} models")
@@ -202,12 +240,12 @@ def print_feature_audit(audit: dict) -> None:
         print(f"  {f['feature_name']:>16} {f['tier']:>5} {act:>7}  "
               f"{f['bucket']:<28} {models}")
 
-    # bucket 2 — the main finding
+    # bucket 2 — the genuine gap
     print()
     print("-" * 72)
     if audit["registry_only"]:
-        print("  REGISTRY-ONLY features (defined but NO model uses them —")
-        print("  dead weight, or awaiting a planned model):")
+        print("  REGISTRY-ONLY features (defined, NO model uses them, and")
+        print("  NOT marked deprecated — a genuine gap):")
         for f in audit["registry_only"]:
             print(f"    - {f['feature_name']} (tier {f['tier']}, "
                   f"{f['tier_label']})")
@@ -215,8 +253,29 @@ def print_feature_audit(audit: dict) -> None:
         print("  from the registry/ingestion. Carrying an unused feature")
         print("  is silent maintenance cost.")
     else:
-        print("  No registry-only features — every registered feature is")
-        print("  consumed by at least one model.")
+        print("  No genuine registry-only gaps — every non-deprecated")
+        print("  registered feature is consumed by at least one model.")
+
+    # bucket 2b — deprecated (a resolved decision, not a gap)
+    print()
+    if audit.get("deprecated"):
+        print("  DEPRECATED features (registry-only, but the description")
+        print("  marks them deprecated/deferred — a resolved decision, not")
+        print("  an open gap; kept e.g. as a foreign-key anchor / record):")
+        for f in audit["deprecated"]:
+            print(f"    - {f['feature_name']} (tier {f['tier']})")
+            note = f.get("deprecation_note", "")
+            if note:
+                # wrap the note
+                line = "      "
+                for w in note.split():
+                    if len(line) + len(w) + 1 > 70:
+                        print(line); line = "      " + w
+                    else:
+                        line += (" " if line.strip() else "") + w
+                if line.strip():
+                    print(line)
+        print("  ACTION: none required — these are documented decisions.")
 
     # bucket 3
     print()

@@ -3,14 +3,23 @@ recession/features/derive_copper_gold.py
 
 Derives the COPPER_GOLD feature — the copper-to-gold price ratio.
 
+STATUS: v2-ready, not yet active. COPPER_GOLD is marked `skip_v1` in
+series_specs.py because both FRED London gold series
+(GOLDAMGBD228NLBM, GOLDPMGBD228NLBM) were discontinued in 2025 and return
+HTTP 400 — there is currently no working gold series to divide by. This
+module is the derivation, written and tested ahead of time; it becomes
+active once a v2 gold series (Yahoo GC=F futures, LBMA, or a vendor) is
+ingested. Until then, run against the real DB it will report an honest
+"gold series not present" failure and write nothing — by design.
+
 WHY COPPER/GOLD
 ---------------
 The copper-to-gold ratio is a market-based growth/risk gauge: copper
 ("Dr. Copper") rises with industrial demand and global growth; gold rises
 with risk aversion. A falling ratio signals the market pricing slower
-growth / higher risk — a recession-relevant signal. It is the one empty
-registry feature that is ENGINEERED rather than downloaded: there is no
-single "copper/gold" series, so it must be computed from two inputs.
+growth / higher risk — a recession-relevant signal. It is engineered
+rather than downloaded: there is no single "copper/gold" FRED series, so
+it must be computed from two inputs.
 
 WHAT THIS SCRIPT NEEDS
 ----------------------
