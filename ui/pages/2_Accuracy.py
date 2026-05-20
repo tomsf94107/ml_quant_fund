@@ -7,6 +7,11 @@ _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 if _ROOT not in sys.path:
     sys.path.insert(0, _ROOT)
 
+import math
+import sqlite3
+from pathlib import Path
+
+import numpy as np
 import pandas as pd
 import altair as alt
 import streamlit as st
@@ -588,3 +593,71 @@ recalibrating the model's output probabilities using Platt scaling.
 
 except Exception as e:
     st.warning(f"Calibration data unavailable: {e}")
+
+
+# ── Tickers by bucket browser (May 20 2026) ───────────────────────────────────
+st.divider()
+st.subheader("Tickers by bucket")
+st.caption(
+    "Browse the universe grouped by bucket (industry/sub-industry). "
+    "Sort by accuracy or sample size. Bucket assignment from tickers_metadata.csv."
+)
+
+try:
+    _meta_csv = Path("tickers_metadata.csv")
+    if not _meta_csv.exists():
+        st.info("tickers_metadata.csv not found — bucket browser unavailable.")
+    else:
+        _meta_df = pd.read_csv(_meta_csv)
+        _meta_df["ticker"] = _meta_df["ticker"].str.upper().str.strip()
+
+        _conn = sqlite3.connect(str(Path("accuracy.db")))
+        _outcomes = pd.read_sql(
+            """
+            SELECT p.ticker, o.actual_up
+            FROM predictions p
+            INNER JOIN outcomes o
+              ON p.ticker=o.ticker
+             AND p.prediction_date=o.prediction_date
+             AND p.horizon=o.horizon
+            WHERE o.actual_up IS NOT NULL
+            """,
+            _conn,
+        )
+        _conn.close()
+        _outcomes["ticker"] = _outcomes["ticker"].str.upper().str.strip()
+
+        _meta_with_acc = _meta_df.merge(_outcomes, on="ticker", how="left")
+
+        _bucket_summary = (
+            _meta_with_acc.groupby("bucket")
+            .agg(
+                n_tickers=("ticker", "nunique"),
+                n_outcomes=("actual_up", "count"),
+                accuracy=("actual_up", "mean"),
+                tickers=("ticker", lambda s: ", ".join(sorted(s.unique()))),
+            )
+            .reset_index()
+        )
+        _bucket_summary["accuracy_pct"] = (_bucket_summary["accuracy"] * 100).round(1)
+        _bucket_summary = _bucket_summary[
+            ["bucket", "n_tickers", "n_outcomes", "accuracy_pct", "tickers"]
+        ].sort_values("accuracy_pct", ascending=False, na_position="last")
+
+        st.dataframe(
+            _bucket_summary,
+            column_config={
+                "bucket": "Bucket",
+                "n_tickers": st.column_config.NumberColumn("# Tickers", width="small"),
+                "n_outcomes": st.column_config.NumberColumn("# Outcomes", width="small"),
+                "accuracy_pct": st.column_config.NumberColumn(
+                    "Accuracy %", format="%.1f%%", width="small"
+                ),
+                "tickers": st.column_config.TextColumn("Members", width="large"),
+            },
+            hide_index=True,
+            use_container_width=True,
+        )
+
+except Exception as e:
+    st.warning(f"Bucket browser unavailable: {e}")

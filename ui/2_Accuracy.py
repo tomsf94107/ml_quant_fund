@@ -625,6 +625,62 @@ recalibrating the model's output probabilities using Platt scaling.
 # =============================================================================
 
 with tab_explore:
+    # ── Tickers-by-bucket browser (May 20 2026) ─────────────────────────────
+    st.subheader("🧭 Tickers by bucket")
+    st.caption(
+        "Browse the universe grouped by bucket. Click a row in the table to see members. "
+        "Sort by accuracy or sample size."
+    )
+
+    _meta_csv = Path("tickers_metadata.csv")
+    if _meta_csv.exists():
+        _meta_df = pd.read_csv(_meta_csv)
+        _meta_df["ticker"] = _meta_df["ticker"].str.upper().str.strip()
+
+        # Pull closed outcomes for accuracy display
+        _conn = sqlite3.connect(str(Path("accuracy.db")))
+        _outcomes = pd.read_sql("""
+            SELECT p.ticker, o.actual_up
+            FROM predictions p
+            INNER JOIN outcomes o
+              ON p.ticker=o.ticker AND p.prediction_date=o.prediction_date AND p.horizon=o.horizon
+            WHERE o.actual_up IS NOT NULL
+        """, _conn)
+        _conn.close()
+
+        _outcomes["ticker"] = _outcomes["ticker"].str.upper().str.strip()
+        _meta_with_acc = _meta_df.merge(_outcomes, on="ticker", how="left")
+
+        # Per-bucket summary
+        _bucket_summary = (_meta_with_acc.groupby("bucket")
+            .agg(n_tickers=("ticker", "nunique"),
+                 n_outcomes=("actual_up", "count"),
+                 accuracy=("actual_up", "mean"),
+                 tickers=("ticker", lambda s: ", ".join(sorted(s.unique()))))
+            .reset_index())
+        _bucket_summary["accuracy_pct"] = (_bucket_summary["accuracy"] * 100).round(1)
+        _bucket_summary = _bucket_summary[
+            ["bucket", "n_tickers", "n_outcomes", "accuracy_pct", "tickers"]
+        ].sort_values("accuracy_pct", ascending=False, na_position="last")
+
+        st.dataframe(
+            _bucket_summary,
+            column_config={
+                "bucket": "Bucket",
+                "n_tickers": st.column_config.NumberColumn("# Tickers", width="small"),
+                "n_outcomes": st.column_config.NumberColumn("# Outcomes", width="small"),
+                "accuracy_pct": st.column_config.NumberColumn(
+                    "Accuracy %", format="%.1f%%", width="small"),
+                "tickers": st.column_config.TextColumn("Members", width="large"),
+            },
+            hide_index=True,
+            use_container_width=True,
+        )
+    else:
+        st.info("tickers_metadata.csv not found — bucket browser unavailable.")
+
+    st.divider()
+
     st.subheader("🔍 Multi-dimensional accuracy explorer")
     st.caption(
         "Filter on any column · group by any combination of dimensions · "

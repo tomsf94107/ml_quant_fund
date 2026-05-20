@@ -126,6 +126,8 @@ def main():
                         help="Also show inactive/historical tickers (default: active only)")
     parser.add_argument("--csv", action="store_true",
                         help="Output as CSV instead of formatted table")
+    parser.add_argument("--list-tickers", action="store_true",
+                        help="Print tickers grouped by bucket (with accuracy if data available)")
     args = parser.parse_args()
 
     meta = load_metadata()
@@ -141,6 +143,63 @@ def main():
                           on="ticker", how="left")
     joined["bucket"] = joined["bucket"].fillna("UNKNOWN")
     joined["is_active"] = joined["ticker"].isin(active)
+
+    # ── --list-tickers branch: bucket -> ticker listing ──
+    if args.list_tickers:
+        meta_active = meta[meta["ticker"].isin(active)].copy()
+        meta_active["bucket"] = meta_active["bucket"].fillna("UNKNOWN")
+
+        # Per-ticker accuracy from joined data
+        if not joined.empty:
+            tk_acc = (joined.groupby("ticker")
+                            .agg(n=("ticker", "size"),
+                                 acc=("actual_up", "mean"))
+                            .reset_index())
+            meta_active = meta_active.merge(tk_acc, on="ticker", how="left")
+
+        # Per-bucket aggregation
+        bucket_acc = (joined.groupby("bucket")
+                            .agg(b_n=("ticker", "size"),
+                                 b_acc=("actual_up", "mean"))
+                            .reset_index()) if not joined.empty else pd.DataFrame()
+
+        print()
+        print("=" * 80)
+        title = "Tickers by bucket"
+        if args.days:
+            title += f" (last {args.days} days)"
+        if args.horizon:
+            title += f" — h={args.horizon}d"
+        print(title)
+        print("=" * 80)
+
+        for bucket in sorted(meta_active["bucket"].unique()):
+            sub = meta_active[meta_active["bucket"] == bucket].sort_values("ticker")
+            tickers = sub["ticker"].tolist()
+            n_tickers = len(tickers)
+            # Bucket accuracy line
+            if not bucket_acc.empty and bucket in set(bucket_acc["bucket"]):
+                b_row = bucket_acc[bucket_acc["bucket"] == bucket].iloc[0]
+                b_n = int(b_row["b_n"])
+                b_pct = float(b_row["b_acc"]) * 100
+                marker = "🟢" if b_pct > 55 else ("🔴" if b_pct < 45 else "⚪")
+                header = f"{marker} {bucket:<26s} ({n_tickers} tickers, n={b_n}, acc={b_pct:.1f}%)"
+            else:
+                header = f"⚪ {bucket:<26s} ({n_tickers} tickers)"
+            print(header)
+
+            # Per-ticker lines with accuracy if available
+            for _, r in sub.iterrows():
+                tk = r["ticker"]
+                if "acc" in r and pd.notna(r.get("acc")):
+                    tk_n = int(r["n"])
+                    tk_pct = float(r["acc"]) * 100
+                    print(f"    {tk:<6s}  n={tk_n:>4}  acc={tk_pct:>5.1f}%")
+                else:
+                    print(f"    {tk}")
+            print()
+        return
+
 
     # Title
     title_filters = []
