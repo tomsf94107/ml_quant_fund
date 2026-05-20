@@ -40,20 +40,35 @@ import requests as _requests_for_session
 _session = _requests_for_session.Session()
 
 
+# Per-horizon fitness gate thresholds (Task D, May 17 2026).
+# WHY PER-HORIZON: Task D analysis (n=14 confirmed tickers, Apr15-May14)
+# found the h=3 fitness distribution separates winners from losers cleanly
+# (loser models <=1.10, winner models >=6.07) while h=1 does NOT (loser GLD
+# h=1 fitness 5.24 sits above winners BA 1.55 / CRWD 2.35 / AAPL 3.54).
+# WHY CONSERVATIVE: this gate sits on BUY-HIGH signals, the model's best
+# tail (~60% base rate). We remove only unambiguous losers (ORIC, XLV) and
+# deliberately let GLD h=1 through rather than sacrifice 3 winner models.
+# THESE ARE PRIORS: tuned on n=14, one ~30-day window. Re-tune at the
+# mid-June fitness re-run (h=3/h=5 reach full MIN_OBS=30 coverage).
+_FITNESS_GATE_THRESHOLDS = {1: 1.0, 3: 3.0, 5: 3.0}
+
+
 def _check_fitness_filter(ticker: str, horizon: int) -> "Optional[float]":
     """
     Fitness-based BUY suppression filter (Step 3 of WorldQuant Roadmap).
 
     Returns:
-        - fitness (float, negative): if model has been scored AND has negative
-          fitness → caller should suppress BUY
-        - None: model not yet scored OR fitness is non-negative → allow BUY
+        - fitness (float): if the model has been scored AND its fitness is
+          BELOW the per-horizon threshold in _FITNESS_GATE_THRESHOLDS →
+          caller should suppress BUY (returns the fitness value for logging).
+        - None: model not yet scored, OR fitness is at/above threshold →
+          allow BUY.
 
-    Per Option B (May 7 2026): only h=1 currently has full MIN_OBS=30 coverage.
-    The fitness_scores table only contains h=1 rows, so h=3/h=5 always return
-    None (no filter applied). After May 22 2026 (when h=3/h=5 cross MIN_OBS=30
-    naturally), re-run fitness_scorer to populate all 3 horizons. Filter then
-    applies uniformly.
+    As of the May 14 2026 fitness re-run, fitness_scores contains h=1 AND h=3
+    rows. h=5 is still sparse (most tickers <MIN_OBS=30) so h=5 lookups
+    usually return None. Un-scored tickers at ANY horizon pass through
+    unfiltered — intentional: protects un-scored winners (EME, STX have <30
+    obs) and accepts that un-scored losers (ETN) slip through until covered.
 
     Reads from accuracy.db.fitness_scores (populated by analysis.fitness_scorer).
     Fails open on any error — never suppresses due to DB issues.
@@ -72,11 +87,14 @@ def _check_fitness_filter(ticker: str, horizon: int) -> "Optional[float]":
         finally:
             _conn.close()
         if _row is None:
-            return None  # not scored — don't filter (h=3/h=5 today)
+            return None  # not scored — don't filter (protects un-scored winners)
         _fitness = float(_row[0])
-        if _fitness < 0:
-            return _fitness  # bad model — suppress
-        return None  # good model — allow
+        _threshold = _FITNESS_GATE_THRESHOLDS.get(int(horizon))
+        if _threshold is None:
+            return None  # horizon not gated — allow
+        if _fitness < _threshold:
+            return _fitness  # below threshold — suppress
+        return None  # at/above threshold — allow
     except Exception:
         return None  # any error — fail open (allow BUY)
 
@@ -467,7 +485,11 @@ def _compute_backtest_metrics(
 # distribution audit on May 3 2026). Entry is high bar; exit is lower
 # to filter day-to-day noise (~0.05 median noise, gap of ~0.10 = 2x noise).
 HYSTERESIS_ENTRY = {1: 0.80, 3: 0.60, 5: 0.60}  # need >this to flip HOLD->BUY
-HYSTERESIS_EXIT  = {1: 0.65, 3: 0.50, 5: 0.50}  # need >this to stay in BUY
+HYSTERESIS_EXIT  = {1: 0.65, 3: 0.65, 5: 0.65}  # need >this to stay in BUY
+# 2026-05-20: h=3/h=5 raised from 0.50 -> 0.65. Audit showed 192 hysteresis-held
+# BUYs at prob_eff 0.50-0.65 hit only 35% (-1.5% avg return). Raising exit to 0.65
+# forces position exit before prob drifts into the negative-edge bucket.
+# Fresh entries above 0.65 are unaffected (entry threshold is separate).
 
 # Default DB path for signal lookup
 _ACCURACY_DB = Path("accuracy.db")
@@ -774,15 +796,21 @@ def generate_signals(
     # Schema v2: capture pre-cap value for SHAP / Sprint 2 audit
     today_prob_eff_uncapped = today_prob_eff
 
-    # CONFIDENCE CAP (May 7 2026, Sprint 1 Day 1):
-    # h=3 and h=5 measured INVERTED at prob_up >= 0.70 per May 7 SHAP analysis.
-    # Mid-confidence (40-60%) wins more than high-confidence (>70%) in these
-    # horizons. Cap eff probability at 0.65 — refuses to claim high confidence
-    # in measurably-wrong regions. h=1 NOT capped (not inverted, AUC 0.51).
-    # Validated by: baselines/calibration_baseline_20260507_1539.md
-    # Diagnostic:   baselines/shap_inversion_synthesis_20260507.md
+    # CONFIDENCE CAP (May 7 2026; NEUTERED May 17 2026, Sprint W1):
+    # ORIGINAL: h=3/h=5 capped at 0.65 because a May 7 SHAP analysis claimed
+    # high-confidence predictions invert on those horizons.
+    # RETRACTED: that May 7 analysis ran on BUGGED LABELS (pre May 4/12
+    # outcome-reconciliation fixes — same bug that made AUC look like 0.520
+    # vs the clean 0.486). The May 17 clean-label re-test
+    # (validate_confidence_cap.py, window Apr15-May14) found NO inversion:
+    # h=3 vhigh win-rate 62.0% (n=166) vs mid 50.1%, NON-overlapping Wilson
+    # CIs — monotone, the normal pattern. h=5 directionally the same.
+    # ACTION: cap raised to 0.95 — a value prob_eff never reaches, so the
+    # cap never fires. The mechanism is kept (not deleted) as a dormant
+    # safety rail: if a future fitness re-run ever finds a REAL inversion,
+    # re-arm by lowering this one number. Do not trust the May 7 baselines.
     INVERSION_HORIZONS = {3, 5}
-    CONFIDENCE_CAP = 0.65
+    CONFIDENCE_CAP = 0.95  # dormant — see note above (was 0.65, retracted)
     if horizon in INVERSION_HORIZONS and today_prob_eff > CONFIDENCE_CAP:
         _original_eff = today_prob_eff
         today_prob_eff = CONFIDENCE_CAP
@@ -791,7 +819,7 @@ def generate_signals(
         _log_cap.info(
             f"  ⚠ {ticker} h={horizon}d confidence capped: "
             f"{_original_eff:.4f} -> {CONFIDENCE_CAP:.4f} "
-            f"(h={horizon} inverted region per May 7 SHAP)"
+            f"(h={horizon} dormant cap — should not normally fire)"
         )
     today_gated     = bool(gate.iloc[-1])
 
@@ -817,20 +845,20 @@ def generate_signals(
         else "HOLD"
     )
 
-    # FITNESS FILTER (May 7 2026, WorldQuant Roadmap Step 3):
-    # Suppress BUY when source model has negative fitness in fitness_scores.
-    # Today only h=1 is scored (MIN_OBS=30 coverage). H=3/h=5 will join after
-    # ~May 22 when their data accumulates. Until then, h=3/h=5 always pass
-    # through unfiltered (helper returns None for un-scored horizons).
+    # FITNESS FILTER (May 7 2026; per-horizon thresholds added May 17, Task D):
+    # Suppress BUY when the source model's fitness is below the per-horizon
+    # cut in _FITNESS_GATE_THRESHOLDS. fitness_scores covers h=1 and h=3 as of
+    # the May 14 re-run; h=5 is sparse and usually passes through un-scored.
     if today_signal == "BUY":
         _bad_fitness = _check_fitness_filter(ticker, horizon)
         if _bad_fitness is not None:
             today_signal = "HOLD"
             import logging as _logging_fitness
             _log_fitness = _logging_fitness.getLogger("signals.generator")
+            _thr = _FITNESS_GATE_THRESHOLDS.get(int(horizon))
             _log_fitness.warning(
                 f"  ⚠ {ticker} h={horizon}d BUY suppressed — "
-                f"model fitness={_bad_fitness:.2f} (negative)"
+                f"model fitness={_bad_fitness:.2f} < threshold {_thr}"
             )
 
     # EARNINGS-PROXIMITY FILTER (May 15 2026, D6 defensive layer):
