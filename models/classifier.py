@@ -15,7 +15,6 @@
 #   + Isotonic calibration — raw XGB probabilities are not calibrated.
 #     A 70% signal should mean UP 70% of the time. Without this, your
 #     confidence scores can't be used for position sizing.
-#   + congress_net_shares wired into features (was in schema, never used)
 #   + Explicit feature list — no silent column leakage
 #   + save/load via joblib (pickle replaced — more reliable across sklearn versions)
 #
@@ -78,7 +77,6 @@ FEATURE_COLUMNS: list[str] = [
     # Alternative data
     "sentiment_score",
     "insider_net_shares", "insider_7d", "insider_21d",
-    "congress_net_shares",            # ← was orphaned, now wired in
     # Risk regime
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
     # Macro regime

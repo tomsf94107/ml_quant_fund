@@ -83,7 +83,6 @@ OUTPUT_COLUMNS = [
     "spy_ret", "xlk_ret",
     "sentiment_score",
     "insider_net_shares", "insider_7d", "insider_21d",
-    "congress_net_shares",
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
     "is_pandemic",
     # Earnings surprise
@@ -470,8 +469,16 @@ def _load_risk_flags(dates: pd.Index) -> pd.DataFrame:
     try:
         from signals.risk_gate import build_risk_features
         rf = build_risk_features(dates[0], dates[-1])
-        rf = rf.set_index("date")[cols]
-        return rf.reindex(dates).fillna(0.0)
+        # 2026-05-20 dead-feature fix: build_risk_features already returns dates as
+        # the index. The old code did rf.set_index("date") which raised KeyError
+        # (no "date" column), got swallowed by bare except, and returned zeros for
+        # all 4 risk_* features across every ticker for months. See audit notes.
+        rf = rf[cols].copy()
+        rf.index = pd.to_datetime(rf.index).normalize()
+        target = pd.to_datetime(pd.Index(dates)).normalize()
+        out = rf.reindex(target).fillna(0.0)
+        out.index = dates  # restore caller's index type
+        return out
     except Exception:
         return zero_df
 
@@ -773,8 +780,10 @@ def build_feature_dataframe(
     df["insider_21d"]        = ins_21d.values
 
     # ── 10. Congressional trading ──────────────────────────────────────────────
-    congress = _load_congress(ticker, date_index)
-    df["congress_net_shares"] = congress.values
+    # 2026-05-20: congress_net_shares removed from FEATURE_COLUMNS.
+    # _load_congress function preserved in case revived as risk-gate signal.
+    # Rationale: 45-day STOCK Act disclosure lag exceeds 1/3/5d horizons;
+    # post-2012 academic outperformance signal weak; NANC/KRUZ ETFs underperform.
 
     # ── 11. Risk flags ────────────────────────────────────────────────────────
     risk = _load_risk_flags(date_index)
