@@ -112,7 +112,7 @@ OUTPUT_COLUMNS = [
     "es_overnight",                      # S&P500 futures overnight move
     "iv_skew_snap", "pc_ratio_snap",     # options IV skew + put/call ratio
     "analyst_upside", "analyst_buy_pct", "analyst_mult",  # analyst revisions
-    "finbert_sentiment", "finbert_mult", # FinBERT NLP sentiment
+    "finbert_sentiment", "finbert_sentiment_earnings", "finbert_mult", # FinBERT NLP sentiment
     # ── NEW v4 features ──────────────────────────────────────────────────────
     "vix_5d_above_25",          # binary: VIX > 25 for 5 consecutive days
     "semi_etf_momentum_60d",    # SMH ETF 60-day cumulative return
@@ -668,18 +668,9 @@ def build_feature_dataframe(
     except Exception:
         df["yield_10y"] = 0.04
 
-    # Fear & Greed Index (alternative.me — updated daily)
-    try:
-        import requests as _req
-        _fg = _req.get("https://api.alternative.me/fng/?limit=1",
-                       headers={"User-Agent": "MLQuantFund/1.0"}, timeout=5)
-        if _fg.status_code == 200:
-            _fg_val = float(_fg.json()["data"][0]["value"]) / 100.0
-        else:
-            _fg_val = 0.5
-        df["fear_greed"] = _fg_val
-    except Exception:
-        df["fear_greed"] = 0.5
+    # Fear & Greed Index — dropped from model 2026-05-21 (no historical source).
+    # Kept as constant in df so OUTPUT_COLUMNS / prediction_features schema unchanged.
+    df["fear_greed"] = 0.5
 
     # Monday sentiment score (Anthropic API — scored Sunday night)
     try:
@@ -890,36 +881,20 @@ def build_feature_dataframe(
     try:
         from data.alpha_sources import load_finbert_pit
         _fb = load_finbert_pit(ticker, date_index)
-        df["finbert_sentiment"] = _fb["finbert_sentiment"].values
-        df["finbert_mult"]      = _fb["finbert_mult"].values
+        df["finbert_sentiment"]          = _fb["finbert_sentiment"].values
+        df["finbert_sentiment_earnings"] = _fb["finbert_sentiment_earnings"].values
+        df["finbert_mult"]               = _fb["finbert_mult"].values
     except Exception as _e:
-        df["finbert_sentiment"] = 0.0
-        df["finbert_mult"]      = 1.0
+        df["finbert_sentiment"]          = 0.0
+        df["finbert_sentiment_earnings"] = 0.0
+        df["finbert_mult"]               = 1.0
 
-    # ── Analyst revisions ────────────────────────────────────────────────────
-    if training_mode:
-        df["analyst_upside"]  = 0.0
-        df["analyst_buy_pct"] = 0.5
-        df["analyst_mult"]    = 1.0
-    else:
-        try:
-            from data.alpha_sources import get_analyst_revisions
-            import concurrent.futures
-            with concurrent.futures.ThreadPoolExecutor() as ex:
-                fut = ex.submit(get_analyst_revisions, ticker)
-                try:
-                    analyst = fut.result(timeout=5)
-                    df["analyst_upside"]    = analyst.get("target_upside")      or 0.0
-                    df["analyst_buy_pct"]   = analyst.get("buy_pct")             or 0.5
-                    df["analyst_mult"]      = analyst.get("analyst_multiplier")  or 1.0
-                except Exception:
-                    df["analyst_upside"]  = 0.0
-                    df["analyst_buy_pct"] = 0.5
-                    df["analyst_mult"]    = 1.0
-        except Exception:
-            df["analyst_upside"]  = 0.0
-            df["analyst_buy_pct"] = 0.5
-            df["analyst_mult"]    = 1.0
+    # ── Analyst revisions — dropped from model 2026-05-21 ────────────────────
+    # No free historical source; train/serve mismatch eliminated by dropping.
+    # Kept as constants in df so OUTPUT_COLUMNS / prediction_features unchanged.
+    df["analyst_upside"]  = 0.0
+    df["analyst_buy_pct"] = 0.5
+    df["analyst_mult"]    = 1.0
 
     # ── Options IV skew + PC ratio (daily snapshot via UW) ───────────────────
     # Migration 2026-05-01: replaced yfinance options_flow with UW endpoints

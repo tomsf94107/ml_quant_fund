@@ -92,11 +92,12 @@ FEATURE_COLUMNS: list[str] = [
     "vwap_dev_eod", "vol_surge_eod", "intraday_momentum",
     # Pre-market & overnight
     "premarket_gap",
-    # Options IV
-    "iv_skew_snap", "pc_ratio_snap",
+    # Options IV (dropped 2026-05-21 — train/serve mismatch, no historical backfill
+    #             until docs/feature_improvement_plan.md item 4 is implemented)
+    # "iv_skew_snap", "pc_ratio_snap",
     # Analyst revisions
     # FinBERT NLP
-    "finbert_sentiment",
+    "finbert_sentiment", "finbert_sentiment_earnings",
     "oil_ret", "oil_spy_corr",          # crude oil signal
     # Extended returns
     "return_20d", "return_60d",

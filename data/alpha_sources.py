@@ -590,13 +590,13 @@ def load_finbert_pit(ticker, date_index, db_path: str = "data/sentiment.db"):
     import pandas as pd
 
     out = pd.DataFrame(index=pd.DatetimeIndex(date_index))
-    out["finbert_sentiment"] = 0.0
-    out["finbert_mult"] = 1.0
-    out["finbert_days_since"] = 90
+    out["finbert_sentiment"]          = 0.0  # any-type sentiment (latest filing)
+    out["finbert_sentiment_earnings"] = 0.0  # earnings-only sentiment (option 3)
+    out["finbert_mult"]               = 1.0
+    out["finbert_days_since"]         = 90
 
     try:
         conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
-        # We score sentiment from press_release (earnings) or whole_doc (non-earnings)
         df_fb = pd.read_sql("""
             SELECT filing_date, section, sentiment_score, earnings_multiplier,
                    is_earnings
@@ -615,21 +615,25 @@ def load_finbert_pit(ticker, date_index, db_path: str = "data/sentiment.db"):
 
     df_fb["filing_date"] = pd.to_datetime(df_fb["filing_date"])
 
-    # For each row in date_index, find most recent filing strictly before it
     date_idx = pd.DatetimeIndex(date_index)
     for i, asof in enumerate(date_idx):
         prior = df_fb[df_fb["filing_date"] < asof]
         if prior.empty:
             continue
-        # Most recent filing of any type for sentiment
+
+        # finbert_sentiment: most recent filing of any type
         most_recent = prior.iloc[0]
         out.iloc[i, out.columns.get_loc("finbert_sentiment")] = (
             most_recent["sentiment_score"] or 0.0
         )
-        # Most recent EARNINGS filing for earnings_multiplier
+
+        # finbert_sentiment_earnings + finbert_mult + days_since: from latest EARNINGS filing
         earnings_prior = prior[prior["is_earnings"] == 1]
         if not earnings_prior.empty:
             mr_earn = earnings_prior.iloc[0]
+            out.iloc[i, out.columns.get_loc("finbert_sentiment_earnings")] = (
+                mr_earn["sentiment_score"] or 0.0
+            )
             out.iloc[i, out.columns.get_loc("finbert_mult")] = (
                 mr_earn["earnings_multiplier"] or 1.0
             )
