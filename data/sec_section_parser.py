@@ -55,17 +55,39 @@ def _throttled_get(url: str, headers: dict = SEC_HEADERS, timeout: int = 15) -> 
         return None
 
 
-def get_cik(ticker: str) -> Optional[str]:
-    """Look up CIK from ticker via EDGAR."""
-    url = (f"{SEC_BASE}/cgi-bin/browse-edgar?company=&CIK={ticker}"
-           f"&type=&dateb=&owner=include&count=1&action=getcompany&output=atom")
-    r = _throttled_get(url)
+# Lazy-loaded SEC ticker -> CIK map (downloaded once per session from
+# https://www.sec.gov/files/company_tickers.json — authoritative source).
+# This replaces the unreliable cgi-bin atom-feed regex approach which silently
+# failed for ~20% of tickers (foreign filers, IPOs, sector-specific names).
+_TICKER_CIK_MAP: Optional[dict] = None
+
+
+def _load_ticker_cik_map() -> dict:
+    """Fetch and cache the SEC ticker -> CIK JSON map."""
+    global _TICKER_CIK_MAP
+    if _TICKER_CIK_MAP is not None:
+        return _TICKER_CIK_MAP
+    url = "https://www.sec.gov/files/company_tickers.json"
+    r = _throttled_get(url, headers=EDGAR_HEADERS, timeout=30)
     if r is None:
-        return None
-    m = re.search(r'CIK=(\d+)', r.text)
-    if not m:
-        return None
-    return m.group(1).zfill(10)
+        _TICKER_CIK_MAP = {}
+        return _TICKER_CIK_MAP
+    try:
+        data = r.json()
+        _TICKER_CIK_MAP = {
+            v["ticker"].upper(): str(v["cik_str"]).zfill(10)
+            for v in data.values()
+            if "ticker" in v and "cik_str" in v
+        }
+    except Exception:
+        _TICKER_CIK_MAP = {}
+    return _TICKER_CIK_MAP
+
+
+def get_cik(ticker: str) -> Optional[str]:
+    """Look up CIK from ticker via SEC's authoritative ticker JSON."""
+    tmap = _load_ticker_cik_map()
+    return tmap.get(ticker.upper())
 
 
 def list_filings(cik: str, days_back: int = 365,
