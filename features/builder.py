@@ -1005,13 +1005,13 @@ def build_feature_dataframe(
     #   (2) XGBoost handles NaN natively (learns optimal split direction).
     #   (3) ~5% of rows have no institutional data; NaN preserves "unknown".
     # MUST run before the OUTPUT_COLUMNS enforcement below.
+    # PIT-correct: load per-row, not single broadcast (fix 2026-05-21)
     if _INST_FEATURES_ENABLED:
         try:
-            from features.institutional_features import get_institutional_features
-            _inst = get_institutional_features(ticker, end_str)
+            from features.institutional_features import load_institutional_features_pit
+            _inst_df = load_institutional_features_pit(ticker, date_index)
             for _col in _INST_FEATURE_COLS:
-                _val = _inst.get(_col, None)
-                df[_col] = float(_val) if _val is not None else np.nan
+                df[_col] = _inst_df[_col].values
         except Exception:
             for _col in _INST_FEATURE_COLS:
                 df[_col] = np.nan
