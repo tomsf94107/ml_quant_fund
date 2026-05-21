@@ -261,9 +261,10 @@ def fetch_darkpool_day(ticker: str, day: date,
         try:
             data = _uw_get(UW_DARKPOOL_PATH.format(ticker=ticker.upper()), p)
         except RuntimeError as e:
-            if verbose:
-                print(f"    {ticker} {date_str} page {page_idx}: {e}")
-            break
+            # Bug A fix (2026-05-21): raise instead of silent break.
+            # Caller must distinguish API failure from genuinely empty day.
+            print(f"    ERROR {ticker} {date_str} page {page_idx}: {e}")
+            raise
 
         items = data.get("data", []) if isinstance(data, dict) else []
         if not items:
@@ -278,15 +279,27 @@ def fetch_darkpool_day(ticker: str, day: date,
         ]
         all_items.extend(items_on_day)
 
+        # Bug C fix (2026-05-21): if we got fewer items than page limit,
+        # we've reached the END of the available data for this query,
+        # regardless of whether items crossed day boundary.
+        if len(items) < UW_PAGE_LIMIT:
+            break
+
         # If we've started seeing items from an earlier day, we've crossed the
         # boundary — stop paginating, we have everything for this day.
         if len(items_on_day) < len(items):
             break
-        if len(items) < UW_PAGE_LIMIT:
+
+        # Advance pagination cursor. Use the OLDEST item's executed_at so
+        # next page returns items older than this.
+        next_older = items[-1].get("executed_at")
+        if not next_older:
             break
-        older_than = items[-1].get("executed_at")
-        if not older_than:
+        # Loop detection: if older_than didn't move, we're stuck.
+        if next_older == older_than:
+            print(f"    WARN {ticker} {date_str}: pagination stuck at {next_older}")
             break
+        older_than = next_older
         time.sleep(0.05)
 
     if not use_server_filter and min_premium > 0:
@@ -494,13 +507,22 @@ def ingest_ticker(conn: sqlite3.Connection, ticker: str,
             items.sort(key=lambda x: x.get("executed_at", ""))
             rows = []
             prev_price: Optional[float] = None
+            skipped_no_ts = 0
             for it in items:
+                # Bug D fix (2026-05-21): skip rows with missing executed_at.
+                # Previously these got timestamped to datetime.now() in
+                # transform_row, producing corrupt 08:00 UTC fallback values.
+                if not it.get("executed_at"):
+                    skipped_no_ts += 1
+                    continue
                 price = _f(it.get("price")) or 0.0
                 bid = _f(it.get("nbbo_bid"))
                 ask = _f(it.get("nbbo_ask"))
                 side = lee_ready_classify(price, bid, ask, prev_price)
                 rows.append(transform_row(it, side))
                 prev_price = price
+            if skipped_no_ts > 0:
+                print(f"    WARN {ticker} {cur_day}: skipped {skipped_no_ts} rows missing executed_at")
 
             n = upsert_rows(conn, rows)
             total_inserted += n
@@ -520,11 +542,13 @@ def ingest_ticker(conn: sqlite3.Connection, ticker: str,
 
         cur_day += timedelta(days=1)
 
-    final_ts = last_ts if last_ts else end_dt
-    if update_cursor_after:
+    # Bug B fix (2026-05-21): only advance cursor when we actually
+    # inserted rows. Previously the cursor advanced to end_dt even when
+    # zero rows were inserted, permanently skipping the date range.
+    if update_cursor_after and total_inserted > 0 and last_ts is not None:
         update_cursor(
             conn, ticker,
-            max(final_ts, end_dt - timedelta(seconds=1)),
+            last_ts,  # the actual last successfully-inserted timestamp
             last_tracking_id, total_inserted,
         )
     return total_inserted
