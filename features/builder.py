@@ -883,26 +883,18 @@ def build_feature_dataframe(
     except Exception:
         df["oil_ret"]      = 0.0
         df["oil_spy_corr"] = 0.0
-    # ── FinBERT NLP sentiment ────────────────────────────────────────────────
-    if training_mode:
+    # ── FinBERT NLP sentiment (PIT historical lookup, added 2026-05-21) ──────
+    # Same code path for training AND inference → no train/serve mismatch.
+    # Reads from data/sentiment.db.finbert_filings populated by
+    # data.etl_finbert_filings (Session A: 8-K + NT-*).
+    try:
+        from data.alpha_sources import load_finbert_pit
+        _fb = load_finbert_pit(ticker, date_index)
+        df["finbert_sentiment"] = _fb["finbert_sentiment"].values
+        df["finbert_mult"]      = _fb["finbert_mult"].values
+    except Exception as _e:
         df["finbert_sentiment"] = 0.0
         df["finbert_mult"]      = 1.0
-    else:
-        try:
-            from data.alpha_sources import get_earnings_call_sentiment
-            import concurrent.futures
-            with concurrent.futures.ThreadPoolExecutor() as ex:
-                fut = ex.submit(get_earnings_call_sentiment, ticker)
-                try:
-                    nlp = fut.result(timeout=10)
-                    df["finbert_sentiment"] = nlp.get("sentiment_score")      or 0.0
-                    df["finbert_mult"]      = nlp.get("earnings_multiplier") or 1.0
-                except Exception:
-                    df["finbert_sentiment"] = 0.0
-                    df["finbert_mult"]      = 1.0
-        except Exception:
-            df["finbert_sentiment"] = 0.0
-            df["finbert_mult"]      = 1.0
 
     # ── Analyst revisions ────────────────────────────────────────────────────
     if training_mode:

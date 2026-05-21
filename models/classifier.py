@@ -124,6 +124,18 @@ FEATURE_COLUMNS: list[str] = [
     "igv_vs_sp500_ret_30d", "lqd_hyg_spread",
 ]
 
+# Institutional features — gated on ML_QUANT_INST_FEATURES env var.
+# Mirrors the OUTPUT_COLUMNS gate in features/builder.py so model trains on
+# the same columns the builder produces.
+import os as _os_for_inst
+if _os_for_inst.environ.get("ML_QUANT_INST_FEATURES", "0") == "1":
+    FEATURE_COLUMNS = FEATURE_COLUMNS + [
+        "inst_block_buy_sell_7d",
+        "inst_signed_flow_30d",
+        "inst_auction_imbal_5d",
+        "inst_signed_flow_5d",
+    ]
+
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
 
 # ── XGBoost hyperparameters ───────────────────────────────────────────────────

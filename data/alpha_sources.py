@@ -566,3 +566,73 @@ if __name__ == "__main__":
 
         combined, _ = get_combined_alpha_multiplier(ticker)
         print(f"  COMBINED: {combined:.3f}x")
+
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+#  FinBERT historical PIT loader (added 2026-05-21 — Session A integration)
+# ══════════════════════════════════════════════════════════════════════════════
+
+def load_finbert_pit(ticker, date_index, db_path: str = "data/sentiment.db"):
+    """
+    Point-in-time FinBERT loader. For each date in date_index, returns:
+      - finbert_sentiment: most recent press_release sentiment with filing_date < date
+      - finbert_mult: earnings_multiplier from most recent 8-K earnings filing
+      - finbert_days_since: days since last earnings filing (capped at 90)
+
+    Reads from data/sentiment.db.finbert_filings populated by
+    data.etl_finbert_filings (Session A: 8-K + NT-* only).
+
+    PIT-safe: strictly uses filing_date < as_of_date.
+    Same code path for training_mode AND live inference → no train/serve mismatch.
+    """
+    import sqlite3
+    import pandas as pd
+
+    out = pd.DataFrame(index=pd.DatetimeIndex(date_index))
+    out["finbert_sentiment"] = 0.0
+    out["finbert_mult"] = 1.0
+    out["finbert_days_since"] = 90
+
+    try:
+        conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+        # We score sentiment from press_release (earnings) or whole_doc (non-earnings)
+        df_fb = pd.read_sql("""
+            SELECT filing_date, section, sentiment_score, earnings_multiplier,
+                   is_earnings
+            FROM finbert_filings
+            WHERE ticker = ?
+              AND error IS NULL
+              AND section IN ('press_release', 'whole_doc', 'late_notice')
+            ORDER BY filing_date DESC
+        """, conn, params=(ticker.upper(),))
+        conn.close()
+    except Exception:
+        return out
+
+    if df_fb.empty:
+        return out
+
+    df_fb["filing_date"] = pd.to_datetime(df_fb["filing_date"])
+
+    # For each row in date_index, find most recent filing strictly before it
+    date_idx = pd.DatetimeIndex(date_index)
+    for i, asof in enumerate(date_idx):
+        prior = df_fb[df_fb["filing_date"] < asof]
+        if prior.empty:
+            continue
+        # Most recent filing of any type for sentiment
+        most_recent = prior.iloc[0]
+        out.iloc[i, out.columns.get_loc("finbert_sentiment")] = (
+            most_recent["sentiment_score"] or 0.0
+        )
+        # Most recent EARNINGS filing for earnings_multiplier
+        earnings_prior = prior[prior["is_earnings"] == 1]
+        if not earnings_prior.empty:
+            mr_earn = earnings_prior.iloc[0]
+            out.iloc[i, out.columns.get_loc("finbert_mult")] = (
+                mr_earn["earnings_multiplier"] or 1.0
+            )
+            days_since = (asof - mr_earn["filing_date"]).days
+            out.iloc[i, out.columns.get_loc("finbert_days_since")] = min(days_since, 90)
+    return out
