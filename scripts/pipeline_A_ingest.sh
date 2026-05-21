@@ -21,6 +21,13 @@ mkdir -p "$LOGDIR"
 cd $ROOT
 source /Users/atomnguyen/.zshrc 2>/dev/null || true
 
+# Load .env file (feature flags, API keys) - added 2026-05-21
+if [ -f "$ROOT/.env" ]; then
+    set -a
+    source "$ROOT/.env"
+    set +a
+fi
+
 # Marker file — Pipeline B checks for this before running
 MARKER=$ROOT/logs/.pipeline_A_done_$DATE_TAG
 rm -f "$MARKER"

@@ -22,6 +22,14 @@ mkdir -p "$LOGDIR"
 cd $ROOT
 source /Users/atomnguyen/.zshrc 2>/dev/null || true
 
+# Load .env file (feature flags, API keys, etc) - added 2026-05-21
+# Without this, env vars set in .env are not available to Python subprocess
+if [ -f "$ROOT/.env" ]; then
+    set -a
+    source "$ROOT/.env"
+    set +a
+fi
+
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOGDIR/pipeline.log"
 }
