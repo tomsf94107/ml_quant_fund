@@ -81,6 +81,8 @@ OUTPUT_COLUMNS = [
     "volume_zscore", "volume_spike",
     "vwap", "obv", "atr",
     "spy_ret", "xlk_ret",
+    "xle_ret_5d", "xlv_ret_5d", "xlf_ret_5d", "xlk_ret_5d",
+    "xlu_ret_5d", "xli_ret_5d", "xlp_ret_5d", "xly_ret_5d",
     "sentiment_score",
     "insider_net_shares", "insider_7d", "insider_21d",
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
@@ -586,6 +588,25 @@ def build_feature_dataframe(
     xlk = _market_return(SECTOR_ETF, start_str, end_str, date_index)
     df["spy_ret"] = spy.values
     df["xlk_ret"] = xlk.values
+
+    # ── 6a. Sector ETF 5-day returns ───────────────────────────────────────────
+    # Added 2026-05-21: gives model thematic regime signal that single-day
+    # xlk_ret + sector_rel_ret can't capture. Hypothesis: May 2026 regression
+    # in OKLO/CEG/ORIC/MRNA was sector rollover the model couldn't see.
+    for _etf in ("XLE", "XLV", "XLF", "XLU", "XLI", "XLP", "XLY"):
+        try:
+            _ret = _market_return(_etf, start_str, end_str, date_index)
+            # Compute 5-day cumulative return from the daily series
+            _ret_5d = (1 + _ret).rolling(5).apply(lambda x: x.prod() - 1, raw=True)
+            df[f"{_etf.lower()}_ret_5d"] = _ret_5d.values
+        except Exception:
+            df[f"{_etf.lower()}_ret_5d"] = 0.0
+    # XLK 5d separately (XLK already loaded above)
+    try:
+        _xlk_5d = (1 + xlk).rolling(5).apply(lambda x: x.prod() - 1, raw=True)
+        df["xlk_ret_5d"] = _xlk_5d.values
+    except Exception:
+        df["xlk_ret_5d"] = 0.0
 
     # ── 6b. Macro features — DXY, 10Y yield, Fear & Greed, Beta, Short interest ──
     # DXY via FRED Trade Weighted USD Index (DTWEXBGS) — replaces yfinance

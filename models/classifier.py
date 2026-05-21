@@ -74,6 +74,9 @@ FEATURE_COLUMNS: list[str] = [
     "vwap", "obv", "atr",
     # Market context
     "spy_ret", "xlk_ret",
+    # Sector ETF 5-day returns (added 2026-05-21)
+    "xle_ret_5d", "xlv_ret_5d", "xlf_ret_5d", "xlk_ret_5d",
+    "xlu_ret_5d", "xli_ret_5d", "xlp_ret_5d", "xly_ret_5d",
     # Alternative data
     "sentiment_score",
     "insider_net_shares", "insider_7d", "insider_21d",
