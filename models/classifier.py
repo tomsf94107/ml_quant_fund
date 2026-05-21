@@ -92,7 +92,6 @@ FEATURE_COLUMNS: list[str] = [
     # Options IV
     "iv_skew_snap", "pc_ratio_snap",
     # Analyst revisions
-    "analyst_upside", "analyst_buy_pct", "analyst_mult",
     # FinBERT NLP
     "finbert_sentiment",
     "oil_ret", "oil_spy_corr",          # crude oil signal
@@ -108,7 +107,7 @@ FEATURE_COLUMNS: list[str] = [
     "obv_trend",
     # Macro
     "vix_close", "vix_ret", "dxy_ret", "yield_10y",
-    "fear_greed", "vix_term_structure",
+    "vix_term_structure",
     # Risk/positioning
     "beta_60d", "short_ratio", "short_pct_float",
     # Sentiment
