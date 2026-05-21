@@ -209,7 +209,19 @@ def extract_8k_items(html: str) -> dict:
 
 
 def find_8k_press_release_exhibit(cik: str, accession: str) -> Optional[str]:
-    """Look at filing index for EX-99.1 (press release exhibit)."""
+    """
+    Look at filing index for press release exhibit. Returns largest matching
+    candidate.
+
+    Matching strategies (in order):
+      1. Standard EX-99.x naming (ex-99.htm, ex99.htm, exhibit99.htm, etc)
+      2. Press-release pattern in filename (pr.htm, press, presrel, etc)
+      3. Largest .htm file other than the primary document (heuristic
+         fallback — earnings exhibits are usually the biggest file)
+
+    NVDA uses "q1fy27pr.htm" — strategy 2 catches that.
+    AAPL uses "a8-kex991q2202603282026.htm" — strategy 1 catches it.
+    """
     accn_clean = accession.replace("-", "")
     detail_url = f"{SEC_BASE}/Archives/edgar/data/{int(cik)}/{accn_clean}/index.json"
     r = _throttled_get(detail_url)
@@ -219,10 +231,29 @@ def find_8k_press_release_exhibit(cik: str, accession: str) -> Optional[str]:
         data = r.json()
     except Exception:
         return None
-    for item in data.get("directory", {}).get("item", []):
+
+    items = data.get("directory", {}).get("item", [])
+
+    # Strategy 1: explicit EX-99 naming
+    for item in items:
         name = item.get("name", "").lower()
         if "ex-99" in name or "ex99" in name or "exhibit99" in name:
             return f"{SEC_BASE}/Archives/edgar/data/{int(cik)}/{accn_clean}/{item['name']}"
+
+    # Strategy 2: press-release in filename
+    # Common patterns: q1fy27pr.htm, q3pressrelease.htm, earnings-release.htm
+    for item in items:
+        name = item.get("name", "").lower()
+        if not name.endswith((".htm", ".html")):
+            continue
+        # Match: pr, press, presrel, earnings-release, earningsrelease
+        if (("pr" in name and ("q" in name or "fy" in name or "earnings" in name))
+            or "press" in name
+            or "presrel" in name
+            or "earnings-release" in name
+            or "earningsrelease" in name):
+            return f"{SEC_BASE}/Archives/edgar/data/{int(cik)}/{accn_clean}/{item['name']}"
+
     return None
 
 
