@@ -105,6 +105,9 @@ FEATURE_COLUMNS: list[str] = [
     "eightk_other_events_30d",
     "eightk_filings_30d",
     "eightk_days_since_last",
+    # Revenue growth (Session E Phase 2, May 22 2026)
+    "rev_growth_yoy",
+    "rev_growth_qoq",
     "oil_ret", "oil_spy_corr",          # crude oil signal
     # Extended returns
     "return_20d", "return_60d",

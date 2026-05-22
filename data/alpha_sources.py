@@ -722,3 +722,77 @@ def load_eightk_pit(ticker, date_index, db_path: str = "earnings.db"):
 
     return out
 
+
+
+def load_rev_growth_pit(ticker, date_index, db_path: str = "earnings.db"):
+    """
+    Point-in-time revenue growth loader. Session E Phase 2, May 22 2026.
+
+    For each date in date_index, computes from prior earnings reports:
+      - rev_growth_yoy: revenue this Q / revenue 4Q ago - 1, clipped [-2, 2]
+      - rev_growth_qoq: revenue this Q / revenue prev Q - 1, clipped [-2, 2]
+
+    Source: earnings.db.earnings_surprises.rev_actual (Polygon Financials).
+    Foreign filers and ETFs default to 0.0 (no Polygon coverage).
+    Quarters with NULL rev_actual default to 0.0.
+
+    PIT-safe: strictly uses report_date < as_of_date.
+    Same code path training + inference (no train/serve mismatch).
+    """
+    import sqlite3
+    import pandas as pd
+
+    out = pd.DataFrame(index=pd.DatetimeIndex(date_index))
+    out["rev_growth_yoy"] = 0.0
+    out["rev_growth_qoq"] = 0.0
+
+    try:
+        conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+        df_rev = pd.read_sql("""
+            SELECT report_date, rev_actual
+            FROM earnings_surprises
+            WHERE ticker = ?
+              AND rev_actual IS NOT NULL
+            ORDER BY report_date DESC
+        """, conn, params=(ticker.upper(),))
+        conn.close()
+    except Exception as _e:
+        import logging as _lg
+        _lg.getLogger(__name__).error(
+            f"rev_growth.connect_fail ticker={ticker} db={db_path} err={_e!r}"
+        )
+        return out
+
+    if df_rev.empty or len(df_rev) < 2:
+        return out
+
+    df_rev["report_date"] = pd.to_datetime(df_rev["report_date"])
+
+    date_idx = pd.DatetimeIndex(date_index)
+    for i, asof in enumerate(date_idx):
+        prior = df_rev[df_rev["report_date"] < asof].reset_index(drop=True)
+        if len(prior) < 2:
+            continue
+
+        # Most recent quarter
+        rev_now = float(prior.iloc[0]["rev_actual"])
+        if rev_now <= 0:
+            continue  # avoid division by zero or weird small values
+
+        # QoQ: vs previous quarter
+        rev_prev_q = float(prior.iloc[1]["rev_actual"])
+        if rev_prev_q > 0:
+            qoq = (rev_now / rev_prev_q) - 1.0
+            qoq = max(-2.0, min(2.0, qoq))
+            out.iloc[i, out.columns.get_loc("rev_growth_qoq")] = qoq
+
+        # YoY: vs same quarter 4 quarters ago
+        if len(prior) >= 5:
+            rev_yoy = float(prior.iloc[4]["rev_actual"])
+            if rev_yoy > 0:
+                yoy = (rev_now / rev_yoy) - 1.0
+                yoy = max(-2.0, min(2.0, yoy))
+                out.iloc[i, out.columns.get_loc("rev_growth_yoy")] = yoy
+
+    return out
+

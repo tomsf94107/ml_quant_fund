@@ -120,6 +120,9 @@ OUTPUT_COLUMNS = [
     "eightk_other_events_30d",
     "eightk_filings_30d",
     "eightk_days_since_last",
+    # ── Session E Phase 2 (May 22 2026): Revenue growth from Polygon ─────────
+    "rev_growth_yoy",
+    "rev_growth_qoq",
     # ── NEW v4 features ──────────────────────────────────────────────────────
     "vix_5d_above_25",          # binary: VIX > 25 for 5 consecutive days
     "semi_etf_momentum_60d",    # SMH ETF 60-day cumulative return
@@ -916,6 +919,19 @@ def build_feature_dataframe(
         df["eightk_other_events_30d"]       = 0
         df["eightk_filings_30d"]            = 0
         df["eightk_days_since_last"]        = 90
+
+    # ── Revenue growth features (Session E Phase 2, May 22 2026) ─────────────
+    # PIT-safe loader reads earnings.db.earnings_surprises.rev_actual
+    # populated by data/etl_polygon_revenue.py (Polygon Financials).
+    # Foreign filers/ETFs default to 0.0 (no Polygon coverage).
+    try:
+        from data.alpha_sources import load_rev_growth_pit
+        _rg = load_rev_growth_pit(ticker, date_index)
+        df["rev_growth_yoy"] = _rg["rev_growth_yoy"].values
+        df["rev_growth_qoq"] = _rg["rev_growth_qoq"].values
+    except Exception as _e:
+        df["rev_growth_yoy"] = 0.0
+        df["rev_growth_qoq"] = 0.0
 
     # ── Analyst revisions — dropped from model 2026-05-21 ────────────────────
     # No free historical source; train/serve mismatch eliminated by dropping.
