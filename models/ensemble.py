@@ -76,16 +76,30 @@ class EnsembleResult:
         return _cached_joblib_load(str(path))
 
     def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
-        """Weighted average of XGB and LGB probabilities."""
-        from models.classifier import FEATURE_COLUMNS
+        """Weighted average of XGB and LGB probabilities.
+        
+        Uses self.feature_cols (what model was trained on) NOT global
+        FEATURE_COLUMNS. This prevents the bug where adding new features
+        to FEATURE_COLUMNS breaks predictions on old models trained with
+        fewer features. Fixed May 22 2026 (Session F follow-up).
+        """
+        cols = self.feature_cols
         working = X.copy()
-        for c in FEATURE_COLUMNS:
+        # Add any missing columns the model expects with 0.0
+        for c in cols:
             if c not in working.columns:
                 working[c] = 0.0
-        working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
-            working[FEATURE_COLUMNS].median()
-        )
-        Xf = working[FEATURE_COLUMNS]
+        # Warn (and filter) about columns the df has but model doesn't know
+        extra = [c for c in working.columns if c not in set(cols) and c not in ('date', 'ticker')]
+        if extra:
+            import logging as _lg
+            _lg.getLogger(__name__).warning(
+                f"ensemble.predict.extra_columns ticker={getattr(self, 'ticker', '?')} "
+                f"horizon={getattr(self, 'horizon', '?')} extras={extra[:5]}{'...' if len(extra) > 5 else ''} "
+                f"(retrain to use)"
+            )
+        working[cols] = working[cols].fillna(working[cols].median())
+        Xf = working[cols]
 
         p_xgb = self.xgb_model.predict_proba(Xf)[:, 1]
         p_lgb = self.lgb_model.predict_proba(Xf)[:, 1]
@@ -322,14 +336,8 @@ def predict_proba_ensemble(
             from models.classifier import predict_proba
             return predict_proba(ticker, df, horizon)
 
-    from models.classifier import FEATURE_COLUMNS
-    working = df.copy()
-    for c in FEATURE_COLUMNS:
-        if c not in working.columns:
-            working[c] = 0.0
-    working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
-        working[FEATURE_COLUMNS].median()
-    )
-
-    proba = result.predict_proba(working[FEATURE_COLUMNS])
+    # Use model's own feature_cols (what it was trained on) instead of global
+    # FEATURE_COLUMNS. The EnsembleResult.predict_proba above does the alignment;
+    # we just pass df through. Fixed May 22 2026.
+    proba = result.predict_proba(df)
     return pd.Series(proba, index=df.index, name=f"prob_up_{horizon}d")
