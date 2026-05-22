@@ -543,6 +543,7 @@ for r in signal_summary:
         "Signal":       r.today_signal,
         "Lean":         lean,
         "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
+        "Prob Raw":     f"{r.today_prob:.1%}",
         "Prob Eff":     f"{r.today_prob_eff:.1%}",
         "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
         "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
