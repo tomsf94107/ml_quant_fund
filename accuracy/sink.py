@@ -53,12 +53,22 @@ def _is_postgres() -> bool:
     return bool(DATABASE_URL and DATABASE_URL.startswith("postgres"))
 
 
+# Retry config for SQLite "database is locked" (Session F, May 22 2026).
+# Even with WAL + timeout=30, edge cases (long-held shared locks, checkpoints)
+# can still hit OperationalError. Retry with exponential backoff before failing.
+_DB_MAX_RETRIES = 3
+_DB_RETRY_BASE_SEC = 0.5  # 0.5s, 1s, 2s
+
+
 @contextmanager
 def _get_conn() -> Iterator:
     """
     Context manager that yields a DB connection.
     Uses Postgres if DATABASE_URL is set, otherwise SQLite.
     Commits on clean exit, rolls back on exception.
+
+    SQLite-only: retries on "database is locked" with exponential backoff.
+    After _DB_MAX_RETRIES, raises sqlite3.OperationalError loud (no silent drop).
     """
     if _is_postgres():
         try:
@@ -69,17 +79,46 @@ def _get_conn() -> Iterator:
                 "DATABASE_URL is set but psycopg2 is not installed. "
                 "Run: pip install psycopg2-binary"
             )
-    else:
-        conn = sqlite3.connect(SQLITE_PATH, timeout=30)
+        try:
+            yield conn
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            conn.close()
+        return
 
-    try:
-        yield conn
-        conn.commit()
-    except Exception:
-        conn.rollback()
-        raise
-    finally:
-        conn.close()
+    # SQLite path with retry-on-lock
+    import time as _time
+    last_err: Optional[Exception] = None
+    for attempt in range(_DB_MAX_RETRIES):
+        conn = sqlite3.connect(SQLITE_PATH, timeout=30)
+        try:
+            yield conn
+            conn.commit()
+            return  # success
+        except sqlite3.OperationalError as e:
+            conn.rollback()
+            if "database is locked" in str(e).lower() and attempt < _DB_MAX_RETRIES - 1:
+                wait = _DB_RETRY_BASE_SEC * (2 ** attempt)
+                import logging as _lg
+                _lg.getLogger(__name__).warning(
+                    f"accuracy_sink.lock_retry attempt={attempt} wait={wait}s err={e}"
+                )
+                _time.sleep(wait)
+                last_err = e
+                continue
+            raise
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            conn.close()
+    # All retries exhausted — raise loud, no silent drop
+    raise sqlite3.OperationalError(
+        f"accuracy_sink: database locked after {_DB_MAX_RETRIES} retries"
+    ) from last_err
 
 
 def _placeholder() -> str:
@@ -98,6 +137,14 @@ def init_db() -> None:
     """
     with _get_conn() as conn:
         cur = conn.cursor()
+
+        # Enable WAL mode for concurrent read/write (May 22 2026, Session F).
+        # Prevents "database is locked" errors when daily_runner writes while
+        # dashboard or Pipeline D reads. SQLite only (Postgres handles this natively).
+        if not _is_postgres():
+            cur.execute("PRAGMA journal_mode=WAL")
+            cur.execute("PRAGMA synchronous=NORMAL")
+            cur.execute("PRAGMA busy_timeout=30000")
 
         # ── predictions: one row per (ticker, horizon, prediction_date) ──────
         cur.execute("""

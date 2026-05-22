@@ -167,7 +167,14 @@ def log_prediction_to_db(
             prob_eff_uncapped=prob_eff_uncapped,
         )
     except Exception as e:
-        log.warning(f"DB log failed for {ticker}: {e}")
+        # No longer silently logged — surface to ERROR level with stack trace.
+        # accuracy/sink.py now retries on "database is locked" up to 3x.
+        # If it still fails after retries, that's a real problem we want to see.
+        import traceback as _tb
+        log.error(
+            f"DB log FAILED for {ticker}: {type(e).__name__}: {e}\n"
+            f"{_tb.format_exc()}"
+        )
 
 
 def send_desktop_alert(title: str, message: str):

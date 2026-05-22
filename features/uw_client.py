@@ -38,6 +38,54 @@ import requests
 logger = logging.getLogger(__name__)
 
 # Host only -- endpoint paths include /api/ prefix.
+
+
+# ── Per-endpoint TTL cache (Session F, May 22 2026) ──────────────────────────
+# Same uw_get call from multiple modules within a single ticker pass returns
+# the cached response instead of refetching. ~5-10 min savings per daily_runner
+# pass via deduplicating duplicate calls (option-contracts hit 7-8x/ticker).
+#
+# Whitelist approach: ONLY endpoints whose data is stable over the TTL window
+# are cached. Price-sensitive / realtime endpoints (stock-state, darkpool,
+# market-tide, flow-alerts) skip the cache entirely.
+#
+# Disable globally with: ML_QUANT_UW_CACHE=0 (default: on)
+import copy as _cache_copy
+
+_UW_CACHE_ENABLED = os.environ.get("ML_QUANT_UW_CACHE", "1") not in ("0", "false", "FALSE")
+_UW_CACHE: dict[tuple, tuple[float, Any]] = {}
+
+# (endpoint suffix that must match, ttl_seconds)
+# Matched via "in endpoint" so /api/stock/AAPL/option-contracts matches "option-contracts".
+_UW_CACHE_RULES = [
+    ("option-contracts",     600),   # daily option chain, stable intraday
+    ("options-volume",       600),   # daily aggregate
+    ("interest-float/v2",   3600),   # FINRA short interest, updates 2x/month
+    ("institution",         3600),   # 13F filings, quarterly
+    ("greeks",               300),   # Greeks update slowly intraday
+]
+
+
+def _uw_cache_ttl(endpoint: str) -> Optional[int]:
+    """Return TTL in seconds if endpoint is cacheable, else None."""
+    if not _UW_CACHE_ENABLED:
+        return None
+    for suffix, ttl in _UW_CACHE_RULES:
+        if suffix in endpoint:
+            return ttl
+    return None
+
+
+def _uw_cache_key(endpoint: str, params: Optional[dict]) -> tuple:
+    """Stable key for cache lookup."""
+    pkey = tuple(sorted((params or {}).items()))
+    return (endpoint, pkey)
+
+
+def _uw_cache_clear() -> None:
+    """Clear cache. Useful for tests."""
+    _UW_CACHE.clear()
+
 UW_BASE_URL = os.getenv("UW_BASE_URL", "https://api.unusualwhales.com").rstrip("/")
 UW_API_KEY = os.getenv("UW_API_KEY")
 ET = ZoneInfo("America/New_York")
@@ -106,6 +154,20 @@ class UWClient:
         max_retries: int = 3,
         timeout: float = 15.0,
     ) -> Any:
+        # ── Cache check (Session F, May 22 2026) ─────────────────────────────
+        # Whitelisted endpoints (option-contracts, interest-float, etc) hit
+        # cache before incurring HTTP + budget cost.
+        ttl = _uw_cache_ttl(endpoint)
+        if ttl is not None:
+            k = _uw_cache_key(endpoint, params)
+            cached = _UW_CACHE.get(k)
+            if cached is not None:
+                ts, payload = cached
+                if (time.time() - ts) < ttl:
+                    logger.debug("uw.cache_hit endpoint=%s age=%.1fs", endpoint, time.time() - ts)
+                    # deepcopy so callers can mutate the returned dict safely
+                    return _cache_copy.deepcopy(payload)
+
         # Market-hours gate REMOVED May 5 2026 — UW data is non-realtime for
         # most endpoints (insider, options Greeks, short interest, economic
         # calendar). The gate was causing daily_runner / Pipeline C to skip
@@ -139,7 +201,12 @@ class UWClient:
                     "uw.ok endpoint=%s calls_today=%d",
                     endpoint, self._calls_today,
                 )
-                return r.json()
+                _resp = r.json()
+                # Store in cache if whitelisted
+                _ttl = _uw_cache_ttl(endpoint)
+                if _ttl is not None and _resp is not None:
+                    _UW_CACHE[_uw_cache_key(endpoint, params)] = (time.time(), _resp)
+                return _resp
             except requests.RequestException as e:
                 last_err = e
                 wait = 2 ** attempt
