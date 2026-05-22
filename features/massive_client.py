@@ -33,6 +33,47 @@ import requests
 # Added May 4 2026 to prevent DNS thread exhaustion in Pipeline B/C.
 log = logging.getLogger(__name__)
 
+
+# ── Module-level response cache (Session F, May 22 2026) ─────────────────────
+# Same (tickers, start, end, interval) returns the previously fetched DataFrame.
+# Prevents 4-8x duplicate Polygon calls per ticker observed in Pipeline C log.
+#
+# TTL is per-interval:
+#   - 1d (daily bars):  3600s (data stable once market closes)
+#   - 5min, intraday:    60s  (refreshes during market hours)
+#   - other:            600s  (default)
+#
+# Cache returns a deep copy so callers can mutate freely.
+# Disable globally with: ML_QUANT_MASSIVE_CACHE=0
+import os as _os
+import time as _time
+import copy as _copy_mod
+from collections import OrderedDict as _OrderedDict
+
+_MASSIVE_CACHE_ENABLED = _os.environ.get("ML_QUANT_MASSIVE_CACHE", "1") not in ("0", "false", "FALSE")
+_MASSIVE_CACHE: "_OrderedDict[tuple, tuple[float, object]]" = _OrderedDict()
+_MASSIVE_CACHE_MAX = 200  # LRU eviction beyond this
+
+
+def _massive_cache_ttl(interval: str) -> int:
+    """TTL per interval."""
+    if interval == "1d":
+        return 3600
+    if interval in ("1m", "5m", "5min", "1min", "15m", "30m", "1h"):
+        return 60
+    return 600
+
+
+def _massive_cache_key(tickers, start_str, end_str, interval, auto_adjust):
+    """Stable key. Tickers can be str or list."""
+    tkey = (tickers,) if isinstance(tickers, str) else tuple(sorted(tickers))
+    return (tkey, start_str, end_str, interval, bool(auto_adjust))
+
+
+def _massive_cache_clear() -> None:
+    _MASSIVE_CACHE.clear()
+
+
 import urllib.parse
 from requests.adapters import HTTPAdapter
 
@@ -218,14 +259,31 @@ def download(
     start_str = _normalize_date(start)
     end_str = _normalize_date(end)
 
+    # ── Cache check (Session F, May 22 2026) ─────────────────────────────────
+    if _MASSIVE_CACHE_ENABLED:
+        _ck = _massive_cache_key(tickers, start_str, end_str, interval, auto_adjust)
+        _hit = _MASSIVE_CACHE.get(_ck)
+        if _hit is not None:
+            _ts, _payload = _hit
+            if (_time.time() - _ts) < _massive_cache_ttl(interval):
+                log.debug("massive.cache_hit key=%s age=%.1fs", _ck, _time.time() - _ts)
+                _MASSIVE_CACHE.move_to_end(_ck)  # LRU bump
+                return _payload.copy(deep=True) if hasattr(_payload, "copy") else _copy_mod.deepcopy(_payload)
+
     if isinstance(tickers, str):
         # Single ticker — route based on type
         if _is_index(tickers):
-            return _download_yfinance(tickers, start_str, end_str, interval, auto_adjust)
+            _result = _download_yfinance(tickers, start_str, end_str, interval, auto_adjust)
         else:
             _check_key()
             mult, span = _interval_to_massive(interval)
-            return _download_single(tickers, start_str, end_str, mult, span, auto_adjust)
+            _result = _download_single(tickers, start_str, end_str, mult, span, auto_adjust)
+        # Store in cache — deepcopy at write so caller mutations don't corrupt cache
+        if _MASSIVE_CACHE_ENABLED and _result is not None and not _result.empty:
+            _MASSIVE_CACHE[_ck] = (_time.time(), _result.copy(deep=True))
+            if len(_MASSIVE_CACHE) > _MASSIVE_CACHE_MAX:
+                _MASSIVE_CACHE.popitem(last=False)
+        return _result
     else:
         # List of tickers — split, fetch each from correct source, merge
         indices = [t for t in tickers if _is_index(t)]
