@@ -98,6 +98,13 @@ FEATURE_COLUMNS: list[str] = [
     # Analyst revisions
     # FinBERT NLP
     "finbert_sentiment", "finbert_sentiment_earnings",
+    # 8-K Item code features (Session E Phase 3, May 22 2026)
+    "eightk_exec_change_30d",
+    "eightk_material_agreement_30d",
+    "eightk_reg_fd_30d",
+    "eightk_other_events_30d",
+    "eightk_filings_30d",
+    "eightk_days_since_last",
     "oil_ret", "oil_spy_corr",          # crude oil signal
     # Extended returns
     "return_20d", "return_60d",

@@ -640,3 +640,85 @@ def load_finbert_pit(ticker, date_index, db_path: str = "data/sentiment.db"):
             days_since = (asof - mr_earn["filing_date"]).days
             out.iloc[i, out.columns.get_loc("finbert_days_since")] = min(days_since, 90)
     return out
+
+
+
+def load_eightk_pit(ticker, date_index, db_path: str = "earnings.db"):
+    """
+    Point-in-time 8-K Item code loader. Session E Phase 3, May 22 2026.
+
+    For each date in date_index, computes features from 8-K filings with
+    filing_date < as_of_date:
+
+      - eightk_exec_change_30d:        Binary, any Item 5.02 in prior 30 days
+      - eightk_material_agreement_30d: Binary, any Item 1.01 in prior 30 days
+      - eightk_reg_fd_30d:             Binary, any Item 7.01 in prior 30 days
+      - eightk_other_events_30d:       Binary, any Item 8.01 in prior 30 days
+      - eightk_filings_30d:            Count of distinct 8-K filings in prior 30 days
+      - eightk_days_since_last:        Days since most recent 8-K (capped 90)
+
+    Source: earnings.db.eightk_items (populated by data/etl_eightk_items.py).
+
+    PIT-safe: strictly uses filing_date < as_of_date.
+    Same code path training + inference (no train/serve mismatch).
+
+    Foreign filers (ASML, AZN, NIO, etc) don't file 8-Ks. All features 0.
+    """
+    import sqlite3
+    import pandas as pd
+    from datetime import timedelta
+
+    out = pd.DataFrame(index=pd.DatetimeIndex(date_index))
+    out["eightk_exec_change_30d"]        = 0
+    out["eightk_material_agreement_30d"] = 0
+    out["eightk_reg_fd_30d"]             = 0
+    out["eightk_other_events_30d"]       = 0
+    out["eightk_filings_30d"]            = 0
+    out["eightk_days_since_last"]        = 90
+
+    try:
+        conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+        df_8k = pd.read_sql("""
+            SELECT filing_date, accession, item_code
+            FROM eightk_items
+            WHERE ticker = ?
+            ORDER BY filing_date DESC
+        """, conn, params=(ticker.upper(),))
+        conn.close()
+    except Exception as _e:
+        import logging as _lg
+        _lg.getLogger(__name__).error(
+            f"eightk_pit.connect_fail ticker={ticker} db={db_path} err={_e!r}"
+        )
+        return out
+
+    if df_8k.empty:
+        return out
+
+    df_8k["filing_date"] = pd.to_datetime(df_8k["filing_date"])
+
+    date_idx = pd.DatetimeIndex(date_index)
+    for i, asof in enumerate(date_idx):
+        prior = df_8k[df_8k["filing_date"] < asof]
+        if prior.empty:
+            continue
+
+        # Window: prior 30 days
+        cutoff_30d = asof - timedelta(days=30)
+        recent = prior[prior["filing_date"] >= cutoff_30d]
+
+        if not recent.empty:
+            items_set = set(recent["item_code"].astype(str).values)
+            out.iloc[i, out.columns.get_loc("eightk_exec_change_30d")]        = int("5.02" in items_set)
+            out.iloc[i, out.columns.get_loc("eightk_material_agreement_30d")] = int("1.01" in items_set)
+            out.iloc[i, out.columns.get_loc("eightk_reg_fd_30d")]             = int("7.01" in items_set)
+            out.iloc[i, out.columns.get_loc("eightk_other_events_30d")]       = int("8.01" in items_set)
+            out.iloc[i, out.columns.get_loc("eightk_filings_30d")]            = recent["accession"].nunique()
+
+        # Days since most recent 8-K
+        most_recent_date = prior["filing_date"].iloc[0]
+        days_since = (asof - most_recent_date).days
+        out.iloc[i, out.columns.get_loc("eightk_days_since_last")] = min(days_since, 90)
+
+    return out
+

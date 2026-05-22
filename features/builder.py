@@ -113,6 +113,13 @@ OUTPUT_COLUMNS = [
     "iv_skew_snap", "pc_ratio_snap",     # options IV skew + put/call ratio
     "analyst_upside", "analyst_buy_pct", "analyst_mult",  # analyst revisions
     "finbert_sentiment", "finbert_sentiment_earnings", "finbert_mult", # FinBERT NLP sentiment
+    # ── Session E Phase 3 (May 22 2026): 8-K Item code features ──────────────
+    "eightk_exec_change_30d",
+    "eightk_material_agreement_30d",
+    "eightk_reg_fd_30d",
+    "eightk_other_events_30d",
+    "eightk_filings_30d",
+    "eightk_days_since_last",
     # ── NEW v4 features ──────────────────────────────────────────────────────
     "vix_5d_above_25",          # binary: VIX > 25 for 5 consecutive days
     "semi_etf_momentum_60d",    # SMH ETF 60-day cumulative return
@@ -888,6 +895,27 @@ def build_feature_dataframe(
         df["finbert_sentiment"]          = 0.0
         df["finbert_sentiment_earnings"] = 0.0
         df["finbert_mult"]               = 1.0
+
+    # ── 8-K Item code features (Session E Phase 3, May 22 2026) ──────────────
+    # PIT-correct loader reads earnings.db.eightk_items populated by edgartools.
+    # Same code path training + inference (no train/serve mismatch).
+    # Defaults: 0 / 90 days. Foreign filers (no 8-K) get defaults.
+    try:
+        from data.alpha_sources import load_eightk_pit
+        _8k = load_eightk_pit(ticker, date_index)
+        df["eightk_exec_change_30d"]        = _8k["eightk_exec_change_30d"].values
+        df["eightk_material_agreement_30d"] = _8k["eightk_material_agreement_30d"].values
+        df["eightk_reg_fd_30d"]             = _8k["eightk_reg_fd_30d"].values
+        df["eightk_other_events_30d"]       = _8k["eightk_other_events_30d"].values
+        df["eightk_filings_30d"]            = _8k["eightk_filings_30d"].values
+        df["eightk_days_since_last"]        = _8k["eightk_days_since_last"].values
+    except Exception as _e:
+        df["eightk_exec_change_30d"]        = 0
+        df["eightk_material_agreement_30d"] = 0
+        df["eightk_reg_fd_30d"]             = 0
+        df["eightk_other_events_30d"]       = 0
+        df["eightk_filings_30d"]            = 0
+        df["eightk_days_since_last"]        = 90
 
     # ── Analyst revisions — dropped from model 2026-05-21 ────────────────────
     # No free historical source; train/serve mismatch eliminated by dropping.
