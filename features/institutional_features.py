@@ -151,7 +151,13 @@ def get_institutional_features(ticker: str, as_of_date: str, db_path=None) -> di
     }
     try:
         conn = _connect(db_path)
-    except duckdb.Error:
+    except duckdb.Error as _e:
+        # Surface, don't swallow. Defaults dict still returned so caller
+        # can decide whether NaN inst features is acceptable.
+        import logging as _lg
+        _lg.getLogger(__name__).error(
+            f"institutional_features.connect_fail db={db_path} err={_e!r}"
+        )
         return out
     try:
         start_5d  = _trading_days_back(as_of_date, WINDOW_5D)
@@ -194,7 +200,13 @@ def load_institutional_features_pit_fast(ticker, date_index, db_path=None):
 
     try:
         conn = _connect(db_path)
-    except duckdb.Error:
+    except duckdb.Error as _e:
+        # Surface, don't swallow. NaN DataFrame still returned so builder
+        # can decide whether missing inst features blocks the train/serve.
+        import logging as _lg
+        _lg.getLogger(__name__).error(
+            f"institutional_features.pit_connect_fail ticker={ticker} db={db_path} err={_e!r}"
+        )
         return out
 
     try:
