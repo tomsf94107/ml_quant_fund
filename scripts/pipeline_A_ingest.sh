@@ -71,6 +71,17 @@ $PYTHON scripts/feature_validator.py --fix \
     > "$LOGDIR/03_feature_validator.log" 2>&1 || fail "Stage 3 (feature_validator)"
 log "Stage 3 OK"
 
+# ── Stage 4: Polygon revenue refresh ─────────────────────────────────────────
+# Added May 23 2026. Polygon owns rev_actual / rev_estimate / rev_surprise.
+# Must run before Pipeline B (which retrains models, calls etl_earnings via
+# train_all.py). etl_earnings was changed to UPSERT eps_* only (preserving 
+# rev_*) so order doesn't matter for correctness, but we run Polygon here
+# so rev_growth features are fresh in the panel that Pipeline B trains on.
+log "Stage 4: Polygon revenue refresh"
+$PYTHON -m data.etl_polygon_revenue --all \
+    > "$LOGDIR/04_polygon_revenue.log" 2>&1 || fail "Stage 4 (polygon_revenue)"
+log "Stage 4 OK"
+
 # Mark success so Pipeline B can run
 touch "$MARKER"
 log "=== PIPELINE A COMPLETE ==="
