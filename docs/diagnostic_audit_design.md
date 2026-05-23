@@ -188,3 +188,44 @@ Track over time: is ECE improving or regressing?
 - (h) Verify chain: layers cover data → features → model → transforms → reality
 - (i) Compiled OK ≠ verified: layer tests confirm checks fire
 
+
+---
+
+## Audit timeline (added May 23 evening)
+
+### Phase B (start Sunday May 24, ~5-7 days)
+Build 5-layer diagnostic tool, run it, fix critical findings. Sequential:
+- Sun May 24 (start of phase B): Build diagnostic_audit.py + ALL 5 layers
+- Sun May 24 (later): Run on current data, read findings
+- Sun May 24 (continued): Begin manual audit of signals/generator multiplier chain
+- Mon May 25: Continue manual audit + Pipeline A→B→GLOBAL→C run
+- Mon May 25 (later): Diagnostic on fresh Pipeline data; ETL path audit begins
+- Tue May 26: Continue ETL audit + fixes
+- Wed May 27 onward: Synthesize, apply fixes, re-run diagnostic to verify
+
+Bottom line: real work starts SUNDAY. Not Tuesday.
+
+### Continuous (week 2 onward)
+- 5-layer diagnostic runs after every Pipeline B retrain
+- Alerts on calibration regression, feature drift, outcome gaps
+- New features/modules get audit checks added before they ship
+
+### Phase A (full systematic audit)
+**Date: Saturday June 27 - Sunday July 5, 2026** (~8-9 days)
+
+Triggered by:
+- Path A A/B decision (Jun 23) settles model architecture
+- 4-week roadmap items mostly complete
+- Calibration issue resolved
+- ~28 days of production A/B data available
+
+Scope: every code file, every data source, every connection
+Output: docs/full_system_audit_2026Q2.md
+Followup: Q3 development guided by findings
+
+### Why this sequencing
+
+1. Fix the immediate calibration problem first (Phase B)
+2. Run continuous diagnostics to catch regressions (no slip)
+3. Audit the FULL system after architecture is stable (Phase A)
+4. Avoid auditing code that may be deprecated by A/B decision
