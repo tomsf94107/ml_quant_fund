@@ -141,6 +141,7 @@ def log_prediction_to_db(
     fg_mult:           float | None = None,
     gate_block:        int   | None = None,
     prob_eff_uncapped: float | None = None,
+    prob_up_global:    float | None = None,
 ):
     """Log prediction to accuracy.db for later reconciliation."""
     try:
@@ -165,6 +166,7 @@ def log_prediction_to_db(
             fg_mult=fg_mult,
             gate_block=gate_block,
             prob_eff_uncapped=prob_eff_uncapped,
+            prob_up_global=prob_up_global,
         )
     except Exception as e:
         # No longer silently logged — surface to ERROR level with stack trace.
@@ -253,6 +255,27 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
             _ensure_institutional_columns(_mc)
     except Exception:
         pass
+
+    # ── A/B observability Layer 1: GLOBAL model bootstrap check ──────────
+    # Verify GLOBAL cross-sectional models load before running. If any
+    # horizon fails, log a warning but do NOT block per-ticker pipeline.
+    # See docs/path_a_ab_test_plan.md.
+    try:
+        from models.ensemble import EnsembleResult
+        _global_status = {}
+        for _h in [1, 3, 5]:
+            try:
+                _m = EnsembleResult.load("GLOBAL", _h)
+                _global_status[_h] = f"OK ({len(_m.feature_cols)} features)"
+            except Exception as _eh:
+                _global_status[_h] = f"FAIL: {type(_eh).__name__}"
+        _all_ok = all("OK" in v for v in _global_status.values())
+        if _all_ok:
+            log.info(f"A/B GLOBAL models loaded: h=1d {_global_status[1]}  h=3d {_global_status[3]}  h=5d {_global_status[5]}")
+        else:
+            log.warning(f"A/B GLOBAL models partially failed: {_global_status}  (A/B logging will skip these horizons)")
+    except Exception as _ex:
+        log.warning(f"A/B GLOBAL bootstrap check failed entirely: {_ex}  (per-ticker pipeline unaffected)")
 
     tickers = load_tickers()
     log.info(f"Tickers: {len(tickers)}")
@@ -398,6 +421,8 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                         fg_mult=sig.today_fg_mult,
                         gate_block=sig.today_gate_block,
                         prob_eff_uncapped=sig.today_prob_eff_uncapped,
+                        # A/B: GLOBAL cross-sectional prediction (May 23 2026)
+                        prob_up_global=sig.today_prob_up_global,
                         tier=_tier,
                     )
 
@@ -624,6 +649,8 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                             fg_mult=sig.today_fg_mult,
                             gate_block=sig.today_gate_block,
                             prob_eff_uncapped=sig.today_prob_eff_uncapped,
+                            # A/B: GLOBAL cross-sectional prediction (May 23 2026)
+                            prob_up_global=sig.today_prob_up_global,
                             run_date=run_date,
                             is_watchlist=True,
                             tier=_tier,
@@ -643,6 +670,41 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                     "signals":      watchlist_results,
                 }, f, indent=2, default=str)
             log.info(f"  Watchlist cache saved → {wl_cache_path}")
+
+    # ── A/B observability Layer 2: GLOBAL prediction daily summary ──────
+    # Compare per-ticker prob_up vs GLOBAL prob_up_global for today's batch.
+    # Helps spot drift, model corruption, or coverage gaps.
+    try:
+        import sqlite3 as _sql
+        with _sql.connect("accuracy.db") as _c:
+            _row = _c.execute(
+                """
+                SELECT
+                    COUNT(*) AS n,
+                    COUNT(prob_up_global) AS n_global,
+                    AVG(prob_up) AS mean_pt,
+                    AVG(prob_up_global) AS mean_gl,
+                    AVG(ABS(prob_up - prob_up_global)) AS mean_diff,
+                    MAX(ABS(prob_up - prob_up_global)) AS max_diff,
+                    SUM(CASE WHEN prob_up > 0.55 AND prob_up_global > 0.55 THEN 1 ELSE 0 END) AS both_buy,
+                    SUM(CASE WHEN prob_up > 0.55 AND (prob_up_global IS NULL OR prob_up_global <= 0.55) THEN 1 ELSE 0 END) AS only_pt,
+                    SUM(CASE WHEN prob_up_global > 0.55 AND (prob_up IS NULL OR prob_up <= 0.55) THEN 1 ELSE 0 END) AS only_gl
+                FROM predictions
+                WHERE prediction_date = ?
+                """,
+                (str(run_date),)
+            ).fetchone()
+        if _row and _row[0] > 0:
+            n, n_gl, m_pt, m_gl, mean_d, max_d, both, only_pt, only_gl = _row
+            cov = (n_gl / n * 100) if n > 0 else 0
+            log.info(f"A/B summary: {n} predictions, GLOBAL coverage {n_gl}/{n} ({cov:.0f}%)")
+            if n_gl > 0:
+                log.info(f"  Means: per-ticker={m_pt:.3f}  GLOBAL={m_gl:.3f}  |Δ|avg={mean_d:.3f}  max={max_d:.3f}")
+                log.info(f"  BUY agreement: both={both}  only_per-ticker={only_pt}  only_GLOBAL={only_gl}")
+            if cov < 95:
+                log.warning(f"A/B GLOBAL coverage below 95% — investigate")
+    except Exception as _ex:
+        log.warning(f"A/B summary failed: {_ex}")
 
     log.info(f"{'='*60}\n")
 

@@ -408,6 +408,10 @@ class SignalResult:
     today_gate_block:        Optional[int]   = None  # 0/1
     today_prob_eff_uncapped: Optional[float] = None  # pre-confidence-cap
 
+    # ── A/B test of Path A cross-sectional model (May 23 2026) ──────────
+    # Per-ticker stays primary; GLOBAL logged for comparison.
+    today_prob_up_global:    Optional[float] = None
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PRIVATE HELPERS
@@ -730,6 +734,12 @@ def generate_signals(
         intraday_mult = 1.0
 
     # ── 1. Get calibrated probabilities ──────────────────────────────────────
+    # A/B test: also compute GLOBAL cross-sectional prediction. Per-ticker stays
+    # primary. GLOBAL is logged-only; not used in BUY/HOLD decision. Wrapped in
+    # try/except so GLOBAL failure NEVER affects per-ticker pipeline. See
+    # docs/path_a_ab_test_plan.md (May 23 2026).
+    today_prob_up_global = None
+
     try:
         # Use ensemble if available, fall back to XGB-only
         try:
@@ -737,6 +747,14 @@ def generate_signals(
             prob_series = predict_proba_ensemble(ticker, df, horizon=horizon)
         except Exception:
             prob_series = predict_proba(ticker, df, horizon=horizon, result=result)
+
+        # A/B GLOBAL prediction (Path A). Strictly optional, never breaks pipeline.
+        try:
+            from models.ensemble import predict_proba_ensemble as _pred_global
+            _global_prob_series = _pred_global("GLOBAL", df, horizon=horizon)
+            today_prob_up_global = float(_global_prob_series.iloc[-1])
+        except Exception:
+            today_prob_up_global = None
     except Exception as e:
         # Return a safe error result rather than crashing the whole dashboard
         empty_metrics = BacktestMetrics(
@@ -918,6 +936,8 @@ def generate_signals(
         today_fg_mult=round(float(fg_mult), 4),
         today_gate_block=1 if today_gated else 0,
         today_prob_eff_uncapped=round(float(today_prob_eff_uncapped), 4),
+        # A/B: cross-sectional GLOBAL prediction (May 23 2026)
+        today_prob_up_global=round(float(today_prob_up_global), 4) if today_prob_up_global is not None else None,
     )
 
 

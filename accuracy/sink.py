@@ -370,6 +370,7 @@ def log_prediction(
     fg_mult:           float | None = None,
     gate_block:        int   | None = None,
     prob_eff_uncapped: float | None = None,
+    prob_up_global:    float | None = None,
 ) -> None:
     """
     Log a single prediction. Called every time generate_signals() runs.
@@ -415,9 +416,9 @@ def log_prediction(
                 (ticker, prediction_date, horizon, prob_up, prob_raw,
                  signal, confidence, model_version, created_at, is_watchlist, tier,
                  risk_mult, sent_mult, regime_mult, options_mult, squeeze_mult,
-                 intraday_mult, fg_mult, gate_block, prob_eff_uncapped)
+                 intraday_mult, fg_mult, gate_block, prob_eff_uncapped, prob_up_global)
             VALUES ({p},{p},{p},{p},{p},{p},{p},{p},{p},{p},{p},
-                    {p},{p},{p},{p},{p},{p},{p},{p},{p})
+                    {p},{p},{p},{p},{p},{p},{p},{p},{p},{p})
         """, (
             ticker.upper(), str(prediction_date), horizon,
             float(prob_up),
@@ -433,6 +434,7 @@ def log_prediction(
             float(fg_mult)           if fg_mult           is not None else None,
             int(gate_block)          if gate_block        is not None else None,
             float(prob_eff_uncapped) if prob_eff_uncapped is not None else None,
+            float(prob_up_global)    if prob_up_global    is not None else None,
         ))
 
 
