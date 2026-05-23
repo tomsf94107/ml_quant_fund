@@ -157,13 +157,9 @@ def _parse_earnings_history(ticker: str, hist: pd.DataFrame) -> list[dict]:
             else:
                 eps_surprise = eps_surprise_pct = np.nan
 
-            rev_actual   = float(row.get("revenueActual",   np.nan) or np.nan)
-            rev_estimate = float(row.get("revenueEstimate", np.nan) or np.nan)
-
-            if not np.isnan(rev_actual) and not np.isnan(rev_estimate) and rev_estimate != 0:
-                rev_surprise = (rev_actual - rev_estimate) / abs(rev_estimate)
-            else:
-                rev_surprise = np.nan
+            # yfinance revenue removed May 22 2026 — fields don't exist in
+            # earnings_history. Polygon (data/etl_polygon_revenue.py) is the
+            # sole writer of rev_actual / rev_estimate / rev_surprise.
 
             rows.append({
                 "ticker":           ticker.upper(),
@@ -172,9 +168,6 @@ def _parse_earnings_history(ticker: str, hist: pd.DataFrame) -> list[dict]:
                 "eps_estimate":     eps_estimate,
                 "eps_surprise":     eps_surprise,
                 "eps_surprise_pct": eps_surprise_pct,
-                "rev_actual":       rev_actual,
-                "rev_estimate":     rev_estimate,
-                "rev_surprise":     rev_surprise,
                 "created_at":       knowable_at(report_date),
             })
         except Exception:
@@ -207,14 +200,20 @@ def run_earnings_etl(
 
         if rows:
             conn.executemany("""
-                INSERT OR REPLACE INTO earnings_surprises
+                -- yfinance ETL only writes EPS columns. Revenue columns are
+                -- owned by Polygon (data/etl_polygon_revenue.py).
+                -- Using ON CONFLICT to preserve existing rev_* values.
+                INSERT INTO earnings_surprises
                     (ticker, report_date, eps_actual, eps_estimate,
-                     eps_surprise, eps_surprise_pct,
-                     rev_actual, rev_estimate, rev_surprise, created_at)
+                     eps_surprise, eps_surprise_pct, created_at)
                 VALUES
                     (:ticker, :report_date, :eps_actual, :eps_estimate,
-                     :eps_surprise, :eps_surprise_pct,
-                     :rev_actual, :rev_estimate, :rev_surprise, :created_at)
+                     :eps_surprise, :eps_surprise_pct, :created_at)
+                ON CONFLICT(ticker, report_date) DO UPDATE SET
+                    eps_actual       = excluded.eps_actual,
+                    eps_estimate     = excluded.eps_estimate,
+                    eps_surprise     = excluded.eps_surprise,
+                    eps_surprise_pct = excluded.eps_surprise_pct
             """, rows)
             conn.commit()
 
