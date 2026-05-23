@@ -11,6 +11,65 @@
 
 Production accuracy audit revealed broken calibration (h=5d >=0.80 conf hit 40%, h=3d 0.55-0.65 conf hit 39%). One-off queries miss things. A real quant fund has diagnostic tooling that runs after every model retrain.
 
+## PRIORITY #1 (BEFORE the 5-layer audit): Reconcile the three conflicting AUCs
+
+Tonight's validation produced THREE different OOS AUCs that disagree by up to 14pp. This is the most fundamental issue. If we cannot trust our validation numbers, we cannot make the Jun 23 A/B decision.
+
+### The three numbers
+
+| Test | OOS AUC | Method |
+|---|---|---|
+| Per-ticker PIT production WF | **0.44** | analysis.walk_forward --pit --config production |
+| Per-ticker walk-forward stacks | **0.51-0.53** | models.walk_forward (older time-series folds) |
+| Path A 5-fold validation | **0.58-0.59** | train_cross_sectional.py validate_oos |
+
+### Why they shouldn't disagree this much
+
+A well-designed validation should give similar numbers regardless of method. 14pp gap means one of:
+
+1. PIT is correct, others have leakage
+2. Architecture difference (per-ticker structurally bad, GLOBAL truly better) → +5pp lift real
+3. Test windows differ (Mar-May 2026 is hard period for per-ticker only)
+4. Implicit leakage in Path A validation through feature engineering
+
+### Specific tests to reconcile
+
+**Test 1: Run PIT walk-forward on Path A GLOBAL model**
+- Same `analysis.walk_forward --pit` framework
+- Train cross-sectional model PIT-correctly (refit at each prediction date)
+- Compare OOS AUC to tonight's 0.58-0.59
+- If 0.58 holds → Path A is real
+- If collapses to 0.50 → Path A is also leaky
+
+**Test 2: Re-run per-ticker walk-forward with same test window as PIT**
+- Use Mar-May 2026 as test
+- See if walk-forward still gives 0.51 or also drops to 0.44
+- Tells us if it's a window issue or methodology issue
+
+**Test 3: Identify the leakage in current per-ticker setup**
+- Train/test gap 0.27 means model is fitting noise heavily
+- Investigate: feature engineering steps that use FULL panel before fold split
+- Feature normalization, calibration fit, target encoding
+
+**Test 4: Compare Path A 5-fold split logic vs PIT**
+- 5-fold TimeSeriesSplit DOES use only past data per fold
+- But each row's features may have been computed using FULL history
+- Refit feature engineering per-fold to check
+
+### Output
+
+A reconciliation report:
+- Which validation methodology is honest?
+- What is the TRUE OOS AUC for per-ticker and GLOBAL?
+- Should we trust Path A's 0.58-0.59 or expect it to be lower in production?
+- Are the conditions for Jun 23 A/B decision based on reliable numbers?
+
+### Time estimate
+
+3-5 hours. Critical to do BEFORE building the 5-layer audit tool, because the audit tool needs to test what we believe is true. Right now, we don't know what's true.
+
+---
+
 ## Five layers of audit
 
 ### Layer 1: Data integrity
