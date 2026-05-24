@@ -53,7 +53,7 @@ def _load_api_key() -> str:
     return key or ""
 
 
-def fetch_quarterly(ticker: str, api_key: str, limit: int = 8) -> list[dict]:
+def fetch_quarterly(ticker: str, api_key: str, limit: int = 100) -> list[dict]:
     """Fetch last `limit` quarterly financials. Returns [] on failure."""
     url = f"https://api.polygon.io/vX/reference/financials"
     params = {"ticker": ticker, "timeframe": "quarterly", "limit": limit, "apiKey": api_key}
@@ -74,8 +74,14 @@ def fetch_quarterly(ticker: str, api_key: str, limit: int = 8) -> list[dict]:
 
 def update_revenue(conn: sqlite3.Connection, ticker: str, quarter_data: dict) -> int:
     """
-    Match Polygon quarter to earnings_surprises.report_date within ±30 days
-    and update rev_actual. Returns 1 if matched and updated, 0 otherwise.
+    Match Polygon quarter to earnings_surprises.report_date within ±30 days.
+    If match: UPDATE rev_actual where NULL.
+    If no match: INSERT new row using Polygon end_date as report_date.
+
+    Returns 1 if any row was inserted or updated, 0 otherwise.
+
+    Updated May 24 2026: now upserts so historical quarters (2009-2024) get
+    INSERTED if not already present. Previously only updated existing rows.
     """
     inc = quarter_data.get("financials", {}).get("income_statement", {})
     rev = inc.get("revenues", {}).get("value")
@@ -90,6 +96,7 @@ def update_revenue(conn: sqlite3.Connection, ticker: str, quarter_data: dict) ->
     window_start = end_date - timedelta(days=30)
     window_end = end_date + timedelta(days=30)
 
+    # First: try to UPDATE existing matching row
     cur = conn.execute(
         """
         UPDATE earnings_surprises
@@ -101,7 +108,42 @@ def update_revenue(conn: sqlite3.Connection, ticker: str, quarter_data: dict) ->
         """,
         (float(rev), ticker, window_start.date().isoformat(), window_end.date().isoformat())
     )
-    return cur.rowcount
+    if cur.rowcount > 0:
+        return cur.rowcount
+
+    # No matching row OR existing row already has rev_actual: check existence
+    # before INSERT to avoid creating duplicate of a row that already has rev
+    exists = conn.execute(
+        """
+        SELECT 1 FROM earnings_surprises
+        WHERE ticker = ?
+          AND date(report_date) >= date(?)
+          AND date(report_date) <= date(?)
+        LIMIT 1
+        """,
+        (ticker, window_start.date().isoformat(), window_end.date().isoformat())
+    ).fetchone()
+
+    if exists:
+        # Row exists with rev_actual already populated — skip
+        return 0
+
+    # INSERT new row with Polygon end_date as report_date
+    conn.execute(
+        """
+        INSERT INTO earnings_surprises (
+            ticker, report_date, eps_actual, eps_estimate, eps_surprise,
+            eps_surprise_pct, rev_actual, rev_estimate, rev_surprise, created_at
+        ) VALUES (?, ?, NULL, NULL, NULL, NULL, ?, NULL, NULL, ?)
+        """,
+        (
+            ticker,
+            end_date.date().isoformat() + " 00:00:00",
+            float(rev),
+            datetime.utcnow().isoformat(),
+        )
+    )
+    return 1
 
 
 def ingest_ticker(conn: sqlite3.Connection, ticker: str, api_key: str) -> tuple[int, int]:

@@ -99,7 +99,11 @@ def train_one_horizon_pooled(
             df_train[c] = 0.0
 
     # Fill NaN feature values with median per column (cross-sectional median)
-    df_train[FEATURE_COLUMNS] = df_train[FEATURE_COLUMNS].fillna(df_train[FEATURE_COLUMNS].median())
+    # EXCEPT inst features — XGB handles NaN natively, and these are 97% NaN
+    # for older data (only ~2 months of inst data available). Filling with
+    # median (=0) hides their signal. May 24 2026 fix.
+    non_inst = [c for c in FEATURE_COLUMNS if not c.startswith("inst_")]
+    df_train[non_inst] = df_train[non_inst].fillna(df_train[non_inst].median())
 
     # Hijack the train_ensemble signature with a synthetic "ticker" name
     # The function takes a ticker name for saving; we use "GLOBAL"
@@ -142,8 +146,12 @@ def validate_oos(df_pooled: pd.DataFrame, horizon: int, split_date: str = "2026-
             train_df[c] = 0.0
         if c not in test_df.columns:
             test_df[c] = 0.0
-    train_df[FEATURE_COLUMNS] = train_df[FEATURE_COLUMNS].fillna(train_df[FEATURE_COLUMNS].median())
-    test_df[FEATURE_COLUMNS] = test_df[FEATURE_COLUMNS].fillna(train_df[FEATURE_COLUMNS].median())  # use TRAIN median
+    # Fill all non-inst features with train median; inst features keep NaN
+    # so XGB handles natively (97% NaN before Sept 2026 makes median-fill harmful).
+    non_inst = [c for c in FEATURE_COLUMNS if not c.startswith("inst_")]
+    train_med = train_df[non_inst].median()
+    train_df[non_inst] = train_df[non_inst].fillna(train_med)
+    test_df[non_inst] = test_df[non_inst].fillna(train_med)  # use TRAIN median
     
     # Train (don't save validation runs)
     result = train_ensemble(
