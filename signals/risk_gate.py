@@ -95,26 +95,35 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
             if ts in df.index:
                 df.loc[ts, "risk_today"] = 1.0
 
-    # Always add VIX spike days
-    # FIXED May 4 2026: route through yf_resilient to avoid DNS exhaustion.
-    # Called per-ticker via _load_risk_flags, so 125 calls per Pipeline B run.
+    # ─── Calendar events (PIT-safe: scheduled in advance) ───────────────
+    # These can populate risk_next_1d / risk_next_3d because future FOMC/CPI/
+    # etc. dates ARE known at prediction time.
+    df["risk_next_1d"] = df["risk_today"].shift(-1).fillna(0)
+    df["risk_next_3d"] = df["risk_today"].rolling(3).max().shift(-3).fillna(0)
+    df["risk_prev_1d"] = df["risk_today"].shift(1).fillna(0)
+
+    # ─── VIX spike retrospection (PIT-safe: only past spikes used) ──────
+    # FIXED May 24 2026: previously VIX spikes were added to risk_today AFTER
+    # the shift was already computed — this leaked future VIX info into
+    # risk_next_1d/3d (those features encoded "VIX will spike in N days").
+    # Now: VIX spikes only feed risk_prev_1d (strictly past). risk_today and
+    # risk_next_* contain ONLY calendar-known events.
     try:
         from features.yf_resilient import safe_yf_download
         vix = safe_yf_download(["^VIX"], start=str(start_date), end=str(end_date),
                                progress=False, auto_adjust=True)
         if vix is not None and not vix.empty:
-            if hasattr(vix.columns, 'get_level_values'):
+            if hasattr(vix.columns, "get_level_values"):
                 vix.columns = vix.columns.get_level_values(0)
             vix_close = vix["Close"].squeeze()
-            vix_ret   = vix_close.pct_change().abs()
+            vix_ret = vix_close.pct_change().abs()
             for d in vix_ret[vix_ret > VIX_SPIKE_PCT].index:
-                if d in df.index:
-                    df.loc[d, "risk_today"] = 1.0
+                # Shift forward by 1 day: today's spike becomes tomorrow's
+                # "previous-day spike" — strictly retrospective.
+                d_plus_1 = d + pd.tseries.offsets.BDay(1)
+                if d_plus_1 in df.index:
+                    df.loc[d_plus_1, "risk_prev_1d"] = 1.0
     except Exception:
         pass
-
-    df["risk_next_1d"] = df["risk_today"].shift(-1).fillna(0)
-    df["risk_next_3d"] = df["risk_today"].rolling(3).max().shift(-3).fillna(0)
-    df["risk_prev_1d"] = df["risk_today"].shift(1).fillna(0)
 
     return df
