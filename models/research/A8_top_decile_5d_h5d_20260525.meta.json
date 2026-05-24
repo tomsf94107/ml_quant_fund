@@ -1,0 +1,174 @@
+{
+  "experiment_id": "A8_top_decile_5d",
+  "saved_at": "2026-05-25T00:57:24.795682",
+  "horizon": 5,
+  "target_definition": "cross-sectional rank(fwd_5d_ret) per date >= 0.90",
+  "train_size": 163846,
+  "test_size": 3744,
+  "oos_auc": 0.676551261780754,
+  "feature_importances": {
+    "top_15": [
+      [
+        "volatility_10d",
+        0.1828637272119522
+      ],
+      [
+        "short_pct_float",
+        0.1650693416595459
+      ],
+      [
+        "vwap",
+        0.06811485439538956
+      ],
+      [
+        "volatility_5d",
+        0.05290258675813675
+      ],
+      [
+        "short_ratio",
+        0.04511336237192154
+      ],
+      [
+        "bb_width",
+        0.04500887170433998
+      ],
+      [
+        "beta_60d",
+        0.043685317039489746
+      ],
+      [
+        "low_52w_ratio",
+        0.04062890261411667
+      ],
+      [
+        "bb_lower",
+        0.038333963602781296
+      ],
+      [
+        "monday_sentiment",
+        0.037424586713314056
+      ],
+      [
+        "rev_growth_yoy",
+        0.03414400294423103
+      ],
+      [
+        "vwap_dev_eod",
+        0.02995128370821476
+      ],
+      [
+        "vol_surge_eod",
+        0.029266828671097755
+      ],
+      [
+        "volume_zscore",
+        0.02533334121108055
+      ],
+      [
+        "obv",
+        0.019535869359970093
+      ]
+    ],
+    "groups": {
+      "8K": 0.008318731561303139,
+      "rev": 0.04679492861032486,
+      "inst": 0.0,
+      "macro": 0.020865026861429214,
+      "vol": 0.28077518939971924
+    }
+  },
+  "notes": "A8: top-decile cross-sectional ranking, ~10% base rate per date",
+  "feature_cols": [
+    "return_1d",
+    "return_3d",
+    "return_5d",
+    "ma_5",
+    "ma_10",
+    "ma_20",
+    "volatility_5d",
+    "volatility_10d",
+    "rsi_14",
+    "macd",
+    "bb_upper",
+    "bb_lower",
+    "bb_width",
+    "volume_zscore",
+    "volume_spike",
+    "vwap",
+    "obv",
+    "atr",
+    "spy_ret",
+    "xlk_ret",
+    "xle_ret_5d",
+    "xlv_ret_5d",
+    "xlf_ret_5d",
+    "xlk_ret_5d",
+    "xlu_ret_5d",
+    "xli_ret_5d",
+    "xlp_ret_5d",
+    "xly_ret_5d",
+    "sentiment_score",
+    "insider_net_shares",
+    "insider_7d",
+    "insider_21d",
+    "risk_today",
+    "risk_next_1d",
+    "risk_next_3d",
+    "risk_prev_1d",
+    "is_pandemic",
+    "eps_surprise",
+    "rev_surprise",
+    "days_to_earnings",
+    "post_earnings_1d",
+    "post_earnings_3d",
+    "post_earnings_5d",
+    "vwap_dev_eod",
+    "vol_surge_eod",
+    "intraday_momentum",
+    "premarket_gap",
+    "finbert_sentiment",
+    "finbert_sentiment_earnings",
+    "eightk_exec_change_30d",
+    "eightk_material_agreement_30d",
+    "eightk_reg_fd_30d",
+    "eightk_other_events_30d",
+    "eightk_filings_30d",
+    "eightk_days_since_last",
+    "rev_growth_yoy",
+    "rev_growth_qoq",
+    "oil_ret",
+    "oil_spy_corr",
+    "return_20d",
+    "return_60d",
+    "ma_50",
+    "ma5_above_ma20",
+    "ma20_above_ma50",
+    "high_52w_ratio",
+    "low_52w_ratio",
+    "bb_pct",
+    "rsi_above_70",
+    "rsi_below_30",
+    "obv_trend",
+    "vix_close",
+    "vix_ret",
+    "dxy_ret",
+    "yield_10y",
+    "vix_term_structure",
+    "beta_60d",
+    "short_ratio",
+    "short_pct_float",
+    "monday_sentiment",
+    "sector_rel_ret",
+    "day_of_week",
+    "is_month_end",
+    "vix_5d_above_25",
+    "semi_etf_momentum_60d",
+    "igv_vs_sp500_ret_30d",
+    "lqd_hyg_spread",
+    "inst_block_buy_sell_7d",
+    "inst_signed_flow_30d",
+    "inst_auction_imbal_5d",
+    "inst_signed_flow_5d"
+  ],
+  "model_filename": "A8_top_decile_5d_h5d_20260525.joblib"
+}
