@@ -86,3 +86,75 @@ After Tier 1 complete, end-of-day decision on what to productionize.
 - a56ed40: VIX leak in risk_next_* + audit findings
 - 1ebdbb4: Polygon rev backfill (2009-2026) + inst NaN preservation
 
+
+
+## Addendum: May 25 2026 (Monday) — Phase epsilon + Phase 1 D shipped
+
+### Phase epsilon (shadow logging) — DEPLOYED
+
+Implemented A/B shadow logging of A1_pct7 model alongside production.
+- accuracy/sink.py: added prob_pct7 column + auto-migration
+- signals/generator.py: loads PCT7 model, computes today_prob_pct7
+- scripts/daily_runner.py: threads prob_pct7 through log_prediction_to_db()
+
+End-to-end verified. Today's Pipeline C run logged 127 prob_pct7 values
+(one per h=5 prediction).
+
+### Phase 1 D (interaction features) — DEPLOYED
+
+5 features added to FEATURE_COLUMNS:
+- vol_x_short (raw)
+- rev_x_low52w (raw)
+- vol_10d_self_rank (rolling self-rank 252d)
+- vol_zscore_60d (rolling z-score 60d)
+- is_squeeze_setup (binary threshold)
+
+2 features dropped during testing:
+- short_self_rank, short_zscore_60d — short_pct_float is constant per ticker
+  (single yfinance broadcast), rolling stats degenerate.
+
+AUC impact:
+- +7% target: 0.7135 -> 0.7192 (+0.57pp)
+- A8 target: 0.687 -> 0.684 (slight noise)
+
+### PCT7 v2 deployment
+
+Initial deploy failed: LGBOnlyResult class defined inline in __main__,
+joblib pickled the class reference but pickle couldn't find it on load.
+Production broke briefly; reverted within minutes.
+
+Fixed with models/wrappers.py — proper importable class. Retrained PCT7
+v2 with 95 features (90 original + 5 interactions). Deployed.
+
+OOS AUC: 0.7192 (vs yesterday's 0.6842) = +3.5pp lift on production.
+
+### Architectural finding
+
+Initially planned a polymorphic refactor of predict_proba_ensemble.
+After code audit: it already works via duck-typing (only calls
+.predict_proba on the loaded object). EnsembleResult.load doesn't
+check returned type. So a proper importable class alone was sufficient.
+
+Less code, same outcome. Pragmatism > over-engineering.
+
+### Files added today
+
+- models/wrappers.py
+- scripts/monitor_pct7_ab.py
+- docs/phase_2H_overlay_spec.md
+- docs/monitoring_phase_epsilon.md
+
+### Commits today
+
+a56ed40 -> 1ebdbb4 -> 7385bb1 -> 135af9a -> 79d79cc -> 7fd0110
+-> 89b85fe -> 695ab41 -> 3aa166f
+
+9 commits, all on research-track.
+
+### Status of original 4-phase A8 plan
+
+- Phase epsilon (shadow log PCT7): DEPLOYED
+- Phase 1 D (interaction features): DEPLOYED in source, awaits Pipeline B retrain
+- Phase 1 E (A/B tracking): SUPERSEDED by Phase epsilon (does same thing)
+- Phase 2 A (A8 prob as feature): NEXT — needs design
+- Phase 2 H (overlay scoring): spec written, implementation pending

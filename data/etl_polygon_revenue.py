@@ -36,9 +36,15 @@ DB_PATH = Path(os.environ.get("EARNINGS_DB_PATH", "earnings.db"))
 
 # Foreign filers + ETFs: no quarterly Polygon data
 SKIP_TICKERS = {
+    # Foreign filers — Polygon doesn't cover quarterly financials
     "ASML", "AZN", "NIO", "NOK", "NVO", "TSM", "ARM",
     "FVRR", "MNDY", "NVMI",
-    "SPY", "XLE", "XLF", "XLI", "XLU", "XLV", "XLK", "XLP", "XLY",
+    # ETFs — no underlying revenue (commodity, broad market, sector funds)
+    "SPY", "QQQ", "GLD", "SLV",
+    "XLE", "XLF", "XLI", "XLU", "XLV", "XLK", "XLP", "XLY",
+    "XLB", "XLC", "XLRE",
+    # Added May 25 2026: GLD, QQQ, SLV, XLB, XLC, XLRE were in our universe
+    # but weren't being skipped. SLV had stale 2013 rev data being fwd-filled.
 }
 
 
