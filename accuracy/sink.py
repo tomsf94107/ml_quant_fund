@@ -257,6 +257,9 @@ def init_db() -> None:
             # ── Schema v3 (May 25 2026): A/B shadow-mode probability scores ──
             ("prob_up_global",    "REAL"),  # Path A GLOBAL ensemble (any-positive target)
             ("prob_pct7",         "REAL"),  # A1_pct7 LGB-only (>=+7% in 5d target)
+            # ── Schema v4 (May 25 2026): Phase 2 H overlay filter (shadow mode) ──
+            ("overlay_downgraded", "INTEGER"),  # 1 if overlay WOULD have downgraded BUY -> HOLD
+            ("overlay_reason",    "TEXT"),     # human-readable reason (e.g. "low prob_pct7")
         ]
         cur.execute("PRAGMA table_info(predictions)")
         _existing_cols = {row[1] for row in cur.fetchall()}
@@ -375,6 +378,8 @@ def log_prediction(
     prob_eff_uncapped: float | None = None,
     prob_up_global:    float | None = None,
     prob_pct7:         float | None = None,
+    overlay_downgraded: int   | None = None,
+    overlay_reason:    str   | None = None,
 ) -> None:
     """
     Log a single prediction. Called every time generate_signals() runs.
@@ -421,10 +426,10 @@ def log_prediction(
                  signal, confidence, model_version, created_at, is_watchlist, tier,
                  risk_mult, sent_mult, regime_mult, options_mult, squeeze_mult,
                  intraday_mult, fg_mult, gate_block, prob_eff_uncapped, prob_up_global,
-                 prob_pct7)
+                 prob_pct7, overlay_downgraded, overlay_reason)
             VALUES ({p},{p},{p},{p},{p},{p},{p},{p},{p},{p},{p},
                     {p},{p},{p},{p},{p},{p},{p},{p},{p},{p},
-                    {p})
+                    {p},{p},{p})
         """, (
             ticker.upper(), str(prediction_date), horizon,
             float(prob_up),
@@ -442,6 +447,8 @@ def log_prediction(
             float(prob_eff_uncapped) if prob_eff_uncapped is not None else None,
             float(prob_up_global)    if prob_up_global    is not None else None,
             float(prob_pct7)         if prob_pct7         is not None else None,
+            int(overlay_downgraded)  if overlay_downgraded is not None else None,
+            str(overlay_reason)      if overlay_reason     is not None else None,
         ))
 
 

@@ -25,6 +25,7 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Optional
+import os
 import sqlite3
 
 import numpy as np
@@ -412,6 +413,9 @@ class SignalResult:
     # Per-ticker stays primary; GLOBAL logged for comparison.
     today_prob_up_global:    Optional[float] = None
     today_prob_pct7:         Optional[float] = None
+    # ── Phase 2 H overlay (May 25 2026): shadow-mode filter on BUYs ──
+    today_overlay_downgraded: Optional[int]  = None  # 1 = WOULD have downgraded BUY -> HOLD
+    today_overlay_reason:    Optional[str]  = None  # human-readable reason
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -909,6 +913,26 @@ def generate_signals(
                 f"earnings gate [{_earn_block['rule']}]: {_earn_block['reason']}"
             )
 
+    # ── Phase 2 H overlay (May 25 2026): shadow-mode filter on BUYs ───────────
+    # Compute the overlay decision but DON'T change signal yet (H.1 shadow mode).
+    # Active downgrade (H.2) comes after Friday May 29 outcome data validates the rule.
+    # Spec: docs/phase_2H_overlay_spec.md
+    today_overlay_downgraded = 0
+    today_overlay_reason = None
+    OVERLAY_THRESHOLD = float(os.environ.get("ML_QUANT_OVERLAY_THRESHOLD", "0.10"))
+    OVERLAY_ENABLED = os.environ.get("ML_QUANT_OVERLAY_ENABLED", "shadow")
+    if (today_signal == "BUY" and horizon == 5
+        and today_prob_pct7 is not None
+        and today_prob_pct7 < OVERLAY_THRESHOLD):
+        today_overlay_downgraded = 1
+        today_overlay_reason = f"prob_pct7={today_prob_pct7:.3f} < {OVERLAY_THRESHOLD:.2f}"
+        if OVERLAY_ENABLED == "active":
+            today_signal = "HOLD"
+            import logging as _ov_log
+            _ov_log.getLogger("signals.generator").warning(
+                f"  ⚠ {ticker} h=5d BUY downgraded by overlay: {today_overlay_reason}"
+            )
+
     # Price forecast using ATR
     current_price   = float(df["close"].iloc[-1]) if "close" in df.columns else None
     atr_val         = float(df["atr"].iloc[-1])   if "atr"   in df.columns else None
@@ -951,6 +975,8 @@ def generate_signals(
         # A/B: cross-sectional GLOBAL prediction (May 23 2026)
         today_prob_up_global=round(float(today_prob_up_global), 4) if today_prob_up_global is not None else None,
         today_prob_pct7=round(float(today_prob_pct7), 4) if today_prob_pct7 is not None else None,
+        today_overlay_downgraded=today_overlay_downgraded,
+        today_overlay_reason=today_overlay_reason,
     )
 
 

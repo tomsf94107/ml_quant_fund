@@ -143,6 +143,8 @@ def log_prediction_to_db(
     prob_eff_uncapped: float | None = None,
     prob_up_global:    float | None = None,
     prob_pct7:         float | None = None,
+    overlay_downgraded: int   | None = None,
+    overlay_reason:    str   | None = None,
 ):
     """Log prediction to accuracy.db for later reconciliation."""
     try:
@@ -169,6 +171,8 @@ def log_prediction_to_db(
             prob_eff_uncapped=prob_eff_uncapped,
             prob_up_global=prob_up_global,
             prob_pct7=prob_pct7,
+            overlay_downgraded=overlay_downgraded,
+            overlay_reason=overlay_reason,
         )
     except Exception as e:
         # No longer silently logged — surface to ERROR level with stack trace.
@@ -427,6 +431,9 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                         prob_up_global=sig.today_prob_up_global,
                         # A/B: PCT7 LGB prediction (May 25 2026, Phase epsilon)
                         prob_pct7=sig.today_prob_pct7,
+                        # Phase 2 H overlay (May 25 2026, shadow mode)
+                        overlay_downgraded=sig.today_overlay_downgraded,
+                        overlay_reason=sig.today_overlay_reason,
                         tier=_tier,
                     )
 
@@ -657,6 +664,9 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                             prob_up_global=sig.today_prob_up_global,
                             # A/B: PCT7 LGB prediction (May 25 2026, Phase epsilon)
                             prob_pct7=sig.today_prob_pct7,
+                            # Phase 2 H overlay (May 25 2026, shadow mode)
+                            overlay_downgraded=sig.today_overlay_downgraded,
+                            overlay_reason=sig.today_overlay_reason,
                             run_date=run_date,
                             is_watchlist=True,
                             tier=_tier,
