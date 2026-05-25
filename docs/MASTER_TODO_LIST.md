@@ -203,3 +203,114 @@ If calibration is NOT fixed:
 - 4-week roadmap items 1.1, 1.2 build on quicksand
 
 **Tomorrow's first action: fix calibration (C1).**
+
+
+---
+
+## UPDATE: May 25 2026 late-night calibration diagnostic + research
+
+### What we found
+
+Reran calibration audit (TODO_calibration_audit_priority.md), filtered to post-May-8
+data with full multiplier logging. Confirmed:
+
+**Component 1 — Raw model miscalibration**
+  h=3 0.65-0.70 bucket (n=64): avg_prob_raw=68.5%, hit=39.1% (-29pp from raw)
+  Model itself over-confident in mid-conviction tickers. NOT a multiplier issue here.
+  Possibly distribution shift since training; isotonic over-fit; or both.
+
+**Component 2 — Multiplier amplification**
+  Net multiplier 1.05-1.08x on >=0.80 BUYs.
+  Compounds over-confidence further, pushes borderline picks into high-conviction bucket.
+  Detail: regime_mult averages 1.05 (likely BULL multiplier); squeeze_mult 1.017; others ~1.00.
+
+**Critical observations**
+  - HOLD calibration is fine (no inflation, all buckets 47-58% hit)
+  - prob_raw at h=3/h=5 BUYs averages 64.0%/63.8% with hit rate 64.0%/63.8%
+    Aggregate-level prob_raw is PERFECTLY calibrated — but bucket-level isn't
+  - h=5 highest-conviction (>=0.80) hit only 40% (-43.6pp error)
+
+### Research: better calibration methods (May 2026 SOTA)
+
+Standard post-hoc calibration methods for binary classifiers:
+
+| Method | Best for | Effort |
+|---|---|---|
+| Platt scaling | Small cal sets (<1000), robust | 2-3 hr |
+| Isotonic regression (CURRENT) | Large cal sets, overfits on tails | (in production) |
+| Beta calibration | Where isotonic overfits | 3-4 hr |
+| Venn-Abers | Distribution-free, non-stationary | 6-8 hr |
+| Box-constrained recalibration | Hard probability bounds + refit | 4-6 hr |
+
+Key findings from recent literature:
+- Monotonic methods preserve ranking but fix systematic over/under-confidence
+- Box-constrained calibration directly addresses both overconfidence AND
+  underconfidence with explicit probability bounds
+- Venn-Abers provides distribution-free validity guarantees, suited for
+  non-stationary financial markets
+
+### REVISED P0 plan (replaces Option E from earlier in this doc)
+
+Original Option E (cap → recalibrate → bucket override) had unknown blast radius
+and weeks of work. Revised plan is faster + more reversible:
+
+**Phase 1 — Disable multipliers (1-2 hr, Tuesday morning)**
+  Add env var ML_QUANT_DISABLE_MULTIPLIERS. Set BUY threshold on prob_raw.
+  Continue logging prob_eff for shadow comparison.
+  Eliminates Component 2 instantly. Reversible.
+
+**Phase 2 — Platt scaling on PCT7 (2-3 hr, Tuesday afternoon)**
+  Replace isotonic calibration with Platt scaling (CalibratedClassifierCV
+  method='sigmoid'). Platt is the original post-hoc method, robust on small
+  calibration sets where isotonic overfits.
+  Test on PCT7 first (95 features), measure new cal_err before retraining
+  125 per-ticker models.
+
+**Phase 3 — Beta calibration if Platt insufficient (3-4 hr, Wednesday)**
+  If Phase 2 doesn't fully fix Component 1, try beta calibration.
+  Specifically designed for binary classifiers where isotonic over-fits tails.
+
+**Phase 4 — Box-constrained recalibration (4-6 hr, Thursday)**
+  Combines bound enforcement with re-fit. Most thorough fix.
+
+**Phase 5 — Venn-Abers as long-term architecture (8+ hr, future)**
+  Distribution-free validity. Better suited to non-stationary markets.
+
+### Why this revised plan is better
+
+- Phase 1 ships in hours, stops the bleeding immediately
+- Phase 2 uses well-studied alternative (Platt) instead of just re-fitting broken approach
+- Each phase reversible (keep old artifacts)
+- Each phase has clear measurement (cal_err per bucket)
+- Phases are independent (Phase 2 success doesn't depend on Phase 1)
+
+### Rule #1 audit on Phase 1 (env var disable)
+
+(a) Need to find ALL places reading prob_eff vs prob_raw — signals/generator.py and
+    signals/risk_gate.py for BUY decisions, position_sizer.py (not implemented yet),
+    dashboard for display.
+(b) Some downstream code may expect prob_eff != prob_raw; check for ratios/divisions.
+(c) env var ML_QUANT_DISABLE_MULTIPLIERS = clean opt-in flag.
+(d) Verify: compute hypothetical BUY count today with vs without; signal change rate.
+(e) Need to read multiplier compounding code first.
+(f) Run on historical predictions; measure new cal_err per bucket.
+(g) Check earnings gate / risk gate / position sizing for multiplier dependencies.
+(h) code → flag check → conditional → DB → measure.
+(i) End-to-end test before commit.
+
+### Impact on existing plans
+
+- Phase 2 H overlay (shipped tonight): thresholds may need recalibration after
+  Phase 1 disables multipliers. Currently overlay fires when prob_pct7 < 0.10
+  AND today_signal == BUY. If multipliers disabled, fewer BUYs, fewer overlay fires.
+- 4-week roadmap Week 1 items 1.1 (position sizing) and 1.2 (stops) require
+  calibrated prob. They can resume after Phase 1.
+- Phase 2 A (A8 prob as feature) unaffected — A8 trains on cross-sectional rank,
+  not prob_eff.
+
+### Schedule
+
+Tue morning May 26: Phase 1 (disable multipliers via env var)
+Tue afternoon: Phase 2 (Platt scaling on PCT7)
+Wed: Phase 3 (Beta calibration if needed)
+Thu: Phase 4 (box-constrained if needed)
