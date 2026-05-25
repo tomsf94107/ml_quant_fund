@@ -142,6 +142,7 @@ def log_prediction_to_db(
     gate_block:        int   | None = None,
     prob_eff_uncapped: float | None = None,
     prob_up_global:    float | None = None,
+    prob_pct7:         float | None = None,
 ):
     """Log prediction to accuracy.db for later reconciliation."""
     try:
@@ -167,6 +168,7 @@ def log_prediction_to_db(
             gate_block=gate_block,
             prob_eff_uncapped=prob_eff_uncapped,
             prob_up_global=prob_up_global,
+            prob_pct7=prob_pct7,
         )
     except Exception as e:
         # No longer silently logged — surface to ERROR level with stack trace.
@@ -423,6 +425,8 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                         prob_eff_uncapped=sig.today_prob_eff_uncapped,
                         # A/B: GLOBAL cross-sectional prediction (May 23 2026)
                         prob_up_global=sig.today_prob_up_global,
+                        # A/B: PCT7 LGB prediction (May 25 2026, Phase epsilon)
+                        prob_pct7=sig.today_prob_pct7,
                         tier=_tier,
                     )
 
@@ -651,6 +655,8 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                             prob_eff_uncapped=sig.today_prob_eff_uncapped,
                             # A/B: GLOBAL cross-sectional prediction (May 23 2026)
                             prob_up_global=sig.today_prob_up_global,
+                            # A/B: PCT7 LGB prediction (May 25 2026, Phase epsilon)
+                            prob_pct7=sig.today_prob_pct7,
                             run_date=run_date,
                             is_watchlist=True,
                             tier=_tier,

@@ -411,6 +411,7 @@ class SignalResult:
     # ── A/B test of Path A cross-sectional model (May 23 2026) ──────────
     # Per-ticker stays primary; GLOBAL logged for comparison.
     today_prob_up_global:    Optional[float] = None
+    today_prob_pct7:         Optional[float] = None
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -739,6 +740,7 @@ def generate_signals(
     # try/except so GLOBAL failure NEVER affects per-ticker pipeline. See
     # docs/path_a_ab_test_plan.md (May 23 2026).
     today_prob_up_global = None
+    today_prob_pct7 = None
 
     try:
         # Use ensemble if available, fall back to XGB-only
@@ -755,6 +757,16 @@ def generate_signals(
             today_prob_up_global = float(_global_prob_series.iloc[-1])
         except Exception:
             today_prob_up_global = None
+
+        # A/B PCT7 prediction (A1_pct7 artifact). Strictly optional, never breaks pipeline.
+        # Target: fwd_5d_ret >= 0.07. Shadow mode only. See docs/A8_implementation_plan.md
+        # Phase epsilon (ε): log alongside production for 1-2 weeks before promoting.
+        try:
+            from models.ensemble import predict_proba_ensemble as _pred_pct7
+            _pct7_prob_series = _pred_pct7("PCT7", df, horizon=horizon)
+            today_prob_pct7 = float(_pct7_prob_series.iloc[-1])
+        except Exception:
+            today_prob_pct7 = None
     except Exception as e:
         # Return a safe error result rather than crashing the whole dashboard
         empty_metrics = BacktestMetrics(
@@ -938,6 +950,7 @@ def generate_signals(
         today_prob_eff_uncapped=round(float(today_prob_eff_uncapped), 4),
         # A/B: cross-sectional GLOBAL prediction (May 23 2026)
         today_prob_up_global=round(float(today_prob_up_global), 4) if today_prob_up_global is not None else None,
+        today_prob_pct7=round(float(today_prob_pct7), 4) if today_prob_pct7 is not None else None,
     )
 
 
