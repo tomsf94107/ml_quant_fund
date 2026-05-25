@@ -133,6 +133,12 @@ FEATURE_COLUMNS: list[str] = [
     # Regime + credit features
     "vix_5d_above_25", "semi_etf_momentum_60d",
     "igv_vs_sp500_ret_30d", "lqd_hyg_spread",
+    # ── Phase 1 D interaction/normalized features (May 25 2026) ──────────────
+    # 5 features (originally 7; short_self_rank/zscore dropped — constant per ticker)
+    "vol_x_short", "rev_x_low52w",
+    "vol_10d_self_rank",
+    "vol_zscore_60d",
+    "is_squeeze_setup",
 ]
 
 # Institutional features — gated on ML_QUANT_INST_FEATURES env var.

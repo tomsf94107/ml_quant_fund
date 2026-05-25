@@ -1,3 +1,19 @@
+# Status (updated May 25, 2026 17:00 VN)
+
+| Phase | Step | Status | AUC | Notes |
+|---|---|---|---|---|
+| ε (epsilon) | Shadow-log PCT7 | **DEPLOYED** | logged | A1_pct7 model shadow-logged as prob_pct7. accuracy/sink.py, signals/generator.py, scripts/daily_runner.py patched. Verified end-to-end. |
+| 1 | D — Feature interactions | TESTED | marginal | vol_x_short, rev_x_peer, low52w_x_short tested. Top importance ranks but ~0 AUC lift. NOT shipped to production. |
+| 1 | E — A/B tracking | SUPERSEDED by ε | — | ε already does shadow logging. |
+| 2 | A — A8 prob as feature | pending | — | Next: re-train PCT7-INCLUSIVE main model. |
+| 2 | H — Overlay scoring filter | pending | — | Filter BUYs with low prob_pct7. |
+| 3 | B — Position sizing by A8 | pending | — | After Phase 2 validates signal. |
+| 3 | F — Multi-horizon A8 | pending | — | Train h=1, h=3, h=10, h=21. |
+| 4 | G — Sector-conditional A8 | pending | — | Highest expected lift. |
+| 4 | C — Two-stage screener | pending | — | Most invasive. |
+
+# Implementation Plan (original below)
+
 # A8 Implementation Plan: All 8 Alternatives in Phases
 
 Updated: May 25, 2026 (Sunday late evening)

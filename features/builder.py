@@ -128,6 +128,16 @@ OUTPUT_COLUMNS = [
     "semi_etf_momentum_60d",    # SMH ETF 60-day cumulative return
     "igv_vs_sp500_ret_30d",     # IGV vs SPY 30-day spread (software regime)
     "lqd_hyg_spread",           # credit stress: LQD vs HYG 30d spread
+    # ── Phase 1 D interaction/normalized features (May 25 2026) ──────────────
+    # Informed by A8 finding: volatility * short = squeeze; rev_growth signals matter.
+    # All per-ticker, no train/serve mismatch.
+    "vol_x_short",              # A: volatility_10d * short_pct_float
+    "rev_x_low52w",             # A: rev_growth_yoy * low_52w_ratio
+    "vol_10d_self_rank",        # C: rolling 252d rank of own volatility_10d
+    "vol_zscore_60d",           # D: (vol_10d - mean_60d) / std_60d
+    "is_squeeze_setup",         # E: vol_10d > 0.04 AND short_pct_float > 0.10
+    # NOTE: short_self_rank + short_zscore_60d removed May 25 2026 — short_pct_float
+    # is constant per ticker (single yfinance broadcast), so rolling rank/zscore degenerate.
 ]
 
 # ── Institutional darkpool features (UW Lee-Ready flow) ──────────────────────
@@ -1059,6 +1069,38 @@ def build_feature_dataframe(
         except Exception:
             for _col in _INST_FEATURE_COLS:
                 df[_col] = np.nan
+
+    # ── 11d. Phase 1 D — interaction/normalized features (May 25 2026) ───────
+    # Per-ticker only (no train/serve mismatch risk). Informed by A8 finding.
+    try:
+        # Option A: raw-value interactions (heavy-tailed but XGB can handle)
+        _vol = df["volatility_10d"].fillna(0.0)
+        _short = df["short_pct_float"].fillna(0.0)
+        _rev = df["rev_growth_yoy"].fillna(0.0)
+        _low52 = df["low_52w_ratio"].fillna(1.0)  # 1.0 = neutral (1x from 52w low)
+
+        df["vol_x_short"] = _vol * _short
+        df["rev_x_low52w"] = _rev * _low52
+
+        # Option C: rolling self-rank (where does this ticker sit in its own recent history)
+        # NOTE: short_self_rank removed — short_pct_float is constant per ticker.
+        df["vol_10d_self_rank"] = _vol.rolling(252, min_periods=20).rank(pct=True).fillna(0.5)
+
+        # Option D: rolling z-score (deviation from ticker's own baseline)
+        # NOTE: short_zscore_60d removed — short_pct_float is constant per ticker.
+        _vol_mean = _vol.rolling(60, min_periods=20).mean()
+        _vol_std = _vol.rolling(60, min_periods=20).std().replace(0, np.nan)
+        df["vol_zscore_60d"] = ((_vol - _vol_mean) / _vol_std).fillna(0.0).clip(-5, 5)
+
+        # Option E: binary squeeze setup indicator
+        df["is_squeeze_setup"] = ((_vol > 0.04) & (_short > 0.10)).astype(float)
+    except Exception as _e:
+        # Fail loud per Rule #1 (b)
+        import logging as _lg
+        _lg.getLogger(__name__).error(f"interaction features failed for {ticker}: {_e}")
+        for _col in ["vol_x_short", "rev_x_low52w", "vol_10d_self_rank",
+                     "vol_zscore_60d", "is_squeeze_setup"]:
+            df[_col] = 0.0
 
     # ── 12. Enforce output schema ─────────────────────────────────────────────
     # Add any missing columns as 0.0
