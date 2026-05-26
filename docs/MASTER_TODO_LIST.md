@@ -455,3 +455,29 @@ PROPOSED ACTIONS (separately):
 CAVEAT: This was only 30 of 125 tickers. Need full audit before action.
 Some "dead" features may be alive for specific tickers (penny stocks,
 small caps with different dynamics).
+
+
+---
+
+## DECISION: S4 — Inst suppression rule backtest = SKIPPED
+
+Status: FORMAL SKIP (May 26 PM)
+
+CONTEXT: Pending TODO since May 22 was to backtest a post-earnings + negative-inst-flow
+suppression rule using inst_signed_flow_5d + earnings_calendar.
+
+REASONS FOR SKIP:
+  1. Dead-features audit (just completed) shows inst_signed_flow_5d has
+     ZERO LGB importance in 100% of 30 tickers checked.
+  2. Per-ticker models can't extract signal from sparse cross-sectional features.
+  3. Many tickers (BYND, penny stocks, small caps) have NO inst data at all.
+  4. The thesis was untested speculation. Without already-validated signal,
+     no reason to engineer a suppression rule on top.
+
+WHEN TO RECONSIDER:
+  - When GLOBAL model is retrained with full 97 features (this week, post-Pipeline-B)
+  - When inst data depth reaches 6 months (Sept 2026)
+  - If Phase 2 A (A8 prob as feature) shows cross-sectional signal works
+
+This SKIP closes the May 22 TODO item permanently. If reconsidered, re-open as
+NEW task with explicit "audit if signal exists" precondition.
