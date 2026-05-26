@@ -58,3 +58,27 @@ class LGBOnlyResult:
             )
             X = working[self.feature_cols].values.astype(np.float32)
         return self.model.predict(X)
+
+@dataclass
+class GlobalRankerResult:
+    """Wrapper for a trained LightGBMRanker that's predict_proba compatible.
+    
+    Provides predict_proba(X)[:, 1] interface so downstream code can swap
+    classifier -> ranker without changes. Uses sigmoid of raw rank scores
+    normalized by std for output 0-1 range.
+    """
+    ranker: object        # LGBMRanker
+    feature_cols: list
+    horizon: int
+    ticker: str           # always "GLOBAL"
+    metrics: dict
+
+    def predict_proba(self, X):
+        import numpy as np
+        raw = self.ranker.predict(X)
+        s = np.std(raw)
+        if s == 0:
+            s = 1.0
+        proba_up = 1.0 / (1.0 + np.exp(-raw / s))
+        return np.column_stack([1 - proba_up, proba_up])
+
