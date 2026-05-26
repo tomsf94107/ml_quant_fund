@@ -411,7 +411,8 @@ class SignalResult:
 
     # ── A/B test of Path A cross-sectional model (May 23 2026) ──────────
     # Per-ticker stays primary; GLOBAL logged for comparison.
-    today_prob_up_global:    Optional[float] = None
+    today_prob_up_global:        Optional[float] = None
+    today_prob_up_global_ranker: Optional[float] = None
     today_prob_pct7:         Optional[float] = None
     # ── Phase 2 H overlay (May 25 2026): shadow-mode filter on BUYs ──
     today_overlay_downgraded: Optional[int]  = None  # 1 = WOULD have downgraded BUY -> HOLD
@@ -744,6 +745,7 @@ def generate_signals(
     # try/except so GLOBAL failure NEVER affects per-ticker pipeline. See
     # docs/path_a_ab_test_plan.md (May 23 2026).
     today_prob_up_global = None
+    today_prob_up_global_ranker = None
     today_prob_pct7 = None
 
     try:
@@ -761,6 +763,28 @@ def generate_signals(
             today_prob_up_global = float(_global_prob_series.iloc[-1])
         except Exception:
             today_prob_up_global = None
+
+        # A/B v2: GLOBAL_ranker prediction (Path A v2 — LightGBMRanker cross-sectional).
+        # May 26 2026: classifier GLOBAL has near-zero variance, predicting same value
+        # for most large-caps. Ranker uses lambdarank objective grouped by date for
+        # true cross-sectional discrimination. OOS validated: Q5 vs Q1 spread +1.56pp/5d.
+        # See docs/option_c_oos_validation.md. Strictly optional, never breaks pipeline.
+        try:
+            import joblib as _joblib
+            from pathlib import Path as _Path
+            _ranker_path = _Path(__file__).resolve().parent.parent / "models" / "saved" / f"GLOBAL_ranker_{horizon}d.joblib"
+            if _ranker_path.exists():
+                _ranker_result = _joblib.load(_ranker_path)
+                # Build features from last row of df, padded to ranker feature_cols
+                _last = df.iloc[[-1]].copy()
+                for _c in _ranker_result.feature_cols:
+                    if _c not in _last.columns:
+                        _last[_c] = 0.0
+                _X = _last[_ranker_result.feature_cols].fillna(0.0).values
+                _proba = _ranker_result.predict_proba(_X)
+                today_prob_up_global_ranker = float(_proba[0, 1])
+        except Exception:
+            today_prob_up_global_ranker = None
 
         # A/B PCT7 prediction (A1_pct7 artifact). Strictly optional, never breaks pipeline.
         # Target: fwd_5d_ret >= 0.07. Shadow mode only. See docs/A8_implementation_plan.md
@@ -986,6 +1010,7 @@ def generate_signals(
         today_prob_eff_uncapped=round(float(today_prob_eff_uncapped), 4),
         # A/B: cross-sectional GLOBAL prediction (May 23 2026)
         today_prob_up_global=round(float(today_prob_up_global), 4) if today_prob_up_global is not None else None,
+        today_prob_up_global_ranker=round(float(today_prob_up_global_ranker), 4) if today_prob_up_global_ranker is not None else None,
         today_prob_pct7=round(float(today_prob_pct7), 4) if today_prob_pct7 is not None else None,
         today_overlay_downgraded=today_overlay_downgraded,
         today_overlay_reason=today_overlay_reason,

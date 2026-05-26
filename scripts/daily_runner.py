@@ -142,6 +142,7 @@ def log_prediction_to_db(
     gate_block:        int   | None = None,
     prob_eff_uncapped: float | None = None,
     prob_up_global:    float | None = None,
+    prob_up_global_ranker: float | None = None,
     prob_pct7:         float | None = None,
     overlay_downgraded: int   | None = None,
     overlay_reason:    str   | None = None,
@@ -170,6 +171,7 @@ def log_prediction_to_db(
             gate_block=gate_block,
             prob_eff_uncapped=prob_eff_uncapped,
             prob_up_global=prob_up_global,
+            prob_up_global_ranker=prob_up_global_ranker,
             prob_pct7=prob_pct7,
             overlay_downgraded=overlay_downgraded,
             overlay_reason=overlay_reason,
@@ -429,6 +431,7 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                         prob_eff_uncapped=sig.today_prob_eff_uncapped,
                         # A/B: GLOBAL cross-sectional prediction (May 23 2026)
                         prob_up_global=sig.today_prob_up_global,
+                        prob_up_global_ranker=sig.today_prob_up_global_ranker,
                         # A/B: PCT7 LGB prediction (May 25 2026, Phase epsilon)
                         prob_pct7=sig.today_prob_pct7,
                         # Phase 2 H overlay (May 25 2026, shadow mode)
@@ -662,6 +665,7 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                             prob_eff_uncapped=sig.today_prob_eff_uncapped,
                             # A/B: GLOBAL cross-sectional prediction (May 23 2026)
                             prob_up_global=sig.today_prob_up_global,
+                        prob_up_global_ranker=sig.today_prob_up_global_ranker,
                             # A/B: PCT7 LGB prediction (May 25 2026, Phase epsilon)
                             prob_pct7=sig.today_prob_pct7,
                             # Phase 2 H overlay (May 25 2026, shadow mode)
