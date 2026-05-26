@@ -481,3 +481,46 @@ WHEN TO RECONSIDER:
 
 This SKIP closes the May 22 TODO item permanently. If reconsidered, re-open as
 NEW task with explicit "audit if signal exists" precondition.
+
+
+---
+
+## UPDATE: May 26 PM — Path A Layer 3 reveals GLOBAL is broken
+
+scripts/check_global_ab_health.py output for 11-day window:
+
+  | Metric | h=1 | h=3 | h=5 |
+  |--------|-----|-----|-----|
+  | per-ticker std | 0.100 | 0.132 | 0.144 |
+  | GLOBAL std | 0.023 | 0.017 | 0.025 |
+  | Correlation | 0.005 | -0.098 | -0.071 |
+  | Both BUY | 0 | 0 | 0 |
+
+THREE PROBLEMS:
+
+  1. GLOBAL has 5-7x LESS variance than per-ticker
+     std 0.017-0.025 means GLOBAL barely deviates from 0.5 prior.
+     It's essentially predicting "no information."
+
+  2. GLOBAL has NEGATIVE correlation with per-ticker at h=3/h=5
+     Should be ~0 (random) or positive (same signals).
+     Slight negative suggests learned patterns conflict.
+
+  3. GLOBAL hits BUY threshold 0% of the time
+     Per-ticker hits BUY 57-103 per horizon. GLOBAL: 0.
+     A/B comparison invalid until GLOBAL competitive.
+
+INTERPRETATION:
+  GLOBAL model is fundamentally weak. Not just feature-stale (90 vs 97).
+  GLOBAL probably has data scarcity / collinearity / calibration issues.
+
+ACTIONS:
+  1. Retrain GLOBAL after Pipeline B with 97 features (queued)
+  2. After retrain: re-run check_global_ab_health.py
+  3. If GLOBAL std still <0.05: investigate data scarcity / training script
+  4. June 23 Path A decision date may need extension if GLOBAL is broken
+
+KEY DECISION CRITERIA at June 23 STILL VALID:
+  - If GLOBAL hit rate >= per-ticker + 2pp: promote GLOBAL
+  - If GLOBAL never reaches BUY: keep per-ticker, kill A/B
+  - Current trajectory: kill A/B unless retrain dramatically improves
