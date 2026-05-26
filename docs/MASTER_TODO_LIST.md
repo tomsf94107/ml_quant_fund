@@ -362,3 +362,49 @@ Daily_runner will generate signals with multipliers OFF.
   Phase 3 (Beta calibration if needed):         PENDING
   Phase 4 (Box-constrained recalibration):      PENDING
   Phase 5 (Venn-Abers for non-stationary):      DEFERRED
+
+
+---
+
+## UPDATE: May 26 2026 afternoon — Phase 2 calibration plan revised
+
+### Phase 2 deferred until Friday May 29 (post Phase 1 outcomes)
+
+KEY ARCHITECTURAL FINDING:
+  PCT7 model (LGBOnlyResult) has NO post-hoc isotonic calibration.
+  Per-ticker EnsembleResult (XGB+LGB) DOES have isotonic via
+  CalibratedClassifierCV cv=5.
+
+  So 'replace isotonic with Platt' only applies to per-ticker models,
+  which is huge blast radius (125 models).
+
+PHASE 2 DECISION: Wait for Phase 1 outcomes before deciding.
+  Phase 1 (env var disable multipliers) is now generating predictions.
+  In 5 business days (Friday May 29), we'll have outcomes for h=5
+  predictions and can run calibration audit on new data.
+
+  If calibration GOOD after Phase 1: Phase 2 not needed.
+  If calibration STILL broken: proceed to:
+    - Option B: Add Platt scaling to PCT7 (2-3 hr, low risk)
+    - Option D: Bucket-recalibration based on observed hit rates (4-6 hr)
+
+  Right discipline: VERIFY Phase 1 worked before adding Phase 2.
+
+POST-RETRAIN TASKS (queued):
+  1. Retrain GLOBAL models (3 horizons) with 97 features
+  2. Run verify_post_retrain_nvda.sql
+  3. Compare May 26 BUYs vs May 25 (impact of multipliers OFF + insider features)
+
+NEW DATA QUALITY FINDINGS (audit during retrain wait):
+  - BYND/penny stocks have ZERO institutional rows (penny stocks excluded)
+  - All 2.1M institutional rows are dark pool (no lit data)
+  - inst_block_count_7d shows corr(actual_return)=0.156 (weak but non-zero)
+  - inst_block_notional_7d shows corr(actual_return)=-0.123 (counterintuitive)
+  - inst_sweep_count_7d ALWAYS 0 (ingestion broken or sweep filter wrong)
+  - earnings_monitor.db (29MB) NEVER REFERENCED by builder
+  - institutional_holdings (10K rows) NEVER USED in model
+
+ARCHITECTURE NOTE:
+  GLOBAL models still 90 features (trained May 24). Per-ticker now 97
+  features (retrained May 26 PM). Path A A/B comparison invalidated
+  until GLOBAL retrained. Plan: retrain GLOBAL after Pipeline B done.
