@@ -698,6 +698,7 @@ if _wl_cache.exists():
                 _wl_rows.append({
                     "Ticker":   s.get("ticker", ""),
                     "Signal":   s.get("signal", ""),
+                    "Prob Raw": f"{s.get('prob', 0)*100:.1f}%",
                     "Prob Eff": f"{s.get('prob_eff', 0)*100:.1f}%",
                     "Price":    f"${s.get('current_price', 0):.2f}" if s.get("current_price") else "—",
                     "Target ▲": f"${s.get('price_target_up', 0):.2f}" if s.get("price_target_up") else "—",
