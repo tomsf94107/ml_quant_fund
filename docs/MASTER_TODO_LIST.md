@@ -314,3 +314,51 @@ Tue morning May 26: Phase 1 (disable multipliers via env var)
 Tue afternoon: Phase 2 (Platt scaling on PCT7)
 Wed: Phase 3 (Beta calibration if needed)
 Thu: Phase 4 (box-constrained if needed)
+
+
+---
+
+## UPDATE: May 26 2026 — Phase 1 calibration fix + insider_60d shipped
+
+### Phase 1 calibration fix — SHIPPED (commit 2b264e0)
+
+env var `ML_QUANT_DISABLE_MULTIPLIERS=1` opts in to skip the multiplier
+compound. Default behavior unchanged.
+
+A/B test results (4 tickers):
+  BYND: prob_eff 0.824 -> 0.681  (BUY stays BUY, no longer >=0.80)
+  MSFT: 0.606 -> 0.561  (HOLD -> HOLD, no change)
+  QQQ:  0.663 -> 0.631  (BUY -> HOLD, correctly downgraded)
+  BA:   0.666 -> 0.648  (BUY -> HOLD, correctly downgraded)
+
+When env var active: prob_eff = prob_raw, no inflation.
+
+### Insider feature bug — FIXED (commit f13ecf7)
+
+Discovered via BYND audit: model was BLIND to bearish insider selling because
+insider_7d/insider_21d windows were too short to capture quarterly activity.
+
+Real activity invisible:
+  BYND: CFO sold 419K shares ($253K) April 13 — was 42 days ago, INVISIBLE
+  NVDA: -3.2M net insider sells over 60 days — INVISIBLE
+  AAPL: -694K net sells over 60d — 7d window saw 0
+
+Fix:
+  features/builder.py: added insider_60d, insider_90d rolling sums
+  models/classifier.py: added to FEATURE_COLUMNS (95 -> 97 with inst flag)
+  scripts/pipeline_A_ingest.sh: ETL window 7d -> 60d
+  60-day backfill: 349 rows persisted (5.6x more than 7d)
+
+### Pipeline B retrain IN PROGRESS
+
+Launched 14:11 VN time with both env vars set. ~3 hours.
+Will produce 97-feature per-ticker models that USE insider_60d/90d.
+Daily_runner will generate signals with multipliers OFF.
+
+### Status of P0 (calibration foundation)
+
+  Phase 1 (env var to disable multipliers):     ✓ SHIPPED
+  Phase 2 (Platt scaling on PCT7):              PENDING — next after retrain
+  Phase 3 (Beta calibration if needed):         PENDING
+  Phase 4 (Box-constrained recalibration):      PENDING
+  Phase 5 (Venn-Abers for non-stationary):      DEFERRED
