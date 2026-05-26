@@ -634,3 +634,118 @@ WHY OPTIONS NOT CHOSEN:
   Option A (ticker_id): defeats cross-sectional purpose
   Option B (deeper trees): doesn't address feature non-discrimination
   Option D (kill premature): worth trying ranking first
+
+
+---
+
+## UPDATE: May 26 evening — comprehensive doc audit + missing critical items
+
+Reviewed all 27 doc files. Found CRITICAL items not in MASTER_TODO.
+
+### NEW P0 — Per-ticker AUC 0.44 finding (validation_findings_may23.md)
+
+  From May 23 PIT walk-forward (production model on 10,995 outcomes):
+    pooled_oos_auc = 0.4389  (BELOW 0.50 — worse than coin flip)
+    pooled_oos_acc = 0.4832  (random = 50%)
+  
+  If true, per-ticker BUY signals are BELOW CHANCE. The model has negative
+  edge. Today's BUYs aren't reliable.
+  
+  Tonight's bucket-level calibration audit showed prob_raw aggregate is
+  PERFECTLY calibrated (64.0/64.0% h=3). But that's CONDITIONAL on signal
+  being BUY. Aggregate calibration ≠ predictive edge.
+  
+  CRITICAL: investigate this contradiction. Either:
+    (a) The May 23 PIT walk-forward had bug we haven't fixed
+    (b) Per-ticker model is genuinely broken OOS
+    (c) Different test windows show different results (regime dependency)
+
+### NEW P0 — 3-AUC reconciliation (diagnostic_audit_design.md May 23 PRIORITY #1)
+
+  Three OOS AUCs disagree by up to 14pp:
+    Per-ticker PIT production WF: 0.44
+    Per-ticker walk-forward stacks: 0.51-0.53
+    Path A 5-fold validation: 0.58-0.59
+  
+  Cannot make any production decisions until we know which is honest.
+  Was identified as PRIORITY #1 on May 23. Still not done.
+  
+  Tests required (3-5 hours):
+    Test 1: Run PIT WF on GLOBAL (Path A) — does 0.58 hold or collapse?
+    Test 2: Per-ticker WF with same test window as PIT
+    Test 3: Identify leakage in per-ticker setup
+    Test 4: Compare Path A 5-fold split vs PIT logic
+
+### NEW P1 — A8 model best alpha not yet integrated (A8_interpretation_and_action_plan.md)
+
+  A8 = "is ticker in top 10% by 5d forward return" target.
+  OOS AUC = 0.677 (vs per-ticker 0.44, GLOBAL classifier 0.58, ranker top-quintile +1.56pp).
+  
+  A8 is by construction cross-sectional (top-decile membership can't be
+  predicted by macro). Highest verified alpha in the entire codebase.
+  
+  Status:
+    - Spec exists: phase_2A_a8_as_feature_spec.md
+    - Model trained: A8_v2 in models/research/ (not deployed)
+    - Path to production: A8 prob as feature in main model
+    - Effort: 2-3 days
+  
+  Today's Option C ranker is RELATED but different (continuous rank vs
+  top-decile classification). Both could coexist as signals.
+
+### NEW P2 — ROADMAP_HYBRID_ADVISOR.md (May 8 4-week vision)
+
+  Sprint-level breakdown of dashboard UX, continuous sizing, tooltips,
+  manual trade log. Status: design doc, not implementation. Target was
+  May 8 - June 5, 2026 (4 weeks). 
+  
+  Components:
+    - Manual trade log (closed loop on Atom's actual trades)
+    - Continuous position sizing (replace HIGH/MED/LOW tiers)
+    - Tooltips explaining each metric (dyslexia-friendly UX)
+    - Bloomberg/WorldQuant-style hybrid dashboard
+  
+  Most BLOCKED by P0 (need to know if per-ticker has edge before sizing).
+
+### NEW P2 — 8K gating backtest result (8k_gating_backtest_result.md)
+
+  Status: result exists but action unclear. Need to review.
+
+### NEW P3 — Sprint_W1 cost model + survivorship audit
+
+  - Survivorship: CLEAN (verified May 17, no fix needed)
+  - Cost model: SHIPPED to analysis/fitness_scorer.py (may be uncommitted)
+  - h=3/h=5 confidence cap retracted (cap is 0.95, dormant)
+  
+  Verify cost_model is committed (search git log for "cost_model").
+
+### NEW P3 — Session E phase 4 LLM extraction (FUTURE)
+
+  Earnings call transcript LLM extraction. Far future, deferred behind:
+    - Validating current FinBERT signal works
+    - Per-ticker AUC issue resolved
+
+### Doc redundancy / cleanup
+
+Some docs are likely stale or superseded:
+  - audit_findings_may24_morning.md (superseded by evening)
+  - feature_improvement_plan.md (older, partially executed)
+  - decision_per_ticker_interactions_over_cross_sectional_service.md
+    (Option C ranker IS the cross-sectional service we deferred to Q3 — 
+     decision may be reversible if ranker proves itself)
+
+### REVISED PRIORITIES
+
+**P0 (foundation, blockers):**
+  - C3 (NEW): 3-AUC reconciliation
+  - C4 (NEW): Per-ticker AUC 0.44 investigation
+
+**P1 (this week, requires P0):**
+  - S1 evolved: A8 + Ranker integration via Phase 2A
+  - Phase 2H promotion to active (Fri May 29)
+  - Phase ε monitoring (Fri May 29 → Tue Jun 2)
+
+**P2 (deferred until P0 resolved):**
+  - ROADMAP_HYBRID_ADVISOR 4-week dashboard
+  - Drop dead features (F1)
+  - Most 4-week roadmap items
