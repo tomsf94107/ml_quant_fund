@@ -84,7 +84,7 @@ OUTPUT_COLUMNS = [
     "xle_ret_5d", "xlv_ret_5d", "xlf_ret_5d", "xlk_ret_5d",
     "xlu_ret_5d", "xli_ret_5d", "xlp_ret_5d", "xly_ret_5d",
     "sentiment_score",
-    "insider_net_shares", "insider_7d", "insider_21d",
+    "insider_net_shares", "insider_7d", "insider_21d", "insider_60d", "insider_90d",
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
     "is_pandemic",
     # Earnings surprise
@@ -394,7 +394,7 @@ def _vwap(close: pd.Series, volume: pd.Series) -> pd.Series:
 
 # ── Optional signal loaders (all return pd.Series indexed by date) ───────────
 
-def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series]:
+def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series, pd.Series, pd.Series, pd.Series]:
     """
     Load insider trades from Unusual Whales API.
     Routed through features.uw_client (market-hours gated). On gate-closed /
@@ -430,14 +430,16 @@ def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series
         net   = idf.reindex(dates).fillna(0.0).rename("insider_net_shares")
         roll7 = net.rolling(7,  min_periods=1).sum().rename("insider_7d")
         roll21= net.rolling(21, min_periods=1).sum().rename("insider_21d")
-        return net, roll7, roll21
+        roll60= net.rolling(60, min_periods=1).sum().rename("insider_60d")
+        roll90= net.rolling(90, min_periods=1).sum().rename("insider_90d")
+        return net, roll7, roll21, roll60, roll90
 
     except Exception:
         return _load_insider(ticker, dates)
 
 
-def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None) -> tuple[pd.Series, pd.Series, pd.Series]:
-    """Load insider net_shares, 7d rolling, 21d rolling from SQLite."""
+def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None) -> tuple[pd.Series, pd.Series, pd.Series, pd.Series, pd.Series]:
+    """Load insider net_shares + 7d/21d/60d/90d rolling sums from SQLite."""
     zeros = pd.Series(0.0, index=dates)
     try:
         conn = sqlite3.connect(INSIDER_DB)
@@ -456,14 +458,20 @@ def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None)
             )
         conn.close()
         if df.empty:
-            return zeros.copy(), zeros.copy(), zeros.copy()
+            return zeros.copy(), zeros.copy(), zeros.copy(), zeros.copy(), zeros.copy()
         df = df.set_index(df["date"].dt.date)["net_shares"]
         net    = df.reindex(dates).fillna(0.0)
         roll7  = net.rolling(7,  min_periods=1).sum()
         roll21 = net.rolling(21, min_periods=1).sum()
-        return net.rename("insider_net_shares"), roll7.rename("insider_7d"), roll21.rename("insider_21d")
+        roll60 = net.rolling(60, min_periods=1).sum()
+        roll90 = net.rolling(90, min_periods=1).sum()
+        return (net.rename("insider_net_shares"),
+                roll7.rename("insider_7d"),
+                roll21.rename("insider_21d"),
+                roll60.rename("insider_60d"),
+                roll90.rename("insider_90d"))
     except Exception:
-        return zeros.copy(), zeros.copy(), zeros.copy()
+        return zeros.copy(), zeros.copy(), zeros.copy(), zeros.copy(), zeros.copy()
 
 
 def _load_congress(ticker: str, dates: pd.Index) -> pd.Series:
@@ -806,10 +814,12 @@ def build_feature_dataframe(
     if training_mode:
         ins_net, ins_7d, ins_21d = _load_insider(ticker, date_index, as_of=end_str)
     else:
-        ins_net, ins_7d, ins_21d = _load_insider_uw(ticker, date_index)
+        ins_net, ins_7d, ins_21d, ins_60d, ins_90d = _load_insider_uw(ticker, date_index)
     df["insider_net_shares"] = ins_net.values
     df["insider_7d"]         = ins_7d.values
     df["insider_21d"]        = ins_21d.values
+    df["insider_60d"]        = ins_60d.values
+    df["insider_90d"]        = ins_90d.values
 
     # ── 10. Congressional trading ──────────────────────────────────────────────
     # 2026-05-20: congress_net_shares removed from FEATURE_COLUMNS.

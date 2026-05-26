@@ -79,7 +79,7 @@ FEATURE_COLUMNS: list[str] = [
     "xlu_ret_5d", "xli_ret_5d", "xlp_ret_5d", "xly_ret_5d",
     # Alternative data
     "sentiment_score",
-    "insider_net_shares", "insider_7d", "insider_21d",
+    "insider_net_shares", "insider_7d", "insider_21d", "insider_60d", "insider_90d",
     # Risk regime
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
     # Macro regime

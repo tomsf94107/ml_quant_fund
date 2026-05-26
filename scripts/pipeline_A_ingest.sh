@@ -53,7 +53,7 @@ from pathlib import Path
 from data.etl_insider import run_insider_etl
 tickers = [t.strip().upper() for t in Path('tickers.txt').read_text().splitlines()
            if t.strip() and not t.startswith('#')]
-r = run_insider_etl(tickers, days_back=7, verbose=False)
+r = run_insider_etl(tickers, days_back=60, verbose=False)
 total = sum(r.values())
 print(f'insider ETL: {total} rows across {len(tickers)} tickers')
 " > "$LOGDIR/01_insider.log" 2>&1 || fail "Stage 1 (etl_insider)"
