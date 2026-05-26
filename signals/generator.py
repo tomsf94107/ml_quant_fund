@@ -824,7 +824,19 @@ def generate_signals(
     fg_mult = _get_fear_greed_mult()
 
     # Apply risk + sentiment + regime + options flow + squeeze + fear/greed multipliers
-    today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
+    # Phase 1 calibration fix (May 26 2026): opt-in to disable multipliers via env var.
+    # Diagnostic on May 25-26 showed multipliers inflate prob_raw by 1.05-1.08x,
+    # pushing borderline BUYs into the high-conviction bucket where they fail.
+    # See docs/MASTER_TODO_LIST.md Phase 1 + TODO_calibration_audit_priority.md.
+    if os.environ.get("ML_QUANT_DISABLE_MULTIPLIERS", "0") == "1":
+        today_prob_eff = float(sdf["prob"].iloc[-1])
+        # All multipliers set to 1.0 for downstream logging/audit clarity
+        import logging as _cal_log
+        _cal_log.getLogger("signals.generator").debug(
+            f"  [cal] {ticker} h={horizon}d multipliers DISABLED — prob_eff = prob_raw = {today_prob_eff:.4f}"
+        )
+    else:
+        today_prob_eff = float(sdf["prob"].iloc[-1]) * risk_mult * sent_mult * regime_mult * options_mult * squeeze_mult * intraday_mult * fg_mult
     today_prob_eff  = round(min(max(today_prob_eff, 0.0), 0.95), 4)
 
     # Schema v2: capture pre-cap value for SHAP / Sprint 2 audit
