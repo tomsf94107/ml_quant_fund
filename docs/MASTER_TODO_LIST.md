@@ -524,3 +524,58 @@ KEY DECISION CRITERIA at June 23 STILL VALID:
   - If GLOBAL hit rate >= per-ticker + 2pp: promote GLOBAL
   - If GLOBAL never reaches BUY: keep per-ticker, kill A/B
   - Current trajectory: kill A/B unless retrain dramatically improves
+
+
+---
+
+## UPDATE: May 26 PM — GLOBAL root cause + research-based revised plan (E then C)
+
+DIAGNOSTIC:
+  RAW LightGBM predictions BEFORE isotonic calibration:
+    NVDA, AAPL, MSFT, TSLA all give EXACTLY 0.513 (same to 4 decimals!)
+    BYND gives 0.470 (slightly different — penny stock features differ)
+
+  GLOBAL has learned ONE prediction for most large-cap stocks.
+  Pooled classification with shared features makes most stocks look
+  identical to the trees.
+
+ROOT CAUSE:
+  Training pooled on heterogeneous tickers WITHOUT a discrimination signal.
+  Trees can't split on features that don't vary cross-sectionally between
+  large-cap tech (NVDA/AAPL/MSFT/TSLA are too similar in our feature space).
+
+RESEARCH (industry standard for cross-sectional quant):
+  - Hedge funds train RANKING models, not classifiers
+    (predict relative position not absolute up/down)
+  - LightGBM has LambdaRank/LambdaMART for this
+  - Cliff Asness Global Alpha: locate underpriced equities via factor ranking
+  - Yanfu: index-enhanced products via cross-sectional factor models
+
+REVISED PLAN (Option E then Option C):
+
+  STEP E (tonight after Pipeline B, ~30 min):
+    Retrain GLOBAL with 97 features (insider_60d/90d + interactions)
+    Hypothesis: insider features differentiate tickers (BYND -898K vs
+    NVDA -3.2M). If model picks them up, variance increases. If not,
+    confirms the diagnosis.
+
+  STEP C (this week, ~4-6 hours):
+    Refactor GLOBAL as RANKING model via LightGBMRanker(objective='lambdarank')
+    - Group rows by prediction_date (cross-section per day)
+    - Target: rank stocks within each day by future return
+    - Output: percentile 0-1 within day (relative outperformance prob)
+    - Calibrate output to interpretable scale
+    - A/B test against per-ticker as before
+
+  BACKUP (Option F if C is too much work):
+    Use GLOBAL as Phase 2 H-style meta-label filter
+    - GLOBAL serves as confidence check, not primary signal
+    - Shadow mode for 2 weeks before promoting
+
+  KILL (if everything fails):
+    Accept per-ticker is right architecture. Remove Path A A/B logging.
+
+WHY OPTIONS NOT CHOSEN:
+  Option A (ticker_id): defeats cross-sectional purpose
+  Option B (deeper trees): doesn't address feature non-discrimination
+  Option D (kill premature): worth trying ranking first
