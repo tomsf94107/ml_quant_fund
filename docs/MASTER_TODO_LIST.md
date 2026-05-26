@@ -749,3 +749,172 @@ Some docs are likely stale or superseded:
   - ROADMAP_HYBRID_ADVISOR 4-week dashboard
   - Drop dead features (F1)
   - Most 4-week roadmap items
+
+
+---
+
+# ═══════════════════════════════════════════════════════════════════════════
+# SESSION END — May 26 2026 VN (22:30, after 15+ hours)
+# ═══════════════════════════════════════════════════════════════════════════
+
+## ✅ COMPLETED TODAY (15 commits)
+
+### Bug fixes shipped
+- ✅ **C1 — Multiplier inflation** (commit 2b264e0) — env var ML_QUANT_DISABLE_MULTIPLIERS=1
+  - Verified: BYND went from BUY 0.824 (inflated) → HOLD 0.553 (honest)
+  - prob_eff = prob_raw across all predictions
+- ✅ **Insider blindness 60d/90d** (commit f13ecf7) — NVDA -3.2M sells now visible
+- ✅ **GLOBAL classifier broken** (commit 17232e9 → 11254f0) — replaced with LightGBMRanker
+  - OOS validated: Q5 vs Q1 spread +1.56pp / 5d (commit e3790ad)
+  - Integrated into daily_runner shadow logging (commit ce4f0db)
+- ✅ **375 extras_columns warnings → 0** (commit 1a995d6) — R1 refactor via df.attrs
+- ✅ **Dashboard prob_raw column** (commit 3fd71c6) — R2 done
+
+### Documentation shipped
+- ✅ **MASTER_TODO comprehensive audit** (commit 01b8e53) — found P0 missing items
+- ✅ **Calibration ECE tracker** (commit 4e4649d) — scripts/calibration_metric_tracker.py
+- ✅ **Dead features audit** (commit 83359ba) — 57/97 features dead in >75% of tickers
+- ✅ **S4 inst suppression formally skipped** (commit 1557f5c)
+- ✅ **Phase 2 calibration deferred** (commit df7b36b) — wait for Fri May 29 outcomes
+- ✅ **GLOBAL revised plan** (commit 572deec) — Option E (failed) → Option C (success)
+- ✅ **MASTER_TODO Phase 1 status** (commit a46d8f9)
+
+### Verification completed
+- ✅ **N1 — Pipeline B picks up 97 features** (verified, was 95, +insider_60d/90d)
+- ✅ **N2 — SKIP_TICKERS respected** (verified)
+
+---
+
+## 🔴 LEFT ON TODO LIST — by priority
+
+### P0 — CRITICAL (still unresolved)
+
+#### C3 — Per-ticker AUC 0.44 investigation
+- **Problem:** Per-ticker model OOS AUC = 0.4389 (May 23 PIT WF, 10,995 outcomes)
+- **Below 0.50** — worse than coin flip
+- **Contradiction:** aggregate prob_raw is calibrated 64.0/64.0% h=3
+- **Effort:** 3-5 hours
+- **Trigger:** Wednesday May 27 or sooner if conviction allows
+
+#### C4 — 3-AUC reconciliation (May 23 PRIORITY #1, still not done)
+- Per-ticker PIT: 0.44
+- Per-ticker WF stacks: 0.51-0.53
+- Path A 5-fold: 0.58-0.59
+- **Tests required:** PIT WF on GLOBAL, same-window per-ticker WF, leakage hunt
+- **Effort:** 3-5 hours
+- **Blocks:** all production decisions (P1 below)
+
+### P1 — IN FLIGHT (this week, scheduled)
+
+#### S2 — Phase 2 H promote to active (Fri May 29 EOD)
+- Status: shadow mode, 5 BD outcomes due Friday
+- Action: run monitor_pct7_ab.py, decide if PCT7 filter ready
+
+#### S3 — Phase ε monitoring (Fri May 29 EOD)
+- First 127 outcomes from Tue May 25 BUYs arrive Friday
+- Action: validate prob_pct7 vs actual hit rate
+
+#### C2 — Calibration verification post-fix (Tue Jun 2)
+- First h=5 outcomes for today's predictions
+- Re-run calibration audit with multipliers OFF + insider features
+- Compare ECE before/after
+
+#### Phase 2 A — A8 prob as feature (NEW from doc audit)
+- A8 has OOS AUC 0.677 (best signal in codebase)
+- Model trained (`models/research/A8_v2_*`), spec exists
+- Effort: 2-3 days
+- Target: next week
+
+#### Ranker A/B decision (Fri Jun 5, one week of data)
+- Compare per-ticker BUYs alone vs ranker-confirmed BUYs
+- Decision: filter (Phase 2 H style), promote, or kill
+
+### P2 — NEAR-TERM (this/next week)
+
+#### F1 — Drop dead features (skipped tonight, high-risk)
+- 57/97 features dead in >75% of tickers (audit complete)
+- Risk: features dead in 30 sampled tickers may be alive in others
+- Effort: 1-2 hours with proper cross-validation
+- Defer until: P0 resolved (then we'll trust the AUC math)
+
+#### A2/A3/A4 — Path A A/B observability layers
+- Layer 1 bootstrap check (done — verified models load)
+- Layer 2 daily summary (in code, needs verification)
+- Layer 3 health script (in code)
+- Decision: June 23
+
+### P3 — DEFERRED (BLOCKED by P0)
+
+#### ROADMAP_HYBRID_ADVISOR.md 4-week vision (May 8)
+- Sprint W1: position sizing by prob_eff bucket
+- Sprint W2: portfolio-level risk, volatility-scaled sizing
+- Sprint W3: alpha research, A8 deployment
+- Sprint W4: operational maturity, manual trade log
+- **All blocked** until C3/C4 resolved — can't size positions on negative-edge signals
+
+### P4 — FUTURE PHASES (4-8 weeks)
+
+- Sector ETF features expansion (high ROI per doc)
+- FinBERT historical backfill
+- pc_ratio_change_5d + iv_skew_change features
+- Cross-ticker 8-K alpha exploitation
+- Option G cross-sectional service (Q3 2026)
+- Inst features reconsideration (Sept 15)
+
+### P5 — CLEANUP / COSMETIC
+
+- Audit ALTER TABLE migrations for missing columns
+- Cleanup apply_*.py scripts in repo root
+- ✅ Suppress extras_columns warning (DONE today via R1)
+
+### P6 — FAR FUTURE
+
+- Session E phase 4: LLM extraction from earnings transcripts
+- Q3+ alpha research
+
+---
+
+## 📅 SCHEDULED CHECKPOINTS
+
+| Date | Event |
+|---|---|
+| **Wed May 27** | Verify last night's automated Pipeline B/C succeeded with ranker logging |
+| **Fri May 29 EOD** | Phase 2 H promote decision + Phase ε first outcomes |
+| **Tue Jun 2** | First h=5 outcomes for May 26 predictions |
+| **Fri Jun 5** | One-week ranker A/B decision |
+| **Mon Jun 8** | First A8 deployment (if not blocked by P0) |
+| **Mon Jun 23** | Path A A/B final decision |
+
+---
+
+## 🎯 IMMEDIATE NEXT STEPS (Wed May 27 morning)
+
+1. Verify Pipeline C completed last night
+2. Confirm `prob_up_global_ranker` populated in today's DB rows
+3. Decide priority: P0 investigation OR continue building (Phase 2A A8)
+4. (Optional, low risk) Run feature_validator.py to check 97-feature consistency
+
+---
+
+## 🧠 ENGINEERING DEBT acquired today
+
+- We added `ML_QUANT_DISABLE_MULTIPLIERS` env var (Rule #1(a): flags=debt)
+  - Plan to audit/remove: after Friday's outcomes prove Phase 1 is correct
+- We added `df.attrs['feature_cols']` metadata — fragile in pandas
+  - Tested: copy/iloc/fillna/reset_index/column-add all preserve
+  - Not tested: groupby/merge (not used in our path)
+  - Monitor: if any pipeline starts emitting noise again, attrs were stripped
+
+---
+
+## 📊 SESSION METRICS
+
+- **Commits:** 15
+- **Files changed:** ~12 (builder, ensemble, generator, sink, daily_runner, classifier, dashboard, wrappers, multiple docs)
+- **New files created:** 6 (train_global_ranker.py, calibration_metric_tracker.py, post_pipeline_B_retrain_global.sh, verify_post_retrain_nvda.sql, option_c_oos_validation.md, session_may26_learnings.md)
+- **Models trained:** 130 (126 per-ticker + 1 GLOBAL classifier × 3 horizons + 3 GLOBAL rankers)
+- **Tests run:** Pipeline B full retrain, Pipeline C in flight, 3-ticker integration test
+- **Bugs uncovered:** GLOBAL classifier non-discriminative, 57 dead features, per-ticker negative OOS AUC contradiction
+- **Lines added to MASTER_TODO:** ~250
+
+End of May 26 session checkpoint.
