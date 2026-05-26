@@ -89,8 +89,19 @@ class EnsembleResult:
         for c in cols:
             if c not in working.columns:
                 working[c] = 0.0
-        # Warn (and filter) about columns the df has but model doesn't know
-        extra = [c for c in working.columns if c not in set(cols) and c not in ('date', 'ticker')]
+        # R1 refactor (May 26 2026): use df.attrs['output_only_cols'] if set by
+        # build_feature_dataframe to identify KNOWN non-feature columns
+        # (close, volume, macd_signal, expected_move_perc, etc.) so we don't
+        # warn 375x per pipeline run for them.
+        # Only warn for UNKNOWN extras (real bug class: silent feature mismatch).
+        # If attrs missing, fall back to original behavior.
+        known_output_only = set(X.attrs.get('output_only_cols', [])) if hasattr(X, 'attrs') else set()
+        extra = [
+            c for c in working.columns
+            if c not in set(cols)
+            and c not in ('date', 'ticker')
+            and c not in known_output_only  # suppress known non-features
+        ]
         if extra:
             import logging as _lg
             _lg.getLogger(__name__).warning(

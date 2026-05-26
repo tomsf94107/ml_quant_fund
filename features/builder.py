@@ -1124,6 +1124,24 @@ def build_feature_dataframe(
     required_non_null = ["close", "ma_20", "rsi_14", "macd", "bb_upper"]
     df = df.dropna(subset=required_non_null).reset_index(drop=True)
 
+    # ── R1 refactor (May 26 2026): attach feature_cols list as metadata ──
+    # Downstream callers (predict_proba, train_ensemble) can use this to
+    # select only model-input columns, suppressing the extras_columns warning
+    # for known non-feature columns like close, volume, macd_signal, etc.
+    # Note: df.attrs is fragile — gets stripped by many pandas ops (groupby,
+    # merge, etc.). predict_proba MUST have a fallback to self.feature_cols.
+    try:
+        from models.classifier import FEATURE_COLUMNS as _FC
+        _fc_set = set(_FC)
+        # feature_cols = the MODEL INPUTS (97 cols when inst flag on)
+        df.attrs['feature_cols'] = list(_FC)
+        # output_only_cols = OUTPUT_COLUMNS - FEATURE_COLUMNS - {'date','ticker'}
+        # These are diagnostic/dashboard cols that downstream models should NOT warn about
+        df.attrs['output_only_cols'] = [c for c in df.columns if c not in _fc_set and c not in ('date', 'ticker')]
+        df.attrs['feature_cols_set_by'] = 'build_feature_dataframe'
+    except Exception:
+        pass  # If FEATURE_COLUMNS import fails, just skip — non-critical metadata
+
     return df
 
 
