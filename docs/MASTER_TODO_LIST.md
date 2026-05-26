@@ -408,3 +408,50 @@ ARCHITECTURE NOTE:
   GLOBAL models still 90 features (trained May 24). Per-ticker now 97
   features (retrained May 26 PM). Path A A/B comparison invalidated
   until GLOBAL retrained. Plan: retrain GLOBAL after Pipeline B done.
+
+
+---
+
+## UPDATE: May 26 PM — DEAD FEATURES AUDIT
+
+Audited LGB feature importance across 30 per-ticker models (h=5).
+
+CRITICAL FINDING: Only 1 of 97 features (lqd_hyg_spread) is alive in >80%
+of tickers. 57 features are zero in >75% of models.
+
+DEAD-EVERYWHERE FEATURES (100% zero across 30 tickers):
+  - sentiment_score (FinBERT investment was wasted??)
+  - All 4 inst features (inst_signed_flow_5d/30d, inst_block_buy_sell_7d, inst_auction_imbal_5d)
+  - All FinBERT features (finbert_sentiment, finbert_sentiment_earnings)
+  - All earnings-surprise features (eps_surprise, rev_surprise)
+  - All post-earnings drift features (post_earnings_1d/3d/5d)
+  - is_squeeze_setup (the interaction we shipped yesterday)
+  - All rev_growth features (rev_growth_yoy, qoq)
+  - All risk multiplier inputs (risk_today, risk_next_*)
+  - All short features (short_ratio, short_pct_float)
+  - Many calendar/regime features (monday_sentiment, day_of_week, is_month_end, vix_5d_above_25)
+
+INSIGHT: AAPL's insider_60d was top-5 because AAPL had -694K activity.
+Other tickers with 0 insider activity got 0 importance. Per-ticker models
+can't learn from a sparse signal. 77% of tickers had zero insider_60d in
+last 60 days.
+
+IMPLICATIONS:
+  1. Per-ticker model effectively uses ~20 features per ticker, not 97
+  2. GLOBAL model (cross-sectional pooled) should benefit more from these
+  3. PCT7 trains pooled — similar advantage
+  4. Adding features to per-ticker is wasted effort if they're sparse globally
+
+PROPOSED ACTIONS (separately):
+  A. Drop confirmed-dead features from FEATURE_COLUMNS to reduce noise
+     - Estimated 30-50 features could go without loss
+     - Keep: bb_lower, igv_vs_sp500_ret_30d, xlv_ret_5d, lqd_hyg_spread,
+       insider_60d, rsi_14, atr, return_5d, vol_surge_eod, eightk_other_events_30d,
+       ma_5/20/50, vwap, days_to_earnings, vix_close, yield_10y, macd, bb_width,
+       obv, xlk_ret_5d, premarket_gap
+  B. Train GLOBAL model with all 97 features (cross-sectional advantage)
+  C. Use PCT7 as cross-sectional anchor for the new sparse features
+
+CAVEAT: This was only 30 of 125 tickers. Need full audit before action.
+Some "dead" features may be alive for specific tickers (penny stocks,
+small caps with different dynamics).
