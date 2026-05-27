@@ -161,6 +161,16 @@ _INST_FEATURE_COLS = [
 if _INST_FEATURES_ENABLED:
     OUTPUT_COLUMNS = OUTPUT_COLUMNS + _INST_FEATURE_COLS
 
+# ── MISSING-INDICATOR columns for sparse features (May 27 2026, Phase 2) ──
+# When ML_QUANT_MISSING_INDICATORS=1, builder emits {feature}_has_value
+# binary columns alongside the 4 inst_* features. Trees split on 'data present?'
+# vs 'value when present' independently. Mirrors classifier.py SPARSE_INDICATOR_COLS.
+_MISSING_INDICATORS_ENABLED = os.environ.get("ML_QUANT_MISSING_INDICATORS", "0") == "1"
+_SPARSE_FEATURE_COLS = _INST_FEATURE_COLS  # 4 inst features that get indicators
+_SPARSE_INDICATOR_COLS = [f"{c}_has_value" for c in _SPARSE_FEATURE_COLS]
+if _MISSING_INDICATORS_ENABLED:
+    OUTPUT_COLUMNS = OUTPUT_COLUMNS + _SPARSE_INDICATOR_COLS
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PRIVATE HELPERS
@@ -1130,10 +1140,19 @@ def build_feature_dataframe(
     # for known non-feature columns like close, volume, macd_signal, etc.
     # Note: df.attrs is fragile — gets stripped by many pandas ops (groupby,
     # merge, etc.). predict_proba MUST have a fallback to self.feature_cols.
+    # Compute missing-value indicators for sparse features (Phase 2)
+    if _MISSING_INDICATORS_ENABLED:
+        for _sparse_col in _SPARSE_FEATURE_COLS:
+            _ind_col = f"{_sparse_col}_has_value"
+            if _sparse_col in df.columns:
+                df[_ind_col] = df[_sparse_col].notna().astype(int)
+            else:
+                df[_ind_col] = 0  # source feature absent → has_value=0
+
     try:
         from models.classifier import FEATURE_COLUMNS as _FC
         _fc_set = set(_FC)
-        # feature_cols = the MODEL INPUTS (97 cols when inst flag on)
+        # feature_cols = the MODEL INPUTS (97 cols when inst flag on, 101 with indicators)
         df.attrs['feature_cols'] = list(_FC)
         # output_only_cols = OUTPUT_COLUMNS - FEATURE_COLUMNS - {'date','ticker'}
         # These are diagnostic/dashboard cols that downstream models should NOT warn about

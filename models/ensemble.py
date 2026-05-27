@@ -109,7 +109,9 @@ class EnsembleResult:
                 f"horizon={getattr(self, 'horizon', '?')} extras={extra[:5]}{'...' if len(extra) > 5 else ''} "
                 f"(retrain to use)"
             )
-        working[cols] = working[cols].fillna(working[cols].median())
+        # ML_QUANT_NATIVE_NAN=1: skip fillna (Phase 1, May 27 2026)
+        if os.environ.get("ML_QUANT_NATIVE_NAN", "0") != "1":
+            working[cols] = working[cols].fillna(working[cols].median())
         Xf = working[cols]
 
         p_xgb = self.xgb_model.predict_proba(Xf)[:, 1]

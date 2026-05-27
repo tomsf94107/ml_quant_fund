@@ -153,6 +153,22 @@ if _os_for_inst.environ.get("ML_QUANT_INST_FEATURES", "0") == "1":
         "inst_signed_flow_5d",
     ]
 
+# ── SPARSE FEATURE MISSING-INDICATORS (May 27 2026, Phase 2) ──────────────────
+# Features with <50% temporal coverage. When ML_QUANT_MISSING_INDICATORS=1,
+# builder adds {feature}_has_value (1/0) columns alongside these.
+# Trees can then split on 'is data present?' AND 'value' separately.
+# Mirrors the ML_QUANT_INST_FEATURES gate pattern above.
+SPARSE_FEATURES = [
+    "inst_block_buy_sell_7d",
+    "inst_signed_flow_30d",
+    "inst_auction_imbal_5d",
+    "inst_signed_flow_5d",
+]
+SPARSE_INDICATOR_COLS = [f"{c}_has_value" for c in SPARSE_FEATURES]
+
+if _os_for_inst.environ.get("ML_QUANT_MISSING_INDICATORS", "0") == "1":
+    FEATURE_COLUMNS = FEATURE_COLUMNS + SPARSE_INDICATOR_COLS
+
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
 
 # ── XGBoost hyperparameters ───────────────────────────────────────────────────
@@ -313,9 +329,13 @@ def _prepare_xy(
     working = df[FEATURE_COLUMNS + [target_col]].dropna(subset=[target_col]).copy()
 
     # Fill any remaining NaNs in features with column median (safe for XGB)
-    working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
-        working[FEATURE_COLUMNS].median()
-    )
+    # ML_QUANT_NATIVE_NAN=1: skip fillna, let XGB/LGB handle natively (May 27 2026 — Phase 1)
+    # Rationale: median-fill destroys sparse-feature signal (inst_*). Trees natively
+    # learn split direction for missing values per feature.
+    if os.environ.get("ML_QUANT_NATIVE_NAN", "0") != "1":
+        working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
+            working[FEATURE_COLUMNS].median()
+        )
 
     X = working[FEATURE_COLUMNS]
     y = working[target_col].astype(int)
@@ -509,9 +529,11 @@ def predict_proba(
         if c not in working.columns:
             working[c] = 0.0
 
-    working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
-        working[FEATURE_COLUMNS].median()
-    )
+    # ML_QUANT_NATIVE_NAN=1: skip fillna (Phase 1, May 27 2026)
+    if os.environ.get("ML_QUANT_NATIVE_NAN", "0") != "1":
+        working[FEATURE_COLUMNS] = working[FEATURE_COLUMNS].fillna(
+            working[FEATURE_COLUMNS].median()
+        )
 
     proba = result.model.predict_proba(working[FEATURE_COLUMNS])[:, 1]
     return pd.Series(proba, index=df.index, name=f"prob_up_{horizon}d")
