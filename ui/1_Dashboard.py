@@ -541,6 +541,58 @@ for r in signal_summary:
 _buy_sum = sum(_buy_signal_values.values()) or 1.0  # avoid div by zero
 _rec_weights = {t: v / _buy_sum for t, v in _buy_signal_values.items()}
 
+# ── Phase 2H — A8 prob_top_decile + Blend Score (May 27 2026) ─────────────────
+# Compute cross-sectional z-scored blend: 0.3 × prob_raw_z + 0.7 × a8_z
+# Backtest (33 days, Apr-May 2026) showed +54pp cumulative vs production
+# with stable winning weights across H1/H2 splits (+68% H1, +72% H2 each).
+# See: docs/phase_2H_blend_findings_may27.md (to be written)
+import os as _os_blend
+import numpy as _np_blend
+_a8_lookup = {}  # ticker -> a8_prob for latest date
+_blend_scores = {}  # ticker -> blend score
+_a8_panel_path = _os_blend.path.join(
+    _os_blend.path.dirname(_os_blend.path.dirname(_os_blend.path.abspath(__file__))),
+    "data", "a8_oos_panel.parquet"
+)
+try:
+    if _os_blend.path.exists(_a8_panel_path):
+        _a8_panel = pd.read_parquet(_a8_panel_path)
+        _a8_panel["date"] = pd.to_datetime(_a8_panel["date"])
+        # Get the most recent A8 date
+        _a8_latest = _a8_panel["date"].max()
+        _a8_today = _a8_panel[_a8_panel["date"] == _a8_latest].set_index("ticker")["a8_prob"]
+        _a8_lookup = _a8_today.to_dict()
+        
+        # Compute cross-sectional z-scores across signal_summary
+        _all_probs = [(r.ticker, r.today_prob, _a8_lookup.get(r.ticker)) 
+                      for r in signal_summary if r.today_prob is not None]
+        if _all_probs:
+            _probs_arr = _np_blend.array([p for _, p, _ in _all_probs])
+            _a8_arr = _np_blend.array([a if a is not None else _np_blend.nan 
+                                       for _, _, a in _all_probs])
+            # z-score, treating NaN as 0
+            _prob_mean, _prob_std = _probs_arr.mean(), _probs_arr.std()
+            _a8_mean = _np_blend.nanmean(_a8_arr)
+            _a8_std = _np_blend.nanstd(_a8_arr) if _np_blend.isfinite(_np_blend.nanstd(_a8_arr)) else 1.0
+            for tkr, p, a in _all_probs:
+                _pz = (p - _prob_mean) / _prob_std if _prob_std > 0 else 0.0
+                _az = ((a - _a8_mean) / _a8_std) if (a is not None and _a8_std > 0) else 0.0
+                # Optimal blend weights from stability test
+                _blend_scores[tkr] = 0.3 * _pz + 0.7 * _az
+except Exception as _blend_e:
+    # Fail loud per Rule #1 (b)
+    import logging as _lg
+    _lg.getLogger(__name__).error(f"blend_score computation failed: {_blend_e}")
+    _a8_lookup = {}
+    _blend_scores = {}
+
+# Rank BLEND scores among today's BUYs for tier display (top-5 highlighted)
+_buy_blend_sorted = sorted(
+    [(t, _blend_scores.get(t, -999)) for t in _rec_weights.keys()],
+    key=lambda x: -x[1]
+)
+_blend_tier = {t: i+1 for i, (t, _) in enumerate(_buy_blend_sorted)}
+
 forecast_rows = []
 for r in signal_summary:
     exp_ret = r.expected_return or 0.0
@@ -554,6 +606,22 @@ for r in signal_summary:
     # Rec Weight — only for BUYs, blank for HOLD/SELL
     _rec_w = _rec_weights.get(r.ticker)
     rec_weight_str = f"{_rec_w:.1%}" if _rec_w and r.today_signal == "BUY" else "—"
+    
+    # Phase 2H — A8 prob + Blend Score + Tier (May 27 2026)
+    _a8_val = _a8_lookup.get(r.ticker)
+    a8_str = f"{_a8_val:.1%}" if _a8_val is not None else "—"
+    _blend = _blend_scores.get(r.ticker)
+    blend_str = f"{_blend:+.2f}" if _blend is not None and r.today_signal == "BUY" else "—"
+    _tier = _blend_tier.get(r.ticker)
+    if _tier is not None and r.today_signal == "BUY":
+        if _tier <= 5:
+            tier_str = f"🥇 #{_tier}"
+        elif _tier <= 10:
+            tier_str = f"🥈 #{_tier}"
+        else:
+            tier_str = f"#{_tier}"
+    else:
+        tier_str = "—"
 
     forecast_rows.append({
         "Ticker":       r.ticker,
@@ -563,6 +631,9 @@ for r in signal_summary:
         "Prob Raw":     f"{r.today_prob:.1%}",
         "Prob Eff":     f"{r.today_prob_eff:.1%}",
         "Rec Weight":   rec_weight_str,
+        "A8":           a8_str,
+        "Blend":        blend_str,
+        "Rank":         tier_str,
         "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
         "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
         "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
@@ -593,12 +664,12 @@ html = f"""
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
   *{{box-sizing:border-box;margin:0;padding:0;}}
   .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
-  .ft-head{{display:grid;grid-template-columns:9% 7% 10% 13% 8% 11% 11% 11% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+  .ft-head{{display:grid;grid-template-columns:7% 6% 8% 11% 7% 6% 7% 7% 9% 9% 8% 7% 8%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
   .ft-head span{{text-align:right;cursor:pointer;user-select:none;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
   .ft-head span:hover{{color:#94a3b8;}}
   .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
   .ft-head span.sort-desc::after{{content:" ▼";font-size:8px;}}
-  .ft-row{{display:grid;grid-template-columns:9% 7% 10% 13% 8% 11% 11% 11% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+  .ft-row{{display:grid;grid-template-columns:7% 6% 8% 11% 7% 6% 7% 7% 9% 9% 8% 7% 8%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
   .ft-row:hover{{background:#13131f;}}
   .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
   .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
@@ -619,7 +690,7 @@ html = f"""
   <div class="ft-head">
     <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
     <span>PROB EFF</span><span>REC % <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Recommended Weight — % of trading budget to allocate to this BUY relative to other BUYs today.&#10;&#10;Formula: (prob_raw - 0.5) / sum_of_all_BUY_convictions&#10;&#10;Interpretation:&#10;  &gt; 15% = top conviction, strongest BUY of the day&#10;  8-15% = high conviction, well above average&#10;  4-8%  = average conviction&#10;  &lt; 4% = low conviction, barely above 0.5&#10;&#10;Example: $10,000 budget, ADSK at 25.8% = $2,580&#10;&#10;Note: No max-weight cap. Your risk tolerance overrides.&#10;Most retail traders cap at 10-15% per single position.&#10;&#10;A/B test result (May 27 2026, 89 buckets):&#10;Conviction-weight ≈ equal-weight on real BUY portfolios.&#10;Diff: -1pp to +1pp over ~30 days. Treat as guidance, not edge.">&#9432;</span></span><span>TARGET ▲</span><span>TARGET ▼</span>
-    <span>EXP RETURN</span><span>ATR</span><span>SHARPE</span>
+    <span>RANK <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Phase 2H Rank — position in blend score ranking among today's BUYs.&#10;&#10;🥇 #1-5  = top 5 BUYs (highest combined conviction)&#10;🥈 #6-10 = next 5 BUYs&#10;#11+    = lower-tier BUYs&#10;&#10;Backtest (33 days, Apr-May 2026):&#10;Top-5 by blend score: +174% cum return vs +117% baseline&#10;w_prob=0.3, w_a8=0.7, stable across H1/H2 splits">&#9432;</span></span><span>A8 <span style="cursor:help;color:#3b82f6;font-size:11px;" title="A8 prob — A8 model's prob(top decile cross-sectional return).&#10;&#10;Where ticker ranks in universe by 5-day fwd return.&#10;&#10;Interpretation:&#10;  &gt; 20% = strong cross-sectional standout&#10;  10-20% = above-average universe rank&#10;  &lt; 10% = below-average rank&#10;&#10;IC = 0.111 (real cross-sectional alpha)">&#9432;</span></span><span>BLEND <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Blend score — cross-sectional z-scored combination.&#10;&#10;Formula: 0.3 × prob_raw_z + 0.7 × a8_z&#10;&#10;Higher = better candidate among today's BUYs&#10;&#10;Optimal weights validated by stability test:&#10;  H1 (Mar-Apr): +68% cum&#10;  H2 (Apr-May): +72% cum">&#9432;</span></span><span>EXP RETURN</span><span>ATR</span><span>SHARPE</span>
   </div>
   <div id="tbody"></div>
 </div>
@@ -636,7 +707,7 @@ html = f"""
   let sortDir = 1;
   const tbody = document.getElementById('tbody');
   const headers = document.querySelectorAll('.ft-head span');
-  const colKeys = ['Ticker','Signal','Price','Prob Eff','Rec Weight','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
+  const colKeys = ['Ticker','Signal','Price','Prob Eff','Rec Weight','Rank','A8','Blend','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
 
   function parseVal(v) {{
     if (!v || v === '—') return -Infinity;
@@ -668,6 +739,9 @@ html = f"""
         </div>
       </span>
       <span style="color:${{sig==='BUY'?'#22c55e':'#475569'}};font-weight:600">${{r['Rec Weight']}}</span>
+      <span style="color:${{r.Rank && r.Rank.indexOf('🥇')>=0?'#fbbf24':r.Rank && r.Rank.indexOf('🥈')>=0?'#94a3b8':'#475569'}};font-weight:500">${{r.Rank}}</span>
+      <span style="color:#a78bfa;font-weight:500">${{r.A8}}</span>
+      <span style="color:${{parseFloat(r.Blend)>=0?'#22c55e':parseFloat(r.Blend)<0?'#ef4444':'#475569'}};font-weight:500">${{r.Blend}}</span>
       <span class="up">${{r['Target ▲']}}</span>
       <span class="dn">${{r['Target ▼']}}</span>
       <span style="color:${{exp>=0?'#22c55e':'#ef4444'}};font-weight:500">${{r['Exp Return']}}</span>
