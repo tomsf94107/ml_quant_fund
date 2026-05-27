@@ -171,6 +171,38 @@ _SPARSE_INDICATOR_COLS = [f"{c}_has_value" for c in _SPARSE_FEATURE_COLS]
 if _MISSING_INDICATORS_ENABLED:
     OUTPUT_COLUMNS = OUTPUT_COLUMNS + _SPARSE_INDICATOR_COLS
 
+# ── A8 cross-sectional prob_top_decile feature (Phase 2A, May 27 2026) ────────
+# When ML_QUANT_A8_FEATURE=1, builder reads data/a8_oos_panel.parquet and joins
+# a8_prob_top_decile as a feature column. A8 = top-decile cross-sectional model
+# (OOS AUC 0.677). Per-ticker model learns when A8 conviction boosts/tempers signal.
+#
+# Walk-forward guarantee: each row's a8_prob uses A8 trained on data BEFORE that
+# date (5-day purge), so no look-ahead leakage.
+#
+# Missing values: 2020-01 to 2020-08 (pre-training), or sparse tickers like BYND
+# fall back to 0.10 (universe top-decile base rate).
+_A8_FEATURE_ENABLED = os.environ.get("ML_QUANT_A8_FEATURE", "0") == "1"
+_A8_PANEL_PATH = "data/a8_oos_panel.parquet"
+_A8_PANEL_CACHE = None  # lazy-loaded; cached at module level
+
+def _load_a8_panel():
+    """Lazy-load the A8 OOS panel. Returns DataFrame indexed by (ticker, date)."""
+    global _A8_PANEL_CACHE
+    if _A8_PANEL_CACHE is not None:
+        return _A8_PANEL_CACHE
+    import pandas as pd
+    if not os.path.exists(_A8_PANEL_PATH):
+        # File missing — return empty DataFrame, all lookups will fall to fallback
+        _A8_PANEL_CACHE = pd.DataFrame(columns=["ticker", "date", "a8_prob"])
+        return _A8_PANEL_CACHE
+    df = pd.read_parquet(_A8_PANEL_PATH)
+    df["date"] = pd.to_datetime(df["date"]).dt.date
+    _A8_PANEL_CACHE = df.set_index(["ticker", "date"])["a8_prob"]
+    return _A8_PANEL_CACHE
+
+if _A8_FEATURE_ENABLED:
+    OUTPUT_COLUMNS = OUTPUT_COLUMNS + ["a8_prob_top_decile"]
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PRIVATE HELPERS
@@ -1140,6 +1172,26 @@ def build_feature_dataframe(
     # for known non-feature columns like close, volume, macd_signal, etc.
     # Note: df.attrs is fragile — gets stripped by many pandas ops (groupby,
     # merge, etc.). predict_proba MUST have a fallback to self.feature_cols.
+    # Join A8 prob_top_decile from OOS panel (Phase 2A, May 27 2026)
+    # When ML_QUANT_A8_FEATURE=1, lookup a8_prob from data/a8_oos_panel.parquet
+    # Missing values fall back to 0.10 (universe top-decile base rate)
+    if _A8_FEATURE_ENABLED:
+        try:
+            _a8_panel = _load_a8_panel()
+            if len(_a8_panel) > 0:
+                # _a8_panel is a Series indexed by (ticker, date)
+                # df has a date column; lookup per row
+                _ticker_upper = ticker.upper()
+                df["a8_prob_top_decile"] = df["date"].apply(
+                    lambda d: _a8_panel.get((_ticker_upper, d.date() if hasattr(d, 'date') else d), 0.10)
+                )
+            else:
+                df["a8_prob_top_decile"] = 0.10  # fallback when panel missing
+        except Exception as _a8_e:
+            import logging as _lg
+            _lg.getLogger(__name__).error(f"A8 join failed for {ticker}: {_a8_e}")
+            df["a8_prob_top_decile"] = 0.10
+
     # Compute missing-value indicators for sparse features (Phase 2)
     if _MISSING_INDICATORS_ENABLED:
         for _sparse_col in _SPARSE_FEATURE_COLS:

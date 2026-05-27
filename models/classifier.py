@@ -169,6 +169,14 @@ SPARSE_INDICATOR_COLS = [f"{c}_has_value" for c in SPARSE_FEATURES]
 if _os_for_inst.environ.get("ML_QUANT_MISSING_INDICATORS", "0") == "1":
     FEATURE_COLUMNS = FEATURE_COLUMNS + SPARSE_INDICATOR_COLS
 
+# ── A8 cross-sectional prob_top_decile as feature (Phase 2A, May 27 2026) ──
+# When ML_QUANT_A8_FEATURE=1, builder emits a8_prob_top_decile column from
+# data/a8_oos_panel.parquet (walk-forward, no lookahead). Classifier includes
+# it as 98th (or 102nd with indicators) feature input.
+# Mirrors the ML_QUANT_INST_FEATURES gate pattern above.
+if _os_for_inst.environ.get("ML_QUANT_A8_FEATURE", "0") == "1":
+    FEATURE_COLUMNS = FEATURE_COLUMNS + ["a8_prob_top_decile"]
+
 TARGET_HORIZONS: tuple[int, ...] = (1, 3, 5)
 
 # ── XGBoost hyperparameters ───────────────────────────────────────────────────
