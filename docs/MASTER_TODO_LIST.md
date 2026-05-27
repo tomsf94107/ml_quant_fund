@@ -1,6 +1,6 @@
 # Master Unified TODO List
 
-**Last updated:** May 25, 2026 (Mon end-of-session VN)
+**Last updated:** May 27, 2026 (Wed end-of-session VN, 16 commits today)
 **Sources consolidated:**
 - userMemories (session_reset summaries)
 - docs/TODO_calibration_audit_priority.md
@@ -15,10 +15,65 @@
 
 ---
 
+## RECENTLY CLOSED (May 26-27 2026)
+
+### ✅ C1 — Calibration broken via multipliers (DONE May 26-27)
+- May 26: Deployed `ML_QUANT_DISABLE_MULTIPLIERS=1` env var (commit 2b264e0)
+- May 27: Found `.env` regression where cron didn't load flag (commit 48a97ea)
+- VERIFIED: prob_eff == prob_raw on tonight's Pipeline C output
+- prob_raw column added to dashboard (commit 3fd71c6)
+
+### ✅ R1 — Builder warns about extras (DONE May 26, commit 1a995d6)
+- df.attrs['feature_cols'] + ['output_only_cols'] suppress 375 warnings/run
+
+### ✅ Per-ticker AUC 0.44 panic (RESOLVED May 27, commit 70f219b)
+- Was: window artifact (3 months, 3 regimes)
+- Real per-ticker AUC: 0.51-0.53 multi-year
+- Documented in docs/three_auc_reconciliation_may27.md
+
+### ✅ Neutralizer audit (DONE May 27, commit f75f1ab)
+- Backtested long-only modes
+- Found sector mode adds 3-15pp on small window (regime-inflated)
+- NOT wired to production. Available as dashboard column instead.
+
+### ✅ Dashboard REC % column (DONE May 27, commit c361e84)
+- Conviction-weight position sizing recommendation
+- Tooltip explains interpretation ranges
+- INFORMATIONAL ONLY
+
+### ✅ REC % A/B framework (DONE May 27, commits 3537781 + 8fe8a73)
+- portfolio_returns_ab table (89 rows backfilled)
+- Pipeline B Stage 5 auto-populates nightly
+- **DECISION DATE: Wed Jun 24 2026**
+- Honest finding so far: conviction ≈ equal-weight (<1pp diff)
+
+### ✅ Dead inst features diagnosis (DONE May 27, commit 11b4367)
+- Root cause: temporal coverage (10% of training rows)
+- Not a bug — needs more data history
+- Revisit Q4 2026+ when coverage reaches 30-50%
+
+### ✅ Native NaN + Missing Indicators flags (DONE May 27, commits dcf3e23 + 04427c0)
+- Two flags built and tested per-ticker + ranker
+- Neither helps. native_nan HURTS ranker (-0.28pp).
+- Flags KEPT in code, default OFF for option value
+
+### ❌ S1 / Phase 2A — A8 prob as per-ticker feature (FAILED May 27, commit 5104580)
+- Built complete infrastructure: A8 training script (commit 920d03b),
+  OOS panel generator (62278ee), 93K-row panel data (7c5b801),
+  builder integration (7e65888)
+- Smoke test: a8_prob importance = 0 in all 5 test tickers
+- Root cause: redundant with existing features (rho +0.79 vol_10d, +0.69 vol_5d)
+- A8's alpha exists at CROSS-SECTIONAL level, not per-ticker level
+- See docs/phase_2A_smoke_test_findings_may27.md
+- **A8 OOS panel data REMAINS VALID for Phase 2H/3B/4C**
+
+---
+
 ## P0 — CRITICAL FOUNDATION (blocker, address FIRST)
 
-### C1 — Calibration broken via multipliers
-**Status:** Confirmed May 25 evening. Multiplier system destroys calibration.
+### C1 — Calibration broken via multipliers ✅ DONE
+**Status:** DEPLOYED May 26 + .env fix May 27. See RECENTLY CLOSED section above.
+**Original Status:** Confirmed May 25 evening. Multiplier system destroys calibration.
 **Data:** prob_raw is perfectly calibrated (h=3 64.0/64.0%, h=5 63.8/63.8%).
 prob_eff (after multipliers) miscalibrated by -30 to -43pp at >=0.80 bucket.
 **Action:** Identify destructive multiplier. Options:
@@ -62,7 +117,11 @@ Display prob_raw alongside prob_up in dashboard.
 
 ## P2 — NEAR-TERM (this/next week)
 
-### S1 — Phase 2 A: A8 prob as feature in main model
+### S1 — Phase 2 A: A8 prob as feature in main model ❌ FAILED (May 27)
+See RECENTLY CLOSED section. Redundant with existing features. A8 OOS panel remains
+useful for Phase 2H/3B/4C — these are the next priorities.
+
+### S1 — original entry
 Spec exists. ~2-3 days implementation.
 Walk-forward A8 OOS prediction generator + Pipeline C orchestration.
 
