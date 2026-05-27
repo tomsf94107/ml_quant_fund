@@ -74,4 +74,16 @@ $PYTHON scripts/daily_validator.py --days 30 --fix \
     > "$LOGDIR/04_daily_validator.log" 2>&1 || fail "Stage 4 (daily_validator)"
 log "Stage 4 OK"
 
+# ── Stage 5: REC % A/B backfill (non-critical) ───────────────────────────────
+# Auto-populates portfolio_returns_ab table as outcomes mature.
+# A/B decision date: Wed Jun 24, 2026. Idempotent (INSERT OR REPLACE).
+# Non-critical: failure here does NOT fail the pipeline.
+log "Stage 5: REC % A/B backfill (non-critical)"
+if $PYTHON scripts/backfill_rec_weight_ab.py \
+    > "$LOGDIR/05_rec_ab_backfill.log" 2>&1; then
+    log "Stage 5 OK"
+else
+    log "Stage 5 FAILED (rc=$?) — continuing anyway, A/B backfill is non-critical"
+fi
+
 log "=== PIPELINE B COMPLETE ==="
