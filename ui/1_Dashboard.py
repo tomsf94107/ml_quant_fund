@@ -528,6 +528,19 @@ for i, r in enumerate(signal_summary):
 st.subheader("🎯 Price Forecast Table")
 
 import pandas as pd
+
+# Pre-compute long-only conviction weights for BUY signals (May 27 2026)
+# Formula matches portfolio/neutralizer.py long_only mode:
+#   signal_value_i = max(prob_raw_i - 0.5, 0) for each BUY ticker
+#   weight_i = signal_value_i / sum(signal_value for BUYs)
+# Informational only — does NOT auto-execute. See docs/neutralizer_backtest_findings_may27.md
+_buy_signal_values = {}
+for r in signal_summary:
+    if r.today_signal == "BUY":
+        _buy_signal_values[r.ticker] = max((r.today_prob or 0.0) - 0.5, 0.0)
+_buy_sum = sum(_buy_signal_values.values()) or 1.0  # avoid div by zero
+_rec_weights = {t: v / _buy_sum for t, v in _buy_signal_values.items()}
+
 forecast_rows = []
 for r in signal_summary:
     exp_ret = r.expected_return or 0.0
@@ -538,6 +551,10 @@ for r in signal_summary:
     elif prob >= 0.45: lean = "⬇️ Weak DOWN"
     else:              lean = "⬇️ Strong DOWN"
 
+    # Rec Weight — only for BUYs, blank for HOLD/SELL
+    _rec_w = _rec_weights.get(r.ticker)
+    rec_weight_str = f"{_rec_w:.1%}" if _rec_w and r.today_signal == "BUY" else "—"
+
     forecast_rows.append({
         "Ticker":       r.ticker,
         "Signal":       r.today_signal,
@@ -545,6 +562,7 @@ for r in signal_summary:
         "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
         "Prob Raw":     f"{r.today_prob:.1%}",
         "Prob Eff":     f"{r.today_prob_eff:.1%}",
+        "Rec Weight":   rec_weight_str,
         "Target ▲":     f"${r.price_target_up:.2f}"  if r.price_target_up else "—",
         "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
         "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
@@ -575,12 +593,12 @@ html = f"""
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
   *{{box-sizing:border-box;margin:0;padding:0;}}
   .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
-  .ft-head{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+  .ft-head{{display:grid;grid-template-columns:9% 7% 10% 13% 8% 11% 11% 11% 10% 10%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
   .ft-head span{{text-align:right;cursor:pointer;user-select:none;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
   .ft-head span:hover{{color:#94a3b8;}}
   .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
   .ft-head span.sort-desc::after{{content:" ▼";font-size:8px;}}
-  .ft-row{{display:grid;grid-template-columns:10% 8% 11% 15% 12% 12% 12% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+  .ft-row{{display:grid;grid-template-columns:9% 7% 10% 13% 8% 11% 11% 11% 10% 10%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
   .ft-row:hover{{background:#13131f;}}
   .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
   .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
@@ -600,7 +618,7 @@ html = f"""
 <div class="ft">
   <div class="ft-head">
     <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
-    <span>PROB EFF</span><span>TARGET ▲</span><span>TARGET ▼</span>
+    <span>PROB EFF</span><span>REC % <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Recommended Weight — % of trading budget to allocate to this BUY relative to other BUYs today.&#10;&#10;Formula: (prob_raw - 0.5) / sum_of_all_BUY_convictions&#10;&#10;Interpretation:&#10;  &gt; 15% = top conviction, strongest BUY of the day&#10;  8-15% = high conviction, well above average&#10;  4-8%  = average conviction&#10;  &lt; 4% = low conviction, barely above 0.5&#10;&#10;Example: $10,000 budget, ADSK at 25.8% = $2,580&#10;&#10;Note: No max-weight cap. Your risk tolerance overrides.&#10;Most retail traders cap at 10-15% per single position.">&#9432;</span></span><span>TARGET ▲</span><span>TARGET ▼</span>
     <span>EXP RETURN</span><span>ATR</span><span>SHARPE</span>
   </div>
   <div id="tbody"></div>
@@ -618,7 +636,7 @@ html = f"""
   let sortDir = 1;
   const tbody = document.getElementById('tbody');
   const headers = document.querySelectorAll('.ft-head span');
-  const colKeys = ['Ticker','Signal','Price','Prob Eff','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
+  const colKeys = ['Ticker','Signal','Price','Prob Eff','Rec Weight','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
 
   function parseVal(v) {{
     if (!v || v === '—') return -Infinity;
@@ -649,6 +667,7 @@ html = f"""
           <span style="font-size:9px;color:#2d3748">threshold: 65%</span>
         </div>
       </span>
+      <span style="color:${{sig==='BUY'?'#22c55e':'#475569'}};font-weight:600">${{r['Rec Weight']}}</span>
       <span class="up">${{r['Target ▲']}}</span>
       <span class="dn">${{r['Target ▼']}}</span>
       <span style="color:${{exp>=0?'#22c55e':'#ef4444'}};font-weight:500">${{r['Exp Return']}}</span>
