@@ -918,3 +918,151 @@ Some docs are likely stale or superseded:
 - **Lines added to MASTER_TODO:** ~250
 
 End of May 26 session checkpoint.
+
+
+---
+
+# ═══════════════════════════════════════════════════════════════════════════
+# May 26 — Signal_System_Addendum.docx AUDIT (parallel Claude session)
+# ═══════════════════════════════════════════════════════════════════════════
+
+## Source
+External doc from parallel "monitor session" (Claude + Atom), proposing
+architectural changes to signal system. Audited against codebase + research
+literature (Cohen/Malloy/Pomorski 2012 on insider trade informativeness).
+
+## Verdict
+~40% genuine insight, ~40% post-hoc narrative, ~20% factually wrong.
+Cherry-pick the genuine items; reject the multiplier framework (contradicts
+today's Phase 1 calibration fix).
+
+## VERIFIED facts from doc
+- portfolio/neutralizer.py EXISTS as orphan (7049 bytes, May 14) — not wired
+- features/alpha_transformations.py EXISTS as orphan (10959 bytes, May 13) — not wired
+- earnings_monitor.db has rich tables NEVER consumed by builder:
+    darkpool_prints, form4_parsed, form4_transactions, institutional_holdings,
+    insider_trades, edgar_filings, short_interest_snapshots
+- No cohort feature in builder/classifier
+- pc_ratio, put_call, iv_skew features DO exist in builder (doc's claim was wrong here)
+
+## WRONG/RISKY in doc (reject)
+- 0.967 training / 0.510 live AUC number — NOT from our codebase
+  (our honest WF: h=1 0.511, h=3 0.528, h=5 0.540)
+- 9-row "Confidence Multiplier Framework" — would re-break calibration we just fixed
+- positioning_extremity_dampener — n=1 fit on NVDA May 20, not validated
+- "prediction_features" terminology — not our schema
+
+## NEW ITEMS TO ADD
+
+### P1 NEW — Wire earnings_monitor.db into builder (HIGH ROI)
+
+Currently the monitor DB has 8 tables of rich data we don't consume.
+Most valuable: form4_parsed (insider trades classified), darkpool_prints,
+institutional_holdings.
+
+Tasks:
+  - F1a: Wire form4_parsed → opportunistic vs routine flag (Cohen 2012)
+  - F1b: Wire darkpool_prints → dp_7d_skew, dp_block_count features
+  - F1c: Wire institutional_holdings → quarterly position deltas (handle stale data!)
+
+Effort: 4-6 hours per source after schema discovery
+Validation: walk-forward AUC delta with/without feature, ECE check
+Blocker: Verify schema before each wire (Rule #1g — gap-check subsystem)
+
+### P1 NEW — Opportunistic vs routine insider classification
+
+Research basis: Cohen, Malloy, Pomorski (2012) — "Decoding Inside Information"
+  - Routine trades: predictable monthly pattern, NOT informative
+  - Opportunistic trades: 82bp/month abnormal returns (long-short portfolio)
+  - Both opportunistic BUYS and SELLS predict future returns (asymmetric weights)
+  - 10b5-1 sales = routine (preset plan); CEO discretionary buys = opportunistic
+
+Implementation:
+  - Flag insiders with detectable monthly trading pattern as "routine"
+  - Keep insider_60d/90d net (current) AS WELL AS opportunistic_only variants
+  - Separate features: insider_buy_opp_30d, insider_sell_opp_30d (do NOT net)
+  - CEO/CFO/EVP discretionary flag (P-code, not 10b5-1) as binary
+
+Effort: 2-3 days
+Test cases: NVDA -3.2M (CFO/CEO?), BYND CFO sale, STX CFO+EVP $45.86M
+Validation: separate AUC for opp vs routine; routine should approach 0.50
+
+### P2 NEW — Cohort percentile rank feature
+
+Current state: ranker (Option C, shipped today) already does cross-sectional
+ranking. May be REDUNDANT with this proposal.
+
+Decision needed BEFORE building:
+  - Test if existing ranker captures cohort-rank signal
+  - If yes: skip this feature (redundant)
+  - If no: build as separate feature with sector-ETF grouping
+
+Effort: 1 day (mostly validation, not new code)
+
+### P2 NEW — Ticker collision filter for news
+
+Doc's observation matches our reality. Common collisions:
+  OPEN → "A-SHARE OPEN LOWER" (Chinese market)
+  AI   → word "AI" 
+  S    → generic letter
+  CNC  → "CNC machining"
+  ALK  → "ALK-positive" (cancer drug)
+  UREN → confused with IREN
+
+Fix: per-ticker disambiguation dict
+  - Canonical company name
+  - Allowed context terms (sector, products)
+  - Blacklist phrases
+
+Effort: 1-2 days build + manual curation
+Validation: false-positive rate audit on news catalysts last 30 days
+
+### P2 NEW — Triage orphan modules
+
+portfolio/neutralizer.py and features/alpha_transformations.py exist
+but are not imported anywhere in production path.
+
+Decision per file:
+  (a) Wire into builder/signals — validate works first
+  (b) Formally archive to deprecated/ folder with git note
+  (c) Delete if duplicates existing functionality
+
+Effort: 2-4 hours per file
+Rule #1: audit before flip — gap-check what they do vs existing code
+
+### P3 NEW — 8-K body parsing (already in K2 backlog)
+
+Doc proposes corporate_event_signature feature requiring 8-K body parsing.
+Aligns with existing K2 (cross-ticker 8-K alpha exploitation).
+Effort: 2-3 days for parser; longer for feature validation.
+
+### REJECT explicitly
+
+1. Confidence multiplier framework (Doc §3.2)
+   Reason: contradicts Phase 1 fix (commit 2b264e0). Multipliers destroyed
+   calibration. ECE was 12-21pp pre-fix. Adding 5 more multipliers (monitor
+   confidence, positioning_extremity, insider_cap, news_credibility,
+   cohort_strength) rebuilds the exact problem we removed.
+   Alternative: any "signal" the doc proposes must be a model FEATURE, not
+   a post-model multiplier. Let the model learn the weight via training.
+   ECE must stay <5pp post-deployment.
+
+2. positioning_extremity_dampener (Doc §2.4)
+   Reason: n=1 fit on NVDA May 20. The "stock fell because marginal buyers
+   exhausted" is one hypothesis. Could equally be sell-the-news, macro,
+   profit-taking. Doc proposes "backtest 200 earnings prints" but that's
+   not done — feature is hypothesis, not finding.
+   Reconsider after: someone actually runs the 200-print backtest.
+
+3. News credibility tiering (Doc §3.4)
+   DEFER — requires source-extraction infrastructure we don't have.
+   UW news endpoint returns 404s (per doc). Need data acquisition first.
+
+## CROSS-REFERENCES
+
+Items above relate to existing TODOs:
+  - F1 (drop dead features) ⇄ "orphan modules" decision
+  - K2 (cross-ticker 8-K) ⇄ doc's corporate_event_signature
+  - Phase 2A (A8 as feature) ⇄ separate from this but builds same pattern
+
+End of Signal_System_Addendum audit.
