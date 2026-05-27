@@ -64,3 +64,28 @@ Might show measurable benefit where per-ticker doesn't.
 - models/classifier.py.bak.before_nativenan_20260527
 - models/classifier.py.bak.before_missing_indicators_20260527
 - models/ensemble.py.bak.before_nativenan_20260527
+
+## Ranker A/B (added later same day)
+
+Tested same flags on GLOBAL ranker (97,057 pooled rows, h=5).
+
+| Config | Q5-Q1 Spread | vs default | Inst Imp | Ind Imp |
+|---|---|---|---|---|
+| default | +1.041pp | baseline | 0 | 0 |
+| native_nan | +0.761pp | -0.28pp | 0 | 0 |
+| indicators | +1.041pp | identical | 0 | 0 |
+| both | +0.761pp | -0.28pp | 0 | 0 |
+
+native_nan HURTS the ranker by 0.28pp by preserving NaN in dense features
+(other 93 features that benefit from median-fill).
+
+indicators add nothing — both inst and indicator columns get 0 importance.
+Ranker prefers dense features (volatility, momentum) over sparse inst.
+
+## Updated final verdict
+
+Both flags KEPT in code (default OFF) for future option value.
+Confirmed inert: neither helps per-ticker classifier OR cross-sectional ranker.
+Inst features remain dead at current ~10% coverage.
+
+Decision: revisit if inst data coverage reaches 30-50% (probably 2026 Q4 or 2027).
