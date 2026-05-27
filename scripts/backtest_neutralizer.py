@@ -37,12 +37,15 @@ HORIZON_DAYS = {1: 1, 3: 3, 5: 5}
 TRADING_DAYS_PER_YEAR = 252
 
 
-def load_data(horizon: int, n_days: int) -> tuple[pd.DataFrame, dict]:
+def load_data(horizon: int, n_days: int, use_prob_raw: bool = False) -> tuple[pd.DataFrame, dict]:
     """Load predictions+outcomes joined on (ticker, prediction_date, horizon)."""
     with sqlite3.connect(DB_PATH) as conn:
+        # Use prob_raw if requested (honest, multiplier-free)
+        # COALESCE allows fallback to prob_up when prob_raw is NULL (old rows)
+        prob_col = "COALESCE(p.prob_raw, p.prob_up)" if use_prob_raw else "p.prob_up"
         df = pd.read_sql(
-            """
-            SELECT p.prediction_date, p.ticker, p.horizon, p.prob_up,
+            f"""
+            SELECT p.prediction_date, p.ticker, p.horizon, {prob_col} AS prob_up,
                    o.actual_return
             FROM predictions p
             JOIN outcomes o
@@ -69,7 +72,7 @@ def load_data(horizon: int, n_days: int) -> tuple[pd.DataFrame, dict]:
 
 
 def compute_portfolio_returns(
-    data: pd.DataFrame, sector_map: dict, mode: str
+    data: pd.DataFrame, sector_map: dict, mode: str, long_only: bool = False
 ) -> pd.DataFrame:
     """Return DataFrame [date, portfolio_return] across all backtest dates."""
     daily_returns = []
@@ -81,7 +84,7 @@ def compute_portfolio_returns(
         # Build portfolio: input is predictions_df with prediction_date/ticker/horizon/prob_up
         preds = group[["prediction_date", "ticker", "horizon", "prob_up"]].copy()
         pf = build_research_portfolio(
-            preds, sector_map=sector_map, mode=mode, long_only=False
+            preds, sector_map=sector_map, mode=mode, long_only=long_only
         )
 
         if pf.empty:
@@ -156,23 +159,25 @@ def aggregate_stats(returns_df: pd.DataFrame, horizon: int) -> dict:
     }
 
 
-def run_backtest(horizon: int, n_days: int):
+def run_backtest(horizon: int, n_days: int, long_only: bool = False, use_prob_raw: bool = False):
     """Run backtest for one horizon and print results."""
-    data, sector_map = load_data(horizon, n_days)
+    data, sector_map = load_data(horizon, n_days, use_prob_raw=use_prob_raw)
 
     if data.empty:
         print(f"No data for horizon={horizon}")
         return
 
     print(f"\n{'=' * 78}")
-    print(f"BACKTEST — horizon={horizon}d, last {n_days} prediction days")
+    mode_label = "LONG-ONLY" if long_only else "LONG/SHORT"
+    prob_label = "prob_raw" if use_prob_raw else "prob_up"
+    print(f"BACKTEST — horizon={horizon}d, last {n_days} prediction days, {mode_label}, signal={prob_label}")
     print(f"Total rows: {len(data)}, unique dates: {data['prediction_date'].nunique()}")
     print(f"Date range: {data['prediction_date'].min()} → {data['prediction_date'].max()}")
     print(f"{'=' * 78}")
 
     results = []
     for mode in ["none", "sector", "dollar"]:
-        returns_df = compute_portfolio_returns(data, sector_map, mode)
+        returns_df = compute_portfolio_returns(data, sector_map, mode, long_only=long_only)
         stats = aggregate_stats(returns_df, horizon)
         stats["mode"] = mode
         results.append(stats)
@@ -196,11 +201,15 @@ def main():
     parser.add_argument("--days", type=int, default=30, help="Recent N prediction days")
     parser.add_argument("--horizon", type=int, default=3, choices=[1, 3, 5])
     parser.add_argument("--all-horizons", action="store_true", help="Run all 3 horizons")
+    parser.add_argument("--long-only", action="store_true",
+                        help="Use long-only mode (clip negative weights, normalize to 1.0). For non-shorting operators.")
+    parser.add_argument("--use-prob-raw", action="store_true",
+                        help="Use prob_raw (multiplier-free, honest probabilities) instead of prob_up.")
     args = parser.parse_args()
 
     horizons = [1, 3, 5] if args.all_horizons else [args.horizon]
     for h in horizons:
-        run_backtest(h, args.days)
+        run_backtest(h, args.days, long_only=args.long_only, use_prob_raw=args.use_prob_raw)
 
 
 if __name__ == "__main__":
