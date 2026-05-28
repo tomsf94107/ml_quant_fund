@@ -40,6 +40,20 @@ Lesson: first test +0.53pp, rigor +0.17pp — trust the more rigorous one.
   doesn't help. 4G v2 now CLOSED (marginal as filter, flat as sizer).
   Sector+A8 combos (4G, 4G v2) and A8 sizing (3B) all explored — none beat
   universe-wide A8 selection + existing Kelly sizer.
+
+- 4C — Two-stage screener: A8 selects top-20 -> per-ticker model picks 5.
+  ★ NEXT BIG BUILD. WHY RIGHT SHAPE: today's negatives (4G, 3B) showed A8
+  can't be pushed to do MORE; 4C uses A8 for SELECTION only + per-ticker
+  model for refinement = two different signals. Consistent with "A8=selection".
+  CAN'T backtest offline cleanly (per-ticker preds only ~2.5mo); spec gate is
+  SHADOW TRADING — it's a live experiment by nature. Mirror Phase 2H pattern.
+  TIMELINE (concrete):
+    Phase 1 BUILD shadow mode in generator.py: Fri May 29 / Sat May 30 (~half day)
+    Phase 2 SHADOW accumulate: Mon Jun 1 - Fri Jun 5 (5 trading days, automatic)
+    Phase 3 DECIDE (compare vs live, gate=hit-rate>=current): ~Jun 5 / Jun 8
+    VERDICT EXPECTED: June 5-8 2026.
+  NOTE: May 29 session also has Phase 2H promote + Phase eps monitoring.
+  Files: signals/generator.py, Pipeline C orchestration.
 - DSR — Deflated Sharpe Ratio overfit tool (penalizes Sharpe for # trials
   tested + sample + skew). Formalizes "real edge vs multiple-testing luck."
 - Pipeline C Stage 0 sentiment TIMEOUT — bump 15min timeout for 157-ticker
