@@ -231,16 +231,17 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
                                  iv_rank, skew_signal, created_at)
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                         """, (snapshot_date, ticker, skew["skew_25d"],
-                              skew["put_iv_25d"], skew["call_iv_25d"],
+                              skew["iv_25d_put"], skew["iv_25d_call"],
                               skew["iv_rank"], skew["skew_signal"], now))
                         skew_ok += 1
                         print(f"skew={skew['skew_25d']:+.3f} {skew['skew_signal']}")
                     else:
                         skew_fail += 1
-                        print(f"skew=err")
-                except Exception:
+                        print(f"skew=err ({skew.get('error')})")
+                except Exception as _se:
+                    # Rule #1(b): surface the error instead of silently swallowing.
                     skew_fail += 1
-                    print(f"skew=err")
+                    print(f"skew=EXC {type(_se).__name__}: {_se}")
             else:
                 print(f"skew=ETF")
 
