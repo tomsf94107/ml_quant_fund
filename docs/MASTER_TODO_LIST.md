@@ -1,6 +1,6 @@
 # Master Unified TODO List
 
-**Last updated:** May 27, 2026 (Wed end-of-session VN, 16 commits today)
+**Last updated:** May 28, 2026 (Thu session VN)
 **Sources consolidated:**
 - userMemories (session_reset summaries)
 - docs/TODO_calibration_audit_priority.md
@@ -12,6 +12,46 @@
 - docs/path_a_ab_test_plan.md
 - docs/audit_findings_may24_evening.md
 - All commits and changes from Sun-Mon May 24-25 sessions
+
+---
+
+## RECENTLY CLOSED (May 28 2026)
+
+### ✅ Universe expansion +25/+5 (DONE May 28, commit d73d7b5)
+- tickers.txt 125->150: large/liquid (KLAC TXN MCHP NXPI DELL GLW FLEX JBL
+  GFS NEE D CHTR BIO), mid-cap (HOOD RDDT PINS MDB CYBR CRWV NBIS RKLB STLA),
+  speculative (CRCL FIG AMC)
+- tickers_watchlist.txt 2->7: ALT SANA SENS VXRT RC (microcaps)
+- Excluded: futures, crypto, foreign-listed, warrants, ETF dupes
+- STLA + NBIS added to revenue SKIP_TICKERS (foreign filers)
+- All 30 verified >=200d Polygon history
+
+### ✅ Data backfill for 30 new tickers (DONE May 28)
+- Revenue (Polygon, 21/30 — foreign+IPO skips expected)
+- Earnings/EPS (UW migration, 745 rows, 29/30 — VXRT no UW data)
+- UW snapshot (short int/analyst/FTD/seasonality/dark pool, 30/30)
+- 8-K items (26/30, 1158 filings/2324 items)
+- Sentiment (FinBERT, 30/30)
+- Insider Form 4 (in progress)
+- Institutional: SKIPPED (dead features until Q4 2026)
+
+### ✅ Earnings source: yfinance -> UW (DONE May 28, commit b5ff0ad)
+- UW /api/stock/{ticker}/earnings: 30yr history + pre-computed surprise
+  vs yfinance ~4 quarters. New backfill script + --tickers flags on
+  daily_uw_snapshot.py and etl_insider.py (reusable backfill tooling).
+
+### ✅ F2 — Sector ETF features (DONE May 28, commit b5ff0ad)
+- Rebuilt SECTOR_ETF_MAP for full 157-ticker coverage (was ~30, rest
+  wrongly defaulted to XLK). GOOG/META->XLC, HOOD/CRCL->XLF, D/NEE/OKLO->XLU,
+  EQIX/DLR/RC->XLRE, etc.
+- Added XLC/XLRE/XLB 5d returns (all 11 SPDR sectors now). FEATURE_COLUMNS
+  97->100. Fixed silent-error anti-pattern with logging (Rule #1b).
+
+### ✅ Options skew silent failure (FIXED May 28, commit b5f8711)
+- Wrong dict keys (put_iv_25d vs iv_25d_put) → KeyError caught by broad
+  except → skew failed silently for ALL tickers universe-wide in every
+  snapshot run. options_skew_history was empty. Fixed keys + surfaced errors.
+- VERIFIED: NVDA/KLAC/HOOD skew now writes. Live tonight (Pipeline C).
 
 ---
 
