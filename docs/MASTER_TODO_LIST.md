@@ -17,6 +17,17 @@
 
 ## RECENTLY CLOSED (May 28 2026)
 
+### 🔬 4G — Sector-conditional A8 (IN PROGRESS, script ready May 28)
+Approach 1 = sector-relative A8 ranking vs universe-wide ranking.
+Experiment script: research/test_4g_sector_a8.py (fixed px["Close"] bug).
+Computes 5d-fwd returns across FULL panel (2020-2026) to avoid the
+short-window artifact (the May 27 0.44-AUC trap). NOT YET RUN to completion
+(price fetch ~10-15 min, rate-limited). NEXT SESSION: run the script,
+read the universe-vs-sector verdict. If sector wins → build into A8;
+if not → skip to 3B. Outcomes table only covers ~2mo so full-period
+forward returns must be computed from price data (script does this).
+
+
 ### ✅ Universe expansion +25/+5 (DONE May 28, commit d73d7b5)
 - tickers.txt 125->150: large/liquid (KLAC TXN MCHP NXPI DELL GLW FLEX JBL
   GFS NEE D CHTR BIO), mid-cap (HOOD RDDT PINS MDB CYBR CRWV NBIS RKLB STLA),
@@ -148,10 +159,12 @@ Tomorrow's automated retrain should produce 95-feature per-ticker models.
 Pipeline A skips GLD, QQQ, SLV, XLB, XLC, XLRE properly.
 **Trigger:** Tue May 26 after Pipeline A.
 
-### R2 — prob_raw column patch ui/1_Dashboard.py:504
-Display prob_raw alongside prob_up in dashboard.
-**Effort:** 10 min.
-**Pending since:** Prior session.
+### R2 — prob_raw column patch ✅ SUPERSEDED (May 28)
+Original intent: show calibrated prob_raw next to prob_eff so the
+distorted multiplier value wasn't the only thing visible.
+NOW MOOT: (1) ML_QUANT_DISABLE_MULTIPLIERS=1 → prob_eff == prob_raw
+(verified diff=0.0 on live predictions). (2) Phase 2H BLEND/A8 columns
+already surface prob_raw. A literal column would duplicate existing data.
 
 ---
 
