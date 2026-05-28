@@ -17,17 +17,35 @@
 
 ## RECENTLY CLOSED (May 28 2026)
 
-### 🔬 4G — Sector-conditional A8 (IN PROGRESS, script ready May 28)
-Approach 1 = sector-relative A8 ranking vs universe-wide ranking.
-Experiment script: research/test_4g_sector_a8.py (fixed px["Close"] bug).
-Computes 5d-fwd returns across FULL panel (2020-2026) to avoid the
-short-window artifact (the May 27 0.44-AUC trap). NOT YET RUN to completion
-(price fetch ~10-15 min, rate-limited). NEXT SESSION: run the script,
-read the universe-vs-sector verdict. If sector wins → build into A8;
-if not → skip to 3B. Outcomes table only covers ~2mo so full-period
-forward returns must be computed from price data (script does this).
+### ❌ 4G — Sector-conditional A8 (TESTED + REJECTED May 28)
+Hypothesis: rank A8 WITHIN sector vs universe-wide. Result (496 days):
+universe +3.43% vs sector-relative +2.68% → sector-relative WORSE -0.75pp.
+A8 is cross-sectional alpha; its edge IS concentrating where signal is
+strongest regardless of sector. Sector-neutralizing dilutes it. DO NOT REVISIT.
+Script: research/test_4g_sector_a8.py.
 
+### 🔬 4G v2 — Sector as CONFIRMATION filter (TESTED May 28, marginal)
+User idea: hold names that are BOTH top-10 universe AND top-2 in sector
+(intersection, not replacement). Rigor (1451 days, 0 thin days):
+mean return wins all periods (full +0.17pp, H1 +0.08, H2 +0.27) BUT Sharpe
+is a WASH (0.217 vs 0.212; H2 slightly worse). More return + more risk,
+~same efficiency. Like lightly leveraging universe-wide — not a clean edge.
+Scripts: research/test_4g_v2_intersection.py, test_4g_v2_rigor.py.
+Lesson: first test +0.53pp, rigor +0.17pp — trust the more rigorous one.
 
+### ⏳ NEXT-SESSION ITEMS (from May 28)
+- 3B — A8 position sizing (next big build; size on universe-wide A8).
+  ★ REVISIT 4G v2 HERE: test intersection (universe-top AND sector-top)
+    names as a conviction SIZE MULTIPLIER. As a filter it was a Sharpe
+    wash, but as a sizing signal (bet more on dual-confirmed) it may add
+    value. This is the concrete revisit trigger for 4G v2.
+- DSR — Deflated Sharpe Ratio overfit tool (penalizes Sharpe for # trials
+  tested + sample + skew). Formalizes "real edge vs multiple-testing luck."
+- Pipeline C Stage 0 sentiment TIMEOUT — bump 15min timeout for 157-ticker
+  universe (predictions ok but sentiment may be partial).
+
+NOTE: F2 sector MAP still valuable (fixes sector_rel_ret as a FEATURE).
+4G/v2 were about RANKING — different use. F2 stands.
 ### ✅ Universe expansion +25/+5 (DONE May 28, commit d73d7b5)
 - tickers.txt 125->150: large/liquid (KLAC TXN MCHP NXPI DELL GLW FLEX JBL
   GFS NEE D CHTR BIO), mid-cap (HOOD RDDT PINS MDB CYBR CRWV NBIS RKLB STLA),
