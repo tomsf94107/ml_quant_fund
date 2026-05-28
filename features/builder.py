@@ -49,19 +49,49 @@ VIX_TICKER      = "^VIX"
 VOL_LOOKBACK    = 20        # sessions for volume z-score
 
 # Sector ETF map — stock → best matching sector ETF
+# Complete sector map — all 157 tickers (universe + watchlist).
+# Rebuilt 2026-05-28 (F2): previously ~30 mapped, rest defaulted to XLK (wrong).
+# GOOG/META→XLC (comm svcs), HOOD/CRCL→XLF, D/NEE/OKLO→XLU, EQIX/DLR/RC→XLRE, etc.
 SECTOR_ETF_MAP = {
-    "AAPL": "XLK", "MSFT": "XLK", "NVDA": "XLK", "AMD": "XLK",
-    "GOOG": "XLK", "META": "XLK", "CRM": "XLK", "CRWD": "XLK",
-    "DDOG": "XLK", "SNOW": "XLK", "DUOL": "XLK",
-    "TSLA": "XLY", "AMZN": "XLY", "SHOP": "XLY",
-    "AAPL": "XLK",
-    "JNJ": "XLV", "PFE": "XLV", "UNH": "XLV", "MRNA": "XLV",
-    "NVO": "XLV", "BSX": "XLV", "CNC": "XLV",
-    "AXP": "XLF", "PYPL": "XLF",
-    "MP": "XLB", "SLV": "XLB",
-    "NFLX": "XLC", "ZM": "XLC",
-    "PLTR": "XLK", "SMCI": "XLK", "TSM": "XLK",
-    "RZLV": "XLK", "CRCL": "XLK",
+    # Technology (XLK)
+    "AAPL":"XLK","MSFT":"XLK","NVDA":"XLK","AMD":"XLK","AVGO":"XLK","CRM":"XLK",
+    "CRWD":"XLK","DDOG":"XLK","SNOW":"XLK","DUOL":"XLK","PLTR":"XLK","SMCI":"XLK",
+    "TSM":"XLK","INTC":"XLK","MU":"XLK","ARM":"XLK","AMAT":"XLK","LRCX":"XLK",
+    "ASML":"XLK","MRVL":"XLK","ALAB":"XLK","ANET":"XLK","NET":"XLK","FTNT":"XLK",
+    "TEAM":"XLK","NOW":"XLK","ASAN":"XLK","MNDY":"XLK","AI":"XLK","FIVN":"XLK",
+    "PUBM":"XLK","NVMI":"XLK","ONTO":"XLK","WDC":"XLK","STX":"XLK","QUBT":"XLK",
+    "RZLV":"XLK","FSLY":"XLK","S":"XLK","ADSK":"XLK","CLS":"XLK","FVRR":"XLK",
+    "IREN":"XLK","APLD":"XLK","QS":"XLK","KLAC":"XLK","TXN":"XLK","MCHP":"XLK",
+    "NXPI":"XLK","DELL":"XLK","GLW":"XLK","FLEX":"XLK","JBL":"XLK","GFS":"XLK",
+    "MDB":"XLK","CYBR":"XLK","CRWV":"XLK","NBIS":"XLK","FIG":"XLK",
+    # Financials (XLF)
+    "V":"XLF","AXP":"XLF","PYPL":"XLF","COIN":"XLF","XYZ":"XLF","HOOD":"XLF","CRCL":"XLF",
+    # Healthcare (XLV)
+    "JNJ":"XLV","PFE":"XLV","UNH":"XLV","MRNA":"XLV","NVO":"XLV","BSX":"XLV",
+    "CNC":"XLV","LLY":"XLV","ABT":"XLV","AZN":"XLV","CI":"XLV","HUM":"XLV",
+    "INSM":"XLV","VKTX":"XLV","SMMT":"XLV","QURE":"XLV","ORIC":"XLV","DNA":"XLV",
+    "BRKR":"XLV","BIO":"XLV","ALT":"XLV","SANA":"XLV","SENS":"XLV","VXRT":"XLV",
+    # Consumer Discretionary (XLY)
+    "TSLA":"XLY","AMZN":"XLY","SHOP":"XLY","ABNB":"XLY","LULU":"XLY","ROST":"XLY",
+    "TJX":"XLY","TPR":"XLY","CAVA":"XLY","ETSY":"XLY","GM":"XLY","NIO":"XLY",
+    "OPEN":"XLY","BETR":"XLY","GME":"XLY","STLA":"XLY",
+    # Consumer Staples (XLP)
+    "COST":"XLP","WMT":"XLP","TGT":"XLP","KVUE":"XLP","BYND":"XLP",
+    # Communication Services (XLC)
+    "GOOG":"XLC","META":"XLC","NFLX":"XLC","ZM":"XLC","ROKU":"XLC","VZ":"XLC",
+    "NOK":"XLC","ASTS":"XLC","RDDT":"XLC","PINS":"XLC","CHTR":"XLC","AMC":"XLC",
+    # Industrials (XLI)
+    "BA":"XLI","ALK":"XLI","UAL":"XLI","ETN":"XLI","VRT":"XLI","GEV":"XLI",
+    "SYM":"XLI","EME":"XLI","HY":"XLI","RKLB":"XLI","PL":"XLI","AMPX":"XLI","LYFT":"XLI",
+    # Utilities (XLU)
+    "CEG":"XLU","VST":"XLU","D":"XLU","NEE":"XLU","OKLO":"XLU",
+    # Materials (XLB)
+    "MP":"XLB","LIN":"XLB","APD":"XLB","USAR":"XLB",
+    # Real Estate (XLRE)
+    "EQIX":"XLRE","DLR":"XLRE","RC":"XLRE",
+    # ETFs (map to self)
+    "SPY":"SPY","QQQ":"QQQ","GLD":"GLD","SLV":"SLV",
+    "XLF":"XLF","XLE":"XLE","XLV":"XLV","XLI":"XLI","XLU":"XLU",
 }
 INSIDER_DB      = os.getenv("INSIDER_DB_PATH", "insider_trades.db")
 CONGRESS_DB     = os.getenv("CONGRESS_DB_PATH", "congress_trades.db")
@@ -83,6 +113,7 @@ OUTPUT_COLUMNS = [
     "spy_ret", "xlk_ret",
     "xle_ret_5d", "xlv_ret_5d", "xlf_ret_5d", "xlk_ret_5d",
     "xlu_ret_5d", "xli_ret_5d", "xlp_ret_5d", "xly_ret_5d",
+    "xlc_ret_5d", "xlre_ret_5d", "xlb_ret_5d",
     "sentiment_score",
     "insider_net_shares", "insider_7d", "insider_21d", "insider_60d", "insider_90d",
     "risk_today", "risk_next_1d", "risk_next_3d", "risk_prev_1d",
@@ -663,13 +694,17 @@ def build_feature_dataframe(
     # Added 2026-05-21: gives model thematic regime signal that single-day
     # xlk_ret + sector_rel_ret can't capture. Hypothesis: May 2026 regression
     # in OKLO/CEG/ORIC/MRNA was sector rollover the model couldn't see.
-    for _etf in ("XLE", "XLV", "XLF", "XLU", "XLI", "XLP", "XLY"):
+    # F2 (2026-05-28): extended to all 11 SPDR sectors (added XLC, XLRE, XLB)
+    # to match the complete SECTOR_ETF_MAP. Previously only 8 sectors had 5d ret.
+    for _etf in ("XLE", "XLV", "XLF", "XLU", "XLI", "XLP", "XLY", "XLC", "XLRE", "XLB"):
         try:
             _ret = _market_return(_etf, start_str, end_str, date_index)
-            # Compute 5-day cumulative return from the daily series
             _ret_5d = (1 + _ret).rolling(5).apply(lambda x: x.prod() - 1, raw=True)
             df[f"{_etf.lower()}_ret_5d"] = _ret_5d.values
-        except Exception:
+        except Exception as _e:
+            # Rule #1(b): log the failure instead of silently swallowing it.
+            import logging as _lg
+            _lg.warning("sector 5d ret failed for %s: %s; filling 0.0", _etf, _e)
             df[f"{_etf.lower()}_ret_5d"] = 0.0
     # XLK 5d separately (XLK already loaded above)
     try:

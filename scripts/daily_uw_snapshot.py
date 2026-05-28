@@ -172,7 +172,7 @@ def load_tickers() -> list[str]:
 ETF_LIST = {"SPY","QQQ","GLD","SLV","XLF","XLE","XLV","XLI","XLU"}
 
 
-def run_snapshot(snapshot_date: str = None, mode: str = "full"):
+def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = None):
     if snapshot_date is None:
         snapshot_date = str(date.today() - timedelta(days=1))
 
@@ -181,7 +181,12 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full"):
     print(f"{'='*60}")
 
     init_tables()
-    tickers = load_tickers()
+    # If explicit tickers passed (e.g. --tickers for targeted backfill), use them.
+    # Otherwise default to full universe + watchlist (unchanged cron behavior).
+    if tickers is None:
+        tickers = load_tickers()
+    else:
+        print(f"  Targeted run: {len(tickers)} explicit tickers")
 
     from features.dark_pool import get_dark_pool_ratio
     from features.massive_options import get_25delta_skew_with_fallback as get_25delta_skew
@@ -507,5 +512,11 @@ if __name__ == "__main__":
     parser.add_argument("--date", default=None, help="Date YYYY-MM-DD (default: yesterday)")
     parser.add_argument("--mode", default="full", choices=["full", "post_market"],
                         help="full = all signals, post_market = dark pool + skew only")
+    parser.add_argument("--tickers", default=None,
+                        help="Comma-separated tickers for targeted backfill "
+                             "(default: full universe + watchlist)")
     args = parser.parse_args()
-    run_snapshot(args.date, mode=args.mode)
+    _tickers = None
+    if args.tickers:
+        _tickers = [t.strip().upper() for t in args.tickers.split(",") if t.strip()]
+    run_snapshot(args.date, mode=args.mode, tickers=_tickers)

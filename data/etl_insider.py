@@ -405,15 +405,21 @@ if __name__ == "__main__":
     _parser = _ap.ArgumentParser(description="Run insider Form 4 ETL.")
     _parser.add_argument("--days-back", type=int, default=365,
                          help="How many days of history to pull (default: 365 for full rebuild).")
+    _parser.add_argument("--tickers", nargs="+", default=None,
+                         help="Specific tickers for targeted backfill (default: full tickers.txt).")
     _args = _parser.parse_args()
 
-    _tf = _P("tickers.txt")
-    if _tf.exists():
-        TICKERS = [ln.strip().upper() for ln in _tf.read_text().splitlines()
-                   if ln.strip() and not ln.strip().startswith("#")]
+    if _args.tickers:
+        TICKERS = [t.strip().upper() for t in _args.tickers]
+        print(f"  Targeted run: {len(TICKERS)} explicit tickers")
     else:
-        TICKERS = ["AAPL", "MSFT", "NVDA", "TSLA", "META"]
-        print(f"  tickers.txt not found; using test tickers: {TICKERS}")
+        _tf = _P("tickers.txt")
+        if _tf.exists():
+            TICKERS = [ln.strip().upper() for ln in _tf.read_text().splitlines()
+                       if ln.strip() and not ln.strip().startswith("#")]
+        else:
+            TICKERS = ["AAPL", "MSFT", "NVDA", "TSLA", "META"]
+            print(f"  tickers.txt not found; using test tickers: {TICKERS}")
 
     print(f"Running insider ETL for {len(TICKERS)} tickers, {_args.days_back} days back...")
     results = run_insider_etl(TICKERS, days_back=_args.days_back, verbose=True)
