@@ -34,11 +34,12 @@ Scripts: research/test_4g_v2_intersection.py, test_4g_v2_rigor.py.
 Lesson: first test +0.53pp, rigor +0.17pp — trust the more rigorous one.
 
 ### ⏳ NEXT-SESSION ITEMS (from May 28)
-- 3B — A8 position sizing (next big build; size on universe-wide A8).
-  ★ REVISIT 4G v2 HERE: test intersection (universe-top AND sector-top)
-    names as a conviction SIZE MULTIPLIER. As a filter it was a Sharpe
-    wash, but as a sizing signal (bet more on dual-confirmed) it may add
-    value. This is the concrete revisit trigger for 4G v2.
+- 3B — A8 position sizing: ❌ TESTED + REJECTED May 28 (Sharpe flat).
+  This ALSO closes 4G v2's revisit path: 4G v2 was to be tested as a size
+  multiplier, but 3B proved sizing-by-signal among already-good picks
+  doesn't help. 4G v2 now CLOSED (marginal as filter, flat as sizer).
+  Sector+A8 combos (4G, 4G v2) and A8 sizing (3B) all explored — none beat
+  universe-wide A8 selection + existing Kelly sizer.
 - DSR — Deflated Sharpe Ratio overfit tool (penalizes Sharpe for # trials
   tested + sample + skew). Formalizes "real edge vs multiple-testing luck."
 - Pipeline C Stage 0 sentiment TIMEOUT — bump 15min timeout for 157-ticker
