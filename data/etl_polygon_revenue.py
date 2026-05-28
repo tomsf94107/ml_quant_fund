@@ -39,6 +39,7 @@ SKIP_TICKERS = {
     # Foreign filers — Polygon doesn't cover quarterly financials
     "ASML", "AZN", "NIO", "NOK", "NVO", "TSM", "ARM",
     "FVRR", "MNDY", "NVMI",
+    "STLA", "NBIS",  # Added May 28 2026: Stellantis (NL/IT), Nebius (NL)
     # ETFs — no underlying revenue (commodity, broad market, sector funds)
     "SPY", "QQQ", "GLD", "SLV",
     "XLE", "XLF", "XLI", "XLU", "XLV", "XLK", "XLP", "XLY",
