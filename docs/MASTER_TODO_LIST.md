@@ -1279,6 +1279,40 @@ gating. End state: ~10-30 truly new validated features, not hundreds.
 - Dates: Jun 9-16
 
 ### P3.2 — Gating pipeline (~2 weeks) ★ absorbs existing "DSR overfit tool"
+
+★★ P3.2 STATUS: BUILT + RUN (Fri May 29 2026). VERDICT BELOW. ★★
+Deliverables shipped + committed:
+- analysis/alpha_gate_stats.py (DSR/PSR/expected-max math + unit tests)
+- analysis/alpha_gate.py (rank-IC over full 3390-feature panel, 579 dates,
+  vs Massive fwd returns; extreme-value t-threshold sqrt(2 ln N) + mean_IC
+  magnitude floor 0.02 + macro/sector exclusion + dedup-by-base)
+- analysis/alpha_gate_incremental.py (transform-vs-raw uplift)
+- analysis/alpha_gate_results_h5.csv (full scored output)
+
+HONEST VERDICT (the important part):
+- Gate WORKS: from 3390 features it independently rediscovered the catalog's
+  high-evidence CS signals (short_ratio, pc_ratio, eps_surprise, post-earnings
+  drift, squeeze, reversal). Strong validation it is calibrated right.
+- BUT the 3390-feature panel is ~95% REDUNDANT with the model's existing 96
+  FEATURE_COLUMNS. Of 30 gated CS survivors, ~29 have a base already in the
+  model. Only 2 bases NOT in model (pc_ratio_snap, macd_signal); their
+  transforms barely beat raw (+0.001 / worse).
+- The 'unused 3390-panel = big alpha' premise is DISPROVEN. Real opportunity
+  is ~4-6 smoothing transforms (rev_growth_qoq__ts_std, ma_20__ts_std,
+  rsi_14__ts_mean, bb_upper__ts_delta) adding ~+0.012 to +0.020 ABSOLUTE IC
+  over raw bases. Modest; XGBoost can partly learn them from raw anyway.
+- LESSON: uplift_pct is a TRAP (tiny raw_IC denominators give absurd % like
+  31000%). Judge by ABSOLUTE IC uplift, not percentage.
+
+REVISED DOWNSTREAM PLAN:
+- P3.4 (combinatorial expansion): DOWNGRADED. Expansion already exists (panel)
+  and is mostly redundant. Not worth a big effort.
+- P3.5 (feed survivors to model): NARROWED to A/B testing ONLY the ~4-6
+  defensible transforms above; expect marginal gain; gate on Sharpe not raw.
+- Net P3 outcome: proved the model is already well-built; avoided the overfit
+  trap of dumping 3390 correlated features into XGBoost. Rigor WAS the value.
+
+ORIGINAL P3.2 SPEC (for reference):
 - Goal: Build the multiple-testing + overfitting defense pipeline
 - Deliverable: `analysis/alpha_gate.py` with:
   - Deflated Sharpe Ratio (Bailey-López de Prado 2014)
