@@ -56,6 +56,8 @@ Lesson: first test +0.53pp, rigor +0.17pp — trust the more rigorous one.
   Files: signals/generator.py, Pipeline C orchestration.
 - DSR — Deflated Sharpe Ratio overfit tool (penalizes Sharpe for # trials
   tested + sample + skew). Formalizes "real edge vs multiple-testing luck."
+  ★ ABSORBED INTO P3.2 — see "P3 ALPHA PROGRAM" section below. DSR is the
+    centerpiece of the gating pipeline; P3.2 adds purged-CV and PBO/CSCV.
 - Pipeline C Stage 0 sentiment TIMEOUT — bump 15min timeout for 157-ticker
   universe (predictions ok but sentiment may be partial).
 
@@ -266,9 +268,14 @@ sector_rel_ret exists, expand to more sector signals.
 
 ### F3 — FinBERT historical backfill
 6-8h setup + 2h compute. Expected +0.005-0.015 AUC.
+★ ABSORBED INTO P3.3 — see "P3 ALPHA PROGRAM" section. F3 is the sentiment
+slice of P3.3's textual-signals bucket (Lazy Prices, MD&A delta, call tone).
 
 ### F4 — pc_ratio_change_5d + iv_skew_change features
 8-12 hours. Expected +0.003-0.010 AUC.
+★ ABSORBED INTO P3.3 — see "P3 ALPHA PROGRAM" section. F4 is 2 features
+out of ~15 in P3.3's options-surface bucket (IV term slope, butterfly,
+vol-of-vol, GEX single-name, VRP, etc.).
 
 ### K2 — Cross-ticker 8-K alpha exploitation
 Per-ticker models ignore 8-K features. Cross-sectional path needed.
@@ -1211,3 +1218,161 @@ Items above relate to existing TODOs:
   - Phase 2A (A8 as feature) ⇄ separate from this but builds same pattern
 
 End of Signal_System_Addendum audit.
+
+
+---
+
+## P3 — ALPHA PROGRAM (6-phase combinatorial alpha pipeline, May 28 deep research)
+
+**Source:** Two May 28 deep-research reports — alpha signals catalog + hedge-fund
+combinatorial methodology. Saved as `docs/alpha_signals_catalog_research_20260528.md`.
+
+**Core principle (Report 2):** infrastructure BEFORE signals. Gating defenses
+(DSR/PBO/purged-CV) must exist before signal-pool expansion or we ship overfit
+garbage. This is why P3.1 and P3.2 precede P3.3+.
+
+**Yield expectation (honest):** Expect <10% of expanded candidates to survive
+gating. End state: ~10-30 truly new validated features, not hundreds.
+
+**Total timeline:** ~10-12 weeks. Phases gated; do not skip.
+
+### P3.0 — Prerequisite: 4C ships
+- Gate: 4C verdict (promote/reject) made
+- Dates: Jun 5-8 (existing schedule)
+- Status: gated by 4C shadow trade (build May 29-30, accumulate Jun 1-5)
+
+### P3.1 — Operator library + PIT audit (~1 week)
+- Goal: Build the ~20 operator vocabulary from Report 2 §II.A
+- Deliverable: `analysis/operators.py` with rank, ts_rank, ts_mean, ts_std,
+  ts_delta, ts_decay_linear, ts_corr, ts_min/max, ts_argmin/max, scale,
+  neutralize, group_rank, vector_neut, signedpower, etc.
+- Also: point-in-time audit of feature store (no look-ahead)
+- Gate to P3.2: all 20 operators pass unit tests; PIT audit clean
+- Dates: Jun 9-16
+
+### P3.2 — Gating pipeline (~2 weeks) ★ absorbs existing "DSR overfit tool"
+- Goal: Build the multiple-testing + overfitting defense pipeline
+- Deliverable: `analysis/alpha_gate.py` with:
+  - Deflated Sharpe Ratio (Bailey-López de Prado 2014)
+  - Probability of Backtest Overfitting via CSCV (Bailey-Borwein-LdP-Zhu)
+  - Purged & embargoed k-fold CV (López de Prado AFML ch.7)
+  - Incremental-IR vs current book (correlation cap 0.7)
+- Threshold framework: |t|>3.0 AND DSR>0.95 AND PBO<0.3 AND net Sharpe>0.5
+- Gate to P3.3: pipeline correctly reproduces today's 4G/3B verdicts as rejects
+- Dates: Jun 16-30
+
+### P3.3 — Bounded seed pool (~2 weeks) ★ absorbs F3 + F4
+- Goal: Hand-curate 30-50 base signals from the catalog (NOT 100+)
+- Deliverable: `research/seed_signals.yml` + feature builders for each
+- Includes from catalogs:
+  - Textual: Lazy Prices 10-K similarity delta, MD&A sentiment delta,
+    earnings-call FinBERT tone delta vs prior call (subsumes F3)
+  - Options surface: IV term-slope, butterfly, vol-of-vol, GEX single-name,
+    VRP single-name, pc_ratio_change_5d, iv_skew_change (subsumes F4)
+  - Network: GDELT co-mention centrality, customer-supplier lead-lag
+  - Microstructure: Amihud illiquidity, overnight/intraday return split
+  - Event: 8-K item-specific drift, opportunistic-insider cluster buys
+  - Cross-asset: Treasury/DXY/oil lead-lag, BTC contagion proxy
+  - Higher moments: realized skew, kurtosis, coskewness
+- Gate to P3.4: each seed produces non-NaN features, passes sanity check
+- Dates: Jul 1-14
+
+### P3.4 — Combinatorial expansion + gating (~3 weeks)
+- Goal: Parameter sweep on seeds → ~1-3k variants → run through P3.2 gate
+- Deliverable: `research/alpha_expansion/` results table; survivors documented
+- Variant axes: lookback windows {5,10,20,60,120}, decay {0,3,5,10},
+  neutralization {sector, size-bucket, none}, transforms {rank, zscore, ts_rank}
+- Track N religiously (feeds DSR's selection-bias correction)
+- Gate to P3.5: survivor list with DSR/PBO/incremental-IC scores; <10% expected
+- Dates: Jul 15-Aug 7
+
+### P3.5 — HRP clustering + ensemble integration (~2 weeks)
+- Goal: Cluster survivors by correlation (HRP — López de Prado 2016), combine
+  within family by inverse-vol, feed to XGBoost/LightGBM as new features
+- Deliverable: extended FEATURE_COLUMNS; retrained models; A/B backtest
+- Also: bundle F1 (drop dead features) into this retrain
+- Gate to P3.6: combined ensemble Sharpe > current baseline (purged-CV measured)
+- Dates: Aug 8-21
+
+### P3.6 — Production monitoring + decay (ongoing)
+- Goal: Per-alpha live IC log, decay alerts, shadow A/B lane in Pipeline C
+- Deliverable: monitoring dashboard; daily per-alpha IC tracking; auto-retire
+  rules (e.g. trailing-60d IC IR < half backtest → flag)
+- Crowding detection: correlation with public factors
+- Dates: Aug 22+
+
+---
+
+## P3 ALPHA SIGNAL BACKLOG (catalog from May 28 deep research)
+
+A reference inventory of candidate signals. **Test threshold:** standalone IC
+>= 0.02 at any horizon, OR SHAP top-quartile when added, OR +50bps top-decile
+precision at 5d. **Drop threshold:** corr > 0.8 with existing, sign-flip OOS,
+OR live IC < 0 for 2 quarters.
+
+Full catalog with citations: `docs/alpha_signals_catalog_research_20260528.md`
+
+### Tier 1 — Cheap to build, high-evidence (target for P3.3 seed pool)
+- Overnight vs intraday return decomposition (Lou-Polk-Skouras 2019 JFE)
+- Amihud illiquidity, rolling 21d (Amihud 2002)
+- Insider cluster buys, 30d window (Cohen-Malloy-Pomorski 2012, 82bps/mo)
+- Short-interest CHANGE (we have level, add Δ)
+- Days-to-cover (SI / 20d avg volume)
+- 52-week-high proximity (George-Hwang 2004)
+- Residual / idiosyncratic momentum (Blitz-Huij-Martens 2011)
+- Heston-Sadka same-calendar-month seasonality (2008 JFE)
+- days_to_FOMC / NFP / CPI indicators (Savor-Wilson 2014)
+- MAX (max daily return prior 21d, long-only avoid filter)
+- IVOL filter (Ang-Hodrick-Xing-Zhang 2006)
+
+### Tier 2 — Options-surface signals (from UW, high leverage at 1-5d)
+- IV term-slope (Vasquez) — slope of ATM IV across tenors
+- IV term-curvature / butterfly
+- 25Δ risk reversal dynamics (Δ and z-score)
+- Skew-butterfly / smile convexity
+- IV-RV spread per stock (Bollerslev-Tauchen-Zhou VRP)
+- Cremers-Weinbaum call-put IV spread
+- GEX / dealer-gamma proxy at ticker level
+- Vol-of-vol (single name)
+
+### Tier 3 — Fundamentals (Polygon-buildable, slower but useful)
+- Gross profitability (Novy-Marx 2013)
+- Cash-based operating profitability (Ball et al 2016)
+- Piotroski F-Score
+- Beneish M-Score
+- Asset growth, YoY (Cooper-Gulen-Schill 2008)
+- Net share issuance, 12mo (Pontiff-Woodgate 2008)
+- Analyst forecast revision momentum (Chan-Jegadeesh-Lakonishok)
+- Analyst forecast dispersion (Diether-Malloy-Scherbina)
+
+### Tier 4 — Network / textual / events (some need new data)
+- Lazy Prices: 10-K/10-Q YoY similarity (Cohen-Malloy-Nguyen 2020 JF)
+- MD&A / risk-section FinBERT sentiment delta
+- Earnings-call tone delta vs prior call
+- GDELT news co-mention network centrality
+- Customer-supplier momentum (Cohen-Frazzini 2008, needs link data)
+- ETF mispricing / unexpected flow (Ben-David-Franzoni-Moussawi)
+- 8-K item-specific drift (item codes 1.01, 5.02, 2.02)
+- Form 144 + officer-specific Form 4 (opportunistic vs routine)
+- Patent-value shock (Kogan-Papanikolaou-Seru-Stoffman 2017 QJE)
+- Cross-asset lead-lag (Treasury, DXY, oil → equity)
+- TIPS breakeven inflation term structure (FRED)
+- Corporate credit spread stress (HY OAS, BAA-AAA)
+
+### Higher moments
+- Realized skewness (20-60d)
+- Realized kurtosis (tail thickness)
+- Co-skewness with market
+
+### Decayed / arbitraged — do NOT prioritize:
+- Sloan accruals (Mohanram 2014)
+- PEAD on large/liquid stocks (Martineau 2022 — alive only in microcaps)
+- Pre-FOMC drift standalone (Kurov-Wolfe-Gilbert 2021)
+- BAB headline construction (Novy-Marx-Velikov 2022)
+
+### Interaction ideas worth testing once tier 1-2 land:
+- Quality × Value (QMJ — Asness-Frazzini-Pedersen 2019)
+- SUE × IVOL (PEAD concentrated in high-IVOL — Mendenhall 2004)
+- Short interest × news sentiment (Engelberg-Reed-Ringgenberg 2012)
+- IV skew × earnings proximity
+- VIX regime × momentum (momentum crashes, Daniel-Moskowitz 2016)
