@@ -251,6 +251,33 @@ untested speculation). Reconsider only as a NEW task with an explicit
 "audit if signal exists" precondition. No backtest will be run.
 
 ### R1 — Refactor build_feature_dataframe (separate features from diagnostics)
+⏸ DEFER (reviewed May 29). build_feature_dataframe is ~650 lines and the
+single most depended-on function (every model, generator, alpha gate,
+dashboard). The key separation (PIT-honest training vs live serving) ALREADY
+exists via the training_mode seam (gates live calls in ~6 places, verified
+working). The motivating concern (FEATURE_COLUMNS env-fragility) is
+theoretical-only: N1 confirmed live models train with the correct 100 features
+and .env loads before classifier import. So this refactor = high regression
+risk (a silent feature-value change corrupts every prediction) for marginal
+benefit + no forcing reason. If revisited: STRANGLER pattern — extract ONE
+concern at a time with before/after bit-equality tests on real ticker data,
+never a big-bang rewrite. Rule #1(a): don't churn working critical code.
+
+### F1 — Drop dead features
+⏸ DEFER (reviewed May 29). feature_importance_history shows avg_imp=0.0 for
+~15 features, but this is NOT a reliable kill-list:
+  - pc_ratio_snap reads 0.0 yet showed gate IC +0.048 (t=8.9) this session
+    -> the importance logging is suspect, not the feature.
+  - inst_* are in an ACTIVE A/B until Sept 15 (dropping = kill experiment).
+  - Live-API features (pc_ratio, iv_skew, analyst_*) are PIT-gated to 0 in
+    training_mode (constant -> 0 splits) but useful live -> dropping breaks
+    live serving.
+  - Counts vary (n=1998..8277) = logged over inconsistent model sets; avg
+    not comparable; exact 0.0 suggests LGB-specific 0-splits, not unused.
+No safe, forcing-reason removal available. Revisit only with a proper
+per-feature audit (XGB AND LGB importance, train vs live behavior, A/B status)
+before removing anything from the canonical FEATURE_COLUMNS set.
+
 Spec exists in TODO doc. 1-2 hours. Cleans up extras_columns warnings.
 
 ### F1 — Drop dead features
