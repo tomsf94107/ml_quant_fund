@@ -41,19 +41,27 @@ Lesson: first test +0.53pp, rigor +0.17pp — trust the more rigorous one.
   Sector+A8 combos (4G, 4G v2) and A8 sizing (3B) all explored — none beat
   universe-wide A8 selection + existing Kelly sizer.
 
-- 4C — Two-stage screener: A8 selects top-20 -> per-ticker model picks 5.
-  ★ NEXT BIG BUILD. WHY RIGHT SHAPE: today's negatives (4G, 3B) showed A8
-  can't be pushed to do MORE; 4C uses A8 for SELECTION only + per-ticker
-  model for refinement = two different signals. Consistent with "A8=selection".
-  CAN'T backtest offline cleanly (per-ticker preds only ~2.5mo); spec gate is
-  SHADOW TRADING — it's a live experiment by nature. Mirror Phase 2H pattern.
-  TIMELINE (concrete):
-    Phase 1 BUILD shadow mode in generator.py: Fri May 29 / Sat May 30 (~half day)
-    Phase 2 SHADOW accumulate: Mon Jun 1 - Fri Jun 5 (5 trading days, automatic)
-    Phase 3 DECIDE (compare vs live, gate=hit-rate>=current): ~Jun 5 / Jun 8
-    VERDICT EXPECTED: June 5-8 2026.
-  NOTE: May 29 session also has Phase 2H promote + Phase eps monitoring.
-  Files: signals/generator.py, Pipeline C orchestration.
+- ❌ 4C — A8-as-SELECTOR: REJECTED (shadow tested Fri May 29 2026).
+  Test: research/test_4c_shadow_selector.py (A8 ranks full cross-section ->
+  top-20 -> per-ticker model picks 5). Done OFFLINE via a8_oos_panel +
+  accuracy.db outcomes (no live shadow needed after all).
+  RESULT (h=5, 40 days Mar24-May22, pool=20 pick=5):
+                 mean%   win    sharpe   maxDD
+    production   0.025   0.829  4.78    -0.09
+    4C_selector  0.040   0.750  3.19    -0.46
+  4C had higher RAW return but LOWER win, LOWER Sharpe, 5x WORSE maxDD.
+  Steamroller trap again. 27% pick-overlap w/ production = genuinely
+  different (worse risk-adjusted) portfolio, so the test was meaningful.
+  WHY: learning-to-rank cross-sectional selection (Poh-Roberts-Zohren 2021,
+  ~3x Sharpe) is LONG-SHORT, large-universe, pre-cost. Long-only + 125-name
+  thin breadth = the documented conditions where the edge vanishes
+  (cf. arXiv 2302.10175 saw CS decile go negative). Confirmed with our data.
+  ★ FIVE tests now agree A8 is at its ceiling as overlay/selector:
+    4G (reject), 4G v2 (wash), 3B (flat), Phase 2H (mirage), 4C (fail).
+    A8 works as the SELECTION signal it already is (top-decile model);
+    stacking more A8-driven logic adds nothing risk-adjusted.
+  Files: research/test_4c_shadow_selector.py.
+  → See P6 for the preserved long-short revisit hypothesis.
 - DSR — Deflated Sharpe Ratio overfit tool (penalizes Sharpe for # trials
   tested + sample + skew). Formalizes "real edge vs multiple-testing luck."
   ★ ABSORBED INTO P3.2 — see "P3 ALPHA PROGRAM" section below. DSR is the
@@ -310,6 +318,25 @@ Will auto-update. Monitor only.
 ---
 
 ## P6 — FAR FUTURE (deferred from week-4 roadmap)
+
+### ★ Long-Short revisit of A8-as-selector (CONDITIONAL — gated on short strategy greenlit)
+4C failed long-only (see active list). BUT the learning-to-rank research is
+clear that cross-sectional selection's natural habitat is LONG-SHORT — the
+loser leg carries ~half the documented alpha that long-only discards.
+HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
+- Infrastructure already partly there: A8 produces a full-cross-section
+  ranking (a8_prob for ~125 names); today only the TOP is used. The BOTTOM
+  is what a short leg would screen.
+- BLOCKER 1: A8 predicts TOP-decile membership. Low a8_prob = "not a likely
+  winner", NOT "likely to fall". A short leg needs a SEPARATE bottom-decile /
+  down-move model. 4C selector CODE is reusable; the A8 MODEL is not.
+- BLOCKER 2: shorting = major strategy change (borrow cost/availability,
+  unlimited downside, margin, squeeze risk [cf. RZLV 25% SI], wash-sale/tax,
+  Reg SHO). "Does A8 ranking help" is a tiny piece of "should I short at all".
+- GATE TO START: a short strategy must be explicitly greenlit AND a
+  bottom-decile model built. Until then, parked.
+- Reusable asset: research/test_4c_shadow_selector.py (structured to extend
+  to long-short — add a short sleeve from the bottom of the a8 ranking).
 
 | Item | Why deferred |
 |---|---|
@@ -1236,8 +1263,9 @@ gating. End state: ~10-30 truly new validated features, not hundreds.
 
 **Total timeline:** ~10-12 weeks. Phases gated; do not skip.
 
-### P3.0 — Prerequisite: 4C ships
-- Gate: 4C verdict (promote/reject) made
+### P3.0 — Prerequisite: (4C RESOLVED — rejected May 29, see active list)
+- 4C verdict made: REJECTED. P3 no longer gated on 4C.
+- P3 may now begin whenever prioritized (next genuinely-open work item).
 - Dates: Jun 5-8 (existing schedule)
 - Status: gated by 4C shadow trade (build May 29-30, accumulate Jun 1-5)
 
