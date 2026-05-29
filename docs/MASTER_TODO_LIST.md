@@ -186,21 +186,39 @@ After C1, re-run the calibration query to confirm fix.
 
 ## P1 — IN FLIGHT (this week)
 
-### S2 — Phase 2 H promote to active (Fri May 29)
-Currently shadow mode. After 5 BD outcomes, decide activate.
-**Trigger:** Fri May 29 EOD.
+### S2 — Phase 2 H (PCT7 ranker) promote — DATE CORRECTED to Tue Jun 2
+Currently shadow mode. Shadow logging VERIFIED working (537 preds carry
+prob_pct7 as of May 29). BUT 0 outcomes joined: PCT7 is h=5, first preds
+were May 25, so 5-BD-forward returns don't close until ~Jun 1-2. The
+"Fri May 29" trigger was optimistic — monitor_pct7_ab.py itself says wait.
+**Trigger (corrected):** Tue Jun 2, re-run monitor_pct7_ab.py, then decide.
 
 ### S3 — Phase epsilon monitoring (Fri May 29)
 First 127 outcomes arrive Fri. Run monitor_pct7_ab.py.
 **Trigger:** Fri May 29 EOD.
 
-### N1 — Verify Pipeline B picks up 95 features
-Tomorrow's automated retrain should produce 95-feature per-ticker models.
-**Trigger:** Tue May 26 after Pipeline B completes.
+### N1 — Verify Pipeline picks up features ✅ VERIFIED (May 29)
+Live models (RC global + per-ticker AAPL/VXRT, trained May 29 06:05) all
+carry 100 feature_cols = 96 base + 4 inst, 0 panel transforms. So: inst
+features ARE live in production, the retrain loaded .env correctly (inst
+flag took effect), and the PANEL_TRANSFORMS flag-OFF default held (no leak).
+The "95" was a stale pre-inst expectation; correct live count is 100.
+Env-fragility (FEATURE_COLUMNS built at import from os.environ) is
+theoretical-only in practice — live path loads dotenv before classifier import.
 
-### N2 — Verify SKIP_TICKERS expansion respected
-Pipeline A skips GLD, QQQ, SLV, XLB, XLC, XLRE properly.
-**Trigger:** Tue May 26 after Pipeline A.
+### N2 — SKIP_TICKERS for training ❌ CLOSED-INVALID (May 29, premise wrong)
+The premise (Pipeline A skips these ETFs from training/prediction) was a
+MISCONCEPTION. By DESIGN the system trains + predicts GLD/QQQ/SLV: they're
+in tickers.txt, training iterates the full universe, and generator.py:628
+_ETFS only skips the EQUITY MULTIPLIERS (options flow / short interest) that
+ETFs don't have — the 'raise Exception(ETF skip)' jumps to an except that
+leaves multipliers neutral, NOT a prediction skip. generator.py:47-51
+documents this as a deliberate choice ('let GLD h=1 through rather than
+sacrifice winner models'). The only real SKIP_TICKERS (data/etl_polygon_
+revenue.py) correctly skips ETFs from REVENUE backfill (ETFs have no revenue).
+XLB/XLC/XLRE have 0 models simply because they're not in tickers.txt.
+NO CODE CHANGE. (Open future question, NOT a bug: are ETF base-model
+predictions good enough to keep? Would need its own OOS analysis if revisited.)
 
 ### R2 — prob_raw column patch ✅ SUPERSEDED (May 28)
 Original intent: show calibrated prob_raw next to prob_eff so the
@@ -225,9 +243,12 @@ Walk-forward A8 OOS prediction generator + Pipeline C orchestration.
 Layer 1 bootstrap check, Layer 2 daily summary, Layer 3 health script.
 **Decision date:** June 23, 2026.
 
-### S4 — Inst suppression rule backtest
-Original Tue/Wed plan. Recommend SKIP per session memory (inst features dead).
-**Decision needed:** formal skip or do it.
+### S4 — Inst suppression rule backtest ❌ CLOSED-SKIP (decided)
+DECISION MADE: permanent skip. Full rationale in the "CONTEXT/REASONS FOR
+SKIP" block below (inst_signed_flow_5d has ZERO LGB importance in 100% of
+30 tickers; per-ticker models can't extract sparse CS features; thesis was
+untested speculation). Reconsider only as a NEW task with an explicit
+"audit if signal exists" precondition. No backtest will be run.
 
 ### R1 — Refactor build_feature_dataframe (separate features from diagnostics)
 Spec exists in TODO doc. 1-2 hours. Cleans up extras_columns warnings.
