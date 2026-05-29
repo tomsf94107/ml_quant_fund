@@ -251,7 +251,13 @@ untested speculation). Reconsider only as a NEW task with an explicit
 "audit if signal exists" precondition. No backtest will be run.
 
 ### R1 — Refactor build_feature_dataframe (separate features from diagnostics)
-⏸ DEFER (reviewed May 29). build_feature_dataframe is ~650 lines and the
+⏸ DEFER — CONDITION-TRIGGERED, re-check at Sep 15 review. Revisit R1 ONLY
+when a trigger fires: (a) a real train/serve feature mismatch occurs, (b) a
+new feature-fetch path doesn't fit the training_mode seam, or (c) the function
+grows past ~800 lines. No forced date — a calendar deadline would manufacture
+risk for a no-payoff refactor. Re-evaluate these conditions at the Sep 15
+inst-features review; if none fired, confirm continued defer.
+build_feature_dataframe is ~650 lines and the
 single most depended-on function (every model, generator, alpha gate,
 dashboard). The key separation (PIT-honest training vs live serving) ALREADY
 exists via the training_mode seam (gates live calls in ~6 places, verified
@@ -264,7 +270,10 @@ concern at a time with before/after bit-equality tests on real ticker data,
 never a big-bang rewrite. Rule #1(a): don't churn working critical code.
 
 ### F1 — Drop dead features
-⏸ DEFER (reviewed May 29). feature_importance_history shows avg_imp=0.0 for
+⏸ DEFER → REVISIT Mon Sep 15, 2026 (fold into inst-features 6-mo
+reconsideration; PRECONDITION: proper per-feature audit — XGB AND LGB
+importance, train-vs-live behavior, A/B status — before removing anything).
+feature_importance_history shows avg_imp=0.0 for
 ~15 features, but this is NOT a reliable kill-list:
   - pc_ratio_snap reads 0.0 yet showed gate IC +0.048 (t=8.9) this session
     -> the importance logging is suspect, not the feature.
@@ -410,7 +419,7 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 | Mon Jun 1 | Second batch of outcomes |
 | Fri Jun 5 | One week of A/B data. Decision: promote/revert PCT7. |
 | Sun Jun 23 | Path A A/B decision review (per path_a_ab_test_plan.md) |
-| Mon Sep 15 | Inst features hit 6-month threshold |
+| Mon Sep 15 | Inst features 6-mo threshold + F1 dead-feature pruning (gated on per-feature audit) + R1 refactor trigger-condition re-check |
 | Q3 2026 | Option G cross-sectional service |
 
 ---
