@@ -202,6 +202,24 @@ _SPARSE_INDICATOR_COLS = [f"{c}_has_value" for c in _SPARSE_FEATURE_COLS]
 if _MISSING_INDICATORS_ENABLED:
     OUTPUT_COLUMNS = OUTPUT_COLUMNS + _SPARSE_INDICATOR_COLS
 
+# ── PANEL TRANSFORMS A/B (P3.5, May 29 2026) ─────────────────────────────────
+# 7 transforms of existing features, surfaced by the P3.2 alpha gate as the
+# only panel features adding material ABSOLUTE IC uplift (~+0.012-0.024) over
+# their raw bases. Definitions match analysis/alpha_transformations.py EXACTLY
+# so the gate-measured IC transfers. Flag OFF (default) = true no-op.
+_PANEL_TRANSFORMS_ENABLED = os.environ.get("ML_QUANT_PANEL_TRANSFORMS", "0") == "1"
+_PANEL_TRANSFORM_COLS = [
+    "ma_20__ts_std__w5",
+    "ma_10__ts_std__w10",
+    "rsi_14__ts_mean__w20",
+    "bb_upper__ts_delta__w20",
+    "post_earnings_3d__ts_mean__w10",
+    "rev_growth_qoq__ts_std__w10",
+    "is_squeeze_setup__ts_argmax__w20",
+]
+if _PANEL_TRANSFORMS_ENABLED:
+    OUTPUT_COLUMNS = OUTPUT_COLUMNS + _PANEL_TRANSFORM_COLS
+
 # ── A8 cross-sectional prob_top_decile feature (Phase 2A, May 27 2026) ────────
 # When ML_QUANT_A8_FEATURE=1, builder reads data/a8_oos_panel.parquet and joins
 # a8_prob_top_decile as a feature column. A8 = top-decile cross-sectional model
@@ -889,7 +907,7 @@ def build_feature_dataframe(
     # ── 9. Insider flows ──────────────────────────────────────────────────────
     # In training_mode, skip the LIVE UW API and go directly to SQLite with PIT filter
     if training_mode:
-        ins_net, ins_7d, ins_21d = _load_insider(ticker, date_index, as_of=end_str)
+        ins_net, ins_7d, ins_21d, ins_60d, ins_90d = _load_insider(ticker, date_index, as_of=end_str)
     else:
         ins_net, ins_7d, ins_21d, ins_60d, ins_90d = _load_insider_uw(ticker, date_index)
     df["insider_net_shares"] = ins_net.values
@@ -1181,6 +1199,21 @@ def build_feature_dataframe(
 
         # Option E: binary squeeze setup indicator
         df["is_squeeze_setup"] = ((_vol > 0.04) & (_short > 0.10)).astype(float)
+
+        # ── P3.5 panel transforms (gated; match alpha_transformations defs) ──
+        if _PANEL_TRANSFORMS_ENABLED:
+            def _ts_argmax(s, w):
+                return s.rolling(w, min_periods=1).apply(
+                    lambda x: float(len(x) - 1 - x.values.argmax())
+                    if not __import__("numpy").isnan(x).all() else float("nan"),
+                    raw=False)
+            df["ma_20__ts_std__w5"] = df["ma_20"].rolling(5, min_periods=2).std()
+            df["ma_10__ts_std__w10"] = df["ma_10"].rolling(10, min_periods=5).std()
+            df["rsi_14__ts_mean__w20"] = df["rsi_14"].rolling(20, min_periods=10).mean()
+            df["bb_upper__ts_delta__w20"] = df["bb_upper"].diff(20)
+            df["post_earnings_3d__ts_mean__w10"] = df["post_earnings_3d"].rolling(10, min_periods=5).mean()
+            df["rev_growth_qoq__ts_std__w10"] = df["rev_growth_qoq"].rolling(10, min_periods=5).std()
+            df["is_squeeze_setup__ts_argmax__w20"] = _ts_argmax(df["is_squeeze_setup"], 20)
     except Exception as _e:
         # Fail loud per Rule #1 (b)
         import logging as _lg
@@ -1188,6 +1221,9 @@ def build_feature_dataframe(
         for _col in ["vol_x_short", "rev_x_low52w", "vol_10d_self_rank",
                      "vol_zscore_60d", "is_squeeze_setup"]:
             df[_col] = 0.0
+        if _PANEL_TRANSFORMS_ENABLED:
+            for _col in _PANEL_TRANSFORM_COLS:
+                df[_col] = 0.0
 
     # ── 12. Enforce output schema ─────────────────────────────────────────────
     # Add any missing columns as 0.0
