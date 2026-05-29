@@ -170,6 +170,19 @@ SPARSE_INDICATOR_COLS = [f"{c}_has_value" for c in SPARSE_FEATURES]
 if _os_for_inst.environ.get("ML_QUANT_MISSING_INDICATORS", "0") == "1":
     FEATURE_COLUMNS = FEATURE_COLUMNS + SPARSE_INDICATOR_COLS
 
+# ── PANEL TRANSFORMS A/B (P3.5, May 29 2026) ─────────────────────────────────
+# Mirror builder's ML_QUANT_PANEL_TRANSFORMS gate. OFF = no-op.
+if _os_for_inst.environ.get("ML_QUANT_PANEL_TRANSFORMS", "0") == "1":
+    FEATURE_COLUMNS = FEATURE_COLUMNS + [
+        "ma_20__ts_std__w5",
+        "ma_10__ts_std__w10",
+        "rsi_14__ts_mean__w20",
+        "bb_upper__ts_delta__w20",
+        "post_earnings_3d__ts_mean__w10",
+        "rev_growth_qoq__ts_std__w10",
+        "is_squeeze_setup__ts_argmax__w20",
+    ]
+
 # ── A8 cross-sectional prob_top_decile as feature (Phase 2A, May 27 2026) ──
 # When ML_QUANT_A8_FEATURE=1, builder emits a8_prob_top_decile column from
 # data/a8_oos_panel.parquet (walk-forward, no lookahead). Classifier includes

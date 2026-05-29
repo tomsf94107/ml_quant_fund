@@ -1312,6 +1312,29 @@ REVISED DOWNSTREAM PLAN:
 - Net P3 outcome: proved the model is already well-built; avoided the overfit
   trap of dumping 3390 correlated features into XGBoost. Rigor WAS the value.
 
+★★ P3.5 STATUS: CLOSED — NEGATIVE RESULT (Fri May 29 2026). ★★
+Wired the 7 gate-surviving transforms behind ML_QUANT_PANEL_TRANSFORMS=1
+(builder.py + classifier.py, mirrors ML_QUANT_INST_FEATURES; OFF=true no-op,
+verified OUTPUT_COLUMNS 117->124 / FEATURE_COLUMNS +7 only when ON).
+Walk-forward A/B (h=5, NVDA/TSLA/JPM, baseline vs transforms-ON):
+  NVDA AUC 0.514 -> 0.501 (-0.013)
+  TSLA AUC 0.547 -> 0.527 (-0.020)
+  JPM  AUC 0.571 -> 0.543 (-0.029)
+Transforms make per-ticker AUC WORSE on all 3 (accuracy moves = noise).
+WHY: gate measured CROSS-SECTIONAL IC but classifier is PER-TICKER -> CS
+signal doesn't transfer; is_squeeze_setup__ts_argmax is a within-ticker
+constant (mean 19.0); ts_std/ts_mean transforms are reconstructable by XGBoost
+from raw ma/rsi/bb -> redundant correlated columns that hurt generalization.
+DECISION: flag stays OFF (default). Patch retained as documented rejected
+experiment (reversible, harmless no-op). P3 arc complete: 3390-panel offers
+NO usable per-ticker alpha beyond the existing 96 features. Tested, not assumed.
+ALSO FIXED (separate standing bug found via Rule#1 gap-check): builder.py
+training_mode insider unpack expected 3 but _load_insider returns 5 -> the
+training_mode feature build was crashing. Committed separately.
+FRAGILITY FLAGGED (not fixed): FEATURE_COLUMNS built at import-time from
+os.environ; no load_dotenv() in entrypoints -> count depends on import order.
+A/B used explicit inline env to avoid confounding. Future refactor candidate.
+
 ORIGINAL P3.2 SPEC (for reference):
 - Goal: Build the multiple-testing + overfitting defense pipeline
 - Deliverable: `analysis/alpha_gate.py` with:
