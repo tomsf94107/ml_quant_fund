@@ -1,0 +1,48 @@
+massive.session_reset reason=init generation=1
+=== GLOBAL PIT eval: 149 tickers, h=5, 5 folds, embargo=5d ===
+  [25/149] CRWD
+  [50/149] MU
+  [75/149] SMCI
+  [100/149] XLU
+  [125/149] EME
+pooled panel: 211,685 rows, 2020-01-30 -> 2026-05-21, built in 4.4m
+features: 100/100 present
+positive class: 52.8%
+[config=production] depth=2 n_est=30 lambda=10.0
+  fold 1: train n=41937, test n=42337, train_auc=0.698, test_auc=0.524, gap=+0.174
+  fold 2: train n=84104, test n=42337, train_auc=0.684, test_auc=0.531, gap=+0.152
+  fold 3: train n=126583, test n=42337, train_auc=0.646, test_auc=0.460, gap=+0.186
+  fold 4: train n=168909, test n=42337, train_auc=0.626, test_auc=0.511, gap=+0.115
+
+========================================================================
+WALK-FORWARD BACKTEST RESULTS
+========================================================================
+
+Per-fold:
+ fold  n_train  n_test  train_auc  test_auc  auc_gap  test_acc  test_brier
+    1    41937   42337     0.6977    0.5238   0.1739    0.4726      0.2819
+    2    84104   42337     0.6837    0.5315   0.1523    0.4799      0.2705
+    3   126583   42337     0.6458    0.4597   0.1861    0.4777      0.2557
+    4   168909   42337     0.6257    0.5112   0.1145    0.4603      0.2599
+
+Overall:
+  n_oos                    169348
+  pooled_oos_auc           0.4786
+  pooled_oos_acc           0.4726
+  pooled_oos_brier         0.267
+  mean_train_auc           0.6632
+  mean_test_auc            0.5065
+  auc_gap                  0.1567
+
+--- Diagnosis ---
+  ⚠ Significant overfit: gap = 0.157.
+    Reduce model complexity (max_depth, n_estimators) or add regularization.
+  ⚠ OOS AUC (0.506) at coin flip. No detectable signal.
+    Pivot: build new alpha sources rather than tune current model.
+
+wrote analysis/global_pit_eval_h5.csv
+
+=== COMPARISON ===
+GLOBAL pooled OOS AUC (this, 5yr purged): 0.4786
+per-ticker OOS AUC (P0-2, 5yr purged):    0.487 / 0.493
+GLOBAL validate_oos (single 2mo split):   0.580  <- the number being tested

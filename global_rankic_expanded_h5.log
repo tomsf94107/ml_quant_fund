@@ -1,0 +1,84 @@
+massive.session_reset reason=init generation=1
+=== GLOBAL PIT eval: 578 tickers, h=5, 5 folds, embargo=5d ===
+  [25/578] CRWD
+  [50/578] MU
+  [75/578] SMCI
+  [100/578] XLU
+  [125/578] EME
+  [150/578] A
+  [175/578] AON
+massive: no data for BF-B 2020-01-01 to 2026-05-31
+  BF-B failed: ValueError: yfinance returned no data for BF-B (2020-01-01 → 2026-05-31)
+  [200/578] BKR
+massive: no data for BRK-B 2020-01-01 to 2026-05-31
+  BRK-B failed: ValueError: yfinance returned no data for BRK-B (2020-01-01 → 2026-05-31)
+  [225/578] CHD
+  [250/578] CSX
+  [275/578] DVA
+  [300/578] EXPD
+  [325/578] GEN
+  [350/578] HSY
+  [375/578] KDP
+  [400/578] MAA
+  [425/578] NCLH
+  [450/578] PAYX
+  [475/578] PWR
+  [500/578] SNPS
+  [525/578] TMO
+  [550/578] VLTO
+  [575/578] YUM
+pooled panel: 868,831 rows, 2020-01-30 -> 2026-05-21, built in 8.7m
+features: 100/100 present
+positive class: 53.1%
+[config=production] depth=2 n_est=30 lambda=10.0
+  fold 1: train n=171317, test n=173766, train_auc=0.701, test_auc=0.514, gap=+0.187
+  fold 2: train n=345767, test n=173766, train_auc=0.669, test_auc=0.525, gap=+0.143
+  fold 3: train n=519382, test n=173766, train_auc=0.654, test_auc=0.474, gap=+0.180
+  fold 4: train n=692804, test n=173767, train_auc=0.631, test_auc=0.498, gap=+0.133
+
+========================================================================
+WALK-FORWARD BACKTEST RESULTS
+========================================================================
+
+Per-fold:
+ fold  n_train  n_test  train_auc  test_auc  auc_gap  test_acc  test_brier
+    1   171317  173766     0.7013    0.5139   0.1875    0.5065      0.2597
+    2   345767  173766     0.6685    0.5251   0.1435    0.4878      0.2611
+    3   519382  173766     0.6540    0.4742   0.1798    0.4987      0.2536
+    4   692804  173767     0.6309    0.4978   0.1330    0.5157      0.2519
+
+Overall:
+  n_oos                    695065
+  pooled_oos_auc           0.4907
+  pooled_oos_acc           0.5022
+  pooled_oos_brier         0.2566
+  mean_train_auc           0.6637
+  mean_test_auc            0.5028
+  auc_gap                  0.1609
+  rank_ic_median           0.0001
+  rank_ic_mean             -0.0017
+  rank_ic_q25              -0.0551
+  rank_ic_q75              0.0538
+  rank_ic_pos_frac         0.501
+  rank_ic_n_dates          974
+  rank_ic_ir               -0.0213
+  rank_ic_t                -0.6663
+
+--- Rank-IC (Stage A: real signal metric, not AUC) ---
+  median IC      +0.0001  (gate: >0.02)
+  IC q25..q75    -0.0551 .. +0.0538  (gate: q25>0)
+  pos fraction   0.501  (gate: >0.55)
+  IC t-stat      -0.666  (gate: >3.0)  over 974 dates
+
+--- Diagnosis ---
+  ⚠ Significant overfit: gap = 0.161.
+    Reduce model complexity (max_depth, n_estimators) or add regularization.
+  ⚠ OOS AUC (0.503) at coin flip. No detectable signal.
+    Pivot: build new alpha sources rather than tune current model.
+
+wrote analysis/global_pit_eval_h5.csv
+
+=== COMPARISON ===
+GLOBAL pooled OOS AUC (this, 5yr purged): 0.4907
+per-ticker OOS AUC (P0-2, 5yr purged):    0.487 / 0.493
+GLOBAL validate_oos (single 2mo split):   0.580  <- the number being tested

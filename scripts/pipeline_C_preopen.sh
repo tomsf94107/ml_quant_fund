@@ -37,6 +37,23 @@ fail() {
 
 log "=== PIPELINE C START ==="
 
+# ── STEP 1 GUARD (May 31 2026): block publish if signal direction is inverted ──
+# The direction model has been near-coin-flip and inverted at the extremes. This
+# guard runs the standing sanity check BEFORE any signal work; on RED (direction
+# decile spread significantly negative) it ABORTS the pipeline so no broken signals
+# get published. Defense-in-depth alongside the ML_QUANT_DISABLE_BUY kill switch.
+log "Stage -1: signal sanity guard (direction / BUY-hit / rank-IC)"
+if $PYTHON analysis/signal_sanity_guard.py --db accuracy.db --days 90 \
+    > "$LOGDIR/neg1_sanity_guard.log" 2>&1; then
+    log "Stage -1 OK — sanity guard GREEN, proceeding"
+else
+    log "Stage -1 RED — sanity guard FAILED; ABORTING publish (broken signal direction)"
+    osascript -e "display notification \"Pipeline C ABORTED: signal sanity guard RED\" with title \"ML Quant Fund\"" 2>/dev/null || true
+    cat "$LOGDIR/neg1_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
+    exit 2
+fi
+
+
 # ── Stage 0: Daily sentiment (non-critical, 15-min timeout) ──────────────────
 log "Stage 0: Daily sentiment scoring"
 SENT_START=$(date +%s)

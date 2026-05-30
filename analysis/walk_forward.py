@@ -383,6 +383,9 @@ def walk_forward_backtest(
     pooled_y_pred: List[float] = []
     pooled_ret: List[float] = []
     pooled_date: List = []
+    pooled_ticker: List = []
+    tickers_arr = (df["ticker"].values if "ticker" in df.columns
+                   else np.array(["_"] * len(df)))
 
     for fold_i, (train_idx, test_idx) in enumerate(
         purged_kfold_indices(dates, n_folds=n_folds, embargo=embargo)
@@ -424,6 +427,7 @@ def walk_forward_backtest(
         pooled_y_pred.extend(y_te_pred.tolist())
         pooled_ret.extend(ret[test_idx].tolist())
         pooled_date.extend(dates.iloc[test_idx].tolist())
+        pooled_ticker.extend(tickers_arr[test_idx].tolist())
 
         if verbose:
             print(f"  fold {fold_i + 1}: train n={len(train_idx)}, "
@@ -450,7 +454,7 @@ def walk_forward_backtest(
         # This is the metric that maps to portfolio Sharpe (research: AUC~=0.5+IC/2,
         # so AUC hides weak signal). Computed WITHIN each date, then summarized.
         ic_df = pd.DataFrame({"date": pooled_date, "pred": pooled_y_pred,
-                              "ret": pooled_ret})
+                              "ret": pooled_ret, "ticker": pooled_ticker})
         per_date_ic = []
         for d, g in ic_df.groupby("date"):
             if len(g) >= 5 and g["pred"].nunique() > 1 and g["ret"].nunique() > 1:
@@ -469,6 +473,73 @@ def walk_forward_backtest(
             ir = arr.mean() / arr.std() if arr.std() > 0 else float("nan")
             overall["rank_ic_ir"] = round(float(ir), 4)
             overall["rank_ic_t"]  = round(float(ir * np.sqrt(len(arr))), 4)
+
+        # ── Long/short decile spread (short-leg test) ──
+        # Per date: rank by pred, top-decile mean return MINUS bottom-decile mean.
+        # Positive = model ranks correctly (long top/short bottom profits).
+        # Negative = model ranks BACKWARDS (invert -> profit). ~0 = no structure.
+        ls = []
+        for d, g in ic_df.groupby("date"):
+            if len(g) >= 10:  # need enough names for deciles
+                g = g.sort_values("pred")
+                k = max(1, len(g) // 10)
+                bot = g.head(k)["ret"].mean()   # lowest pred
+                top = g.tail(k)["ret"].mean()    # highest pred
+                ls.append(top - bot)
+        if ls:
+            lsa = np.array(ls)
+            overall["ls_spread_mean"]   = round(float(lsa.mean()), 5)
+            overall["ls_spread_median"] = round(float(np.median(lsa)), 5)
+            overall["ls_pos_frac"]      = round(float((lsa > 0).mean()), 4)
+            lir = lsa.mean() / lsa.std() if lsa.std() > 0 else float("nan")
+            overall["ls_daily_ir"]      = round(float(lir), 4)
+            # annualized Sharpe (h=5 holding -> ~50 independent periods/yr)
+            overall["ls_sharpe_ann"]    = round(float(lir * np.sqrt(50)), 4)
+            overall["ls_t"]             = round(float(lir * np.sqrt(len(lsa))), 4)
+            overall["ls_n_dates"]       = int(len(lsa))
+
+        # ── PHASE 0: inverted reversal, NET OF COSTS ──
+        # Model ranks backwards (negative ls spread). The tradeable signal is the
+        # INVERTED book: long the model's bottom decile, short its top. Question:
+        # does it survive turnover cost? Cost = 10bps per unit turnover, both legs.
+        COST_BPS = 10.0
+        inv_spreads = []   # inverted daily spread = -(top - bot) = bot - top
+        prev_top, prev_bot = None, None
+        turnovers = []
+        for d in sorted(ic_df["date"].unique()):
+            g = ic_df[ic_df["date"] == d]
+            if len(g) < 10:
+                continue
+            g = g.sort_values("pred")
+            k = max(1, len(g) // 10)
+            bot_names = set(g.head(k)["ticker"])   # lowest pred -> we LONG these (inverted)
+            top_names = set(g.tail(k)["ticker"])   # highest pred -> we SHORT these
+            bot_ret = g.head(k)["ret"].mean()
+            top_ret = g.tail(k)["ret"].mean()
+            inv_spreads.append(bot_ret - top_ret)  # inverted: long bottom, short top
+            # turnover = fraction of decile names that changed vs prior rebalance
+            if prev_top is not None:
+                t_turn = 1.0 - len(top_names & prev_top) / max(1, len(top_names))
+                b_turn = 1.0 - len(bot_names & prev_bot) / max(1, len(bot_names))
+                turnovers.append((t_turn + b_turn) / 2.0)
+            prev_top, prev_bot = top_names, bot_names
+        if inv_spreads:
+            ia = np.array(inv_spreads)
+            avg_turn = float(np.mean(turnovers)) if turnovers else 1.0
+            # cost per rebalance: turnover * 10bps * 2 legs (long+short)
+            cost_per_reb = avg_turn * (COST_BPS / 1e4) * 2.0
+            gross_mean = float(ia.mean())
+            net_mean = gross_mean - cost_per_reb
+            sd = ia.std()
+            gross_sharpe = (gross_mean / sd * np.sqrt(50)) if sd > 0 else float("nan")
+            net_sharpe   = (net_mean   / sd * np.sqrt(50)) if sd > 0 else float("nan")
+            overall["inv_gross_spread"]  = round(gross_mean, 5)
+            overall["inv_net_spread"]    = round(net_mean, 5)
+            overall["inv_turnover"]      = round(avg_turn, 4)
+            overall["inv_cost_per_reb"]  = round(cost_per_reb, 5)
+            overall["inv_gross_sharpe"]  = round(float(gross_sharpe), 4)
+            overall["inv_net_sharpe"]    = round(float(net_sharpe), 4)
+            overall["inv_n_dates"]       = int(len(ia))
 
     return folds_df, overall
 
@@ -615,6 +686,21 @@ def print_backtest_report(folds_df: pd.DataFrame, overall: Dict) -> None:
         print(f"  IC q25..q75    {overall['rank_ic_q25']:+.4f} .. {overall['rank_ic_q75']:+.4f}  (gate: q25>0)")
         print(f"  pos fraction   {overall['rank_ic_pos_frac']:.3f}  (gate: >0.55)")
         print(f"  IC t-stat      {overall['rank_ic_t']:+.3f}  (gate: >3.0)  over {overall['rank_ic_n_dates']} dates")
+
+    if "ls_spread_mean" in overall:
+        print("\n--- Long/Short Decile Spread (short-leg test) ---")
+        print(f"  daily spread   {overall['ls_spread_mean']:+.5f}  (top-decile ret - bottom-decile ret)")
+        print(f"  spread t-stat  {overall['ls_t']:+.3f}  pos-frac {overall['ls_pos_frac']:.3f}")
+        print(f"  ann Sharpe     {overall['ls_sharpe_ann']:+.3f}  over {overall['ls_n_dates']} dates")
+        print(f"  READ: positive = long/short tradeable. negative = model ranks BACKWARDS (invert). ~0 = no structure.")
+
+    if "inv_net_sharpe" in overall:
+        print("\n--- PHASE 0: Inverted reversal, NET OF COSTS ---")
+        print(f"  gross inverted Sharpe   {overall['inv_gross_sharpe']:+.3f}")
+        print(f"  turnover / rebalance    {overall['inv_turnover']*100:.1f}%")
+        print(f"  cost drag / rebalance   {overall['inv_cost_per_reb']:+.5f}")
+        print(f"  NET inverted Sharpe     {overall['inv_net_sharpe']:+.3f}  <- GATE: >0 toward +0.5 = economic")
+        print(f"  (long model's BOTTOM decile, short its TOP; {overall['inv_n_dates']} rebalances)")
 
     print("\n--- Diagnosis ---")
     gap = overall.get("auc_gap", 0)

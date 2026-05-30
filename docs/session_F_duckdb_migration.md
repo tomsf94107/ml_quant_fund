@@ -1,6 +1,6 @@
 # Session F: Migrate institutional_trades to native DuckDB
 
-Target: Saturday, May 23 2026
+Target: Friday, May 22 2026
 Estimated time: 8 hours focused work
 Rationale: Plan to scale to 300-500 tickers in 6-12 months. SQLite
 window functions (Option D) ceiling ~500M rows; DuckDB native handles

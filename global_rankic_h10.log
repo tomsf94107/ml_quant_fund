@@ -1,0 +1,63 @@
+massive.session_reset reason=init generation=1
+=== GLOBAL PIT eval: 149 tickers, h=10, 5 folds, embargo=5d ===
+FRED VIXCLS: attempt 1/3 HTTP 429: {"error_code":429,"error_message":"Too Many Requests.  Exceeded Rate Limit"}
+  [25/149] CRWD
+  [50/149] MU
+  [75/149] SMCI
+  [100/149] XLU
+  [125/149] EME
+pooled panel: 210,940 rows, 2020-01-30 -> 2026-05-14, built in 4.4m
+features: 100/100 present
+positive class: 53.6%
+[config=production] depth=2 n_est=30 lambda=10.0
+  fold 1: train n=41815, test n=42188, train_auc=0.699, test_auc=0.534, gap=+0.164
+  fold 2: train n=83968, test n=42188, train_auc=0.686, test_auc=0.513, gap=+0.173
+  fold 3: train n=126023, test n=42188, train_auc=0.656, test_auc=0.437, gap=+0.218
+  fold 4: train n=168179, test n=42188, train_auc=0.637, test_auc=0.530, gap=+0.107
+
+========================================================================
+WALK-FORWARD BACKTEST RESULTS
+========================================================================
+
+Per-fold:
+ fold  n_train  n_test  train_auc  test_auc  auc_gap  test_acc  test_brier
+    1    41815   42188     0.6987    0.5342   0.1645    0.4568      0.2854
+    2    83968   42188     0.6855    0.5130   0.1726    0.4640      0.2675
+    3   126023   42188     0.6556    0.4373   0.2183    0.4646      0.2558
+    4   168179   42188     0.6369    0.5301   0.1068    0.4738      0.2594
+
+Overall:
+  n_oos                    168752
+  pooled_oos_auc           0.4664
+  pooled_oos_acc           0.4648
+  pooled_oos_brier         0.267
+  mean_train_auc           0.6692
+  mean_test_auc            0.5036
+  auc_gap                  0.1656
+  rank_ic_median           0.0019
+  rank_ic_mean             0.0081
+  rank_ic_q25              -0.1443
+  rank_ic_q75              0.1618
+  rank_ic_pos_frac         0.5046
+  rank_ic_n_dates          1207
+  rank_ic_ir               0.0381
+  rank_ic_t                1.3223
+
+--- Rank-IC (Stage A: real signal metric, not AUC) ---
+  median IC      +0.0019  (gate: >0.02)
+  IC q25..q75    -0.1443 .. +0.1618  (gate: q25>0)
+  pos fraction   0.505  (gate: >0.55)
+  IC t-stat      +1.322  (gate: >3.0)  over 1207 dates
+
+--- Diagnosis ---
+  ⚠ Significant overfit: gap = 0.166.
+    Reduce model complexity (max_depth, n_estimators) or add regularization.
+  ⚠ OOS AUC (0.504) at coin flip. No detectable signal.
+    Pivot: build new alpha sources rather than tune current model.
+
+wrote analysis/global_pit_eval_h10.csv
+
+=== COMPARISON ===
+GLOBAL pooled OOS AUC (this, 5yr purged): 0.4664
+per-ticker OOS AUC (P0-2, 5yr purged):    0.487 / 0.493
+GLOBAL validate_oos (single 2mo split):   0.580  <- the number being tested

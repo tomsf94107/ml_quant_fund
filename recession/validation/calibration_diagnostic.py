@@ -66,11 +66,14 @@ from recession.validation.lead_time import run_lead_time_analysis
 # default number of reliability-diagram bins on [0, 1]
 N_BINS = 10
 
-# the model ladder to diagnose: (label, target, horizon)
+# the model ladder to diagnose: (label, target, horizon, model).
+# M1 (yield curve) at h=12; M2 (macro logit) at the short horizons, per
+# B-track. Diagnosing M1 at h=3 would diagnose the yield curve where it
+# is known to be weak — not the model that actually runs there.
 DIAGNOSTIC_LADDER = [
-    ("h=12 (yield curve)", "T1", "h=12"),
-    ("h=6", "T1", "h=6"),
-    ("h=3", "T1", "h=3"),
+    ("h=12 (yield curve / M1)", "T1", "h=12", "M1"),
+    ("h=6 (macro / M2)", "T1", "h=6", "M2"),
+    ("h=3 (macro / M2)", "T1", "h=3", "M2"),
 ]
 
 # a model whose largest OOS probability never exceeds this is flagged
@@ -188,9 +191,9 @@ def run_calibration_diagnostic(
     Returns {'horizons': [{label, horizon, diagram, diagnosis}...]}.
     """
     horizons = []
-    for label, target, horizon in DIAGNOSTIC_LADDER:
+    for label, target, horizon, model in DIAGNOSTIC_LADDER:
         res = run_lead_time_analysis(
-            target=target, horizon=horizon,
+            target=target, horizon=horizon, model=model,
             min_history_year=min_history_year, db_path=db_path,
             **wf_kwargs)
         if res.get("error") or "proba" not in res:

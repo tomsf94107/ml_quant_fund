@@ -969,6 +969,22 @@ def generate_signals(
                 f"  ⚠ {ticker} h=5d BUY downgraded by overlay: {today_overlay_reason}"
             )
 
+    # ── STEP 1 KILL SWITCH (May 31 2026) ──────────────────────────────────────
+    # The direction model is near-coin-flip AND inverted at the extremes (verified
+    # on live data: decile spread t=-2.29 at h=5; leaned DOWN on MRVL/DDOG/NOK while
+    # they ran up; fired ~0 BUYs on AMD/INTC/MU during +11-13% runs). Until the
+    # reversion rebuild (roadmap Step 2-3) ships and passes live validation (Step 4),
+    # force every BUY to HOLD. SAFE DEFAULT = disabled (env unset -> BUYs OFF).
+    # Re-enable is a DELIBERATE act after Step 4: set ML_QUANT_DISABLE_BUY=0.
+    if today_signal == "BUY" and os.environ.get("ML_QUANT_DISABLE_BUY", "1") == "1":
+        today_signal = "HOLD"
+        import logging as _ks_log
+        _ks_log.getLogger("signals.generator").warning(
+            f"  ⛔ {ticker} h={horizon}d BUY->HOLD: STEP 1 kill switch active "
+            f"(direction model inverted; reversion rebuild pending). "
+            f"Set ML_QUANT_DISABLE_BUY=0 only after Step 4 validation."
+        )
+
     # Price forecast using ATR
     current_price   = float(df["close"].iloc[-1]) if "close" in df.columns else None
     atr_val         = float(df["atr"].iloc[-1])   if "atr"   in df.columns else None

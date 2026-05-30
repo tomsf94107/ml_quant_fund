@@ -1,0 +1,180 @@
+{
+  "experiment_id": "C1_lgb_pct7_v2_with_interactions",
+  "saved_at": "2026-05-25T22:12:59.308808",
+  "horizon": 5,
+  "target_definition": "fwd_5d_ret >= 0.07, LightGBM only, +5 interaction features",
+  "train_size": 176246,
+  "test_size": 4625,
+  "oos_auc": 0.7191825637197907,
+  "feature_importances": {
+    "top_15": [
+      [
+        "volatility_10d",
+        0.2049947013412781
+      ],
+      [
+        "bb_width",
+        0.04494302157684415
+      ],
+      [
+        "semi_etf_momentum_60d",
+        0.041603271078315796
+      ],
+      [
+        "volatility_5d",
+        0.040975703052280044
+      ],
+      [
+        "lqd_hyg_spread",
+        0.03693776433442254
+      ],
+      [
+        "vix_term_structure",
+        0.03656252360688798
+      ],
+      [
+        "vol_10d_self_rank",
+        0.03498612411445197
+      ],
+      [
+        "yield_10y",
+        0.034904404186732914
+      ],
+      [
+        "vix_close",
+        0.032212656549184766
+      ],
+      [
+        "igv_vs_sp500_ret_30d",
+        0.02476370022143166
+      ],
+      [
+        "xlk_ret_5d",
+        0.023930817672792638
+      ],
+      [
+        "xle_ret_5d",
+        0.02069765308480288
+      ],
+      [
+        "xlp_ret_5d",
+        0.020462180795338576
+      ],
+      [
+        "days_to_earnings",
+        0.020392339402475552
+      ],
+      [
+        "beta_60d",
+        0.01951719194147829
+      ]
+    ],
+    "groups": {
+      "8K": 0.006149105184635914,
+      "rev": 0.012980453033020289,
+      "inst": 0.0004999154943132364,
+      "vol": 0.29091342597040226,
+      "macro": 0.33691863457607524,
+      "interactions": 0.06967928127995004
+    }
+  },
+  "notes": "Phase 1 D: PCT7 re-trained with vol_x_short, rev_x_low52w, vol_10d_self_rank, vol_zscore_60d, is_squeeze_setup",
+  "feature_cols": [
+    "return_1d",
+    "return_3d",
+    "return_5d",
+    "ma_5",
+    "ma_10",
+    "ma_20",
+    "volatility_5d",
+    "volatility_10d",
+    "rsi_14",
+    "macd",
+    "bb_upper",
+    "bb_lower",
+    "bb_width",
+    "volume_zscore",
+    "volume_spike",
+    "vwap",
+    "obv",
+    "atr",
+    "spy_ret",
+    "xlk_ret",
+    "xle_ret_5d",
+    "xlv_ret_5d",
+    "xlf_ret_5d",
+    "xlk_ret_5d",
+    "xlu_ret_5d",
+    "xli_ret_5d",
+    "xlp_ret_5d",
+    "xly_ret_5d",
+    "sentiment_score",
+    "insider_net_shares",
+    "insider_7d",
+    "insider_21d",
+    "risk_today",
+    "risk_next_1d",
+    "risk_next_3d",
+    "risk_prev_1d",
+    "is_pandemic",
+    "eps_surprise",
+    "rev_surprise",
+    "days_to_earnings",
+    "post_earnings_1d",
+    "post_earnings_3d",
+    "post_earnings_5d",
+    "vwap_dev_eod",
+    "vol_surge_eod",
+    "intraday_momentum",
+    "premarket_gap",
+    "finbert_sentiment",
+    "finbert_sentiment_earnings",
+    "eightk_exec_change_30d",
+    "eightk_material_agreement_30d",
+    "eightk_reg_fd_30d",
+    "eightk_other_events_30d",
+    "eightk_filings_30d",
+    "eightk_days_since_last",
+    "rev_growth_yoy",
+    "rev_growth_qoq",
+    "oil_ret",
+    "oil_spy_corr",
+    "return_20d",
+    "return_60d",
+    "ma_50",
+    "ma5_above_ma20",
+    "ma20_above_ma50",
+    "high_52w_ratio",
+    "low_52w_ratio",
+    "bb_pct",
+    "rsi_above_70",
+    "rsi_below_30",
+    "obv_trend",
+    "vix_close",
+    "vix_ret",
+    "dxy_ret",
+    "yield_10y",
+    "vix_term_structure",
+    "beta_60d",
+    "short_ratio",
+    "short_pct_float",
+    "monday_sentiment",
+    "sector_rel_ret",
+    "day_of_week",
+    "is_month_end",
+    "vix_5d_above_25",
+    "semi_etf_momentum_60d",
+    "igv_vs_sp500_ret_30d",
+    "lqd_hyg_spread",
+    "vol_x_short",
+    "rev_x_low52w",
+    "vol_10d_self_rank",
+    "vol_zscore_60d",
+    "is_squeeze_setup",
+    "inst_block_buy_sell_7d",
+    "inst_signed_flow_30d",
+    "inst_auction_imbal_5d",
+    "inst_signed_flow_5d"
+  ],
+  "model_filename": "C1_lgb_pct7_v2_with_interactions_h5d_20260525.joblib"
+}

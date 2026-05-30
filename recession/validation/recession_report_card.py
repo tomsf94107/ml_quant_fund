@@ -80,13 +80,15 @@ KNOWN_RECESSION_NAMES = {
 # available via lead_time.run_lead_time_analysis for those who want it.
 REPORT_CARD_THRESHOLD = 0.5
 
-# the model ladder the report card scores: (label, target, horizon).
-# M1 is the yield-curve model at h=12; the short horizons use the
-# walk-forward at h=3 / h=6 (B-track established macro features there).
+# the model ladder the report card scores: (label, target, horizon, model).
+# M1 (yield-curve probit) is the h=12 model. B-track established M2 (the
+# 4-feature macro logit) as the SHORT-horizon model — so h=6 and h=3 are
+# scored with M2, not M1. Scoring M1 at h=3 would test the yield curve
+# where it is known to be weak; that is not what those horizons run.
 REPORT_CARD_LADDER = [
-    ("h=12 (yield curve)", "T1", "h=12"),
-    ("h=6", "T1", "h=6"),
-    ("h=3", "T1", "h=3"),
+    ("h=12 (yield curve / M1)", "T1", "h=12", "M1"),
+    ("h=6 (macro / M2)", "T1", "h=6", "M2"),
+    ("h=3 (macro / M2)", "T1", "h=3", "M2"),
 ]
 
 
@@ -196,11 +198,16 @@ def _months_between(earlier: pd.Timestamp, later: pd.Timestamp) -> int:
 
 
 def _score_one_horizon(
-    label: str, target: str, horizon: str,
+    label: str, target: str, horizon: str, model: str,
     *, db_path, min_history_year, true_onsets, **wf_kwargs,
 ) -> dict:
     """Run the lead-time engine for one horizon and split its onsets into
     out-of-sample (Tier 1) and in-sample (Tier 2).
+
+    `model` selects which model to score at this horizon — 'M1' (yield
+    curve) for h=12, 'M2' (macro logit) for the short horizons, per
+    B-track. Scoring the wrong model at a horizon tests it where it is
+    not designed to work.
 
     `true_onsets` are the REALIZED recession onset dates (from the h=0
     target — the month a recession actually began). They are passed in so
@@ -210,7 +217,7 @@ def _score_one_horizon(
     hit/miss must be measured against the true onset, not the shifted one.
     """
     res = run_lead_time_analysis(
-        target=target, horizon=horizon,
+        target=target, horizon=horizon, model=model,
         min_history_year=min_history_year, db_path=db_path,
         thresholds=[REPORT_CARD_THRESHOLD], **wf_kwargs,
     )
@@ -286,9 +293,9 @@ def build_recession_report_card(
     true_onsets = find_recession_onsets(realized)
 
     horizons = []
-    for label, target, horizon in REPORT_CARD_LADDER:
+    for label, target, horizon, model in REPORT_CARD_LADDER:
         horizons.append(_score_one_horizon(
-            label, target, horizon,
+            label, target, horizon, model,
             db_path=db_path, min_history_year=min_history_year,
             true_onsets=true_onsets, **wf_kwargs))
     return {"horizons": horizons, "threshold": REPORT_CARD_THRESHOLD,
@@ -392,3 +399,123 @@ def print_recession_report_card(card: dict) -> None:
     print("    that fired with no recession after. For false-alarm rate,")
     print("    use lead_time.run_lead_time_analysis's threshold sweep.")
     print("=" * 74)
+
+
+# =============================================================================
+# Onset-window inspection — "why did the report card say MISSED?"
+# =============================================================================
+
+def inspect_onset_window(
+    onset: str,
+    horizon: str = "h=3",
+    *,
+    model: str = "M2",
+    target: str = "T1",
+    context_months: int = 30,
+    db_path: Optional[Path] = None,
+    min_history_year: Optional[int] = 1986,
+    **wf_kwargs,
+) -> dict:
+    """Print a model's month-by-month OOS probability around one recession
+    onset — the diagnostic behind a report-card verdict.
+
+    The report card's verdict for an onset depends on whether the
+    probability crossed the threshold INSIDE that horizon's lead window.
+    When a model ranks well overall (good reliability diagram) yet the
+    report card says MISSED, the question is WHEN the model actually
+    fired — inside the window, or just outside it. This prints exactly
+    that: each month's probability for `context_months` months around the
+    onset, marking the lead window and the threshold crossings.
+
+    Returns {'onset', 'horizon', 'model', 'lead_window', 'window_rows',
+             'crossed_in_window', 'crossings_outside'}.
+    """
+    onset_ts = pd.Timestamp(onset)
+    lead_window = _lead_window_for(horizon)
+
+    res = run_lead_time_analysis(
+        target=target, horizon=horizon, model=model,
+        min_history_year=min_history_year, db_path=db_path,
+        thresholds=[REPORT_CARD_THRESHOLD], **wf_kwargs,
+    )
+    if res.get("error") or "proba" not in res:
+        return {"onset": onset, "horizon": horizon, "model": model,
+                "error": res.get("error", "no OOS predictions")}
+
+    proba = res["proba"]
+    lo = onset_ts - pd.DateOffset(months=context_months)
+    hi = onset_ts + pd.DateOffset(months=6)
+    ctx = proba[(proba.index >= lo) & (proba.index <= hi)]
+
+    window_start = onset_ts - pd.DateOffset(months=lead_window)
+    rows = []
+    crossed_in_window = False
+    crossings_outside = []
+    for d, p in ctx.items():
+        in_window = window_start <= d < onset_ts
+        crossed = p >= REPORT_CARD_THRESHOLD
+        if crossed and in_window:
+            crossed_in_window = True
+        if crossed and not in_window:
+            crossings_outside.append((d, float(p)))
+        rows.append({"month": d, "proba": float(p),
+                     "in_window": in_window, "crossed": crossed})
+
+    return {"onset": onset, "horizon": horizon, "model": model,
+            "lead_window": lead_window,
+            "window_start": window_start, "onset_ts": onset_ts,
+            "window_rows": rows,
+            "crossed_in_window": crossed_in_window,
+            "crossings_outside": crossings_outside,
+            "error": None}
+
+
+def print_onset_window(inspection: dict) -> None:
+    """Print the onset-window inspection."""
+    print("=" * 70)
+    print(f"ONSET-WINDOW INSPECTION — {inspection.get('model')} at "
+          f"{inspection.get('horizon')}, onset {inspection.get('onset')}")
+    print("=" * 70)
+    if inspection.get("error"):
+        print(f"  ERROR: {inspection['error']}")
+        print("=" * 70)
+        return
+
+    lw = inspection["lead_window"]
+    print(f"  lead window: {lw} months before onset "
+          f"({inspection['window_start']:%Y-%m} .. "
+          f"{inspection['onset_ts']:%Y-%m})")
+    print(f"  threshold: probability >= {REPORT_CARD_THRESHOLD}")
+    print()
+    print(f"  {'month':>9} {'proba':>8}  {'in window':>10}  flag")
+    for r in inspection["window_rows"]:
+        win = "yes" if r["in_window"] else ""
+        flag = ""
+        if r["crossed"] and r["in_window"]:
+            flag = "<-- CROSSED, in window (would be CALLED)"
+        elif r["crossed"]:
+            flag = "<-- crossed, OUTSIDE window"
+        print(f"  {r['month']:%Y-%m} {r['proba']:>8.3f}  {win:>10}  {flag}")
+    print()
+    if inspection["crossed_in_window"]:
+        print("  VERDICT: the probability DID cross the threshold inside")
+        print("  the lead window — this onset should read CALLED.")
+    else:
+        print("  VERDICT: the probability never crossed the threshold")
+        print("  inside the lead window — the report card's MISSED is")
+        print("  correct for this window.")
+        if inspection["crossings_outside"]:
+            cs = inspection["crossings_outside"]
+            print(f"  BUT the model DID cross the threshold "
+                  f"{len(cs)} time(s) OUTSIDE the window:")
+            for d, p in cs:
+                lead = _months_between(d, inspection["onset_ts"])
+                where = (f"{lead} months before onset" if lead > 0
+                         else f"{-lead} months after onset")
+                print(f"    {d:%Y-%m}  proba {p:.3f}  ({where})")
+            print("  -> the model fired for this recession, but not")
+            print("     within the window matched to this horizon.")
+            print("     Either the window is too narrow for how this")
+            print("     model leads, or the signal genuinely came at a")
+            print("     different lead than the horizon implies.")
+    print("=" * 70)
