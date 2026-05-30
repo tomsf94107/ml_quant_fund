@@ -1561,7 +1561,12 @@ TWO LOAD-BEARING LESSONS (violate these and the factory manufactures false posit
 - Have (real): alpha_gate.py (CS rank-IC + Harvey-Liu-Zhu |t|>3.0), alpha_gate_stats.py
   (deflated_sharpe, expected_max_sharpe, probabilistic_sharpe), alpha_gate_incremental.py
   (absolute uplift vs raw base), fitness_scorer.py, walk_forward.py (purged k-fold + embargo).
-- GAP A (CRITICAL, L1): add a PER-TICKER / production-objective gate beside the CS-IC gate.
+- GAP A ✅ DONE (May 30, commit 77547df): per-ticker TS-IC gate added beside CS-IC in alpha_gate.py.
+  Result h5: 32 CS survivors -> 14 pass per-ticker t>3, but only 6 SAME-SIGN (dual_survivor).
+  6 same-sign = earnings/fundamentals-event signals (post_earnings_3d/5d, eps_surprise, rev_growth_qoq, obv, bb_width).
+  8 opposite-sign = objective-conditional traps (vwap/rsi/macd/52w/intraday: trend CS, mean-revert per-ticker).
+  27/32 CS survivors flagged divergent — quantifies the P3.5 footgun the old gate was blind to.
+- GAP A (was): add a PER-TICKER / production-objective gate beside the CS-IC gate.
   A candidate must improve the metric the live model is scored on, not just CS-IC.
 - GAP B: add PBO via CSCV (Bailey-Lopez de Prado) — have DSR+PSR+t>3, missing backtest-overfit prob.
 - SIX-GATE BAR (clear ALL): purged-CV rank-IC IR>0.3; |t|>3.0; DSR>0.95; PBO<0.3;
