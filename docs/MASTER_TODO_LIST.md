@@ -1,5 +1,172 @@
 # Master Unified TODO List
 
+> ★★★ **CURRENT ROADMAP — SINGLE SOURCE OF TRUTH (May 30 2026).** Everything below
+> titled "P3 ALPHA PROGRAM", "P3 ALPHA FACTORY", or "P3+ WEAK-SIGNAL EXTRACTION PLAN
+> (Stages A-E)" is **SUPERSEDED** by this section. Those remain for history only.
+> Companion reference (full model + alpha encyclopedia): docs/QUANT_BUILD_MENU.md.
+
+## ★ CURRENT ROADMAP — self-contained, phased, gated (May 30 2026)
+
+### WHY THIS EXISTS — the findings that led here (May 30 session)
+Spent the session honestly characterizing the current system. Cleared three fictions:
+the old 0.967 AUC (training, not OOS), the 0.58 GLOBAL (a leaky single 2-month split),
+and the per-ticker hope. Then tested SIX configurations under purged-WF + 5d embargo:
+
+1. Per-ticker direction (XGBoost classification): OOS AUC 0.487/0.493, n=21376. Coin flip.
+2. GLOBAL cross-sectional direction: OOS AUC 0.496 (the 0.58 was the leak). Coin flip.
+3. Rank-IC re-baseline (AUC hides weak signal; AUC~=0.5+IC/2): per-ticker IC 0.011 t=0.97;
+   GLOBAL 149-name IC 0.0112 t=1.66. Weak-but-real (PBO=0.15 says signal is NOT data-mined).
+4. Horizon sweep h=1/3/5/10/20: signal PEAKS at h=5 (t=1.66), NEGATIVE by h=20 (t=-1.50).
+   Lengthening horizon HURTS. Pooling horizons dead (h3/h5 corr 0.571 = only partial breadth).
+5. Universe expansion 149->578 (S&P 500): rank-IC t COLLAPSED 1.66 -> -0.67. Naive breadth
+   DILUTES (new names carry ~0 IC, drown the faint signal). IR=IC*sqrt(breadth) only works if
+   new names share the IC; they didn't.
+6. Per-sector decomposition: NO sector carries within-sector edge — tech t=-0.81, several
+   sectors significantly NEGATIVE (XLE -5.43, XLC -3.07). The 149's t=1.66 is a weak
+   CROSS-SECTOR BETA TILT, not stock-picking.
+
+THE KEY FINDING: the long/short DECILE SPREAD is significantly NEGATIVE and strengthens with
+breadth (149: t=-1.41 -> 578: t=-2.69). The model RANKS BACKWARDS at the extremes,
+consistently and significantly. This is a SHORT-TERM MEAN-REVERSION signature: features are
+momentum/trend-flavored, but at h=5 the decile extremes mean-revert (winners pull back, losers
+bounce). The system "accidentally found reversal" pointing the wrong way. We asked DIRECTION
+when the data wants REVERSION.
+
+CONCLUSION: not "no signal / stuck." We tested ~6 of dozens of approaches (all = ONE model,
+ONE target=direction, ZERO combination). The data points hard at MEAN-REVERSION / STAT-ARB.
+Three highest-value untested directions need NO new data, only new method: (1) rank/reframe,
+(2) COMBINE many weak signals, (3) stat-arb mean-reversion. This roadmap sequences them.
+
+### DEPENDENCY LOGIC (why this exact order)
+- The COMBINER (Phase 3) cannot come first — it needs >=2 VALIDATED alphas to combine.
+  Building it on zero validated alphas = empty machine.
+- LEARNING-TO-RANK is not independent of the direction-vs-reversion question — a ranker
+  trained on the same DIRECTION target ranks backwards too. Re-target it AFTER Phase 0/1
+  settle that reversion is the right target.
+- EXPENSIVE high-ceiling models (IPCA, conditional autoencoder, 3-4 wk builds) come LAST,
+  only after the target is known and cheap methods show life. No point building a neural
+  factor model to predict a target we've shown is wrong.
+- Cheapest + most decisive tests first, so a kill comes early and free.
+
+---
+
+### PHASE 0 — GATE (hours): does the reversal survive transaction costs?  ★ IMMEDIATE NEXT
+WHAT: invert the existing model's ranking (since it ranks backwards), compute the decile
+spread (top-decile minus bottom-decile forward return) NET of realistic costs. Cost model:
+10bps per unit turnover, already in fitness_scorer.py — must be applied in the spread calc.
+WHY: the t=-2.69 negative spread is statistically real, but decile extremes are the
+highest-turnover names. The whole question is whether inverting it nets positive AFTER costs.
+BUILD: extend the L/S block in analysis/walk_forward.py to (a) invert, (b) deduct
+turnover*10bps, (c) report net Sharpe. Hours, data in hand.
+GATE:
+  - inverted net-of-cost Sharpe > 0, ideally toward +0.5  -> reversal is ECONOMIC -> Phase 2 (stat-arb).
+  - inverted net Sharpe <= 0  -> reversal real but UNECONOMIC at this turnover -> still do
+    Phase 1 (linear baseline) but downgrade stat-arb hope; the turnover problem means the
+    proper fix is lower-turnover reversion (longer rebalance) or PCA-residual (Phase 2a) which
+    is gentler than raw decile flipping.
+
+### PHASE 1 — CHEAP DIAGNOSTICS (days, parallelizable, hours each)
+1a. LINEAR BASELINE (menu A1: ridge / lasso / elastic-net) on the SAME features + same purged-WF.
+    WHY: XGBoost overfits (train 0.66-0.79 vs test ~0.50 = 0.25 gap). Linear can't memorize
+    noise, so on low-SNR data it often generalizes better. Tells us if the model CLASS is part
+    of the problem or if the signal is genuinely weak regardless of model.
+    READ: linear gap << tree gap AND linear OOS IC >= tree -> trees were overfitting, switch.
+          linear also ~0 -> signal is genuinely weak, not a model artifact.
+    BUILD: scikit-learn, hours.
+1b. SHORT-TERM REVERSAL as a STANDALONE alpha (menu B2). Construct: rank by -1*(trailing 5d
+    return) [and variants: -1*(1d), residual reversal]. Run through alpha_gate (HLZ t>3, PBO)
+    + decile spread net of costs. This tests the mean-reversion hypothesis as a CLEAN designed
+    signal, not an inverted accident of a direction model.
+    BUILD: trivial feature + existing gate. Hours.
+GATE: 1b reversal alpha clears the gate (t>2, positive net-of-cost spread) -> reversion is a
+real tradeable alpha -> Phase 2. (1a informs whether to keep trees in everything downstream.)
+
+### PHASE 2 — THE REFRAME (weeks): build FOR reversion + re-target ranking
+2a. PCA RESIDUAL REVERSAL (menu B14, Avellaneda-Lee "Statistical Arbitrage in the US Equities
+    Market"). Method: fit a factor model (PCA on returns, or use sector/FF factors), compute
+    each stock's RESIDUAL vs its factor-implied return, trade the residual's mean-reversion
+    (buy stocks below factor-implied, short above). MARKET-NEUTRAL by construction -> sidesteps
+    the long-only breadth wall entirely (lever 3b achieved structurally, not via raw shorting
+    of decile extremes). This is the single most promising reframe given the data.
+    BUILD: statsmodels (cointegration/OLS) + reuse existing PCA machinery. ~weeks.
+2b. RE-TARGET LEARNING-TO-RANK (menu A4). train_global_ranker.py (LightGBM lambdarank) EXISTS
+    but was never honestly evaluated AND was trained on the wrong (direction) target. Re-train
+    on the RIGHT target — forward-return rank with reversal framing / vol-scaled — and eval via
+    purged-WF rank-IC. Research (Poh et al 2021): ranking ~3x Sharpe vs classification.
+    BUILD: model exists; re-target + honest eval. Days-to-week.
+GATE: 2a or 2b produces an alpha with net-of-cost Sharpe > 0.5 across CPCV paths. >=2 surviving
+DECORRELATED alphas (e.g. PCA-residual + reversal + any Phase-1 survivor) -> Phase 3.
+
+### PHASE 3 — COMBINATION (weeks): the multiplier — Alpha Factory Stage C/D
+3a. HRP COMBINER (menu C1, Lopez de Prado 2016 "Building Diversified Portfolios..."). Cluster
+    the surviving alphas by correlation (hierarchical/dendrogram), allocate via recursive
+    bisection (no covariance inversion, robust OOS). Backtest the COMBINED book's net-of-cost
+    Sharpe vs the best single alpha. THE mechanism: IR = IC * sqrt(breadth) — many weak
+    DECORRELATED alphas stack (noise cancels, signal adds). This is the highest-structural-value
+    step in the whole system, and it has NEVER been built — but it is ONLY meaningful once
+    Phase 2 has produced >=2 alphas to combine (hence its position here, not earlier).
+    BUILD: new module portfolio/hrp_combine.py. ~weeks.
+3b. META-LABELING + FRACTIONAL KELLY (menu C2). Secondary model predicts whether the primary
+    signal is right -> sizes/filters. Size via quarter-to-half Kelly (full Kelly overbets a
+    mis-estimated edge). Calibration (Platt/isotonic) folds in HERE (makes probs honest for
+    Kelly; cannot create edge).
+    BUILD: moderate.
+GATE: combined net-of-cost Sharpe > best single alpha AND > 0.5, with DSR > 0 and PBO < 0.2
+-> a genuinely tradeable system. THIS is the make-or-break gate of the whole project.
+If combined IC ~= 0 even after honest combination -> the structural conclusion (150-600 name
+universe at this signal strength can't clear costs) is real; options are bigger universe,
+longer horizon, or accept non-viability — NOT more model tuning.
+
+### PHASE 4 — HIGH-CEILING MODELS (months, ONLY if Phases 0-3 show life)
+Do not build these until the target (reversion) is settled and cheaper methods are maxed —
+they are 1-4 week builds each and pointless on a wrong target.
+4a. IPCA — Instrumented PCA (menu A2, Kelly-Pruitt-Su 2019). Latent factors with
+    characteristic-dependent, time-varying loadings. The principled "right" cross-sectional
+    model. Build: `ipca` pkg + characteristic panel. ~1-2 wk.
+4b. CONDITIONAL AUTOENCODER (menu A5, Gu-Kelly-Xiu 2021). Neural generalization of IPCA;
+    documented to DOMINATE IPCA/FF/PCA on OOS pricing errors — SOTA academic equity model.
+    CAVEAT (Avramov 2023): edge halves when microcaps / no-credit-rating firms excluded.
+    Build: PyTorch, reference code exists. ~3-4 wk + clean char panel.
+4c. HIERARCHICAL BAYESIAN (menu A8). Principled fix for the per-ticker small-sample problem —
+    pools each stock toward sector/market with shrinkage. Build: PyMC/numpyro. ~moderate.
+
+### PHASE 5 — PARALLEL BACKGROUND (no blocking, runs alongside)
+5a. OPTIONS / VRP FORWARD-LOGGING. Already accruing (fixed May 30 — daily_massive_skew.py now
+    stores put_iv/call_iv). VRP = IV - realized vol, gateable ~Aug-Sep when enough history.
+    New INFORMATION axis (orthogonal to price). Other 4 skew writers still drop IV legs — patch
+    before the VRP gate (~Aug). See Stage 1 DATA AUDIT below for the forward-only constraint on
+    all new axes.
+5b. LLM ALPHA-GENERATION LOOP (menu A11). Once the gate + combiner pipeline exists (post Phase 3):
+    LLM proposes formulaic alphas -> alpha_gate validates (HLZ t>3, PBO) -> HRP combiner ingests
+    survivors. The modern Alpha Factory; the gate is what keeps it honest vs the self-reported
+    LLM-alpha hype (AlphaForge/AlphaAgent results are unverified OOS).
+5c. DECAY MONITOR. Once anything goes live: daily live rank-IC per alpha, retire when trailing
+    IC < half backtest (McLean-Pontiff: expect >=26% OOS haircut). Rotate, don't grind.
+5d. PRODUCTION UI / UX (quant-fund-style dashboard). Past mockup EXISTS (portfolio tracker:
+    metric grid, holdings table, P&L, cash-on-hand — see Mar 26 "intraday momentum" chat).
+    DEFERRED until post-Phase-3: a fund-style UI is downstream of having a tradeable signal to
+    display (storefront after product). Current 14-page Streamlit covers the research surface
+    for Phases 0-3. Build when live positions/sizing exist (end Phase 3+).
+
+### NON-ROADMAP IN-FLIGHT ITEMS (real, separate from the above)
+- C2 calibration verification post-fix (Tue Jun 2)
+- S2/S3 PCT7 ranker promote (Tue Jun 2, h=5 outcomes close ~Jun 1-2)
+- See "SCHEDULED CHECKPOINTS" section below for all dates.
+
+### ARTIFACTS FROM TONIGHT (where the evidence lives)
+- analysis/eval_global_pit.py — GLOBAL purged-WF eval (rank-IC + L/S spread)
+- analysis/walk_forward.py — per-date rank-IC + L/S decile spread (Stage A patch)
+- analysis/horizon_ic_corr.py — horizon IC correlation
+- analysis/sector_ic_breakdown.py — per-sector rank-IC
+- analysis/global_pit_eval_h{1,3,5,10,20}.csv — horizon sweep results
+- tickers_expanded.txt (578), sector_map_additions.py — universe expansion (research only;
+  production stays on tickers.txt 149 — delete these if not pursuing broad universe)
+- docs/QUANT_BUILD_MENU.md — full model + alpha encyclopedia
+- Verdict sections below (STAGE A VERDICT / HORIZON / SECTOR / L/S) — the evidence trail.
+
+---
+
+
 **Last updated:** May 28, 2026 (Thu session VN)
 **Sources consolidated:**
 - userMemories (session_reset summaries)
@@ -1306,7 +1473,7 @@ End of Signal_System_Addendum audit.
 
 ---
 
-## P3 — ALPHA PROGRAM (6-phase combinatorial alpha pipeline, May 28 deep research)
+## P3 — ALPHA PROGRAM [SUPERSEDED May 30 — see CURRENT ROADMAP at top] (May 28)
 
 **Source:** Two May 28 deep-research reports — alpha signals catalog + hedge-fund
 combinatorial methodology. Saved as `docs/alpha_signals_catalog_research_20260528.md`.
@@ -1522,7 +1689,7 @@ Full catalog with citations: `docs/alpha_signals_catalog_research_20260528.md`
 
 ---
 
-## P3 — ALPHA FACTORY (replaces obsolete "4-Week Roadmap"; supersedes May-8 P3)
+## P3 — ALPHA FACTORY [SUPERSEDED May 30 — see CURRENT ROADMAP at top]
 
 CONTEXT: Old P3 was BLOCKED by C1 and assumed the per-ticker model as base.
 C1 is DONE; P0-2 (May 30, n=21,376) proved per-ticker = coin flip (OOS AUC 0.487/0.493).
@@ -1690,7 +1857,7 @@ every one of the ~250 catalog signals testable HONESTLY and would have caught th
 Build it BEFORE generating new candidates and BEFORE trusting the GLOBAL 0.58.
 
 
-## P3+ — WEAK-SIGNAL EXTRACTION PLAN (May 30, from OOS-collapse research)
+## P3+ — WEAK-SIGNAL EXTRACTION PLAN [SUPERSEDED same-day — Stage A failed, conclusion changed to mean-reversion; see CURRENT ROADMAP at top]
 
 ### Framing — READ FIRST (so future-you/AI doesn't panic)
 "At the ceiling" is NOT "dying." The realistic OOS ceiling for 1-5d equity direction is
