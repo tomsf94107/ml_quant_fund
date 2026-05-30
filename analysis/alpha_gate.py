@@ -34,7 +34,7 @@ MACRO_BASES = {
 
 sys.path.insert(0, str(ROOT))
 from features import massive_client as mc
-from analysis.alpha_gate_stats import deflated_sharpe, expected_max_sharpe
+from analysis.alpha_gate_stats import deflated_sharpe, expected_max_sharpe, cscv_pbo
 
 
 def load_panel(max_dates):
@@ -216,6 +216,14 @@ def main():
     # (The var_trial-based DSR was miscalibrated: it used observed cross-
     #  feature dispersion, which includes real signal, as the null bar.)
     t_threshold = float(np.sqrt(2.0 * np.log(N)))
+    # Gap B: Probability of Backtest Overfitting (CSCV) on the SELECTION.
+    # IC matrix restricted to deduped base reps (the N trials the gate picks
+    # among). PBO>0.3 => picking IS-best gives OOS-mediocre -> distrust ALL.
+    base_cols = [c for c in best["feature"] if c in ic.columns]
+    pbo = cscv_pbo(ic[base_cols].values, S=10) if len(base_cols) >= 2 else float("nan")
+    pbo_ok = (pbo == pbo) and (pbo < 0.3)
+    print(f"CSCV PBO on {len(base_cols)} base reps: {pbo:.3f}  "
+          f"({'PASS <0.3' if pbo_ok else 'FAIL >=0.3 selection overfit'})")
     print(f"Extreme-value t-threshold (sqrt(2 ln N), N={N}): {t_threshold:.3f}")
     # DSR kept as a secondary diagnostic only (NOT the gate)
     res["DSR"] = res.apply(
@@ -233,8 +241,10 @@ def main():
     res["is_base_rep"] = res["feature"].isin(set(best["feature"]))
     # SURVIVOR = de-duplicated base rep clearing the MT threshold AND the
     # economic-magnitude floor.
+    res["PBO"] = pbo
+    res["pass_PBO"] = pbo_ok
     res["SURVIVOR"] = (res["pass_HLZ"] & res["pass_EVT"]
-                       & res["pass_MAG"] & res["is_base_rep"])
+                       & res["pass_MAG"] & res["is_base_rep"] & pbo_ok)
 
     # ── Stage 2 Gap A: PER-TICKER time-series IC (dual gate) ─────────────
     # Run TS-IC only on the deduped base reps (not all 3,390 transforms).
@@ -267,6 +277,7 @@ def main():
     print(f"total features scored:    {len(res)}")
     print(f"distinct base signals:     {N}")
     print(f"t-threshold (sqrt 2lnN):   {t_threshold:.3f}")
+    print(f"CSCV PBO (selection):      {pbo:.3f}  (<0.3 required)")
     print(f"base reps pass EVT (t):    {(res['is_base_rep'] & res['pass_EVT']).sum()}")
     print(f"base reps pass MAG (IC):   {(res['is_base_rep'] & res['pass_MAG']).sum()}")
     print(f"SURVIVORS (EVT+MAG):       {res['SURVIVOR'].sum()}")

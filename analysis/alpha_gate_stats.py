@@ -64,6 +64,54 @@ def deflated_sharpe(observed_sr: float, n_trials: int, T: int,
     return probabilistic_sharpe(observed_sr, sr_star, T, skew, kurt)
 
 
+from itertools import combinations
+
+
+def cscv_pbo(perf, S=10):
+    """Probability of Backtest Overfitting via CSCV (Bailey, Borwein,
+    Lopez de Prado, Zhu 2017).
+
+    perf: 2D array [T observations x N trials] of per-period performance
+          (here: per-date IC for each feature). Higher = better.
+    S:    number of equal time-blocks (must be even). Default 10 -> C(10,5)=252
+          balanced IS/OOS splits.
+
+    Method: split rows into S blocks. For every way to choose S/2 blocks as
+    IS (rest OOS), pick the trial with best mean IS performance, record its
+    RANK among all trials OOS, map to logit. PBO = fraction of splits where
+    the IS-best ranks BELOW median OOS (logit < 0).
+
+    PBO > 0.5  -> selection is overfit (IS-best is OOS-mediocre).
+    Gate: PBO < 0.3.
+    """
+    perf = np.asarray(perf, float)
+    T, N = perf.shape
+    if N < 2 or T < S or S % 2 != 0:
+        return np.nan
+    # trim to a multiple of S, split into S contiguous blocks
+    rows_per = T // S
+    perf = perf[:rows_per * S]
+    blocks = [perf[i*rows_per:(i+1)*rows_per] for i in range(S)]
+    half = S // 2
+    n_below = 0; n_tot = 0
+    for is_idx in combinations(range(S), half):
+        oos_idx = [b for b in range(S) if b not in is_idx]
+        is_mat  = np.vstack([blocks[b] for b in is_idx])   # rows x N
+        oos_mat = np.vstack([blocks[b] for b in oos_idx])
+        is_perf  = np.nanmean(is_mat,  axis=0)             # N
+        oos_perf = np.nanmean(oos_mat, axis=0)             # N
+        if np.all(np.isnan(is_perf)):
+            continue
+        best = int(np.nanargmax(is_perf))                 # IS-chosen trial
+        # rank of chosen trial OOS (1=worst .. N=best); omega = rank fraction
+        order = np.argsort(np.argsort(np.nan_to_num(oos_perf, nan=-np.inf)))
+        rank = order[best] + 1
+        omega = rank / (N + 1)                             # in (0,1)
+        logit = np.log(omega / (1.0 - omega))
+        n_below += (logit < 0); n_tot += 1
+    return float(n_below / n_tot) if n_tot else np.nan
+
+
 # ───────────────────────── unit tests ─────────────────────────
 if __name__ == "__main__":
     print("UNIT TESTS — DSR/PSR math sanity\n")
@@ -98,5 +146,17 @@ if __name__ == "__main__":
     weak   = deflated_sharpe(0.15, 3390, 500, 1.0/500)
     print(f"At N=3390, T=500:  strong(IR=0.55) DSR={strong:.3f}  weak(IR=0.15) DSR={weak:.3f}")
     print(f"  strong passes 0.95? {strong > 0.95}   weak passes 0.95? {weak > 0.95}")
+
+    # Test 5: PBO — random noise should be ~0.5 (overfit); a planted strong
+    # trial should pull PBO down (real signal generalizes OOS).
+    rng = np.random.default_rng(0)
+    noise = rng.standard_normal((500, 100))               # 100 noise trials
+    pbo_noise = cscv_pbo(noise, S=10)
+    signal = noise.copy(); signal[:, 0] += 0.5            # trial 0 truly strong
+    pbo_signal = cscv_pbo(signal, S=10)
+    print(f"\nPBO noise(100 trials)={pbo_noise:.3f}  PBO with planted signal={pbo_signal:.3f}")
+    assert 0.3 < pbo_noise < 0.7, "FAIL: pure noise PBO should be near 0.5"
+    assert pbo_signal < pbo_noise, "FAIL: planted signal should lower PBO"
+    print("  PASS: PBO ~0.5 for noise, drops when real signal present\n")
 
     print("\nALL CORE ASSERTIONS PASSED — math is sane, ready to wire into gate.")

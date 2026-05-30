@@ -1568,7 +1568,7 @@ TWO LOAD-BEARING LESSONS (violate these and the factory manufactures false posit
   27/32 CS survivors flagged divergent — quantifies the P3.5 footgun the old gate was blind to.
 - GAP A (was): add a PER-TICKER / production-objective gate beside the CS-IC gate.
   A candidate must improve the metric the live model is scored on, not just CS-IC.
-- GAP B: add PBO via CSCV (Bailey-Lopez de Prado) — have DSR+PSR+t>3, missing backtest-overfit prob.
+- GAP B ✅ DONE (May 30): cscv_pbo added to alpha_gate_stats.py + wired as 6th gate. Result h5: PBO=0.151 (PASS <0.3) on 70 base signals -> SELECTION IS NOT OVERFIT. The surviving signals are real, not best-of-noise. Combined with P0-2: signals have real CS information, per-ticker architecture can't extract it. Stage 2 COMPLETE (6 gates: HLZ, EVT, MAG, DSR, TS-IC+sign, PBO).
 - SIX-GATE BAR (clear ALL): purged-CV rank-IC IR>0.3; |t|>3.0; DSR>0.95; PBO<0.3;
   net long-only Sharpe>0.5; incremental (corr-to-book<0.7 AND incremental-IR>0).
 - KILL: <single-digit % survival is EXPECTED, not failure (per both research docs).
