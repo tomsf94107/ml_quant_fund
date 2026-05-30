@@ -84,6 +84,58 @@ def compute_ic(frames, dates, fwd, features):
     return pd.DataFrame(ic_rows).T                    # index=date, cols=feature
 
 
+def compute_ts_ic(frames, dates, fwd, features):
+    """Per-TICKER time-series IC: for each ticker, correlate each feature's
+    own time-series against that ticker's OWN forward returns across dates.
+    This is the PER-TICKER / production-objective measure (Stage 2 Gap A) —
+    distinct from cross-sectional rank-IC. Returns DataFrame [feature x stats].
+
+    Built by stacking the date-major panel into a long (date,ticker) frame
+    once, then groupby-ticker Spearman corr of each feature vs fwd return.
+    """
+    # Long panel: rows=(date,ticker), cols=features (+ __fwd__)
+    parts = []
+    for dt in dates:
+        if dt not in frames or dt not in fwd.index:
+            continue
+        pan = frames[dt][features].copy()
+        fr = fwd.loc[dt].reindex(pan.index)
+        pan["__fwd__"] = fr.values
+        pan["__date__"] = dt
+        pan["__ticker__"] = pan.index
+        parts.append(pan.reset_index(drop=True))
+    if not parts:
+        return pd.DataFrame()
+    long = pd.concat(parts, ignore_index=True)
+    long = long.dropna(subset=["__fwd__"])
+
+    # Per ticker: Spearman corr (rank-IC over time) of each feature vs fwd.
+    rows = {f: [] for f in features}
+    ntk = {f: 0 for f in features}
+    for tk, g in long.groupby("__ticker__"):
+        if len(g) < 60:                      # need enough dates per ticker
+            continue
+        fwd_rank = g["__fwd__"].rank()
+        for f in features:
+            col = g[f]
+            if col.nunique() < 5:            # no time variation for this ticker
+                continue
+            ic = col.rank().corr(fwd_rank)   # Spearman over this ticker's history
+            if pd.notna(ic):
+                rows[f].append(ic); ntk[f] += 1
+    out = []
+    for f in features:
+        arr = np.asarray(rows[f], float)
+        if arr.size == 0:
+            out.append((f, np.nan, np.nan, np.nan, 0)); continue
+        m, s = arr.mean(), arr.std(ddof=1) if arr.size > 1 else np.nan
+        ir = m / s if (s and s == s and s != 0) else np.nan
+        t  = ir * np.sqrt(arr.size) if ir == ir else np.nan
+        out.append((f, m, s, ir, arr.size))
+    return pd.DataFrame(out, columns=["feature","ts_mean_IC","ts_std_IC",
+                                      "ts_IC_IR","ts_n_tickers"]).set_index("feature")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--horizon", type=int, default=5)
@@ -184,6 +236,28 @@ def main():
     res["SURVIVOR"] = (res["pass_HLZ"] & res["pass_EVT"]
                        & res["pass_MAG"] & res["is_base_rep"])
 
+    # ── Stage 2 Gap A: PER-TICKER time-series IC (dual gate) ─────────────
+    # Run TS-IC only on the deduped base reps (not all 3,390 transforms).
+    base_rep_feats = list(best["feature"])
+    print(f"\nComputing per-ticker TS-IC on {len(base_rep_feats)} base reps...")
+    ts = compute_ts_ic(frames, dates, fwd, base_rep_feats)
+    res = res.merge(ts, left_on="feature", right_index=True, how="left")
+    # derive TS t-stat from per-ticker IC_IR and ticker count, then gate it
+    res["ts_t_stat"] = res["ts_IC_IR"] * np.sqrt(res["ts_n_tickers"].clip(lower=1))
+    res["ts_pass"] = res["ts_t_stat"].abs() > 3.0
+    # sign agreement: a feature is only safely additive on BOTH objectives if
+    # it passes both gates AND points the same way. Opposite-sign passers are
+    # strong-but-objective-conditional (trend CS / mean-revert per-ticker).
+    import numpy as _np
+    res["ts_sign_agree"] = _np.sign(res["mean_IC"]) == _np.sign(res["ts_mean_IC"])
+    res["dual_survivor"] = res["SURVIVOR"] & res["ts_pass"] & res["ts_sign_agree"]
+    # divergence: CS says trade, TS disagrees (sign flip OR TS not significant)
+    res["cs_ts_divergence"] = (
+        res["is_base_rep"]
+        & res["SURVIVOR"]
+        & ( (np.sign(res["mean_IC"]) != np.sign(res["ts_mean_IC"]))
+            | (res["ts_IC_IR"].abs() < 0.3) )
+    )
     res = res.sort_values("t_stat", key=abs, ascending=False)
     res.to_csv(ROOT / out, index=False)
 
@@ -196,6 +270,12 @@ def main():
     print(f"base reps pass EVT (t):    {(res['is_base_rep'] & res['pass_EVT']).sum()}")
     print(f"base reps pass MAG (IC):   {(res['is_base_rep'] & res['pass_MAG']).sum()}")
     print(f"SURVIVORS (EVT+MAG):       {res['SURVIVOR'].sum()}")
+    _sv = res[res["SURVIVOR"]]
+    print(f"\n-- DUAL GATE (Stage 2 Gap A) --")
+    print(f"survivors w/ TS-IC computed: {_sv['ts_n_tickers'].gt(0).sum()}")
+    print(f"survivors TS sign AGREES CS: {(np.sign(_sv['mean_IC'])==np.sign(_sv['ts_mean_IC'])).sum()}")
+    print(f"survivors flagged DIVERGENT: {res['cs_ts_divergence'].sum()}  "
+          f"(CS passes but TS disagrees — the P3.5 footgun)")
     print(f"\nTop 15 by |t|:")
     pd.set_option("display.float_format", lambda x: f"{x:.4f}")
     print(res[res["is_base_rep"]].head(20)[["feature","n_dates","mean_IC","IC_IR","t_stat","SURVIVOR"]].to_string(index=False))
