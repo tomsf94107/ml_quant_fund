@@ -74,3 +74,20 @@ recession/recession_alert_state.json
 p0-2_*.db
 p0-2_*_panel.parquet
 p0-2_*.log
+
+# SQLite sidecars
+*.db-wal
+*.db-shm
+*.db.bak.*
+# backup / scratch artifacts
+*.bak2
+*.deadfix.applied
+*.predeadfix*
+apply_*_patch.py
+task_d_stage*.py
+audit_phase*
+signal_discrepancy_audit*.py
+# regenerable caches
+recession/cache/
+data/alpha_panel/
+institutional_trades.duckdb
