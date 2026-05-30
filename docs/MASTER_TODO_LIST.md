@@ -1869,3 +1869,53 @@ breadth via universe is the path. If it stalls -> long-only daily at this IC may
 leg (3b) or accept the system can't clear costs.
 
 CONFIRMED OPERATING POINT: h=5, cross-sectional ranking (NOT per-name direction, NOT h1, NOT h20).
+
+
+### STAGE A FINAL — SECTOR DECOMPOSITION (May 30): no within-sector edge; 149 signal is a cross-sector tilt, not stock-picking
+
+Expanded universe 149 -> 578 (S&P 500) to test breadth lever 3a. Result REFUTED naive breadth AND
+the "tech is better" hypothesis.
+
+POOLED breadth test (lever 3a) — FAILED, breadth made it WORSE:
+| Universe | rank_ic_median | rank_ic_t | pos_frac |
+|---|---|---|---|
+| 149 (curated) | +0.0112 | +1.66 | 0.531 |
+| 578 (S&P 500) | +0.0001 | -0.67 | 0.501 |
+Adding 429 names DILUTED the signal to zero. IR=IC*sqrt(breadth) only works if new names carry the
+SAME IC; they carried ~0, so they drowned the faint signal.
+
+PER-SECTOR rank-IC (h=5, within-sector cross-section) — NO sector carries signal, tech included:
+| sector | n | t_stat |   | sector | n | t_stat |
+|---|---|---|---|---|---|---|
+| XLK tech | 102 | -0.81 |   | XLP staples | 35 | -2.64 |
+| XLF fin | 76 | +0.32 |   | XLC comm | 29 | -3.07 |
+| XLI ind | 87 | -2.23 |   | XLE energy | 22 | -5.43 |
+| XLV health | 70 | -1.32 |   | XLRE re | 31 | +0.92 |
+| XLY disc | 56 | -0.49 |   | XLU util | 33 | -0.66 |
+| XLB mat | 28 | -0.13 |   | | | |
+EVERY sector with enough names is at ~0 or NEGATIVE IC. "Tech is better" was an AUC artifact on
+older/smaller data; in honest rank-IC it is t=-0.81. Several sectors significantly NEGATIVE.
+
+KEY INFERENCE: the 149's t=+1.66 is NOT stock-picking and NOT a sector effect. Within-sector IC ~0
+everywhere, but across the curated 149 (which span sectors) it was +1.66. => the only signal is a
+weak CROSS-SECTOR BETA TILT (ranking tech-vs-energy-vs-utilities as broad style tilts), living
+specifically in the curated universe, NOT generalizing to more names and NOT concentrating in any sector.
+
+SIX APPROACHES NOW TESTED, all fail or top out:
+  per-ticker direction (AUC 0.48) | cross-sectional (t=1.66, but cross-sector tilt only) |
+  pool-horizons (corr 0.571, dead) | lengthen-horizon (peaks h5, neg by h20) |
+  universe-expansion (dilutes, t -0.67) | sector-concentration (no within-sector edge, tech -0.81).
+The only signal is a faint non-scalable cross-sector tilt. Current feature set is CHARACTERIZED AS
+TOPPED OUT — no lever tried strengthens it.
+
+TWO LEVERS LEFT (neither obviously promising — honest):
+  1. SHORT LEG (3b): within-sector t-stats are NEGATIVE (XLE -5.43, XLC -3.07, XLP -2.64). A negative
+     t = model ranks BACKWARDS in those sectors. Long/short COULD exploit consistent mis-ranking
+     (short what model ranks high). Speculative; shorting operationally hard. BUT the consistent
+     negative is itself a (inverted) signal worth probing.
+  2. NEW DATA AXES (Stage 1): different INFORMATION, not more names. Options/VRP forward-logging
+     already accruing (fixed May 30). The research's actual recommendation when features exhausted.
+
+NOT recommending "keep grinding the current features" — data does not support it. Decision is short-leg
+probe vs new-data pivot vs step back. tickers_expanded.txt / sector_map_additions.py can be deleted if
+not pursuing broad universe (they do NOT affect production 149).
