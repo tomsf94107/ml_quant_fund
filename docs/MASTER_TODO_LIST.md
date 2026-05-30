@@ -1688,3 +1688,99 @@ runs through Stage2 in parallel (it's the one untested architecture that might a
 Stage 2 GAP A — make the gate score the production objective, not CS-IC. This single fix makes
 every one of the ~250 catalog signals testable HONESTLY and would have caught the P3.5 false positive.
 Build it BEFORE generating new candidates and BEFORE trusting the GLOBAL 0.58.
+
+
+## P3+ — WEAK-SIGNAL EXTRACTION PLAN (May 30, from OOS-collapse research)
+
+### Framing — READ FIRST (so future-you/AI doesn't panic)
+"At the ceiling" is NOT "dying." The realistic OOS ceiling for 1-5d equity direction is
+AUC ~0.55 / IC ~0.05 (Kamalov 2019; Gu-Kelly-Xiu landmark SUCCESS = 0.4% monthly R2 -> Sharpe 1.35).
+Being near it = you measured HONESTLY, not failed. Every real quant lives here. The funds that
+think they're above it have undiscovered leaks (that was us at 0.967, and the 0.58 GLOBAL leak).
+
+Verified state (this session):
+- Signal is REAL (dual-gate PBO=0.15, not overfit selection) but WEAK (CS mean_IC ~0.02-0.05).
+- Both architectures coin-flip OOS (per-ticker P0-2 0.49 n=21376; GLOBAL purged 0.496) -- because
+  IC~0.03 MATHEMATICALLY maps to AUC~0.515 (AUC ~= 0.5 + IC/2). Not a model defect. The ceiling.
+- So the job is NOT rescue-the-models. It is: extract PORTFOLIO-level edge from weak signals
+  (combine -> size -> manage decay), OR prove honestly 150-long-only-daily can't clear costs.
+
+Decay is MANAGED, not terminal. Publication-decay (McLean-Pontiff 26%/58%) hits PUBLIC factor-zoo
+signals -> defense is many + uncrowded + rotate. A portfolio of many weak decorrelated alphas with
+active rotation does NOT go to zero; you retire faded ones, others carry the book (Stage E).
+
+The REAL open risk = BREADTH. IR = IC * sqrt(breadth). 150 names, long-only (transfer coef <1),
+daily = structurally low breadth. Whether enough weak alphas combine to clear costs is UNKNOWN and
+is exactly what Stage C tests. If Stage C combined-IC ~= 0 across regimes -> the fix is STRUCTURAL
+(more names / longer horizon / relax long-only), NOT "give up" and NOT "tune the model more."
+
+### Stage A — Re-baseline on rank-IC, demote AUC (CHEAP, FIRST)
+Research Stage 1. AUC hides weak signal (AUC~=0.5+IC/2). The gate already uses rank-IC; model evals
+(walk_forward.py, eval_global_pit.py) still headline AUC. 
+ACTION: add per-date rank-IC (Spearman pred vs fwd ret), IC distribution (median + quartiles),
+and top-decile-minus-universe spread to both harnesses. Report IC as headline, AUC as footnote.
+COST: low. 
+KILL GATE: median per-date rank-IC > 0.02 with positive lower quartile -> real signal, proceed to B.
+  If centered at 0 with tight dispersion -> signal absent -> STOP, go to structural levers.
+  If IC swings sign by regime -> non-stationary -> note for regime work (but see caution below).
+
+### Stage B — Re-evaluate learning-to-rank HONESTLY (top remedy, model already exists)
+Research's #1 remedy: ranking optimizes ORDERING (what long-only needs), ~3x Sharpe vs classification
+(Poh et al. 2021). models/train_global_ranker.py (LightGBMRanker lambdarank) EXISTS but had ZERO OOS
+eval -- only in-sample predict(X[:1000]). The 0.58 was a leaky single 2mo split.
+ACTION: run the ranker through purged-WF + rank-IC (ranker outputs ranks -> rank-IC is the native
+metric, convenient). Compare ranker rank-IC vs classifier rank-IC on the SAME purged folds.
+COST: medium (adapt eval harness to score a ranker).
+KILL GATE: ranker rank-IC > classifier rank-IC by a real margin -> ranking is the architecture.
+  If equal/worse -> ranking didn't help here, proceed to C on classifier scores anyway.
+
+### Stage C — Build alpha-combination layer / HRP (WHERE EDGE IS MADE)
+Alpha Factory Stage 3. The core remedy: many weak decorrelated alphas -> portfolio Sharpe via
+IR=IC*sqrt(breadth) (Kakushadze: 101 alphas, ~16% pairwise corr, none strong alone). Have ~6
+dual-survivors + panel builder; NO combiner.
+ACTION: build portfolio/hrp_combine.py -- cluster gated survivors by correlation (dendrogram),
+inverse-variance weight, recursive bisection (Lopez de Prado 2016). Backtest combined book's
+rank-IC/Sharpe vs best single survivor. Feed composites + raw survivors to the ranker/ensemble.
+COST: medium-high (new module).
+KILL GATE (THE BIG ONE): combined OOS net-of-cost Sharpe > best single survivor AND > 0.5
+  -> real portfolio edge, proceed to D. If combined IC ~= 0 across regimes -> 150-long-only-daily
+  lacks breadth -> STRUCTURAL decision (expand universe / lengthen horizon / relax long-only), NOT
+  build D, NOT tune more.
+
+### Stage D — Bet sizing: fractional Kelly + explicit cost model
+Research: a 51% edge IS tradeable if sized right + costs controlled. Full Kelly catastrophically
+overbets a mis-estimated edge -> use QUARTER-to-HALF Kelly (half = ~75% growth at ~half variance).
+Cost model exists in fitness_scorer.py but not in the live/sizing path.
+ACTION: size positions by combined-signal strength via fractional Kelly off calibrated probs;
+deduct realistic per-turnover cost (10bps/turn already modeled). Calibration (Platt/isotonic) folds
+in HERE -- it can't make edge, only makes probs honest for Kelly.
+COST: medium.
+KILL GATE: net-of-cost Sharpe stays > 0.5 AFTER realistic turnover (research: costs can eat the
+  entire thin edge at 1-5d holding). If costs kill it -> lengthen horizon (less turnover).
+
+### Stage E — Decay monitoring (Alpha Factory Stage 5)
+Research: expect >=26% OOS haircut (McLean-Pontiff); rotate alphas as they fade. Same pattern as
+SELL/PCT7 forward validation.
+ACTION: scripts/alpha_decay_monitor.py -- daily live rank-IC per alpha; alert when trailing-60d IC
+< half backtest or negative k weeks; retire on collapse, surface replacement candidates.
+COST: medium. TRIGGER: once first combined signal goes live (after D).
+
+### DEFERRED / CAUTIONED (research says low-priority at our scale)
+- Triple-barrier + meta-labeling: benefit "strategy-dependent" (Hudson&Thames). Bigger lift,
+  uncertain payoff. Revisit after A-C prove signal is combinable.
+- Regime-conditioning: research EXPLICITLY warns it fragments scarce data + increases overfitting
+  on a 150-name book. Against it for now. Only if Stage A shows clean regime-split IC.
+- Calibration as standalone: "cannot manufacture edge." Folds into Stage D, not its own stage.
+
+### STRUCTURAL LEVERS (may matter more than any code -- the real ceiling is breadth)
+If Stage C kills on breadth, these are the actual remedies, in order of feasibility:
+1. Lengthen horizon (daily -> weekly): less cost drag, more signal-per-trade. Cheapest structural fix.
+2. Expand universe (>150 names): directly raises breadth (IR=IC*sqrt(breadth)).
+3. Relax long-only: recovers the short leg (~half the breadth). Hardest (borrow, infra, risk).
+OPEN QUESTION for Atom: which of these is actually movable? If breadth is the ceiling, the
+highest-value "remedy" is a constraint change, not more model work.
+
+### Sequence
+A (rank-IC rebaseline, cheap, reinterprets tonight) -> B (test ranking, top remedy, model exists)
+-> C (HRP combine, where edge is made -- THE decision gate) -> D (size) -> E (monitor).
+Each stage has a kill gate. A or C at IC~=0 -> STOP, pull a structural lever, don't grind noise.
