@@ -1544,6 +1544,35 @@ TWO LOAD-BEARING LESSONS (violate these and the factory manufactures false posit
 - KILL: n/a (infra). TRIGGER: as-needed before Stage 1 on new data.
 
 ### Stage 1 — Candidate generation from NEW DATA  🔨 PARTIAL
+
+### Stage 1 — VERIFIED build list (May 30, grep-audited against codebase)
+
+GLOBAL cross-sectional eval: 5yr purged WF OOS AUC = 0.496 (smoke, 3tk, n=3807).
+The plan-doc 0.58 was a single 2mo April holdout (validate_oos), no embargo — a leak.
+BOTH architectures (per-ticker P0-2 0.49, cross-sectional 0.50) coin-flip on current
+features. Architecture search OVER. Only live branch = NEW DATA AXES.
+
+UW options endpoints ALREADY FETCHED (data in hand, features not built):
+  /api/stock/{t}/stock-state (spot), /greeks?expiry (per-strike greeks/IV),
+  /options-volume. So VRP/O/S/GEX/IV-slope are FEATURE-ENGINEERING, not new data.
+
+Build order (ROI = info-per-hour, all inputs already available):
+  1. VRP (IV30d - realized vol) — inputs in hand, ~2h. HIGHEST ROI. NOT built (grep-confirmed).
+  2. IV-skew CHANGE (1d/5d delta+z of iv_skew_25d) — have level only, ~1h. NOT built.
+  3. IV term-structure slope (single-name 30d vs 60d IV) — 2nd expiry call, ~half day.
+     NOT built (vix_term_structure is VIX, not single-name IV — grep-confirmed).
+  4. O/S ratio (options-volume / stock volume) — endpoint fetched, ~2h. NOT built.
+  5. GEX (Sigma OI*gamma*spot) — greeks endpoint has it, ~full day. Lowest pri (noisy/assumption-heavy).
+
+ALREADY BUILT (do NOT rebuild — grep-confirmed in classifier.py):
+  - 8-K item-type features: eightk_exec_change_30d, material_agreement, reg_fd, other_events — LIVE.
+
+Partial / different-than-catalog:
+  - GDELT: sentiment headlines only (etl_gdelt.py), NO co-mention/centrality network. Network = new build.
+  - Lazy-Prices 10-K text delta: NOT built. etl_finbert_filings scores per-section sentiment, not YoY similarity.
+
+Each new feature -> through the 6-gate dual pipeline (alpha_gate.py). Keep only dual_survivors.
+
 - Have: build_alpha_panel.py generation engine; data/alpha_sources.py (analyst revisions/yf).
 - Build: high-feasibility LOW-CROWDING sources the catalog flags, in priority of
   (feasibility-on-our-data x expected incremental-IC x low crowding):
