@@ -374,10 +374,15 @@ def walk_forward_backtest(
     X = df[feature_cols].fillna(0.0).values.astype(np.float32)
     y = df[target_col].astype(int).values
     dates = df["prediction_date"]
+    # continuous forward return for rank-IC (Stage A); fall back to binary if absent
+    ret = (df["actual_return"].values.astype(float)
+           if "actual_return" in df.columns else y.astype(float))
 
     fold_results = []
     pooled_y_true: List[int] = []
     pooled_y_pred: List[float] = []
+    pooled_ret: List[float] = []
+    pooled_date: List = []
 
     for fold_i, (train_idx, test_idx) in enumerate(
         purged_kfold_indices(dates, n_folds=n_folds, embargo=embargo)
@@ -417,6 +422,8 @@ def walk_forward_backtest(
 
         pooled_y_true.extend(y_te.tolist())
         pooled_y_pred.extend(y_te_pred.tolist())
+        pooled_ret.extend(ret[test_idx].tolist())
+        pooled_date.extend(dates.iloc[test_idx].tolist())
 
         if verbose:
             print(f"  fold {fold_i + 1}: train n={len(train_idx)}, "
@@ -438,6 +445,30 @@ def walk_forward_backtest(
         overall["mean_test_auc"] = round(folds_df["test_auc"].mean(), 4)
         overall["auc_gap"] = round(
             overall["mean_train_auc"] - overall["mean_test_auc"], 4)
+
+        # ── Stage A: per-date rank-IC (Spearman pred vs forward return) ──
+        # This is the metric that maps to portfolio Sharpe (research: AUC~=0.5+IC/2,
+        # so AUC hides weak signal). Computed WITHIN each date, then summarized.
+        ic_df = pd.DataFrame({"date": pooled_date, "pred": pooled_y_pred,
+                              "ret": pooled_ret})
+        per_date_ic = []
+        for d, g in ic_df.groupby("date"):
+            if len(g) >= 5 and g["pred"].nunique() > 1 and g["ret"].nunique() > 1:
+                ic = g["pred"].rank().corr(g["ret"].rank())  # Spearman
+                if pd.notna(ic):
+                    per_date_ic.append(ic)
+        if per_date_ic:
+            arr = np.array(per_date_ic)
+            overall["rank_ic_median"] = round(float(np.median(arr)), 4)
+            overall["rank_ic_mean"]   = round(float(arr.mean()), 4)
+            overall["rank_ic_q25"]    = round(float(np.percentile(arr, 25)), 4)
+            overall["rank_ic_q75"]    = round(float(np.percentile(arr, 75)), 4)
+            overall["rank_ic_pos_frac"] = round(float((arr > 0).mean()), 4)
+            overall["rank_ic_n_dates"]  = int(len(arr))
+            # IC information ratio + t-stat (across dates)
+            ir = arr.mean() / arr.std() if arr.std() > 0 else float("nan")
+            overall["rank_ic_ir"] = round(float(ir), 4)
+            overall["rank_ic_t"]  = round(float(ir * np.sqrt(len(arr))), 4)
 
     return folds_df, overall
 
@@ -576,6 +607,14 @@ def print_backtest_report(folds_df: pd.DataFrame, overall: Dict) -> None:
     print("\nOverall:")
     for k, v in overall.items():
         print(f"  {k:24s} {v}")
+
+    # Stage A: rank-IC headline (the metric that maps to portfolio Sharpe)
+    if "rank_ic_median" in overall:
+        print("\n--- Rank-IC (Stage A: real signal metric, not AUC) ---")
+        print(f"  median IC      {overall['rank_ic_median']:+.4f}  (gate: >0.02)")
+        print(f"  IC q25..q75    {overall['rank_ic_q25']:+.4f} .. {overall['rank_ic_q75']:+.4f}  (gate: q25>0)")
+        print(f"  pos fraction   {overall['rank_ic_pos_frac']:.3f}  (gate: >0.55)")
+        print(f"  IC t-stat      {overall['rank_ic_t']:+.3f}  (gate: >3.0)  over {overall['rank_ic_n_dates']} dates")
 
     print("\n--- Diagnosis ---")
     gap = overall.get("auc_gap", 0)
