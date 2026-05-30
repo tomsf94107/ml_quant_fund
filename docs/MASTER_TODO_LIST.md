@@ -1,171 +1,212 @@
 # Master Unified TODO List
 
-> ★★★ **CURRENT ROADMAP — SINGLE SOURCE OF TRUTH (May 30 2026).** Everything below
-> titled "P3 ALPHA PROGRAM", "P3 ALPHA FACTORY", or "P3+ WEAK-SIGNAL EXTRACTION PLAN
-> (Stages A-E)" is **SUPERSEDED** by this section. Those remain for history only.
-> Companion reference (full model + alpha encyclopedia): docs/QUANT_BUILD_MENU.md.
+> CURRENT ROADMAP — SINGLE SOURCE OF TRUTH (rewritten in full May 31 2026). This top section is
+> rewritten WHOLE every time the plan changes — never appended to — so it always reads as one
+> complete, current document containing the fix plan AND the full build catalog (every model,
+> every alpha, the combination layer, the UI). Everything below the dated "Last updated" line is
+> FROZEN HISTORY kept only for the record.
 
-## ★ CURRENT ROADMAP — self-contained, phased, gated (May 30 2026)
+## PART 1 — CURRENT STATE, ROOT CAUSE, AND THE FIX
 
-### WHY THIS EXISTS — the findings that led here (May 30 session)
-Spent the session honestly characterizing the current system. Cleared three fictions:
-the old 0.967 AUC (training, not OOS), the 0.58 GLOBAL (a leaky single 2-month split),
-and the per-ticker hope. Then tested SIX configurations under purged-WF + 5d embargo:
+### 1.1 WHAT THE SYSTEM IS AND WHAT IS WRONG WITH IT
+The system is an ML equity signal generator. It scores about 149 production tickers (a wider
+578-name research list also exists), emits a probability that each name rises over a 1, 3, or 5
+trading-day horizon, and turns high probabilities into BUY signals written to accuracy.db. Those
+signals have been traded with real money. It does not work at its stated job, and this was
+verified on LIVE data this session (90-day window, all three horizons, joining predictions to
+outcomes directly):
 
-1. Per-ticker direction (XGBoost classification): OOS AUC 0.487/0.493, n=21376. Coin flip.
-2. GLOBAL cross-sectional direction: OOS AUC 0.496 (the 0.58 was the leak). Coin flip.
-3. Rank-IC re-baseline (AUC hides weak signal; AUC~=0.5+IC/2): per-ticker IC 0.011 t=0.97;
-   GLOBAL 149-name IC 0.0112 t=1.66. Weak-but-real (PBO=0.15 says signal is NOT data-mined).
-4. Horizon sweep h=1/3/5/10/20: signal PEAKS at h=5 (t=1.66), NEGATIVE by h=20 (t=-1.50).
-   Lengthening horizon HURTS. Pooling horizons dead (h3/h5 corr 0.571 = only partial breadth).
-5. Universe expansion 149->578 (S&P 500): rank-IC t COLLAPSED 1.66 -> -0.67. Naive breadth
-   DILUTES (new names carry ~0 IC, drown the faint signal). IR=IC*sqrt(breadth) only works if
-   new names share the IC; they didn't.
-6. Per-sector decomposition: NO sector carries within-sector edge — tech t=-0.81, several
-   sectors significantly NEGATIVE (XLE -5.43, XLC -3.07). The 149's t=1.66 is a weak
-   CROSS-SECTOR BETA TILT, not stock-picking.
+(a) DIRECTION ACCURACY IS NEAR A COIN FLIP. Over the last 90 days the model's up/down call was
+correct only about 52% of the time at 1 day, 53% at 3 days, and 52% at 5 days. A coin is 50%.
 
-THE KEY FINDING: the long/short DECILE SPREAD is significantly NEGATIVE and strengthens with
-breadth (149: t=-1.41 -> 578: t=-2.69). The model RANKS BACKWARDS at the extremes,
-consistently and significantly. This is a SHORT-TERM MEAN-REVERSION signature: features are
-momentum/trend-flavored, but at h=5 the decile extremes mean-revert (winners pull back, losers
-bounce). The system "accidentally found reversal" pointing the wrong way. We asked DIRECTION
-when the data wants REVERSION.
+(b) THE MODEL IS INVERTED AT THE EXTREMES, WORST AT 5 DAYS. Ranking names by the model's
+confidence and comparing the top tenth to the bottom tenth gives a significantly NEGATIVE spread
+(t = -2.29 on live 5-day signals). The names it is most sure will rise tend to FALL over the next
+few days, and vice versa. This is the most damaging finding and it is real, not theoretical.
 
-CONCLUSION: not "no signal / stuck." We tested ~6 of dozens of approaches (all = ONE model,
-ONE target=direction, ZERO combination). The data points hard at MEAN-REVERSION / STAT-ARB.
-Three highest-value untested directions need NO new data, only new method: (1) rank/reframe,
-(2) COMBINE many weak signals, (3) stat-arb mean-reversion. This roadmap sequences them.
+(c) SPECIFIC NAMES IT LEANED THE WRONG WAY ON (last 90 days). MRVL: probability about 0.44-0.47
+(leaning DOWN) while the stock rose 5-18%. DDOG: leaned down (about 0.47) while up 63-85% of the
+time, plus 9% at 5 days. The same backwards pattern appears on NOK, APLD, QS, QUBT, IREN, and S.
 
-### DEPENDENCY LOGIC (why this exact order)
-- The COMBINER (Phase 3) cannot come first — it needs >=2 VALIDATED alphas to combine.
-  Building it on zero validated alphas = empty machine.
-- LEARNING-TO-RANK is not independent of the direction-vs-reversion question — a ranker
-  trained on the same DIRECTION target ranks backwards too. Re-target it AFTER Phase 0/1
-  settle that reversion is the right target.
-- EXPENSIVE high-ceiling models (IPCA, conditional autoencoder, 3-4 wk builds) come LAST,
-  only after the target is known and cheap methods show life. No point building a neural
-  factor model to predict a target we've shown is wrong.
-- Cheapest + most decisive tests first, so a kill comes early and free.
+(d) THE BUY TRIGGER IS BROKEN SEPARATELY FROM THE SIGNAL. It is silent on the biggest winners and
+loud on the losers. AMD rose about 87% of the time at 5 days (+11.6% average) and fired zero to
+one BUY. INTC (+12.9%), ARM (+11.4%), and MU (+12.1%) were the same: zero or one BUY through their
+best quarter. Where it did fire many BUYs they were losers or chop: GLD (16 BUYs, up only 42.5%,
+-0.3% average), GEV (14-19 BUYs, negative at 3 and 5 days), MRNA (5-14 BUYs, negative average).
 
----
+### 1.2 ROOT CAUSE
+The prediction TARGET is wrong. The model predicts direction using momentum- and trend-flavored
+features. But over 3 to 5 days the extremes of momentum MEAN-REVERT: a stock that just ran hard
+tends to pull back, one just hammered tends to bounce. Trained on momentum features against a
+direction label, the model learned "strong recent move implies continuation" when the truth in
+this data is "strong recent move implies a near-term snap-back." That is why it is inverted
+precisely at the confident extremes, and why no threshold tweak or model tuning fixes it.
 
-### PHASE 0 — GATE (hours): does the reversal survive transaction costs?  ★ IMMEDIATE NEXT
-WHAT: invert the existing model's ranking (since it ranks backwards), compute the decile
-spread (top-decile minus bottom-decile forward return) NET of realistic costs. Cost model:
-10bps per unit turnover, already in fitness_scorer.py — must be applied in the spread calc.
-WHY: the t=-2.69 negative spread is statistically real, but decile extremes are the
-highest-turnover names. The whole question is whether inverting it nets positive AFTER costs.
-BUILD: extend the L/S block in analysis/walk_forward.py to (a) invert, (b) deduct
-turnover*10bps, (c) report net Sharpe. Hours, data in hand.
-GATE:
-  - inverted net-of-cost Sharpe > 0, ideally toward +0.5  -> reversal is ECONOMIC -> Phase 2 (stat-arb).
-  - inverted net Sharpe <= 0  -> reversal real but UNECONOMIC at this turnover -> still do
-    Phase 1 (linear baseline) but downgrade stat-arb hope; the turnover problem means the
-    proper fix is lower-turnover reversion (longer rebalance) or PCA-residual (Phase 2a) which
-    is gentler than raw decile flipping.
+### 1.3 EVIDENCE BEHIND THE DIAGNOSIS (May 30 session)
+Six configurations tested under a strict purged walk-forward harness with a 5-day embargo:
+1. Per-ticker direction (XGBoost): OOS AUC 0.487/0.493 over 21,376 rows. Coin flip.
+2. Global cross-sectional direction: OOS AUC 0.496 (the old 0.58 was a leak from a single 2-month
+   chronological split with no embargo). Coin flip.
+3. Rank-IC re-baseline (AUC hides weak signal; AUC is about 0.5 + IC/2): per-ticker IC 0.011
+   (t=0.97); 149-name global panel IC 0.0112 (t=1.66). Weak but real; PBO 0.15 says feature
+   selection is NOT data-mined.
+4. Horizon sweep 1/3/5/10/20 days: signal PEAKS at 5 days (t=1.66), NEGATIVE by 20 days (t=-1.50).
+   Lengthening hurts. Pooling horizons is dead (3d/5d IC correlate 0.571).
+5. Universe expansion 149 to 578: rank-IC t COLLAPSED 1.66 to -0.67. Naive breadth DILUTES.
+6. Per-sector decomposition: NO sector has within-sector stock-picking edge — tech t=-0.81,
+   energy -5.43, communications -3.07. The 149 t=1.66 is a weak CROSS-SECTOR tilt, not selection.
+KEY FINDING: the long/short decile spread is significantly NEGATIVE and MORE negative with breadth
+(149 t=-1.41, 578 t=-2.69) — short-term mean-reversion read with the sign flipped. We asked for
+DIRECTION; the data wants REVERSION.
 
-### PHASE 1 — CHEAP DIAGNOSTICS (days, parallelizable, hours each)
-1a. LINEAR BASELINE (menu A1: ridge / lasso / elastic-net) on the SAME features + same purged-WF.
-    WHY: XGBoost overfits (train 0.66-0.79 vs test ~0.50 = 0.25 gap). Linear can't memorize
-    noise, so on low-SNR data it often generalizes better. Tells us if the model CLASS is part
-    of the problem or if the signal is genuinely weak regardless of model.
-    READ: linear gap << tree gap AND linear OOS IC >= tree -> trees were overfitting, switch.
-          linear also ~0 -> signal is genuinely weak, not a model artifact.
-    BUILD: scikit-learn, hours.
-1b. SHORT-TERM REVERSAL as a STANDALONE alpha (menu B2). Construct: rank by -1*(trailing 5d
-    return) [and variants: -1*(1d), residual reversal]. Run through alpha_gate (HLZ t>3, PBO)
-    + decile spread net of costs. This tests the mean-reversion hypothesis as a CLEAN designed
-    signal, not an inverted accident of a direction model.
-    BUILD: trivial feature + existing gate. Hours.
-GATE: 1b reversal alpha clears the gate (t>2, positive net-of-cost spread) -> reversion is a
-real tradeable alpha -> Phase 2. (1a informs whether to keep trees in everything downstream.)
+### 1.4 PHASE 0 RESULT — COMPLETED THIS SESSION (reversion is real; turnover is the constraint)
+We inverted the model's ranking (long its bottom decile, short its top) and measured the decile
+spread NET of a realistic 10bps-per-unit-turnover cost. On the 149 names: net Sharpe +0.10 at
+daily rebalancing (65% turnover). Adding a no-trade band (hold a name until it drifts past a wider
+exit threshold — the Garleanu-Pedersen 2013 "inaction band") raised net Sharpe to +0.27 at a 30%
+exit band, turnover fell to 43%, and gross Sharpe ROSE to +0.41. Holding the position a few extra
+days does not fight decay — it lets the reversion complete. On the 578 names: inverted gross
+nearly vanished (+0.07) and 87% turnover buried net to -0.37 at every band. The tradeable
+reversion lives in the CONCENTRATED 149, NOT the broad 578. It is MODEST — reversal is a crowded,
+decay-prone anomaly, so the realistic ceiling is a Sharpe around 0.3-0.5, a real but small edge.
 
-### PHASE 2 — THE REFRAME (weeks): build FOR reversion + re-target ranking
-2a. PCA RESIDUAL REVERSAL (menu B14, Avellaneda-Lee "Statistical Arbitrage in the US Equities
-    Market"). Method: fit a factor model (PCA on returns, or use sector/FF factors), compute
-    each stock's RESIDUAL vs its factor-implied return, trade the residual's mean-reversion
-    (buy stocks below factor-implied, short above). MARKET-NEUTRAL by construction -> sidesteps
-    the long-only breadth wall entirely (lever 3b achieved structurally, not via raw shorting
-    of decile extremes). This is the single most promising reframe given the data.
-    BUILD: statsmodels (cointegration/OLS) + reuse existing PCA machinery. ~weeks.
-2b. RE-TARGET LEARNING-TO-RANK (menu A4). train_global_ranker.py (LightGBM lambdarank) EXISTS
-    but was never honestly evaluated AND was trained on the wrong (direction) target. Re-train
-    on the RIGHT target — forward-return rank with reversal framing / vol-scaled — and eval via
-    purged-WF rank-IC. Research (Poh et al 2021): ranking ~3x Sharpe vs classification.
-    BUILD: model exists; re-target + honest eval. Days-to-week.
-GATE: 2a or 2b produces an alpha with net-of-cost Sharpe > 0.5 across CPCV paths. >=2 surviving
-DECORRELATED alphas (e.g. PCA-residual + reversal + any Phase-1 survivor) -> Phase 3.
+### 1.5 THE FIX — phased, each step gated, NO TRADING on any output until its gate passes
+STEP 1 — STOP THE BLEEDING (today, safe, reversible). Disable or downgrade live BUY generation to
+HOLD until Step 4 passes. Current BUYs fire on losers and miss winners, so producing no BUY is
+strictly safer than a wrong one. In the same change, wire the already-built
+analysis/signal_sanity_guard.py into the daily cron so it runs BEFORE any signal is published and
+BLOCKS the cycle whenever the direction check is RED. The guard was built and tested this session
+and already flags the 5-day direction RED. This is the safety net whose absence let the inversion
+run uncaught for months.
 
-### PHASE 3 — COMBINATION (weeks): the multiplier — Alpha Factory Stage C/D
-3a. HRP COMBINER (menu C1, Lopez de Prado 2016 "Building Diversified Portfolios..."). Cluster
-    the surviving alphas by correlation (hierarchical/dendrogram), allocate via recursive
-    bisection (no covariance inversion, robust OOS). Backtest the COMBINED book's net-of-cost
-    Sharpe vs the best single alpha. THE mechanism: IR = IC * sqrt(breadth) — many weak
-    DECORRELATED alphas stack (noise cancels, signal adds). This is the highest-structural-value
-    step in the whole system, and it has NEVER been built — but it is ONLY meaningful once
-    Phase 2 has produced >=2 alphas to combine (hence its position here, not earlier).
-    BUILD: new module portfolio/hrp_combine.py. ~weeks.
-3b. META-LABELING + FRACTIONAL KELLY (menu C2). Secondary model predicts whether the primary
-    signal is right -> sizes/filters. Size via quarter-to-half Kelly (full Kelly overbets a
-    mis-estimated edge). Calibration (Platt/isotonic) folds in HERE (makes probs honest for
-    Kelly; cannot create edge).
-    BUILD: moderate.
-GATE: combined net-of-cost Sharpe > best single alpha AND > 0.5, with DSR > 0 and PBO < 0.2
--> a genuinely tradeable system. THIS is the make-or-break gate of the whole project.
-If combined IC ~= 0 even after honest combination -> the structural conclusion (150-600 name
-universe at this signal strength can't clear costs) is real; options are bigger universe,
-longer horizon, or accept non-viability — NOT more model tuning.
+STEP 2 — RETARGET TO REVERSION (the real fix, days of work). Stop predicting "will it go up." Rank
+names by how far they have overextended from their short-term or factor-implied value and expect a
+snap-back. Concrete method: PCA residual reversal (Avellaneda-Lee) — fit a factor model across the
+cross-section, compute each name's residual versus its factor-implied return, trade the residual's
+mean-reversion (buy below factor-implied, short above). Market-neutral by construction. Build on
+the CONCENTRATED 149, not the 578. Apply the no-trade band (exit near 30%). GATE: net-of-cost
+Sharpe above 0.3 on purged walk-forward before anything proceeds.
 
-### PHASE 4 — HIGH-CEILING MODELS (months, ONLY if Phases 0-3 show life)
-Do not build these until the target (reversion) is settled and cheaper methods are maxed —
-they are 1-4 week builds each and pointless on a wrong target.
-4a. IPCA — Instrumented PCA (menu A2, Kelly-Pruitt-Su 2019). Latent factors with
-    characteristic-dependent, time-varying loadings. The principled "right" cross-sectional
-    model. Build: `ipca` pkg + characteristic panel. ~1-2 wk.
-4b. CONDITIONAL AUTOENCODER (menu A5, Gu-Kelly-Xiu 2021). Neural generalization of IPCA;
-    documented to DOMINATE IPCA/FF/PCA on OOS pricing errors — SOTA academic equity model.
-    CAVEAT (Avramov 2023): edge halves when microcaps / no-credit-rating firms excluded.
-    Build: PyTorch, reference code exists. ~3-4 wk + clean char panel.
-4c. HIERARCHICAL BAYESIAN (menu A8). Principled fix for the per-ticker small-sample problem —
-    pools each stock toward sector/market with shrinkage. Build: PyMC/numpyro. ~moderate.
+STEP 3 — REBUILD THE BUY TRIGGER on the new signal. The trigger is broken independently of the
+signal (fires on chop, silent on movers). Rebuild it around the reversion rank, not the dead
+direction probability. GATE: on backtest the BUYs concentrate on names that actually revert and
+are net positive after cost.
 
-### PHASE 5 — PARALLEL BACKGROUND (no blocking, runs alongside)
-5a. OPTIONS / VRP FORWARD-LOGGING. Already accruing (fixed May 30 — daily_massive_skew.py now
-    stores put_iv/call_iv). VRP = IV - realized vol, gateable ~Aug-Sep when enough history.
-    New INFORMATION axis (orthogonal to price). Other 4 skew writers still drop IV legs — patch
-    before the VRP gate (~Aug). See Stage 1 DATA AUDIT below for the forward-only constraint on
-    all new axes.
-5b. LLM ALPHA-GENERATION LOOP (menu A11). Once the gate + combiner pipeline exists (post Phase 3):
-    LLM proposes formulaic alphas -> alpha_gate validates (HLZ t>3, PBO) -> HRP combiner ingests
-    survivors. The modern Alpha Factory; the gate is what keeps it honest vs the self-reported
-    LLM-alpha hype (AlphaForge/AlphaAgent results are unverified OOS).
-5c. DECAY MONITOR. Once anything goes live: daily live rank-IC per alpha, retire when trailing
-    IC < half backtest (McLean-Pontiff: expect >=26% OOS haircut). Rotate, don't grind.
-5d. PRODUCTION UI / UX (quant-fund-style dashboard). Past mockup EXISTS (portfolio tracker:
-    metric grid, holdings table, P&L, cash-on-hand — see Mar 26 "intraday momentum" chat).
-    DEFERRED until post-Phase-3: a fund-style UI is downstream of having a tradeable signal to
-    display (storefront after product). Current 14-page Streamlit covers the research surface
-    for Phases 0-3. Build when live positions/sizing exist (end Phase 3+).
+STEP 4 — VALIDATE LIVE BEFORE RE-ENABLING. Run the new signal in shadow mode (log, do not trade)
+for a set period and re-run signal_sanity_guard daily. Re-enable live BUY ONLY when the direction
+check is green AND the BUY hit-rate exceeds 55% on real forward data.
 
-### NON-ROADMAP IN-FLIGHT ITEMS (real, separate from the above)
-- C2 calibration verification post-fix (Tue Jun 2)
-- S2/S3 PCT7 ranker promote (Tue Jun 2, h=5 outcomes close ~Jun 1-2)
-- See "SCHEDULED CHECKPOINTS" section below for all dates.
+STEP 5 — GUARD PERMANENTLY. signal_sanity_guard stays in cron forever and blocks on RED.
 
-### ARTIFACTS FROM TONIGHT (where the evidence lives)
-- analysis/eval_global_pit.py — GLOBAL purged-WF eval (rank-IC + L/S spread)
-- analysis/walk_forward.py — per-date rank-IC + L/S decile spread (Stage A patch)
-- analysis/horizon_ic_corr.py — horizon IC correlation
-- analysis/sector_ic_breakdown.py — per-sector rank-IC
-- analysis/global_pit_eval_h{1,3,5,10,20}.csv — horizon sweep results
-- tickers_expanded.txt (578), sector_map_additions.py — universe expansion (research only;
-  production stays on tickers.txt 149 — delete these if not pursuing broad universe)
-- docs/QUANT_BUILD_MENU.md — full model + alpha encyclopedia
-- Verdict sections below (STAGE A VERDICT / HORIZON / SECTOR / L/S) — the evidence trail.
+IMMEDIATE NEXT ACTION: Step 1 (disable bad BUYs + wire the guard into cron). Steps 2-3 are the
+build over the coming days. Steps 4-5 gate re-enable. Until Step 4 passes, the system does NOT
+generate tradeable BUYs.
 
----
+## PART 2 — THE FULL MODEL BUILD LIST (every model from the research, simple to complex)
 
+Star marks the highest-priority untested models. Each entry: what it is, who uses it, the evidence, why it matters here, and what it takes to build.
+
+### A1. LINEAR & REGULARIZED MODELS  (star)
+OLS, Ridge, Lasso, Elastic Net, and Bayesian linear regression. Used by everyone as the baseline and as the production backbone of factor investing (AQR, Dimensional). Evidence: Gu-Kelly-Xiu (2020) found regularized linear models COMPETITIVE on monthly equity data, with gains from complex models modest; on low signal-to-noise data, linear models often generalize BETTER than trees because they cannot memorize noise, directly relevant to the 0.25 train-test gap this system shows. Why a top priority: the current tree overfits (train 0.66-0.79, test about 0.50); ridge or elastic-net on the same features may show a smaller gap and a more honest out-of-sample IC. Cheapest possible test, hours. Build: trivial, scikit-learn.
+
+### A2. FACTOR MODELS (the institutional core)
+Fama-French 3/5-factor plus Carhart momentum; statistical factor models (PCA/ICA); Barra-style risk models. The standout is IPCA, Instrumented PCA (Kelly-Pruitt-Su 2019): latent factors whose loadings are functions of firm characteristics and vary over time, strictly stronger than static PCA or Fama-French. Who uses it: AQR, Dimensional, BlackRock; IPCA is moving from academic to practitioner use. Why it matters: IPCA is the principled right model for cross-sectional equity and a clean upgrade from a generic classifier. Build: Fama-French factors downloadable from the Ken French library; IPCA uses the open-source ipca package plus your characteristic panel, roughly 1-2 weeks.
+
+### A3. CLASSICAL MACHINE LEARNING
+Random Forests (lower variance than boosting); Gradient Boosting (XGBoost/LightGBM/CatBoost, the current tool; CatBoost handles categorical/regime features better, LightGBM has native ranking); SVM and kNN (rarely used in production equity). Who uses it: Two Sigma and WorldQuant use gradient boosting heavily, but as ONE model among hundreds, never the sole predictor. Evidence: Gu-Kelly-Xiu found trees and neural nets best among ML methods, but out-of-sample R-squared is tiny (0.33-0.40% monthly); the model is not the bottleneck, the target and combination are. Build: you have it; the upgrade is LightGBM lambdarank (see A4).
+
+### A4. LEARNING-TO-RANK  (star star, the most important untested model)
+LambdaMART, LambdaRank, RankNet, listwise ranking: instead of predicting each stock's probability of going up, the model directly learns to ORDER stocks best-to-worst, with a loss that optimizes ranking quality (NDCG / rank-IC) rather than per-name accuracy. Who uses it: increasingly standard for cross-sectional equity, the natural objective for a long/short or top-decile book. Evidence: Poh-Lim-Zohren-Roberts (2021) report roughly 3x Sharpe improvement versus classification. Why top priority: you HAVE the file already (train_global_ranker.py, LightGBM lambdarank) and NEVER evaluated it honestly, only in-sample predict. It directly addresses the finding that the signal is in ranking, not direction. Build: minimal, the model exists, needs an honest purged-walk-forward evaluation reporting rank-IC. Days.
+
+### A5. NEURAL NETWORKS for cross-sectional returns
+MLP / feedforward (Gu-Kelly-Xiu found a shallow 3-5 layer net was their single best performer). The standout is the Conditional Autoencoder (Gu-Kelly-Xiu 2021): a neural-net generalization of IPCA with nonlinear factor exposures, latent factors, and no-arbitrage imposed; it DOMINATES Fama-French, PCA, and IPCA on out-of-sample pricing errors and is the state-of-the-art academic equity model. Also neural factor models / deep SDF (Chen-Pelger-Zhu). Who uses it: Two Sigma, DE Shaw, academic-adjacent shops. Why it matters: the Conditional Autoencoder is the most powerful documented model for this exact problem. CAVEAT (Avramov 2023): returns halve when microcaps and no-credit-rating firms are excluded, so the honest edge is smaller than the headline but still real. Build: custom PyTorch/TF with reference code available, roughly 3-4 weeks, needs a clean characteristic panel.
+
+### A6. SEQUENCE MODELS (temporal structure)
+RNN/LSTM/GRU; Temporal Convolutional Networks (often beat LSTM, parallelizable); Transformers / Temporal Fusion Transformer; attention across stocks per date. Who uses it: newer ML shops, mixed production record; they shine most in intraday/microstructure. Evidence: MIXED, on daily equity direction they rarely beat well-engineered features plus boosting/ranking. Build: moderate-high, with the RISK that more parameters mean more overfit on low-SNR data; heavy regularization only.
+
+### A7. REGIME / STATE-SPACE MODELS
+Hidden Markov Models (regime detection); Kalman/particle filters (dynamic beta, pairs spreads); Markov regime-switching (Hamilton). Who uses it: macro and stat-arb shops use Kalman filters for spreads, HMMs as risk routers. Evidence: better as a RISK ROUTER/GATE than a return predictor, and regime-conditioning fragments scarce data. Build: low-moderate (hmmlearn, pykalman); use as an overlay/gate, not a standalone predictor.
+
+### A8. BAYESIAN METHODS  (star, for the per-ticker problem)
+Gaussian Processes (give uncertainty, expensive); hierarchical Bayesian models (pool across stocks/sectors with shrinkage, handling small per-name samples); Black-Litterman. Who uses it: AQR uses Bayesian shrinkage extensively. Why it matters: hierarchical shrinkage is the PRINCIPLED answer to per-ticker having too little data, pooling each stock toward its sector/market while allowing deviation, and could rescue per-ticker signal that XGBoost could not. Build: moderate (PyMC, numpyro).
+
+### A9. ENSEMBLES / STACKING / META-LEARNING  (star, cheap)
+Bagging / model-averaging (reduces variance, the core problem here); stacking; Lopez de Prado's sequential bootstrap (handles the correlation from overlapping labels, relevant to the 5-day overlap). Who uses it: universal, no serious shop runs a single model. Why it matters: variance reduction attacks the overfit directly, cheap, layers on top of what exists. Build: low.
+
+### A10. GENETIC PROGRAMMING / SYMBOLIC REGRESSION
+Evolve formulaic alphas (WorldQuant 101 Alphas style) via genetic programming. Who uses it: WorldQuant explicitly. Evidence: real but decay-prone, overfits backtests without multiple-testing control, which you HAVE via the gate (HLZ t>3, PBO). Build: moderate (gplearn or custom); the gate is the guardrail.
+
+### A11. LLM ALPHA GENERATION (the 2023-2026 frontier)  (star)
+Alpha-GPT, AlphaForge (AAAI 2025), AlphaAgent (KDD 2025), RD-Agent, QuantaAlpha (2026): an LLM generates formulaic alpha hypotheses, backtests them, and refines, automating the quant hypothesis loop; AlphaAgent adds regularization against decay and crowding. Who uses it: frontier research and some China shops, deployment unverified. Evidence, treat with SKEPTICISM: results are self-reported over short out-of-sample windows and prone to the backtest-overfitting the authors cite; QuantaAlpha (2026) notes fragile controllability, where noisy backtest feedback drives toward spurious correlations. The durable lesson is automated generation of MANY candidates fed through a STRICT GATE, not the headline returns. Why it matters here: you have an LLM plus a strict gate (PBO 0.15), so LLM proposes a formula, the gate validates it, keep the survivors, combine them: the modern Alpha Factory, with the gate making it honest. Build: moderate; the generation loop is scriptable and the gate already exists.
+
+## PART 3 — THE FULL ALPHA TAXONOMY (every signal family from the research)
+
+Checkmark means you already have the data; hammer means it needs a new data source or build. IC figures are typical monthly cross-sectional rank-IC, where "good" is about 0.05 and "very good" about 0.10. ALL alphas decay post-publication, roughly 26-58% (McLean-Pontiff).
+
+### B1. PRICE / MOMENTUM  (have data)
+Cross-sectional momentum (Jegadeesh-Titman, 12-minus-1 month winners beat losers; canonical and robust but suffers "momentum crashes" per Daniel-Moskowitz in sharp reversals); time-series/absolute momentum (Moskowitz-Ooi-Pedersen, own assets with positive own past return); 52-week high (George-Hwang, proximity to the 52-week high predicts continuation); residual momentum (Blitz, momentum in factor-residual returns, lower volatility than raw). Build: all computable from OHLCV, you likely have variants already.
+
+### B2. REVERSAL  (star, fits your data)
+Short-term reversal (Lehmann/Jegadeesh, last week or month losers bounce; strong but high-turnover) — have data; long-term reversal (DeBondt-Thaler, 3-5 year losers outperform) — have data; overnight/intraday reversal (Lou-Polk-Skouras, overnight and intraday returns have opposite-sign predictability) — needs an intraday/overnight split. RELEVANCE: your NEGATIVE within-sector decile spread (energy -5.43) IS a reversal signature — the model's "winners" mean-revert. A short-term-reversal framing may fit your data better than momentum. This is the family the whole fix plan in Part 1 is built around.
+
+### B3. VALUE  (needs build)
+Book-to-market, earnings yield (E/P), free-cash-flow yield, EV/EBITDA, sales-to-price. Cheap stocks outperform long-run; weak/dormant through the 2010s with a partial revival. Needs point-in-time fundamentals (you have some via your filings/earnings pipeline).
+
+### B4. QUALITY / PROFITABILITY  (needs build)
+Gross profitability (Novy-Marx 2013, gross profits over assets — one of the most robust anomalies); ROE, ROA, accruals (Sloan 1996, low-accrual firms outperform); earnings quality; Piotroski F-score (a 9-point fundamental-health score). Build: needs fundamentals. A high-value family; the Novy-Marx gross-profitability signal is among the most durable.
+
+### B5. SIZE / LIQUIDITY  (have data)
+Size (the small-cap premium, weak/contested post-publication); Amihud illiquidity (return impact per dollar of volume, robust); turnover and bid-ask spread. Computable from OHLCV plus volume.
+
+### B6. VOLATILITY / RISK  (have data)
+Low-volatility anomaly (low-vol stocks have higher risk-adjusted returns); betting-against-beta (Frazzini-Pedersen, long low-beta short high-beta); idiosyncratic volatility (Ang et al., high idio-vol underperforms). RELEVANCE: predicting VOLATILITY rather than direction is a much easier target (AUC above 0.6 is achievable) and feeds sizing and options — a genuinely different, more tractable objective.
+
+### B7. EARNINGS / EVENT
+Post-Earnings-Announcement Drift, PEAD (Bernard-Thomas, prices drift in the direction of an earnings surprise for weeks — one of the most durable anomalies in finance) — needs build but you have earnings data; earnings surprise (SUE) and analyst revisions (Chan-Jegadeesh-Lakonishok, about a 7.5% 6-month spread; Womack), guidance changes — partial, you have eps_surprise and days_to_earnings. WHY PRIORITY: PEAD and analyst revisions are event-driven, fit your 1-5 day horizon, and you partly have the data; among the highest-Sharpe durable families.
+
+### B8. OPTIONS-DERIVED  (have data via UW, partly built)
+Implied volatility level/rank and IV skew (25-delta put-call) — have level; IV skew CHANGE — needs build (research says the change is the signal); put-call ratio — have; Variance Risk Premium, VRP (IV minus realized vol) — logging fixed this session, accruing; gamma exposure (GEX) — needs build; option volume / O-S ratio — needs build; IV term-structure slope — needs build. Evidence: VRP and IV-skew changes have real predictive content and are less crowded than price factors; they are forward-looking (what the market prices in), orthogonal to your price-history features. WHY PRIORITY: a different INFORMATION axis, data already arriving, less crowded; top of the new-data list.
+
+### B9. MICROSTRUCTURE / FLOW  (have data via UW)
+Order-flow imbalance, dark-pool prints — have; short interest / days-to-cover — have; institutional flow / 13F; failures-to-deliver. Evidence: short interest (high short interest implies underperformance) is robust; dark-pool and flow signals are lower-crowding but noisy. Build: largely have via UW, underused.
+
+### B10. SENTIMENT / TEXT  (have data partly, you have FinBERT)
+News sentiment — have; social media (StockTwits/Reddit) — needs build; SEC filing text changes, "Lazy Prices" (Cohen-Malloy-Nguyen 2020, firms that CHANGE their 10-K/10-Q language year-over-year underperform; strong and durable) — needs build, you have 8-K FinBERT but not 10-K similarity; earnings-call tone — needs build. WHY PRIORITY: Lazy Prices is a strong documented anomaly using free EDGAR data and a different axis (disclosure language); needs 10-K ingestion plus year-over-year similarity (you only store 8-K now).
+
+### B11. ALTERNATIVE DATA  (mostly new builds)
+Satellite imagery, credit-card transactions, web traffic, app downloads, supply-chain links, patents, ESG. Who uses it: Point72, Two Sigma, big multi-strats with data teams and seven-figure budgets. Evidence: real for specific names (Katona et al. on satellite); capacity- and cost-limited; mostly institutional-scale. HONEST READ: the lowest dollar-per-signal for a personal book except where free (patents via USPTO, some web traffic); mostly skip unless a free source fits.
+
+### B12. CROSS-SECTIONAL / NETWORK  (needs build)
+Lead-lag / industry momentum spillover (Hou, big-firm returns lead small-firm same-industry); customer-supplier momentum (Cohen-Frazzini, about 150bps/month but decayed); co-mention networks (GDELT, uncrowded but throttled to collect — you tested it, it is a multi-day crawl). Build: network signals are uncrowded (they don't scale, so big funds underweight them) but operationally heavy.
+
+### B13. MACRO / CROSS-ASSET  (needs build / partly have)
+Term-structure slope, credit spreads (HYG/LQD), FX carry, commodity signals as equity predictors — partial, you have VIX, oil, DXY, yields. Evidence: credit spreads are a strong regime indicator (your AI-thesis doc flags this); cross-asset is a different axis.
+
+### B14. STATISTICAL ARBITRAGE  (star, a different paradigm, not a single alpha)
+Pairs trading (Gatev-Goetzmann-Rouwenhorst, trade the spread between cointegrated stocks; mean-reversion, market-neutral); cointegration baskets and PCA residual reversal (Avellaneda-Lee, trade residuals from a factor model — buy stocks below their factor-implied price, short above). Who uses it: the original Renaissance / Morgan-Stanley-Tartaglia paradigm, still core at many stat-arb shops. WHY PRIORITY FOR YOU: this is a fundamentally different question — convergence, not direction. Your negative decile spread (the model ranks backwards at the extremes) is a mean-reversion signature, and PCA residual reversal in particular is the natural model for "stocks that deviate from their factor-implied value snap back" — and it is market-neutral, sidestepping the long-only breadth ceiling. This is the single most promising reframe given what the data showed, and it is exactly Step 2 of the fix plan. Build: moderate; cointegration testing plus spread-trading logic, statsmodels has the tools, PCA residuals reuse machinery you have.
+
+## PART 4 — HOW WEAK SIGNALS BECOME MONEY (the combination layer)
+
+Individual alphas at IC about 0.01-0.05 are useless alone. The money is in combination, sizing, and risk — the part most retail systems skip, and the part this system has skipped.
+
+### C1. ALPHA COMBINATION  (star, the missing stage)
+Hierarchical Risk Parity, HRP (Lopez de Prado 2016): cluster signals by correlation, allocate via recursive bisection; no covariance inversion, robust out-of-sample. Equal-weight (shockingly hard to beat). Mean-variance / Markowitz (theory-optimal, unstable out-of-sample). Bayesian shrinkage / Black-Litterman. THE CORE MATH, the Fundamental Law of Active Management (Grinold): Information Ratio = IC times the square root of Breadth times the Transfer Coefficient. A 0.011-IC signal combined with 20 DECORRELATED 0.011 signals has a portfolio IC far above any single one — noise cancels, faint signals stack. This is THE mechanism. You proved (PBO 0.15) your gate finds real signals and you have unused survivors, but you have NEVER built the combiner. This is the highest-value untested thing in the entire system.
+
+### C2. BET SIZING
+Fractional Kelly (quarter-to-half Kelly; full Kelly catastrophically overbets a mis-estimated edge); meta-labeling (Lopez de Prado, a secondary model predicts whether the primary signal is right and sizes accordingly, turning a low-precision signal into a tradeable one); volatility-targeting (scale positions to constant risk). RELEVANCE: a 51% edge is tradeable IF sized right; meta-labeling is the untested sizing stage.
+
+### C3. PORTFOLIO CONSTRUCTION & RISK
+Sector/factor neutralization (you found it DESTROYS your edge — because your edge IS the sector tilt; that is itself diagnostic); risk-model-based position limits; drawdown control; turnover penalties.
+
+### C4. TRANSACTION COST MODELING (non-optional)
+At 1-5 day holding, costs (spread plus impact) can eat the entire thin edge. Every backtest must net out realistic costs. You have a 10bps-per-turnover model in fitness_scorer.py — it must be in the live path, not just research. This is exactly what Phase 0 applied to prove the reversion edge survives at +0.27 net.
+
+### C5. WHAT ACTUALLY SEPARATES WINNERS FROM LOSERS
+Not a magic signal or model. The literature (Lopez de Prado, "The 10 Reasons Most Machine Learning Funds Fail") is blunt: winners use an industrialized research pipeline (many specialists and signals, not a lone model), proper labels (triple-barrier, meta-labeling), purged/combinatorial cross-validation, multiple-testing control (you have this), and they combine many weak decorrelated bets and size them well. Losers p-hack one strategy via repeated backtesting (about 20 tries "finds" a false strategy at the 5% level).
+
+## PART 5 — THE UI / UX BUILD (quant-fund dashboard)
+
+A past mockup already EXISTS (from the Mar 26 "intraday momentum" chat): a portfolio-tracker style interface with a top metric grid (cash on hand, total P&L, day change), a holdings table with per-position badges, and clean card-based layout matching a professional quant-fund dashboard. The current production interface is a 14-page Streamlit app that covers the research surface needed for the fix plan (accuracy explorer, calibration, per-sector breakdowns). The PRODUCTION fund UI is DEFERRED until after the fix is validated (after Step 4 / Phase 3), on the principle that a fund-style dashboard is downstream of having a tradeable signal to display — you build the storefront after the product works. When it is built it should show: live positions and sizing, realized and unrealized P&L, cash on hand, the current signal book (which names are long/short and why), the sanity-guard status (green/red per the standing direction and BUY-hit checks), and a backtest-vs-live tracking panel so signal decay is visible. Build when live positions and sizing exist, at the end of Phase 3 or later.
 
 **Last updated:** May 28, 2026 (Thu session VN)
 **Sources consolidated:**
