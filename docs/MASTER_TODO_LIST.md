@@ -1834,3 +1834,38 @@ NEXT (next session): pick a breadth lever. Cheapest first test = combine 1d/3d/5
 no new data) and see if pooled t-stat rises toward 3. If yes -> breadth is the answer, build toward it.
 If even 3-horizon + full universe stays t<2 -> signal too weak for long-only daily, consider horizon
 lengthening (daily->weekly) or accept the system as non-viable at this scale.
+
+
+### STAGE A — HORIZON CURVE + POOLING TEST (May 30) — both cheap breadth levers DEAD; signal lives at h=5
+
+Full rank-IC horizon sweep, GLOBAL cross-sectional, 5yr purged WF, 149 tickers:
+| Horizon | IC t-stat | pos_frac | read |
+|---|---|---|---|
+| h=1  | -0.42 | 0.500 | dead (coin-flip ranking) |
+| h=3  | +1.47 | 0.502 | rising |
+| h=5  | +1.66 | 0.531 | PEAK |
+| h=10 | +1.32 | 0.505 | falling |
+| h=20 | -1.50 | 0.473 | NEGATIVE (ranking actively wrong) |
+
+Signal peaks at h=5 and decays to negative by h=20. Lives specifically in the 3-5 day band.
+
+LEVER 1 (pool horizons) — DEAD: corr(h3_IC, h5_IC)=0.571 -> only partial breadth (~1.13x, not sqrt2),
+AND h1/h20 are negative so can't pool the full set. analysis/horizon_ic_corr.py.
+LEVER 2 (lengthen horizon daily->weekly) — DEAD: signal peaks h=5, negative by h=20. Lengthening
+HURTS. The 5-day mark is the operating point; do not extend.
+
+So both FREE/cheap levers eliminated with data. Remaining breadth levers are the harder structural ones:
+- LEVER 3a MORE NAMES (untested): pure breadth at constant IC. The t-stat doubling (per-ticker 0.97
+  -> 149-name 1.66) is direct evidence more names raises significance. Cleanest remaining test:
+  expand universe well beyond 149, re-measure h=5 rank-IC t-stat. To reach t=3 from 1.66 at constant
+  IC needs ~3.3x breadth -> ballpark ~500 names if breadth scales as sqrt(N) cleanly.
+- LEVER 3b SHORT LEG / relax long-only (untested): recovers bottom of ranking, ~2x effective breadth.
+  Hardest operationally (borrow, infra, risk). But long-only currently discards half the ranking signal
+  (you can act on top names but not short the bottom).
+
+NEXT SESSION: the real decision is 3a vs 3b. Cheapest test = LEVER 3a, expand universe (more tickers
+in tickers.txt) and re-run eval_global_pit --horizon 5. If t-stat climbs toward 3 with more names ->
+breadth via universe is the path. If it stalls -> long-only daily at this IC may be non-viable; short
+leg (3b) or accept the system can't clear costs.
+
+CONFIRMED OPERATING POINT: h=5, cross-sectional ranking (NOT per-name direction, NOT h1, NOT h20).
