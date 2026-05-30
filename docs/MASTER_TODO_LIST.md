@@ -1919,3 +1919,37 @@ TWO LEVERS LEFT (neither obviously promising — honest):
 NOT recommending "keep grinding the current features" — data does not support it. Decision is short-leg
 probe vs new-data pivot vs step back. tickers_expanded.txt / sector_map_additions.py can be deleted if
 not pursuing broad universe (they do NOT affect production 149).
+
+
+### LONG/SHORT DECILE TEST (May 30) — SIGNIFICANT NEGATIVE spread = mean-reversion signature, NOT no-signal
+
+| Universe | daily spread | spread t-stat | Sharpe |
+|---|---|---|---|
+| 149 | -0.00208 | -1.41 | -0.29 |
+| 578 | -0.00104 | -2.69 | -0.54 |
+
+The decile spread (top-decile ret minus bottom-decile ret) is NEGATIVE and, at 578 names,
+SIGNIFICANT (t=-2.69, |t|>2). Same breadth-strengthens-t effect as rank-IC (0.97->1.66): more
+names -> cleaner deciles -> the negative tightens from -1.41 to -2.69. The model RANKS BACKWARDS
+at the extremes consistently — its highest picks underperform its lowest. This is NOT noise.
+
+INTERPRETATION: this is a SHORT-TERM REVERSAL signature (anomaly B2). Features are momentum/trend-
+flavored; at the decile extremes, 5-day returns mean-revert (biggest recent winners pull back,
+losers bounce). The model learned to rank by recent strength = exactly backwards at h=5 where
+reversal dominates. So the system "accidentally discovered reversal" — pointing the wrong way.
+
+DO NOT naively invert-and-trade:
+  - inverted Sharpe ~+0.54 = only EDGE of minimum-viable (~0.5) BEFORE costs
+  - it's long/short (shorting infra you lack)
+  - decile extremes = highest turnover/cost, the exact names you'd trade
+The right harvest is NOT "invert a direction model" — it's proper STAT-ARB machinery (B14):
+short-term reversal factor, or PCA residual reversal (Avellaneda-Lee). Market-neutral (sidesteps
+long-only breadth wall), designed for reversion, lower turnover if built right.
+
+REVISED CONCLUSION: tonight did NOT show "no signal." It showed a significant signal pointing the
+WRONG WAY because we asked direction when the data wants REVERSION. This is a REDIRECT to stat-arb
+(B14 in docs/QUANT_BUILD_MENU.md), independently the menu's flagged best reframe.
+
+NEXT: build a short-term reversal / PCA-residual-reversal test (B14). Question changes from "will
+this go up?" to "has this deviated from its factor-implied value and will it snap back?" Market-
+neutral, fits the data, no new data needed.
