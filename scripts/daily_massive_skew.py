@@ -90,9 +90,11 @@ def run_snapshot(snapshot_date: str = None):
                 if result.get("skew_25d") is not None:
                     conn.execute("""
                         INSERT OR REPLACE INTO options_skew_history
-                            (date, ticker, skew_25d, iv_rank, skew_signal, source, created_at)
-                        VALUES (?, ?, ?, ?, ?, ?, ?)
+                            (date, ticker, skew_25d, put_iv_25d, call_iv_25d,
+                             iv_rank, skew_signal, source, created_at)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """, (snapshot_date, ticker, result["skew_25d"],
+                          result.get("iv_25d_put"), result.get("iv_25d_call"),
                           result.get("iv_rank"), result["skew_signal"],
                           "massive", now))
                     print(f"skew={result['skew_25d']:+.4f} {result['skew_signal']}")

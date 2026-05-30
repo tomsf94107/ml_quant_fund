@@ -1545,6 +1545,61 @@ TWO LOAD-BEARING LESSONS (violate these and the factory manufactures false posit
 
 ### Stage 1 — Candidate generation from NEW DATA  🔨 PARTIAL
 
+
+
+### Stage 1 DATA AUDIT (May 30) — every new axis is forward-only or throttle-limited
+
+Grep + DB-verified. The deep 5yr purged-gate process (used for per-ticker P0-2 and
+GLOBAL eval) CANNOT run on any new axis — the historical data does not exist.
+
+| Axis | Blocker | Gateable now? |
+|---|---|---|
+| Options VRP | options_skew_history stores skew_25d only; put_iv/call_iv columns BLANK (source='massive' dropped IV legs). No IV level -> no VRP. 10wk span (2026-03-21+). | No |
+| Options IV-skew change | skew_25d IS stored, 10wk -> ~50 dates. Too few to gate. | Forward-only |
+| Options IV term-structure / O-S / GEX | never logged; UW greeks current-only, no backfill | No |
+| 10-K Lazy Prices | 10-Ks NOT stored anywhere. finbert_filings is 8-K ONLY (1yr, data/sentiment.db) | No |
+| 8-K sentiment | 1yr (2025-05+, 108 tk, 2846 rows) but event-sparse | Marginal |
+| GDELT co-mention | historical archive WORKS (_fetch_gdelt_headlines takes as_of date) BUT ~10s/call + frequent 429s. Co-mention needs all-tickers-per-date -> ~156 calls/date -> days-to-weeks backfill. | Yes but operationally painful |
+
+CONCLUSION: Stage 1 is NOT build-and-gate-tonight. It is build-extractors + log-forward
++ gate-in-months (same regime as SELL/PCT7 forward validation). No new axis has deep
+gateable history.
+
+HIGHEST-EV ACTION (done May 30): fix options IV-level logging so put_iv/call_iv are
+stored -> VRP + IV-skew-change start accumulating forward from today -> gateable ~Aug-Sep.
+20-min fix beats a week-long GDELT crawl for a moderate-value signal.
+
+DEFERRED: GDELT co-mention backfill (throttled multi-day crawler) — moderate EV, high
+effort. Revisit only if forward-logged options signals fail to gate.
+
+
+
+### Stage 1 DATA AUDIT (May 30) — every new axis is forward-only or throttle-limited
+
+Grep + DB-verified. The deep 5yr purged-gate process (used for per-ticker P0-2 and
+GLOBAL eval) CANNOT run on any new axis — the historical data does not exist.
+
+| Axis | Blocker | Gateable now? |
+|---|---|---|
+| Options VRP | options_skew_history stored skew_25d only; put_iv/call_iv were BLANK. FIXED May 30 (daily_massive_skew.py now logs IV legs) -> VRP accumulates forward. 10wk span so far. | Forward, ~Aug-Sep |
+| Options IV-skew change | skew_25d stored, 10wk -> ~50 dates. Too few to gate. | Forward-only |
+| Options IV term-structure / O-S / GEX | never logged; UW greeks current-only, no backfill | No |
+| 10-K Lazy Prices | 10-Ks NOT stored. finbert_filings is 8-K ONLY (1yr, data/sentiment.db) | No |
+| 8-K sentiment | 1yr (2025-05+, 108 tk, 2846 rows) but event-sparse | Marginal |
+| GDELT co-mention | historical archive WORKS but ~10s/call + frequent 429s; needs all-tickers-per-date -> days-to-weeks backfill | Yes but high-effort/moderate-EV. DEFERRED. |
+
+CONCLUSION: Stage 1 is NOT build-and-gate-tonight. It is build-extractors + log-forward
++ gate-in-months (same regime as SELL/PCT7 forward validation).
+
+DONE May 30: fixed options IV-level logging (daily_massive_skew.py) -> VRP + IV-skew-change
+now accumulate forward. Gateable ~Aug-Sep when >=250 dates exist.
+
+FOLLOW-UP: other skew writers (daily_uw_snapshot.py, generator.py, intraday_builder.py,
+write_skew_from_log.py) still drop IV legs — patch for consistency when convenient. Trigger: before VRP gate (~Aug).
+
+DEFERRED: GDELT co-mention backfill — moderate EV, multi-day throttled crawl. Revisit only
+if forward-logged options signals fail to gate.
+
 ### Stage 1 — VERIFIED build list (May 30, grep-audited against codebase)
 
 GLOBAL cross-sectional eval: 5yr purged WF OOS AUC = 0.496 (smoke, 3tk, n=3807).
