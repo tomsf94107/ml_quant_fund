@@ -1784,3 +1784,53 @@ highest-value "remedy" is a constraint change, not more model work.
 A (rank-IC rebaseline, cheap, reinterprets tonight) -> B (test ranking, top remedy, model exists)
 -> C (HRP combine, where edge is made -- THE decision gate) -> D (size) -> E (monitor).
 Each stage has a kill gate. A or C at IC~=0 -> STOP, pull a structural lever, don't grind noise.
+
+
+### STAGE A VERDICT (May 30) — per-name direction fails; cross-sectional ranking weakly positive; BREADTH is the proven lever
+
+Ran rank-IC on BOTH panels at full scale. Read against Stage A kill gate:
+
+| Metric | GLOBAL (149tk, n=169348, 978 dates) | Per-ticker (40tk, 202 dates) | Gate | Pass? |
+|---|---|---|---|---|
+| rank_ic_median | 0.0112 | 0.0111 | >0.02 | no |
+| rank_ic_q25 | -0.113 | -0.205 | >0 | no |
+| rank_ic_pos_frac | 0.531 | 0.525 | >0.55 | no |
+| rank_ic_t | 1.664 | 0.969 | >3.0 | no |
+| pooled OOS AUC | 0.479 | 0.487/0.493 | (footnote) | coin-flip |
+
+CRITICAL READ — do NOT misread this as "everything fails / worse than coin flip":
+- AUC/accuracy (~0.48) measures PER-NAME DIRECTION ("will NVDA go up?"). That fails. Expected.
+  The research says this is near-impossible at the ceiling AND it is the WRONG target. Stop chasing it.
+- rank-IC (+0.011 median, pos on 53% of days) measures CROSS-SECTIONAL RANKING ("is NVDA a better
+  bet than INTC today?"). That is WEAKLY POSITIVE — not zero, not negative. Pointed the right way,
+  just not yet significant. This is the metric that maps to portfolio Sharpe.
+- These are DIFFERENT QUESTIONS. A system can fail per-name direction while being faintly-right at
+  cross-sectional ranking. The ranking is what makes money in a portfolio.
+
+THE HOPEFUL NUMBER (easy to miss): IC t-stat DOUBLED 0.97 -> 1.66 going from 40 -> 149 names, with
+the SAME IC (~0.011). That is IR = IC*sqrt(breadth) confirmed EMPIRICALLY. The weak signal does not
+die with scale — it gets MORE significant. The signal is not dead, it is UNDER-LEVERAGED.
+
+GATE DECISION: Stage A fails on current features for BOTH architectures. AUC was NOT masking real IC
+(we checked with the right metric on the right cross-sectional panel at full scale). So:
+- Do NOT build Stage B (ranker eval) or Stage C (HRP combine) on current features — would be
+  polishing a 0.011-median/q25-negative signal = grinding noise. The plan's kill gate says STOP here.
+- ROUTE TO STRUCTURAL LEVERS. The t-stat doubling proves the binding constraint is BREADTH, not the
+  model. "How do I improve accuracy" is the wrong question; the right one is "how do I add breadth so
+  the ranking t-stat clears 3."
+
+BREADTH MATH: to get t from 1.66 -> 3.0 at constant IC needs ~(3/1.66)^2 ~= 3.3x more breadth.
+Levers (the OPEN QUESTION for Atom — highest-value decision in the project now):
+  1. Use ALL 3 horizons (1d/3d/5d) as partly-independent bets — ~3x breadth, ZERO new data. Cheapest.
+     Currently h=5 tested alone. This ALONE could approach the needed multiple.
+  2. Expand universe >149 names — directly raises breadth.
+  3. Relax long-only — recovers short leg, ~2x effective breadth (rank bottom too, not just top). Hardest.
+
+HONEST RISK: IC 0.011 is genuinely weak; breadth might not scale far enough to beat costs. That is the
+real unknown — but "might not scale far enough" is NOT "no path exists." The path exists (rank + breadth);
+the question is whether the signal rides it to profitability. Only way to know: add breadth, re-measure.
+
+NEXT (next session): pick a breadth lever. Cheapest first test = combine 1d/3d/5d rank-IC (lever 1,
+no new data) and see if pooled t-stat rises toward 3. If yes -> breadth is the answer, build toward it.
+If even 3-horizon + full universe stays t<2 -> signal too weak for long-only daily, consider horizon
+lengthening (daily->weekly) or accept the system as non-viable at this scale.
