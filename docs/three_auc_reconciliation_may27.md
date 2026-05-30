@@ -61,7 +61,7 @@ It's three different things being measured.
    - Expect AUC to converge with WF stacks (~0.51-0.53)
    - Effort: 5-15 hours (depends on feature builder per-ticker timing)
 
-**P0-3 (TODO):** Per-fold AUC breakdown
+**P0-3 (DONE - see docs/P0-3_regime_breakdown_may29.md):** Per-fold AUC breakdown
    - Tag each fold with macro regime (VIX, SPY trend, etc)
    - Confirm within-regime AUC > between-regime AUC
    - Establishes that the model has regime-dependent edge

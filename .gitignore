@@ -69,3 +69,8 @@ recession/cron.log
 recession/recession_alerts.log
 recession/recession_alerts.log
 recession/recession_alert_state.json
+
+# P0-2 temp artifacts (regenerable)
+p0-2_*.db
+p0-2_*_panel.parquet
+p0-2_*.log

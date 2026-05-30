@@ -1025,14 +1025,14 @@ Some docs are likely stale or superseded:
 
 ### P0 — CRITICAL (still unresolved)
 
-#### C3 — Per-ticker AUC 0.44 investigation
+#### C3 — Per-ticker AUC 0.44 investigation  ✅ DONE (P0-2, May 30)
 - **Problem:** Per-ticker model OOS AUC = 0.4389 (May 23 PIT WF, 10,995 outcomes)
 - **Below 0.50** — worse than coin flip
 - **Contradiction:** aggregate prob_raw is calibrated 64.0/64.0% h=3
 - **Effort:** 3-5 hours
 - **Trigger:** Wednesday May 27 or sooner if conviction allows
 
-#### C4 — 3-AUC reconciliation (May 23 PRIORITY #1, still not done)
+#### C4 — 3-AUC reconciliation  ✅ DONE (P0-2 + P0-3, May 30)
 - Per-ticker PIT: 0.44
 - Per-ticker WF stacks: 0.51-0.53
 - Path A 5-fold: 0.58-0.59
@@ -1518,3 +1518,84 @@ Full catalog with citations: `docs/alpha_signals_catalog_research_20260528.md`
 - Short interest × news sentiment (Engelberg-Reed-Ringgenberg 2012)
 - IV skew × earnings proximity
 - VIX regime × momentum (momentum crashes, Daniel-Moskowitz 2016)
+
+
+---
+
+## P3 — ALPHA FACTORY (replaces obsolete "4-Week Roadmap"; supersedes May-8 P3)
+
+CONTEXT: Old P3 was BLOCKED by C1 and assumed the per-ticker model as base.
+C1 is DONE; P0-2 (May 30, n=21,376) proved per-ticker = coin flip (OOS AUC 0.487/0.493).
+So the factory's PURPOSE is to find edge where the current per-ticker architecture has none:
+new data axes + cross-sectional/GLOBAL objective + rigorous gating. NOT more transforms of
+existing OHLCV features (P3.2 proved that panel 95% redundant; P3.5 proved transforms HURT
+per-ticker). ~70% of this infra already exists — this roadmap is FINISH + FORMALIZE.
+
+TWO LOAD-BEARING LESSONS (violate these and the factory manufactures false positives):
+  L1 (from P3.5): GATE ON THE PRODUCTION OBJECTIVE, not cross-sectional IC. A signal that
+     passes CS rank-IC can still lower per-ticker/live AUC. alpha_gate.py currently gates CS-IC.
+  L2 (from P3.2): EXPANSION APPLIES TO NEW DATA AXES ONLY. Transforming existing features
+     adds nothing (95% redundant). alpha_transformations flag stays OFF for current features.
+
+### Stage 0 — Operator library + PIT audit  ✅ MOSTLY DONE
+- Have: features/alpha_transformations.py (17 ops), analysis/build_alpha_panel.py (panels,
+  group/neutralize, per-date parquet, resumable).
+- Remaining: PIT-correctness test suite over the panel (no look-ahead); document operator list.
+- KILL: n/a (infra). TRIGGER: as-needed before Stage 1 on new data.
+
+### Stage 1 — Candidate generation from NEW DATA  🔨 PARTIAL
+- Have: build_alpha_panel.py generation engine; data/alpha_sources.py (analyst revisions/yf).
+- Build: high-feasibility LOW-CROWDING sources the catalog flags, in priority of
+  (feasibility-on-our-data x expected incremental-IC x low crowding):
+    1. Options-surface geometry from UW: IV-skew change/level, IV term-structure slope,
+       VRP (IV-RV), O/S volume ratio, single-name GEX proxy.
+    2. EDGAR text deltas (free): Lazy-Prices 10-K/10-Q YoY similarity; item-specific 8-K drift.
+    3. GDELT co-mention network centrality (in stack, uncrowded).
+    4. UW Form-4 opportunistic-vs-routine insider classification.
+    5. Overnight/intraday return decomposition (cheap, unarbitraged).
+- Track N (trial count) religiously — feeds DSR. Seed ~30-50 base expr -> ~1-3k variants MAX.
+- KILL per source: if best variant fails Stage-2 gate, log as rejected experiment, move on.
+- TRIGGER: after Stage 2 objective-fix (below). First source: UW options-surface (we pay for UW).
+
+### Stage 2 — Gating pipeline  ✅ STRONG, 2 GAPS
+- Have (real): alpha_gate.py (CS rank-IC + Harvey-Liu-Zhu |t|>3.0), alpha_gate_stats.py
+  (deflated_sharpe, expected_max_sharpe, probabilistic_sharpe), alpha_gate_incremental.py
+  (absolute uplift vs raw base), fitness_scorer.py, walk_forward.py (purged k-fold + embargo).
+- GAP A (CRITICAL, L1): add a PER-TICKER / production-objective gate beside the CS-IC gate.
+  A candidate must improve the metric the live model is scored on, not just CS-IC.
+- GAP B: add PBO via CSCV (Bailey-Lopez de Prado) — have DSR+PSR+t>3, missing backtest-overfit prob.
+- SIX-GATE BAR (clear ALL): purged-CV rank-IC IR>0.3; |t|>3.0; DSR>0.95; PBO<0.3;
+  net long-only Sharpe>0.5; incremental (corr-to-book<0.7 AND incremental-IR>0).
+- KILL: <single-digit % survival is EXPECTED, not failure (per both research docs).
+- TRIGGER: GAP A before any new Stage-1 source is trusted. *Also gate GLOBAL/Path A 0.58 here.*
+
+### Stage 3 — Combination (HRP)  ❌ MISSING — BUILD
+- Build portfolio/hrp_combine.py: cluster gated survivors by correlation (dendrogram),
+  inverse-variance allocate within family; feed family composites + raw survivors to XGBoost
+  (Gu-Kelly-Xiu: trees capture interactions; ensemble IS the combiner). Keep isotonic calibration.
+- KILL: if combined survivors' OOS Sharpe < best single survivor, combination adds nothing.
+- TRIGGER: once >=5 survivors exist from Stage 2.
+
+### Stage 4 — Production integration  ⚠ PARTIAL
+- Wire survivors into features/builder.py behind config flag (pattern exists for transforms).
+- Gate: OOS validation on held-out window BEFORE live; A/B shadow lane vs incumbent.
+- Rule #1: a survivor is not "done" until committed + tests + imported in builder +
+  in feature panel + on cron + nonzero importance + documented.
+- KILL: live IC<0 for 2 consecutive quarters -> retire (Stage 5).
+- TRIGGER: per-survivor after Stage 3.
+
+### Stage 5 — Monitoring / decay  ❌ MISSING — BUILD
+- Build scripts/alpha_decay_monitor.py: daily rank-IC per alpha; alert if trailing-60d IC IR
+  < half backtest or negative k weeks; monthly DSR/PBO recompute with UPDATED N; retire on collapse.
+- Per-alpha daily log: date, signal hash, rank-IC(1/3/5d), turnover, gross/net, corr-to-book.
+- KILL: n/a (this IS the kill mechanism). TRIGGER: once first survivor goes live (Stage 4).
+
+### Sequence / dependency
+S0(done) -> Stage2 GAP A (objective fix) -> Stage1 first source (UW options) -> gate ->
+Stage3 HRP (>=5 survivors) -> Stage4 wire one -> Stage5 monitor. GLOBAL/Path A validation
+runs through Stage2 in parallel (it's the one untested architecture that might already have edge).
+
+### Immediate next action (highest leverage)
+Stage 2 GAP A — make the gate score the production objective, not CS-IC. This single fix makes
+every one of the ~250 catalog signals testable HONESTLY and would have caught the P3.5 false positive.
+Build it BEFORE generating new candidates and BEFORE trusting the GLOBAL 0.58.
