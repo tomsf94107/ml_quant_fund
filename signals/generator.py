@@ -764,27 +764,17 @@ def generate_signals(
         except Exception:
             today_prob_up_global = None
 
-        # A/B v2: GLOBAL_ranker prediction (Path A v2 — LightGBMRanker cross-sectional).
-        # May 26 2026: classifier GLOBAL has near-zero variance, predicting same value
-        # for most large-caps. Ranker uses lambdarank objective grouped by date for
-        # true cross-sectional discrimination. OOS validated: Q5 vs Q1 spread +1.56pp/5d.
-        # See docs/option_c_oos_validation.md. Strictly optional, never breaks pipeline.
-        try:
-            import joblib as _joblib
-            from pathlib import Path as _Path
-            _ranker_path = _Path(__file__).resolve().parent.parent / "models" / "saved" / f"GLOBAL_ranker_{horizon}d.joblib"
-            if _ranker_path.exists():
-                _ranker_result = _joblib.load(_ranker_path)
-                # Build features from last row of df, padded to ranker feature_cols
-                _last = df.iloc[[-1]].copy()
-                for _c in _ranker_result.feature_cols:
-                    if _c not in _last.columns:
-                        _last[_c] = 0.0
-                _X = _last[_ranker_result.feature_cols].fillna(0.0).values
-                _proba = _ranker_result.predict_proba(_X)
-                today_prob_up_global_ranker = float(_proba[0, 1])
-        except Exception:
-            today_prob_up_global_ranker = None
+        # ── QUARANTINED May 31 2026: GLOBAL_ranker FAILED honest validation ──────
+        # The "+1.56pp/5d Q5-Q1" claim below was NEVER honestly validated — the
+        # saved ranker was fit on ALL 2020-present data with no split/embargo/OOS,
+        # and scoring it on its own training window gave a fake +5.6 Sharpe (leak).
+        # Retrained per purged fold (analysis/ranker_purged_wf.py): 5d mean net Sh
+        # -0.52 (1/4 folds), 20d +0.09 (2/4) — FAIL at both horizons. It does NOT
+        # generalize. The validated signal is cross-sectional MOMENTUM instead
+        # (see docs/MASTER_TODO_LIST.md Part 1.3-1.4, docs/RULE_1.md). The ranker
+        # score is no longer computed; the field stays None so the DB column and all
+        # downstream callers keep working. Do NOT re-enable without honest purged-WF.
+        today_prob_up_global_ranker = None
 
         # A/B PCT7 prediction (A1_pct7 artifact). Strictly optional, never breaks pipeline.
         # Target: fwd_5d_ret >= 0.07. Shadow mode only. See docs/A8_implementation_plan.md
