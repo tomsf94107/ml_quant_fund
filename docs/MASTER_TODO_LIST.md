@@ -124,6 +124,37 @@ OTHER OPEN ITEMS: rotate API keys exposed in the crontab dump (UW/Massive/Anthro
 security gap. options/VRP real test waits for IV history (~Aug). Possible h=1 salvage signal (+13pp
 at 1d) — unprobed lead. RULE #1 lives in docs/RULE_1.md.
 
+### 1.7 OPTION SWEEP RESULTS & RE-TEST SCHEDULE (May 31 2026)
+Tested 5 options to improve/extend momentum, each via held-out split + WIDER consistency grid
+(Sharpe vs baseline across 5 years x params; keep only if >70% of cells positive). Results:
+
+REJECTED (return-overlays — all dampen the high-vol concentration that IS momentum's edge):
+  Opt 1 Regime gate (SPY>MA): held-out Sharpe 0.94 vs 1.52 no-gate; made 2022 WORSE too. Momentum
+        already encodes the up-market tilt; gate adds whipsaw. REJECTED.
+  Opt 3 Vol-sizing (inv-vol weight): single-split looked +0.13 Sharpe but WIDER grid = 8/20 cells
+        (40%, below coin flip); hurt 2021 & 2024 (best year). Marginal pass was luck. REJECTED.
+  Opt 2 Risk-adj ranking (mom/vol): 6/15 cells (40%); destroyed 2024 (-0.9 to -1.6). REJECTED.
+  Pattern: 3/3 research-backed overlays fail THIS signal because they fight its source of edge
+  (concentration in high-vol leaders). The overlays were built for time-series futures / broad
+  books, not concentrated cross-sectional equity momentum.
+
+PARKED — promising but underpowered/not-yet-validatable, WITH RE-TEST DATES:
+  Opt 5 h=1 salvage: bucket-monotonicity is REAL (h=1 up-rate 49->52->55->67% by prob_up bucket
+        through .7-.8; top >.8 bucket collapses to 50% on n=18). But only 3 months (all 2026), one
+        month (Apr) carried it. Needs MULTIPLE REGIMES, not more samples (prob_up has 1000s/mo).
+        *** RE-TEST ~SEP 1 2026 *** on ~6mo live h=1 data (bucket + per-month consistency across
+        regimes). Escalate to historical backfill (reconstruct model h=1 prob_up over 2-3yr) only
+        if the Sep live read stays encouraging. Test = /tmp/option5_h1.py pattern.
+  Opt 4 Orthogonal recall axes (TRACK 2B, see 1.6): iv_skew/short_ratio/inst_signed_flow_30d-5d/
+        inst_auction_imbal — all INDEPENDENT of momentum (|corr|<0.16) but only ~10wk history.
+        *** RE-TEST ~APR 1 2027 *** when each hits 12mo (independence re-check -> first-look
+        per-regime -> purged-WF). Only path to higher RECALL (catching AMD-type names momentum misses).
+
+LOCKED VERDICT: momentum-alone (equal-weight, raw, top-decile, 20d hold) IS the system, UNTOUCHED.
+Nothing tested improves it; the two things that might (Opt 4, Opt 5) are future-dated. Sector caps
+are still warranted (risk-control, not a return-overlay). Promote momentum on its own path after
+shadow validation.
+
 IMMEDIATE NEXT ACTION: momentum promotion gate on its own path (MOMENTUM_LIVE) + sector caps; let
 shadow accumulate ~20 trading days then validate live; rotate keys.
 
