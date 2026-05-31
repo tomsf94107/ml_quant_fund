@@ -2161,3 +2161,18 @@ WRONG WAY because we asked direction when the data wants REVERSION. This is a RE
 NEXT: build a short-term reversal / PCA-residual-reversal test (B14). Question changes from "will
 this go up?" to "has this deviated from its factor-implied value and will it snap back?" Market-
 neutral, fits the data, no new data needed.
+
+---
+
+## SESSION VERDICT (May 31 2026) — ranker killed at both horizons, momentum is the pick
+
+Tested the lambdarank GLOBAL_ranker through honest purged-WF (retrain per fold, score embargoed OOS only):
+- **5d horizon:** mean net Sh -0.52, positive 1/4 folds. FAIL.
+- **20d horizon:** mean net Sh +0.09, positive 2/4 folds (folds 2-3 positive +1.09/+0.63, fold 1 = -1.29 drags mean to ~0). FAIL — regime-dependent, not robust.
+- The wired-in `today_prob_up_global_ranker` (generator.py ~785) is therefore GARBAGE; logged-only so it never drove decisions, but the "+1.56pp/5d Q5-Q1" comment in the generator is a FALSE in-sample claim and should be deleted.
+
+**Contrast (same harness, same universe):** simple momentum (mom_6_1/mom_12_1, 20d hold) passed 4/4 folds, mean +0.96. The 2-number momentum signal generalizes; the 100-feature ranker overfits noise (Gu-Kelly-Xiu / Lopez de Prado: complex models memorize noise on low-SNR data).
+
+**STATE:** momentum is the ONLY validated signal. Six things killed under honest validation: per-ticker direction, global direction, cs-demean reversion, PCA residual reversion, 5d ranker, 20d ranker. Momentum logging in shadow (momentum_shadow_predictions). BUYs stay OFF (ML_QUANT_DISABLE_BUY) until shadow→live confirms.
+
+**NEXT:** (1) promote momentum to live BUYs after live shadow data confirms, with sector caps (semi/memory-concentrated). (2) Remove/quarantine ranker from generator + delete false "+1.56pp" comment. (3) Options/VRP revisit ~Aug. (4) Rotate exposed API keys.
