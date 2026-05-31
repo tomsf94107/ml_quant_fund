@@ -37,6 +37,27 @@ fail() {
 
 log "=== PIPELINE C START ==="
 
+# ── Stage -2 (May 31 2026): Momentum shadow runs FIRST, INDEPENDENT of the guard ──
+# Momentum is pure-price and does NOT use the broken direction model, so it must
+# log every night regardless of the direction-guard verdict. Previously it sat
+# after the Stage -1 guard's 'exit 2' and never ran while the guard was RED — the
+# shadow loop was strangled. Moved above the guard so shadow accumulates; the guard
+# still aborts the DIRECTION-MODEL publish (Stages 1-2) on RED.
+log "Stage -2: Momentum shadow signal (cross-sectional, shadow-only)"
+MOM_START=$(date +%s)
+if timeout 600 $PYTHON scripts/momentum_shadow.py \
+    > "$LOGDIR/03_momentum_shadow.log" 2>&1; then
+    MOM_DUR=$(($(date +%s) - MOM_START))
+    log "Stage -2 OK (${MOM_DUR}s) — momentum shadow picks logged"
+else
+    MOM_RC=$?
+    if [ $MOM_RC -eq 124 ]; then
+        log "Stage -2 TIMEOUT after 10min (continuing — shadow is non-critical)"
+    else
+        log "Stage -2 FAILED rc=$MOM_RC (continuing — shadow is non-critical)"
+    fi
+fi
+
 # ── STEP 1 GUARD (May 31 2026): block publish if signal direction is inverted ──
 # The direction model has been near-coin-flip and inverted at the extremes. This
 # guard runs the standing sanity check BEFORE any signal work; on RED (direction
@@ -84,24 +105,5 @@ $PYTHON -m scripts.daily_runner_batched \
     > "$LOGDIR/02_daily_runner.log" 2>&1 || fail "Stage 2 (daily_runner)"
 log "Stage 2 OK"
 
-# ── Stage 3: Momentum shadow signal (VALIDATED Step 2b, SHADOW MODE) ──────────
-# Cross-sectional momentum (passed purged-WF 4/4 OOS folds). Runs ONCE over the
-# full universe (needs all names at once). Writes to momentum_shadow_predictions
-# ONLY — NOT live predictions, NOT live BUYs. Builds the live track record that
-# will gate promotion to the real signal path. Non-critical: never breaks publish.
-log "Stage 3: Momentum shadow signal (cross-sectional, shadow-only)"
-MOM_START=$(date +%s)
-if timeout 600 $PYTHON scripts/momentum_shadow.py \
-    > "$LOGDIR/03_momentum_shadow.log" 2>&1; then
-    MOM_DUR=$(($(date +%s) - MOM_START))
-    log "Stage 3 OK (${MOM_DUR}s) — momentum shadow picks logged"
-else
-    MOM_RC=$?
-    if [ $MOM_RC -eq 124 ]; then
-        log "Stage 3 TIMEOUT after 10min (continuing — shadow is non-critical)"
-    else
-        log "Stage 3 FAILED rc=$MOM_RC (continuing — shadow is non-critical)"
-    fi
-fi
 
 log "=== PIPELINE C COMPLETE ==="
