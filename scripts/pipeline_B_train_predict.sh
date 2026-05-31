@@ -86,4 +86,17 @@ else
     log "Stage 5 FAILED (rc=$?) — continuing anyway, A/B backfill is non-critical"
 fi
 
+# ── Stage 6: Momentum shadow 20d outcome reconcile (non-critical) ─────────────
+# Writes matured 20d forward returns for momentum_shadow_predictions into
+# momentum_shadow_outcomes. Point-in-time: only scores picks once 20 trading days
+# have elapsed (refuses immature picks). Completes the self-running shadow->outcome
+# loop so the live momentum validation accumulates without manual runs. Non-fatal.
+log "Stage 6: Momentum shadow 20d outcome reconcile"
+if $PYTHON scripts/reconcile_momentum_shadow.py \
+    > "$LOGDIR/05_momentum_reconcile.log" 2>&1; then
+    log "Stage 6 OK — momentum shadow outcomes reconciled"
+else
+    log "Stage 6 FAILED rc=$? (continuing — shadow reconcile is non-critical)"
+fi
+
 log "=== PIPELINE B COMPLETE ==="
