@@ -8,99 +8,110 @@
 
 ## PART 1 — CURRENT STATE, ROOT CAUSE, AND THE FIX
 
-### 1.1 WHAT THE SYSTEM IS AND WHAT IS WRONG WITH IT
+### 1.1 WHAT THE SYSTEM IS AND WHAT WAS WRONG WITH IT
 The system is an ML equity signal generator. It scores about 149 production tickers (a wider
 578-name research list also exists), emits a probability that each name rises over a 1, 3, or 5
 trading-day horizon, and turns high probabilities into BUY signals written to accuracy.db. Those
-signals have been traded with real money. It does not work at its stated job, and this was
-verified on LIVE data this session (90-day window, all three horizons, joining predictions to
+signals were traded with real money. The original per-ticker direction model does NOT work at its
+stated job, verified on LIVE data (90-day window, all three horizons, predictions joined to
 outcomes directly):
 
-(a) DIRECTION ACCURACY IS NEAR A COIN FLIP. Over the last 90 days the model's up/down call was
-correct only about 52% of the time at 1 day, 53% at 3 days, and 52% at 5 days. A coin is 50%.
+(a) DIRECTION ACCURACY NEAR A COIN FLIP - about 52% (1d), 53% (3d), 52% (5d). A coin is 50%.
 
-(b) THE MODEL IS INVERTED AT THE EXTREMES, WORST AT 5 DAYS. Ranking names by the model's
-confidence and comparing the top tenth to the bottom tenth gives a significantly NEGATIVE spread
-(t = -2.29 on live 5-day signals). The names it is most sure will rise tend to FALL over the next
-few days, and vice versa. This is the most damaging finding and it is real, not theoretical.
+(b) INVERTED AT THE EXTREMES, WORST AT 5 DAYS. Top-decile-vs-bottom-decile confidence spread is
+significantly NEGATIVE (t = -2.29 on live 5-day signals). The directional-hit guard added this
+session pinned it precisely: UP-calls are right 53-59% (fine), but DOWN-calls are right only 44%
+(3d) / 40% (5d) - the DOWN side is inverted (says down, stock goes up).
 
-(c) SPECIFIC NAMES IT LEANED THE WRONG WAY ON (last 90 days). MRVL: probability about 0.44-0.47
-(leaning DOWN) while the stock rose 5-18%. DDOG: leaned down (about 0.47) while up 63-85% of the
-time, plus 9% at 5 days. The same backwards pattern appears on NOK, APLD, QS, QUBT, IREN, and S.
+(c) SPECIFIC NAMES IT LEANED THE WRONG WAY ON. MRVL: prob ~0.44-0.47 (leaning DOWN) while up
+5-18%. DDOG, NOK, APLD, QS, QUBT, IREN, S: same backwards pattern.
 
-(d) THE BUY TRIGGER IS BROKEN SEPARATELY FROM THE SIGNAL. It is silent on the biggest winners and
-loud on the losers. AMD rose about 87% of the time at 5 days (+11.6% average) and fired zero to
-one BUY. INTC (+12.9%), ARM (+11.4%), and MU (+12.1%) were the same: zero or one BUY through their
-best quarter. Where it did fire many BUYs they were losers or chop: GLD (16 BUYs, up only 42.5%,
--0.3% average), GEV (14-19 BUYs, negative at 3 and 5 days), MRNA (5-14 BUYs, negative average).
+(d) THE BUY TRIGGER IS BROKEN SEPARATELY. Silent on the biggest winners (AMD/INTC/ARM/MU: 0-1 BUYs
+through +11-13% quarters), loud on losers/chop (GLD 16 BUYs -0.3% avg, GEV negative, MRNA negative).
 
 ### 1.2 ROOT CAUSE
-The prediction TARGET is wrong. The model predicts direction using momentum- and trend-flavored
-features. But over 3 to 5 days the extremes of momentum MEAN-REVERT: a stock that just ran hard
-tends to pull back, one just hammered tends to bounce. Trained on momentum features against a
-direction label, the model learned "strong recent move implies continuation" when the truth in
-this data is "strong recent move implies a near-term snap-back." That is why it is inverted
-precisely at the confident extremes, and why no threshold tweak or model tuning fixes it.
+The prediction TARGET is wrong. The model predicts 1-5d direction using momentum/trend features,
+but over 3-5 days the extremes of momentum MEAN-REVERT. Trained on momentum features against a
+short-horizon direction label, it learned "strong recent move implies continuation" when the truth
+in this data at 1-5d is "strong recent move implies a near-term snap-back" - hence inverted at the
+confident extremes, unfixable by threshold/tuning. (Note: the edge that DOES survive lives at a
+LONGER horizon - see 1.4 - so the lesson is both "wrong target" and "wrong horizon.")
 
-### 1.3 EVIDENCE BEHIND THE DIAGNOSIS (May 30 session)
-Six configurations tested under a strict purged walk-forward harness with a 5-day embargo:
-1. Per-ticker direction (XGBoost): OOS AUC 0.487/0.493 over 21,376 rows. Coin flip.
-2. Global cross-sectional direction: OOS AUC 0.496 (the old 0.58 was a leak from a single 2-month
-   chronological split with no embargo). Coin flip.
-3. Rank-IC re-baseline (AUC hides weak signal; AUC is about 0.5 + IC/2): per-ticker IC 0.011
-   (t=0.97); 149-name global panel IC 0.0112 (t=1.66). Weak but real; PBO 0.15 says feature
-   selection is NOT data-mined.
-4. Horizon sweep 1/3/5/10/20 days: signal PEAKS at 5 days (t=1.66), NEGATIVE by 20 days (t=-1.50).
-   Lengthening hurts. Pooling horizons is dead (3d/5d IC correlate 0.571).
-5. Universe expansion 149 to 578: rank-IC t COLLAPSED 1.66 to -0.67. Naive breadth DILUTES.
-6. Per-sector decomposition: NO sector has within-sector stock-picking edge — tech t=-0.81,
-   energy -5.43, communications -3.07. The 149 t=1.66 is a weak CROSS-SECTOR tilt, not selection.
-KEY FINDING: the long/short decile spread is significantly NEGATIVE and MORE negative with breadth
-(149 t=-1.41, 578 t=-2.69) — short-term mean-reversion read with the sign flipped. We asked for
-DIRECTION; the data wants REVERSION.
+### 1.3 EVIDENCE (May 30-31 sessions) - SIX SIGNALS TESTED, ALL KILLED; ONE SURVIVOR
+Every candidate run through full-history + per-regime + non-overlap + net-of-cost validation
+(and, where a model was involved, strict purged walk-forward with 5-day embargo, retrained per
+fold). KILLED:
+1. Per-ticker direction (XGBoost): OOS AUC 0.487/0.493. Coin flip.
+2. Global cross-sectional direction: OOS AUC 0.496 (old 0.58 was a single-split no-embargo leak).
+3. cs-demean 5d reversion: looked +0.55 on a 2-month accuracy.db window, but full-history
+   non-overlap was NEGATIVE (-0.43 5d). The +0.55 was single-regime + overlap inflation + outliers.
+4. PCA residual reversal (Avellaneda-Lee): full-history best +0.46 was a 2020-2021 COVID artifact
+   (per-regime +2.27/+0.64/-0.49/-0.15/-0.92, dead since 2022, worst NOW). Param sweep spiky, no
+   basin. KILLED.
+5. lambdarank GLOBAL_ranker @ 5d: the saved model was fit on ALL 2020-present data with NO
+   split/embargo/OOS (its "--validate" flag was never implemented; the "+1.56pp/5d" claim baked
+   into generator.py is in-sample fantasy). Scored on its own training window it gave a fake +5.6
+   Sharpe (caught as a leak). Retrained honestly per purged fold: mean net Sh -0.52, positive 1/4.
+   FAIL - does not generalize.
+6. lambdarank GLOBAL_ranker @ 20d (honest purged-WF): mean net Sh +0.09, positive 2/4 (folds 2-3
+   +1.09/+0.63, fold 1 -1.29 drags mean to ~0). FAIL - regime-dependent, not robust. The horizon
+   helped vs 5d but the 100-feature ranker still overfits noise on low-SNR data (Gu-Kelly-Xiu /
+   Lopez de Prado). The wired-in today_prob_up_global_ranker is therefore GARBAGE (logged-only, so
+   it never drove decisions) and the "+1.56pp" comment in generator.py is FALSE - delete it.
 
-### 1.4 PHASE 0 RESULT — COMPLETED THIS SESSION (reversion is real; turnover is the constraint)
-We inverted the model's ranking (long its bottom decile, short its top) and measured the decile
-spread NET of a realistic 10bps-per-unit-turnover cost. On the 149 names: net Sharpe +0.10 at
-daily rebalancing (65% turnover). Adding a no-trade band (hold a name until it drifts past a wider
-exit threshold — the Garleanu-Pedersen 2013 "inaction band") raised net Sharpe to +0.27 at a 30%
-exit band, turnover fell to 43%, and gross Sharpe ROSE to +0.41. Holding the position a few extra
-days does not fight decay — it lets the reversion complete. On the 578 names: inverted gross
-nearly vanished (+0.07) and 87% turnover buried net to -0.37 at every band. The tradeable
-reversion lives in the CONCENTRATED 149, NOT the broad 578. It is MODEST — reversal is a crowded,
-decay-prone anomaly, so the realistic ceiling is a Sharpe around 0.3-0.5, a real but small edge.
+KEY FINDING: short-horizon (1-5d) cross-sectional prediction - direction OR reversion, simple OR
+ML - is NOT tradeable on this universe. The reversion that appears is a 2020-2021 artifact, dead
+in the current regime.
 
-### 1.5 THE FIX — phased, each step gated, NO TRADING on any output until its gate passes
-STEP 1 — STOP THE BLEEDING (today, safe, reversible). Disable or downgrade live BUY generation to
-HOLD until Step 4 passes. Current BUYs fire on losers and miss winners, so producing no BUY is
-strictly safer than a wrong one. In the same change, wire the already-built
-analysis/signal_sanity_guard.py into the daily cron so it runs BEFORE any signal is published and
-BLOCKS the cycle whenever the direction check is RED. The guard was built and tested this session
-and already flags the 5-day direction RED. This is the safety net whose absence let the inversion
-run uncaught for months.
+### 1.4 THE ONE VALIDATED SIGNAL - MOMENTUM (longer horizon)
+Cross-sectional momentum is the only candidate that survived. mom_6_1 (126d return minus last 21d)
+and mom_12_1 (252d minus 21d), 20-day hold / 20-day rebalance (low turnover), long the top decile
+of the 149. Through strict purged walk-forward (true walk-forward, 5d embargo, daily-granularity
+folds): mom_6_1 positive 4/4 OOS folds, mean net Sh +0.96 (+0.09/+0.54/+1.51/+1.72 across 2021-26);
+mom_12_1 positive 4/4, mean +1.00. Both PASS the gate, STRONGEST in the recent folds incl the
+current 2025-26 regime - NOT a single-regime artifact like the six kills. It beats the ML ranker
+on the same harness (4/4 +0.96 vs the ranker's 2/4 +0.09): the simple 2-number signal generalizes
+where the 100-feature model overfits. Momentum directly flags the semis the inverted model kept
+calling HOLD (today's top-decile: MU/WDC/STX/INTC/MRVL/DELL/GFS...).
+CAVEATS: n=16/fold; momentum is crowded and decays so live < backtest; mom_6 and mom_12 are
+correlated (ONE signal, not two); the book is semi/memory-CONCENTRATED so sector caps are required
+at the sizing layer; momentum is a fixed rule (nothing to overfit), so its validation is not
+perfectly apples-to-apples with the retrain-per-fold models - it is validated and it is the pick,
+but that nuance is stated honestly.
 
-STEP 2 — RETARGET TO REVERSION (the real fix, days of work). Stop predicting "will it go up." Rank
-names by how far they have overextended from their short-term or factor-implied value and expect a
-snap-back. Concrete method: PCA residual reversal (Avellaneda-Lee) — fit a factor model across the
-cross-section, compute each name's residual versus its factor-implied return, trade the residual's
-mean-reversion (buy below factor-implied, short above). Market-neutral by construction. Build on
-the CONCENTRATED 149, not the 578. Apply the no-trade band (exit near 30%). GATE: net-of-cost
-Sharpe above 0.3 on purged walk-forward before anything proceeds.
+### 1.5 THE FIX - phased, each step gated, NO TRADING until its gate passes
+STEP 1 - STOP THE BLEEDING. DONE this session. Kill switch in signals/generator.py
+(ML_QUANT_DISABLE_BUY, defaults ON) forces every BUY to HOLD; re-enable is a deliberate
+ML_QUANT_DISABLE_BUY=0 after Step 4. analysis/signal_sanity_guard.py (now with a directional-hit
+check that catches the UP/DOWN inversion directly) is wired as Stage -1 of pipeline_C_preopen.sh
+and ABORTS publish on RED. It currently flags 3d/5d direction RED - correctly.
 
-STEP 3 — REBUILD THE BUY TRIGGER on the new signal. The trigger is broken independently of the
-signal (fires on chop, silent on movers). Rebuild it around the reversion rank, not the dead
-direction probability. GATE: on backtest the BUYs concentrate on names that actually revert and
-are net positive after cost.
+STEP 2 - FIND A VALIDATED SIGNAL. DONE. Short-horizon reversion (the original plan here) was built
+and KILLED (1.3 #3-4). The survivor is longer-horizon MOMENTUM (1.4). The original "retarget to
+reversion / PCA residual" plan is RETIRED - tested, does not work in the current regime.
 
-STEP 4 — VALIDATE LIVE BEFORE RE-ENABLING. Run the new signal in shadow mode (log, do not trade)
-for a set period and re-run signal_sanity_guard daily. Re-enable live BUY ONLY when the direction
-check is green AND the BUY hit-rate exceeds 55% on real forward data.
+STEP 3 - WIRE THE VALIDATED SIGNAL - SHADOW MODE. DONE. signals/momentum_signal.py (pure,
+testable, exact validated logic) + scripts/momentum_shadow.py writes daily top-decile picks to the
+NEW momentum_shadow_predictions table (NOT live predictions, NOT live BUYs), wired as non-fatal
+Stage 3 of Pipeline C. Live BUYs stay OFF.
 
-STEP 5 — GUARD PERMANENTLY. signal_sanity_guard stays in cron forever and blocks on RED.
+STEP 4 - VALIDATE LIVE BEFORE RE-ENABLING. Let momentum_shadow_predictions accumulate, then join
+to forward outcomes and confirm live performance tracks the backtest. Re-enable live BUYs
+(ML_QUANT_DISABLE_BUY=0) ONLY after live confirmation - WITH sector caps at the sizing layer
+(semi/memory concentration). NOTE: momentum is a 20-day signal; outcomes only computes 1/3/5d, so
+a 20d forward outcome must be added for the proper live check (an early read is possible at 1/3/5d).
 
-IMMEDIATE NEXT ACTION: Step 1 (disable bad BUYs + wire the guard into cron). Steps 2-3 are the
-build over the coming days. Steps 4-5 gate re-enable. Until Step 4 passes, the system does NOT
-generate tradeable BUYs.
+STEP 5 - GUARD PERMANENTLY. signal_sanity_guard stays in cron and blocks on RED forever.
+
+OTHER OPEN ITEMS: options/VRP axis - a thin ~10-week skew peek HINTED high-skew/high-IV-rank is
+contrarian-bullish on these names and the DB "BEARISH" label is backwards; real VRP test waits for
+IV history to accumulate (~Aug). Quarantine the dead ranker from generator.py and delete the false
+"+1.56pp" comment. Rotate the API keys that were exposed in the crontab dump. RULE #1 now lives in
+docs/RULE_1.md (research-external-sources-first + audit + attack-before-believe + name-the-train/
+test-split + too-good=leak + validate-first + one-continuous-me + unprompted).
+
+IMMEDIATE NEXT ACTION: let shadow accumulate; add a 20d forward outcome for the live check;
+quarantine the ranker + delete the false comment; rotate keys.
 
 ## PART 2 — THE FULL MODEL BUILD LIST (every model from the research, simple to complex)
 
