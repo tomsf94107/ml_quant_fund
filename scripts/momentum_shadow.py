@@ -77,7 +77,7 @@ def main():
     total = 0
     for kind in KINDS:
         try:
-            sig = rank_signal(panel, kind)
+            sig = rank_signal(panel, kind, bucket_cap=3)
         except Exception as e:
             print(f"momentum_shadow: {kind} failed: {type(e).__name__}: {e}")
             continue
