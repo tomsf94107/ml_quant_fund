@@ -324,6 +324,14 @@ if _cache:
 else:
     _c_left.warning("⚠️ No cache found — click **Refresh Live** to generate signals")
 
+# ── SOURCE WARNING (May 31 2026): the signals below are from the DIRECTION model ──
+st.error(
+    "⚠️ **These signals are from the DIRECTION model — DISABLED and NOT traded.** "
+    "The direction model is near coin-flip with ~zero edge over holding (BUY 58% vs "
+    "HOLD 58%), and is suppressed by the kill switch. The validated signal is "
+    "**MOMENTUM (shadow)** — see the section below the cards. Do not trade these cards."
+)
+
 _run_cache   = _c_mid.button("📦 Run Strategy", type="secondary",
     disabled=not bool(_cache))
 _refresh_live = _c_right.button("🔄 Refresh Live", type="primary")
@@ -504,7 +512,7 @@ if not signal_summary:
     st.stop()
 
 # ── Signal cards ──────────────────────────────────────────────────────────
-_sig_label = "📦 Cached Signals" if _use_cache else "📡 Live Signals"
+_sig_label = ("📦 Cached Signals" if _use_cache else "📡 Live Signals") + "  ·  🔴 DIRECTION-MODEL (DISABLED — not traded)"
 st.subheader(_sig_label)
 cols = st.columns(min(len(signal_summary), 4))
 for i, r in enumerate(signal_summary):
@@ -523,6 +531,40 @@ for i, r in enumerate(signal_summary):
     )
     if enable_email and r.today_signal == "BUY" and r.today_prob_eff >= 0.65:
         _send_alert(r.ticker, r.today_prob_eff, horizon)
+
+# ── MOMENTUM SHADOW (May 31 2026): the VALIDATED signal, shadow-only ──────────
+st.markdown("---")
+st.subheader("🟢 MOMENTUM (shadow — validated, not yet live)")
+st.caption(
+    "Cross-sectional momentum, the one signal that passed honest purged walk-forward "
+    "(+0.96 Sharpe, 4/4 folds), bucket-capped at 3/sector. SHADOW ONLY — these are not "
+    "traded yet; they accumulate a live track record to gate promotion. This is the real "
+    "edge, unlike the disabled direction-model cards above."
+)
+try:
+    import sqlite3 as _sql3
+    import pandas as _pdm
+    _conn = _sql3.connect("accuracy.db")
+    _latest = _pdm.read_sql(
+        "SELECT MAX(prediction_date) AS d FROM momentum_shadow_predictions", _conn
+    )["d"].iloc[0]
+    if _latest:
+        _mom = _pdm.read_sql(
+            "SELECT ticker, kind, mom_pct_rank, is_buy_candidate "
+            "FROM momentum_shadow_predictions "
+            "WHERE prediction_date = ? AND is_buy_candidate = 1 "
+            "ORDER BY kind, mom_pct_rank DESC", _conn, params=[_latest]
+        )
+        st.caption(f"Latest shadow picks as of **{_latest}**  ·  {len(_mom)} BUY candidates")
+        if not _mom.empty:
+            st.dataframe(_mom, use_container_width=True, hide_index=True)
+        else:
+            st.info("No momentum BUY candidates in the latest shadow run.")
+    else:
+        st.info("Momentum shadow table is empty — will populate on the next pipeline run.")
+    _conn.close()
+except Exception as _me:
+    st.warning(f"Could not load momentum shadow picks: {_me}")
 
 # ── Forecast table ────────────────────────────────────────────────────────
 st.subheader("🎯 Price Forecast Table")
