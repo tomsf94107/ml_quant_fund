@@ -188,9 +188,17 @@ to count as a NEW signal (a correlated winner is just momentum again). Ordered b
      by fold variance (0.29-0.79). CONCLUSION: per-ticker 1-5d direction target is dead (confirms
      Part 1); overfit is real but NOT the whole story — honest linear still finds only ~0.54.
      Script: models/linear_baseline.py. NEXT: #2 pairs/cointegration (different paradigm).
-  2. PAIRS / COINTEGRATION stat-arb (B14, NOT the killed PCA-residual) — different PARADIGM
-     (convergence not direction), market-neutral, sidesteps long-only breadth ceiling. statsmodels.
-     The most promising genuinely-different reframe.
+  2. PAIRS / COINTEGRATION stat-arb (B14) — DONE Jun 1 2026, KILLED. Phase 1 (crude |z|-fell proxy,
+     no costs) looked promising: 57% OOS reversion, recent window 83%. ATTACKED it (Rule 1): proxy
+     was wrong (counts end-of-window |z|<entry as "reverted" ignoring path/costs/exit; beta leaked
+     trading window). Built Phase 2 properly — real entry/exit P&L, BOTH legs net of 10bps (matches
+     fitness_scorer), formation-only beta, OU half-life convergence filter, rolling re-selection,
+     14 non-overlap windows. RESULT: net-positive only 3/14 windows, pooled net Sharpe -0.82, recent
+     window -8.3%/Sharpe -3.80, AND corr +0.40 vs momentum proxy. FAILS both bars (most-regimes-
+     positive AND |corr|<0.3). Two legs churning on z-crossings eat everything; cointegration does
+     not hold forward (Do-Faff non-convergence + Chan OOS-wander, confirmed by literature search).
+     Clean KILL — the Phase1->Phase2 discipline caught a false positive before trading it. Scripts:
+     research/pairs_cointegration.py (Phase 1), research/pairs_phase2.py (Phase 2). NEXT: #3 quality.
   3. QUALITY / PROFITABILITY (B4) — Novy-Marx gross-profits/assets, among the MOST durable anomalies;
      different axis (fundamentals). Needs PIT fundamentals (have some via earnings/filings pipeline).
   4. VOLATILITY prediction (B6) — predict vol not direction; easier target (AUC>0.6), feeds sizing.
