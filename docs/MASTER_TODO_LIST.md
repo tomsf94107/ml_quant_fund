@@ -155,6 +155,63 @@ Nothing tested improves it; the two things that might (Opt 4, Opt 5) are future-
 are still warranted (risk-control, not a return-overlay). Promote momentum on its own path after
 shadow validation.
 
+### 1.8 ALPHA HUNT QUEUE — the ordered, gated build sequence (added Jun 1 2026)
+Parts 2-4 are a complete CATALOG (every model/alpha/combiner) but NOT a sequence — read top-down,
+the starred C1 combiner misleads (it needs >=2 decorrelated survivors first), and several starred
+items (A4 learn-to-rank, B14 PCA-residual) are ALREADY KILLED. This queue converts the catalog into
+an ordered plan: what to test next, in order, with the combiner gated where it belongs.
+
+STRUCK OFF — already killed (do NOT re-test; see 1.3 + frozen history):
+  • A3 per-ticker direction (OOS AUC .487/.493) • global direction (.496) • A4 lambdarank @5d (leak)
+    / @20d (2/4) • B14 PCA-residual reversal (COVID artifact) • cs-demean short reversion • B7 PEAD
+    (independent but unprofitable) • 4G sector-A8 / 4G v2 intersection / 3B A8-sizing / 4C A8-selector
+    / Phase 2H blend — FIVE tests agree A8 is at its ceiling, no more A8 overlay/selector work.
+  • Price-complement hunt: any second PRICE signal is momentum in disguise (+0.82 corr) — a second
+    signal MUST come from a different data axis or a different paradigm.
+
+DATA-GATED — scheduled, not now:
+  • Track 2B orthogonal recall axes (iv_skew/short_ratio/inst_flow) — ~APR 2027 (12mo history)
+  • B8 options/VRP/IV-skew-change — ~AUG 2026 (IV history accruing)
+  • Opt 5 h=1 salvage — ~SEP 1 2026
+
+LIVE HUNT QUEUE — untested, NOT killed, NOT data-gated. Test each through the SAME discipline that
+killed the other 7: strict purged-WF (5d embargo, retrain/fold) + per-regime + non-overlap +
+net-of-cost; attack-before-believe; a survivor must ALSO be decorrelated (|corr|<~0.3) from momentum
+to count as a NEW signal (a correlated winner is just momentum again). Ordered by (value x evidence)
+/ cost AND readiness:
+  1. LINEAR/RIDGE baseline (A1) — DONE Jun 1 2026, KILLED. L2-logistic (C=0.1) through the SAME
+     purged-WF harness, 5 tickers h=5d: train AUC 0.75 / test AUC 0.53 / gap +0.22 — gap essentially
+     UNCHANGED from XGBoost (~0.25), so linear did NOT fix it. Label-shuffle leak test: shuffled
+     TEST AUC -> ~0.50 (AAPL 0.55, MU 0.50) = NO feature leak (clean pipeline, the scary outcome
+     ruled out); shuffled TRAIN 0.64 = both models overfit-to-noise (too many features per ~500
+     train rows), not leakage. Real-test 0.54 vs shuffled-test 0.50 = only a ~4pp faint edge, swamped
+     by fold variance (0.29-0.79). CONCLUSION: per-ticker 1-5d direction target is dead (confirms
+     Part 1); overfit is real but NOT the whole story — honest linear still finds only ~0.54.
+     Script: models/linear_baseline.py. NEXT: #2 pairs/cointegration (different paradigm).
+  2. PAIRS / COINTEGRATION stat-arb (B14, NOT the killed PCA-residual) — different PARADIGM
+     (convergence not direction), market-neutral, sidesteps long-only breadth ceiling. statsmodels.
+     The most promising genuinely-different reframe.
+  3. QUALITY / PROFITABILITY (B4) — Novy-Marx gross-profits/assets, among the MOST durable anomalies;
+     different axis (fundamentals). Needs PIT fundamentals (have some via earnings/filings pipeline).
+  4. VOLATILITY prediction (B6) — predict vol not direction; easier target (AUC>0.6), feeds sizing.
+     Different objective, data on hand. Also low-vol / betting-against-beta (have data).
+  5. VALUE (B3) — B/M, E/P, FCF yield; needs PIT fundamentals. Different axis.
+  6. IPCA / CONDITIONAL AUTOENCODER (A2/A5) — principled cross-sectional, highest model ceiling;
+     bigger build (1-4wk), no new data (uses characteristic panel).
+  7. LAZY PRICES (B10) — 10-K YoY language-change anomaly; durable; free EDGAR; needs 10-K ingestion.
+  8. Methods layer when useful: hierarchical Bayesian (A8), ensembling/bagging (A9), LLM alpha loop
+     (A11, generate-many -> strict gate). Apply ON TOP of survivors, not as standalone hunts.
+
+GATED — only after the hunt yields survivors (do NOT build early):
+  • C1 COMBINER (HRP/equal-weight) — GATE: requires >=2 VALIDATED, DECORRELATED alphas. With only
+    momentum today there is nothing to combine. This is the catalog's "highest-value" item BY VALUE,
+    but it is BLOCKED until the queue above produces a second signal. Build when gate opens.
+  • C2 SIZING (meta-labeling / fractional Kelly) — GATE: requires the combiner (or >=1 live signal
+    being traded). Sizes what the combiner produces.
+
+PRINCIPLE: hunt -> validate (kill fast) -> collect survivors -> combine (>=2) -> size. Each stage
+gated on the prior. Most of the queue needs only NEW METHOD on data you already have, not new data.
+
 IMMEDIATE NEXT ACTION: momentum promotion gate on its own path (MOMENTUM_LIVE) + sector caps; let
 shadow accumulate ~20 trading days then validate live; rotate keys.
 
