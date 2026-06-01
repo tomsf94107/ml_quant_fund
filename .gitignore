@@ -91,3 +91,7 @@ signal_discrepancy_audit*.py
 recession/cache/
 data/alpha_panel/
 institutional_trades.duckdb
+
+# generated backtest/fitness outputs
+fitness.csv
+reports/walkforward_*.csv
