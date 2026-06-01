@@ -199,8 +199,14 @@ to count as a NEW signal (a correlated winner is just momentum again). Ordered b
      not hold forward (Do-Faff non-convergence + Chan OOS-wander, confirmed by literature search).
      Clean KILL — the Phase1->Phase2 discipline caught a false positive before trading it. Scripts:
      research/pairs_cointegration.py (Phase 1), research/pairs_phase2.py (Phase 2). NEXT: #3 quality.
-  3. QUALITY / PROFITABILITY (B4) — Novy-Marx gross-profits/assets, among the MOST durable anomalies;
-     different axis (fundamentals). Needs PIT fundamentals (have some via earnings/filings pipeline).
+  3. QUALITY / PROFITABILITY (B4) — DATA-GATED (audited Jun 1 2026). Classic Novy-Marx = gross
+     profit / total assets. Audit of all DBs: we have EPS (earnings_cache, earnings_surprises) +
+     rev_actual, but NO COGS (so no gross profit) and NO total assets / balance-sheet items anywhere.
+     Cannot build the real anomaly without a fundamentals feed (income statement + balance sheet:
+     e.g. Financial Modeling Prep, SEC EDGAR XBRL, or similar). Improvised proxy (revenue-growth +
+     earnings-stability from earnings_surprises) is possible but weaker and depends on quarterly
+     history depth. DECISION: mark data-gated; build the fundamentals INGESTION as its own data
+     project when ready, then this becomes buildable. Skipping to #4 (vol prediction, price-only).
   4. VOLATILITY prediction (B6) — predict vol not direction; easier target (AUC>0.6), feeds sizing.
      Different objective, data on hand. Also low-vol / betting-against-beta (have data).
   5. VALUE (B3) — B/M, E/P, FCF yield; needs PIT fundamentals. Different axis.
