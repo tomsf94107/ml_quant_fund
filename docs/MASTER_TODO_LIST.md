@@ -185,6 +185,32 @@ Scripts: research/momentum_weighting_compare.py (full-sample), analysis/momentum
 CAVEAT: folds ~18-19 rebalances each (per-fold Sharpe noisy); the 4/4 CONSISTENCY both signals
 is the robust part. Weighted promotion check (vs equal) when outcomes resolve ~late June.
 
+### 1.11 HUNT #7 LAZY PRICES — SCOPED Jun 1 2026, deferred to fresh session (data build)
+Signal (Cohen-Malloy-Nguyen 2020, JoF): firms that CHANGE their 10-K language YoY
+underperform; buy nonchangers / short changers = up to 188bp/mo alpha in the FULL
+universe (1000s firms). On 149 names + post-publication decay it'll be far weaker, BUT
+it's a NEW DATA AXIS (disclosure language) — exactly the data-breadth lever IPCA's
+death pointed to. Worth a proper test.
+WHY DEFERRED: it's a real ingestion build, not a quick test. INFRA AUDIT (Jun 1):
+  HAVE: data/sec_section_parser.py — get_cik() + ticker->CIK map, list_filings(),
+        fetch_filing_html(), _strip_tables/_clean_text (8-K extraction fully built).
+  GAP:  extract_10k_sections() is a STUB (raise NotImplementedError "Session C").
+        Must build the Item 1 (Business) + Item 1A (Risk) + Item 7 (MD&A) anchor-regex
+        parser for messy 10-K HTML — the fiddly core, ~40% of work is the parser.
+BUILD PLAN (fresh session):
+  1. Implement extract_10k_sections (Item 1/1A/7 boundary regex; 10-K section anchors
+     vary by filer — test on a few tickers first, eyeball extracted text is real prose).
+  2. Fetch YoY 10-K pairs for 149 tickers x ~5yrs = ~750 filings (EDGAR throttle ~8/sec,
+     ~15-20 min fetch). Cache raw to a filings table (don't re-fetch).
+  3. Cosine + Jaccard YoY similarity per ticker per year (paper's measures).
+  4. Backtest: low-similarity (changers) underperform? Purged-WF, net-of-cost, AND
+     decorrelation from momentum (the 2nd-RETURN-signal gate — if it survives + is
+     decorrelated, it UNLOCKS C1, which IPCA failed to). Usable sample = tickers with
+     >=2 consecutive 10-Ks in the return window (may be thin — check first).
+  CAVEAT: validate extracted TEXT is real before trusting any similarity number (a bad
+  parser silently yields garbage text -> fake similarity -> false signal). Rule #1.
+STATUS: scoped, not started. First task next session.
+
 ### 1.8 ALPHA HUNT QUEUE — the ordered, gated build sequence (added Jun 1 2026)
 Parts 2-4 are a complete CATALOG (every model/alpha/combiner) but NOT a sequence — read top-down,
 the starred C1 combiner misleads (it needs >=2 decorrelated survivors first), and several starred
