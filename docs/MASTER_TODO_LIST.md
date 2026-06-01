@@ -155,6 +155,27 @@ Nothing tested improves it; the two things that might (Opt 4, Opt 5) are future-
 are still warranted (risk-control, not a return-overlay). Promote momentum on its own path after
 shadow validation.
 
+### 1.9 C2 VOL-SIZING TEST (Jun 1 2026) — per-name inv-vol PROMISING, pending purged-WF
+Tested whether #4's vol info improves momentum-book SIZING, net of cost, vs validated
+equal-weight. Three schemes, same picks/dates/10bps: A equal-weight, B per-name
+inverse-vol, C portfolio vol-target. Research (Barroso-Santa-Clara/Daniel-Moskowitz)
+predicted C (portfolio-level) wins; DATA SAID OTHERWISE:
+  - C (vol-target): pooled Sharpe ~equal to B but HALVES return (2.75 vs 3.73% mean) —
+    just de-levers in this high-vol universe, lost 6/8 years on raw return. NOT it.
+  - B (per-name inv-vol): beats equal-weight 5/8 years, pooled Sharpe +1.42 vs +1.32,
+    higher return too. WIDER GRID (vol lookback {10/20/40/60}): B>A in 4/4 lookbacks,
+    edge MONOTONIC (+0.02 at 10d -> +0.13 at 40-60d). Robust, not marginal-luck.
+  - This CONTRADICTS the old Opt-3 rejection (40% cells). Likely Opt-3's grid mixed
+    inv-vol with other failing overlays + held-out split; this clean A-vs-B test with
+    longer vol window shows a real edge. Can't fully reconcile (Opt-3 script was throwaway).
+CAVEATS (why NOT shipped yet): (a) full-sample POOLED, not purged-WF-OOS like the +0.96
+momentum validation — must clear the SAME bar before touching the live book; (b) wclip
+param was inert so it's 4 real cells not 12; (c) +0.10-0.13 Sharpe is real but modest.
+STATUS: per-name inverse-vol weighting = VALIDATED PENDING purged-WF confirmation. Next
+time the momentum WF harness is run, add inv-vol weighting as a variant and confirm the
+edge holds OOS-fold. If it does -> ship as the book's weighting (replaces equal-weight).
+Script: research/momentum_weighting_compare.py.
+
 ### 1.8 ALPHA HUNT QUEUE — the ordered, gated build sequence (added Jun 1 2026)
 Parts 2-4 are a complete CATALOG (every model/alpha/combiner) but NOT a sequence — read top-down,
 the starred C1 combiner misleads (it needs >=2 decorrelated survivors first), and several starred
