@@ -127,3 +127,27 @@ EME,Infrastructure,secondary,1,EMCOR — data center electrical construction
 WCC,Infrastructure,secondary,1,Wesco — electrical distribution for data centers
 BYND,Consumer,lotto,4,Beyond Meat — speculative plant-based foods
 RZLV,AI,lotto,4,Rezolve AI — speculative agentic commerce
+KLAC,Semiconductor Equipment,core,,backfilled 2026-06-01
+TXN,Core Silicon,secondary,,backfilled 2026-06-01
+MCHP,Core Silicon,tactical,,backfilled 2026-06-01
+NXPI,Core Silicon,tactical,,backfilled 2026-06-01
+DELL,Server Hardware,tactical,,backfilled 2026-06-01
+GLW,Networking,tactical,,backfilled 2026-06-01
+FLEX,Server Hardware,tactical,,backfilled 2026-06-01
+JBL,Server Hardware,tactical,,backfilled 2026-06-01
+GFS,Semiconductor Equipment,tactical,,backfilled 2026-06-01
+NEE,Power,secondary,,backfilled 2026-06-01
+D,Power,tactical,,backfilled 2026-06-01
+CHTR,Telecom,tactical,,backfilled 2026-06-01
+BIO,Scientific Instruments,tactical,,backfilled 2026-06-01
+HOOD,Fintech,tactical,,backfilled 2026-06-01
+RDDT,Ad Tech,tactical,,backfilled 2026-06-01
+PINS,Ad Tech,tactical,,backfilled 2026-06-01
+MDB,Enterprise Software,tactical,,backfilled 2026-06-01
+CRWV,Neoclouds,lotto,,backfilled 2026-06-01
+NBIS,Neoclouds,lotto,,backfilled 2026-06-01
+RKLB,Space Tech,lotto,,backfilled 2026-06-01
+STLA,Automotive,tactical,,backfilled 2026-06-01
+CRCL,Crypto,lotto,,backfilled 2026-06-01
+FIG,Enterprise Software,tactical,,backfilled 2026-06-01
+AMC,Consumer,lotto,,backfilled 2026-06-01
