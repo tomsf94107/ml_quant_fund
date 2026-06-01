@@ -61,7 +61,8 @@ def _load_bucket_map():
 
 
 def rank_signal(close_panel: pd.DataFrame, kind: str = "mom_6_1",
-                decile: float = DECILE, bucket_cap: int | None = None) -> pd.DataFrame:
+                decile: float = DECILE, bucket_cap: int | None = None,
+                vol_lb: int = 40) -> pd.DataFrame:
     """Rank the universe by momentum; mark the top decile as BUY candidates.
 
     Returns a DataFrame [ticker, mom_score, mom_pct_rank, is_buy_candidate],
@@ -76,7 +77,7 @@ def rank_signal(close_panel: pd.DataFrame, kind: str = "mom_6_1",
     """
     score = compute_momentum(close_panel, kind)
     if len(score) < 10:
-        return pd.DataFrame(columns=["ticker", "mom_score", "mom_pct_rank", "is_buy_candidate"])
+        return pd.DataFrame(columns=["ticker", "mom_score", "mom_pct_rank", "is_buy_candidate", "weight"])
     pct = score.rank(pct=True)
     k = max(1, int(len(score) * decile))
     ranked = score.sort_values(ascending=False)  # best first
@@ -91,11 +92,25 @@ def rank_signal(close_panel: pd.DataFrame, kind: str = "mom_6_1",
                 top.add(t); per[b] = per.get(b, 0) + 1
             if len(top) >= k:
                 break
+    # inverse-vol weights over BUY candidates (validated Jun 1 2026: 4/4 OOS folds
+    # vs equal-weight, both signals). Trailing vol_lb-day realized vol, backward-only.
+    daily_ret = close_panel.pct_change()
+    inv = {}
+    for t in top:
+        r = daily_ret[t].tail(vol_lb) if t in daily_ret.columns else None
+        v = (r.std() if (r is not None and r.notna().sum() >= 10) else np.nan)
+        inv[t] = (1.0 / v) if (v is not None and not np.isnan(v) and v > 0) else np.nan
+    inv_s = pd.Series(inv, dtype="float64")
+    if len(inv_s) and inv_s.notna().any():
+        inv_s = inv_s.fillna(inv_s.median())
+        inv_s = inv_s / inv_s.sum()           # normalize across BUY candidates
+    weights = {t: float(inv_s.get(t, 0.0)) for t in score.index}
     out = pd.DataFrame({
         "ticker": score.index,
         "mom_score": score.values,
         "mom_pct_rank": pct.values,
         "is_buy_candidate": [t in top for t in score.index],
+        "weight": [weights.get(t, 0.0) for t in score.index],
     }).sort_values("mom_score", ascending=False).reset_index(drop=True)
     return out
 

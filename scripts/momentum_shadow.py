@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS momentum_shadow_predictions (
     mom_score        REAL,
     mom_pct_rank     REAL,
     is_buy_candidate INTEGER NOT NULL,
+    weight           REAL,
     created_at       TEXT NOT NULL,
     UNIQUE(prediction_date, ticker, kind)
 );
@@ -83,13 +84,13 @@ def main():
             continue
         rows = [(pred_date, r.ticker, kind, MOM_HORIZON,
                  float(r.mom_score), float(r.mom_pct_rank),
-                 int(r.is_buy_candidate), now)
+                 int(r.is_buy_candidate), float(getattr(r, "weight", 0.0) or 0.0), now)
                 for r in sig.itertuples()]
         con.executemany(
             """INSERT OR REPLACE INTO momentum_shadow_predictions
                (prediction_date, ticker, kind, horizon, mom_score, mom_pct_rank,
-                is_buy_candidate, created_at)
-               VALUES (?,?,?,?,?,?,?,?)""", rows)
+                is_buy_candidate, weight, created_at)
+               VALUES (?,?,?,?,?,?,?,?,?)""", rows)
         n_buy = sum(r[6] for r in rows)
         print(f"momentum_shadow: {kind} — {len(rows)} names, {n_buy} BUY candidates written for {pred_date}")
         total += len(rows)

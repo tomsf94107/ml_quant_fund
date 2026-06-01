@@ -171,10 +171,19 @@ predicted C (portfolio-level) wins; DATA SAID OTHERWISE:
 CAVEATS (why NOT shipped yet): (a) full-sample POOLED, not purged-WF-OOS like the +0.96
 momentum validation — must clear the SAME bar before touching the live book; (b) wclip
 param was inert so it's 4 real cells not 12; (c) +0.10-0.13 Sharpe is real but modest.
-STATUS: per-name inverse-vol weighting = VALIDATED PENDING purged-WF confirmation. Next
-time the momentum WF harness is run, add inv-vol weighting as a variant and confirm the
-edge holds OOS-fold. If it does -> ship as the book's weighting (replaces equal-weight).
-Script: research/momentum_weighting_compare.py.
+STATUS: ✅ CONFIRMED + SHIPPED Jun 1 2026. Ran inv-vol vs equal-weight on the long-only
+BOOK through the SAME purged-WF harness that validated momentum (analysis/momentum_invvol_wf.py,
+reuses momentum_purged_wf folds: 5 folds, 5d embargo). RESULT: inv-vol beat equal-weight in
+4/4 OOS folds on BOTH signals — mom_6_1 pooled +1.39 vs +1.20, mom_12_1 +0.93 vs +0.78,
+positive every fold incl the 2022 bear. Robust, not marginal-luck (the test that killed Opt-3).
+WIRED: signals/momentum_signal.py rank_signal() now returns a `weight` column = inverse
+trailing-40d-vol normalized across BUY candidates (vol_lb=40 param, validated setting);
+additive/non-breaking (is_buy_candidate consumers unaffected). scripts/momentum_shadow.py
+logs `weight` (schema + table ALTERed). So the shadow book records inv-vol weights and the
+live book trades them when promoted. First validated IMPROVEMENT shipped from the alpha hunt.
+Scripts: research/momentum_weighting_compare.py (full-sample), analysis/momentum_invvol_wf.py (WF).
+CAVEAT: folds ~18-19 rebalances each (per-fold Sharpe noisy); the 4/4 CONSISTENCY both signals
+is the robust part. Weighted promotion check (vs equal) when outcomes resolve ~late June.
 
 ### 1.8 ALPHA HUNT QUEUE — the ordered, gated build sequence (added Jun 1 2026)
 Parts 2-4 are a complete CATALOG (every model/alpha/combiner) but NOT a sequence — read top-down,
