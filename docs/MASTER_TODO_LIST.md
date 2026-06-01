@@ -207,8 +207,19 @@ to count as a NEW signal (a correlated winner is just momentum again). Ordered b
      earnings-stability from earnings_surprises) is possible but weaker and depends on quarterly
      history depth. DECISION: mark data-gated; build the fundamentals INGESTION as its own data
      project when ready, then this becomes buildable. Skipping to #4 (vol prediction, price-only).
-  4. VOLATILITY prediction (B6) — predict vol not direction; easier target (AUC>0.6), feeds sizing.
-     Different objective, data on hand. Also low-vol / betting-against-beta (have data).
+  4. VOLATILITY prediction (B6) — DONE Jun 1 2026, ✅ SURVIVOR (first besides momentum). Predict
+     forward 5d realized-vol LEVEL (Ridge on the feature panel, log-vol target, purged-WF). Binary
+     above/below-median framing was weak (test AUC 0.54) but vol-LEVEL regression is real. Passed
+     ALL attacks: (a) median model rank-IC +0.10 across 140 tickers, 69% >0.05; (b) beats naive
+     trailing-vol on 88% (naive IC ~ -0.03, so NOT free vol-clustering); (c) per-ticker breadth not
+     macro — dropping VIX/market feats only cost +0.019 (no-macro IC +0.088), so ~140 semi-indep
+     signals not VIX-replicated-140x; (d) DECORRELATED from momentum (cross-sectional corr +0.11,
+     well <0.3). Target verified strictly forward (sanity check match=True, no leak). Script:
+     models/vol_prediction.py. ⚠ KEY: this predicts VARIANCE not DIRECTION — NOT a return-alpha to
+     HRP-blend into the long book. Its USE is POSITION SIZING (size down high-predicted-vol names,
+     up calm ones, within the momentum book) + vol-targeting overlay. Feeds C2 (sizing), not C1
+     (return-alpha combiner). NEXT: build the vol-sizing overlay on the momentum book + measure
+     Sharpe uplift; continue hunt #5 value (data-gated w/#3), #6 IPCA, #7 Lazy Prices.
   5. VALUE (B3) — B/M, E/P, FCF yield; needs PIT fundamentals. Different axis.
   6. IPCA / CONDITIONAL AUTOENCODER (A2/A5) — principled cross-sectional, highest model ceiling;
      bigger build (1-4wk), no new data (uses characteristic panel).
@@ -217,11 +228,14 @@ to count as a NEW signal (a correlated winner is just momentum again). Ordered b
      (A11, generate-many -> strict gate). Apply ON TOP of survivors, not as standalone hunts.
 
 GATED — only after the hunt yields survivors (do NOT build early):
-  • C1 COMBINER (HRP/equal-weight) — GATE: requires >=2 VALIDATED, DECORRELATED alphas. With only
-    momentum today there is nothing to combine. This is the catalog's "highest-value" item BY VALUE,
-    but it is BLOCKED until the queue above produces a second signal. Build when gate opens.
-  • C2 SIZING (meta-labeling / fractional Kelly) — GATE: requires the combiner (or >=1 live signal
-    being traded). Sizes what the combiner produces.
+  • C1 COMBINER (HRP/equal-weight) — GATE: requires >=2 VALIDATED, DECORRELATED *RETURN* alphas.
+    STATUS Jun 1: we have 1 return-alpha (momentum) + 1 RISK/sizing signal (vol prediction #4) —
+    vol is NOT a return-alpha, so C1 is STILL BLOCKED for lack of a 2nd return signal. Vol feeds C2
+    sizing instead. Keep hunting return signals (#6 IPCA, #7 Lazy Prices) for the C1 gate.
+  • C2 SIZING (meta-labeling / fractional Kelly / VOL-TARGETING) — now ACTIONABLE: vol prediction
+    (#4 survivor) is the input. Build the vol-sizing overlay on the momentum book (size inversely to
+    predicted vol), measure net Sharpe uplift vs equal-weight momentum. This is the first concrete
+    payoff from the hunt.
 
 PRINCIPLE: hunt -> validate (kill fast) -> collect survivors -> combine (>=2) -> size. Each stage
 gated on the prior. Most of the queue needs only NEW METHOD on data you already have, not new data.
