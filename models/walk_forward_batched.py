@@ -107,6 +107,20 @@ def main():
     if failed:
         print(f"⚠ Failed batches: {failed}")
     print(f"{'='*60}")
+
+    # Dated archive of the summary (week-over-week decay record) — skip failed runs
+    if not failed:
+        from datetime import datetime
+        import shutil
+        archive_dir = REPORT_DIR / "archive"
+        archive_dir.mkdir(exist_ok=True)
+        summary = REPORT_DIR / f"walkforward_summary_h{args.horizon}.csv"
+        if summary.exists():
+            stamp = datetime.now().strftime("%Y%m%d")
+            dest = archive_dir / f"walkforward_summary_h{args.horizon}_{stamp}.csv"
+            shutil.copy2(summary, dest)
+            print(f"Archived summary → reports/archive/{dest.name}")
+
     return 0 if not failed else 1
 
 

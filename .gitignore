@@ -95,3 +95,7 @@ institutional_trades.duckdb
 # generated backtest/fitness outputs
 fitness.csv
 reports/walkforward_*.csv
+
+# but DO track the dated archive (decay history)
+!reports/archive/
+!reports/archive/*.csv
