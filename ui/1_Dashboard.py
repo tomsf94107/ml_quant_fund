@@ -366,6 +366,7 @@ if _use_cache:
             today_signal=_sig, today_prob=s.get("prob",0),
             today_prob_eff=_peff,
             current_price=s.get("current_price"),
+            price_date=s.get("price_date"),
             price_target_up=s.get("price_target_up"),
             price_target_dn=s.get("price_target_dn"),
             expected_return=s.get("expected_return"),
@@ -671,6 +672,29 @@ with tab_forecast:
         key=lambda x: -x[1]
     )
     _blend_tier = {t: i+1 for i, (t, _) in enumerate(_buy_blend_sorted)}
+
+    # ── PRICE STALENESS GUARD (always-on: cache + live) ──────────────
+    # The silent-stale-price bug: if the pipeline ran before the latest daily bar
+    # posted, current_price is a prior session close (NVDA showed 211.14 = May 29
+    # close while June 1 closed 224.36). Make staleness LOUD, not silent.
+    import pandas as _pd_stale
+    _pdates = [r.price_date for r in signal_summary if getattr(r, "price_date", None)]
+    if _pdates:
+        _maxpd = max(_pdates)
+        _today_n = _pd_stale.Timestamp.now(tz="America/New_York").normalize().tz_localize(None)
+        _last_bday = _today_n if _today_n.weekday() < 5 else _today_n - _pd_stale.offsets.BDay(1)
+        try:
+            _days_behind = int(_pd_stale.bdate_range(_pd_stale.Timestamp(_maxpd), _last_bday).size) - 1
+        except Exception:
+            _days_behind = 0
+        if _days_behind >= 1:
+            st.warning(
+                f"⚠️ Forecast prices are as of **{_maxpd}** — markets have traded "
+                f"{_days_behind}+ session(s) since; prices & targets below are STALE. "
+                f"Click **🔄 Refresh Live** for current prices."
+            )
+        else:
+            st.caption(f"💲 Prices as of close {_maxpd}")
 
     forecast_rows = []
     for r in signal_summary:

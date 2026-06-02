@@ -394,6 +394,7 @@ class SignalResult:
     price_target_dn: Optional[float] = None
     expected_return: Optional[float] = None
     atr:             Optional[float] = None
+    price_date:      Optional[str]   = None  # date of the close used as current_price (staleness guard)
 
     # ── Schema v2 multiplier breakdown (May 8 2026) ──────────────────
     # Exposed for: validator reconstruction, Sprint 2 ablation studies,
@@ -978,6 +979,9 @@ def generate_signals(
     # Price forecast using ATR
     current_price   = float(df["close"].iloc[-1]) if "close" in df.columns else None
     atr_val         = float(df["atr"].iloc[-1])   if "atr"   in df.columns else None
+    # stamp the date this price came from (staleness guard — if the pipeline runs
+    # before the latest daily bar posts, current_price is the prior session's close).
+    price_date      = str(df["date"].iloc[-1])[:10] if "date" in df.columns else None
     price_target_up = None
     price_target_dn = None
     expected_return = None
@@ -1003,6 +1007,7 @@ def generate_signals(
         price_target_up=price_target_up,
         price_target_dn=price_target_dn,
         expected_return=expected_return,
+        price_date=price_date,
         atr=round(atr_val, 4) if atr_val else None,
         # Schema v2 multiplier breakdown (May 8 2026)
         today_risk_mult=round(float(risk_mult), 4),

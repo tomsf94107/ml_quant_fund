@@ -98,6 +98,7 @@ def main():
                         "prob_eff":        sig.today_prob_eff,
                         "run_date":        run_date,
                         "current_price":   sig.current_price,
+                        "price_date":      sig.price_date,
                     })
                 except Exception as e:
                     failed.append((ticker, horizon, str(e)))
