@@ -68,10 +68,26 @@ if $PYTHON analysis/signal_sanity_guard.py --db accuracy.db --days 90 \
     > "$LOGDIR/neg1_sanity_guard.log" 2>&1; then
     log "Stage -1 OK — sanity guard GREEN, proceeding"
 else
-    log "Stage -1 RED — sanity guard FAILED; ABORTING publish (broken signal direction)"
-    osascript -e "display notification \"Pipeline C ABORTED: signal sanity guard RED\" with title \"ML Quant Fund\"" 2>/dev/null || true
-    cat "$LOGDIR/neg1_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
-    exit 2
+    # ── GUARD-RED HANDLING (Jun 2 2026 fix) ──────────────────────────────────
+    # The guard exists to stop publishing a BROKEN DIRECTION signal. But the abort
+    # only matters if the direction model is LIVE. While ML_QUANT_DISABLE_BUY=1
+    # (BUYs forced to HOLD in generator.py), a RED guard cannot publish anything
+    # broken — so aborting only freezes the PRICE / momentum / sentiment refresh
+    # (Stage 2 daily_runner never runs -> signals_cache.json keeps prior-session
+    # prices). That is exactly the Jun 1 2026 bug: guard went RED (h=5 dir inverted),
+    # pipeline aborted, NVDA showed the May 29 close (211.14) all of Jun 1.
+    # FIX: if BUYs are disabled, WARN + CONTINUE (prices/momentum still refresh,
+    # kill switch keeps every BUY->HOLD). Only ABORT when the model is truly live.
+    if [ "${ML_QUANT_DISABLE_BUY:-1}" = "1" ]; then
+        log "Stage -1 RED — but DIRECTION MODEL DISABLED (ML_QUANT_DISABLE_BUY=1)."
+        log "  WARNING only; CONTINUING (prices/momentum/sentiment refresh; kill switch forces BUY->HOLD)."
+        cat "$LOGDIR/neg1_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
+    else
+        log "Stage -1 RED — direction model ENABLED; ABORTING publish (broken signal direction)"
+        osascript -e "display notification \"Pipeline C ABORTED: signal sanity guard RED\" with title \"ML Quant Fund\"" 2>/dev/null || true
+        cat "$LOGDIR/neg1_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
+        exit 2
+    fi
 fi
 
 
