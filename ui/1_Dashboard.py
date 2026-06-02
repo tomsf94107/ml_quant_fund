@@ -536,7 +536,31 @@ def _momentum_picks_ui():
             "WHERE prediction_date=? AND is_buy_candidate=1 ORDER BY mom_pct_rank DESC",
             c, params=[d])
         c.close()
-        return d, df
+        # Dedupe to one row per ticker. A name can be flagged by BOTH momentum
+        # signals (mom_6_1 = 6mo, mom_12_1 = 12mo, both skip last 21d). Show it
+        # once: best rank for sort, both individual ranks, and a badge if doubly
+        # confirmed. (DB keeps both kind rows for the WF record — this is display only.)
+        if df.empty:
+            return d, df
+        def _agg(g):
+            r6  = g.loc[g["kind"]=="mom_6_1",  "mom_pct_rank"]
+            r12 = g.loc[g["kind"]=="mom_12_1", "mom_pct_rank"]
+            r6v  = float(r6.iloc[0])  if len(r6)  else None
+            r12v = float(r12.iloc[0]) if len(r12) else None
+            ranks = [x for x in (r6v, r12v) if x is not None]
+            return _pd_v.Series({
+                "rank_6_1":  r6v,
+                "rank_12_1": r12v,
+                "best_rank": max(ranks) if ranks else 0.0,
+                "n_kinds":   int(g["kind"].nunique()),
+            })
+        try:
+            agg = df.groupby("ticker", as_index=False).apply(_agg, include_groups=False)
+        except TypeError:
+            # older pandas without include_groups kwarg
+            agg = df.groupby("ticker", as_index=False).apply(_agg)
+        agg = agg.sort_values("best_rank", ascending=False).reset_index(drop=True)
+        return d, agg
     except Exception:
         return None, _pd_v.DataFrame()
 _mom_date, _mom_df = _momentum_picks_ui()
@@ -571,14 +595,32 @@ def _match(tk):
 
 # render cards by view
 if _view.startswith("🟢"):
-    picks = [(row.ticker, row.mom_pct_rank) for row in _mom_df.itertuples() if _match(row.ticker)]
-    _fc3.caption(f"{len(picks)} picks")
+    picks = [row for row in _mom_df.itertuples() if _match(row.ticker)]
+    _ndouble = sum(1 for r in picks if getattr(r, "n_kinds", 1) >= 2)
+    _fc3.caption(f"{len(picks)} picks · {_ndouble} on both signals")
     if not picks:
         st.info("No momentum picks match the filter." if (_f_tk or _f_sec!="All sectors") else "No momentum picks in latest shadow run.")
     else:
         cols = st.columns(4)
-        for i, (tk, pct) in enumerate(picks):
-            cols[i % 4].metric(label=f"{tk}", value="🟢 BUY", delta=f"pct {pct:.2f} · {_BMAP.get(tk,'UNK')}")
+        for i, r in enumerate(picks):
+            tk = r.ticker
+            both = getattr(r, "n_kinds", 1) >= 2
+            r6, r12 = getattr(r, "rank_6_1", None), getattr(r, "rank_12_1", None)
+            parts = []
+            if r6  is not None: parts.append(f"6-1 {r6:.2f}")
+            if r12 is not None: parts.append(f"12-1 {r12:.2f}")
+            rank_str = " · ".join(parts)
+            star    = "⭐ " if both else ""
+            buy_lbl = "🟢 BUY ✕2" if both else "🟢 BUY"
+            cols[i % 4].markdown(
+                f"<div style='padding:8px 0;line-height:1.25'>"
+                f"<span style='font-size:1.7rem;font-weight:700'>{star}{tk}</span>"
+                f"<span style='font-size:0.8rem;font-weight:600;color:#16a34a;"
+                f"margin-left:8px;vertical-align:middle'>{buy_lbl}</span><br>"
+                f"<span style='font-size:0.75rem;color:#888'>{rank_str} · {_BMAP.get(tk,'UNK')}</span>"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
 elif _view.startswith("🔴"):
     shown = [r for r in signal_summary if _match(r.ticker)]
     _fc3.caption(f"{len(shown)} · all HOLD")
