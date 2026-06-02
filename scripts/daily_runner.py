@@ -397,6 +397,7 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                                            else "LOW",
                         "run_date":        run_date,
                         "current_price":   sig.current_price,
+                        "price_date":      sig.price_date,
                         "price_target_up": sig.price_target_up,
                         "price_target_dn": sig.price_target_dn,
                         "expected_return": sig.expected_return,
