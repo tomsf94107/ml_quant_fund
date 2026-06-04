@@ -354,13 +354,21 @@ if _use_cache:
         if tickers and s.get("ticker") not in tickers: continue
         _peff = s.get("prob_eff", 0.0)
         _sig = s.get("signal","HOLD") if _peff >= confidence_threshold else "HOLD"
+        _nt = s.get("n_trades") or 0
+        # sharpe_reliable: use cached flag if present (new caches); else fall back
+        # to the n_trades>=30 guard so OLD caches are still handled honestly.
+        _rel = s.get("sharpe_reliable")
+        if _rel is None:
+            _rel = (_nt >= 30)
         _m = _NS(sharpe=float(s.get("sharpe") or "nan"),
                  max_drawdown=float(s.get("max_drawdown") or "nan"),
                  cagr=float(s.get("cagr") or "nan"),
                  accuracy=float(s.get("accuracy") or "nan"),
-                 n_trades=s.get("n_trades") or 0,
+                 n_trades=_nt,
                  profit_factor=float(s.get("profit_factor") or "nan"),
-                 exposure=float(s.get("exposure") or "nan"))
+                 exposure=float(s.get("exposure") or "nan"),
+                 psr=s.get("psr"),
+                 sharpe_reliable=bool(_rel))
         signal_summary.append(_NS(
             ticker=s["ticker"], horizon=horizon,
             today_signal=_sig, today_prob=s.get("prob",0),
@@ -783,7 +791,7 @@ with tab_forecast:
             "Target ▼":     f"${r.price_target_dn:.2f}"  if r.price_target_dn else "—",
             "Exp Return":   f"{exp_ret:+.2%}"             if r.expected_return is not None else "—",
             "ATR":          f"${r.atr:.2f}"               if r.atr             else "—",
-            "Sharpe":       f"{r.metrics.sharpe:.2f}"     if not np.isnan(r.metrics.sharpe) else "—",
+            "Sharpe":       (("⚠ " + f"{r.metrics.sharpe:.2f}") if (not np.isnan(r.metrics.sharpe) and not getattr(r.metrics, "sharpe_reliable", False)) else (f"{r.metrics.sharpe:.2f}" if not np.isnan(r.metrics.sharpe) else "—")),
             "Bucket":       _TICKER_META.get(r.ticker, {}).get("bucket", "—"),
             "Tier":         _TICKER_META.get(r.ticker, {}).get("tier", "—"),
         })

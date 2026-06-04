@@ -29,6 +29,7 @@ import os
 import sqlite3
 
 import numpy as np
+from signals.sharpe_psr import sharpe_with_psr
 import pandas as pd
 
 from models.classifier import (
@@ -361,6 +362,8 @@ class BacktestMetrics:
     exposure:      float        # fraction of days with open position
     profit_factor: float
     n_days:        int
+    psr:             float = float("nan")   # Probabilistic Sharpe Ratio P(true SR > 1.0)
+    sharpe_reliable: bool  = False          # n_trades>=30 AND PSR>=0.95
 
     def to_dict(self) -> dict:
         return {
@@ -374,6 +377,8 @@ class BacktestMetrics:
             "exposure":      round(self.exposure,       4),
             "profit_factor": round(self.profit_factor,  3),
             "n_days":        self.n_days,
+            "psr":             round(self.psr, 3) if self.psr == self.psr else None,
+            "sharpe_reliable": bool(self.sharpe_reliable),
         }
 
 
@@ -447,6 +452,7 @@ def _compute_backtest_metrics(
     mu  = ret_strat.mean()
     sd  = ret_strat.std(ddof=1)
     sharpe = float(np.sqrt(ANN) * mu / sd) if sd and not np.isnan(sd) else np.nan
+    # PSR + reliability computed below, after n_trades is known.
 
     drawdown  = eq_strat / eq_strat.cummax() - 1
     max_dd    = float(drawdown.min())
@@ -466,6 +472,15 @@ def _compute_backtest_metrics(
     n_trades   = int(entries.sum())
     exposure   = float(signal_series.mean())
 
+    # PSR + reliability: discount in-sample Sharpe for short/noisy samples.
+    # Uses only the days the strategy was actually long (the real bet sample).
+    try:
+        _bet_rets = ret_strat[signal_series == 1]
+        _sr_ann, _psr, _trl, _reliable = sharpe_with_psr(
+            _bet_rets.values, n_trades=n_trades, sr_benchmark_annual=1.0)
+    except Exception:
+        _psr, _reliable = float("nan"), False
+
     wins = ret_strat[ret_strat > 0].sum()
     loss = -ret_strat[ret_strat < 0].sum()
     profit_factor = float(wins / loss) if loss > 0 else np.nan
@@ -481,6 +496,8 @@ def _compute_backtest_metrics(
         exposure=exposure,
         profit_factor=profit_factor,
         n_days=n_days,
+        psr=_psr,
+        sharpe_reliable=_reliable,
     )
 
 
