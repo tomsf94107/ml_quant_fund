@@ -185,7 +185,7 @@ Scripts: research/momentum_weighting_compare.py (full-sample), analysis/momentum
 CAVEAT: folds ~18-19 rebalances each (per-fold Sharpe noisy); the 4/4 CONSISTENCY both signals
 is the robust part. Weighted promotion check (vs equal) when outcomes resolve ~late June.
 
-### 1.11 HUNT #7 LAZY PRICES — SCOPED Jun 1 2026, deferred to fresh session (data build)
+### 1.11 HUNT #7 LAZY PRICES — BUILT Jun 1, VALIDATED + KILLED Jun 3 2026 (see docs/lazy_prices_closed.md). Negative L/S spread, ~zero rank-IC, sign-flipping per year on 115 tickers. Same small-universe failure as the other hunts. CLOSED, do not re-attempt.
 Signal (Cohen-Malloy-Nguyen 2020, JoF): firms that CHANGE their 10-K language YoY
 underperform; buy nonchangers / short changers = up to 188bp/mo alpha in the FULL
 universe (1000s firms). On 149 names + post-publication decay it'll be far weaker, BUT
@@ -279,7 +279,7 @@ to count as a NEW signal (a correlated winner is just momentum again). Ordered b
   5. VALUE (B3) — B/M, E/P, FCF yield; needs PIT fundamentals. Different axis.
   6. IPCA / CONDITIONAL AUTOENCODER (A2/A5) — principled cross-sectional, highest model ceiling;
      bigger build (1-4wk), no new data (uses characteristic panel).
-  7. LAZY PRICES (B10) — 10-K YoY language-change anomaly; durable; free EDGAR; needs 10-K ingestion.
+  7. LAZY PRICES (B10) — DONE Jun 3, KILLED. Built+fetched+similarity (Jun 1), validated Jun 3: negative spread, zero IC, per-year noise on 115 tickers. See docs/lazy_prices_closed.md. FIVE hunts now killed at this scale = bottleneck is BREADTH not signal.
   8. Methods layer when useful: hierarchical Bayesian (A8), ensembling/bagging (A9), LLM alpha loop
      (A11, generate-many -> strict gate). Apply ON TOP of survivors, not as standalone hunts.
 

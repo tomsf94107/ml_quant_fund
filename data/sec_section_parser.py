@@ -298,8 +298,51 @@ def extract_10q_sections(html: str) -> dict:
 
 
 def extract_10k_sections(html: str) -> dict:
-    """Session C: Business + Risk Factors + MD&A + Legal."""
-    raise NotImplementedError("Session C")
+    """
+    Extract 10-K sections for the Lazy Prices signal: business (Item 1),
+    risk_factors (Item 1A), mda (Item 7).
+
+    Headers sit on their own line after get_text(separator="\\n"), so anchor with
+    re.MULTILINE ^\\s*Item — this excludes the inline prose mentions ("see Item 8")
+    that match bare "Item N" everywhere. Sections via start/end anchor PAIRS, choose
+    the LONGEST valid span (real body beats TOC line). Per Loughran-McDonald-style
+    replication: drop sections below a min length (corrupt/partial parse) rather than
+    feed garbage to the similarity calc. ~30% of filings may still fail to parse
+    cleanly (every filing structure differs) — those return {} and are excluded.
+    """
+    if not html:
+        return {}
+    soup = BeautifulSoup(html, "html.parser")
+    soup = _strip_tables(soup)
+    raw = _strip_xbrl_header(soup.get_text(separator="\n"))
+
+    def _starts(pat):
+        return [m.start() for m in re.finditer(pat, raw, re.IGNORECASE | re.MULTILINE)]
+
+    def _longest_span(start_pat, end_pats, min_len):
+        s_pos = _starts(start_pat)
+        e_pos = sorted(sum([_starts(ep) for ep in end_pats], []))
+        best = ""
+        for sp in s_pos:
+            ea = [e for e in e_pos if e > sp + 50]
+            if not ea:
+                continue
+            seg = _clean_text(raw[sp:min(ea)])
+            if len(seg) > len(best):
+                best = seg
+        return best if len(best) >= min_len else None
+
+    out = {}
+    biz = _longest_span(r"^\s*Item\s+1\.?\s", [r"^\s*Item\s+1A\.?\s", r"^\s*Item\s+2\.?\s"], 1500)
+    risk = _longest_span(r"^\s*Item\s+1A\.?\s", [r"^\s*Item\s+1B\.?\s", r"^\s*Item\s+2\.?\s"], 1500)
+    mda = _longest_span(r"^\s*Item\s+7\.?\s", [r"^\s*Item\s+7A\.?\s", r"^\s*Item\s+8\.?\s"], 2500)
+    if biz:
+        out["business"] = biz[:100000]
+    if risk:
+        out["risk_factors"] = risk[:100000]
+    if mda:
+        out["mda"] = mda[:100000]
+    return out
 
 
 def extract_s_filing_sections(html: str) -> dict:
