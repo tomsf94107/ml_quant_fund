@@ -274,7 +274,7 @@ to count as a NEW signal (a correlated winner is just momentum again). Ordered b
      models/vol_prediction.py. ⚠ KEY: this predicts VARIANCE not DIRECTION — NOT a return-alpha to
      HRP-blend into the long book. Its USE is POSITION SIZING (size down high-predicted-vol names,
      up calm ones, within the momentum book) + vol-targeting overlay. Feeds C2 (sizing), not C1
-     (return-alpha combiner). NEXT: build the vol-sizing overlay on the momentum book + measure
+     (return-alpha combiner). UPDATE Jun 3: vol-sizing TESTED+KILLED (oracle test, see C2 + docs/vol_sizing_decision.md). Was: build the vol-sizing overlay + measure
      Sharpe uplift; continue hunt #5 value (data-gated w/#3), #6 IPCA, #7 Lazy Prices.
   5. VALUE (B3) — B/M, E/P, FCF yield; needs PIT fundamentals. Different axis.
   6. IPCA / CONDITIONAL AUTOENCODER (A2/A5) — principled cross-sectional, highest model ceiling;
@@ -288,7 +288,7 @@ GATED — only after the hunt yields survivors (do NOT build early):
     STATUS Jun 1: we have 1 return-alpha (momentum) + 1 RISK/sizing signal (vol prediction #4) —
     vol is NOT a return-alpha, so C1 is STILL BLOCKED for lack of a 2nd return signal. Vol feeds C2
     sizing instead. Keep hunting return signals (#6 IPCA, #7 Lazy Prices) for the C1 gate.
-  • C2 SIZING (meta-labeling / fractional Kelly / VOL-TARGETING) — now ACTIONABLE: vol prediction
+  • C2 SIZING (meta-labeling / fractional Kelly / VOL-TARGETING) — KILLED Jun 3 (oracle test: naive trailing-vol BEATS perfect-future-vol on momentum; mom_6_1 +1.44 gt +1.10. Keep naive, do NOT build vol-level forecaster. See docs/vol_sizing_decision.md). Superseded: vol prediction
     (#4 survivor) is the input. Build the vol-sizing overlay on the momentum book (size inversely to
     predicted vol), measure net Sharpe uplift vs equal-weight momentum. This is the first concrete
     payoff from the hunt.
