@@ -288,6 +288,13 @@ GATED — only after the hunt yields survivors (do NOT build early):
     STATUS Jun 1: we have 1 return-alpha (momentum) + 1 RISK/sizing signal (vol prediction #4) —
     vol is NOT a return-alpha, so C1 is STILL BLOCKED for lack of a 2nd return signal. Vol feeds C2
     sizing instead. Keep hunting return signals (#6 IPCA, #7 Lazy Prices) for the C1 gate.
+  • M16 REGIME GATE on momentum — TESTED + NO-SHIP Jun 9 2026 (analysis/regime_gate_backtest.py).
+    Vol(SPY 20d RV 25/35pct) + credit(HYG/LQD 30d) triggers, 1.0/0.5/0.25 exposure, pre-registered
+    rule (DD -20pct AND Sharpe loss <=0.2): FAILED both kinds — DD improvement -1pct/+6pct, Sharpe
+    -0.14/-0.13, total return cut ~35pct. Realized-vol triggers LAG crashes then drag the recovery.
+    Macro-into-models CLOSED: features tested (no help), Goyal-Welch (no OOS predictor), gate tested
+    (no-ship). Macro stays where it works: recession early-warning, econ-calendar gate, discretionary
+    AI-sleeve playbook rules. Optional ONE-SHOT pre-registered variant if ever: SPY 200dma trend gate.
   • C2 SIZING (meta-labeling / fractional Kelly / VOL-TARGETING) — KILLED Jun 3 (oracle test: naive trailing-vol BEATS perfect-future-vol on momentum; mom_6_1 +1.44 gt +1.10. Keep naive, do NOT build vol-level forecaster. See docs/vol_sizing_decision.md). Superseded: vol prediction
     (#4 survivor) is the input. Build the vol-sizing overlay on the momentum book (size inversely to
     predicted vol), measure net Sharpe uplift vs equal-weight momentum. This is the first concrete
