@@ -885,9 +885,14 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 | Q3 2026 | Option G cross-sectional service |
 | ~Apr 2027 | Track 2B orthogonal recall axes (12-mo history complete) |
 
-EXPIRED (pre-Jun 9, resolve status in session logs): May 26 pipeline-95-feat verify · May 29 ×2
-phase-epsilon/PCT7 checks · Jun 1 second outcomes batch · Jun 5 PCT7 promote/revert decision —
-if any of these never actually got decided, re-raise explicitly.
+EXPIRED — RESOLVED (audited Jun 9, evidence in git + session logs):
+· May 26 pipeline-95-feat verify -> implicitly resolved (nightly runs since; May 26 UPDATE logs retrain)
+· May 29 phase-epsilon/PCT7 -> superseded (0 outcomes at h=5; S2 corrected trigger to Jun 2)
+· May 29 Phase 2H precision check -> killed with the A8 ceiling verdict (1.8 struck-off, five tests)
+· Jun 1 second outcomes batch -> subsumed into May 31 BUY-edge quantification (1.1b keystone)
+· Jun 5 PCT7 promote/revert -> DECIDED BY KILL: ranker quarantined May 31 (leak) = never promoted.
+  Formal decision recorded here Jun 9. REMAINING DEBT: Dashboard still computes/renders the dead
+  blend (1_Dashboard.py ~675+, RANK/A8/BLEND columns) — strip or label as killed (-> P5 cleanup).
 
 ---
 
