@@ -1,5 +1,20 @@
 # Master Unified TODO List
 
+=== DOCUMENT MAP (added Jun 9 2026 — how to read this file) ===
+THIS FILE is the single plan-of-record. Its internal systems, and which governs what:
+  - Part 1 / section 1.8 + JUN 9 ROADMAP REFRESH (R1-R8): the RETURN-ALPHA HUNT order ONLY.
+  - P0-P6 ladder (line ~605+): OPERATIONAL priorities (pipeline, calibration, features, UI, cleanup).
+    R-queue does NOT supersede these — they run in parallel.
+  - SCHEDULED CHECKPOINTS (line ~851): every DATED commitment (fitness re-runs Jun 11/18/25,
+    momentum verdict Jun 29, VRP Aug, etc). Check this section FIRST each session.
+  - Parts 2-4: reference catalog, not a sequence. Part 5: UI build.
+  - UPDATE sections: dated session logs, append-only.
+  - docs/ satellites (40+ files): findings + specs. They POINT here; if one conflicts with this
+    file, THIS file wins. Known overlapping roadmap satellites: roadmap_4week_quant_completeness.md
+    (= P3 here), ROADMAP_HYBRID_ADVISOR.md (separate product track, not the quant hunt).
+=== END DOCUMENT MAP ===
+
+
 > CURRENT ROADMAP — SINGLE SOURCE OF TRUTH (rewritten in full May 31 2026). This top section is
 > rewritten WHOLE every time the plan changes — never appended to — so it always reads as one
 > complete, current document containing the fix plan AND the full build catalog (every model,
@@ -327,6 +342,11 @@ NEW ORDERED QUEUE (supersedes items 5-8 ordering above; full rationale in the tw
   R7. VRP ~Aug (scheduled, data accruing). Analyst-revisions: audit data availability first.
   R8. C1 COMBINER the moment ANY of R2/R3/R5/VRP validates decorrelated — still the highest-value
       gated item in the system.
+SCOPE OF THIS R-QUEUE: the return-alpha hunt ONLY. It does NOT cover (still live elsewhere):
+intraday rebuild plan (docs/intraday/, Jun-Jul) | momentum PROMOTION MECHANICS (MOMENTUM_LIVE path,
+sector caps, key rotation — original IMMEDIATE NEXT ACTION below) | fitness re-runs Jun 11/18/25
+(SCHEDULED CHECKPOINTS) | P0-P6 operational ladder | Part 5 UI | SELL-signal monthly re-eval |
+pre-earnings monitoring layer (active, separate).
 CLOSED Jun 9: M16 regime gate (NO-SHIP, see entry above). Macro-into-models answered at all
 three levels (features/prediction/gating). Sequence models, RL, HFT, more reversion: closed.
 
@@ -850,16 +870,24 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 
 ## SCHEDULED CHECKPOINTS
 
+(refreshed Jun 9 2026 — expired rows moved below the line; LIVE commitments first)
 | Date | What |
 |---|---|
-| Tue May 26 | Pipeline A/B/C auto-run with 95 features. Verify. |
-| Fri May 29 EOD | First Phase epsilon outcomes. Run monitor_pct7_ab.py. |
-| Fri May 29 EOD | Phase 2 H downgrade precision check |
-| Mon Jun 1 | Second batch of outcomes |
-| Fri Jun 5 | One week of A/B data. Decision: promote/revert PCT7. |
+| **Wed Jun 11** | Fitness re-run h=1 (Apr-21 ticker cohort reaches MIN_OBS) |
+| Wed Jun 18 | Fitness re-run h=3 |
+| Wed Jun 25 | Fitness re-run h=5 |
+| Tue Jun 24 | MU earnings print (pre-earnings layer: trim rule if positioned) |
+| **~Mon Jun 29** | MOMENTUM LIVE VERDICT — first cohort resolved. Promotion gate decision (R1). Run scripts/momentum_promotion_check.py |
 | Sun Jun 23 | Path A A/B decision review (per path_a_ab_test_plan.md) |
-| Mon Sep 15 | Inst features 6-mo threshold + F1 dead-feature pruning (gated on per-feature audit) + R1 refactor trigger-condition re-check |
+| ~Aug 2026 | VRP / IV-skew-change test (B8) — IV history sufficient |
+| ~Sep 1 | Opt-5 h=1 salvage re-test |
+| Mon Sep 15 | Inst features 6-mo threshold + F1 dead-feature pruning + R1 refactor re-check |
 | Q3 2026 | Option G cross-sectional service |
+| ~Apr 2027 | Track 2B orthogonal recall axes (12-mo history complete) |
+
+EXPIRED (pre-Jun 9, resolve status in session logs): May 26 pipeline-95-feat verify · May 29 ×2
+phase-epsilon/PCT7 checks · Jun 1 second outcomes batch · Jun 5 PCT7 promote/revert decision —
+if any of these never actually got decided, re-raise explicitly.
 
 ---
 
