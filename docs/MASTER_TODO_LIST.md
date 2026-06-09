@@ -303,7 +303,34 @@ GATED — only after the hunt yields survivors (do NOT build early):
 PRINCIPLE: hunt -> validate (kill fast) -> collect survivors -> combine (>=2) -> size. Each stage
 gated on the prior. Most of the queue needs only NEW METHOD on data you already have, not new data.
 
-IMMEDIATE NEXT ACTION: momentum promotion gate on its own path (MOMENTUM_LIVE) + sector caps; let
+=== JUN 9 2026 ROADMAP REFRESH (source docs: docs/strategic_review_jun9.md + docs/models_by_horizon_jun9.md) ===
+META-FINDING: five return-signal hunts killed at 149-159 names, all the same way. Bottleneck is
+BREADTH, not signal choice. Days-horizon (1-5d) prediction CLOSED permanently (5 kills + industry
+ceiling). Viable zones: weeks-months (cross-sectional) and 6-12mo (trend/factor).
+
+NEW ORDERED QUEUE (supersedes items 5-8 ordering above; full rationale in the two docs):
+  R1. JUN 29 (fixed): momentum live verdict + promotion gate. No strategy-hopping before it.
+  R2. INSIDER opportunistic-vs-routine (CMP 2012, 82bp/mo VW, replications hold). Free EDGAR
+      Form 4, full history, etl_insider.py exists. AUDIT FIRST: insider data depth (need ~3yr
+      per insider to classify routine). Monthly horizon, orthogonal axis. Gates: purged-WF +
+      per-regime + net-of-cost + abs(corr vs momentum) under 0.3 + min-events threshold.
+  R3. TSMOM trend-following on ETF set (Moskowitz-Ooi-Pedersen). NEW from models doc M13.
+      Absolute trend, vol-scaled, century of evidence, crisis-alpha. NO new data (close panel).
+      Same kill-gate harness as regime_gate_backtest.
+  R4. UNIVERSE EXPANSION (Track A — the structural fix). Add-Ticker Tool spec v2 already locked.
+      149 to 400+ names: +63pct IR on momentum mechanically, unlocks GKX-ranking + autoencoder,
+      allows honest re-tests of killed signals at scale. Infra project, parallel to R2/R3.
+  R5. XBRL FUNDAMENTALS ingestion (free EDGAR companyfacts) — unblocks Quality (Novy-Marx) +
+      Value, both data-gated NOT killed. PIT discipline (filing dates, not period dates).
+  R6. 13F/institutional: AUDIT ONLY — features/institutional_features.py (8 features, 374 lines)
+      built and UNWIRED. Read it, wire or kill consciously. Do not build new before reading.
+  R7. VRP ~Aug (scheduled, data accruing). Analyst-revisions: audit data availability first.
+  R8. C1 COMBINER the moment ANY of R2/R3/R5/VRP validates decorrelated — still the highest-value
+      gated item in the system.
+CLOSED Jun 9: M16 regime gate (NO-SHIP, see entry above). Macro-into-models answered at all
+three levels (features/prediction/gating). Sequence models, RL, HFT, more reversion: closed.
+
+PRIOR NEXT ACTION (still valid for R1): IMMEDIATE NEXT ACTION: momentum promotion gate on its own path (MOMENTUM_LIVE) + sector caps; let
 shadow accumulate ~20 trading days then validate live; rotate keys.
 
 ## PART 2 — THE FULL MODEL BUILD LIST (every model from the research, simple to complex)
