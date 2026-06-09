@@ -609,8 +609,6 @@ def reconcile_outcomes(
              AND p.prediction_date = o.prediction_date
              AND p.horizon = o.horizon
             WHERE o.id IS NULL
-               OR (o.actual_return = 0 AND o.actual_up = 0
-                   AND date(o.outcome_date) <= date('now', '-1 day'))
         """
         pending = pd.read_sql(query, conn)
 
@@ -709,6 +707,8 @@ def reconcile_outcomes(
                             continue
                         actual_ret = (price_at_outcome - price_at_pred) / price_at_pred
                         if actual_ret != actual_ret:
+                            continue
+                        if actual_ret == 0.0:
                             continue
                         actual_up = int(actual_ret > 0)
                     except Exception:
