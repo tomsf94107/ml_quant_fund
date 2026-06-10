@@ -99,3 +99,5 @@ reports/walkforward_*.csv
 # but DO track the dated archive (decay history)
 !reports/archive/
 !reports/archive/*.csv
+sec_filings.db
+data/osap/
