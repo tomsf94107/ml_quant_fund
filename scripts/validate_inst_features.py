@@ -24,7 +24,7 @@ INST_FEATS = [
     "inst_signed_flow_5d",
 ]
 RETRAIN_CUTOFF = "2026-05-21"   # Pipeline B retrain date to inspect
-AUC_BASELINE = 0.486            # verified pooled OOS baseline (memory #23)
+AUC_BASELINE = 0.51   # corrected May 17 honest baseline (0.486 was retracted loose-WF config)            # verified pooled OOS baseline (memory #23)
 INST_DATA_START = "2026-03-19"  # UW Basic historical floor
 
 # Institutional data only exists from Mar 19. The OOS window for NaN coverage:
