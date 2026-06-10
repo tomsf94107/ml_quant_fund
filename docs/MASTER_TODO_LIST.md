@@ -350,6 +350,13 @@ pre-earnings monitoring layer (active, separate).
 CLOSED Jun 9: M16 regime gate (NO-SHIP, see entry above). Macro-into-models answered at all
 three levels (features/prediction/gating). Sequence models, RL, HFT, more reversion: closed.
 
+=== UNIFIED BUILD ORDER (Jun 9 2026 — merges R-queue + P-ladder + cleanup; dependency-ordered) ===
+T0 NOW: dashboard dead-blend strip (PCT7 killed, UI still renders it) + dup recession.db + dead ui/4_Events.py
+T1 DATED: Jun 11/18/25 fitness h1/h3/h5 · Jun 23 PathA · Jun 24 MU · Jun 29 MOMENTUM VERDICT -> promotion mechanics built THEN (deliberate, caf4971)
+T2 HUNT: R2 insider audit (30min, decides path) -> R3 TSMOM build (no deps, parallel) -> insider build
+T3 FOUNDATIONS (parallel infra): XBRL fundamentals ETL (unlocks quality+value) · universe expansion (spec locked) · R6 institutional_features read-then-wire-or-kill
+T4 GATED: C1 combiner on first 2nd-alpha survivor · VRP Aug · h=1 salvage Sep · intraday Jun-Jul · Sep 15 inst/F1
+=== END UNIFIED BUILD ORDER ===
 PRIOR NEXT ACTION (still valid for R1): IMMEDIATE NEXT ACTION: momentum promotion gate on its own path (MOMENTUM_LIVE) + sector caps; let
 shadow accumulate ~20 trading days then validate live; rotate keys.
 
