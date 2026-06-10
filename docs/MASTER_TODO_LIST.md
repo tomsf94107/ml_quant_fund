@@ -900,7 +900,14 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 | Sun Jun 23 | Path A A/B decision review (per path_a_ab_test_plan.md) |
 | ~Aug 2026 | VRP / IV-skew-change test (B8) — IV history sufficient |
 | ~Sep 1 | Opt-5 h=1 salvage re-test |
-| Mon Sep 15 | Inst features 6-mo threshold + F1 dead-feature pruning + R1 refactor re-check |
+| Mon Sep 15 | INST FEATURES re-eval (R6 mid-June verdict Jun 10: scripts/validate_inst_features.py).
+  Status: 4 inst_ features (signed_flow_5d/30d, block_buy_sell_7d, auction_imbal_5d) WIRED in builder.py
+  (line ~1601, live) but mean_imp=0.00000 across ALL 16 retrains May21-Jun10, every horizon, rank ~94-97/100.
+  Coverage VALID (worst 33pct NaN); AUC SUCCESS is a STALE-BASELINE ARTIFACT (script compares vs retracted
+  0.486; real ~0.51 -> delta noise; AND zero-importance means the AUC came from other features, not these).
+  KEPT only because darkpool history is shallow (Mar19+ = 2mo at test time); Sep 15 gives ~6mo fair re-test.
+  HARD RULE Sep 15: DROP all 4 unless >=1 shows nonzero Pipeline-B importance by then. Default now = drop.
+  Also fix validate_inst_features.py AUC_BASELINE 0.486 -> 0.51 before re-running. Original: 6-mo threshold + F1 dead-feature pruning + R1 refactor re-check |
 | Q3 2026 | Option G cross-sectional service |
 | ~Apr 2027 | Track 2B orthogonal recall axes (12-mo history complete) |
 
