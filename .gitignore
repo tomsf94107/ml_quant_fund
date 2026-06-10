@@ -104,3 +104,4 @@ data/osap/
 *.db-shm
 *.db-wal
 *.db-journal
+fundamentals.db
