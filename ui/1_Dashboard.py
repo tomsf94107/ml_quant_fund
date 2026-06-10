@@ -816,8 +816,8 @@ with tab_forecast:
     <style>
       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
       *{{box-sizing:border-box;margin:0;padding:0;}}
-      .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:hidden;}}
-      .ft-head{{display:grid;grid-template-columns:7% 6% 8% 11% 7% 6% 7% 7% 9% 9% 8% 7% 8%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+      .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:clip;}}
+      .ft-head{{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:7% 6% 8% 11% 7% 6% 7% 7% 9% 9% 8% 7% 8%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
       .ft-head span{{text-align:right;cursor:pointer;user-select:none;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
       .ft-head span:hover{{color:#94a3b8;}}
       .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
