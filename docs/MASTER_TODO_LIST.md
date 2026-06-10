@@ -353,7 +353,19 @@ three levels (features/prediction/gating). Sequence models, RL, HFT, more revers
 === UNIFIED BUILD ORDER (Jun 9 2026 — merges R-queue + P-ladder + cleanup; dependency-ordered) ===
 T0 NOW: dashboard dead-blend strip (PCT7 killed, UI still renders it) + dup recession.db + dead ui/4_Events.py
 T1 DATED: Jun 11/18/25 fitness h1/h3/h5 · Jun 23 PathA · Jun 24 MU · Jun 29 MOMENTUM VERDICT -> promotion mechanics built THEN (deliberate, caf4971)
-T2 HUNT: R2 insider audit (30min, decides path) -> R3 TSMOM build (no deps, parallel) -> insider build
+T2 HUNT — status Jun 10 2026:
+  R2 INSIDER: audit DONE — schema perfect for CMP (per-insider name, P/S codes) but only 2yr depth;
+    EDGAR Form-4 backfill to 2019 launched (logs/insider_backfill_2019.log), confirmed crawling
+    (66K+ rows back to 2019-01-03 at 26/149 tickers; also fixes the stale-since-May-15 cursor).
+    INSIDER BUILD = next research session once backfill completes.
+  R3 TSMOM: full arc TESTED + KILLED Jun 10 (analysis/tsmom_validate.py + tsmom_attacks.py).
+    v1 equity-ETF set: G3 FAIL raw corr +0.407 vs XS-mom. Beta decomposition (residual +0.235)
+    earned ONE pre-registered MOP-faithful redesign. v2 multi-asset (10/10 ETFs): passed 4 gates
+    on 2019+ window (Sharpe +1.17, corr +0.225) BUT attack battery 3/4 — extended window (2016+,
+    Massive history cap) Sharpe +0.55 = window-kindness quantified; A2 FAIL SPY+QQQ 58pct of P&L;
+    ex-equity 8-ETF book +0.29 with 4 neg years of 10, metals-lumped. VERDICT: trend-gated equity
+    beta + sub-threshold commodity residual. Decorrelation real, standalone edge absent. FAMILY
+    CLOSED (v1, v2, ex-equity all examined). Seventh price-derived kill — different-axis rule holds.
 T3 FOUNDATIONS (parallel infra): XBRL fundamentals ETL (unlocks quality+value) · universe expansion (spec locked) · R6 institutional_features read-then-wire-or-kill
 T4 GATED: C1 combiner on first 2nd-alpha survivor · VRP Aug · h=1 salvage Sep · intraday Jun-Jul · Sep 15 inst/F1
 === END UNIFIED BUILD ORDER ===
