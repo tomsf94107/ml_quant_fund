@@ -357,7 +357,14 @@ T2 HUNT — status Jun 10 2026:
   R2 INSIDER: audit DONE — schema perfect for CMP (per-insider name, P/S codes) but only 2yr depth;
     EDGAR Form-4 backfill to 2019 launched (logs/insider_backfill_2019.log), confirmed crawling
     (66K+ rows back to 2019-01-03 at 26/149 tickers; also fixes the stale-since-May-15 cursor).
-    INSIDER BUILD = next research session once backfill completes.
+    INSIDER BUILD DONE Jun 11 (analysis/insider_event_study.py, events in data/insider_events.csv):
+    backfill complete (161K rows, 137 tickers, 2019+). CMP pivot to EVENT STUDY (cross-sectional
+    book sample-starved: 2,129 buys / 7yr at mega-caps). RESULT: FAIL pre-registered gates —
+    means (+7.0pct ex60) are skew mirages (median +0.6pct), positive years = 2020/2025 crash
+    rebounds only (beta-after-drawdown, not information), 4/8 years at 20d, C-suite 20d negative,
+    clusters flat 0.00. VERDICT: insider UNDERPOWERED at mega-cap universe, NOT dead — CMP effect
+    lives in small/mid caps. RE-TEST POST-EXPANSION (SP400 adds = denser insider buying).
+    FOURTH convergent finding pointing at breadth: momentum IR, qv IRs, C1 streams, insider density.
   R3 TSMOM: full arc TESTED + KILLED Jun 10 (analysis/tsmom_validate.py + tsmom_attacks.py).
     v1 equity-ETF set: G3 FAIL raw corr +0.407 vs XS-mom. Beta decomposition (residual +0.235)
     earned ONE pre-registered MOP-faithful redesign. v2 multi-asset (10/10 ETFs): passed 4 gates
