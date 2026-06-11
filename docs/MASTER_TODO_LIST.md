@@ -916,6 +916,7 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 | Tue Jun 24 | MU earnings print (pre-earnings layer: trim rule if positioned) |
 | **~Mon Jun 29** | MOMENTUM LIVE VERDICT — first cohort resolved. Promotion gate decision (R1). Run scripts/momentum_promotion_check.py |
 | Sun Jun 23 | Path A A/B decision review (per path_a_ab_test_plan.md) |
+| ~Jul 2026 (event-gated: expansion integrated + new-name backfills done) | POST-EXPANSION RE-TEST BATTERY: (1) insider event study on SP400 adds (denser buying; extend Form-4 backfill to new names first), (2) momentum re-validation at ~394 names (IR x sqrt-breadth check), (3) qv gp/op/ep re-validation at breadth, (4) C1 combiner RE-OPEN if stream IRs lift or insider validates as 5th stream |
 | ~Aug 2026 | VRP / IV-skew-change test (B8) — IV history sufficient |
 | ~Sep 1 | Opt-5 h=1 salvage re-test |
 | Mon Sep 15 | INST FEATURES re-eval (R6 mid-June verdict Jun 10: scripts/validate_inst_features.py).
