@@ -366,6 +366,17 @@ T2 HUNT — status Jun 10 2026:
     ex-equity 8-ETF book +0.29 with 4 neg years of 10, metals-lumped. VERDICT: trend-gated equity
     beta + sub-threshold commodity residual. Decorrelation real, standalone edge absent. FAMILY
     CLOSED (v1, v2, ex-equity all examined). Seventh price-derived kill — different-axis rule holds.
+T2.5 QUALITY/VALUE VALIDATED Jun 10 (analysis/qv_validate.py, books in data/qv_books.csv):
+  quality_gp/quality_op/value_ep PASS all gates after beta-strip refinement (raw corr vs mom
+  +0.57-0.67 is forced shared beta on long-only books; methodologically correct gate = residual).
+  Residual vs momentum: gp +0.25, op +0.17, ep +0.07. Attack battery 3/3: residual alpha
+  +8.0-9.6pct/yr (IR 0.68-0.75), pairwise residuals 0.25-0.54 (lt 0.6), BOTH eras positive
+  (no window-kindness, unlike TSMOM). value_bm KILLED (residual +0.43, book-value overlaps
+  momentum picks in this universe). CAVEATS on record: ~120-name survivorship-tilted panel
+  (levels flattered, momentum shares bias); one-shot PIT loop is slow, production needs the
+  fast-path rewrite (see institutional_features pit_fast pattern).
+  -- C1 COMBINER NOW UNBLOCKED: mom + gp + op + ep = four decorrelated streams. C1 backtest
+  is the next build; LIVE only after Jun 29 momentum verdict. --
 T3 FOUNDATIONS (parallel infra): XBRL fundamentals ETL (unlocks quality+value) · universe expansion (spec locked) · R6 institutional_features read-then-wire-or-kill
 T4 GATED: C1 combiner on first 2nd-alpha survivor · VRP Aug · h=1 salvage Sep · intraday Jun-Jul · Sep 15 inst/F1
 === END UNIFIED BUILD ORDER ===
