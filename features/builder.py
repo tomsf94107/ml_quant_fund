@@ -598,6 +598,12 @@ OUTPUT_COLUMNS = [
     "vol_10d_self_rank",        # C: rolling 252d rank of own volatility_10d
     "vol_zscore_60d",           # D: (vol_10d - mean_60d) / std_60d
     "is_squeeze_setup",         # E: vol_10d > 0.04 AND short_pct_float > 0.10
+    # -- PIT fundamentals (Jun 11 2026, fundamentals.db / Track C) -----------
+    "fund_gp_assets",           # (revenue - cogs) / total_assets, Novy-Marx quality
+    "fund_op_equity",           # operating_income / equity
+    "fund_ni_margin",           # net_income / revenue
+    "fund_bm",                  # equity / market cap (value)
+    "fund_ep",                  # net_income / market cap (earnings yield)
     # NOTE: short_self_rank + short_zscore_60d removed May 25 2026 — short_pct_float
     # is constant per ticker (single yfinance broadcast), so rolling rank/zscore degenerate.
 ]
@@ -614,6 +620,7 @@ OUTPUT_COLUMNS = [
 # existing 303 models unaffected. Flip ML_QUANT_INST_FEATURES=1 before a
 # Pipeline B retrain to bake them into the next model generation.
 _INST_FEATURES_ENABLED = os.environ.get("ML_QUANT_INST_FEATURES", "0") == "1"
+_FUND_FEATURES_ENABLED = os.environ.get("ML_QUANT_DISABLE_FUND_FEATURES", "0") != "1"
 _INST_FEATURE_COLS = [
     "inst_block_buy_sell_7d",
     "inst_signed_flow_30d",
@@ -1604,6 +1611,26 @@ def build_feature_dataframe(
                 df[_col] = _inst_df[_col].values
         except Exception:
             for _col in _INST_FEATURE_COLS:
+                df[_col] = np.nan
+
+    # -- 11c-2. PIT fundamentals from fundamentals.db (Jun 11 2026, Track C wire) --
+    # Quarterly step-functions, strict filed_date < as_of (no same-day leak).
+    # NaN before first filing = honest unknown. Fail-loud pattern per Rule 1.
+    _FUND_FEATURE_COLS = ["fund_gp_assets", "fund_op_equity", "fund_ni_margin",
+                          "fund_bm", "fund_ep"]
+    if _FUND_FEATURES_ENABLED:
+        try:
+            from features.fundamental_features import load_fundamental_features_pit
+            _close_ser = df["close"] if "close" in df.columns else None
+            if _close_ser is not None:
+                _close_ser = pd.Series(_close_ser.values, index=date_index)
+            _fund_df = load_fundamental_features_pit(ticker, date_index, close=_close_ser)
+            for _col in _FUND_FEATURE_COLS:
+                df[_col] = _fund_df[_col].values
+        except Exception as _fund_e:
+            import logging as _flg
+            _flg.getLogger(__name__).error(f"fundamental_features failed {ticker}: {_fund_e!r}")
+            for _col in _FUND_FEATURE_COLS:
                 df[_col] = np.nan
 
     # ── 11d. Phase 1 D — interaction/normalized features (May 25 2026) ───────

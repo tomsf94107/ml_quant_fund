@@ -108,3 +108,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # filter as h=3/h=5 cross MIN_OBS=30 (~May 22)
 0 5 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m analysis.fitness_scorer --db accuracy.db --write-table --csv fitness.csv >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/fitness_scorer_weekly.log 2>&1
 
+
+# Weekly XBRL fundamentals refresh (Sun 4:30 AM VN, ~5min, 394 tickers)
+30 4 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_xbrl_fundamentals >> logs/xbrl_weekly.log 2>&1
