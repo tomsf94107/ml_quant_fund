@@ -117,3 +117,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 # Weekly analyst revisions snapshot (Sun 7:20 AM VN, after xbrl)
 20 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m scripts.analyst_snapshot >> logs/analyst_snapshot.log 2>&1
+
+# Weekly revenue refresh (Sun 5 AM VN = Sat eve ET; was nightly Stage 4 in pipeline A — 87min for 0 rows on non-earnings days)
+0 5 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_polygon_revenue --all >> logs/revenue_weekly.log 2>&1

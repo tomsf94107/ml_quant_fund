@@ -77,10 +77,10 @@ log "Stage 3 OK"
 # train_all.py). etl_earnings was changed to UPSERT eps_* only (preserving 
 # rev_*) so order doesn't matter for correctness, but we run Polygon here
 # so rev_growth features are fresh in the panel that Pipeline B trains on.
-log "Stage 4: Polygon revenue refresh"
-$PYTHON -m data.etl_polygon_revenue --all \
-    > "$LOGDIR/04_polygon_revenue.log" 2>&1 || fail "Stage 4 (polygon_revenue)"
-log "Stage 4 OK"
+# MOVED to weekly cron Sun 05:00 VN (Jun 12: 87min nightly for 0 rows): log "Stage 4: Polygon revenue refresh"
+# MOVED to weekly cron Sun 05:00 VN (Jun 12: 87min nightly for 0 rows): $PYTHON -m data.etl_polygon_revenue --all \
+# MOVED to weekly cron Sun 05:00 VN (Jun 12: 87min nightly for 0 rows):     > "$LOGDIR/04_polygon_revenue.log" 2>&1 || fail "Stage 4 (polygon_revenue)"
+# MOVED to weekly cron Sun 05:00 VN (Jun 12: 87min nightly for 0 rows): log "Stage 4 OK"
 
 # Mark success so Pipeline B can run
 touch "$MARKER"
