@@ -45,7 +45,7 @@ log "=== PIPELINE C START ==="
 # still aborts the DIRECTION-MODEL publish (Stages 1-2) on RED.
 log "Stage -2: Momentum shadow signal (cross-sectional, shadow-only)"
 MOM_START=$(date +%s)
-if timeout 600 $PYTHON scripts/momentum_shadow.py \
+if timeout 600 $PYTHON -m scripts.momentum_shadow \
     > "$LOGDIR/03_momentum_shadow.log" 2>&1; then
     MOM_DUR=$(($(date +%s) - MOM_START))
     log "Stage -2 OK (${MOM_DUR}s) — momentum shadow picks logged"
@@ -94,7 +94,7 @@ fi
 # ── Stage 0: Daily sentiment (non-critical, 15-min timeout) ──────────────────
 log "Stage 0: Daily sentiment scoring"
 SENT_START=$(date +%s)
-if timeout 900 $PYTHON scripts/daily_sentiment.py \
+if timeout 900 $PYTHON -m scripts.daily_sentiment \
     > "$LOGDIR/00_sentiment.log" 2>&1; then
     SENT_DUR=$(($(date +%s) - SENT_START))
     log "Stage 0 OK (${SENT_DUR}s)"
@@ -111,7 +111,7 @@ fi
 
 # ── Stage 1: UW full snapshot ────────────────────────────────────────────────
 log "Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)"
-$PYTHON scripts/daily_uw_snapshot.py --mode full \
+$PYTHON -m scripts.daily_uw_snapshot --mode full \
     > "$LOGDIR/01_uw_snap.log" 2>&1 || fail "Stage 1 (uw_snapshot)"
 log "Stage 1 OK"
 
