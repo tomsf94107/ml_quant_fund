@@ -53,7 +53,7 @@ def main():
     shutil.copy(meta_path, ROOT / f"tickers_metadata.csv.bak.expansion_{ts}")
 
     with open(ROOT / "tickers.txt", "a") as f:
-        f.write("\n# === Track A expansion " + time.strftime("%Y-%m-%d") + " (245 SP500/SP400 sector-diversified) ===\n")
+        pass  # NO comment lines in tickers.txt: production readers do not filter hash lines (Jun 12 lesson)
         for t in adds.ticker:
             f.write(t + "\n")
 
