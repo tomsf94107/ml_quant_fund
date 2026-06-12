@@ -110,7 +110,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 
 # Weekly XBRL fundamentals refresh (Sun 4:30 AM VN, ~5min, 394 tickers)
-30 4 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_xbrl_fundamentals >> logs/xbrl_weekly.log 2>&1
+10 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_xbrl_fundamentals >> logs/xbrl_weekly.log 2>&1
 
 # Recession weekly update (Sun 6 AM VN; Mac wake 5:50 via pmset)
 0 7 * * 0 ML_QUANT_PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python /Users/atomnguyen/Desktop/ML_Quant_Fund/recession/weekly_update.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/recession_weekly.log 2>&1
