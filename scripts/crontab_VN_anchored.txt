@@ -43,8 +43,8 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PIPELINE A — post-close ingest (3 AM VN = 4 PM ET prev day, Tue-Sat)
-0 3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_A_ingest.sh
-0 4 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_D_alpha_panel.sh
+0 3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_chain_ADB.sh
+# CHAINED into pipeline_chain_ADB.sh (Jun 12): 0 4 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_D_alpha_panel.sh
 # Economic calendar refresh — Mon/Wed/Fri 15:55 ET (5 min before Pipeline A)
 # Populates accuracy.db.economic_calendar (45 days forward) for risk_gate + Events page
 55 2 * * 2,4,6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/refresh_economic_calendar.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/refresh_econ_cal.log 2>&1
@@ -55,7 +55,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 # PIPELINE B — retrain + predict (7 AM VN = 8 PM ET prev day, Tue-Sat)
 # Depends on Pipeline A completing. Will refuse to run if A's marker is missing.
-0 7 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_B_train_predict.sh
+# CHAINED into pipeline_chain_ADB.sh (Jun 12): 0 7 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_B_train_predict.sh
 
 # PIPELINE C — pre-open fresh runfund (8 PM VN = 9 AM ET, Mon-Fri)
 0 19 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_C_preopen.sh
