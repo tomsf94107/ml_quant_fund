@@ -917,6 +917,8 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 | **~Mon Jun 29** | MOMENTUM LIVE VERDICT — first cohort resolved. Promotion gate decision (R1). Run scripts/momentum_promotion_check.py |
 | Sun Jun 23 | Path A A/B decision review (per path_a_ab_test_plan.md) |
 | ~Jul 2026 (event-gated: expansion integrated + new-name backfills done) | POST-EXPANSION RE-TEST BATTERY: (1) insider event study on SP400 adds (denser buying; extend Form-4 backfill to new names first), (2) momentum re-validation at ~394 names (IR x sqrt-breadth check), (3) qv gp/op/ep re-validation at breadth, (4) C1 combiner RE-OPEN if stream IRs lift or insider validates as 5th stream |
+| Jul 12 2026 | SELL signal monthly re-eval. Jun 12 result: NO-SHIP, DEGRADED — n=608, acc 52.6pct, avg_ret +0.837pct POSITIVE (counter-signal; May was -0.314). If still counter-signal in Jul, CLOSE the cadence. |
+| ~Sep-Dec 2026 | Analyst-revisions signal first testable (weekly snapshots accruing since Jun 12, scripts/analyst_snapshot.py, Sun 7:20 cron) |
 | ~Aug 2026 | VRP / IV-skew-change test (B8) — IV history sufficient |
 | ~Sep 1 | Opt-5 h=1 salvage re-test |
 | Mon Sep 15 | INST FEATURES re-eval (R6 mid-June verdict Jun 10: scripts/validate_inst_features.py).

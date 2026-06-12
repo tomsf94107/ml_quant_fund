@@ -114,3 +114,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 # Recession weekly update (Sun 6 AM VN; Mac wake 5:50 via pmset)
 0 7 * * 0 ML_QUANT_PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python /Users/atomnguyen/Desktop/ML_Quant_Fund/recession/weekly_update.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/recession_weekly.log 2>&1
+
+# Weekly analyst revisions snapshot (Sun 7:20 AM VN, after xbrl)
+20 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m scripts.analyst_snapshot >> logs/analyst_snapshot.log 2>&1
