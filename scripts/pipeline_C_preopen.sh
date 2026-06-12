@@ -91,10 +91,10 @@ else
 fi
 
 
-# ── Stage 0: Daily sentiment (non-critical, 15-min timeout) ──────────────────
+# ── Stage 0: Daily sentiment (non-critical, 45-min timeout (394 names; was 15min at 149)) ──────────────────
 log "Stage 0: Daily sentiment scoring"
 SENT_START=$(date +%s)
-if timeout 900 $PYTHON -m scripts.daily_sentiment \
+if timeout 2700 $PYTHON -m scripts.daily_sentiment \
     > "$LOGDIR/00_sentiment.log" 2>&1; then
     SENT_DUR=$(($(date +%s) - SENT_START))
     log "Stage 0 OK (${SENT_DUR}s)"
