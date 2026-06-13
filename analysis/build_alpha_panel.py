@@ -341,6 +341,7 @@ def build_alpha_panel(
     ts_windows: tuple[int, ...] = (5, 10, 20),
     bucket_map: Optional[dict] = None,
     verbose: bool = True,
+    parallel: bool = False,
 ) -> dict:
     """
     End-to-end: build base panels, explode via 17 operators, write parquet.
@@ -368,8 +369,14 @@ def build_alpha_panel(
              f"{next(iter(panels.values())).shape}")
     log.info(f"Exploding via {len(ALPHA_OPS) - len(SKIP_FROM_EXPLODE)} operators...")
 
-    alphas = explode_panels(panels, bucket_map=bucket_map,
-                            ts_windows=ts_windows, verbose=verbose)
+    if parallel:
+        from analysis.explode_parallel import explode_panels_parallel
+        log.info("Using PARALLEL explode")
+        alphas = explode_panels_parallel(panels, bucket_map=bucket_map,
+                                         ts_windows=ts_windows, verbose=verbose)
+    else:
+        alphas = explode_panels(panels, bucket_map=bucket_map,
+                                ts_windows=ts_windows, verbose=verbose)
 
     log.info(f"Generated {len(alphas)} alphas. Writing parquet...")
     return write_alpha_panel(alphas, output_dir, target_dates, verbose)

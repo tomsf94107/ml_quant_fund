@@ -55,10 +55,11 @@ from analysis.build_alpha_panel import build_alpha_panel
 
 t0 = time.time()
 summary = build_alpha_panel(
-    tickers=None,           # load all from tickers.txt (125 tickers)
+    tickers=None,           # load all from tickers.txt (394 tickers)
     start_date='2024-01-01',
-    target_dates=None,      # write all dates available
+    target_dates=None,      # write all dates available (TODO: incremental)
     verbose=True,
+    parallel=True,          # 8.9x explode, parity-verified Jun 13
 )
 print(f'Elapsed: {time.time()-t0:.1f}s')
 print(f'Dates: {summary[\"dates_written\"]}, Alphas: {summary[\"alphas_written\"]}')
