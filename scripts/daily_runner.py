@@ -250,9 +250,11 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
     now = now_et()
 
 
-    if not is_trading_day():
+    if not is_trading_day() and not force:
         log.info("Weekend — skipping run")
         return
+    if not is_trading_day() and force:
+        log.info("Weekend — but force=True, running anyway (predictions off last close)")
 
     # One-time schema migration: ensure prediction_features has the 4
     # institutional feature columns (no-op if already present). Mirrors the
