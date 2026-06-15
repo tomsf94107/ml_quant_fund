@@ -31,6 +31,14 @@ from pathlib import Path
 from typing import Callable, Optional
 
 import requests
+import socket
+
+# Hard socket-level deadline: requests timeout=15 does NOT reliably cover the
+# TLS handshake phase (do_handshake) on half-open sockets after sleep/wake.
+# Jun 15 incident: Stage 1 hung 8h in do_handshake, froze entire A->D->B chain.
+# This forces ANY socket op (incl. handshake) to abort, so a wedged connection
+# fails fast and retries instead of hanging the night.
+socket.setdefaulttimeout(30)
 
 # Reuse helpers from the existing aggregating scraper
 from data.etl_insider import (
