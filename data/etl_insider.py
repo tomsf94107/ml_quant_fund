@@ -42,6 +42,12 @@ import socket
 # cover the TLS do_handshake phase on half-open sockets after sleep/wake.
 # Stage 1 hung 8h here, froze the A->D->B chain. Force any socket op to abort.
 socket.setdefaulttimeout(30)
+import socket
+
+# Hard socket-level deadline (Jun 15 incident): requests timeout=15 does NOT
+# cover the TLS do_handshake phase on half-open sockets after sleep/wake.
+# Stage 1 hung 8h here, froze the A->D->B chain. Force any socket op to abort.
+socket.setdefaulttimeout(30)
 
 # ── Config ────────────────────────────────────────────────────────────────────
 DB_PATH      = Path(os.getenv("INSIDER_DB_PATH", "insider_trades.db"))
