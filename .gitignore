@@ -105,3 +105,4 @@ data/osap/
 *.db-wal
 *.db-journal
 fundamentals.db
+prices.db

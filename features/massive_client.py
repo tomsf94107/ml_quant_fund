@@ -224,6 +224,9 @@ def _request_with_retry(url, params, timeout=(5, 20), max_retries=3):
     raise RuntimeError(f"Massive API failed after {max_retries} retries: {last_err}")
 
 
+_PRICE_CACHE_ENABLED = True  # persistent daily-bar cache (prices.db)
+
+
 def download(
     tickers,
     start=None,
@@ -277,7 +280,22 @@ def download(
         else:
             _check_key()
             mult, span = _interval_to_massive(interval)
-            _result = _download_single(tickers, start_str, end_str, mult, span, auto_adjust)
+            # Persistent price cache: daily stock bars from prices.db (raw +
+            # backward split adjust), fetch only the new gap. Guarded to daily
+            # adjusted single-ticker; any failure falls back to direct fetch.
+            _use_cache = (span == "day" and mult == 1 and auto_adjust)
+            if _use_cache and _PRICE_CACHE_ENABLED:
+                try:
+                    from features import price_cache as _pc
+                    def _raw_fn(_t, _s, _e):
+                        return _download_single(_t, _s, _e, 1, "day", False)
+                    _result = _pc.cached_daily(tickers, start_str, end_str,
+                                               _raw_fn, get_splits)
+                except Exception as _e:
+                    log.warning("price_cache failed for %s, direct fetch: %s", tickers, _e)
+                    _result = _download_single(tickers, start_str, end_str, mult, span, auto_adjust)
+            else:
+                _result = _download_single(tickers, start_str, end_str, mult, span, auto_adjust)
         # Store in cache — deepcopy at write so caller mutations don't corrupt cache
         if _MASSIVE_CACHE_ENABLED and _result is not None and not _result.empty:
             _MASSIVE_CACHE[_ck] = (_time.time(), _result.copy(deep=True))
@@ -604,3 +622,29 @@ def get_quote_at(ticker: str, sip_ts_ns: int,
         return None
     results = data.get("results", []) or []
     return results[0] if results else None
+
+
+def get_splits(ticker: str) -> list:
+    """Historical stock splits via /v3/reference/splits.
+    Returns [{'execution_date','split_from','split_to'}, ...]."""
+    _check_key()
+    url = f"{BASE_URL}/v3/reference/splits"
+    params = {
+        "ticker": ticker,
+        "limit": 1000,
+        "order": "asc",
+        "sort": "execution_date",
+        "apiKey": API_KEY,
+    }
+    out = []
+    try:
+        data = _request_with_retry(url, params)
+        for s in data.get("results", []):
+            out.append({
+                "execution_date": s["execution_date"],
+                "split_from": s.get("split_from", 1),
+                "split_to": s.get("split_to", 1),
+            })
+    except Exception as e:
+        log.warning(f"massive.get_splits failed {ticker}: {e}")
+    return out
