@@ -106,3 +106,4 @@ data/osap/
 *.db-journal
 fundamentals.db
 prices.db
+prices.db
