@@ -744,18 +744,21 @@ def generate_signals(
     # ── Intraday momentum multiplier ─────────────────────────────────────────
     # If stock is moving UP intraday → boost prob_eff slightly
     # If stock is moving DOWN intraday → cut prob_eff slightly
+    # Intraday momentum multiplier — DISABLED (proven noise: directional acc
+    # <=50% in 3 of 4 months Mar-Jun 2026; edge was regime/beta artifact).
+    # Gated off skips per-ticker 5-min fetch + stops noise tilting prob_eff.
+    # Re-enable: ML_QUANT_ENABLE_INTRADAY_MULT=1 only if edge proven.
     intraday_mult = 1.0
-    try:
-        from features.intraday_builder import get_all_intraday_signals
-        intra = get_all_intraday_signals([ticker])
-        sig = intra.get(ticker, {})
-        momentum = sig.get("intraday_momentum", 0.0)
-        if momentum is not None and momentum == momentum:  # not NaN
-            # Scale: momentum of +0.01 → 1.02x boost, -0.01 → 0.98x penalty
-            # Cap at ±5% adjustment
-            intraday_mult = min(max(1.0 + (momentum * 2), 0.95), 1.05)
-    except Exception:
-        intraday_mult = 1.0
+    if os.environ.get("ML_QUANT_ENABLE_INTRADAY_MULT", "0") == "1":
+        try:
+            from features.intraday_builder import get_all_intraday_signals
+            intra = get_all_intraday_signals([ticker])
+            sig = intra.get(ticker, {})
+            momentum = sig.get("intraday_momentum", 0.0)
+            if momentum is not None and momentum == momentum:
+                intraday_mult = min(max(1.0 + (momentum * 2), 0.95), 1.05)
+        except Exception:
+            intraday_mult = 1.0
 
     # ── 1. Get calibrated probabilities ──────────────────────────────────────
     # A/B test: also compute GLOBAL cross-sectional prediction. Per-ticker stays

@@ -267,7 +267,14 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
             # Rate limit — 120 req/min = 0.5s per ticker
             time.sleep(0.5)
 
-        conn.commit()
+            # Incremental commit every 25 tickers: a later stall (stuck ticker
+            # on UW 429 retries) or crash can't lose all prior work. Previously
+            # one end-of-loop commit meant a stuck ticker wiped the whole
+            # snapshot (0 rows committed). Confirmed Jun 16 2026.
+            if i % 25 == 0:
+                conn.commit()
+
+        conn.commit()  # final commit for the last <25 tickers
 
     print(f"\n{'='*60}")
     print(f"  Dark pool:  {dp_ok} ok  {dp_fail} failed")
