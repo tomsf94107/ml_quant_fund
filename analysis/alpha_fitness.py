@@ -30,13 +30,20 @@ _COST = float(os.environ.get("ML_QUANT_COST_BPS", "10.0")) / 10_000.0
 # Prefixes of base features that are MARKET-WIDE (same value across all tickers
 # on a given day): they cannot rank the cross-section. Flagged, not scored as
 # stock-pickers. Derived from the feature names seen in the panel.
-_MARKET_PREFIXES = ("dxy", "spy", "vix", "oil", "xl", "igv", "tnx", "move",
-                    "fear", "greed", "regime", "market", "sp500", "risk_prev")
+# Market-wide / drop classification is DATA-DRIVEN (analysis/detect_mw.py),
+# not a guessed prefix list. An alpha is market_wide if its values are constant
+# across tickers per date (<=2 distinct, measured over sampled dates); drop if
+# near-all-NaN; else per_ticker. Verified by detect_mw._selftest against ground
+# truth. Replaces the old hand-typed _MARKET_PREFIXES (caught ~190 of 1415).
+from analysis.detect_mw import classify_bases, classify_alpha
 
+_BASE_CLASSES = None
 
-def _is_market_wide(alpha_name: str) -> int:
-    base = alpha_name.split("__")[0].lower()
-    return int(any(base.startswith(p) for p in _MARKET_PREFIXES))
+def _get_base_classes():
+    global _BASE_CLASSES
+    if _BASE_CLASSES is None:
+        _BASE_CLASSES = classify_bases()  # base-level, verified by detect_mw._selftest
+    return _BASE_CLASSES
 
 
 def _load_panel(panel_dir: Path) -> pd.DataFrame:
@@ -109,6 +116,7 @@ def _score_one(a: pd.Series, r: pd.Series, dates: pd.Series) -> dict | None:
 def score_cross_sectional(panel_dir: Path, db_path: Path, horizon: int) -> pd.DataFrame:
     panel = _load_panel(panel_dir)
     m = _merge_outcomes(panel, db_path, horizon)
+    base_classes = _get_base_classes()
     cols = [c for c in panel.columns if c not in ("ticker", "date")]
     rows = []
     for c in cols:
@@ -116,7 +124,7 @@ def score_cross_sectional(panel_dir: Path, db_path: Path, horizon: int) -> pd.Da
         if res:
             res["alpha"] = c
             res["horizon"] = horizon
-            res["is_market_wide"] = _is_market_wide(c)
+            res["is_market_wide"] = int(classify_alpha(c, base_classes) == "market_wide")
             rows.append(res)
     df = pd.DataFrame(rows)
     return df.sort_values("fitness", ascending=False)
