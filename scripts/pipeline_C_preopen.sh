@@ -8,7 +8,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 #   Stage 0: Daily sentiment scoring (~5-8 min, non-critical, continues on fail)
 #   Stage 1: UW full snapshot (short interest, analyst, FTDs, seasonality)
-#   Stage 2: Run daily predictions again with fresh live features
+#   (Stage 2 daily_runner removed Jun 17 2026 — signal gen owned by Pipeline B)
 # ─────────────────────────────────────────────────────────────────────────────
 
 set -euo pipefail
@@ -83,10 +83,11 @@ else
         log "  WARNING only; CONTINUING (prices/momentum/sentiment refresh; kill switch forces BUY->HOLD)."
         cat "$LOGDIR/neg1_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
     else
-        log "Stage -1 RED — direction model ENABLED; ABORTING publish (broken signal direction)"
-        osascript -e "display notification \"Pipeline C ABORTED: signal sanity guard RED\" with title \"ML Quant Fund\"" 2>/dev/null || true
+        # Jun 17 2026: Stage 2 (daily_runner) removed from C — signal publish now
+        # lives only in Pipeline B. This guard no longer gates a publish here, so
+        # it is MONITOR-ONLY: log RED for visibility, do NOT abort C's data refresh.
+        log "Stage -1 RED (monitor-only; C no longer publishes signals — see Pipeline B guard)"
         cat "$LOGDIR/neg1_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
-        exit 2
     fi
 fi
 
@@ -115,11 +116,12 @@ $PYTHON -m scripts.daily_uw_snapshot --mode full \
     > "$LOGDIR/01_uw_snap.log" 2>&1 || fail "Stage 1 (uw_snapshot)"
 log "Stage 1 OK"
 
-# ── Stage 2: Fresh runfund ───────────────────────────────────────────────────
-log "Stage 2: Daily runner (fresh signals with live UW data)"
-$PYTHON -m scripts.daily_runner_batched \
-    > "$LOGDIR/02_daily_runner.log" 2>&1 || fail "Stage 2 (daily_runner)"
-log "Stage 2 OK"
+# ── Stage 2 REMOVED (Jun 17 2026): signal generation now owned solely by
+# Pipeline B (Stage 3 daily_runner, runs right after retraining). C is now a
+# pre-open DATA-REFRESH pipeline only (momentum shadow + sentiment + UW snapshot).
+# The pre-open UW refresh (short interest / analyst / FTD / seasonality) is
+# slow-moving, so re-running ~400-ticker inference here added negligible signal
+# while being the most fragile/contended stage (RC hang, memory-jetsam, collisions).
 
 
 log "=== PIPELINE C COMPLETE ==="
