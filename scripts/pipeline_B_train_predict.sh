@@ -62,6 +62,30 @@ $PYTHON -m models.train_all_batched \
     > "$LOGDIR/02_train_all.log" 2>&1 || fail "Stage 2 (train_all)"
 log "Stage 2 OK"
 
+# ── Stage 2.5: signal sanity guard (Jun 17 2026) ─────────────────────────────
+# Moved here from Pipeline C when C's daily_runner was removed. B is now the
+# SOLE signal-publish path, so the inverted-direction guard must live here,
+# BEFORE Stage 3 publishes. Defense-in-depth alongside the ML_QUANT_DISABLE_BUY
+# kill switch (which forces every BUY->HOLD at generation) and the Stage 4
+# post-publish validator. On RED: abort the publish only if the direction model
+# is LIVE; if BUYs are disabled, WARN + continue (nothing broken can publish).
+log "Stage 2.5: signal sanity guard (direction / BUY-hit / rank-IC)"
+if $PYTHON analysis/signal_sanity_guard.py --db accuracy.db --days 90 \
+    > "$LOGDIR/025_sanity_guard.log" 2>&1; then
+    log "Stage 2.5 OK — sanity guard GREEN, proceeding to publish"
+else
+    if [ "${ML_QUANT_DISABLE_BUY:-1}" = "1" ]; then
+        log "Stage 2.5 RED — but DIRECTION MODEL DISABLED (ML_QUANT_DISABLE_BUY=1)."
+        log "  WARNING only; CONTINUING (kill switch forces every BUY->HOLD)."
+        cat "$LOGDIR/025_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
+    else
+        log "Stage 2.5 RED — direction model ENABLED; ABORTING publish (broken signal direction)"
+        osascript -e "display notification \"Pipeline B ABORTED: signal sanity guard RED\" with title \"ML Quant Fund\"" 2>/dev/null || true
+        cat "$LOGDIR/025_sanity_guard.log" | tee -a "$LOGDIR/pipeline.log"
+        exit 2
+    fi
+fi
+
 # ── Stage 3: Daily predictions ───────────────────────────────────────────────
 log "Stage 3: Daily runner (generates today's signals)"
 $PYTHON -m scripts.daily_runner_batched \
