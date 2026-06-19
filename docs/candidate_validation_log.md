@@ -44,3 +44,30 @@ EDGAR text ingestion from scratch).
 
 Scratch validators added: validate_intraday_ret.py, validate_skew_change.py,
 validate_pead.py, validate_pead_diag.py
+
+## MAJOR FIX: dead macro/sector feature layer — 2026-06-19
+
+DISCOVERED while testing residual momentum (#5): the entire market/sector/macro-ETF
+feature layer was 100% NaN in the panel back to 2024. Root cause: massive_client
+routed sector/macro ETFs (SPY, XLK, all sectors, USO, credit ETFs) to Massive,
+which (options-focused tier) returns NO ETF data. Failure cached + circuit-broken
+-> 0/394 non-null for spy_ret, xlk_ret, all sectors, oil_ret, sector_rel_ret.
+vix_close + dxy_ret survived (FRED path). Model trained WITHOUT market/sector
+context despite sector-beta thesis.
+
+FIX (commit 62f6cb1): added MACRO_ETF_SYMBOLS set to massive_client _is_index()
+routing -> ETFs now fetch via yfinance. Verified: 0/1100 -> 1100/1100 non-null
+for xlk_ret/spy_ret/sector_rel_ret/oil_ret at builder level.
+
+DEPLOYMENT: needs panel rebuild (D) + retrain (B) to take effect. Material change —
+8 features the model never trained on. Watch post-retrain validation.
+
+BASELINE (pre-fix, directional acc last 60d, to compare after retrain):
+  h=1: 60.9% (n=6470)
+  h=3: 53.9% (n=6205)   <- weakest, most room for macro/sector context to help
+  h=5: 55.6% (n=5395)
+  alpha_fitness h=1: avg ic_t 0.35, max 4.23
+
+Interpretation guide: expect biggest lift at h=3 if macro helps. If h=1 drops
+and h=3/h=5 dont improve -> added noise, consider regularization or revert.
+Also unblocks residual momentum (#5) testing once sector_rel_ret is live in panel.
