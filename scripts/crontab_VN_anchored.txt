@@ -121,3 +121,4 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Weekly revenue refresh (Sun 5 AM VN = Sat eve ET; was nightly Stage 4 in pipeline A — 87min for 0 rows on non-earnings days)
 0 5 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_polygon_revenue --all >> logs/revenue_weekly.log 2>&1
 */15 * * * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/ensure_dashboard_up.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dashboard_cron.log 2>&1
+0 9 1 * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/check_accrual_retests.sh
