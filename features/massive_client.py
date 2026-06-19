@@ -133,10 +133,26 @@ INDEX_SYMBOLS = {
     "DX-Y.NYB",                         # US Dollar Index (Yahoo-only format)
 }
 
+# Sector/macro ETFs: Massive (options-focused tier) returns NO data for these,
+# which silently NaN'd the entire market/sector feature layer (spy_ret, xlk_ret,
+# all sector ETFs, oil, sector_rel_ret) back to 2024. yfinance serves them fine.
+# Fix Jun 19 2026 — route macro/sector ETFs to yfinance like index symbols.
+MACRO_ETF_SYMBOLS = {
+    "SPY", "QQQ",                              # broad market
+    "XLK", "XLV", "XLF", "XLU", "XLI", "XLP",  # sectors
+    "XLY", "XLC", "XLRE", "XLB", "XLE",        # sectors
+    "USO",                                      # oil
+    "SMH", "IGV",                               # semis, software
+    "LQD", "HYG",                               # credit (IG, HY)
+    "GLD", "SLV", "TLT", "IEF",                # gold, silver, bonds
+}
+
 
 def _is_index(symbol):
     """Return True if symbol should route to yfinance instead of Massive."""
     if symbol in INDEX_SYMBOLS:
+        return True
+    if symbol in MACRO_ETF_SYMBOLS:   # sector/macro ETFs — Massive has no data
         return True
     if symbol.startswith("^"):
         return True
