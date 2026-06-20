@@ -159,3 +159,21 @@ momentum/beta/insider/fundamental. Pruning helped vs 3540-feat noise but did not
 produce a confirmed tradeable signal.
 
 Relevance bucketing verified correct (0-9). Lambdarank deterministic (no seed issue).
+
+## Panel ranker — horizon sweep (held-out only) — 2026-06-21 — Build 1 CLOSED
+
+| horizon | held-out rank-IC | t-stat | verdict |
+| h=5 | +0.0235 | 1.76 | suggestive, not significant |
+| h=3 | +0.0157 | 1.10 | weak |
+| h=1 | +0.0018 | 0.12 | none |
+
+Signal monotonically decays h=5 -> h=1 (expected: cross-sectional signal needs
+multi-day horizon; h=1 = noise). Best case h=5 t=1.76, still below significance.
+
+BUILD 1 CLOSED. Honest outcome: panel ranker (lambdarank on alpha panel, the model
+that CAN use the stranded signals) produces no statistically significant tradeable
+edge at any horizon. Stranded signals usable but weak (bottom-third). The whole
+"wire validated cross-sectional signals into a model" thread resolves to: they're
+real in isolation but don't carry weight in a multi-feature model dominated by
+momentum/beta/insider/fundamentals. No production change. Next axis = Lazy Prices
+(orthogonal text signal), the one family NOT already saturated in the model.
