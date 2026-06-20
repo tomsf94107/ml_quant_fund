@@ -134,3 +134,28 @@ This explains the whole chain: signals validate cross-sectionally on the panel, 
 production models (per-ticker + ranker-on-fresh-builder) can't access the historical
 cross-section. NOT a tonight-fix. A scoped architecture decision: "train a model on
 the alpha panel where the validated signals actually live."
+
+## Panel ranker — RULE-1 AUDIT CORRECTION — 2026-06-20
+
+Pre-audit claims were OPTIMISTIC. Corrected honest numbers:
+
+CLAIM A (significance): pre-audit reported pooled IC 0.022 t=2.03 "significant".
+  AUDIT: that pool included the selection-window folds. HELD-OUT ONLY (folds 3-5,
+  never used in feature selection): rank-IC +0.0235, t=1.76 — NOT significant (t<2).
+  Note: held-out IC (0.0235) >= in-selection (0.0178), so NOT selection-overfit;
+  it's regime variance (fold3 -0.020, fold5 +0.067) keeping t below 2.
+
+CLAIM B (stranded signals central): pre-audit "short_float gain 184, central".
+  AUDIT: 184 was ABSOLUTE gain, inflated by having only 53 features. By RANK among
+  the 53: short_pct_float 39/53, pc_ratio 46/53, iv_skew 47/53 — BOTTOM THIRD.
+  The model's real signal comes from beta_60d/return_60d/insider_60d/fund_* (momentum,
+  beta, insider, fundamentals), NOT the options/short stranded signals.
+
+CORRECTED CONCLUSION: panel ranker shows a modest SUGGESTIVE cross-sectional signal
+(held-out IC ~0.023) but NOT significant (t=1.76) and regime-dependent. The stranded
+validated signals are USABLE here (the architectural finding holds) but are WEAK
+contributors (bottom-third) — they are NOT the edge. The edge, such as it is, is
+momentum/beta/insider/fundamental. Pruning helped vs 3540-feat noise but did not
+produce a confirmed tradeable signal.
+
+Relevance bucketing verified correct (0-9). Lambdarank deterministic (no seed issue).
