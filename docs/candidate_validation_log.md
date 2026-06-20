@@ -281,3 +281,27 @@ to positive long-short P&L. This is a real gap in the validation methodology.
 CORRECTED FORWARD PATH: need signals that are decorrelated from momentum AND have
 positive standalone LS Sharpe. That's a much higher bar; no current candidate clears it.
 New validation gate must include standalone LS-Sharpe, not just rank-IC + decorrelation.
+
+## Directional model — net-of-cost by horizon — 2026-06-21
+
+Answering "h1 vs h3/h5": accuracy favored h1 (69%) but PORTFOLIO NET RETURN favors h5.
+On actual BUY signals (long-only, non-HOLD), last 90d, EW-portfolio per active day, net 20bps:
+
+| h | n | mean/trade | MEDIAN/trade | days+ | EW net/active-day | signal-days |
+| 1 | 91  | +0.89% | +0.83% | 70% | +0.32% | 20/63 |
+| 3 | 455 | +1.81% | +0.74% | 74% | +1.82% | 39/63 |
+| 5 | 543 | +2.22% | +0.87% | 82% | +2.60% | 40/63 |
+
+VERDICT: h5 is the real edge (largest n, 82% days+, +2.6% net/active-day), NOT h1.
+h1's 69% accuracy = high hit-rate on tiny moves that barely clear cost (+0.32% net).
+ACCURACY != PROFITABILITY confirmed again: accuracy ranked h1>h5, net return ranks h5>h1.
+
+Median positive at all horizons (not outlier-driven) = real central edge. BUT:
+- mean >> median at h3/h5 (2.5x) -> big winners carry the average; expect the median.
+- sparse: fires 20-40 of 63 days -> breadth-limited deployment.
+- 90-day UP-market window -> some of the long-only return is market beta, not alpha.
+  Needs market-neutral / down-market check for true alpha. NOT YET DONE.
+- BUYs currently kill-switched (HOLD-only in prod) -> this edge not being traded.
+
+NEXT: market-neutral version of this (long BUYs vs short universe) to strip beta and
+see true alpha; longer window incl down-market; then the h5 BUY edge is the candidate.
