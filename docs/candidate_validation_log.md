@@ -229,3 +229,30 @@ THEN combine across dimensions (HRP/stacking) — combiner amplifies dims you ha
 Funds' "millions of alphas" = hundreds of independent DATA AXES, not millions of
 price transforms. We have ~9 axes. Raising axis count is the real breadth lever.
 Already accruing: analyst revisions (~Sept), options skew change (~Sept).
+
+## STRATEGIC CONCLUSION — 2026-06-21 (synthesis of full session)
+
+Five independent checks, one coherent answer:
+1. 118 alphas = 8.8 effective independent bets (participation ratio)
+2. c1_combiner books mom/gp/op/ep are 0.59-0.86 correlated = ~2 effective bets
+3. c1_combiner VERDICT: NO-SHIP — all combos (ew/ivol/hrp) WORSE than mom-alone
+   (mom Sharpe 1.53 vs hrp 1.22). Correlated books DILUTE momentum.
+4. Panel ranker (tonight): no significant edge any horizon, breadth-limited
+5. pc_ratio/short_float (only truly decorrelated streams, corr~0.12 to mom) have
+   only 29 months history < 36mo combiner warmup -> CANNOT enter combiner until ~2027
+
+THE ANSWER: momentum (Sharpe 1.53) IS the edge and IS the system. Not broken, not
+dead. Everything else is correlated-to-momentum (dilutes) or too-recent (can't use yet).
+
+ACTIONS (mostly time + new axes, NOT more code on existing data):
+- RUN momentum-alone as the system (combiner's own gate says so).
+- WAIT for pc_ratio/short to reach 36mo (~early 2027) -> first real shot at a
+  combination that beats mom-alone (they're genuinely decorrelated, unlike gp/op/ep).
+- HUNT new axes gated on CORRELATION-TO-MOMENTUM < 0.3 (not standalone significance).
+  Most candidates are momentum variants (reject). Rare uncorrelated = gold.
+  Accruing: analyst revisions, options skew-change (~Sept).
+- Breadth grows passively (159->394 tickers) -> lifts momentum IR mechanically.
+
+WHY the session kept finding 'already built/killed/too-recent': the system is MATURE.
+Obvious moves made. Remaining constraints (dimensionality, history-length, breadth)
+resolve with TIME + GENUINELY-NEW DATA, not more transforms/combining of existing data.
