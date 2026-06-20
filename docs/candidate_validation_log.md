@@ -177,3 +177,22 @@ edge at any horizon. Stranded signals usable but weak (bottom-third). The whole
 real in isolation but don't carry weight in a multi-feature model dominated by
 momentum/beta/insider/fundamentals. No production change. Next axis = Lazy Prices
 (orthogonal text signal), the one family NOT already saturated in the model.
+
+## CORRECTION (2026-06-21): Lazy Prices (#4) was NOT "not started" — it was KILLED Jun 3
+
+Earlier entries called Lazy Prices a "not started / from-scratch multi-session build."
+WRONG. It was fully built + validated + KILLED on Jun 3 (commit 7f82b8e,
+docs/lazy_prices_closed.md). Pipeline complete (data/etl_10k_lazy_prices.py +
+data/sec_section_parser.py + analysis/lazy_prices_validate.py, sec_filings.db 125MB
+gitignored). Validation: tercile L/S within filing-year cohorts, net of cost —
+negative spread (business -13%, mda -17% @126d), ~0 rank-IC, sign-flipping per year
+on 115 tickers. CMN anomaly does NOT replicate at this universe scale.
+
+KEY: kill note states "5th return-signal hunt killed at 115-159 tickers; bottleneck
+is BREADTH not signal." Build 1 (panel ranker, tonight) independently confirmed the
+same — not-significant signal limited by 150-ticker breadth + regime variance, not
+features. TWO independent arrivals at: at ~115-159 tickers there isn't enough breadth
+to surface a tradeable cross-sectional edge regardless of signal choice.
+
+IMPLICATION: stop hunting new return signals at current breadth. The leverage is
+BREADTH (more tickers/labels) or different paradigm, not more signals.
