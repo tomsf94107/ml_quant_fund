@@ -84,3 +84,21 @@ Both admitted streams cleared ALL FOUR gates (weekday → residual-vs-momentum �
 Turnover ~0.0016 = near-zero churn (slow snapshots) -> costs negligible, IC≈realized edge.
 pc_ratio = stronger/strengthening. short_pct_float = weaker/mildly decaying (short-interest
 crowding, but still |t|>2 recent era). BOTH combiner-ready. 2 validated decorrelated streams.
+
+## Residual momentum (#5) — 2026-06-20 — DROP
+
+Now testable (sector_rel_ret live across all 599 panel files post macro-fix rebuild).
+Windowed sector_rel_ret (ts_mean/ts_decay w10/w20) tested as residual momentum:
+- raw IC ~0 everywhere (t=0.03 to 1.84)
+- corr to return_20d 0.79-0.91, rsi_14 0.67-0.79 — momentum-family by construction
+- verdict REDUNDANT. (Some residual t=2.67/3.59 are spurious — residualizing a
+  near-zero-raw signal against a 0.91-corr feature leaves noise, not edge.)
+NOTE: sector_rel_ret as a BASE feature has 7.5 model importance (valuable). Its
+windowed momentum just doesn't add a SEPARATE decorrelated stream. Both true.
+
+## "Do all" batch complete — 2026-06-20
+- #2 both-eras+cost: pc_ratio + short_float PASS all 4 gates. 2 streams combiner-ready.
+- #3/#5 residual momentum: DROP (momentum-family).
+- #4 Lazy Prices: separate multi-session build (EDGAR 10-K text from scratch). Not started.
+Net: 2 validated decorrelated streams (pc_ratio_snap, short_pct_float). skew_change +
+analyst-revisions deferred (accrual). Macro layer resurrected + used (importance 7-11).
