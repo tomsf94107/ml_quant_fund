@@ -1,0 +1,56 @@
+{
+  "horizon": 5,
+  "folds": [
+    {
+      "fold": 1,
+      "train_dates": 233,
+      "test_dates": 71,
+      "test_window": "2025-01-10..2025-04-23",
+      "mean_ic": -0.04967,
+      "ic_t": -1.61,
+      "n_ic_days": 71
+    },
+    {
+      "fold": 2,
+      "train_dates": 304,
+      "test_dates": 71,
+      "test_window": "2025-04-24..2025-08-05",
+      "mean_ic": 0.05001,
+      "ic_t": 3.23,
+      "n_ic_days": 71
+    },
+    {
+      "fold": 3,
+      "train_dates": 375,
+      "test_dates": 72,
+      "test_window": "2025-08-06..2025-11-14",
+      "mean_ic": -0.02139,
+      "ic_t": -0.76,
+      "n_ic_days": 72
+    },
+    {
+      "fold": 4,
+      "train_dates": 447,
+      "test_dates": 71,
+      "test_window": "2025-11-17..2026-03-02",
+      "mean_ic": 0.00481,
+      "ic_t": 0.19,
+      "n_ic_days": 71
+    },
+    {
+      "fold": 5,
+      "train_dates": 518,
+      "test_dates": 72,
+      "test_window": "2026-03-03..2026-06-12",
+      "mean_ic": 0.06606,
+      "ic_t": 2.32,
+      "n_ic_days": 72
+    }
+  ],
+  "pooled_mean_ic": 0.01003,
+  "stranded_importance": {
+    "pc_ratio_snap__cs_rank": 3.41,
+    "short_pct_float__cs_rank": 49.56,
+    "iv_skew_snap__cs_rank": 10.49
+  }
+}
