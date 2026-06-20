@@ -71,3 +71,16 @@ BASELINE (pre-fix, directional acc last 60d, to compare after retrain):
 Interpretation guide: expect biggest lift at h=3 if macro helps. If h=1 drops
 and h=3/h=5 dont improve -> added noise, consider regularization or revert.
 Also unblocks residual momentum (#5) testing once sector_rel_ret is live in panel.
+
+## Both-eras + cost gates — 2026-06-20
+
+Both admitted streams cleared ALL FOUR gates (weekday → residual-vs-momentum → both-eras → cost):
+
+| stream | h3 era1/era2 t | h5 era1/era2 t | turnover | verdict |
+|---|---|---|---|---|
+| pc_ratio_snap | 4.88 / 6.65 | 5.02 / 8.70 | 0.0016 | PASS (strengthening era1→era2) |
+| short_pct_float | -4.16 / -2.87 | -4.76 / -2.88 | 0.0016 | PASS (mild decay era1→era2, watch) |
+
+Turnover ~0.0016 = near-zero churn (slow snapshots) -> costs negligible, IC≈realized edge.
+pc_ratio = stronger/strengthening. short_pct_float = weaker/mildly decaying (short-interest
+crowding, but still |t|>2 recent era). BOTH combiner-ready. 2 validated decorrelated streams.
