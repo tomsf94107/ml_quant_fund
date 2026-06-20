@@ -256,3 +256,28 @@ ACTIONS (mostly time + new axes, NOT more code on existing data):
 WHY the session kept finding 'already built/killed/too-recent': the system is MATURE.
 Obvious moves made. Remaining constraints (dimensionality, history-length, breadth)
 resolve with TIME + GENUINELY-NEW DATA, not more transforms/combining of existing data.
+
+## CORRECTION to strategic conclusion — 2026-06-21 (reasoning fixed, verdict stands)
+
+The NO-SHIP / momentum-is-the-edge verdict STANDS, but my reasoning was wrong twice:
+- WRONG v1: "combiner books are correlated 0.59-0.86, so combining can't help."
+  -> That 0.59 was MARKET BETA. The qv_books are long-only (corr to SPY 0.63-0.86),
+     so they co-move via the market, not signal.
+- Market-neutral (long-short) signal correlations are LOW: mom vs gp/op/ep = -0.09/-0.07/-0.14.
+  So the signals ARE decorrelated. Briefly looked like it reopened the combiner.
+- WRONG v2 (the reopen): built LS market-neutral books to test. RESULT:
+    mom LS Sharpe +2.56 | gp -3.93 | op -1.91 | ep -3.08 | short -2.50 | pc +0.93
+  The other books are DECORRELATED but INDIVIDUALLY NEGATIVE Sharpe. Combining them
+  with momentum DRAGS IT DOWN: EW(mom,gp,op,ep) -2.42 vs mom-alone +2.56.
+
+REAL REASON combining fails: momentum is the ONLY signal with positive risk-adjusted
+return. Decorrelation is necessary but NOT sufficient — you can't diversify into losers.
+
+KEY METHODOLOGY FINDING: even short_pct_float (passed all 4 validation gates) has
+LS Sharpe -2.50 as a tradeable book. PASSING RANK-IC/DECORRELATION GATES != PROFITABLE
+BOOK. The validation gauntlet measures cross-sectional rank-IC, which does NOT convert
+to positive long-short P&L. This is a real gap in the validation methodology.
+
+CORRECTED FORWARD PATH: need signals that are decorrelated from momentum AND have
+positive standalone LS Sharpe. That's a much higher bar; no current candidate clears it.
+New validation gate must include standalone LS-Sharpe, not just rank-IC + decorrelation.
