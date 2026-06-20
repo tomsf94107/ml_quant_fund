@@ -196,3 +196,36 @@ to surface a tradeable cross-sectional edge regardless of signal choice.
 
 IMPLICATION: stop hunting new return signals at current breadth. The leverage is
 BREADTH (more tickers/labels) or different paradigm, not more signals.
+
+## CORE FINDING — effective alpha dimensionality — 2026-06-21
+
+Measured the correlation structure of the 118 cs_rank alphas in the panel:
+  participation ratio (effective independent bets): 8.8
+  top 5 eigenvalues = 55% of variance
+  30 dims for 90% variance, 40 for 95%
+  => 118 alphas but only ~9 REAL independent bets.
+
+THIS EXPLAINS EVERYTHING:
+- Why 5 signal hunts died: most candidates were transforms WITHIN the existing ~9
+  dimensions (residmom corr 0.9 to return_20d, intraday 0.765 to return_1d, pead
+  distributed across momentum). No new independent bet = no contribution.
+- Why pc_ratio + short_float were the only clean survivors: non-price = different
+  dimension.
+- Why combining all alphas gives little: combined IR ~ single x sqrt(N_eff/(1+...)).
+  With N_eff=9 (not 118), combiner caps at ~3x, not the 8-10x of 100 indep alphas.
+
+METHODOLOGY CORRECTION (what Atom asked for at session start):
+The path to "a lot more working alphas" is NOT more transforms of existing features
+(118 alphas = 9 bets) and NOT combining the redundant set (~3x cap). It is adding
+genuinely NEW INDEPENDENT DIMENSIONS (data axes). Each new axis (analyst revisions,
+options-skew-change, fundamental-change, cross-asset, text) raises effective-dims,
+worth more than 100 variants of momentum.
+
+NEW GATE for candidate alphas: does it RAISE the participation ratio (add an
+independent dimension)? Measure effective-dims before/after adding the candidate.
+Keep if it raises N_eff (even if individually weak); drop if redundant variant.
+THEN combine across dimensions (HRP/stacking) — combiner amplifies dims you have.
+
+Funds' "millions of alphas" = hundreds of independent DATA AXES, not millions of
+price transforms. We have ~9 axes. Raising axis count is the real breadth lever.
+Already accruing: analyst revisions (~Sept), options skew change (~Sept).
