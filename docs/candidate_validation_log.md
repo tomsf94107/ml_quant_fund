@@ -102,3 +102,35 @@ windowed momentum just doesn't add a SEPARATE decorrelated stream. Both true.
 - #4 Lazy Prices: separate multi-session build (EDGAR 10-K text from scratch). Not started.
 Net: 2 validated decorrelated streams (pc_ratio_snap, short_pct_float). skew_change +
 analyst-revisions deferred (accrual). Macro layer resurrected + used (importance 7-11).
+
+## "Combiner" investigation — RESOLVED via Rule-1 audit — 2026-06-20
+
+QUESTION: build a combiner for the 2 validated streams (pc_ratio_snap, short_pct_float)?
+AUDIT FINDING: there is no missing combiner. The models (per-ticker classifier,
+cross-sectional ensemble, global ranker) ARE combiners. The real issue is the
+validated signals are architecturally STRANDED:
+
+1. pc_ratio_snap / iv_skew_snap are COMMENTED OUT of classifier.FEATURE_COLUMNS
+   (line 98, "dropped 2026-05-21 train/serve mismatch"). All 3 models import this
+   same list, so excluded everywhere.
+2. short_ratio IS in the list but 0 importance — SAME root cause: only 62 days in
+   prediction_features (2026-03-24+), and per-ticker it's a flat constant.
+3. The builder computes pc_ratio via get_pc_ratio_uw() = TODAY'S SNAPSHOT broadcast
+   across all dates (builder line 1502-1530). UW gives only current snapshot.
+4. The global ranker builds via fresh build_feature_dataframe() calls -> gets
+   today's snapshot stamped on history, NOT real history. Uncommenting wouldn't help.
+5. The REAL historical signal exists ONLY in the alpha panel parquets (captured
+   live day-by-day, 597 days) — which is what validation ran on. NO model trains
+   on the panel directly.
+
+CONCLUSION: validated cross-sectional signals (pc_ratio t=8, short_float t=-5) are
+REAL but architecturally stranded — their true history lives only in the alpha
+panel, and no model trains on the panel. To use them, need a model that trains on
+the panel directly (a real new training path), OR a forward-accruing prediction_features
+backfill (slow, the 62 days will grow). Per feature_improvement_plan.md item 4, this
+was DEFERRED INDEFINITELY ("revisit only if items 2+3 deliver gains & still need edge").
+
+This explains the whole chain: signals validate cross-sectionally on the panel, but
+production models (per-ticker + ranker-on-fresh-builder) can't access the historical
+cross-section. NOT a tonight-fix. A scoped architecture decision: "train a model on
+the alpha panel where the validated signals actually live."
