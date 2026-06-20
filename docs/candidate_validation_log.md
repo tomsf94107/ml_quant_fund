@@ -305,3 +305,25 @@ Median positive at all horizons (not outlier-driven) = real central edge. BUT:
 
 NEXT: market-neutral version of this (long BUYs vs short universe) to strip beta and
 see true alpha; longer window incl down-market; then the h5 BUY edge is the candidate.
+
+## h5 BUY threshold sweep — real improvement found — 2026-06-21
+
+Current default h5 BUY = prob_up >= 0.60 (hysteresis ENTRY). Sweep shows it's too loose:
+
+| filter | n | acc% | net/trade% | median% |
+| >=0.60 (current) | 504 | 58.7 | 2.15 | +1.06 |
+| >=0.70 floor | 293 | 62.1 | 3.06 | +1.49 |
+| band [0.65,0.75] | 289 | 62.3 | 2.87 | +1.47 |
+| tail >0.78 | 65 | 55.4 | 1.97 | +0.95 |
+
+FINDING: raising h5 BUY threshold 0.60 -> ~0.65-0.70 improves acc 58.7->62%,
+net/trade 2.15->3.0%, median 1.06->1.49%, keeps n~290-340. The 0.60 default dilutes
+with weak 0.60-0.65 signals. High-confidence tail (>0.78) is WEAKER (55%) but not
+broken (earlier '0.80=47%' was n=40 artifact). ~0.68 is a sensible single threshold.
+
+CAVEATS (do not deploy blindly): 90-day UP-market window (some is beta not alpha,
+market-neutral test still pending); n moderate; BUYs currently kill-switched anyway.
+This is a CANDIDATE threshold change for h5 entry, pending: (1) market-neutral alpha
+check, (2) more data / out-of-window confirmation, (3) the BUY un-kill decision.
+
+Atom's instinct correct: h5 is the horizon, ~0.70 better confidence bar than 0.60.
