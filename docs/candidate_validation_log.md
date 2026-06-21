@@ -327,3 +327,30 @@ This is a CANDIDATE threshold change for h5 entry, pending: (1) market-neutral a
 check, (2) more data / out-of-window confirmation, (3) the BUY un-kill decision.
 
 Atom's instinct correct: h5 is the horizon, ~0.70 better confidence bar than 0.60.
+
+## h5 directional edge — MARKET-NEUTRAL TEST — it's BETA not alpha — 2026-06-21
+
+The h5 BUY "edge" (+2.6%/active-day, 82% days+, the threshold-0.68 improvement) was
+measured long-only in a 90-day UP market. Market-neutral test (excess over universe-
+avg h5 return) reveals it's almost entirely BETA:
+
+| | mean | median | win-vs-mkt | t |
+| RAW | +2.22% | +0.87% | 58% | +6.34 |
+| EXCESS (mkt-neutral) | +0.24% | -1.02% | 42% | +0.73 |
+
+Market returned +1.97% over window. Of the +2.22% raw, +1.97% was the market; only
++0.24% was stock selection (t=0.73, NOT significant). MEDIAN excess NEGATIVE (-1.02%) —
+the typical BUY UNDERPERFORMS the universe. Win-vs-market only 42%.
+
+The 0.68 threshold also collapses market-neutral (+0.37% excess, t=0.82, median -0.98%).
+The threshold "improvement" improved BETA CAPTURE, not stock selection.
+
+CONCLUSION: the directional model's h5 BUY edge is MARKET EXPOSURE, not stock-picking
+alpha. In an up market a long-only BUY model makes money with zero skill. Stripped of
+beta, no significant alpha remains; median pick loses to the universe. This corrects
+the earlier "real h5 long edge" read — it's a real RETURN but it's BETA.
+
+IMPLICATION: the directional model as-is is not a source of alpha. Its BUYs ride the
+market. Same lesson as the factor layer (momentum is the only real thing). The system's
+genuine edge question remains open; long-only directional signals in up-markets flatter
+to deceive.
