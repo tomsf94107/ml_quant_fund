@@ -23,6 +23,7 @@ LOGDIR=$ROOT/logs/pipeline_C_$DATE_TAG
 mkdir -p "$LOGDIR"
 
 cd $ROOT
+export PYTHONPATH=$ROOT:$PYTHONPATH
 source /Users/atomnguyen/.zshrc 2>/dev/null || true
 
 log() {

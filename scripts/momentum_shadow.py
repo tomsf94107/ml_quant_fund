@@ -65,15 +65,22 @@ def build_panel(tickers, start=HISTORY_START):
     return panel
 
 
-def main():
-    con = sqlite3.connect(str(DB))
+def main(as_of=None):
+    con = sqlite3.connect(str(DB), timeout=30)
     con.executescript(DDL)
     tickers = load_universe()
     panel = build_panel(tickers)
+    if as_of is not None:
+        cutoff = pd.Timestamp(as_of)
+        panel = panel[panel.index <= cutoff]
     if panel.empty:
         print("momentum_shadow: empty panel, nothing to write")
         return 0
     pred_date = str(panel.index[-1].date())
+    if as_of is not None and pred_date != str(pd.Timestamp(as_of).date()):
+        print(f"momentum_shadow: WARN requested {as_of} but panel ends {pred_date} (no bar that day?) — skipping")
+        con.close()
+        return 0
     now = datetime.now(timezone.utc).isoformat()
     total = 0
     for kind in KINDS:
@@ -100,4 +107,5 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    _as_of = sys.argv[1] if len(sys.argv) > 1 else None
+    sys.exit(main(_as_of))
