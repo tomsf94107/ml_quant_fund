@@ -354,3 +354,24 @@ IMPLICATION: the directional model as-is is not a source of alpha. Its BUYs ride
 market. Same lesson as the factor layer (momentum is the only real thing). The system's
 genuine edge question remains open; long-only directional signals in up-markets flatter
 to deceive.
+
+## Sentiment model comparison (Haiku/Sonnet/Opus) — 2026-06-24
+
+Re-scored historical headlines (point-in-time confirmed: created_at==score_date) with
+3 model tiers, joined to actual h5 returns.
+
+PREDICTION rank-IC: n=60 -> n=150 (regression to truth):
+  haiku  +0.209 -> +0.073 (t=0.89)
+  sonnet +0.215 -> +0.021 (t=0.26)
+  opus   +0.376 -> +0.136 (t=1.67)
+The exciting n=60 "opus 0.376 t=3.06" was SMALL-SAMPLE LUCK. At n=150 NONE is
+significant (all t<2). Sentiment-from-headlines does not predict h5 returns usably,
+any model tier. Opus marginally least-bad (0.136) but not significant.
+
+DIVERGENCE (stable across n): models differ ~16 pts mean on -100..100 scale, max
+disagreement up to 107 pts, but rank-correlate ~0.8 (same direction, diff magnitude).
+
+DECISION: model choice is a COST decision -> use Haiku (claude-haiku-4-5-20251001).
+No predictive justification for paying 5-25x for Sonnet/Opus on a minor feature.
+Confirms sentiment is a weak feature (consistent with system rank-IC ~0.011).
+Scripts: sentiment_model_compare.py, sentiment_compare_v3.py, *.csv.
