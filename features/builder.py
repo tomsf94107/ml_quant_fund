@@ -705,6 +705,22 @@ if _A8_FEATURE_ENABLED:
 _TICKER_OHLCV_CACHE: dict[str, "pd.DataFrame"] = {}
 
 
+def _last_completed_session():
+    """Last US trading day whose close has passed (17:00 ET, with publish-delay
+    margin). Replaces _date.today(), which used the Mac's VN local date — a day
+    ahead of the US trading calendar — causing requests for not-yet-traded /
+    plan-unauthorized bars (the 403 NOT_AUTHORIZED storm)."""
+    from datetime import timedelta as _td
+    from utils.timezone import now_et as _now_et
+    _et = _now_et()
+    _d = _et.date()
+    if _et.hour < 17:
+        _d = _d - _td(days=1)
+    while _d.weekday() >= 5:  # Sat=5, Sun=6 -> walk back to Friday
+        _d = _d - _td(days=1)
+    return _d
+
+
 def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
     """Download OHLCV from yfinance/Massive and flatten any MultiIndex columns.
 
@@ -716,7 +732,7 @@ def _download(ticker: str, start: str, end: str) -> pd.DataFrame:
     if ticker not in _TICKER_OHLCV_CACHE:
         # First call for this ticker — fetch widest range (start through today)
         from datetime import date as _date
-        widest_end = _date.today().strftime("%Y-%m-%d")
+        widest_end = _last_completed_session().strftime("%Y-%m-%d")
         full_df = mc.download(
             ticker, start=start, end=widest_end,
             auto_adjust=True, progress=False,
@@ -829,7 +845,7 @@ def _get_macro_cached(symbol: str, start: str, end: str) -> "pd.DataFrame":
             return pd.DataFrame()
         # First call for this symbol — fetch widest range (start through today)
         from datetime import date as _date
-        widest_end = _date.today().strftime("%Y-%m-%d")
+        widest_end = _last_completed_session().strftime("%Y-%m-%d")
         try:
             _MACRO_CACHE[symbol] = mc.download(
                 symbol, start=start, end=widest_end,
