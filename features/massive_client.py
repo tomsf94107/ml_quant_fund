@@ -133,19 +133,13 @@ INDEX_SYMBOLS = {
     "DX-Y.NYB",                         # US Dollar Index (Yahoo-only format)
 }
 
-# Sector/macro ETFs: Massive (options-focused tier) returns NO data for these,
-# which silently NaN'd the entire market/sector feature layer (spy_ret, xlk_ret,
-# all sector ETFs, oil, sector_rel_ret) back to 2024. yfinance serves them fine.
-# Fix Jun 19 2026 — route macro/sector ETFs to yfinance like index symbols.
-MACRO_ETF_SYMBOLS = {
-    "SPY", "QQQ",                              # broad market
-    "XLK", "XLV", "XLF", "XLU", "XLI", "XLP",  # sectors
-    "XLY", "XLC", "XLRE", "XLB", "XLE",        # sectors
-    "USO",                                      # oil
-    "SMH", "IGV",                               # semis, software
-    "LQD", "HYG",                               # credit (IG, HY)
-    "GLD", "SLV", "TLT", "IEF",                # gold, silver, bonds
-}
+# Sector/macro ETFs: route to MASSIVE (verified Jun 30 2026 — Massive serves
+# SPY/QQQ/all sectors/USO/SMH/IGV/LQD/HYG/GLD/SLV/TLT/IEF, 6/6 rows each).
+# The Jun 19 note claiming Massive lacked these was stale; corrected after
+# yfinance was disabled (XProtect 5347 SIGKILL). Empty set => these fetch from
+# Massive like any stock. True indices (^VIX, ^VIX3M, ES=F) still route via the
+# startswith("^")/endswith("=F") rules below; ^VIX comes from FRED VIXCLS.
+MACRO_ETF_SYMBOLS = set()
 
 
 def _is_index(symbol):
@@ -267,7 +261,7 @@ def download(
       - multi ticker: MultiIndex columns [(field, ticker), ...]
     """
     if period and not start:
-        end = end or date.today()
+        end = end or _last_completed_session()
         if isinstance(end, str):
             end = pd.Timestamp(end).date()
         start = _resolve_period(end, period)
@@ -277,6 +271,24 @@ def download(
 
     start_str = _normalize_date(start)
     end_str = _normalize_date(end)
+    # PARTIAL-BAR GUARD (Jul 11 2026)
+    # Never fetch/cache a DAILY bar for a session that has not closed. VN-evening
+    # runs passed end=today mid-US-session: Massive returned a PARTIAL bar,
+    # price_cache wrote it, and gap_start = MAX(d)+1 meant it was never re-fetched.
+    # Evidence: SPY 07-01..07-10 (0.7-2.5M vol, $0.19 range); NVDA/MU/MRVL 06-29.
+    try:
+        _m0, _s0 = _interval_to_massive(interval)
+    except Exception:
+        _m0, _s0 = None, None
+    if _s0 == "day" and _m0 == 1:
+        try:
+            _lcs = _last_completed_session()
+            _lcs_str = _lcs.strftime("%Y-%m-%d") if hasattr(_lcs, "strftime") else str(_lcs)[:10]
+            if end_str > _lcs_str:
+                log.info("massive.clamp_end %s -> %s (session not closed)", end_str, _lcs_str)
+                end_str = _lcs_str
+        except Exception as _e:
+            log.warning("massive.clamp_end skipped: %s", _e)
 
     # ── Cache check (Session F, May 22 2026) ─────────────────────────────────
     if _MASSIVE_CACHE_ENABLED:
@@ -292,7 +304,11 @@ def download(
     if isinstance(tickers, str):
         # Single ticker — route based on type
         if _is_index(tickers):
-            _result = _download_yfinance(tickers, start_str, end_str, interval, auto_adjust)
+            # XProtect 5347 SIGKILLs the process on yfinance/curl_cffi exec
+            # (Jun 30 2026), uncatchable by try/except. Return empty for index
+            # symbols; builder fail-softs macro to NaN. Restore via FRED (VIXCLS).
+            log.warning(f"index symbol {tickers}: yfinance disabled (XProtect block), returning empty")
+            _result = pd.DataFrame()
         else:
             _check_key()
             mult, span = _interval_to_massive(interval)
@@ -325,14 +341,10 @@ def download(
 
         frames = {}
 
-        # Fetch indices from yfinance
+        # Indices: yfinance disabled (XProtect 5347 SIGKILLs on curl_cffi exec,
+        # uncatchable). Skip the call entirely; builder fail-softs to NaN.
         for t in indices:
-            try:
-                df = _download_yfinance(t, start_str, end_str, interval, auto_adjust)
-                if not df.empty:
-                    frames[t] = df
-            except Exception as e:
-                log.warning(f"yfinance failed for index {t}: {e}")
+            log.warning(f"index symbol {t}: yfinance disabled (XProtect block), skipping")
 
         # Fetch stocks from Massive
         if stocks:
@@ -418,6 +430,25 @@ def _interval_to_massive(interval):
     return mapping[iv]
 
 
+def _last_completed_session():
+    """Last US trading day whose 17:00 ET close + publish margin has passed.
+    Mirrors builder._last_completed_session() so both modules agree. Replaces
+    date.today() (Mac VN local date = a day ahead of US calendar), which caused
+    requests for not-yet-traded / plan-unauthorized bars (403 NOT_AUTHORIZED)."""
+    from datetime import timedelta as _td
+    try:
+        from utils.timezone import now_et as _now_et
+        _et = _now_et()
+    except Exception:
+        _et = datetime.datetime.now()  # last resort; better than VN date.today()
+    _d = _et.date()
+    if _et.hour < 17:
+        _d = _d - _td(days=1)
+    while _d.weekday() >= 5:
+        _d = _d - _td(days=1)
+    return _d
+
+
 def _download_single(ticker, start_str, end_str, mult, span, auto_adjust):
     url = f"{BASE_URL}/v2/aggs/ticker/{ticker}/range/{mult}/{span}/{start_str}/{end_str}"
     params = {
@@ -429,11 +460,11 @@ def _download_single(ticker, start_str, end_str, mult, span, auto_adjust):
     try:
         data = _request_with_retry(url, params)
     except Exception as e:
-        # Massive failed all retries — try yfinance fallback for this ticker
-        log.warning(f"massive failed for {ticker} after retries, falling back to yfinance: {e}")
-        return _download_yfinance(ticker, start_str, end_str,
-                                  f"{mult}{span[0]}" if span != "day" else "1d",
-                                  auto_adjust)
+        # Massive failed all retries. Do NOT fall back to yfinance: the
+        # curl_cffi browser-impersonation path trips XProtect 5347 script
+        # blocking (Jun 30 2026). Return empty same-shape frame; caller skips.
+        log.warning(f"massive failed for {ticker} after retries, returning empty (no yfinance fallback): {e}")
+        return pd.DataFrame(columns=["Open", "High", "Low", "Close", "Volume"])
 
     if data.get("resultsCount", 0) == 0 or not data.get("results"):
         log.warning(f"massive: no data for {ticker} {start_str} to {end_str}")
@@ -640,9 +671,55 @@ def get_quote_at(ticker: str, sip_ts_ns: int,
     return results[0] if results else None
 
 
+_SPLITS_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prices.db")
+_SPLITS_TTL_DAYS = 30
+
+def _splits_cache_get(ticker):
+    """Return (rows, fresh). fresh=False if missing or older than TTL."""
+    try:
+        import sqlite3, json
+        con = sqlite3.connect(f"file:{_SPLITS_DB}?mode=ro", uri=True, timeout=10)
+        try:
+            row = con.execute(
+                "SELECT payload, fetched_at FROM splits_cache WHERE ticker=?", (ticker,)
+            ).fetchone()
+        finally:
+            con.close()
+        if not row:
+            return None, False
+        payload, fetched_at = row
+        age = (datetime.now() - datetime.fromisoformat(fetched_at)).days
+        return json.loads(payload), (age < _SPLITS_TTL_DAYS)
+    except Exception:
+        return None, False
+
+def _splits_cache_put(ticker, rows):
+    try:
+        import sqlite3, json
+        con = sqlite3.connect(_SPLITS_DB, timeout=10)
+        try:
+            con.execute(
+                "CREATE TABLE IF NOT EXISTS splits_cache "
+                "(ticker TEXT PRIMARY KEY, payload TEXT, fetched_at TEXT)"
+            )
+            con.execute(
+                "INSERT OR REPLACE INTO splits_cache(ticker,payload,fetched_at) VALUES (?,?,?)",
+                (ticker, json.dumps(rows), datetime.now().isoformat()),
+            )
+            con.commit()
+        finally:
+            con.close()
+    except Exception as e:
+        log.warning(f"massive.splits_cache_put failed {ticker}: {e}")
+
 def get_splits(ticker: str) -> list:
     """Historical stock splits via /v3/reference/splits.
-    Returns [{'execution_date','split_from','split_to'}, ...]."""
+    Returns [{'execution_date','split_from','split_to'}, ...].
+    Cached in prices.db (splits_cache, 30d TTL) — splits are immutable history;
+    re-fetching 400x/run was generating ~980 needless 429s. Fix Jul 1 2026."""
+    _cached, _fresh = _splits_cache_get(ticker)
+    if _fresh:
+        return _cached
     _check_key()
     url = f"{BASE_URL}/v3/reference/splits"
     params = {
@@ -661,6 +738,9 @@ def get_splits(ticker: str) -> list:
                 "split_from": s.get("split_from", 1),
                 "split_to": s.get("split_to", 1),
             })
+        _splits_cache_put(ticker, out)
     except Exception as e:
         log.warning(f"massive.get_splits failed {ticker}: {e}")
+        if _cached is not None:
+            return _cached
     return out

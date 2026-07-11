@@ -75,6 +75,8 @@ def _apply_backward_adjustment(raw: pd.DataFrame, splits: pd.DataFrame) -> pd.Da
     factor = pd.Series(1.0, index=adj.index)
     for _, s in splits.iterrows():
         sdate = pd.to_datetime(s["exec_date"])
+        if sdate > adj.index.max():
+            continue  # not yet effective; would divide current pre-split bars
         ratio = float(s["split_to"]) / float(s["split_from"])
         mask = adj.index < sdate
         factor[mask] *= ratio
@@ -95,7 +97,8 @@ def cached_daily(ticker, start, end, fetch_raw_fn, fetch_splits_fn) -> pd.DataFr
             _write_raw(con, ticker, raw)
         else:
             last = have.index.max()
-            gap_start = (last + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+            REFETCH_TAIL_DAYS = 5
+            gap_start = (last - pd.Timedelta(days=REFETCH_TAIL_DAYS)).strftime("%Y-%m-%d")
             if gap_start <= end_s:
                 gap = fetch_raw_fn(ticker, gap_start, end_s)
                 if gap is not None and not gap.empty:

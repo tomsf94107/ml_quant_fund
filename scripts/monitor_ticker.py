@@ -62,6 +62,9 @@ DB_PATH = Path(os.environ.get("EARNINGS_DB", "earnings_monitor.db"))
 # Default ticker universe with sector benchmark and earnings context.
 # Confirm earnings dates via the company's IR page before relying on them.
 TICKER_CONFIG: dict[str, dict] = {
+    "BYND": {
+        "earnings_date": "2026-08-05",  # AMC, Q2 2026; sources disagree (Aug 5 vs 12) — verify closer
+    },
     "NVDA": {
         "sector_etf": "SMH",     # VanEck Semiconductors
         "earnings_date": "2026-05-20",  # AMC; sources disagree (May 20 vs 27)
@@ -249,8 +252,9 @@ def get_value_usd(r: dict) -> float:
 
 
 def get_date(r: dict) -> Optional[str]:
-    v = _first(r, "record_date", "settlement_date", "date", "report_date",
-               "as_of_date", "effective_date", "period_date", "filing_date")
+    v = _first(r, "market_date", "record_date", "settlement_date", "date",
+               "report_date", "as_of_date", "effective_date", "period_date",
+               "filing_date")
     return str(v) if v else None
 
 
@@ -1441,8 +1445,8 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
                 ticker,
                 d,
                 float(r.get("short_interest") or r.get("short_volume") or 0),
-                float(r.get("short_percent_of_float") or r.get("pct_of_float") or
-                      r.get("percent_of_float") or 0),
+                float(r.get("si_float") or r.get("short_percent_of_float") or
+                      r.get("pct_of_float") or r.get("percent_of_float") or 0),
                 float(r.get("days_to_cover") or r.get("dtc") or 0),
                 now_iso(),
             ))
@@ -1456,8 +1460,8 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
     for r in sorted_rows:
         d = get_date(r) or "?"
         si = float(r.get("short_interest") or r.get("short_volume") or 0)
-        pct = float(r.get("short_percent_of_float") or r.get("pct_of_float") or
-                    r.get("percent_of_float") or 0)
+        pct = float(r.get("si_float") or r.get("short_percent_of_float") or
+                    r.get("pct_of_float") or r.get("percent_of_float") or 0)
         dtc = float(r.get("days_to_cover") or r.get("dtc") or 0)
         print(f"  {d[:12]:<12} {si:>14,.0f} {pct:>8.2%} {dtc:>7.1f}")
 
@@ -1465,10 +1469,12 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
     dated = [r for r in rows if get_date(r)]
     if len(dated) >= 2:
         srt = sorted(dated, key=lambda x: get_date(x))
-        latest_pct = float(srt[-1].get("short_percent_of_float") or
+        latest_pct = float(srt[-1].get("si_float") or
+                           srt[-1].get("short_percent_of_float") or
                            srt[-1].get("pct_of_float") or
                            srt[-1].get("percent_of_float") or 0)
-        prev_pct = float(srt[-2].get("short_percent_of_float") or
+        prev_pct = float(srt[-2].get("si_float") or
+                         srt[-2].get("short_percent_of_float") or
                          srt[-2].get("pct_of_float") or
                          srt[-2].get("percent_of_float") or 0)
         delta = latest_pct - prev_pct
@@ -3043,9 +3049,41 @@ def section_price_volume(ticker: str, since: str) -> None:
                 print(f"  Live (intraday): ${live_price:.2f}   "
                       f"({pct:+.2f}% from prev close ${prev_close:.2f}){vol_str}")
 
-    data = uw_get(f"/api/stock/{ticker}/ohlc/1d", params={"limit": 90})
-    rows = (data or {}).get("data") or []
-    rows = [r for r in rows if (r.get("date") or r.get("market_time") or "")[:10] >= since]
+    # VOLUME-DENOMINATOR FIX (Jul 11 2026)
+    # WAS: uw_get("/api/stock/{ticker}/ohlc/1d"). That UW feed carries duplicate /
+    # partial bars (MSFT showed 2026-06-26 TWICE: 186.2M and 115.3M), which
+    # understated the 20d average (13.5M vs a true 47.0M) and INVERTED every
+    # volume-ratio flag -- it reported "1.83x" on a day that was really 0.52x,
+    # so the "volume >= 2x/3x" alerts fired on QUIET days.
+    # squeeze_scan, reading massive_client in the SAME process, reported 0.51,
+    # and FINRA's avg_daily_vol (36.5M) agreed. The monitor was the wrong one.
+    # NOW: reads massive_client -> prices.db raw_bars, the same clean source
+    # builder.py uses. End is clamped to the last completed session upstream.
+    rows = []
+    try:
+        import sys as _sys, os as _os
+        _ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        if _ROOT not in _sys.path:
+            _sys.path.insert(0, _ROOT)
+        from features import massive_client as _mc
+        _end = _mc._last_completed_session()
+        _end_s = _end.strftime("%Y-%m-%d") if hasattr(_end, "strftime") else str(_end)[:10]
+        _df = _mc.download(ticker, start=since, end=_end_s)
+        if _df is not None and not _df.empty:
+            for _ix, _r in _df.iterrows():
+                rows.append({
+                    "date":   _ix.strftime("%Y-%m-%d") if hasattr(_ix, "strftime") else str(_ix)[:10],
+                    "open":   float(_r.get("Open")   or 0),
+                    "high":   float(_r.get("High")   or 0),
+                    "low":    float(_r.get("Low")    or 0),
+                    "close":  float(_r.get("Close")  or 0),
+                    "volume": float(_r.get("Volume") or 0),
+                })
+    except Exception as _e:
+        print(f"  [warn] massive volume fetch failed ({_e}); falling back to UW OHLC")
+        data = uw_get(f"/api/stock/{ticker}/ohlc/1d", params={"limit": 90})
+        rows = (data or {}).get("data") or []
+        rows = [r for r in rows if (r.get("date") or r.get("market_time") or "")[:10] >= since]
     if not rows:
         print("  No OHLC returned.")
         return
@@ -3115,6 +3153,217 @@ def section_massive_blocks(ticker: str, since: str) -> None:
 # Driver
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Section: SQUEEZE FUEL — cost-to-borrow + short interest setup readout.
+#
+# HONEST SCOPE (Rule 1):
+#   This identifies squeeze *candidates* (loaded ingredients), NOT timing and
+#   NOT a buy signal. Your own validated SI brick found high short interest ->
+#   LOWER forward returns on average (per-date IC -0.054, NW-t -4.46). Crowded
+#   shorts underperform on average; the squeeze is the rare tail. So a HIGH fuel
+#   reading means "this CAN squeeze if a catalyst hits", never "this will go up".
+#
+#   Borrow fee (fee_rate) + shares-available come from UW /api/shorts/{t}/data,
+#   daily/intraday — fresher than the bi-monthly FINRA short-interest cycle.
+# ---------------------------------------------------------------------------
+def get_borrow_fee(ticker: str) -> Optional[dict]:
+    """Latest borrow fee + shares-available from UW, with a 5-snapshot-back
+    delta for a freshness read. Returns None if unavailable (e.g. not on plan).
+    fee_rate arrives as a STRING and is cast to float here."""
+    data = uw_get(f"/api/shorts/{ticker}/data")
+    rows = (data or {}).get("data") or []
+    if not rows:
+        return None
+    latest = rows[0]
+    try:
+        fee = float(latest.get("fee_rate") or 0)
+    except (TypeError, ValueError):
+        fee = 0.0
+    avail = latest.get("short_shares_available")
+    avail = int(avail) if avail is not None else None
+    ts = latest.get("timestamp")
+    # Delta vs a snapshot ~5 back (intraday depth varies; best-effort freshness).
+    fee_prev = None
+    if len(rows) > 5:
+        try:
+            fee_prev = float(rows[5].get("fee_rate") or 0)
+        except (TypeError, ValueError):
+            fee_prev = None
+    return {"fee": fee, "avail": avail, "ts": ts, "fee_prev": fee_prev}
+
+
+def get_squeeze_data(ticker: str, older_than: Optional[str] = None) -> dict:
+    """Single source of truth for squeeze inputs. Merges the two UW endpoints:
+      - /api/shorts/{t}/data          -> LIVE fee + shares-available (intraday)
+      - /api/shorts/{t}/interest-float/v2 -> settlement SI% + float + DTC + date
+
+    Returns ONE merged dict. section_squeeze just displays this; the model
+    backfill (Phase 0) will call this with older_than= for point-in-time rows.
+
+    Field facts (verified live 2026-07): fee_rate + si_float + days_to_cover are
+    STRINGS; si_float is a FRACTION (0.2855 == 28.55%); date key is market_date.
+
+    NOTE: older_than is plumbed through for the future backfill but its support
+    on these endpoints is UNVERIFIED for interest-float/v2 -- do not rely on the
+    historical path until it is tested (Rule 1). The live path (older_than=None)
+    is what monitor uses today and is confirmed working.
+    """
+    # ---- live borrow half (reuse the existing fetcher) ----
+    bf = get_borrow_fee(ticker) if older_than is None else None
+    fee = bf["fee"] if bf else None
+    avail = bf["avail"] if bf else None
+    fee_prev = bf.get("fee_prev") if bf else None
+
+    # ---- settlement SI half ----
+    si_pct = dtc = mkt_date = total_float = None
+    params = {"older_than": older_than} if older_than else None
+    sidata = uw_get(f"/api/shorts/{ticker}/interest-float/v2", params=params)
+    srows = (sidata or {}).get("data") or []
+    if srows:
+        # market_date is now a recognized get_date key; sort newest-first.
+        srt = sorted(srows, key=lambda x: (get_date(x) or ""), reverse=True)
+        r0 = srt[0]
+        si_pct = float(r0.get("si_float") or r0.get("short_percent_of_float") or
+                       r0.get("pct_of_float") or r0.get("percent_of_float") or 0) or None
+        dtc = float(r0.get("days_to_cover") or r0.get("dtc") or 0) or None
+        mkt_date = get_date(r0)
+        try:
+            total_float = float(r0.get("total_float") or 0) or None
+        except (TypeError, ValueError):
+            total_float = None
+        # If the live /data call was skipped (backfill mode), fall back to the
+        # settlement fee/avail from this same row so the dict is still complete.
+        if fee is None:
+            try:
+                fee = float(r0.get("fee_rate") or 0) or None
+            except (TypeError, ValueError):
+                fee = None
+        if avail is None:
+            av = r0.get("short_shares_available")
+            avail = int(av) if av is not None else None
+
+    return {"fee": fee, "avail": avail, "fee_prev": fee_prev,
+            "si_pct": si_pct, "dtc": dtc, "date": mkt_date, "float": total_float}
+
+
+
+
+def assess_squeeze(fee: Optional[float], si_pct: Optional[float],
+                   dtc: Optional[float], avail: Optional[int]) -> dict:
+    """Pure, tunable, no network. Grades each ingredient and returns an overall
+    fuel level. Thresholds are HEURISTIC (not validated like the SI brick).
+    si_pct is a FRACTION (0.38 == 38%), matching how monitor stores it."""
+    ingredients = []
+    loaded = 0
+
+    # Borrow fee (baseline easy-to-borrow ~0.3%)
+    if fee is None:
+        fee_tag = "n/a"
+    elif fee >= 20:
+        fee_tag = "EXTREME"; loaded += 2
+    elif fee >= 5:
+        fee_tag = "HIGH"; loaded += 1
+    elif fee >= 1:
+        fee_tag = "MODERATE"
+    else:
+        fee_tag = "easy"
+    ingredients.append(("Borrow fee", f"{fee:.2f}%" if fee is not None else "n/a", fee_tag))
+
+    # Short interest (% float, FRACTION)
+    if si_pct is None:
+        si_tag = "n/a"
+    elif si_pct >= 0.30:
+        si_tag = "HIGH"; loaded += 1
+    elif si_pct >= 0.20:
+        si_tag = "ELEVATED"
+    else:
+        si_tag = "—"
+    ingredients.append(("Short interest", f"{si_pct:.1%} float" if si_pct is not None else "n/a", si_tag))
+
+    # Days to cover (clip FINRA OTC junk > 50)
+    dtc_disp = dtc
+    if dtc is not None and dtc > 50:
+        dtc_disp = None
+    if dtc_disp is None:
+        dtc_tag = "n/a"
+    elif dtc_disp >= 10:
+        dtc_tag = "HIGH"; loaded += 1
+    elif dtc_disp >= 5:
+        dtc_tag = "ELEVATED"
+    else:
+        dtc_tag = "—"
+    ingredients.append(("Days to cover", f"{dtc_disp:.1f}" if dtc_disp is not None else "n/a", dtc_tag))
+
+    # Shares available (context; weak alone without float normalization)
+    ingredients.append(("Shares available", f"{avail:,}" if avail is not None else "n/a", "context"))
+
+    if loaded >= 4:
+        level = "HIGH"
+    elif loaded >= 2:
+        level = "MODERATE"
+    elif loaded >= 1:
+        level = "LOW"
+    else:
+        level = "NONE"
+    return {"level": level, "loaded": loaded, "ingredients": ingredients}
+
+
+def section_squeeze(conn: sqlite3.Connection, ticker: str) -> dict:
+    """Prints the squeeze-fuel block and returns a summary dict for the
+    cross-ticker roundup. Re-fetches SI from the same endpoint the SI section
+    uses, so it is self-contained even under `--skip shorts`."""
+    print(f"\n=== SQUEEZE FUEL — {ticker} ===")
+    sq = get_squeeze_data(ticker)
+    fee = sq["fee"]
+    avail = sq["avail"]
+    si_pct = sq["si_pct"]
+    dtc = sq["dtc"]
+
+    a = assess_squeeze(fee, si_pct, dtc, avail)
+    for label, val, tag in a["ingredients"]:
+        base = "  (baseline ~0.3%)" if label == "Borrow fee" else ""
+        print(f"  {label:<17} {val:>14}   [{tag}]{base}")
+
+    # Freshness: intraday fee drift the bi-monthly FINRA cycle can't see.
+    if sq.get("fee_prev") is not None and fee is not None:
+        d = fee - sq["fee_prev"]
+        if abs(d) >= 0.01:
+            print(f"  Fee drift (intraday):  {d:+.2f}pp  (fresher than bi-monthly SI)")
+
+    print(f"  {'-'*40}")
+    if a["level"] == "NONE":
+        print(f"  FUEL: NONE — easy to borrow, not a squeeze candidate")
+    else:
+        print(f"  FUEL: {a['level']} — squeeze *candidate* ({a['loaded']} ingredients loaded)")
+        print(f"  \u26a0 Fuel != buy. High SI -> underperformance on avg (your SI brick).")
+        print(f"    Squeeze is the tail; price RAMP/IGNITION is the trigger to watch.")
+        if a["level"] == "HIGH":
+            flag("MED", ticker, f"Squeeze fuel HIGH (fee {fee:.1f}% / SI {si_pct:.0%} / DTC {dtc:.1f})"
+                 if (fee is not None and si_pct is not None and dtc is not None)
+                 else "Squeeze fuel HIGH (partial data)")
+
+    return {"ticker": ticker, "level": a["level"], "fee": fee,
+            "si_pct": si_pct, "dtc": dtc, "avail": avail}
+
+
+def print_squeeze_summary(results: list) -> None:
+    """Cross-ticker roundup printed once after the per-ticker loop."""
+    rows = [r for r in results if r]
+    if not rows:
+        return
+    order = {"HIGH": 0, "MODERATE": 1, "LOW": 2, "NONE": 3}
+    rows.sort(key=lambda r: order.get(r["level"], 9))
+    print("\n" + "=" * 78)
+    print("  SQUEEZE SUMMARY (fuel = candidate strength, NOT a buy signal)")
+    print("=" * 78)
+    for r in rows:
+        fee = f"fee {r['fee']:.1f}%" if r["fee"] is not None else "fee n/a"
+        si = f"SI {r['si_pct']:.0%}" if r["si_pct"] is not None else "SI n/a"
+        dtc = f"DTC {r['dtc']:.1f}" if r["dtc"] is not None else "DTC n/a"
+        print(f"  {r['ticker']:<6} FUEL: {r['level']:<9} {fee:<11} {si:<8} {dtc}")
+    print("=" * 78)
+
+
 def print_header(args) -> None:
     print("=" * 78)
     print(f"  Pre-earnings signal monitor")
@@ -3152,7 +3401,7 @@ def main() -> int:
                    choices=["insiders", "institutional", "darkpool", "options",
                             "shorts", "ohlc", "massive", "edgar", "peer", "form4",
                             "calendar", "implied", "eightk", "cohort", "news",
-                            "macro"],
+                            "macro", "squeeze"],
                    help="Skip one or more sections")
     args = p.parse_args()
 
@@ -3171,6 +3420,7 @@ def main() -> int:
     if "macro" not in args.skip:
         section_macro_news()
 
+    squeeze_results = []
     for ticker in args.tickers:
         print("\n" + "#" * 78)
         print(f"#  {ticker}")
@@ -3199,6 +3449,8 @@ def main() -> int:
             section_options_flow(conn, ticker, args.since)
         if "shorts" not in args.skip:
             section_short_interest(conn, ticker)
+        if "squeeze" not in args.skip:
+            squeeze_results.append(section_squeeze(conn, ticker))
         if "ohlc" not in args.skip:
             section_price_volume(ticker, args.since)
         if "peer" not in args.skip:
@@ -3211,6 +3463,10 @@ def main() -> int:
             section_massive_blocks(ticker, args.since)
 
     conn.close()
+
+    # ----- Squeeze fuel roundup (candidate strength, NOT a buy signal) -----
+    if "squeeze" not in args.skip:
+        print_squeeze_summary(squeeze_results)
 
     # ----- Consolidated flags summary -----
     # Sort flags by severity (HIGH > MED > INFO), then by ticker
