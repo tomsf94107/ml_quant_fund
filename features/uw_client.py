@@ -119,12 +119,24 @@ class UWClient:
         self._calls_today: int = 0
         self._count_date = None
         self._session = requests.Session()
-        if UW_API_KEY:
-            self._session.headers.update({
-                "Authorization": f"Bearer {UW_API_KEY}",
-                "UW-CLIENT-API-ID": "100001",
-                "Accept": "application/json",
-            })
+        # CHECK_ENV (Jul 11 2026). This used to read `if UW_API_KEY:` and simply
+        # SKIP the auth header when the key was absent. Every call then 401'd, the
+        # caller wrote nothing, and the process exited 0. That is EXACTLY how 18
+        # cron lines ran for weeks without credentials: refresh_economic_calendar
+        # 401'd every run, printed "0 events -- keeping existing DB rows", exited
+        # clean, and nobody knew until an empty UI page gave it away.
+        # A missing key is a configuration error. Fail at construction.
+        if not UW_API_KEY:
+            raise RuntimeError(
+                "UW_API_KEY is not set. Source .env first "
+                "(set -a && . ./.env && set +a). Refusing to make unauthenticated "
+                "calls that would 401 silently and write nothing."
+            )
+        self._session.headers.update({
+            "Authorization": f"Bearer {UW_API_KEY}",
+            "UW-CLIENT-API-ID": "100001",
+            "Accept": "application/json",
+        })
 
     @property
     def calls_today(self) -> int:

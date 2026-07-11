@@ -107,3 +107,11 @@ data/osap/
 fundamentals.db
 prices.db
 prices.db
+
+# generated artefacts
+*.bak.*
+nohup.out
+logs/
+data/alpha_panel/
+*.db-wal
+*.db-shm

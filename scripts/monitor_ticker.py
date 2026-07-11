@@ -35,6 +35,7 @@ Cron-compatible. Returns nonzero on hard failure; soft-fails per-endpoint.
 
 from __future__ import annotations
 
+import statistics
 import argparse
 import json
 import os
@@ -1355,6 +1356,8 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     MIN_CLASSIFIED_USD = 5_000_000
     MIN_CLASSIFIED_PRINTS = 20
     MIN_COVERAGE_PCT = 50.0
+    n_usable = 0
+    n_days = 0
     print(f"  {'Date':<12} {'Buy $':>16} {'Sell $':>16} {'Net':>14} {'Skew':>8} {'Cover':>7}")
     by_day_signed: dict[str, dict] = {}
     for executed_at, size, price, value, venue in rows:
@@ -1404,7 +1407,9 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         usable = (denom >= MIN_CLASSIFIED_USD
                   and len(d["prints"]) >= MIN_CLASSIFIED_PRINTS
                   and coverage >= MIN_COVERAGE_PCT)
+        n_days += 1
         if usable:
+            n_usable += 1
             skew_buy_total += buy_val
             skew_sell_total += sell_val
         mark = "" if usable else "  THIN"
@@ -1415,13 +1420,18 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         denom = skew_buy_total + skew_sell_total
         agg_skew = ((skew_buy_total - skew_sell_total) / denom * 100) if denom else 0
         # Flag persistent skew > 30% across the 7-day window
-        if abs(agg_skew) >= 30 and denom >= 10_000_000:
+        if abs(agg_skew) >= 30 and denom >= 10_000_000 and n_usable >= 3:
             direction = "BUY" if agg_skew > 0 else "SELL"
             flag("MED", ticker,
                  f"7d signed dark pool skew: {agg_skew:+.1f}% ({direction}-side, "
                  f"VWAP heuristic — confirm with Lee-Ready)")
-        print(f"\n  7-day aggregate skew: {agg_skew:+.1f}%  "
+        # HONEST LABEL (Jul 11 2026): the aggregate is computed on USABLE sessions
+        # only. Saying "7-day" when 4 of 7 were THIN invites over-trust in what may
+        # be a single day's number. Say what it actually rests on.
+        print(f"\n  {n_days}-day aggregate skew ({n_usable} usable): {agg_skew:+.1f}%  "
               f"(buy ${skew_buy_total:,.0f} vs sell ${skew_sell_total:,.0f})")
+        if n_usable < 3:
+            print(f"  ⚠️  only {n_usable} usable session(s) — treat the aggregate as noise")
         print(f"  ⚠️  VWAP heuristic — coarse approximation of Lee-Ready. "
               f"Above-VWAP prints may still be sells (caller-driven).")
 
@@ -2168,6 +2178,11 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
 # Define peer cohorts. Each ticker maps to ~3-4 peers in the same business.
 # Used to differentiate "is this a stock-specific move or a sector move?"
 SECTOR_COHORTS: dict[str, list[str]] = {
+    # AMZN (Jul 11 2026): XLY is 28.5% AMZN (Tesla 18.3%; the top two are ~47% of
+    # the fund), so "AMZN vs XLY" is partly Amazon measured against itself and the
+    # excess return is mechanically compressed. Amazon's economics live in cloud +
+    # ads + platform scale, not in Home Depot and McDonald's.
+    "AMZN": ["MSFT", "GOOGL", "META"],
     "NVDA": ["AVGO", "AMD", "MRVL", "TSM"],
     "SMCI": ["DELL", "HPE", "ANET", "AVGO"],
     "DDOG": ["MDB", "SNOW", "NET", "TEAM"],
@@ -2809,11 +2824,30 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
     # Aggregate-selling flag: only emit if the seller list is concentrated
     # (≤3 filers) and the dollar amount is large. Diffuse selling across
     # many officers is normal 10b5-1 plan activity, not signal.
+    # STALENESS DECAY (Jul 11 2026). s_value aggregates the whole lookback window,
+    # so this flag kept firing on trades 31+ days old -- long past any information
+    # content. An insider sale is a signal for a few weeks, not a quarter.
+    # Gate on the MOST RECENT sale in the concentrated set.
+    INSIDER_STALE_DAYS = 21
+    _s_dates = [str(t[0])[:10] for t in non_deriv
+                if str(t[1] or "").upper().startswith("S") and t[0]]
+    _s_last = max(_s_dates) if _s_dates else None
+    _age = None
+    if _s_last:
+        try:
+            _age = (date.today() - date.fromisoformat(_s_last)).days
+        except Exception:
+            _age = None
     if (s_value >= 5_000_000 and s_filers <= 3 and
-            s_value > p_value * 4):
+            s_value > p_value * 4 and
+            _age is not None and _age <= INSIDER_STALE_DAYS):
         flag("MED", ticker,
              f"Concentrated insider selling: ${s_value:,.0f} from "
-             f"only {s_filers} filer(s) (potential signal vs 10b5-1 noise)")
+             f"only {s_filers} filer(s), most recent {_s_last} ({_age}d ago) "
+             f"(potential signal vs 10b5-1 noise)")
+    elif s_value >= 5_000_000 and s_filers <= 3 and _age is not None:
+        print(f"  [note] concentrated selling present but STALE "
+              f"(most recent {_s_last}, {_age}d ago > {INSIDER_STALE_DAYS}d) — flag suppressed")
 
     # Top 15 most material transactions (non-derivative, sorted by value desc)
     print()
@@ -3149,12 +3183,24 @@ def section_price_volume(ticker: str, since: str) -> None:
     if len(vols) < 21:
         print(f"  Only {len(vols)} bars; volume baseline weak.")
     else:
-        avg20 = sum(vols[-21:-1]) / 20
+        # MECHANICAL-DAY EXCLUSION (Jul 11 2026).
+        # The plain 20d mean includes index-reconstitution days. MSFT's Jun 26
+        # (Russell recon) printed 181.0M against a ~40.5M baseline and dragged the
+        # denominator to 47.5M, understating true rvol by ~17% (0.52x vs 0.61x).
+        # Mechanical flow is not a volume regime -- strip it from the BASELINE.
+        # Rule: drop any day above 3x the window median (a recon/rebalance print,
+        # not a normal heavy day). Generalises across market caps; no dollar floor.
+        _w = vols[-21:-1]
+        _med = statistics.median(_w) if _w else 0.0
+        _clean = [v for v in _w if _med <= 0 or v <= 3.0 * _med]
+        _n_excl = len(_w) - len(_clean)
+        avg20 = (sum(_clean) / len(_clean)) if _clean else 0.0
         latest_vol = vols[-1]
         ratio = latest_vol / avg20 if avg20 else 0
         print(f"  Latest close: ${closes[-1]:.2f}   "
               f"Latest volume: {latest_vol:,.0f}   "
-              f"20d avg vol: {avg20:,.0f}   "
+              f"20d avg vol: {avg20:,.0f}"
+              + (f" ({_n_excl} mechanical day(s) excluded)" if _n_excl else "") + "   "
               f"Ratio: {ratio:.2f}x")
         if ratio >= 3.0:
             print("  FLAG: volume >= 3x 20d average")
