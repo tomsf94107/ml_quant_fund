@@ -272,22 +272,51 @@ def load_earnings_features(
         conn = sqlite3.connect(db_path)
 
         # Load surprise history (point-in-time honest when as_of is set)
-        if as_of is not None:
-            hist = pd.read_sql("""
-                SELECT report_date, eps_surprise, rev_surprise
-                FROM earnings_surprises
-                WHERE ticker = ?
-                  AND (created_at IS NULL OR DATE(created_at) <= ?)
-                ORDER BY report_date
-            """, conn, params=(ticker.upper(), str(as_of)))
-        else:
-            hist = pd.read_sql("""
-                SELECT report_date, eps_surprise, rev_surprise
-                FROM earnings_surprises
-                WHERE ticker = ?
-                ORDER BY report_date
-            """, conn, params=(ticker.upper(),))
-
+        # PIT REWIRE (Jul 11 2026).
+        # WAS: earnings_surprises.report_date = the FISCAL PERIOD END, not the
+        # announcement date. 75% of those rows land on a quarter-end, 35% on a
+        # weekend. MU reads 2026-05-31; MU announced 2026-06-24.
+        # created_at = knowable_at(fiscal_end) = fiscal_end + 2BD, so the PIT
+        # filter admitted eps_surprise 15-29 DAYS EARLY and the forward-fill
+        # stamped it from the fiscal end onward.
+        # PROOF (MSFT, pre-fix): eps_surprise changed and post_earnings_1d fired
+        # 1.0 on 2026-03-31 -- the day the QUARTER ended -- while MSFT did not
+        # announce until 2026-04-29. In training the model saw the surprise ~4
+        # weeks before the market did; in production the row does not exist yet.
+        # Measured worth of that window: SUE predicts the announcement-day move
+        # at IC +0.2612 (t=+30). A quantified train/serve leak.
+        #
+        # NOW: earnings_events.announce_date = the SEC 8-K Item 2.02 filing date
+        # (verified 8/8 against our own eightk_items). The announcement date IS
+        # the knowable date -- no created_at proxy needed.
+        # rev_surprise joins back on fiscal_end. NOTE it is NULL in practice --
+        # Polygon gives rev_actual but no rev_estimate -- so that feature has been
+        # a constant 0.0 in production. Kept wired so nothing changes shape.
+        _PIT_SQL = """
+            SELECT e.announce_date AS report_date,
+                   e.eps_surprise  AS eps_surprise,
+                   s.rev_surprise  AS rev_surprise
+            FROM earnings_events e
+            LEFT JOIN earnings_surprises s
+              ON s.ticker = e.ticker AND DATE(s.report_date) = e.fiscal_end
+            WHERE e.ticker = ?
+              AND e.eps_surprise IS NOT NULL
+              AND e.announce_date <= ?
+            ORDER BY e.announce_date
+        """
+        _cut = str(as_of) if as_of is not None else datetime.utcnow().strftime("%Y-%m-%d")
+        hist = pd.read_sql(_PIT_SQL, conn, params=(ticker.upper(), _cut))
+        # RESIDUAL-LEAK FIX: most large caps announce AMC (after the close). A number
+        # released at 16:05 on day D is NOT actionable against a close(D)->close(D+1)
+        # label -- a real trader can only act at the open of D+1, by which time the
+        # gap has happened. That overnight gap is exactly where the value is
+        # (SUE vs the announcement move: IC +0.2612, t=+30), so treating the surprise
+        # as known on D would re-import the very leak this rewire removes.
+        # Make it usable from the NEXT session. BMO reporters lose one day of
+        # staleness on a slow feature -- a cheap price for a hard guarantee.
+        if not hist.empty:
+            hist["report_date"] = (pd.to_datetime(hist["report_date"])
+                                   + pd.tseries.offsets.BDay(1))
         conn.close()
 
         # Next earnings date — sourced from accuracy.db.earnings_cache (the
