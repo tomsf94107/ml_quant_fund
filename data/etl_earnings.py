@@ -322,29 +322,28 @@ def load_earnings_features(
         # Next earnings date — sourced from accuracy.db.earnings_cache (the
         # source of truth maintained by daily_uw_snapshot.py). The legacy
         # earnings.db.earnings_calendar table is empty (yfinance-era artifact).
+        # DAYS_TO_EARNINGS FIX (Jul 11 2026), part 2.
+        # The query filtered `report_date > as_of`, so it only ever returned
+        # announcements AFTER THE END of the whole window -- any announcement
+        # INSIDE the window was invisible. On 2026-04-20 MSFT therefore read 100
+        # (counting to the July print) while it actually announced 9 days later, on
+        # 2026-04-29. Over a 2022->today training window `as_of` is today, so every
+        # historical date counted to a print 1000+ days out and clipped to 999:
+        # the feature was a CONSTANT across almost all of training, while production
+        # (as_of = today) got real values. Train/serve skew that killed the feature.
+        # Now: pull ALL announcement dates; pick the next one PER DATE (searchsorted).
+        # PIT note: the next announcement date is normally confirmed 2-6 weeks ahead,
+        # so using it earlier is mild look-ahead -- but earnings TIMING is near-
+        # deterministic (same fiscal week each year), so the date itself carries
+        # almost no information. The original design already accepted this.
         cal = pd.DataFrame()
         try:
             cal_conn = sqlite3.connect(ACCURACY_DB_PATH)
-            if as_of is not None:
-                cal = pd.read_sql("""
-                    SELECT MIN(report_date) AS next_date
-                    FROM earnings_cache
-                    WHERE ticker = ?
-                      AND report_date > ?
-                      AND (updated_at IS NULL OR DATE(updated_at) <= ?)
-                """, cal_conn, params=(ticker.upper(), str(as_of), str(as_of)))
-            else:
-                _today = datetime.utcnow().strftime("%Y-%m-%d")
-                cal = pd.read_sql("""
-                    SELECT MIN(report_date) AS next_date
-                    FROM earnings_cache
-                    WHERE ticker = ?
-                      AND report_date > ?
-                """, cal_conn, params=(ticker.upper(), _today))
+            cal = pd.read_sql(
+                "SELECT report_date AS next_date FROM earnings_cache "
+                "WHERE ticker = ? AND report_date IS NOT NULL ORDER BY report_date",
+                cal_conn, params=(ticker.upper(),))
             cal_conn.close()
-            # MIN() returns one row with NULL when no match; treat as empty
-            if cal.empty or cal["next_date"].iloc[0] is None:
-                cal = pd.DataFrame()
         except Exception:
             cal = pd.DataFrame()
 
@@ -375,19 +374,28 @@ def load_earnings_features(
         result["rev_surprise"] = result["rev_surprise"].clip(-3.0, 3.0)
 
         # Days to earnings
-        next_date = None
+        # DAYS_TO_EARNINGS FIX (Jul 11 2026). The old code took ONE next_date --
+        # the first announcement after `as_of` (the END of the whole window) -- and
+        # applied it to EVERY date in the index, skipping straight over any
+        # announcement that fell inside the window. Result: on 2026-04-20 MSFT read
+        # 100 (counting to the July print) when it actually announced 9 days later,
+        # on 2026-04-29. Over a 2022->today training window the single next_date sits
+        # 1000+ days from early rows, so the value clipped to 999 across most of
+        # training. The feature never meant what its name says.
+        # Now: for each date d, the next announcement strictly after d.
+        _ann = pd.Series(dtype="datetime64[ns]")
         if not cal.empty:
-            try:
-                next_date = pd.to_datetime(cal["next_date"].iloc[0]).date()
-            except Exception:
-                pass
+            _ann = pd.to_datetime(cal["next_date"], errors="coerce").dropna().sort_values()
+        next_date = None   # retained for the fallback branch below
 
-        if next_date:
-            # TimedeltaIndex.days is a pd.Index (no .clip method).
-            # Wrap in np.clip which works on any array-like.
-            result["days_to_earnings"] = np.clip(
-                (pd.Timestamp(next_date) - result.index).days, 0, 999
-            )
+        if len(_ann) > 0:
+            _pos = np.searchsorted(_ann.values, result.index.values, side="left")
+            _nxt = np.where(_pos < len(_ann),
+                            _ann.values[np.clip(_pos, 0, len(_ann) - 1)],
+                            np.datetime64("NaT"))
+            _d = ((pd.to_datetime(_nxt) - result.index)
+                  .total_seconds().values / 86400.0)
+            result["days_to_earnings"] = np.nan_to_num(np.clip(_d, 0, 999), nan=999.0)
         else:
             result["days_to_earnings"] = 999.0
 
