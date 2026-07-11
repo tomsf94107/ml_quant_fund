@@ -85,6 +85,7 @@ def main():
     print()
     overall_start = time.time()
 
+    failed_batches = []
     for i, (start_ticker, end_ticker) in enumerate(batches, 1):
         # First batch: start_from=None means run from beginning
         sf = None if i == 1 else start_ticker
@@ -92,9 +93,24 @@ def main():
         if rc != 0:
             print(f"\n⚠ Batch {i} exited with non-zero code {rc}")
             print("Continuing to next batch (cache merge handles partial results)")
+            failed_batches.append((i, rc))
 
     overall_elapsed = time.time() - overall_start
     print(f"\n{'='*60}")
+    # BATCH FAILURE PROPAGATION (Jul 11 2026).
+    # This wrapper used to catch a non-zero batch, print a warning, CONTINUE,
+    # then print 'ALL BATCHES COMPLETE' and exit 0 -- so the prediction-collapse
+    # guard inside run_daily() raised, got swallowed here, and Pipeline B's
+    # `|| fail "Stage 3"` never fired. That is exactly how 2026-06-29 wrote 37
+    # predictions instead of 1,194 and still reported success. Fail loudly.
+    if failed_batches:
+        print()
+        print('=' * 60)
+        print(f'BATCH FAILURE: {len(failed_batches)}/{len(batches)} batches failed: {failed_batches}')
+        print('Predictions for this date are INCOMPLETE. Do not trust them.')
+        print('=' * 60)
+        raise SystemExit(1)
+    
     print(f"ALL BATCHES COMPLETE — total {overall_elapsed:.1f}s ({overall_elapsed/60:.1f}min)")
     print(f"{'='*60}")
 
