@@ -97,8 +97,19 @@ def cached_daily(ticker, start, end, fetch_raw_fn, fetch_splits_fn) -> pd.DataFr
             _write_raw(con, ticker, raw)
         else:
             last = have.index.max()
+            # Heal partial bars at the FRONTIER only. A partial bar can only exist at the
+            # edge of the cache (a bar fetched mid-session). A request ending months ago
+            # carries no partial-bar risk -- re-fetching its tail is pure API waste.
+            # (v1 of this patch re-fetched 5d on EVERY call, turning zero-call cache hits
+            #  into ~400 API calls per pipeline run -> HTTP 429. Fixed Jul 11 2026.)
             REFETCH_TAIL_DAYS = 5
-            gap_start = (last - pd.Timedelta(days=REFETCH_TAIL_DAYS)).strftime("%Y-%m-%d")
+            FRONTIER_WINDOW_DAYS = 10
+            _recent = (pd.Timestamp(end_s) >= pd.Timestamp.today().normalize()
+                                    - pd.Timedelta(days=FRONTIER_WINDOW_DAYS))
+            if _recent:
+                gap_start = (last - pd.Timedelta(days=REFETCH_TAIL_DAYS)).strftime("%Y-%m-%d")
+            else:
+                gap_start = (last + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
             if gap_start <= end_s:
                 gap = fetch_raw_fn(ticker, gap_start, end_s)
                 if gap is not None and not gap.empty:

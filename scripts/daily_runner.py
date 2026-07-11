@@ -241,8 +241,13 @@ def send_email_alert(buy_signals: list[dict]):
 #  MAIN RUNNER
 # ══════════════════════════════════════════════════════════════════════════════
 
-def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
-    run_date = today_et()
+def run_daily(force: bool = False, start_from: str = None, end_at: str = None, tickers: list = None, skip_watchlist: bool = False, watchlist_tickers: list = None, watchlist_only: bool = False):
+    # Stamp predictions with the last COMPLETED session, not today_et().
+    # today_et() = ET calendar date; if daily_runner runs mid-session (or the
+    # chain overruns past ET midnight), today_et() flips to a day with no
+    # completed bar -> phantom partial prediction set. Fix Jul 1 2026.
+    from features.massive_client import _last_completed_session as _lcs_stamp
+    run_date = _lcs_stamp().strftime("%Y-%m-%d")
     log.info(f"{'='*60}")
     log.info(f"  Daily Runner — {run_date}")
     log.info(f"{'='*60}")
@@ -287,8 +292,25 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
     except Exception as _ex:
         log.warning(f"A/B GLOBAL bootstrap check failed entirely: {_ex}  (per-ticker pipeline unaffected)")
 
+    _explicit = tickers
     tickers = load_tickers()
-    log.info(f"Tickers: {len(tickers)}")
+    if _explicit:
+        _univ = set(tickers)
+        _want = [t.strip().upper() for t in _explicit if t.strip()]
+        _valid = [t for t in _want if t in _univ]
+        _unknown = [t for t in _want if t not in _univ]
+        if _unknown:
+            log.warning(f"Selective run: unknown tickers ignored: {_unknown}")
+        if not _valid and not watchlist_only:
+            log.error(f"Selective run: none of {_want} are in the universe — aborting"); return
+        tickers = _valid
+        log.info(f"Selective run: {len(tickers)} ticker(s): {tickers}")
+    else:
+        log.info(f"Tickers: {len(tickers)}")
+
+    if watchlist_only:
+        tickers = []
+        log.info("watchlist_only=True — main ticker loop will be skipped")
 
     # start_from support — May 5 2026 (resume after crash)
     if start_from is not None:
@@ -366,9 +388,14 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                 from features import massive_client as _mc_check
                 # Use recent 30-day window — was hardcoded 2024-12 which is stale,
                 # caused USAR/XYZ false-skips since they came onto Polygon after that.
-                from datetime import date as _date_chk, timedelta as _td_chk
-                _chk_end = _date_chk.today().strftime("%Y-%m-%d")
-                _chk_start = (_date_chk.today() - _td_chk(days=30)).strftime("%Y-%m-%d")
+                from datetime import timedelta as _td_chk
+                # VN-date bug: date.today() = Mac VN local = a day ahead of last
+                # completed ET session -> requests non-existent 07-01 bar ->
+                # empty/429 -> false-skips the ticker. Cap at last completed
+                # session. Fix Jul 1 2026.
+                _chk_anchor = _mc_check._last_completed_session()
+                _chk_end = _chk_anchor.strftime("%Y-%m-%d")
+                _chk_start = (_chk_anchor - _td_chk(days=30)).strftime("%Y-%m-%d")
                 _check_df = _mc_check.download(ticker, start=_chk_start, end=_chk_end,
                                                 auto_adjust=True, progress=False)
                 if _check_df.empty:
@@ -388,18 +415,36 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
                 try:
                     sig = generate_signals(ticker, df, horizon=horizon, confidence_threshold=BUY_THRESHOLD)
 
+                    # Live price override: during market hours, sig.current_price is the
+                    # daily close (capped at last completed session). Replace with the
+                    # live 15-min-delayed intraday tick so the Forecast shows today's
+                    # price. Falls back to sig.current_price if intraday unavailable.
+                    _live_price = sig.current_price
+                    _live_pdate = sig.price_date
+                    try:
+                        from features.intraday_builder import get_intraday_signal as _gis, is_market_open as _imo
+                        if _imo():
+                            _isig = _gis(ticker)
+                            if _isig and _isig.get("current_price"):
+                                _live_price = _isig["current_price"]
+                                from utils.timezone import today_et as _tet
+                                _live_pdate = _tet()
+                    except Exception:
+                        pass
+
                     result = {
                         "ticker":          ticker,
                         "horizon":         horizon,
                         "signal":          sig.today_signal,
                         "prob":            sig.today_prob,
                         "prob_eff":        sig.today_prob_eff,
+                        "prob_global":     sig.today_prob_up_global,
                         "confidence":      "HIGH" if sig.today_prob_eff >= 0.70
                                            else "MEDIUM" if sig.today_prob_eff >= BUY_THRESHOLD
                                            else "LOW",
                         "run_date":        run_date,
-                        "current_price":   sig.current_price,
-                        "price_date":      sig.price_date,
+                        "current_price":   _live_price,
+                        "price_date":      _live_pdate,
                         "price_target_up": sig.price_target_up,
                         "price_target_dn": sig.price_target_dn,
                         "expected_return": sig.expected_return,
@@ -551,6 +596,32 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
     log.info(f"  DONE — {len(results)} signals, {len(buy_signals)} BUY, "
              f"{len(failed)} failed")
 
+    # ── PREDICTION-COLLAPSE GUARD (Jul 11 2026) ───────────────────────────────
+    # On 2026-06-29 this run produced 37 signals from 13 tickers instead of ~1,194
+    # from 398 -- and exited status 0. The 13 survivors were simply the ones already
+    # sitting in the price cache; every other ticker got HTTP 429 from Massive, and
+    # massive_client "returns empty" instead of raising, so they vanished silently.
+    # Nobody noticed for two weeks.
+    #
+    # This is THE recurring failure shape in this system: something breaks, writes
+    # nothing, exits clean. The `failed` list above already knows. Act on it.
+    _attempted = len(results) + len(failed)
+    if _attempted >= 20:
+        _rate = len(results) / _attempted
+        if _rate < 0.50:
+            raise RuntimeError(
+                f"PREDICTION COLLAPSE on {run_date}: only {len(results)}/{_attempted} "
+                f"tickers produced signals ({len(failed)} failed). Near-certainly an "
+                f"upstream data failure (Massive 429 / auth / empty feed). REFUSING to "
+                f"exit clean. Do NOT trust this date's predictions. "
+                f"First failures: {failed[:10]}"
+            )
+        if _rate < 0.90:
+            log.warning(
+                f"  ⚠ DEGRADED RUN: {len(results)}/{_attempted} produced signals "
+                f"({len(failed)} dropped). Check logs for 429s. Failed: {failed[:15]}"
+            )
+
     if buy_signals:
         log.info(f"\n  🟢 BUY SIGNALS TODAY:")
         for s in buy_signals:
@@ -597,12 +668,17 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
         try:
             with open(cache_path) as f:
                 existing = json.load(f)
-            if existing.get("date") == run_date and isinstance(existing.get("signals"), list):
+            if isinstance(existing.get("signals"), list):
+                # Preserve all prior tickers REGARDLESS of date — a partial run
+                # (runfundsel/runfundwatch) updates only its tickers and must keep
+                # everyone else. Stale-but-present beats missing; the dashboard's
+                # own stale-date banner warns when prices are old.
                 new_keys = {(s.get("ticker"), s.get("horizon")) for s in results}
                 preserved = [s for s in existing["signals"]
                              if (s.get("ticker"), s.get("horizon")) not in new_keys]
                 merged_signals = preserved + list(results)
-                log.info(f"  Cache merge: {len(preserved)} preserved + {len(results)} new = {len(merged_signals)} total")
+                _xd = "" if existing.get("date") == run_date else f" (prior date {existing.get('date')} kept)"
+                log.info(f"  Cache merge: {len(preserved)} preserved + {len(results)} new = {len(merged_signals)} total{_xd}")
         except Exception as e:
             log.warning(f"  Cache merge failed, will overwrite: {e}")
 
@@ -616,7 +692,20 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None):
     log.info(f"  Dashboard cache saved → {cache_path} ({len(merged_signals)} signals)")
 
     # ── Watchlist predictions (no accuracy logging) ────────────────
-    watchlist = load_watchlist()
+    if skip_watchlist:
+        watchlist = []
+        log.info("Watchlist: skipped (skip_watchlist=True)")
+    elif watchlist_tickers:
+        _wl_all = set(load_watchlist())
+        watchlist = [t.strip().upper() for t in watchlist_tickers
+                     if t.strip().upper() in _wl_all]
+        _wl_unknown = [t.strip().upper() for t in watchlist_tickers
+                       if t.strip().upper() not in _wl_all]
+        if _wl_unknown:
+            log.warning(f"Watchlist selective: not in watchlist, ignored: {_wl_unknown}")
+        log.info(f"Watchlist selective: {len(watchlist)} ticker(s): {watchlist}")
+    else:
+        watchlist = load_watchlist()
     if watchlist:
         log.info(f"Watchlist: {len(watchlist)} tickers")
         watchlist_results = []

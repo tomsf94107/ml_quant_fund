@@ -189,6 +189,7 @@ def _request_with_retry(url, params, timeout=(5, 20), max_retries=3):
     for attempt in range(max_retries):
         t0 = time.perf_counter()
         try:
+            _rate_gate()   # proactive pacing: prevents the burst that causes 429s
             r = _session.get(url, params=params, timeout=timeout)
             elapsed = time.perf_counter() - t0
             safe_url = _redact_url(r.url)
@@ -197,7 +198,17 @@ def _request_with_retry(url, params, timeout=(5, 20), max_retries=3):
                 f"elapsed={elapsed:.3f}s gen={_session_generation} url={safe_url}"
             )
             if r.status_code == 200:
+                # decay the interval back toward baseline on success -- otherwise one
+                # early 429 leaves the whole run crawling at the widened pace.
+                if _MIN_INTERVAL > _MIN_INTERVAL_BASE:
+                    globals()["_MIN_INTERVAL"] = max(_MIN_INTERVAL_BASE, _MIN_INTERVAL * 0.97)
                 return r.json()
+            if r.status_code == 429:
+                # throttled: widen the global interval so the REST of the run slows down
+                with _RATE_LOCK:
+                    _MIN_INTERVAL_NEW = min(_MIN_INTERVAL * 1.5, 1.0)
+                globals()["_MIN_INTERVAL"] = _MIN_INTERVAL_NEW
+                log.warning("massive.throttled -> min_interval now %.3fs", _MIN_INTERVAL_NEW)
             if r.status_code == 429 or 500 <= r.status_code < 600:
                 last_err = RuntimeError(f"Massive HTTP {r.status_code}: {safe_url}")
                 try:
@@ -235,6 +246,27 @@ def _request_with_retry(url, params, timeout=(5, 20), max_retries=3):
 
 
 _PRICE_CACHE_ENABLED = True  # persistent daily-bar cache (prices.db)
+
+# ---- PROACTIVE RATE LIMIT (Jul 11 2026) --------------------------------------
+# The client had ONLY reactive backoff (sleep 2**attempt on a 429, give up after 3,
+# "return empty"). With ~400 tickers it fires bursts, Polygon throttles, tickers
+# SILENTLY drop out of the run and the pipeline exits 0. That is how 2026-06-29
+# produced 37 predictions instead of 1,194. Pace the calls instead of apologising
+# for them. 429s: 994 on 2026-07-09 alone.
+import threading as _threading
+_RATE_LOCK = _threading.Lock()
+_MIN_INTERVAL_BASE = float(os.environ.get("MASSIVE_MIN_INTERVAL", "0.08"))  # ~12 req/s
+_MIN_INTERVAL = _MIN_INTERVAL_BASE
+_last_call_ts = [0.0]
+
+def _rate_gate():
+    with _RATE_LOCK:
+        now = time.perf_counter()
+        wait = _MIN_INTERVAL - (now - _last_call_ts[0])
+        if wait > 0:
+            time.sleep(wait)
+        _last_call_ts[0] = time.perf_counter()
+
 
 
 def download(
