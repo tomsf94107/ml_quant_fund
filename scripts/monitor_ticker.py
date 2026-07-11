@@ -62,6 +62,24 @@ DB_PATH = Path(os.environ.get("EARNINGS_DB", "earnings_monitor.db"))
 # Default ticker universe with sector benchmark and earnings context.
 # Confirm earnings dates via the company's IR page before relying on them.
 TICKER_CONFIG: dict[str, dict] = {
+    "MSFT": {
+        "sector_etf": "IGV",
+        "earnings_date": "2026-07-29",
+        "earnings_time": "AMC",
+        "news_search_term": "Microsoft MSFT",
+    },
+    "GOOG": {
+        "sector_etf": "IGV",
+        "earnings_date": "2026-07-22",
+        "earnings_time": "AMC",
+        "news_search_term": "Alphabet Google GOOG",
+    },
+    "AMZN": {
+        "sector_etf": "XLY",
+        "earnings_date": "2026-07-30",
+        "earnings_time": "AMC",
+        "news_search_term": "Amazon AMZN",
+    },
     "BYND": {
         "earnings_date": "2026-08-05",  # AMC, Q2 2026; sources disagree (Aug 5 vs 12) — verify closer
     },
@@ -1059,11 +1077,27 @@ def section_institutional(conn: sqlite3.Connection, ticker: str) -> None:
 
     # Pull previous snapshot from DB to compute deltas
     cur = conn.cursor()
+    # 13F DELTA FIX (Jul 11 2026): the old query read prev at MAX(report_date),
+    # but the CURRENT snapshot is written with that SAME report_date (13F dates are
+    # quarter-end and static between runs) -- so prev WAS the filing being displayed
+    # and every delta came out +0 across all 200 holders. Compare to the PREVIOUS
+    # report_date instead, and say so plainly when there is no prior snapshot.
+    _cur_rd = max([(get_date(r) or now_iso()[:10]) for r in rows] or ["9999-12-31"])
     prev = {row[0]: row[1] for row in cur.execute(
         "SELECT institution_name, shares FROM institutional_holdings "
         "WHERE ticker = ? AND report_date = ("
-        "  SELECT MAX(report_date) FROM institutional_holdings WHERE ticker = ?"
-        ")", (ticker, ticker))}
+        "  SELECT MAX(report_date) FROM institutional_holdings "
+        "  WHERE ticker = ? AND report_date < ?"
+        ")", (ticker, ticker, _cur_rd))}
+    _pr = cur.execute("SELECT MAX(report_date) FROM institutional_holdings "
+                      "WHERE ticker = ? AND report_date < ?",
+                      (ticker, _cur_rd)).fetchone()
+    _prev_rd = _pr[0] if _pr else None
+    if not prev:
+        print(f"  [note] no prior 13F snapshot (current report_date {_cur_rd}); "
+              f"'Delta vs prev' reads +0 until the next filing lands")
+    else:
+        print(f"  [note] deltas vs report_date {_prev_rd}")
 
     # Save current snapshot
     for r in rows:
@@ -1314,7 +1348,14 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     #   else → neutral (at VWAP)
     # Report the dollar-weighted skew per day for the most recent 7.
     print(f"\n  Signed flow estimate (VWAP heuristic, NOT Lee-Ready):")
-    print(f"  {'Date':<12} {'Buy $':>16} {'Sell $':>16} {'Net':>14} {'Skew':>8}")
+    # COVERAGE GUARD (Jul 11 2026). A skew without its coverage is not a number.
+    # Gate on ABSOLUTE classified flow, not the ratio: MSFT Jun 26 had $161M
+    # classified (a normal sample) but 0.8% coverage only because the denominator
+    # carried $20B of Russell-reconstitution auction prints.
+    MIN_CLASSIFIED_USD = 5_000_000
+    MIN_CLASSIFIED_PRINTS = 20
+    MIN_COVERAGE_PCT = 50.0
+    print(f"  {'Date':<12} {'Buy $':>16} {'Sell $':>16} {'Net':>14} {'Skew':>8} {'Cover':>7}")
     by_day_signed: dict[str, dict] = {}
     for executed_at, size, price, value, venue in rows:
         day = (executed_at or "")[:10]
@@ -1343,19 +1384,32 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         vwap = d["total_val"] / d["total_sh"] if d["total_sh"] else 0
         if not vwap:
             continue
-        buy_val = sell_val = 0.0
+        buy_val = sell_val = neutral_val = 0.0
         for px, v in d["prints"]:
             if px > vwap * 1.0005:
                 buy_val += v
             elif px < vwap * 0.9995:
                 sell_val += v
+            else:
+                # AT-VWAP prints. Previously dropped SILENTLY. Closing-auction
+                # mega-prints execute at one price AND dominate the day's VWAP,
+                # so they land here by construction -- which is why coverage
+                # collapsed to <1% on exactly the days that mattered most.
+                neutral_val += v
         net = buy_val - sell_val
         denom = buy_val + sell_val
+        total_dp = denom + neutral_val
+        coverage = (denom / total_dp * 100) if total_dp else 0
         skew_pct = (net / denom * 100) if denom else 0
-        skew_buy_total += buy_val
-        skew_sell_total += sell_val
+        usable = (denom >= MIN_CLASSIFIED_USD
+                  and len(d["prints"]) >= MIN_CLASSIFIED_PRINTS
+                  and coverage >= MIN_COVERAGE_PCT)
+        if usable:
+            skew_buy_total += buy_val
+            skew_sell_total += sell_val
+        mark = "" if usable else "  THIN"
         print(f"  {day:<12} {buy_val:>16,.0f} {sell_val:>16,.0f} "
-              f"{net:>+14,.0f} {skew_pct:>+7.1f}%")
+              f"{net:>+14,.0f} {skew_pct:>+7.1f}% {coverage:>6.1f}%{mark}")
 
     if skew_buy_total or skew_sell_total:
         denom = skew_buy_total + skew_sell_total

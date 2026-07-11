@@ -146,6 +146,22 @@ def load_alerts_7d() -> pd.DataFrame:
     return df
 
 
+def _real_table_freshness(db_path, table, date_col):
+    """Newest actual data date in a table -> ISO string, or None. This reflects
+    TRUE data freshness (unlike scraper-state side-tables which can freeze while
+    the ETL keeps writing). Used as the authoritative 'last refresh' source."""
+    try:
+        import sqlite3 as _sq
+        if not db_path.exists():
+            return None
+        c = _sq.connect(str(db_path))
+        r = c.execute(f"SELECT MAX({date_col}) FROM {table}").fetchone()
+        c.close()
+        return r[0] if r and r[0] else None
+    except Exception:
+        return None
+
+
 def get_insider_state_db() -> dict:
     """
     Returns last refresh metadata. Prefers insider_raw_scraper_state (populated
@@ -324,7 +340,13 @@ card_ins, card_inst = st.columns(2)
 with card_ins:
     with st.container(border=True):
         ins_db_state = get_insider_state_db()
-        last_poll = utc_to_vn(ins_db_state.get("last_poll_at"))
+        # Prefer the REAL data table (insider_flows) freshness; the scraper-state
+        # side-table can freeze while the ETL keeps writing (was showing a stale date).
+        _real_ins = _real_table_freshness(INSIDER_DB, "insider_flows", "date")
+        if _real_ins:
+            last_poll = f"{_real_ins} (data)"
+        else:
+            last_poll = utc_to_vn(ins_db_state.get("last_poll_at"))
         st.markdown(f"**Insider · last refresh**  \n{last_poll}")
 
         ins_status = _get_insider()
@@ -353,7 +375,14 @@ with card_ins:
 with card_inst:
     with st.container(border=True):
         inst_db_state = get_inst_state_db()
-        last_poll_inst = utc_to_vn(inst_db_state.get("last_poll_at"))
+        # Prefer the REAL data table (institutional_trades) freshness over the
+        # scraper-state side-table (which can lag / freeze independently).
+        _inst_db = ROOT / "institutional_trades.db"
+        _real_inst = _real_table_freshness(_inst_db, "institutional_trades", "trade_date")
+        if _real_inst:
+            last_poll_inst = f"{_real_inst} (data)"
+        else:
+            last_poll_inst = utc_to_vn(inst_db_state.get("last_poll_at"))
         n_rows = inst_db_state.get("last_row_count")
         n_tk = inst_db_state.get("last_ticker_count")
         line2 = ""
