@@ -1,0 +1,4644 @@
+
+  
+   jbht20220630b_10q.htm 
+   
+   
+  
+ 0000728535 
+ HUNT J B TRANSPORT SERVICES INC 
+ false 
+ --12-31 
+ Q2 
+ 2021 
+ 0.30 
+ 0.40 
+ 0.58 
+ 0.80 
+ 0 
+ 1 
+ 25.0 
+ 
+ 
+ 
+ 0000728535 2022-01-01 2022-06-30 
+ xbrli:shares 
+ 0000728535 2022-06-30 
+ iso4217:USD 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2022-04-01 2022-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2021-04-01 2021-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2022-01-01 2022-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2021-01-01 2021-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2022-04-01 2022-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2021-04-01 2021-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2022-01-01 2022-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2021-01-01 2021-06-30 
+ 0000728535 2022-04-01 2022-06-30 
+ 0000728535 2021-04-01 2021-06-30 
+ 0000728535 2021-01-01 2021-06-30 
+ iso4217:USD xbrli:shares 
+ 0000728535 2021-12-31 
+ 0000728535 us-gaap:CommonStockMember 2021-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2021-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2021-03-31 
+ 0000728535 us-gaap:TreasuryStockMember 2021-03-31 
+ 0000728535 2021-03-31 
+ 0000728535 us-gaap:CommonStockMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:TreasuryStockMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:CommonStockMember 2021-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2021-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2021-06-30 
+ 0000728535 us-gaap:TreasuryStockMember 2021-06-30 
+ 0000728535 2021-06-30 
+ 0000728535 us-gaap:CommonStockMember 2022-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-03-31 
+ 0000728535 us-gaap:TreasuryStockMember 2022-03-31 
+ 0000728535 2022-03-31 
+ 0000728535 us-gaap:CommonStockMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:TreasuryStockMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:CommonStockMember 2022-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-06-30 
+ 0000728535 us-gaap:TreasuryStockMember 2022-06-30 
+ 0000728535 us-gaap:CommonStockMember 2020-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2020-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2020-12-31 
+ 0000728535 us-gaap:TreasuryStockMember 2020-12-31 
+ 0000728535 2020-12-31 
+ 0000728535 us-gaap:CommonStockMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:TreasuryStockMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:CommonStockMember 2021-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2021-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2021-12-31 
+ 0000728535 us-gaap:TreasuryStockMember 2021-12-31 
+ 0000728535 us-gaap:CommonStockMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:TreasuryStockMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2022-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2022-06-30 
+ utr:Y 
+ 0000728535 us-gaap:SeniorNotesMember 2022-06-30 
+ 0000728535 us-gaap:SeniorNotesMember 2021-12-31 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2022-06-30 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2022-01-01 2022-06-30 
+ 0000728535 jbht:SeniorNotesFirstIssuanceMember us-gaap:SeniorNotesMember 2022-06-30 
+ xbrli:pure 
+ 0000728535 jbht:SeniorNotesSecondIssuanceMember us-gaap:SeniorNotesMember 2022-06-30 
+ 0000728535 jbht:SeniorNotesThirdIssuanceMember us-gaap:SeniorNotesMember 2022-06-30 
+ 0000728535 2020-01-22 
+ 0000728535 us-gaap:SubsequentEventMember 2022-07-20 
+ thunderdome:item 
+ 0000728535 2022-01-20 2022-01-20 
+ 0000728535 2022-04-28 2022-04-28 
+ 0000728535 us-gaap:SubsequentEventMember 2022-07-20 2022-07-20 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2022-06-30 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2021-12-31 
+ 0000728535 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember 2022-06-30 
+ 0000728535 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember 2021-12-31 
+ 0000728535 us-gaap:FairValueMeasurementsNonrecurringMember us-gaap:SeniorNotesMember 2022-06-30 
+ 0000728535 us-gaap:FairValueMeasurementsNonrecurringMember us-gaap:SeniorNotesMember 2021-12-31 
+ 0000728535 jbht:ZenithFreightLinesLlcMember 2022-02-28 2022-02-28 
+ 0000728535 jbht:ZenithFreightLinesLlcMember us-gaap:GeneralAndAdministrativeExpenseMember 2022-02-28 2022-02-28 
+ 0000728535 jbht:ZenithFreightLinesLlcMember 2022-02-28 
+ 0000728535 us-gaap:CustomerRelationshipsMember 2022-06-30 
+ 0000728535 us-gaap:CustomerRelationshipsMember 2021-12-31 
+ 0000728535 us-gaap:CustomerRelationshipsMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:NoncompeteAgreementsMember 2022-06-30 
+ 0000728535 us-gaap:NoncompeteAgreementsMember 2021-12-31 
+ 0000728535 us-gaap:NoncompeteAgreementsMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:TradeNamesMember 2022-06-30 
+ 0000728535 us-gaap:TradeNamesMember 2021-12-31 
+ 0000728535 us-gaap:TradeNamesMember 2022-01-01 2022-06-30 
+ 0000728535 jbht:LDCNetworkAccessMember 2022-06-30 
+ 0000728535 jbht:LDCNetworkAccessMember 2021-12-31 
+ 0000728535 jbht:LDCNetworkAccessMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2021-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2021-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2021-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2021-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2021-12-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2022-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2021-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2021-01-01 2021-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2022-04-01 2022-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2021-04-01 2021-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2022-01-01 2022-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2021-01-01 2021-06-30 
+ 
+   
+     
+   
+     
+ UNITED STATES 
+ SECURITIES AND EXCHANGE COMMISSION 
+ Washington, D.C. 20549 
+   
+ FORM  10-Q 
+ (Mark One) 
+   ☒     QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+ 
+   
+ For the quarterly period ended  June 30, 2022 
+   
+ OR 
+   
+   ☐     TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+ 
+ Commission File Number:  0-11757 
+   
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+ (Exact name of registrant as specified in its charter) 
+   
+   Arkansas     71-0335111   
+   (State or other jurisdiction     (I.R.S. Employer   
+   of incorporation or     Identification No.)   
+   organization)         
+ 
+   
+ 615 J.B. Hunt Corporate Drive ,  Lowell ,  Arkansas   72745 
+ (Address of principal executive offices) 
+   
+ 479 - 820-0000 
+ (Registrant's telephone number, including area code) 
+   
+ www.jbhunt.com 
+ (Registrant's web site) 
+   
+ Securities registered pursuant to Section 12(b) of the Exchange Act: 
+   
+   Title of each class     Trading Symbol(s)     Name of each exchange on which registered   
+   Common Stock, $0.01 par value         JBHT     NASDAQ   
+ 
+   
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to the filing requirements for the past 90 days. 
+ Yes  ☒           No   ☐   
+   
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). 
+ Yes  ☒           No   ☐ 
+   
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company.    See the definitions of  “ large accelerated filer, ”   “ accelerated filer, ”   “ smaller reporting company ”  and  “ emerging growth company ”  in Rule 12b-2 of the Exchange Act. 
+   
+ Large accelerated filer    ☒      Accelerated filer  ☐      Non-accelerated filer  ☐   
+ Smaller reporting company   ☐     Emerging growth company   ☐ 
+   
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+   
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). 
+ Yes   ☐           No ☒ 
+   
+ The number of shares of the registrant ’ s $0.01 par value common stock outstanding on June 30, 2022 was  103,813,143 . 
+   
+ 
+  
+   
+    
+     
+    
+   
+  
+ 
+   
+    
+     
+       
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+   
+     
+   
+     
+   J.B. HUNT TRANSPORT SERVICES, INC. 
+     
+   Form 10-Q 
+   For The Quarterly Period Ended June 30, 2022 
+   Table of Contents 
+     
+     
+   
+    
+     
+            
+            
+        Page   
+     
+
+     
+        Part I.      Financial Information   
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 1.   
+        Financial Statements   
+            
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+        Condensed Consolidated Statements of Earnings for the Three and Six Months Ended June 30, 2022 and 2021   
+        3   
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+        Condensed Consolidated Balance Sheets as of June 30, 2022 and December 31, 2021   
+        4   
+     
+
+     
+        
+        
+        
+     
+
+     
+        
+      Condensed Consolidated Statements of Stockholders’ Equity for the Three and Six Months Ended June 30, 2022 and 2021 
+      5 
+     
+
+     
+        
+            
+            
+     
+
+     
+            
+        Condensed Consolidated Statements of Cash Flows for the Six Months Ended June 30, 2022 and 2021   
+        6   
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+        Notes to Condensed Consolidated Financial Statements as of June 30, 2022   
+        7   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 2.   
+        Management's Discussion and Analysis of Financial Condition and Results of Operations   
+        13   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 3.   
+        Quantitative and Qualitative Disclosures About Market Risk   
+        22   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 4.   
+        Controls and Procedures   
+        22   
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+            
+            
+     
+
+     
+        Part II.      Other Information   
+     
+
+     
+            
+            
+            
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 1.   
+        Legal Proceedings   
+        23   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 1A.   
+        Risk Factors   
+        23   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 2.   
+        Unregistered Sales of Equity Securities and Use of Proceeds   
+        23   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 3.   
+        Defaults Upon Senior Securities   
+        23   
+     
+
+     
+        
+        
+        
+     
+
+     
+        Item 4.   
+        Mine Safety Disclosures   
+        23   
+     
+
+     
+        
+        
+        
+     
+
+     
+        Item 5.   
+        Other Information   
+        23   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Item 6.   
+        Exhibits   
+        23   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Exhibits   
+        24   
+     
+
+     
+            
+            
+            
+     
+
+     
+        Signatures   
+        25   
+     
+
+    
+   
+     
+   
+    
+     
+      
+        
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+   
+     
+   
+   
+     
+   
+   Part I. Financial Information 
+     
+   
+    
+     
+        ITEM 1.   FINANCIAL STATEMENTS   
+     
+
+    
+   
+     
+   
+    
+     
+        J.B. HUNT TRANSPORT SERVICES, INC.   
+     
+
+     
+        
+     
+
+     
+        Condensed Consolidated Statements of Earnings   
+     
+
+     
+        (in thousands, except per share amounts)   
+     
+
+     
+        (unaudited)   
+     
+
+    
+   
+     
+   
+          Three Months Ended         Six Months Ended     
+       June 30,         June 30,     
+       2022         2021         2022         2021     
+                                   
+   Operating revenues, excluding fuel surcharge revenues     $ 3,159,759     $ 2,606,981     $ 6,201,976     $ 4,995,015   
+   Fuel surcharge revenues       677,773       301,389       1,124,144       531,504   
+   Total operating revenues       3,837,532       2,908,370       7,326,120       5,526,519   
+                                   
+   Operating expenses:                                   
+   Rents and purchased transportation       1,920,823       1,538,232       3,758,163       2,890,533   
+   Salaries, wages and employee benefits       841,825       665,471       1,605,416       1,285,502   
+   Fuel and fuel taxes       265,636       126,841       455,102       239,881   
+   Depreciation and amortization       157,571       139,371       306,334       276,916   
+   Operating supplies and expenses       126,383       91,019       233,322       172,717   
+   Insurance and claims       87,258       35,508       133,389       73,538   
+   General and administrative expenses, net of asset dispositions       59,764       47,505       97,209       92,396   
+   Operating taxes and licenses       16,323       14,209       32,073       28,024   
+   Communication and utilities       8,866       8,668       17,735       17,814   
+   Total operating expenses       3,484,449       2,666,824       6,638,743       5,077,321   
+   Operating income       353,083       241,546       687,377       449,198   
+   Net interest expense       12,842       12,059       25,429       24,084   
+   Earnings before income taxes       340,241       229,487       661,948       425,114   
+   Income taxes       84,899       57,325       163,282       106,346   
+   Net earnings     $ 255,342     $ 172,162     $ 498,666     $ 318,768   
+                                   
+   Weighted average basic shares outstanding       104,252       105,509       104,572       105,594   
+                                   
+   Basic earnings per share     $ 2.45     $ 1.63     $ 4.77     $ 3.02   
+                                   
+   Weighted average diluted shares outstanding       105,387       106,816       105,729       106,816   
+                                   
+   Diluted earnings per share     $ 2.42     $ 1.61     $ 4.72     $ 2.98   
+ 
+   
+     
+   
+    
+     
+        See Notes to Condensed Consolidated Financial Statements.   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       3
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+   
+     
+   
+     
+   
+    
+     
+        J.B. HUNT TRANSPORT SERVICES, INC.   
+     
+
+     
+        
+     
+
+     
+        Condensed Consolidated Balance Sheets   
+     
+
+     
+        (in thousands)   
+     
+
+     
+        (unaudited)   
+     
+
+    
+   
+     
+   
+          June 30, 2022         December 31, 2021     
+                   
+   ASSETS                   
+   Current assets:                   
+   Cash and cash equivalents     $ 123,841     $ 355,549   
+   Trade accounts receivable, net       1,776,773       1,506,619   
+   Prepaid expenses and other       381,304       451,201   
+   Total current assets       2,281,918       2,313,369   
+   Property and equipment, at cost       7,294,079       6,680,316   
+   Less accumulated depreciation       2,846,384       2,612,661   
+   Net property and equipment       4,447,695       4,067,655   
+   Goodwill and intangible assets, net       236,489       191,093   
+   Other assets       286,460       222,231   
+   Total assets     $ 7,252,562     $ 6,794,348   
+                   
+                   
+   LIABILITIES AND STOCKHOLDERS' EQUITY                   
+   Current liabilities:                   
+   Current portion of long-term debt     $ 349,955     $ 355,972   
+   Trade accounts payable       886,617       772,736   
+   Claims accruals       324,758       307,210   
+   Accrued payroll       185,829       190,950   
+   Other accrued expenses       122,906       102,732   
+   Total current liabilities       1,870,065       1,729,600   
+                   
+   Long-term debt       945,999       945,257   
+   Other long-term liabilities       301,003       256,233   
+   Deferred income taxes       810,631       745,442   
+   Stockholders' equity       3,324,864       3,117,816   
+   Total liabilities and stockholders' equity     $ 7,252,562     $ 6,794,348   
+ 
+   
+     
+   
+    
+     
+        See Notes to Condensed Consolidated Financial Statements.   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       4
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+   
+     
+   
+     
+   
+    
+     
+        J.B. HUNT TRANSPORT SERVICES, INC.   
+     
+
+     
+        
+     
+
+     
+        Condensed Consolidated Statements of Stockholders' Equity   
+     
+
+     
+        (in thousands, except per share amounts)   
+     
+
+     
+        (unaudited)   
+     
+
+    
+   
+     
+   
+          Three Months Ended June 30, 2021 and 2022     
+               Additional                             
+       Common         Paid-in         Retained         Treasury         Stockholders ’     
+       Stock         Capital         Earnings         Stock         Equity     
+                                           
+   Balances at March 31, 2021     $ 1,671     $ 419,251     $ 5,101,748     $ ( 2,800,604 )   $ 2,722,066   
+   Comprehensive income:                                           
+   Net earnings       -       -       172,162       -       172,162   
+   Cash dividend declared and paid ( $0.30  per share)       -       -       ( 31,704 )     -       ( 31,704 ) 
+   Purchase of treasury shares       -       -       -       ( 81,341 )     ( 81,341 ) 
+   Share-based compensation       -       16,498       -       -       16,498   
+   Restricted share issuances, net of stock repurchased for payroll taxes and other       -       987       -       360       1,347   
+   Balances at June 30, 2021     $ 1,671     $ 436,736     $ 5,242,206     $ ( 2,881,585 )   $ 2,799,028   
+                                           
+   Balances at March 31, 2022     $ 1,671     $ 461,516     $ 5,822,488     $ ( 3,032,133 )   $ 3,253,542   
+   Comprehensive income:                                           
+   Net earnings       -       -       255,342       -       255,342   
+   Cash dividend declared and paid ( $0.40  per share)       -       -       ( 41,735 )     -       ( 41,735 ) 
+   Purchase of treasury shares       -       -       -       ( 164,322 )     ( 164,322 ) 
+   Share-based compensation       -       20,443       -       -       20,443   
+   Restricted share issuances, net of stock repurchased for payroll taxes and other       -       1,150       -       444       1,594   
+   Balances at June 30, 2022     $ 1,671     $ 483,109     $ 6,036,095     $ ( 3,196,011 )   $ 3,324,864   
+ 
+   
+     
+   
+          Six Months Ended June 30, 2021 and 2022     
+               Additional                             
+       Common         Paid-in         Retained         Treasury         Stockholders ’     
+       Stock         Capital         Earnings         Stock         Equity     
+                                           
+   Balances at December 31, 2020     $ 1,671     $ 408,244     $ 4,984,739     $ ( 2,794,516 )   $ 2,600,138   
+   Comprehensive income:                                           
+   Net earnings       -       -       318,768       -       318,768   
+   Cash dividend declared and paid ( $0.58  per share)       -       -       ( 61,301 )     -       ( 61,301 ) 
+   Purchase of treasury shares       -       -       -       ( 86,580 )     ( 86,580 ) 
+   Share-based compensation       -       31,466       -       -       31,466   
+   Restricted share issuances, net of stock repurchased for payroll taxes and other       -       ( 2,974 )     -       ( 489 )     ( 3,463 ) 
+   Balances at June 30, 2021     $ 1,671     $ 436,736     $ 5,242,206     $ ( 2,881,585 )   $ 2,799,028   
+                                           
+   Balances at December 31, 2021     $ 1,671     $ 448,217     $ 5,621,103     $ ( 2,953,175 )   $ 3,117,816   
+   Comprehensive income:                                           
+   Net earnings       -       -       498,666       -       498,666   
+   Cash dividend declared and paid ( $0.80  per share)       -       -       ( 83,674 )     -       ( 83,674 ) 
+   Purchase of treasury shares       -       -       -       ( 239,340 )     ( 239,340 ) 
+   Share-based compensation       -       39,584       -       -       39,584   
+   Restricted share issuances, net of stock repurchased for payroll taxes and other       -       ( 4,692 )     -       ( 3,496 )     ( 8,188 ) 
+   Balances at June 30, 2022     $ 1,671     $ 483,109     $ 6,036,095     $ ( 3,196,011 )   $ 3,324,864   
+ 
+   
+     
+   See Notes to Condensed Consolidated Financial Statements. 
+     
+   
+    
+     
+      
+       5
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+   
+     
+   
+     
+   
+    
+     
+        J.B. HUNT TRANSPORT SERVICES, INC.   
+     
+
+     
+        
+     
+
+     
+        Condensed Consolidated Statements of Cash Flows   
+     
+
+     
+        (in thousands)   
+     
+
+     
+        (unaudited)   
+     
+
+    
+   
+     
+   
+    
+     
+      
+         
+         
+         Six Months Ended June 30,   
+         
+      
+
+      
+         
+         
+         2022   
+         
+         
+         2021   
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Cash flows from operating activities:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Net earnings   
+         
+       $ 
+       498,666 
+         
+         
+       $ 
+       318,768 
+         
+      
+
+      
+         Adjustments to reconcile net earnings to net cash provided by operating activities:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Depreciation and amortization   
+         
+         
+       306,334 
+         
+         
+         
+       276,916 
+         
+      
+
+      
+         Noncash lease expense   
+         
+         
+       39,066 
+         
+         
+         
+       25,411 
+         
+      
+
+      
+         Share-based compensation   
+         
+         
+       39,584 
+         
+         
+         
+       31,466 
+         
+      
+
+      
+         (Gain)/loss on sale of revenue equipment and other   
+         
+         
+       ( 20,667 
+       ) 
+         
+         
+       2,359 
+         
+      
+
+      
+         Deferred income taxes   
+         
+         
+       65,189 
+         
+         
+         
+       36,945 
+         
+      
+
+      
+         Changes in operating assets and liabilities:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Trade accounts receivable   
+         
+         
+       ( 262,943 
+       ) 
+         
+         
+       ( 169,521 
+       ) 
+      
+
+      
+         Other assets   
+         
+         
+       61,653 
+         
+         
+         
+       85,657 
+         
+      
+
+      
+         Trade accounts payable   
+         
+         
+       83,856 
+         
+         
+         
+       49,273 
+         
+      
+
+      
+         Income taxes payable or receivable   
+         
+         
+       ( 13,915 
+       ) 
+         
+         
+       ( 26,359 
+       ) 
+      
+
+      
+         Claims accruals   
+         
+         
+       24,905 
+         
+         
+         
+       7,359 
+         
+      
+
+      
+         Accrued payroll and other accrued expenses   
+         
+         
+       ( 37,201 
+       ) 
+         
+         
+       30,474 
+         
+      
+
+      
+         Net cash provided by operating activities   
+         
+         
+       784,527 
+         
+         
+         
+       668,748 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Cash flows from investing activities:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Additions to property and equipment   
+         
+         
+       ( 667,742 
+       ) 
+         
+         
+       ( 306,727 
+       ) 
+      
+
+      
+         Net proceeds from sale of equipment   
+         
+         
+       69,648 
+         
+         
+         
+       46,016 
+         
+      
+
+      
+         Business acquisition   
+         
+         
+       ( 86,939 
+       ) 
+         
+         
+       - 
+         
+      
+
+      
+         Changes in other assets   
+         
+         
+       - 
+         
+         
+         
+       ( 88 
+       ) 
+      
+
+      
+         Net cash used in investing activities   
+         
+         
+       ( 685,033 
+       ) 
+         
+         
+       ( 260,799 
+       ) 
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Cash flows from financing activities:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Proceeds from revolving lines of credit and other   
+         
+         
+       - 
+         
+         
+         
+       1,011 
+         
+      
+
+      
+         Purchase of treasury stock   
+         
+         
+       ( 239,340 
+       ) 
+         
+         
+       ( 86,580 
+       ) 
+      
+
+      
+         Stock repurchased for payroll taxes and other   
+         
+         
+       ( 8,188 
+       ) 
+         
+         
+       ( 3,463 
+       ) 
+      
+
+      
+         Dividends paid   
+         
+         
+       ( 83,674 
+       ) 
+         
+         
+       ( 61,301 
+       ) 
+      
+
+      
+         Net cash used in financing activities   
+         
+         
+       ( 331,202 
+       ) 
+         
+         
+       ( 150,333 
+       ) 
+      
+
+      
+         Net change in cash and cash equivalents   
+         
+         
+       ( 231,708 
+       ) 
+         
+         
+       257,616 
+         
+      
+
+      
+         Cash and cash equivalents at beginning of period   
+         
+         
+       355,549 
+         
+         
+         
+       313,302 
+         
+      
+
+      
+         Cash and cash equivalents at end of period   
+         
+       $ 
+       123,841 
+         
+         
+       $ 
+       570,918 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Supplemental disclosure of cash flow information:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Cash paid during the period for:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Interest   
+         
+       $ 
+       21,335 
+         
+         
+       $ 
+       24,341 
+         
+      
+
+      
+         Income taxes   
+         
+       $ 
+       111,641 
+         
+         
+       $ 
+       92,368 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Noncash investing activities   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Accruals for equipment received   
+         
+       $ 
+       90,490 
+         
+         
+       $ 
+       50,606 
+         
+      
+
+     
+    
+   
+     
+   
+    
+     
+        See Notes to Condensed Consolidated Financial Statements.   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       6
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   J.B. HUNT TRANSPORT SERVICES, INC. 
+     
+   Notes to Condensed Consolidated Financial Statements 
+   (Unaudited) 
+     
+   
+     
+   
+   
+    
+     
+      
+         1.   
+         General   
+      
+
+     
+    
+      
+    Basis of Presentation 
+      
+    The accompanying unaudited interim Condensed Consolidated Financial Statements have been prepared in accordance with U.S. generally accepted accounting principles (GAAP) for interim financial information. We believe such statements include all adjustments (consisting only of normal recurring adjustments) necessary for the fair statement of our financial position, results of operations and cash flows at the dates and for the periods indicated. Pursuant to the requirements of the Securities and Exchange Commission (SEC) applicable to quarterly reports on Form  10 -Q, the accompanying financial statements do  not  include all disclosures required by GAAP for annual financial statements. While we believe the disclosures presented are adequate to make the information  not  misleading, these unaudited interim Condensed Consolidated Financial Statements should be read in conjunction with the Consolidated Financial Statements and related notes included in our Annual Report on Form  10 -K for the year ended   December 31, 2021.  Operating results for the periods presented in this report are  not  necessarily indicative of the results that   may  be expected for the calendar year ending   December 31, 2022,  or any other interim period. Our business is somewhat seasonal with slightly higher freight volumes typically experienced during   August  through early   November  in our full-load freight transportation business. 
+   
+     
+   
+     
+   
+   
+    
+     
+      
+         2.   
+         Earnings Per Share   
+      
+
+     
+    
+      
+    We compute basic earnings per share by dividing net earnings available to common stockholders by the actual weighted average number of common shares outstanding for the reporting period. Diluted earnings per share reflects the potential dilution that could occur if holders of unvested restricted and performance share units converted their holdings into common stock. The dilutive effect of restricted and performance share units was  1.1  million and  1.2  million shares during the  three  and  six  months ended   June 30, 2022,  compared to  1.3  million and  1.2  million shares during the  three  and  six  months ended   June 30, 2021. 
+   
+     
+   
+     
+   
+   
+      3.     Share-based Compensation    
+ 
+      
+    The following table summarizes the components of our share-based compensation program expense (in thousands): 
+      
+    
+           Three Months Ended   June 30,         Six Months Ended   June 30,     
+       2022         2021         2022         2021     
+   Restricted share units:     
+   Pretax compensation expense     $ 14,920     $ 12,214     $ 27,895     $ 22,993   
+   Tax benefit       3,730       3,078       6,974       5,795   
+   Restricted share unit expense, net of tax     $ 11,190     $ 9,136     $ 20,921     $ 17,198   
+     
+   Performance share units:     
+   Pretax compensation expense     $ 5,523     $ 4,284     $ 11,689     $ 8,473   
+   Tax benefit       1,381       1,080       2,922       2,135   
+   Performance share unit expense, net of tax     $ 4,142     $ 3,204     $ 8,767     $ 6,338   
+ 
+    
+      
+    As of   June 30, 2022,  we had $ 93.9  million and $ 31.6  million of total unrecognized compensation expense related to restricted share units and performance share units, respectively, that is to be recognized over the remaining weighted average period of approximately  2.8  years for restricted share units and  2.3  years for performance share units. During the  six  months ended   June 30, 2022,  we issued  13,813  shares for vested restricted share units and  108,823  shares for vested performance share units.  No  restricted share units or performance share units were issued during the  second  quarter  2022. 
+      
+    
+     
+      7 
+     
+     
+     
+       
+     
+    
+      
+   
+   
+     
+   
+   
+    
+     
+      
+         4.     
+         Financing Arrangements    
+      
+
+     
+    
+      
+    Outstanding borrowings, net of unamortized discount, unamortized debt issuance cost and fair value swap, under our current financing arrangements consist of the following (in millions): 
+      
+    
+     
+      
+       
+          
+          
+          June 30, 2022   
+          
+          
+          December 31, 2021   
+          
+       
+
+       
+          Senior notes   
+          
+        $ 
+        1,296.0 
+          
+          
+        $ 
+        1,301.2 
+          
+       
+
+       
+          Less current portion of long-term debt   
+          
+          
+        ( 350.0 
+        ) 
+          
+          
+        ( 356.0 
+        ) 
+       
+
+       
+          Total long-term debt   
+          
+        $ 
+        946.0 
+          
+          
+        $ 
+        945.2 
+          
+       
+
+      
+     
+    
+      
+    Senior Revolving Line of Credit 
+      
+    At   June 30, 2022,  we were authorized to borrow up to $ 750  million under a senior revolving line of credit, which is supported by a credit agreement with a group of banks and expires in   September 2023.  This senior credit facility allows us to request an increase in the total commitment by up to $ 250  million and to request a  one -year extension of the maturity date. The applicable interest rate under this agreement is based on either the Prime Rate, the Federal Funds Rate or LIBOR, depending upon the specific type of borrowing, plus an applicable margin based on our credit rating and other fees. At   June 30, 2022,  we had  no  outstanding borrowings under this agreement. 
+      
+    Senior Notes 
+      
+    Our senior notes consist of  three  separate issuances. The  first  is $ 250  million of  3.85 % senior notes due   March 2024,  issued in   March 2014.  Interest payments under these notes are due semiannually in   March  and   September  of each year, beginning   September 2014.  The  second  is $ 350  million of  3.30 % senior notes due   August 2022,  issued in   August 2015.  Interest payments under these notes are due semiannually in   February  and   August  of each year, beginning   February 2016.  The  third  is $ 700  million of  3.875 % senior notes due   March 2026,  issued in   March 2019.  Interest payments under these notes are due semiannually in   March  and   September  of each year beginning   September 2019.  All  three  senior notes were issued by J.B. Hunt Transport Services, Inc., a parent-level holding company with  no  significant assets or operations. The notes are guaranteed on a full and unconditional basis by a wholly-owned subsidiary. All other subsidiaries of the parent are minor. We registered these offerings and the sale of the notes under the Securities Act of  1933,  pursuant to shelf registration statements filed in   February 2014  and   January 2019.  All notes are unsecured obligations and rank equally with our existing and future senior unsecured debt. We   may  redeem for cash some or all of the notes based on a redemption price set forth in the note indenture. See Note  5,  Derivative Financial Instruments, for terms of an interest rate swap previously entered into on the $ 350  million of  3.30 % senior notes due   August 2022. 
+      
+    Our financing arrangements require us to maintain certain covenants and financial ratios.  We were in compliance with all covenants and financial ratios at   June 30, 2022. 
+   
+     
+   
+     
+   
+   
+    
+     
+      
+         5.     
+         Derivative Financial Instruments   
+      
+
+     
+    
+      
+    We periodically utilize derivative instruments for hedging and non-trading purposes to manage exposure to changes in interest rates and to maintain an appropriate mix of fixed and variable-rate debt. At inception of a derivative contract, we document relationships between derivative instruments and hedged items, as well as our risk-management objective and strategy for undertaking various derivative transactions, and assess hedge effectiveness. If it is determined that a derivative is  not  highly effective as a hedge, or if a derivative ceases to be a highly effective hedge, we discontinue hedge accounting prospectively. 
+      
+    We entered into a receive fixed-rate and pay variable-rate interest rate swap agreement simultaneously with the issuance of our $ 350  million of  3.30 % senior notes due   August 2022,  to effectively convert this fixed-rate debt to variable-rate. The notional amount of this interest rate swap agreement equaled that of the corresponding fixed-rate debt. The applicable interest rate under this agreement was based on LIBOR plus an established margin. The swap originally expired when the corresponding senior notes matured, however, this swap was retired during  second  quarter  2022.  See Note  7,  Fair Value Measurements, for disclosure of relevant fair value. This derivative met the required criteria to be designated as a fair value hedge, and as the specific terms and notional amount of this derivative instrument matched those of the fixed-rate debt being hedged, this derivative instrument was assumed to perfectly hedge the related debt against changes in fair value due to changes in the benchmark interest rate. Accordingly, any change in the fair value of this interest rate swap recorded in earnings was offset by a corresponding change in the fair value of the related debt.          
+      
+    
+     
+      
+       
+        8 
+       
+      
+     
+    
+   
+   
+    
+     
+       
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   
+     
+   
+   
+      6.       Capital Stock    
+ 
+      
+    On   January 22, 2020,  our Board of Directors authorized the purchase of up to $ 500  million of our common stock. At   June 30, 2022,  $ 112  million of this authorization was remaining. We purchased approximately  1,362,000  shares, or $ 239.3  million, of our common stock under our repurchase authorization during the  six  months ended   June 30, 2022,  of which  979,000  shares, or $ 164.3  million, were purchased in  second  quarter  2022.  On   July 20, 2022,  our Board of Directors authorized an additional purchase of up to $ 500  million of our common stock. On    January 20, 2022 ,  our Board of Directors declared a regular quarterly cash dividend of $ 0.40 , which was paid    February 18, 2022 ,  to stockholders of record on    February 4, 2022 .  On    April 28, 2022 ,  our Board of Directors declared a regular quarterly dividend of $ 0.40  per common share, which was paid on    May 27, 2022 ,  to stockholders of record on    May 13, 2022 .  On    July 20, 2022 ,  our Board of Directors declared a regular quarterly dividend of $ 0.40  per common share, which will be paid on    August 19, 2022 ,  to stockholders of record on    August 5, 2022 . 
+   
+     
+   
+     
+   
+   
+      7.       Fair Value Measurements   
+ 
+      
+    Assets and Liabilities Measured at Fair Value on a Recurring Basis 
+      
+    Our assets and liabilities measured at fair value are based on valuation techniques which consider prices and other relevant information generated by market transactions involving identical or comparable assets and liabilities. These valuation methods are based on either quoted market prices (Level  1 ) or inputs, other than quoted prices in active markets, that are observable either directly or indirectly (Level  2 ). The following are assets and liabilities measured at fair value on a recurring basis at   June 30, 2022 ( in millions): 
+      
+    
+           Asset/(Liability)   Balance             
+       June 30, 2022         December 31, 2021         Input Level     
+   Trading investments     $ 24.3     $ 26.0       1   
+   Interest rate swap     $ -     $ 6.3       2   
+   Senior notes, net of unamortized discount and debt issuance costs     $ -     $ ( 356.0 )     2   
+ 
+    
+      
+    The fair value of trading investments has been measured using the market approach (Level  1 ) and reflect quoted market prices. The fair values of the interest rate swap and corresponding senior notes have been measured using the income approach (Level  2 ), which include relevant interest rate curve inputs. Trading investments are classified in other assets in our Condensed Consolidated Balance Sheets. The interest rate swap and senior notes are classified in our Condensed Consolidated Balance Sheets in prepaid expenses and other and current portion of long-term debt, respectively. 
+      
+    Financial Instruments 
+      
+    The carrying amount of our remaining senior notes  not  measured at fair value on a recurring basis was $ 1.30  billion and $ 945.2  million at   June 30, 2022  and   December 31, 2021,  respectively. The estimated fair value of these liabilities using the income approach (Level  2 ), based on their net present value, discounted at our current borrowing rate, was $ 1.30  billion and $ 1.04  billion at   June 30, 2022  and   December 31, 2021,  respectively. 
+      
+    The carrying amounts of all other instruments at   June 30, 2022,  approximate their fair value due to the short maturity of these instruments. 
+      
+    
+     
+      9 
+     
+    
+   
+   
+    
+    
+      
+    
+   
+     
+   
+     
+   
+   
+      8.       Income Taxes   
+ 
+      
+    Our effective income tax rate was  25.0 % for both the  second  quarter  2022  and  2021.  Our effective income tax rate was  24.7 % for the  first   six  months of  2022,  compared to  25.0 % in  2021.  In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+      
+    At   June 30, 2022,  we had a total of $ 84.8  million in gross unrecognized tax benefits, which are a component of other long-term liabilities on our Condensed Consolidated Balance Sheets. Of this amount, $ 72.2  million represents the amount of unrecognized tax benefits that, if recognized, would impact our effective tax rate. The total amount of accrued interest and penalties for such unrecognized tax benefits was $ 8.1  million at   June 30, 2022. 
+   
+     
+   
+     
+   
+   
+    
+     
+      
+         9.     
+         Commitments and Contingencies   
+      
+
+     
+    
+      
+    As the result of state use tax audits, we have been assessed amounts owed from which we are vigorously appealing. We have recorded a liability for the estimated probable exposure under these audits and await resolution of the matter. 
+      
+    We purchase insurance coverage for a portion of expenses related to vehicular collisions and accidents. These policies include a level of self-insurance (deductible) coverage applicable to each claim as well as certain coverage layer specific, aggregated reimbursement limits of covered excess claims. We   may  exceed some of these existing coverage layer aggregate reimbursement limits. We have recorded $ 30  million in liabilities in the  second  quarter  2022,  to reflect our estimate of exposure for excess claims and will adjust current reserves as necessary until the underlying claims are ultimately settled. 
+      
+    We are involved in certain other claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will  not  have a material adverse effect on our financial condition, results of operations or liquidity. 
+   
+     
+   
+     
+   
+   
+    
+     
+      
+         10.     
+         Acquisitions   
+      
+
+     
+    
+      
+    On   January 31, 2022,  we entered into an asset purchase agreement to acquire substantially all of the assets and assume certain specified liabilities of Zenith Freight Lines, LLC (Zenith), a wholly-owned subsidiary of Bassett Furniture Industries, Inc., subject to customary closing conditions.  The closing of the transaction was effective on   February 28, 2022,  with a purchase price and total consideration paid in cash of $ 86.9  million. In addition, we incurred approximately $ 0.9  million in transaction costs which are recorded in general and administrative expenses, net of asset dispositions in our Condensed Consolidated Statements of Earnings. The Zenith acquisition was accounted for as a business combination and will operate within our Final Mile Services® business segment. Assets acquired and liabilities assumed were recorded in our Condensed Consolidated Balance Sheet at their estimated fair values, as of the closing date, using cost, market data and valuation techniques that reflect management’s judgment and estimates. As a result of the acquisition, we recorded approximately $ 42.7  million of definite-lived intangible assets and approximately $ 11.2  million of goodwill. Goodwill consists of acquiring and retaining the Zenith existing network and expected synergies from the combination of operations. The following table outlines the consideration transferred and preliminary purchase price allocation at their respective estimated fair values as of   February 28, 2022 ( in millions): 
+      
+    
+     
+      
+       
+          Consideration   
+          
+        $ 
+        86.9 
+          
+       
+
+       
+          Accounts receivable   
+          
+          
+        7.2 
+          
+       
+
+       
+          Other current assets   
+          
+          
+        1.3 
+          
+       
+
+       
+          Property and equipment   
+          
+          
+        28.4 
+          
+       
+
+       
+          Other assets   
+          
+          
+        0.3 
+          
+       
+
+       
+          Right-of-use assets   
+          
+          
+        28.2 
+          
+       
+
+       
+          Intangibles   
+          
+          
+        42.7 
+          
+       
+
+       
+          Accounts payable and accrued liabilities   
+          
+          
+        ( 4.2 
+        ) 
+       
+
+       
+          Lease liabilities   
+          
+          
+        ( 28.2 
+        ) 
+       
+
+       
+          Goodwill   
+          
+        $ 
+        11.2 
+          
+       
+
+      
+     
+    
+      
+    
+     
+      
+       
+        10 
+       
+      
+     
+    
+   
+   
+    
+     
+       
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   
+     
+   
+   
+      11.       Goodwill and Other Intangible Assets   
+ 
+      
+    As discussed in Note  10,  Acquisitions, in  2022,  we recorded additional goodwill of approximately $ 11.2  million and additional finite-lived intangible assets of approximately $ 42.7  million in connection with the Zenith acquisition. Total goodwill was $ 111.7  million and $ 100.5  million at   June 30, 2022,  and   December 31, 2021,  respectively. All goodwill is assigned to our Final Mile Services business segment and  no  impairment losses have been recorded for goodwill as of   June 30, 2022.  Prior to the Zenith acquisition, our intangible assets consisted of those arising from previous business acquisitions and our purchased LDC network access, both within our Final Mile Services business segment. Identifiable intangible assets consist of the following (in millions): 
+      
+    
+                           Weighted Average     
+       June 30,         December 31,         Amortization     
+       2022         2021         Period     
+   Finite-lived intangibles:                           
+   Customer relationships     $ 168.1     $ 129.9       10.9   
+   Non-competition agreements       9.6       7.3       6.3   
+   Trade names       6.4       4.2       2.1   
+   LDC Network       10.5       10.5       10.0   
+   Total finite-lived intangibles       194.6       151.9           
+   Less accumulated amortization       ( 69.8 )     ( 61.3 )         
+   Total identifiable intangible assets, net     $ 124.8     $ 90.6           
+ 
+    
+      
+    Our finite-lived intangible assets have  no  assigned residual values. 
+      
+    Intangible asset amortization expense was $ 4.8  million during the  second  quarter  2022,  compared to $ 3.5  million during  second  quarter  2021.  During the  six  months ended   June 30, 2022  and  2021,  intangible asset amortization expense was $ 8.5  million and $ 7.2  million, respectively. Estimated amortization expense for our finite-lived intangible assets is expected to be approximately $ 18.2  million for  2022,  $ 19.4  million for  2023,  $ 18.2  million for  2024,  $ 17.9  million for  2025,  and $ 17.1  million for  2026.  Actual amounts of amortization expense   may  differ from estimated amounts due to additional intangible asset acquisitions, impairment or accelerated amortization of intangible assets, and other events. 
+      
+    
+     
+      
+       
+        11 
+       
+      
+     
+    
+   
+   
+    
+     
+       
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    
+     
+      
+         12.     
+         Business Segments   
+      
+
+     
+    
+      
+    We reported  five  distinct business segments during the  six  months ended   June 30, 2022  and  2021.  These segments included Intermodal (JBI), Dedicated Contract Services® (DCS®), Integrated Capacity Solutions™ (ICS), Truckload (JBT), and Final Mile Services (FMS). The operation of each of these businesses is described in Note  14,  Segment Information, of our Annual Report (Form  10 -K) for the year ended   December 31, 2021.  A summary of certain segment information is presented below (in millions): 
+      
+    
+     
+      
+       
+          
+          
+          Assets   (Excludes intercompany accounts)   As of   
+          
+       
+
+       
+          
+          
+          June 30, 2022   
+          
+          
+          December 31, 2021   
+          
+       
+
+       
+          JBI   
+          
+        $ 
+        3,107 
+          
+          
+        $ 
+        2,858 
+          
+       
+
+       
+          DCS   
+          
+          
+        1,750 
+          
+          
+          
+        1,630 
+          
+       
+
+       
+          ICS   
+          
+          
+        412 
+          
+          
+          
+        428 
+          
+       
+
+       
+          JBT   
+          
+          
+        467 
+          
+          
+          
+        403 
+          
+       
+
+       
+          FMS   
+          
+          
+        608 
+          
+          
+          
+        472 
+          
+       
+
+       
+          Other (includes corporate)   
+          
+          
+        909 
+          
+          
+          
+        1,003 
+          
+       
+
+       
+          Total   
+          
+        $ 
+        7,253 
+          
+          
+        $ 
+        6,794 
+          
+       
+
+      
+     
+    
+      
+    
+     
+      
+       
+          
+          
+          Operating Revenues   
+          
+       
+
+       
+          
+          
+          Three Months Ended   June 30,   
+          
+          
+          Six Months Ended   June 30,   
+          
+       
+
+       
+          
+          
+          2022   
+          
+          
+          2021   
+          
+          
+          2022   
+          
+          
+          2021   
+          
+       
+
+       
+          JBI   
+          
+        $ 
+        1,833 
+          
+          
+        $ 
+        1,289 
+          
+          
+        $ 
+        3,436 
+          
+          
+        $ 
+        2,467 
+          
+       
+
+       
+          DCS   
+          
+          
+        863 
+          
+          
+          
+        621 
+          
+          
+          
+        1,604 
+          
+          
+          
+        1,201 
+          
+       
+
+       
+          ICS   
+          
+          
+        623 
+          
+          
+          
+        608 
+          
+          
+          
+        1,299 
+          
+          
+          
+        1,133 
+          
+       
+
+       
+          JBT   
+          
+          
+        269 
+          
+          
+          
+        184 
+          
+          
+          
+        533 
+          
+          
+          
+        333 
+          
+       
+
+       
+          FMS   
+          
+          
+        257 
+          
+          
+          
+        212 
+          
+          
+          
+        476 
+          
+          
+          
+        414 
+          
+       
+
+       
+          Subtotal   
+          
+          
+        3,845 
+          
+          
+          
+        2,914 
+          
+          
+          
+        7,348 
+          
+          
+          
+        5,548 
+          
+       
+
+       
+          Inter-segment eliminations   
+          
+          
+        ( 7 
+        ) 
+          
+          
+        ( 6 
+        ) 
+          
+          
+        ( 22 
+        ) 
+          
+          
+        ( 21 
+        ) 
+       
+
+       
+          Total   
+          
+        $ 
+        3,838 
+          
+          
+        $ 
+        2,908 
+          
+          
+        $ 
+        7,326 
+          
+          
+        $ 
+        5,527 
+          
+       
+
+      
+     
+    
+      
+    
+     
+      
+       
+          
+          
+          Operating Income/(Loss)   
+          
+       
+
+       
+          
+          
+          Three Months Ended   June 30,   
+          
+          
+          Six Months Ended   June 30,   
+          
+       
+
+       
+          
+          
+          2022   
+          
+          
+          2021   
+          
+          
+        2022 
+          
+          
+          2021   
+          
+       
+
+       
+          JBI   
+          
+        $ 
+        202.5 
+          
+          
+        $ 
+        134.6 
+          
+          
+        $ 
+        403.5 
+          
+          
+        $ 
+        242.1 
+          
+       
+
+       
+          DCS   
+          
+          
+        89.2 
+          
+          
+          
+        79.0 
+          
+          
+          
+        166.3 
+          
+          
+          
+        153.3 
+          
+       
+
+       
+          ICS   
+          
+          
+        23.6 
+          
+          
+          
+        3.1 
+          
+          
+          
+        48.6 
+          
+          
+          
+        10.4 
+          
+       
+
+       
+          JBT   
+          
+          
+        25.0 
+          
+          
+          
+        14.2 
+          
+          
+          
+        56.5 
+          
+          
+          
+        24.4 
+          
+       
+
+       
+          FMS   
+          
+          
+        12.8 
+          
+          
+          
+        10.7 
+          
+          
+          
+        12.7 
+          
+          
+          
+        19.2 
+          
+       
+
+       
+          Other (includes corporate)   
+          
+          
+        ( 0.0 
+        ) 
+          
+          
+        ( 0.1 
+        ) 
+          
+          
+        ( 0.2 
+        ) 
+          
+          
+        ( 0.2 
+        ) 
+       
+
+       
+          Total   
+          
+        $ 
+        353.1 
+          
+          
+        $ 
+        241.5 
+          
+          
+        $ 
+        687.4 
+          
+          
+        $ 
+        449.2 
+          
+       
+
+      
+     
+    
+      
+    
+     
+      
+       
+          
+          
+          Depreciation and Amortization Expense   
+          
+       
+
+       
+          
+          
+          Three Months Ended   June 30,   
+          
+          
+          Six Months Ended   June 30,   
+          
+       
+
+       
+          
+          
+          2022   
+          
+          
+          2021   
+          
+          
+          2022   
+          
+          
+          2021   
+          
+       
+
+       
+          JBI   
+          
+        $ 
+        55.3 
+          
+          
+        $ 
+        49.4 
+          
+          
+        $ 
+        108.0 
+          
+          
+        $ 
+        98.5 
+          
+       
+
+       
+          DCS   
+          
+          
+        66.1 
+          
+          
+          
+        58.4 
+          
+          
+          
+        129.1 
+          
+          
+          
+        115.3 
+          
+       
+
+       
+          ICS   
+          
+          
+        0.5 
+          
+          
+          
+        0.2 
+          
+          
+          
+        1.0 
+          
+          
+          
+        0.4 
+          
+       
+
+       
+          JBT   
+          
+          
+        10.7 
+          
+          
+          
+        8.8 
+          
+          
+          
+        20.6 
+          
+          
+          
+        17.7 
+          
+       
+
+       
+          FMS   
+          
+          
+        11.3 
+          
+          
+          
+        8.6 
+          
+          
+          
+        20.7 
+          
+          
+          
+        17.6 
+          
+       
+
+       
+          Other (includes corporate)   
+          
+          
+        13.7 
+          
+          
+          
+        14.0 
+          
+          
+          
+        26.9 
+          
+          
+          
+        27.4 
+          
+       
+
+       
+          Total   
+          
+        $ 
+        157.6 
+          
+          
+        $ 
+        139.4 
+          
+          
+        $ 
+        306.3 
+          
+          
+        $ 
+        276.9 
+          
+       
+
+      
+     
+    
+      
+    
+     
+      
+       
+        12 
+       
+      
+     
+    
+   
+   
+    
+     
+       
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   ITEM 2.    MANAGEMENT ’ S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND   RESULTS OF   OPERATIONS  
+     
+   You should refer to the attached interim Condensed Consolidated Financial Statements and related notes and also to our Annual Report (Form 10-K) for the year ended December 31, 2021, as you read the following discussion. We may make statements in this report that reflect our current expectation regarding future results of operations, performance, and achievements. These are “forward-looking” statements as defined in the Private Securities Litigation Reform Act of 1995 and are based on our belief or interpretation of information currently available. When we use words like “may,” “plan,” “contemplate,” “anticipate,” “believe,” “intend,” “continue,” “expect,” “project,” “goals,” “strategy,” “future,” “predict,” “seek,” “estimate,” “likely,” “could,” “should,” “would,” and similar expressions, you should consider them as identifying forward-looking statements, although we may use other phrasing. Forward-looking statements are inherently uncertain, subject to risks, and should be viewed with caution. These statements are based on our belief or interpretation of information currently available. Stockholders and prospective investors are cautioned that actual results and future events may differ materially from these forward-looking statements as a result of many factors. Some of the factors and events that are not within our control and that could have a material impact on future operating results include the following: general economic and business conditions; potential business or operational disruptions resulting from the ongoing effects of the novel coronavirus (COVID-19) pandemic, including any future spikes or outbreaks of the virus, as well as government actions taken in response to the pandemic; competition and competitive rate fluctuations; excess capacity in the intermodal or trucking industries; a loss of one or more major customers; cost and availability of diesel fuel; interference with or termination of our relationships with certain railroads; rail service delays; disruptions to U.S. port-of-call activity; ability to attract and retain qualified drivers, delivery personnel, independent contractors, and third-party carriers; retention of key employees; insurance costs and availability; litigation and claims expense; determination that independent contractors are employees; new or different environmental or other laws and regulations; volatile financial credit markets or interest rates; terrorist attacks or actions; acts of war; adverse weather conditions; disruption or failure of information systems; inability to keep pace with technological advances affecting our information technology platforms; operational disruption or adverse effects of business acquisitions; increased costs for new revenue equipment; increased tariffs assessed on or disruptions in the procurement of imported revenue equipment; decreases in the value of used equipment; and the ability of revenue equipment manufacturers to perform in accordance with agreements for guaranteed equipment trade-in values. Additionally, our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load transportation business. You should also refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2021, for additional information on risk factors and other events that are not within our control. Our future financial and operating results may fluctuate as a result of these and other risk factors as described from time to time in our filings with the SEC. We assume no obligation to update any forward-looking statement to the extent we become aware that it will not be achieved for any reason. 
+     
+   GENERAL 
+     
+   We are one of the largest surface transportation, delivery, and logistics companies in North America. We operate five distinct, but complementary, business segments and provide a wide range of safe and reliable transportation, brokerage, and delivery services to a diverse group of customers and consumers throughout the continental United States, Canada, and Mexico. Our service offerings include transportation of full-truckload containerized freight, which we directly transport utilizing our company-controlled revenue equipment and company drivers or independent contractors. We have arrangements with most of the major North American rail carriers to transport freight in containers or trailers, while we perform the majority of the pickup and delivery services. We also provide customized freight movement, revenue equipment, labor, systems, and delivery services that are tailored to meet individual customers’ requirements and typically involve long-term contracts. These arrangements are generally referred to as dedicated services and may include multiple pickups and drops, freight handling, specialized equipment, and freight network design. In addition, we provide or arrange for local and home delivery services, generally referred to as final-mile delivery services, to customers through a network of cross-dock and other delivery system locations throughout the continental United States. Utilizing thousands of reliable third-party carriers, we also provide comprehensive freight transportation, brokerage, and logistics services. In addition to dry-van, full-load operations, we also arrange for these unrelated outside carriers to provide flatbed, refrigerated, less-than-truckload (LTL), and other specialized equipment, drivers, and services. Also, we utilize a combination of company-owned and contracted power units to provide traditional over-the-road full truckload delivery services. Our customers, who include many Fortune 500 companies, have extremely diverse businesses. Many of them are served by J.B. Hunt 360°®, an online platform that offers shippers and carriers greater access, visibility, and transparency of the supply chain. We account for our business on a calendar year basis, with our full year ending on December 31 and our quarterly reporting periods ending on March 31, June 30, and September 30. The operation of each of our five business segments is described in Note 14, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2021. 
+     
+   
+    
+     
+      
+       13
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   Our operations have been impacted by the COVID-19 global pandemic. We began our COVID-19 response activities in the first quarter of 2020, which required remote working when possible, expanded health and safety policies, facility modifications, increased security coverage, and purchase and distribution of personal protective equipment and supplies. In addition, we provided incremental paid time off for employees to help offset any financial loss caused by their absence from work when receiving the COVID-19 vaccination. We also worked with local healthcare organizations to provide vaccination assistance under applicable area guidelines and procedures to employees and their family members. On April 4, 2022, we eliminated the requirement of remote working when possible, resulting in previously remote employees returning to our home office campus and all other field locations throughout North America. We continue to review and analyze both external and internal COVID-related data, including the effects of new variants. We have been pleased with the continued performance of our employees, particularly our drivers, who have provided consistent service to our customers throughout the pandemic. 
+     
+   Critical Accounting Policies and Estimates 
+     
+   The preparation of our financial statements in conformity with U.S. GAAP requires us to make estimates and assumptions that impact the amounts reported in our Condensed Consolidated Financial Statements and accompanying notes. Therefore, the reported amounts of assets, liabilities, revenues, expenses, and associated disclosures of contingent liabilities are affected by these estimates. We evaluate these estimates on an ongoing basis, utilizing historical experience, consultation with experts, and other methods considered reasonable in the particular circumstances. Nevertheless, actual results may differ significantly from our estimates. Any effects on our business, financial position, or results of operations resulting from revisions to these estimates are recognized in the accounting period in which the facts that give rise to the revision become known. 
+     
+   Information regarding our Critical Accounting Policies and Estimates can be found in our Annual Report (Form 10-K). The critical accounting policies that we believe require us to make more significant judgments and estimates when we prepare our financial statements include those relating to self-insurance accruals, revenue equipment, revenue recognition and income taxes. We have discussed the development and selection of these critical accounting policies and estimates with the Audit Committee of our Board of Directors. In addition, Note 2,  Summary of Significant Accounting Policies , to the financial statements in our Annual Report (Form 10-K) for the year ended December 31, 2021, contains a summary of our critical accounting policies. There have been no material changes to the methodology we apply for critical accounting estimates as previously disclosed in our Annual Report on Form 10-K. 
+     
+   RESULTS OF OPERATIONS 
+     
+   Comparison of Three Months Ended June 30, 2022 to Three Months Ended June 30, 2021 
+     
+   
+    
+     
+        
+        
+        Summary of Operating Segment Results   For the Three Months Ended June 30,   (in millions)   
+        
+     
+
+     
+        
+        
+        Operating Revenues   
+        
+        
+      Operating Income/(Loss) 
+        
+     
+
+     
+        
+        
+        2022   
+        
+        
+        2021   
+        
+        
+        2022   
+        
+        
+        2021   
+        
+     
+
+     
+        JBI   
+        
+      $ 
+      1,833 
+        
+        
+      $ 
+      1,289 
+        
+        
+      $ 
+      202.5 
+        
+        
+      $ 
+      134.6 
+        
+     
+
+     
+        DCS   
+        
+        
+      863 
+        
+        
+        
+      621 
+        
+        
+        
+      89.2 
+        
+        
+        
+      79.0 
+        
+     
+
+     
+        ICS   
+        
+        
+      623 
+        
+        
+        
+      608 
+        
+        
+        
+      23.6 
+        
+        
+        
+      3.1 
+        
+     
+
+     
+        JBT   
+        
+        
+      269 
+        
+        
+        
+      184 
+        
+        
+        
+      25.0 
+        
+        
+        
+      14.2 
+        
+     
+
+     
+        FMS   
+        
+        
+      257 
+        
+        
+        
+      212 
+        
+        
+        
+      12.8 
+        
+        
+        
+      10.7 
+        
+     
+
+     
+        Other (includes corporate)   
+        
+        
+      - 
+        
+        
+        
+      - 
+        
+        
+        
+      (0.0 
+      ) 
+        
+        
+      (0.1 
+      ) 
+     
+
+     
+        Subtotal   
+        
+        
+      3,845 
+        
+        
+        
+      2,914 
+        
+        
+        
+      353.1 
+        
+        
+        
+      241.5 
+        
+     
+
+     
+        Inter-Segment eliminations   
+        
+        
+      (7 
+      ) 
+        
+        
+      (6 
+      ) 
+        
+        
+      - 
+        
+        
+        
+      - 
+        
+     
+
+     
+        Total   
+        
+      $ 
+      3,838 
+        
+        
+      $ 
+      2,908 
+        
+        
+      $ 
+      353.1 
+        
+        
+      $ 
+      241.5 
+        
+     
+
+    
+   
+     
+   
+    
+     
+      
+       14
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   Total consolidated operating revenues increased to $3.84 billion for the second quarter 2022, a 32% increase from $2.91 billion in the second quarter 2021. Total consolidated operating revenue, excluding fuel surcharge revenue, increased 21%. This increase in operating revenues resulted from increased revenues in JBI driven by increased volumes and higher revenue per load, higher average truck counts and improved fleet productivity in DCS, higher revenues in JBT and ICS as both segments leveraged the capabilities of the J.B. Hunt 360 platform, and increased revenues in FMS, primarily driven by a recent business acquisition. 
+     
+   JBI segment revenue increased 42% to $1.83 billion during the second quarter 2022, compared with $1.29 billion in 2021. Load volumes during the second quarter 2022 increased 8% over the same period 2021. Transcontinental loads increased 5% during the second quarter 2022, and eastern network load volume was up 13% compared to the second quarter 2021. Despite demand for intermodal capacity remaining high throughout the current period, JBI continued to encounter network fluidity issues attributable to rail velocity and customer behavior during the second quarter 2022, which hindered further load volume growth within the period. Revenue per load, which is determined by the combination of customer rates, fuel surcharges and freight mix, increased 32% during the second quarter 2022. Revenue per load excluding fuel surcharge revenue increased 20% compared to the second quarter 2021. JBI segment operating income increased 50%, to $202.5 million in the second quarter 2022, from $134.6 million in 2021. The increase is primarily due to increased revenue, partially offset by higher rail and third-party dray purchased transportation expense, higher costs to attract and retain drivers, increased non-driver salary and wages, and higher costs due to rail and port network inefficiencies and customer detention of equipment. In addition, JBI incurred a net expense of $7.7 million in the second quarter 2022, consisting of the segment’s portion of an increase in casualty claim expenses, partially offset by a workers’ compensation insurance benefit (Insurance-Related Charge). The current quarter ended with approximately 110,600 units of trailing capacity and 6,620 power units assigned to the dray fleet. 
+     
+   DCS segment revenue increased 39% to $863 million in the second quarter 2022 from $621 million in 2021. Productivity, defined as revenue per truck per week, increased 14% when compared to the second quarter 2021. Productivity excluding fuel surcharges increased 5%, primarily due to contractual index-based rate increases, partially offset by lower productivity of equipment on start-up accounts during the current period. A net additional 2,122 revenue-producing trucks were in the fleet by the end of the second quarter 2022 compared to the prior year period. DCS segment operating income increased 13% to $89.2 million in the second quarter 2022, from $79.0 million in 2021. The increase is primarily due to increased revenue, partially offset by increased driver and non-driver wages, benefits and recruiting costs, higher costs related to the implementation of new long-term customer contracts, and increased bad debt expense when compared to the second quarter 2021. In addition, DCS incurred a net expense of $1.6 million for the segment’s portion of the Insurance-Related Charge in second quarter 2022. 
+     
+   ICS segment revenue increased 3% to $623 million in the second quarter 2022, from $608 million in 2021. Overall volumes decreased 3% compared to the second quarter 2021, while revenue per load increased 5%, primarily due to higher contractual rates within the truckload business as well as changes in customer freight mix, partially offset by lower revenue per load within the segment’s spot rate business compared to second quarter 2021. Contractual business represented approximately 54% of total load volume and 48% of total revenue in the second quarter 2022, compared to 48% and 35%, respectively, in 2021. Approximately $392 million of second quarter 2022 ICS revenue was executed through the Marketplace for J.B. Hunt 360 compared to $396 million in the second quarter 2021. ICS segment operating income increased to $23.6 million in the second quarter of 2022 compared to $3.1 million in 2021. Gross profit margin increased to 16.2% in the second quarter 2022, compared to 10.5% in 2021. Increases in revenue and gross profit margin were partially offset by higher personnel costs, increased insurance and claims expense, and increased technology spending, compared to second quarter 2021. In addition, ICS incurred a net expense of $6.7 million for the segment’s portion of the Insurance-Related Charge in second quarter 2022. ICS’s carrier base increased 33% compared to second quarter 2021. 
+     
+   
+    
+     
+      
+       15
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   JBT segment revenue totaled $269 million for the second quarter 2022, an increase of 46% from $184 million in second quarter 2021. Revenue excluding fuel surcharge increased 37% primarily due to a 20% increase in revenue per load excluding fuel surcharge revenue and a 14% increase in load volume compared to second quarter 2021. Load volume growth was primarily related to the continued leveraging of the J.B. Hunt 360 platform to grow power capacity and the expansion of J.B. Hunt 360box® which leverages the J.B. Hunt 360 platform to access drop-trailer capacity for customers across our transportation network. At the end of the second quarter 2022, the JBT fleet consisted of 12,770 trailers and 2,623 tractors, compared to 8,958 trailers and 1,770 tractors in 2021. Trailer turns in the second quarter of 2022 decreased 18% compared to second quarter 2021 due to the onboarding of new trailers and freight mix. JBT segment operating income increased to $25.0 million in 2022, compared with $14.2 million during second quarter 2021. Benefits from the higher load volume and increased revenue per load were partially offset by higher purchased transportation expense, higher equipment maintenance costs, increased personnel costs, higher insurance and claims expense, and increased technology spending. In addition, JBT incurred a net expense of $2.0 million for the segment’s portion of the Insurance-Related Charge in second quarter 2022. 
+     
+   FMS segment revenue increased 21% to $257 million in the second quarter 2022 from $212 million in 2021, primarily due to the acquisition of Zenith Freight Lines, LLC (Zenith) completed in the first quarter 2022 and the addition of multiple new customer contracts implemented over the past year. The increase in revenue was partially offset by the effects of internal efforts to improve revenue quality across certain accounts. The Zenith acquisition contributed $28 million to FMS revenue during the second quarter 2022. FMS segment operating income increased to $12.8 million in the second quarter of 2022 compared to $10.7 million in 2021, which included a $3.2 million benefit from the net settlement of claims. Benefits from higher revenue were partially offset by higher personnel salary, wages and benefits expense, increased insurance and claims expense, higher technology costs, increased driver recruiting costs, and implementation costs related to new long-term contractual business. In addition, FMS incurred a net expense of $0.4 million for the segment’s portion of the Insurance-Related Charge in second quarter 2022. 
+     
+   Consolidated Operating Expenses 
+     
+   The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+     
+   
+    
+     
+        
+        
+        Three Months Ended June 30,   
+        
+     
+
+     
+        
+        
+        Dollar Amounts as a   Percentage of Total   Operating Revenues   
+        
+        
+        Percentage Change   of Dollar Amounts   Between Quarters   
+        
+     
+
+     
+        
+        
+        2022   
+        
+        
+        2021   
+        
+        
+        2022 vs. 2021   
+        
+     
+
+     
+        Total operating revenues   
+        
+        
+      100.0 
+        %   
+        
+        
+      100.0 
+        %   
+        
+        
+      31.9 
+      % 
+     
+
+     
+        Operating expenses:   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Rents and purchased transportation   
+        
+        
+      50.1 
+        
+        
+        
+      52.9 
+        
+        
+        
+      24.9 
+        
+     
+
+     
+        Salaries, wages and employee benefits   
+        
+        
+      21.9 
+        
+        
+        
+      22.9 
+        
+        
+        
+      26.5 
+        
+     
+
+     
+        Fuel and fuel taxes   
+        
+        
+      6.9 
+        
+        
+        
+      4.4 
+        
+        
+        
+      109.4 
+        
+     
+
+     
+        Depreciation and amortization   
+        
+        
+      4.1 
+        
+        
+        
+      4.8 
+        
+        
+        
+      13.1 
+        
+     
+
+     
+        Operating supplies and expenses   
+        
+        
+      3.3 
+        
+        
+        
+      3.1 
+        
+        
+        
+      38.9 
+        
+     
+
+     
+        Insurance and claims   
+        
+        
+      2.3 
+        
+        
+        
+      1.2 
+        
+        
+        
+      145.7 
+        
+     
+
+     
+        General and administrative expenses, net of asset dispositions   
+        
+        
+      1.6 
+        
+        
+        
+      1.6 
+        
+        
+        
+      25.8 
+        
+     
+
+     
+        Operating taxes and licenses   
+        
+        
+      0.4 
+        
+        
+        
+      0.5 
+        
+        
+        
+      14.9 
+        
+     
+
+     
+        Communication and utilities   
+        
+        
+      0.2 
+        
+        
+        
+      0.3 
+        
+        
+        
+      2.3 
+        
+     
+
+     
+        Total operating expenses   
+        
+        
+      90.8 
+        
+        
+        
+      91.7 
+        
+        
+        
+      30.7 
+        
+     
+
+     
+        Operating income   
+        
+        
+      9.2 
+        
+        
+        
+      8.3 
+        
+        
+        
+      46.2 
+        
+     
+
+     
+        Net interest expense   
+        
+        
+      0.3 
+        
+        
+        
+      0.4 
+        
+        
+        
+      6.5 
+        
+     
+
+     
+        Earnings before income taxes   
+        
+        
+      8.9 
+        
+        
+        
+      7.9 
+        
+        
+        
+      48.3 
+        
+     
+
+     
+        Income taxes   
+        
+        
+      2.2 
+        
+        
+        
+      2.0 
+        
+        
+        
+      48.1 
+        
+     
+
+     
+        Net earnings   
+        
+        
+      6.7 
+        %   
+        
+        
+      5.9 
+        %   
+        
+        
+      48.3 
+      % 
+     
+
+    
+   
+     
+   Total operating expenses increased 30.7%, while operating revenues increased 31.9% during the second quarter 2022, from the comparable period 2021. Operating income increased to $353.1 million during the second quarter 2022 from $241.5 million in 2021. 
+     
+   Rents and purchased transportation costs increased 24.9% in second quarter 2022. This increase was primarily the result of an increase in rail carrier purchased transportation rates within the JBI segment, increased JBI load volume, which increased services provided by third-party rail carriers, and an increase in the use of third-party truck carriers by JBT during second quarter of 2022 compared to 2021. 
+     
+   
+    
+     
+      
+       16
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   Salaries, wages and employee benefits costs increased 26.5% during the second quarter 2022, compared with 2021. This increase was primarily related to increases in driver pay and office personnel compensation due to a tighter supply of qualified drivers, a trend we anticipate continuing, and an increase in the number of employees as well as an increase in incentive compensation and group medical expense, partially offset by an $11.6 million workers’ compensation insurance return of premium benefit during the current quarter. 
+     
+   Fuel costs increased 109.4% in 2022, compared with 2021, due primarily to an increase in the price of fuel and increased road miles. Depreciation and amortization expense increased 13.1% in second quarter 2022, primarily due to equipment purchases related to new DCS long-term customer contracts, the addition of trailing equipment and accessories within our JBI and JBT segments, and increased intangible asset amortization expense resulting from the Zenith acquisition within FMS, partially offset by lower JBT tractor depreciation expense due to reductions in its company-owned tractor fleet. 
+     
+   Operating supplies and expenses increased 38.9%, driven primarily by higher equipment maintenance costs, increased tire expense, higher travel and entertainment expenses, and increased tolls expense. Insurance and claims expense increased 145.7% in 2022 compared with 2021, primarily due to increased cost per claim, higher insurance policy premium expense, and the inclusion of a $30 million expense in second quarter 2022 for additional reserves of claims subject to insurance coverage layer specific aggregated limits. General and administrative expenses increased 25.8% for the current quarter from the comparable period in 2021, primarily due to higher building rentals, bad debt expense, advertising expense and professional service expense, partially offset by higher net gains from sale or disposals of assets. Net gain from sale or disposal of assets was $3.4 million in 2022, compared to a net loss from sale or disposals of assets of $1.2 million in 2021. 
+     
+   Net interest expense increased 6.5% in 2022 due to an increase in effective interest rates on our debt compared to second quarter 2021. Income tax expense increased 48.1% in 2022, compared with 2021, primarily due to higher taxable earnings. Our effective income tax rate was 25.0% for both the second quarter 2022 and 2021. Our annual tax rate for 2022 is expected to be between 23.5% and 24.5%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+     
+   Comparison of Six Months Ended June 30, 2022 to Six Months Ended June 30, 2021 
+     
+   
+    
+     
+        
+        
+        Summary of Operating Segment Results   For the Six Months Ended June 30,   (in millions)   
+        
+     
+
+     
+        
+        
+        Operating Revenues   
+        
+        
+      Operating Income/(loss) 
+        
+     
+
+     
+        
+        
+        2022   
+        
+        
+        2021   
+        
+        
+        2022   
+        
+        
+        2021   
+        
+     
+
+     
+        JBI   
+        
+      $ 
+      3,436 
+        
+        
+      $ 
+      2,467 
+        
+        
+      $ 
+      403.5 
+        
+        
+      $ 
+      242.1 
+        
+     
+
+     
+        DCS   
+        
+        
+      1,604 
+        
+        
+        
+      1,201 
+        
+        
+        
+      166.3 
+        
+        
+        
+      153.3 
+        
+     
+
+     
+        ICS   
+        
+        
+      1,299 
+        
+        
+        
+      1,133 
+        
+        
+        
+      48.6 
+        
+        
+        
+      10.4 
+        
+     
+
+     
+        JBT   
+        
+        
+      533 
+        
+        
+        
+      333 
+        
+        
+        
+      56.5 
+        
+        
+        
+      24.4 
+        
+     
+
+     
+        FMS   
+        
+        
+      476 
+        
+        
+        
+      414 
+        
+        
+        
+      12.7 
+        
+        
+        
+      19.2 
+        
+     
+
+     
+        Other (includes corporate)   
+        
+        
+      - 
+        
+        
+        
+      - 
+        
+        
+        
+      (0.2 
+      ) 
+        
+        
+      (0.2 
+      ) 
+     
+
+     
+        Subtotal   
+        
+        
+      7,348 
+        
+        
+        
+      5,548 
+        
+        
+        
+      687.4 
+        
+        
+        
+      449.2 
+        
+     
+
+     
+        Inter-segment eliminations   
+        
+        
+      (22 
+      ) 
+        
+        
+      (21 
+      ) 
+        
+        
+      - 
+        
+        
+        
+      - 
+        
+     
+
+     
+        Total   
+        
+      $ 
+      7,326 
+        
+        
+      $ 
+      5,527 
+        
+        
+      $ 
+      687.4 
+        
+        
+      $ 
+      449.2 
+        
+     
+
+    
+   
+     
+   Total consolidated operating revenues increased to $7.33 billion for the first six months of 2022, a 33% increase from $5.53 billion for the comparable period 2021. Fuel surcharge revenue increased to $1.12 billion during the first six months of 2022, compared with $531.5 million in 2021. Total consolidated operating revenue, excluding fuel surcharge revenue, increased 24% for the first six months of 2022 compared to the prior year period. 
+     
+   
+    
+     
+      
+       17
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   JBI segment revenue increased 39% to $3.44 billion during the first six months of 2022, compared with $2.47 billion in 2021. Load volume during the first six months of 2022 increased 7% and revenue per load increased 30%, which is determined by the combination of changes in freight mix, customer rate changes, and fuel surcharge revenue, compared to a year ago. Revenue per load, excluding fuel surcharge revenue, increased 21% compared to the first six months of 2021. JBI segment operating income increased 67% to $403.5 million in the first six months of 2022, from $242.1 million in 2021. The increase is primarily due to increased revenue and higher net gains from the sale of equipment during the first six months of 2022, partially offset by higher rail and third-party dray purchased transportation expense, higher costs to attract and retain drivers, increased non-driver salary and wages, and higher costs due to rail and port network inefficiencies and customer detention of equipment. In addition, JBI incurred a net expense of $7.7 million in 2022, consisting of the segment’s portion of the Insurance-Related Charge in the second quarter. 
+     
+   DCS segment revenue increased 34%, to $1.60 billion during the first six months of 2022, from $1.20 billion in 2021. Productivity, defined as revenue per truck per week, increased by approximately 10% from a year ago. Productivity excluding fuel surcharge revenue for the first six months of 2022 increased 3% from a year ago. The increase in productivity was primarily due to contractual index-based rate increases, partially offset by lower productivity of equipment on start-up accounts and COVID-related labor disruptions during the first half of the current period. Operating income of our DCS segment increased to $166.3 million in the first six months of 2022, from $153.3 million in 2021. Higher revenues during the current period were partially offset by increased driver and non-driver wages, benefits and recruiting costs, higher costs related to the implementation of new long-term customer contracts, and increased bad debt expense when compared to the first six months of 2021. In addition, DCS incurred a net expense of $1.6 million in 2022, consisting of the segment’s portion of the Insurance-Related Charge in the second quarter. 
+     
+   ICS revenue increased 15% to $1.30 billion during the first six months of 2022, from $1.13 billion in 2021. Overall volumes increased 4%, while revenue per load increased 10% primarily due to higher contractual and spot customer rates in our truckload business as well as changes in customer freight mix compared to 2021. Approximately $822 million of ICS revenue for the first six months of 2022 was executed through the Marketplace for J.B. Hunt 360 compared to $755 million in 2021. Gross profit margin increased to 14.5% in the current period compared to 11.4% in 2021. ICS segment had operating income of $48.6 million in the first six months of 2022 compared to $10.4 million in 2021, primarily due to increased revenue and higher gross profit margins, partially offset by higher personnel costs, increased insurance and claims expense, and increased technology spending during the first six months of 2022. In addition, ICS incurred a net expense of $6.7 million in 2022, consisting of the segment’s portion of the Insurance-Related Charge in the second quarter. 
+     
+   JBT segment revenue increased 60% to $533 million for the first six months of 2022, from $333 million in 2021. Revenue excluding fuel surcharge revenue increased 53%, primarily due to a 32% increase in revenue per load excluding fuel surcharge revenue and a 15% increase in load volume compared to 2021. Operating income of our JBT segment increased to $56.5 million in the first six months of 2022, from $24.4 million in 2021. The increase in operating income was driven primarily by increased load counts and revenue per load during the current period which were partially offset by higher purchased transportation expense, higher equipment maintenance costs, increased personnel costs, higher insurance and claims expense, and increased technology spending. In addition, JBT incurred a net expense of $2.0 million in 2022, consisting of the segment’s portion of the Insurance-Related Charge in the second quarter. 
+     
+   FMS revenue increased 15% to $476 million during the first six months of 2022, from $414 million in 2021, primarily due to the addition of multiple new customer contracts implemented over the past year and the Zenith acquisition during the first half of the current period. The increase in revenue was partially offset by the effects of internal efforts to improve revenue quality across certain accounts as well as supply-chain related constraints for goods in the primary markets served by FMS. FMS segment had operating income of $12.7 million in the first six months of 2022 compared to $19.2 million in 2021, which included a $3.2 million benefit from the net settlement of claims. The decrease in operating income was primarily due to increased revenues being more than offset by higher personnel salary, wages and benefits expense, increased insurance and claims expense, increased driver recruiting costs, and implementation costs related to new long-term contractual business. In addition, FMS incurred a net expense of $0.4 million in 2022, consisting of the segment’s portion of the Insurance-Related Charge in the second quarter. 
+     
+   
+    
+     18
+    
+    
+    
+      
+    
+   
+     
+   Consolidated Operating Expenses 
+     
+   The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+     
+   
+    
+     
+        
+        
+        Six Months Ended June 30,   
+        
+     
+
+     
+        
+        
+        Dollar Amounts as a   Percentage of Total   Operating Revenues   
+        
+        
+        Percentage Change   of Dollar Amounts   Between Periods   
+        
+     
+
+     
+        
+        
+        2022   
+        
+        
+        2021   
+        
+        
+        2022 vs. 2021   
+        
+     
+
+     
+        Total operating revenues   
+        
+        
+      100.0 
+        %   
+        
+        
+      100.0 
+        %   
+        
+        
+      32.6 
+        %   
+     
+
+     
+        Operating expenses:   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Rents and purchased transportation   
+        
+        
+      51.3 
+        
+        
+        
+      52.3 
+        
+        
+        
+      30.0 
+        
+     
+
+     
+        Salaries, wages and employee benefits   
+        
+        
+      21.9 
+        
+        
+        
+      23.3 
+        
+        
+        
+      24.9 
+        
+     
+
+     
+        Fuel and fuel taxes   
+        
+        
+      6.2 
+        
+        
+        
+      4.3 
+        
+        
+        
+      89.7 
+        
+     
+
+     
+        Depreciation and amortization   
+        
+        
+      4.2 
+        
+        
+        
+      5.0 
+        
+        
+        
+      10.6 
+        
+     
+
+     
+        Operating supplies and expenses   
+        
+        
+      3.2 
+        
+        
+        
+      3.1 
+        
+        
+        
+      35.1 
+        
+     
+
+     
+        Insurance and claims   
+        
+        
+      1.8 
+        
+        
+        
+      1.3 
+        
+        
+        
+      81.4 
+        
+     
+
+     
+        General and administrative expenses, net of asset dispositions   
+        
+        
+      1.4 
+        
+        
+        
+      1.8 
+        
+        
+        
+      5.2 
+        
+     
+
+     
+        Operating taxes and licenses   
+        
+        
+      0.4 
+        
+        
+        
+      0.5 
+        
+        
+        
+      14.4 
+        
+     
+
+     
+        Communication and utilities   
+        
+        
+      0.2 
+        
+        
+        
+      0.3 
+        
+        
+        
+      (0.4 
+      ) 
+     
+
+     
+        Total operating expenses   
+        
+        
+      90.6 
+        
+        
+        
+      91.9 
+        
+        
+        
+      30.8 
+        
+     
+
+     
+        Operating income   
+        
+        
+      9.4 
+        
+        
+        
+      8.1 
+        
+        
+        
+      53.0 
+        
+     
+
+     
+        Net interest expense   
+        
+        
+      0.4 
+        
+        
+        
+      0.4 
+        
+        
+        
+      5.6 
+        
+     
+
+     
+        Earnings before income taxes   
+        
+        
+      9.0 
+        
+        
+        
+      7.7 
+        
+        
+        
+      55.7 
+        
+     
+
+     
+        Income taxes   
+        
+        
+      2.2 
+        
+        
+        
+      1.9 
+        
+        
+        
+      53.5 
+        
+     
+
+     
+        Net earnings   
+        
+        
+      6.8 
+        %   
+        
+        
+      5.8 
+        %   
+        
+        
+      56.4 
+        %   
+     
+
+    
+   
+     
+   Total operating expenses increased 30.8%, while operating revenues increased 32.6%, during the first six months of 2022, from the comparable period of 2021. Operating income increased to $687.4 million during the first six months of 2022, from $449.2 million in 2021. 
+     
+   Rents and purchased transportation costs increased 30.0% in 2022. This increase was primarily the result of increased load volumes, which increased services provided by third-party rail and truck carriers within JBI and ICS segments, increased rail and truck carrier purchased transportation rates, and an increase in the use of third-party truck carriers by JBT during the current period. 
+     
+   Salaries, wages and employee benefits costs increased 24.9% in 2022 from 2021. This increase was primarily related to increases in driver pay and office personnel compensation due to a tighter supply of qualified drivers and an increase in the number of employees as well as an increase in incentive compensation and group medical expense. 
+     
+   Fuel costs increased 89.7% in 2022, compared with 2021, due primarily to an increase in the price of fuel and an increase in road miles. Depreciation and amortization expense increased 10.6% in 2022 primarily due to equipment purchases related to new DCS long-term customer contracts, the addition of trailing equipment and accessories within our JBI and JBT segments, and increased intangible asset amortization expense resulting from the Zenith acquisition within FMS, partially offset by lower JBT tractor depreciation expense due to reductions in its company-owned tractor fleet. 
+     
+   Operating supplies and expenses increased 35.1% driven primarily by higher equipment maintenance costs, increased tire expense, increased tolls expense, and higher travel and entertainment expenses. Insurance and claims expense increased 81.4% in 2022 compared with 2021, primarily due to increased cost per claim, higher insurance policy premium expense, and the inclusion of a $30 million expense in 2022 for additional reserves of claims subject to insurance coverage layer specific aggregated limits. General and administrative expenses increased 5.2% from the comparable period in 2021, primarily due to higher building rentals, advertising expense, professional services expense, and bad debt expense, partially offset by higher net gains from sale or disposals of assets. Net gain from sale or disposal of assets was $20.7 million in 2022, compared to a net loss from sale or disposals of assets of $2.4 million in 2021. 
+     
+   
+    
+     
+      
+       19
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   Net interest expense increased 5.6% in 2022, due primarily to higher effective interest rates on our debt. Income tax expense increased 53.5% during the first six months of 2022, compared with 2021, primarily due to increased taxable earnings in the first six months of 2022. Our effective income tax rate was 24.7% for the first six months of 2022, compared to 25.0% in 2021. Our annual tax rate for 2022 is expected to be between 23.5% and 24.5%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+     
+   Liquidity and Capital Resources 
+     
+   Cash Flow 
+     
+   Net cash provided by operating activities totaled $784.5 million during the first six months of 2022, compared with $668.7 million for the same period 2021. Operating cash flows increased due to increased earnings, partially offset by the timing of general working capital activities. Net cash used in investing activities totaled $685.0 million in 2022, compared with $260.8 million in 2021. The increase resulted from an increase in equipment purchases, net of proceeds from the sale of equipment and the purchase of Zenith during 2022. Net cash used in financing activities was $331.2 million in 2022, compared with $150.3 million in 2021. This increase resulted primarily from an increase in treasury stock purchased and higher dividends paid during the first six months of 2022. 
+     
+   Liquidity 
+     
+   Our need for capital has typically resulted from the acquisition of containers and chassis, trucks, tractors, and trailers required to support our growth and the replacement of older equipment as well as periodic business acquisitions. We are frequently able to accelerate or postpone a portion of equipment replacements or other capital expenditures depending on market and overall economic conditions. However, we do anticipate that the current challenges related to timely delivery of ordered equipment will continue due to supply chain challenges impacting production. In recent years, we have obtained capital through cash generated from operations, revolving lines of credit and long-term debt issuances. We have also periodically utilized operating leases to acquire revenue equipment. For our senior notes maturing in 2022, it is our intent to pay the entire outstanding balances in full, on or before the maturity dates, using our existing cash balance, senior revolving line of credit or other sources of long-term financing. 
+     
+   We believe our liquid assets, cash generated from operations, and revolving line of credit will provide sufficient funds for our operating and capital requirements for the foreseeable future. At June 30, 2022, we had a cash balance of $123.8 million and no outstanding balance on our senior revolving line of credit, which authorizes us to borrow up to $750 million and is supported by a credit agreement with a group of banks that expires in September 2023. This senior credit facility allows us to request an increase in the total commitment by up to $250 million and to request a one-year extension of the maturity date. The applicable interest rate under this agreement is based on either the Prime Rate, the Federal Funds Rate or LIBOR, depending upon the specific type of borrowing, plus an applicable margin based on our credit rating and other fees. 
+     
+   We continue to evaluate the possible effects of current economic conditions and reasonable and supportable economic forecasts on operational cash flows, including the risks of declines in the overall freight market and our customers' liquidity and ability to pay. We regularly monitor working capital and maintain frequent communication with our customers, suppliers and service providers. A large portion of our cost structure is variable. Purchased transportation expense represents more than half of our total costs but is heavily tied to load volumes. Our second largest cost item is salaries and wages, the largest portion of which is driver pay, which includes a large variable component. 
+     
+   Our financing arrangements require us to maintain certain covenants and financial ratios. At June 30, 2022, we were compliant with all covenants and financial ratios. In addition, we do not anticipate the future international transitioning from LIBOR to alternative rates to have a material impact on our financial statements. 
+     
+   
+    
+     
+      
+       20
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   Our net capital expenditures were approximately $598.1 million during the first six months of 2022, compared with $260.7 million for the same period 2021. Our net capital expenditures include net additions to revenue equipment and non-revenue producing assets that are necessary to contribute to and support the future growth of our various business segments. Capital expenditures in 2022 were primarily for tractors, intermodal containers and chassis, and other trailing equipment. We are currently committed to spend approximately $2.4 billion during the years 2022 to 2024, of which, approximately $1.0 billion is planned for the full year 2022. These expenditures will primarily be driven by purchasing additional intermodal containers, additional DCS tractors, and trailers used in our J.B. Hunt 360box program. At June 30, 2022, our aggregate future minimum lease payments under operating lease obligations related primarily to the rental of maintenance and support facilities, cross-dock and delivery system facilities, office space, parking yards, and equipment was $252.2 million. 
+     
+   Off-Balance Sheet Arrangements 
+     
+   We had no off-balance sheet arrangements, other than our net purchase commitments of $2.4 billion, as of June 30, 2022. 
+     
+   Risk Factors 
+     
+   You should refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2021, under the caption “Risk Factors” for specific details on the following factors and events that are not within our control and could affect our financial results. 
+     
+   Risks Related to Our Industry 
+     
+   
+    
+     
+        
+        ●   
+        Our business is significantly impacted by economic conditions, customer business cycles, and seasonal factors.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Our business is significantly impacted by the effects of national or international health pandemics on general economic conditions and the operations of our customers and third-party suppliers and service providers.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Extreme or unusual weather conditions can disrupt our operations, impact freight volumes, and increase our costs, all of which could have a material adverse effect on our business results.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Our operations are subject to various environmental laws and regulations, including legislative and regulatory responses to climate change. Compliance with environmental requirements could result in significant expenditures and the violation of these regulations could result in substantial fines or penalties.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        We depend on third parties in the operation of our business.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Rapid changes in fuel costs could impact our periodic financial results.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Insurance and claims expenses could significantly reduce our earnings.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        We operate in a regulated industry, and increased direct and indirect costs of compliance with, or liability for violation of, existing or future regulations could have a material adverse effect on our business.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Difficulty in attracting and retaining drivers, delivery personnel and third-party carriers could affect our profitability and ability to grow.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        We operate in a competitive and highly fragmented industry. Numerous factors could impair our ability to maintain our current profitability and to compete with other carriers and private fleets.   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       21
+      
+     
+    
+    
+    
+     
+      
+        
+      
+     
+    
+   
+     
+   Risks Related to Our Business 
+     
+   
+    
+     
+        
+        ●   
+        We derive a significant portion of our revenue from a few major customers, the loss of one or more of which could have a material adverse effect on our business.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        A determination that independent contractors are employees could expose us to various liabilities and additional costs.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        We may be subject to litigation claims that could result in significant expenditures.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        We rely significantly on our information technology systems, a disruption, failure, or security breach of which could have a material adverse effect on our business.   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        Acquisitions or business combinations may disrupt or have a material adverse effect on our operations or earnings.   
+     
+
+    
+   
+     
+   ITEM 3.   QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK 
+     
+   Our outstanding debt at June 30, 2022 includes our senior revolving line of credit and senior notes issuances. Our senior notes have fixed interest rates ranging from 3.30% to 3.875%. Our senior revolving line of credit has variable interest rates, which are based on the Prime Rate, the Federal Funds Rate, or LIBOR, depending upon the specific type of borrowing, plus any applicable margins. Risk can be quantified by measuring the financial impact of a near-term adverse increase in short-term interest rates. Our earnings would be affected by changes in these short-term variable interest rates. At our current level of borrowing, a one percentage point increase in our applicable rate would have no impact on annual pretax earnings. 
+     
+   Although we conduct business in foreign countries, international operations are not material to our consolidated financial position, results of operations, or cash flows. Additionally, foreign currency transaction gains and losses were not material to our results of operations for the three or six months ended June 30, 2022. Accordingly, we are not currently subject to material foreign currency exchange rate risks from the effects that exchange rate movements of foreign currencies would have on our future costs or on future cash flows we would receive from our foreign investment. As of June 30, 2022, we had no foreign currency forward exchange contracts or other derivative financial instruments to hedge the effects of adverse fluctuations in foreign currency exchange rates. 
+     
+   The price and availability of diesel fuel are subject to fluctuations due to changes in the level of global oil production, seasonality, weather, and other market factors. Historically, we have been able to recover a majority of fuel price increases from our customers in the form of fuel surcharges. We cannot predict the extent to which high fuel price levels may occur in the future or the extent to which fuel surcharges could be collected to offset such increases. As of June 30, 2022, we had no derivative financial instruments to reduce our exposure to fuel price fluctuations. 
+     
+   ITEM 4.   CONTROLS AND PROCEDURES 
+     
+   We maintain controls and procedures designed to ensure that the information we are required to disclose in the reports we file with the SEC is recorded, processed, summarized and reported, within the time periods specified in the SEC rules, and that such information is accumulated and communicated to our management, including our Chief Executive Officer and Chief Financial Officer, as appropriate, to allow timely decisions regarding required disclosure. As of the end of the period covered by this report, we carried out an evaluation, under the supervision and with the participation of our management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended). Based upon that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that our disclosure controls and procedures were effective as of June 30, 2022. 
+     
+   There were no changes in our internal control over financial reporting during the second quarter of 2022 that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 
+     
+   
+    
+     22
+    
+    
+    
+      
+    
+   
+     
+   Part II. Other Information 
+     
+     
+   
+    
+     
+        ITEM 1.    
+        LEGAL PROCEEDINGS   
+     
+
+    
+   
+     
+   We are involved in certain claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+     
+   
+    
+     
+        ITEM 1A.    
+        RISK FACTORS   
+     
+
+    
+   
+     
+   Information regarding risk factors appears in Part I, Item 2, Management’s Discussion and Analysis of Financial Condition and Results of Operations of this report on Form 10-Q and in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2021. 
+     
+   
+    
+     
+        ITEM 2.   
+        UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS   
+     
+
+    
+   
+     
+   Unregistered Sales of Equity Securities 
+     
+   On April 28, 2022, we issued an aggregate of 9,125 shares of our common stock to nonemployee members of our Board of Directors who elected to receive all or a portion of their annual director retainer in Company stock. These shares were valued based on the closing market price per share of our common stock of $174.59 on April 28, 2022, for an aggregate value of $1,593,134. The shares were issued to our nonemployee directors in private transactions exempt from registration pursuant to Section 4(a)(2) of the Securities Act of 1933, as amended. 
+     
+   Purchases of Equity Securities 
+     
+   The following table summarizes purchases of our common stock during the three months ended June 30, 2022: 
+     
+   
+    
+     
+            Period       
+        
+        Number of   Common   Shares   Purchased   
+        
+        
+        Average Price   Paid Per   Common Share   Purchased   
+        
+        
+        Total Number of   Shares   Purchased as   Part of a   Publicly   Announced Plan   (1)   
+        
+        
+        Maximum   Dollar   Amount   of Shares That   May Yet Be   Purchased   Under the Plan   (in millions)   (1)   
+        
+     
+
+     
+        April 1 through April 30, 2022   
+        
+        
+      290,218 
+        
+        
+      $ 
+      172.39 
+        
+        
+        
+      290,218 
+        
+        
+      $ 
+      226 
+        
+     
+
+     
+        May 1 through May 31, 2022   
+        
+        
+      550,324 
+        
+        
+        
+      164.89 
+        
+        
+        
+      550,324 
+        
+        
+        
+      135 
+        
+     
+
+     
+        June 1 through June 30, 2022   
+        
+        
+      138,848 
+        
+        
+        
+      169.59 
+        
+        
+        
+      138,848 
+        
+        
+        
+      112 
+        
+     
+
+     
+        Total   
+        
+        
+      979,390 
+        
+        
+      $ 
+      167.78 
+        
+        
+        
+      979,390 
+        
+        
+      $ 
+      112 
+        
+     
+
+    
+   
+     
+   (1)         On January 22, 2020, our Board of Directors authorized the purchase of up to $500 million of our common stock. On July 20, 2022, our Board of Directors authorized an additional purchase of up to $500 million of our common stock. These stock repurchase programs have no expiration date. 
+     
+   
+    
+     
+        ITEM 3.   
+        DEFAULTS UPON SENIOR SECURITIES   
+     
+
+    
+   
+     
+   Not applicable. 
+     
+   
+    
+     
+        ITEM 4.    
+        MINE SAFETY DISCLOSURES   
+     
+
+    
+   
+     
+   Not applicable. 
+     
+   
+    
+     
+        ITEM 5.   
+        OTHER INFORMATION   
+     
+
+    
+   
+     
+   Not applicable. 
+     
+   
+    
+     
+        ITEM 6.   
+        EXHIBITS    
+     
+
+    
+   
+     
+   Index to Exhibits 
+     
+   
+    
+     23
+    
+    
+    
+      
+    
+   
+     
+   
+    
+     
+        Exhibit   
+        
+        
+     
+
+     
+        Number    
+        
+        Exhibits   
+     
+
+     
+        
+        
+        
+     
+
+     
+          3.1   
+        
+        Amended and Restated Articles of Incorporation of J.B. Hunt Transport Services, Inc. dated May 19, 1988 (incorporated by reference from Exhibit 3.1 of the Company’s quarterly report on Form 10-Q for the period ended March 31, 2005, filed April 29, 2005)   
+     
+
+     
+        
+        
+        
+     
+
+     
+          3.2   
+        
+        Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc. dated October 21, 2021 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 27, 2021)   
+     
+
+     
+        
+        
+        
+     
+
+     
+        3.3 
+        
+      Amendment No. 1 to Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc. dated July 20, 2022 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed July 26, 2022) 
+     
+
+     
+        
+        
+        
+     
+
+     
+        22.1   
+        
+        List of Guarantor Subsidiaries of J.B. Hunt Transport Services, Inc. (incorporated by reference from Exhibit 22.1 of the Company’s annual report on Form 10-K for the year ended December 31, 2021, filed February 25, 2022)   
+     
+
+     
+        
+        
+        
+     
+
+     
+        31.1   
+        
+        Rule 13a-14(a)/15d-14(a) Certification   
+     
+
+     
+        
+        
+        
+     
+
+     
+        31.2   
+        
+        Rule 13a-14(a)/15d-14(a) Certification   
+     
+
+     
+        
+        
+        
+     
+
+     
+        32.1   
+        
+        Section 1350 Certification   
+     
+
+     
+        
+        
+        
+     
+
+     
+        32.2   
+        
+        Section 1350 Certification   
+     
+
+     
+        
+        
+        
+     
+
+     
+        101.INS   
+        
+        Inline XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document   
+     
+
+     
+        
+        
+        
+     
+
+     
+        101.SCH   
+        
+        Inline XBRL Taxonomy Extension Schema Document   
+     
+
+     
+        
+        
+        
+     
+
+     
+        101.CAL   
+        
+        Inline XBRL Taxonomy Extension Calculation Linkbase Document   
+     
+
+     
+        
+        
+        
+     
+
+     
+        101.DEF   
+        
+        Inline XBRL Taxonomy Extension Definition Linkbase Document   
+     
+
+     
+        
+        
+        
+     
+
+     
+        101.LAB   
+        
+        Inline XBRL Taxonomy Extension Label Linkbase Document   
+     
+
+     
+        
+        
+        
+     
+
+     
+        101.PRE   
+        
+        Inline XBRL Taxonomy Extension Presentation Linkbase Document   
+     
+
+     
+        
+        
+        
+     
+
+     
+        104   
+        
+        Cover Page Interactive Data File (embedded within the Inline XBRL Document and include in Exhibit 101)   
+     
+
+    
+   
+     
+   
+    
+     24
+    
+    
+    
+      
+    
+   
+     
+   SIGNATURES 
+     
+   Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized, in the city of Lowell, Arkansas, on the 29th day of July 2022. 
+     
+   
+    
+     
+        
+        J.B. HUNT TRANSPORT SERVICES, INC.   
+     
+
+     
+        
+        (Registrant)   
+     
+
+     
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+     
+
+     
+        
+        BY:   
+        /s/ John N. Roberts, III   
+        
+     
+
+     
+        
+        
+        John N. Roberts, III   
+        
+     
+
+     
+        
+        
+        President and Chief Executive Officer   
+        
+     
+
+     
+        
+        
+        (Principal Executive Officer)   
+        
+     
+
+     
+        
+        
+        
+        
+     
+
+     
+        
+        BY:   
+        /s/ John Kuhlow   
+        
+     
+
+     
+        
+        
+        John Kuhlow   
+        
+     
+
+     
+        
+        
+        Chief Financial Officer,   
+        
+     
+
+     
+        
+        
+        Executive Vice President   
+        
+     
+
+     
+        
+        
+        (Principal Financial and Accounting Officer)   
+        
+     
+
+    
+   
+     
+     
+   
+    
+     
+      
+       25
+      
+     
+    
+   
+  
+ 

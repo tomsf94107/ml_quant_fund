@@ -342,13 +342,39 @@ def _upsert_to_db(ticker: str, df: pd.DataFrame, conn: sqlite3.Connection) -> in
 #  PUBLIC
 # ══════════════════════════════════════════════════════════════════════════════
 
+def _adaptive_days_back(conn, floor: int = 7, pad: int = 3) -> int:
+    """Days to look back = (today - most-recent stored filing) + pad, min `floor`.
+    insider_flows.date is the TRANSACTION date, which trails the FILING date,
+    so `pad` (>= the 2-business-day Form-4 window) ensures we re-cover the
+    filing tail and catch recently-filed amendments. Returns `floor` when the
+    table is empty (first run) so we still get a sane window without a full
+    365-day rebuild (that is the weekly job's role)."""
+    try:
+        row = conn.execute("SELECT MAX(date) FROM insider_flows").fetchone()
+        last = row[0] if row else None
+        if not last:
+            return floor
+        import datetime as _dt
+        gap = (_dt.date.today() - _dt.date.fromisoformat(str(last)[:10])).days
+        return max(floor, gap + pad)
+    except Exception:
+        return floor
+
+
 def run_insider_etl(
     tickers: list[str],
-    days_back: int = 365,
+    days_back: int = -1,
     db_path: Path = DB_PATH,
     verbose: bool = True,
 ) -> dict[str, int]:
     conn = _init_db(db_path)
+    # days_back == -1 (default) -> incremental: only re-fetch since the last
+    # stored filing (+pad), min 7d. Pass an explicit positive days_back to force
+    # a wide pull (the weekly full-rebuild job passes 365).
+    if days_back is None or days_back < 0:
+        days_back = _adaptive_days_back(conn)
+        if verbose:
+            print(f"  [incremental] computed days_back={days_back}")
     results = {}
     _load_cik_map()  # prime cache
 

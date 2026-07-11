@@ -1,0 +1,4328 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ P5Y 688000000 61000000 55.08 52.99 52.59 49.75 55.06 58.68 false --12-31 Q3 2019 0000027904 15823000000 17213000000 102000000 94000000 12000000 14000000 1400000000 1404000000 1492000000 1437000000 0.0001 0.0001 1500000000 1500000000 688136306 655694564 2024-04-30 2024-04-30 2025-12-31 2021-12-31 2027-12-31 2036-12-31 2030-12-31 2023-12-31 2028-12-31 2019-01-01 2020-01-01 2019-01-01 2022-01-01 2021-01-01 2021-01-01 2020-01-01 862000000 871000000 6000000 2000000 51000000 57000000 1000000000 8191831 8951710 
+		 
+			 0000027904 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerAirTrafficMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerAirTrafficMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerAirTrafficMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherMiscellaneousMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherAncillaryBusinessesAndRefineryMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherMiscellaneousMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherAncillaryBusinessesAndRefineryMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherMiscellaneousMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherMiscellaneousMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherAncillaryBusinessesAndRefineryMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherAncillaryBusinessesAndRefineryMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerLoyaltyTravelAwardsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerLoyaltyTravelAwardsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerTravelRelatedServicesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerAirTrafficMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerTravelRelatedServicesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerAirTrafficMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerAirTrafficMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerTravelRelatedServicesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerTravelRelatedServicesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerLoyaltyTravelAwardsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassengerLoyaltyTravelAwardsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ProductAndServiceOtherLoyaltyProgramMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PassengerMember 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USTreasuryAndGovernmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USTreasuryAndGovernmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USTreasuryAndGovernmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AirFranceKLMMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AirFranceKLMMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:LATAMAirlinesGroupS.A.Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:VirginAtlanticMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:ChinaEasternMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:GrupoAeromexicoMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:TermLoanFacilityMember 
+				 us-gaap:FinancialGuaranteeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:HanjinKALMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:GOLMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:HanjinKALMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AlclearHoldingsLLCMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:RepublicAirwaysMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AirCoAviationServicesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:GOLMember 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:GainLossOnInvestmentsMember1 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+				 dal:AircraftFuelAndRelatedTaxesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:GainLossOnInvestmentsMember1 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+				 dal:AircraftFuelAndRelatedTaxesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:GainLossOnInvestmentsMember1 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+				 dal:AircraftFuelAndRelatedTaxesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:GainLossOnInvestmentsMember1 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+				 dal:AircraftFuelAndRelatedTaxesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:CurrentMaturitiesOfLongTermDebtAndFinanceLeasesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:CurrentMaturitiesOfLongTermDebtAndFinanceLeasesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:LongTermDebtAndFinanceLeasesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:LongTermDebtAndFinanceLeasesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassThroughCertificates20191ClassAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassThroughCertificates20191ClassAAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassThroughCertificatesSeries20191Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassThroughCertificatesSeries20191Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:UnsecuredTermLoan2019Member 
+				 us-gaap:LoansPayableMember 
+			 
+		 
+		 
+			 2019-02-01 
+			 2019-02-28 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:UnsecuredTermLoan2019Member 
+				 us-gaap:LoansPayableMember 
+			 
+		 
+		 
+			 2019-02-28 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:BankRevolvingCreditFacilitiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:RevolvingCreditFacility2018Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:NYTDCSpecialFacilitiesRevenueBondsSeries2018Member 
+				 us-gaap:BondsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:UnsecuredNotesMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:CertificatesMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:BankRevolvingCreditFacilitiesMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MaximumMember 
+				 dal:NYTDCSpecialFacilitiesRevenueBondsSeries2018Member 
+				 us-gaap:BondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MaximumMember 
+				 dal:AircraftFinancingsMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MaximumMember 
+				 dal:UnsecuredNotesMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MinimumMember 
+				 dal:AircraftFinancingsMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MinimumMember 
+				 dal:CertificatesMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AircraftFinancingsMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AircraftFinancingsMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MinimumMember 
+				 dal:NYTDCSpecialFacilitiesRevenueBondsSeries2018Member 
+				 us-gaap:BondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:OtherFinancingsMember 
+				 dal:SecuredAndUnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MaximumMember 
+				 dal:CertificatesMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MinimumMember 
+				 dal:OtherFinancingsMember 
+				 dal:SecuredAndUnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:NYTDCSpecialFacilitiesRevenueBondsSeries2018Member 
+				 us-gaap:BondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:BankRevolvingCreditFacilitiesMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:RevolvingCreditFacility2018Member 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:UnsecuredNotesMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:OtherFinancingsMember 
+				 dal:SecuredAndUnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MinimumMember 
+				 dal:UnsecuredNotesMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:MaximumMember 
+				 dal:OtherFinancingsMember 
+				 dal:SecuredAndUnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:CertificatesMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:RevolvingCreditFacility2018Member 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassThroughCertificates20191ClassAAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:PassThroughCertificates20191ClassAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:UnsecuredTermLoan2019Member 
+				 us-gaap:LoansPayableMember 
+			 
+		 
+		 
+			 2019-02-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:UnsecuredNotesMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:RevolvingCreditFacility2018Member 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:CertificatesMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:NYTDCSpecialFacilitiesRevenueBondsSeries2018Member 
+				 us-gaap:BondsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:BankRevolvingCreditFacilitiesMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:OtherFinancingsMember 
+				 dal:SecuredAndUnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AircraftFinancingsMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A350900Member 
+				 dal:LATAMAirlinesGroupS.A.Member 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:AirlineFleetRetirementMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:MD90Member 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A350900Member 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A321200Member 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A220300Member 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A330900neoMember 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A321200neoMember 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 dal:A220100Member 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 srt:CRJ900Member 
+				 us-gaap:CapitalAdditionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalesofrefinedproductstothirdpartiesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:RefineryMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:AirlineMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:RefineryMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:AirlineMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:AirlineMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:AirlineMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:RefineryMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalestoairlinesegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:ExchangedProductsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:RefineryMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:ExchangedProductsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalesofrefinedproductstothirdpartiesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalestoairlinesegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:ExchangedProductsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:ExchangedProductsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:RefineryMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:AirlineMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:RefineryMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalesofrefinedproductstothirdpartiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalestoairlinesegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 dal:AirlineMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalestoairlinesegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000027904 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 dal:SalesofrefinedproductstothirdpartiesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 iso4217:EUR 
+	 
+		 utreg:gal 
+	 
+		 dal:aircraft 
+	 
+		 dal:lender 
+	 
+		 xbrli:shares 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 iso4217:JPY 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:pure 
+	   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM  10-Q   ☑ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES   EXCHANGE ACT OF 1934 For the quarterly period ended  September 30, 2019   Or ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES   EXCHANGE ACT OF 1934 Commission File Number  001-5424   DELTA AIR LINES, INC.   (Exact name of registrant as specified in its charter) Delaware 58-0218548 (State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.) Post Office Box 20706     Atlanta , Georgia   30320-6001 (Address of principal executive offices)   (Zip Code) Registrant's telephone number, including area code: ( 404 )  715-2600   Title of each class   Name of each exchange on which registered   Trading Symbol Common Stock, par value $0.0001 per share   New York Stock Exchange   DAL Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes   ☑   No  ☐   Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). Yes   ☑   No  ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and "emerging growth company" in Rule 12b-2 of the Exchange Act. Large accelerated filer ☑ Accelerated filer  ☐ Non-accelerated filer  ☐ Smaller reporting company ☐ Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes  ☐   No  ☑ Number of shares outstanding by each class of common stock, as of  September 30, 2019 : Common Stock, $0.0001 par value -  646,742,854  shares outstanding This document is also available through our website at http://ir.delta.com/.   Table of Contents       Page Forward Looking Statements  1 Report of Independent Registered Public Accounting Firm  2     Part I. Financial Information   Item 1. Financial Statements  3 Consolidated Balance Sheets  3 Condensed Consolidated Statements of Operations and Comprehensive Income  4 Condensed Consolidated Statements of Cash Flows  5 Consolidated Statements of Stockholders' Equity  6 Notes to the Condensed Consolidated Financial Statements  8 Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations  23 Item 3. Quantitative and Qualitative Disclosures About Market Risk  43 Item 4. Controls and Procedures  43     Part II. Other Information   Item 1. Legal Proceedings  43 Item 1A. Risk Factors  43 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds  44 Item 6. Exhibits  45     Signature  46 Unless otherwise indicated, the terms "Delta," "we," "us" and "our" refer to Delta Air Lines, Inc. and its subsidiaries. FORWARD-LOOKING STATEMENTS Statements in this Form 10-Q (or otherwise made by us or on our behalf) that are not historical facts, including statements about our estimates, expectations, beliefs, intentions, projections or strategies for the future, may be "forward-looking statements" as defined in the Private Securities Litigation Reform Act of 1995. Forward-looking statements involve risks and uncertainties that could cause actual results to differ materially from historical experience or our present expectations. Known material risk factors applicable to Delta are described in "Item 1A. Risk Factors" of our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018  ("Form 10-K"), other than risks that could apply to any issuer or offering. All forward-looking statements speak only as of the date made, and we undertake no obligation to publicly update or revise any forward-looking statements to reflect events or circumstances that may arise after the date of this report.  1 REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM The Board of Directors and Stockholders of Delta Air Lines, Inc. Results of Review of Interim Financial Statements          We have reviewed the accompanying consolidated balance sheet of Delta Air Lines, Inc. (the Company) as of  September 30, 2019 , the related condensed consolidated statements of operations and comprehensive income, and the consolidated statements of stockholders' equity for the three-month and nine-month periods ended  September 30, 2019  and  2018 , the condensed consolidated statements of cash flows for the nine-month periods ended  September 30, 2019  and  2018  and the related notes (collectively referred to as the "condensed consolidated interim financial statements"). Based on our reviews, we are not aware of any material modifications that should be made to the condensed consolidated interim financial statements for them to be in conformity with U.S. generally accepted accounting principles. We have previously audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the consolidated balance sheet of Delta Air Lines, Inc. as of  December 31, 2018 , the related consolidated statements of operations, comprehensive income, cash flows, and stockholders' equity for the year then ended, and the related notes (not presented herein); and in our report dated February 15, 2019, we expressed an unqualified audit opinion on those consolidated financial statements. In our opinion, the information set forth in the accompanying consolidated balance sheet as of  December 31, 2018 , is fairly stated, in all material respects, in relation to the consolidated balance sheet from which it has been derived. Basis for Review Results These financial statements are the responsibility of the Company's management. We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the SEC and the PCAOB. We conducted our review in accordance with the standards of the PCAOB. A review of interim financial statements consists principally of applying analytical procedures and making inquiries of persons responsible for financial and accounting matters. It is substantially less in scope than an audit conducted in accordance with the standards of the PCAOB, the objective of which is the expression of an opinion regarding the financial statements taken as a whole. Accordingly, we do not express such an opinion.                /s/ Ernst & Young LLP Atlanta, Georgia   October 10, 2019    2 DELTA AIR LINES, INC. Consolidated Balance Sheets  (Unaudited) (in millions, except share data) September 30,  2019   December 31,  2018 ASSETS Current Assets:       Cash and cash equivalents $ 1,899   $ 1,565 Accounts receivable, net of an allowance for uncollectible accounts of $14 and $12 at September 30,  2019 and December 31, 2018, respectively 2,836   2,314 Fuel inventory 568   592 Expendable parts and supplies inventories, net of an allowance for obsolescence of $94 and $102  at September 30, 2019 and December 31, 2018, respectively 504   463 Prepaid expenses and other 1,137   1,406 Total current assets 6,944   6,340         Noncurrent Assets:       Property and equipment, net of accumulated depreciation and amortization of $17,213 and $15,823 at September 30, 2019 and December 31, 2018, respectively 30,796   28,335 Operating lease right-of-use assets 5,815   5,994 Goodwill 9,781   9,781 Identifiable intangibles, net of accumulated amortization of $871 and $862 at September 30, 2019 and December 31, 2018, respectively 4,821   4,830 Cash restricted for airport construction 753   1,136 Other noncurrent assets 4,309   3,850 Total noncurrent assets 56,275   53,926 Total assets $ 63,219   $ 60,266 LIABILITIES AND STOCKHOLDERS' EQUITY Current Liabilities:       Current maturities of long-term debt and finance leases $ 2,196   $ 1,518 Current maturities of operating leases 844   955 Air traffic liability 5,762   4,661 Accounts payable 3,470   2,976 Accrued salaries and related benefits 3,119   3,287 Loyalty program deferred revenue 3,200   2,989 Fuel card obligation 439   1,075 Other accrued liabilities 1,181   1,117 Total current liabilities 20,211   18,578         Noncurrent Liabilities:       Long-term debt and finance leases 7,923   8,253 Pension, postretirement and related benefits 8,457   9,163 Loyalty program deferred revenue 3,496   3,652 Noncurrent operating leases 5,441   5,801 Deferred income taxes, net 1,245   163 Other noncurrent liabilities 1,378   969 Total noncurrent liabilities 27,940 28,001         Commitments and Contingencies           Stockholders' Equity:       Common stock at $0.0001 par value; 1,500,000,000 shares authorized, 655,694,564 and 688,136,306 shares issued at September 30, 2019 and December 31, 2018, respectively —   — Additional paid-in capital 11,177   11,671 Retained earnings 11,772   10,039 Accumulated other comprehensive loss ( 7,645 )   ( 7,825 ) Treasury stock, at cost, 8,951,710 and 8,191,831 shares at September 30, 2019 and  December 31, 2018, respectively ( 236 )   ( 198 ) Total stockholders' equity 15,068   13,687 Total liabilities and stockholders' equity $ 63,219   $ 60,266         The accompanying notes are an integral part of these Condensed Consolidated Financial Statements.  3 DELTA AIR LINES, INC. Condensed Consolidated Statements of Operations and Comprehensive Income  (Unaudited)   Three Months Ended September 30,   Nine Months Ended September 30, (in millions, except per share data) 2019   2018   2019   2018 Operating Revenue:               Passenger $ 11,410   $ 10,796   $ 32,032   $ 30,107 Cargo 189   226   567   651 Other 961   931   2,969   2,938   Total operating revenue 12,560   11,953   35,568   33,696                 Operating Expense:               Salaries and related costs 2,884   2,753   8,275   8,004 Aircraft fuel and related taxes 2,239   2,498   6,508   6,693 Regional carriers expense, excluding fuel 900   885   2,698   2,586 Contracted services 685   562   1,974   1,646 Depreciation and amortization 631   573   1,960   1,759 Passenger commissions and other selling expenses 539   535   1,505   1,473 Aircraft maintenance materials and outside repairs 424   371   1,334   1,233 Landing fees and other rents 460   439   1,321   1,254 Profit sharing 517   399   1,256   991 Ancillary businesses and refinery 279   410   945   1,396 Passenger service 345   329   938   892 Aircraft rent 110   99   318   291 Other 476   455   1,317   1,305 Total operating expense 10,489   10,308   30,349   29,523                 Operating Income 2,071   1,645   5,219   4,173                 Non-Operating (Expense)/Income:           Interest expense, net ( 70 )   ( 73 )   ( 228 )   ( 244 ) Unrealized gain/(loss) on investments, net ( 35 )   50   ( 17 )   ( 171 ) Miscellaneous, net ( 19 )   66   ( 174 )   48 Total non-operating (expense)/income, net ( 124 )   43   ( 419 )   ( 367 )                 Income Before Income Taxes 1,947   1,688   4,800   3,806                 Income Tax Provision ( 452 )   ( 366 )   ( 1,131 )   ( 890 )                 Net Income $ 1,495   $ 1,322   $ 3,669   $ 2,916                 Basic Earnings Per Share $ 2.32   $ 1.93   $ 5.61   $ 4.20 Diluted Earnings Per Share $ 2.31   $ 1.92   $ 5.59   $ 4.18 Cash Dividends Declared Per Share $ 0.40   $ 0.35   $ 1.10   $ 0.96                 Comprehensive Income $ 1,545   $ 1,393   $ 3,849   $ 3,002                 The accompanying notes are an integral part of these Condensed Consolidated Financial Statements.  4 DELTA AIR LINES, INC. Condensed Consolidated Statements of Cash Flows (Unaudited)   Nine Months Ended September 30, (in millions) 2019   2018 Net Cash Provided by Operating Activities $ 7,468   $ 5,769         Cash Flows from Investing Activities:       Property and equipment additions:       Flight equipment, including advance payments ( 2,774 )   ( 2,833 ) Ground property and equipment, including technology ( 1,090 )   ( 972 ) Purchase of short-term investments —   ( 145 ) Redemption of short-term investments 206   490 Purchase of equity investments ( 170 )   — Other, net 32   87 Net cash used in investing activities ( 3,796 ) ( 3,373 )         Cash Flows from Financing Activities:       Payments on long-term debt and finance lease obligations ( 2,805 )   ( 2,741 ) Repurchase of common stock ( 1,802 )   ( 1,250 ) Cash dividends ( 721 )   ( 670 ) Proceeds from short-term obligations 1,750   — Proceeds from long-term obligations 500   3,124 Fuel card obligation ( 636 )   ( 1 ) Other, net ( 8 )   ( 63 ) Net cash used in financing activities ( 3,722 )   ( 1,601 )         Net (Decrease) Increase in Cash, Cash Equivalents and Restricted Cash Equivalents ( 50 )   795 Cash, cash equivalents and restricted cash equivalents at beginning of period 2,748   1,853 Cash, cash equivalents and restricted cash equivalents at end of period $ 2,698   $ 2,648         Non-Cash Transactions:       Right-of-use assets acquired under operating leases $ 459   $ 908 Operating leases converted to finance leases 189   — Flight and ground equipment acquired under finance leases 619   69                 The following table provides a reconciliation of cash, cash equivalents and restricted cash equivalents reported within the Consolidated Balance Sheets to the total of the same such amounts shown above:   September 30, (in millions) 2019   2018 Current assets:       Cash and cash equivalents $ 1,899   $ 1,380 Restricted cash included in prepaid expenses and other 46   54 Noncurrent assets:       Cash restricted for airport construction 753   1,214 Total cash, cash equivalents and restricted cash equivalents $ 2,698   $ 2,648         The accompanying notes are an integral part of these Condensed Consolidated Financial Statements.  5 DELTA AIR LINES, INC. Consolidated Statements of Stockholders' Equity (Unaudited)   Common Stock Additional Paid-In Capital  Retained Earnings Accumulated Other Comprehensive Loss Treasury Stock   (in millions, except per share data) Shares Amount Shares Amount Total Balance at December 31, 2018 688 $ — $ 11,671 $ 10,039 $ ( 7,825 ) 8 $ ( 198 ) $ 13,687 Net income — — — 730 — — — 730 Dividends declared — — — ( 232 ) — — — ( 232 ) Other comprehensive income — — — — 59 — — 59 Shares of common stock issued and compensation expense associated with equity awards (Treasury shares withheld for payment of taxes, $49.75 (1)  per share) 2 — 27 — — 1 ( 35 ) ( 8 ) Stock purchased and retired ( 26 ) — ( 444 ) ( 881 ) — — — ( 1,325 ) Balance at March 31, 2019 664 — 11,254 9,656 ( 7,766 ) 9 ( 233 ) 12,911 Net income — — — 1,443 — — — 1,443 Dividends declared — — — ( 229 ) — — — ( 229 ) Other comprehensive income — — — — 72 — — 72 Shares of common stock issued and compensation expense associated with equity awards (Treasury shares withheld for payment of taxes, $55.06 (1)  per share) — — 31 — — — ( 2 ) 29 Stock purchased and retired ( 5 ) — ( 84 ) ( 184 ) — — — ( 268 ) Balance at June 30, 2019 659 — 11,201 10,686 ( 7,694 ) 9 ( 235 ) 13,958 Net income — — — 1,495 — — — 1,495 Dividends declared — — — ( 261 ) — — — ( 261 ) Other comprehensive income — — — — 49 — — 49 Shares of common stock issued and compensation expense associated with equity awards (Treasury shares withheld for payment of taxes, $58.68 (1)  per share) — — 36 — — — ( 1 ) 35 Stock purchased and retired ( 3 ) — ( 60 ) ( 148 ) — — — ( 208 ) Balance at September 30, 2019 656 $ — $ 11,177 $ 11,772 $ ( 7,645 ) 9 $ ( 236 ) $ 15,068 (1)   Weighted average price per share. The accompanying notes are an integral part of these Condensed Consolidated Financial Statements.  6 DELTA AIR LINES, INC. Consolidated Statements of Stockholders' Equity (Unaudited)   Common Stock Additional Paid-In Capital  Retained Earnings Accumulated Other Comprehensive Loss Treasury Stock   (in millions, except per share data) Shares Amount Shares Amount Total Balance at December 31, 2017 715 $ — $ 12,053 $ 8,256 $ ( 7,621 ) 7 $ ( 158 ) $ 12,530 Net income — — — 557 — — — 557 Change in accounting principle and other — — — ( 139 ) ( 106 ) — — ( 245 ) Dividends declared — — — ( 216 ) — — — ( 216 ) Other comprehensive income — — — — 46 — — 46 Shares of common stock issued and compensation expense associated with equity awards (Treasury shares withheld for payment of taxes, $55.08 (1)  per share) 1 — 10 — — 1 ( 36 ) ( 26 ) Stock options exercised 1 — 1 — — — — 1 Stock purchased and retired ( 6 ) — ( 97 ) ( 228 ) — — — ( 325 ) Balance at March 31, 2018 711 — 11,967 8,230 ( 7,681 ) 8 ( 194 ) 12,322 Net income — — — 1,036 — — — 1,036 Change in accounting principle and other — — — ( 13 ) — — — ( 13 ) Dividends declared — — — ( 213 ) — — — ( 213 ) Other comprehensive income — — — — 75 — — 75 Shares of common stock issued and compensation expense associated with equity awards (Treasury shares withheld for payment of taxes, $52.99 (1)  per share) — — 29 — — — ( 2 ) 27 Stock purchased and retired ( 12 ) — ( 189 ) ( 411 ) — — — ( 600 ) Balance at June 30, 2018 699 — 11,807 8,629 ( 7,606 ) 8 ( 196 ) 12,634 Net income — — — 1,322 — — — 1,322 Dividends declared — — — ( 242 ) — — — ( 242 ) Other comprehensive income — — — — 71 — — 71 Shares of common stock issued and compensation expense associated with equity awards (Treasury shares withheld for payment of taxes, $52.59 (1)  per share) — — 32 — — — ( 1 ) 31 Stock purchased and retired ( 5 ) — ( 99 ) ( 226 ) — — — ( 325 ) Balance at September 30, 2018 694 $ — $ 11,740 $ 9,483 $ ( 7,535 ) 8 $ ( 197 ) $ 13,491 (1)   Weighted average price per share. The accompanying notes are an integral part of these Condensed Consolidated Financial Statements.  7 DELTA AIR LINES, INC. Notes to the Condensed Consolidated Financial Statements (Unaudited) NOTE 1 .  SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Basis of Presentation The accompanying unaudited Condensed Consolidated Financial Statements include the accounts of Delta Air Lines, Inc. and our wholly owned subsidiaries and have been prepared in accordance with accounting principles generally accepted in the United States ("GAAP") for interim financial information. Consistent with these requirements, this Form 10-Q does not include all the information required by GAAP for complete financial statements. As a result, this Form 10-Q should be read in conjunction with the Consolidated Financial Statements and accompanying Notes in our Form 10-K for the year ended  December 31, 2018 .  Management believes the accompanying unaudited Condensed Consolidated Financial Statements reflect all adjustments, including normal recurring items, considered necessary for a fair statement of results for the interim periods presented. Due to seasonal variations in the demand for air travel, the volatility of aircraft fuel prices and other factors, operating results for the  three and nine months ended   September 30, 2019  are not necessarily indicative of operating results for the entire year. We reclassified certain prior period amounts to conform to the current period presentation. Unless otherwise noted, all amounts disclosed are stated before consideration of income taxes. Recent Accounting Standards Comprehensive Income . In February 2018, the Financial Accounting Standards Board ("FASB") issued Accounting Standards Update ("ASU") No. 2018-02, "Income Statement—Reporting Comprehensive Income (Topic 220)." This standard provides an option to reclassify stranded tax effects within  accumulated other comprehensive income/(loss) ("AOCI")  to retained earnings due to the U.S. federal corporate income tax rate change in the Tax Cuts and Jobs Act of 2017. This standard is effective for interim and annual reporting periods beginning after December 15, 2018. We adopted this standard effective January 1, 2019 with the election not to reclassify  $ 1.2  billion  of stranded tax effects, primarily related to our pension plans, from AOCI to retained earnings.   NOTE 2 .  REVENUE RECOGNITION Passenger Revenue Passenger revenue is primarily composed of passenger ticket sales, loyalty travel awards and travel-related services performed in conjunction with a passenger’s flight.   Three Months Ended September 30,   Nine Months Ended September 30, (in millions) 2019 2018   2019 2018 Ticket $ 10,029 $ 9,553   $ 27,986 $ 26,514 Loyalty travel awards 732 678   2,174 1,976 Travel-related services 649 565   1,872 1,617 Total passenger revenue $ 11,410 $ 10,796   $ 32,032 $ 30,107 We recognized approximately  $ 3.7  billion  in passenger revenue during the  nine months ended   September 30, 2019  that was recorded in our air traffic liability balance at  December 31, 2018 . We expect the remaining balance of the  December 31, 2018  liability to be recognized by the end of  2019 .   8 Other Revenue   Three Months Ended September 30,   Nine Months Ended September 30, (in millions) 2019 2018   2019 2018 Loyalty program $ 485 $ 369   $ 1,443 $ 1,075 Ancillary businesses and refinery 291 433   990 1,475 Miscellaneous 185 129   536 388 Total other revenue $ 961 $ 931   $ 2,969 $ 2,938 Loyalty Program Our SkyMiles loyalty program generates customer loyalty by rewarding customers with incentives to travel on Delta. This program allows customers to earn mileage credits by flying on Delta, Delta Connection and other airlines that participate in the loyalty program. When traveling, customers earn redeemable mileage credits based on the passenger's loyalty program status and ticket price. Customers can also earn mileage credits through participating companies such as credit card companies, hotels, car rental agencies and ridesharing companies. To facilitate transactions with participating companies, we sell mileage credits to non-airline businesses, customers and other airlines. Mileage credits are redeemable by customers in future periods for air travel on Delta and other participating airlines, membership in our Sky Club and other program awards.  During the  nine months ended   September 30, 2019  and  2018 , total cash sales from marketing agreements related to our loyalty program were  $ 3.1  billion  and  $ 2.6  billion , respectively, which are allocated to travel and other performance obligations.  Our most significant contract to sell mileage credits relates to our co-brand credit card relationship with American Express. Our agreements with American Express provide for joint marketing, grant certain benefits to Delta-American Express co-branded credit card holders  ("cardholders")  and American Express Membership Rewards program participants, and allow American Express to market its services or products using our customer database. Cardholders earn mileage credits for making purchases using co-branded cards, and certain cardholders may also check their first bag for free, are granted discounted access to Delta Sky Club lounges and receive priority boarding and other benefits while traveling on Delta. Additionally, participants in the American Express Membership Rewards program may exchange their points for mileage credits under the loyalty program. We sell mileage credits at agreed-upon rates to American Express which are then provided to their customers under the co-brand credit card program and the Membership Rewards program.   We account for marketing agreements, including those with American Express, consistent with the accounting method that allocates the consideration received to the individual products and services delivered. We allocate the value based on the relative selling prices of those products and services, which generally consist of award travel, priority boarding, baggage fee waivers, lounge access and the use of our brand. We determine our best estimate of the selling prices by considering a discounted cash flow analysis using multiple inputs and assumptions, including: (1) the expected number of miles awarded and number of miles redeemed, (2)  equivalent ticket value ("ETV")  for the award travel obligation, (3) published rates on our website for baggage fees, discounted access to Delta Sky Club lounges and other benefits while traveling on Delta and (4) brand value.  Effective January 1, 2019, we amended our co-brand agreement with American Express, and we also amended other agreements with American Express during the current year. The new agreements increase the value we receive and extend the terms to 2029. The products and services delivered are consistent with previous agreements, and we continue to use the accounting method that allocates the consideration received based on the relative selling prices of those products and services.  We defer the amount for award travel obligation as part of loyalty program deferred revenue and recognize loyalty travel awards in passenger revenue as the mileage credits are used for travel. Revenue allocated to services performed in conjunction with a passenger’s flight, such as baggage fee waivers, is recognized as travel-related services in passenger revenue when the related service is performed. Revenue allocated to access Delta Sky Club lounges is recognized as miscellaneous in other revenue as access is provided. Revenue allocated to the remaining performance obligations, primarily brand value, is recorded as loyalty program in other revenue over time as miles are delivered.    9 Current Activity of the Loyalty Program.  Mileage credits are combined in one homogeneous pool and are not separately identifiable. As such, the revenue is comprised of miles that were part of the loyalty deferred revenue balance at the beginning of the period as well as miles that were issued during the period.  The table below presents the activity of the current and noncurrent loyalty liability and includes miles earned through travel and miles sold to participating companies, which are primarily through marketing agreements. (in millions)     2019 2018 Balance at January 1     $ 6,641 $ 6,321 Mileage credits earned     2,352 2,322 Travel mileage credits redeemed     ( 2,175 ) ( 1,976 ) Non-travel mileage credits redeemed     ( 122 ) ( 125 ) Balance at September 30     $ 6,696 $ 6,542 The timing of mileage redemptions can vary widely; however, the majority of new miles are redeemed within  two years . Revenue by Geographic Region Operating revenue for the airline segment is recognized in a specific geographic region based on the origin, flight path and destination of each flight segment. The majority of the revenues of the refinery, consisting of fuel sales to the airline, have been eliminated in the Condensed Consolidated Financial Statements. The remaining operating revenue for the refinery segment is included in the domestic region.  Our passenger and operating revenue by geographic region is summarized in the following tables:   Passenger Revenue   Three Months Ended September 30,   Nine Months Ended September 30, (in millions) 2019 2018   2019 2018 Domestic $ 7,971 $ 7,395   $ 22,755 $ 21,093 Atlantic 2,060 1,996   5,042 4,837 Latin America 683 675   2,298 2,228 Pacific 696 730   1,937 1,949 Total $ 11,410 $ 10,796   $ 32,032 $ 30,107   Operating Revenue   Three Months Ended September 30,   Nine Months Ended September 30, (in millions) 2019 2018   2019 2018 Domestic $ 8,651 $ 8,125   $ 24,925 $ 23,480 Atlantic 2,336 2,244   5,788 5,494 Latin America 757 741   2,559 2,449 Pacific 816 843   2,296 2,273 Total $ 12,560 $ 11,953   $ 35,568 $ 33,696  10 NOTE 3 .  FAIR VALUE MEASUREMENTS Assets (Liabilities) Measured at Fair Value on a Recurring Basis (in millions) September 30,  2019 Level 1 Level 2 Cash equivalents $ 1,489 $ 1,489 $ — Restricted cash equivalents 798 798 — Long-term investments 1,214 1,009 205 Hedge derivatives, net       Fuel hedge contracts 22 15 7 Interest rate contracts 82 — 82 Foreign currency exchange contracts 21 — 21 (in millions) December 31,  2018 Level 1 Level 2 Cash equivalents $ 1,222 $ 1,222 $ — Restricted cash equivalents 1,183 1,183 — Short-term investments     U.S. government and agency securities 50 45 5 Asset- and mortgage-backed securities 36 — 36 Corporate obligations 90 — 90 Other fixed income securities 27 — 27 Long-term investments 1,084 880 204 Hedge derivatives, net       Fuel hedge contracts 15 20 ( 5 ) Interest rate contracts 1 — 1 Foreign currency exchange contracts ( 3 ) — ( 3 ) Cash Equivalents and Restricted Cash Equivalents.  Cash equivalents generally consist of money market funds. Restricted cash equivalents generally consist of money market funds, time deposits, commercial paper and negotiable certificates of deposit, which primarily relate to proceeds from debt issued to finance a portion of the construction costs for our new terminal facilities at New York's LaGuardia Airport. The fair value of these cash equivalents is based on a market approach using prices generated by market transactions involving identical or comparable assets. Short-Term Investments.  The fair values of our short-term investments were based on a market approach using industry standard valuation techniques that incorporated observable inputs such as quoted market prices, interest rates, benchmark curves, credit ratings of the security or other observable information and were recorded in prepaid expenses and other on the Consolidated Balance Sheet ("balance sheet"). Long-Term Investments.  Our long-term investments that are measured at fair value primarily consist of equity investments, which are valued based on market prices or other observable transactions and are recorded in other noncurrent assets on our balance sheet. See  Note 4 , "Investments," for further information on our equity investments.  11 Hedge Derivatives.  A portion of our derivative contracts are negotiated over-the-counter with counterparties without going through a public exchange. Accordingly, our fair value assessments give consideration to the risk of counterparty default (as well as our own credit risk). Such contracts are classified as Level 2 within the fair value hierarchy. The remainder of our hedge contracts are comprised of futures contracts, which are traded on a public exchange. These contracts are classified within Level 1 of the fair value hierarchy. • Fuel Contracts.  Our fuel hedge portfolio consists of options, swaps and futures. Option and swap contracts are valued under income approaches using option pricing models and discounted cash flow models, respectively, based on data either readily observable in public markets, derived from public markets or provided by counterparties who regularly trade in public markets. Futures contracts and options on futures contracts are traded on a public exchange and valued based on quoted market prices.  • Interest Rate Contracts.  Our interest rate derivatives are swap contracts, which are valued based on data readily observable in public markets. • Foreign Currency Exchange Contracts.  Our foreign currency derivatives consist of forward contracts and are valued based on data readily observable in public markets. NOTE 4 .  INVESTMENTS Long-Term Investments We have developed strategic relationships with a number of airlines and airline services companies through equity investments and other forms of cooperation and support. Our equity investments reinforce our commitment to strategic relationships, which improve our coordination with these companies and enable our customers to seamlessly connect to more destinations while enjoying a consistent, high-quality travel experience. Equity Method Investments We account for our investments in Aeroméxico, Virgin Atlantic and AirCo Aviation Services, LLC ("AirCo"),   the parent company of DAL Global Services, LLC ("DGS"), under the equity method of accounting. Our portion of Aeroméxico's and Virgin Atlantic's financial results are recorded in miscellaneous, net in our Condensed Consolidated Statements of Operations and Comprehensive Income ("income statement") under non-operating expense, and our share of AirCo's financial results is recorded in contracted services in our income statement as this entity is integral to the operations of our business. If an eq uity method investment experiences a loss in fair value that is determined to be other than temporary, we will reduce our basis in the investment to fair value and record the loss in unrealized gain/(loss) on investments. • Aeroméxico . Our non-controlling investment in Grupo Aeroméxico, the parent company of Aeroméxico, is accounted for under the equity method. Grupo Aeroméxico's corporate bylaws (as authorized by the Mexican Foreign Investment Commission) limit our voting interest to  49 % . However, due to Aeroméxico's share repurchase program, our equity stake in Grupo Aeroméxico has increased to  51 % . The investment is recorded at  $ 843  million  as of  September 30, 2019 .  • Virgin Atlantic.  We have a non-controlling  49 %  equity stake in Virgin Atlantic Limited, the parent company of Virgin Atlantic Airways, and similar non-controlling interests in certain affiliated Virgin Atlantic companies. Our investment in these Virgin Atlantic companies is recorded at  $ 393  million  as of  September 30, 2019 .  • AirCo . We have a non-controlling  49 %  equity stake in AirCo which is recorded at  $ 123  million  as of  September 30, 2019 . AirCo is a subsidiary of Argenbright Holdings, LLC that provides aviation-related services, ground support equipment maintenance and security.  In the September 2019 quarter we announced our plan to enter into a strategic alliance with LATAM Airlines Group S.A.  ("LATAM").  Subject to regulatory approval, specifically requirements under the Hart-Scott-Rodino Antitrust Improvement Act, we plan to commence a tender offer for the acquisition of up to  20 %  of the common shares of LATAM at a price per share of  $ 16 , to be funded with newly issued debt and available cash. In addition, to support the establishment of the strategic alliance, we will invest  $ 350  million ,  $ 150  million   of which was disbursed in the September 2019 quarter.    12 Fair Value Investments We account for the following investments at fair value with adjustments to fair value recognized in unrealized gain/(loss) on investments within non-operating expense in our income statement. We recorded losses of  $ 35  million  and  $ 17  million  on our fair value investments during the  three and nine months ended   September 30, 2019 , respectively. These results were driven by changes in stock prices and foreign currency fluctuations.  • Air France-KLM.  We own  9 %  of the outstanding shares of Air France-KLM, which are recorded at  $ 393  million  as of  September 30, 2019 . • GOL.  We own  9 %  of the outstanding capital stock of GOL Linhas Aéreas Inteligentes, the parent company of VRG Linhas Aéreas (operating as GOL), through ownership of its preferred shares. Our ownership stake is recorded at  $ 256  million  as of  September 30, 2019 . Additionally, GOL has a  $ 300  million   five -year term loan facility with third parties maturing in 2020, which we have guaranteed. Our guaranty is secured by GOL's ownership interest in Smiles, GOL's publicly traded loyalty program. Because GOL remains in compliance with the terms of its loan facility, we have not recorded a liability on our balance sheet as of  September 30, 2019 . We plan to sell our GOL ownership stake and wind down our commercial agreements with GOL to facilitate the formation of our strategic alliance with LATAM.   • China Eastern.  We own a  3 %  equity interest in China Eastern, which is recorded at  $ 226  million  as of  September 30, 2019 .  • Korean.   We have acquired  10 %  of the outstanding shares of Hanjin-KAL, the largest shareholder of Korean Air, during 2019 .  This investment is recorded at  $ 134  million  as of  September 30, 2019 . • Alclear Holdings, LLC ("CLEAR").  We own a  7 %  equity interest in CLEAR. • Republic Airways.  We own a  17 %  equity interest in Republic Airways Holdings Inc. NOTE 5 .  DERIVATIVES AND RISK MANAGEMENT Changes in fuel prices, interest rates and foreign currency exchange rates impact our results of operations. In an effort to manage our exposure to these risks, we enter into derivative contracts and adjust our derivative portfolio as market conditions change. We recognize derivative contracts at fair value on our balance sheet.  Fuel Price Risk Our derivative contracts to hedge the financial risk from changing fuel prices are primarily related to Monroe’s refining margins.  Interest Rate Risk Our exposure to market risk from adverse changes in interest rates is primarily associated with our long-term debt obligations. Market risk associated with our fixed and variable rate long-term debt relates to the potential reduction in fair value and negative impact to future earnings, respectively, from an increase in interest rates.  Foreign Currency Exchange Risk We are subject to foreign currency exchange rate risk because we have revenue and expense denominated in foreign currencies. To manage exchange rate risk, we execute both our international revenue and expense transactions in the same foreign currency to the extent practicable. From time to time, we may also enter into foreign currency option and forward contracts.   13 Hedge Position as of  September 30, 2019 (in millions) Volume   Final Maturity Date Prepaid Expenses and Other Other Noncurrent Assets Other Accrued Liabilities Other Noncurrent Liabilities Hedge Derivatives, net Designated as hedges                 Interest rate contracts (fair value hedges) 1,872 U.S. dollars April 2028 $ 7 $ 75 $ — $ — $ 82 Not designated as hedges                 Foreign currency exchange contracts 397 Euros December 2020 9 12 — — 21 Fuel hedge contracts 14 gallons - crude oil and refined products July 2020 47 — ( 25 ) — 22 Total derivative contracts     $ 63 $ 87 $ ( 25 ) $ — $ 125 Hedge Position as of  December 31, 2018 (in millions) Volume   Final Maturity Date Prepaid Expenses and Other Other Noncurrent Assets Other Accrued Liabilities Other Noncurrent Liabilities Hedge Derivatives, net Designated as hedges                 Interest rate contracts (fair value hedges) 1,893 U.S. dollars April 2028 $ — $ 8 $ ( 7 ) $ — $ 1 Foreign currency exchange contracts 6,934 Japanese yen November 2019 1 — — — 1 Not designated as hedges                 Foreign currency exchange contracts 397 Euros December 2020 13 — — ( 17 ) ( 4 ) Fuel hedge contracts 219 gallons - crude oil and refined products December 2019 30 — ( 15 ) — 15 Total derivative contracts     $ 44 $ 8 $ ( 22 ) $ ( 17 ) $ 13 Balance Sheet Location of Hedged Item in Fair Value Hedges   Carrying Amount of Hedge Instruments   Cumulative Amount of Fair Value Hedge Adjustments (in millions) September 30, 2019 December 31, 2018   September 30, 2019 December 31, 2018 Current maturities of long-term debt and finance leases $ ( 20 ) $ ( 11 )   $ 7 $ 7 Long-term debt and finance leases $ ( 1,759 ) $ ( 1,870 )   $ 75 $ ( 8 ) Offsetting Assets and Liabilities We have master netting arrangements with our counterparties giving us the right to offset hedge assets and liabilities. However, we have elected not to offset the fair value positions recorded on our balance sheets.  The following table shows the net fair value positions by counterparty had we elected to offset. (in millions) Prepaid Expenses and Other Other Noncurrent Assets Other Accrued Liabilities Other Noncurrent Liabilities Hedge Derivatives, net September 30, 2019           Net derivative contracts $ 38 $ 87 $ — $ — $ 125 December 31, 2018           Net derivative contracts $ 35 $ — $ ( 13 ) $ ( 9 ) $ 13  14 Designated Hedge Gains (Losses) Gains (losses) related to our foreign currency exchange contracts designated as hedges are as follows:   Gain (Loss) Reclassified from AOCI to Earnings   Gain (Loss) Recognized in Other Comprehensive Income (in millions) 2019 2018   2019 2018 Three Months Ended September 30,           Foreign currency exchange contracts  (1) $ — $ ( 1 )   $ — $ 4 Nine Months Ended September 30,           Foreign currency exchange contracts  (1) $ — $ ( 4 )   $ — $ 4 (1)   Earnings on our designated foreign currency exchange contracts are recorded in passenger revenue in the income statement. Not Designated Hedge Gains (Losses) Gains (losses) related to our foreign currency exchange and fuel contracts are as follows:     Location of Gain (Loss) Recognized in Income   Amount of Gain (Loss) Recognized in Income (in millions)       2019 2018 Three Months Ended September 30,           Foreign currency exchange contracts   Unrealized gain/(loss) on investments, net   $ 18 $ ( 19 ) Fuel hedge contracts   Aircraft fuel and related taxes   31 7 Total       $ 49 $ ( 12 ) Nine Months Ended September 30,           Foreign currency exchange contracts   Unrealized gain/(loss) on investments, net   $ 25 $ ( 12 ) Fuel hedge contracts   Aircraft fuel and related taxes   ( 5 ) ( 85 ) Total       $ 20 $ ( 97 ) Credit Risk To manage credit risk associated with our fuel price, interest rate and foreign currency hedging programs, we evaluate counterparties based on several criteria including their credit ratings.  15 NOTE 6 .  DEBT   The following table summarizes our debt:    Maturity Interest Rate(s) (1)  Per Annum at September 30, December 31, (in millions) Dates September 30, 2019 2019 2018 Unsecured notes 2020 to 2028 2.60 % to 4.38 % $ 4,050 $ 4,050 Financing arrangements secured by aircraft:                 Certificates (2) 2019 to 2027 3.20 % to 8.02 % 1,999 1,837 Notes (2) 2019 to 2025 2.62 % to 6.37 % 1,246 1,787 NYTDC Special Facilities Revenue Bonds, Series 2018 (2) 2022 to 2036 4.00 % to 5.00 % 1,383 1,383 Other financings (2)(3) 2021 to 2030 3.02 % to 8.75 % 196 251 2018 Unsecured Revolving Credit Facility 2021 to 2023 undrawn variable — — Other revolving credit facilities 2020 to 2021 undrawn variable — — Total secured and unsecured debt             8,874 9,308 Unamortized premium and debt issue cost, net and other             151 60 Total debt             9,025 9,368 Less: current maturities             ( 1,953 ) ( 1,409 ) Total long-term debt             $ 7,072 $ 7,959   (1)   Certain aircraft and other financings are comprised of variable rate debt. All variable rates are equal to LIBOR (generally subject to a floor) or another index rate, in each case plus a specified margin. (2)   Due in installments. (3)   Primarily includes unsecured bonds and debt secured by certain accounts receivable and real estate. 2019 Unsecured Term Loan In February 2019, we entered into a  $ 1  billion  term loan issued by  two  lenders, which was subsequently repaid by the end of the June 2019 quarter. We used the net proceeds of the term loan to accelerate planned 2019 repurchases under our share repurchase program.   2019-1 EETC We completed a  $ 500  million  offering of Pass Through Certificates, Series 2019-1 ("2019-1 EETC") utilizing a pass through trust during 2019. This amount is included in Certificates in the table above.  The details of the 2019-1 EETC, which is secured by  14  aircraft, are shown in the table below: (in millions) Total Principal Fixed Interest Rate Issuance Date Final Maturity Date 2019-1 Class AA Certificates $ 425 3.204 % March 2019 April 2024 2019-1 Class A Certificates 75 3.404 % March 2019 April 2024 Total $ 500       Availability Under Revolving Credit Facilities The table below shows availability under revolving credit facilities, all of which were undrawn, as of  September 30, 2019 : (in millions)   2018 Unsecured Revolving Credit Facility $ 2,650 Other revolving credit facilities 456 Total availability under revolving credit facilities $ 3,106    16 Fair Value of Debt Market risk associated with our fixed- and variable-rate long-term debt relates to the potential reduction in fair value and negative impact to future earnings, respectively, from an increase in interest rates.  The fair value of debt, shown below, is principally based on reported market values, recently completed market transactions and estimates based on interest rates, maturities, credit risk and underlying collateral. Long-term debt is primarily classified as Level 2 within the fair value hierarchy.     (in millions) September 30,  2019 December 31,  2018 Total debt at par value $ 8,874 $ 9,308 Unamortized premium and debt issue cost, net and other 151 60 Net carrying amount $ 9,025 $ 9,368       Fair value $ 9,300 $ 9,400 Covenants We were in compliance with the covenants in our financings at September 30, 2019 .     NOTE 7 .  EMPLOYEE BENEFIT PLANS The following table shows the components of net periodic (benefit) cost:   Pension Benefits   Other Postretirement and Postemployment Benefits (in millions) 2019 2018   2019 2018 Three Months Ended September 30,           Service cost $ — $ —   $ 21 $ 21 Interest cost 208 195   34 32 Expected return on plan assets ( 297 ) ( 329 )   ( 12 ) ( 17 ) Amortization of prior service credit — —   ( 2 ) ( 7 ) Recognized net actuarial loss 73 66   9 10 Settlements 2 —   — — Net periodic (benefit) cost $ ( 14 ) $ ( 68 )   $ 50 $ 39             Nine Months Ended September 30,           Service cost $ — $ —   $ 63 $ 64 Interest cost 625 586   102 95 Expected return on plan assets ( 890 ) ( 988 )   ( 36 ) ( 50 ) Amortization of prior service credit — —   ( 7 ) ( 20 ) Recognized net actuarial loss 219 199   29 27 Settlements 3 4   — — Net periodic (benefit) cost $ ( 43 ) $ ( 199 )   $ 151 $ 116 Service cost is recorded in salaries and related costs in the income statement while all other components are recorded within miscellaneous under non-operating expense.  17 NOTE 8 .  COMMITMENTS AND CONTINGENCIES   Aircraft Purchase Commitments  Our future aircraft purchase commitments, which enable our fleet transformation, totaled  $ 13.9  billion  at  September 30, 2019 : (in millions) Total Three months ending December 31, 2019 $ 390 2020 2,900 2021 3,680 2022 3,330 2023 1,640 Thereafter 1,940 Total $ 13,880 Our future aircraft purchase commitments included the following aircraft at  September 30, 2019 : Aircraft Type Purchase Commitments A220-100 20 A220-300 50 A321-200 33 A321-200neo 100 A330-900neo 31 A350-900 16 CRJ-900 8 Total 258 MD-90 Fleet Retirement As part of our ongoing fleet transformation, during the June 2019 quarter we committed to accelerating the retirement of our MD-90 fleet. This fleet will now be retired by the end of 2022, which is approximately  two years  earlier than previously planned. The decision to permanently retire  35  aircraft resulted in accelerated depreciation of  $ 93  million  during the nine months ended September 30, 2019, which is recorded in depreciation and amortization in our income statement. LATAM A350 Commitments We have agreed to acquire  four  A350 aircraft from LATAM, which are included in the table above. In addition, we plan to assume  ten  of LATAM's A350 purchase commitments from Airbus, with deliveries through 2025.  See  Note 4 , "Investments," for further information on our planned strategic alliance with LATAM. Legal Contingencies We are involved in various legal proceedings related to employment practices, environmental issues, antitrust and other matters concerning our business. We record liabilities for losses from legal proceedings when we determine that it is probable that the outcome in a legal proceeding will be unfavorable and the amount of loss can be reasonably estimated. Although the outcome of the legal proceedings in which we are involved cannot be predicted with certainty, we believe that the resolution of current matters will not have a material adverse effect on our Condensed Consolidated Financial Statements.  18 Other Contingencies General Indemnifications We are the lessee under many commercial real estate leases. It is common in these transactions for us, as the lessee, to agree to indemnify the lessor and the lessor's related parties for tort, environmental and other liabilities that arise out of or relate to our use or occupancy of the leased premises. This type of indemnity would typically make us responsible to indemnified parties for liabilities arising out of the conduct of, among others, contractors, licensees and invitees at, or in connection with, the use or occupancy of the leased premises. This indemnity often extends to related liabilities arising from the negligence of the indemnified parties but usually excludes any liabilities caused by either their sole or gross negligence or their willful misconduct.  Our aircraft and other equipment lease and financing agreements typically contain provisions requiring us, as the lessee or obligor, to indemnify the other parties to those agreements, including certain of those parties' related persons, against virtually any liabilities that might arise from the use or operation of the aircraft or other equipment. We believe that our insurance would cover most of our exposure to liabilities and related indemnities associated with the commercial real estate leases and aircraft and other equipment lease and financing agreements described above. While our insurance does not typically cover environmental liabilities, we have insurance policies in place as required by applicable environmental laws. Some of our aircraft and other financing transactions include provisions that require us to make payments to preserve an expected economic return to the lenders if that economic return is diminished due to specified changes in law or regulations. In some of these financing transactions, we also bear the risk of changes in tax laws that would subject payments to non-U.S. lenders to withholding taxes. We cannot reasonably estimate our potential future payments under the indemnities and related provisions described above because we cannot predict (1) when and under what circumstances these provisions may be triggered and (2) the amount that would be payable if the provisions were triggered because the amounts would be based on facts and circumstances existing at such time. Other We have certain contracts for goods and services that require us to pay a penalty, acquire inventory specific to us or purchase contract-specific equipment, as defined by each respective contract, if we terminate the contract without cause prior to its expiration date. Because these obligations are contingent on our termination of the contract without cause prior to its expiration date, no obligation would exist unless such a termination occurs.  19 NOTE 9 .  ACCUMULATED OTHER COMPREHENSIVE LOSS  The following tables show the components of accumulated other comprehensive loss:  (in millions) Pension and Other Benefit Liabilities (3) Derivative Contracts and Other Available-for-Sale Investments Total Balance at January 1, 2019 (net of tax effect of $1,492) $ ( 7,925 ) $ 100 $ — $ ( 7,825 ) Changes in value (net of tax effect of $2) ( 12 ) 4 — ( 8 ) Reclassifications into earnings (net of tax effect of $57) (1) 189 ( 1 ) — 188 Balance at September 30, 2019 (net of tax effect of $1,437) $ ( 7,748 ) $ 103 $ — $ ( 7,645 )           Balance at January 1, 2018 (net of tax effect of $1,400) $ ( 7,812 ) $ 85 $ 106 $ ( 7,621 ) Changes in value (net of tax effect of $6) 13 7 — 20 Reclassifications into retained earnings (net of tax effect of $61) (2) — — ( 106 ) ( 106 ) Reclassifications into earnings (net of tax effect of $51) (1) 164 8 — 172 Balance at September 30, 2018 (net of tax effect of $1,404) $ ( 7,635 ) $ 100 $ — $ ( 7,535 ) (1)   Amounts reclassified from AOCI for pension and other benefit liabilities and for derivative contracts designated as foreign currency cash flow hedges are recorded in miscellaneous, net in non-operating expense and in passenger revenue, respectively, in the income statement.  (2)   The reclassification into retained earnings relates to our investments in GOL, China Eastern and other previously designated available-for-sale investments, and the related conversion to accounting for changes in fair value of these investments from AOCI to the income statement.  (3)   Includes $ 688  million  of deferred income tax expense primarily related to pension and other benefit obligations that will not be recognized in net income until these obligations are fully extinguished. We consider all income sources, including other comprehensive income, in determining the amount of tax benefit allocated to continuing operations.    20 NOTE 10 .  SEGMENTS Refinery Operations Our refinery segment operates for the benefit of the airline segment by providing jet fuel to the airline segment from its own production and through jet fuel obtained through agreements with third parties. The refinery's production consists of jet fuel, as well as non-jet fuel products. We use several counterparties to exchange the non-jet fuel products produced by the refinery for jet fuel consumed in our airline operations. The gross fair value of the products exchanged under these agreements during the  three and nine months ended   September 30, 2019  was  $ 1.1  billion  and  $ 3.0  billion , respectively, compared to  $ 1.1  billion  and  $ 3.1  billion  for the  three and nine months ended   September 30, 2018 , respectively. Segment Reporting  Segment results are prepared based on our internal accounting methods described below, with reconciliations to consolidated amounts in accordance with GAAP. Our segments are not designed to measure operating income or loss directly related to the products and services included in each segment on a stand-alone basis. (in millions) Airline Refinery   Intersegment Sales/Other   Consolidated Three Months Ended September 30, 2019             Operating revenue: $ 12,554 $ 1,505       $ 12,560 Sales to airline segment       $ ( 304 ) (1)     Exchanged products       ( 1,143 ) (2)     Sales of refined products       ( 52 ) (3)     Operating income 2,022 49   —   2,071 Interest expense, net 70 —   —   70 Depreciation and amortization 606 25   —   631 Total assets, end of period 61,515 1,704   —   63,219 Capital expenditures 936 10   —   946               Three Months Ended September 30, 2018             Operating revenue: $ 11,845 $ 1,609       $ 11,953 Sales to airline segment       $ ( 328 ) (1)     Exchanged products       ( 1,110 ) (2)     Sales of refined products       ( 63 ) (3)     Operating income 1,633 12   —   1,645 Interest expense (income), net 84 ( 11 )   —   73 Depreciation and amortization 557 16   —   573 Total assets, end of period 57,965 1,958   —   59,923 Capital expenditures 923 39   —   962   (1)   Represents transfers, valued on a market price basis, from the refinery to the airline segment for use in airline operations. We determine market price by reference to the market index for the primary delivery location, which is New York Harbor, for jet fuel from the refinery. (2)   Represents value of products delivered under our exchange agreements, as discussed above, determined on a market price basis. (3)   These sales were at or near cost; accordingly, the margin on these sales is de minimis.  21 (in millions) Airline Refinery   Intersegment Sales/Other   Consolidated Nine Months Ended September 30, 2019             Operating revenue: $ 35,474 $ 4,289       $ 35,568 Sales to airline segment       $ ( 882 ) (1)     Exchanged products       ( 2,953 ) (2)     Sales of refined products       ( 360 ) (3)     Operating income 5,167 52   —   5,219 Interest expense (income), net 247 ( 19 )   —   228 Depreciation and amortization 1,886 74   —   1,960 Capital expenditures 3,836 28   —   3,864               Nine Months Ended September 30, 2018             Operating revenue: $ 33,159 $ 4,767       $ 33,696 Sales to airline segment       $ ( 866 ) (1)     Exchanged products       ( 3,081 ) (2)     Sales of refined products       ( 283 ) (3)     Operating income 4,072 101   —   4,173 Interest expense (income), net 267 ( 23 )   —   244 Depreciation and amortization 1,711 48   —   1,759 Capital expenditures 3,738 67   —   3,805   (1)   Represents transfers, valued on a market price basis, from the refinery to the airline segment for use in airline operations. We determine market price by reference to the market index for the primary delivery location, which is New York Harbor, for jet fuel from the refinery. (2)   Represents value of products delivered under our exchange agreements, as discussed above, determined on a market price basis. (3)   These sales were at or near cost; accordingly, the margin on these sales is de minimis. NOTE 11 .  EARNINGS PER SHARE  We calculate basic earnings per share by dividing net income by the weighted average number of common shares outstanding, excluding restricted shares. We calculate diluted earnings per share by dividing net income by the weighted average number of common shares outstanding plus the dilutive effect of outstanding share-based awards, including stock options and restricted stock awards. Antidilutive common stock equivalents excluded from the diluted earnings per share calculation are not material.  The following table shows the computation of basic and diluted earnings per share:   Three Months Ended September 30,   Nine Months Ended September 30, (in millions, except per share data) 2019 2018   2019 2018 Net income $ 1,495 $ 1,322   $ 3,669 $ 2,916             Basic weighted average shares outstanding 646 686   654 695 Dilutive effect of share-based awards 2 2   2 2 Diluted weighted average shares outstanding 648 688   656 697             Basic earnings per share $ 2.32 $ 1.93   $ 5.61 $ 4.20 Diluted earnings per share $ 2.31 $ 1.92   $ 5.59 $ 4.18  22 ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS   OF OPERATIONS September 2019  Quarter Financial Highlights Our pre-tax income for the  September 2019  quarter was  $1.9 billion , representing a  $259 million   increase  compared to the corresponding prior year quarter primarily resulting from a  5.1%  increase in revenue. Pre-tax income, adjusted (a non-GAAP financial measure) was  $2.0 billion ,  an increase  of  $361 million  compared to the corresponding prior year period.  Revenue.  Compared to the  September 2018  quarter, our operating revenue  increased   $607 million , or  5.1% , primarily from growth in all components of passenger revenue, with premium product ticket revenue driving more than half of the improvement, and strong growth in both loyalty and maintenance, repair and overhaul ("MRO") revenue. The improvement in operating revenue on  3.9%   higher  capacity generated a  1.1%  increase in total revenue per available seat mile ("TRASM") and a  2.5%  increase in TRASM, adjusted (a non-GAAP financial measure) compared to the  September 2018  quarter. Operating Expense.  Total operating expense  increased   $181 million , or  1.8% , primarily resulting from higher employee costs. Our consolidated operating cost per available seat mile ("CASM")  decreased   2.1%  to  13.85 cents  compared to the  September 2018  quarter, primarily due to lower fuel costs and higher capacity. Non-fuel unit costs ("CASM-Ex" a non-GAAP financial measure)  increased   2.4%  to  9.84 cents  compared to the  September 2018  quarter, due to employee wage increases, record passenger volumes and the effects of weather-related operational disruptions. Non-Operating Results.  Total non-operating expense was  $124 million  in the  September 2019  quarter compared to income of  $43 million  in the September 2018 quarter, primarily due to unrealized losses on our equity investments. Free Cash Flow . Strong earnings during the quarter resulted in  $2.2 billion  of operating cash flow, enabling $945 million of capital investments including  $549 million   of aircraft purchases and cabin enhancements. These results generated  $1.4 billion  of free cash flow (a non-GAAP financial measure) compared to  $655 million  in the September 2018 quarter. The above non-GAAP financial measures for pre-tax income, adjusted, TRASM, adjusted, CASM-Ex and free cash flow, are defined and reconciled in "Supplemental Information" below.  23 Results of Operations -  Three Months Ended   September 30, 2019  and  2018 Operating Revenue   Three Months Ended September 30, Increase (Decrease) % Increase (Decrease) (in millions) (1) 2019 2018 Ticket - Main cabin $ 6,021 $ 5,873 $ 148 2.5  % Ticket - Business cabin and premium products 4,008 3,680 328 8.9  % Loyalty travel awards 732 678 54 8.0  % Travel-related services 649 565 84 14.9  % Total passenger revenue $ 11,410 $ 10,796 $ 614 5.7  % Cargo 189 226 (37 ) (16.5 )% Other 961 931 30 3.2  % Total operating revenue $ 12,560 $ 11,953 $ 607 5.1  %           TRASM (cents) 16.58 ¢ 16.40 ¢ 0.18 ¢ 1.1  % Third-party refinery sales (2) (0.01 ) (0.15 ) 0.14 NM DGS sale adjustment (2) — (0.09 ) 0.09 NM TRASM, adjusted 16.57 ¢ 16.17 ¢ 0.41 ¢ 2.5  % (1)   The reconciliation above may not calculate exactly due to rounding. (2)   For additional information on adjustments to TRASM, see "Supplemental Information" below. Ticket and Loyalty Travel Awards Revenue Ticket, including both main and business cabin and premium products, and loyalty travel awards revenue increased  $476 million  and  $54 million , respectively, compared to the  September 2018  quarter. Business cabin and premium products ticket revenue includes revenues from fare products other than main cabin, including Delta One, Delta Premium Select, First Class and Comfort+.  The growth in ticket revenue was enabled by both business and leisure demand strength. We continue to take delivery of new aircraft that include more premium seats, while also generating higher load factor for premium products.   Passenger Revenue by Geographic Region     Increase (Decrease)  vs. Three Months Ended September 30, 2018 (in millions) Three Months Ended September 30, 2019 Passenger Revenue RPMs   (Traffic) ASMs   (Capacity) Passenger Mile Yield PRASM Load Factor Domestic $ 7,971 7.8  % 7.0  % 4.5  % 0.7  % 3.2  % 2.1 pts Atlantic 2,060 3.2  % 5.4  % 4.9  % (2.0 )% (1.6 )% 0.5 pts Latin America 683 1.2  % (1.9 )% (2.3 )% 3.2  % 3.6  % 0.3 pts Pacific 696 (4.6 )% 2.7  % 3.3  % (7.2 )% (7.6 )% (0.4 ) pts Total $ 11,410 5.7  % 5.6  % 3.9  % 0.1  % 1.7  % 1.4 pts Passenger revenue  increased   $614 million , or  5.7% , compared to the  September 2018  quarter. Passenger revenue per available seat mile ("PRASM")  increased   1.7% , and passenger mile yield  increased   0.1%  on  3.9%   higher  capacity. Load factor  increased   1.4 points  from the prior year to  88.3% .  Domestic unit revenue increased  3.2% , resulting from our commercial initiatives, including our premium products, as well as high load factors driven by a combination of strong demand and limited industry capacity growth. Passenger revenue related to our international regions  increased   1.1%  year-over-year on capacity increases in the Atlantic and Pacific regions and yield growth in Latin America. This growth in passenger revenue was achieved despite the negative impact of foreign currency fluctuations.  24 Atlantic unit revenue decreased due to foreign currency fluctuations between the U.S. dollar and the Euro and British pound, the uncertain economic outlook in Europe and increased industry capacity. These conditions were partially offset by growth in premium product demand and strong U.S. point of sale. Unit revenue increased in Latin America for the fourth consecutive quarter as a result of yield growth, mainly in Brazil on reduced industry capacity from the U.S. and in Mexico beach markets. Unit revenue and yield increases were achieved despite the negative impact of Hurricane Dorian in the Bahamas.  In the September 2019 quarter we announced our plan to enter into a strategic alliance with LATAM, which is expected to provide greater customer convenience, a more seamless travel experience and to better connect customers from and throughout the Americas.   Unit revenue decreased in the Pacific region primarily due to double-digit capacity growth to Japan and Korea from new routes introduced over the last year, trade related uncertainty and foreign currency fluctuations.  We continued to reshape our Pacific network with the August announcement that beginning in March 2020 we will transfer our U.S.-Tokyo services from Narita to Haneda airport, Tokyo's preferred airport for corporate customers.   Other Revenue   Three Months Ended September 30, Increase (Decrease) % Increase (Decrease) (in millions) 2019 2018 Loyalty program $ 485 $ 369 $ 116 31.4  % Ancillary businesses and refinery 291 433 (142 ) (32.8 )% Miscellaneous 185 129 56 43.4  % Total other revenue $ 961 $ 931 $ 30 3.2  % Loyalty Program.  Loyalty program revenues relate to brand usage by third parties and other performance obligations embedded in mileage credits sold, including redemption of mileage credits for non-travel awards. Effective January 1, 2019, we amended our co-brand agreement with American Express, and we also amended other agreements with American Express during the March quarter. The new agreements increase the value we receive and extend the terms to 2029. Under the agreements, we sell mileage credits to American Express and allow American Express to market its services or products using our brand and customer database. The products and services sold with the mileage credits (such as award travel, priority boarding, baggage fee waivers, lounge access and the use of our brand) are consistent with previous agreements. We continue to use the accounting method that allocates the consideration received based on the relative selling prices of those products and services.  The relative value of the brand component has increased, resulting in an additional $130 million primarily within other revenue during the  September 2019  quarter. We expect the amended agreements to generate incremental revenues of approximately $500 million during 2019. Ancillary Businesses and Refinery.  Ancillary businesses and refinery includes aircraft maintenance services we provide to third parties, our vacation wholesale operations, our private jet operations and refinery sales to third parties. Refinery sales to third parties, which are at or near cost, decreased  $102 million  compared to the  September 2018  quarter.  September 2018  quarter results also included  $63 million  of revenue from DGS, which was sold in December 2018 and is no longer reflected in ancillary businesses and refinery. These decreases were mitigated by growth in our MRO revenues, which increased $18 million to $209 million during the  September 2019  quarter. Miscellaneous.  Miscellaneous revenue is primarily composed of lounge access and codeshare revenues.   25 Operating Expense   Three Months Ended September 30, Increase (Decrease) % Increase (Decrease) (in millions) 2019 2018 Salaries and related costs $ 2,884 $ 2,753 $ 131 4.8  % Aircraft fuel and related taxes 2,239 2,498 (259 ) (10.4 )% Regional carriers expense, excluding fuel 900 885 15 1.7  % Contracted services 685 562 123 21.9  % Depreciation and amortization 631 573 58 10.1  % Passenger commissions and other selling expenses 539 535 4 0.7  % Aircraft maintenance materials and outside repairs 424 371 53 14.3  % Landing fees and other rents 460 439 21 4.8  % Profit sharing 517 399 118 29.6  % Ancillary businesses and refinery 279 410 (131 ) (32.0 )% Passenger service 345 329 16 4.9  % Aircraft rent 110 99 11 11.1  % Other 476 455 21 4.6  % Total operating expense $ 10,489 $ 10,308 $ 181 1.8  %     Salaries and related costs . The increase in salaries and related costs is primarily due to pay rate increases for eligible employees. This increase is partially offset by salaries for DGS employees, which are no longer included in salaries and related costs following the sale of that business in December 2018. DGS-related expenses are now recorded in contracted services. Aircraft Fuel and Related Taxes.  Fuel expense decreased  $259 million  compared to the prior year quarter primarily due to an approximately  10%   decrease  in the market price per gallon of jet fuel, partially offset by a  2%  increase in consumption.  The table below shows the impact of hedging and the refinery on fuel expense and average price per gallon, adjusted (non-GAAP financial measures):     Average Price Per Gallon   Three Months Ended September 30, Change Three Months Ended September 30, Change (in millions, except per gallon data)  (1) 2019 2018 2019 2018 Fuel purchase cost (2) $ 2,313 $ 2,526 $ (213 ) $ 2.00 $ 2.23 $ (0.23 ) Fuel hedge impact (25 ) (16 ) (9 ) (0.02 ) (0.01 ) (0.01 ) Refinery segment impact (49 ) (12 ) (37 ) (0.04 ) (0.01 ) (0.03 ) Total fuel expense $ 2,239 $ 2,498 $ (259 ) $ 1.94 $ 2.21 $ (0.27 ) MTM adjustments and settlements (3) 25 16 9 0.02 0.01 0.01 Total fuel expense, adjusted $ 2,264 $ 2,514 $ (249 ) $ 1.96 $ 2.22 $ (0.25 ) (1)   The reconciliation above may not calculate exactly due to rounding. (2)   Market price for jet fuel at airport locations, including related taxes and transportation costs.   (3)   Mark-to-market ("MTM") adjustments and settlements include the effects of the derivative transactions disclosed in  Note 5  of the Notes to the Condensed Consolidated Financial Statements. For the reason fuel expense is adjusted for MTM adjustments and settlements, see "Supplemental Information" below. Contracted Services . The increase in contracted services expense predominantly relates to services performed by DGS that were recorded in salaries and related costs prior to the sale of that business in December 2018.  Depreciation and Amortization . The increase in depreciation and amortization primarily results from new aircraft deliveries, fleet modifications and technology enhancements. Aircraft Maintenance Materials and Outside Repairs.  Aircraft maintenance materials and outside repairs consist of costs associated with the maintenance of aircraft used in our operations. The increase primarily relates to a higher volume of scheduled engine overhauls on certain aircraft.    26 Profit Sharing . Our profit sharing program pays 10% to all eligible employees for the first $2.5 billion of annual profit and 20% of annual profit above $2.5 billion. Ancillary Businesses and Refinery.  Ancillary businesses and refinery includes expenses associated with aircraft maintenance services we provide to third parties, our vacation wholesale operations, our private jet operations and refinery sales to third parties. Refinery sales to third parties, which are at or near cost, decreased  $102 million  compared to the  September 2018  quarter. In addition, costs related to services performed by DGS on behalf of third parties were recorded in ancillary businesses and refinery prior to the sale of that business in December 2018. These decreases were partially offset by growth in our MRO business, as discussed above.  27 Results of Operations -  Nine Months Ended   September 30, 2019  and  2018 Operating Revenue   Nine Months Ended September 30, Increase (Decrease) % Increase (Decrease) (in millions) (1) 2019 2018 Ticket - Main cabin $ 16,680 $ 16,139 $ 541 3.4  % Ticket - Business cabin and premium products 11,306 10,375 931 9.0  % Loyalty travel awards 2,174 1,976 198 10.0  % Travel-related services 1,872 1,617 255 15.8  % Total passenger revenue $ 32,032 $ 30,107 $ 1,925 6.4  % Cargo 567 651 (84 ) (12.9 )% Other 2,969 2,938 31 1.1  % Total operating revenue $ 35,568 $ 33,696 $ 1,872 5.6  %           TRASM (cents) 16.94 ¢ 16.78 ¢ 0.16 ¢ 1.0  % Third-party refinery sales (2) (0.05 ) (0.27 ) 0.22 NM DGS sale adjustment (2) — (0.09 ) 0.09 NM TRASM, adjusted 16.90 ¢ 16.42 ¢ 0.48 ¢ 2.9  % (1)   The reconciliation above may not calculate exactly due to rounding. (2)   For additional information on adjustments to TRASM, see "Supplemental Information" below. Ticket and Loyalty Travel Awards Revenue Ticket, including both main and business cabin and premium products, and loyalty travel awards revenue increased  $1.5 billion  and  $198 million , respectively, compared to the  nine months ended   September 30, 2018 . Business cabin and premium products ticket revenue includes revenues from fare products other than main cabin, including Delta One, Delta Premium Select, First Class and Comfort+.  The growth in ticket revenue was enabled by both business and leisure demand strength. We continue to take delivery of new aircraft that include more premium seats, while also generating higher load factor for premium products. Passenger Revenue by Geographic Region     Increase (Decrease)  vs. Nine Months Ended September 30, 2018 (in millions) Nine Months Ended September 30, 2019 Passenger Revenue RPMs   (Traffic) ASMs   (Capacity) Passenger Mile Yield PRASM Load Factor Domestic $ 22,755 7.9  % 7.0  % 5.1  % 0.8  % 2.6  % 1.5 pts Atlantic 5,042 4.3  % 5.0  % 5.0  % (0.7 )% (0.7 )% — pts Latin America 2,298 3.2  % (0.7 )% (1.3 )% 3.9  % 4.5  % 0.5 pts Pacific 1,937 (0.7 )% 3.9  % 5.3  % (4.4 )% (5.6 )% (1.1 ) pts Total $ 32,032 6.4  % 5.6  % 4.5  % 0.7  % 1.8  % 0.9 pts Passenger revenue  increased   $1.9 billion , or  6.4% , compared to the  nine months ended   September 30, 2018 . PRASM  increased   1.8%  and passenger mile yield  increased   0.7%  on  4.5%   higher  capacity. Load factor  increased   0.9 points  from the prior year period to  86.5% . Domestic unit revenue increased  2.6% , resulting from our commercial initiatives, including our premium products, as well as high load factors driven by a combination of strong demand and limited industry capacity growth. Passenger revenue related to our international regions  increased   2.9%  year-over-year on capacity increases in the Atlantic and Pacific regions and yield growth in Latin America. This growth in passenger revenue was achieved despite the negative impact of foreign currency fluctuations.  28 Atlantic unit revenue decreased due to foreign currency fluctuations between the U.S. dollar and the Euro and British pound, the uncertain economic outlook in Europe and increased industry capacity. These conditions were partially offset by growth in premium product demand and strong U.S. point of sale. Unit revenue increased in Latin America as a result of yield growth, mainly in Brazil on reduced industry capacity from the U.S. and in Mexico beach markets.   In the September 2019 quarter we announced our plan to enter into a strategic alliance with LATAM, which is expected to provide greater customer convenience, a more seamless travel experience and to better connect customers from and throughout the Americas. Unit revenue decreased in the Pacific region primarily due to higher capacity to China, Japan and Korea from new routes introduced over the last year, reduced business demand due to an extended Japanese holiday period, trade related uncertainty and foreign currency fluctuations. Despite these challenges, our joint venture with Korean has enabled solid traffic growth and we have continued to reshape our Pacific network with the August announcement that beginning in March 2020 we will transfer our U.S.-Tokyo services from Narita to Haneda airport, Tokyo's preferred airport for corporate customers.  Other Revenue   Nine Months Ended September 30, Increase (Decrease) % Increase (Decrease) (in millions) 2019 2018 Loyalty program $ 1,443 $ 1,075 $ 368 34.2  % Ancillary businesses and refinery 990 1,475 (485 ) (32.9 )% Miscellaneous 536 388 148 38.1  % Total other revenue $ 2,969 $ 2,938 $ 31 1.1  % Loyalty Program.  Loyalty program revenues relate to brand usage by third parties and other performance obligations embedded in mileage credits sold, including redemption of mileage credits for non-travel awards. Effective January 1, 2019, we amended our co-brand agreement with American Express, and we also amended other agreements with American Express during the March quarter. The new agreements increase the value we receive and extend the terms to 2029. Under the agreements, we sell mileage credits to American Express and allow American Express to market its services or products using our brand and customer database. The products and services sold with the mileage credits (such as award travel, priority boarding, baggage fee waivers, lounge access and the use of our brand) are consistent with previous agreements. We continue to use the accounting method that allocates the consideration received based on the relative selling prices of those products and services.  The relative value of the brand component has increased, resulting in an additional $400 million primarily within other revenue during the  nine months ended   September 30, 2019 . We expect the amended agreements to generate incremental revenues of approximately $500 million during 2019. Ancillary Businesses and Refinery.  Ancillary businesses and refinery includes aircraft maintenance services we provide to third parties, our vacation wholesale operations, our private jet operations and refinery sales to third parties. Refinery sales to third parties, which are at or near cost, decreased  $442 million   compared to the  nine months ended   September 30, 2018 . The 2018 results also included  $182 million  of revenue from DGS, which was sold in December 2018 and is no longer reflected in ancillary businesses and refinery. These decreases were mitigated by growth in our MRO revenues, which increased $120 million to $646 million during the  nine months ended   September 30, 2019 . Miscellaneous.  Miscellaneous revenue is primarily composed of lounge access and codeshare revenues.   29 Operating Expense   Nine Months Ended September 30, Increase (Decrease) % Increase (Decrease) (in millions) 2019 2018 Salaries and related costs $ 8,275 $ 8,004 $ 271 3.4  % Aircraft fuel and related taxes 6,508 6,693 (185 ) (2.8 )% Regional carriers expense, excluding fuel 2,698 2,586 112 4.3  % Contracted services 1,974 1,646 328 19.9  % Depreciation and amortization 1,960 1,759 201 11.4  % Passenger commissions and other selling expenses 1,505 1,473 32 2.2  % Aircraft maintenance materials and outside repairs 1,334 1,233 101 8.2  % Landing fees and other rents 1,321 1,254 67 5.3  % Profit sharing 1,256 991 265 26.7  % Ancillary businesses and refinery 945 1,396 (451 ) (32.3 )% Passenger service 938 892 46 5.2  % Aircraft rent 318 291 27 9.3  % Other 1,317 1,305 12 0.9  % Total operating expense $ 30,349 $ 29,523 $ 826 2.8  %     Salaries and related costs . The increase in salaries and related costs is primarily due to pay rate increases for eligible employees. This increase is partially offset by salaries for DGS employees, which are no longer included in salaries and related costs following the sale of that business in December 2018. DGS-related expenses are now recorded in contracted services. Aircraft Fuel and Related Taxes.  Fuel expense decreased  $185 million  compared to the prior year due to an approximately  6%  decrease in the market price per gallon of jet fuel, which was partially offset by a  2%  increase in consumption and reduced profitability at our refinery. The table below shows the impact of hedging and the refinery on fuel expense and average price per gallon, adjusted (non-GAAP financial measures):     Average Price Per Gallon   Nine Months Ended September 30, Change Nine Months Ended September 30, Change (in millions, except per gallon data)  (1) 2019 2018 2019 2018 Fuel purchase cost (2) $ 6,568 $ 6,814 $ (246 ) $ 2.04 $ 2.17 $ (0.13 ) Fuel hedge impact (8 ) (20 ) 12 — (0.01 ) 0.01 Refinery segment impact (52 ) (101 ) 49 (0.01 ) (0.03 ) 0.02 Total fuel expense $ 6,508 $ 6,693 $ (185 ) $ 2.03 $ 2.13 $ (0.10 ) MTM adjustments and settlements (3) 8 20 (12 ) — 0.01 (0.01 ) Total fuel expense, adjusted $ 6,516 $ 6,713 $ (197 ) $ 2.03 $ 2.14 $ (0.11 ) (1)   The reconciliation above may not calculate exactly due to rounding. (2)   Market price for jet fuel at airport locations, including related taxes and transportation costs.   (3)   MTM adjustments and settlements include the effects of the derivative transactions disclosed in  Note 5  of the Notes to the Condensed Consolidated Financial Statements. For additional information and the reason for adjusting fuel expense, see "Supplemental Information" below. Contracted Services . The increase in contracted services expense predominantly relates to services performed by DGS that were recorded in salaries and related costs prior to the sale of that business in December 2018.  Depreciation and Amortization.  The increase in depreciation and amortization primarily results from  $93 million  of accelerated depreciation in the nine months ended September 30, 2019 due to the decision to early retire our MD-90 fleet by the end of 2022, new aircraft deliveries, fleet modifications and technology enhancements. See  Note 8  of the Notes to the Condensed Consolidated Financial Statements for additional information on the planned early retirement of our MD-90 fleet.  30 Aircraft Maintenance Materials and Outside Repairs.  Aircraft maintenance materials and outside repairs consist of costs associated with the maintenance of aircraft used in our operations. The increase primarily relates to a higher volume of scheduled engine overhauls on certain aircraft during the September 2019 quarter. Profit Sharing . Our profit sharing program pays 10% to all eligible employees for the first $2.5 billion of annual profit and 20% of annual profit above $2.5 billion. Ancillary Businesses and Refinery.  Ancillary businesses and refinery includes expenses associated with aircraft maintenance services we provide to third parties, our vacation wholesale operations, our private jet operations and refinery sales to third parties. Refinery sales to third parties, which are at or near cost, decreased   $442 million  compared to the  nine months ended   September 30, 2018 . In addition, costs related to services performed by DGS on behalf of third parties were recorded in ancillary businesses and refinery prior to the sale of that business in December 2018. These decreases were partially offset by growth in our MRO business, as discussed above.  31 Non-Operating Results Three Months Ended September 30,   Nine Months Ended September 30,   (in millions) 2019 2018 Favorable (Unfavorable) 2019 2018 Favorable (Unfavorable) Interest expense, net $ (70 ) $ (73 ) $ 3 $ (228 ) $ (244 ) $ 16 Unrealized gain/(loss) on investments, net (35 ) 50 (85 ) (17 ) (171 ) 154 Miscellaneous, net (19 ) 66 (85 ) (174 ) 48 (222 ) Total non-operating (expense)/income, net $ (124 ) $ 43 $ (167 ) $ (419 ) $ (367 ) $ (52 ) Interest expense decreased compared to the prior year periods as a result of lower interest rates on our debt. Unrealized gain/(loss) on investments reflects the unrealized gains and losses on our equity investments in GOL, China Eastern, Air France-KLM and Korean. See  Note 4  of the Notes to the Condensed Consolidated Financial Statements for additional information on our equity investments. Miscellaneous, net is primarily composed of our proportionate share of earnings/losses from our equity investments in Virgin Atlantic and Grupo Aeroméxico, pension-related benefits/costs, charitable contributions and foreign exchange gains/losses. Our equity investment earnings and foreign exchange gains/losses vary and impact the comparability of miscellaneous, net from period to period.  Income Taxes We project that our annual effective tax rate for  2019  will be between 23% and 24%. In certain interim periods, we may have adjustments to our net deferred tax liabilities as a result of changes in prior year estimates and tax laws enacted during the period, which will impact the effective tax rate for that interim period. Refinery Segment The refinery ("Monroe") primarily produces gasoline, diesel and jet fuel. Monroe exchanges the non-jet fuel products the refinery produces with third parties for jet fuel consumed in our airline operations. The jet fuel produced and procured through exchanging gasoline and diesel fuel produced by the refinery provides approximately  200,000  barrels per day, or approximately 75% of our consumption, for use in our airline operations. We believe that the jet fuel supply resulting from the refinery's operation contributes to reducing the market price of jet fuel and thus lowers our cost of jet fuel compared to what it otherwise would be. The refinery recorded operating revenue of  $1.5 billion  and  $4.3 billion  in the  three and nine months ended   September 30, 2019 , compared to  $1.6 billion  and  $4.8 billion  in the  three and nine months ended   September 30, 2018 . Operating revenue in the  three and nine months ended   September 30, 2019  was primarily composed of  $1.1 billion  and  $3.0 billion  of non-jet fuel products exchanged with third parties to procure jet fuel,  $304 million  and  $882 million  of sales of jet fuel to the airline segment and  $52 million  and  $360 million  of non-jet fuel product sales. Refinery revenues decreased compared to the prior year period due to lower costs of crude oil leading to lower pricing for associated refined products, partially offset by higher refinery run rates during the quarter. The refinery recorded operating income of  $49 million  and  $52 million  in the  three and nine months ended   September 30, 2019 , compared to operating income of  $12 million  and  $101 million  in  three and nine months ended   September 30, 2018 . A refinery is subject to annual U.S. Environmental Protection Agency requirements to blend renewable fuels into the gasoline and on-road diesel fuel it produces. Alternatively, a refinery may purchase renewable energy credits, called Renewable Identification Numbers ("RINs"), from third parties in the secondary market. The refinery purchases the majority of its RINs requirement in the secondary market. For more information regarding the refinery's results, see  Note 10  of the Notes to the Condensed Consolidated Financial Statements.  32 Operating Statistics    Three Months Ended September 30, % Increase (Decrease) Nine Months Ended September 30, % Increase (Decrease) Consolidated (1) 2019 2018 2019 2018 Revenue passenger miles (in millions) 66,862 63,320 5.6 % 181,652 172,002 5.6 % Available seat miles (in millions) 75,742 72,875 3.9 % 209,911 200,842 4.5 % Passenger mile yield 17.07 ¢ 17.05 ¢ 0.1 % 17.63 ¢ 17.50 ¢ 0.7 % PRASM 15.06 ¢ 14.81 ¢ 1.7 % 15.26 ¢ 14.99 ¢ 1.8 % TRASM 16.58 ¢ 16.40 ¢ 1.1 % 16.94 ¢ 16.78 ¢ 1.0 % TRASM, adjusted (2) 16.57 ¢ 16.17 ¢ 2.5 % 16.90 ¢ 16.42 ¢ 2.9 % CASM 13.85 ¢ 14.14 ¢ (2.1 ) % 14.46 ¢ 14.70 ¢ (1.6 ) % CASM-Ex (2) 9.84 ¢ 9.61 ¢ 2.4 % 10.31 ¢ 10.18 ¢ 1.3 % Passenger load factor 88.3  % 86.9  % 1.4 pts 86.5  % 85.6  % 0.9 pts Fuel gallons consumed (in millions) 1,154 1,135 1.8 % 3,215 3,137 2.5 % Average price per fuel gallon (3) $ 1.94 $ 2.21 (12.2 ) % $ 2.03 $ 2.13 (4.7 ) % Average price per fuel gallon, adjusted (3)(4) $ 1.96 $ 2.22 (11.5 ) % $ 2.03 $ 2.14 (5.3 ) % (1)   Includes the operations of our regional carriers under capacity purchase agreements. (2)   Non-GAAP financial measure defined and reconciled to TRASM and CASM, respectively, in "Supplemental Information" below. (3)   Includes the impact of fuel hedge activity and refinery segment results. (4)   Non-GAAP financial measure defined and reconciled to average fuel price per gallon in "Results of Operations" for the  three and nine months ended   September 30, 2019  and  2018 .  33  Fleet Information  As part of our fleet transformation, during the quarter we took delivery of 20 mainline aircraft and one CRJ-900 aircraft, and removed 14 aircraft from our active fleet. Our operating aircraft fleet and commitments at  September 30, 2019  are summarized in the following table:   Current Fleet (1)   Commitments Aircraft Type Owned Finance Lease Operating Lease Total Average Age Purchase Options B-717-200 3 21 67 91 18.1 — — B-737-700 10 — — 10 10.7 — — B-737-800 73 4 — 77 18.0 — — B-737-900ER 88 — 42 130 3.1 — — B-757-200 91 7 2 100 22.1 — — B-757-300 16 — — 16 16.6 — — B-767-300ER 56 — — 56 23.3 — — B-767-400ER 21 — — 21 18.8 — — B-777-200ER 8 — — 8 19.8 — — B-777-200LR 10 — — 10 10.5 — — A220-100 24 1 — 25 0.4 20 — A220-300 — — — — — 50 50 A319-100 55 — 2 57 17.6 — — A320-200 58 — 4 62 24.1 — — A321-200 51 12 31 94 1.5 33 — A321-200neo — — — — — 100 100 A330-200 11 — — 11 14.5 — — A330-300 28 — 3 31 10.7 — — A330-900neo 3 1 — 4 0.2 31 — A350-900 13 — — 13 1.6 16 — MD-88 54 10 — 64 28.7 — — MD-90 30 — — 30 22.4 — — Total 703 56 151 910 15.0 250 150 (1)   Excludes certain aircraft we own, lease or have committed to purchase (including  8  CRJ-900 aircraft) that are operated by regional carriers on our behalf shown in the table below.  We have agreed to acquire  four  A350 aircraft from LATAM, which are included in the table above. In addition, we plan to assume  ten  of LATAM's A350 purchase commitments from Airbus, with deliveries through 2025.  For more information regarding our planned strategic alliance with LATAM, see Note 4, "Investments", of the Notes to the Condensed Consolidated Financial Statements.  34 The following table summarizes the aircraft fleet operated by regional carriers on our behalf at  September 30, 2019 :   Fleet Type   Carrier CRJ-200 CRJ-700 CRJ-900 Embraer 170 Embraer 175 Total Endeavor Air, Inc. (1) 42 5 109 — — 156 SkyWest Airlines, Inc. 75 14 43 — 54 186 Compass Airlines, Inc.  (2) — — — — 36 36 Republic Airways, Inc. — — — 22 16 38 GoJet Airlines, LLC  (3) — 20 7 — — 27 Total 117 39 159 22 106 443 (1)   Endeavor Air, Inc. is a wholly owned subsidiary of Delta. (2)   In the September 2019 quarter we and Compass Airlines, Inc., agreed not to renew our contract and to end our relationship by the end of 2020. (3)   In the September 2019 quarter we and GoJet Airlines, LLC, agreed not to renew our CRJ-700 contract and to end those operations by the end of 2020. The seven CRJ-900 are under contract through 2022 and subject to further negotiation.  35 Financial Condition and Liquidity  We expect to meet our cash needs for the next twelve months with cash flows from operations, cash and cash equivalents, restricted cash equivalents and financing arrangements. As of  September 30, 2019 , we had  $5.0 billion  in unrestricted liquidity, consisting of  $1.9 billion  in cash and cash equivalents and  $3.1 billion  in available revolving credit facilities. During the  nine months ended   September 30, 2019 , we used existing cash, cash received from financings and cash generated from operations to fund capital expenditures of  $3.9 billion  and return  $2.5 billion  to shareholders. Sources of Liquidity Operating Activities  We generated cash flows from operations of  $7.5 billion  and  $5.8 billion  in the  nine months ended   September 30, 2019  and  2018 , respectively. We expect to continue generating cash flows from operations during the remainder of 2019. Our operating cash flow is impacted by the following factors: Seasonality of Advance Ticket Sales.  We sell tickets for air travel in advance of the customer's travel date. When we receive a cash payment at the time of sale, we record the cash received on advance sales as deferred revenue in air traffic liability. The air traffic liability increases during the winter and spring as advanced ticket sales grow prior to the summer peak travel season and decreases during the summer and fall months. Fuel.  Fuel expense represented approximately  21%  of our total operating expenses for the  nine months ended   September 30, 2019 . The market price for jet fuel is volatile, which can impact the comparability of our periodic cash flows from operations. Pension Contributions.  We have no minimum funding requirements in  2019 . However, we voluntarily contributed $500 million   to our qualified defined benefit pension plans during the June 2019 quarter. During the March 2018 quarter we also voluntarily contributed $500 million to our qualified defined benefit pension plans. Profit Sharing.  Our broad-based employee profit sharing program provides that for each year in which we have an annual pre-tax profit, as defined by the terms of the program, we will pay a specified portion of that profit to employees. In determining the amount of profit sharing, the program defines profit as pre-tax profit adjusted for profit sharing and certain other items. During the  nine months ended   September 30, 2019 , we accrued  $1.3 billion  in profit sharing expense based on the year-to-date performance and current expectations for  2019  profit. We paid $1.3 billion in profit sharing in February  2019  related to our  2018  pre-tax profit in recognition of our employees' contributions toward meeting our financial goals. The 2019 profit sharing payment will be made in February 2020.  36 Investing Activities   Capital Expenditures.  Our capital expenditures were  $3.9 billion  and  $3.8 billion  for the  nine months ended   September 30, 2019  and  2018 , respectively. Our capital expenditures during the  nine months ended   September 30, 2019  were primarily related to the purchases of aircraft, fleet modifications and technology enhancements.  We have committed to future aircraft purchases and have obtained, but are under no obligation to use, long-term financing commitments for a substantial portion of the purchase price of certain aircraft. Our expected  2019  investments of   $4.5 billion will be primarily for aircraft, including deliveries and advance deposit payments, as well as aircraft modifications, the majority of which relate to cabin enhancements throughout our fleet. In October 2019, the Office of the U.S. Trade Representative announced a 10% tariff on new aircraft imported from Europe. We are evaluating the impact of this announcement on our future Airbus deliveries. Equity Investments.   We have acquired  10%  of the outstanding shares of Hanjin-KAL, the largest shareholder of Korean Air, during 2019 , for $170 million. In the September 2019 quarter we announced our plan to enter into a strategic alliance with LATAM Airlines Group S.A.  Subject to regulatory approval, specifically requirements under the Hart-Scott-Rodino Antitrust Improvement Act, we plan to commence a tender offer for the acquisition of up to  20%  of the common shares of LATAM at a price per share of  $16 , to be funded with newly issued debt and available cash. In addition, to support the establishment of the strategic alliance, we will invest  $350 million ,  $150 million   of which was disbursed in the September 2019 quarter.  As part of our planned strategic alliance with LATAM, we have also agreed to acquire four A350 aircraft from LATAM and plan to assume ten of LATAM's A350 purchase commitments from Airbus, with deliveries through 2025.  This alliance is expected to generate new growth opportunities, building upon Delta's and LATAM's global footprint and joint ventures, including Delta's existing partnership with Aeroméxico.  We plan to sell our GOL ownership stake and wind down our commercial agreements with GOL to facilitate the formation of our strategic alliance with LATAM.   Los Angeles International Airport ("LAX") Construction.  We executed a modified lease agreement during 2016 with the City of Los Angeles ("the City"), which owns and operates LAX, and announced plans to modernize, upgrade and connect Terminals 2 and 3 at LAX. Under the lease agreement, we have relocated certain airlines and other tenants located in Terminals 2 and 3 to Terminals 5 and 6 and undertaken various initial projects to enable operations from Terminals 2 and 3 during the project. We are now designing and constructing the redevelopment of Terminal 3 and enhancement of Terminal 2, which also includes rebuilding the ticketing and arrival halls and security checkpoint, construction of core infrastructure to support the City's planned airport people mover, ramp improvements and construction of a secure connector to the north side of the Tom Bradley International Terminal. Construction is expected to be completed by 2024.  Under the lease agreement and subsequent project component approvals by the City's Board of Airport Commissioners, the City has appropriated to date approximately $1.6 billion to purchase completed project assets. The lease allows for a maximum reimbursement by the City of $1.8 billion. Costs we incur in excess of such a maximum will not be reimbursed by the City.  A substantial majority of the project costs will be funded through the Regional Airports Improvement Corporation ("RAIC"), a California public benefit corporation, using an $800 million revolving credit facility provided by a group of lenders. The credit facility was executed during 2017, and we have guaranteed the obligations of the RAIC under the credit facility. Loans made under the credit facility will be repaid with the proceeds from the City’s purchase of completed project assets. Using funding provided by cash flows from operations and/or the credit facility, we expect to spend approximately $200 million on this project during  2019 , of which $134 million was incurred in the  nine months ended   September 30, 2019 . New York-LaGuardia Redevelopment.  As part of the terminal redevelopment project at LaGuardia Airport, we are partnering with the Port Authority of New York and New Jersey (the “Port Authority”) to replace Terminals C and D with a new state-of-the-art terminal facility consisting of 37 gates across four concourses connected to a central headhouse. The terminal will feature a new, larger Delta Sky Club, wider concourses, more gate seating and 30 percent more concessions space than the existing terminals. The facility will also offer direct access between the parking garage and terminal and improved roadways and drop-off/pick-up areas. The design of the new terminal will integrate sustainable technologies and improvements in energy efficiency. Construction will be phased to limit passenger inconvenience and is expected to be completed by 2026.  37 In connection with the redevelopment, during 2017, we entered into an amended and restated terminal lease with the Port Authority with a term through 2050. Pursuant to the lease agreement we will (1) fund (through debt issuance and existing cash) and undertake the design, management and construction of the terminal and certain off-premises supporting facilities, (2) receive a Port Authority contribution of $600 million to facilitate construction of the terminal and other supporting infrastructure, (3) be responsible for all operations and maintenance during the term of the lease and (4) have preferential rights to all gates in the terminal subject to Port Authority requirements with respect to accommodation of designated carriers. We currently expect our net project cost to be approximately $3.3 billion and we bear the risks of project construction, including any potential cost over-runs. Using funding provided by cash flows from operations and/or financing arrangements, we expect to spend approximately $560 million on this project during  2019 , of which $430 million was incurred in the  nine months ended   September 30, 2019 . Financing Activities Debt and Finance Leases.  In February 2019, we entered into a  $1 billion  term loan issued by  two  lenders, which was subsequently repaid by the end of the June 2019 quarter. We used the net proceeds of the term loan to accelerate planned 2019 repurchases under our share repurchase program. In the March 2019 quarter, we completed a $500 million offering of Pass Through Certificates, Series 2019-1 ("2019-1 EETC") through a pass through trust. The net proceeds of the offering are being used for general corporate purposes, including to refinance debt maturing during 2019.  The principal amount of debt and finance leases was  $10.0 billion  at  September 30, 2019 . Capital Return to Shareholders.  During the  nine months ended   September 30, 2019 , we repurchased and retired 34 million shares of our common stock at a cost of  $1.8 billion . In the  September 2019  quarter, the Board of Directors approved and we paid a quarterly dividend of  $0.4025  per share, for total cash dividends of  $260 million . In addition, on October 9, 2019, the Board of Directors approved and we will pay a quarterly dividend of $0.4025 per share to shareholders of record as of November 13, 2019. Undrawn Lines of Credit We have  $3.1 billion  available in undrawn revolving lines of credit. These credit facilities include covenants customary for financing of this type. If we are not in compliance with these covenants, we may be required to repay amounts borrowed under the credit facilities or we may not be able to draw on them.  Covenants We were in compliance with the covenants in our financings at September 30, 2019 . Critical Accounting Policies and Estimates Except as set forth below, for information regarding our Critical Accounting Policies and Estimates, see the "Critical Accounting Policies and Estimates" section of "Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations" in our Form 10-K. Loyalty Program Our SkyMiles loyalty program generates customer loyalty by rewarding customers with incentives to travel on Delta. This program allows customers to earn mileage credits by flying on Delta, Delta Connection and other airlines that participate in the loyalty program. When traveling, customers earn redeemable mileage credits based on the passenger's loyalty program status and ticket price. Customers can also earn mileage credits through participating companies such as credit card companies, hotels, car rental agencies and ridesharing companies. To facilitate transactions with participating companies, we sell mileage credits to non-airline businesses, customers and other airlines. Mileage credits are redeemable by customers in future periods for air travel on Delta and other participating airlines, membership in our Sky Club and other program awards.  38 Our most significant contract to sell mileage credits relates to our co-brand credit card relationship with American Express. Our agreements with American Express provide for joint marketing, grant certain benefits to Delta-American Express co-branded credit card holders  and American Express Membership Rewards program participants, and allow American Express to market its services or products using our customer database. Cardholders earn mileage credits for making purchases using co-branded cards, and certain cardholders may also check their first bag for free, are granted discounted access to Delta Sky Club lounges and receive priority boarding and other benefits while traveling on Delta. Additionally, participants in the American Express Membership Rewards program may exchange their points for mileage credits under the loyalty program. We sell mileage credits at agreed-upon rates to American Express which are then provided to their customers under the co-brand credit card program and the Membership Rewards program. We account for marketing agreements, including those with American Express, consistent with the accounting method that allocates the consideration received to the individual products and services delivered. We allocate the value based on the relative selling prices of those products and services, which generally consist of award travel, priority boarding, baggage fee waivers, lounge access and the use of our brand. We determine our best estimate of the selling prices by considering a discounted cash flow analysis using multiple inputs and assumptions, including: (1) the expected number of miles awarded and number of miles redeemed, (2)  ETV  for the award travel obligation, (3) published rates on our website for baggage fees, discounted access to Delta Sky Club lounges and other benefits while traveling on Delta and (4) brand value.  Effective January 1, 2019, we amended our co-brand agreement with American Express, and we also amended other agreements with American Express during the current year. The new agreements increase the value we receive and extend the terms to 2029. The products and services delivered are consistent with previous agreements, and we continue to use the accounting method that allocates the consideration received based on the relative selling prices of those products and services.  We defer the amount for award travel obligation as part of loyalty program deferred revenue and recognize loyalty travel awards in passenger revenue as the mileage credits are used for travel. Revenue allocated to services performed in conjunction with a passenger’s flight, such as baggage fee waivers, is recognized as travel-related services in passenger revenue when the related service is performed. Revenue allocated to access Delta Sky Club lounges is recognized as miscellaneous in other revenue as access is provided. Revenue allocated to the remaining performance obligations, primarily brand value, is recorded as loyalty program in other revenue over time as miles are delivered. Recent Accounting Standards Comprehensive Income . In February 2018, the FASB issued ASU No. 2018-02, "Income Statement—Reporting Comprehensive Income (Topic 220)." This standard provides an option to reclassify stranded tax effects within AOCI  to retained earnings due to the U.S. federal corporate income tax rate change in the Tax Cuts and Jobs Act of 2017. This standard is effective for interim and annual reporting periods beginning after December 15, 2018. We adopted this standard effective January 1, 2019 with the election not to reclassify  $1.2 billion  of stranded tax effects, primarily related to our pension plans, from AOCI to retained earnings.  39 Supplemental Information  We sometimes use information ("non-GAAP financial measures") that is derived from the Condensed Consolidated Financial Statements, but that is not presented in accordance with GAAP. Under the U.S. Securities and Exchange Commission rules, non-GAAP financial measures may be considered in addition to results prepared in accordance with GAAP, but should not be considered a substitute for or superior to GAAP results. The reconciliations presented below of the non-GAAP measures used in this 10-Q may not calculate exactly due to rounding. Pre-tax income, adjusted The following table shows a reconciliation of pre-tax income (a GAAP measure) to pre-tax income, adjusted (a non-GAAP financial measure). We adjust pre-tax income for the following items to determine pre-tax income, adjusted for the reasons described below. • MTM adjustments and settlements.  MTM adjustments are defined as fair value changes recorded in periods other than the settlement period. Such fair value changes are not necessarily indicative of the actual settlement value of the underlying hedge in the contract settlement period. Settlements represent cash received or paid on hedge contracts settled during the period.  • Equity investment MTM adjustments.  We record our proportionate share of earnings/loss from our equity investments in Virgin Atlantic and Aeroméxico in non-operating expense. We adjust for our equity method investees' hedge portfolio MTM adjustments to allow investors to better understand and analyze our core operational performance in the periods shown. • Unrealized gain/loss on investments.  We record the unrealized gains/losses on our equity investments in GOL, China Eastern, Air France-KLM and Korean, which are accounted for at fair value in non-operating expense. Adjusting for these gains/losses allows investors to better understand and analyze our core operational performance in the periods shown. • DGS sale adjustment.  Because we sold DGS in December 2018, we have excluded the impact of DGS from 2018 results for comparability.   Three Months Ended September 30, (in millions) 2019 2018 Pre-tax income $ 1,947 $ 1,688 Adjusted for:     MTM adjustments and settlements (25 ) (16 ) Equity investment MTM adjustments 10 (7 ) Unrealized gain/loss on investments 35 (50 ) DGS sale adjustment — (9 ) Pre-tax income, adjusted $ 1,967 $ 1,606  40 TRASM, adjusted The following table shows a reconciliation of TRASM (a GAAP measure) to TRASM, adjusted (a non-GAAP financial measure). We adjust TRASM for the following items to determine TRASM, adjusted for the reasons described below. • Third-party refinery sales.  We adjust TRASM for refinery sales to third parties to determine TRASM, adjusted because these revenues are not related to our airline segment. TRASM, adjusted therefore provides a more meaningful comparison of revenue from our airline operations to the rest of the airline industry.  • DGS sale adjustment.  We adjust for the DGS sale for the same reason described above under the heading pre-tax income, adjusted.   Three Months Ended September 30,   Nine Months Ended September 30,   2019 2018   2019 2018 TRASM 16.58 ¢ 16.40 ¢   16.94 ¢ 16.78 ¢ Adjusted for:           Third-party refinery sales (0.01 ) (0.15 )   (0.05 ) (0.27 )    DGS sale adjustment — (0.09 )   — (0.09 ) TRASM, adjusted 16.57 ¢ 16.17 ¢   16.90 ¢ 16.42 ¢ CASM-Ex The following table shows a reconciliation of CASM (a GAAP measure) to CASM-Ex (a non-GAAP financial measure). We adjust CASM for the following items to determine CASM-Ex for the reasons described below. • Aircraft fuel and related taxes.  The volatility in fuel prices impacts the comparability of year-over-year financial performance. The adjustment for aircraft fuel and related taxes allows investors to better understand and analyze our non-fuel costs and year-over-year financial performance. • Ancillary businesses and refinery.  We adjust for expenses related to aircraft maintenance we provide to third parties, our vacation wholesale operations, our private jet operations, as well as refinery cost of sales to third parties. Results from 2018 also include staffing services performed by DGS. Because these businesses are not related to the generation of a seat mile, we adjust for the costs related to these areas to provide a more meaningful comparison of the costs of our airline operations to the rest of the airline industry.  • Profit sharing.  We adjust for profit sharing because this adjustment allows investors to better understand and analyze our recurring cost performance and provides a more meaningful comparison of our core operating costs to the airline industry.   Three Months Ended September 30,   Nine Months Ended September 30,   2019 2018   2019 2018 CASM 13.85 ¢ 14.14 ¢   14.46 ¢ 14.70 ¢ Adjusted for:           Aircraft fuel and related taxes (2.96 ) (3.43 )   (3.10 ) (3.33 ) Ancillary businesses and refinery (0.37 ) (0.56 )   (0.45 ) (0.70 ) Profit sharing (0.68 ) (0.54 )   (0.60 ) (0.49 ) CASM-Ex 9.84 ¢ 9.61 ¢   10.31 ¢ 10.18 ¢  41 Free Cash Flow We present free cash flow because management believes this metric is helpful to investors to evaluate the company's ability to generate cash that is available for use for debt service or general corporate initiatives. Adjustments include: • Net redemptions of short-term investments.  Net redemptions of short-term investments represent the net purchase and sale activity of investments and marketable securities in the period, including gains and losses. We adjust for this activity to provide investors a better understanding of the company's free cash flow generated by our operations. • Strategic investments.  Cash flows related to our investment in Hanjin-KAL, the largest shareholder of Korean Air, are included in our GAAP investing activities. We adjust free cash flow for this activity because it provides a more meaningful comparison to the airline industry. • Net cash flows related to certain airport construction projects and other.  Cash flows related to certain airport construction projects are included in our GAAP operating activities and capital expenditures. We have adjusted for these items, which were primarily funded by cash restricted for airport construction, to provide investors a better understanding of the company's free cash flow and capital expenditures that are core to our operational performance in the periods shown.   Three Months Ended September 30, (in millions) 2019 2018 Net cash provided by operating activities $ 2,245 $ 1,500 Net cash used in investing activities (1,125 ) (903 ) Adjustments:          Net redemptions of short-term investments — (42 )      Strategic investments 81 —      Net cash flows related to certain airport construction projects and other 229 100 Total free cash flow $ 1,430 $ 655  42 ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK There have been no material changes in market risk from the information provided in "Item 7A. Quantitative and Qualitative Disclosures About Market Risk" in our Form 10-K. ITEM 4. CONTROLS AND PROCEDURES Our management, including our Chief Executive Officer and Chief Financial Officer, performed an evaluation of our disclosure controls and procedures, which have been designed to permit us to effectively identify and timely disclose important information. Our management, including our Chief Executive Officer and Chief Financial Officer, concluded that the controls and procedures were effective as of  September 30, 2019  to ensure that material information was accumulated and communicated to our management, including our Chief Executive Officer and Chief Financial Officer, as appropriate to allow timely decisions regarding required disclosure. During the three months ended  September 30, 2019 , we did not make any changes in our internal control over financial reporting that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. PART II. OTHER INFORMATION   ITEM 1. LEGAL PROCEEDINGS "Item 3. Legal Proceedings" of our Form 10-K includes a discussion of our legal proceedings. There have been no material changes from the legal proceedings described in our Form 10-K.  ITEM 1A. RISK FACTORS   “Item 1A. Risk Factors” of our Form 10-K includes a discussion of our risk factors. There have been no material changes from the risk factors described in our Form 10-K.  43 ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS  The following table presents information with respect to purchases of common stock we made during the  September 2019  quarter. The total number of shares purchased includes shares repurchased pursuant to our $5 billion share repurchase program, which was publicly announced on May 11, 2017 and will terminate no later than December 31, 2020. Some purchases made in the  September 2019  quarter were made pursuant to a trading plan meeting the requirements of Rule 10b5-1 under the Securities Exchange Act of 1934. In addition, the table includes shares withheld from employees to satisfy certain tax obligations due in connection with grants of stock under the Delta Air Lines, Inc. Performance Compensation Plan (the "Plan"). The Plan provides for the withholding of shares to satisfy tax obligations. It does not specify a maximum number of shares that can be withheld for this purpose. The shares of common stock withheld to satisfy tax withholding obligations may be deemed to be "issuer purchases" of shares that are required to be disclosed pursuant to this Item. Period Total Number of Shares Purchased Average Price Paid Per Share Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs Approximate Dollar Value (in millions) of Shares That May  Yet be Purchased Under the  Plan or Programs  July 2019 1,011,174 $ 61.10 1,011,174   $ 1,440 August 2019 1,382,096 $ 58.45 1,382,096   $ 1,360 September 2019 1,126,813 $ 58.49 1,126,813   $ 1,295 Total 3,520,083   3,520,083      44 ITEM 6. EXHIBITS (a) Exhibits 10.1 Framework Agreement, dated as of September 26, 2019, by and between LATAM Airlines Group S.A. and Delta Air Lines, Inc.* 15 Letter from Ernst & Young LLP regarding unaudited interim financial information 31.1 Certification by Delta's Chief Executive Officer with respect to Delta's Quarterly Report on Form 10-Q for the quarterly period ended September 30, 2019 31.2 Certification by Delta's Executive Vice President and Chief Financial Officer with respect to Delta's Quarterly Report on Form 10-Q for the quarterly period ended September 30, 2019 32 Certification pursuant to Section 1350 of Chapter 63 of Title 18 of the United States Code by Delta's Chief Executive Officer and Executive Vice President and Chief Financial Officer with respect to Delta's Quarterly Report on Form 10-Q for the quarterly period ended September 30, 2019 101.INS XBRL Instance Document - The instance document does not appear in the interactive data file because its XBRL tags are embedded within the Inline XBRL document. 101.SCH XBRL Taxonomy Extension Schema Document 101.CAL XBRL Taxonomy Extension Calculation Linkbase Document 101.DEF XBRL Taxonomy Extension Definition Linkbase Document 101.LAB XBRL Taxonomy Extension Labels Linkbase Document 101.PRE XBRL Taxonomy Extension Presentation Linkbase Document 104 The cover page from this Quarterly Report on Form 10-Q for the quarter ended  September 30, 2019 , formatted in Inline XBRL ____________ *    Portions of this exhibit have been omitted as confidential information.   45 SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.   Delta Air Lines, Inc.   (Registrant)       /s/ William C. Carroll   William C. Carroll   Senior Vice President - Finance and Controller   (Principal Accounting Officer) October 10, 2019    46 	 
+ 

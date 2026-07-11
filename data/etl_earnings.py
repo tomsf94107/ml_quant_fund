@@ -295,7 +295,8 @@ def load_earnings_features(
         _PIT_SQL = """
             SELECT e.announce_date AS report_date,
                    e.eps_surprise  AS eps_surprise,
-                   s.rev_surprise  AS rev_surprise
+                   s.rev_surprise  AS rev_surprise,
+                   e.report_time   AS report_time
             FROM earnings_events e
             LEFT JOIN earnings_surprises s
               ON s.ticker = e.ticker AND DATE(s.report_date) = e.fiscal_end
@@ -314,9 +315,18 @@ def load_earnings_features(
         # as known on D would re-import the very leak this rewire removes.
         # Make it usable from the NEXT session. BMO reporters lose one day of
         # staleness on a slow feature -- a cheap price for a hard guarantee.
+        # AMC/BMO SHIFT. A number released at 16:05 (postmarket) is NOT actionable
+        # against a close(D)->close(D+1) label -- the earliest a real trader can act
+        # is the open of D+1, by which time the gap has happened. A BMO release is
+        # public before the open, so it IS usable on D.
+        # report_time comes from UW ("postmarket"/"premarket"). When it is missing we
+        # fall back to +1BD, which is the conservative choice and never leaks.
         if not hist.empty:
-            hist["report_date"] = (pd.to_datetime(hist["report_date"])
-                                   + pd.tseries.offsets.BDay(1))
+            _rt = hist["report_time"] if "report_time" in hist.columns else None
+            _amc = (_rt.isna() | _rt.astype(str).str.lower().str.startswith("post")
+                    ) if _rt is not None else pd.Series(True, index=hist.index)
+            _d = pd.to_datetime(hist["report_date"])
+            hist["report_date"] = _d.where(~_amc, _d + pd.tseries.offsets.BDay(1))
         conn.close()
 
         # Next earnings date — sourced from accuracy.db.earnings_cache (the

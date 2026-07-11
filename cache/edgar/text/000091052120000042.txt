@@ -1,0 +1,2375 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --03-31 Q2 2021 0000910521 242138000 246835000 21146000 35325000 0.01 0.01 125000000 125000000 27999000 28082000 27999000 28082000 P5Y 12227000 18735000 P1Y 5282000 1292000 0 0 0 0 
+		 
+			 0000910521 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2020-10-29 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:CumulativeEffectPeriodOfAdoptionAdjustmentMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:CumulativeEffectPeriodOfAdoptionAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+		 
+		 
+			 2020-04-01 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LoyaltyProgramsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LoyaltyProgramsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:OtherLongTermLiabilitiesMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OtherAssetsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:OtherAccruedExpensesCurrentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:JapanCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:SecondAmendedChinaCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:JapanCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:SecondAmendedChinaCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:SecondAmendedChinaCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2013-08-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:SecondAmendedChinaCreditFacilityOverdraftSublimitMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2013-08-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MaximumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:SecondAmendedChinaCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2013-08-01 
+			 2013-08-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:JapanCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+				 deck:TokyoInterbankOfferedRateTIBORMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MaximumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2014-07-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:JapanCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:JapanCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+				 deck:TokyoInterbankOfferedRateTIBORMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+				 deck:DebtInstrumentAlternateVariableRateBaseMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MaximumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:JapanCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:ChinaCreditAgreementMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2013-08-01 
+			 2013-08-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2014-07-01 
+			 2014-07-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 deck:PrimaryCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-09-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualPerformancebasedStockUnitsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRestrictedStockUnitsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualPerformancebasedStockUnitsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRestrictedStockUnitsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:StockAppreciationRightsSARSMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPPerformanceBasedPSUsMember 
+				 deck:StockIncentivePlan2015Member 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPPSUsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:DeferredEquityAwardsMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPPSUsMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:DeferredEquityAwardsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPNQSOsMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPNQSOsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPPSUsMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPNQSOsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPNQSOsMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:DeferredEquityAwardsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:DeferredEquityAwardsMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:AnnualRSUsandAnnualPSUsMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 deck:LTIPPSUsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:TevaWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:DirecttoConsumerMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:HokaBrandSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:OtherWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:UGGWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 deck:SanukWholesaleSegmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:NonUsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:NonUsMember 
+			 
+		 
+		 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:GeographicConcentrationRiskMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:GeographicConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:GeographicConcentrationRiskMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:CustomerConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 deck:CurrencyConcentrationRiskMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 deck:CurrencyConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 deck:CurrencyConcentrationRiskMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:GeographicConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:CustomerConcentrationRiskMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 deck:CurrencyConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:CustomerConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000910521 
+			 
+				 us-gaap:SalesRevenueNetMember 
+				 us-gaap:CustomerConcentrationRiskMember 
+			 
+		 
+		 
+			 2020-07-01 
+			 2020-09-30 
+		 
+	 
+		 iso4217:JPY 
+	 
+		 iso4217:CNY 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 deck:tannery 
+	 
+		 xbrli:pure 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:shares 
+	 
+		 deck:segment 
+	 
+		 deck:counterparty 
+	   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM  10-Q   (Mark One) ☒ Quarterly Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 For the Quarterly Period Ended  September 30, 2020 OR ☐ Transition Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 For the transition period from            to Commission File Number:  001-36436   DECKERS OUTDOOR CORP ORATION (Exact name of registrant as specified in its charter) Delaware 95-3015862 (State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.) 250 Coromar Drive ,  Goleta ,  California   93117   (Address of principal executive offices and zip code)   ( 805 )  967-7611   (Registrant’s telephone number, including area code) Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading  Symbol(s) Name of each exchange on which registered Common Stock, par value $0.01 per share DECK New York Stock Exchange Indicate by check mark whether the registrant: (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports) and (2) has been subject to such filing requirements for the past 90 days.    Yes   ☒    No   ☐   Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).   Yes   ☒    No   ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company" in Rule 12b-2 of the Exchange Act.  Large accelerated filer ☒   Accelerated filer ☐ Non-accelerated filer ☐   Smaller reporting company ☐       Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).  Yes  ☐    No  ☒ As of the close of business on  October 29, 2020 , the number of outstanding shares of the registrant's common stock, par value $0.01 per share, was  28,084,060 .   DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES For the Three and Six Months Ended September 30, 2020 TABLE OF CONTENTS     Page   PART I - Financial Information   Item 1. Financial Statements     Condensed Consolidated Balance Sheets (Unaudited) 4   Condensed Consolidated Statements of Comprehensive Income (Unaudited) 5   Condensed Consolidated Statements of Stockholders' Equity (Unaudited) 6   Condensed Consolidated Statements of Cash Flows (Unaudited) 7   Notes to Condensed Consolidated Financial Statements (Unaudited) 9 Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 23 Item 3. Quantitative and Qualitative Disclosures about Market Risk 40 Item 4. Controls and Procedures 41   PART II - Other Information   Item 1. Legal Proceedings 43 Item 1A. Risk Factors 43 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 44 Item 3. Defaults Upon Senior Securities * Item 4. Mine Safety Disclosures * Item 5. Other Information * Item 6. Exhibits 45   Signatures 46 *Not applicable. 1 Table of Contents CAUTIONARY NOTE REGARDING FORWARD-LOOKING STATEMENTS This  Quarterly Report  on  Form 10-Q  for our  second  fiscal quarter ended  September 30, 2020  ( Quarterly Report ), and the information and documents incorporated by reference into this  Quarterly Report , contain “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933, as amended (Securities Act), and Section 21E of the Securities Exchange Act of 1934, as amended (Exchange Act), which statements are subject to considerable risks and uncertainties. These forward-looking statements are intended to qualify for the safe harbor from liability established by the Private Securities Litigation Reform Act of 1995. Forward-looking statements include all statements other than statements of historical fact contained in, or incorporated by reference into, this  Quarterly Report . We have attempted to identify forward-looking statements by using words such as “anticipate,” “believe,” “could,” “estimate,” “expect,” “intend,” “may,” “plan,” “predict,” “project,” “should,” “will,” or “would,” and similar expressions or the negative of these expressions. Specifically, this  Quarterly Report , and the information and documents incorporated by reference into this  Quarterly Report , contains forward-looking statements relating to, among other things: • the impacts of the COVID-19 global pandemic on our business, financial condition, results of operations and liquidity, and the business, financial condition, results of operations and liquidity of our customers, suppliers, and business partners; • changes to our business resulting from changes in discretionary spending, consumer confidence, unemployment rates, retail store activity, tourist activity, or governmental restrictions; • the impact of government orders, local authority mandates and expert agency guidance on retail store closures and operating restrictions; • our business, operating, investing, capital allocation, marketing, and financing plans and strategies; • the expansion of our brands and product offerings; • changes to the geographic and seasonal mix of our brands and products; • changes to our product distribution strategies, including the implementation of our product allocation and segmentation strategies; • changes in consumer preferences impacting our brands and products, and the footwear and fashion industries; • trends impacting the purchasing behavior of wholesale customers and retail consumers, including those impacting retail and e-commerce businesses; • bankruptcies or other financial difficulties impacting our wholesale customers or other business partners; • the impact of seasonality and weather on consumer behavior, demand for our products, and our results of operations; • the impact of our efforts to continue to advance sustainable and socially conscious business operations; • expansion of and investments in our Direct-to-Consumer (DTC) capabilities, including our e-commerce platforms; • the operational challenges faced by our distribution center, our global third-party logistics providers, and third-party carriers, and the related impacts on our ability to deliver products;  • availability of raw materials and manufacturing capacity, and reliability of overseas production and storage; • commitments and contingencies, including with respect to operating leases, purchase obligations for product and raw materials, and legal or regulatory proceedings; • the impacts of new or proposed legislation, tariffs, regulatory enforcement actions, or legal proceedings; • the value of goodwill and other intangible assets, and potential write-downs or impairment charges; • changes impacting our tax liability and effective tax rates; • repatriation of earnings of non-United States subsidiaries and any related tax impacts; • the impact from adoption of recent accounting pronouncements; and • overall global economic and political trends, including foreign currency exchange rate fluctuations, changes in interest rates, and changes in commodity pricing. Forward-looking statements represent management’s current expectations and predictions about trends affecting our business and industry and are based on information available at the time such statements are made. Although we do not make forward-looking statements unless we believe we have a reasonable basis for doing so, we cannot guarantee their accuracy or completeness. Forward-looking statements involve numerous known and unknown risks, uncertainties, and other factors that may cause our actual results, performance, or achievements to be materially different from any future results, performance or achievements predicted, assumed or implied by the forward-looking statements. Some of the risks and uncertainties that may cause our actual results to materially differ from those expressed or implied by these forward-looking statements are described in  Part II, Item 1A,   "Risk Factors,"  and  Part I, Item 2,   "Management's Discussion and Analysis of Financial Condition and Results of Operations,"  in this  Quarterly Report , as well as in our other filings with the Securities and Exchange Commission (SEC). You should read this  Quarterly Report , including the information and documents incorporated by reference herein, in its entirety and with the understanding that our actual future results may be materially different from the results expressed or implied by these forward-looking statements. Moreover, new risks and uncertainties emerge from time to time and it is not possible for management to predict all risks and uncertainties, nor can we assess the impact of all factors on our business or the extent to which any factor, or combination of factors, may cause our actual future results to be materially different from any results expressed or implied by any forward-looking statements. Except as required by applicable law or the listing rules of the New York Stock Exchange, we expressly disclaim any intent or obligation to update any forward-looking statements. We qualify all our forward-looking statements with these cautionary statements. 2 Table of Contents PART I. FINANCIAL INFORMATION References within this  Quarterly Report  to "Deckers," "we," "our," "us," "management," or the "Company" refer to Deckers Outdoor Corporation, together with its consolidated subsidiaries. UGG® (UGG), HOKA ONE ONE® (HOKA), Teva® (Teva), Sanuk® (Sanuk), and Koolaburra® (Koolaburra) are some of the Company's trademarks. Other trademarks or trade names appearing elsewhere in this  Quarterly Report  are the property of their respective owners.   Solely for convenience, the trademarks and trade names within this  Quarterly Report  are referred to without the ® and ™ symbols, but such references should not be construed as any indication that their respective owners will not assert, to the fullest extent under applicable law, their rights thereto. Unless otherwise indicated, all dollar amounts herein are expressed in thousands, except share and per share data.  3 Table of Contents ITEM 1. FINANCIAL STATEMENTS DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES CONDENSED CONSOLIDATED BALANCE SHEETS (UNAUDITED)   (dollar and share data amounts in thousands, except par value)   September 30, 2020 March 31, 2020 ASSETS     (AUDITED) Cash and cash equivalents $ 626,414   $ 649,436 Trade accounts receivable, net of allowances ($35,325 and $21,146 as of September 30, 2020 and March 31, 2020, respectively) 326,266   185,596 Inventories, net of reserves ($18,735 and $12,227 as of September 30, 2020 and March 31,2020, respectively) 484,138   311,620 Prepaid expenses 19,866   17,760 Other current assets 31,696   21,548 Income tax receivable 11,356   8,151 Total current assets 1,499,736   1,194,111 Property and equipment, net of accumulated depreciation ($246,835 and $242,138 as of September 30, 2020 and March 31, 2020, respectively) 207,912   209,037 Operating lease assets 224,151   243,522 Goodwill 13,990   13,990 Other intangible assets, net of accumulated amortization ($76,484 and $74,421 as of September 30, 2020 and March 31, 2020, respectively) 46,764   48,016 Deferred tax assets, net 27,372   28,233 Other assets 30,423   28,209 Total assets $ 2,050,348   $ 1,765,118         LIABILITIES AND STOCKHOLDERS' EQUITY       Short-term borrowings $ 9,965   $ 638 Trade accounts payable 312,932   147,892 Accrued payroll 30,606   42,309 Operating lease liabilities 48,728   49,091 Other accrued expenses 59,248   46,281 Income taxes payable 31,711   11,104 Value added tax payable 10,652   3,631 Total current liabilities 503,842   300,946 Mortgage payable 29,938   30,263 Long-term operating lease liabilities 196,861   215,724 Income tax liability 59,610   63,547 Other long-term liabilities 17,133   14,518 Total long-term liabilities 303,542   324,052 Commitments and contingencies   Stockholders' equity       Common stock ($0.01 par value; 125,000 shares authorized; shares issued and outstanding of 28,082 and 27,999 as of September 30, 2020 and March 31, 2020, respectively) 281   280 Additional paid-in capital 194,112   191,451 Retained earnings 1,067,529   973,948 Accumulated other comprehensive loss ( 18,958 )   ( 25,559 ) Total stockholders' equity 1,242,964   1,140,120 Total liabilities and stockholders' equity $ 2,050,348   $ 1,765,118 See accompanying notes to the  condensed consolidated financial statements . 4 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (UNAUDITED)   (dollar and share data amounts in thousands, except per share data)   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Net sales $ 623,525   $ 542,205   $ 906,694   $ 819,044 Cost of sales 304,548   269,181   445,151   416,001 Gross profit 318,977   273,024   461,543   403,043 Selling, general and administrative expenses 190,373   175,893   340,638   337,329 Income from operations 128,604   97,131   120,905   65,714                 Interest income ( 452 )   ( 1,530 )   ( 1,126 )   ( 4,396 ) Interest expense 1,205   1,524   2,395   2,670 Other income, net ( 113 )   ( 86 )   ( 256 )   ( 178 ) Total other expense (income), net 640   ( 92 )   1,013   ( 1,904 ) Income before income taxes 127,964   97,223   119,892   67,618 Income tax expense 26,410   19,413   26,311   9,159 Net income 101,554   77,810   93,581   58,459                 Other comprehensive income (loss)               Unrealized (loss) gain on cash flow hedges, net of tax ( 800 )   1,497   ( 447 )   1,180 Foreign currency translation gain (loss) 6,395   ( 3,391 )   7,048   ( 3,323 ) Total other comprehensive income (loss) 5,595   ( 1,894 )   6,601   ( 2,143 ) Comprehensive income $ 107,149   $ 75,916   $ 100,182   $ 56,316                 Net income per share               Basic $ 3.62   $ 2.73   $ 3.34   $ 2.03 Diluted $ 3.58   $ 2.71   $ 3.30   $ 2.01 Weighted-average common shares outstanding               Basic 28,046   28,483   28,024   28,785 Diluted 28,335   28,705   28,314   29,039 See accompanying notes to the  condensed consolidated financial statements . 5 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF STOCKHOLDERS' EQUITY (UNAUDITED)   (amounts in thousands)   Six Months Ended September 30, 2020       Additional Paid-in Capital   Retained Earnings   Accumulated Other Comprehensive Loss   Total Stockholders'  Equity   Common Stock           Shares   Amount         Balance, March 31, 2020 27,999   $ 280   $ 191,451   $ 973,948   $ ( 25,559 )   $ 1,140,120 Stock-based compensation 1   —   3,618   —   —   3,618 Shares issued upon vesting 1   —   —   —   —   — Exercise of stock options 4   —   247   —   —   247 Shares withheld for taxes —   —   ( 90 )   —   —   ( 90 ) Net loss —   —   —   ( 7,973 )   —   ( 7,973 ) Total other comprehensive income —   —   —   —   1,006   1,006 Balance, June 30, 2020 28,005   280   195,226   965,975   ( 24,553 )   1,136,928 Stock-based compensation 1   —   4,019   —   —   4,019 Shares issued upon vesting 60   1   697   —   —   698 Exercise of stock options 16   —   1,134   —   —   1,134 Shares withheld for taxes —   —   ( 6,964 )   —   —   ( 6,964 ) Net income —   —   —   101,554   —   101,554 Total other comprehensive income —   —   —   —   5,595   5,595 Balance, September 30, 2020 28,082   $ 281   $ 194,112   $ 1,067,529   $ ( 18,958 )   $ 1,242,964   Six Months Ended September 30, 2019       Additional Paid-in Capital   Retained Earnings   Accumulated Other Comprehensive Loss   Total Stockholders'  Equity   Common Stock           Shares   Amount         Balance, March 31, 2019 29,141   $ 291   $ 178,227   $ 889,266   $ ( 22,654 )   $ 1,045,130 Stock-based compensation  1   —   3,424   —   —   3,424 Shares issued upon vesting 4   —   —   —   —   — Exercise of stock options 46   1   2,772   —   —   2,773 Cumulative adjustment from adoption of recent accounting pronouncements —   —   —   ( 1,069 )   —   ( 1,069 ) Shares withheld for taxes —   —   ( 374 )   —   —   ( 374 ) Repurchases of common stock ( 227 )   ( 2 )   —   ( 35,003 )   —   ( 35,005 ) Net loss —   —   —   ( 19,351 )   —   ( 19,351 ) Total other comprehensive loss —   —   —   —   ( 249 )   ( 249 ) Balance, June 30, 2019 28,965   290   184,049   833,843   ( 22,903 )   995,279 Stock-based compensation  3   —   5,075   —   —   5,075 Shares issued upon vesting 73   1   617   —   —   618 Exercise of stock options 3   —   186   —   —   186 Shares withheld for taxes —   —   ( 5,370 )   —   —   ( 5,370 ) Repurchases of common stock ( 1,069 )   ( 11 )   —   ( 155,389 )   —   ( 155,400 ) Net income —   —   —   77,810   —   77,810 Total other comprehensive loss —   —   —   —   ( 1,894 )   ( 1,894 ) Balance, September 30, 2019 27,975   $ 280   $ 184,557   $ 756,264   $ ( 24,797 )   $ 916,304 See accompanying notes to the  condensed consolidated financial statements . 6 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (UNAUDITED)   (amounts in thousands)   Six Months Ended September 30,   2020   2019 OPERATING ACTIVITIES       Net income $ 93,581   $ 58,459 Reconciliation of net income to net cash used in operating activities: Depreciation, amortization and accretion 19,499   19,966 Bad debt expense 7,163   976 Deferred tax expense (benefit) 1,503   ( 412 ) Stock-based compensation 7,635   8,497 Excess tax benefit from stock-based compensation ( 1,653 )   ( 2,004 ) Loss on disposal of property and equipment 135   391 Impairment of operating lease assets and other long-lived assets 2,680   123 Changes in operating assets and liabilities:       Trade accounts receivable, net ( 147,832 )   ( 156,975 ) Inventories, net ( 172,518 )   ( 280,032 ) Prepaid expenses and other current assets ( 12,012 )   ( 15,049 ) Income tax receivable ( 3,205 )   ( 3,152 ) Net operating lease assets and liabilities ( 3,385 )   ( 817 ) Other assets ( 2,213 )   ( 139 ) Trade accounts payable 162,289   188,413 Other accrued expenses 11,434   ( 31,056 ) Income taxes payable 22,260   ( 3,331 ) Long-term liabilities ( 1,322 )   ( 14 ) Net cash used in operating activities ( 15,961 )   ( 216,156 ) INVESTING ACTIVITIES       Purchases of property and equipment ( 13,333 )   ( 14,944 ) Proceeds from sales of property and equipment 49   240 Net cash used in investing activities ( 13,284 )   ( 14,704 ) FINANCING ACTIVITIES       Proceeds from short-term borrowings 9,100   29,463 Repayments of short-term borrowings —   ( 16,000 ) Proceeds from issuance of stock 698   618 Proceeds from exercise of stock options 1,381   2,959 Repurchases of common stock —   ( 190,405 ) Cash paid for shares withheld for taxes ( 7,054 )   ( 5,744 ) Repayments of mortgage principal ( 309 )   ( 294 ) Net cash provided by (used in) financing activities 3,816   ( 179,403 ) Effect of foreign currency exchange rates on cash and cash equivalents 2,406   ( 1,756 ) Net change in cash and cash equivalents ( 23,023 )   ( 412,019 ) Cash and cash equivalents at beginning of period 649,436   589,692 Cash and cash equivalents at end of period $ 626,414   $ 177,673 7 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (UNAUDITED) (amounts in thousands)                                 (continued)   Six Months Ended September 30,   2020   2019 SUPPLEMENTAL CASH FLOW DISCLOSURE       Cash paid during the period       Income taxes, net of refunds of $1,292 and $5,282, as of September 30, 2020 and 2019, respectively $ 11,764   $ 17,508 Interest 1,505   1,118 Operating leases 28,911   30,093 Non-cash investing activities       Accrued for purchases of property and equipment 3,598   4,260 Accrued for asset retirement obligations 323   96 See accompanying notes to the  condensed consolidated financial statements . 8 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Note 1.   General The Company  Deckers Outdoor Corporation and its wholly-owned subsidiaries (collectively, the Company) is a global leader in designing, marketing, and distributing innovative footwear, apparel, and accessories developed for both everyday casual lifestyles use and high-performance activities. As part of its omni-channel platform, the Company's proprietary brands are aligned across its Fashion Lifestyle group, including the UGG and Koolaburra brands, and Performance Lifestyle group, including the HOKA, Teva, and Sanuk brands. The Company sells its products through domestic and international retailers, international distributors, and directly to its global consumers through its DTC business, which is comprised of its retail stores and e‑commerce websites. Independent third-party contractors manufacture all of the Company's products. A significant part of the Company's business is seasonal, requiring it to build inventory levels during certain quarters in its fiscal year to support higher selling seasons, which contributes to the variation in its results from quarter to quarter. Basis of Presentation The unaudited  condensed consolidated financial statements  and accompanying notes thereto (referred to herein as  condensed consolidated financial statements )  as of September 30, 2020  and for the  three and six months ended September 30, 2020  and  2019  were prepared in accordance with accounting principles generally accepted in the United States (US GAAP) for interim financial information pursuant to Rule 10-01 of Regulation S-X issued by the SEC. Accordingly, they do not include all the information and disclosures required by US GAAP for annual financial statements and accompanying notes thereto. The  condensed consolidated balance sheet  as of  March 31, 2020  was derived from the Company's audited  consolidated financial statements . In the opinion of management, the  condensed consolidated financial statements  include all normal and recurring entries necessary to fairly present the results of the interim periods presented but are not necessarily indicative of results to be achieved for full fiscal years or other interim periods. The  condensed consolidated financial statements  should be read in conjunction with the audited consolidated financial statements and accompanying notes thereto included in the Company's  Annual Report  on  Form 10-K  for the  fiscal year ended March 31, 2020 , which was filed with the SEC on  June 1, 2020  ( 2020 Annual Report ).  Consolidation.  The  condensed consolidated financial statements  include the accounts of the Company and its wholly-owned subsidiaries. All intercompany balances and transactions have been eliminated in consolidation. Reclassifications . Certain reclassifications were made for prior periods presented to conform to the current period presentation. Use of Estimates.  The preparation of the Company's  condensed consolidated financial statements  in accordance with US GAAP requires management to make estimates and assumptions that affect the amounts reported. Management bases these estimates and assumptions upon historical experience, existing and known circumstances, authoritative accounting pronouncements, and other factors that management believes to be reasonable. In addition, the Company has considered the potential impact of the COVID-19 global pandemic (pandemic) on its business and operations. Although the full impact of the pandemic is unknown and cannot be reasonably estimated, the Company believes it has made appropriate accounting estimates and assumptions based on the facts and circumstances available as of the reporting date. However, actual results could differ materially from these estimates and assumptions, which may result in material effects on the Company's financial condition, results of operations, and liquidity. Actual results could differ as a result of a number of factors, including, without limitation, the severity and duration of the pandemic (including the potential for additional waves of the pandemic that may vary by geographic region); the timing and extent of governmental actions taken to control the spread and mitigate the impact of the pandemic; the impact of the pandemic on discretionary spending, consumer confidence, unemployment rates, and retail store security; the scope and timing of any governmental assistance provided in response to the impacts of the pandemic; and the impact of the pandemic on global economic conditions and financial markets. 9 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Significant areas requiring the use of management estimates and assumptions relate to inventory write-downs; trade accounts receivable allowances, including variable consideration for net sales provided to customers; contract assets and liabilities; stock-based compensation; impairment assessments, including for goodwill, other intangible assets, and long-lived assets; depreciation and amortization; income tax receivables and liabilities; uncertain tax positions; the fair value of financial instruments; the reasonably certain lease term; lease classification; and the Company's incremental borrowing rate utilized to discount its unpaid lease payments to measure its operating lease assets and liabilities.  There is uncertainty as to the nature and scope of the continued impacts of the pandemic over time. This uncertainty has affected, and is expected to continue to affect, management’s accounting estimates and assumptions, which could result in greater variability in a variety of areas that depend on these estimates and assumptions as additional information becomes available. Reportable Operating Segments The Company's  six  reportable operating segments include the worldwide wholesale operations for each of the UGG brand, HOKA brand, Teva brand, Sanuk brand, and Other brands, as well as DTC (referred to herein as reportable operating segments).  Refer to  Note 12, “Reportable Operating Segments,”  for further information on the Company's reportable operating segments.  Recent Accounting Pronouncements Recently Adopted.  The Financial Accounting Standards Board (FASB) has issued Accounting Standard Updates (ASUs) that have been adopted by the Company for its annual and interim reporting periods as stated below.  The following is a summary of each standard and the impact on the Company:   Standard   Description   Impact on Adoption ASU No. 2017-04,  Goodwill and Other: Simplifying the Test for Goodwill Impairment  (as amended by ASU 2019-06)   Requires annual and interim goodwill impairment tests   be performed   by comparing the fair value of a reporting unit with its carrying amount, effectively eliminating step two of the goodwill impairment test under legacy US GAAP. The amount by which the carrying amount exceeds the reporting unit’s fair value will continue to be recognized as an impairment charge.    The Company adopted this ASU beginning April 1, 2020 on a prospective basis, which did not have a material impact on its condensed consolidated financial statements.  ASU No. 2016-13,  Financial Instruments - Credit Losses: Measurement of Credit Losses on Financial Instruments  (as amended by ASUs 2018-19, 2019-04, 2019-05, 2019-11, 2020-02, and 2020-03)   Replaces the incurred loss impairment methodology in legacy US GAAP with a methodology that reflects expected credit losses and requires consideration of a broader range of reasonable and supportable information to inform credit loss estimates.   The Company adopted this ASU beginning April 1, 2020 on a prospective basis, which did not have a material impact on its condensed consolidated financial statements.  Not Yet Adopted.  The FASB has issued the following ASUs that have not yet been adopted by the Company. The following is a summary of each standard, planned period of adoption, and the expected impact on the Company: Standard   Description   Planned Period of Adoption   Expected Impact on Adoption ASU No. 2019-12,  Income Taxes - Simplifying the Accounting for Income Taxes   Removes certain exceptions for recognizing deferred taxes for investments, performing intra-period allocation and calculating income taxes in interim periods, as well as reduces complexity in certain areas, including recognizing deferred taxes for tax goodwill and allocating taxes to members of a consolidated group.   Q1 FY 2022   The Company is currently evaluating the impact on adoption of this ASU; however, the Company does not expect that the adoption will have a material impact on its condensed consolidated financial statements. 10 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Standard   Description   Planned Period of Adoption   Expected Impact on Adoption ASU No. 2020-04,  Reference Rate Reform - Facilitation of the Effects of Reference Rate Reform on Financial Reporting   London Interbank Offered Rate (LIBOR) is a benchmark interest rate referenced in a variety of agreements that are used by all types of entities. At the end of 2021, banks will no longer be required to report information that is used to determine LIBOR. As a result, LIBOR could be discontinued. Other interest rates used globally could also be discontinued for similar reasons. This ASU provides companies with optional guidance to ease the potential accounting burden associated with transitioning away from reference rates that are expected to be discontinued. Guidance is limited for adoption through December 31, 2022.   Q3 FY 2023   The Company is currently evaluating the impact of the adoption of this ASU on its condensed consolidated financial statements. Note 2.   Revenue Recognition Revenue is recognized when a performance obligation is completed at a point in time and when the customer has obtained control. Control passes to the customer when they have the ability to direct the use of, and obtain substantially all the remaining benefits from, the goods transferred. The amount of revenue recognized is based on the transaction price, which represents the invoiced amount less known actual amounts or estimates of variable consideration. Components of variable consideration include estimated discounts, markdowns or chargebacks, and sales returns. Estimated variable consideration is included in the transaction price to the extent it is probable that a significant reversal of the cumulative revenue recognized will not occur in a future period.  The Company's customer contracts do not have a significant financing component due to their short durations, which are typically effective for one year or less and have payment terms that are generally  30 - 60  days.  Contract Assets and Liabilities Contract assets represent the Company’s right to consideration subject to conditions other than the passage of time, such as additional performance obligations to be satisfied. Contract liabilities are performance obligations that the Company expects to satisfy or relieve within the next 12 months, advance consideration obtained prior to satisfying a performance obligation, or unconditional obligations to provide goods or services under non-cancelable contracts before the transfer of goods or services to the customer has occurred.  Contract assets and liabilities are recorded in other current assets and other accrued expenses, respectively, in the  condensed consolidated balance sheets .    Sales Returns.  The following table provides activity during the  six months ended September 30, 2020  related to estimated sales returns for the Company’s existing customer contracts for all channels:   Contract Asset   Contract Liability Balance, March 31, 2020 $ 9,663   $ ( 25,667 ) Net additions to sales return allowance* 17,984   ( 59,811 ) Actual returns ( 16,386 )   51,685 Balance, September 30, 2020 $ 11,261   $ ( 33,793 ) The following table provides activity during the  six months ended September 30, 2019  related to estimated sales returns for the Company’s existing customer contracts for all channels:   Contract Asset   Contract Liability Balance, March 31, 2019 $ 10,441   $ ( 24,787 ) Net additions to sales return allowance* 12,297   ( 37,604 ) Actual returns ( 14,763 )   43,080 Balance, September 30, 2019 $ 7,975   $ ( 19,311 ) 11 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) * Net additions to sales return allowance include provision for anticipated sales returns which consists of both contractual return rights and discretionary authorized returns.  Loyalty Programs . The Company has a customer loyalty program for the UGG brand in its DTC channel where customers can earn rewards from qualifying purchases or activities.  As of September 30, 2020  and  March 31, 2020 , the Company's contract liability for loyalty programs was  $ 8,417  and  $ 6,950 , respectively. Refer to  Note 12, “Reportable Operating Segments,”  for further information on the Company's disaggregation of revenue by reportable operating segment. Note 3.   Goodwill and Other Intangible Assets Goodwill and Other Intangible Assets The Company's goodwill and other intangible assets are recorded in the  condensed consolidated balance sheets , as follows:   September 30, 2020   March 31, 2020 Goodwill       UGG brand $ 6,101   $ 6,101 HOKA brand 7,889   7,889 Total goodwill 13,990   13,990 Other intangible assets       Indefinite-lived intangible assets       Trademarks 15,454   15,454 Definite-lived intangible assets       Trademarks 55,245   55,245 Other 52,549   51,738 Total gross carrying amount 107,794   106,983 Accumulated amortization ( 76,484 )   ( 74,421 ) Net definite-lived intangible assets 31,310   32,562 Total other intangible assets, net 46,764   48,016 Total  $ 60,754   $ 62,006 Amortization Expense Aggregate amortization expense for definite-lived intangible assets during the  six months ended September 30, 2020  and  2019  was  $ 1,265  and  $ 2,201 , respectively.  A reconciliation of the changes in total other intangible assets, net, recorded in the  condensed consolidated balance sheets  is as follows: Balance, March 31, 2020 $ 48,016 Amortization expense ( 1,265 ) Foreign currency translation net gain 13 Balance, September 30, 2020 $ 46,764 12 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Note 4.   Fair Value Measurements The accounting standard for fair value measurements provides a framework for measuring fair value, which is defined as the price that would be received for an asset or the exit price that would be paid to transfer a liability in the principal or most advantageous market in an orderly transaction between market participants on the measurement date. The fair value hierarchy under this accounting standard requires an entity to maximize the use of observable inputs, where available. The following summarizes the three levels of inputs required: • Level 1: Quoted prices in active markets for identical assets and liabilities. • Level 2: Observable inputs other than quoted prices in active markets for identical assets and liabilities. • Level 3: Unobservable inputs in which little or no market activity exists, therefore requiring the Company to develop its own assumptions. The carrying amount of the Company’s financial instruments, which principally include cash and cash equivalents, trade accounts receivable, net, trade accounts payable, accrued payroll, and other accrued expenses, approximates fair value due to their short-term nature. The carrying amount of the Company’s short-term borrowings and mortgage payable, which are considered Level 2 liabilities, approximates fair value based upon current rates and terms available to the Company for similar debt. Assets and liabilities that are measured on a recurring basis at fair value in the  condensed consolidated balance sheets  were as follows:       Measured Using   September 30, 2020 Level 1   Level 2   Level 3 Non-qualified deferred compensation asset  $ 7,889   $ 7,889   $ —   $ — Non-qualified deferred compensation liability ( 5,490 )   ( 5,490 )   —   — Designated Derivative Contracts asset 243   —   243   — Designated Derivative Contracts liability ( 831 )   —   ( 831 )   — Non-Designated Derivative Contracts asset 42   —   42   —       Measured Using   March 31, 2020 Level 1   Level 2   Level 3 Non-qualified deferred compensation asset  $ 6,164   $ 6,164   $ —   $ — Non-qualified deferred compensation liability ( 3,756 )   ( 3,756 )   —   — The Company sponsors a non-qualified deferred compensation plan that permits a select group of management employees to defer earnings to a future date on a non-qualified basis. Deferred compensation is recognized based on the fair value of the participants' accounts. A rabbi trust was established as a reserve for benefits payable under this plan, with the assets invested in company-owned life insurance policies.  As of September 30, 2020 , the non-qualified deferred compensation asset of  $ 7,889  was recorded in other assets in the  condensed consolidated balance sheets .  As of September 30, 2020 , the non-qualified deferred compensation liability of  $ 5,490  was recorded in the  condensed consolidated balance sheets , with  $ 715  in other accrued expenses and  $ 4,775  in other long-term liabilities. The Level 2 inputs consist of forward spot rates at the end of the applicable reporting period. The fair values of assets and liabilities associated with derivative instruments and hedging activities are recorded in other current assets and other accrued expenses, respectively, in the  condensed consolidated balance sheets . Refer to  Note 9, “Derivative Instruments,”  for further information, including definitions of the terms Designated Derivative Contracts and Non-Designated Derivative Contracts. 13 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Note 5.   Income Taxes Effective Income Tax Rate Income tax expense and the effective income tax rate were as follows:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Income tax expense $ 26,410   $ 19,413   $ 26,311   $ 9,159 Effective income tax rate 20.6 %   20.0 %   21.9 %   13.5 % The tax provisions during the  six months ended September 30, 2020  and  2019  were computed using the estimated effective income tax rates applicable to each of the domestic and foreign taxable jurisdictions for the full fiscal year and were adjusted for discrete items that occurred within the periods presented.  During the  three months ended September 30, 2020 , the slight increase in the effective income tax rate, compared to the prior period, was due to changes in the jurisdictional mix of worldwide income before income taxes forecasted for the  fiscal year ending March 31, 2021 , partially offset by lower net discrete tax expenses, primarily driven by reduced unrecognized tax benefits recorded in the current period. During the  six months ended September 30, 2020 , the increase in the effective income tax rate, compared to the prior period, was due to changes in the jurisdictional mix of worldwide income before income taxes forecasted for the  fiscal year ending March 31, 2021  as well as a reduced tax benefit during the  six months ended September 30, 2020 , compared to the prior period, which recognized an increased tax benefit for the favorable settlement of a state income tax audit. These impacts were partially offset by reduced unrecognized tax benefits recorded for a prior year tax position in the current period. Unrecognized Tax Benefits During the  six months ended September 30, 2020 , the amount of gross unrecognized tax benefits and associated penalties and interest increased by  $ 577  to  $ 18,215 . This change is primarily related to a net increase in prior year tax position reserves recorded in income tax liability in the  condensed consolidated balance sheets .   Note 6.   Revolving Credit Facilities and Mortgage Payable  Primary Credit Facility In September 2018, the Company entered into a credit agreement that provides for a five-year,  $ 400,000  unsecured revolving credit facility (Primary Credit Facility), contains a  $ 25,000  sublimit for the issuance of letters of credit, and matures on September 20, 2023. At the Company's election, interest under the Primary Credit Facility is tied to the adjusted LIBOR or the Alternate Base Rate (ABR). Interest for borrowings made in foreign currencies is based on currency-specific LIBOR or the Canadian deposit offered rate (CDOR) if made in Canadian dollars.  As of September 30, 2020 , the effective interest rates for US dollar LIBOR and ABR were  1.27 %  and  3.38 % , respectively. During the  six months ended September 30, 2020 , the Company made  no  borrowings or repayments under the Primary Credit Facility.  As of September 30, 2020 , the Company had  no  outstanding balance, outstanding letters of credit of  $ 549 , and available borrowings of  $ 399,451  under the Primary Credit Facility.     14 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) China Credit Facility In August 2013, Deckers (Beijing) Trading Co., LTD, a wholly-owned subsidiary of the Company, entered into a credit agreement in China (as amended, the China Credit Facility) that provides for an uncommitted revolving line of credit of up to CNY  300,000 , or  $ 44,083 , with an overdraft facility sublimit of CNY  100,000 , or  $ 14,694 .  The China Credit Facility is payable on demand and subject to annual review with a defined aggregate period of borrowing of up to  12  months. The obligations under the China Credit Facility are guaranteed by the Company for  108.5 %  of the facility amount in US dollars. Interest is based on the People’s Bank of China (PBOC) market rate multiplied by a variable liquidity factor.  As of September 30, 2020 , the effective interest rate was  4.45 % . During the  six months ended September 30, 2020 , the Company made  $ 9,311  in borrowings and  no  repayments under the China Credit Facility.  As of September 30, 2020 , the Company had an outstanding balance of  $ 9,311 , outstanding bank guarantees of  $ 29 , and available borrowings of  $ 34,743  under the China Credit Facility.  Japan Credit Facility In March 2016, Deckers Japan, G.K., a wholly-owned subsidiary of the Company, entered into a credit agreement in Japan (as amended, the Japan Credit Facility) that provides for an uncommitted revolving line of credit of up to JPY  3,000,000 , or  $ 28,412 , for a maximum term of  six months  for each draw on the facility. The Japan Credit Facility can be renewed annually and is guaranteed by the Company. Interest is based on the Tokyo Interbank Offered Rate (TIBOR) plus  0.40 % .  As of September 30, 2020 , the effective interest rate was  0.46 % .  During the  six months ended September 30, 2020 , the Company made  no  borrowings or repayments under the Japan Credit Facility.  As of September 30, 2020 , the Company had  no  outstanding balance and available borrowings of  $ 28,412  under the Japan Credit Facility. Mortgage In July 2014, the Company obtained a mortgage secured by the property on which its corporate headquarters is located for a principal amount of  $ 33,931 .  As of September 30, 2020 , the outstanding principal balance under the mortgage was  $ 30,592 , which includes  $ 654  in short-term borrowings and  $ 29,938  in mortgage payable in the  condensed consolidated balance sheets . The mortgage has a fixed interest rate of  4.928 % . Payments include interest and principal in an amount that amortizes the principal balance over a  30 -year period; however, the loan will mature and requires a balloon payment of  $ 23,695 , in addition to any then-outstanding balance, on  July 1, 2029 .  Debt Covenants As of September 30, 2020 , the Company was in compliance   with all financial covenants under the revolving credit facilities and the mortgage. Foreign Currency Exchange Rates The amounts disclosed above for the China Credit Facility have been translated into US dollars using applicable foreign currency exchange spot rates in effect  as of September 30, 2020 . As a result, there are differences between the net borrowing amount within this footnote disclosure and that same amount recorded in the  condensed consolidated statements of cash flows . Any amounts outstanding, including those amounts disclosed above, are recorded in short-term borrowings in the  condensed consolidated balance sheets . 15 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Note 7.   Leases and Other Commitments Leases The Company primarily leases retail stores, showrooms, offices, and distribution facilities under operating lease contracts. Some of the Company's operating leases contain extension options ranging from one to  15  years . Historically, the Company has not entered into finance leases and its lease agreements generally do not contain residual value guarantees, options to purchase underlying assets, or material restrictive covenants. Supplemental information for amounts presented in the  condensed consolidated statements of cash flows  related to operating leases is as follows:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Non-cash operating activities               Operating lease assets obtained in exchange for lease liabilities* $ 3,378   $ 11,715   $ 5,869   $ 28,137 Reductions to operating lease assets for reductions to lease liabilities* ( 476 )   ( 2,120 )   ( 2,413 )   ( 4,669 ) * Amounts disclosed include non-cash additions or reductions, respectively, resulting from lease remeasurements. Litigation From time to time, the Company is involved in various legal proceedings and claims arising in the ordinary course of business. Although the results of legal proceedings and claims cannot be predicted with certainty, the Company currently believes that the final outcome of these ordinary course matters, including the matter outlined below, will not, individually or in the aggregate, have a material adverse effect on it business, results of operations, financial condition, or liquidity.  On March 28, 2016, the Company filed a lawsuit alleging trademark infringement, patent infringement, unfair competition and violation of deceptive trade practices in the US District Court for the Northern District of Illinois Eastern Division against Australian Leather. Australian Leather counterclaimed alleging that the UGG trademark is invalid. On May 10, 2019, a jury returned a verdict in the Company's favor in its lawsuit against Australian Leather. The District Court entered judgments upholding the UGG trademark on February 6 and June 8, 2020. On August 12, 2020, Australian Leather filed an appeal to the US Court of Appeals for the Federal Circuit. While the Company believes there is no merit to the appeal, a judgment invalidating the UGG brand trademark would have a material adverse effect on the Company's business. Note 8.   Stock-Based Compensation From time to time, the Company grants various types of stock-based compensation under the 2015 Stock Incentive Plan, as amended (2015 SIP), including time-based restricted stock units (RSUs), performance-based restricted stock units (PSUs), stock appreciation rights, and non-qualified stock options (NQSOs). The Company typically makes annual grants of RSUs (Annual RSUs) and PSUs (Annual PSUs), as well as long-term incentive plan (LTIP) awards, to certain executive officers and other key employees.  During the  six months ended September 30, 2020 , except for the Annual RSU grant activity summarized below,  no  additional awards were granted under the 2015 SIP. Refer to Note 8, “Stock-Based Compensation,” in our  2020 Annual Report  for further information on previously granted awards under the 2015 SIP. 16 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Annual Awards The Company granted Annual RSUs and Annual PSUs under the 2015 SIP, as summarized below:      Six Months Ended September 30,     2020   2019     Shares Granted   Weighted-average grant date fair value per share   Shares Granted   Weighted-average grant date fair value per share Annual RSUs   34,211   $ 200.83   38,307   $ 173.65 Annual PSUs   —   —   19,938   174.36 Total   34,211   $ 200.83   58,245   $ 173.89 Stock-based compensation is recorded net of estimated forfeitures in selling, general and administrative (SG&A) expenses in the  condensed consolidated statements of comprehensive income . The Annual RSUs typically vest in equal annual installments over  three years  following the date of grant. The Annual PSUs are typically earned based on the achievement of pre-established Company performance criteria measured over the fiscal year during which they are granted and, to the extent the performance criteria are met, vest in equal annual installments over  three years  thereafter.  Future unrecognized stock-based compensation expense for Annual RSUs and Annual PSUs outstanding  as of September 30, 2020  was  $ 11,219 .   Note 9.   Derivative Instruments The Company may enter into foreign currency forward or option contracts (derivative contracts) to manage foreign currency risk on expected cash flows and certain existing assets and liabilities, primarily intercompany balances. Certain of these derivative contracts are designated as cash flow hedges of forecasted sales (Designated Derivative Contracts). The Company may also enter into derivative contracts that are not designated as cash flow hedges (Non-Designated Derivative Contracts), to offset a portion of anticipated gains and losses on certain intercompany balances until the expected time of repayment. The after-tax unrealized gains or losses from changes in the fair value of Designated Derivative Contracts are recorded as a component of accumulated other comprehensive loss (AOCL) and are reclassified to net sales in the  condensed consolidated statements of comprehensive income  in the same period or periods as the related sales are recognized. The Company includes all hedge components in its assessment of effectiveness for its derivative contracts.  Changes in the fair value of Non-Designated Derivative Contracts are recorded in SG&A expenses in the  condensed consolidated statements of comprehensive income . The changes in fair value for these contracts are generally offset by the remeasurement gains or losses associated with the underlying foreign currency-denominated intercompany balances, which are recorded in SG&A expenses in the  condensed consolidated statements of comprehensive income . As of September 30, 2020 , the Company had the following derivative contracts recorded at fair value in the  condensed consolidated balance sheets :   Designated  Derivative Contracts   Non-Designated Derivative Contracts   Total Notional value $ 53,444   $ 18,909   $ 72,353 Fair value recorded in other current assets 243   42   285 Fair value recorded in other accrued expenses 831   —   831 As of September 30, 2020 , the Company's outstanding derivative contracts were held by an aggregate of  four  counterparties, all with various maturity dates within the next  six months .  As of March 31, 2020 , the Company had  no  outstanding derivative contracts.  17 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) The following table summarizes the effect of Designated Derivative Contracts and the related income tax effects for unrealized gains or losses recorded in the  condensed consolidated statements of comprehensive income  for changes in AOCL:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 (Loss) gain recorded in OCI $ ( 1,173 )   $ 2,190   $ ( 709 )   $ 1,773 Reclassifications from AOCL into net sales  121   ( 216 )   121   ( 216 ) Income tax benefit (expense) in OCI 252   ( 477 )   141   ( 377 ) Total $ ( 800 )   $ 1,497   $ ( 447 )   $ 1,180 The following table summarizes the effect of Non-Designated Derivative Contracts:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Gain recorded in SG&A expenses $ 42   $ 502   $ 42   $ 146 The non-performance risk of the Company and the counterparties  did not have a material impact  on the fair value of its derivative contracts.  As of September 30, 2020 , the amount of unrealized losses on derivative contracts recorded in AOCL is expected to be reclassified into net sales within the next  six months . Refer to  Note 10, “Stockholders' Equity,”  for further information on the components of AOCL. Note 10.   Stockholders' Equity Stock Repurchase Programs The Company's Board of Directors has authorized various stock repurchase programs pursuant to which the Company may repurchase shares of its common stock. The Company's stock repurchase programs do not obligate it to acquire any amount of common stock and may be suspended at any time at the Company's discretion. During the  six months ended September 30, 2020 , the Company made  no  stock repurchases.  As of September 30, 2020 , the aggregate remaining approved amount under the Company's stock repurchase programs was  $ 159,807 .  Accumulated Other Comprehensive Loss The components within AOCL recorded in the  condensed consolidated balance sheets , were as follows:   September 30, 2020   March 31, 2020 Unrealized loss on cash flow hedges, net of tax $ ( 447 )   $ — Cumulative foreign currency translation loss ( 18,511 )   ( 25,559 ) Total  $ ( 18,958 )   $ ( 25,559 ) 18 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Note 11.  Basic and Diluted Shares The reconciliation of basic to diluted weighted-average common shares outstanding was as follows:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Basic 28,046,000   28,483,000   28,024,000   28,785,000 Dilutive effect of equity awards 289,000   222,000   290,000   254,000 Diluted 28,335,000   28,705,000   28,314,000   29,039,000                 Excluded*               Annual RSUs and Annual PSUs —   54,000   23,000   52,000 LTIP PSUs 153,000   153,000   153,000   153,000 LTIP NQSOs —   170,000   —   170,000 Deferred Non-Employee Director Equity Awards —   —   3,000   — *  The equity awards excluded from the calculation of the dilutive effect have been excluded due to one of the following: (1) the shares were anti-dilutive; (2) the necessary conditions had not been satisfied for the shares to be deemed issuable based on the Company's performance for the relevant performance period; or (3) the Company recorded a net loss during the period presented (such that inclusion of these equity awards in the calculation would have been anti-dilutive). The number of shares stated for each of these excluded awards is the maximum number of shares issuable pursuant to these awards. For those awards subject to the achievement of performance criteria, the actual number of shares to be issued pursuant to such awards will be based on Company performance in future periods, net of forfeitures, and may be materially lower than the number of shares presented (which could result in a lesser dilutive effect).  Refer to  Note 8, “Stock-Based Compensation,”  in our  2020 Annual Report  for further information on previously granted awards under the Company's equity incentive plans. Note 12.   Reportable Operating Segments Information reported to the Chief Operating Decision Maker (CODM), who is the Company's Principal Executive Officer (PEO), is organized into the Company's  six  reportable operating segments and is consistent with how the CODM evaluates performance and allocates resources. The Company does not consider international operations to be a separate reportable operating segment, and the CODM reviews such operations in the aggregate with the reportable operating segments.  The Company evaluates reportable operating segment performance primarily based on net sales and income (loss) from operations. The wholesale operations of each brand are generally managed separately because each requires different marketing, research and development, design, sourcing, and sales strategies. The income (loss) from operations of each of the reportable operating segments includes only those costs which are specifically related to each reportable operating segment, which consist primarily of cost of sales, research and development, design, sales and marketing, depreciation, amortization, and the direct costs of employees within those reportable operating segments. The Company does not allocate corporate overhead costs or non-operating income and expenses to reportable operating segments, which include unallocable overhead costs associated with distribution centers, certain executive and stock-based compensation, accounting, finance, legal, information technology, human resources, and facilities, among others. Inter-segment sales from the Company’s wholesale reportable operating segments to the DTC reportable operating segment are at the Company’s cost, and there is no inter-segment profit on these inter-segment sales, nor are they reflected in income (loss) from operations of the wholesale reportable operating segments.  19 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Reportable operating segment information, with a reconciliation to the  condensed consolidated statements of comprehensive income , was as follows:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Net sales                UGG brand wholesale $ 291,994   $ 332,020   $ 335,422   $ 417,420 HOKA brand wholesale 108,117   60,959   178,736   124,965 Teva brand wholesale 17,746   17,091   39,157   47,922 Sanuk brand wholesale 6,085   8,166   13,313   22,773 Other brands wholesale 27,672   25,282   28,307   27,009 Direct-to-Consumer 171,911   98,687   311,759   178,955 Total $ 623,525   $ 542,205   $ 906,694   $ 819,044   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 Income (loss) from operations               UGG brand wholesale $ 106,726   $ 135,663   $ 102,991   $ 145,104 HOKA brand wholesale 33,826   14,054   51,061   25,412 Teva brand wholesale 4,762   3,523   8,964   11,839 Sanuk brand wholesale 1,139   238   1,627   2,173 Other brands wholesale 9,869   6,958   8,599   7,090 Direct-to-Consumer 43,284   2,935   74,311   ( 1,637 ) Unallocated overhead costs ( 71,002 )   ( 66,240 )   ( 126,648 )   ( 124,267 ) Total $ 128,604   $ 97,131   $ 120,905   $ 65,714 Assets allocated to each reportable operating segment include trade accounts receivable, net, inventories, net, property and equipment, net, operating lease assets, goodwill, other intangible assets, net, and certain other assets that are specifically identifiable for one of the Company's reportable operating segments. Unallocated assets are those assets not directly related to a specific reportable operating segment and generally include cash and cash equivalents, deferred tax assets, net, and various other corporate assets shared by the Company's reportable operating segments.   20 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Assets allocated to each reportable operating segment, with a reconciliation to the  condensed consolidated balance sheets , were as follows:   September 30, 2020   March 31, 2020 Assets       UGG brand wholesale $ 565,523   $ 245,239 HOKA brand wholesale 135,038   124,958 Teva brand wholesale 44,424   90,305 Sanuk brand wholesale 38,154   50,314 Other brands wholesale 53,353   21,535 Direct-to-Consumer 240,374   243,489 Total assets from reportable operating segments 1,076,866   775,840 Unallocated cash and cash equivalents 626,414   649,436 Unallocated deferred tax assets, net 27,372   28,233 Unallocated other corporate assets 319,696   311,609 Total $ 2,050,348   $ 1,765,118 Note 13.   Concentration of Business  Regions and Customers The Company sells its products to customers throughout the US and to foreign customers in various countries, with concentrations that were as follows:   Three Months Ended September 30,   Six Months Ended September 30,   2020   2019   2020   2019 International net sales $ 196,113   $ 184,234   $ 294,982   $ 293,778 % of net sales 31.5 %   34.0 %   32.5 %   35.9 % Net sales in foreign currencies $ 156,671   $ 159,059   $ 212,354   $ 218,416 % of net sales 25.1 %   29.3 %   23.4 %   26.7 % Ten largest customers as % of net sales 31.9 %   36.6 %   27.3 %   30.4 % For the  three and six months ended September 30, 2020  and  2019 ,  no  single foreign country comprised  10.0%  or more of the Company's total net sales.  No  single customer comprised  10.0%  or more of the Company's total net sales during the  three and six months ended September 30, 2020  and  2019 . The Company sells its products to customers for trade accounts receivable and,  as of September 30, 2020 , had  two  customers that individually exceeded  10.0%  of trade accounts receivable, net, compared to  no  single customer that exceeded  10.0%  of trade accounts receivable, net,  as of March 31, 2020 . Management performs regular evaluations concerning the ability of the Company’s customers to satisfy their obligations to the Company and recognizes an allowance for doubtful accounts based on these evaluations. Suppliers The Company's production is concentrated at a limited number of independent manufacturing factories, primarily in Asia. Sheepskin is the principal raw material for certain UGG brand products and most of the Company's sheepskin is purchased from  two  tanneries in China, which is sourced primarily from Australia and the United Kingdom. The Company believes significant factors affecting the price of sheepskin include weather patterns, harvesting decisions, incidence of disease, the price of other commodities such as wool and leather, the demand for the Company's products and the products of its competitors, the use of substitute products or components, and global economic conditions.  21 Table of Contents DECKERS OUTDOOR CORPORATION AND SUBSIDIARIES NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) For the Three and Six Months Ended September 30, 2020 and 2019 (dollar amounts in thousands, except share and per share data) Long-Lived Assets Long-lived assets, which consist of property and equipment, net, recorded in the  condensed consolidated balance sheets , were as follows:   September 30, 2020   March 31, 2020 US $ 194,185   $ 194,679 Foreign* 13,727   14,358 Total $ 207,912   $ 209,037 * No  single foreign country’s property and equipment, net, comprised  10.0%  or more of the Company’s total property and equipment, net,  as of September 30, 2020  and  March 31, 2020 . 22 Table of Contents Item 2.  Management's Discussion and Analysis of Financial Condition and Results of Operations The following discussion of our financial condition and results of operations should be read together with our  condensed consolidated financial statements  and the related notes, included in  Part I, Item 1  of this  Quarterly Report , and the audited consolidated financial statements included in Part II, Item 8 of our  2020 Annual Report . This section contains forward-looking statements that are based on our current expectations and reflect our plans, estimates, and anticipated future financial performance. These statements involve numerous risks and uncertainties. Our actual results may differ materially from those expressed or implied by these forward-looking statements as a result of many factors, including those set forth in  Part II, Item 1A,   "Risk Factors,"  and  “Cautionary Note Regarding Forward-Looking Statements”  in this  Quarterly Report . Overview We are a global leader in designing, marketing, and distributing innovative footwear, apparel, and accessories developed for both everyday casual lifestyle use and high-performance activities. We market our products primarily under five proprietary brands: UGG, HOKA, Teva, Sanuk, and Koolaburra. We believe that our products are distinctive and appeal broadly to women, men, and children. We sell our products through quality domestic and international retailers, international distributors, and directly to our consumers both domestically and internationally through our DTC business, which is comprised of our retail stores and e-commerce websites. We seek to differentiate our brands and products by offering diverse lines that emphasize authenticity, functionality, quality, and comfort, and products tailored to a variety of activities, seasons, and demographic groups. All of our products are currently manufactured by independent third-party manufacturers. Trends and Uncertainties Impacting Our Business  During early calendar year 2020, the COVID-19 pandemic (pandemic) spread globally, including throughout the geographic regions in which we operate our business, and in which our wholesale customers, retail stores, manufacturers, and suppliers are located. As of the date of this  Quarterly Report , there continue to be widespread concerns about the ongoing impacts and disruptions caused by the pandemic, including the potential for additional waves of the pandemic which may vary by geographic region. In response to the pandemic, many federal, state, local, and foreign governments put in place, and others in the future may put in place, various orders and restrictions in an attempt to control the spread and mitigate the impact of the disease. These governmental restrictions, as well as other changes in consumer behavior in response to the pandemic, have resulted in the closure of businesses, increased unemployment rates, reduced consumer confidence, continued “social distancing” restrictions, reduced tourist activity, work-from-home policies, and other widespread changes that have led to significant uncertainty and disruptions to businesses and financial markets. The overall impact of the pandemic on our business and future results of operations continues to be highly uncertain and subject to change, and we are not able to accurately predict the magnitude or scope of such impacts at this time. However, we believe that the actions we are taking to respond to the pandemic, combined with our strong brands, diversified product portfolio, and favorable liquidity position, have created an important foundation that will position us to emerge from this pandemic operationally sound and poised for continued long-term growth. Our business and the industry in which we operate continue to be impacted by several important trends and uncertainties, including the pandemic, as follows:  Retail Environment  • As a result of various government orders and restrictions imposed in connection with the pandemic, as well as changes in consumer behavior in response, we closed many of our company-owned-and-operated stores at the beginning of our first fiscal quarter ended June 30, 2020. However, approximately   95% of our global retail stores were open for the entire second fiscal quarter, although, in most cases, with limited capacity due to enhanced health and safety protocols. We expect some retail store closures for at least a portion of the third fiscal quarter based on recently imposed governmental restrictions and local authority mandates. In addition, given the ongoing and uncertain pandemic conditions, including the potential for additional waves of the pandemic and additional operating limitations based on expert agency guidance, there is a risk of ongoing or additional retail store closures and operating limitations.  23 Table of Contents • We expect the scope of allowable retail activities and retail consumer traffic patterns to vary by geographic region due to restrictions imposed by governmental authorities and expert agencies, the demand for our products and consumer response to the pandemic, and the actual and expected regional impact of the pandemic. In an attempt to mitigate the impact of operating our retail stores at limited capacity, we have expanded the use of technology at these locations, including the implementation of mobile point-of-sales systems. However, notwithstanding these efforts, we could experience decreased demand or capacity threshold constraints at our retail stores during the holiday season due to social distancing restrictions, limitations on staffing, or changes in consumer behavior in response to the pandemic. • We believe that many of our wholesale customers and retail partners experienced retail store closures and re-openings similar to our company-owned retail stores during the six months ended September 30, 2020. Although many of our wholesale customers have reopened their retail stores, we believe that many of these stores continue to operate at limited capacity and could continue to experience limited operations or additional closures depending on the future impact of the pandemic.  E-Commerce Environment • We operate our e-commerce business through various websites and platforms, which have remained operational throughout the pandemic, and we expect they will continue to remain operational. To help drive digital conversion in Europe, we have recently expanded consumer access and improved ease of use by offering additional languages, currencies, and local payment types to our e-commerce platform.  • Even prior to the retail store operating disruptions resulting from the pandemic, we observed a meaningful shift in the way consumers shop for products and make purchasing decisions, evidenced by significant and prolonged decreases in consumer retail store activity as consumers accelerated their migration to online shopping. These trends have been positively impacting the performance of our e-commerce business, while creating headwinds for our traditional retail business, as well as the retail businesses of our wholesale customers and retail partners. • During the six months ended September 30, 2020,   we observed strong demand across all of our brands within our e-commerce business, particularly within the UGG and HOKA brands. We also observed that our wholesale customers with an established e-commerce presence, experienced similarly strong demand trends, although such trends vary from customer to customer. We continue to see demand for our products, especially within the UGG and HOKA brands, from a number of these wholesale customers as their sell-through of our products remains strong within their e-commerce platforms. In future periods, we do not expect the growth rate that our e-commerce business experienced during the six months ended September 30, 2020 to continue to occur or that our e-commerce business will be able to offset a possible reduction in UGG brand sales within our wholesale and retail businesses during peak season resulting from the impacts of the pandemic.  • We expect our e-commerce business will continue to be a driver of long-term growth, although the growth rate will be unpredictable and may not be in line with our historical experience. Additionally, we do not expect that the growth rate that our e-commerce business experienced during the six months ended September 30, 2020 will continue throughout the fiscal year. We believe the key factors impacting the growth rate of our e-commerce business will include consumer demand for our products, our ability to fulfill orders through our limited distribution center operations, the scope and duration of the pandemic, and the impact of the pandemic on unemployment rates, consumer confidence, discretionary spending, and economic conditions .   Brand Strategy   • In response to the pandemic, we are exercising discipline by focusing on key products that have achieved sustained success with consumers, delaying product launches, and consolidating seasonal collections.  • Our ongoing strategic efforts to reduce the impact of seasonality on our results of operations have had a meaningful positive impact on the year-round performance of the HOKA and UGG brands.  24 Table of Contents Although we expect to continue to focus on reducing the impact of seasonality through innovation and the expansion of our product offerings over the long-term, and while HOKA brand net sales continue to increase as a percentage of our aggregate net sales, given the magnitude of the UGG brand relative to our other brands, the effect of seasonality on our aggregate net sales and results of operations may continue to be significant. The uncertainty surrounding the effect of the pandemic on our historical seasonality trends makes it more difficult for us to predict future demand for our products and manage our manufacturing and inventory, especially as we approach the typical peak season for the UGG brand. • Within the UGG brand, we have experienced strong sell-through of certain product lines, such as the slipper category, as we believe consumers are seeking out luxurious comfort in the current work-from-home environment. In addition, the UGG brand continues to experience success with counter-seasonal products, such as spring and summer collections for Women's, Men's, and Kid's categories. The brand is also having success attracting new and younger consumers. However, the UGG brand is experiencing some softness within the wholesale channel globally, in part due to the pandemic, but also due to our marketplace reset strategy in Europe.  • Within the HOKA brand, we continue to see strong demand across our product offerings through both wholesale and DTC channels, which we believe is being fueled by consumer demand for our products and an even greater emphasis on running and outdoor exercise as consumers seek to find healthy outlets during the pandemic. The significant growth of the HOKA brand’s year-round performance product offerings as a percentage of our aggregate net sales has had a meaningful positive impact on our seasonality trends, as well as our overall financial results. However, despite the recent growth and success of the HOKA brand, the impacts of the pandemic may cause a lower growth rate of HOKA brand sales in future periods than the growth rate we have recently experienced. • The Sanuk and Teva brands wholesale channel results of operations during the six months ended September 30, 2020 experienced a disproportionate negative impact from the pandemic as the highest percentage of net sales for these brands typically occur during our fourth fiscal quarter and first fiscal quarter. We are actively monitoring the cost structures associated with these brands.  Supply Chain • We maintain a network of strategic sourcing partners which includes material vendors and third-party manufacturers. We experienced certain capacity constraints within our sourcing network during the six months ended September 30, 2020, in addition to disruptions related to travel restrictions between countries and production facilities. While the effects of these disruptions have been mitigated thus far, and we are not experiencing any major sourcing or manufacturing disruptions at this time, it is possible that we will experience disruptions to our supply chain in the future. • Our Moreno Valley, California, distribution center (DC), as well as our global third-party logistics providers (3PLs) and third-party carriers, remain open and continue to operate at reduced capacity and with limited and modified operations due to increased safety measures. These include inbound transportation such as ocean, air and ports, as well as outbound transportation, including truck and parcel. We are experiencing, and our 3PLs and third-party carriers are experiencing, certain operational and logistical challenges as a result of limited and modified operations, including challenges associated with shipping higher quantities of product through our e-commerce channel compared to prior periods, and a higher volume of wholesale shipments as we approach the peak selling season for the UGG brand. These impacts have had, and may continue to have, an adverse effect on our results of operations. Additionally, in order to promote the health and safety of our DC employees, we continue to adhere to enhanced safety measures and protocols at our DC, including strict social distancing requirements which is limiting our personnel capacity, as well as heightened cleaning of the facility in accordance with Center for Disease Control and Prevention guidelines. • We are working to mitigate the anticipated impact of limited and modified operations on our peak selling season, including the potential for loss of sales and reputational harm with wholesale customers. These efforts include phasing certain wholesale shipments earlier than in previous fiscal years, which  25 Table of Contents could result in changes in the timing of the realization of net sales as compared to prior periods. These efforts also include increasing throughput for our e-commerce business due to higher expected volume compared to the prior period, while prioritizing and potentially limiting certain operations within our warehouse to accommodate social distancing and other employee safety measures. However, we may be unsuccessful in these efforts, which could have a negative impact on our results of operations in future periods. • We are encountering challenges in attracting and retaining quality candidates to staff our DC operations as we increasingly compete with other companies with growing e-commerce operations. For example, during the past two fiscal years, we have significantly increased certain DC employee wages in an effort to attract and retain talent. Although growing unemployment rates resulting from the pandemic may result in a larger short-term pool of employee candidates, we may face ongoing challenges with recruiting and training employees as our competitors grow their e-commerce channels and require additional warehouse and DC staff. Omni-Channel Strategy • We have implemented a product segmentation strategy, as well as an allocation strategy for the UGG brand’s core Classics franchise in the US wholesale marketplace. These strategies are designed to assist us in controlling product inventory, reducing the impact of discounts and closeouts on our sales and gross margins, and increasing full-priced selling across our product offerings. Similarly, we are implementing a multi-year marketplace reset strategy in Europe to drive UGG brand heat and build a foundation of diversified product acceptance. We expect the pandemic will delay or mitigate the benefits we may receive from these strategies. In addition, notwithstanding the implementation of these strategies, in light of the current marketplace environment, we are approaching the planning for the UGG brand's peak selling season with caution as we expect it may be highly competitive and feature increased levels of promotional activity relative to recent periods. • As a result of changes in consumer purchasing behavior, we continue to invest in and enhance our omni-channel strategy to bolster our e-commerce capabilities and enable us to better engage existing and prospective consumers and expose them to our brands. Our strategy is transforming the way we approach marketing, including through a sustained focus on our targeted digital marketing efforts, as well as localized marketing activations, authentic collaborations, and product seeding to drive global brand heat. For example, we have begun applying these transformation efforts in Europe and Asia to drive UGG brand heat as we work to differentiate consumer experiences across various consumer touch points as part of our marketplace reset strategy. In addition, we have recently launched international loyalty programs in our DTC business. Further, and in response to the pandemic, we have enhanced our focus on adaptive digital marketing, including virtual events and programs, as we seek to target consumers within the work-from-home environment and promote products that are desirable based on current consumer preferences, working conditions, and lifestyle choices.  Liquidity • We believe we are in a strong financial position to respond to the disruptions and uncertainties caused by the pandemic. Notwithstanding the challenging environment,  as of September 30, 2020 , our cash and cash equivalents balance was  $626,414 , and we had available borrowings of  $462,606  under our revolving credit facilities, providing a strong liquidity position of approximately $1,100,000. We are currently in compliance with, and expect to remain in compliance, with all financial and non-financial covenants under our revolving credit facilities and mortgage. Refer to sections “Liquidity” and “Capital Resources” below, within this Part I, Item 2, for further information. • We did not repurchase any shares during the  six months ended September 30, 2020 . However, we may recommence repurchase activity under our stock repurchase programs in future periods at our discretion.  • We are working closely with our wholesale customers, as well as our manufacturers and suppliers, to manage accounts receivable and accounts payable to maximize the availability of working capital as well as leveraging government relief packages that provide certain payroll tax credits and deferrals.  26 Table of Contents Operating Expenses • To mitigate the adverse impact the pandemic may have on our business and operations, we expect to continue to manage expenses. In particular, we have implemented a number of temporary measures to reduce operating expenses during the six months ended September 30, 2020, including: ◦ restricting employee travel; ◦ canceling or postponing certain events, trainings, and conferences;  ◦ converting meetings with current and prospective customers to a virtual platform; ◦ suspending hiring of certain non-essential employees and annual salary increases; ◦ eliminating or deferring discretionary expenditures;  ◦ seeking payment accommodations or deferrals; and ◦ furloughing certain retail employees while stores are closed. • We also believe the significant changes we implemented in connection with our previously completed restructuring and operating profit improvement plans will help mitigate potential negative impacts on our gross margins resulting from the pandemic.  Reportable Operating Segment Overview Our  six  reportable operating segments include the worldwide wholesale operations of the UGG brand, HOKA brand, Teva brand, Sanuk brand, and Other brands, as well as DTC. Information reported to the CODM, who is our PEO, is organized into these reportable operating segments and is consistent with how the CODM evaluates our performance and allocates resources. UGG Brand.   The UGG brand is one of the most iconic and recognized brands in our industry, which highlights our successful track record of building niche brands into lifestyle and fashion market leaders. With loyal consumers around the world, the UGG brand has proven to be a highly resilient line of premium footwear, apparel, and accessories with expanded product offerings and a growing global audience that appeals to women, men, and children.  We believe demand for UGG brand products will continue to be driven by the following: • High consumer brand loyalty due to consistent delivery of quality and luxuriously comfortable footwear, apparel, and accessories. • Diversification of our footwear product offerings, such as women's spring and summer lines, as well as expanded category offerings for men's, apparel, and accessories. HOKA Brand .  The HOKA brand is an authentic premium line of year-round performance footwear and apparel that offers enhanced cushioning and inherent stability with minimal weight. Originally designed for ultra-runners, the brand now appeals to athletes around the world, regardless of activity. The HOKA brand is quickly becoming a leading brand within run specialty wholesale accounts, with strong marketing fueling both domestic and international sales growth. We continue to build product extensions in trail and fitness.  We believe demand for HOKA brand products will continue to be driven by the following:  • Leading product innovation and key franchise management. • Increased brand awareness through enhanced marketing activations. • Category extensions in authentic performance footwear offerings. Teva Brand .  The Teva brand, which pioneered the sport sandal category, is born from the outdoors and rooted in adventure. The Teva brand is a global leader within the sport sandal and modern outdoor lifestyle categories by fueling the expression of freedom. The Teva brand’s product offerings include sandals, shoes, and boots. Sanuk Brand .  The Sanuk brand originated in Southern California surf culture and has emerged into a lifestyle brand with a presence in the relaxed casual shoe and sandal categories. The Sanuk brand’s use of unexpected materials and unconventional constructions, combined with its fun and playful branding, are key elements of the brand's identity. 27 Table of Contents Other Brands .   O ther brands currently consist of the Koolaburra by UGG brand. The Koolaburra brand is a casual footwear fashion line using sheepskin and other plush materials and is intended to target the value-oriented consumer in order to complement the UGG brand offering. Direct-to-Consumer .  Our DTC business for all our brands is comprised of our retail stores and e-commerce websites which, in an omni-channel marketplace, are intertwined and interdependent. We believe many of our consumers interact with both our retail stores and websites before making purchasing decisions.  Retail Business.  Our retail stores are predominantly UGG brand concept stores and UGG brand outlet stores. Through our outlet stores, we sell some of our discontinued styles from prior seasons, full price in-line products, as well as products made specifically for the outlet stores.  As of September 30, 2020 , we had a total of  141  global retail stores, which includes  72  concept stores and  69  outlet stores. Generally, we open retail store locations during the second or third fiscal quarters and consider closures of retail stores during the fourth fiscal quarter. We evaluate retail store closures based on store performance and timing of lease expirations and options. While we expect to identify additional stores for closure, we may simultaneously identify opportunities to open new stores in the future to further enhance our overall DTC business. We currently do not anticipate incurring material incremental retail store closure costs, primarily because any store closures we may pursue are expected to occur as retail store leases expire to avoid incurring potentially significant lease termination costs, as well as through conversions to partner retail stores, further discussed below. We will continue to evaluate our retail store fleet strategy in response to changes in consumer demand and retail store traffic patterns. Flagship Stores.  Included in the total count of global concept stores are  eight  UGG brand flagship stores, which are lead concept stores in certain key markets and prominent locations designed to showcase the UGG brand products. Primarily located in major tourist locations, these stores are typically larger with broader product offerings and greater traffic than our general concept stores. The net sales for these stores are recorded in our DTC reportable operating segment. Shop-in-Shop Stores.  Included in the total count of global concept stores are  26  shop-in-shop (SIS) stores, defined as concept stores for which we own the inventory and that are operated by us or non-employees within a department store, which we lease from the store owner by paying a percentage of SIS store sales. The net sales for these stores are recorded in our DTC reportable operating segment.   Partner Retail Stores.  We rely on partner retail stores for the UGG brand and Sanuk brand in certain markets. Partner retail stores are branded stores that are wholly-owned and operated by third-parties and not included in the total count of global retail stores. When a partner retail store is opened, or a store is converted into a partner retail store, the related net sales are recorded in either the UGG brand or Sanuk brand wholesale reportable operating segments, as applicable.  E-Commerce Business . Our e-commerce business provides us with an opportunity to communicate a consistent brand message to consumers that is in line with our brands' promises, drives awareness of key brand initiatives, offers targeted information to specific consumer demographics, and drives consumers to our retail stores.  As of September 30, 2020 , we operated our e-commerce business through company-owned websites and mobile platforms in  58  different countries, which increased from ten different countries disclosed in our 2020 Annual Report due to expansions in Europe.  Use of Non-GAAP Financial Measures Throughout this  Quarterly Report , we provide certain financial information on a constant currency basis, excluding the effect of foreign currency exchange rate fluctuations, which we disclose in addition to the financial measures calculated and presented in accordance with US GAAP. We provide these non-GAAP financial measures to provide information that may assist investors in understanding our financial results and assessing our prospects for future performance. Constant currency measures should not be considered in isolation as an alternative to US dollar measures that reflect current period foreign currency exchange rates or to other financial measures presented in accordance with US GAAP. We believe evaluating certain financial and operating measures on a constant currency basis is important as it excludes the impact of foreign currency exchange rate fluctuations that are unrelated to, and may not be indicative of, our core results of operations. However, the information included in this  Quarterly Report  that is presented on a constant currency basis, as we present such information, may not necessarily be comparable to similarly titled  28 Table of Contents information presented by other companies, and may not be appropriate measures for comparing the performance of other companies relative to us. For example, in order to calculate our constant currency information, we calculate the current period financial information using the foreign currency exchange rates that were in effect during the previous comparable period, excluding the effects of foreign currency exchange rate hedges and re-measurements in the  condensed consolidated financial statements . Further, we report comparable DTC sales on a constant currency basis for DTC operations that were open throughout the current and prior reporting periods, and we may adjust prior reporting periods to conform to current year accounting policies. These non-GAAP financial measures are not intended to represent and should not be considered to be more meaningful measures than, or alternatives to, measures of operating performance as determined in accordance with US GAAP. Seasonality Our business is seasonal, with the highest percentage of UGG and Koolaburra brand net sales occurring in the quarters ending September 30th and December 31st and the highest percentage of Teva and Sanuk brand net sales occurring in the quarters ending March 31st and June 30th. Net sales for the HOKA brand occur more evenly throughout the year reflecting the brand's year-round performance product offerings. Due to the magnitude of the UGG brand relative to our other brands, our aggregate net sales in the quarters ending September 30th and December 31st have significantly exceeded our aggregate net sales in the quarters ending March 31st and June 30th. As we continue to take steps to diversify and expand our product offerings by creating more year-round styles, and as net sales of the HOKA brand continue to increase as a percentage of our aggregate net sales, we expect the seasonality impacts to decrease over time. However, it is unclear whether seasonal impacts will be minimized or exaggerated in future periods as a result of the disruptions and uncertainties caused by the pandemic. 29 Table of Contents Results of Operations Three Months Ended September 30, 2020   Compared to  Three Months Ended September 30, 2019 . The following table summarizes our results of operations:   Three Months Ended September 30,   2020   2019   Change   Amount   %   Amount   %   Amount   % Net sales $ 623,525   100.0 %   $ 542,205   100.0  %   $ 81,320   15.0  % Cost of sales 304,548   48.8   269,181   49.6   (35,367 )   (13.1 ) Gross profit 318,977   51.2   273,024   50.4   45,953   16.8 Selling, general and administrative expenses 190,373   30.6   175,893   32.4   (14,480 )   (8.2 ) Income from operations 128,604   20.6   97,131   18.0   31,473   32.4 Other expense (income), net 640   0.1   (92 )   —   (732 )   (795.7 ) Income before income taxes 127,964   20.5   97,223   18.0   30,741   31.6 Income tax expense 26,410   4.2   19,413   3.6   (6,997 )   (36.0 ) Net income 101,554   16.3   77,810   14.4   23,744   30.5 Total other comprehensive income (loss), net of tax 5,595   0.9   (1,894 )   (0.4 )   7,489   395.4 Comprehensive income $ 107,149   17.2 %   $ 75,916   14.0  %   $ 31,233   41.1  %                         Net income per share                       Basic $ 3.62       $ 2.73       $ 0.89     Diluted $ 3.58       $ 2.71       $ 0.87     Net Sales.  The following table summarizes our net sales by location, and by brand and channel:   Three Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Net sales by location               US $ 427,412   $ 357,971   $ 69,441   19.4  % International 196,113   184,234   11,879   6.4 Total $ 623,525   $ 542,205   $ 81,320   15.0  %                 Net sales by brand and channel               UGG brand               Wholesale $ 291,994   $ 332,020   $ (40,026 )   (12.1 )% Direct-to-Consumer 123,083   72,856   50,227   68.9 Total 415,077   404,876   10,201   2.5 HOKA brand               Wholesale 108,117   60,959   47,158   77.4 Direct-to-Consumer 34,980   17,150   17,830   104.0 Total 143,097   78,109   64,988   83.2 Teva brand               Wholesale 17,746   17,091   655   3.8 Direct-to-Consumer 9,972   5,907   4,065   68.8 Total 27,718   22,998   4,720   20.5 30   Three Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Sanuk brand               Wholesale 6,085   8,166   (2,081 )   (25.5 ) Direct-to-Consumer 3,396   2,538   858   33.8 Total 9,481   10,704   (1,223 )   (11.4 ) Other brands               Wholesale 27,672   25,282   2,390   9.5 Direct-to-Consumer 480   236   244   103.4 Total 28,152   25,518   2,634   10.3 Total $ 623,525   $ 542,205   $ 81,320   15.0  %                 Total Wholesale $ 451,614   $ 443,518   $ 8,096   1.8  % Total Direct-to-Consumer 171,911   98,687   73,224   74.2 Total $ 623,525   $ 542,205   $ 81,320   15.0  % Total net sales increased primarily due to higher HOKA brand wholesale sales and DTC sales across all brands, partially offset by lower UGG brand wholesale sales. Further, we experienced an increase of  19.6%  in total volume of pairs sold to  11,000  from  9,200  compared to the prior period. On a constant currency basis, net sales increased by  14.1%  compared to the prior period. Drivers of significant changes in net sales were as follows:  • Wholesale net sales of the HOKA brand increased due to the global expansion of market share, primarily due to increased brand awareness combined with key franchise updates and product launches during the second fiscal quarter that were delayed from the first fiscal quarter. • Wholesale net sales of the UGG brand decreased primarily due to lower global sell-in of product. This was primarily driven by more conservative purchasing from our global wholesale partners due to the pandemic. International wholesale sales were also lower due to the continued marketplace strategies in Europe and Asia. On a constant currency basis, wholesale net sales of the UGG brand decreased by  13.0% , compared to the prior period. • DTC net sales increased due to higher e-commerce net sales across all brands, primarily for the UGG and HOKA brands. Comparable DTC net sales for the  13  weeks ended  September 27, 2020  increased by  86.2% , compared to the same prior period, primarily due to global growth through customer acquisition in our e-commerce business driven by an acceleration of the shift in the way consumers shop for products as a result of the pandemic.   • International sales, which are included in the reportable operating segment sales presented above, represented  31.5%  and  34.0%  of total net sales for the  three months ended September 30, 2020  and  2019 , respectively. The decrease in international net sales as a percentage of total sales was primarily driven by higher domestic sales as a percentage of worldwide sales due to higher e-commerce sales. However, international net sales increased by  6.4%  compared to the prior period. The increase in international sales was primarily due to higher net sales for the HOKA brand primarily in Europe and Asia, partially offset by lower net sales in the wholesale channel for the UGG brand.   Gross Profit.   Gross profit as a percentage of net sales, or gross margin, increased to  51.2%  from  50.4%  compared to the prior period, primarily due to a favorable channel mix resulting from increased penetration of DTC, favorable brand mix for the HOKA brand, as well as favorable changes in foreign currency exchange rates. Selling, General and Administrative Expenses.   The net increase in SG&A expenses, compared to the prior period, was primarily the result of: • Increased variable advertising and promotion expenses of approximately $8,900, primarily due to regional marketing development costs such as websites and other media. 31 • Increased payroll costs of approximately $6,500, primarily due to higher warehousing costs and headcount. • Increased other variable net selling expenses of approximately $5,800, including transaction fees and warehousing and shipping costs, primarily due to higher DTC sales and commissions. • Increased expenses for allowances for trade accounts receivable of approximately $2,600, primarily due to an increase in bad debt expense to account for the higher risk of wholesale customer payment defaults resulting from the pandemic. • Decreased variable operating expenses of approximately $4,500, primarily due to lower travel expenses and professional fees. • Decreased rent and occupancy expenses of approximately $3,000, primarily due to lower retail store operating costs, including due to a lower company-owned retail store count. • Decreased foreign currency-related losses of $2,000, primarily driven by favorable changes in foreign currency exchange rates for Asian and European currencies. Income from Operations.   Income from operations by reportable operating segment were as follows:   Three Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Income (loss) from operations               UGG brand wholesale $ 106,726   $ 135,663   $ (28,937 )   (21.3 )% HOKA brand wholesale 33,826   14,054   19,772   140.7 Teva brand wholesale 4,762   3,523   1,239   35.2 Sanuk brand wholesale 1,139   238   901   378.6 Other brands wholesale 9,869   6,958   2,911   41.8 Direct-to-Consumer 43,284   2,935   40,349   1,374.8 Unallocated overhead costs (71,002 )   (66,240 )   (4,762 )   (7.2 ) Total $ 128,604   $ 97,131   $ 31,473   32.4  % The increase in total income from operations, compared to the prior period, was due to higher net sales at higher gross margins, primarily driven by our DTC business and HOKA brand wholesale, partially offset by higher SG&A expenses. Drivers of significant net changes in total income from operations, compared to the prior period, are set forth below. • The increase in income from operations of DTC was primarily due to higher net sales at higher gross margins, partially offset by higher variable marketing and selling expenses. • The decrease in income from operations of UGG brand wholesale was due to lower net sales at lower gross margins and higher bad debt expense, partially offset by lower variable selling and marketing expenses.  • The increase in income from operations of HOKA brand wholesale was primarily due to higher net sales, partially offset by higher variable marketing expenses.  • The increase in unallocated overhead costs was primarily due to higher warehousing expenses, including for payroll and outside services, partially offset by lower travel expenses and lower foreign currency-related losses driven by favorable changes in foreign currency exchange rates for all operational foreign currencies.  32 Other Expense (Income), Net.  The increase in total other expense, net, compared to the prior period, was primarily due to a decrease in interest income driven by lower average interest rates, partially offset by higher average invested cash balances. Income Tax Expense.   Income tax expense and our effective income tax rate were as follows:   Three Months Ended September 30,   2020   2019 Income tax expense $ 26,410   $ 19,413 Effective income tax rate 20.6 %   20.0 % The increase in our effective income tax rate, compared to the prior period, was primarily due to changes in the jurisdictional mix of worldwide income before income taxes forecasted for the  fiscal year ending March 31, 2021 , partially offset by lower discrete tax expenses, primarily driven by reduced unrecognized tax benefits recorded in the current period. Foreign income before income taxes was  $49,793  and  $46,002   and worldwide income before income taxes was  $127,964  and  $97,223  during the  three months ended September 30, 2020   and  2019 , respectively. The decrease in foreign income before income taxes, as a percentage of worldwide income before income taxes, compared to the prior period, was primarily due to higher domestic sales as a percentage of worldwide sales.  Refer to the section “ Six Months Ended September 30, 2020  Compared to  Six Months Ended September 30, 2019 " within this  Part I, Item 2,  for further details on our pre-tax earnings and effective income tax rate for the  fiscal year ending March 31, 2021 . Net Income.   Net income increased, compared to the prior period, primarily due to higher net sales at higher gross margins, partially offset by higher SG&A expenses. Net income per share increased, compared to the prior period, primarily due to higher net income, combined with lower weighted-average common shares outstanding, driven by stock repurchases in prior periods. Total Other Comprehensive Income (Loss), Net of Tax.  Other comprehensive income, net of tax, increased, compared to the prior period, primarily due to higher foreign currency translation gains relating to changes to our net asset position   driven by favorable Asian and European foreign currency exchange rates, partially offset by unrealized losses on cash flow hedges. 33 Table of Contents Six Months Ended September 30, 2020  Compared to  Six Months Ended September 30, 2019 . The following table summarizes our results of operations:   Six Months Ended September 30,   2020   2019   Change   Amount   %   Amount   %   Amount   % Net sales $ 906,694   100.0 %   $ 819,044   100.0  %   $ 87,650   10.7  % Cost of sales 445,151   49.1   416,001   50.8   (29,150 )   (7.0 ) Gross profit 461,543   50.9   403,043   49.2   58,500   14.5 Selling, general and administrative expenses 340,638   37.6   337,329   41.2   (3,309 )   (1.0 ) Income from operations 120,905   13.3   65,714   8.0   55,191   84.0 Other expense (income), net 1,013   0.1   (1,904 )   (0.3 )   (2,917 )   (153.2 ) Income before income taxes 119,892   13.2   67,618   8.3   52,274   77.3 Income tax expense 26,311   2.9   9,159   1.2   (17,152 )   (187.3 ) Net income 93,581   10.3   58,459   7.1   35,122   60.1 Total other comprehensive income (loss), net of tax 6,601   0.7   (2,143 )   (0.2 )   8,744   408.0 Comprehensive income $ 100,182   11.0 %   $ 56,316   6.9  %   $ 43,866   77.9  %                         Net income per share                       Basic $ 3.34       $ 2.03       $ 1.31     Diluted $ 3.30       $ 2.01       $ 1.29     Net Sales.   The following table summarizes our net sales by location, and by brand and channel:   Six Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Net sales by location               US $ 611,712   $ 525,266   $ 86,446   16.5  % International 294,982   293,778   1,204   0.4 Total $ 906,694   $ 819,044   $ 87,650   10.7  %                 Net sales by brand and channel               UGG brand               Wholesale $ 335,422   $ 417,420   $ (81,998 )   (19.6 )% Direct-to-Consumer 204,395   125,986   78,409   62.2 Total 539,817   543,406   (3,589 )   (0.7 ) HOKA brand               Wholesale 178,736   124,965   53,771   43.0 Direct-to-Consumer 73,379   32,668   40,711   124.6 Total 252,115   157,633   94,482   59.9 Teva brand               Wholesale 39,157   47,922   (8,765 )   (18.3 ) Direct-to-Consumer 23,805   13,360   10,445   78.2 Total 62,962   61,282   1,680   2.7 Sanuk brand               Wholesale 13,313   22,773   (9,460 )   (41.5 ) Direct-to-Consumer 9,402   6,629   2,773   41.8 Total 22,715   29,402   (6,687 )   (22.7 ) 34 Table of Contents   Six Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Other brands               Wholesale 28,307   27,009   1,298   4.8 Direct-to-Consumer 778   312   466   149.4 Total 29,085   27,321   1,764   6.5 Total $ 906,694   $ 819,044   $ 87,650   10.7  %                 Total Wholesale $ 594,935   $ 640,089   $ (45,154 )   (7.1 )% Total Direct-to-Consumer 311,759   178,955   132,804   74.2 Total $ 906,694   $ 819,044   $ 87,650   10.7  % Total net sales increased primarily due to higher HOKA brand wholesale sales and DTC sales across all brands, partially offset by lower UGG brand wholesale sales. Further, we experienced an increase of  7.8%  in total volume of pairs sold to  16,500  from  15,300   compared to the prior period. On a constant currency basis, net sales increased by  10.3% , compared to the prior period. Drivers of significant changes in net sales were as follows:  • Wholesale net sales of the UGG brand decreased primarily due to lower global sell-in of product, primarily driven by pandemic related sales losses resulting from decreased store traffic and more conservative purchasing from our global wholesale partners. International wholesale sales were also lower due to the continued marketplace strategies in Europe and Asia. On a constant currency basis, wholesale net sales of the UGG brand decreased by  20.3% , compared to the prior period. • Wholesale net sales of the HOKA brand increased due to global expansion of market share, primarily due to increased brand awareness combined with key franchise updates and new product launches. • Wholesale net sales of the Teva and Sanuk brands decreased primarily due to the pandemic related sales losses during the first fiscal quarter causing decreased store traffic for our wholesale customers during the respective brands' peak sell-in period. • DTC net sales increased due to higher e-commerce net sales across all brands, primarily for the UGG and HOKA brands, partially offset by negative impacts from company-owned retail store closures during the first fiscal quarter related to the pandemic. Due to the meaningful disruption of our retail store base during the first fiscal quarter, we are not reporting a comparable DTC net sales metric for the  six months ended September 30, 2020 .  • International net sales, which are included in the reportable operating segment net sales presented above, represented  32.5%  and  35.9%  of total net sales for the  six months ended September 30, 2020  and  2019 , respectively.   The decrease in international net sales as a percentage of total sales was primarily driven by higher domestic sales as a percentage of worldwide sales due to higher e-commerce sales. However, international net sales   increased by  0.4% , compared to the prior period, primarily due to higher net sales for the HOKA brand primarily in Europe and Asia, mostly offset by the lower net sales in the wholesale channel for the UGG brand. Gross Profit.   Gross profit as a percentage of net sales, or gross margin, increased to  50.9%  from  49.2% , compared to the prior period, primarily due to a favorable channel mix resulting from increased penetration of DTC as well as favorable brand mix for the HOKA brand. Selling, General and Administrative Expenses.   The net increase in SG&A expenses, compared to the prior period, was primarily the result of the following: • Increased expenses for allowances for trade accounts receivable of approximately $6,500, primarily due to an increase in bad debt expense to account for the higher risk of wholesale customer payment defaults resulting from the pandemic. 35 Table of Contents • Increased other variable net selling expenses of approximately $5,700, including transaction fees and warehousing and shipping costs, primarily due to higher DTC sales and commissions. • Increased variable advertising and promotion expenses of approximately $5,600, primarily due to regional marketing development costs such as websites and other media. • Increased payroll costs of approximately $4,100, primarily due to higher warehousing costs and headcount. • Increased impairments of operating lease and fixed assets of approximately $2,700 due to early store closures.  • Decreased variable operating expenses of approximately $11,900, primarily due to lower travel expenses and professional fees. • Decreased rent and occupancy expenses of approximately $6,000, primarily due to lower retail store operating costs, including due to a lower company-owned retail store count. • Decreased foreign currency-related losses of $2,600, primarily driven by favorable changes in foreign currency exchange rates for Asian and European currencies. • Decreased depreciation and amortization expenses of approximately $1,000, primarily due to certain property and equipment and intangible assets being fully amortized during the current period. Income from Operations.  Income from operations by reportable operating segment was as follows:   Six Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Income (loss) from operations               UGG brand wholesale $ 102,991   $ 145,104   $ (42,113 )   (29.0 )% HOKA brand wholesale 51,061   25,412   25,649   100.9 Teva brand wholesale 8,964   11,839   (2,875 )   (24.3 ) Sanuk brand wholesale 1,627   2,173   (546 )   (25.1 ) Other brands wholesale 8,599   7,090   1,509   21.3 Direct-to-Consumer 74,311   (1,637 )   75,948   4,639.5 Unallocated overhead costs (126,648 )   (124,267 )   (2,381 )   (1.9 ) Total $ 120,905   $ 65,714   $ 55,191   84.0  %   The increase in total income from operations, compared to the prior period, was due to higher net sales at higher gross margins, primarily driven by our DTC business and HOKA brand wholesale, partially offset by higher SG&A expenses. Drivers of significant net changes in total income from operations, compared to the prior period, were as follows: • The increase in income from our DTC business was primarily due to higher net sales at higher gross margins, as well as lower company-owned retail store operating costs primarily due to closures in the first fiscal quarter related to the pandemic, partially offset by higher variable marketing and selling expenses. • The decrease in income from operations of UGG brand wholesale was due to lower net sales at lower gross margins and higher bad debt expense, partially offset by lower variable selling and marketing expenses. • The increase in income from operations of HOKA brand wholesale was due to higher net sales, partially offset by lower gross margins. 36 Table of Contents • The increase in unallocated overhead costs was primarily due to higher warehousing expenses, including for payroll and outside services, partially offset by lower travel expenses and professional costs, as well as lower foreign currency-related losses driven by favorable changes in foreign currency exchange rates for all operational foreign currencies. Other Expense (Income), Net.  The increase in total other expense, net, compared to the prior period, was primarily due to a decrease in interest income driven by lower average interest rates, partially offset by higher average invested cash balances. Income Tax Expense.  Income tax expense and our effective income tax rate were as follows:   Six Months Ended September 30,   2020   2019 Income tax expense $ 26,311   $ 9,159 Effective income tax rate 21.9 %   13.5 % The increase in our effective income tax rate, compared to the prior period, was primarily due to changes in the jurisdictional mix of worldwide income before income taxes forecasted for the  fiscal year ending March 31, 2021  as well as a reduced tax benefit during the  six months ended September 30, 2020 , compared to the prior period, which recognized an increased tax benefit for the favorable settlement of a state income tax audit. These impacts were partially offset by reduced unrecognized tax benefits recorded for a prior year tax position in the current period. Foreign income before income taxes was  $49,797  and  $47,309  and worldwide income before income taxes was  $119,892  and  $67,618  during the  six months ended September 30, 2020  and  2019 , respectively. The decrease in foreign income before income taxes as a percentage of worldwide income before income taxes, compared to the prior period, was primarily due to higher domestic sales as a percentage of worldwide sales. For the  six months ended September 30, 2020  and  2019 , we did not generate significant pre-tax earnings from any countries which do not impose a corporate income tax.  We expect our foreign income or loss before income taxes, as well as our effective income tax rate, will continue to fluctuate from period to period based on several factors, including the impact of our global product sourcing organization, our actual results of operations from sales generated in domestic and foreign markets, and changes in domestic and foreign tax laws (or in the application or interpretation of those laws). Over the long-term, we believe the continuing evolution and expansion of our brands, our continuing strategy of enhancing product diversification, and the expected growth from our international DTC business will result in increases in foreign income before income taxes, both in absolute terms and as a percentage of worldwide income or loss before income taxes. In addition, we believe our effective income tax rate will be impacted by our actual foreign income or loss before income taxes relative to our actual worldwide income or loss before income taxes in future periods.  Net Income.   Net income increased, compared to the prior period, primarily due to higher net sales at higher gross margins, partially offset by higher SG&A expenses. Net income per share increased, compared to the prior period, primarily due to higher net income, combined with lower weighted-average common shares outstanding, driven by stock repurchases in prior periods. Total Other Comprehensive Income (Loss), Net of Tax.  Other comprehensive income, net of tax, increased, compared to the prior period, primarily due to higher foreign currency translation gains relating to changes to our net asset position driven by favorable Chinese and European foreign currency exchange rates, partially offset by unrealized losses on cash flow hedges. 37 Table of Contents Liquidity  We finance our working capital and operating requirements using a combination of our cash and cash equivalents balances, cash provided from ongoing operating activities, and, to a lesser extent, available borrowings under our revolving credit facilities. Our working capital requirements begin when we purchase raw materials and inventories and continue until we ultimately collect the resulting trade accounts receivable. Given the historical seasonality of our business, our working capital requirements fluctuate significantly throughout the fiscal year, and we are required to utilize available cash to build inventory levels during certain quarters in our fiscal year to support higher selling seasons. Although we expect to continue to focus on reducing the impact of seasonality over the long-term, the effect of seasonality on our aggregate net sales and results of operations may continue to be significant. While we are subject to uncertainty surrounding the pandemic, we believe our cash and cash equivalents balances, cash provided from ongoing operating activities, and available borrowings under our revolving credit facilities, will provide sufficient liquidity to enable us to meet our working capital requirements and timely service our debt obligations for at least the next 12 months.  During the  six months ended September 30, 2020 ,  no  cash and cash equivalents were repatriated.  As of September 30, 2020 , we had  $190,278  of cash and cash equivalents outside the US, a portion of which may be subject to additional foreign withholding taxes if it were to be repatriated. We continue to evaluate our cash repatriation strategy and we currently anticipate repatriating current and future unremitted earnings of non-US subsidiaries, to the extent they have been and will be subject to US tax, if such cash is not required to fund ongoing foreign operations. Our cash repatriation strategy, and by extension, our liquidity, may be impacted by several additional considerations, which include clarifications of or changes to the Tax Reform Act and our actual earnings for current and future fiscal periods.  We continue to evaluate our capital allocation strategy and to consider further opportunities to utilize our global cash resources in a way that will profitably grow our business, meet our strategic objectives, and drive stockholder value, including by potentially repurchasing additional shares of our common stock.  As of September 30, 2020 , the aggregate remaining approved amount under our stock repurchase programs was  $159,807 . Our stock repurchase programs do not obligate us to acquire any amount of common stock and may be suspended at any time at our discretion. We did not repurchase any shares during the six months ended September 30, 2020. However, we may recommence repurchases in future periods. Our liquidity may be further impacted by additional factors, including our results of operations, the strength of our brands, impacts of seasonality and weather conditions, our ability to respond to changes in consumer preferences and tastes, the timing of capital expenditures and lease payments, our ability to collect our trade accounts receivables in a timely manner and effectively manage our inventories, our ability to respond to the impacts and disruptions caused by the pandemic, and our ability to respond to economic, political, and legislative developments. Furthermore, we may require additional cash resources due to changes in business conditions, strategic initiatives, or stock repurchase strategy, a national or global economic recession, or other future developments, including any investments or acquisitions we may decide to pursue, although we do not have any present commitments with respect to any such investments or acquisitions. If our existing sources of liquidity are insufficient to satisfy our working capital requirements, we may seek to borrow under our revolving credit facilities, seek new or modified borrowing arrangements, or sell additional debt or equity securities. The sale of convertible debt or equity securities could result in additional dilution to our stockholders, and equity securities may have rights or preferences that are superior to those of our existing stockholders. The incurrence of additional indebtedness would result in additional debt service obligations, as well as covenants that would restrict our operations and further encumber our assets. In addition, there can be no assurance that any additional financing will be available on acceptable terms, if at all.  Capital Resources Primary Credit Facility.   Our Primary Credit Facility provides for a  five -year,  $400,000  unsecured revolving credit facility, and contains a  $25,000  sublimit for the issuance of letters of credit.  As of September 30, 2020 , we had  no  outstanding balance, outstanding letters of credit of  $549 , and available borrowings of  $399,451  under our Primary Credit Facility.  38 Table of Contents China Credit Facility.  Our China Credit Facility is an uncommitted revolving line of credit of up to CNY  300,000 , or  $44,083 .  As of September 30, 2020 , we had an outstanding balance of  $9,311 , outstanding bank guarantees of  $29 , and available borrowings of  $34,743  under our China Credit Facility.  Japan Credit Facility.  Our Japan Credit Facility is an uncommitted revolving line of credit of up to JPY  3,000,000 , or  $28,412 .  As of September 30, 2020 , we had   no   outstanding balance and available borrowings of  $28,412  under our Japan Credit Facility.  Mortgage.   As of September 30, 2020 , we had an outstanding principal balance under the mortgage, secured by the property on which our corporate headquarters is located, of  $30,592 . The loan will mature and require a balloon payment in the amount of  $23,695 , in addition to any then-outstanding balance, on  July 1, 2029 .  Debt Covenants.   As of September 30, 2020 , we were in compliance with all financial and non-financial covenants under our revolving credit facilities and mortgage. Refer to  Note 6, “Revolving Credit Facilities and Mortgage Payable,”  of our  condensed consolidated financial statements  in  Part I, Item 1  of this  Quarterly Report , for further information on our revolving credit facilities and our mortgage.  Cash Flows The following table summarizes our cash flows for the periods presented:   Six Months Ended September 30,   2020   2019   Change   Amount   Amount   Amount   % Net cash used in operating activities $ (15,961 )   $ (216,156 )   $ 200,195   92.6 % Net cash used in investing activities (13,284 )   (14,704 )   1,420   9.7 Net cash provided by (used in) financing activities 3,816   (179,403 )   183,219   102.1 Operating Activities.  Our primary source of liquidity is net cash provided by operating activities, which is primarily driven by our net income or loss, other cash receipts and expenditure adjustments, and changes in working capital. The decrease in net cash used in operating activities during the  six months ended September 30, 2020 , compared to the prior period, was primarily due to a net positive change in operating assets and liabilities of  $155,648  and in net income after non-cash adjustments of  $44,547 . The changes in operating assets and liabilities were primarily due to net positive changes in inventories, net, accrued expenses, incomes taxes payable, and trade accounts receivable, net, partially offset by a net negative change in trade accounts payable. The positive change in inventories, net, made up a majority of the net positive change in operating assets and liabilities, which was driven by lower inventory buys due to more disciplined purchasing that focused on key products in response to the COVID-19 pandemic. Investing Activities.   The decrease in net cash used in investing activities during the  six months ended September 30, 2020 , compared to the prior period, was primarily due to lower capital expenditures for information system and hardware enhancements, partially offset by higher capital expenditures for retail stores and warehouse improvements for the Moreno Valley distribution center.  Financing Activities.   The increase in net cash provided by financing activities during the  six months ended September 30, 2020 , compared to the prior period, was primarily due to no stock repurchases occurring in the current period. Off-Balance Sheet Arrangements We do not have any off-balance sheet arrangements. 39 Table of Contents Contractual Obligations In the ordinary course of our business, we (or our affiliates, manufacturers, factories, or other agents, as applicable) enter into contracts requiring unconditional minimum purchase commitments of sheepskin and leather that we must make on or before a specified target date. In the event that we do not purchase such minimum commitments by the applicable target dates, we would be required to make additional deposits towards the purchase of the remaining minimum commitments. Such additional deposits would then be returned as we purchase the remaining minimum commitments, as these purchase commitment contracts typically do not permit net settlement.  During the six months ended September 30, 2020, we experienced lower purchases due to the delay or deferral of product manufacturing in response to the pandemic, including a more conservative purchasing strategy pursued by us and our wholesale partners. As a result, we negotiated a deferral of additional deposit payments, which represent remaining minimum commitments under expired sheepskin supply agreements. We currently expect these additional deposit payments to be made during the first quarter of fiscal year 2022. As of September 30, 2020, the remaining minimum purchase commitment under these expired agreements was approximately $48,000. However, this amount is expected to decrease to between approximately $25,000 to $35,000 as of April 1, 2021, as we purchase and use the remaining minimum commitments.  Except as described above, there were  no  material changes outside the ordinary course of business to the contractual obligations and other commitments disclosed in our  2020 Annual Report .   Critical Accounting Policies and Estimates Management must make certain estimates and assumptions that affect the amounts reported in the  condensed consolidated financial statements . Management bases these estimates and assumptions upon historical experience, existing and known circumstances, authoritative accounting pronouncements, and other factors that management believes to be reasonable. In addition, we have considered the potential impact of the COVID-19 pandemic on our business and operations. Although the full impact of the pandemic is unknown and cannot be reasonably estimated, we believe we have made appropriate accounting estimates and assumptions based on the facts and circumstances available as of the reporting date. However, actual results could differ materially from these estimates and assumptions, which may result in material effects to our financial condition, results of operations, and liquidity. Refer to section "Use of Estimates" within  Note 1, “General,”  of our  condensed consolidated financial statements , in  Part I, Item 1  of this  Quarterly Report , for a summary of applicable key estimates and assumptions.  There have been no material changes to the critical accounting policies disclosed in our  2020 Annual Report .  Item 3.  Quantitative and Qualitative Disclosures about Market Risk Commodity Price Risk For the manufacturing of our products, we purchase certain raw materials that are affected by commodity prices, which include sheepskin, leather, and wool. The supply of sheepskin, which is used to manufacture a significant portion of the UGG brand products, is in high demand and there are a limited number of suppliers that can meet our expectations for the quantity and quality of sheepskin that we require. Most of our sheepskin is purchased from  two  tanneries in China, which is sourced primarily from Australia and the United Kingdom. While we have experienced fairly stable pricing in recent years, historically there have been significant fluctuations in the price of sheepskin as the demand for this commodity from our customers and our competitors has changed. We believe significant factors affecting the price of sheepskin include weather patterns, harvesting decisions, incidence of disease, the price of other commodities such as wool and leather, the demand for our products and the products of our competitors, use of substitute products or components, and global economic conditions. Any factors that increase the demand for, or decrease the supply of, sheepskin could cause significant increases in the price of sheepskin. We typically fix prices for all of our raw materials with firm pricing agreements on a seasonal basis. For sheepskin and leather, we use purchasing contracts and refundable deposits to attempt to manage price volatility as an alternative to hedging commodity prices. The purchasing contracts and other pricing arrangements we use for sheepskin and leather may result in purchase obligations which are not recorded in our  condensed consolidated balance sheets . With respect to sheepskin and leather, in the event of significant price increases for these commodities, we will likely not be able to adjust our selling prices sufficiently to eliminate the impact of such increases on our gross margins. 40 Table of Contents Foreign Currency Exchange Rate Risk Fluctuations in currency exchange rates, primarily between the US dollar and the currencies of Europe, Asia, Canada, and Latin America where we operate, may affect our results of operations, financial position, and cash flows. We face market risk to the extent that foreign currency exchange rate fluctuations affect our foreign assets, liabilities, revenues, and expenses. Although most of our sales and inventory purchases are denominated in US dollars, these sales and inventory purchases may be impacted by fluctuations in the exchange rates between the US dollar and local currencies in the international markets where our products are sold and manufactured. We are exposed to financial statement transaction gains and losses as a result of remeasuring our monetary assets and liabilities that are denominated in currencies other than the subsidiaries’ functional currencies. We translate all assets and liabilities denominated in foreign currencies into US dollars using the exchange rate as of the end of the reporting period. Gains and losses resulting from translating assets and liabilities from our subsidiaries' functional currencies to US dollars are recorded in OCI. Foreign currency exchange rate fluctuations affect our reported profits and can make comparisons from year to year more difficult.  We hedge certain foreign currency exchange rate risk from existing assets and liabilities, as well as forecasted sales. As our international operations grow and we increase purchases and sales in foreign currencies, we will continue to evaluate our hedging strategy and may utilize additional derivative instruments, as needed, to hedge our foreign currency exchange rate risk. We do not use foreign currency exchange rate forward contracts for trading purposes.  As of September 30, 2020 , a hypothetical 10.0% foreign currency exchange rate fluctuation would have caused the fair value of our financial instruments to increase or decrease by approximately  $7,300 . Refer to  Note 9, “Derivative Instruments,”  of our  condensed consolidated financial statements  in  Part I, Item 1  of this  Quarterly Report , for further information on our use of derivative contracts.  As of September 30, 2020 , there were no known factors that we would expect to result in a material change in the general nature of our foreign currency exchange rate risk exposure. Interest Rate Risk Our market risk exposure with respect to our revolving credit facilities is tied to changes in applicable interest rates, including ABR, the federal funds effective rate, currency-specific LIBOR and CDOR for our Primary Credit Facility, PBOC market rate for our China Credit Facility, and TIBOR for our Japan Credit Facility. A hypothetical 1.0% increase in interest rates for borrowings made under our revolving credit facilities would have resulted in an immaterial aggregate change to interest expense recorded in our  condensed consolidated statements of comprehensive income  during the  six months ended September 30, 2020  due to the immaterial outstanding balances under our revolving credit facilities. Refer to  Note 6, “Revolving Credit Facilities and Mortgage Payable,”  of our  condensed consolidated financial statements  in  Part I, Item 1  of this  Quarterly Report , for further information on our revolving credit facilities. Item 4.  Controls and Procedures a) Disclosure Controls and Procedures We maintain a system of disclosure controls and procedures, as defined in Rule 13a-15(e) under the Exchange Act, which are designed to provide reasonable assurance that information required to be disclosed in the reports that we file or submit under the Exchange Act is recorded, processed, summarized, and reported within the time periods specified in the SEC's rules and forms. In designing and evaluating our disclosure controls and procedures, our management recognized that any system of controls and procedures, no matter how well designed and operated, can provide only reasonable assurance of achieving the desired control objectives, as ours is designed to do, and management necessarily is required to apply its judgment in evaluating the cost-benefit relationship of possible controls and procedures. In addition, the design of any system of controls is also based in part upon certain assumptions about the likelihood of future events, and there can be no assurance that any design will succeed in achieving its stated goals under all potential future conditions. Over time, controls may become inadequate because of changes in conditions, or the degree of compliance with policies or procedures may deteriorate. Because of the inherent limitations in a cost-effective control system, misstatements due to error or fraud may occur and not be detected. Under the supervision and with the participation of management, we carried out an evaluation of the effectiveness of the design and operation of our disclosure controls and procedures  as of September 30, 2020 . Based on that evaluation, our PEO and Principal Financial and Accounting Officer (PFAO) concluded that our disclosure controls and procedures were effective at a reasonable assurance level  as of September 30, 2020 .  41 Table of Contents b) Internal Control over Financial Reporting There were no changes in our internal control over financial reporting identified in management’s evaluation pursuant to Rules 13a-15(d) or 15d-15(d) of the Exchange Act during the  three months ended September 30, 2020  that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. Although we have modified our workplace practices globally due to the COVID-19 pandemic, resulting in most of our employees working remotely, this has not materially affected our internal controls over financial reporting. We are continually monitoring and assessing the impacts and disruptions caused by the pandemic on our internal control over financial reporting to minimize the impact on their design and operating effectiveness.   c) Principal Executive Officer and Principal Financial and Accounting Officer Certifications The certifications of our PEO and PFAO required by Rule 13a-14(a) of the Exchange Act are filed herewith as Exhibit 31.1 and Exhibit 31.2, and furnished as Exhibit 32, within this  Quarterly Report . This  Part I, Item 4,  should be read in conjunction with such certifications for a more complete understanding of the topics presented. 42 Table of Contents PART II.  OTHER INFORMATION References within this  Quarterly Report  to "Deckers," "we," "our," "us," "management," or the "Company" refer to Deckers Outdoor Corporation, together with its consolidated subsidiaries. UGG® (UGG), HOKA ONE ONE®, Teva®, Sanuk®, and Koolaburra® are some of our trademarks. Other trademarks or trade names appearing elsewhere in this  Quarterly Report  are the property of their respective owners.   Solely for convenience, the above trademarks and trade names within this  Quarterly Report  are referred to without the ® and ™ symbols, but such references should not be construed as any indication that their respective owners will not assert, to the fullest extent under applicable law, their rights thereto. Unless otherwise indicated, all dollar amounts herein are expressed in thousands, except per share data. Item 1.  Legal Proceedings As part of our global policing program to protect our intellectual property rights, from time to time, we file lawsuits in various jurisdictions asserting claims for alleged acts of trademark counterfeiting, trademark infringement, patent infringement, trade dress infringement, and trademark dilution. We generally have multiple actions such as these pending at any given point in time. These actions may result in seizure of counterfeit merchandise, out of court settlements with defendants, or other outcomes. In addition, from time to time, we are subject to claims in which opposing parties will raise, either as affirmative defenses or as counterclaims, the invalidity or unenforceability of certain of our intellectual property rights, including allegations that the UGG brand trademark registrations and design patents are invalid or unenforceable. Furthermore, we are aware of many instances throughout the world in which a third-party is using our UGG trademarks within its internet domain name, and we have discovered and are investigating several manufacturers and distributors of counterfeit UGG brand products. On March 28, 2016, we filed a lawsuit alleging trademark infringement, patent infringement, unfair competition and violation of deceptive trade practices in the US District Court for the Northern District of Illinois Eastern Division against Australian Leather. Australian Leather counterclaimed alleging that the UGG trademark is invalid. On May 10, 2019, a jury returned a verdict in our favor in our lawsuit against Australian Leather. The District Court entered judgments upholding the UGG trademark on February 6 and June 8, 2020. On August 12, 2020, Australian Leather filed an appeal to the US Court of Appeals for the Federal Circuit. While we believe there is no merit to the appeal, a judgment invalidating the UGG brand trademark would have a material adverse effect on our business. Although we are subject to legal proceedings and other disputes from time to time in the ordinary course of business, including employment, intellectual property, and product liability claims, we believe the outcome of all pending legal proceedings and other disputes in the aggregate will not have a material adverse effect on our business, results of operations, financial condition, or liquidity. However, regardless of the outcome, resolving legal proceedings and other disputes can have an adverse impact on us because of legal costs, diversion of management's time and resources, and other factors.  Item 1A.  Risk Factors An investment in our common stock involves risks. Before making an investment decision, you should carefully consider all the information in this  Quarterly Report , including the information contained in  Part I, Item 2,   "Management's Discussion and Analysis of Financial Condition and Results of Operations"  as well as in our  condensed consolidated financial statements  and the related notes contained in  Part I, Item 1 . In addition, you should carefully consider the risks and uncertainties described in  Part I, Item 1A,   “Risk Factors,”  of our  2020 Annual Report , as well as in our other public filings with the SEC. If any of the identified risks are realized, our business, financial condition, results of operations, liquidity, and prospects could be materially and adversely affected. In that case, the trading price of our common stock may decline, and you could lose all or part of your investment. In addition, other risks of which we are currently unaware, or which we do not currently view as material, could have a material adverse effect on our business, financial condition, results of operations, and prospects.  Certain information contained within  Part I, Item 2,   "Management's Discussion and Analysis of Financial Condition and Results of Operations"  of this  Quarterly Report  and  Part I, Item 1A,   “Risk Factors,”  of our 2020 Annual Report constitute forward-looking statements. Refer to the "Cautionary Note Regarding Forward-Looking Statements" within this Quarterly Report. During the  three months ended September 30, 2020 , there were no material changes to the risks and uncertainties described in  Part I, Item 1A,   “Risk Factors,”  of our  2020 Annual Report .  43 Table of Contents Item 2.  Unregistered Sales of Equity Securities and Use of Proceeds Unregistered Sales of Equity Securities None. Use of Proceeds  Not applicable. Purchases of Equity Securities by the Issuer and Affiliated Purchasers Our Board of Directors has authorized various stock repurchase programs pursuant to which we may repurchase shares of our common stock. Our stock repurchase programs do not obligate us to acquire any amount of common stock and may be suspended at any time at our discretion.  Our current revolving credit agreements allow us to make stock repurchases under these programs, so long as we do not exceed certain leverage ratios and no event of default has occurred under these agreements.  As of September 30, 2020 , no defaults had occurred under these agreements.  While we did not repurchase any shares during the  three months ended September 30, 2020 , we retain the discretion to recommence repurchases in future periods.  As of September 30, 2020 , the aggregate remaining approved amount under our stock repurchase programs was  $159,807 . 44 Table of Contents Item 6.  Exhibits EXHIBIT INDEX Exhibit Number   Description of Exhibit *31.1   Certification of Principal Executive Officer pursuant to Rule 13a-14(a) under the Exchange Act, adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, as amended *31.2   Certification of Principal Financial and Accounting Officer pursuant to Rule 13a-14(a) under the Exchange Act, adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, as amended **32   Certification pursuant to 18 U.S.C. Section 1350, adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, as amended *101.INS   XBRL Instance Document (the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document) *101.SCH   Inline XBRL Taxonomy Extension Schema Document *101.CAL   Inline XBRL Taxonomy Extension Calculation Linkbase Document *101.DEF   Inline XBRL Taxonomy Extension Definition Linkbase Document *101.LAB   Inline XBRL Taxonomy Extension Label Linkbase Document *101.PRE   Inline XBRL Taxonomy Extension Presentation Linkbase Document *104   Cover Page Interactive Data File (formatted as Inline XBRL and contained in Exhibit 101) * Filed herewith. ** Furnished herewith. 45 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized.       DECKERS OUTDOOR CORPORATION (Registrant) /s/ STEVEN J. FASCHING Steven J. Fasching Chief Financial Officer                  (Principal Financial and Accounting Officer) Date:  November 5, 2020   46 	 
+ 

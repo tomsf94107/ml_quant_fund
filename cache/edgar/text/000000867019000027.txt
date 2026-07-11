@@ -1,0 +1,2238 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ P5Y P5Y P3Y P1Y false --06-30 Q1 2020 0000008670 54900000 59300000 400000 600000 0 0 0 0 0.69 0.79 0.1 0.1 1000000000 1000000000 638700000 638700000 434200000 433400000 0.02250 0.03375 2020-09-15 2025-09-15 2024-06-30 2023-06-30 2020-06-30 1 1 300000 300000 0 0 204500000 205300000 1600000 1900000 
+		 
+			 0000008670 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2019-10-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2018-07-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 srt:RestatementAdjustmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 srt:ScenarioPreviouslyReportedMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 srt:RestatementAdjustmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 srt:ScenarioPreviouslyReportedMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+		 
+		 
+			 2019-07-01 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:GlobalMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ClientfundinterestMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PEOMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HCMMember 
+				 us-gaap:AllOtherSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:HROMember 
+				 adp:ProfessionalEmployeeOrganizationServicesSegmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:ForeignGovernmentDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CanadianProvincialBondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:USTreasurySecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:MunicipalBondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:NoncurrentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:NoncurrentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CurrentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CurrentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CorporateInvestmentsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:FederalHomeLoanBankCertificatesAndObligationsFHLBMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:FundsHeldForClientsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:ForeignCorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CorporateInvestmentsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:AssetBackedAutoLoanReceivablesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:FundsHeldForClientsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:FixedRateCreditCardMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:FederalFarmCreditBanksMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:SovereignBondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommercialMortgageBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:RateReductionReceivableMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:SupranationalBondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:AssetBackedEquipmentLeaseReceivableMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:ForeignGovernmentDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:MunicipalBondsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:USTreasurySecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CanadianProvincialBondsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CustomerListsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CustomerListsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CustomerListsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PeoServicesSegmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:EmployerServicesSegmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PeoServicesSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PeoServicesSegmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ShortTermCommercialPaperProgramMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ShortTermCommercialPaperProgramMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ThreeHundredAndSixtyFourDayCreditFacilityMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CreditFacilityExpiringInJuneTwoThousandTwentyFourMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CreditFacilityExpiringInJuneTwoThousandTwentyThreeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ThreeHundredAndSixtyFourDayCreditFacilityMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CreditFacilityExpiringInJuneTwoThousandTwentyThreeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:CreditFacilityExpiringInJuneTwoThousandTwentyFourMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ReverseRepurchaseAgreementsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:ReverseRepurchaseAgreementsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:Notesdueon2025Member 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:Notesdueon2020Member 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:Notesdueon2025Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:Notesdueon2020Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:Notesdueon2025Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:Notesdueon2020Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:OtherDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockUnitsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockUnitsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockUnitsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestricedStockgrantedduringorafterFiscal2019Domain 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 srt:MaximumMember 
+				 adp:PerformanceBasedRestrictedStockandUnitsDomain 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockandUnitsDomain 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:EmployeeStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:NonvestedStockOptionsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:NonvestedStockOptionsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:NonvestedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:NonvestedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:TimeBasedRestrictedStockgrantedduringFiscal2013Domain 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockUnitDomain 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockUnitDomain 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:PerformanceBasedRestrictedStockUnitDomain 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:SystemDevelopmentAndProgrammingCostsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:OperatingExpensesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:SystemDevelopmentAndProgrammingCostsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 adp:OperatingExpensesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 srt:MinimumMember 
+				 adp:PerformanceBasedRestrictedStockandUnitsDomain 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000008670 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 xbrli:shares 
+	 
+		 xbrli:pure 
+	 
+		 iso4217:USD 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 adp:segment 
+	 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 ______________   FORM  10-Q   ______________ ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934          For the Quarterly Period Ended  September 30, 2019 OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934          For the Transition Period From            to           Commission File Number  1-5397   __________________________ AUTOMATIC DATA PROCESSING, INC.   (Exact name of registrant as specified in its charter) __________________________ Delaware 22-1467904 (State or other jurisdiction of incorporation or organization) (IRS Employer Identification No.) One ADP Boulevard   Roseland, NJ 07068 (Address of principal executive offices) (Zip Code)     Registrant's telephone number, including area code:   ( 973 )  974-5000    __________________________ Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading Symbol(s) Name of each exchange on which registered Common Stock, $0.10 Par Value (voting) ADP NASDAQ Global Select Market Indicate by check mark whether the registrant: (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.   Yes    ý    No  o   Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).   Yes    ý    No  o   Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and "emerging growth company" in Rule 12b-2 of the Exchange Act. Large Accelerated Filer ☒ Accelerated filer ☐ Non-accelerated filer ☐ Smaller reporting company ☐     Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period  for  complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  o Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes ☐ No ☒ The number of shares outstanding of the registrant’s common stock as of  October 30, 2019  was  432,698,089 .                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  Table of Contents     Page PART I – FINANCIAL INFORMATION           Item 1. Financial Statements (Unaudited)           Statements of Consolidated Earnings Three months ended September 30, 2019 and 2018 3         Statements of Consolidated Comprehensive Income Three months ended September 30, 2019 and 2018 4         Consolidated Balance Sheets At September 30, 2019 and June 30, 2019 5         Statements of Consolidated Cash Flows Three months ended September 30, 2019 and 2018 6         Notes to the Consolidated Financial Statements 7       Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 25       Item 3. Quantitative and Qualitative Disclosures About Market Risk 39       Item 4. Controls and Procedures 39       PART II – OTHER INFORMATION           Item 1. Legal Proceedings 40       Item 1A. Risk Factors 40       Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 41       Item 6. Exhibits 42         Signatures 43 2 Part I. FINANCIAL INFORMATION  Item 1. Financial Statements Automatic Data Processing, Inc. and Subsidiaries Statements of Consolidated Earnings (In millions, except per share amounts) (Unaudited)   Three Months Ended   September 30,   2019   2018     REVENUES:       Revenues, other than interest on funds held  for clients and PEO revenues $ 2,306.2   $ 2,218.6 Interest on funds held for clients 133.9   118.5 PEO revenues (A) 1,055.6   973.2 TOTAL REVENUES 3,495.7   3,310.3         EXPENSES:       Costs of revenues:       Operating expenses 1,787.7   1,697.0 Systems development and programming costs 168.2   158.0 Depreciation and amortization 88.9   72.6 TOTAL COSTS OF REVENUES 2,044.8   1,927.6         Selling, general, and administrative expenses 726.5   713.9 Interest expense 39.9   35.9 TOTAL EXPENSES 2,811.2   2,677.4         Other income, net ( 54.6 )   ( 13.9 )         EARNINGS BEFORE INCOME TAXES 739.1   646.8         Provision for income taxes 156.7   141.4         NET EARNINGS $ 582.4   $ 505.4         BASIC EARNINGS PER SHARE $ 1.35   $ 1.16         DILUTED EARNINGS PER SHARE $ 1.34   $ 1.15         Basic weighted average shares outstanding 432.7   436.8 Diluted weighted average shares outstanding 435.4   439.9 (A)  Professional Employer Organization (“PEO”) revenues are net of direct pass-through costs, primarily consisting of payroll wages and payroll taxes of  $ 10,510.6  million  and  $ 9,629.4  million  for the three months ended  September 30, 2019  and  2018 , respectively.   See notes to the Consolidated Financial Statements. 3  Automatic Data Processing, Inc. and Subsidiaries Statements of Consolidated Comprehensive Income (In millions) (Unaudited)   Three Months Ended   September 30,   2019   2018     Net earnings $ 582.4   $ 505.4         Other comprehensive income/(loss):       Currency translation adjustments ( 48.9 )   ( 22.9 )         Unrealized net gains/(losses) on available-for-sale securities 96.1   ( 50.4 ) Tax effect ( 20.8 )   12.3 Reclassification of net (gain)/losses on available-for-sale securities to net earnings ( 2.3 )   0.9 Tax effect 0.5   ( 0.2 )         Reclassification of pension liability adjustment to net earnings ( 1.7 )   0.2 Tax effect 0.5   ( 0.2 )         Other comprehensive income/(loss), net of tax 23.4   ( 60.3 ) Comprehensive income $ 605.8   $ 445.1 See notes to the Consolidated Financial Statements.  4 Automatic Data Processing, Inc. and Subsidiaries Consolidated Balance Sheets (In millions, except per share amounts) (Unaudited)     September 30,   June 30,     2019   2019 Assets         Current assets:         Cash and cash equivalents   $ 1,403.9   $ 1,949.2 Short-term marketable securities (B)   3,545.1   10.5 Accounts receivable, net of allowance for doubtful accounts of $59.3 and $54.9, respectively   2,490.4   2,439.3 Other current assets    675.9   509.1 Total current assets before funds held for clients   8,115.3   4,908.1 Funds held for clients   21,393.2   29,434.2 Total current assets   29,508.5   34,342.3 Long-term receivables, net of allowance for doubtful accounts of $0.6 and $0.4, respectively   22.1   23.8 Property, plant and equipment, net   767.1   764.2 Operating lease right-of-use asset   504.0   — Deferred contract costs   2,401.4   2,428.5 Other assets   1,129.4   934.4 Goodwill   2,303.3   2,323.0 Intangible assets, net   1,078.9   1,071.5 Total assets   $ 37,714.7   $ 41,887.7 Liabilities and Stockholders' Equity         Current liabilities:         Accounts payable   $ 108.8   $ 125.5 Accrued expenses and other current liabilities   1,994.6   1,759.0 Accrued payroll and payroll-related expenses   443.6   721.1 Dividends payable   339.1   340.1 Short-term deferred revenues   213.1   220.7 Obligations under reverse repurchase agreements (A)   428.6   262.0 Obligation under commercial paper borrowing (B)   3,536.7   — Short-term debt   1,001.3   — Income taxes payable   123.7   54.8 Total current liabilities before client funds obligations   8,189.5   3,483.2 Client funds obligations   21,011.4   29,144.5 Total current liabilities   29,200.9   32,627.7 Long-term debt   1,003.4   2,002.2 Operating lease liabilities   355.4   — Other liabilities   707.9   798.7 Deferred income taxes   708.2   659.9 Long-term deferred revenues   378.2   399.3 Total liabilities   32,354.0   36,487.8           Commitments and contingencies (Note 13)               Stockholders' equity:         Preferred stock, $1.00 par value: authorized, 0.3 shares; issued, none   —   — Common stock, $0.10 par value: authorized, 1,000.0 shares; issued, 638.7 shares at September 30, 2019 and June 30, 2019;  outstanding, 433.4 and 434.2 shares at September 30, 2019 and June 30, 2019, respectively   63.9   63.9 Capital in excess of par value   1,213.7   1,183.2 Retained earnings   17,729.6   17,500.6 Treasury stock - at cost: 205.3 and 204.5 shares at September 30, 2019 and June 30, 2019, respectively   ( 13,412.6 )   ( 13,090.5 ) Accumulated other comprehensive loss   ( 233.9 )   ( 257.3 ) Total stockholders’ equity   5,360.7   5,399.9 Total liabilities and stockholders’ equity   $ 37,714.7   $ 41,887.7 (A) As of September 30, 2019,  $ 428.0  million  of long-term marketable securities and  $ 0.6  million  of cash and cash equivalents have been pledged as collateral under the Company's reverse repurchase agreements. As of June 30, 2019,  $ 261.4  million  of long-term marketable securities and  $ 0.6  million  of cash and cash equivalents have been pledged as collateral under the Company's reverse repurchase agreements. Refer to Note 9 . (B) The Company reclassified  $ 3,535.5  million  of funds held for clients to short-term marketable securities as a result of proceeds from commercial paper borrowings as of September 30, 2019 which were utilized to pay our client obligations.  Refer to Note 9. See notes to the Consolidated Financial Statements. 5 A utomatic Data Processing, Inc. and Subsidiaries Statements of Consolidated Cash Flows (In millions) (Unaudited)     Three Months Ended     September 30,     2019   2018       Cash Flows from Operating Activities:         Net earnings   $ 582.4   $ 505.4 Adjustments to reconcile net earnings to cash flows provided by operating activities:         Depreciation and amortization   117.3   99.0 Amortization of deferred contract costs   227.3   216.9 Deferred income taxes   44.4   26.4 Stock-based compensation expense   37.1   38.4 Net pension expense   ( 2.7 )   17.1 Net amortization of premiums and accretion of discounts on available-for-sale securities   12.2   14.3 Impairment of intangible assets   —   12.1 Gain on sale of assets   ( 1.9 )   — Other   11.9   10.1 Changes in operating assets and liabilities, net of effects from acquisitions:         Increase in accounts receivable   ( 96.8 )   ( 239.2 ) Increase in other assets   ( 391.7 )   ( 471.2 ) Decrease in accounts payable   ( 15.1 )   ( 2.3 ) Decrease in accrued expenses and other liabilities   ( 91.6 )   ( 77.8 ) Net cash flows provided by operating activities   432.8   149.2           Cash Flows from Investing Activities:         Purchases of corporate and client funds marketable securities   ( 1,409.9 )   ( 755.8 ) Proceeds from the sales and maturities of corporate and client funds marketable securities   1,653.7   539.8 Capital expenditures   ( 56.8 )   ( 43.2 ) Additions to intangibles   ( 88.2 )   ( 73.8 ) Acquisitions of businesses, net of cash acquired   —   ( 119.7 ) Proceeds from the sale of property, plant, and equipment and other assets   23.4   — Net cash flows provided by / (used in) investing activities   122.2   ( 452.7 )           Cash Flows from Financing Activities:         Net decrease in client funds obligations   ( 8,063.3 )   ( 1,711.5 ) Payments of debt   ( 0.5 )   ( 0.5 ) Repurchases of common stock   ( 309.7 )   ( 227.1 ) Net proceeds from stock purchase plan and stock-based compensation plans   ( 32.1 )   ( 24.4 ) Dividends paid   ( 343.3 )   ( 302.6 ) Net proceeds from reverse repurchase agreements   166.3   448.4 Net proceeds from commercial paper borrowings   3,536.7   — Net cash flows used in financing activities   ( 5,045.9 )   ( 1,817.7 )           Effect of exchange rate changes on cash, cash equivalents, restricted cash, and restricted cash equivalents   ( 33.1 )   ( 12.6 )           Net change in cash, cash equivalents, restricted cash, and restricted cash equivalents   ( 4,524.0 )   ( 2,133.8 )           Cash, cash equivalents, restricted cash, and restricted cash equivalents, beginning of period   6,796.2   6,542.1 Cash, cash equivalents, restricted cash, and restricted cash equivalents, end of period   $ 2,272.2   $ 4,408.3           Reconciliation of cash, cash equivalents, restricted cash, and restricted cash equivalents to the Consolidated Balance Sheets         Cash and cash equivalents   $ 1,403.9   $ 1,490.3 Restricted cash and restricted cash equivalents included in funds held for clients (A)   868.3   2,918.0 Total cash, cash equivalents, restricted cash, and restricted cash equivalents   $ 2,272.2   $ 4,408.3           Supplemental disclosures of cash flow information:         Cash paid for interest   $ 53.6   $ 49.4 Cash paid for income taxes, net of income tax refunds   $ 45.6   $ 39.3   (A)  See  Note 6  for a reconciliation of restricted cash and restricted cash equivalents in funds held for clients on the Consolidated Balance Sheets. See notes to the Consolidated Financial Statements. 6 Automatic Data Processing, Inc. and Subsidiaries Notes to the Consolidated Financial Statements (Tabular dollars in millions, except per share amounts or where otherwise stated) (Unaudited) Note 1.   Basis of Presentation The accompanying Consolidated Financial Statements and footnotes thereto of Automatic Data Processing, Inc., its subsidiaries and variable interest entity (“ADP” or the “Company”) have been prepared in accordance with accounting principles generally accepted in the United States of America (“U.S. GAAP”).  The Consolidated Financial Statements and footnotes thereto are unaudited.  In the opinion of the Company’s management, the Consolidated Financial Statements reflect all adjustments, which are of a normal recurring nature, that are necessary for a fair presentation of the Company’s interim financial results. The Company has a grantor trust, which holds the majority of the funds provided by its clients pending remittance to employees of those clients, tax authorities, and other payees.  The Company is the sole beneficial owner of the trust.  The trust meets the criteria in Accounting Standards Codification (“ASC”) 810, “Consolidation” to be characterized as a variable interest entity (“VIE”).  The Company has determined that it has a controlling financial interest in the trust because it has both (1) the power to direct the activities that most significantly impact the economic performance of the trust (including the power to make all investment decisions for the trust) and (2) the right to receive benefits that could potentially be significant to the trust (in the form of investment returns) and, therefore, consolidates the trust.  Further information on these funds and the Company’s obligations to remit to its clients’ employees, tax authorities, and other payees is provided in  Note 6 , “Corporate Investments and Funds Held for Clients.”  The preparation of financial statements in conformity with U.S. GAAP requires management to make estimates and assumptions that affect the assets, liabilities, revenue, expenses, and accumulated other comprehensive income that are reported in the Consolidated Financial Statements and footnotes thereto. Actual results may differ from those estimates.  Interim financial results are not necessarily indicative of financial results for a full year.  The information included in this Quarterly Report on Form 10-Q should be read in conjunction with the Company’s Annual Report on Form 10-K for the fiscal year ended  June 30, 2019  (“fiscal  2019 ”).  Revision of Previously Reported Financial Information The Company has historically classified certain fees collected from worksite employers for certain benefits within PEO revenues, and the associated costs of these benefits have historically been classified within operating expenses as PEO zero-margin benefits pass-through costs in the Company's Statements of Consolidated Earnings. During the quarter ended September 30, 2019, management determined that the Company does not retain risk and is acting as the agent, rather than as the primary obligor, for a portion of the fees collected for worksite employee benefits and the worksite employer is primarily responsible for fulfilling certain aspects of the service and has discretion in establishing price. Accordingly,  the accompanying Statements of Consolidated Earnings for the  three months ended   September 30, 2018  has been revised to correct the amounts previously reported on a gross basis to a net basis by reducing PEO revenues and operating expenses for associated costs of an equal amount, as follows:   Three Months Ended   September 30, 2018   As reported   Revision   As revised PEO revenues $ 986.1   ( 12.9 )   $ 973.2 TOTAL REVENUES 3,323.2   ( 12.9 )   3,310.3 Operating expenses 1,709.9   ( 12.9 )   1,697.0 Total Expenses 2,690.3   ( 12.9 )   2,677.4 EARNINGS BEFORE INCOME TAXES 646.8   —   646.8 Provision for income taxes 141.4   —   141.4 NET EARNINGS $ 505.4   —   $ 505.4 7 In addition, the revised amounts for the fiscal year ended June 30, 2019 are as follows:   Twelve Months Ended   June 30, 2019   As reported   Revision   As revised PEO revenues $ 4,237.5   ( 65.0 )   $ 4,172.5 TOTAL REVENUES 14,175.2   ( 65.0 )   14,110.2 Operating expenses 7,145.9   ( 65.0 )   7,080.9 Total Expenses 11,280.7   ( 65.0 )   11,215.7 EARNINGS BEFORE INCOME TAXES 3,005.6   —   3,005.6 Provision for income taxes 712.8   —   712.8 NET EARNINGS $ 2,292.8   —   $ 2,292.8 The correction of these previously reported amounts had no impact on the Company's earnings before income taxes, net earnings, consolidated financial condition or cash flows. In addition, corresponding revisions have been made elsewhere in the Company's consolidated footnote disclosures, where applicable, including its Interim Financial Data by Segment disclosure. Note 2 .   New Accounting Pronouncements Recently Adopted Accounting Pronouncements  Effective July 1, 2019, the Company adopted accounting standard update (“ASU”) 2016-02, “Leases (ASC 842)” under the optional transition method. As a result, the Company recorded on the Consolidated Balance Sheets total operating lease right-of-use (“ROU”) assets of  $ 573.3  million  and total operating lease liabilities of  $ 522.6  million , as of the adoption date.  The adoption did not have an impact on our Statements of Consolidated Earnings or Statements of Consolidated Cash Flows. Refer to Note 7 for further details.  Recently Issued Accounting Pronouncements The following table summarizes recent ASU's issued by the Financial Accounting Standards Board (“FASB”) which have been assessed:  Standard Description Effective Date Effect on Financial Statements or Other Significant Matters ASU 2018-14 Compensation-Retirement Benefits-Defined Benefit Plans This update modifies the disclosure requirements for employers that sponsor defined benefit pension or other post-retirement plans by removing and adding certain disclosures for these plans. The eliminated disclosures include (a) the amounts in accumulated other comprehensive income expected to be recognized in net periodic benefit costs over the next fiscal year, and (b) the effects of a one percentage point change in assumed health care cost trend rates on the net periodic benefit costs and the benefit obligation for post-retirement health care benefits. Additional disclosures include descriptions of significant gains and losses affecting the benefit obligation for the period. The amendments in ASU 2018-14 would need to be applied on a retrospective basis.  July 1, 2021 (Fiscal 2022) The adoption of this guidance will modify disclosures but will not have an impact on the Company's consolidated results of operations, financial condition, or cash flows. 8 Standard Description Effective Date Effect on Financial Statements or Other Significant Matters ASU 2018-13 Fair Value Measurement This update modifies the disclosure requirements on fair value measurements. Certain disclosures in ASU 2018-13 would need to be applied on a retrospective basis and others on a prospective basis. July 1, 2020 (Fiscal 2021) The adoption of this guidance will modify disclosures but will not have an impact on the Company's consolidated results of operations, financial condition, or cash flows. ASU 2016-13 Financial Instruments - Credit Losses (Topic 326): Measurement of Credit Losses on Financial Instruments This update introduces the current expected credit loss (CECL) model, which will require an entity to measure credit losses for certain financial instruments and financial assets, including trade receivables. Under this update, on initial recognition and at each reporting period, an entity will be required to recognize an allowance that reflects the entity’s current estimate of credit losses expected to be incurred over the life of the financial instrument. In addition, this update modifies the impairment model for available-for-sale debt securities and provides for a simplified accounting model for purchased financial assets with credit deterioration since their origination.  July 1, 2020 (Fiscal 2021) The adoption of this guidance will not have a material impact on its consolidated results of operations, financial condition, or cash flows. Note 3 .   Revenue Based upon similar operational and economic characteristics, the Company’s revenues are disaggregated by its three strategic pillars: HCM (“HCM”), HR Outsourcing (“HRO”), and Global (“Global”) Solutions with separate disaggregation for PEO zero-margin benefits pass-through revenues and client fund interest revenues.  The Company believes these revenue categories depict how the nature, amount, timing, and uncertainty of its revenue and cash flows are affected by economic factors. HCM provides a suite of product offerings that assist employers of all types and sizes in all stages of the employment cycle, from recruitment to retirement. Global is generally consistent with the types of services provided within HCM but represents geographies outside of the United States and includes our multinational offerings.  HCM and Global revenues are primarily attributable to fees for providing solutions for payroll, benefits, talent, retirement services and HR processing and fees charged to implement the Company's solutions for clients. HRO provides a comprehensive human resources outsourcing solution, including offering benefits, providing workers’ compensation insurance, and administering state unemployment insurance, among other human resources functions. This revenue is primarily driven by the PEO. Amounts collected from PEO worksite employers include payroll, fees for benefits, and an administrative fee that also includes payroll taxes, fees for workers’ compensation and state unemployment taxes. The payroll and payroll taxes collected from the worksite employers are presented in revenue net, as the Company does not retain risk and acts as an agent with respect to this aspect of the PEO arrangement. With respect to the payroll and payroll taxes, the worksite employer is primarily responsible for providing the service and has discretion in establishing wages. The fees collected from the worksite employers for benefits (i.e., PEO benefits pass-throughs), workers’ compensation and state unemployment taxes are presented in revenues and the associated costs of benefits, workers’ compensation and state unemployment taxes are included in operating expenses, as the Company acts as a principal with respect to this aspect of the arrangement. With respect to these fees, the Company is primarily responsible for fulfilling the service and has discretion in establishing price. The Company has further disaggregated HRO to separate out its PEO zero-margin benefits pass-through revenues. The Company recognizes client fund interest revenues on collected but not yet remitted funds held for clients in revenues as earned, as the collection, holding and remittance of these funds are critical components of providing these services. 9 The following tables provide details of revenue by our strategic pillars with disaggregation for PEO zero-margin benefits pass-throughs and client fund interest, and includes a reconciliation to the Company’s reportable segments:   Three Months Ended   September 30, Types of Revenues 2019   2018 HCM $ 1,568.5   $ 1,520.3 HRO, excluding PEO zero-margin benefits pass-throughs 591.1   557.5 PEO zero-margin benefits pass-throughs 699.1   640.5 Global 503.1   473.5 Interest on funds held for clients 133.9   118.5 Total Revenues $ 3,495.7   $ 3,310.3 Reconciliation of disaggregated revenue to our reportable segments for the three months ended September 30, 2019: Types of Revenues Employer Services   PEO   Other   Total HCM $ 1,570.0   $ —   $ ( 1.5 )   $ 1,568.5 HRO, excluding PEO zero-margin benefits pass-throughs 235.7   356.5   ( 1.1 )   591.1 PEO zero-margin benefits pass-throughs —   699.1   —   699.1 Global 503.1   —   —   503.1 Interest on funds held for clients 132.6   1.3   —   133.9 Total Segment Revenues $ 2,441.4   $ 1,056.9   $ ( 2.6 )   $ 3,495.7 Reconciliation of disaggregated revenue to our reportable segments for the three months ended September 30, 2018: Types of Revenues Employer Services   PEO   Other   Total HCM $ 1,521.8   $ —   $ ( 1.5 )   $ 1,520.3 HRO, excluding PEO zero-margin benefits pass-throughs 226.1   332.7   ( 1.3 )   557.5 PEO zero-margin benefits pass-throughs —   640.5     640.5 Global 473.5   —     473.5 Interest on funds held for clients 116.8   1.7     118.5 Total Segment Revenues $ 2,338.2   $ 974.9   $ ( 2.8 )   $ 3,310.3 Contract Balances The timing of revenue recognition for our HCM, HRO and Global Solutions is consistent with the invoicing of clients, as invoicing occurs in the period the services are provided. Therefore, the Company does not recognize a contract asset or liability resulting from the timing of revenue recognition and invoicing. Changes in deferred revenue related to set up fees for the  three months ended   September 30, 2019  were as follows: Contract Liability   Contract liability, July 1, 2019 $ 563.4 Recognition of revenue included in beginning of year contract liability ( 45.4 ) Contract liability, net of revenue recognized on contracts during the period 31.2 Currency adjustments ( 4.5 ) Contract liability, September 30, 2019 $ 544.7 10 Note 4.   Earnings per Share (“EPS”)     Basic   Effect of Employee Stock Option Shares   Effect of Employee Restricted Stock Shares   Diluted Three Months Ended September 30, 2019                 Net earnings   $ 582.4           $ 582.4 Weighted average shares (in millions)   432.7   1.3   1.4   435.4 EPS   $ 1.35           $ 1.34 Three Months Ended September 30, 2018                 Net earnings   $ 505.4           $ 505.4 Weighted average shares (in millions)   436.8   1.4   1.7   439.9 EPS   $ 1.16           $ 1.15 Options to purchase  0.7  million  and  0.3  million  shares of common stock for the three months ended  September 30, 2019  and  2018 , respectively, were excluded from the calculation of diluted earnings per share because their inclusion would have been anti-dilutive. Note 5.  Other Income, Net   Three Months Ended   September 30,   2019   2018 Interest income on corporate funds $ ( 32.3 )   $ ( 28.5 ) Realized gains on available-for-sale securities ( 2.6 )   ( 0.4 ) Realized losses on available-for-sale securities 0.3   1.3 Impairment of intangible assets —   12.1 Gain on sale of assets ( 1.9 )   — Non-service components of pension expense, net (see Note 11) ( 18.1 )   1.6 Other income, net $ ( 54.6 )   $ ( 13.9 ) In fiscal 2019, the Company wrote down  $ 12.1  million  of internally developed software which was determined to have no future use due to redundant software identified as part of an acquisition. 11 Note 6 .  Corporate Investments and Funds Held for Clients Corporate investments and funds held for clients at  September 30, 2019  and  June 30, 2019  were as follows:   September 30, 2019   Amortized Cost   Gross Unrealized  Gains   Gross Unrealized Losses    Fair Market Value (A) Type of issue:               Money market securities, cash and other cash equivalents $ 2,272.2   $ —   $ —   $ 2,272.2 Available-for-sale securities:               Corporate bonds 10,716.8   232.7   ( 2.2 )   10,947.3 Asset-backed securities 4,325.9   45.0   ( 2.8 )   4,368.1 U.S. Treasury securities 3,474.5   30.9   ( 5.9 )   3,499.5 U.S. government agency securities 2,106.7   25.1   ( 2.2 )   2,129.6 Canadian government obligations and Canadian government agency obligations 1,155.3   6.2   ( 5.7 )   1,155.8 Canadian provincial bonds 793.7   16.0   ( 0.3 )   809.4 Municipal bonds 561.3   17.5   ( 0.1 )   578.7 Other securities 1,130.5   27.6   ( 0.5 )   1,157.6                 Total available-for-sale securities 24,264.7   401.0   ( 19.7 )   24,646.0                 Total corporate investments and funds held for clients $ 26,536.9   $ 401.0   $ ( 19.7 )   $ 26,918.2 (A)  Included within available-for-sale securities are corporate investments with fair values of  $ 4,121.1  million  and funds held for clients with fair values of  $ 20,524.9  million .  All available-for-sale securities were included in Level 2 of the fair value hierarchy.    June 30, 2019   Amortized  Cost   Gross Unrealized Gains   Gross Unrealized Losses   Fair Market Value (B) Type of issue:               Money market securities, cash and other cash equivalents $ 6,796.2   $ —   $ —   $ 6,796.2 Available-for-sale securities:               Corporate bonds 10,691.8   182.8   ( 6.7 )   10,867.9 Asset-backed securities 4,658.3   37.8   ( 5.4 )   4,690.7 U.S. Treasury securities 2,933.0   23.8   ( 8.0 )   2,948.8 US government agency securities 2,612.0   17.7   ( 5.8 )   2,623.9 Canadian government obligations and Canadian government agency obligations 1,164.1   7.0   ( 6.0 )   1,165.1 Canadian provincial bonds 800.2   14.5   ( 0.5 )   814.2 Municipal bonds 596.1   16.4   ( 0.1 )   612.4 Other securities 1,116.1   20.6   ( 0.6 )   1,136.1                 Total available-for-sale securities 24,571.6   320.6   ( 33.1 )   24,859.1                 Total corporate investments and funds held for clients $ 31,367.8   $ 320.6   $ ( 33.1 )   $ 31,655.3 (B)  Included within available-for-sale securities are corporate investments with fair values of  $ 271.9  million  and funds held for clients with fair values of  $ 24,587.2  million .  All available-for-sale securities were included in Level 2 of the fair value hierarchy.  12 For a description of the fair value hierarchy and the Company's fair value methodologies, including the use of an independent third-party pricing service, see Note 1 “Summary of Significant Accounting Policies” in the Company's Annual Report on Form 10-K for fiscal  2019 . The Company did not transfer any assets between Levels during the  three months ended   September 30, 2019  or fiscal  2019 . In addition, the Company concurred with and did not adjust the prices obtained from the independent pricing service. The Company had no available-for-sale securities included in Level 1 or Level 3 at  September 30, 2019 . The unrealized losses and fair values of available-for-sale securities that have been in an unrealized loss position for a period of less than and greater than 12 months as of  September 30, 2019 , are as follows:    September 30, 2019   Securities in Unrealized Loss Position Less Than 12 Months   Securities in Unrealized Loss Position Greater Than 12 Months   Total   Gross Unrealized Losses   Fair Market Value   Gross Unrealized Losses   Fair Market Value    Gross Unrealized Losses   Fair Market Value Corporate bonds $ ( 1.0 )   $ 438.5   $ ( 1.2 )   $ 615.8   $ ( 2.2 )   $ 1,054.3 Asset-backed securities ( 0.9 )   327.2   ( 1.9 )   1,142.8   ( 2.8 )   1,470.0 U.S. Treasury securities ( 0.2 )   90.8   ( 5.7 )   979.7   ( 5.9 )   1,070.5 U.S. government agency securities ( 0.1 )   61.3   ( 2.1 )   945.3   ( 2.2 )   1,006.6 Canadian government obligations and Canadian government agency obligations ( 5.7 )   794.4   —   1.1   ( 5.7 )   795.5 Canadian provincial bonds ( 0.2 )   83.9   ( 0.1 )   29.8   ( 0.3 )   113.7 Municipal bonds ( 0.1 )   20.0   —   5.0   ( 0.1 )   25.0 Other securities ( 0.2 )   22.4   ( 0.3 )   67.6   ( 0.5 )   90.0   $ ( 8.4 )   $ 1,838.5   $ ( 11.3 )   $ 3,787.1   $ ( 19.7 )   $ 5,625.6 The unrealized losses and fair values of available-for-sale securities that have been in an unrealized loss position for a period of less than and greater than 12 months as of  June 30, 2019 , are as follows:   June 30, 2019   Securities in Unrealized Loss Position Less Than 12 Months   Securities in Unrealized Loss Position Greater Than 12 Months   Total   Gross Unrealized Losses   Fair Market Value   Gross Unrealized Losses   Fair Market Value    Gross Unrealized Losses   Fair Market Value Corporate bonds $ ( 0.6 )   $ 151.9   $ ( 6.1 )   $ 2,055.6   $ ( 6.7 )   $ 2,207.5 Asset-backed securities ( 0.2 )   171.9   ( 5.2 )   2,083.5   ( 5.4 )   2,255.4 U.S. Treasury securities —   1.8   ( 8.0 )   1,159.4   ( 8.0 )   1,161.2 U.S. government agency securities —   —   ( 5.8 )   1,671.4   ( 5.8 )   1,671.4 Canadian government obligations and Canadian government agency obligations ( 6.0 )   662.7   —   1.1   ( 6.0 )   663.8 Canadian provincial bonds ( 0.3 )   81.5   ( 0.2 )   50.1   ( 0.5 )   131.6 Municipal bonds —   1.5   ( 0.1 )   23.3   ( 0.1 )   24.8 Other securities ( 0.1 )   36.4   ( 0.5 )   148.1   ( 0.6 )   184.5   $ ( 7.2 )   $ 1,107.7   $ ( 25.9 )   $ 7,192.5   $ ( 33.1 )   $ 8,300.2 At  September 30, 2019 , Corporate bonds include investment-grade debt securities with a wide variety of issuers, industries, and sectors, primarily carry credit ratings of A and above, and have maturities ranging from  October 2019  through  September 2029 .  13 At  September 30, 2019 , asset-backed securities include AAA rated senior tranches of securities with predominantly prime collateral of fixed-rate auto loan, credit card, equipment lease, and rate reduction receivables with fair values of  $ 2,157.9  million ,  $ 1,578.7  million ,  $ 481.8  million , and  $ 149.7  million , respectively. These securities are collateralized by the cash flows of the underlying pools of receivables. The primary risk associated with these securities is the collection risk of the underlying receivables. All collateral on such asset-backed securities has performed as expected through  September 30, 2019 . At  September 30, 2019 , U.S. government agency securities primarily include debt directly issued by Federal Home Loan Banks and Federal Farm Credit Banks with fair values of  $ 1,266.5  million  and  $ 661.2  million , respectively. U.S. government agency securities represent senior, unsecured, non-callable debt that primarily carry ratings of Aaa by Moody's, and AA+ by Standard & Poor's, with maturities ranging from  November 2019  through  January 2029 .  At  September 30, 2019 , other securities and their fair value primarily include U.S. government agency commercial mortgage-backed securities of  $ 640.3  million  issued by Federal Home Loan Mortgage Corporation and Federal National Mortgage Association, Aa2 rated United Kingdom Gilt securities of  $ 188.1  million , AAA and AA rated supranational bonds of  $ 108.5  million , and AAA and AA rated sovereign bonds of  $ 89.5  million .  Classification of corporate investments on the Consolidated Balance Sheets is as follows:     September 30,   June 30,     2019   2019 Corporate investments:         Cash and cash equivalents   $ 1,403.9   $ 1,949.2 Short-term marketable securities   3,545.1   10.5 Long-term marketable securities (a)   576.0   261.4 Total corporate investments   $ 5,525.0   $ 2,221.1   (a) - Long-term marketable securities are included within Other assets on the Consolidated Balance Sheets. Funds held for clients represent assets that, based upon the Company's intent, are restricted for use solely for the purposes of satisfying the obligations to remit funds relating to the Company’s payroll and payroll tax filing services, which are classified as client funds obligations on our Consolidated Balance Sheets. Funds held for clients have been invested in the following categories:     September 30,   June 30,     2019   2019 Funds held for clients:         Restricted cash and cash equivalents held to satisfy client funds obligations   $ 868.3   $ 4,847.0 Restricted short-term marketable securities held to satisfy client funds obligations   1,168.6   5,013.9 Restricted long-term marketable securities held to satisfy client funds obligations   19,356.3   19,573.3 Total funds held for clients   $ 21,393.2   $ 29,434.2 Client funds obligations represent the Company's contractual obligations to remit funds to satisfy clients' payroll, tax, and other payee payment obligations and are recorded on the Consolidated Balance Sheets at the time that the Company impounds funds from clients. The client funds obligations represent liabilities that will be repaid within  one year  of the balance sheet date. The Company has reported client funds obligations as a current liability on the Consolidated Balance Sheets totaling  $ 21,011.4  million  and  $ 29,144.5  million  at  September 30, 2019  and  June 30, 2019 , respectively. The Company has classified funds held for clients as a current asset since these funds are held solely for the purpose of satisfying the client funds obligations. Of the Company’s funds held for clients at  September 30, 2019  and  June 30, 2019 ,  $ 18,898.2  million  and  $ 26,648.0  million , respectively, are held in the grantor trust. The liabilities held within the trust are intercompany liabilities to other Company subsidiaries and are eliminated in consolidation. The Company has reported the cash flows related to the purchases of corporate and client funds marketable securities and related to the proceeds from the sales and maturities of corporate and client funds marketable securities on a gross basis in the investing section of the Statements of Consolidated Cash Flows. The Company has reported the cash and cash equivalents related to client funds investments with original maturities of  ninety days or less , within the beginning and ending balances of  14 cash, cash equivalents, restricted cash, and restricted cash equivalents. These amounts have been reconciled to the Consolidated Balance Sheets on the Statements of Consolidated Cash Flows. The Company has reported the cash flows related to the cash received from and paid on behalf of clients on a net basis within net increase in client funds obligations in the financing activities section of the Statements of Consolidated Cash Flows. Approximately  79 %  of the available-for-sale securities held a AAA or AA rating at  September 30, 2019 , as rated by Moody's, Standard & Poor's, DBRS for Canadian dollar-denominated securities, and Fitch for asset-backed and commercial mortgage-backed securities.  All available-for-sale securities were rated as investment grade at  September 30, 2019 .   Expected maturities of available-for-sale securities at  September 30, 2019  are as follows: One year or less $ 4,713.6 One year to two years 6,040.5 Two years to three years 4,743.3 Three years to four years 3,726.7 After four years 5,421.9 Total available-for-sale securities $ 24,646.0 Note 7 .   Leases During the first quarter of the fiscal year ending June 30, 2020 ("fiscal 2020"), the Company adopted ASC 842 using the optional transition method under which financial results reported in periods prior were not adjusted and continue to be reported in accordance with historic accounting under ASC 840 - Leases. The Company elected the following practical expedients permitted under the lease standard:  • The Company did not reassess prior conclusions about lease identification, lease classification or initial direct costs, and did not use hindsight for leases existing at adoption date.  • The Company did not record leases with an initial term of 12 months or less on the consolidated balance sheet but continues to expense them on a straight-line basis over the lease term.  • The Company elected to combine lease and non-lease components for our facilities leases only. Non-lease components consist primarily of maintenance services. The Company records leases on the consolidated balance sheets as operating lease ROU assets, records the current portion of operating lease liabilities within accrued expenses and other current liabilities and, separately, records long-term operating lease liabilities.  The Company has entered into operating lease agreements for facilities and equipment. The Company's leases have remaining lease terms of up to approximately  ten years . Operating lease ROU assets and operating lease liabilities are recognized at the lease commencement date based on the present value of the lease payments over the lease term. The lease liabilities are measured by discounting future lease payments at the Company’s collateralized incremental borrowing rate for financing instruments of a similar term, unless the implicit rate is readily determinable. ROU assets also include adjustments related to prepaid or deferred lease payments and lease incentives. As of  September 30, 2019 , total operating lease ROU assets were  $ 504.0  million , current and long-term operating lease liabilities were approximately  $ 103.3  million  and  $ 355.4  million , respectively. The difference between total ROU assets and total lease liabilities are primarily attributable to pre-payments of our obligations and the recognition of various lease incentives.  The components of operating lease expense were as follows for the  three months ended   September 30, 2019 : Operating lease cost $ 44.2 Short-term lease cost 2.7 Variable lease cost 1.3 Total operating lease cost $ 48.2 15 Information related to our operating lease ROU assets and operating lease liabilities was as follows:   September 30, 2019 Cash paid for operating lease liabilities $ 40.2 Operating lease ROU assets obtained in exchange for new operating lease liabilities $ 6.7 Weighted-average remaining lease term (in years) 6 Weighted-average discount rate 2.4 % As of  September 30, 2019 , maturities of operating lease liabilities are as follows: Nine months ending June 30, 2020 $ 87.0 Twelve months ending June 30, 2021 97.1 Twelve months ending June 30, 2022 80.8 Twelve months ending June 30, 2023 68.2 Twelve months ending June 30, 2024 47.6 Thereafter 116.0 Total undiscounted lease obligations 496.7 Less: Imputed interest ( 38.0 ) Net lease obligations $ 458.7 Note 8.  Goodwill and Intangible Assets, net Changes in goodwill for the  three months ended   September 30, 2019  are as follows:     Employer Services   PEO Services   Total Balance at June 30, 2019 $ 2,318.2   $ 4.8   $ 2,323.0 Additions and other adjustments ( 3.3 )   —   ( 3.3 ) Currency translation adjustments ( 16.4 )   —   ( 16.4 ) Balance at September 30, 2019 $ 2,298.5   $ 4.8   $ 2,303.3 Components of intangible assets, net, are as follows:     September 30,   June 30,     2019   2019 Intangible assets:         Software and software licenses   $ 2,556.5   $ 2,519.3 Customer contracts and lists   867.8   860.7 Other intangibles   238.5   237.9     3,662.8   3,617.9 Less accumulated amortization:         Software and software licenses   ( 1,788.0 )   ( 1,762.3 ) Customer contracts and lists   ( 576.9 )   ( 566.4 ) Other intangibles   ( 219.0 )   ( 217.7 )     ( 2,583.9 )   ( 2,546.4 ) Intangible assets, net   $ 1,078.9   $ 1,071.5 Other intangibles consist primarily of purchased rights, trademarks and trade names (acquired directly or through acquisitions).  All intangible assets have finite lives and, as such, are subject to amortization.  The weighted average remaining useful life of the intangible assets is  6  years  ( 6  years  for software and software licenses,  6  years  for customer contracts and lists, and  5  years  for other intangibles).  Amortization of intangible assets was  $ 69.4  million  and  $ 53.4  million  for the  three months ended   September 30, 2019  and  2018 , respectively. 16 Estimated future amortization expenses of the Company's existing intangible assets are as follows:   Amount Nine months ending June 30, 2020 $ 209.7 Twelve months ending June 30, 2021 $ 223.0 Twelve months ending June 30, 2022 $ 176.6 Twelve months ending June 30, 2023 $ 139.4 Twelve months ending June 30, 2024 $ 108.8 Twelve months ending June 30, 2025 $ 61.4 Note 9 .  Short-term Financing The Company has a  $ 3.8  billion ,  364 -day credit agreement that matures in  June 2020  with a  one year  term-out option.  The Company also has a  $ 2.75  billion   five  year credit facility that matures in  June 2024  that contains an accordion feature under which the aggregate commitment can be increased by  $ 500  million , subject to the availability of additional commitments. In addition, the Company has a  five  year  $ 3.75  billion  credit facility maturing in  June 2023  that also contains an accordion feature under which the aggregate commitment can be increased by  $ 500  million , subject to the availability of additional commitments. The interest rate applicable to committed borrowings is tied to LIBOR, the effective federal funds rate, or the prime rate, depending on the notification provided by the Company to the syndicated financial institutions prior to borrowing. The Company is also required to pay facility fees on the credit agreements. The primary uses of the credit facilities are to provide liquidity to the commercial paper program and funding for general corporate purposes, if necessary. The Company had  no  borrowings through  September 30, 2019  under the credit agreements. The Company's U.S. short-term funding requirements related to client funds are sometimes obtained on an unsecured basis through the issuance of commercial paper, rather than liquidating previously-collected client funds that have already been invested in available-for-sale securities. This commercial paper program provides for the issuance of up to  $ 10.3  billion  in aggregate maturity value. The Company’s commercial paper program is rated A-1+ by Standard & Poor’s and Prime-1 by Moody’s.  These ratings denote the highest quality commercial paper securities. Maturities of commercial paper can range from  overnight to up to 364 days . At  September 30, 2019 , the Company had  $ 3,536.7  million  of commercial paper outstanding, which was repaid in early October 2019. At  June 30, 2019 , the Company had  no  commercial paper borrowing outstanding.  Details of the borrowings under the commercial paper program are as follows:   Three Months Ended   September 30,   2019   2018 Average daily borrowings (in billions) $ 4.0   $ 3.7 Weighted average interest rates 2.3 %   2.0 % Weighted average maturity (approximately in days) 2  days   2  days The Company’s U.S., Canadian and United Kingdom short-term funding requirements related to client funds obligations are sometimes obtained on a secured basis through the use of reverse repurchase agreements, which are collateralized principally by government and government agency securities, rather than liquidating previously-collected client funds that have already been invested in available-for-sale securities. These agreements generally have terms ranging from  overnight to up to five business days . At  September 30, 2019  and  June 30, 2019 , the Company had  $ 428.6  million  and  $ 262.0  million , respectively, of outstanding obligations related to the reverse repurchase agreements. All outstanding reverse repurchase obligations matured and were fully paid in early October 2019 and early July 2019, respectively.  Details of the reverse repurchase agreements are as follows:   Three Months Ended   September 30,   2019   2018 Average outstanding balances $ 426.6   $ 495.1 Weighted average interest rates 2.0 %   1.7 % 17 Note 10 .  Debt The Company has fixed-rate notes with  5 -year and  10 -year maturities for an aggregate principal amount of  $ 2.0  billion  (collectively the “Notes”). The Notes are senior unsecured obligations, and interest is payable in arrears, semi-annually. The principal amounts and associated effective interest rates of the Notes and other debt as of  September 30, 2019  and  June 30, 2019 , are as follows:  Debt instrument   Effective Interest Rate   September 30, 2019   June 30, 2019 Fixed-rate 2.25% notes due September 15, 2020   2.37 %   $ 1,000.0   $ 1,000.0 Fixed-rate 3.375% notes due September 15, 2025   3.47 %   1,000.0   1,000.0 Other       9.2   10.9         2,009.2   2,010.9 Less: current portion       ( 1,001.3 )   ( 2.5 ) Less: unamortized discount and debt issuance costs       ( 4.5 )   ( 6.2 ) Total long-term debt       $ 1,003.4   $ 2,002.2 The effective interest rates for the Notes include the interest on the Notes and amortization of the discount and debt issuance costs.  As of  September 30, 2019 , the fair value of the Notes, based on Level 2 inputs, was  $ 2,074.1  million . For a description of the fair value hierarchy and the Company's fair value methodologies, including the use of an independent third-party service, see Note 1 “Summary of Significant Accounting Policies” in the Company's Annual Report on Form 10-K for fiscal  2019 .   Note 11 . Employee Benefit Plans A.   Stock-based Compensation Plans.  Stock-based compensation consists of the following: • Stock Options.   Stock options are granted to employees at exercise prices equal to the fair market value of the Company's common stock on the dates of grant. Stock options generally vest ratably over  4  years  and have a term of  10  years . Compensation expense is measured based on the fair value of the stock option on the grant date and recognized on a straight-line basis over the vesting period. Stock options are forfeited if the employee ceases to be employed by the Company prior to vesting.  • Restricted Stock. • Time-Based Restricted Stock and Time-Based Restricted Stock Units.  Time-based restricted stock and time-based restricted stock units granted September 1, 2018 and after generally vest ratably over  3  years . Time-based restricted stock and time-based restricted stock units granted prior to September 1, 2018 are generally subject to a vesting period of  2  years . Awards are forfeited if the employee ceases to be employed by the Company prior to vesting.  Time-based restricted stock cannot be transferred during the vesting period. Compensation expense relating to the issuance of time-based restricted stock is measured based on the fair value of the award on the grant date and recognized on a straight-line basis over the vesting period. Dividends are paid on shares awarded under the time-based restricted stock program.   Time-based restricted stock units are settled in cash and cannot be transferred during the vesting period.  Compensation expense relating to the issuance of time-based restricted stock units is recorded over the vesting period and is initially based on the fair value of the award on the grant date and is subsequently remeasured at each reporting date during the vesting period based on the change in the ADP stock price.  No dividend equivalents are paid on units awarded under the time-based restricted stock unit program.    • Performance-Based Restricted Stock and Performance-Based Restricted Stock Units.  Performance-based restricted stock and performance-based restricted stock units generally vest over a  one  to  three  year performance period and a subsequent service period of up to  38  months . Under these programs, the Company communicates “target awards” at the beginning of the performance period with possible payouts at the end of  18 the performance period ranging from  0 %  to  150 %  of the “target awards.” Awards are generally forfeited if the employee ceases to be employed by the Company prior to vesting.   Performance-based restricted stock cannot be transferred during the vesting period. Compensation expense relating to the issuance of performance-based restricted stock is recognized over the vesting period based on the fair value of the award on the grant date with subsequent adjustments to the number of shares awarded during the performance period based on probable and actual performance against targets. After the performance period, if the performance targets are achieved, employees are eligible to receive dividends during the remaining vesting period on shares awarded under the performance-based restricted stock program. Performance-based restricted stock units cannot be transferred and are settled in either cash or stock, depending on the employee's home country. Compensation expense relating to the issuance of performance-based restricted stock units settled in cash is recognized over the vesting period initially based on the fair value of the award on the grant date with subsequent adjustments to the number of units awarded during the performance period based on probable and actual performance against targets. In addition, compensation expense is remeasured at each reporting period during the vesting period based on the change in the ADP stock price. Compensation expense relating to the issuance of performance-based restricted stock units settled in stock is recorded over the vesting period based on the fair value of the award on the grant date with subsequent adjustments to the number of units awarded based on the probable and actual performance against targets. Dividend equivalents are paid on awards under the performance-based restricted stock unit program.   • Employee Stock Purchase Plan.  The Company offers an employee stock purchase plan that allows eligible employees to purchase shares of common stock at a price equal to  95 %  of the market value for the Company's common stock on the last day of the offering period. This plan has been deemed non-compensatory and, therefore, no compensation expense has been recorded. The Company currently utilizes treasury stock to satisfy stock option exercises, issuances under the Company's employee stock purchase plan, and restricted stock awards. From time to time, the Company may repurchase shares of its common stock under its authorized share repurchase programs. The Company repurchased  1.9  million  and  1.6  million  shares in the three months ended  September 30, 2019  and  2018 , respectively. The Company considers several factors in determining when to execute share repurchases, including, among other things, actual and potential acquisition activity, cash balances and cash flows, issuances due to employee benefit plan activity, and market conditions. The following table represents pre-tax stock-based compensation expense for the  three months ended   September 30, 2019  and  2018 , respectively:   Three Months Ended   September 30,   2019   2018 Operating expenses $ 4.0   $ 5.4 Selling, general and administrative expenses 28.3   28.0 System development and programming costs 4.8   5.0 Total stock-based compensation expense $ 37.1   $ 38.4 As of  September 30, 2019 , the total remaining unrecognized compensation cost related to non-vested stock options, restricted stock units, and restricted stock awards amounted to  $ 32.9  million ,  $ 83.9  million , and  $ 142.7  million , respectively, which will be amortized over the weighted-average remaining requisite service periods of  2.5  years ,  1.8  years , and  2.4  years , respectively. 19 During the  three months ended   September 30, 2019 , the following activity occurred under the Company's existing plans: Stock Options:     Number of Options (in thousands)   Weighted Average Price (in dollars) Options outstanding at July 1, 2019   3,608   $ 103 Options granted   1,015   $ 170 Options exercised   ( 396 )   $ 87 Options forfeited/canceled   ( 46 )   $ 123 Options outstanding at September 30, 2019   4,181   $ 120 Time-Based Restricted Stock and Time-Based Restricted Stock Units:     Number of Shares (in thousands)   Number of Units  (in thousands) Restricted shares/units outstanding at July 1, 2019   1,272   290 Restricted shares/units granted   504   97 Restricted shares/units vested   ( 806 )   ( 193 ) Restricted shares/units forfeited   ( 35 )   ( 8 ) Restricted shares/units outstanding at September 30, 2019   935   186 Performance-Based Restricted Stock and Performance-Based Restricted Stock Units:     Number of Shares (in thousands)   Number of Units  (in thousands) Restricted shares/units outstanding at July 1, 2019   250   867 Restricted shares/units granted   112   369 Restricted shares/units vested   ( 171 )   ( 361 ) Restricted shares/units forfeited   ( 3 )   ( 14 ) Restricted shares/units outstanding at September 30, 2019   188   861 The fair value for stock options granted was estimated at the date of grant using the following assumptions:   Three Months Ended   September 30,   2019   2018 Risk-free interest rate 1.4 %   2.7 % Dividend yield 1.9 %   1.9 % Weighted average volatility factor 19.3 %   20.9 % Weighted average expected life (in years) 5.4   5.4 Weighted average fair value (in dollars)  $ 24.40   $ 26.60 20 B.   Pension Plans The components of net pension expense were as follows:   Three Months Ended   September 30,   2019   2018 Service cost – benefits earned during the period $ 14.9   $ 14.9 Interest cost on projected benefits 15.4   19.7 Expected return on plan assets ( 29.5 )   ( 32.9 ) Net amortization and deferral 1.6   0.1 Settlement charges and special termination benefits ( 5.1 )   15.3 Net pension expense $ ( 2.7 )   $ 17.1 In fiscal 2018, the Company offered a voluntary early retirement program (“VERP”) to certain eligible U.S.-based associates aged 55 or above with at least 10 years of service. During the three months ended September 30, 2018, the Company recorded  $ 15.3  million  of non-cash settlement charges and special termination benefits.   Note 12 .  Income Taxes The effective tax rate for the three months ended  September 30, 2019  and  2018  was  21.2 %  and  21.9 % , respectively. The decrease in the effective tax rate is due to an increase in tax incentives related to our software development activities and a decrease in reserves for uncertain tax positions in the three months ended  September 30, 2019 . This was partially offset by a decrease in the excess tax benefit on stock-based compensation in the three months ended  September 30, 2019  and the income tax benefit related to the Tax Cuts and Job Act in the three months ended  September 30, 2018 .   Note 13.  Commitments and Contingencies In June 2018, a potential class action complaint was filed against ADP in the Circuit Court of Cook County, Illinois. The complaint asserts that ADP violated the Illinois Biometric Privacy Act, was negligent and unjustly enriched itself in connection with its collection, use and storage of biometric data of employees of its clients who are residents of Illinois in connection with certain services provided by ADP to clients in Illinois. The complaint seeks statutory and other unspecified monetary damages, injunctive relief and attorney’s fees. In addition, similar potential class action complaints have been filed in Illinois state courts against ADP and/or certain of its clients with respect to the collection, use and storage of biometric data of the employees of these clients. All of these claims are still in their earliest stages and the Company is unable to estimate any reasonably possible loss, or range of loss, with respect to these matters. The Company intends to vigorously defend against these lawsuits. The Company is subject to various claims, litigation and regulatory compliance matters in the normal course of business. When a loss is considered probable and reasonably estimable, the Company records a liability in the amount of its best estimate for the ultimate loss. Management currently believes that the resolution of these claims, litigation and regulatory compliance matters against us, individually or in the aggregate, will not have a material adverse impact on our consolidated results of operations, financial condition or cash flows. These matters are subject to inherent uncertainties and management's view of these matters may change in the future.   It is not the Company’s business practice to enter into off-balance sheet arrangements. In the normal course of business, the Company may enter into contracts in which it makes representations and warranties that relate to the performance of the Company’s services and products. The Company does not expect any material losses related to such representations and warranties. 21 Note 14.  Stockholders' Equity Changes in stockholders' equity by component are as follows:   Three Months Ended   September 30, 2019   Common Stock   Capital in Excess of Par Value   Retained Earnings   Treasury Stock   AOCI   Total  Balance at June 30, 2019 $ 63.9   $ 1,183.2   $ 17,500.6   $ ( 13,090.5 )   $ ( 257.3 )   $ 5,399.9 Net earnings —   —   582.4   —   —   582.4 Other comprehensive income —   —   —   —   23.4   23.4 Stock-based compensation expense —   36.0   —   —   —   36.0 Issuances relating to stock compensation plans —   ( 5.5 )   —   70.5   —   65.0 Treasury stock acquired (1.9 shares) —   —   —   ( 392.6 )   —   ( 392.6 ) Dividends declared ($0.79 per share) —   —   ( 346.6 )   —   —   ( 346.6 ) Other —   —   ( 6.8 )   —   —   ( 6.8 ) Balance at September 30, 2019 $ 63.9   $ 1,213.7   $ 17,729.6   $ ( 13,412.6 )   $ ( 233.9 )   $ 5,360.7   Three Months Ended   September 30, 2018   Common Stock   Capital in Excess of Par Value   Retained Earnings   Treasury Stock   AOCI   Total  Balance at June 30, 2018 $ 63.9   $ 1,014.8   $ 16,546.6   $ ( 12,209.6 )   $ ( 679.8 )   $ 4,735.9 Net earnings —   —   505.4   —   —   505.4 Other comprehensive income —   —   —   —   ( 60.3 )   ( 60.3 ) Stock-based compensation expense —   34.6   —   —   —   34.6 Issuances relating to stock compensation plans —   ( 14.3 )   —   70.2   —   55.9 Treasury stock acquired (1.6 shares) —   —   —   ( 281.8 )   —   ( 281.8 ) Dividends declared ($0.69 per share) —   —   ( 310.9 )   —   —   ( 310.9 ) Balance at September 30, 2018 $ 63.9   $ 1,035.1   $ 16,741.1   $ ( 12,421.2 )   $ ( 740.1 )   $ 4,678.8 22 Note 15 .  Reclassifications out of Accumulated Other Comprehensive Income (“AOCI”) Changes in AOCI by component are as follows:   Three Months Ended   September 30, 2019   Currency Translation Adjustment   Net Gains/Losses on Available-for-sale Securities   Pension Liability   Accumulated Other Comprehensive Loss Balance at June 30, 2019 $ ( 269.2 )   $ 224.6   $ ( 212.7 )   $ ( 257.3 ) Other comprehensive (loss)/income before      reclassification adjustments ( 48.9 )   96.1   —   47.2 Tax effect —   ( 20.8 )   —   ( 20.8 ) Reclassification adjustments to      net earnings —   ( 2.3 ) (A) ( 1.7 ) (B) ( 4.0 ) Tax effect —   0.5   0.5   1.0 Balance at September 30, 2019 $ ( 318.1 )   $ 298.1   $ ( 213.9 )   $ ( 233.9 )   Three Months Ended   September 30, 2018   Currency Translation Adjustment   Net Gains/Losses on Available-for-sale Securities   Pension Liability   Accumulated Other Comprehensive Loss Balance at June 30, 2018 $ ( 227.0 )   $ ( 274.0 )   $ ( 178.8 )   $ ( 679.8 ) Other comprehensive loss before      reclassification adjustments ( 22.9 )   ( 50.4 )   —   ( 73.3 ) Tax effect —   12.3   —   12.3 Reclassification adjustments to net earnings —   0.9 (A) 0.2 (B) 1.1 Tax effect —   ( 0.2 )   ( 0.2 )   ( 0.4 ) Balance at September 30, 2018 $ ( 249.9 )   $ ( 311.4 )   $ ( 178.8 )   $ ( 740.1 ) (A) Reclassification adjustments out of AOCI are included within Other income, net, on the Statements of Consolidated Earnings. (B) Reclassification adjustments out of AOCI are included in net pension expense (see  Note 11 ). Note 16 .  Interim Financial Data by Segment Based upon similar economic and operational characteristics, the Company’s strategic business units have been aggregated into the following  two  reportable segments: Employer Services and PEO Services. The primary components of the “Other” segment are certain corporate overhead charges and expenses that have not been allocated to the reportable segments, including corporate functions, costs related to our transformation office, non-recurring gains and losses, the elimination of intercompany transactions, and interest expense. Certain revenues and expenses are charged to the reportable segments at a standard rate for management reasons. Other costs are recorded based on management responsibility. Beginning in the first quarter of fiscal 2020, the Company made changes to the allocation methodology for certain corporate allocations, in both the current period and the prior period in the table below, which did not materially affect reportable segment results. In addition, the segment results in the table below reflect the impact of the revision to PEO revenues for comparability. Refer to Note 1 to our consolidated financial statements for more information on this revision. 23 Segment Results:   Revenues   Three Months Ended   September 30,   2019   2018 Employer Services $ 2,441.4   $ 2,338.2 PEO Services 1,056.9   974.9 Other ( 2.6 )   ( 2.8 )   $ 3,495.7   $ 3,310.3      Earnings before Income Taxes   Three Months Ended   September 30,   2019   2018 Employer Services $ 681.0   $ 639.8 PEO Services 148.4   143.7 Other ( 90.3 )   ( 136.7 )   $ 739.1   $ 646.8 24 Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations   (Tabular dollars are presented in millions, except per share amounts) FORWARD-LOOKING STATEMENTS This document and other written or oral statements made from time to time by Automatic Data Processing, Inc. and its subsidiaries (“ADP” or “the Company”) may contain “forward-looking statements” within the meaning of the Private Securities Litigation Reform Act of 1995.  Statements that are not historical in nature and which may be identified by the use of words like “expects,” “assumes,” “projects,” “anticipates,” “estimates,” “we believe,” “could” and other words of similar meaning, are forward-looking statements.  These statements are based on management’s expectations and assumptions and depend upon or refer to future events or conditions and are subject to risks and uncertainties that may cause actual results to differ materially from those expressed.  Factors that could cause actual results to differ materially from those contemplated by the forward-looking statements or that could contribute to such difference include: ADP's success in obtaining and retaining clients, and selling additional services to clients; the pricing of products and services; the success of our new solutions; compliance with existing or new legislation or regulations; changes in, or interpretations of, existing legislation or regulations; overall market, political and economic conditions, including interest rate and foreign currency trends; competitive conditions; our ability to maintain our current credit ratings and the impact on our funding costs and profitability; security or cyber breaches, fraudulent acts, and system interruptions and failures; employment and wage levels; changes in technology; availability of skilled technical associates; the impact of new acquisitions and divestitures; and the adequacy, effectiveness and success of our business transformation initiatives.  ADP disclaims any obligation to update any forward-looking statements, whether as a result of new information, future events, or otherwise, except as required by law.  These risks and uncertainties, along with the risk factors discussed under “Item 1A. - Risk Factors” in our Annual Report on Form 10‑K for the fiscal year ended  June 30, 2019  (“fiscal  2019 ”), and in other written or oral statements made from time to time by ADP, should be considered in evaluating any forward-looking statements contained herein. NON-GAAP FINANCIAL MEASURES In addition to our U.S. GAAP results, we use adjusted results and other non-GAAP metrics to evaluate our operating performance in the absence of certain items and for planning and forecasting of future periods. Adjusted EBIT, adjusted EBIT margin, adjusted net earnings, adjusted diluted earnings per share, adjusted effective tax rate and organic constant currency are all non-GAAP financial measures. Please refer to the accompanying financial tables in the “Non-GAAP Financial Measures” section for a discussion of why ADP believes these measures are important and for a reconciliation of non-GAAP financial measures to their comparable GAAP financial measures. 25 EXECUTIVE OVERVIEW We are a leading global provider of cloud-based Human Capital Management (“HCM”) technology solutions - including payroll, talent management, Human Resources and benefits administration, and workforce management - to employers around the world.  As a leader in this industry, we deliver on our global HCM strategy and make investments in highly strategic areas and technology in order to strengthen our underlying business model and prospects for continued growth.  Highlights from the  three months ended   September 30, 2019  include: Employer Services New Business Bookings   Average number of Worksite Employees á 6%   á 7% to 563,000             Revenues   Revenues á 6% to $3.5 billion   á 6% organic constant currency               EBIT Margin   Adjusted EBIT Margin á 160 basis points to 21.1%   á 60 basis points to 21.3%               Diluted earnings per share ("EPS")   Adjusted diluted EPS á 17% to $1.34   á 12% to $1.34               Our shareholder friendly actions continued as we returned approximately:   $340 million   $310 million via dividends   via share repurchases                 At ADP, we are always designing for people and we continue to innovate by anticipating our clients' evolving needs as the world of work changes. We are leading the HCM industry with innovations like our next gen platforms and driving growth through our strategic, cloud-based HCM solutions. We further enable these solutions by supplementing them with organic, differentiated investments such as the ADP Marketplace and ADP Datacloud, and through our compliance expertise. The recognition we have received in the market for our next gen solutions and in winning this year's HR Executive 'Top HR Product' award reflect our commitment to innovation and strong execution by our associates. As we continue our transformation journey, our initiatives are yielding efficiencies and are focused on changing how we work. We remain on track to continue to deliver balanced revenue and profit growth, margin expansion, and ultimately drive long-term shareholder value. Through these investments, innovations and our continued transformation, we are enhancing our position as a leading global HCM provider that can help businesses address the entire worker spectrum from full-time to freelancer and from hire through retire. As the HCM market continues to evolve rapidly, we remain focused on rethinking a better, more personalized world at work and efficiently helping our clients and their workers achieve their full potential.  We have a strong business model and operate in a growing global market. We continue to generate a high percentage of recurring revenues, healthy and improving margins, and consistent strong cash flows. Our financial condition remains solid at  September 30, 2019 .  Through our investments in innovation and transformation, we are positioned to maintain our positive momentum for fiscal 2020. 26 RESULTS AND ANALYSIS OF CONSOLIDATED OPERATIONS Total Revenues For the three months ended  September 30 th: Quarter over quarter growth: á 6% Organic constant currency: á 6% Our revenue growth includes nearly one percentage point of unfavorability from foreign currency offset by benefits from acquisitions. Revenues for the  three months ended   September 30, 2019   increased  due to new business started from New Business Bookings and continued strong retention. Refer to “Analysis of Reportable Segments” for additional discussion of the increases in revenue for both of our reportable segments, Employer Services and Professional Employer Organization (“PEO”) Services.  Total revenues for the three months ended  September 30, 2019  include interest on funds held for clients of  $133.9 million , as compared to  $118.5 million  for the three months ended  September 30, 2018 . The  increase  in the consolidated interest earned on funds held for clients resulted from an increase in the average interest rate earned to  2.3%  for the three months ended  September 30, 2019 , as compared to  2.1%  for the three months ended  September 30, 2018 , coupled with an  increase  in our average client funds balance of  6.8%  to  $23.7 billion  for the three months ended  September 30, 2019 , as compared to the three months ended  September 30, 2018 . Total Expenses   Three Months Ended   % Change   September 30,     2019   2018   As Reported       Costs of revenues:           Operating expenses $ 1,787.7   $ 1,697.0   5 % Systems development and programming costs 168.2   158.0   6 % Depreciation and amortization 88.9   72.6   22 % Total costs of revenues 2,044.8   1,927.6   6 % Selling, general and administrative expenses 726.5   713.9   2 % Interest expense 39.9   35.9   n/m Total expenses $ 2,811.2   $ 2,677.4   5 % n/m - not meaningful Our total expenses  increased  due to  an increase  in PEO Services zero-margin benefits pass-through costs, increased costs to service our client base in support of our growing revenue and increased selling and marketing expenses. The increase was partially offset by net charges related to our transformation initiatives in the three months ended  September 30, 2018 , operating efficiencies as a result of our continued successful execution on transformation initiatives, and the impact of foreign currency in the three months ended  September 30, 2019 . 27 Operating expenses  increased  as our PEO Services zero-margin benefits pass-through costs increased to  $699.1 million  from  $640.5 million  for the three months ended  September 30, 2019  and  2018 , respectively. Additionally, operating expenses  increase d due to increased costs to service our client base in support of our growing revenue partially offset by operating efficiencies as a result of our continued successful execution on our transformation initiatives and the impact of foreign currency. Systems development and programming costs  increased  due to increased investments and costs to develop, support, and maintain our products partially offset by capitalization of costs related to our strategic projects, including our next gen platforms, and reduced costs as a result of our transformation initiatives. Depreciation and amortization expense  increased  related to the amortization of our internally developed software and acquisitions of intangibles. Selling, general and administrative expenses  increased  due to increased selling and marketing expenses as a result of investments in our sales force and our brand. The increase was partially offset by broad-based efficiencies as a result of our transformation initiatives during the three months ended  September 30, 2019  and net charges related to our transformation initiatives in the three months ended  September 30, 2018 . Other Income, net   Three Months Ended       September 30,       2019   2018   $ Change Interest income on corporate funds $ (32.3 )   $ (28.5 )   $ 3.8 Realized gains on available-for-sale securities (2.6 )   (0.4 )   2.2 Realized losses on available-for-sale securities 0.3   1.3   1.0 Impairment of intangible assets —   12.1   12.1 Gain on sale of assets (1.9 )   —   1.9 Non-service components of pension expense, net (18.1 )   1.6   19.7 Other income, net $ (54.6 )   $ (13.9 )   $ 40.7 Other income, net,  increase d  $40.7 million  for the  three months ended   September 30, 2019 , as compared to the  three months ended   September 30, 2018 . The  increase  was due to the non-service components of pension expense, net during the  three months ended   September 30, 2019 . Additionally, in fiscal 2018, we wrote down  $12.1 million  of internally developed software which was determined to have no future use due to redundant software identified as part of an acquisition.   Earnings before Income Taxes ( “ EBIT ” ) For the three months ended  September 30 th: Quarter over quarter growth: á 14% á 160bps Earnings before income taxes  increased  due to the increases in revenues partially offset by increases in expenses discussed above.  28 Overall margin  increased  as a result of our continued successful execution of our broad-based transformation initiatives as well as operating efficiencies and improvements in our systems infrastructure spend. In addition, the increase was aided by an  increase  in interest earned on funds held for clients and a  decrease  in charges of  $33.1 million  related to our transformation initiatives during the  three months ended   September 30, 2019 . These were partially offset by incremental pressure from growth in our zero-margin benefits pass-throughs and increased selling and marketing expenses.  Adjusted EBIT For the three months ended  September 30 th: Quarter over quarter growth: á 8% á 60bps Adjusted EBIT excludes charges related to our transformation initiatives in the respective periods for the three months ended  September 30, 2019  and  2018 , reflecting a  decrease  in charges of  $33.1 million  during the  three months ended   September 30, 2019 . Adjusted EBIT  increase d due to the increases in revenues offset by the increases in expenses discussed above. Our adjusted EBIT margin reflects changes described above in our EBIT margin.  Provision for Income Taxes The effective tax rate for the three months ended  September 30, 2019  and  2018  was  21.2%  and  21.9% , respectively. The decrease in the effective tax rate is due to an increase in tax incentives related to our software development activities and a decrease in reserves for uncertain tax positions in the three months ended  September 30, 2019 . This was partially offset by a decrease in the excess tax benefit on stock-based compensation in the three months ended  September 30, 2019  and the income tax benefit related to the Tax Cuts and Job Act (“Act”) in the three months ended  September 30, 2018 .  Adjusted Provision for Income Taxes The adjusted effective tax rate excludes the impact of charges related to our transformation initiatives and the income tax benefit related to the Act in the respective periods for the  three months ended   September 30, 2019  and  2018 . The adjusted effective tax rate for the three months ended  September 30, 2019  and  2018  was  21.2%  and  22.2% , respectively. The drivers of the decrease in the adjusted effective tax rate are the same as the effective tax rate, with the exception of the income tax benefit related to the Act, discussed above.  29 Net Earnings and Diluted EPS For the three months ended  September 30 th: Quarter over quarter growth: á 15% á 17% Net earnings reflects the changes described above in our earnings before income taxes and our effective tax rate.  Diluted EPS  increased  as a result of an  increase  in net earnings and the impact of fewer shares outstanding, resulting from the repurchase of approximately  1.9 million  shares during the  three months ended   September 30, 2019  and  1.6 million  shares for the  three months ended   September 30, 2018 , partially offset by the issuances of shares under our employee benefit plans. Adjusted Net Earnings and Adjusted Diluted EPS For the three months ended  September 30 th: Quarter over quarter growth: á 10% á 12% Adjusted net earnings reflects the changes described above in our adjusted EBIT and our adjusted effective tax rate. Adjusted diluted EPS reflects the changes described above in our adjusted net earnings and shares outstanding. 30 ANALYSIS OF REPORTABLE SEGMENTS   Revenues   Three Months Ended   % Change   September 30,     2019   2018   As  Reported   Organic constant currency Employer Services $ 2,441.4   $ 2,338.2   4 %   5 % PEO Services 1,056.9   974.9   8 %   8 % Other (2.6 )   (2.8 )   n/m   n/m   $ 3,495.7   $ 3,310.3   6 %   6 %   Earnings before Income Taxes   Three Months Ended   % Change   September 30,     2019   2018   As Reported Employer Services $ 681.0   $ 639.8   6 % PEO Services 148.4   143.7   3 % Other (90.3 )   (136.7 )   n/m   $ 739.1   $ 646.8   14 % n/m - not meaningful Employer Services Revenues Revenues  increase d due to new business started from New Business Bookings and continued strong retention. Our revenue growth includes about one percentage point of unfavorability from foreign currency partially offset by benefits from acquisitions. Our revenues also  increase d due to the interest earned on funds held for clients, which benefited from improvement in the average yield earned on our client fund investments and growth in average client funds balances, and an increase in the number of employees on our clients’ payrolls as our pays per control increased  2.4%  for the three months ended  September 30, 2019  as compared to the three months ended  September 30, 2018 . Our pays per control metric measures the number of employees on our clients' payrolls as measured on a same-store-sales basis utilizing a representative subset of payrolls ranging from small to large businesses that are reflective of a broad range of U.S. geographic regions.  Earnings before Income Taxes Employer Services’ earnings before income taxes  increase d  6%  due to increased revenues discussed above offset by  increase d  expenses due to increased costs to service our client base in support of our growing revenue and increased selling and marketing expenses as a result of investments in our sales force and our brand. These increases in expenses were partially offset by operating efficiencies as a result of our transformation initiatives and the impact from foreign currency. 31 Quarter over quarter growth: á 50bps Employer Services' overall margin  increased  as a result of the continued successful execution of our broad-based transformation initiatives, as well as operating efficiencies and improvements in our systems infrastructure spend, and was aided by an  increase  in interest earned on funds held for clients. This increase was partially offset by increased selling and marketing expenses. PEO Services Revenues   PEO Revenues   Three Months Ended   Change   September 30,     2019   2018   $ % PEO Services' revenues $ 1,056.9   $ 974.9   $ 82.0 8 % Less: PEO zero-margin benefits pass-throughs 699.1   640.5   58.6 9 % PEO Services' revenues excluding zero-margin benefits pass-throughs $ 357.8   $ 334.4   $ 23.4 7 % PEO Services' revenues  increase d  8%  due to a  7%   increase  in the average number of Worksite Employees for the  three months ended   September 30, 2019  driven by an increase in the number of new PEO Services clients and growth of our existing clients. PEO Services' revenue excluding zero-margin benefits pass-throughs increased  7%  and includes pressure from lower workers compensation and State Unemployment Insurance (“SUI”) costs and related pricing. Earnings before Income Taxes PEO Services' earnings before income taxes  increase d  3%  due to the  increase d revenues discussed above offset by  an increase  in expenses of  $77.3 million . The  increase  in expenses was related to  an increase  in zero-margin benefits pass-through costs of  $58.6 million  described above and a decrease of $5.3 million in pre-tax benefit related to ADP Indemnity reserve adjustments, which drove about 60 basis points of pressure, in the three months ended  September 30, 2019 , as compared to the three months ended  September 30, 2018 . Quarter over quarter growth: â 70bps 32 PEO Services' overall margin  decreased  due to a decrease of $5.3 million in pre-tax benefit from ADP Indemnity in the three months ended  September 30, 2019 , as compared to the three months ended  September 30, 2018 . ADP Indemnity provides workers' compensation and employer's liability deductible reimbursement insurance protection for PEO Services' Worksite Employees up to $1 million per occurrence. PEO Services has secured a workers’ compensation and employer’s liability insurance policy that has a $1 million per occurrence retention and, in fiscal years 2012 and prior, aggregate stop loss insurance that covers any aggregate losses within the $1 million retention that collectively exceed a certain level, from an admitted and licensed insurance company of AIG. The Company has obtained approximately  $242 million  of irrevocable standby letters of credit in favor of licensed insurance companies of AIG to secure TotalSource workers’ compensation obligations if ADP were to fail to reimburse AIG for workers’ compensation payments. The Company had  no  drawdowns during the  three months ended   September 30, 2019  and  September 30, 2018 , respectively, under the letters of credit. We utilize historical loss experience and actuarial judgment to determine the estimated claim liability, and changes in estimated ultimate incurred losses are included in the PEO segment. ADP Indemnity recorded a pre-tax benefit of approximately $3.4 million for the  three months ended   September 30, 2019 , compared to $8.7 million for the  three months ended   September 30, 2018 . For the fiscal years 2013 to 2019, ADP Indemnity paid premiums to enter into reinsurance arrangements with ACE American Insurance Company, a wholly-owned subsidiary of Chubb Limited, to cover substantially all losses incurred by ADP Indemnity during these policy years. Each of these reinsurance arrangements limits our overall exposure incurred up to a certain limit. We believe the likelihood of ultimate losses exceeding this limit is remote. For the  three months ended   September 30, 2019 , ADP Indemnity paid a premium of  $215.0 million  to enter into a reinsurance arrangement with Chubb Limited to cover substantially all losses incurred by ADP Indemnity for the fiscal  2020  policy year on terms substantially similar to the fiscal 2019 reinsurance policy.  Other The primary components of the “Other” segment are certain corporate overhead charges and expenses that have not been allocated to the reportable segments, including corporate functions, costs related to our transformation office, non-recurring gains and losses, the elimination of intercompany transactions, and interest expense.  Non-GAAP Financial Measures In addition to our U.S. GAAP results, we use the adjusted results and other non-GAAP metrics set forth in the table below to evaluate our operating performance in the absence of certain items and for planning and forecasting of future periods:  Adjusted Financial Measure U.S. GAAP Measures Adjusted EBIT Net earnings   Adjusted provision for income taxes  Provision for income taxes Adjusted net earnings   Net earnings   Adjusted diluted earnings per share   Diluted earnings per share Adjusted effective tax rate  Effective tax rate Organic constant currency Revenues We believe that the exclusion of the identified items helps us reflect the fundamentals of our underlying business model and analyze results against our expectations and against prior period, and to plan for future periods by focusing on our underlying operations.  We believe that the adjusted results provide relevant and useful information for investors because it allows investors to view performance in a manner similar to the method used by management and improves their ability to understand and assess our operating performance.  The nature of these exclusions is for specific items that are not fundamental to our underlying business operations.  Since these adjusted financial measures and other non-GAAP metrics are not measures of performance calculated in accordance with U.S. GAAP, they should not be considered in isolation from, as a substitute for, or superior to their corresponding U.S. GAAP measures, and they may not be comparable to similarly titled measures at other companies. 33     Three Months Ended   % Change     September 30,       2019   2018   As Reported         Net earnings     $ 582.4   $ 505.4   15 % Adjustments:             Provision for income taxes   156.7   141.4     All other interest expense (a)   14.8   15.0     All other interest income (a)   (8.4 )   (7.6 )     Transformation initiatives (b)   (0.6 )   32.5     Adjusted EBIT   $ 744.9   $ 686.7   8 % Adjusted EBIT Margin   21.3 %   20.7 %                   Provision for income taxes   $ 156.7   $ 141.4   11 % Adjustments:             Transformation initiatives (c)   (0.2 )   8.0     Tax Cuts and Jobs Act (d)   —   1.1     Adjusted provision for income taxes   $ 156.5   $ 150.5   4 % Adjusted effective tax rate (e)   21.2 %   22.2 %                   Net earnings     $ 582.4   $ 505.4   15 % Adjustments:             Transformation initiatives (b)   (0.6 )   32.5     Income tax provision for transformation initiatives (c)   0.2   (8.0 )     Tax Cuts and Jobs Act (d)   —   (1.1 )     Adjusted net earnings     $ 582.0   $ 528.8   10 %               Diluted EPS     $ 1.34   $ 1.15   17 % Adjustments:             Transformation initiatives (b) (c)   —   0.06     Tax Cuts and Jobs Act (d)   —   —     Adjusted diluted EPS     $ 1.34   $ 1.20   12 % (a) We include the interest income earned on investments associated with our client funds extended investment strategy and interest expense on borrowings related to our client funds extended investment strategy as we believe these amounts to be fundamental to the underlying operations of our business model. The adjustments in the table above represent the interest income and interest expense that is not related to our client funds extended investment strategy and are labeled as “All other interest expense” and “All other interest income.”  (b) The transformation initiatives for the  three months ended   September 30, 2019  include net reversals of charges related to our Voluntary Early Retirement Program (“VERP”) of $5.8 million, and a gain on sale of assets related to our Service Alignment Initiative of  $1.9 million , offset by charges of $7.1 million related to other transformation initiatives. Unlike other severance charges which are not included as an adjustment to get to adjusted results, these specific charges relate to actions that are part of our broad-based, company-wide transformation initiative.  (c) The tax provision (benefit) on transformation initiatives was calculated based on the annualized marginal rate in effect during the quarter of the adjustment. (d) There was no impact from the Tax Cuts and Jobs Act in the  three months ended   September 30, 2019 .  (e) The Adjusted effective tax rate is calculated as our Adjusted provision for income taxes divided by the sum of our Adjusted net earnings plus our Adjusted provision for income taxes. 34 The following table reconciles our reported growth rates to the non-GAAP measure of organic constant currency, which excludes the impact of acquisitions, the impact of dispositions, and the impact of foreign currency. The impact of acquisitions and dispositions is calculated by excluding the current year revenues of acquisitions until the one year anniversary of the transaction and by excluding the prior year revenues of divestitures for the one year period preceding the transaction.  The impact of foreign currency is determined by calculating the current year result using foreign exchange rates consistent with the prior year.  The PEO segment is not impacted by acquisitions, dispositions or foreign currency.    Three Months Ended   September 30,   2019 Consolidated revenue growth as reported 6 % Adjustments:   Impact of acquisitions — % Impact of foreign currency 1 % Consolidated revenue growth, organic constant currency 6 %     Employer Services revenue growth as reported 4 % Adjustments:   Impact of acquisitions — % Impact of foreign currency 1 % Employer Services revenue growth, organic constant currency 5 % FINANCIAL CONDITION, LIQUIDITY AND CAPITAL RESOURCES For corporate liquidity, we expect existing cash, cash equivalents, short-term marketable securities, long-term marketable securities, and cash flow from operations, together with our  $10.3 billion  of committed credit facilities and our ability to access both long-term and short-term debt financing from the capital markets, will be adequate to meet our operating, investing, and financing activities such as our regular quarterly dividends, share repurchases, and capital expenditures.  For client funds liquidity, we have the ability to borrow through our financing arrangements under our U.S. short-term commercial paper program and our U.S., Canadian and United Kingdom short-term reverse repurchase agreements together with our  $10.3 billion  of committed credit facilities and our ability to use corporate liquidity when necessary to meet short-term funding requirements related to client funds obligations. Please see “Quantitative and Qualitative Disclosures about Market Risk” for a further discussion of the risks of our client funds extended investment strategy. See  Note 9  of our Consolidated Financial Statements for a description of our short-term financing including commercial paper.  As of  September 30, 2019 , cash and cash equivalents were  $1.4 billion , which were primarily invested in time deposits and money market funds. Operating, Investing and Financing Cash Flows Our cash flows from operating, investing, and financing activities, as reflected in the Statements of Consolidated Cash Flows for the  three months ended   September 30, 2019  and  2018 , respectively, are summarized as follows:      Three Months Ended         September 30,         2019   2018   $ Change Cash provided by / (used in):             Operating activities   $ 432.8   $ 149.2   $ 283.6 Investing activities   122.2   (452.7 )   574.9 Financing activities   (5,045.9 )   (1,817.7 )   (3,228.2 ) Effect of exchange rate changes on cash, cash equivalents, restricted cash, and restricted cash equivalents   (33.1 )   (12.6 )   (20.5 ) Net change in cash, cash equivalents, restricted cash, and restricted cash equivalents   $ (4,524.0 )   $ (2,133.8 )   $ (2,390.2 ) 35 Net cash flows provided by operating activities for the  three months ended   September 30, 2019  and  September 30, 2018  include cash payments for reinsurance agreements of  $215.0  million and  $218.0  million, respectively, which represent the policy premium for the entire fiscal year. The increase in operating cash provided is due to a net favorable change in the components of working capital within operating activities, as compared to the  three months ended   September 30, 2018 .  Net cash flows from investing activities changed due to the timing of proceeds offset by purchases of corporate and client funds marketable securities of  $459.8 million , lower payments made related to acquisitions and proceeds from sale of assets, partially offset by payments made related to acquisitions of intangibles and capital expenditures in the  three months ended   September 30, 2019 . Net cash flows from financing activities changed due to a  net decrease  in client fund obligations of  $6,351.8 million , which is due to the timing of impounds from our clients and payments to our clients' employees and other payees, and more cash returned to shareholders via dividends and share repurchases, partially offset by an increase in net proceeds from commercial paper borrowings for the  three months ended   September 30, 2019 . We purchased  1.9 million  shares of our common stock at an average price per share of  $164.80  during the  three months ended   September 30, 2019 , as compared to purchases of  1.6 million  shares at an average price per share of  $138.59  during the  three months ended   September 30, 2018 . From time to time, the Company may repurchase shares of its common stock under its authorized share repurchase programs. The Company considers several factors in determining when to execute share repurchases, including, among other things, actual and potential acquisition activity, cash balances and cash flows, issuances due to employee benefit plan activity, and market conditions.  Capital Resources and Client Funds Obligations We have  $2.0 billion  of senior unsecured notes with maturity dates in 2020 and 2025.  We may from time to time revisit the long-term debt market to refinance existing debt, finance investments including acquisitions for our growth, and maintain the appropriate capital structure. However, there can be no assurance that volatility in the global capital and credit markets would not impair our ability to access these markets on terms acceptable to us, or at all. See  Note 10  of our Consolidated Financial Statements for a description of our long-term financing. Our U.S. short-term funding requirements related to client funds are sometimes obtained on an unsecured basis through the issuance of commercial paper, rather than liquidating previously-collected client funds that have already been invested in available-for-sale securities. This commercial paper program provides for the issuance of up to  $10.3 billion  in aggregate maturity value. Our commercial paper program is rated A-1+ by Standard & Poor’s and Prime-1 (“P-1”) by Moody’s. These ratings denote the highest quality commercial paper securities.  Maturities of commercial paper can range from overnight to up to 364 days. At  September 30, 2019 , the Company had   $3,536.7 million  of commercial paper outstanding, which was repaid in early October 2019. At  June 30, 2019 , the Company had  no  commercial paper borrowing outstanding. Details of the borrowings under the commercial paper program are as follows:   Three Months Ended   September 30,   2019   2018 Average daily borrowings (in billions) $ 4.0   $ 3.7 Weighted average interest rates 2.3 %   2.0 % Weighted average maturity (approximately in days) 2 days   2 days Our U.S., Canadian and United Kingdom short-term funding requirements related to client funds obligations are sometimes obtained on a secured basis through the use of reverse repurchase agreements, which are collateralized principally by government and government agency securities, rather than liquidating previously-collected client funds that have already been invested in available-for-sale securities. These agreements generally have terms ranging from overnight to up to five business days. We have successfully borrowed through the use of reverse repurchase agreements on an as-needed basis to meet short-term funding requirements related to client funds obligations. At  September 30, 2019  and  June 30, 2019 , there were  $428.6 million  and  $262.0 million , respectively, of outstanding obligations related to reverse repurchase agreements. All outstanding reverse repurchase obligations matured and were fully paid in early October 2019 and early July 2019, respectively. Details of the reverse repurchase agreements are as follows: 36   Three Months Ended   September 30,   2019   2018 Average outstanding balances $ 426.6   $ 495.1 Weighted average interest rates 2.0 %   1.7 % We vary the maturities of our committed credit facilities to limit the refinancing risk of any one facility. We have a  $3.8 billion ,  364 -day credit agreement that matures in  June 2020  with a one year term-out option. In addition, we have a five-year  $2.75 billion  credit facility and a five-year  $3.75 billion  credit facility maturing in  June 2024  and  June 2023 , respectively, each with an accordion feature under which the aggregate commitment can be increased by  $500 million , subject to the availability of additional commitments. The primary uses of the credit facilities are to provide liquidity to the commercial paper program and funding for general corporate purposes, if necessary. We had  no  borrowings through  September 30, 2019  under the credit facilities. We believe that we currently meet all conditions set forth in the revolving credit agreements to borrow thereunder and we are not aware of any conditions that would prevent us from borrowing part or all of the  $10.3 billion  available to us under the revolving credit agreements. See  Note 9  of our Consolidated Financial Statements for a description of our short-term financing including credit facilities. Our investment portfolio does not contain any asset-backed securities with underlying collateral of sub-prime mortgages, alternative-A mortgages, sub-prime auto loans or sub-prime home equity loans, collateralized debt obligations, collateralized loan obligations, credit default swaps, derivatives, auction rate securities, structured investment vehicles or non-investment grade fixed-income securities. We own AAA-rated senior tranches of fixed rate credit card, auto loan, equipment lease and rate reduction receivables, secured predominantly by prime collateral. All collateral on asset-backed securities is performing as expected. In addition, we own senior debt directly issued by Federal Home Loan Banks and Federal Farm Credit Banks.  Our client funds investment strategy is structured to allow us to average our way through an interest rate cycle by laddering the maturities of our investments out to five years (in the case of the extended portfolio) and out to ten years (in the case of the long portfolio). This investment strategy is supported by our short-term financing arrangements necessary to satisfy short-term funding requirements relating to client funds obligations. See  Note 6  of our Consolidated Financial Statements for a description of our corporate investments and funds held for clients. Capital expenditures for the  three months ended   September 30, 2019  were $ 52.2 million , as compared to $ 42.1 million  for the  three months ended   September 30, 2018 . Capital expenditures for fiscal  2020  are expected to be about $ 175 million , as compared to $ 163 million  in fiscal  2019 .  QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK Our overall investment portfolio is comprised of corporate investments (cash and cash equivalents, short-term and long-term marketable securities) and client funds assets (funds that have been collected from clients but have not yet been remitted to the applicable tax authorities or client employees). Our corporate investments are invested in cash and cash equivalents and highly liquid, investment-grade marketable securities. These assets are available for our regular quarterly dividends, share repurchases, capital expenditures and/or acquisitions, as well as other corporate operating purposes. All of our short-term and long-term fixed-income securities are classified as available-for-sale securities. Our client funds assets are invested with safety of principal, liquidity, and diversification as the primary objectives. Consistent with those objectives, we also seek to maximize interest income and to minimize the volatility of interest income.  Client funds assets are invested in highly liquid, investment-grade marketable securities, with a maximum maturity of 10 years at the time of purchase, and money market securities and other cash equivalents.        We utilize a strategy by which we extend the maturities of our investment portfolio for funds held for clients and employ short-term financing arrangements to satisfy our short-term funding requirements related to client funds obligations. Our client funds investment strategy is structured to allow us to average our way through an interest rate cycle by laddering the maturities of our investments out to five years (in the case of the extended portfolio) and out to ten years (in the case of the long portfolio). As part of our client funds investment strategy, we use the daily collection of funds from our clients to satisfy other unrelated client funds obligations, rather than liquidating previously-collected client funds that have already been invested in available-for-sale securities. We minimize the risk of not having funds collected from a client available at the time such client’s obligation becomes due by impounding, in virtually all instances, the client’s funds in advance of the timing of payment of such client’s  37 obligation. As a result of this practice, we have consistently maintained the required level of client funds assets to satisfy all of our obligations. There are inherent risks and uncertainties involving our investment strategy relating to our client funds assets.  Such risks include liquidity risk, including the risk associated with our ability to liquidate, if necessary, our available-for-sale securities in a timely manner in order to satisfy our client funds obligations. However, our investments are made with the safety of principal, liquidity, and diversification as the primary goals to minimize the risk of not having sufficient funds to satisfy all of our client funds obligations.  We also believe we have significantly reduced the risk of not having sufficient funds to satisfy our client funds obligations by consistently maintaining access to other sources of liquidity, including our corporate cash balances, available borrowings under our  $10.3 billion  commercial paper program (rated A-1+ by Standard and Poor’s and P-1 by Moody’s, the highest possible credit ratings), and our ability to engage in reverse repurchase transactions and available borrowings under our  $10.3 billion  committed credit facilities. The reduced availability of financing during periods of economic turmoil, even to borrowers with the highest credit ratings, may limit our ability to access short-term debt markets to meet the liquidity needs of our business. In addition to liquidity risk, our investments are subject to interest rate risk and credit risk, as discussed below. We have established credit quality, maturity, and exposure limits for our investments. The minimum allowed credit rating at time of purchase for corporate, Canadian government agency and Canadian provincial bonds is BBB, for asset-backed securities is AAA, and for municipal bonds is A. The maximum maturity at time of purchase for BBB-rated securities is 5 years, for single A rated securities is 7 years, and for AA-rated and AAA-rated securities is 10 years. Time deposits and commercial paper must be rated A-1 and/or P-1. Money market funds must be rated AAA/Aaa-mf. Details regarding our overall investment portfolio are as follows:   Three Months Ended   September 30,   2019   2018 Average investment balances at cost:       Corporate investments $ 6,055.0   $ 5,904.9 Funds held for clients 23,681.4   22,177.0 Total $ 29,736.4   $ 28,081.9         Average interest rates earned exclusive of realized    (gains)/losses on:       Corporate investments 2.1 %   1.9 % Funds held for clients 2.3 %   2.1 % Total 2.2 %   2.1 %         Realized gains on available-for-sale securities $ (2.6 )   $ (0.4 ) Realized losses on available-for-sale securities 0.3   1.3 Net realized (gains)/losses on available-for-sale securities $ (2.3 )   $ 0.9     September 30, 2019   June 30, 2019 Net unrealized pre-tax gains on available-for-sale securities $ 381.3   $ 287.5         Total available-for-sale securities at fair value $ 24,646.0   $ 24,859.1   We are exposed to interest rate risk in relation to securities that mature, as the proceeds from maturing securities are reinvested. Factors that influence the earnings impact of interest rate changes include, among others, the amount of invested funds and the overall portfolio mix between short-term and long-term investments. This mix varies during the fiscal year and is impacted by daily interest rate changes. The annualized interest rates earned on our entire portfolio  increase d from  2.1%  for the  three months ended   September 30, 2018  to  2.2%  for the  three months ended   September 30, 2019 . A hypothetical change in both  38 short-term interest rates (e.g., overnight interest rates or the federal funds rate) and intermediate-term interest rates of 25 basis points applied to the estimated average investment balances and any related short-term borrowings would result in approximately a $13 million impact to earnings before income taxes over the ensuing twelve-month period ending  September 30, 2020 . A hypothetical change in only short-term interest rates of 25 basis points applied to the estimated average short-term investment balances and any related short-term borrowings would result in approximately a $4 million impact to earnings before income taxes over the ensuing twelve-month period ending  September 30, 2020 .  We are exposed to credit risk in connection with our available-for-sale securities through the possible inability of the borrowers to meet the terms of the securities. We limit credit risk by investing in investment-grade securities, primarily AAA and AA-rated securities, as rated by Moody’s, Standard & Poor’s, DBRS for Canadian dollar denominated securities, and Fitch for asset-backed and commercial mortgage backed securities. Approximately  79%  of our available-for-sale securities held a AAA or AA rating at  September 30, 2019 . In addition, we limit amounts that can be invested in any security other than U.S. government and government agency, Canadian government, and United Kingdom government securities. We operate and transact business in various foreign jurisdictions and are therefore exposed to market risk from changes in foreign currency exchange rates that could impact our consolidated results of operations, financial position, or cash flows. We manage our exposure to these market risks through our regular operating and financing activities and, when deemed appropriate, through the use of derivative financial instruments. We may use derivative financial instruments as risk management tools and not for trading purposes. We had no derivative financial instruments outstanding at  September 30, 2019 .  CRITICAL ACCOUNTING POLICIES Our Consolidated Financial Statements and accompanying notes have been prepared in accordance with accounting principles generally accepted in the United States of America (“U.S. GAAP”).  The preparation of these financial statements requires management to make estimates, judgments, and assumptions that affect reported amounts of assets, liabilities, revenues, expenses, and other comprehensive income.  We continually evaluate the accounting policies and estimates used to prepare the Consolidated Financial Statements.  The estimates are based on historical experience and assumptions believed to be reasonable under current facts and circumstances.  Actual amounts and results could differ from these estimates made by management. Refer to  Note 2  of our Consolidated Financial Statements for changes to our accounting policies effective for the fiscal year ended June 30, 2020 (“fiscal 2020”). NEW ACCOUNTING PRONOUNCEMENTS See  Note 2 , New Accounting Pronouncements, of Notes to the Consolidated Financial Statements for a discussion of recent accounting pronouncements.   Item 3.  Quantitative and Qualitative Disclosures About Market Risk The information called for by this item is provided under the caption “Quantitative and Qualitative Disclosures about Market Risk” under Item 2 – Management's Discussion and Analysis of Financial Condition and Results of Operations. Item 4.  Controls and Procedures The Company carried out an evaluation, under the supervision and with the participation of the Company's management, including its Chief Executive Officer and Chief Financial Officer, of the effectiveness of the Company's disclosure controls and procedures, as defined in Rules 13a-15(e) and 15d-15(e) of the Securities Exchange Act of 1934 (the “evaluation”).  Disclosure controls and procedures include, without limitation, controls and procedures designed to ensure that information required to be disclosed by the Company in the reports that it files or submits under the Securities Exchange Act of 1934 is accumulated and communicated to the Company's management, including its Chief Executive Officer and Chief Financial Officer, or persons performing similar functions, as appropriate to allow timely decisions regarding required disclosure.  Based on the evaluation, the Company's Chief Executive Officer and Chief Financial Officer have concluded that the Company's disclosure controls and procedures were effective as of  September 30, 2019  in ensuring that (i) information required to be disclosed by the Company in reports that it files or submits under the Securities Exchange Act of 1934 is accumulated and communicated to the Company's management, including its Chief Executive Officer and Chief Financial Officer, to allow timely decisions regarding required disclosure and (ii) such information is recorded, processed, summarized and reported within the time periods specified in the Securities and Exchange Commission's rules and forms. 39 There was no change in the Company's internal control over financial reporting that occurred during the three months ended  September 30, 2019  that has materially affected, or is reasonably likely to materially affect, the Company's internal control over financial reporting. PART II.  OTHER INFORMATION Except as noted below, all other items are either inapplicable or would result in negative responses and, therefore, have been omitted. Item 1.  Legal Proceedings In the normal course of business, the Company is subject to various claims and litigation.  While the outcome of any litigation is inherently unpredictable, the Company believes it has valid defenses with respect to the legal matters pending against it and the Company believes that the ultimate resolution of these matters will not have a material adverse impact on its financial condition, results of operations, or cash flows. Item 1A.  Risk Factors There have been no material changes in our risk factors disclosed in Part 1, Item 1A, of our Annual Report on Form 10-K for the fiscal year ended  June 30, 2019 . 40 Item 2.  Unregistered Sales of Equity Securities and Use of Proceeds. Issuer Purchases of Equity Securities     Total Number of Shares Purchased (1)   Average Price Paid per Share   Total Number of Shares Purchased as Part of the Publicly Announced Common Stock Repurchase Plan (2)   Maximum Number of Shares that may yet be Purchased under the Common Stock Repurchase Plan (2) Period         July 1 to 31, 2019   484,473   $ 165.35   471,856   9,481,119                 August 1 to 31, 2019   1,225,663   $ 167.64   755,825   8,725,294                   September 1 to 30, 2019   663,618   $ 162.76   663,618   8,061,676 Total   2,373,754       1,891,299     (1)  During the three months ended  September 30, 2019 , pursuant to the terms of the Company's restricted stock program, the Company purchased 482,455 shares at the then market value of the shares in connection with the vesting of restricted shares of employees under such program to satisfy certain tax withholding requirements through the delivery of shares to the Company instead of cash. (2)  The Company announced the Board of Directors' approval to repurchase the shares of our common stock included in the table above as follows: Date of Approval Shares August 2015 25 million There is no expiration date for the common stock repurchase plan. 41 Item 6.  Exhibits Exhibit Number Exhibit   31.1 Certification by Carlos A. Rodriguez pursuant to Rule 13a-14(a) of the Securities Exchange Act of 1934   31.2 Certification by Kathleen A. Winters pursuant to Rule 13a-14(a) of the Securities Exchange Act of 1934   32.1 Certification by Carlos A. Rodriguez pursuant to 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002   32.2 Certification by Kathleen A. Winters pursuant to 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002   101.INS Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document   101.SCH Inline XBRL Taxonomy Extension Schema   101.CAL Inline XBRL Taxonomy Extension Calculation Linkbase   101.LAB Inline XBRL Taxonomy Label Linkbase   101.PRE Inline XBRL Taxonomy Extension Presentation Linkbase   101.DEF Inline XBRL Taxonomy Extension Definition Document 104 Cover Page Interactive Data File - the cover page interactive data file does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document 42 SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.     AUTOMATIC DATA PROCESSING, INC. (Registrant)       Date: November 4, 2019 /s/ Kathleen A. Winters Kathleen A. Winters           Chief Financial Officer (Title) 43 	 
+ 

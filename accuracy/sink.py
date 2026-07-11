@@ -593,10 +593,14 @@ def reconcile_outcomes(
 
     Returns number of new outcomes recorded.
     """
-    import yfinance as yf
 
     init_db()
-    as_of = as_of or date.today()
+    # VN date.today() = a day ahead of last completed ET session; use the last
+    # completed session so we don't try to mature predictions against an
+    # unclosed day. Fix Jul 7 2026.
+    if as_of is None:
+        from features.massive_client import _last_completed_session as _lcs
+        as_of = _lcs()
     p     = _placeholder()
 
     # Find predictions that don't yet have outcomes and are due
@@ -645,7 +649,7 @@ def reconcile_outcomes(
 
     for ticker, group in due.groupby("ticker"):
         min_date = group["prediction_date"].min() - timedelta(days=2)
-        max_date  = group["outcome_date"].max() + timedelta(days=2)
+        max_date  = group["outcome_date"].max() + timedelta(days=6)
 
         try:
             from features import massive_client as mc
@@ -669,50 +673,35 @@ def reconcile_outcomes(
         with _get_conn() as conn:
             cur = conn.cursor()
             for _, row in group.iterrows():
-                pred_date    = row["prediction_date"]
-                outcome_date = row["outcome_date"]
-
+                pred_date = row["prediction_date"]
                 try:
-                    # Score using close[prediction_date] -> close[outcome_date].
-                    # FIXED May 4 2026: previous version (commit 8bcb44c, Mar 31)
-                    # scored same-day open->close for every horizon, making the
-                    # horizon dimension meaningless and producing direction-wrong
-                    # labels in many cases (e.g., NVDA Apr 15 stored +1.18% when
-                    # actual close-to-close return was -0.26%). All outcomes
-                    # written between Mar 31 - May 4 need to be regenerated.
-                    try:
-                        close_series = px["Close"]
-                        if isinstance(close_series, pd.DataFrame):
-                            close_series = close_series.iloc[:, 0]
-                        close_series = close_series.copy()
-                        close_series.index = pd.to_datetime(close_series.index).tz_localize(None)
-
-                        pred_ts = pd.Timestamp(pred_date)
-                        out_ts  = pd.Timestamp(outcome_date)
-                        price_at_pred    = float(close_series.asof(pred_ts))
-                        price_at_outcome = float(close_series.asof(out_ts))
-
-                        if price_at_pred == 0 or price_at_pred != price_at_pred:
-                            continue
-                        if price_at_outcome != price_at_outcome:
-                            continue
-                        # Verify outcome_date row actually exists in data
-                        # (asof() falls back to last available row, can give 0.0
-                        # if Massive hasn't published outcome_date yet)
-                        actual_pred_idx = close_series.loc[:pred_ts].index[-1]
-                        actual_out_idx  = close_series.loc[:out_ts].index[-1]
-                        if (actual_pred_idx == actual_out_idx 
-                            and pred_ts.date() != out_ts.date()):
-                            # Outcome data not yet published — try again next reconcile
-                            continue
-                        actual_ret = (price_at_outcome - price_at_pred) / price_at_pred
-                        if actual_ret != actual_ret:
-                            continue
-                        if actual_ret == 0.0:
-                            continue
-                        actual_up = int(actual_ret > 0)
-                    except Exception:
+                    cs = px["Close"]
+                    if isinstance(cs, pd.DataFrame):
+                        cs = cs.iloc[:, 0]
+                    cs = cs.copy()
+                    cs.index = pd.to_datetime(cs.index).tz_localize(None)
+                    cs = cs[~cs.index.duplicated(keep="last")].sort_index()
+                    idx = cs.index
+                    pred_ts = pd.Timestamp(pred_date)
+                    pos = idx.searchsorted(pred_ts, side="right") - 1
+                    if pos < 0:
                         continue
+                    out_pos = pos + int(row["horizon"])
+                    if out_pos >= len(idx):
+                        continue  # target session not posted yet -> leave pending
+                    price_at_pred    = float(cs.iloc[pos])
+                    price_at_outcome = float(cs.iloc[out_pos])
+                    outcome_date     = idx[out_pos].date()  # REAL session, not weekday-guess
+                    if price_at_pred == 0 or price_at_pred != price_at_pred:
+                        continue
+                    if price_at_outcome != price_at_outcome:
+                        continue
+                    actual_ret = (price_at_outcome - price_at_pred) / price_at_pred
+                    if actual_ret != actual_ret:
+                        continue
+                    if actual_ret == 0.0:
+                        continue
+                    actual_up = int(actual_ret > 0)
                 except Exception:
                     continue
 

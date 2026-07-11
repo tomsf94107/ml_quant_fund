@@ -1,0 +1,3605 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q2 2019 0001123360 0 550000000 950000000 750000000 1000000000 250000000 1600000000 250000000 2900000 0.01 0.02 0.01 0.02 0 0 200000000 157961982 156674688 157961982 156674688 4463643000 4419554000 0 0 0 5000000 5000000 0 0 37400000 32906000 
+		 
+			 0001123360 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2019-07-25 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-10-17 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+			 
+		 
+		 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:ContractBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-10-17 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:ContractBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-10-17 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:TrademarksAndTradeNamesMember 
+			 
+		 
+		 
+			 2018-10-17 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+			 
+		 
+		 
+			 2018-10-17 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:TrademarksAndTradeNamesMember 
+			 
+		 
+		 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-10-17 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+				 us-gaap:TrademarksAndTradeNamesMember 
+			 
+		 
+		 
+			 2018-09-04 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+			 
+		 
+		 
+			 2018-09-04 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-09-04 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-09-04 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+				 us-gaap:TrademarksAndTradeNamesMember 
+			 
+		 
+		 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+			 
+		 
+		 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AdvancedMDInc.Member 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-09-04 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:SICOMSystemsInc.Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TSYSMember 
+			 
+		 
+		 
+			 2019-10-01 
+			 2019-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ObtainContractMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ObtainContractMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:FulfillContractMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:FulfillContractMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SalesChannelThroughIntermediaryMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:RelationshipLedMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyServiceMember 
+				 us-gaap:SalesChannelDirectlyToConsumerMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:InterchangeReimbursementMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ReceivablesFromClearingBanksMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:LiabilitytoMembersMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:LiabilitytoMembersMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:MerchantReservesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:LiabilityToMerchantsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:LiabilityToMerchantsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:MerchantReservesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AllowanceForOperatingLossesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AllowanceForOperatingLossesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:InterchangeReimbursementMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ReceivablesFromCardNetworksMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ExceptionalItemsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ReceivablesFromCardNetworksMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ReceivablesFromClearingBanksMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ExceptionalItemsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TrademarksAndTradeNamesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ContractBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TrademarksAndTradeNamesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:ContractBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:TermLoanA2Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:MaximumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 gpn:FourthAmendmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:BridgeFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-05-27 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:BridgeFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 gpn:FiveYearSeniorUnsecuredCreditFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:TermLoanB4Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 gpn:FourthAmendmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LetterOfCreditMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:TermLoanB2Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:TermLoanAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:BridgeFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TermLoanAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2017-05-02 
+			 2022-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:BridgeFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-09 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TermLoanB2Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2017-05-02 
+			 2023-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:UnsecuredDebtandSeniorNotesMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TermLoanAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2017-05-02 
+			 2021-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TermLoanFacilityMember 
+				 gpn:FiveYearSeniorUnsecuredCreditFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TermLoanAMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2017-05-02 
+			 2022-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:MinimumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 gpn:FourthAmendmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:StandbyLettersOfCreditMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 gpn:TermLoanB4Member 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2017-05-02 
+			 2025-09-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 gpn:FourthAmendmentMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 gpn:FourthAmendmentMember 
+			 
+		 
+		 
+			 2020-07-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccountsPayableAndAccruedLiabilitiesMember 
+				 gpn:ForwardStartingInterestRateSwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:BridgeFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-05-27 
+			 2019-05-27 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OtherNoncurrentLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccountsPayableAndAccruedLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OtherNoncurrentLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OtherNoncurrentAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccountsPayableAndAccruedLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OtherNoncurrentAssetsMember 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:BridgeFacilityMember 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:FiveYearUnsecuredTermLoanDueFebruary2019Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:FiveYearUnsecuredTermLoanDueFebruary2019Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-25 
+			 2019-07-25 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:OtherThanAcceleratedShareRepurchaseProgramMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 srt:ScenarioForecastMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ShareBasedAwardsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ShareBasedAwardsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ShareBasedAwardsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ShareBasedAwardsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ShareBasedAwardsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 gpn:ShareBasedAwardsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:AsiaPacificSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:EuropeSegmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpn:NorthAmericaSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001123360 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 iso4217:USD 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 xbrli:pure 
+	 
+		 gpn:segment 
+	 
+		 utreg:Rate 
+	 
+		 gpn:Country 
+	 
+		 xbrli:shares 
+	 Table of Contents UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM  10-Q   ☒   QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  June 30, 2019   OR ☐   TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from             to              Commission file number:  001-16111   GLOBAL PAYMENTS INC . (Exact name of registrant as specified in charter) Georgia   58-2567903 (State or other jurisdiction of  incorporation or organization)   (I.R.S. Employer  Identification No.) 3550 Lenox Road , Atlanta , Georgia   30326 (Address of principal executive offices)   (Zip Code) Registrant’s telephone number, including area code: ( 770 )  829-8000 Securities registered pursuant to Section 12(b) of the Act Title of each class Ticker symbol Name of exchange on which registered Common stock, no par value GPN New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.   Yes   ☒    No  ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).  Yes   ☒  No  ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of "large accelerated filer," "accelerated filer," "smaller reporting company," and "emerging growth company" in Rule 12b-2 of the Exchange Act. Large accelerated filer  ☒   Accelerated filer  ☐ Non-accelerated filer   ☐   Smaller reporting company  ☐       Emerging growth company  ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.   ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).   Yes ☐   No ☒   The number of shares of the issuer’s common stock, no par value, outstanding as of  July 25, 2019  was  156,678,101 . Table of Contents GLOBAL PAYMENTS INC. FORM 10-Q For the quarterly period ended  June 30, 2019 TABLE OF CONTENTS       Page PART I - FINANCIAL INFORMATION ITEM 1.   Unaudited Consolidated Statements of Income for the three and six months ended June 30, 2019 and 2018 3     Unaudited Consolidated Statements of Comprehensive Income for the three and six months ended June 30, 2019 and 2018 5     Consolidated Balance Sheets at June 30, 2019 (unaudited) and December 31, 2018 6     Unaudited Consolidated Statements of Cash Flows for the six months ended June 30, 2019 and 2018 7     Unaudited Consolidated Statements of Changes in Equity for the three and six months ended June 30, 2019 and 2018 9     Notes to Unaudited Consolidated Financial Statements  10 ITEM 2.   Management's Discussion and Analysis of Financial Condition and Results of Operations 26 ITEM 3.   Quantitative and Qualitative Disclosures About Market Risk 35 ITEM 4.   Controls and Procedures 35 PART II - OTHER INFORMATION ITEM 1.   Legal Proceedings 36 ITEM 1A.   Risk Factors 36 ITEM 2.   Unregistered Sales of Equity Securities and Use of Proceeds 38 ITEM 6.   Exhibits 39     Signatures 40 2 Table of Contents PART 1 - FINANCIAL INFORMATION ITEM 1—FINANCIAL STATEMENTS GLOBAL PAYMENTS INC.  UNAUDITED CONSOLIDATED STATEMENTS OF INCOME (in thousands, except per share data)   Three Months Ended   June 30, 2019   June 30, 2018         Revenues $ 935,152   $ 833,164 Operating expenses:       Cost of service 302,276   264,544 Selling, general and administrative 411,150   377,883   713,426   642,427 Operating income 221,726   190,737         Interest and other income 6,176   2,568 Interest and other expense ( 65,616 )   ( 47,720 )   ( 59,440 )   ( 45,152 ) Income before income taxes 162,286   145,585 Provision for income taxes ( 32,247 )   ( 27,856 ) Net income 130,039   117,729 Net income attributable to noncontrolling interests, net of income tax ( 9,581 )   ( 8,660 ) Net income attributable to Global Payments $ 120,458   $ 109,069         Earnings per share attributable to Global Payments:       Basic earnings per share  $ 0.77   $ 0.69 Diluted earnings per share  $ 0.77   $ 0.68 See Notes to Unaudited Consolidated Financial Statements. 3 Table of Contents GLOBAL PAYMENTS INC.  UNAUDITED CONSOLIDATED STATEMENTS OF INCOME (in thousands, except per share data)   Six Months Ended   June 30, 2019   June 30, 2018         Revenues $ 1,818,190   $ 1,628,141 Operating expenses:       Cost of service 607,505   516,930 Selling, general and administrative 789,467   764,304   1,396,972   1,281,234 Operating income 421,218   346,907         Interest and other income 9,112   14,262 Interest and other expense ( 124,697 )   ( 93,325 )   ( 115,585 )   ( 79,063 ) Income before income taxes 305,633   267,844 Provision for income taxes ( 56,388 )   ( 52,529 ) Net income 249,245   215,315 Net income attributable to noncontrolling interests, net of income tax ( 16,445 )   ( 14,847 ) Net income attributable to Global Payments $ 232,800   $ 200,468         Earnings per share attributable to Global Payments:       Basic earnings per share  $ 1.48   $ 1.26 Diluted earnings per share  $ 1.48   $ 1.25 See Notes to Unaudited Consolidated Financial Statements. 4 Table of Contents GLOBAL PAYMENTS INC.  UNAUDITED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (in thousands)   Three Months Ended   June 30, 2019   June 30, 2018         Net income  $ 130,039   $ 117,729 Other comprehensive income (loss):       Foreign currency translation adjustments 7,704   ( 78,550 ) Income tax benefit (provision) related to foreign currency translation adjustments 1,517   ( 763 ) Net unrealized gains (losses) on hedging activities ( 42,222 )   2,932 Reclassification of net unrealized gains on hedging activities to interest expense ( 893 )   ( 1,104 ) Income tax benefit (provision) related to hedging activities 10,527   ( 445 ) Other, net of tax 17   52 Other comprehensive loss ( 23,350 )   ( 77,878 )         Comprehensive income 106,689   39,851 Comprehensive (income) loss attributable to noncontrolling interests ( 13,529 )   2,551 Comprehensive income attributable to Global Payments $ 93,160   $ 42,402   Six Months Ended   June 30, 2019   June 30, 2018         Net income  $ 249,245   $ 215,315 Other comprehensive income (loss):       Foreign currency translation adjustments 12,902   ( 65,225 ) Income tax benefit (provision) related to foreign currency translation adjustments 1,551   ( 365 ) Net unrealized gains (losses) on hedging activities ( 56,731 )   10,508 Reclassification of net unrealized gains on hedging activities to interest expense ( 2,723 )   ( 1,167 ) Income tax benefit (provision) related to hedging activities 14,512   ( 2,310 ) Other, net of tax 128   — Other comprehensive loss ( 30,361 )   ( 58,559 )         Comprehensive income 218,884   156,756 Comprehensive income attributable to noncontrolling interests ( 15,815 )   ( 14,930 ) Comprehensive income attributable to Global Payments $ 203,069   $ 141,826 See Notes to Unaudited Consolidated Financial Statements.   5 Table of Contents GLOBAL PAYMENTS INC. CONSOLIDATED BALANCE SHEETS (in thousands, except share data)   June 30, 2019   December 31, 2018   (Unaudited)     ASSETS        Current assets:        Cash and cash equivalents $ 1,047,727   $ 1,210,878 Accounts receivable, net 394,603   348,400 Settlement processing assets 2,844,267   1,600,222 Prepaid expenses and other current assets 261,082   216,708 Total current assets 4,547,679    3,376,208 Goodwill 6,345,563    6,341,355 Other intangible assets, net 2,308,333    2,488,618 Property and equipment, net 712,396    653,542 Deferred income taxes 6,950   8,128 Other noncurrent assets 663,151    362,923 Total assets $ 14,584,072    $ 13,230,774 LIABILITIES AND EQUITY        Current liabilities:        Settlement lines of credit $ 736,209   $ 700,486 Current portion of long-term debt 151,062   115,075 Accounts payable and accrued liabilities 1,117,938    1,176,703 Settlement processing obligations 2,478,373   1,276,356 Total current liabilities 4,483,582    3,268,620 Long-term debt 5,000,585   5,015,168 Deferred income taxes 556,130    585,025 Other noncurrent liabilities 368,659    175,618 Total liabilities 10,408,956    9,044,431 Commitments and contingencies    Equity:        Preferred stock, no par value; 5,000,000 shares authorized and none issued —    — Common stock, no par value; 200,000,000 shares authorized; 156,674,688 issued and outstanding at June 30, 2019 and 157,961,982 issued and outstanding at December 31, 2018 —    — Paid-in capital 2,126,065    2,235,167 Retained earnings 2,204,445    2,066,415 Accumulated other comprehensive loss ( 339,906 )    ( 310,175 ) Total Global Payments shareholders’ equity 3,990,604    3,991,407 Noncontrolling interests 184,512   194,936 Total equity 4,175,116   4,186,343 Total liabilities and equity $ 14,584,072    $ 13,230,774 See Notes to Unaudited Consolidated Financial Statements.   6 Table of Contents   GLOBAL PAYMENTS INC. UNAUDITED CONSOLIDATED STATEMENTS OF CASH FLOWS (in thousands)   Six Months Ended   June 30, 2019   June 30, 2018 Cash flows from operating activities:       Net income $ 249,245   $ 215,315 Adjustments to reconcile net income to net cash provided by operating activities:       Depreciation and amortization of property and equipment 82,760   69,088 Amortization of acquired intangibles 210,993   176,303 Amortization of capitalized contract costs 31,965   23,835 Share-based compensation expense 27,914   30,104 Provision for operating losses and bad debts 18,637   22,942 Deferred income taxes ( 6,483 )   ( 3,061 ) Other, net 22,469   ( 6,228 ) Changes in operating assets and liabilities, net of the effects of business combinations:       Accounts receivable ( 49,774 )   ( 21,763 ) Settlement processing assets and obligations, net ( 41,715 )   95,232 Prepaid expenses and other assets ( 148,435 )   ( 92,154 ) Accounts payable and other liabilities ( 150,223 )   ( 2,857 ) Net cash provided by operating activities 247,353   506,756 Cash flows from investing activities:       Acquisitions, net of cash acquired ( 78,245 )   — Capital expenditures ( 133,312 )   ( 102,669 ) Other, net 13,182   ( 1,436 ) Net cash used in investing activities ( 198,375 )   ( 104,105 ) Cash flows from financing activities:       Net borrowings (repayments) of settlement lines of credit 32,163   ( 88,325 ) Proceeds from long-term debt 586,000   694,214 Repayments of long-term debt ( 569,119 )   ( 1,024,695 ) Payment of debt issuance costs —   ( 10,884 ) Repurchase of common stock ( 233,996 )   ( 177,261 ) Proceeds from stock issued under share-based compensation plans 12,952   6,340 Common stock repurchased - share-based compensation plans ( 11,167 )   ( 9,989 ) Distributions to noncontrolling interests ( 26,239 )   — Dividends paid ( 3,137 )   ( 3,171 ) Net cash used in financing activities ( 212,543 )   ( 613,771 ) Effect of exchange rate changes on cash 414   ( 25,206 ) Decrease in cash and cash equivalents ( 163,151 )   ( 236,326 ) Cash and cash equivalents, beginning of the period 1,210,878   1,335,855 Cash and cash equivalents, end of the period $ 1,047,727   $ 1,099,529 See Notes to Unaudited Consolidated Financial Statements.  7 Table of Contents GLOBAL PAYMENTS INC. UNAUDITED CONSOLIDATED STATEMENTS OF CHANGES IN EQUITY   (in thousands)      Number of Shares     Paid-in Capital     Retained Earnings     Accumulated Other Comprehensive Loss   Total Global Payments Shareholders’ Equity   Noncontrolling Interests   Total Equity Balance at March 31, 2019 157,130   $ 2,151,623   $ 2,111,798   $ ( 312,608 )   $ 3,950,813   $ 191,648   $ 4,142,461 Net income         120,458       120,458   9,581   130,039 Other comprehensive income (loss)             ( 27,298 )   ( 27,298 )   3,948   ( 23,350 ) Stock issued under share-based compensation plans 67   5,104           5,104       5,104 Common stock repurchased - share-based compensation plans ( 9 )   ( 1,406 )           ( 1,406 )       ( 1,406 ) Share-based compensation expense     16,497           16,497       16,497 Distributions to noncontrolling interest                 —   ( 20,665 )   ( 20,665 ) Repurchase of common stock ( 513 )   ( 45,753 )   ( 26,246 )       ( 71,999 )       ( 71,999 ) Dividends paid ($0.01 per share)         ( 1,565 )       ( 1,565 )       ( 1,565 ) Balance at June 30, 2019 156,675   $ 2,126,065   $ 2,204,445   $ ( 339,906 )   $ 3,990,604   $ 184,512   $ 4,175,116   Number of Shares     Paid-in Capital     Retained Earnings     Accumulated Other Comprehensive Loss   Total Global Payments Shareholders’ Equity     Noncontrolling Interests   Total Equity Balance at March 31, 2018 159,533   $ 2,390,022   $ 1,738,545   $ ( 176,961 )   $ 3,951,606   $ 188,184   $ 4,139,790 Net income         109,069       109,069   8,660   117,729 Other comprehensive loss             ( 66,668 )   ( 66,668 )   ( 11,210 )   ( 77,878 ) Stock issued under share-based compensation plans 151   3,727           3,727       3,727 Common stock repurchased - share-based compensation plans ( 10 )   ( 1,078 )           ( 1,078 )       ( 1,078 ) Share-based compensation expense     15,206           15,206       15,206 Repurchase of common stock ( 1,603 )   ( 153,094 )   ( 26,823 )       ( 179,917 )       ( 179,917 ) Dividends paid ($0.01 per share)         ( 1,578 )       ( 1,578 )       ( 1,578 ) Balance at June 30, 2018 158,071   $ 2,254,783   $ 1,819,213   $ ( 243,629 )   $ 3,830,367   $ 185,634   $ 4,016,001 See Notes to Unaudited Consolidated Financial Statements. 8 Table of Contents GLOBAL PAYMENTS INC. UNAUDITED CONSOLIDATED STATEMENTS OF CHANGES IN EQUITY   (in thousands)      Number of Shares     Paid-in Capital     Retained Earnings     Accumulated Other Comprehensive Loss   Total Global Payments Shareholders’ Equity   Noncontrolling Interests   Total Equity Balance at December 31, 2018 157,962   $ 2,235,167   $ 2,066,415   $ ( 310,175 )   $ 3,991,407   $ 194,936   $ 4,186,343 Net income         232,800       232,800   16,445   249,245 Other comprehensive loss             ( 29,731 )   ( 29,731 )   ( 630 )   ( 30,361 ) Stock issued under share-based compensation plans 609   12,952           12,952       12,952 Common stock repurchased - share-based compensation plans ( 88 )   ( 11,606 )         ( 11,606 )       ( 11,606 ) Share-based compensation expense     27,914           27,914       27,914 Distributions to noncontrolling interest                 —   ( 26,239 )   ( 26,239 ) Repurchase of common stock ( 1,808 )   ( 138,362 )   ( 91,633 )       ( 229,995 )       ( 229,995 ) Dividends paid ($0.02 per share)         ( 3,137 )       ( 3,137 )       ( 3,137 ) Balance at June 30, 2019 156,675   $ 2,126,065   $ 2,204,445   $ ( 339,906 )   $ 3,990,604   $ 184,512   $ 4,175,116   Number of Shares     Paid-in Capital     Retained Earnings     Accumulated Other Comprehensive Loss   Total Global Payments Shareholders’ Equity     Noncontrolling Interests   Total Equity Balance at December 31, 2017 159,180   $ 2,379,774   $ 1,597,897   $ ( 183,144 )   $ 3,794,527   $ 170,704   $ 3,965,231 Cumulative effect of adoption of new accounting standard         50,970   ( 1,843 )   49,127       49,127 Net income         200,468       200,468   14,847   215,315 Other comprehensive income (loss)             ( 58,642 )   ( 58,642 )   83   ( 58,559 ) Stock issued under share-based compensation plans 570   6,340         6,340       6,340 Common stock repurchased - share-based compensation plans ( 67 )   ( 7,489 )           ( 7,489 )       ( 7,489 ) Share-based compensation expense     30,104           30,104       30,104 Repurchase of common stock ( 1,612 )   ( 153,946 )   ( 26,951 )       ( 180,897 )       ( 180,897 ) Dividends paid ($0.02 per share)         ( 3,171 )       ( 3,171 )       ( 3,171 ) Balance at June 30, 2018 158,071   $ 2,254,783   $ 1,819,213   $ ( 243,629 )   $ 3,830,367   $ 185,634   $ 4,016,001 See Notes to Unaudited Consolidated Financial Statements. 9 Table of Contents NOTES TO UNAUDITED CONSOLIDATED FINANCIAL STATEMENTS   NOTE  1 — BASIS OF PRESENTATION AND SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES   Business, consolidation and presentation — We are a leading worldwide provider of payment technology and software solutions delivering innovative services to our customers globally. Our technologies, services and employee expertise enable us to provide a broad range of solutions that allow our customers to accept various payment types and operate their businesses more efficiently. We distribute our services across a variety of channels in  32  countries throughout North America, Europe, the Asia-Pacific region and Brazil and operate in  three  reportable segments: North America, Europe and Asia-Pacific.     We were incorporated in Georgia as Global Payments Inc. in  2000  and spun-off from our former parent company in  2001 .  Including our time as part of our former parent company, we have been in the payment technology services business since  1967 . Global Payments Inc. and its consolidated subsidiaries are referred to herein collectively as "Global Payments," the "Company," "we," "our" or "us," unless the context requires otherwise.   These unaudited consolidated financial statements include our accounts and those of our majority-owned subsidiaries, and all intercompany balances and transactions have been eliminated in consolidation. These unaudited consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States ("GAAP") for interim financial information pursuant to the rules and regulations of the Securities and Exchange Commission ("SEC"). The consolidated balance sheet as of  December 31, 2018  was derived from the audited financial statements included in our Annual Report on Form 10-K for the year ended  December 31, 2018  but does not include all disclosures required by GAAP for annual financial statements. In the opinion of our management, all known adjustments necessary for a fair presentation of the results of the interim periods have been made. These adjustments consist of normal recurring accruals and estimates that affect the carrying amount of assets and liabilities. These financial statements should be read in conjunction with the consolidated financial statements and notes thereto included in our Annual Report on Form 10-K for the year ended  December 31, 2018 . On  May 27, 2019 , Global Payments and Total System Services, Inc. ("TSYS") entered into an Agreement and Plan of Merger ("Merger Agreement") providing for the merger of TSYS with and into Global Payments, with Global Payments as the surviving entity (the "Merger"). TSYS is a leading global payments provider, offering seamless, secure and innovative solutions across the payments spectrum - for issuers, merchants and consumers. The Merger is subject to the satisfaction or waiver of the closing conditions set forth in the Merger Agreement, including shareholder approval for both companies. Upon completion of the Merger, TSYS will no longer be a separate publicly traded corporation. Global Payments will continue to trade on the New York Stock Exchange. See "Note  2 —Acquisitions" and "Note 7—Long-Term Debt and Lines of Credit" for further information about the proposed Merger and related debt financing. Use of estimates —  The preparation of financial statements in conformity with GAAP requires management to make certain estimates and assumptions that affect the reported amounts of assets and liabilities and disclosures of contingent assets and liabilities at the date of the financial statements, as well as the reported amounts of revenues and expenses during the reported period. Actual results could differ materially from those estimates.  Recently Adopted Accounting Pronouncements —  In February 2016, the Financial Accounting Standards Board ("FASB") issued ASU 2016-02, "Leases." ASU 2016-02 requires recognition of assets and liabilities for the rights and obligations created by leases and new disclosures about leases. We adopted ASU 2016-02, as well as other related clarifications and interpretive guidance issued by the FASB, on January 1, 2019 using the optional modified retrospective transition method. Under this transition method, we did not recast the prior period financial statements presented. We elected the transition package of three practical expedients, which among other things, allowed for the carryforward of historical lease classifications. We made accounting policy elections to not recognize assets or liabilities for leases with a term of less than twelve months and to account for all components in a lease arrangement as a single combined lease component.  The adoption of ASU 2016-02 resulted in the measurement and recognition of lease liabilities in the amount of  $ 274.0  million  and right-of-use assets in the amount of  $ 236.0  million  as of January 1, 2019. Lease liabilities were measured as the present value of remaining lease payments, and the corresponding right-of-use assets were measured at an amount equal to the lease liabilities  10 Table of Contents adjusted by the amounts of certain assets and liabilities, such as deferred lease obligations and prepaid rent, that we previously recognized on the balance sheet prior to the initial application of ASU 2016-02. To calculate the present value of remaining lease payments, we elected to use an incremental borrowing rate based on the remaining lease term at transition.  Recently Issued Pronouncements Not Yet Adopted —  In August 2018, the FASB issued ASU 2018-15, "Intangibles - Goodwill and Other - Internal-Use Software (Subtopic 350-40):  Customer's Accounting for Implementation Costs Incurred in a Cloud Computing Arrangement that is a Service Contract  (A Consensus of the FASB Emerging Issues Task Force)." ASU 2018-15 provides additional guidance on the accounting for costs of implementation activities performed in a cloud computing arrangement (i.e., hosting arrangement) that is a service contract. The new guidance amends the definition of a hosting arrangement and requires a customer in a hosting arrangement that is a service contract to capitalize certain implementation costs as if the arrangement was an internal-use software project. We have historically capitalized implementation costs for internal-use software projects and will continue to do so pursuant to the clarifications provided in the new guidance. We expect to amortize deferred implementation costs to expense on a straight-line basis over the term of the hosting arrangement. The amendments in this update also provide additional presentation and disclosure requirements, including requirements to disclose the nature of an entity’s hosting arrangements that are service contracts, as well as quantitative information about capitalized implementation costs and related amortization expense. The guidance will become effective for us on January 1, 2020. Entities have the option to apply the guidance prospectively to all implementation costs incurred after the date of adoption or retrospectively. We are comparing the guidance in ASU 2018-15 to our current accounting practices for costs of implementation activities performed in cloud computing arrangements. We have not yet quantified the effect, if any, of ASU 2018-15 on our consolidated balance sheet or our statements of income and cash flows. In June 2016, the FASB issued ASU 2016-13, "Financial Instruments - Credit Losses (Topic 326):  Measurement of Credit Losses on Financial Instruments ." The amendments in this update change how companies measure and recognize credit impairment for many financial instruments measured at amortized cost. The new model for current expected credit losses ("CECL") will require us to immediately recognize an estimate of credit losses expected to occur over the remaining life of the financial instruments that are within the scope of the update, including accounts receivable and settlement processing assets, each of which is short-term in nature. Under current GAAP, credit losses on these financial instruments are not recognized until their occurrence is deemed to be probable. The guidance will become effective for us on January 1, 2020. In general, the new guidance will require modified retrospective application to all outstanding financial assets that are in the scope of the update, with a cumulative-effect adjustment, if any, recorded to retained earnings as of the date of adoption. We are evaluating the effect of ASU 2016-13 on our consolidated financial statements, including comparing how we currently measure and recognize our allowance for doubtful accounts on accounts receivable and our reserve for operating losses and sales allowances to how we would make such measurements applying the new CECL model. We have not yet quantified the effect, if any, of ASU 2016-13 on our consolidated financial statements.   NOTE  2 — ACQUISITIONS Pending Merger with TSYS In connection with the proposed Merger, we have determined that Global Payments would be the acquirer of TSYS for accounting purposes. In the proposed Merger, holders of TSYS common stock would receive  0.8101  shares of Global Payments common stock for each share of TSYS common stock they own at the effective time of the Merger ("Exchange Ratio").  The preliminary estimated Merger consideration to be transfered to TSYS shareholders is  $ 23.7  billion  based on the number of TSYS common shares outstanding and the closing price of our common stock on  July 25, 2019 . Merger consideration will include the amount of TSYS' unsecured revolving credit facility that we are required to repay upon consummation of the Merger. During the three and six months ended  June 30, 2019 , we incurred transaction costs related to the Merger of  $ 12.2  million . We expect the Merger to close in the fourth quarter of  2019 , subject to customary closing conditions, regulatory approvals and shareholder approval for both companies. See "Note  7 —Long-Term Debt and Lines of Credit" for a description of related debt financing activities. 11 Table of Contents Business Combinations The transactions described below were accounted for as business combinations, which requires that we record the assets acquired and liabilities assumed at fair value as of the acquisition date. SICOM On  October 17, 2018 , we acquired SICOM Systems, Inc. ("SICOM") for total purchase consideration of  $ 410.2  million , which we funded with cash on hand and by drawing on our Revolving Credit Facility (described in "Note  7 —Long-Term Debt and Lines of Credit"). SICOM is a provider of end-to-end enterprise, cloud-based software solutions and other technologies to quick service restaurants and food service management companies.  The provisional estimated acquisition-date fair values of major classes of assets acquired and liabilities assumed as of  June 30, 2019 , including a reconciliation to the total purchase consideration, were as follows (in thousands): Cash and cash equivalents   $ 7,540 Property and equipment   5,838 Identified intangible assets   188,294 Other assets   22,275 Deferred income taxes   ( 48,560 ) Other liabilities   ( 31,350 ) Total identifiable net assets   144,037 Goodwill   266,164 Total purchase consideration   $ 410,201 During the six months ended  June 30, 2019 , we made an adjustment of   $ 1.0  million  to reflect an increase in the total purchase consideration. As of  June 30, 2019 , we considered these balances to be provisional because we were still in the process of gathering and reviewing information to support the valuations of the assets acquired and liabilities assumed. Goodwill arising from the acquisition of  $ 266.2  million , included in the North America segment, was attributable to expected growth opportunities, an assembled workforce and potential synergies from combining our existing businesses. We expect that approximately  $ 40  million  of the goodwill from this acquisition will be deductible for income tax purposes. The following table reflects the estimated fair values of the identified intangible assets of SICOM and the respective aggregated weighted-average estimated amortization periods:   Estimated Fair Values   Weighted-Average Estimated Amortization Periods           (in thousands)   (years) Customer-related intangible assets $ 104,900   14 Acquired technologies 65,312   6 Trademarks and trade names 11,202   3 Contract-based intangible assets 6,880   5 Total estimated identified intangible assets $ 188,294   10 AdvancedMD On  September 4, 2018 , we acquired AdvancedMD, Inc. ("AdvancedMD") for total purchase consideration of  $ 706.9  million , which we funded with cash on hand and by drawing on our Revolving Credit Facility. AdvancedMD is a provider of cloud-based enterprise software solutions to small-to-medium sized ambulatory care physician practices.  12 Table of Contents The provisional estimated acquisition-date fair values of major classes of assets acquired and liabilities assumed as of  June 30, 2019 , including a reconciliation to the total purchase consideration, were as follows (in thousands): Cash and cash equivalents   $ 7,657 Property and equipment   5,672 Identified intangible assets   419,500 Other assets   11,785 Deferred income taxes   ( 93,372 ) Other liabilities   ( 15,647 ) Total identifiable net assets   335,595 Goodwill   371,290 Total purchase consideration   $ 706,885 During the six months ended  June 30, 2019 , we made measurement period adjustments, including a  $ 5.6  million  reduction to deferred income tax liabilities, which resulted in a corresponding reduction to goodwill. As of  June 30, 2019 , we considered these balances to be provisional because we were still in the process of gathering and reviewing information to support the valuation of the assets acquired and liabilities assumed. Goodwill arising from the acquisition of  $ 371.3  million , included in the North America segment, was attributable to expected growth opportunities, an assembled workforce and potential synergies from combining our existing businesses. We expect that substantially all of the goodwill from this acquisition will not be deductible for income tax purposes. The following table reflects the estimated fair values of the identified intangible assets of AdvancedMD and the respective aggregated weighted-average estimated amortization periods:   Estimated Fair Values   Weighted-Average Estimated Amortization Periods           (in thousands)   (years) Customer-related intangible assets $ 303,100   11 Acquired technologies 83,700   5 Trademarks and trade names 32,700   15 Total estimated identified intangible assets $ 419,500   10 Valuation of Identified Intangible Assets For the acquisitions discussed above, the estimated fair values of customer-related intangible assets were determined using the income approach, which was based on projected cash flows discounted to their present value using discount rates that consider the timing and risk of the forecasted cash flows. The discount rates used represented the average estimated value of a market participant’s cost of capital and debt, derived using customary market metrics. Acquired technologies were valued using the replacement cost method, which required us to estimate the costs to construct an asset of equivalent utility at prices available at the time of the valuation analysis, with adjustments in value for physical deterioration and functional and economic obsolescence. Trademarks and trade names were valued using the "relief-from-royalty" approach. This method assumes that trademarks and trade names have value to the extent that their owner is relieved of the obligation to pay royalties for the benefits received from them. This method required us to estimate the future revenues for the related brands, the appropriate royalty rate and the weighted-average cost of capital.   13 Table of Contents NOTE  3 — REVENUES The following tables present a disaggregation of our revenue from contracts with customers by distribution channel for the  three and six  months ended  June 30, 2019  and 2018:   Three Months Ended June 30, 2019   North America   Europe   Asia-Pacific   Total                   (in thousands)                 Direct:               Relationship-led $ 301,094   $ 110,655   $ 30,742   $ 442,491 Technology-enabled 349,839   49,694   28,142   427,675   650,933   160,349   58,884   870,166 Wholesale 64,986   —   —   64,986   $ 715,919   $ 160,349   $ 58,884   $ 935,152   Three Months Ended June 30, 2018   North America   Europe   Asia-Pacific   Total                   (in thousands)                 Direct:               Relationship-led $ 244,861   $ 102,960   $ 32,371   $ 380,192 Technology-enabled 296,419   52,671   23,361   372,451   541,280   155,631   55,732   752,643 Wholesale 80,521   —   —   80,521   $ 621,801   $ 155,631   $ 55,732   $ 833,164   Six Months Ended June 30, 2019   North America   Europe   Asia-Pacific   Total                   (in thousands)                 Direct:               Relationship-led $ 571,637   $ 205,220   $ 64,161   $ 841,018 Technology-enabled 691,947   97,998   56,470   846,415   1,263,584   303,218   120,631   1,687,433 Wholesale 130,757   —   —   130,757   $ 1,394,341   $ 303,218   $ 120,631   $ 1,818,190   Six Months Ended June 30, 2018   North America   Europe   Asia-Pacific   Total                   (in thousands)                 Direct:               Relationship-led $ 471,281   $ 195,174   $ 67,613   $ 734,068 Technology-enabled 579,776   103,734   45,790   729,300   1,051,057   298,908   113,403   1,463,368 Wholesale 164,773   —   —   164,773   $ 1,215,830   $ 298,908   $ 113,403   $ 1,628,141 ASC 606 requires that we determine for each customer arrangement whether revenue should be recognized at a point in time or over time. For the  three and six  months ended  June 30, 2019  and  2018 , substantially all of our revenues were recognized over time. 14 Table of Contents Supplemental balance sheet information related to contracts from customers as of  June 30, 2019  and December 31, 2018 was as follows:   Balance Sheet Location   June 30, 2019   December 31, 2018                   (in thousands)             Assets:           Capitalized costs to obtain customer contracts, net Other noncurrent assets   $ 210,609   $ 194,616 Capitalized costs to fulfill customer contracts, net Other noncurrent assets   $ 19,319   $ 12,954             Liabilities:           Contract liabilities, net (current) Accounts payable and accrued liabilities   $ 156,930   $ 146,947 Contract liabilities, net (noncurrent) Other noncurrent liabilities   $ 9,532   $ 8,595 Revenue recognized for the three months ended  June 30, 2019  and  2018  from contract liability balances at the beginning of each period was  $ 52.0  million  and  $ 37.0  million , respectively. Revenue recognized for the six months ended  June 30, 2019  and  2018  from contract liability balances at the beginning of each period was  $ 97.1  million  and  $ 69.9  million , respectively. NOTE  4 — SETTLEMENT PROCESSING ASSETS AND OBLIGATIONS As of  June 30, 2019  and  December 31, 2018 , settlement processing assets and obligations consisted of the following:   June 30, 2019   December 31, 2018           (in thousands)         Settlement processing assets:       Interchange reimbursement $ 260,103   $ 154,978 Receivable from members 176,687   228,107 Receivable from networks 2,412,382   1,221,060 Exception items 11,042   7,636 Merchant reserves ( 15,947 )   ( 11,559 )   $ 2,844,267   $ 1,600,222         Settlement processing obligations:       Interchange reimbursement $ 89,895   $ 193,235 Liability to members ( 23,815 )   ( 182,450 ) Liability to merchants ( 2,400,467 )   ( 1,144,249 ) Exception items 11,505   7,146 Merchant reserves ( 151,450 )   ( 145,826 ) Reserve for operating losses and sales allowances ( 4,041 )   ( 4,212 )   $ ( 2,478,373 )   $ ( 1,276,356 ) 15 Table of Contents NOTE  5 — GOODWILL AND OTHER INTANGIBLE ASSETS As of  June 30, 2019  and  December 31, 2018 , goodwill and other intangible assets consisted of the following:      June 30, 2019   December 31, 2018           (in thousands)         Goodwill $ 6,345,563   $ 6,341,355 Other intangible assets:       Customer-related intangible assets $ 2,496,055   $ 2,486,217 Acquired technologies 920,398   896,701 Trademarks and trade names 288,003   289,588 Contract-based intangible assets 175,397   178,391   3,879,853   3,850,897 Less accumulated amortization:       Customer-related intangible assets 970,427   860,715 Acquired technologies 429,592   351,170 Trademarks and trade names 97,964   83,234 Contract-based intangible assets 73,537   67,160   1,571,520   1,362,279   $ 2,308,333   $ 2,488,618 The following table sets forth the changes in the carrying amount of goodwill for the  six  months ended  June 30, 2019 :   North America    Europe   Asia-Pacific   Total                   (in thousands)                 Balance at December 31, 2018 $ 5,530,087   $ 484,761   $ 326,507   $ 6,341,355 Effect of foreign currency translation 4,878   ( 724 )   ( 570 )   3,584 Measurement-period adjustments ( 4,092 )   —   4,716   624 Balance at June 30, 2019 $ 5,530,873   $ 484,037   $ 330,653   $ 6,345,563 There were  no  accumulated impairment losses for goodwill as of  June 30, 2019  or  December 31, 2018 . NOTE 6— LEASES Our leases consist primarily of operating real estate leases for office space in the markets in which we conduct business. Many of our operating leases include escalating rental payments and incentives, as well as termination and renewal options. Certain of our lease agreements provide that we pay the cost of property taxes, insurance and maintenance. As described in "Note  1 —Basis of Presentation and Summary of Significant Accounting Policies," we adopted ASU 2016-02 on January 1, 2019. Unless otherwise indicated, the following information in this footnote applies only to periods after December 31, 2018.  We evaluate each of our lease and service arrangements at inception to determine if the arrangement is, or contains, a lease and the appropriate classification of each identified lease. A lease exists if we obtain substantially all of the economic benefits of, and have the right to control the use of, an asset for a period of time. Right-of-use assets represent our right to use an underlying asset for the lease term, and lease liabilities represent our obligation to make lease payments arising from the lease agreement. We recognize right-of-use assets and leases liabilities at the lease commencement date based on the present values of fixed lease payments over the term of the lease. Lease costs are recognized as expense on a straight-line basis over the lease term. We consider a termination or renewal option in the determination of the lease term when it is reasonably certain that we will exercise that option. The weighted-average remaining lease term at  June 30, 2019  was  10.1  years. Because our leases generally do not provide a readily determinable implicit interest rate, we use an incremental borrowing rate to measure the lease liability and associated  16 Table of Contents right-of-use asset at the lease commencement date. The incremental borrowing rate used is a fully collateralized rate that considers our credit rating, market conditions and the term of the lease at the lease commencement date. As of  June 30, 2019 , the weighted-average discount rate used in the measurement of our lease liabilities was  5.0 % .  The effects of adopting ASU 2016-02 on our balance sheet, as of January 1, 2019, are set forth in the table below. Adoption did not have a material effect on any line items in our consolidated statement of income or on our cash flows from operating activities, investing activities or financing activities included in our consolidated statement of cash flows.  As of  June 30, 2019  and January 1, 2019, right-of-use assets and lease liabilities consisted of the following (in thousands):     Balance Sheet Location   June 30, 2019   January 1, 2019                                           Assets:             Operating lease right-of-use assets (1)   Other noncurrent assets   $ 219,006   $ 235,979               Liabilities:             Operating lease liabilities (current)   Accounts payable and accrued liabilities   $ 34,589   $ 37,339 Operating lease liabilities (noncurrent)   Other noncurrent liabilities   224,751   236,697 Total operating lease liabilities       $ 259,340   $ 274,036 (1)  Approximately  90 %  of our operating lease right-of-use assets are located in the United States. As of  June 30, 2019 , maturities of lease liabilities were as follows (in thousands): Year ending December 31,     2019   $ 24,694 2020   42,249 2021   35,221 2022   32,536 2023   28,964 2024   27,187 2025 and thereafter   147,981 Total lease payments (1)   338,832 Imputed interest   ( 79,492 ) Total operating lease liabilities   $ 259,340 (1)  Total lease payments do not include approximately  $ 86.0  million  for operating leases that had not yet commenced at  June 30, 2019 . We expect the lease commencement dates for these leases to occur later in 2019 and in 2020. Operating lease costs in our consolidated statement of income for the three months ended  June 30, 2019  were  $ 14.1  million , including  $ 12.9  million  in selling, general and administrative expenses and  $ 1.2  million  in cost of services.   Operating lease costs in our consolidated statement of income for the  six  months ended  June 30, 2019  were  $ 29.8  million , including  $ 27.4  million  in selling, general and administrative expenses and  $ 2.4  million  in cost of services.   Total lease costs for the three and six months ended  June 30, 2019  include variable lease costs of approximately  $ 2.6  million  and  $ 5.0  million , respectively, which are primarily comprised of the cost of property taxes, insurance and maintenance. Lease costs for leases with a term of less than twelve months were not material for the three and six months ended  June 30, 2019 . Cash paid for amounts included in the measurement of operating lease liabilities for the six months ended  June 30, 2019  was  $ 26.1  million , which is included as a component of cash provided by operating activities in the consolidated statement of cash flows. Operating lease liabilities arising from obtaining new or modified right-of-use assets, net of reductions resulting from certain lease modifications, were approximately  $ 4.0  million  for the six months ended  June 30, 2019 . 17 Table of Contents Future minimum payments at December 31, 2018 for noncancelable operating leases were as follows (in thousands): Year ending December 31:     2019   $ 50,095 2020   47,700 2021   40,035 2022   37,055 2023   33,298 2024 and thereafter   225,225    Total future minimum payments (1)   $ 433,408 (1)  Future minimum lease payments include approximately  $ 70  million  for operating leases that had not commenced at December 31, 2018. NOTE  7 — LONG-TERM DEBT AND LINES OF CREDIT As of  June 30, 2019  and  December 31, 2018 , long-term debt consisted of the following:   June 30, 2019   December 31, 2018           (in thousands)         Credit Facility:       Term loans (face amounts of $4,419,554 and $4,463,643 at June 30, 2019 and December 31, 2018, respectively, less unamortized debt issuance costs of $32,906 and $37,400 at June 30, 2019 and December 31, 2018, respectively) $ 4,386,647   $ 4,426,243 Revolving Credit Facility 765,000   704,000 Total long-term debt 5,151,647   5,130,243 Less current portion of Credit Facility 151,062   115,075 Long-term debt, excluding current portion $ 5,000,585   $ 5,015,168 The maturity requirements on long-term debt as of  June 30, 2019  are as follows by year (in thousands): Year ending December 31,   2019 $ 80,087 2020 159,979 2021 195,848 2022 267,587 2023 4,006,053 2024 and thereafter 475,000 Total $ 5,184,554 Credit Facility We are party to a credit facility agreement with Bank of America, N.A., as administrative agent, and a syndicate of financial institutions as lenders and other agents (as amended from time to time, the "Credit Facility"). As of  June 30, 2019 , the Credit Facility provided for secured financing comprised of (i) a  $ 1.5  billion  revolving credit facility ("Revolving Credit Facility"); (ii) a  $ 1.5  billion  term loan ("Term A Loan"); (iii) a  $ 1.37  billion  term loan ("Term A-2 Loan"); (iv) a  $ 1.14  billion  term loan ("Term B-2 Loan"); and (v) a  $ 500  million  term loan ("Term B-4 Loan"). Substantially all of the assets of our domestic subsidiaries are pledged as collateral under the Credit Facility. The Credit Facility provides for an interest rate, at our election, of either London Interbank Offered Rate or a base rate, in each case plus a margin. As of  June 30, 2019 , the interest rates on the Term A Loan, the Term A-2 Loan, the Term B-2 Loan and the Term B-4 Loan were  3.90 % ,  3.90 % ,  4.15 %  and  4.15 % , respectively. As of  June 30, 2019 , the interest rate on the Revolving Credit  18 Table of Contents Facility was  3.89 % . In addition, we are required to pay a quarterly commitment fee with respect to the unused portion of the Revolving Credit Facility at an applicable rate per annum ranging from  0.20 %  to  0.30 %  depending on our leverage ratio.  The Term A Loan and the Term A-2 Loan mature, and the Revolving Credit Facility expires, on  January 20, 2023 . The Term B-2 Loan matures on  April 22, 2023 . The Term B-4 Loan matures on  October 18, 2025 . The Term A Loan and Term A-2 Loan principal amounts must each be repaid in quarterly installments in the amount of  1.25 %  of principal through  June 2021 , increasing to  1.875 %  of principal through  June 2022  and increasing to  2.50 %  of principal through  December 2022 , with the remaining principal balance due upon maturity in  January 2023 . The Term B-2 Loan principal must be repaid in quarterly installments in the amount of  0.25 %  of principal through  March 2023 , with the remaining principal balance due upon maturity in  April 2023 . The Term B-4 Loan principal must be repaid in quarterly installments in the amount of  0.25 %  of principal through  September 2025 , with the remaining principal balance due upon maturity in  October 2025 . We may issue standby letters of credit of up to  $ 100  million  in the aggregate under the Revolving Credit Facility. Outstanding letters of credit under the Revolving Credit Facility reduce the amount of borrowings available to us. Borrowings available to us under the Revolving Credit Facility are further limited by the covenants described below under "Compliance with Covenants." The total available commitments under the Revolving Credit Facility at  June 30, 2019  were  $ 723.2  million .  The portions of deferred debt issuance costs related to the Revolving Credit Facility are included in prepaid expenses and other current assets and other noncurrent assets, and the portion of deferred debt issuance costs related to the term loans is reported as a reduction to the carrying amount of the term loans. Debt issuance costs are amortized as an adjustment to interest expense over the terms of the respective facilities. Compliance with Covenants The Credit Facility agreement contains customary affirmative and restrictive covenants, including, among others, financial covenants based on our leverage and interest coverage ratios, as defined in the agreement. As of  June 30, 2019 , financial covenants under the Credit Facility Agreement required a leverage ratio no greater than: (i)  5.00  to  1.00  as of the end of any fiscal quarter ending during the period from  April 1, 2018  through  June 30, 2019 ; (ii)  4.75  to  1.00  as of the end of any fiscal quarter ending during the period from  July 1, 2019  through  June 30, 2020 ; and (iii)  4.50  to  1.00  as of the end of any fiscal quarter ending thereafter. The interest coverage ratio is required to be no less than  3.25  to  1.00 . The Credit Facility agreement includes covenants, subject in each case to exceptions and qualifications that may restrict certain payments, including in certain circumstances, the repurchasing of our common stock and paying cash dividends in excess of our current rate of  $ 0.01  per share per quarter. We were in compliance with all applicable covenants as of  June 30, 2019 . Bridge Facility and New Permanent Financing Arrangements In connection with our entry into the Merger Agreement described in "Note  2 —Acquisitions," on May 27, 2019, we obtained commitments for a  $ 2.75  billion ,  364 -day senior unsecured bridge facility (the "Bridge Facility"). The Bridge Facility was established to refinance the Credit Facility and to refinance TSYS' unsecured revolving credit facility in order to establish an unsecured capital structure under which we can assume certain existing TSYS senior notes. We expect to execute permanent financing of  $ 7.5  billion  (a new  $ 3.0  billion  revolving credit facility and a new  $ 2.0  billion  term loan facility, which we entered into on July 9, 2019, as described below, and is expected to also include  $ 2.5  billion  of senior notes) prior to the closing of the Merger that will eliminate the need for the Bridge Facility commitments. Fees associated with the Bridge Facility of  $ 11.7  million  were capitalized and will be amortized to interest expense through the expected date of termination of the Bridge Facility commitment. For the three and six months ended  June 30, 2019 , we recognized  $ 2.9  million  of these fees as interest expense. The remaining unamortized portion of  $ 8.8  million  is included in prepaid expenses and other current assets on our consolidated balance sheet as of  June 30, 2019 . On  July 9, 2019 , we entered into a term loan credit agreement ("Term Loan Credit Agreement") and a credit agreement ("Unsecured Revolving Credit Agreement" and, together with the Term Loan Credit Agreement, the "Agreements"), in each case with a syndicate of financial institutions. Upon entry into the Agreements, the aggregate commitments under the Bridge Facility described above were reduced to approximately  $ 2.1  billion . The Term Loan Credit Agreement provides for a senior unsecured  $ 2.0  billion  term loan facility and we, at our discretion, have the ability to seek to increase the term loan capacity by an additional  $ 1.0  billion  ("Term Loan Facility"). The Unsecured Revolving Credit Agreement provides for a senior unsecured  $ 3.0  billion  revolving  19 Table of Contents credit facility ("Unsecured Revolving Credit Facility").  The Term Loan Facility and the Unsecured Revolving Credit Facility will be available for borrowing on the date on which the Merger becomes effective subject to customary limited conditionality for borrowings related to the Merger. The Unsecured Revolving Credit Facility will be otherwise available subject to customary conditionality. The Term Loan Credit Agreement and the Unsecured Revolving Credit Agreement will mature on the fifth anniversary of the closing date of the Merger.  Settlement Lines of Credit In various markets where we do business, we have specialized lines of credit, which are restricted for use in funding settlement. The settlement lines of credit generally have variable interest rates, are subject to annual review and are denominated in local currency but may, in some cases, facilitate borrowings in multiple currencies. For certain of our lines of credit, the available credit is increased by the amount of cash we have on deposit in specific accounts with the lender. Accordingly, the amount of the outstanding line of credit may exceed the stated credit limit. As of  June 30, 2019  and  December 31, 2018 , a total of  $ 68.9  million  and  $ 70.6  million , respectively, of cash on deposit was used to determine the available credit. As of  June 30, 2019  and  December 31, 2018 , respectively, we had  $ 736.2  million  and  $ 700.5  million  outstanding under these lines of credit with additional capacity of  $ 628.1  million  as of  June 30, 2019  to fund settlement. The weighted-average interest rate on these borrowings was  3.01 %  and  2.97 %  at  June 30, 2019  and  December 31, 2018 , respectively. During the three months ended  June 30, 2019 , the maximum and average outstanding balances under these lines of credit were  $ 873.0  million  and  $ 440.5  million , respectively. Derivative Agreements We have interest rate swap agreements with financial institutions to hedge changes in cash flows attributable to interest rate risk on a portion of our variable-rate debt instruments. Net amounts to be received or paid under the swap agreements are reflected as adjustments to interest expense. Since we have designated the interest rate swap agreements as portfolio cash flow hedges, unrealized gains or losses resulting from adjusting the swaps to fair value are recorded as components of other comprehensive income.   In addition, in June 2019, in anticipation of the expected issuance of the senior notes in connection with the Merger, as described earlier in this Note, we entered into forward-starting interest rate swap agreements with an aggregate notional amount of  $ 1.0  billion . The forward-starting interest rate swaps, designated as cash flow hedges, are designed to manage the exposure to interest rate volatility with regard to the expected future issuances of senior notes. The effective portion of the gains or losses are reported as a component of other comprehensive loss. Beginning in the period in which the planned issuance occurs and the related derivatives are terminated, the effective portion of the gains or losses will be reclassified into interest expense over the term of the related debt. The fair values of the interest rate swaps were determined based on the present value of the estimated future net cash flows using implied rates in the applicable yield curve as of the valuation date. These derivative instruments were classified within Level 2 of the valuation hierarchy.  20 Table of Contents The table below presents the fair values of our derivative financial instruments designated as cash flow hedges included in the consolidated balance sheets:                 Fair Values Derivative Financial Instruments   Balance Sheet Location   Weighted-Average Fixed Rate of Interest at June 30, 2019   Range of Maturity Dates at June 30, 2019   June 30, 2019   December 31, 2018                                       (in thousands)                       Interest rate swaps (Notional of $250 million at June 30, 2019 and $750 million at December 31, 2018)   Prepaid expenses and other current assets   1.58 %   December 31, 2019   $ 582   $ 3,200 Interest rate swaps (Notional of $250 million at June 30, 2019 and $550 million at December 31, 2018)   Other noncurrent assets   1.34 %   July 31, 2020 - March 31, 2021   $ 1,317   $ 8,256 Interest rate swaps (Notional of $1.0 billion at June 30, 2019)   Accounts payable and accrued liabilities   2.09 %   December 31, 2019   $ 14,617   $ — Interest rate swaps (Notional of $1.6 billion at June 30, 2019 and $950 million at December 31, 2018)   Other noncurrent liabilities   2.57 %   March 31, 2021 - December 31, 2022   $ 49,886   $ 14,601 The table below presents the effects of our interest rate swaps on the consolidated statements of income and comprehensive income for the  three and six  months ended  June 30, 2019  and  2018 :   Three Months Ended   Six Months Ended   June 30, 2019   June 30, 2018   June 30, 2019   June 30, 2018                   (in thousands)                 Amount of net unrealized gains (losses) recognized in other comprehensive income $ ( 42,222 )   $ 2,932   $ ( 56,731 )   $ 10,508 Amount of net unrealized gains reclassified out of other comprehensive income to interest expense $ ( 893 )   $ ( 1,104 )   $ ( 2,723 )   $ ( 1,167 ) As of  June 30, 2019 , the amount of net unrealized gains in accumulated other comprehensive loss related to our interest rate swaps that is expected to be reclassified into interest expense during the next 12 months was approximately  $ 9.7  million . Interest Expense Interest expense was  $ 65.5  million  and  $ 48.1  million  for the three months ended  June 30, 2019  and  2018 , respectively, and  $ 123.9  million  and  $ 93.5  million  for the six months ended  June 30, 2019  and  2018 , respectively. NOTE 8— INCOME TAX Our effective income tax rates were  19.9 %  and  19.1 %  for the three months ended  June 30, 2019  and 2018, respectively, and  18.4 %  and  19.6 %  for the six months ended  June 30, 2019  and 2018, respectively. Our effective income tax rates for the three and six months ended  June 30, 2019  differs from the U.S. statutory rate primarily due to the excess tax benefits of share-based awards that are recognized upon vesting or settlement and the U.S. tax benefits associated with income derived from foreign customers. 21 Table of Contents We conduct business globally and file income tax returns in the U.S. federal jurisdiction and various state and foreign jurisdictions. In the normal course of business, we are subject to examination by taxing authorities around the world, including, without limitation, the United States and the United Kingdom. We are no longer subject to state income tax examinations for years ended on or before  May 31, 2010 , U.S. federal income tax examinations for years ended on or before  May 31, 2013  and U.K. federal income tax examinations for years ended on or before  May 31, 2015 . NOTE 9— SHAREHOLDERS’ EQUITY We repurchase our common stock mainly through open market repurchase plans and, at times, through accelerated share repurchase programs. During the three months ended June 30, 2019 and 2018, we repurchased and retired  513,116  shares and  1,603,248  shares of our common stock at a cost, including commissions, of  $ 72.0  million  and  $ 179.9  million , respectively, or  $ 140.32  per share and  $ 112.20  per share. During the six months ended June 30, 2019 and 2018, we repurchased and retired  1,808,398  shares and  1,612,174  shares of our common stock at a cost, including commissions, of  $ 230.0  million  and  $ 180.9  million , respectively, or  $ 127.18  per share and  $ 112.19  per share. As of  June 30, 2019 , we were authorized to repurchase up to  $ 566.0  million  of our common stock.  On  July 25, 2019 , our board of directors declared a dividend of  $ 0.01  per share payable on  September 27, 2019  to common shareholders of record as of  September 13, 2019 .  Upon completion of the proposed Merger, our Articles of Incorporation would be amended to increase the number of authorized shares of Global Payments common stock from  200  million  to  400  million . NOTE 10— SHARE-BASED AWARDS AND OPTIONS The following table summarizes share-based compensation expense and the related income tax benefit recognized for our share-based awards and stock options:    Three Months Ended   Six Months Ended   June 30, 2019   June 30, 2018   June 30, 2019   June 30, 2018                   (in thousands)                 Share-based compensation expense $ 16,496   $ 15,205   $ 27,914   $ 30,104 Income tax benefit $ 3,728   $ 3,377   $ 6,237   $ 6,662   Share-Based Awards The following table summarizes the changes in unvested restricted stock and performance awards for the  six  months ended  June 30, 2019 :   Shares   Weighted-Average Grant-Date Fair Value           (in thousands)             Unvested at December 31, 2018 1,084   $ 108.51 Granted 475   133.58 Vested ( 260 )   94.78 Forfeited ( 62 )   107.74 Unvested at June 30, 2019 1,237   $ 121.06 The total fair value of restricted stock and performance awards vested during the  six  months ended  June 30, 2019  and  June 30, 2018  was  $ 24.6  million  and  $ 22.8  million , respectively.   22 Table of Contents For restricted stock and performance awards, we recognized compensation expense of  $ 14.8  million  and  $ 13.6  million  during the three months ended  June 30, 2019  and  June 30, 2018 , respectively, and  $ 24.9  million  and  $ 27.4  million  during the  six  months ended  June 30, 2019  and  June 30, 2018 , respectively. As of  June 30, 2019 , there was  $ 94.7  million  of unrecognized compensation expense related to unvested restricted stock and performance awards that we expect to recognize over a weighted-average period of  2.2  years. Our restricted stock and performance award plans provide for accelerated vesting under certain conditions. Stock Options  The following table summarizes changes in stock option activity for the  six  months ended  June 30, 2019 :     Options   Weighted-Average Exercise Price   Weighted-Average Remaining Contractual Term   Aggregate Intrinsic Value                   (in thousands)       (years)   (in millions)                 Outstanding at December 31, 2018 598   $ 59.16   6.2   $ 27.3 Granted 109   128.22         Exercised ( 193 )   34.01         Outstanding at June 30, 2019 514   $ 83.31   7.1   $ 39.5                 Options vested and exercisable at June 30, 2019 296   $ 61.73   5.8   $ 29.1 We recognized compensation expense for stock options of $ 0.9  million  during the three months ended  June 30, 2019  and 2018 and $ 1.6  million  and $ 1.5  million  during the six months ended  June 30, 2019  and 2018, respectively. The aggregate intrinsic value of stock options exercised during the  six  months ended  June 30, 2019  and 2018 was  $ 18.9  million  and  $ 4.6  million , respectively. As of  June 30, 2019 , we had  $ 6.0  million  of unrecognized compensation expense related to unvested stock options that we expect to recognize over a weighted-average period of  2.2  years. The weighted-average grant-date fair value of stock options granted during the  six  months ended  June 30, 2019  and 2018 was  $ 39.60  and  $ 35.09 , respectively.  Fair value was estimated on the date of grant using the Black-Scholes valuation model with the following weighted-average assumptions:   Six Months Ended   June 30, 2019   June 30, 2018         Risk-free interest rate 2.49 %   2.60 % Expected volatility 30 %   29 % Dividend yield 0.04 %   0.04 % Expected term (years) 5   5 The risk-free interest rate was based on the yield of a zero coupon U.S. Treasury security with a maturity equal to the expected life of the option from the date of the grant. Our assumption on expected volatility was based on our historical volatility. The dividend yield assumption was determined using our average stock price over the preceding year and the annualized amount of our most current quarterly dividend per share. We based our assumptions on the expected term of the options on our analysis of the historical exercise patterns of the options and our assumption on the future exercise pattern of options.   NOTE 11— EARNINGS PER SHARE Basic earnings per share ("EPS") was computed by dividing net income attributable to Global Payments by the weighted-average number of shares outstanding during the period. Earnings available to common shareholders was the same as reported net income attributable to Global Payments for all periods presented.  23 Table of Contents Diluted EPS is computed by dividing net income attributable to Global Payments by the weighted-average number of shares outstanding during the period, including the effect of share-based awards that would have a dilutive effect on EPS. All stock options with an exercise price lower than the average market share price of our common stock for the period are assumed to have a dilutive effect on EPS. The following table sets forth the computation of diluted weighted-average number of shares outstanding for the  three and six  months ended  June 30, 2019  and  2018 :   Three Months Ended   Six Months Ended   June 30, 2019   June 30, 2018   June 30, 2019   June 30, 2018                   (in thousands)                 Basic weighted-average number of shares outstanding 156,768   159,003   157,141   159,161 Plus: Dilutive effect of stock options and other share-based awards 494   674   497   679 Diluted weighted-average number of shares outstanding 157,262   159,677   157,638   159,840 NOTE 12— ACCUMULATED OTHER COMPREHENSIVE LOSS The changes in the accumulated balances for each component of other comprehensive income (loss) were as follows for the  three and six  months ended  June 30, 2019  and  2018 :   Foreign Currency Translation   Unrealized Gains (Losses) on Hedging Activities   Other   Accumulated Other Comprehensive Loss                   (in thousands)                 Balance at March 31, 2019 $ ( 294,467 )   $ ( 14,725 )   $ ( 3,416 )   $ ( 312,608 ) Other comprehensive income (loss) 5,273   ( 32,588 )   17   ( 27,298 ) Balance at June 30, 2019 $ ( 289,194 )   $ ( 47,313 )   $ ( 3,399 )   $ ( 339,906 )                 Balance at March 31, 2018 $ ( 185,269 )   $ 12,647   $ ( 4,339 )   $ ( 176,961 ) Other comprehensive income (loss) ( 68,103 )   1,383   52   ( 66,668 ) Balance at June 30, 2018 $ ( 253,372 )   $ 14,030   $ ( 4,287 )   $ ( 243,629 ) Other comprehensive income (loss) attributable to noncontrolling interests, which relates only to foreign currency translation, was income of  $ 3.9  million  and a loss of  $ 11.2  million  for the three months ended  June 30, 2019  and  June 30, 2018 , respectively.   Foreign Currency Translation   Unrealized Gains (Losses) on Hedging Activities   Other   Accumulated Other Comprehensive Loss                   (in thousands)                 Balance at December 31, 2018 $ ( 304,274 )   $ ( 2,374 )   $ ( 3,527 )   $ ( 310,175 ) Other comprehensive income (loss) 15,080   ( 44,939 )   128   ( 29,731 ) Balance at June 30, 2019 $ ( 289,194 )   $ ( 47,313 )   $ ( 3,399 )   $ ( 339,906 )                 Balance at December 31, 2017 $ ( 185,856 )   $ 6,999   $ ( 4,287 )   $ ( 183,144 ) Cumulative effect of adoption of new accounting standard ( 1,843 )   —   —   ( 1,843 ) Other comprehensive income (loss) ( 65,673 )   7,031   —   ( 58,642 ) Balance at June 30, 2018 $ ( 253,372 )   $ 14,030   $ ( 4,287 )   $ ( 243,629 ) Other comprehensive income (loss) attributable to noncontrolling interests, which relates only to foreign currency translation, was a loss of  $ 0.6  million  and income of  $ 0.1  million  for the six months ended  June 30, 2019  and 2018, respectively. 24 Table of Contents NOTE 13— SEGMENT INFORMATION We operate in  three  reportable segments: North America, Europe and Asia-Pacific. We evaluate performance and allocate resources based on the operating income of each operating segment. The operating income of each operating segment includes the revenues of the segment less expenses that are directly related to those revenues. Operating overhead, shared costs and certain compensation costs are included in Corporate in the following table. Interest and other income, interest and other expense and provision for income taxes are not allocated to the individual segments. We do not evaluate the performance of or allocate resources to our operating segments using asset data. The accounting policies of the reportable operating segments are the same as those described in our Annual Report on Form 10-K for the year ended  December 31, 2018  and our summary of significant accounting policies in "Note  1 — Basis of Presentation and Summary of Significant Accounting Policies." Information on segments and reconciliations to consolidated revenues and consolidated operating income was as follows for the  three and six  months ended  June 30, 2019  and  2018 :   Three Months Ended   Six Months Ended   June 30, 2019   June 30, 2018   June 30, 2019   June 30, 2018                   (in thousands)                 Revenues (1) :               North America $ 715,919   $ 621,801   $ 1,394,341   $ 1,215,830 Europe 160,349   155,631   303,218   298,908 Asia-Pacific 58,884   55,732   120,631   113,403  Consolidated revenues $ 935,152   $ 833,164   $ 1,818,190   $ 1,628,141                 Operating income (loss) (1) :               North America $ 185,286   $ 147,184   $ 341,433   $ 272,588 Europe 86,345   82,682   158,306   153,230 Asia-Pacific 23,257   19,577   50,530   43,351 Corporate (2) ( 73,162 )   ( 58,706 )   ( 129,051 )   ( 122,262 )  Consolidated operating income $ 221,726   $ 190,737   $ 421,218   $ 346,907                 Depreciation and amortization (1) :               North America $ 124,573   $ 105,433   $ 252,810   $ 207,958 Europe 13,101   11,775   26,095   24,520 Asia-Pacific 5,141   4,726   10,181   9,359 Corporate 2,308   1,714   4,667   3,555  Consolidated depreciation and amortization $ 145,123   $ 123,648   $ 293,753   $ 245,392 (1)  Revenues, operating income and depreciation and amortization reflect the effects of acquired businesses from the respective acquisition dates. For further discussion of our acquisitions, see "Note  2 — Acquisitions."  (2)  During the three months ended June 30, 2019 and 2018, operating loss for Corporate included acquisition and integration expenses of  $ 14.1  million  and  $ 8.1  million , respectively . The amount for the three months ended June 30, 2019 included transaction costs related to the Merger of  $ 12.2  million . During the six months ended June 30, 2019 and 2018, operating loss for Corporate included acquisition and integration expenses of  $ 19.5  million  and  $ 26.4  million , respectively. The amount for the six months ended June 30, 2019 included transaction costs related to the Merger of  $ 12.2  million . 25 Table of Contents ITEM 2—MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS   The following discussion and analysis of our financial condition and results of operations should be read in conjunction with our unaudited consolidated financial statements and related notes included in Item 1 of Part I of this Quarterly Report and the Management’s Discussion and Analysis of Financial Condition and Results of Operations and consolidated financial statements contained in our Annual Report on Form 10-K for the year ended  December 31, 2018 . This discussion and analysis contains forward-looking statements about our plans and expectations of what may happen in the future. Forward-looking statements are based on a number of assumptions and estimates that are inherently subject to significant risks and uncertainties, and our actual results could differ materially from the results anticipated by our forward-looking statements. See "Forward-Looking Statements" below for additional information.  Executive Overview We are a leading worldwide provider of payment technology services and software solutions delivering innovative solutions to our customers globally. Our technologies, services and employee expertise enable us to provide a broad range of services that allow our customers to accept various payment types and operate their businesses more efficiently. We distribute our services across a variety of channels in  32  countries throughout North America, Europe, the Asia-Pacific region and Brazil and operate in three reportable segments: North America, Europe and Asia-Pacific.  On  May 27, 2019 , Global Payments and Total System Services, Inc. ("TSYS") entered into an Agreement and Plan of Merger ("Merger Agreement") providing for the merger of TSYS with and into Global Payments, with Global Payments as the surviving entity (the "Merger"). TSYS is a leading global payments provider, offering seamless, secure and innovative solutions across the payments spectrum - for issuers, merchants and consumers. The Merger is subject to the satisfaction or waiver of the closing conditions set forth in the Merger Agreement, including shareholder approval for both companies. Upon completion of the Merger, TSYS will no longer be a separate publicly traded corporation. Global Payments will continue to trade on the New York Stock Exchange. The preliminary estimated Merger consideration to be transfered to TSYS shareholders is  $23.7 billion  based on the number of TSYS common shares outstanding and the closing price of our common stock on  July 25, 2019 . Merger consideration will include the amount of TSYS' unsecured revolving credit facility that we are required to repay upon consummation of the Merger. We expect the Merger to close in the fourth quarter of  2019 , subject to customary closing conditions, regulatory approvals and shareholder approval for both companies. See "Note  2 —Acquisitions" and "Note 7—Long-Term Debt and Lines of Credit" in the notes to the accompanying unaudited consolidated financial statements for further information about the proposed Merger and related debt financing.  On  October 17, 2018 , we acquired SICOM Systems, Inc. ("SICOM") for total purchase consideration of  $410.2 million , which we funded with cash on hand and by drawing on our Revolving Credit Facility (described in "Note 7—Long-Term Debt and Lines of Credit" in the notes to the accompanying unaudited consolidated financial statements). SICOM is a provider of end-to-end enterprise, cloud-based software solutions and other technologies to quick service restaurants and food service management companies.  On  September 4, 2018 , we acquired AdvancedMD, Inc. ("AdvancedMD") for total purchase consideration of  $706.9 million , which we funded with cash on hand and by drawing on our Revolving Credit Facility. AdvancedMD is a provider of cloud-based enterprise software solutions to small-to-medium sized ambulatory care physician practices.  Highlights related to our financial condition and results of operations for the  three and six  months ended  June 30, 2019  are: • Consolidated revenues for the  three and six  months ended  June 30, 2019  increased to  $935.2 million  and  $1,818.2 million , respectively, compared to  $833.2 million  and  $1,628.1 million  for the prior-year periods, primarily due to additional revenues from businesses acquired in the second half of 2018. • Consolidated operating income for the  three and six  months ended  June 30, 2019  increased to  $221.7 million  and  $421.2 million , respectively, compared to  $190.7 million  and  $346.9 million  for the prior-year periods. Operating margin for the  three and six  months ended  June 30, 2019  was  23.7%  and  23.2% , respectively, compared to  22.9%  and  21.3%  for the prior-year periods.  26 Table of Contents • Net income attributable to Global Payments for the  three and six  months ended  June 30, 2019  increased to  $120.5 million  and  $232.8 million , respectively, compared to  $109.1 million  and  $200.5 million  for the prior-year periods. • Diluted earnings per share for the  three and six  months ended  June 30, 2019  increased to  $0.77  and  $1.48 , respectively, compared to  $0.68  and  $1.25  for the prior-year periods. 27 Table of Contents Results of Operations The following table sets forth key selected financial data for the three months ended  June 30, 2019  and  2018 , this data as a percentage of total revenues and the changes between the periods in dollars and as a percentage of the prior-year amount.    Three Months Ended June 30, 2019   % of Revenues (1)   Three Months Ended June 30, 2018   % of Revenues (1)   Change   % Change                           (dollar amounts in thousands)                         Revenues (2) :                       North America $ 715,919   76.6 %   $ 621,801   74.6 %   $ 94,118   15.1 % Europe 160,349   17.1 %   155,631   18.7 %   4,718   3.0 % Asia-Pacific 58,884   6.3 %   55,732   6.7 %   3,152   5.7 % Total revenues $ 935,152   100.0 %   $ 833,164   100.0 %   $ 101,988   12.2 %                         Consolidated operating expenses (2) :                       Cost of service $ 302,276   32.3 %   $ 264,544   31.8 %   $ 37,732   14.3 % Selling, general and administrative 411,150   44.0 %   377,883   45.4 %   33,267   8.8 % Operating expenses $ 713,426   76.3 %   $ 642,427   77.1 %   $ 70,999   11.1 %                         Operating income (loss) (2) :                       North America $ 185,286     $ 147,184     $ 38,102   25.9 % Europe 86,345       82,682       3,663   4.4 % Asia-Pacific 23,257       19,577       3,680   18.8 % Corporate (3) (73,162 )       (58,706 )       (14,456 )   24.6 % Operating income $ 221,726   23.7 %   $ 190,737   22.9 %   $ 30,989   16.2 %                         Operating margin (2) :                       North America 25.9 %       23.7 %     2.2 %     Europe 53.8 %       53.1 %       0.7 %     Asia-Pacific 39.5 %       35.1 %     4.4 %     (1)  Percentage amounts may not sum to the total due to rounding. (2)  Revenues, consolidated operating expenses, operating income (loss) and operating margin reflect the effects of acquired businesses from the respective acquisition dates. For further discussion of our acquisitions, see "Note  2 —Acquisitions."  (3)  During the three months ended June 30, 2019 and 2018, operating loss for Corporate included acquisition and integration expenses of  $14.1 million  and  $8.1 million , respectively. The amount for the three months ended June 30, 2019 included transaction costs related to the Merger of  $12.2 million . These expenses are included primarily in selling, general and administrative expenses in the unaudited consolidated statements of income. 28 Table of Contents The following table sets forth key selected financial data for the six months ended  June 30, 2019  and  2018 , this data as a percentage of total revenues and the changes between the periods in dollars and as a percentage of the prior-year amount.    Six Months Ended June 30, 2019   % of Revenues (1)   Six Months Ended June 30, 2018   % of Revenues (1)   Change   % Change                           (dollar amounts in thousands)                         Revenues (2) :                       North America $ 1,394,341   76.7 %   $ 1,215,830   74.7 %   $ 178,511   14.7 % Europe 303,218   16.7 %   298,908   18.4 %   4,310   1.4 % Asia-Pacific 120,631   6.6 %   113,403   7.0 %   7,228   6.4 % Total revenues $ 1,818,190   100.0 %   $ 1,628,141   100.0 %   $ 190,049   11.7 %                         Consolidated operating expenses (2) :                       Cost of service $ 607,505   33.4 %   $ 516,930   31.7 %   $ 90,575   17.5 % Selling, general and administrative 789,467   43.4 %   764,304   46.9 %   25,163   3.3 % Operating expenses $ 1,396,972   76.8 %   $ 1,281,234   78.7 %   $ 115,738   9.0 %                         Operating income (loss) (2) :                       North America $ 341,433     $ 272,588     $ 68,845   25.3 % Europe 158,306       153,230       5,076   3.3 % Asia-Pacific 50,530       43,351       7,179   16.6 % Corporate (3) (129,051 )       (122,262 )       (6,789 )   5.6 % Operating income $ 421,218   23.2 %   $ 346,907   21.3 %   $ 74,311   21.4 %                         Operating margin (2) :                       North America 24.5 %       22.4 %       2.1 %     Europe 52.2 %       51.3 %       0.9 %     Asia-Pacific 41.9 %       38.2 %       3.7 %     (1)  Percentage amounts may not sum to the total due to rounding. (2)  Revenues, consolidated operating expenses, operating income (loss) and operating margin reflect the effects of acquired businesses from the respective acquisition dates. For further discussion of our acquisitions, see "Note  2 —Acquisitions."  (3)  During the six months ended June 30, 2019 and 2018, operating loss for Corporate included acquisition and integration expenses of  $19.5 million  and  $26.4 million , respectively. The amount for the six months ended June 30, 2019 included transaction costs related to the Merger of  $12.2 million . These expenses are included primarily in selling, general and administrative expenses in the unaudited consolidated statements of income. 29 Table of Contents Revenues Consolidated revenues for the  three and six  months ended  June 30, 2019  increased by  12.2%  and  11.7% , respectively, to  $935.2 million  and  $1,818.2 million , despite the unfavorable effect of fluctuations in foreign currency exchange rates. For the  three and six  months ended  June 30, 2019 , currency exchange rate fluctuations reduced our consolidated revenues by  $17.1 million  and  $39.0 million , respectively, compared to the prior year, calculated by converting revenues for the current period in local currencies using exchange rates for the prior-year period. North America Segmen t. Revenues from our North America segment for the  three and six  months ended  June 30, 2019  increased by  15.1%  and  14.7% , respectively, to  $715.9 million  and  $1,394.3 million , primarily due to additional revenues from the acquisitions of AdvancedMD and SICOM in the second half of 2018.  Europe Segment.  Revenues from our Europe segment for the  three and six  months ended  June 30, 2019  increased by  3.0%  and  1.4% , respectively, to  $160.3 million  and  $303.2 million , due to organic growth, partially offset by the unfavorable effect of fluctuations in foreign currency exchange rates of  $11.6 million  and  $26.0 million , respectively. Asia-Pacific Segment.  Revenues from our Asia-Pacific segment for the  three and six  months ended  June 30, 2019  increased by  5.7%  and  6.4% , respectively, to  $58.9 million  and  $120.6 million , primarily due to organic growth, partially offset by the unfavorable effect of fluctuations in foreign currency exchange rates of  $2.5 million  and  $6.3 million , respectively. Operating Expenses Cost of Service.  Cost of service for the  three and six  months ended  June 30, 2019  increased by  14.3%  and  17.5% , respectively, to  $302.3 million  and  $607.5 million . Cost of service as a percentage of revenues was  32.3%  and  33.4% , respectively, for the  three and six  months ended  June 30, 2019 , compared to  31.8%  and  31.7%  for the prior-year periods. These increases were primarily due to additional costs associated with revenue growth and an increase in amortization of acquired intangibles of $ 15.0 million  and  $34.7 million , respectively. Selling, General and Administrative Expenses . Selling, general and administrative expenses for the  three and six  months ended  June 30, 2019  increased by  8.8%  and  3.3% , respectively, to  $411.2 million  and  $789.5 million , primarily due to additional costs to support the growth of our business. Selling, general and administrative expenses as a percentage of revenues was  44.0%  and  43.4% , respectively, for the  three and six  months ended  June 30, 2019 , compared to  45.4%  and  46.9%  for the prior-year periods.  Operating Income and Operating Margin North America Segment . Operating income in our North America segment for the  three and six  months ended  June 30, 2019   increased  by  25.9%  and  25.3% , respectively, to  $185.3 million  and  $341.4 million , primarily due to revenue growth. Operating margin for the  three and six  months ended  June 30, 2019  increased to  25.9%  and  24.5% , respectively, compared to  23.7%  and  22.4%  for the prior-year periods.  Europe Segment . Operating income in our Europe segment for the  three and six  months ended  June 30, 2019   increased  by  4.4%  and  3.3% , respectively, to  $86.3 million  and  $158.3 million . Operating margin for the  three and six  months ended  June 30, 2019  increased to  53.8%  and  52.2% , respectively, compared to  53.1%  and  51.3%  for the prior-year periods.  Asia-Pacific Segment . Operating income in our Asia-Pacific segment for the  three and six  months ended  June 30, 2019    increased  by  18.8%  and  16.6% , respectively, to  $23.3 million  and  $50.5 million , primarily due to revenue growth. Operating margin for the  three and six  months ended  June 30, 2019  increased to  39.5%  and  41.9% , respectively, compared to  35.1%  and  38.2%  for the prior-year periods. Corporate . Corporate expenses increased by  $14.5 million  and  $6.8 million , respectively, to  $73.2 million  and  $129.1 million , respectively, for the  three and six  months ended  June 30, 2019 , compared to the prior-year periods. The increases reflect additional costs to support the growth of our business and the effects of acquisition and integration expenses, including expenses associated with the Merger. 30 Table of Contents Other Income/Expense, Net Interest and other income decreased by  $5.2 million  for the six months ended  June 30, 2019 , compared to the prior-year period.  Interest and other income for the six months ended June 30, 2018 included a gain of  $9.6 million  recognized on the reorganization of a debit network association of which we were a member through one of our Canadian subsidiaries. Interest and other expense increased by  $17.9 million  and  $31.4 million , respectively, for the  three and six  months ended  June 30, 2019 , compared to the prior-year periods. The increases in interest expense for the  three and six  months ended  June 30, 2019  primarily reflect the increase in our outstanding long-term debt.  Provision for Income Taxes Our effective tax rates for the  three and six  months ended  June 30, 2019  were  19.9%  and  18.4% , respectively, compared to  19.1%  and  19.6% , respectively, for the prior-year periods. Our effective income tax rates for the  three and six  months ended  June 30, 2019  were different from those in the prior year primarily due to changes in the amounts of excess tax benefits of share-based awards that are recognized upon vesting or settlement. Liquidity and Capital Resources   In the ordinary course of our business, a significant portion of our liquidity comes from operating cash flows. Cash flow from operating activities is used to make planned capital investments in our business, to pursue acquisitions that meet our corporate objectives, to pay dividends, to pay principal and interest on our outstanding debt and to repurchase shares of our common stock. Accumulated cash balances are invested in high-quality, marketable short-term instruments. See below under "Bridge Facility and New Permanent Financing Arrangements" for a description of our planned financing in connection with the proposed Merger. Our capital plan objectives are to support our operational needs and strategic plan for long-term growth while maintaining a low cost of capital. We use our financing, such as term loans and our Revolving Credit Facility, for general corporate purposes and to fund acquisitions. In addition, specialized lines of credit are also used in certain of our markets to fund merchant settlement prior to receipt of funds from the card network. We regularly evaluate our liquidity and capital position relative to cash requirements, and we may elect to raise additional funds in the future, through the issuance of debt or equity or by other means. At  June 30, 2019 , we had cash and cash equivalents totaling  $1,047.7 million . Of this amount, we consider  $437.2 million  to be available for general purposes, of which approximately  $26 million  is undistributed foreign earnings considered to be indefinitely reinvested outside the United States. The available cash of  $437.2 million  does not include the following: (i) settlement-related cash balances, (ii) funds held as collateral for merchant losses ("Merchant Reserves") and (iii) funds held for customers. Settlement-related cash balances represent funds that we hold when the incoming amount from the card networks precedes the funding obligation to the merchant. Settlement-related cash balances are not restricted; however, these funds are generally paid out in satisfaction of settlement processing obligations the following day. Merchant Reserves serve as collateral to minimize contingent liabilities associated with any losses that may occur under the merchant's agreement. While this cash is not restricted in its use, we believe that designating this cash to collateralize Merchant Reserves strengthens our fiduciary standing with our member sponsors and is in accordance with the guidelines set by the card networks. Funds held for customers and the corresponding liability that we record in customer deposits include amounts collected prior to remittance on our customers' behalf. Operating activities provided net cash of  $247.4 million  and  $506.8 million  for the  six  months ended  June 30, 2019  and  2018 , respectively, which reflect net income adjusted for noncash items, including depreciation and amortization and changes in operating assets and liabilities. Fluctuations in operating assets and liabilities are affected primarily by timing of month-end and transaction volume, especially changes in settlement processing assets and obligations, and by the effects of businesses we acquire that have different working capital requirements. Changes in settlement processing assets and obligations decreased operating cash flows by  $41.7 million  during the six months ended  June 30, 2019  and increased operating cash flows by  $95.2 million  during the  six  months ended June 30, 2018. The decrease in cash flows from operating activities from the prior-year period was primarily due to the effect of changes in settlement processing assets and obligations, as well as the timing of supplier payments and customer receipts. 31 Table of Contents We used net cash in investing activities of  $198.4 million  and  $104.1 million  during the  six  months ended  June 30, 2019  and  2018 , respectively. Cash used for investing activities primarily represents cash used to fund acquisitions and capital expenditures. During the six months ended  June 30, 2019 , we used cash of  $78.2 million  to complete acquisitions. We made capital expenditures of  $133.3 million  and  $102.7 million  to purchase property and equipment during the  six  months ended  June 30, 2019  and  2018 , respectively. These investments include software and hardware to support the development of new technologies, continued consolidation and enhancement of our operating platforms and infrastructure to support our growing business. During the year ending December 31, 2019, we expect aggregate capital expenditures for property and equipment to approximate  $230 million . Financing activities include borrowings and repayments made under our Credit Facility (described in "Note  7 —Long-Term Debt and Lines of Credit" in the notes to the accompanying unaudited consolidated financial statements), as well as borrowings and repayments made under specialized lines of credit to fund daily settlement activities. Our borrowing arrangements are further described below under "Long-Term Debt and Lines of Credit" and "Bridge Facility and New Permanent Financing Arrangements." Financing activities also include cash flows associated with common stock repurchase programs and share-based compensation programs, as well as cash distributions made to noncontrolling interests and our shareholders. Cash flows from financing activities used net cash of  $212.5 million  and  $613.8 million  during the  six  months ended  June 30, 2019  and  2018 , respectively, primarily as a result of repayments of borrowings under our Credit Facility and settlement lines of credit, as well as funds used to repurchase shares of our common stock.  Repayments of long-term debt were  $569.1 million  and  $1,024.7 million  for the  six  months ended  June 30, 2019  and  2018 , respectively. Repayments of long-term debt consist of repayments that we make with available cash, from time-to-time, under our Revolving Credit Facility, as well as scheduled principal repayments we make on our term loans.  Activity under our settlement lines of credit is affected primarily by timing of month-end and transaction volume. During the  six  months ended  June 30, 2019 , we had net borrowings of settlement lines of credit of  $32.2 million , and during the six months ended June 30, 2019, we had net repayments of settlement lines of credit of  $88.3 million . We repurchase our common stock mainly through open market repurchase plans and, at times, through accelerated share repurchase programs. During the  six  months ended  June 30, 2019  and  2018 , we used  $234.0 million  and  $177.3 million , respectively, to repurchase shares of our common stock. As of  June 30, 2019 , we had  $566.0 million  of share repurchase authority remaining under a share repurchase program authorized by the board of directors.  We believe that our current level of cash and borrowing capacity under our existing long-term debt and lines of credit, with consideration given to the completion of our expected permanent financing arrangements, described below under "Bridge Financing and New Permanent Financing Arrangements," together with expected future cash flows from operations, will be sufficient to meet the needs of our existing operations and planned requirements for the foreseeable future. Long-Term Debt and Lines of Credit  We are party to a credit facility agreement with Bank of America, N.A., as administrative agent, and a syndicate of financial institutions as lenders and other agents (as amended from time to time, the "Credit Facility"). As of  June 30, 2019 , the Credit Facility provided for secured financing comprised of (i) a  $1.5 billion  revolving credit facility "Revolving Credit Facility"); (ii) a  $1.5 billion  term loan ("Term A Loan"); (iii) a  $1.37 billion  term loan ("Term A-2 Loan"); (iv) a $1.14 billion term loan facility (Term B-2 Loan"); and (v) a $500 million term loan ("Term B-4 Loan"). Substantially all of the assets of our domestic subsidiaries are pledged as collateral under the Credit Facility. As of  June 30, 2019 , the aggregate outstanding balance on the term loans was  $4.4 billion , and the outstanding balance on the Revolving Credit Facility was  $765.0 million . The Credit Facility provides for an interest rate, at our election, of either the London Interbank Offered Rate or a base rate, in each case plus a margin. As of  June 30, 2019 , the interest rates on the Term A Loan, the Term A-2 Loan, the Term B-2 Loan and the Term B-4 Loan were  3.90% ,  3.90% ,  4.15%  and  4.15% , respectively. As of  June 30, 2019 , the interest rate on the Revolving Credit Facility was  3.89% . In addition, we are required to pay a quarterly commitment fee with respect to the unused portion of the Revolving Credit Facility at an applicable rate per annum ranging from  0.20%  to  0.30% , depending on our leverage ratio.  The Term A Loan and the Term A-2 Loan mature, and the Revolving Credit Facility expires, on  January 20, 2023 . The Term B-2 Loan matures on  April 22, 2023 . The Term B-4 Loan matures on  October 18, 2025 . The Term A Loan and Term A-2 Loan  32 Table of Contents principal amounts must each be repaid in quarterly installments in the amount of  1.25%  of principal through  June 2021 , increasing to  1.875%  of principal through  June 2022  and increasing to  2.50%  of principal through  December 2022 , with the remaining principal balance due upon maturity` in  January 2023 . The Term B-2 Loan principal must be repaid in quarterly installments in the amount of  0.25%  of principal through  March 2023 , with the remaining principal balance due upon maturity in  April 2023 . The Term B-4 Loan principal must be repaid in quarterly installments in the amount of 0.25% of principal through September 2025, with the remaining principal balance due upon maturity in October 2025. We may issue standby letters of credit of up to  $100 million  in the aggregate under the Revolving Credit Facility. Outstanding letters of credit under the Revolving Credit Facility reduce the amount of borrowings available to us. Borrowings available to us under the Revolving Credit Facility are further limited by the covenants described below under "Compliance with Covenants." The total available commitments under the Revolving Credit Facility at  June 30, 2019  were  $723.2 million . Compliance with Covenants The Credit Facility agreement contains customary affirmative and restrictive covenants, including, among others, financial covenants based on our leverage and interest coverage ratios as defined in the agreement. As of  June 30, 2019 , financial covenants under the Credit Facility Agreement required a leverage ratio no greater than: (i)  5.00  to  1.00  as of the end of any fiscal quarter ending during the period from  April 1, 2018  through  June 30, 2019 ; (ii)  4.75  to  1.00  as of the end of any fiscal quarter ending during the period from  July 1, 2019  through  June 30, 2020 ; and (iii)  4.50  to  1.00  as of the end of any fiscal quarter ending thereafter. The interest coverage ratio is required to be no less than  3.25  to  1.00 . We were in compliance with all applicable covenants as of  June 30, 2019 . The Credit Facility agreement includes covenants, subject in each case to exceptions and qualifications that may restrict certain payments, including, in certain circumstances, the repurchasing of our common stock and paying cash dividends in excess of our current rate of $0.01 per share per quarter.  Bridge Facility and New Permanent Financing Arrangements In connection with our entry into the Merger Agreement described in "Note  2 —Acquisitions," on May 27, 2019, we obtained commitments for a  $2.75 billion ,  364 -day senior unsecured bridge facility (the "Bridge Facility"). The Bridge Facility was established to refinance the Credit Facility and to refinance TSYS' unsecured revolving credit facility in order to establish an unsecured capital structure under which we can assume certain existing TSYS senior notes. We expect to execute permanent financing of  $7.5 billion  (a new  $3.0 billion  revolving credit facility and a new  $2.0 billion  term loan facility, which we entered into on July 9, 2019, as described below, and is expected to also include  $2.5 billion  of senior notes) prior to the closing of the Merger that will eliminate the need for the Bridge Facility commitments. On  July 9, 2019 , we entered into a term loan credit agreement ("Term Loan Credit Agreement") and a credit agreement ("Unsecured Revolving Credit Agreement" and, together with the Term Loan Credit Agreement, the "Agreements"), in each case with a syndicate of financial institutions. Upon entry into the Agreements, the aggregate commitments under the Bridge Facility described above were reduced to approximately  $2.1 billion . The Term Loan Credit Agreement provides for a senior unsecured  $2.0 billion  term loan facility and we, at our discretion, have the ability to seek to increase the term loan capacity by an additional  $1.0 billion  ("Term Loan Facility"). The Unsecured Revolving Credit Agreement provides for a senior unsecured  $3.0 billion  revolving credit facility ("Unsecured Revolving Credit Facility").  The Term Loan Facility and the Unsecured Revolving Credit Facility will be available for borrowing on the date on which the Merger becomes effective subject to customary limited conditionality for borrowings related to the Merger. The Unsecured Revolving Credit Facility will be otherwise available subject to customary conditionality. The Term Loan Credit Agreement and the Unsecured Revolving Credit Agreement will mature on the fifth anniversary of the closing date of the Merger. Settlement Lines of Credit In various markets where we do business, we have specialized lines of credit, which are restricted for use in funding settlement. The settlement lines of credit generally have variable interest rates, are subject to annual review and are denominated in local currency but may, in some cases, facilitate borrowings in multiple currencies. For certain of our lines of credit, the available credit is increased by the amount of cash we have on deposit in specific accounts with the lender. Accordingly, the amount of the outstanding line of  33 Table of Contents credit may exceed the stated credit limit. As of  June 30, 2019  and  December 31, 2018 , a total of  $68.9 million  and  $70.6 million , respectively, of cash on deposit was used to determine the available credit. As of  June 30, 2019  and  December 31, 2018 , respectively, we had  $736.2 million  and  $700.5 million  outstanding under these lines of credit with additional capacity of  $628.1 million  as of  June 30, 2019  to fund settlement. The weighted-average interest rate on these borrowings was  3.01%  and  2.97%  at  June 30, 2019  and  December 31, 2018 , respectively. During the three months ended  June 30, 2019 , the maximum and average outstanding balances under these lines of credit were  $873.0 million  and  $440.5 million , respectively. See "Note  7 —Long-Term Debt and Lines of Credit" in the notes to the accompanying unaudited consolidated financial statements for further discussion of our borrowing arrangements. Off-Balance Sheet Arrangements We have not entered into any off-balance sheet arrangements that have, or are reasonably likely to have, a material effect on our financial condition, revenues, results of operations or capital resources. Effect of New Accounting Pronouncements and Recently Issued Accounting Pronouncements Not Yet Adopted   From time-to-time, new accounting pronouncements are issued by the Financial Accounting Standards Board or other standards setting bodies that may affect our current and/or future financial statements. See "Note  1 —Basis of Presentation and Summary of Significant Accounting Policies" in the notes to the accompanying unaudited consolidated financial statements for a discussion of recently adopted accounting pronouncements and recently issued accounting pronouncements not yet adopted. Forward-Looking Statements Investors are cautioned that some of the statements we use in this report contain forward-looking statements and are made pursuant to the "safe-harbor" provisions of the Private Securities Litigation Reform Act of 1995. These forward-looking statements involve a number of risks and uncertainties and depend upon future events or conditions. Actual events or results might differ materially from those expressed or forecasted in these forward-looking statements. Accordingly, we cannot guarantee you that our plans and expectations will be achieved. Such statements may include, but are not limited to, statements about the benefits of our acquisitions, including future financial and operating results, the combined company’s plans, objectives, expectations and intentions and other statements that are not historical facts. Important factors associated with the Merger could cause actual events or results to differ materially from those anticipated by our forward-looking statements or historical performance, including, among others, the failure to consummate the Merger or failing to consummate it on the expected terms or timing, failure to realize the expected benefits of the Merger or difficulties integrating the businesses of Global Payments and TSYS, business disruptions related to the Merger and uncertainty as to the value of Global Payments' common stock following completion of the Merger. Additional important factors, among others, that may otherwise cause actual events or results to differ materially from those anticipated by such forward-looking statements include our ability to safeguard our data; increased competition from larger companies and non-traditional competitors, our ability to update our services in a timely manner; our ability to maintain Visa and MasterCard registration and financial institution sponsorship; our reliance on financial institutions to provide clearing services in connection with our settlement activities; our potential failure to comply with card network requirements; potential systems interruptions or failures; software defects or undetected errors; increased attrition of merchants, referral partners or independent sales organizations; our ability to increase our share of existing markets and expand into new markets; development of market trends and technologies; a decline in the use of cards for payment generally; unanticipated increases in chargeback liability; increases in credit card network fees; change in laws, regulations or network rules or interpretations thereof; foreign currency exchange and interest rate risks; political, economic and regulatory changes in the foreign countries in which we operate; future performance, integration and conversion of acquired operations, including without limitation difficulties and delays in integrating or fully realizing cost savings and other benefits of our acquisitions at all or within the expected time period; fully realizing anticipated annual interest expense savings from refinancing our Credit Facility; our loss of key personnel and other risk factors presented in Item 1- Risk Factors of our Annual Report on Form  34 Table of Contents 10-K for the year ended December 31, 2018 and in the joint proxy statement/prospectus filed with the SEC on  July 25, 2019  and any subsequent SEC filings, which we advise you to review.  Our forward-looking statements speak only as of the date they are made and should not be relied upon as representing our plans and expectations as of any subsequent date. While we may elect to update or revise forward-looking statements at some time in the future, we specifically disclaim any obligation to publicly release the results of any revisions to our forward-looking statements, except as required by law. ITEM 3—QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK There has been no significant change in our exposure to market risk during the quarter ended  June 30, 2019 . For a discussion of our exposure to market risk, refer to Part II, Item 7A, "Quantitative and Qualitative Disclosures About Market Risk," contained in our Annual Report on Form 10-K for the year ended December 31, 2018. ITEM 4—CONTROLS AND PROCEDURES Evaluation of Disclosure Controls and Procedures As of  June 30, 2019 , management carried out, under the supervision and with the participation of our principal executive officer and principal financial officer, an evaluation of the effectiveness of the design and operation of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended). Based on this evaluation, our principal executive officer and principal financial officer concluded that, as of  June 30, 2019 , our disclosure controls and procedures were effective in ensuring that information required to be disclosed by us in the reports that we file or submit under the Securities Exchange Act of 1934, as amended, is recorded, processed, summarized and reported within the time periods specified in applicable rules and forms and are designed to ensure that information required to be disclosed in those reports is accumulated and communicated to management, including our principal executive and principal financial officers, as appropriate, to allow timely decisions regarding required disclosure.  Changes in Internal Control over Financial Reporting   There were no changes in our internal control over financial reporting during the quarter ended  June 30, 2019  that materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 35 Table of Contents PART II—OTHER INFORMATION ITEM 1—LEGAL PROCEEDINGS Litigation Related to the Merger As of the date of this report, three putative class action lawsuits challenging the Merger have been filed. Two of these lawsuits, captioned  Peters v. Total System Services, Inc. et al.  (Case No. 4:19-cv-00114) and  Wolf v. Total System Services, Inc., et al.  (Case No. 4:19-cv-00115), were filed in the United States District Court for the Middle District of Georgia on July 18, 2019. The third lawsuit, captioned  Drulias v. Global Payments Inc., et. al  (Case No. 60774/2019) was filed in the Supreme Court of the State of New York, County of Westchester on July 19, 2019.     The  Peters  lawsuit names as defendants TSYS, the current members of the TSYS board of directors and certain former members of the TSYS board of directors. The  Wolf  lawsuit names as defendants TSYS, members of the TSYS board of directors and Global Payments. The  Drulias  lawsuit names as defendants Global Payments and members of its board. The complaints filed in the lawsuits assert, among other things, claims against the members of the TSYS board of directors (and in the case of the  Wolf  action and the  Drulias  action, against Global Payments) for filing a materially incomplete registration statement with the SEC. The plaintiffs in the lawsuits seek, among other things, an injunction barring the Merger, rescission of the Merger or rescissory damages to the extent they have already been implemented, and an award of damages and attorney’s fees. We believe that the claims asserted in the lawsuits are without merit. ITEM 1A—RISK FACTORS On May 27, 2019, we entered into the Merger Agreement with TSYS, pursuant to which TSYS will merge with and into us, subject to the terms and conditions set forth therein. There are a number of risks and uncertainties relating to the Merger.  Because of these risks, we have supplemented the risk factors previously disclosed in our Annual Report on Form 10-K for the year ended December 31, 2018, to add the following risk factors: Regulatory approvals may not be received, may take longer than expected or may require conditions that are not presently anticipated or that could have an adverse effect on the combined company following the Merger. Before the Merger may be completed, various authorizations, consents, clearances, orders and approvals must be obtained from various antitrust and regulatory authorities in the United States and in foreign jurisdictions. The governmental entities from which these approvals are required may refuse to approve the Merger or impose requirements for the completion of the Merger.  Any conditions or requirements imposed could have the effect of delaying or preventing completion of the Merger or imposing additional costs on or limiting the revenues of the combined company following the Merger, any of which might have an adverse effect on the combined company following the Merger. We expect to incur substantial costs related to the Merger and integration. We have incurred and expect to incur a significant amount of non-recurring costs associated with the Merger. These costs include financial advisory, legal, accounting, consulting and other advisory fees, severance/employee benefit-related costs, public company filing fees and other regulatory fees, printing costs and other related costs. Some of these costs are payable by us regardless of whether or not the Merger is completed. The combined company is expected to incur substantial costs in connection with the related integration.  There are a large number of processes, policies, procedures, operations, technologies and systems that may need to be integrated, including purchasing, accounting and finance, sales, payroll, pricing and benefits.  While we have assumed that a certain level of costs will be incurred, there are many factors beyond our control that could affect the total amount or the timing of the integration costs.  Moreover, many of the costs that will be incurred are, by their nature, difficult to estimate accurately.  These costs could, particularly in the near term, exceed the savings that the combined company expects to achieve from the elimination of duplicative costs and the realization of economies of scale and cost savings. These integration costs may result in the combined company taking significant charges against earnings following the completion of the Merger, and the amount and timing of such charges are uncertain at present. 36 Table of Contents Combining with TSYS may be more difficult, costly or time consuming than expected and we may fail to realize the anticipated benefits of the Merger. The success of the Merger will depend, in part, on the ability to realize the anticipated cost savings from combining our business with TSYS.  To realize the anticipated benefits and cost savings from the Merger, we and TSYS must successfully integrate and combine our businesses in a manner that permits those cost savings to be realized.  If we and TSYS are not able to successfully achieve these objectives, the anticipated benefits of the Merger may not be realized fully or at all or may take longer to realize than expected. In addition, the actual cost savings and anticipated benefits of the Merger could be less than anticipated. We have operated and, until the completion of the Merger, must continue to operate, independently of TSYS.  It is possible that the integration process could result in the loss of key employees, the disruption of our ongoing business or inconsistencies in standards, controls, procedures and policies that adversely affect our ability to maintain relationships with clients, customers, commercial counterparties and employees or to achieve the anticipated benefits and cost savings of the Merger.  Integration efforts between the two companies may also divert management attention and resources.  These integration matters could have an adverse effect on us during this transition period and for an undetermined period after completion of the Merger on the combined company. The future results of the combined company following the Merger may suffer if the combined company does not effectively manage its expanded operations. Following the Merger, the size of the business of the combined company will increase significantly beyond the current size of our business.  The combined company’s future success will depend, in part, upon its ability to manage this expanded business, which will pose substantial challenges for management, including challenges related to the management and monitoring of new operations and associated increased costs and complexity. The combined company may also face increased scrutiny from governmental authorities as a result of the significant increase in the size of its business.  There can be no assurances that the combined company will be successful or that it will realize the expected operating efficiencies, cost savings, revenue enhancements or other benefits currently anticipated from the Merger. The combined company may be unable to retain our and/or TSYS personnel successfully after the Merger is completed. The success of the Merger will depend in part on the combined company’s ability to retain the talents and dedication of key employees currently employed by us and TSYS. It is possible that these employees may decide not to remain with us or TSYS, as applicable, while the Merger is pending or with the combined company after the Merger is consummated. If key employees terminate their employment, the combined company’s business activities may be adversely affected and management’s attention may be diverted from successfully integrating us and TSYS to hiring suitable replacements, all of which may cause the combined company’s business to suffer. In addition, we may not be able to locate or retain suitable replacements for any key employees who leave. Termination of the Merger Agreement could negatively affect us. If the Merger Agreement is terminated, there may be various consequences. For example, our business may have been affected adversely by the failure to pursue other beneficial opportunities due to the focus of management on the Merger, without realizing any of the anticipated benefits of completing the Merger. Additionally, if the Merger Agreement is terminated, the market price of our common stock could decline to the extent that the current market prices reflect a market assumption that the Merger will be completed. If the Merger Agreement is terminated under certain circumstances, we may be required to pay a termination fee of $860 million to TSYS. Additionally, we have incurred and will incur substantial costs in connection with the negotiation and completion of the transactions contemplated by the Merger Agreement, as well as the costs of filing, printing and mailing the joint proxy statement/prospectus, and all filing and other fees paid to the SEC in connection with the Merger. If the Merger is not completed, we would have to recognize these as expense without realizing the expected benefits of the Merger. We will incur indebtedness in connection with the Merger, which could adversely affect us, including by decreasing our business flexibility. In connection with the consummation of the Merger, we intend to refinance our existing indebtedness and to assume and refinance certain indebtedness of TSYS.  We have entered into credit agreements with respect to a $2.0 billion term loan facility and a $3.0 billion revolving facility that can be used, among other things, (a) to refinance certain of our outstanding indebtedness and certain outstanding indebtedness of TSYS in connection with the Merger, (b) to pay any cash payments in lieu of fractional shares payable in accordance with the terms of the Merger Agreement, (c) to pay the related transaction fees and expenses and (d)  37 Table of Contents in certain cases, for general corporate purposes, subject in each case to the customary conditions set forth in such credit agreements.  We may also issue senior notes in connection with the Merger.  Our increased level of debt and the covenants to which we will agree in connection with the debt financing could have negative consequences on us, including, among other things, (1) requiring us to dedicate a larger portion of our cash flow from operations to servicing and repayment of the debt, (2) reducing funds available for strategic initiatives and opportunities, working capital and other general corporate needs and (3) limiting our ability to incur certain kinds or amounts of additional indebtedness, which could restrict our flexibility to react to changes in our business, our industry and economic conditions. Holders of our common stock will have a reduced ownership percentage and voting interest in the combined company after the Merger and may exercise less influence over management. Holders of our common stock currently have the right to vote in the election of the board of directors and on other matters affecting us. Following the completion of the Merger, the former holders of TSYS common stock are estimated to own approximately forty-eight percent (48%) of the fully diluted shares of the combined company immediately after the Merger and current holders of our common stock as a group are estimated to own approximately fifty-two percent (52%) of the fully diluted shares of the combined company immediately after the Merger. Because of this, holders of our common stock may have less influence on the management and policies of the combined company than they now have on the management and policies of us. Issuance of shares of our common stock in connection with the Merger may adversely affect the market price of our common stock. In connection with the payment of the Merger consideration, we expect to issue approximately 143.4 million shares of common stock to TSYS shareholders. The issuance of these new shares of our common stock may result in fluctuations in the market price our common stock, including a stock price decrease. ITEM 2 — UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS  (c) Purchases of Equity Securities by the Issuer and Affiliated Purchasers Information about the shares of our common stock that we repurchased during the quarter ended  June 30, 2019  is set forth below:  Period Total Number of  Shares Purchased  (1)   Average Price Paid per Share   Total Number of  Shares Purchased as Part of  Publicly Announced   Plans or Programs   Maximum  Number (or  Approximate  Dollar Value) of  Shares that May Yet Be Purchased Under  the Plans or  Programs  (2)               (in millions) April 2019 451,609   $ 139.63   451,169   $ 575.0 May 2019 63,588   145.34   61,947   566.0 June 2019 6,949   158.80   —   566.0 Total 522,146   $ 140.58   513,116   $ 566.0   (1)   Our board of directors has authorized us to repurchase shares of our common stock through any combination of Rule 10b5-1 open-market repurchase plans, accelerated share repurchase plans, discretionary open-market purchases or privately negotiated transactions. During the quarter ended  June 30, 2019 , pursuant to our employee incentive plans, we withheld  9,030  shares at an average price per share of  $155.74  in order to satisfy employees' tax withholding and payment obligations in connection with the vesting of awards of restricted stock, which we withheld at fair market value on the vesting date. (2)   On  February 13, 2019 , we announced that our board of directors approved an increase to our existing share repurchase program authorization, which raised the total available authorization to  $750 million . As of  June 30, 2019 , the approximate dollar value of shares that may yet be purchased under our share repurchase program was  $566.0 million . The board authorization does not expire, but could be revoked at any time. In addition, we are not required by the board’s authorization or otherwise to complete any repurchases by any specific time or at all. 38 Table of Contents ITEM 6—EXHIBITS List of Exhibits 2.1   Agreement and Plan of Merger by and between Total System Services, Inc. and Global Payments Inc., dated as of May 27, 2019, incorporated by reference to Exhibit 2.1 to the Company’s Current Report on Form 8-K filed on May 31, 2019.  ++ 3.1   Second Amended and Restated Articles of Incorporation of the Company, incorporated by reference to Exhibit 3.1 to the Company’s Annual Report on Form 10-K filed July 25, 2013. 3.2   Eighth Amended and Restated Bylaws of the Company, incorporated by reference to Exhibit 3.1 to the Company’s Current Report on Form 8-K filed on May 4, 2017. 4.1   Stockholders Agreement, dated August 31, 2017, by and among Global Payments Inc. and the stockholders party thereto, incorporated by reference to Exhibit 10.1 to the Company's Current Report on Form 8-K filed on September  6, 2017. 10.1   Global Payments Inc. Fifth Amended and Restated Non-Employee Director Compensation Plan, dated April 25, 2019, incorporated by reference to Exhibit 10.1 to the Company’s Current Report on Form 8-K filed on April 26, 2019. 10.2   Seventh Amendment to Second Amended and Restated Credit Agreement, dated as of May 31, 2019, among the Company, the other borrowers thereto, the guarantors thereto, the lenders thereto and Bank of America, N.A., as administrative agent, incorporated by reference to Exhibit 10.1 to the Company’s Current Report on Form 8-K filed on May 31, 2019. 10.3   Term Loan Credit Agreement, dated as of July 9, 2019, among the Company, as borrower, Bank of America, N.A., as administrative agent, and the other lenders party thereto, incorporated by reference to Exhibit 10.1 to the Company’s Current Report on Form 8-K filed on July 16, 2019.  10.4   Credit Agreement, dated as of July 9, 2019, among Global Payments Inc., as borrower, the other borrowers party thereto, Bank of America, N.A., as administrative agent, swing line lender and an L/C/ Issuer and the other lenders and L/C/ issuers party thereto, incorporated by reference to Exhibit 10.2 to the Company’s Current Report on Form 8-K filed on July 16, 2019. 31.1*   Certification of the Principal Executive Officer pursuant to Exchange Act Rule 13a-14(a) and 15d-14(a), as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002. 31.2*   Certification of the Principal Financial Officer pursuant to Exchange Act Rule 13a-14(a) and 15d-14(a), as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002. 32.1*   Certification of the Principal Executive Officer and the Principal Financial Officer pursuant to 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002. 101*   The following financial information from the Quarterly Report on Form 10-Q for the quarter ended June 30, 2019, formatted in XBRL (eXtensible Business Reporting Language) and filed electronically herewith: (i) the Unaudited Consolidated Statements of Income; (ii) the Unaudited Consolidated Statements of Comprehensive Income; (iii) the Consolidated Balance Sheets; (iv) the Unaudited Consolidated Statements of Cash Flows; (v) the Unaudited Consolidated Statements of Changes in Equity; and (vi) the Notes to Unaudited Consolidated Financial Statements. The instance document does not appear in the Interactive Data File because XBRL tags are embedded within the Inline XBRL document. ______________________ *   Filed herewith. ++   Certain schedules and exhibits to this agreement have been omitted pursuant to Item 601(b)(2) of Regulation S-K and Global Payments Inc. agrees to furnish supplementally to the Securities and Exchange Commission a copy of any omitted schedule and/or exhibit upon request. 39 Table of Contents SIGNATURES   Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.            Global Payments Inc.     (Registrant)       Date: July 30, 2019   /s/ Cameron M. Bready     Cameron M. Bready     Senior Executive Vice President and Chief Financial Officer     (Principal Financial Officer)       40 	 
+ 

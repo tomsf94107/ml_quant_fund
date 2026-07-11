@@ -164,6 +164,46 @@ def write_snapshot(df: pd.DataFrame, db_path: Path, table: str):
     con.close()
 
 
+def report_deduped(db_path: Path, horizon: int = None, table: str = "alpha_fitness",
+                   scored_date: str = None, market_wide: int = 0, min_ic_t: float = 0.0):
+    """Read-side dedup for ranking readability. Collapses all transforms of the
+    same BASE feature (base__transform) to one row = the transform with the
+    highest |ic_t|. Snapshot features (pc_ratio_snap etc.) generate ~17 near-
+    identical transforms that otherwise flood the top of the ranking with copies
+    of one signal. This is a REPORT lens only — it does NOT alter the panel,
+    the model inputs, or the stored per-transform fitness. Fix Jul 1 2026.
+
+    NOTE: name-based collapse assumes same-base transforms are redundant. True
+    for snapshot/slow features; for genuinely varying bases, different transforms
+    may carry distinct signal — so use this for reading rankings, not for culling
+    features from the model."""
+    con = sqlite3.connect(db_path)
+    try:
+        q = f"SELECT * FROM {table} WHERE 1=1"
+        params = []
+        if scored_date is None:
+            scored_date = con.execute(f"SELECT MAX(scored_date) FROM {table}").fetchone()[0]
+        q += " AND scored_date=?"; params.append(scored_date)
+        if horizon is not None:
+            q += " AND horizon=?"; params.append(horizon)
+        if market_wide is not None:
+            q += " AND is_market_wide=?"; params.append(market_wide)
+        df = pd.read_sql(q, con, params=params)
+    finally:
+        con.close()
+    if df.empty:
+        return df
+    df = df[df["ic_t"].abs() >= min_ic_t].copy()
+    if df.empty:
+        return df
+    df["base"] = df["alpha"].str.split("__").str[0]
+    df["abs_ic_t"] = df["ic_t"].abs()
+    # keep, per (base, horizon), the single transform with max |ic_t|
+    idx = df.groupby(["base", "horizon"])["abs_ic_t"].idxmax()
+    out = df.loc[idx].drop(columns=["abs_ic_t"]).sort_values("ic_t", key=lambda x: x.abs(), ascending=False)
+    return out.reset_index(drop=True)
+
+
 def report_decay(db_path: Path, table: str = "alpha_fitness"):
     con = sqlite3.connect(db_path)
     try:
@@ -205,14 +245,19 @@ if __name__ == "__main__":
             print(f"\nappended -> alpha_fitness_by_ticker ({date.today().isoformat()})")
     else:
         df = score_cross_sectional(Path(a.panel_dir), Path(a.db), a.horizon)
-        stock = df[df["is_market_wide"] == 0]
+        stock = df[df["is_market_wide"] == 0].copy()
+        sig = stock[stock["ic_t"].abs() > 3].copy()
+        sig["base"] = sig["alpha"].str.split("__").str[0]
+        n_bases = sig["base"].nunique()
         print(f"cross-sectional: {len(df)} alphas scored (horizon {a.horizon}d)")
-        print(f"  market-wide (flagged, not stock-pickers): {(df['is_market_wide']==1).sum()}")
-        print(f"  STOCK-PICKING alphas: {len(stock)}")
-        print(f"    of those, fitness>0:        {(stock['fitness']>0).sum()}")
-        print(f"    of those, |t|>3 (HLZ bar):  {(stock['ic_t'].abs()>3).sum()}  <- the defensible survivors")
-        print(f"\ntop 12 STOCK-PICKING alphas (market-wide excluded), by fitness:")
-        print(stock.head(12)[['alpha','rank_ic','ic_t','sharpe','fitness','n_obs']].to_string(index=False))
+        print(f"  market-wide (flagged): {(df['is_market_wide']==1).sum()}   stock-picking: {len(stock)}")
+        print(f"  survivors |t|>3: {len(sig)} transform-copies = {n_bases} DISTINCT base features")
+        print(f"  (transform-copies inflate the count; distinct bases is the real signal count)")
+        # rank by |t| (significance), NOT fitness — fitness buries real signals (e.g. negative-fitness pc_ratio)
+        sig_sorted = sig.reindex(sig["ic_t"].abs().sort_values(ascending=False).index)
+        print(f"\nDISTINCT survivor bases by best |t| (one row per base):")
+        best = sig_sorted.drop_duplicates("base")
+        print(best.head(20)[['base','rank_ic','ic_t','sharpe','n_obs']].to_string(index=False))
         if a.write:
             write_snapshot(df, Path(a.db), "alpha_fitness")
             print(f"\nappended -> alpha_fitness ({date.today().isoformat()})")

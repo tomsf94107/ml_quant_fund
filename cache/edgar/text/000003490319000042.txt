@@ -1,0 +1,1474 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q3 2019 0000034903 292374000 289739000 1700000 5300000 700000 1700000 51313000 97922000 444388000 389523000 1701804000 1536443000 0.001 0.001 682 682 682 1.02 3.02 1.05 3.09 0.01 0.01 100000000 100000000 74249633 75494931 74249633 75494931 7100000 0.00775 200000 200000 200000 922000 2920000 821000 2604000 14 0.05417 0.050 0.05417 0.05000 0.05417 0.050 0.05000 0.05417 0.05417 25000 25 25000 25 0.01 0.01 15000000 15000000 6000 399896 6000 399896 6000 399896 6000 399896 
+		 
+			 0000034903 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-10-25 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:TwoPropertiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+			 
+		 
+		 
+			 2019-02-08 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2019-02-08 
+			 2019-02-08 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:AssemblyRowandPikeRoseMember 
+				 frt:CondominiumsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken21014thStreetMember 
+				 us-gaap:OtherLiabilitiesMember 
+				 us-gaap:AboveMarketLeasesMember 
+			 
+		 
+		 
+			 2019-09-18 
+			 2019-09-18 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:AssemblyRowandPikeRoseMember 
+				 frt:CondominiumsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:SanAntonioCenterMember 
+			 
+		 
+		 
+			 2019-09-13 
+			 2019-09-13 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken21014thStreetMember 
+			 
+		 
+		 
+			 2019-09-18 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken21014thStreetMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2019-09-18 
+			 2019-09-18 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:SanAntonioCenterMember 
+			 
+		 
+		 
+			 2019-09-13 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:OnePropertyMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken21014thStreetMember 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2019-09-18 
+			 2019-09-18 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:AboveMarketLeasesMember 
+			 
+		 
+		 
+			 2019-02-08 
+			 2019-02-08 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+			 
+		 
+		 
+			 2019-02-08 
+			 2019-02-08 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken21014thStreetMember 
+			 
+		 
+		 
+			 2019-09-18 
+			 2019-09-18 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A3.2SeniorNoteMember 
+			 
+		 
+		 
+			 2019-08-21 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A3.2SeniorNoteMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-07 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:TermloanMember 
+			 
+		 
+		 
+			 2019-06-07 
+			 2019-06-07 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:RollingwoodApartmentsMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2019-01-31 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A3.2SeniorNoteMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-08-21 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A3.2SeniorNoteMember 
+			 
+		 
+		 
+			 2019-06-07 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-07-25 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken21014thStreetMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2019-09-18 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:OptiontoincreasecreditfacilitythroughaccordionfeatureMember 
+			 
+		 
+		 
+			 2019-07-25 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A3.2SeniorNoteMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-07 
+			 2019-08-21 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-07-25 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EquityMethodInvesteeMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EquityMethodInvesteeMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EquityMethodInvesteeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:MontroseCrossingMember 
+			 
+		 
+		 
+			 2019-08-02 
+			 2019-08-02 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:MontroseCrossingMember 
+			 
+		 
+		 
+			 2019-08-02 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:OtherOfferingCostsMember 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:CommissionsMember 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:CommissionsMember 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:OtherOfferingCostsMember 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:SubsequentEventMember 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2019-10-01 
+			 2019-10-01 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:PlazaPacoimaMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-10-11 
+			 2019-10-11 
+		 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 frt:project 
+	 
+		 frt:property 
+	 
+		 frt:condominiums 
+	 
+		 utreg:sqft 
+	 
+		 xbrli:shares 
+	 
+		 iso4217:USD 
+	 
+		 frt:agreement 
+	 
+		 xbrli:pure 
+	 Table of Contents UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549   FORM  10-Q   ☒ QUARTERLY REPORT PURSUANT TO THE SECTION 13 OR 15(D) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  September 30, 2019   OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(D) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from              to              Commission file number:  1-07533   FEDERAL REALTY INVESTMENT TRUST   (Exact Name of Registrant as Specified in its Declaration of Trust)   Maryland   52-0782497 (State of Organization)   (IRS Employer Identification No.) 1626 East Jefferson Street ,  Rockville ,  Maryland   20852   (Address of Principal Executive Offices)           (Zip Code) ( 301 )  998-8100   (Registrant’s Telephone Number, Including Area Code)   Title of Each Class Trading Symbol Name of Each Exchange On Which Registered Common Shares of Beneficial Interest FRT New York Stock Exchange $.01 par value per share, with associated Common Share Purchase Rights           Depositary Shares, each representing 1/1000 of a share  FRT-C New York Stock Exchange of 5.00% Series C Cumulative Redeemable Preferred Stock, $.01 par value per share     Indicate by check mark whether the Registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the Registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     ☒    Yes      ☐   No Indicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T ( §232.405 of this chapter)  during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     ☒    Yes      ☐   No Indicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company," and "emerging growth company" in Rule 12b-2 of the Exchange Act.: Large Accelerated Filer ☒ Accelerated filer ☐         Non-Accelerated Filer ☐ Smaller reporting company ☐             Emerging growth company ☐         If an emerging growth company, indicate by checkmark if the registrant has elected not use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ Indicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).      ☐   Yes     ☒   No The number of Registrant’s common shares outstanding on  October 25, 2019  was  75,522,757 .  Table of Contents FEDERAL REALTY INVESTMENT TRUST QUARTERLY REPORT ON FORM 10-Q QUARTER ENDED  SEPTEMBER 30, 2019   TABLE OF CONTENTS PART I. FINANCIAL INFORMATION     Item 1. Financial Statements  3     Consolidated Balance Sheets as of September 30, 2019 (unaudited) and December 31, 2018  3     Consolidated Statements of Comprehensive Income (unaudited) for the three and nine months ended September 30, 2019 and 2018  4     Consolidated Statements of Shareholders' Equity (unaudited) for the three and nine months ended September 30, 2019 and 2018  5     Consolidated Statements of Cash Flows (unaudited) for the nine months ended September 30, 2019 and 2018  7     Notes to Consolidated Financial Statements (unaudited)  8   Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations  14   Item 3. Quantitative and Qualitative Disclosures about Market Risk  29   Item 4. Controls and Procedures  29         PART II. OTHER INFORMATION  30   Item 1. Legal Proceedings  30   Item 1A. Risk Factors  30   Item 2. Unregistered Sales of Equity Securities and Use of Proceeds  30   Item 3. Defaults Upon Senior Securities  30   Item 4. Mine Safety Disclosures  31   Item 5. Other Information  31   Item 6. Exhibits  31       SIGNATURES  33  2 Table of Contents Federal Realty Investment Trust Consolidated Balance Sheets   September 30,   December 31,   2019   2018   (In thousands, except share and per share data)   (Unaudited)     ASSETS       Real estate, at cost       Operating (including $1,536,443 and $1,701,804 of consolidated variable interest entities, respectively) $ 7,302,912   $ 7,307,622 Construction-in-progress (including $97,922 and $51,313 of consolidated variable interest entities, respectively) 691,989   495,274 Assets held for sale 49,835   16,576   8,044,736   7,819,472 Less accumulated depreciation and amortization (including $289,739 and $292,374 of consolidated variable interest entities, respectively) ( 2,190,486 )   ( 2,059,143 ) Net real estate 5,854,250   5,760,329 Cash and cash equivalents 162,543   64,087 Accounts and notes receivable, net 143,855   142,237 Mortgage notes receivable, net 30,429   30,429 Investment in partnerships 30,017   26,859 Operating lease right of use assets 94,271   — Finance lease right of use assets 52,723   — Prepaid expenses and other assets 239,477   265,703 TOTAL ASSETS $ 6,607,565   $ 6,289,644 LIABILITIES AND SHAREHOLDERS’ EQUITY       Liabilities       Mortgages payable, net (including $389,523 and $444,388 of consolidated variable interest entities, respectively) $ 466,600   $ 474,379 Capital lease obligations —   71,519 Notes payable, net 3,889   279,027 Senior notes and debentures, net 2,806,422   2,404,279 Accounts payable and accrued expenses 221,781   177,922 Dividends payable 81,477   78,207 Security deposits payable 20,354   17,875 Operating lease liabilities 74,032   — Finance lease liabilities 72,065   — Other liabilities and deferred credits 165,542   182,898 Total liabilities 3,912,162   3,686,106 Commitments and contingencies (Note 6)   Redeemable noncontrolling interests 122,282   136,208 Shareholders’ equity       Preferred shares, authorized 15,000,000 shares, $.01 par:       5.0% Series C Cumulative Redeemable Preferred Shares, (stated at liquidation preference $25,000 per share), 6,000 shares issued and outstanding 150,000   150,000 5.417% Series 1 Cumulative Convertible Preferred Shares, (stated at liquidation preference $25 per share), 399,896 shares issued and outstanding 9,997   9,997 Common shares of beneficial interest, $.01 par, 100,000,000 shares authorized, 75,494,931 and 74,249,633 shares issued and outstanding, respectively 758   745 Additional paid-in capital 3,167,460   3,004,442 Accumulated dividends in excess of net income ( 857,152 )   ( 818,877 ) Accumulated other comprehensive loss ( 1,135 )   ( 416 ) Total shareholders’ equity of the Trust 2,469,928   2,345,891 Noncontrolling interests 103,193   121,439 Total shareholders’ equity 2,573,121   2,467,330 TOTAL LIABILITIES AND SHAREHOLDERS’ EQUITY $ 6,607,565   $ 6,289,644 The accompanying notes are an integral part of these consolidated statements.  3 Table of Contents  Federal Realty Investment Trust Consolidated Statements of Comprehensive Income (Unaudited)   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018   (In thousands, except per share data) REVENUE               Rental income $ 233,212   $ 228,960   $ 694,435   $ 677,776 Mortgage interest income 735   793   2,204   2,284 Total revenue 233,947   229,753   696,639   680,060 EXPENSES               Rental expenses 54,484   41,909   140,182   126,587 Real estate taxes 29,030   29,086   81,883   85,841 General and administrative 11,060   7,638   32,047   23,980 Depreciation and amortization 59,648   60,778   178,327   177,269 Total operating expenses 154,222   139,411   432,439   413,677                        Gain on sale of real estate, net of tax 14,293   3,125   30,490   10,413                 OPERATING INCOME 94,018   93,467   294,690   276,796                 OTHER INCOME/(EXPENSE)               Other interest income 389   319   755   657 Interest expense ( 27,052 )   ( 28,166 )   ( 82,567 )   ( 82,116 ) Loss from partnerships ( 249 )   ( 1,440 )   ( 1,302 )   ( 2,693 ) NET INCOME 67,106   64,180   211,576   192,644 Net income attributable to noncontrolling interests ( 1,641 )   ( 1,622 )   ( 5,065 )   ( 5,244 ) NET INCOME ATTRIBUTABLE TO THE TRUST 65,465   62,558   206,511   187,400 Dividends on preferred shares ( 2,010 )   ( 2,010 )   ( 6,031 )   ( 6,031 ) NET INCOME AVAILABLE FOR COMMON SHAREHOLDERS $ 63,455   $ 60,548   $ 200,480   $ 181,369 EARNINGS PER COMMON SHARE, BASIC:                      Net income available for common shareholders 0.84   0.82   2.68   2.47 Weighted average number of common shares 74,832   73,400   74,584   73,100 EARNINGS PER COMMON SHARE, DILUTED:              Net income available for common shareholders $ 0.84   $ 0.82   $ 2.68   $ 2.47 Weighted average number of common shares 74,832   73,408   74,584   73,136                 COMPREHENSIVE INCOME $ 66,995   $ 63,895   $ 210,857   $ 192,749                 COMPREHENSIVE INCOME ATTRIBUTABLE TO THE TRUST $ 65,354   $ 62,273   $ 205,792   $ 187,505 The accompanying notes are an integral part of these consolidated statements.  4 Table of Contents Federal Realty Investment Trust Consolidated Statements of Shareholders’ Equity  For the Three and  Nine  Months Ended  September 30, 2019 (Unaudited)   Shareholders’ Equity of the Trust           Preferred Shares   Common Shares   Additional Paid-in Capital                                                                                                                                  Accumulated Dividends in Excess of Net Income   Accumulated Other Comprehensive Loss   Noncontrolling Interests   Total Shareholders' Equity   Shares   Amount   Shares   Amount             (In thousands, except share data) BALANCE AT DECEMBER 31, 2018 405,896   $ 159,997   74,249,633   $ 745   $ 3,004,442   $ ( 818,877 )   $ ( 416 )   $ 121,439   $ 2,467,330 January 1, 2019 adoption of new accounting standard - See Note 2 —   —   —   —   —   ( 7,098 )   —   —   ( 7,098 ) Net income, excluding $2,604 attributable to redeemable noncontrolling interests —   —   —   —   —   206,511   —   2,461   208,972 Other comprehensive loss - change in fair value of interest rate swaps —   —   —   —   —   —   ( 719 )   —   ( 719 ) Dividends declared to common shareholders ($3.09 per share) —   —   —   —   —   ( 231,657 )   —   —   ( 231,657 ) Dividends declared to preferred shareholders —   —   —   —   —   ( 6,031 )   —   —   ( 6,031 ) Distributions declared to noncontrolling interests —   —   —   —   —   —   —   ( 8,812 )   ( 8,812 ) Common shares issued, net —   —   1,045,470   11   139,488   —   —   —   139,499 Shares issued under dividend reinvestment plan —   —   12,006   —   1,567   —   —   —   1,567 Share-based compensation expense, net of forfeitures —   —   110,804   1   10,142   —   —   —   10,143 Shares withheld for employee taxes —   —   ( 34,234 )   —   ( 4,615 )   —   —   —   ( 4,615 ) Conversion and redemption of OP units —   —   111,252   1   11,933   —   —   ( 12,006 )   ( 72 ) Contributions from noncontrolling interests —   —   —   —   —   —   —   111   111 Adjustment to redeemable noncontrolling interests —   —   —   —   4,503   —   —   —   4,503 BALANCE AT SEPTEMBER 30, 2019 405,896   $ 159,997   75,494,931   $ 758   $ 3,167,460   $ ( 857,152 )   $ ( 1,135 )   $ 103,193   $ 2,573,121 BALANCE AT JUNE 30, 2019 405,896   $ 159,997   74,950,197   $ 752   $ 3,088,946   $ ( 841,505 )   $ ( 1,024 )   $ 103,480   $ 2,510,646 Net income, excluding $821 attributable to redeemable noncontrolling interests —   —   —   —   —   65,465   —   820   66,285 Other comprehensive loss - change in fair value of interest rate swaps —   —   —   —   —   —   ( 111 )   —   ( 111 ) Dividends declared to common shareholders ($1.05 per share) —   —   —   —   —   ( 79,102 )   —   —   ( 79,102 ) Dividends declared to preferred shareholders —   —   —   —   —   ( 2,010 )   —   —   ( 2,010 ) Distributions declared to noncontrolling interests —   —   —   —   —   —   —   ( 1,148 )   ( 1,148 ) Common shares issued, net —   —   533,516   6   71,189   —   —   —   71,195 Shares issued under dividend reinvestment plan —   —   3,885   —   513   —   —   —   513 Share-based compensation expense, net of forfeitures —   —   8,667   —   3,151   —   —   —   3,151 Shares withheld for employee taxes —   —   ( 1,334 )   —   ( 173 )   —   —   —   ( 173 ) Redemption of OP units —   —   —   —   ( 2 )   —   —   ( 70 )   ( 72 ) Contributions from noncontrolling interests —   —   —   —   —   —   —   111   111 Adjustment to redeemable noncontrolling interests —   —   —   —   3,836   —   —   —   3,836 BALANCE AT SEPTEMBER 30, 2019 405,896   $ 159,997   75,494,931   758   $ 3,167,460   $ ( 857,152 )   $ ( 1,135 )   $ 103,193   $ 2,573,121 The accompanying notes are an integral part of these consolidated statements.  5 Table of Contents Federal Realty Investment Trust Consolidated Statements of Shareholders’ Equity  For the Three and  Nine  Months Ended  September 30, 2018   (Unaudited)   Shareholders’ Equity of the Trust           Preferred Shares   Common Shares   Additional Paid-in Capital                                                                                                                                  Accumulated Dividends in Excess of Net Income   Accumulated Other Comprehensive Income (Loss)   Noncontrolling Interests   Total Shareholders' Equity   Shares   Amount   Shares   Amount             (In thousands, except share data) BALANCE AT DECEMBER 31, 2017 405,896   $ 159,997   73,090,877   $ 733   $ 2,855,321   $ ( 749,367 )   $ 22   $ 124,808   $ 2,391,514 January 1, 2018 adoption of new accounting standard —   —   —   —   —   ( 6,028 )   —   —   ( 6,028 ) Net income, excluding $2,920 attributable to redeemable noncontrolling interests —   —   —   —   —   187,400   —   2,324   189,724 Other comprehensive income - change in fair value of interest rate swaps —   —   —   —   —   —   105   —   105 Dividends declared to common shareholders ($3.02 per share) —   —   —   —   —   ( 221,623 )   —   —   ( 221,623 ) Dividends declared to preferred shareholders —   —   —   —   —   ( 6,031 )   —   —   ( 6,031 ) Distributions declared to noncontrolling interests —   —   —   —   —   —   —   ( 4,010 )   ( 4,010 ) Common shares issued, net —   —   612,727   6   77,365   —   —   —   77,371 Exercise of stock options —   —   93,593   1   4,040   —   —   —   4,041 Shares issued under dividend reinvestment plan —   —   13,750   —   1,647   —   —   —   1,647 Share-based compensation expense, net of forfeitures —   —   55,773   1   9,637   —   —   —   9,638 Shares withheld for employee taxes —   —   ( 8,189 )   —   ( 927 )   —   —   —   ( 927 ) Conversion and redemption of OP units —   —   749   —   ( 528 )   —   —   ( 5,378 )   ( 5,906 ) Contributions from noncontrolling interests —   —   —   —   —   —   —   3,924   3,924 BALANCE AT SEPTEMBER 30, 2018 405,896   $ 159,997   73,859,280   $ 741   $ 2,946,555   $ ( 795,649 )   $ 127   $ 121,668   $ 2,433,439 BALANCE AT JUNE 30, 2018 405,896   $ 159,997   73,434,943   $ 737   $ 2,884,771   $ ( 780,973 )   $ 412   $ 122,648   2,387,592 Net income, excluding $922 attributable to redeemable noncontrolling interests —   —   —   —   —   62,558   —   700   63,258 Other comprehensive loss - change in fair value of interest rate swaps —   —   —   —   —   —   ( 285 )   —   ( 285 ) Dividends declared to common shareholders ($1.02 per share) —   —   —   —   —   ( 75,224 )   —   —   ( 75,224 ) Dividends declared to preferred shareholders —   —   —   —   —   ( 2,010 )   —   —   ( 2,010 ) Distributions declared to noncontrolling interests —   —   —   —   —   —   —   ( 1,243 )   ( 1,243 ) Common shares issued, net —   —   464,113   4   59,047   —   —   —   59,051 Exercise of stock options —   —   —   —   —   —   —   —   — Shares issued under dividend reinvestment plan —   —   4,458   —   561   —   —   —   561 Share-based compensation expense, net of forfeitures —   —   ( 43,801 )   —   2,494   —   —   —   2,494 Shares withheld for employee taxes —   —   ( 1,182 )   —   ( 150 )   —   —   —   ( 150 ) Conversion and redemption of OP units —   —   749   —   ( 168 )   —   —   ( 1,352 )   ( 1,520 ) Contributions from noncontrolling interests —   —   —   —   —   —   —   915   915 BALANCE AT SEPTEMBER 30, 2018 405,896   $ 159,997   73,859,280   $ 741   $ 2,946,555   $ ( 795,649 )   $ 127   $ 121,668   $ 2,433,439 The accompanying notes are an integral part of these consolidated statements.  6 Table of Contents Federal Realty Investment Trust Consolidated Statements of Cash Flows   (Unaudited)   Nine Months Ended September 30,   2019   2018   (In thousands) OPERATING ACTIVITIES   Net income $ 211,576   $ 192,644 Adjustments to reconcile net income to net cash provided by operating activities:       Depreciation and amortization 178,327   177,269 Gain on sale of real estate, net of tax ( 30,490 )   ( 10,413 ) Loss from partnerships 1,302   2,693 Other, net ( 457 )   3,251 Changes in assets and liabilities, net of effects of acquisitions and dispositions:       Proceeds from new market tax credit transaction, net of deferred costs —   12,353 Increase in accounts receivable, net ( 8,867 )   ( 4,514 ) Increase in prepaid expenses and other assets ( 12,836 )   ( 11,682 ) Increase in accounts payable and accrued expenses 6,262   2,896 (Decrease) increase in security deposits and other liabilities ( 511 )   219 Net cash provided by operating activities 344,306   364,716 INVESTING ACTIVITIES       Acquisition of real estate ( 45,122 )   ( 3,624 ) Capital expenditures - development and redevelopment ( 226,232 )   ( 217,437 ) Capital expenditures - other ( 53,890 )   ( 50,744 ) Proceeds from sale of real estate 115,781   142,711 Proceeds from partnership formation —   37,998 Investment in partnerships ( 980 )   ( 616 ) Distribution from partnerships in excess of earnings 1,798   237 Leasing costs ( 18,751 )   ( 19,938 ) Repayment (issuance) of mortgage and other notes receivable, net 130   ( 360 ) Net cash used in investing activities ( 227,266 )   ( 111,773 ) FINANCING ACTIVITIES       Repayments under revolving credit facility, including costs ( 4,012 )   ( 14,500 ) Issuance of senior notes, net of costs 400,106   — Repayment of mortgages, finance leases and notes payable ( 299,485 )   ( 15,137 ) Issuance of common shares, net of costs 139,729   81,628 Dividends paid to common and preferred shareholders ( 232,985 )   ( 224,311 ) Shares withheld for employee taxes ( 4,615 )   ( 927 ) Contributions from noncontrolling interests 272   2,753 Distributions to and redemptions of noncontrolling interests ( 17,466 )   ( 12,848 ) Net cash used in financing activities ( 18,456 )   ( 183,342 ) Increase in cash, cash equivalents and restricted cash 98,584   69,601 Cash, cash equivalents, and restricted cash at beginning of year 108,332   25,200 Cash, cash equivalents, and restricted cash at end of period $ 206,916   $ 94,801 The accompanying notes are an integral part of these consolidated statements.  7 Table of Contents Federal Realty Investment Trust Notes to Consolidated Financial Statements September 30, 2019   (Unaudited) NOTE 1— BUSINESS AND ORGANIZATION Federal Realty Investment Trust (the “Trust”) is an equity real estate investment trust (“REIT”) specializing in the ownership, management, and redevelopment of retail and mixed-use properties. Our properties are located primarily in densely populated and affluent communities in strategically selected metropolitan markets in the Mid-Atlantic and Northeast regions of the United States, California, and South Florida. As of  September 30, 2019 , we owned or had a majority interest in community and neighborhood shopping centers and mixed-use properties which are operated as  104  predominantly retail real estate projects. We operate in a manner intended to enable us to qualify as a REIT for federal income tax purposes. A REIT that distributes at least  90 %  of its taxable income to its shareholders each year and meets certain other conditions is not taxed on that portion of its taxable income which is distributed to its shareholders. Therefore, federal income taxes on our taxable income have been and are generally expected to be immaterial. We are obligated to pay state taxes, generally consisting of franchise or gross receipts taxes in certain states. Such state taxes also have not been material. NOTE 2— SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Basis of presentation The accompanying consolidated balance sheet as of  December 31, 2018 , which has been derived from audited financial statements, and unaudited interim consolidated financial statements have been prepared pursuant to the rules and regulations of the Securities and Exchange Commission. Certain information and note disclosures normally included in annual financial statements prepared in accordance with accounting principles generally accepted in the United States (GAAP) have been omitted pursuant to those rules and regulations, although we believe that the disclosures made are adequate to make the information not misleading. It is suggested that these financial statements be read in conjunction with the financial statements and notes thereto included in the Trust’s latest Annual Report on Form 10-K. In the opinion of management, all adjustments (consisting of normal, recurring adjustments) necessary for a fair presentation for the periods presented have been included. The results of operations for the  three  and  nine  months ended  September 30, 2019  are not necessarily indicative of the results that may be expected for the full year. Certain  2018  amounts have been reclassified to conform to current period presentation, which includes the presentation of rental income on our Consolidated Statements of Comprehensive Income. Principles of Consolidation Our consolidated financial statements include the accounts of the Trust, its corporate subsidiaries, and all entities in which the Trust has a controlling interest or has been determined to be the primary beneficiary of a variable interest entity (“VIE”). The equity interests of other investors are reflected as noncontrolling interests or redeemable noncontrolling interests. All significant intercompany transactions and balances are eliminated in consolidation. We account for our interests in joint ventures, which we do not control, using the equity method of accounting. Use of Estimates The preparation of financial statements in conformity with accounting principles generally accepted in the United States of America, referred to as “GAAP,” requires management to make estimates and assumptions that in certain circumstances affect the reported amounts of assets and liabilities, disclosure of contingent assets and liabilities, and revenues and expenses. These estimates are prepared using management’s best judgment, after considering past, current and expected events and economic conditions. Actual results could differ from these estimates.  8 Table of Contents Recently Adopted Accounting Pronouncements Standard   Description   Effect on the financial statements or significant matters           Adopted on January 1, 2019:     Leases (Topic 842) and related updates:   ASU 2016-02,       February 2016,    Leases (Topic 842)   ASU 2018-10, July     2018, Codification    improvements to    Topic 842, Leases      ASU 2018-11, July    2018, Leases (Topic    842)     ASU 2019-01, March    2019, Leases (Topic    842), Codification    Improvements   ASC 842 significantly changes the accounting for leases by requiring lessees to recognize assets and liabilities for leases greater than 12 months on their balance sheet.  The larger changes to the lessor model include: a change in the definition of initial direct costs of leases (resulting in the upfront expensing of more leasing related costs), the requirement to make an upfront and ongoing assessment of whether collection of substantially all of the lease payments required for the term of each lease is probable (if not probable, lease revenue is effectively recognized when cash is collected), certain presentation changes, and the elimination of real estate specific guidance. ASU 2018-10 and ASU 2019-01 provide narrow amendments that clarify how to apply certain aspects of the guidance in ASU 2016-02. ASU 2018-11 provides the option of an additional transition method, by allowing entities to initially apply the new leases standard at the adoption date and recognize a cumulative-effect adjustment to the opening balance of retained earnings in the period of adoption. It also provides lessors an option to not separate lease and non-lease components when certain criteria are met.   We have elected to apply the transition provisions of ASC Topic 842 at the beginning of the period of adoption (i.e., January 1, 2019), and therefore, did not retrospectively adjust prior periods presented. We have also elected to apply certain adoption related practical expedients for all leases that commenced prior to the effective date. These practical expedients include not reassessing whether any expired or existing contracts are or contain leases; not reassessing the lease classification for any expired or existing leases; and not reassessing initial direct costs for any existing leases. We have also elected the practical expedient allowing lessors to combine non-lease and lease components (primarily impacts common area maintenance recoveries). From a lessee perspective, the primary impact of adoption on January 1, 2019 was to record a lease obligation liability and right of use asset for operating leases where we are the lessee.  The most significant of these operating leases are ground leases at 14 properties. The operating lease right of use assets and related liabilities are shown separately on the face of our consolidated balance sheet. Additionally, amounts previously recorded as capital lease assets and included in real estate have been reclassified in the September 30, 2019 balance sheet as finance lease right of use assets and the related capital lease obligations have been reclassified in the September 30, 2019 balance sheet as finance lease liabilities. Income statement presentation is not impacted for our existing operating and finance leases. From a lessor perspective, adoption of ASC 842 results in a charge to opening accumulated dividends in excess of net income of $7.1 million. This charge is attributable to the write off of certain direct leasing costs recorded as of December 31, 2018 under the previous lease accounting rules for leases which had not commenced and the write off of December 31, 2018 unreserved receivables (including straight-line receivables) for leases where we have determined that the collection of substantially all of the lease payments required for the term of the lease is not probable. Income statement presentation changes incorporated into our September 30, 2019 financial statements include: no longer recording a gross up of revenue and expense for costs (such as real estate taxes) paid directly by lessees on our behalf and recording collectability adjustments against revenue rather than as bad debt within rental expenses. As a result of the change in the definition of initial direct costs of leases, capitalized leasing costs excluding external commissions decreased to $0.7 million and $1.7 million for the three and nine months ended September 30, 2019, respectively, from $1.7 million and $5.3 million for the three and nine months ended September 30, 2018, respectively.            9 Table of Contents The following table provides additional information on our operating and finance leases where we are the lessee:   Three Months Ended   Nine Months Ended   September 30, 2019   (In thousands) LEASE COST:       Finance lease cost:          Amortization of right-of-use assets $ 321   $ 963      Interest on lease liabilities 1,455   4,366 Operating lease cost 1,524   4,521 Variable lease cost 131   351 Total lease cost $ 3,431   $ 10,201         OTHER INFORMATION:       Cash paid for amounts included in the measurement of lease liabilities            Operating cash flows for finance leases $ 1,432   $ 4,325      Operating cash flows for operating leases $ 1,500   $ 4,279      Financing cash flows for finance leases $ 2   $ 43               September 30,       2019 Weighted-average remaining lease term - finance leases     18.4  years Weighted-average remaining lease term - operating leases     53.7  years Weighted-average discount rate - finance leases     8.0 % Weighted-average discount rate - operating leases     4.5 % Consolidated Statements of Cash Flows—Supplemental Disclosures The following tables provide supplemental disclosures related to the Consolidated Statements of Cash Flows:   Nine Months Ended   September 30,   2019   2018   (In thousands) SUPPLEMENTAL DISCLOSURES:       Total interest costs incurred $ 97,074   $ 96,903 Interest capitalized ( 14,507 )   ( 14,787 ) Interest expense $ 82,567   $ 82,116 Cash paid for interest, net of amounts capitalized $ 82,118   $ 85,614 Cash paid for income taxes $ 450   $ 699 NON-CASH INVESTING AND FINANCING TRANSACTIONS:       Mortgage loans assumed with acquisition $ 16,951   $ — DownREIT operating partnership units redeemed for common shares $ 11,935   $ 101 Shares issued under dividend reinvestment plan $ 1,337   $ 1,431 See additional disclosures in the "Recently Adopted Accounting Pronouncements" section of this footnote relating to operating lease right of use assets and lease liabilities recorded in connection with our adoption of ASC Topic 842.   September 30,   December 31,   2019   2018   (In thousands) RECONCILIATION OF CASH, CASH EQUIVALENTS, AND RESTRICTED CASH:       Cash and cash equivalents $ 162,543   $ 64,087 Restricted cash (1) 44,373   44,245 Total cash, cash equivalents, and restricted cash $ 206,916   $ 108,332 (1) Restricted cash balances are included in "prepaid expenses and other assets" on our consolidated balance sheets.  10 Table of Contents NOTE 3— REAL ESTATE On  February 8, 2019 , we acquired the fee interest in Fairfax Junction, a  75,000  square foot shopping center in Fairfax, Virginia for  $ 22.5  million . Approximately  $ 0.6  million  and  $ 0.4  million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. On  September 13, 2019 , we acquired a  6,000  square foot retail building adjacent to San Antonio Center in Mountain View, California for  $ 6.5  million . On  September 18, 2019 , we acquired a  42,000  square foot retail building in Hoboken, New Jersey for  $ 30.9  million , including the assumption of  $ 17.0  million  of mortgage debt. The acquisition was completed through a newly formed joint venture, for which we own a  90 %  interest. Approximately  $ 0.7  million  and  $ 4.7  million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. During the three months ended  September 30, 2019 , we sold one property for a sales price of  $ 18.0  million , which resulted in a gain of  $ 14.1  million . During the  nine  months ended  September 30, 2019 , we sold two properties and one parcel of land for a net sales price of  $ 97.7  million , which resulted in a net gain of  $ 29.3  million . During the  nine  months ended  September 30, 2019 , we closed on the sale of  41  condominium units at our Assembly Row and Pike & Rose properties (combined), received proceeds net of closing costs of  $ 18.8  million , and recognized a gain of  $ 1.8  million , net of income taxes. The cost basis for the remaining condominium units as of  September 30, 2019  is  $ 1.7  million , and is included in "assets held for sale" on our consolidated balance sheet. NOTE 4— DEBT On  January 31, 2019 , we repaid the  $ 20.3  million  mortgage loan on Rollingwood Apartments, at par, prior to its original maturity date. On  June 7, 2019 , we issued  $ 300.0  million  of fixed rate senior unsecured notes that mature on  June 15, 2029  and bear interest at  3.20 % . The notes were offered at  99.838 %  of the principal amount with a yield to maturity of  3.219 % . On  August 21, 2019 , we issued an additional  $ 100.0  million   senior   notes of the same series and with the same terms .   The August notes were offered at  103.813 %  of the principal amount, with a yield to maturity of  2.744 % .  The combined net proceeds from the note offerings after a net issuance premium, underwriting fees, and other costs were   $ 399.9  million ,   which were primarily used to repay our  $ 275.0  million  unsecured term loan, at par, on  June 7, 2019  and for general corporate purposes. On  July 25, 2019 , we amended our revolving credit facility to increase our borrowing capacity to  $ 1.0  billion  and extend the maturity date to January 19, 2024, plus two six-month extensions at our option. Under the amended facility, the spread over LIBOR is  77.5  basis points based on our current credit rating. In addition, we have an option (subject to bank approval) to increase the credit facility through an accordion feature to  $ 1.5  billion .  In connection with our Hoboken, New Jersey acquisition on  September 18, 2019 , we assumed a mortgage loan with a face amount of   $ 17.0  million  and a fair value of  $ 17.5  million . The mortgage loan bears interest at  3.75 %  and matures on  July 1, 2042 . During the three and  nine  months ended  September 30, 2019 , the maximum amount of borrowings outstanding under our revolving credit facility was  $ 47.0  million  and  $ 116.5  million , respectively, and the weighted average interest rate, before amortization of debt fees, was  3.0 %  and  3.2 % , respectively. During the three and  nine  months ended  September 30, 2019 , the weighted average borrowings outstanding were  $ 14.0  million  and  $ 34.7  million , respectively. At  September 30, 2019 , our revolving credit facility had  no  balance outstanding. Our revolving credit facility and certain notes require us to comply with various financial covenants, including the maintenance of minimum shareholders' equity and debt coverage ratios and a maximum ratio of debt to net worth. As of  September 30, 2019 , we were in compliance with all default related debt covenants.  11 Table of Contents NOTE 5— FAIR VALUE OF FINANCIAL INSTRUMENTS Except as disclosed below, the carrying amount of our financial instruments approximates their fair value. The fair value of our mortgages payable, notes payable and senior notes and debentures is sensitive to fluctuations in interest rates. Quoted market prices (Level 1) were used to estimate the fair value of our marketable senior notes and debentures and discounted cash flow analysis (Level 2) is generally used to estimate the fair value of our mortgages and notes payable. Considerable judgment is necessary to estimate the fair value of financial instruments. The estimates of fair value presented herein are not necessarily indicative of the amounts that could be realized upon disposition of the financial instruments.  A summary of the carrying amount and fair value of our mortgages payable, notes payable and senior notes and debentures is as follows:   September 30, 2019   December 31, 2018 Carrying Value   Fair Value   Carrying Value   Fair Value (In thousands) Mortgages and notes payable $ 470,489   $ 482,345   $ 753,406   $ 751,361 Senior notes and debentures $ 2,806,422   $ 3,022,615   $ 2,404,279   $ 2,371,392 One of our equity method investees has  two  interest rate swaps which qualify for cash flow hedge accounting. For the three and  nine  months ended  September 30, 2019 , our share of the change in fair value of the related swaps included in "accumulated other comprehensive loss" was  $ 0.1  million , and  $ 0.7  million , respectively.    NOTE 6— COMMITMENTS AND CONTINGENCIES We are sometimes involved in lawsuits, warranty claims, and environmental matters arising in the ordinary course of business. Management makes assumptions and estimates concerning the likelihood and amount of any potential loss relating to these matters. We are currently a party to various legal proceedings. We accrue a liability for litigation if an unfavorable outcome is probable and the amount of loss can be reasonably estimated. If an unfavorable outcome is probable and a reasonable estimate of the loss is a range, we accrue the best estimate within the range; however, if no amount within the range is a better estimate than any other amount, the minimum within the range is accrued. Legal fees related to litigation are expensed as incurred. We do not believe that the ultimate outcome of these matters, either individually or in the aggregate, could have a material adverse effect on our financial position or overall trends in results of operations; however, litigation is subject to inherent uncertainties. Also under our leases, tenants are typically obligated to indemnify us from and against all liabilities, costs and expenses imposed upon or asserted against us (1) as owner of the properties due to certain matters relating to the operation of the properties by the tenant, and (2) where appropriate, due to certain matters relating to the ownership of the properties prior to their acquisition by us. Under the terms of certain partnership agreements, the partners have the right to exchange their operating partnership units for cash or common shares, at our option. A total of  626,619  downREIT operating partnership units are outstanding which have a total fair value of approximately  $ 85.3  million , which is calculated by multiplying the outstanding number of downREIT partnership units by our closing stock price on  September 30, 2019 . On  August 2, 2019 , we acquired the  10.1 %  redeemable noncontrolling interest in the partnership that owns our Montrose Crossing Shopping Center for  $ 10.0  million , bringing our ownership interest to  100 % .  12 Table of Contents NOTE 7— SHAREHOLDERS’ EQUITY The following table provides a summary of dividends declared and paid per share:   Nine Months Ended September 30,   2019   2018   Declared   Paid   Declared   Paid Common shares $ 3.090   $ 3.060   $ 3.020   $ 3.000 5.417% Series 1 Cumulative Convertible Preferred shares $ 1.016   $ 1.016   $ 1.016   $ 1.016 5.0% Series C Cumulative Redeemable Preferred shares (1) $ 0.938   $ 0.938   $ 0.938   $ 0.993 (1) Amount represents dividends per depository share, each representing 1/1000th of a share. We have an at-the-market (“ATM”) equity program in which we may from time to time offer and sell common shares having an aggregate offering price of up to  $ 400.0  million . We intend to use the net proceeds to fund potential acquisition opportunities, fund our development and redevelopment pipeline, repay amounts outstanding under our revolving credit facility and/or for general corporate purposes. For the three months ended  September 30, 2019 , we sold  557,761  common shares (of which,  24,261  settled on October 1, 2019) at a weighted average price per share of  $ 134.48  for net cash proceeds of  $ 74.5  million  and paid  $ 0.5  million  in commissions and less than  $ 0.1  million  in additional offering expenses related to the sales of these common shares. For the  nine  months ended  September 30, 2019 , we sold  1,069,699  common shares at a weighted average price per share of  $ 134.71  for net cash proceeds of  $ 142.8  million  and paid  $ 1.2  million  in commissions and  $ 0.1  million  in additional offering expenses related to the sales of these common shares. As of  September 30, 2019 , we had the capacity to issue up to  $ 128.3  million  in common shares under our ATM equity program. NOTE 8— SHARE-BASED COMPENSATION PLANS A summary of share-based compensation expense included in net income is as follows:   Three Months Ended   Nine Months Ended   September 30,   September 30,   2019   2018   2019   2018   (In thousands) Grants of common shares and options $ 3,151   $ 2,494   $ 10,143   $ 9,638 Capitalized share-based compensation ( 274 )   157   ( 746 )   ( 769 ) Share-based compensation expense $ 2,877   $ 2,651   $ 9,397   $ 8,869 NOTE 9— EARNINGS PER SHARE We have calculated earnings per share (“EPS”) under the two-class method. The two-class method is an earnings allocation methodology whereby EPS for each class of common stock and participating securities is calculated according to dividends declared and participation rights in undistributed earnings. For the  three  and  nine  months ended  September 30, 2019  and  2018 , we had  0.2  million  weighted average unvested shares outstanding, which are considered participating securities. Therefore, we have allocated our earnings for basic and diluted EPS between common shares and unvested shares; the portion of earnings allocated to the unvested shares is reflected as “earnings allocated to unvested shares” in the reconciliation below. In the dilutive EPS calculation, dilutive stock options were calculated using the treasury stock method consistent with prior periods. There were  682  anti-dilutive stock options for the  three  and  nine  months ended  September 30, 2019  and  2018 . The conversions of downREIT operating partnership units and  5.417 %  Series 1 Cumulative Convertible Preferred Shares are anti-dilutive for all periods presented and accordingly, have been excluded from the weighted average common shares used to compute diluted EPS.  13 Table of Contents   Three Months Ended   Nine Months Ended   September 30,   September 30,   2019   2018   2019   2018   (In thousands, except per share data) NUMERATOR               Net income $ 67,106   $ 64,180   $ 211,576   $ 192,644 Less: Preferred share dividends ( 2,010 )   ( 2,010 )   ( 6,031 )   ( 6,031 ) Less: Income from operations attributable to noncontrolling interests ( 1,641 )   ( 1,622 )   ( 5,065 )   ( 5,244 ) Less: Earnings allocated to unvested shares ( 232 )   ( 211 )   ( 671 )   ( 719 ) Net income available for common shareholders, basic and diluted $ 63,223   $ 60,337   $ 199,809   $ 180,650 DENOMINATOR               Weighted average common shares outstanding—basic 74,832   73,400   74,584   73,100 Stock options —   8   —   36 Weighted average common shares outstanding—diluted 74,832   73,408   74,584   73,136                 EARNINGS PER COMMON SHARE, BASIC:               Net income available for common shareholders $ 0.84   $ 0.82   $ 2.68   $ 2.47 EARNINGS PER COMMON SHARE, DILUTED:               Net income available for common shareholders $ 0.84   $ 0.82   $ 2.68   $ 2.47 NOTE 10— SUBSEQUENT EVENT On  October 11, 2019 , we sold a shopping center in Pacoima, California for  $ 51.3  million , which is included in "assets held for sale" on our consolidated balance sheet at  September 30, 2019 . ITEM 2.    MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Forward-Looking Statements The following discussion should be read in conjunction with the consolidated interim financial statements and notes thereto appearing in Item 1 of this report and the more detailed information contained in our Annual Report on Form 10-K for the year ended  December 31, 2018  filed with the Securities and Exchange Commission (the “SEC”) on  February 13, 2019 . This Form 10-Q contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, Section 21E of the Securities Exchange Act of 1934 and the Private Securities Litigation Reform Act of 1995. When we refer to forward-looking statements or information, sometimes we use words such as “may,” “will,” “could,” “should,” “plans,” “intends,” “expects,” “believes,” “estimates,” “anticipates” and “continues.” Forward-looking statements are not historical facts or guarantees of future performance and involve certain known and unknown risks, uncertainties, and other factors, many of which are outside our control, that could cause actual results to differ materially from those we describe. Given these uncertainties, readers are cautioned not to place undue reliance on any forward-looking statements that we make, including those in this Quarterly Report on Form 10-Q. Except as may be required by law, we make no promise to update any of the forward-looking statements as a result of new information, future events or otherwise. You should carefully review the risks and the risk factors included in our Annual Report on Form 10-K for the year ended  December 31, 2018  and under Part II, Item 1A in this Quarterly Report on Form 10-Q, before making any investments in us. Overview We are an equity real estate investment trust (“REIT”) specializing in the ownership, management, and redevelopment of high quality retail and mixed-use properties located primarily in densely populated and affluent communities in strategically selected metropolitan markets in the Northeast and Mid-Atlantic regions of the United States, California, and South Florida. As of  September 30, 2019 , we owned or had a majority interest in community and neighborhood shopping centers and mixed-use properties which are operated as  104  predominantly retail real estate projects comprising approximately  23.9 million  square feet. In total, the real estate projects were  94.2%  leased and  92.8%  occupied at  September 30, 2019 .  14 Table of Contents 2019 Property Acquisition and Dispositions On  February 8, 2019 , we acquired the fee interest in Fairfax Junction, a  75,000  square foot shopping center in Fairfax, Virginia for  $22.5 million . Approximately  $0.6 million  and  $0.4 million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. On  September 13, 2019 , we acquired a  6,000  square foot retail building adjacent to San Antonio Center in Mountain View, California for  $6.5 million . On  September 18, 2019 , we acquired a  42,000  square foot retail building in Hoboken, New Jersey for  $30.9 million , including the assumption of  $17.0 million  of mortgage debt. The acquisition was completed through a newly formed joint venture, for which we own a 90% interest. Approximately  $0.7 million  and  $4.7 million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. During the three months ended  September 30, 2019 , we sold one property for a sales price of  $18.0 million , which resulted in a gain of  $14.1 million . During the  nine  months ended  September 30, 2019 , we sold two properties and one land parcel for a net sales price of  $97.7 million , which resulted in a net gain of  $29.3 million . During the  nine  months ended  September 30, 2019 , we closed on the sale of  41  condominium units at our Assembly Row and Pike & Rose properties (combined), received proceeds net of closing costs of  $18.8 million , and recognized a gain of  $1.8 million , net of income taxes. The cost basis for the remaining condominium units as of  September 30, 2019  is  $1.7 million , and is included in "assets held for sale" on our consolidated balance sheet. 2019 Debt and Equity Transactions On  January 31, 2019 , we repaid the  $20.3 million  mortgage loan on Rollingwood Apartments, at par, prior to its original maturity date. On   June 7, 2019 , we issued   $300.0 million   of fixed rate senior unsecured notes that mature on   June 15, 2029   and bear interest at   3.20% . The notes were offered at   99.838%   of the principal amount with a yield to maturity of   3.219% .   On  August 21, 2019 , we issued an additional  $100.0 million   senior   notes of the same series and with the same terms .   The August notes were offered at  103.813%  of the principal amount, with a yield to maturity of  2.744% .  The combined net proceeds from the note offerings after net issuance premium, underwriting fees, and other costs were   $399.9 million , which were primarily used to repay our  $275.0 million  unsecured term loan, at par, on  June 7, 2019  and for general corporate purposes. On  July 25, 2019 , we amended our revolving credit facility to increase our borrowing capacity to  $1.0 billion  and extend the maturity date to January 19, 2024, plus two six-month extensions at our option. Under the amended facility, the spread over LIBOR is  77.5  basis points based on our current credit rating. In addition, we have an option (subject to bank approval) to increase the credit facility through an accordion feature to $1.5 billion. In connection with our Hoboken, New Jersey acquisition on  September 18, 2019 , we assumed a mortgage loan with a face amount of   $17.0 million  and a fair value of  $17.5 million . The mortgage loan bears interest at  3.75%  and matures on  July 1, 2042 . On  August 2, 2019 , we acquired the  10.1%  redeemable noncontrolling interest in the partnership that owns our Montrose Crossing Shopping Center for  $10.0 million , bringing our ownership interest to  100% . We have an at-the-market (“ATM”) equity program in which we may from time to time offer and sell common shares having an aggregate offering price of up to  $400.0 million . We intend to use the net proceeds to fund potential acquisition opportunities, fund our development and redevelopment pipeline, repay amounts outstanding under our revolving credit facility and/or for general corporate purposes. For the three months ended  September 30, 2019 , we sold  557,761  common shares (of which,  24,261  settled on October 1, 2019) at a weighted average price per share of  $134.48  for net cash proceeds of  $74.5 million  and paid  $0.5 million  in commissions and less than  $0.1 million  in additional offering expenses related to the sales of these common shares. For the  nine  months ended  September 30, 2019 , we sold  1,069,699  common shares at a weighted average price per share of  $134.71  for net cash proceeds of  $142.8 million  and paid  $1.2 million  in commissions and  $0.1 million  in additional offering expenses related to the sales of these common shares. As of  September 30, 2019 , we had the capacity to issue up to  $128.3 million  in common shares under our ATM equity program.  15 Table of Contents Capitalized Costs Certain external and internal costs directly related to the development, redevelopment and leasing of real estate, including pre-construction costs, real estate taxes, insurance, construction costs and salaries and related costs of personnel directly involved, are capitalized. We capitalized certain external and internal costs related to both development and redevelopment activities of $266 million and $6 million, respectively, for the  nine  months ended  September 30, 2019 , and $203 million and $6 million, respectively, for the  nine  months ended  September 30, 2018 . We capitalized external and internal costs related to other property improvements of $49 million and $2 million, respectively, for the  nine  months ended  September 30, 2019 , and $43 million and $2 million for the  nine  months ended  September 30, 2018 . We capitalized external and internal costs related to leasing activities of $17 million and $2 million, respectively, for the  nine  months ended  September 30, 2019 , and $16 million and $5 million, respectively, for the  nine  months ended  September 30, 2018 . The amount of capitalized internal costs for salaries and related benefits for development and redevelopment activities, other property improvements, and leasing activities were $6 million, $2 million, and $2 million, respectively, for the  nine  months ended  September 30, 2019  and $6 million, $2 million, and $4 million, respectively for the  nine  months ended  September 30, 2018 . Total capitalized costs were $342 million and $275 million for the  nine  months ended  September 30, 2019  and  2018 , respectively. Recently Adopted Accounting Pronouncements See Note 2 to the consolidated financial statements. Outlook We seek growth in earnings, funds from operations, and cash flows primarily through a combination of the following: • growth in our comparable property portfolio, • growth in our portfolio from property development and redevelopments, and • expansion of our portfolio through property acquisitions. Our comparable property growth is primarily driven by increases in rental rates on new leases and lease renewals, changes in portfolio occupancy, and the redevelopment of those assets. Over the long-term, the infill nature and strong demographics of our properties provide a strategic advantage allowing us to maintain relatively high occupancy and generally increase rental rates. We continue to see relatively strong levels of interest from prospective tenants for our retail spaces; however, the time it takes to complete new lease deals is longer, as tenants have become more selective and more deliberate in their decision-making process.   We have also experienced extended periods of time for some government agencies to process permits and inspections further delaying rent commencement on newly leased spaces. Additionally, we have seen an overall decrease in the number of tenants available to fill anchor spaces, and have seen an uptick in the number of retail tenants vacating prior to the end of their lease term and/or filing for bankruptcy. We believe the locations and nature of our centers and diverse tenant base partially mitigates any potential negative changes in the economic environment. However, any significant reduction in our tenants' abilities to pay base rent, percentage rent or other charges will adversely affect our financial condition and results of operations. We seek to maintain a mix of strong national, regional, and local retailers. At  September 30, 2019 , no single tenant accounted for more than  2.6%  of annualized base rent.  Our properties are located primarily in densely populated and/or affluent areas with high barriers to entry which allow us to take advantage of redevelopment opportunities that enhance our operating performance through renovation, expansion, reconfiguration, and/or retenanting. We evaluate our properties on an ongoing basis to identify these types of opportunities. We currently have redevelopment projects underway with a projected total cost of approximately $352 million that we expect to stabilize in the next several years. We continue our ongoing redevelopment efforts at Santana Row and are under construction on an eight story 301,000 square foot office building which will include an additional 18,000 square feet of retail space and 1,300 parking spaces. The project is expected to cost between $210 million and $220 million, to be delivered in 2020, and the office portion is 100% leased. After current phases, we have approximately 4 acres remaining for further redevelopment and entitlements in place for an additional 395 residential units and 321,000 square feet of commercial space.  Additionally, we control 12 acres of land across from Santana Row, which has approximately 1 million square feet of commercial space entitlements. We are proceeding with the first phase of construction on this land, which includes an eight story 360,000 square foot office building, with over 1,700 parking spaces. The building is expected to cost between $250 million and $270 million, with deliveries beginning in 2021. Phase II of Assembly Row includes approximately 161,000 square feet of retail space, 447 residential units, and a 158 room boutique hotel (owned and operated by a joint venture in which we are a partner). Total expected costs range from $290 million   16 Table of Contents to $305 million and delivery is expected to be substantially complete in 2019. As of  September 30, 2019 , approximately 132,000 square feet of retail space and the 158 room hotel have opened, and all of the residential units have been completed. Phase II also includes 122 for-sale condominium units, which have all closed as of  September 30, 2019 . The condominium units had a total cost of $81 million. Additionally, we commenced construction on Phase III of Assembly Row, which will include 277,000 square feet of office space (of which, 150,000 square feet is pre-leased), 56,000 square feet of retail space, 500 residential units, and over 800 additional parking spaces. The expected costs for Phase III are between $465 million and $485 million and is projected to open beginning in 2022. Phase II of Pike & Rose includes approximately 216,000 square feet of retail space, 272 residential units, and a 177 room boutique hotel (owned and operated by a joint venture in which we are a partner). As of  September 30, 2019 , approximately 196,000 square feet of retail space and the 177 room hotel have opened, and all of the residential units have been completed. Total expected costs range from $200 million to $207 million and remaining delivery is expected to be substantially complete in 2019. As of  September 30, 2019 , we closed on the sale of 95 of the 99 for-sale condominium units in Phase II. The condominium units have an expected total cost of $62 million. Additionally, at Pike & Rose, we have commenced construction on a 212,000 square foot office building (which includes 4,000 square feet of ground floor retail space), and will include over 600 additional parking spaces. The building is expected to cost between $128 million and $135 million and is projected to open beginning in 2021. Including costs incurred in the first  nine  months of  2019 , we expect to invest between $230 million and $250 million at Assembly Row, Pike & Rose, and Santana Row in  2019 . The development of future phases of Assembly Row, Pike & Rose and Santana Row will be pursued opportunistically based on, among other things, market conditions, tenant demand, and our evaluation of whether those phases will generate an appropriate financial return. We continue to review acquisition opportunities in our primary markets that complement our portfolio and provide long-term growth opportunities. Initially, some of our acquisitions do not contribute significantly to earnings growth; however, we believe they provide long-term re-leasing growth, redevelopment opportunities, and other strategic opportunities. Any growth from acquisitions is contingent on our ability to find properties that meet our qualitative standards at prices that meet our financial hurdles. Changes in interest rates may affect our success in achieving earnings growth through acquisitions by affecting both the price that must be paid to acquire a property, as well as our ability to economically finance the property acquisition. Generally, our acquisitions are initially financed by available cash and/or borrowings under our revolving credit facility which may be repaid later with funds raised through the issuance of new equity or new long-term debt. We may also finance our acquisitions through the issuance of common shares, preferred shares, or downREIT units as well as through new or assumed mortgages and property sales. At  September 30, 2019 , the leasable square feet in our properties was  94.2%  leased and  92.8%  occupied. The leased rate is higher than the occupied rate due to leased spaces that are being redeveloped or improved or that are awaiting permits and, therefore, are not yet ready to be occupied. Our occupancy and leased rates are subject to variability over time due to factors including acquisitions, the timing of the start and stabilization of our redevelopment projects, lease expirations and tenant closings and bankruptcies. Lease Rollovers For the  third quarter of   2019 , we signed leases for a total of 491,000 square feet of retail space including 469,000 square feet of comparable space leases (leases for which there was a prior tenant) at an average rental increase of 7% on a cash basis. New leases for comparable spaces were signed for 317,000 square feet at an average rental increase of 6% on a cash basis. Renewals for comparable spaces were signed for 152,000 square feet at an average rental increase of 9% on a cash basis. Tenant improvements and incentives for comparable spaces were $46.20 per square foot, of which, $66.79 per square foot was for new leases and $3.18 per square foot was for renewals for the  three  months ended  September 30, 2019 . For the  nine  months ended  September 30, 2019 , we signed leases for a total of 1,180,000 square feet of retail space including 1,095,000 square feet of comparable space leases (leases for which there was a prior tenant) at an average rental increase of 8% on a cash basis. New leases for comparable spaces were signed for 581,000 square feet at an average rental increase of 12% on a cash basis. Renewals for comparable spaces were signed for 514,000 square feet at an average rental increase of 4% on a cash basis. Tenant improvements and incentives for comparable spaces were $43.66 per square foot, of which, $80.32 per square foot was for new leases and $2.18 per square foot was for renewals for the  nine  months ended  September 30, 2019 .  17 Table of Contents The rental increases associated with comparable spaces generally include all leases signed for retail space in arms-length transactions reflecting market leverage between landlords and tenants during the period. The comparison between average rent for expiring leases and new leases is determined by including minimum rent and percentage rent paid on the expiring lease and minimum rent and in some instances, projections of first lease year percentage rent, to be paid on the new lease. In atypical circumstances, management may exercise judgment as to how to most effectively reflect the comparability of spaces reported in this calculation. The change in rental income on comparable space leases is impacted by numerous factors including current market rates, location, individual tenant creditworthiness, use of space, market conditions when the expiring lease was signed, capital investment made in the space and the specific lease structure. Tenant improvements and incentives include the total dollars committed for the improvement (fit out) of a space as it relates to a specific lease and, except for redevelopments, may also include base building costs (i.e. expansion, escalators or new entrances) which are required to make the space leasable. Incentives include amounts paid to tenants as inducement to sign a lease that do not represent building improvements. Costs related to redevelopments requires judgment by management in determining what reflects base building costs and thus, is not included in the "tenant improvements and incentives" amount. The leases signed in  2019  generally become effective over the following two years though some may not become effective until  2022  and beyond. Further, there is risk that some new tenants will not ultimately take possession of their space and that tenants for both new and renewal leases may not pay all of their contractual rent due to operating, financing or other matters. However, these increases do provide information about the tenant/landlord relationship and the potential increase we may achieve in rental income over time. Historically, we have executed comparable space leases for 1.2 to 1.7 million square feet of retail space each year, and expect that volume for  2019  will be in line with our historical averages with overall positive increases in rental income. However, changes in rental income associated with individual signed leases on comparable spaces may be positive or negative, and we can provide no assurance that the rents on new leases will continue to increase at the above disclosed levels, if at all. Comparable Properties Throughout this section, we have provided certain information on a “comparable property” basis. Information provided on a comparable property basis includes the results of properties that we owned and operated for the entirety of both periods being compared except for properties that are currently under development or are being repositioned for significant redevelopment and investment. For the  three  and  nine  months ended  September 30, 2019 , all or a portion of 96 properties were considered comparable properties and nine and eight properties, respectively, were considered non-comparable properties. For the  three  months ended  September 30, 2019 , one property was moved from acquisitions to non-comparable properties and one property was removed from comparable properties, as it was sold, compared to the designations for the  three  months ended June 30, 2019, which were 97 properties or portions of properties considered comparable and eight considered non-comparable. For the  nine  months ended  September 30, 2019 , eight properties were moved from acquisitions to comparable properties, one property was moved from acquisitions to non-comparable properties, one portion of a property was moved from non-comparable properties to comparable properties, and two properties were removed from comparable properties, as they were sold, compared to the designations for the year ended  December 31, 2018 , which were 90 properties or portions of properties considered comparable and eight considered non-comparable. While there is judgment surrounding changes in designations, we typically move non-comparable properties to comparable properties once they have stabilized, which is typically considered 90% physical occupancy or when the growth expected from the redevelopment has been included in the comparable periods. We typically remove properties from comparable properties when the repositioning of the asset has commenced and has or is expected to have a significant impact to property operating income within the calendar year. Acquisitions are moved to comparable properties once we have owned the property for the entirety of comparable periods and the property is not under development or being repositioned for significant redevelopment and investment.   18 Table of Contents RESULTS OF OPERATIONS - THREE MONTHS ENDED  SEPTEMBER 30, 2019  AND  2018             Change   2019   2018   Dollars   %   (Dollar amounts in thousands) Rental income $ 233,212   $ 228,960   $ 4,252   1.9  % Mortgage interest income 735   793   (58 )   (7.3 )% Total property revenue 233,947   229,753   4,194   1.8  % Rental expenses 54,484   41,909   12,575   30.0  % Real estate taxes 29,030   29,086   (56 )   (0.2 )% Total property expenses 83,514   70,995   12,519   17.6  % Property operating income (1) 150,433   158,758   (8,325 )   (5.2 )% General and administrative expense (11,060 )   (7,638 )   (3,422 )   44.8  % Depreciation and amortization (59,648 )   (60,778 )   1,130   (1.9 )% Gain on sale of real estate, net 14,293   3,125   11,168   357.4  % Operating income 94,018   93,467   551   0.6  % Other interest income 389   319   70   21.9  % Interest expense (27,052 )   (28,166 )   1,114   (4.0 )% Loss from partnerships (249 )   (1,440 )   1,191   (82.7 )% Total other, net (26,912 )   (29,287 )   2,375   (8.1 )% Net income 67,106   64,180   2,926   4.6  % Net income attributable to noncontrolling interests (1,641 )   (1,622 )   (19 )   1.2  % Net income attributable to the Trust $ 65,465   $ 62,558   $ 2,907   4.6  % (1) Property operating income is a non-GAAP measure that consists of rental income and mortgage interest income, less rental expenses and real estate taxes. This measure is used internally to evaluate the performance of property operations and we consider it to be a significant measure. Property operating income should not be considered an alternative measure of operating results or cash flow from operations as determined in accordance with GAAP. Property Revenues Total property revenue  increased   $4.2 million , or  1.8% , to  $233.9 million  in the  three  months ended  September 30, 2019  compared to  $229.8 million  in the  three  months ended  September 30, 2018 . The percentage occupied at our shopping centers was  92.8%  at  September 30, 2019  compared to 93.7% at  September 30, 2018 . Changes in the components of property revenue are discussed below. Rental Income Rental income consists primarily of minimum rent, cost reimbursements from tenants and percentage rent. Rental income  increased   $4.3 million , or  1.9% , to  $233.2 million  in the  three  months ended  September 30, 2019  compared to  $229.0 million  in the  three  months ended  September 30, 2018  due primarily to the following: • an increase of $3.9 million from comparable properties due primarily to higher rental rates of approximately   $3.1 million and higher average occupancy of approximately $1.1 million,  • an increase of $2.1 million from non-comparable properties due primarily to the retail openings and residential lease-up at Phase II at Assembly Row and Pike & Rose and and the lease-up of one of our other redevelopments, partially offset by redevelopment related occupancy decreases at one Virginia property, and • an increase of $0.6 million from the acquisition of Fairfax Junction in February 2019, partially offset by, • a decrease of $2.3 million from our 2018 and 2019 property sales. Property Expenses Total property expenses  increased   $12.5 million , or  17.6% , to  $83.5 million  in the  three  months ended  September 30, 2019  compared to  $71.0 million  in the  three  months ended  September 30, 2018 . Changes in the components of property expenses are discussed below.  19 Table of Contents Rental Expenses Rental expenses  increased   $12.6 million , or  30.0% , to  $54.5 million  in the  three  months ended  September 30, 2019  compared to  $41.9 million  in the  three  months ended  September 30, 2018 . This increase is due primarily to the following: • an $11.9 million charge in 2019 related to the buyout of a lease at Assembly Square Marketplace, and • an increase of $0.7 million from comparable properties due primarily to higher repairs and maintenance costs partially offset by a $1.2 million decrease due to the new lease accounting standard requirement to record collectibility adjustments as a reduction to revenue rather than rental expense effective at adoption on January 1, 2019. As a result of the changes in rental income and rental expenses as discussed above, rental expenses as a percentage of rental income increased to  23.4%  in the  three  months ended  September 30, 2019  from  18.3%  in the  three  months ended  September 30, 2018 .  Property Operating Income Property operating income  decreased   $8.3 million , or  5.2% , to  $150.4 million  in the  three  months ended  September 30, 2019  compared to  $158.8 million  in the  three  months ended  September 30, 2018 . This decrease is due primarily to the charge related to the buyout of a lease at Assembly Square Marketplace and property sales, partially offset by growth in earnings at comparable properties, Assembly Row and Pike & Rose, and one of our retail redevelopments. Other Operating General and Administrative General and administrative expense increased  $3.4 million , or  44.8% , to  $11.1 million  in the  three  months ended  September 30, 2019  from  $7.6 million  in the  three  months ended  September 30, 2018 . This increase is due primarily to higher leasing related costs as certain costs can no longer be capitalized as a result of the new lease accounting standard (see Note 2 for additional disclosure) and higher personnel related costs. Gain on Sale of Real Estate, Net The  $14.3 million  gain on sale of real estate, net for the  three  months ended  September 30, 2019  is due primarily to the sale of one property. The  $3.1 million  net gain for the  three  months ended  September 30, 2018  is due to the sale of a residential building in August 2018. Operating Income Operating income increased  $0.6 million , or  0.6% , to  $94.0 million  in the  three  months ended  September 30, 2019  compared to  $93.5 million  in the  three  months ended  September 30, 2018 . This increase is due primarily to the net gain on the sale of one property and growth in earnings at our comparable properties, partially offset by the charge related to the buyout of a lease at Assembly Square Marketplace, higher leasing and personnel related costs, and property sales. Other Interest Expense Interest expense  decreased   $1.1 million , or  4.0% , to  $27.1 million  in the  three  months ended  September 30, 2019  compared to  $28.2 million  in the  three  months ended  September 30, 2018 . This decrease is due primarily to an increase of $1.2 million in capitalized interest, primarily attributable to the development of Phase III of Assembly Row and Pike & Rose, and Santana Row. Gross interest costs were $32.3 million and $32.2 million in the  three  months ended  September 30, 2019  and  2018 , respectively. Capitalized interest was $5.3 million and $4.1 million for the  three  months ended  September 30, 2019  and  2018 , respectively. Loss from Partnerships Loss from partnerships decreased  $1.2 million , or  82.7% , to  $0.2 million  in the  three  months ended  September 30, 2019  compared to a loss of  $1.4 million  in the  three  months ended  September 30, 2018 . This decrease is due primarily to improved   20 Table of Contents operating results at our Assembly Row and Pike & Rose hotel joint ventures, which opened in August 2018 and March 2018, respectively. RESULTS OF OPERATIONS - NINE MONTHS ENDED  SEPTEMBER 30, 2019  AND  2018             Change   2019   2018   Dollars   %   (Dollar amounts in thousands) Rental income $ 694,435   $ 677,776   $ 16,659   2.5  % Mortgage interest income 2,204   2,284   (80 )   (3.5 )% Total property revenue 696,639   680,060   16,579   2.4  % Rental expenses 140,182   126,587   13,595   10.7  % Real estate taxes 81,883   85,841   (3,958 )   (4.6 )% Total property expenses 222,065   212,428   9,637   4.5  % Property operating income (1) 474,574   467,632   6,942   1.5  % General and administrative expense (32,047 )   (23,980 )   (8,067 )   33.6  % Depreciation and amortization (178,327 )   (177,269 )   (1,058 )   0.6  % Gain on sale of real estate, net 30,490   10,413   20,077   192.8  % Operating income 294,690   276,796   17,894   6.5  % Other interest income 755   657   98   14.9  % Interest expense (82,567 )   (82,116 )   (451 )   0.5  % Loss from partnerships (1,302 )   (2,693 )   1,391   (51.7 )% Total other, net (83,114 )   (84,152 )   1,038   (1.2 )% Net income 211,576   192,644   18,932   9.8  % Net income attributable to noncontrolling interests (5,065 )   (5,244 )   179   (3.4 )% Net income attributable to the Trust $ 206,511   $ 187,400   $ 19,111   10.2  % (1) Property operating income is a non-GAAP measure that consists of rental income and mortgage interest income, less rental expenses and real estate taxes. This measure is used internally to evaluate the performance of property operations and we consider it to be a significant measure. Property operating income should not be considered an alternative measure of operating results or cash flow from operations as determined in accordance with GAAP. Property Revenues Total property revenue increased  $16.6 million , or  2.4% , to  $696.6 million  in the  nine  months ended  September 30, 2019  compared to  $680.1 million  in the  nine  months ended  September 30, 2018 . The percentage occupied at our shopping centers was  92.8%  at  September 30, 2019  compared to 93.7% at  September 30, 2018 . Changes in the components of property revenue are discussed below. Rental Income Rental income consists primarily of minimum rent, cost reimbursements from tenants and percentage rent. Rental income increased  $16.7 million , or  2.5% , to  $694.4 million  in the  nine  months ended  September 30, 2019  compared to  $677.8 million  in the  nine  months ended  September 30, 2018  due primarily to the following: • an increase of $10.0 million from comparable properties due primarily to higher rental rates of approximately   $8.8 million, higher lease termination fees and legal fee income of $5.3 million, and higher average occupancy of approximately $2.3 million, partially offset by a $4.4 million decrease in real estate tax recoveries primarily due to the requirements of the new lease accounting standard and lower multi-year tax reassessments for two of our properties, and $1.9 million related to collectibility adjustments, which are now being presented as a reduction of rental income rather than rental expense (see Note 2 for additional disclosure),  • an increase of $9.2 million from non-comparable properties due primarily to the opening of Phase II at Assembly Row and Pike & Rose and the lease-up of one of our other redevelopments, partially offset by redevelopment related occupancy decreases at one Virginia property and two of our Florida properties, and • an increase of $1.3 million from the acquisition of Fairfax Junction in February 2019,  21 Table of Contents partially offset by  • a decrease of $4.6 million from property sales. Property Expenses Total property expenses increased  $9.6 million , or  4.5% , to  $222.1 million  in the  nine  months ended  September 30, 2019  compared to  $212.4 million  in the  nine  months ended  September 30, 2018 . Changes in the components of property expenses are discussed below. Rental Expenses Rental expenses increased  $13.6 million , or  10.7% , to  $140.2 million  in the  nine  months ended  September 30, 2019  compared to  $126.6 million  in the  nine  months ended  September 30, 2018 . This increase is due primarily to the following: • an $11.9 million charge in 2019 related to the buyout of a lease at Assembly Square Marketplace, • an increase of $1.2 million from comparable properties due primarily to higher repairs and maintenance costs partially offset by a $3.0 million decrease due to the new lease accounting standard requirement to record collectibility adjustments as a reduction to revenue rather than rental expense effective at adoption on January 1, 2019, • an increase of $0.6 million from non-comparable properties due primarily to the opening of Phase II at Assembly Row and Pike & Rose, partially offset by lower expenses at two of our Florida properties, and • an increase of $0.4 million from acquisitions,  partially offset by • a decrease of $0.9 million from property sales. As a result of the changes in rental income and rental expenses as discussed above, rental expenses as a percentage of rental income increased to  20.2%  in the  nine  months ended  September 30, 2019  from  18.7%  the  nine  months ended  September 30, 2018 . Real Estate Taxes Real estate tax expense decreased  $4.0 million , or  4.6% , to  $81.9 million  in the  nine  months ended  September 30, 2019  compared to  $85.8 million  in the  nine  months ended  September 30, 2018  due primarily to: • a decrease of $4.1 million from comparable properties due primarily to a tax refund from a multi-year appeal and reassessment for three of our properties and $4.0 million due to the new lease accounting standard requirement, which no longer permits the gross up of real estate tax revenue and expense for real estate taxes that our tenants pay directly to the taxing authority (see Note 2 for additional disclosure), partially offset by higher assessments, and • a decrease of $0.6 million from property sales, partially offset by • an increase of $0.5 million from non-comparable properties due primarily to increases in assessments as a result of our redevelopment activities, and • an increase of $0.2 million from acquisitions. Property Operating Income Property operating income increased  $6.9 million , or  1.5% , to  $474.6 million  in the  nine  months ended  September 30, 2019  compared to  $467.6 million  in the  nine  months ended  September 30, 2018 . This increase is due primarily to growth in earnings at comparable properties, the opening of Phase II at Assembly Row and Pike & Rose, and our acquisition of Fairfax Junction in February 2019, partially offset by the charge related to the buyout of a lease at Assembly Square Marketplace, and property sales. Other Operating General and Administrative General and administrative expense increased  $8.1 million , or  33.6% , to  $32.0 million  in the  nine  months ended  September 30, 2019  from  $24.0 million  in the  nine  months ended  September 30, 2018 . This increase is due primarily to higher leasing related   22 Table of Contents costs as certain costs can no longer be capitalized as a result of the new lease accounting standard (see Note 2 for additional disclosure) and higher personnel costs. Gain on Sale of Real Estate, Net The  $30.5 million  gain on sale of real estate, net for the  nine  months ended  September 30, 2019  is due primarily to the sale of two properties and one land parcel. The  $10.4 million  net gain for the  nine  months ended  September 30, 2018  is related to condominium unit sales that closed at our Assembly Row and Pike and Rose properties, and the sale of a residential building in August 2018. Operating Income Operating income increased  $17.9 million , or  6.5% , to  $294.7 million  in the  nine  months ended  September 30, 2019  compared to  $276.8 million  in the  nine  months ended  September 30, 2018 . This increase is due primarily to the net gain on the sale of two properties and one land parcel, growth in earnings at our comparable properties, and the opening of Phase II of Assembly Row and Pike & Rose, partially offset by the charge related to the buyout of a lease at Assembly Square Marketplace, higher leasing and personnel related costs, and property sales. Other Interest Expense Interest expense increased  $0.5 million , or  0.5% , to  $82.6 million  in the  nine  months ended  September 30, 2019  compared to  $82.1 million  in the  nine  months ended  September 30, 2018 . This increase is due primarily to the following: • an increase of $1.6 million due to a higher overall weighted average borrowing rate and • a decrease of $0.3 million in capitalized interest, partially offset by • a decrease of $1.5 million due to lower weighted average borrowings. Gross interest costs were $97.1 million and $96.9 million in the  nine  months ended  September 30, 2019  and  2018 , respectively. Capitalized interest was $14.5 million and $14.8 million in the  nine  months ended  September 30, 2019  and  2018 , respectively. Loss from Partnerships Loss from partnerships decreased  $1.4 million , or  51.7%  , to  $1.3 million  in the  nine  months ended  September 30, 2019  compared to  $2.7 million  in the  nine  months ended  September 30, 2018 . This decrease is due primarily to improved operating results at our Assembly Row and Pike & Rose hotel joint ventures, which opened in August 2018 and March 2018, respectively. Liquidity and Capital Resources Due to the nature of our business and strategy, we typically generate significant amounts of cash from operations. The cash generated from operations is largely paid to our common and preferred shareholders in the form of dividends. As a REIT, we must generally make annual distributions to shareholders of at least  90%  of our taxable income. Our short-term liquidity requirements consist primarily of normal recurring operating expenses, obligations under our capital and operating leases, regular debt service requirements (including debt service relating to additional or replacement debt, as well as scheduled debt maturities), recurring expenditures, non-recurring expenditures (such as tenant improvements and redevelopments) and dividends to common and preferred shareholders. Our long-term capital requirements consist primarily of maturities under our long-term debt agreements, development and redevelopment costs and potential acquisitions. We intend to operate with and maintain a conservative capital structure that will allow us to maintain strong debt service coverage and fixed-charge coverage ratios as part of our commitment to investment-grade debt ratings. In the short and long term, we may seek to obtain funds through the issuance of additional equity, unsecured and/or secured debt financings, joint venture relationships relating to existing properties or new acquisitions, and property dispositions that are consistent with this conservative structure. At  September 30, 2019 , we had cash and cash equivalents of  $162.5 million  and  no  outstanding balance on our revolving credit facility. For the  nine  months ended  September 30, 2019 , the maximum amount of borrowings outstanding under our revolving credit facility was  $116.5 million , the weighted average amount of borrowings outstanding was  $34.7 million  and the weighted average interest rate, before amortization of debt fees, was  3.2% . On July 25, 2019, we amended our revolving credit facility to   23 Table of Contents increase our borrowing capacity from $800.0 million to $1.0 billion, lower our spread over LIBOR from 82.5 basis points to 77.5 basis points, and extend the maturity date to January 19, 2024, plus two six-month extensions at our option. In addition, we have an option (subject to bank approval) to increase the credit facility through an accordion feature to  $1.5 billion . On   June 7, 2019 , we issued   $300.0 million   of fixed rate senior unsecured notes that mature on   June 15, 2029   and bear interest at   3.20% .   On  August 21, 2019 , we issued an additional  $100.0 million   senior   notes of the same series and with the same terms . The combined net proceeds of   $399.9 million  were primarily used to repay our  $275.0 million  unsecured term loan, which was to mature in November 2019, resulting in no remaining debt maturing in 2019. During the  nine  months ended  September 30, 2019 , we raised  $142.8 million , after fees and other costs, under our ATM equity program, which as of  September 30, 2019 , had the capacity to issue up to  $128.3 million  in common shares. We currently believe that cash flows from operations, cash on hand, our ATM program, our revolving credit facility and our general ability to access the capital markets will be sufficient to finance our operations and fund our debt service requirements and capital expenditures. Our overall capital requirements for the remainder of  2019  will depend upon acquisition opportunities, the level of improvements and redevelopments on existing properties and the timing and cost of development of Assembly Row, Pike & Rose and Santana Row. While the amount of future expenditures will depend on numerous factors, we expect to see higher levels of capital investments in our properties under development and redevelopment compared to 2018, as we invest in the next phase of these projects. With respect to other capital investments related to our existing properties, we expect to incur levels consistent with prior years. Our capital investments will be funded on a short-term basis with cash flow from operations, cash on hand and/or our revolving credit facility, and on a long-term basis, with long-term debt or equity including shares issued under our ATM equity program. If necessary, we may access the debt or equity capital markets to finance significant acquisitions. Given our past ability to access the capital markets, we expect debt or equity to be available to us. Although there is no intent at this time, if market conditions deteriorate, we may delay the timing of certain development and redevelopment projects as well as limit future acquisitions, reduce our operating expenditures, or re-evaluate our dividend policy. In addition to conditions in the capital markets which could affect our ability to access those markets, the following factors could affect our ability to meet our liquidity requirements: • restrictions in our debt instruments or preferred shares may limit us from incurring debt or issuing equity at all, or on acceptable terms under then-prevailing market conditions; and • we may be unable to service additional or replacement debt due to increases in interest rates or a decline in our operating performance. Summary of Cash Flows   Nine Months Ended September 30,   2019   2018   (In thousands) Cash provided by operating activities $ 344,306   $ 364,716 Cash used in investing activities (227,266 )   (111,773 ) Cash used in financing activities (18,456 )   (183,342 ) Increase in cash, cash equivalents and restricted cash 98,584   69,601 Cash, cash equivalents and restricted cash, beginning of year 108,332   25,200 Cash, cash equivalents and restricted cash, end of period $ 206,916   $ 94,801 Net cash provided by operating activities decreased  $20.4 million  to  $344.3 million  during the  nine  months ended  September 30, 2019  from  $364.7 million  during the  nine  months ended  September 30, 2018 . The decrease was primarily attributable to the $14.5 million lease buyout payment at Assembly Square Marketplace in August 2019, $12.4 million in net proceeds from the Jordan Downs Plaza new market tax credit transaction in June 2018, and the timing of cash receipts. Net cash used in investing activities increased  $115.5 million  to  $227.3 million  during the  nine  months ended  September 30, 2019  from  $111.8 million  during the  nine  months ended  September 30, 2018 . The increase was primarily attributable to: • a $41.5 million increase in acquisition of real estate, primarily due to the acquisitions of Fairfax Junction in February 2019 and a retail building in Hoboken, New Jersey in September 2019, • $38.0 million in proceeds from our Assembly Row hotel joint venture formation in August 2018, • a $26.9 million decrease in proceeds from sales of real estate, resulting from a decrease in the sale of condominiums at our Assembly Row and Pike & Rose properties, partially offset by the sale of two properties in 2019, and  24 Table of Contents • an $11.9 million increase in capital expenditures as we continue to invest in Pike & Rose, Assembly Row, Santana Row and other redevelopments. Net cash used in financing activities decreased  $164.9 million  to  $18.5 million  during the  nine  months ended  September 30, 2019  from  $183.3 million  during the  nine  months ended  September 30, 2018 . The decrease was primarily attributable to: • $400.1 million in net proceeds from the issuance of $300.0 million of 3.20% senior unsecured notes in June 2019 and an additional $100.0 million of the same series in August 2019, • a $58.1 million increase in net proceeds from the issuance of 1.0 million common shares under our ATM program at a weighted average price of $134.68 during the  nine  months ended  September 30, 2019 , as compared to 0.6 million common shares at a weighted average price of $127.86 in 2018, and • $14.5 million of repayments on our revolving credit facility in 2018, partially offset by $4.0 million of costs related to the July 2019 amendment,  partially offset by  • a $284.3 million increase in repayment of mortgages, finance leases, and notes payable primarily due to the payoff of our $275.0 million unsecured term loan in June 2019 and the $20.3 million payoff of the mortgage loan on Rollingwood Apartments in January 2019, as compared to the $10.5 million payoff of the mortgage loan on the Grove at Shrewsbury (West) in March 2018, and • an $8.7 million increase in dividends paid to shareholders due to an increase in the common share dividend rate and an increase in the number of common shares outstanding.  25 Table of Contents Debt Financing Arrangements The following is a summary of our total debt outstanding as of  September 30, 2019 : Description of Debt Original Debt Issued   Principal Balance as of September 30, 2019   Stated Interest Rate as of              September 30, 2019   Maturity Date   (Dollar amounts in thousands)         Mortgages payable               Secured fixed rate               The Shops at Sunset Place Acquired   $ 62,761   5.62 %   September 1, 2020 29th Place Acquired   3,939   5.91 %   January 31, 2021 Sylmar Towne Center Acquired   16,727   5.39 %   June 6, 2021 Plaza Del Sol Acquired   8,275   5.23 %   December 1, 2021 The AVENUE at White Marsh 52,705   52,705   3.35 %   January 1, 2022 Montrose Crossing 80,000   67,954   4.20 %   January 10, 2022 Azalea Acquired   40,000   3.73 %   November 1, 2025 Bell Gardens Acquired   12,743   4.06 %   August 1, 2026 Plaza El Segundo 125,000   125,000   3.83 %   June 5, 2027 The Grove at Shrewsbury (East) 43,600   43,600   3.77 %   September 1, 2027 Brook 35 11,500   11,500   4.65 %   July 1, 2029 Chelsea Acquired   5,684   5.36 %   January 15, 2031 Hoboken (1) Acquired   16,951   3.75 %   July 1, 2042 Subtotal     467,839         Net unamortized premium and debt issuance costs     (1,239 )         Total mortgages payable, net     466,600         Notes payable               Revolving credit facility (2) 1,000,000   —   LIBOR + 0.775%   January 19, 2024 Various 7,239   3,953   11.31%   Various through 2028 Subtotal     3,953         Net unamortized debt issuance costs     (64 )         Total notes payable, net     3,889                         Senior notes and debentures               Unsecured fixed rate               2.55% notes 250,000   250,000   2.55 %   January 15, 2021 3.00% notes 250,000   250,000   3.00 %   August 1, 2022 2.75% notes 275,000   275,000   2.75 %   June 1, 2023 3.95% notes 300,000   300,000   3.95 %   January 15, 2024 7.48% debentures 50,000   29,200   7.48 %   August 15, 2026 3.25% notes 475,000   475,000   3.25 %   July 15, 2027 6.82% medium term notes 40,000   40,000   6.82 %   August 1, 2027 3.20% notes 400,000   400,000   3.20 %   June 15, 2029 4.50% notes 550,000   550,000   4.50 %   December 1, 2044 3.625% notes 250,000   250,000   3.625 %   August 1, 2046 Subtotal     2,819,200         Net unamortized discount and debt issuance costs     (12,778 )         Total senior notes and debentures, net     2,806,422                         Total debt, net     $ 3,276,911         _____________________ 1) This mortgage loan has a fixed interest rate, however, the rate resets every five years until maturity. The current interest rate is fixed until July 1, 2022, and the loan is prepayable at par anytime after this date. 2) The maximum amount drawn under our revolving credit facility during the  nine  months ended  September 30, 2019  was  $116.5 million , and the weighted average interest rate on borrowings under our revolving credit facility, before amortization of debt fees, was  3.2% . Our revolving credit facility matures on January 19, 2024, and has two six month extensions at our option.  Our revolving credit facility and other debt agreements include financial and other covenants that may limit our operating activities in the future. As of  September 30, 2019 , we were in compliance with all financial and other covenants related to our revolving credit facility and senior notes. Additionally, as of  September 30, 2019 , we were in compliance with all of the financial and other covenants that could trigger loan default on our mortgage loans. If we were to breach any of these financial   26 Table of Contents and other covenants and did not cure the breach within an applicable cure period, our lenders could require us to repay the debt immediately and, if the debt is secured, could immediately begin proceedings to take possession of the property securing the loan. Many of our debt arrangements, including our public notes and our revolving credit facility, are cross-defaulted, which means that the lenders under those debt arrangements can put us in default and require immediate repayment of their debt if we breach and fail to cure a default under certain of our other debt obligations. As a result, any default under our debt covenants could have an adverse effect on our financial condition, our results of operations, our ability to meet our obligations and the market value of our shares. Our organizational documents do not limit the level or amount of debt that we may incur. The following is a summary of our scheduled principal repayments as of  September 30, 2019 :     Unsecured   Secured   Total     (In thousands)   2019 $ 112   $ 1,452   $ 1,564   2020 613   65,853   66,466    2021 250,682   30,868   281,550    2022 250,758   117,358   368,116    2023 275,787   1,083   276,870    Thereafter 2,045,201   251,225   2,296,426      $ 2,823,153    $ 467,839   $ 3,290,992 (1) __________________ 1) The total debt maturities differ from the total reported on the consolidated balance sheet due to the unamortized net premium/discount and debt issuance costs on mortgage loans, notes payable, and senior notes as of  September 30, 2019 . Interest Rate Hedging We may use derivative instruments to manage exposure to variable interest rate risk. We generally enter into interest rate swaps to manage our exposure to variable interest rate risk and treasury locks to manage the risk of interest rates rising prior to the issuance of debt. We enter into derivative instruments that qualify as cash flow hedges and do not enter into derivative instruments for speculative purposes. The interest rate swaps associated with our cash flow hedges are recorded at fair value on a recurring basis. We assess effectiveness of our cash flow hedges both at inception and on an ongoing basis. The effective portion of changes in fair value of the interest rate swaps associated with our cash flow hedges is recorded in other comprehensive income/loss which is included in accumulated other comprehensive loss on our consolidated balance sheet and our consolidated statement of shareholders' equity. Our cash flow hedges become ineffective if critical terms of the hedging instrument and the debt instrument do not perfectly match such as notional amounts, settlement dates, reset dates, calculation period and LIBOR rate. In addition, we evaluate the default risk of the counterparty by monitoring the credit-worthiness of the counterparty which includes reviewing debt ratings and financial performance. However, management does not anticipate non-performance by the counterparty. If a cash flow hedge is deemed ineffective, the ineffective portion of changes in fair value of the interest rate swaps associated with our cash flow hedges is recognized in earnings in the period affected. As of  September 30, 2019 , our Assembly Row hotel joint venture is party to  two  interest rate swap agreements that effectively fix their debt at  5.206% . Both swaps were designated and qualify for cash flow hedge accounting. Hedge ineffectiveness has not impacted earnings as of  September 30, 2019 . REIT Qualification We intend to maintain our qualification as a REIT under Section 856(c) of the Code. As a REIT, we generally will not be subject to corporate federal income taxes on income we distribute to our shareholders as long as we satisfy certain technical requirements of the Code, including the requirement to distribute at least 90% of our taxable income to our shareholders.  27 Table of Contents Funds From Operations Funds from operations (“FFO”) is a supplemental non-GAAP financial measure of real estate companies’ operating performance. The National Association of Real Estate Investment Trusts (“NAREIT”) defines FFO as follows: net income, computed in accordance with U.S. GAAP, plus real estate related depreciation and amortization and excluding gains and losses on the sale of real estate or changes in control, net of tax, and impairment write-downs of certain real estate assets and investments in entities when the impairment is directly attributable to decreases in the value of depreciable real estate held by the entity. We compute FFO in accordance with the NAREIT definition, and we have historically reported our FFO available for common shareholders in addition to our net income and net cash provided by operating activities. It should be noted that FFO: • does not represent cash flows from operating activities in accordance with GAAP (which, unlike FFO, generally reflects all cash effects of transactions and other events in the determination of net income); • should not be considered an alternative to net income as an indication of our performance; and • is not necessarily indicative of cash flow as a measure of liquidity or ability to fund cash needs, including the payment of dividends. We consider FFO available for common shareholders a meaningful, additional measure of operating performance primarily because it excludes the assumption that the value of the real estate assets diminishes predictably over time, as implied by the historical cost convention of GAAP and the recording of depreciation. We use FFO primarily as one of several means of assessing our operating performance in comparison with other REITs. Comparison of our presentation of FFO to similarly titled measures for other REITs may not necessarily be meaningful due to possible differences in the application of the NAREIT definition used by such REITs. An increase or decrease in FFO available for common shareholders does not necessarily result in an increase or decrease in aggregate distributions because our Board of Trustees is not required to increase distributions on a quarterly basis. However, we must distribute at least  90%  of our annual taxable income to remain qualified as a REIT. Therefore, a significant increase in FFO will generally require an increase in distributions to shareholders although not necessarily on a proportionate basis. The reconciliation of net income to FFO available for common shareholders is as follows:   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018   (In thousands, except per share data) Net income $ 67,106   $ 64,180   $ 211,576   $ 192,644 Net income attributable to noncontrolling interests (1,641 )   (1,622 )   (5,065 )   (5,244 ) Gain on sale of real estate, net (14,293 )   (3,125 )   (30,490 )   (10,413 ) Depreciation and amortization of real estate assets 53,441   54,132   160,253   157,494 Amortization of initial direct costs of leases 4,878   5,232   14,165   14,534 Funds from operations 109,491   118,797   350,439   349,015 Dividends on preferred shares (1,875 )   (1,875 )   (5,625 )   (5,625 ) Income attributable to operating partnership units 658   765   2,048   2,299 Income attributable to unvested shares (314 )   (353 )   (1,004 )   (1,139 ) Funds from operations available for common shareholders (1) $ 107,960   $ 117,334   $ 345,858   344,550 Weighted average number of common shares, diluted (2) 75,554   74,254   75,342   73,992                 Funds from operations available for common shareholders, per diluted share (1) $ 1.43   $ 1.58   $ 4.59   $ 4.66 _____________________ (1) Funds from operations available for common shareholders includes an $11.9 million charge relating to the buyout of a lease at Assembly Square Marketplace. If this charge was excluded, funds from operations available for common shareholders, per diluted share would have been $1.59 and $4.75 for the three and  nine  months ended  September 30, 2019 , respectively. (2) The weighted average common shares used to compute FFO per diluted common share includes operating partnership units and our Series 1 preferred shares that were excluded from the computation of diluted EPS. Conversion of these   28 Table of Contents operating partnership units and preferred shares is dilutive in the computation of FFO per diluted common share but is anti-dilutive for the computation of diluted EPS for the periods presented. ITEM 3.    QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK Our use of financial instruments, such as debt instruments, subjects us to market risk which may affect our future earnings and cash flows, as well as the fair value of our assets. Market risk generally refers to the risk of loss from changes in interest rates and market prices. We manage our market risk by attempting to match anticipated inflow of cash from our operating, investing and financing activities with anticipated outflow of cash to fund debt payments, dividends to common and preferred shareholders, investments, capital expenditures and other cash requirements. We may enter into certain types of derivative financial instruments to further reduce interest rate risk. We use interest rate protection and swap agreements, for example, to convert some of our variable rate debt to a fixed-rate basis or to hedge anticipated financing transactions. We use derivatives for hedging purposes rather than speculation and do not enter into financial instruments for trading purposes.  Interest Rate Risk The following discusses the effect of hypothetical changes in market rates of interest on interest expense for our variable rate debt and on the fair value of our total outstanding debt, including our fixed-rate debt. Interest rate risk amounts were determined by considering the impact of hypothetical interest rates on our debt. Quoted market prices were used to estimate the fair value of our marketable senior notes and debentures and discounted cash flow analysis is generally used to estimate the fair value of our mortgages and notes payable. Considerable judgment is necessary to estimate the fair value of financial instruments. This analysis does not purport to take into account all of the factors that may affect our debt, such as the effect that a changing interest rate environment could have on the overall level of economic activity or the action that our management might take to reduce our exposure to the change. This analysis assumes no change in our financial structure. Fixed Interest Rate Debt The majority of our outstanding debt obligations (maturing at various times through 2046) have fixed interest rates which limit the risk of fluctuating interest rates. However, interest rate fluctuations may affect the fair value of our fixed rate debt instruments. At  September 30, 2019 , we had  $3.3 million  of fixed-rate debt outstanding. If market interest rates used to calculate the fair value on our fixed-rate debt instruments at  September 30, 2019  had been  1.0%  higher, the fair value of those debt instruments on that date would have decreased by approximately  $254.8 million . If market interest rates used to calculate the fair value on our fixed-rate debt instruments at  September 30, 2019  had been  1.0%  lower, the fair value of those debt instruments on that date would have increased by approximately  $293.7 million . Variable Interest Rate Debt Generally, we believe that our primary interest rate risk is due to fluctuations in interest rates on our outstanding variable rate debt. At  September 30, 2019 , our only variable rate debt was our revolving credit facility, which had  no  outstanding balance. ITEM 4.    CONTROLS AND PROCEDURES Periodic Evaluation and Conclusion of Disclosure Controls and Procedures An evaluation has been performed, under the supervision and with the participation of our management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of our disclosure controls and procedures as of  September 30, 2019 . Based on this evaluation, our management, including our Chief Executive Officer and Chief Financial Officer, concluded that our disclosure controls and procedures were effective as of  September 30, 2019  to provide reasonable assurance that information required to be disclosed in our reports filed or submitted under the Securities Exchange Act of 1934 is (i) recorded, processed, summarized and reported within the time periods specified in the rules and forms of the SEC and (ii) accumulated and communicated to the Trust’s management including its principal executive and principal financial officer as appropriate to allow timely decisions regarding required disclosure. Changes in Internal Control Over Financial Reporting There has been no change in our internal control over financial reporting during the quarterly period covered by this report that materially affected, or is reasonably likely to materially affect, our internal control over financial reporting.  29 Table of Contents PART II - OTHER INFORMATION ITEM 1.    LEGAL PROCEEDINGS There have been no material developments in any of our legal proceedings since the disclosure contained in our Annual Report to Form 10-K for the fiscal year ended  December 31, 2018 . ITEM 1A.    RISK FACTORS There have been no material changes to the risk factors previously disclosed in our Annual Report for the year ended  December 31, 2018  filed with the SEC on  February 13, 2019 . These factors include, but are not limited to, the following: • risks that our tenants will not pay rent, may vacate early or may file for bankruptcy or that we may be unable to renew leases or re-let space at favorable rents as leases expire; • risks that we may not be able to proceed with or obtain necessary approvals for any redevelopment or renovation project, and that completion of anticipated or ongoing property redevelopment or renovation projects that we do pursue may cost more, take more time to complete or fail to perform as expected; • risk that we are investing a significant amount in ground-up development projects that may not perform as planned, may be dependent on third parties to deliver critical aspects of certain projects, requires spending a substantial amount upfront in infrastructure, and assumes receipt of public funding which has been committed but not entirely funded; • risks normally associated with the real estate industry, including risks that: • occupancy levels at our properties and the amount of rent that we receive from our properties may be lower than expected, • new acquisitions may fail to perform as expected, • competition for acquisitions could result in increased prices for acquisitions, • that costs associated with the periodic maintenance and repair or renovation of space, insurance and other operations may increase, • environmental issues may develop at our properties and result in unanticipated costs, and • because real estate is illiquid, we may not be able to sell properties when appropriate; • risks that our growth will be limited if we cannot obtain additional capital; • risks associated with general economic conditions, including local economic conditions in our geographic markets; • risks of financing, such as our ability to consummate additional financings or obtain replacement financing on terms which are acceptable to us, our ability to meet existing financial covenants and the limitations imposed on our operations by those covenants, and the possibility of increases in interest rates that would result in increased interest expense; and • risks related to our status as a real estate investment trust, commonly referred to as a REIT, for federal income tax purposes, such as the existence of complex tax regulations relating to our status as a REIT, the effect of future changes in REIT requirements as a result of new legislation, and the adverse consequences of the failure to qualify as a REIT. ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS Under the terms of various partnership agreements of certain of our affiliated limited partnerships, the interest of limited partners in those limited partnerships may be redeemed, subject to certain conditions, for cash or common shares, at our option. During the three months ended  September 30, 2019 , we redeemed 552 downREIT operating partnership units for cash. From time to time, we could be deemed to have repurchased shares as a result of shares withheld for tax purposes upon a stock compensation related vesting event. ITEM 3. DEFAULTS UPON SENIOR SECURITIES None.  30 Table of Contents ITEM 4.    MINE SAFETY DISCLOSURES Not applicable. ITEM 5. OTHER INFORMATION None. ITEM 6. EXHIBITS A list of exhibits to this Quarterly Report on Form 10-Q is set forth on the Exhibit Index immediately preceding such exhibits and is incorporated herein by reference. Table of Contents EXHIBIT INDEX       Exhibit No.   Description       10.1   Amended and Restated Credit Agreement, dated as of July 25, 2019, by and among Federal Realty Investment Trust, each of the Lenders party thereto, and PNC Bank, National Association, as Administrative Agent (previously filed as Exhibit 10.1 to the Trust's Current Report on Form 8-K (File No. 1-07533), filed on July 29, 2019 and incorporated herin by reference)       31.1    Rule 13a-14(a) Certification of Chief Executive Officer (filed herewith)     31.2    Rule 13a-14(a) Certification of Principal Financial Officer (filed herewith)     32.1    Section 1350 Certification of Chief Executive Officer (filed herewith)     32.2    Section 1350 Certification of Principal Financial Officer (filed herewith)     101    The following materials from Federal Realty Investment Trust’s Quarterly Report on Form 10-Q for the quarter ended September 30, 2019, formatted in XBRL (Extensible Business Reporting Language): (1) the Consolidated Balance Sheets, (2) the Consolidated Statements of Comprehensive Income, (3) the Consolidated Statement of Shareholders’ Equity, (4) the Consolidated Statements of Cash Flows, and (5) Notes to Consolidated Financial Statements that have been detail tagged.       104   Cover Page Interactive Data File (formatted in Inline XBRL and contained in Exhibit 101)  32 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto authorized.     FEDERAL REALTY INVESTMENT TRUST     October 30, 2019   /s/    Donald C. Wood             Donald C. Wood,     President, Chief Executive Officer and Trustee     (Principal Financial and Executive Officer)         FEDERAL REALTY INVESTMENT TRUST     October 30, 2019   /s/    Daniel Guglielmone         Daniel Guglielmone,     Executive Vice President     Chief Financial Officer and Treasurer     (Principal Financial and Accounting Officer)      33 	 
+ 

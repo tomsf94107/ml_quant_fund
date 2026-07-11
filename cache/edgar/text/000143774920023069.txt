@@ -1,0 +1,4312 @@
+
+  
+   tech20200930_10q.htm 
+   
+   
+  
+ 0000842023 
+ BIO-TECHNE Corp 
+ false 
+ --06-30 
+ Q1 
+ 2021 
+ 1,429 
+ 775 
+ 0 
+ 0 
+ 5,000,000 
+ 5,000,000 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0.01 
+ 0.01 
+ 100,000,000 
+ 100,000,000 
+ 38,601,131 
+ 38,601,131 
+ 38,453,046 
+ 38,453,046 
+ 6.6 
+ 2.1 
+ 5 
+ Increase in patents and other intangible assets is primarily due to $5.0 million recognized in intangible assets in the first quarter of fiscal 2021 for certain third party patented technology acquired.  
+ The Company had deferred tax benefits of $3,413 and $4,058 included in the accumulated other comprehensive income loss as of September 30, 2020 and  June 30, 2020, respectively. 
+ The changes in other non-operating income (expense) were driven by changes in the fair value of our CCXI investment as further described in Note 5 above. 
+ Included in available-for-sale investments on the balance sheet.  The certificate of deposits have contractual maturity dates within one year. 
+ Finished goods inventory of $4,692 and $4,646 included within other long-term assets in the respective September 30, 2020 and June 30, 2020, consolidated balance sheet. The inventory is included in long-term assets as it forecasted to be sold after the 12 months subsequent to the consolidated balance sheet date.   
+ Included in available-for-sale investments on the balance sheet.   The cost basis in the Company's investment in ChemoCentryx Inc (CCXI) at September 30, 2020 and June 30, 2020 was $6.6 million. The Company has a warrant to purchase additional CCXI equity shares which was valued at $7.4 and $8.0 million as of September 30, 2020 and  June 30 2020, respectively. 
+ Gains (losses) on the interest swap are reclassified into interest expense as payments on the derivative agreement are made. The Company reclassified ($2,769) to interest expense and a related tax benefit tax of $637 during the quarter ended September 30, 2020. 
+ 
+ 
+ 
+ 0000842023 2020-07-01 2020-09-30 
+ xbrli:shares 
+ 0000842023 2020-11-02 
+ thunderdome:item 
+ iso4217:USD 
+ 0000842023 2019-07-01 2019-09-30 
+ iso4217:USD xbrli:shares 
+ 0000842023 2020-09-30 
+ 0000842023 2020-06-30 
+ 0000842023 2020-04-01 2020-09-30 
+ 0000842023 2019-04-01 2019-09-30 
+ 0000842023 2020-03-31 
+ 0000842023 2019-03-31 
+ 0000842023 2019-09-30 
+ 0000842023 us-gaap:AccountingStandardsUpdate201602Member 2020-07-01 
+ 0000842023 tech:ConsumablesMember 2020-07-01 2020-09-30 
+ 0000842023 tech:ConsumablesMember 2019-07-01 2019-09-30 
+ 0000842023 tech:InstrumentsMember 2020-07-01 2020-09-30 
+ 0000842023 tech:InstrumentsMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:ServiceMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:ServiceMember 2019-07-01 2019-09-30 
+ 0000842023 tech:ProductAndServicesMember 2020-07-01 2020-09-30 
+ 0000842023 tech:ProductAndServicesMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:RoyaltyMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:RoyaltyMember 2019-07-01 2019-09-30 
+ 0000842023 country:US 2020-07-01 2020-09-30 
+ 0000842023 country:US 2019-07-01 2019-09-30 
+ 0000842023 tech:EMEAExcludingUKMember 2020-07-01 2020-09-30 
+ 0000842023 tech:EMEAExcludingUKMember 2019-07-01 2019-09-30 
+ 0000842023 country:GB 2020-07-01 2020-09-30 
+ 0000842023 country:GB 2019-07-01 2019-09-30 
+ 0000842023 tech:APACExcludingGreaterChinaMember 2020-07-01 2020-09-30 
+ 0000842023 tech:APACExcludingGreaterChinaMember 2019-07-01 2019-09-30 
+ 0000842023 country:CN 2020-07-01 2020-09-30 
+ 0000842023 country:CN 2019-07-01 2019-09-30 
+ 0000842023 tech:RestOfWorldMember 2020-07-01 2020-09-30 
+ 0000842023 tech:RestOfWorldMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:OtherNoncurrentAssetsMember 2020-09-30 
+ 0000842023 us-gaap:OtherNoncurrentAssetsMember 2020-06-30 
+ 0000842023 us-gaap:LandMember 2020-09-30 
+ 0000842023 us-gaap:LandMember 2020-06-30 
+ 0000842023 us-gaap:BuildingAndBuildingImprovementsMember 2020-09-30 
+ 0000842023 us-gaap:BuildingAndBuildingImprovementsMember 2020-06-30 
+ 0000842023 us-gaap:MachineryAndEquipmentMember 2020-09-30 
+ 0000842023 us-gaap:MachineryAndEquipmentMember 2020-06-30 
+ 0000842023 us-gaap:DevelopedTechnologyRightsMember srt:MinimumMember 2020-09-30 
+ 0000842023 us-gaap:DevelopedTechnologyRightsMember 2020-06-30 
+ 0000842023 us-gaap:TradeNamesMember srt:MinimumMember 2020-09-30 
+ 0000842023 us-gaap:TradeNamesMember 2020-06-30 
+ 0000842023 us-gaap:CustomerRelationshipsMember srt:MinimumMember 2020-09-30 
+ 0000842023 us-gaap:CustomerRelationshipsMember 2020-06-30 
+ 0000842023 us-gaap:PatentsMember srt:MinimumMember 2020-09-30 
+ 0000842023 us-gaap:PatentsMember 2020-06-30 
+ 0000842023 srt:MinimumMember 2020-09-30 
+ 0000842023 us-gaap:PatentedTechnologyMember 2020-07-01 2020-09-30 
+ 0000842023 tech:ProteinSciencesMember 2020-06-30 
+ 0000842023 tech:DiagnosticsAndGenomicsMember 2020-06-30 
+ 0000842023 tech:ProteinSciencesMember 2020-07-01 2020-09-30 
+ 0000842023 tech:DiagnosticsAndGenomicsMember 2020-07-01 2020-09-30 
+ 0000842023 tech:ProteinSciencesMember 2020-09-30 
+ 0000842023 tech:DiagnosticsAndGenomicsMember 2020-09-30 
+ 0000842023 us-gaap:EquitySecuritiesMember 2020-09-30 
+ 0000842023 us-gaap:EquitySecuritiesMember us-gaap:FairValueInputsLevel1Member 2020-09-30 
+ 0000842023 us-gaap:EquitySecuritiesMember us-gaap:FairValueInputsLevel2Member 2020-09-30 
+ 0000842023 us-gaap:EquitySecuritiesMember us-gaap:FairValueInputsLevel3Member 2020-09-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember 2020-09-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember us-gaap:FairValueInputsLevel1Member 2020-09-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember us-gaap:FairValueInputsLevel2Member 2020-09-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember us-gaap:FairValueInputsLevel3Member 2020-09-30 
+ 0000842023 us-gaap:FairValueInputsLevel1Member 2020-09-30 
+ 0000842023 us-gaap:FairValueInputsLevel2Member 2020-09-30 
+ 0000842023 us-gaap:FairValueInputsLevel3Member 2020-09-30 
+ 0000842023 us-gaap:EquitySecuritiesMember 2020-06-30 
+ 0000842023 us-gaap:EquitySecuritiesMember us-gaap:FairValueInputsLevel1Member 2020-06-30 
+ 0000842023 us-gaap:EquitySecuritiesMember us-gaap:FairValueInputsLevel2Member 2020-06-30 
+ 0000842023 us-gaap:EquitySecuritiesMember us-gaap:FairValueInputsLevel3Member 2020-06-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember 2020-06-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember us-gaap:FairValueInputsLevel1Member 2020-06-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember us-gaap:FairValueInputsLevel2Member 2020-06-30 
+ 0000842023 us-gaap:CertificatesOfDepositMember us-gaap:FairValueInputsLevel3Member 2020-06-30 
+ 0000842023 us-gaap:FairValueInputsLevel1Member 2020-06-30 
+ 0000842023 us-gaap:FairValueInputsLevel2Member 2020-06-30 
+ 0000842023 us-gaap:FairValueInputsLevel3Member 2020-06-30 
+ 0000842023 tech:CCXIMember 2020-06-30 
+ 0000842023 tech:CCXIMember 2020-09-30 
+ 0000842023 us-gaap:EmbeddedDerivativeFinancialInstrumentsMember us-gaap:CashFlowHedgingMember 2018-10-31 
+ 0000842023 us-gaap:EmbeddedDerivativeFinancialInstrumentsMember us-gaap:CashFlowHedgingMember 2020-10-01 2020-10-31 
+ 0000842023 us-gaap:EmbeddedDerivativeFinancialInstrumentsMember us-gaap:CashFlowHedgingMember 2021-10-01 2021-10-31 
+ 0000842023 us-gaap:EmbeddedDerivativeFinancialInstrumentsMember us-gaap:CashFlowHedgingMember 2022-10-01 2022-10-31 
+ 0000842023 us-gaap:EmbeddedDerivativeFinancialInstrumentsMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:OtherNoncurrentLiabilitiesMember us-gaap:EmbeddedDerivativeFinancialInstrumentsMember us-gaap:CashFlowHedgingMember 2020-06-30 
+ 0000842023 tech:QTHoldingsCorporationMember 2020-09-30 
+ 0000842023 tech:BMoGenMember 2020-09-30 
+ 0000842023 2019-07-01 
+ 0000842023 tech:QTHoldingsCorporationMember 2018-07-02 
+ 0000842023 tech:BMoGenMember 2019-06-04 
+ 0000842023 us-gaap:FairValueInputsLevel3Member tech:ContingentConsiderationMember 2020-06-30 
+ 0000842023 us-gaap:FairValueInputsLevel3Member tech:ContingentConsiderationMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:FairValueInputsLevel3Member tech:ContingentConsiderationMember 2020-09-30 
+ 0000842023 us-gaap:RevolvingCreditFacilityMember tech:CreditAgreementMember 2018-08-01 
+ 0000842023 tech:CreditAgreementMember tech:TermLoanMember 2018-08-01 
+ xbrli:pure 
+ 0000842023 us-gaap:RevolvingCreditFacilityMember tech:CreditAgreementMember 2020-07-01 2020-09-30 
+ 0000842023 tech:CreditAgreementMember 2020-09-30 
+ utr:Y 
+ 0000842023 srt:MaximumMember 2020-09-30 
+ 0000842023 us-gaap:CommonStockMember 2020-06-30 
+ 0000842023 us-gaap:AdditionalPaidInCapitalMember 2020-06-30 
+ 0000842023 us-gaap:RetainedEarningsMember 2020-06-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2020-06-30 
+ 0000842023 srt:CumulativeEffectPeriodOfAdoptionAdjustmentMember us-gaap:RetainedEarningsMember 2020-06-30 
+ 0000842023 srt:CumulativeEffectPeriodOfAdoptionAdjustmentMember 2020-06-30 
+ 0000842023 us-gaap:RetainedEarningsMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:CommonStockMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:AdditionalPaidInCapitalMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:CommonStockMember 2020-09-30 
+ 0000842023 us-gaap:AdditionalPaidInCapitalMember 2020-09-30 
+ 0000842023 us-gaap:RetainedEarningsMember 2020-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2020-09-30 
+ 0000842023 us-gaap:CommonStockMember 2019-06-30 
+ 0000842023 us-gaap:AdditionalPaidInCapitalMember 2019-06-30 
+ 0000842023 us-gaap:RetainedEarningsMember 2019-06-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2019-06-30 
+ 0000842023 2019-06-30 
+ 0000842023 srt:CumulativeEffectPeriodOfAdoptionAdjustmentMember us-gaap:RetainedEarningsMember 2019-06-30 
+ 0000842023 srt:CumulativeEffectPeriodOfAdoptionAdjustmentMember 2019-06-30 
+ 0000842023 us-gaap:RetainedEarningsMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:CommonStockMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:AdditionalPaidInCapitalMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:CommonStockMember 2019-09-30 
+ 0000842023 us-gaap:AdditionalPaidInCapitalMember 2019-09-30 
+ 0000842023 us-gaap:RetainedEarningsMember 2019-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2019-09-30 
+ 0000842023 us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember us-gaap:AccumulatedOtherComprehensiveIncomeMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 2020-06-30 
+ 0000842023 us-gaap:AccumulatedTranslationAdjustmentMember 2020-06-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeLossDerivativeQualifyingAsHedgeExcludedComponentIncludingPortionAttributableToNoncontrollingInterestMember 2020-06-30 
+ 0000842023 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:AccumulatedTranslationAdjustmentMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeLossDerivativeQualifyingAsHedgeExcludedComponentIncludingPortionAttributableToNoncontrollingInterestMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 2020-09-30 
+ 0000842023 us-gaap:AccumulatedTranslationAdjustmentMember 2020-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeLossDerivativeQualifyingAsHedgeExcludedComponentIncludingPortionAttributableToNoncontrollingInterestMember 2020-09-30 
+ 0000842023 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 2019-06-30 
+ 0000842023 us-gaap:AccumulatedTranslationAdjustmentMember 2019-06-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeLossDerivativeQualifyingAsHedgeExcludedComponentIncludingPortionAttributableToNoncontrollingInterestMember 2019-06-30 
+ 0000842023 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:AccumulatedTranslationAdjustmentMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeLossDerivativeQualifyingAsHedgeExcludedComponentIncludingPortionAttributableToNoncontrollingInterestMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 2019-09-30 
+ 0000842023 us-gaap:AccumulatedTranslationAdjustmentMember 2019-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeLossDerivativeQualifyingAsHedgeExcludedComponentIncludingPortionAttributableToNoncontrollingInterestMember 2019-09-30 
+ 0000842023 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2019-07-01 2020-06-30 
+ 0000842023 us-gaap:RestrictedStockUnitsRSUMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:RestrictedStockUnitsRSUMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:RestrictedStockMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:RestrictedStockMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:SellingGeneralAndAdministrativeExpensesMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:SellingGeneralAndAdministrativeExpensesMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:CostOfSalesMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:CostOfSalesMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:OperatingSegmentsMember tech:ProteinSciencesMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:OperatingSegmentsMember tech:ProteinSciencesMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:OperatingSegmentsMember tech:DiagnosticsAndGenomicsMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:OperatingSegmentsMember tech:DiagnosticsAndGenomicsMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:IntersegmentEliminationMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:IntersegmentEliminationMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:OperatingSegmentsMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:OperatingSegmentsMember 2019-07-01 2019-09-30 
+ 0000842023 us-gaap:CorporateNonSegmentMember 2020-07-01 2020-09-30 
+ 0000842023 us-gaap:CorporateNonSegmentMember 2019-07-01 2019-09-30 
+ 0000842023 tech:ChangzhouEminenceBiotechnologyMember us-gaap:SubsequentEventMember 2020-10-20 
+ 0000842023 tech:ChangzhouEminenceBiotechnologyMember us-gaap:SubsequentEventMember 2020-10-20 2020-10-20 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+     
+   
+     
+   
+ Table of Contents 
+   
+ 
+ UNITED STATES 
+ SECURITIES AND EXCHANGE COMMISSION 
+ Washington, DC 20549 
+   
+ 
+ FORM  10-Q 
+   ☒     QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+ 
+   
+ For the quarterly period ended  September 30, 2020 , or 
+   
+   ☐     TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+ 
+   
+ For the transition period from                          to                      
+   
+ Commission file number  0-17272   
+   
+ 
+ BIO-TECHNE CORPORATION 
+ (Exact name of registrant as specified in its charter) 
+ 
+   
+   Minnesota     41-1427402   
+   (State or other jurisdiction of     (I.R.S. Employer   
+ incorporation or organization) Identification No.) 
+             
+   614 McKinley Place N.E.         
+ Minneapolis ,  MN   55413 ( 612 )  379-8854 
+   (Address of principal executive offices) (Zip Code)     (Registrant's telephone number, including area code)   
+ 
+   
+   
+ 
+ Securities registered pursuant to Section 12(b) of the Exchange Act: 
+   
+   Title of each class     Trading Symbol(s)     Name of each exchange on which registered   
+   Common Stock, $0.01 par value     TECH     The  NASDAQ  Stock Market LLC   
+ 
+   
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes   ☒    No  ☐ 
+   
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes   ☒    No  ☐ 
+   
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act. 
+   
+   Large accelerated filer      ☒     Accelerated filer     ☐   
+                         
+   Non-accelerated filer      ☐     Smaller reporting company     ☐   
+                         
+               Emerging growth company     ☐   
+ 
+   
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+   
+ Indicate by check mark whether the Registrant is a shell company (as defined in Exchange Act Rule 12b- 2).     ☐   Yes    ☒  No 
+   
+ At November 2, 2020,  38,609,307  shares of the Company's Common Stock (par value $0.01) were outstanding. 
+   
+ 
+  
+   
+    
+     
+    
+   
+  
+  
+  
+   
+    
+     Table of Contents 
+    
+   
+  
+ 
+   
+    
+     
+       
+     
+    
+   
+     
+   
+     
+   
+   
+    TABLE OF CONTENTS 
+      
+    
+     
+      
+             
+             
+         Page   
+      
+
+      
+         PART I. FINANCIAL INFORMATION     
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 1.   
+         Condensed Consolidated Financial Statements (Unaudited)   
+         1   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 2.   
+         Management's Discussion and Analysis of Financial Condition and Results of Operations   
+         19   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 3.   
+         Quantitative and Qualitative Disclosures about Market Risk   
+         25   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 4.   
+         Controls and Procedures   
+         26   
+      
+
+      
+             
+             
+             
+      
+
+      
+         PART II: OTHER INFORMATION   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 1.   
+         Legal Proceedings   
+         27   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 1A.   
+         Risk Factors   
+         27   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 2.   
+         Unregistered Sales of Equity Securities and Use of Proceeds   
+         28   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 3.   
+         Defaults Upon Senior Securities   
+         28   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 4.   
+         Mine Safety Disclosures   
+         28   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 5.   
+         Other Information   
+         28   
+      
+
+      
+             
+             
+             
+      
+
+      
+         Item 6.   
+         Exhibits   
+         29   
+      
+
+      
+             
+             
+             
+      
+
+      
+             
+         SIGNATURES   
+         31   
+      
+
+     
+    
+      
+    
+     
+      
+       
+         
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+     
+   
+   PART I. FINANCIAL INFORMATION 
+     
+   ITEM 1. CONDENSED CONSOLIDATED FINANCIAL STATEMENTS 
+     
+   CONDENSED CONSOLIDATED STATEMENTS OF EARNINGS 
+   AND COMPREHENSIVE INCOME 
+   Bio-Techne Corporation and Subsidiaries 
+   (in thousands, except per share data) 
+   (unaudited) 
+     
+   
+          Quarter Ended     
+       September 30,     
+       2020         2019     
+   Net sales     $ 204,199     $ 183,243   
+   Cost of sales       66,468       64,829   
+   Gross margin       137,731       118,414   
+   Operating expenses:                   
+   Selling, general and administrative       72,598       69,010   
+   Research and development       16,041       16,077   
+   Total operating expenses       88,639       85,087   
+   Operating income       49,092       33,327   
+   Other (expense) income       ( 9,753   )       ( 15,521   )   
+   Earnings before income taxes       39,339       17,806   
+   Income taxes       5,944       3,408   
+   Net earnings     $ 33,395     $ 14,398   
+   Other comprehensive income (loss):                   
+   Foreign currency translation adjustments       11,914           ( 7,602   )   
+   Derivative instruments - cash flow hedges (Note 7)       
+        
+         2,143 
+                    ( 504 ) 
+   Other comprehensive income (loss)       14,057           ( 8,106   )   
+   Comprehensive income     $ 47,452     $ 6,292   
+   Earnings per share:                   
+   Basic     $ 0.87     $ 0.38   
+   Diluted     $ 0.83     $ 0.37   
+                   
+   Weighted average common shares outstanding:                   
+   Basic       38,536       38,032   
+   Diluted       40,025       39,253   
+ 
+   
+     
+     
+   See Notes to Condensed Consolidated Financial Statements. 
+     
+   
+    
+     
+      
+       1
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+     
+   
+   CONDENSED CONSOLIDATED BALANCE SHEETS 
+   Bio-Techne Corporation and Subsidiaries 
+   (in thousands, except share and per share data) 
+     
+   
+          September 30,  2020  (unaudited)         June 30,  2020     
+   ASSETS                   
+   Current assets:                   
+   Cash and cash equivalents     $ 169,404     $ 146,625   
+   Short-term available-for-sale investments       117,986       124,268   
+   Accounts receivable, net of  $1,429  and  $775  of reserves, respectively       122,635       122,534   
+   Inventories       106,003       103,152   
+   Other current assets       25,865       24,341   
+   Total current assets       541,893       520,920   
+                   
+   Property and equipment, net       191,677       176,829   
+   Right of use asset       70,018       71,465   
+   Goodwill       731,636       728,308   
+   Intangible assets, net       507,591       516,545   
+   Other assets       10,281       13,522   
+   Total assets     $ 2,053,096     $ 2,027,589   
+   LIABILITIES AND SHAREHOLDERS' EQUITY                   
+   Current liabilities:                   
+   Trade accounts payable     $ 27,190     $ 23,090   
+   Salaries, wages and related accruals       21,805       31,087   
+   Accrued expenses       13,004       9,093   
+   Contract liabilities       13,285       13,049   
+   Income taxes payable       2,157       2,376   
+   Operating lease liabilities - current       9,695       9,535   
+   Contingent consideration payable       5,788       5,938   
+   Current portion of long-term debt obligations       12,500       12,500   
+   Total current liabilities       105,424       106,668   
+                   
+   Deferred income taxes       101,374       101,090   
+   Long-term debt obligations       311,139       344,243   
+   Long-term contingent consideration payable       199       199   
+   Operating lease liabilities       65,694       67,248   
+   Other long-term liabilities       29,981       26,949   
+   Shareholders' equity:                   
+                   
+   Undesignated capital stock,  no  par; authorized  5,000,000  shares;  none  issued or outstanding       -       -   
+   Common stock, par value  $.01  per share; authorized  100,000,000 ; issued and outstanding  38,601,131  and  38,453,046 , respectively       386       385   
+   Additional paid-in capital       448,679       420,536   
+   Retained earnings       1,073,362       1,057,470   
+   Accumulated other comprehensive loss       ( 83,142   )       ( 97,199   )   
+   Total shareholders' equity       1,439,285       1,381,192   
+   Total liabilities and shareholders’ equity     $ 2,053,096     $ 2,027,589   
+ 
+   
+     
+     
+   See Notes to Condensed Consolidated Financial Statements. 
+     
+   
+    
+     
+      
+       2
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+     
+   
+   CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS 
+   Bio-Techne Corporation and Subsidiaries 
+   (in thousands) 
+   (unaudited) 
+     
+   
+          Quarter Ended     
+       September 30,     
+       2020         2019     
+   CASH FLOWS FROM OPERATING ACTIVITIES:                   
+   Net earnings     $ 33,395     $ 14,398   
+   Adjustments to reconcile net earnings to net cash provided by operating activities:                   
+   Depreciation and amortization       21,088       20,085   
+   Deferred income taxes       ( 452   )       ( 607   )   
+   Stock-based compensation expense       12,953       8,366   
+   Fair value adjustment to contingent consideration payable       ( 150 )     700       
+   Fair value adjustment on available for sale investments       4,351       10,401   
+   Other operating activity       195       164   
+   Change in operating assets and operating liabilities, net of acquisition:                   
+   Trade accounts and other receivables, net       910           ( 1,405 ) 
+   Inventories       ( 1,968   )       ( 720   )   
+   Other current assets       1,632           ( 2,549   )   
+   Trade accounts payable, accrued expenses, contract liabilities, and other       6,918       1,456   
+   Salaries, wages and related accruals       ( 11,480   )       ( 10,983   )   
+   Income taxes payable       ( 1,383 )     1,233       
+   Net cash provided by operating activities       66,009       40,539   
+                   
+   CASH FLOWS FROM INVESTING ACTIVITIES:                   
+   Proceeds from maturities of available-for-sale investments       29,039       11,311   
+   Purchases of available-for-sale investments       ( 26,239   )       ( 15,871   )   
+   Additions to property and equipment       ( 10,938   )       ( 10,525   )   
+   Net cash used in investing activities       ( 8,138   )       ( 15,085   )   
+                   
+   CASH FLOWS FROM FINANCING ACTIVITIES:                   
+   Cash dividends       ( 12,336   )       ( 12,169   )   
+   Proceeds from stock option exercises       15,418       8,952   
+   Repayments of long-term debt       ( 33,125   )       ( 19,125   )   
+   Other financing activity       ( 4,890   )       ( 1,927   )   
+   Net cash provided by (used in) financing activities       ( 34,933   )       ( 24,269 ) 
+                   
+   Effect of exchange rate changes on cash and cash equivalents       ( 159   )       ( 2,180   )   
+   Net decrease in cash and cash equivalents       22,779           ( 995   )   
+   Cash and cash equivalents at beginning of period       146,625       100,886   
+   Cash and cash equivalents at end of period     $ 169,404     $ 99,891   
+                   
+   Supplemental disclosure of cash flow information:                   
+   Cash paid for income taxes     $ 6,034     $ 2,452   
+   Cash paid for interest     $ 4,237     $ 5,092   
+ 
+   
+     
+   See Notes to Condensed Consolidated Financial Statements. 
+     
+   
+    
+     
+      
+       3
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS 
+   Bio-Techne Corporation and Subsidiaries 
+   (unaudited) 
+     
+     
+   
+     
+   
+   
+    Note  1.  Basis of Presentation and Summary of Significant Accounting Policies: 
+      
+    The interim consolidated financial statements of Bio-Techne Corporation and subsidiaries, (the Company) presented here have been prepared by the Company and are unaudited. They have been prepared in accordance with accounting principles generally accepted in the United States of America and with instructions to Form  10 -Q and Article  10  of Regulation S- X.  They reflect all adjustments which are, in the opinion of management, necessary for a fair presentation of the results for the interim periods presented. All such adjustments are of a normal recurring nature. 
+      
+    Certain information and footnote disclosures normally included in financial statements prepared in accordance with accounting principles generally accepted in the United States of America have been condensed or omitted. These interim unaudited condensed consolidated financial statements should be read in conjunction with the Company's Consolidated Financial Statements and Notes thereto for the fiscal year ended   June  30,   2020,  included in the Company's Annual Report on Form  10 -K for fiscal year  2020.  A summary of significant accounting policies followed by the Company is detailed in the Company's Annual Report on Form  10 -K for fiscal year  2020.  The Company follows these policies in preparation of the interim unaudited condensed consolidated financial statements. 
+      
+    During the  first  quarter of fiscal  2021,  the Company operated under  two  operating segments, Protein Sciences and Diagnostics and Genomics. The operating segments the Company operated under were consistent with the Company's operating segments disclosed in the Company's Annual Report on Form  10 -K for fiscal  2020.   
+      
+    Recently Adopted Accounting Pronouncements 
+      
+    In   June 2016,  the FASB issued ASU  2016 - 13,   Financial Instruments - Credit Losses (Topic  326 ), Measurement of Credit Losses on Financial Instruments . The amendment in this update replaced the previous incurred loss impairment methodology with a methodology that reflects expected credit losses on financial instruments within its scope, including trade and loan receivables and available-for-sale debt securities. This update is intended to provide financial statement users with more decision-useful information about the expected credit losses. The Company adopted this standard on   July 1, 2020  using a modified retrospective transition approach with a cumulative impact of $ 0.3  million to retained earnings. The adoption of this ASU did  not  have a material impact on the Company's financial statements as the Company's primary financial instruments impacted by the ASU were trade accounts receivable, where we have high historical and expected future collections due to the length of receivables and the credit quality of our customers.  
+      
+    In   August 2018,  the FASB issued ASU  No.   2018 - 15,   Customer's Accounting for Implementation Costs Incurred in a Cloud Computing Arrangement That Is a Service Contract . The standard aligns the requirements for capitalizing implementation costs incurred in a hosting arrangement that is a service contract with the requirements for capitalizing implementation costs incurred to develop or obtain internal-use software. The accounting for the service element of a hosting arrangement that is a service contract is  not  affected by the new standard.  The Company adopted this standard on a prospective basis on   July 1, 2020.  The Company will record eligible costs to be capitalized within prepaid assets or other non-current assets depending on the nature of the duration of the asset.   
+      
+    Pronouncements Issued But  Not  Yet Adopted 
+      
+    In   March 2020,  the FASB issued ASU  No.   2020 - 04 ,   Facilitation of the Effects of Reference Rate Reform on Financial Reporting . This ASU provides expedients and exceptions to existing guidance on contract modifications and hedge accounting that is optional to facilitate the market transition from a reference rate, including LIBOR which is being phased out in  2021,  to a new reference rate. The provisions of the ASU would impact contract modifications and other changes that occur while LIBOR is phased out. The Company is in the process of evaluating the optional relief guidance provided within this ASU and is also reviewing its debt and derivative instrument that utilizes LIBOR as the reference rate. The Company will continue to evaluate and monitor developments and our assessment of ASU  2020 - 04  during the LIBOR transition period. 
+      
+    
+     
+      
+       
+        4 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note  2.  Revenue Recognition: 
+      
+    Consumables revenues consist of single-use products and are recognized at a point in time following the transfer of control of such products to the customer, which generally occurs upon shipment. Instruments revenues typically consist of longer-lived assets that, for the substantial majority of sales, are recognized at a point in time in a manner similar to consumables. Service revenues consist of extended warranty contracts, post contract support (“PCS”), and custom development projects that are recognized over time as either the customers receive and consume the benefits of such services simultaneously or the underlying asset being developed has  no  alternative use for the Company at contract inception and the Company has an enforceable right to payment for the portion of the performance completed. Service revenues also include laboratory services recognized at point in time. Prior to fiscal year  2021,  the Company has  not  recognized revenue upon completion of the performance obligation for laboratory services, but rather upon cash receipt, which was subsequent to the performance obligation being satisfied. The Company accounted for these services based on cash receipts as we did  not  have significant historical experience collecting payments from Medicare or other insurance providers and considered the variable consideration for such services to be constrained as it would  not  be probable that a significant amount of revenue would  not  need to be reversed in future periods for the services provided. Given Medicare coverage for our laboratory services became effective on   December 1, 2019,  the Company considered it to have sufficient data to estimate variable consideration as of   July 1, 2020  for laboratory services that are reimbursed by Medicare. The amount of cash received in fiscal year  2021  for laboratory services reimbursed by Medicare that were performed prior to   July 1, 2020  was approximately $ 0.5  million. The Company continues to record revenue based on cash receipts for laboratory services  not  reimbursed by Medicare, as the variable consideration remains constrained. We recognize royalty revenues in the period the sales occur using  third  party evidence. The Company elected the "right to invoice" practical expedient based on the Company's right to invoice a customer at an amount that approximates the value to the customer and the performance completed to date.  
+      
+    The Company elected the exemption to  not  disclose the unfulfilled performance obligations for contracts with an original length of  one  year or less and the exemption to exclude future performance obligations that are accounted under the sales-based or usage-based royalty guidance. The Company’s unfulfilled performance obligations were  not  material as of   September 30, 2020. 
+       
+    Contracts with customers that contain instruments   may  include multiple performance obligations. For these contracts, the Company allocates the contract’s transaction price to each performance obligation on a relative standalone selling price basis. Allocation of the transaction price is determined at the contracts’ inception. 
+       
+    Payment terms for shipments to end-users are generally net  30  days. Payment terms for distributor shipments   may  range from  30  to  90  days. Service arrangements commonly call for payments in advance of performing the work (e.g. extended warranty and service contracts), upon completion of the service (e.g. custom development manufacturing) or a mix of both. 
+      
+    Contract assets include revenues recognized in advance of billings. Contract assets are included within other current assets in the accompanying balance sheet as the amount of time expected to lapse until the company's right to consideration becomes unconditional is less than  one  year. We elected the practical expedient allowing us to expense contract costs that would otherwise be capitalized and amortized over a period of less than  one  year. Contract assets as of   September 30, 2020  are  not  material. 
+      
+    Contract liabilities include billings in excess of revenues recognized, such as those resulting from customer advances and deposits and unearned revenue on warranty contracts. Contract liabilities as of   September 30, 2020  and   June 30, 2020  were approximately $ 13.4  million and $ 14.2  million, respectively. Contract liabilities as of   June 30, 2020  subsequently recognized as revenue during the quarter period ended   September 30, 2020  were $ 4.8  million. Contract liabilities in excess of  one  year are included in other long-term liabilities in the consolidated balance sheet. 
+      
+    
+     
+      
+       
+        5 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    Any claims for credit or return of goods must be made within  10  days of receipt. Revenues are reduced to reflect estimated credits and returns. Although the amounts recorded for these revenue deductions are dependent on estimates and assumptions, historically our adjustments to actual results have  not  been material. 
+      
+    Taxes collected from customers relating to product sales and remitted to governmental authorities are excluded from revenue. Amounts billed to customers for shipping and handling are included in revenue, while the related shipping and handling costs are reflected in cost of products. We elected the practical expedient that allows us to account for shipping and handling activities that occur after the customer has obtained control of a good as a fulfillment cost, and we accrue costs of shipping and handling when the related revenue is recognized. 
+      
+    The following tables present our disaggregated revenue for the periods presented. 
+      
+    Revenue by type is as follows: 
+      
+    
+     
+      
+       
+          
+          
+          Quarter Ended   
+          
+       
+
+       
+          
+          
+          September 30,   
+          
+       
+
+       
+          
+          
+          2020   
+          
+          
+          2019   
+          
+       
+
+       
+          Consumables   
+          
+        $ 
+        166,627 
+          
+          
+        $ 
+        151,445 
+          
+       
+
+       
+          Instruments   
+          
+          
+        19,572 
+          
+          
+          
+        16,993 
+          
+       
+
+       
+          Services   
+          
+          
+        15,464 
+          
+          
+          
+        10,623 
+          
+       
+
+       
+          Total product and services revenue, net   
+          
+        $ 
+        201,663 
+          
+          
+        $ 
+        179,061 
+          
+       
+
+       
+          Royalty revenues   
+          
+          
+        2,536 
+          
+          
+          
+        4,182 
+          
+       
+
+       
+          Total revenues, net   
+          
+        $ 
+        204,199 
+          
+          
+        $ 
+        183,243 
+          
+       
+
+      
+     
+    
+      
+    Revenue by geography is as follows: 
+      
+    
+           Quarter Ended     
+       September 30,     
+       2020         2019     
+   United States     $ 113,561     $ 102,352   
+   EMEA, excluding United Kingdom       43,134       38,804   
+   United Kingdom       8,534       7,589   
+   APAC, excluding Greater China       15,734       14,005   
+   Greater China       18,052       16,080   
+   Rest of World       5,184       4,413   
+   Net sales      $ 204,199     $ 183,243   
+ 
+    
+      
+    
+     
+      
+       
+        6 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note  3.  Selected Balance Sheet Data: 
+      
+    Inventories: 
+      
+    Inventories consist of (in thousands): 
+      
+    
+           September 30,         June 30,     
+       2020         2020     
+   Raw materials     $ 52,808     $ 51,530   
+   Finished goods (1)       57,887       56,268   
+   Inventories, net     $ 110,695     $ 107,798   
+ 
+    
+      
+    ( 1 ) Finished goods inventory of $ 4,692  and $ 4,646  included within other long-term assets in the respective   September 30, 2020  and   June 30, 2020,  consolidated balance sheet. The inventory is included in long-term assets as it is forecasted to be sold after the  12  months subsequent to the consolidated balance sheet date.   
+      
+    Property and Equipment: 
+      
+    Property and equipment consist of (in thousands): 
+      
+    
+           September 30,         June 30,     
+       2020         2020     
+   Land     $ 8,536     $ 8,516   
+   Buildings and improvements       185,606       184,430   
+   Machinery and equipment       172,955       153,704   
+   Property and equipment, cost       367,097       346,650   
+   Accumulated depreciation and amortization       ( 175,420   )       ( 169,821   )   
+   Property and equipment, net     $ 191,677     $ 176,829   
+ 
+    
+      
+    Intangible Assets: 
+      
+    Intangible assets consist of (in thousands): 
+      
+    
+           September 30,         June 30,     
+       2020         2020     
+   Developed technology     $ 435,761     $ 434,653   
+   Trade names       143,926       146,713   
+   Customer relationships       213,769       211,750   
+   Patents and other intangibles ( 1)       8,138       2,475   
+   Intangible assets       801,594       795,591   
+   Accumulated amortization       ( 294,003   )       ( 279,046   )   
+   Intangible assets, net     $ 507,591     $ 516,545   
+ 
+    
+      
+    ( 1 ) Increase in patents and other intangible assets is primarily due to $ 5.0  million recognized in intangible assets in the  first  quarter of fiscal  2021  for certain  third  party patented technology acquired. The  $5.0  million for the  third  party patented technology acquired was a non-cash activity within the condensed consolidated statement of cash flows as a cash payment was  not  made within the fiscal quarter.  
+      
+    
+     
+      
+       
+        7 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    Changes to the carrying amount of net intangible assets for the quarter ended   September  30,   2020  consist of (in thousands): 
+      
+    
+       Beginning balance     $ 516,545   
+   Acquisitions       -   
+   Other additions       5,135   
+   Amortization expense       ( 15,575   )   
+   Currency translation       1,486       
+   Ending balance     $ 507,591   
+ 
+    
+      
+    The estimated future amortization expense for intangible assets as of   September  30,   2020  is as follows (in thousands): 
+      
+    
+       2021 remainder     $ 44,908   
+   2022       58,326   
+   2023       56,447   
+   2024       53,892   
+   2025       50,698   
+   Thereafter       243,320   
+   Total     $ 507,591   
+ 
+    
+      
+    Goodwill: 
+      
+    Changes to the carrying amount of goodwill for the quarter ended   September  30,   2020  consist of (in thousands): 
+      
+    
+           Protein Sciences         Diagnostics and   Genomics         Total     
+   Beginning balance     $ 373,081       355,229     $ 728,310   
+   Currency translation       3,211           115           3,326       
+   Ending balance     $ 376,292     $   355,344       $ 731,636   
+ 
+    
+      
+    We evaluate the carrying value of goodwill in the  fourth  quarter of each fiscal year and between annual evaluations if events occur or circumstances change that would indicate a possible impairment. The Company performed a goodwill impairment assessment for all of its reporting units during the  fourth  quarter of fiscal  2020.   No  indicators of impairment were identified as part of our assessment.  
+      
+    No  triggering events were identified during the quarter ended   September 30, 2020.  There has been  no  impairment of goodwill since the adoption of Financial Accounting Standards Board (“FASB”) ASC  350  guidance for goodwill and other intangibles on   July 1, 2002. 
+      
+    
+     
+      
+       
+        8 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note   4.  Fair Value Measurements: 
+      
+    The Company’s financial instruments include cash and cash equivalents, available for sale investments, derivative instruments, accounts receivable, accounts payable, contingent consideration obligations, and long-term debt. 
+      
+    Fair value is defined as the amount that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants as of the measurement date. This standard also establishes a hierarchy for inputs used in measuring fair value. This standard maximizes the use of observable inputs and minimizes the use of unobservable inputs by requiring that the most observable inputs be used when available. Observable inputs are inputs market participants would use in valuing the asset or liability based on market data obtained from independent sources. Unobservable inputs are inputs that reflect our assumptions about the factors market participants would use in valuing the asset or liability based upon the best information available in the circumstances. 
+      
+    The categorization of financial assets and liabilities within the valuation hierarchy is based upon the lowest level of input that is significant to the fair value measurement. The hierarchy is broken down into  three  levels. Level  1  inputs are quoted prices in active markets for identical assets or liabilities. Level  2  inputs include quoted prices for similar assets or liabilities in active markets, quoted prices for identical or similar assets or liabilities in markets that are  not  active, and inputs (other than quoted prices) that are observable for the asset or liability, either directly or indirectly. Level  3  inputs are unobservable for the asset or liability and their fair values are determined using pricing models, discounted cash flow methodologies or similar techniques and at least  one  significant model assumption or input is unobservable. Level  3    may  also include certain investment securities for which there is limited market activity or a decrease in the observability of market pricing for the investments, such that the determination of fair value requires significant judgment or estimation. 
+      
+    The following tables provide information by level for financial assets and liabilities that are measured at fair value on a recurring basis (in thousands): 
+      
+    
+           Total   carrying   value as of         Fair Value Measurements Using   Inputs Considered as     
+       September   30,    2020         Level 1         Level 2         Level 3     
+   Assets                                   
+   Equity securities  (1)     $ 83,491     $ 76,043     $ 7,448     $ -   
+   Certificates of deposit  (2)       34,495       34,495       -       -   
+   Total assets     $ 117,986     $ 110,538     $ 7,448     $ -   
+                                   
+   Liabilities                                   
+   Contingent consideration     $ 5,987     $ -     $ -     $ 5,987   
+   Derivative instruments - cash flow hedges       14,523       -       14,523       -   
+   Total liabilities     $ 20,510     $ -     $ 14,523     $ 5,987   
+ 
+    
+      
+    
+           Total   carrying   value as of         Fair Value Measurements Using   Inputs Considered as     
+       June 30,   2020         Level 1         Level 2         Level 3     
+   Assets                                   
+   Equity securities  (1)     $ 87,842     $ 79,846     $ 7,996     $ -   
+   Certificates of deposit  (2)       36,426       36,426       -       -   
+   Total assets     $ 124,268     $ 116,272     $ 7,996     $ -   
+                                   
+   Liabilities                                   
+   Contingent consideration     $ 6,137     $ -     $ -     $ 6,137   
+   Derivative instruments - cash flow hedges       17,331       -       17,331       -   
+   Total liabilities     $ 23,468     $ -     $ 17,331     $ 6,137   
+ 
+    
+      
+        ( 1 )     Included in available-for-sale investments on the balance sheet.   The cost basis in the Company's investment in ChemoCentryx Inc (CCXI) at   September 30, 2020  and   June 30, 2020  was $ 6.6  million. The Company has a warrant to purchase additional CCXI equity shares which was valued at $ 7.4  and $ 8.0  million as of   September 30, 2020  and   June 30 2020,  respectively.   
+     ( 2 )     Included in available-for-sale investments on the balance sheet.  The certificate of deposits have contractual maturity dates within  one  year.   
+ 
+      
+    
+     
+      
+       
+        9 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    Fair value measurements of available for sale securities 
+    Our available for sale securities are measured at fair value using quoted market prices in active markets for identical assets and are therefore classified as Level  1  assets. 
+      
+    Fair value measurements of derivative instruments 
+    In   October 2018,  the Company entered into forward starting swaps designated as cash flow hedges on outstanding debt. The forward starting swaps reduce the variability of cash flow payments for the Company by converting the variable interest rate on the Company’s long-term debt described in Note  5  to that of a fixed interest rate. Accordingly, as part of the forward starting swaps, the Company will exchange, at specified intervals, the difference between floating and fixed interest amounts based on an initial $ 380  million of notional principal amount, with the notional amount decreasing by $ 100  million in    October  2020,  $ 80  million in   October 2021,  and $ 200  million in   October 2022.  The change in the fair value of the designated hedged instrument is reported as a component of other comprehensive income and reclassified into interest expense over the corresponding term of the cash flow hedge. The Company reclassified  $2.1  million, net of taxes, out of other comprehensive income into interest expense during the quarter ended   September 30,  2020.  In   June 2020,  the Company de-designated $ 80  million of the notional amount set to expire in    October 2020.  The change in fair value of the de-designated notional hedged amount was  not  material as of   September  30,   2020.  The net loss associated with the de-designated portion of the derivative instrument was  not  reclassified into earnings based on the amount of probable variable interest payments to occur within a  two  month time period of the forecasted hedged transaction. The liability related to the derivative instrument was recorded within other long-term liabilities on the consolidated balance sheet. The instrument was valued using observable market inputs in active markets and therefore classified as a Level  2  liability. 
+      
+    
+     
+      
+       
+        10 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    Fair value measurements of contingent consideration 
+    In connection with the QT Holdings Corporation (Quad) and B-MoGen Biotechnologies Inc. (B-MoGen) acquisitions the Company is required to make contingent consideration payments of up to $ 51.0  million and $ 38.0  million, respectively. The contingent consideration payments are subject to Quad and B-Mogen meeting certain product development milestones and revenue thresholds. The preliminary fair value of the liabilities for the contingent payments recognized upon the acquisition as part of the purchase accounting opening balance sheet totaled $ 10.8  million ($ 5.3  million for Quad and $ 5.5  million for B-MoGen).  The preliminary fair value of the development milestone payments was estimated by discounting to present value the probability-weighted contingent payments expected to be made. Assumptions used in these calculations were probability of success, duration of the earn-out, and discount rate. The preliminary fair value for the revenue milestone payments was determined using a Monte Carlo simulation based model discounted to present value.  Assumptions used in these calculations included units sold, expected revenue, discount rate and various probability factors. The ultimate settlement of contingent consideration could deviate from current estimates based on the actual results of these financial measures. This liability is considered to be a Level  3  financial liability that is re-measured each reporting period. The change in fair value of contingent consideration for these acquisitions is included in general and administrative expense. 
+      
+    The following table presents a reconciliation of the liability measured at fair value on a recurring basis using significant unobservable inputs (Level  3 ) for the quarter ended   September 30, 2020 ( in thousands): 
+      
+    
+           Quarter Ended     
+       September 30,    2020     
+   Fair value at the beginning of period     $ 6,137   
+   Change in fair value of contingent consideration       ( 150 ) 
+   Payments       -   
+   Fair value at the end of period     $ 5,987   
+ 
+    
+      
+    The use of different assumptions, applying different judgment to matters that inherently are subjective and changes in future market conditions could result in different estimates of fair value of our securities or contingent consideration, currently and in the future. If market conditions deteriorate, we   may  incur impairment charges for securities in our investment portfolio. We   may  also incur changes to our contingent consideration liability as discussed below. 
+      
+    Fair value measurements of other financial instruments  – The following methods and assumptions were used to estimate the fair value of each class of financial instrument for which it is practicable to estimate fair value. 
+      
+    Cash and cash equivalents, certificates of deposit, accounts receivable, and accounts payable – The carrying amounts reported in the consolidated balance sheets approximate fair value because of the short-term nature of these items. 
+      
+    Long-term debt – The carrying amounts reported in the consolidated balance sheets for the amount drawn on our line-of-credit facility approximates fair value because our interest rate is variable and reflects current market rates. 
+      
+      
+   
+   
+     
+   
+   
+    Note  5.  Debt and Other Financing Arrangements: 
+      
+    On   August 1, 2018,  the Company entered into a new revolving line-of-credit and term loan governed by a Credit Agreement (the Credit Agreement). The Credit Agreement provides for a revolving credit facility of $ 600.0  million, which can be increased by an additional $ 200.0  million subject to certain conditions, and a term loan of $ 250.0  million. Borrowings under the Credit Agreement   may  be used for working capital and expenditures of the Company and its subsidiaries, including financing permitted acquisitions. Borrowings under the Credit Agreement bear interest at a variable rate. The current outstanding debt is based on the Eurodollar Loans term for which the interest rate is calculated as the sum of LIBOR plus an applicable margin. The applicable margin is determined from the total leverage ratio of the Company and updated on a quarterly basis. The annualized fee for any unused portion of the credit facility is currently  20  basis points. 
+      
+    The Credit Agreement matures on   August 1, 2023  and contains customary restrictive and financial covenants and customary events of default. As of   September 30, 2020,  the outstanding balance under the Credit Agreement was $ 323.9  million. 
+      
+    
+     
+      
+       
+        11 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note  6.  Leases:   
+      
+    As a lessee, the company leases offices, labs, and manufacturing facilities, as well as vehicles, copiers, and other equipment. The Company adopted ASU  No.   2016 - 02  and related standards (collectively ASC  842,   Leases ), which replaced previous lease accounting guidance, on   July 1, 2019.  
+      
+    The Company recognizes operating lease expense on a straight-line basis over the lease term. Operating lease right-of-use assets and liabilities are recognized at commencement date based on the present value of lease payments over the lease term. The discount rate used to calculate present value is Bio-Techne’s incremental borrowing rate or, if available, the rate implicit in the lease. Bio-Techne determines the incremental borrowing rate for each lease based primarily on its lease term and the economic environment of the applicable country or region. During the  three  months ended   September 30, 2020,  the Company recognized $ 0.7  million in variable lease expense and $ 3.5  million relating to fixed lease expense in the Condensed Consolidated Statements of Earnings and Comprehensive Income.  
+      
+    The following table summarizes the balance sheet classification of the Company’s operating leases and amounts of right of use assets and lease liabilities and the weighted average remaining lease term and weighted average discount rate for the Company’s operating leases (asset and liability amounts are in thousands): 
+      
+    
+         Balance Sheet Classification       As of: September   30, 2020     
+   Operating leases:             
+   Operating lease right of use assets     Right of Use Asset     $ 70,018   
+             
+   Current operating lease liabilities     Operating lease liabilities current     $ 9,695   
+   Noncurrent operating lease liabilities     Operating lease liabilities       65,694   
+   Total operating lease liabilities     $ 75,389   
+             
+   Weighted average remaining lease term (in years):       8.55   
+             
+   Weighted average discount rate:       4.38   %   
+ 
+    
+      
+    The following table summarizes the cash paid for amounts included in the measurement of operating lease liabilities and right of use assets obtained in exchange for new operating lease liabilities for the  three  months ended (in thousands): 
+      
+    
+           Three months   ended September   30, 2020     
+   Cash amounts paid on operating lease liabilities     $ 3,230   
+           
+   Right of use assets obtained in exchange for lease liabilities       706   
+ 
+    
+      
+    The following table summarizes the fair value of the lease liability by payment date for the Company’s operating leases by fiscal year (in thousands): 
+      
+    
+                   Operating   Leases         
+   Remainder of 2020           $     9,527         
+   2021                 12,280         
+   2022                 11,369         
+   2023                 10,424         
+   2024                 9,529         
+   Thereafter                 37,737         
+ Total   $ 90,866   
+ Less: Amounts representing interest     15,477   
+   Total Lease obligations           $     75,389         
+ 
+    
+      
+    Certain leases include  one  or more options to renew, with terms that extend the lease term up to  five  years. Bio-Techne includes option to renew the lease as part of the right of use lease asset and liability when it is reasonably certain the Company will exercise the option. In addition, certain leases contain fair value purchase and termination options with an associated penalty. In general, Bio-Techne is  not  reasonably certain to exercise such options. 
+      
+    
+     
+      
+       
+        12 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note  7.   Supplemental Equity and Accumulated Other Comprehensive Income (Loss): 
+      
+    Supplemental Equity 
+      
+    The Company has declared cash dividends per share of $ 0.32  in both the  three  months ended   September 30, 2020  and  2019.   
+      
+    Consolidated Changes in Equity (amounts in thousands) 
+      
+    
+     
+      
+       
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Accumulated   
+          
+          
+          
+          
+          
+       
+
+       
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Additional   
+          
+          
+          
+          
+          
+          
+          Other   
+          
+          
+          
+          
+          
+       
+
+       
+          
+          
+          Common Stock   
+          
+          
+          Paid-in   
+          
+          
+          Retained   
+          
+          
+          Comprehensive   
+          
+          
+          
+          
+          
+       
+
+       
+          
+          
+          Shares   
+          
+          
+          Amount   
+          
+          
+          Capital   
+          
+          
+          Earnings   
+          
+          
+          Income(Loss)   
+          
+          
+          Total   
+          
+       
+
+       
+          Balances at June 30, 2020   
+          
+          
+        38,453 
+          
+          
+        $ 
+        385 
+          
+          
+        $ 
+        420,536 
+          
+          
+        $ 
+        1,057,470 
+          
+          
+        $ 
+        ( 97,199 
+          )   
+          
+        $ 
+        1,381,192 
+          
+       
+
+       
+          Cumulative effect adjustments due to adoption of new accounting standards    
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        ( 276 
+          )   
+          
+          
+          
+          
+          
+          
+        ( 276 
+          )   
+       
+
+       
+          Net earnings   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        33,395 
+          
+          
+          
+          
+          
+          
+          
+        33,395 
+          
+       
+
+       
+          Other comprehensive income   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        14,057 
+              
+          
+          
+        14,057 
+              
+       
+
+       
+          Common stock issued for exercise of options   
+          
+          
+        117 
+          
+          
+          
+        1 
+          
+          
+          
+        13,727 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        13,728 
+          
+       
+
+       
+          Common stock issued for restricted stock awards   
+          
+          
+        25 
+          
+          
+          
+        0 
+          
+          
+          
+          
+              
+          
+          
+        ( 4,890 
+          )   
+          
+          
+          
+          
+          
+          
+        ( 4,890 
+          )   
+       
+
+       
+          Cash dividends   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        ( 12,336 
+          )   
+          
+          
+          
+          
+          
+          
+        ( 12,336 
+          )   
+       
+
+       
+          Stock-based compensation expense   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        12,667 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        12,667 
+          
+       
+
+       
+          Common stock issued to employee stock purchase plan   
+          
+          
+        6 
+          
+          
+          
+        0 
+          
+          
+          
+        1,463 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        1,463 
+          
+       
+
+       
+          Employee stock purchase plan expense   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        286 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        286 
+          
+       
+
+       
+          Balances at September 30, 2020   
+          
+          
+        38,601 
+          
+          
+        $ 
+        386 
+          
+          
+        $ 
+        448,679 
+          
+          
+        $ 
+        1,073,362 
+          
+          
+        $ 
+        ( 83,142 
+          )   
+          
+        $ 
+        1,439,285 
+          
+       
+
+      
+     
+    
+      
+      
+    
+     
+      
+       
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Accumulated   
+          
+          
+          
+          
+          
+       
+
+       
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          Additional   
+          
+          
+          
+          
+          
+          
+          Other   
+          
+          
+          
+          
+          
+       
+
+       
+          
+          
+          Common Stock   
+          
+          
+          Paid-in   
+          
+          
+          Retained   
+          
+          
+          Comprehensive   
+          
+          
+          
+          
+          
+       
+
+       
+          
+          
+          Shares   
+          
+          
+          Amount   
+          
+          
+          Capital   
+          
+          
+          Earnings   
+          
+          
+          Income(Loss)   
+          
+          
+          Total   
+          
+       
+
+       
+          Balances at June 30, 2019   
+          
+          
+        37,934 
+          
+          
+        $ 
+        379 
+          
+          
+        $ 
+        316,797 
+          
+          
+        $ 
+        931,934 
+          
+          
+        $ 
+        ( 83,521 
+          )   
+          
+        $ 
+        1,165,589 
+          
+       
+
+       
+          Cumulative effect adjustments due to adoption of new accounting standards and other   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        ( 879 
+        ) 
+          
+          
+          
+          
+          
+          
+        ( 879 
+        ) 
+       
+
+       
+          Net earnings   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        14,398 
+          
+          
+          
+          
+          
+          
+          
+        14,398 
+          
+       
+
+       
+          Other comprehensive loss   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        ( 8,106 
+          )   
+          
+          
+        ( 8,106 
+          )   
+       
+
+       
+          Common stock issued for exercise of options   
+          
+          
+        94 
+          
+          
+          
+        1 
+          
+          
+          
+        7,854 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        7,855 
+          
+       
+
+       
+          Common stock issued for restricted stock awards   
+          
+          
+        50 
+          
+          
+          
+        0 
+          
+          
+          
+        (0 
+        ) 
+          
+          
+        ( 1,926 
+          )   
+          
+          
+          
+          
+          
+          
+        ( 1,926 
+          )   
+       
+
+       
+          Cash dividends   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        ( 12,169 
+          )   
+          
+          
+          
+          
+          
+          
+        ( 12,169 
+          )   
+       
+
+       
+          Stock-based compensation expense   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        8,267 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        8,267 
+          
+       
+
+       
+          Common stock issued to employee stock purchase plan   
+          
+          
+        6 
+          
+          
+          
+        0 
+          
+          
+          
+        1,096 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        1,096 
+          
+       
+
+       
+          Employee stock purchase plan expense   
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        99 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        99 
+          
+       
+
+       
+          Balances at September 30, 2019   
+          
+          
+        37,803 
+          
+          
+        $ 
+        381 
+          
+          
+        $ 
+        334,112 
+          
+          
+        $ 
+        931,358 
+          
+          
+        $ 
+        ( 91,627 
+          )   
+          
+        $ 
+        1,174,224 
+          
+       
+
+      
+     
+    
+      
+    
+     
+      
+       
+        13 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    Accumulated Other Comprehensive Income 
+      
+    The components of other comprehensive income (loss) consist of changes in foreign currency translation adjustments and changes in net unrealized gains (losses) on derivative instruments designated as cash flow hedges. The Company reclassified $ 2.1  million from accumulated other comprehensive income (loss) to earnings during the  three  months ended   September 30, 2020.  
+      
+    The accumulated balances related to each component of other comprehensive income (loss), net of tax, are summarized as follows: 
+      
+    
+     
+      
+       
+          
+          
+          Unrealized   Gains   (Losses) on   Derivative   Instruments   
+          
+          
+          Foreign   Currency   Translation   Adjustments   
+          
+          
+          Total   
+          
+       
+
+       
+          Balance as of June 30, 2020   
+          
+        $ 
+        ( 13,253 
+          )   
+          
+        $ 
+        ( 83,946 
+          )   
+          
+        $ 
+        ( 97,199 
+          )   
+       
+
+       
+          Other comprehensive income (loss) before reclassifications, net of taxes   
+          
+          
+        11 
+              
+          
+          
+        11,914 
+              
+          
+          
+        11,925 
+              
+       
+
+       
+        Reclassification from loss on derivatives to interest expense, net of taxes (1) 
+          
+          
+        2,132 
+          
+          
+          
+        
+          
+          
+          
+        2,132 
+          
+       
+
+       
+          Balance as of September 30, 2020 (2)   
+          
+        $ 
+        ( 11,110 
+          )   
+          
+        $ 
+        ( 72,032 
+          )   
+          
+        $ 
+        ( 83,142 
+          )   
+       
+
+      
+     
+    
+       
+      
+    
+     
+      
+       
+          
+          
+          Unrealized   Gains   (Losses) on   Derivative   Instruments   
+          
+          
+          Foreign   Currency   Translation   Adjustments   
+          
+          
+          Total   
+          
+       
+
+       
+          Balance as of June 30, 2019   
+          
+        $ 
+        ( 9,537 
+        ) 
+          
+        $ 
+        ( 73,983 
+          )   
+          
+        $ 
+        ( 83,521 
+          )   
+       
+
+       
+          Other comprehensive income (loss), net of tax before reclassifications   
+          
+          
+        ( 504 
+        ) 
+          
+          
+        ( 7,602 
+          )   
+          
+          
+        ( 8,106 
+          )   
+       
+
+       
+          Balance as of September 30, 2019 (2)   
+          
+        $ 
+        ( 10,041 
+        ) 
+          
+        $ 
+        ( 81,585 
+          )   
+          
+        $ 
+        ( 91,627 
+          )   
+       
+
+      
+     
+    
+      
+    ( 1 )  Gains (losses) on the interest swap are reclassified into interest expense as payments on the derivative agreement are made. The Company reclassified ($ 2,769 ) to interest expense and a related tax benefit tax of $ 637  during the quarter ended   September 30, 2020. 
+    ( 2 )  
+    
+     The Company had deferred tax benefits of
+    $ 3,413  and
+    $ 4,058  included in the accumulated other comprehensive income loss as of
+      September 30, 2020  and 
+      June 30, 2020,  respectively.
+    
+      
+      
+      
+    
+     
+      
+       
+        14 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note  8.   Earnings   Per   Share: 
+      
+    The following table reflects the calculation of basic and diluted earnings per share (in thousands, except per share amounts): 
+      
+    
+     
+      
+       
+          
+          
+          Quarter Ended   September 30,   
+          
+       
+
+       
+          
+          
+          2020   
+          
+          
+        2019 
+          
+       
+
+       
+          Earnings per share – basic:   
+          
+          
+          
+          
+          
+          
+          
+          
+       
+
+       
+          Net Income   
+          
+        $ 
+        33,395 
+          
+          
+        $ 
+        14,398 
+          
+       
+
+       
+          Income allocated to participating securities   
+          
+          
+        ( 21 
+          )   
+          
+          
+        ( 11 
+          )   
+       
+
+       
+          Income available to common shareholders   
+          
+        $ 
+        33,374 
+          
+          
+        $ 
+        14,387 
+          
+       
+
+       
+          Weighted-average shares outstanding   
+          
+          
+        38,536 
+          
+          
+          
+        38,032 
+          
+       
+
+       
+          Earnings per share-basic   
+          
+        $ 
+        0.87 
+          
+          
+        $ 
+        0.38 
+          
+       
+
+       
+          
+          
+          
+          
+          
+          
+          
+          
+          
+       
+
+       
+          Earnings per share – diluted:   
+          
+          
+          
+          
+          
+          
+          
+          
+       
+
+       
+          Net Income   
+          
+        $ 
+        33,395 
+          
+          
+        $ 
+        14,398 
+          
+       
+
+       
+          Income allocated to participating securities   
+          
+          
+        ( 21 
+          )   
+          
+          
+        ( 11 
+          )   
+       
+
+       
+          Income available to common shareholders   
+          
+        $ 
+        33,374 
+          
+          
+        $ 
+        14,387 
+          
+       
+
+       
+          Weighted average common shares outstanding-basic   
+          
+          
+        38,536 
+          
+          
+          
+        38,032 
+          
+       
+
+       
+          Dilutive effect of stock options and restricted stock units   
+          
+          
+        1,489 
+          
+          
+          
+        1,221 
+          
+       
+
+       
+          Weighted average common shares outstanding-diluted   
+          
+          
+        40,025 
+          
+          
+          
+        39,253 
+          
+       
+
+       
+          Earnings per share-diluted   
+          
+        $ 
+        0.83 
+          
+          
+        $ 
+        0.37 
+          
+       
+
+      
+     
+    
+      
+    The dilutive effect of stock options and restricted stock units in the above table excludes all options for which the aggregate exercise proceeds exceeded the average market price for the period. The number of potentially dilutive option shares excluded from the calculation was  1.5  million and  1.2  million for the quarter ended   September 30, 2020  and  2019,  respectively. 
+      
+      
+   
+   
+     
+   
+   
+    Note  9.  Share-based Compensation: 
+      
+    During the quarter ended   September 30, 2020  and  2019,  the Company granted  0.7  million and  0.7  million stock options at weighted average grant prices of $ 267.79  and $ 190.39  and weighted average fair values of $ 56.71  and $ 36.72 , respectively. During the quarter ended   September 30, 2020  and  2019,  the Company granted  22,367  and  30,858  restricted stock units at a weighted average fair value of $ 267.87  and $ 192.08 , respectively. During the quarter ended   September 30, 2020  and  2019,  the Company granted  8,675  and  11,438  shares of restricted common stock shares at a weighted average fair value of $ 267.98  and $ 190.65 . 
+      
+    Stock options for  116,816  and  93,596  shares of common stock with total intrinsic values of $ 16.9  million and $ 11.6  million were exercised during the quarter ended   September 30, 2020  and  2019,  respectively. 
+      
+    Stock-based compensation expense of $ 12.9  million and $ 8.4  million was included in selling, general and administrative expenses for the quarter ended   September 30, 2020  and  2019,  respectively. Additionally, stock-based compensation costs of $ 0.5  million and $ 0.4  million was included in cost of goods sold for quarter ended   September 30, 2020  and  2019,  respectively. As of   September 30, 2020,  there was $ 53.2  million of unrecognized compensation cost related to non-vested stock options, non-vested restricted stock units and non-vested restricted stock. The weighted average period over which the compensation cost is expected to be recognized is  2.1  years. 
+      
+      
+   
+   
+     
+   
+   
+    Note  10.  Other Income / (Expense):  
+      
+    The components of other income (expense) in the accompanying Statement of Earnings and Comprehensive Income are as follows:  
+      
+    
+     
+      
+       
+          
+          
+          Quarter Ended   
+          
+       
+
+       
+          
+          
+          September 30,   
+          
+       
+
+       
+          
+          
+          2020   
+          
+          
+        2019 
+          
+       
+
+       
+          Interest expense   
+          
+        $ 
+        ( 4,416 
+          )   
+          
+        $ 
+        ( 5,222 
+          )   
+       
+
+       
+          Interest income   
+          
+          
+        114 
+          
+          
+          
+        111 
+          
+       
+
+       
+          Other non-operating income (expense), net   
+          
+          
+        ( 5,451 
+          )   
+          
+          
+        ( 10,410 
+          )   
+       
+
+       
+          Total other income (expense)   
+          
+        $ 
+        ( 9,753 
+          )   
+          
+        $ 
+        ( 15,521 
+          )   
+       
+
+      
+     
+    
+        
+    
+     
+      
+       
+        15 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   
+    Note  11.  Income Taxes: 
+      
+    The Company’s effective income tax rate for the  first  quarter of fiscal  2021  and  2020  was  15.1 % and  19.1 % of consolidated earnings before income taxes, respectively. The change in the company’s tax rate for the  first  quarter of fiscal  2021  compared to  first  quarter of fiscal  2020  was driven by discrete tax items. 
+      
+    The Company recognized total net benefits related to discrete tax items of $ 4.2  million during the  three  months ended   September 30, 2020  compared to $ 1.3  million during the  three  months ended   September 30, 2019.  Share-based compensation excess tax benefit contributed $ 3.3  million and $ 3.2  million in the  three  months ended   September 30, 2020  and  2019,  respectively. The Company recognized total other immaterial net discrete tax benefits of $ 0.9  million in the quarter compared to $ 1.9  million other immaterial net discrete tax expense in the  three  months ended   September 30, 2019.    
+      
+    The Company continues to monitor changes in interpretations, assumptions guidance, and additional regulations regarding the Tax Cuts and Jobs Act (the “Tax Act”), which was enacted on   December 22, 2017.  The Company recognizes potential changes to these items could have a material impact on our effective tax rate in future periods.  
+      
+      
+   
+   
+     
+   
+   
+    Note  12.  Segment Information: 
+      
+    The Company's management evaluates segment operating performance based on operating income before certain charges to cost of sales and selling, general and administrative expenses, principally associated with acquisition accounting related to inventory, amortization of acquisition-related intangible assets and other acquisition-related expenses.  The Protein Sciences and Diagnostics and Genomics segments both include consumables, instruments, services and royalty revenue. 
+      
+    The following is financial information relating to the Company's reportable segments (in thousands): 
+      
+    
+     
+      
+       
+          
+          
+          Quarter Ended   
+          
+       
+
+       
+          
+          
+          September 30,   
+          
+       
+
+       
+          
+          
+        2020 
+          
+          
+          2019   
+          
+       
+
+       
+          Net sales:   
+          
+          
+          
+          
+          
+          
+          
+          
+       
+
+       
+          Protein Sciences   
+          
+        $ 
+        154,446 
+          
+          
+        $ 
+        140,995 
+          
+       
+
+       
+          Diagnostics and Genomics   
+          
+          
+        50,125 
+          
+          
+          
+        42,552 
+          
+       
+
+       
+          Intersegment   
+          
+          
+        ( 372 
+          )   
+          
+          
+        ( 304 
+          )   
+       
+
+       
+          Consolidated net sales   
+          
+        $ 
+        204,199 
+          
+          
+        $ 
+        183,243 
+          
+       
+
+       
+          Operating income:   
+          
+          
+          
+          
+          
+          
+          
+          
+       
+
+       
+          Protein Sciences   
+          
+        $ 
+        70,352 
+          
+          
+        $ 
+        59,538 
+          
+       
+
+       
+          Diagnostics and Genomics   
+          
+          
+        8,674 
+          
+          
+          
+        900 
+          
+       
+
+       
+          Segment operating income   
+          
+          
+        79,026 
+          
+          
+          
+        60,438 
+          
+       
+
+       
+          Amortization of acquisition related intangible assets   
+          
+          
+        ( 15,501 
+          )   
+          
+          
+        ( 14,901 
+          )   
+       
+
+       
+          Acquisition related expenses   
+          
+          
+        ( 136 
+          )   
+          
+          
+        ( 1,310 
+          )   
+       
+
+       
+          Stock-based compensation, inclusive of employer taxes   
+          
+          
+        ( 13,333 
+          )   
+          
+          
+        ( 8,800 
+          )   
+       
+
+       
+          Corporate general, selling, and administrative expenses   
+          
+          
+        ( 964 
+          )   
+          
+          
+        ( 2,100 
+          )   
+       
+
+       
+          Consolidated operating income   
+          
+        $ 
+        49,092 
+          
+          
+        $ 
+        33,327 
+          
+       
+
+      
+     
+    
+      
+      
+   
+   
+     
+   
+   
+    Note  13.  Subsequent Events: 
+    On   October 20, 2020,  the Company acquired  47.6 % of the outstanding equity shares of Changzhou Eminence Biotechnology Co., Ltd. for approximately $ 10  million.  
+      
+    
+     
+      
+       
+        16 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+   
+     
+   
+     
+   
+   ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL 
+   CONDITION AND RESULTS OF OPERATIONS 
+     
+   The following management discussion and analysis (“MD&A”) provides information that we believe is useful in understanding our operating results, cash flows and financial condition. We provide quantitative information about the material sales drivers including the effect of acquisitions and changes in foreign currency at the corporate and segment level. We also provide quantitative information about discrete tax items and other significant factors we believe are useful for understanding our results. The MD&A should be read in conjunction with both the unaudited consolidated financial information and related notes included in this Form 10-Q, and Management’s Discussion and Analysis of Financial Condition and Results of Operations included in our Annual Report on Form 10-K for the year ended June 30, 2020. This discussion contains various “Non-GAAP Financial Measures” and also contains various “Forward-Looking Statements” within the meaning of the Private Securities Litigation Reform Act of 1995. We refer readers to the statements entitled “Non-GAAP Financial Measures” and “Forward-Looking Information and Cautionary Statements” located at the end of Item 2 of this report. 
+     
+   OVERVIEW 
+     
+   Bio-Techne and its subsidiaries, collectively doing business as Bio-Techne Corporation (Bio-Techne, we, our, us or the Company) develop, manufacture and sell biotechnology reagents, instruments and services for the research and clinical diagnostic markets worldwide. With our deep product portfolio and application expertise, we strive to provide the life sciences community with innovative, high-quality scientific tools to better understand biological processes and drive discovery of diagnostic and therapeutic products. 
+     
+   Consistent with prior year, we have operated with two segments – our Protein Sciences segment and our Diagnostics and Genomics segment during fiscal year 2021. Our Protein Sciences segment is a leading developer and manufacturer of high-quality purified proteins and reagent solutions, most notably cytokines and growth factors, antibodies, immunoassays, biologically active small molecule compounds, tissue culture reagents and T-Cell activation technologies. This segment also includes protein analysis solutions that offer researchers efficient and streamlined options for automated western blot and multiplexed ELISA workflow. Our Genomics and Diagnostics segment develops and manufactures diagnostic products, including FDA-regulated controls, calibrators, blood gas and clinical chemistry controls and other reagents for OEM and clinical customers, as well as a portfolio of clinical molecular diagnostic oncology assays, including the ExoDx®Prostate(IntelliScore) test (EPI) for prostate cancer diagnosis. This segment also manufactures and sells advanced tissue-based in-situ hybridization assays (ISH) for research and clinical use. 
+     
+   RECENT ACQUISITIONS 
+     
+   A key component of the Company's strategy is to augment internal growth at existing businesses with complementary acquisitions. The Company did not make any acquisitions in the three months ended September 30, 2020. Refer to the prior year Annual Report on form 10-K for additional disclosure regarding the Company's recent acquisitions.    
+     
+   RESULTS OF OPERATIONS 
+     
+   Operational Update 
+     
+   Consolidated net sales increased 11% for the quarter ended September 30, 2020 compared to the same prior year period. Organic growth was 10% for the quarter ended September 30, 2020 compared to the same prior year period, with foreign currency exchange having a favorable impact of 1% on revenue growth.  
+     
+   Consolidated net earnings increased to $33.4 million for the quarter ended September 30, 2020 compared to the $14.4 million in same prior year period. The consolidated net earnings increase was driven by higher operating income due to sales volume leverage and cost management 
+     
+   COVID-19 Business Update 
+     
+   During the first quarter of fiscal year 2021, we experienced a significant increase in the number of customer sites that were either fully or partially opened when compared to prior periods during the COVID-19 pandemic. The reopening of customer sites and demand for our portfolio of life science tools and diagnostic reagents enabled the Company to return to sales volumes experienced prior to the onset of the pandemic. However, we are unable to forecast if any customer sites may reclose given rising COVID-19 cases occurring in certain regions. We are anticipating a positive long-term outlook for sales growth resulting from expected future funding increases within life-science research in response to the current pandemic. 
+     
+   The Company has responded to the pandemic by leveraging our deep product portfolio and scientific expertise to develop a robust COVID-19 product and service offering that provides critical support for both clinical care and therapeutic development. The Company's ongoing efforts to utilize and expand upon our portfolio of products and services to enable solutions for this evolving pandemic may partially offset the impacts of any future customer site closures. 
+     
+   Adjusted EPS was favorably impacted in the current quarter when compared to prior periods during the COVID-19 pandemic due to increased sales volumes as described above. We anticipate the short- and long-term impacts of COVID-19 on adjusted EPS to be similar to that of sales growth. 
+     
+   The Company remains in a strong financial position with sufficient available cash as well as access to additional funding, if necessary, through our long-term debt agreement. We did not experience any material changes to our September 30, 2020 Balance Sheet resulting from COVID-19 for items such as additional reserves or asset impairments. 
+     
+   The Company remains fully operational as we abide by local COVID-19 safety regulations across the world. To achieve this, certain employees are working remotely and the Company has adopted significant protective measures for our employees on site, including staggered shifts, social distancing and hygiene best practices recommended by the Centers for Disease Control (CDC).  In addition, the Company has taken additional steps to monitor and strengthen our supply chain to maintain an uninterrupted supply of our critical products and services.  
+     
+   Net Sales 
+     
+   Consolidated net sales for the quarter ended September 30, 2020 were $204.2 million, an increase of 11% from the same prior year period. Organic growth was 10% for the quarter ended September 30, 2020 compared to the same prior year period, with foreign currency exchange having a favorable impact of 1% on sales growth.  
+     
+   For the quarter ended September 30, 2020 by geography, the Company experienced broad based revenue growth across products in both operating segments and in each major geographical region. 
+     
+   
+    
+     
+      
+       17
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Gross Margins 
+     
+   Consolidated gross margins for the quarter ended September 30, 2020 and September 30, 2019 were 67.4% and 64.6%, respectively. Under purchase accounting, inventory is valued at fair value less expected selling and marketing costs, resulting in reduced margins in future periods as the inventory is sold. Excluding the impact of stock compensation expense, and amortization of intangibles, adjusted gross margins were 71.9% and 69.5% for the quarter ended September 30, 2020 and 2019, respectively. Both consolidated gross margins and non-GAAP adjusted gross margins were positively impacted by product mix and volume leverage for the quarter ended September 30, 2020 as compared to the prior year. 
+     
+   A reconciliation of the reported consolidated gross margin percentages, adjusted for acquired inventory sold and intangible amortization included in cost of sales, is as follows: 
+     
+   
+    
+     
+        
+        
+        Quarter Ended   
+        
+     
+
+     
+        
+        
+        September 30,   
+        
+     
+
+     
+        
+        
+        2020   
+        
+        
+        2019   
+        
+     
+
+     
+        Consolidated gross margin percentage   
+        
+        
+      67.4 
+        %   
+        
+        
+      64.6 
+        %   
+     
+
+     
+        Identified adjustments:   
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Amortization of intangibles   
+        
+        
+      4.2 
+        %   
+        
+        
+      4.7 
+        %   
+     
+
+     
+        Stock compensation expense - COGS   
+        
+        
+      0.3 
+        %   
+        
+        
+      0.2 
+        %   
+     
+
+     
+        Non-GAAP adjusted gross margin percentage   
+        
+        
+      71.9 
+        %   
+        
+        
+      69.5 
+        %   
+     
+
+    
+   
+     
+   Selling, General and Administrative Expenses 
+     
+   Selling, general and administrative expenses increased $3.6 million (5%) for the quarter ended September 30, 2020 from the same prior year period. The increase in expense was primarily driven by higher year over year stock compensation expense.  
+     
+   Research and Development Expenses 
+     
+   Research and development expenses were $16.0 million for the quarter ended September 30, 2020 compared to $16.1 million from the same prior year period. The expense remained consistent across periods due to similar investments into new products and services made in both periods.  
+     
+   Segment Results 
+     
+   Protein Sciences 
+     
+   
+    
+     
+        
+        
+        Quarter Ended   
+        
+     
+
+     
+        
+        
+        September 30,   
+        
+     
+
+     
+        
+        
+        2020   
+        
+        
+        2019   
+        
+     
+
+     
+        Net sales (in thousands)   
+        
+      $ 
+      154,446 
+        
+        
+      $ 
+      140,995 
+        
+     
+
+     
+        Operating margin percentage   
+        
+        
+      45.6 
+        %   
+        
+        
+      42.2 
+        %   
+     
+
+    
+   
+      
+   Protein Science’s net sales for the quarter ended September 30, 2020 were $154.6 million with reported growth of 10% compared to the same prior year period. Organic growth for the quarter ended September 30, 2020 was 8% with foreign currency having a favorable impact of 2%. Segment growth was broad-based and especially strong in the Simple Western and Simple Plex product categories.  
+     
+   The operating margin for the quarter ended September 30, 2020 was 45.6% compared to 42.2% for the same prior year period. Operating income margin was positively impacted by volume leverage and cost management.   
+     
+   
+    
+     
+      
+       18
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Diagnostics and Genomics 
+     
+   
+    
+     
+        
+        
+        Quarter Ended   
+        
+     
+
+     
+        
+        
+        September 30,   
+        
+     
+
+     
+        
+        
+        2020   
+        
+        
+      2019 
+        
+     
+
+     
+        Net sales (in thousands)   
+        
+      $ 
+      50,125 
+        
+        
+      $ 
+      42,552 
+        
+     
+
+     
+        Operating margin percentage   
+        
+        
+      17.3 
+        %   
+        
+        
+      2.1 
+        %   
+     
+
+    
+   
+     
+   Diagnostics and Genomics’ net sales for the quarter ended September 30, 2020 were $50.1 million compared to $42.6 million for the same prior year period. Organic growth for the quarter ended September 30, 2020 was 17% with currency exchange having an favorable impact of 1%. Segment growth was broad-based and especially strong in our RNAscope products.  
+     
+   The operating margin for the segment was 17.3% for the quarter ended September 30, 2020 compared to 2.1 % for the same prior year period. Operating income margin was positively impacted by volume leverage. 
+     
+   Income Taxes 
+     
+   Income taxes for the quarter ended September 30, 2020 were at an effective rate of 15.1% of consolidated earnings before income taxes compared to 19.1% for the quarter ended September 30, 2019. The change in the Company’s tax rate for the quarter ended September 30, 2020 was driven by discrete tax items of $4.2 million compared to prior year discrete tax items of $1.3 million as further discussed in Note 12.  
+     
+   The forecasted tax rate as of the first fiscal quarter of 2021 before discrete items is 25.7% compared to the prior year forecasted tax rate before discrete items of 26.3%. Excluding the impact of discrete items, the Company expects the consolidated income tax rate for the remainder of fiscal 2021 to range from 24% to 28%. 
+     
+   Net Earnings 
+     
+   Non-GAAP adjusted consolidated net earnings are as follows: 
+     
+   
+    
+     
+        
+        
+        Quarter Ended   
+        
+     
+
+     
+        
+        
+        September 30,   
+        
+     
+
+     
+        
+        
+        2020   
+        
+        
+      2019 
+        
+     
+
+     
+        Net earnings   
+        
+      $ 
+      33,395 
+        
+        
+      $ 
+      14,398 
+        
+     
+
+     
+        Identified adjustments:   
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Amortization of acquisition intangibles   
+        
+        
+      15,501 
+        
+        
+        
+      14,901 
+        
+     
+
+     
+        Acquisition related expenses   
+        
+        
+      230 
+        
+        
+        
+      1,404 
+        
+     
+
+     
+        Stock-based compensation, inclusive of employer taxes   
+        
+        
+      13,333 
+        
+        
+        
+      8,800 
+        
+     
+
+     
+        Realized and unrealized (gain)loss on investments   
+        
+        
+      4,351 
+        
+        
+        
+      10,401 
+        
+     
+
+     
+        Tax impact of above adjustments   
+        
+        
+      (5,514 
+        )   
+        
+        
+      (6,982 
+        )   
+     
+
+     
+        Tax impact of discrete tax items   
+        
+        
+      (4,151 
+        )   
+        
+        
+      (1,271 
+        )   
+     
+
+     
+        Non-GAAP adjusted net earnings   
+        
+      $ 
+      57,145 
+        
+        
+      $ 
+      41,651 
+        
+     
+
+     
+        Non-GAAP adjusted net earnings growth   
+        
+        
+      37.2 
+        %   
+        
+        
+      9.0 
+        %   
+     
+
+    
+   
+     
+     
+   
+    
+     
+      
+       19
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Depending on the nature of discrete tax items, our reported tax rate may not be consistent on a period to period basis. The Company independently calculates a non-GAAP adjusted tax rate considering the impact of discrete items and jurisdictional mix of the identified non-GAAP adjustments. The following table summarizes the reported GAAP tax rate and the effective Non-GAAP adjusted tax rate for the quarter ended September 30, 2020 and September 30, 2019. 
+     
+   
+    
+     
+        
+        
+        Quarter Ended   
+        
+     
+
+     
+        
+        
+        September 30,   
+        
+     
+
+     
+        
+        
+        2020   
+        
+        
+        2019   
+        
+     
+
+     
+      Reported GAAP tax rate 
+        
+        
+      15.1 
+      %  
+        
+        
+       19.1 
+      %  
+     
+
+     
+        Tax rate impact of:   
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Identified non-GAAP adjustments   
+        
+        
+      (4.2 
+        )%   
+        
+        
+      (4.3 
+        )%   
+     
+
+     
+        Discrete tax items   
+        
+        
+      10.6 
+        %   
+        
+        
+      7.1 
+        %   
+     
+
+     
+        Non-GAAP adjusted tax rate   
+        
+        
+      21.5 
+        %   
+        
+        
+      21.9 
+        %   
+     
+
+    
+   
+     
+   The difference between the reported GAAP tax rate and non-GAAP tax rate applied to the identified non-GAAP adjustments for the quarter ended September 30, 2020 is primarily a result of discrete tax items, including the tax benefit of stock option exercises. 
+     
+   LIQUIDITY AND CAPITAL RESOURCES 
+     
+   As of September 30, 2020, cash and cash equivalents and available-for-sale investments were $169.4 million compared to $146.6 million as of June 30, 2020. Included in available-for-sale-investments as of September 30, 2020 was the fair value of the Company's investment in ChemoCentryx, Inc. (CCXI) of $83.5 million. The fair value of the Company's CCXI investment at June 30, 2020 was $87.8 million. 
+     
+   The Company has a line-of-credit and term loan governed by a Credit Agreement dated August 1, 2018. See Note 5 to the Condensed Consolidated Financial Statements for a description of the Credit Agreement. 
+     
+   The Company has contingent consideration payments of up to $51 million and $38 million relating to the Quad and B-MoGen acquisitions. The fair value of the remaining payments is $6.0 million as of September 30, 2020. 
+     
+   Management of the Company expects to be able to meet its cash and working capital requirements for operations, facility expansion, capital additions, and cash dividends for the foreseeable future, and at least the next 12 months, through currently available cash, cash generated from operations, and remaining credit available on its existing revolving line of credit. 
+     
+   Cash Flows From Operating Activities 
+     
+   The Company generated cash of $66.0 million from operating activities in the first quarter of fiscal 2021 compared to $40.5 million in the first quarter of fiscal 2020. The increase from the prior year was primarily due to higher net earnings and the timing of cash payments on certain operating assets and liabilities. 
+     
+   Cash Flows From Investing Activities 
+     
+   We continue to make investments in our business, including capital expenditures.  
+     
+   Capital expenditures for fixed assets for the first quarter of fiscal 2021 and 2020 were $10.9 million and $10.5 million, respectively. Capital expenditures for the remainder of fiscal 2021 are expected to be approximately $35 million. Capital expenditures are expected to be financed through currently available funds and cash generated from operating activities. 
+     
+   Cash Flows From Financing Activities 
+     
+   During the first quarter of fiscal 2021 and 2020, the Company paid cash dividends of $12.3 million and $12.2 million, respectively, to all common shareholders. On November 5, 2020, the Company announced the payment of a $0.32 per share cash dividend, or approximately $12.3 million, will be payable November 27, 2020 to all common shareholders of record on November 16, 2020. 
+     
+   Cash of $15.4 million and $9.0 million was received during the first quarter of fiscal 2021 and 2020, respectively, from the exercise of stock options. 
+     
+   During the first quarter of fiscal 2021, the Company made payments of $33.1 million payment towards the balance of its line-of-credit facility. During the first quarter of fiscal 2020, the Company made payments of $19.1 million towards the balance of its line-of-credit facility.  
+     
+   During the first quarter of fiscal 2021, the Company made $4.9 million in other financing payments, primarily related to taxes paid on restricted stock units. During the first quarter of fiscal 2020, the Company made other financing payments of $1.9 million.  
+     
+   
+    
+     
+      
+       20
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   OFF-BALANCE SHEET ARRANGEMENTS 
+     
+   The Company has no reportable off-balance sheet arrangements as defined in Item 303(a)(4) of Regulation S-K. 
+     
+   CONTRACTUAL OBLIGATIONS 
+     
+   Other than the contingent consideration associated with the Quad and B-MoGen acquisitions, there were no material changes outside the ordinary course of business in the Company's contractual obligations during the quarter ended September 30, 2020. 
+     
+   CRITICAL ACCOUNTING POLICIES 
+     
+   The Company's significant accounting policies are discussed in the Company's Annual Report on Form 10-K for fiscal 2020 and are incorporated herein by reference. The application of certain of these policies requires judgments and estimates that can affect the results of operations and financial position of the Company. Judgments and estimates are used for, but not limited to, valuation of available-for-sale investments, inventory valuation and allowances, valuation of intangible assets and goodwill and valuation of investments in unconsolidated entities. There have been no significant changes in estimates in the first quarter of fiscal 2020 that would require disclosure nor have there been any changes to the Company's policies. 
+     
+   NON-GAAP FINANCIAL MEASURES 
+     
+   This Quarterly Report on Form 10-Q, including “Management’s Discussion and Analysis of Financial Condition and Results of Operation” in Item 2, contains financial measures that have not been calculated in accordance with accounting principles generally accepted in the U.S. (GAAP). These non-GAAP measures include: 
+     
+   
+    
+     
+        
+        •   
+        Organic Growth   
+     
+
+    
+   
+   
+    
+     
+        
+        •   
+        Adjusted gross margin   
+     
+
+    
+   
+   
+    
+     
+        
+        •   
+        Adjusted net earnings   
+     
+
+    
+   
+   
+    
+     
+        
+        •   
+        Adjusted effective tax rate   
+     
+
+    
+   
+     
+   We provide these measures as additional information regarding our operating results. We use these non-GAAP measures internally to evaluate our performance and in making financial and operational decisions, including with respect to incentive compensation. We believe that our presentation of these measures provides investors with greater transparency with respect to our results of operations and that these measures are useful for period-to-period comparison of results. 
+     
+   Our non-GAAP financial measure of organic growth represents revenue growth excluding revenue from acquisitions within the preceding 12 months as well as the impact of foreign currency. Excluding these measures provides more useful period-to-period comparison of revenue results as it excludes the impact of foreign currency exchange rates, which can vary significantly from period to period, and revenue from acquisitions that would not be included in the comparable prior period. 
+     
+   Our non-GAAP financial measures for adjusted gross margin, adjusted operating margin, and adjusted net earnings, in total and on a per share basis, exclude the costs recognized upon the sale of acquired inventory, amortization of acquisition intangibles, acquisition related expenses inclusive of the changes in fair value of contingent consideration, and other non-recurring items including non-recurring costs and gains. The Company excludes amortization of purchased intangible assets, purchase accounting adjustments, including costs recognized upon the sale of acquired inventory and acquisition-related expenses inclusive of the changes in fair value contingent consideration, and other non-recurring items including gains or losses on legal settlements and one-time assessments from this measure because they occur as a result of specific events, and are not reflective of our internal investments, the costs of developing, producing, supporting and selling our products, and the other ongoing costs to support our operating structure. Additionally, these amounts can vary significantly from period to period based on current activity. 
+     
+   The Company’s non-GAAP adjusted operating margin and adjusted net earnings, in total and on a per share basis, also excludes stock-based compensation expense, which is inclusive of the employer portion of payroll taxes on those stock awards, restructuring, impairments of equity method investments, gain and losses from investments, and certain adjustments to income tax expense. Stock-based compensation is excluded from non-GAAP adjusted net earnings because of the nature of this charge, specifically the varying available valuation methodologies, subjective assumptions, variety of award types, and unpredictability of amount and timing of employer related tax obligations. Impairments of equity investments are excluded as they are not part of our day-to-day operating decisions. Additionally, gains and losses from other investments that are either isolated or cannot be expected to occur again with any predictability are excluded. Costs related to restructuring activities, including reducing overhead and consolidating facilities, are excluded because we believe they are not indicative of our normal operating costs. The Company independently calculates a non-GAAP adjusted tax rate to be applied to the identified non-GAAP adjustments considering the impact of discrete items on these adjustments and the jurisdictional mix of the adjustments. In addition, the tax impact of other discrete and non-recurring charges which impact our reported GAAP tax rate are adjusted from net earnings. We believe these tax items can significantly affect the period-over-period assessment of operating results and not necessarily reflect costs and/or income associated with historical trends and future results. 
+     
+   The Company periodically reassesses the components of our non-GAAP adjustments for changes in how we evaluate our performance, changes in how we make financial and operational decisions, and considers the use of these measures by our competitors and peers to ensure the adjustments are still relevant and meaningful. 
+     
+   Readers are encouraged to review the reconciliations of the adjusted financial measures used in management's discussion and analysis of the financial condition of the Company to their most directly comparable GAAP financial measures provided within the Company's consolidated financial statements. 
+     
+   
+    
+     
+      
+       21
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   FORWARD LOOKING INFORMATION AND CAUTIONARY STATEMENTS 
+     
+   This quarterly report contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. Forward-looking statements include those regarding the Company's expectations as to the effect of changes to accounting policies, the amount of capital expenditures for the remainder of the fiscal year, the source of funding for capital expenditure requirements, the sufficiency of currently available funds for meeting the Company's needs, the impact of fluctuations in foreign currency exchange rates, and expectations regarding gross margin fluctuations, increasing research and development expenses, increasing selling, general and administrative expenses and income tax rates. These statements involve risks and uncertainties that may affect the actual results of operations. The following important factors, among others, have affected and, in the future, could affect the Company's actual results: integration of newly acquired businesses, the introduction and acceptance of new products, general national and international economic conditions, increased competition, the reliance on internal manufacturing and related operations, the impact of currency exchange rate fluctuations, the recruitment and retention of qualified personnel, the impact of governmental regulation, maintenance of intellectual property rights, credit risk and fluctuation in the market value of the Company's investment portfolio, and unseen delays and expenses related to facility construction and improvements. For additional information concerning such factors, see the Company's Annual Report on Form 10-K for fiscal 2020 as filed with the Securities and Exchange Commission and Part II. Item 1A below.  
+       
+   
+    
+     
+      
+       22
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK 
+     
+   As of September 30, 2020, the Company held an investment in the common stock of CCXI. The investment was included in short-term available-for-sale investments at its fair value of $83.5 million. As of September 30, 2020, the potential loss in fair value due to a 10% decrease in the market value of CCXI was $8.4 million.   
+     
+   The Company operates internationally, and thus is subject to potentially adverse movements in foreign currency exchange rates. For the quarter ended September 30, 2020, approximately 43.5% of consolidated net sales were made in foreign currencies, including 20% in euros, 6% in British pound sterling, 9% in Chinese yuan and the remaining 8.5% in other currencies. The Company is exposed to market risk mainly from foreign exchange rate fluctuations of the euro, British pound sterling, the Chinese yuan, and the Canadian dollar, as compared to the U.S. dollar as the financial position and operating results of the Company's foreign operations are translated into U.S. dollars for consolidation. 
+      
+   Month-end average exchange rates between the British pound sterling, euro, Chinese yuan and Canadian dollar, which have not been weighted for actual sales volume in the applicable months in the periods, to the U.S. dollar were as follows: 
+     
+   
+    
+     
+        
+        
+        Quarter Ended   
+        
+     
+
+     
+        
+        
+        September 30,   
+        
+     
+
+     
+        
+        
+        2020   
+        
+        
+        2019   
+        
+     
+
+     
+        Euro   
+        
+      $ 
+      1.18 
+        
+        
+      $ 
+      1.10 
+        
+     
+
+     
+        British pound sterling   
+        
+        
+      1.31 
+        
+        
+        
+      1.22 
+        
+     
+
+     
+        Chinese yuan   
+        
+        
+      0.15 
+        
+        
+        
+      0.14 
+        
+     
+
+     
+        Canadian dollar   
+        
+        
+      0.75 
+        
+        
+        
+      0.76 
+        
+     
+
+    
+   
+     
+   The Company's exposure to foreign exchange rate fluctuations also arises from trade receivables, trade payables and intercompany payables denominated in one currency in the financial statements, but receivable or payable in another currency. The effects of a hypothetical simultaneous 10% appreciation in the U.S. dollar from September 30, 2020 levels against the euro, British pound sterling, Chinese yuan and Canadian dollar are as follows (in thousands): 
+     
+   
+    
+     
+        Decrease in translation of earnings of foreign subsidiaries (annualized)   
+        
+      $ 
+      2,800 
+        
+     
+
+     
+        Decrease in translation of net assets of foreign subsidiaries   
+        
+        
+      46,826 
+        
+     
+
+     
+        Additional transaction losses   
+        
+        
+      1,108 
+        
+     
+
+    
+   
+        
+   
+    
+     
+      
+       23
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   ITEM 4. CONTROLS AND PROCEDURES 
+     
+   (a) Evaluation of disclosure controls and procedures. 
+     
+   The Company maintains disclosure controls and procedures (as defined in Exchange Act Rules 13a-15(e) and 15d-15(e)). The Company's management has evaluated, with the participation of its Chief Executive Officer and Chief Financial Officer, the effectiveness of the design and operation of its disclosure controls and procedures as of the end of the period covered in this Quarterly Report on Form 10-Q. Based on that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that, as of September 30, 2020, our disclosure controls and procedures were effective. 
+     
+   (b) Changes in internal controls over financial reporting. 
+     
+   There were no changes in the Company's internal control over financial reporting during the first quarter of fiscal year 2021 that have materially affected, or are reasonably likely to materially affect, the Company's internal control over financial reporting. 
+     
+   
+    
+     
+      
+       24
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   PART II. OTHER INFORMATION 
+     
+   ITEM 1. LEGAL PROCEEDINGS 
+     
+   As of November 9, 2020, the Company is not a party to any legal proceedings that, individually or in the aggregate, are reasonably expected to have a material adverse effect on the Company's business, results of operations, financial condition or cash flows. 
+     
+   ITEM 1A. RISK FACTORS 
+     
+   During the three months ended September 30, 2020, there have been no material changes from the risk factors found in Part I, Item 1A, "Risk Factors," of the Company's Annual Report on Form 10-K for the year ended June 30, 2020.  
+     
+   
+    
+     
+      
+       25
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+      
+   ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS 
+     
+   There was no share repurchase activity by the Company in the quarter ended September 30, 2020. 
+     
+   ITEM 3. DEFAULT ON SENIOR SECURITIES 
+     
+   None. 
+     
+   ITEM 4. MINE SAFETY DISCLOSURES  
+     
+   Not applicable. 
+     
+   ITEM 5. OTHER INFORMATION 
+     
+   None. 
+      
+   
+    
+     
+      
+       26
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   ITEM 6. EXHIBITS 
+     
+   EXHIBIT INDEX 
+   TO 
+   FORM 10-Q 
+     
+   BIO-TECHNE CORPORATION 
+     
+   
+    
+     
+        Exhibit   Number      
+        Description   
+     
+
+     
+        3.1   
+        Amended and Restated Articles of Incorporation of the Company--incorporated by reference to Exhibit 3.1 of the Company's Form 10-Q dated February 9, 2015*   
+     
+
+     
+            
+            
+     
+
+     
+        3.2   
+        Third Amended and Restated Bylaws of the Company--incorporated by reference to Exhibit 3.1 of the Company’s Form 8-K dated February 1, 2018*   
+     
+
+     
+            
+            
+     
+
+     
+      10.1** 
+      Management Incentive Plan--incorporated by reference to Exhibit 10.13 of the Company's Form 10-K for the year ended June 30, 2013* 
+     
+
+     
+        
+        
+     
+
+     
+        10.2**   
+        Bio-Techne 2020 Equity Incentive Plan - incorporated by reference to Exhibit 10.1 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.3**   
+        Form of Director Non-Qualified Stock Option Agreement - incorporated by reference to Exhibit 10.2 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.4**   
+        Form of Employee Non-Qualified Stock Option Agreement (Global) - incorporated by reference by Exhibit 10.3 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.5**   
+        Form of Performance Vesting Cash Unit Agreement - incorporated by reference by Exhibit 10.4 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.6**   
+        Form of Performance Vesting Incentive Stock Option Agreement - incorporated by reference by Exhibit 10.5 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.7**   
+        Form of Performance Vesting Restricted Stock Agreement - incorporated by reference by Exhibit 10.6 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.8**   
+        Form of Performance Vesting Restricted Stock Unit Agreement - incorporated by reference by Exhibit 10.7 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.9**   
+        Form of Time Vesting Incentive Stock Option Agreement - incorporated by reference by Exhibit 10.8 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.10**   
+        Form of Time Vesting Cash Unit Agreement - incorporated by reference by Exhibit 10.9 of the Company's Form 8-K dated November 3, 2020*   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       27
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+    
+     
+        Exhibit   Number     
+        Description   
+     
+
+     
+        10.11**   
+        Form of Time Vesting Restricted Stock Agreement - incorporated by reference by Exhibit 10.10 of the Company's form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.12**   
+        Form of Time Vesting Restricted Stock Unit Agreement - incorporated by reference by Exhibit 10.11 of the Company's form 8-K dated November 3, 2020*   
+     
+
+     
+            
+            
+     
+
+     
+        10.13**   
+        Form of Indemnification Agreement entered into with each director and executive officer of the Company--incorporated by reference to Exhibit 10.1 of the Company's Form 10-Q dated February 8, 2018*   
+     
+
+     
+            
+            
+     
+
+     
+        10.14**   
+        Employment Agreement by and between the Company and Charles Kummeth--incorporated by reference to Exhibit 10.11 of the Company's Form 10-K dated September 7, 2017*   
+     
+
+     
+            
+            
+     
+
+     
+        10.15**   
+        Form of Employment Agreement by and between the Company and Executive Officers of the Company other than the CEO--incorporated by reference to Exhibit 10.12 of the Company's Form 10-K dated September 7, 2017*   
+     
+
+     
+        
+        
+     
+
+     
+      10.16** 
+      Form of Amendment No. 1 to Executive Employment Agreement – incorporated by reference to Exhibit 10.15 of the Company’s Form 10-Q dated May 11, 2020*  
+     
+
+     
+        
+        
+     
+
+     
+      10.17 
+      Credit Agreement by and among the Company, the Guarantors party thereto, the Lenders party thereto, and BMO Harris Bank N.A., as Administrative Agent, dated August 1, 2018--incorporated by reference to Exhibit 10.1 of the Company's Form 8-K dated August 2, 2018* 
+     
+
+     
+        
+        
+     
+
+     
+      10.18 
+      Agreement and Plan of Merger by and among the Company, Aero Merger Sub Inc., Advanced Cell Diagnostics, Inc. and Fortis Advisors, LLC as the Securityholders’ Representative, dated July 6, 2016--incorporated by reference to Exhibit 2.1 of the Company's Form 8-K dated July 7, 2016* 
+     
+
+     
+        
+        
+     
+
+     
+      10.19 
+      Development, Supply and Commercialization Agreement by and between the Company and Kantaro Biosciences, LLC dated May 18, 2020 (portions of which have been redacted as noted, subject to confidential treatment) – incorporated by reference to Exhibit 10.1 of the Company's Form 8-K dated May 19, 2020* 
+     
+
+     
+            
+            
+     
+
+     
+        21   
+        Subsidiaries of the Company - incorporated by reference to Exhibit 21 of the Company's Form 10-K dated August 26, 2020*   
+     
+
+     
+        
+        
+     
+
+     
+        31.1   
+        Certificate of Chief Executive Officer pursuant to section 302 of the Sarbanes Oxley Act of 2002   
+     
+
+     
+            
+            
+     
+
+     
+        31.2   
+        Certificate of Chief Financial Officer pursuant to section 302 of the Sarbanes Oxley Act of 2002   
+     
+
+     
+            
+            
+     
+
+     
+        32.1   
+        Certification of Chief Executive Officer pursuant to section 906 of the Sarbanes Oxley Act of 2002   
+     
+
+     
+            
+            
+     
+
+     
+        32.2   
+        Certification of Chief Financial Officer pursuant to section 906 of the Sarbanes Oxley Act of 2002   
+     
+
+     
+            
+            
+     
+
+     
+        101   
+        The following financial statements from the Company's Quarterly Report on Form 10-Q for the quarter ended September 30, 2020, formatted in Inline Extensible Business Reporting Language (iXBRL): (i) the Condensed Consolidated Balance Sheets, (ii) the Condensed Consolidated Statements of Earnings and Comprehensive Income, (iii) the Condensed Consolidated Statements of Cash Flows, and (iv) Notes to the Condensed Consolidated Financial Statements.   
+     
+
+     
+            
+            
+     
+
+     
+        104   
+        Cover Page Interactive Data File (formatted as Inline XBRL and contained in Exhibit 101)   
+     
+
+    
+   
+     
+     
+     
+     
+     
+   ------------- 
+   *     Incorporated by reference; SEC File No. 000-17272 
+   **   Management contract or compensatory plan or arrangement 
+     
+   
+    
+     
+      
+       28
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   SIGNATURES 
+     
+   Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized. 
+     
+   
+    
+     
+            
+        BIO-TECHNE CORPORATION   
+            
+     
+
+     
+            
+            (Company)   
+            
+     
+
+     
+            
+            
+     
+
+     
+        Date: November 9, 2020    
+        /s/ Charles R. Kummeth   
+            
+     
+
+     
+            
+             Charles R. Kummeth   
+            
+     
+
+     
+            
+        Principal Executive Officer   
+            
+     
+
+     
+            
+            
+     
+
+     
+        Date: November 9, 2020   
+        /s/ James Hippel   
+            
+     
+
+     
+            
+             James Hippel   
+            
+     
+
+     
+            
+        Principal Financial Officer   
+            
+     
+
+    
+   
+     
+   
+    
+     
+      
+       29
+      
+     
+    
+   
+  
+ 

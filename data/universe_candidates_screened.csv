@@ -1,0 +1,261 @@
+ticker,name,gics_sector,source,rank,days,start,pass_screen
+AFL,Aflac,Financials,SP500,1,1870,2019-01-02,True
+ALL,Allstate,Financials,SP500,2,1870,2019-01-02,True
+AIG,American International Group,Financials,SP500,3,1870,2019-01-02,True
+AMP,Ameriprise Financial,Financials,SP500,4,1870,2019-01-02,True
+AON,Aon plc,Financials,SP500,5,1870,2019-01-02,True
+APO,Apollo Global Management,Financials,SP500,6,1870,2019-01-02,True
+ACGL,Arch Capital Group,Financials,SP500,7,1870,2019-01-02,True
+ARES,Ares Management,Financials,SP500,8,1870,2019-01-02,True
+AJG,Arthur J. Gallagher & Co.,Financials,SP500,9,1870,2019-01-02,True
+AIZ,Assurant,Financials,SP500,10,1870,2019-01-02,True
+BAC,Bank of America,Financials,SP500,11,1870,2019-01-02,True
+BLK,BlackRock,Financials,SP500,12,1870,2019-01-02,True
+BX,Blackstone Inc.,Financials,SP500,13,1870,2019-01-02,True
+BNY,BNY Mellon,Financials,SP500,14,1799,2019-01-02,True
+BRO,Brown & Brown,Financials,SP500,15,1870,2019-01-02,True
+COF,Capital One,Financials,SP500,16,1870,2019-01-02,True
+CBOE,Cboe Global Markets,Financials,SP500,17,1870,2019-01-02,True
+SCHW,Charles Schwab Corporation,Financials,SP500,18,1870,2019-01-02,True
+CB,Chubb Limited,Financials,SP500,19,1870,2019-01-02,True
+CINF,Cincinnati Financial,Financials,SP500,20,1870,2019-01-02,True
+C,Citigroup,Financials,SP500,21,1870,2019-01-02,True
+CFG,Citizens Financial Group,Financials,SP500,22,1870,2019-01-02,True
+CME,CME Group,Financials,SP500,23,1870,2019-01-02,True
+CPAY,Corpay,Financials,SP500,24,555,2024-03-25,False
+ERIE,Erie Indemnity,Financials,SP500,25,1870,2019-01-02,True
+EG,Everest Group,Financials,SP500,26,734,2023-07-10,False
+FDS,FactSet,Financials,SP500,27,1870,2019-01-02,True
+FIS,Fidelity National Information Services,Financials,SP500,28,1870,2019-01-02,True
+FITB,Fifth Third Bancorp,Financials,SP500,29,1870,2019-01-02,True
+FISV,Fiserv,Financials,SP500,30,1260,2019-01-02,False
+BEN,Franklin Resources,Financials,SP500,31,1870,2019-01-02,True
+GPN,Global Payments,Financials,SP500,32,1870,2019-01-02,True
+GL,Globe Life,Financials,SP500,33,1718,2019-08-09,True
+GS,Goldman Sachs,Financials,SP500,34,1870,2019-01-02,True
+HIG,Hartford (The),Financials,SP500,35,1870,2019-01-02,True
+HBAN,Huntington Bancshares,Financials,SP500,36,1870,2019-01-02,True
+IBKR,Interactive Brokers,Financials,SP500,37,1870,2019-01-02,True
+ICE,Intercontinental Exchange,Financials,SP500,38,1870,2019-01-02,True
+IVZ,Invesco,Financials,SP500,39,1870,2019-01-02,True
+JKHY,Jack Henry & Associates,Financials,SP500,40,1870,2019-01-02,True
+ABBV,AbbVie,Health Care,SP500,41,1870,2019-01-02,True
+A,Agilent Technologies,Health Care,SP500,42,1870,2019-01-02,True
+ALGN,Align Technology,Health Care,SP500,43,1870,2019-01-02,True
+AMGN,Amgen,Health Care,SP500,44,1870,2019-01-02,True
+BAX,Baxter International,Health Care,SP500,45,1870,2019-01-02,True
+BDX,Becton Dickinson,Health Care,SP500,46,1870,2019-01-02,True
+TECH,Bio-Techne,Health Care,SP500,47,1870,2019-01-02,True
+BIIB,Biogen,Health Care,SP500,48,1868,2019-01-02,True
+BMY,Bristol Myers Squibb,Health Care,SP500,49,1870,2019-01-02,True
+CAH,Cardinal Health,Health Care,SP500,50,1870,2019-01-02,True
+COR,Cencora,Health Care,SP500,51,1450,2019-01-02,False
+CRL,Charles River Laboratories,Health Care,SP500,52,1870,2019-01-02,True
+COO,Cooper Companies (The),Health Care,SP500,53,1870,2019-01-02,True
+CVS,CVS Health,Health Care,SP500,54,1870,2019-01-02,True
+DHR,Danaher Corporation,Health Care,SP500,55,1870,2019-01-02,True
+DVA,DaVita,Health Care,SP500,56,1870,2019-01-02,True
+DXCM,Dexcom,Health Care,SP500,57,1870,2019-01-02,True
+EW,Edwards Lifesciences,Health Care,SP500,58,1870,2019-01-02,True
+ELV,Elevance Health,Health Care,SP500,59,992,2022-06-28,False
+GEHC,GE HealthCare,Health Care,SP500,60,861,2023-01-04,False
+GILD,Gilead Sciences,Health Care,SP500,61,1870,2019-01-02,True
+HCA,HCA Healthcare,Health Care,SP500,62,1870,2019-01-02,True
+HSIC,Henry Schein,Health Care,SP500,63,1870,2019-01-02,True
+IDXX,Idexx Laboratories,Health Care,SP500,64,1870,2019-01-02,True
+INCY,Incyte,Health Care,SP500,65,1870,2019-01-02,True
+PODD,Insulet Corporation,Health Care,SP500,66,1870,2019-01-02,True
+ISRG,Intuitive Surgical,Health Care,SP500,67,1870,2019-01-02,True
+IQV,IQVIA,Health Care,SP500,68,1870,2019-01-02,True
+LH,Labcorp,Health Care,SP500,69,1870,2019-01-02,True
+MCK,McKesson Corporation,Health Care,SP500,70,1870,2019-01-02,True
+MDT,Medtronic,Health Care,SP500,71,1870,2019-01-02,True
+MRK,Merck & Co.,Health Care,SP500,72,1870,2019-01-02,True
+MTD,Mettler Toledo,Health Care,SP500,73,1870,2019-01-02,True
+DGX,Quest Diagnostics,Health Care,SP500,74,1870,2019-01-02,True
+REGN,Regeneron Pharmaceuticals,Health Care,SP500,75,1870,2019-01-02,True
+RMD,ResMed,Health Care,SP500,76,1870,2019-01-02,True
+RVTY,Revvity,Health Care,SP500,77,770,2023-05-16,False
+SOLV,Solventum,Health Care,SP500,78,551,2024-04-01,False
+STE,Steris,Health Care,SP500,79,1870,2019-01-02,True
+SYK,Stryker Corporation,Health Care,SP500,80,1870,2019-01-02,True
+MMM,3M,Industrials,SP500,81,1870,2019-01-02,True
+AOS,A. O. Smith,Industrials,SP500,82,1870,2019-01-02,True
+ALLE,Allegion,Industrials,SP500,83,1870,2019-01-02,True
+AME,Ametek,Industrials,SP500,84,1870,2019-01-02,True
+ADP,Automatic Data Processing,Industrials,SP500,85,1870,2019-01-02,True
+AXON,Axon Enterprise,Industrials,SP500,86,1380,2019-01-02,False
+BR,Broadridge Financial Solutions,Industrials,SP500,87,1870,2019-01-02,True
+BLDR,Builders FirstSource,Industrials,SP500,88,1870,2019-01-02,True
+CHRW,C.H. Robinson,Industrials,SP500,89,1870,2019-01-02,True
+CARR,Carrier Global,Industrials,SP500,90,1554,2020-04-03,True
+CAT,Caterpillar Inc.,Industrials,SP500,91,1870,2019-01-02,True
+CTAS,Cintas,Industrials,SP500,92,1870,2019-01-02,True
+FIX,Comfort Systems USA,Industrials,SP500,93,1870,2019-01-02,True
+CPRT,Copart,Industrials,SP500,94,1870,2019-01-02,True
+CSX,CSX Corporation,Industrials,SP500,95,1870,2019-01-02,True
+CMI,Cummins,Industrials,SP500,96,1870,2019-01-02,True
+DE,Deere & Company,Industrials,SP500,97,1870,2019-01-02,True
+DAL,Delta Air Lines,Industrials,SP500,98,1870,2019-01-02,True
+DOV,Dover Corporation,Industrials,SP500,99,1870,2019-01-02,True
+EMR,Emerson Electric,Industrials,SP500,100,1870,2019-01-02,True
+EFX,Equifax,Industrials,SP500,101,1870,2019-01-02,True
+EXPD,Expeditors International,Industrials,SP500,102,1870,2019-01-02,True
+FAST,Fastenal,Industrials,SP500,103,1870,2019-01-02,True
+FDX,FedEx,Industrials,SP500,104,1870,2019-01-02,True
+FDXF,FedEx Freight,Industrials,SP500,105,8,2026-06-01,False
+FTV,Fortive,Industrials,SP500,106,1870,2019-01-02,True
+GE,GE Aerospace,Industrials,SP500,107,1870,2019-01-02,True
+GNRC,Generac,Industrials,SP500,108,1870,2019-01-02,True
+GD,General Dynamics,Industrials,SP500,109,1870,2019-01-02,True
+HON,Honeywell,Industrials,SP500,110,1870,2019-01-02,True
+HWM,Howmet Aerospace,Industrials,SP500,111,1556,2020-04-01,True
+HUBB,Hubbell Incorporated,Industrials,SP500,112,1870,2019-01-02,True
+HII,Huntington Ingalls Industries,Industrials,SP500,113,1870,2019-01-02,True
+IEX,IDEX Corporation,Industrials,SP500,114,1870,2019-01-02,True
+ITW,Illinois Tool Works,Industrials,SP500,115,1870,2019-01-02,True
+IR,Ingersoll Rand,Industrials,SP500,116,1870,2019-01-02,True
+JBHT,J.B. Hunt,Industrials,SP500,117,1870,2019-01-02,True
+J,Jacobs Solutions,Industrials,SP500,118,1633,2019-12-10,True
+APTV,Aptiv,Consumer Discretionary,SP500,119,1870,2019-01-02,True
+AZO,AutoZone,Consumer Discretionary,SP500,120,1870,2019-01-02,True
+BBY,Best Buy,Consumer Discretionary,SP500,121,1870,2019-01-02,True
+BKNG,Booking Holdings,Consumer Discretionary,SP500,122,1870,2019-01-02,True
+CCL,Carnival Corporation,Consumer Discretionary,SP500,123,1870,2019-01-02,True
+CVNA,Carvana,Consumer Discretionary,SP500,124,1870,2019-01-02,True
+CMG,Chipotle Mexican Grill,Consumer Discretionary,SP500,125,1870,2019-01-02,True
+DRI,Darden Restaurants,Consumer Discretionary,SP500,126,1870,2019-01-02,True
+DECK,Deckers Brands,Consumer Discretionary,SP500,127,1870,2019-01-02,True
+DPZ,Domino's,Consumer Discretionary,SP500,128,1870,2019-01-02,True
+DASH,DoorDash,Consumer Discretionary,SP500,129,1381,2020-12-09,False
+DHI,D. R. Horton,Consumer Discretionary,SP500,130,1870,2019-01-02,True
+EBAY,eBay Inc.,Consumer Discretionary,SP500,131,1870,2019-01-02,True
+EXPE,Expedia Group,Consumer Discretionary,SP500,132,1870,2019-01-02,True
+F,Ford Motor Company,Consumer Discretionary,SP500,133,1870,2019-01-02,True
+GRMN,Garmin,Consumer Discretionary,SP500,134,1870,2019-01-02,True
+GPC,Genuine Parts Company,Consumer Discretionary,SP500,135,1870,2019-01-02,True
+HAS,Hasbro,Consumer Discretionary,SP500,136,1870,2019-01-02,True
+HLT,Hilton Worldwide,Consumer Discretionary,SP500,137,1870,2019-01-02,True
+HD,Home Depot (The),Consumer Discretionary,SP500,138,1870,2019-01-02,True
+LVS,Las Vegas Sands,Consumer Discretionary,SP500,139,1870,2019-01-02,True
+LEN,Lennar,Consumer Discretionary,SP500,140,1870,2019-01-02,True
+LOW,Lowe's,Consumer Discretionary,SP500,141,1870,2019-01-02,True
+MAR,Marriott International,Consumer Discretionary,SP500,142,1870,2019-01-02,True
+MCD,McDonald's,Consumer Discretionary,SP500,143,1870,2019-01-02,True
+MGM,MGM Resorts,Consumer Discretionary,SP500,144,1870,2019-01-02,True
+NKE,"Nike, Inc.",Consumer Discretionary,SP500,145,1870,2019-01-02,True
+NCLH,Norwegian Cruise Line Holdings,Consumer Discretionary,SP500,146,1870,2019-01-02,True
+MO,Altria,Consumer Staples,SP500,147,1870,2019-01-02,True
+ADM,Archer Daniels Midland,Consumer Staples,SP500,148,1870,2019-01-02,True
+BG,Bunge Global,Consumer Staples,SP500,149,1870,2019-01-02,True
+CPB,Campbell's Company (The),Consumer Staples,SP500,150,1870,2019-01-02,True
+CASY,Casey's,Consumer Staples,SP500,151,1870,2019-01-02,True
+CHD,Church & Dwight,Consumer Staples,SP500,152,1870,2019-01-02,True
+CLX,Clorox,Consumer Staples,SP500,153,1870,2019-01-02,True
+KO,Coca-Cola Company (The),Consumer Staples,SP500,154,1870,2019-01-02,True
+CL,Colgate-Palmolive,Consumer Staples,SP500,155,1870,2019-01-02,True
+CAG,Conagra Brands,Consumer Staples,SP500,156,1870,2019-01-02,True
+STZ,Constellation Brands,Consumer Staples,SP500,157,1870,2019-01-02,True
+DG,Dollar General,Consumer Staples,SP500,158,1870,2019-01-02,True
+DLTR,Dollar Tree,Consumer Staples,SP500,159,1870,2019-01-02,True
+EL,Estée Lauder Companies (The),Consumer Staples,SP500,160,1870,2019-01-02,True
+GIS,General Mills,Consumer Staples,SP500,161,1870,2019-01-02,True
+HSY,Hershey Company (The),Consumer Staples,SP500,162,1870,2019-01-02,True
+HRL,Hormel Foods,Consumer Staples,SP500,163,1870,2019-01-02,True
+KDP,Keurig Dr Pepper,Consumer Staples,SP500,164,1870,2019-01-02,True
+KMB,Kimberly-Clark,Consumer Staples,SP500,165,1870,2019-01-02,True
+KHC,Kraft Heinz,Consumer Staples,SP500,166,1870,2019-01-02,True
+KR,Kroger,Consumer Staples,SP500,167,1870,2019-01-02,True
+MKC,McCormick & Company,Consumer Staples,SP500,168,1870,2019-01-02,True
+APA,APA Corporation,Energy,SP500,169,1870,2019-01-02,True
+BKR,Baker Hughes,Energy,SP500,170,1669,2019-10-18,True
+CVX,Chevron Corporation,Energy,SP500,171,1870,2019-01-02,True
+COP,ConocoPhillips,Energy,SP500,172,1870,2019-01-02,True
+DVN,Devon Energy,Energy,SP500,173,1870,2019-01-02,True
+FANG,Diamondback Energy,Energy,SP500,174,1870,2019-01-02,True
+EOG,EOG Resources,Energy,SP500,175,1870,2019-01-02,True
+EQT,EQT Corporation,Energy,SP500,176,1870,2019-01-02,True
+EXE,Expand Energy,Energy,SP500,177,423,2024-10-02,False
+XOM,ExxonMobil,Energy,SP500,178,1870,2019-01-02,True
+HAL,Halliburton,Energy,SP500,179,1870,2019-01-02,True
+KMI,Kinder Morgan,Energy,SP500,180,1870,2019-01-02,True
+MPC,Marathon Petroleum,Energy,SP500,181,1870,2019-01-02,True
+OXY,Occidental Petroleum,Energy,SP500,182,1870,2019-01-02,True
+OKE,Oneok,Energy,SP500,183,1870,2019-01-02,True
+PSX,Phillips 66,Energy,SP500,184,1870,2019-01-02,True
+SLB,Schlumberger,Energy,SP500,185,1870,2019-01-02,True
+TRGP,Targa Resources,Energy,SP500,186,1870,2019-01-02,True
+TPL,Texas Pacific Land Corporation,Energy,SP500,187,1870,2019-01-02,True
+VLO,Valero Energy,Energy,SP500,188,1870,2019-01-02,True
+AES,AES Corporation,Utilities,SP500,189,1870,2019-01-02,True
+LNT,Alliant Energy,Utilities,SP500,190,1870,2019-01-02,True
+AEE,Ameren,Utilities,SP500,191,1870,2019-01-02,True
+AEP,American Electric Power,Utilities,SP500,192,1870,2019-01-02,True
+AWK,American Water Works,Utilities,SP500,193,1870,2019-01-02,True
+ATO,Atmos Energy,Utilities,SP500,194,1870,2019-01-02,True
+CNP,CenterPoint Energy,Utilities,SP500,195,1870,2019-01-02,True
+CMS,CMS Energy,Utilities,SP500,196,1870,2019-01-02,True
+ED,Consolidated Edison,Utilities,SP500,197,1870,2019-01-02,True
+DTE,DTE Energy,Utilities,SP500,198,1870,2019-01-02,True
+DUK,Duke Energy,Utilities,SP500,199,1870,2019-01-02,True
+EIX,Edison International,Utilities,SP500,200,1870,2019-01-02,True
+ETR,Entergy,Utilities,SP500,201,1870,2019-01-02,True
+EVRG,Evergy,Utilities,SP500,202,1870,2019-01-02,True
+ES,Eversource Energy,Utilities,SP500,203,1870,2019-01-02,True
+EXC,Exelon,Utilities,SP500,204,1870,2019-01-02,True
+ARE,Alexandria Real Estate Equities,Real Estate,SP500,205,1870,2019-01-02,True
+AMT,American Tower,Real Estate,SP500,206,1870,2019-01-02,True
+AVB,AvalonBay Communities,Real Estate,SP500,207,1870,2019-01-02,True
+BXP,"BXP, Inc.",Real Estate,SP500,208,1870,2019-01-02,True
+CPT,Camden Property Trust,Real Estate,SP500,209,1870,2019-01-02,True
+CBRE,CBRE Group,Real Estate,SP500,210,1870,2019-01-02,True
+CSGP,CoStar Group,Real Estate,SP500,211,1870,2019-01-02,True
+CCI,Crown Castle,Real Estate,SP500,212,1870,2019-01-02,True
+EQR,Equity Residential,Real Estate,SP500,213,1870,2019-01-02,True
+ESS,Essex Property Trust,Real Estate,SP500,214,1870,2019-01-02,True
+EXR,Extra Space Storage,Real Estate,SP500,215,1870,2019-01-02,True
+FRT,Federal Realty Investment Trust,Real Estate,SP500,216,1870,2019-01-02,True
+DOC,Healthpeak Properties,Real Estate,SP500,217,1869,2019-01-02,True
+HST,Host Hotels & Resorts,Real Estate,SP500,218,1870,2019-01-02,True
+INVH,Invitation Homes,Real Estate,SP500,219,1870,2019-01-02,True
+IRM,Iron Mountain,Real Estate,SP500,220,1870,2019-01-02,True
+ALB,Albemarle Corporation,Materials,SP500,221,1870,2019-01-02,True
+AMCR,Amcor,Materials,SP500,222,1760,2019-06-11,True
+AVY,Avery Dennison,Materials,SP500,223,1870,2019-01-02,True
+BALL,Ball Corporation,Materials,SP500,224,1025,2022-05-10,False
+CF,CF Industries,Materials,SP500,225,1870,2019-01-02,True
+CTVA,Corteva,Materials,SP500,226,1766,2019-06-03,True
+CRH,CRH plc,Materials,SP500,227,1870,2019-01-02,True
+DOW,Dow Inc.,Materials,SP500,228,1808,2019-04-02,True
+DD,DuPont,Materials,SP500,229,1766,2019-06-03,True
+ECL,Ecolab,Materials,SP500,230,1870,2019-01-02,True
+FCX,Freeport-McMoRan,Materials,SP500,231,1870,2019-01-02,True
+IFF,International Flavors & Fragrances,Materials,SP500,232,1870,2019-01-02,True
+IP,International Paper,Materials,SP500,233,1870,2019-01-02,True
+LYB,LyondellBasell,Materials,SP500,234,1870,2019-01-02,True
+MLM,Martin Marietta Materials,Materials,SP500,235,1870,2019-01-02,True
+MOS,Mosaic Company (The),Materials,SP500,236,1870,2019-01-02,True
+GOOGL,Alphabet Inc. (Class A),Communication Services,SP500,237,1870,2019-01-02,True
+T,AT&T,Communication Services,SP500,238,1870,2019-01-02,True
+CMCSA,Comcast,Communication Services,SP500,239,1870,2019-01-02,True
+SATS,EchoStar,Communication Services,SP500,240,1870,2019-01-02,True
+EA,Electronic Arts,Communication Services,SP500,241,1870,2019-01-02,True
+FOXA,Fox Corporation (Class A),Communication Services,SP500,242,1870,2019-01-02,True
+FOX,Fox Corporation (Class B),Communication Services,SP500,243,1870,2019-01-02,True
+LYV,Live Nation Entertainment,Communication Services,SP500,244,1870,2019-01-02,True
+NWSA,News Corp (Class A),Communication Services,SP500,245,1870,2019-01-02,True
+NWS,News Corp (Class B),Communication Services,SP500,246,1870,2019-01-02,True
+OMC,Omnicom Group,Communication Services,SP500,247,1870,2019-01-02,True
+PSKY,Paramount Skydance Corporation,Communication Services,SP500,248,212,2025-08-07,False
+ACN,Accenture,Information Technology,SP500,249,1870,2019-01-02,True
+ADBE,Adobe Inc.,Information Technology,SP500,250,1870,2019-01-02,True
+AKAM,Akamai Technologies,Information Technology,SP500,251,1870,2019-01-02,True
+APH,Amphenol,Information Technology,SP500,252,1870,2019-01-02,True
+ADI,Analog Devices,Information Technology,SP500,253,1870,2019-01-02,True
+APP,AppLovin,Information Technology,SP500,254,1295,2021-04-15,False
+CDNS,Cadence Design Systems,Information Technology,SP500,255,1870,2019-01-02,True
+CDW,CDW Corporation,Information Technology,SP500,256,1870,2019-01-02,True
+CIEN,Ciena,Information Technology,SP500,257,1870,2019-01-02,True
+CSCO,Cisco,Information Technology,SP500,258,1870,2019-01-02,True
+CTSH,Cognizant,Information Technology,SP500,259,1870,2019-01-02,True
+COHR,Coherent Corp.,Information Technology,SP500,260,1823,2019-01-02,True

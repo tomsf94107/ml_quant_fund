@@ -1,0 +1,7493 @@
+
+ 
+  
+   10-Q 
+   
+  
+  
+   4.625 Q1 false 3.125 3.625 3.375 0000860730 --12-31 4.375 0000860730 hca:MoneyMarketFundsAndOtherMember 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-06-30 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2020-12-31 0000860730 us-gaap:RetainedEarningsMember 2021-06-30 0000860730 us-gaap:CommonStockMember 2021-10-01 2021-12-31 0000860730 2022-04-29 0000860730 hca:InpatientServicesMember 2022-01-01 2022-03-31 0000860730 us-gaap:FairValueInputsLevel2Member 2021-12-31 0000860730 hca:ManagedCareAndOtherInsurersMember 2021-01-01 2021-03-31 0000860730 us-gaap:FairValueInputsLevel2Member us-gaap:InterestRateSwapMember 2022-03-31 0000860730 us-gaap:CommonStockMember 2021-06-30 0000860730 us-gaap:NoncontrollingInterestMember 2022-03-31 0000860730 us-gaap:InterestRateSwapMember 2021-12-31 0000860730 hca:SeniorSecuredNotesDueTwoThousandTwentyThreeMember us-gaap:SeniorNotesMember us-gaap:SubsequentEventMember 2022-04-30 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-03-31 0000860730 hca:HealthcareEntityMember 2021-01-01 2021-03-31 0000860730 srt:BoardOfDirectorsChairmanMember 2022-01-31 0000860730 2021-03-31 0000860730 hca:NationalGroupMember hca:ReorganizationGroupUnitsMember 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2020-12-31 0000860730 us-gaap:CorporateAndOtherMember hca:ReorganizationGroupUnitsMember 2022-03-31 0000860730 hca:SeniorNotesDueTwoThousandTwentyThreeMember us-gaap:SubsequentEventMember 2022-04-30 0000860730 hca:OutpatientServicesMember srt:MaximumMember 2022-01-01 2022-03-31 0000860730 hca:SeniorSecuredRevolvingCreditFacilityMember 2021-12-31 0000860730 us-gaap:CommonStockMember 2021-07-01 2021-09-30 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-01-01 2021-03-31 0000860730 hca:SeniorSecuredAssetBasedRevolvingCreditFacilityMember 2022-03-31 0000860730 us-gaap:InterestRateSwapMember 2022-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-12-31 0000860730 hca:AmericanGroupMember 2022-01-01 2022-03-31 0000860730 2021-10-01 2021-12-31 0000860730 hca:MoneyMarketFundsAndOtherMember 2021-12-31 0000860730 us-gaap:USStatesAndPoliticalSubdivisionsMember us-gaap:DebtSecuritiesMember 2022-03-31 0000860730 us-gaap:RetainedEarningsMember 2022-01-01 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-09-30 0000860730 hca:ManagedMedicaidMember 2021-01-01 2021-03-31 0000860730 us-gaap:RetainedEarningsMember 2021-01-01 2021-03-31 0000860730 us-gaap:DebtSecuritiesMember 2021-12-31 0000860730 hca:DerivativeInstrumentMaturityDateDecemberTwoThousandAndTwentyTwoMember us-gaap:FixedIncomeInterestRateMember 2022-01-01 2022-03-31 0000860730 hca:RealEstateAndOtherInvestmentsMember 2022-01-01 2022-03-31 0000860730 hca:SeniorUnsecuredNotesMember 2021-12-31 0000860730 srt:ScenarioForecastMember 2022-04-01 2022-06-30 0000860730 us-gaap:RetainedEarningsMember 2020-12-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-07-01 2021-09-30 0000860730 us-gaap:FairValueInputsLevel2Member us-gaap:DebtSecuritiesMember 2022-03-31 0000860730 hca:AmericanGroupMember hca:ReorganizationGroupUnitsMember 2022-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-06-30 0000860730 srt:BoardOfDirectorsChairmanMember 2021-02-28 0000860730 us-gaap:NoncontrollingInterestMember 2021-04-01 2021-06-30 0000860730 us-gaap:SeniorNotesMember 2022-03-31 0000860730 hca:SeniorSecuredNotesDueTwoThousandFiftyTwoMember us-gaap:SeniorNotesMember 2022-03-31 0000860730 hca:DerivativeInstrumentMaturityDateDecemberTwoThousandAndTwentyTwoMember us-gaap:FixedIncomeInterestRateMember 2022-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-01-01 2022-03-31 0000860730 2021-04-01 2021-06-30 0000860730 us-gaap:RetainedEarningsMember 2021-10-01 2021-12-31 0000860730 hca:ManagedMedicaidMember 2022-01-01 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-01-01 2021-03-31 0000860730 us-gaap:FairValueInputsLevel1Member hca:MoneyMarketFundsAndOtherMember 2022-03-31 0000860730 us-gaap:FairValueInputsLevel2Member us-gaap:DebtSecuritiesMember 2021-12-31 0000860730 2022-03-31 0000860730 hca:CentersForMedicareAndMedicaidServicesCmsMember 2022-01-01 2022-03-31 0000860730 hca:AmericanGroupMember 2021-01-01 2021-03-31 0000860730 us-gaap:CommonStockMember 2021-09-30 0000860730 2022-01-01 2022-03-31 0000860730 hca:MoneyMarketFundsAndOtherMember 2022-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-10-01 2021-12-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-12-31 0000860730 us-gaap:CommonStockMember 2021-12-31 0000860730 us-gaap:CommonStockMember 2022-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-04-01 2021-06-30 0000860730 hca:HealthcareEntityMember 2022-01-01 2022-03-31 0000860730 2020-12-31 0000860730 hca:MedicareMember 2022-01-01 2022-03-31 0000860730 us-gaap:CommonStockMember 2022-01-01 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2022-01-01 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-10-01 2021-12-31 0000860730 us-gaap:FairValueInputsLevel2Member us-gaap:InterestRateSwapMember 2021-12-31 0000860730 us-gaap:USStatesAndPoliticalSubdivisionsMember us-gaap:DebtSecuritiesMember 2021-12-31 0000860730 us-gaap:CommonStockMember 2021-04-01 2021-06-30 0000860730 us-gaap:CommonStockMember 2021-03-31 0000860730 hca:OtherSeniorSecuredDebtMember 2021-12-31 0000860730 us-gaap:AdditionalPaidInCapitalMember 2021-07-01 2021-09-30 0000860730 hca:MedicareMember 2021-01-01 2021-03-31 0000860730 hca:SeniorSecuredNotesDueTwoThousandTwentyNineMember us-gaap:SeniorNotesMember 2022-03-31 0000860730 us-gaap:RetainedEarningsMember 2021-09-30 0000860730 hca:NationalGroupMember 2022-01-01 2022-03-31 0000860730 hca:MoneyMarketFundsAndOtherMember 2021-12-31 0000860730 us-gaap:RetainedEarningsMember 2021-04-01 2021-06-30 0000860730 srt:MaximumMember 2017-11-01 2017-11-30 0000860730 us-gaap:AdditionalPaidInCapitalMember 2021-01-01 2021-03-31 0000860730 hca:SeniorSecuredNotesMember 2021-12-31 0000860730 hca:SeniorSecuredTermLoanFacilitiesMember 2022-03-31 0000860730 hca:ManagedMedicareMember 2021-01-01 2021-03-31 0000860730 hca:OtherSeniorSecuredDebtMember 2022-03-31 0000860730 2021-06-30 0000860730 us-gaap:InterestRateSwapMember 2022-01-01 2022-03-31 0000860730 hca:SeniorUnsecuredNotesMember 2022-03-31 0000860730 2021-07-01 2021-09-30 0000860730 hca:SeniorSecuredAssetBasedRevolvingCreditFacilityMember 2021-12-31 0000860730 us-gaap:FairValueInputsLevel1Member hca:MoneyMarketFundsAndOtherMember 2021-12-31 0000860730 us-gaap:RetainedEarningsMember 2021-07-01 2021-09-30 0000860730 us-gaap:RetainedEarningsMember 2021-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-03-31 0000860730 us-gaap:CorporateAndOtherMember 2021-01-01 2021-03-31 0000860730 hca:RealEstateAndOtherInvestmentsMember 2021-01-01 2021-03-31 0000860730 us-gaap:SeniorNotesMember hca:SeniorSecuredNotesDueTwoThousandTwentySevenMember 2022-03-31 0000860730 us-gaap:FairValueInputsLevel1Member 2021-12-31 0000860730 us-gaap:FairValueInputsLevel1Member 2022-03-31 0000860730 us-gaap:DebtSecuritiesMember 2022-03-31 0000860730 us-gaap:RetainedEarningsMember 2022-03-31 0000860730 hca:SeniorSecuredTermLoanFacilitiesMember 2021-12-31 0000860730 us-gaap:SeniorNotesMember hca:SeniorSecuredNotesDueTwoThousandThirtyTwoMember 2022-03-31 0000860730 2021-01-01 2021-03-31 0000860730 hca:NationalGroupMember 2021-01-01 2021-03-31 0000860730 hca:ManagedCareAndOtherInsurersMember 2022-01-01 2022-03-31 0000860730 us-gaap:AdditionalPaidInCapitalMember 2021-10-01 2021-12-31 0000860730 hca:MedicaidMember 2021-01-01 2021-03-31 0000860730 us-gaap:AdditionalPaidInCapitalMember 2020-12-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-07-01 2021-09-30 0000860730 us-gaap:ProductAndServiceOtherMember 2022-01-01 2022-03-31 0000860730 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-09-30 0000860730 hca:InternationalMember 2021-01-01 2021-03-31 0000860730 us-gaap:RetainedEarningsMember 2021-12-31 0000860730 us-gaap:AdditionalPaidInCapitalMember 2021-04-01 2021-06-30 0000860730 us-gaap:CommonStockMember 2021-01-01 2021-03-31 0000860730 hca:InternationalMember 2022-01-01 2022-03-31 0000860730 us-gaap:CorporateAndOtherMember 2022-01-01 2022-03-31 0000860730 2021-12-31 0000860730 srt:BoardOfDirectorsChairmanMember 2022-03-31 0000860730 us-gaap:FairValueInputsLevel2Member 2022-03-31 0000860730 us-gaap:SeniorNotesMember hca:SeniorSecuredNotesDueTwoThousandFortyTwoMember 2022-03-31 0000860730 us-gaap:ProductAndServiceOtherMember 2021-01-01 2021-03-31 0000860730 hca:ManagedMedicareMember 2022-01-01 2022-03-31 0000860730 hca:SeniorSecuredRevolvingCreditFacilityMember 2022-03-31 0000860730 us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember us-gaap:InterestRateSwapMember 2022-01-01 2022-03-31 0000860730 us-gaap:NoncontrollingInterestMember 2021-03-31 0000860730 us-gaap:CommonStockMember 2020-12-31 0000860730 2021-09-30 0000860730 hca:SeniorSecuredNotesMember 2022-03-31 0000860730 hca:MedicaidMember 2022-01-01 2022-03-31 iso4217:USD xbrli:shares xbrli:pure xbrli:shares hca:SurgeryCenter hca:State hca:Hospital hca:EndoscopyCenter iso4217:USD 
+     
+     
+   UNITED STATES   
+   SECURITIES AND EXCHANGE COMMISSION   
+   Washington, D.C. 20549   
+       
+   Form  10-Q   
+       
+   (Mark One)   
+   ☒ 	QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+   For the quarterly period ended  March 31,  2022   
+   Or   
+   ☐ 	TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+   For the transition period from                 to                    
+   Commission file number  1-11239   
+       
+   HCA Healthcare, Inc.   
+   (Exact name of registrant as specified in its charter)   
+       
+       
+   
+    
+     
+     
+    
+    
+       
+       
+    
+    
+     Delaware 
+     27-3865930 
+    
+    
+     (State or other jurisdiction of incorporation or organization) 
+     (I.R.S. Employer Identification No.) 
+    
+    
+         
+         
+    
+    
+     One Park Plaza Nashville ,  Tennessee 
+     37203 
+    
+    
+     (Address of principal executive offices) 
+     (Zip Code) 
+    
+   
+   ( 615 )  344-9551   
+   (Registrant’s telephone number, including area code)   
+   Not Applicable   
+   (Former name, former address and former fiscal year, if changed since last report)   
+       
+   Securities registered pursuant to Section 12(b) of the Act:   
+       
+   
+    
+     
+     
+     
+    
+    
+       
+       
+       
+    
+    
+     Title of each class     
+     Trading Symbol(s)     
+     Name of each exchange on which registered     
+    
+    
+     Voting common stock, $.01 par value 
+     HCA 
+     New York Stock Exchange 
+    
+   
+   Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes   ☒    No  ☐   
+   Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes   ☒    No  ☐   
+   Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company” and “emerging growth company” in Rule 12b-2 of the Exchange Act.   
+       
+   
+    
+     
+     
+     
+     
+    
+    
+       
+       
+       
+       
+    
+    
+     Large accelerated filer 
+     ☒ 
+     Accelerated filer 
+     ☐ 
+    
+    
+         
+         
+         
+         
+    
+    
+     Non-accelerated filer 
+     ☐ 
+     Smaller reporting company 
+     ☐ 
+    
+    
+         
+         
+         
+         
+    
+    
+     Emerging growth company 
+     ☐ 
+         
+         
+    
+   
+   If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐   
+   Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes ☐    No   ☒   
+   Indicate the number of shares outstanding of each of the issuer’s classes of common stock as of the latest practicable date.   
+       
+   
+    
+     
+     
+    
+    
+     Class of Common Stock 
+     Outstanding at April 29, 2022 
+    
+    
+     Voting common stock, $.01 par value 
+     295,484,400  shares 
+    
+   
+     
+     
+     
+   
+     
+   HCA HEALTHCARE, INC.   
+   Form 10-Q   
+   March 31, 2022   
+       
+   
+    
+     
+     
+     
+    
+    
+       
+       
+       
+    
+    
+         
+         
+     Page of Form 10-Q   
+    
+    
+     Part I. 
+     Financial Information 
+         
+    
+    
+         
+         
+         
+    
+    
+     Item 1. 
+     Financial Statements (Unaudited): 
+         
+    
+    
+         
+         
+         
+    
+    
+         
+     Condensed Consolidated Income Statements — for the quarters ended March 31, 2022 and 2021 
+     3 
+    
+    
+         
+         
+       
+    
+    
+         
+     Condensed Consolidated Comprehensive Income Statements — for the quarters ended March 31, 2022 and 2021 
+     4 
+    
+    
+         
+         
+       
+    
+    
+         
+     Condensed Consolidated Balance Sheets — March 31, 2022 and December 31, 2021 
+     5 
+    
+    
+         
+         
+       
+    
+    
+         
+     Condensed Consolidated Statements of Stockholders’ Equity — for the quarters ended March 31, 2022 and 2021 
+     6 
+    
+    
+         
+         
+       
+    
+    
+         
+     Condensed Consolidated Statements of Cash Flows — for the quarters ended March 31, 2022 and 2021 
+     7 
+    
+    
+         
+         
+       
+    
+    
+         
+     Notes to Condensed Consolidated Financial Statements   
+     8 
+    
+    
+         
+         
+       
+    
+    
+     Item 2. 
+     Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+     17 
+    
+    
+         
+         
+       
+    
+    
+     Item 3. 
+     Quantitative and Qualitative Disclosures About Market Risk 
+     30 
+    
+    
+         
+         
+       
+    
+    
+     Item 4. 
+     Controls and Procedures 
+     30 
+    
+    
+         
+         
+         
+    
+    
+     Part II. 
+     Other Information   
+         
+    
+    
+         
+         
+         
+    
+    
+     Item 1. 
+     Legal Proceedings 
+     30 
+    
+    
+         
+         
+       
+    
+    
+     Item 1A. 
+     Risk Factors 
+     30 
+    
+    
+         
+         
+       
+    
+    
+     Item 2. 
+     Unregistered Sales of Equity Securities and Use of Proceeds 
+     31 
+    
+    
+         
+         
+       
+    
+    
+     Item 6. 
+     Exhibits 
+     32 
+    
+    
+         
+       
+    
+    
+     Signatures   
+     34 
+    
+   
+       
+   2 
+   
+     
+   HCA HEALTHCARE, INC.   
+   CONDENSED CONSOLIDATED INCOME STATEMENTS   
+   FOR THE QUARTERS ENDED MARCH 31, 2022 AND 2021 
+   Unaudited   
+   (Dollars in millions, except per share amounts)   
+     
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Revenues 
+       
+     $ 
+     14,945 
+       
+       
+     $ 
+     13,977 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Salaries and benefits 
+       
+       
+     6,939 
+       
+       
+       
+     6,301 
+       
+    
+    
+     Supplies 
+       
+       
+     2,321 
+       
+       
+       
+     2,224 
+       
+    
+    
+     Other operating expenses 
+       
+       
+     2,752 
+       
+       
+       
+     2,421 
+       
+    
+    
+     Equity in earnings of affiliates 
+       
+       
+     ( 11 
+     ) 
+       
+       
+     ( 21 
+     ) 
+    
+    
+     Depreciation and amortization 
+       
+       
+     732 
+       
+       
+       
+     697 
+       
+    
+    
+     Interest expense 
+       
+       
+     408 
+       
+       
+       
+     384 
+       
+    
+    
+     Gains on sales of facilities 
+       
+       
+     ( 10 
+     ) 
+       
+       
+     ( 2 
+     ) 
+    
+    
+         
+       
+       
+     13,131 
+       
+       
+       
+     12,004 
+       
+    
+    
+     Income before income taxes 
+       
+       
+     1,814 
+       
+       
+       
+     1,973 
+       
+    
+    
+     Provision for income taxes 
+       
+       
+     349 
+       
+       
+       
+     393 
+       
+    
+    
+     Net income 
+       
+       
+     1,465 
+       
+       
+       
+     1,580 
+       
+    
+    
+     Net income attributable to noncontrolling interests 
+       
+       
+     192 
+       
+       
+       
+     157 
+       
+    
+    
+     Net income attributable to HCA Healthcare, Inc. 
+       
+     $ 
+     1,273 
+       
+       
+     $ 
+     1,423 
+       
+    
+    
+     Per share data: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Basic earnings 
+       
+     $ 
+     4.21 
+       
+       
+     $ 
+     4.21 
+       
+    
+    
+     Diluted earnings 
+       
+     $ 
+     4.14 
+       
+       
+     $ 
+     4.14 
+       
+    
+    
+     Shares used in earnings per share calculations (in millions): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Basic 
+       
+       
+     302.446 
+       
+       
+       
+     338.123 
+       
+    
+    
+     Diluted 
+       
+       
+     307.374 
+       
+       
+       
+     343.321 
+       
+    
+   
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   The accompanying notes are an integral part of the condensed consolidated financial statements.   
+       
+   3 
+   
+     
+   HCA HEALTHCARE, INC.   
+   CONDENSED CONSOLIDATED COMPREHENSIVE INCOME STATEMENTS   
+   FOR THE QUARTERS ENDED MARCH 31, 2022 AND 2021   
+   Unaudited   
+   (Dollars in millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Net income 
+       
+     $ 
+     1,465 
+       
+       
+     $ 
+     1,580 
+       
+    
+    
+     Other comprehensive income (loss) before taxes: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Foreign currency translation 
+       
+       
+     ( 34 
+     ) 
+       
+       
+     8 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Unrealized losses on available-for-sale securities 
+       
+       
+     ( 26 
+     ) 
+       
+       
+     ( 11 
+     ) 
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Defined benefit plans 
+       
+       
+     — 
+       
+       
+       
+     — 
+       
+    
+    
+     Pension costs included in salaries and benefits 
+       
+       
+     2 
+       
+       
+       
+     7 
+       
+    
+    
+         
+       
+       
+     2 
+       
+       
+       
+     7 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Change in fair value of derivative financial instruments 
+       
+       
+     4 
+       
+       
+       
+     1 
+       
+    
+    
+     Interest costs included in interest expense 
+       
+       
+     2 
+       
+       
+       
+     9 
+       
+    
+    
+         
+       
+       
+     6 
+       
+       
+       
+     10 
+       
+    
+    
+     Other comprehensive income (loss) before taxes 
+       
+       
+     ( 52 
+     ) 
+       
+       
+     14 
+       
+    
+    
+     Income taxes (benefits) related to other comprehensive income ("OCI") items 
+       
+       
+     ( 9 
+     ) 
+       
+       
+     3 
+       
+    
+    
+     Other comprehensive income (loss) 
+       
+       
+     ( 43 
+     ) 
+       
+       
+     11 
+       
+    
+    
+     Comprehensive income 
+       
+       
+     1,422 
+       
+       
+       
+     1,591 
+       
+    
+    
+     Comprehensive income attributable to noncontrolling interests 
+       
+       
+     192 
+       
+       
+       
+     157 
+       
+    
+    
+     Comprehensive income attributable to HCA Healthcare, Inc. 
+       
+     $ 
+     1,230 
+       
+       
+     $ 
+     1,434 
+       
+    
+   
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   The accompanying notes are an integral part of the condensed consolidated financial statements.   
+       
+   4 
+   
+     
+   HCA HEALTHCARE, INC.   
+   CONDENSED CONSOLIDATED BALANCE SHEETS   
+   Unaudited   
+   (Dollars in millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     March 31, 2022 
+       
+       
+     December 31, 2021 
+       
+    
+    
+     ASSETS 
+       
+       
+       
+       
+       
+       
+    
+    
+     Current assets: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Cash and cash equivalents 
+       
+     $ 
+     2,371 
+       
+       
+     $ 
+     1,451 
+       
+    
+    
+     Accounts receivable 
+       
+       
+     8,520 
+       
+       
+       
+     8,095 
+       
+    
+    
+     Inventories 
+       
+       
+     2,003 
+       
+       
+       
+     1,986 
+       
+    
+    
+     Other 
+       
+       
+     2,112 
+       
+       
+       
+     2,010 
+       
+    
+    
+         
+       
+       
+     15,006 
+       
+       
+       
+     13,542 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Property and equipment, at cost 
+       
+       
+     52,042 
+       
+       
+       
+     51,350 
+       
+    
+    
+     Accumulated depreciation 
+       
+       
+     ( 27,814 
+     ) 
+       
+       
+     ( 27,287 
+     ) 
+    
+    
+         
+       
+       
+     24,228 
+       
+       
+       
+     24,063 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Investments of insurance subsidiaries 
+       
+       
+     408 
+       
+       
+       
+     438 
+       
+    
+    
+     Investments in and advances to affiliates 
+       
+       
+     441 
+       
+       
+       
+     448 
+       
+    
+    
+     Goodwill and other intangible assets 
+       
+       
+     9,525 
+       
+       
+       
+     9,540 
+       
+    
+    
+     Right-of-use operating lease assets 
+       
+       
+     2,138 
+       
+       
+       
+     2,113 
+       
+    
+    
+     Other 
+       
+       
+     462 
+       
+       
+       
+     598 
+       
+    
+    
+         
+       
+     $ 
+     52,208 
+       
+       
+     $ 
+     50,742 
+       
+    
+    
+     LIABILITIES AND STOCKHOLDERS’ EQUITY 
+       
+       
+       
+       
+       
+       
+    
+    
+     Current liabilities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Accounts payable 
+       
+     $ 
+     4,010 
+       
+       
+     $ 
+     4,111 
+       
+    
+    
+     Accrued salaries 
+       
+       
+     1,865 
+       
+       
+       
+     1,912 
+       
+    
+    
+     Other accrued expenses 
+       
+       
+     3,157 
+       
+       
+       
+     3,322 
+       
+    
+    
+     Long-term debt due within one year 
+       
+       
+     1,486 
+       
+       
+       
+     237 
+       
+    
+    
+         
+       
+       
+     10,518 
+       
+       
+       
+     9,582 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Long-term debt, less debt issuance costs and discounts of $ 323  and $ 248 
+       
+       
+     36,210 
+       
+       
+       
+     34,342 
+       
+    
+    
+     Professional liability risks 
+       
+       
+     1,508 
+       
+       
+       
+     1,514 
+       
+    
+    
+     Right-of-use operating lease obligations 
+       
+       
+     1,790 
+       
+       
+       
+     1,755 
+       
+    
+    
+     Income taxes and other liabilities 
+       
+       
+     1,768 
+       
+       
+       
+     2,060 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Stockholders’ equity: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Common stock $ 0.01  par; authorized  1,800,000,000  shares; outstanding  298,980,900  shares — 2022 and  305,476,800  shares — 2021 
+       
+       
+     3 
+       
+       
+       
+     3 
+       
+    
+    
+     Accumulated other comprehensive loss 
+       
+       
+     ( 447 
+     ) 
+       
+       
+     ( 404 
+     ) 
+    
+    
+     Retained deficit 
+       
+       
+     ( 1,589 
+     ) 
+       
+       
+     ( 532 
+     ) 
+    
+    
+     Stockholders’ deficit attributable to HCA Healthcare, Inc. 
+       
+       
+     ( 2,033 
+     ) 
+       
+       
+     ( 933 
+     ) 
+    
+    
+     Noncontrolling interests 
+       
+       
+     2,447 
+       
+       
+       
+     2,422 
+       
+    
+    
+         
+       
+       
+     414 
+       
+       
+       
+     1,489 
+       
+    
+    
+         
+       
+     $ 
+     52,208 
+       
+       
+     $ 
+     50,742 
+       
+    
+   
+     
+     
+   The accompanying notes are an integral part of the condensed consolidated financial statements.   
+       
+   5 
+   
+     
+   HCA HEALTHCARE, INC.   
+   CONDENSED CONSOLIDATED STATEMENTS OF STOCKHOLDERS’ EQUITY   
+   FOR THE QUARTERS ENDED MARCH 31, 2022 AND 2021   
+   Unaudited   
+   (Dollars in millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     Equity (Deficit) Attributable to HCA Healthcare, Inc. 
+       
+       
+       
+       
+       
+       
+       
+    
+    
+         
+       
+       
+       
+       
+       
+       
+       
+     Capital 
+       
+       
+     Accumulated 
+       
+       
+       
+       
+       
+     Equity 
+       
+       
+       
+       
+    
+    
+         
+       
+     Common Stock 
+       
+       
+     in Excess 
+       
+       
+     Other 
+       
+       
+     Retained 
+       
+       
+     Attributable to 
+       
+       
+       
+       
+    
+    
+         
+       
+     Shares 
+       
+       
+     Par 
+       
+       
+     of Par 
+       
+       
+     Comprehensive 
+       
+       
+     Earnings 
+       
+       
+     Noncontrolling 
+       
+       
+       
+       
+    
+    
+         
+       
+     (in millions) 
+       
+       
+     Value 
+       
+       
+     Value 
+       
+       
+     Loss 
+       
+       
+     (Deficit) 
+       
+       
+     Interests 
+       
+       
+     Total 
+       
+    
+    
+     Balances, December 31, 2020 
+       
+       
+     339.426 
+       
+       
+     $ 
+     3 
+       
+       
+     $ 
+     294 
+       
+       
+     $ 
+     ( 502 
+     ) 
+       
+     $ 
+     777 
+       
+       
+     $ 
+     2,320 
+       
+       
+     $ 
+     2,892 
+       
+    
+    
+     Comprehensive income 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     11 
+       
+       
+       
+     1,423 
+       
+       
+       
+     157 
+       
+       
+       
+     1,591 
+       
+    
+    
+     Repurchase of common stock 
+       
+       
+     ( 8.477 
+     ) 
+       
+       
+       
+       
+       
+     ( 225 
+     ) 
+       
+       
+       
+       
+       
+     ( 1,302 
+     ) 
+       
+       
+       
+       
+       
+     ( 1,527 
+     ) 
+    
+    
+     Share-based benefit plans 
+       
+       
+     2.765 
+       
+       
+       
+       
+       
+       
+     ( 75 
+     ) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 75 
+     ) 
+    
+    
+     Cash dividends declared                                                                     ($ 0.48  per share) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 163 
+     ) 
+       
+       
+       
+       
+       
+     ( 163 
+     ) 
+    
+    
+     Distributions 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 234 
+     ) 
+       
+       
+     ( 234 
+     ) 
+    
+    
+     Other 
+       
+       
+       
+       
+       
+       
+       
+       
+     6 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 8 
+     ) 
+       
+       
+     ( 2 
+     ) 
+    
+    
+     Balances, March 31, 2021 
+       
+       
+     333.714 
+       
+       
+       
+     3 
+       
+       
+       
+     — 
+       
+       
+       
+     ( 491 
+     ) 
+       
+       
+     735 
+       
+       
+       
+     2,235 
+       
+       
+       
+     2,482 
+       
+    
+    
+     Comprehensive income 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     16 
+       
+       
+       
+     1,450 
+       
+       
+       
+     214 
+       
+       
+       
+     1,680 
+       
+    
+    
+     Repurchase of common stock 
+       
+       
+     ( 11.261 
+     ) 
+       
+       
+       
+       
+       
+     ( 142 
+     ) 
+       
+       
+       
+       
+       
+     ( 2,145 
+     ) 
+       
+       
+       
+       
+       
+     ( 2,287 
+     ) 
+    
+    
+     Share-based benefit plans 
+       
+       
+     0.372 
+       
+       
+       
+       
+       
+       
+     140 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     140 
+       
+    
+    
+     Cash dividends declared                                                                     ($ 0.48  per share) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 161 
+     ) 
+       
+       
+       
+       
+       
+     ( 161 
+     ) 
+    
+    
+     Distributions 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 123 
+     ) 
+       
+       
+     ( 123 
+     ) 
+    
+    
+     Other 
+       
+       
+       
+       
+       
+       
+       
+       
+     2 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     57 
+       
+       
+       
+     59 
+       
+    
+    
+     Balances, June 30, 2021 
+       
+       
+     322.825 
+       
+       
+       
+     3 
+       
+       
+       
+     — 
+       
+       
+       
+     ( 475 
+     ) 
+       
+       
+     ( 121 
+     ) 
+       
+       
+     2,383 
+       
+       
+       
+     1,790 
+       
+    
+    
+     Comprehensive income 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 17 
+     ) 
+       
+       
+     2,269 
+       
+       
+       
+     203 
+       
+       
+       
+     2,455 
+       
+    
+    
+     Repurchase of common stock 
+       
+       
+     ( 9.605 
+     ) 
+       
+       
+       
+       
+       
+     ( 130 
+     ) 
+       
+       
+       
+       
+       
+     ( 2,199 
+     ) 
+       
+       
+       
+       
+       
+     ( 2,329 
+     ) 
+    
+    
+     Share-based benefit plans 
+       
+       
+     0.282 
+       
+       
+       
+       
+       
+       
+     127 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     127 
+       
+    
+    
+     Cash dividends declared                                                                     ($ 0.48  per share) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 155 
+     ) 
+       
+       
+       
+       
+       
+     ( 155 
+     ) 
+    
+    
+     Distributions 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 144 
+     ) 
+       
+       
+     ( 144 
+     ) 
+    
+    
+     Other 
+       
+       
+       
+       
+       
+       
+       
+       
+     3 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     78 
+       
+       
+       
+     81 
+       
+    
+    
+     Balances, September 30, 2021 
+       
+       
+     313.502 
+       
+       
+       
+     3 
+       
+       
+       
+     — 
+       
+       
+       
+     ( 492 
+     ) 
+       
+       
+     ( 206 
+     ) 
+       
+       
+     2,520 
+       
+       
+       
+     1,825 
+       
+    
+    
+     Comprehensive income 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     88 
+       
+       
+       
+     1,814 
+       
+       
+       
+     191 
+       
+       
+       
+     2,093 
+       
+    
+    
+     Repurchase of common stock 
+       
+       
+     ( 8.469 
+     ) 
+       
+       
+       
+       
+       
+     ( 81 
+     ) 
+       
+       
+       
+       
+       
+     ( 1,991 
+     ) 
+       
+       
+       
+       
+       
+     ( 2,072 
+     ) 
+    
+    
+     Share-based benefit plans 
+       
+       
+     0.444 
+       
+       
+       
+       
+       
+       
+     88 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     88 
+       
+    
+    
+     Cash dividends declared                                                                     ($ 0.48  per share) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 149 
+     ) 
+       
+       
+       
+       
+       
+     ( 149 
+     ) 
+    
+    
+     Distributions 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 248 
+     ) 
+       
+       
+     ( 248 
+     ) 
+    
+    
+     Other 
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 7 
+     ) 
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 41 
+     ) 
+       
+       
+     ( 48 
+     ) 
+    
+    
+     Balances, December 31, 2021 
+       
+       
+     305.477 
+       
+       
+       
+     3 
+       
+       
+       
+     — 
+       
+       
+       
+     ( 404 
+     ) 
+       
+       
+     ( 532 
+     ) 
+       
+       
+     2,422 
+       
+       
+       
+     1,489 
+       
+    
+    
+     Comprehensive income 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 43 
+     ) 
+       
+       
+     1,273 
+       
+       
+       
+     192 
+       
+       
+       
+     1,422 
+       
+    
+    
+     Repurchase of common stock 
+       
+       
+     ( 8.375 
+     ) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 2,101 
+     ) 
+       
+       
+       
+       
+       
+     ( 2,101 
+     ) 
+    
+    
+     Share-based benefit plans 
+       
+       
+     1.879 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 57 
+     ) 
+       
+       
+       
+       
+       
+     ( 57 
+     ) 
+    
+    
+     Cash dividends declared                                                                     ($ 0.56  per share) 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 171 
+     ) 
+       
+       
+       
+       
+       
+     ( 171 
+     ) 
+    
+    
+     Distributions 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 171 
+     ) 
+       
+       
+     ( 171 
+     ) 
+    
+    
+     Other 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     ( 1 
+     ) 
+       
+       
+     4 
+       
+       
+       
+     3 
+       
+    
+    
+     Balances, March 31, 2022 
+       
+       
+     298.981 
+       
+       
+     $ 
+     3 
+       
+       
+     $ 
+     — 
+       
+       
+     $ 
+     ( 447 
+     ) 
+       
+     $ 
+     ( 1,589 
+     ) 
+       
+     $ 
+     2,447 
+       
+       
+     $ 
+     414 
+       
+    
+   
+     
+     
+   The accompanying notes are an integral part of the condensed consolidated financial statements. 
+   6 
+   
+     
+   HCA HEALTHCARE, INC.   
+   CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS   
+   FOR THE QUARTERS ENDED MARCH 31, 2022 AND 2021   
+   Unaudited   
+   (Dollars in millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Cash flows from operating activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Net income 
+       
+     $ 
+     1,465 
+       
+       
+     $ 
+     1,580 
+       
+    
+    
+     Adjustments to reconcile net income to net cash provided by operating activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Decrease in cash from operating assets and liabilities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Accounts receivable 
+       
+       
+     ( 427 
+     ) 
+       
+       
+     ( 371 
+     ) 
+    
+    
+     Inventories and other assets 
+       
+       
+     ( 121 
+     ) 
+       
+       
+     ( 85 
+     ) 
+    
+    
+     Accounts payable and accrued expenses 
+       
+       
+     ( 771 
+     ) 
+       
+       
+     ( 371 
+     ) 
+    
+    
+     Depreciation and amortization 
+       
+       
+     732 
+       
+       
+       
+     697 
+       
+    
+    
+     Income taxes 
+       
+       
+     346 
+       
+       
+       
+     406 
+       
+    
+    
+     Gains on sales of facilities 
+       
+       
+     ( 10 
+     ) 
+       
+       
+     ( 2 
+     ) 
+    
+    
+     Amortization of debt issuance costs and discounts 
+       
+       
+     7 
+       
+       
+       
+     8 
+       
+    
+    
+     Share-based compensation 
+       
+       
+     86 
+       
+       
+       
+     97 
+       
+    
+    
+     Other 
+       
+       
+     38 
+       
+       
+       
+     29 
+       
+    
+    
+     Net cash provided by operating activities 
+       
+       
+     1,345 
+       
+       
+       
+     1,988 
+       
+    
+    
+     Cash flows from investing activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Purchase of property and equipment 
+       
+       
+     ( 861 
+     ) 
+       
+       
+     ( 654 
+     ) 
+    
+    
+     Acquisition of hospitals and health care entities 
+       
+       
+     ( 2 
+     ) 
+       
+       
+     ( 22 
+     ) 
+    
+    
+     Sales of hospitals and health care entities 
+       
+       
+     14 
+       
+       
+       
+     20 
+       
+    
+    
+     Change in investments 
+       
+       
+     10 
+       
+       
+       
+     ( 2 
+     ) 
+    
+    
+     Other 
+       
+       
+     ( 6 
+     ) 
+       
+       
+     9 
+       
+    
+    
+     Net cash used in investing activities 
+       
+       
+     ( 845 
+     ) 
+       
+       
+     ( 649 
+     ) 
+    
+    
+     Cash flows from financing activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Issuance of long-term debt 
+       
+       
+     5,966 
+       
+       
+       
+     — 
+       
+    
+    
+     Net change in revolving credit facilities 
+       
+       
+     ( 2,780 
+     ) 
+       
+       
+     80 
+       
+    
+    
+     Repayment of long-term debt 
+       
+       
+     ( 66 
+     ) 
+       
+       
+     ( 47 
+     ) 
+    
+    
+     Distributions to noncontrolling interests 
+       
+       
+     ( 171 
+     ) 
+       
+       
+     ( 234 
+     ) 
+    
+    
+     Payment of debt issuance costs 
+       
+       
+     ( 49 
+     ) 
+       
+       
+     — 
+       
+    
+    
+     Payment of dividends 
+       
+       
+     ( 177 
+     ) 
+       
+       
+     ( 169 
+     ) 
+    
+    
+     Repurchase of common stock 
+       
+       
+     ( 2,101 
+     ) 
+       
+       
+     ( 1,527 
+     ) 
+    
+    
+     Other 
+       
+       
+     ( 197 
+     ) 
+       
+       
+     ( 207 
+     ) 
+    
+    
+     Net cash provided by (used in) financing activities 
+       
+       
+     425 
+       
+       
+       
+     ( 2,104 
+     ) 
+    
+    
+     Effect of exchange rate changes on cash and cash equivalents 
+       
+       
+     ( 5 
+     ) 
+       
+       
+     2 
+       
+    
+    
+     Change in cash and cash equivalents 
+       
+       
+     920 
+       
+       
+       
+     ( 763 
+     ) 
+    
+    
+     Cash and cash equivalents at beginning of period 
+       
+       
+     1,451 
+       
+       
+       
+     1,793 
+       
+    
+    
+     Cash and cash equivalents at end of period 
+       
+     $ 
+     2,371 
+       
+       
+     $ 
+     1,030 
+       
+    
+    
+     Interest payments 
+       
+     $ 
+     408 
+       
+       
+     $ 
+     375 
+       
+    
+    
+     Income tax payments (refunds), net 
+       
+     $ 
+     3 
+       
+       
+     $ 
+     ( 13 
+     ) 
+    
+   
+     
+     
+     
+     
+     
+     
+     
+   The accompanying notes are an integral part of the condensed consolidated financial statements.   
+       
+   7 
+   
+   HCA HEALTHCARE, INC.   
+   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS 
+     
+   NOTE 1 — BASIS OF PR ESENTATION AND SIGNIFICANT ACCOUNTING POLICIES   Reporting Entity   HCA Healthcare, Inc. is a holding company whose affiliates own and operate hospitals and related health care entities. The term “affiliates” includes direct and indirect subsidiaries of HCA Healthcare, Inc. and partnerships and joint ventures in which such subsidiaries are partners. At March 31, 2022 , these affiliates owned and operated  182  hospitals,  124  freestanding surgery centers,  21  freestanding endoscopy centers and provided extensive outpatient and ancillary services. HCA Healthcare, Inc.’s facilities are located in  20  states and England. The terms “Company,” “HCA,” “we,” “our” or “us,” as used herein and unless otherwise stated or indicated by context, refer to HCA Healthcare, Inc. and its affiliates. The terms “facilities” or “hospitals” refer to entities owned and operated by affiliates of HCA and the term “employees” refers to employees of affiliates of HCA.   Basis of Presentation   The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with generally accepted accounting principles for interim financial information and with the instructions to Form 10-Q and Article 10 of Regulation S-X. Accordingly, they do not include all the information and footnotes required by generally accepted accounting principles for complete consolidated financial statements. In the opinion of management, all adjustments considered necessary for a fair presentation have been included and are of a normal and recurring nature.   The majority of our expenses are “costs of revenues” items. Costs that could be classified as general and administrative would include our corporate office costs, which were $ 95  million and $ 87  million for the quarters ended  March 31, 2022 and 2021, respectively. Operating results for the quarter are not necessarily indicative of the results that may be expected for the year ending December 31, 2022. For further information, refer to the consolidated financial statements and footnotes thereto included in our annual report on Form 10-K for the year ended December 31, 2021.   COVID-19    On March 11, 2020, the World Health Organization designated COVID-19 as a global pandemic. We believe the extent of COVID-19’s impact on our operating results and financial condition has been and will continue to be driven by many factors, most of which are beyond our control and ability to forecast. Because of these uncertainties, we cannot estimate how long or to what extent COVID-19 will impact our operations. Revenues   Our revenues generally relate to contracts with patients in which our performance obligations are to provide health care services to the patients. Revenues are recorded during the period our obligations to provide health care services are satisfied.  Our performance obligations for inpatient services are generally satisfied over periods that average approximately five days, and revenues are recognized based on charges incurred in relation to total expected charges .  Our performance obligations for outpatient services are generally satisfied over a period of less than one day . The contractual relationships with patients, in most cases, also involve a third-party payer (Medicare, Medicaid, managed care health plans and commercial insurance companies, including plans offered through the health insurance exchanges) and the transaction prices for the services provided are dependent upon the terms provided by (Medicare and Medicaid) or negotiated with (managed care health plans and commercial insurance companies) the third-party payers. The payment arrangements with third-party payers for the services we provide to the related patients typically specify payments at amounts less than our standard charges. Medicare generally pays for inpatient and outpatient services at prospectively determined rates based on clinical, diagnostic and other factors. Services provided to patients having Medicaid coverage are generally paid at prospectively determined rates per discharge, per identified service or per covered member. Agreements with commercial insurance carriers, managed care and preferred provider organizations generally provide for payments based upon predetermined rates per diagnosis, per diem rates or discounted fee-for-service rates. Management continually reviews the contractual estimation process to consider and incorporate updates to laws and regulations and the frequent changes in managed care contractual terms resulting from contract renegotiations and renewals.     8 
+      HCA HEALTHCARE, INC.   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued)   NOTE 1 — BASIS OF PRESENTATION AND SIGNIFICANT ACCOUNTING POLICIES (continued) Revenues (continued) Our revenues are based upon the estimated amounts we expect to be entitled to receive from patients and third-party payers. Estimates of contractual adjustments under managed care and commercial insurance plans are based upon the payment terms specified in the related contractual agreements. Revenues related to uninsured patients and uninsured copayment and deductible amounts for patients who have health care coverage may have discounts applied (uninsured discounts and contractual discounts). We also record estimated implicit price concessions (based primarily on historical collection experience) related to uninsured accounts to record these revenues at the estimated amounts we expect to collect. Patients treated at our hospitals for non-elective care, who have income at or below  400 % of the federal poverty level, are eligible for charity care. Because we do not pursue collection of amounts determined to qualify as charity care, they are not reported in revenues.  Our revenues by primary third-party payer classification and other (including uninsured patients) for the quarters ended  March 31, 2022 and 2021 are summarized in the following table (dollars in millions):    
+         
+          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
+               
+             
+           2022 
+             
+             
+           Ratio 
+             
+             
+           2021 
+             
+             
+           Ratio 
+             
+          
+          
+           Medicare 
+             
+           $ 
+           2,726 
+             
+             
+             
+           18.2 
+           % 
+             
+           $ 
+           2,559 
+             
+             
+             
+           18.3 
+           % 
+          
+          
+           Managed Medicare 
+             
+             
+           2,324 
+             
+             
+             
+           15.6 
+             
+             
+             
+           2,053 
+             
+             
+             
+           14.7 
+             
+          
+          
+           Medicaid 
+             
+             
+           579 
+             
+             
+             
+           3.9 
+             
+             
+             
+           527 
+             
+             
+             
+           3.8 
+             
+          
+          
+           Managed Medicaid 
+             
+             
+           1,110 
+             
+             
+             
+           7.4 
+             
+             
+             
+           725 
+             
+             
+             
+           5.2 
+             
+          
+          
+           Managed care and insurers 
+             
+             
+           7,152 
+             
+             
+             
+           47.9 
+             
+             
+             
+           6,885 
+             
+             
+             
+           49.1 
+             
+          
+          
+           International (managed care and insurers) 
+             
+             
+           356 
+             
+             
+             
+           2.4 
+             
+             
+             
+           333 
+             
+             
+             
+           2.4 
+             
+          
+          
+           Other 
+             
+             
+           698 
+             
+             
+             
+           4.6 
+             
+             
+             
+           895 
+             
+             
+             
+           6.5 
+             
+          
+          
+           Revenues 
+             
+           $ 
+           14,945 
+             
+             
+             
+           100.0 
+           % 
+             
+           $ 
+           13,977 
+             
+             
+             
+           100.0 
+           % 
+          
+           Managed Medicaid revenues for the quarter ended March 31, 2022 include $ 244  million, for the period September through December 2021, related to the March 2022 Centers for Medicare & Medicaid Services ("CMS") approval of a Texas directed payment program for the current program year that began September 1, 2021.   To quantify the total impact of the trends related to uninsured patient accounts, we believe it is beneficial to view total uncompensated care, which is comprised of charity care, uninsured discounts and implicit price concessions.  A summary of the estimated cost of total uncompensated care for the quarters ended  March 31, 2022 and 2021 follows (dollars in millions):    
+         
+          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
+               
+             
+           2022 
+             
+             
+           2021 
+             
+          
+          
+           Patient care costs (salaries and benefits, supplies, other operating expense and depreciation    and amortization) 
+             
+           $ 
+           12,744 
+             
+             
+           $ 
+           11,643 
+             
+          
+          
+           Cost-to-charges ratio (patient care costs as percentage of gross patient charges) 
+             
+             
+           11.3 
+           % 
+             
+             
+           11.4 
+           % 
+          
+          
+           Total uncompensated care 
+             
+           $ 
+           7,005 
+             
+             
+           $ 
+           6,821 
+             
+          
+          
+           Multiply by the cost-to-charges ratio 
+             
+             
+           11.3 
+           % 
+             
+             
+           11.4 
+           % 
+          
+          
+           Estimated cost of total uncompensated care 
+             
+           $ 
+           792 
+             
+             
+           $ 
+           778 
+             
+          
+           The total uncompensated care amounts for the quarters ended March 31, 2022 and 2021  include charity care of $ 3.458  billion and $ 2.942  billion, respectively, and the related estimated costs of charity care were $ 391  million and $ 335  million, respectively.    Reclassifications   
+   Certain prior year amounts have been reclassified to conform to the current year presentation.   
+   NOTE 2 — ACQUISITIONS AND DISPOSITIONS   During the quarters ended March 31, 2022   and 2021 , we paid $ 2  million and $ 22  million, respectively, to acquire nonhospital health care entities. Purchase price amounts have been allocated to the related assets acquired and liabilities assumed based upon their respective fair values.   9 
+      HCA HEALTHCARE, INC.   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued)   NOTE 2 — ACQUISITIONS AND DISPOSITIONS (continued)   During the quarters ended March 31, 2022   and 2021 , we received proceeds of $ 14  million and $ 20  million, respectively, and recognized pretax gains of  $ 10  million and  $ 2  million, respectively, related to sales of real estate and other health care entity investments. 
+   NOTE 3 — INCOME TAXES   Our provisions for income taxes for the quarters ended March 31, 2022   and 2021 were  $ 349  million and  $ 393  million, respectively, and the effective tax rates were  21.5 % and  21.7 %, respectively. Our provisions for income taxes included tax benefits related to settlements of employee equity awards of $ 64  million and $ 74  million for the quarters ended  March 31, 2022   and 2021, respectively.   Our liability for unrecognized tax benefits was $ 654  million, including accrued interest of $ 104  million, as of  March 31, 2022  ($ 642  million and $ 99  million, respectively, as of December 31, 2021). Unrecognized tax benefits of $ 230  million ($ 217  million as of December 31, 2021) would affect the effective rate, if recognized.   
+   At March 31, 2022 , the Internal Revenue Service was conducting examinations of the Company’s 2016, 2017 and 2018 federal income tax returns and the 2019 return for one affiliated partnership. We are also subject to examination by state and foreign taxing authorities. Depending on the resolution of any federal, state and foreign tax disputes, the completion of examinations by federal, state or foreign taxing authorities, or the expiration of statutes of limitation for specific taxing jurisdictions, we believe it is reasonably possible that our liability for unrecognized tax benefits may significantly increase or decrease within the next 12 months. However, we are currently unable to estimate the range of any possible change.   
+   NOTE 4 — EARNINGS PER SHARE   We compute basic earnings per share using the weighted average number of common shares outstanding. We compute diluted earnings per share using the weighted average number of common shares outstanding, plus the dilutive effect of outstanding equity awards, computed using the treasury stock method.       The following table sets forth the computation of basic and diluted earnings per share for the quarters ended  March 31, 2022   and 2021 (dollars and shares in millions, except per share amounts):     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         2022 
+           
+           
+         2021 
+           
+        
+        
+         Net income attributable to HCA Healthcare, Inc. 
+           
+         $ 
+         1,273 
+           
+           
+         $ 
+         1,423 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Weighted average common shares outstanding 
+           
+           
+         302.446 
+           
+           
+           
+         338.123 
+           
+        
+        
+         Effect of dilutive incremental shares 
+           
+           
+         4.928 
+           
+           
+           
+         5.198 
+           
+        
+        
+         Shares used for diluted earnings per share 
+           
+           
+         307.374 
+           
+           
+           
+         343.321 
+           
+        
+        
+         Earnings per share: 
+           
+           
+           
+           
+           
+           
+        
+        
+         Basic earnings 
+           
+         $ 
+         4.21 
+           
+           
+         $ 
+         4.21 
+           
+        
+        
+         Diluted earnings 
+           
+         $ 
+         4.14 
+           
+           
+         $ 
+         4.14 
+           
+        
+         10 
+        HCA HEALTHCARE, INC.   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued)   
+     
+   NOTE 5 — INVESTMENTS OF INSURANCE SUBSIDIARIES   A summary of our insurance subsidiaries’ investments at  March 31, 2022 and December 31, 2021 follows (dollars in millions):     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         March 31, 2022 
+           
+        
+        
+             
+           
+           
+           
+           
+         Unrealized Amounts 
+           
+           
+           
+           
+        
+        
+             
+           
+         Amortized Cost 
+           
+           
+         Gains 
+           
+           
+         Losses 
+           
+           
+         Fair Value 
+           
+        
+        
+         Debt securities 
+           
+         $ 
+         411 
+           
+           
+         $ 
+         4 
+           
+           
+         $ 
+         ( 14 
+         ) 
+           
+         $ 
+         401 
+           
+        
+        
+         Money market funds and other 
+           
+           
+         112 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         112 
+           
+        
+        
+             
+           
+         $ 
+         523 
+           
+           
+         $ 
+         4 
+           
+           
+         $ 
+         ( 14 
+         ) 
+           
+           
+         513 
+           
+        
+        
+         Amounts classified as current assets 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         ( 105 
+         ) 
+        
+        
+         Investment carrying value 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         $ 
+         408 
+           
+        
+         
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         December 31, 2021 
+           
+        
+        
+             
+           
+           
+           
+           
+         Unrealized Amounts 
+           
+           
+           
+           
+        
+        
+             
+           
+         Amortized Cost 
+           
+           
+         Gains 
+           
+           
+         Losses 
+           
+           
+         Fair Value 
+           
+        
+        
+         Debt securities 
+           
+         $ 
+         400 
+           
+           
+         $ 
+         18 
+           
+           
+         $ 
+         ( 2 
+         ) 
+           
+         $ 
+         416 
+           
+        
+        
+         Money market funds and other 
+           
+           
+         125 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         125 
+           
+        
+        
+             
+           
+         $ 
+         525 
+           
+           
+         $ 
+         18 
+           
+           
+         $ 
+         ( 2 
+         ) 
+           
+           
+         541 
+           
+        
+        
+         Amounts classified as current assets 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         ( 103 
+         ) 
+        
+        
+         Investment carrying value 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         $ 
+         438 
+           
+        
+         At March 31, 2022 and December 31, 2021, the investments in debt securities of our insurance subsidiaries were classified as “available-for-sale.” Changes in unrealized gains and losses that are not credit-related are recorded as adjustments to other comprehensive income (loss).     Scheduled maturities of investments in debt securities at  March 31, 2022 were as follows (dollars in millions):     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         Amortized Cost 
+           
+           
+         Fair Value 
+           
+        
+        
+         Due in one year or less 
+           
+         $ 
+         8 
+           
+           
+         $ 
+         8 
+           
+        
+        
+         Due after one year through five years 
+           
+           
+         139 
+           
+           
+           
+         140 
+           
+        
+        
+         Due after five years through ten years 
+           
+           
+         173 
+           
+           
+           
+         166 
+           
+        
+        
+         Due after ten years 
+           
+           
+         91 
+           
+           
+           
+         87 
+           
+        
+        
+             
+           
+         $ 
+         411 
+           
+           
+         $ 
+         401 
+           
+        
+         
+   The average expected maturity of the investments in debt securities at March 31, 2022  was  6.0  years, compared to the average scheduled maturity of  9.0  years. Expected and scheduled maturities may differ because the issuers of certain securities have the right to call, prepay or otherwise redeem such obligations prior to their scheduled maturity date.   
+   11 
+   
+   HCA HEALTHCARE, INC.   
+   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued) 
+     
+   NOTE 6 — FINANCIAL INSTRUMENTS   The following table sets forth our interest rate swap agreement, which has been designated as a cash flow hedge, at  March 31, 2022 (dollars in millions):     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         Notional Amount 
+           
+           
+         Maturity Date 
+           
+         Fair Value 
+           
+        
+        
+         Pay-fixed interest rate swap 
+           
+         $ 
+         500 
+           
+           
+         December 2022 
+           
+         $ 
+         ( 2 
+         ) 
+        
+         The following table presents the effect of our interest rate swap on our results of operations for the quarter ended  March 31, 2022 (dollars in millions):     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+        
+        
+         Derivatives in Cash Flow Hedging Relationships 
+           
+         Amount of Gain Recognized in OCI on Derivatives, Net of Tax 
+           
+         Location of Loss Reclassified from Accumulated OCI into Operations 
+           
+         Amount of Loss Reclassified from Accumulated OCI into Operations 
+        
+        
+         Interest rate swap 
+           
+         $ 3 
+           
+         Interest expense 
+           
+         $ 2 
+        
+       
+     
+   NOTE 7 — ASSETS AND LIABILITIES MEASURED AT FAIR VALUE   Accounting Standards Codification 820,  Fair Value Measurements and Disclosures  (“ASC 820”), emphasizes fair value is a market-based measurement, and fair value measurements should be determined based on the assumptions market participants would use in pricing assets or liabilities. ASC 820 utilizes a fair value hierarchy that distinguishes between market participant assumptions based on market data obtained from sources independent of the reporting entity (observable inputs classified within Levels 1 and 2 of the hierarchy) and the reporting entity’s own assumptions about market participant assumptions (unobservable inputs classified within Level 3 of the hierarchy).   Level 1 inputs utilize quoted prices (unadjusted) in active markets for identical assets or liabilities. Level 2 inputs are inputs other than quoted prices included in Level 1 that are observable for the asset or liability, either directly or indirectly. Level 2 inputs may include quoted prices for similar assets and liabilities in active markets, as well as inputs observable for the asset or liability (other than quoted prices), such as interest rates, foreign exchange rates, and yield curves observable at commonly quoted intervals. Level 3 inputs are unobservable inputs for the asset or liability, which are typically based on an entity’s own assumptions, as there is little, if any, related market activity. In instances where the determination of the fair value measurement is based on inputs from different levels of the fair value hierarchy, the level in the fair value hierarchy within which the entire fair value measurement falls is based on the lowest level input significant to the fair value measurement in its entirety. Our assessment of the significance of a particular input to the fair value measurement in its entirety requires judgment.   Investment Securities   The investments of our insurance subsidiaries are generally classified within Level 1 or Level 2 of the fair value hierarchy because they are valued using quoted market prices, broker or dealer quotations, or alternative pricing sources with reasonable levels of price transparency.   Derivative Financial Instrument   We have entered into an interest rate swap agreement to manage our exposure to fluctuations in interest rates. The valuation of this instrument is determined using widely accepted valuation techniques, including a discounted expected cash flow analysis.     12 
+      HCA HEALTHCARE, INC.   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued)   NOTE 7 — ASSETS AND LIABILITIES MEASURED AT FAIR VALUE (continued) The following tables summarize our assets and liabilities measured at fair value on a recurring basis as of  March 31, 2022 and December 31, 2021, aggregated by the level in the fair value hierarchy within which those measurements fall (dollars in millions):   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         March 31, 2022 
+           
+        
+        
+             
+           
+           
+           
+           
+         Fair Value Measurements Using 
+           
+        
+        
+             
+           
+         Fair Value 
+           
+           
+         Quoted Prices in Active Markets for Identical Assets and Liabilities (Level 1) 
+           
+           
+         Significant Other Observable Inputs (Level 2) 
+           
+           
+         Significant Unobservable Inputs (Level 3) 
+           
+        
+        
+         Assets: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Investments of insurance subsidiaries: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Debt securities 
+           
+         $ 
+         401 
+           
+           
+         $ 
+         — 
+           
+           
+         $ 
+         401 
+           
+           
+         $ 
+         — 
+           
+        
+        
+         Money market funds and other 
+           
+           
+         112 
+           
+           
+           
+         112 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Investments of insurance subsidiaries 
+           
+           
+         513 
+           
+           
+           
+         112 
+           
+           
+           
+         401 
+           
+           
+           
+         — 
+           
+        
+        
+         Less amounts classified as current assets 
+           
+           
+         ( 105 
+         ) 
+           
+           
+         ( 105 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+             
+           
+         $ 
+         408 
+           
+           
+         $ 
+         7 
+           
+           
+         $ 
+         401 
+           
+           
+         $ 
+         — 
+           
+        
+        
+         Liabilities: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Interest rate swap (Other accrued expenses) 
+           
+         $ 
+         2 
+           
+           
+         $ 
+         — 
+           
+           
+         $ 
+         2 
+           
+           
+         $ 
+         — 
+           
+        
+           
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         December 31, 2021 
+           
+        
+        
+             
+           
+           
+           
+           
+         Fair Value Measurements Using 
+           
+        
+        
+             
+           
+         Fair Value 
+           
+           
+         Quoted Prices in Active Markets for Identical Assets and Liabilities (Level 1) 
+           
+           
+         Significant Other Observable Inputs (Level 2) 
+           
+           
+         Significant Unobservable Inputs (Level 3) 
+           
+        
+        
+         Assets: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Investments of insurance subsidiaries: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Debt securities 
+           
+         $ 
+         416 
+           
+           
+         $ 
+         — 
+           
+           
+         $ 
+         416 
+           
+           
+         $ 
+         — 
+           
+        
+        
+         Money market funds and other 
+           
+           
+         125 
+           
+           
+           
+         125 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Investments of insurance subsidiaries 
+           
+           
+         541 
+           
+           
+           
+         125 
+           
+           
+           
+         416 
+           
+           
+           
+         — 
+           
+        
+        
+         Less amounts classified as current assets 
+           
+           
+         ( 103 
+         ) 
+           
+           
+         ( 103 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+             
+           
+         $ 
+         438 
+           
+           
+         $ 
+         22 
+           
+           
+         $ 
+         416 
+           
+           
+         $ 
+         — 
+           
+        
+        
+         Liabilities: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Interest rate swap (Other accrued expenses) 
+           
+         $ 
+         8 
+           
+           
+         $ 
+         — 
+           
+           
+         $ 
+         8 
+           
+           
+         $ 
+         — 
+           
+        
+           
+   The estimated fair value of our long-term debt was $ 39.038  billion and $ 38.541  billion at  March 31, 2022  and December 31, 2021, respectively, compared to carrying amounts, excluding debt issuance costs and discounts, aggregating $ 38.019  billion and $ 34.827  billion, respectively. The estimates of fair value are generally based upon the quoted market prices or quoted market prices for similar issues of long-term debt with the same maturities.   
+   13 
+   
+   HCA HEALTHCARE, INC.   
+   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued) 
+     
+   NOTE 8 — LONG-TERM DEBT   A summary of long-term debt at  March 31, 2022 and December 31, 2021, including related interest rates at March 31, 2022 follows (dollars in millions):         
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+         March 31, 2022 
+           
+           
+         December 31, 2021 
+           
+        
+        
+         Senior secured asset-based revolving credit facility 
+         $ 
+         — 
+           
+           
+         $ 
+         2,780 
+           
+        
+        
+         Senior secured revolving credit facility 
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Senior secured term loan facilities (effective interest rate of  2.3 %) 
+           
+         1,940 
+           
+           
+           
+         1,960 
+           
+        
+        
+         Senior secured notes (effective interest rate of  4.6 %) 
+           
+         22,200 
+           
+           
+           
+         16,200 
+           
+        
+        
+         Other senior secured debt (effective interest rate of  4.0 %) 
+           
+         927 
+           
+           
+           
+         935 
+           
+        
+        
+         Senior secured debt 
+           
+         25,067 
+           
+           
+           
+         21,875 
+           
+        
+        
+         Senior unsecured notes (effective interest rate of  5.5 %) 
+           
+         12,952 
+           
+           
+           
+         12,952 
+           
+        
+        
+         Debt issuance costs and discounts 
+           
+         ( 323 
+         ) 
+           
+           
+         ( 248 
+         ) 
+        
+        
+         Total debt (average life of  10.2  years, rates averaging  4.8 %) 
+           
+         37,696 
+           
+           
+           
+         34,579 
+           
+        
+        
+         Less amounts due within one year 
+           
+         1,486 
+           
+           
+           
+         237 
+           
+        
+        
+             
+         $ 
+         36,210 
+           
+           
+         $ 
+         34,342 
+           
+        
+           
+   During March 2022, we issued $ 6.000  billion aggregate principal amount of senior secured notes comprised of  (i) $ 1.000  billion aggregate principal amount of  3 1/8 % senior secured notes due 2027, (ii) $ 500  million aggregate principal amount of  3 3/8 % senior secured notes due 2029, (iii) $ 2.000  billion aggregate principal amount of  3 5/8 % senior secured notes due 2032, (iv) $ 500  million aggregate principal amount of  4 3/8 % senior secured notes due 2042 and (v) $ 2.000  billion aggregate principal amount of  4 5/8 % senior secured notes due 2052 . During March 2022, we used a portion of the net proceeds  to pay down our revolving credit facilities.  During April 2022, we  redeemed all $ 1.250  billion outstanding aggregate principal amount of our  4.75 % senior secured notes due 2023 and provided a notice of our election to redeem all $ 1.250  billion outstanding aggregate principal amount of our  5.875 % senior notes due 2023. We expect to record aggregate  pretax losses on retirement of debt for these two redemptions of approximately $ 80  million during the second quarter of 2022.      
+   NOTE 9 — CONTINGENCIES   We operate in a highly regulated and litigious industry. As a result, various lawsuits, claims and legal and regulatory proceedings have been and can be expected to be instituted or asserted against us. We are also subject to claims and suits arising in the ordinary course of business, including claims for personal injuries or wrongful restriction of, or interference with, physicians’ staff privileges. In certain of these actions the claimants may seek punitive damages against us which may not be covered by insurance. We are also subject to claims by various taxing authorities for additional taxes and related interest and penalties. The resolution of any such lawsuits, claims or legal and regulatory proceedings could have a material, adverse effect on our results of operations, financial position or liquidity.   Health care companies are routinely subject to investigations by various governmental agencies. Under the federal False Claims Act (“FCA”), private parties have the right to bring  qui tam , or “whistleblower,” suits against companies that submit false claims for payments to, or improperly retain overpayments from, the government. Some states have adopted similar state whistleblower and false claims provisions. Certain of our individual facilities have received, and from time to time, other facilities may receive, government inquiries from, and may be subject to investigation by, federal and state agencies. Depending on whether the underlying conduct in these or future inquiries or investigations could be considered systemic, their resolution could have a material, adverse effect on our results of operations, financial position or liquidity.     14 
+      HCA HEALTHCARE, INC.   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued)   NOTE 9 — CONTINGENCIES (continued)   
+   Texas operates a state Medicaid program pursuant to a waiver from CMS under Section 1115 of the Social Security Act (“Program”). The Program includes uncompensated-care pools; payments from these pools are intended to defray the uncompensated costs of services provided by our and other hospitals to Medicaid eligible or uninsured individuals. Separately, we and other hospitals provide charity care services in several communities in the state. In 2018, the Civil Division of the U.S. Department of Justice and the U.S. Attorney’s Office for the Southern District of Texas requested information about whether the Program, as operated in Harris County, complied with the laws and regulations applicable to provider related donations, and the Company cooperated with that request. On May 21, 2019, a  qui tam  lawsuit asserting violations of the FCA and the Texas Medicaid Fraud Prevention Act related to the Program, as operated in Harris County, was unsealed by the U.S. District Court for the Southern District of Texas. Both the federal and state governments declined to intervene in the  qui tam  lawsuit. The Company believes that our participation is and has been consistent with the requirements of the Program and is vigorously defending against the lawsuit being pursued by the relator. We cannot predict what effect, if any, the  qui tam  lawsuit could have on the Company.   
+   NOTE 10 — SHARE REPURCHASE TRANSACTIONS AND OTHER COMPREHENSIVE LOSS   During January 2022 and February 2021, our Board of Directors authorized share repurchase programs for up to $ 8  billion and $ 6  billion, respectively, of our outstanding common stock. During the quarter ended  March 31, 2022 , we repurchased  8.375  million shares of our common stock at an average price of $ 250.89  per share through market purchases pursuant to the February 2021 authorization (which was completed during the first quarter of 2022) and the January 2022 authorization. At  March 31, 2022 , we had $ 6.485  billion of repurchase authorization available under the January 2022 authorization.   The components of accumulated other comprehensive loss are as follows (dollars in millions):     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         Unrealized Gains (Losses) on Available- for-Sale Securities 
+           
+           
+         Foreign Currency Translation Adjustments 
+           
+           
+         Defined Benefit Plans 
+           
+           
+         Change in Fair Value of Derivative Instruments 
+           
+           
+         Total 
+           
+        
+        
+         Balances at December 31, 2021 
+           
+         $ 
+         12 
+           
+           
+         $ 
+         ( 278 
+         ) 
+           
+         $ 
+         ( 132 
+         ) 
+           
+         $ 
+         ( 6 
+         ) 
+           
+         $ 
+         ( 404 
+         ) 
+        
+        
+         Unrealized losses on available-for-sale     securities, net of $ 6  income tax benefit 
+           
+           
+         ( 20 
+         ) 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         ( 20 
+         ) 
+        
+        
+         Foreign currency translation adjustments, net    of  $ 4  income tax benefit 
+           
+           
+           
+           
+           
+         ( 30 
+         ) 
+           
+           
+           
+           
+           
+           
+           
+           
+         ( 30 
+         ) 
+        
+        
+         Change in fair value of derivative instruments,     net of $ 1  of income taxes 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         3 
+           
+           
+           
+         3 
+           
+        
+        
+         Expense reclassified into operations from other    comprehensive income 
+           
+           
+           
+           
+           
+           
+           
+           
+         2 
+           
+           
+           
+         2 
+           
+           
+           
+         4 
+           
+        
+        
+         Balances at March 31, 2022 
+           
+         $ 
+         ( 8 
+         ) 
+           
+         $ 
+         ( 308 
+         ) 
+           
+         $ 
+         ( 130 
+         ) 
+           
+         $ 
+         ( 1 
+         ) 
+           
+         $ 
+         ( 447 
+         ) 
+        
+       
+     
+   NOTE 11 — SEGMENT AND GEOGRAPHIC INFORMATION   We operate in one line of business, which is operating hospitals and related health care entities. We operate in  two  geographically organized groups: the National and American Groups. The National Group includes  96  hospitals located in Alaska, California, Florida, Georgia, Idaho, Indiana, northern Kentucky, Nevada, New Hampshire, North Carolina, South Carolina, Utah and Virginia, and the American Group includes  79  hospitals located in Colorado, Kansas, southern Kentucky, Louisiana, Missouri, Tennessee and Texas. We also operate  seven  hospitals in England, and these facilities are included in the Corporate and other group.     15 
+      HCA HEALTHCARE, INC.   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Continued)   NOTE 11 — SEGMENT AND GEOGRAPHIC INFORMATION (continued) Adjusted segment EBITDA is defined as income before depreciation and amortization, interest expense, gains on sales of facilities, income taxes and net income attributable to noncontrolling interests. We use adjusted segment EBITDA as an analytical indicator for purposes of allocating resources to geographic areas and assessing their performance. Adjusted segment EBITDA is commonly used as an analytical indicator within the health care industry, and also serves as a measure of leverage capacity and debt service ability. Adjusted segment EBITDA should not be considered as a measure of financial performance under generally accepted accounting principles, and the items excluded from adjusted segment EBITDA are significant components in understanding and assessing financial performance. Because adjusted segment EBITDA is not a measurement determined in accordance with generally accepted accounting principles and is thus susceptible to varying calculations, adjusted segment EBITDA, as presented, may not be comparable to other similarly titled measures of other companies.  The geographic distributions of our revenues, equity in earnings of affiliates, adjusted segment EBITDA and depreciation and amortization for the quarters ended  March 31, 2022   and 2021 are summarized in the following table (dollars in millions):      
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+             
+           
+         2022 
+           
+           
+         2021 
+           
+        
+        
+         Revenues: 
+           
+           
+           
+           
+           
+           
+        
+        
+         National Group 
+           
+         $ 
+         7,506 
+           
+           
+         $ 
+         7,056 
+           
+        
+        
+         American Group 
+           
+           
+         6,616 
+           
+           
+           
+         6,291 
+           
+        
+        
+         Corporate and other 
+           
+           
+         823 
+           
+           
+           
+         630 
+           
+        
+        
+             
+           
+         $ 
+         14,945 
+           
+           
+         $ 
+         13,977 
+           
+        
+        
+         Equity in earnings of affiliates: 
+           
+           
+           
+           
+           
+           
+        
+        
+         National Group 
+           
+         $ 
+         ( 1 
+         ) 
+           
+         $ 
+         ( 7 
+         ) 
+        
+        
+         American Group 
+           
+           
+         ( 9 
+         ) 
+           
+           
+         ( 12 
+         ) 
+        
+        
+         Corporate and other 
+           
+           
+         ( 1 
+         ) 
+           
+           
+         ( 2 
+         ) 
+        
+        
+             
+           
+         $ 
+         ( 11 
+         ) 
+           
+         $ 
+         ( 21 
+         ) 
+        
+        
+         Adjusted segment EBITDA: 
+           
+           
+           
+           
+           
+           
+        
+        
+         National Group 
+           
+         $ 
+         1,566 
+           
+           
+         $ 
+         1,705 
+           
+        
+        
+         American Group 
+           
+           
+         1,486 
+           
+           
+           
+         1,501 
+           
+        
+        
+         Corporate and other 
+           
+           
+         ( 108 
+         ) 
+           
+           
+         ( 154 
+         ) 
+        
+        
+             
+           
+         $ 
+         2,944 
+           
+           
+         $ 
+         3,052 
+           
+        
+        
+         Depreciation and amortization: 
+           
+           
+           
+           
+           
+           
+        
+        
+         National Group 
+           
+         $ 
+         355 
+           
+           
+         $ 
+         323 
+           
+        
+        
+         American Group 
+           
+           
+         301 
+           
+           
+           
+         293 
+           
+        
+        
+         Corporate and other 
+           
+           
+         76 
+           
+           
+           
+         81 
+           
+        
+        
+             
+           
+         $ 
+         732 
+           
+           
+         $ 
+         697 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Adjusted segment EBITDA 
+           
+         $ 
+         2,944 
+           
+           
+         $ 
+         3,052 
+           
+        
+        
+         Depreciation and amortization 
+           
+           
+         732 
+           
+           
+           
+         697 
+           
+        
+        
+         Interest expense 
+           
+           
+         408 
+           
+           
+           
+         384 
+           
+        
+        
+         Gains on sales of facilities 
+           
+           
+         ( 10 
+         ) 
+           
+           
+         ( 2 
+         ) 
+        
+        
+         Income before income taxes 
+           
+         $ 
+         1,814 
+           
+           
+         $ 
+         1,973 
+           
+        
+       
+     
+       
+   16 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS   
+     
+   Forward-Lookin g Statements   
+   This quarterly report on Form 10-Q includes certain disclosures which contain “forward-looking statements” within the meaning of the federal securities laws, which involve risks and uncertainties. Forward-looking statements include statements regarding expected share-based compensation expense, expected capital expenditures and expected net claim payments and all other statements that do not relate solely to historical or current facts, and can be identified by the use of words like “may,” “believe,” “will,” “expect,” “project,” “estimate,” “anticipate,” “plan,” “initiative” or “continue.” These forward-looking statements are based on our current plans and expectations and are subject to a number of known and unknown uncertainties and risks, many of which are beyond our control, which could significantly affect current plans and expectations and our future financial position and results of operations. These factors include, but are not limited to, (1) developments related to COVID-19, including, without limitation, the length and severity of its impact and the spread of virus strains with new epidemiological characteristics; the volume of canceled or rescheduled procedures and the volume of COVID-19 patients cared for across our health systems; measures we are taking to respond to COVID-19; the impact and terms of government and administrative regulation and stimulus and relief measures (including the Families First Coronavirus Response Act, the Coronavirus Aid, Relief, and Economic Security (“CARES”) Act, the Paycheck Protection Program and Health Care Enhancement Act, the Consolidated Appropriations Act, 2021, the American Rescue Plan Act of 2021 (“ARPA”) and other enacted and potential future legislation) and whether various stimulus and relief programs continue or new similar programs are enacted in the future; changes in revenues due to declining patient volumes, changes in payer mix and deteriorating macroeconomic conditions (including increases in uninsured and underinsured patients); potential increased expenses related to labor, supply chain or other expenditures; workforce disruptions, including the impact of any current or future vaccine mandates; supply shortages and disruptions; and the timing, availability and adoption of effective medical treatments and vaccines (including boosters), (2) the impact of our substantial indebtedness and the ability to refinance such indebtedness on acceptable terms, as well as risks associated with disruptions in the financial markets and the business of financial institutions as the result of COVID-19, which could impact us from a financial perspective, (3) the impact of current and future federal and state health reform initiatives and possible changes to other federal, state or local laws and regulations affecting the health care industry, including but not limited to, the Patient Protection and Affordable Care Act, as amended by the Health Care and Education Reconciliation Act of 2010 (collectively, the “Affordable Care Act”), and the effects of additional changes to the Affordable Care Act, its implementation, or interpretation (including through executive orders and court challenges), and proposals to expand coverage of federally-funded insurance programs as an alternative to private insurance or establish a single-payer system (such reforms often referred to as “Medicare for All”), and also including any such laws or governmental regulations which are adopted in response to COVID-19, (4) the effects related to the implementation of sequestration spending reductions required under the Budget Control Act of 2011, related legislation extending these reductions and those required under the Pay-As-You-Go Act of 2010 (“PAYGO Act”) as a result of the federal budget deficit impact of the ARPA, and the potential for future deficit reduction legislation that may alter these spending reductions, which include cuts to Medicare payments, or create additional spending reductions, (5) increases in the amount and risk of collectability of uninsured accounts and deductibles and copayment amounts for insured accounts, (6) the ability to achieve operating and financial targets, and attain expected levels of patient volumes and control the costs of providing services, (7) possible changes in Medicare, Medicaid and other state programs, including Medicaid supplemental payment programs or Medicaid waiver programs, that may impact reimbursements to health care providers and insurers and the size of the uninsured or underinsured population, (8) increases in wages and the ability to attract and retain qualified management and personnel, including affiliated physicians, nurses and medical and technical support personnel, (9) the highly competitive nature of the health care business, (10) changes in service mix, revenue mix and surgical volumes, including potential declines in the population covered under third-party payer agreements, the ability to enter into and renew third-party payer provider agreements on acceptable terms and the impact of consumer-driven health plans and physician utilization trends and practices, (11) the efforts of health insurers, health care providers, large employer groups and others to contain health care costs, (12) the outcome of our continuing efforts to monitor, maintain and comply with appropriate laws, regulations, policies and procedures, (13) the availability and terms of capital to fund the expansion of our business and improvements to our existing facilities, (14) changes in accounting practices, (15) changes in general economic conditions nationally and regionally in our markets, including inflation and economic and business conditions (and the impact thereof on the economy, financial markets and banking industry) resulting from COVID-19, (16) the emergence of and effects related to pandemics, epidemics and infectious diseases, (17) future divestitures which may result in charges and possible impairments of long-lived assets, (18) changes in business strategy or development plans, (19) delays in receiving payments for services provided, (20) the outcome of pending and any future tax audits, disputes and litigation associated with our tax positions, (21) potential adverse impact of known and unknown government investigations, litigation and other claims that may be made against us, (22)  the impact of potential cybersecurity incidents or security breaches, (23) our ongoing ability to demonstrate meaningful use of certified electronic health record (“EHR”) technology and the impact of interoperability requirements, (24) the impact of natural disasters, such as hurricanes and floods, physical risks from climate change or similar events beyond our control, (25) changes in U.S. federal, state, or foreign tax laws including interpretive guidance that may be issued by taxing authorities or other standard setting bodies, and (26)  other risk factors described in our annual report on Form 10-K for the year ended December 31, 2021 and our other filings with the Securities and Exchange Commission. As a consequence, current plans, anticipated actions and future financial position and results of operations may differ from those expressed in any forward-looking statements made by or on behalf of HCA. You are cautioned not to unduly rely on such forward-looking statements when evaluating the information presented in this report, which forward-looking statements reflect management’s views only as of the date of this report. We undertake no obligation to revise or update any forward-looking statements, whether as a result of new information, future events or otherwise.   
+     
+   17 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   COVID-19 
+   On March 11, 2020, the World Health Organization designated COVID-19 as a global pandemic. We believe the extent of COVID-19’s impact on our operating results and financial condition has been and will continue to be driven by many factors, most of which are beyond our control and ability to forecast. Because of these uncertainties, we cannot estimate how long or to what extent COVID-19 will impact our operations.   
+   First Quarter 2022 Operations Summary   
+   Revenues increased to $14.945 billion in the first quarter of 2022 from $13.977 billion in the first quarter of 2021. Net income attributable to HCA Healthcare, Inc. totaled $1.273 billion, or $4.14 per diluted share, for the quarter ended March 31, 2022, compared to $1.423 billion, or $4.14 per diluted share, for the quarter ended March 31, 2021. First quarter results for 2022 include gains on sales of facilities of $10 million, or $0.02 per diluted share. In March 2022, the state of Texas received approval from the Centers for Medicare & Medicaid Services ("CMS") to implement a proposed directed payment program effective for the current program year that began September 1, 2021. During the first quarter of 2022, revenues include $244 million and other operating expenses include $90 million from provider tax assessments related to this program for the period September through December 2021. All “per diluted share” disclosures are based upon amounts net of the applicable income taxes. Shares used for diluted earnings per share were 307.374 million shares for the quarter ended March 31, 2022 and 343.321 million shares for the quarter ended March 31, 2021. During 2021 and the first quarter of 2022, we repurchased 37.812 million shares and 8.375 million shares, respectively, of our common stock.   
+   Revenues increased 6.9% on a consolidated basis and 7.8% on a same facility basis for the quarter ended March 31, 2022, compared to the quarter ended March 31, 2021. The increase in consolidated revenues can be primarily attributed to the combined impact of a 3.6% increase in revenue per equivalent admission and a 3.2% increase in equivalent admissions. The same facility revenues increase primarily resulted from the combined impact of a 2.7% increase in same facility revenue per equivalent admission and a 5.0% increase in same facility equivalent admissions. The consolidated and same facility increases in revenue per equivalent admission were negatively impacted by declines in acuity of COVID-19 patients. 
+   During the quarter ended March 31, 2022, consolidated admissions increased 0.1% and same facility admissions increased 2.1% compared to the quarter ended March 31, 2021. Surgeries increased 4.3% on a consolidated basis and 4.6% on a same facility basis during the quarter ended March 31, 2022, compared to the quarter ended March 31, 2021. Emergency department visits increased 11.7% on a consolidated basis and 14.6% on a same facility basis during the quarter ended March 31, 2022, compared to the quarter ended March 31, 2021. Consolidated and same facility uninsured admissions declined 4.9% and 3.0%, respectively, for the quarter ended March 31, 2022, compared to the quarter ended March 31, 2021.   
+   Cash flows from operating activities declined $643 million, from $1.988 billion for the first quarter of 2021 to $1.345 billion for the first quarter of 2022. The decline in cash provided by operating activities was primarily related to the combined impact of negative changes in working capital items of $492 million, primarily related to a payment of $344 million for deferred payroll taxes from 2020, and a $121 million decline in net income, excluding gains on sales of facilities.   
+   Results of Operations   
+   Revenue/Volume Trends   
+   Our revenues generally relate to contracts with patients in which our performance obligations are to provide health care services to the patients. Revenues are recorded during the period our obligations to provide health care services are satisfied. Our performance obligations for inpatient services are generally satisfied over periods that average approximately five days, and revenues are recognized based on charges incurred in relation to total expected charges. Our performance obligations for outpatient services are generally satisfied over a period of less than one day. The contractual relationships with patients, in most cases, also involve a third-party payer (Medicare, Medicaid, managed care health plans and commercial insurance companies, including plans offered through the health insurance exchanges) and the transaction prices for the services provided are dependent upon the terms provided by (Medicare and Medicaid) or negotiated with (managed care health plans and commercial insurance companies) the third-party payers. The payment arrangements with third-party payers for the services we provide to the related patients typically specify payments at amounts less than our standard charges. Medicare generally pays for inpatient and outpatient services at prospectively determined rates based on clinical, diagnostic and other factors. Services provided to patients having Medicaid coverage are generally paid at prospectively determined rates per discharge, per identified service or per covered member. Agreements with commercial insurance carriers, managed care and preferred provider organizations generally provide for payments based upon predetermined rates per diagnosis, per diem rates or discounted fee-for-service rates. Management continually reviews the contractual estimation process to consider and incorporate updates to laws and regulations and the frequent changes in managed care contractual terms resulting from contract renegotiations and renewals.   
+   18 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Results of Operations (continued)   
+   Revenue/Volume Trends (continued) 
+   Revenues increased 6.9% from $13.977 billion in the first quarter of 2021 to $14.945 billion in the first quarter of 2022. Managed Medicaid revenues for the quarter ended March 31, 2022 include $244 million, for the period from September through December 2021, related to the March 2022 CMS approval of a Texas directed payment program for the current program year that began September 1, 2021. Our revenues are based upon the estimated amounts we expect to be entitled to receive from patients and third-party payers. Estimates of contractual adjustments under managed care and commercial insurance plans are based upon the payment terms specified in the related contractual agreements. Revenues related to uninsured patients and uninsured copayment and deductible amounts for patients who have health care coverage may have discounts applied (uninsured discounts and contractual discounts). We also record estimated implicit price concessions (based primarily on historical collection experience) related to uninsured accounts to record self-pay revenues at the estimated amounts we expect to collect. Patients treated at our hospitals for non-elective care, who have income at or below 400% of the federal poverty level, are eligible for charity care. Because we do not pursue collection of amounts determined to qualify as charity care, they are not reported in revenues. Our revenues by primary third-party payer classification and other (including uninsured patients) for the quarters ended March 31, 2022 and 2021 are summarized in the following table (dollars in millions):   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     Ratio 
+       
+       
+     2021 
+       
+       
+     Ratio 
+       
+    
+    
+     Medicare 
+       
+     $ 
+     2,726 
+       
+       
+       
+     18.2 
+     % 
+       
+     $ 
+     2,559 
+       
+       
+       
+     18.3 
+     % 
+    
+    
+     Managed Medicare 
+       
+       
+     2,324 
+       
+       
+       
+     15.6 
+       
+       
+       
+     2,053 
+       
+       
+       
+     14.7 
+       
+    
+    
+     Medicaid 
+       
+       
+     579 
+       
+       
+       
+     3.9 
+       
+       
+       
+     527 
+       
+       
+       
+     3.8 
+       
+    
+    
+     Managed Medicaid 
+       
+       
+     1,110 
+       
+       
+       
+     7.4 
+       
+       
+       
+     725 
+       
+       
+       
+     5.2 
+       
+    
+    
+     Managed care and insurers 
+       
+       
+     7,152 
+       
+       
+       
+     47.9 
+       
+       
+       
+     6,885 
+       
+       
+       
+     49.1 
+       
+    
+    
+     International (managed care and insurers) 
+       
+       
+     356 
+       
+       
+       
+     2.4 
+       
+       
+       
+     333 
+       
+       
+       
+     2.4 
+       
+    
+    
+     Other 
+       
+       
+     698 
+       
+       
+       
+     4.6 
+       
+       
+       
+     895 
+       
+       
+       
+     6.5 
+       
+    
+    
+     Revenues 
+       
+     $ 
+     14,945 
+       
+       
+       
+     100.0 
+     % 
+       
+     $ 
+     13,977 
+       
+       
+       
+     100.0 
+     % 
+    
+   
+     
+   Consolidated and same facility revenue per equivalent admission increased 3.6% and 2.7%, respectively, in the first quarter of 2022, compared to the first quarter of 2021. Consolidated and same facility equivalent admissions increased 3.2% and 5.0%, respectively, in the first quarter of 2022, compared to the first quarter of 2021. Consolidated and same facility outpatient surgeries increased 7.0% and 6.8%, respectively, in the first quarter of 2022, compared to the first quarter of 2021. Consolidated and same facility inpatient surgeries declined 0.6% and increased 0.8%, respectively, in the first quarter of 2022, compared to the first quarter of 2021. Consolidated and same facility emergency department visits increased 11.7% and 14.6%, respectively, in the first quarter of 2022, compared to the first quarter of 2021. 
+     
+   To quantify the total impact of the trends related to uninsured patient accounts, we believe it is beneficial to view total uncompensated care, which is comprised of charity care, uninsured discounts and implicit price concessions. A summary of the estimated cost of total uncompensated care for the quarters ended March 31, 2022 and 2021 follows (dollars in millions):   
+       
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Patient care costs (salaries and benefits, supplies, other operating expense and depreciation    and amortization) 
+       
+     $ 
+     12,744 
+       
+       
+     $ 
+     11,643 
+       
+    
+    
+     Cost-to-charges ratio (patient care costs as percentage of gross patient charges) 
+       
+       
+     11.3 
+     % 
+       
+       
+     11.4 
+     % 
+    
+    
+     Total uncompensated care 
+       
+     $ 
+     7,005 
+       
+       
+     $ 
+     6,821 
+       
+    
+    
+     Multiply by the cost-to-charges ratio 
+       
+       
+     11.3 
+     % 
+       
+       
+     11.4 
+     % 
+    
+    
+     Estimated cost of total uncompensated care 
+       
+     $ 
+     792 
+       
+       
+     $ 
+     778 
+       
+    
+   
+     
+   Same facility uninsured admissions declined by 1,030 admissions, or 3.0%, in the first quarter of 2022 compared to the first quarter of 2021. Same facility uninsured admissions in 2021, compared to 2020, declined 6.3% in the fourth quarter, increased 1.2% in the third quarter, increased 6.6% in the second quarter of 2021, and declined 15.7% in the first quarter. The fluctuations in quarterly same facility admissions were primarily due to reimbursements received, as provided for under the Families First Coronavirus Response Act and subsequent legislation, for uninsured patients diagnosed with COVID-19 and the resulting classification of those patients as insured admissions, as well as general fluctuations in patient volumes resulting from COVID-19's impact on our operations. The government program to reimburse for testing and treatment of uninsured COVID-19 patients stopped accepting claims in March 2022. 
+     
+   19 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Results of Operations (continued)   
+   Revenue/Volume Trends (continued) 
+   The approximate percentages of our admissions related to Medicare, managed Medicare, Medicaid, managed Medicaid, managed care and insurers and the uninsured for the quarters ended March 31, 2022 and 2021 are set forth in the following table.   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Medicare 
+       
+       
+     23 
+     % 
+       
+       
+     24 
+     % 
+    
+    
+     Managed Medicare 
+       
+       
+     23 
+       
+       
+       
+     22 
+       
+    
+    
+     Medicaid 
+       
+       
+     5 
+       
+       
+       
+     5 
+       
+    
+    
+     Managed Medicaid 
+       
+       
+     13 
+       
+       
+       
+     12 
+       
+    
+    
+     Managed care and insurers 
+       
+       
+     30 
+       
+       
+       
+     30 
+       
+    
+    
+     Uninsured 
+       
+       
+     6 
+       
+       
+       
+     7 
+       
+    
+    
+         
+       
+       
+     100 
+     % 
+       
+       
+     100 
+     % 
+    
+   
+     
+   The approximate percentages of our inpatient revenues related to Medicare, managed Medicare, Medicaid, managed Medicaid, managed care and insurers for the quarters ended March 31, 2022 and 2021 are set forth in the following table.   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Medicare 
+       
+       
+     24 
+     % 
+       
+       
+     24 
+     % 
+    
+    
+     Managed Medicare 
+       
+       
+     18 
+       
+       
+       
+     17 
+       
+    
+    
+     Medicaid 
+       
+       
+     6 
+       
+       
+       
+     5 
+       
+    
+    
+     Managed Medicaid 
+       
+       
+     9 
+       
+       
+       
+     6 
+       
+    
+    
+     Managed care and insurers 
+       
+       
+     43 
+       
+       
+       
+     48 
+       
+    
+    
+         
+       
+       
+     100 
+     % 
+       
+       
+     100 
+     % 
+    
+   
+     
+   At March 31, 2022, we had 91 hospitals in the states of Texas and Florida. During the quarter ended March 31, 2022, 58% of our admissions and 50% of our revenues were generated by these hospitals. Uninsured admissions in Texas and Florida represented 75% of our uninsured admissions during the quarter ended March 31, 2022.   
+   We receive a significant portion of our revenues from government health programs, principally Medicare and Medicaid, which are highly regulated and subject to frequent and substantial changes. The Texas Healthcare Transformation and Quality Improvement Program (“Texas Waiver Program”) currently operates pursuant to a Medicaid waiver. During April 2022, CMS withdrew its previous letter that challenged the approval and extension of the Texas Waiver Program, and the program is now approved and extended through September 2030. Our Texas Medicaid revenues included Texas Waiver Program supplemental revenues of $103 million and $138 million during the first quarters of 2022 and 2021, respectively. In March 2022, the state of Texas received approval from CMS to implement a proposed directed payment program effective for the current program year that began September 1, 2021. During the first quarter of 2022, revenues include $385 million related to this program for the period September 2021 through March 2022. We receive supplemental payments in several other states. We are aware these supplemental payment programs are currently being reviewed by certain state agencies and some states have made requests to CMS to replace their existing supplemental payment programs. It is possible these reviews and requests will result in the restructuring of such supplemental payment programs and could result in the payment programs being reduced or eliminated. Because deliberations about these programs are ongoing, we are unable to estimate the financial impact the program structure modifications, if any, may have on our results of operations.   
+   Key Performance Indicators   
+   We present certain metrics and statistical information that management uses when assessing our results of operations. We believe this information is useful to investors as it provides insight to how management evaluates operational performance and trends between reporting periods. Information on how these metrics and statistical information are defined is provided in the following tables summarizing operating results and operating data.   
+   20 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+     
+   Results of Operations (continued)   
+   Operating Results Summary   
+   The following is a comparative summary of results of operations for the quarters ended March 31, 2022 and 2021 (dollars in millions):   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+         
+       
+     Amount 
+       
+       
+     Ratio 
+       
+       
+     Amount 
+       
+       
+     Ratio 
+       
+    
+    
+     Revenues 
+       
+     $ 
+     14,945 
+       
+       
+       
+     100.0 
+       
+       
+     $ 
+     13,977 
+       
+       
+       
+     100.0 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Salaries and benefits 
+       
+       
+     6,939 
+       
+       
+       
+     46.4 
+       
+       
+       
+     6,301 
+       
+       
+       
+     45.1 
+       
+    
+    
+     Supplies 
+       
+       
+     2,321 
+       
+       
+       
+     15.5 
+       
+       
+       
+     2,224 
+       
+       
+       
+     15.9 
+       
+    
+    
+     Other operating expenses 
+       
+       
+     2,752 
+       
+       
+       
+     18.5 
+       
+       
+       
+     2,421 
+       
+       
+       
+     17.4 
+       
+    
+    
+     Equity in earnings of affiliates 
+       
+       
+     (11 
+     ) 
+       
+       
+     (0.1 
+     ) 
+       
+       
+     (21 
+     ) 
+       
+       
+     (0.2 
+     ) 
+    
+    
+     Depreciation and amortization 
+       
+       
+     732 
+       
+       
+       
+     5.0 
+       
+       
+       
+     697 
+       
+       
+       
+     5.0 
+       
+    
+    
+     Interest expense 
+       
+       
+     408 
+       
+       
+       
+     2.7 
+       
+       
+       
+     384 
+       
+       
+       
+     2.7 
+       
+    
+    
+     Gains on sales of facilities 
+       
+       
+     (10 
+     ) 
+       
+       
+     (0.1 
+     ) 
+       
+       
+     (2 
+     ) 
+       
+       
+     — 
+       
+    
+    
+         
+       
+       
+     13,131 
+       
+       
+       
+     87.9 
+       
+       
+       
+     12,004 
+       
+       
+       
+     85.9 
+       
+    
+    
+     Income before income taxes 
+       
+       
+     1,814 
+       
+       
+       
+     12.1 
+       
+       
+       
+     1,973 
+       
+       
+       
+     14.1 
+       
+    
+    
+     Provision for income taxes 
+       
+       
+     349 
+       
+       
+       
+     2.3 
+       
+       
+       
+     393 
+       
+       
+       
+     2.8 
+       
+    
+    
+     Net income 
+       
+       
+     1,465 
+       
+       
+       
+     9.8 
+       
+       
+       
+     1,580 
+       
+       
+       
+     11.3 
+       
+    
+    
+     Net income attributable to noncontrolling interests 
+       
+       
+     192 
+       
+       
+       
+     1.3 
+       
+       
+       
+     157 
+       
+       
+       
+     1.1 
+       
+    
+    
+     Net income attributable to HCA Healthcare, Inc. 
+       
+     $ 
+     1,273 
+       
+       
+       
+     8.5 
+       
+       
+     $ 
+     1,423 
+       
+       
+       
+     10.2 
+       
+    
+    
+     % changes from prior year: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Revenues 
+       
+       
+     6.9 
+     % 
+       
+       
+       
+       
+       
+     8.7 
+     % 
+       
+       
+       
+    
+    
+     Income before income taxes 
+       
+       
+     (8.1 
+     ) 
+       
+       
+       
+       
+       
+     143.6 
+       
+       
+       
+       
+    
+    
+     Net income attributable to HCA Healthcare, Inc. 
+       
+       
+     (10.6 
+     ) 
+       
+       
+       
+       
+       
+     145.0 
+       
+       
+       
+       
+    
+    
+     Admissions(a) 
+       
+       
+     0.1 
+       
+       
+       
+       
+       
+       
+     (4.1 
+     ) 
+       
+       
+       
+    
+    
+     Equivalent admissions(b) 
+       
+       
+     3.2 
+       
+       
+       
+       
+       
+       
+     (6.4 
+     ) 
+       
+       
+       
+    
+    
+     Revenue per equivalent admission 
+       
+       
+     3.6 
+       
+       
+       
+       
+       
+       
+     16.1 
+       
+       
+       
+       
+    
+    
+     Same facility % changes from prior year(c): 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Revenues 
+       
+       
+     7.8 
+       
+       
+       
+       
+       
+       
+     9.0 
+       
+       
+       
+       
+    
+    
+     Admissions(a) 
+       
+       
+     2.1 
+       
+       
+       
+       
+       
+       
+     (4.2 
+     ) 
+       
+       
+       
+    
+    
+     Equivalent admissions(b) 
+       
+       
+     5.0 
+       
+       
+       
+       
+       
+       
+     (6.5 
+     ) 
+       
+       
+       
+    
+    
+     Revenue per equivalent admission 
+       
+       
+     2.7 
+       
+       
+       
+       
+       
+       
+     16.6 
+       
+       
+       
+       
+    
+   
+     
+   (a) Represents the total number of patients admitted to our hospitals and is used by management and certain investors as a general measure of inpatient volume.  
+   (b) Equivalent admissions are used by management and certain investors as a general measure of combined inpatient and outpatient volume. Equivalent admissions are computed by multiplying admissions (inpatient volume) by the sum of gross inpatient revenues and gross outpatient revenues and then dividing the resulting amount by gross inpatient revenues. The equivalent admissions computation “equates” outpatient revenues to the volume measure (admissions) used to measure inpatient volume, resulting in a general measure of combined inpatient and outpatient volume.  
+   (c) Same facility information excludes the operations of hospitals and their related facilities which were either acquired or divested during the current and prior period.  
+     
+   21 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+     Results of Operations (continued)   
+   Quarters Ended March 31, 2022 and 2021   
+   Revenues increased to $14.945 billion in the first quarter of 2022 from $13.977 billion in the first quarter of 2021. Net income attributable to HCA Healthcare, Inc. totaled $1.273 billion, or $4.14 per diluted share, for the quarter ended March 31, 2022, compared to $1.423 billion, or $4.14 per diluted share, for the quarter ended March 31, 2021. First quarter results for 2022 include gains on sales of facilities of $10 million, or $0.02 per diluted share. In March 2022, the state of Texas received approval from CMS to implement a proposed directed payment program effective for the current program year that began September 1, 2021. During the first quarter of 2022, revenues include $244 million and other operating expenses include $90 million from provider tax assessments related to this program for the period September through December 2021. All “per diluted share” disclosures are based upon amounts net of the applicable income taxes. Shares used for diluted earnings per share were 307.374 million shares for the quarter ended March 31, 2022 and 343.321 million shares for the quarter ended March 31, 2021. During 2021 and the first quarter of 2022, we repurchased 37.812 million shares and 8.375 million shares, respectively, of our common stock.   
+   Revenues increased 6.9% on a consolidated basis and 7.8% on a same facility basis for the quarter ended March 31, 2022, compared to the quarter ended March 31, 2021. The increase in consolidated revenues can be primarily attributed to the combined impact of a 3.6% increase in revenue per equivalent admission and a 3.2% increase in equivalent admissions. The same facility revenues increase primarily resulted from the combined impact of a 2.7% increase in same facility revenue per equivalent admission and a 5.0% increase in same facility equivalent admissions. The consolidated and same facility increases in revenue per equivalent admission were negatively impacted by declines in acuity of COVID-19 patients. 
+   Salaries and benefits, as a percentage of revenues, were 46.4% in the first quarter of 2022 and 45.1% in the first quarter of 2021. Salaries and benefits per equivalent admission increased 6.7% in the first quarter of 2022 compared to the first quarter of 2021. Same facility salaries and benefits per full time equivalent increased 7.7% for the first quarter of 2022 compared to the first quarter of 2021 as we continue to utilize certain contract, overtime and other premium rate labor costs to support our clinical staff and patients. We intend to reduce our utilization of and rates paid for premium rate labor, but the pace and amount of any expected future declines may be affected by labor market conditions and other factors. 
+   Supplies, as a percentage of revenues, were 15.5% in the first quarter of 2022 and 15.9% in the first quarter of 2021. Supply costs per equivalent admission increased 1.1% in the first quarter of 2022 compared to the first quarter of 2021. Supply costs per equivalent admission increased 5.9% for medical devices and 2.5% for general medical and surgical items and declined 10.7% for pharmacy supplies in the first quarter of 2022 compared to the first quarter of 2021. The decline in pharmacy supplies is primarily related to certain COVID-19 therapies used in the surge of COVID-19 cases during the first quarter of 2021.   
+   Other operating expenses, as a percentage of revenues, were 18.5% in the first quarter of 2022 and 17.4% in the first quarter of 2021. Other operating expenses is primarily comprised of contract services, professional fees, repairs and maintenance, rents and leases, utilities, insurance (including professional liability insurance) and nonincome taxes. We have seen inflation have a negative impact on certain of these expenses and expect inflationary pressures will continue to impact operating expenses in the future. Provisions for losses related to professional liability risks were $143 million and $134 million for the first quarters of 2022 and 2021, respectively.  For the quarter ended March 31, 2022, other operating expenses included $90 million of Texas provider tax assessments for September through December 2021 related to CMS' March 2022 approval of a Texas directed payment program (effective for the current program year that began September 1, 2021). 
+   Equity in earnings of affiliates was $11 million and $21 million in the first quarters of 2022 and 2021, respectively.   
+   Depreciation and amortization increased $35 million, from $697 million in the first quarter of 2021 to $732 million in the first quarter of 2022. The increase in depreciation relates primarily to capital expenditures at our existing facilities.   
+   Interest expense was $408 million in the first quarter of 2022 and $384 million in the first quarter of 2021. Our average debt balance was $35.798 billion for the first quarter of 2022 compared to $31.019 billion for the first quarter of 2021. The average effective interest rate for our long-term debt was 4.6% and 5.0%, respectively, for the quarters ended March 31, 2022 and 2021.   
+   During the first quarters of 2022 and 2021, we recorded gains on sales of facilities of $10 million and $2 million, respectively.    
+     
+   22 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Results of Operations (continued)   
+   Quarters Ended March 31, 2022 and 2021 (continued) 
+   The effective tax rates were 21.5% and 21.7% for the first quarters of 2022 and 2021, respectively. The effective tax rate computations exclude net income attributable to noncontrolling interests as it relates to consolidated partnerships. Our provisions for income taxes for the first quarters of 2022 and 2021 included tax benefits of $64 million and $74 million, respectively, related to employee equity award settlements.  Excluding the effect of these adjustments, the effective tax rate for the first quarters of 2022 and 2021 would have been 25.5% and 25.7%, respectively.   
+   Net income attributable to noncontrolling interests increased from $157 million for the first quarter of 2021 to $192 million for the first quarter of 2022. The increase in net income attributable to noncontrolling interests related primarily to the operations of two of our Texas markets and our surgery centers.   
+   Liquidity and Capital Resources   
+   Cash provided by operating activities totaled $1.345 billion in the first quarter of 2022 compared to $1.988 billion in the first quarter of 2021.  The $643 million decline in cash provided by operating activities, in the first quarter of 2022 compared to the first quarter of 2021, related primarily to the combined impact of negative changes in working capital items of $492 million, primarily related to a payment of $344 million for deferred payroll taxes from 2020, and a $121 million decline in net income, excluding gains on sales of facilities. The combination of interest payments and net income tax payments in the first quarter of 2022 totaled $411 million, compared to the net combination of interest payments and income tax refunds in the first quarter of 2021 of $362 million. Working capital totaled $4.488 billion at March 31, 2022 and $3.960 billion at December 31, 2021. 
+   Cash used in investing activities was $845 million in the first quarter of 2022 compared to $649 million in the first quarter of 2021. Excluding acquisitions, capital expenditures were $861 million in the first quarter of 2022 and $654 million in the first quarter of 2021. Planned capital expenditures are expected to approximate $4.2 billion in 2022. At March 31, 2022, there were projects under construction which had estimated additional costs to complete and equip over the next five years of approximately $4.5 billion. We expect to finance capital expenditures with internally generated and borrowed funds.    
+   Cash provided by financing activities totaled $425 million in the first quarter of 2022, compared to cash used in financing activities of $2.104 billion in the first quarter of 2021. During the first quarter of 2022, net cash flows provided by financing activities included a net increase of $3.120 billion in our indebtedness, payment of dividends of $177 million, repurchase of common stock of $2.101 billion and distributions to noncontrolling interests of $171 million. During the first quarter of 2021, net cash flows used in financing activities included a net increase of $33 million in our indebtedness, payment of dividends of $169 million, repurchase of common stock of $1.527 billion and distributions to noncontrolling interests of $234 million.   
+   We are a highly leveraged company with significant debt service requirements. Our debt totaled $37.696 billion at March 31, 2022. Our interest expense was $408 million for the first quarter of 2022 and $384 million for the first quarter of 2021.   
+   In addition to cash flows from operations, available sources of capital include amounts available under our senior secured credit facilities ($6.435 billion and $5.075 billion available as of March 31, 2022 and April 30, 2022, respectively) and anticipated access to public and private debt markets.   
+   Investments of our insurance subsidiaries, held to maintain statutory equity levels and to provide liquidity to pay claims, totaled $513 million and $541 million at March 31, 2022 and December 31, 2021, respectively. An insurance subsidiary maintained net reserves for professional liability risks of $134 million and $154 million at March 31, 2022 and December 31, 2021, respectively. Our facilities are insured by our insurance subsidiary for losses up to $75 million per occurrence; however, this coverage is generally subject, in most cases, to a $15 million per occurrence self-insured retention. Additionally, the insurance subsidiary has entered into reinsurance contracts providing reimbursement for a certain portion of losses in excess of self-insured retentions. Net reserves for the self-insured professional liability risks retained were $1.809 billion and $1.813 billion at March 31, 2022 and December 31, 2021, respectively. Claims payments, net of reinsurance recoveries, during the next 12 months are expected to approximate $482 million. We estimate that approximately $439 million of the expected net claim payments during the next 12 months will relate to claims subject to the self-insured retention.   
+     
+   23 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Liquidity and Capital Resources (continued) 
+   During March 2022, we issued $6.000 billion aggregate principal amount of senior secured notes comprised of  (i) $1.000 billion  aggregate principal amount of 3 1/8% senior secured notes due 2027, (ii) $500 million aggregate principal amount of 3 3/8% senior secured notes due 2029, (iii) $2.000 billion aggregate principal amount of 3 5/8% senior secured notes due 2032, (iv) $500 million aggregate principal amount of 4 3/8% senior secured notes due 2042 and (v) $2.000 billion aggregate principal amount of 4 5/8% senior secured notes due 2052 . During March 2022, we used a portion of the net proceeds  to pay down our revolving credit facilities.  During April 2022, we  redeemed all $1.250 billion outstanding aggregate principal amount of our 4.75% senior secured notes due 2023 and provided a notice of our election to redeem all $1.250 billion outstanding aggregate principal amount of our 5.875% senior notes due 2023. 
+   Management believes that cash flows from operations, amounts available under our senior secured credit facilities and our anticipated access to public and private debt markets will be sufficient to meet expected liquidity needs during the next 12 months.   
+   Summarized Financial Information   
+   HCA Inc., a direct wholly-owned subsidiary of HCA Healthcare, Inc., is the primary obligor under a substantial portion of our indebtedness, including our senior secured credit facilities, senior secured notes and senior unsecured notes. The senior secured notes and senior unsecured notes issued by HCA Inc. are fully and unconditionally guaranteed on an unsecured basis by HCA Healthcare, Inc. The senior secured credit facilities and senior secured notes are fully and unconditionally guaranteed on a senior secured basis by substantially all existing and future, direct and indirect, 100% owned material domestic subsidiaries that are “Unrestricted Subsidiaries” under our Indenture dated December 16, 1993 (except for certain special purpose subsidiaries that only guarantee and pledge their assets under our senior secured asset-based revolving credit facility). For a list of subsidiary guarantors, see Exhibit 22 to this quarterly report on Form 10-Q.   
+   The subsidiary guarantees rank senior in right of payment to all subordinated indebtedness of each subsidiary guarantor, equally in right of payment with all senior indebtedness of the subsidiary guarantors and are structurally subordinated in right of payment to all indebtedness and other liabilities of any nonguarantor subsidiaries of the subsidiary guarantors (other than indebtedness and liabilities owed to one of the subsidiary guarantors). The subsidiary guarantees are secured by first-priority liens on the subsidiary guarantors’ assets, subject to certain exceptions, that secure our senior secured cash flow credit facility on a first-priority basis. The subsidiary guarantees are secured by second-priority liens on the subsidiary guarantors’ assets that secure our senior secured asset-based revolving credit facility on a first-priority basis and our senior secured cash flow credit facility on a second-priority basis.   
+   The subsidiary guarantees may be automatically and unconditionally released and discharged upon certain customary events, including in the event such guarantee is released under our senior secured credit facilities. The indentures governing the senior secured notes include a “savings clause” intended to limit each subsidiary guarantor’s obligations as necessary to prevent the guarantee from constituting a fraudulent conveyance under applicable law, which could reduce a subsidiary guarantor’s liability on its guarantee to zero. For further information regarding the guarantees, refer to the applicable indentures that are filed as exhibits to this quarterly report on Form 10-Q and our annual report on Form 10-K for the year ended December 31, 2021. 
+     
+   24 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Liquidity and Capital Resources (continued)   
+   Summarized Financial Information (continued)   
+   Summarized financial information is presented on a combined basis and transactions between the combining entities have been eliminated. Financial information for nonguarantor entities has been excluded. The summarized operating results information for the quarter ended March 31, 2022 and year ended December 31, 2021 and the summarized balance sheet information at March 31, 2022 and December 31, 2021, for HCA Healthcare, Inc., HCA Inc. and the subsidiary guarantors (the Parent, Subsidiary Issuer and Subsidiary Guarantors) follow (dollars in millions):   
+     
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+     Quarter Ended March 31, 2022 and Year Ended December 31, 2021: 
+       
+       
+       
+       
+       
+       
+    
+    
+       
+       
+     Quarter 
+       
+       
+     Year 
+       
+    
+    
+         
+       
+     March 31, 2022 
+       
+       
+     December 31, 2021 
+       
+    
+    
+     Revenues 
+       
+     $ 
+     8,728 
+       
+       
+     $ 
+     34,889 
+       
+    
+    
+     Income before income taxes 
+       
+       
+     1,155 
+       
+       
+       
+     6,061 
+       
+    
+    
+     Net income 
+       
+       
+     920 
+       
+       
+       
+     4,666 
+       
+    
+    
+     Net income attributable to Parent, Subsidiary Issuer and Subsidiary Guarantors 
+       
+       
+     896 
+       
+       
+       
+     4,564 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     At March 31, 2022 and December 31, 2021: 
+       
+       
+       
+       
+       
+       
+    
+    
+         
+       
+     March 31, 2022 
+       
+       
+     December 31, 2021 
+       
+    
+    
+     Current assets 
+       
+     $ 
+     9,415 
+       
+       
+     $ 
+     8,268 
+       
+    
+    
+     Property and equipment, net 
+       
+       
+     16,040 
+       
+       
+       
+     15,559 
+       
+    
+    
+     Goodwill and other intangible assets 
+       
+       
+     5,695 
+       
+       
+       
+     5,694 
+       
+    
+    
+     Total noncurrent assets 
+       
+       
+     22,719 
+       
+       
+       
+     22,370 
+       
+    
+    
+     Total assets 
+       
+       
+     32,134 
+       
+       
+       
+     30,638 
+       
+    
+    
+     Current liabilities 
+       
+       
+     6,807 
+       
+       
+       
+     5,697 
+       
+    
+    
+     Long-term debt, net 
+       
+       
+     35,769 
+       
+       
+       
+     33,904 
+       
+    
+    
+     Intercompany balances 
+       
+       
+     3,668 
+       
+       
+       
+     3,423 
+       
+    
+    
+     Income taxes and other liabilities 
+       
+       
+     744 
+       
+       
+       
+     1,053 
+       
+    
+    
+     Total noncurrent liabilities 
+       
+       
+     40,722 
+       
+       
+       
+     38,912 
+       
+    
+    
+     Stockholders’ deficit attributable to Parent, Subsidiary Issuer and Subsidiary     Guarantors 
+       
+       
+     (15,551 
+     ) 
+       
+       
+     (14,124 
+     ) 
+    
+    
+     Noncontrolling interests 
+       
+       
+     156 
+       
+       
+       
+     153 
+       
+    
+   
+     
+   The first-priority liens securing the subsidiary guarantees discussed above include liens on (i) substantially all of the capital stock of substantially all wholly owned first-tier subsidiaries of HCA Inc. or of the subsidiary guarantors (but limited to 65% of the stock of any such wholly owned first-tier subsidiary that is a foreign subsidiary), subject to certain limited exceptions, and (ii) substantially all indebtedness owing to HCA Inc. or to the subsidiary guarantors, including any and all intercompany indebtedness owed by HCA Healthcare, Inc. or any subsidiary thereof to HCA Inc., or any subsidiary guarantor. For a list of affiliates whose securities are pledged as collateral for the senior secured notes, see Exhibit 22 to this quarterly report on Form 10-Q.   
+   Under the first lien intercreditor agreement, the administrative agent for the lenders under the cash flow credit facility, subject to the occurrence of certain events, has the exclusive right to direct foreclosures and take other actions with respect to these liens, and the trustee for the senior secured notes has no right to take any such actions. In certain circumstances, including upon certain events of default under the senior secured credit facilities and the senior secured notes, the collateral agent in respect of the cash flow credit facility and the senior secured notes could proceed against the collateral granted to it to secure such indebtedness, including the aforementioned pledged capital stock and pledged indebtedness, and require such collateral to be delivered to the collateral agent to the extent not already in its possession for purposes of perfecting the lien on such assets. For further information regarding the collateral, including events or circumstances that may require delivery of the collateral, refer to the applicable indentures, the first lien intercreditor agreement, the cash flow credit agreement and the pledge agreement that are filed as exhibits to this quarterly report on Form 10-Q and our annual report on Form 10-K for the year ended December 31, 2021.   
+     
+   25 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Liquidity and Capital Resources (continued)   
+   Summarized Financial Information (continued)   
+   There is no trading market for any of HCA Healthcare, Inc.’s affiliates whose securities are pledged as collateral for the senior secured notes.   
+   Rule 13-02 of Regulation S-X requires the presentation of summarized financial information of the combined affiliates whose securities are pledged as collateral for the senior secured notes unless such information is not material. The rule provides that such information is not material if the assets, liabilities and results of operations of the combined affiliates whose securities are pledged as collateral are not materially different than the corresponding amounts presented in the consolidated financial statements of the Registrant. Healthtrust, Inc. — The Hospital Company (“Healthtrust”) is the first-tier subsidiary of HCA Inc., and the common stock of Healthtrust is pledged as collateral for the senior secured notes. Due to the corporate structure relationship of HCA Healthcare, Inc. and Healthtrust, all of HCA Healthcare, Inc.’s operating subsidiaries, including all other affiliates whose securities are pledged as collateral for the senior secured notes, are also subsidiaries of Healthtrust. The corporate structure relationship, combined with the application of push-down accounting in Healthtrust’s consolidated financial statements related to HCA Healthcare Inc.’s debt and financial instruments, mean that the assets, liabilities and results of operations of Healthtrust (and, therefore, of the combined affiliates whose securities are pledged as collateral for the senior secured notes) are not materially different than the corresponding amounts presented in the financial statements of HCA Healthcare, Inc. As a result, summarized financial information of affiliates whose securities are pledged as collateral for the senior secured notes is not required to be presented under Rule 13-02.   
+   Market Risk   
+   We are exposed to market risk related to changes in market values of securities. The investment securities held by our insurance subsidiaries were recorded at $513 million at March 31, 2022. These investments are carried at fair value, with changes in unrealized gains and losses that are not credit-related being recorded as adjustments to other comprehensive income. At March 31, 2022, we had net unrealized losses of $10 million on the insurance subsidiaries’ investments.   
+   We are exposed to market risk related to market illiquidity. Investment securities held by our insurance subsidiaries could be impaired by the inability to access the capital markets. Should the insurance subsidiaries require significant amounts of cash in excess of normal cash requirements to pay claims and other expenses on short notice, we may have difficulty selling these investments in a timely manner or be forced to sell them at a price less than what we might otherwise have been able to in a normal market environment. We may be required to recognize credit-related impairments on our investment securities in future periods should issuers default on interest payments or should the fair market valuations of the securities deteriorate due to ratings downgrades or other issue-specific factors.   
+   We are also exposed to market risk related to changes in interest rates, and we periodically enter into interest rate swap agreements to manage our exposure to these fluctuations. Our interest rate swap agreements involve the exchange of fixed and variable rate interest payments between two parties, based on common notional principal amounts and maturity dates. The notional amounts of the swap agreements represent balances used to calculate the exchange of cash flows and are not our assets or liabilities. Our credit risk related to these agreements is considered low because the swap agreements are with creditworthy financial institutions. The interest payments under these agreements are settled on a net basis. These derivatives have been recognized in the financial statements at their respective fair values. Changes in the fair value of these derivatives, which are designated as cash flow hedges, are included in other comprehensive income.   
+   With respect to our interest-bearing liabilities, approximately $1.440 billion of long-term debt at March 31, 2022 was subject to variable rates of interest, while the remaining balance of long-term debt of $36.256 billion at March 31, 2022 was subject to fixed rates of interest. Both the general level of interest rates and our leverage affect our variable interest rates. Our variable debt is comprised primarily of amounts outstanding under the senior secured credit facilities. Borrowings under the senior secured credit facilities bear interest at a rate equal to an applicable margin plus, at our option, either (a) a base rate determined by reference to the higher of (1) the federal funds rate plus 0.50% or (2) the prime rate of Bank of America or (b) a LIBOR rate for the currency of such borrowing for the relevant interest period. The applicable margin for borrowings under the senior secured credit facilities may fluctuate according to a leverage ratio. The average effective interest rate for our long-term debt was 4.6% and 5.0% for the quarters ended March 31, 2022 and 2021, respectively.   
+       
+     
+   26 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Liquidity and Capital Resources (continued)   
+   Market Risk (continued) 
+     
+   The estimated fair value of our total long-term debt was $39.038 billion at March 31, 2022. The estimates of fair value are based upon the quoted market prices for the same or similar issues of long-term debt with the same maturities. Based on a hypothetical 1% increase in interest rates, the potential annualized reduction to future pretax earnings would be approximately $14 million.   To mitigate the impact of fluctuations in interest rates, we generally target a portion of our debt portfolio to be maintained at fixed rates.   
+   We are exposed to currency translation risk related to our foreign operations. We currently do not consider the market risk related to foreign currency translation to be material to our consolidated financial statements or our liquidity.   
+   Tax Examinations   
+    At March 31, 2022, the Internal Revenue Service was conducting examinations of the Company’s 2016, 2017 and 2018 federal income tax returns and the 2019 return for one affiliated partnership. We are also subject to examination by state and foreign taxing authorities. Management believes HCA Healthcare, Inc. and its predecessors, subsidiaries and affiliates properly reported taxable income and paid taxes in accordance with applicable laws and agreements established with IRS, state and foreign taxing authorities and final resolution of any disputes will not have a material, adverse effect on our results of operations or financial position. However, if payments due upon final resolution of any issues exceed our recorded estimates, such resolutions could have a material, adverse effect on our results of operations or financial position.   
+   27 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   Operating Data   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+         
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Number of hospitals in operation at: 
+       
+       
+       
+       
+       
+       
+    
+    
+     March 31 
+       
+       
+     182 
+       
+       
+       
+     186 
+       
+    
+    
+     June 30 
+       
+       
+       
+       
+       
+     187 
+       
+    
+    
+     September 30 
+       
+       
+       
+       
+       
+     183 
+       
+    
+    
+     December 31 
+       
+       
+       
+       
+       
+     182 
+       
+    
+    
+     Number of freestanding outpatient surgical centers in operation at: 
+       
+       
+       
+       
+       
+       
+    
+    
+     March 31 
+       
+       
+     124 
+       
+       
+       
+     121 
+       
+    
+    
+     June 30 
+       
+       
+       
+       
+       
+     122 
+       
+    
+    
+     September 30 
+       
+       
+       
+       
+       
+     123 
+       
+    
+    
+     December 31 
+       
+       
+       
+       
+       
+     125 
+       
+    
+    
+     Licensed hospital beds at(a): 
+       
+       
+       
+       
+       
+       
+    
+    
+     March 31 
+       
+       
+     48,892 
+       
+       
+       
+     49,561 
+       
+    
+    
+     June 30 
+       
+       
+       
+       
+       
+     49,693 
+       
+    
+    
+     September 30 
+       
+       
+       
+       
+       
+     48,950 
+       
+    
+    
+     December 31 
+       
+       
+       
+       
+       
+     48,803 
+       
+    
+    
+     Weighted average beds in service(b): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     41,818 
+       
+       
+       
+     42,363 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     42,464 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     42,088 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     41,685 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     42,148 
+       
+    
+    
+     Average daily census(c): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     29,797 
+       
+       
+       
+     29,678 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     28,901 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     31,144 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     29,273 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     29,752 
+       
+    
+    
+     Admissions(d): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     506,956 
+       
+       
+       
+     506,380 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     532,041 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     536,848 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     514,706 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     2,089,975 
+       
+    
+    
+     Equivalent admissions(e): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     859,290 
+       
+       
+       
+     832,489 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     916,212 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     905,627 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     881,910 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     3,536,238 
+       
+    
+    
+     Average length of stay (days)(f): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     5.3 
+       
+       
+       
+     5.3 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     4.9 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     5.3 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     5.2 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     5.2 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+   
+     
+   28 
+   
+   ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF   
+   FINANCIAL CONDITION AND RESULTS OF OPERATIONS (Continued) 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+       
+       
+     2022 
+       
+       
+     2021 
+       
+    
+    
+     Emergency room visits(g): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     2,056,389 
+       
+       
+       
+     1,841,778 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     2,128,428 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     2,338,180 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     2,166,959 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     8,475,345 
+       
+    
+    
+     Outpatient surgeries(h): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     247,421 
+       
+       
+       
+     231,228 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     262,107 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     249,192 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     265,709 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     1,008,236 
+       
+    
+    
+     Inpatient surgeries(i): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     126,880 
+       
+       
+       
+     127,590 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     136,460 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     126,436 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     131,583 
+       
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     522,069 
+       
+    
+    
+     Days revenues in accounts receivable(j): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     51 
+       
+       
+       
+     48 
+       
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     48 
+       
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     51 
+       
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     49 
+       
+    
+    
+     Outpatient revenues as a % of patient revenues(k): 
+       
+       
+       
+       
+       
+       
+    
+    
+     Quarter: 
+       
+       
+       
+       
+       
+       
+    
+    
+     First 
+       
+       
+     37 
+     % 
+       
+       
+     36 
+     % 
+    
+    
+     Second 
+       
+       
+       
+       
+       
+     38 
+     % 
+    
+    
+     Third 
+       
+       
+       
+       
+       
+     34 
+     % 
+    
+    
+     Fourth 
+       
+       
+       
+       
+       
+     38 
+     % 
+    
+    
+     Year 
+       
+       
+       
+       
+       
+     37 
+     % 
+    
+   
+       
+   (a) Licensed beds are those beds for which a facility has been granted approval to operate from the applicable state licensing agency.  
+   (b) Represents the average number of beds in service, weighted based on periods owned.  
+   (c) Represents the average number of patients in our hospital beds each day.  
+   (d) Represents the total number of patients admitted to our hospitals and is used by management and certain investors as a general measure of inpatient volume.  
+   (e) Equivalent admissions are used by management and certain investors as a general measure of combined inpatient and outpatient volume. Equivalent admissions are computed by multiplying admissions (inpatient volume) by the sum of gross inpatient revenues and gross outpatient revenues and then dividing the resulting amount by gross inpatient revenues. The equivalent admissions computation “equates” outpatient revenues to the volume measure (admissions) used to measure inpatient volume resulting in a general measure of combined inpatient and outpatient volume.  
+   (f) Represents the average number of days admitted patients stay in our hospitals.  
+   (g) Represents the number of patients treated in our emergency rooms.  
+   (h) Represents the number of surgeries performed on patients who were not admitted to our hospitals. Pain management and endoscopy procedures are not included in outpatient surgeries.  
+   (i) Represents the number of surgeries performed on patients who have been admitted to our hospitals. Pain management and endoscopy procedures are not included in inpatient surgeries.  
+   (j) Revenues per day is calculated by dividing revenues for the quarter by the days in the quarter. Days revenues in accounts receivable is then calculated as accounts receivable at the end of the quarter divided by revenues per day.  
+   (k) Represents the percentage of patient revenues related to patients who are not admitted to our hospitals.   
+       
+   29 
+   
+     
+   ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK   
+   The information called for by this item is provided under the caption “Market Risk” under Item 2, “Management’s Discussion and Analysis of Financial Condition and Results of Operations.”   
+   ITEM 4. CONTROLS AND PROCEDURES   
+   Evaluation of Disclosure Controls and Procedures   
+   HCA’s management, with the participation of HCA’s chief executive officer and chief financial officer, has evaluated the effectiveness of HCA’s disclosure controls and procedures as of March 31, 2022. Based on that evaluation, HCA’s chief executive officer and chief financial officer concluded that HCA’s disclosure controls and procedures were effective as of March 31, 2022.   
+   Changes in Internal Control Over Financial Reporting   
+   During the period covered by this report, there have been no changes in our internal control over financial reporting that have materially affected or are reasonably likely to materially affect our internal control over financial reporting.   
+   PART II. OTHER INFORMATION   
+   ITEM 1. LEGAL PROCEEDINGS   
+   The information set forth in Note 9 – Contingencies in the notes to the condensed consolidated financial statements is incorporated herein by reference.   
+   ITEM 1A. RISK FACTORS   
+   Reference is made to the factors set forth under the caption “Forward-Looking Statements” in Part I, Item 2 of this quarterly report on Form 10-Q and other risk factors described in our annual report on Form 10-K for the year ended December 31, 2021, which are incorporated herein by reference. There have not been any material changes to the risk factors previously disclosed in our annual report on Form 10-K for the year ended December 31, 2021.   
+     
+     
+   30 
+   
+     
+   ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS   
+   During January 2022 and February 2021, our Board of Directors authorized share repurchase programs for up to $8 billion and $6 billion, respectively, of our outstanding common stock. During the quarter ended March 31, 2022, we repurchased 8,374,934 shares of our common stock at an average price of $250.89 per share through market purchases pursuant to the February 2021 authorization (which was completed during the first quarter of 2022) and the January 2022 authorization. At March 31, 2022, we had $6.485 billion of repurchase authorization available under the January 2022 authorization. 
+   The following table provides certain information with respect to our repurchases of common stock from January 1, 2022 through March 31, 2022 (dollars in millions, except per share amounts).   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+     Period 
+       
+     Total Number of Shares Purchased 
+       
+       
+     Average Price Paid per Share 
+       
+       
+     Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs 
+       
+       
+     Approximate Dollar Value of Shares That May Yet Be Purchased Under Publicly Announced Plans  or Programs 
+       
+    
+    
+     January 1, 2022 through January 31, 2022 
+       
+       
+     2,347,430 
+       
+       
+     $ 
+     249.68 
+       
+       
+       
+     2,347,430 
+       
+       
+     $ 
+     8,000 
+       
+    
+    
+     February 1, 2022 through February 28, 2022 
+       
+       
+     2,948,912 
+       
+       
+     $ 
+     240.77 
+       
+       
+       
+     2,948,912 
+       
+       
+     $ 
+     7,290 
+       
+    
+    
+     March 1, 2022 through March 31, 2022 
+       
+       
+     3,078,592 
+       
+       
+     $ 
+     261.49 
+       
+       
+       
+     3,078,592 
+       
+       
+     $ 
+     6,485 
+       
+    
+    
+     Total for first quarter 2022 
+       
+       
+     8,374,934 
+       
+       
+     $ 
+     250.89 
+       
+       
+       
+     8,374,934 
+       
+       
+     $ 
+     6,485 
+       
+    
+   
+     
+   On April 21, 2022, our Board of Directors declared a quarterly dividend of $0.56 per share on our common stock payable on June 30, 2022 to stockholders of record at the close of business on June 16, 2022. Future declarations of quarterly dividends and the establishment of future record and payment dates are subject to the final determination of our Board of Directors. Our ability to declare future dividends may also from time to time be limited by the terms of our debt agreements. 
+   31 
+   
+     
+   ITEM 6. EXHIBITS   
+   (a) List of Exhibits:   
+     
+   
+    
+     
+     
+     
+    
+    
+     4.1   
+     — 
+     Supplemental Indenture No. 29, dated as of March 9, 2022, among HCA Inc., HCA Healthcare, Inc., the subsidiary guarantors named therein, Delaware Trust Company, as trustee, and Deutsche Bank Trust Company Americas, as paying agent, registrar and transfer agent (filed as Exhibit 4.2 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+     4.2   
+     — 
+     Supplemental Indenture No. 30, dated as of March 9, 2022, among HCA Inc., HCA Healthcare, Inc., the subsidiary guarantors named therein, Delaware Trust Company, as trustee, and Deutsche Bank Trust Company Americas, as paying agent, registrar and transfer agent (filed as Exhibit 4.3 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+     4.3   
+     — 
+     Supplemental Indenture No. 31, dated as of March 9, 2022, among HCA Inc., HCA Healthcare, Inc., the subsidiary guarantors named therein, Delaware Trust Company, as trustee, and Deutsche Bank Trust Company Americas, as paying agent, registrar and transfer agent (filed as Exhibit 4.4 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+          4.4   
+     — 
+     Supplemental Indenture No. 32, dated as of March 9, 2022, among HCA Inc., HCA Healthcare, Inc., the subsidiary guarantors named therein, Delaware Trust Company, as trustee, and Deutsche Bank Trust Company Americas, as paying agent, registrar and transfer agent (filed as Exhibit 4.5 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+           4.5   
+     — 
+     Supplemental Indenture No. 33, dated as of March 9, 2022, among HCA Inc., HCA Healthcare, Inc., the subsidiary guarantors named therein, Delaware Trust Company, as trustee, and Deutsche Bank Trust Company Americas, as paying agent, registrar and transfer agent (filed as Exhibit 4.6 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+          4.6   
+     — 
+     Form of Global Notes representing the 2027 Notes (included in Exhibit 4.1) 
+    
+    
+       
+       
+       
+    
+    
+          4.7   
+     — 
+     Form of Global Notes representing the 2029 Notes (included in Exhibit 4.2) 
+    
+    
+       
+       
+       
+    
+    
+          4.8   
+     — 
+     Form of Global Notes representing the 2032 Notes (included in Exhibit 4.3) 
+    
+    
+       
+       
+       
+    
+    
+          4.9   
+     — 
+     Form of Global Notes representing the 2042 Notes (included in Exhibit 4.4) 
+    
+    
+       
+       
+       
+    
+    
+        4.10   
+     — 
+     Form of Global Notes representing the 2052 Notes (included in Exhibit 4.5) 
+    
+    
+       
+       
+       
+    
+    
+        4.11   
+     — 
+     Additional Receivables Intercreditor Agreement, dated as of March 9, 2022, by and between Bank of America, N.A., as ABL Collateral Agent, and Bank of America, N.A., as First Lien Collateral Agent (filed as Exhibit 4.15 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+        4.12   
+     — 
+     Registration Rights Agreement, dated as of March 9, 2022, among HCA Inc., HCA Healthcare, Inc., the subsidiary guarantors named therein and Citigroup Global Markets Inc., BofA Securities, Inc., J.P. Morgan Securities LLC and Morgan Stanley & Co. LLC as representatives of the other several initial purchasers named therein (filed as Exhibit 4.16 to the Company’s Current Report on Form 8-K filed on March 10, 2022, and incorporated herein by reference). 
+    
+    
+       
+       
+       
+    
+    
+        10.1   
+     — 
+     HCA Healthcare, Inc. 2022 Senior Officer Performance Excellence Program (filed as Exhibit 10.1 to the Company’s Current Report on Form 8-K filed on April 11, 2022, and incorporated herein by reference).*   
+    
+    
+       
+       
+       
+    
+    
+        22   
+     — 
+     List of Subsidiary Guarantors and Pledged Securities.   
+    
+   
+     
+   32 
+   
+     
+   
+    
+     
+     
+     
+    
+    
+         
+       
+         
+    
+    
+        31.1   
+     — 
+     Certification of Chief Executive Officer Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.   
+    
+    
+         
+       
+       
+    
+    
+        31.2   
+     — 
+     Certification of Chief Financial Officer Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.   
+    
+    
+         
+       
+         
+    
+    
+        32   
+     — 
+     Certification Pursuant to 18 U.S.C. Section 1350, as Adopted Pursuant to Section 906 of the Sarbanes-Oxley Act of 2002.   
+    
+    
+         
+       
+         
+    
+    
+        101   
+     — 
+     The following financial information from our quarterly report on Form 10-Q for the quarter ended March 31, 2022 filed with the SEC on May 3, 2022, formatted in Inline Extensible Business Reporting Language: (i) the condensed consolidated balance sheets at March 31, 2022 and December 31, 2021, (ii) the condensed consolidated income statements for the quarters ended March 31, 2022 and 2021, (iii) the condensed consolidated comprehensive income statements for the quarters ended March 31, 2022 and 2021, (iv) the condensed consolidated statements of stockholders’ equity for the quarters ended March 31, 2022 and 2021, (v) the condensed consolidated statements of cash flows for the quarters ended March 31, 2022 and 2021 and (vi) the notes to condensed consolidated financial statements. The instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 
+    
+    
+         
+       
+         
+    
+    
+       104   
+     — 
+     The cover page from the Company’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2022, formatted in Inline XBRL (included in Exhibit 101). 
+    
+   
+       
+   *Management compensatory plan or arrangement.   
+   33 
+   
+     
+   SIGNATURES   
+   Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.   
+       
+   
+    
+     
+     
+    
+    
+       
+       
+    
+    
+     HCA Healthcare, Inc. 
+    
+    
+         
+         
+    
+    
+     By: 
+     / S / W ILLIAM  B. R UTHERFORD     
+    
+    
+         
+     William B. Rutherford 
+    
+    
+         
+     Executive Vice President and Chief Financial Officer 
+    
+   
+   Date: May 3, 2022   
+     
+   34 
+   
+  
+ 

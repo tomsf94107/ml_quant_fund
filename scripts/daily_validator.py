@@ -85,8 +85,16 @@ def log(msg: str):
     print(f"[{ts}] {msg}", flush=True)
 
 
+# --- transient-IOERR resilience (added) ---
+import os as _os, sys as _sys
+_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+if _root not in _sys.path:
+    _sys.path.insert(0, _root)
+from utils.db_resilient import connect_resilient, run_with_io_retry
+
+
 def get_conn() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
+    conn = connect_resilient(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -144,21 +152,32 @@ def _add_trading_days(start_date: date, n_days: int) -> date:
     return d
 
 
-def compute_return(px: pd.DataFrame, pred_date: date, horizon: int) -> float | None:
-    """Compute close[T] → close[T + horizon trading days] return.
-
-    Fixed May 12 2026 to match sink.reconcile_outcomes (memory #19, May 4).
-    Pre-fix used same-day open→close, which disagreed with stored values
-    (which are N-day forward close-to-close returns). Validator's auto-fix
-    was overwriting correct stored values with wrong same-day returns.
+def compute_return(px, pred_date, horizon):
+    """close[pred_date] -> close[pred_date + horizon trading sessions], counting
+    ACTUAL bars in the fetched frame. Holiday-aware by construction (the frame
+    holds only real sessions); returns None if the target session has not posted
+    yet. Replaces the synthetic weekday calendar + asof(), which mis-targeted
+    holiday-spanning windows and rolled back to stale bars.
     """
+    import numpy as _np
     try:
-        outcome_date = _add_trading_days(pred_date, horizon)
-        pred_ts    = pd.Timestamp(pred_date)
-        outcome_ts = pd.Timestamp(outcome_date)
-        close_pred    = float(px["Close"].asof(pred_ts))
-        close_outcome = float(px["Close"].asof(outcome_ts))
-        if close_pred == 0 or np.isnan(close_pred) or np.isnan(close_outcome):
+        cs = px["Close"]
+        if isinstance(cs, pd.DataFrame):
+            cs = cs.iloc[:, 0]
+        cs = cs.copy()
+        cs.index = pd.to_datetime(cs.index).tz_localize(None)
+        cs = cs[~cs.index.duplicated(keep="last")].sort_index()
+        idx = cs.index
+        pred_ts = pd.Timestamp(pred_date)
+        pos = idx.searchsorted(pred_ts, side="right") - 1   # last bar on/before pred_date
+        if pos < 0:
+            return None
+        out_pos = pos + int(horizon)
+        if out_pos >= len(idx):
+            return None   # target trading session has not posted yet
+        close_pred    = float(cs.iloc[pos])
+        close_outcome = float(cs.iloc[out_pos])
+        if close_pred == 0 or _np.isnan(close_pred) or _np.isnan(close_outcome):
             return None
         ret = (close_outcome - close_pred) / close_pred
         if ret != ret:
@@ -166,7 +185,6 @@ def compute_return(px: pd.DataFrame, pred_date: date, horizon: int) -> float | N
         return ret
     except Exception:
         return None
-
 
 def desktop_alert(title: str, message: str):
     try:
@@ -435,7 +453,7 @@ def check_price_accuracy(
         # so we have close[T+horizon] for all outcomes. Trading days, with buffer.
         min_date = date.fromisoformat(rows[0]["prediction_date"][:10])
         max_pred_date = date.fromisoformat(rows[-1]["prediction_date"][:10])
-        max_date = _add_trading_days(max_pred_date, 5)
+        max_date = max_pred_date + timedelta(days=12)
         px = fetch_prices(ticker, min_date, max_date)
         if px is None:
             log(f"  ⚠ Could not fetch prices for {ticker} — skipping")
@@ -682,4 +700,4 @@ if __name__ == "__main__":
     parser.add_argument("--ticker", type=str, default=None,  help="Validate single ticker only")
     args = parser.parse_args()
 
-    run_validator(days=args.days, fix=args.fix, ticker=args.ticker)
+    run_with_io_retry(run_validator, days=args.days, fix=args.fix, ticker=args.ticker)

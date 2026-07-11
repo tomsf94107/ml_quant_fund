@@ -1,0 +1,17219 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+mlm-10q_20220331.htm
+ 
+ 
+ 
+ 
+	 
+		 
+			 false 
+			 Q1 
+			 0000916076 
+			 --12-31 
+			 P5Y 
+			 
+			 
+		 
+		 
+			 
+		 
+		 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 xbrli:shares 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2022-04-28 
+				 
+			 
+			 
+				 iso4217:USD 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 
+						 iso4217:USD 
+					 
+					 
+						 xbrli:shares 
+					 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 mlm:Facility 
+			 
+			 
+				 mlm:State 
+			 
+			 
+				 mlm:Plant 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 stpr:CA 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 mlm:Segment 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedTranslationAdjustmentMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedTranslationAdjustmentMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedTranslationAdjustmentMember 
+					 
+				 
+				 
+					 2020-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedTranslationAdjustmentMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+						 us-gaap:OtherNonoperatingIncomeExpenseMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:ReclassificationOutOfAccumulatedOtherComprehensiveIncomeMember 
+						 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+						 us-gaap:OtherNonoperatingIncomeExpenseMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 srt:MinimumMember 
+						 us-gaap:ServiceMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 srt:MaximumMember 
+						 us-gaap:ServiceMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 
+							 2022-04-01 
+						 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 
+							 2021-04-01 
+						 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 
+							 2022-04-01 
+						 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 
+							 2021-04-01 
+						 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessEastGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessEastGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessEastGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessEastGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:CargoAndFreightMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessEastGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessEastGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:CaliforniaAndColoradoMember 
+						 us-gaap:ServiceMember 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:CaliforniaAndColoradoMember 
+						 us-gaap:ServiceMember 
+						 mlm:BuildingMaterialsBusinessWestGroupMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:LehighHansonIncorporationWestRegionMember 
+					 
+				 
+				 
+					 2021-10-01 
+					 2021-10-01 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:LehighHansonIncorporationWestRegionMember 
+					 
+				 
+				 
+					 2021-10-01 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SouthernCrushedConcreteMember 
+					 
+				 
+				 
+					 2021-07-30 
+					 2021-07-30 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TillerCorporationMember 
+					 
+				 
+				 
+					 2021-04-28 
+					 2021-04-30 
+				 
+			 
+			 
+				 
+					 0000916076 
+				 
+				 
+					 2021-10-01 
+					 2021-10-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:SegmentDiscontinuedOperationsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:DisposalGroupHeldforsaleNotDiscontinuedOperationsMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:DiscontinuedOperationsHeldforsaleMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:DiscontinuedOperationsHeldforsaleMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:DisposalGroupHeldforsaleNotDiscontinuedOperationsMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:EastGroupMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:WestGroupMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:EastGroupMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:WestGroupMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:EastGroupMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:WestGroupMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ZeroPointSixFiveZeroPercentSeniorNotesDueTwentyTwentyThreeMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ZeroPointSixFiveZeroPercentSeniorNotesDueTwentyTwentyThreeMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:FourPointTwoFivePercentSeniorNotesDueTwentyTwentyFourMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:FourPointTwoFivePercentSeniorNotesDueTwentyTwentyFourMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SevenPercentDebenturesDueTwentyTwentyFiveMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SevenPercentDebenturesDueTwentyTwentyFiveMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFourFiveZeroPercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFourFiveZeroPercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFiveZeroZeroPercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFiveZeroZeroPercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TwoPointFiveZeroZeroPercentSeniorNotesDueTwentyThirtyMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TwoPointFiveZeroZeroPercentSeniorNotesDueTwentyThirtyMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TwoPointFourZeroZeroPercentSeniorNotesDueTwentyThirtyOneMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TwoPointFourZeroZeroPercentSeniorNotesDueTwentyThirtyOneMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SixPointTwoFivePercentageOfSeniorNotesDueTwoThousandThirtySevenMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SixPointTwoFivePercentageOfSeniorNotesDueTwoThousandThirtySevenMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:FourPointTwoFiveZeroPercentSeniorNotesDueTwentyFourtySevenMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:FourPointTwoFiveZeroPercentSeniorNotesDueTwentyFourtySevenMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointTwoZeroZeroPercentSeniorNotesDueTwentyFiftyOneMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointTwoZeroZeroPercentSeniorNotesDueTwentyFiftyOneMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:OtherNotesMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:OtherNotesMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ZeroPointSixFiveZeroPercentSeniorNotesDueTwentyTwentyThreeMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:FourPointTwoFivePercentSeniorNotesDueTwentyTwentyFourMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SevenPercentDebenturesDueTwentyTwentyFiveMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFourFivePercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFiveZeroZeroPercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TwoPointFiveZeroZeroPercentSeniorNotesDueTwentyThirtyMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TwoPointFourZeroZeroPercentSeniorNotesDueTwentyThirtyOneMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:SixPointTwoFivePercentageOfSeniorNotesDueTwoThousandThirtySevenMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:FourPointTwoFiveZeroPercentSeniorNotesDueTwentyFourtySevenMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointTwoZeroZeroPercentSeniorNotesDueTwentyFiftyOneMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 xbrli:pure 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ThreePointFourFivePercentSeniorNotesDueTwentyTwentySevenMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TradeReceivableCreditFacilityMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TradeReceivableCreditFacilityMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TradeReceivableCreditFacilityMember 
+						 us-gaap:LondonInterbankOfferedRateLIBORMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TradeReceivableCreditFacilityMember 
+						 mlm:ConduitLendersMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TradeReceivableCreditFacilityMember 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:TradeReceivableCreditFacilityMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2016-12-05 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2016-12-04 
+					 2016-12-05 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 srt:MaximumMember 
+						 mlm:IncludingAcquisitionBridgeDebtMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 srt:MaximumMember 
+						 mlm:ExcludingAcquisitionBridgeDebtMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CustomerConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CustomerConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 mlm:Customer 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CustomerConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CustomerConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:PensionPlansDefinedBenefitMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:PensionPlansDefinedBenefitMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:PensionPlansDefinedBenefitMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:PensionPlansDefinedBenefitMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:InterestOnlyLoanReceivableMember 
+					 
+				 
+				 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:InterestOnlyLoanReceivableMember 
+					 
+				 
+				 
+					 2021-12-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:LondonInterbankOfferedRateLIBORMember 
+						 mlm:InterestOnlyLoanReceivableMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:InterestOnlyLoanReceivableMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CorporateNonSegmentMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CorporateNonSegmentMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:AggregatesMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:AggregatesMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:CementMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:CementMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ReadyMixedConcreteMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:ReadyMixedConcreteMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:AsphaltAndPavingMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:AsphaltAndPavingMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 us-gaap:ReportableSubsegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:IntersubsegmentEliminationsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:IntersubsegmentEliminationsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CargoAndFreightMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 us-gaap:CargoAndFreightMember 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:BuildingMaterialsBusinessMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2022-01-01 
+					 2022-03-31 
+				 
+			 
+			 
+				 
+					 0000916076 
+					 
+						 mlm:MagnesiaSpecialtiesMember 
+						 us-gaap:OperatingSegmentsMember 
+						 mlm:ProductsAndServicesMember 
+					 
+				 
+				 
+					 2021-01-01 
+					 2021-03-31 
+				 
+			 
+		 
+	 
+ 
+   
+ UNITED STATES 
+ SECURITIES AND EXCHANGE COMMISSION 
+ WASHINGTON, DC 20549 
+   
+ FORM  10-Q 
+   
+ (Mark One) 
+ 
+ 
+ 
+ 
+ ☒ 
+ 
+ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+ 
+ 
+ For the quarterly period ended  March 31,  2022 
+ OR 
+ 
+ 
+ 
+ 
+ ☐ 
+ 
+ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+ 
+ 
+ For the transition period from                                            to   
+ Commission File Number:  1-12744 
+   
+ MARTIN MARIETTA MATERIALS, INC. 
+ (Exact Name of Registrant as Specified in its Charter) 
+   
+   
+ 
+ 
+ 
+ 
+ North Carolina 
+ 
+ 56-1848578 
+ 
+ 
+ 
+ ( State or other jurisdiction of incorporation or organization) 
+ 
+ (I.R.S. Employer Identification No.) 
+ 
+ 
+ 
+ 4123 Parklake Avenue ,  Raleigh ,  NC 
+ 
+ 27612 
+ 
+ 
+ 
+ (Address of principal executive offices) 
+ 
+ (Zip Code) 
+ 
+ 
+ Registrant’s telephone number, including area code: ( 919 )  781-4550 
+   
+ Securities registered pursuant to Section 12(b) of the Act:  
+   
+ 
+ 
+ 
+ 
+ Title of each class 
+ 
+   
+ 
+ Trading 
+ Symbol(s) 
+ 
+   
+ 
+ Name of each exchange on which registered 
+ 
+ 
+ 
+ Common Stock (Par Value $0.01) 
+ 
+   
+ 
+ MLM 
+ 
+   
+ 
+ NYSE 
+ 
+ 
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.      Yes    ☒     No   ☐ 
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).      Yes    ☒     No   ☐ 
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act. 
+   
+ 
+ 
+ 
+ 
+ Large accelerated filer 
+ 
+   
+ 
+ ☒ 
+ 
+    
+ 
+ Accelerated filer 
+ 
+   
+ 
+ ☐ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Non-accelerated filer 
+ 
+   
+ 
+ ☐ 
+ 
+    
+ 
+ Smaller reporting company 
+ 
+   
+ 
+ ☐ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Emerging growth company 
+ 
+   
+ 
+ ☐ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+   
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ 
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).     Yes   ☐     No   ☒ 
+ Indicate the number of shares outstanding of each of the issuer’s classes of Common Stock, as of the latest practicable date.  
+   
+ 
+ 
+ 
+ 
+ Class 
+ 
+   
+ 
+ Outstanding as of April 28, 2022 
+ 
+ 
+ 
+ Common Stock, $0.01 par value 
+ 
+   
+ 
+ 62,365,483 
+ 
+ 
+   
+   
+   
+   
+ 
+   
+   
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Page 
+ 
+ 
+ 
+ Part I. Financial Information: 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 1. Financial Statements 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Consolidated Balance Sheets – March 31, 2022 and December 31, 2021 
+ 
+   
+ 
+ 3 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Consolidated Statements of Earnings and Comprehensive Earnings – Three Months Ended March 31, 2022 and 2021 
+ 
+   
+ 
+ 4 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Consolidated Statements of Cash Flows – Three Months Ended March 31, 2022 and 2021  
+ 
+   
+ 
+ 5 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Consolidated Statement of Total Equity – Three Months Ended March 31, 2022 and 2021  
+ 
+   
+ 
+ 6 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Notes to Consolidated Financial Statements 
+ 
+   
+ 
+ 7 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+ 
+   
+ 
+ 24 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 3. Quantitative and Qualitative Disclosures About Market Risk 
+ 
+   
+ 
+ 37 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 4. Controls and Procedures 
+ 
+   
+ 
+ 38 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Part II. Other Information: 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 1. Legal Proceedings 
+ 
+   
+ 
+ 39 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 1A. Risk Factors 
+ 
+   
+ 
+ 39 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 
+ 
+   
+ 
+ 39 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 4. Mine Safety Disclosures 
+ 
+   
+ 
+ 39 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 6. Exhibits 
+ 
+   
+ 
+ 40 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Signatures 
+ 
+   
+ 
+ 41 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+   
+   
+   
+ Page 2 of 41 
+ 
+   
+   
+ PART I. FINANCIAL INFORMATION 
+ Item 1. Financial Statements. 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES 
+ (UNAUDITED) CONSOLIDATED BALANCE SHEETS 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (In Millions, Except Par Value Data) 
+ 
+   
+ 
+ 
+ 
+ ASSETS 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current Assets: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents 
+ 
+   
+ 
+ $ 
+ 
+ 189.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 258.4 
+ 
+   
+ 
+ 
+ 
+ Restricted cash 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.5 
+ 
+   
+ 
+ 
+ 
+ Accounts receivable, net 
+ 
+   
+ 
+   
+ 
+ 759.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 774.0 
+ 
+   
+ 
+ 
+ 
+ Inventories, net 
+ 
+   
+ 
+   
+ 
+ 782.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 752.6 
+ 
+   
+ 
+ 
+ 
+ Current assets held for sale 
+ 
+   
+ 
+   
+ 
+ 121.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 102.2 
+ 
+   
+ 
+ 
+ 
+ Other current assets 
+ 
+   
+ 
+   
+ 
+ 135.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 137.9 
+ 
+   
+ 
+ 
+ 
+ Total Current Assets 
+ 
+   
+ 
+   
+ 
+ 1,987.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,025.6 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment 
+ 
+   
+ 
+   
+ 
+ 10,252.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10,370.0 
+ 
+   
+ 
+ 
+ 
+ Allowances for depreciation, depletion and amortization 
+ 
+   
+ 
+   
+ 
+ ( 4,043.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 4,032.0 
+ 
+ ) 
+ 
+ 
+ 
+ Net property, plant and equipment 
+ 
+   
+ 
+   
+ 
+ 6,208.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,338.0 
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+   
+ 
+ 3,392.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,494.4 
+ 
+   
+ 
+ 
+ 
+ Other intangibles, net 
+ 
+   
+ 
+   
+ 
+ 1,050.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,065.0 
+ 
+   
+ 
+ 
+ 
+ Operating lease right-of-use assets, net 
+ 
+   
+ 
+   
+ 
+ 410.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 426.7 
+ 
+   
+ 
+ 
+ 
+ Noncurrent assets held for sale 
+ 
+   
+ 
+   
+ 
+ 812.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 616.9 
+ 
+   
+ 
+ 
+ 
+ Other noncurrent assets 
+ 
+   
+ 
+   
+ 
+ 378.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 426.4 
+ 
+   
+ 
+ 
+ 
+ Total Assets 
+ 
+   
+ 
+ $ 
+ 
+ 14,241.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 14,393.0 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ LIABILITIES AND EQUITY 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current Liabilities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Accounts payable 
+ 
+   
+ 
+ $ 
+ 
+ 383.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 356.2 
+ 
+   
+ 
+ 
+ 
+ Accrued salaries, benefits and payroll taxes 
+ 
+   
+ 
+   
+ 
+ 43.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 86.6 
+ 
+   
+ 
+ 
+ 
+ Accrued other taxes 
+ 
+   
+ 
+   
+ 
+ 46.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 58.4 
+ 
+   
+ 
+ 
+ 
+ Accrued interest 
+ 
+   
+ 
+   
+ 
+ 41.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 48.0 
+ 
+   
+ 
+ 
+ 
+ Operating lease liabilities 
+ 
+   
+ 
+   
+ 
+ 53.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 53.9 
+ 
+   
+ 
+ 
+ 
+ Current liabilities held for sale 
+ 
+   
+ 
+   
+ 
+ 9.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7.5 
+ 
+   
+ 
+ 
+ 
+ Other current liabilities 
+ 
+   
+ 
+   
+ 
+ 134.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 142.0 
+ 
+   
+ 
+ 
+ 
+ Total Current Liabilities 
+ 
+   
+ 
+   
+ 
+ 712.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 752.6 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Long-term debt 
+ 
+   
+ 
+   
+ 
+ 5,102.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5,100.8 
+ 
+   
+ 
+ 
+ 
+ Deferred income taxes, net 
+ 
+   
+ 
+   
+ 
+ 890.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 895.3 
+ 
+   
+ 
+ 
+ 
+ Noncurrent operating lease liabilities 
+ 
+   
+ 
+   
+ 
+ 362.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 379.4 
+ 
+   
+ 
+ 
+ 
+ Noncurrent liabilities held for sale 
+ 
+   
+ 
+   
+ 
+ 63.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 53.5 
+ 
+   
+ 
+ 
+ 
+ Other noncurrent liabilities 
+ 
+   
+ 
+   
+ 
+ 679.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 673.8 
+ 
+   
+ 
+ 
+ 
+ Total Liabilities 
+ 
+   
+ 
+   
+ 
+ 7,810.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7,855.4 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Equity: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Common stock, par value $ 0.01  per share ( 62.4  shares 
+    outstanding at March 31, 2022 and December 31, 2021) 
+ 
+   
+ 
+   
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.6 
+ 
+   
+ 
+ 
+ 
+ 
+ Preferred stock, par value $ 0.01  per share 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Additional paid-in capital 
+ 
+   
+ 
+   
+ 
+ 3,462.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,470.4 
+ 
+   
+ 
+ 
+ 
+ Accumulated other comprehensive loss 
+ 
+   
+ 
+   
+ 
+ ( 129.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 97.6 
+ 
+ ) 
+ 
+ 
+ 
+ Retained earnings 
+ 
+   
+ 
+   
+ 
+ 3,094.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,161.9 
+ 
+   
+ 
+ 
+ 
+ Total Shareholders' Equity 
+ 
+   
+ 
+   
+ 
+ 6,428.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,535.3 
+ 
+   
+ 
+ 
+ 
+ Noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ 2.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.3 
+ 
+   
+ 
+ 
+ 
+ Total Equity 
+ 
+   
+ 
+   
+ 
+ 6,431.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,537.6 
+ 
+   
+ 
+ 
+ 
+ Total Liabilities and Equity 
+ 
+   
+ 
+ $ 
+ 
+ 14,241.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 14,393.0 
+ 
+   
+ 
+ 
+ See accompanying notes to the consolidated financial statements.  
+   
+ Page 3 of 41 
+ 
+   
+   
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES 
+ (UNAUDITED) CONSOLIDATED STATEMENTS OF EARNINGS AND COMPREHENSIVE EARNINGS 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (In Millions, Except Per Share Data) 
+ 
+   
+ 
+ 
+ 
+ Products and services revenues 
+ 
+   
+ 
+ $ 
+ 
+ 1,147.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 921.9 
+ 
+   
+ 
+ 
+ 
+ Freight revenues 
+ 
+   
+ 
+   
+ 
+ 83.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 60.5 
+ 
+   
+ 
+ 
+ 
+ Total Revenues 
+ 
+   
+ 
+   
+ 
+ 1,230.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 982.4 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cost of revenues - products and services 
+ 
+   
+ 
+   
+ 
+ 991.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 746.0 
+ 
+   
+ 
+ 
+ 
+ Cost of revenues - freight 
+ 
+   
+ 
+   
+ 
+ 82.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 61.7 
+ 
+   
+ 
+ 
+ 
+ Total Cost of Revenues 
+ 
+   
+ 
+   
+ 
+ 1,074.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 807.7 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Gross Profit 
+ 
+   
+ 
+   
+ 
+ 156.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 174.7 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Selling, general & administrative expenses 
+ 
+   
+ 
+   
+ 
+ 97.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 79.8 
+ 
+   
+ 
+ 
+ 
+ Acquisition and integration expenses 
+ 
+   
+ 
+   
+ 
+ 1.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1.2 
+ 
+   
+ 
+ 
+ 
+ Other operating income, net 
+ 
+   
+ 
+   
+ 
+ ( 2.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 5.6 
+ 
+ ) 
+ 
+ 
+ 
+ Earnings from Operations 
+ 
+   
+ 
+   
+ 
+ 59.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 99.3 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Interest expense 
+ 
+   
+ 
+   
+ 
+ 40.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 27.4 
+ 
+   
+ 
+ 
+ 
+ Other nonoperating income, net 
+ 
+   
+ 
+   
+ 
+ ( 10.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 9.5 
+ 
+ ) 
+ 
+ 
+ 
+ Earnings from continuing operations before income tax expense 
+ 
+   
+ 
+   
+ 
+ 30.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 81.4 
+ 
+   
+ 
+ 
+ 
+ Income tax expense 
+ 
+   
+ 
+   
+ 
+ 5.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 15.9 
+ 
+   
+ 
+ 
+ 
+ Earnings from continuing operations 
+ 
+   
+ 
+   
+ 
+ 24.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.5 
+ 
+   
+ 
+ 
+ 
+ Loss from discontinued operations, net of income tax benefit 
+ 
+   
+ 
+   
+ 
+ ( 3.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Consolidated net earnings 
+ 
+   
+ 
+   
+ 
+ 21.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.5 
+ 
+   
+ 
+ 
+ 
+ Less: Net (loss) earnings attributable to noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 0.2 
+ 
+   
+ 
+ 
+ 
+ Net Earnings Attributable to Martin Marietta Materials, Inc. 
+ 
+   
+ 
+ $ 
+ 
+ 21.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 65.3 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Consolidated Comprehensive (Loss) Earnings: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ (Loss) Earnings attributable to Martin Marietta Materials, Inc. 
+ 
+   
+ 
+ $ 
+ 
+ ( 10.2 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 68.1 
+ 
+   
+ 
+ 
+ 
+ (Loss) Earnings attributable to noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 0.2 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 10.3 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 68.3 
+ 
+   
+ 
+ 
+ 
+ Net Earnings (Loss) Attributable to Martin Marietta Materials, Inc. 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Per Common Share: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic from continuing operations attributable to common shareholders 
+ 
+   
+ 
+ $ 
+ 
+ 0.39 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1.05 
+ 
+   
+ 
+ 
+ 
+ Basic from discontinued operations attributable to common shareholders 
+ 
+   
+ 
+   
+ 
+ ( 0.05 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.34 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1.05 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Diluted from continuing operations attributable to common shareholders 
+ 
+   
+ 
+ $ 
+ 
+ 0.39 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1.04 
+ 
+   
+ 
+ 
+ 
+ Diluted from discontinued operations attributable to common 
+    shareholders 
+ 
+   
+ 
+   
+ 
+ ( 0.05 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.34 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1.04 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Weighted-Average Common Shares Outstanding: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic 
+ 
+   
+ 
+   
+ 
+ 62.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 62.3 
+ 
+   
+ 
+ 
+ 
+ Diluted 
+ 
+   
+ 
+   
+ 
+ 62.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 62.5 
+ 
+   
+ 
+ 
+   
+   
+ See accompanying notes to the consolidated financial statements.  
+   
+ Page 4 of 41 
+ 
+   
+   
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES 
+ (UNAUDITED) CONSOLIDATED STATEMENTS OF CASH FLOWS 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Cash Flows from Operating Activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Consolidated net earnings 
+ 
+   
+ 
+ $ 
+ 
+ 21.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 65.5 
+ 
+   
+ 
+ 
+ 
+ Adjustments to reconcile consolidated net earnings to net cash 
+    provided by operating activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Depreciation, depletion and amortization 
+ 
+   
+ 
+   
+ 
+ 128.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 98.6 
+ 
+   
+ 
+ 
+ 
+ Stock-based compensation expense 
+ 
+   
+ 
+   
+ 
+ 12.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.9 
+ 
+   
+ 
+ 
+ 
+ Gain on divestitures and sales of assets 
+ 
+   
+ 
+   
+ 
+ ( 2.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 3.8 
+ 
+ ) 
+ 
+ 
+ 
+ Deferred income taxes, net 
+ 
+   
+ 
+   
+ 
+ 5.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 4.7 
+ 
+ ) 
+ 
+ 
+ 
+ Other items, net 
+ 
+   
+ 
+   
+ 
+ ( 0.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 4.7 
+ 
+ ) 
+ 
+ 
+ 
+ Changes in operating assets and liabilities, net of effects of 
+    acquisitions and divestitures: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Accounts receivable, net 
+ 
+   
+ 
+   
+ 
+ 14.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 11.5 
+ 
+   
+ 
+ 
+ 
+ Inventories, net 
+ 
+   
+ 
+   
+ 
+ ( 28.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 19.0 
+ 
+   
+ 
+ 
+ 
+ Accounts payable 
+ 
+   
+ 
+   
+ 
+ 95.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 25.0 
+ 
+   
+ 
+ 
+ 
+ Other assets and liabilities, net 
+ 
+   
+ 
+   
+ 
+ ( 74.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 25.4 
+ 
+ ) 
+ 
+ 
+ 
+ Net Cash Provided by Operating Activities 
+ 
+   
+ 
+   
+ 
+ 169.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 191.9 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash Flows from Investing Activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Additions to property, plant and equipment 
+ 
+   
+ 
+   
+ 
+ ( 139.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 110.3 
+ 
+ ) 
+ 
+ 
+ 
+ Acquisitions, net of cash acquired 
+ 
+   
+ 
+   
+ 
+ 18.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Proceeds from divestitures and sales of assets 
+ 
+   
+ 
+   
+ 
+ 1.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.2 
+ 
+   
+ 
+ 
+ 
+ Investments in life insurance contracts, net 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9.8 
+ 
+   
+ 
+ 
+ 
+ Other investing activities, net 
+ 
+   
+ 
+   
+ 
+ ( 3.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Net Cash Used for Investing Activities 
+ 
+   
+ 
+   
+ 
+ ( 123.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 88.3 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash Flows from Financing Activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Payments on finance lease obligations 
+ 
+   
+ 
+   
+ 
+ ( 3.7 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 2.2 
+ 
+ ) 
+ 
+ 
+ 
+ Repurchases of common stock 
+ 
+   
+ 
+   
+ 
+ ( 50.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Dividends paid 
+ 
+   
+ 
+   
+ 
+ ( 38.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 36.1 
+ 
+ ) 
+ 
+ 
+ 
+ Proceeds from exercise of stock options 
+ 
+   
+ 
+   
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.6 
+ 
+   
+ 
+ 
+ 
+ Shares withheld for employees' income tax obligations 
+ 
+   
+ 
+   
+ 
+ ( 24.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 15.5 
+ 
+ ) 
+ 
+ 
+ 
+ Net Cash Used for Financing Activities 
+ 
+   
+ 
+   
+ 
+ ( 116.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 53.2 
+ 
+ ) 
+ 
+ 
+ 
+ Net (Decrease) Increase in Cash, Cash Equivalents and Restricted Cash 
+ 
+   
+ 
+   
+ 
+ ( 69.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 50.4 
+ 
+   
+ 
+ 
+ 
+ Cash, Cash Equivalents and Restricted Cash, beginning of period 
+ 
+   
+ 
+   
+ 
+ 258.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 304.4 
+ 
+   
+ 
+ 
+ 
+ Cash, Cash Equivalents and Restricted Cash, end of period 
+ 
+   
+ 
+ $ 
+ 
+ 189.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 354.8 
+ 
+   
+ 
+ 
+   
+   
+   
+ See accompanying notes to the consolidated financial statements.  
+   
+ Page 5 of 41 
+ 
+   
+   
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES 
+ (UNAUDITED) CONSOLIDATED STATEMENTS OF TOTAL EQUITY 
+   
+ 
+ 
+ 
+ 
+  (In Millions, Except Per Share Data) 
+ 
+   
+ 
+ Shares of Common Stock 
+ 
+   
+ 
+   
+ 
+ Common Stock 
+ 
+   
+ 
+   
+ 
+ Additional Paid-in Capital 
+ 
+   
+ 
+   
+ 
+ Accumulated 
+ Other Comprehensive 
+ Loss 
+ 
+   
+ 
+   
+ 
+ Retained Earnings 
+ 
+   
+ 
+   
+ 
+ Total Shareholders' Equity 
+ 
+   
+ 
+   
+ 
+ Noncontrolling Interests 
+ 
+   
+ 
+   
+ 
+ Total Equity 
+ 
+   
+ 
+ 
+ 
+ Balance at December 31, 2020 
+ 
+   
+ 
+   
+ 
+ 62.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,440.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 158.4 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 2,607.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 5,890.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 5,893.3 
+ 
+   
+ 
+ 
+ 
+ Consolidated net earnings 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.5 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive earnings, 
+    net of tax 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.8 
+ 
+   
+ 
+ 
+ 
+ Dividends declared ($ 0.57  per share) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 35.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 35.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 35.8 
+ 
+ ) 
+ 
+ 
+ 
+ Issuances of common stock for stock 
+    award plans 
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.5 
+ 
+   
+ 
+ 
+ 
+ Shares withheld for employees' 
+    income tax obligations 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 15.5 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 15.5 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 15.5 
+ 
+ ) 
+ 
+ 
+ 
+ Stock-based compensation expense 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.9 
+ 
+   
+ 
+ 
+ 
+ Balance at March 31, 2021 
+ 
+   
+ 
+   
+ 
+ 62.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,441.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 155.6 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 2,637.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 5,923.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 5,926.7 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Balance at December 31, 2021 
+ 
+   
+ 
+   
+ 
+ 62.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,470.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 97.6 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 3,161.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6,535.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6,537.6 
+ 
+   
+ 
+ 
+ 
+ Consolidated net earnings (loss) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 21.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 21.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 21.3 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive loss, net of tax 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 31.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 31.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 31.6 
+ 
+ ) 
+ 
+ 
+ 
+ Dividends declared ($ 0.61  per share) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 38.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 38.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 38.4 
+ 
+ ) 
+ 
+ 
+ 
+ Issuances of common stock for stock 
+    award plans 
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.6 
+ 
+   
+ 
+ 
+ 
+ Shares withheld for employees' 
+    income tax obligations 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 24.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 24.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 24.4 
+ 
+ ) 
+ 
+ 
+ 
+ Repurchases of common stock 
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 50.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 50.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 50.0 
+ 
+ ) 
+ 
+ 
+ 
+ Stock-based compensation expense 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.0 
+ 
+   
+ 
+ 
+ 
+ Balance at March 31, 2022 
+ 
+   
+ 
+   
+ 
+ 62.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,462.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 129.2 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 3,094.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6,428.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6,431.1 
+ 
+   
+ 
+ 
+   
+   
+   
+ See accompanying notes to the consolidated financial statements.  
+   
+ Page 6 of 41 
+ 
+   
+   
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS  
+   
+ 
+ 
+ 
+ 
+ 1. 
+ 
+ Significant Accounting Policies  
+ Organization   
+ Martin Marietta Materials, Inc. (the Company or Martin Marietta) is a natural resource-based building materials company. As of March 31, 2022, the Company supplies aggregates (crushed stone, sand and gravel) through its network of approximately  350  quarries, mines and distribution yards in  28  states, Canada and The Bahamas.  Martin Marietta also provides cement and downstream products and services, namely, ready mixed concrete, asphalt and paving, in vertically-integrated structured markets where the Company has a leading aggregates position. In addition, the Company has  two  cement plants, cement distribution terminals and ready mixed concrete operations primarily in California that are classified as assets held for sale and discontinued operations as of and for the quarter ended March 31, 2022. The Company’s heavy-side building materials are used in infrastructure, nonresidential and residential construction projects. Aggregates are also used in agricultural, utility and environmental applications and as railroad ballast. The aggregates, cement, ready mixed concrete, asphalt and paving product lines are reported collectively as the “Building Materials” business.  
+ The Company’s Building Materials business includes  two  reportable segments:   the East Group and the West Group.  
+   
+ 
+ 
+ 
+ 
+ BUILDING MATERIALS BUSINESS 
+ 
+ 
+ 
+ Reportable Segments 
+ 
+    
+ 
+ East Group 
+ 
+    
+ 
+ West Group 
+ 
+ 
+ 
+ Operating Locations 
+ 
+    
+ 
+ Alabama, Florida, Georgia, Indiana,  Iowa, Kansas, Kentucky, Maryland,  Minnesota, Missouri,   Nebraska, North Carolina, Ohio, Pennsylvania, South Carolina,  Tennessee, Virginia, West Virginia,  Nova Scotia and The Bahamas 
+ 
+    
+ 
+ Arizona, Arkansas, California, Colorado, Louisiana, Oklahoma, Texas, Utah,  Washington and Wyoming  
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Product Lines 
+ 
+   
+ 
+ Aggregates and Asphalt 
+ 
+   
+ 
+ Aggregates, Cement, Ready Mixed Concrete, Asphalt and Paving 
+ 
+ 
+ The Company’s Magnesia Specialties business, which represents a separate reportable segment, has manufacturing facilities in Manistee, Michigan, and Woodville, Ohio. The Magnesia Specialties business produces magnesia-based chemicals products used in industrial, agricultural and environmental applications, and dolomitic lime sold primarily to customers in the steel and mining industries.  
+ Basis of Presentation  
+ The accompanying unaudited consolidated financial statements of the Company have been prepared in accordance with accounting principles generally accepted in the United States (U.S. GAAP) for interim financial information and with the instructions to the Quarterly Report on Form 10-Q and in Article 10 of Regulation S-X. The Company has continued to follow the accounting policies set forth in the audited consolidated financial statements and related notes thereto included in the Company’s Annual Report on Form 10-K for the year ended December 31, 2021. In the opinion of management, the interim consolidated financial information provided herein reflects all adjustments, consisting of normal recurring accruals, necessary for a fair statement of the results of operations, financial position and cash flows for the interim periods. The consolidated results of operations for the three months ended March 31, 2022 are not necessarily indicative of the results expected for other interim periods or the full year. The consolidated balance sheet at December 31, 2021 has been derived from the audited consolidated financial statements at that date but does not include all of the information and notes required by U.S. GAAP for complete financial statements. These consolidated financial statements should be read in conjunction with the audited  
+ Page 7 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ consolidated financial statements and notes thereto included in the Company’s Annual Report on Form 10-K for the year ended  December 31, 2021 . 
+ The preparation of the Company’s consolidated financial statements requires management to make certain estimates and assumptions about future events.  As future events and their effects cannot be fully determined with precision, actual results could differ significantly from estimates. Changes in estimates are reflected in the consolidated financial statements in the period in which the change in estimate occurs. 
+ Consolidated Comprehensive (Loss) Earnings and Accumulated Other Comprehensive Loss  
+ Consolidated comprehensive (loss) earnings and accumulated other comprehensive loss consist of consolidated net earnings; adjustments for the funded status of pension and postretirement benefit plans; and foreign currency translation adjustments; and are presented in the Company’s consolidated statements of earnings and comprehensive earnings.  
+ Comprehensive (loss) earnings attributable to Martin Marietta is as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Net earnings attributable to Martin Marietta 
+ 
+   
+ 
+ $ 
+ 
+ 21.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 65.3 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive (loss) earnings, net of tax 
+ 
+   
+ 
+   
+ 
+ ( 31.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 2.8 
+ 
+   
+ 
+ 
+ 
+ Comprehensive (loss) earnings attributable to Martin 
+    Marietta 
+ 
+   
+ 
+ $ 
+ 
+ ( 10.2 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 68.1 
+ 
+   
+ 
+ 
+   
+ Changes in accumulated other comprehensive loss, net of tax, are as follows:   
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Pension and 
+ Postretirement Benefit Plans 
+ 
+   
+ 
+   
+ 
+ Foreign Currency 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 2022 
+ 
+   
+ 
+ 
+ 
+ Balance at beginning of period 
+ 
+   
+ 
+ $ 
+ 
+ ( 97.6 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 97.6 
+ 
+ ) 
+ 
+ 
+ 
+ Other comprehensive (loss) earnings before reclassifications, 
+    net of tax 
+ 
+   
+ 
+   
+ 
+ ( 33.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 0.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 32.9 
+ 
+ ) 
+ 
+ 
+ 
+ Amounts reclassified from accumulated other 
+    comprehensive loss, net of tax 
+ 
+   
+ 
+   
+ 
+ 1.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1.3 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive (loss) earnings, net of tax 
+ 
+   
+ 
+   
+ 
+ ( 32.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 0.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 31.6 
+ 
+ ) 
+ 
+ 
+ 
+ Balance at end of period 
+ 
+   
+ 
+ $ 
+ 
+ ( 129.6 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 0.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 129.2 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 2021 
+ 
+   
+ 
+ 
+ 
+ Balance at beginning of period 
+ 
+   
+ 
+ $ 
+ 
+ ( 158.1 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 0.3 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 158.4 
+ 
+ ) 
+ 
+ 
+ 
+ Other comprehensive earnings before reclassifications, 
+    net of tax 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.3 
+ 
+   
+ 
+ 
+ 
+ Amounts reclassified from accumulated other 
+    comprehensive loss, net of tax 
+ 
+   
+ 
+   
+ 
+ 2.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.5 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive earnings, net of tax 
+ 
+   
+ 
+   
+ 
+ 2.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.8 
+ 
+   
+ 
+ 
+ 
+ Balance at end of period 
+ 
+   
+ 
+ $ 
+ 
+ ( 155.6 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 155.6 
+ 
+ ) 
+ 
+ 
+ Page 8 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+   
+   
+ The $ 33.3  million, net of tax, other comprehensive loss before reclassifications in the Pension and Postretirement Benefit Plans for the three months ended March 31, 2022 is driven by the remeasurement of the funded status of the Company’s qualified pension plan, required as a result of the plan amendment that provided an enhanced benefit for eligible hourly employees. 
+   
+ Changes in net noncurrent deferred tax assets related to accumulated other comprehensive loss are as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Pension and Postretirement Benefit Plans 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Balance at beginning of period 
+ 
+   
+ 
+ $ 
+ 
+ 69.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 89.4 
+ 
+   
+ 
+ 
+ 
+ Tax effect of other comprehensive loss (earnings) 
+ 
+   
+ 
+   
+ 
+ 10.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 0.7 
+ 
+ ) 
+ 
+ 
+ 
+ Balance at end of period 
+ 
+   
+ 
+ $ 
+ 
+ 80.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 88.7 
+ 
+   
+ 
+ 
+ Reclassifications out of accumulated other comprehensive loss are as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+   
+ 
+ Affected line items in the 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+   
+ 
+ consolidated statements of earnings 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+   
+ 
+ and comprehensive earnings 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Pension and postretirement 
+    benefit plans 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Amortization of: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Prior service credit 
+ 
+   
+ 
+ $ 
+ 
+ 1.0 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Actuarial loss 
+ 
+   
+ 
+   
+ 
+ 0.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3.2 
+ 
+   
+ 
+   
+ 
+ Other nonoperating income, net 
+ 
+ 
+ 
+ Tax benefit 
+ 
+   
+ 
+   
+ 
+ ( 0.5 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.7 
+ 
+ ) 
+ 
+   
+ 
+ Income tax expense 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ Earnings per Common Share  
+ The numerator for basic and diluted earnings per common share is net earnings attributable to Martin Marietta reduced by dividends and undistributed earnings attributable to certain of the Company’s stock-based compensation. If there is a net loss, no amount of the undistributed loss is attributed to unvested participating securities. The denominator for basic earnings per common share is the weighted-average number of common shares outstanding during the period. Diluted earnings per common share are computed assuming that the weighted-average number of common shares is increased by the conversion, using the treasury stock method, of awards to be issued to employees and nonemployee members of the Company’s Board of Directors under certain stock-based compensation arrangements if the conversion is dilutive. For the three months ended March 31, 2022 and 2021, the diluted per-share computations reflect the number of common shares outstanding to include the number of additional shares that would have been outstanding if the potentially dilutive common shares had been issued.  
+ Page 9 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ The following table reconciles the numerator and denominator for basic and diluted earnings from continuing operations per common share:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (In Millions) 
+ 
+   
+ 
+ 
+ 
+ Net earnings from continuing operations attributable to 
+    Martin Marietta 
+ 
+   
+ 
+ $ 
+ 
+ 24.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 65.3 
+ 
+   
+ 
+ 
+ 
+ Less: Distributed and undistributed earnings 
+    attributable to unvested awards 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+ 
+ 
+ Basic and diluted net earnings from continuing operations available 
+    to common shareholders attributable to Martin Marietta 
+ 
+   
+ 
+ $ 
+ 
+ 24.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 65.2 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic weighted-average common shares outstanding 
+ 
+   
+ 
+   
+ 
+ 62.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 62.3 
+ 
+   
+ 
+ 
+ 
+ Effect of dilutive employee and director awards 
+ 
+   
+ 
+   
+ 
+ 0.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.2 
+ 
+   
+ 
+ 
+ 
+ Diluted weighted-average common shares outstanding 
+ 
+   
+ 
+   
+ 
+ 62.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 62.5 
+ 
+   
+ 
+ 
+ Restricted Cash  
+ At December 31, 2021, the Company had restricted cash of $ 0.5  million, which was invested in an account designated for the purchase of like-kind exchange replacement assets under Section 1031 of the Internal Revenue Code and related IRS procedures (Section 1031). The Company was restricted from utilizing the cash for purposes other than the purchase of the qualified assets for a designated period from receipt of the proceeds from the sale of the exchanged property. There was  no  restricted cash at March 31, 2022. 
+ In connection with Accounting Standards Update 2016-18,  Statement of Cash Flows (Topic 230),  the statement of cash flows reflects cash flow changes and balances for cash, cash equivalents and restricted cash on an aggregated basis. 
+ The following table reconciles cash, cash equivalents and restricted cash as reported on the consolidated balance sheets to the aggregated amounts presented on the consolidated statements of cash flows: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents 
+ 
+   
+ 
+ $ 
+ 
+ 189.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 258.4 
+ 
+   
+ 
+ 
+ 
+ Restricted cash 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.5 
+ 
+   
+ 
+ 
+ 
+ Total cash, cash equivalents and restricted cash presented in 
+    the consolidated statements of cash flows 
+ 
+   
+ 
+ $ 
+ 
+ 189.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 258.9 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 2. 
+ 
+ Revenue Recognition 
+ Total revenues include sales of products and services to customers, net of any discounts or allowances, and freight revenues. Product revenues are recognized when control of the promised good is transferred to the customer,  typically when finished products are shipped. Intersegment and interproduct revenues are eliminated in consolidation. Service revenues are derived from the paving business and are recognized using the percentage-of-completion  method  
+ Page 10 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ under the  cost-to- cost approach. Freight revenues reflect delivery arranged by the Company using a third party on behalf of the customer and are recognized consistent ly  with the timing of the product revenues.  
+ Performance Obligations.  Performance obligations are contractual promises to transfer or provide a distinct good or service for a stated price. The Company’s product sales agreements are single-performance obligations that are satisfied at a point in time.  Performance obligations within paving service agreements are satisfied over time, primarily ranging from  one day  to  two years . For product revenues and freight revenues, customer payment terms are generally  30  days from invoice date. Customer payments for the paving operations are based on a contractual billing schedule and are due  30  days from invoice date. 
+ Future revenues from unsatisfied performance obligations at March 31, 2022 and 2021 were $ 213.9  million and $ 172.8  million, respectively, where the remaining periods to complete these obligations ranged from  one month  to  25  months and  one month  to  19  months, respectively.   
+ Revenue by Category.   The following table presents the Company’s total revenues by category for each reportable segment.  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 2022 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Products and Services 
+ 
+   
+ 
+   
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 394.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 24.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 418.8 
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 682.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 52.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 735.0 
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 1,077.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 76.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,153.8 
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 70.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 77.0 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 1,147.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 83.0 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,230.8 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Products and Services 
+ 
+   
+ 
+   
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 372.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 22.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 394.9 
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 484.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 32.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 516.6 
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 856.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 54.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 911.5 
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 65.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 70.9 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 921.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 60.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 982.4 
+ 
+   
+ 
+ 
+   
+ Service revenues, which include paving services located in California and Colorado, were $ 18.3  million and $ 8.8  million for the three months ended March 31, 2022 and 2021, respectively, and are reported in the West Group. 
+ Page 11 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ Contract Balances.  Costs in excess of billings relate to the conditional right to consideration for completed contractual performance and are contract assets on the consolidated balance sheets. Costs in excess of billings are reclassified to accounts receivable when the right to consideration becomes unconditional. Billings in excess of costs relate to customers invoiced in advance of contractual performance and are contract liabilities on the consolidated balance sheets.  The following table presents information about the Company’s contract balances: 
+   
+ 
+ 
+ 
+ 
+  (Dollars in Millions) 
+ 
+   
+ 
+ March 31, 2022 
+ 
+   
+ 
+   
+ 
+ December 31, 2021 
+ 
+   
+ 
+ 
+ 
+ Costs in excess of billings 
+ 
+   
+ 
+ $ 
+ 
+ 3.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 4.3 
+ 
+   
+ 
+ 
+ 
+ Billings in excess of costs 
+ 
+   
+ 
+ $ 
+ 
+ 6.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 7.8 
+ 
+   
+ 
+ 
+   
+ Revenues recognized from the beginning balance of contract liabilities for the three months ended March 31, 2022 and 2021 were $ 3.5  million and $ 4.9  million, respectively. 
+ Retainage, which primarily relates to the paving services, represents amounts that have been billed to customers but payment withheld until final acceptance by the customer of the performance obligation.  Included in other current assets on the Company’s consolidated balance sheets, retainage was $ 5.5  million and $ 10.5  million at March 31, 2022 and December 31, 2021, respectively. 
+ Policy Elections.  When the Company arranges third-party freight to deliver products to customers, the Company has elected the delivery to be a fulfillment activity rather than a separate performance obligation.  Further, the Company acts as a principal in the delivery arrangements and, as required by the accounting standard, the related revenues and costs are presented gross and are included in the consolidated statements of earnings. 
+ 
+ 
+ 
+ 
+ 3. 
+ 
+ Business Combinations and Discontinued Operations 
+ Business Combinations 
+ In  October 2021 , the Company completed the acquisition of Lehigh Hanson, Inc.’s West Region business (Lehigh West Region) for $ 2.26  billion. The acquisition was primarily financed using proceeds from the issuance of publicly traded debt. These operations provided a new upstream, materials-led growth platform across several of the nation’s largest and fastest-growing megaregions in California and Arizona. The results from the acquired business are included in the Company’s West Group. 
+ The Company determined fair values of assets acquired and liabilities assumed. Although the initial accounting for the business combination has been recorded, these amounts are subject to change during the measurement period, which extends no longer than one year from the consummation date based on additional reviews, such as asset verification. Therefore, the measurement period remains open as of March 31, 2022. Specific accounts subject to ongoing purchase accounting adjustments included, but are not limited to, property, plant and equipment; lease assets and liabilities; goodwill; intangible assets; asset retirement obligations; and other liabilities. The goodwill generated by the transaction is deductible for income tax purposes. 
+ Page 12 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ The following is a summary of the preliminary estimated fair values of the assets acquired and liabilities assumed as of October 1, 2021 (dollars in millions): 
+   
+ 
+ 
+ 
+ 
+ Assets: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Inventories 
+ 
+   
+ 
+ $ 
+ 
+ 94.1 
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment 
+ 
+   
+ 
+   
+ 
+ 850.2 
+ 
+   
+ 
+ 
+ 
+ Intangible assets, other than goodwill 
+ 
+   
+ 
+   
+ 
+ 551.0 
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+   
+ 
+ 992.8 
+ 
+   
+ 
+ 
+ 
+ Other assets 
+ 
+   
+ 
+   
+ 
+ 54.6 
+ 
+   
+ 
+ 
+ 
+ Total assets 
+ 
+   
+ 
+   
+ 
+ 2,542.7 
+ 
+   
+ 
+ 
+ 
+ Liabilities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asset retirement obligations 
+ 
+   
+ 
+   
+ 
+ 178.9 
+ 
+   
+ 
+ 
+ 
+ Operating and finance lease liabilities 
+ 
+   
+ 
+   
+ 
+ 57.5 
+ 
+   
+ 
+ 
+ 
+ Other liabilities 
+ 
+   
+ 
+   
+ 
+ 41.7 
+ 
+   
+ 
+ 
+ 
+ Total liabilities 
+ 
+   
+ 
+   
+ 
+ 278.1 
+ 
+   
+ 
+ 
+ 
+ Total consideration 
+ 
+   
+ 
+ $ 
+ 
+ 2,264.6 
+ 
+   
+ 
+ 
+ In  July 2021 , the Company acquired assets of Southern Crushed Concrete (SCC) in the Houston area, one of the country’s largest addressable aggregates markets. SCC was a leading producer of recycled concrete, which is principally used as a base aggregates product in infrastructure, commercial and residential construction applications. Although the initial accounting for the business combination has been recorded, the fair values of these amounts are subject to change during the measurement period, which remains open as of March 31, 2022. The goodwill generated by the transaction is deductible for income tax purposes. The results from the acquired business are included in the Company’s West Group, but are immaterial for pro-forma financial statement disclosures. 
+ In  April 2021 , the Company completed the acquisition of Tiller Corporation (Tiller), a leading aggregates and hot mix asphalt supplier in the Minneapolis/St. Paul area, which is one of the largest and fastest-growing midwestern metropolitan areas. The Tiller acquisition complemented the Company’s existing product offerings in the surrounding areas.  The Company has recorded fair values of the assets acquired and liabilities assumed, which are subject to asset verification and a normal post-closing working capital adjustment.  Although the initial accounting for the business combination has been recorded, the fair values of these amounts are subject to change during the measurement period, which remains open as of March 31, 2022. The goodwill generated by the transaction is deductible for income tax purposes. The results from the acquired business are included in the Company’s East Group, but are immaterial for pro-forma financial statement disclosures. 
+ Discontinued Operations 
+ Discontinued operations include the cement and California ready-mixed concrete businesses acquired as part of the Lehigh West Region acquisition.    
+ Page 13 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ Discontinued operations for the quarter ended March 31, 2022 include the following: 
+   
+ 
+ 
+ 
+ 
+  (Dollars in   Millions) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+ $ 
+ 
+ 94.7 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Loss from operations 
+ 
+   
+ 
+ $ 
+ 
+ ( 4.0 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Pretax loss 
+ 
+   
+ 
+ $ 
+ 
+ ( 4.1 
+ 
+ ) 
+ 
+ 
+ 
+ Income tax benefit 
+ 
+   
+ 
+   
+ 
+ 1.0 
+ 
+   
+ 
+ 
+ 
+ Net loss 
+ 
+   
+ 
+ $ 
+ 
+ ( 3.1 
+ 
+ ) 
+ 
+ 
+ Total cash used for operating and investing activities for the discontinued operations was $ 14.0  million, including $ 8.6  million in capital expenditures, for the quarter ended March 31, 2022. Non-cash items related to operating and investing activities for the discontinued operations were immaterial for the quarter ended March 31, 2022. 
+ Assets Held for Sale.   On March 1, 2022, the Company announced a definitive agreement to sell the Redding, California cement plant, related cement distribution terminals and  14  California ready mix operations for $ 250  million in cash. The transaction is expected to close in the second half of 2022, subject to customary regulatory  approvals and closing conditions. The Company did  no t record any amortization or depreciation expense related to these businesses for the quarter ended March 31, 2022, as these are classified as assets held for sale.  
+ During the quarter, the Company reached agreement with one of the nation’s largest privately-owned concrete producers to divest the Colorado and Central Texas ready mix concrete operations, which was completed on April 1, 2022. This opportunity optimized the Company’s aggregates-led portfolio and improved its ability to generate generally more attractive margins over the long term by reducing both business cyclicality and exposure to raw material cost inflation. 
+ 
+ Page 14 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+   
+ Assets and liabilities held for sale as of March 31, 2022 and December 31, 2021, which also include a cement plant in Tehachapi, California; related cement distribution terminals; the remaining California ready mixed concrete plants; certain investment properties; and the Colorado and Central Texas ready mixed concrete operations, which were only classified as held for sale as of March 31, 2022 (see Note 14), are as follows: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 2022 
+ 
+   
+ 
+   
+ 
+ December 31, 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Continuing Operations 
+ 
+   
+ 
+   
+ 
+ Discontinued Operations 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+   
+ 
+ Continuing Operations 
+ 
+   
+ 
+   
+ 
+ Discontinued Operations 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Inventories, net 
+ 
+   
+ 
+ $ 
+ 
+ 8.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 41.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 50.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 53.1 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 53.1 
+ 
+   
+ 
+ 
+ 
+ Investment land 
+ 
+   
+ 
+   
+ 
+ 40.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 40.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 32.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 32.7 
+ 
+   
+ 
+ 
+ 
+ Other assets 
+ 
+   
+ 
+   
+ 
+ 0.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 29.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 29.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16.4 
+ 
+   
+ 
+ 
+ 
+ Total current assets held for sale 
+ 
+   
+ 
+ $ 
+ 
+ 50.1 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 71.1 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 121.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 32.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 69.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 102.2 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment 
+ 
+   
+ 
+ $ 
+ 
+ 65.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 226.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 292.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 226.0 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 226.0 
+ 
+   
+ 
+ 
+ 
+ Intangible assets, excluding goodwill 
+ 
+   
+ 
+   
+ 
+ 5.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 264.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 270.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 264.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 264.9 
+ 
+   
+ 
+ 
+ 
+ Operating lease right-of-use assets 
+ 
+   
+ 
+   
+ 
+ 7.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 18.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 26.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 18.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 18.1 
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+   
+ 
+ 115.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 104.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 220.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 109.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 109.3 
+ 
+   
+ 
+ 
+ 
+ Other assets 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.6 
+ 
+   
+ 
+ 
+ 
+ Valuation allowance for loss on sale 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 6.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 6.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 6.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 6.0 
+ 
+ ) 
+ 
+ 
+ 
+ Total noncurrent assets held for sale 
+ 
+   
+ 
+ $ 
+ 
+ 194.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 618.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 812.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 616.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 616.9 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Lease obligations 
+ 
+   
+ 
+ $ 
+ 
+ ( 1.0 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 8.3 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 9.3 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 7.5 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 7.5 
+ 
+ ) 
+ 
+ 
+ 
+ Total current liabilities held for sale 
+ 
+   
+ 
+ $ 
+ 
+ ( 1.0 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 8.3 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 9.3 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 7.5 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 7.5 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asset retirement obligations 
+ 
+   
+ 
+ $ 
+ 
+ ( 0.7 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 32.7 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 33.4 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 31.5 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 31.5 
+ 
+ ) 
+ 
+ 
+ 
+ Lease obligations 
+ 
+   
+ 
+   
+ 
+ ( 6.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 23.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 30.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 22.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 22.0 
+ 
+ ) 
+ 
+ 
+ 
+ Other liabilities 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 0.5 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.5 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Total noncurrent liabilities held for sale 
+ 
+   
+ 
+ $ 
+ 
+ ( 7.5 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 56.4 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 63.9 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 53.5 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 53.5 
+ 
+ ) 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 4. 
+ 
+ Goodwill 
+   
+ The following table shows the changes in goodwill by reportable segment and in total: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ East 
+ 
+   
+ 
+   
+ 
+ West 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Group 
+ 
+   
+ 
+   
+ 
+ Group 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Balance at January 1, 2022 
+ 
+   
+ 
+ $ 
+ 
+ 759.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,735.0 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,494.4 
+ 
+   
+ 
+ 
+ 
+ Adjustments to purchase price allocations 
+ 
+   
+ 
+   
+ 
+ 5.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8.8 
+ 
+   
+ 
+ 
+ 
+ Goodwill allocated to assets held for sale 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 111.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 111.2 
+ 
+ ) 
+ 
+ 
+ 
+ Balance at March 31, 2022 
+ 
+   
+ 
+ $ 
+ 
+ 764.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,627.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,392.0 
+ 
+   
+ 
+ 
+   
+ Page 15 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+   
+ 
+ 
+ 
+ 
+ 5 . 
+ 
+ Inventories, Net  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Finished products 
+ 
+   
+ 
+ $ 
+ 
+ 810.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 713.3 
+ 
+   
+ 
+ 
+ 
+ Products in process 
+ 
+   
+ 
+   
+ 
+ 14.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 30.1 
+ 
+   
+ 
+ 
+ 
+ Raw materials 
+ 
+   
+ 
+   
+ 
+ 83.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 69.6 
+ 
+   
+ 
+ 
+ 
+ Supplies and expendable parts 
+ 
+   
+ 
+   
+ 
+ 133.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 153.9 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,042.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 966.9 
+ 
+   
+ 
+ 
+ 
+ Less: Allowances 
+ 
+   
+ 
+   
+ 
+ ( 259.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 214.3 
+ 
+ ) 
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 782.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 752.6 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 6 . 
+ 
+ Long-Term Debt  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ 0.650 % Senior Notes, due  2023 
+ 
+   
+ 
+ $ 
+ 
+ 697.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 697.4 
+ 
+   
+ 
+ 
+ 
+ 4.250 % Senior Notes, due  2024 
+ 
+   
+ 
+   
+ 
+ 398.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 398.3 
+ 
+   
+ 
+ 
+ 
+ 7 % Debentures, due  2025 
+ 
+   
+ 
+   
+ 
+ 124.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 124.6 
+ 
+   
+ 
+ 
+ 
+ 3.450 % Senior Notes, due  2027 
+ 
+   
+ 
+   
+ 
+ 298.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 297.9 
+ 
+   
+ 
+ 
+ 
+ 3.500 % Senior Notes, due  2027 
+ 
+   
+ 
+   
+ 
+ 496.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 496.4 
+ 
+   
+ 
+ 
+ 
+ 2.500 % Senior Notes, due  2030 
+ 
+   
+ 
+   
+ 
+ 491.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 491.1 
+ 
+   
+ 
+ 
+ 
+ 2.400 % Senior Notes, due  2031 
+ 
+   
+ 
+   
+ 
+ 892.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 891.8 
+ 
+   
+ 
+ 
+ 
+ 6.25 % Senior Notes, due  2037 
+ 
+   
+ 
+   
+ 
+ 228.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 228.3 
+ 
+   
+ 
+ 
+ 
+ 4.250 % Senior Notes, due  2047 
+ 
+   
+ 
+   
+ 
+ 592.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 592.1 
+ 
+   
+ 
+ 
+ 
+ 3.200 % Senior Notes, due  2051 
+ 
+   
+ 
+   
+ 
+ 883.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 882.9 
+ 
+   
+ 
+ 
+ 
+ Other notes 
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+ 
+ 
+ Total debt 
+ 
+   
+ 
+   
+ 
+ 5,102.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5,100.9 
+ 
+   
+ 
+ 
+ 
+ Less: Current maturities 
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+ 
+ 
+ Long-term debt 
+ 
+   
+ 
+ $ 
+ 
+ 5,102.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 5,100.8 
+ 
+   
+ 
+ 
+ Page 16 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+   
+ T he  Company , through a wholly-owned special-purpose subsidiary, has a $ 400  million trade receivable securitization facility (the Trade Receivable Facility). On September 22, 2021 the Company extended the maturity to  September 21, 2022 .  The Trade Receivable Facility, with Truist Bank, Regions Bank, PNC Bank, N.A., MUFG Bank, Ltd., New York Branch, and certain other lenders that may become a party to the facility from time to time, is backed by eligible trade receivables, as defined, and is limited to the lesser of the facility limit or the borrowing base, as defined.  These receivables are originated by the  Company  and then sold by the  Company  to the wholly-owned special-purpose subsidiary.   The  Company  con tinues to be responsible for the servicing and administration of the receivables purchased by  the wholly-owned special-purpose  subsidiary .  Borrowings under the Trade Receivable Facility bear interest at a rate equal to asset-backed  commercial paper costs of conduit lenders plus  0.85 % for borrowings funded by conduit lenders and  one-month London Inter-bank Offered Rate (LIBOR) plus  1.00 %,  subject to change in the event that this rate no longer reflects the lender’s cost of lending, for borrowings funded by all other lenders .  The  Trade Receivable Facility contains a cross-default provision to the Company’s other debt agreements.  Subject to certain conditions, including lenders providing the requisite commitments, the Trade Receivable Facility may be increased to a borrowing base not to exceed $ 500  million. There were  no  borrowings outstanding under the Trade Receivable Facility at March 31, 2022 and   December 31, 2021.  
+ The Company has a $ 800  million  five-year  senior unsecured revolving facility (the Revolving Facility) with JPMorgan Chase Bank, N.A., as Administrative Agent, Deutsche Bank Securities, Inc., PNC Bank, Truist Bank and Wells Fargo Bank, N.A., as Syndication Agents, and the lenders party thereto (the Credit Agreement).  Borrowings under the Revolving Facility bear interest, at the Company’s option, at rates based upon LIBOR or a base rate, plus, for each rate, a margin determined in accordance with a ratings-based pricing grid. There were  no  borrowings outstanding under the Credit Agreement at March 31, 2022 or December 31, 2021.  The Credit Agreement requires the Company’s ratio of consolidated net debt-to-consolidated earnings before interest, taxes, depreciation, depletion and amortization (EBITDA), as defined, by the Revolving Facility, for the trailing-twelve months (the Ratio) to not exceed  3.50 x as of the end of any fiscal quarter, provided that the Company may exclude from the Ratio debt incurred in connection with certain acquisitions during such quarter or the three preceding quarters so long as the Ratio calculated without such exclusion does not exceed  4.00 x.  Additionally, if there are no amounts outstanding under both the Revolving Facility and the Trade Receivable Facility, consolidated debt, including debt for which the Company is a co-borrower (see Note 10), may be reduced in an amount equal to the lesser of $ 500  million or the sum of the Company’s unrestricted cash and temporary investments, for purposes of the covenant calculation.  The Company was in compliance with this covenant at March 31, 2022. 
+ The Revolving Facility expires on  December 21, 2026 , with any outstanding principal amounts, together with interest accrued thereon, due in full on that date. Available borrowings under the Revolving Facility are reduced by any outstanding letters of credit issued by the Company under the Revolving Facility.  The Company had $ 2.6  million of outstanding letters of credit issued under the Revolving Facility at March 31, 2022 and December 31, 2021. 
+ 
+ 
+ 
+ 
+ 7 . 
+ 
+ Financial Instruments  
+ The Company’s financial instruments include temporary cash investments, restricted cash, accounts receivable, notes receivable, accounts payable, publicly-registered long-term notes, debentures and other long-term debt.  
+ Temporary cash investments are placed primarily in money market funds, money market demand deposit accounts and Eurodollar time deposits. The Company’s cash equivalents have original maturities of less than three months. Due to the short maturity of these investments, they are carried on the consolidated balance sheets at cost, which approximates fair value.  
+ Restricted cash is held in a trust account with a third-party intermediary. Due to the short-term nature of this account, the fair value of restricted cash approximates its carrying value. 
+ Page 17 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ Accounts receivable are due from a large number of customers, primarily in the construction industry, and are dispersed across wide geographic and economic regions.  No   single customer accounted for  10 %  or more of consolidated accounts receivable in the three-month period ended March 31, 2022 and 2021. The estimated fair values of accounts receivable approximate their carrying amounts due to the short-term nature of the accounts.  
+ Notes receivable are primarily promissory notes with customers and are not publicly traded.  Management estimates that the fair value of notes receivable approximates its carrying amount.  
+ Accounts payable represent amounts owed to suppliers and vendors. The estimated fair value of accounts payable approximates the carrying amount due to the short-term nature of the payables.  
+ The carrying values and fair values of the Company’s long-term debt were $ 5.10  billion and $ 4.93  billion, respectively, at March 31, 2022 and $ 5.10  billion and $ 5.45  billion, respectively, at December 31, 2021. The estimated fair value of the publicly-registered long-term notes was estimated using quoted market prices. The estimated fair values of other borrowings approximate their carrying amounts as the interest rates reset periodically.   
+ 
+ 
+ 
+ 
+ 8 . 
+ 
+ Income Taxes  
+ The effective income tax rate reflects the effect of federal and state income taxes on earnings and the impact of differences in book and tax accounting arising primarily from the permanent tax benefits associated with the statutory depletion deduction for mineral reserves.  The effective income tax rates for continuing operations were  19.3 % and  19.5 % for the three months ended March 31, 2022 and March 31, 2021, respectively.  
+ The Company records interest accrued in relation to unrecognized tax benefits as income tax expense. Penalties, if incurred, are recorded as operating expenses in the consolidated statements of earnings and comprehensive earnings.  
+ Page 18 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ 
+ 
+ 
+ 
+ 9 . 
+ 
+ Pension and Postretirement Benefits  
+ During the quarter ended March 31, 2022, the Company amended its qualified pension plan and provided an enhanced benefit for eligible hourly active participants who retire subsequent to April 30, 2022.  The amendment required a pension remeasurement.  The Company elected the use of a practical expedient to perform the pension remeasurement as of February 28, 2022, the month end closest to the approval of the plan amendment.  The discount rate for the remeasurement was  3.75 % compared with  3.23 % prior to the remeasurement.  The enhanced benefit and remeasurement resulted in higher projected pension expense for the year compared with the initial annual pension expense for the qualified plan.    
+ The estimated components of the recorded net periodic benefit cost (credit) for pension and postretirement benefits are as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Pension 
+ 
+   
+ 
+   
+ 
+ Postretirement Benefits 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Service cost 
+ 
+   
+ 
+ $ 
+ 
+ 11.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 11.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Interest cost 
+ 
+   
+ 
+   
+ 
+ 10.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+ 
+ 
+ Expected return on assets 
+ 
+   
+ 
+   
+ 
+ ( 19.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 17.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Amortization of: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Prior service cost (credit) 
+ 
+   
+ 
+   
+ 
+ 1.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 0.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.2 
+ 
+ ) 
+ 
+ 
+ 
+ Actuarial loss (gain) 
+ 
+   
+ 
+   
+ 
+ 0.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ ) 
+ 
+ 
+ 
+ Net periodic benefit cost (credit) 
+ 
+   
+ 
+ $ 
+ 
+ 4.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 0.2 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 0.2 
+ 
+ ) 
+ 
+ 
+   
+ The service cost component of net periodic benefit (credit) cost is included in  Cost of revenues – products and services  and  Selling, general and administrative expenses . All other components are included in  Other nonoperating income, net , in the consolidated statements of earnings and comprehensive earnings.  
+ 
+ 
+ 
+ 
+ 10 . 
+ 
+ Commitments and Contingencies  
+ Legal and Administrative Proceedings   
+ The Company is engaged in certain legal and administrative proceedings incidental to its normal business activities, including matters relating to environmental protection. The Company considers various factors in assessing the probable outcome of each matter, including but not limited to the nature of existing legal proceedings and claims, the asserted or possible damages, the jurisdiction and venue of the case and whether it is a jury trial, the progress of the case, existing law and precedent, the opinions or views of legal counsel and other advisers, the Company’s experience in similar cases and the experience of other companies, the facts available to the Company at the time of assessment, and how the Company intends to respond to the proceeding or claim. The Company’s assessment of these factors may change over time as proceedings or claims progress. The Company believes the probability is remote that the outcome of any currently pending legal or administrative proceeding will result in a material loss to the Company as a whole, based on currently available facts.  
+ Borrowing Arrangements with Affiliate   
+ The Company is a co-borrower with an unconsolidated affiliate for a $ 12.5  million revolving line of credit agreement with Truist Bank, of which $ 4.5  million was outstanding as of March 31, 2022.  The affiliate has agreed to reimburse and indemnify the Company for any payments and expenses the Company may incur from this agreement. The  
+ Page 19 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ Company holds a lien on the affiliate’s membership interest in a joint venture as collateral for payment under the revolving line of credit.  
+ In addition, the Company has a $ 6.0  million interest-only loan receivable, due  December 31, 2022 , outstanding from this unconsolidated affiliate as of March 31, 2022 and December 31, 2021.  The interest rate is one-month LIBOR plus a current spread of  1.63 %. 
+ Letters of Credit 
+ In the normal course of business, the Company provides certain third parties with standby letter of credit agreements guaranteeing its payment for certain insurance claims, contract performance and permit requirements.  At March 31, 2022, the Company was contingently liable for $ 17.2  million in letters of credit, of which $ 2.6  million were issued under the Company’s Revolving Facility. 
+ 
+ 
+ 
+ 
+ 1 1 . 
+ 
+ Business Segments  
+ The Building Materials business contains  two  reportable segments: the East Group and the West Group. The Company also has a Magnesia Specialties segment.  The Company’s evaluation of performance and allocation of resources are based primarily on earnings from operations. Consolidated earnings from operations include total revenues less cost of revenues; selling, general and administrative expenses; acquisition and integration expenses; other operating income and expenses, net; and exclude interest expense; other nonoperating income and expenses, net; and income taxes. Corporate loss from operations primarily includes depreciation; expenses for corporate administrative functions; acquisition and integration expenses; and other nonrecurring income and expenses excluded from the Company’s evaluation of business segment performance and resource allocation. All long-term debt and related interest expense are held at Corporate. 
+ Page 20 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+ The following table displays selected financial data for the Company’s reportable segments. Total revenues, as well as the consolidated statements of earnings and comprehensive earnings, exclude intersegment revenues, which represent sales from one segment to another segment and are eliminated in consolidation. Total revenues, product and services revenues, and earnings (loss) from operations reflect continuing operations only. 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Total revenues : 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 418.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 394.9 
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 735.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 516.6 
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 1,153.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 911.5 
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 77.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 70.9 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 1,230.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 982.4 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services revenues: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 394.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 372.5 
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 682.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 484.1 
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 1,077.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 856.6 
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 70.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.3 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 1,147.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 921.9 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Earnings (Loss) from operations : 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 28.0 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 61.7 
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 43.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 31.9 
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 71.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 93.6 
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 21.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 23.5 
+ 
+   
+ 
+ 
+ 
+ Corporate 
+ 
+   
+ 
+   
+ 
+ ( 32.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 17.8 
+ 
+ ) 
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 59.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 99.3 
+ 
+   
+ 
+ 
+   
+   
+ Page 21 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+   
+ 
+ 
+ 
+ 
+ 1 2 . 
+ 
+ Revenues and Gross Profit 
+ The Building Materials business includes the aggregates, cement, ready mixed concrete and asphalt and paving product lines. Cement and ready mixed concrete product lines and paving services reside only in the West Group.  The following table, which is reconciled to consolidated amounts, provides total revenues and gross profit (loss) by product line and reflects continuing operations only.    
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+ 
+ 
+ Total revenues: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Building Materials business: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Aggregates 
+ 
+   
+ 
+ $ 
+ 
+ 685.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 572.6 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cement 
+ 
+   
+ 
+   
+ 
+ 134.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 109.6 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Ready mixed concrete 
+ 
+   
+ 
+   
+ 
+ 290.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 235.3 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asphalt and paving services 
+ 
+   
+ 
+   
+ 
+ 54.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.2 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Less: interproduct revenues 
+ 
+   
+ 
+   
+ 
+ ( 88.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 73.1 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+ 1,077.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 856.6 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ 76.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 54.9 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 1,153.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 911.5 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+ 70.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.3 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ 6.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.6 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 77.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 70.9 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 1,230.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 982.4 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Gross profit (loss) : 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Building Materials business: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Aggregates 
+ 
+   
+ 
+ $ 
+ 
+ 101.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 121.8 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cement 
+ 
+   
+ 
+   
+ 
+ 27.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 15.3 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Ready mixed concrete 
+ 
+   
+ 
+   
+ 
+ 21.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 19.4 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asphalt and paving services 
+ 
+   
+ 
+   
+ 
+ ( 13.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 8.2 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+ 137.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 148.3 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ 1.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 0.3 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 138.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 148.0 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+ 26.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 28.4 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ ( 1.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.9 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Total Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 25.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 27.5 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Corporate 
+ 
+   
+ 
+   
+ 
+ ( 7.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 0.8 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 156.1 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 174.7 
+ 
+   
+ 
+   
+ 
+ 
+ Page 22 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (UNAUDITED) NOTES TO CONSOLIDATED FINANCIAL STATEMENTS 
+ (Continued) 
+   
+   
+ 
+ 
+ 
+ 
+ 1 3 . 
+ 
+ Supplemental Cash Flow Information  
+ Noncash investing and financing activities are as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Noncash investing and financing activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Right-of-use assets obtained in exchange for 
+    new finance lease liabilities 
+ 
+   
+ 
+ $ 
+ 
+ 3.6 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 115.1 
+ 
+   
+ 
+ 
+ 
+ Right-of-use assets obtained in exchange for new 
+    operating lease liabilities 
+ 
+   
+ 
+ $ 
+ 
+ 6.1 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6.0 
+ 
+   
+ 
+ 
+ 
+ Accrued liabilities for purchases of property, plant and equipment 
+ 
+   
+ 
+ $ 
+ 
+ 24.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 28.7 
+ 
+   
+ 
+ 
+ 
+ Remeasurement of operating lease right-of-use assets 
+ 
+   
+ 
+ $ 
+ 
+ 0.3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 6.2 
+ 
+ ) 
+ 
+ 
+ 
+ Remeasurement of finance lease right-of-use assets 
+ 
+   
+ 
+ $ 
+ 
+ 0.4 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+ 
+ For the three months ended March 31, 2021, the right-of-use assets obtained in exchange for new finance lease liabilities balance were primarily attributable to the lease of  the new corporate headquarters .   
+ Supplemental disclosures of cash flow information are as follows: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Cash paid for interest, net of capitalized amount 
+ 
+   
+ 
+ $ 
+ 
+ 44.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 14.8 
+ 
+   
+ 
+ 
+ 
+ Cash paid for income taxes, net of refunds 
+ 
+   
+ 
+ $ 
+ 
+ 0.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+ 
+ During the three months ended March 31, 2021, the Company received proceeds of $ 9.8  million related to its company-owned life insurance policies.  The proceeds are included in the  Investments in life insurance contracts, net , in the investing activities of the consolidated statements of cash flows. 
+ 
+ 
+ 
+ 
+ 14 . 
+ 
+ Subsequent Event 
+ On April 1, 2022, the Company divested its Colorado and Central Texas ready-mixed concrete operations to Smyrna Ready Mix Concrete LLC.  The Company expects the transaction to result in a gain.  These operations are all reported in the Company’s West Group.   
+   
+ Page 23 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+   
+   
+ Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations.  
+ OVERVIEW  
+ Martin Marietta Materials, Inc. (the Company or Martin Marietta) is a natural resource-based building materials company. As of March 31, 2022, the Company supplies aggregates (crushed stone, sand and gravel) through its network of approximately 350 quarries, mines and distribution yards in 28 states, Canada and The Bahamas.  Martin Marietta also provides cement and downstream products and services, namely, ready mixed concrete, asphalt and paving, in vertically-integrated structured markets where the Company has a leading aggregates position. In addition, the Company has two cement plants, cement distribution terminals and ready mixed concrete operations primarily in California that are classified as assets held for sale and reported as discontinued operations as of March 31, 2022. The Company’s heavy-side building materials are used in infrastructure, nonresidential and residential construction projects.  Aggregates are also used in agricultural, utility and environmental applications and as railroad ballast. The aggregates, cement, ready mixed concrete and asphalt and paving product lines are reported collectively as the “Building Materials” business. 
+ The Company’s Building Materials business includes two reportable segments: the East Group and the West Group.  
+   
+ 
+ 
+ 
+ 
+ BUILDING MATERIALS BUSINESS 
+  (continuing operations only) 
+ 
+ 
+ 
+ Reportable Segments 
+ 
+   
+ 
+ East Group 
+ 
+   
+ 
+ West Group 
+ 
+ 
+ 
+ Operating Locations 
+ 
+    
+ 
+ Alabama, Florida, Georgia, Indiana, Iowa, Kansas, Kentucky, Maryland, Minnesota, Missouri, Nebraska,  North Carolina, Ohio, Pennsylvania, South Carolina, Tennessee, Virginia, West Virginia, Nova Scotia and The Bahamas 
+ 
+    
+ 
+ Arizona, Arkansas, California, Colorado, Louisiana, Oklahoma, Texas, Utah,  Washington and Wyoming  
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ Product Lines 
+ 
+    
+ 
+ Aggregates and Asphalt 
+ 
+    
+ 
+ Aggregates, Cement, Ready  
+ Mixed Concrete, Asphalt and Paving Services 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ Facility Types 
+ 
+    
+ 
+ Quarries, Mines, Asphalt Plants and  
+ Distribution Facilities 
+ 
+    
+ 
+ Quarries, Mines, Cement Plants, Asphalt Plants, Ready Mixed Concrete Plants and 
+ Distribution Facilities 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ Modes of Transportation  
+ 
+    
+ 
+ Truck, Railcar and Ship 
+ 
+    
+ 
+ Truck, Railcar and Ship 
+ 
+ 
+   
+ The Building Materials business is significantly affected by weather patterns and seasonal changes.  Production and shipment levels for aggregates, cement, ready mixed concrete and asphalt materials correlate with general construction activity levels, most of which occur in the spring, summer and fall. Thus, production and shipment levels vary by quarter. Operations concentrated in the northern and midwestern United States generally experience more severe winter weather conditions than operations in the southeast, southwest and west. Excessive rainfall, and conversely excessive drought, can also jeopardize production, shipments and profitability in all markets served by the Company.  Due to the potentially significant impact of weather on the Company’s operations, current-period results are not necessarily indicative of expected performance for other interim periods or the full year.  
+   
+ The Company has a Magnesia Specialties business with manufacturing facilities in Manistee, Michigan, and Woodville, Ohio. The Magnesia Specialties business produces magnesia-based chemicals products used in industrial, agricultural and environmental applications and dolomitic lime sold primarily to customers in the steel and mining industries.  
+ Page 24 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+ CRITICAL ACCOUNTING POLICIES  
+ The Company outlined its critical accounting policies in its Annual Report on Form 10-K for the year ended December 31, 2021. There were no changes to the Company’s critical accounting policies during the three months ended March 31, 2022.   
+ RESULTS OF OPERATIONS  
+ Earnings from continuing operations before interest; income taxes; depreciation, depletion and amortization; the earnings/loss from nonconsolidated equity affiliates; and acquisition and integration expenses; (Adjusted EBITDA) is an indicator used by the Company and investors to evaluate the Company’s operating performance from period to period. Adjusted EBITDA is not defined by accounting principles generally accepted in the United States and, as such, should not be construed as an alternative to net earnings, earnings from operations or cash provided by operating activities. However, the Company’s management believes that Adjusted EBITDA may provide additional information with respect to the Company’s performance and is a measure used by management to evaluate the Company’s performance. Because Adjusted EBITDA excludes some, but not all, items that affect net earnings and may vary among companies, Adjusted EBITDA as presented by the Company may not be comparable with similarly titled measures of other companies. 
+ A reconciliation of net earnings from continuing operations attributable to Martin Marietta to Adjusted EBITDA is as follows: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Net Earnings from continuing operations attributable to Martin Marietta 
+ 
+   
+ 
+ $ 
+ 
+ 24.5 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 65.3 
+ 
+   
+ 
+ 
+ 
+ Add back: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Interest expense, net of interest income 
+ 
+   
+ 
+   
+ 
+ 40.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 27.3 
+ 
+   
+ 
+ 
+ 
+ Income tax expense for controlling interests 
+ 
+   
+ 
+   
+ 
+ 5.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 15.8 
+ 
+   
+ 
+ 
+ 
+ Depreciation, depletion and amortization and earnings/loss from 
+    nonconsolidated equity affiliates 
+ 
+   
+ 
+   
+ 
+ 124.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 96.0 
+ 
+   
+ 
+ 
+ 
+ Acquisition and integration expenses 
+ 
+   
+ 
+   
+ 
+ 1.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1.2 
+ 
+   
+ 
+ 
+ 
+ Adjusted EBITDA 
+ 
+   
+ 
+ $ 
+ 
+ 197.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 205.6 
+ 
+   
+ 
+ 
+   
+   
+   
+ Page 25 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+ Mix-adjusted average selling price (mix-adjusted ASP) excludes the impacts of product, geographic and other mix from the current-period average selling price and is a non-GAAP measure.  Mix-adjusted ASP is calculated by comparing current-period shipments to like-for-like shipments in the comparable prior period.  Management uses this metric to evaluate the effectiveness of the Company’s pricing increases and believes this information is useful to investors as it provides same-on-same pricing trends.  The following reconciles reported average selling price to mix-adjusted ASP and corresponding variances. 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+ West Group - Aggregates: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Reported average selling price 
+ 
+   
+ 
+ $ 
+ 
+ 15.05 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 13.81 
+ 
+   
+ 
+ 
+ 
+ Adjustment for favorable impact of product, 
+    geographic and other mix 
+ 
+   
+ 
+   
+ 
+ (0.58 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Mix-adjusted ASP 
+ 
+   
+ 
+ $ 
+ 
+ 14.47 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Reported average selling price variance 
+ 
+   
+ 
+   
+ 
+ 9.0 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Mix-adjusted ASP variance 
+ 
+   
+ 
+   
+ 
+ 4.8 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ Quarter Ended March 31, 2022 
+   
+ Financial highlights for the quarter ended March 31, 2022 (unless noted, all comparisons are versus the prior-year quarter and for continuing operations): 
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Consolidated total revenues of $1.23 billion compared with $982.4 million 
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Building Materials business products and services revenues of $1.08 billion compared with $856.6 million 
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Magnesia Specialties products revenues of $70.8 million compared with $65.3 million 
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Consolidated gross profit of $156.1 million compared with $174.7 million 
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Consolidated earnings from operations of $59.9 million compared with $99.3 million 
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Net earnings from continuing operations attributable to Martin Marietta of $24.5 million compared with $65.3 million  
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Adjusted EBITDA of $197.2 million compared with $205.6 million  
+ 
+ 
+ 
+ 
+   
+ 
+ ♦ 
+ 
+ Earnings per diluted share from continuing operations of $0.39 compared with $1.04 
+   
+ Page 26 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+ The following tables present total revenues, gross profit (loss), selling, general and administrative (SG&A) expenses and earnings (loss) from operations data for the Company and its reportable segments by product line for continuing operations for the three months  ended  March 31, 2022 and 2021. In each case, the data is stated as a percentage of revenues of the Company or the relevant segment or product line, as the case may be. 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+ 
+ 
+ Total revenues: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Building Materials business: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Aggregates 
+ 
+   
+ 
+ $ 
+ 
+ 395.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 372.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asphalt 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Less: Interproduct revenues 
+ 
+   
+ 
+   
+ 
+ (0.5 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group Total 
+ 
+   
+ 
+   
+ 
+ 394.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 372.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Aggregates 
+ 
+   
+ 
+   
+ 
+ 290.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 200.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cement 
+ 
+   
+ 
+   
+ 
+ 134.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 109.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Ready mixed concrete 
+ 
+   
+ 
+   
+ 
+ 290.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 235.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asphalt and paving 
+ 
+   
+ 
+   
+ 
+ 54.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Less: Interproduct revenues 
+ 
+   
+ 
+   
+ 
+ (87.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (73.1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ West Group Total 
+ 
+   
+ 
+   
+ 
+ 682.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 484.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+ 1,077.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 856.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ 76.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 54.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 1,153.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 911.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products 
+ 
+   
+ 
+   
+ 
+ 70.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ 6.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 77.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 70.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 1,230.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 982.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ Page 27 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ % of Revenues 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ % of Revenues 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Gross profit (loss): 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Building Materials business: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Aggregates 
+ 
+   
+ 
+ $ 
+ 
+ 101.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 14.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 121.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 21.3 
+ 
+   
+ 
+ 
+ 
+ Cement 
+ 
+   
+ 
+   
+ 
+ 27.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 20.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 15.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 14.0 
+ 
+   
+ 
+ 
+ 
+ Ready mixed concrete 
+ 
+   
+ 
+   
+ 
+ 21.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 19.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8.3 
+ 
+   
+ 
+ 
+ 
+ Asphalt and paving 
+ 
+   
+ 
+   
+ 
+ (13.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (24.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (8.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (67.4 
+ 
+ ) 
+ 
+ 
+ 
+ Products and services 
+ 
+   
+ 
+   
+ 
+ 137.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 148.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 17.3 
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ 1.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (0.3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 138.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 148.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16.2 
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Products 
+ 
+   
+ 
+   
+ 
+ 26.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 37.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 28.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 43.5 
+ 
+   
+ 
+ 
+ 
+ Freight 
+ 
+   
+ 
+   
+ 
+ (1.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (0.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 25.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 33.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 27.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 38.8 
+ 
+   
+ 
+ 
+ 
+ Corporate 
+ 
+   
+ 
+   
+ 
+ (7.9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (0.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 156.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 174.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 17.8 
+ 
+   
+ 
+ 
+   
+ Page 28 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ % of 
+ Revenues 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ % of 
+ Revenues 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Selling, general & administrative expenses: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Building Materials business: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 28.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 24.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 41.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 33.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 70.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 57.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 4.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Corporate 
+ 
+   
+ 
+   
+ 
+ 23.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 18.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 97.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 79.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8.1 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ % of Revenues 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ % of Revenues 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Earnings (Loss) from operations: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Building Materials business: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+ $ 
+ 
+ 28.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 61.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 43.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 31.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Building Materials business 
+ 
+   
+ 
+   
+ 
+ 71.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 93.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Magnesia Specialties 
+ 
+   
+ 
+   
+ 
+ 21.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 23.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Corporate 
+ 
+   
+ 
+   
+ 
+ (32.6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (17.8 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 59.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 99.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.1 
+ 
+   
+ 
+ 
+   
+ Building Materials Business  
+ The following tables present aggregates volume and pricing variance data and shipments data by segment:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 2022 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Volume 
+ 
+   
+ 
+   
+ 
+ Pricing 
+ 
+   
+ 
+ 
+ 
+ Volume/Pricing Variance (1) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+   
+ 
+ 1.1 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 5.1 
+ 
+ % 
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 32.7 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 9.0 
+ 
+ % 
+ 
+ 
+ 
+ Total aggregates operations (2) 
+ 
+   
+ 
+   
+ 
+ 13.4 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 5.6 
+ 
+ % 
+ 
+ 
+ 
+ Organic aggregates operations (3) 
+ 
+   
+ 
+   
+ 
+ 2.5 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 6.5 
+ 
+ % 
+ 
+ 
+   
+ Page 29 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Tons in Millions) 
+ 
+   
+ 
+ 
+ 
+ Shipments 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ East Group 
+ 
+   
+ 
+   
+ 
+ 23.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 22.7 
+ 
+   
+ 
+ 
+ 
+ West Group 
+ 
+   
+ 
+   
+ 
+ 19.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 14.4 
+ 
+   
+ 
+ 
+ 
+ Total aggregates operations (2) 
+ 
+   
+ 
+   
+ 
+ 42.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 37.1 
+ 
+   
+ 
+ 
+ ( 1)  Volume/pricing variances reflect the percentage increase from the comparable period in the prior year.  
+ (2 )  Total aggregates operations include acquisitions from the date of acquisition and divestitures through the date of disposal. 
+ (3)  Organic aggregates operations exclude volume and pricing data for acquisitions that have not been included in prior-year operations for the comparable period and divestitures. 
+ The following table presents shipments data by product line for the Building Materials business:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+   
+ 
+ 
+ 
+ Shipments 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Aggregates (in millions): 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Tons to external customers 
+ 
+   
+ 
+   
+ 
+ 38.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 34.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Internal tons used in other product lines 
+ 
+   
+ 
+   
+ 
+ 3.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total aggregates tons 
+ 
+   
+ 
+   
+ 
+ 42.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 37.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13.4 
+ 
+ % 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cement (in millions): 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Tons to external customers 
+ 
+   
+ 
+   
+ 
+ 0.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Internal tons used in ready mixed concrete 
+ 
+   
+ 
+   
+ 
+ 0.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total cement tons 
+ 
+   
+ 
+   
+ 
+ 1.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.0 
+ 
+ % 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Ready Mixed Concrete (in millions of cubic yards) 
+ 
+   
+ 
+   
+ 
+ 2.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 14.8 
+ 
+ % 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Asphalt (in millions): 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Tons to external customers 
+ 
+   
+ 
+   
+ 
+ 0.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Internal tons used in paving business 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total asphalt tons 
+ 
+   
+ 
+   
+ 
+ 0.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 509.1 
+ 
+ % 
+ 
+ 
+   
+ The average selling price by product line for the Building Materials business is as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+   
+ 
+ 
+ 
+ Aggregates (per ton) 
+ 
+   
+ 
+ $ 
+ 
+ 16.17 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 15.31 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5.6 
+ 
+ % 
+ 
+ 
+ 
+ Cement (per ton) 
+ 
+   
+ 
+ $ 
+ 
+ 129.11 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 115.49 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 11.8 
+ 
+ % 
+ 
+ 
+ 
+ Ready Mixed Concrete (per cubic yard) 
+ 
+   
+ 
+ $ 
+ 
+ 120.71 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 112.12 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7.7 
+ 
+ % 
+ 
+ 
+ 
+ Asphalt (per ton) 
+ 
+   
+ 
+ $ 
+ 
+ 62.39 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 49.04 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 27.2 
+ 
+ % 
+ 
+ 
+ Page 30 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+ Aggregates End-Use Markets 
+ Organic aggregates shipments to the infrastructure market increased 6.2%, primarily driven by increased highway widening projects in North Carolina, Georgia and Indiana. The infrastructure market accounted for 32% of first-quarter organic aggregates shipments.  
+ Organic aggregates shipments to the nonresidential market were flat, with strong warehousing demand in Ohio, Indiana and Texas offset by a decrease in major projects in North and South Carolina.  The nonresidential market represented 36% of first-quarter organic aggregates shipments. 
+ Organic aggregates shipments to the residential market decreased 2% compared with a strong prior-year quarter, reflecting supply chain issues, increased costs and labor shortages. The residential market accounted for 26% of first-quarter organic aggregates shipments.  
+ The ChemRock/Rail market accounted for the remaining 6% of first-quarter organic aggregates shipments. Volumes to this end use increased 20%, driven by increased aglime shipments in Iowa and increased ballast demand in Texas spurred by long-deferred railroad maintenance projects. 
+ Building Materials Business  
+ First-quarter organic aggregates shipments increased 2.5%, reflecting growing public and private product demand at the onset of construction season, while organic pricing increased 6.5%.  Inclusive of acquired operations, aggregates shipments grew 13.4% compared with prior-year quarter and pricing increased 5.6%. Overall, East Group total shipments increased 1.1%, reflecting increased infrastructure construction activity in the Southeast and Midwest, while pricing increased 5.1%.  West Group total shipments increased 32.7%, driven by robust underlying demand in Texas and shipments from acquired operations that more than offset Colorado weather-related shipment shortfalls. West Group pricing increased 9.0%, or 4.8% on a mix-adjusted basis, benefitting from improving long-haul shipments from higher-priced distribution yards and higher selling prices at acquired operations. Aggregates product gross margin decreased 640 basis points to 14.9%, as year-over-year price increase impacts were more than offset by higher diesel fuel costs of approximately $12 million, increased supplies, repair costs, contract service cost of approximately $20 million, higher internal freight costs of $9 million and the impact of Tiller winter shut down, which did not impact prior year quarter as the operations were acquired April 30, 2021. 
+ Texas cement shipments increased 10.0%, supported by robust product demand and tight supply throughout the Texas Triangle. Cement pricing improved 11.8%, benefitting from the carryover of 2021 mid-year price increases and improving demand for higher-priced specialty oil-well cement products. Product gross margin expanded 630 basis points to 20.3% compared with the prior-year quarter, which was negatively impacted by incremental costs and inefficiencies resulting from the Texas Deep Freeze.  
+ Organic ready mixed concrete shipments declined slightly, driven by timing of project completions and weather-related Colorado shipment declines. Organic pricing grew 8.2% in first quarter 2022 compared with first quarter 2021, following the implementation of annual price increases early in the year.  Inclusive of the acquired Arizona operations, ready mixed concrete shipments and pricing increased 14.8% and 7.7%, respectively.  Product gross margin declined 100 basis points to 7.3%, driven primarily by higher raw material and diesel costs which more than offset price increases.  Seasonal winter weather conditions in Colorado contributed to a 3.1 percent decrease in organic asphalt shipments. Organic pricing increased 5.8 percent. Including contributions from the acquired West Coast operations, total asphalt shipments and pricing increased 509.1 percent and 27.2 percent, respectively. As anticipated, the Minnesota-based asphalt facilities, which were acquired on April 30, 2021, were closed during the first quarter given the construction season does not begin until late spring. Consistent with the Company’s historical first-quarter trends, the asphalt and paving business posted an overall loss. 
+ Page 31 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+ Magnesia Specialties Business  
+ Magnesia Specialties first-quarter product  revenues increased 8.5% to $70.8 million, driven by robust global demand for magnesia-based chemical products as well as improving domestic steel production in the latter half of the quarter. Product gross profit was $26.8 million compared with $28.4 million. Product gross margin decreased 570 basis points to 37.8% as higher costs for energy, supplies and raw materials more than offset revenue growth. First-quarter earnings from operations were $21.5 million in 2022 compared with $23.5 million in 2021.  
+ Consolidated Operating Results  
+ Consolidated SG&A for first quarter 2022 was 7.9% of total revenues compared with 8.1% in the prior-year quarter, an improvement of 20 basis points.  Earnings from operations for the quarter were $59.9 million in 2022 compared with $99.3 million in 2021, the decrease driven by higher costs for energy, supplies, freight and personnel, which more than offset year over year price increases.   
+ Income Tax Expense  
+ For the three months ended March 31, 2022 and 2021, the effective income tax rates for continuing operations were 19.3% and 19.5%, respectively. 
+ LIQUIDITY AND CAPITAL RESOURCES  
+ Cash provided by operating activities for the three months ended March 31, 2022 and 2021 was $169.9 million and $191.9 million, respectively.  Operating cash flow is primarily derived from consolidated net earnings before deducting depreciation, depletion and amortization, and the impact of changes in working capital.  Depreciation, depletion and amortization were as follows:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three Months Ended 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2022 
+ 
+   
+ 
+   
+ 
+ 2021 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Dollars in Millions) 
+ 
+   
+ 
+ 
+ 
+ Depreciation 
+ 
+   
+ 
+ $ 
+ 
+ 101.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 84.7 
+ 
+   
+ 
+ 
+ 
+ Depletion 
+ 
+   
+ 
+   
+ 
+ 11.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6.8 
+ 
+   
+ 
+ 
+ 
+ Amortization 
+ 
+   
+ 
+   
+ 
+ 14.6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7.1 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 128.2 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 98.6 
+ 
+   
+ 
+ 
+ The seasonal nature of construction activity impacts the Company’s interim operating cash flow when compared with the full year. Full-year 2021 net cash provided by operating activities was $1.14 billion.  
+ During the three months ended March 31, 2022 and 2021, the Company paid $139.8 million and $110.3 million, respectively, for capital investments.  
+ The Company can repurchase its common stock through open-market purchases pursuant to authority granted by its Board of Directors or through private transactions at such prices and upon such terms as the Chief Executive Officer deems appropriate. The Company repurchased 130,551 shares of common stock during the first three months of 2022 at an aggregate cost of $50.0 million.  At March 31, 2022, 13,390,401 shares of common stock can be purchased under the Company’s repurchase authorization.   
+ Page 32 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+ The Company, through a wholly-owned special-purpose subsidiary, has a $400 million trade receivable securitization facility (the Trade Receivable Facility )  that matures on  September 21, 2022.  The Trade Receivable Facility contains a cross-default provision to the Company’s other debt agreements. 
+ The Company has an $800 million five-year senior unsecured revolving facility (the Revolving Facility), which expires in December 2026. The Revolving Facility requires the Company’s ratio of consolidated debt-to-consolidated EBITDA, as defined, for the trailing-twelve-month period (the Ratio) to not exceed 3.50x as of the end of any fiscal quarter, provided that the Company may exclude from the Ratio debt incurred in connection with certain acquisitions during the quarter or the three preceding quarters so long as the Ratio calculated without such exclusion does not exceed 4.00x. Additionally, if there are no amounts outstanding under the Revolving Facility and the Trade Receivable Facility, consolidated debt, including debt for which the Company is a co-borrower, may be reduced in an amount equal to the lesser of $500.0 million or the sum of the Company’s unrestricted cash and temporary investments,  for purposes of the covenant calculation.  The Company was in compliance with the Ratio at March 31, 2022. 
+ In the event of a default on the Ratio, the lenders can terminate the Revolving Facility and Trade Receivable Facility and declare any outstanding balances as immediately due.  There were no amounts outstanding under the Trade Receivable Facility or the Revolving Facility as of March 31, 2022. 
+ Cash on hand, along with the Company’s projected internal cash flows and availability of financing resources, including its access to debt and equity capital markets, is expected to continue to be sufficient to provide the capital resources necessary to support anticipated operating needs, cover debt service requirements, address near-term debt maturities, meet capital expenditures and discretionary investment needs, fund certain acquisition opportunities that may arise, allow the repurchase of shares of the Company’s common stock and allow for payment of dividends for the foreseeable future.  At March 31, 2022, the Company had $1,197.4 million of unused borrowing capacity under its Revolving Facility and Trade Receivable Facility, subject to complying with the related leverage covenant.  Historically, the Company has successfully extended the maturity dates of these credit facilities.  Further, as of March 31, 2022, the Company does not have any publicly-traded debt that matures prior to 2023. 
+ The Coronavirus Aid, Relief and Economic Security Act (CARES Act) was signed into law in March 2020 and provided liquidity support for businesses. Through the CARES Act, the Company deferred payment of $27.6 million, representing the 6.2% employer share of Social Security taxes for the period from March 27, 2020 through December 31, 2020.  Half of the deferred obligation was repaid in 2021 and the remaining half is due December 31, 2022.  There will be no interest assessed on amounts deferred. 
+ TRENDS AND RISKS  
+ The Company outlined the risks associated with its business in its Annual Report on Form 10-K for the year ended December 31, 2021.  Management continues to evaluate its exposure to all operating risks on an ongoing basis.   
+ OTHER MATTERS  
+ If you are interested in Martin Marietta stock, management recommends that, at a minimum, you read the Company’s current annual report and Forms 10-K, 10-Q and 8-K reports to the Securities and Exchange Commission (SEC) over the past year.  The Company’s recent proxy statement for the annual meeting of shareholders also contains important information.  These and other materials that have been filed with the SEC are accessible through the Company’s website at www.martinmarietta.com and are also available at the SEC’s website at www.sec.gov.  You may also write or call the Company’s Corporate Secretary, who will provide copies of such reports. 
+ Page 33 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+ Investors are cautioned that all statements in this Form 10-Q that relate to the future involve risks and uncertainties, and are based on assumptions that the Company believes in good faith are reasonable but which may be materially different from actual results.  These statements, which are forward-looking statements under the Private Securities Litigation Reform Act of 1995,  provide  the investor  with  the Company’s expectations or forecasts of future events.  You can identify these statements by the fact that they do not relate only to historical or current facts.  They may use words such as  “ anticipate, ”  “may,”   “ expect, ”   “ should, ”   “ believe, ”   “project,” “intend,”  “will,” and other words of similar meaning in connection with future events or future operating or financial performance.  Any or all of management’s forward-looking statements here and in other publications may turn out to be wrong. 
+ The Company’s outlook is subject to various risks and uncertainties, and is based on assumptions that the Company believes in good faith are reasonable but which may be materially different from actual results. Factors that the Company currently believes could cause actual results to differ materially from the forward-looking statements in this Form 10-Q (including the outlook) include, but are not limited to: the ability of the Company to face challenges, including those posed by the COVID-19 pandemic and implementation of any such related response plans; fluctuations in COVID-19 cases in the United States and the extent that geography of outbreak primarily matches the regions in which the Company’s Building Materials business principally operates; the resiliency and potential declines of the Company’s various construction end-use markets; the potential negative impact of the COVID-19 pandemic on the Company’s ability to continue supplying heavy-side building materials and related services at normal levels or at all in the Company’s key regions; the duration, impact and severity of the impact of the COVID-19 pandemic on the Company, including the markets in which the Company does business, its suppliers, customers or other business partners as well as the Company’s employees; the economic impact of government responses to the pandemic; the performance of the United States economy, including the impact on the economy of the COVID-19 pandemic and governmental orders restricting activities imposed to prevent further outbreak of COVID-19; shipment declines resulting from economic events beyond the Company’s control; a widespread decline in aggregates pricing, including a decline in aggregates shipment volume negatively affecting aggregates price; the history of both cement and ready mixed concrete being subject to significant changes in supply, demand and price fluctuations; the termination, capping and/or reduction or suspension of the federal and/or state gasoline tax(es) or other revenue related to public construction; the level and timing of federal, state or local transportation or infrastructure or public projects funding, most particularly in Texas, Colorado, California, North Carolina, Georgia, Minnesota, Iowa, Florida, Indiana and Maryland; the impact of governmental orders restricting activities imposed to prevent further outbreak of COVID-19 on travel, potentially reducing state fuel tax revenues used to fund highway projects; the United States Congress’ inability to reach agreement among themselves or with the Administration on policy issues that impact the federal budget; the ability of states and/or other entities to finance approved projects either with tax revenues or alternative financing structures; levels of construction spending in the markets the Company serves; a reduction in defense spending and the subsequent impact on construction activity on or near military bases; a decline in the commercial component of the nonresidential construction market, notably office and retail space, including a decline resulting from economic distress related to the COVID-19 pandemic; a decline in energy-related construction activity resulting from a sustained period of low global oil prices or changes in oil production patterns or capital spending, particularly in Texas; increasing residential mortgage interest rates and other factors that could result in a slowdown in residential construction; unfavorable weather conditions, particularly Atlantic Ocean and Gulf of Mexico hurricane activity, wildfires, the late start to spring or the early onset of winter and the impact of a drought or excessive rainfall in the markets served by the Company, any of which can significantly affect production schedules, volumes, product and/or geographic mix and profitability; whether the Company’s operations will continue to be treated as “essential” operations under applicable government orders restricting business activities imposed to prevent further outbreak of COVID-19 or, even if so treated, whether site-specific health and safety concerns might otherwise require certain of the Company’s operations to be halted for some period of time; the volatility of fuel costs, particularly diesel fuel, notably related to the current conflict between Russia and Ukraine, and the impact on the cost, or the availability generally, of other consumables, namely steel, explosives,  
+ Page 34 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+ tires and conveyor belts, and with respect to the Company’s Magnesia Specialties business, natural gas; continued increases in the cost of other repair and supply parts; construction labor shortages and/or supply‐chain challenges; unexpected equipment failures, unscheduled maintenance, industrial accident or other prolonged and/or significant disruption to production facilities; increasing governmental regulation, including environmental laws; the failure of relevant government agencies to implement expected regulatory reductions; transportation availability or a sustained reduction in capital investment by the railroads, notably the availability of railcars, locomotive power and the condition of rail infrastructure to move trains to supply the Company’s Texas, Colorado, Florida, Carolinas and Gulf Coast markets, including the movement of essential dolomitic lime for magnesia chemicals to the Company’s plant in Manistee, Michigan and its customers;  increased transportation costs, including increases from higher or fluctuating passed-through energy costs or fuel surcharges, and other costs to comply with tightening regulations, as well as higher volumes of rail and water shipments   (leading to reduced profit margins when  compared with aggregates moved by truck ) ;  availability of trucks and licensed drivers for transport of the Company’s materials; availability and cost of construction equipment in the United States; weakening in the steel industry markets served by the Company’s dolomitic lime products;  changes in steel capacity utilization;  trade disputes with one or more nations impacting the U.S. economy, including the impact of tariffs on the steel industry; unplanned changes in costs or realignment of customers that introduce volatility to earnings, including the Magnesia Specialties business; proper functioning of information technology and automated operating systems to manage or support operations; inflation and its effect on both production and interest costs; the concentration of customers in construction markets and the increased risk of potential losses on customer receivables; the impact of the level of demand in the Company’s end-use markets, production levels and management of production costs on the operating leverage and therefore profitability of the Company; the possibility that the expected synergies from acquisitions will not be realized or will not be realized within the expected time period, including achieving anticipated profitability to maintain compliance with the Company’s leverage ratio debt covenant; changes in tax laws, the interpretation of such laws and/or administrative practices , including acquisitions or divestitures,  that would increase the Company’s tax rate; violation of the Company’s debt covenant if price and/or volumes return to previous levels of instability; downward pressure on the Company’s common stock price and its impact on goodwill impairment evaluations; the possibility of a reduction of the Company’s credit rating to non-investment grade; and other risk factors listed from time to time found in the Company’s filings with the SEC.   
+ You should consider these forward-looking statements in light of risk factors discussed in the Company’s Annual Report on Form 10-K for the year ended December 31, 2021 and other periodic filings made with the SEC.  All of the Company’s forward-looking statements should be considered in light of these factors.  In addition, other risks and uncertainties not presently known to the Company or that the Company considers immaterial could affect the accuracy of its forward-looking statements, or adversely affect or be material to the Company.  The Company assumes no obligation to update any such forward-looking statements. 
+ 
+ Page 35 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND 
+ RESULTS OF OPERATIONS 
+  (Continued) 
+   
+   
+ INVESTOR ACCESS TO COMPANY FILINGS  
+ Shareholders may obtain, without charge, a copy of Martin Marietta’s Annual Report on Form 10-K, as filed with the Securities and Exchange Commission for the fiscal year ended December 31, 2021, by writing to:  
+ Martin Marietta  
+ Attn: Corporate Secretary  
+ 4123 Parklake Avenue  
+ Raleigh, North Carolina 27612  
+ Additionally, Martin Marietta’s Annual Report, press releases and filings with the Securities and Exchange Commission, including Forms 10-K, 10-Q, 8-K and 11-K, can generally be accessed via the Company’s website. Filings with the Securities and Exchange Commission accessed via the website are available through a link with the Electronic Data Gathering, Analysis, and Retrieval (EDGAR) system. Accordingly, access to such filings is available upon EDGAR placing the related document in its database. Investor relations contact information is as follows:  
+ Telephone: (919) 783-4691  
+ Website address: www.martinmarietta.com  
+ Information included on the Company’s website is not incorporated into, or otherwise creates a part of, this report.  
+   
+ Page 36 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+   
+   
+ Item 3. Quantitative and Qualitative Disclosures About Market Risk.  
+ The Company’s operations are highly dependent upon the interest rate-sensitive construction and steelmaking industries. Demand in the residential and nonresidential construction market, which combined accounted for 62% of aggregates shipments for the three months ended March 31, 2022, is affected by interest rates. During the quarter ended March 31, 2022, the Federal Reserve raised the target federal funds rate 25 basis points. Consequently, these marketplaces could experience lower levels of economic activity in an environment of rising interest rates or escalating costs if companies and consumers are unable to obtain financing for construction projects or if consumer confidence is eroded by economic uncertainty.  
+ Demand for aggregates products, particularly in the infrastructure construction market, is affected by federal, state and local budget and deficit issues.  
+ Aside from these inherent risks from within its operations, the Company’s earnings are also affected by changes in short-term interest rates and changes in enacted tax laws.  
+ Variable-Rate Borrowing Facilities.  At March 31, 2022, the Company had an $800.0 million Revolving Facility and a $400.0 million Trade Receivable Facility. Borrowings under these facilities bear interest at a variable interest rate. There were no borrowings outstanding on either facility at March 31, 2022.   However, any future borrowings under the credit facilities or outstanding variable-rate debt are exposed to interest rate risk. 
+ Pension Expense.  The Company’s results of operations are affected by its pension expense. Assumptions that affect pension expense include the discount rate and, for the qualified defined benefit pension plan only, the expected long-term rate of return on assets. Therefore, the Company has interest rate risk associated with these factors. The impact of hypothetical changes in these assumptions on the Company’s annual pension expense is discussed in the Company’s Annual Report on Form 10-K for the year ended December 31, 2021.  The Company remeasured its qualified pension plan as of February 28, 2022, to reflect an amendment that increased the pension benefit for qualifying hourly employees.  The discount rate at the remeasurement date was approximately 50 basis points higher compared with the discount rate as of December 31, 2021.  Further, discount rates increased approximately 25 additional basis points in the month of March 2022.  Unless another event requires an interim remeasurement, the Company will next remeasure its pension obligation and funded status as of December 31, 2022.  Changes in the discount rate and pension asset values will impact 2023 pension expense. 
+ Income Tax.   Any changes in enacted tax laws, rules or regulatory or judicial interpretations; or any change in the pronouncements relating to accounting for income taxes could materially impact our effective tax rate, tax payments, financial condition and results of operations. 
+ Energy Costs . Energy costs, including diesel fuel, natural gas, electricity, coal and liquid asphalt, represent significant production costs of the Company.  The cement operations and Magnesia Specialties business have fixed price agreements covering a majority of their 2022 coal requirements. Organic energy expense for the three months ended March 31, 2022 increased approximately 52% compared with the prior-year period, related to higher prices for natural gas, diesel, electricity and gasoline in 2022.  Specifically, the ongoing conflict between Russia and Ukraine has exacerbated already increased diesel prices; however, any future energy prices cannot be reliably predicted.  A hypothetical price change of 52% would change organic full-year 2022 energy expense by $158.1 million as compared with 2021, assuming constant volumes.  Further, the full-year 2022 impact on profitability and margins would be greater when considering the energy consumed by operations acquired 2021. 
+ Page 37 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter Ended March 31, 2022 
+ (Continued) 
+   
+ Commodity Risk.  Cement is a commodity ,  and competition is based principally on price, which is highly sensitive to changes in supply and demand.  Prices are often subject to material changes in response to relatively minor fluctuations in supply and demand, general economic conditions and other market conditions beyond the Company’s control. Increases in the production capacity of industry participants or increases in cement imports tend to create an oversupply of such products leading to an imbalance between supply and demand, which can have a negative impact on product prices. There can be no assurance that prices for products sold will not decline in the future or that such declines will not have a material adverse effect on the Company’s business, financial condition and results of operation s.  Assuming  full -  year  202 1  cement  product  revenues of $ 4 9 4. 5  million, a hypothetical 10% change in sales price would impact  full-year  cement product  revenues  by $ 49.5  million .  
+ Cement is a key raw material in the production of ready mixed concrete. The Company may be unable to pass along increases in the costs of cement and raw materials to customers in the form of price increases for the Company’s products. A hypothetical 10% change in cement costs in 2022 compared with 2021, assuming constant volumes, would change the ready mixed concrete product line cost of revenues by $32.3 million. While increases in cement pricing may negatively impact the profitability of the ready mixed concrete operations, the cement business would benefit, although the positive impact may not reflect a direct correlation to the impact on the ready mixed concrete business. 
+ The Company consumes other raw material and supply commodities in its operations, the costs of which have been negatively impacted by high inflation.  The Company periodically implements price increases due to rising costs.  However, there is a lag between announced price increases and the time when they are fully realized. 
+ Item 4. Controls and Procedures.  
+ Evaluation of Disclosure Controls and Procedures.  As of March 31, 2022, an evaluation was performed under the supervision and with the participation of the Company’s management, including the Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and the operation of the Company’s disclosure controls and procedures. Based on that evaluation, the Company’s management, including the Chief Executive Officer and Chief Financial Officer, concluded that the Company’s disclosure controls and procedures were effective as of March 31, 2022. There were no changes in the Company’s internal control over financial reporting during the most recently completed fiscal quarter that materially affected, or are reasonably likely to materially affect, the Company’s internal control over financial reporting.   
+   
+   
+ Page 38 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ PART II. OTHER INFORMATION 
+   
+   
+ Item 1. Legal Proceedings.  
+ See  Note 10 Commitments and Contingencies, Legal and Administrative Proceedings ,  of this Form 10-Q.  
+ Item 1A. Risk Factors.  
+ Reference is made to  Part I. Item 1A. Risk Factors and Forward-Looking Statements  of the Martin Marietta Annual Report on Form 10-K for the year ended December 31, 2021.  
+ Item 2. Unregistered Sales of Equity Securities and Use of Proceeds .  
+ ISSUER PURCHASES OF EQUITY SECURITIES  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ Total Number of Shares 
+ 
+   
+ 
+   
+ 
+ Maximum Number of 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ Purchased as Part of 
+ 
+   
+ 
+   
+ 
+ Shares that May Yet 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Total Number of 
+ 
+   
+ 
+   
+ 
+ Average Price 
+ 
+   
+ 
+   
+ 
+ Publicly Announced 
+ 
+   
+ 
+   
+ 
+ be Purchased Under 
+ 
+   
+ 
+ 
+ 
+ Period 
+ 
+   
+ 
+ Shares Purchased 
+ 
+   
+ 
+   
+ 
+ Paid per Share 
+ 
+   
+ 
+   
+ 
+ Plans or Programs 
+ 
+   
+ 
+   
+ 
+ the Plans or Programs 
+ 
+   
+ 
+ 
+ 
+ January 1, 2022 - January 31, 2022 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13,520,952 
+ 
+   
+ 
+ 
+ 
+ February 1, 2022 - February 28, 2022 
+ 
+   
+ 
+   
+ 
+ 130,551 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 382.99 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 130,551 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13,390,401 
+ 
+   
+ 
+ 
+ 
+ March 1, 2022 - March 31, 2022 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13,390,401 
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+   
+ 
+ 130,551 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 130,551 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+   
+ Reference is made to the press release dated February 10, 2015 for the December 31, 2014 fourth-quarter and full-year results and announcement of the share repurchase program. The Company’s Board of Directors authorized a maximum of 20 million shares to be repurchased under the program.  The program does not have an expiration date.  
+ Item 4. Mine Safety Disclosures.  
+ The information concerning mine safety violations or other regulatory matters required by Section 1503(a) of the Dodd-Frank Wall Street Reform and Consumer Protection Act and Item 104 of Regulation S-K (17 CFR 229.104) is included in Exhibit 95 to this Quarterly Report on Form 10-Q.  
+ Page 39 of 41 
+ 
+ MARTIN MARIETTA MATERIALS, INC. AND CONSOLIDATED SUBSIDIARIES  
+ FORM 10-Q  
+ For the Quarter March 31, 2022 
+ PART II. OTHER INFORMATION 
+ (Continued) 
+   
+ It em 6. Exhibits.  
+   
+ 
+ 
+ 
+ 
+ Exhibit No. 
+ 
+    
+ 
+ Document 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 31.01 
+ 
+    
+ 
+ Certification dated May 3, 2022 of Chief Executive Officer pursuant to Securities and Exchange Act of 1934 Rule 13a-14 as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 31.02 
+ 
+    
+ 
+ Certification dated May 3, 2022 of Chief Financial Officer pursuant to Securities and Exchange Act of 1934 Rule 13a-14 as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 32.01 
+ 
+    
+ 
+ Written Statement dated May 3, 2022 of Chief Executive Officer required by 18 U.S.C. 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 32.02 
+ 
+    
+ 
+ Written Statement dated May 3, 2022 of Chief Financial Officer required by 18 U.S.C. 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 95 
+ 
+    
+ 
+ Mine Safety Disclosures 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101.INS 
+ 
+    
+ 
+ Inline XBRL Instance Document – The instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101.SCH 
+ 
+    
+ 
+ Inline XBRL Taxonomy Extension Schema Document 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101.CAL 
+ 
+    
+ 
+ Inline XBRL Taxonomy Extension Calculation Linkbase Document 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101.LAB 
+ 
+    
+ 
+ Inline XBRL Taxonomy Extension Label Linkbase Document 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101.PRE 
+ 
+    
+ 
+ Inline XBRL Taxonomy Extension Presentation Linkbase Document 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101.DEF 
+ 
+    
+ 
+ Inline XBRL Taxonomy Extension Definition Linkbase 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 104 
+ 
+   
+ 
+ Cover Page Interactive Data File (formatted as inline XBRL and contained in Exhibit 101) 
+ 
+ 
+   
+   
+   
+   
+ Page 40 of 41 
+ 
+   
+   
+ SIGNATURES 
+ Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ MARTIN MARIETTA MATERIALS, INC. 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+             (Registrant) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Date: May 3, 2022 
+ 
+ By: 
+ 
+   
+ 
+ /s/ James A. J. Nickolas 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ James A. J. Nickolas 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Sr. Vice President and 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+    Chief Financial Officer 
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+ Page 41 of 41 
+ 

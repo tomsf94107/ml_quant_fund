@@ -21,6 +21,7 @@ Per AI playbook section 11.1, drawdown thresholds trigger:
 """
 import sqlite3
 from datetime import date, datetime
+from utils.timezone import today_et  # ET session, not VN local (Fix Jul 1 2026)
 from pathlib import Path
 from typing import Optional
 
@@ -80,7 +81,7 @@ def log_snapshot(
     if portfolio_value <= 0:
         raise ValueError(f"portfolio_value must be > 0 (got {portfolio_value})")
 
-    snapshot_date = snapshot_date or str(date.today())
+    snapshot_date = snapshot_date or today_et()
     prior_peak    = get_peak()
     peak_value    = max(prior_peak, float(portfolio_value))
     drawdown_pct  = (portfolio_value - peak_value) / peak_value if peak_value > 0 else 0.0

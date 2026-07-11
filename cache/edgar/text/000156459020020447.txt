@@ -1,0 +1,8846 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+bldr-10q_20200331.htm
+ 
+ 
+ 
+ 
+	 
+		 
+			 false 
+			 Q1 
+			 0001316835 
+			 --12-31 
+			 Large Accelerated Filer 
+			 Payable semi-annually on March 1 and September 1 of each year, commencing on September 1, 2020. 
+			 P3Y 
+			 
+			 
+			 
+			 
+		 
+		 
+			 
+		 
+		 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 xbrli:shares 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2020-04-29 
+				 
+			 
+			 
+				 iso4217:USD 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 
+						 iso4217:USD 
+					 
+					 
+						 xbrli:shares 
+					 
+				 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2018-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2018-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2018-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2018-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CommonStockMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:PerformanceMarketAndServiceConditionBasedRestrictedStockUnitGrantsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 bldr:Store 
+			 
+			 
+				 bldr:States 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:LumberAndLumberSheetGoodsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:LumberAndLumberSheetGoodsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:ManufacturedProductsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:ManufacturedProductsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:WindowsDoorsAndMillworkMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:WindowsDoorsAndMillworkMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:GypsumRoofingAndInsulationMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:GypsumRoofingAndInsulationMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SidingMetalAndConcreteProductsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SidingMetalAndConcreteProductsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:OtherBuildingProductsAndServicesMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:OtherBuildingProductsAndServicesMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 xbrli:pure 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 srt:MaximumMember 
+						 us-gaap:TransferredOverTimeMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TwoThousandTwentyThreeSeniorSecuredRevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TwoThousandTwentyThreeSeniorSecuredRevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandAndTwentyFourMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TwoThousandTwentyFourTermLoanMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TwoThousandTwentyFourTermLoanMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentySevenMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentySevenMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:OtherFinanceObligationsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:OtherFinanceObligationsMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:FinanceLeaseObligationMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:FinanceLeaseObligationMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+					 
+				 
+				 
+					 2020-02-29 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+					 
+				 
+				 
+					 2020-02-01 
+					 2020-02-29 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TwoThousandTwentyThreeSeniorSecuredRevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2020-02-29 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandAndTwentyFourMember 
+					 
+				 
+				 
+					 2020-02-29 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentySevenMember 
+					 
+				 
+				 
+					 2020-02-29 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentyFourAndTwoThousandTwentySevenMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+						 us-gaap:DebtInstrumentRedemptionPeriodTwoMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+						 us-gaap:DebtInstrumentRedemptionPeriodThreeMember 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+						 us-gaap:DebtInstrumentRedemptionPeriodThreeMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentySevenMember 
+						 us-gaap:FairValueInputsLevel2Member 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorUnsecuredNotesDueTwoThousandThirtyMember 
+						 us-gaap:FairValueInputsLevel2Member 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SeniorSecuredTermLoanFacilityDueTwoThousandTwentyFourMember 
+						 us-gaap:FairValueInputsLevel2Member 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiAndCompanyIncMember 
+					 
+				 
+				 
+					 2020-01-09 
+					 2020-01-09 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:FairValueInputsLevel3Member 
+						 us-gaap:CustomerRelationshipsMember 
+						 bldr:BianchiAndCompanyIncMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiAndCompanyIncMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:NortheastSegmentMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SoutheastSegmentMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SouthSegmentMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:WestSegmentMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SoutheastSegmentMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+				 
+				 
+					 2019-01-01 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:NortheastSegmentMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SoutheastSegmentMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SouthSegmentMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:WestSegmentMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CustomerRelationshipsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:TradeNamesMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SubcontractorRelationshipsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:NoncompeteAgreementsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:CustomerRelationshipsMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:TradeNamesMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SubcontractorRelationshipsMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:NoncompeteAgreementsMember 
+					 
+				 
+				 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 us-gaap:CustomerRelationshipsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 bldr:SubcontractorRelationshipsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 us-gaap:TradeNamesMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 us-gaap:NoncompeteAgreementsMember 
+					 
+				 
+				 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 us-gaap:CustomerRelationshipsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 bldr:SubcontractorRelationshipsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 us-gaap:TradeNamesMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:BianchiCompanyIncMember 
+						 us-gaap:NoncompeteAgreementsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TimeBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TimeBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 bldr:ShareBasedCompensationAwardVestingOverThreeYearsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TimeBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 us-gaap:ShareBasedCompensationAwardTrancheOneMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TimeBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 us-gaap:ShareBasedCompensationAwardTrancheTwoMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TimeBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 us-gaap:ShareBasedCompensationAwardTrancheThreeMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:TimeBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 bldr:ShareBasedCompensationAwardVestingOnSecondAnniversaryMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:PerformanceMarketAndServiceConditionBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:PerformanceMarketAndServiceConditionBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:PerformanceMarketAndServiceConditionBasedRestrictedStockUnitGrantsMember 
+						 bldr:TwoThousandFourteenIncentivePlanMember 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 bldr:Region 
+			 
+			 
+				 bldr:Segment 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:NortheastSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SoutheastSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SouthSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:WestSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:MaterialReconcilingItemsMember 
+					 
+				 
+				 
+					 2020-01-01 
+					 2020-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:NortheastSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SoutheastSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:SouthSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 bldr:WestSegmentMember 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:OperatingSegmentsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:MaterialReconcilingItemsMember 
+					 
+				 
+				 
+					 2019-01-01 
+					 2019-03-31 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:SubsequentEventMember 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentySevenMember 
+					 
+				 
+				 
+					 2020-04-30 
+				 
+			 
+			 
+				 
+					 0001316835 
+					 
+						 us-gaap:SubsequentEventMember 
+						 bldr:SeniorSecuredNotesDueTwoThousandTwentySevenMember 
+					 
+				 
+				 
+					 2020-04-01 
+					 2020-04-30 
+				 
+			 
+		 
+	 
+ 
+   
+ I  
+   
+ UNITED STATES  
+ SECURITIES AND EXCHANGE COMMISSION  
+ Washington, D.C. 20549  
+   
+ Form  10-Q   
+   
+ 
+ 
+ 
+ 
+ ☒ 
+ 
+ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934  
+ For the quarterly period ended  March 31,  2020 
+ OR  
+ 
+ 
+ 
+ 
+ ☐ 
+ 
+ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934  
+ For the transition period from                   to                    
+ Commission File Number  0-51357   
+   
+ BUILDERS FIRSTSOURCE, INC.   
+ (Exact name of registrant as specified in its charter)  
+   
+   
+ 
+ 
+ 
+ 
+ Delaware 
+ 
+   
+ 
+ 52-2084569 
+ 
+ 
+ 
+ (State or other jurisdiction of 
+ incorporation or organization) 
+ 
+   
+ 
+ (I.R.S. Employer 
+ Identification No.) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 2001 Bryan Street ,  Suite 1600 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Dallas ,  Texas 
+ 
+   
+ 
+ 75201 
+ 
+ 
+ 
+ (Address of principal executive offices) 
+ 
+   
+ 
+ (Zip Code) 
+ 
+ 
+ ( 214 )  880-3500   
+ (Registrant’s telephone number, including area code)  
+ Securities registered pursuant to Section 12(b) of the Act: 
+ 
+ 
+ 
+ 
+ Title of Each Class 
+ 
+ Trading Symbol(s) 
+ 
+ Name of Each Exchange on Which Registered 
+ 
+ 
+ 
+ Common stock, par value $0.01 per share 
+ 
+ BLDR 
+ 
+ NASDAQ Stock Market LLC 
+ 
+ 
+   
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes    ☒     No   ☐   
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (Section 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).      Yes    ☒     No   ☐   
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act. 
+   
+ 
+ 
+ 
+ 
+ Large accelerated filer 
+ 
+   
+ 
+ ☒ 
+ 
+    
+ 
+ Accelerated filer 
+ 
+   
+ 
+ ☐ 
+ 
+ 
+ 
+ Non-accelerated filer 
+ 
+   
+ 
+ ☐ 
+ 
+    
+ 
+ Small reporting company 
+ 
+   
+ 
+ ☐ 
+ 
+ 
+ 
+ Emerging growth company 
+ 
+   
+ 
+ ☐ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+   
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ 
+ Indicate by check mark whether the registrant is a shell company (as defined by Rule 12b-2 of the Exchange Act).    Yes   ☐     No   ☒ 
+ The number of shares of the issuer’s common stock, par value $0.01, outstanding as of April 29, 2020 was  116,610,833 .  
+   
+   
+   
+   
+   
+   
+ 
+   
+ BUILDERS FIRSTSOURCE, INC.  
+ Index to Form 10-Q  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ Page 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ PART I — FINANCIAL INFORMATION 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Item 1. 
+ 
+   
+ 
+ Financial Statements 
+ 
+   
+ 
+ 3 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Condensed Consolidated Statement of Operations and Comprehensive Income (Unaudited) for the Three Months Ended March 31, 2020 and 2019 
+ 
+   
+ 
+ 3 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Condensed Consolidated Balance Sheet (Unaudited) as of March 31, 2020 and December 31, 2019 
+ 
+   
+ 
+ 4 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Condensed Consolidated Statement of Cash Flows (Unaudited) for the Three Months Ended March 31, 2020 and 2019 
+ 
+   
+ 
+ 5 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Condensed Consolidated Statement of Changes in Stockholders’ Equity (Unaudited) for the Three Months Ended March 31, 2020 and March 31, 2019 
+ 
+   
+ 
+ 6 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Notes to Condensed Consolidated Financial Statements (Unaudited) 
+ 
+   
+ 
+ 7 
+ 
+ 
+ 
+ Item 2. 
+ 
+   
+ 
+ Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+ 
+   
+ 
+ 16 
+ 
+ 
+ 
+ Item 3. 
+ 
+   
+ 
+ Quantitative and Qualitative Disclosures About Market Risk 
+ 
+   
+ 
+ 23 
+ 
+ 
+ 
+ Item 4. 
+ 
+   
+ 
+ Controls and Procedures 
+ 
+   
+ 
+ 23 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ PART II — OTHER INFORMATION 
+ 
+   
+ 
+ 25 
+ 
+ 
+ 
+ Item 1. 
+ 
+   
+ 
+ Legal Proceedings 
+ 
+   
+ 
+ 25 
+ 
+ 
+ 
+ Item 1A. 
+ 
+   
+ 
+ Risk Factors 
+ 
+   
+ 
+ 25 
+ 
+ 
+ 
+ Item 2. 
+ 
+   
+ 
+ Unregistered Sales of Equity Securities and Use of Proceeds 
+ 
+   
+ 
+ 26 
+ 
+ 
+ 
+ Item 3. 
+ 
+   
+ 
+ Defaults Upon Senior Securities 
+ 
+   
+ 
+ 27 
+ 
+ 
+ 
+ Item 4. 
+ 
+   
+ 
+ Mine Safety Disclosures 
+ 
+   
+ 
+ 27 
+ 
+ 
+ 
+ Item 5. 
+ 
+   
+ 
+ Other Information 
+ 
+   
+ 
+ 27 
+ 
+ 
+ 
+ Item 6. 
+ 
+   
+ 
+ Exhibits 
+ 
+   
+ 
+ 28 
+ 
+ 
+   
+   
+   
+ 2 
+ 
+   
+ P ART I  — FINANCIAL INFORMATION  
+   
+ Item 1.  Financial Statements (unaudited)   
+ BUILDERS FIRSTSOURCE, INC. AND SUBSIDIARIES  
+ CONDENSED CONSOLIDATED STATEMENT OF OPERATIONS AND COMPREHENSIVE INCOME   
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three Months Ended 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (Unaudited) 
+ (In thousands, except per share amounts) 
+ 
+   
+ 
+ 
+ 
+ Net sales 
+ 
+ $ 
+ 
+ 1,787,021 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,631,300 
+ 
+   
+ 
+ 
+ 
+ Cost of sales 
+ 
+   
+ 
+ 1,321,608 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,189,325 
+ 
+   
+ 
+ 
+ 
+ Gross margin 
+ 
+   
+ 
+ 465,413 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 441,975 
+ 
+   
+ 
+ 
+ 
+ Selling, general and administrative expenses 
+ 
+   
+ 
+ 404,466 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 370,084 
+ 
+   
+ 
+ 
+ 
+ Income from operations 
+ 
+   
+ 
+ 60,947 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 71,891 
+ 
+   
+ 
+ 
+ 
+ Interest expense, net 
+ 
+   
+ 
+ 51,931 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 24,901 
+ 
+   
+ 
+ 
+ 
+ Income before income taxes 
+ 
+   
+ 
+ 9,016 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 46,990 
+ 
+   
+ 
+ 
+ 
+ Income tax expense  
+ 
+   
+ 
+ 249 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 11,282 
+ 
+   
+ 
+ 
+ 
+         Net income  
+ 
+ $ 
+ 
+ 8,767 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 35,708 
+ 
+   
+ 
+ 
+ 
+         Comprehensive income  
+ 
+ $ 
+ 
+ 8,767 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 35,708 
+ 
+   
+ 
+ 
+ 
+ Net income per share: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic 
+ 
+ $ 
+ 
+ 0.08 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.31 
+ 
+   
+ 
+ 
+ 
+ Diluted 
+ 
+ $ 
+ 
+ 0.07 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.31 
+ 
+   
+ 
+ 
+ 
+ Weighted average common shares: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic 
+ 
+   
+ 
+ 116,258 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 115,425 
+ 
+   
+ 
+ 
+ 
+ Diluted 
+ 
+   
+ 
+ 117,494 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 116,531 
+ 
+   
+ 
+ 
+   
+ The accompanying notes are an integral part of these condensed consolidated financial statements.  
+   
+   
+ 3 
+ 
+   
+ BUILDERS FIRSTSOURCE, INC. AND SUBSIDIARIES  
+ CONDENSED CONSOLIDATED BALANCE SHEET  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ March 31,  
+ 2020 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 2019  
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (Unaudited) 
+ (In thousands, except per share amounts)  
+ 
+   
+ 
+ 
+ 
+ ASSETS 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current assets: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents 
+ 
+ $ 
+ 
+ 163,872 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 14,096 
+ 
+   
+ 
+ 
+ 
+ Accounts receivable, less allowances of $ 18,496  and $ 13,492  at March 31, 2020 and 
+    December 31, 2019, respectively 
+ 
+   
+ 
+ 702,192 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 614,946 
+ 
+   
+ 
+ 
+ 
+ 
+ Other receivables 
+ 
+   
+ 
+ 54,647 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 77,447 
+ 
+   
+ 
+ 
+ 
+ Inventories, net 
+ 
+   
+ 
+ 640,048 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 561,255 
+ 
+   
+ 
+ 
+ 
+ Other current assets 
+ 
+   
+ 
+ 44,122 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 39,123 
+ 
+   
+ 
+ 
+ 
+ Total current assets 
+ 
+   
+ 
+ 1,604,881 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,306,867 
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment, net 
+ 
+   
+ 
+ 730,738 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 721,887 
+ 
+   
+ 
+ 
+ 
+ Operating lease right-of-use assets, net 
+ 
+   
+ 
+ 285,964 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 292,684 
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+ 777,283 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 769,022 
+ 
+   
+ 
+ 
+ 
+ Intangible assets, net 
+ 
+   
+ 
+ 132,165 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 128,388 
+ 
+   
+ 
+ 
+ 
+ Deferred income taxes 
+ 
+   
+ 
+ 8,393 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8,417 
+ 
+   
+ 
+ 
+ 
+ Other assets, net 
+ 
+   
+ 
+ 21,934 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 22,225 
+ 
+   
+ 
+ 
+ 
+ Total assets 
+ 
+ $ 
+ 
+ 3,561,358 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,249,490 
+ 
+   
+ 
+ 
+ 
+ LIABILITIES AND STOCKHOLDERS' EQUITY 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current liabilities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Accounts payable 
+ 
+   
+ 
+ 551,548 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 436,823 
+ 
+   
+ 
+ 
+ 
+ Accrued liabilities 
+ 
+   
+ 
+ 223,319 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 308,950 
+ 
+   
+ 
+ 
+ 
+ Current portion of operating lease liabilities  
+ 
+   
+ 
+ 61,628 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 61,653 
+ 
+   
+ 
+ 
+ 
+ Current maturities of long-term debt  
+ 
+   
+ 
+ 22,518 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13,875 
+ 
+   
+ 
+ 
+ 
+ Total current liabilities 
+ 
+   
+ 
+ 859,013 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 821,301 
+ 
+   
+ 
+ 
+ 
+ Noncurrent portion of operating lease liabilities 
+ 
+   
+ 
+ 230,355 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 236,948 
+ 
+   
+ 
+ 
+ 
+ Long-term debt, net of current maturities, debt discount, and debt issuance costs 
+ 
+   
+ 
+ 1,545,211 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,277,398 
+ 
+   
+ 
+ 
+ 
+ Deferred income taxes 
+ 
+   
+ 
+ 37,496 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 36,645 
+ 
+   
+ 
+ 
+ 
+ Other long-term liabilities 
+ 
+   
+ 
+ 55,745 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 52,245 
+ 
+   
+ 
+ 
+ 
+ Total liabilities 
+ 
+   
+ 
+ 2,727,820 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,424,537 
+ 
+   
+ 
+ 
+ 
+ Commitments and contingencies (Note 10) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Stockholders' equity: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Preferred stock, $ 0.01  par value,  10,000  shares authorized;  zero  shares issued and outstanding 
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Common stock, $ 0.01  par value,  200,000  shares authorized;  116,545  and  116,052  shares issued and outstanding at March 31, 2020 and December 31, 2019, respectively 
+ 
+   
+ 
+ 1,165 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,161 
+ 
+   
+ 
+ 
+ 
+ Additional paid-in capital 
+ 
+   
+ 
+ 574,769 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 574,955 
+ 
+   
+ 
+ 
+ 
+ Retained earnings 
+ 
+   
+ 
+ 257,604 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 248,837 
+ 
+   
+ 
+ 
+ 
+ Total stockholders' equity 
+ 
+   
+ 
+ 833,538 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 824,953 
+ 
+   
+ 
+ 
+ 
+ Total liabilities and stockholders' equity 
+ 
+ $ 
+ 
+ 3,561,358 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,249,490 
+ 
+   
+ 
+ 
+   
+ The accompanying notes are an integral part of these condensed consolidated financial statements.  
+   
+   
+ 4 
+ 
+   
+ BUILDERS FIRSTSOURCE, INC. AND SUBSIDIARIES  
+ CONDENSED CONSOLIDATED STATEMENT OF CASH FLOWS  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three months ended 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (Unaudited) 
+ (In thousands) 
+ 
+   
+ 
+ 
+ 
+ Cash flows from operating activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income  
+ 
+ $ 
+ 
+ 8,767 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 35,708 
+ 
+   
+ 
+ 
+ 
+ Adjustments to reconcile net income to net cash from operating activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+ 29,400   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 23,576   
+ 
+   
+ 
+ 
+ 
+ Amortization of debt issuance costs and debt discount 
+ 
+   
+ 
+ 684 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,149 
+ 
+   
+ 
+ 
+ 
+ Loss (gain) on extinguishment of debt 
+ 
+   
+ 
+ 5,349 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 680 
+ 
+ )  
+ 
+ 
+ 
+ Deferred income taxes 
+ 
+   
+ 
+ 875 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9,638 
+ 
+   
+ 
+ 
+ 
+ Stock compensation expense 
+ 
+   
+ 
+ 3,254 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,659 
+ 
+   
+ 
+ 
+ 
+ Gain on sale of assets  
+ 
+   
+ 
+ ( 133 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 464 
+ 
+ ) 
+ 
+ 
+ 
+ Changes in assets and liabilities, net of assets acquired and liabilities assumed: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Receivables 
+ 
+   
+ 
+ ( 61,998 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 22,703 
+ 
+   
+ 
+ 
+ 
+ Inventories 
+ 
+   
+ 
+ ( 78,591 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 38,603 
+ 
+ ) 
+ 
+ 
+ 
+ Other current assets 
+ 
+   
+ 
+ ( 5,000 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ 4,732 
+ 
+   
+ 
+ 
+ 
+ Other assets and liabilities 
+ 
+   
+ 
+ 26,286 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 1,319 
+ 
+ ) 
+ 
+ 
+ 
+ Accounts payable  
+ 
+   
+ 
+ 108,295 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 47,371 
+ 
+   
+ 
+ 
+ 
+ Accrued liabilities 
+ 
+   
+ 
+ ( 87,842 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ ( 100,395 
+ 
+ )  
+ 
+ 
+ 
+ Net cash provided by (used in) operating activities 
+ 
+   
+ 
+ ( 50,654 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ 6,075 
+ 
+   
+ 
+ 
+ 
+ Cash flows from investing activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Purchases of property, plant and equipment 
+ 
+   
+ 
+ ( 28,498 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 21,524 
+ 
+ ) 
+ 
+ 
+ 
+ Proceeds from sale of property, plant and equipment 
+ 
+   
+ 
+ 538 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 720 
+ 
+   
+ 
+ 
+ 
+ Cash used for acquisitions 
+ 
+   
+ 
+ ( 15,893 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Net cash used in investing activities 
+ 
+   
+ 
+ ( 43,853 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 20,804 
+ 
+ ) 
+ 
+ 
+ 
+ Cash flows from financing activities: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Borrowings under revolving credit facility 
+ 
+   
+ 
+ 681,000 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 374,000 
+ 
+   
+ 
+ 
+ 
+ Repayments under revolving credit facility 
+ 
+   
+ 
+ ( 398,000 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ ( 331,000 
+ 
+ )  
+ 
+ 
+ 
+ Proceeds from long-term debt and other loans 
+ 
+   
+ 
+ 550,000 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Repayments of long-term debt and other loans 
+ 
+   
+ 
+ ( 554,263 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 24,440 
+ 
+ ) 
+ 
+ 
+ 
+ Payments of debt extinguishment costs 
+ 
+   
+ 
+ ( 22,686 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Payments of loan costs 
+ 
+   
+ 
+ ( 8,332 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Exercise of stock options 
+ 
+   
+ 
+ 398 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 216 
+ 
+   
+ 
+ 
+ 
+ Repurchase of common stock 
+ 
+   
+ 
+ ( 3,834 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 2,450 
+ 
+ ) 
+ 
+ 
+ 
+ Net cash provided by financing activities 
+ 
+   
+ 
+ 244,283 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16,326 
+ 
+   
+ 
+ 
+ 
+ Net change in cash and cash equivalents 
+ 
+   
+ 
+ 149,776 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,597 
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents at beginning of period 
+ 
+   
+ 
+ 14,096 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10,127 
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents at end of period 
+ 
+ $ 
+ 
+ 163,872 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 11,724 
+ 
+   
+ 
+ 
+ Supplemental disclosure of non-cash activities 
+ Purchases of property, plant and equipment included in accounts payable were $ 5.2  million and $ 1.9  million for the three months ended March 31, 2020 and 2019, respectively.  
+ The Company acquired assets under operating lease obligations of $ 9.5  million and $ 15.7  million for the three months ended March 31, 2020 and 2019, respectively.  Additionally, the Company acquired assets under finance lease obligations of $ 2.7  million and $ 2.7  million for the three months ended March 31, 2020 and 2019, respectively.   
+ The Company made cash payment for interest of $ 21.7  million and $ 33.6  million for the three months ended March 31, 2020 and 2019, respectively. 
+ The accompanying notes are an integral part of these condensed consolidated financial statements.  
+ 5 
+ 
+   
+ BUILDERS FIRSTSOURCE, INC. AND SUBSIDIARIES  
+ CONDENSED CONSOLIDATED STATEMENT OF CHANGES IN STOCKHOLDERS’ EQUITY  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ Additional Paid 
+ 
+   
+ 
+   
+ 
+ Retained 
+ Earnings 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Common Stock 
+ 
+   
+ 
+   
+ 
+ in 
+ 
+   
+ 
+   
+ 
+ (Accumulated 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Shares 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ Capital 
+ 
+   
+ 
+   
+ 
+ Deficit) 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (Unaudited) 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (In thousands) 
+ 
+   
+ 
+ 
+ 
+ Balance at December 31, 2018 
+ 
+   
+ 
+   
+ 
+ 115,078 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,151 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 560,221 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 34,966 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 596,338 
+ 
+   
+ 
+ 
+ 
+ Vesting of restricted stock units 
+ 
+   
+ 
+   
+ 
+ 662 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 7 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Stock compensation expense 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,659 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,659 
+ 
+   
+ 
+ 
+ 
+ Exercise of stock options 
+ 
+   
+ 
+   
+ 
+ 59 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 216 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 216 
+ 
+   
+ 
+ 
+ 
+ Shares withheld for restricted stock units vested 
+ 
+   
+ 
+   
+ 
+ ( 196 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 2,448 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 2,450 
+ 
+ ) 
+ 
+ 
+ 
+ Net income  
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 35,708 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 35,708 
+ 
+   
+ 
+ 
+ 
+ Balance at March 31, 2019 
+ 
+   
+ 
+   
+ 
+ 115,603 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,156 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 560,641 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 70,674 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 632,471 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Balance at December 31, 2019 
+ 
+   
+ 
+   
+ 
+ 116,052 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,161 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 574,955 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 248,837 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 824,953 
+ 
+   
+ 
+ 
+ 
+ Vesting of restricted stock units 
+ 
+   
+ 
+   
+ 
+ 579 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Stock compensation expense 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,254 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,254 
+ 
+   
+ 
+ 
+ 
+ Exercise of stock options 
+ 
+   
+ 
+   
+ 
+ 82 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 398 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 398 
+ 
+   
+ 
+ 
+ 
+ Shares withheld for restricted stock units vested 
+ 
+   
+ 
+   
+ 
+ ( 168 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 3,832 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 3,834 
+ 
+ ) 
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8,767 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8,767 
+ 
+   
+ 
+ 
+ 
+ Balance at March 31, 2020 
+ 
+   
+ 
+   
+ 
+ 116,545 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,165 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 574,769 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 257,604 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 833,538 
+ 
+   
+ 
+ 
+   
+ The accompanying notes are an integral part of these consolidated financial statements.  
+   
+   
+ 6 
+ 
+   
+ BUILDERS FIRSTSOURCE, INC. AND SUBSIDIARIES  
+ NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS  
+ (unaudited)  
+   
+ 1.  Basis of Presentation   
+ Builders FirstSource, Inc., a Delaware corporation formed in  1998 , is a leading supplier and manufacturer of building materials, manufactured components and construction services to professional homebuilders, sub-contractors, remodelers and consumers.  The Company operates approximately  400  locations in  40  states across the United States. In this quarterly report, references to the “Company,” “we,” “our,” “ours” or “us” refer to Builders FirstSource, Inc. and its consolidated subsidiaries unless otherwise stated or the context otherwise requires.  
+ In the opinion of management, the accompanying unaudited condensed consolidated financial statements include all recurring adjustments and normal accruals necessary for a fair statement of the Company’s financial position, results of operations and cash flows for the dates and periods presented. Results for interim periods are not necessarily indicative of the results to be expected during the remainder of the current year or for any future period. Intercompany transactions are eliminated in consolidation.  
+ The condensed consolidated balance sheet as of December 31, 2019 is derived from the audited consolidated financial statements but does not include all disclosures required by accounting principles generally accepted in the United States of America. This condensed consolidated balance sheet as of December 31, 2019 and the unaudited condensed consolidated financial statements included herein should be read in conjunction with the more detailed audited consolidated financial statements for the year ended December 31, 2019 included in our most recent annual report on Form 10-K. Accounting policies used in the preparation of these unaudited condensed consolidated financial statements are consistent with the accounting policies described in the Notes to Consolidated Financial Statements included in our Form 10-K.  
+ Recent Accounting Pronouncements 
+ In December 2019, the Financial Accounting Standards Board (“FASB”) issued an update to existing guidance under the  Income Taxes  topic of the FASB Accounting Standards Codification (“Codification”). This updated guidance simplifies the accounting for income taxes by removing certain exceptions to the general principles in the Income Taxes topic. This guidance is effective for public companies annual and interim periods beginning after December 15, 2020 with early adoption permitted. We are currently evaluating the impact of this update on our consolidated financial statements. 
+ In June 2016, the FASB issued an update to existing guidance under the  Investments  topic of the Codification. This update introduced a new impairment model for financial assets, known as the current expected credit losses (“CECL”) model that is based on expected losses rather than incurred losses. The CECL model requires an entity to estimate credit losses on financial assets, including trade accounts receivable, based on historical information, current information and reasonable and supportable forecasts. Under this guidance companies record an allowance through earnings for expected credit losses upon initial recognition of the financial asset. We adopted the aspects of this guidance applicable to us on a modified retrospective basis as of January 1, 2020. The adoption of this guidance did not have a material impact on our consolidated financial statements. 
+ 2.  Revenue 
+ The following table disaggregates our sales by product category (in thousands): 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three Months Ended 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+ 
+ 
+ Lumber & lumber sheet goods 
+ 
+ $ 
+ 
+ 552,481 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 517,689 
+ 
+   
+ 
+ 
+ 
+ Manufactured products 
+ 
+   
+ 
+ 354,457 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 317,352 
+ 
+   
+ 
+ 
+ 
+ Windows, doors & millwork 
+ 
+   
+ 
+ 391,317 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 353,390 
+ 
+   
+ 
+ 
+ 
+ Gypsum, roofing & insulation 
+ 
+   
+ 
+ 110,852 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 120,919 
+ 
+   
+ 
+ 
+ 
+ Siding, metal & concrete products 
+ 
+   
+ 
+ 168,885 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 149,918 
+ 
+   
+ 
+ 
+ 
+ Other building products & services 
+ 
+   
+ 
+ 209,029 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 172,032 
+ 
+   
+ 
+ 
+ 
+ Net sales 
+ 
+ $ 
+ 
+ 1,787,021 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,631,300 
+ 
+   
+ 
+ 
+   
+ 7 
+ 
+   
+ Information regarding disaggregation of sales by segment is discussed in Note 11 to the condensed consolidated financial statements. Sales related to contracts with service elements represents less than  10 % of the Company’s net sales for each period presented. 
+ The timing of revenue recognition, billings and cash collections results in accounts receivable, unbilled receivables, contract assets and contract liabilities. Contract asset balances were not significant as of March 31, 2020 or December 31, 2019. Contract liabilities consist of deferred revenue and customer advances and deposits. Contract liability balances are included in accrued liabilities on our consolidated balance sheet and were $ 36.6  million and $ 38.6  million as of March 31, 2020 and December 31, 2019, respectively.  
+   
+ 3.  Net Income per Common Share  
+ Net income per common share (“EPS”) is calculated in accordance with the  Earnings per Share  topic of the Codification, which requires the presentation of basic and diluted EPS. Basic EPS is computed using the weighted average number of common shares outstanding during the period. Diluted EPS is computed using the weighted average number of common shares outstanding during the period, plus the dilutive effect of potential common shares.  
+ The table below presents the calculation of basic and diluted EPS (in thousands, except per share amounts):    
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three Months Ended 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+ 
+ 
+ Numerator: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+ $ 
+ 
+ 8,767 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 35,708 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Denominator:  
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Weighted average shares outstanding, basic  
+ 
+   
+ 
+ 116,258 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 115,425 
+ 
+   
+ 
+ 
+ 
+ Dilutive effect of options and RSUs 
+ 
+   
+ 
+ 1,236 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,106 
+ 
+   
+ 
+ 
+ 
+ Weighted average shares outstanding, diluted  
+ 
+   
+ 
+ 117,494 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 116,531 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income per share: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic 
+ 
+ $ 
+ 
+ 0.08 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.31 
+ 
+   
+ 
+ 
+ 
+ Diluted 
+ 
+ $ 
+ 
+ 0.07 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.31 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Antidilutive and contingent options and RSUs excluded 
+    from diluted EPS 
+ 
+   
+ 
+ 217 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,451 
+ 
+   
+ 
+ 
+   
+   
+ 8 
+ 
+   
+ 4.  Debt   
+ Long-term debt consisted of the following (in thousands):  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ March 31, 
+ 2020 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+ 2023 facility (1) 
+ 
+ $ 
+ 
+ 310,000 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 27,000 
+ 
+   
+ 
+ 
+ 
+ 2024 notes 
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 503,923 
+ 
+   
+ 
+ 
+ 
+ 2024 term loan (2) 
+ 
+   
+ 
+ 52,000 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 52,000 
+ 
+   
+ 
+ 
+ 
+ 2027 notes 
+ 
+   
+ 
+ 427,500 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 475,000 
+ 
+   
+ 
+ 
+ 
+ 2030 notes 
+ 
+   
+ 
+ 550,000 
+ 
+   
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+ 
+ 
+ Other finance obligations 
+ 
+   
+ 
+ 220,127 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 221,726 
+ 
+   
+ 
+ 
+ 
+ Finance lease obligations 
+ 
+   
+ 
+ 19,491 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 20,333 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 1,579,118 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,299,982 
+ 
+   
+ 
+ 
+ 
+ Unamortized debt discount and debt issuance costs 
+ 
+   
+ 
+ ( 11,389 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 8,709 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 1,567,729 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,291,273 
+ 
+   
+ 
+ 
+ 
+ Less: current maturities of long-term debt  
+ 
+   
+ 
+ 22,518 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13,875 
+ 
+   
+ 
+ 
+ 
+ Long-term debt, net of current maturities 
+ 
+ $ 
+ 
+ 1,545,211 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,277,398 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ (1) 
+ 
+ The weighted average interest rate was  4.1 % and  4.4 % as of March 31, 2020 and December 31, 2019, respectively.  
+ 
+ 
+ 
+ 
+   
+ 
+ (2) 
+ 
+ The weighted average interest rate was  4.7 % and  5.6 % as of March 31, 2020 and December 31, 2019, respectively. 
+ 2020 Debt Transactions 
+ In February 2020, the Company completed a private offering of $ 550.0  million in aggregate principal amount of  5.0 % unsecured senior notes due 2030 (“2030 notes”) at an issue price equal to  100 % of par value. The net proceeds from the issuance of the 2030 notes were used together with a borrowing on our $ 900.0  million revolving credit facility (“2023 facility”) to redeem the remaining $ 503.9  million in outstanding aggregate principal amount of  5.625 % senior secured notes due 2024 (“2024 notes”) and $ 47.5  million in aggregate principal amount of  6.75 % senior secured notes due 2027 (“2027 notes”) and to pay related transaction fees and expenses.   
+ In connection with the issuance of the 2030 notes, we incurred $ 8.3  million of various third-party fees and expenses. These costs have been recorded as a reduction to long-term debt and are being amortized over the contractual life of the 2030 notes using the effective interest method.  
+ As the Company concluded that the redemption of the 2024 notes and 2027 notes were debt extinguishments, the Company recorded a loss on extinguishment of $ 28.0  million in interest expense in the first quarter of 2020. Of this loss, approximately $ 22.7  million was attributable to the payment of redemption premiums on the extinguished notes and $ 5.3  million was attributable to the write-off of unamortized debt issuance costs and debt premium. 
+ Senior Unsecured Notes due 2030 
+ As of March 31, 2020, we have $ 550.0  million outstanding in aggregate principal amount of the 2030 notes, which mature on  March 1, 2030 . Interest accrues on the 2030 notes at a rate of  5.00 % per annum and is payable semi-annually on March 1 and September 1 of each year, commencing on September 1, 2020. 
+   
+ The terms of the 2030 notes are governed by the indenture, dated as of the February 11, 2020 (the “Indenture”), among the Company, the guarantors named therein and Wilmington Trust, National Association, as trustee. The 2030 notes, subject to certain exceptions, are guaranteed, jointly and severally, on a senior unsecured basis, by each of the Company’s direct and indirect wholly owned subsidiaries (the “Guarantors”) that guarantee its obligations under the Company’s 2023 Facility and existing senior secured term loan facility (the “2024 term loan,” and, together with the 2023 facility, the “Senior Secured Credit Facilities”) and the 2027 Secured Notes. Subject to certain exceptions, future subsidiaries that guarantee the Senior Secured Credit Facilities, the 2027 notes or certain other indebtedness will also guarantee the 2030 notes. 
+   
+ 9 
+ 
+   
+ The 2030 notes constitute senior unsecured obligations of the Company and  the  Guarantors,  pari passu  in right of payment with all of the existing and future senior indebtedness of the Company, including indebtedness under the Senior Secured Credit Facilities and the 2027  n otes . The 2030 notes are also (i)  effectively subordinated to all existing and future secured indebtedness of the Company and the Guarantors (including under the Senior Secured Credit Facilities and the 2027  n otes) to the extent of the value of the assets securing such indebtedness,  (ii)  senior to all of the future subordinated indebtedness of the Company and the Guarantors ,  and  (iii)  structurally subordinated to any existing and future indebtedness and other liabilities, including preferred stock, of the Company’s subsidia ries that do not guarantee the 2030 n otes . 
+   
+ The Indenture contains restrictive covenants that limit the ability of the Company and its restricted subsidiaries to, among other things, incur additional debt or issue preferred stock, create liens, create restrictions on the Company’s subsidiaries’ ability to make payments to the Company, pay dividends and make other distributions in respect of the Company’s and its subsidiaries’ capital stock, make certain investments or certain other restricted payments, guarantee indebtedness, designate unrestricted subsidiaries, sell certain kinds of assets, enter into certain types of transactions with affiliates, and effect mergers and consolidations. 
+ At any time prior to March 1, 2025, the Company may redeem the 2030 notes in whole or in part at a redemption price equal to  100 % of the principal amount of the 2030 notes plus the “applicable premium” set forth in the Indenture. In addition, at any time prior to March 1, 2023, the Company may redeem up to  40 % of the aggregate principal amount of the 2030 notes with the net cash proceeds of one or more equity offerings, as described in the Indenture, at a price equal to  105.0 % of the principal amount thereof, plus accrued and unpaid interest, if any, to the redemption date.  At any time on or after March 1, 2025, the Company may redeem the 2030 notes at the redemption prices set forth in the Indenture, plus accrued and unpaid interest, if any, to the redemption date. If the Company experiences certain change of control events, holders of the 2030 notes may require it to repurchase all or part of their 2030 notes at  101 % of the principal amount thereof, plus accrued and unpaid interest, if any, to the repurchase date. 
+ Fair Value 
+ As of March 31, 2020 and December 31, 2019, the Company does not have any financial instruments which are measured at fair value on a recurring basis. We have elected to report the value of our 2027 notes, 2030 notes, 2024 term loan and 2023 facility at amortized cost. The fair values of the 2027 notes, 2030 notes and the 2024 term loan at March 31, 2020 were approximately $ 419.4  million, $ 503.4  million and $ 45.6  million, respectively, and were determined using Level 2 inputs based on market prices. The carrying value of the 2023 facility at March 31, 2020 approximates fair value as the rates are comparable to those at which we could currently borrow under similar terms, are variable and incorporate a measure of our credit risk. As such, the fair value of the 2023 facility was also classified as Level 2 in the hierarchy. 
+ We were not in violation of any covenants or restrictions imposed by any of our debt agreements at March 31, 2020. 
+   
+ 5. Business Combination 
+ On January 9, 2020, we acquired certain assets and operations of Bianchi & Company, Inc. (“Bianchi”) for $ 15.9  million in cash. Located in Charlotte, North Carolina, Bianchi is a supplier and installer of interior and exterior millwork. This acquisition was funded with a combination of cash on hand and borrowings under our 2023 facility. 
+ This transaction was accounted for by the acquisition method, and accordingly the results of operations have been included in the Company’s consolidated financial statements from the acquisition date. The purchase price was allocated to the assets acquired and liabilities assumed based on estimated fair values at the acquisition date, with the excess of purchase price over the estimated fair value of the net assets acquired recorded as goodwill. The fair value of acquired intangible assets of $ 9.4  million, primarily related to customer relationships, was estimated by applying an income approach. That measure is based on significant Level 3 inputs not observable in the market. Key assumptions developed based on the Company’s historical experience, future projections and comparable market data include future cash flows, long-term growth rates, attrition rates and discount rates. Pro forma results of operations as well as net sales and income attributable to Bianchi are not presented as this acquisition did not have a material impact on our results of operations. We did not incur any significant acquisition related costs attributable to this transaction.  
+ 10 
+ 
+   
+ The following table summarizes the aggregate fair values of the assets acquired and liabilities assumed at the acquisition date (in thousands):  
+   
+ 
+ 
+ 
+ 
+ Accounts receivable  
+ 
+ $ 
+ 
+ 2,353 
+ 
+   
+ 
+ 
+ 
+ Inventory 
+ 
+   
+ 
+ 202 
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment 
+ 
+   
+ 
+ 74 
+ 
+   
+ 
+ 
+ 
+ Other assets 
+ 
+   
+ 
+ 94 
+ 
+   
+ 
+ 
+ 
+ Goodwill  (Note 6) 
+ 
+   
+ 
+ 8,261 
+ 
+   
+ 
+ 
+ 
+ Intangible assets (Note 7) 
+ 
+   
+ 
+ 9,440 
+ 
+   
+ 
+ 
+ 
+ Total assets acquired 
+ 
+   
+ 
+ 20,424 
+ 
+   
+ 
+ 
+ 
+ Accounts payable and accrued liabilities 
+ 
+   
+ 
+ ( 4,531 
+ 
+ ) 
+ 
+ 
+ 
+ Total liabilities assumed 
+ 
+   
+ 
+ ( 4,531 
+ 
+ ) 
+ 
+ 
+ 
+ Total net assets acquired 
+ 
+ $ 
+ 
+ 15,893 
+ 
+   
+ 
+ 
+   
+ 6.  Goodwill  
+ The following table sets forth the changes in the carrying amount of goodwill by reportable segment for the three months ended March 31, 2020 (in thousands): 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Northeast 
+ 
+   
+ 
+   
+ 
+ Southeast 
+ 
+   
+ 
+   
+ 
+ South 
+ 
+   
+ 
+   
+ 
+ West 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+ Balance as of December 31, 2019 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+ $ 
+ 
+ 97,102 
+ 
+   
+ 
+ $ 
+ 
+ 60,691 
+ 
+   
+ 
+ $ 
+ 
+ 343,919 
+ 
+   
+ 
+ $ 
+ 
+ 311,946 
+ 
+   
+ 
+ $ 
+ 
+ 813,658 
+ 
+   
+ 
+ 
+ 
+ Accumulated impairment losses 
+ 
+   
+ 
+   
+ 
+ ( 494 
+ 
+ ) 
+ 
+   
+ 
+ ( 615 
+ 
+ ) 
+ 
+   
+ 
+ ( 43,527 
+ 
+ ) 
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ ( 44,636 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 96,608 
+ 
+   
+ 
+   
+ 
+ 60,076 
+ 
+   
+ 
+   
+ 
+ 300,392 
+ 
+   
+ 
+   
+ 
+ 311,946 
+ 
+   
+ 
+   
+ 
+ 769,022 
+ 
+   
+ 
+ 
+ 
+ Acquisitions 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ 8,261 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ 8,261 
+ 
+   
+ 
+ 
+ 
+ Balance as of March 31, 2020 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+ $ 
+ 
+ 97,102 
+ 
+   
+ 
+ $ 
+ 
+ 68,952 
+ 
+   
+ 
+ $ 
+ 
+ 343,919 
+ 
+   
+ 
+ $ 
+ 
+ 311,946 
+ 
+   
+ 
+ $ 
+ 
+ 821,919 
+ 
+   
+ 
+ 
+ 
+ Accumulated impairment losses 
+ 
+   
+ 
+   
+ 
+ ( 494 
+ 
+ ) 
+ 
+   
+ 
+ ( 615 
+ 
+ ) 
+ 
+   
+ 
+ ( 43,527 
+ 
+ ) 
+ 
+   
+ 
+ — 
+ 
+   
+ 
+   
+ 
+ ( 44,636 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 96,608 
+ 
+   
+ 
+ $ 
+ 
+ 68,337 
+ 
+   
+ 
+ $ 
+ 
+ 300,392 
+ 
+   
+ 
+ $ 
+ 
+ 311,946 
+ 
+   
+ 
+ $ 
+ 
+ 777,283 
+ 
+   
+ 
+ 
+   
+ In 2020, the change in the carrying amount of goodwill is attributable to our acquisition of Bianchi.  The amount allocated to goodwill is attributable to the assembled workforce of Bianchi as well as expected growth from the expanded millwork product and service operations acquired.  All of the goodwill recognized from this acquisition is expected to be deductible for tax purposes and will be amortized ratably over a  15 -year period for tax purposes. 
+   
+ 7.  Intangible Assets  
+ The following table presents intangible assets as of: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+    
+ 
+ March 31, 2020 
+ 
+   
+ 
+   
+ 
+ December 31, 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+    
+ 
+ Gross 
+ Carrying 
+ Amount 
+ 
+   
+ 
+    
+ 
+ Accumulated 
+ Amortization 
+ 
+   
+ 
+   
+ 
+ Gross 
+ Carrying 
+ Amount 
+ 
+   
+ 
+    
+ 
+ Accumulated 
+ Amortization 
+ 
+   
+ 
+ 
+ 
+   
+ 
+    
+ 
+ (In thousands) 
+ 
+   
+ 
+ 
+ 
+ Customer relationships  
+ 
+    
+ 
+ $ 
+ 
+ 191,305 
+ 
+    
+ 
+    
+ 
+ $ 
+ 
+ ( 81,619 
+ 
+ )  
+ 
+   
+ 
+ $ 
+ 
+ 183,445 
+ 
+    
+ 
+    
+ 
+ $ 
+ 
+ ( 77,016 
+ 
+ )  
+ 
+ 
+ 
+ Trade names 
+ 
+   
+ 
+   
+ 
+ 52,061 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 36,556 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 51,361 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 36,082 
+ 
+ ) 
+ 
+ 
+ 
+ Subcontractor relationships 
+ 
+   
+ 
+   
+ 
+ 5,440 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 584 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 4,700 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 131 
+ 
+ ) 
+ 
+ 
+ 
+ Non-compete agreements 
+ 
+   
+ 
+   
+ 
+ 3,719 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 1,601 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 3,579 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 1,468 
+ 
+ ) 
+ 
+ 
+ 
+ Total intangible assets 
+ 
+   
+ 
+ $ 
+ 
+ 252,525 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 120,360 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 243,085 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 114,697 
+ 
+ ) 
+ 
+ 
+   
+ In connection with the acquisition of Bianchi, we recorded intangible assets of $ 9.4  million, which includes $ 7.9  million of customer relationships, $ 0.7  million of subcontractor relationships, $ 0.7  million of trade names and $ 0.1  million of non-compete agreements. The weighted average useful lives of the acquired assets are  8.2  years in total,  9.3  years for customer relationships,  3.0  years for subcontractor relationships,  3.0  years for trade names and  3.0  years for non-compete agreements, respectively. 
+   
+ 11 
+ 
+   
+ During the three months ended March 31, 2020, we recorded amortization expense in relation to the above-listed intangible assets of $ 5.7  million.  During the three months ended March 31, 2019, we recorded amortization expense in relation to the above-listed intangible assets of $ 3.9  million. 
+   
+ The following table presents the estimated amortization expense for these intangible assets for the years ending December 31 (in thousands): 
+   
+ 
+ 
+ 
+ 
+ 2020 (from April 1, 2020) 
+ 
+    
+ 
+ $ 
+ 
+ 16,262 
+ 
+    
+ 
+ 
+ 
+ 2021  
+ 
+    
+ 
+   
+ 
+ 20,231 
+ 
+    
+ 
+ 
+ 
+ 2022  
+ 
+    
+ 
+   
+ 
+ 18,671 
+ 
+    
+ 
+ 
+ 
+ 2023  
+ 
+    
+ 
+   
+ 
+ 15,408 
+ 
+    
+ 
+ 
+ 
+ 2024  
+ 
+    
+ 
+   
+ 
+ 14,094 
+ 
+    
+ 
+ 
+ 
+ Thereafter 
+ 
+   
+ 
+   
+ 
+ 47,499 
+ 
+   
+ 
+ 
+ 
+ Total future net intangible amortization expense 
+ 
+   
+ 
+ $ 
+ 
+ 132,165 
+ 
+   
+ 
+ 
+   
+   
+ 8.  Employee Stock-Based Compensation 
+   
+ Time Based Restricted Stock Unit Grants 
+ In the first quarter of 2020, our board of directors granted  291,000  RSUs to employees under our 2014 Incentive Plan for which vesting is based solely on continuous employment over the requisite service period.  206,000  of the RSUs vest at  33 % per year at each anniversary of the grant date over the next  three years  and  85,000  of the RSUs cliff vest on the second anniversary of the grant date. The weighted average grant date fair value for these RSUs was $ 22.71  per unit, which was based on the closing stock price on the grant date. 
+   
+ Performance, Market and Service Condition Based Restricted Stock Unit Grants   
+ In the first quarter of 2020, our board of directors granted  206,000  RSUs to employees under our 2014 Incentive Plan, that cliff vest on the third anniversary of the grant date based on the Company’s level of achievement of performance goals relating to return on invested capital (“ROIC”) over a  three-year  period (“performance condition”) as well as continued employment during the performance period. The total number of shares of common stock that may be earned from the performance condition ranges from  zero  to  200 % of the RSUs granted. The number of shares earned from the performance condition may be further increased by  10 % or decreased by  10 % based on the Company’s total shareholder return relative to a peer group during the performance period (“market condition”).  The average grant date fair value for these RSUs, with consideration of the market condition, was $ 23.18  per unit, which was determined using the Monte Carlo simulation model using the following assumptions: 
+   
+ 
+ 
+ 
+ 
+ Expected volatility (company) 
+ 
+ 40.0 % 
+ 
+   
+ 
+ 
+ 
+ Expected volatility (peer group median) 
+ 
+ 40.0 % 
+ 
+   
+ 
+ 
+ 
+ Correlation between the company and peer group median 
+ 
+ 0.5 
+ 
+   
+ 
+ 
+ 
+ Expected dividend yield 
+ 
+ 0.0 % 
+ 
+   
+ 
+ 
+ 
+ Risk-free rate 
+ 
+ 0.9 % 
+ 
+   
+ 
+ 
+   
+ The expected volatilities and correlation are based on the historical daily returns of our common stock and the common stocks of the constituents of the Company’s peer group over the most recent period equal to the measurement period. The expected dividend yield is based on our history of not paying regular dividends in the past and our current intention to not pay regular dividends in the foreseeable future. The risk-free rate is based on the U.S. Treasury yield curve in effect at the time of grant and has a term equal to the measurement period. 
+ 12 
+ 
+   
+ 9.  Income Taxes   
+ A reconciliation of the statutory federal income tax rate to our effective rate for continuing operations is provided below: 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+ 
+ 
+ Statutory federal income tax rate 
+ 
+   
+ 
+ 21.0 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 21.0 
+ 
+ % 
+ 
+ 
+ 
+ State income taxes, net of federal income tax 
+ 
+   
+ 
+ 2.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.2 
+ 
+   
+ 
+ 
+ 
+ Stock compensation windfall benefit 
+ 
+   
+ 
+ ( 16.0 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ ( 0.1 
+ 
+ )  
+ 
+ 
+ 
+ Permanent differences and other 
+ 
+   
+ 
+ ( 4.4 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 1.1 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2.8 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 24.0 
+ 
+ % 
+ 
+ 
+   
+ On March 27, 2020, President Trump signed the Coronavirus Aid, Relief, and Economic Security Act ("CARES Act") into law. The CARES Act is a relief package intended to assist many aspects of the American economy disrupted by the COVID-19 pandemic. We are currently evaluating the impact of the CARES Act on our consolidated financial statements.   
+ We base our estimate of deferred tax assets and liabilities on current tax laws and rates. In certain cases, we also base our estimate on business plan forecasts and other expectations about future outcomes. Changes in existing tax laws or rates could affect our actual tax results, and future business results may affect the amount of our deferred tax liabilities or the valuation of our deferred tax assets over time. Due to uncertainties in the estimation process, particularly with respect to changes in facts and circumstances in future reporting periods, as well as the residential homebuilding industry’s cyclicality and sensitivity to changes in economic conditions, particularly due to economic disruptions related to the COVID-19 pandemic, it is possible that actual results could differ from the estimates used in previous analyses.   
+ Accounting for deferred taxes is based upon estimates of future results. Differences between the anticipated and actual outcomes of these future results could have a material impact on our consolidated results of operations or financial position. 
+ 10.  Commitments and Contingencies   
+ As of March 31, 2020, we had outstanding letters of credit totaling $ 82.2  million under our 2023 facility that principally support our self-insurance programs.  
+ The Company has a number of known and threatened construction defect legal claims.  While these claims are generally covered under the Company’s existing insurance programs to the extent any loss exceeds the deductible, there is a reasonable possibility of loss that is not able to be estimated at this time because (i) many of the proceedings are in the discovery stage, (ii) the outcome of future litigation is uncertain, and/or (iii) the complex nature of the claims.  Although the Company cannot estimate a reasonable range of loss based on currently available information, the resolution of these matters could have a material adverse effect on the Company's financial position, results of operations or cash flows. 
+ In addition, we are involved in various other claims and lawsuits incidental to the conduct of our business in the ordinary course. We carry insurance coverage in such amounts in excess of our self-insured retention as we believe to be reasonable under the circumstances and that may or may not cover any or all of our liabilities in respect of such claims and lawsuits. Although the ultimate disposition of these other proceedings cannot be predicted with certainty, management believes the outcome of any such claims that are pending or threatened, either individually or on a combined basis, will not have a material adverse effect on our consolidated financial position, cash flows or results of operations.  However, there can be no assurances that future adverse judgments and costs would not be material to our results of operations or liquidity for a particular period. 
+   
+   
+ 11.  Segment Information   
+ We offer an integrated solution to our customers providing manufacturing, supply, and installation of a full range of structural and related building products.  We provide a wide variety of building products and services directly to homebuilder customers. We manufacture floor trusses, roof trusses, wall panels, stairs, millwork, windows, and doors. We also provide a full range of construction services. These product and service offerings are distributed across approximately  400  locations operating in  40  states across the United States, which are organized into  nine  geographical regions.  Centralized financial and operational oversight, including resource allocation and assessment of performance on an income before income taxes basis, is performed by our CEO, whom we have determined to be our chief operating decision maker (“CODM”).     
+ 13 
+ 
+   
+ The Company has  nine  operating segments aligned with its nine geographical regions (Regions 1 through 9). While all of our operating segments have products, distribution methods and customers of a similar nature, certain of our operating segments have been aggregated due to also containing similar economic characteristics, resulting in the following composition of reportable segments:  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Regions 1 and 2 have been aggregated to form the “Northeast” reportable segment  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Regions 3 and 5 have been aggregated to form the “Southeast” reportable segment   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Regions 4 and 6 have been aggregated to form the “South” reportable segment 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Region 7, 8 and 9 have been aggregated to form the “West” reportable segment 
+ In addition to our reportable segments, our consolidated results include corporate overhead, other various operating activities that are not internally allocated to a geographical region nor separately reported as a single unit to the CODM, and certain reconciling items primarily related to allocations of corporate overhead and rent expense, which have collectively been presented as “All Other”.  The accounting policies of the segments are consistent with those referenced in Note 1, except for noted reconciling items.   
+ The following tables present Net sales, Income before income taxes and certain other measures for the reportable segments, reconciled to total consolidated operations, for the periods indicated (in thousands): 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three months ended March 31, 2020 
+ 
+   
+ 
+ 
+ 
+ Reportable segments 
+ 
+   
+ 
+ Net Sales 
+ 
+   
+ 
+   
+ 
+ Depreciation & 
+ Amortization 
+ 
+   
+ 
+   
+ 
+ Interest 
+ 
+   
+ 
+   
+ 
+ Income before 
+ income taxes 
+ 
+   
+ 
+ 
+ 
+ Northeast 
+ 
+   
+ 
+ $  
+ 
+ 295,573 
+ 
+   
+ 
+   
+ 
+ $  
+ 
+ 3,497 
+ 
+   
+ 
+   
+ 
+ $  
+ 
+ 4,931 
+ 
+   
+ 
+   
+ 
+ $  
+ 
+ 4,616 
+ 
+   
+ 
+ 
+ 
+ Southeast 
+ 
+   
+ 
+   
+ 
+ 400,384 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,843 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5,306 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16,577 
+ 
+   
+ 
+ 
+ 
+ South 
+ 
+   
+ 
+   
+ 
+ 499,804 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,831 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5,664 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 23,333 
+ 
+   
+ 
+ 
+ 
+ West 
+ 
+   
+ 
+   
+ 
+ 516,767 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7,594 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9,322 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4,420 
+ 
+   
+ 
+ 
+ 
+ Total reportable segments 
+ 
+   
+ 
+   
+ 
+ 1,712,528 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 21,765 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 25,223 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 48,946 
+ 
+   
+ 
+ 
+ 
+ All other 
+ 
+   
+ 
+   
+ 
+ 74,493 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7,635 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 26,708 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 39,930 
+ 
+ ) 
+ 
+ 
+ 
+ Total consolidated 
+ 
+   
+ 
+ $ 
+ 
+ 1,787,021 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 29,400 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 51,931 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,016 
+ 
+   
+ 
+ 
+ 
+   
+   
+   
+ 
+   
+ 
+ Three months ended March 31, 2019 
+ 
+   
+ 
+ 
+ 
+ Reportable segments 
+ 
+   
+ 
+ Net Sales 
+ 
+   
+ 
+   
+ 
+ Depreciation & 
+ Amortization 
+ 
+   
+ 
+   
+ 
+ Interest 
+ 
+   
+ 
+   
+ 
+ Income before 
+ income taxes 
+ 
+   
+ 
+ 
+ 
+ Northeast 
+ 
+   
+ 
+ $  
+ 
+ 285,789 
+ 
+   
+ 
+   
+ 
+ $  
+ 
+ 3,205 
+ 
+   
+ 
+   
+ 
+ $  
+ 
+ 5,177 
+ 
+   
+ 
+   
+ 
+ $  
+ 
+ 7,244 
+ 
+   
+ 
+ 
+ 
+ Southeast 
+ 
+   
+ 
+   
+ 
+ 386,673 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3,033 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5,582 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 17,256 
+ 
+   
+ 
+ 
+ 
+ South 
+ 
+   
+ 
+   
+ 
+ 458,609 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4,832 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5,900 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 29,010 
+ 
+   
+ 
+ 
+ 
+ West 
+ 
+   
+ 
+   
+ 
+ 436,313 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,364 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8,741 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 404 
+ 
+ )  
+ 
+ 
+ 
+ Total reportable segments 
+ 
+   
+ 
+   
+ 
+ 1,567,384 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 17,434 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 25,400 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 53,106 
+ 
+   
+ 
+ 
+ 
+ All other 
+ 
+   
+ 
+   
+ 
+ 63,916 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,142 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 499 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 6,116 
+ 
+ ) 
+ 
+ 
+ 
+ Total consolidated 
+ 
+   
+ 
+ $ 
+ 
+ 1,631,300 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 23,576 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 24,901 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 46,990 
+ 
+   
+ 
+ 
+   
+ Asset information by segment is not reported internally or otherwise reviewed by the CODM nor does the Company earn revenues or have long-lived assets located in foreign countries.       
+   
+   
+ 14 
+ 
+   
+ 12.  Related Party Transactions   
+ Certain members of the Company’s board of directors serve on the board of directors for one of our suppliers, PGT Innovations, Inc.  Further, the Company has entered into certain leases of land and buildings with certain employees or non-affiliate stockholders. Activity associated with these related party transactions was not significant as of or for the three months ended March 31, 2020 or 2019. 
+ Transactions between the Company and other related parties occur in the ordinary course of business. However, the Company carefully monitors and assesses related party relationships. Management does not believe that any of these transactions with related parties had a material impact on the Company’s results for the three months ended March 31, 2020 or 2019. 
+   
+   
+ 13.  Subsequent Events 
+ In April 2020, we completed a private offering of an additional $ 350.0  million in aggregate principal amount of 2027 notes at an issue price of  98.75 % of par value. The Company intends to use the net proceeds from the offering to repay the funds drawn under its revolving credit facility and to pay related transaction fees and expenses, with any remaining net proceeds to be used for general corporate purposes.   
+   
+   
+ 15 
+ 
+   
+ Item 2.  Management’s Discussion and Analysis of Financial Condition and Results of Operations   
+ The following discussion of our financial condition and results of operations should be read in conjunction with the Management’s Discussion and Analysis of Financial Condition and Results of Operations and the consolidated financial statements and notes thereto for the year ended December 31, 2019 included in our most recent annual report on Form 10-K. The following discussion and analysis should also be read in conjunction with the unaudited condensed consolidated financial statements appearing elsewhere in this report. In this quarterly report on Form 10-Q, references to the “company,” “we,” “our,” “ours” or “us” refer to Builders FirstSource, Inc. and its consolidated subsidiaries unless otherwise stated or the context otherwise requires.  
+ Cautionary Statement  
+ Statements in this report and the schedules hereto that are not purely historical facts or that necessarily depend upon future events, including statements about expected market share gains, forecasted financial performance or other statements about anticipations, beliefs, expectations, hopes, intentions or strategies for the future, may be forward-looking statements within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended.  Readers are cautioned not to place undue reliance on forward-looking statements. In addition, oral statements made by our directors, officers and employees to the investor and analyst communities, media representatives and others, depending upon their nature, may also constitute forward-looking statements. As with the forward-looking statements included in this report, these forward-looking statements are by nature inherently uncertain, and actual results may differ materially as a result of many factors.  All forward-looking statements are based upon information available to Builders FirstSource, Inc. on the date this report was submitted.  Builders FirstSource, Inc. undertakes no obligation to publicly update or revise any forward-looking statements, whether as a result of new information, future events or otherwise. Any forward-looking statements involve risks and uncertainties that could cause actual events or results to differ materially from the events or results described in the forward-looking statements, including risks or uncertainties related to the recent novel coronavirus disease 2019 (“COVID-19”) pandemic, the Company’s growth strategies, including gaining market share, or the Company’s revenues and operating results being highly dependent on, among other things, the homebuilding industry, lumber prices and the economy.  Builders FirstSource, Inc. may not succeed in addressing these and other risks.  Further information regarding factors that could affect our financial and other results can be found in the risk factors section of Builders FirstSource, Inc.’s most recent Annual Report on Form 10-K filed with the Securities and Exchange Commission.  Consequently, all forward-looking statements in this report are qualified by the factors, risks and uncertainties contained therein. 
+ COMPANY OVERVIEW  
+ We are a leading supplier and manufacturer of building materials, manufactured components and construction services to professional contractors, sub-contractors and consumers. The Company operates approximately 400 locations in 40 states across the United States. Given the span and depth of our geographical reach, our locations are organized into nine geographical regions (Regions 1 through 9), which are also our operating segments, and these are further aggregated into four reportable segments: Northeast, Southeast, South and West. All of our segments have similar customers, products and services, and distribution methods. Our financial statements contain additional information regarding segment performance which is discussed in Note 11 to the condensed consolidated financial statements included in Item 1 of this quarterly report on Form 10-Q.  
+ We offer an integrated solution to our customers providing manufacturing, supply and installation of a full range of structural and related building products. Our manufactured products include our factory-built roof and floor trusses, wall panels and stairs, vinyl windows, custom millwork and trim, as well as engineered wood that we design, cut, and assemble for each home. We also assemble interior and exterior doors into pre-hung units. Additionally, we supply our customers with a broad offering of professional grade building products not manufactured by us, such as dimensional lumber and lumber sheet goods and various window, door and millwork lines. Our full range of construction-related services includes professional installation, turn-key framing and shell construction, and spans all our product categories.  
+ We group our building products into six product categories: 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Lumber & Lumber Sheet Goods.  Lumber & lumber sheet goods include dimensional lumber, plywood, and OSB products used in on-site house framing.   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Manufactured Products.  Manufactured products consist of wood floor and roof trusses, steel roof trusses, wall panels, stairs, and engineered wood. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Windows, Door & Millwork.  Windows & doors are comprised of the manufacturing, assembly, and distribution of windows and the assembly and distribution of interior and exterior door units. Millwork includes interior trim and custom features that we manufacture under the Synboard  ®  brand name.   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Gypsum, Roofing & Insulation.  Gypsum, roofing, & insulation include wallboard, ceilings, joint treatment and finishes.   
+ 16 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Siding, Metal, and Concrete.   Siding, metal, and concrete includes vinyl, composite, and wood siding, exterior trim, other exteriors, metal studs and cement. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Other Building Products & Services.  Other building products & services are comprised of products such as cabinets and hardware as well as services such as turn-key framing, shell construction, design assistance, and professional installation spanning the majority of our product categories. 
+ Our operating results are dependent on the following trends, events and uncertainties, some of which are beyond our control:  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Homebuilding Industry.  Our business is driven primarily by the residential new construction market and the residential repair and remodel market, which are in turn dependent upon a number of factors, including demographic trends, interest rates, consumer confidence, employment rates, housing affordability, foreclosure rates, the availability of skilled construction labor, and the health of the economy and mortgage markets. According to the U.S. Census Bureau, the seasonally adjusted annualized rates for U.S. total housing starts and U.S. single-family housing starts were 1.2 million and 0.9 million, respectively, as of March 31, 2020. However, both total and single-family housing starts remain below the normalized historical annual averages (from 1959 through 2019) of 1.5 million and 1.1 million, respectively.  
+ In March of 2020, the U.S. economy began to see significant disruption and uncertainty from the impacts of the COVID-19 pandemic.  The extent and duration of this disruption and uncertainty are yet to be fully known, and we expect to experience a decline in housing starts, reduced sales demand, increased margin pressures and increased operating costs as a result.  In addition to the COVID-19 effect, we may continue to experience pressure on our gross margins due to lower levels of housing starts versus historical norms, increased competition for homebuilder business and cyclical fluctuations in commodity prices.  Although, there has been a trend of consolidation within the building products supply industry over the past several years, our industry remains highly fragmented and competitive and we will continue to face significant competition from local and regional suppliers. While it is uncertain how long demand will be disrupted due to the current pandemic, we still believe there are several meaningful trends that indicate U.S. housing demand will rebound and continue to trend towards recovering to the historical average. These trends include relatively low interest rates, the aging of housing stock and normal population growth due to immigration and birth rate exceeding death rate. While the rate of market growth has recently been disrupted, industry forecasters, including the National Association of Homebuilders (“NAHB”), expect to see housing demand return and continue to increase in future years. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Targeting Large Production Homebuilders.  In recent years, the homebuilding industry has undergone consolidation, and the larger homebuilders have increased their market share. We expect that trend to continue as larger homebuilders have better liquidity and land positions relative to the smaller, less capitalized homebuilders. Our focus is on maintaining relationships and market share with these customers while balancing the competitive pressures we are facing in servicing large homebuilders with certain profitability expectations. Additionally, we have been successful in expanding our custom homebuilder base while maintaining acceptable credit standards.      
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Repair and remodel end market .  Although the repair and remodel end market is influenced by housing starts to a lesser degree than the homebuilding market, the repair and remodel end market is still dependent upon some of the same factors as the homebuilding market, including demographic trends, interest rates, consumer confidence, employment rates and the health of the economy and home financing markets. The repair and remodel end market has been disrupted by the COVID-19 pandemic and while the extent of these disruptions and uncertainties are yet to be fully known, we expect to experience reduced sales demand, increased margin pressures and increased operating costs in this area of our business as a result.  We expect that our ability to remain competitive in this space will depend on our continued ability to provide a high level of customer service coupled with a broad product offering.   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Use of Prefabricated Components.  Homebuilders are increasingly using prefabricated components in order to realize increased efficiency, overcome skilled construction labor shortages and improve quality. Shortening cycle time from start to completion is a key imperative of the homebuilders during periods of strong consumer demand. We continue to see the demand for prefabricated components increasing within the residential new construction market as the availability of skilled construction labor remains limited. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Economic Conditions.  Economic changes both nationally and locally in our markets impact our financial performance. The building products supply industry is highly dependent upon new home construction and subject to cyclical market changes. Our operations are subject to fluctuations arising from changes in supply and demand, national and local economic conditions, labor costs and availability, competition, government regulation, trade policies and other factors that affect the homebuilding industry such as demographic trends, interest rates, housing starts, the high cost of land development, employment levels, consumer confidence, and the availability of credit to homebuilders, contractors, and homeowners. The disruptions and uncertainties as a result of the ensuing COVID-19 pandemic are expected to have a significant impact on our current and potentially future operating results. 
+ 17 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Housing Affordability.   The affordability of housing can be a key driver in demand for our products. Home affordability is influenced by a number of economic factors, such as the level of employment, consumer confidence, consumer income, the supply of houses, the availability of financing and interest rates. Changes in the inventory of available homes as well as economic factors relative to home prices could result in changes to the affordability of homes. As a result, homebuyer demand may shift towards smaller, or larger, homes creating fluctuations in demand for our products. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Cost of Materials.  Prices of wood products, which are subject to cyclical market fluctuations, may adversely impact operating income when prices rapidly rise or fall within a relatively short period of time. We purchase certain materials, including lumber products, which are then sold to customers as well as used as direct production inputs for our manufactured and prefabricated products. Short-term changes in the cost of these materials, some of which are subject to significant fluctuations, are oftentimes passed on to our customers, but our pricing quotation periods and market competition may limit our ability to pass on such price changes. We may also be limited in our ability to pass on increases on in-bound freight costs on our products. Our inability to pass on material price increases to our customers could adversely impact our operating results. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Controlling Expenses.  Another important aspect of our strategy is controlling costs and striving to be a low-cost building materials supplier in the markets we serve. We pay close attention to managing our working capital and operating expenses. Further, we pay careful attention to our logistics function and its effect on our shipping and handling costs.   The disruptive impacts of the COVID-19 pandemic on our operating expenses could be significant. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Multi-Family and Light Commercial Business.  Our primary focus has been, and continues to be, on single-family residential new construction and the repair and remodel end market. However, we will continue to identify opportunities for profitable growth in the multi-family and light commercial markets. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Capital Structure:  As a result of our historical growth through acquisitions, we have substantial indebtedness. We strive to optimize our capital structure to ensure that our financial needs are met in light of economic conditions, business activities, organic investments, opportunities for growth through acquisition and the overall risk characteristics of our underlying assets. In addition to these factors, we also evaluate our capital structure on the basis of our leverage ratio, our liquidity position, our debt maturity profile and market interest rates. As such, we may enter into various debt or equity transactions in order to appropriately manage and optimize our capital structure and liquidity needs. 
+ RECENT DEVELOPMENTS 
+ Debt Transactions 
+ In February 2020, the Company completed a private offering of $550.0 million in aggregate principal amount of 5.0% unsecured senior notes due 2030 (“2030 notes”) at an issue price equal to 100% of their par value. The proceeds from the issuance of the 2030 notes were used together with a borrowing on our $900.0 million revolving credit facility (“2023 facility”) to redeem the remaining $503.9 million in outstanding aggregate principal amount of 5.625% senior secured notes due 2024 (“2024 notes”) and $47.5 million in aggregate principal amount of 6.75% senior secured notes due 2027 (“2027 notes”) and to pay related transaction fees and expenses.  Further, in April 2020, we issued an additional $350 million in aggregate principal amount of our 2027 notes.  Collectively, these transactions have extended our debt maturity profile and strengthened our liquidity position. 
+ These transactions are described in Notes 4 and 13 to the condensed consolidated financial statements included in Item 1 of this quarterly report on Form 10-Q. From time to time, based on market conditions and other factors and subject to compliance with applicable laws and regulations, the Company may repurchase or call our notes, repay debt, repurchase shares of our common stock or otherwise enter into transactions regarding its capital structure. 
+ Business Combinations 
+ On January 9, 2020, we acquired certain assets and operations of Bianchi & Company, Inc. (“Bianchi”) for $15.9 million in cash. Located in Charlotte, North Carolina, Bianchi is a supplier and installer of interior and exterior millwork.  
+ This acquisition is described in Note 5 to the consolidated financial statements included in Item 1 of this quarterly report on Form 10-Q. 
+ Retirement of President and Chief Executive Officer 
+ On January 10, 2020, Mr. Crow notified our Board of his decision to retire as President and Chief Executive Officer of the Company during 2020 after assisting the Board in hiring his replacement. However, Mr. Crow has agreed to defer his retirement and stay on as CEO until the COVID-19 situation stabilizes and the Company can resume normal operations. Mr. Crow has also agreed to continue with the Company in a consulting capacity for a period of time following the appointment of a new Chief Executive Officer to assist in the transition. 
+ 18 
+ 
+   
+ CURRENT OPERATING CONDITIONS AND OUTLOOK  
+ Though the level of housing starts remains below the historical average, the homebuilding industry has improved since 2011. However, in March of 2020, the U.S. economy began to see significant disruption and uncertainty from the impacts of the COVID-19 pandemic.  While the extent of these disruptions and uncertainties is yet to be fully known, we expect to experience reduced sales demand, increased margin pressures and increased operating costs as a result.  For the first quarter of 2020, actual U.S. total housing starts were 0.3 million, a 22.3% increase compared to the first quarter of 2019. Actual U.S. single-family starts were 0.2 million in the first quarter of 2020, a 12.4% increase compared to the same quarter a year ago. Recent forecasts from a composite of third party sources, including the NAHB, estimate 1.2 million U.S. total housing starts and 0.8 million U.S single family housing starts for the full year 2020, which are decreases of 7.2% and 7.1%, respectively from 2019 primarily as a result of ensuing disruptions from the COVID-19 pandemic. In addition, the Home Improvement Research Institute (“HIRI”) is forecasting sales in the professional repair and remodel end market to decrease approximately 10.0% in 2020 compared to 2019. 
+ Our net sales for the first quarter of 2020 increased 9.5% from the same period last year. Acquisitions accounted for 3.5% of our sales growth in the first quarter of 2020, while commodity price inflation and one more selling day increased our sales by 0.4% and 1.7%, respectively.  Excluding the impact of acquisitions, commodity price inflation and the impact of one more selling day, we achieved 3.9% core organic sales growth in the single-family, multi-family and repair and remodel/other end markets. Our gross profit percentage in the first quarter of 2020 decreased by 1.1% compared to the first quarter of 2019 where we experienced stronger gross margin percentage as a result of commodity deflation in the period. In addition, sales volume growth in the majority of our product categories contributed to increased gross margin dollars compared to the first quarter of 2019. Our selling, general and administrative expenses, as a percentage of net sales, were 22.6% in the first quarter of 2020, a 0.1% decrease from 22.7% in the first quarter of 2019, driven primarily by cost leverage on increased sales volumes. 
+ While temporarily hampered by the disruptions and uncertainties brought on by the COVID-19 pandemic, we believe the long-term outlook for the housing industry is positive due to growth in the underlying demographics. We feel we are well-positioned to take advantage of the construction activity in our markets and to increase our market share, which may include strategic acquisitions. We will continue to focus on working capital by closely monitoring the credit exposure of our customers, remaining focused on maintaining the right level of inventory and by working with our vendors to improve payment terms and pricing on our products. We strive to achieve the appropriate balance of short-term expense control while maintaining the expertise and capacity to grow the business as market conditions improve. In addition, optimization of our capital structure will continue to be a key area of focus for the Company.  
+ SEASONALITY AND OTHER FACTORS  
+ Our first and fourth quarters have historically been, and are generally expected to continue to be, adversely affected by weather causing reduced construction activity during these quarters. In addition, quarterly results historically have reflected, and are expected to continue to reflect, fluctuations from period to period arising from the following:  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ The volatility of lumber prices;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ The cyclical nature of the homebuilding industry;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ General economic conditions in the markets in which we compete;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ The pricing policies of our competitors;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ The production schedules of our customers; and  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ The effects of weather.  
+ The composition and level of working capital typically change during periods of increasing sales as we carry more inventory and receivables. Working capital levels typically increase in the first and second quarters of the year due to higher sales during the peak residential construction season. These increases have in the past resulted in negative operating cash flows during this peak season, which historically have been financed through available cash and borrowing availability under credit facilities. Collection of receivables and reduction in inventory levels following the peak building and construction season have in the past positively impacted cash flow.  
+ 19 
+ 
+   
+ RESULTS OF OPERATIONS  
+ The following table sets forth, for the three months ended March 31, 2020 and 2019, the percentage relationship to net sales of certain costs, expenses and income items:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three Months Ended 
+ March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+ 
+ 
+ Sales 
+ 
+   
+ 
+ 100.0 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 100.0 
+ 
+ %  
+ 
+ 
+ 
+ Cost of sales 
+ 
+   
+ 
+ 74.0 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 72.9 
+ 
+ %  
+ 
+ 
+ 
+ Gross margin 
+ 
+   
+ 
+ 26.0 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 27.1 
+ 
+ %  
+ 
+ 
+ 
+ Selling, general and administrative expenses 
+ 
+   
+ 
+ 22.6 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 22.7 
+ 
+ %  
+ 
+ 
+ 
+ Income from operations 
+ 
+   
+ 
+ 3.4 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 4.4 
+ 
+ % 
+ 
+ 
+ 
+ Interest expense, net 
+ 
+   
+ 
+ 2.9 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 1.5 
+ 
+ %  
+ 
+ 
+ 
+ Income tax expense  
+ 
+   
+ 
+ 0.1 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 0.7 
+ 
+ %  
+ 
+ 
+ 
+ Net income  
+ 
+   
+ 
+ 0.4 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 2.2 
+ 
+ % 
+ 
+ 
+   
+ Three Months Ended March 31, 2020 Compared with the Three Months Ended March 31, 2019  
+ Net Sales.  Net   sales for the three months ended March 31, 2020 were $1,787.0 million, a 9.5% increase over net sales of $1,631.3 million for the three months ended March 31, 2019. Core organic growth increased net sales by 3.9% and acquisitions contributed 3.5% compared to 2019.  Further, one additional selling day increased sales by 1.7%, while commodity price inflation increased our sales in the first quarter of 2020 by 0.4%.  Core organic growth came from sales volume increases in single-family, multi-family and repair and remodel/other end markets.  
+ The following table shows net sales classified by product category (dollars in millions):  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Three Months Ended March 31, 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+ Net Sales 
+ 
+   
+ 
+   
+ 
+ % of  
+ Net Sales 
+ 
+   
+ 
+   
+ 
+ Net Sales 
+ 
+   
+ 
+   
+ 
+ % of  
+ Net Sales 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+   
+ 
+ 
+ 
+ Lumber & lumber sheet goods 
+ 
+ $ 
+ 
+ 552.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 30.9 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 517.7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 31.7 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 6.7 
+ 
+ % 
+ 
+ 
+ 
+ Manufactured products 
+ 
+   
+ 
+ 354.5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 19.8 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 317.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 19.5 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 11.7 
+ 
+ % 
+ 
+ 
+ 
+ Windows, doors & millwork 
+ 
+   
+ 
+ 391.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 21.9 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 353.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 21.7 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 10.7 
+ 
+ % 
+ 
+ 
+ 
+ Gypsum, roofing & insulation 
+ 
+   
+ 
+ 110.8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6.2 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 120.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7.4 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ (8.4 
+ 
+ )% 
+ 
+ 
+ 
+ Siding, metal & concrete products 
+ 
+   
+ 
+ 168.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9.5 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 149.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9.2 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 12.7 
+ 
+ % 
+ 
+ 
+ 
+ Other building products & services 
+ 
+   
+ 
+ 209.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 11.7 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 172.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10.5 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 21.5 
+ 
+ % 
+ 
+ 
+ 
+ Net sales 
+ 
+ $ 
+ 
+ 1,787.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 100.0 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 1,631.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 100.0 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 9.5 
+ 
+ % 
+ 
+ 
+   
+ We achieved increased sales in all our product categories, except in our Gypsum, roofing and insulation category, primarily due to higher sales volumes and as a result of our continued efforts to focus on higher margin opportunities.   
+ Gross Margin.  Gross margin increased $23.4 million to $465.4 million. Our gross margin percentage decreased to 26.0% in the first quarter of 2020 from 27.1% in the first quarter of 2019, a 1.1% decrease. We experienced a stronger gross margin percentage in the first quarter of 2019 as a result of commodity deflation in the period. 
+ Selling, General and Administrative Expenses.   Selling, general and administrative expenses increased $34.4 million, or 9.3%. This increase was primarily due to higher compensation expense related to the increase in net sales and rising insurance expenses. Higher depreciation and amortization expense also contributed to the increase.   
+ As a percentage of net sales, selling, general and administrative expenses decreased to 22.6% in the first quarter of 2020 from 22.7% in the first quarter of 2019, largely driven by cost leverage on increased sales volumes.  
+ Interest Expense, Net.  Interest expense was $51.9 million in the first quarter of 2020, an increase of $27.0 million from the first quarter of 2019. Interest expense increased $28.0 million due to a loss on extinguishment related to the repurchase of our 2024 notes and partial repurchase of our 2027 notes in the first quarter of 2020, partially offset by lower effective interest rates during the first quarter of 2020.  
+ 20 
+ 
+   
+ Income Tax Expense.  We recorded income tax expense of $ 0.2  million and $11.3 million in the first quarters of 2020 and 2019, respectively . Our effective tax rate was 2. 8 % in the first quarter of 2020. In the first quarter of 2019 our effective tax rate was 24.0%.   The decrease in the tax expense was primarily driven by a decrease in earnings before tax in the current period. 
+ Results by Reportable Segment 
+ The following tables show net sales and income before income taxes by reportable segment excluding the “All Other” caption as shown in Note 11   to the condensed consolidated financial statements included in Item 1 of this quarterly report on Form 10-Q (dollars in thousands): 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Three months ended March 31, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Net sales 
+ 
+   
+ 
+   
+ 
+ Income before income taxes 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ % of net 
+ sales 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ % of net  
+ sales 
+ 
+   
+ 
+   
+ 
+ % change 
+ 
+   
+ 
+   
+ 
+ 2020 
+ 
+   
+ 
+   
+ 
+ % of net  
+ sales 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ % of net  
+ sales 
+ 
+   
+ 
+   
+ 
+ % change 
+ 
+   
+ 
+ 
+ 
+ Northeast 
+ 
+   
+ 
+ $ 
+ 
+ 295,573 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 17.2 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 285,789 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 18.2 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 3.4 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 4,616 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1.6 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 7,244 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.5 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ (36.3 
+ 
+ )% 
+ 
+ 
+ 
+ Southeast 
+ 
+   
+ 
+   
+ 
+ 400,384 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 23.4 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 386,673 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 24.7 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 3.5  
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 16,577 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.1 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 17,256 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.5 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ (3.9 
+ 
+ )% 
+ 
+ 
+ 
+ South 
+ 
+   
+ 
+   
+ 
+ 499,804 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 29.2 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 458,609 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 29.3 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 9.0 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 23,333  
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.7 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 29,010 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6.3 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ (19.6 
+ 
+ )%  
+ 
+ 
+ 
+ West 
+ 
+   
+ 
+   
+ 
+ 516,767 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 30.2 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ 436,313 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 27.8 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 18.4 
+ 
+ %  
+ 
+   
+ 
+   
+ 
+ 4,420 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 0.9 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+ (404 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (0.1 
+ 
+ )%  
+ 
+   
+ 
+   
+ 
+ 1,194.1 
+ 
+ %  
+ 
+ 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,712,528 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 100.0 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 1,567,384 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 100.0 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 48,946 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2.9 
+ 
+ % 
+ 
+   
+ 
+ $ 
+ 
+ 53,106 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3.4 
+ 
+ % 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+   
+ We have four reportable segments based on an aggregation of the geographic regions in which we operate. While there is some geographic similarity between our reportable segments and the regions as defined by the U.S. Census Bureau, our reportable segments do not necessarily fully align with any single U.S. Census Bureau region.    
+ According to the U.S. Census Bureau, actual single-family housing starts in the first quarter of 2020 increased 0.9%, 16.4%, 7.5% and 27.7% in the Northeast, Midwest, South and West regions, respectively, compared to the first quarter of 2019. For the first quarter of 2020, our net sales also increased across all of our reportable segments largely due to an increase in sales volume across the majority of our product categories. We achieved increased profitability in our West reportable segment due to increased sales volume in the first quarter of 2020 compared to the first quarter of 2019, where we experienced the impact of adverse weather conditions in the first quarter of 2019. However, profitability declined in our Northeast, Southeast and South reportable segments due to a decline in gross margin percentages in the first quarter of 2020 compared to the first quarter of 2019, where we experienced stronger gross margin performance as a result of commodity deflation in the period.  
+ LIQUIDITY AND CAPITAL RESOURCES  
+ Our primary capital requirements are to fund working capital needs and operating expenses, meet required interest and principal payments, and to fund capital expenditures and potential future acquisitions. Our capital resources at March 31, 2020 consist of cash on hand and borrowing availability under our 2023 facility.  
+ Our 2023 facility will be primarily used for working capital, general corporate purposes and funding acquisitions. In addition, we may use the 2023 facility to facilitate debt consolidation. Availability under the 2023 facility is determined by a borrowing base. Our borrowing base consists of trade accounts receivable, inventory, other receivables which include progress billings and credit card receivables, and qualified cash that all meet specific criteria contained within the credit agreement, minus agent specified reserves. Net excess borrowing availability is equal to the maximum borrowing amount minus outstanding borrowings and letters of credit.  
+ 21 
+ 
+   
+ The following table shows our borrowing base  and ex c ess availability as of March 31, 20 20  and December 31, 201 9  (in millions):  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ As of 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ March 31, 
+ 2020 
+ 
+   
+ 
+   
+ 
+ December 31, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+ Accounts Receivable Availability 
+ 
+ $ 
+ 
+ 494.7 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 413.0 
+ 
+   
+ 
+ 
+ 
+ Inventory Availability 
+ 
+   
+ 
+ 422.4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 370.0 
+ 
+   
+ 
+ 
+ 
+ Other Receivables Availability 
+ 
+   
+ 
+ 32.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 29.8 
+ 
+   
+ 
+ 
+ 
+ Gross Availability 
+ 
+   
+ 
+ 949.3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 812.8 
+ 
+   
+ 
+ 
+ 
+ Less: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Agent Reserves 
+ 
+   
+ 
+ (32.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (26.6 
+ 
+ ) 
+ 
+ 
+ 
+ Plus: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash in Qualified Accounts 
+ 
+   
+ 
+ 154.9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4.2 
+ 
+   
+ 
+ 
+ 
+ Borrowing Base 
+ 
+   
+ 
+ 1,072.2 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 790.4 
+ 
+   
+ 
+ 
+ 
+ Aggregate Revolving Commitments 
+ 
+   
+ 
+ 900.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 900.0 
+ 
+   
+ 
+ 
+ 
+ Maximum Borrowing Amount (lesser of Borrowing Base and 
+    Aggregate Revolving Commitments) 
+ 
+   
+ 
+ 900.0 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 790.4 
+ 
+   
+ 
+ 
+ 
+ Less: 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Outstanding Borrowings 
+ 
+   
+ 
+ (310.0 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (27.0 
+ 
+ ) 
+ 
+ 
+ 
+ Letters of Credit 
+ 
+   
+ 
+ (82.2 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (82.2 
+ 
+ ) 
+ 
+ 
+ 
+ Net Excess Borrowing Availability on Revolving Facility 
+ 
+ $ 
+ 
+ 507.8 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 681.2 
+ 
+   
+ 
+ 
+   
+ As of March 31, 2020, we had $310.0 million in outstanding borrowings under our 2023 facility and our net excess borrowing availability was $507.8 million after being reduced by outstanding letters of credit of approximately $82.2 million. Excess availability must equal or exceed a minimum specified amount, currently $90.0 million, or we are required to meet a fixed charge coverage ratio of 1:00 to 1:00. We were not in violation of any covenants or restrictions imposed by any of our debt agreements at March 31, 2020.  
+ Liquidity  
+ Our liquidity at March 31, 2020 was $671.7 million, which consists of net borrowing availability under the 2023 facility and cash on hand.  
+ We have substantial indebtedness following our historical acquisitions, which increased our interest expense and could have the effect of, among other things, reducing our flexibility to respond to changing business and economic conditions. From time to time, based on market conditions and other factors and subject to compliance with applicable laws and regulations, the Company may repurchase or call the 2027 notes, 2030 notes, repay debt or otherwise enter into transactions regarding its capital structure. 
+ Should the current economic and industry conditions continue to deteriorate from the disruptions of the COVID-19 pandemic or otherwise, or we pursue additional acquisitions, we may be required to raise additional funds through the sale of capital stock or debt in the public capital markets or in privately negotiated transactions. There can be no assurance that any of these financing options would be available on favorable terms, if at all. Alternatives to help supplement our liquidity position could include, but are not limited to, idling or permanently closing additional facilities, adjusting our headcount in response to current business conditions, attempts to renegotiate leases, managing our working capital and/or divesting of non-core businesses. There are no assurances that these steps would prove successful or materially improve our liquidity position. 
+ Consolidated Cash Flows  
+ Cash used in operating activities was $50.7 million for the three months ended March 31, 2020 compared to cash provided by operating activities of $6.1 million for the three months ended March 31, 2019. The $56.8 million decrease in cash provided by operations was largely the result of our working capital increase of $125.1 million in the first three months of 2020, exceeding the working capital increase of $64.2 million for the first three months of 2019. This change in working capital was primarily due to the timing and value of cash received from customers, inventory purchases and cash paid to vendors in the first quarter of 2020 compared to the first quarter of 2019.  
+ 22 
+ 
+   
+ Cash used i n investing activities was $ 43.9  million and $ 20 . 8  million for the three  mont hs ended March 31, 20 20  and 201 9 , respectively.   This increase in cash used in investing activities was primarily due to our acquisition of Bianchi in the first quarter of 2020.  Additionally, t he   increase in the  Company’s net investment in property, plant and equipment largely  relates to the timing of capital expenditures  under the Company’s 2020 capital plan . 
+ Cash provided by financing activities was $244.3 million and $16.3 million for the three months ended March 31, 2020 and 2019, respectively. The increase in cash provided by financing activities is primarily due to a $240.0 million increase in net borrowings on our 2023 facility in the first three months of 2020 compared to the first three months of 2019 largely due to the desire to hold cash on our balance sheet during the disruption and uncertainty caused by the COVID-19 pandemic.   
+ RECENT ACCOUNTING PRONOUNCEMENTS  
+ Information regarding recent accounting pronouncements is discussed in Note 1 to the condensed consolidated financial statements included in Item 1 of this quarterly report on Form 10-Q. 
+   
+ Item  3.  Quantitative and Qualitative Disclosures About Market Risk   
+ Our business could be materially and adversely affected by the current COVID-19 pandemic, or any recurrence or worsening of the COVID-19 pandemic, particularly if located in regions where we derive a significant amount of our revenue or profit or where our suppliers and customers are located. The occurrence of such an outbreak or other adverse public health developments could materially disrupt our business and operations. Such events could also significantly impact our industry and cause a temporary closure of locations, which could severely disrupt our operations and have a material adverse effect on our business, financial condition and results of operation. Some of our locations have been closed in the few states or counties where construction activities have been prohibited.  To the extent the COVID-19 pandemic adversely affects our business, financial conditions and results of operations, it may also have the effect of heightening many of the other risks described in Item 1A Risk Factors section and included in our Annual Report on Form 10-K incorporated by reference herein, such as those relating to our substantial level of indebtedness, our future capital needs, our need to generate sufficient cash to service our indebtedness, and our ability to comply with the covenants contained in the agreements that govern our indebtedness. 
+ We may experience changes in interest expense if changes in our debt occur. Changes in market interest rates could also affect our interest expense. Our 2027 notes and our 2030 notes bear interest at a fixed rate, therefore, our interest expense related to these notes would not be affected by an increase in market interest rates. Borrowings under the 2023 facility and the 2024 term loan bear interest at either a base rate or eurodollar rate, plus, in each case, an applicable margin. A 1.0% increase in interest rates on the 2023 facility would result in approximately $3.1 million in additional interest expense annually as we had $310.0 million in outstanding borrowings as of March 31, 2020. The 2023 facility also assesses variable commitment and outstanding letter of credit fees based on quarterly average loan utilization. A 1.0% increase in interest rates on the 2024 term loan would result in approximately $0.5 million in additional interest expense annually as of March 31, 2020. 
+ We purchase certain materials, including lumber products, which are then sold to customers as well as used as direct production inputs for our manufactured products that we deliver. Short-term changes in the cost of these materials and the related in-bound freight costs, some of which are subject to significant fluctuations, are sometimes, but not always, passed on to our customers. Delays in our ability to pass on material price increases to our customers can adversely impact our operating results.  
+   
+ Item 4.  Controls and Procedures   
+ Disclosure Controls Evaluation and Related CEO and CFO Certifications.  Our management, with the participation of our principal executive officer (“CEO”) and principal financial officer (“CFO”), conducted an evaluation of the effectiveness of the design and operation of our disclosure controls and procedures as of the end of the period covered by this quarterly report.  
+ Certifications of our CEO and our CFO, which are required in accordance with Rule 13a-14 of the Securities Exchange Act of 1934, as amended (“Exchange Act”), are attached as exhibits to this quarterly report. This “Controls and Procedures” section includes the information concerning the controls evaluation referred to in the certifications, and it should be read in conjunction with the certifications for a more complete understanding of the topics presented.  
+ 23 
+ 
+   
+ Limitations on the Effectiveness of Controls.  We do not expect that our disclosure controls and procedures will prevent all errors and all fraud. A system of controls and procedures, no matter how well conceived and operated, can provide only reasonable, not absolute, assurance that the objectives of the system are met. Because of the limitations in all such systems, no evaluation can provide absolute assurance that all control issues and instances of fraud, if any, within the Company have been detected. Furthermore, the design of any system of controls and procedures is based in part upon certain assumptions about the likelihood of future events, and there can be no assurance that any design will succeed in achieving its stated goals under all potential future conditions, regardless of how unlikely. Because of these inherent limitations in a cost-effective system of controls and procedures, misstatements or omissions due to error or fraud may occur and not be detected.  
+ Scope of the Controls Evaluation.  The evaluation of our disclosure controls and procedures included a review of their objectives and design, and the effect of the controls and procedures on the information generated for use in this quarterly report. In the course of the evaluation, we sought to identify whether we had any data errors, control problems or acts of fraud and to confirm that appropriate corrective action, including process improvements, were being undertaken if needed. This type of evaluation is performed on a quarterly basis so that conclusions concerning the effectiveness of our disclosure controls and procedures can be reported in our quarterly reports on Form 10-Q. Many of the components of our disclosure controls and procedures are also evaluated by our internal audit department, our legal department and by personnel in our finance organization. The overall goals of these various evaluation activities are to monitor our disclosure controls and procedures on an ongoing basis, and to maintain them as dynamic systems that change as conditions warrant.  
+ Conclusions regarding Disclosure Controls.  Based on the required evaluation of our disclosure controls and procedures, our CEO and CFO have concluded that, as of March 31, 2020, we maintain disclosure controls and procedures that are effective in providing reasonable assurance that information required to be disclosed by us in the reports that we file or submit under the Securities Exchange Act of 1934 is recorded, processed, summarized and reported within the time periods specified in the SEC’s rules and forms, and that such information is accumulated and communicated to our management, including our CEO and CFO, as appropriate, to allow timely decisions regarding required disclosure.  
+ Changes in Internal Control over Financial Reporting.  During the period covered by this report, there have been no changes in our internal control over financial reporting identified in connection with the evaluation described above that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting.   
+ 24 
+ 
+   
+ P ART II  — OTHER INFORMATION  
+   
+ Item 1.  Legal Proceedings   
+ The Company has a number of known and threatened construction defect legal claims. While these claims are generally covered under the Company’s existing insurance programs to the extent any loss exceeds the deductible, there is a reasonable possibility of loss that is not able to be estimated at this time because (i) many of the proceedings are in the discovery stage, (ii) the outcome of future litigation is uncertain, and/or (iii) the complex nature of the claims.  Although the Company cannot estimate a reasonable range of loss based on currently available information, the resolution of these matters could have a material adverse effect on the Company's financial position, results of operations or cash flows. 
+ In addition, we are involved in various other claims and lawsuits incidental to the conduct of our business in the ordinary course. We carry insurance coverage in such amounts in excess of our self-insured retention as we believe to be reasonable under the circumstances and that may or may not cover any or all of our liabilities in respect of such claims and lawsuits. Although the ultimate disposition of these other proceedings cannot be predicted with certainty, management believes the outcome of any such claims that are pending or threatened, either individually or on a combined basis, will not have a material adverse effect on our consolidated financial position, cash flows or results of operations.  However, there can be no assurances that future adverse judgments and costs would not be material to our results of operations or liquidity for a particular period. 
+ Although our business and facilities are subject to federal, state and local environmental regulation, environmental regulation does not have a material impact on our operations. We believe that our facilities are in material compliance with such laws and regulations. As owners and lessees of real property, we can be held liable for the investigation or remediation of contamination on such properties, in some circumstances without regard to whether we knew of or were responsible for such contamination. Our current expenditures with respect to environmental investigation and remediation at our facilities are minimal, although no assurance can be provided that more significant remediation may not be required in the future as a result of spills or releases of petroleum products or hazardous substances or the discovery of unknown environmental conditions. 
+   
+ Item  1A.  Risk Factors   
+ In addition to the other information set forth in this report, you should carefully consider the factors discussed in Part 1, “Item 1A. Risk Factors” in our annual report on Form 10-K for the year ended December 31, 2019, which could materially affect our business, financial condition or future results. The risks described in our annual report on Form 10-K are not the only risks facing our company. Additional risks and uncertainties not currently known to us or that we currently deem to be immaterial also may materially adversely affect our business, financial condition and/or operating results. 
+ Other than as described below, there were no material changes to the risk factors reported in Part 1, “Item 1A. Risk Factors” in our annual report on Form 10-K for the year ended December 31, 2019. 
+   
+ The outbreak of a health epidemic or pandemic, including COVID-19, may have an adverse effect on our business. 
+ Our business could be materially and adversely affected by the outbreak of a widespread health epidemic or pandemic, such as the current COVID-19 pandemic or any recurrence or worsening of the COVID-19 pandemic, particularly if located in regions where we derive a significant amount of our revenue or profit or where our suppliers and customers are located. The occurrence of such an outbreak or other adverse public health developments could materially disrupt our business and operations. Such events could also significantly impact our industry and cause a temporary closure of locations, which could severely disrupt our operations and have a material adverse effect on our business, financial condition and results of operation. Some of our locations have been closed in the few states or counties where construction activities have been prohibited.  
+ In addition, our operations could be disrupted if any of our employees or employees of our suppliers or customers were suspected or confirmed of having COVID-19 or other illnesses and such illness required us or our suppliers or customers to quarantine some or all such employees or disinfect our locations.  
+ 25 
+ 
+   
+ The COVID-19 pandemic could also cause disruptions in our supply chain. The inability of our suppliers to meet our supply needs in a timely manner or our quality standards could cause delays to delivery date requirements of our customers. Such failures could result in the cancellation of orders, customers’ refusal to accept deliveries, a reduction in purchase prices, and ultimately, termination of customer relationships, any of which could have a material adverse effect on our business, financial condition, results of operations and liquidity. In that case, we may be required to seek alternative sources of materials or products. Although we believe that we can manage our exposure to these risks, we cannot be certain that we will be able to identify such alternative materials or sources without delay or without greater cost to us. Our inability to identify and secure alternative sources of supply in this situation could have a material adverse effect on our ability to satisfy customer orders. 
+ We could also be adversely affected if government authorities impose further mandatory closures, seek voluntary closures, impose restrictions on our operations, or if suppliers issue mass recalls of products. Even if such measures are not further implemented and a virus or other disease does not spread significantly, the perceived risk of infection or health risk may adversely affect our business and operating results. 
+ We   cannot predict the duration or scope of the COVID-19 pandemic or when or how our business, financial conditions and results of operations will be impacted by it, including as a result of the recent deterioration in the U.S. economy and any related impact on the residential homebuilding industry, and based on the duration and scope, such impact could be material. Historically, in times of an economic recession, new home construction in the United States has slowed considerably. Any significant downturn in new home construction as a result of the economic impact of the COVID-19 pandemic could have an adverse effect on our business, financial condition and results of operations. 
+ To the extent the COVID-19 pandemic adversely affects our business, financial conditions and results of operations, it may also have the effect of heightening many of the other risks described in this “Risk Factors” section or the “Risk factors” section included in our Annual Report on Form 10-K incorporated by reference herein, such as those relating to our substantial level of indebtedness, our future capital needs, our need to generate sufficient cash to service our indebtedness, and our ability to comply with the covenants contained in the agreements that govern our indebtedness . 
+   
+ We have taken certain precautions due to the recent COVID-19 pandemic that could harm our business.  
+ In light of the uncertain and rapidly evolving situation relating to the spread of COVID-19, we have taken temporary precautionary measures intended to help minimize the risk of the virus to our employees, our customers, and the communities in which we participate, which could negatively impact our business. In an effort to help slow the spread of COVID-19, we are temporarily requiring all employees who are able to work remotely to do so, have suspended all non-essential travel for our employees, are canceling or postponing company-sponsored events, and are discouraging employee attendance at industry events and in-person work-related meetings. While we have a distributed workforce and our employees are accustomed to working remotely or working with other remote employees if necessary, our workforce is not fully remote. Our employees travel frequently to establish and maintain relationships with our customers and suppliers, and for other business purposes. Although we continue to monitor the situation and may adjust our current policies as more information and guidance become available, temporarily suspending travel and doing business in-person could negatively impact our marketing efforts, challenge our ability to enter into customer contracts in a timely manner, or create operational or other challenges as we adjust to a largely remote workforce, any of which could harm our business. The extent to which COVID-19 and our precautionary measures may impact our business will depend on future developments, which are highly uncertain and unpredictable. 
+   
+ Item  2.  Unregistered Sales of Equity Securities and Use of Proceeds   
+ Unregistered Sales of Equity Securities  
+ (a)  None 
+ Use of Proceeds  
+ (b) Not applicable  
+ 26 
+ 
+   
+ Company Stock Repurchases  
+ (c) The following table provides information with respect to our purchases of Builders FirstSource, Inc. common stock during the first quarter of fiscal year 2020: 
+   
+ 
+ 
+ 
+ 
+ Period 
+ 
+   
+ 
+ Total 
+ Number of 
+ Shares 
+ Purchased 
+ 
+   
+ 
+    
+ 
+ Average 
+ Price Paid 
+ per Share 
+ 
+   
+ 
+    
+ 
+ Total Number of 
+ Shares Purchased 
+ as Part of Publicly 
+ Announced Plans 
+ or Programs 
+ 
+   
+ 
+    
+ 
+ Maximum 
+ Number of 
+ Shares That May 
+ Yet be Purchased Under the Plans 
+ or Programs 
+ 
+   
+ 
+ 
+ 
+ January 1, 2020 — January 31, 2020 
+ 
+   
+ 
+   
+ 
+ — 
+ 
+    
+ 
+    
+ 
+ $  
+ 
+ — 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+ 
+ 
+ February 1, 2020 — February 29, 2020 
+ 
+   
+ 
+   
+ 
+ 8,492 
+ 
+    
+ 
+    
+ 
+   
+ 
+ 24.20 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+ 
+ 
+ March 1, 2020 — March 31, 2020 
+ 
+   
+ 
+   
+ 
+ 159,822 
+ 
+    
+ 
+    
+ 
+   
+ 
+ 22.71 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+   
+ 
+ 168,314 
+ 
+    
+ 
+    
+ 
+ $ 
+ 
+ 22.79 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+    
+ 
+   
+ 
+ — 
+ 
+    
+ 
+ 
+ The shares presented in the above table represent stock tendered in order to meet tax withholding requirements for restricted stock units vested. 
+ Item 3.  Defaults Upon Senior Securities   
+ (a) None  
+ (b) None  
+   
+ Item 4.  Mine Safety Disclosures  
+ Not applicable.  
+   
+ Item 5.  Other Information   
+ (a) None 
+ (b) None  
+ 27 
+ 
+   
+ Item 6.    Exhibits 
+   
+ 
+ 
+ 
+ 
+ Exhibit 
+ Number 
+ 
+   
+ 
+ Description 
+ 
+ 
+ 
+   
+   3.1 
+ 
+   
+ 
+   
+ Amended and Restated Certificate of Incorporation of Builders FirstSource, Inc. (incorporated by reference to Exhibit 3.1 to Amendment No. 4 to the Registration Statement of the Company on Form S-1, filed with the Securities and Exchange Commission on June 6, 2005, File Number 333-122788) 
+ 
+ 
+ 
+   
+   3.2 
+ 
+   
+ 
+   
+ Amended and Restated By-Laws of Builders FirstSource, Inc. (incorporated by reference to Exhibit 3.1 to the Company’s Current Report on Form 8-K, filed with the Securities and Exchange Commission on November 6, 2017, File Number 0-51357) 
+ 
+ 
+ 
+   
+   4.1 
+ 
+   
+ 
+   
+ Indenture, dated as of August 22, 2016, among Builders FirstSource, Inc., the guarantors party thereto, and Wilmington Trust, National Association, as trustee and notes collateral agent (form of Note included therein) (incorporated by reference to Exhibit 4.1 to the Company’s Current Report on Form 8-K, filed with the Securities and Exchange Commission on August 23, 2016, File Number 0-51357) 
+ 
+ 
+ 
+   
+   4.2 
+ 
+   
+ 
+   
+ Indenture, dated as of May 30, 2019, among Builders FirstSource, Inc., the guarantors party thereto, and Wilmington Trust, National Association, as trustee and notes collateral agent (form of Note included therein) (incorporated by reference to Exhibit 4.1 to the Company’s Current Report on Form 8-K, filed with the Securities and Exchange Commission on May 31, 2019, File Number 0-51357) 
+ 
+ 
+ 
+   
+   4.3 
+ 
+   
+ 
+   
+ First Supplemental Indenture, dated as of July 25, 2019, among Builders FirstSource, Inc., the guarantors party thereto, and Wilmington Trust, National Association, as trustee and notes collateral agent (incorporated by reference to Exhibit 4.3 to the Company’s Current Report on Form 8-K, filed with the Securities and Exchange Commission on July 30, 2019, File Number 0-51357) 
+ 
+ 
+ 
+   
+   4.4 
+ 
+   
+ 
+   
+ Indenture, dated as of February 11, 2020, among Builders FirstSource, Inc., the guarantors party thereto, and Wilmington Trust, National Association, as trustee (form of Note included therein) (incorporated by reference to Exhibit 4.1 to the Company’s Current Report on Form 8-K, filed with the Securities and Exchange Commission on February 11, 2020, File Number 0-51357) 
+ 
+ 
+ 
+   
+ 31.1* 
+ 
+   
+ 
+   
+ Certification of Chief Executive Officer pursuant to 17 CFR 240.13a-14(a), as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, signed by M. Chad Crow as Chief Executive Officer 
+ 
+ 
+ 
+   
+ 31.2* 
+ 
+   
+ 
+   
+ Certification of Chief Financial Officer pursuant to 17 CFR 240.13a-14(a), as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, signed by Peter M. Jackson as Chief Financial Officer 
+ 
+ 
+ 
+   
+ 32.1** 
+ 
+   
+ 
+   
+ Certification of Chief Executive Officer and Chief Financial Officer pursuant to 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, signed by M. Chad Crow as Chief Executive Officer and Peter M. Jackson as Chief Financial Officer 
+ 
+ 
+ 
+   
+ 101* 
+ 
+   
+ 
+   
+ The following financial information from Builders FirstSource, Inc.’s Form 10-Q filed on May 1, 2020 formatted in Inline eXtensible Business Reporting Language (“Inline XBRL”): (i) Condensed Consolidated Statement of Operations and Comprehensive Income for the three months ended March 31, 2020 and 2019, (ii) Condensed Consolidated Balance Sheet as of March 31, 2020 and December 31, 2019, (iii) Condensed Consolidated Statements of Cash Flows for the three months ended March 31, 2020 and 2019, (iv) Condensed Consolidated Statements of Changes in Stockholders’ Equity for the three months ended March 31, 2020 and 2019 and (v) the Notes to Condensed Consolidated Financial Statements. 
+ 
+ 
+ 
+   
+ 104* 
+ 
+   
+ 
+   
+ The cover page for the Company’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2020 has been formatted in Inline XBRL. 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ * 
+ 
+ Filed herewith. 
+ 
+ 
+ 
+ 
+ ** 
+ 
+ Builders FirstSource, Inc. is furnishing, but not filing, the written statement pursuant to Title 18 United States Code 1350, as added by Section 906 of the Sarbanes-Oxley Act of 2002, of M. Chad Crow our Chief Executive Officer, and Peter M. Jackson, our Chief Financial Officer. 
+   
+ 28 
+ 
+   
+ SIGNATURES  
+ Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.    
+   
+ 
+ 
+ 
+ 
+   
+ 
+ BUILDERS FIRSTSOURCE, INC. 
+ 
+ 
+ 
+   
+ 
+   
+   
+ 
+ 
+ 
+   
+ 
+ /s/ M. CHAD CROW 
+ 
+ 
+ 
+   
+ 
+ M. Chad Crow 
+ 
+ 
+ 
+   
+ 
+ President and Chief Executive Officer 
+ 
+ 
+ 
+   
+ 
+ (Principal Executive Officer) 
+ 
+ 
+ May 1, 2020  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ /s/ PETER M. JACKSON 
+ 
+ 
+ 
+   
+ 
+ Peter M. Jackson 
+ 
+ 
+ 
+   
+ 
+ Senior Vice President and Chief Financial Officer 
+ (Principal Financial Officer) 
+ 
+ 
+ May 1, 2020  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ /s/ JAMI COULTER 
+ 
+ 
+ 
+   
+ 
+ Jami Coulter 
+ 
+ 
+ 
+   
+ 
+ Senior Vice President and Chief Accounting Officer 
+ 
+ 
+ 
+   
+ 
+ (Principal Accounting Officer) 
+ 
+ 
+ May 1, 2020  
+   
+ 29 
+ 

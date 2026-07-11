@@ -1,0 +1,4340 @@
+
+  
+   vxrt20230331_10q.htm 
+   
+   
+  
+ 0000072444 
+ Vaxart, Inc. 
+ false 
+ --12-31 
+ Q1 
+ 2023 
+ 
+ 
+ 0.0001 
+ 0.0001 
+ 5,000,000 
+ 5,000,000 
+ 0 
+ 0 
+ 0 
+ 0 
+ 0.0001 
+ 0.0001 
+ 250,000,000 
+ 250,000,000 
+ 135,610,869 
+ 135,597,316 
+ 134,199,429 
+ 134,199,429 
+ 13,553 
+ 0 
+ 103 
+ 314 
+ 0 
+ 0 
+ 0 
+ 1 
+ 3 
+ 
+ 
+ 
+ 0000072444 2023-01-01 2023-03-31 
+ xbrli:shares 
+ 0000072444 2023-05-03 
+ thunderdome:item 
+ iso4217:USD 
+ 0000072444 2023-03-31 
+ 0000072444 2022-12-31 
+ iso4217:USD xbrli:shares 
+ 0000072444 vxrt:NonCashRoyaltyRevenueMember 2023-01-01 2023-03-31 
+ 0000072444 vxrt:NonCashRoyaltyRevenueMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:GrantMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:GrantMember 2022-01-01 2022-03-31 
+ 0000072444 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:CommonStockMember 2022-12-31 
+ 0000072444 us-gaap:TreasuryStockCommonMember 2022-12-31 
+ 0000072444 us-gaap:AdditionalPaidInCapitalMember 2022-12-31 
+ 0000072444 us-gaap:RetainedEarningsMember 2022-12-31 
+ 0000072444 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-12-31 
+ 0000072444 us-gaap:CommonStockMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:TreasuryStockCommonMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:AdditionalPaidInCapitalMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:RetainedEarningsMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:CommonStockMember 2023-03-31 
+ 0000072444 us-gaap:TreasuryStockCommonMember 2023-03-31 
+ 0000072444 us-gaap:AdditionalPaidInCapitalMember 2023-03-31 
+ 0000072444 us-gaap:RetainedEarningsMember 2023-03-31 
+ 0000072444 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-03-31 
+ 0000072444 us-gaap:CommonStockMember 2021-12-31 
+ 0000072444 us-gaap:AdditionalPaidInCapitalMember 2021-12-31 
+ 0000072444 us-gaap:RetainedEarningsMember 2021-12-31 
+ 0000072444 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-12-31 
+ 0000072444 2021-12-31 
+ 0000072444 us-gaap:CommonStockMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:AdditionalPaidInCapitalMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:RetainedEarningsMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:CommonStockMember 2022-03-31 
+ 0000072444 us-gaap:AdditionalPaidInCapitalMember 2022-03-31 
+ 0000072444 us-gaap:RetainedEarningsMember 2022-03-31 
+ 0000072444 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-03-31 
+ 0000072444 2022-03-31 
+ 0000072444 vxrt:TheSeptember2021AtmMember 2021-09-15 2021-09-15 
+ xbrli:pure 
+ 0000072444 vxrt:TheSeptember2021AtmMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2023-03-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember 2023-03-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember us-gaap:USTreasurySecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2022-12-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember us-gaap:CorporateDebtSecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel2Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:FairValueInputsLevel3Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000072444 us-gaap:CashMember 2023-03-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember 2023-03-31 
+ 0000072444 us-gaap:USTreasurySecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2023-03-31 
+ 0000072444 us-gaap:CorporateDebtSecuritiesMember 2023-03-31 
+ 0000072444 us-gaap:CashMember 2022-12-31 
+ 0000072444 us-gaap:MoneyMarketFundsMember 2022-12-31 
+ 0000072444 us-gaap:USTreasurySecuritiesMember 2022-12-31 
+ 0000072444 us-gaap:CommercialPaperNotIncludedWithCashAndCashEquivalentsMember 2022-12-31 
+ 0000072444 us-gaap:CorporateDebtSecuritiesMember 2022-12-31 
+ 0000072444 vxrt:LaboratoryEquipmentMember 2023-03-31 
+ 0000072444 vxrt:LaboratoryEquipmentMember 2022-12-31 
+ 0000072444 us-gaap:OfficeEquipmentMember 2023-03-31 
+ 0000072444 us-gaap:OfficeEquipmentMember 2022-12-31 
+ 0000072444 us-gaap:LeaseholdImprovementsMember 2023-03-31 
+ 0000072444 us-gaap:LeaseholdImprovementsMember 2022-12-31 
+ 0000072444 us-gaap:ConstructionInProgressMember 2023-03-31 
+ 0000072444 us-gaap:ConstructionInProgressMember 2022-12-31 
+ 0000072444 vxrt:LeaseForFacilityInSouthSanFranciscoCommencedInThirdQuarterOf2022Member 2021-09-30 
+ 0000072444 vxrt:LeaseForFacilityInSouthSanFranciscoCommencedInFirstQuarterOf2023Member 2021-09-30 
+ utr:Y 
+ 0000072444 us-gaap:DevelopedTechnologyRightsMember 2023-03-31 
+ 0000072444 us-gaap:IntellectualPropertyMember 2023-03-31 
+ 0000072444 us-gaap:DevelopedTechnologyRightsMember 2022-12-31 
+ 0000072444 us-gaap:IntellectualPropertyMember 2022-12-31 
+ 0000072444 us-gaap:RoyaltyMember vxrt:DaiichiSankyoCollaberationAndLicenseAgreementMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:RoyaltyMember vxrt:DaiichiSankyoCollaberationAndLicenseAgreementMember 2022-01-01 2022-03-31 
+ 0000072444 vxrt:NonCashRoyaltyRevenueMember vxrt:DaiichiSankyoCollaberationAndLicenseAgreementMember 2023-01-01 2023-03-31 
+ 0000072444 vxrt:NonCashRoyaltyRevenueMember vxrt:DaiichiSankyoCollaberationAndLicenseAgreementMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:ForeignCountryMember us-gaap:NationalTaxAgencyJapanMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:ForeignCountryMember us-gaap:NationalTaxAgencyJapanMember 2022-01-01 2022-03-31 
+ 0000072444 2022-11-30 
+ 0000072444 vxrt:HCRPMember 2016-04-01 2016-04-30 
+ 0000072444 vxrt:HCRPMember 2016-04-30 
+ 0000072444 vxrt:HealthcareRoyaltyIIILPMember us-gaap:RoyaltyArrangementMember 2022-12-31 
+ 0000072444 vxrt:HealthcareRoyaltyIIILPMember us-gaap:RoyaltyArrangementMember 2023-01-01 2023-03-31 
+ 0000072444 vxrt:HealthcareRoyaltyIIILPMember us-gaap:RoyaltyArrangementMember 2023-03-31 
+ 0000072444 vxrt:RightOfUseForEquipmentWithInitialTermsExceedingOneYearMember 2023-03-31 
+ 0000072444 vxrt:LeaseAgreementsForManufacturingEquipmentWithInitialTermsOfOneYearOrLessMember 2023-03-31 
+ 0000072444 vxrt:FacilityInBurlingameCaliforniaMember 2023-03-31 
+ 0000072444 vxrt:LeaseForFacilityInSouthSanFranciscoCaliforniaMember 2023-03-31 
+ 0000072444 vxrt:HimmelbergVVaxartIncEtAlMember 2022-07-27 2022-07-27 
+ 0000072444 vxrt:HimmelbergVVaxartIncEtAlMember 2022-11-02 2022-11-02 
+ 0000072444 2022-08-04 2022-08-04 
+ 0000072444 2022-08-03 
+ 0000072444 us-gaap:EmployeeStockOptionMember 2023-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember 2022-12-31 
+ 0000072444 us-gaap:RestrictedStockUnitsRSUMember 2023-03-31 
+ 0000072444 us-gaap:RestrictedStockUnitsRSUMember 2022-12-31 
+ 0000072444 vxrt:FutureGrantsOfEquityAwardsMember 2023-03-31 
+ 0000072444 vxrt:FutureGrantsOfEquityAwardsMember 2022-12-31 
+ 0000072444 vxrt:CommonWarrantsMember 2023-03-31 
+ 0000072444 vxrt:CommonWarrantsMember 2022-12-31 
+ 0000072444 vxrt:ESPPMember 2023-03-31 
+ 0000072444 vxrt:ESPPMember 2022-12-31 
+ 0000072444 vxrt:FirstSetOfWarrantsExpiringSeptember2024Member 2023-03-31 
+ 0000072444 vxrt:FirstSetOfWarrantsExpiringApril2024Member 2023-03-31 
+ 0000072444 vxrt:SecondSetOfWarrantsExpiringApril2024Member 2023-03-31 
+ 0000072444 vxrt:WarrantsExpiringMarch2025Member 2023-03-31 
+ 0000072444 vxrt:WarrantsExpiringFebruary2025Member 2023-03-31 
+ 0000072444 vxrt:WarrantsExpiringMarch2024Member 2023-03-31 
+ 0000072444 vxrt:The2019PlanMember 2019-04-23 
+ 0000072444 vxrt:The2019PlanMember 2020-06-08 
+ 0000072444 vxrt:The2019PlanMember 2021-06-16 
+ 0000072444 vxrt:The2019PlanMember 2022-08-04 
+ 0000072444 us-gaap:RestrictedStockUnitsRSUMember 2023-01-01 2023-03-31 
+ utr:M 
+ 0000072444 us-gaap:EmployeeStockOptionMember srt:MinimumMember vxrt:FormerChairmanOfTheBoardMember 2021-06-15 2021-06-15 
+ 0000072444 us-gaap:EmployeeStockOptionMember srt:MinimumMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember srt:MaximumMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember srt:MinimumMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember srt:MaximumMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:ResearchAndDevelopmentExpenseMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:ResearchAndDevelopmentExpenseMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:GeneralAndAdministrativeExpenseMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:GeneralAndAdministrativeExpenseMember 2022-01-01 2022-03-31 
+ 0000072444 vxrt:The2022EsppMember 2022-08-04 
+ 0000072444 vxrt:The2022EsppMember 2023-03-31 
+ 0000072444 vxrt:The2022EsppMember 2022-12-31 
+ 0000072444 vxrt:The2022EsppMember 2022-01-01 2022-12-31 
+ 0000072444 vxrt:The2022EsppMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:EmployeeStockOptionMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:RestrictedStockUnitsRSUMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:RestrictedStockUnitsRSUMember 2022-01-01 2022-03-31 
+ 0000072444 us-gaap:WarrantMember us-gaap:CommonStockMember 2023-01-01 2023-03-31 
+ 0000072444 us-gaap:WarrantMember us-gaap:CommonStockMember 2022-01-01 2022-03-31 
+ 0000072444 vxrt:EmployeeStockPurchasePlanMember 2023-01-01 2023-03-31 
+ 0000072444 vxrt:EmployeeStockPurchasePlanMember 2022-01-01 2022-03-31 
+ 
+   
+     
+   
+   Table of Contents 
+ 
+ 
+   
+ UNITED STATES 
+ SECURITIES AND EXCHANGE COMMISSION 
+ Washington, D.C. 20549 
+   
+ FORM  10-Q 
+   
+   (Mark One)   
+ 
+      ☑      QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+ 
+   
+ For the quarterly period ended  March 31, 2023 
+   
+ OR 
+   
+      ☐      TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+ 
+   
+ For the transition period from                        to                       
+   
+ Commission file number:  00 1 - 3 52 8 5 
+   
+          Vaxart , Inc.          
+          (Exact Name of Registrant as Specified in its Charter)          
+ 
+   
+          Delaware            5 9 - 1212264          
+          (State or other jurisdiction of incorporation or organization)            (IRS Employer Identification No.)          
+ 
+   
+          170 Harbor Way , Suite 300 ,  South San Francisco ,  CA   94 080            ( 6 50 )  550 - 3 5 0 0          
+          (Address of principal executive offices, including zip code)            (Registrant’s telephone number, including area code)          
+ 
+   
+ Securities registered pursuant to Section 12(b) of the Act: 
+   
+        Title of each class       Trading symbol        Name of each exchange on which registered   
+        Common Stock, $0.0001 par value       VXRT        The  Nasdaq  Capital Market   
+ 
+   
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.   Yes  ☑   No ☐ 
+   
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).   Yes  ☑   No ☐ 
+   
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, or a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer” and “smaller reporting company” and “emerging growth company” in Rule 12b-2 of the Exchange Act. 
+   
+   Large accelerated filer ☐     Accelerated filer ☐   
+   Non-accelerated filer  ☑     Smaller reporting company  ☑   
+   Emerging growth company  ☐     
+ 
+   
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+   
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).   Yes  ☐    No ☑ 
+   
+ The Registrant had  135,597,316  shares of common stock, $0.0001 par value, outstanding as of May 3, 2023. 
+   
+ 
+ 
+   
+ 
+  
+   
+    
+     
+    
+   
+  
+  
+  
+   
+    
+     Table of Contents 
+    
+   
+  
+ 
+   
+     
+   
+     
+   
+   
+    FORM 10-Q 
+    FOR THE QUARTER ENDED March 31, 2023 
+    TABLE OF CONTENTS 
+      
+      
+    
+     
+      
+         
+         
+         Page   
+      
+
+      
+         Part I   
+         FINANCIAL INFORMATION   
+       1 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 1.   
+         Financial Statements (Unaudited)   
+       1 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         
+         Condensed Consolidated Balance Sheets as of March 31, 2023 and December 31, 2022   
+       1 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         
+         Condensed Consolidated Statements of Operations and Comprehensive Loss for the three months ended March 31, 2023 and 2022   
+       2 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         
+         Condensed Consolidated Statements of Stockholders’ Equity for the three months ended March 31, 2023 and 2022   
+       3 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         
+         Condensed Consolidated Statements of Cash Flows for the three months ended March 31, 2023 and 2022   
+       4 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         
+         Notes to the Condensed Consolidated Financial Statements   
+       5 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 2.   
+         Management’s Discussion and Analysis of Financial Condition and Results of Operations   
+       15 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 3.   
+         Quantitative and Qualitative Disclosures About Market Risk   
+       26 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 4.   
+         Controls and Procedures   
+       26 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         Part II   
+         OTHER INFORMATION   
+       27 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 1.   
+         Legal Proceedings   
+       27 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 1A.   
+         Risk Factors   
+       27 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 2.   
+         Unregistered Sales of Equity Securities and Use of Proceeds   
+       28 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 3.   
+         Defaults Upon Senior Securities   
+       28 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 4.   
+         Mine Safety Disclosures   
+       28 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 5.   
+         Other Information   
+       28 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         
+         
+         Item 6.   
+         Exhibits   
+       29 
+      
+
+      
+         
+         
+         
+         
+         
+      
+
+      
+         SIGNATURES   
+         
+       30 
+      
+
+     
+    
+   
+     
+   
+    
+     
+      
+        
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   FORWARD-LOOKING STATEMENTS 
+     
+   This Quarterly Report on Form 10-Q (this “Quarterly Report”) for the quarterly period ended March 31, 2023, contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended (the “Securities Act”) and Section 21E of the Securities Exchange Act of 1934, as amended (the “Exchange Act”), which are subject to the “safe harbor” created by those sections, concerning our business, operations, and financial performance and condition as well as our plans, objectives, and expectations for business operations and financial performance and condition. Any statements contained herein that are not of historical facts may be deemed to be forward-looking statements. You can identify these statements by words such as “anticipate,” “assume,” “believe,” “could,” “estimate,” “expect,” “intend,” “may,” “plan,” “should,” “will,” “would,” and other similar expressions that are predictions of or indicate future events and future trends. These forward-looking statements are based on current expectations, estimates, forecasts, and projections about our business and the industry in which we operate and management’s beliefs and assumptions and are not guarantees of future performance or development and involve known and unknown risks, uncertainties, and other factors that are in some cases beyond our control. As a result, any or all of our forward-looking statements in this Quarterly Report may turn out to be inaccurate. Factors that could materially affect our business operations and financial performance and condition include, but are not limited to, those risks and uncertainties described herein under “Item 1A. Risk Factors.” and those described in our Annual Report on Form 10-K for the year ended December 31, 2022. You are urged to consider these factors carefully in evaluating the forward-looking statements and are cautioned not to place undue reliance on the forward-looking statements. The forward-looking statements are based on information available to us as of the filing date of this Quarterly Report. Unless required by law, we do not intend to publicly update or revise any forward-looking statements to reflect new information or future events or otherwise. You should, however, review the factors and risks we describe in the reports we will file from time to time with the Securities and Exchange Commission (the “SEC”) after the date of this Quarterly Report. 
+     
+   This Quarterly Report also contains market data related to our business and industry. These market data include projections that are based on a number of assumptions. If these assumptions turn out to be incorrect, actual results may differ from the projections based on these assumptions. As a result, our markets may not grow at the rates projected by these data, or at all. The failure of these markets to grow at these projected rates may harm our business, results of operations, financial condition and the market price of our common stock. 
+     
+   
+    
+     
+      
+        
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+     
+   
+   PART I FINANCIAL INFORMATION 
+     
+   Item 1.  Financial Statements 
+     
+   VAXART, INC. 
+     
+   Condensed Consolidated Balance Sheets 
+   (In thousands, except  share and per share amounts ) 
+   (Unaudited) 
+     
+   
+          March 31, 2023         December 31, 2022     
+   Assets                   
+   Current assets:                   
+   Cash, cash equivalents and restricted cash     $ 48,434     $ 46,013   
+   Short-term investments       23,377       49,704   
+   Accounts receivable       264       20   
+   Prepaid expenses and other current assets       3,755       3,714   
+                   
+   Total current assets       75,830       99,451   
+                   
+   Property and equipment, net       14,373       15,585   
+   Right-of-use assets, net       27,843       25,715   
+   Intangible assets, net       4,837       5,020   
+   Goodwill       4,508       4,508   
+   Other long-term assets       2,460       3,568   
+                   
+   Total assets     $ 129,851     $ 153,847   
+                   
+   Liabilities and Stockholders’ Equity                   
+   Current liabilities:                   
+   Accounts payable     $ 3,882     $ 5,514   
+   Deferred grant revenue       1,603       2,000   
+   Other accrued current liabilities       6,977       8,084   
+   Current portion of operating lease liability       2,344       2,228   
+   Current portion of liability related to sale of future royalties       877       95   
+                   
+   Total current liabilities       15,683       17,921   
+                   
+   Operating lease liability, net of current portion       19,172       19,477   
+   Liability related to sale of future royalties, net of current portion       4,997       5,621   
+   Other long-term liabilities       246       231   
+                   
+   Total liabilities       40,098       43,250   
+                   
+   Commitments and contingencies (Note 8)                       
+                   
+   Stockholders’ equity:                   
+   Preferred stock: $ 0.0001  par value;  5,000,000  shares authorized;  none  issued and outstanding as of March 31, 2023 and December 31, 2022       —       —   
+   Common stock: $ 0.0001  par value;  250,000,000  shares authorized as of March 31, 2023 and December 31, 2022, respectively;  135,610,869  shares issued and  135,597,316  shares outstanding as of March 31, 2023 and  134,199,429  shares issued and outstanding as of December 31, 2022.       14       13   
+   Additional paid-in capital       442,068       437,992   
+   Treasury stock at cost,  13,553  shares and  none  as of March 31, 2023 and December 31, 2022, respectively       ( 10 )     —   
+   Accumulated deficit       ( 352,249 )     ( 327,109 ) 
+   Accumulated other comprehensive loss       ( 70 )     ( 299 ) 
+                   
+   Total stockholders’ equity       89,753       110,597   
+                   
+   Total liabilities and stockholders’ equity     $ 129,851     $ 153,847   
+ 
+   
+     
+   The accompanying notes are an integral part of these unaudited condensed consolidated financial statements. 
+   
+     
+   
+     
+   
+    
+     
+      
+       1
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+     
+   
+   VAXART, INC. 
+     
+   Condensed Consolidated Statements of Operations and Comprehensive  Loss 
+   (In thousands, except  share and  per share amounts) 
+   (Unaudited) 
+     
+   
+    
+     
+      
+         
+         
+         Three Months Ended March 31,   
+         
+      
+
+      
+         
+         
+         2023   
+         
+         
+         2022   
+         
+      
+
+      
+         Revenue:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Non-cash royalty revenue related to sale of future royalties   
+         
+       $ 
+       278 
+         
+         
+       $ 
+       85 
+         
+      
+
+      
+         Grant revenue   
+         
+         
+       397 
+         
+         
+         
+       — 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Total revenue   
+         
+         
+       675 
+         
+         
+         
+       85 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Operating expenses:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Research and development   
+         
+         
+       19,622 
+         
+         
+         
+       18,203 
+         
+      
+
+      
+         General and administrative   
+         
+         
+       6,625 
+         
+         
+         
+       6,658 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Total operating expenses   
+         
+         
+       26,247 
+         
+         
+         
+       24,861 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Operating loss   
+         
+         
+       ( 25,572 
+       ) 
+         
+         
+       ( 24,776 
+       ) 
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Other income (expense):   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Interest income   
+         
+         
+       642 
+         
+         
+         
+       35 
+         
+      
+
+      
+         Non-cash interest expense related to sale of future royalties   
+         
+         
+       ( 178 
+       ) 
+         
+         
+       ( 340 
+       ) 
+      
+
+      
+         Foreign exchange loss, net   
+         
+         
+       ( 3 
+       ) 
+         
+         
+       — 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Loss before income taxes   
+         
+         
+       ( 25,111 
+       ) 
+         
+         
+       ( 25,081 
+       ) 
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Provision for income taxes   
+         
+         
+       29 
+         
+         
+         
+       20 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Net loss   
+         
+       $ 
+       ( 25,140 
+       ) 
+         
+       $ 
+       ( 25,101 
+       ) 
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Net loss per share - basic and diluted   
+         
+       $ 
+       ( 0.19 
+       ) 
+         
+       $ 
+       ( 0.20 
+       ) 
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Shares used to compute net loss per share - basic and diluted   
+         
+         
+       135,213,196 
+         
+         
+         
+       125,795,255 
+         
+      
+
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Comprehensive loss:   
+         
+         
+         
+         
+         
+         
+         
+         
+      
+
+      
+         Net loss   
+         
+       $ 
+       ( 25,140 
+       ) 
+         
+       $ 
+       ( 25,101 
+       ) 
+      
+
+      
+         Unrealized gain (loss) on available-for-sale investments, net of tax   
+         
+         
+       229 
+         
+         
+         
+       ( 235 
+       ) 
+      
+
+      
+         Comprehensive loss   
+         
+       $ 
+       ( 24,911 
+       ) 
+         
+       $ 
+       ( 25,336 
+       ) 
+      
+
+     
+    
+   
+     
+   The accompanying notes are an integral part of these unaudited condensed consolidated financial statements. 
+     
+   
+    
+     
+      
+       2
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+     
+   
+   VAXART, INC. 
+     
+   Condensed Consolidated Statement s  of Stockholders’  Equity 
+   For  the   Three  Months Ended March 31, 2023 and 2022 
+   (In thousands, except  share  amounts) 
+   (Unaudited) 
+     
+   
+                                                          Accumulated             
+                                       Additional                 Other         Total     
+       Common Stock         Treasury Stock         Paid-in         Accumulated         Comprehensive         Stockholders’     
+   Three Months Ended March 31, 2023:       Shares       Amount       Shares       Amount       Capital       Deficit       (Loss) Gain       Equity   
+                                                                   
+   Balances as of December 31, 2022       134,199,429     $ 13       —     $ -     $ 437,992     $ ( 327,109 )   $ ( 299 )   $ 110,597   
+                                                                   
+   Issuance of common stock under September 2021 ATM, net of offering costs of $ 103       1,362,220       1       —       —       1,429       —       —       1,430   
+                                                                   
+   Stock-based compensation       —       —       —       —       2,647       —       —       2,647   
+                                                                   
+   Release of common stock for vested restricted stock units       49,220       —       —       —       —       —       —       —   
+                                                                   
+   Repurchase of common stock to satisfy tax withholding       —       —       ( 13,553 )     ( 10 )     —       —       —       ( 10 ) 
+                                                                   
+   Unrealized gains on available-for-sale investments       —       —       —       —       —       —       229       229   
+                                                                   
+   Net loss       —       —       —       —       —       ( 25,140 )     —       ( 25,140 ) 
+                                                                   
+   Balances as of March 31, 2023       135,610,869     $ 14       ( 13,553 )   $ ( 10 )   $ 442,068     $ ( 352,249 )   $ ( 70 )   $ 89,753   
+ 
+   
+     
+     
+   
+                                          Accumulated             
+                       Additional                 Other         Total     
+       Common Stock         Paid-in         Accumulated         Comprehensive         Stockholders’     
+   Three Months Ended March 31, 2022:       Shares       Amount       Capital       Deficit       Loss       Equity   
+                                                   
+   Balances as of December 31, 2021       125,594,393     $ 13     $ 406,943     $ ( 219,351 )   $ ( 74 )   $ 187,531   
+                                                   
+   Issuance of common stock under September 2020 ATM, net of offering costs of $ 314       216,000       —       992       —       —       992   
+                                                   
+   Issuance of common stock upon exercise of stock options       30,418       —       48       —       —       48   
+                                                   
+   Stock-based compensation       —       —       3,130       —       —       3,130   
+                                                   
+   Unrealized losses on available-for-sale investments       —       —       —       —       ( 235 )     ( 235 ) 
+                                                   
+   Net loss       —       —       —       ( 25,101 )     —       ( 25,101 ) 
+                                                   
+   Balances as of March 31, 2022       125,840,811     $ 13     $ 411,113     $ ( 244,452 )   $ ( 309 )   $ 166,365   
+ 
+      
+   
+      
+   The accompanying notes are an integral part of these unaudited condensed consolidated financial statements. 
+     
+   
+    
+     
+      
+       3
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   
+     
+   
+   VAXART, INC. 
+     
+   Condensed Consolidated Statements of Cash Flows  
+   (In thousands) 
+   (Unaudited) 
+     
+   
+          Three Months Ended March 31,     
+       2023         2022     
+                   
+   Cash flows from operating activities:                   
+   Net loss     $ ( 25,140 )   $ ( 25,101 ) 
+   Adjustments to reconcile net loss to net cash used in operating activities:                   
+   Depreciation and amortization       2,062       1,131   
+   Accretion of (discount) premium on investments       ( 144 )     36   
+   Stock-based compensation       2,647       3,130   
+   Non-cash interest expense related to sale of future royalties       178       340   
+   Non-cash revenue related to sale of future royalties       ( 20 )     ( 71 ) 
+   Change in operating assets and liabilities:                   
+   Accounts receivable       ( 244 )     ( 10 ) 
+   Prepaid expenses and other assets       1,067       ( 4,498 ) 
+   Accounts payable       ( 270 )     113   
+   Deferred grant revenue       ( 397 )     —   
+   Other accrued liabilities       ( 4,199 )     ( 183 ) 
+                   
+   Net cash used in operating activities       ( 24,460 )     ( 25,113 ) 
+                   
+   Cash flows from investing activities:                   
+   Purchases of property and equipment       ( 1,239 )     ( 1,346 ) 
+   Purchases of investments       —       ( 8,522 ) 
+   Proceeds from maturities of investments       26,700       13,600   
+                   
+   Net cash provided by investing activities       25,461       3,732   
+                   
+   Cash flows from financing activities:                   
+   Net proceeds from issuance of common stock through ATM facilities       1,430       992   
+   Shares acquired to settle employee tax withholding liabilities       ( 10 )     —   
+   Proceeds from issuance of common stock upon exercise of stock options       —       48   
+                   
+   Net cash provided by financing activities       1,420       1,040   
+                   
+   Net increase (decrease) in cash, cash equivalents and restricted cash       2,421       ( 20,341 ) 
+                   
+   Cash, cash equivalents and restricted cash at beginning of the period       46,013       143,745   
+                   
+   Cash, cash equivalents and restricted cash at end of the period     $ 48,434     $ 123,404   
+ 
+   
+     
+   
+                      
+   Supplemental disclosure of non-cash investing and financing activity:                   
+   Operating lease liabilities arising from obtaining right-of-use assets     $ 296     $ 125   
+   Acquisition of property and equipment included in accounts payable and accrued expenses     $ 246     $ 505   
+ 
+   
+     
+   The accompanying notes are an integral part of these unaudited condensed consolidated financial statements. 
+     
+   
+    
+     
+      
+       4
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   VAXART , INC. 
+     
+   Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+     
+   
+     
+   
+   
+    NOTE  1.   Organization and Nature of Business 
+      
+    General  
+      
+    Vaxart Biosciences, Inc. was originally incorporated in California in   March  2004,  under the name West Coast Biologicals, Inc. The Company changed its name to Vaxart, Inc. (“Private Vaxart”) in   July  2007,  and reincorporated in the state of Delaware. In   February 2018,  Private Vaxart completed a business combination with Aviragen Therapeutics, Inc. (“Aviragen”), pursuant to which Aviragen merged with Private Vaxart, with Private Vaxart surviving as a wholly-owned subsidiary of Aviragen (the “Merger”). Pursuant to the terms of the Merger, Aviragen changed its name to Vaxart, Inc. (together with its subsidiaries, the “Company” or “Vaxart”) and Private Vaxart changed its name to Vaxart Biosciences, Inc. 
+      
+    On   September 15, 2021,  the Company entered into a Controlled Equity Offering Sales Agreement (the   “September 2021  ATM”), pursuant to which it   may  offer and sell, from time to time through sales agents, shares of its common stock having an aggregate offering price of up to $ 100  million. The Company filed a prospectus supplement with the U.S. Securities and Exchange Commission (the “SEC”) on   September 16, 2021,  and will pay sales commissions of up to  3.0 % of gross proceeds from the sale of shares. During the  three  months ended   March 31, 2023 ,  1,362,220  shares were issued and sold under the   September 2021  ATM for gross proceeds of $ 1.5  million, which, after deducting sales commissions and expenses incurred to date, resulted in net proceeds of $ 1.4  million. Since   March 31, 2023,  we have  not  raised any additional capital under the   September 2021  ATM and we will  not  raise capital under the   September 2021  ATM until the registration statement on Form S- 3  (SEC File  No.   333 - 270671 ) that we filed with the SEC on   March 17, 2023,  which includes the prospectus relating to the   September 2021  ATM, is declared effective by the SEC. 
+      
+    The Company’s principal operations are based in South San Francisco, California, and it operates in  one  reportable segment, which is the discovery and development of oral recombinant protein vaccines, based on its proprietary oral vaccine platform.  
+   
+   
+     
+   
+   
+    NOTE  2.   Summary of Significant Accounting Policies 
+      
+    Basis of Presentation, Liquidity and Going Concern  – The accompanying condensed consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States of America (“U.S. GAAP”) and pursuant to the accounting and disclosure rules and regulations of the SEC assuming the Company will continue as a going concern.  
+      
+    The Company is a clinical-stage biotechnology company with  no  product sales. Its primary source of capital is from the sale and issuance of common stock and common stock warrants. At   March 31, 2023,  the Company had cash, cash equivalents, restricted cash, and investments of $ 71.8  million. A substantial doubt has been raised with regard to the ability of the Company to continue as a going concern for a period of  one  year after the date that the financial statements are issued as the Company is expected to generate operating losses and negative operating cash flows and had  no  committed source of debt or equity financing.  
+      
+    During the  first  quarter of  2023 ,  the Company decided to primarily focus on advancing its norovirus oral vaccine candidate and postponed initiating a SARS-CoV- 2  human challenge study. The Company also implemented a restructuring plan to reduce operating costs and better align its workforce with the needs of its business. The plan resulted in a reduction of approximately  27 %  of the Company’s workforce and severance costs of $ 732,000 . The Company projects it has enough cash runway into the  second  quarter of  2024. 
+      
+    The Company will be dependent upon raising additional capital through placement of its common stock, notes or other securities, borrowings, or entering into a partnership with a strategic party in order to implement its business plan. The Company is currently  not  in compliance with the minimum bid price requirement for continued listing on Nasdaq and has been provided an initial compliance period until   September 25, 2023  to regain compliance. The Company   may  be eligible for an additional  180  calendar days compliance period under certain circumstances. If the Company does  not  regain compliance during the compliance period, the Company’s common stock will be delisted from Nasdaq. The delisting of our common stock from Nasdaq   may  make it more difficult for us to raise capital on favorable terms in the future, or at all. There can be  no  assurance that the Company will be successful raising additional capital. If the Company is unable to raise additional capital in sufficient amounts or on acceptable terms, management’s plans include further reducing or delaying operating expenses. The Company has concluded, even without raising any additional capital, management’s plan to successfully reduce expenses is probable and sufficient to alleviate substantial doubt for a period of at least  12  months from the date of issuance of these condensed consolidated financial statements. 
+      
+    The financial statements do  not  include any adjustments that might be necessary if the Company is unable to continue as a going concern. 
+      
+    Certain information and footnote disclosures normally included in consolidated financial statements have been condensed or omitted pursuant to these rules and regulations. These condensed consolidated financial statements should be read in conjunction with the Company’s audited financial statements and footnotes related thereto for the year ended   December  31,   2022,  included in the Company’s Annual Report on Form  10 -K filed with the SEC on   March 15, 2023  (the “Annual Report”). Unless noted below, there have been  no  material changes to the Company’s significant accounting policies described in Note  2  to the consolidated financial statements included in the Annual Report. In the opinion of management, the unaudited condensed consolidated financial statements include all adjustments (consisting only of normal recurring adjustments) necessary to present fairly the Company’s financial position and the results of its operations and cash flows. The results of operations for such interim periods are  not  necessarily indicative of the results to be expected for the full year or any future periods. 
+      
+    Basis of Consolidation  – The condensed consolidated financial statements include the financial statements of Vaxart, Inc. and its subsidiaries. All significant transactions and balances between Vaxart, Inc. and its subsidiaries have been eliminated in consolidation. 
+      
+    Use of Estimates  – The preparation of financial statements in conformity with U.S. GAAP requires management to make estimates and assumptions that affect the reported amounts of assets, liabilities, revenues and expenses and disclosure of contingent assets and liabilities in the financial statements and accompanying notes. Actual results and outcomes could differ from these estimates and assumptions. 
+      
+    Concentration of Credit Risk  – Financial instruments that potentially subject the Company to significant concentrations of credit risk consist principally of cash, cash equivalents, restricted cash and available-for-sale investments. The Company places its cash, cash equivalents, restricted cash and available-for-sale investments at financial institutions that management believes are of high credit quality. The Company is exposed to credit risk in the event of default by the financial institutions holding the cash, cash equivalents and restricted cash to the extent such amounts are in excess of the federally insured limits. Losses incurred or a lack of access to such funds could have a significant adverse impact on the Company’s financial condition, results of operations, and cash flows. 
+      
+    
+     
+      
+       
+        5 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+      
+    The primary focus of the Company’s investment strategy is to preserve capital and meet liquidity requirements. The Company’s investment policy addresses the level of credit exposure by limiting the concentration in any  one  corporate issuer or sector and establishing a minimum allowable credit rating. 
+      
+    Recent  Accounting Pronouncements 
+      
+    The Company has reviewed all newly-issued accounting pronouncements that are  not  yet effective and concluded that they are either  not  applicable to its operations or their adoption is  not  expected to have a material impact on its financial position or results of operations. 
+   
+     
+   
+     
+   
+   
+    NOTE  3 .   Fair Value of Financial Instruments   
+      
+    Fair value accounting is applied for all financial assets and liabilities and nonfinancial assets and liabilities that are recognized or disclosed at fair value in the financial statements on a recurring basis (at least annually). Financial instruments include cash and cash equivalents, marketable securities, accounts receivable, accounts payable and accrued liabilities that approximate fair value due to their relatively short maturities. 
+      
+    Assets and liabilities recorded at fair value on a recurring basis in the balance sheets are categorized based upon the level of judgment associated with inputs used to measure their fair values. The accounting guidance for fair value provides a framework for measuring fair value and requires certain disclosures about how fair value is determined. Fair value is defined as the price that would be received to sell an asset or paid to transfer a liability (an exit price) in an orderly transaction between market participants at the reporting date. The accounting guidance also establishes a  three -level valuation hierarchy that prioritizes the inputs to valuation techniques used to measure fair value based upon whether such inputs are observable or unobservable. Observable inputs reflect market data obtained from independent sources, while unobservable inputs reflect market assumptions made by the reporting entity. 
+      
+    The  three -level hierarchy for the inputs to valuation techniques is briefly summarized as follows: 
+      
+    Level  1  – Inputs are unadjusted, quoted prices in active markets for identical assets or liabilities at the measurement date; 
+      
+    Level  2  – Inputs are observable, unadjusted quoted prices in active markets for similar assets or liabilities, unadjusted quoted prices for identical or similar assets or liabilities in markets that are  not  active, or other inputs that are observable or can be corroborated by observable market data for substantially the full term of the related assets or liabilities; and 
+      
+    Level  3  – Unobservable inputs that are significant to the measurement of the fair value of the assets or liabilities that are supported by little or  no  market data. 
+      
+    The following table sets forth the fair value of the Company’s financial assets that are measured on a recurring basis as of   March 31, 2023  and   December 31, 2022  (in thousands): 
+      
+    
+           Level 1         Level 2         Level 3         Total     
+   March 31, 2023                                   
+   Financial assets:                                   
+   Money market funds     $ 38,179     $ —     $ —     $ 38,179   
+   U.S. Treasury securities       —       21,379       —       21,379   
+   Commercial paper       —       999       —       999   
+   Corporate debt securities       —       999       —       999   
+   Total     $ 38,179     $ 23,377     $ —     $ 61,556   
+ 
+    
+      
+    
+           Level 1         Level 2         Level 3         Total     
+   December 31, 2022                                   
+   Financial assets:                                   
+   Money market funds     $ 30,834     $ —     $ —     $ 30,834   
+   U.S. Treasury securities       —       41,542       —       41,542   
+   Commercial paper       —       5,674       —       5,674   
+   Corporate debt securities       —       2,488       —       2,488   
+   Total     $ 30,834     $ 49,704     $ —     $ 80,538   
+ 
+    
+      
+    The Company held  no  recurring financial liabilities as of   March 31, 2023  or   December 31, 2022 , or in the  three  months ended   March 31,   2023  or  2022 . 
+      
+    
+     
+      
+       
+        6 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+   
+     
+   
+     
+   
+   
+    NOTE  4 .   Balance Sheet Components 
+      
+        (a)     Cash, Cash Equivalents, Restricted Cash  and Investments   
+ 
+      
+    Cash, cash equivalents, restricted cash and investments consisted of the following (in thousands): 
+      
+    
+           Amortized         Gross Unrealized         Estimated         Cash and Cash Equivalents         Short-Term         Long-Term     
+       Cost         Gains         Losses         Fair Value         and Restricted Cash         Investments         Investments     
+   March 31, 2023                                                           
+   Cash at banks     $ 10,255     $ —     $ —     $ 10,255     $ 10,255     $ —     $ —   
+   Money market funds       38,179       —       —       38,179       38,179       —       —   
+   U.S. Treasury securities       21,448       —       ( 69 )     21,379       —       21,379       —   
+   Commercial paper       999       —       —       999       —       999       —   
+   Corporate debt securities       1,000       —       ( 1 )     999       —       999       —   
+   Total     $ 71,881     $ —     $ ( 70 )   $ 71,811     $ 48,434     $ 23,377     $ —   
+ 
+    
+      
+    
+           Amortized         Gross Unrealized         Estimated         Cash and Cash Equivalents         Short-Term         Long-Term     
+       Cost         Gains         Losses         Fair Value         and Restricted Cash         Investments         Investments     
+   December 31, 2022                                                           
+   Cash at banks     $ 15,179     $ —     $ —     $ 15,179     $ 15,179     $ —     $ —   
+   Money market funds       30,834       —       —       30,834       30,834       —       —   
+   U.S. Treasury securities       41,812       —       ( 270 )     41,542       —       41,542       —   
+   Commercial paper       2,488       —       —       2,488       —       2,488       —   
+   Corporate debt securities       5,703       —       ( 29 )     5,674       —       5,674       —   
+   Total     $ 96,016     $ —     $ ( 299 )   $ 95,717     $ 46,013     $ 49,704     $ —   
+ 
+    
+      
+    Cash and cash equivalents and restricted cash of $ 48.4  million as of   March 31, 2023  and $ 46.0  million as of   December 31, 2022,  includes restricted cash of $ 1.6  million and $ 2.0  million, respectively. 
+      
+        (b)     Property and Equipment, Net   
+ 
+      
+    Property and equipment, net consists of the following (in thousands): 
+      
+    
+           March 31, 2023         December 31, 2022     
+                   
+   Laboratory equipment     $ 13,512     $ 12,035   
+   Office and computer equipment       1,057       1,078   
+   Leasehold improvements       3,494       1,760   
+   Construction in progress       476       3,984   
+   Total property and equipment       18,539       18,857   
+   Less: accumulated depreciation       ( 4,166 )     ( 3,272 ) 
+   Property and equipment, net     $ 14,373     $ 15,585   
+ 
+       
+     Depreciation expense was $894,000 and $370,000 for the three months ended March 31, 2023 and 2022, respectively. There were no material impairments of the Company’s property and equipment recorded in the three months ended March 31, 2023 or 2022, respectively. 
+    
+      
+        (c)     Right-of-Use Assets , Net   
+ 
+      
+    Right-of-use assets, net comprises facilities of $ 27.8  million and $ 25.7  million as of   March 31, 2023  and   December 31, 2022 , respectively. In   September 2021,  the Company executed a lease for a facility in South San Francisco, California with an initial term expiring on   March 31, 2029.   The lease has  two  separate components,  one  commenced in the  third  quarter of  2022  and the other the  first  quarter of  2023  resulting in an additional $ 15.0  million and $ 3.1  million, respectively, of right-of-use assets. 
+      
+    
+     
+      
+       
+        7 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+      
+        (d)     Intangible Assets, Net   
+ 
+      
+    Intangible assets comprise developed technology and intellectual property. Intangible assets are carried at cost less accumulated amortization. Amortization is computed using the straight-line method over useful life of  11.75  years for developed technology and  20  years for intellectual property. As of   March 31, 2023 , developed technology and intellectual property had remaining lives of  6.6  and  4.75  years, respectively. As of   March 31, 2023,  there have been  no  indicators of impairment. Intangible assets consist of the following (in thousands): 
+      
+    
+           March 31, 2023         December 31, 2022     
+                   
+   Developed technology     $ 5,000     $ 5,000   
+   Intellectual property       80       80   
+   Total cost       5,080       5,080   
+   Less: accumulated amortization       ( 243 )     ( 60 ) 
+   Intangible assets, net     $ 4,837     $ 5,020   
+ 
+    
+      
+    Intangible asset amortization expense for the  three  months ended   March 31,   2023  and  2022 , was $ 183,000  and $ 338,000 , respectively. 
+      
+    As of   March 31, 2023 , the estimated future amortization expense by year is as follows (in thousands): 
+      
+    
+       Year Ending December 31,       Amount     
+   2023 (nine months remaining)     $ 548   
+   2024       731   
+   2025       731   
+   2026       731   
+   2027       731   
+   Thereafter       1,365   
+   Total     $ 4,837   
+ 
+    
+      
+        (e)     Goodwill   
+ 
+      
+    Goodwill, which represents the excess of the purchase price over the fair value of assets acquired, comprises $ 4.5  million as of   March 31, 2023  and   December 31, 2022 . As of   March 31, 2023 , there have been  no  indicators of impairment. 
+      
+        (f)     Other Accrued Liabilities   
+ 
+      
+    Other accrued liabilities consist of the following (in thousands): 
+      
+    
+           March 31, 2023         December 31, 2022     
+                   
+   Accrued compensation     $ 2,865     $ 3,112   
+   Accrued clinical and manufacturing expenses       1,497       2,413   
+   Accrued professional and consulting services       524       691   
+   Other liabilities, current portion       2,091       1,868   
+   Total     $ 6,977     $ 8,084   
+ 
+    
+      
+      
+   
+   
+     
+   
+   
+    NOTE  5 .   Revenue 
+      
+    Royalty Agreement 
+      
+    The Company generates royalty revenue from the sale of Inavir in Japan, pursuant to a collaboration and license agreement that Aviragen entered into with Daiichi Sankyo Company, Limited (“Daiichi Sankyo”) in  2009.  In   September 2010,  laninamivir octanoate was approved for sale by the Japanese Ministry of Health and Welfare for the treatment of influenza in adults and children, which Daiichi Sankyo markets as Inavir. Under the agreement, the Company currently receives a  4 % royalty on net sales of Inavir in Japan. The last patent related to Inavir is set to expire in   December 2029,  at which time royalty revenue will cease. The Company’s royalty revenue is seasonal, in line with the flu season, so the majority of the Company’s royalty revenue and non-cash royalty revenue related to the sale of future royalties are earned in the  first  and  fourth  fiscal quarters. The royalty revenue related to Inavir recognized in the  three  months ended   March 31,   2023  and  2022 , was  nil .  In addition, the Company recognized non-cash royalty revenue related to sale of future royalties (see Note  6 ) of $ 278,000  and $ 85,000  in the  three  months ended   March 31,   2023  and  2022 , respectively. Both royalty revenue and the non-cash royalty revenue related to sale of future royalties are subject to a  5 % withholding tax in Japan, for which $ 14,000  and $ 4,000  was included in income tax expense in the  three  months ended   March 31,   2023  and  2022 , respectively. 
+      
+    Grant Revenue 
+      
+    In   November 2022,  the Company accepted a grant to perform research and development work for the Bill & Melinda Gates Foundation ("BMGF") and received $ 2.0  million in advance that was recorded as restricted cash and deferred revenue.  The Company recognizes revenue under research contracts only when a contract has been executed and the contract price is fixed or determinable. Revenue from the BMGF grant is recognized in the period during which the related costs are incurred and the related services are rendered, provided that the applicable conditions under the contract have been met. Costs of contract revenue are recorded as a component of operating expenses in the consolidated statements of operations and comprehensive loss. The Company recognized $ 397,000  revenue from the BMGF Grant in the  three -months ended   March 31, 2023.   As of   March 31, 2023  and   December 31, 2022,  restricted cash and deferred revenue were $ 1.6  million and $ 2.0  million, respectively. 
+      
+    
+     
+      
+       
+        8 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+      
+   
+   
+     
+   
+   
+    NOTE  6 .    Liabilities Related to Sale of Future Royalties 
+      
+    In   April 2016,  Aviragen entered into a Royalty Interest Acquisition Agreement (the “RIAA”) with HealthCare Royalty Partners III, L.P. ("HCRP"). Under the RIAA, HCRP made a $ 20.0  million cash payment to Aviragen in consideration for acquiring certain royalty rights (“Royalty Rights”) related to the approved product Inavir in the Japanese market. The Royalty Rights were obtained pursuant to the collaboration and license agreements (the “License Agreement”) and a commercialization agreement that the Company entered into with Daiichi Sankyo. Per the terms of the RIAA, HCRP is entitled to the  first  $ 3.0  million plus  15 % of the next $ 1.0  million in royalties earned in each year commencing on   April 1,  with any excess revenue being retained by the Company. 
+      
+    Under the relevant accounting guidance, due to a limit on the amount of royalties that HCRP can earn under the RIAA, this transaction was accounted for as a liability that is being amortized using the effective interest method over the life of the arrangement. The Company has  no  obligation to pay any amounts to HCRP other than to pass through to HCRP its share of royalties as they are received from Daiichi Sankyo. To record the amortization of the liability, the Company is required to estimate the total amount of future royalty payments to be received under the License Agreement and the payments that will be passed through to HCRP over the life of this agreement. Consequently, the Company imputes interest on the unamortized portion of the liability and records non-cash interest expense using an estimated effective interest rate. The royalties earned in each period that will be passed through to HCRP are recorded as non-cash royalty revenue related to sale of future royalties, with any excess  not  subject to pass-through being recorded as royalty revenue. When the pass-through royalties are paid to HCRP in the following quarter, the imputed liability related to sale of future royalties is commensurately reduced. The Company periodically assesses the expected royalty payments, and to the extent such payments are greater or less than the initial estimate, the Company adjusts the amortization of the liability and interest rate. As a result of this accounting, even though the Company does  not  retain HCRP’s share of the royalties, it will continue to record non-cash revenue related to those royalties until the amount of the associated liability, including the related interest, is fully amortized. 
+      
+    The following table shows the activity within the liability account during the  three  months ended   March 31,   2023  (in thousands): 
+      
+    
+       Total liability related to sale of future royalties, start of period     $ 5,716   
+   Non-cash royalty revenue paid to HCRP       ( 20 ) 
+   Non-cash interest expense recognized       178   
+   Total liability related to sale of future royalties, end of period       5,874   
+   Current portion       ( 877 ) 
+   Long-term portion     $ 4,997   
+ 
+       
+    
+    
+     
+      
+       
+        9 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+   
+     
+   
+     
+   
+   
+    NOTE  7 .   Leas es 
+      
+    The Company has obtained the right of use for office and manufacturing facilities under  seven  operating lease agreements with initial terms exceeding  one  year and has  one  operating lease agreements for facilities and  one  for manufacturing equipment with initial terms of  one  year or less. The lease term at the commencement date is determined by considering whether renewal options and termination options are reasonably assured of exercise. 
+      
+    In   September 2021  the Company executed a lease for a facility in South San Francisco, California, with an initial term expiring on   March 31, 2029.  This lease has  two  separate components,  one  commenced in the  third  quarter of  2022  and the other in the  first  quarter of  2023  resulting in an additional right of use asset $ 15.0  million and $ 3.1  million respectively. 
+      
+    As of   March 31, 2023 , the weighted average discount rate for operating leases with initial terms of more than  one  year was  9.8 % and the weighted average remaining term of these leases was  5.9  years. Discount rates were determined using the Company’s marginal rate of borrowing at the time each lease was executed or extended. 
+      
+    The following table summarizes the Company’s undiscounted cash payment obligations for its operating lease liabilities with initial terms of more than  twelve  months as of   March 31, 2023  (in thousands): 
+      
+    
+       Year Ending December 31,           
+   2023 (nine months remaining)     $ 3,117   
+   2024       4,275   
+   2025       4,421   
+   2026       4,975   
+   2027       5,205   
+   Thereafter       6,797   
+   Undiscounted total       28,790   
+   Less: imputed interest       ( 7,274 ) 
+   Present value of future minimum payments       21,516   
+   Current portion of operating lease liability       ( 2,344 ) 
+   Operating lease liability, net of current portion     $ 19,172   
+ 
+       
+     The Company presently has no finance leases and no future obligations under operating leases with initial terms of one year or less. 
+    
+      
+    The Company is also required to pay for operating expenses related to the leased space, which were $ 2.0  million and $ 1.1  million for the  three  months ended   March  31,   2023  and  2022.  The operating expenses are incurred separately and were  not  included in the present value of lease payments. 
+      
+    
+           Three Months Ended March 31,     
+       2023         2022     
+   Lease cost                   
+   Operating lease cost     $ 1,510     $ 719   
+   Short-term lease cost       21       118   
+   Variable lease cost       511       265   
+   Total lease cost     $ 2,042     $ 1,102   
+ 
+    
+      
+   
+   
+     
+   
+   
+    NOTE  8 .  Commitments and Contingencies 
+      
+        (a)     Purchase Commitments   
+ 
+      
+    As of   March 31, 2023 , the Company had approximately $ 7.8  million of non-cancelable purchase commitments, principally for contract manufacturing and clinical services which are expected to be paid within the next year.  
+      
+        (b)     Indemnifications   
+ 
+      
+    In the ordinary course of business, the Company enters into agreements that   may  include indemnification provisions. Pursuant to such agreements, the Company   may  indemnify, hold harmless and defend indemnified parties for losses suffered or incurred by the indemnified party. Some of the provisions will limit losses to those arising from  third -party actions. In some cases, the indemnification will continue after the termination of the agreement. The maximum potential amount of future payments the Company could be required to make under these provisions is  not  determinable. The Company has also entered into indemnification agreements with certain officers and directors which provide, among other things, that the Company will indemnify and advance expenses incurred in connection with certain actions, suits or proceedings to such officer or director, under the circumstances and to the extent provided for therein, for expenses, damages, judgments, fines and settlements he or she   may  be required to pay in actions or proceedings which he or she is or   may  be made a party by reason of his or her position as a director, officer or other agent of the Company, and otherwise to the fullest extent permitted under Delaware law and the Company’s Bylaws. The Company currently has directors’ and officers’ insurance. 
+      
+    
+     
+      
+       
+        10 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+      
+        (c)     Litigation   
+ 
+      
+    From time to time the Company   may  be involved in legal proceedings arising in connection with its business. Based on information currently available, the Company believes that the amount, or range, of reasonably possible losses in connection with any pending actions against it in excess of established reserves, in the aggregate, is indeterminable to its consolidated financial condition or cash flows. However, any current or future dispute resolution or legal proceeding, regardless of the merits of any such proceeding, could result in substantial costs and a diversion of management’s attention and resources that are needed to run the Company successfully, and could have a material adverse impact on its business, financial condition and results of operations. 
+      
+    On   August 4, 2020,  a purported shareholder derivative complaint was filed in the Superior Court of California, San Mateo County, entitled  Godfrey v. Latour, et al.  An amended complaint was filed on   September 4, 2020  and the case was re-named  Ennis v. Latour, et al . A  second  amended complaint was filed on   November 25, 2020.  A  third  amended complaint was filed on   June 11, 2021.  The  third  amended complaint named certain current and former Vaxart directors as defendants, asserting claims against them for breach of fiduciary duty, unjust enrichment, and waste and seeking, among other things, an award of unspecified damages, certain equitable relief, and attorneys’ fees and costs. The  third  amended complaint also asserted claims for breach of fiduciary duty and aiding and abetting breach of fiduciary duty against Armistice Capital, LLC (“Armistice”). The  third  amended complaint challenged certain stock options granted to certain of the Company’s officers and directors in   June 2020;  certain alleged statements and omissions made in the Company’s   April 24, 2020,  proxy statement; and certain amendments to  two  warrants held by Armistice, as disclosed on   June 8, 2020.  The  third  amended complaint purported to bring the lawsuit derivatively on behalf of and for the benefit of the Company and named the Company as a “nominal defendant” against which  no  damages were sought. On   August 31, 2021,  the Company and certain of its directors (the “Vaxart Defendants”), as well as all other defendants, filed demurrers to the  third  amended complaint. By Order dated   November 17, 2022,  the court sustained the defendants’ demurrers without leave to amend, and the time for plaintiffs to appeal has since lapsed. 
+      
+    In   August  and   September 2020,  two  substantially similar securities class actions were filed in the U.S. District Court for the Northern District of California. The  first  action, titled  Himmelberg v. Vaxart, Inc. et al.  was filed on   August 24, 2020.  The  second  action, titled  Hovhannisyan v. Vaxart, Inc. et al.  was filed on   September 1, 2020 ( together, the “Putative Class Action”). By Order dated   September 17, 2020,  the  two  actions were deemed related. On   December 9, 2020,  the court appointed lead plaintiffs and lead plaintiffs’ counsel. 
+      
+    On   January 29, 2021,  lead plaintiffs filed their consolidated amended complaint. On   July 8, 2021,  all defendants moved to dismiss the consolidated amended complaint. On   May 14, 2021,  the court granted lead plaintiffs’ request to amend the consolidated amended complaint and denied defendants’ motions to dismiss as moot. On   June 10, 2021,  lead plaintiffs filed a  first  amended consolidated complaint, and on   August 9, 2021,  lead plaintiffs filed a corrected  first  amended consolidated complaint. The  first  amended consolidated complaint, as corrected, named certain of Vaxart’s current and former executive officers and directors, as well as Armistice, as defendants. It claimed  three  violations of federal civil securities laws; violation of Section  10 (b) of the Exchange Act and SEC Rule  10b - 5,  as against the Company and all individual defendants; violation of Section  20 (a) of the Exchange Act, as against Armistice and all individual defendants; and violation of Section  20A  of the Exchange Act against Armistice. The  first  amended consolidated complaint, as corrected, alleged that the defendants violated securities laws by misstating and/or omitting information regarding the Company’s development of a norovirus vaccine, the vaccine manufacturing capabilities of a business counterparty, and the Company’s involvement with Operation Warp Speed (“OWS”); and by engaging in a scheme to inflate Vaxart’s stock price. The  first  amended consolidated complaint sought certification as a class action for similarly situated shareholders and sought, among other things, an unspecified amount of damages and attorneys’ fees and costs. On   July 8, 2021,  all defendants moved to dismiss the  first  amended consolidated complaint. By Order dated   December 22, 2021,  the court granted the motion to dismiss by Armistice with leave to amend and otherwise denied the motions to dismiss. On   July 27, 2022,  lead plaintiffs filed a notice announcing that they had reached a partial settlement (the “Partial Settlement”) to resolve all claims against the Company and its current or former officers and/or directors in their capacity as officers and/or directors of the Company (the “Settling Defendants”). Pursuant to the Partial Settlement, the Company agreed to a settlement amount of $ 12.0  million with  $2.0  million to be paid by the Company and the remainder to be paid by the Company’s insurers. On   November 2, 2022,  the Company paid the $ 2.0  million settlement amount with respect to the Putative Class Action pursuant to the terms of the settlement agreement reached in that case. On   November 14, 2022,  lead plaintiffs filed a  second  amended consolidated class action complaint that purported to include new allegations to support claims against Armistice. By Orders dated   January 25, 2023,  the court approved the Partial Settlement and entered judgment dismissing with prejudice all claims asserted in the Putative Class Action against the Settling Defendants. 
+      
+    On   October 23, 2020,  a complaint was filed in the U.S. District Court for the Southern District of New York, entitled  Roth v. Armistice Capital LLC, et al.  The complaint names Armistice and certain Armistice-related parties as defendants, asserting a violation of Exchange Act Section  16 (b) and seeking the disgorgement of short-swing profits. The complaint purports to bring the lawsuit on behalf of and for the benefit of the Company and names the Company as a “nominal defendant” for whose benefit damages are sought. 
+      
+    On   January 8, 2021,  a purported shareholder, Phillip Chan, commenced a  pro se  lawsuit in the U.S. District Court for the Northern District of California titled  Chan v. Vaxart, Inc. et al.  (the “Opt-Out Action”). Because this complaint is nearly identical to an earlier version of a complaint filed in the Putative Class Action, the Opt-Out Action has been stayed while the Putative Class Action is pending. 
+      
+    
+     
+      
+       
+        11 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+   
+   VAXART , INC. 
+     
+   Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+     
+   
+     
+   
+   
+    NOTE  9 .  Stock holders’ Equity 
+      
+        (a)     P referred Stock   
+ 
+      
+    The Company is authorized to issue  5,000,000  shares of preferred stock, $ 0.0001  par value per share. The Company’s board of directors   may,  without further action by the stockholders, fix the rights, preferences, privileges and restrictions of up to an aggregate of  5,000,000  shares of preferred stock in  one  or more series and authorize their issuance. These rights, preferences and privileges could include dividend rights, conversion rights, voting rights, terms of redemption, liquidation preferences, sinking fund terms and the number of shares constituting any series or the designation of such series, any or all of which   may  be greater than the rights of our common stock. The issuance of preferred stock could adversely affect the voting power of holders of common stock and the likelihood that such holders will receive dividend payments and payments upon liquidation. In addition, the issuance of preferred stock could have the effect of delaying, deterring or preventing a change of control or other corporate action.  No  shares of preferred stock are currently outstanding, and the Company has  no  present plan to issue any shares of preferred stock. 
+      
+        (b)     Common Stock   
+ 
+      
+    As of   March  31,   2023,  the Company was authorized to issue  250,000,000  shares of common stock, $ 0.0001  par value per share, which includes an increase of  100,000,000  on   August 4, 2022,  when the Company’s stockholders approved an amendment to the Company’s certificate of incorporation to increase the number of authorized shares of common stock from  150,000,000 . Except as otherwise required by law or as otherwise provided in any certificate of designation for any series of preferred stock, the holders of common stock possess all voting power for the election of the Company’s directors and all other matters requiring stockholder action. Holders of common stock are entitled to  one  vote per share on matters to be voted on by stockholders. Holders of common stock are entitled to receive such dividends, if any, as   may  be declared from time to time by the Company’s board of directors in its discretion out of funds legally available therefor. In  no  event will any stock dividends or stock splits or combinations of stock be declared or made on common stock unless the shares of common stock at the time outstanding are treated equally and identically. As of   March 31, 2023 ,  no  dividends had been declared by the board of directors. 
+      
+    In the event of the Company’s voluntary or involuntary liquidation, dissolution, distribution of assets or winding-up, the holders of the common stock will be entitled to receive an equal amount per share of all the Company’s assets of whatever kind available for distribution to stockholders, after the rights of the holders of the preferred stock have been satisfied. There are  no  sinking fund provisions applicable to the common stock. 
+      
+    The Company had shares of common stock reserved for issuance as follows: 
+      
+    
+           March 31, 2023         December 31, 2022     
+                   
+   Options issued and outstanding       19,305,219       14,725,261   
+   RSUs issued and outstanding       3,708,708       808,310   
+   Available for future grants of equity awards       4,540,768       12,074,692   
+   Common stock warrants       227,434       227,434   
+   2022 Employee Stock Purchase Plan       1,800,000       1,800,000   
+   Total       29,582,129       29,635,697   
+ 
+    
+      
+        (c)     Warrants   
+ 
+      
+    The following warrants were outstanding as of   March 31, 2023 , all of which contain standard anti-dilution protections in the event of subsequent rights offerings, stock splits, stock dividends or other extraordinary dividends, or other similar changes in the Company’s common stock or capital structure, and  none  of which have any participating rights for any losses: 
+      
+    
+       Securities into which warrants are convertible       Warrants Outstanding         Exercise Price       Expiration Date   
+                     
+   Common Stock       44,148     $ 1.10     April 2024   
+   Common Stock       26,515     $ 1.375     April 2024   
+   Common Stock       29,150     $ 2.50     March 2025   
+   Common Stock       100,532     $ 3.125     February 2025   
+   Common Stock       16,175     $ 3.125     March 2024   
+   Common Stock       10,914     $ 22.99     December 2026   
+   Total       227,434             
+ 
+    
+      
+    In the event of a Fundamental Transaction (a transfer of ownership of the Company as defined in the warrant) within the Company’s control, the holders of the unexercised common stock warrants exercisable for $ 1.10  and $ 2.50  and those exercisable for $ 3.125  expiring in   February 2025  shall be entitled to receive cash consideration equal to a Black-Scholes valuation, as defined in the warrant. If such Fundamental Transaction is  not  within the Company’s control, the warrant holders would only be entitled to receive the same form of consideration (and in the same proportion) as the holders of the Company’s common stock, hence these warrants are classified as a component of permanent equity. 
+      
+    
+     
+      
+       
+        12 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+   
+     
+   
+     
+   
+   
+    NOTE  1 0 .   Equity Incentive Plan s 
+      
+    On   April 23, 2019,  the Company’s stockholders approved the adoption of the  2019  Equity Incentive Plan (the  “2019  Plan”), under which the Company is authorized to issue incentive stock options, nonqualified stock options, stock appreciation rights, restricted stock awards, restricted stock units (RSUs), other stock awards and performance awards that   may  be settled in cash, stock, or other property. The  2019  Plan is designed to secure and retain the services of employees, directors and consultants, provide incentives for the Company’s employees, directors and consultants to exert maximum efforts for the success of the Company and its affiliates, and provide a means by which employees, directors and consultants   may  be given an opportunity to benefit from increases in the value of the Company’s common stock. Following adoption of the  2019  Plan, all previous plans were frozen, and on forfeiture, cancellation and expiration, awards under those plans are  not  assumed by the  2019  Plan. 
+      
+    The aggregate number of shares of common stock authorized for issuance under the  2019  Plan was initially  1,600,000  shares, which was increased through an amendment to the  2019  Plan adopted by the Company’s stockholders (a “Plan Amendment”) on   June 8, 2020,  to  8,000,000 , by a Plan Amendment on   June 16, 2021,  to  16,900,000 , and by a Plan Amendment on   August 4, 2022,  to  28,900,000 . Further amendments to the  2019  Plan to increase the share reserve would require stockholder approval. Awards that are forfeited or canceled generally become available for issuance again under the  2019  Plan. Awards have a maximum term of  ten  years from the grant date and   may  vest over varying periods, as specified by the Company’s board of directors for each grant. 
+      
+    A summary of stock option and RSU transactions in the  three  months ended   March 31,   2023 , is as follows: 
+      
+    
+                           Weighted                 Weighted     
+       Shares         Number of         Option Average         Unvested         RSU Average     
+       Available         Options         Exercise         RSU Shares         Grant Date     
+       For Grant         Outstanding         Price         Outstanding         Fair Value     
+                                           
+   Balance at January 1, 2023       12,074,692       14,725,261     $ 4.48       808,310     $ 3.57   
+   Granted       ( 10,071,992 )     6,960,943     $ 0.78       3,111,049     $ 0.78   
+   Exercised       —       —     $ —       —     $ —   
+   Released       —       —     $ —       ( 49,220 )   $ 5.09   
+   Forfeited       1,887,633       ( 1,726,202 )   $ 5.43       ( 161,431 )   $ 3.49   
+   Canceled       650,435       ( 654,783 )   $ 3.72       —     $ —   
+                                           
+   Balance at March 31, 2023       4,540,768       19,305,219     $ 3.09       3,708,708     $ 1.21   
+ 
+       
+     As of March 31, 2023, there were 19,305,219 options outstanding with a weighted average exercise price of $3.09, a weighted average remaining term of 8.28 years and an aggregate intrinsic value of $72,000. Of these options, 6,185,977 were vested, with a weighted average exercise price of $4.11, a weighted average remaining term of 6.06 years and an aggregate intrinsic value of $64,000.  
+       
+     The aggregate intrinsic value represents the total pre-tax value (i.e., the difference between the Company’s stock price and the exercise price) of stock options outstanding as of March 31, 2023, based on the Company’s common stock closing price of $0.76, which would have been received by the option holders had all their in-the-money options been exercised as of that date. 
+       
+     There were no options exercised during the three months ended March 31, 2023. The Company received $48,000 for the 30,418 options exercised during the three months ended March 31, 2022, which had an intrinsic value of $101,000.  
+    
+      
+    The weighted average grant date fair value of options awarded in the  three  months ended   March 31,   2023  and  2022 , was $ 0.78  and $ 4.48 , respectively. Their fair values were estimated using the following assumptions: 
+      
+    
+           Three Months Ended March 31,     
+       2023         2022     
+                   
+   Risk-free interest rate       3.45 % -  3.56 %       1.62 % -  2.55 %   
+   Expected term (in years)       6.00       6.02  -  6.08   
+   Expected volatility       128 %     125 % -  126 %   
+   Dividend yield       — %     — % 
+ 
+       
+    
+    
+     
+      
+       
+        13 
+       
+      
+     
+     
+     
+      
+       
+        Table of Contents 
+       
+      
+     
+    
+      
+    VAXART , INC. 
+      
+    Notes to the Condensed Consolidated Financial Statements (Unaudited) 
+      
+    The Company measures the fair value of all stock-based awards on the grant date and records the fair value of these awards, net of estimated forfeitures, to compensation expense over the service period. Total stock-based compensation recognized for options, RSUs and ESPP was as follows (in thousands): 
+      
+    
+           Three Months Ended March 31,     
+       2023         2022     
+                   
+   Research and development     $ 1,372     $ 2,027   
+   General and administrative       1,275       1,103   
+   Total stock-based compensation     $ 2,647     $ 3,130   
+ 
+    
+      
+    As of   March 31, 2023 , the unrecognized stock-based compensation cost related to outstanding unvested stock options and RSUs expected to vest was $ 28.1  million, which the Company expects to recognize over an estimated weighted average period of  2.6  years. 
+      
+    On   August 4, 2022,  the  2022  Employee Stock Purchase Plan (the  “2022  ESPP”) was approved by the Company’s stockholders. The Company reserved  1,800,000  shares of the Company’s common stock for purchase under the ESPP. The ESPP has a  6 -month offering period comprised of  one  purchase period.  The purchase price of the stock is equal to  85%  of the lesser of the market value of such shares at the beginning of the  6 -month offering period or the end of such offering period.  No  ESPP shares were issued or outstanding during the  three  months ended   March  31,   2023,  accordingly  1,800,000  shares were available and reserved for issuance under the ESPP.  
+      
+    The fair value of the ESPP shares is estimated using the Black-Scholes option pricing model. The weighted average estimated fair value for shares issued under our ESPP in fiscal years  2022  was $ 0.46  per share, with the assumptions of  0.5  expected term (in years),  84.66 % expected volatility,  4.60 % risk-free interest rate, and  0 % expected dividend yield. Stock-based compensation expense related to the ESPP for the  three  months ended   March 31, 2023  was $ 100,000 . As of   March 31, 2023,  the unrecognized stock-based compensation cost related to outstanding ESPP expected to be recognized is $ 50,000  by   May 2023. 
+      
+   
+   
+     
+   
+   
+    NOTE  11 .  Net Loss   Per Share 
+      
+    The following table presents the calculation of basic and diluted net loss per share (in thousands, except share and per share amounts): 
+      
+    
+           Three Months Ended March 31,     
+       2023         2022     
+                   
+   Net loss     $ ( 25,140 )   $ ( 25,101 ) 
+                   
+   Shares used to compute net loss per share – basic and diluted       135,213,196       125,795,255   
+                   
+   Net loss per share – basic and diluted     $ ( 0.19 )   $ ( 0.20 ) 
+ 
+       
+     No adjustment has been made to the net loss in the three months ended March 31, 2023 or 2022, as the effect would be anti-dilutive due to the net loss. 
+    
+      
+    The following potentially dilutive weighted average securities were excluded from the computation of weighted average shares outstanding because they would have been antidilutive: 
+      
+    
+           Three Months Ended March 31,     
+       2023         2022     
+                   
+   Options to purchase common stock       14,436,046       10,903,711   
+                   
+   Restricted stock units to purchase common stock       1,218,200       10,917   
+                   
+   Warrants to purchase common stock       227,434       232,434   
+                   
+   Employee Stock Purchase Plan       433,328       —   
+                   
+   Total potentially dilutive securities excluded from denominator of the diluted earnings per share computation       16,315,008       11,147,062   
+ 
+    
+   
+   
+      
+   
+   
+     
+   
+     
+   
+    
+     
+      
+       14
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Item 2.  Management ’ s Discussion and Analysis of Financial Condition and Results of Operations 
+     
+   The following discussion and analysis of our financial condition and results of operations shoul d be read in conjunction with our condensed consolidated financial statements and related notes included elsewhere in this Quarterly Report on Form 10-Q and with our audited consolidated financial statements included in our Annual Report on Form  10-K filed with the SEC on March 15, 2023. This Quarterly Report on Form 10-Q contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Securities Exchange Act of 1934, as amended, which are subject to the “safe harbor” created by those sections. Forward-looking statements are based on our management’s beliefs and assumptions and on information currently available to our management. In some cases, you can identify forward-looking statements by terms such as “may,” “will,” “should,” “could,” “goal,” “would,” “expect,” “plan,” “anticipate,” “believe,” “estimate,” “project,” “predict,” “potential” and similar expressions intended to identify forward-looking statements and reflect our beliefs and opinions on the relevant subject. Our actual results could differ materially from those discussed in the forward-looking statements. Factors that could cause or contribute to these differences include those discussed below and in this Quarterly Report on Form 10-Q. The forward-looking statements included in this Quarterly Report on Form 10-Q are made only as of the date hereof. These statements are based upon information available to us as of the filing date of this Quarterly Report on Form 10-Q, and while we believe such information forms a reasonable basis for such statements, such information may be limited or incomplete, and our statements should not be read to indicate that we have conducted an exhaustive inquiry into, or review of, all potentially available relevant information. These statements are inherently uncertain, and we caution investors against unduly relying upon these statements. In all events, we undertake no obligation to revise or update any forward-looking statements, whether as a result of new information, change in circumstances, future events or otherwise, and you are advised to consult any additional disclosures that we may make directly to you or through reports that we, in the future, may file with the SEC, including annual reports on Form 10-K, quarterly reports on Form 10-Q and current reports on Form 8-K. 
+     
+   Company Overview and Background 
+     
+   We are a clinical-stage biotechnology company primarily focused on the development of oral recombinant vaccines based on our Vector-Adjuvant-Antigen Standardized Technology (“VAAST”) proprietary oral vaccine platform. Our oral vaccines are designed to generate broad and durable immune responses that may protect against a wide range of infectious diseases and may be useful for the treatment of chronic viral infections and cancer. Our investigational vaccines are administered using a room temperature-stable tablet, rather than by injection.  
+     
+   We are developing prophylactic vaccine candidates that target a range of infectious diseases, including norovirus (a widespread cause of acute gastro-intestinal enteritis), SARS-CoV-2 (the virus that causes coronavirus disease 2019 (“COVID-19”)), and seasonal influenza. Several Phase 1 human studies with our norovirus vaccine candidates have been successfully completed. A Phase 2 challenge study evaluating safety and clinical efficacy of our GI.1 norovirus vaccine candidate is currently ongoing. A Phase 2 dose-ranging study evaluating the safety and immunogenicity of our bivalent GI.1 and GII.4 norovirus vaccine candidate is currently ongoing. We have completed a Phase 1 clinical trial for our first COVID-19 vaccine candidate and reported that the study met its primary and secondary endpoints. The first part of a Phase 2 study with our second COVID-19 vaccine candidate that commenced in late 2021 has been completed. We have also initiated preclinical work on novel COVID-19 vaccine constructs that seek to create a potent pan-betacoronavirus vaccine candidate that would respond to SARS-CoV-2 and also other betacoronaviruses (such as SARS-CoV-1 and MERS-CoV). Data indicating that our monovalent H1 influenza vaccine candidate protected participants against H1 influenza infection as well as a leading marketed injectable vaccine in a Phase 2 challenge study was published in 2020 (Lancet ID). In addition, we have generated preclinical data for a prophylactic vaccine candidate targeting respiratory syncytial virus (“RSV”) (a common cause of respiratory tract infection) and of our first therapeutic vaccine candidate targeting cervical cancer and dysplasia caused by human papillomavirus (“HPV”).  
+     
+   Vaxart Biosciences, Inc. was originally incorporated in California under the name West Coast Biologicals, Inc. in March 2004 and changed its name to Vaxart, Inc. (“Private Vaxart”) in July 2007, when it reincorporated in the state of Delaware. On February 13, 2018, Private Vaxart completed a reverse merger (the “Merger”) with Aviragen Therapeutics, Inc. (“Aviragen”), pursuant to which Private Vaxart survived as a wholly owned subsidiary of Aviragen. Under the terms of the Merger, Aviragen changed its name to Vaxart, Inc. and Private Vaxart changed its name to Vaxart Biosciences, Inc. 
+     
+   
+    
+     
+      
+       15
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Our Product Pipeline 
+     
+   Figure   1.  The following table outlines the status of our oral vaccine development programs: 
+     
+   
+    
+     
+   
+     
+   We are developing the following tablet vaccine candidates, which are all based on our proprietary platform: 
+     
+   
+    
+     
+            
+        ●   
+        Norovirus Vaccine .  Norovirus is the leading cause of acute gastroenteritis symptoms, such as vomiting and diarrhea, among people of all ages in the United States. Each year, on average, norovirus causes 19 to 21 million cases of acute gastroenteritis and contributes to 109,000 hospitalizations and 900 deaths, mostly among young children and older adults. Typical symptoms include dehydration, vomiting, diarrhea with abdominal cramps, and nausea. In a study by the CDC and Johns Hopkins University, published in 2016, the global annual economic impact of norovirus disease was estimated at $60 billion, $34 billion of which occurred in high income regions including the United States. An update by the lead authors estimated the burden in the U.S. alone to be $10.5 billion annually in 2018. Virtually all norovirus disease is caused by norovirus GI and GII genotypes, and we are developing a bivalent vaccine candidate designed to protect against both. Because norovirus is an enteric pathogen that infects epithelial cells of the small intestine, we believe that a vaccine that produces antibodies against norovirus in the intestine, such as our tablet vaccine candidate which is delivered directly to the gut, may provide optimal protection. We anticipate that, if approved, the vaccine will be an annual, one-time administration ahead of the winter season when norovirus incidence is at its peak, similar to the influenza season.   
+     
+
+    
+   
+     
+   In 2019, we completed the active phase of a Phase 1b clinical trial with our oral tablet vaccine candidates for the GI.1 and GII.4 norovirus strains. Both the oral norovirus GI.1 and GII.4 vaccine candidates were well tolerated with no serious adverse events reported. Most solicited and unsolicited adverse events were mild in severity, and there were no significant differences observed between the vaccine candidate and placebo treatment groups.  
+     
+   Our bivalent vaccine candidate (GI.1 and GII.4 co-administered) demonstrated robust immunogenicity, with an IgA ASC response rate of 78% for the GI.1 strain and 93% for the GII.4 strain for the bivalent cohort of the study, when compared to 86% and 90%, respectively, for the two monovalent cohorts of the study. These results indicate that co-administration of the two vaccine candidates, the intended approach for proceeding into Phase 2 and 3 trials, shows no cross-strain interference, or reduction of the immune response compared with individual (monovalent) vaccine delivery.  
+     
+   In early 2021, we initiated G1.1 dosing in a subset of subjects (second dose after more than one year) in the Phase 1b bivalent study. In results announced in July 2021, we reported that we were able to successfully boost immune responses with the G1.1 norovirus vaccine candidate in prior vaccinated subjects. These boosted responses include IgA antibody secreting cells, as well as IgG and IgA serum antibody responses. In mid-2021, we started a placebo-controlled, dose ranging study in elderly adult subjects aged 55 to 80 to evaluate the safety and immunogenicity of the G1.1 vaccine candidate in the older population. The top-line results were disclosed in June 2022. The immune response to the vaccine candidate was similar in healthy older individuals (ages 55 to 80) as it was in younger individuals in a previous study as measured by the numbers of antibody secreting cells (IgA ASC) and serum antibodies. Lastly, we conducted an open-label trial to evaluate the optimal timing of boost administration in young adults in which 3 cohorts of subjects received their second dose (boost) at varying timepoints between 1 and 3 months post initial vaccination. The top-line results from this study were disclosed in June 2022. Data indicated that the G1.1 vaccine candidate was able to successfully boost antibody responses, with antibody responses trending better with administration spread out over 3 months versus a shorter interval. 
+     
+   We are currently conducting additional Phase 2 clinical trials with our norovirus vaccine candidates. The first trial, which was initiated in early 2022, is a Phase 2 norovirus challenge study which will evaluate safety, immunogenicity and clinical efficacy of a norovirus GI.1 vaccine candidate compared to a placebo control post norovirus challenge.  In 2023, Vaxart expanded the ongoing Phase 2 GI.1 norovirus challenge study to include additional challenge cohorts. Vaxart believes the increased dataset will improve the likelihood of identifying a correlate of protection between immune responses to the vaccine and a reduction in risk of norovirus infection and/or acute gastroenteritis. Vaxart expects that identifying novel correlate(s) of protection may reduce the size and duration of a Phase 3 trial. Top-line data from this trial is expected in the third quarter of 2023. The second clinical trial, initiated in early 2023, is a Phase 2 multi-center, placebo-controlled dose-ranging trial evaluating the safety and immunogenicity of Vaxart’s bivalent norovirus vaccine candidate in subjects aged 18 years and older. Top-line data from this Phase 2 clinical trial is expected in the middle of 2023, and the study is designed to allow us to select the dose that we intend to use in Phase 3. Upon dose selection, a follow-on Phase 2 study will enroll an estimated 500 subjects which we expect will generate sufficient safety data at the selected dose to enable us to have an end of Phase 2 meeting with the FDA to gain concurrence on the scope and design of the Phase 3 pivotal efficacy study in adults over 18 years of age. 
+      
+   
+    
+     
+      
+       16
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   In the Fall of 2022, we announced a study that would receive significant funding and support from the Bill and Melinda Gates Foundation to evaluate whether our bivalent norovirus vaccine candidate induces antibodies in the breast milk of lactating mothers and whether infants up to six months of age can acquire those antibodies by breastfeeding.  Young infants are particularly susceptible to norovirus infection, causing severe dehydration and potentially death, particular in the developing world.  Further, the ability to immunize the youngest of children can be difficult due to the nascent immune system. Passive transfer of antibodies from mother to infant that are induced in milk may protect breastfeeding infants from infectious pathogens. If successful in eliciting antibodies in breast milk, the next step would be to prove that these antibodies can protect young infants and inhibit norovirus transmission among family members.  The study is expected to start in 2023. As a grant recipient from the Bill and Melinda Gates Foundation, Vaxart has agreed to a global access commitment for use of its bivalent norovirus vaccine candidate, if proven effective and approved, in breastfeeding mothers from low- and middle-income countries. 
+     
+   
+    
+     
+            
+        ●   
+      Coronavirus Vaccine.  COVID-19, a severe respiratory tract infection caused by the virus SARS-CoV-2, is a major cause of hospitalization and death in the U.S. and worldwide. According to the CDC, an outbreak of COVID-19 began in Wuhan, China, in late 2019 and rapidly spread worldwide. By April 13, 2023, more than 762 million COVID-19 cases had been identified globally, including in the United States, where the CDC had reported over 104 million infections and one million deaths. While most COVID-19 restrictions, such as stay-at-home orders, have been lifted, COVID-19 continues to spread and remains a public health threat, not least due to the continuing emergence of new variants. 
+     
+
+    
+   
+     
+   We have spent significant effort developing COVID-19 vaccine candidates over the past few years. We generated multiple vaccine candidates based on the published genome of SARS-CoV-2 and evaluated them in preclinical models for their ability to generate both mucosal and systemic immune responses. Of particular interest were the mucosal immune responses, as coronaviruses primarily infect the respiratory tract. Given the recent emergence of coronavirus strains with mutated S proteins that are considered more contagious than the original strain, serum antibodies from injected vaccines may not adequately protect against these SARS-CoV-2 variants over time, whereas a vaccine that is able to create cross-reactive mucosal antibodies and T cells against conserved epitopes may have significant advantages. 
+     
+   On September 14, 2020, we announced that the U.S. Food and Drug Administration (the “FDA”) had cleared our Investigational New Drug (“IND”) application to allow initiation of human clinical testing of our first oral COVID-19 (S and N proteins) vaccine candidate VXA-CoV2-1. In February 2021, we announced the preliminary results of the trial. The study achieved both its primary and secondary endpoints of safety and immunogenicity, respectively. Initial results showing cross-reactive mucosal antibody responses were published in  Science Translational Medicine . Additional detailed study results and mucosal durability data were reported in  medRxiv  in July 2022. 
+     
+   We announced in February 2021 that we would evaluate additional COVID-19 vaccine candidates that contain just the spike (“S”) protein, and different variant-specific vaccine candidates. After preclinical evaluations (including in non-human primate studies) showed that an improved antibody response could be achieved with a new COVID-19 vaccine candidate (VXA-CoV2-1.1-S) that expressed just the spike protein, we decided to move this candidate forward for clinical evaluation. 
+     
+   An IND for VXA-CoV2-1.1-S was cleared by the FDA in July 2021. We initiated dosing with this candidate in a two-part Phase 2 clinical study in October 2021, with approximately 896 participants planned for enrollment utilizing a two-part study design. The first part of the study (“Part 1”) planned enrollment of 48 participants aged 18 to 55 and 48 participants aged 56 to 75, in order to further evaluate safety and immunogenicity and to assess optimal dosage. Further, half the subjects in the trial would be prior vaccinated (have received two doses of an mRNA vaccine) to test the ability of VXA-CoV2-1.1-S to boost immune responses and enhance variant-specific cross-reactivity, and half the subjects would be naïve to prior vaccinations. The purpose of the study was to evaluate safety and immunogenicity and to assess optimal dosage. Upon dose selection from Part 1, the second part of the study (“Part 2”) planned enrollment of approximately 800 subjects aged 18 to 75. Part 2 was designed to test preliminary vaccine efficacy to protect against SARS-CoV-2 infection. The first part of the study (“Part 1”) has been completed. The actual enrollment of participants for Part 1 was less than planned due to the inability to identify and enroll vaccine-naïve individuals in a timely manner. Top-line data from this portion of the trial was announced in September 2022, indicating that the primary and secondary endpoints were both met. VXA-CoV2-1.1-S was able to boost the serum antibody responses for volunteers that previously received an mRNA vaccine (either Pfizer/BioNTech or Moderna). Serum neutralizing antibody responses to SARS-CoV-2 (Wuhan), a recognized correlate of protection, were boosted in this population from a geometric mean of 481 to 778, a fold rise of 1.6. Volunteers that had lower starting titers had larger increases than subjects that had higher titers. There were also substantial increases in the neutralizing antibody responses to the SARS-CoV-2 Omicron BA4/5 in these volunteers as measured by sVNT assay. Increases in the mucosal IgA antibody responses (antibodies in the nose and mouth) were observed in approximately 50% of subjects.  Subjects that had an increase in the mucosal IgA response to SARS-CoV-2 Wuhan S had an increase in IgA responses to other coronaviruses including SARS-CoV-2 Omicron BA4/5, SARS-CoV-1, and MERS-CoV, demonstrating the cross-reactive nature of these immune readouts. 
+     
+   We have initiated preclinical work on novel vaccine constructs that seek to create a potent pan-betacoronavirus vaccine candidate that would respond to SARS-CoV-2 and also other betacoronaviruses (such as SARS-CoV-1 and MERS-CoV). As described in the preceding paragraph, Vaxart’s clinical data demonstrated that it is possible to induce cross-reactive antibodies to multiple SARS-CoV-2 strains as well as SARS-CoV-1 and MERS-CoV at mucosal surfaces.   
+     
+   In June 2022, we announced a partnership with hVivo Services Limited (“hVIVO”) to test a Vaxart COVID-19 vaccine candidate for efficacy in a SARS-CoV-2 human challenge study. Subsequently in the first quarter of 2023, we decided to postpone initiating the SARS-CoV-2 human challenge study. As we advance new vaccine candidates, we will determine the best development plan, which may include a human challenge study. 
+     
+   
+    
+     
+            
+        ●   
+        Seasonal Influenza Vaccine.  Influenza is a major cause of morbidity and mortality in the U.S. and worldwide and, according to the CDC, only approximately 51% of eligible U.S. citizens were vaccinated in 2021/2022, with particularly low vaccination rates among adults between ages 18 and 49. We believe our oral tablet vaccine candidate has the potential to improve the protective efficacy of currently available influenza vaccines and increase flu vaccination rates.   
+     
+
+    
+   
+     
+   Influenza is one of the most common global infectious diseases, causing mild to life-threatening illness and even death. Approximately 350 million cases of seasonal influenza occur annually worldwide, of which three to five million cases are considered severe, causing 290,000 to 650,000 deaths per year. Very young children and the elderly are at the greatest risk. In the United States, between 5% and 20% of the population contracts influenza, between 140,000 and 710,000 people are hospitalized with complications of influenza, and between 12,000 and 52,000 people die from influenza and its complications each year, with up to 90% of the influenza-related deaths occurring in adults older than 65. The total economic burden of seasonal influenza in the United States has been estimated to be $87.1 billion, including medical costs which average $10.4 billion annually, while lost earnings due to illness and loss of life amount to $16.3 billion annually. 
+     
+   
+    
+     
+      
+       17
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   We believe our tablet vaccine candidate may potentially address many of the limitations presented by injectable egg-based influenza vaccines for the following reasons: (i) our tablet vaccine candidates are designed to create broad and durable immune responses, which may provide more effective immunity and protect against additional strain variants; (ii) our vaccine candidate is delivered as a room temperature-stable tablet, which we believe would provide a more convenient method of administration, enhancing patient acceptance and simplifying the distribution and administration process; (iii) we believe our tablet vaccine candidate may be manufactured more rapidly than vaccines manufactured using egg-based methods by using recombinant methods; and (iv) using our tablet vaccine candidate in lieu of egg-based vaccines would eliminate the risk of experiencing allergic reactions to egg protein. 
+     
+   In September 2018, we completed a $15.7 million contract with the U.S. Government through the Department of Health and Human Services, Office of Biomedical Advanced Research and Development Authority (“HHS BARDA”) under which a Phase 2 challenge study of our H1N1 flu vaccine candidate was conducted. We announced that, in healthy volunteers immunized and then experimentally infected with H1 influenza, our H1 influenza oral tablet vaccine candidate reduced clinical disease by 39% relative to placebo. Fluzone, the market-leading injectable quadrivalent influenza vaccine, reduced clinical disease by 27%. Our tablet vaccine candidate also showed a favorable safety profile, indistinguishable from placebo. 
+     
+   On October 2018, we presented data from the study demonstrating that our vaccine candidate elicited a significant expansion of mucosal homing receptor plasmablasts to approximately 60% of all activated B cells. We believe these mucosal plasmablasts are a key indicator of a protective mucosal immune response and a unique feature of our vaccine candidates. This data also indicates that our vaccine candidates provide protection by inducing mucosal immunity (the first line of defense against mucosal infections such as flu, norovirus and RSV), marking what could be a key advantage over injectable vaccines. 
+     
+   In addition to our conventional seasonal flu vaccine candidate, we entered into a research collaboration agreement with Janssen Vaccines & Prevention B.V. (“Janssen”) in July 2019 to evaluate our proprietary oral vaccine platform for the Janssen universal influenza vaccine program. Under the agreement, we produced a non-GMP oral vaccine candidate containing certain proprietary antigens from Janssen and tested the product in a preclinical challenge model. The preclinical study has been completed and we have submitted a report to Janssen. 
+     
+   Vaxart will work with governments around the world to create pandemic monovalent influenza vaccines for emergency use or stockpiling, if requested.  We are also continuing development of our preclinical seasonal and universal influenza vaccine candidates. 
+     
+   
+    
+     
+            
+        ●   
+        RSV Vaccine.  RSV is a major respiratory pathogen with a significant burden of disease in the very young and in the elderly.   
+     
+
+    
+   
+     
+   Based on the positive results of our preclinical cotton rat study, we believe our proprietary oral vaccine platform has the potential to be the optimal vaccine delivery system for RSV, offering significant advantages over injectable vaccines. 
+     
+   The Company remains engaged in discussions with regulatory agencies, governments, non-governmental organizations and other potential strategic parties to determine the best way to progress its RSV program. 
+     
+   
+    
+     
+            
+        ●   
+        HPV Therapeutic Vaccine .  Our first therapeutic oral vaccine candidate targets HPV 16 and HPV 18, the two strains responsible for 70% of cervical cancers and precancerous cervical dysplasia.   
+     
+
+    
+   
+     
+   Cervical cancer is the fourth most common cancer in women worldwide and in the United States with about 13,000 new cases diagnosed annually in the United States according to the National Cervical Cancer Coalition. 
+     
+   We have tested our HPV 16 vaccine candidate in two different HPV 16 solid tumor models in mice. The HPV 16 vaccine candidate elicited T cell responses and promoted migration of the activated T cells into the tumors, leading to tumor cell killing. Mice that received our HPV 16 vaccine candidate showed a significant reduction in volume of their established tumors. 
+     
+   In October 2018, we filed a pre-IND meeting request with the FDA for our first therapeutic vaccine candidate targeting HPV 16 and HPV 18 and we subsequently submitted our pre-IND briefing package. We received feedback from the FDA in January 2019 to support submission of an IND application to support initiation of clinical testing.  
+     
+   The Company remains engaged in discussions with regulatory agencies, governments, non-governmental organizations and other potential strategic parties to determine the best way to progress its HPV program. 
+     
+   Anti-Virals 
+     
+   
+    
+     
+            
+        ●   
+        Through the Merger, we acquired two royalty earning products, Relenza and Inavir. We also acquired three Phase 2 clinical stage antiviral compounds, which we have discontinued independent clinical development of. However, for one of these, Vapendavir, we have entered into an exclusive worldwide license agreement with Altesa Biosciences, Inc. (“Altesa”) In July 2021, permitting Altesa to develop and commercialize this capsid-binding broad spectrum antiviral. In May 2022, Altesa announced its intention to initiate clinical trials.   
+     
+
+    
+   
+     
+   
+    
+     
+            
+        ●   
+        Relenza and Inavir are antivirals for the treatment of influenza, marketed by GlaxoSmithKline, plc (“GSK”) and Daiichi Sankyo Company, Limited (“Daiichi Sankyo”), respectively. We have earned royalties on the net sales of Relenza and Inavir in Japan. The last patent for Relenza expired in July 2019 and the last patent for Inavir expires in December 2029. Sales of these antivirals vary significantly by quarter, because influenza virus activity displays strong seasonal cycles, and by year depending on the intensity and duration of the flu season, the impact COVID-19 has had, and may continue to have, on seasonal influenza, and competition from other antivirals such as Tamiflu and Xofluza.   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       18
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Financial Operations Overview 
+     
+   Revenue 
+     
+   Non-Cash Royalty Revenue Related to S al e of Future R oyalties 
+     
+   In April 2016, Aviragen sold certain royalty rights related to Inavir in the Japanese market for $20.0 million to HealthCare Royalty Partners III, L.P. (“HCRP”). We pay HCRP the first $3 million plus 15% of the next $1 million of royalties earned in annual periods ending on March 31. At the time of the Merger, the estimated future benefit to HCRP was remeasured at fair value and was estimated to be $15.9 million, which we account for as a liability and amortize using the effective interest method over the remaining estimated life of the arrangement. The estimated future benefit was remeasured as of December 31, 2022 and 2021 when the fair value was estimated to be $5.7 million and $11.5 million, respectively, resulting in a revaluation gain of $7.0 million in the year ended December 31, 2022 and $3.8 million in the year ended December 31, 2021. Even though we do not retain the related royalties under the transaction, as the amounts are remitted to HCRP, we will continue to record revenue related to these royalties until the amount of the associated liability and related interest is fully amortized. 
+     
+   Grant Revenue 
+     
+   In November 2022, the Company accepted a grant to perform research and development work for the Bill & Melinda Gates Foundation ("BMGF") and received $2.0 million in advance that was recorded as restricted cash and deferred revenue.  The Company recognizes revenue under research contracts only when a contract has been executed and the contract price is fixed or determinable. Revenue from the BMGF grant is recognized in the period during which the related costs are incurred and the related services are rendered, provided that the applicable conditions under the contract have been met. Costs of contract revenue are recorded as a component of operating expenses in the consolidated statements of operations and comprehensive loss. The Company recognized $397,000 revenue from the BMGF Grant in the three-months ended March 31, 2023.  As of March 31, 2023 and December 31, 2022, restricted cash and deferred revenue were $1.6 million and $2.0 million, respectively.  
+     
+     
+   Research and Development  Expenses 
+     
+   Research and development expenses represent costs incurred on conducting research, such as developing our tablet vaccine platform, and supporting preclinical and clinical development activities of our tablet vaccine candidates. We recognize all research and development costs as they are incurred. Research and development expenses consist primarily of the following: 
+     
+   
+    
+     
+        
+        ●   
+        employee-related expenses, which include salaries, benefits and stock-based compensation;   
+     
+
+    
+   
+     
+   
+    
+     
+            
+        ●   
+        expenses incurred under agreements with contract research organizations (“CROs”), that conduct clinical trials on our behalf;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        expenses incurred under agreements with contract manufacturing organizations (“CMOs”), that manufacture product used in the clinical trials;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        expenses incurred in procuring materials and for analytical and release testing services required to produce vaccine candidates used in clinical trials;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+      process development expenses incurred internally and externally to improve the efficiency and yield of the bulk vaccine and tablet manufacturing activities 
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        laboratory supplies and vendor expenses related to preclinical research activities;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        consultant expenses for services supporting our clinical, regulatory and manufacturing activities; and   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        facilities, depreciation and allocated overhead expenses.   
+     
+
+    
+   
+     
+   We do not allocate our internal expenses to specific programs. Our employees and other internal resources are not directly tied to any one research program and are typically deployed across multiple projects. Internal research and development expenses are presented as one total. 
+    We have incurred significant external costs for CROs that conduct clinical trials on our behalf, and for CMOs that manufacture our tablet vaccine candidates, although these costs have decreased since 2022 since we now perform the majority of our manufacturing activities in-house. We have captured these external costs for each vaccine program. We do not allocate external costs incurred on preclinical research or process development to specific programs. 
+    The following table shows our period-over-period research and development expenses, identifying external costs that were incurred in each of our vaccine programs and, separately, on preclinical research and process development (in thousands):  
+     
+   
+    
+     
+        
+        
+        Three Months Ended March 31,   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+     
+
+     
+        External program costs:   
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Norovirus program   
+        
+      $ 
+      2,704 
+        
+        
+      $ 
+      2,199 
+        
+     
+
+     
+        COVID-19 program   
+        
+        
+      1,678 
+        
+        
+        
+      1,530 
+        
+     
+
+     
+        Preclinical research   
+        
+        
+      465 
+        
+        
+        
+      460 
+        
+     
+
+     
+        Process development   
+        
+        
+      520 
+        
+        
+        
+      610 
+        
+     
+
+     
+        Total external costs   
+        
+        
+      5,367 
+        
+        
+        
+      4,799 
+        
+     
+
+     
+        Internal costs   
+        
+        
+      14,255 
+        
+        
+        
+      13,404 
+        
+     
+
+     
+        Total research and development   
+        
+      $ 
+      19,622 
+        
+        
+      $ 
+      18,203 
+        
+     
+
+    
+   
+      
+   
+    
+     
+      
+       19
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   We expect to incur significant research and development expenses in 2023 and beyond as we advance our tablet vaccine candidates into and through clinical trials, pursue regulatory approval of our tablet vaccine candidates and prepare for a possible commercial launch, all of which will also require a significant investment in manufacturing and inventory related costs. To the extent that we enter into licensing, partnering or collaboration agreements, a significant portion of such costs may be borne by third parties. 
+     
+   The process of conducting clinical trials necessary to obtain regulatory approval is costly and time consuming. We may never succeed in achieving marketing approval for our tablet vaccine candidates. The probability of successful commercialization of our tablet vaccine candidates may be affected by numerous factors, including clinical data obtained in future trials, competition, manufacturing capability and commercial viability. As a result, we are unable to determine the duration and completion costs of our research and development projects or when and to what extent we will generate revenue from the commercialization and sale of any of our tablet vaccine candidates. 
+     
+   General and Administrative Expense 
+     
+   General and administrative expenses consist of personnel costs, insurance, allocated expenses and expenses for outside professional services, including legal, audit, accounting, public relations, market research and other consulting services. Personnel costs consist of salaries, benefits and stock-based compensation. Allocated expenses consist of rent, depreciation and other facilities related expenses. 
+     
+   Results of Operations 
+     
+   The following table presents period-over-period changes in selected items in the condensed consolidated statements of operations and comprehensive loss for the three months ended March 31, 2023 and 2022 (in thousands, except percentages): 
+     
+   
+    
+     
+        
+        
+        Three Months Ended March 31,   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+        
+        % Change   
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Revenue   
+        
+      $ 
+      675 
+        
+        
+      $ 
+      85 
+        
+        
+        
+      694 
+        %   
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Operating expenses   
+        
+        
+      26,247 
+        
+        
+        
+      24,861 
+        
+        
+        
+      6 
+        %   
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Operating loss   
+        
+        
+      (25,572 
+      ) 
+        
+        
+      (24,776 
+      ) 
+        
+        
+      3 
+        %   
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Net non-operating income (expense)   
+        
+        
+      461 
+        
+        
+        
+      (305 
+      ) 
+        
+        
+      (251 
+        )%   
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Loss before income taxes   
+        
+        
+      (25,111 
+      ) 
+        
+        
+      (25,081 
+      ) 
+        
+        
+      0 
+        %   
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Provision for income taxes   
+        
+        
+      29 
+        
+        
+        
+      20 
+        
+        
+        
+      45 
+        %   
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Net loss   
+        
+      $ 
+      (25,140 
+      ) 
+        
+      $ 
+      (25,101 
+      ) 
+        
+        
+      0 
+        %   
+     
+
+    
+   
+     
+   
+    
+     
+      
+       20
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Total Revenue  
+     
+   
+    
+     
+        
+        
+        Three Months Ended March 31, 2023   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+        
+        % Change   
+        
+     
+
+     
+        Non-cash royalty revenue related to sale of future royalties   
+        
+      $ 
+      278 
+        
+        
+      $ 
+      85 
+        
+        
+        
+      227 
+      % 
+     
+
+     
+        Grant revenue   
+        
+        
+      397 
+        
+        
+        
+      — 
+        
+        
+        
+      100 
+      % 
+     
+
+     
+        Total revenue   
+        
+      $ 
+      675 
+        
+        
+      $ 
+      85 
+        
+        
+        
+      694 
+        %   
+     
+
+    
+   
+     
+   Non-cash  R oyalty R evenue  Related to Sale of Future Royalties 
+     
+   Non-cash royalty revenue related to sale of future royalties for the three months ended March 31, 2023 and 2022, was $278,000 and $85,000, respectively. The increase was due to an increase in sales of Inavir in Japan. Non-cash royalty revenue of up to $3.3 million may be earned each year ending March 31. The Company’s royalty revenue is seasonal, in line with the flu season, so the majority of the Company’s royalty revenue and non-cash royalty revenue related to the sale of future royalties are earned in the first and fourth fiscal quarters.  
+     
+   Grant Revenue 
+     
+   The Company recognized $397,000 revenue from the Bill and Melinda Gates Foundation Grant in the three-months ended March 31, 2023. 
+     
+   Total Operating Expenses 
+     
+   The following table summarizes the period-over-period changes in our operating expenses for the three months ended March 31, 2023 and 2022 (in thousands, except percentages): 
+     
+   
+    
+     
+        
+        
+        Three Months Ended March 31,   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+        
+        % Change   
+        
+     
+
+     
+        Research and development   
+        
+      $ 
+      19,622 
+        
+        
+      $ 
+      18,203 
+        
+        
+        
+      8 
+        %   
+     
+
+     
+        General and administrative   
+        
+        
+      6,625 
+        
+        
+        
+      6,658 
+        
+        
+        
+      (0 
+        )%   
+     
+
+     
+        Total operating expenses   
+        
+      $ 
+      26,247 
+        
+        
+      $ 
+      24,861 
+        
+        
+        
+      6 
+        %   
+     
+
+    
+   
+     
+   Re search and Development 
+     
+   For the  three months ended March 31,2023 , research and development expenses increased  by $1.4 million , or 8% , compared to the  three months ended March 31,2022 . The increase is primarily due to  increases in personnel related costs including the reduction in workforce and  increased clinical trial expenses  related to our norovirus vaccine candidates . 
+     
+   We expect to incur significant research and development expenses for manufacturing and clinical trials related to our norovirus vaccine candidates in 2023.  
+     
+   General and Administrative 
+     
+   For the three months ended March 31, 2023, gen eral and admin istrative expenses remained almost flat, due to an increase in personnel costs including the workforce reduction and legal fees offset mainly by decreases in D&O insurance and consulting expenses resulting in a reduction of $33,000 as compared to the three months ended March 31, 2022. 
+     
+   
+    
+     
+      
+       21
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Non-Operating Income (Expense) 
+     
+   The following table summarizes the period-over-period changes in our non-operating income for the three months ended March 31, 2023 and 2022, respectively (in thousands, except percentages): 
+     
+   
+    
+     
+        
+        
+        Three Months Ended March 31,   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+        
+        % Change   
+        
+     
+
+     
+        Interest income   
+        
+      $ 
+      642 
+        
+        
+      $ 
+      35 
+        
+        
+        
+      1,734 
+        %   
+     
+
+     
+        Non-cash interest expense related to sale of future royalties   
+        
+        
+      (178 
+      ) 
+        
+        
+      (340 
+      ) 
+        
+        
+      (48 
+        )%   
+     
+
+     
+        Foreign exchange loss, net   
+        
+        
+      (3 
+      ) 
+        
+        
+      — 
+        
+        
+        
+      (100 
+      )% 
+     
+
+     
+        Net non-operating income (expense)   
+        
+      $ 
+      461 
+        
+        
+      $ 
+      (305 
+      ) 
+        
+        
+      (251 
+        )%   
+     
+
+    
+   
+     
+   For the three months ended March 31, 2023, we recorded interest income of $642,000, a 1,734% increase from the $35,000 interest income recorded in the three months ended March 31, 2022. The increase is due to an increase in interest rates on our cash, cash equivalents, restricted cash and marketable securities.  
+     
+   Non-cash interest expense related to sale of future royalties, which relates to accounting for sums that will become payable to HCRP for royalty revenue earned from Inavir as debt, was $178,000 in the three months ended March 31, 2023, down from the $340,000 in the three months ended March 31, 2022, as the outstanding balance due to HCRP has been paid down and remeasured. We project a further reduction in 2023 following the revaluation of our liability to HCRP. 
+     
+   Provision for Income Taxes 
+     
+   The following table summarizes the period-over-period changes in our provision for income taxes for the three months ended March 31, 2023 and 2022, respectively (in thousands, except percentages): 
+     
+   
+    
+     
+        
+        
+        Three Months Ended March 31,   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+        
+        % Change   
+        
+     
+
+     
+        Foreign withholding tax on royalty revenue   
+        
+      $ 
+      14 
+        
+        
+      $ 
+      4 
+        
+        
+        
+      250 
+        %   
+     
+
+     
+        Foreign taxes payable on intercompany interest   
+        
+        
+      15 
+        
+        
+        
+      14 
+        
+        
+        
+      7 
+        %   
+     
+
+     
+        State income taxes   
+        
+        
+      — 
+        
+        
+        
+      2 
+        
+        
+        
+      (100 
+        )%   
+     
+
+     
+        Provision for income taxes   
+        
+      $ 
+      29 
+        
+        
+      $ 
+      20 
+        
+        
+        
+      45 
+        %   
+     
+
+    
+   
+     
+   The provision for income taxes comprises $29,000 and $20,000 in the three months ended March 31, 2023 and 2022, respectively. The tax charge relates primarily to interest on an intercompany loan from a foreign subsidiary and a 5% withholding tax on royalty revenue earned on sales of Inavir in Japan, which is potentially recoverable as a foreign tax credit but expensed because we record a 100% valuation allowance against our deferred tax assets. The amount of income tax expense recorded is directly proportional to Inavir royalties, including the portion that we pass through to HCRP, and has declined in line with reductions in royalty revenue. 
+     
+   Liquidity and Capital Resources 
+     
+   Our primary source of financing is from the sale and issuance of common stock and common stock warrants in public offerings, along with proceeds from the exercise of warrants. In the past, we have also obtained funds from the issuance of secured debt and preferred stock and from collaboration agreements. In September 2021 we entered into a Controlled Equity Offering Sales Agreement (the “September 2021 ATM”), under which we may offer and sell, from time to time through sales agents, shares of our common stock having an aggregate offering price of up to $100 million. We will incur direct expenses and pay sales commissions of up to 3.0% of gross proceeds from the sale of shares under the September 2021 ATM.  
+     
+   As of March 31, 2023, we had received net proceeds of $1.4 million from the sale of common stock under the September 2021 ATM and there is approximately $79.0 million in net proceeds still available to us. Since March 31, 2023, we have not raised any additional capital under the September 2021 ATM and we will not raise capital under the September 2021 ATM until the registration statement on Form S-3 (SEC File No. 333-270671) that we filed with the SEC on March 17, 2023, which includes the prospectus relating to the September 2021 ATM, is declared effective by the SEC. 
+     
+   As of March 31, 2023, we had approximately $71.8 million of cash, cash equivalents, restricted cash and marketable securities. Our expectation is that we will continue to generate operating losses and negative operating cash flows in the future and the need for additional funding to support our planned operations raise substantial doubt regarding our ability to continue as a going concern for a period of one year after the date that the financial statements are issued. 
+     
+   Management intends on completing additional financing transactions in the next twelve months. The sale of additional equity would result in additional dilution to our stockholders. We may fund a significant portion of our ongoing operations through partnering and collaboration agreements which, while reducing our risks and extending our cash runway, will also reduce our share of eventual revenues, if any, from our vaccine candidates. We may be able to fund certain activities with assistance from government programs. We may also fund our operations through debt financing, which would result in debt service obligations, and the instruments governing such debt could provide for operating and financing covenants that would restrict our operations. 
+     
+   However, due to several factors, including those outside management’s control, there can be no assurance that the Company will be able to complete additional financing transactions.  If we are unable to raise additional capital in sufficient amounts or on acceptable terms, management’s plans include further reducing or delaying operating expenses. We have concluded our plan to successfully reduce expenses is probable and sufficient to alleviate substantial doubt for a period of at least 12 months from the date of issuance of these condensed consolidated financial statements. 
+     
+   
+    
+     
+      
+       22
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Our future funding requirements will depend on many factors, including the following: 
+     
+   
+    
+     
+        
+        ●   
+        the timing and costs of our planned preclinical studies for our product candidates;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        the timing and costs of our planned clinical trials of our product candidates;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        our manufacturing capabilities, including the availability of contract manufacturing organizations to supply our product candidates at reasonable cost;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+      the amount and timing of royalties received on sales of Inavir; 
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+      the number and characteristics of product candidates that we pursue; 
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        the outcome, timing and costs of seeking regulatory approvals;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        revenue received from commercial sales of our future products, which will be subject to receipt of regulatory approval;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+        the terms and timing of any future collaborations, licensing, consulting or other arrangements that we may enter into;   
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+      the amount and timing of any payments that may be required in connection with the licensing, filing, prosecution, maintenance, defense and enforcement of any patents or patent applications or other intellectual property rights; 
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+      our ability to stay listed on Nasdaq; and 
+     
+
+    
+   
+     
+   
+    
+     
+        
+        ●   
+      the extent to which we in-license or acquire other products and technologies. 
+     
+
+    
+   
+     
+   Cash Flows 
+     
+   The following table summarizes our cash flows for the periods indicated (in thousands): 
+   
+    
+     
+        
+        
+        Three Months Ended March 31,   
+        
+     
+
+     
+        
+        
+        2023   
+        
+        
+        2022   
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Net cash used in operating activities   
+        
+      $ 
+      (24,460 
+      ) 
+        
+      $ 
+      (25,113 
+      ) 
+     
+
+     
+        Net cash provided by investing activities   
+        
+        
+      25,461 
+        
+        
+        
+      3,732 
+        
+     
+
+     
+        Net cash provided by financing activities   
+        
+        
+      1,420 
+        
+        
+        
+      1,040 
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Net increase (decrease) in cash, cash equivalents and restricted cash   
+        
+      $ 
+      2,421 
+        
+        
+      $ 
+      (20,341 
+      ) 
+     
+
+    
+   
+     
+   Net Cash Used in Operating Activities 
+     
+   We experienced negative cash flow from operating activities for the three months ended March 31, 2023 and 2022, in the amounts of $24.5 million and $25.1 million, respectively. The cash used in operating activities in the three months ended March 31, 2023, was due to cash used to fund a net loss of $25.1 million and a decrease in working capital of $4.0 million, partially offset by adjustments for net non-cash income related to depreciation and amortization, discount of premium on investments, stock-based compensation, non-cash interest expense related to sale of future royalties and non-cash revenue related to sale of future royalties totaling $4.7 million. The cash used in operating activities in the three months ended March 31, 2022, was due to cash used to fund a net loss of $25.1 million and a decrease in working capital of $4.6 million, partially offset by adjustments for net non-cash income related to depreciation and amortization, accretion of premium on investments, stock-based compensation, non-cash interest expense related to sale of future royalties and non-cash revenue related to sale of future royalties totaling $4.6 million. 
+     
+   
+    
+     
+      
+       23
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Net Cash Provided by  Investing Activities 
+     
+   In the three months ended March 31, 2023, we received $26.7 million from maturities of marketable securities, net of purchases, and used $1.2 million to purchase property and equipment. In the three months ended March 31, 2022, we received $5.1 million from maturities of marketable securities, net of purchases, and used $1.3 million to purchase property and equipment. 
+     
+   Net Cash Provided by  Financing Activities 
+     
+   In the three months ended March 31, 2023, we received net proceeds of $1.4 million from the sale of common stock under the September 2021 ATM. In the three months ended March 31, 2022, we received $992,000 from the sale of common stock under the September 2021 ATM and $48,000 from the exercise of stock options. 
+     
+   Contractual Obligations and Commercial Commitments 
+     
+   We have the following contractual obligations and commercial commitments as of March 31, 2023 (in thousands): 
+   
+    
+     
+        Contractual Obligation   
+        
+        Total   
+        
+        
+        < 1 Year   
+        
+        
+        1 - 3 Years   
+        
+        
+        3 - 5 Years   
+        
+        
+        > 5 Years   
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+
+     
+        Long Term Debt, HCRP   
+        
+      $ 
+      9,899 
+        
+        
+      $ 
+      877 
+        
+        
+      $ 
+      2,218 
+        
+        
+      $ 
+      3,706 
+        
+        
+      $ 
+      3,098 
+        
+     
+
+     
+        Operating Leases   
+        
+        
+      28,790 
+        
+        
+        
+      3,117 
+        
+        
+        
+      8,696 
+        
+        
+        
+      10,180 
+        
+        
+        
+      6,797 
+        
+     
+
+     
+        Purchase Obligations   
+        
+        
+      7,800 
+        
+        
+        
+      7,800 
+        
+        
+        
+      — 
+        
+        
+        
+      — 
+        
+        
+        
+      — 
+        
+     
+
+     
+        Total   
+        
+      $ 
+      46,489 
+        
+        
+      $ 
+      11,794 
+        
+        
+      $ 
+      10,914 
+        
+        
+      $ 
+      13,886 
+        
+        
+      $ 
+      9,895 
+        
+     
+
+    
+   
+     
+   Long Term Debt, HCRP.  Under an agreement executed in 2016, we are obligated to pay HCRP the first $3 million plus 15% of the next $1 million of royalty revenues that we earn for sales of Inavir in each year ending on March 31. See  Note 6  to the Condensed Consolidated Financial Statements in Part I, Item 1 for further details. 
+     
+   Operating leases.  Operating lease amounts include future minimum lease payments under all our non-cancellable operating leases with an initial term in excess of one year. See  Note 7  to the Condensed Consolidated Financial Statements in Part I, Item 1 for further details of leases. 
+     
+   Purchase obligations.  These amounts include an estimate of all open purchase orders and contractual obligations in the ordinary course of business, including commitments with contract manufacturers and suppliers for which we have not received the goods or services. We consider all open purchase orders, which are generally enforceable and legally binding, to be commitments, although the terms may afford us the option to cancel based on our business needs prior to the delivery of goods or performance of services. 
+     
+   Shared based payment arrangements . Beginning in 2022, we have shifted from awarding options only to issuing a mixture of options and restricted stock units (“RSUs”) to our employees. As of March 31, 2023, the unrecognized stock-based compensation cost related to outstanding unvested stock options and RSUs expected to vest was $28.1 million, which the Company expects to recognize over an estimated weighted average period of 2.6 years. See Note 10 for further details on stock-based compensation expense recognized. 
+     
+   Critical Accounting Policies and Estimates 
+     
+   Our management’s discussion and analysis of financial condition and results of operations is based on our consolidated financial statements, which have been prepared in accordance with generally accepted accounting principles in the United States. The preparation of these financial statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities and expenses. On an ongoing basis, we evaluate these estimates and judgments. We base our estimates on historical experience and on various assumptions that we believe to be reasonable under the circumstances. These estimates and assumptions form the basis for making judgments about the carrying values of assets and liabilities and the recording of expenses that are not readily apparent from other sources. Actual results may differ materially from these estimates. We believe that the accounting policies discussed below are critical to understanding our historical and future performance, as these policies relate to the more significant areas involving management’s judgments and estimates. 
+     
+   Accrued Research and Development Expenses  
+     
+   We record accrued expenses for estimated costs of research and development activities conducted by third-party service providers, which include the conduct of preclinical studies and clinical trials, and contract manufacturing activities. We record the estimated costs of research and development activities based upon the estimated amount of services provided and include the costs incurred but not yet invoiced within other accrued liabilities in the consolidated balance sheets and within research and development expense in the consolidated statements of operations and comprehensive loss. These costs can be a significant component of our research and development expenses. 
+     
+   We estimate the amount of work completed through discussions with internal personnel and external service providers as to the progress or stage of completion of the services and the agreed-upon fee to be paid for such services. We make significant judgments and estimates in determining the accrued balance in each reporting period. As actual costs become known, we adjust our accrued estimates. 
+     
+   
+    
+     
+      
+       24
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Intangible Assets 
+     
+   Intangible assets acquired in the Merger were initially recorded at their estimated fair values of $20.3 million for developed technology related to Inavir which was, until it was revalued, being amortized on a straight-line basis over the estimated period of future royalties of 11.75 years and $1.8 million for the developed technology related to Relenza which was fully amortized as of December 31, 2022. The developed technology related to Inavir was revalued at $5.0 million as of December 31, 2022, resulting in an impairment loss of $4.3 million being recorded. These valuations were prepared by an independent third party based on discounted cash flows of estimated future revenue streams, which are highly subjective. The fair value, as reassessed as of December 31, 2022, is being amortized on a straight-line basis over the remaining period of future royalties of 6.6 years. 
+     
+   Stock-Based Compensation 
+     
+   We measure the fair value of all stock option awards to employees, non-executive directors and consultants on the grant date, and record the fair value of these awards, net of estimated forfeitures, as compensation expense over the service period. The fair value of options is estimated using the Black-Scholes valuation model and the expense recorded is affected by subjective assumptions regarding a number of variables, as follows: 
+     
+   Expected term  – This represents the period that our stock-based awards granted are expected to be outstanding and is determined using the simplified method (the arithmetic average of its original contractual term and its average vesting term). We have very limited historical information to develop reasonable expectations about future exercise patterns and post-vesting employment termination behavior for our stock-based awards. Based on the weighted average applied to options awarded in three months ended March 31, 2023, a notional 10% decrease in expected term would have reduced the fair value and the related compensation expense by approximately 2.2%. 
+     
+   Expected volatility  – This is a measure of the amount by which our common stock price has fluctuated or is expected to fluctuate. Since the beginning of 2020 we have measured volatility based on the historical volatility of our own stock over the retrospective period corresponding to the expected term of the options on the measurement date. Based on the weighted average applied to options awarded in three months ended March 31, 2023, a notional 10% decrease in expected volatility (from 128% to 115%) would have reduced the fair value and the related compensation expense by approximately 4.2%. 
+     
+   Risk-free interest rate  – This is based on the U.S. Treasury yield curve on the measurement date corresponding with the expected term of the stock-based awards. 
+     
+   Expected dividend  – We have not made any dividend payments and do not plan to pay dividends in the foreseeable future. Therefore, we use an expected dividend yield of zero. 
+     
+   Forfeiture rate  – This is a measure of the number of awards that are expected to not vest and is reassessed quarterly. An increase in the estimated forfeiture rate will cause a small decrease the related compensation expense early in the service period, but since the final expense recorded for each award is the number of options vested times their grant date fair value, it has no impact on the total expense recorded. 
+     
+   Recent Accounting Pronouncements 
+     
+   See the “Recent Accounting Pronouncements” in Note 2 to the Condensed Consolidated Financial Statements in Part I, Item 1 for information related to the issuance of new accounting standards in the first three months of 2023, none of which had a material impact on our condensed consolidated financial statements. 
+     
+   
+    
+     
+      
+       25
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Item 3. Quantitative and Qualitative Disclosures About Market Risk 
+     
+   Interest Rate Sensitivity 
+     
+   Our exposure to market risk for changes in interest rates relates primarily to our investments in marketable debt securities. The primary objective of our investment activities is to preserve principal, maintain liquidity that is sufficient to meet cash needs and maximize total return without significantly increasing risk. To achieve this goal, we maintain our excess cash and cash equivalents in money market funds and debt securities. We do not enter into investments for trading or speculative purposes and we hold no equity securities. We presently have no borrowings or lines of credit.  
+     
+   Specifically, as of March 31, 2023, we had cash, cash equivalents, restricted cash and investments of approximately $71.8 million, which consist of bank deposits, money market funds, direct obligations of the U.S. government or its agencies, commercial paper and corporate bonds. All of our investments must satisfy high credit rating requirements at the time of purchase. Such interest-earning instruments carry a degree of interest rate risk, however, because our investments are rated highly and mostly short-term, we believe that our exposure to risk of loss due to interest rate changes is not significant. 
+     
+   Exchange Rate Sensitivity 
+     
+   Our royalty revenue, which is calculated in U.S. dollars, is based on sales in Japanese yen, so a 1% increase in the strength of the U.S. dollar against the yen would lead to a 1% reduction in royalty revenue. All our other revenue and substantially all of our expenses, assets and liabilities are denominated in U.S. dollars and, as a result, we have not experienced significant foreign exchange gains recently and do not anticipate that foreign exchange gains or losses will be significant in the near future. 
+     
+   Item 4.  Controls and Procedures 
+     
+   Evaluation of Disclosure Controls and Procedures 
+     
+   Our management, with the participation of our principal executive officer and principal accounting and financial officer, has evaluated the effectiveness of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended) as of the end of the period covered by this Quarterly Report on Form 10-Q. Based on such evaluation, our management has concluded that our disclosure controls and procedures were effective at a reasonable assurance level as of March 31, 2023. 
+     
+   Changes in Internal Control over Financial Reporting 
+     
+   
+    There was no material change in our internal control over financial reporting that occurred during the quarter ended
+   March 31, 2023, that has materially affected, or is reasonably likely to materially affect, our internal control over financial reporting.
+   
+   
+     
+   
+   Inherent  Limitations on Effectiveness of Controls  
+     
+   Our management, including our principal executive officer and principal accounting and financial officer, does not expect that our disclosure controls and procedures or our internal controls will prevent all error and all fraud. A control system, no matter how well conceived and operated, can provide only reasonable, not absolute, assurance that the objectives of the control system are met. Further, the design of a control system must reflect the fact that there are resource constraints, and the benefits of controls must be considered relative to their costs. Because of the inherent limitations in all control systems, no evaluation of controls can provide absolute assurance that all control issues and instances of fraud, if any, within Vaxart have been detected. 
+     
+   
+    
+     
+      
+       26
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   PART II OTHER INFORMATION 
+     
+     
+   Item 1.  Legal Proceedings 
+     
+   The information included in “Note 8. Commitments and Contingencies—(c)  Litigation ” to the Condensed Consolidated Financial Statements in Part I, Item 1 is incorporated by reference into this Item. 
+     
+   We may also from time to time be involved in legal proceedings arising in connection with our business. Based on information currently available, we believe that the amount, or range, of reasonably possible losses in connection with any pending actions against us in excess of established reserves, in the aggregate, is not material to our consolidated financial condition or cash flows. However, any current or future dispute resolution or legal proceeding, regardless of the merits of any such proceeding, could result in substantial costs and a diversion of management’s attention and resources that are needed to run our business successfully, and could have a material adverse impact on our business, financial condition and results of operations. 
+     
+     
+   Item 1A.  Risk Factors 
+     
+   You should consider the risks and uncertainties described under Item 1A of Part I of our Annual Report on Form 10-K for the fiscal year ended December 31, 2022, which we filed with the Securities and Exchange Commission on March 15, 2023, together with all other information contained or incorporated by reference in this Quarterly Report on Form 10-Q, when evaluating our business and our prospects. There are no material changes to the risk factors set forth in Part I, Item 1A, in our Annual Report on Form 10-K for the year ended December 31, 2022.  We have marked with an asterisk (*) those risks described below that reflect additions to the risks described in our Annual Report on Form 10-K for the year ended December 31, 2022. 
+     
+   * Our failure to meet the continued listing requirements of The Nasdaq Capital Market could result in a delisting of our common stock. 
+     
+   Our common stock is listed on The Nasdaq Capital Market, which imposes, among other requirements a $1.00 minimum bid price requirement set forth in Nasdaq Listing Rule 5550(a)(2). Our common stock traded for less than $1.00 for 30 consecutive trading days, and we received notice of this from the Listing Qualifications Department of The Nasdaq Stock Market on March 27, 2023. Under Nasdaq Listing Rule 5810(c)(3)(A), we were granted a 180 calendar day grace period, or until September 25, 2023, to regain compliance with the minimum bid price requirement. The minimum bid price requirement would be met if our common stock had a minimum closing bid price of at least $1.00 per share for a minimum of ten consecutive business days during the 180 calendar day grace period. If at any time during this 180 calendar day period the bid price of the Company’s common stock closes at or above $1.00 per share for a minimum of ten consecutive business days, the Nasdaq staff stated that it will provide the Company with a written confirmation of compliance and the matter will be closed. However, under Nasdaq Listing Rule 5810(c)(3)(A), the Nasdaq staff may exercise its discretion to extend this ten day period as discussed in Rule 5810(c)(3)(H). 
+     
+   Alternatively, if we fail to regain compliance with Rule 5550(a)(2) prior to the expiration of the initial 180 calendar day period, we may be eligible for an additional 180 calendar day compliance period, provided (i) we meet the continued listing requirement for market value of publicly held shares and all other applicable requirements for initial listing on The Nasdaq Capital Market (except for the $1.00 minimum bid price requirement) and (ii) we provide written notice to Nasdaq of our intention to cure this deficiency during the second compliance period by effecting a reverse stock split, if necessary. In the event we do not regain compliance with Rule 5550(a)(2) prior to the expiration of the initial 180 calendar day period, and if it appears to the Staff that we will not be able to cure the deficiency, or if we are not otherwise eligible, the Staff stated that it will provide us with written notification that our securities are subject to delisting from The Nasdaq Capital Market. At that time, we may appeal the delisting determination to a Hearings Panel. There can be no assurance that we will be able to regain compliance or that Nasdaq will grant us a further extension of time to regain compliance, if necessary. 
+     
+   The delisting of our common stock from Nasdaq may make it more difficult for us to raise capital on favorable terms in the future, or at all. Such a delisting would likely have a negative effect on the price of our common stock and would impair our stockholders’ ability to sell or purchase our common stock when they wish to do so. Further, if our common stock were to be delisted from The Nasdaq Capital Market, our common stock would cease to be recognized as a covered security and we would be subject to additional regulation in each state in which we offer our securities. Moreover, there is no assurance that any actions that we take to restore our compliance with the Nasdaq minimum bid requirement would stabilize the market price or improve the liquidity of our common stock, prevent our common stock from falling below the Nasdaq minimum bid price required for continued listing again, or prevent future non-compliance with Nasdaq’s listing requirements. 
+     
+   There can be no assurance that we will continue to meet the minimum bid price requirement, or any other requirement in the future. If we fail to meet the minimum bid price requirement, or other applicable Nasdaq listing requirements, including maintaining minimum levels of stockholders’ equity or market values of our common stock, our common stock could be delisted. If our common stock were to be delisted, the liquidity of our common stock would be adversely affected, and the market price of our common stock could decrease. 
+     
+   * Unless our common stock continues to be listed on a national securities exchange it will become subject to the so-called  “ penny stock ”  rules that impose restrictive sales practice requirements. 
+     
+   If we are unable to maintain the listing of our common stock on Nasdaq or another national securities exchange, our common stock could become subject to the so-called “penny stock” rules if the shares have a market value of less than $5.00 per share. The SEC has adopted regulations that define a penny stock to include any stock that has a market price of less than $5.00 per share, subject to certain exceptions, including an exception for stock traded on a national securities exchange. The SEC regulations impose restrictive sales practice requirements on broker-dealers who sell penny stocks to persons other than established customers and “accredited investors” as defined by relevant SEC rules. These additional requirements may discourage broker-dealers from effecting transactions in securities that are classified as penny stocks, which could severely limit the market price and liquidity of such securities and the ability of purchasers to sell such securities in the secondary market. This means that if we are unable maintain the listing of our common stock on a national securities exchange, the ability of stockholders to sell their common stock in the secondary market could be adversely affected. 
+     
+   If a transaction involving a penny stock is not exempt from the SEC’s rule, a broker-dealer must deliver a disclosure schedule relating to the penny stock market to each investor prior to a transaction. The broker-dealer also must disclose the commissions payable to both the broker-dealer and its registered representative, current quotations for the penny stock, and, if the broker-dealer is the sole market-maker, the broker-dealer must disclose this fact and the broker-dealer’s presumed control over the market. Finally, monthly statements must be sent disclosing recent price information for the penny stock held in the customer’s account and information on the limited market in penny stocks. 
+     
+   
+    
+     
+      
+       27
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Item 2.    Unregistered Sales of Equity Securities and Use of Proceeds 
+     
+   Not applicable. 
+     
+     
+   Item  3 .   Defaults Upon Senior Securities 
+     
+   Not applicable. 
+     
+     
+   Item  4 .   Mine Safety Disclosure s 
+     
+   Not applicable. 
+     
+     
+   Item  5 .   Other Information 
+     
+   On May 2, 2023, the Company’s board of directors approved and adopted a new Code of Conduct applicable to all directors, officers, and employees of the Company. As described in the Code of Conduct, the Company also expects its agents and representatives, including consultants, to observe the Code of Ethics’s standards when conducting business with and for the Company. The foregoing description of the Code of Ethics does not purport to be complete and is qualified in its entirety by reference to the full text of the Code of Ethics, a copy of which is filed herewith as Exhibit 14.1 and incorporated herein by reference. 
+     
+   On May 2, 2023, the Company’s board of directors approved an amendment to Mr. Floroiu’s offer letter dated as of June 14, 2020 (the “CEO Offer Letter”).  The amendment increases his “Non-CiC Severance Period”, as defined in the Vaxart, Inc. Severance Benefit Plan (the “Severance Plan”) from 3 months to 6 months, and increases his “CiC Severance Period”, as defined in the Severance Plan, from 6 months to 12 months. In addition, the Company’s board of directors amended the Severance Plan, which provides severance protections to our officers, including our named executive officers, to clarify that the “Non-CiC Severance Period”, as defined in the Severance Plan, is 6 months for all participants, and that the “CiC Severance Period”, as defined in the Severance Plan, is 12 months for all participants. The amendment to the Severance Plan did not increase the severance multiples applicable to our named executive officers other than the Chief Executive Officer. 
+     
+   The foregoing descriptions are qualified in their entirety by reference to the amendments to the CEO Offer Letter and the Severance Plan, copies of which are attached hereto as Exhibit 10.1 and Exhibit 10.2, respectively, and are incorporated herein by reference. 
+      
+   
+    
+     
+      
+       28
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   Item 6.  Exhibits 
+     
+   
+    
+     
+        
+            
+        Incorporated by Reference   
+     
+
+     
+        Exhibit  Number   
+        Description of Document   
+        Schedule/Form   
+        File  Number   
+        Exhibit   
+        Filing Date   
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      3.1 
+      Certificate of Amendment to Restated Certificate of Incorporation of Vaxart, Inc. 
+      Form 8-K 
+      001-35285 
+      3.1 
+      April 24, 2019 
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      3.2 
+      Certificate of Amendment to Restated Certificate of Incorporation of Vaxart, Inc. 
+      Form 8-K 
+      001-35285 
+      3.1 
+      June 9, 2020 
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      3.3 
+      Certificate of Amendment to Restated Certificate of Incorporation of Vaxart, Inc. 
+      Form 10-Q 
+      001-35285 
+      3.3 
+      August 8, 2022 
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      3.4 
+      Amended and Restated Bylaws of Vaxart, Inc., effective as of April 7, 2021 
+      Form 8-K 
+      001-35285 
+      3.1 
+      April 13, 2021 
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      10.1 * 
+      Amendment to Letter Agreement dated May 2, 2023 between Andrei Floroiu and Vaxart, Inc. 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      10.2 #* 
+      Amendment to the Vaxart, Inc. Severance Benefit Plan dated May 2, 2023 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      14.1 * 
+      Code of Conduct 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+        31.1 *   
+        Certification of Principal Executive Officer pursuant to Exchange Act Rule, 13a-14(a) and 15d-14(a), as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002   
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      31.2 * 
+      Certification of Principal Financial Officer pursuant to Exchange Act Rule, 13a-14(a) and 15d-14(a), as adopted pursuant to Section 302 of the Sarbanes-Oxley Act of 2002 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      32.1 § 
+      Certification of Principal Executive Officer and Principal Financial Officer pursuant to Rule 13a-14(b) of the Securities Exchange Act of 1934, as amended, and 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+        101.INS *   
+      Inline XBRL Instance Document - the instance document does not appear in the Interactive Data File as its XBRL tags are embedded within the Inline XBRL document 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      101.SCH * 
+      Inline XBRL Taxonomy Extension Schema Document 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      101.CAL * 
+      Inline XBRL Taxonomy Extension Calculation Linkbase Document 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      101.DEF * 
+      Inline XBRL Taxonomy Extension Definition Linkbase Document 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      101.LAB * 
+      Inline XBRL Taxonomy Extension Label Linkbase Document 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      101.PRE * 
+      Inline XBRL Taxonomy Extension Presentation Linkbase Document 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      104 
+      Cover Page Interactive Data File (formatted as Inline XBRL and contained in Exhibit 101) 
+        
+        
+        
+        
+     
+
+    
+   
+     
+     
+   
+    
+     
+      * 
+      Filed herewith. 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+      # 
+      Management contract or compensation plan or arrangement. 
+        
+        
+        
+        
+     
+
+     
+        
+        
+        
+        
+        
+        
+     
+
+     
+        §   
+        In accordance with Item 601(b)(32)(ii) of Regulation S-K and SEC Release Nos. 33-8238 and 34-47986, Final Rule: Management’s Reports on Internal Control Over Financial Reporting and Certification of Disclosure in Exchange Act Periodic Reports, the certification furnished in Exhibit 32.1 hereto is deemed to accompany this Quarterly Report on Form 10-Q and will not be deemed “filed” for purposes of Section 18 of the Exchange Act. Such certification will not be deemed to be incorporated by reference into any filing under the Securities Act or the Exchange Act, except to the extent that the registrant specifically incorporates it by reference.   
+     
+
+    
+   
+     
+   
+     
+   
+    
+     
+      
+       29
+      
+     
+    
+    
+    
+     
+      
+       Table of Contents 
+      
+     
+    
+   
+     
+   SIGNATURES 
+     
+   Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized. 
+     
+     
+   
+    
+     
+        
+        
+        VAXART, INC.   
+        
+     
+
+     
+        
+        
+        
+        
+     
+
+     
+      Dated: May 4, 2023 
+        
+      By:  /s/ ANDREI FLOROIU 
+        
+     
+
+     
+        
+        
+      Andrei Floroiu 
+            
+     
+
+     
+        
+        
+      President and Chief Executive Officer 
+        
+     
+
+     
+        
+        
+      (Principal Executive Officer) 
+        
+     
+
+     
+        
+        
+        
+        
+     
+
+     
+        Dated: May 4, 2023   
+        
+        By:  /s/ PHILLIP LEE   
+        
+     
+
+     
+        
+        
+        Phillip Lee   
+        
+     
+
+     
+        
+        
+        Chief Financial Officer   
+        
+     
+
+     
+        
+        
+        (Principal Financial and Accounting Officer)   
+        
+     
+
+     
+        
+        
+            
+        
+     
+
+    
+   
+     
+     
+   
+    
+     
+      
+       30
+      
+     
+    
+   
+  
+ 

@@ -1,0 +1,5834 @@
+
+ 
+ 
+ 
+ 
+  
+   10-Q 
+   
+  
+  
+   false --12-31 0001286681 Q1 0001286681 us-gaap:AdditionalPaidInCapitalMember 2023-03-26 0001286681 dpz:USStoresMember dpz:DomesticFranchiseMember 2023-01-02 2023-03-26 0001286681 dpz:PrepaidExpensesMember dpz:DomesticFranchiseMember dpz:DomesticStoresMember 2023-12-31 0001286681 us-gaap:OperatingSegmentsMember dpz:SupplyChainMember 2023-01-02 2023-03-26 0001286681 us-gaap:RetainedEarningsMember 2023-12-31 0001286681 us-gaap:AdditionalPaidInCapitalMember 2023-01-01 0001286681 us-gaap:RestrictedStockMember 2023-01-02 2023-03-26 0001286681 us-gaap:CommonStockMember 2023-03-26 0001286681 dpz:DomesticCompanyOwnedStoresMember dpz:DomesticStoresMember 2024-03-24 0001286681 dpz:TwoThousandAndTwentyOneTenYearFixedRateNotesMember 2023-12-31 0001286681 dpz:OperatingLeaseMember 2024-03-24 0001286681 us-gaap:IntersegmentEliminationMember 2023-01-02 2023-03-26 0001286681 dpz:DashBrandsLtdMember 2024-01-01 2024-03-24 0001286681 us-gaap:CommonStockMember 2023-01-01 0001286681 dpz:TwoThousandEighteenSevenPointFiveYearFixedRateNotesMember 2024-03-24 0001286681 dpz:PrepaidExpensesMember dpz:DomesticFranchiseMember dpz:DomesticStoresMember 2024-03-24 0001286681 2024-01-01 2024-03-24 0001286681 dpz:TwoThousandNineteenTenYearFixedRateNotesMember 2024-03-24 0001286681 us-gaap:CommonStockMember 2024-01-01 2024-03-24 0001286681 us-gaap:RetainedEarningsMember 2023-01-02 2023-03-26 0001286681 2023-03-26 0001286681 dpz:USStoresMember us-gaap:OperatingSegmentsMember 2023-01-02 2023-03-26 0001286681 2023-01-01 2023-12-31 0001286681 us-gaap:OperatingSegmentsMember dpz:InternationalFranchiseMember 2024-01-01 2024-03-24 0001286681 us-gaap:CommonStockMember 2023-12-31 0001286681 us-gaap:RestrictedStockMember 2024-01-01 2024-03-24 0001286681 dpz:DomesticCompanyOwnedStoresMember dpz:DomesticStoresMember 2023-12-31 0001286681 us-gaap:SubsequentEventMember 2024-04-25 2024-04-25 0001286681 dpz:USStoresMember dpz:DomesticCompanyOwnedStoresMember 2023-01-02 2023-03-26 0001286681 us-gaap:PerformanceSharesMember 2024-01-01 2024-03-24 0001286681 2024-03-24 0001286681 us-gaap:MaterialReconcilingItemsMember 2023-01-02 2023-03-26 0001286681 dpz:TwoThousandTwentyOneSevenPointFiveYearFixedRateNotesMember 2024-03-24 0001286681 dpz:TwoThousandNineteenTenYearFixedRateNotesMember 2023-12-31 0001286681 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2024-03-24 0001286681 us-gaap:AdditionalPaidInCapitalMember 2024-01-01 2024-03-24 0001286681 dpz:USStoresMember dpz:DomesticCompanyOwnedStoresMember 2024-01-01 2024-03-24 0001286681 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-01-02 2023-03-26 0001286681 dpz:USStoresMember dpz:DomesticFranchiseMember 2024-01-01 2024-03-24 0001286681 dpz:ClassA-2-IISeriesOneFourPointFourSevenFourPercentageFixedRateSeniorSecuredNoteMember 2024-03-24 0001286681 srt:MinimumMember us-gaap:SubsequentEventMember 2024-03-25 2024-03-25 0001286681 us-gaap:RetainedEarningsMember 2024-01-01 2024-03-24 0001286681 dpz:USStoresMember dpz:DomesticFranchiseAdvertisingMember 2024-01-01 2024-03-24 0001286681 2024-03-25 2024-03-25 0001286681 dpz:TwoThousandAndTwentyOneTenYearFixedRateNotesMember 2024-03-24 0001286681 us-gaap:FairValueInputsLevel3Member 2023-12-31 0001286681 2024-04-22 0001286681 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-12-31 0001286681 us-gaap:CommonStockMember 2023-01-02 2023-03-26 0001286681 2023-12-31 0001286681 us-gaap:FairValueInputsLevel1Member 2024-03-24 0001286681 us-gaap:OperatingSegmentsMember dpz:SupplyChainMember 2024-01-01 2024-03-24 0001286681 us-gaap:AdditionalPaidInCapitalMember 2023-12-31 0001286681 us-gaap:EmployeeStockOptionMember 2023-01-02 2023-03-26 0001286681 dpz:USFranchiseeMember 2024-01-01 2024-03-24 0001286681 dpz:SupplyChainCenterMember dpz:SupplyChainMember 2023-01-02 2023-03-26 0001286681 srt:MaximumMember us-gaap:SubsequentEventMember 2024-03-25 2024-03-25 0001286681 dpz:USStoresMember us-gaap:OperatingSegmentsMember 2024-01-01 2024-03-24 0001286681 us-gaap:CashAndCashEquivalentsMember dpz:DomesticFranchiseMember dpz:DomesticStoresMember 2024-03-24 0001286681 dpz:TwoThousandTwentyOneSevenPointFiveYearFixedRateNotesMember 2023-12-31 0001286681 dpz:DashBrandsLtdMember 2024-03-24 0001286681 dpz:USStoresMember dpz:DomesticFranchiseAdvertisingMember 2023-01-02 2023-03-26 0001286681 2023-03-27 2023-03-27 0001286681 us-gaap:IntersegmentEliminationMember 2024-01-01 2024-03-24 0001286681 us-gaap:AccountsReceivableMember dpz:DomesticFranchiseMember dpz:DomesticStoresMember 2023-12-31 0001286681 dpz:USFranchiseeMember 2023-01-02 2023-03-26 0001286681 2023-01-01 0001286681 dpz:SupplyChainCenterMember dpz:SupplyChainMember 2024-01-01 2024-03-24 0001286681 us-gaap:FairValueInputsLevel1Member 2023-12-31 0001286681 us-gaap:AdditionalPaidInCapitalMember 2024-03-24 0001286681 us-gaap:CommonStockMember 2024-03-24 0001286681 dpz:InternationalFranchiseMember dpz:InternationalFranchiseRoyaltiesAndFeesMember 2023-01-02 2023-03-26 0001286681 us-gaap:RetainedEarningsMember 2024-03-24 0001286681 us-gaap:PerformanceSharesMember 2023-01-02 2023-03-26 0001286681 us-gaap:RetainedEarningsMember 2023-01-01 0001286681 dpz:ClassA2IiiSeriesOneFourPointOneOneEightPercentageFixedRateSeniorSecuredNotesMember 2023-12-31 0001286681 dpz:ClassA-2-IISeriesOneFourPointFourSevenFourPercentageFixedRateSeniorSecuredNoteMember 2023-12-31 0001286681 2023-01-02 2023-03-26 0001286681 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-01-01 0001286681 dpz:TwoThousandEighteenNinePointTwoFiveYearFixedRateNotesMember 2024-03-24 0001286681 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2024-01-01 2024-03-24 0001286681 dpz:InternationalFranchiseMember dpz:InternationalFranchiseRoyaltiesAndFeesMember 2024-01-01 2024-03-24 0001286681 us-gaap:EmployeeStockOptionMember 2024-01-01 2024-03-24 0001286681 us-gaap:AdditionalPaidInCapitalMember 2023-01-02 2023-03-26 0001286681 dpz:TwoThousandEighteenSevenPointFiveYearFixedRateNotesMember 2023-12-31 0001286681 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-03-26 0001286681 dpz:EbitdaMember 2024-03-24 0001286681 us-gaap:RetainedEarningsMember 2023-03-26 0001286681 dpz:InternationalFranchiseMember us-gaap:OperatingSegmentsMember 2023-01-02 2023-03-26 0001286681 dpz:TwoThousandEighteenNinePointTwoFiveYearFixedRateNotesMember 2023-12-31 0001286681 us-gaap:AccountsReceivableMember dpz:DomesticFranchiseMember dpz:DomesticStoresMember 2024-03-24 0001286681 dpz:ClassA2IiiSeriesOneFourPointOneOneEightPercentageFixedRateSeniorSecuredNotesMember 2024-03-24 0001286681 us-gaap:CashAndCashEquivalentsMember dpz:DomesticFranchiseMember dpz:DomesticStoresMember 2023-12-31 0001286681 us-gaap:MaterialReconcilingItemsMember 2024-01-01 2024-03-24 iso4217:USD xbrli:shares xbrli:pure xbrli:shares iso4217:USD 
+     
+   	  
+     
+   UNITED STATES   
+   SECURITIES AND EXCHANGE COMMISSION   
+   WASHINGTON, DC 20549   
+     
+   FORM  10-Q 
+     
+   (Mark One)   
+   ☒ 	 QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+   For the quarterly period ended  March 24,  2024   
+   OR   
+   ☐     TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934   
+   For the transition period from                   to                   
+   Commission file number:  001-32242   
+     
+   Domino’s Pizza, Inc.   
+   (Exact Name of Registrant as Specified in Its Charter)   
+     
+   
+    
+     
+     
+     
+    
+    
+     Delaware 
+       
+     38-2511577 
+    
+    
+     (State or Other Jurisdiction of Incorporation or Organization) 
+       
+     (I.R.S. Employer Identification No.) 
+    
+    
+     30 Frank Lloyd Wright Drive Ann Arbor ,  Michigan 
+       
+     48105 
+    
+    
+     (Address of Principal Executive Offices) 
+       
+     (Zip Code) 
+    
+   
+   ( 734 )  930-3030   
+   (Registrant’s Telephone Number, Including Area Code)   
+     
+   Securities registered pursuant to Section 12(b) of the Exchange Act: 
+   
+    
+     
+     
+     
+    
+    
+     Title of Each Class 
+     Trading Symbol 
+     Name of Each Exchange on Which Registered 
+    
+    
+     Domino’s Pizza, Inc.  Common Stock , $0.01 par value 
+     DPZ 
+     New York Stock Exchange 
+    
+   
+   Indicate by check mark whether registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes   ☒    No  ☐ 
+   Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes   ☒    No  ☐   
+   Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act.   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+    
+    
+     Large accelerated filer 
+       
+     ☒   
+        
+     Accelerated filer 
+       
+     ☐ 
+    
+    
+     Non-accelerated filer 
+       
+     ☐ 
+        
+     Smaller reporting company 
+       
+     ☐ 
+    
+    
+     Emerging growth company 
+       
+     ☐ 
+       
+       
+       
+       
+    
+   
+   If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+   Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).  Yes   ☐     No  ☒   
+   As of April 22, 2024, Domino’s Pizza, Inc. had  34,880,217  shares of common stock, par value $0.01 per share, outstanding.   
+     
+     
+   
+     
+   Domino’s Pizza, Inc.   
+   TABLE OF CONTENTS   
+     
+   
+    
+     
+     
+     
+     
+     
+    
+    
+       
+       
+       
+        
+     Page No. 
+    
+    
+     PART I. 
+       
+     FINANCIAL INFORMATION 
+        
+       
+    
+    
+       
+       
+       
+    
+    
+     Item 1. 
+       
+     Financial Statements 
+        
+     3 
+    
+    
+       
+       
+       
+    
+    
+       
+       
+     Condensed Consolidated Balance Sheets (Unaudited) – As of March 24, 2024 and December 31, 2023 
+        
+     3 
+    
+    
+       
+       
+       
+    
+    
+       
+       
+     Condensed Consolidated Statements of Income (Unaudited) –   Fiscal quarters ended  March 24, 2024 and March 26, 2023 
+        
+     4 
+    
+    
+       
+       
+       
+    
+    
+       
+       
+     Condensed Consolidated Statements of Comprehensive Income (Unaudited) –   Fiscal quarters ended  March 24, 2024 and March 26, 2023 
+        
+     5 
+    
+    
+       
+       
+       
+    
+    
+       
+       
+     Condensed Consolidated Statements of Cash Flows (Unaudited) – Fiscal quarters ended March 24, 2024 and March 26, 2023 
+        
+     6 
+    
+    
+       
+       
+       
+    
+    
+       
+       
+     Notes to Condensed Consolidated Financial Statements (Unaudited) 
+        
+     7 
+    
+    
+       
+       
+       
+    
+    
+     Item 2. 
+       
+     Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+        
+     13 
+    
+    
+       
+       
+       
+    
+    
+     Item 3. 
+       
+     Quantitative and Qualitative Disclosures About Market Risk 
+        
+     24 
+    
+    
+       
+       
+       
+    
+    
+     Item 4. 
+       
+     Controls and Procedures 
+        
+     24 
+    
+    
+       
+       
+       
+    
+    
+     PART II. 
+       
+     OTHER INFORMATION 
+        
+       
+    
+    
+       
+       
+       
+    
+    
+     Item 1. 
+       
+     Legal Proceedings 
+        
+     25 
+    
+    
+       
+       
+       
+    
+    
+     Item 1A. 
+       
+     Risk Factors 
+        
+     25 
+    
+    
+       
+       
+       
+    
+    
+     Item 2. 
+       
+     Unregistered Sales of Equity Securities and Use of Proceeds 
+        
+     25 
+    
+    
+       
+       
+       
+    
+    
+     Item 3. 
+       
+     Defaults Upon Senior Securities 
+        
+     25 
+    
+    
+       
+       
+       
+    
+    
+     Item 4. 
+       
+     Mine Safety Disclosures 
+        
+     25 
+    
+    
+       
+       
+       
+    
+    
+     Item 5. 
+       
+     Other Information 
+        
+     25 
+    
+    
+       
+       
+       
+    
+    
+     Item 6. 
+       
+     Exhibits 
+        
+     26 
+    
+    
+       
+       
+    
+    
+     SIGNATURES 
+        
+     27 
+    
+   
+     
+   2 
+   
+     
+   PA RT I. FINANCIAL INFORMATION   
+   Ite m 1. Financial Statements.   
+   Domino’s Pizza, Inc. and Subsidiaries   
+   Conden sed Consolidated Balance Sheets   
+   (Unaudited) 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+     (In thousands) 
+       
+     March 24, 2024 
+       
+       
+     December 31, 2023 (1) 
+       
+    
+    
+     Assets 
+       
+       
+       
+       
+       
+       
+    
+    
+     Current assets: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Cash and cash equivalents 
+       
+     $ 
+     203,894 
+       
+       
+     $ 
+     114,098 
+       
+    
+    
+     Restricted cash and cash equivalents 
+       
+       
+     209,752 
+       
+       
+       
+     200,870 
+       
+    
+    
+     Accounts receivable, net 
+       
+       
+     285,609 
+       
+       
+       
+     282,809 
+       
+    
+    
+     Inventories 
+       
+       
+     76,086 
+       
+       
+       
+     82,964 
+       
+    
+    
+     Prepaid expenses and other 
+       
+       
+     42,143 
+       
+       
+       
+     30,215 
+       
+    
+    
+     Advertising fund assets, restricted 
+       
+       
+     76,982 
+       
+       
+       
+     106,335 
+       
+    
+    
+     Total current assets 
+       
+       
+     894,466 
+       
+       
+       
+     817,291 
+       
+    
+    
+     Property, plant and equipment: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Land and buildings 
+       
+       
+     108,689 
+       
+       
+       
+     108,791 
+       
+    
+    
+     Leasehold and other improvements 
+       
+       
+     178,208 
+       
+       
+       
+     176,817 
+       
+    
+    
+     Equipment 
+       
+       
+     370,203 
+       
+       
+       
+     364,620 
+       
+    
+    
+     Construction in progress 
+       
+       
+     20,694 
+       
+       
+       
+     24,505 
+       
+    
+    
+       
+       
+       
+     677,794 
+       
+       
+       
+     674,733 
+       
+    
+    
+     Accumulated depreciation and amortization 
+       
+       
+     ( 380,556 
+     ) 
+       
+       
+     ( 370,368 
+     ) 
+    
+    
+     Property, plant and equipment, net 
+       
+       
+     297,238 
+       
+       
+       
+     304,365 
+       
+    
+    
+     Other assets: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Operating lease right-of-use assets 
+       
+       
+     212,251 
+       
+       
+       
+     207,323 
+       
+    
+    
+     Goodwill 
+       
+       
+     11,614 
+       
+       
+       
+     11,688 
+       
+    
+    
+     Capitalized software, net 
+       
+       
+     141,103 
+       
+       
+       
+     134,105 
+       
+    
+    
+     Investment in DPC Dash 
+       
+       
+     124,854 
+       
+       
+       
+     143,553 
+       
+    
+    
+     Deferred income tax assets, net 
+       
+       
+     17,448 
+       
+       
+       
+     13,680 
+       
+    
+    
+     Other assets 
+       
+       
+     45,768 
+       
+       
+       
+     42,894 
+       
+    
+    
+     Total other assets 
+       
+       
+     553,038 
+       
+       
+       
+     553,243 
+       
+    
+    
+     Total assets 
+       
+     $ 
+     1,744,742 
+       
+       
+     $ 
+     1,674,899 
+       
+    
+    
+     Liabilities and stockholders’ deficit 
+       
+       
+       
+       
+       
+       
+    
+    
+     Current liabilities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Current portion of long-term debt 
+       
+     $ 
+     4,866 
+       
+       
+     $ 
+     56,366 
+       
+    
+    
+     Accounts payable 
+       
+       
+     111,678 
+       
+       
+       
+     106,267 
+       
+    
+    
+     Operating lease liabilities 
+       
+       
+     39,942 
+       
+       
+       
+     39,330 
+       
+    
+    
+     Insurance reserves 
+       
+       
+     27,304 
+       
+       
+       
+     28,135 
+       
+    
+    
+     Dividends payable 
+       
+       
+     54,125 
+       
+       
+       
+     1,514 
+       
+    
+    
+     Advertising fund liabilities 
+       
+       
+     75,134 
+       
+       
+       
+     104,246 
+       
+    
+    
+     Other accrued liabilities 
+       
+       
+     196,544 
+       
+       
+       
+     211,492 
+       
+    
+    
+     Total current liabilities 
+       
+       
+     509,593 
+       
+       
+       
+     547,350 
+       
+    
+    
+     Long-term liabilities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Long-term debt, less current portion 
+       
+       
+     4,973,812 
+       
+       
+       
+     4,934,062 
+       
+    
+    
+     Operating lease liabilities 
+       
+       
+     184,691 
+       
+       
+       
+     179,548 
+       
+    
+    
+     Insurance reserves 
+       
+       
+     37,890 
+       
+       
+       
+     38,559 
+       
+    
+    
+     Other accrued liabilities 
+       
+       
+     47,086 
+       
+       
+       
+     45,747 
+       
+    
+    
+     Total long-term liabilities 
+       
+       
+     5,243,479 
+       
+       
+       
+     5,197,916 
+       
+    
+    
+     Stockholders’ deficit: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Common stock 
+       
+       
+     348 
+       
+       
+       
+     347 
+       
+    
+    
+     Additional paid-in capital 
+       
+       
+     1,191 
+       
+       
+       
+     2,801 
+       
+    
+    
+     Retained deficit 
+       
+       
+     ( 4,004,877 
+     ) 
+       
+       
+     ( 4,069,648 
+     ) 
+    
+    
+     Accumulated other comprehensive loss 
+       
+       
+     ( 4,992 
+     ) 
+       
+       
+     ( 3,867 
+     ) 
+    
+    
+     Total stockholders’ deficit 
+       
+       
+     ( 4,008,330 
+     ) 
+       
+       
+     ( 4,070,367 
+     ) 
+    
+    
+     Total liabilities and stockholders’ deficit 
+       
+     $ 
+     1,744,742 
+       
+       
+     $ 
+     1,674,899 
+       
+    
+   
+     
+   (1)  The condensed consolidated balance sheet at  December 31, 2023  has been derived from the audited consolidated financial statements at that date but does not include all of the information and footnotes required by accounting principles generally accepted in the United States for complete financial statements.   
+   The accompanying notes are an integral part of these condensed consolidated financial statements. 
+   3 
+   
+     
+   Domino’s Pizza, Inc. and Subsidiaries 
+   Condense d Consolidated Statements of Income   
+   (Unaudited) 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter Ended 
+       
+    
+    
+       
+       
+     March 24, 
+       
+       
+     March 26, 
+       
+    
+    
+     (In thousands, except per share data) 
+       
+     2024 
+       
+       
+     2023 
+       
+    
+    
+     Revenues: 
+       
+       
+       
+       
+       
+       
+    
+    
+     U.S. Company-owned stores 
+       
+     $ 
+     92,649 
+       
+       
+     $ 
+     84,911 
+       
+    
+    
+     U.S. franchise royalties and fees 
+       
+       
+     150,518 
+       
+       
+       
+     132,864 
+       
+    
+    
+     Supply chain 
+       
+       
+     659,214 
+       
+       
+       
+     624,226 
+       
+    
+    
+     International franchise royalties and fees 
+       
+       
+     71,966 
+       
+       
+       
+     69,671 
+       
+    
+    
+     U.S. franchise advertising 
+       
+       
+     110,300 
+       
+       
+       
+     112,726 
+       
+    
+    
+     Total revenues 
+       
+       
+     1,084,647 
+       
+       
+       
+     1,024,398 
+       
+    
+    
+     Cost of sales: 
+       
+       
+       
+       
+       
+       
+    
+    
+     U.S. Company-owned stores 
+       
+       
+     76,458 
+       
+       
+       
+     70,572 
+       
+    
+    
+     Supply chain 
+       
+       
+     586,319 
+       
+       
+       
+     568,279 
+       
+    
+    
+     Total cost of sales 
+       
+       
+     662,777 
+       
+       
+       
+     638,851 
+       
+    
+    
+     Gross margin 
+       
+       
+     421,870 
+       
+       
+       
+     385,547 
+       
+    
+    
+     General and administrative 
+       
+       
+     101,024 
+       
+       
+       
+     95,189 
+       
+    
+    
+     U.S. franchise advertising 
+       
+       
+     110,300 
+       
+       
+       
+     112,726 
+       
+    
+    
+     Refranchising loss 
+       
+       
+     133 
+       
+       
+       
+     149 
+       
+    
+    
+     Income from operations 
+       
+       
+     210,413 
+       
+       
+       
+     177,483 
+       
+    
+    
+     Other expense 
+       
+       
+     ( 18,699 
+     ) 
+       
+       
+     — 
+       
+    
+    
+     Interest income 
+       
+       
+     3,739 
+       
+       
+       
+     2,391 
+       
+    
+    
+     Interest expense 
+       
+       
+     ( 45,846 
+     ) 
+       
+       
+     ( 46,547 
+     ) 
+    
+    
+     Income before provision for income taxes 
+       
+       
+     149,607 
+       
+       
+       
+     133,327 
+       
+    
+    
+     Provision for income taxes 
+       
+       
+     23,783 
+       
+       
+       
+     28,557 
+       
+    
+    
+     Net income 
+       
+     $ 
+     125,824 
+       
+       
+     $ 
+     104,770 
+       
+    
+    
+     Earnings per share: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Common stock - basic 
+       
+     $ 
+     3.62 
+       
+       
+     $ 
+     2.96 
+       
+    
+    
+     Common stock - diluted 
+       
+     $ 
+     3.58 
+       
+       
+     $ 
+     2.93 
+       
+    
+   
+     
+   The accompanying notes are an integral part of these condensed consolidated financial statements. 
+   4 
+   
+     
+   Domino’s Pizza, Inc. and Subsidiaries   
+   Condensed Consolida ted Statements of Comprehensive Income   
+   (Unaudited)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     Fiscal Quarter Ended 
+       
+    
+    
+       
+       
+     March 24, 
+       
+       
+     March 26, 
+       
+    
+    
+     (In thousands) 
+       
+     2024 
+       
+       
+     2023 
+       
+    
+    
+     Net income 
+       
+     $ 
+     125,824 
+       
+       
+     $ 
+     104,770 
+       
+    
+    
+     Currency translation adjustment 
+       
+       
+     ( 1,125 
+     ) 
+       
+       
+     ( 451 
+     ) 
+    
+    
+     Comprehensive income 
+       
+     $ 
+     124,699 
+       
+       
+     $ 
+     104,319 
+       
+    
+   
+     
+   The accompanying notes are an integral part of these condensed consolidated financial statements. 
+   5 
+   
+     
+   Domino’s Pizza, Inc. and Subsidiaries   
+   Condensed Consolidated Statements of Cash Flows   
+   (Unaudited)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     Fiscal Quarter Ended 
+       
+    
+    
+       
+       
+     March 24, 
+       
+       
+     March 26, 
+       
+    
+    
+     (In thousands) 
+       
+     2024 
+       
+       
+     2023 
+       
+    
+    
+     Cash flows from operating activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Net income 
+       
+     $ 
+     125,824 
+       
+       
+     $ 
+     104,770 
+       
+    
+    
+     Adjustments to reconcile net income to net cash provided by operating activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Depreciation and amortization 
+       
+       
+     19,869 
+       
+       
+       
+     18,170 
+       
+    
+    
+     Refranchising loss 
+       
+       
+     133 
+       
+       
+       
+     149 
+       
+    
+    
+     Loss on sale/disposal of assets 
+       
+       
+     90 
+       
+       
+       
+     275 
+       
+    
+    
+     Amortization of debt issuance costs 
+       
+       
+     1,266 
+       
+       
+       
+     1,292 
+       
+    
+    
+     Benefit for deferred income taxes 
+       
+       
+     ( 3,757 
+     ) 
+       
+       
+     ( 3,439 
+     ) 
+    
+    
+     Non-cash equity-based compensation expense 
+       
+       
+     11,338 
+       
+       
+       
+     7,538 
+       
+    
+    
+     Excess tax (benefits) deficiencies from equity-based compensation 
+       
+       
+     ( 8,104 
+     ) 
+       
+       
+     298 
+       
+    
+    
+     (Benefit) provision for losses on accounts and notes receivable 
+       
+       
+     ( 8 
+     ) 
+       
+       
+     572 
+       
+    
+    
+     Unrealized loss on investments 
+       
+       
+     18,699 
+       
+       
+       
+     — 
+       
+    
+    
+     Changes in operating assets and liabilities 
+       
+       
+     ( 9,961 
+     ) 
+       
+       
+     7,388 
+       
+    
+    
+     Changes in advertising fund assets and liabilities, restricted 
+       
+       
+     ( 31,925 
+     ) 
+       
+       
+     ( 22,331 
+     ) 
+    
+    
+     Net cash provided by operating activities 
+       
+       
+     123,464 
+       
+       
+       
+     114,682 
+       
+    
+    
+     Cash flows from investing activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Capital expenditures 
+       
+       
+     ( 20,181 
+     ) 
+       
+       
+     ( 19,031 
+     ) 
+    
+    
+     Other 
+       
+       
+     ( 1,305 
+     ) 
+       
+       
+     ( 572 
+     ) 
+    
+    
+     Net cash used in investing activities 
+       
+       
+     ( 21,486 
+     ) 
+       
+       
+     ( 19,603 
+     ) 
+    
+    
+     Cash flows from financing activities: 
+       
+       
+       
+       
+       
+       
+    
+    
+     Repayments of long-term debt and finance lease obligations 
+       
+       
+     ( 13,525 
+     ) 
+       
+       
+     ( 13,899 
+     ) 
+    
+    
+     Proceeds from exercise of stock options 
+       
+       
+     10,774 
+       
+       
+       
+     343 
+       
+    
+    
+     Purchases of common stock 
+       
+       
+     ( 25,000 
+     ) 
+       
+       
+     ( 30,083 
+     ) 
+    
+    
+     Tax payments for restricted stock upon vesting 
+       
+       
+     ( 6,700 
+     ) 
+       
+       
+     ( 1,553 
+     ) 
+    
+    
+     Payments of common stock dividends and equivalents 
+       
+       
+     ( 343 
+     ) 
+       
+       
+     ( 89 
+     ) 
+    
+    
+     Net cash used in financing activities 
+       
+       
+     ( 34,794 
+     ) 
+       
+       
+     ( 45,281 
+     ) 
+    
+    
+     Effect of exchange rate changes on cash 
+       
+       
+     ( 672 
+     ) 
+       
+       
+     ( 186 
+     ) 
+    
+    
+     Change in cash and cash equivalents, restricted cash and cash equivalents 
+       
+       
+     66,512 
+       
+       
+       
+     49,612 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Cash and cash equivalents, beginning of period 
+       
+       
+     114,098 
+       
+       
+       
+     60,356 
+       
+    
+    
+     Restricted cash and cash equivalents, beginning of period 
+       
+       
+     200,870 
+       
+       
+       
+     191,289 
+       
+    
+    
+     Cash and cash equivalents included in advertising fund assets, restricted,    beginning of period 
+       
+       
+     88,165 
+       
+       
+       
+     143,559 
+       
+    
+    
+     Cash and cash equivalents, restricted cash and cash equivalents and cash and    cash equivalents included in advertising fund assets, restricted, beginning of period 
+       
+       
+     403,133 
+       
+       
+       
+     395,204 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Cash and cash equivalents, end of period 
+       
+       
+     203,894 
+       
+       
+       
+     154,193 
+       
+    
+    
+     Restricted cash and cash equivalents, end of period 
+       
+       
+     209,752 
+       
+       
+       
+     170,798 
+       
+    
+    
+     Cash and cash equivalents included in advertising fund assets, restricted,    end of period 
+       
+       
+     55,999 
+       
+       
+       
+     119,825 
+       
+    
+    
+     Cash and cash equivalents, restricted cash and cash equivalents and cash and    cash equivalents included in advertising fund assets, restricted, end of period 
+       
+     $ 
+     469,645 
+       
+       
+     $ 
+     444,816 
+       
+    
+   
+     
+   The accompanying notes are an integral part of these condensed consolidated financial statements. 
+   6 
+   
+     
+   Domino’s Pizza, Inc. and Subsidiaries   
+   Notes t o Condensed Consolidated Financial Statements   
+   (Unaudited; tabular amounts in thousands, except percentages, share and per share amounts)   
+   March 24, 2024 
+     
+     
+   1. Basis of Presentation The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States for interim financial information and with the instructions to Form 10-Q and Rule 10-01 of Regulation S-X. Accordingly, they do not include all of the information and footnotes required by accounting principles generally accepted in the United States for complete financial statements. For further information, refer to the consolidated financial statements and footnotes for the fiscal year ended December 31, 2023 included in the Company’s 2023 Annual Report on Form 10-K, filed with the Securities and Exchange Commission on February 26, 2024 (the “2023 Form 10-K”). In the opinion of management, all adjustments, consisting of normal recurring items, considered necessary for a fair statement have been included. Operating results for the first quarter ended March 24, 2024 are not necessarily indicative of the results that may be expected for the fiscal year ending December 29, 2024 . 
+     
+   2. Segment Information   The tables below summarize the financial information concerning the Company’s reportable segments for the  first quarters of 2024 and 2023. Intersegment revenues are comprised of sales of food, equipment and supplies from the supply chain segment to the Company-owned stores in the U.S. stores segment. Intersegment sales prices are market based. The “Other” column as it relates to Segment Income below primarily includes corporate administrative costs that are not allocable to a reportable segment, including labor, computer expenses, professional fees, travel and entertainment, rent, insurance and other corporate administrative costs.   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarters Ended March 24, 2024 and March 26, 2023 
+           
+        
+        
+           
+           
+         U.S. 
+           
+           
+         Supply 
+           
+           
+         International 
+           
+           
+         Intersegment 
+           
+           
+           
+           
+           
+           
+           
+        
+        
+           
+           
+         Stores 
+           
+           
+         Chain 
+           
+           
+         Franchise 
+           
+           
+         Revenues 
+           
+           
+         Other 
+           
+           
+         Total 
+           
+        
+        
+         Revenues 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         2024 
+           
+         $ 
+         353,467 
+           
+           
+         $ 
+         686,642 
+           
+           
+         $ 
+         71,966 
+           
+           
+         $ 
+         ( 27,428 
+         ) 
+           
+         $ 
+         — 
+           
+           
+         $ 
+         1,084,647 
+           
+        
+        
+         2023 
+           
+           
+         330,501 
+           
+           
+           
+         650,124 
+           
+           
+           
+         69,671 
+           
+           
+           
+         ( 25,898 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         1,024,398 
+           
+        
+        
+         Segment Income 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         2024 
+           
+         $ 
+         136,108 
+           
+           
+         $ 
+         64,576 
+           
+           
+         $ 
+         59,332 
+           
+           
+         N/A 
+           
+           
+         $ 
+         ( 18,173 
+         ) 
+           
+         $ 
+         241,843 
+           
+        
+        
+         2023 
+           
+           
+         112,683 
+           
+           
+           
+         48,515 
+           
+           
+           
+         58,139 
+           
+           
+         N/A 
+           
+           
+           
+         ( 15,722 
+         ) 
+           
+           
+         203,615 
+           
+        
+         The following table reconciles total Segment Income to consolidated income before provision for income taxes.   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarter Ended 
+           
+        
+        
+           
+           
+         March 24, 
+           
+           
+         March 26, 
+           
+        
+        
+           
+           
+         2024 
+           
+           
+         2023 
+           
+        
+        
+         Total Segment Income 
+           
+         $ 
+         241,843 
+           
+           
+         $ 
+         203,615 
+           
+        
+        
+         Depreciation and amortization 
+           
+           
+         ( 19,869 
+         ) 
+           
+           
+         ( 18,170 
+         ) 
+        
+        
+         Refranchising loss 
+           
+           
+         ( 133 
+         ) 
+           
+           
+         ( 149 
+         ) 
+        
+        
+         Loss on sale/disposal of assets 
+           
+           
+         ( 90 
+         ) 
+           
+           
+         ( 275 
+         ) 
+        
+        
+         Non-cash equity-based compensation expense 
+           
+           
+         ( 11,338 
+         ) 
+           
+           
+         ( 7,538 
+         ) 
+        
+        
+         Income from operations 
+           
+           
+         210,413 
+           
+           
+           
+         177,483 
+           
+        
+        
+         Other expense 
+           
+           
+         ( 18,699 
+         ) 
+           
+           
+         — 
+           
+        
+        
+         Interest income 
+           
+           
+         3,739 
+           
+           
+           
+         2,391 
+           
+        
+        
+         Interest expense 
+           
+           
+         ( 45,846 
+         ) 
+           
+           
+         ( 46,547 
+         ) 
+        
+        
+         Income before provision for income taxes 
+           
+         $ 
+         149,607 
+           
+           
+         $ 
+         133,327 
+           
+        
+       
+     
+   7 
+   
+     
+   3. Earnings Per Share     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarter Ended 
+           
+        
+        
+           
+           
+         March 24, 
+           
+           
+         March 26, 
+           
+        
+        
+           
+           
+         2024 
+           
+           
+         2023 
+           
+        
+        
+         Net income available to common stockholders - basic and diluted 
+           
+         $ 
+         125,824 
+           
+           
+         $ 
+         104,770 
+           
+        
+        
+         Basic weighted average number of shares 
+           
+           
+         34,800,310 
+           
+           
+           
+         35,391,624 
+           
+        
+        
+         Earnings per share – basic 
+           
+         $ 
+         3.62 
+           
+           
+         $ 
+         2.96 
+           
+        
+        
+         Diluted weighted average number of shares 
+           
+           
+         35,154,232 
+           
+           
+           
+         35,708,938 
+           
+        
+        
+         Earnings per share – diluted 
+           
+         $ 
+         3.58 
+           
+           
+         $ 
+         2.93 
+           
+        
+         The denominators used in calculating diluted earnings per share for common stock for the  first quarters ended March 24, 2024 and March 26, 2023 do not include the following because the effect of including these shares would be anti-dilutive or because the performance targets for these awards had not yet been met:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarter Ended 
+           
+        
+        
+           
+           
+         March 24, 
+           
+           
+         March 26, 
+           
+        
+        
+           
+           
+         2024 
+           
+           
+         2023 
+           
+        
+        
+         Anti-dilutive shares underlying stock-based awards 
+           
+           
+           
+           
+           
+           
+        
+        
+            Stock options 
+           
+           
+         87,419 
+           
+           
+           
+         231,459 
+           
+        
+        
+            Restricted stock awards and units 
+           
+           
+         51,587 
+           
+           
+           
+         26,975 
+           
+        
+        
+         Performance condition not met 
+           
+           
+           
+           
+           
+           
+        
+        
+            Restricted stock awards and units 
+           
+           
+         62,114 
+           
+           
+           
+         60,068 
+           
+        
+       
+     
+   4. Stockholders’ Deficit   The following table summarizes the changes in stockholders’ deficit for the  first quarter of 2024.     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         Accumulated 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+           
+           
+         Additional 
+           
+           
+           
+           
+           
+         Other 
+           
+        
+        
+           
+           
+         Common Stock 
+           
+           
+         Paid-in 
+           
+           
+         Retained 
+           
+           
+         Comprehensive 
+           
+        
+        
+           
+           
+         Shares 
+           
+           
+         Amount 
+           
+           
+         Capital 
+           
+           
+         Deficit 
+           
+           
+         Loss 
+           
+        
+        
+         Balance at December 31, 2023 
+           
+           
+         34,726,182 
+           
+           
+         $ 
+         347 
+           
+           
+         $ 
+         2,801 
+           
+           
+         $ 
+         ( 4,069,648 
+         ) 
+           
+         $ 
+         ( 3,867 
+         ) 
+        
+        
+         Net income 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         125,824 
+           
+           
+           
+         — 
+           
+        
+        
+         Dividends declared on common stock and equivalents ($ 1.51  per share) 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         ( 52,954 
+         ) 
+           
+           
+         — 
+           
+        
+        
+         Issuance and cancellation of stock awards, net 
+           
+           
+         44,053 
+           
+           
+           
+         1 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Tax payments for restricted stock upon vesting 
+           
+           
+         ( 15,213 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         ( 6,700 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Purchases of common stock 
+           
+           
+         ( 56,372 
+         ) 
+           
+           
+         ( 1 
+         ) 
+           
+           
+         ( 17,021 
+         ) 
+           
+           
+         ( 8,099 
+         ) 
+           
+           
+         — 
+           
+        
+        
+         Exercise of stock options 
+           
+           
+         103,107 
+           
+           
+           
+         1 
+           
+           
+           
+         10,773 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Non-cash equity-based compensation expense 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         11,338 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Currency translation adjustment 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         ( 1,125 
+         ) 
+        
+        
+         Balance at March 24, 2024 
+           
+           
+         34,801,757 
+           
+           
+         $ 
+         348 
+           
+           
+         $ 
+         1,191 
+           
+           
+         $ 
+         ( 4,004,877 
+         ) 
+           
+         $ 
+         ( 4,992 
+         ) 
+        
+         Subsequent to the end of the first quarter of 2024, on  April 25, 2024 , the Company’s Board of Directors declared a  $ 1.51  per share quarterly dividend on its outstanding common stock for shareholders of record as of  June 14, 2024  to be paid on  June 28, 2024 .   The following table summarizes the changes in stockholders’ deficit for the  first quarter of 2023.   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+         Accumulated 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+           
+           
+         Additional 
+           
+           
+           
+           
+           
+         Other 
+           
+        
+        
+           
+           
+         Common Stock 
+           
+           
+         Paid-in 
+           
+           
+         Retained 
+           
+           
+         Comprehensive 
+           
+        
+        
+           
+           
+         Shares 
+           
+           
+         Amount 
+           
+           
+         Capital 
+           
+           
+         Deficit 
+           
+           
+         Loss 
+           
+        
+        
+         Balance at January 1, 2023 
+           
+           
+         35,419,718 
+           
+           
+         $ 
+         354 
+           
+           
+         $ 
+         9,693 
+           
+           
+         $ 
+         ( 4,194,418 
+         ) 
+           
+         $ 
+         ( 4,694 
+         ) 
+        
+        
+         Net income 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         104,770 
+           
+           
+           
+         — 
+           
+        
+        
+         Dividends declared on common stock and equivalents ($ 1.21  per share) 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         ( 43,005 
+         ) 
+           
+           
+         — 
+           
+        
+        
+         Issuance and cancellation of stock awards, net 
+           
+           
+         14,495 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Tax payments for restricted stock upon vesting 
+           
+           
+         ( 5,073 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         ( 1,553 
+         ) 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Purchases of common stock 
+           
+           
+         ( 100,515 
+         ) 
+           
+           
+         ( 1 
+         ) 
+           
+           
+         ( 14,547 
+         ) 
+           
+           
+         ( 15,802 
+         ) 
+           
+           
+         — 
+           
+        
+        
+         Exercise of stock options 
+           
+           
+         1,508 
+           
+           
+           
+         — 
+           
+           
+           
+         343 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Non-cash equity-based compensation expense 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         7,538 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Currency translation adjustment 
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+           
+           
+         ( 451 
+         ) 
+        
+        
+         Balance at March 26, 2023 
+           
+           
+         35,330,133 
+           
+           
+         $ 
+         353 
+           
+           
+         $ 
+         1,474 
+           
+           
+         $ 
+         ( 4,148,455 
+         ) 
+           
+         $ 
+         ( 5,145 
+         ) 
+        
+       
+     
+   8 
+   
+     
+   5. Leverage Ratio In accordance with the Company’s debt agreements, the payment of principal on the outstanding senior notes may be suspended if the Holdco Leverage Ratio is less than or equal to  5.0 x total debt to adjusted EBITDA, as defined in the related agreements, and no catch-up provisions are applicable. As of the end of the  first quarter of 2024 , the Company had a Holdco Leverage Ratio of less than  5.0 x, and accordingly, did not make the previously scheduled debt amortization payment for its outstanding notes beginning in the second quarter of  2024. Accordingly, all principal amounts of the Company’s outstanding notes have been classified as long-term debt in the condensed consolidated balance sheet as of March 24, 2024 . 
+   6 . Fair Value Measurements  
+   Fair value measurements enable the reader of the financial statements to assess the inputs used to develop those measurements by establishing a hierarchy for ranking the quality and reliability of the information used to determine fair values. The Company classifies and discloses assets and liabilities carried at fair value in one of the following three categories:   Level 1: Quoted market prices in active markets for identical assets or liabilities.   Level 2: Observable market-based inputs or unobservable inputs that are corroborated by market data.   Level 3: Unobservable inputs that are not corroborated by market data.     Fair Value of Cash Equivalents and Marketable Securities   The fair values of the Company’s cash equivalents and investments in marketable securities are based on quoted prices in active markets for identical assets.   Fair Value of Investments The Company holds a non-controlling interest in DPC Dash Ltd (“DPC Dash”), the Company’s master franchisee in China that owns and operates Domino’s Pizza stores in that market. The Company accounts for its investment in DPC Dash as a trading security and records it at fair value at the end of each reporting period, with gains and losses recorded in other income or expense in its condensed consolidated statements of income. As of March 24, 2024 , the fair value of the Company’s investment in  18,101,019  DPC Dash ordinary shares is based on the active exchange quoted price for the equity security of HK$ 53.95  per share (HK: 1405). The Company recorded a  negative adjustment to the carrying amount of its investment in DPC Dash of  $ 18.7  million  in the first quarter of 2024, with the loss recorded in other expense in its condensed consolidated statements of income. The Company did not record any adjustments to the carrying amount of its investment in the first quarter of 2023. The following tables summarize the carrying amounts and fair values of certain assets at  March 24, 2024 and December 31, 2023:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         At March 24, 2024 
+           
+        
+        
+           
+           
+           
+           
+           
+         Fair Value Estimated Using 
+           
+        
+        
+           
+           
+         Carrying 
+           
+           
+         Level 1 
+           
+           
+         Level 2 
+           
+           
+         Level 3 
+           
+        
+        
+           
+           
+         Amount 
+           
+           
+         Inputs 
+           
+           
+         Inputs 
+           
+           
+         Inputs 
+           
+        
+        
+         Cash equivalents 
+           
+         $ 
+         147,754 
+           
+           
+         $ 
+         147,754 
+           
+           
+         $ 
+         — 
+           
+           
+         $ 
+         — 
+           
+        
+        
+         Restricted cash equivalents 
+           
+           
+         156,316 
+           
+           
+           
+         156,316 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Investments in marketable securities 
+           
+           
+         18,518 
+           
+           
+           
+         18,518 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Advertising fund cash equivalents, restricted 
+           
+           
+         34,738 
+           
+           
+           
+         34,738 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Investment in DPC Dash 
+           
+           
+         124,854 
+           
+           
+           
+         124,854 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+         
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         At December 31, 2023 
+           
+        
+        
+           
+           
+           
+           
+           
+         Fair Value Estimated Using 
+           
+        
+        
+           
+           
+         Carrying 
+           
+           
+         Level 1 
+           
+           
+         Level 2 
+           
+           
+         Level 3 
+           
+        
+        
+           
+           
+         Amount 
+           
+           
+         Inputs 
+           
+           
+         Inputs 
+           
+           
+         Inputs 
+           
+        
+        
+         Cash equivalents 
+           
+         $ 
+         50,732 
+           
+           
+         $ 
+         50,732 
+           
+           
+         $ 
+         — 
+           
+           
+         $ 
+         — 
+           
+        
+        
+         Restricted cash equivalents 
+           
+           
+         133,063 
+           
+           
+           
+         133,063 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Investments in marketable securities 
+           
+           
+         16,720 
+           
+           
+           
+         16,720 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Advertising fund cash equivalents, restricted 
+           
+           
+         69,199 
+           
+           
+           
+         69,199 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+        
+         Investment in DPC Dash 
+           
+           
+         143,553 
+           
+           
+           
+         143,553 
+           
+           
+           
+         — 
+           
+           
+           
+         — 
+           
+        
+         9 
+        Fair Value of Debt   The estimated fair values of the Company’s fixed rate notes are classified as Level 2 measurements, as the Company estimates the fair value amount by using available market information. The Company obtained quotes from two separate brokerage firms that are knowledgeable about the Company’s fixed rate notes and, at times, trade these notes. The Company also performed its own internal analysis based on the information gathered from public markets, including information on notes that are similar to those of the Company. However, considerable judgment is required to interpret market data to estimate fair value. Accordingly, the fair value estimates presented are not necessarily indicative of the amount that the Company or the noteholders could realize in a current market exchange. The use of different assumptions and/or estimation methodologies may have a material effect on the estimated fair values stated below.     Management estimated the approximate fair values of the Company ’s 2015, 2017, 2018, 2019 and 2021 notes as follows:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         March 24, 2024 
+           
+           
+         December 31, 2023 
+           
+        
+        
+           
+           
+         Principal Amount 
+           
+           
+         Fair Value 
+           
+           
+         Principal Amount 
+           
+           
+         Fair Value 
+           
+        
+        
+         2015 Ten-Year Notes 
+           
+         $ 
+         742,000 
+           
+           
+         $ 
+         727,160 
+           
+           
+         $ 
+         744,000 
+           
+           
+         $ 
+         727,632 
+           
+        
+        
+         2017 Ten-Year Notes 
+           
+           
+         940,000 
+           
+           
+           
+         901,460 
+           
+           
+           
+         942,500 
+           
+           
+           
+         895,375 
+           
+        
+        
+         2018 7.5-Year Notes 
+           
+           
+         402,688 
+           
+           
+           
+         392,620 
+           
+           
+           
+         403,750 
+           
+           
+           
+         392,041 
+           
+        
+        
+         2018 9.25-Year Notes 
+           
+           
+         379,000 
+           
+           
+           
+         365,735 
+           
+           
+           
+         380,000 
+           
+           
+           
+         365,180 
+           
+        
+        
+         2019 Ten-Year Notes 
+           
+           
+         648,000 
+           
+           
+           
+         594,216 
+           
+           
+           
+         649,688 
+           
+           
+           
+         591,865 
+           
+        
+        
+         2021 7.5-Year Notes 
+           
+           
+         826,625 
+           
+           
+           
+         735,696 
+           
+           
+           
+         828,750 
+           
+           
+           
+         730,958 
+           
+        
+        
+         2021 Ten-Year Notes 
+           
+           
+         972,500 
+           
+           
+           
+         844,130 
+           
+           
+           
+         975,000 
+           
+           
+           
+         830,700 
+           
+        
+         The Company did not have any outstanding borrowings under its variable funding notes at March 24, 2024 or December 31, 2023 . 
+     
+   7. Revenue Disclosures   Contract Liabilities   Contract liabilities primarily consist of deferred franchise fees and deferred development fees. Deferred franchise fees and deferred development fees of  $ 5.3  million  were included in current other accrued liabilities as of both March 24, 2024 and December 31, 2023. Deferred franchise fees and deferred development fees of  $ 19.8  million  and  $ 19.9  million  were included in long-term other accrued liabilities as of March 24, 2024 and December 31, 2023, respectively.   Changes in deferred franchise fees and deferred development fees for the  first quarters of 2024 and 2023 were as follows:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarter Ended 
+           
+        
+        
+           
+           
+         March 24, 
+           
+           
+         March 26, 
+           
+        
+        
+           
+           
+         2024 
+           
+           
+         2023 
+           
+        
+        
+         Deferred franchise fees and deferred development fees, beginning of period 
+           
+         $ 
+         25,195 
+           
+           
+         $ 
+         28,225 
+           
+        
+        
+         Revenue recognized during the period 
+           
+           
+         ( 1,364 
+         ) 
+           
+           
+         ( 1,448 
+         ) 
+        
+        
+         New deferrals due to cash received and other 
+           
+           
+         1,330 
+           
+           
+           
+         1,162 
+           
+        
+        
+         Deferred franchise fees and deferred development fees, end of period 
+           
+         $ 
+         25,161 
+           
+           
+         $ 
+         27,939 
+           
+        
+       Advertising Fund Assets   As of March 24, 2024, advertising fund assets, restricted of  $ 77.0  million  consisted of  $ 56.0  million  of cash and cash equivalents,  $ 12.9  million  of accounts receivable and  $ 8.1  million  of prepaid expenses. As of March 24, 2024, advertising fund cash and cash equivalents included  $ 1.8  million  of cash contributed from U.S. Company-owned stores that had not yet been expended.   As of December 31, 2023, advertising fund assets, restricted of  $ 106.3  million  consisted of  $ 88.2  million  of cash and cash equivalents,  $ 14.0  million  of accounts receivable and  $ 4.1  million  of prepaid expenses. As of December 31, 2023, advertising fund cash and cash equivalents included  $ 2.1  million  of cash contributed from U.S. Company-owned stores that had not yet been expended.   Change in Advertising Fund Contributions and Technology Fees As previously announced, as of March 27, 2023, Domino's National Advertising Fund Inc., the Company’s consolidated not-for-profit advertising subsidiary, effectuated a temporary reduction of  0.25 % to its standard  6.0 % advertising contribution rate, which expired at the beginning of the second quarter of 2024, on March 25, 2024. Additionally, as of March 25, 2025, the Company decreased the U.S. digital per-transaction technology fees that are recognized as the related U.S. franchise retail sales occur by $ 0.04  to $ 0.355 . 
+   10 
+   
+     
+   8. Leases The Company leases certain retail store and supply chain center locations, vehicles, equipment and its corporate headquarters with expiration dates through 2045. Rent expense totaled  $ 21.2  million  and  $ 19.3  million  in the first quarter of 2024 and the first quarter of 2023, respectively. Rent expense includes operating lease cost, as well as expense for non-lease components including common area maintenance, real estate taxes and insurance for the Company’s real estate leases. Rent expense also includes the variable rate per mile driven and fixed maintenance charges for the Company’s supply chain center tractors and trailers and expense for short-term rentals. Rent expense for certain short-term supply chain center tractor and trailer rentals was  $ 1.7  million  and  $ 1.4  million  in the first quarter of 2024 and the first quarter of 2023, respectively. Variable rent expense and rent expense for other short-term leases were immaterial in both the first quarter of 2024 and 2023. The components of operating and finance lease cost for the  first quarters of 2024 and 2023 were as follows: 
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarter Ended 
+           
+        
+        
+           
+           
+         March 24, 
+           
+           
+         March 26, 
+           
+        
+        
+           
+           
+         2024 
+           
+           
+         2023 
+           
+        
+        
+         Operating lease cost 
+           
+         $ 
+         11,253 
+           
+           
+         $ 
+         10,808 
+           
+        
+        
+         Finance lease cost: 
+           
+           
+           
+           
+           
+           
+        
+        
+         Amortization of right-of-use assets 
+           
+           
+         1,324 
+           
+           
+           
+         1,199 
+           
+        
+        
+         Interest on lease liabilities 
+           
+           
+         984 
+           
+           
+           
+         983 
+           
+        
+        
+         Total finance lease cost 
+           
+         $ 
+         2,308 
+           
+           
+         $ 
+         2,182 
+           
+        
+         Supplemental cash flow information related to leases for the  first quarters of 2024 and 2023 were as follows: 
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Fiscal Quarter Ended 
+           
+        
+        
+           
+           
+         March 24, 
+           
+           
+         March 26, 
+           
+        
+        
+           
+           
+         2024 
+           
+           
+         2023 
+           
+        
+        
+         Cash paid for amounts included in the measurement of lease liabilities: 
+           
+           
+           
+           
+           
+           
+        
+        
+         Operating cash flows from operating leases 
+           
+         $ 
+         10,340 
+           
+           
+         $ 
+         10,320 
+           
+        
+        
+         Operating cash flows from finance leases 
+           
+           
+         984 
+           
+           
+           
+         983 
+           
+        
+        
+         Financing cash flows from finance leases 
+           
+           
+         636 
+           
+           
+           
+         1,024 
+           
+        
+        
+         Cash paid for amounts included in the measurement of    financing obligation from sale leaseback: 
+           
+           
+           
+           
+           
+           
+        
+        
+         Operating cash flows from sale leaseback 
+           
+           
+         299 
+           
+           
+           
+         — 
+           
+        
+        
+         Financing cash flows from sale leaseback 
+           
+           
+         14 
+           
+           
+           
+         — 
+           
+        
+        
+         Right-of-use assets obtained in exchange for lease obligations: 
+           
+           
+           
+           
+           
+           
+        
+        
+         Operating leases 
+           
+           
+         16,706 
+           
+           
+           
+         9,305 
+           
+        
+        
+         Finance leases 
+           
+           
+         1,121 
+           
+           
+           
+         872 
+           
+        
+       As of March 24, 2024, the Company  had additional leases for certain supply chain real estate and certain supply chain vehicles that had not yet commenced with estimated future minimum rental commitments of $ 155.3  million. These leases are expected to commence in 2024 and 2025 with lease terms of up to  20  years. These undiscounted amounts will be included in the Company’s condensed consolidated balance sheet at the respective commencement dates. The Company has guaranteed lease payments related to certain franchisees’ lease arrangements. The maximum amount of potential future payments under these guarantees was $ 17.0  million and $ 18.5  million as of  March 24, 2024 and December 31, 2023 , respectively. The Company does not believe these arrangements have or are likely to have a material effect on its results of operations, financial condition, revenues, expenses or liquidity. 
+   9 . Supplemental Disclosures of Cash Flow Information 
+     The Company had non-cash investing activities related to accruals for capital expenditures of  $ 6.1  million  at March 24, 2024 and  $ 6.7  million  at December 31, 2023. The Company also had  $ 2.7  million and  $ 2.6  million in non-cash financing activity related to accruals for excise taxes on share repurchases as of March 24, 2024 and December 31, 2023 , respectively. 
+   10 . Company-owned Store Transactions 
+     During the first quarter of 2024, the Company refranchised one U.S. Company-owned store for proceeds of less  than $ 0.1  million. The  pre-tax refranchising loss associated with the sale of the related assets and liabilities, including goodwill, was approximately $ 0.1  million and was recorded in refranchising loss in the Company’s condensed consolidated statements of income.   During the first quarter of 2023, the Company refranchised one U.S.  Company-owned store for proceeds of less than $ 0.1  million. The  pre-tax refranchising loss associated with the sale of the related assets and liabilities, including goodwill, was approximately $ 0.1  million and was recorded in refranchising loss in the Company’s condensed consolidated statements of income. 
+   11 
+   
+     
+   11. New Accounting Pronouncements The Company has considered all new accounting standards issued by the Financial Accounting Standards Board (“FASB”). The Company has not yet adopted the following standards: Accounting Standards Not Yet Adopted Accounting Standards Update (“ASU”) 2020-04, Segment Reporting (Topic 280): Improvements to Reportable Segment Disclosures   In November 2023, the FASB issued ASU 2023-07,  Segment Reporting (Topic 280): Improvements to Reportable Segment Disclosures , which requires disclosure on an annual and interim basis, of significant segment expenses that are regularly provided to the chief operating decision maker and included within the reported measure of segment profit or loss. In addition, the ASU requires disclosure of other segment expenses by reportable segment and a description of their composition to permit the reconciliation between segment revenue, significant segment expenses and the reported segment measure of profit or loss. The ASU also requires disclosure of the name and title of the chief operating decision maker. ASU 2023-07 is effective for fiscal years beginning after December 15, 2023, and interim periods within fiscal years beginning after December 15, 2024, and early adoption is permitted. The Company is currently evaluating the impact of this accounting standard on its consolidated financial statements. ASU 2023-09, Income Taxes (Topic 740): Improvements to Income Tax Disclosures   In December 2023, the FASB issued  ASU 2023-09, Income Taxes (Topic 740): Improvements to Income Tax Disclosures , which requires disclosure on an annual basis, a tabular reconciliation, including both amount and percentage of specific categories of the effective tax rate reconciliation, including state and local income taxes (net of Federal taxes), foreign taxes, effects of changes in tax laws and regulations, effects of cross-border tax laws, tax credits, changes in valuation allowances, nontaxable and nondeductible items and changes in unrecognized tax benefits. Additional disclosures are required for certain items exceeding five percent of income from continuing operations multiplied by the statutory income tax rate. The standard also requires disclosure of income taxes paid between Federal, state and foreign jurisdictions, including further disaggregation of those payments exceeding five percent of the total income taxes paid. ASU 2023-09 is effective for fiscal years beginning after December 15, 2024, and early adoption is permitted. The Company is currently evaluating the impact of this accounting standard on its consolidated financial statements. 
+   12 
+   
+     
+   Ite m 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations.   
+   (Unaudited; tabular amounts in millions, except percentages and store data) 
+   The 2024 and 2023 first quarters referenced herein represent the twelve-week periods ended March 24, 2024 and March 26, 2023, respectively. In this section, we discuss the results of our operations for the first quarter of 2024 as compared to the first quarter of 2023. 
+     
+   Overview 
+     
+   Domino’s is the largest pizza company in the world, with more than 20,700 locations in over 90 markets around the world as of March 24, 2024, and operates two distinct service models within its stores with a significant business in both delivery and carryout. We are a highly recognized global brand, and we focus on value while serving neighborhoods locally through our large worldwide network of franchise owners and U.S. Company-owned stores through both the delivery and carryout service models. We have been selling quality, affordable food to our customers since 1960. We became “Domino’s Pizza” in 1965 and opened our first franchised store in 1967. Over more than 60 years, we have built Domino’s into one of the most widely-recognized consumer brands in the world. We believe our commitment to value, convenience, quality and new products continues to keep consumers engaged with the brand. 
+     
+   We are primarily a franchisor, with approximately 99% of Domino’s global stores owned and operated by our independent franchisees as of March 24, 2024. Franchising enables an individual to be a business owner and maintain control over all employment-related matters and pricing decisions, while also benefiting from the strength of the Domino’s global brand and operating system with limited capital investment by us. 
+     
+   Domino’s business model is straightforward: Domino’s stores handcraft and serve quality food at a competitive price, with easy ordering access and efficient service, enhanced by our technological innovations. Our hand-tossed dough is made fresh and distributed to stores around the world by us and our franchisees. 
+     
+   Domino’s generates revenues and earnings by charging royalties and fees to our franchisees. Royalties are ongoing percent-of-sales fees for use of the Domino’s ®  brand marks. We also generate revenues and earnings by selling food, equipment and supplies to franchisees through our supply chain operations primarily in the U.S. and Canada and by operating a number of Company-owned stores in the United States. Franchisees profit by selling pizza and other complementary items to their local customers. In our international markets, we generally grant geographical rights to the Domino’s Pizza ®  brand to master franchisees. These master franchisees are charged with developing their geographical area, and they may profit by sub-franchising and selling food and equipment to those sub-franchisees, as well as by running pizza stores. We believe that everyone in the system can benefit from the franchise model, including the end consumer, who can purchase Domino’s menu items for themselves and their family conveniently and economically. 
+     
+   Domino’s business model can yield strong returns for our franchise owners and our Company-owned stores. It can also yield significant cash flows to us, through a consistent franchise royalty payment and supply chain revenue stream, through an asset-light model. We have historically returned cash to shareholders through dividend payments and share repurchases. Domino’s financial results are driven largely by retail sales at our franchised and Company-owned stores. Changes in retail sales are primarily driven by same store sales growth and net store growth. We monitor both of these metrics very closely, as they directly impact our revenues and profits, and we strive to consistently increase both metrics. Retail sales drive royalty payments from franchisees, as well as Company-owned store and supply chain revenues. 
+     
+   At Domino’s, we believe we have a proven business model for success that has historically driven strong returns for our shareholders. In 2023, we announced our Hungry for MORE strategy aimed at generating MORE sales, MORE stores and MORE profits. The strategic imperatives of our Hungry for MORE strategy are as follows: 
+     
+   Most Delicious Food:  We believe we have the best pizza in the industry, and our menu has even more mouthwatering options beyond pizza. We will continue to showcase the breadth of our menu, while highlighting the deliciousness of our food through our innovative marketing promotions. 
+     
+   Operational Excellence:  We are relentless in our focus on convenience, consistency and efficiency for both our and our franchisees’ customers. 
+     
+   Renowned Value:  We are committed to continuing to offer competitive pricing and personalized value for our customers. 
+     
+   Enhanced by Best-in-Class Franchisees:  Our franchisees play a vital role in driving results and excitement across the more than 90 markets in which we operate.   
+   13 
+   
+     
+   First Quarter of 2024 Highlights 
+     
+   • MORE Sales: Global retail sales, excluding foreign currency impact (which includes total retail sales at Company-owned and franchised stores worldwide), increased 7.3% as compared to the first quarter of 2023. U.S. retail sales increased 7.8% and international retail sales, excluding foreign currency impact, increased 6.8% as compared to the first quarter of 2023. Same store sales increased 5.6% in our U.S. stores and increased 0.9% in our international stores (excluding foreign currency impact). 
+   • MORE Stores: Global net store growth of 164. 
+   • MORE Profits: Income from operations increased 18.6%. 
+     
+   Excluding the negative impact of foreign currency, Domino’s experienced global retail sales growth during the first quarter of 2024, driven by same store sales growth and net store growth in both our U.S. and international businesses. These factors also contributed to an increase in income from operations. Overall, we believe our global retail sales growth (excluding foreign currency impact), emphasis on technology, operations and marketing initiatives, have combined to strengthen our brand. These financial and statistical measures are described in additional detail below. 
+     
+   Statistical Measures 
+     
+   The tables below outline certain statistical measures we utilize to analyze our performance. This historical data is not necessarily indicative of results to be expected for any future period. 
+     
+   Global Retail Sales 
+     
+   Global retail sales is a commonly used statistical measure in the quick-service restaurant industry that is important to understanding performance. Global retail sales refers to total worldwide retail sales at Company-owned and franchised stores. We believe global retail sales information is useful in analyzing revenues because franchisees pay royalties and, in the U.S., advertising fees that are based on a percentage of franchise retail sales. We review comparable industry global retail sales information to assess business trends and to track the growth of the Domino’s Pizza brand, and we believe they are indicative of the financial health of our franchisee base. In addition, supply chain revenues are directly impacted by changes in franchise retail sales in the U.S. and Canada. As a result, sales by Domino’s franchisees have a direct effect on the Company’s profitability. Retail sales for franchised stores are reported to us by our franchisees and are not included in our revenues. 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     Global retail sales: 
+       
+       
+       
+       
+       
+       
+    
+    
+     U.S. stores 
+       
+     $ 
+     2,212.0 
+       
+       
+     $ 
+     2,051.0 
+       
+    
+    
+     International stores 
+       
+       
+     2,152.1 
+       
+       
+       
+     2,062.7 
+       
+    
+    
+     Total 
+       
+     $ 
+     4,364.1 
+       
+       
+     $ 
+     4,113.7 
+       
+    
+   
+     
+   Global Retail Sales Growth (excluding foreign currency impact) 
+     
+   Global retail sales growth (excluding foreign currency impact) is a commonly used statistical measure in the quick-service restaurant industry that is important to understanding performance. Global retail sales growth, excluding foreign currency impact, is calculated as the change of international local currency global retail sales against the comparable period of the prior year. Changes in global retail sales growth, excluding foreign currency impact are primarily driven by same store sales growth and net store growth. 
+     
+   
+    
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+     First Quarter of 2023 
+    
+    
+     U.S. stores 
+       
+     + 7.8% 
+       
+     + 5.1% 
+    
+    
+     International stores (excluding foreign currency impact)  (1) 
+       
+     + 6.8% 
+       
+     + 6.5% 
+    
+    
+     Total (excluding foreign currency impact)  (2) 
+       
+     + 7.3% 
+       
+     + 5.9% 
+    
+   
+     
+     
+   
+    
+     
+     
+     
+    
+    
+     (1) 
+       
+     2024 first quarter figure excludes the impact of the Russia market. Including the impact of the Russia market, international stores retail sales growth, excluding foreign currency impact, was 6.1%.   
+    
+    
+     (2) 
+       
+     2024 first quarter figure excludes the impact of the Russia market. Including the impact of the Russia market, total global retail sales growth, excluding foreign currency impact, was 7.0%. 
+    
+   
+     
+   14 
+   
+     
+   Same Store Sales Growth 
+     
+   Same store sales growth is a commonly used statistical measure in the quick-service restaurant industry that is important to understanding performance. Same store sales growth is calculated for a given period by including only sales from stores that also had sales in the comparable weeks of both periods. International same store sales growth is calculated similarly to U.S. same store sales growth. Changes in international same store sales are reported on a constant dollar basis, which reflects changes in international local currency sales. Same store sales growth for transferred stores is reflected in their current classification. 
+     
+   
+    
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+     First Quarter of 2023 
+    
+    
+     U.S. Company-owned stores 
+       
+     + 8.5% 
+       
+     + 7.3% 
+    
+    
+     U.S. franchise stores 
+       
+     + 5.5% 
+       
+     + 3.4% 
+    
+    
+     U.S. stores 
+       
+     + 5.6% 
+       
+     + 3.6% 
+    
+    
+     International stores (excluding foreign currency impact) 
+       
+     + 0.9% 
+       
+     + 1.2% 
+    
+   
+     
+   U.S. same store sales increased 5.6% in the first quarter of 2024, rolling over an increase in U.S. same store sales of 3.6% in the first quarter of 2023. The increase in U.S. same store sales was attributable to higher customer transaction counts in both our delivery and carryout businesses, driven primarily by our Domino’s Rewards loyalty program and other national offers. International same store sales (excluding foreign currency impact) increased 0.9% in the first quarter of 2024, rolling over an increase in international same store sales (excluding foreign currency impact) of 1.2% in the first quarter of 2023. The increase in international same store sales was attributable to a higher average ticket per transaction across our international markets. 
+     
+   Store Growth Activity 
+     
+   Net store growth is a commonly used statistical measure in the quick-service restaurant industry that is important to understanding performance. Net store growth is calculated by netting gross store openings with gross store closures during the period. Transfers between Company-owned stores and franchised stores are excluded from the calculation of net store growth. As previously announced, the remaining 143 net stores in Russia were reflected as closed in the third quarter of 2023. Including those remaining closures, 153 net stores in Russia were closed in the trailing four quarters ended March 24, 2024. 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     U.S. Company- owned  Stores 
+       
+       
+     U.S. Franchise Stores 
+       
+       
+     Total U.S. Stores 
+       
+       
+     International Stores 
+       
+       
+     Total 
+       
+    
+    
+     Store count at December 31, 2023 
+       
+       
+     288 
+       
+       
+       
+     6,566 
+       
+       
+       
+     6,854 
+       
+       
+       
+     13,737 
+       
+       
+       
+     20,591 
+       
+    
+    
+     Openings 
+       
+       
+     3 
+       
+       
+       
+     19 
+       
+       
+       
+     22 
+       
+       
+       
+     181 
+       
+       
+       
+     203 
+       
+    
+    
+     Closings 
+       
+       
+     (1 
+     ) 
+       
+       
+     (1 
+     ) 
+       
+       
+     (2 
+     ) 
+       
+       
+     (37 
+     ) 
+       
+       
+     (39 
+     ) 
+    
+    
+     Transfers 
+       
+       
+     (1 
+     ) 
+       
+       
+     1 
+       
+       
+       
+     — 
+       
+       
+       
+     — 
+       
+       
+       
+     — 
+       
+    
+    
+     Store count at March 24, 2024 
+       
+       
+     289 
+       
+       
+       
+     6,585 
+       
+       
+       
+     6,874 
+       
+       
+       
+     13,881 
+       
+       
+       
+     20,755 
+       
+    
+    
+     First quarter 2024 net store growth 
+       
+       
+     2 
+       
+       
+       
+     18 
+       
+       
+       
+     20 
+       
+       
+       
+     144 
+       
+       
+       
+     164 
+       
+    
+    
+     Trailing four quarters net store growth 
+       
+       
+     5 
+       
+       
+       
+     161 
+       
+       
+       
+     166 
+       
+       
+       
+     581 
+       
+       
+       
+     747 
+       
+    
+   
+     
+   Russia Market 
+     
+   On August 21, 2023, our master franchisee that owned and operated Domino’s Pizza stores in Russia announced its intent to file for bankruptcy with respect to the stores in that market. Therefore, as of August 21, 2023, we have considered the stores in the Russia market to be closed and they are excluded from our ending store count as of the end of the third quarter of 2023. We have presented our statistical measure of global retail sales growth, excluding foreign currency impact, for the first quarter of 2024 excluding the impact of the retail sales from the Russia market. We believe the impact of the Russia market on our statistical measure of global retail sales growth, excluding foreign currency impact, for the first quarter of 2023 was immaterial and prior amounts have not been adjusted to conform to the current year presentation. We believe the impact of the Russia market on our statistical measure of same store sales growth for the periods presented was immaterial, and we also believe the impact of the Russia market on our consolidated statements of income related to international franchise royalties and fee revenues and general and administrative expenses for the first quarter of 2023 was immaterial. 
+   15 
+   
+     
+   Income Statement Data 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     Revenues: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     U.S. Company-owned stores 
+       
+     $ 
+     92.6 
+       
+       
+       
+       
+       
+     $ 
+     84.9 
+       
+       
+       
+       
+    
+    
+     U.S. franchise royalties and fees 
+       
+       
+     150.5 
+       
+       
+       
+       
+       
+       
+     132.9 
+       
+       
+       
+       
+    
+    
+     Supply chain 
+       
+       
+     659.2 
+       
+       
+       
+       
+       
+       
+     624.2 
+       
+       
+       
+       
+    
+    
+     International franchise royalties and fees 
+       
+       
+     72.0 
+       
+       
+       
+       
+       
+       
+     69.7 
+       
+       
+       
+       
+    
+    
+     U.S. franchise advertising 
+       
+       
+     110.3 
+       
+       
+       
+       
+       
+       
+     112.7 
+       
+       
+       
+       
+    
+    
+     Total revenues 
+       
+       
+     1,084.6 
+       
+       
+       
+     100.0 
+     % 
+       
+       
+     1,024.4 
+       
+       
+       
+     100.0 
+     % 
+    
+    
+     Cost of sales: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     U.S. Company-owned stores 
+       
+       
+     76.5 
+       
+       
+       
+       
+       
+       
+     70.6 
+       
+       
+       
+       
+    
+    
+     Supply chain 
+       
+       
+     586.3 
+       
+       
+       
+       
+       
+       
+     568.3 
+       
+       
+       
+       
+    
+    
+     Total cost of sales 
+       
+       
+     662.8 
+       
+       
+       
+     61.1 
+     % 
+       
+       
+     638.9 
+       
+       
+       
+     62.4 
+     % 
+    
+    
+     Gross margin 
+       
+       
+     421.9 
+       
+       
+       
+     38.9 
+     % 
+       
+       
+     385.5 
+       
+       
+       
+     37.6 
+     % 
+    
+    
+     General and administrative 
+       
+       
+     101.0 
+       
+       
+       
+     9.3 
+     % 
+       
+       
+     95.2 
+       
+       
+       
+     9.3 
+     % 
+    
+    
+     U.S. franchise advertising 
+       
+       
+     110.3 
+       
+       
+       
+     10.2 
+     % 
+       
+       
+     112.7 
+       
+       
+       
+     11.0 
+     % 
+    
+    
+     Refranchising loss 
+       
+       
+     0.1 
+       
+       
+       
+     0.0 
+     % 
+       
+       
+     0.1 
+       
+       
+       
+     0.0 
+     % 
+    
+    
+     Income from operations 
+       
+       
+     210.4 
+       
+       
+       
+     19.4 
+     % 
+       
+       
+     177.5 
+       
+       
+       
+     17.3 
+     % 
+    
+    
+     Other expense 
+       
+       
+     (18.7 
+     ) 
+       
+       
+     (1.7 
+     )% 
+       
+       
+     — 
+       
+       
+       
+     0.0 
+     % 
+    
+    
+     Interest expense, net 
+       
+       
+     (42.1 
+     ) 
+       
+       
+     (3.9 
+     )% 
+       
+       
+     (44.2 
+     ) 
+       
+       
+     (4.3 
+     )% 
+    
+    
+     Income before provision for income taxes 
+       
+       
+     149.6 
+       
+       
+       
+     13.8 
+     % 
+       
+       
+     133.3 
+       
+       
+       
+     13.0 
+     % 
+    
+    
+     Provision for income taxes 
+       
+       
+     23.8 
+       
+       
+       
+     2.2 
+     % 
+       
+       
+     28.6 
+       
+       
+       
+     2.8 
+     % 
+    
+    
+     Net income 
+       
+     $ 
+     125.8 
+       
+       
+       
+     11.6 
+     % 
+       
+     $ 
+     104.8 
+       
+       
+       
+     10.2 
+     % 
+    
+   
+   Revenues 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     U.S. Company-owned stores 
+       
+     $ 
+     92.6 
+       
+       
+       
+     8.5 
+     % 
+       
+     $ 
+     84.9 
+       
+       
+       
+     8.3 
+     % 
+    
+    
+     U.S. franchise royalties and fees 
+       
+       
+     150.5 
+       
+       
+       
+     13.9 
+     % 
+       
+       
+     132.9 
+       
+       
+       
+     13.0 
+     % 
+    
+    
+     Supply chain 
+       
+       
+     659.2 
+       
+       
+       
+     60.8 
+     % 
+       
+       
+     624.2 
+       
+       
+       
+     60.9 
+     % 
+    
+    
+     International franchise royalties and fees 
+       
+       
+     72.0 
+       
+       
+       
+     6.6 
+     % 
+       
+       
+     69.7 
+       
+       
+       
+     6.8 
+     % 
+    
+    
+     U.S. franchise advertising 
+       
+       
+     110.3 
+       
+       
+       
+     10.2 
+     % 
+       
+       
+     112.7 
+       
+       
+       
+     11.0 
+     % 
+    
+    
+     Total revenues 
+       
+     $ 
+     1,084.6 
+       
+       
+       
+     100.0 
+     % 
+       
+     $ 
+     1,024.4 
+       
+       
+       
+     100.0 
+     % 
+    
+   
+     
+   Revenues primarily consist of retail sales from our Company-owned stores, royalties and fees and advertising contributions from our U.S. franchised stores, royalties and fees from our international franchised stores and sales of food, equipment and supplies from our supply chain centers to substantially all of our U.S. franchised stores and certain international franchised stores. Company-owned store and franchised store revenues may vary from period to period due to changes in store count mix. Supply chain revenues may vary significantly from period to period as a result of fluctuations in commodity prices as well as the mix of products we sell. 
+   Consolidated revenues increased $60.2 million, or 5.9%, in the first quarter of 2024 as compared to the first quarter of 2023, primarily due to higher supply chain revenues and U.S. franchise royalties and fees, as well as higher U.S. Company-owned store revenues. The increase in supply chain revenues was attributable to higher order volumes, partially offset by a shift in the relative mix of the products we sell and a decrease in our food basket pricing to stores. U.S. franchise royalties and fees benefited from an increase in fees paid by U.S. franchisees for the use of our technology platforms, in addition to higher same store sales and net store growth. U.S. Company-owned store revenues increased due to higher same store sales. These changes in revenues are described in more detail below. 
+   16 
+   
+     
+   U.S. Stores Revenues 
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     U.S. Company-owned stores 
+       
+     $ 
+     92.6 
+       
+       
+       
+     26.2 
+     % 
+       
+     $ 
+     84.9 
+       
+       
+       
+     25.7 
+     % 
+    
+    
+     U.S. franchise royalties and fees 
+       
+       
+     150.5 
+       
+       
+       
+     42.6 
+     % 
+       
+       
+     132.9 
+       
+       
+       
+     40.2 
+     % 
+    
+    
+     U.S. franchise advertising 
+       
+       
+     110.3 
+       
+       
+       
+     31.2 
+     % 
+       
+       
+     112.7 
+       
+       
+       
+     34.1 
+     % 
+    
+    
+     Total U.S. stores revenues 
+       
+     $ 
+     353.5 
+       
+       
+       
+     100.0 
+     % 
+       
+     $ 
+     330.5 
+       
+       
+       
+     100.0 
+     % 
+    
+   
+     
+   U.S. Company-owned Stores 
+     
+   Revenues from U.S. Company-owned store operations increased $7.7 million, or 9.1%, in the first quarter of 2024 primarily due to higher same store sales. U.S. Company-owned same store sales increased 8.5% in the first quarter of 2024 and increased 7.3% in the first quarter of 2023. 
+     
+   U.S. Franchise Royalties and Fees 
+     
+   Revenues from U.S. franchise royalties and fees increased $17.7 million, or 13.3%, in the first quarter of 2024 primarily due to an increase in fees paid by our franchisees for the use of our technology platforms, as well as higher same store sales and an increase in the average number of U.S. franchised stores open during the period resulting from net store growth. U.S. franchise same store sales increased 5.5% in the first quarter of 2024 and increased 3.4% in the first quarter of 2023.   
+     
+   U.S. Franchise Advertising 
+     
+   Revenues from U.S. franchise advertising decreased $2.4 million, or 2.2%, in the first quarter of 2024 primarily due to an increase in advertising incentives related to our Emergency Pizza promotion in the first quarter of 2024, as well as a temporary reduction of 0.25% to the standard 6.0% advertising contribution rate, which was effectuated at the beginning of the second quarter of 2023 (and expired at the beginning of the second quarter of 2024). Higher same store sales and an increase in the average number of U.S. franchised stores open during the period resulting from net store growth partially offset the decrease in U.S. franchise advertising revenue. 
+     
+   Supply Chain 
+     
+   Supply chain revenues increased $35.0 million, or 5.6%, in the first quarter of 2024 primarily due to higher order volumes at our U.S. franchised stores, partially offset by a shift in the relative mix of products we sell and a decrease in our food basket pricing to stores of 1.9% in the first quarter of 2024, which resulted in an estimated $10 million decrease in supply chain revenues. The food basket pricing change, a statistical measure utilized by management, is calculated as the percentage change of the food basket (including both food and cardboard products) purchased by an average U.S. store (based on average weekly unit sales) from our U.S. supply chain centers against the comparable period of the prior year. We believe this measure is important to understanding Company performance because as our food basket prices fluctuate, our revenues, cost of sales and gross margin percentages in our supply chain segment also fluctuate.   
+     
+   International Franchise Royalties and Fee Revenues   
+   Revenues from international franchise royalties and fees increased $2.3 million, or 3.3%, in the first quarter of 2024 primarily due to an increase in the average number of international franchised stores open during the period resulting from net store growth, as well as higher same store sales. The negative impact of changes in foreign currency exchange rates on international franchise royalty revenues of $1.4 million in the first quarter of 2024 partially offset the increase in international franchise royalties and fees. The impact of changes in foreign currency exchange rates on international franchise royalty revenues, a statistical measure utilized by management, is calculated as the difference in international franchise royalty revenues resulting from translating current year local currency results to U.S. dollars at current year exchange rates as compared to prior year exchange rates. We believe this measure is important to understanding Company performance given the significant variability in international franchise royalty revenues that can be driven by changes in foreign currency exchange rates. 
+   International franchise same store sales increased 0.9% in the first quarter of 2024 and increased 1.2% in the first quarter of 2023, excluding the impact of foreign currency exchange rates. 
+   17 
+   
+     
+   Cost of Sales / Gross Margin 
+     
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     Total revenues 
+       
+     $ 
+     1,084.6 
+       
+       
+       
+     100.0 
+     % 
+       
+     $ 
+     1,024.4 
+       
+       
+       
+     100.0 
+     % 
+    
+    
+     Total cost of sales 
+       
+       
+     662.8 
+       
+       
+       
+     61.1 
+     % 
+       
+       
+     638.9 
+       
+       
+       
+     62.4 
+     % 
+    
+    
+     Gross margin 
+       
+     $ 
+     421.9 
+       
+       
+       
+     38.9 
+     % 
+       
+     $ 
+     385.5 
+       
+       
+       
+     37.6 
+     % 
+    
+   
+     
+   Consolidated cost of sales consists of U.S. Company-owned store and supply chain costs incurred to generate related revenues. Components of consolidated cost of sales primarily include food, labor, delivery and occupancy costs. Consolidated gross margin (which we define as revenues less cost of sales) increased $36.4 million, or 9.4%, in the first quarter of 2024 primarily due to higher global franchise royalty revenues, as well as gross margin improvement within supply chain, discussed below. Franchise revenues do not have a cost of sales component, so changes in these revenues have a disproportionate effect on gross margin. Additionally, as food basket prices fluctuate, revenues, cost of sales and gross margin percentages in our supply chain segment also fluctuate, and further, cost of sales, gross margins and gross margin percentages for our U.S. Company-owned stores also fluctuate. 
+   As a percentage of revenues, the consolidated gross margin increased 1.3 percentage points in the first quarter of 2024. U.S. Company-owned store gross margin increased 0.6 percentage points in the first quarter of 2024. Supply chain gross margin increased 2.1 percentage points in the first quarter of 2024. These changes in gross margin are described in more detail below. 
+     
+   U.S. Company-Owned Store Gross Margin 
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     Revenues 
+       
+     $ 
+     92.6 
+       
+       
+       
+     100.0 
+     % 
+       
+     $ 
+     84.9 
+       
+       
+       
+     100.0 
+     % 
+    
+    
+     Cost of sales 
+       
+       
+     76.5 
+       
+       
+       
+     82.5 
+     % 
+       
+       
+     70.6 
+       
+       
+       
+     83.1 
+     % 
+    
+    
+     Store gross margin 
+       
+     $ 
+     16.1 
+       
+       
+       
+     17.5 
+     % 
+       
+     $ 
+     14.3 
+       
+       
+       
+     16.9 
+     % 
+    
+   
+     
+   U.S. Company-owned store gross margin (which does not include certain store-level costs such as royalties and advertising) increased $1.8 million, or 12.9%, in the first quarter of 2024. As a percentage of store revenues, U.S. Company-owned store gross margin increased 0.6 percentage points in the first quarter of 2024. These changes in gross margin as a percentage of revenues are discussed in additional detail below. 
+   • Food costs decreased 0.6 percentage points to 28.8% in the first quarter of 2024, driven primarily by the decrease in the food basket pricing to stores. 
+   • Labor costs increased 0.7 percentage points to 32.0% in the first quarter of 2024, driven primarily by higher wage rates in our U.S. Company-owned stores. 
+   • Sales leverage driven by higher customer transaction counts contributed to the remaining increase in U.S. Company-owned store gross margin as a percentage of revenues. 
+   Supply Chain Gross Margin 
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     Revenues 
+       
+     $ 
+     659.2 
+       
+       
+       
+     100.0 
+     % 
+       
+     $ 
+     624.2 
+       
+       
+       
+     100.0 
+     % 
+    
+    
+     Cost of sales 
+       
+       
+     586.3 
+       
+       
+       
+     88.9 
+     % 
+       
+       
+     568.3 
+       
+       
+       
+     91.0 
+     % 
+    
+    
+     Supply chain gross margin 
+       
+     $ 
+     72.9 
+       
+       
+       
+     11.1 
+     % 
+       
+     $ 
+     55.9 
+       
+       
+       
+     9.0 
+     % 
+    
+   
+     
+   Supply chain gross margin increased $17.0 million, or 30.3%, in the first quarter of 2024. As a percentage of supply chain revenues, the supply chain gross margin increased 2.1 percentage points in the first quarter of 2024 due to lower food costs resulting from procurement productivity and a decrease in the cost of our food basket, as well as slightly lower delivery costs. 
+   18 
+   
+     
+   General and Administrative Expenses 
+   General and administrative expenses increased $5.8 million, or 6.1%, in the first quarter of 2024, driven primarily by higher labor costs. 
+     
+   U.S. Franchise Advertising Expenses 
+   	  
+   U.S. franchise advertising expenses decreased $2.4 million, or 2.2%, consistent with the decrease in U.S. franchise advertising revenues in the first quarter of 2024. U.S. franchise advertising costs are accrued and expensed when the related U.S. franchise advertising revenues are recognized, as our consolidated not-for-profit advertising fund is obligated to expend such revenues on advertising and other activities that promote the Domino’s brand, and these revenues cannot be used for general corporate purposes. 
+     
+   Refranchising Loss 
+     
+   During each of the first quarters of 2024 and 2023, we refranchised one U.S. Company-owned store for proceeds of less than $0.1 million. The pre-tax refranchising losses associated with the sales of the related assets and liabilities, including goodwill, were each approximately $0.1 million and were recorded in refranchising loss in our condensed consolidated statements of income. 
+     
+   Other Expense 
+     
+   During the first quarter of 2024, we recorded an $18.7 million unrealized loss on our investment in DPC Dash (Note 6) based on the active exchange quoted price for the equity security. We did not record any adjustments to the carrying amount in the first quarter of 2023. 
+     
+   Interest Expense, Net   
+   Interest expense, net decreased $2.0 million, or 4.6%, in the first quarter of 2024, driven by higher interest income on our cash equivalents. 
+   Our weighted average borrowing rate was 3.8% in both the first quarter of 2024 and 2023. 
+   Provision for Income Taxes   
+   Provision for income taxes decreased $4.8 million, or 16.7%, in the first quarter of 2024 due to a lower effective tax rate, partially offset by higher income before provision for income taxes. The effective tax rate decreased to 15.9% during the first quarter of 2024 as compared to 21.4% in the first quarter of 2023, driven by a 5.6 percentage point change in the impact of excess tax benefits from equity-based compensation, which are recorded as a reduction to the provision for income taxes. 
+   19 
+   
+     
+   Segment Income 
+   We evaluate the performance of our reportable segments and allocate resources to them based on earnings before interest, taxes, depreciation, amortization and other, referred to as Segment Income. Segment Income for each of our reportable segments is summarized in the table below. Other Segment Income primarily includes corporate administrative costs that are not allocable to a reportable segment, including labor, computer expenses, professional fees, travel and entertainment, rent, insurance and other corporate administrative costs.   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     U.S. stores 
+       
+     $ 
+     136.1 
+       
+       
+     $ 
+     112.7 
+       
+    
+    
+     Supply chain 
+       
+       
+     64.6 
+       
+       
+       
+     48.5 
+       
+    
+    
+     International franchise 
+       
+       
+     59.3 
+       
+       
+       
+     58.1 
+       
+    
+    
+     Other 
+       
+       
+     (18.2 
+     ) 
+       
+       
+     (15.7 
+     ) 
+    
+   
+   U.S. Stores 
+   U.S. stores Segment Income increased $23.4 million, or 20.8%, in the first quarter of 2024, primarily due to higher U.S. franchise royalties and fees revenues, as well as the $1.8 million increase in U.S. Company-owned store gross margin, each as discussed above. U.S. franchise revenues do not have a cost of sales component, so changes in these revenues have a disproportionate effect on U.S. stores Segment Income. U.S. franchise advertising costs are accrued and expensed when the related U.S. franchise advertising revenues are recognized and had no impact on U.S. stores Segment Income. 
+     
+   Supply Chain 
+   Supply chain Segment Income increased $16.1 million, or 33.1%, in the first quarter of 2024, primarily due to the $17.0 million increase in supply chain gross margin, as discussed above. 
+     
+   International Franchise 
+   International franchise Segment Income increased $1.2 million, or 2.1%, in the first quarter of 2024, primarily due to higher international franchise royalties and fees revenues, as discussed above. International franchise revenues do not have a cost of sales component, so changes in these revenues have a disproportionate effect on international franchise Segment Income. 
+     
+   Other 
+   Other Segment Income decreased $2.5 million, or 15.6%, in the first quarter of 2024, primarily due to higher labor costs. 
+   20 
+   
+     
+   Liquidity and Capital Resources   
+     
+   Historically, our receivable collection periods and inventory turn rates are faster than the normal payment terms on our current liabilities resulting in efficient deployment of working capital. We generally collect our receivables within three weeks from the date of the related sale and we generally experience multiple inventory turns per month. In addition, our sales are not typically seasonal, which further limits variations in our working capital requirements. As of March 24, 2024, we had working capital of $173.3 million, excluding restricted cash and cash equivalents of $209.8 million, advertising fund assets, restricted, of $77.0 million and advertising fund liabilities of $75.1 million. Working capital includes total unrestricted cash and cash equivalents of $203.9 million.   
+     
+   Our primary sources of liquidity are cash flows from operations and availability of borrowings under our 2022 and 2021 Variable Funding Notes (as defined below). During the first quarter of 2024, we experienced an increase in both U.S. and international same store sales (excluding foreign currency impact) versus the comparable periods in the prior year. Additionally, both our U.S. and international businesses grew store counts during the first quarter of 2024. These factors contributed to our continued ability to generate positive operating cash flows. In addition to our cash flows from operations, we have two variable funding note facilities. These facilities include our Series 2022-1 Variable Funding Senior Secured Notes, Class A-1 Notes (the “2022 Variable Funding Notes”), which allows for advances of up to $120.0 million, as well as our Series 2021-1 Variable Funding Senior Secured Notes, Class A-1 Notes (the “2021 Variable Funding Notes,” and, together with the 2022 Variable Funding Notes, the “2022 and 2021 Variable Funding Notes”), which allows for advances of up to $200.0 million and certain other credit instruments, including letters of credit. The letters of credit primarily relate to our casualty insurance programs. As of March 24, 2024, we had no outstanding borrowings and $278.9 million of available borrowing capacity under our 2022 and 2021 Variable Funding Notes, net of letters of credit issued of $41.1 million. 
+     
+   We expect to continue to use our unrestricted cash and cash equivalents, cash flows from operations, any excess cash from our recapitalization transactions and available borrowings under our 2022 and 2021 Variable Funding Notes to, among other things, fund working capital requirements, invest in our core business and other strategic opportunities, repay outstanding borrowings under our securitized debt, pay dividends and repurchase and retire shares of our common stock. 
+     
+   Our ability to continue to fund these items and continue to service our debt could be adversely affected by the occurrence of any of the events described under “Risk Factors” in our 2023 Form 10-K. There can be no assurance that our business will generate sufficient cash flows from operations or that future borrowings will be available under our 2022 and 2021 Variable Funding Notes or otherwise to enable us to service our indebtedness, or to make anticipated capital expenditures. Our future operating performance and our ability to service, extend or refinance our outstanding senior notes and to service, extend or refinance our 2022 and 2021 Variable Funding Notes will be subject to future economic conditions and to financial, business and other factors, many of which are beyond our control.   
+     
+   Restricted Cash 
+   As of March 24, 2024, we had $158.7 million of restricted cash held for future principal and interest payments and other working capital requirements of our asset-backed securitization structure, $50.9 million of restricted cash held in a three-month interest reserve as required by the related debt agreements and $0.2 million of other restricted cash for a total of $209.8 million of restricted cash and cash equivalents. As of March 24, 2024, we also held $56.0 million of advertising fund restricted cash and cash equivalents, which can only be used for activities that promote the Domino’s brand. 
+     
+   Long-Term Debt 
+   As of March 24, 2024, we had approximately $4.98 billion of long-term debt, of which $4.9 million was classified as a current liability. As of March 24, 2024, our fixed rate notes from the recapitalizations we completed in 2021, 2019, 2018, 2017 and 2015 had original scheduled principal payments of $38.6 million in the remainder of 2024, $1.17 billion in 2025, $39.3 million in 2026, $1.31 billion in 2027, $811.5 million in 2028, $625.9 million in 2029, $10.0 million in 2030 and $905.0 million in 2031. However, in accordance with our debt agreements, the payment of principal on our outstanding senior notes may be suspended if our Holdco Leverage Ratio is less than or equal to 5.0x total debt to adjusted EBITDA, as defined in the related agreements, and no catch-up provisions are applicable. As of the end of the first quarter of 2024, we had a Holdco Leverage Ratio of less than 5.0x, and accordingly, did not make the previously scheduled debt amortization payment on our outstanding notes beginning in the second quarter of 2024. Accordingly, all principal amounts of our outstanding notes have been classified as long-term debt in our condensed consolidated balance sheet as of March 24, 2024. 
+     
+   The notes are subject to certain financial and non-financial covenants, including a debt service coverage ratio calculation. The covenant requires a minimum coverage ratio of 1.75x total debt service to securitized net cash flow, as defined in the related agreements. In the event that certain covenants are not met, the notes may become due and payable on an accelerated schedule.   
+     
+   21 
+   
+     
+   Share Repurchase Programs 
+     
+   Our share repurchase programs have historically been funded by excess operating cash flows, excess proceeds from our recapitalization transactions and borrowings under our 2022 and 2021 Variable Funding Notes. On February 21, 2024, our Board of Directors authorized an additional share repurchase program to repurchase up to $1.0 billion of our common stock, in addition to the $141.3 million that was previously remaining for a total authorization of $1.14 billion for future share repurchases as of that date.   
+   During the first quarter of 2024, we repurchased and retired 56,372 shares of our common stock under our Board of Directors-approved share repurchase program for a total of approximately $25.0 million. As of March 24, 2024, we had a total remaining authorized amount for share repurchases of approximately $1.12 billion. 
+     
+   Dividends   
+     
+   On February 21, 2024, our Board of Directors declared a $1.51 per share quarterly dividend on our outstanding common stock for shareholders of record as of March 15, 2024, which was paid on March 29, 2024. We had approximately $54.1 million accrued for common stock dividends at March 24, 2024. Subsequent to the end of the first quarter, on April 25, 2024, our Board of Directors declared a $1.51 per share quarterly dividend on our outstanding common stock for shareholders of record as of June 14, 2024, to be paid on June 28, 2024. 
+     
+   Sources and Uses of Cash 
+   The following table illustrates the main components of our cash flows: 
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+     First Quarter of 2024 
+       
+       
+     First Quarter of 2023 
+       
+    
+    
+     Cash flows provided by (used in) 
+       
+       
+       
+       
+       
+       
+    
+    
+     Net cash provided by operating activities 
+       
+     $ 
+     123.5 
+       
+       
+     $ 
+     114.7 
+       
+    
+    
+     Net cash used in investing activities 
+       
+       
+     (21.5 
+     ) 
+       
+       
+     (19.6 
+     ) 
+    
+    
+     Net cash used in financing activities 
+       
+       
+     (34.8 
+     ) 
+       
+       
+     (45.3 
+     ) 
+    
+    
+     Effect of exchange rate changes on cash 
+       
+       
+     (0.7 
+     ) 
+       
+       
+     (0.2 
+     ) 
+    
+    
+     Change in cash and cash equivalents, restricted cash and cash equivalents 
+       
+     $ 
+     66.5 
+       
+       
+     $ 
+     49.6 
+       
+    
+   
+     
+   Operating Activities 
+     
+   Cash provided by operating activities increased $8.8 million in the first quarter of 2024, as a result of higher net income, excluding non-cash operating activities, partially offset by the negative impact of changes in operating assets and liabilities and advertising fund assets and liabilities, restricted. Net income increased $21.1 million and non-cash adjustments increased $23.1 million, resulting in an overall increase to cash provided by operating activities in the first quarter of 2024 as compared to the first quarter of 2023 of $44.2 million. The negative impact of changes in operating assets and liabilities of $25.8 million primarily related to the timing of payments on accrued liabilities and inventory in the first quarter of 2024 as compared to the first quarter of 2023. Additionally, the $9.6 million negative impact of changes in advertising fund assets and liabilities, restricted, in the first quarter of 2024 as compared to the first quarter of 2023 was a result of payments for advertising activities outpacing receipts for advertising contributions. 
+     
+   Investing Activities 
+   Cash used in investing activities was $21.5 million in the first quarter of 2024, which primarily consisted of $20.2 million of capital expenditures (driven primarily by investments in technological initiatives, supply chain centers and corporate store operations). 
+     
+   Financing Activities 
+   Cash used in financing activities was $34.8 million in the first quarter of 2024,   which included the repurchase of approximately $25.0 million in common stock under our Board of Directors-approved share repurchase program, repayments of long-term debt and finance lease obligations of $13.5 million, tax payments for the vesting of restricted stock of $6.7 million and dividend payments of $0.3 million. These uses of cash were partially offset by proceeds from the exercise of stock options of $10.8 million.   
+     
+   Critical Accounting Estimates 
+     
+   For a description of the Company’s critical accounting estimates, refer to “Part II—Item 7—Management’s Discussion and Analysis of Financial Condition and Results of Operations” in the 2023 Form 10-K. The Company considers its most significant accounting policies and estimates to be long-lived assets, casualty insurance reserves and income taxes. There have been no material changes to the Company’s critical accounting estimates since December 31, 2023. 
+   22 
+   
+     
+   Forward-Looking Statements 
+     
+   This filing contains various forward-looking statements about the Company within the meaning of the Private Securities Litigation Reform Act of 1995 (the “Act”) that are based on current management expectations that involve substantial risks and uncertainties which could cause actual results to differ materially from the results expressed in, or implied by, these forward-looking statements. The following cautionary statements are being made pursuant to the provisions of the Act and with the intention of obtaining the benefits of the “safe harbor” provisions of the Act. You can identify forward-looking statements by the use of words such as “anticipates,” “believes,” “could,” “should,” “estimates,” “expects,” “intends,” “may,” “will,” “plans,” “predicts,” “projects,” “seeks,” “approximately,” “potential,” “outlook” and similar terms and phrases that concern our strategy, plans or intentions, including references to assumptions. These forward-looking statements address various matters including information concerning future results of operations and business strategy, our anticipated profitability, estimates in same store sales growth, store growth and the growth of our U.S. and international business in general, our ability to service our indebtedness, our future cash flows, our operating performance, trends in our business and other descriptions of future events reflect the Company’s expectations based upon currently available information and data. While we believe these expectations and projections are based on reasonable assumptions, such forward-looking statements are inherently subject to risks, uncertainties and assumptions. Important factors that could cause actual results to differ materially from our expectations are more fully described under the section headed “Risk Factors” in this filing and in our other filings with the Securities and Exchange Commission, including under the section headed “Risk Factors” in our 2023 Form 10-K for the fiscal year ended December 31, 2023. Actual results may differ materially from those expressed or implied in the forward-looking statements as a result of various factors, including but not limited to: our substantial increased indebtedness as a result of our recapitalization transactions and our ability to incur additional indebtedness or refinance or renegotiate key terms of that indebtedness in the future; the impact a downgrade in our credit rating may have on our business, financial condition and results of operations; our future financial performance and our ability to pay principal and interest on our indebtedness; the strength of our brand, including our ability to compete in the U.S. and internationally in our intensely competitive industry, including the food service and food delivery markets; our ability to successfully implement our growth strategy, including through our participation in the third-party order aggregation marketplace; labor shortages or changes in operating expenses resulting from increases in prices of food (particularly cheese), fuel and other commodity costs, labor, utilities, insurance, employee benefits and other operating costs or negative economic conditions; the effectiveness of our advertising, operations and promotional initiatives; shortages, interruptions or disruptions in the supply or delivery of fresh food products and store equipment; the impact of social media and other consumer-oriented technologies on our business, brand and reputation; the impact of new or improved technologies and alternative methods of delivery on consumer behavior; new product, digital ordering and concept developments by us, and other food-industry competitors; the additional risks our international operations subject us to; our ability to maintain good relationships with and attract new franchisees, and franchisees’ ability to successfully manage their operations without negatively impacting our royalty payments and fees or our brand’s reputation; our ability to successfully implement cost-saving strategies; our ability and that of our franchisees to successfully operate in the current and future credit environment; changes in the level of consumer spending given general economic conditions, including interest rates, energy prices and consumer confidence or negative economic conditions in general; our ability and that of our franchisees to open new restaurants and keep existing restaurants in operation and maintain demand for new stores; the impact that widespread illness, health epidemics or general health concerns, severe weather conditions and natural disasters may have on our business and the economies of the countries where we operate; changes in foreign currency exchange rates; changes in income tax rates; our ability to retain or replace our executive officers and other key members of management and our ability to adequately staff our stores and supply chain centers with qualified personnel; our ability to find and/or retain suitable real estate for our stores and supply chain centers; changes in government legislation and regulations, including changes in laws and regulations regarding information privacy, payment methods, advertising and consumer protection and social media; adverse legal judgments or settlements; food-borne illness or contamination of products or food tampering or other events that may impact our reputation; data breaches, power loss, technological failures, user error or other cyber risks threatening us or our franchisees; the impact that environmental, social and governance matters may have on our business and reputation; the effect of war, terrorism, catastrophic events, other geopolitical or reputational considerations or climate change; our ability to pay dividends and repurchase shares; changes in consumer tastes, spending and traffic patterns and demographic trends; changes in accounting policies; and adequacy of our insurance coverage. In light of these risks, uncertainties and assumptions, the forward-looking events discussed in this filing might not occur. All forward-looking statements speak only as of the date of this filing and should be evaluated with an understanding of their inherent uncertainty. Except as required under federal securities laws and the rules and regulations of the Securities and Exchange Commission, or other applicable law, we will not undertake, and specifically disclaim, any obligation to publicly update or revise any forward-looking statements to reflect events or circumstances arising after the date of this filing, whether as a result of new information, future events or otherwise. You are cautioned not to place undue reliance on the forward-looking statements included in this filing or that may be made elsewhere from time to time by, or on behalf of, us. All forward-looking statements attributable to us are expressly qualified by these cautionary statements. 
+   23 
+   
+     
+   Ite m 3. Quantitative and Qualitative Disclosures About Market Risk. 
+   Market Risk   
+     
+   We do not engage in speculative transactions, nor do we hold or issue financial instruments for trading purposes. In connection with the recapitalizations of our business, we have issued fixed rate notes and entered into variable fund notes, and, at March 24, 2024, we are exposed to interest rate risk on borrowings under our variable funding notes. As of March 24, 2024, we had no outstanding borrowings under our 2022 and 2021 Variable Funding Notes.   
+     
+   Our 2022 and 2021 Variable Funding Notes bear interest at fluctuating interest rates based on the Secured Overnight Financing Rate (“Term SOFR”), plus a spread adjustment. Accordingly, a rising interest rate environment could result in higher interest expense due on borrowings under our 2022 and 2021 Variable Funding Notes, in which event we may have difficulties making interest payments and funding our other fixed costs, and our available cash flow for general corporate requirements may be adversely affected. 
+     
+   Our fixed-rate debt exposes the Company to changes in market interest rates reflected in the fair value of the debt and to the risk that the Company may need to refinance maturing debt with new debt at a higher rate. 
+     
+   We are exposed to market risks from changes in commodity prices. During the normal course of business, we purchase cheese and certain other food, cardboard and paper products that are affected by changes in commodity prices and, as a result, we are subject to volatility in our product costs. Severe increases in commodity prices or food costs, including as a result of inflation, could affect the global and U.S. economies and could also adversely impact our business, financial condition or results of operations. We may periodically enter into financial instruments to manage this risk, although we have not done so historically. We do not engage in speculative transactions or hold or issue financial instruments for trading purposes. In instances when we use fixed pricing agreements with our suppliers, these agreements cover our physical commodity needs, are not net-settled and are accounted for as normal purchases. 
+     
+   Foreign Currency Exchange Risk   
+     
+   We have exposure to various foreign currency exchange rate fluctuations for revenues generated by our operations outside the U.S., which can adversely impact our net income and cash flows. Approximately 6.6% of our total revenues in the first quarter of 2024 and approximately 6.8% of our total revenues in the first quarter of 2023 were derived from our international franchise segment, a majority of which were denominated in foreign currencies. We also operate dough manufacturing and distribution facilities in Canada, which generate revenues denominated in Canadian dollars. We do not enter into financial instruments to manage this foreign currency exchange risk. We estimate that a hypothetical 10% adverse change in the foreign currency rates for our international markets would have resulted in a negative impact on royalty revenues of approximately $6.4 million in the first quarter of 2024. 
+   Ite m 4. Controls and Procedures.   
+     
+   Management, with the participation of the Company’s Chief Executive Officer, Russell J. Weiner, and Executive Vice President and Chief Financial Officer, Sandeep Reddy, performed an evaluation of the effectiveness of the Company’s disclosure controls and procedures (as that term is defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended) as of the end of the period covered by this report. Based on that evaluation, Mr. Weiner and Mr. Reddy concluded that the Company’s disclosure controls and procedures were effective. 
+     
+   During the quarterly period ended March 24, 2024, there were no changes in the Company’s internal control over financial reporting as defined in Rules 13a-15(f) and 15d-15(f) that have materially affected or are reasonably likely to materially affect the Company’s internal control over financial reporting. 
+   24 
+   
+     
+   PA RT II. OTHER INFORMATION   
+     
+   Ite m 1. Legal Proceedings.   
+   We are a party to lawsuits, revenue agent reviews by taxing authorities and administrative proceedings in the ordinary course of business which include, without limitation, workers’ compensation, general liability, automobile and franchisee claims. We are also subject to suits related to employment practices. In addition, we may occasionally be party to large claims, including class action suits. 
+     
+   Litigation is subject to many uncertainties, and the outcome of individual litigated matters is unpredictable. These matters referenced above could be decided unfavorably to us and could require us to pay damages or make other expenditures in amounts or a range of amounts that cannot be estimated with accuracy. However, we do not believe these matters, individually or in the aggregate, will have a material adverse effect on the business or financial condition of the Company, and we expect that the established accruals adequately provide for the estimated resolution of such claims. 
+     
+   It em 1A. Risk Factors.   
+     
+   There have been no material changes with respect to those risk factors previously disclosed in Item 1A “Risk Factors” in Part I of our 2023 Form 10-K. 
+     
+   It em 2. Unregistered Sales of Equity Securities and Use of Proceeds.   
+   c. Purchases of Equity Securities by the Issuer and Affiliated Purchasers. 
+     
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+     Maximum Approximate Dollar 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+       
+     Total Number of Shares 
+       
+       
+     Value of Shares that 
+       
+    
+    
+       
+       
+     Total Number 
+       
+       
+       
+       
+       
+     Purchased as Part of 
+       
+       
+     May Yet Be Purchased 
+       
+    
+    
+       
+       
+     of Shares 
+       
+       
+     Average Price Paid 
+       
+       
+     Publicly Announced 
+       
+       
+     Under the Program (2) 
+       
+    
+    
+     Period 
+       
+     Purchased (1) 
+       
+       
+     Per Share 
+       
+       
+     Program (2) 
+       
+       
+     (in thousands) 
+       
+    
+    
+     Period #1 (January 1, 2024    to January 28, 2024) 
+       
+       
+     1,276 
+       
+       
+     $ 
+     412.44 
+       
+       
+       
+     — 
+       
+       
+     $ 
+     1,141,333 
+       
+    
+    
+     Period #2 (January 29, 2024    to February 25, 2024) 
+       
+       
+     1,201 
+       
+       
+       
+     429.31 
+       
+       
+       
+     — 
+       
+       
+       
+     1,141,333 
+       
+    
+    
+     Period #3 (February 26, 2024    to March 24, 2024) 
+       
+       
+     58,936 
+       
+       
+       
+     443.65 
+       
+       
+       
+     56,372 
+       
+       
+       
+     1,116,333 
+       
+    
+    
+     Total 
+       
+       
+     61,413 
+       
+       
+     $ 
+     442.72 
+       
+       
+       
+     56,372 
+       
+       
+     $ 
+     1,116,333 
+       
+    
+   
+     
+   
+    
+     
+     
+    
+    
+     (1)   
+     5,041 shares in the first quarter of 2024 were purchased as part of the Company’s employee stock payroll deduction plan at an average price of $434.23.     
+    
+    
+     (2) 
+     On February 21, 2024, the Company’s Board of Directors authorized an additional share repurchase program to repurchase up to $1.0 billion of the Company’s common stock, in addition to the $141.3 million that was previously remaining for a total authorization of $1.14 billion for future share repurchases as of that date. As of March 24, 2024, $1.12 billion remained available for future purchases of the Company’s common stock under this share repurchase program.   
+    
+    
+       
+     Authorization for the repurchase program may be modified, suspended, or discontinued at any time. The repurchase of shares in any particular period and the actual amount of such purchases remain at the discretion of the Board of Directors, and no assurance can be given that shares will be repurchased in the future. 
+    
+   
+     
+   It em 3. Defaults Upon Senior Securities.   
+   None.   
+     
+   Ite m 4. Mine Safety Disclosures.   
+   Not applicable.   
+     
+   Ite m 5. Other Information.   
+   Rule 10b5-1 Trading Plans 
+   During the first quarter ended March 24, 2024 , none of the Company’s directors or officers (as defined in Section 16 of the Securities Exchange Act of 1934) adopted or terminated a “ Rule 10b5-1 trading arrangement ” or a “ non-Rule 10b5-1 trading arrangement ,” as each term is defined in Item 408(a) of Regulation S-K of the Securities Exchange Act of 1934. 
+   25 
+   
+     
+   Ite m 6. Exhibits.   
+     
+   
+    
+     
+     
+     
+    
+    
+     Exhibit Number 
+       
+     Description 
+    
+    
+     31.1 
+       
+     Certification of Chief Executive Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, relating to Domino’s Pizza, Inc. 
+    
+    
+     31.2 
+       
+     Certification of Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002, relating to Domino’s Pizza, Inc. 
+    
+    
+     32.1 
+       
+     Certification of Chief Executive Officer pursuant to Section 1350, Chapter 63 of Title 18, United States Code, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, relating to Domino’s Pizza, Inc. 
+    
+    
+     32.2 
+       
+     Certification of Chief Financial Officer pursuant to Section 1350, Chapter 63 of Title 18, United States Code, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, relating to Domino’s Pizza, Inc. 
+    
+    
+     101.INS 
+       
+     XBRL Instance Document – The instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 
+    
+    
+     101.SCH 
+       
+     Inline XBRL Taxonomy Extension Schema Document. 
+    
+    
+     101.CAL 
+       
+     Inline XBRL Taxonomy Extension Calculation Linkbase Document. 
+    
+    
+     101.LAB 
+       
+     Inline XBRL Taxonomy Extension Label Linkbase Document. 
+    
+    
+     101.PRE 
+       
+     Inline XBRL Taxonomy Extension Presentation Linkbase Document. 
+    
+    
+     101.DEF 
+       
+     Inline XBRL Taxonomy Extension Definition Linkbase Document. 
+    
+    
+     104 
+       
+     Cover page Interactive Data File (formatted as Inline XBRL and contained in exhibit 101). 
+    
+   
+     
+   26 
+   
+     
+   SI GNATURES   
+   Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned hereunto duly authorized.   
+     
+   
+    
+     
+     
+     
+    
+    
+       
+       
+     DOMINO’S PIZZA, INC. (Registrant) 
+    
+    
+       Date: April 29, 2024 
+       
+     /s/ Sandeep Reddy 
+    
+    
+       
+       
+     Sandeep Reddy 
+    
+    
+       
+       
+     Executive Vice President, Chief Financial Officer (Principal Financial Officer) 
+    
+   
+     
+   27 
+   
+  
+ 

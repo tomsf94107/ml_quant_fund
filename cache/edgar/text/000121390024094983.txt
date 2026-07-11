@@ -1,0 +1,7946 @@
+
+ 
+ 
+ 
+ 
+        
+
+ 
+ 
+ 
+
+ 
+
+   
+
+   
+
+ UNITED STATES 
+
+ SECURITIES AND EXCHANGE COMMISSION 
+
+ Washington, D.C. 20549 
+
+   
+
+ FORM  10-Q 
+
+   
+
+ ☒   QUARTERLY REPORT PURSUANT TO SECTION 13
+OR 15(d) OF THE SECURITIES   EXCHANGE ACT OF 1934 
+
+   
+
+ For the quarterly period ended   September
+30,  2024 
+
+   
+
+ or 
+
+   
+
+ ☐  TRANSITION REPORT PURSUANT TO SECTION 13
+OR 15(d) OF THE SECURITIES   EXCHANGE ACT OF 1934 
+
+   
+
+ For the transition period from __________ to __________ 
+
+   
+
+ Commission File Number :  001-40615 
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ (Exact name of registrant as specified in its charter) 
+
+   
+
+     Delaware       82-4533053     (State or other jurisdiction of  incorporation or organization)       (I.R.S. Employer 
+Identification No.)   
+   
+
+     5 Marine View Plaza ,  Suite 214 ,  Hoboken ,  NJ       07030     (Address of principal executive offices)       (Zip Code)   
+   
+
+ Registrant’s telephone number, including
+area code  (703)   436-2121 
+
+   
+
+ Securities registered pursuant to Section 12(b)
+of the Act: 
+
+   
+
+     Title of each class       Trading Symbol(s)       Name of each exchange on which registered     Common Stock, par value $.0001       QUBT       The  Nasdaq  Stock Market LLC   
+   
+
+ Indicate by check mark whether the registrant
+(1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months
+(or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements
+for the past 90 days. 
+
+ Yes  ☒ No ☐ 
+
+   
+
+ Indicate by check mark whether the registrant
+has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405
+of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). 
+
+ Yes  ☒ No ☐ 
+
+   
+
+ Indicate by check mark whether the registrant
+is large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company.
+See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,”
+and “emerging growth company” in Rule 12b-2 of the Exchange Act: 
+
+   
+
+     Large accelerated filer    ☐   Accelerated filer    ☐     Non-accelerated filer     ☒   Smaller reporting company    ☒             Emerging growth company    ☐     
+   
+
+ If an emerging growth company, indicate by check
+mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting
+standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+
+   
+
+ Indicate by check mark whether the registrant
+is a shell company (as defined in Rule 12b-2 of the Exchange Act).  
+
+ Yes ☐ No  ☒ 
+
+   
+
+ As of November 4, 2024, there were  99,086,476  shares of the registrant’s
+common stock outstanding. 
+
+   
+
+ 
+
+   
+
+   
+
+
+ 
+       
+       
+     
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+   
+
+ TABLE OF CONTENTS 
+
+   
+
+ 
+   
+       
+       
+     Page No. 
+   
+     PART I.  
+     FINANCIAL INFORMATION 
+     F-1 
+   
+       
+       
+   
+     Item 1. 
+     Financial Statements (Unaudited) 
+     F-1 
+   
+       
+     Condensed Consolidated Balance Sheets 
+     F-1 
+   
+       
+     Condensed Consolidated Statements of Operations 
+     F-2 
+   
+       
+     Condensed Consolidated Statements of Mezzanine and Stockholders’ Equity 
+     F-3 
+   
+       
+     Condensed Consolidated Statements of Cash Flows 
+     F-5 
+   
+       
+     Notes to the Unaudited Condensed Consolidated Financial Statements 
+     F-6 
+   
+       
+       
+       
+   
+     Item 2. 
+     Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+     1 
+   
+     Item 3. 
+     Quantitative and Qualitative Disclosures About Market Risk 
+     9 
+   
+     Item 4. 
+     Controls and Procedures 
+     9 
+   
+       
+       
+       
+   
+     PART II.  
+     OTHER INFORMATION 
+     10 
+   
+       
+       
+       
+   
+     Item 1. 
+     Legal Proceedings 
+     10 
+   
+     Item 1A. 
+     Risk Factors 
+     11 
+   
+     Item 2. 
+     Unregistered Sales of Equity Securities and Use of Proceeds 
+     11 
+   
+     Item 3. 
+     Defaults Upon Senior Securities 
+     11 
+   
+     Item 4. 
+     Mine Safety Disclosures 
+     11 
+   
+     Item 5. 
+     Other Information 
+     11 
+   
+     Item 6. 
+     Exhibits 
+     12 
+   
+   
+
+
+ 
+     i 
+       
+     
+
+   
+
+ PART I – FINANCIAL INFORMATION 
+
+   
+
+ Item 1. Condensed Consolidated Financial Statements  
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ Condensed Consolidated Balance Sheets 
+
+ (Unaudited, in thousands, except par value data) 
+
+   
+
+ 
+   
+         
+     September 30,     
+     December 31,   
+   
+         
+     2024     
+     2023   
+   
+     Assets   
+           
+         
+   
+     Current assets:   
+           
+         
+   
+     Cash and cash equivalents   
+     $ 3,064     
+     $ 2,059   
+   
+     Accounts receivable, net   
+       63     
+       65   
+   
+     Inventory   
+       241     
+       73   
+   
+     Loans receivable, net   
+       306     
+       279   
+   
+     Prepaid expenses and other current assets   
+       238     
+       180   
+   
+     Total current assets   
+       3,912     
+       2,656   
+   
+     Property and equipment, net   
+       5,826     
+       2,870   
+   
+     Operating lease right-of-use assets   
+       1,622     
+       1,051   
+   
+     Intangible assets, net   
+       9,748     
+       12,076   
+   
+     Goodwill   
+       55,573     
+       55,573   
+   
+     Other non-current assets   
+       129     
+       129   
+   
+     Total assets   
+     $ 76,810     
+     $ 74,355   
+   
+         
+             
+           
+   
+     Liabilities, Mezzanine, and Stockholders’ Equity   
+             
+           
+   
+     Current liabilities:   
+             
+           
+   
+     Accounts payable   
+     $ 923     
+     $ 1,462   
+   
+     Accrued expenses   
+       539     
+       639   
+   
+     Financial liabilities, net of issuance costs   
+       -     
+       1,925   
+   
+     Deferred revenue   
+       48     
+       -   
+   
+     Other current liabilities   
+       921     
+       786   
+   
+     Total current liabilities   
+       2,431     
+       4,812   
+   
+     Financial liabilities, net of issuance costs   
+       6,514     
+       -   
+   
+     Derivative liability   
+       666     
+       -   
+   
+     Operating lease liabilities   
+       1,297     
+       840   
+   
+     Total liabilities   
+       10,908     
+       5,652   
+   
+     Contingencies (see Note 10)   
+             
+           
+   
+     Mezzanine equity   
+       5,463     
+       -   
+   
+     Stockholders’ equity:   
+             
+           
+   
+     Preferred stock, $ 0.0001  par value,  1,550  shares Series A Preferred authorized;  993  thousand and  1,490  thousand shares issued and outstanding as of September 30, 2024 and December 31, 2023, respectively;  3,080  thousand shares of Series B Preferred Stock authorized;  no  shares issued and outstanding as of September 30, 2024 and December 31, 2023   
+       -     
+       -   
+   
+     Common stock, $ 0.0001  par value,  250,000  thousand shares authorized;  94,416  thousand and  77,451  thousand shares issued and outstanding as of September 30, 2024 and December 31, 2023, respectively   
+       9     
+       8   
+   
+     Additional paid-in capital   
+       209,675     
+       200,635   
+   
+     Accumulated deficit   
+       ( 149,245 )   
+       ( 131,940 ) 
+   
+     Total stockholders’ equity   
+       60,439     
+       68,703   
+   
+     Total liabilities and mezzanine and stockholders’ equity   
+     $ 76,810     
+     $ 74,355   
+   
+
+
+
+   
+
+ The accompanying notes are an integral part
+of these unaudited condensed consolidated financial statements. 
+
+   
+
+
+ 
+     F- 1 
+       
+     
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ Condensed Consolidated Statements of Operations 
+
+ (Unaudited, in thousands, except per share data) 
+
+   
+
+ 
+   
+         
+     Three Months Ended     
+     Nine Months Ended   
+   
+         
+     September 30,     
+     September 30,   
+   
+         
+     2024     
+     2023     
+     2024     
+     2023   
+   
+         
+           
+     (Restated) (1)     
+           
+     (Restated) (1)   
+   
+     Total revenue   
+     $ 101     
+     $ 50     
+     $ 311     
+     $ 283   
+   
+     Cost of revenue   
+       92     
+       24     
+       233     
+       131   
+   
+     Gross profit   
+       9     
+       26     
+       78     
+       152   
+   
+     Operating expenses   
+             
+             
+             
+           
+   
+     Research and development   
+       2,244     
+       2,328     
+       6,560     
+       6,977   
+   
+     Sales and marketing   
+       363     
+       584     
+       1,243     
+       1,397   
+   
+     General and administrative   
+       2,840     
+       3,725     
+       9,298     
+       11,442   
+   
+     Total operating expenses   
+       5,447     
+       6,637     
+       17,101     
+       19,816   
+   
+     Loss from operations   
+       ( 5,438 )   
+       ( 6,611 )   
+       ( 17,023 )   
+       ( 19,664 ) 
+   
+     Non-operating income (expense)   
+             
+             
+             
+           
+   
+     Interest and other income   
+       70     
+       126     
+       180     
+       219   
+   
+     Interest expense, net   
+       ( 307 )   
+       ( 369 )   
+       ( 462 )   
+       ( 1,334 ) 
+   
+     Change in value of warrant liabilities   
+       -     
+       13     
+       -     
+       384   
+   
+     Loss before income tax provision   
+       ( 5,675 )   
+       ( 6,841 )   
+       ( 17,305 )   
+       ( 20,395 ) 
+   
+     Income tax provision   
+       -     
+       -     
+       -     
+       -   
+   
+     Net loss   
+       ( 5,675 )   
+       ( 6,841 )   
+       ( 17,305 )   
+       ( 20,395 ) 
+   
+         
+             
+             
+             
+           
+   
+     Less: Series A convertible preferred stock dividends   
+       -     
+       ( 215 )   
+       -     
+       ( 646 ) 
+   
+     Net loss attributable to common stockholders   
+     $ ( 5,675 )   
+     $ ( 7,056 )   
+     $ ( 17,305 )   
+     $ ( 21,041 ) 
+   
+         
+             
+             
+             
+           
+   
+     Loss per share – basic and diluted   
+     $ ( 0.06 )   
+     $ ( 0.10 )   
+     $ ( 0.19 )   
+     $ ( 0.33 ) 
+   
+     Weighted average shares used in computing net loss per common share – basic and dilutive   
+       93,048     
+       71,588     
+       89,063     
+       64,246   
+   
+
+
+   
+
+     (1)   As described in Note 15 to these unaudited condensed consolidated financial statements, we have restated the unaudited condensed consolidated statements of operations for the three and nine months ended September 30, 2023.   
+   
+
+ The accompanying notes are an integral part
+of these unaudited condensed consolidated financial statements. 
+
+   
+
+
+ 
+     F- 2 
+       
+     
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ Condensed Consolidated Statements of Mezzanine
+and Stockholders’ Equity 
+
+ (Unaudited, in thousands) 
+
+   
+
+ 
+   
+         
+     Three Months Ended September 30, 2024   
+   
+         
+     Mezzanine     
+     Series A   Preferred  Stock     
+     Common Stock     
+     Additional  Paid-in     
+     Accumulated     
+     Total  Stockholders’   
+   
+         
+     Equity     
+     Shares     
+     Amount     
+     Shares     
+     Amount     
+     Capital     
+     Deficit     
+     Equity   
+   
+     Balances, July 1, 2024   
+     $ 6,829     
+       1,241     
+     $      -     
+       94,416     
+     $        9     
+     $ 209,086     
+     $ ( 143,570 )   
+     $ 65,525   
+   
+     Issuance of shares for cash   
+       -     
+       -     
+       -     
+       -     
+       -     
+       -     
+       -     
+       -   
+   
+     Repurchase of redeemable shares   
+       ( 1,366 )   
+       ( 248 )   
+       -     
+       -     
+       -     
+       -     
+       -     
+       -   
+   
+     Stock-based compensation   
+       -     
+       -     
+       -     
+       -     
+       -     
+       587     
+       -     
+       587   
+   
+     Stock-based compensation for services   
+       -     
+       -     
+       -     
+       -     
+       -     
+       2     
+       -     
+       2   
+   
+     Net loss   
+       -     
+       -     
+       -     
+       -     
+       -     
+       -     
+       ( 5,675 )   
+       ( 5,675 ) 
+   
+     Balances, September 30, 2024   
+     $ 5,463     
+       993     
+     $ -     
+       94,416     
+     $ 9     
+     $ 209,675     
+     $ ( 149,245 )   
+     $ 60,439   
+   
+
+
+
+   
+
+ 
+   
+         
+     Nine Months Ended September 30, 2024   
+   
+         
+     Mezzanine     
+     Series A  Preferred   Stock     
+     Common Stock     
+     Additional Paid-in     
+     Accumulated     
+     Total Stockholders’   
+   
+         
+     Equity     
+     Shares     
+     Amount     
+     Shares     
+     Amount     
+     Capital     
+     Deficit     
+     Equity   
+   
+     Balances, January 1, 2024   
+     $ -     
+       1,490     
+     $       -     
+       77,451     
+     $        8     
+     $ 200,635     
+     $ ( 131,940 )   
+     $ 68,703   
+   
+     Issuance of shares for cash   
+       -     
+       -     
+       -     
+       16,605     
+       1     
+       14,628     
+       -     
+       14,629   
+   
+     Reclassification of Series A preferred stock to mezzanine equity   
+       8,195     
+       -     
+       -     
+       -     
+       -     
+       ( 8,195 )   
+       -     
+       ( 8,195 ) 
+   
+     Repurchase of redeemable shares   
+       ( 2,732 )   
+       ( 497 )   
+       -     
+       -     
+       -     
+       -     
+       -     
+       -   
+   
+     Stock-based compensation   
+       -     
+       -     
+       -     
+       218     
+       -     
+       2,473     
+       -     
+       2,473   
+   
+     Stock-based compensation for services   
+       -     
+       -     
+       -     
+       142     
+       -     
+       134     
+       -     
+       134   
+   
+     Net loss   
+       -     
+       -     
+       -     
+       -     
+       -     
+       -     
+       ( 17,305 )   
+       ( 17,305 ) 
+   
+     Balances, September 30, 2024   
+     $ 5,463     
+       993     
+     $ -     
+       94,416     
+     $ 9     
+     $ 209,675     
+     $ ( 149,245 )   
+     $ 60,439   
+   
+
+   
+
+
+ 
+     F- 3 
+       
+     
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ Condensed Consolidated Statements of Mezzanine
+and Stockholders’ Equity 
+
+ (Unaudited, in thousands) 
+
+   
+
+ 
+   
+         
+     Three Months Ended September 30, 2023   
+   
+         
+     Series A   Preferred Stock     
+     Common Stock     
+     Additional  Paid-in     
+     Accumulated     
+     Total Stockholders’   
+   
+         
+     Shares     
+     Amount     
+     Shares     
+     Amount     
+     Capital     
+     Deficit     
+     Equity   
+   
+     Balances, July 1, 2023  (Restated)  (1)   
+       1,490     
+     $      -     
+       67,215     
+     $      7     
+     $ 187,751     
+     $ ( 118,042 )   
+     $ 69,716   
+   
+     Issuance of shares for cash   
+       -     
+       -     
+       6,380     
+       1     
+       8,536     
+       -     
+       8,537   
+   
+     Conversion of preferred stock   
+       -     
+       -     
+       -     
+       -     
+       -     
+       -     
+       -   
+   
+     Preferred stock dividends   
+       -     
+       -     
+       -     
+       -     
+       -     
+       ( 215 )   
+       ( 215 ) 
+   
+     Stock-based compensation   
+       -     
+       -     
+       1,500     
+       -     
+       984     
+       -     
+       984   
+   
+     Stock-based compensation for services   
+       -     
+       -     
+       -     
+       -     
+       ( 22 )   
+       -     
+       ( 22 ) 
+   
+     Net loss   
+       -     
+       -     
+       -     
+       -     
+       -     
+       ( 6,841 )   
+       ( 6,841 ) 
+   
+     Balances, September 30, 2023  (Restated)  (1)   
+       1,490     
+     $ -     
+       75,095     
+     $ 8     
+     $ 197,249     
+     $ ( 125,098 )   
+     $ 72,159   
+   
+
+
+   
+
+ 
+   
+         
+     Nine Months Ended September 30, 2023   
+   
+         
+     Series A   Preferred Stock     
+     Common Stock     
+     Additional  Paid-in     
+     Accumulated     
+     Total Stockholders’   
+   
+         
+     Shares     
+     Amount     
+     Shares     
+     Amount     
+     Capital     
+     Deficit     
+     Equity   
+   
+     Balances, January 1, 2023  (Restated)  (1)   
+       1,500     
+     $        -     
+       55,963     
+     $      6     
+     $ 169,175     
+     $ ( 104,057 )   
+     $ 65,124   
+   
+     Issuance of shares for cash   
+       -     
+       -     
+       15,291     
+       2     
+       22,762     
+       -     
+       22,764   
+   
+     Conversion of preferred stock   
+       ( 10 )   
+       -     
+       11     
+       -     
+       1     
+       -     
+       1   
+   
+     Preferred stock dividends   
+       -     
+       -     
+       -     
+       -     
+       -     
+       ( 646 )   
+       ( 646 ) 
+   
+     Stock-based compensation   
+       -     
+       -     
+       2,330     
+       -     
+       2,904     
+       -     
+       2,904   
+   
+     Stock-based compensation for services   
+       -     
+       -     
+       1,500     
+       -     
+       2,407     
+       -     
+       2,407   
+   
+     Net loss   
+       -     
+       -     
+       -     
+       -     
+       -     
+       ( 20,395 )   
+       ( 20,395 ) 
+   
+     Balances, September 30, 2023  (Restated)  (1)   
+       1,490     
+     $ -     
+       75,095     
+     $ 8     
+     $ 197,249     
+     $ ( 125,098 )   
+     $ 72,159   
+   
+
+
+   
+
+     (1)   As described in Note 15 to these unaudited condensed consolidated financial statements, we have restated the condensed consolidated statements of stockholders’ equity for the three and nine months ended September 30, 2023.   
+   
+
+ The accompanying notes are an integral part
+of these unaudited condensed consolidated financial statements. 
+
+   
+
+
+ 
+     F- 4 
+       
+     
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ Condensed Consolidated Statements of Cash Flows 
+
+ (Unaudited, in thousands) 
+
+   
+
+ 
+   
+         
+     Nine Months Ended   
+   
+         
+     September 30,   
+   
+         
+     2024     
+     2023   
+   
+         
+           
+     (Restated) (1)   
+   
+     Cash flows from operating activities:   
+           
+         
+   
+     Net loss   
+     $ ( 17,305 )   
+     $ ( 20,395 ) 
+   
+     Adjustments to reconcile net loss to net cash used in operations   
+             
+           
+   
+     Depreciation and intangibles amortization   
+       2,542     
+       2,509   
+   
+     Amortization of issuance costs   
+       323     
+       730   
+   
+     Change in fair value of warrant liability   
+       -     
+       ( 384 ) 
+   
+     Other recognized losses (gains)   
+       31     
+       -   
+   
+     Stock-based compensation expense   
+       2,680     
+       3,110   
+   
+     Stock-based compensation expense for services   
+       21     
+       282   
+   
+     Changes in operating assets and liabilities   
+             
+           
+   
+     Accounts receivable   
+       2     
+       11   
+   
+     Inventories   
+       ( 168 )   
+       -   
+   
+     Prepaid expenses and other current assets   
+       ( 115 )   
+       ( 110 ) 
+   
+     Other non-current assets   
+       ( 571 )   
+       89   
+   
+     Accounts payable   
+       ( 539 )   
+       259   
+   
+     Deferred revenue   
+       48     
+       12   
+   
+     Accrued expenses and other current liabilities   
+       155     
+       939   
+   
+     Other long-term liabilities   
+       457     
+       ( 400 ) 
+   
+     Net cash used in operating activities   
+       ( 12,439 )   
+       ( 13,348 ) 
+   
+         
+             
+           
+   
+     Cash flows from investing activities:   
+             
+           
+   
+     Purchase of property and equipment   
+       ( 3,170 )   
+       ( 2,165 ) 
+   
+     Loans receivable   
+       -     
+       ( 500 ) 
+   
+     Net cash used in investing activities   
+       ( 3,170 )   
+       ( 2,665 ) 
+   
+         
+             
+           
+   
+     Cash flows from financing activities:   
+             
+           
+   
+     Proceeds raised from financial liabilities, net of issuance costs   
+       6,995     
+       -   
+   
+     Payments of financial liabilities, net of interest   
+       ( 2,063 )   
+       ( 4,030 ) 
+   
+     Series A Preferred stock dividend payments   
+       ( 215 )   
+       ( 650 ) 
+   
+     Repurchase of Series A preferred stock   
+       ( 2,732 )   
+       -   
+   
+     Proceeds from stock issuance related to ATM facility   
+       14,629     
+       22,764   
+   
+     Net cash provided by financing activities   
+       16,614     
+       18,084   
+   
+         
+             
+           
+   
+     Net increase in cash   
+       1,005     
+       2,071   
+   
+     Cash and cash equivalents, beginning of period   
+       2,059     
+       5,308   
+   
+     Cash and cash equivalents, end of period   
+     $ 3,064     
+     $ 7,379   
+   
+         
+             
+           
+   
+     Supplemental disclosures of cash flow information:   
+             
+           
+   
+     Cash paid for interest   
+     $ 31     
+     $ 720   
+   
+     Non-cash investing and financing activities:   
+             
+           
+   
+     Reclassification of Series A preferred stock to mezzanine equity   
+     $ 8,195     
+     $ -   
+   
+     Valuation of derivative associated with convertible financial liability   
+     $ 666     
+     $ -   
+   
+
+
+
+   
+
+ 
+ (1) As described in Note 15 to these unaudited condensed consolidated financial statements, we have restated the unaudited condensed consolidated statement of cash flows for the nine months ended September 30, 2023. 
+ 
+   
+
+ The accompanying notes are an integral part
+of these unaudited condensed consolidated financial statements. 
+
+   
+
+
+ 
+     F- 5 
+       
+     
+
+   
+
+ QUANTUM COMPUTING INC. 
+
+ Notes to the Unaudited Condensed Consolidated Financial
+Statements 
+
+ September 30, 2024 
+
+   
+
+ Note 1. Nature of the Organization and Business  
+
+   
+
+ Corporate History 
+
+   
+
+ Quantum Computing Inc. (“QCi” or the
+“Company”) was formed in the State of Nevada on July 25, 2001, under its original name, Ticketcart, Inc., which was changed
+to Innovative Beverage Group Holdings, Inc. in 2009. The Company redomiciled to Delaware on February 22, 2018 and changed its name to
+Quantum Computing Inc. Effective  July 20, 2018 , the trading symbol for the Company’s common stock, par value $ 0.0001 , on the OTC
+Market changed from “IBGH” to “QUBT”. On July 15, 2021 the Company uplisted to The Nasdaq Stock Market LLC. On
+June 16, 2022, the Company merged with QPhoton, Inc. (“QPhoton”), a developer of quantum photonic systems and related technologies
+and applications. 
+
+   
+
+ Nature of Business 
+
+   
+
+ QCi is an American company utilizing integrated
+photonics and non-linear quantum optics to deliver quantum and ancillary products for high-performance computing applications based on
+patented and proprietary photonics technology. QCi’s products are designed to operate at room temperature and at very low power
+levels beyond the capabilities of other systems in the market. Our core photonics technology enables the execution of a go-to-market strategy
+which emphasizes accessibility and affordability. Our quantum machines enable subject matter experts (SMEs) and end users to deliver critical
+business solutions today in working with highly complex optimization problems. 
+
+   
+
+ The Company initially focused on providing software
+tools and applications for several commercially available quantum computers. However, following the June 2022 merger with QPhoton and
+its associated intellectual property and engineering team, the Company now offers integrated high-performance quantum systems, ancillary
+products and services. 
+
+   
+
+ The core of our quantum offerings today is our
+Entropy Quantum Computing (“EQC”) technology. We have built room-temperature, photonic quantum information processing systems
+underpinned by a series of patented and patent pending technologies. Our technology, supported by professional services through our “Quantum
+Solutions” offering, enables our clients to solve complex optimization problems. In addition, our engineering teams are using our
+leading-edge photonics technology to continue to enhance and further develop quantum LIDAR sensing and imaging systems, quantum-secured
+network solutions, and photonic chips. 
+
+   
+
+ Going Concern 
+
+   
+
+ The accompanying unaudited condensed consolidated
+financial statements have been prepared on a going concern basis, which contemplates the continuity of operations, the realization of
+assets, and the satisfaction of liabilities in the normal course of business. Cash and cash equivalents on hand were $ 3.1  million as of
+September 30, 2024. The Company has historically incurred losses and negative cash flows from operations. As of September 30, 2024, the
+Company also had an accumulated deficit of $ 149.2  million and working capital of $ 1.5  million. Furthermore, we have not achieved
+a level of sales adequate to support the Company’s cost structure and may need to raise additional funds in the next 12 months by
+selling additional equity or incurring debt. It is management’s opinion that these conditions raise substantial doubt about our
+ability to continue as a going concern. 
+
+   
+
+ 
+
+ 
+     F- 6 
+       
+     
+
+   
+
+ Note 2. Significant Accounting Policies 
+
+   
+
+ Basis of Presentation and Principles of Consolidation: 
+
+   
+
+ The Company prepares its consolidated financial
+statements in conformity with accounting principles generally accepted in the United States of America (“U.S. GAAP”) as determined
+by the Financial Accounting Standards Board (the “FASB”), including Accounting Standards Codification (“ASC”)
+810,  Consolidation . The accompanying unaudited condensed consolidated financial statements include the accounts of the Company
+and its wholly owned subsidiaries. All intercompany balances and transactions have been eliminated in consolidation. The Company’s
+fiscal year end is December 31. 
+
+   
+
+ Reclassifications 
+
+   
+
+ Certain reclassifications have been made to the
+fiscal year 2023 audited consolidated financial statements to conform to the presentation in the three and nine months ended September
+30, 2024. The reclassifications had no impact on consolidated net loss, total consolidated assets, total consolidated liabilities, or
+consolidated stockholders’ equity. 
+
+   
+
+ Risk and Uncertainties 
+
+   
+
+ The Company is subject to certain risks and uncertainties
+and believes changes in any of the following areas could have a material adverse effect on the Company’s future consolidated financial
+position or consolidated results of operations or cash flows: new product development, including market receptivity; litigation or claims
+against the Company based on intellectual property, patent, product regulation or other factors; competition from other products; general
+economic conditions; the ability to attract and retain qualified employees; and, ultimately, to sustain profitable operations. 
+
+   
+
+ Use of Estimates 
+
+   
+
+ These unaudited condensed consolidated financial
+statements have been prepared in accordance with U.S. GAAP, which requires management to make estimates and assumptions that affect the
+reported amounts of assets and liabilities at the date of the unaudited condensed consolidated financial statements, and the reported
+amounts of revenues and expenses during the reporting period. Some of the more significant estimates required to be made by management
+include the valuation of goodwill and intangible assets, deferred tax assets, equity-based transactions and liquidity assessment. Actual
+results may differ from these estimates. 
+
+   
+
+ Cash and Cash Equivalents 
+
+   
+
+ Highly liquid investments with a maturity of three
+months or less when purchased are considered to be cash equivalents. The Company maintains its cash in mutual funds and deposit and money
+market accounts with high quality financial institutions which, at times, may exceed federally insured limits. As of September 30, 2024
+and December 31, 2023, the Company had $ 2.3  million and $ 2.1  million, respectively, in cash equivalents invested in mutual funds. The
+Company has not experienced any losses on these deposits and believes it is not exposed to significant credit risk on cash.  
+
+    
+
+ Revenue  
+
+   
+
+ The Company recognizes revenue in accordance with
+ASC 606 –  Revenue from Contracts with Customers , by analyzing contracts with its customers using a five-step approach: 
+
+   
+
+ 
+   
+       
+     1. 
+     Identify the contract 
+   
+       
+       
+       
+   
+       
+     2. 
+     Identify the performance obligations 
+   
+       
+       
+       
+   
+       
+     3. 
+     Determine the transaction price 
+   
+       
+       
+       
+   
+       
+     4. 
+     Allocate the transaction price to the performance obligations 
+   
+       
+       
+       
+   
+       
+     5. 
+     Recognize revenue when performance obligations are satisfied 
+     
+ 
+
+ 
+
+ 
+     F- 7 
+       
+     
+
+   
+
+ The revenue the Company has recognized in the
+nine months ended September 30, 2024 and 2023 were primarily derived from contracts to perform professional services. Revenue from time
+and materials-based contracts is recognized as the direct hours worked during the period times the contractual hourly rate, plus direct
+materials and other direct costs as appropriate, plus negotiated materials handling burdens, if any. Revenue from units-based contracts
+is recognized as the number of units delivered or performed during the period times the contractual unit price. Revenue from fixed price
+contracts is recognized as work is performed with estimated profits recorded on a percentage of completion basis. The Company has no cost-plus
+type contracts at this time. 
+
+   
+
+ The Company includes depreciation and amortization
+expenses in manufacturing overhead, which is a component of cost of revenue. However, at the present time manufacturing overhead, including
+depreciation and amortization expense related to production equipment, is not material and the primary components of cost of revenue are
+direct labor and direct materials, with a small amount of shipping expenses. 
+
+   
+
+ Accounts Receivable 
+
+   
+
+ Accounts receivable consists of amounts due from
+customers for work performed on contracts. The Company records accounts receivable at their net realizable value. Periodically the Company
+evaluates its accounts receivable to establish a provision for credit losses, when deemed necessary, based on the history of past write-offs,
+collections and current credit conditions. The customer accounts receivable as of September 30, 2024 are considered not fully collectible
+and thus the Company has recorded a provision for credit losses of $ 3.5  thousand; the customer accounts receivable as of December 31,
+2023 are considered fully collectible. 
+
+   
+
+ Provision for Credit Losses 
+
+   
+
+ The Company estimates losses on loans and other
+financial instruments in accordance with Accounting Standards Update (“ASU”) 2016-13, Measurement of Credit Losses on Financial
+Instruments. ASU 2016-13 introduces the current expected credit losses (“CECL”) methodology for estimating allowances for
+credit losses. The CECL framework requires the Company to measure all expected credit losses for financial assets held at the reporting
+date based on historical experience, current conditions and reasonable and supporting forecasts. Under CECL, the allowance for credit
+losses is measured as the difference between the financial asset’s cost basis and the net amount expected to be collected on the
+financial asset. CECL allows us to use information about past events including historical loan loss experience, current conditions, and
+reasonable and supportable forecasts to assess the collectability of the financial assets. The receivables for financial assets as of
+September 30, 2024 and December 31, 2023 are not considered fully collectible and thus management has recorded a provision for credit
+losses. See Note 9,  Loan Receivable , for additional information. 
+
+   
+
+ Inventory 
+
+   
+
+ Inventory is stated at the lower of cost or net
+realizable value. Cost is determined on a standard cost basis which approximates actual cost on a first in-first out method. Lower of
+cost or net realizable value is evaluated by considering obsolescence, excessive levels of inventory, deterioration and other factors.
+Adjustments to reduce the cost of inventory to its net realizable value, if required, are made for estimated excess, obsolescence or impaired
+inventory and are charged to cost of revenue. Once the cost of the inventory is reduced, a new lower-cost basis for that inventory is
+established, and subsequent changes in facts and circumstances do not result in the restoration or increase in that newly established
+cost basis. Factors influencing these adjustments include changes in demand, product life cycle and development plans, component cost
+trends, product pricing, physical deterioration and quality issues. Revisions to these adjustments would be required if these factors
+differ from our estimates. 
+
+   
+
+ Operating Leases 
+
+   
+
+ The Company determines if an arrangement is a
+lease at inception. Operating lease right-of-use (“ROU”) assets are included in right-of-use assets, net on the consolidated
+balance sheets. The current and long-term components of operating lease liabilities are included in the current operating lease liabilities
+and noncurrent operating lease liabilities, respectively, on the consolidated balance sheets.   
+
+ 
+
+ 
+
+ 
+     F- 8 
+       
+     
+
+   
+
+ Operating lease ROU assets and operating lease
+liabilities are recognized based on the present value of the future minimum lease payments over the lease term. As most of the Company’s
+leases do not provide an implicit rate, and the Company uses an incremental borrowing rate based on the information available at the commencement
+date in determining the present value of future payments. Certain leases may include options to extend or terminate the lease. Lease expense
+for minimum lease payments is recognized on a straight-line basis over the lease term. Leases with an initial term of 12 months or less
+are not recorded on the consolidated balance sheet. All of our operating leases are comprised of office space leases, and as of September
+30, 2024 and December 31, 2023, we had no finance leases. 
+
+   
+
+ Business Combinations and Valuation of Goodwill 
+
+   
+
+ We account for business combinations under the
+acquisition method of accounting. This method requires the recording of acquired assets and assumed liabilities at their acquisition date
+fair values. The excess of the purchase price over the fair value of assets acquired and liabilities assumed is recorded as goodwill.
+Results of operations related to business combinations are included prospectively beginning with the date of acquisition and transaction
+costs related to business combinations are recorded withing general and administrative expenses. 
+
+   
+
+ The Company reviews goodwill for impairment on
+an annual basis or whenever events or changes in circumstances indicate the carrying value may not be recoverable. The Company performs
+an annual impairment test by comparing the fair value of a reporting unit with its carrying amount. An impairment charge should be recognized
+for the amount by which the carrying amount exceeds the reporting unit’s fair value; however, the loss recognized should not exceed
+the total amount of goodwill allocated to that reporting unit. In addition, income tax effects from any tax-deductible goodwill carrying
+amount of the reporting unit should be considered when measuring the goodwill impairment loss, if applicable. The Company has determined
+that it has a single reporting unit for purposes of performing its goodwill impairment test. As the Company uses the market approach to
+assess impairment, its common stock price is an important component of the fair value calculation. If the Company’s stock price
+continues to experience significant price and volume fluctuations, this will impact the fair value of the reporting unit and can lead
+to potential impairment in future periods. The Company performs its annual impairment test during the fourth quarter of each fiscal year.
+As of September 30, 2024, we had not identified any factors that indicated there was an impairment of our goodwill and determined that
+no additional impairment analysis was then required. 
+
+   
+
+ Property and Equipment 
+
+   
+
+ Property and equipment are stated at cost or contributed
+value. Depreciation of furniture, software and equipment is calculated using the straight-line method over their estimated useful lives,
+and leasehold improvements are amortized on a straight-line basis over the shorter of their estimated useful lives or the lease term.
+The cost and related accumulated depreciation of equipment retired or sold are removed from the accounts and any differences between the
+undepreciated amount and the proceeds from the sale are recorded as a gain or loss on sale of equipment. Maintenance and repairs are charged
+against expense as incurred. 
+
+   
+
+ Impairment of Long-Lived Assets 
+
+   
+
+ The Company has long-lived assets such as tangible
+property and equipment, identified intangible assets consisting of acquired patents and core technology. When events or changes in circumstances
+occur that could indicate the carrying value of long-lived assets may not be recoverable, the Company assesses recoverability by determining
+whether the undiscounted cash flows estimated to be generated by those assets are less than the carrying amounts of those assets. If the
+undiscounted cash flow is less, an impairment charge is recognized for the excess of the carrying amounts of these assets over the fair
+values. Fair values are determined by discounted future cash flows, appraisals or other methods. 
+
+   
+
+ During the three and nine months ended September
+30, 2024 and 2023, the Company did not record any impairment from long-lived assets. 
+
+   
+
+ Fair Value of Financial Instruments 
+
+   
+
+ The carrying amount of certain financial instruments
+held by the Company, such as cash equivalents, accounts receivable, contract assets and liabilities, accounts payable, and accrued and
+other current liabilities, approximate fair value due to their short maturities. The carrying amount of the liabilities for the convertible
+preferred stock warrants represent their fair value. The carrying amounts of the Company’s borrowings and lease liabilities approximate
+fair value due to the market interest rates that these obligations bear and interest rates currently available to the Company.   
+
+ 
+
+ 
+
+ 
+     F- 9 
+       
+     
+
+   
+
+ Fair value is defined as the exchange price that
+would be received for an asset or an exit price paid to transfer a liability in the principal or most advantageous market for the asset
+or liability in an orderly transaction between market participants on the measurement date. Valuation techniques used to measure fair
+value must maximize the use of observable inputs and minimize the use of unobservable inputs. The fair value hierarchy defines a three-level
+valuation hierarchy for disclosure of fair value measurements as follows: 
+
+   
+
+ 
+   
+       
+     Level 1 
+     Unadjusted quoted prices in active markets for identical assets or liabilities; 
+   
+   
+
+ 
+   
+       
+     Level 2 
+     Inputs other than quoted prices included within Level 1 that are observable, unadjusted quoted prices in markets that are not active, or other inputs that are observable or can be corroborated by observable market data for substantially the full term of the related assets or liabilities; and 
+   
+   
+
+ 
+   
+       
+     Level 3 
+     Unobservable inputs that are supported by little or no market activity for the related assets or liabilities. 
+   
+   
+
+ The categorization of a financial instrument
+within the valuation hierarchy is based upon the lowest level of input that is significant to the fair value measurement. As of
+September 30, 2024 and December 31, 2023, the Company had $ 2.3  million of the $ 3.1  million cash and cash equivalents and $ 793 
+thousand of the $ 2.1  million cash and cash equivalents, respectively, in Level 1 assets, comprised of U.S. Government mutual funds, and $ 666  thousand and  no  carrying value,
+respectively, for Level 3 liabilities, which are comprised of derivative and warrant liabilities. See Note 11,  Capital Stock
+– Warrants , for a full discussion of the warrant liability.  
+
+   
+
+ Research and Development Cost s 
+
+   
+
+ Research and development costs include costs directly
+attributable to the conduct of research and development programs, including the cost of services provided by outside contractors, acquiring
+work-in-progress intellectual property, development, and mandatory compliance fees and contractual obligations. All costs associated with
+research and development are expensed as incurred. 
+
+   
+
+ Software Development Cost s 
+
+   
+
+ Software development costs incurred subsequent
+to the establishment of technological feasibility for software intended to be sold, licensed or otherwise marketed to customers will be
+capitalized, but development costs not meeting the criteria for capitalization are expensed as incurred. With respect to internal use
+software, the Company will capitalize such development costs incurred during the application development stage, but development costs
+incurred prior to that stage will be expensed as incurred. No amortization expense will be recorded until the software is ready for its
+intended use. To date the Company has not incurred any material capitalizable software development costs. 
+
+   
+
+ Stock-based Compensation 
+
+   
+
+ Stock-based compensation expense for expected-to-vest
+awards is valued under the single-option approach and amortized on a straight-line basis, accounting for actual pre-vesting forfeitures
+as they occur. We utilize the Black-Scholes pricing model in order to determine the fair value of stock-based option awards. The Black-Scholes
+pricing model requires various highly subjective assumptions including volatility, expected option life, and risk-free interest rate.
+The assumptions used in calculating the fair value of share-based payment awards represent management’s best estimates. These estimates
+involve inherent uncertainties and the application of management judgment. If factors change and different assumptions are used, our stock-based
+compensation expense could be materially different in the future. 
+
+   
+
+ Income Taxes 
+
+   
+
+ The Company uses the asset and liability method
+of accounting for income taxes. Deferred tax assets and liabilities are recognized for the estimated future tax consequences attributable
+to differences between the carrying amounts of existing assets and liabilities and their respective tax bases. Deferred tax assets and
+liabilities are measured using enacted tax rates expected to apply to taxable income in the years in which those temporary differences
+are expected to be recovered or settled. Deferred tax expense or benefit is the result of changes in the deferred tax assets and liabilities.
+Valuation allowances are established when necessary to reduce deferred tax assets where, based upon the available evidence, management
+concludes that it is more-likely-than-not that the deferred tax assets will not be realized. Realization of deferred tax assets is also
+dependent upon future earnings, if any, the timing and amount of which are uncertain.   
+
+ 
+
+ 
+
+ 
+     F- 10 
+       
+     
+
+   
+
+ The Company records a liability for the uncertain
+tax positions taken or expected to be taken on the Company’s tax return when it is more-likely-than-not that the tax position might
+be challenged despite the Company’s belief that the tax return positions are fully supportable, and additional taxes will be due
+as a result. To the extent that the assessment of such tax positions changes, for example, based on the outcome of a tax audit, the change
+in estimate is recorded in the period in which the determination is made. The provision for income taxes includes the impact of provisions
+for uncertain tax positions. 
+
+   
+
+ Loss Per Share 
+
+   
+
+ Basic net loss per common share is computed by
+dividing net loss by the weighted average number of common shares outstanding during the period. Diluted net loss per common share is
+computed by dividing net loss attributable to common stockholders by the weighted average number of common shares outstanding, plus the
+number of additional common shares that would have been outstanding if the common share equivalents had been issued (computed using the
+“If-Converted” method), unless the effect of such issuances would have been anti-dilutive. 
+
+   
+
+ Recently Issued Accounting Pronouncements 
+
+   
+
+ From time to time, new accounting pronouncements
+are issued by the FASB or other standard setting bodies that are adopted by the Company as of the specified effective date. Unless otherwise
+discussed, we believe that the impact of recently issued standards that are not yet effective will not have a material impact on our financial
+position or results of operations upon adoption. The Company has evaluated the recently implemented accounting standards and concluded
+that none currently apply to the Company. 
+
+   
+
+ Note 3. Net Loss per Common Share 
+
+   
+
+ The following table sets forth the computation
+of basic and diluted loss per share (in thousands, except per share data): 
+
+   
+
+ 
+   
+       
+       
+     
+     Three Months Ended 
+     September 30, 
+       
+       
+     
+     Nine Months Ended 
+     September 30, 
+       
+   
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     2024 
+       
+       
+     2023 
+       
+   
+     Numerator: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   
+     Net loss 
+       
+     $ 
+     ( 5,675 
+     ) 
+       
+     $ 
+     ( 6,841 
+     ) 
+       
+     $ 
+     ( 17,305 
+     ) 
+       
+     $ 
+     ( 20,395 
+     ) 
+   
+     Less: Series A convertible preferred stock dividends 
+       
+       
+     - 
+       
+       
+       
+     ( 215 
+     ) 
+       
+       
+     - 
+       
+       
+       
+     ( 646 
+     ) 
+   
+     Net loss attributable to common stockholders – basic and diluted 
+       
+     $ 
+     ( 5,675 
+     ) 
+       
+     $ 
+     ( 7,056 
+     ) 
+       
+     $ 
+     ( 17,305 
+     ) 
+       
+     $ 
+     ( 21,041 
+     ) 
+   
+     Denominator: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   
+     Weighted average shares used in computing net loss per common share – basic and diluted 
+       
+       
+     93,048 
+       
+       
+       
+     71,588 
+       
+       
+       
+     89,063 
+       
+       
+       
+     64,246 
+       
+   
+     Net loss per common share – basic and diluted 
+       
+     $ 
+     ( 0.06 
+     ) 
+       
+     $ 
+     ( 0.10 
+     ) 
+       
+     $ 
+     ( 0.19 
+     ) 
+       
+     $ 
+     ( 0.33 
+     ) 
+   
+
+    
+
+ Net loss per share is based on the weighted average
+number of the Company’s common shares and common share equivalents outstanding during the period.   
+
+ 
+
+ 
+
+ 
+     F- 11 
+       
+     
+
+   
+
+ In periods with a reported net loss, the effect
+of anti-dilutive stock options, unvested restricted common stock and warrants are excluded and diluted loss per share is equal to basic
+loss per share. Due to a net loss in the three and nine months ended September 30, 2024 and 2023, there were therefore no dilutive securities
+and hence basic and diluted loss per share were the same.  The following is a summary of the weighted average common stock equivalents
+for the securities outstanding during the respective periods that have been excluded from the computation of diluted net loss per common
+share, as their effect would be anti-dilutive (in thousands): 
+
+   
+
+ 
+   
+         
+     Three Months Ended   September 30,     
+     Nine Months Ended   September 30,   
+   
+         
+     2024     
+     2023     
+     2024     
+     2023   
+   
+     Warrants   
+       2,212     
+       5,973     
+       2,538     
+       6,092   
+   
+     Options   
+       12,407     
+       13,069     
+       12,882     
+       11,410   
+   
+     Unvested restricted common stock   
+       2,997     
+       1,783     
+       2,997     
+       771   
+   
+     Total potentially dilutive shares   
+       17,616     
+       20,825     
+       18,417     
+       18,273   
+   
+
+
+
+   
+
+ As all potentially dilutive securities are anti-dilutive
+as of September 30, 2024 and 2023, diluted net loss per share is the same as basic net loss per share for each period. 
+
+   
+
+ Note 4. Income Taxes 
+
+   
+
+ Income tax expense attributable to pretax loss
+from continuing operations differed from the amounts computed by applying the U.S. federal income tax rate of  21 % to pretax loss from
+continuing operations as a result of both temporary and permanent differences in the U.S. GAAP vs tax treatment of certain types of expenses,
+including stock-based compensation, depreciation and amortization, research and development and meals and entertainment. Additionally,
+the Company's policy is to account for interest and penalties as income tax expense. As of September 30, 2024 and December 31, 2023, the
+Company had no interest related to unrecognized tax benefits, and no amounts for penalties related to unrecognized tax benefits were recognized
+in the provision for income taxes. We do not anticipate any significant change within 12 months of this reporting date. 
+
+   
+
+ As of September 30, 2024, in addition to the $ 15.6 
+million in tax-effected NOL carryforwards, at an assumed tax rate of  26 %, the significant components of the Company’s net deferred
+tax assets included stock-based compensation of $ 11.7  million, capitalized research and development expenditures of approximately $ 2.5 
+million and an intangible asset basis difference of approximately $ 1.1  million. The Company believes that it is more likely than not that
+the benefit from the net deferred tax assets will not be realized. Accordingly, it has provided a full valuation allowance on any potential
+deferred tax assets. The valuation allowance increased by approximately $ 4.0  million for the period ended September 30, 2024, as compared
+to the year ended December 31, 2023. The provision for income taxes is not material in the years presented due to there being no taxable
+income. 
+
+   
+
+ The Company has federal R&D credit carryforwards
+of approximately $ 623  thousand for the period ended September 30, 2024, which will be applied against payroll taxes, not against income
+taxes. The Company has no state R&D credit carryforwards. 
+
+   
+
+ The Company files income tax returns in the U.S.
+federal jurisdiction and various state jurisdictions, with varying statutes of limitations. The tax years from inception through 2024
+remain open to examination due to the carryover of unused net operating losses that are being carried forward for tax purposes. 
+
+   
+
+ Note 5. Intangible Assets and Goodwill 
+
+   
+
+ As a result of the merger with QPhoton in June
+2022 (the “QPhoton Merger”), the Company has the following amounts related to intangible assets (in thousands): 
+
+   
+
+ 
+   
+         
+     September 30, 2024     
+     December 31, 2023   
+   
+         
+     Gross Carrying Amount     
+     Accumulated Amortization     
+     Net Carrying Amount     
+     Gross Carrying Amount     
+     Accumulated Amortization     
+     Net Carrying Amount   
+   
+     Non-compete agreement with founder   
+     $ 3,251     
+     $ ( 2,528 )   
+     $ 723     
+     $ 3,251     
+     $ ( 1,715 )   
+     $ 1,536   
+   
+     Website domain name and trademark   
+       1,009     
+       ( 471 )   
+       538     
+       1,009     
+       ( 320 )   
+       689   
+   
+     Technology and licensed patents   
+       12,731     
+       ( 4,244 )   
+       8,487     
+       12,731     
+       ( 2,880 )   
+       9,851   
+   
+     Total   
+     $ 16,991     
+     $ ( 7,243 )   
+     $ 9,748     
+     $ 16,991     
+     $ ( 4,915 )   
+     $ 12,076   
+     
+
+
+ 
+
+ 
+
+ 
+     F- 12 
+       
+     
+
+   
+
+ The amortization expense of the Company’s
+intangible assets for the three and nine months ended September 30, 2024 and 2023 was approximately $ 780  thousand and $ 2.3  million, respectively.
+The Company expects future amortization expense to be the following (in thousands): 
+
+   
+
+ 
+   
+         
+     Amortization   
+   
+     2024 (remaining three months)   
+     $ 776   
+   
+     2025   
+       2,472   
+   
+     2026   
+       2,021   
+   
+     2027   
+       1,903   
+   
+     2028   
+       1,819   
+   
+     Thereafter   
+       757   
+   
+     Total   
+     $ 9,748   
+   
+
+
+   
+
+ The Company recorded goodwill resulting from the
+QPhoton Merger, calculated as the difference between the total purchase price and the value of tangible and intangible assets acquired
+less the liabilities assumed. The Company recorded goodwill of $ 55.6  million resulting from the QPhoton Merger. 
+
+   
+
+ The Company considered the intangible assets and goodwill for indicators
+of impairment as of September 30, 2024 and concluded there were no indicators of impairment at that time. 
+
+   
+
+ Note 6. Property and Equipment 
+
+   
+
+ The Company’s property and equipment are
+primarily located at the Company’s leased facilities in Hoboken, NJ and Tempe, AZ and consist of (in thousands): 
+
+   
+
+ 
+   
+         
+     September 30,  2024     
+     December 31,  2023   
+   
+     Computer and lab equipment   
+     $ 5,899     
+     $ 2,999   
+   
+     Network equipment   
+       29     
+       29   
+   
+     Furniture and fixtures   
+       32     
+       32   
+   
+     Software   
+       77     
+       49   
+   
+     Leasehold improvements   
+       275     
+       33   
+   
+     Total cost of property and equipment   
+       6,312     
+       3,142   
+   
+     Accumulated depreciation   
+       ( 486 )   
+       ( 272 ) 
+   
+     Property and equipment, net   
+     $ 5,826     
+     $ 2,870   
+   
+
+
+   
+
+ The Company recorded depreciation expense of $ 75 
+thousand and $ 76  thousand during the three months ended September 30, 2024 and 2023, respectively, and $ 214  thousand and $ 203  thousand
+during the nine months ended September 30, 2024 and 2023, respectively, using useful lives of the Company’s long-lived assets as
+follows: 
+
+   
+
+           Estimated  Useful Life  (Years)     Computer and laboratory equipment     5     Network equipment     4     Furniture and fixtures     7     Software     3     Leasehold improvements     Lessor of lease term or 5   
+
+   
+
+ Maintenance and repairs are charged to operations
+when incurred. When property and equipment are sold or otherwise disposed, the asset account and related accumulated depreciation and
+amortization accounts are relieved, and any gain or loss is included in other income or expense. 
+
+   
+
+ 
+
+ 
+     F- 13 
+       
+     
+
+   
+
+ Note 7. Operating Leases 
+
+   
+
+ As of September 30, 2024, the Company has use
+of space in three different locations, Hoboken, NJ, Tempe, AZ, and Arlington, VA, under lease or membership agreements, which expire at
+various dates through November 30, 2028. The Company’s leases do not provide an implicit rate, and the rates implicit in our leases
+are not readily determinable. Therefore, the Company uses its incremental borrowing rate as the discount rate when measuring operating
+lease assets and liabilities. The incremental borrowing rate represents an estimate of the interest rate the Company would incur at lease
+commencement to borrow an amount equal to the lease payments on a collateralized basis over the term of a lease. The Company’s leases
+all contain options to extend or renew the lease or membership term. 
+
+   
+
+ The table below reconciles the undiscounted future
+minimum lease payments under these operating leases to the total operating lease liabilities recognized on the consolidated balance sheet
+as of September 30, 2024 (in thousands): 
+
+   
+
+ 
+   
+     Year   
+     Lease Payments  Due   
+   
+     2024 (remaining three months)   
+     $ 88   
+   
+     2025   
+       437   
+   
+     2026   
+       591   
+   
+     2027   
+       515   
+   
+     2028   
+       212   
+   
+     Total minimum payments   
+       1,843   
+   
+     Less: imputed interest   
+       ( 161 ) 
+   
+     Present value of operating lease liabilities   
+       1,682   
+   
+     Less: current portion included in other current liabilities   
+       ( 385 ) 
+   
+     Long-term operating lease liabilities   
+     $ 1,297   
+   
+
+   
+
+ Other information related to operating lease liabilities
+consists of the following (in thousands): 
+
+   
+
+           Three Months Ended   September 30,       Nine Months Ended   September 30,             2024       2023       2024       2023       Cash paid for operating lease liabilities (in thousands)     $ 117       $ 92       $ 274       $ 214       Weighted average remaining lease term in years       3.5         3.9         3.5         3.9       Weighted average discount rate       10 %       10 %       10 %       10 %   
+
+
+
+   
+
+ 
+
+ 
+     F- 14 
+       
+     
+
+   
+
+ Note 8. Financial Liabilities 
+
+   
+
+ The Company has the following amounts related
+to financial and derivative liabilities at the dates indicated (in thousands): 
+
+   
+
+ 
+   
+         
+     September 30,   2024     
+     December 31,  2023   
+   
+     Remaining loan balances   
+     $ 8,250     
+     $ 2,063   
+   
+     Remaining unamortized debt issuance costs   
+       ( 1,736 )   
+       ( 138 ) 
+   
+     Financial liabilities, net of issuance costs   
+     $ 6,514     
+     $ 1,925   
+   
+         
+             
+           
+   
+     Derivative liability   
+     $ 666     
+     $ -   
+   
+
+
+
+
+   
+
+ Additionally, the Company has accrued interest payable
+of $ 122  thousand and $ 14  thousand as of September 30, 2024 and December 31, 2023, respectively, which was included in accrued expenses. 
+
+   
+
+ Secured Promissory Note 
+
+   
+
+ On August 6, 2024, the Company entered into a
+Securities Purchase Agreement (the “Secured SPA”) with Streeterville Capital, LLC (“Streeterville”), pursuant
+to which the Company issued and sold to Streeterville a Secured Convertible Promissory Note (the “Streeterville Convertible Note”)
+in the original principal amount of $ 8.25  million. The principal amount includes an original issue discount of $ 750  thousand. Streeterville
+paid $ 7.5  million in cash for the Streeterville Convertible Note. The Streeterville Convertible Note accrues interest at a rate of  10 %
+per annum and has a maturity date of February 6, 2026, unless earlier prepaid, redeemed or accelerated in accordance with its terms prior
+to such date. The Company intends to use the net proceeds from the sale of the Streeterville Convertible Note primarily for general working
+capital purposes, including for (i) operations as the Company increases its sales and marketing efforts; (ii) capital expenditures in
+outfitting its chip fabrication facility in Tempe, AZ; and (iii) for any other planned or unplanned expenditures that might arise in support
+of the Company’s business plan. Ascendiant Capital Markets, LLC served as the placement agent on the transaction and received a
+fee of $ 450  thousand, and the Company recognized $ 55  thousand in other issuance costs, primarily for legal services. 
+
+   
+
+ The Streeterville Convertible Note is secured
+by all of the Company’s tangible and intangible assets, including intellectual property, pursuant to that certain Security Agreement
+(the “Security Agreement”) and IP Security Agreement (the “IP Security Agreement”), each entered into with Streeterville
+on August 6, 2024. In addition, the Company’s wholly-owned subsidiaries, QPhoton, LLC, a Delaware limited liability company, Qubittech
+International, Inc., a Delaware corporation, Qubittech, Inc., a Delaware corporation, and QI Solutions, Inc., a Delaware corporation (collectively,
+the “Guarantors”), provided a guarantee (the “Guaranty”), dated as of August 6, 2024, of the Company’s obligations
+to Streeterville under the Streeterville Convertible Note and the other transaction documents. 
+
+   
+
+ Beginning on February 6, 2025, Streeterville has
+the right to redeem up to $ 750,000  of the Streeterville Convertible Note per calendar month. The Company may pay such redemption amounts
+in cash, by converting such applicable redemption amount into shares of common stock at the applicable Conversion Price (as defined below)
+at such time, or in any combination of cash and shares of common stock, provided that the Company is required to pay any redemption amounts
+in cash under certain circumstances set forth in the Streeterville Convertible Note and that the payment of any redemption amount or portion
+thereof in cash is subject to an  10 % premium.   
+
+ 
+
+ 
+
+ 
+     F- 15 
+       
+     
+
+   
+
+ Beginning on the earlier of: (a) February 6,
+2025, and (b) the effectiveness of a registration statement registering the Conversion Shares (as defined below), Streeterville may
+convert all or any portion of the outstanding balance of the Streeterville Convertible Note into shares (“Conversion
+Shares”) of the Company’s common stock on any trading day (and the following trading day) on which any intraday trading
+bid price of the Company’s common stock is  8 % greater than the closing trade price on the previous trading day or at any time
+following an event of default, at a conversion price equal to  92 % of the average of the two lowest daily volume weighted average
+prices of the Company’s common stock during the eight trading day period prior to the respective conversion date (the
+“Conversion Price”), subject to anti-dilution adjustments and provided that Streeterville may not request any conversion
+of the Streeterville Convertible Note to the extent that such conversion would cause Streeterville (together with its affiliates) to
+beneficially own shares of Common Stock exceeding  4.99 % (or  9.99 % if the Market Capitalization, as defined below, is less than
+$ 10  million) of the number of shares of Common Stock outstanding on such date. For the ownership limitation, “Market
+Capitalization” means a number equal to (a) the average volume weighted average price of the Company’s common stock
+for the immediately preceding 15 trading days, multiplied by (b) the aggregate number of outstanding shares of common
+stock as reported on Company’s most recently filed Form 10-Q or Form 10-K or as reported to Nasdaq in a
+subsequent shares outstanding change form. Absent an uncured event of default, as set forth in the Streeterville Convertible Note,
+Streeterville agreed to limit its aggregate sales of Conversion Shares on the open market in any given calendar week to  10 % of the
+weekly trading volume of the Company’s common stock on our principal trading market (Nasdaq) for such week. Upon evaluation,
+the Company determined that the conversion features inherent in the Streeterville Convertible Note meet the definition of a
+derivative liability (the “Streeterville Derivative Liability”) covered under the ASC topic 815, Derivatives and
+Hedging. Applying ASC 820, Fair Value Measurement, the initial fair value of the Streeterville Derivative Liability is $ 666 
+thousand, which will be mark-to-market adjusted on a quarterly basis and accreted as interest expense using the effective interest
+rate method while the Streeterville Convertible Note is outstanding. 
+
+   
+
+ In addition to the beneficial ownership limitations
+provided in the Streeterville Convertible Note, the sum of the number of shares of the Company’s common stock that the Company may
+issue to Streeterville under the Secured SPA, the Streeterville Convertible Note and any related documents without stockholder approval
+may not exceed the number of shares it could so issue pursuant to Nasdaq Listing Rule 5635(d) (the “Share Cap”),
+unless shareholder approval (the “Approval”) to exceed such limitation is obtained by the Company. The Company is required,
+under the Secured SPA to obtain the Approval by February 2, 2025. If the Company does not obtain the Approval by such date, it must
+continue seeking the Approval every 90 days until the Approval is obtained. If the total cumulative number of Conversion Shares that the
+Company issues to Streeterville equals the Share Cap and the Company has not obtained the Approval, any remaining outstanding balance
+of the Streeterville Convertible Note must be repaid in cash. 
+
+   
+
+ The Streeterville Convertible Note provides for
+customary events of default (each as defined in the Streeterville Convertible Note, an “Event of Default”), including, among
+other things, the event of nonpayment of principal, interest, fees or other amounts, a representation or warranty proving to have been
+incorrect when made, failure to perform or observe covenants within a specified cure period, a cross-default to certain other indebtedness
+and material agreements of the Company, and the occurrence of a bankruptcy, insolvency or similar event affecting the Company. Upon the
+occurrence of an Event of Default that is deemed a “Major Trigger Event” as defined in the Streeterville Convertible Note,
+Streeterville may increase the outstanding balance of the Streeterville Convertible Note by  10 %, and upon the occurrence of an Event of
+Default that is deemed a “Minor Trigger Event” as defined in the Streeterville Convertible Note, Streeterville may increase
+the outstanding balance of the Streeterville Convertible Note by  5 %. Streeterville can exercise its right to increase the outstanding
+balance upon a Major or Minor Trigger Event three times each. Upon the occurrence of an Event of Default, Streeterville may declare all
+amounts owed under the Streeterville Convertible Note immediately due and payable. In addition, upon the occurrence of an Event of Default,
+upon the election of Streeterville, interest shall begin accruing on the outstanding balance of the Streeterville Convertible Note from
+the date of the Event of Default equal to the lesser of  15 % per annum and the maximum rate allowable under law. 
+
+   
+
+ Unsecured Promissory Note 
+
+   
+
+ On September 23, 2022, the Company entered into
+a Note Purchase Agreement (the “Streeterville Unsecured NPA”) with Streeterville, pursuant to which Streeterville purchased
+an unsecured promissory note (the “Streeterville Unsecured Note”) in the initial principal amount of $ 8.25  million. The Note
+bore interest at  10 % per annum, had a maturity date of  18  months from the date of its issuance and carried an original issue discount
+of $ 750  thousand, which is included in the principal balance of the Streeterville Unsecured Note. 
+
+   
+
+ Beginning on March 23, 2023, Streeterville had
+the right to redeem up to $ 750  thousand of the outstanding balance of the Streeterville Unsecured Note per month (“Redemption Amount”)
+by providing written notice to the Company (“Redemption Notice”). The Company paid the applicable Redemption Amount in cash
+to Streeterville within three trading days of the Company’s receipt of any such Redemption Notice. As of September 30, 2024, Streeterville
+has redeemed the full principal amount of the Streeterville Unsecured Note. There was an outstanding balance of $ 1.9  million as of December
+31, 2023. As of September 30, 2024, there was  no  outstanding balance and the Company has no further obligations with respect to the Streeterville
+Unsecured NPA or Streeterville Unsecured Note.   
+
+ 
+
+ 
+
+ 
+     F- 16 
+       
+     
+
+   
+
+ For a full discussion of the terms and conditions
+of the Streeterville Unsecured Note, see the Company’s Amendment No. 1 to its Annual Report on Form 10-K for the year ended December
+31, 2023. 
+
+   
+
+ Note 9. Loan Receivable 
+
+   
+
+ On May 16, 2023, the Company entered into a Summary
+of Proposed Terms (the “Letter of Intent”) with millionways, Inc. (“millionways”) to provide bridge loans to millionways
+and enter into due diligence to acquire up to  100 % of the AI firm. On June 6, 2023, the Company entered into a Note Purchase Agreement
+(the “MW Agreement”) with millionways, pursuant to which the Company agreed to purchase from millionways up to three unsecured
+promissory notes (each, a “MW Note”), in an aggregate principal amount of up to $ 2.0  million, subject to the terms and conditions
+of the MW Agreement. Also on June 6, 2023, pursuant to the terms of the MW Agreement, the Company purchased the MW Notes from millionways
+and loaned an aggregate principal amount of $ 500  thousand to millionways. 
+
+   
+
+ The MW Agreement contains customary representations
+and warranties by millionways and the Company, as well as a “most favored nations” provision for the benefit of the Company.
+The MW Notes issued under the MW Agreement, including the MW Notes issued on June 6, 2023, provide that the indebtedness evidenced by
+the applicable MW Note bears simple interest at the rate of  10 % per annum (or  15 % per annum during the occurrence of an event of default,
+as defined in the MW Notes), and becomes due and payable in full on the earlier of (i) May 16, 2024, (ii) a change of control (as defined
+in the MW Notes) of millionways, (iii) dollar-for-dollar prepayment for additional capital received through any vehicle from a third party
+or (iv) an event of default.  
+
+   
+
+ The Company reserved approximately $ 306  thousand
+of the outstanding $ 613  thousand receivable as uncollectible based on credit risk in the unaudited condensed consolidated financial statements
+as of September 30, 2024, and $ 279  thousand of the outstanding $ 558  thousand receivable as of December 31, 2023. 
+
+   
+
+ Note 10. Contingencies  
+
+   
+
+ Indemnification Arrangements 
+
+   
+
+ We enter into standard indemnification arrangements
+in our ordinary course of business. Pursuant to these arrangements, we indemnify, hold harmless, and agree to reimburse the indemnified
+parties for losses suffered or incurred by the indemnified parties (generally our business partners or customers) in connection with any
+trade secret, copyright, patent or other intellectual property infringement claim by any third-party with respect to our products. The
+term of these indemnification agreements is generally perpetual any time after the execution of the agreement. The maximum potential amount
+of future payments we could be required to make under these agreements is not determinable. We have never incurred costs to defend lawsuits
+or settle claims related to these indemnification agreements. As a result, we believe the estimated fair value of these agreements is
+minimal. 
+
+    
+
+ We have entered into indemnification agreements
+with our directors and officers that may require us to indemnify our directors and officers against liabilities that may arise by reason
+of their status or service as directors or officers, other than liabilities arising from willful misconduct of a culpable nature. These
+agreements also require us to advance their expenses incurred as a result of any proceeding against them as to which they could be indemnified
+and to make good faith determination whether or not it is practicable for us to obtain directors and officers insurance. We currently
+have directors and officers liability insurance. 
+
+   
+
+ Legal Proceedings 
+
+   
+
+ From time to time, we may be involved in
+legal proceedings arising in the ordinary course of business. In general, management believes that ordinary course of business
+matters will not have a material adverse effect on our consolidated financial position or results of operations and are adequately
+covered by our liability insurance. However, it is possible that condensed consolidated cash flows or results of operations could be
+materially affected in any particular period by the unfavorable resolution of one of more of these contingencies or because of the
+diversion of management’s attention and the incurrence of significant expenses.   
+
+ 
+
+ 
+
+ 
+     F- 17 
+       
+     
+
+   
+
+ See Part II, Item 1,  Legal Proceedings ,
+in this Form 10-Q for additional details on the status of motions on the following proceedings. 
+
+   
+
+ BV Advisory v. QCi Breach Lawsuit 
+
+   
+
+ At the time of the QPhoton Merger in June 2022,
+QPhoton had an outstanding balance of principal and interest due to BV Advisory Partners, LLC (“BV Advisory”) based on a Note
+Purchase Agreement that QPhoton had entered into with BV Advisory on March 1, 2021. Accordingly, the Company has recorded an estimated
+payable (the “BV Advisory Payable”), recognized as other current liabilities on the unaudited condensed consolidated financial
+statements, based on best available information in the amount of $ 536  thousand as of September 30, 2024 and December 31, 2023. 
+
+   
+
+ On August 16, 2022, BV Advisory filed a complaint
+in the Court of Chancery of the State of Delaware (the “DE Chancery Court”) naming the Company and certain of its directors
+and officers (among others) as defendants seeking, among other relief, monetary damages. The Company believes that BV Advisory’s
+claims have no merit and intends to defend itself vigorously. BV Advisory’s claims are not covered by the Company’s liability
+insurance, nor does the Company believe it is necessary to accrue an amount in addition to the BV Advisory Payable at this time. 
+
+   
+
+ BV Advisory v. QCi Appraisal Action 
+
+   
+
+ BV Advisory was purportedly a shareholder of QPhoton,
+Inc., the predecessor in interest to QPhoton, LLC, a wholly owned subsidiary of the Company (both referred to as “QPhoton”
+in this Legal Proceedings discussion). BV Advisory rejected the Merger Consideration (as defined below) and on October 13, 2022, commenced
+litigation by filing a petition in the DE Chancery Court seeking appraisal rights on the shares of QPhoton it allegedly owned (which shares
+represented  10 % of the shares of QPhoton outstanding immediately prior to the Company’s acquisition of QPhoton). The Company included
+BV Advisory’s purported ownership of QPhoton in the purchase price accounting for the QPhoton Merger. 
+
+   
+
+ The Company’s total purchase price of QPhoton
+was approximately $ 71.0  million, or $ 69.9  million net of cash acquired, consisting of Company common stock, Series B Preferred Stock and
+QPhoton Warrants (as defined below). While the total shares of the Company’s common stock on an as-converted basis offered in the
+QPhoton Merger was  36,600,823  (the “Merger Consideration”), the fair market valuation contemplated  31,299,417  of the shares,
+which assumed full conversion of the  2,377,028  shares of Series B Preferred Stock to common stock at the 10:1 ratio, and that only  1,726,931 
+of the warrants to purchase up to  7,028,337  shares of the Company’s common stock (the “QPhoton Warrants”) would eventually
+be exercised (specifically only the QPhoton Warrants for which the associated Company options and/or warrants had an exercise price at
+or below $ 2.27  at the time of the QPhoton Merger). 
+
+   
+
+ Accordingly, as of September 30, 2024 and 2023,
+the Company has neither issued  2,957,251  shares of the Company’s common stock on an as converted basis (the “Unissued QPhoton
+Shares”) nor  702,834  warrants to purchase shares of the Company’s common stock (the “Unissued QPhoton Warrants”)
+that were included in the Merger Consideration. The Unissued QPhoton Shares are included in the statement of stockholder’s equity
+as additional paid in capital as of as of September 30, 2024 and 2023, and the Unissued QPhoton Warrants have no carrying value as a liability
+on the Company’s condensed consolidated balance sheet as of September 30, 2024. 
+
+   
+
+ Note 11. Capital Stock 
+
+   
+
+ Authorized Classes of Stock 
+
+   
+
+ As of September 30, 2024, the Company’s Board of Directors has authorized
+two classes of preferred stock. The Board has authorized  1,550,000  shares of preferred stock as Series A preferred stock, par value $ 0.0001 
+per share, of which  993,306  and  1,490,004  shares, respectively, are issued and outstanding at September 30, 2024 and December 31, 2023.
+The Board has also authorized  3,079,864  shares of preferred stock as Series B preferred stock, par value $ 0.0001  per share,  none  of which
+are issued and outstanding as of September 30, 2024 and December 31, 2023.   
+
+ 
+
+ 
+
+ 
+     F- 18 
+       
+     
+
+   
+
+ Series A Convertible Preferred Offering 
+
+   
+
+ From November 10, 2021 through November 17, 2021,
+the Company conducted a private placement offering (the “Private Placement”) pursuant to securities purchase agreements with
+7 accredited investors (the “Series A Investors”), whereby the Series A Investors purchased from the Company an aggregate
+of  1,545,459  shares of the Company’s newly created Series A convertible preferred stock, par value $ 0.0001  per share (the “Series
+A Preferred Stock”) and warrants to purchase  1,545,459  shares of the Company’s common stock (the “Preferred Warrants”)
+for an aggregate purchase price of $ 8.5  million. The Private Placement was completed and closed to further investment on November 17,
+2021. 
+
+   
+
+ The Series A Preferred Stock ranks senior to common
+stock with respect to the payment of dividends and liquidation rights. Each holder of Series A Preferred Stock is entitled to receive,
+with respect to each share of Series A Preferred Stock then outstanding and held by such holder, dividends at the rate of ten percent
+( 10 %) per annum (the “Preferred Dividends.”) The Company is obligated to pay the Preferred Dividends quarterly, in arrears,
+within fifteen (15) days of the end of each quarter. The Company has the option to pay the Preferred Dividends in cash or in common stock,
+at a price per share of common stock equal to the average of the closing sale price of the common stock for the five (5) trading days
+preceding the applicable dividend payment date. The Preferred Dividends are accrued monthly, but not compounded, and are recorded as interest
+expense, because the Preferred Dividends are mandatory and not declared at the discretion of the Board of Directors. 
+   
+
+ The number of shares of the Company’s common stock issuable upon
+conversion of any share of Series A Preferred Stock shall be determined by dividing (x) the Conversion Amount of such share of Series
+A Preferred Stock by (y) the Conversion Price. “Conversion Amount” means, with respect to each share of Series A Preferred
+Stock, as of the applicable date of determination, the sum of (1) the stated value thereof plus (2) any accrued dividends. “Conversion
+Price” means, with respect to each share of Series A Preferred Stock, as of any optional conversion date, Mandatory Conversion Date
+or other date of determination, $ 5.50 , subject to adjustment for stock splits, dividends, recapitalizations and similar corporate events. 
+
+   
+
+ The Preferred Warrants were  two -year warrants
+to purchase shares of the Company’s common stock at an exercise price of $ 7.00  per share, subject to adjustment, were exercisable
+at any time on or after the date that was six months following the issuance date, and provided for cashless exercise in the event the
+underlying shares of the Company’s common stock are not registered. As of December 31, 2023, all of the Preferred Warrants had expired
+unexercised. 
+
+   
+
+ In connection with the Purchase Agreement, the
+Company and the Series A Investors entered into a registration rights agreement (the “Registration Rights Agreement”) pursuant
+to which the Company agreed to file a registration statement to register the shares of the Company’s common stock underlying the
+Series A Preferred Stock and warrants within 180 days. Pursuant to the Registration Rights Agreement, the Series A Investors received
+certain rights, including but not limited to piggyback registration rights, providing that the holder be given notice of any proposed
+registration of securities by the Company, and requiring that the Company register all or any portion of the registrable securities that
+the holders request to be registered, in each case, subject to the terms and conditions of the Registration Rights Agreement. On April
+27, 2022 the Company filed a Resale Form S-3 as required by the Registration Rights Agreement. The Resale Form S-3 went effective on June
+2, 2022. 
+
+   
+
+ On June 13, 2022, one of the Series A Investors,
+Falcon Capital Partners, converted  45,455  shares of Series A Preferred Stock into  47,728  shares of the Company’s common stock. 
+   
+
+ On February 9, 2023, one of the Series A Investors,
+Greenfield Children, LLC, converted  10,000  shares of Series A Preferred Stock plus accrued dividends into  11,096  shares of the Company’s
+common stock.   
+ 
+
+ 
+
+ 
+     F- 19 
+       
+     
+
+   
+
+ On March 19, 2024, the Company entered into a
+Redemption and Waiver Agreement (the “Series A Redemption Agreement”) with the current holders (the “Series A Holders”)
+of its Series A Preferred Stock. Accordingly, $ 8.125  million of additional paid in capital was reclassified from shareholders’ equity
+to mezzanine equity (the “Mezzanine Equity”) on the Company’s condensed consolidated balance sheet as of September 30,
+2024, in accordance with Accounting Series Release No. 268,  Presentation in Financial Statements of “Redeemable Preferred Stocks” .
+The Mezzanine Equity is valued at the date of the Private Placement issuance. Pursuant to the Series A Redemption Agreement, the Company
+agreed to redeem all outstanding shares of the Series A Preferred Stock for an aggregate cash purchase price of $ 8,195,000 , or $ 5.50  per
+share, at its sole discretion, in 18 monthly payments (each a “Monthly Redemption Threshold” payment), which may be accelerated
+at the Company’s sole discretion. In addition, the Series A Holders agreed to waive (the “Waivers”), on a month-by-month
+basis following each monthly payment, certain rights granted to them in (i) the Preferred Stock Certificate of Designation (the “Preferred
+Stock COD”), including for the accrual and payment of accrued and future dividends; and (ii) the Preferred Stock Securities Purchase
+Agreement (the “Preferred Stock SPA”). In the event the Company opts to not make a Monthly Redemption Threshold payment, the
+Waivers are forfeited and the terms revert to those detailed in the Preferred Stock COD and Preferred Stock SPA. During the three and
+nine months ended September 30, 2024, the Company redeemed  248,349  and  496,698  shares of Series A Preferred Stock, respectively,
+for approximately $ 1.4  million and $ 2.7  million, in cash paid to the Series A Holders, respectively. As of September 30, 2024 and December
+31, 2023, there were  993,306  and  1,490,004  shares of Series A Preferred Stock, respectively, issued and outstanding. 
+
+   
+
+ At-the-Market-Facility 
+
+   
+
+ On October 28, 2022, the Company filed a shelf
+registration statement on Form S-3 under the Securities Act of 1933, as amended, which was declared effective on November 8, 2022 (the
+“2022 shelf”). Under the 2022 Shelf at the time of effectiveness, the Company had the ability to raise up to $ 100  million
+by selling common stock, preferred stock, debt securities, warrants and units. On December 5, 2022, the Company entered into an At-the-Market
+Issuance Sales Agreement (the “ATM Agreement”) with Ascendiant Capital Markets, LLC (“Ascendiant”) whereby the
+Company may, but is not obligated to, offer and sell, from time to time, shares of its common stock (the “ATM Facility”),
+and incorporated the ATM Agreement into the 2022 Shelf by amendment that was declared effective January 10, 2023. On August 17, 2023,
+the Company and Ascendiant entered into an amendment (the “ATM Amendment”) to the ATM Agreement, increasing the amount of
+common stock that the Company may offer and sell via the ATM Facility from $ 25  million to $ 50  million (the “ATM Upsize”).
+Following the ATM Upsize, the Company filed a prospectus supplement, dated August 18, 2023, with the Securities and Exchange Commission
+and became able to offer and sell shares of the Company’s common stock having an aggregate offering price of up to $ 27,362,717  via
+the ATM Facility. 
+
+   
+
+ The Company intends to use any net proceeds from
+the sale of securities under the ATM Facility for operations and for other general corporate purposes, including, but not limited to,
+capital expenditures, including our AZ Chips Facility, as defined in Item 2,  Management’s Discussion and Analysis of Financial
+Condition and Results of Operations , payments under the Series A Redemption Agreement and general working capital. The Company did
+not sell any shares through the ATM Facility for the three months ended September 30, 2024, and for the nine months ended September 30,
+2024, the Company sold  16,604,770  shares of the Company’s common stock through the ATM Facility at an average price of $ 0.88 , from
+which the Company received net proceeds of $ 14.6  million. 
+
+   
+
+ Warrants 
+
+   
+
+ The table below summarizes the warrants outstanding
+at September 30, 2024 (in thousands, except exercise price data): 
+
+   
+
+     Issuance Date     Expiration Date     Exercise Price       Issued       Exercised       Forfeited /  Canceled       Warrants  Outstanding       August 18, 2020     August 18, 2025     $ 2.00         171         ( 150 )       -         21       November 15, 2021     November 15, 2023     $ 7.00         1,545                   ( 1,545 )       -       June 16, 2022     May 9, 2027     $ 0.0001         6,325         -         ( 4,148 )       2,177     
+
+
+   
+
+ In connection with a restricted stock units offering
+in June 2020, the Company issued warrants in August 2020 to purchase  171,000  shares of the Company’s common stock, at an exercise
+price of $ 2.00 . Those warrants are exercisable for  five years  from the date of issuance. 
+
+   
+
+ In connection with the offering of Series A Preferred
+Stock in November 2021, the Company issued warrants to purchase  1,545,459  shares of the Company’s common stock at an exercise price
+of $ 7.00 . Those warrants were exercisable for  two years  from the date of issuance and have now expired.   
+
+ 
+
+ 
+
+ 
+     F- 20 
+       
+     
+
+   
+
+ In connection with the QPhoton Merger on June
+16, 2022, the Company issued  6.3  million warrants to purchase shares of the Company’s common stock at an exercise price of $ 0.0001 .
+Those warrants are exercisable when and if stock options and warrants issued by the Company and outstanding as of June 15, 2022 (the “Underlying
+Options”) are exercised. As of September 30, 2024, none of the QPhoton Warrants linked to the outstanding Underlying Options are
+expected to be exercised as the exercise prices of the Underlying Options are above the closing stock price as of September 30, 2024.
+The  6.3  million issued warrants represent a portion of the  7.0  million warrants included in the Merger Consideration, having been received
+by two QPhoton shareholders. A third alleged shareholder rejected the Merger Consideration and commenced litigation, and to date that
+litigation has not been resolved and the  702,834  warrants have not been issued. See Part II, Item 1,  Legal Proceedings , for additional
+information on the status of the litigation. 
+
+   
+
+ Accordingly, as of September 30, 2024, of
+the  6.3  million QPhoton Warrants issued, approximately  66 % have been forfeited because the corresponding Underlying Options had
+expired or been forfeited. Further, as discussed in Note 2,  Significant Accounting Policies – Fair Value of Financial
+Instruments , the QPhoton Warrants issued on June 16, 2022, are considered Level 3 liabilities for fair value measurement on the
+valuation hierarchy. Accordingly, the Company recognized mark-to-market gains of $ 13  thousand and $ 384  thousand during the
+three and nine months ended September 30, 2023, respectively, with an ending balance of $ 144  thousand as of September 30, 2023. As
+of September 30, 2024 and December 31, 2023, the QPhoton Warrants have no carrying value as a liability on the Company’s
+condensed consolidated balance sheet and there was no mark-to-market adjustment recognized during the nine months ended September
+30, 2024. 
+   
+
+ Note 12. Stock-based Compensation 
+
+   
+
+ Incentive Plans 
+
+   
+
+ The Company’s 2019 Equity and Incentive
+Plan, as amended in 2021 (the “2019 Plan”) enabled the Company to grant incentive stock options or nonqualified stock options
+and other equity awards to employees, directors and consultants of the Company up to a total of  3  million shares of the Company’s
+common stock. All  3  million shares available for issue under the 2019 Plan have been issued. 
+
+   
+
+ On July 5, 2022, the Board of Directors adopted
+the Company’s 2022 Equity and Incentive Plan (the “2022 Plan”) which provides for the issuance of up to  16  million shares
+of the Company’s common stock. The 2022 Plan was approved by a majority of the shareholders in September 2022. Per the 2022 Plan,
+the 2022 Plan reserves increased automatically by  1  million shares on January 1, 2023 and January 1, 2024, providing for a total issuance
+of up to  18  million shares of the Company’s common stock. As of September 30, 2024, a total of  12.4  million shares and options were
+issued and outstanding. 
+
+   
+
+ Options 
+
+   
+
+ The following table summarizes the Company’s
+option activity for the nine months ended September 30, 2024 (in thousands, except exercise price and contractual life data): 
+
+   
+
+           Number  Outstanding       Weighted  Average  Exercise  Price per  Share       Weighted  Average  Remaining  Contractual  Life (Years)       Balance as of January 1, 2024       13,843       $ 2.64         3.7       Granted       250         1.01         5.0       Exercised       -         -         -       Forfeited       ( 1,724 )       4.11         -       Balance as of September 30, 2024       12,369       $ 2.41         3.1       Vested and exercisable as of September 30, 2024       8,375       $ 2.87         2.8       
+
+
+ 
+
+ 
+
+ 
+     F- 21 
+       
+     
+
+   
+
+ The following table presents the assumptions used
+in the Black-Scholes option-pricing model to determine the grant-date fair value of stock options granted during the three and nine months
+ended September 30, 2024 and 2023: 
+
+   
+
+ 
+   
+         
+     Three Months Ended  
+September 30,     
+     Nine Months Ended  
+September 30,   
+   
+         
+     2024     
+     2023     
+     2024     
+     2023   
+   
+     Exercise price   
+     $ 1.00  –  1.12     
+     $ 1.35  – 1.35     
+     $ 1.00  –  1.12     
+     $ 1.35  –  1.84   
+   
+     Risk-free interest rate   
+       5.2  – 5.2 %   
+       4.8  – 4.8 %   
+       5.2  – 5.2 %   
+       4.7  –  4.8 % 
+   
+     Expected volatility   
+       93.2  –  104.6 %   
+       134.5  – 134.5 %   
+       93.2  –  104.6 %   
+       122.2  –  136.9 % 
+   
+     Expected dividend yield   
+       0 %   
+       0 %   
+       0 %   
+       0 % 
+   
+     Expected life of options (in years)   
+       5.0     
+       5.0     
+       5.0     
+       5.0   
+   
+
+
+
+   
+
+ The following table summarizes the exercise price
+range as of September 30, 2024 (in thousands, except exercise price data): 
+
+   
+
+ 
+   
+     Exercise Price     
+     Outstanding Options     
+     Exercisable Options   
+   
+     $ 0.00  –  1.00     
+       105     
+       10   
+   
+     $ 1.00  –  2.00     
+       5,348     
+       1,794   
+   
+     $ 2.00  –  3.00     
+       5,845     
+       5,500   
+   
+     $ 3.00  –  6.00     
+       38     
+       38   
+   
+     $ 6.00  –  8.00     
+       683     
+       683   
+   
+     $ 8.00  –  12.00     
+       350     
+       350   
+   
+             
+       12,369     
+       8,375   
+   
+
+   
+
+ The weighted average grant-date fair value of
+stock options granted during the nine months ended September 30, 2024 and 2023 was $ 1.01  and $ 1.42  per share, respectively. As of September
+30, 2024, total unrecognized compensation cost related to common stock options was $ 3.5  million, which is expected to be recognized over
+a period of  3.3  years. 
+
+   
+
+ Stock-based Compensation 
+
+   
+
+ The Company recognized stock-based compensation
+expense related to common stock options and restricted shares of common stock in the following expense categories of its consolidated
+statements of operations (in thousands): 
+
+   
+
+ 
+   
+       
+       
+     Three Months Ended 
+ September 30, 
+       
+       
+     Nine Months Ended  
+September 30, 
+       
+   
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     2024 
+       
+       
+     2023 
+       
+   
+     Research and development 
+       
+     $ 
+     562 
+       
+       
+     $ 
+     408 
+       
+       
+     $ 
+     1,761 
+       
+       
+     $ 
+     1,358 
+       
+   
+     Selling and marketing 
+       
+       
+     12 
+       
+       
+       
+     85 
+       
+       
+       
+     123 
+       
+       
+       
+     ( 351 
+     ) 
+   
+     General and administrative 
+       
+       
+     189 
+       
+       
+       
+     499 
+       
+       
+       
+     796 
+       
+       
+       
+     2,103 
+       
+   
+     Total stock-based compensation 
+       
+     $ 
+     763 
+       
+       
+     $ 
+     992 
+       
+       
+     $ 
+     2,680 
+       
+       
+     $ 
+     3,110 
+       
+   
+
+
+
+   
+
+ For the nine months ended September 30, 2024 and
+2023, stock-based compensation on the statements of stockholders’ equity was lower by $ 207  thousand and lower by $ 206  thousand,
+respectively, as compared to the expense recorded due to timing differences between award dates and the realization of stock-based compensation
+expense. The net expense of $ 2.7  million for the nine months ended September 30, 2024 is primarily attributable to vesting expense recognition,
+offset by insignificant pre-vesting forfeitures of common stock options for separated employees. 
+
+   
+
+ In terms of new issuances, the Company issued
+ 218  thousand shares of common stock to former executives in the nine months ended September 30, 2024 per their respective employment and
+separation agreements (the “Separation Agreement Shares”). In conjunction with the Separation Agreement Shares, the Company
+recognized $ 197  thousand of stock-based compensation expense during the nine months ended September 30, 2024, and does not expect future
+expense related to these offerings as they are fully vested. During the nine months ended September 30, 2023, the Company issued
+ 2.4  million shares of common stock to employees as performance and incentive awards (the “2023 Incentive Shares”). The 2023
+Incentive Shares included  854  thousand shares of common stock issued to 35 employees as payment in lieu of cash for 2022 performance bonuses
+(the “Bonus Incentive Shares”) and  1.5  million shares of common stock as long-term incentive bonuses to five employees identified
+as key technical staff (the “Retention Incentive Shares”). The Bonus Incentive Shares are restricted and subject to the following
+vesting schedule: one-half vested on December 31, 2023 and one-half vesting on December 31, 2024. As of December 31, 2023, the Company
+canceled  23,600  of the issued shares that were forfeited by employees no longer with the Company. The Retention Incentive Shares are restricted
+and subject to annual vesting in equal amounts over a five-year period as follows:  20 % will vest on each of December 31, 2023, December
+31, 2024¸ December 31, 2025, December 31, 2026, and December 31, 2027, subject to the grantee continuing to perform services for
+the Company in the capacity in which the grant was received on each applicable vesting date.   
+
+ 
+
+ 
+
+ 
+     F- 22 
+       
+     
+
+   
+
+ Stock-based Compensation for Services 
+
+   
+
+ The Company recognized stock-based compensation
+expense for services in lieu of cash payments to certain consultants, including expenses for both shares issued and stock option awards
+granted, in the following expense categories of its consolidated statements of operations (in thousands): 
+
+   
+
+ 
+   
+         
+     Three Months Ended   September 30,     
+     Nine Months Ended   September 30,   
+   
+         
+     2024     
+     2023     
+     2024     
+     2023   
+   
+     Selling and marketing   
+     $ -     
+     $ ( 107 )   
+     $ -     
+     $ ( 174 ) 
+   
+     General and administrative   
+       2     
+       107     
+       21     
+       456   
+   
+     Total stock-based compensation   
+     $ 2     
+     $ -     
+     $ 21     
+     $ 282   
+   
+
+
+   
+
+ For the nine months ended September 30, 2024 and
+2023, stock-based compensation for services on the statements of stockholders’ equity was higher by $ 113  thousand and $ 2.1  million,
+respectively, as compared to the expense recorded due to timing differences between award dates and the realization of stock-based compensation
+expense. 
+
+   
+
+ In terms of new issuances, the Company issued
+ 142  thousand and  1.5  million shares of common stock, respectively, for services in the nine months ended September 30, 2024 and 2023. 
+   
+
+ Note 13. Related Party Transactions 
+
+   
+
+ There were no related party transactions during
+the nine months ended September 30, 2024 and 2023.  
+
+   
+
+ Note 14. License Agreement – Stevens Institute of Technology 
+
+   
+
+ Effective December 17, 2020, QPhoton signed a
+License Agreement with the Stevens Institute (the “Stevens License Agreement”). The Stevens License Agreement enables the
+Company to commercially use technology such as licensed patents, licensed patent applications and licensed “Know-How” and
+is also able to issue sublicenses for the technology under the agreement. The agreement is effective until the later of: (i) the 30-year
+anniversary of the effective date, or (ii) the expiration of the licensed patent or licensed patent application that is last to expire.
+As part of the merger of the Company and QPhoton, the Stevens License Agreement was assigned to the Company. 
+
+   
+
+ During the term of the Stevens License Agreement
+and prior to any commercialization or sublicensing of the technology by the Company, the Company is required to submit annual reports
+to the Stevens Institute reporting on all research, development, and efforts toward commercialization and/or sublicensing made during
+the year. Once any commercialization and/or sublicensing has been initiated, the Company will deliver quarterly reports to the Stevens
+Institute reporting on the revenue received by the Company, all sublicenses derived from the sale of licensed products, and the net sales
+price associated with each transaction. The Company will be responsible for reimbursing Stevens for any costs associated with the prosecution
+and maintenance of the licensed patents and licensed patent applications moving forward. 
+
+   
+
+ Consideration for the Agreement 
+
+   
+
+ As consideration for the license and other rights
+granted under the agreement, QPhoton agreed to pay the following: (i) $35 thousand within 30 days of execution of the agreement, (ii)
+$28 thousand within 30 days of each annual anniversary of the effective date, (iii) equity in the Company equivalent to nine percent of
+the outstanding equity of the Company within 30 days of the execution of the agreement, and (iv) royalties of 3.5% of the net sales price
+of each licensed product sold or licensed by the company during the quarter then-ended, for which it also received payment, concurrent
+with the delivery of the relevant quarterly report. 
+
+   
+
+ As of September 30, 2024, the Company has begun
+to commercialize some of the licensed technology, though has not recognized any related revenue and hence has not incurred any royalty
+expenses payable to the Stevens Institute. 
+
+   
+
+ 
+
+ 
+     F- 23 
+       
+     
+
+   
+
+ Note 15. Restatement of Previously Issued Financial Statements 
+
+   
+
+ Subsequent to the issuance of our Annual Report
+on Form 10-K for the year ended December 31, 2023, and our subsequent retention of BPM LLP to replace BF Borgers CPA PC as our independent
+registered public accounting firm, management became aware of various adjustments to be recorded to our consolidated financial statements.
+Accordingly, on September 11, 2024, we filed Amendment 1 to our Annual Report on Form 10-K for the year ended December 31, 2023 (the “2023
+Amendment”), amending our consolidated balance sheets as of December 31, 2023 and 2022, and amending our consolidated statements
+of operations, our consolidated statements of stockholders’ equity, and our consolidated statements of cash flows for the years
+ended December 31, 2023 and 2022, primarily with regard to the purchase accounting of the QPhoton Merger, stock-based compensation accounting,
+financing costs, and other matters. The restated consolidated financial statements in the 2023 Amendment also reflect the correction of
+certain previously-identified errors and out-of-period adjustments that were deemed immaterial to the annual or interim period in which
+they were recorded and have been restated in the 2023 Amendment to properly reflect the corrections in the appropriate periods. 
+
+   
+
+ In this Quarterly Report on Form 10-Q for the
+nine months ended September 30, 2024, we amended our consolidated statements of operations, our consolidated statements of stockholders’
+equity, and our consolidated statements of cash flows for the nine months ended September 30, 2023, which restate and revise items in
+line with the disclosures and reclassifications discussed in the 2023 Amendment. The aggregate impact of these errors on our condensed
+consolidated statements of operations for the three and nine months ended September 30, 2023, is a decrease in net loss of approximately
+$ 1.4  million and $ 1.0  million, respectively. The estimated aggregate impact of these errors on the Company’s condensed consolidated
+balance sheet for the nine months ended September 30, 2023, is (i) decreased intangible and goodwill assets of $ 8.6  million; (ii) materially
+unchanged and increased liabilities of approximately $ 500  thousand; and (iii) decreased stockholder’s equity of approximately $ 9.1 
+million.  
+
+   
+
+ Note 16. Subsequent Events 
+
+   
+
+ In October and November 2024, the Company redeemed
+ 165,566  shares of Series A Preferred Stock for $ 910  thousand. As of November 4, 2024, the Company has redeemed  662,264  shares of Series
+A Preferred Stock for a cumulative redemption amount of $ 3.6  million in cash paid to the Series A Holders; there
+are  827,740  shares of Series A Preferred Stock issued and outstanding.  
+   
+
+ 
+
+ In
+October 2024, the Company resumed use of its ATM Facility and sold approximately  3.9  million    shares
+of common stock as of November 4, 2024. The Company intends to use the net proceeds for our operations and for other general corporate purposes,
+including, but not limited to, capital expenditures, including our AZ Chips Facility, as defined in Item 2,  Management’s
+Discussion and Analysis of Financial Condition and Results of Operations , payments under the Series A Redemption Agreement and
+general working capital. As of November 4, 2023, the Company has approximately $ 55  million available under the 2022 Shelf
+and $ 5  million available under the ATM Agreement, as amended. 
+
+   
+
+
+ There are no other events of a subsequent nature
+that in management’s opinion are reportable. 
+
+   
+
+ 
+
+ 
+     F- 24 
+       
+     
+
+   
+
+ Item 2.
+Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+
+   
+
+ This quarterly report on Form 10-Q and other
+reports filed Quantum Computing, Inc. (the “Company,” “QCi,” “we,” “our,” and “us”)
+from time to time with the U.S. Securities and Exchange Commission (the “SEC”) contain or may contain forward-looking statements
+and information that are based upon beliefs of, and information currently available to, the Company’s management as well as estimates
+and assumptions made by Company’s management. Readers are cautioned not to place undue reliance on these forward-looking statements,
+which are only predictions and speak only as of the date hereof. When used in the filings, the words “anticipate,” “believe,”
+“estimate,” “expect,” “future,” “intend,” “plan,” or the negative of these
+terms and similar expressions as they relate to the Company or the Company’s management identify forward-looking statements. Such
+statements reflect the current view of the Company with respect to future events and are subject to risks, uncertainties, assumptions,
+and other factors, including the risks contained in the “Risk Factors” section of the Company’s Annual Report on Form
+10-K for the fiscal year ended December 31, 2023, relating to the Company’s industry, the Company’s operations and results
+of operations, and any businesses that the Company may acquire. Should one or more of these risks or uncertainties materialize, or
+should the underlying assumptions prove incorrect, actual results may differ significantly from those anticipated, believed, estimated,
+expected, intended, or planned. 
+
+   
+
+ Although the Company believes that the expectations
+reflected in the forward-looking statements are reasonable, the Company cannot guarantee future results, levels of activity, performance,
+or achievements. Except as required by applicable law, including the securities laws of the United States, the Company does not intend
+to update any of the forward-looking statements to conform these statements to actual results. 
+
+   
+
+ Our unaudited condensed consolidated financial
+statements are prepared in accordance with accounting principles generally accepted in the United States (“GAAP”). These accounting
+principles require us to make certain estimates, judgments and assumptions. We believe that the estimates, judgments and assumptions upon
+which we rely are reasonable based upon information available to us at the time that these estimates, judgments and assumptions are made.
+These estimates, judgments and assumptions can affect the reported amounts of assets and liabilities as of the date of the unaudited condensed
+consolidated financial statements as well as the reported amounts of revenues and expenses during the periods presented. Our financial
+statements would be affected to the extent there are material differences between these estimates and actual results. In many cases, the
+accounting treatment of a particular transaction is specifically dictated by GAAP and does not require management’s judgment in
+its application. There are also areas in which management’s judgment in selecting any available alternative would not produce a
+materially different result. The following discussion should be read in conjunction with our financial statements and notes thereto appearing
+elsewhere in this report. 
+
+   
+
+ As discussed in Note 15, Restatement of Previously
+Issued Financial Statements, in the accompanying notes to our unaudited condensed consolidated financial statements, we have restated
+our previously-issued consolidated financial statements as of and for the year ended December 31, 2023; accordingly, the following has
+been prepared giving effect to such restatement.  
+
+   
+
+ Overview 
+
+   
+
+ QCi is a development stage company. Our strategy
+is to create a range of accessible and affordable quantum machines and photonics chips for use by commercial and government markets. We
+have developed and continue to primarily develop quantum and photonics products for high-performance computing applications based on patented
+and proprietary technology. Our technology is central to our strategy because we believe that it enables us to leverage the advantages
+of size, weight, power and cost (over competing cryogenic products) to drive market adoption and volume of sales. Specifically, our products
+are designed to operate at room temperature and at very low power levels at an affordable cost. 
+
+   
+
+ QCi’s core technology is Entropy Quantum
+Computing (“EQC”). EQC is a patent pending methodology that utilizes the environment to drive controlled energy loss in a
+photonic architecture. The Company believes that EQC’s small rack-mountable size and low-energy consumption provides a substantial
+competitive edge as compared to superconducting, cryogenic quantum systems offered by competitors that are also designed to solve optimization
+problems. In addition to our photonic computing platform, we have leveraged QCi’s core technology to demonstrate powerful quantum
+sensing use cases in LIDAR (Light Detection and Ranging), reservoir computing (a form of neural network that can be used in machine learning
+applications) and quantum cyber authentication (a method for highly secure communication within a network). Several of these important
+technologies are already in early stages of commercialization. 
+   
+
+ 
+
+ 
+     1 
+       
+     
+
+   
+
+ Our longer-term product development plan is to
+migrate product designs based on discrete components to a set of optical integrated circuits built on wafers using a crystalline material
+called lithium niobate (“Thin Film Lithium Niobate” or “TFLN”). The Company believes that TFLN is an excellent
+material for design and implementation of optical integrated circuits (“TFLN Chips”) suitable for our quantum computing and
+sensing products because it is crystal based and hence can have optical waveguides directly etched into the material. QCi possesses strong
+domain experience and intellectual property in TFLN design and chip fabrication and has completed initial production of several specialty
+devices such as electro-optical modulators (“EOM’s”). TFLN EOM’s have the advantages of large bandwidth, low power
+consumption, and small size. The Company has begun buildout of a state-of-the-art TFLN chip manufacturing facility (the “AZ Chips
+Facility”) in a leased space within Arizona State University’s Research Park in Tempe, Arizona. The Company’s understanding
+is that this could be the nation’s first dedicated optical integrated circuit manufacturing foundry using TFLN wafers to achieve
+quantum effects and superior optical interconnects for data centers. Our plan for the facility is to produce a range of custom lithium
+niobate chips for use in our own product lines as well as chips for sale in the commercial market. The Company has plans to support this
+initiative by applying for funding for distinct uses under both the Title 17 Clean Energy Financing Program managed by the US Department
+of Energy’s Loan Programs Office and also the Creating Helpful Incentives to Produce Semiconductors Act of 2022, which specifically
+includes $39 billion in manufacturing incentives and $13 billion to support new research and development. 
+   
+
+ We believe that the practical benefits to the
+customer of QCi’s core offerings are: 
+
+   
+
+ 
+   
+       
+     ● 
+     Powerful performance in speed and quality of solution for large complex optimization problems; 
+   
+       
+       
+       
+   
+       
+     ● 
+     Plug and play compatibility with existing IT infrastructure; 
+   
+       
+       
+       
+   
+       
+     ● 
+     Low power consumption – normal operation under 80 watts; and 
+   
+       
+       
+       
+   
+       
+     ● 
+     Scalability with potential for migration to nanophotonic system-on-a-chip designs. 
+   
+
+   
+
+ 
+
+ 
+
+ 
+
+ The Company has limited operations, has generated
+limited revenue based on sales of products and related services to date, and is expanding our sales and marketing efforts to support our
+current portfolio of commercially-available products and planned TFLN Chips. 
+
+   
+
+ Market Opportunity 
+
+   
+
+ Despite enormous growth in the capabilities of
+conventional computers and silicon microprocessors, some of the world’s most important computational problems are still considered
+impractical to solve in a reasonable period of time. Quantum computing represents a potential alternative approach to solving those problems
+because quantum computers apply the properties of quantum physics to operate in a fundamentally different way. Conventional computer chips
+use binary bits (ones and zeros) to represent information. Quantum computers utilize qubits (quantum bits), which leverage some of the
+properties of quantum physics, namely superposition and entanglement, to process computations that would be intractably difficult using
+conventional computers. Quantum machines are intrinsically able to search very large solution spaces using these quantum effects and are
+thereby able to perform optimization calculations in polynomial time vs. exponential time. 
+
+   
+
+ While quantum-based computers will not replace
+conventional computers in most applications, they are ideally suited to run optimization algorithms, as well as to calculate certain sensing,
+imaging, and cybersecurity problems that are beyond the reach of general silicon-based computing today. The Company believes that quantum
+solutions have the potential to bring order of magnitude advances in the fields of medicine, engineering, autonomous vehicles, and cybersecurity
+and that the demand for quantum computing in these market sectors will likely outpace and outperform the general-purpose computing market
+in the near- to mid-term and into the foreseeable future. 
+
+   
+
+ Our core technology offers practical, cost-effective
+solutions that materially advance the adoption of quantum machines across several market segments including: 
+
+   
+
+ 
+   
+       
+     1. 
+     Quantum Computing; 
+   
+   
+
+ 
+   
+       
+     2. 
+     Quantum Intelligence (Artificial Intelligence and Machine Learning); 
+   
+   
+
+ 
+   
+       
+     3. 
+     Remote Sensing; 
+   
+   
+
+ 
+   
+       
+     4. 
+     Imaging; and 
+   
+   
+
+ 
+   
+       
+     5. 
+     Cybersecurity. 
+   
+   
+
+ 
+
+ 
+     2 
+       
+     
+
+   
+
+ Economic Conditions, Challenges, and Risks 
+
+   
+
+ The markets for high-performance conventional
+and quantum computing and cloud-based services are dynamic and highly competitive. Our competitors are developing new computing devices,
+while also enhancing competing cloud-based services for businesses. Aggregate demand for our solutions, services, and devices is also
+correlated to global macroeconomic and geopolitical factors, which remain dynamic. We must continue to evolve and adapt over an extended
+time in pace with this changing environment. 
+
+   
+
+ The investments we are making in Quantum Optical
+Chips and devices will continue to increase our operating costs and may decrease our operating margins. Components for our devices are
+primarily manufactured by third parties. Some of our products contain certain components for which there are very few qualified suppliers.
+Extended disruptions at these suppliers could impact our ability to manufacture devices on time to meet consumer demand. 
+
+   
+
+ Our success is highly dependent on our ability
+to attract and retain qualified employees. We hire a mix of university and industry talent. We compete for talented individuals by offering
+an exceptional working environment, an ability to work on new, ground-breaking quantum technology, the ability to grow one’s career
+across many different products and businesses, and competitive compensation and benefits. 
+
+   
+
+ Results of Operations 
+
+   
+
+ Our results of operations for the three and nine
+months ended September 30, 2024 and 2023 is as follows (in thousands, except percentages): 
+   
+
+ 
+   
+       
+       
+     Three Months Ended September 30, 
+       
+       
+     Nine Months Ended September 30, 
+       
+   
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     % Change 
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     % Change 
+       
+   
+     Revenue: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   
+     Total revenue 
+       
+     $ 
+     101 
+       
+       
+     $ 
+     50 
+       
+       
+       
+     102 
+     % 
+       
+     $ 
+     311 
+       
+       
+     $ 
+     283 
+       
+       
+       
+     10 
+     % 
+   
+     Gross profit 
+       
+       
+     9 
+       
+       
+       
+     26 
+       
+       
+       
+     (65 
+     )% 
+       
+       
+     78 
+       
+       
+       
+     152 
+       
+       
+       
+     (34 
+     )% 
+   
+     Gross profit margin 
+       
+       
+     9 
+     % 
+       
+       
+     52 
+     % 
+       
+       
+     (43 
+     )% 
+       
+       
+     25 
+     % 
+       
+       
+     54 
+     % 
+       
+       
+     (29 
+     )% 
+   
+     Operating expenses: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   
+     Research and development 
+       
+       
+     2,244 
+       
+       
+       
+     2,328 
+       
+       
+       
+     (4 
+     )% 
+       
+       
+     6,560 
+       
+       
+       
+     6,977 
+       
+       
+       
+     (6 
+     )% 
+   
+     Sales and marketing 
+       
+       
+     363 
+       
+       
+       
+     584 
+       
+       
+       
+     (38 
+     )% 
+       
+       
+     1,243 
+       
+       
+       
+     1,397 
+       
+       
+       
+     (11 
+     )% 
+   
+     General and administrative 
+       
+       
+     2,840 
+       
+       
+       
+     3,725 
+       
+       
+       
+     (24 
+     )% 
+       
+       
+     9,298 
+       
+       
+       
+     11,442 
+       
+       
+       
+     (19 
+     )% 
+   
+     Total operating expenses 
+       
+       
+     5,447 
+       
+       
+       
+     6,637 
+       
+       
+       
+     (18 
+     )% 
+       
+       
+     17,101 
+       
+       
+       
+     19,816 
+       
+       
+       
+     (14 
+     )% 
+   
+     Loss from operations 
+       
+       
+     (5,438 
+     ) 
+       
+       
+     (6,611 
+     ) 
+       
+       
+     (18 
+     )% 
+       
+       
+     (17,023 
+     ) 
+       
+       
+     (19,664 
+     ) 
+       
+       
+     13 
+     % 
+   
+     Non-operating income and (expense): 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+   
+     Interest and other income 
+       
+       
+     70 
+       
+       
+       
+     126 
+       
+       
+       
+     (44 
+     )% 
+       
+       
+     180 
+       
+       
+       
+     219 
+       
+       
+       
+     (18 
+     )% 
+   
+     Interest expense, net 
+       
+       
+     (307 
+     ) 
+       
+       
+     (369 
+     ) 
+       
+       
+     (17 
+     )% 
+       
+       
+     (462 
+     ) 
+       
+       
+     (1,334 
+     ) 
+       
+       
+     (65 
+     )% 
+   
+     Change in value of derivative and warrant liabilities 
+       
+       
+     - 
+       
+       
+       
+     13 
+       
+       
+       
+     (100 
+     )% 
+       
+       
+     - 
+       
+       
+       
+     384 
+       
+       
+       
+     (100 
+     )% 
+   
+     Total non-operating income (expense) 
+       
+       
+     (237 
+     ) 
+       
+       
+     (230 
+     ) 
+       
+       
+     3 
+     % 
+       
+       
+     (282 
+     ) 
+       
+       
+     (731 
+     ) 
+       
+       
+     61 
+     % 
+   
+     Net loss 
+       
+     $ 
+     (5,675 
+     ) 
+       
+     $ 
+     (6,841 
+     ) 
+       
+       
+     (17 
+     )% 
+       
+     $ 
+     (17,305 
+     ) 
+       
+     $ 
+     (20,395 
+     ) 
+       
+       
+     (15 
+     )% 
+   
+
+ 
+
+ 
+
+   
+
+ 
+
+ 
+     3 
+       
+     
+
+   
+
+ Revenues 
+
+   
+
+ The Company’s revenues consist of (in thousands): 
+
+   
+
+ 
+   
+       
+       
+     Three Months Ended September 30, 
+       
+       
+     Nine Months Ended September 30, 
+       
+   
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     % Change 
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     % Change 
+       
+   
+     Products 
+       
+     $ 
+     - 
+       
+       
+     $ 
+     - 
+       
+       
+       
+     - 
+       
+       
+     $ 
+     27 
+       
+       
+     $ 
+     - 
+       
+       
+       
+     NM 
+       
+   
+     Services 
+       
+       
+     101 
+       
+       
+       
+     50 
+       
+       
+       
+     102 
+     % 
+       
+       
+     284 
+       
+       
+       
+     283 
+       
+       
+       
+     - 
+     % 
+   
+     Total 
+       
+     $ 
+     101 
+       
+       
+     $ 
+     50 
+       
+       
+       
+     102 
+     % 
+       
+     $ 
+     311 
+       
+       
+     $ 
+     283 
+       
+       
+       
+     10 
+     % 
+   
+
+ 
+
+   
+
+ Revenues for the three months ended September
+30, 2024 were $101 thousand compared to $50 thousand for the comparable prior year period, an increase of $51 thousand or 102%. Revenues
+for the nine months ended September 30, 2024 were $311 thousand compared to $283 thousand for the comparable prior year period, an increase
+of $28 thousand or 10%. The respective increases in revenues are primarily due to changes in the number of, size of and level of effort
+performed on active customer proof-of-concept and research and development services and custom hardware contracts. 
+   
+
+ Cost of Revenues 
+
+   
+
+ Cost of revenues, which consists of direct labor
+expenses, primarily salary costs for engineering and solutions staff delivering services, and other direct component costs for custom
+hardware on research and development contracts, was $92 thousand for the three months ended September 30, 2024, compared to $24 thousand
+for the comparable prior year period, an increase of $68 thousand or 283%. Cost of revenues for the nine months ended September 30, 2024
+was $233 thousand compared to $131 thousand for the comparable prior year period, an increase of $102 thousand or 78%. The respective
+increases are both primarily due to the increases in direct labor expenses and other direct costs required to perform on the contracts
+during the 2024 periods compared to the prior year periods.  
+   
+
+ Gross Margin 
+
+   
+
+ Gross margin for the three months ended September
+30, 2024 was $9 thousand and 9% compared to $26 thousand and 52% for the comparable prior year period, a decrease of $17 thousand and
+43%, respectively. Gross margin for the nine months ended September 30, 2024 was $78 thousand and 25% compared to $152 thousand and 54%,
+a decrease of $74 thousand and 29%, respectively, compared to the comparable period of 2023. The respective changes were nearly entirely
+the result of a new custom hardware contract that has lower margins due to its cost of revenues being comprised of other direct component
+costs in addition to direct labor expenses. Our lack of a scaled and distributed base of revenue generation by product and sales channel
+can result in significant differences in gross margin between reporting periods. 
+   
+
+ Operating Expenses 
+
+   
+
+ Information about our operating expenses for the
+three and nine months ended September 30, 2024 and 2023 is set forth in the below tables (in thousands, except percentages). Operating
+expenses for the three and nine months ended September 30, 2024 decreased by $1.2 million and $2.7 million, respectively, in each case
+primarily as a result of lower general and administrative expenses of approximately $900 thousand and selling and marketing expenses of
+approximately $200 thousand. 
+   
+
+ 
+   
+       
+       
+     Three Months Ended 
+September 30, 
+       
+       
+     Nine Months Ended  
+September 30, 
+       
+   
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     % Change 
+       
+       
+     2024 
+       
+       
+     2023 
+       
+       
+     % Change 
+       
+   
+     Research and development 
+       
+     $ 
+     2,244 
+       
+       
+     $ 
+     2,328 
+       
+       
+       
+     (4 
+     )% 
+       
+     $ 
+     6,560 
+       
+       
+     $ 
+     6,977 
+       
+       
+       
+     (6 
+     )% 
+   
+
+ 
+
+   
+
+ Research and development expenses consist primarily
+of labor expenses for employees that primarily engage in research and development efforts and non-labor expenses for the development of
+hardware products and supporting software. We focus the bulk of our research and development activities on the continued development of
+existing products and the development of new offerings for emerging market opportunities. 
+
+   
+
+ 
+
+ 
+     4 
+       
+     
+
+   
+
+ Research and development expenses for the three and nine months ended
+September 30, 2024 decreased compared to the comparable prior year periods primarily due to a reduction in employee-related expenses,
+primarily as a result of decreased bonus expenses. These decreases were partially offset by net increases in stock-based compensation
+as the Company sought to create long-term incentives to retain key technical, sales and administrative employees. See Note 12,  Stock-based
+Compensation , in the accompanying notes to our unaudited condensed consolidated financial statements for additional information. 
+
+   
+
+ 
+   
+         
+     Three Months Ended  
+September 30,     
+     Nine Months Ended  
+September 30,   
+   
+         
+     2024     
+     2023     
+     % Change     
+     2024     
+     2023     
+     % Change   
+   
+     Sales and marketing   
+     $ 363     
+     $ 584     
+       (38 )%   
+     $ 1,243     
+     $ 1,397     
+       (11 )% 
+   
+
+
+   
+
+ Selling and marketing expenses consist primarily
+of employee compensation as well as customer lead generation activities, tradeshow participation, advertising and other marketing and
+selling costs. 
+
+   
+
+ Selling and marketing expenses for the three and
+nine months ended September 30, 2024 decreased primarily due to lower employee and related compensation, reduction in the use of consultant
+services and decreased marketing program costs as management continued to refine the Company’s approach to product and services
+sales. 
+
+   
+
+ 
+   
+         
+     Three Months Ended 
+ September 30,     
+     Nine Months Ended 
+ September 30,   
+   
+         
+     2024     
+     2023     
+     % Change     
+     2024     
+     2023     
+     % Change   
+   
+     General and administrative   
+     $ 2,840     
+     $ 3,725     
+       (24 )%   
+     $ 9,298     
+     $ 11,442     
+       (19 )% 
+   
+
+
+   
+
+ General and administrative expenses consist primarily
+of compensation expenses for employees performing administrative functions, and professional fees incurred for legal, auditing and other
+consulting services. 
+
+   
+
+ General and administrative expenses for the
+three and nine months ended September 30, 2024 decreased compared to the comparable prior year period primarily due to lower
+employee- and advisor-related expenses, including stock-based compensation, payroll, bonus and travel expenses, as well as lower
+legal fees and consulting services costs driven by changes made within and by the Company’s management team, offset by
+increased audit fees driven by the Company retaining a new independent registered public accounting firm and such firm’s
+re-audit of the Company’s financial statements for the years ending December 31, 2023 and 2022. 
+
+   
+
+ Non-operating Income (Expense) 
+
+   
+
+ The following table summarizes our non-operating income (expense) for
+the three and nine months ended September 30, 2024 and 2023 (in thousands, except percentages). 
+
+   
+
+ 
+   
+         
+     Three Months Ended  
+September 30,     
+     Nine Months Ended  
+September 30,   
+   
+         
+     2024     
+     2023     
+     % Change     
+     2024     
+     2023     
+     % Change   
+   
+     Interest and other income   
+     $ 70     
+     $ 126     
+       (44 )%   
+     $ 180     
+     $ 219     
+       (18 )% 
+   
+     Interest expense, net   
+       (307 )   
+       (369 )   
+       (17 )%   
+       (462 )   
+       (1,334 )   
+       (65 )% 
+   
+     Change in value of derivative and warrant liabilities   
+       -     
+       13     
+       (100 )%   
+       -     
+       384     
+       (100 )% 
+   
+     Other income (expense)   
+     $ (237 )   
+     $ (230 )   
+       3 %   
+     $ (282 )   
+     $ (731 )   
+       61 % 
+   
+
+
+
+
+
+
+   
+
+ Net other expense for the three months ended September 30, 2024 compared
+to the comparable prior year period is virtually unchanged, with the approximate $62 thousand decrease in net interest expense offsetting
+the approximate $56 thousand decrease in interest income. The $449 thousand decrease in other expense for the nine months ended September
+30, 2024 compared to the comparable prior year period is the result of the $872 thousand decrease in interest expense for the Company’s
+financial liabilities offset by a $384 thousand reduction in gains in the fair value of the QPhoton Warrant liability. 
+
+   
+
+ Interest and other income consists of earned interest on loans receivable
+and cash and cash equivalents. See Note 2,  Significant Accounting Policies – Cash and Cash Equivalents , in the accompanying
+notes to our unaudited condensed consolidated financial statements for additional information on where the Company maintains its cash
+balances. The decreases for the three and nine months ended September 30, 2024 compared to the comparable prior year periods is primarily
+due to the Company maintaining lower cash balances in mutual funds and deposit and money market accounts during the 2024 periods compared
+to the 2023 periods. 
+
+   
+
+ 
+
+ 
+     5 
+       
+     
+
+   
+
+ Interest expense, net consists of interest on financial liabilities,
+amortization of debt issuance costs, and accretion of derivative interest. The decrease in interest expense in 2024 compared to 2023 was
+attributable to decreased borrowings outstanding under the Streeterville Unsecured Note which was paid-in-full as of March 1, 2024, partially
+offset by new borrowings under the Streeterville Convertible Note that we issued in August 2024. See Note 8,  Financial Liabilities ,
+in the accompanying notes to our unaudited condensed consolidated financial statements for additional information. 
+
+   
+
+ The gain on change in value of warrant liability
+is comprised of mark-to-market adjustments for the QPhoton Warrants, which have no carrying value as of September 30, 2024 and December
+31, 2023. Future mark-to-market adjustments may result in losses if the Company’s stock price increases above the exercise price
+of the Underlying Options, as defined below. See Note 11,  Capital Stock - Warrants , in the accompanying notes to our unaudited
+condensed consolidated financial statements for additional information on the QPhoton Warrants .  There was no mark-to-market for
+the Streeterville Derivative Liability as of September 30, 2024. 
+
+   
+
+ Liquidity and Capital Resources 
+
+   
+
+ We have incurred net losses and experienced negative
+cash flows from operations since inception. Through September 30, 2024, the Company has raised $68.3 million through private and public
+placements of equity and $12.6 million through private placements of convertible promissory notes and other debt for a total of $80.9
+million. The Company has no lines of credit or short-term debt obligations outstanding when excluding the remaining debt issuance costs.
+We expect to incur additional losses and higher operating expenses for the foreseeable future as we continue to invest in research and
+development and go-to-market programs. We have determined that additional financing will be required to fund our operations for the next
+12 months and our ability to continue as a going concern is dependent upon obtaining additional capital and financing. As of September
+30, 2024, the Company had cash and cash equivalents of $3.1 million. 
+
+   
+
+ Our primary uses of cash are to fund and invest in our operations as
+we continue to grow our business. We will require a significant amount of cash for continued investment in our AZ Chips Facility and ongoing
+research and development for our non-linear quantum optical products and photonics chips. Until such time as we can generate significant
+revenue from sales or subscriptions of our hardware offerings, we expect to finance our cash needs through public and/or private equity
+and/or debt financings or other capital sources, including but not limited to U.S. government grant and loan programs. However, we may
+be unable to raise sufficient funds or enter into such other arrangements, when needed, on favorable terms, or at all. In particular,
+uncertain and unfavorable conditions in the United States and global macroeconomic environment, including inflationary pressures, rising
+interest rates, bank failures, and financial and credit market fluctuations, could reduce our ability to access capital on favorable terms,
+or at all. To the extent that we raise additional capital through the sale of equity or convertible debt securities, the ownership interest
+of our stockholders will be, or could be, diluted, and the terms of these securities may include liquidation or other preferences that
+adversely affect the rights of our common stockholders. Debt financing and equity financing, if available, may involve agreements that
+include covenants limiting or restricting our ability to take specific actions, such as incurring additional debt, making capital expenditures
+or declaring dividends. If we are unable to raise additional funds through equity or debt financings when needed, we may be required to
+delay, limit, or substantially reduce our product development and go-to-market efforts. It is management’s opinion that these conditions
+raise substantial doubt about the Company’s ability to continue as a going concern for a period of 12 months from the date of the
+issuance of the accompanying unaudited condensed consolidated financial statements. There can be no assurances that the Company will be
+able to secure additional equity investments or achieve an adequate sales level. 
+
+   
+
+ The following table summarizes total consolidated
+current assets, liabilities and working capital at September 30, 2024, compared to December 31, 2023 (in thousands): 
+
+   
+
+ 
+   
+         
+     September 30,   2024     
+     December 31,  2023     
+     Change   
+   
+     Current Assets   
+     $ 3,912     
+     $ 2,656     
+     $ 1,256   
+   
+     Current Liabilities   
+     $ 2,431     
+     $ 4,812     
+     $ (2,381 ) 
+   
+     Working Capital (Deficit)   
+     $ 1,481     
+     $ (2,156 )   
+     $ 3,637   
+   
+
+
+   
+
+ At September 30, 2024, we had working capital of $1.5 million as compared
+to a working capital deficit of $2.2 million at December 31, 2023, an increase of $3.7 million. The increase in working capital is primarily
+attributable to an increase in cash proceeds from our issuance of shares of common stock using the Company’s ATM Facility and our
+issuance of the Streeterville Convertible Note, offset by the use of cash to pay for operating expenses and capital investments in property
+and equipment. 
+
+   
+
+ 
+
+ 
+     6 
+       
+     
+
+   
+
+ Cash Flows 
+
+   
+
+ The following table summarizes our cash flow for
+the nine months ended September 30, 2024 and 2023 (in thousands). 
+
+   
+
+ 
+   
+         
+     Nine Months Ended  September 30,   
+   
+         
+     2024     
+     2023   
+   
+     Net cash used in operating activities   
+     $ (12,439 )   
+     $ (13,348 ) 
+   
+     Net cash used in investing activities   
+       (3,170 )   
+       (2,665 ) 
+   
+     Net cash provided by financing activities   
+       16,614     
+       18,084   
+   
+     Net increase in cash, cash equivalents, and restricted cash   
+     $ 1,005     
+     $ (4,315 ) 
+   
+
+
+   
+
+ Net cash used in operating activities for the
+nine months ended September 30, 2024 and 2023 was $12.4 million and $13.3 million, respectively, in each case primarily as a result of
+our net loss in each period offset by noncash adjustments for stock-based compensation, mark-to-market valuation adjustments on financial
+liabilities, and depreciation and amortization. 
+
+   
+
+ Net cash used in investing activities for the nine months ended September
+30, 2024 and 2023 was $3.2 million and $2.7 million, respectively, and was attributable to our purchase of computer hardware, laboratory
+and TFLN Chips manufacturing equipment. The increase in investment in the 2024 period is primarily due to the purchase of additional equipment
+in connection with establishing the Company’s AZ Chip Facility. 
+
+   
+
+ Net cash provided by financing activities was $16.6 million and $18.1
+million, respectively, for the nine months ended September 30, 2024 and 2023. Cash flows provided by financing activities during the nine
+months ended September 30, 2024 were attributable to proceeds from our sale of shares of common stock pursuant to the ATM Facility and our issuance of the Streeterville Convertible Note, partially offset by repayments on the Streeterville Unsecured Note and redemptions
+of shares of Series A Preferred Stock. Cash flows provided by financing activities during the period ended September 30, 2023 were attributable
+to proceeds from our sale of shares of common stock pursuant to the ATM Facility, partially offset by repayments on the Streeterville
+Unsecured Note. 
+
+   
+
+ On a long-term basis, our liquidity is
+dependent on the continuation and expansion of operations and receipt of revenues. Demand for our products and services will be
+dependent on, among other things, market acceptance of our products and services, the technology market in general, and general
+economic conditions, which are cyclical in nature. As most of our revenues will be from the sales of our products and services, our
+business operations may be adversely affected by the actions of our competitors and prolonged recession periods 
+
+   
+
+ Critical Accounting Estimates 
+
+   
+
+ Certain of our accounting policies require the
+application of significant judgment by our management, and such judgments are reflected in the amounts reported in our consolidated financial
+statements. In applying these policies, our management uses judgment to determine the appropriate assumptions to be used in the determination
+of estimates. Those estimates are based on our historical experience, terms of existing contracts, our observance of market trends, information
+provided by our strategic partners and information available from other outside sources, as appropriate. Actual results may differ significantly
+from the estimates contained in our consolidated financial statements. 
+
+   
+
+ Fair Value of Stock-based Compensation and
+Derivatives 
+
+   
+
+ We recognize stock-based compensation expense
+for all share-based payment awards in accordance with ASC 718,  Compensation – Stock Compensation . Stock-based compensation
+expense for expected-to-vest awards is valued under the single-option approach and amortized on a straight-line basis, accounting for
+actual forfeitures as they occur. We utilize the Black-Scholes pricing model in order to determine the fair value of stock-based option
+awards. The Black-Scholes pricing model requires various highly subjective assumptions including volatility, expected option life, and
+risk-free interest rate. The assumptions used in calculating the fair value of share-based payment awards represent management’s
+best estimates. These estimates involve inherent uncertainties and the application of management judgment. If factors change and different
+assumptions are used, our stock-based compensation expense could be materially different in the future. 
+
+   
+
+ Another area of critical accounting estimates
+involves determining the fair market value of the QPhoton Warrants. The Company determines which underlying options and warrants are in-the-money
+or out-of-the-money at period end by comparing to the bid price of the Company’s common stock, then accounts for changes period-over-period
+by realizing a mark-to-market gain or loss for the period. 
+
+   
+
+ Another area of critical accounting estimates involves determining the fair value of the Streeterville Derivative Liability, which involves
+inherent uncertainties and the application of management judgement. The Streeterville Derivative Liability will be mark-to-market adjusted
+on a quarterly basis and accreted as interest expense while the Streeterville Convertible Note is outstanding. 
+
+   
+
+ 
+
+ 
+     7 
+       
+     
+
+   
+
+ Fair Market Value and Useful Life of Intangible
+Assets 
+
+   
+
+ Determining the fair market value and useful life
+of the intangible assets acquired by the Company through the merger with QPhoton is another critical accounting estimate. In the absence
+of market pricing for the intangible assets, the Company relied on independent third-party appraisal experts and comparison with similar
+transactions to arrive at estimates of value as well as useful life. The Company will perform periodic assessments of the intangible assets
+for impairment, but if any of the initial estimates are incorrect, that could result in a calculation of amortization expense that is
+too high or too low. 
+
+   
+
+ Valuation Allowances for Deferred Taxes 
+
+   
+
+ Our income tax expense, deferred tax assets and
+liabilities, and reserves for unrecognized tax benefits reflect management’s assessment of estimated current and future income taxes
+to be paid. We are subject to income taxes in the United States. Significant judgments and estimates are required in determining the consolidated
+income tax expense, deferred tax assets and liabilities and reserves for unrecognized tax benefits. 
+
+   
+
+ Deferred tax assets and liabilities arise from
+temporary differences between the tax basis of assets and liabilities and their reported amounts in the consolidated financial statements,
+which are expected to result in taxable or deductible amounts in the future. In evaluating our ability to recover our deferred tax assets
+within the jurisdiction from which they arise, for all material jurisdictions, we consider all available positive and negative evidence,
+including scheduled reversals of deferred tax balances, projected future taxable income, tax-planning strategies and results of recent
+operations. In projecting future taxable income, we begin with historical results and incorporate assumptions about the amount of future
+state, federal and foreign pretax operating income adjusted for items that do not have tax consequences. The assumptions about future
+taxable income require significant judgment and are consistent with the plans and estimates we use to manage the underlying businesses.
+In evaluating the objective evidence that historical results provide, we consider three years of cumulative operating results. 
+
+   
+
+ As of September 30, 2024,
+we had federal and state net operating loss (“NOL”) carryforwards of approximately $60.1 million, or $15.6 million on a tax-effected
+basis. We believe that it is more likely than not that the benefit from these NOL carryforwards will not be realized. Accordingly, we
+have provided a full valuation allowance on any potential deferred tax assets relating to these NOL carryforwards. If our assumptions
+change and we determine we will be able to realize these NOLs, the tax benefits relating to any reversal of the valuation allowance on
+deferred tax assets as of September 30, 2024, will be accounted for as a reduction of income tax expense. 
+
+   
+
+ The calculation of our
+tax liabilities involves evaluating uncertainties in the application of complex tax laws and regulations in a multitude of jurisdictions
+across our global operations. ASC 740,  Income Taxes , states that a tax benefit from an uncertain tax position may be recognized
+when it is more likely than not that the position will be sustained upon examination, including the resolution of any related appeals
+or litigation processes, on the basis of the technical merits. 
+
+   
+
+ We record unrecognized tax benefits as liabilities
+in accordance with ASC 740 and adjust these liabilities when our judgment changes as a result of the evaluation of new information not
+previously available. Because of the complexity of some of these uncertainties, the ultimate resolution may result in a tax payment that
+is materially different from our current estimate of the unrecognized tax benefit liabilities. These differences will be reflected as
+increases or decreases to income tax expense in the period in which new information is made available. 
+
+   
+
+ We believe that none of the unrecognized tax benefits
+may be recognized by the end of 2024. 
+
+   
+
+ Legal and Other Contingencies 
+
+   
+
+ The outcomes of legal proceedings and claims brought
+against us are subject to significant uncertainty. An estimated loss from a loss contingency such as a legal proceeding or claim is accrued
+by a charge to income if it is probable that an asset has been impaired or a liability has been incurred and the amount of the loss can
+be reasonably estimated. In determining whether a loss should be accrued we evaluate, among other factors, the degree of probability of
+an unfavorable outcome and the ability to make a reasonable estimate of the amount of loss. Changes in these factors could materially
+impact our unaudited condensed consolidated financial statements. 
+
+   
+
+ 
+
+ 
+     8 
+       
+     
+
+   
+
+ Item 3. Quantitative and Qualitative Disclosures About Market
+Risk 
+
+   
+
+ Not applicable. 
+
+   
+
+ Item 4. Controls and Procedures 
+
+   
+
+ (a) Evaluation of Disclosure Controls and Procedures 
+
+   
+
+ We maintain “disclosure controls and procedures,”
+as such term is defined in Rule 13a-15(e) under the Securities Exchange Act of 1934, as amended (the “Exchange Act”). In designing
+and evaluating our disclosure controls and procedures, our management recognized that disclosure controls and procedures, no matter how
+well conceived and operated, can provide only reasonable, not absolute, assurance that the objectives of disclosure controls and procedures
+are met. Additionally, in designing disclosure controls and procedures, our management necessarily was required to apply its judgment
+in evaluating the cost-benefit relationship of possible disclosure controls and procedures. The design of any disclosure controls and
+procedures also is based in part upon certain assumptions about the likelihood of future events, and there can be no assurance that any
+design will succeed in achieving its stated goals under all potential future conditions. 
+
+   
+
+ As of the end of the period covered by this
+Quarterly Report on Form 10-Q, we carried out an evaluation, under the supervision and with the participation of our management,
+including our principal executive officer and our principal financial officer, of the effectiveness of our disclosure controls and
+procedures. Based on such evaluation, our principal executive officer and principal financial officer concluded that as of September
+30, 2024, our disclosure controls and procedures were not effective to provide reasonable assurance that (a) the information
+required to be disclosed by us in the reports that we file or submit under the Exchange Act is recorded, processed, summarized and
+reported within the time periods specified in the SEC’s rules and forms, and (b) such information is accumulated and
+communicated to our management, including our Chief Executive Officer and President and Chief Financial Officer, as appropriate, to
+allow timely decisions regarding required disclosure. 
+
+
+
+   
+
+ (b) Changes in Internal Control over Financial
+Reporting 
+
+   
+
+ There were no changes in our internal control over financial reporting
+(as defined in Rule 13a-15(f) and Rule 15d-15(f) under the Exchange Act) during our most recent fiscal quarter that have materially affected,
+or are reasonably likely to materially affect, our internal control over financial reporting. 
+
+   
+
+ 
+     9 
+       
+     
+
+   
+
+ PART II – OTHER INFORMATION 
+
+   
+
+ Item 1. Legal Proceedings. 
+
+   
+
+ Except as listed below, there is no action, suit,
+or proceeding by any court, public board, government agency, self-regulatory organization or body pending or, to the knowledge of the
+executive officers of the Company or our subsidiaries, threatened against or affecting the Company, our common stock, our subsidiaries,
+or the Company’s or its subsidiaries’ officers or directors in their capacities as such, in which an adverse decision could
+have a material adverse effect on the Company.  
+
+   
+
+ BV Advisory v. QCi Appraisal Action 
+
+   
+
+ BV Advisory was purportedly a shareholder of QPhoton, Inc., the predecessor
+in interest to QPhoton, LLC, a wholly owned subsidiary of the Company (both referred to as “QPhoton” in this Legal Proceedings
+discussion). On October 13, 2022, BV Advisory filed a petition in the DE Chancery Court seeking appraisal rights (the “Appraisal
+Petition”) on the shares of common stock of QPhoton it allegedly owns (which shares represented 10% of the shares of common stock
+of QPhoton outstanding immediately prior to the Company’s acquisition of QPhoton) pursuant to Section 262 of the General Corporation
+Law of the State of Delaware. The parties agreed to suspend discovery pending resolution of outstanding motions in two related cases.
+On July 24, 2024, the DE Chancery Court granted a petition by BV Advisory’s legal counsel to withdraw from the case. As of November
+4, 2024, BV Advisory has not retained new counsel to represent it on the Appraisal Petition, and the Company does not have sufficient
+information to assess the potential impact of the appraisal demand at this time. 
+
+   
+
+ BV Advisory v. QCi Breach Lawsuit 
+
+   
+
+ On March 1, 2021, QPhoton entered into a Note Purchase Agreement with
+BV Advisory. Under the Note Purchase Agreement, on March 1, 2021, March 23, 2021 and July 9, 2021, QPhoton and BV Advisory entered into
+convertible promissory notes for $200,592, $150,000, and $150,000, respectively, for a total of $500,592 (the “BV Notes”).
+The BV Notes all bore interest at a rate of 6% per annum and matured two years from the issuance date. On June 16, 2022, the effective
+date of our acquisition of QPhoton, QPhoton tendered a cashier’s check to BV Advisory in the amount of $535,684.24, representing
+the full principal balance of the BV Notes and accrued interest through June 16, 2022. On July 14, 2022, BV Advisory returned the cashier’s
+check and disputed the calculation of the amount paid to settle the BV Notes. 
+
+   
+
+ On August 16, 2022, BV Advisory filed a complaint in the DE Chancery
+Court naming the Company and certain of its directors and officers (among others) as defendants (the “Breach Lawsuit”).  BV
+Advisory Partners, LLC v. Quantum Computing Inc. , et al., C.A. No. 2022-0719-VCG (Del. Ch.). BV Advisory is seeking, among other relief,
+monetary damages for an alleged breach of the Note Purchase Agreement between BV Advisory and QPhoton, as well as monetary damages for
+alleged breach of an alleged binding letter of intent among Barksdale Global Holdings, LLC (“BGH”), Inference Ventures, LLC
+(“Inference Ventures”) and QPhoton. BV Advisory and its affiliates claim that pursuant to the letter of intent they had the
+right to acquire additional shares in QPhoton by investing $2.5 million in QPhoton. BV Advisory claims QPhoton refused to allow BV Advisory
+to purchase the equity. However, BV Advisory never made the additional investment in QPhoton. The Company believes that BV Advisory’s
+claims have no merit and intends to defend itself vigorously. The Company filed a motion to dismiss most of the Breach Lawsuit, and on
+May 28, 2024, the DE Chancery Court dismissed eight of the 10 counts in the BV Advisory complaint. On July 24, 2024, the DE Chancery Court
+entered an Order dismissing those eight counts with prejudice. On October 17, 2024, the DE Chancery Court granted a Stipulation and Order
+dismissing the two remaining counts of the BV Advisory complaint, subject to BV Advisory’s right to elect to transfer the BV Note
+claim to DE Superior Court. On October 23, 2024, BV Advisory filed an initial notice of election to transfer its BV Note claim to DE Superior
+Court 
+
+   
+
+ As of November 4, 2024, the parties are anticipating
+a conference with the DE Chancery Court to discuss a schedule for the Appraisal Petition, pending BV Advisory retaining counsel in that
+action. 
+
+   
+
+ QCi v. BV Advisory Defamation Lawsuit 
+
+   
+
+ On December 30, 2022 the Company, QPhoton and
+Robert Liscouski (the “Quantum Plaintiffs”) filed suit in the Superior Court of New Jersey (the “NJ Court”) against
+Keith Barksdale, Michael Kotlarz, BV Advisory, BGH, Power Analytics Global Corporation (“PAG”), and Inference Ventures (and
+together with Barksdale, Kotlarz, BV Advisory, BGH, and PAG the “BV Defendants”), alleging fraud, aiding and abetting fraud,
+defamation, and conspiracy to defraud, seeking monetary and injunctive relief (the “Defamation Lawsuit”). The Company claims
+that the BV Defendants have made numerous public statements defaming the Company and its management in furtherance of a plan to manipulate
+the trading prices of the Company’s common stock, and that the BV Defendants misrepresented their ownership in QPhoton and conspired
+to acquire additional shares of QPhoton at the Company’s expense. The BV Defendants filed a motion to dismiss the complaint on March
+24, 2023, and on June 5, 2023, the NJ Court largely denied the BV Defendants’ motion. On January 31, 2024, the BV Defendants
+filed a motion for reconsideration of their motion to dismiss. On March 7, 2024, the NJ Court issued an order, granting the BV Defendant’s
+motion dismissing the Company’s case on procedural grounds because, according to the NJ Court, the Company can assert its claims
+against Defendants in the Delaware courts. The Company filed a motion for reconsideration of the order dismissing the case, which was
+argued on April 30, 2024. On May 1, 2024 the NJ Court affirmed its initial order dismissing the case and directed the Company to file
+its claims against the BV Defendants in Delaware. The Company is currently evaluating whether it should file the claims in Delaware and
+does not have sufficient information at this time to assess the potential impact of the action against the BV Defendants. 
+
+   
+
+ 
+
+ 
+     10 
+       
+     
+
+   
+
+ BV Advisory Receivership Petition 
+
+   
+
+ On July 27, 2023, BV Advisory and its managing
+member, Keith Barksdale, as alleged stockholders of and claimants against the Company, filed a petition in the DE Chancery Court to appoint
+a receiver for the Company based on allegations that the Company is insolvent due to purported poor corporate governance and cash management.
+The petition also objects to the Company’s approach to raising capital. In a related motion, the petitioners also sought expedited
+treatment of the petition on July 28, 2023, alleging that they face a threat of irreparable harm. The Company strongly disagrees with
+the allegations in the petition. On August 23, 2023, the Company filed a motion to dismiss the petition. The Company’s motion to
+dismiss and BV Advisory’s motion for expedited treatment were argued before the DE Chancery Court on October 11, 2023. The DE Chancery
+Court denied BV Advisory’s motion to expedite and on May 28, 2024 the DE Chancery Court granted the Company’s motion to dismiss
+the petition without prejudice. 
+
+   
+
+ Item 1A. Risk Factors. 
+
+   
+
+ We believe there are no changes that constitute
+material changes from the risk factors previously disclosed in our Annual Report on Form 10-K for the year ended December 31, 2023, filed
+with the SEC on April 1, 2024. 
+
+   
+
+ Item 2. Unregistered Sales of Equity Securities
+and Use of Proceeds. 
+
+   
+
+ There were no unregistered sales of or Company repurchases of the Company’s
+equity securities during the three months ended September 30, 2024. 
+
+   
+
+ Item 3. Defaults upon Senior Securities. 
+
+   
+
+ There has been no default in the payment of principal,
+interest, sinking or purchase fund installment, or any other material default, with respect to any indebtedness of the Company. 
+
+   
+
+ Item 4. Mine Safety Disclosures. 
+
+   
+
+ Not Applicable. 
+
+   
+
+ Item 5. Other Information. 
+
+   
+
+ None 
+
+   
+
+ 
+
+ 
+     11 
+       
+     
+
+   
+
+ Item 6. Exhibits. 
+
+   
+
+ 
+   
+       
+       
+       
+       
+     Incorporated by 
+       
+       
+   
+     Exhibit 
+       
+       
+       
+     Reference 
+       
+     Filed or Furnished 
+   
+     Number 
+       
+     Exhibit Description 
+       
+     Form 
+       
+     Exhibit 
+       
+     Filing Date 
+       
+     Herewith 
+   
+     4.1 
+       
+     Secured Promissory Note issued to Streeterville Capital, LLC, dated as of August 6, 2024 
+       
+     8-K 
+       
+     4.1 
+       
+     08/12/24 
+       
+       
+   
+     10.1 
+       
+     Securities Purchase Agreement between Quantum Computing Inc. and Streeterville Capital, LLC, dated as of August 6, 2024 
+       
+     8-K 
+       
+     10.1 
+       
+     08/12/24 
+       
+       
+   
+     10.2 
+       
+     Security Agreement between Quantum Computing Inc. and Streeterville Capital, LLC, dated as of August 6, 2024 
+       
+     8-K 
+       
+     10.2 
+       
+     08/12/24 
+       
+       
+   
+     10.3 
+       
+     IP Security Agreement between Quantum Computing Inc. and Streeterville Capital, LLC, dated as of August 6, 2024 
+       
+     8-K 
+       
+     10.3 
+       
+     08/12/24 
+       
+       
+   
+     10.4 
+       
+     Guaranty by QPhoton, LLC, Qubittech International, Inc., Qubittech, Inc., and QI Solutions, Inc., dated August 6, 2024 
+       
+     8-K 
+       
+     10.4 
+       
+     08/12/24 
+       
+       
+   
+     10.5 
+       
+     Amendment to Employment Agreement by and between Quantum Computing Inc. and Yuping Huang, dated as of September 1, 2024 
+       
+       
+       
+       
+       
+       
+       
+     X 
+
+ 
+     31.1 
+       
+     Certification of Chief Executive Officer pursuant to Rule 13a-14(a) or Rule 15d-14(a) of the Securities Exchange Act of 1934, as amended. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     31.2 
+       
+     Certification of Chief Financial Officer pursuant to Rule 13a-14(a) or Rule 15d-14(a) of the Securities Exchange Act of 1934, as amended. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     32.1 
+       
+     Certification of Chief Executive Officer pursuant to 18 U.S.C. 1350. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     32.2 
+       
+     Certification of Chief Financial Officer pursuant to 18 U.S.C. 1350. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     101.INS 
+       
+     Inline XBRL Instance Document 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     101.SCH 
+       
+     Inline XBRL Taxonomy Extension Schema Linkbase Document. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     101.CAL 
+       
+     Inline XBRL Taxonomy Calculation Linkbase Document. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     101.DEF 
+       
+     Inline XBRL Taxonomy Extension Definition Linkbase Document. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     101.LAB 
+       
+     Inline XBRL Taxonomy Label Linkbase Document. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     101.PRE 
+       
+     Inline XBRL Taxonomy Presentation Linkbase Document. 
+       
+       
+       
+       
+       
+       
+       
+     X 
+   
+     104 
+       
+     Cover Page Interactive Data File (formatted as Inline XBRL and contained in Exhibit 101). 
+       
+       
+       
+       
+       
+       
+       
+       
+   
+
+   
+
+ 
+ ** Indicates
+a management contract or compensatory plan or arrangement. 
+ 
+   
+
+ 
+
+ 
+     12 
+       
+     
+
+   
+
+ SIGNATURES 
+
+   
+
+ Pursuant to the requirements of the Securities
+Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized. 
+
+   
+
+ 
+   
+       
+     QUANTUM COMPUTING INC. 
+   
+       
+       
+       
+   
+     Dated: November 6, 2024 
+     By:  
+     /s/ Dr. William McGann 
+   
+       
+       
+     Dr. William McGann  
+   
+       
+       
+     Chief Executive Officer and President 
+   
+       
+       
+       
+   
+       
+     By:  
+     /s/ Christopher Boehmler 
+   
+       
+       
+     Christopher Boehmler  
+   
+       
+       
+     Chief Financial Officer 
+   
+   
+
+   
+
+ 13 
+
+   
+
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ As described in Note 15 to these unaudited condensed consolidated financial statements, we have restated the condensed consolidated statements of operations for the three and nine months ended September 30, 2023. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ As described in Note 15 to these unaudited condensed consolidated financial statements, we have restated the condensed consolidated statement of cash flows for the nine months ended September 30, 2023. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ P2Y 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ false 
+ --12-31 
+ Q3 
+ 0001758009 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+     0001758009 
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-11-04 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesBPreferredStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesBPreferredStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:MezzanineEquityMember 
+     
+   
+   
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:MezzanineEquityMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:MezzanineEquityMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:MezzanineEquityMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:MezzanineEquityMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2022-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2022-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2022-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2022-12-31 
+   
+ 
+   
+     0001758009 
+   
+   
+     2022-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:AdditionalPaidInCapitalMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RetainedEarningsMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:CorporateHistoryMember 
+     
+   
+   
+     2018-07-20 
+   
+ 
+   
+     0001758009 
+     
+       qubt:CustomerMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:WarrantMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:WarrantMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:StockOptionMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:StockOptionMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:StockOptionMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:StockOptionMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RestrictedStockMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RestrictedStockMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RestrictedStockMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RestrictedStockMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:NonCompeteAgreementWithFounderMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:NonCompeteAgreementWithFounderMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:TrademarksAndTradeNamesMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:TrademarksAndTradeNamesMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TechnologyAndLicensedPatentsMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TechnologyAndLicensedPatentsMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-04-01 
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-04-01 
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-01-01 
+     2024-06-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-01-01 
+     2023-06-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:ComputerEquipmentMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:ComputerEquipmentMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:NetworkEquipmentMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:NetworkEquipmentMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:FurnitureAndFixturesMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:FurnitureAndFixturesMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SoftwareDevelopmentMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SoftwareDevelopmentMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:LeaseholdImprovementsMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:LeaseholdImprovementsMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:LeaseholdImprovementsMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:UnsecuredPromissoryNoteMember 
+     
+   
+   
+     2024-08-06 
+   
+ 
+   
+     0001758009 
+     
+       qubt:StreetervilleMember 
+     
+   
+   
+     2024-08-06 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-08-06 
+     2024-08-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+       qubt:UnsecuredPromissoryNoteMember 
+     
+   
+   
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+       qubt:StreetervilleMember 
+     
+   
+   
+     2025-02-06 
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2025-02-06 
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2025-02-06 
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2025-02-06 
+   
+ 
+   
+     0001758009 
+     
+       qubt:StreetervilleUnsecuredNoteMember 
+     
+   
+   
+     2022-09-23 
+   
+ 
+   
+     0001758009 
+     
+       qubt:StreetervilleUnsecuredNoteMember 
+     
+   
+   
+     2022-09-23 
+     2022-09-23 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-03-23 
+   
+ 
+   
+     0001758009 
+     
+       qubt:StreetervilleCapitalLLCMember 
+     
+   
+   
+     2023-01-01 
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:LoanPayableMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:LoanPayableMember 
+     
+   
+   
+     2023-01-01 
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:DebtIssuanceCostsMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:DebtIssuanceCostsMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:millionwaysMember 
+     
+   
+   
+     2023-05-16 
+   
+ 
+   
+     0001758009 
+     
+       qubt:UnsecuredPromissoryNotesMember 
+     
+   
+   
+     2023-06-06 
+     2023-06-06 
+   
+ 
+ 
+   
+     0001758009 
+     
+       qubt:MWAgreementMember 
+     
+   
+   
+     2023-06-06 
+     2023-06-06 
+   
+ 
+   
+     0001758009 
+     
+       qubt:MWNoteMember 
+     
+   
+   
+     2023-06-06 
+   
+ 
+   
+     0001758009 
+     
+       qubt:millionwaysMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:millionwaysMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:BVAdvisoryMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:BVAdvisoryMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:BVAdvisoryPartnersLLCMember 
+     
+   
+   
+     2022-10-13 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesBPreferredStockMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:UnissuedQPhotonSharesMember 
+     
+   
+   
+     2024-09-30 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:UnissuedQPhotonSharesMember 
+     
+   
+   
+     2023-09-30 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:UnissuedQPhotonWarrantsMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+       qubt:CapitalStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+       qubt:CapitalStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesBPreferredStockMember 
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesBPreferredStockMember 
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2021-11-17 
+     2021-11-17 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2021-11-17 
+   
+ 
+   
+     0001758009 
+     
+       qubt:PreferredWarrantsMember 
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2021-11-17 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:FalconCapitalPartnersMember 
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2022-06-13 
+     2022-06-13 
+   
+ 
+   
+     0001758009 
+     
+       qubt:FalconCapitalPartnersMember 
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2022-06-13 
+     2022-06-13 
+   
+ 
+   
+     0001758009 
+     
+       qubt:GreenfieldChildrenLLCMember 
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2023-02-09 
+     2023-02-09 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2024-03-19 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2024-03-19 
+     2024-03-19 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+       us-gaap:PreferredStockMember 
+     
+   
+   
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+   
+   
+     2022-10-28 
+     2022-10-28 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+     
+   
+   
+     2023-08-17 
+     2023-08-17 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+     
+   
+   
+     2023-08-17 
+     2023-08-17 
+   
+ 
+   
+     0001758009 
+     
+       qubt:OtherOfferingsMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:OtherOfferingsMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:RestrictedStockUnitsRSUMember 
+     
+   
+   
+     2020-08-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+     
+   
+   
+     2021-11-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2022-06-16 
+     2022-06-16 
+   
+ 
+   
+     0001758009 
+     
+       qubt:QPhotonMergerMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:QPhotonWarrantsMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:WarrantMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:August182020Member 
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:August182020Member 
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:November152021Member 
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:November152021Member 
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:June162022Member 
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:June162022Member 
+       us-gaap:WarrantMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoThousandAndNineteenEquityAndIncentivePlanMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoThousandAndNineteenEquityAndIncentivePlanMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoThousandAndTwentyTwoEquityAndIncentivePlanMember 
+     
+   
+   
+     2022-07-05 
+     2022-07-05 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-01-01 
+   
+ 
+   
+     0001758009 
+   
+   
+     2024-01-01 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoThousandAndTwentyTwoEquityAndIncentivePlanMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoThousandAndTwentyTwoEquityAndIncentivePlanMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:StockOptionMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:StockOptionMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:SeparationAgreementSharesMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoZeroTwoThreeIncentiveSharesMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoZeroTwoThreeIncentiveSharesMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:RetentionIncentiveSharesMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2024-12-31 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2025-12-31 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2026-12-31 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioForecastMember 
+     
+   
+   
+     2027-12-31 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:CommonStockMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-01-01 
+     2023-12-31 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       qubt:ZeroPointZeroZeroToOnePointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       qubt:ZeroPointZeroZeroToOnePointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:ZeroPointZeroZeroToOnePointZeroZeroMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       qubt:OnePointZeroZeroToTwoPointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       qubt:OnePointZeroZeroToTwoPointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:OnePointZeroZeroToTwoPointZeroZeroMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       qubt:TwoPointZeroZeroToThreePointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       qubt:TwoPointZeroZeroToThreePointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:TwoPointZeroZeroToThreePointZeroZeroMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       qubt:ThreePointZeroZeroToSixPointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       qubt:ThreePointZeroZeroToSixPointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:ThreePointZeroZeroToSixPointZeroZeroMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       qubt:SixPointZeroZeroToEightPointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       qubt:SixPointZeroZeroToEightPointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:SixPointZeroZeroToEightPointZeroZeroMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MinimumMember 
+       qubt:EightPointZeroZeroToTwelvePointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:MaximumMember 
+       qubt:EightPointZeroZeroToTwelvePointZeroZeroMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:EightPointZeroZeroToTwelvePointZeroZeroMember 
+     
+   
+   
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:ResearchAndDevelopmentExpenseMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:ResearchAndDevelopmentExpenseMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:ResearchAndDevelopmentExpenseMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:ResearchAndDevelopmentExpenseMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingAndMarketingExpenseMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingAndMarketingExpenseMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingAndMarketingExpenseMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingAndMarketingExpenseMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:GeneralAndAdministrativeExpenseMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:GeneralAndAdministrativeExpenseMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:GeneralAndAdministrativeExpenseMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:GeneralAndAdministrativeExpenseMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+     
+   
+   
+     2024-07-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+     
+   
+   
+     2024-01-01 
+     2024-09-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioPreviouslyReportedMember 
+     
+   
+   
+     2023-07-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioPreviouslyReportedMember 
+     
+   
+   
+     2023-01-01 
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       srt:ScenarioPreviouslyReportedMember 
+     
+   
+   
+     2023-09-30 
+   
+ 
+   
+     0001758009 
+     
+       qubt:SeriesAConvertiblePreferredMember 
+       us-gaap:SubsequentEventMember 
+     
+   
+   
+     2024-10-01 
+     2024-10-31 
+   
+ 
+   
+     0001758009 
+     
+       qubt:SeriesAConvertiblePreferredMember 
+       us-gaap:SubsequentEventMember 
+     
+   
+   
+     2024-11-30 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+       us-gaap:SubsequentEventMember 
+     
+   
+   
+     2024-11-04 
+     2024-11-04 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:SeriesAPreferredStockMember 
+       us-gaap:SubsequentEventMember 
+     
+   
+   
+     2024-11-04 
+   
+ 
+   
+     0001758009 
+     
+       us-gaap:PreferredClassAMember 
+       us-gaap:SubsequentEventMember 
+     
+   
+   
+     2024-11-04 
+   
+ 
+   
+     0001758009 
+     
+       qubt:SeriesAConvertiblePreferredMember 
+       us-gaap:SubsequentEventMember 
+     
+   
+   
+     2024-11-04 
+   
+ 
+   
+     0001758009 
+   
+   
+     2023-11-04 
+   
+ 
+   
+     0001758009 
+     
+       qubt:ATMAgreementMember 
+     
+   
+   
+     2023-11-04 
+   
+ 
+   xbrli:shares 
+ 
+   iso4217:USD 
+ 
+   
+     
+       iso4217:USD 
+     
+     
+       xbrli:shares 
+     
+   
+ 
+   xbrli:pure 
+ 
+
+ 
+ 

@@ -785,16 +785,14 @@ def generate_signals(
         except Exception:
             today_prob_up_global = None
 
-        # ── QUARANTINED May 31 2026: GLOBAL_ranker FAILED honest validation ──────
-        # The "+1.56pp/5d Q5-Q1" claim below was NEVER honestly validated — the
-        # saved ranker was fit on ALL 2020-present data with no split/embargo/OOS,
-        # and scoring it on its own training window gave a fake +5.6 Sharpe (leak).
-        # Retrained per purged fold (analysis/ranker_purged_wf.py): 5d mean net Sh
-        # -0.52 (1/4 folds), 20d +0.09 (2/4) — FAIL at both horizons. It does NOT
-        # generalize. The validated signal is cross-sectional MOMENTUM instead
-        # (see docs/MASTER_TODO_LIST.md Part 1.3-1.4, docs/RULE_1.md). The ranker
-        # score is no longer computed; the field stays None so the DB column and all
-        # downstream callers keep working. Do NOT re-enable without honest purged-WF.
+        # ── DROPPED Jul 9 2026: GLOBAL_ranker permanently disabled ────────────────
+        # The ranker answers the WRONG question for this fund: it ranks stocks
+        # RELATIVE to each other (order), not whether a stock will go UP (direction).
+        # A #1-ranked stock can still lose money on a down day (it just falls least).
+        # For "will this stock rise + profit", per-ticker prob_eff is the validated
+        # signal. History: leaked (fit on all data, fake +5.6 Sharpe; purged-WF FAIL
+        # 5d -0.52). Field stays None; downstream handles None. Do NOT re-enable —
+        # the ranker does not answer the fund's actual question.
         today_prob_up_global_ranker = None
 
         # A/B PCT7 prediction (A1_pct7 artifact). Strictly optional, never breaks pipeline.

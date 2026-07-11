@@ -1,0 +1,996 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q1 2020 0000034903 296165000 306861000 102583000 83902000 469184000 476944000 1676866000 1751718000 0.001 0.001 682 1.02 1.05 0.01 0.01 100000000 100000000 75540804 75622504 75540804 75622504 500000 0.0135 400000 200000 876000 1015000 0.050 0.05417 0.05000 0.05417 0.050 0.05000 0.05417 25000 25 25000 25 0.01 0.01 15000000 15000000 6000 399896 6000 399896 6000 399896 6000 399896 
+		 
+			 0000034903 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2020-05-01 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CommonStockMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:AccountingStandardsUpdate201613Member 
+				 us-gaap:AccumulatedDistributionsInExcessOfNetIncomeMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken2BuildingsMember 
+			 
+		 
+		 
+			 2020-02-12 
+			 2020-02-12 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:AboveMarketLeasesMember 
+			 
+		 
+		 
+			 2020-01-10 
+			 2020-01-10 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:HobokenMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2020-01-10 
+			 2020-01-10 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+			 
+		 
+		 
+			 2020-01-10 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken2BuildingsMember 
+			 
+		 
+		 
+			 2020-02-12 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken2BuildingsMember 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2020-02-12 
+			 2020-02-12 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken2BuildingsMember 
+				 us-gaap:OtherAssetsMember 
+				 us-gaap:AboveMarketLeasesMember 
+			 
+		 
+		 
+			 2020-02-12 
+			 2020-02-12 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:FairfaxJunctionMember 
+			 
+		 
+		 
+			 2020-01-10 
+			 2020-01-10 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken2BuildingsMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2020-02-12 
+			 2020-02-12 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:Hoboken2BuildingsMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2020-02-12 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+				 frt:SeniorNotesAndDebenturesMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+				 frt:MortgagesPayableAndNotesPayableMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:HobokenMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:HobokenMember 
+				 us-gaap:MortgagesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:EquityMethodInvesteeMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 us-gaap:EquityMethodInvesteeMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:OtherliabilitiesanddeferredcreditsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5417Series1CumulativeConvertiblePreferredMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:A5.0SeriesCCumulativeRedeemablePreferredMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:AtMarketEquityProgramMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:TermloanMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2020-05-06 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:ColoradoBlvdMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2020-04-21 
+			 2020-04-21 
+		 
+	 
+		 
+			 0000034903 
+			 
+				 frt:TermloanMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2020-05-05 
+			 2020-05-06 
+		 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 frt:project 
+	 
+		 utreg:sqft 
+	 
+		 frt:agreement 
+	 
+		 xbrli:shares 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:pure 
+	 Table of Contents UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549   FORM  10-Q   ☒ QUARTERLY REPORT PURSUANT TO THE SECTION 13 OR 15(D) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  March 31, 2020   OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(D) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from              to              Commission file number:  1-07533   FEDERAL REALTY INVESTMENT TRUST   (Exact Name of Registrant as Specified in its Declaration of Trust)   Maryland   52-0782497 (State of Organization)   (IRS Employer Identification No.) 1626 East Jefferson Street ,  Rockville ,  Maryland   20852   (Address of Principal Executive Offices)           (Zip Code) ( 301 )  998-8100   (Registrant’s Telephone Number, Including Area Code)   Title of Each Class Trading Symbol Name of Each Exchange On Which Registered Common Shares of Beneficial Interest FRT New York Stock Exchange $.01 par value per share, with associated Common Share Purchase Rights           Depositary Shares, each representing 1/1000 of a share  FRT-C New York Stock Exchange of 5.00% Series C Cumulative Redeemable Preferred Stock, $.01 par value per share     Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     ☒    Yes      ☐   No Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     ☒    Yes      ☐   No Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company," and "emerging growth company" in Rule 12b-2 of the Exchange Act.: Large Accelerated Filer ☒ Accelerated filer ☐         Non-Accelerated Filer ☐ Smaller reporting company ☐             Emerging growth company ☐         If an emerging growth company, indicate by checkmark if the registrant has elected not use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).      ☐   Yes     ☒   No The number of registrant’s common shares outstanding on  May 1, 2020  was  75,633,042 .  Table of Contents FEDERAL REALTY INVESTMENT TRUST QUARTERLY REPORT ON FORM 10-Q QUARTER ENDED  MARCH 31, 2020   TABLE OF CONTENTS PART I. FINANCIAL INFORMATION     Item 1. Financial Statements  3     Consolidated Balance Sheets as of March 31, 2020 (unaudited) and December 31, 2019  3     Consolidated Statements of Comprehensive Income (unaudited) for the three months ended March 31, 2020 and 2019  4     Consolidated Statements of Shareholders' Equity (unaudited) for the three months ended March 31, 2020 and 2019  5     Consolidated Statements of Cash Flows (unaudited) for the three months ended March 31, 2020 and 2019  6     Notes to Consolidated Financial Statements (unaudited)  7   Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations  13   Item 3. Quantitative and Qualitative Disclosures about Market Risk  25   Item 4. Controls and Procedures  25         PART II. OTHER INFORMATION  26   Item 1. Legal Proceedings  26   Item 1A. Risk Factors  26   Item 2. Unregistered Sales of Equity Securities and Use of Proceeds  26   Item 3. Defaults Upon Senior Securities  26   Item 4. Mine Safety Disclosures  27   Item 5. Other Information  27   Item 6. Exhibits  27       SIGNATURES  29  2 Table of Contents Federal Realty Investment Trust Consolidated Balance Sheets   March 31,   December 31,   2020   2019   (In thousands, except share and per share data)   (Unaudited)     ASSETS       Real estate, at cost       Operating (including $1,751,718 and $1,676,866 of consolidated variable interest entities, respectively) $ 7,774,485   $ 7,535,983 Construction-in-progress (including $84,034 and $102,583 of consolidated variable interest entities, respectively) 671,486   760,420 Assets held for sale 5,796   1,729   8,451,767   8,298,132 Less accumulated depreciation and amortization (including $306,861 and $296,165 of consolidated variable interest entities, respectively) ( 2,258,994 )   ( 2,215,413 ) Net real estate 6,192,773   6,082,719 Cash and cash equivalents 994,688   127,432 Accounts and notes receivable, net 153,243   152,572 Mortgage notes receivable, net 30,332   30,429 Investment in partnerships 25,960   28,604 Operating lease right of use assets 94,147   93,774 Finance lease right of use assets 52,079   52,402 Prepaid expenses and other assets 216,692   227,060 TOTAL ASSETS $ 7,759,914   $ 6,794,992 LIABILITIES AND SHAREHOLDERS’ EQUITY       Liabilities       Mortgages payable, net (including $476,944 and $469,184 of consolidated variable interest entities, respectively) $ 552,813   $ 545,679 Notes payable, net 993,752   3,781 Senior notes and debentures, net 2,807,848   2,807,134 Accounts payable and accrued expenses 245,968   255,503 Dividends payable 81,899   81,676 Security deposits payable 21,941   21,701 Operating lease liabilities 74,082   73,628 Finance lease liabilities 72,059   72,062 Other liabilities and deferred credits 150,410   157,938 Total liabilities 5,000,772   4,019,102 Commitments and contingencies (Note 6)   Redeemable noncontrolling interests 159,534   139,758 Shareholders’ equity       Preferred shares, authorized 15,000,000 shares, $.01 par:       5.0% Series C Cumulative Redeemable Preferred Shares, (stated at liquidation preference $25,000 per share), 6,000 shares issued and outstanding 150,000   150,000 5.417% Series 1 Cumulative Convertible Preferred Shares, (stated at liquidation preference $25 per share), 399,896 shares issued and outstanding 9,997   9,997 Common shares of beneficial interest, $.01 par, 100,000,000 shares authorized, 75,622,504 and 75,540,804 shares issued and outstanding, respectively 760   759 Additional paid-in capital 3,166,899   3,166,522 Accumulated dividends in excess of net income ( 818,284 )   ( 791,124 ) Accumulated other comprehensive loss ( 7,265 )   ( 813 ) Total shareholders’ equity of the Trust 2,502,107   2,535,341 Noncontrolling interests 97,501   100,791 Total shareholders’ equity 2,599,608   2,636,132 TOTAL LIABILITIES AND SHAREHOLDERS’ EQUITY $ 7,759,914   $ 6,794,992 The accompanying notes are an integral part of these consolidated statements.  3 Table of Contents  Federal Realty Investment Trust Consolidated Statements of Comprehensive Income (Unaudited)   Three Months Ended March 31,   2020   2019   (In thousands, except per share data) REVENUE       Rental income $ 230,798   $ 231,492 Mortgage interest income 759   735 Total revenue 231,557   232,227 EXPENSES       Rental expenses 44,312   44,260 Real estate taxes 29,064   27,687 General and administrative 10,251   9,565 Depreciation and amortization 62,188   59,622 Total operating expenses 145,815   141,134         OPERATING INCOME 85,742   91,093         OTHER INCOME/(EXPENSE)       Other interest income 308   177 Interest expense ( 28,445 )   ( 28,033 ) Loss from partnerships ( 1,164 )   ( 1,434 ) NET INCOME 56,441   61,803 Net income attributable to noncontrolling interests ( 1,678 )   ( 1,659 ) NET INCOME ATTRIBUTABLE TO THE TRUST 54,763   60,144 Dividends on preferred shares ( 2,010 )   ( 2,010 ) NET INCOME AVAILABLE FOR COMMON SHAREHOLDERS $ 52,753   $ 58,134 EARNINGS PER COMMON SHARE, BASIC:              Net income available for common shareholders 0.70   0.78 Weighted average number of common shares 75,360   74,200 EARNINGS PER COMMON SHARE, DILUTED:          Net income available for common shareholders $ 0.70   $ 0.78 Weighted average number of common shares 75,360   74,200         COMPREHENSIVE INCOME $ 49,989   $ 61,594         COMPREHENSIVE INCOME ATTRIBUTABLE TO THE TRUST $ 48,311   $ 59,935 The accompanying notes are an integral part of these consolidated statements.  4 Table of Contents Federal Realty Investment Trust Consolidated Statements of Shareholders’ Equity  For the  Three  Months Ended  March 31, 2020 (Unaudited)   Shareholders’ Equity of the Trust           Preferred Shares   Common Shares   Additional Paid-in Capital                                                                                                                                  Accumulated Dividends in Excess of Net Income   Accumulated Other Comprehensive Loss   Noncontrolling Interests   Total Shareholders' Equity   Shares   Amount   Shares   Amount             (In thousands, except share data) BALANCE AT DECEMBER 31, 2019 405,896   $ 159,997   75,540,804   $ 759   $ 3,166,522   $ ( 791,124 )   $ ( 813 )   $ 100,791   $ 2,636,132 January 1, 2020 adoption of new accounting standard - See Note 2 —   —   —   —   —   ( 510 )   —   —   ( 510 ) Net income, excluding $1,015 attributable to redeemable noncontrolling interests —   —   —   —   —   54,763   —   663   55,426 Other comprehensive loss - change in fair value of interest rate swaps —   —   —   —   —   —   ( 6,452 )   —   ( 6,452 ) Dividends declared to common shareholders ($1.05 per share) —   —   —   —   —   ( 79,403 )   —   —   ( 79,403 ) Dividends declared to preferred shareholders —   —   —   —   —   ( 2,010 )   —   —   ( 2,010 ) Distributions declared to noncontrolling interests —   —   —   —   —   —   —   ( 783 )   ( 783 ) Common shares issued, net —   —   13   —   2   —   —   —   2 Shares issued under dividend reinvestment plan —   —   3,834   —   446   —   —   —   446 Share-based compensation expense, net of forfeitures —   —   110,066   1   3,941   —   —   —   3,942 Shares withheld for employee taxes —   —   ( 32,213 )   —   ( 3,982 )   —   —   —   ( 3,982 ) Redemption of OP units —   —   —   —   ( 30 )   —   —   ( 3,290 )   ( 3,320 ) Contributions from noncontrolling interests —   —   —   —   —   —   —   120   120 BALANCE AT MARCH 31, 2020 405,896   $ 159,997   75,622,504   $ 760   $ 3,166,899   $ ( 818,284 )   $ ( 7,265 )   $ 97,501   $ 2,599,608 BALANCE AT DECEMBER 31, 2018 405,896   $ 159,997   74,249,633   $ 745   $ 3,004,442   $ ( 818,877 )   $ ( 416 )   $ 121,439   $ 2,467,330 January 1, 2019 adoption of new accounting standard - See Note 2 —   —   —   —   —   ( 7,098 )   —   —   ( 7,098 ) Net income, excluding $876 attributable to redeemable noncontrolling interests —   —   —   —   —   60,144   —   783   60,927 Other comprehensive loss - change in fair value of interest rate swaps —   —   —   —   —   —   ( 209 )   —   ( 209 ) Dividends declared to common shareholders ($1.02 per share) —   —   —   —   —   ( 76,106 )   —   —   ( 76,106 ) Dividends declared to preferred shareholders —   —   —   —   —   ( 2,010 )   —   —   ( 2,010 ) Distributions declared to noncontrolling interests —   —   —   —   —   —   —   ( 1,266 )   ( 1,266 ) Common shares issued, net —   —   446,132   5   59,348   —   —   —   59,353 Shares issued under dividend reinvestment plan —   —   4,273   —   528   —   —   —   528 Share-based compensation expense, net of forfeitures —   —   100,586   1   3,860   —   —   —   3,861 Shares withheld for employee taxes —   —   ( 32,686 )   —   ( 4,414 )   —   —   —   ( 4,414 ) Conversion and redemption of OP units —   —   69,046   1   7,550   —   —   ( 7,551 )   — Adjustment to redeemable noncontrolling interests —   —   —   —   667   —   —   —   667 BALANCE AT MARCH 31, 2019 405,896   $ 159,997   74,836,984   752   $ 3,071,981   $ ( 843,947 )   $ ( 625 )   $ 113,405   $ 2,501,563 The accompanying notes are an integral part of these consolidated statements.  5 Table of Contents Federal Realty Investment Trust Consolidated Statements of Cash Flows   (Unaudited)   Three Months Ended March 31,   2020   2019   (In thousands) OPERATING ACTIVITIES   Net income $ 56,441   $ 61,803 Adjustments to reconcile net income to net cash provided by operating activities:       Depreciation and amortization 62,188   59,622 Loss from partnerships 1,164   1,434 Other, net ( 110 )   2,230 Changes in assets and liabilities, net of effects of acquisitions and dispositions:       Decrease (increase) in accounts receivable, net 3,012   ( 1,245 ) Decrease in prepaid expenses and other assets 8,618   1,168 Decrease in accounts payable and accrued expenses ( 3,619 )   ( 6,815 ) Decrease in security deposits and other liabilities ( 8,945 )   ( 13,278 ) Net cash provided by operating activities 118,749   104,919 INVESTING ACTIVITIES       Acquisition of real estate ( 7,109 )   ( 25,176 ) Capital expenditures - development and redevelopment ( 106,572 )   ( 63,380 ) Capital expenditures - other ( 15,792 )   ( 14,061 ) Costs associated with property sold under threat of condemnation ( 17,412 )   — Proceeds from sale of real estate —   6,106 Investment in partnerships ( 136 )   ( 300 ) Distribution from partnerships in excess of earnings 849   983 Leasing costs ( 5,001 )   ( 8,259 ) (Issuance) repayment of mortgage and other notes receivable, net ( 659 )   50 Net cash used in investing activities ( 151,832 )   ( 104,037 ) FINANCING ACTIVITIES       Net borrowings under revolving credit facility, including costs 990,000   20,000 Repayment of mortgages, finance leases and notes payable ( 1,524 )   ( 21,718 ) Issuance of common shares, net of costs 19   59,427 Dividends paid to common and preferred shareholders ( 80,898 )   ( 77,296 ) Shares withheld for employee taxes ( 3,982 )   ( 4,414 ) Contributions from noncontrolling interests —   106 Distributions to and redemptions of noncontrolling interests ( 4,720 )   ( 3,107 ) Net cash provided by (used in) financing activities 898,895   ( 27,002 ) Increase (decrease) in cash, cash equivalents and restricted cash 865,812   ( 26,120 ) Cash, cash equivalents, and restricted cash at beginning of year 153,614   108,332 Cash, cash equivalents, and restricted cash at end of period $ 1,019,426   $ 82,212 The accompanying notes are an integral part of these consolidated statements.  6 Table of Contents Federal Realty Investment Trust Notes to Consolidated Financial Statements March 31, 2020   (Unaudited) NOTE 1— BUSINESS AND ORGANIZATION Federal Realty Investment Trust (the “Trust”) is an equity real estate investment trust (“REIT”) specializing in the ownership, management, and redevelopment of retail and mixed-use properties. Our properties are located primarily in densely populated and affluent communities in strategically selected metropolitan markets in the Mid-Atlantic and Northeast regions of the United States, California, and South Florida. As of  March 31, 2020 , we owned or had a majority interest in community and neighborhood shopping centers and mixed-use properties which are operated as  104  predominantly retail real estate projects. We operate in a manner intended to enable us to qualify as a REIT for federal income tax purposes. A REIT that distributes at least  90 %  of its taxable income to its shareholders each year and meets certain other conditions is not taxed on that portion of its taxable income which is distributed to its shareholders. Therefore, federal income taxes on our taxable income have been and are generally expected to be immaterial. We are obligated to pay state taxes, generally consisting of franchise or gross receipts taxes in certain states. Such state taxes also have not been material. Impacts of COVID-19 Pandemic In March 2020, the World Health Organization declared the outbreak of novel coronavirus disease (“COVID-19”) as a pandemic. While we currently expect the impact to our properties is temporary in nature, the extent of the future effects of COVID-19 on our business, results of operations, cash flows, and growth prospects is highly uncertain and will ultimately depend on future developments, none of which can be predicted with any certainty.   NOTE 2— SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Basis of presentation The accompanying consolidated balance sheet as of  December 31, 2019 , which has been derived from audited financial statements, and unaudited interim consolidated financial statements have been prepared pursuant to the rules and regulations of the Securities and Exchange Commission. Certain information and note disclosures normally included in annual financial statements prepared in accordance with accounting principles generally accepted in the United States (GAAP) have been omitted pursuant to those rules and regulations, although we believe that the disclosures made are adequate to make the information not misleading. It is suggested that these financial statements be read in conjunction with the financial statements and notes thereto included in our latest Annual Report on Form 10-K. In the opinion of management, all adjustments (consisting of normal, recurring adjustments) necessary for a fair presentation for the periods presented have been included. The results of operations for the  three  months ended  March 31, 2020  are not necessarily indicative of the results that may be expected for the full year. Principles of Consolidation Our consolidated financial statements include the accounts of the Trust, its corporate subsidiaries, and all entities in which the Trust has a controlling interest or has been determined to be the primary beneficiary of a variable interest entity (“VIE”). The equity interests of other investors are reflected as noncontrolling interests or redeemable noncontrolling interests. All significant intercompany transactions and balances are eliminated in consolidation. We account for our interests in joint ventures, which we do not control, using the equity method of accounting. Use of Estimates The preparation of financial statements in conformity with accounting principles generally accepted in the United States of America, referred to as “GAAP,” requires management to make estimates and assumptions that in certain circumstances affect the reported amounts of assets and liabilities, disclosure of contingent assets and liabilities, and revenues and expenses. These estimates are prepared using management’s best judgment, after considering past, current and expected events and economic conditions. Actual results could differ from these estimates.  7 Table of Contents Recently Adopted and Issued Accounting Pronouncements Standard   Description   Effect on the financial statements or significant matters           Adopted on January 1, 2020:     Financial Instruments - Credit Losses (Topic 326) and related updates:   ASU 2016-13, June     2016,  Financial    Instruments - Credit    Losses (Topic 326)   ASU 2018-19,    November 2018,       Codification    improvements to    Topic 326,    Financial    Instruments - Credit    Losses   This ASU changes the impairment model for most financial assets and certain other instruments, requiring the use of an "expected credit loss" model and adding more disclosure requirements. ASU 2018-19 clarifies that impairment of of receivables arising from operating leases should be accounted for in accordance with Topic 842, Leases.   Upon adoption of this standard, we recorded expected losses of $0.5 million in opening accumulated dividends in excess of net income. During the three months ended March 31, 2020, we recorded additional expected losses of $0.4 million, which are included in rental expenses.            ASU 2018-15, August 2018,  Intangibles - Goodwill and Other Internal Use Software: Customers Accounting for Implementation Costs Incurred in a Cloud Computing Arrangement That Is a Service Contract    This ASU requires a customer in a cloud computing arrangement (i.e. hosting arrangement) that is a service contract to follow the internal-use software guidance in ASC 350-40 to determine which implementation costs to capitalize as assets. Capitalized implementation costs related to a hosting arrangement that is a service contract will be amortized over the term of the hosting arrangement. Entities will expense costs during the preliminary project and post-implementation stages as they are incurred. The guidance can be applied prospectively to all implementation costs incurred after the date of adoption or retrospectively in accordance with ASC 250-10-45-5 through ASC 250-10-45-10.   The adoption of this standard does not have a significant impact to our consolidated financial statements.           Issued in 2020:     ASU 2020-04, March 2020,  Reference Rate Reform (Topic 848)   This ASU provides companies with optional practical expedients to ease the accounting burden for contract modifications associated with transitioning away from LIBOR and other interbank offered rates that are expected to be discontinued as part of reference rate reform.  For hedges, the guidance generally allows changes to the reference rate and other critical terms without having to de-designate the hedging relationship, as well as allows the shortcut method to continue to be applied. For contract modifications, changes in the reference rate or other critical terms will be treated as a continuation of the prior contract. This guidance can be applied immediately, however, is generally only available through December 31, 2022.   We are still evaluating the impact of reference rate reform and whether we will apply any of these practical expedients. In April 2020, the FASB issued interpretive guidance relating to the accounting for lease concessions provided as a result of COVID-19. In this guidance, entities can elect not to apply lease modification accounting with respect to such lease concessions and instead, treat the concession as if it was a part of the existing contract. This guidance is only applicable to COVID-19 related lease concessions that do not result in a substantial increase in the rights of the lessor or the obligations of the lessee. We are currently   8 Table of Contents evaluating the impact of this guidance and whether we will make this policy election for lease concessions such as rent deferrals for the quarter ended June 30, 2020. Consolidated Statements of Cash Flows—Supplemental Disclosures The following tables provide supplemental disclosures related to the Consolidated Statements of Cash Flows:   Three Months Ended   March 31,   2020   2019   (In thousands) SUPPLEMENTAL DISCLOSURES:       Total interest costs incurred $ 34,159   $ 32,580 Interest capitalized ( 5,714 )   ( 4,547 ) Interest expense $ 28,445   $ 28,033 Cash paid for interest, net of amounts capitalized $ 29,405   $ 32,485 Cash paid for income taxes $ 4   $ 7 NON-CASH INVESTING AND FINANCING TRANSACTIONS:       DownREIT operating partnership units issued with acquisition $ 18,920   $ — Mortgage loans assumed with acquisition $ 8,903   $ — DownREIT operating partnership units redeemed for common shares $ —   $ 7,551 Shares issued under dividend reinvestment plan $ 429   $ 455   March 31,   December 31,   2020   2019   (In thousands) RECONCILIATION OF CASH, CASH EQUIVALENTS, AND RESTRICTED CASH:       Cash and cash equivalents $ 994,688   $ 127,432 Restricted cash (1) 24,738   26,182 Total cash, cash equivalents, and restricted cash $ 1,019,426   $ 153,614 (1) Restricted cash balances are included in "prepaid expenses and other assets" on our consolidated balance sheets. NOTE 3— REAL ESTATE On  January 10, 2020 , we acquired a  49,000  square foot shopping center in Fairfax, Virginia for  $ 22.3  million . This property is adjacent to, and will be operated as part of our Fairfax Junction property. This purchase price was paid with a combination of cash and the issuance of  163,322  downREIT operating partnership units. Approximately  $ 0.5  million  and  $ 0.4  million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. On  February 12, 2020 , we acquired two buildings totaling  12,000  square feet in Hoboken, New Jersey for  $ 14.3  million , including the assumption of  $ 8.9  million  of mortgage debt. This acquisition is in addition to the 37 buildings previously acquired, and was completed through the joint venture that was formed in 2019, for which we own a  90 %  interest. Less than  $ 0.1  million  and approximately  $ 3.3  million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. NOTE 4— DEBT In connection with the two buildings we acquired in Hoboken, New Jersey on  February 12, 2020 , we assumed two mortgage loans with a net face amount of   $ 8.9  million  and a fair value of  $ 9.0  million . The mortgage loans bear interest at  4.00 %  and mature on  July 27, 2027 . In March 2020, in order to strengthen our financial position and balance sheet, to maximize our liquidity, and to provide maximum financial flexibility to continue our business initiatives as the effects of COVID-19 continue to evolve, we borrowed  $ 990.0  million  under our revolving credit facility, representing a draw-down of almost the entirety of our  $ 1.0  billion  revolving credit facility, which has a maturity date of January 19, 2024. Consequently, during the  three  months ended  March 31, 2020 , the maximum amount of borrowings outstanding under our revolving credit facility was  $ 990.0  million , and the weighted average   9 Table of Contents interest rate, before amortization of debt fees, was  1.7 %  . During the  three  months ended  March 31, 2020 , the weighted average borrowings outstanding was  $ 143.7  million . Our revolving credit facility and certain notes require us to comply with various financial covenants, including the maintenance of minimum shareholders' equity and debt coverage ratios and a maximum ratio of debt to net worth. As of  March 31, 2020 , we were in compliance with all default related debt covenants. NOTE 5— FAIR VALUE OF FINANCIAL INSTRUMENTS Except as disclosed below, the carrying amount of our financial instruments approximates their fair value. The fair value of our mortgages payable, notes payable and senior notes and debentures is sensitive to fluctuations in interest rates. Quoted market prices (Level 1) were used to estimate the fair value of our marketable senior notes and debentures and discounted cash flow analysis (Level 2) is generally used to estimate the fair value of our mortgages and notes payable. Considerable judgment is necessary to estimate the fair value of financial instruments. The estimates of fair value presented herein are not necessarily indicative of the amounts that could be realized upon disposition of the financial instruments.  A summary of the carrying amount and fair value of our mortgages payable, notes payable and senior notes and debentures is as follows:   March 31, 2020   December 31, 2019 Carrying Value   Fair Value   Carrying Value   Fair Value (In thousands) Mortgages and notes payable $ 1,546,565   $ 1,543,402   $ 549,460   $ 562,049 Senior notes and debentures $ 2,807,848   $ 2,968,904   $ 2,807,134   $ 3,001,216 As of  March 31, 2020 , we have  two  interest rate swap agreements with notional amounts of  $ 56.5  million  that are measured at fair value on a recurring basis. The interest rate swap agreements fix the interest rate on  $ 56.5  million  of mortgage payables at  3.67 %  through December 15, 2029. The fair values of the interest rate swap agreements are based on the estimated amounts we would receive or pay to terminate the contracts at the reporting date and are determined using interest rate pricing models and interest rate related observable inputs. The fair value of our swaps at  March 31, 2020  was a liability of  $ 5.6  million  and is included in "other liabilities and deferred credits" on our consolidated balance sheet. For the three months ended  March 31, 2020 , the value of our interest rate swaps decreased  $ 5.7  million  (including less than  $ 0.1  million  reclassified from other comprehensive loss to interest expense).  A summary of our financial (liabilities) assets that are measured at fair value on a recurring basis, by level within the fair value hierarchy is as follows:   March 31, 2020   December 31, 2019   Level 1   Level 2   Level 3   Total   Level 1   Level 2   Level 3   Total   (In thousands) Interest rate swaps $ —   $ ( 5,555 )   $ —   $ ( 5,555 )   $ —   $ 130   $ —   $ 130 One of our equity method investees has  two  interest rate swaps which qualify for cash flow hedge accounting. For the  three  months ended  March 31, 2020 , our share of the change in fair value of the related swaps included in "accumulated other comprehensive loss" was  $ 0.8  million .    NOTE 6— COMMITMENTS AND CONTINGENCIES We are sometimes involved in lawsuits, warranty claims, and environmental matters arising in the ordinary course of business. Management makes assumptions and estimates concerning the likelihood and amount of any potential loss relating to these matters. We are currently a party to various legal proceedings. We accrue a liability for litigation if an unfavorable outcome is probable and the amount of loss can be reasonably estimated. If an unfavorable outcome is probable and a reasonable estimate of the loss is a range, we accrue the best estimate within the range; however, if no amount within the range is a better estimate than any other amount, the minimum within the range is accrued. Legal fees related to litigation are expensed as incurred. We do not believe that the ultimate outcome of these matters, either individually or in the aggregate, could have a material adverse effect on our financial position or overall trends in results of operations; however, litigation is subject to inherent uncertainties. Also under our leases, tenants are typically obligated to indemnify us from and against all liabilities, costs and expenses imposed upon or asserted against us (1) as owner of the properties due to certain matters relating to the operation of the properties by the tenant, and (2) where appropriate, due to certain matters relating to the ownership of the properties prior to their acquisition by us.  10 Table of Contents Under the terms of certain partnership agreements, the partners have the right to exchange their operating partnership units for cash or common shares, at our option. A total of  744,617  downREIT operating partnership units are outstanding which have a total fair value of approximately  $ 55.6  million , which is calculated by multiplying the outstanding number of downREIT partnership units by our closing stock price on  March 31, 2020 . NOTE 7— SHAREHOLDERS’ EQUITY The following table provides a summary of dividends declared and paid per share:   Three Months Ended March 31,   2020   2019   Declared   Paid   Declared   Paid Common shares $ 1.050   $ 1.050   $ 1.020   $ 1.020 5.417% Series 1 Cumulative Convertible Preferred shares $ 0.339   $ 0.339   $ 0.339   $ 0.339 5.0% Series C Cumulative Redeemable Preferred shares (1) $ 0.313   $ 0.313   $ 0.313   $ 0.313 (1) Amount represents dividends per depository share, each representing 1/1000th of a share. We have an at-the-market (“ATM”) equity program in which we may from time to time offer and sell common shares having an aggregate offering price of up to  $ 400.0  million . We intend to use the net proceeds to fund potential acquisition opportunities, fund our development and redevelopment pipeline, repay amounts outstanding under our revolving credit facility and/or for general corporate purposes. As of  March 31, 2020 , we had the capacity to issue up to  $ 128.3  million  in common shares under our ATM equity program. NOTE 8— SHARE-BASED COMPENSATION PLANS A summary of share-based compensation expense included in net income is as follows:   Three Months Ended   March 31,   2020   2019   (In thousands) Grants of common shares and options $ 3,942   $ 3,861 Capitalized share-based compensation ( 332 )   ( 226 ) Share-based compensation expense $ 3,610   $ 3,635  11 Table of Contents NOTE 9—OPERATING & FINANCE LEASES The following table provides additional information on our operating and finance leases where we are the lessee:   Three Months Ended   March 31,   2020   2019   (In thousands) LEASE COST:       Finance lease cost:            Amortization of right-of-use assets $ 321   $ 321      Interest on lease liabilities 1,456   1,456 Operating lease cost 1,559   1,504 Variable lease cost 87   91 Total lease cost $ 3,423   $ 3,372         OTHER INFORMATION:       Cash paid for amounts included in the measurement of lease liabilities            Operating cash flows for finance leases $ 1,433   $ 1,460      Operating cash flows for operating leases $ 1,550   $ 1,511      Financing cash flows for finance leases $ 11   $ 10           March 31,   2020   2019 Weighted-average remaining lease term - finance leases 18.0  years   18.9  years Weighted-average remaining lease term - operating leases 53.2  years   53.7  years Weighted-average discount rate - finance leases 8.0 %   8.0 % Weighted-average discount rate - operating leases 4.4 %   4.5 % NOTE 10— EARNINGS PER SHARE We have calculated earnings per share (“EPS”) under the two-class method. The two-class method is an earnings allocation methodology whereby EPS for each class of common stock and participating securities is calculated according to dividends declared and participation rights in undistributed earnings. For the  three  months ended  March 31, 2020  and  2019 , we had  0.2  million  weighted average unvested shares outstanding, which are considered participating securities. Therefore, we have allocated our earnings for basic and diluted EPS between common shares and unvested shares; the portion of earnings allocated to the unvested shares is reflected as “earnings allocated to unvested shares” in the reconciliation below. In the dilutive EPS calculation, dilutive stock options were calculated using the treasury stock method consistent with prior periods. There were  682  anti-dilutive stock options for the  three  months ended  March 31, 2020  and  2019 . The conversions of downREIT operating partnership units and  5.417 %  Series 1 Cumulative Convertible Preferred Shares are anti-dilutive for all periods presented and accordingly, have been excluded from the weighted average common shares used to compute diluted EPS.  12 Table of Contents   Three Months Ended   March 31,   2020   2019   (In thousands, except per share data) NUMERATOR       Net income $ 56,441   $ 61,803 Less: Preferred share dividends ( 2,010 )   ( 2,010 ) Less: Income from operations attributable to noncontrolling interests ( 1,678 )   ( 1,659 ) Less: Earnings allocated to unvested shares ( 247 )   ( 220 ) Net income available for common shareholders, basic and diluted $ 52,506   $ 57,914 DENOMINATOR       Weighted average common shares outstanding, basic and diluted 75,360   74,200         EARNINGS PER COMMON SHARE, BASIC AND DILUTED:       Net income available for common shareholders $ 0.70   $ 0.78 NOTE 11— SUBSEQUENT EVENT On  April 21, 2020 , we sold a building in Pasadena, California for  $ 16.1  million , which is included in "assets held for sale" on our consolidated balance sheet. On  May 6, 2020 , we entered into a  $ 400.0  million  unsecured term loan that matures on  May 6, 2021 , with one twelve month extension at our option. The loan bears interest at LIBOR plus 135 basis points based on our current credit rating. The net proceeds were used to reduce amounts outstanding on our  $ 1.0  billion  revolving credit facility. ITEM 2.    MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Forward-Looking Statements The following discussion should be read in conjunction with the consolidated interim financial statements and notes thereto appearing in Item 1 of this report and the more detailed information contained in our Annual Report on Form 10-K for the year ended  December 31, 2019  filed with the Securities and Exchange Commission (the “SEC”) on  February 10, 2020 . This Form 10-Q contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, Section 21E of the Securities Exchange Act of 1934 and the Private Securities Litigation Reform Act of 1995. When we refer to forward-looking statements or information, sometimes we use words such as “may,” “will,” “could,” “should,” “plans,” “intends,” “expects,” “believes,” “estimates,” “anticipates” and “continues.” Forward-looking statements are not historical facts or guarantees of future performance and involve certain known and unknown risks, uncertainties, and other factors, many of which are outside our control, that could cause actual results to differ materially from those we describe. Given these uncertainties, readers are cautioned not to place undue reliance on any forward-looking statements that we make, including those in this Quarterly Report on Form 10-Q. Except as may be required by law, we make no promise to update any of the forward-looking statements as a result of new information, future events or otherwise. You should carefully review the risks and the risk factors included in our Annual Report on Form 10-K for the year ended  December 31, 2019  and under Part II, Item 1A in this Quarterly Report on Form 10-Q, before making any investments in us. Overview We are an equity real estate investment trust (“REIT”) specializing in the ownership, management, and redevelopment of high quality retail and mixed-use properties located primarily in densely populated and affluent communities in strategically selected metropolitan markets in the Northeast and Mid-Atlantic regions of the United States, California, and South Florida. As of  March 31, 2020 , we owned or had a majority interest in community and neighborhood shopping centers and mixed-use properties which are operated as  104  predominantly retail real estate projects comprising approximately  24.1 million  square feet. In total, the real estate projects were  93.6%  leased and  91.5%  occupied at  March 31, 2020 .  13 Table of Contents Impacts of COVID-19 Pandemic In March 2020, the World Health Organization declared the outbreak of novel coronavirus disease (“COVID-19”) as a pandemic. Our Board of Trustees, as part of its risk oversight function, is regularly coordinating with management to assess the effects of the pandemic on our business and to determine appropriate courses of action to maintain the health and safety of our personnel, to strengthen our financial position and to adapt our business as appropriate. In response to the pandemic, we have taken a number of specific actions so far: • On March 16, 2020, we transitioned our work force to work remotely, canceled all non-essential business travel and have canceled company events, or are holding them remotely. • In March 2020, to strengthen our financial position and maximize our liquidity, we borrowed $990.0 million under our revolving credit facility representing a draw-down of almost the entirety of our $1.0 billion revolving credit facility. As of March 31, 2020, the outstanding balance under our revolving credit facility was $990.0 million, and our outstanding cash and cash equivalent balance was  $994.7 million . • We have paused construction activity at many of our construction projects including, without limitation, ongoing construction at Assembly Row, Santana Row, and other redevelopments and smaller projects. Construction activities continue at Pike & Rose and other redevelopments and smaller projects although at a slower pace as we observe COVID-19 safety protocols at all sites. The extent of the effects of COVID-19 on our business, results of operations, cash flows, and growth prospects is highly uncertain and will ultimately depend on future developments, none of which can be predicted with any certainty. See  Item 1A . Risk Factors. However, we believe the actions we are taking will help minimize interruptions to our operations and will put us in the best position to participate in the recovery when the time comes. Management and our Board of Trustees will continue to actively monitor the effects of the pandemic, including governmental directives in the jurisdictions in which we operate and the recommendations of public health authorities, and will, as needed, take further measures to adapt our business in the best interests of our shareholders and personnel. Business Continuity We were able to transition all but a limited number of essential employees to remote work and do not anticipate any adverse impact on our ability to continue to operate our business.  Transitioning to a largely remote workforce has not had any material adverse impact on our financial reporting systems, our internal controls or disclosure controls and procedures. Currently, we have a limited number of employees coming into offices as needed and have property employees visiting properties only as necessary to ensure that the properties with essential businesses that are open and operating are able to conduct business and serve their communities.  At this time, we have not laid off, furloughed, or terminated any employee in response to COVID-19, nor have we modified the compensation of any employee. The Compensation Committee of our Board of Trustees may reevaluate the performance goals and other aspects of the compensation arrangements of our executive officers later in 2020 as more information about the effects of COVID-19 become known.  2020 Property Acquisitions and Disposition On  January 10, 2020 , we acquired a  49,000  square foot shopping center in Fairfax, Virginia for  $22.3 million . This property is adjacent to, and will be operated as part of our Fairfax Junction property. This purchase price was paid with a combination of cash and the issuance of  163,322  downREIT operating partnership units. Approximately  $0.5 million  and  $0.4 million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. On  February 12, 2020 , we acquired two buildings totaling  12,000  square feet in Hoboken, New Jersey for  $14.3 million , including the assumption of  $8.9 million  of mortgage debt. This acquisition is in addition to the 37 buildings previously acquired, and was completed through the joint venture that was formed in 2019, for which we own a  90%  interest. Less than  $0.1 million  and approximately  $3.3 million  of net assets acquired were allocated to other assets for "above market leases," and other liabilities for "below market leases," respectively. On  April 21, 2020 , we sold a building in Pasadena, California for  $16.1 million , which is included in "assets held for sale" on our consolidated balance sheet. 2020 Debt and Equity Transactions In connection with the two buildings we acquired in Hoboken, New Jersey on  February 12, 2020 , we assumed two mortgage loans with a net face amount of   $8.9 million  and a fair value of  $9.0 million . The mortgage loans bears interest at  4.00%  and mature on  July 27, 2027 . In March 2020, in order to strengthen our financial position and balance sheet, to maximize our liquidity, and to provide maximum financial flexibility to continue our business initiatives as the effects of COVID-19 continue to evolve, we borrowed   14 Table of Contents $990.0 million  under our revolving credit facility, representing a draw-down of almost the entirety of our  $1.0 billion  revolving credit facility. On  May 6, 2020 , we entered into a  $400.0 million  unsecured term loan that matures on  May 6, 2021 , with one twelve month extension at our option. The loan bears interest at LIBOR plus 135 basis points, based on our current credit rating. The net proceeds were used to reduce amounts outstanding on our  $1.0 billion  revolving credit facility. We have an at-the-market (“ATM”) equity program in which we may from time to time offer and sell common shares having an aggregate offering price of up to  $400.0 million . We intend to use the net proceeds to fund potential acquisition opportunities, fund our development and redevelopment pipeline, repay amounts outstanding under our revolving credit facility and/or for general corporate purposes. As of  March 31, 2020 , we had the capacity to issue up to  $128.3 million  in common shares under our ATM equity program. Capitalized Costs Certain external and internal costs directly related to the development, redevelopment and leasing of real estate, including pre-construction costs, real estate taxes, insurance, construction costs and salaries and related costs of personnel directly involved, are capitalized. We capitalized certain external and internal costs related to both development and redevelopment activities of $114 million and $3 million, respectively, for the  three  months ended  March 31, 2020 , and $58 million and $2 million, respectively, for the  three  months ended  March 31, 2019 . We capitalized external and internal costs related to other property improvements of $13 million and $1 million, respectively, for the  three  months ended  March 31, 2020 , and $6 million and $1 million for the  three  months ended  March 31, 2019 . We capitalized external and internal costs related to leasing activities of $3 million and $1 million, respectively, for the  three  months ended  March 31, 2020 , and $8 million and less than $1 million, respectively, for the  three  months ended  March 31, 2019 . The amount of capitalized internal costs for salaries and related benefits for development and redevelopment activities, other property improvements, and leasing activities were $3 million, $1 million, and $1 million, respectively, for the  three  months ended  March 31, 2020  and $2 million, $1 million, and less than $1 million, respectively for the  three  months ended  March 31, 2019 . Total capitalized costs were $134 million and $76 million for the  three  months ended  March 31, 2020  and  2019 , respectively. Recently Adopted Accounting Pronouncements See Note 2 to the consolidated financial statements. Outlook Our long-term growth strategy is focused on growth in earnings, funds from operations, and cash flows primarily through a combination of the following: • growth in our comparable property portfolio, • growth in our portfolio from property development and redevelopments, and • expansion of our portfolio through property acquisitions. While the COVID-19 pandemic is impacting us in the short-term, our long-term focus has not changed. See our 10-K filed on February 13, 2020, for discussion of our our long-term strategies. The actions taken by federal, state and local governments to mitigate the spread of COVID-19 by ordering closure of non-essential businesses and ordering residents to generally stay at home have resulted in many of our tenants temporarily or even permanently closing their businesses, and/or expressing concerns about their ability to pay rent. These economic hardships have adversely impacted our business, and we expect them to have a negative effect on our financial results. We expect such negative effects to be considerably higher during the quarter ending June 30, 2020 than they were during the quarter ended March 31, 2020. As of April 30, 2020, approximately 11.3 million square feet of our tenants were closed as a result of governmental orders. With very few exceptions, our leases require tenants to continue to pay rent even while closed as a result of the pandemic. Most rents for March 2020 were paid prior to the time the closures were announced; however, many tenants did not pay rents and other charges due in April. We are currently working with many of our smaller tenants to defer payment of rent for some or all of April, May, and June to later in 2020, and in many cases into 2021. We are expecting that our rent collections will continue to be significantly below our tenants’ contractual rent obligations for so long as governmental orders require non-essential businesses to remain closed and residents to stay at home, which will adversely impact our results of operations. The extent of such impact will depend on future developments, which are highly uncertain and cannot be predicted. Depending upon the duration of tenant closures and the overall economic downturn resulting from COVID-19, we may find that even deferred rents are difficult to collect, and we may experience higher vacancies.  While the duration and severity of the economic impact resulting from COVID-19 is unknown, we seek to position the Trust to participate in any resulting economic recovery.   15 Table of Contents While construction has slowed or stopped due to governmental mandates as a result of COVID-19, we continue to have several development projects in process, or being delivered as follows: • In the 1 st  quarter of 2020, we delivered the fully leased eight story, 301,000 square foot office building at Santana Row.  • The first phase of construction on the 12 acres of land that we control across from Santana Row includes an eight story 376,000 square foot office building, with over 1,700 parking spaces. The building is expected to cost between $250 million and $270 million with openings beginning in 2022.  • Phase III of Assembly Row includes 277,000 square feet of office space (of which, 150,000 square feet is pre-leased), 56,000 square feet of retail space, 500 residential units, and over 800 additional parking spaces. The expected costs for Phase III are between $465 million and $485 million and is projected to open beginning in 2021. • At Pike & Rose, we are continuing construction on a 212,000 square foot office building (which includes 4,000 square feet of ground floor retail space), and will include over 600 additional parking spaces. The building is expected to cost between $128 million and $135 million and is projected to open beginning in 2020. • Throughout the portfolio, we currently have redevelopment projects underway with a projected total cost of approximately $315 million that we expect to stabilize over the next several years. The above includes our best estimates based on information currently known, however, the completion of construction, final costs, and the timing of openings will be dependent upon the duration of governmental restrictions and the duration and severity of the economic impacts of COVID-19. The development of future phases of Assembly Row, Pike & Rose and Santana Row will be pursued opportunistically based on, among other things, market conditions, tenant demand, and our evaluation of whether those phases will generate an appropriate financial return. At  March 31, 2020 , the leasable square feet in our properties was  93.6%  leased and  91.5%  occupied. The leased rate is higher than the occupied rate due to leased spaces that are being redeveloped or improved or that are awaiting permits and, therefore, are not yet ready to be occupied. Our occupancy and leased rates are subject to variability over time due to factors including acquisitions, the timing of the start and stabilization of our redevelopment projects, lease expirations and tenant closings and bankruptcies. Lease Rollovers For the  first quarter of   2020 , we signed leases for a total of 491,000 square feet of retail space including 466,000 square feet of comparable space leases (leases for which there was a prior tenant) at an average rental increase of 5% on a cash basis. New leases for comparable spaces were signed for 151,000 square feet at an average rental increase of 8% on a cash basis. Renewals for comparable spaces were signed for 315,000 square feet at an average rental increase of 3% on a cash basis. Tenant improvements and incentives for comparable spaces were $31.37 per square foot, of which, $88.61 per square foot was for new leases and $3.93 per square foot was for renewals for the  three  months ended  March 31, 2020 . The rental increases associated with comparable spaces generally include all leases signed for retail space in arms-length transactions reflecting market leverage between landlords and tenants during the period. The comparison between average rent for expiring leases and new leases is determined by including minimum rent and percentage rent paid on the expiring lease and minimum rent and in some instances, projections of first lease year percentage rent, to be paid on the new lease. In atypical circumstances, management may exercise judgment as to how to most effectively reflect the comparability of spaces reported in this calculation. The change in rental income on comparable space leases is impacted by numerous factors including current market rates, location, individual tenant creditworthiness, use of space, market conditions when the expiring lease was signed, capital investment made in the space and the specific lease structure. Tenant improvements and incentives include the total dollars committed for the improvement (fit out) of a space as it relates to a specific lease and, except for redevelopments, may also include base building costs (i.e. expansion, escalators or new entrances) which are required to make the space leasable. Incentives include amounts paid to tenants as inducement to sign a lease that do not represent building improvements. Costs related to redevelopments requires judgment by management in determining what reflects base building costs and thus, is not included in the "tenant improvements and incentives" amount. The leases signed in  2020  generally become effective over the following two years though some may not become effective until  2023  and beyond. Further, there is risk that some new tenants will not ultimately take possession of their space and that tenants for both new and renewal leases may not pay all of their contractual rent due to operating, financing or other matters. However, these increases do provide information about the tenant/landlord relationship and the potential increase we may achieve in rental income over time.  16 Table of Contents Historically, we have executed comparable space leases for 1.3 to 1.9 million square feet of retail space each year, however, we expect that volume and potentially rental rate increases for  2020  to be negatively impacted by the COVID-19 pandemic. Comparable Properties Throughout this section, we have provided certain information on a “comparable property” basis. Information provided on a comparable property basis includes the results of properties that we owned and operated for the entirety of both periods being compared except for properties that are currently under development or are being repositioned for significant redevelopment and investment. For the  three  months ended  March 31, 2020 , all or a portion of 97 properties were considered comparable properties and eight properties were considered non-comparable properties. For the  three  months ended  March 31, 2020 , two properties and two portions of properties were moved from non-comparable properties to comparable properties, one property was moved from comparable properties to non-comparable properties, and one property was moved from acquisitions to non-comparable properties, compared to the designations for the year ended  December 31, 2019 . While there is judgment surrounding changes in designations, we typically move non-comparable properties to comparable properties once they have stabilized, which is typically considered 90% physical occupancy or when the growth expected from the redevelopment has been included in the comparable periods. We typically remove properties from comparable properties when the repositioning of the asset has commenced and has or is expected to have a significant impact to property operating income within the calendar year. Acquisitions are moved to comparable properties once we have owned the property for the entirety of comparable periods and the property is not under development or being repositioned for significant redevelopment and investment.  RESULTS OF OPERATIONS - THREE MONTHS ENDED  MARCH 31, 2020  AND  2019             Change   2020   2019   Dollars   %   (Dollar amounts in thousands) Rental income $ 230,798   $ 231,492   $ (694 )   (0.3 )% Mortgage interest income 759   735   24   3.3  % Total property revenue 231,557   232,227   (670 )   (0.3 )% Rental expenses 44,312   44,260   52   0.1  % Real estate taxes 29,064   27,687   1,377   5.0  % Total property expenses 73,376   71,947   1,429   2.0  % Property operating income (1) 158,181   160,280   (2,099 )   (1.3 )% General and administrative expense (10,251 )   (9,565 )   (686 )   7.2  % Depreciation and amortization (62,188 )   (59,622 )   (2,566 )   4.3  % Operating income 85,742   91,093   (5,351 )   (5.9 )% Other interest income 308   177   131   74.0  % Interest expense (28,445 )   (28,033 )   (412 )   1.5  % Loss from partnerships (1,164 )   (1,434 )   270   (18.8 )% Total other, net (29,301 )   (29,290 )   (11 )   —  % Net income 56,441   61,803   (5,362 )   (8.7 )% Net income attributable to noncontrolling interests (1,678 )   (1,659 )   (19 )   1.1  % Net income attributable to the Trust $ 54,763   $ 60,144   $ (5,381 )   (8.9 )% (1) Property operating income is a non-GAAP measure that consists of rental income and mortgage interest income, less rental expenses and real estate taxes. This measure is used internally to evaluate the performance of property operations and we consider it to be a significant measure. Property operating income should not be considered an alternative measure of operating results or cash flow from operations as determined in accordance with GAAP. Property Revenues Total property revenue  decreased   $0.7 million , or  0.3% , to  $231.6 million  in the  three  months ended  March 31, 2020  compared to  $232.2 million  in the  three  months ended  March 31, 2019 . The percentage occupied at our shopping centers was  91.5%  at  March 31, 2020  compared to 93.0% at  March 31, 2019 . Changes in the components of property revenue are discussed below.  17 Table of Contents Rental Income Rental income consists primarily of minimum rent, cost reimbursements from tenants and percentage rent. Rental income  decreased   $0.7 million , or  0.3% , to  $230.8 million  in the  three  months ended  March 31, 2020  compared to  $231.5 million  in the  three  months ended  March 31, 2019  due primarily to the following: • a decrease of $4.6 million from comparable properties due primarily to higher to collectibility adjustments of $2.7 million which is primarily the result of COVID-19 impacts, lower lease termination fees of $2.7 million,  lower recoveries of $2.0 million primarily the result of lower snow removal expense, and lower average occupancy of approximately $1.9 million, partially offset by higher rental rates of approximately $4.6 million and, • a decrease of $3.6 million from our 2019 property sales, partially offset by, • an increase of $5.0 million from acquisitions of Hoboken during the second half of 2019 and early 2020, Georgetowne Shopping Center in November 2019, and Fairfax Junction in February 2019 and January 2020 and,  • an increase of $2.4 million from non-comparable properties due primarily to the openings of our new office building at Santana Row in early 2020 and Phase II at Assembly Row and Pike & Rose, and the opening of one of our retail redevelopments, partially offset by redevelopment related occupancy decreases at three properties. Property Expenses Total property expenses  increased   $1.4 million , or  2.0% , to  $73.4 million  in the  three  months ended  March 31, 2020  compared to  $71.9 million  in the  three  months ended  March 31, 2019 . Changes in the components of property expenses are discussed below. Rental Expenses Rental expenses were  $44.3 million  for both the  three  months ended  March 31, 2020  and  2019 , with the minimal increase driven by the following: • an increase of $0.9 million from acquisitions of Hoboken during the second half of 2019 and early 2020, Georgetowne Shopping Center in November 2019, and Fairfax Junction in February 2019 and January 2020, and • an increase of $0.5 million from non-comparable properties due primarily to the opening of our new office building at Santana Row in early 2020, which were offset by, • a decrease of $1.2 million from comparable properties due primarily to lower snow removal expense partially offset by higher repairs and maintenance costs and higher non-recoverable operating expenses, and • a decrease of $0.5 million from our 2019 property sales. As a result of the changes in rental income and rental expenses as discussed above, rental expenses as a percentage of rental income increased to  19.2%  in the  three  months ended  March 31, 2020  from  19.1%  in the  three  months ended  March 31, 2019 .  Real Estate Taxes Real estate tax expense increased  $1.4 million , or  5.0% , to  $29.1 million  in the  three  months ended  March 31, 2020  compared to  $27.7 million  in the  three  months ended  March 31, 2019 . This increase is primarily due to the following: • an increase of $0.8 million from acquisitions of Hoboken during the second half of 2019 and early 2020, Georgetowne Shopping Center in November 2019, and Fairfax Junction in February 2019 and January 2020, • an increase of $0.4 million from comparable properties due primarily to higher assessments, and • an increase of $0.4 million from non-comparable properties due primarily to the opening of our new office building at Santana Row in early 2020, partially offset by, • a decrease of $0.3 million from our 2019 property sales. Property Operating Income Property operating income  decreased   $2.1 million , or  1.3% , to  $158.2 million  in the  three  months ended  March 31, 2020  compared to  $160.3 million  in the  three  months ended  March 31, 2019 . This decrease is due primarily to higher collectibility   18 Table of Contents adjustments largely the result of COVID-19 impacts, lower lease termination fee income, and property sales, partially offset by 2019 acquisitions and the opening of our new office building at Santana Row in early 2020. Other Operating General and Administrative General and administrative expense increased  $0.7 million , or  7.2% , to  $10.3 million  in the  three  months ended  March 31, 2020  from  $9.6 million  in the  three  months ended  March 31, 2019 . This increase is due primarily to higher personnel related costs. Depreciation and Amortization Depreciation and amortization expense increased  $2.6 million , or  4.3% , to  $62.2 million  in the  three  months ended  March 31, 2020  from  $59.6 million  in the  three  months ended  March 31, 2019 . This increase is due primarily to 2019 acquisitions and the opening of our new office building at Santana Row in early 2020, partially offset by 2019 property sales. Operating Income Operating income decreased  $5.4 million , or  5.9% , to  $85.7 million  in the  three  months ended  March 31, 2020  compared to  $91.1 million  in the  three  months ended  March 31, 2019 . This decrease is due primarily to higher collectibility adjustments largely the result of COVID-19 impacts, lower lease termination fee income, and property sales, partially offset by 2019 acquisitions. Other Interest Expense Interest expense  increased   $0.4 million , or  1.5% , to  $28.4 million  in the  three  months ended  March 31, 2020  compared to  $28.0 million  in the  three  months ended  March 31, 2019 . This increase is due primarily to the following: • an increase of $1.6 million due to higher weighted average borrowings primarily from the $400 million issuance of our 3.20% notes in 2019 and $106.9 million of mortgage loans associated with our Hoboken acquisitions, partially offset by the repayment of our $275.0 million term loan in June 2019, and • an increase of $0.6 million from higher borrowings on our revolving credit facility in response to the COVID-19 pandemic (see further discussion in Note 4 to our consolidated financial statements), partially offset by, • an increase of $1.2 million capitalized interest, primarily attributable to the development of Phase III of Assembly Row and Pike & Rose, and • a decrease of $0.6 million due to a lower overall weighted average borrowing rate. Gross interest costs were $34.2 million and $32.6 million in the  three  months ended  March 31, 2020  and  2019 , respectively. Capitalized interest was $5.7 million and $4.5 million for the  three  months ended  March 31, 2020  and  2019 , respectively.  19 Table of Contents Liquidity and Capital Resources Due to the nature of our business and strategy, we typically generate significant amounts of cash from operations which is largely paid to our common and preferred shareholders in the form of dividends because as a REIT, we are generally required to make annual distributions to shareholders of at least  90%  of our taxable income. Remaining cash flow from operations after dividend payments is used to fund recurring and non-recurring capital projects (such as tenant improvements and redevelopments), and regular debt service requirements (including debt service relating to additional or replacement debt, as well as scheduled debt maturities). We maintain a $1.0 billion revolving credit facility to fund short term cash flow needs and also look to the public and private debt and equity markets, joint venture relationships, and property dispositions to fund capital expenditures on a long-term basis. While the COVID-19 impacts are unknown, we currently expect a short term decrease in cash from operations as our tenants are impacted by the pandemic and, while contractually obligated, some have not paid rent during April 2020 (see further discussion under the "Outlook" section of this Item 2). In order to strengthen our financial position and balance sheet, to maximize liquidity, and to provide maximum flexibility as the effects of the COVID-19 pandemic continue to evolve, in March 2020, we borrowed $990.0 million under our revolving credit facility, representing a draw-down of almost the entirety of our $1.0 billion credit facility. At  March 31, 2020 , we had cash and cash equivalents of  $994.7 million  and  $990.0 million  outstanding on our revolving credit facility. During the  three  months ended  March 31, 2020 , our weighted average borrowing rate on the revolving credit facility, before amortization of debt fees, was  1.7% . As of  March 31, 2020 , we had the capacity to issue up to  $128.3 million  in common shares under our ATM equity program.  Over the next 12 months, we have $314.2 million of debt maturing. Additionally, our overall capital requirements for the remainder of 2020 will depend upon the duration of government mandated closures and the overall economic impact of COVD-19, as well as general timing of our redevelopment and development activities. Given those impacts, we currently expect to see lower levels of capital investments in our properties under development and redevelopment compared to the quarter ended March 31, 2020 and recent years. We believe that the cash  on our balance sheet together with rents we collect will allow us to continue to operate our business in the near-term.  Given our past ability to access the capital markets, we also expect debt or equity to be available to us. We may also further delay the timing of certain development and redevelopment projects as well as limit future acquisitions, reduce our operating expenditures, or re-evaluate our dividend policy.  We continue to monitor governmental financial assistance programs being made available to address impacts of COVID-19 and may access one or more of these programs to supplement our liquidity if we qualify for them.   While the COVID-19 pandemic will negatively impact our business in the short term, we maintain our long term commitment to a conservative capital structure that will allow us to maintain strong debt service coverage and fixed-charge coverage ratios as part of our commitment to investment-grade debt ratings. Summary of Cash Flows   Three Months Ended March 31,   2020   2019   (In thousands) Cash provided by operating activities $ 118,749   $ 104,919 Cash used in investing activities (151,832 )   (104,037 ) Cash provided by (used in) financing activities 898,895   (27,002 ) Increase (decrease) in cash, cash equivalents and restricted cash 865,812   (26,120 ) Cash, cash equivalents and restricted cash, beginning of year 153,614   108,332 Cash, cash equivalents and restricted cash, end of period $ 1,019,426   $ 82,212 Net cash provided by operating activities increased  $13.8 million  to  $118.7 million  during the  three  months ended  March 31, 2020  from  $104.9 million  during the  three  months ended  March 31, 2019 . The increase was primarily attributable to lower prepaid expenses and timing of cash receipts, partially offset by lower net income before non-cash items. Net cash used in investing activities increased  $47.8 million  to  $151.8 million  during the  three  months ended  March 31, 2020  from  $104.0 million  during the  three  months ended  March 31, 2019 . The increase was primarily attributable to:  20 Table of Contents • a $44.9 million increase in capital expenditures as we continue to invest in Pike & Rose, Assembly Row, Santana Row and other redevelopments, • $17.4 million for costs paid in 2020 relating to the partial sale under threat of condemnation at San Antonio Center in 2019, and • $6.1 million in proceeds in 2019 from the sale of condominiums at our Assembly Row and Pike & Rose properties, partially offset by • an $18.1 million decrease in acquisition of real estate, primarily due to the February 2019 acquisition of Fairfax Junction, partially offset by the acquisition of two buildings in Hoboken, New Jersey in February 2020. Net cash provided by financing activities increased  $925.9 million  to  $898.9 million  during the  three  months ended  March 31, 2020  from  $27.0 million  used in the  three  months ended  March 31, 2019 . The increase was primarily attributable to: • a $970.0 million net increase in borrowings on our revolving credit facility to provide maximum flexibility and liquidity during the COVID-19 pandemic, and  • a $20.2 million decrease in repayment of mortgages, finance leases, and notes payable primarily due to the payoff of the mortgage loan on Rollingwood Apartments in January 2019, partially offset by  • a $59.4 million decrease in net proceeds from the issuance of common shares under our ATM program during the  three  months ended March 31, 2019.  21 Table of Contents Debt Financing Arrangements The following is a summary of our total debt outstanding as of  March 31, 2020 : Description of Debt Original Debt Issued   Principal Balance as of March 31, 2020   Stated Interest Rate as of              March 31, 2020   Maturity Date   (Dollar amounts in thousands)         Mortgages payable               Secured fixed rate               The Shops at Sunset Place Acquired   $ 61,585   5.62 %   September 1, 2020 29th Place Acquired   3,816   5.91 %   January 31, 2021 Sylmar Towne Center Acquired   16,532   5.39 %   June 6, 2021 Plaza Del Sol Acquired   8,183   5.23 %   December 1, 2021 The AVENUE at White Marsh 52,705   52,705   3.35 %   January 1, 2022 Montrose Crossing 80,000   67,025   4.20 %   January 10, 2022 Azalea Acquired   40,000   3.73 %   November 1, 2025 Bell Gardens Acquired   12,611   4.06 %   August 1, 2026 Plaza El Segundo 125,000   125,000   3.83 %   June 5, 2027 The Grove at Shrewsbury (East) 43,600   43,600   3.77 %   September 1, 2027 Brook 35 11,500   11,500   4.65 %   July 1, 2029 Hoboken (24 Buildings) (1) Acquired   56,450   LIBOR + 1.95%   December 15, 2029 Various Hoboken (14 Buildings) (2) Acquired   33,342   Various   Various through 2029 Chelsea Acquired   5,508   5.36 %   January 15, 2031 Hoboken (1 Building) (3) Acquired   16,796   3.75 %   July 1, 2042 Subtotal     554,653         Net unamortized premium and debt issuance costs   (1,840 )         Total mortgages payable, net     552,813         Notes payable               Revolving credit facility (4) 1,000,000   990,000   LIBOR + 0.775%   January 19, 2024 Various 7,239   3,812   11.31%   Various through 2028 Subtotal     993,812         Net unamortized debt issuance costs     (60 )         Total notes payable, net     993,752                         Senior notes and debentures               Unsecured fixed rate               2.55% notes 250,000   250,000   2.55 %   January 15, 2021 3.00% notes 250,000   250,000   3.00 %   August 1, 2022 2.75% notes 275,000   275,000   2.75 %   June 1, 2023 3.95% notes 300,000   300,000   3.95 %   January 15, 2024 7.48% debentures 50,000   29,200   7.48 %   August 15, 2026 3.25% notes 475,000   475,000   3.25 %   July 15, 2027 6.82% medium term notes 40,000   40,000   6.82 %   August 1, 2027 3.20% notes 400,000   400,000   3.20 %   June 15, 2029 4.50% notes 550,000   550,000   4.50 %   December 1, 2044 3.625% notes 250,000   250,000   3.625 %   August 1, 2046 Subtotal     2,819,200         Net unamortized discount and debt issuance costs   (11,352 )         Total senior notes and debentures, net     2,807,848                         Total debt, net     $ 4,354,413         _____________________ 1) On November 26, 2019, we entered into two interest rate swap agreements that fix the interest rate on this mortgage loan at 3.67%. 2) The interest rates on these mortgages range from 3.91% to 5.00%. 3) This mortgage loan has a fixed interest rate, however, the rate resets every five years until maturity. The current interest rate is fixed until July 1, 2022, and the loan is prepayable at par anytime after this date. 4) The maximum amount drawn under our revolving credit facility during the  three  months ended  March 31, 2020  was  $990.0 million , and the weighted average interest rate on borrowings under our revolving credit facility, before amortization of debt fees, was  1.7% .  22 Table of Contents Our revolving credit facility and other debt agreements include financial and other covenants that may limit our operating activities in the future. As of  March 31, 2020 , we were in compliance with all financial and other covenants related to our revolving credit facility and senior notes. Additionally, as of  March 31, 2020 , we were in compliance with all of the financial and other covenants that could trigger loan default on our mortgage loans. If we were to breach any of these financial and other covenants and did not cure the breach within an applicable cure period, our lenders could require us to repay the debt immediately and, if the debt is secured, could immediately begin proceedings to take possession of the property securing the loan. Many of our debt arrangements, including our public notes and our revolving credit facility, are cross-defaulted, which means that the lenders under those debt arrangements can put us in default and require immediate repayment of their debt if we breach and fail to cure a default under certain of our other debt obligations. As a result, any default under our debt covenants could have an adverse effect on our financial condition, our results of operations, our ability to meet our obligations and the market value of our shares. Our organizational documents do not limit the level or amount of debt that we may incur.  The following is a summary of our scheduled principal repayments as of  March 31, 2020 :     Unsecured   Secured   Total     (In thousands)   2020 $ 582   $ 64,963   $ 65,545   2021 250,680   31,756   282,436    2022 250,756   119,706   370,462    2023 275,775   3,549   279,324    2024 1,290,665 (1) 3,688   1,294,353    Thereafter 1,744,554   330,991   2,075,545      $ 3,813,012    $ 554,653   $ 4,367,665 (2) __________________ 1) Our $1.0 billion revolving credit facility matures on January 19, 2024 plus two six-month extensions at our option. As of  March 31, 2020 , there was  $990.0 million  outstanding under this credit facility. 2) The total debt maturities differ from the total reported on the consolidated balance sheet due to the unamortized net premium/discount and debt issuance costs on mortgage loans, notes payable, and senior notes as of  March 31, 2020 . Interest Rate Hedging We may use derivative instruments to manage exposure to variable interest rate risk. We generally enter into interest rate swaps to manage our exposure to variable interest rate risk and treasury locks to manage the risk of interest rates rising prior to the issuance of debt. We enter into derivative instruments that qualify as cash flow hedges and do not enter into derivative instruments for speculative purposes. Interest rate swaps associated with cash flow hedges are recorded at fair value on a recurring basis. Effectiveness of cash flow hedges is assessed both at inception and on an ongoing basis. The effective portion of changes in fair value of the interest rate swaps associated with cash flow hedges is recorded in other comprehensive loss which is included in accumulated other comprehensive loss on the balance sheet and statement of shareholders' equity. Cash flow hedges become ineffective if critical terms of the hedging instrument and the debt instrument do not perfectly match such as notional amounts, settlement dates, reset dates, calculation period and LIBOR rate. In addition, we evaluate the default risk of the counterparty by monitoring the credit-worthiness of the counterparty which includes reviewing debt ratings and financial performance. If a cash flow hedge is deemed ineffective, the ineffective portion of changes in fair value of the interest rate swaps associated with cash flow hedges is recognized in earnings in the period affected. As of  March 31, 2020 , we have two interest rate swap agreements that effectively fix the rate on a mortgage payable associated with our Hoboken portfolio at 3.67%. Our Assembly Row hotel joint venture is also a party to two interest rate swap agreements that effectively fix their debt at  5.206% . All swaps were designated and qualify as cash flow hedges. Hedge ineffectiveness has not impacted earnings as of  March 31, 2020 . REIT Qualification We intend to maintain our qualification as a REIT under Section 856(c) of the Code. As a REIT, we generally will not be subject to corporate federal income taxes on income we distribute to our shareholders as long as we satisfy certain technical requirements of the Code, including the requirement to distribute at least 90% of our taxable income to our shareholders.  23 Table of Contents Funds From Operations Funds from operations (“FFO”) is a supplemental non-GAAP financial measure of real estate companies’ operating performance. The National Association of Real Estate Investment Trusts (“NAREIT”) defines FFO as follows: net income, computed in accordance with U.S. GAAP, plus real estate related depreciation and amortization and excluding gains and losses on the sale of real estate or changes in control, net of tax, and impairment write-downs of certain real estate assets and investments in entities when the impairment is directly attributable to decreases in the value of depreciable real estate held by the entity. We compute FFO in accordance with the NAREIT definition, and we have historically reported our FFO available for common shareholders in addition to our net income and net cash provided by operating activities. It should be noted that FFO: • does not represent cash flows from operating activities in accordance with GAAP (which, unlike FFO, generally reflects all cash effects of transactions and other events in the determination of net income); • should not be considered an alternative to net income as an indication of our performance; and • is not necessarily indicative of cash flow as a measure of liquidity or ability to fund cash needs, including the payment of dividends. We consider FFO available for common shareholders a meaningful, additional measure of operating performance primarily because it excludes the assumption that the value of the real estate assets diminishes predictably over time, as implied by the historical cost convention of GAAP and the recording of depreciation. We use FFO primarily as one of several means of assessing our operating performance in comparison with other REITs. Comparison of our presentation of FFO to similarly titled measures for other REITs may not necessarily be meaningful due to possible differences in the application of the NAREIT definition used by such REITs. An increase or decrease in FFO available for common shareholders does not necessarily result in an increase or decrease in aggregate distributions because our Board of Trustees is not required to increase distributions on a quarterly basis. However, we must distribute at least  90%  of our annual taxable income to remain qualified as a REIT. Therefore, a significant increase in FFO will generally require an increase in distributions to shareholders although not necessarily on a proportionate basis. The reconciliation of net income to FFO available for common shareholders is as follows:   Three Months Ended March 31,   2020   2019   (In thousands, except per share data) Net income $ 56,441   $ 61,803 Net income attributable to noncontrolling interests (1,678 )   (1,659 ) Depreciation and amortization of real estate assets 56,046   53,489 Amortization of initial direct costs of leases 4,900   4,750 Funds from operations 115,709   118,383 Dividends on preferred shares (1,875 )   (1,875 ) Income attributable to operating partnership units 790   729 Income attributable to unvested shares (356 )   (344 ) Funds from operations available for common shareholders $ 114,268   $ 116,893 Weighted average number of common shares, diluted (1) 76,208   75,010         Funds from operations available for common shareholders, per diluted share $ 1.50   $ 1.56 _____________________ (1) The weighted average common shares used to compute FFO per diluted common share includes operating partnership units and our Series 1 preferred shares that were excluded from the computation of diluted EPS. Conversion of these operating partnership units and preferred shares is dilutive in the computation of FFO per diluted common share but is anti-dilutive for the computation of diluted EPS for the periods presented.  24 Table of Contents ITEM 3.    QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK Our use of financial instruments, such as debt instruments, subjects us to market risk which may affect our future earnings and cash flows, as well as the fair value of our assets. Market risk generally refers to the risk of loss from changes in interest rates and market prices. We manage our market risk by attempting to match anticipated inflow of cash from our operating, investing and financing activities with anticipated outflow of cash to fund debt payments, dividends to common and preferred shareholders, investments, capital expenditures and other cash requirements. We may enter into certain types of derivative financial instruments to further reduce interest rate risk. We use interest rate protection and swap agreements, for example, to convert some of our variable rate debt to a fixed-rate basis or to hedge anticipated financing transactions. We use derivatives for hedging purposes rather than speculation and do not enter into financial instruments for trading purposes.  Interest Rate Risk The following discusses the effect of hypothetical changes in market rates of interest on interest expense for our variable rate debt and on the fair value of our total outstanding debt, including our fixed-rate debt. Interest rate risk amounts were determined by considering the impact of hypothetical interest rates on our debt. Quoted market prices were used to estimate the fair value of our marketable senior notes and debentures and discounted cash flow analysis is generally used to estimate the fair value of our mortgages and notes payable. Considerable judgment is necessary to estimate the fair value of financial instruments. This analysis does not purport to take into account all of the factors that may affect our debt, such as the effect that a changing interest rate environment could have on the overall level of economic activity or the action that our management might take to reduce our exposure to the change. This analysis assumes no change in our financial structure. Fixed Interest Rate Debt The majority of our outstanding debt obligations (maturing at various times through 2046) have fixed interest rates which limit the risk of fluctuating interest rates. However, interest rate fluctuations may affect the fair value of our fixed rate debt instruments. At  March 31, 2020 , we had  $3.4 billion  of fixed-rate debt outstanding. If market interest rates used to calculate the fair value on our fixed-rate debt instruments at  March 31, 2020  had been  1.0%  higher, the fair value of those debt instruments on that date would have decreased by approximately  $243.1 million . If market interest rates used to calculate the fair value on our fixed-rate debt instruments at  March 31, 2020  had been  1.0%  lower, the fair value of those debt instruments on that date would have increased by approximately  $279.0 million . Variable Interest Rate Debt Generally, we believe that our primary interest rate risk is due to fluctuations in interest rates on our outstanding variable rate debt. At  March 31, 2020 , we had  $990.0 million  of variable rate debt outstanding on our revolving credit facility. Based upon this amount of variable rate debt and the specific terms, if market interest rates increased 1.0%, our annual interest expense would increase approximately $9.9 million with a corresponding decrease in our net income and cash flows for the year. Conversely, if market interest rates decreased 1.0%, our annual interest expense would decrease by approximately $9.9 million with a corresponding increase in our net income and cash flows for the year. ITEM 4.    CONTROLS AND PROCEDURES Periodic Evaluation and Conclusion of Disclosure Controls and Procedures An evaluation has been performed, under the supervision and with the participation of our management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of our disclosure controls and procedures as of  March 31, 2020 . Based on this evaluation, our management, including our Chief Executive Officer and Chief Financial Officer, concluded that our disclosure controls and procedures were effective as of  March 31, 2020  to provide reasonable assurance that information required to be disclosed in our reports filed or submitted under the Securities Exchange Act of 1934 is (i) recorded, processed, summarized and reported within the time periods specified in the rules and forms of the SEC and (ii) accumulated and communicated to the Trust’s management including its principal executive and principal financial officer as appropriate to allow timely decisions regarding required disclosure. Changes in Internal Control Over Financial Reporting There has been no change in our internal control over financial reporting during the quarterly period covered by this report that materially affected, or is reasonably likely to materially affect, our internal control over financial reporting.  25 Table of Contents PART II - OTHER INFORMATION ITEM 1.    LEGAL PROCEEDINGS There have been no material developments in any of our legal proceedings since the disclosure contained in our Annual Report to Form 10-K for the fiscal year ended  December 31, 2019 . ITEM 1A.    RISK FACTORS This Form 10-Q contains forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, Section 21E of the Securities Exchange Act of 1934 and the Private Securities Litigation Reform Act of 1995. When we refer to forward-looking statements or information, sometimes we use words such as “may,” “will,” “could,” “should,” “plans,” “intends,” “expects,” “believes,” “estimates,” “anticipates” and “continues.” While we attempt to identify, manage and mitigate risks and uncertainties associated with our business to the extent practical under the circumstances, some level of risk and uncertainty will always be present. . “Item 1A. Risk Factors” of our Annual Report to our Form 10-K for the year ended  December 31, 2019  filed with the SEC on  February 10, 2020  describes some of the risks and uncertainties associated with our business. These risks and uncertainties have the potential to materially affect our business, results of operations, financial condition, cash flows, projected results and future prospects. Except for the risk factor discussed below, we do not believe that there have been any material changes to the risk factors disclosed in our 2019 Annual Report. Natural disasters, climate change and public health crises, including the COVID-19 pandemic, could have an adverse impact on our cash flow and operating results. Climate change may add to the unpredictability and frequency of natural disasters and severe weather conditions and create additional uncertainty as to future trends and exposures. Certain of our operations are located in areas that are subject to natural disasters and severe weather conditions such as hurricanes, earthquakes, droughts, snow storms, floods and fires. The impact of climate change or the occurrence of natural disasters can delay new development projects, increase investment costs to repair or replace damaged properties, increase operating costs, create additional investment costs to make improvements to existing properties to comply with climate change regulations, increase future property insurance costs, and negatively impact the tenant demand for space. If insurance is unavailable to us or is unavailable on acceptable terms, or if our insurance is not adequate to cover business interruption or losses from these events, our earnings, liquidity or capital resources could be adversely affected. In addition, our business is subject to risks related to the effects of public health crises, epidemics and pandemics, including the COVID-19 pandemic. Such events could inhibit global, national and local economic activity; adversely affect trading activity in securities markets, which could negatively impact the trading prices of our common shares and debt securities and our ability to access the securities markets as a source of liquidity; adversely affect our tenants’ financial condition by limiting foot traffic and staffing at their businesses, which could affect their ability to pay rent and willingness to make new leasing commitments; reduce our cash flow, which could impact our ability to pay dividends or to service our debt; temporarily or permanently reduce the demand for retail or office space; interfere with our business operations by requiring our personnel to work remotely; increase the frequency of cyber-attacks; disrupt supply chains that could be important in our development and redevelopment activities; interfere with potential purchases and sales of properties; and have other direct and indirect effects that are difficult to predict. Such risks depend upon the nature and severity of the public health concern, as well as the extent and duration of government-mandated orders and personal decisions to limit travel, economic activity and personal interaction, none of which can be predicted with confidence. In particular, we cannot predict the duration of stay-at-home and other government orders instituted in response to the COVID-19 pandemic, which vary by jurisdiction, or the pandemics' short and long term economic effects, each of which could have a material adverse effect on our business. ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS Under the terms of various partnership agreements of certain of our affiliated limited partnerships, the interest of limited partners in those limited partnerships may be redeemed, subject to certain conditions, for cash or common shares, at our option. During the three months ended  March 31, 2020 , we redeemed 28,289 downREIT operating partnership units for cash. From time to time, we could be deemed to have repurchased shares as a result of shares withheld for tax purposes upon a stock compensation related vesting event. ITEM 3. DEFAULTS UPON SENIOR SECURITIES None.  26 Table of Contents ITEM 4.    MINE SAFETY DISCLOSURES Not applicable. ITEM 5. OTHER INFORMATION None. ITEM 6. EXHIBITS A list of exhibits to this Quarterly Report on Form 10-Q is set forth on the Exhibit Index immediately preceding such exhibits and is incorporated herein by reference.  27 Table of Contents EXHIBIT INDEX       Exhibit No.   Description       3.2   Amended and Restated Bylaws of Federal Realty Investment Trust dated February 12, 2003, as amended October 29, 2003, May 5, 2004, February 17, 2006, May 6, 2009, November 2, 2016, February 5, 2019, and April 2, 2020       31.1    Rule 13a-14(a) Certification of Chief Executive Officer (filed herewith)     31.2    Rule 13a-14(a) Certification of Principal Financial Officer (filed herewith)     32.1    Section 1350 Certification of Chief Executive Officer (filed herewith)     32.2    Section 1350 Certification of Principal Financial Officer (filed herewith)     101    The following materials from Federal Realty Investment Trust’s Quarterly Report on Form 10-Q for the quarter ended March 31, 2020, formatted in XBRL (Extensible Business Reporting Language): (1) the Consolidated Balance Sheets, (2) the Consolidated Statements of Comprehensive Income, (3) the Consolidated Statement of Shareholders’ Equity, (4) the Consolidated Statements of Cash Flows, and (5) Notes to Consolidated Financial Statements that have been detail tagged.       104   Cover Page Interactive Data File (formatted in Inline XBRL and contained in Exhibit 101)  28 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto authorized.     FEDERAL REALTY INVESTMENT TRUST     May 6, 2020   /s/    Donald C. Wood             Donald C. Wood,     President, Chief Executive Officer and Trustee     (Principal Financial and Executive Officer)         FEDERAL REALTY INVESTMENT TRUST     May 6, 2020   /s/    Daniel Guglielmone         Daniel Guglielmone,     Executive Vice President     Chief Financial Officer and Treasurer     (Principal Financial and Accounting Officer)      29 	 
+ 

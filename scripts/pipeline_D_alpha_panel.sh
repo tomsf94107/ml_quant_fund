@@ -70,7 +70,13 @@ if summary['dates_written'] == 0:
 # ── Stage 3: Verify ──────────────────────────────────────────────────────────
 log "Stage 3: Verifying parquet output"
 # Find the most recent parquet file in alpha_panel/
-LATEST_PARQUET=$(ls -t $ROOT/data/alpha_panel/*.parquet 2>/dev/null | head -1)
+LATEST_PARQUET=""
+for _f in "$ROOT"/data/alpha_panel/*.parquet; do
+    [[ -e "$_f" ]] || continue
+    if [[ -z "$LATEST_PARQUET" || "$(basename "$_f")" > "$(basename "$LATEST_PARQUET")" ]]; then
+        LATEST_PARQUET="$_f"
+    fi
+done
 if [ -z "$LATEST_PARQUET" ]; then
     fail "Stage 3 — no parquet files written"
 fi

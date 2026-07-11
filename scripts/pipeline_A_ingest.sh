@@ -1,4 +1,6 @@
 #!/bin/bash
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # scripts/pipeline_A_ingest.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # POST-CLOSE INGEST PIPELINE
@@ -53,7 +55,7 @@ from pathlib import Path
 from data.etl_insider import run_insider_etl
 tickers = [t.strip().upper() for t in Path('tickers.txt').read_text().splitlines()
            if t.strip() and not t.startswith('#')]
-r = run_insider_etl(tickers, days_back=60, verbose=False)
+r = run_insider_etl(tickers, verbose=False)  # incremental (adaptive days_back)
 total = sum(r.values())
 print(f'insider ETL: {total} rows across {len(tickers)} tickers')
 " > "$LOGDIR/01_insider.log" 2>&1 || fail "Stage 1 (etl_insider)"
@@ -64,6 +66,36 @@ log "Stage 2: UW post-market snapshot"
 $PYTHON scripts/daily_uw_snapshot.py --mode post_market \
     > "$LOGDIR/02_uw_snap.log" 2>&1 || fail "Stage 2 (uw_snapshot)"
 log "Stage 2 OK"
+
+# ── Stage 2.5: Institutional dark-pool trade ingest ──────────────────────────
+# Added 2026-06-27. Feeds inst_signed_flow_5d/30d (silently dead May21-Jun27:
+# never cron'd). Per-day window = short run = reliable (5wk backfill failed as
+# one multi-hour process; short daily pulls don't). --no-cursor + upsert =
+# self-healing (missed day recovered within 3d). NON-FATAL (never blocks B).
+# Freshness guard fires a desktop alert if data >4d stale -> cannot rot silently.
+log "Stage 2.5: Institutional dark-pool ingest (3-day incremental)"
+/opt/homebrew/bin/timeout 2400 $PYTHON features/institutional_ingest.py --tickers-file tickers.txt --days-back 3 --no-cursor \
+    > "$LOGDIR/025_institutional.log" 2>&1 || log "WARN Stage 2.5 ingest errors/timeout (non-fatal, see 025_institutional.log)"
+# Sync SQLite -> DuckDB. The FEATURE reads DuckDB (institutional_features.py:25),
+# NOT SQLite. This sync was built 2026-05-22 and never cron'd -> DuckDB froze at
+# May20 while SQLite (when it ran) moved on -> feature saw NULL all June. Without
+# this line the ingest above is useless to the model. Idempotent (id-watermark).
+$PYTHON -m scripts.migrations.sync_inst_to_duckdb \
+    >> "$LOGDIR/025_institutional.log" 2>&1 || log "WARN Stage 2.5 DuckDB sync failed (non-fatal, see 025_institutional.log)"
+# Staleness guard on DUCKDB (the store the feature reads), not SQLite. Guarding
+# SQLite would report 'fresh' while the feature starves on a stale mirror.
+$PYTHON -c "
+import duckdb, datetime, sys
+c = duckdb.connect('institutional_trades.duckdb', read_only=True)
+m = c.execute('SELECT MAX(trade_date) FROM institutional_trades').fetchone()[0]
+c.close()
+m = str(m)[:10] if m else None
+if not m or (datetime.date.today() - datetime.date.fromisoformat(m)).days > 4:
+    print(f'STALE duckdb latest={m}'); sys.exit(1)
+print(f'fresh duckdb latest={m}')
+" >> "$LOGDIR/025_institutional.log" 2>&1 \
+    || { osascript -e 'display notification "institutional_trades DuckDB STALE >4d - feature is starving" with title "ML Quant Fund"' 2>/dev/null || true; log "WARN institutional DuckDB STALE >4d"; }
+log "Stage 2.5 OK"
 
 # ── Stage 3: Feature validator ───────────────────────────────────────────────
 log "Stage 3: Feature validator"

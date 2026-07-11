@@ -1,0 +1,2318 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q3 2019 0000040987 278000 6213000 16988000 15057000 P1Y 1208694000 1341995000 21888000 32374000 7664000 0.7200 2.1600 1 1 450000000 450000000 145936613 145293115 145936613 145293115 480000 3079000 68000 4054000 87000000 P1Y P5Y6M29D 2560000 7850000 2592000 6166000 1 1 10000000 10000000 0 0 
+		 
+			 0000040987 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201409Member 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201409Member 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccountingStandardsUpdate201409Member 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:EuropeMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:EuropeMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:EuropeMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:EuropeMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AustralasiaMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:NorthAmericaMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:BusinessProductsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+		 
+		 
+			 2019-03-07 
+			 2019-03-07 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:AccumulatedCashFlowandNetInvestmentHedgeAttributabletoParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:SeriesAGuaranteedSeniorNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:SeriesCGuaranteedSeniorNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-05-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:SeriesAGuaranteedSeniorNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-05-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:SeriesBGuaranteedSeniorNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-05-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:SeriesBGuaranteedSeniorNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-05-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:LongTermDebtMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+				 us-gaap:CrossCurrencyInterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:LongTermDebtMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:LongTermDebtMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+				 us-gaap:ForwardContractsMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+				 us-gaap:CrossCurrencyInterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+				 us-gaap:ForwardContractsMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:LongTermDebtMember 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CrossCurrencyInterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CrossCurrencyInterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:CashFlowHedgingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:CashFlowHedgingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:CashFlowHedgingMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForwardContractsMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForwardContractsMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForwardContractsMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CrossCurrencyInterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:ForwardContractsMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:CrossCurrencyInterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:CashFlowHedgingMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 srt:WeightedAverageMember 
+				 gpc:InencoGroupMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:EISInc.Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+				 gpc:AutomotivePartsMember 
+			 
+		 
+		 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:GrupoAutoTodoMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:GrupoAutoTodoMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+				 gpc:IndustrialPartsMember 
+			 
+		 
+		 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+			 
+		 
+		 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:EISInc.Member 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:EISInc.Member 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:InencoGroupMember 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000040987 
+			 
+				 gpc:GrupoAutoTodoMember 
+			 
+		 
+		 
+			 2019-03-07 
+			 2019-03-07 
+		 
+	 
+		 iso4217:EUR 
+	 
+		 xbrli:pure 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:shares 
+	 
+		 iso4217:AUD 
+	 Table of Contents   UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM  10-Q   ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  September 30, 2019   OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from                        to                       Commission file number:  1-5690     __________________________________________   GENUINE PARTS CO MPANY (Exact name of registrant as specified in its charter)    __________________________________________   GA   58-0254510 (State or other jurisdiction of incorporation or organization)   (I.R.S. Employer Identification No.) 2999 WILDWOOD PARKWAY,   30339 ATLANTA, GA     (Address of principal executive offices)   (Zip Code) 678 - 934-5000   (Registrant’s telephone number, including area code)   Securities registered pursuant to Section 12(b) of the Act:  Title of Each Class   Trading Symbol   Name of each exchange on which registered Common Stock, $1.00 par value per share   GPC   New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes    ☒     No   ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes    ☒     No   ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company” and "emerging growth company" in Rule 12b-2 of the Exchange Act. Large accelerated filer   ☒    Accelerated filer   ☐             Non-accelerated filer   ☐    Smaller reporting company   ☐               Emerging growth company   ☐         If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes   ☐     No   ☒   There were  145,293,115  shares of common stock outstanding as of the  September 30, 2019 .   1 Table of Contents       PART I   Page       Item 1. Financial Statements 2   Condensed Consolidated Balance Sheets 2   Condensed Consolidated Statements of Income and Comprehensive Income 3   Condensed Consolidated Statements of Equity 4   Condensed Consolidated Statements of Cash Flows 6   Notes to Condensed Consolidated Financial Statements 7 Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 17 Item 3. Quantitative and Qualitative Disclosures About Market Risk 22 Item 4. Controls and Procedures 22       PART II           Item 1A. Risk Factors 23 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 23 Item 6. Exhibits  24   Signatures 25 Table of Contents PART I – FINANCIAL INFORMATION Item 1. Financial Statements GENUINE PARTS COMPANY AND SUBSIDIARIES  CONDENSED CONSOLIDATED BALANCE SHEETS  (UNAUDITED)  (in thousands, except share and per share data)   September 30, 2019   December 31, 2018 Assets         Current assets:         Cash and cash equivalents   $ 451,275   $ 333,547 Trade accounts receivable, less allowance for doubtful accounts (2019 – $32,374; 2018 – $21,888)   2,739,971   2,493,636 Merchandise inventories, net    3,718,307   3,609,389 Prepaid expenses and other current assets   1,149,118   1,139,118 Total current assets   8,058,671   7,575,690 Goodwill   2,278,066   2,128,776 Other intangible assets, less accumulated amortization   1,523,656   1,411,642 Deferred tax assets   30,301   29,509 Property, plant and equipment, less accumulated depreciation (2019 – $1,341,995; 2018 – $1,208,694)   1,118,912   1,027,231 Operating lease assets   1,048,462   — Other assets   455,122   510,192 Total assets   $ 14,513,190   $ 12,683,040           Liabilities and equity         Current liabilities:         Trade accounts payable   $ 4,195,869   $ 3,995,789 Current portion of debt   622,132   711,147 Dividends payable   110,784   105,369 Other current liabilities   1,444,028   1,088,428 Total current liabilities   6,372,813   5,900,733 Long-term debt   2,795,878   2,432,133 Operating lease liabilities   797,166   — Pension and other post–retirement benefit liabilities   202,188   235,228 Deferred tax liabilities   236,064   196,843 Other long-term liabilities   444,344   446,112 Equity:         Preferred stock, par value – $1 per share; authorized – 10,000,000 shares; none issued   — — Common stock, par value – $1 per share; authorized – 450,000,000 shares; issued and outstanding – 2019 – 145,293,115 shares; 2018 – 145,936,613 shares   145,293   145,937 Additional paid-in capital   90,560   78,380 Retained earnings   4,674,918   4,341,212 Accumulated other comprehensive loss   ( 1,268,580 )   ( 1,115,078 ) Total parent equity   3,642,191   3,450,451 Noncontrolling interests in subsidiaries   22,546   21,540 Total equity   3,664,737   3,471,991 Total liabilities and equity   $ 14,513,190   $ 12,683,040 See accompanying notes to condensed consolidated financial statements. 2 Table of Contents GENUINE PARTS COMPANY AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF INCOME AND COMPREHENSIVE INCOME (UNAUDITED)     Three Months Ended September 30,   Nine Months Ended September 30, (in thousands, except per share data)   2019   2018   2019   2018 Net sales   $ 5,015,023   $ 4,722,922   $ 14,686,116   $ 14,131,281 Cost of goods sold   3,390,597   3,238,687   9,954,941   9,689,653 Gross profit   1,624,426   1,484,235   4,731,175   4,441,628 Operating expenses:                 Selling, administrative and other expenses   1,269,893   1,119,266   3,684,026   3,401,254 Depreciation and amortization   68,922   61,082   197,053   177,896 Provision for doubtful accounts   1,693   4,939   11,624   11,306 Total operating expenses   1,340,508   1,185,287   3,892,703   3,590,456 Non-operating (income) expenses:                 Interest expense   26,485   25,084   73,664   75,669 Other   ( 47,100 )   ( 17,871 )   ( 53,366 )   ( 45,822 ) Total non-operating (income) expenses   ( 20,615 )   7,213   20,298   29,847 Income before income taxes   304,533   291,735   818,174   821,325 Income taxes   77,046   71,508   206,007   197,550 Net income   $ 227,487   $ 220,227   $ 612,167   $ 623,775 Basic net income per common share   $ 1.56   $ 1.50   $ 4.20   $ 4.25 Diluted net income per common share   $ 1.56   $ 1.49   $ 4.18   $ 4.23 Dividends declared per common share   $ .7625   $ .7200   $ 2.2875   $ 2.1600 Weighted average common shares outstanding   145,572   146,763   145,875   146,746 Dilutive effect of stock options and non-vested restricted stock awards   617   690   654   574 Weighted average common shares outstanding – assuming dilution   146,189   147,453   146,529   147,320                   Net income   $ 227,487   $ 220,227   $ 612,167   $ 623,775 Other comprehensive loss, net of income taxes:                 Foreign currency translation adjustments   ( 126,350 )   ( 26,590 )   ( 88,369 )   ( 147,703 ) Cash flow and net investment hedge adjustments, net of income taxes in 2019 — $16,988 and $15,057; 2018 — $278 and $6,213 respectively   45,925   752   40,704   16,797 Pension and postretirement benefit adjustments, net of income taxes in 2019 — $2,592 and $6,166; 2018 — $2,560 and $7,850 respectively   7,024   6,912   16,689   21,221 Other comprehensive loss, net of income taxes   ( 73,401 )   ( 18,926 )   ( 30,976 )   ( 109,685 ) Comprehensive income   $ 154,086   $ 201,301   $ 581,191   $ 514,090 See accompanying notes to condensed consolidated financial statements. 3 Table of Contents GENUINE PARTS COMPANY AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF EQUITY (UNAUDITED)     Three Months Ended September 30, 2019 (in thousands, except share and per share data)   Common Stock Shares   Common Stock Amount   Additional Paid-In Capital   Accumulated Other Comprehensive Loss   Retained Earnings   Total Parent Equity   Non-controlling Interests in Subsidiaries   Total Equity July 1, 2019   146,078,369   $ 146,078   $ 83,949   $ ( 1,195,179 )   $ 4,630,480   $ 3,665,328   $ 22,647   $ 3,687,975 Net income   —   —   —   —   227,487   227,487   —   227,487 Other comprehensive loss, net of tax   —   —   —   ( 73,401 )   —   ( 73,401 )   —   ( 73,401 ) Cash dividends declared, $0.7625 per share   —   —   —   —   ( 110,786 )   ( 110,786 )   —   ( 110,786 ) Share-based awards exercised, including tax benefit of $68   2,953   4   ( 128 )   —   —   ( 124 )   —   ( 124 ) Share-based compensation   —   —   6,739   —   —   6,739   —   6,739 Purchase of stock   ( 788,207 )   ( 789 )   —   —   ( 72,263 )   ( 73,052 )   —   ( 73,052 ) Noncontrolling interest activities   —   —   —   —   —   —   ( 101 )   ( 101 ) September 30, 2019   145,293,115   $ 145,293   $ 90,560   $ ( 1,268,580 )   $ 4,674,918   $ 3,642,191   $ 22,546   $ 3,664,737     Nine Months Ended September 30, 2019 (in thousands, except share and per share data)   Common Stock Shares   Common Stock Amount   Additional Paid-In Capital   Accumulated Other Comprehensive Loss   Retained Earnings   Total Parent Equity   Non-controlling Interests in Subsidiaries   Total Equity January 1, 2019   145,936,613   $ 145,937   $ 78,380   $ ( 1,115,078 )   $ 4,341,212   $ 3,450,451   $ 21,540   $ 3,471,991 Net income   —   —   —   —   612,167   612,167   —   612,167 Other comprehensive loss, net of tax   —   —   —   ( 30,976 )   —   ( 30,976 )   —   ( 30,976 ) Cash dividends declared, $2.2875 per share   —   —   —   —   ( 333,521 )   ( 333,521 )   —   ( 333,521 ) Share-based awards exercised, including tax benefit of $4,054   144,709   145   ( 7,640 )   —   —   ( 7,495 )   —   ( 7,495 ) Share-based compensation   —   —   19,820   —   —   19,820   —   19,820 Purchase of stock   ( 788,207 )   ( 789 )   —   —   ( 72,263 )   ( 73,052 )   —   ( 73,052 ) Cumulative effect from adoption of ASU 2018-02 (1)   —   —   —   ( 122,526 )   122,526   —   —   — Cumulative effect from adoption of ASU 2016-02, net of tax (1)   —   —   —   —   4,797   4,797   —   4,797 Noncontrolling interest activities   —   —   —   —   —   —   1,006   1,006 September 30, 2019   145,293,115   $ 145,293   $ 90,560   $ ( 1,268,580 )   $ 4,674,918   $ 3,642,191   $ 22,546   $ 3,664,737 (1) The Company adopted Accounting Standards Update ("ASU") 2016-02,  Leases,  and ASU 2018-02,  Reclassification of Certain Tax Effects from Accumulated Other Comprehensive Income,  during the first quarter of 2019. Refer to the recent accounting pronouncements footnote for further details.  4 Table of Contents GENUINE PARTS COMPANY AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF EQUITY (UNAUDITED)     Three Months Ended September 30, 2018 (in thousands, except share and per share data)   Common Stock Shares   Common Stock Amount   Additional Paid-In Capital   Accumulated Other Comprehensive Loss   Retained Earnings   Total Parent Equity   Non-controlling Interests in Subsidiaries   Total Equity July 1, 2018   146,752,732   $ 146,753   $ 72,211   $ ( 943,351 )   $ 4,236,359   $ 3,511,972   $ 50,355   $ 3,562,327 Net income   —   —   —   —   220,227   220,227   —   220,227 Other comprehensive loss, net of tax   —   —   —   ( 18,926 )   —   ( 18,926 )   —   ( 18,926 ) Cash dividends declared, $0.7200 per share   —   —   —   —   ( 105,673 )   ( 105,673 )   —   ( 105,673 ) Share-based awards exercised, including tax benefit of $480   25,829   25   ( 1,035 )   —   —   ( 1,010 )   —   ( 1,010 ) Share-based compensation   —   —   6,382   —   —   6,382   —   6,382 Purchase of stock   ( 19,288 )   ( 19 )   —   —   ( 1,899 )   ( 1,918 )   —   ( 1,918 ) Noncontrolling interest activities   —   —   —   —   —   —   1,670   1,670 September 30, 2018   146,759,273   $ 146,759   $ 77,558   $ ( 962,277 )   $ 4,349,014   $ 3,611,054   $ 52,025   $ 3,663,079     Nine Months Ended September 30, 2018 (in thousands, except share and per share data)   Common Stock Shares   Common Stock Amount   Additional Paid-In Capital   Accumulated Other Comprehensive Loss   Retained Earnings   Total Parent Equity   Non-controlling Interests in Subsidiaries   Total Equity January 1, 2018   146,652,615   $ 146,653   $ 68,126   $ ( 852,592 )   $ 4,049,965   $ 3,412,152   $ 52,004   $ 3,464,156 Net income   —   —   —   —   623,775   623,775   —   623,775 Other comprehensive loss, net of tax   —   —   —   ( 109,685 )   —   ( 109,685 )   —   ( 109,685 ) Cash dividends declared, $2.1600 per share   —   —   —   —   ( 316,984 )   ( 316,984 )   —   ( 316,984 ) Share-based awards exercised, including tax benefit of $3,079   125,946   125   ( 5,985 )   —   —   ( 5,860 )   —   ( 5,860 ) Share-based compensation   —   —   15,417   —   —   15,417   —   15,417 Purchase of stock   ( 19,288 )   ( 19 )   —   —   ( 1,899 )   ( 1,918 )   —   ( 1,918 ) Cumulative effect from adoption of ASU 2014-09, net of tax   —   —   —   —   ( 5,843 )   ( 5,843 )   —   ( 5,843 ) Noncontrolling interest activities   —   —   —   —   —   —   21   21 September 30, 2018   146,759,273   $ 146,759   $ 77,558   $ ( 962,277 )   $ 4,349,014   $ 3,611,054   $ 52,025   $ 3,663,079 See accompanying notes to condensed consolidated financial statements. 5 Table of Contents GENUINE PARTS COMPANY AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (UNAUDITED)     Nine Months Ended September 30, (in thousands)   2019   2018 Operating activities:         Net income   $ 612,167   $ 623,775 Adjustments to reconcile net income to net cash provided by operating activities:         Depreciation and amortization   197,053   177,896 Share-based compensation   19,820   15,417 Excess tax benefits from share-based compensation   ( 4,054 )   ( 3,079 ) Other non-operating activities   ( 22,329 )   — Changes in operating assets and liabilities   ( 57,445 )   111,517 Net cash provided by operating activities   745,212   925,526 Investing activities:         Purchases of property, plant and equipment   ( 182,612 )   ( 91,942 ) Proceeds from divestitures of businesses   416,784   — Acquisitions of businesses and other investing activities   ( 625,565 )   ( 153,988 ) Net cash used in investing activities   ( 391,393 )   ( 245,930 ) Financing activities:         Proceeds from debt   3,928,716   3,406,975 Payments on debt   ( 3,749,509 )   ( 3,710,934 ) Share-based awards exercised   ( 7,495 )   ( 5,860 ) Dividends paid   ( 328,106 )   ( 310,310 ) Purchases of stock ( 73,052 )   ( 1,918 ) Net cash used in financing activities   ( 229,446 )   ( 622,047 ) Effect of exchange rate changes on cash and cash equivalents   ( 6,645 )   ( 13,343 ) Net increase in cash and cash equivalents   117,728   44,206 Cash and cash equivalents at beginning of period   333,547   314,899 Cash and cash equivalents at end of period   $ 451,275   $ 359,105 See accompanying notes to condensed consolidated financial statements. 6 Table of Contents NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS   (in thousands, except per share data) 1.  Basis of Presentation The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with the instructions to Form 10-Q and therefore do not include all information and footnotes required by accounting principles generally accepted in the U.S. ("U.S. GAAP") for complete financial statements. Except as disclosed herein, there has been no material change in the information disclosed in the notes to the consolidated financial statements included in the Annual Report on Form 10-K of Genuine Parts Company (the “Company,” "we," "our," "us," or "its") for the year ended  December 31, 2018 . Accordingly, the unaudited interim condensed consolidated financial statements and related disclosures herein should be read in conjunction with the Company’s  2018  Annual Report on Form 10-K. The preparation of interim financial statements requires management to make estimates and assumptions that affect the amounts reported in the interim condensed consolidated financial statements. Specifically, the Company makes estimates and assumptions in its interim condensed consolidated financial statements for inventory adjustments, the accrual of bad debts, customer sales returns, and volume incentives earned, among others. Inventory adjustments (including adjustments for a majority of inventories that are valued under the last-in, first-out (“LIFO”) method) are accrued on an interim basis and adjusted in the fourth quarter based on the annual book to physical inventory adjustment and LIFO valuation. Reserves for bad debts and customer sales returns are estimated and accrued on an interim basis based upon historical experience. Volume incentives are estimated based upon cumulative and projected purchasing levels. The estimates and assumptions for interim reporting may change upon final determination at year-end, and such changes may be significant. In the opinion of management, all adjustments necessary for a fair presentation of the Company’s financial results for the interim periods have been made. These adjustments are of a normal recurring nature. The results of operations for the  nine  months ended  September 30, 2019  are not necessarily indicative of results for the entire year. The Company has evaluated subsequent events through the date the condensed consolidated financial statements covered by this quarterly report were issued.   2.  Segment Information The following table presents a summary of the Company's reportable segment financial information:     Three Months Ended September 30,   Nine Months Ended September 30,     2019   2018   2019   2018 Net sales:                  Automotive   $ 2,790,607   $ 2,649,716   $ 8,187,760   $ 7,950,176 Industrial   1,732,831   1,577,329   5,049,975   4,727,938 Business products   491,585   495,877   1,448,381   1,453,167 Total net sales   $ 5,015,023   $ 4,722,922   $ 14,686,116   $ 14,131,281 Operating profit:                 Automotive   $ 222,100   $ 226,742   $ 629,713   $ 655,059 Industrial   137,525   119,153   394,887   356,535 Business products   21,611   19,846   63,727   62,869 Total operating profit   381,236   365,741   1,088,327   1,074,463 Interest expense, net   ( 24,770 )   ( 21,881 )   ( 70,313 )   ( 70,713 ) Intangible asset amortization   ( 26,224 )   ( 23,593 )   ( 72,725 )   ( 66,802 ) Corporate expense (1)   ( 25,709 )   ( 28,532 )   ( 127,115 )   ( 115,623 ) Income before income taxes   $ 304,533   $ 291,735   $ 818,174   $ 821,325 (1) Includes  $ 12,413  of income and  $ 25,809  of expense for the  three and nine  months ended  September 30, 2019 , respectively, in certain transaction and other costs related to acquisitions and dispositions. Also includes the realized currency losses incurred on the March 7, 2019 sale of Grupo Auto Todo and the September 30, 2019 sale of EIS Inc. ("EIS"), net of a gain from remeasuring the Company's preexisting  35 %  equity investment to fair value upon acquiring the remaining equity of Inenco on July 1, 2019. Refer to the acquisitions and divestitures footnote for further details. 7 Table of Contents Includes  $ 3,104  of income and  $ 19,010  of expense for the  three and nine  months ended  September 30, 2018 , respectively, in certain transaction and other costs related to the acquisition of Alliance Automotive Group ("AAG") and the attempted Business Products Group spin-off, net of a  $ 12,000  termination fee received in the third quarter of 2018.  Net sales are disaggregated by geographical region for each of the Company’s reportable segments, as the Company deems this presentation best depicts how the nature, amount, timing and uncertainty of net sales and cash flows are affected by economic factors.  The following table presents disaggregated geographical net sales from contracts with customers by reportable segment:     Three Months Ended September 30,   Nine Months Ended September 30,     2019   2018   2019   2018 North America:                 Automotive   $ 1,942,922   $ 1,918,814   $ 5,720,290   $ 5,646,108 Industrial   1,624,303   1,577,329   4,941,447   4,727,938 Business products   491,585   495,877   1,448,381   1,453,167 Total North America    $ 4,058,810   $ 3,992,020   $ 12,110,118   $ 11,827,213 Australasia:                 Automotive   295,424   298,797   866,694   903,600 Industrial   108,528   —   108,528   — Total Australasia   403,952   298,797   975,222   903,600 Europe – Automotive   552,261   432,105   1,600,776   1,400,468 Total net sales   $ 5,015,023   $ 4,722,922   $ 14,686,116   $ 14,131,281 3.  Accumulated Other Comprehensive Loss The following tables present the changes in accumulated other comprehensive loss ("AOCL") by component for the  nine months ended September 30 :   Changes in Accumulated Other Comprehensive Loss by Component   Pension and Other Post-Retirement Benefits   Cash Flow and Net Investment Hedges   Foreign Currency Translation   Total Beginning balance, January 1, 2019 $ ( 626,322 )   $ 10,726   $ ( 499,482 )   $ ( 1,115,078 ) Other comprehensive loss before reclassifications —   54,180   ( 123,070 )   ( 68,890 ) Amounts reclassified from accumulated other comprehensive loss (1) 22,855   1,581   34,701   59,137 Income taxes ( 6,166 )   ( 15,057 )   —   ( 21,223 ) Other comprehensive loss, net of income taxes 16,689   40,704   ( 88,369 )   ( 30,976 ) Cumulative effect from adoption of ASU 2018-02 ( 122,526 )   —   —   ( 122,526 ) Ending balance, September 30, 2019 $ ( 732,159 )   $ 51,430   $ ( 587,851 )   $ ( 1,268,580 ) (1) Amount includes realized currency losses of  $ 34,701  that were reclassified out of foreign currency translation into earnings in connection with the March 7, 2019 sale of Grupo Auto Todo and the September 30, 2019 sale of EIS. Refer to the acquisitions and divestitures footnote for further details.  8 Table of Contents   Changes in Accumulated Other Comprehensive Loss by Component   Pension and Other Post-Retirement Benefits   Cash Flow and Net Investment Hedges   Foreign Currency Translation   Total Beginning balance, January 1, 2018 $ ( 568,957 )   $ ( 17,388 )   $ ( 266,247 )   $ ( 852,592 ) Other comprehensive loss before reclassifications —   22,124   ( 147,703 )   ( 125,579 ) Amounts reclassified from accumulated other comprehensive loss 29,071   886   —   29,957 Income taxes ( 7,850 )   ( 6,213 )   —   ( 14,063 ) Other comprehensive loss, net of income taxes 21,221   16,797   ( 147,703 )   ( 109,685 ) Ending balance, September 30, 2018 $ ( 547,736 )   $ ( 591 )   $ ( 413,950 )   $ ( 962,277 ) The accumulated other comprehensive loss components related to the pension benefits are included in the computation of net periodic benefit income in the employee benefit plans footnote. The nature of the cash flow and net investment hedges are discussed in the derivatives and hedging footnote. Generally, tax effects in accumulated other comprehensive loss are established at the currently enacted tax rate and reclassified to net income in the same period that the related pre-tax accumulated other comprehensive loss reclassifications are recognized. 4.  Recent Accounting Pronouncements Changes to U.S. GAAP are established by the Financial Accounting Standards Board ("FASB") in the form of ASUs to the FASB Accounting Standards Codification ("ASC"). The Company considers the applicability and impact of all ASUs and any not listed below were assessed and determined to be not applicable or are expected to have a minimal impact on the Company's condensed consolidated financial statements. Leases (Topic 842) In February 2016, the FASB issued ASU 2016-02,  Leases , which, among other things, requires an entity to recognize a right-of-use asset and a lease liability on the balance sheet for substantially all leases, including operating leases. Expanded disclosures with additional qualitative and quantitative information are also required. ASU 2016-02 and its amendments were effective for interim and annual reporting periods beginning after December 15, 2018 and early adoption was permitted.  The ASU's transition provisions could be applied under a modified retrospective approach to each prior reporting period presented in the financial statements or only at the beginning of the period of adoption (i.e., on the effective date). The Company adopted ASU 2016-02 and its amendments and applied the transition provisions as of January 1, 2019, which included recognizing a cumulative-effect adjustment through opening retained earnings as of that date. Prior year amounts were not recast under this transition approach and, therefore, prior year amounts are excluded from the leased properties footnote. The Company elected the package of practical expedients permitted under the transition guidance, which allowed the Company to carryforward its historical assessments of: (1) whether contracts are or contain leases, (2) lease classification and (3) initial direct costs. In addition, the Company did not elect the hindsight practical expedient to determine the reasonably certain lease term for existing leases. The Company elected a policy of not recording leases on its condensed consolidated balance sheets when the leases have a term of 12 months or less and the Company is not reasonably certain to elect an option to purchase the leased asset. The Company recognizes payments on these leases within selling, administrative and other expenses on a straight-line basis over the lease term. The Company's adoption of the standard resulted in a cumulative-effect adjustment to retained earnings of  $ 4,797 , net of taxes, as of January 1, 2019. The standard did not materially impact the Company's consolidated net income or liquidity. The standard did not have an impact on debt-covenant compliance under the Company's current debt agreements.  Income Statement - Reporting Comprehensive Income (Topic 220) In February 2018, the FASB issued ASU 2018-02,  Reclassification of Certain Tax Effects from Accumulated Other Comprehensive Income . The ASU permits a company to make a one-time election to reclassify stranded tax effects caused by the Tax Cuts and Jobs Act from accumulated other comprehensive income to retained earnings. The ASU also requires companies to disclose their accounting policies for releasing income tax effects from accumulated other comprehensive income. ASU 2018-02 was effective for periods beginning after December 15, 2018, with an election to adopt early. The Company adopted ASU 2018-02 as of January 1, 2019 and recognized an adjustment to increase retained earnings and to adjust accumulated other comprehensive loss by approximately  $ 122,526 . 9 Table of Contents Financial Instruments - Credit Losses (Topic 220) In June 2016, the FASB issued ASU 2016-13,  Measurement of Credit Losses on Financial Instruments . Among other things, the ASU and its amendments replace the incurred loss impairment model for receivables and certain other financial instruments with a current expected credit loss model. The new model measures impairment based on expected credit losses over the remaining contractual life of an asset, considering available information about the collectability of cash flows, past events, current conditions, and reasonable and supportable forecasts. Additional quantitative and qualitative disclosures are required. ASU 2016-13 is effective for periods beginning after December 15, 2019, with an option to adopt early. The Company plans to adopt the ASU and its amendments on January 1, 2020, and any changes to allowances for credit losses caused by the adoption will be made through a cumulative effect adjustment to retained earnings as of that date. The adoption of ASU 2016-13 and its amendments is not expected to have a significant impact on the Company's consolidated financial statements. Compensation - Retirement Benefits (Topic 715) In August 2018, the FASB issued ASU 2018-14,  Changes to the Disclosure Requirements for Defined Benefit Plans . The updated accounting guidance modifies the disclosure requirements for employers that sponsor defined benefit pension or other postretirement plans by removing, adding and clarifying certain disclosures. These provisions must be applied retrospectively. ASU 2018-14 is effective for periods beginning after December 15, 2020, with an option to adopt early. The adoption of ASU 2018-14 is not expected to have a significant impact on the Company’s financial position, results of operations or disclosures. The Company does not plan to early adopt the standard. 5.  Employee Benefit Plans Net periodic benefit income from the Company's pension plans included the following components for the  three months ended September 30 :     Pension Benefits     2019   2018 Service cost   $ 2,395   $ 2,584 Interest cost   24,362   22,044 Expected return on plan assets   ( 38,551 )   ( 38,470 ) Amortization of prior service credit   ( 17 )   ( 37 ) Amortization of actuarial loss   7,752   9,920 Net periodic benefit income   $ ( 4,059 )   $ ( 3,959 ) Net periodic benefit income from the Company's pension plans included the following components for the  nine months ended September 30 :     Pension Benefits     2019   2018 Service cost   $ 7,164   $ 7,850 Interest cost   73,045   66,228 Expected return on plan assets   ( 115,585 )   ( 115,574 ) Amortization of prior service credit   ( 51 )   ( 111 ) Amortization of actuarial loss   23,247   29,814 Net periodic benefit income   $ ( 12,180 )   $ ( 11,793 ) Service cost is recorded in selling, administrative and other expenses in the condensed consolidated statements of income and comprehensive income while all other components are recorded within other non-operating (income) expenses. Pension benefits also include amounts related to supplemental retirement plans.   10 Table of Contents 6.  Guarantees The Company guarantees the borrowings of certain independently controlled automotive parts stores and businesses (“independents”) and certain other affiliates in which the Company has a noncontrolling equity ownership interest (“affiliates”). Presently, the independents are generally consolidated by unaffiliated enterprises that have controlling financial interests through ownership of a majority voting interest in the independents. The Company has no voting interest or equity conversion rights in any of the independents. The Company does not control the independents or the affiliates, but receives a fee for the guarantees. The Company has concluded that the independents are variable interest entities, but that the Company is not the primary beneficiary. Specifically, the equity holders of the independents have the power to direct the activities that most significantly impact the entities’ economic performance including, but not limited to, decisions about hiring and terminating personnel, local marketing and promotional initiatives, pricing and selling activities, credit decisions, monitoring and maintaining appropriate inventories, and store hours. Separately, the Company concluded that the affiliates are not variable interest entities. The Company’s maximum exposure to loss as a result of its involvement with these independents and affiliates is generally equal to the total borrowings subject to the Company’s guarantees. While such borrowings of the independents and affiliates are outstanding, the Company is required to maintain compliance with certain covenants, including a maximum debt to capitalization ratio and certain limitations on additional borrowings. At  September 30, 2019 , the Company was in compliance with all such covenants. As of  September 30, 2019 , the total borrowings of the independents and affiliates subject to guarantee by the Company were approximately  $ 864,398 . These loans generally mature over periods from  one  to  six years .  In the event that the Company is required to make payments in connection with these guarantees, the Company would obtain and liquidate certain collateral pledged by the independents or affiliates (e.g., accounts receivable and inventory) to recover all or a portion of the amounts paid under the guarantees. When it is deemed probable that the Company will incur a loss in connection with a guarantee, a liability is recorded equal to this estimated loss.  To date, the Company has had no significant losses in connection with guarantees of independents’ and affiliates’ borrowings. As of  September 30, 2019 , the Company has recognized certain assets and liabilities amounting to  $ 87,000  each for the guarantees related to the independents’ and affiliates’ borrowings. These assets and liabilities are included in other assets and other long-term liabilities in the condensed consolidated balance sheets. 7.  Fair Value of Financial Instruments The carrying amounts reflected in the condensed consolidated balance sheets for cash and cash equivalents, trade accounts receivable, trade accounts payable, and borrowings under the line of credit and term loan approximate their respective fair values based on the short-term nature of these instruments.  As of  September 30, 2019 , the carrying amount, net of debt issuance costs, and the fair value of fixed rate debt were approximately  $ 1,913,359  and  $ 2,017,415 , respectively.  The fair value of fixed rate debt is designated as Level 2 in the fair value hierarchy (i.e., significant observable inputs) and is based primarily on the discounted value of future cash flows using current market interest rates offered for debt of similar credit risk and maturity.  The carrying amount, net of debt issuance costs, of fixed rate debt of  $ 1,913,359  is included in long-term debt in the condensed consolidated balance sheets. Refer to the derivatives and hedging footnote for information on the fair value of derivative instruments. 8.  Credit Facilities On May 31, 2019, the Company entered into a private placement agreement of  € 250,000  long-term fixed rate debt. The  € 250,000  of long-term fixed rate debt includes  € 50,000 ,  1.55 %  Series A Guaranteed Senior Note maturing on May 31, 2029,  € 100,000 ,  1.74 %  Series B Guaranteed Senior Note maturing on May 31, 2031 and  € 100,000 ,  1.95 %  Series C Guaranteed Senior Note maturing on May 31, 2034.   On June 30, 2019, the Company entered into a private placement agreement of Australian dollar ("A$") denominated long-term fixed rate debt of  A$ 310,000 . The  A$ 310,000  of long-term fixed rate debt includes  A$ 155,000 ,  3.10 %  Series A Guaranteed Senior Note maturing on June 30, 2024 and  A$ 155,000 ,  3.43 %  Series B Guaranteed Senior Note maturing on June 30, 2026. All borrowings require the Company to comply with a financial covenant with respect to a maximum debt to earnings before interest, taxes, depreciation and amortization ("EBITDA") ratio. At  September 30, 2019 , the Company was in compliance with all such covenants. For information on the Company's other credit facilities please see the Company's  2018  Annual Report on Form 10-K.   11 Table of Contents 9.  Derivatives and Hedging The Company is exposed to various risks arising from business operations and market conditions, including fluctuations in interest rates and certain foreign currencies. When deemed appropriate, the Company uses derivative and non-derivative instruments as risk management tools to mitigate the potential impact of interest rate and foreign exchange rate risks. The objective of using these tools is to reduce fluctuations in the Company’s earnings and cash flows associated with changes in these rates. Derivative financial instruments are not used for trading or other speculative purposes. The Company has not historically incurred, and does not expect to incur in the future, any losses as a result of counterparty default related to derivative instruments. The Company formally documents relationships between hedging instruments and hedged items, as well as the risk management objective and strategy for undertaking various hedge transactions. This process includes linking cash flow hedges to specific forecasted transactions or variability of cash flow to be paid. The Company also formally assesses, both at the hedge’s inception and on an ongoing basis, whether the designated derivative and non-derivative instruments that are used in hedging transactions are highly effective in offsetting changes in the cash flows of the hedged items. When a designated instrument is determined not to be highly effective as a hedge or the underlying hedged transaction is no longer probable, hedge accounting is discontinued prospectively. The following table summarizes the location and carrying amounts of the derivative instruments and the foreign currency denominated debt, a non-derivative financial instrument, that are designated and qualify as part of hedging relationships:         September 30, 2019   December 31, 2018 Instrument   Balance sheet location   Notional   Balance   Notional   Balance Cash flow hedges:                     Interest rate swaps   Other current liabilities   $ 800,000   $ 29,832   $ 500,000   $ 6,345 Net investment hedges:                     Cross-currency swap   Prepaid expenses and other current assets   —   —   $ 500,000   $ 6,006 Forward contracts   Prepaid expenses and other current assets   $ 925,810   $ 55,050   —   — Foreign currency debt    Long-term debt   € 700,000   $ 765,870   € 700,000   $ 801,010 The derivative instruments are recognized in the condensed consolidated balance sheets at fair value and are designated as Level 2 in the fair value hierarchy. They are valued using inputs other than quoted prices, such as foreign exchange rates and yield curves. Cash Flow Hedges The Company uses interest rate swaps to mitigate variability in forecasted interest payments on a portion of the Company’s U.S. dollar-denominated unsecured variable rate debt. The interest rate swaps effectively convert a portion of the floating rate interest payment into a fixed rate interest payment. The Company designates the interest rate swaps as qualifying hedging instruments and accounts for them as cash flow hedges. Gains and losses from fair value adjustments on the cash flow hedges are initially classified in accumulated other comprehensive loss and are reclassified to interest expense on the dates interest payments are accrued. Hedges of Net Investments in Foreign Operations The Company has designated certain derivative instruments and a portion of its foreign currency denominated debt, a non-derivative financial instrument, as hedges of the foreign currency exchange rate exposure of the Company's Euro-denominated net investment in a European subsidiary. The Company applies the spot method to assess the hedge effectiveness of the derivative instruments and this assessment for each instrument excludes the initial value related to the difference at contract inception between the foreign exchange spot rate and the forward rate (i.e., the forward points). The initial value of this excluded component is recognized as a reduction to interest expense in a systematic and rational manner over the term of the derivative instrument. All other changes in value for the net investment hedges are included in accumulated other comprehensive loss and would only be reclassified to earnings if the European subsidiary were liquidated, or otherwise disposed.  12 Table of Contents The table below presents gains and losses related to designated cash flow hedges and net investment hedges:     Gain (Loss) Recognized in AOCL Before Reclassifications   Gain Recognized in Interest Expense For Excluded Components     2019   2018   2019   2018 Three Months Ended September 30,                  Cash Flow Hedges:                 Interest rate contract   $ ( 3,766 )   $ 1,079   $ —   $ — Net Investment Hedges:                 Cross-currency swap   $ —   $ ( 6,536 )   $ —   $ 3,256 Forward contracts   35,796   —   5,596   — Foreign currency debt    30,030   5,600   —   — Total   $ 62,060   $ 143   $ 5,596   $ 3,256 Nine Months Ended September 30,                 Cash Flow Hedges:                 Interest rate contract   $ ( 25,332 )   $ 1,079   $ —   $ — Net Investment Hedges:                 Cross-currency swap   $ 2,936   $ ( 6,536 )   $ 2,294   $ 3,256 Forward contracts   41,436   —   12,220   — Foreign currency debt    35,140   27,581   —   — Total   $ 54,180   $ 22,124   $ 14,514   $ 3,256 Amounts reclassified from accumulated other comprehensive loss to interest expense for the periods presented were not material. 10.  Leased Properties The Company primarily leases real estate for certain retail stores, distribution centers, office space and land. The Company also leases equipment (primarily vehicles).  Most real estate leases include one or more options to renew, with renewal terms that generally can extend the lease term from  one  to  20  years . The exercise of lease renewal options is at the Company's discretion. The Company evaluates renewal options at lease inception and on an ongoing basis, and includes renewal options that it is reasonably certain to exercise in its expected lease terms when classifying leases and measuring lease liabilities. Lease agreements generally do not require material variable lease payments, residual value guarantees or restrictive covenants. The table below presents the locations of the operating lease assets and liabilities on the condensed consolidated balance sheets as of  September 30, 2019 :     Balance Sheet Line Item   September 30, 2019 Operating lease assets   Operating lease assets   $ 1,048,462           Operating lease liabilities:         Current operating lease liabilities   Other current liabilities   $ 274,687 Noncurrent operating lease liabilities   Operating lease liabilities   797,166 Total operating lease liabilities       $ 1,071,853 The depreciable lives of operating lease assets and leasehold improvements are limited by the expected lease term.  The Company's leases generally do not provide an implicit rate, and therefore the Company uses its incremental borrowing rate as the discount rate when measuring operating lease liabilities. The incremental borrowing rate represents an estimate of the interest rate the Company would incur at lease commencement to borrow an amount equal to the lease payments on a collateralized basis over the term of a lease within a particular currency environment. The Company used incremental borrowing rates as of January 1, 2019 for operating leases that commenced prior to that date. 13 Table of Contents The Company's weighted average remaining lease term and weighted average discount rate for operating leases as of  September 30, 2019  are: Weighted average remaining lease term (in years)   5.58 Weighted average discount rate   3.21 % The table below reconciles the undiscounted future minimum lease payments (displayed by year and in the aggregate) under noncancelable operating leases with terms of more than one year to the total operating lease liabilities recognized on the condensed consolidated balance sheets as of  September 30, 2019 : October 1, 2019 through December 31, 2019 $ 77,339 2020 296,219 2021 230,421 2022 173,932 2023 122,529 Thereafter 276,067 Total undiscounted future minimum lease payments 1,176,507 Less: Difference between undiscounted lease payments and discounted operating lease liabilities 104,654 Total operating lease liabilities $ 1,071,853 Operating lease payments include  $ 53,104  related to options to extend lease terms that are reasonably certain of being exercised. Operating lease costs were  $ 86,704  and  $ 244,090  for the three and  nine  months ended  September 30, 2019 , respectively. Operating lease costs are included within selling, administrative and other expenses on the condensed consolidated statements of income and comprehensive income. Short-term lease costs, variable lease costs and sublease income were not material for the periods presented.  Cash paid for amounts included in the measurement of operating lease liabilities were  $ 234,860  for the  nine  months ended  September 30, 2019 , and this amount is included in operating activities in the condensed consolidated statements of cash flows. Operating lease assets obtained in exchange for new operating lease liabilities were  $ 277,900  for the  nine  months ended  September 30, 2019 .   11.  Commitments & Contingencies Legal Matters As more fully discussed in the legal matter footnote of the Company's notes to the consolidated financial statements in its  2018  Annual Report on Form 10-K, a jury awarded damages against the Company in a litigated automotive product liability dispute.   At the time of the filing of these financial statements, based upon the Company’s legal defenses, insurance coverage, and reserves, the Company does not believe this matter will have a material impact to the condensed consolidated financial statements. Fire at S.P. Richards Headquarters and Distribution Center On July 19, 2019, a fire occurred at the S.P. Richards headquarters in Atlanta, Georgia. The building primarily held the S.P. Richards headquarters office and was connected to their Atlanta distribution center. The Company maintains property and casualty loss insurance coverage.  The Company expects to recover all losses on inventory, property, plant and equipment and other fire-related costs from insurance proceeds.   12.  Acquisitions and Divestitures Acquisitions The Company's acquisitions of businesses totaled  $ 642,468 , net of cash acquired, during the  nine months ended September 30, 2019 . The businesses acquired included Hennig Fahrzeugteile Group ("Hennig"), PartsPoint Group and several bolt-on acquisitions in the Automotive Parts Group and Axis New England, Axis New York and Inenco in the Industrial Parts Group.  The Company acquired the remaining  65 %  equity investment in Inenco in July 2019.  Inenco is one of Australasia's leading industrial distributors of key product categories such as bearings, power transmission and seals and it generates estimated annual revenues of approximately  $ 400,000 . Prior to the  65 %  acquisition, the Company accounted for its  35 %  investment under the  14 Table of Contents equity method of accounting. The acquisition-date fair value of the  35 %  investment was  $ 123,385  and is included in the measurement of the consideration transferred. The difference between the acquisition-date fair value and the carrying amount of the equity method investment resulted in the recognition of a gain of  $ 38,663   on the acquisition date. The acquisition-date fair value was determined using a market and income approach with the assistance of a third party valuation firm. The gain is included in the line item "other" within non-operating (income) expenses on the condensed consolidated statement of income and comprehensive income for the period ended September 30, 2019. The acquisition date fair value of the consideration transferred for the aggregate of the acquired businesses was approximately  $ 765,853 , net of cash acquired of  $ 12,149 , which consisted of the following:     September 30, 2019 Cash   $ 642,468 Fair value of 35% investment in Inenco held prior to business combination   123,385 Total   $ 765,853 The following table summarizes the preliminary, estimated fair values of the assets acquired and liabilities assumed at the acquisition dates for the aggregate of these businesses. Additional adjustments may be made to the acquisition accounting during the measurement period primarily related to intangible asset revaluations and tax accounting.      September 30, 2019 Trade accounts receivable   $ 127,823 Merchandise inventories   281,764 Prepaid expenses and other current assets   11,066 Intangible assets   318,301 Deferred tax assets   1,046 Property and equipment   60,313 Operating lease assets   96,845 Other assets   40,840 Total identifiable assets acquired    937,998 Current liabilities    101,564 Long-term debt   150,879 Operating lease liabilities   96,371 Deferred tax liabilities   58,903 Other long-term liabilities   97,407 Total liabilities assumed   505,124 Net identifiable assets acquired   432,874 Goodwill   332,979 Net assets acquired   $ 765,853 The acquired intangible assets of approximately  $ 318,301  were provisionally assigned to customer relationships of  $ 281,804 ,  trademarks of  $ 34,207 , and other intangibles of  $ 2,290  with weighted average amortization lives of  16.8 ,  21.3 , and  5.0  years , respectively, for a total weighted average amortization life of  17.2  years . The fair value of the acquired identifiable intangible assets is provisional pending completion of the final valuations for these assets.  The estimated goodwill recognized as part of the acquisitions is generally not tax deductible.  $ 174,048  of goodwill has been assigned to the automotive segment and  $ 158,931  has been assigned to the industrial segment. The goodwill is attributable primarily to the expected synergies and assembled workforces of the acquired businesses. 15 Table of Contents Divestitures Grupo Auto Todo On March 7, 2019, the Company sold all of its equity in Grupo Auto Todo, a Mexican subsidiary within the Automotive Parts Group. Grupo Auto Todo contributed approximately  $ 93,000  of revenues  for the year ended December 31, 2018.  Proceeds from the transaction of  $ 12,028  are included in proceeds from divestitures on the condensed consolidated statement of cash flows for the nine months ended September 30, 2019. The Company incurred realized currency losses of  $ 27,037  from this transaction during the  nine months ended September 30, 2019 . These losses are included in the line item "other" within non-operating (income) expenses on the condensed consolidated statements of income and comprehensive income. EIS During the third quarter of 2019, the Company approved a transaction to sell EIS, a wholly owned subsidiary within the Industrial Parts Group. The transaction closed on September 30, 2019. EIS contributed approximately  $ 817,249  of revenue for the year ended December 31, 2018 and  $ 588,031  for the nine months ended September 30, 2019. Proceeds from the transaction of  $ 365,876  are included in proceeds from divestitures on the condensed consolidated statement of cash flows for the nine months ended September 30, 2019. The Company incurred realized currency losses of  $ 7,664  from this transaction, which are included in the line item "other" within non-operating (income) expenses on the condensed consolidated statement of income for the three and nine months ended September 30, 2019. This divestiture is not considered a strategic shift that will have a major effect on the Company’s operations or financial results; therefore, it is not reported as discontinued operations. 13.  Earnings Per Share As more fully discussed in the share-based compensation footnote of the Company’s notes to the consolidated financial statements in its 2018 Annual Report on Form 10-K, the Company maintains various long-term incentive plans, which provide for the granting of stock options, stock appreciation rights (“SARs”), restricted stock, restricted stock units (“RSUs”), performance awards, dividend equivalents and other share-based awards. Options to purchase approximately  544  and  223  shares of common stock were outstanding but excluded from the computations of diluted earnings per share for the  three and nine  month periods ended  September 30, 2019 , respectively, as compared to approximately  643  and  1,495  for the  three and nine  month periods ended  September 30, 2018 , respectively. These options were excluded from the computations of diluted net income per common share because the options’ exercise prices were greater than the average market price of the common stock. 16 Table of Contents Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations The following discussion should be read in conjunction with the unaudited condensed consolidated financial statements and accompanying notes contained herein and with the audited consolidated financial statements, accompanying notes, related information and Management’s Discussion and Analysis of Financial Condition and Results of Operations included in our Annual Report on Form 10-K for the year ended  December 31, 2018 .  Forward-Looking Statements Some statements in this report, as well as in other materials we file with the Securities and Exchange Commission ("SEC") or otherwise release to the public and in materials that we make available on our website, constitute forward-looking statements that are subject to the safe harbor provisions of the Private Securities Litigation Reform Act of 1995. Senior officers may also make verbal statements to analysts, investors, the media and others that are forward-looking. Forward-looking statements may relate, for example, to the anticipated strategic benefits, synergies and other attributes resulting from acquisitions, as well as future operations, prospects, strategies, financial condition, economic performance (including growth and earnings), industry conditions and demand for our products and services. The Company cautions that its forward-looking statements involve risks and uncertainties, and while we believe that our expectations for the future are reasonable in view of currently available information, you are cautioned not to place undue reliance on our forward-looking statements. Actual results or events may differ materially from those indicated as a result of various important factors. Such factors may include, among other things, the Company’s ability to successfully integrate acquired businesses into the Company, including the challenges associated with the integration of processes and systems to ensure the adequacy of our internal controls in regard to the Alliance Automotive Group business, and to realize the anticipated synergies and benefits; changes in the European aftermarket; the Company’s ability to successfully implement its business initiatives in each of its three business segments; slowing demand for the Company’s products; changes in national and international legislation or government regulations or policies, including new import tariffs and the unpredictability of additional tariffs and data security policies and requirements; changes in general economic conditions, including unemployment, inflation (including the impact of potential tariffs) or deflation and the United Kingdom’s referendum to exit from the European Union, commonly known as Brexit; changes in tax policies; volatile exchange rates; volatility in oil prices; significant cost increases, such as rising fuel and freight expenses; labor shortages; uncertain credit markets and other macroeconomic conditions; competitive product, service and pricing pressures; the ability to maintain favorable vendor arrangements and relationships; disruptions in our vendors’ operations, including the impact of tariffs and trade considerations on their operations and output, as required to meet product demand; failure or weakness in our disclosure controls and procedures and internal controls over financial reporting; the uncertainties and costs of litigation; disruptions caused by a failure or breach of the Company’s information systems, as well as other risks and uncertainties discussed in the Company’s Annual Report on Form 10-K for 2018 and from time to time in the Company’s subsequent filings with the SEC. Forward-looking statements are only as of the date they are made, and the Company undertakes no duty to update its forward-looking statements except as required by law. You are advised, however, to review any further disclosures we make on related subjects in our subsequent Forms 10-K, 10-Q, 8-K and other reports filed with the SEC.  Overview Genuine Parts Company is a service organization engaged in the distribution of automotive replacement parts, industrial parts and business products. We have a long tradition of growth dating back to 1928, the year we were founded in Atlanta, Georgia. During the  nine months ended September 30, 2019 , business was conducted throughout the United States, Canada, Mexico, Puerto Rico, Australia, New Zealand, Indonesia, Singapore, the U.K., France, Germany, Poland, the Netherlands, and Belgium from more than 3,100 locations. Sales for the  three months ended September 30, 2019  were  $5.0 billion , a  6.2%  increase as compared to  $4.7 billion  in the same period of the prior year. For the  three months ended September 30, 2019 , the Company recorded consolidated net income of  $227.5 million , an increase of  3.3%  as compared to consolidated net income of  $220.2 million  in the same three month period of the prior year. On a per share diluted basis, net income was  $1.56  for the  three months ended September 30, 2019 , an increase of  4.7%  as compared to  $1.49  for the same three month period of  2018 . For the  nine months ended September 30, 2019 , sales were  $14.7 billion , a  3.9%  increase as compared to  $14.1 billion  in the same period of the prior year. For the  nine months ended September 30, 2019 , the Company recorded consolidated net income of  $612.2 million  compared to consolidated net income of  $623.8 million  in the same  nine  month period of the prior year, a decrease of  1.9% . On a per share diluted basis, net income was  $4.18 , a decrease of  1.2%  as compared to  $4.23  in the same  nine  month period of  2018 . During the  three and nine  months ended  September 30, 2019 , the Company incurred  $12.4 million  of income and  $25.8 million  of expense, respectively, from realized currency losses, transaction and other costs and a gain on an equity investment, before taxes. The realized currency losses and transaction and other costs primarily resulted from acquisition activity and the March 7,  17 Table of Contents 2019 sale of Grupo Auto Todo, a Mexican subsidiary in the Automotive Parts Group . Additionally, the Company incurred realized currency losses and transaction and other costs related to the September 30, 2019 sale of EIS, the Electrical Specialties Group of Motion Industries. The investment gain relates to the remeasurement of the Company's preexisting 35% equity investment to fair value upon acquiring the remaining equity in Inenco on July 1, 2019.  The  three and nine  months ended  September 30, 2018  include  $3.1 million  of income and  $19.0 million  of expense in transaction and other costs primarily related to the AAG acquisition as well as income and expense items associated with the attempted spin-off of the Business Products Group. Before the impact of realized currency losses, transaction and other costs and the equity investment gain,  the Company's adjusted net income was  $219.0 million , an increase of  0.6%  as compared to adjusted net income of  $217.6 million  in the same three month period of the prior year. Adjusted net income is a non-GAAP measure (see table below for reconciliation to GAAP net income). On a per share basis, adjusted net income was  $1.50  for the  three months ended September 30, 2019 , an increase of  1.4%  as compared to  $1.48  for the same three month period of  2018 . Adjusted net income for the  nine months ended September 30, 2019  was  $636.5 million , a decrease of  0.2%  for the same  nine  month period of  2018 . On a per share diluted basis, adjusted net income was  $4.34  for the  nine months ended September 30, 2019 , which was up slightly compared to the same  nine  month period of the prior year.  The Company remains committed to its key growth initiatives, which include: driving greater share of spend with existing customers; employing an aggressive but disciplined acquisition strategy focused on both geographical in-fill and product line adjacencies; expanding the Company's digital capabilities; and the further expansion of our U.S. and international footprint. We continue to execute on these initiatives, and also focus on our plans and strategic initiatives to enhance our gross margins, reduce costs and build a highly productive, sustainable and cost-effective structure. We expect our focus in these key areas to improve the Company's operating performance over the long-term. Sales Sales for the  three months ended September 30, 2019  were  $5.0 billion , a  6.2%  increase as compared to  $4.7 billion  in the same period of the prior year. Approximately  1.2%  of the revenue increase for the  three months ended September 30, 2019  represents the growth in comparable sales, while  6.7%  came from acquisitions. These items were partially offset by a  1.0%  negative currency impact and  0.7%  primarily due to the sale of Grupo Auto Todo. For the  nine months ended September 30, 2019  sales were  $14.7 billion , a  3.9%  increase as compared to  $14.1 billion  in the same period of the prior year. This reflects an approximate  2.1%  increase in comparable sales, a  3.9%  contribution from acquisitions and a  1.5%  unfavorable currency impact, as compared to the same  nine  month period in  2018 . In addition, automotive sales were negatively impacted by  0.6%  primarily due to the sale of Grupo Auto Todo. Sales for the Automotive Parts Group increased  5.3%  for the  three months ended September 30, 2019 , as compared to the same period in the prior year. This group’s revenue increase for the  three months ended September 30, 2019  consisted of an approximate  1.8%  increase in comparable sales and a  6.5%  benefit from acquisitions. These items were partially offset by an unfavorable foreign currency impact of approximately  1.8%  and a  1.2%  impact primarily from the sale of Grupo Auto Todo. This group’s  3.0%  revenue increase for the  nine months ended September 30, 2019  consisted of an approximate  2.1%  increase in comparable sales and a  4.3%  benefit from acquisitions. These items were partially offset by an unfavorable foreign currency impact of approximately  2.6%  and a  0.8%  negative impact primarily from the sale of Grupo Auto Todo. We anticipate that the Company’s initiatives to drive both organic and acquisitive growth will positively benefit the Automotive Parts Group in the quarters ahead.  Sales for the Industrial Parts Group increased  9.9%  for the  three months ended September 30, 2019 , as compared to the same period in 2018. The increase in this group’s revenues reflects an approximate  0.9%  increase in comparable sales and a  9.0%  benefit from acquisitions. This group's  6.8%  sales increase for the  nine months ended September 30, 2019  reflects a  2.7%  increase in comparable sales, a  4.3%  increase from acquisitions and a slightly unfavorable foreign currency impact. The Industrial Parts Group has initiatives in place to drive continued market share expansion through both organic and acquisitive sales growth in the quarters ahead. We believe these ongoing initiatives bode well for Industrial Parts Group's long-term growth prospects.  Sales for the Business Products Group decreased  0.9%  for the  three months ended September 30, 2019 , compared to the same three month period in  2018 , primarily due to a decrease in comparable sales. For the  nine months ended September 30, 2019 , this group's revenues were essentially flat compared to the same  nine  month period in 2018. We will remain focused on our core growth initiatives for this business, including the further enhancement of our Facilities, Breakroom and Safety Products offering. Cost of Goods Sold and Operating Expenses Cost of goods sold for the  three months ended September 30, 2019  was  $3.4 billion , a  4.7%  increase from  $3.2 billion  for the same period in  2018 . As a percentage of net sales, cost of goods sold was  67.6%  for the  three months ended September 30, 2019 , as compared to  68.6%  in the same three month period of 2018. Cost of goods sold for the  nine months ended September 30, 2019  was  $10.0 billion , a  2.7%  increase from  $9.7 billion  for the same period in  2018 . As a percentage of net sales, cost of goods sold  18 Table of Contents was  67.8%  for the  nine months ended September 30, 2019 , as compared to  68.6%  in the same  nine  month period of 2018. The increase in cost of goods sold for the  three and nine  months ended  September 30, 2019  primarily relates to the sales increase for these periods as compared to the same three and  nine  month periods of the prior year. The increase for these periods was partially due to lower cost of goods due to favorable global supplier negotiations, more flexible and sophisticated pricing strategies, a shift in product mix to products that carry a higher gross margin and higher supplier incentives due to improved volumes for these segments. In addition, PartsPoint Group and Inenco, which were acquired in 2019, have higher gross margin profiles.  The Company’s cost of goods sold includes the total cost of merchandise sold, including freight expenses associated with moving merchandise from our vendors to our distribution centers, retail stores and branches, as well as vendor volume incentives and inventory adjustments. Gross profit as a percentage of net sales may fluctuate based on (i) changes in merchandise costs and related vendor volume incentives or pricing, (ii) variations in product and customer mix, (iii) price changes in response to competitive pressures, (iv) physical inventory and LIFO adjustments, (v) changes in foreign currency exchange rates, and (vi) the impact of tariffs. Tariffs did not have a material impact in the periods presented. Total operating expenses increased to  $1.3 billion  for the  three months ended September 30, 2019  as compared to  $1.2 billion  for the same three month period in  2018 . As a percentage of net sales, operating expenses increased to  26.7%  as compared to  25.1%  in the same three month period of the previous year. For the  nine months ended September 30, 2019 , these expenses totaled  $3.9 billion , or  26.5%  as a percentage of net sales, compared to  $3.6 billion , or  25.4%  as a percentage of net sales for the same  nine  month period in the prior year. The increase in operating expenses as a percentage of net sales for the  three and nine  months ended  September 30, 2019  reflects the effect of rising costs in areas such as payroll, freight, IT and cyber-security. In addition, the Company’s ability to leverage its expenses was negatively impacted due to lower comparable sales in certain operations relative to the prior year. The Company's ongoing cost control initiatives partially offset these increases in operating expenses.  The Company’s operating expenses are substantially comprised of compensation and benefit-related costs for personnel. Other major expense categories include facility occupancy costs for headquarters, distribution centers and retail store/branch operations, insurance costs, accounting, legal and professional services, technology and digital costs, transportation and delivery costs, travel and advertising. Management’s ongoing cost control measures in these areas have served to improve the Company’s overall cost structure. The Company's recent acquisitions have lower costs of goods sold and higher levels of operating costs as compared to the Company's other businesses; however, the operating profit margins generally remain consistent.The Company continues to focus on effectively managing the costs in our businesses with ongoing investments in technology, productivity and supply chain initiatives primarily associated with freight, digital, pricing, data analytics and logistics-related functions. Operating Profit Operating profit increased to  $381.2 million  for the  three months ended September 30, 2019 , compared to  $365.7 million  for the same three month period of the prior year, an increase of  4.2% . As a percentage of net sales, operating profit was  7.6%  as compared to  7.7%  in the same three month period of  2018 . For the  nine months ended September 30, 2019 , operating profit increased to  $1.09 billion  compared to  $1.07 billion  for the same  nine  month period of the prior year, and as a percentage of net sales, operating profit was  7.4%  as compared to  7.6%  in the same  nine  month period of  2018 . The decrease in operating profit as a percent of sales for the  three and nine  months ended  September 30, 2019  is primarily due to the increase in operating expenses due to the effect of rising costs in areas such as payroll, freight, IT and cyber-security. In addition, the Company’s ability to leverage its expenses was negatively impacted due to lower comparable sales in certain operations, primarily in Europe, relative to the prior year. These increases were partially offset by the improvement in gross margin for the three and  nine months ended September 30, 2019  as compared to the same periods in  2018 . The Automotive Parts Group’s operating profit decreased  2.0%  in the  three months ended September 30, 2019  as compared to the same period of  2018 , and its operating profit margin was  8.0%  as compared to  8.6%  in the same period of the previous year. For the  nine months ended September 30, 2019 , the Automotive Parts Group's operating profit decreased  3.9%  and the operating profit margin was  7.7%  as compared to 8.2% in the same  nine  month period of  2018 . The decrease in operating profit as a percent of sales for the  three and nine  months ended  September 30, 2019  is primarily due to the impact of rising costs and the deleveraging of expenses in the European automotive business. These decreases were partially offset by the improvement in gross margin for these periods as compared to the same periods of the previous year. The Industrial Parts Group’s operating profit increased  15.4%  in the  three months ended September 30, 2019  as compared to the same three month period of  2018 , and the operating profit margin for this group was  7.9%  compared to  7.6%  for the same period of the previous year. Operating profit for the Industrial Parts Group increased by  10.8%  for the  nine months ended September 30, 2019 , compared to the same period in  2018 , and the operating profit margin was  7.8%  compared to 7.5% for the same  nine  month period in  2018 . The improved operating profit reflects the positive impact of sales growth, improved gross margins and the controlling of expenses in the  three and nine  months ended  September 30, 2019  as compared to the same periods in  2018 , driven by the effective execution of Industrial's strategic growth initiatives. 19 Table of Contents The Business Products Group’s operating profit increased  8.9%  for the  three months ended September 30, 2019 , compared to the same three month period in  2018 , and the operating profit margin was  4.4%  compared to  4.0%  for the same period of the previous year. For the  nine months ended September 30, 2019 , the Business Products Group's operating profit increased  1.4%  compared to the same period in  2018 , and the operating profit margin was  4.4%  compared to 4.3% for the same period in  2018 . The increase in operating profit margin for the three and  nine  months ended  September 30, 2019  is primarily due to improved gross margins and the effective control of expenses as compared to the same periods in  2018 . If there are sustained declines in macroeconomic or business conditions in future periods affecting the projected earnings and cash flows at our reporting units, among other things, there can be no assurance that goodwill at one or more reporting units may not be impaired. Nonetheless, as of  September 30, 2019 , we believe goodwill is recoverable for all our reporting units.  Income Taxes The Company's effective income tax rate was  25.3%  for the  three months ended September 30, 2019 , compared to  24.5%  for the same three month period in  2018 . The effective income tax rate was  25.2%  for the  nine months ended September 30, 2019 , compared to  24.1%  for the same period in  2018 . The rate increase is primarily due to differences in income tax rates associated with transaction and statute-related adjustments recorded in the comparable periods. Net Income For the  three months ended September 30, 2019 , the Company recorded consolidated net income of  $227.5 million , an increase of  3.3%  as compared to consolidated net income of  $220.2 million  in the same three month period of the prior year. On a per share diluted basis, net income was  $1.56 , an increase of  4.7%  as compared to  $1.49  for the same three month period of  2018 . For the  nine months ended September 30, 2019 , the Company recorded consolidated net income of  $612.2 million , a decrease of  1.9%  as compared to consolidated net income of  $623.8 million  in the same  nine  month period of the prior year. On a per share diluted basis, net income was  $4.18 , a decrease of  1.2%  as compared to  $4.23  in the same  nine  month period of  2018 . During the  three and nine  months ended  September 30, 2019 , the Company incurred  $12.4 million  of income and  $25.8 million  of expense, respectively, from realized currency losses, transaction and other costs and a gain on an equity investment, before taxes. The realized currency losses and transaction and other costs primarily resulted from acquisition activity and the March 7, 2019 sale of Grupo Auto Todo, a Mexican subsidiary in the Automotive Parts Group . Additionally, the Company incurred realized currency losses and transaction and other costs related to the September 30, 2019 sale of EIS, the Electrical Specialties Group of Motion Industries. The investment gain relates to the remeasurement of the Company's preexisting 35% equity investment to fair value upon acquiring the remaining equity in Inenco on July 1, 2019.  The  three and nine  months ended  September 30, 2018  included  $3.1 million  of income and  $19.0 million  of expense, respectively, in transaction and other costs primarily related to the AAG acquisition as well as income and expense items associated with the attempted spin-off of the Business Products Group. Before the impact of realized currency losses, transaction and other costs and the equity investment gain, the Company's adjusted net income was  $219.0 million , an increase of  0.6%  as compared to adjusted net income of  $217.6 million  in the same three month period of the prior year. Adjusted net income is a non-GAAP measure (see table below for reconciliation to GAAP net income). On a per share basis, adjusted net income was  $1.50  for the  three months ended September 30, 2019 , an increase of  1.4%  as compared to  $1.48  for the same three month period of  2018 . Adjusted net income for the  nine months ended September 30, 2019  was  $636.5 million , a decrease of  0.2%  for the same  nine  month period of  2018 . On a per share diluted basis, adjusted net income was  $4.34  for the  nine months ended September 30, 2019 , which was up slightly compared to the same  nine  month period of the prior year.  The following table sets forth a reconciliation of net income and diluted net income per common share to adjusted net income and adjusted diluted net income per common share to account for the impact of these adjustments. The Company believes that the presentation of adjusted net income and adjusted net income per common share, which are not calculated in accordance with GAAP, when considered together with the corresponding GAAP financial measures and the reconciliations to those measures, provide meaningful supplemental information to both management and investors that is indicative of the Company's core operations. The Company considers these metrics useful to investors because they provide greater transparency into management’s view and assessment of the Company’s ongoing operating performance by removing items management believes are not representative of our continuing operations and may distort our longer-term operating trends. We believe these measures to be useful to enhance the comparability of our results from period to period and with our competitors, as well as to show ongoing results from operations distinct from items that are infrequent or not associated with the Company’s core operations. The Company does not, nor does it suggest investors should, consider such non-GAAP financial measures in isolation from, or as a substitute for, GAAP financial information. 20 Table of Contents     Three Months Ended September 30,   Nine Months Ended September 30, (in thousands, except per share data)   2019   2018   2019   2018 GAAP net income   $ 227,487   $ 220,227   $ 612,167   $ 623,775 Diluted net income per common share   $ 1.56   $ 1.49   $ 4.18   $ 4.23                   Adjustments:                 Realized currency losses   $ 7,664   $ —   $ 34,701   $ — Termination fee   —   (12,000 )   —   (12,000 ) Gain on equity investment   (38,663 )   —   (38,663 )   — Transaction and other costs   18,586   8,896   29,771   31,010 Total adjustments   $ (12,413 )   $ (3,104 )   $ 25,809   $ 19,010 Tax impact of adjustments   3,973   512   (1,450 )   (5,137 ) Adjusted net income   $ 219,047   $ 217,635   $ 636,526   $ 637,648 Adjusted diluted net income per common share   $ 1.50   $ 1.48   $ 4.34   $ 4.33 The table below clarifies where the items adjusted above are presented in the consolidated statements of income.     Three Months Ended September 30,   Nine Months Ended September 30, (in thousands)   2019   2018   2019   2018 Line item:                 Cost of goods sold   $ 4,521   $ —   $ 7,481   $ 5,779 Selling, administrative and other expenses   15,879   (3,104 )   24,103   13,231 Non-operating (income): Other   (32,813 )   —   (5,775 )   — Total adjustments   $ (12,413 )   $ (3,104 )   $ 25,809   $ 19,010 Financial Condition The Company’s cash balance of  $451.3 million  at  September 30, 2019  increased  $117.7 million , or  35.3% , from  December 31, 2018 . For the  nine months ended September 30, 2019 , the Company had net cash provided by operating activities of  $745.2 million , net cash used in investing activities of  $391.4 million  and net cash used in financing activities of  $229.4 million . The investing activities consisted primarily of  $625.6 million  for acquisitions and other investing activities,  $182.6 million  for capital expenditures and  $416.8 million  in proceeds from divestitures. The financing activities consisted primarily of  $328.1 million  for dividends paid to the Company’s shareholders, as well as  $179.2 million  net proceeds from debt that is primarily being used to fund acquisitions.  Accounts receivable increased  $246.3 million , or  9.9% , from  December 31, 2018 , which is primarily due to acquisitions of businesses and higher sales volume in the  nine months ended September 30, 2019  as compared to the fourth quarter of  2018 . Inventory increased  $108.9 million , or  3.0% , and accounts payable increased  $200.1 million , or  5.0%  from  December 31, 2018  due primarily to acquisitions of businesses and more favorable payment terms negotiated with certain of the Company's vendors. The Company’s debt is discussed below. Liquidity and Capital Resources Total debt of  $3.4 billion  at  September 30, 2019  increased  $274.7 million , or  8.7% , from  December 31, 2018 . The increase in debt primarily reflects additional borrowings associated with the Company's recent acquisitions. On May 31, 2019, the Company entered into a private placement agreement of  €250,000  long-term fixed rate debt. The  €250,000  of long-term fixed rate debt includes  €50,000 ,  1.55%  Series A Guaranteed Senior Note maturing on May 31, 2029,  €100,000 ,  1.74%  Series B Guaranteed Senior Note maturing on May 31, 2031 and €100,000,  1.95%  Series C Guaranteed Senior Note maturing on May 31, 2034. On June 30, 2019, the Company entered into a private placement agreement of  A$310,000  long-term fixed rate debt. The  A$310,000  of long-term fixed rate debt includes  A$155,000 , 3.10% Series A Guaranteed Senior Note maturing on June 30, 2024 and  A$155,000 , 3.43% Series B Guaranteed Senior Note maturing on June 30, 2026.  At  September 30, 2019 , the Company's total average cost of debt was 2.2% and the Company remained in compliance with all covenants connected with its borrowings. The Company currently believes existing lines of credit and cash generated from  21 Table of Contents operations will be sufficient to fund anticipated operations, including discretionary share repurchases, if any, for the foreseeable future. Item 3. Quantitative and Qualitative Disclosures about Market Risk For quantitative and qualitative disclosures about market risk, refer to “Quantitative and Qualitative Disclosures About Market Risk” in Item 7A of Part II of our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 . Our exposure to market risk has not changed materially since  December 31, 2018 . Item 4. Controls and Procedures As of the end of the period covered by this report, an evaluation was performed under the supervision and with the participation of the Company’s management, including the Chief Executive Officer ("CEO") and Chief Financial Officer ("CFO"), of the effectiveness of the Company’s disclosure controls and procedures, as such term is defined in SEC Rule 13a-15(e). Based on that evaluation, the Company’s management, including the CEO and CFO, concluded that due to a previously reported material weakness, the Company’s disclosure controls and procedures were not effective. A material weakness is a deficiency, or combination of deficiencies, in internal control over financial reporting such that there is a reasonable possibility that a material misstatement of the company’s annual or interim financial statements will not be prevented or detected on a timely basis. Specifically, AAG, the Company's European automotive subsidiary that generated approximately 10% of the Company's total net sales in 2018, did not adequately identify, design and maintain internal controls at the transaction level that mitigate the risk of material misstatement in financial reporting processes nor did it maintain appropriate information technology controls. Refer to Item 9A of our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018  for more information. There were no material errors in the financial results or balances identified as a result of the control deficiencies, and there were no restatements of prior period financial statements and no changes in previously released financial results were required as a result of these control deficiencies.  Remediation efforts to address material weakness As previously described in Item 9A of our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , the Company began implementing a remediation plan to address the material weakness mentioned above. Management will continue to enhance the risk assessment process and design and implementation of internal control over financial reporting at AAG. This includes initiation of compensating controls and enhanced and revised design of existing financial reporting controls, information technology applications and procedures at AAG. During the  nine  months ended  September 30, 2019 , the Company continued testing those enhanced controls and procedures. The material weakness will not be considered remediated until the applicable controls operate for a sufficient period of time and management has concluded, through testing, that these controls are operating effectively. Changes in internal control over financial reporting During the  nine months ended September 30, 2019 , the Company adopted ASU 2016-02 and centralized the Company's lease accounting system and processes effective January 1, 2019. This implementation resulted in a material change to the Company's internal control over financial reporting as of that date. The operating effectiveness of these changes will be evaluated as part of our annual assessment of the effectiveness of internal control over financial reporting for the fiscal year ending December 31, 2019. Other than with respect to the remediation efforts described above and changes related to the adoption of ASU 2016-02, there have been no changes in the Company’s internal control over financial reporting during the Company’s fiscal quarter ended  September 30, 2019  that have materially affected, or are reasonably likely to materially affect, the Company’s internal control over financial reporting. 22 Table of Contents PART II – OTHER INFORMATION Item 1A. Risk Factors In addition to the other information set forth in this report, you should carefully consider the factors discussed in Part I, “Item 1A. Risk Factors” in our  2018  Annual Report on Form 10-K, which could materially affect our business, financial condition or future results. The risks described in our  2018  Annual Report on Form 10-K are not the only risks facing our Company. Additional risks and uncertainties not currently known to us or that we currently deem to be immaterial also may materially adversely affect our business, financial condition and/or operating results. Item 2. Unregistered Sales of Equity Securities and Use of Proceeds The following table provides information about the Company’s purchases of shares of the Company’s common stock during the three months ended  September 30, 2019 : ISSUER PURCHASES OF EQUITY SECURITIES Period   Total Number of Shares Purchased (1)   Average Price Paid Per Share   Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs (2)   Maximum Number of Shares That May Yet Be Purchased Under the Plans or Programs July 1, 2019 through July 31, 2019   285,200   $96.45   285,200   16,134,943 August 1, 2019 through August 31, 2019   478,007   $90.56   478,007   15,656,936 September 1, 2019 through September 30, 2019   37,882   $92.83   25,000   15,631,936 Totals   801,089   $92.76   788,207   15,631,936 (1) Includes shares surrendered by employees to the Company to satisfy tax withholding obligations in connection with the vesting of shares of restricted stock, the exercise of stock options and/or tax withholding obligations.  (2) On November 17, 2008 and August 21, 2017, the Board of Directors announced that it had authorized the repurchase of  15.0 million  shares and  15.0 million  shares, respectively. The authorization for these repurchase plans continues until all such shares have been repurchased or the repurchase plan is terminated by action of the Board of Directors. Approximately  0.6 million  shares authorized in the 2008 plan and  15.0 million  shares authorized in 2017 remain available to be repurchased by the Company. There were no other repurchase plans announced as of  September 30, 2019 . 23 Table of Contents Item 6. Exhibits (a) The following exhibits are filed or furnished as part of this report: Exhibit 3.1   Amended and Restated Articles of Incorporation of the Company, dated April 23, 2007 (incorporated herein by reference from Exhibit 3.1 to the Company’s Current Report on Form 8-K dated April 23, 2007)     Exhibit 3.2   By-Laws of the Company, as amended and restated November 19, 2018 (incorporated herein by reference from Exhibit 3.2 to the Company’s Current Report on Form 8-K dated November 19, 2018)       Exhibit 31.1   Certification pursuant to SEC Rule 13a-14(a) signed by the Chief Executive Officer – filed herewith     Exhibit 31.2   Certification pursuant to SEC Rule 13a-14(a) signed by the Chief Financial Officer – filed herewith     Exhibit 32   Certification Pursuant to 18 U.S.C. Section 1350, as Adopted Pursuant to Section 906 of the Sarbanes-Oxley Act of 2002, signed by the Chief Executive Officer and Chief Financial Officer – furnished herewith     Exhibit 101.INS   XBRL Instance Document - The instance document does not appear in the interactive data file because its XBRL tags are embedded within the inline XBRL document.       Exhibit 101.SCH   XBRL Taxonomy Extension Schema Document       Exhibit 101.CAL   XBRL Taxonomy Extension Calculation Linkbase Document       Exhibit 101.DEF   XBRL Taxonomy Extension Definition Linkbase Document       Exhibit 101.LAB   XBRL Taxonomy Extension Labels Linkbase Document       Exhibit 101.PRE   XBRL Taxonomy Extension Presentation Linkbase Document 24 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.       Genuine Parts Company (Registrant)       Date: October 18, 2019   /s/ Carol B. Yancey     Carol B. Yancey     Executive Vice President and Chief Financial Officer (Duly Authorized Officer and Principal Financial and Accounting Officer) 25 	 
+ 

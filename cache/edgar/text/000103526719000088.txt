@@ -1,0 +1,2160 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q2 2019 0001035267 INTUITIVE SURGICAL INC 0.001 0.001 300000000.0 300000000.0 114500000 115200000 114500000 115200000 0 0.001 0.001 2500000.0 2500000.0 0 0 0 0 P0Y P0Y 
+		 
+			 0001035267 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2019-07-16 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 isrg:UnitedStatesCorporateDebtAndEquitySecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:MunicipalNotesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CashMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 isrg:UnitedStatesCorporateDebtAndEquitySecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CashMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:MunicipalNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ChindexMember 
+			 
+		 
+		 
+			 2019-01-05 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ChindexMember 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-01-05 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ChindexMember 
+				 us-gaap:DistributionRightsMember 
+			 
+		 
+		 
+			 2019-01-05 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ChindexMember 
+			 
+		 
+		 
+			 2019-01-05 
+			 2019-01-05 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ChindexMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ServicesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:InstrumentsandAccessoriesMember 
+				 us-gaap:GeographicDistributionForeignMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SystemsMember 
+				 us-gaap:GeographicDistributionDomesticMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:PrepaidExpensesAndOtherCurrentAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:OtherNoncurrentAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:OtherNoncurrentAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AssetsLeasedToOthersMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CommonStockRepurchaseProgramMember 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:EmployeeStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:StockOptionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:StockOptionMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:StockOptionMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:EmployeeStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:StockOptionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:EmployeeStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:EmployeeStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesProductMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesProductMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ResearchAndDevelopmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ResearchAndDevelopmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SellingGeneralAndAdministrativeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SellingGeneralAndAdministrativeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SellingGeneralAndAdministrativeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesServiceMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesProductMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesServiceMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesServiceMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SellingGeneralAndAdministrativeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ResearchAndDevelopmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:ResearchAndDevelopmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesServiceMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:CostOfSalesProductMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2019-04-30 
+		 
+	 
+		 
+			 0001035267 
+		 
+		 
+			 2015-07-01 
+			 2015-09-30 
+		 
+	 
+		 
+			 0001035267 
+			 
+				 isrg:SchllyFiberopticGmbHMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-07-19 
+		 
+	 
+		 xbrli:pure 
+	 
+		 xbrli:shares 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 iso4217:USD 
+	 Table of Contents   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549   FORM  10-Q     (Mark One) ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  June 30, 2019   OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from               to               Commission file number  000-30713     Intuitive Surgical, Inc. (Exact name of Registrant as specified in its Charter)   Delaware   77-0416458 (State or Other Jurisdiction of Incorporation or Organization)   (I.R.S. Employer Identification No.) 1020 Kifer Road   Sunnyvale ,  California   94086   (Address of principal executive offices) (Zip Code) ( 408 )  523-2100   (Registrant’s telephone number, including area code)   Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading Symbol(s) Name of each exchange on which registered Common Stock, par value $0.001 per share ISRG The Nasdaq Global Select Market   Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes    x     No   ¨ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes    x     No   ¨ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company. See definition of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act.   Large accelerated filer x   Accelerated filer ¨ Non-accelerated filer ¨   Smaller reporting company ☐       Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.               ¨    Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes   ☐     No   x The Registrant had  115,253,433  shares of Common Stock, $0.001 par value per share, outstanding as of  July 16, 2019 .   Table of Contents INTUITIVE SURGICAL, INC. TABLE OF CONTENTS     Page No. PART I. FINANCIAL INFORMATION       Item 1. Financial Statements (unaudited):           Condensed consolidated balance sheets as of June 30, 2019 and December 31, 2018 3         Condensed consolidated statements of comprehensive income for the three and six months ended June 30, 2019 and 2018 4         Condensed consolidated statements of cash flows for the six months ended June 30, 2019 and 2018 5         Notes to condensed consolidated financial statements 6       Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 23       Item 3. Quantitative and Qualitative Disclosures About Market Risk 40       Item 4. Controls and Procedures 40     PART II. OTHER INFORMATION         Item 1. Legal Proceedings 41       Item 1A. Risk Factors 41       Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 41       Item 3. Defaults Upon Senior Securities 41       Item 4. Mine Safety Disclosures 41       Item 5. Other Information 41       Item 6. Exhibits 42         Signature 43 2 Table of Contents PART I - FINANCIAL INFORMATION ITEM 1.         FINANCIAL STATEMENTS INTUITIVE SURGICAL, INC. CONDENSED CONSOLIDATED BALANCE SHEETS (UNAUDITED) in millions (except par values) June 30,  2019 December 31,  2018 ASSETS       Current assets:       Cash and cash equivalents $ 790.3   $ 857.9 Short-term investments 1,928.1   2,205.2 Accounts receivable, net 633.4   682.3 Inventory 512.8   409.0 Prepaids and other current assets 207.0   178.8 Total current assets 4,071.6   4,333.2 Property, plant, and equipment, net 1,032.4   812.0 Long-term investments 2,429.8   1,771.3 Deferred tax assets 369.1   428.6 Intangible and other assets, net 383.8   261.0 Goodwill 244.9   240.6 Total assets $ 8,531.6   $ 7,846.7 LIABILITIES AND STOCKHOLDERS’ EQUITY       Current liabilities:       Accounts payable $ 129.6   $ 100.7 Accrued compensation and employee benefits 160.5   193.8 Deferred revenue 306.8   294.3 Other accrued liabilities 210.6   231.8 Total current liabilities 807.5   820.6 Other long-term liabilities 444.5   338.6 Total liabilities 1,252.0   1,159.2 Contingencies (Note 7)   Stockholders’ equity:       Preferred stock, 2.5 shares authorized, $0.001 par value, issuable in series; no shares issued and outstanding as of June 30, 2019, and December 31, 2018 —   — Common stock, 300.0 shares authorized, $0.001 par value, 115.2 shares and 114.5 shares issued and outstanding as of June 30, 2019, and December 31, 2018, respectively 0.1   0.1 Additional paid-in capital 5,430.1   5,170.3 Retained earnings 1,819.0   1,521.7 Accumulated other comprehensive income (loss) 16.1   ( 13.3 ) Total Intuitive Surgical, Inc. stockholders’ equity 7,265.3   6,678.8 Noncontrolling interest in joint venture 14.3   8.7 Total stockholders’ equity 7,279.6   6,687.5 Total liabilities and stockholders’ equity $ 8,531.6   $ 7,846.7 The accompanying notes are an integral part of these Condensed Consolidated Financial Statements (Unaudited). 3 Table of Contents INTUITIVE SURGICAL, INC. CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (UNAUDITED)   Three Months Ended  June 30, Six Months Ended  June 30, in millions (except per share amounts) 2019 2018 2019 2018 Revenue:               Product $ 922.3   $ 753.5   $ 1,722.1   $ 1,448.3 Service 176.6   155.8   350.5   308.5 Total revenue 1,098.9   909.3   2,072.6   1,756.8 Cost of revenue:               Product 283.4   228.1   529.8   429.6 Service 56.5   48.9   114.2   101.1 Total cost of revenue 339.9   277.0   644.0   530.7 Gross profit 759.0   632.3   1,428.6   1,226.1 Operating expenses:               Selling, general and administrative 279.2   259.8   552.6   481.4 Research and development 120.8   95.1   264.8   190.6 Total operating expenses 400.0   354.9   817.4   672.0 Income from operations 359.0   277.4   611.2   554.1 Interest and other income, net 32.8   18.2   60.3   31.4 Income before taxes 391.8   295.6   671.5   585.5 Income tax expense 75.4   41.0   51.1   43.6 Net income 316.4   254.6   620.4   541.9 Less: net loss attributable to noncontrolling interest in joint venture ( 1.9 )   ( 0.7 )   ( 4.4 )   ( 1.0 ) Net income attributable to Intuitive Surgical, Inc. $ 318.3   $ 255.3   $ 624.8   $ 542.9 Net income per share attributable to Intuitive Surgical, Inc.:               Basic $ 2.76   $ 2.25   $ 5.42   $ 4.80 Diluted $ 2.67   $ 2.15   $ 5.23   $ 4.59 Shares used in computing net income per share attributable to Intuitive Surgical, Inc.:               Basic 115.4   113.5   115.2   113.2 Diluted 119.3   118.5   119.4   118.3 Total comprehensive income attributable to Intuitive Surgical, Inc. $ 335.1   $ 257.0   $ 654.2   $ 542.0 The accompanying notes are an integral part of these Condensed Consolidated Financial Statements (Unaudited). 4 Table of Contents INTUITIVE SURGICAL, INC. CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS (UNAUDITED)   Six Months Ended  June 30, in millions  2019   2018 Operating activities:       Net income $ 620.4   $ 541.9 Adjustments to reconcile net income to net cash provided by operating activities:       Depreciation and loss on disposal of property, plant, and equipment 67.8   49.8 Amortization of intangible assets 20.5   5.7 Loss (gain) on investments, accretion, and amortization, net ( 1.6 )   4.7 Deferred income taxes 52.7   48.7 Share-based compensation expense 157.7   120.8 Amortization of contract acquisition asset 5.9   5.3 Changes in operating assets and liabilities, net of effects of acquisition:       Accounts receivable 48.9   ( 17.3 ) Inventory ( 178.0 )   ( 133.9 ) Prepaids and other assets ( 89.2 )   ( 102.4 ) Accounts payable 21.7   14.3 Accrued compensation and employee benefits ( 33.3 )   ( 39.6 ) Deferred revenue 8.7   29.8 Other liabilities ( 53.0 )   ( 16.1 ) Net cash provided by operating activities 649.2   511.7 Investing activities:       Purchase of investments ( 1,815.9 )   ( 851.6 ) Proceeds from sales of investments 61.1   259.0 Proceeds from maturities of investments 1,418.9   724.9 Purchase of property, plant, and equipment and intellectual property ( 196.9 )   ( 84.9 ) Acquisition of businesses, net of cash 1.2   ( 38.1 ) Net cash provided by (used in) investing activities ( 531.6 )   9.3 Financing activities:       Proceeds from issuance of common stock relating to employee stock plans 119.6   134.9 Taxes paid related to net share settlement of equity awards ( 145.0 )   ( 108.0 ) Repurchase of common stock ( 200.0 )   — Capital contribution from noncontrolling interest 10.0   8.0 Other financing activities ( 5.0 )   — Net cash provided by (used in) financing activities ( 220.4 )   34.9 Effect of exchange rate changes on cash, cash equivalents, and restricted cash ( 1.3 )   ( 0.6 ) Net increase (decrease) in cash, cash equivalents, and restricted cash ( 104.1 )   555.3 Cash, cash equivalents, and restricted cash, beginning of period 909.4   663.2 Cash, cash equivalents, and restricted cash, end of period $ 805.3   $ 1,218.5 The accompanying notes are an integral part of these Condensed Consolidated Financial Statements (Unaudited). 5 Table of Contents INTUITIVE SURGICAL, INC. NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) In this report, “Intuitive Surgical,” “Intuitive,” the “Company,” “we,” “us,” and “our” refer to Intuitive Surgical, Inc. and its wholly- and majority-owned subsidiaries. NOTE 1.     DESCRIPTION OF THE BUSINESS Intuitive Surgical, Inc. (“Intuitive” or the “Company”) develops, manufactures, and markets the da Vinci ®  Surgical System and the Ion TM  endoluminal system. The Company’s products and related services enable physicians and healthcare providers to improve the quality of and access to minimally invasive care. The da Vinci Surgical System consists of a surgeon console or consoles, a patient-side cart, a high-performance vision system, and proprietary instruments and accessories. The Ion endoluminal system is a flexible robotic-assisted catheter-based platform that utilizes instruments and accessories for lung biopsies. NOTE 2.     SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Basis of Presentation In the opinion of management, the accompanying unaudited Condensed Consolidated Financial Statements (“Financial Statements”) of Intuitive Surgical, Inc. and its wholly- and majority-owned subsidiaries have been prepared on a consistent basis with the audited Consolidated Financial Statements for the fiscal year ended  December 31, 2018 , and include all adjustments, consisting of only normal recurring adjustments, necessary to fairly state the information set forth herein. The Financial Statements have been prepared in accordance with the rules and regulations of the Securities and Exchange Commission (“SEC”) and therefore, omit certain information and footnote disclosure necessary to present the Financial Statements in accordance with United States (“U.S.”) generally accepted accounting principles (“U.S. GAAP”). These Financial Statements should be read in conjunction with the audited Consolidated Financial Statements and notes thereto included in the Company’s Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , which was filed with the SEC on February 4, 2019. The results of operations for the first  six  months of fiscal year  2019  are not necessarily indicative of the results to be expected for the entire fiscal year or any future periods.   The Financial Statements include the results and the balances of the Company’s majority-owned joint venture (referred to herein as the “Joint Venture”) with Shanghai Fosun Pharmaceutical (Group) Co., Ltd. (“Fosun Pharma”). The Company holds a controlling financial interest in the Joint Venture and the noncontrolling interest is reflected as a separate component of consolidated stockholders’ equity. The noncontrolling interest’s share of the earnings in the Joint Venture is presented separately in the consolidated statements of income. Recently Adopted Accounting Pronouncements Leases In February 2016, the Financial Accounting Standards Board (“FASB”) issued Accounting Standards Update (“ASU”) No. 2016-02,  Leases (Topic 842)  (“Topic 842”), which amended prior accounting standards for leases. The Company adopted Topic 842   on January 1, 2019, using the alternative modified transition method, which requires a cumulative-effect adjustment, if any, to the opening balance of retained earnings to be recognized on the date of adoption with prior periods not restated. There was no cumulative-effect adjustment recorded on January 1, 2019. Please see the description of the Company’s “Leases” accounting policy in the “Significant Accounting Policies” section below. The Company elected the following practical expedients when assessing the transition impact from both the lessee and lessor perspectives: (i) not to reassess whether any expired or existing contracts as of January 1, 2019, are or contain leases; (ii) not to reassess the lease classification for any expired or existing leases as of January 1, 2019; (iii) not to reassess initial direct costs for any existing leases as of January 1, 2019; and (iv) not to reassess whether land easements meet the definition of a lease.  The primary impact for the Company was the balance sheet recognition of right-of-use (“ROU”) assets and lease liabilities for operating leases as a lessee. Customer’s Accounting for Implementation Costs Incurred in a Cloud Computing Arrangement That is a Service Contract In August 2018, the FASB issued ASU No. 2018-15,  Intangibles (Topic 350): Customer’s Accounting for Implementation Costs Incurred in a Cloud Computing Arrangement That Is a Service Contract , which aligns the requirements for capitalizing implementation costs incurred in a hosting arrangement that is a service contract with the requirements for capitalizing implementation costs incurred to develop or obtain internal-use software. This standard also requires customers to amortize the capitalized implementation costs of a hosting arrangement that is a service contract over the term of the hosting arrangement. The Company early adopted this standard, as of January 1, 2019, on a prospective basis for applicable implementation costs. The  6 Table of Contents adoption is not expected to have a material impact on the Company’s financial position and the results of operations in fiscal year 2019. Significant Accounting Policies With the exception of the change for the accounting of leases as a result of the adoption of Topic 842, there have been no new or material changes to the significant accounting policies discussed in the Company’s Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , that are of significance, or potential significance, to the Company.  Leases The Company determines if an arrangement contains a lease at inception. For arrangements where the Company is the lessee, operating leases are included in intangible and other assets, net; other accrued liabilities; and other long-term liabilities on the Condensed Consolidated Balance Sheet as of  June 30, 2019 . The Company currently does not have any finance leases. Operating lease ROU assets and operating lease liabilities are recognized based on the present value of the future minimum lease payments over the lease term at commencement date. ROU assets also include any initial direct costs incurred and any lease payments made at or before the lease commencement date, less lease incentives received. The Company uses its incremental borrowing rate based on the information available at the commencement date in determining the lease liabilities as the Company’s leases generally do not provide an implicit rate. Lease terms may include options to extend or terminate when the Company is reasonably certain that the option will be exercised. Lease expense is recognized on a straight-line basis over the lease term. The Company also has lease arrangements with lease and non-lease components. The Company elected the practical expedient not to separate non-lease components from lease components for the Company’s real estate and automobile leases. Additionally, the Company applied a portfolio approach to effectively account for the operating lease ROU assets and lease liabilities for the Company’s automobile leases. The Company elected to apply the short-term lease measurement and recognition exemption in which ROU assets and lease liabilities are not recognized for leases with terms of 12 months or less. NOTE 3.     FINANCIAL INSTRUMENTS Cash, Cash Equivalents, and Investments The following tables summarize the Company’s cash and available-for-sale marketable securities’ amortized cost, gross unrealized gains, gross unrealized losses, and fair value by significant investment category reported as cash and cash equivalents, short-term, or long-term investments as of  June 30, 2019 , and  December 31, 2018  (in millions):                     Reported as:   Amortized Cost   Gross Unrealized Gains   Gross Unrealized Losses   Fair Value   Cash and Cash Equivalents   Short- term Investments   Long- term Investments June 30, 2019                           Cash $ 264.0   $ —   $ —   $ 264.0   $ 264.0   $ —   $ — Level 1:                           Money market funds 515.3   —   —   515.3   515.3   —   — U.S. treasuries 1,737.8   10.3   ( 0.9 )   1,747.2   11.0   892.0   844.2 Subtotal 2,253.1   10.3   ( 0.9 )   2,262.5   526.3   892.0   844.2 Level 2:                           Commercial paper 83.1   —   —   83.1   —   83.1   — Corporate debt securities 1,910.4   16.5   ( 0.5 )   1,926.4   —   647.9   1,278.5 U.S. government agencies 584.6   1.1   ( 0.6 )   585.1   —   289.2   295.9 Municipal securities 26.8   0.3   —   27.1   —   15.9   11.2 Subtotal 2,604.9   17.9   ( 1.1 )   2,621.7   —   1,036.1   1,585.6 Total assets measured at fair value $ 5,122.0   $ 28.2   $ ( 2.0 )   $ 5,148.2   $ 790.3   $ 1,928.1   $ 2,429.8   7 Table of Contents                   Reported as:   Amortized Cost   Gross Unrealized Gains   Gross Unrealized Losses   Fair Value   Cash and Cash Equivalents   Short- term Investments   Long- term Investments December 31, 2018                           Cash $ 269.4   $ —   $ —   $ 269.4   $ 269.4   $ —   $ — Level 1:                           Money market funds 569.1   —   —   569.1   569.1   —   — U.S. treasuries 1,477.8   1.7   ( 5.3 )   1,474.2   10.0   897.8   566.4 Subtotal 2,046.9   1.7   ( 5.3 )   2,043.3   579.1   897.8   566.4 Level 2:                           Commercial paper 110.7   —   —   110.7   1.4   109.3   — Corporate debt securities 1,607.8   1.3   ( 4.8 )   1,604.3   8.0   724.5   871.8 U.S. government agencies 791.8   0.3   ( 3.8 )   788.3   —   468.9   319.4 Municipal securities 18.4   —   —   18.4   —   4.7   13.7 Subtotal 2,528.7   1.6   ( 8.6 )   2,521.7   9.4   1,307.4   1,204.9 Total assets measured at fair value $ 4,845.0   $ 3.3   $ ( 13.9 )   $ 4,834.4   $ 857.9   $ 2,205.2   $ 1,771.3 As of  December 31, 2018 , the Company also recorded  $ 36.5  million  of restricted cash equivalents (comprised of money market funds and U.S. treasuries which would be considered highly liquid investments with original maturity dates that are 90 days or less) in connection with a concluded legal matter in prepaids and other current assets in the accompanying Condensed Consolidated Balance Sheets.  The following table summarizes the contractual maturities of the Company’s cash equivalents and available-for-sale investments (excluding cash and money market funds), as of  June 30, 2019  (in millions):     Amortized Cost   Fair Value Mature in less than one year $ 1,949.8   $ 1,952.1 Mature in one to five years 2,389.9   2,413.8 Mature in more than five years 3.0   3.0 Total $ 4,342.7   $ 4,368.9 Actual maturities may differ from contractual maturities because certain borrowers have the right to call or prepay certain obligations. Realized gains and losses, recognized on the sale of investments, were not material for any of the periods presented.  Foreign Currency Derivatives The objective of the Company’s hedging program is to mitigate the impact of changes in currency exchange rates on cash flow from foreign currency denominated sales, expenses, intercompany balances, and other monetary assets or liabilities denominated in currencies other than the U.S. dollar (“USD”). The terms of the Company’s derivative contracts are generally twelve months or shorter. The derivative assets and liabilities are measured using Level 2 fair value inputs.   Cash Flow Hedges The Company enters into currency forward contracts as cash flow hedges to hedge certain forecasted revenue transactions denominated in currencies other than the USD, primarily the European Euro (“EUR”), the British Pound (“GBP”), the Japanese Yen (“JPY”), and the Korean Won (“KRW”). The Company also enters into currency forward contracts as cash flow hedges to hedge certain forecasted expense transactions denominated in EUR and the Swiss Franc (“CHF”). For these derivatives, the Company reports the after-tax gain or loss from the hedge as a component of accumulated other comprehensive gain (loss) in stockholders’ equity and reclassifies it into earnings in the same period in which the hedged transaction affects earnings. The amounts reclassified to revenue and expenses related to the hedged transactions and the ineffective portions of cash flow hedges were not material for the periods presented. Other Derivatives Not Designated as Hedging Instruments Other derivatives not designated as hedging instruments consist primarily of forward contracts that the Company uses to hedge intercompany balances and other monetary assets or liabilities denominated in currencies other than the USD, primarily the EUR, GBP, JPY, KRW, CHF, and Indian Rupee. The net gains (losses) recognized in interest and other income, net in the  8 Table of Contents Condensed Consolidated Statements of Comprehensive Income for the  three and six  months ended  June 30, 2019 , and  2018 , were not material.  The notional amounts for derivative instruments provide one measure of the transaction volume. Total gross notional amounts (in USD) for outstanding derivatives and aggregate gross fair value at the end of each period were as follows (in millions):     Derivatives Designated as Hedging Instruments   Derivatives Not Designated as Hedging Instruments   June 30,  2019   December 31,  2018   June 30,  2019   December 31,  2018 Notional amounts:                    Forward contracts $ 178.7   $ 183.0   $ 192.2   $ 182.7 Gross fair value recorded in:                    Prepaids and other current assets $ 1.9   $ 3.1   $ 1.6   $ 4.1      Other accrued liabilities $ 0.8   $ 0.9   $ 0.8   $ 1.1 NOTE 4.     BALANCE SHEET DETAILS AND OTHER FINANCIAL INFORMATION Balance Sheet Details The following tables provide details of selected balance sheet items (in millions):     As of Inventory June 30,  2019   December 31,  2018 Raw materials $ 188.4   $ 164.1 Work-in-process 59.0   40.0 Finished goods 265.4   204.9 Total inventory $ 512.8   $ 409.0      As of Other accrued liabilities—short-term June 30,  2019   December 31,  2018 Taxes payable $ 24.3   $ 39.1 Litigation related accruals 5.7   55.0 Other accrued liabilities 144.9   137.7 Current portion of contingent consideration 35.7   — Total other accrued liabilities—short-term $ 210.6   $ 231.8   As of Other long-term liabilities June 30,  2019   December 31,  2018 Income taxes—long-term $ 266.0   $ 270.2 Deferred revenue—long-term 31.7   33.0 Other long-term liabilities 146.8   35.4 Total other long-term liabilities $ 444.5   $ 338.6 Goodwill and Intangible Assets The increases in goodwill and intangible assets from December 31, 2018, to June 30, 2019, primarily relate to the Company’s majority-owned Joint Venture with Fosun Pharma acquiring certain assets from Chindex and its affiliates, a subsidiary of Fosun Pharma, including distribution rights, customer relationships, and certain personnel on January 5, 2019, which collectively met the definition of a business. Chindex was the Company’s distributor of da Vinci products and services in China. The transaction enhances the Company’s ability to serve patients, surgeons, and hospitals in China.  The total purchase consideration of  $ 66.0  million , as of the acquisition date, included a contingent consideration liability of  $ 64.7  million  and an upfront cash payment of  $ 1.3  million . The amount and timing of the future contingent consideration payments are based upon achieving certain commercial milestones in 2019 and 2020. As of the acquisition date, the estimated total undiscounted contingent consideration was approximately  $ 81  million , and there were no significant changes to this estimate as of  June 30, 2019 . The contingent consideration liability was measured at estimated fair value using a discounted cash flow model, which require significant inputs not observable in the market, and thus represents a Level 3 measurement. Key assumptions include  9 Table of Contents (1) the probability and timing of milestone achievement based on projected future revenues in 2019 and 2020, and (2) the discount rate used to calculate the present value of the milestone payments. On each reporting period until the contingent consideration is settled, the Company will re-measure the contingent consideration liability and record changes in fair value within selling, general and administrative expenses. For the six months ended  June 30, 2019 , the contingent consideration liability increased primarily due to accretion expense of  $ 7.1  million , partly offset by payments of  $ 2.0  million . Changes to the contingent consideration liability can result from adjustments to discount rates, accretion due to the passage of time, or changes in estimates of the likelihood or timing of achieving the commercial milestones. The assumptions related to determining the fair value of contingent consideration include a significant amount of judgment, and any changes in the underlying estimates could have a material impact on the amount of contingent consideration adjustment recorded in any given period. The Company preliminarily recorded  $ 1.7  million  of net tangible assets,  $ 58.6  million  of intangible assets, and  $ 5.7  million  of residual goodwill. Intangible assets included distribution rights of  $ 48.2  million  and customer relationships of  $ 10.4  million , which are being amortized over a weighted average period of  2.9  years . The goodwill is not amortizable for income tax purposes. The Company has included the results of the acquired business since the acquisition date in its Financial Statements, which have not been material to date. Pro forma results of operations related to the acquisition have not been presented because the operating results of the acquired business is not material to the Financial Statements. Supplemental Cash Flow Information The following table provides supplemental non-cash investing and financing activities (in millions):     Six Months Ended June 30,   2019   2018 Equipment transfers, including operating lease assets, from inventory to property, plant, and equipment  $ 89.0   $ 49.0 Deferred payments and contingent consideration related to business combinations $ 64.7   $ — NOTE 5.     REVENUE AND CONTRACT ACQUISITION COSTS The following table presents revenue disaggregated by types and geography (in millions):   Three Months Ended June 30,   Six Months Ended June 30, U.S. 2019   2018   2019   2018 Instruments and accessories $ 428.6   $ 360.3   $ 836.0   $ 697.9 Systems 232.6   172.4   393.3   296.4 Services 124.1   112.0   247.6   222.8 Total U.S. revenue $ 785.3   $ 644.7   $ 1,476.9   $ 1,217.1                 Outside of U.S. (“OUS”)               Instruments and accessories $ 149.9   $ 115.8   $ 294.8   $ 238.5 Systems 111.2   105.0   198.0   215.5 Services 52.5   43.8   102.9   85.7 Total OUS revenue $ 313.6   $ 264.6   $ 595.7   $ 539.7                 Total                Instruments and accessories $ 578.5   $ 476.1   $ 1,130.8   $ 936.4 Systems 343.8   277.4   591.3   511.9 Services 176.6   155.8   350.5   308.5 Total revenue $ 1,098.9   $ 909.3   $ 2,072.6   $ 1,756.8 Remaining Performance Obligations The transaction price allocated to remaining performance obligations relates to amounts allocated to products and services for which revenue has not yet been recognized. A significant portion of this amount relates to performance obligations in the Company’s service contracts that will be satisfied and recognized as revenue in future periods. The transaction price allocated to the remaining performance obligations was approximately  $ 1,415.9  million  as of  June 30, 2019 . The remaining performance obligations are expected to be satisfied over the term of the individual sales arrangements, which generally are  5  years . 10 Table of Contents Contract Assets and Liabilities The following information summarizes the Company’s contract assets and liabilities (in millions):   As of   June 30,  2019   December 31,  2018 Contract assets $ 20.0   $ 12.4 Deferred revenue $ 338.5   $ 327.3 The Company invoices its customers based on the billing schedules in its sales arrangements.  Payments are generally due 30 days from date of invoice.  Contract assets for the periods presented primarily represent the difference between the revenue that was recognized based on the relative standalone selling price of the related performance obligations satisfied and the contractual billing terms in the arrangements. Deferred revenue for the periods presented primarily relates to service contracts where the service fees are billed up-front, generally quarterly or annually, prior to those services having been performed. The associated deferred revenue is generally recognized over the term of the service period. The Company did not have any significant impairment losses on its contract assets for the periods presented.  During the  three and six  months ended  June 30, 2019 , the Company recognized revenue of  $ 91.5  million  and  $ 223.7  million , respectively, which was included in the deferred revenue balance as of December 31, 2018. During the  three and six  months ended  June 30, 2018 , the Company recognized revenue of  $ 82.0  million  and  $ 197.8  million , respectively, which was included in the deferred revenue balance as of December 31, 2017. Intuitive Surgical da Vinci System Leasing The Company enters into sales-type lease and operating lease arrangements with certain qualified customers.  Sales-type leases have terms that generally range from 24 to 84 months and are usually collateralized by a security interest in the underlying assets.  Revenue related to multiple-element arrangements are allocated to lease and non-lease elements based on their relative standalone selling prices as prescribed by the Company’s revenue recognition policy. Lease elements generally include a da Vinci Surgical System or system component, while non-lease elements generally include service, instruments and accessories. For some lease arrangements, the customers are provided with the right to purchase the leased system at some point during and/or at the end of the lease term. Except for certain usage-based lease arrangements, lease arrangements generally do not provide rights for the customers to exit or terminate the lease without incurring a penalty. For some leases, lease payments are based on the usage of the systems.  In determining whether a transaction should be classified as a sales-type or operating lease, the Company considers the following terms at lease commencement: (1) whether title of the system transfers automatically or for a nominal fee by the end of the lease term, (2) whether the present value of the minimum lease payments equals or exceeds substantially all of the fair value of the leased system, (3) whether the lease term is for the major part of the remaining economic life of the leased system, (4) whether the lease grants the lessee an option to purchase the leased system that the lessee is reasonably certain to exercise, and (5) whether the underlying system is of such a specialized nature that it is expected to have no alternative use to the Company at the end of the lease term.  The Company generally recognizes revenue from sales-type lease arrangements at the time the system is accepted by the customer, assuming all other revenue recognition criteria have been met. Revenue from sales-type leases is presented as product revenue. Revenue from operating lease arrangements is generally recognized on a straight-line basis over the lease term or based upon system usage, and is presented as product revenue.  The following table presents revenue from our lease arrangements (in millions):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Sales-type lease revenue $ 15.3   $ 13.3   $ 19.9   $ 25.3 Operating lease revenue  $ 25.1   $ 11.5   $ 45.5   $ 21.0 Assets Recognized from the Costs to Obtain a Contract with a Customer The Company has determined that certain sales incentives provided to the Company’s sales team are required to be capitalized when the Company expects to generate future economic benefits from the related revenue-generating contracts subsequent to the initial capital sales transaction. When determining the economic life of the contract acquisition assets recognized, the Company considers historical service renewal rates, expectations of future customer renewals of service contracts, and other factors that could impact the economic benefits that the Company expects to generate from the relationship with its customers. The costs capitalized as contract acquisition costs included in intangible and other assets, net in the Company’s Condensed Consolidated  11 Table of Contents Balance Sheets were  $ 39.8  million  and  $ 34.2  million  as of  June 30, 2019 , and  December 31, 2018 , respectively. The Company did not incur any impairment losses during the periods presented.   NOTE 6.     LEASES Lessor Information Sales-type Leases.  Lease receivables relating to sales-type lease arrangements are presented on the Condensed Consolidated Balance Sheets as follows (in millions):   As of   June 30,  2019   December 31,  2018 Gross lease receivables $ 157.0   $ 150.4 Unearned income ( 7.3 )   ( 6.3 ) Allowance for credit loss ( 1.0 )   ( 1.0 ) Net investment in sales-type leases $ 148.7   $ 143.1 Reported as:          Prepaids and other current assets $ 52.5   $ 51.2    Intangible and other assets, net 96.2   91.9    Total, net $ 148.7   $ 143.1    Contractual maturities of gross lease receivables at  June 30, 2019 , are as follows (in millions): Fiscal Year Amount 2019 $ 26.0 2020 54.4 2021 37.6 2022 21.4 2023 12.5 2024 and thereafter 5.1 Total $ 157.0 Operating Leases.  The Company’s operating lease terms are generally five years or less with its customers. As of  June 30, 2019 , the maturities of lease payments are as follows (in millions): Fiscal Year Amount 2019 $ 56.7 2020 112.8 2021 94.8 2022 76.8 2023 51.2 2024 and thereafter 9.9 Total $ 402.2 Contingent rental revenue relating to operating lease arrangements were not material for the periods presented. The components of operating lease assets, which are presented within property, plant, and equipment, net on the Condensed Consolidated Balance Sheets, are as follows (in millions):   As of   June 30,  2019   December 31,  2018 Gross operating lease assets $ 210.0   $ 150.2 Less: Accumulated depreciation ( 43.9 )   ( 32.1 ) Total operating lease assets, net $ 166.1   $ 118.1 12 Table of Contents Lessee Information The Company enters into operating leases for real estate, automobiles, and certain equipment. Operating lease expense was  $ 4.6  million  and  $ 8.9  million  for the  three and six  months ended  June 30, 2019 , respectively. For leases with terms of 12 months or less, the related expense for the  three and six  months ended  June 30, 2019 , was not material.  Supplemental cash flow information for the  six  months ended  June 30, 2019 , related to operating leases was as follows (in millions): Cash paid for leases that were included within operating cash outflows $ 8.3 Right-of-use assets recognized related to new lease obligations $ 12.2 Supplemental balance sheet information, as of  June 30, 2019 , related to operating leases was as follows (in millions, except lease term and discount rate): Reported as:   Intangible and other assets, net (Right-of-use assets) $ 72.8 Other accrued liabilities $ 5.5 Other long-term liabilities 69.6 Total lease liabilities $ 75.1 Weighted average remaining lease term 7  years Weighted average discount rate 3.6 % As of  June 30, 2019 , the future payments related to the Company’s operating lease liabilities are scheduled as follows (in millions):  Fiscal Year Amount 2019 $ 4.5 2020 11.9 2021 16.9 2022 12.4 2023 11.1 2024 and thereafter 29.8 Total lease payments $ 86.6 Less imputed interest ( 11.5 ) Total operating lease liabilities  $ 75.1 ASC 840 Disclosures The Company elected the alternative modified transition method and is required to present previously disclosed information under the prior accounting standards for leases.  Lessor Information Sales-type Leases.  Contractual maturities of gross lease receivables as of December 31, 2018, are as follows (in millions): Fiscal Year Amount 2019 $ 50.8 2020 46.5 2021 29.7 2022 14.9 2023 7.5 2024 and thereafter 1.0 Total $ 150.4 13 Table of Contents Operating Leases.  Future minimum lease payments related to non-cancellable portion of operating leases as of December 31, 2018, are as follows (in millions): Fiscal Year Amount 2019 $ 88.0 2020 85.8 2021 68.8 2022 51.3 2023 25.4 2024 and thereafter 1.9 Total $ 321.2 Lessee Information Operating Leases.  Future minimum lease commitments under the Company’s operating leases as of December 31, 2018, are as follows (in millions): Fiscal Year Amount 2019 $ 15.1 2020 14.5 2021 12.7 2022 11.2 2023 11.0 2024 and thereafter 30.9 Total $ 95.4 NOTE 7.     CONTINGENCIES The Company is involved in a variety of claims, lawsuits, investigations and proceedings relating to securities laws, product liability, intellectual property, insurance, contract disputes, employment, and other matters. Certain of these lawsuits and claims are described in further detail below. It is not possible to predict what the outcome of these matters will be and the Company cannot guarantee that any resolution will be reached on commercially reasonable terms, if at all. A liability and related charge to earnings are recorded in the Financial Statements for legal contingencies when the loss is considered probable and the amount can be reasonably estimated. The assessment is re-evaluated each accounting period and is based on all available information, including impact of negotiations, settlements, rulings, advice of legal counsel, and other information and events pertaining to each case. Nevertheless, it is possible that additional future legal costs (including settlements, judgments, legal fees, and other related defense costs) could have a material adverse effect on the Company’s business, financial position, and future results of operations.  During the  three and six  months ended  June 30, 2019 , the Company recorded  no  litigation charges related to the tolled product liability claims described below, compared with  zero  and  $ 4.5  million  during the  three and six  months ended  June 30, 2018 , respectively. A total of  $ 4.2  million  and  $ 10.5  million  associated with these matters were included in other accrued liabilities in the accompanying Condensed Consolidated Balance Sheets as of  June 30, 2019 , and  December 31, 2018 , respectively.  Product Liability Litigation The Company is currently named as a defendant in a number of individual product liability lawsuits filed in various state and federal courts. The plaintiffs generally allege that they or a family member underwent surgical procedures that utilized the da Vinci Surgical System and sustained a variety of personal injuries and, in some cases death as a result of such surgery. Several of these cases have trial dates in the next 12 months. The cases raise a variety of allegations including, to varying degrees, that plaintiffs’ injuries resulted from purported defects in the da Vinci Surgical System and/or failure on the Company’s part to provide adequate training resources to the healthcare professionals who performed plaintiffs’ surgeries. The cases further allege that the Company failed to adequately disclose and/or misrepresented the potential risks and/or benefits of the da Vinci Surgical System. Plaintiffs also assert a variety of causes of action, including for example, strict liability based on purported design defects, negligence, fraud, breach of express and implied warranties, unjust enrichment, and loss of consortium. Plaintiffs seek recovery for alleged personal injuries and, in many cases, punitive damages. 14 Table of Contents In addition to the filed cases, the Company previously reported on a substantial number of claims relating to alleged complications from surgeries performed with certain versions of Monopolar Curved Scissor (“MCS”) instruments which included an MCS tip cover accessory that was the subject of a market withdrawal in 2012 and MCS instruments that were the subject of a recall in 2013. In an effort to avoid the expense and distraction of defending multiple lawsuits, the Company entered into tolling agreements to pause the applicable statutes of limitations for many of these claims and engaged in confidential mediation efforts. It is the Company’s position that as of  June 30, 2019 , all such “tolling agreements” have expired and the majority of the “tolled claims” have either been resolved or the claims have been filed.  The Company’s estimate of the anticipated cost of resolving the pending cases is based on negotiations with attorneys for the claimants. The final outcome of the pending lawsuits and claims, and others that might arise, is dependent on many variables that are difficult to predict and the ultimate cost associated with these product liability lawsuits and claims may be materially different than the amount of the current estimate and accruals and could have a material adverse effect on the Company’s business, financial position, and future results of operations. Although there is a reasonable possibility that a loss in excess of the amount recognized exists, the Company is unable to estimate the possible loss or range of loss in excess of the amount recognized at this time. Patent Litigation On June 30, 2017, Ethicon LLC, Ethicon Endo-Surgery, Inc., and Ethicon US LLC (collectively, “Ethicon”) filed a complaint for patent infringement against the Company in the U.S. District Court for the District of Delaware. The complaint, which was served on the Company on July 12, 2017, alleges that the Company’s EndoWrist   Stapler instruments infringe several of Ethicon’s patents. Ethicon asserts infringement of the U.S. Patent Nos. 9,585,658, 8,479,969, 9,113,874, 8,998,058, 8,991,677, 9,084,601, and 8,616,431. A claim construction hearing occurred on October 1, 2018, and the court issued a scheduling order on December 28, 2018. On March 20, 2019, the court granted the Company’s Motion to Stay pending an Inter Partes Review to be held at the Patent Trademark and Appeals Board to review patentability of six of the seven patents noted above and vacated the trial date.  On August 27, 2018, Ethicon filed a second complaint for patent infringement against the Company in the U.S. District Court for the District of Delaware. The complaint alleges that the Company’s SureForm 60 Staplers infringe five of Ethicon’s patents. Ethicon asserts infringement of the U.S. Patent Nos. 9,884,369, 7,490,749, 8,602,288, 8,602,287, and 9,326,770. The Company filed an answer denying all claims. On March 19, 2019, Ethicon filed a Motion for Leave to File a First Amended Complaint, removing allegations related to U.S. Patent No. 9,326,770 and adding allegations related to U.S. Patent Nos. 9,844,379 and 8,479,969. On July 17, 2019, the court entered an order denying the amendment, without prejudice, and granting the parties’ joint stipulation to stay the case in its entirety.  On May 30, 2019, Ethicon filed a complaint with the U.S. International Trade Commission (“USITC”), asserting infringement of U.S. Patent Nos. 9,884,369, 7,490,749, 9,844,379, 9,113,874, and 8,479,969. On June 28, 2019, the USITC voted to institute an investigation (No. 337-TA-1167) with respect to the claims in this complaint.  Based on currently available information, the Company is unable to make a reasonable estimate of loss or range of losses, if any, arising from these matters. 15 Table of Contents NOTE 8.     STOCKHOLDERS’ EQUITY Stockholders’ Equity The following tables present the changes in stockholders’ equity (in millions):     Three Months Ended June 30, 2019   Common Stock   Additional Paid-In Capital   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Total Intuitive Surgical, Inc. Stockholders’ Equity   Noncontrolling Interest in Joint Venture   Total Stockholders’ Equity   Shares   Amount             Beginning balance 115.4   $ 0.1   $ 5,328.8   $ 1,696.0   $ ( 0.7 )   $ 7,024.2   $ 16.2   $ 7,040.4 Issuance of common stock through employee stock plans  0.2       30.8           30.8       30.8 Shares withheld related to net share settlement of equity awards —       ( 0.3 )   ( 6.1 )       ( 6.4 )       ( 6.4 ) Share-based compensation expense related to employee stock plans         81.6           81.6       81.6 Repurchase and retirement of common stock ( 0.4 )       ( 10.8 )   ( 189.2 )       ( 200.0 )       ( 200.0 ) Net income attributable to Intuitive Surgical, Inc.             318.3       318.3       318.3 Other comprehensive income                 16.8   16.8       16.8 Net loss attributable to noncontrolling interest in joint venture                     —   ( 1.9 )   ( 1.9 ) Ending balance 115.2   $ 0.1   $ 5,430.1   $ 1,819.0   $ 16.1   $ 7,265.3   $ 14.3   $ 7,279.6                                   Three Months Ended June 30, 2018   Common Stock   Additional Paid-In Capital   Retained Earnings   Accumulated Other Comprehensive Loss   Total Intuitive Surgical, Inc. Stockholders’ Equity   Noncontrolling Interest in Joint Venture   Total Stockholders’ Equity   Shares   Amount             Beginning balance 113.3   $ 0.1   $ 4,817.1   $ 698.0   $ ( 18.1 )   $ 5,497.1   $ 9.3   $ 5,506.4 Issuance of common stock through employee stock plans  0.5       48.7           48.7       48.7 Shares withheld related to net share settlement of equity awards ( 0.1 )       ( 0.3 )   ( 5.2 )       ( 5.5 )       ( 5.5 ) Share-based compensation expense related to employee stock plans         63.3           63.3       63.3 Net income attributable to Intuitive Surgical, Inc.             255.3       255.3       255.3 Other comprehensive income                 1.7   1.7       1.7 Net loss attributable to noncontrolling interest in joint venture                     —   ( 0.7 )   ( 0.7 ) Ending balance 113.7   $ 0.1   $ 4,928.8   $ 948.1   $ ( 16.4 )   $ 5,860.6   $ 8.6   $ 5,869.2 16 Table of Contents   Six Months Ended June 30, 2019   Common Stock   Additional Paid-In Capital   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Total Intuitive Surgical, Inc. Stockholders’ Equity   Noncontrolling Interest in Joint Venture   Total Stockholders’ Equity   Shares   Amount             Beginning balance 114.5   $ 0.1   $ 5,170.3   $ 1,521.7   $ ( 13.3 )   $ 6,678.8   $ 8.7   $ 6,687.5 Issuance of common stock through employee stock plans  1.4       119.6           119.6       119.6 Shares withheld related to net share settlement of equity awards ( 0.3 )       ( 6.7 )   ( 138.3 )       ( 145.0 )       ( 145.0 ) Share-based compensation expense related to employee stock plans         157.7           157.7       157.7 Repurchase and retirement of common stock ( 0.4 )       ( 10.8 )   ( 189.2 )       ( 200.0 )       ( 200.0 ) Net income attributable to Intuitive Surgical, Inc.             624.8       624.8       624.8 Other comprehensive income                 29.4   29.4       29.4 Capital contribution from noncontrolling interest                     —   10.0   10.0 Net loss attributable to noncontrolling interest in joint venture                     —   ( 4.4 )   ( 4.4 ) Ending balance 115.2   $ 0.1   $ 5,430.1   $ 1,819.0   $ 16.1   $ 7,265.3   $ 14.3   $ 7,279.6                                   Six Months Ended June 30, 2018   Common Stock   Additional Paid-In Capital   Retained Earnings   Accumulated Other Comprehensive Loss   Total Intuitive Surgical, Inc. Stockholders’ Equity   Noncontrolling Interest in Joint Venture   Total Stockholders’ Equity   Shares   Amount             Beginning balance 112.3   $ 0.1   $ 4,679.2   $ 115.0   $ ( 15.5 )   $ 4,778.8   $ 1.6   $ 4,780.4 Adoption of new accounting standards             392.1   ( 1.3 )   390.8       390.8 Issuance of common stock through employee stock plans  1.7       134.9           134.9       134.9 Shares withheld related to net share settlement of equity awards ( 0.3 )       ( 6.1 )   ( 101.9 )       ( 108.0 )       ( 108.0 ) Share-based compensation expense related to employee stock plans         120.8           120.8       120.8 Net income attributable to Intuitive Surgical, Inc.             542.9       542.9       542.9 Other comprehensive income                 0.4   0.4       0.4 Capital contribution from noncontrolling interest                     —   8.0   8.0 Net loss attributable to noncontrolling interest in joint venture                     —   ( 1.0 )   ( 1.0 ) Ending balance 113.7   $ 0.1   $ 4,928.8   $ 948.1   $ ( 16.4 )   $ 5,860.6   $ 8.6   $ 5,869.2 Stock Repurchase Program The Company’s Board of Directors (the “Board”) has authorized an aggregate of  $ 7.5  billion  of funding for the Company’s common stock repurchase program (the “Repurchase Program”) since its establishment in March 2009. The most recent authorization occurred in January 2019 when the Board increased the authorized amount available under Repurchase Program to  $ 2.0  billion . As of  June 30, 2019 , the remaining amount of share repurchases authorized by the Board was approximately  $ 1.8  billion . 17 Table of Contents The following table provides share repurchase activities (in millions, except per share amounts):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Shares repurchased 0.4   —   0.4   — Average price per share $ 477.44   $ —   $ 477.44   $ — Value of shares repurchased $ 200.0   $ —   $ 200.0   $ — Accumulated Other Comprehensive Income (Loss) The components of accumulated other comprehensive income (loss), net of tax are as follows (in millions):     Three Months Ended June 30, 2019   Gains (Losses) on Hedge Instruments   Unrealized Gains (Losses) on Available-for-Sale Securities   Foreign Currency Translation Gains (Losses)   Employee Benefit Plans   Total Beginning balance $ 1.6   $ 1.8   $ ( 0.7 )   $ ( 3.4 )   $ ( 0.7 ) Other comprehensive income (loss) before reclassifications ( 0.2 )   18.0   ( 0.1 )   —   17.7 Amounts reclassified from accumulated other comprehensive income (loss) ( 0.9 )   ( 0.1 )   —   0.1   ( 0.9 ) Net current-period other comprehensive income (loss) ( 1.1 )   17.9   ( 0.1 )   0.1   16.8 Ending balance $ 0.5   $ 19.7   $ ( 0.8 )   $ ( 3.3 )   $ 16.1                       Three Months Ended June 30, 2018   Gains (Losses) on Hedge Instruments   Unrealized Gains (Losses) on Available-for-Sale Securities   Foreign Currency Translation Gains (Losses)   Employee Benefit Plans   Total Beginning balance $ ( 3.2 )   $ ( 17.5 )   $ 6.8   $ ( 4.2 )   $ ( 18.1 ) Other comprehensive income (loss) before reclassifications 6.2   0.8   ( 5.9 )   ( 0.3 )   0.8 Amounts reclassified from accumulated other comprehensive income (loss) 0.4   —   —   0.5   0.9 Net current-period other comprehensive income (loss) 6.6   0.8   ( 5.9 )   0.2   1.7 Ending balance $ 3.4   $ ( 16.7 )   $ 0.9   $ ( 4.0 )   $ ( 16.4 ) 18 Table of Contents   Six Months Ended June 30, 2019   Gains (Losses) on Hedge Instruments   Unrealized Gains (Losses) on Available-for-Sale Securities   Foreign Currency Translation Gains (Losses)   Employee Benefit Plans   Total Beginning balance $ 0.2   $ ( 9.8 )   $ ( 0.3 )   $ ( 3.4 )   $ ( 13.3 ) Other comprehensive income (loss) before reclassifications 3.3   29.6   ( 0.5 )   ( 0.1 )   32.3 Amounts reclassified from accumulated other comprehensive income (loss) ( 3.0 )   ( 0.1 )   —   0.2   ( 2.9 ) Net current-period other comprehensive income (loss) 0.3   29.5   ( 0.5 )   0.1   29.4 Ending balance $ 0.5   $ 19.7   $ ( 0.8 )   $ ( 3.3 )   $ 16.1                       Six Months Ended June 30, 2018   Gains (Losses) on Hedge Instruments   Unrealized Gains (Losses) on Available-for-Sale Securities   Foreign Currency Translation Gains (Losses)   Employee Benefit Plans   Total Beginning balance $ ( 2.4 )   $ ( 11.3 )   $ 2.3   $ ( 4.1 )   $ ( 15.5 ) Other comprehensive income (loss) before reclassifications 3.2   ( 6.6 )   ( 1.4 )   —   ( 4.8 ) Amounts reclassified from accumulated other comprehensive income (loss) 2.6   1.2   —   0.1   3.9 Net current-period other comprehensive income (loss) 5.8   ( 5.4 )   ( 1.4 )   0.1   ( 0.9 ) Ending balance $ 3.4   $ ( 16.7 )   $ 0.9   $ ( 4.0 )   $ ( 16.4 ) NOTE 9.     SHARE-BASED COMPENSATION In April 2019, the Company's shareholders approved an amended and restated 2010 Incentive Award Plan to provide for an increase in the number of shares of common stock reserved for issuance thereunder from  24,450,000  to  28,450,000 . As of  June 30, 2019 , approximately  6.5  million  shares of common stock were reserved for future issuance under the Company’s stock plans. A maximum of approximately  2.8  million  of these shares can be awarded as restricted stock units (“RSUs”). Stock Option Information A summary of stock option activity under all stock plans for the  six  months ended  June 30, 2019 , is presented as follows (in millions, except per share amounts):     Stock Options Outstanding     Number Outstanding   Weighted Average Exercise Price Per Share Balance at December 31, 2018   6.2   $ 200.79 Granted   0.3   $ 538.14 Exercised   ( 0.6 )   $ 148.54 Forfeited/expired   ( 0.1 )   $ 327.95 Balance at June 30, 2019   5.8   $ 223.43 As of  June 30, 2019 , options to purchase an aggregate of  4.7  million  shares of common stock were exercisable at a weighted average price of  $ 178.62  per share. 19 Table of Contents Restricted Stock Units Information A summary of RSUs activity for the  six  months ended  June 30, 2019 , is presented as follows (in millions, except per share amounts):     Shares   Weighted Average Grant Date Fair Value Unvested balance at December 31, 2018 2.0   $ 295.70 Granted 0.7   $ 543.83 Vested ( 0.7 )   $ 251.74 Forfeited ( 0.1 )   $ 365.99 Unvested balance at June 30, 2019 1.9   $ 399.74 Employee Stock Purchase Plan Under the Employee Stock Purchase Plan (“ESPP”), employees purchased approximately  0.1  million  shares for  $ 30.3  million  and approximately  0.1  million  shares for  $ 25.3  million  during the  six  months ended  June 30, 2019 , and  2018 , respectively.   Share-based Compensation Expense The following table summarizes share-based compensation expense for the  three and six  months ended  June 30, 2019 , and  2018  (in millions):     Three Months Ended  June 30,   Six Months Ended  June 30,   2019   2018   2019   2018 Cost of sales - products $ 11.4   $ 8.9   $ 22.4   $ 17.1 Cost of sales - services 4.8   4.1   9.3   8.0 Total cost of sales 16.2   13.0   31.7   25.1 Selling, general and administrative 40.7   32.7   79.3   62.2 Research and development 25.1   17.9   47.9   34.2 Share-based compensation expense before income taxes 82.0   63.6   158.9   121.5 Income tax benefit 16.5   12.8   32.9   25.1 Share-based compensation expense after income taxes $ 65.5   $ 50.8   $ 126.0   $ 96.4 The Black-Scholes option pricing model is used to estimate the fair value of stock options granted under the Company’s stock plans and rights to acquire stock granted under the ESPP. The weighted average estimated fair values of stock options and rights to acquire stock under the ESPP, as well as the weighted average assumptions used in calculating those fair values, were as follows:     Three Months Ended  June 30,   Six Months Ended  June 30,   2019   2018   2019   2018 Stock Options               Risk-free interest rate 2.2 %   2.7 %   2.4 %   2.6 % Expected term (in years) 4.3   4.2   4.3   4.3 Expected volatility 30 %   33 %   31 %   33 % Fair value at grant date $ 142.63   $ 139.43   $ 155.35   $ 131.53 ESPP               Risk-free interest rate —   —   2.5 %   1.9 % Expected term (in years) —   —   1.2   1.2 Expected volatility —   —   31 %   32 % Fair value at grant date —   —   $ 154.20   $ 124.61    NOTE 10.     INCOME TAXES Income tax expense for the  three  months ended  June 30, 2019 , was  $ 75.4  million , or  19.2 %  of income before taxes, compared with  $ 41.0  million , or  13.9 %  of income before taxes, for the  three  months ended  June 30, 2018 . Income tax expense for the  six  months ended  June 30, 2019 , was $ 51.1  million, or  7.6 %  of income before taxes, compared with $ 43.6  million, or  7.4 %  of income before taxes, for the  six  months ended  June 30, 2018 . 20 Table of Contents The effective tax rates for the  three and six  months ended  June 30, 2019 , and  2018 , differed from the U.S. federal statutory rate of  21%  primarily due to excess tax benefits associated with employee equity plans, the effect of income earned by certain overseas entities being taxed at rates lower than the federal statutory rate, and federal research and development (“R&D”) credit benefit, partially offset by state income taxes (net of federal benefit) and U.S. tax on foreign earnings. As of  June 30, 2019 , the Company had a total of gross unrecognized tax benefits of  $ 87.8  million  compared with  $ 78.8  million  as of  December 31, 2018 . If recognized, the gross unrecognized tax benefits would reduce the effective tax rate in the period of recognition. In the third quarter of 2015, the Company recorded a  $ 29.3  million  tax benefit due to a U.S. Tax Court opinion (the “2015 Opinion”) issued in July 2015 involving an independent third party related to intercompany charges for share-based compensation. Based on the findings of the U.S. Tax Court, the Company was required to, and did, refund to its foreign subsidiaries the share-based compensation element of certain intercompany charges made in prior periods. Starting from 2015, share-based compensation has been excluded from intercompany charges. In June 2019, the Ninth Circuit Court of Appeals reversed the 2015 Opinion (the “Ninth Circuit Opinion”). Since the Ninth Circuit Opinion potentially is subject to further judicial review, the Company continues to treat its share-based compensation expense in accordance with the 2015 Opinion and continues to recognize the related tax benefits in its financial statements based upon its evaluation of the position in light of the present facts. In the event of a final opinion which reverses the 2015 Opinion, there may be an adverse impact to the Company’s income tax expense and effective tax rate. The Company files federal, state, and foreign income tax returns in many U.S. and OUS jurisdictions. Years before 2015 are closed for the significant jurisdictions. Certain of the Company’s unrecognized tax benefits could change due to activities of various tax authorities, including potential assessment of additional tax, possible settlement of audits, or through normal expiration of various statutes of limitations, which could affect the Company’s effective tax rate in the period in which they change. Due to the uncertainty related to the timing and potential outcome of audits, the Company cannot estimate the range of reasonably possible change in unrecognized tax benefits that may occur in the next 12 months. The Company is subject to the examination of its income tax returns by the Internal Revenue Service and other tax authorities. The outcome of these audits cannot be predicted with certainty. The Company’s management regularly assesses the likelihood of adverse outcomes resulting from these examinations to determine the adequacy of the Company’s provision for income taxes. If any issues addressed in the Company’s tax audits are resolved in a manner not consistent with management’s expectations, the Company could be required to adjust its provision for income taxes in the period such resolution occurs. NOTE 11.     NET INCOME PER SHARE The following table presents the computation of basic and diluted net income per share attributable to Intuitive Surgical, Inc. for the  three and six  months ended  June 30, 2019 , and  2018  (in millions, except per share amounts):     Three Months Ended  June 30,   Six Months Ended  June 30,   2019   2018   2019   2018 Numerator:               Net income attributable to Intuitive Surgical, Inc. $ 318.3   $ 255.3   $ 624.8   $ 542.9 Denominator:               Weighted average shares outstanding used in basic calculation 115.4   113.5   115.2   113.2 Add: dilutive effect of potential common shares 3.9   5.0   4.2   5.1 Weighted average shares outstanding used in diluted calculation 119.3   118.5   119.4   118.3 Net income per share attributable to Intuitive Surgical, Inc.:               Basic $ 2.76   $ 2.25   $ 5.42   $ 4.80 Diluted $ 2.67   $ 2.15   $ 5.23   $ 4.59 Share-based compensation awards of approximately  1.2  million  and  0.3  million  shares for the  three  months ended  June 30, 2019 , and  2018 , respectively, and approximately  0.5  million  and  0.2  million  for the  six  months ended  June 30, 2019 , and  2018 , respectively, were outstanding, but were not included in the computation of diluted net income per share attributable to Intuitive Surgical, Inc. common stockholders because the effect of including such shares would have been anti-dilutive in the periods presented.    21 Table of Contents NOTE 12.     SUBSEQUENT EVENT In July 2019, the Company entered into an agreement to acquire certain assets and operations from Schölly Fiberoptic GmbH (“Schölly”), a supplier of endoscopes and other visualization equipment, for cash consideration of approximately  $ 100  million  (the “Schölly Acquisition”). The exact amount of the purchase consideration and timing of the closing of the Schölly Acquisition is subject to certain substantive closing conditions.   22 Table of Contents ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS In this report, “Intuitive Surgical,” “Intuitive,” the “Company,” “we,” “us,” and “our” refer to Intuitive Surgical, Inc. and its wholly- and majority-owned subsidiaries. This management’s discussion and analysis of financial condition as of  June 30, 2019 , and results of operations for the  three and six  months ended  June 30, 2019 , and  2018 , should be read in conjunction with management’s discussion and analysis of financial condition and results of operations included in our Annual Report on Form 10-K for the year ended  December 31, 2018 .   This report contains “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Securities Exchange Act of 1934, as amended (the “Exchange Act”). Forward-looking statements relate to expectations concerning matters that are not historical facts. Words such as “estimates,” “projects,” “believes,” “anticipates,” “plans,” “expects,” “intends,” “may,” “will,” “could,” “should,” “would,” “targeted” and similar words and expressions are intended to identify forward-looking statements. These forward-looking statements include, but are not limited to, statements related to our acquisitions, expected business, new product introductions, procedures and procedure adoption, future results of operations, future financial position, our ability to increase our revenues, the anticipated mix of our revenues between product and service revenues, our financing plans and future capital requirements, anticipated costs of revenue, anticipated expenses, our potential tax assets or liabilities, the effect of recent accounting pronouncements, our investments, anticipated cash flows, our ability to finance operations from cash flows and similar matters, and statements based on current expectations, estimates, forecasts and projections about the economies and markets in which we operate and our beliefs and assumptions regarding these economies and markets. These forward-looking statements should, therefore, be considered in light of various important factors, including, but not limited to, the following: the impact of global and regional economic and credit market conditions on healthcare spending; healthcare reform legislation in the U.S. and its impact on hospital spending, reimbursement, and fees levied on certain medical device revenues; changes in hospital admissions and actions by payers to limit or manage surgical procedures; the timing and success of product development and market acceptance of developed products; our ability to integrate acquisitions; the results of any collaborations, in-licensing arrangements, joint ventures, strategic alliances or partnerships; procedure counts; regulatory approvals, clearances and restrictions, or any dispute that may occur with any regulatory body; guidelines and recommendations in the healthcare and patient communities; intellectual property positions and litigation; competition in the medical device industry and in the specific markets of surgery in which we operate; unanticipated manufacturing disruptions or the inability to meet demand for products; the results of legal proceedings to which we are or may become a party; product liability and other litigation claims; adverse publicity regarding us and the safety of our products and adequacy of training; our ability to expand into foreign markets; the impact of changes to tax legislation, guidance, and interpretations; and other risk factors. Readers are cautioned not to place undue reliance on these forward-looking statements, which are based on current expectations and are subject to risks, uncertainties, and assumptions that are difficult to predict, including those risk factors described throughout this filing and in the Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , and other periodic filings with the Securities and Exchange Commission. Our actual results may differ materially and adversely from those expressed in any forward-looking statement. We undertake no obligation to publicly update or release any revisions to these forward-looking statements, except as required by law.   Intuitive ® , Intuitive Surgical ® , da Vinci ® , da Vinci S ® , da Vinci S HD Surgical System ® , da Vinci Si ® , da Vinci Si HD Surgical System ® , da Vinci Xi ® , da Vinci SP ® , EndoWrist ® , Firefly ® , InSite ® , da Vinci Connect ® , Intuitive Surgical EcoSystem ® , da Vinci X ® , SureForm TM ,   Single-Site ® , Ion TM ,   and IRIS TM  are trademarks or registered trademarks of the Company. Overview At Intuitive, we believe that minimally invasive care is life-enhancing care. Intuitive brings more than two decades of leadership in robotic-assisted surgical technology and solutions to its offerings, and develops, manufactures and markets the da Vinci surgical system and the Ion endoluminal system. While surgery and acute interventions have improved significantly in the past decades, there remains a significant need for better outcomes and decreased variability of these outcomes across care teams. The current health care environment is exerting a large and increasing burden on critical resources, including the professionals who staff care teams; surgeons, anesthesiologists, nurses, and other staff. At the same time, governments are straining to cover the healthcare needs of their populations and are demanding lower total cost per patient to treat disease. In the face of these challenges, we believe scientific, process, and technology advances in biology, computing, imaging, algorithms, and robotics offer the promise of new methods to solve old and difficult problems.  At Intuitive, we address these needs by focusing on what hospitals have termed the quadruple aim. First, we focus on products and services that can improve outcomes and decrease variability in the hands of care teams. Second, we seek to improve the patient experience by minimizing disruption to lives and creating greater predictability for the treatment experience. Third, we seek to improve care team satisfaction by creating products and services that are dependable, smart, and optimized for the care environment in which they are used. Finally, we seek to lower the total cost to treat per patient episode when compared with existing treatment alternatives, providing a return on investment for hospitals and healthcare systems and value for payers. 23 Table of Contents Da Vinci Surgical Systems enable surgeons to extend the benefits of minimally invasive surgery (“MIS”) to many patients who would otherwise undergo a more invasive surgery by using computational, robotic, and imaging technologies to overcome many of the limitations of traditional open surgery or conventional MIS. Surgeons using a da Vinci Surgical System operate while seated comfortably at a console viewing a 3D high definition image of the surgical field. This immersive console connects surgeons to the surgical field and their instruments. While seated at the console, the surgeon manipulates instrument controls in a natural manner, similar to open surgical technique. Our technology is designed to provide surgeons with a range of articulation of the surgical instruments used in the surgical field analogous to the motions of a human wrist, while filtering out the tremor inherent in a surgeon’s hand. In designing our products, we focus on making our technology easy and safe to use. Our da Vinci products fall into five broad categories: da Vinci Surgical Systems; da Vinci instruments; da Vinci Stapling; da Vinci Energy; and da Vinci Vision, including Firefly Fluorescence imaging systems and da Vinci Endoscopes. We also provide a comprehensive suite of services, training, and education programs. Within our integrated ecosystem, our products are designed to decrease variability in surgery by offering dependable, consistent functionality and user experiences for surgeons seeking better outcomes. We take a holistic ‘systems’ approach, to offer intelligent technology and systems designed to work together to make MIS intervention more available and applicable.   We have commercialized the following da Vinci Surgical Systems: the da Vinci standard Surgical System in 1999, the da Vinci S Surgical System in 2006, the da Vinci Si Surgical System  in 2009, and the fourth generation da Vinci Xi Surgical System in 2014. We have extended our fourth generation platform by adding the da Vinci X Surgical System, commercialized in the second quarter of 2017 and the da Vinci SP Surgical system in the third quarter of 2018. We are early in the launch of our da Vinci SP Surgical System and have placed 34 da Vinci SP systems through June 30, 2019. Our plans for the rollout of the da Vinci SP Surgical System will include putting systems in the hands of experienced da Vinci users first while we optimize training pathways and our supply chain. We received U.S. FDA clearances for the da Vinci SP Surgical System for urological and certain transoral procedures. We also received clearance in South Korea where the da Vinci SP Surgical System may be used for a broad set of procedures. We plan to seek U.S. FDA clearances for additional indications for da Vinci SP over time. The success of the da Vinci SP product is dependent on positive experiences and improved clinical outcomes for the procedures for which it has been cleared as well as securing additional clinical clearances. All da Vinci systems include a surgeon’s console (or consoles), imaging electronics, a patient-side cart, and computational hardware and software.  We offer over 80 different multi-port da Vinci instruments to provide surgeons flexibility in choosing the types of tools needed to perform a particular surgery. These multi-port instruments are generally robotically controlled and provide end effectors (tips) that are similar to those used in either open or laparoscopic surgery. We offer advanced instrumentation for the da Vinci Xi and da Vinci X platforms, including the da Vinci Vessel Sealer Extend and da Vinci Stapler products, to provide surgeons with sophisticated, computer-aided tools to precisely and efficiently interact with tissue. Da Vinci X and da Vinci Xi Surgical Systems share the same instruments whereas the da Vinci Si Surgical System uses instruments that are not compatible with X or Xi systems. We currently offer nine core instruments on our da Vinci SP Surgical System. We plan to expand the SP instrument offering over time.  Training technologies include our da Vinci Skills Simulator, da Vinci Connect remote case observation and mentoring tool, and our dual console for use in surgeon proctoring and collaborative surgery. During the first quarter 2019 the U.S. FDA cleared our Ion endoluminal system to enable minimally invasive biopsy in the peripheral lung. Our Ion system will extend our commercial offering beyond surgery into diagnostics with this first application.  We are introducing the Ion system in the U.S. in a measured fashion while we optimize training pathways, our supply chain, and collect additional clinical data. We anticipate commercial shipments to begin by the end of 2019. The success of new product introductions depends on a number of factors including, but not limited to, pricing, competition, market and consumer acceptance, the effective forecasting and management of product demand, inventory levels, the management of manufacturing and supply costs, and the risk that new products may have quality or other defects in the early stages of introduction. Business Model Overview We generate revenue from the placements of da Vinci Surgical Systems, in sales or sales-type lease arrangements where revenue is recognized up-front or in operating lease transactions where revenue is recognized over time. We earn recurring revenue from the sales of instruments, accessories, and services, as well as the revenue from operating leases. The da Vinci Surgical System generally sells for between approximately $0.5 million and $2.5 million, depending upon the model, configuration and geography, and represents a significant capital equipment investment for our customers when purchased. Our instruments and accessories have limited lives and will either expire or wear out as they are used in surgery, at which point they need to be replaced. We earn between approximately $700 to $3,500 of instrument and accessory revenue per surgical procedure performed, depending on the type and complexity of the specific procedures performed and the number and type of instruments used. We typically enter into service contracts at the time systems are sold at an annual fee of approximately $80,000 to $190,000, depending upon the  24 Table of Contents configuration of the underlying system and composition of the services offered under the contract. These service contracts have generally been renewed at the end of the initial contractual service periods. The Ion endoluminal system program will have a business model consistent with the da Vinci Surgical System model described above. Consistent with da Vinci Surgical Systems, we plan to initially place the Ion system as a piece of capital equipment. Once the system is installed, we plan to earn recurring revenue from sales of consumables used in biopsies and ongoing services. For 2019, we are introducing the Ion system in the U.S. in a measured fashion. The associated impact to revenue and gross margin is not expected to be significant.  Recurring Revenue   Recurring revenue consists of instrument and accessory revenue, service revenue, and operating lease revenue. Recurring revenue increased to $2.6 billion, or 71% of total revenue in 2018, compared with $2.2 billion, or 71% of total revenue in 2017, and $1.9 billion, or 71% of total revenue in 2016.  Instrument and accessory revenue has grown at a faster rate than system revenue over time. Instrument and accessory revenue increased to $2.0 billion in 2018, compared with $1.6 billion in 2017 and $1.4 billion in 2016. The growth of instrument and accessory revenue largely reflects continued procedure adoption.  Service revenue growth has been driven by the growth of the base of installed da Vinci Surgical Systems. The installed base of da Vinci Surgical Systems grew 13% to approximately 4,986 at December 31, 2018; 13% to approximately 4,409 at December 31, 2017; and 9% to approximately 3,919 at December 31, 2016. Service revenue grew 11% to $635.1 million in 2018; 12% to $572.9 million in 2017; and 10% to $510.7 million in 2016. Intuitive Surgical da Vinci System Leasing Since 2013, we have entered into sales-type and operating lease arrangements directly with certain qualified customers as a way to offer customers flexibility in how they acquire da Vinci Surgical Systems and expand their robotic-assisted surgery programs while leveraging our balance sheet. These leases generally have commercially competitive terms as compared with other third-party entities that offer equipment leasing. We include both operating and sales-type leases in our system shipment and installed base disclosures. We exclude operating leases from our average selling price (“ASP”) computations. In the years ended December 31, 2018, 2017, and 2016, we shipped 272, 139, and 95 systems, respectively, under lease arrangements, of which 229, 108, and 62, respectively, were operating leases or usage-based arrangements. Revenue from operating lease arrangements is generally recognized on a straight-line basis over the lease term. More recently, we have entered usage-based arrangements with certain large customers whereby system and service revenue is recognized as the systems are used. We set operating lease and usage-based pricing at a modest premium relative to purchased systems reflecting the time value of money and, in the case of usage-based arrangements, the risk that system utilization may fall short of anticipated levels. The proportion of revenue recognized from usage-based arrangements has not been significant and has been included in our operating lease metrics herein. Operating lease revenue has grown faster than overall system revenue and was $51.4 million, $25.9 million, and $16.6 million for the years ended December 31, 2018, 2017, and 2016, respectively. Generally, lease transactions generate similar gross margins as our sale transactions. As of June 30, 2019, a total of  486  da Vinci Surgical Systems were installed at customers under operating lease arrangements. Our da Vinci system leasing provides customers with flexibility regarding how they acquire or obtain access to da Vinci Surgical Systems. We believe leasing and alternative financing structures, such as usage-based payment models have been effective and well-received, and we are willing to expand the proportion of these structures based on customer demand. As revenue for operating leases is recognized over the lease terms, total system revenue growth is reduced in a period when the number of operating lease placements increase as a proportion of total system placements. For some operating lease arrangements, our customers are provided with the right to purchase the leased system at certain points during and/or at the end of the lease term. Revenue generated from customer purchases of systems under operating lease arrangements (“Lease Buyouts”) was $48.8 million, $39.5 million, and $38.2 million for the years ended December 31, 2018, 2017, and 2016, respectively. We expect that revenue recognized from customer exercises of the buyout options will fluctuate based on the timing of when, and if, customers choose to exercise their buyout options. Systems Revenue System placements are driven by procedure growth in most markets. In geographies where da Vinci procedure adoption is in an early stage, system sales will precede procedure growth. System placements also vary due to seasonality largely aligned with hospital budgeting cycles. We typically place a higher proportion of annual system placements in the fourth quarter and a lower proportion in the first quarter as customer budgets are reset. System revenue grew 21% to $1,127.1 million in 2018; 16% to $928.4 million in 2017; and 11% to $800.0 million in 2016. System revenue is also affected by the proportion of systems placed that are under operating lease arrangements, recurring operating lease revenue, operating lease buyouts, product mix, ASPs, trade-in activities, and customer mix. 25 Table of Contents Procedure Mix / Products Our da Vinci Surgical Systems are generally used for soft tissue surgery for areas of the body between the pelvis and the neck, primarily in general surgery, gynecologic surgery, urologic surgery, cardiothoracic surgery, and head and neck surgery. Within these categories, procedures range in complexity from cancer and other highly complex procedures to less complex procedures for benign conditions. Cancer and other highly complex procedures tend to be reimbursed at higher rates than less complex procedures for benign conditions. Thus, hospitals are more sensitive to the costs associated with treating less complex benign conditions. Our strategy is to provide hospitals with attractive clinical and economic solutions across the spectrum of procedure complexity. Our fully featured da Vinci Xi Surgical System with advanced instruments, including the EndoWrist Vessel Sealer, EndoWrist Stapler products, and our Integrated Table Motion product target the more complex procedure segment. Our da Vinci X Surgical System and Single-Site instruments are targeted towards price sensitive markets and procedures. Procedure Seasonality More than half of da Vinci procedures performed are for benign conditions, most notably benign hernia repairs, hysterectomies, and cholecystectomies. These benign procedures and other short-term elective procedures tend to be more seasonal than cancer operations and surgeries for other life threatening conditions. Seasonality in the U.S. for these procedures for benign conditions typically results in higher fourth quarter procedure volume when more patients have met annual deductibles and lower first quarter procedure volume when deductibles are reset. Seasonality outside the U.S. varies and is more pronounced around local holidays and vacation periods. Distribution Channels We provide our products through direct sales organizations in the U.S., Europe (excluding Spain, Portugal, Italy, Greece, and most Eastern European countries), Japan, South Korea, India, Taiwan, and China. In May and December 2018, we began direct operations in India and Taiwan, respectively. In January 2019, our Intuitive-Fosun joint venture began direct operations for da Vinci products and services in China. In the remainder of our OUS markets, we provide our products through distributors. Regulatory Activities Overview Our products must meet the requirements of a large and growing body of international standards that govern the product safety, efficacy, advertising, labeling, safety reporting design, manufacture, materials content and sourcing, testing, certification, packaging, installation, use, and disposal of our products. Examples of such standards include electrical safety standards such as those of the International Electrotechnical Commission, and composition standards such as the Reduction of Hazardous Substances and the Waste Electrical and Electronic Equipment Directives. Failure to meet these standards could limit our ability to market our products in those regions that require compliance to such standards. Our products and operations are also subject to increasingly stringent medical device, privacy, and other regulations by regional, federal, state, and local authorities. We anticipate that timelines for introduction of new products and/or indications may be extended relative to past experience as a result of these regulations. Clearances and Approvals We have obtained the clearances required to market our multi-port products associated with all of our da Vinci Surgical Systems (Standard, S, Si, Xi, and X systems) for our targeted surgical specialties within the U.S., South Korea, Japan, and the European markets in which we operate. In June 2019, we obtained U.S. FDA clearance for our da Vinci Handheld Camera (see the description of the da Vinci Handheld Camera in the New Product Introductions section below). In February 2019, we obtained U.S. FDA clearance for our Ion endoluminal system, our new flexible robotic-assisted catheter-based platform, designed to navigate through very small lung airways to reach peripheral nodules for biopsies (see the description of the Ion endoluminal system in the New Product Introductions section below). We are introducing the Ion endoluminal system in a measured fashion while we optimize training pathways, our supply chain, and collect additional clinical data. We anticipate commercial shipments to begin by the end of 2019. In February 2019, we obtained U.S. FDA clearance for our IRIS TM  augmented reality product (see the description of IRIS in the New Product Introductions section below). IRIS is a service that delivers a 3D image of the patient anatomy (initially targeting kidneys) to aid surgeons in both pre- and intra-operative settings. We are in the early stages of an IRIS pilot study in the field at a small group of U.S. hospitals to gain initial product experience and insights. In December 2018, we received clearance for our da Vinci Xi Surgical System in China. The Xi clearance does not include advanced energy, stapling, or wireless table motion products which attach to the Xi system. Separate clearances are required for each of these products by China National Medical Products Administration (“NMPA”). 26 Table of Contents In May 2018, we obtained U.S. FDA clearance for the da Vinci SP Surgical System for urologic surgical procedures that are appropriate for a single port approach. In March 2019, we received U.S. FDA clearance for the da Vinci SP for certain transoral procedures. We also received regulatory clearance for the da Vinci SP Surgical System in South Korea in May 2018. We are introducing the da Vinci SP Surgical System in a measured fashion while we optimize training pathways and our supply chain. We have placed 34 da Vinci SP systems with customers through  June 30, 2019 . In October 2018, the China National Health Commission published on its official website the quota for major medical equipment to be imported and sold in China through 2020. The government will allow the sale of 154 new surgical robots into China, which could include da Vinci Surgical Systems as well as surgical systems introduced by others. Sales of da Vinci Surgical Systems under the quota are uncertain, as they are dependent on hospitals completing a tender process and receiving associated approvals. In July 2018, we received U.S. FDA clearance to market SureForm 60, our da Vinci EndoWrist 60mm Stapler. In January 2019, we received U.S. FDA clearance to market SureForm 45 (see the description of the SureForm 45 and 60 Staplers in the New Product Introductions section below). In April 2018, we received U.S. FDA clearance for our Vessel Sealer Extend (see the description of the da Vinci Vessel Sealer Extend in the New Product Introductions section below). In April 2017, we received CE mark clearance for our   da Vinci   X Surgical System in Europe. Following the CE mark, in May 2017, we received U.S. FDA clearance to market our   da Vinci   X Surgical System in the U.S. We received regulatory clearance for the   da Vinci   X Surgical System in South Korea and Japan in September 2017 and April 2018, respectively (see the description of the   da Vinci   X Surgical System in the New Product Introductions section below). Regulatory clearances for the da Vinci   X Surgical System may be received in other markets over time. The Japanese Ministry of Health, Labor, and Welfare (“MHLW”) considers reimbursement for procedures in April of even numbered years. The process for obtaining reimbursement requires Japanese university hospitals and surgical societies, with our support, to seek reimbursement. There are multiple pathways to obtain reimbursement for procedures including those that require in-country clinical data/economic data. In April 2012 and April 2016, the MHLW granted reimbursement status for da Vinci Prostatectomy (“dVP”) and partial nephrectomy, respectively. Most prostatectomies and partial nephrectomies were open procedures prior to da Vinci reimbursement. Da Vinci procedure reimbursement for dVP and partial nephrectomy procedures are higher than open procedure reimbursements. An additional 12 da Vinci procedures were granted reimbursement effective April 1, 2018, including gastrectomy, low anterior resection, lobectomy and hysterectomy, for both malignant and benign conditions. These additional 12 reimbursed procedures have varying levels of conventional, laparoscopic penetration and will be reimbursed at rates equal to the conventional laparoscopic procedures. Given the reimbursement level and laparoscopic penetration for these 12 procedures, there can be no assurance that adoption will occur or that the adoption pace for these procedures will be similar to any other da Vinci procedures. If these procedures are not adopted and we are not successful in obtaining adequate procedure reimbursements for additional procedures, then the demand for our products in Japan could be limited. Recalls and Corrections Medical device companies have regulatory obligations to correct or remove medical devices in the field that could pose a risk to health. The definition of “recalls and corrections” is expansive and includes repair, replacement, inspections, relabeling, and issuance of new or additional instructions for use or reinforcement of existing instructions for use and training when such actions are taken for specific reasons of safety or compliance. These field actions require stringent documentation, reporting, and monitoring worldwide. There are other actions a medical device manufacturer may take in the field without reporting including, but not limited to, routine servicing and stock rotations. As we determine whether a field action is reportable in any regulatory jurisdiction, we prepare and submit notifications to the appropriate regulatory agency for the particular jurisdiction. Regulators can require the expansion, reclassification, or change in scope and language of the field action. In general, upon submitting required notifications to regulators regarding a field action which is a recall or correction, we will notify customers regarding the field action, provide any additional documentation required in their national language, and arrange, as required, return or replacement of the affected product or a field service visit to perform the correction. Field actions as well as certain outcomes from regulatory activities can result in adverse effects on our business, including damage to our reputation, delays by customers of purchase decisions, reduction or stoppage of the use of installed systems, and reduced revenue as well as increased expenses. Procedures We model patient value as equal to  procedure efficacy / invasiveness . In this equation,  procedure efficacy  is defined as a measure of the success of the surgery in resolving the underlying disease and  invasiveness  is defined as a measure of patient pain and disruption of regular activities. When the patient value of a da Vinci procedure is greater than that of alternative treatment  27 Table of Contents options, patients may benefit from seeking out surgeons and hospitals that offer da Vinci Surgery, which could potentially result in a local market share shift. Adoption of da Vinci procedures occurs procedure by procedure, market by market, and is driven by the relative patient value and total treatment costs of da Vinci procedures as compared to alternative treatment options for the same disease state or condition. Worldwide Procedures Our da Vinci systems and instruments are regulated independently in various countries and regions of the world. The discussion of indications for use and representative or target procedures is intended solely to provide an understanding of the market for da Vinci products and is not intended to promote for sale or use any Intuitive Surgical product outside of its licensed or cleared labeling and indications for use. The adoption of robotic-assisted surgery using the da Vinci Surgical System has the potential to grow for those procedures that offer greater patient value than non-da Vinci alternatives and competitive total economics for healthcare providers. Our da Vinci Surgical Systems are used primarily in general surgery, gynecologic surgery, urologic surgery, cardiothoracic surgery, and head and neck surgery. We focus our organization and investments on developing, marketing, and training products and services for procedures in which da Vinci can bring patient value relative to alternative treatment options and/or economic benefit to healthcare providers. Target procedures in general surgery include hernia repair (both ventral and inguinal) and colorectal procedures. Target procedures in gynecology include da Vinci hysterectomy (“dVH”), for both cancer and benign conditions, and sacrocolpopexy. Target procedures in urology include dVP and partial nephrectomy. In cardiothoracic surgery, target procedures include da Vinci lobectomy and da Vinci   mitral valve repair. In head and neck surgery, target procedures include certain procedures resecting benign and malignant tumors classified as T1 and T2. Not all the indications, procedures, or products described may be available in a given country or region or on all generations of da Vinci Surgical Systems. Surgeons and their patients need to consult the product labeling in their specific country and for each product in order to determine the cleared uses, as well as important limitations, restrictions, or contraindications. In 2018, approximately 1,037,000 surgical procedures were performed with the da Vinci Surgical Systems, compared with approximately 877,000 and 753,000 procedures performed in 2017 and 2016, respectively. The growth in our overall procedure volume in 2018 was driven by growth in U.S. general surgery procedures and worldwide urologic procedures. U.S. Procedures Overall U.S. procedure volume grew to approximately 753,000 in 2018, compared with approximately 644,000 in 2017, and approximately 563,000 in 2016. General surgery was our largest and fastest growing U.S. specialty in 2018 with procedure volume that grew to approximately 325,000 in 2018, compared with approximately 246,000 in 2017 and 186,000 in 2016. Gynecology was our second largest U.S. surgical specialty in 2018 with procedure volume of approximately 265,000 in 2018, compared with 252,000 in 2017 and 246,000 in 2016. U.S. urology procedure volume was approximately 128,000 in 2018, compared with approximately 118,000 in 2017 and 109,000 in 2016. Procedures Outside of the U.S. Overall OUS procedures grew to approximately 284,000 in 2018, compared with approximately 233,000 in 2017 and approximately 190,000 in 2016. Procedure growth in most OUS markets was driven largely by urology procedure volume, which grew to approximately 175,000 in 2018, compared with approximately 149,000 in 2017 and approximately 124,000 in 2016. General surgery and gynecologic oncology procedures also contributed to OUS procedure growth. Recent Business Events and Trends Procedures Overall.  Total da Vinci procedures grew approximately  17%  for the  six  months ended  June 30, 2019 , compared with 17% for the  six  months ended  June 30, 2018 . U.S. procedure growth was approximately  16%  for the  six  months ended  June 30, 2019 , compared with 16% for the  six  months ended  June 30, 2018 . Year-to-date 2019 U.S. procedure growth was largely attributable to growth in general surgery procedures, most notably hernia repair, cholecystectomy, colorectal, and bariatric procedures. Year-to-date procedures growth was also driven by growth in thoracic procedures, as well as moderate growth in more mature gynecologic and urologic procedure categories. Procedure volume OUS grew approximately  21%  for the  six  months ended  June 30, 2019 , compared with 20% for the  six  months ended  June 30, 2018 . Year-to-date 2019 OUS procedure growth was driven by continued growth in dVP procedures and earlier stage growth in general surgery, gynecology, and kidney cancer procedures. Slightly higher year-to-date 2019 procedure growth was driven by higher procedure growth in Japan attributable to additional procedures granted reimbursement status in April 2018, partially offset by lower procedure growth in China. We believe growth in these global markets is being driven by increased acceptance among surgeons and health systems, supported by expanded global evidence validating the clinical and economic value of da Vinci procedures.  28 Table of Contents U.S. General Surgery.  Growth in general surgery procedures continued to drive the majority of incremental procedures during the  six  months ended  June 30, 2019 . Ventral and inguinal hernia repairs contributed the most incremental cases during the  six  months ended  June 30, 2019 , as they did in 2018 and 2017. We believe that growth in da Vinci hernia repair reflects improved clinical outcomes within certain patient populations, as well as potential cost benefits relative to certain alternative treatments. We believe hernia repair procedures represent a significant opportunity with the potential to drive growth in future periods. However, given the differences in surgical complexity associated with treatment of various hernia patient populations and varying surgeon opinion regarding optimal surgical technique, it is difficult to estimate the timing of and to what extent da Vinci hernia repair procedure volume will grow in the future. We expect a large portion of hernia repairs will continue to be performed via different modalities of surgery. Adoption of da Vinci for colorectal procedures, which includes several underlying procedures including low anterior resections for rectal cancers and certain colon procedures for benign and cancerous conditions, has been ongoing for several years, and is supported by our recently launched technologies such as the da Vinci Xi   Surgical System, EndoWrist Stapler, EndoWrist Vessel Sealer, and Integrated Table Motion. In recent quarters, we have seen increasing contributions to growth from other U.S. general surgery procedures, including cholecystectomy and bariatric procedures. Our third quarter 2018 introduction of the SureForm 60mm stapler product provides surgeons a better optimized robotic tool set for bariatric procedures. U.S. Gynecology . Growth in gynecology procedures during the  six  months ended  June 30, 2019 , increased modestly compared to 2018 driven by higher growth in benign hysterectomy procedures, partially offset by moderating growth in hysterectomy for cancer. Combining robotic, laparoscopic, and vaginal approaches, MIS represents about 80% of the U.S. hysterectomy market for benign conditions. We believe that our growth in gynecologic procedures over the past several years has primarily been driven by consolidation of gynecologic procedures into higher volume surgeons that focus on cancer and complex surgeries. Global Urology.  Global urology procedures have also been a strong contributor to our overall procedure growth. In the U.S., dVP is the standard of care for the surgical treatment of prostate cancer and we believe growth is largely aligned with surgical volumes of prostate cancer. For OUS, dVP is at various stages of adoption in different areas of the world but is the largest overall da Vinci procedure. Year-to-date 2019 growth in OUS dVP was consistent with growth in 2018.  Kidney cancer procedures have also been a strong contributor to our recent global urology growth. Clinical publications have demonstrated that the use of a da Vinci system increases the likelihood that a patient will receive nephron sparing surgery through a partial nephrectomy, which is typically surgical society guideline-recommended therapy. OUS Procedures.  Year-to-date 2019 OUS procedure growth rate reflects continued da Vinci adoption in European and Asian markets. In 2018 and year-to-date 2019, procedure growth in China moderated as the previous systems quota expired at the end of 2015 and systems installed in China are highly utilized. In October 2018, the China National Health Commission announced a new quota to allow the sale of 154 new surgical robots into China through 2020, which could include da Vinci Surgical Systems. This quota applies to the da Vinci Si and recently approved Xi Surgical Systems (refer to the previous discussion in the “Clearances and Approvals” section), as well as competitors’ products when and if cleared by NMPA. Sales of da Vinci Surgical Systems under the quota are uncertain, as they are dependent on provincial allocation processes and hospitals completing a tender process and receiving associated approvals. In Japan, we have experienced strong procedure growth since receiving the national reimbursements for dVP and partial nephrectomy. However, as adoption for these procedures has progressed towards higher levels of penetration, growth in these two urologic procedures has moderated. A total of 12 additional da Vinci   procedures were granted national reimbursement status effective April 1, 2018, including gastrectomy, anterior resection, lobectomy, and hysterectomy, for both malignant and benign conditions. Procedure growth in Japan has accelerated since the new procedures were granted reimbursement status. However, these additional 12 reimbursed procedures have varying levels of conventional laparoscopic penetration and are reimbursed at rates equal to the conventional laparoscopic procedures. Given the reimbursement level and laparoscopic penetration for these procedures, there can be no assurance that adoption will occur or that the adoption pace for these procedures will be similar to any other da Vinci procedure. If these procedures are not adopted and we are not successful in obtaining adequate procedure reimbursement for additional procedures, then the demand for our products in Japan could be limited. System Demand Future demand for da Vinci Surgical Systems will be impacted by factors including hospital response to the evolving health care environment under the current U.S. administration, procedure growth rates, hospital consolidation trends, evolving system utilization and point of care dynamics, capital replacement trends, additional reimbursements in various global markets, including Japan, the timing around governmental tenders and authorizations, including China, the timing of when we receive regulatory clearance in our other OUS markets for our da Vinci Xi Surgical System, da Vinci X Surgical System, and da Vinci SP Surgical System, and related instruments, market response as well as other economic and geopolitical factors. Market acceptance of our recently launched da Vinci SP Surgical System and the nature and timing of additional da Vinci SP regulatory indications may also impact future system placements. Demand may also be impacted by robotic surgery competition, including from companies that have introduced products in the field of robotic surgery or have made explicit statements about their efforts to enter the field  29 Table of Contents including, but not limited to: Avatera Medical GmbH; CMR Surgical Limited; Johnson & Johnson (including their recent acquisition of Auris Health, Inc.); Medicaroid Inc.; MedRobotics Corp.; Medtronic PLC.; meerecompany Inc.; Olympus Corp.; Samsung Corporation; Smart Robot Technology Group Co. Ltd.; Titan Medical, Inc.; TransEnterix, Inc.; Verb Surgical Inc. (a joint venture between Johnson & Johnson and Google Inc.); and Wego Holding Co., Ltd. Many of the above factors will also impact future demand for our recently cleared Ion system, as we extend our commercial offering into diagnostics, along with additional factors associated with a new product introduction, such as, but not limited to, our ability to optimize manufacturing and our supply chain, competition, clinical data to demonstrate value, and market acceptance.  New Product Introductions Ion endoluminal system.  In February 2019, we obtained U.S. FDA clearance for the Ion endoluminal system, our new flexible robotic-assisted catheter-based platform, designed to navigate through very small lung airways to reach peripheral nodules for biopsies. The Ion system uses an ultra-thin articulating robotic catheter that can move 180 degrees in all directions. The outer diameter of the catheter is 3.5mm, which physicians can navigate through small and tortuous airways to reach nodules in any airway segment within the lung. The Ion system’s flexible biopsy needle can also pass through very tight bends via Ion’s catheter to collect tissue in the peripheral lung. The catheter’s 2mm working channel can also accommodate other biopsy tools, such as biopsy forceps or cytology brushes, if necessary. We are introducing Ion in a measured fashion while we optimize training pathways, our supply chain, and collect additional clinical data. We anticipate commercial shipments to begin by the end of 2019. Da Vinci SP Surgical System.  In May 2018, we obtained U.S. FDA clearance for the da Vinci SP Surgical System for urologic surgical procedures that are appropriate for a single port approach. In March 2019, we received U.S. FDA clearance for the da Vinci SP for certain transoral procedures. The da Vinci SP system includes three, multi-jointed, wristed instruments and the first da Vinci fully wristed 3DHD camera. The instruments and the camera all emerge through a single cannula and are triangulated around the target anatomy to avoid external instrument collisions that can occur in narrow surgical workspaces. The system enables flexible port placement and broad internal and external range of motion (e.g. 360-degrees of anatomical access) through the single SP arm. Surgeons control the fully articulating instruments and the camera on the da Vinci SP system, which uses the same fourth generation surgeon console as the da Vinci X and Xi systems. The da Vinci SP system provides surgeons with robotic-assisted technology designed for deep and narrow access to tissue in the body. We anticipate pursuing further regulatory clearances for the da Vinci SP, including colorectal applications, broadening the applicability of the SP platform over time. We are introducing the da Vinci SP Surgical System in a measured fashion while we optimize training pathways and our supply chain. We have placed 34 SP Surgical Systems with customers through  June 30, 2019 . Da Vinci X Surgical System.   In May 2017, we launched a new da Vinci model, the da Vinci X, in the U.S. The da Vinci X system provides surgeons and hospitals with access to some of the most advanced fourth generation da Vinci surgery technology at a lower cost. The da Vinci X uses the same vision cart and surgeon console that are found on our flagship product, the da Vinci Xi system. For new customers, the da Vinci X System provides a cost effective capital entry point while providing a pathway for upgrading to other fourth generation systems. Existing customers may negotiate to trade in their older da Vinci systems in order to standardize their robotics programs onto the fourth generation platform, and choosing which system model by considering clinical and economic factors. The da Vinci X enables optimized, focused-quadrant surgery including procedures like prostatectomy, hernia repair, and benign hysterectomy, among others. The system features flexible port placement and 3D digital optics, while incorporating the same advanced instruments and accessories as the da Vinci Xi. The da Vinci X drives operational efficiencies through set-up technology that uses voice and laser guidance, drape design that simplifies surgery preparations, and a lightweight, fully integrated endoscope. SureForm 60 and SureForm 45 Staplers.  In July 2018, we received U.S. FDA clearance in the U.S. for SureForm 60 instrument with White, Blue, Green, and Black 60mm reloads. In January 2019, we received U.S. FDA clearance for SureForm 45 instrument with White, Blue, Green, and Black 45mm reloads. The SureForm 60 and SureForm 45 are single-use, fully wristed, stapling instruments intended for resection, transection, and/or creation of anastomoses. The SureForm 60 has particular utility in bariatric procedures, while the SureForm 45 has particular utility in colorectal procedures. SureForm 60 and SureForm 45 broaden our existing stapler product line, which also includes EndoWrist Stapler 45 with White, Blue, and Green, 45mm reloads and EndoWrist 30 with White, Blue, Green, and Gray 30mm reloads. Not all reloads or staplers are available for use on all systems or in all countries. Da Vinci Vessel Sealer Extend.  In April 2018, we received U.S. FDA clearance for da Vinci Vessel Sealer Extend, our newest instrument in the Vessel Sealing family of products. Da Vinci Vessel Sealer Extend is a single-use, fully wristed bipolar electrosurgical instrument compatible with our fourth generation multiport systems. It is intended for grasping and blunt dissection of tissue and for bipolar coagulation and mechanical transection of vessels up to 7mm in diameter and tissue bundles that fit in the jaws of the instrument. 30 Table of Contents IRIS.   In February 2019, we obtained U.S. FDA clearance for our IRIS augmented reality product. IRIS is a service that delivers a 3D image of the patient anatomy (initially targeting kidneys) to aid surgeons in both the pre- and intra-operative settings. We are now in the early stages of an IRIS pilot study in the field at a small group of U.S. hospitals to gain initial product experience and insights. Da Vinci Handheld Camera.   In June 2019, we obtained U.S. FDA clearance for our da Vinci Handheld Camera. The da Vinci Handheld Camera is a lightweight 2D camera head which can be connected to third-party laparoscopes. This allows the laparoscopic image to be displayed on the da Vinci X/Xi vision cart to address aspects of da Vinci procedures that may require use of a laparoscope. We plan to launch and begin commercial activities for the da Vinci Handheld Camera by the end of 2019. Acquisition of Certain Assets from Schölly Fiberoptic   In July 2019, we entered into an agreement to acquire certain assets and operations from Schölly Fiberoptic GmbH (“Schölly”), a supplier of endoscopes and other visualization equipment, for cash consideration of approximately  $100 million  (the “Schölly Acquisition”). The exact amount of the purchase consideration and timing of the closing of the Schölly Acquisition is subject to certain substantive closing conditions.  The process to manufacture endoscopes is complex, and it cannot be assured that we can successfully integrate the endoscope manufacturing operations subsequent to the closing of the Schölly Acquisition. For example, we may be unable to retain the employees of Schölly or its current suppliers. The integration process will be complex and involves the integration of manufacturing operations across multiple sites globally. The integration may require expenses and time in excess of expectations. Integrating the Schölly Acquisition will also involve getting certain regulatory approvals and re-certification of manufacturing sites. If we cannot successfully integrate or manufacture endoscopes subsequent to the Schölly Acquisition, it may have an adverse impact on our business, financial condition, results of operations, or cash flows. Second  Quarter  2019  Financial Highlights • Total revenue increased by  21%  to  $1,098.9 million  during the  three  months ended  June 30, 2019 , compared with  $909.3 million  during the  three  months ended  June 30, 2018 .  • Approximately  301,000   da Vinci procedures were performed during the three months ended  June 30, 2019 , an increase of approximately  17%  compared with approximately  257,000  for the three months ended  June 30, 2018 .   • Instrument and accessory revenue increased by  22%  to  $578.5 million  during the  three  months ended  June 30, 2019 , compared with  $476.1 million  during the  three  months ended  June 30, 2018 .  • Systems revenue increased by  24%  to  $343.8 million  during the  three  months ended  June 30, 2019 , compared with  $277.4 million  during the  three  months ended  June 30, 2018 .  • A total of  273  da Vinci Surgical Systems were shipped during the three months ended  June 30, 2019 , an increase of 24% compared with  220  during the three months ended  June 30, 2018 . As of  June 30, 2019 , we had a da Vinci Surgical System installed base of approximately  5,270  systems, an increase of approximately  13%  compared with the installed base as of  June 30, 2018 .  • Gross profit as a percentage of revenue was  69.1%  for the three months ended  June 30, 2019 , compared with  69.5%  for the three months ended  June 30, 2018 .  • Operating income increased by  29%  to  $359.0 million  during the  three  months ended  June 30, 2019 , compared with  $277.4 million  during the  three  months ended  June 30, 2018 . Operating income for the  three  months ended  June 30, 2018 , included pre-tax litigation related charges of $42.5 million. Operating income included  $82.0 million  and  $63.6 million  of share-based compensation expense related to employee stock plans during the three months ended  June 30, 2019 , and  2018 , respectively. Operating income included intangible asset charges of $ 10.6  million and $5.6 million for the three months ended  June 30, 2019  and  2018 , respectively.  • As of  June 30, 2019 , we had  $5.1 billion  in cash, cash equivalents, and investments. Cash, cash equivalents, and investments increased by  $313.8 million , compared with December 31, 2018, primarily as a result of cash generated from operating activities, partially offset by share repurchases and capital expenditures. 31 Table of Contents Results of Operations The following table sets forth, for the periods indicated, certain unaudited Condensed Consolidated Statements of Income information (in millions, except percentages):   Three Months Ended June 30,   Six Months Ended June 30,   2019   % of total revenue   2018   % of total revenue   2019   % of total revenue   2018   % of total revenue Revenue:                               Product $ 922.3   84 %   $ 753.5   83 %   $ 1,722.1   83 %   $ 1,448.3   82 % Service 176.6   16 %   155.8   17 %   350.5   17 %   308.5   18 % Total revenue 1,098.9   100 %   909.3   100 %   2,072.6   100 %   1,756.8   100 % Cost of revenue:                               Product 283.4   26 %   228.1   25 %   529.8   25 %   429.6   24 % Service 56.5   5 %   48.9   5 %   114.2   6 %   101.1   6 % Total cost of revenue 339.9   31 %   277.0   30 %   644.0   31 %   530.7   30 % Product gross profit 638.9   58 %   525.4   58 %   1,192.3   58 %   1,018.7   58 % Service gross profit 120.1   11 %   106.9   12 %   236.3   11 %   207.4   12 % Gross profit 759.0   69 %   632.3   70 %   1,428.6   69 %   1,226.1   70 % Operating expenses:                               Selling, general and administrative 279.2   25 %   259.8   29 %   552.6   27 %   481.4   27 % Research and development 120.8   11 %   95.1   10 %   264.8   13 %   190.6   11 % Total operating expenses 400.0   36 %   354.9   39 %   817.4   40 %   672.0   38 % Income from operations 359.0   33 %   277.4   31 %   611.2   29 %   554.1   32 % Interest and other income, net 32.8   3 %   18.2   2 %   60.3   3 %   31.4   1 % Income before taxes 391.8   36 %   295.6   33 %   671.5   32 %   585.5   33 % Income tax expense 75.4   7 %   41.0   5 %   51.1   2 %   43.6   2 % Net income 316.4   29 %   254.6   28 %   620.4   30 %   541.9   31 % Less: net loss attributable to noncontrolling interest in joint venture (1.9 )   — %   (0.7 )   — %   (4.4)   — %   (1.0 )   — % Net income attributable to Intuitive Surgical, Inc. $ 318.3   29 %   $ 255.3   28 %   $ 624.8   30 %   $ 542.9   31 % Total Revenue Total revenue was  $1,098.9 million  for the three months ended  June 30, 2019 , compared with  $909.3 million  for the three months ended  June 30, 2018 , resulting from  22%  higher instrument and accessory revenue driven by approximately  17%  higher procedure volume,  24%  higher systems revenue, and  13%  higher service revenue.  Revenue denominated in foreign currencies as a percentage of total revenue was approximately  17%  and  18%  for the  three and six  months ended  June 30, 2019 , respectively, and  19%  and  20%  for the three and six months ended June 30,  2018 , respectively. We generally sell our products and services in local currencies where we have direct distribution channels. Foreign currency rate fluctuations did not have a material impact on total revenue for the three months ended June 30, 2019, as compared with the three months ended June 30, 2018. Revenue generated in the U.S. accounted for  71%  of total revenue for both  three and six  months ended  June 30, 2019 , respectively, and  71%  and  69%  for the three and six months ended June 30, 2018, respectively. We believe that U.S. revenue has accounted for the large majority of total revenue due to U.S. patients’ ability to choose their provider and method of treatment, reimbursement structures supportive of innovation and minimally invasive surgery, and initial investments focused on U.S. infrastructure. We have been investing in our business in the OUS markets and our OUS procedures have grown faster in proportion to U.S. procedures. We expect that our OUS procedures and revenue will make up a greater portion of our business in the long term. 32 Table of Contents The following table summarizes our revenue and da Vinci Surgical System unit shipments for the  three and six  months ended  June 30, 2019 , and  2018 , respectively (in millions, except percentages and unit shipments):     Three Months Ended June 30, Six Months Ended June 30,   2019 2018 2019 2018 Revenue               Instruments and accessories $ 578.5   $ 476.1   $ 1,130.8   $ 936.4 Systems 343.8   277.4   591.3   511.9 Total product revenue 922.3   753.5   1,722.1   1,448.3 Services 176.6   155.8   350.5   308.5 Total revenue $ 1,098.9   $ 909.3   $ 2,072.6   $ 1,756.8 United States $ 785.3   $ 644.7   $ 1,476.9   $ 1,217.1 OUS 313.6   264.6   595.7   539.7 Total revenue $ 1,098.9   $ 909.3   $ 2,072.6   $ 1,756.8 % of Revenue - U.S. 71 %   71 %   71 %   69 % % of Revenue - OUS 29 %   29 %   29 %   31 %                 Instruments and accessories $ 578.5   $ 476.1   $ 1,130.8   $ 936.4 Services 176.6   155.8   350.5   308.5 Operating lease revenue 25.1   11.5   45.5   21.0 Total recurring revenue $ 780.2   $ 643.4   $ 1,526.8   $ 1,265.9 % of Total revenue  71 %   71 %   74 %   72 %                 Unit Shipments by Region:               U.S. unit shipments 193   138   347   250 OUS unit shipments 80   82   161   155 Total unit shipments* 273   220   508   405 *Systems shipped under operating leases (included in total unit shipments) 88   44   166   87                 Unit Shipments involving System Trade-ins:               Unit shipments involving trade-ins 103   74   188   131 Unit shipments not involving trade-ins 170   146   320   274 33 Table of Contents Product Revenue  Three months ended June 30, 2019 Product revenue increased by  22%  to  $922.3 million  for the  three  months ended  June 30, 2019 , compared with  $753.5 million  for the  three  months ended  June 30, 2018 .  Instrument and accessory revenue increased by  22%  to  $578.5 million  for the  three  months ended  June 30, 2019 , compared with  $476.1 million  for the  three  months ended  June 30, 2018 . The increase in instrument and accessory revenue was driven by procedure growth of approximately  17%  and higher sales of our advanced instruments.  Second quarter  2019 U.S. procedure growth of approximately  16%  was driven by growth in general surgery procedures, most notably hernia repair, colorectal, cholecystectomy, and bariatric procedures, thoracic procedures, and a moderate growth in the more mature gynecologic and urologic procedures categories. OUS procedure growth was approximately  20%  for the  second quarter  of 2019, and was driven by continued growth in dVP procedures, earlier stage growth in general surgery, gynecology, and kidney cancer procedures. Geographically,  second quarter  2019 OUS procedure growth was driven by procedure expansion in Germany, France, and Japan. Systems revenue increased by  24%  to  $343.8 million  for the  three  months ended  June 30, 2019 , compared with  $277.4 million  for the  three  months ended  June 30, 2018 . Higher  second quarter  2019 systems revenue was primarily driven by higher system shipments, higher lease buyouts, higher second quarter 2019 ASPs, and higher leasing related revenue, partly offset by a higher proportion of system shipments under operating leases. During the   second quarter   of   2019 , a total o f  273  systems were shipped compared with  220  during the  second quarter  of  2018 . By geography,  193  systems were shipped into the U.S.,  30  into Europe,  40  into Asia, and  10  into other markets during the  second quarter  of  2019 , compared with  138  systems shipped into the U.S.,  39  into Europe,  23  into Asia, and  20  into other markets during the  second quarter  of  2018 . The increase in systems shipments was primarily driven by procedure growth, the need for hospitals to expand or establish capacity and more customers trading in older da Vinci models for fourth generation da Vinci Xi and da Vinci X systems. We shipped  99  and  52  systems under lease arrangements, of which  88  and  44  were classified as operating leases, in the three months ended  June 30, 2019 , and  2018 , respectively. Operating lease revenue was  $25.1 million  for the three months ended  June 30, 2019 , compared with  $11.5 million  for the three months ended  June 30, 2018 . Systems placed as operating leases represented 32% of total shipments during the  second quarter   of   2019 , compared with 20% during the   second quarter  of  2018 . A total  486  of da Vinci   Surgical Systems were installed at customers under operating lease arrangements as of  June 30, 2019 . Revenue from Lease Buyouts was $ 26.5  million for the  three  months ended  June 30, 2019 , compared with $ 12.5  million for the  three  months ended  June 30, 2018 . We expect revenue from Lease Buyouts to fluctuate period to period based on the timing of when, and if, customers choose to exercise the buyout options embedded in their leases. The da Vinci Surgical System ASP, excluding the impact of systems shipped under operating leases, was approximately  $1.54 million  for the  three  months ended  June 30, 2019 , compared with  $1.42 million  for the  three  months ended  June 30, 2018 . The higher second quarter 2019 ASP was largely driven by favorable product and geographic mix. ASP fluctuates from period to period based on geographic and product mix, product pricing, systems shipped involving trade-ins, and changes in foreign exchange rates.  Six months ended June 30, 2019 Product revenue increased by  19%  to  $1.7 billion  for the six months ended June 30, 2019, compared with  $1.4 billion  for the six months ended June 30, 2018. Instrument and accessory revenue increased by  21%  to $ 1,130.8  million for the six months ended June 30, 2019, compared with $ 936.4  million for the six months ended June 30, 2018. The increase in instrument and accessory revenue was driven by procedure growth of approximately  17%  and higher sales of our advanced instruments. Year-to-date 2019 U.S. procedure growth of approximately  16%  was driven by growth in general surgery procedures, most notably hernia repair, colorectal procedures, cholecystectomy, bariatric, and thoracic procedures, as well as moderate growth in more mature gynecologic and urologic procedure categories. OUS procedure growth was approximately  21%  for the six months ended June 30, 2019, driven by continued growth in dVP procedures and earlier stage growth in general surgery, gynecology, and kidney cancer procedures.  Systems revenue increased by  16%  to $ 591.3  million for the six months ended June 30, 2019, compared with $ 511.9  million for the six months ended June 30, 2018. Higher year-to-date 2019 systems revenue was primarily driven by higher system shipments and higher lease related revenue, partly offset by a higher number of system placements under operating lease arrangements and lower ASPs. During the six months ended June 30, 2019, a total of  508  systems were shipped compared with  405  during the six months ended June 30, 2018. By geography,  347  systems were shipped into the U.S.,  79  into Europe,  61  into Asia, and  21  into other markets during the six months ended June 30, 2019, compared with  250  systems shipped into the U.S.,  84  into Europe,  39  into Asia, and  32  into other markets during the six months ended June 30, 2018.  34 Table of Contents During the six months ended June 30, 2019,  166  of the  508  systems were shipped under operating lease arrangements compared with  87  of  405  systems shipped during the six months ended June 30, 2018.  Operating lease revenue was $ 45.5  million for the six months ended June 30, 2019, compared with $ 21.0  million for the six months ended June 30, 2018. The increase in systems shipments was primarily driven by procedure growth, the need for hospitals to expand or establish capacity and more customers trading in older da Vinci models for fourth generation da Vinci Xi and da Vinci X systems. The da Vinci Surgical System ASP, excluding the impact of systems shipped under operating leases, was approximately $ 1.43  million for the six months ended June 30, 2019, compared with $ 1.45  million for six months ended June 30, 2018. ASP fluctuates period to period based on geographic and product mix, product pricing, systems shipped involving trade-ins, and changes in foreign exchange rates. Service Revenue Service revenue increased by  13%  to  $176.6 million  for the  three  months ended  June 30, 2019 , compared with  $155.8 million  for the  three  months ended  June 30, 2018 . Service revenue increased by  14%  to $ 350.5  million for the six months ended June 30, 2019, compared with $ 308.5  million for the six months ended June 30, 2018. Higher service revenue for the  three and six  months ended  June 30, 2019 , was primarily driven by a larger installed base of da Vinci Surgical Systems producing service revenue.   Gross Profit Product gross profit for the  three  months ended  June 30, 2019 , increased  22%  to  $638.9 million , representing  69.3%  of product revenue, compared with  $525.4 million , representing  69.7%  of product revenue, for the  three  months ended  June 30, 2018 . Product gross profit for the six months ended June 30, 2019, increased  17%  to  $1.2 billion , representing  69.2%  of product revenue, compared with  $1.0 billion , representing  70.3%  of product revenue, for the six months ended June 30, 2018. The higher product gross profit for the  three and six  months ended  June 30, 2019 , was primarily driven by higher product revenue. Lower gross profit margin for the  three  months ended  June 30, 2019  was driven by higher intangible assets amortization expense partially offset by higher da Vinci system ASPs and improved manufacturing efficiencies. Lower product gross profit margin for the  six  months ended  June 30, 2019  was primarily driven by higher intangible assets amortization expense, lower system ASPs, partially offset by improved manufacturing efficiencies. Product gross profit for the  three and six  months ended  June 30, 2019  reflected share-based compensation expense of  $11.4 million  and $ 22.4  million, respectively, compared with $ 8.9  million and $ 17.1  million for the  three and six  months ended  June 30, 2018 , respectively. Product gross profit for the  three and six  months ended  June 30, 2019  included intangible assets amortization expense of  $7.7 million  and $ 15.0  million, respectively, compared with $ 1.1  million and $ 2.0  million for the  three and six  months ended  June 30, 2018 , respectively. In prior periods, we were subject to the Medical Device Excise Tax (“MDET”) in the United States. MDET initially became effective on January 1, 2013 and we treated MDET as a reduction in gross profit. In December 2015, the Consolidated Appropriations Act, 2016 (the “Appropriations Act”) was signed into law. The Appropriations Act included a two-year moratorium on MDET such that medical device sales in 2016 and 2017 were exempt from the excise tax. This moratorium was extended through December 31, 2019 by the Extension of Continuing Appropriations Act of 2018, signed into law on January 22, 2018. MDET is scheduled to be reinstated on January 1, 2020. Service gross profit for the  three  months ended  June 30, 2019 , was  $120.1 million , or  68.0%  of service revenue, compared with  $106.9 million , or  68.6%  of service revenue for the  three  months ended  June 30, 2018 . Service gross profit for the six months ended June 30, 2019, was $ 236.3  million, or  67.4%  of service revenue, compared with $ 207.4  million, or  67.2%  of service revenue, for the six months ended June 30, 2018.  The higher service gross profit for the  three and six  months ended  June 30, 2019 , was driven by higher service revenue, reflecting a larger installed base of da Vinci Surgical Systems.  Service gross profit for the  three and six  months ended  June 30, 2019  reflected share-based compensation expense of  $4.8 million  and $ 9.3  million, respectively, compared with $ 4.1  million and $ 8.0  million for the three and six months ended June 30, 2018, respectively. Service gross profit for the  three and six  months ended  June 30, 2019  included intangible assets amortization expense of  $1.0 million  and  $1.9 million , respectively, compared with  $0.2 million  and  $0.3 million  for the  three and six  months ended  June 30, 2018 , respectively. Selling, General and Administrative Expenses Selling, general and administrative expenses include costs for sales, marketing and administrative personnel, sales and marketing activities, tradeshow expenses, legal expenses, regulatory fees, and general corporate expenses. Selling, general and administrative expenses for the  three  months ended  June 30, 2019 , increased by  7%  to  $279.2 million , compared with  $259.8 million  for the  three  months ended  June 30, 2018 . Selling, general and administrative expenses for the six months ended June 30, 2019, increased by  15%  to $ 552.6  million, compared with $ 481.4  million for the six months  35 Table of Contents ended June 30, 2018. The higher selling, general and administrative expenses for the  three  and six months ended  June 30, 2019 , were primarily associated with our expanded Asian and European teams, including establishing our direct organizations in China, India, and Taiwan, and infrastructure to support our growth.  Selling, general and administrative expenses for the  three  and six months ended  June 30, 2019  included net pre-tax litigation charges of  zero , compared with $ 42.5  million and $ 47.7  million for the three and six months ended June 30, 2018, respectively.  Selling, general and administrative expenses for the  three and six  months ended  June 30, 2019  reflected share-based compensation expense of  $40.7 million  and $ 79.3  million, respectively, as compared with $ 32.7  million and $ 62.2  million for the three and six months ended June 30, 2018, respectively.  Research and Development Expenses Research and development costs are expensed as incurred. Research and development expenses include costs associated with the design, development, testing, and significant enhancement of our products. Research and development expenses for the  three  months ended  June 30, 2019 , increased by  27%  to  $120.8 million , compared with  $95.1 million  for the  three  months ended  June 30, 2018 . Research and development expenses for the six months ended June 30, 2019, increased by  39%  to $ 264.8  million, compared with $ 190.6  million for the six months ended June 30, 2018. The increase was primarily due to higher personnel related expenses, intangible asset charges, and other project costs incurred to support a broader set of product development initiatives, including Ion and SP platform investments; informatics; advanced instrumentation; advanced imaging; and future generations of robotics.  Share-based compensation expense charged to research and development expense was $ 25.1 million  and  $47.9  million for the  three and six  months ended  June 30, 2019 , respectively, compared with  $17.9  million and  $34.2  million for the three and six months ended June 30, 2018. For the three and six months ended  June 30, 2019 , intangible asset charges were  $0.5 million  and $ 21.3  million, respectively, as compared with $ 4.1  million and $ 10.7  million for the three and six months ended June 30, 2018, respectively.  Research and development expenses fluctuate with project timing. Based upon our broader set of product development initiatives and the stage of the underlying projects, we expect to continue to make substantial investments in research and development and anticipate that research and development expenses will continue to increase in the future. Interest and Other Income, Net Interest and other income, net, for the  three and six  months ended  June 30, 2019  was  $32.8 million  and $ 60.3  million, respectively, compared with $ 18.2  million and $ 31.4  million for the three and six months ended June 30, 2018, respectively. The increase was primarily driven by higher interest earned during the  three and six  months ended  June 30, 2019  due to higher interest rates and higher cash and investment balances. Income Tax Expense Income tax expense for the  three  months ended  June 30, 2019 , was  $75.4 million , or  19.2%  of income before taxes, compared with  $41.0 million , or  13.9%  of income before taxes, for the  three  months ended  June 30, 2018 . Income tax expense for the  six  months ended  June 30, 2019 , was  $51.1 million , or  7.6%  of income before taxes, compared with  $43.6 million , or  7.4%  of income before taxes, for the  six  months ended  June 30, 2018 . Our effective tax rate for the  three and six  months ended  June 30, 2019 , and  2018 , differs from the U.S. federal statutory rate of 21% primarily due to excess tax benefits associated with employee equity plans, the effect of income earned by certain overseas entities being taxed at rates lower than the federal statutory rate, and federal R&D credit benefit, partially offset by state income taxes (net of federal benefit) and U.S. tax on foreign earnings. The higher effective tax rate for the three months ended June 30, 2019, compared with the same period of 2018, was primarily due to lower excess tax benefits from employee equity plans realized in the current quarter.  Our provision for income taxes included excess tax benefits associated with employee equity plans of $11.3 million and $84.0 million, which reduced our effective tax rate by 2.9 percentage points and 12.5 percentage points, for the  three  and six months ended  June 30, 2019 , respectively. Our income tax provision is subject to volatility as the amount of excess tax benefits or deficiencies fluctuates from period to period based on the price of our stock, the volume of share-based instruments settled or vested, and the value assigned to employee equity awards under U.S. GAAP.  We are subject to the examination of our income tax returns by the Internal Revenue Service and other tax authorities. The outcome of these audits cannot be predicted with certainty. Management regularly assesses the likelihood of adverse outcomes resulting from these examinations to determine the adequacy of our provision for income taxes. If any issues addressed in our tax audits are resolved in a manner not consistent with management’s expectations, we could be required to adjust our provision for income taxes in the period such resolution occurs. 36 Table of Contents In May 2019, a Swiss tax reform package was approved by Swiss voters in a referendum. The enactment of the tax reform is pending the completion of certain legislative procedures. If enacted, our Swiss entity will have a higher effective tax rate for years after 2019. Under U.S. GAAP, changes in tax rates and tax law are accounted for in the period of enactment, and deferred tax assets and liabilities are measured at the enacted tax rate. The impact of the re-measurement of our Swiss deferred tax asset is expected to be a benefit of approximately $51 million, which will be reflected in the period of the enactment of the Swiss tax reform.  In the third quarter of 2015, we recorded a $29.3 million tax benefit due to a U.S. Tax Court opinion (the “2015 Opinion”) issued in July 2015 involving an independent third party related to intercompany charges for share-based compensation. Based on the findings of the U.S. Tax Court, we were required to, and did, refund to our foreign subsidiaries the share-based compensation element of certain intercompany charges made in prior periods. Starting from 2015, share-based compensation has been excluded from intercompany charges. In June 2019, the Ninth Circuit Court of Appeals reversed the 2015 Opinion (the “Ninth Circuit Opinion”). Since the Ninth Circuit Opinion potentially is subject to further judicial review, we continue to treat our share-based compensation expense in accordance with the 2015 Opinion and continue to recognize the related tax benefits in our financial statements based upon our evaluation of the position in light of the present facts. In the event of a final opinion which reverses the 2015 Opinion, there may be an adverse impact to our income tax expense and effective tax rate. Net Loss Attributable to Noncontrolling Interest in Joint Venture The Company’s majority-owned joint venture (the “Joint Venture”) with Shanghai Fosun Pharmaceutical (Group) Co., Ltd. (“Fosun Pharma”), a subsidiary of Fosun International Limited, was established to research, develop, manufacture, and sell robotic-assisted catheter-based medical devices. The Joint Venture is owned 60% by us and 40% by Fosun Pharma. The catheter-based technology will initially target early diagnosis and cost-effective treatment of lung cancer, one of the most commonly diagnosed forms of cancer in the world. Distribution of catheter-based medical devices in China will be conducted by the joint venture, while distribution outside of China will be conducted by us. The Joint Venture is located in China. In January 2019, the Joint Venture acquired certain assets, including distribution rights, customer relationships, and certain personnel, from Chindex and its affiliates, a subsidiary of Fosun Pharma, and began direct operations for da Vinci products and services in China. As of  June 30, 2019 , the companies have contributed $55 million of up to $100 million required by the joint venture agreement.  We do not expect the Joint Venture to generate revenue in 2019 related to the sale of robotic-assisted catheter-based medical devices. There can be no assurance that we and the Joint Venture can successfully complete the development of the robotic-assisted catheter-based medical devices; or that we and the Joint Venture will successfully commercialize such products. There can also be no assurance that the joint venture will not require additional contributions to fund its business; that the Joint Venture will become profitable; or that the acquired Chindex assets will be successfully integrated and the expected benefits realized. Net loss attributable to noncontrolling interest in Joint Venture for the three and six months ended  June 30, 2019  was  $1.9 million  and $ 4.4  million, respectively, compared with $ 0.7  million and $ 1.0  million for the three and six months ended June 30, 2018, respectively. The increase was primarily due to the intangible assets amortization expense and higher costs to ramp up operations in China during the six months ended June 30, 2019. Liquidity and Capital Resources Sources and Uses of Cash Our principal source of liquidity is cash provided by operations and issuance of common stock through exercise of stock options and our employee stock purchase program. Cash and cash equivalents plus short- and long-term investments increased from $4.8 billion as of  December 31, 2018 , to  $5.1 billion  as of  June 30, 2019 , primarily from cash provided by our operations. Cash generation is one of our fundamental strengths and provides us with substantial financial flexibility in meeting our operating, investing, and financing needs.   See “Item 7A. Quantitative and Qualitative Disclosures About Market Risk” on our Form 10-K for the fiscal year ended  December 31, 2018  for discussion on the impact of interest rate risk and market risk on our investment portfolio. 37 Table of Contents Condensed Consolidated Cash Flow Data (Unaudited) The following table summarizes our cash flows for the  six  months ended  June 30, 2019 , and  2018  (in millions):   Six Months Ended  June 30,   2019   2018 Net cash provided by (used in)       Operating activities $ 649.2   $ 511.7 Investing activities (531.6 )   9.3 Financing activities (220.4 )   34.9 Effect of exchange rates on cash, cash equivalents, and restricted cash (1.3 )   (0.6 ) Net increase (decrease) in cash, cash equivalents, and restricted cash $ (104.1 )   $ 555.3 Operating Activities  For the  six  months ended  June 30, 2019 , net cash provided by operating activities of  $649.2 million  exceeded our net income of  $620.4 million  primarily for the following reasons:   1. Our net income included non-cash charges: share-based compensation of  $157.7 million ; depreciation expense of  $67.8 million ; deferred income taxes of  $52.7 million ; amortization of intangible assets of  $20.5 million ; and amortization of contract acquisition asset of  $5.9 million . 2. The non-cash charges outlined above were partially offset by changes in operating assets and liabilities that resulted in  $274.2 million  of cash used by operating activities. Operating assets and liabilities are primarily comprised of accounts receivable, inventory, prepaid expenses and other assets, deferred revenue, and other accrued liabilities. Inventory, including the transfer of equipment from inventory to property, plant and equipment, increased by  $178.0 million  primarily due to more systems under operating lease arrangements and safety stock build up to meet increased sales volume. Prepaid expenses and other assets increased by  $89.2 million  primarily due to an increase in prepaid taxes driven by the timing of tax payments. Other accrued liabilities decreased by  $53.0 million  primarily due to the settlement of a legal matter. Accrued compensation and employee benefits decreased by  $33.3 million  primarily due to the payments of 2018 incentive compensation. The unfavorable impact of these items on cash used by operating activities was partly offset by a  $48.9 million  decrease in accounts receivable primarily due to timing of billings and collections and a  $21.7 million  increase in accounts payable. Investing Activities Net cash used in investing activities during the  six  months ended  June 30, 2019 , consisted primarily of purchases of investments (net of proceeds from sales and maturities of investments) of  $335.9 million  and the acquisition of property and equipment of  $196.9 million . We invest predominantly in high quality, fixed income securities. Our investment portfolio may at any time contain investments in U.S. treasury and U.S. government agency securities, taxable and tax exempt municipal notes, corporate notes and bonds, commercial paper, non-U.S. government agency securities, cash deposits, and money market funds. Financing Activities Net cash used in financing activities during the  six  months ended  June 30, 2019 , consisted primarily of cash used in the repurchase of approximately 0.4 million shares of our common stock in the open market for $200.0 million and  $145.0 million  in taxes paid on behalf of employees related to net share settlements of vested employee equity awards partly offset by  $119.6 million  of proceeds from stock option exercises and employee stock purchases.  Capital Expenditures Our business is not capital equipment intensive. However, with the growth of our business and our investments in property and facilities and in manufacturing automation, capital investments in these areas have increased. We expect these capital investments to exceed $250 million in both 2019 and 2020. We intend to fund these needs with cash generated from operations. Our cash requirements depend on numerous factors, including market acceptance of our products, the resources we devote to developing and supporting our products, and other factors. We expect to continue to devote substantial resources to expand procedure adoption and acceptance of our products. We have made substantial investments in our commercial operations, product development activities, facilities, and intellectual property. Based upon our business model, we anticipate that we will continue to be able to fund future growth through cash provided from operations. We believe that our current cash, cash equivalents, and investment balances, together with income to be derived from the sale of our products, will be sufficient to meet our liquidity requirements for the foreseeable future. 38 Table of Contents Critical Accounting Estimates The discussion and analysis of our financial condition and results of operations are based upon our Financial Statements, which have been prepared in accordance with U.S. GAAP. The preparation of these Financial Statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities, revenues, and expenses. On an ongoing basis, we evaluate our critical accounting estimates. We base our estimates on historical experience and on various other assumptions that we believe to be reasonable under the circumstances, the results of which form the basis for making judgments about the carrying values of assets and liabilities that are not readily apparent from other sources. Actual results may differ from these estimates under different assumptions or conditions. There have been no new or material changes to the critical accounting estimates discussed in our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , that are of significance, or potential significance to the Company. 39 Table of Contents ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK There have been no material changes in our market risk during the  six  months ended  June 30, 2019 , compared to the disclosures in Part II, Item 7A of our Annual Report on Form 10-K for the year ended  December 31, 2018 .   ITEM 4. CONTROLS AND PROCEDURES Evaluation of Disclosure Controls and Procedures We maintain disclosure controls and procedures that are designed to ensure that information required to be disclosed in our Exchange Act reports is recorded, processed, summarized, and reported within the time periods specified in the SEC’s rules and forms and that such information is accumulated and communicated to our management, including our principal executive officer and principal financial officer, as appropriate, to allow for timely decisions regarding required disclosure.   As required by SEC Rule 13a-15(b), we carried out an evaluation, under the supervision and with the participation of our management, including our principal executive officer and principal financial officer, of the effectiveness of the design and operation of our disclosure controls and procedures as of the end of the period covered by this report. Based on the foregoing, our principal executive officer and principal financial officer concluded that our disclosure controls and procedures were effective at the reasonable assurance level.   Changes in Internal Control over Financial Reporting There has been no change in our internal control over financial reporting that occurred during our most recent fiscal quarter that has materially affected, or is reasonably likely to materially affect, our internal control over financial reporting. 40 Table of Contents PART II - OTHER INFORMATION ITEM 1. LEGAL PROCEEDINGS The information included in Note 7 to the Condensed Consolidated Financial Statements (Unaudited) included in Part I, Item 1 of this quarterly report is incorporated herein by reference.  ITEM 1A. RISK FACTORS You should carefully consider the factors discussed in Part I, “Item 1A. Risk Factors” in our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , which could materially affect our business, financial position, or future results of operations. The risks described in our Annual Report on Form 10-K for the fiscal year ended  December 31, 2018 , are not the only risks we face. Additional risks and uncertainties not currently known to us or that we currently deem to be immaterial also may materially adversely affect our business, financial position, or future results of operations, including but not limited to the subsequent event discussed in the Notes to Condensed Consolidated Financial Statements in Part I, “Item 1. Financial Statements” in this Quarterly Report on Form 10-Q. ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS There were no unregistered sales of equity securities during the period covered by this report. (c) Issuer Purchases of Equity Securities The table below summarizes our stock repurchase activity for the quarter ended  June 30, 2019 . Fiscal Period Total Number of Shares Repurchased   Average Price Paid Per Share   Total Number of Shares Purchased As Part of a Publicly Announced Program   Approximate Dollar Amount of Shares That May Yet be Purchased Under the Program (1) April 1 to April 30, 2019 —   $ —   —   $ 2.0  billion May 1 to May 31, 2019 247,848   $ 485.26   247,848   $ 1.9  billion June 1 to June 30, 2019 171,070   $ 466.11   171,070   $ 1.8  billion Total during quarter ended June 30, 2019 418,918   $ 477.44   418,918     (1) Since March 2009, we have had an active stock repurchase program. As of  June 30, 2019 , our Board of Directors (the “Board”) had authorized an aggregate amount of up to $7.5 billion for stock repurchases, of which the most recent authorization occurred in January 2019, when the Board increased the authorized amount available under our share repurchase program to $2.0 billion.  The remaining $1.8 billion represents the amount available to repurchase shares under the authorized repurchase program as of  June 30, 2019 . The authorized stock repurchase program does not have an expiration date. ITEM 3. DEFAULTS UPON SENIOR SECURITIES None.   ITEM 4. MINE SAFETY DISCLOSURES Not applicable.   ITEM 5. OTHER INFORMATION None. 41 Table of Contents ITEM 6. EXHIBITS Exhibit Number Exhibit Description 3.1 Amended and Restated Certificate of Incorporation of Intuitive Surgical, Inc., as amended (incorporated by reference to Exhibit 3.1 on Form 10-Q filed with the Securities and Exchange Commission on October 20, 2017). 3.2 Amended and Restated Bylaws of Intuitive Surgical, Inc. (incorporated by reference to Exhibit 3.1 of the Current Report on Form 8-K filed with the Securities and Exchange Commission on December 13, 2016). 10.1 2010 Incentive Award Plan, as amended and restated (incorporated by reference to Exhibit 10.1 of the Current Report on Form 8-K filed with the Securities and Exchange Commission on April 26, 2019). 31.1 Certification of Chief Executive Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002. 31.2 Certification of Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002. 32.1 Certification of Chief Executive Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002. 32.2 Certification of Chief Financial Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002. 101 The following materials from Intuitive Surgical, Inc.’s Quarterly Report on Form 10-Q for the quarter ended June 30, 2019, formatted in XBRL (Extensible Business Reporting Language): (i) the unaudited Condensed Consolidated Balance Sheets, (ii) the unaudited Condensed Consolidated Statements of Comprehensive Income, (iii) the unaudited Condensed Consolidated Statements of Cash Flows, and (iv) Notes to Condensed Consolidated Financial Statements (unaudited), tagged at Level I through IV. 42 Table of Contents SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, as amended, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized. INTUITIVE SURGICAL, INC.     By:   /s/ MARSHALL L. MOHR     Marshall L. Mohr     Executive Vice President and Chief Financial Officer     (Principal Financial Officer and duly authorized signatory) Date:  July 19, 2019   43 	 
+ 

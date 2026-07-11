@@ -1,0 +1,8921 @@
+
+ 
+	 jbht20250630_10q.htm 
+
+
+	 
+ 
+ 
+ Q2 
+ 2025 
+ --12-31 
+ false 
+ 0000728535 
+ false 
+ false 
+ false 
+ false 
+ 5 
+ 5 
+ 1 
+ 5 
+ 0 
+ 
+ 
+ 
+ 0000728535 2025-01-01 2025-06-30 
+ thunderdome:item 
+ 0000728535 2025-04-01 2025-06-30 
+ iso4217:USD 
+ 0000728535 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2025-01-01 2025-06-30 
+ 0000728535 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2025-01-01 2025-06-30 
+ 0000728535 2024-12-31 
+ 0000728535 2025-06-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2024-12-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2024-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2024-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2024-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2024-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2024-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2025-06-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2024-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2025-06-30 
+ xbrli:pure 
+ 0000728535 us-gaap:FairValueMeasurementsRecurringMember jbht:SeniorCreditFacilityAndSeniorNotesMember 2024-12-31 
+ 0000728535 us-gaap:FairValueMeasurementsRecurringMember jbht:SeniorCreditFacilityAndSeniorNotesMember 2025-06-30 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2024-12-31 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2025-06-30 
+ iso4217:USD xbrli:shares 
+ 0000728535 us-gaap:SubsequentEventMember 2025-07-23 2025-07-23 
+ 0000728535 2025-01-01 2025-03-31 
+ xbrli:shares 
+ 0000728535 jbht:SeniorNotesIssuedInMarch2025Member us-gaap:SeniorNotesMember 2025-06-30 
+ 0000728535 jbht:SeniorNotesIssuedInMarch2019Member us-gaap:SeniorNotesMember 2025-06-30 
+ 0000728535 jbht:RevolvingCreditFacilityAndTermLoansMember 2025-06-30 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2025-06-30 
+ 0000728535 jbht:CommittedTermLoansMember 2025-06-30 
+ utr:Y 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:SeniorNotesMember 2024-12-31 
+ 0000728535 us-gaap:SeniorNotesMember 2025-06-30 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2024-12-31 
+ 0000728535 us-gaap:PerformanceSharesMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2025-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2025-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2024-04-01 2024-06-30 
+ 0000728535 2024-06-30 
+ 0000728535 2023-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-06-30 
+ 0000728535 us-gaap:CommonStockMember 2025-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:CommonStockMember 2025-01-01 2025-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2024-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2024-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2024-12-31 
+ 0000728535 us-gaap:CommonStockMember 2024-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2024-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2024-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2024-06-30 
+ 0000728535 us-gaap:CommonStockMember 2024-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:CommonStockMember 2024-01-01 2024-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2023-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2023-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2023-12-31 
+ 0000728535 us-gaap:CommonStockMember 2023-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-04-01 2025-06-30 
+ 0000728535 us-gaap:CommonStockMember 2025-04-01 2025-06-30 
+ 0000728535 2025-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-03-31 
+ 0000728535 us-gaap:CommonStockMember 2025-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2024-04-01 2024-06-30 
+ 0000728535 us-gaap:CommonStockMember 2024-04-01 2024-06-30 
+ 0000728535 2024-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2024-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2024-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2024-03-31 
+ 0000728535 us-gaap:CommonStockMember 2024-03-31 
+ 0000728535 jbht:FuelSurchargeMember 2024-01-01 2024-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2025-01-01 2025-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2024-04-01 2024-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2025-04-01 2025-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2024-01-01 2024-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2025-01-01 2025-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2024-04-01 2024-06-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2025-04-01 2025-06-30 
+ 
+ 
+ 
+ 
+   
+
+ 
+   
+
+ UNITED STATES 
+
+ SECURITIES AND EXCHANGE COMMISSION 
+
+ Washington, D.C. 20549 
+
+   
+
+ FORM  10-Q 
+
+ (Mark One) 
+
+ 
+
+		 
+			 
+			 ☒ 
+			 
+			 
+			 QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+			 
+		 
+
+ 
+
+   
+
+ For the quarterly period ended  June 30, 2025 
+
+   
+
+ OR 
+
+   
+
+ 
+
+		 
+			 
+			 ☐ 
+			 
+			 
+			 TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+			 
+		 
+
+ 
+
+ Commission File Number:  0-11757 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+ (Exact name of registrant as specified in its charter) 
+
+   
+
+ 
+
+		 
+			 
+			 Arkansas 
+			 
+			 
+			 71-0335111 
+			 
+		 
+		 
+			 
+			 (State or other jurisdiction 
+			 
+			 
+			 (I.R.S. Employer 
+			 
+		 
+		 
+			 
+			 of incorporation or 
+			 
+			 
+			 Identification No.) 
+			 
+		 
+		 
+			 
+			 organization) 
+			 
+			 
+			   
+			 
+		 
+
+ 
+
+   
+
+ 615 J.B. Hunt Corporate Drive ,  Lowell ,  Arkansas   72745 
+
+ (Address of principal executive offices) 
+
+   
+
+ 479 - 820-0000 
+
+ (Registrant's telephone number, including area code) 
+
+   
+
+ www.jbhunt.com 
+
+ (Registrant's web site) 
+
+   
+
+ Securities registered pursuant to Section 12(b) of the Exchange Act: 
+
+   
+
+ 
+
+		 
+			 
+			 Title of each class 
+			 
+			 
+			 Trading Symbol(s) 
+			 
+			 
+			 Name of each exchange on which registered 
+			 
+		 
+		 
+			 
+			 Common Stock, $0.01 par value 
+			 
+			 
+			 JBHT 
+			 
+			 
+			 NASDAQ 
+			 
+		 
+
+ 
+
+   
+
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to the filing requirements for the past 90 days. 
+
+   
+
+ Yes   ☒            No   ☐   
+
+   
+
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). 
+
+ Yes   ☒            No   ☐ 
+
+   
+
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company.    See the definitions of  “ large accelerated filer, ”   “ accelerated filer, ”   “ smaller reporting company ”  and  “ emerging growth company ”  in Rule 12b-2 of the Exchange Act. 
+
+   
+
+ Large accelerated filer   ☒    Accelerated filer ☐    Non-accelerated filer ☐  
+
+ Smaller reporting company  ☐  Emerging growth company  ☐ 
+
+   
+
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+
+   
+
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). 
+
+   
+
+ Yes   ☐       No   ☒             
+
+   
+
+ The number of shares of the registrant ’ s $0.01 par value common stock outstanding on June 30, 2025 was  96,799,281 . 
+
+   
+
+ 
+ 
+ 
+   
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+    
+ 
+
+   
+
+ 
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Form 10-Q 
+
+ For The Quarterly Period Ended June 30, 2025 
+
+ Table of Contents 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 Page 
+			 
+		 
+		 
+			 
+			 Part I.      Financial Information 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1. 
+			 
+			 
+			 Financial Statements 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Statements of Earnings for the Three and Six Months Ended June 30, 2025 and 2024 
+			 
+			 
+			 3 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Balance Sheets as of June 30, 2025 and December 31, 2024 
+			 
+			 
+			 4 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			   
+			 Condensed Consolidated Statements of Shareholders’ Equity for the Three and Six Months Ended June 30, 2025 and 2024 
+			 5 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Statements of Cash Flows for the Six Months Ended June 30, 2025 and 2024 
+			 
+			 
+			 6 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			   
+			 
+			 
+			 Notes to Condensed Consolidated Financial Statements as of June 30, 2025 
+			 
+			 
+			 7 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 2. 
+			 
+			 
+			 Management's Discussion and Analysis of Financial Condition and Results of Operations 
+			 
+			 13 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 3. 
+			 
+			 
+			 Quantitative and Qualitative Disclosures About Market Risk 
+			 
+			 21 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 4. 
+			 
+			 
+			 Controls and Procedures 
+			 
+			 22 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Part II.      Other Information 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 1. 
+			 
+			 
+			 Legal Proceedings 
+			 
+			 22 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 1A. 
+			 
+			 
+			 Risk Factors 
+			 
+			 22 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 2. 
+			 
+			 
+			 Unregistered Sales of Equity Securities and Use of Proceeds 
+			 
+			 22 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 3. 
+			 
+			 
+			 Defaults Upon Senior Securities 
+			 
+			 23 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 Item 4. 
+			 
+			 
+			 Mine Safety Disclosures 
+			 
+			 23 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 Item 5. 
+			 
+			 
+			 Other Information 
+			 
+			 23 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			   
+		 
+		 
+			 
+			 Item 6. 
+			 
+			 
+			 Exhibits 
+			 
+			 23 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Exhibits 
+			 
+			 
+			 24 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Signatures 
+			 
+			 
+			 25 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+   
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+    
+ 
+
+   
+
+ Part I.      Financial Information 
+
+   
+
+ ITEM 1.     FINANCIAL STATEMENTS 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Condensed Consolidated Statements of Earnings 
+
+ (in thousands, except per share amounts) 
+
+ (unaudited) 
+
+                   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+			 
+			   
+			   
+			 
+			 Six Months Ended 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 June 30, 
+			 
+			   
+			   
+			 
+			 June 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating revenues, excluding fuel surcharge revenues 
+			 
+			   
+			 $ 
+			 2,576,319 
+			   
+			   
+			 $ 
+			 2,545,023 
+			   
+			   
+			 $ 
+			 5,136,048 
+			   
+			   
+			 $ 
+			 5,097,508 
+			   
+		 
+		 
+			 
+			 Fuel surcharge revenues 
+			 
+			   
+			   
+			 351,862 
+			   
+			   
+			   
+			 383,662 
+			   
+			   
+			   
+			 713,525 
+			   
+			   
+			   
+			 775,177 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 2,928,181 
+			   
+			   
+			   
+			 2,928,685 
+			   
+			   
+			   
+			 5,849,573 
+			   
+			   
+			   
+			 5,872,685 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 1,266,908 
+			   
+			   
+			   
+			 1,274,011 
+			   
+			   
+			   
+			 2,560,236 
+			   
+			   
+			   
+			 2,554,998 
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 816,941 
+			   
+			   
+			   
+			 803,047 
+			   
+			   
+			   
+			 1,616,588 
+			   
+			   
+			   
+			 1,610,931 
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 176,980 
+			   
+			   
+			   
+			 184,658 
+			   
+			   
+			   
+			 356,456 
+			   
+			   
+			   
+			 367,655 
+			   
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 153,710 
+			   
+			   
+			   
+			 164,291 
+			   
+			   
+			   
+			 313,643 
+			   
+			   
+			   
+			 337,817 
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 128,245 
+			   
+			   
+			   
+			 120,425 
+			   
+			   
+			   
+			 251,698 
+			   
+			   
+			   
+			 243,416 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 84,838 
+			   
+			   
+			   
+			 73,222 
+			   
+			   
+			   
+			 169,856 
+			   
+			   
+			   
+			 148,908 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 74,876 
+			   
+			   
+			   
+			 74,707 
+			   
+			   
+			   
+			 147,847 
+			   
+			   
+			   
+			 151,490 
+			   
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 17,770 
+			   
+			   
+			   
+			 17,575 
+			   
+			   
+			   
+			 35,250 
+			   
+			   
+			   
+			 35,110 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 10,639 
+			   
+			   
+			   
+			 11,040 
+			   
+			   
+			   
+			 22,045 
+			   
+			   
+			   
+			 22,282 
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 2,730,907 
+			   
+			   
+			   
+			 2,722,976 
+			   
+			   
+			   
+			 5,473,619 
+			   
+			   
+			   
+			 5,472,607 
+			   
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 197,274 
+			   
+			   
+			   
+			 205,709 
+			   
+			   
+			   
+			 375,954 
+			   
+			   
+			   
+			 400,078 
+			   
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 21,285 
+			   
+			   
+			   
+			 20,198 
+			   
+			   
+			   
+			 39,882 
+			   
+			   
+			   
+			 35,847 
+			   
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 175,989 
+			   
+			   
+			   
+			 185,511 
+			   
+			   
+			   
+			 336,072 
+			   
+			   
+			   
+			 364,231 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 47,365 
+			   
+			   
+			   
+			 49,638 
+			   
+			   
+			   
+			 89,708 
+			   
+			   
+			   
+			 100,865 
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			 $ 
+			 128,624 
+			   
+			   
+			 $ 
+			 135,873 
+			   
+			   
+			 $ 
+			 246,364 
+			   
+			   
+			 $ 
+			 263,366 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Weighted average basic shares outstanding 
+			 
+			   
+			   
+			 97,448 
+			   
+			   
+			   
+			 102,386 
+			   
+			   
+			   
+			 98,670 
+			   
+			   
+			   
+			 102,814 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Basic earnings per share 
+			 
+			   
+			 $ 
+			 1.32 
+			   
+			   
+			 $ 
+			 1.33 
+			   
+			   
+			 $ 
+			 2.50 
+			   
+			   
+			 $ 
+			 2.56 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Weighted average diluted shares outstanding 
+			 
+			   
+			   
+			 97,976 
+			   
+			   
+			   
+			 103,146 
+			   
+			   
+			   
+			 99,226 
+			   
+			   
+			   
+			 103,626 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Diluted earnings per share 
+			 
+			   
+			 $ 
+			 1.31 
+			   
+			   
+			 $ 
+			 1.32 
+			   
+			   
+			 $ 
+			 2.48 
+			   
+			   
+			 $ 
+			 2.54 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+   
+
+ 
+ 
+ 
+ 3 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Condensed Consolidated Balance Sheets 
+
+ (in thousands) 
+
+ (unaudited) 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 June 30, 2025 
+			 
+			   
+			   
+			 
+			 December 31, 2024 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 ASSETS 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current assets: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents 
+			 
+			   
+			 $ 
+			 50,901 
+			   
+			   
+			 $ 
+			 46,983 
+			   
+		 
+		 
+			 
+			 Trade accounts receivable, net 
+			 
+			   
+			   
+			 1,182,175 
+			   
+			   
+			   
+			 1,224,166 
+			   
+		 
+		 
+			 
+			 Prepaid expenses and other 
+			 
+			   
+			   
+			 453,746 
+			   
+			   
+			   
+			 499,834 
+			   
+		 
+		 
+			 
+			 Total current assets 
+			 
+			   
+			   
+			 1,686,822 
+			   
+			   
+			   
+			 1,770,983 
+			   
+		 
+		 
+			 
+			 Property and equipment, at cost 
+			 
+			   
+			   
+			 9,373,354 
+			   
+			   
+			   
+			 9,148,928 
+			   
+		 
+		 
+			 
+			 Less accumulated depreciation 
+			 
+			   
+			   
+			 3,622,823 
+			   
+			   
+			   
+			 3,419,129 
+			   
+		 
+		 
+			 
+			 Net property and equipment 
+			 
+			   
+			   
+			 5,750,531 
+			   
+			   
+			   
+			 5,729,799 
+			   
+		 
+		 
+			 
+			 Goodwill and intangible assets, net 
+			 
+			   
+			   
+			 220,667 
+			   
+			   
+			   
+			 230,979 
+			   
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 583,114 
+			   
+			   
+			   
+			 580,509 
+			   
+		 
+		 
+			 
+			 Total assets 
+			 
+			   
+			 $ 
+			 8,241,134 
+			   
+			   
+			 $ 
+			 8,312,270 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 LIABILITIES AND SHAREHOLDERS' EQUITY 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current liabilities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current portion of long-term debt 
+			 
+			   
+			 $ 
+			 699,435 
+			   
+			   
+			 $ 
+			 500,000 
+			   
+		 
+		 
+			 
+			 Trade accounts payable 
+			 
+			   
+			   
+			 655,226 
+			   
+			   
+			   
+			 645,925 
+			   
+		 
+		 
+			 
+			 Claims accruals 
+			 
+			   
+			   
+			 279,221 
+			   
+			   
+			   
+			 257,121 
+			   
+		 
+		 
+			 
+			 Accrued payroll 
+			 
+			   
+			   
+			 136,431 
+			   
+			   
+			   
+			 122,477 
+			   
+		 
+		 
+			 
+			 Other accrued expenses 
+			 
+			   
+			   
+			 162,881 
+			   
+			   
+			   
+			 152,517 
+			   
+		 
+		 
+			 
+			 Total current liabilities 
+			 
+			   
+			   
+			 1,933,194 
+			   
+			   
+			   
+			 1,678,040 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Long-term debt 
+			 
+			   
+			   
+			 1,019,925 
+			   
+			   
+			   
+			 977,702 
+			   
+		 
+		 
+			 
+			 Long-term claims accruals 
+			 
+			   
+			   
+			 416,083 
+			   
+			   
+			   
+			 368,704 
+			   
+		 
+		 
+			 
+			 Other long-term liabilities 
+			 
+			   
+			   
+			 351,232 
+			   
+			   
+			   
+			 377,070 
+			   
+		 
+		 
+			 
+			 Deferred income taxes 
+			 
+			   
+			   
+			 865,370 
+			   
+			   
+			   
+			 896,249 
+			   
+		 
+		 
+			 
+			 Shareholders' equity 
+			 
+			   
+			   
+			 3,655,330 
+			   
+			   
+			   
+			 4,014,505 
+			   
+		 
+		 
+			 
+			 Total liabilities and shareholders' equity 
+			 
+			   
+			 $ 
+			 8,241,134 
+			   
+			   
+			 $ 
+			 8,312,270 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 4 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Condensed Consolidated Statements of Shareholders' Equity 
+
+ (in thousands, except per share amounts) 
+
+ (unaudited) 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			   
+			 
+			 Three Months Ended June 30, 2024 and 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			 Additional 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			 
+			 Common 
+			 
+			   
+			   
+			 
+			 Paid-in 
+			 
+			   
+			   
+			 
+			 Retained 
+			 
+			   
+			   
+			 
+			 Treasury 
+			 
+			   
+			   
+			 
+			 Shareholders’ 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Capital 
+			 
+			   
+			   
+			 
+			 Earnings 
+			 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Equity 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at March 31, 2024 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 558,445 
+			   
+			   
+			 $ 
+			 7,061,194 
+			   
+			   
+			 $ 
+			 ( 3,454,879 
+			 ) 
+			   
+			 $ 
+			 4,166,431 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 135,873 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 135,873 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.43  per share) 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 44,009 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 44,009 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 203,145 
+			 ) 
+			   
+			   
+			 ( 203,145 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 19,155 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 19,155 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 1,024 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 667 
+			   
+			   
+			   
+			 1,691 
+			   
+		 
+		 
+			 
+			 Balances at June 30, 2024 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 578,624 
+			   
+			   
+			 $ 
+			 7,153,058 
+			   
+			   
+			 $ 
+			 ( 3,657,357 
+			 ) 
+			   
+			 $ 
+			 4,075,996 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at March 31, 2025 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 597,133 
+			   
+			   
+			 $ 
+			 7,447,198 
+			   
+			   
+			 $ 
+			 ( 4,179,329 
+			 ) 
+			   
+			 $ 
+			 3,866,673 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 128,624 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 128,624 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.44  per share) 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 42,633 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 42,633 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 318,782 
+			 ) 
+			   
+			   
+			 ( 318,782 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 19,664 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 19,664 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 892 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 892 
+			   
+			   
+			   
+			 1,784 
+			   
+		 
+		 
+			 
+			 Balances at June 30, 2025 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 617,689 
+			   
+			   
+			 $ 
+			 7,533,189 
+			   
+			   
+			 $ 
+			 ( 4,497,219 
+			 ) 
+			   
+			 $ 
+			 3,655,330 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			   
+			 
+			 Six Months Ended June 30, 2024 and 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			 Additional 
+			 
+			   
+			 
+			   
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			 
+			 Common 
+			 
+			   
+			   
+			 
+			 Paid-in 
+			 
+			   
+			   
+			   
+			 
+			 Retained 
+			 
+			   
+			   
+			 
+			 Treasury 
+			 
+			   
+			   
+			 
+			 Shareholders’ 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Capital 
+			 
+			   
+			   
+			   
+			 
+			 Earnings 
+			 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Equity 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			   
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at December 31, 2023 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 549,132 
+			   
+			   
+			   
+			 $ 
+			 6,978,119 
+			   
+			   
+			 $ 
+			 ( 3,425,164 
+			 ) 
+			   
+			 $ 
+			 4,103,758 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			   
+			 263,366 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 263,366 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.86  per share) 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			   
+			 ( 88,427 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 88,427 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 228,285 
+			 ) 
+			   
+			   
+			 ( 228,285 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 37,564 
+			   
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 37,564 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock  repurchased for payroll taxes and other 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 8,072 
+			 ) 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 3,908 
+			 ) 
+			   
+			   
+			 ( 11,980 
+			 ) 
+		 
+		 
+			 
+			 Balances at June 30, 2024 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 578,624 
+			   
+			   
+			   
+			 $ 
+			 7,153,058 
+			   
+			   
+			 $ 
+			 ( 3,657,357 
+			 ) 
+			   
+			 $ 
+			 4,075,996 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at December 31, 2024 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 583,945 
+			   
+			   
+			   
+			 $ 
+			 7,373,462 
+			   
+			   
+			 $ 
+			 ( 3,944,573 
+			 ) 
+			   
+			 $ 
+			 4,014,505 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			   
+			 246,364 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 246,364 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.88  per share) 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			   
+			 ( 86,637 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 86,637 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 552,911 
+			 ) 
+			   
+			   
+			 ( 552,911 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 38,107 
+			   
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 38,107 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock  repurchased for payroll taxes and other 
+			 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 4,363 
+			 ) 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 265 
+			   
+			   
+			   
+			 ( 4,098 
+			 ) 
+		 
+		 
+			 
+			 Balances at June 30, 2025 
+			 
+			   
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 617,689 
+			   
+			   
+			   
+			 $ 
+			 7,533,189 
+			   
+			   
+			 $ 
+			 ( 4,497,219 
+			 ) 
+			   
+			 $ 
+			 3,655,330 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 5 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Condensed Consolidated Statements of Cash Flows 
+
+ (in thousands) 
+
+ (unaudited) 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Six Months Ended June 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from operating activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			 $ 
+			 246,364 
+			   
+			   
+			 $ 
+			 263,366 
+			   
+		 
+		 
+			 
+			 Adjustments to reconcile net earnings to net cash provided by operating activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 356,456 
+			   
+			   
+			   
+			 367,655 
+			   
+		 
+		 
+			 
+			 Noncash lease expense 
+			 
+			   
+			   
+			 48,884 
+			   
+			   
+			   
+			 51,129 
+			   
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 38,107 
+			   
+			   
+			   
+			 37,564 
+			   
+		 
+		 
+			 
+			 Loss on sale of revenue equipment and other 
+			 
+			   
+			   
+			 9,362 
+			   
+			   
+			   
+			 12,482 
+			   
+		 
+		 
+			 
+			 Deferred income taxes 
+			 
+			   
+			   
+			 ( 30,879 
+			 ) 
+			   
+			   
+			 ( 56,082 
+			 ) 
+		 
+		 
+			 
+			 Changes in operating assets and liabilities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Trade accounts receivable 
+			 
+			   
+			   
+			 41,992 
+			   
+			   
+			   
+			 83,248 
+			   
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 65,101 
+			   
+			   
+			   
+			 161,322 
+			   
+		 
+		 
+			 
+			 Trade accounts payable 
+			 
+			   
+			   
+			 41,419 
+			   
+			   
+			   
+			 ( 59,768 
+			 ) 
+		 
+		 
+			 
+			 Income taxes payable or receivable 
+			 
+			   
+			   
+			 ( 4,793 
+			 ) 
+			   
+			   
+			 ( 22,693 
+			 ) 
+		 
+		 
+			 
+			 Claims accruals 
+			 
+			   
+			   
+			 20,894 
+			   
+			   
+			   
+			 17,857 
+			   
+		 
+		 
+			 
+			 Accrued payroll and other accrued expenses 
+			 
+			   
+			   
+			 ( 26,662 
+			 ) 
+			   
+			   
+			 ( 29,059 
+			 ) 
+		 
+		 
+			 
+			 Net cash provided by operating activities 
+			 
+			   
+			   
+			 806,245 
+			   
+			   
+			   
+			 827,021 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from investing activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Additions to property and equipment 
+			 
+			   
+			   
+			 ( 462,291 
+			 ) 
+			   
+			   
+			 ( 465,700 
+			 ) 
+		 
+		 
+			 
+			 Net proceeds from sale of equipment 
+			 
+			   
+			   
+			 63,212 
+			   
+			   
+			   
+			 56,847 
+			   
+		 
+		 
+			 
+			 Business acquisition 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 3,785 
+			   
+		 
+		 
+			 
+			 Net cash used in investing activities 
+			 
+			   
+			   
+			 ( 399,079 
+			 ) 
+			   
+			   
+			 ( 405,068 
+			 ) 
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from financing activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Proceeds from issuances of long-term debt 
+			 
+			   
+			   
+			 750,000 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Payments on long-term debt 
+			 
+			   
+			   
+			 ( 500,000 
+			 ) 
+			   
+			   
+			 ( 250,000 
+			 ) 
+		 
+		 
+			 
+			 Proceeds from revolving lines of credit and other 
+			 
+			   
+			   
+			 1,666,600 
+			   
+			   
+			   
+			 1,345,400 
+			   
+		 
+		 
+			 
+			 Payments on revolving lines of credit and other 
+			 
+			   
+			   
+			 ( 1,676,202 
+			 ) 
+			   
+			   
+			 ( 1,188,500 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury stock 
+			 
+			   
+			   
+			 ( 552,911 
+			 ) 
+			   
+			   
+			 ( 228,285 
+			 ) 
+		 
+		 
+			 
+			 Stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 ( 4,098 
+			 ) 
+			   
+			   
+			 ( 11,980 
+			 ) 
+		 
+		 
+			 
+			 Dividends paid 
+			 
+			   
+			   
+			 ( 86,637 
+			 ) 
+			   
+			   
+			 ( 88,427 
+			 ) 
+		 
+		 
+			 
+			 Net cash used in financing activities 
+			 
+			   
+			   
+			 ( 403,248 
+			 ) 
+			   
+			   
+			 ( 421,792 
+			 ) 
+		 
+		 
+			 
+			 Net change in cash and cash equivalents 
+			 
+			   
+			   
+			 3,918 
+			   
+			   
+			   
+			 161 
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents at beginning of period 
+			 
+			   
+			   
+			 46,983 
+			   
+			   
+			   
+			 53,344 
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents at end of period 
+			 
+			   
+			 $ 
+			 50,901 
+			   
+			   
+			 $ 
+			 53,505 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Supplemental disclosure of cash flow information: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash paid during the period for: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Interest 
+			 
+			   
+			 $ 
+			 32,568 
+			   
+			   
+			 $ 
+			 43,484 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			 $ 
+			 121,026 
+			   
+			   
+			 $ 
+			 177,080 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Noncash investing activities 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Accruals for equipment received 
+			 
+			   
+			 $ 
+			 41,789 
+			   
+			   
+			 $ 
+			 91,958 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 6 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Notes to Condensed Consolidated Financial Statements 
+
+ (Unaudited) 
+
+   
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 1. 
+			 
+			 
+			 General 
+			 
+		 
+
+ 
+
+   
+ 
+ Basis of Presentation 
+
+   
+
+ The accompanying unaudited interim Condensed Consolidated Financial Statements have been prepared in accordance with U.S. generally accepted accounting principles (GAAP) for interim financial information. We believe such statements include all adjustments (consisting only of normal recurring adjustments) necessary for the fair statement of our financial position, results of operations and cash flows at the dates and for the periods indicated. Pursuant to the requirements of the Securities and Exchange Commission (SEC) applicable to quarterly reports on Form 10-Q, the accompanying financial statements do not include all disclosures required by GAAP for annual financial statements. While we believe the disclosures presented are adequate to make the information not misleading, these unaudited interim Condensed Consolidated Financial Statements should be read in conjunction with the audited Consolidated Financial Statements and related notes included in our Annual Report on Form 10-K for the year ended December 31, 2024. Operating results for the periods presented in this report are not necessarily indicative of the results that may be expected for the calendar year ending December 31, 2025, or any other interim period. Our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load freight transportation business. 
+ 
+
+   
+ 
+ Recent Accounting Pronouncements 
+
+   
+
+ In December 2023, the FASB issued ASU 2023-09, Income Taxes: Improvements to Income Tax Disclosures, which enhances income tax disclosures to provide more transparency about income tax information, primarily related to the rate reconciliation and income taxes paid by jurisdiction information. These disclosures will include consistent categories and greater disaggregation of information in the rate reconciliation and require income taxes paid to be disaggregated by jurisdiction as well as additional amendments to improve the effectiveness of income tax disclosures. The new standard is effective prospectively for us on January 1, 2025, for annual periods, with retrospective adoption permitted. We are currently evaluating the impact of the adoption of this accounting pronouncement on our financial statements. 
+
+   
+
+ In November 2024, the FASB issued ASU 2024-03, Income Statement-Reporting Comprehensive Income-Expense Disaggregation Disclosures, which requires public business entities to disclose, on an annual and interim basis, disaggregated information about certain income statement expense line items in the notes to the financial statements. The standard became effective prospectively for us on January 1, 2027, for annual periods, and January 1, 2028, for interim periods, with retrospective adoption permitted. We are currently evaluating the impact of the adoption of this accounting pronouncement on our financial statements. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 2. 
+			 
+			 
+			 Earnings Per Share 
+			 
+		 
+
+ 
+
+   
+
+ We compute basic earnings per share by dividing net earnings available to common shareholders by the actual weighted average number of common shares outstanding for the reporting period. Diluted earnings per share reflects the potential dilution that could occur if holders of unvested restricted and performance share units converted their holdings into common stock. The dilutive effect of restricted and performance share units was  0.5  million and  0.6  million shares during the three and six months ended June 30, 2025, compared to  0.8  million shares during the three and six months ended June 30, 2024. 
+
+   
+
+ 
+ 7 
+
+ 
+   
+ 
+
+    
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 3. 
+			 
+			 
+			 Share-based Compensation  
+			 
+		 
+
+ 
+
+   
+
+ The following table summarizes the components of our share-based compensation program expense (in thousands): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+
+			 June 30, 
+			 
+			   
+			   
+			 
+			 Six Months Ended 
+
+			 June 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+		 
+		 
+			 
+			 Restricted share units: 
+			 
+			   
+		 
+		 
+			 
+			 Pretax compensation expense 
+			 
+			   
+			 $ 
+			 14,502 
+			   
+			   
+			 $ 
+			 13,409 
+			   
+			   
+			 $ 
+			 26,545 
+			   
+			   
+			 $ 
+			 25,817 
+			   
+		 
+		 
+			 
+			 Tax benefit 
+			 
+			   
+			   
+			 3,882 
+			   
+			   
+			   
+			 3,540 
+			   
+			   
+			   
+			 7,106 
+			   
+			   
+			   
+			 6,816 
+			   
+		 
+		 
+			 
+			 Restricted share unit expense, net of tax 
+			 
+			   
+			 $ 
+			 10,620 
+			   
+			   
+			 $ 
+			 9,869 
+			   
+			   
+			 $ 
+			 19,439 
+			   
+			   
+			 $ 
+			 19,001 
+			   
+		 
+		 
+			 
+			 Performance share units: 
+			 
+			   
+		 
+		 
+			 
+			 Pretax compensation expense 
+			 
+			   
+			 $ 
+			 5,162 
+			   
+			   
+			 $ 
+			 5,746 
+			   
+			   
+			 $ 
+			 11,562 
+			   
+			   
+			 $ 
+			 11,747 
+			   
+		 
+		 
+			 
+			 Tax benefit 
+			 
+			   
+			   
+			 1,382 
+			   
+			   
+			   
+			 1,517 
+			   
+			   
+			   
+			 3,095 
+			   
+			   
+			   
+			 3,101 
+			   
+		 
+		 
+			 
+			 Performance share unit expense, net of tax 
+			 
+			   
+			 $ 
+			 3,780 
+			   
+			   
+			 $ 
+			 4,229 
+			   
+			   
+			 $ 
+			 8,467 
+			   
+			   
+			 $ 
+			 8,646 
+			   
+		 
+
+ 
+ 
+
+   
+
+ As of June 30, 2025, we had $ 80.4  million and $ 40.3  million of total unrecognized compensation expense related to restricted share units and performance share units, respectively, that is to be recognized over the remaining weighted average period of approximately  2.7  years for restricted share units and  2.3  years for performance share units. During the six months ended June 30, 2025, we issued  5,848  shares for vested restricted share units and  84,001  shares for vested performance share units. Of this total,  1,756  shares for vested restricted share units and  zero  shares for vested performance share units were issued during the second quarter 2025. 
+ 
+
+   
+
+   
+
+ 
+ 4. Financing Arrangements  
+
+   
+
+ Outstanding borrowings, net of unamortized discount and unamortized debt issuance cost, under our current financing arrangements consist of the following (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 June 30, 2025 
+			 
+			   
+			   
+			 
+			 December 31, 2024 
+			 
+			   
+		 
+		 
+			 
+			 Senior credit facility 
+			 
+			   
+			 $ 
+			 277.3 
+			   
+			   
+			 $ 
+			 778.7 
+			   
+		 
+		 
+			 
+			 Senior notes 
+			 
+			   
+			   
+			 1,442.0 
+			   
+			   
+			   
+			 699.0 
+			   
+		 
+		 
+			 
+			 Less current portion of long-term debt 
+			 
+			   
+			   
+			 ( 699.4 
+			 ) 
+			   
+			   
+			 ( 500.0 
+			 ) 
+		 
+		 
+			 
+			 Total long-term debt 
+			 
+			   
+			 $ 
+			 1,019.9 
+			   
+			   
+			 $ 
+			 977.7 
+			   
+		 
+
+ 
+ 
+
+   
+
+ Senior Credit Facility 
+
+   
+
+ At June 30, 2025, we were authorized to borrow through a revolving line of credit, which is supported by a credit agreement with a group of banks. The revolving line of credit authorizes us to borrow up to $ 1.0  billion under a  five-year  term expiring September 2027 and allows us to request an increase in the revolving line of credit total commitment by up to $ 300  million and to request two  one-year  extensions of the maturity date. In addition, the credit agreement authorized us to borrow up to an additional $ 500  million through committed term loans during the nine-month period beginning September 27, 2022, due September 2025, which we exercised in June 2023. The entire outstanding balance of these term loans was paid in full in March 2025. The applicable interest rates under this agreement are based on either the Secured Overnight Financing Rate (SOFR), or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At June 30, 2025, we had $ 278.3  million outstanding on the revolving line of credit, at an average interest rate of  5.32 %, under this agreement.   
+
+   
+
+ Senior Notes 
+
+   
+
+ Our senior notes consist of two separate issuances. The first is $ 700  million of  3.875 % senior notes due March 2026, issued in March 2019. Interest payments under these notes are due semiannually in March and September of each year beginning September 2019. The second is $ 750  million of  4.90 % senior notes due March 2030, issued in March 2025. Interest payments under these notes are due semiannually in March and September of each year beginning September 2025. Both senior notes were issued by J.B. Hunt Transport Services, Inc., a parent-level holding company with no significant tangible assets or operations. The notes are guaranteed on a full and unconditional basis by our wholly-owned operating subsidiary. All other subsidiaries of the parent are minor. We registered these offerings and the sale of the notes under the Securities Act of 1933, pursuant to shelf registration statements filed in January 2019 and February 2023, respectively. Both notes are unsecured obligations and rank equally with our existing and future senior unsecured debt. We may redeem for cash some or all of the notes based on a redemption price set forth in the note indenture. 
+
+   
+
+ 
+ 
+ 
+ 8 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+    
+
+ Our financing arrangements require us to maintain certain covenants and financial ratios.  We were in compliance with all covenants and financial ratios at June 30, 2025. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 5.  
+			 
+			 
+			 Capital Stock  
+			 
+		 
+
+ 
+
+   
+
+ During the six months ended June 30, 2025, we purchased approximately  3,824,000  shares, or $ 552.9  million of our common stock in accordance with plans authorized by our Board, of which  2,410,498  shares, or $ 318.8  million, were purchased in the second quarter of 2025. At June 30, 2025, we had $ 334.7  million available under an authorized plan to purchase our common stock. On January 23, 2025, our Board of Directors declared a regular quarterly cash dividend of $ 0.44 , which was paid February 21, 2025, to shareholders of record on February 7, 2025. On April 24, 2025, our Board of Directors declared a regular quarterly dividend of $ 0.44  per common share, which was paid May 23, 2025, to shareholders of record on May 9, 2025. On July 23, 2025, our Board of Directors declared a regular quarterly dividend of $ 0.44  per common share, which will be paid on August 22, 2025, to shareholders of record on August 8, 2025. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 6.  
+			 
+			 
+			 Fair Value Measurements 
+			 
+		 
+
+ 
+
+   
+
+ Our assets and liabilities measured at fair value are based on valuation techniques which consider prices and other relevant information generated by market transactions involving identical or comparable assets and liabilities. These valuation methods are based on either quoted market prices (Level 1) or inputs, other than quoted prices in active markets, that are observable either directly or indirectly (Level 2). 
+
+   
+
+ Assets Measured at Fair Value on a Recurring Basis 
+
+   
+
+ The following assets are measured at fair value on a recurring basis (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Asset 
+
+			 Balance 
+			 
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			 
+			 June 30, 2025 
+			 
+			   
+			   
+			 
+			 December 31, 2024 
+			 
+			   
+			   
+			 
+			 Input Level 
+			 
+			   
+		 
+		 
+			 
+			 Trading investments 
+			 
+			   
+			 $ 
+			 35.2 
+			   
+			   
+			 $ 
+			 33.9 
+			   
+			   
+			   
+			 1 
+			   
+		 
+
+ 
+ 
+
+   
+
+ The fair value of trading investments has been measured using the market approach (Level 1) and reflects quoted market prices. Trading investments are classified in other assets in our Condensed Consolidated Balance Sheets. 
+
+   
+
+ Financial Instruments 
+
+   
+
+ The carrying amount of our senior credit facility and senior notes was $ 1.72  billion and $ 1.48  billion at June 30, 2025 and December 31, 2024, respectively. The estimated fair value of these liabilities using the income approach (Level 2), based on their net present value, discounted at our current borrowing rate, was $ 1.76  billion and $ 1.48  billion at June 30, 2025 and December 31, 2024, respectively. 
+
+   
+
+ The carrying amounts of all other instruments at June 30, 2025, approximate their fair value due to the short maturity of these instruments. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 7.  
+			 
+			 
+			 Income Taxes 
+			 
+		 
+
+ 
+
+   
+
+ Our effective income tax rate was  26.9 % for the three months ended June 30, 2025, compared to  26.8 % for the three months ended June 30, 2024. Our effective income tax rate was  26.7 % for the first six months of 2025, compared to  27.7 % in 2024. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ 
+ 
+ 
+ 9 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+    
+
+ At June 30, 2025, we had a total of $ 81.2  million in gross unrecognized tax benefits, which are a component of other long-term liabilities on our Condensed Consolidated Balance Sheets. Of this amount, $ 66.0  million represents the amount of unrecognized tax benefits that, if recognized, would impact our effective tax rate. The total amount of accrued interest and penalties for such unrecognized tax benefits was $ 16.7  million at June 30, 2025. 
+
+   
+
+ On July 4, 2025, new U.S tax legislation was signed into law which makes permanent many of the tax provisions enacted in 2017 as part of the Tax Cuts and Jobs Act that were set to expire at the end of 2025. In addition, the legislation makes changes to certain U.S. corporate tax provisions. We are currently evaluating the impact of the new legislation; however, we do not expect it to have a material impact on our financial statements but anticipate an improvement in our cash tax position. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 8.  
+			 
+			 
+			 Commitments and Contingencies 
+			 
+		 
+
+ 
+
+   
+
+ As the result of state use tax audits, we have been assessed amounts owed from which we are vigorously appealing. We have recorded a liability for the estimated probable exposure under these audits and await resolution of the matter. 
+
+   
+
+ We purchase insurance coverage for a portion of expenses related to vehicular collisions and accidents. These policies include a level of self-insurance (deductible) coverage applicable to each claim as well as certain coverage-layer-specific, aggregated reimbursement limits of covered excess claims. Our claims from time to time exceed some of these existing coverage layer aggregate reimbursement limits, and accordingly, we have recorded a liability for the estimated probable exposure for these occurrences. 
+
+   
+
+ We are involved in certain other claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 9.  
+			 
+			 
+			 Business Segments 
+			 
+		 
+
+ 
+
+   
+
+ We reported  five  distinct business segments during the six months ended June 30, 2025 and 2024. These segments included Intermodal (JBI), Dedicated Contract Services® (DCS®), Integrated Capacity Solutions (ICS), Final Mile Services® (FMS), and Truckload (JBT). The operation of each of these businesses is described in Note 13, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2024. A summary of certain segment information is presented below (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Assets 
+
+			 (Excludes intercompany accounts) 
+
+			 As of 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 June 30, 2025 
+			 
+			   
+			   
+			 
+			 December 31, 2024 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 3,485 
+			   
+			   
+			 $ 
+			 3,507 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 2,198 
+			   
+			   
+			   
+			 2,195 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 263 
+			   
+			   
+			   
+			 288 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 514 
+			   
+			   
+			   
+			 544 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 368 
+			   
+			   
+			   
+			 389 
+			   
+		 
+		 
+			 
+			 Total segment assets 
+			 
+			   
+			   
+			 6,828 
+			   
+			   
+			   
+			 6,923 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 1,413 
+			   
+			   
+			   
+			 1,389 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 8,241 
+			   
+			   
+			 $ 
+			 8,312 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 10 
+
+ 
+   
+ 
+
+    
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Net Capital Expenditures (1) 
+
+			 For The Six Months Ended 
+
+			 June 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 132.3 
+			   
+			   
+			 $ 
+			 181.6 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 140.4 
+			   
+			   
+			   
+			 102.3 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 11.1 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 8.3 
+			   
+			   
+			   
+			 10.6 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 ( 0.1 
+			 ) 
+			   
+			   
+			 12.5 
+			   
+		 
+		 
+			 
+			 Total segment net capital expenditures 
+			 
+			   
+			   
+			 281.5 
+			   
+			   
+			   
+			 318.1 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 117.6 
+			   
+			   
+			   
+			 90.8 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 399.1 
+			   
+			   
+			 $ 
+			 408.9 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Revenues and Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 For The Three Months ended June 30, 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 JBI 
+			 
+			   
+			   
+			 
+			 DCS 
+			 
+			   
+			   
+			 
+			 ICS 
+			 
+			   
+			   
+			 
+			 FMS 
+			 
+			   
+			   
+			 
+			 JBT 
+			 
+			   
+			   
+			 
+			 Intersegment Eliminations 
+			 
+			   
+			   
+			 
+			 Consolidated 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			 $ 
+			 1,437.9 
+			   
+			   
+			 $ 
+			 846.8 
+			   
+			   
+			 $ 
+			 260.2 
+			   
+			   
+			 $ 
+			 210.6 
+			   
+			   
+			 $ 
+			 177.0 
+			   
+			   
+			 $ 
+			 ( 4.3 
+			 ) 
+			   
+			 $ 
+			 2,928.2 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents, purchased transportation, and fuel 
+			 
+			   
+			   
+			 887.5 
+			   
+			   
+			   
+			 104.0 
+			   
+			   
+			   
+			 222.6 
+			   
+			   
+			   
+			 79.5 
+			   
+			   
+			   
+			 131.1 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 220.7 
+			   
+			   
+			   
+			 386.8 
+			   
+			   
+			   
+			 16.8 
+			   
+			   
+			   
+			 70.5 
+			   
+			   
+			   
+			 10.6 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 61.5 
+			   
+			   
+			   
+			 79.0 
+			   
+			   
+			   
+			 2.0 
+			   
+			   
+			   
+			 11.0 
+			   
+			   
+			   
+			 5.7 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 66.0 
+			   
+			   
+			   
+			 70.2 
+			   
+			   
+			   
+			 1.7 
+			   
+			   
+			   
+			 9.5 
+			   
+			   
+			   
+			 7.7 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 27.7 
+			   
+			   
+			   
+			 44.6 
+			   
+			   
+			   
+			 4.0 
+			   
+			   
+			   
+			 6.2 
+			   
+			   
+			   
+			 7.0 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 70.9 
+			   
+			   
+			   
+			 54.0 
+			   
+			   
+			   
+			 16.4 
+			   
+			   
+			   
+			 24.1 
+			   
+			   
+			   
+			 11.1 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Other segment items (2) 
+			 
+			   
+			   
+			 7.9 
+			   
+			   
+			   
+			 14.5 
+			   
+			   
+			   
+			 0.3 
+			   
+			   
+			   
+			 1.8 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 1,342.2 
+			   
+			   
+			   
+			 753.1 
+			   
+			   
+			   
+			 263.8 
+			   
+			   
+			   
+			 202.6 
+			   
+			   
+			   
+			 173.6 
+			   
+			   
+			   
+			 ( 4.4 
+			 ) 
+			   
+			   
+			 2,730.9 
+			   
+		 
+		 
+			 
+			 Operating Income (3) 
+			 
+			   
+			 $ 
+			 95.7 
+			   
+			   
+			 $ 
+			 93.7 
+			   
+			   
+			 $ 
+			 ( 3.6 
+			 ) 
+			   
+			 $ 
+			 8.0 
+			   
+			   
+			 $ 
+			 3.4 
+			   
+			   
+			 $ 
+			 0.1 
+			   
+			   
+			 $ 
+			 197.3 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Revenues and Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 For The Three Months ended June 30, 2024 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 JBI 
+			 
+			   
+			   
+			 
+			 DCS 
+			 
+			   
+			   
+			 
+			 ICS 
+			 
+			   
+			   
+			 
+			 FMS 
+			 
+			   
+			   
+			 
+			 JBT 
+			 
+			   
+			   
+			 
+			 Intersegment Eliminations 
+			 
+			   
+			   
+			 
+			 Consolidated 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			 $ 
+			 1,407.5 
+			   
+			   
+			 $ 
+			 851.0 
+			   
+			   
+			 $ 
+			 270.4 
+			   
+			   
+			 $ 
+			 235.3 
+			   
+			   
+			 $ 
+			 168.1 
+			   
+			   
+			 $ 
+			 ( 3.6 
+			 ) 
+			   
+			 $ 
+			 2,928.7 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents, purchased transportation, and fuel 
+			 
+			   
+			   
+			 888.1 
+			   
+			   
+			   
+			 115.8 
+			   
+			   
+			   
+			 232.4 
+			   
+			   
+			   
+			 84.5 
+			   
+			   
+			   
+			 120.8 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 202.0 
+			   
+			   
+			   
+			 381.3 
+			   
+			   
+			   
+			 19.2 
+			   
+			   
+			   
+			 78.6 
+			   
+			   
+			   
+			 11.2 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 61.3 
+			   
+			   
+			   
+			 82.2 
+			   
+			   
+			   
+			 4.3 
+			   
+			   
+			   
+			 11.3 
+			   
+			   
+			   
+			 9.0 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 58.8 
+			   
+			   
+			   
+			 68.0 
+			   
+			   
+			   
+			 1.3 
+			   
+			   
+			   
+			 10.7 
+			   
+			   
+			   
+			 6.8 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 22.4 
+			   
+			   
+			   
+			 43.1 
+			   
+			   
+			   
+			 4.6 
+			   
+			   
+			   
+			 3.2 
+			   
+			   
+			   
+			 5.1 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 67.9 
+			   
+			   
+			   
+			 49.2 
+			   
+			   
+			   
+			 21.5 
+			   
+			   
+			   
+			 25.0 
+			   
+			   
+			   
+			 11.3 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Other segment items (2) 
+			 
+			   
+			   
+			 7.8 
+			   
+			   
+			   
+			 15.0 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 2.2 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 1,308.3 
+			   
+			   
+			   
+			 754.6 
+			   
+			   
+			   
+			 283.7 
+			   
+			   
+			   
+			 215.5 
+			   
+			   
+			   
+			 164.6 
+			   
+			   
+			   
+			 ( 3.7 
+			 ) 
+			   
+			   
+			 2,723.0 
+			   
+		 
+		 
+			 
+			 Operating Income (3) 
+			 
+			   
+			 $ 
+			 99.2 
+			   
+			   
+			 $ 
+			 96.4 
+			   
+			   
+			 $ 
+			 ( 13.3 
+			 ) 
+			   
+			 $ 
+			 19.8 
+			   
+			   
+			 $ 
+			 3.5 
+			   
+			   
+			 $ 
+			 0.1 
+			   
+			   
+			 $ 
+			 205.7 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 11 
+
+ 
+   
+ 
+
+    
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Revenues and Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 For The Six Months ended June 30, 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 JBI 
+			 
+			   
+			   
+			 
+			 DCS 
+			 
+			   
+			   
+			 
+			 ICS 
+			 
+			   
+			   
+			 
+			 FMS 
+			 
+			   
+			   
+			 
+			 JBT 
+			 
+			   
+			   
+			 
+			 Intersegment Eliminations 
+			 
+			   
+			   
+			 
+			 Consolidated 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			 $ 
+			 2,907.1 
+			   
+			   
+			 $ 
+			 1,669.0 
+			   
+			   
+			 $ 
+			 528.3 
+			   
+			   
+			 $ 
+			 411.3 
+			   
+			   
+			 $ 
+			 343.6 
+			   
+			   
+			 $ 
+			 ( 9.7 
+			 ) 
+			   
+			 $ 
+			 5,849.6 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents, purchased transportation, and fuel 
+			 
+			   
+			   
+			 1,814.4 
+			   
+			   
+			   
+			 213.1 
+			   
+			   
+			   
+			 451.6 
+			   
+			   
+			   
+			 151.5 
+			   
+			   
+			   
+			 252.5 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 439.7 
+			   
+			   
+			   
+			 758.2 
+			   
+			   
+			   
+			 33.6 
+			   
+			   
+			   
+			 141.1 
+			   
+			   
+			   
+			 21.0 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 122.1 
+			   
+			   
+			   
+			 158.8 
+			   
+			   
+			   
+			 4.0 
+			   
+			   
+			   
+			 22.3 
+			   
+			   
+			   
+			 14.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 128.2 
+			   
+			   
+			   
+			 140.6 
+			   
+			   
+			   
+			 3.2 
+			   
+			   
+			   
+			 19.6 
+			   
+			   
+			   
+			 14.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 56.4 
+			   
+			   
+			   
+			 88.6 
+			   
+			   
+			   
+			 8.6 
+			   
+			   
+			   
+			 12.5 
+			   
+			   
+			   
+			 12.6 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 140.1 
+			   
+			   
+			   
+			 106.6 
+			   
+			   
+			   
+			 32.9 
+			   
+			   
+			   
+			 47.7 
+			   
+			   
+			   
+			 22.5 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Other segment items (2) 
+			 
+			   
+			   
+			 16.1 
+			   
+			   
+			   
+			 29.1 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 3.9 
+			   
+			   
+			   
+			 0.8 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 2,717.0 
+			   
+			   
+			   
+			 1,495.0 
+			   
+			   
+			   
+			 534.5 
+			   
+			   
+			   
+			 398.6 
+			   
+			   
+			   
+			 338.2 
+			   
+			   
+			   
+			 ( 9.7 
+			 ) 
+			   
+			   
+			 5,473.6 
+			   
+		 
+		 
+			 
+			 Operating Income (3) 
+			 
+			   
+			 $ 
+			 190.1 
+			   
+			   
+			 $ 
+			 174.0 
+			   
+			   
+			 $ 
+			 ( 6.2 
+			 ) 
+			   
+			 $ 
+			 12.7 
+			   
+			   
+			 $ 
+			 5.4 
+			   
+			   
+			 $ 
+			 - 
+			   
+			   
+			 $ 
+			 376.0 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Revenues and Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 For The Six Months ended June 30, 2024 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 JBI 
+			 
+			   
+			   
+			 
+			 DCS 
+			 
+			   
+			   
+			 
+			 ICS 
+			 
+			   
+			   
+			 
+			 FMS 
+			 
+			   
+			   
+			 
+			 JBT 
+			 
+			   
+			   
+			 
+			 Intersegment Eliminations 
+			 
+			   
+			   
+			 
+			 Consolidated 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			 $ 
+			 2,802.8 
+			   
+			   
+			 $ 
+			 1,711.0 
+			   
+			   
+			 $ 
+			 555.7 
+			   
+			   
+			 $ 
+			 464.6 
+			   
+			   
+			 $ 
+			 346.4 
+			   
+			   
+			 $ 
+			 ( 7.8 
+			 ) 
+			   
+			 $ 
+			 5,872.7 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents, purchased transportation, and fuel 
+			 
+			   
+			   
+			 1,767.7 
+			   
+			   
+			   
+			 237.2 
+			   
+			   
+			   
+			 479.1 
+			   
+			   
+			   
+			 165.2 
+			   
+			   
+			   
+			 250.9 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 403.2 
+			   
+			   
+			   
+			 764.0 
+			   
+			   
+			   
+			 40.2 
+			   
+			   
+			   
+			 158.9 
+			   
+			   
+			   
+			 22.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 121.8 
+			   
+			   
+			   
+			 164.3 
+			   
+			   
+			   
+			 7.6 
+			   
+			   
+			   
+			 23.0 
+			   
+			   
+			   
+			 18.1 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 116.3 
+			   
+			   
+			   
+			 137.4 
+			   
+			   
+			   
+			 2.9 
+			   
+			   
+			   
+			 21.6 
+			   
+			   
+			   
+			 14.0 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 46.8 
+			   
+			   
+			   
+			 83.4 
+			   
+			   
+			   
+			 13.0 
+			   
+			   
+			   
+			 5.0 
+			   
+			   
+			   
+			 11.6 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 130.1 
+			   
+			   
+			   
+			 104.5 
+			   
+			   
+			   
+			 43.1 
+			   
+			   
+			   
+			 51.4 
+			   
+			   
+			   
+			 23.6 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Other segment items (2) 
+			 
+			   
+			   
+			 15.8 
+			   
+			   
+			   
+			 30.1 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 4.6 
+			   
+			   
+			   
+			 1.0 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 2,601.7 
+			   
+			   
+			   
+			 1,520.9 
+			   
+			   
+			   
+			 586.5 
+			   
+			   
+			   
+			 429.7 
+			   
+			   
+			   
+			 341.6 
+			   
+			   
+			   
+			 ( 7.8 
+			 ) 
+			   
+			   
+			 5,472.6 
+			   
+		 
+		 
+			 
+			 Operating Income (3) 
+			 
+			   
+			 $ 
+			 201.1 
+			   
+			   
+			 $ 
+			 190.1 
+			   
+			   
+			 $ 
+			 ( 30.8 
+			 ) 
+			   
+			 $ 
+			 34.9 
+			   
+			   
+			 $ 
+			 4.8 
+			   
+			   
+			 $ 
+			 - 
+			   
+			   
+			 $ 
+			 400.1 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 (1) 
+			 
+			 
+			 Net capital expenditures report the additions to property and equipment, net of proceeds from the sale of property and equipment. 
+			 
+		 
+		 
+			   
+			 
+			 (2) 
+			 
+			 
+			 Other segment items include communication, utilities, and operating taxes and licenses expense items. 
+			 
+		 
+		 
+			   
+			 
+			 (3) 
+			 
+			 
+			 Refer to the Condensed Consolidated Statements of Earnings for the reconciliation of consolidated operating income to earnings before income taxes. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 12 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+    
+ 
+
+   
+
+ ITEM 2. MANAGEMENT ’ S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND   RESULTS OF   OPERATIONS  
+
+   
+
+ You should refer to the attached interim Condensed Consolidated Financial Statements and related notes and also to our Annual Report (Form 10-K) for the year ended December 31, 2024, as you read the following discussion. We may make statements in this report that reflect our current expectation regarding future results of operations, performance, and achievements. These are “forward-looking” statements as defined in the Private Securities Litigation Reform Act of 1995 and are based on our belief or interpretation of information currently available. When we use words like “may,” “plan,” “contemplate,” “anticipate,” “believe,” “intend,” “continue,” “expect,” “project,” “goals,” “strategy,” “future,” “predict,” “seek,” “estimate,” “likely,” “could,” “should,” “would,” and similar expressions, you should consider them as identifying forward-looking statements, although we may use other phrasing. Forward-looking statements are inherently uncertain, subject to risks, and should be viewed with caution. These statements are based on our belief or interpretation of information currently available. Shareholders and prospective investors are cautioned that actual results and future events may differ materially from these forward-looking statements as a result of many factors. Some of the factors and events that are not within our control and that could have a material impact on future operating results include the following: general economic and business conditions; competition and competitive rate fluctuations; excess capacity in the intermodal or trucking industries; a loss of one or more major customers; cost and availability of diesel fuel; interference with or termination of our relationships with certain railroads; rail service delays; disruptions to U.S. port-of-call activity; ability to attract and retain qualified drivers, delivery personnel, independent contractors, and third-party carriers; retention of key employees; insurance costs and availability; litigation and claims expense; determination that independent contractors are employees; new or different environmental or other laws and regulations; volatile financial credit markets or interest rates; the impacts of recent or future changes in border or trade policies, including tariffs; terrorist attacks or actions; acts of war; political instability; adverse weather conditions; disruption or failure of information systems; inability to keep pace with technological advances affecting our information technology platforms; potential business or operational disruptions resulting from the effects of a national or international health pandemic; operational disruption or adverse effects of business acquisitions; increased costs for and availability of new revenue equipment; disruptions in the procurement of domestic or imported revenue equipment; decreases in the value of used equipment; and the ability of revenue equipment manufacturers to perform in accordance with agreements for guaranteed equipment trade-in values. Additionally, our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load transportation business. You should also refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2024, for additional information on risk factors and other events that are not within our control. Our future financial and operating results may fluctuate as a result of these and other risk factors or events as described from time to time in our filings with the SEC. We assume no obligation to update any forward-looking statement to the extent we become aware that it will not be achieved for any reason. 
+
+   
+
+ GENERAL 
+
+   
+
+ We are one of the largest surface transportation, delivery, and logistics companies in North America. We operate five distinct, but complementary, business segments and provide a wide range of reliable transportation, brokerage, and delivery services to a diverse group of customers and consumers throughout the continental United States, Canada, and Mexico. Our service offerings include transportation of full-truckload containerized freight, which we directly transport utilizing our company-controlled revenue equipment and company drivers, independent contractors, or third-party carriers. We have arrangements with most of the major North American rail carriers to transport freight in containers or trailers, while we perform the majority of the pickup and delivery services. We also provide customized freight movement, revenue equipment, labor, systems, and delivery services that are tailored to meet individual customers’ requirements and typically involve long-term contracts. These arrangements are generally referred to as dedicated services and may include multiple pickups and drops, freight handling, specialized equipment, and freight network design. In addition, we provide or arrange for local and home delivery services, generally referred to as last-mile delivery services, to customers through a network of cross-dock and other delivery system locations throughout the continental United States. Utilizing thousands of reliable third-party carriers, we also provide comprehensive freight transportation brokerage and logistics services. In addition to dry-van, full-load operations, we also arrange for these unrelated outside carriers to provide flatbed, refrigerated, less-than-truckload (LTL), and other specialized equipment, drivers, and services. Also, we utilize contracted power units to provide traditional over-the-road full truckload delivery services. Our customers, who include many Fortune 500 companies, have extremely diverse businesses. Many of them are served by J.B. Hunt 360°®, an online platform that offers shippers and carriers greater access, visibility and transparency of the supply chain. We account for our business on a calendar year basis, with our full year ending on December 31 and our quarterly reporting periods ending on March 31, June 30, and September 30. The operation of each of our five business segments is described in Note 9, Business Segments, in our Condensed Consolidated Financial Statements included in this Quarterly Report on Form 10-Q and in Note 13, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2024. 
+
+   
+
+ Critical Accounting Policies and Estimates 
+
+   
+
+ The preparation of our financial statements in conformity with U.S. GAAP requires us to make estimates and assumptions that impact the amounts reported in our Condensed Consolidated Financial Statements and accompanying notes. Therefore, the reported amounts of assets, liabilities, revenues, expenses, and associated disclosures of contingent liabilities are affected by these estimates. We evaluate these estimates on an ongoing basis, utilizing historical experience, consultation with experts, and other methods considered reasonable in the particular circumstances. Nevertheless, actual results may differ significantly from our estimates. Any effects on our business, financial position, or results of operations resulting from revisions to these estimates are recognized in the accounting period in which the facts that give rise to the revision become known. 
+
+   
+
+ 
+ 
+ 
+ 13 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Information regarding our Critical Accounting Policies and Estimates can be found in our Annual Report (Form 10-K). The critical accounting policies that we believe require us to make more significant judgments and estimates when we prepare our financial statements include those relating to self-insurance accruals, revenue equipment, revenue recognition and income taxes. We have discussed the development and selection of these critical accounting policies and estimates with the Audit Committee of our Board of Directors. In addition, Note 2,  Summary of Significant Accounting Policies , to the financial statements in our Annual Report (Form 10-K) for the year ended December 31, 2024, contains a summary of our critical accounting policies. There have been no material changes to the methodology we apply for critical accounting estimates as previously disclosed in our Annual Report on Form 10-K. 
+
+   
+
+ RESULTS OF OPERATIONS 
+
+   
+
+ Comparison of Three Months Ended June 30, 2025 to Three Months Ended June 30, 2024 
+
+   
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Summary of Operating Segment Results 
+
+			 For the Three Months Ended June 30, 
+
+			 (in millions) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 Operating Revenues 
+			   
+			   
+			 Operating Income/(Loss) 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 1,438 
+			   
+			   
+			 $ 
+			 1,408 
+			   
+			   
+			 $ 
+			 95.7 
+			   
+			   
+			 $ 
+			 99.2 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 847 
+			   
+			   
+			   
+			 851 
+			   
+			   
+			   
+			 93.7 
+			   
+			   
+			   
+			 96.4 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 260 
+			   
+			   
+			   
+			 270 
+			   
+			   
+			   
+			 (3.6 
+			 ) 
+			   
+			   
+			 (13.3 
+			 ) 
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 211 
+			   
+			   
+			   
+			 235 
+			   
+			   
+			   
+			 8.0 
+			   
+			   
+			   
+			 19.8 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 177 
+			   
+			   
+			   
+			 168 
+			   
+			   
+			   
+			 3.4 
+			   
+			   
+			   
+			 3.5 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 0.1 
+			   
+			   
+			   
+			 0.1 
+			   
+		 
+		 
+			 
+			 Subtotal 
+			 
+			   
+			   
+			 2,933 
+			   
+			   
+			   
+			 2,932 
+			   
+			   
+			   
+			 197.3 
+			   
+			   
+			   
+			 205.7 
+			   
+		 
+		 
+			 
+			 Inter-Segment eliminations 
+			 
+			   
+			   
+			 (5 
+			 ) 
+			   
+			   
+			 (3 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 2,928 
+			   
+			   
+			 $ 
+			 2,929 
+			   
+			   
+			 $ 
+			 197.3 
+			   
+			   
+			 $ 
+			 205.7 
+			   
+		 
+
+ 
+
+   
+
+ Total consolidated operating revenues were $2.93 billion for both the second quarter 2025 and the second quarter 2024. Second quarter 2025 operating revenues benefited primarily from higher volumes in JBI and JBT, increased DCS productivity, and increased revenue per load in ICS, when compared to the second quarter 2024. These increases were fully offset by lower FMS revenue, lower revenue per load in JBI and JBT, decreased ICS volumes, and reduced DCS average truck count. Total consolidated operating revenue, excluding fuel surcharge revenue, increased 1%, when compared to the second quarter 2024. 
+
+   
+
+ JBI segment revenue increased 2% to $1.44 billion during the second quarter 2025, compared with $1.41 billion in 2024. Load volumes during the second quarter 2025 increased 6% over the same period 2024, partially offset by a 3% reduction in gross revenue per load, which is determined by the combination of customer rates, fuel surcharges, and freight mix. Transcontinental loads decreased 1% during the second quarter 2025, while eastern network load volume increased 15% compared to the second quarter 2024. Revenue per load, excluding fuel surcharge revenue, decreased 2% compared to the second quarter 2024. JBI segment operating income decreased 4% to $95.7 million in the second quarter 2025 from $99.2 million in 2024. The decrease is primarily due to lower yields as well as higher insurance claims and premiums expense, increased group medical costs, and higher equipment maintenance costs, partially offset by improvements in equipment utilization and overall cost management initiatives. The current quarter ended with approximately 125,300 units of trailing capacity and 6,400 power units assigned to the dray fleet. 
+
+   
+
+ DCS segment revenue was $847 million in the second quarter 2025, which was relatively flat compared to $851 million in 2024.  Productivity, defined as revenue per truck per week, increased 3%, while average truck count decreased 3%, when compared to the second quarter 2024. Productivity, excluding fuel surcharge revenue, increased 5%, primarily due to contractual index-based rate increases and a decline in idle equipment. On a net basis, revenue-producing trucks in the fleet at the end of the second quarter 2025 decreased by 150 trucks, or 1%, compared to the prior-year period. Customer retention rates are approximately 92%. DCS segment operating income decreased 3% to $93.7 million in the second quarter 2025, from $96.4 million in 2024. The decrease is primarily due to higher insurance claim and premium expense, higher group medical expense, and increased equipment and maintenance costs, partially offset by the maturing of new business onboarded over the past year and overall cost management initiatives. 
+
+   
+
+ 
+ 
+ 
+ 14 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ ICS segment revenue decreased 4% to $260 million in the second quarter 2025, from $270 million in 2024. Overall volumes decreased 9% compared to the second quarter 2024, while revenue per load increased 6%, primarily due to higher contractual rates and changes in customer freight mix, partially offset by lower spot rates. Contractual business represented approximately 62% of total load volume and 63% of total revenue in the second quarter 2025, compared to 61% and 59%, respectively, in 2024. The ICS segment had an operating loss of $3.6 million in the second quarter 2025, compared to an operating loss of $13.3 million in 2024. The decrease in operating loss is primarily due to a 1% increase in gross profit, lower personnel salary and wages expense, lower cargo claims expense, reduced technology costs, and a reduction in integration and transition costs related to the 2023 purchase of the brokerage assets of BNSF Logistics, LLC. Gross profit margin increased to 15.5% in the second quarter 2025, compared to 14.8% in 2024 reflecting our focused bid season yield management and improved capacity procurement. ICS’s carrier base increased 8% compared to the second quarter 2024, following recent declines due to changes in carrier qualification requirements. 
+
+   
+
+ FMS segment revenue decreased 10% to $211 million in the second quarter 2025 from $235 million in 2024, primarily due to decreased customer demand and internal efforts to improve revenue quality across certain accounts. FMS segment operating income decreased 60% to $8.0 million in the second quarter of 2025 compared to $19.8 million in 2024. This decrease was primarily due to lower revenue, higher insurance premium and claims expense, higher group medical expense, increased bad debt expenses, and the absence of a $1.1 million net benefit from two offsetting claim settlements recorded in the second quarter 2024. 
+
+   
+
+ JBT segment revenue increased 5% to $177 million in the second quarter 2025, from $168 million in 2024. Revenue, excluding fuel surcharge revenue, increased 8% primarily due to a 13% increase in load volume, partially offset by a 4% decrease in revenue per load, excluding fuel surcharge revenue, compared to second quarter 2024. JBT average effective trailer count decreased to 12,144 in the second quarter 2025, compared to 12,600 in 2024.  At the end of the second quarter 2025, the JBT power fleet consisted of 2,041 tractors, compared to 1,897 tractors at June 30, 2024. Trailer turns in the second quarter of 2025 increased 17% compared to second quarter 2024, due to increased asset utilization and improvements in network balance. JBT segment operating income decreased 5% to $3.4 million in 2025, compared with $3.5 million during second quarter 2024. The decrease is primarily due to higher insurance premium and claims expense, higher group medical expense, and increased maintenance-related costs. 
+
+   
+
+ Consolidated Operating Expenses 
+
+   
+
+ The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended June 30,  
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Dollar Amounts as a 
+
+			 Percentage of Total 
+
+			 Operating Revenues 
+			 
+			   
+			   
+			 
+			 Percentage Change 
+
+			 of Dollar Amounts 
+
+			 Between Quarters 
+			 
+			   
+		 
+		 
+			   
+			   
+			 2025 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+			   
+			 
+			 2025 vs. 2024 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 100.0 
+			 % 
+			   
+			   
+			 100.0 
+			 % 
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 43.3 
+			   
+			   
+			   
+			 43.5 
+			   
+			   
+			   
+			 (0.6 
+			 ) 
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 27.9 
+			   
+			   
+			   
+			 27.4 
+			   
+			   
+			   
+			 1.7 
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 6.0 
+			   
+			   
+			   
+			 6.3 
+			   
+			   
+			   
+			 (4.2 
+			 ) 
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 5.2 
+			   
+			   
+			   
+			 5.6 
+			   
+			   
+			   
+			 (6.4 
+			 ) 
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 4.4 
+			   
+			   
+			   
+			 4.1 
+			   
+			   
+			   
+			 6.5 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 2.9 
+			   
+			   
+			   
+			 2.5 
+			   
+			   
+			   
+			 15.9 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 2.6 
+			   
+			   
+			   
+			 2.6 
+			   
+			   
+			   
+			 0.2 
+			   
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 1.1 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 0.4 
+			   
+			   
+			 
+			 0.4 
+			 
+			   
+			   
+			   
+			 (3.6 
+			 ) 
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 93.3 
+			   
+			   
+			   
+			 93.0 
+			   
+			   
+			   
+			 0.3 
+			   
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 6.7 
+			   
+			   
+			   
+			 7.0 
+			   
+			   
+			   
+			 (4.1 
+			 ) 
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 0.7 
+			   
+			   
+			   
+			 0.7 
+			   
+			   
+			   
+			 5.4 
+			   
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 6.0 
+			   
+			   
+			   
+			 6.3 
+			   
+			   
+			   
+			 (5.1 
+			 ) 
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 1.6 
+			   
+			   
+			   
+			 1.7 
+			   
+			   
+			   
+			 (4.6 
+			 ) 
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 4.4 
+			 % 
+			   
+			   
+			 4.6 
+			 % 
+			   
+			   
+			 (5.3 
+			 )% 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 15 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Total operating expenses increased 0.3%, while operating revenues were flat during the second quarter 2025 from the comparable period 2024. Operating income decreased to $197.3 million during the second quarter 2025 from $205.7 million in 2024. 
+
+   
+
+ Rents and purchased transportation costs decreased 0.6% in the second quarter 2025. This decrease was primarily the result of a decrease in rail carrier purchased transportation rates within JBI and decreased ICS load volumes, which decreased services provided by third-party carriers, partially offset by increased JBI and JBT load volumes, during the second quarter 2025 compared to 2024. 
+
+   
+
+ Salaries, wages, and employee benefits costs increased 1.7% during the second quarter 2025, compared with 2024. This increase was primarily due to an increase in group medical benefit expenses and higher driver wages, partially offset by lower office employee headcounts. 
+
+   
+
+ Depreciation and amortization expense decreased 4.2% in second quarter 2025 compared with 2024, primarily due to an increase in the expected useful lives of our chassis and trailer fleets, the reduction in DCS truck counts, and lower depreciation of information systems, partially offset by higher intermodal tractor and container counts. Fuel costs decreased 6.4% in the second quarter 2025, compared with 2024, due primarily to a decrease in the price of fuel. 
+
+   
+
+ Operating supplies and expenses increased 6.5%, driven primarily by higher equipment maintenance costs and increased tire expense. Insurance and claims expenses increased 15.9% in 2025 compared with 2024, primarily due to higher claim severity, increased insurance policy premiums expense, and the absence of a $1.1 million net benefit from two offsetting claim settlements recorded in the second quarter 2024, partially offset by lower claim volume. General and administrative expenses increased 0.2% for the current quarter from the comparable period in 2024, primarily due to higher bad debt expense and advertising costs, partially offset by lower building and yard rental expense and a decrease in net loss from sale or disposal of assets. Net loss from sale or disposal of assets was $2.9 million in 2025, compared to a net loss from sale or disposal of assets of $4.6 million in 2024. 
+
+   
+
+ Net interest expense increased 5.4% in 2025 due to an increase in our average debt balance, partially offset by a decrease in effective interest rates compared to second quarter 2024. Income tax expense decreased 4.6% in 2025, compared with 2024, primarily due to lower taxable earnings. Our effective income tax rate was 26.9% for the second quarter of 2025, compared to 26.8% in 2024. Our annual tax rate for 2025 is expected to be between 24.0% and 25.0%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ 
+ 16 
+
+ 
+   
+ 
+
+   
+
+ Comparison of Six Months Ended June 30, 2025 to Six Months Ended June 30, 2024 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Summary of Operating Segment Results 
+
+			 For the Six Months Ended June 30, 
+
+			  (in millions) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 Operating Revenues 
+			   
+			   
+			 Operating Income/(loss) 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2024 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 2,907 
+			   
+			   
+			 $ 
+			 2,803 
+			   
+			   
+			 $ 
+			 190.1 
+			   
+			   
+			 $ 
+			 201.1 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 1,669 
+			   
+			   
+			   
+			 1,711 
+			   
+			   
+			   
+			 174.0 
+			   
+			   
+			   
+			 190.1 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 528 
+			   
+			   
+			   
+			 556 
+			   
+			   
+			   
+			 (6.2 
+			 ) 
+			   
+			   
+			 (30.8 
+			 ) 
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 411 
+			   
+			   
+			   
+			 465 
+			   
+			   
+			   
+			 12.7 
+			   
+			   
+			   
+			 34.9 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 344 
+			   
+			   
+			   
+			 346 
+			   
+			   
+			   
+			 5.4 
+			   
+			   
+			   
+			 4.8 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Subtotal 
+			 
+			   
+			   
+			 5,859 
+			   
+			   
+			   
+			 5,881 
+			   
+			   
+			   
+			 376.0 
+			   
+			   
+			   
+			 400.1 
+			   
+		 
+		 
+			 
+			 Inter-segment eliminations 
+			 
+			   
+			   
+			 (9 
+			 ) 
+			   
+			   
+			 (8 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 5,850 
+			   
+			   
+			 $ 
+			 5,873 
+			   
+			   
+			 $ 
+			 376.0 
+			   
+			   
+			 $ 
+			 400.1 
+			   
+		 
+
+ 
+
+   
+
+ Total consolidated operating revenues were $5.85 billion for the first six months of 2025, versus $5.87 billion for the comparable period 2024. Fuel surcharge revenue decreased to $713.5 million during the first six months of 2025, compared with $775.2 million in 2024. Total consolidated operating revenue, excluding fuel surcharge revenue, increased 1% for the first six months of 2025 compared to the prior-year period. 
+
+   
+
+ JBI segment revenue increased 4% to $2.91 billion during the first six months of 2025, compared with $2.80 billion in 2024. Load volume during the first six months of 2025 increased 7% and revenue per load decreased 3%, compared to a year ago. Revenue per load, excluding fuel surcharge revenue, decreased 1% compared to the first six months of 2024. JBI segment operating income decreased 5% to $190.1 million in the first six months of 2025, from $201.1 million in 2024. The decrease is primarily due to higher driver and non-driver wages, higher insurance claims and premiums expense, increased group medical costs, and increased equipment maintenance costs when compared to the first six months of 2024. 
+
+   
+
+ DCS segment revenue decreased 2% to $1.67 billion during the first six months of 2025, from $1.71 billion in 2024. Productivity, defined as revenue per truck per week, increased 3% from a year ago. Productivity, excluding fuel surcharge revenue, for the first six months of 2025 increased 4% from a year ago. The increase in productivity was primarily due to contractual index-based rate increases and increased utilization of equipment during the current period. Operating income of our DCS segment decreased to $174.0 million in the first six months of 2025, from $190.1 million in 2024. The decrease is primarily due to decreased revenue, higher insurance claim and premium expense, higher group medical expense, and increased equipment and maintenance costs, partially offset by lower bad debt expense, the maturing of new business onboarded over the past year, and overall cost management initiatives when compared to the first six months of 2024. 
+
+   
+
+ ICS revenue decreased 5% to $528.3 million during the first six months of 2025, from $555.7 million in 2024. Overall volumes decreased 11%, while revenue per load increased 7% compared to 2024. The ICS segment had an operating loss of $6.2 million in the first six months of 2025 compared to an operating loss of $30.8 million in 2024. The decrease in operating loss is primarily due to a 1% increase in gross profit, lower personnel salary and wages expense, lower cargo claims expense, reduced technology costs, and a reduction in integration and transition costs related to the 2023 purchase of the brokerage assets of BNSF Logistics, LLC during the first six months of 2025. Gross profit margin increased to 15.4% in the current period compared to 14.5% in 2024, reflecting our focused bid season yield management and improved capacity procurement. 
+
+   
+
+ FMS revenue decreased 11% to $411 million during the first six months of 2025, from $465 million in 2024, primarily due to decreased customer demand and internal efforts to improve revenue quality across certain accounts. FMS segment had operating income of $12.7 million in the first six months of 2025 compared to $34.9 million in 2024. This decrease was primarily due to lower revenue, higher insurance premium and claims expense, and the absence of a $4.2 million net benefit from claim settlements recorded in the first six months of 2024. 
+
+   
+
+ 
+ 
+ 
+ 17 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ JBT segment revenue decreased 1% to $344 million for the first six months of 2025, from $346 million in 2024. Revenue, excluding fuel surcharge revenue, increased 1%, primarily due a 7% increase in load volume, partially offset by a 5% decrease in revenue per load, excluding fuel surcharge revenue compared to the first six months of 2024. Operating income of our JBT segment increased to $5.4 million in the first six months of 2025, from $4.8 million in 2024. The increase in operating income was driven primarily by lower personnel-related expenses and a continued focus on cost management and productivity, partially offset by higher insurance premium and claims expense. 
+
+   
+
+ Consolidated Operating Expenses 
+
+   
+
+ The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+
+   
+
+ 
+
+		 
+			   
+			   
+			   
+			 Six Months Ended June 30, 
+			   
+		 
+		 
+			   
+			   
+			   
+			 
+			 Dollar Amounts as a 
+
+			 Percentage of Total 
+
+			 Operating Revenues 
+			 
+			   
+			   
+			   
+			 
+			 Percentage Change 
+
+			 of Dollar Amounts Between Periods 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			 2025 
+			   
+			   
+			   
+			 2024 
+			   
+			   
+			   
+			 
+			 2025 vs. 2024 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 100.0 
+			 % 
+			   
+			   
+			 100.0 
+			 % 
+			   
+			   
+			 (0.4 
+			 )% 
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 43.8 
+			   
+			   
+			   
+			 43.5 
+			   
+			   
+			   
+			 0.2 
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 27.6 
+			   
+			   
+			   
+			 27.4 
+			   
+			   
+			   
+			 0.4 
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 6.1 
+			   
+			   
+			   
+			 6.3 
+			   
+			   
+			   
+			 (3.0 
+			 ) 
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 5.4 
+			   
+			   
+			   
+			 5.8 
+			   
+			   
+			   
+			 (7.2 
+			 ) 
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 4.3 
+			   
+			   
+			   
+			 4.1 
+			   
+			   
+			   
+			 3.4 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 2.9 
+			   
+			   
+			   
+			 2.5 
+			   
+			   
+			   
+			 14.1 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 2.5 
+			   
+			   
+			   
+			 2.6 
+			   
+			   
+			   
+			 (2.4 
+			 ) 
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.4 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 (1.1 
+			 ) 
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 93.6 
+			   
+			   
+			   
+			 93.2 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 6.4 
+			   
+			   
+			   
+			 6.8 
+			   
+			   
+			   
+			 (6.0 
+			 ) 
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 0.7 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 11.3 
+			   
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 5.7 
+			   
+			   
+			   
+			 6.2 
+			   
+			   
+			   
+			 (7.7 
+			 ) 
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 1.5 
+			   
+			   
+			   
+			 1.7 
+			   
+			   
+			   
+			 (11.1 
+			 ) 
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 4.2 
+			 % 
+			   
+			   
+			 4.5 
+			 % 
+			   
+			   
+			 (6.5 
+			 )% 
+		 
+
+ 
+
+   
+
+ Total operating expenses were flat, while operating revenues decreased 0.4%, during the first six months of 2025, from the comparable period of 2024. Operating income decreased to $376.0 million during the first six months of 2025, from $400.1 million in 2024. 
+
+   
+
+ Rents and purchased transportation costs increased 0.2% in 2025.  This increase was primarily the result of increased JBI and JBT load volumes, which increased services provided by third-party rail and truck carriers during the current period, partially offset by a decrease in rail carrier purchased transportation rates within JBI and decreased ICS load volumes. 
+
+   
+
+ Salaries, wages, and employee benefits costs increased 0.4% in 2025 from 2024. This increase was primarily due to an increase in group medical benefit expenses and higher driver wages, partially offset by lower office employee headcounts. 
+
+   
+
+ Depreciation and amortization expense decreased 3.0% in 2025 primarily due to an increase in the expected useful lives of our chassis and trailer fleets, the reduction in DCS truck counts, and lower depreciation of information systems, partially offset by higher intermodal tractor and container counts. Fuel costs decreased 7.2% in 2025, compared with 2024, due primarily to a decrease in the price of fuel and decreased road miles. 
+
+   
+
+ 
+ 
+ 
+ 18 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Operating supplies and expenses increased 3.4% driven primarily by higher equipment maintenance costs and increased tire expense partially offset by lower travel and entertainment expenses and towing costs. Insurance and claims expense increased 14.1% in 2025 compared with 2024, primarily due to higher claim severity, increased insurance policy premiums expense, and the absence of a $4.2 million net benefit from claim settlements recorded in the first six months of 2024, partially offset by lower claim volume. General and administrative expenses decreased 2.4% from the comparable period in 2024, primarily due to lower building and yard rental expense, decreased professional services expense, and a decrease in net loss from sale or disposal of assets, partially offset by higher advertising costs. Net loss from sale or disposal of assets was $9.4 million in 2025, compared to a net loss from sale or disposal of assets of $11.3 million in 2024. 
+
+   
+
+ Net interest expense increased 11.3% in 2025, due primarily to decreased interest income and an increase in our average debt balance. Income tax expense decreased 11.1% during the first six months of 2025 compared with 2024, primarily due to decreased taxable earnings and a lower effective income tax rate in the first six months of 2025. Our effective income tax rate was 26.7% for the first six months of 2025, compared to 27.7% in 2024 due to discrete tax items. Our annual tax rate for 2025 is expected to be between 24.0% and 25.0%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ Liquidity and Capital Resources 
+
+   
+
+ Cash Flow 
+
+   
+
+ Net cash provided by operating activities totaled $806.2 million during the first six months of 2025, compared with $827 million for the same period 2024. Operating cash flows decreased primarily due to decreased earnings, partially offset by the timing of general working capital activities. Net cash used in investing activities totaled $399.1 million in 2025, compared with $405.1 million in 2024. The decrease resulted primarily from a decrease in equipment purchases, net of proceeds from the sale of equipment, partially offset by an increase in real estate acquisitions in the current period. Net cash used in financing activities was $403.2 million in 2025, compared with $421.8 million in 2024. This decrease resulted primarily from the proceeds of our issuance in March 2025 of $750 million in senior notes, partially offset by the use of a portion of those proceeds to retire our $500 million of term loans in March 2025 as well as an increase in treasury stock purchases. 
+
+   
+
+ Liquidity 
+
+   
+
+ Our need for capital has typically resulted from the acquisition of containers and chassis, trucks, tractors, and trailers required to support our growth and the replacement of older equipment as well as periodic business acquisitions and real estate transactions. We are frequently able to accelerate or postpone a portion of equipment replacements or other capital expenditures depending on market and overall economic conditions. In recent years, we have obtained capital through cash generated from operations, revolving lines of credit and long-term debt issuances. We have also periodically utilized operating leases to acquire revenue equipment. For our senior notes maturing in 2026, it is our intent to pay the entire outstanding balances in full, on or before the maturity dates, using our existing cash balance, senior revolving line of credit or other sources of long-term financing. 
+
+   
+
+ We believe our liquid assets, cash generated from operations, and revolving line of credit will provide sufficient funds for our operating and capital requirements for the foreseeable future. At June 30, 2025 we were authorized to borrow through a revolving line of credit, which is supported by a credit agreement with a group of banks. The revolving line of credit authorizes us to borrow up to $1.0 billion under a five-year term expiring September 2027, and allows us to request an increase in the revolving line of credit total commitment by up to $300 million and to request two one-year extensions of the maturity date. In addition, the credit agreement authorized us to borrow up to an additional $500 million through committed term loans during the nine-month period beginning September 27, 2022, due September 2025, which we exercised in June 2023. The entire outstanding balance of these term loans were paid in full in March 2025. The applicable interest rates under this agreement are based on either the Secured Overnight Financing Rate (SOFR), or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At June 30, 2025, we had a $278.3 million outstanding balance under our senior credit facility, at an average interest rate of 5.32% and a cash balance of $50.9 million. 
+
+   
+
+ 
+ 
+ 
+ 19 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ We continue to evaluate the possible effects of current economic conditions and reasonable and supportable economic forecasts on operational cash flows, including the risks of declines in the overall freight market due to anticipated or potential increases in tariffs or other factors and our customers' liquidity and ability to pay. We regularly monitor working capital and maintain frequent communication with our customers, suppliers and service providers. A large portion of our cost structure is variable. Purchased transportation expense represents more than half of our total costs and is heavily tied to load volumes. Our second largest cost item is salaries and wages, the largest portion of which is driver pay, which includes a large variable component.  
+
+   
+
+ Our financing arrangements require us to maintain certain covenants and financial ratios. At June 30, 2025, we were compliant with all covenants and financial ratios. 
+
+   
+
+ Our net capital expenditures were approximately $399.1 million during the first six months of 2025, compared with $408.9 million for the same period 2024. Our net capital expenditures include net additions to revenue equipment and non-revenue producing assets that are necessary to contribute to and support the future growth of our various business segments. Capital expenditures in the first half of 2025 were primarily for tractors, trailing equipment and related enhancements, and real estate. We expect to spend in the range of $550 million to $650 million for net capital expenditures during the full calendar year 2025. We are currently committed to spend approximately $64.1 million, net of proceeds from sales or trade-ins, during the years 2025 and 2026. At June 30, 2025, our aggregate future minimum lease payments under operating lease obligations related primarily to the rental of maintenance and support facilities, cross-dock and delivery system facilities, office space, parking yards, and equipment totaled $318.4 million. 
+
+   
+
+ Off-Balance Sheet Arrangements 
+
+   
+
+ We had no off-balance sheet arrangements, other than our net purchase commitments of $64.1 million, as of June 30, 2025. 
+
+   
+
+ Risk Factors 
+
+   
+
+ You should refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2024, under the caption “Risk Factors” for specific details on the following factors and events that are not within our control and could affect our financial results. 
+
+   
+
+ Risks Related to Our Industry 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our business can be significantly impacted by economic conditions, customer business cycles, government policies, and seasonal factors. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Extreme or unusual weather conditions can disrupt our operations, impact freight volumes, and increase our costs, all of which could have a material adverse effect on our business results. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our operations are subject to various environmental laws and regulations, including legislative and regulatory responses to climate change. Compliance with environmental requirements could result in significant expenditures and the violation of these regulations could result in substantial fines or penalties. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We depend on third parties in the operation of our business, particularly rail service providers, transportation equipment manufacturers, third party carriers and independent contractors. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Rapid changes in fuel costs could impact our periodic financial results. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Insurance and claims expenses could significantly reduce our earnings. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We operate in a regulated industry, and increased direct and indirect costs of compliance with, or liability for violation of, existing or future regulations could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Difficulty in attracting and retaining drivers and delivery personnel could affect our profitability and ability to grow. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 20 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We operate in a competitive and highly fragmented industry. Numerous factors could impair our ability to maintain our current profitability and to compete with other carriers and private fleets. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our business can be significantly impacted by the effects of national or international health pandemics on general economic conditions and the operations of our customers and third-party suppliers and service providers. 
+			 
+		 
+
+ 
+
+   
+
+ Risks Related to Our Business 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We derive a significant portion of our revenue from a few major customers, the loss of one or more of which could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 A determination that independent contractors are employees could expose us to various liabilities and additional costs. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We may be subject to litigation claims that could result in significant expenditures. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We rely significantly on our information technology systems, a disruption, failure or security breach of which or an inability to keep pace with technological advances could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Acquisitions or business combinations may disrupt or have a material adverse effect on our operations or earnings. 
+			 
+		 
+
+ 
+
+   
+
+ ITEM 3.  QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK 
+
+   
+
+ Interest rate risk can be quantified by measuring the financial impact of a near-term adverse increase in short-term interest rates on variable-rate debt outstanding. Our total long-term debt consists of both fixed and variable interest rate facilities. Our senior notes have fixed interest rates ranging from 3.875% to 4.90%. These fixed-rate facilities reduce the impact of changes to market interest rates on future interest expense. Our senior credit facility has variable interest rates, which are based on either SOFR or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At June 30, 2025, the average interest rate under our senior credit facility was 5.32%. Our earnings would be affected by changes in these short-term variable interest rates. At our current level of borrowing, a one-percentage-point increase in our applicable rate would reduce annual pretax earnings by $2.8 million. 
+
+   
+
+ Although we conduct business in foreign countries, foreign currency transaction gains and losses were not material to our results of operations for the six months ended June 30, 2025. Accordingly, we are not currently subject to material foreign currency exchange rate risks from the effects that exchange rate movements of foreign currencies would have on our future costs or on future cash flows we would receive from our foreign investment. As of June 30, 2025, we had no foreign currency forward exchange contracts or other derivative financial instruments to hedge the effects of adverse fluctuations in foreign currency exchange rates. 
+
+   
+
+ The price and availability of diesel fuel are subject to fluctuations due to changes in the level of global oil production, seasonality, weather, and other market factors. Historically, we have been able to recover a majority of fuel price increases from our customers in the form of fuel surcharges. We cannot predict the extent to which high fuel price levels may occur in the future or the extent to which fuel surcharges could be collected to offset such increases. As of June 30, 2025, we had no derivative financial instruments to reduce our exposure to fuel price fluctuations. 
+
+   
+
+ 
+ 
+ 
+ 21 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ ITEM 4.  CONTROLS AND PROCEDURES 
+
+   
+
+ We maintain controls and procedures designed to ensure that the information we are required to disclose in the reports we file with the SEC is recorded, processed, summarized and reported, within the time periods specified in the SEC rules, and that such information is accumulated and communicated to our management, including our Chief Executive Officer and Chief Financial Officer, as appropriate, to allow timely decisions regarding required disclosure. As of the end of the period covered by this report, we carried out an evaluation, under the supervision and with the participation of our management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended). Based upon that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that our disclosure controls and procedures were effective as of June 30, 2025. 
+
+   
+
+ There were no changes in our internal control over financial reporting during the second quarter 2025 that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 
+
+   
+
+ Part II. Other Information 
+
+   
+
+   
+
+ ITEM 1. LEGAL PROCEEDINGS 
+
+   
+
+ We are involved in certain claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+
+   
+
+ ITEM 1A.            RISK FACTORS 
+
+   
+
+ Information regarding risk factors appears in Part I, Item 2, Management’s Discussion and Analysis of Financial Condition and Results of Operations of this report on Form 10-Q and in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2024. 
+
+   
+
+ ITEM 2.           UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS 
+
+   
+
+ Unregistered Sales of Equity Securities 
+
+   
+
+ On April 24, 2025, we issued an aggregate of 14,033 shares of our common stock to non-employee members of our Board of Directors who elected to receive all or a portion of their annual director retainer in Company stock. These shares were valued based on the closing market price per share of our common stock of $132.98 on April 24, 2025, for an aggregate value of $1,866,108. The shares were issued to our non-employee directors in private transactions exempt from registration pursuant to Section 4(a)(2) of the Securities Act of 1933, as amended. 
+
+   
+
+ Purchases of Equity Securities 
+
+   
+
+ The following table summarizes purchases of our common stock during the three months ended June 30, 2025: 
+
+   
+
+ 
+
+		 
+			 
+			   
+
+			   
+
+			 Period 
+
+			   
+			 
+			   
+			 
+			 Number of 
+
+			 Common 
+
+			 Shares 
+
+			 Purchased 
+			 
+			   
+			   
+			 
+			 Average Price 
+
+			 Paid Per 
+
+			 Common Share Purchased 
+			 
+			   
+			   
+			 
+			 Total Number of Shares 
+
+			 Purchased as 
+
+			 Part of a 
+
+			 Publicly 
+
+			 Announced Plan 
+
+			 (1) 
+			 
+			   
+			   
+			 
+			 Maximum 
+
+			 Dollar 
+
+			 Amount 
+
+			 of Shares That 
+
+			 May Yet Be 
+
+			 Purchased 
+
+			 Under the Plan 
+
+			 (in millions)  (1) 
+			 
+			   
+		 
+		 
+			 
+			 April 1 through April 30, 2025 
+			 
+			   
+			   
+			 1,820,898 
+			   
+			   
+			 $ 
+			 131.59 
+			   
+			   
+			   
+			 1,820,898 
+			   
+			   
+			 $ 
+			 413 
+			   
+		 
+		 
+			 
+			 May 1 through May 31, 2025 
+			 
+			   
+			   
+			 589,600 
+			   
+			   
+			   
+			 134.29 
+			   
+			   
+			   
+			 589,600 
+			   
+			   
+			   
+			 335 
+			   
+		 
+		 
+			 
+			 June 1 through June 30, 2025 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 335 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			   
+			 2,410,498 
+			   
+			   
+			 $ 
+			 132.25 
+			   
+			   
+			   
+			 2,410,498 
+			   
+			   
+			 $ 
+			 335 
+			   
+		 
+
+ 
+
+   
+
+ (1)         On August 16, 2024, our Board of Directors authorized the purchase of up to $1 billion of our common stock. This stock repurchase program has no expiration date. 
+
+   
+
+ 
+ 
+ 
+ 22 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ ITEM 3.           DEFAULTS UPON SENIOR SECURITIES 
+
+   
+
+ Not applicable. 
+
+   
+
+ ITEM 4.           MINE SAFETY DISCLOSURES 
+
+   
+
+ Not applicable. 
+
+   
+
+   
+
+ 
+ ITEM 5.           OTHER INFORMATION 
+
+   
+
+ During the three months ended June 30, 2025,  none  of our directors or officers adopted or terminated a “Rule 10b5-1 trading arrangement” or “non-Rule 10b5-1 trading arrangement,” as each term is defined in Item 408(a) of Regulation S-K. 
+ 
+
+   
+
+   
+
+ ITEM 6.           EXHIBITS  
+
+   
+
+ Index to Exhibits 
+
+   
+
+ 
+ 23 
+
+ 
+   
+ 
+
+   
+
+ 
+
+		 
+			 
+			 Exhibit 
+
+			 Number 
+			 
+			   
+			 Exhibits 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 3.1 
+			 
+			   
+			 
+			 Amended and Restated Articles of Incorporation of J.B. Hunt Transport Services, Inc. dated May 19, 1988 (incorporated by reference from Exhibit 3.1 of the Company’s quarterly report on Form 10-Q for the period ended March 31, 2005, filed April 29, 2005) 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 3.2 
+			 
+			   
+			 
+			 Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc. dated October 21, 2021 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 27, 2021) 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 3.3 
+			 
+			   
+			 
+			 Amendment No. 1 to the Second Amended and Restated Bylaws J.B. Hunt Transport Services, Inc. dated July 20, 2022 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed July 26, 2022) 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 3.4 
+			 
+			   
+			 
+			 Amendment No. 2 to the Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc., dated January 19, 2023 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed January 24, 2023) 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 3.5 
+			 
+			   
+			 
+			 Amendment No. 3 to the Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc., dated October 19, 2023 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 24, 2023) 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 22.1 
+			 
+			   
+			 
+			 List of Guarantor Subsidiaries of J.B. Hunt Transport Services, Inc. (incorporated by reference from Exhibit 22.1 of the Company’s annual report on Form 10-K for the year ended December 31, 2021, filed February 25, 2022) 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 31.1 
+			 
+			   
+			 
+			 Rule 13a-14(a)/15d-14(a) Certification 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 31.2 
+			 
+			   
+			 
+			 Rule 13a-14(a)/15d-14(a) Certification 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 32.1 
+			 
+			   
+			 
+			 Section 1350 Certification 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 32.2 
+			 
+			   
+			 
+			 Section 1350 Certification 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 101.INS 
+			 
+			   
+			 
+			 Inline XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 101.SCH 
+			 
+			   
+			 
+			 Inline XBRL Taxonomy Extension Schema Document 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 101.CAL 
+			 
+			   
+			 
+			 Inline XBRL Taxonomy Extension Calculation Linkbase Document 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 101.DEF 
+			 
+			   
+			 
+			 Inline XBRL Taxonomy Extension Definition Linkbase Document 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 101.LAB 
+			 
+			   
+			 
+			 Inline XBRL Taxonomy Extension Label Linkbase Document 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 101.PRE 
+			 
+			   
+			 
+			 Inline XBRL Taxonomy Extension Presentation Linkbase Document 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 104 
+			 
+			   
+			 Cover Page Interactive Data File (embedded within the Inline XBRL Document and included in Exhibit 101) 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 24 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ SIGNATURES 
+
+   
+
+   
+
+ Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized, in the city of Lowell, Arkansas, on the 24th day of July 2025. 
+
+   
+
+   
+
+ 
+
+		 
+			   
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			   
+		 
+		 
+			   
+			 (Registrant) 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			 BY: 
+			 /s/ Shelley Simpson 
+			   
+		 
+		 
+			   
+			   
+			 Shelley Simpson 
+			   
+		 
+		 
+			   
+			   
+			 President and Chief Executive Officer 
+			   
+		 
+		 
+			   
+			   
+			 (Principal Executive Officer) 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			 BY: 
+			 /s/ John Kuhlow 
+			   
+		 
+		 
+			   
+			   
+			 John Kuhlow 
+			   
+		 
+		 
+			   
+			   
+			 Chief Financial Officer, 
+			   
+		 
+		 
+			   
+			   
+			 Executive Vice President 
+			   
+		 
+		 
+			   
+			   
+			 (Principal Financial and Accounting Officer) 
+			   
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 25 
+ 
+ 
+ 
+
+
+ 

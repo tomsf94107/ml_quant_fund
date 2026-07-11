@@ -571,7 +571,6 @@ OUTPUT_COLUMNS = [
     "day_of_week", "is_month_end",       # calendar effects
     # ── NEW v3 features ──────────────────────────────────────────────────────
     "premarket_gap",                     # open vs prev close
-    "es_overnight",                      # S&P500 futures overnight move
     "iv_skew_snap", "pc_ratio_snap",     # options IV skew + put/call ratio
     "analyst_upside", "analyst_buy_pct", "analyst_mult",  # analyst revisions
     "finbert_sentiment", "finbert_sentiment_earnings", "finbert_mult", # FinBERT NLP sentiment
@@ -884,8 +883,14 @@ def _market_return(etf: str, start: str, end: str,
         tmp = _get_macro_cached(etf, start, end)
         if isinstance(tmp.columns, pd.MultiIndex):
             tmp.columns = tmp.columns.get_level_values(0)
+        # Massive returns an UNNAMED DatetimeIndex; yfinance named it 'Date'.
+        # reset_index() therefore yields 'index' not 'date' -> KeyError ->
+        # silent NaN. Name the datetime column explicitly. (Fix Jun 30 2026.)
         tmp = tmp.reset_index()
-        tmp.columns = [c.strip().lower() for c in tmp.columns]
+        tmp.columns = [str(c).strip().lower() for c in tmp.columns]
+        if "date" not in tmp.columns:
+            # first column is the (former) datetime index whatever it was named
+            tmp = tmp.rename(columns={tmp.columns[0]: "date"})
         tmp["date"] = pd.to_datetime(tmp["date"]).dt.date
         tmp = tmp.set_index("date")
         close_s = tmp["close"].reindex(index).ffill()
@@ -1085,7 +1090,10 @@ def build_feature_dataframe(
     NaNs dropped from warm-up period only.
     """
     if end_date is None:
-        end_date = datetime.today().strftime("%Y-%m-%d")
+        # VN-date bug: datetime.today() = Mac VN local = a day ahead of the last
+        # completed ET session, requesting a non-existent future daily bar.
+        # Cap at last completed session. Fix Jul 1 2026.
+        end_date = _last_completed_session().strftime("%Y-%m-%d")
 
     start_str = str(start_date)
     end_str   = str(end_date)
@@ -1436,11 +1444,20 @@ def build_feature_dataframe(
     except Exception:
         df["es_overnight"] = 0.0
 
+    # VIX close from FRED VIXCLS (^VIX is a true index Massive cannot serve;
+    # yfinance disabled by XProtect). Mirrors the proven vix_term_structure
+    # FRED pattern above. Fix Jun 30 2026 (was defaulting to constant 20.0).
     try:
-        vix_raw = _market_return(VIX_TICKER, start_str, end_str, date_index,
-                                  return_close=True)
-        df["vix_close"] = vix_raw["close"].values if "close" in vix_raw.columns else 20.0
-        df["vix_ret"]   = vix_raw["ret"].values   if "ret"   in vix_raw.columns else 0.0
+        from features.fred_client import fred_get_as_series
+        _vixc = fred_get_as_series("VIXCLS", start=start_str, end=end_str)
+        if _vixc is not None and not _vixc.empty:
+            _vix_map = {d.date(): v for d, v in _vixc.items()}
+            _vix_close_s = df["date"].map(_vix_map).ffill().bfill()
+            df["vix_close"] = _vix_close_s.values
+            df["vix_ret"]   = _vix_close_s.pct_change().fillna(0.0).values
+        else:
+            df["vix_close"] = 20.0
+            df["vix_ret"]   = 0.0
     except Exception:
         df["vix_close"] = 20.0
         df["vix_ret"]   = 0.0

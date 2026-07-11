@@ -1,4 +1,6 @@
 #!/bin/bash
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # scripts/weekly_insider_full.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # WEEKLY FULL INSIDER ETL

@@ -1,398 +1,398 @@
-ticker,bucket,tier,thesis,notes,first_valid_date
-AAPL,Core Silicon,core,2.0,Hyperscaler customer — AI inference demand,2022-01-03
-ABNB,Consumer Tech,tactical,4.0,AI disruption exposure — travel booking,2022-01-03
-ABT,Healthcare,tactical,4.0,Diversifier — non-AI,2022-01-03
-ADSK,Enterprise Software,tactical,4.0,AI capturer — design/engineering,2022-01-03
-AI,Enterprise Software,lotto,4.0,C3.ai — pure AI play high beta,2022-01-03
-ALK,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-AMD,Core Silicon,core,2.0,GPU alternative to NVDA — custom silicon,2022-01-03
-AMPX,Energy Storage,lotto,3.0,Physical AI adjacent — battery tech,2022-09-15
-AMZN,Hyperscaler,core,1.0,AWS capex — AI infrastructure,2022-01-03
-APLD,Neoclouds,lotto,4.0,High-beta AI infrastructure,2022-01-03
-ARM,Core Silicon,core,2.0,CPU/NPU IP — every AI chip uses ARM,2023-09-14
-ASAN,Enterprise Software,lotto,4.0,SaaS victim — seat count risk,2022-01-03
-ASTS,Space Tech,lotto,3.0,High-beta speculative,2022-01-03
-AXP,Financials,tactical,4.0,Macro diversifier,2022-01-03
-AZN,Healthcare,tactical,4.0,Diversifier,2022-01-03
-BA,Industrials,tactical,4.0,Macro diversifier,2022-01-03
-BETR,Consumer,lotto,4.0,High beta speculative,2023-08-24
-BRKR,Scientific Instruments,tactical,4.0,Semiconductor equipment adjacent,2022-01-03
-BSX,Healthcare,tactical,4.0,Diversifier,2022-01-03
-CAVA,Consumer,lotto,4.0,High beta speculative,2023-06-15
-CI,Healthcare,tactical,4.0,Diversifier,2022-01-03
-CNC,Healthcare,tactical,4.0,Diversifier,2022-01-03
-COST,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-CRM,Enterprise Software,secondary,4.0,AI capturer — Salesforce Einstein,2022-01-03
-CRWD,Cybersecurity,secondary,4.0,AI budget capturer — security,2022-01-03
-DDOG,Enterprise Software,secondary,4.0,AI capturer — data/observability moat,2022-01-03
-DNA,Biotech,lotto,3.0,Physical AI adjacent — synthetic biology,2022-01-03
-DUOL,SaaS Victim,lotto,4.0,Seat-count vulnerability — AI language models,2022-01-03
-ETSY,Consumer,tactical,4.0,SaaS victim — AI disruption,2022-01-03
-FIVN,SaaS Victim,lotto,4.0,Seat-count vulnerability — contact center AI,2022-01-03
-FSLY,Infrastructure,lotto,4.0,Edge compute — AI delivery,2022-01-03
-FTNT,Cybersecurity,secondary,4.0,AI budget capturer — security,2022-01-03
-GM,Automotive,tactical,3.0,Physical AI — autonomous vehicles,2022-01-03
-GME,Consumer,lotto,4.0,High beta speculative,2022-01-03
-GOOG,Hyperscaler,core,1.0,Search + GCP capex — AI infrastructure,2022-01-03
-HUM,Healthcare,tactical,4.0,Diversifier,2022-01-03
-HY,Financials,lotto,4.0,High beta speculative,2022-01-03
-INSM,Biotech,lotto,4.0,High beta speculative,2022-01-03
-INTC,Core Silicon,tactical,2.0,Restructuring — foundry bet,2022-01-03
-IREN,Neoclouds,lotto,4.0,High-beta AI infrastructure,2022-01-03
-JNJ,Healthcare,tactical,4.0,Diversifier,2022-01-03
-KVUE,Consumer,tactical,4.0,Macro diversifier,2023-05-04
-LLY,Healthcare,secondary,4.0,AI drug discovery — GLP-1 leader,2022-01-03
-LULU,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-LYFT,Consumer,tactical,3.0,Physical AI — autonomous vehicle exposure,2022-01-03
-META,Hyperscaler,core,1.0,MTIA ASIC + capex — AI infrastructure,2022-01-03
-MP,Materials,secondary,1.0,Rare earth — AI hardware supply chain,2022-01-03
-MRNA,Biotech,tactical,4.0,AI drug discovery adjacent,2022-01-03
-MSFT,Hyperscaler,core,1.0,Azure + OpenAI — AI infrastructure,2024-01-02
-MU,Memory,core,1.0,HBM — sold out through 2027,2022-01-03
-NET,Infrastructure,secondary,4.0,AI capturer — networking/security moat,2022-01-03
-NFLX,Consumer Tech,tactical,4.0,AI content recommendation,2022-01-03
-NIO,Automotive,lotto,3.0,Physical AI — China EV,2022-01-03
-NOK,Networking,tactical,2.0,Telecom infrastructure,2022-01-03
-NVDA,Core Silicon,core,2.0,GPU dominance — AI training/inference,2024-01-02
-NVMI,Semiconductor Equipment,secondary,1.0,Advanced packaging inspection,2022-01-03
-NVO,Healthcare,secondary,4.0,GLP-1 — AI drug discovery adjacent,2022-01-03
-OKLO,Nuclear,lotto,1.0,SMR — power for AI datacenters,2024-05-10
-ONTO,Semiconductor Equipment,secondary,1.0,Advanced packaging inspection,2022-01-03
-OPEN,PropTech,lotto,4.0,High beta speculative,2022-01-03
-ORIC,Biotech,lotto,4.0,High beta speculative,2022-01-03
-PFE,Healthcare,tactical,4.0,Diversifier,2022-01-03
-PL,Space Tech,lotto,3.0,AI satellite imagery,2022-01-03
-PLTR,Enterprise Software,secondary,4.0,AI capturer — highest multiple risk,2022-01-03
-PUBM,Ad Tech,lotto,4.0,SaaS victim — AI disruption,2022-01-03
-PYPL,Fintech,tactical,4.0,AI disruption exposure,2022-01-03
-QS,Energy Storage,lotto,3.0,Physical AI adjacent — solid state battery,2022-01-03
-QUBT,Quantum Computing,lotto,3.0,Physical AI adjacent — quantum,2022-01-03
-QURE,Biotech,lotto,4.0,High beta speculative,2022-01-03
-ROKU,Consumer Tech,lotto,4.0,SaaS victim — streaming AI disruption,2022-01-03
-ROST,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-S,Cybersecurity,tactical,4.0,AI budget capturer,2022-01-03
-SHOP,E-commerce,secondary,4.0,AI capturer — commerce infrastructure,2022-01-03
-SLV,Commodities,tactical,1.0,Silver — AI hardware demand (conductors),2022-01-03
-SMCI,Server Hardware,secondary,1.0,AI server infrastructure,2022-01-03
-SMMT,Biotech,lotto,4.0,High beta speculative,2022-01-03
-SNOW,Enterprise Software,secondary,4.0,AI capturer — data/analytics moat,2022-01-03
-TEAM,Enterprise Software,tactical,4.0,AI capturer — dev tools,2022-01-03
-TGT,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-TJX,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-TPR,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-TSLA,Physical AI,secondary,3.0,Optimus + FSD — 2027 positioning,2022-01-03
-TSM,Core Silicon,core,1.0,TSMC — foundry for all AI chips,2022-01-03
-UAL,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-UNH,Healthcare,tactical,4.0,Diversifier,2022-01-03
-USAR,Defense,lotto,3.0,AI defense spending,2025-03-14
-V,Financials,tactical,4.0,Macro diversifier,2022-01-03
-VKTX,Biotech,lotto,4.0,High beta speculative,2022-01-03
-VZ,Telecom,tactical,2.0,AI networking infrastructure,2022-01-03
-WMT,Consumer,tactical,4.0,Macro diversifier,2022-01-03
-XYZ,Fintech,lotto,4.0,High beta speculative,2025-01-21
-ZM,SaaS Victim,tactical,4.0,Seat-count vulnerability — AI meetings,2022-01-03
-SPY,Market ETF,core,0.0,Benchmark — S&P 500,2022-01-03
-QQQ,Market ETF,core,0.0,Benchmark — Nasdaq 100,2022-01-03
-GLD,Commodities,tactical,0.0,Macro hedge — gold,2022-01-03
-XLF,Sector ETF,tactical,0.0,Financials sector,2022-01-03
-XLE,Sector ETF,tactical,0.0,Energy sector,2022-01-03
-XLV,Sector ETF,tactical,0.0,Healthcare sector,2022-01-03
-XLI,Sector ETF,tactical,0.0,Industrials sector,2022-01-03
-XLU,Sector ETF,tactical,0.0,Utilities sector,2022-01-03
-COIN,Crypto,lotto,4.0,High beta — crypto/AI narrative,2022-01-03
-AVGO,Custom Silicon,core,2.0,Google TPU + Meta MTIA ASICs — multi-year backlog,2022-01-03
-ANET,Networking,core,2.0,Scale-out ethernet — AI data center spine,2022-01-03
-AMAT,Semi Equipment,core,1.0,Etch/deposition — every fab needs it,2022-01-03
-LRCX,Semi Equipment,core,1.0,Etch equipment — HBM manufacturing,2022-01-03
-VRT,Power/Cooling,core,1.0,Data center cooling — sold out 2026,2022-01-03
-ETN,Power/Industrial,core,1.0,Power management — AI data centers,2022-01-03
-NOW,Enterprise Software,secondary,4.0,AI capturer — workflow automation moat,2022-01-03
-EQIX,DC REIT,secondary,1.0,Data center REIT — AI infrastructure,2022-01-03
-DLR,DC REIT,secondary,1.0,Data center REIT — AI infrastructure,2022-01-03
-WDC,Memory,secondary,1.0,NAND/HDD — AI storage,2022-01-03
-STX,Memory,secondary,1.0,HDD — AI storage at scale,2022-01-03
-ASML,Semi Equipment,core,1.0,EUV monopoly — 18-month lead times,2022-01-03
-GEV,Power,core,1.0,GE Vernova — gas turbines sold out 2028,2024-04-02
-CEG,Nuclear,core,1.0,Constellation Energy — nuclear power for AI,2022-02-02
-VST,Power,secondary,1.0,Vistra — power generation for AI,2022-01-03
-LIN,Industrial Gases,core,1.0,Linde — chip fabs need industrial gases,2022-01-03
-MRVL,Custom Silicon,secondary,2.0,AWS/MSFT ASICs — custom silicon inflection,2022-01-03
-ALAB,Networking,secondary,2.0,Astera Labs — PCIe/CXL AI connectivity,2024-03-20
-CLS,Networking,secondary,2.0,Celestica — AI server/networking ODM,2022-01-03
-SYM,Physical AI,lotto,3.0,Symbotic — warehouse robotics,2022-06-08
-MNDY,SaaS Victim,lotto,4.0,Monday.com — seat-count vulnerability,2022-01-03
-FVRR,SaaS Victim,lotto,4.0,Fiverr — AI freelance disruption victim,2022-01-03
-APD,Industrial Gases,secondary,1.0,Air Products — chip fab gases,2022-01-03
-EME,Infrastructure,secondary,1.0,EMCOR — data center electrical construction,2022-01-03
-WCC,Infrastructure,secondary,1.0,Wesco — electrical distribution for data centers,2026-04-01
-BYND,Consumer,lotto,4.0,Beyond Meat — speculative plant-based foods,2022-01-03
-RZLV,AI,lotto,4.0,Rezolve AI — speculative agentic commerce,2024-08-16
-KLAC,Semiconductor Equipment,core,,backfilled 2026-06-01,2022-01-03
-TXN,Core Silicon,secondary,,backfilled 2026-06-01,2022-01-03
-MCHP,Core Silicon,tactical,,backfilled 2026-06-01,2022-01-03
-NXPI,Core Silicon,tactical,,backfilled 2026-06-01,2022-01-03
-DELL,Server Hardware,tactical,,backfilled 2026-06-01,2022-01-03
-GLW,Networking,tactical,,backfilled 2026-06-01,2022-01-03
-FLEX,Server Hardware,tactical,,backfilled 2026-06-01,2022-01-03
-JBL,Server Hardware,tactical,,backfilled 2026-06-01,2022-01-03
-GFS,Semiconductor Equipment,tactical,,backfilled 2026-06-01,2022-01-03
-NEE,Power,secondary,,backfilled 2026-06-01,2022-01-03
-D,Power,tactical,,backfilled 2026-06-01,2022-01-03
-CHTR,Telecom,tactical,,backfilled 2026-06-01,2022-01-03
-BIO,Scientific Instruments,tactical,,backfilled 2026-06-01,2022-01-03
-HOOD,Fintech,tactical,,backfilled 2026-06-01,2022-01-03
-RDDT,Ad Tech,tactical,,backfilled 2026-06-01,2024-03-21
-PINS,Ad Tech,tactical,,backfilled 2026-06-01,2022-01-03
-MDB,Enterprise Software,tactical,,backfilled 2026-06-01,2022-01-03
-CRWV,Neoclouds,lotto,,backfilled 2026-06-01,2025-03-28
-NBIS,Neoclouds,lotto,,backfilled 2026-06-01,2024-10-21
-RKLB,Space Tech,lotto,,backfilled 2026-06-01,2022-01-03
-STLA,Automotive,tactical,,backfilled 2026-06-01,2022-01-03
-CRCL,Crypto,lotto,,backfilled 2026-06-01,2025-06-05
-FIG,Enterprise Software,tactical,,backfilled 2026-06-01,2025-07-31
-AMC,Consumer,lotto,,backfilled 2026-06-01,2022-01-03
-AFL,Financials,expansion,,,2022-01-03
-ALL,Financials,expansion,,,2022-01-03
-AIG,Financials,expansion,,,2022-01-03
-AMP,Financials,expansion,,,2022-01-03
-AON,Financials,expansion,,,2022-01-03
-APO,Financials,expansion,,,2022-01-03
-ACGL,Financials,expansion,,,2022-01-03
-ARES,Financials,expansion,,,2022-01-03
-AJG,Financials,expansion,,,2022-01-03
-AIZ,Financials,expansion,,,2022-01-03
-BAC,Financials,expansion,,,2022-01-03
-BLK,Financials,expansion,,,2022-01-03
-BX,Financials,expansion,,,2022-01-03
-BNY,Financials,expansion,,,2026-05-21
-BRO,Financials,expansion,,,2022-01-03
-COF,Financials,expansion,,,2022-01-03
-CBOE,Financials,expansion,,,2022-01-03
-SCHW,Financials,expansion,,,2022-01-03
-CB,Financials,expansion,,,2022-01-03
-CINF,Financials,expansion,,,2022-01-03
-C,Financials,expansion,,,2022-01-03
-CFG,Financials,expansion,,,2022-01-03
-CME,Financials,expansion,,,2022-01-03
-ERIE,Financials,expansion,,,2022-01-03
-FDS,Financials,expansion,,,2022-01-03
-FIS,Financials,expansion,,,2022-01-03
-FITB,Financials,expansion,,,2022-01-03
-BEN,Financials,expansion,,,2022-01-03
-GPN,Financials,expansion,,,2022-01-03
-GL,Financials,expansion,,,2022-01-03
-GS,Financials,expansion,,,2022-01-03
-HIG,Financials,expansion,,,2022-01-03
-HBAN,Financials,expansion,,,2022-01-03
-IBKR,Financials,expansion,,,2022-01-03
-ICE,Financials,expansion,,,2022-01-03
-IVZ,Financials,expansion,,,2022-01-03
-JKHY,Financials,expansion,,,2022-01-03
-ABBV,Healthcare,expansion,,,2022-01-03
-A,Healthcare,expansion,,,2022-01-03
-ALGN,Healthcare,expansion,,,2022-01-03
-AMGN,Healthcare,expansion,,,2022-01-03
-BAX,Healthcare,expansion,,,2022-01-03
-BDX,Healthcare,expansion,,,2022-01-03
-TECH,Healthcare,expansion,,,2022-01-03
-BIIB,Healthcare,expansion,,,2022-01-03
-BMY,Healthcare,expansion,,,2022-01-03
-CAH,Healthcare,expansion,,,2022-01-03
-CRL,Healthcare,expansion,,,2022-01-03
-COO,Healthcare,expansion,,,2022-01-03
-CVS,Healthcare,expansion,,,2022-01-03
-DHR,Healthcare,expansion,,,2022-01-03
-DVA,Healthcare,expansion,,,2022-01-03
-DXCM,Healthcare,expansion,,,2022-01-03
-EW,Healthcare,expansion,,,2022-01-03
-GILD,Healthcare,expansion,,,2022-01-03
-HCA,Healthcare,expansion,,,2022-01-03
-HSIC,Healthcare,expansion,,,2022-01-03
-IDXX,Healthcare,expansion,,,2022-01-03
-INCY,Healthcare,expansion,,,2022-01-03
-PODD,Healthcare,expansion,,,2022-01-03
-ISRG,Healthcare,expansion,,,2022-01-03
-IQV,Healthcare,expansion,,,2022-01-03
-LH,Healthcare,expansion,,,2022-01-03
-MCK,Healthcare,expansion,,,2022-01-03
-MDT,Healthcare,expansion,,,2022-01-03
-MRK,Healthcare,expansion,,,2022-01-03
-MTD,Healthcare,expansion,,,2022-01-03
-DGX,Healthcare,expansion,,,2022-01-03
-REGN,Healthcare,expansion,,,2022-01-03
-RMD,Healthcare,expansion,,,2022-01-03
-STE,Healthcare,expansion,,,2022-01-03
-SYK,Healthcare,expansion,,,2022-01-03
-MMM,Industrials,expansion,,,2022-01-03
-AOS,Industrials,expansion,,,2022-01-03
-ALLE,Industrials,expansion,,,2022-01-03
-AME,Industrials,expansion,,,2022-01-03
-ADP,Industrials,expansion,,,2022-01-03
-BR,Industrials,expansion,,,2022-01-03
-BLDR,Industrials,expansion,,,2022-01-03
-CHRW,Industrials,expansion,,,2022-01-03
-CARR,Industrials,expansion,,,2022-01-03
-CAT,Industrials,expansion,,,2022-01-03
-CTAS,Industrials,expansion,,,2022-01-03
-FIX,Industrials,expansion,,,2022-01-03
-CPRT,Industrials,expansion,,,2022-01-03
-CSX,Industrials,expansion,,,2022-01-03
-CMI,Industrials,expansion,,,2022-01-03
-DE,Industrials,expansion,,,2022-01-03
-DAL,Industrials,expansion,,,2022-01-03
-DOV,Industrials,expansion,,,2022-01-03
-EMR,Industrials,expansion,,,2022-01-03
-EFX,Industrials,expansion,,,2022-01-03
-EXPD,Industrials,expansion,,,2022-01-03
-FAST,Industrials,expansion,,,2022-01-03
-FDX,Industrials,expansion,,,2022-01-03
-FTV,Industrials,expansion,,,2022-01-03
-GE,Industrials,expansion,,,2022-01-03
-GNRC,Industrials,expansion,,,2022-01-03
-GD,Industrials,expansion,,,2022-01-03
-HON,Industrials,expansion,,,2022-01-03
-HWM,Industrials,expansion,,,2022-01-03
-HUBB,Industrials,expansion,,,2022-01-03
-HII,Industrials,expansion,,,2022-01-03
-IEX,Industrials,expansion,,,2022-01-03
-ITW,Industrials,expansion,,,2022-01-03
-IR,Industrials,expansion,,,2022-01-03
-JBHT,Industrials,expansion,,,2022-01-03
-J,Industrials,expansion,,,2022-01-03
-APTV,Consumer Disc,expansion,,,2022-01-03
-AZO,Consumer Disc,expansion,,,2022-01-03
-BBY,Consumer Disc,expansion,,,2022-01-03
-BKNG,Consumer Disc,expansion,,,2022-01-03
-CCL,Consumer Disc,expansion,,,2022-01-03
-CVNA,Consumer Disc,expansion,,,2022-01-03
-CMG,Consumer Disc,expansion,,,2022-01-03
-DRI,Consumer Disc,expansion,,,2022-01-03
-DECK,Consumer Disc,expansion,,,2022-01-03
-DPZ,Consumer Disc,expansion,,,2022-01-03
-DHI,Consumer Disc,expansion,,,2022-01-03
-EBAY,Consumer Disc,expansion,,,2022-01-03
-EXPE,Consumer Disc,expansion,,,2022-01-03
-F,Consumer Disc,expansion,,,2022-01-03
-GRMN,Consumer Disc,expansion,,,2022-01-03
-GPC,Consumer Disc,expansion,,,2022-01-03
-HAS,Consumer Disc,expansion,,,2022-01-03
-HLT,Consumer Disc,expansion,,,2022-01-03
-HD,Consumer Disc,expansion,,,2022-01-03
-LVS,Consumer Disc,expansion,,,2022-01-03
-LEN,Consumer Disc,expansion,,,2022-01-03
-LOW,Consumer Disc,expansion,,,2022-01-03
-MAR,Consumer Disc,expansion,,,2022-01-03
-MCD,Consumer Disc,expansion,,,2022-01-03
-MGM,Consumer Disc,expansion,,,2022-01-03
-NKE,Consumer Disc,expansion,,,2022-01-03
-NCLH,Consumer Disc,expansion,,,2022-01-03
-MO,Consumer Staples,expansion,,,2022-01-03
-ADM,Consumer Staples,expansion,,,2022-01-03
-BG,Consumer Staples,expansion,,,2022-01-03
-CPB,Consumer Staples,expansion,,,2022-01-03
-CASY,Consumer Staples,expansion,,,2022-01-03
-CHD,Consumer Staples,expansion,,,2022-01-03
-CLX,Consumer Staples,expansion,,,2022-01-03
-KO,Consumer Staples,expansion,,,2022-01-03
-CL,Consumer Staples,expansion,,,2022-01-03
-CAG,Consumer Staples,expansion,,,2022-01-03
-STZ,Consumer Staples,expansion,,,2022-01-03
-DG,Consumer Staples,expansion,,,2022-01-03
-DLTR,Consumer Staples,expansion,,,2022-01-03
-EL,Consumer Staples,expansion,,,2022-01-03
-GIS,Consumer Staples,expansion,,,2022-01-03
-HSY,Consumer Staples,expansion,,,2022-01-03
-HRL,Consumer Staples,expansion,,,2022-01-03
-KDP,Consumer Staples,expansion,,,2022-01-03
-KMB,Consumer Staples,expansion,,,2022-01-03
-KHC,Consumer Staples,expansion,,,2022-01-03
-KR,Consumer Staples,expansion,,,2022-01-03
-MKC,Consumer Staples,expansion,,,2022-01-03
-APA,Energy,expansion,,,2022-01-03
-BKR,Energy,expansion,,,2022-01-03
-CVX,Energy,expansion,,,2022-01-03
-COP,Energy,expansion,,,2022-01-03
-DVN,Energy,expansion,,,2022-01-03
-FANG,Energy,expansion,,,2022-01-03
-EOG,Energy,expansion,,,2022-01-03
-EQT,Energy,expansion,,,2022-01-03
-XOM,Energy,expansion,,,2022-01-03
-HAL,Energy,expansion,,,2022-01-03
-KMI,Energy,expansion,,,2022-01-03
-MPC,Energy,expansion,,,2022-01-03
-OXY,Energy,expansion,,,2022-01-03
-OKE,Energy,expansion,,,2022-01-03
-PSX,Energy,expansion,,,2022-01-03
-SLB,Energy,expansion,,,2022-01-03
-TRGP,Energy,expansion,,,2022-01-03
-TPL,Energy,expansion,,,2022-01-03
-VLO,Energy,expansion,,,2022-01-03
-AES,Power,expansion,,,2022-01-03
-LNT,Power,expansion,,,2022-01-03
-AEE,Power,expansion,,,2022-01-03
-AEP,Power,expansion,,,2022-01-03
-AWK,Power,expansion,,,2022-01-03
-ATO,Power,expansion,,,2022-01-03
-CNP,Power,expansion,,,2022-01-03
-CMS,Power,expansion,,,2022-01-03
-ED,Power,expansion,,,2022-01-03
-DTE,Power,expansion,,,2022-01-03
-DUK,Power,expansion,,,2022-01-03
-EIX,Power,expansion,,,2022-01-03
-ETR,Power,expansion,,,2022-01-03
-EVRG,Power,expansion,,,2022-01-03
-ES,Power,expansion,,,2022-01-03
-EXC,Power,expansion,,,2022-01-03
-ARE,REITs,expansion,,,2022-01-03
-AMT,REITs,expansion,,,2022-01-03
-AVB,REITs,expansion,,,2022-01-03
-BXP,REITs,expansion,,,2022-01-03
-CPT,REITs,expansion,,,2022-01-03
-CBRE,REITs,expansion,,,2022-01-03
-CSGP,REITs,expansion,,,2022-01-03
-CCI,REITs,expansion,,,2022-01-03
-EQR,REITs,expansion,,,2022-01-03
-ESS,REITs,expansion,,,2022-01-03
-EXR,REITs,expansion,,,2022-01-03
-FRT,REITs,expansion,,,2022-01-03
-DOC,REITs,expansion,,,2022-01-03
-HST,REITs,expansion,,,2022-01-03
-INVH,REITs,expansion,,,2022-01-03
-IRM,REITs,expansion,,,2022-01-03
-ALB,Materials,expansion,,,2022-01-03
-AMCR,Materials,expansion,,,2022-01-03
-AVY,Materials,expansion,,,2022-01-03
-CF,Materials,expansion,,,2022-01-03
-CTVA,Materials,expansion,,,2022-01-03
-CRH,Materials,expansion,,,2022-01-03
-DOW,Materials,expansion,,,2022-01-03
-DD,Materials,expansion,,,2022-01-03
-ECL,Materials,expansion,,,2022-01-03
-FCX,Materials,expansion,,,2022-01-03
-IFF,Materials,expansion,,,2022-01-03
-IP,Materials,expansion,,,2022-01-03
-LYB,Materials,expansion,,,2022-01-03
-MLM,Materials,expansion,,,2022-01-03
-MOS,Materials,expansion,,,2022-01-03
-GOOGL,Ad Tech,expansion,,,2022-01-03
-T,Ad Tech,expansion,,,2022-01-03
-CMCSA,Ad Tech,expansion,,,2022-01-03
-SATS,Ad Tech,expansion,,,2022-01-03
-EA,Ad Tech,expansion,,,2022-01-03
-FOXA,Ad Tech,expansion,,,2022-01-03
-FOX,Ad Tech,expansion,,,2022-01-03
-LYV,Ad Tech,expansion,,,2022-01-03
-NWSA,Ad Tech,expansion,,,2022-01-03
-NWS,Ad Tech,expansion,,,2022-01-03
-OMC,Ad Tech,expansion,,,2022-01-03
-ACN,Consumer Tech,expansion,,,2022-01-03
-ADBE,Consumer Tech,expansion,,,2022-01-03
-AKAM,Consumer Tech,expansion,,,2022-01-03
-APH,Consumer Tech,expansion,,,2022-01-03
-ADI,Consumer Tech,expansion,,,2022-01-03
-CDNS,Consumer Tech,expansion,,,2022-01-03
-CDW,Consumer Tech,expansion,,,2022-01-03
-CIEN,Consumer Tech,expansion,,,2022-01-03
-CSCO,Consumer Tech,expansion,,,2022-01-03
-CTSH,Consumer Tech,expansion,,,2022-01-03
-COHR,Consumer Tech,expansion,,,2022-09-08
+ticker,bucket,tier,thesis,notes
+AAPL,Core Silicon,core,2.0,Hyperscaler customer — AI inference demand
+ABNB,Consumer Tech,tactical,4.0,AI disruption exposure — travel booking
+ABT,Healthcare,tactical,4.0,Diversifier — non-AI
+ADSK,Enterprise Software,tactical,4.0,AI capturer — design/engineering
+AI,Enterprise Software,lotto,4.0,C3.ai — pure AI play high beta
+ALK,Consumer,tactical,4.0,Macro diversifier
+AMD,Core Silicon,core,2.0,GPU alternative to NVDA — custom silicon
+AMPX,Energy Storage,lotto,3.0,Physical AI adjacent — battery tech
+AMZN,Hyperscaler,core,1.0,AWS capex — AI infrastructure
+APLD,Neoclouds,lotto,4.0,High-beta AI infrastructure
+ARM,Core Silicon,core,2.0,CPU/NPU IP — every AI chip uses ARM
+ASAN,Enterprise Software,lotto,4.0,SaaS victim — seat count risk
+ASTS,Space Tech,lotto,3.0,High-beta speculative
+AXP,Financials,tactical,4.0,Macro diversifier
+AZN,Healthcare,tactical,4.0,Diversifier
+BA,Industrials,tactical,4.0,Macro diversifier
+BETR,Consumer,lotto,4.0,High beta speculative
+BRKR,Scientific Instruments,tactical,4.0,Semiconductor equipment adjacent
+BSX,Healthcare,tactical,4.0,Diversifier
+CAVA,Consumer,lotto,4.0,High beta speculative
+CI,Healthcare,tactical,4.0,Diversifier
+CNC,Healthcare,tactical,4.0,Diversifier
+COST,Consumer,tactical,4.0,Macro diversifier
+CRM,Enterprise Software,secondary,4.0,AI capturer — Salesforce Einstein
+CRWD,Cybersecurity,secondary,4.0,AI budget capturer — security
+DDOG,Enterprise Software,secondary,4.0,AI capturer — data/observability moat
+DNA,Biotech,lotto,3.0,Physical AI adjacent — synthetic biology
+DUOL,SaaS Victim,lotto,4.0,Seat-count vulnerability — AI language models
+ETSY,Consumer,tactical,4.0,SaaS victim — AI disruption
+FIVN,SaaS Victim,lotto,4.0,Seat-count vulnerability — contact center AI
+FSLY,Infrastructure,lotto,4.0,Edge compute — AI delivery
+FTNT,Cybersecurity,secondary,4.0,AI budget capturer — security
+GM,Automotive,tactical,3.0,Physical AI — autonomous vehicles
+GME,Consumer,lotto,4.0,High beta speculative
+GOOG,Hyperscaler,core,1.0,Search + GCP capex — AI infrastructure
+HUM,Healthcare,tactical,4.0,Diversifier
+HY,Financials,lotto,4.0,High beta speculative
+INSM,Biotech,lotto,4.0,High beta speculative
+INTC,Core Silicon,tactical,2.0,Restructuring — foundry bet
+IREN,Neoclouds,lotto,4.0,High-beta AI infrastructure
+JNJ,Healthcare,tactical,4.0,Diversifier
+KVUE,Consumer,tactical,4.0,Macro diversifier
+LLY,Healthcare,secondary,4.0,AI drug discovery — GLP-1 leader
+LULU,Consumer,tactical,4.0,Macro diversifier
+LYFT,Consumer,tactical,3.0,Physical AI — autonomous vehicle exposure
+META,Hyperscaler,core,1.0,MTIA ASIC + capex — AI infrastructure
+MP,Materials,secondary,1.0,Rare earth — AI hardware supply chain
+MRNA,Biotech,tactical,4.0,AI drug discovery adjacent
+MSFT,Hyperscaler,core,1.0,Azure + OpenAI — AI infrastructure
+MU,Memory,core,1.0,HBM — sold out through 2027
+NET,Infrastructure,secondary,4.0,AI capturer — networking/security moat
+NFLX,Consumer Tech,tactical,4.0,AI content recommendation
+NIO,Automotive,lotto,3.0,Physical AI — China EV
+NOK,Networking,tactical,2.0,Telecom infrastructure
+NVDA,Core Silicon,core,2.0,GPU dominance — AI training/inference
+NVMI,Semiconductor Equipment,secondary,1.0,Advanced packaging inspection
+NVO,Healthcare,secondary,4.0,GLP-1 — AI drug discovery adjacent
+OKLO,Nuclear,lotto,1.0,SMR — power for AI datacenters
+ONTO,Semiconductor Equipment,secondary,1.0,Advanced packaging inspection
+OPEN,PropTech,lotto,4.0,High beta speculative
+ORIC,Biotech,lotto,4.0,High beta speculative
+PFE,Healthcare,tactical,4.0,Diversifier
+PL,Space Tech,lotto,3.0,AI satellite imagery
+PLTR,Enterprise Software,secondary,4.0,AI capturer — highest multiple risk
+PUBM,Ad Tech,lotto,4.0,SaaS victim — AI disruption
+PYPL,Fintech,tactical,4.0,AI disruption exposure
+QS,Energy Storage,lotto,3.0,Physical AI adjacent — solid state battery
+QUBT,Quantum Computing,lotto,3.0,Physical AI adjacent — quantum
+QURE,Biotech,lotto,4.0,High beta speculative
+ROKU,Consumer Tech,lotto,4.0,SaaS victim — streaming AI disruption
+ROST,Consumer,tactical,4.0,Macro diversifier
+S,Cybersecurity,tactical,4.0,AI budget capturer
+SHOP,E-commerce,secondary,4.0,AI capturer — commerce infrastructure
+SLV,Commodities,tactical,1.0,Silver — AI hardware demand (conductors)
+SMCI,Server Hardware,secondary,1.0,AI server infrastructure
+SMMT,Biotech,lotto,4.0,High beta speculative
+SNOW,Enterprise Software,secondary,4.0,AI capturer — data/analytics moat
+TEAM,Enterprise Software,tactical,4.0,AI capturer — dev tools
+TGT,Consumer,tactical,4.0,Macro diversifier
+TJX,Consumer,tactical,4.0,Macro diversifier
+TPR,Consumer,tactical,4.0,Macro diversifier
+TSLA,Physical AI,secondary,3.0,Optimus + FSD — 2027 positioning
+TSM,Core Silicon,core,1.0,TSMC — foundry for all AI chips
+UAL,Consumer,tactical,4.0,Macro diversifier
+UNH,Healthcare,tactical,4.0,Diversifier
+USAR,Defense,lotto,3.0,AI defense spending
+V,Financials,tactical,4.0,Macro diversifier
+VKTX,Biotech,lotto,4.0,High beta speculative
+VZ,Telecom,tactical,2.0,AI networking infrastructure
+WMT,Consumer,tactical,4.0,Macro diversifier
+XYZ,Fintech,lotto,4.0,High beta speculative
+ZM,SaaS Victim,tactical,4.0,Seat-count vulnerability — AI meetings
+SPY,Market ETF,core,0.0,Benchmark — S&P 500
+QQQ,Market ETF,core,0.0,Benchmark — Nasdaq 100
+GLD,Commodities,tactical,0.0,Macro hedge — gold
+XLF,Sector ETF,tactical,0.0,Financials sector
+XLE,Sector ETF,tactical,0.0,Energy sector
+XLV,Sector ETF,tactical,0.0,Healthcare sector
+XLI,Sector ETF,tactical,0.0,Industrials sector
+XLU,Sector ETF,tactical,0.0,Utilities sector
+COIN,Crypto,lotto,4.0,High beta — crypto/AI narrative
+AVGO,Custom Silicon,core,2.0,Google TPU + Meta MTIA ASICs — multi-year backlog
+ANET,Networking,core,2.0,Scale-out ethernet — AI data center spine
+AMAT,Semi Equipment,core,1.0,Etch/deposition — every fab needs it
+LRCX,Semi Equipment,core,1.0,Etch equipment — HBM manufacturing
+VRT,Power/Cooling,core,1.0,Data center cooling — sold out 2026
+ETN,Power/Industrial,core,1.0,Power management — AI data centers
+NOW,Enterprise Software,secondary,4.0,AI capturer — workflow automation moat
+EQIX,DC REIT,secondary,1.0,Data center REIT — AI infrastructure
+DLR,DC REIT,secondary,1.0,Data center REIT — AI infrastructure
+WDC,Memory,secondary,1.0,NAND/HDD — AI storage
+STX,Memory,secondary,1.0,HDD — AI storage at scale
+ASML,Semi Equipment,core,1.0,EUV monopoly — 18-month lead times
+GEV,Power,core,1.0,GE Vernova — gas turbines sold out 2028
+CEG,Nuclear,core,1.0,Constellation Energy — nuclear power for AI
+VST,Power,secondary,1.0,Vistra — power generation for AI
+LIN,Industrial Gases,core,1.0,Linde — chip fabs need industrial gases
+MRVL,Custom Silicon,secondary,2.0,AWS/MSFT ASICs — custom silicon inflection
+ALAB,Networking,secondary,2.0,Astera Labs — PCIe/CXL AI connectivity
+CLS,Networking,secondary,2.0,Celestica — AI server/networking ODM
+SYM,Physical AI,lotto,3.0,Symbotic — warehouse robotics
+MNDY,SaaS Victim,lotto,4.0,Monday.com — seat-count vulnerability
+FVRR,SaaS Victim,lotto,4.0,Fiverr — AI freelance disruption victim
+APD,Industrial Gases,secondary,1.0,Air Products — chip fab gases
+EME,Infrastructure,secondary,1.0,EMCOR — data center electrical construction
+WCC,Infrastructure,secondary,1.0,Wesco — electrical distribution for data centers
+BYND,Consumer,lotto,4.0,Beyond Meat — speculative plant-based foods
+RZLV,AI,lotto,4.0,Rezolve AI — speculative agentic commerce
+KLAC,Semiconductor Equipment,core,,backfilled 2026-06-01
+TXN,Core Silicon,secondary,,backfilled 2026-06-01
+MCHP,Core Silicon,tactical,,backfilled 2026-06-01
+NXPI,Core Silicon,tactical,,backfilled 2026-06-01
+DELL,Server Hardware,tactical,,backfilled 2026-06-01
+GLW,Networking,tactical,,backfilled 2026-06-01
+FLEX,Server Hardware,tactical,,backfilled 2026-06-01
+JBL,Server Hardware,tactical,,backfilled 2026-06-01
+GFS,Semiconductor Equipment,tactical,,backfilled 2026-06-01
+NEE,Power,secondary,,backfilled 2026-06-01
+D,Power,tactical,,backfilled 2026-06-01
+CHTR,Telecom,tactical,,backfilled 2026-06-01
+BIO,Scientific Instruments,tactical,,backfilled 2026-06-01
+HOOD,Fintech,tactical,,backfilled 2026-06-01
+RDDT,Ad Tech,tactical,,backfilled 2026-06-01
+PINS,Ad Tech,tactical,,backfilled 2026-06-01
+MDB,Enterprise Software,tactical,,backfilled 2026-06-01
+CRWV,Neoclouds,lotto,,backfilled 2026-06-01
+NBIS,Neoclouds,lotto,,backfilled 2026-06-01
+RKLB,Space Tech,lotto,,backfilled 2026-06-01
+STLA,Automotive,tactical,,backfilled 2026-06-01
+CRCL,Crypto,lotto,,backfilled 2026-06-01
+FIG,Enterprise Software,tactical,,backfilled 2026-06-01
+AMC,Consumer,lotto,,backfilled 2026-06-01
+AFL,Financials,expansion,,
+ALL,Financials,expansion,,
+AIG,Financials,expansion,,
+AMP,Financials,expansion,,
+AON,Financials,expansion,,
+APO,Financials,expansion,,
+ACGL,Financials,expansion,,
+ARES,Financials,expansion,,
+AJG,Financials,expansion,,
+AIZ,Financials,expansion,,
+BAC,Financials,expansion,,
+BLK,Financials,expansion,,
+BX,Financials,expansion,,
+BNY,Financials,expansion,,
+BRO,Financials,expansion,,
+COF,Financials,expansion,,
+CBOE,Financials,expansion,,
+SCHW,Financials,expansion,,
+CB,Financials,expansion,,
+CINF,Financials,expansion,,
+C,Financials,expansion,,
+CFG,Financials,expansion,,
+CME,Financials,expansion,,
+ERIE,Financials,expansion,,
+FDS,Financials,expansion,,
+FIS,Financials,expansion,,
+FITB,Financials,expansion,,
+BEN,Financials,expansion,,
+GPN,Financials,expansion,,
+GL,Financials,expansion,,
+GS,Financials,expansion,,
+HIG,Financials,expansion,,
+HBAN,Financials,expansion,,
+IBKR,Financials,expansion,,
+ICE,Financials,expansion,,
+IVZ,Financials,expansion,,
+JKHY,Financials,expansion,,
+ABBV,Healthcare,expansion,,
+A,Healthcare,expansion,,
+ALGN,Healthcare,expansion,,
+AMGN,Healthcare,expansion,,
+BAX,Healthcare,expansion,,
+BDX,Healthcare,expansion,,
+TECH,Healthcare,expansion,,
+BIIB,Healthcare,expansion,,
+BMY,Healthcare,expansion,,
+CAH,Healthcare,expansion,,
+CRL,Healthcare,expansion,,
+COO,Healthcare,expansion,,
+CVS,Healthcare,expansion,,
+DHR,Healthcare,expansion,,
+DVA,Healthcare,expansion,,
+DXCM,Healthcare,expansion,,
+EW,Healthcare,expansion,,
+GILD,Healthcare,expansion,,
+HCA,Healthcare,expansion,,
+HSIC,Healthcare,expansion,,
+IDXX,Healthcare,expansion,,
+INCY,Healthcare,expansion,,
+PODD,Healthcare,expansion,,
+ISRG,Healthcare,expansion,,
+IQV,Healthcare,expansion,,
+LH,Healthcare,expansion,,
+MCK,Healthcare,expansion,,
+MDT,Healthcare,expansion,,
+MRK,Healthcare,expansion,,
+MTD,Healthcare,expansion,,
+DGX,Healthcare,expansion,,
+REGN,Healthcare,expansion,,
+RMD,Healthcare,expansion,,
+STE,Healthcare,expansion,,
+SYK,Healthcare,expansion,,
+MMM,Industrials,expansion,,
+AOS,Industrials,expansion,,
+ALLE,Industrials,expansion,,
+AME,Industrials,expansion,,
+ADP,Industrials,expansion,,
+BR,Industrials,expansion,,
+BLDR,Industrials,expansion,,
+CHRW,Industrials,expansion,,
+CARR,Industrials,expansion,,
+CAT,Industrials,expansion,,
+CTAS,Industrials,expansion,,
+FIX,Industrials,expansion,,
+CPRT,Industrials,expansion,,
+CSX,Industrials,expansion,,
+CMI,Industrials,expansion,,
+DE,Industrials,expansion,,
+DAL,Industrials,expansion,,
+DOV,Industrials,expansion,,
+EMR,Industrials,expansion,,
+EFX,Industrials,expansion,,
+EXPD,Industrials,expansion,,
+FAST,Industrials,expansion,,
+FDX,Industrials,expansion,,
+FTV,Industrials,expansion,,
+GE,Industrials,expansion,,
+GNRC,Industrials,expansion,,
+GD,Industrials,expansion,,
+HON,Industrials,expansion,,
+HWM,Industrials,expansion,,
+HUBB,Industrials,expansion,,
+HII,Industrials,expansion,,
+IEX,Industrials,expansion,,
+ITW,Industrials,expansion,,
+IR,Industrials,expansion,,
+JBHT,Industrials,expansion,,
+J,Industrials,expansion,,
+APTV,Consumer Disc,expansion,,
+AZO,Consumer Disc,expansion,,
+BBY,Consumer Disc,expansion,,
+BKNG,Consumer Disc,expansion,,
+CCL,Consumer Disc,expansion,,
+CVNA,Consumer Disc,expansion,,
+CMG,Consumer Disc,expansion,,
+DRI,Consumer Disc,expansion,,
+DECK,Consumer Disc,expansion,,
+DPZ,Consumer Disc,expansion,,
+DHI,Consumer Disc,expansion,,
+EBAY,Consumer Disc,expansion,,
+EXPE,Consumer Disc,expansion,,
+F,Consumer Disc,expansion,,
+GRMN,Consumer Disc,expansion,,
+GPC,Consumer Disc,expansion,,
+HAS,Consumer Disc,expansion,,
+HLT,Consumer Disc,expansion,,
+HD,Consumer Disc,expansion,,
+LVS,Consumer Disc,expansion,,
+LEN,Consumer Disc,expansion,,
+LOW,Consumer Disc,expansion,,
+MAR,Consumer Disc,expansion,,
+MCD,Consumer Disc,expansion,,
+MGM,Consumer Disc,expansion,,
+NKE,Consumer Disc,expansion,,
+NCLH,Consumer Disc,expansion,,
+MO,Consumer Staples,expansion,,
+ADM,Consumer Staples,expansion,,
+BG,Consumer Staples,expansion,,
+CPB,Consumer Staples,expansion,,
+CASY,Consumer Staples,expansion,,
+CHD,Consumer Staples,expansion,,
+CLX,Consumer Staples,expansion,,
+KO,Consumer Staples,expansion,,
+CL,Consumer Staples,expansion,,
+CAG,Consumer Staples,expansion,,
+STZ,Consumer Staples,expansion,,
+DG,Consumer Staples,expansion,,
+DLTR,Consumer Staples,expansion,,
+EL,Consumer Staples,expansion,,
+GIS,Consumer Staples,expansion,,
+HSY,Consumer Staples,expansion,,
+HRL,Consumer Staples,expansion,,
+KDP,Consumer Staples,expansion,,
+KMB,Consumer Staples,expansion,,
+KHC,Consumer Staples,expansion,,
+KR,Consumer Staples,expansion,,
+MKC,Consumer Staples,expansion,,
+APA,Energy,expansion,,
+BKR,Energy,expansion,,
+CVX,Energy,expansion,,
+COP,Energy,expansion,,
+DVN,Energy,expansion,,
+FANG,Energy,expansion,,
+EOG,Energy,expansion,,
+EQT,Energy,expansion,,
+XOM,Energy,expansion,,
+HAL,Energy,expansion,,
+KMI,Energy,expansion,,
+MPC,Energy,expansion,,
+OXY,Energy,expansion,,
+OKE,Energy,expansion,,
+PSX,Energy,expansion,,
+SLB,Energy,expansion,,
+TRGP,Energy,expansion,,
+TPL,Energy,expansion,,
+VLO,Energy,expansion,,
+AES,Power,expansion,,
+LNT,Power,expansion,,
+AEE,Power,expansion,,
+AEP,Power,expansion,,
+AWK,Power,expansion,,
+ATO,Power,expansion,,
+CNP,Power,expansion,,
+CMS,Power,expansion,,
+ED,Power,expansion,,
+DTE,Power,expansion,,
+DUK,Power,expansion,,
+EIX,Power,expansion,,
+ETR,Power,expansion,,
+EVRG,Power,expansion,,
+ES,Power,expansion,,
+EXC,Power,expansion,,
+ARE,REITs,expansion,,
+AMT,REITs,expansion,,
+AVB,REITs,expansion,,
+BXP,REITs,expansion,,
+CPT,REITs,expansion,,
+CBRE,REITs,expansion,,
+CSGP,REITs,expansion,,
+CCI,REITs,expansion,,
+EQR,REITs,expansion,,
+ESS,REITs,expansion,,
+EXR,REITs,expansion,,
+FRT,REITs,expansion,,
+DOC,REITs,expansion,,
+HST,REITs,expansion,,
+INVH,REITs,expansion,,
+IRM,REITs,expansion,,
+ALB,Materials,expansion,,
+AMCR,Materials,expansion,,
+AVY,Materials,expansion,,
+CF,Materials,expansion,,
+CTVA,Materials,expansion,,
+CRH,Materials,expansion,,
+DOW,Materials,expansion,,
+DD,Materials,expansion,,
+ECL,Materials,expansion,,
+FCX,Materials,expansion,,
+IFF,Materials,expansion,,
+IP,Materials,expansion,,
+LYB,Materials,expansion,,
+MLM,Materials,expansion,,
+MOS,Materials,expansion,,
+GOOGL,Ad Tech,expansion,,
+T,Ad Tech,expansion,,
+CMCSA,Ad Tech,expansion,,
+SATS,Ad Tech,expansion,,
+EA,Ad Tech,expansion,,
+FOXA,Ad Tech,expansion,,
+FOX,Ad Tech,expansion,,
+LYV,Ad Tech,expansion,,
+NWSA,Ad Tech,expansion,,
+NWS,Ad Tech,expansion,,
+OMC,Ad Tech,expansion,,
+ACN,Consumer Tech,expansion,,
+ADBE,Consumer Tech,expansion,,
+AKAM,Consumer Tech,expansion,,
+APH,Consumer Tech,expansion,,
+ADI,Consumer Tech,expansion,,
+CDNS,Consumer Tech,expansion,,
+CDW,Consumer Tech,expansion,,
+CIEN,Consumer Tech,expansion,,
+CSCO,Consumer Tech,expansion,,
+CTSH,Consumer Tech,expansion,,
+COHR,Consumer Tech,expansion,,

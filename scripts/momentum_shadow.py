@@ -53,20 +53,40 @@ def load_universe():
 
 
 def build_panel(tickers, start=HISTORY_START):
-    from features.builder import _download
-    closes = {}
-    for tk in tickers:
-        try:
-            closes[tk] = _download(tk, start, None).set_index("date")["close"]
-        except Exception:
-            pass
-    panel = pd.DataFrame(closes).sort_index()
+    # Read closes from the local prices.db cache instead of live-fetching via
+    # features.builder._download. WHY: XProtect 5347 (Jun 2026) flags certain
+    # ETF fetches (SPY, SLV, ...) as malware at the network layer, killing the
+    # whole run. Reading cached adj_close runs zero network fetches, so nothing
+    # trips XProtect — and uncached names (index/commodity ETFs) are correctly
+    # excluded from an equity-momentum cross-section anyway. adj_close is the
+    # right series for momentum (split/div adjusted).
+    import sqlite3
+    PRICES_DB = ROOT / "prices.db"
+    want = [t.strip().upper() for t in tickers if t and t.strip()]
+    con = sqlite3.connect(f"file:{PRICES_DB}?mode=ro", uri=True, timeout=30)
+    placeholders = ",".join("?" * len(want))
+    rows = con.execute(
+        f"SELECT ticker, date, adj_close FROM daily_prices "
+        f"WHERE ticker IN ({placeholders}) AND date >= ? AND adj_close IS NOT NULL "
+        f"ORDER BY date",
+        (*want, start),
+    ).fetchall()
+    con.close()
+    if not rows:
+        return pd.DataFrame()
+    df = pd.DataFrame(rows, columns=["ticker", "date", "adj_close"])
+    panel = df.pivot(index="date", columns="ticker", values="adj_close").sort_index()
     panel.index = pd.to_datetime(panel.index)
+    _have = set(panel.columns)
+    _missing = [t for t in want if t not in _have]
+    if _missing:
+        print(f"momentum_shadow: {len(_missing)} tickers not in prices.db cache, excluded: {_missing}")
     return panel
 
 
 def main(as_of=None):
-    con = sqlite3.connect(str(DB), timeout=30)
+    con = sqlite3.connect(str(DB), timeout=120)
+    con.execute("PRAGMA busy_timeout=120000")  # wait out concurrent accuracy.db writers (Fix Jul 1 2026)
     con.executescript(DDL)
     tickers = load_universe()
     panel = build_panel(tickers)
@@ -75,6 +95,24 @@ def main(as_of=None):
         panel = panel[panel.index <= cutoff]
     if panel.empty:
         print("momentum_shadow: empty panel, nothing to write")
+        return 0
+    # Trim ragged trailing edge: drop trailing dates where cross-sectional
+    # coverage is sparse (e.g. only a few tickers backfilled past the rest).
+    # Anchor pred_date to the last date with >=50% of tickers present, so the
+    # momentum rank computes on a dense cross-section, not a 4-name tail.
+    _ncols = panel.shape[1]
+    if _ncols > 0:
+        _cov = panel.notna().sum(axis=1) / _ncols
+        _dense = _cov[_cov >= 0.5]
+        if len(_dense) > 0:
+            _last_dense = _dense.index[-1]
+            _dropped = (panel.index > _last_dense).sum()
+            if _dropped > 0:
+                print(f"momentum_shadow: trimming {_dropped} sparse trailing date(s) "
+                      f"after {str(_last_dense.date())} (coverage <50%)")
+                panel = panel.loc[panel.index <= _last_dense]
+    if panel.empty:
+        print("momentum_shadow: empty panel after trim, nothing to write")
         return 0
     pred_date = str(panel.index[-1].date())
     if as_of is not None and pred_date != str(pd.Timestamp(as_of).date()):

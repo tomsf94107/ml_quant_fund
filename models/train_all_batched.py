@@ -54,23 +54,27 @@ def run_batch(tickers_subset: list[str], batch_label: str) -> int:
     print(f"BATCH {batch_label}: {tickers_subset[0]} → {tickers_subset[-1]}  [{len(tickers_subset)} tickers]")
     print(f"{'='*60}")
 
-    tickers_repr = repr(tickers_subset)
-    code = f"""
-import sys
-sys.path.insert(0, '.')
-from models.train_all import train_all
-train_all(tickers={tickers_repr}, verbose=True)
-"""
-
-    args = [PYTHON, "-c", code]
-    env = {k: v for k, v in os.environ.items()}
+    # IN-PROCESS (was subprocess.run of python -c "<generated code>", which
+    # XProtect XPScripts.yara scans as a fresh script each batch -> intermittent
+    # type=19 "scripted malware" block killing the run mid-batch. Measured RSS is
+    # flat (~450MB for 50 tickers), so the old jetsam concern doesn't apply;
+    # run directly and gc between batches. Fix Jul 7 2026.
+    import gc as _gc
+    from models.train_all import train_all as _train_all
 
     start = time.time()
-    result = subprocess.run(args, env=env, cwd=str(ROOT))
+    try:
+        _train_all(tickers=tickers_subset, verbose=True)
+        rc = 0
+    except Exception as e:
+        print(f"BATCH {batch_label} EXCEPTION: {type(e).__name__}: {e}")
+        rc = 1
+    finally:
+        _gc.collect()
     elapsed = time.time() - start
 
-    print(f"\nBATCH {batch_label}: exit={result.returncode}, elapsed={elapsed:.1f}s ({elapsed/60:.1f}min)")
-    return result.returncode
+    print(f"\nBATCH {batch_label}: exit={rc}, elapsed={elapsed:.1f}s ({elapsed/60:.1f}min)")
+    return rc
 
 
 def main():

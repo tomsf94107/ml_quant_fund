@@ -1,0 +1,3893 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q3 2019 0001037646 15469000 16370000 0.01 0.01 125000000 125000000 44786011 44786011 24921963 24354201 0.0384 0.0367 0.0410 0.0424 0.00875 2030-06-17 2024-09-19 2029-06-25 2022-12-17 2023-09-19 2025-06-25 2023-06-15 0 0 0 0 0 0 0 0 0 0 0 0 0.01 0.01 10000000 10000000 0 0 119709000 101757000 24791000 191511000 24412000 10885000 2678000 24969000 4598000 4919000 2072000 49985000 9978000 33081000 16355000 125000000 1100000000 19864048 20430810 
+		 
+			 0001037646 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TradeNamesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TradeNamesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TradeNamesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:TradeNamesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:ProvenTechnologyAndPatentsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:ProvenTechnologyAndPatentsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:LaboratoryproductsandservicesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:RetailproductsandservicesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:RetailproductsandservicesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:RetailproductsandservicesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:IndustrialproductsandservicesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:RetailproductsandservicesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:LaboratoryproductsandservicesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:IndustrialproductsandservicesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:IndustrialproductsandservicesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:IndustrialproductsandservicesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:LaboratoryproductsandservicesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:LaboratoryproductsandservicesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:ChineseOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:WesternEuropeanOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:USOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:ChineseOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:USOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:WesternEuropeanOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:USOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:ChineseOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:ChineseOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:WesternEuropeanOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:WesternEuropeanOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ProductMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:OtherOperationsMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:SwissOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:ServiceMember 
+				 mtd:USOperationsMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:RetailproductsandservicesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:IndustrialproductsandservicesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:LaboratoryproductsandservicesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:BiotixAcquisitionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:BiotixAcquisitionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:February2019CrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:June20194YRCrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2.5250MillionInterestRateSwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:June20192YRCrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2017CrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2.25100MillionInterestRateSwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2.5250MillionInterestRateSwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2.25100MillionInterestRateSwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2.25100MillionInterestRateSwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2017CrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:February2019CrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:February2019CrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:June20192YRCrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:June20194YRCrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:June20194YRCrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2.5250MillionInterestRateSwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:June20192YRCrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A2017CrossCurrencySwapMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:OtherLocalArrangementsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A3.91SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:OtherLocalArrangementsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:A4.10SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:A4.24SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:A3.91SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:A3.84SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:A367SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A1.47EUROSeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:A1.47EUROSeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A4.10SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A4.24SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherLocalArrangementsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A367SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:A3.84SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:A4.10SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsDollarAmountsMember 
+				 mtd:A367SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:A3.91SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A3.84SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:A4.24SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherPrincipalTradingCurrenciesMember 
+				 mtd:A1.47EUROSeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A1.30EuroSeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A3.19SeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissPensionLoansMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A1.30EuroSeniorNotesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A3.19SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A367SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A4.10SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A3.84SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A3.91SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A1.47EUROSeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:A4.24SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:CrossCurrencySwapMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:CrossCurrencySwapMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:CrossCurrencySwapMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:CrossCurrencySwapMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:InterestRateSwapMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2016-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2016-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2016-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2016-12-31 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:OtherPensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupFourMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupFourMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupFourMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupFourMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupFourMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupThreeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SegmentGeographicalGroupsOfCountriesGroupFourMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:UsOperationsSegmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:WesternEuropeanOperationsSegmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 us-gaap:CorporateMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:ChineseOperationsSegmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:SwissOperationsSegmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0001037646 
+			 
+				 mtd:OtherOperationsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 xbrli:shares 
+	 
+		 xbrli:pure 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 utreg:Rate 
+	 
+		 iso4217:USD 
+	 
+		 iso4217:EUR 
+	 Table of Contents   UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form  10-Q   (Mark One) ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 FOR THE QUARTERLY PERIOD ENDED  September 30, 2019 , OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 FOR THE TRANSITION PERIOD FROM ____________ TO ________________ Commission File Number:  1-13595   Mettler Toledo International Inc   _______________________________________________________________________________________________________________________________________ (Exact name of registrant as specified in its charter) Delaware   13-3668641 (State or other jurisdiction of   (I.R.S Employer Identification No.) incorporation or organization)     1900 Polaris Parkway   Columbus ,  OH   43240   and Im Langacher, P.O. Box MT-100 CH 8606 Greifensee, Swizterland 1- 614 - 438-4511  and +41-44-944-22-11 ________________________________________________________________________________ (Registrant's telephone number, including area code) not applicable ______________________________________________________________________________________________________________________ (Former name, former address and former fiscal year, if changed since last report) Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading Symbol Name of each exchange on which registered Common Stock, $0.01 par value MTD New York Stock Exchange Indicate by check mark whether the registrant: (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.    Yes   ☒    No   ☐ Indicate by checkmark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T ( § 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit and post such files).   Yes   ☒   No  ☐                 Indicate by checkmark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company.  See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company” and “emerging growth company” in Rule 12b-2 of the Exchange Act. (Check one):    Large accelerated filer .   ☒   Accelerated filer   ☐   Non-accelerated filer  ☐  Smaller reporting company  ☐  Emerging growth company   ☐   If an emerging growth company, indicate by check mark if the registrant has elected not use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).  Yes   ☐    No   ☒    The Registrant had  24,354,201  shares of Common Stock outstanding at  September 30, 2019 .    METTLER-TOLEDO INTERNATIONAL INC. INDEX TO QUARTERLY REPORT ON FORM 10-Q     PAGE   PART I.  FINANCIAL INFORMATION         Item 1. Financial Statements           Unaudited Interim Consolidated Financial Statements:           Interim Consolidated Statements of Operations and Comprehensive Income for the three months ended September 30, 2019 and 2018 3         Interim Consolidated Statements of Operations and Comprehensive Income for the nine months ended September 30, 2019 and 2018 4         Interim Consolidated Balance Sheets as of September 30, 2019 and December 31, 2018 5         Interim Consolidated Statements of Shareholders’ Equity for the nine months ended September 30, 2019 and 2018 6         Interim Consolidated Statements of Cash Flows for the nine months ended September 30, 2019 and 2018 7         Notes to the Interim Consolidated Financial Statements at September 30, 2019                                                                                                                                                                                                                                                                                                                                                                               8       Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 28       Item 3. Quantitative and Qualitative Disclosures About Market Risk 37       Item 4. Controls and Procedures 37         PART II.  OTHER INFORMATION         Item 1. Legal Proceedings 38       Item 1A. Risk Factors 38       Item 2.   Unregistered Sales of Equity Securities and Use of Proceeds 38       Item 3.   Defaults upon Senior Securities 38       Item 5. Other Information 38       Item 6. Exhibits 38       SIGNATURE 40 Table of Contents PART I.  FINANCIAL INFORMATION Item 1.  Financial Statements METTLER-TOLEDO INTERNATIONAL INC. INTERIM CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME Three  months ended  September 30, 2019  and  2018   (In thousands, except share data) (unaudited)   September 30,  2019   September 30,  2018 Net sales       Products $ 586,756   $ 576,340 Service 167,110   158,506 Total net sales 753,866   734,846 Cost of sales       Products 233,369   232,851 Service 85,441   82,741 Gross profit 435,056   419,254 Research and development 36,015   34,838 Selling, general and administrative 202,826   202,451 Amortization 12,329   11,856 Interest expense 9,800   9,003 Restructuring charges 6,732   2,222 Other charges (income), net ( 2,005 )   ( 1,479 ) Earnings before taxes 169,359   160,363 Provision for taxes 39,964   33,710 Net earnings $ 129,395   $ 126,653       Basic earnings per common share:       Net earnings $ 5.28   $ 5.04 Weighted average number of common shares 24,487,268   25,126,061         Diluted earnings per common share:       Net earnings $ 5.20   $ 4.93 Weighted average number of common and common equivalent shares 24,880,179   25,683,365         Comprehensive income, net of tax (Note 10) $ 115,842   $ 108,845 The accompanying notes are an integral part of these interim consolidated financial statements. -  3  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. INTERIM CONSOLIDATED STATEMENTS OF OPERATIONS AND COMPREHENSIVE INCOME Nine  months ended  September 30, 2019  and  2018   (In thousands, except share data) (unaudited)   September 30,  2019   September 30,  2018 Net sales       Products $ 1,677,030   $ 1,649,762 Service 487,654   467,901 Total net sales 2,164,684   2,117,663 Cost of sales       Products 670,401   657,167 Service 251,370   253,684 Gross profit 1,242,913   1,206,812 Research and development 108,650   104,866 Selling, general and administrative 612,466   611,149 Amortization 36,877   35,561 Interest expense 27,776   25,671 Restructuring charges 11,146   13,956 Other charges (income), net ( 4,253 )   ( 5,795 ) Earnings before taxes 450,251   421,404 Provision for taxes 81,891   89,979 Net earnings $ 368,360   $ 331,425         Basic earnings per common share:       Net earnings $ 14.93   $ 13.10 Weighted average number of common shares 24,677,546   25,296,680         Diluted earnings per common share:       Net earnings $ 14.67   $ 12.81 Weighted average number of common and common equivalent shares 25,103,173   25,877,979         Comprehensive income, net of tax (Note 10) $ 355,788   $ 313,302 The accompanying notes are an integral part of these interim consolidated financial statements. -  4  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. INTERIM CONSOLIDATED BALANCE SHEETS As of  September 30, 2019  and  December 31, 2018   (In thousands, except share data) (unaudited)   September 30,  2019   December 31,  2018 ASSETS Current assets:       Cash and cash equivalents $ 120,534   $ 178,110 Trade accounts receivable, less allowances of $16,370 at September 30, 2019       and $15,469 at December 31, 2018 503,247   535,528 Inventories 280,978   268,821 Other current assets and prepaid expenses 59,049   63,401 Total current assets 963,808   1,045,860 Property, plant and equipment, net 722,592   717,526 Goodwill 531,224   534,780 Other intangible assets, net 209,371   217,308 Deferred tax assets, net 34,599   35,066 Other non-current assets 174,275   68,307 Total assets $ 2,635,869   $ 2,618,847 LIABILITIES AND SHAREHOLDERS’ EQUITY Current liabilities:       Trade accounts payable $ 148,220   $ 196,641 Accrued and other liabilities 158,009   156,449 Accrued compensation and related items 147,299   152,516 Deferred revenue and customer prepayments 126,925   105,381 Taxes payable 90,225   73,777 Short-term borrowings and current maturities of long-term debt 48,577   49,670 Total current liabilities 719,255   734,434 Long-term debt 1,124,279   985,021 Deferred tax liabilities, net 39,954   48,818 Other non-current liabilities 314,080   260,511 Total liabilities 2,197,568   2,028,784 Commitments and contingencies (Note 17)   Shareholders’ equity:       Preferred stock, $0.01 par value per share; authorized 10,000,000 shares —   — Common stock, $0.01 par value per share; authorized 125,000,000 shares;       issued 44,786,011 and 44,786,011 shares; outstanding 24,354,201 and       24,921,963 shares at September 30, 2019 and December 31, 2018, respectively 448   448 Additional paid-in capital 778,868   764,717 Treasury stock at cost (20,430,810 shares at September 30, 2019, and 19,864,048 shares at December 31, 2018) ( 4,335,747 )   ( 3,814,604 ) Retained earnings 4,309,718   3,941,916 Accumulated other comprehensive loss ( 314,986 )   ( 302,414 ) Total shareholders’ equity 438,301   590,063 Total liabilities and shareholders’ equity $ 2,635,869   $ 2,618,847 The accompanying notes are an integral part of these interim consolidated financial statements. -  5  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. INTERIM CONSOLIDATED STATEMENTS OF SHAREHOLDERS’ EQUITY Nine  months ended  September 30, 2019  and 2018  (In thousands, except share data) (unaudited)           Additional Paid-in Capital           Accumulated Other Comprehensive Income (Loss)       Common Stock     Treasury Stock   Retained Earnings         Shares   Amount           Total Balance at December 31, 2017 25,541,393   $ 448   $ 747,138   $ ( 3,368,182 )   $ 3,433,282   $ ( 265,406 )   $ 547,280 Exercise of stock options and restricted stock units 39,362   —   —   5,900   ( 231 )   —   5,669 Repurchases of common stock ( 187,880 )   —   —   ( 118,750 )   —   —   ( 118,750 ) Share-based compensation —   —   4,354   —   —   —   4,354 Net earnings —   —   —   —   93,304   —   93,304 Other comprehensive income (loss), net of tax —   —   —   —   —   28,890   28,890 Balance at March 31, 2018 25,392,875   $ 448   $ 751,492   $ ( 3,481,032 )   $ 3,526,355   $ ( 236,516 )   $ 560,747 Exercise of stock options and restricted stock units 29,291   —   —   4,485   ( 194 )   —   4,291 Repurchases of common stock ( 208,338 )   —   —   ( 118,749 )   —   —   ( 118,749 ) Share-based compensation —   —   3,882   —   —   —   3,882 Net earnings —   —   —   —   111,468   —   111,468 Other comprehensive income (loss), net of tax —   —   —   —   —   ( 29,205 )   ( 29,205 ) Balance at June 30, 2018 25,213,828   $ 448   $ 755,374   $ ( 3,595,296 )   $ 3,637,629   $ ( 265,721 )   $ 532,434 Exercise of stock options and restricted stock units 33,521   —   —   5,241   ( 424 )   —   4,817 Repurchases of common stock ( 202,321 )   —   —   ( 118,750 )   —   —   ( 118,750 ) Share-based compensation —   —   4,269   —   —   —   4,269 Net earnings —   —   —   —   126,653   —   126,653 Other comprehensive income (loss), net of tax —   —   —   —   —   ( 17,808 )   ( 17,808 ) Balance at September 30, 2018 25,045,028   $ 448   $ 759,643   $ ( 3,708,805 )   $ 3,763,858   $ ( 283,529 )   $ 531,615                             Balance at December 31, 2018 24,921,963   $ 448   $ 764,717   $ ( 3,814,604 )   $ 3,941,916   $ ( 302,414 )   $ 590,063 Exercise of stock options and restricted stock units 171,752   —   751   28,257   ( 18 )   —   28,990 Repurchases of common stock ( 290,429 )   —   —   ( 186,250 )   —   —   ( 186,250 ) Share-based compensation —   —   4,482   —   —   —   4,482 Net earnings —   —   —   —   111,805   —   111,805 Other comprehensive income (loss), net of tax —   —   —   —   —   12,660   12,660 Balance at March 31, 2019 24,803,286   $ 448   $ 769,950   $ ( 3,972,597 )   $ 4,053,703   $ ( 289,754 )   $ 561,750 Exercise of stock options and restricted stock units 54,843   —   —   9,307   ( 540 )   —   8,767 Repurchases of common stock ( 248,897 )   —   —   ( 186,250 )   —   —   ( 186,250 ) Share-based compensation —   —   4,338   —   —   —   4,338 Net earnings —   —   —   —   127,160   —   127,160 Other comprehensive income (loss), net of tax —   —   —   —   —   ( 11,679 )   ( 11,679 ) Balance at June 30, 2019 24,609,232   $ 448   $ 774,288   $ ( 4,149,540 )   $ 4,180,323   $ ( 301,433 )   $ 504,086 Exercise of stock options and restricted stock units 246   —   117   43   —   —   160 Repurchases of common stock ( 255,277 )   —   —   ( 186,250 )   —   —   ( 186,250 ) Share-based compensation —   —   4,463   —   —   —   4,463 Net earnings —   —   —   —   129,395   —   129,395 Other comprehensive income (loss), net of tax —   —   —   —   —   ( 13,553 )   ( 13,553 ) Balance at September 30, 2019 24,354,201   $ 448   $ 778,868   $ ( 4,335,747 )   $ 4,309,718   $ ( 314,986 )   $ 438,301 The accompanying notes are an integral part of these interim consolidated financial statements. -  6  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. INTERIM CONSOLIDATED STATEMENTS OF CASH FLOWS Nine  months ended  September 30, 2019  and  2018   (In thousands) (unaudited)   September 30,  2019   September 30,  2018 Cash flows from operating activities:       Net earnings $ 368,360   $ 331,425 Adjustments to reconcile net earnings to net cash provided by operating activities:       Depreciation 29,348   27,889 Amortization 36,877   35,561 Deferred tax benefit ( 17,963 )   ( 11,901 ) Share-based compensation 13,283   12,505 Other ( 28 )   ( 2,706 ) Increase (decrease) in cash resulting from changes in:       Trade accounts receivable, net 23,096   26,017 Inventories ( 17,494 )   ( 26,224 ) Other current assets ( 7,713 )   863 Trade accounts payable ( 45,659 )   ( 7,753 ) Taxes payable 16,658   13,482 Accruals and other 2,976   ( 32,725 ) Net cash provided by operating activities 401,741   366,433 Cash flows from investing activities:       Proceeds from sale of property, plant and equipment 1,248   7,809 Purchase of property, plant and equipment ( 71,627 )   ( 96,665 ) Acquisitions ( 2,004 )   ( 4,962 ) Net hedging settlements on intercompany loans ( 4,099 )   ( 780 ) Net cash used in investing activities ( 76,482 )   ( 94,598 ) Cash flows from financing activities:       Proceeds from borrowings 807,711   772,274 Repayments of borrowings ( 660,795 )   ( 703,704 ) Proceeds from stock option exercises 37,916   14,777 Repurchases of common stock ( 558,749 )   ( 356,249 ) Acquisition contingent consideration payment ( 10,000 )   — Other financing activities 1,753   ( 1,664 ) Net cash used in financing activities ( 382,164 )   ( 274,566 ) Effect of exchange rate changes on cash and cash equivalents ( 671 )   ( 8,508 ) Net (decrease) increase in cash and cash equivalents ( 57,576 )   ( 11,239 ) Cash and cash equivalents:       Beginning of period 178,110   148,687 End of period $ 120,534   $ 137,448 The accompanying notes are an integral part of these interim consolidated financial statements. -  7  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated) 1. BASIS OF PRESENTATION Mettler-Toledo International Inc. ("Mettler-Toledo" or the "Company") is a leading global supplier of precision instruments and services. The Company manufactures weighing instruments for use in laboratory, industrial, packaging, logistics and food retailing applications. The Company also manufactures several related analytical instruments and provides automated chemistry solutions used in drug and chemical compound discovery and development. In addition, the Company manufactures metal detection and other end-of-line inspection systems used in production and packaging and provides solutions for use in certain process analytics applications. The Company's primary manufacturing facilities are located in China, Germany, Switzerland, the United Kingdom and the United States. The Company's principal executive offices are located in Columbus, Ohio and Greifensee, Switzerland. The accompanying interim consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States of America (“U.S. GAAP”) and include all entities in which the Company has control, which are its wholly-owned subsidiaries. The interim consolidated financial statements have been prepared without audit, pursuant to the rules and regulations of the Securities and Exchange Commission. Certain information and footnote disclosures normally included in financial statements prepared in accordance with U.S. GAAP have been condensed or omitted pursuant to such rules and regulations. The interim consolidated financial statements should be read in conjunction with the consolidated financial statements and the notes thereto included in the Company’s Annual Report on Form 10-K for the year ended  December 31, 2018 . The accompanying interim consolidated financial statements reflect all adjustments which, in the opinion of management, are necessary for a fair statement of the results of the interim periods presented. Operating results for the three and  nine  months ended  September 30, 2019  are not necessarily indicative of the results to be expected for the full year ending  December 31, 2019 . The preparation of financial statements in conformity with U.S. GAAP requires management to make estimates and assumptions that affect the reported amounts of assets and liabilities, as well as disclosure of contingent assets and liabilities at the date of the financial statements, and the reported amounts of revenues and expenses during the reporting periods. Actual results may differ from those estimates. A discussion of the Company’s critical accounting policies is included in Management’s Discussion and Analysis of Financial Condition and Results of Operations and the Notes to the Consolidated Financial Statements included in the Company’s Annual Report on Form 10-K for the year ended  December 31, 2018 . All intercompany transactions and balances have been eliminated. 2. SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Trade Accounts Receivable Trade accounts receivable are recorded at the invoiced amount and do not bear interest. The allowance for doubtful accounts represents the Company’s best estimate of probable credit losses in its existing trade accounts receivable.  The Company determines the allowance based upon a review of both specific accounts for collection and the age of the accounts receivable portfolio. -  8  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  Inventories Inventories are valued at the lower of cost or net realizable value.  Cost, which includes direct materials, labor and overhead, is generally determined using the first in, first out (FIFO) method. The estimated net realizable value is based on assumptions for future demand and related pricing.  Adjustments to the cost basis of the Company’s inventory are made for excess and obsolete items based on usage, orders and technological obsolescence. If actual market conditions are less favorable than those projected by management, reductions in the value of inventory may be required. Inventories consisted of the following:   September 30,  2019   December 31,  2018 Raw materials and parts $ 128,371   $ 122,945 Work-in-progress 45,843   47,098 Finished goods 106,764   98,778   $ 280,978   $ 268,821 Goodwill and Other Intangible Assets Goodwill, representing the excess of purchase price over the net asset value of companies acquired, and indefinite-lived intangible assets are not amortized, but are reviewed for impairment annually in the fourth quarter, or more frequently if events or changes in circumstances indicate that an asset might be impaired. The annual evaluation for goodwill and indefinite-lived intangible assets are generally based on an assessment of qualitative and quantitative factors to determine whether it is more likely than not that the fair value of the asset is less than its carrying amount.  Other intangible assets include indefinite-lived assets and assets subject to amortization.  Where applicable, amortization is charged on a straight-line basis over the expected period of benefit. The straight-line method of amortization reflects an appropriate allocation of the cost of the intangible assets to earnings in proportion to the amount of economic benefits obtained by the Company in each reporting period. The Company assesses the initial acquisition of intangible assets in accordance with the provisions of ASC 805 "Business Combinations" and the continued accounting for previously recognized intangible assets and goodwill in accordance with the provisions of ASC 350 "Intangible - Goodwill and Other" and ASC 360 "Property, Plant and Equipment".  Other intangible assets consisted of the following:   September 30, 2019   December 31, 2018   Gross Amount   Accumulated Amortization   Intangibles, Net   Gross Amount   Accumulated Amortization   Intangibles, Net Customer relationships $ 197,467   $ ( 56,508 )   $ 140,959   $ 197,942   $ ( 49,887 )   $ 148,055 Proven technology and patents 75,482   ( 46,076 )   29,406   73,880   ( 42,750 )   31,130 Tradenames (finite life) 4,482   ( 2,981 )   1,501   4,504   ( 2,874 )   1,630 Tradenames (indefinite life) 35,442   —   35,442   35,500   —   35,500 Other 5,455   ( 3,392 )   2,063   3,684   ( 2,691 )   993   $ 318,328   $ ( 108,957 )   $ 209,371   $ 315,510   $ ( 98,202 )   $ 217,308 -  9  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The Company recognized amortization expense associated with the above intangible assets of  $ 3.8  million  and  $ 3.6  million  for the  three  months ended  September 30, 2019  and  2018 , respectively and  $ 11.3  million  and  $ 10.7  million  for the  nine  months ended  September 30, 2019  and  2018 , respectively. The annual aggregate amortization expense based on the current balance of other intangible assets is estimated at  $ 15.1  million  for  2019 ,  $ 15.4  million  for  2020 ,  $ 14.1  million  for  2021 ,  $ 12.7  million  for  2022 ,  $ 13.3  million  for  2023  and  $ 11.7  million  for  2024 . Purchased intangible amortization was  $ 3.7  million ,  $ 2.8  million  after tax, and  $ 3.4  million ,  $ 2.5  million  after tax, for the  three  months ended  September 30, 2019  and  2018 , respectively and  $ 10.6  million ,  $ 8.0  million  after tax, and  $ 10.0  million ,  $ 7.5  million  after tax, for the  nine  months ended  September 30, 2019  and  2018 , respectively. In addition to the above amortization, the Company recorded amortization expense associated with capitalized software of  $ 8.4  million  and  $ 8.2  million  for the three months ended  September 30, 2019  and  2018 , respectively and  $ 25.4  million  and  $ 24.7  million  for the  nine  months ended  September 30, 2019  and  2018 , respectively. Revenue Recognition Product revenue is recognized from contracts with customers when a customer has obtained control of a product. The Company considers control to have transferred based upon shipping terms. To the extent the Company’s arrangements have a separate performance obligation, revenue related to any post-shipment performance obligation is deferred until completed. Shipping and handling costs charged to customers are included in total net sales and the associated expense is a component of cost of sales. Certain products are also sold through indirect distribution channels whereby the distributor assumes any further obligations to the end customer. Revenue is recognized on these distributor arrangements upon transfer of control to the distributor. Contracts do not contain variable pricing arrangements that are retrospective, except for rebate programs. Rebates are estimated based on expected sales volumes and offset against revenue at the time such revenue is recognized. The Company generally maintains the right to accept or reject a product return in its terms and conditions and also maintains appropriate accruals for outstanding credits. The related provisions for estimated returns and rebates are immaterial to the consolidated financial statements.  Certain of the Company’s product arrangements include separate performance obligations, primarily related to installation. Such performance obligations are accounted for separately when the deliverables have stand-alone value and the satisfaction of the undelivered performance obligations is probable and within the Company's control. The allocation of revenue between the performance obligations is based on the observable stand-alone selling prices at the time of the sale in accordance with a number of factors including service technician billing rates, time to install, and geographic location.  Software is generally not considered a distinct performance obligation with the exception of a few small software applications. The Company generally does not sell software products without the related hardware instrument as the software is embedded in the product. The Company’s products typically require no significant production, modification, or customization of the hardware or software that is essential to the functionality of the products.  Service revenue not under contract is recognized upon the completion of the service performed. Revenue from spare parts sold on a stand-alone basis is recognized when control is transferred to the customer, which is generally at the time of shipment or delivery. Revenue from service contracts is recognized ratably over the contract period using a time-based method. These contracts represent an obligation to perform repair and other services including regulatory compliance qualification, calibration, certification, and preventative maintenance on a customer’s pre-defined equipment over the contract period. -  10  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  Leases The Company considers an arrangement a lease if the arrangement transfers the right to control the use of an identified asset in exchange for consideration. The Company has operating leases, but does not have financing leases. Operating lease right-of-use assets represent the right to use an underlying asset for the lease term, and lease liabilities represent the obligation to make payments arising from the lease agreement. These assets and liabilities are recognized at the commencement of the lease based upon the present value of the lease payments over the lease term. Lease payments include both lease and non-lease components for items or activities that transfer a good and service. Vehicle lease and non-lease components are separately accounted for based on standalone value. Real estate lease and non-lease components are accounted for as a single component. Operating lease right-of-use assets include initial direct costs, advanced lease payments and lease incentives. The lease term reflects the noncancellable period of the lease together with periods covered by an option to extend or terminate the lease when management is reasonably certain that it will exercise such option. The Company generally uses its incremental borrowing rate at the lease commencement date in determining the present value of lease payments as the information necessary to determine the rate implicit in the lease is not readily available. The incremental borrowing rate reflects similar terms by geographic location to the underlying leases. The Company's lease agreements do not contain any material residual value guarantees or material restrictive covenants. Lease expense for operating leases is recognized on a straight-line basis over the lease term. Variable lease payments consist of non-lease services related to the lease. Variable lease payments are excluded from the right-of-use asset and lease liabilities and are expensed as incurred. Short-term leases are less than one year without purchase or renewal options that are reasonably certain to be exercised and are recognized on a straight-line basis over the lease term. The right-of-use asset is tested for impairment in accordance with ASC 360. Warranty The Company generally offers  one -year warranties on most of its products. Product warranties are recorded at the time revenue is recognized.  While the Company engages in extensive product quality programs and processes, its warranty obligations are affected by product failure rates, material usage and service costs incurred in correcting a product failure. Employee Termination Benefits In situations where contractual termination benefits exist, the Company records accruals for employee termination benefits when it is probable that a liability has been incurred and the amount of the liability is reasonably estimable.  All other employee termination arrangements are recognized and measured at their fair value at the communication date unless the employee is required to render additional service beyond the legal notification period, in which case the liability is recognized ratably over the future service period.   Share-Based Compensation The Company recognizes share-based compensation expense within selling, general and administrative in the consolidated statements of operations and other comprehensive income with a corresponding offset to additional paid-in capital in the consolidated balance sheet.  The Company recorded  $ 4.5  million  and  $ 13.3  million  of share-based compensation expense for the  three  and  nine  months ended  September 30, 2019 , respectively, compared to  $ 4.3  million  and  $ 12.5  million  for the corresponding periods in  2018 . -  11  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  Research and Development Research and development costs primarily consist of salaries, consulting and other costs. The Company expenses these costs as incurred. Business Combinations and Asset Acquisitions The Company accounts for business acquisitions under the accounting standards for business combinations. The results of each acquisition are included in the Company's consolidated results as of the acquisition date. The purchase price of an acquisition is allocated to tangible and intangible assets and assumed liabilities based on their estimated fair values and any consideration in excess of the net assets acquired is recognized as goodwill. Acquisition transaction costs are expensed when incurred. In circumstances where an acquisition involves a contingent consideration arrangement, the Company recognizes a liability equal to the fair value of the expected contingent payments as of the acquisition date. Subsequent changes in the fair value of the contingent consideration are recorded to other charges (income), net. Recent Accounting Pronouncements In August 2018, the FASB issued ASU 2018-14 "Compensation - Retirement Benefit" which amends the current disclosure requirements for defined benefit pension plans and other post-retirement plans. The change in the disclosures will be applied retrospectively and become effective December 15, 2020 with early adoption permitted. The Company is currently evaluating the impact of this guidance on the benefit plan disclosures and the timing of adoption. 3. REVENUE On January 1, 2018, the Company adopted ASC 606 "Revenue from Contracts with Customers" and all the related amendments using the modified retrospective method, whereby the adoption does not impact any prior periods. The effect of adopting the new standard did not require any cumulative effect adjustment to retained earnings as of January 1, 2018. There was no impact to our consolidated statements of operations and comprehensive income, balance sheets, or statements of cash flows as of and for the period ended September 30, 2018. The Company disaggregates revenue from contracts with customers by product, service, timing of revenue recognition and geography. A summary by the Company’s reportable segments for the three and nine months ended September 30, 2019 and 2018 follows: For the three months ended September 30, 2019 U.S. Operations   Swiss Operations   Western European Operations   Chinese Operations   Other Operations   Total Product Revenue $ 203,291   $ 26,114   $ 120,510   $ 129,163   $ 107,678   $ 586,756 Service Revenue:                       Point in time 53,035   5,191   31,852   10,111   27,665   127,854 Over time 12,712   2,110   16,290   3,018   5,126   39,256 Total $ 269,038   $ 33,415   $ 168,652   $ 142,292   $ 140,469   $ 753,866 -  12  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  For the three months ended September 30, 2018 U.S. Operations   Swiss Operations   Western European Operations   Chinese Operations   Other Operations   Total Product Revenue $ 195,554   $ 24,791   $ 124,412   $ 127,050   $ 104,533   $ 576,340 Service Revenue:                       Point in time 48,910   4,663   29,365   10,200   25,645   118,783 Over time 10,915   2,009   19,393   2,848   4,558   39,723 Total $ 255,379   $ 31,463   $ 173,170   $ 140,098   $ 134,736   $ 734,846 For the nine months ended September 30, 2019 U.S. Operations   Swiss Operations   Western European Operations   Chinese Operations   Other Operations   Total Product Revenue $ 580,155   $ 77,142   $ 352,260   $ 364,620   $ 302,853   $ 1,677,030 Service Revenue:                       Point in time 156,221   15,176   97,182   27,363   80,324   376,266 Over time 35,202   6,032   48,798   8,490   12,866   111,388 Total $ 771,578   $ 98,350   $ 498,240   $ 400,473   $ 396,043   $ 2,164,684 For the nine months ended September 30, 2018 U.S. Operations   Swiss Operations   Western European Operations   Chinese Operations   Other Operations   Total Product Revenue $ 559,566   $ 75,520   $ 365,680   $ 351,052   $ 297,944   $ 1,649,762 Service Revenue:                       Point in time 146,515   14,410   92,331   28,212   74,853   356,321 Over time 30,517   6,152   54,303   8,037   12,571   111,580 Total $ 736,598   $ 96,082   $ 512,314   $ 387,301   $ 385,368   $ 2,117,663 A summary of revenue by major geographic destination for the three and nine months ended September 30  follows:   Three Months Ended   Nine Months Ended   2019   2018   2019   2018 Americas $ 298,304   $ 280,512   $ 849,282   $ 807,119 Europe 212,736   216,956   629,600   643,514 Asia / Rest of World 242,826   237,378   685,802   667,030 Total $ 753,866   $ 734,846   $ 2,164,684   $ 2,117,663 -  13  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The Company's global revenue mix by product category is comprised of laboratory ( 52 %  of sales), industrial ( 41 %  of sales) and retail ( 7 %  of sales). The Company's product revenue by reportable segment is proportionately similar to the Company's global mix except the Company's Swiss Operations is largely comprised of laboratory products while the Company's Chinese Operations has a slightly higher percentage of industrial products. A summary of the Company’s revenue by product category for the three and nine months ended September 30 is as follows:   Three Months Ended   Nine Months Ended   2019   2018   2019   2018 Laboratory $ 388,441   $ 368,967   $ 1,127,833   $ 1,075,853 Industrial 315,337   305,248   889,716   873,181 Retail 50,088   60,631   147,135   168,629 Total $ 753,866   $ 734,846   $ 2,164,684   $ 2,117,663 The payment terms in the Company’s contracts with customers do not exceed one year and therefore contracts do not contain a significant financing component. In most cases, after appropriate credit evaluations, payments are due in arrears and are recognized as receivables. Unbilled revenue is recorded when performance obligations have been satisfied, but not yet billed to the customer. Unbilled revenue as of September 30, 2019 and December 31, 2018 was  $ 21.6  million  and  $ 12.4  million  respectively, and is included within accounts receivable. Deferred revenue and customer prepayments are recorded when cash payments are received or due in advance of the performance obligation being satisfied. Deferred revenue primarily includes prepaid service contracts, as well as deferred installation. Changes in the components of deferred revenue and customer prepayments during the periods ended September 30, 2019 and 2018:     2019   2018 Beginning balances as of January 1   $ 105,381   $ 107,166 Customer pre-payments/deferred revenue   466,617   469,173 Revenue recognized   ( 442,904 )   ( 450,312 ) Foreign currency translation   ( 2,169 )   ( 2,501 ) Ending balance as of September 30   $ 126,925   $ 123,526 The Company generally expenses sales commissions when incurred because the amortization period is one year or less. These costs are recorded within selling, general, and administrative expenses. The Company has not disclosed the value of unsatisfied performance obligations other than customer prepayments and deferred revenue above as most contracts have an expected length of one year or less and amounts greater than one year are immaterial. 4. ACQUISITIONS In 2018, the Company incurred acquisition payments totaling  $ 5.5  million . The Company recorded  $ 4.9  million  of identified intangibles primarily pertaining to technology and patents in connection with these acquisitions, which is amortized on a straight-line basis over  10  years  years. Goodwill recorded in connection with these acquisitions totaled  $ 0.6  million . In September 2017, the Company acquired all of the shares of Biotix, Inc., a U.S.-based manufacturer and distributor of plastics consumables associated with pipettes, including tips, tubes, and reagent reservoirs used in the life sciences market. The initial cash payment was  $ 105  million  plus the settlement of contingent consideration of  $ 10.0  million  which was paid in the first quarter of 2019. -  14  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  5.      FINANCIAL INSTRUMENTS The Company has limited involvement with derivative financial instruments and does not use them for trading purposes. The Company enters into certain interest rate swap agreements in order to manage its exposure to changes in interest rates. The amount of the Company's fixed obligation interest payments may change based upon the expiration dates of its interest rate swap agreements and the level and composition of its debt. The Company also enters into certain foreign currency forward contracts to limit the Company's exposure to currency fluctuations on the respective hedged items. For additional disclosures on derivative instruments regarding balance sheet location, fair value, and the amounts reclassified into other comprehensive income and the effective portion of the cash flow hedges, also see Note 6 and Note 10 to the interim consolidated financial statements. As also mentioned in Note 8, the Company has designated its euro-denominated debt as a hedge of a portion of its net investment in euro-denominated foreign subsidiary. Cash Flow Hedges  In June 2019, the Company entered into a cross currency swap arrangement designated as a cash flow hedge. The agreement converts  $ 50  million  of borrowings under the Company's credit facility into  synthetic Swiss franc debt, which allows the Company to effectively change the floating rate LIBOR-based interest payments, excluding the credit spread to a fixed Swiss franc income of  0.82 % . The swap began in June 2019 and matures in June 2023. In June 2019, the Company entered into a cross currency swap arrangement designated as a cash flow hedge. The agreement converts  $ 50  million  of borrowings under the Company's credit facility into  synthetic Swiss franc debt, which allows the Company to effectively change the floating rate LIBOR-based interest payments, excluding the credit spread to a fixed Swiss franc income of  0.95 % . The swap began in June 2019 and matures in June 2021. In February 2019, the Company entered into a cross currency swap arrangement designated as a cash flow hedge. The agreement converts  $ 50  million  of borrowings under the Company's credit facility into  synthetic Swiss franc debt, which allows the Company to effectively change the floating rate LIBOR-based interest payments, excluding the credit spread to a fixed Swiss franc income of  0.78 % . The swap began in February 2019 and matures in June 2021. In 2017, the Company entered into a cross currency swap arrangement designated as a cash flow hedge. The agreement converts  $ 100  million  of borrowings under the Company's credit facility into synthetic Swiss franc debt, which allows the Company to effectively change the floating rate LIBOR-based interest payments, including the credit spread to a fixed Swiss franc income of  0.01 % . The swap began in June 2017 and matured in June 2019. In 2015, the Company entered into an interest rate swap agreement designated as a cash flow hedge. The agreement is a swap, which has the effect of changing the floating rate LIBOR-based interest payments associated with  $ 100  million  of borrowings under the Company's credit agreement to a fixed obligation of  2.25 %  beginning in February 2017 and matures in February 2022. In 2013, the Company entered into an interest rate swap agreement designated as a cash flow hedge. The agreement is a swap which has the effect of changing the floating rate LIBOR-based interest payments associated with  $ 50  million  of borrowings under the Company’s credit facility to a fixed obligation of  2.52 % . The swap began in October 2015 and matures in October 2020.  The Company's cash flow hedges are recorded gross at fair value in the consolidated balance sheet at  September 30, 2019  and  December 31, 2018 , respectively. A derivative gain of  $ 2.7  million  based upon interest rates and foreign currency rates at  September 30, 2019 , is expected to be reclassified from other  -  15  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  comprehensive income (loss) to earnings in the next twelve months. Through  September 30, 2019 , no hedge ineffectiveness has occurred in relation to the cash flow hedges. Other Derivatives The Company enters into foreign currency forward contracts in order to economically hedge short-term trade and non-trade intercompany balances largely denominated in Swiss franc, other major European currencies, and the Chinese Renminbi with its foreign businesses. In accordance with U.S. GAAP, these contracts are considered “derivatives not designated as hedging instruments.” Gains or losses on these instruments are reported in current earnings. The foreign currency forward contracts are recorded at fair value in the consolidated balance sheet at  September 30, 2019  and  December 31, 2018 , respectively, and disclosed in Note 6. The Company recognized in other charges (income), a net loss of  $ 3.7  million  and  $ 4.4  million  during the three months ended  September 30, 2019  and  2018 , respectively, and a net loss of  $ 8.2  million  and  $ 0.2  million  during the nine months ended  September 30, 2019   and  2018 , respectively. The gains and losses are primarily offset by the underlying transaction gains and losses on the related intercompany balances. At  September 30, 2019  and  December 31, 2018 , these contracts had a notional value of  $ 446.2  million  and  $ 436.7  million , respectively.      6.     FAIR VALUE MEASUREMENTS At  September 30, 2019  and  December 31, 2018 , the Company had derivative assets totaling  $ 0.6  million  and  $ 3.2  million  respectively, and derivative liabilities totaling  $ 5.6  million  and  $ 1.1  million , respectively. The Company has limited involvement with derivative financial instruments and therefore does not present all the required disclosures in tabular format. The fair values of the interest rate swap agreements, the cross-currency swap agreements and foreign currency forward contracts that economically hedge short-term intercompany balances are estimated based upon inputs from current valuation information obtained from dealer quotes and priced with observable market assumptions and appropriate valuation adjustments for credit risk. The Company has evaluated the valuation methodologies used to develop the fair values by dealers in order to determine whether such valuations are representative of an exit price in the Company’s principal market. In addition, the Company uses an internally developed model to perform testing on the valuations received from brokers. The Company has also considered both its own credit risk and counterparty credit risk in determining fair value and determined these adjustments were insignificant at  September 30, 2019  and  December 31, 2018 .  Under U.S. GAAP, fair value is defined as the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date.  A fair value measurement consists of observable and unobservable inputs that reflect the assumptions that a market participant would use in pricing an asset or liability. A fair value hierarchy has been established that categorizes these inputs into three levels: Level 1: Quoted prices in active markets for identical assets and liabilities Level 2: Observable inputs other than quoted prices in active markets for identical assets and liabilities Level 3: Unobservable inputs -  16  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The following table presents the Company's assets and liabilities, which are all categorized as Level 2 and are measured at fair value on a recurring basis at September 30, 2019 and December 31, 2018. The Company does not have any assets or liabilities that are categorized as Level 1 or Level 3.      September 30, 2019   December 31, 2018   Balance Sheet Location Foreign currency forward contracts not designated as hedging instruments   $ 558   $ 1,534   Other current assets and prepaid expenses Cash Flow Hedges:             Interest rate swap agreements   —   545   Other non-current assets Cross currency swap agreement   —   1,154   Other current assets and prepaid expenses Total derivative assets   $ 558   $ 3,233                   Foreign currency forward contracts not designated as hedging instruments   $ 2,254   $ 1,059   Accrued and other liabilities Cash Flow Hedges:             Interest rate swap agreements   2,444   27   Other non-current liabilities Cross currency swap agreement   885   —   Other non-current liabilities Total derivative liabilities   $ 5,583   $ 1,086     At  September 30, 2019  and  December 31, 2018 , the Company had  $ 12.8  million  and  $ 9.0  million  of cash equivalents, respectively, the fair value of which is determined through quoted and corroborated prices in active markets. The fair value of cash equivalents approximates cost. The fair value of the Company's debt exceeds the carrying value by approximately  $ 31.5  million  as of  September 30, 2019 . The fair value of the Company's fixed interest rate debt was estimated using Level 2 inputs, primarily discounted cash flow models, based on estimated current rates offered for similar debt under current market conditions for the Company. 7.     INCOME TAXES The Company's reported tax rate was  23.6 %  and  21 %  during the three months ended September 30, 2019 and 2018, respectively and  18.2 %  and  21.4 %  during the nine months ended September 30, 2019 and 2018, respectively. The provision for taxes is based upon using the Company's projected annual effective tax rate of  20 %  and  21.5 %  before non-recurring discrete tax items during 2019 and 2018, respectively. The difference between the Company's projected annual effective tax rate and the reported tax rate is primarily related to the timing of excess tax benefits associated with stock option exercises. In May 2019, a public referendum was held in Switzerland that approved Swiss federal tax reform proposals previously approved by Swiss Parliament. The changes in Swiss federal tax had an immaterial effect on the Company's financial statements. Additional changes in Swiss cantonal law were enacted in October 2019. The Company expects it will recognize a discrete non-cash deferred tax benefit as a result of the enactment of the cantonal law in the fourth quarter; however we are currently unable to reasonably estimate such amount as the Swiss authorities are still providing interpretive guidance on the new law and related transitional methodology. -  17  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  On December 22, 2017, the Tax Cuts and Jobs Act (the "Act") significantly revised U.S. corporate income tax law. The Company's accounting for the above items was based upon reasonable estimates of the tax effects of the Act, and its evaluation of recently issued regulatory guidance. In January 2019, further interpretive guidance was issued related to Transition Tax. The Company has completed its analysis of this recently issued guidance and concluded there is no additional impact to its financial position, results of operations, or cash flows.  8.     DEBT   Debt consisted of the following at  September 30, 2019 :   September 30, 2019   U.S. Dollar   Other Principal Trading Currencies   Total 3.67% $50 million Senior Notes due December 17, 2022 $ 50,000   $ —   $ 50,000 4.10% $50 million Senior Notes due September 19, 2023 50,000   —   50,000 3.84% $125 million Senior Notes due September 19, 2024 125,000   —   125,000 4.24% $125 million Senior Notes due June 25, 2025 125,000   —   125,000 3.91% $75 million Senior Notes due June 25 2029 75,000   —   75,000 1.47% EUR 125 million Senior Notes due June 17, 2030 —   136,747   136,747 Debt issuance costs, net ( 1,111 )   ( 307 )   ( 1,418 ) Total Senior Notes 423,889   136,440   560,329 $1.1 billion Credit Agreement, interest at LIBOR plus 87.5 basis points 485,016   78,934   563,950 Other local arrangements 1,058   47,519   48,577 Total debt 909,963   262,893   1,172,856 Less: current portion ( 1,058 )   ( 47,519 )   ( 48,577 ) Total long-term debt $ 908,905   $ 215,374   $ 1,124,279 As of  September 30, 2019 , the Company had  $ 529.2  million  of availability remaining under its Credit Agreement. 1.30 %  Euro-Senior Notes and  3.19 %  Senior Notes In November 2019, the Company entered into an agreement to issue and sell EUR  135  million  of  fifteen years   1.30 %  Euro-Senior Notes (" 1.30 %  Senior Notes") and  $ 50  million  of  fifteen years   3.19 %  Senior Notes (" 3.19 %  Senior Notes") in a private placement. The proceeds will be used to repay outstanding amounts on the Company's credit facility and fund operational expenses. The Company also entered into a forward contract to receive  $ 149.9  million  at the time of issuing the EUR  135  million  Euro-Senior Notes. The Company issued the  1.30 %  Euro-Senior Notes with a fixed interest rate of  1.30 %  in November 2019. The  1.30 %  Euro-Senior Notes are unsecured obligations of the Company and will mature in  November 1, 2034 . Interest on the  1.30 %  Euro-Senior Notes is payable semi-annually in April and November of each year. The Company will issue the  3.19 %  Senior Notes with a fixed interest rate of  3.19 %  in January 2020. The  3.19 %  Senior Notes are unsecured obligations of the Company and will mature in  January 1, 2035 . Interest on the  3.19 %  Senior Notes is payable semi-annually in January and July of each year.  -  18  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The Company will designate the  1.30 %  Euro-Senior Notes as a hedge of a portion of its net investment in euro-denominated foreign subsidiaries to reduce foreign currency risk associated with the net investment in these operations. Changes in the fair value of this debt resulting from fluctuations in the euro to U.S. dollar exchange rates will be recorded as foreign currency translation adjustments within other comprehensive income (loss). The Company may at any time prepay the Senior Notes, in whole or in part, at a price equal to 100% of the principal amount thereof plus accrued and unpaid interest, and if applicable a "make-whole" prepayment premium and a swap related currency loss. 3.91 %  Senior Notes In April 2019, the Company entered into an agreement to issue and sell  $ 75  million  of ten-year Senior Notes in a private placement. The Company issued the Senior Notes with a fixed interest rate of  3.91 %  (" 3.91 %  Senior Notes") in June 2019. The  3.91 %  Senior Notes are unsecured obligations of the Company and will mature in  June 2029 . Interest on the  3.91 %  Senior Notes is payable semi-annually in June and December of each year. The proceeds were used to repay outstanding amounts on the Company's credit facility. The  3.91 %  Senior Notes, the  1.30 %  Euro-Senior Notes and the 3.19% Senior Notes contain customary affirmative and negative covenants for agreements of this type that are substantially similar to those contained in previously issued debt of the Company. The  3.91 %  Senior Notes,  1.30 %  Euro-Senior Notes and the  3.19 %  Senior Notes also contain customary events of default with customer grace periods, as applicable. 1.47 %   Euro Senior Notes The Company has designated the  1.47 %  Euro Senior Notes as a hedge of a portion of its net investment in euro-denominated foreign subsidiaries to reduce foreign currency risk associated with the net investment in these operations. Changes in the carrying value of this debt resulting from fluctuations in the euro to U.S. dollar exchange rate are recorded as foreign currency translation adjustments within other comprehensive income (loss). The pre-tax unrealized gain (loss) recorded in other comprehensive income (loss) related to this net investment hedge was a gain of  $ 5.3  million  and a loss of  $ 1.8  million  for the three months ended September 30, 2019 and 2018, respectively, and a gain of  $ 6.3  million  and  $ 2.8  million  for the nine month periods ended  September 30, 2019  and 2018, respectively. The Company has a gain of  $ 5.0  million  recorded in accumulated other comprehensive income (loss) as of September 30, 2019. Other Local Arrangements In April 2018, two of the Company's non-U.S. pension plans issued loans totaling  $ 39.6  million  (Swiss franc  38  million ) to a wholly owned subsidiary of the Company. The loans have the same terms and conditions, which include an interest rate of Swiss franc LIBOR plus  87.5  basis points. The loans were renewed for one year in April 2019 and, as such, are classified as short-term debt on the Company's consolidated balance sheet. 9.     SHARE REPURCHASE PROGRAM AND TREASURY STOCK In November 2018, the Company's Board of Directors authorized an additional  $ 2  billion  to the share repurchase program, which has  $ 1.5  billion  of remaining availability as of September 30, 2019. The share repurchases are expected to be funded from cash generated from operating activities, borrowings, and cash balances. Repurchases will be made through open market transactions, and the amount and timing of purchases will depend on business and market conditions, the stock price, trading restrictions, the level of acquisition activity and other factors.  -  19  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The Company has purchased  28.3  million  shares since the inception of the program in 2004 through  September 30, 2019 . During the  nine  months ended  September 30, 2019  and  2018 , the Company spent  $ 558.7  million  and  $ 356.2  million  on the repurchase of  794,603  shares and  598,539  shares at an average price per share of  $ 703.16  and  $ 595.18 , respectively. The Company also reissued  226,841  shares and  102,174  shares held in treasury for the exercise of stock options and restricted stock units during the  nine  months ended  September 30, 2019  and  2018 , respectively.   10.     ACCUMULATED OTHER COMPREHENSIVE INCOME Comprehensive income (loss), net of tax consisted of the following as of  September 30 :            Three Months Ended   Nine Months Ended   2019   2018   2019   2018 Net earnings $ 129,395   $ 126,653   $ 368,360   $ 331,425 Other comprehensive income (loss), net of tax ( 13,553 )   ( 17,808 )   ( 12,572 )   ( 18,123 ) Comprehensive income, net of tax $ 115,842   $ 108,845   $ 355,788   $ 313,302 The following table presents changes in accumulated other comprehensive income by component for the nine months ended  September 30, 2019  and  2018 :   Currency Translation Adjustment, Net of Tax   Net Unrealized Gain (Loss) on  Cash Flow Hedging Arrangements, Net of Tax   Pension and Post-Retirement Benefit Related Items, Net of Tax   Total Balance at December 31, 2018 $ ( 63,913 )   $ 702   $ ( 239,203 )   $ ( 302,414 ) Other comprehensive income (loss), net of tax:               Unrealized gains (losses) cash flow hedging arrangements —   1,170   —   1,170 Foreign currency translation adjustment ( 21,854 )   —   2,677   ( 19,177 ) Amounts recognized from accumulated other comprehensive income (loss), net of tax —   ( 3,586 )   9,021   5,435 Net change in other comprehensive income (loss), net of tax ( 21,854 )   ( 2,416 )   11,698   ( 12,572 ) Balance at September 30, 2019 $ ( 85,767 )   $ ( 1,714 )   $ ( 227,505 )   $ ( 314,986 )   Currency Translation Adjustment, Net of Tax   Net Unrealized Gain (Loss) on  Cash Flow Hedging Arrangements, Net of Tax   Pension and Post-Retirement Benefit Related Items, Net of Tax   Total Balance at December 31, 2017 $ ( 31,340 )   $ ( 1,081 )   $ ( 232,985 )   $ ( 265,406 ) Other comprehensive income (loss), net of tax:       Unrealized gains (losses) cash flow hedging arrangements —   6,523   —   6,523 Foreign currency translation adjustment ( 32,206 )   —   ( 749 )   ( 32,955 ) Amounts recognized from accumulated other comprehensive income (loss), net of tax —   ( 2,528 )   10,837   8,309 Net change in other comprehensive income (loss), net of tax ( 32,206 )   3,995   10,088   ( 18,123 ) Balance at September 30, 2018 $ ( 63,546 )   $ 2,914   $ ( 222,897 )   $ ( 283,529 ) -  20  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The following table presents amounts recognized from accumulated other comprehensive income (loss) for the  three  and  nine  month periods ended  September 30 :     Three Months Ended September 30,         2019   2018   Location of Amounts Recognized in Earnings Effective portion of (gains) / losses on cash flow hedging arrangements:             Interest rate swap agreements   $ 31   $ 97   Interest expense Cross currency swap agreement   ( 3,621 )   ( 3,559 )   (a) Total before taxes   ( 3,590 )   ( 3,462 )     Provision for taxes   ( 275 )   ( 252 )   Provision for taxes Total, net of taxes   $ ( 3,315 )   $ ( 3,210 )                   Recognition of defined benefit pension and post-retirement items:             Recognition of actuarial losses and prior service cost, before taxes   $ 3,890   $ 4,651   (b) Provision for taxes   874   1,064   Provision for taxes Total, net of taxes   $ 3,016   $ 3,587     (a) The cross currency swap reflects an unrealized gain of  $ 2.4  million  recorded in other charges (income) that was offset by the underlying unrealized loss on the hedged debt. The cross currency swap also reflects a realized gain of  $ 1.2  million  recorded in interest expense. (b) These accumulated other comprehensive income (loss) components are included in the computation of net periodic pension and post-retirement cost. See Note 12 for additional details for the three months ended  September 30, 2019  and  2018 .     Nine Months Ended September 30,         2019   2018   Location of Amounts Recognized in Earnings Effective portion of (gains) / losses on cash flow hedging arrangements:             Interest rate swap agreements   $ ( 82 )   $ 531   Interest expense Cross currency swap agreement   ( 3,823 )   ( 3,171 )   (a) Total before taxes   ( 3,905 )   ( 2,640 )     Provision for taxes   ( 319 )   ( 112 )   Provision for taxes Total, net of taxes   $ ( 3,586 )   $ ( 2,528 )                   Recognition of defined benefit pension and post-retirement items:             Recognition of actuarial losses and prior service cost, before taxes   $ 11,639   $ 14,150   (b) Provision for taxes   2,618   3,313   Provision for taxes Total, net of taxes   $ 9,021   $ 10,837     (a) The cross currency swap reflects an unrealized gain of  $ 0.3  million  recorded in other charges (income) that was offset by the underlying unrealized loss on the hedged debt. The cross currency swap also reflects a realized gain of  $ 3.5  million  recorded in interest expense. (b) These accumulated other comprehensive income (loss) components are included in the computation of net periodic pension and post-retirement cost. See Note 12 for additional details for the  nine  months ended  September 30, 2019  and  2018 . -  21  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  11.     EARNINGS PER COMMON SHARE In accordance with the treasury stock method, the Company has included the following common equivalent shares in the calculation of diluted weighted average number of common shares outstanding for the three and nine months ended September 30, relating to outstanding stock options and restricted stock units:     2019   2018 Three months ended   392,911   557,304 Nine months ended   425,627   581,299 Outstanding options and restricted stock units to purchase or receive  55,568  and  54,708  shares of common stock for the three month period ended September 30, 2019 and 2018, respectively, have been excluded from the calculation of diluted weighted average number of common and common equivalent shares as such options and restricted stock units would be anti-dilutive. Options and restricted stock units to purchase or receive  64,649  and  55,775  for the nine month period ended  September 30, 2019  and  2018 , respectively, have been excluded from the calculation of diluted weighted average of common and common equivalent shares as such options and restricted stock units would be anti-dilutive.   12.     NET PERIODIC BENEFIT COST Net periodic pension cost for the Company’s defined benefit pension plans and U.S. post-retirement medical plan includes the following components for the three months ended  September 30 :   U.S. Pension Benefits   Non-U.S. Pension Benefits   Other U.S. Post-retirement Benefits   Total   2019   2018   2019   2018   2019   2018   2019   2018 Service cost, net $ 266   $ 273   $ 3,788   $ 3,752   $ —   $ —   4,054   4,025 Interest cost on projected benefit obligations 1,146   1,060   2,547   2,180   16   16   3,709   3,256 Expected return on plan assets ( 1,472 )   ( 1,733 )   ( 7,342 )   ( 7,733 )   —   —   ( 8,814 )   ( 9,466 ) Recognition of prior service cost —   —   ( 1,679 )   ( 1,727 )   —   ( 93 )   ( 1,679 )   ( 1,820 ) Recognition of actuarial losses/(gains) 593   1,451   5,149   5,331   ( 173 )   ( 311 )   5,569   6,471 Net periodic pension cost/(credit) $ 533   $ 1,051   $ 2,463   $ 1,803   $ ( 157 )   $ ( 388 )   $ 2,839   $ 2,466 Net periodic pension cost for the Company’s defined benefit pension plans and U.S. post-retirement medical plan includes the following components for the  nine  months ended  September 30 :   U.S. Pension Benefits   Non-U.S. Pension Benefits   Other U.S. Post-retirement Benefits   Total   2019   2018   2019   2018   2019   2018   2019   2018 Service cost, net $ 797   $ 817   $ 11,290   $ 11,416   $ —   $ —   12,087   12,233 Interest cost on projected benefit obligations 3,438   3,182   7,595   6,534   48   48   11,081   9,764 Expected return on plan assets ( 4,415 )   ( 5,197 )   ( 21,846 )   ( 23,408 )   —   —   ( 26,261 )   ( 28,605 ) Recognition of prior service cost —   —   ( 5,033 )   ( 5,248 )   —   ( 279 )   ( 5,033 )   ( 5,527 ) Recognition of actuarial losses/(gains) 1,780   4,353   15,410   16,261   ( 518 )   ( 937 )   16,672   19,677 Net periodic pension cost/(credit) $ 1,600   $ 3,155   $ 7,416   $ 5,555   $ ( 470 )   $ ( 1,168 )   $ 8,546   $ 7,542 -  22  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  As previously disclosed in the Company's Annual Report on Form 10-K for the year ended  December 31, 2018 , the Company expects to make employer contributions of approximately               $ 25.3  million  to its non-U.S. pension plans during the year ended December 31, 2019. This estimate may change based upon several factors, including fluctuations in currency exchange rates, actual returns on plan assets and changes in legal requirements. 13.     RESTRUCTURING CHARGES For the three and  nine  months ended  September 30, 2019 , the Company has incurred  $ 6.7  million  and  $ 11.1  million  of restructuring expenses which primarily relates to employee related costs. Liabilities related to restructuring activities are included in accrued and other liabilities in the consolidated balance sheet.  A rollforward of the Company’s accrual for restructuring activities for the  nine  months ended  September 30, 2019  is as follows:     Total Balance at December 31, 2018   $ 7,972 Restructuring charges   11,146 Cash payments and utilization   ( 9,450 ) Impact of foreign currency   ( 243 ) Balance at September 30, 2019   $ 9,425 14.     OTHER CHARGES (INCOME), NET Other charges (income), net includes non-service pension costs (benefits), (gains) losses from foreign currency transactions and related hedging activities, interest income and other items. Non-service pension benefits for the three months ended September 30, 2019 and 2018 were  $ 1.2  million  and  $ 1.6  million , respectively and  $ 3.5  million  and  $ 4.7  million  for the nine months ended September 30, 2019 and 2018, respectively. -  23  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  15.     SEGMENT REPORTING As disclosed in Note 17 to the Company's consolidated financial statements for the year ended  December 31, 2018 , the Company has determined there are five reportable segments:  U.S. Operations, Swiss Operations, Western European Operations, Chinese Operations and Other. The Company evaluates segment performance based on Segment Profit (gross profit less research and development and selling, general and administrative expenses, before amortization, interest expense, restructuring charges, other charges (income), net and taxes). The following tables show the operations of the Company’s operating segments:   Net Sales to   Net Sales to           As of September 30, For the three months ended External   Other   Total Net   Segment   2019 September 30, 2019 Customers   Segments   Sales   Profit   Goodwill U.S. Operations $ 269,038   $ 28,075   $ 297,113   $ 54,628   $ 410,021 Swiss Operations 33,415   160,736   194,151   54,226   21,803 Western European Operations 168,652   42,794   211,446   29,888   83,971 Chinese Operations 142,292   60,710   203,002   72,745   615 Other (a) 140,469   1,513   141,982   17,938   14,814 Eliminations and Corporate (b) —   ( 293,828 )   ( 293,828 )   ( 33,210 )   — Total $ 753,866   $ —   $ 753,866   $ 196,215   $ 531,224   Net Sales to   Net Sales to             For the nine months ended External   Other   Total Net   Segment     September 30, 2019 Customers   Segments   Sales   Profit     U.S. Operations $ 771,578   $ 80,791   $ 852,369   $ 146,599     Swiss Operations 98,350   466,398   564,748   156,361     Western European Operations 498,240   126,050   624,290   77,842     Chinese Operations 400,473   170,135   570,608   197,718     Other (a) 396,043   4,108   400,151   45,425     Eliminations and Corporate (b) —   ( 847,482 )   ( 847,482 )   ( 102,148 )     Total $ 2,164,684   $ —   $ 2,164,684   $ 521,797     (a) Other includes reporting units in Eastern Europe, Latin America, Southeast Asia and other countries. (b) Eliminations and Corporate includes the elimination of inter-segment transactions and certain corporate expenses and intercompany investments, which are not included in the Company’s operating segments. -  24  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)    Net Sales to   Net Sales to           As of September 30,  For the three months ended External   Other   Total Net   Segment   2018 September 30, 2018 Customers   Segments   Sales   Profit   Goodwill U.S. Operations $ 255,379   $ 25,050   $ 280,429   $ 41,890   $ 410,022 Swiss Operations 31,463   148,418   179,881   44,542   22,404 Western European Operations 173,170   41,923   215,093   30,046   89,915 Chinese Operations 140,098   64,079   204,177   75,762   644 Other (a) 134,736   1,334   136,070   19,179   14,877 Eliminations and Corporate (b) —   ( 280,804 )   ( 280,804 )   ( 29,454 )   — Total $ 734,846   $ —   $ 734,846   $ 181,965   $ 537,862   Net Sales to   Net Sales to             For the nine months ended External   Other   Total Net   Segment     September 30, 2018 Customers   Segments   Sales   Profit     U.S. Operations $ 736,598   $ 72,203   $ 808,801   $ 118,141     Swiss Operations 96,082   440,959   537,041   138,254     Western European Operations 512,314   128,076   640,390   75,661     Chinese Operations 387,301   183,074   570,375   201,199     Other (a) 385,368   4,436   389,804   50,702     Eliminations and Corporate (b) —   ( 828,748 )   ( 828,748 )   ( 93,160 )     Total $ 2,117,663   $ —   $ 2,117,663   $ 490,797     (a) Other includes reporting units in Eastern Europe, Latin America, Southeast Asia and other countries. (b) Eliminations and Corporate includes the elimination of inter-segment transactions and certain corporate expenses and intercompany investments, which are not included in the Company’s operating segments. A reconciliation of earnings before taxes to segment profit for the  three  and  nine  month periods ended  September 30  follows:   Three Months Ended   Nine Months Ended   2019   2018   2019   2018 Earnings before taxes $ 169,359   $ 160,363   $ 450,251   $ 421,404 Amortization 12,329   11,856   36,877   35,561 Interest expense 9,800   9,003   27,776   25,671 Restructuring charges 6,732   2,222   11,146   13,956 Other charges (income), net ( 2,005 )   ( 1,479 )   ( 4,253 )   ( 5,795 ) Segment profit $ 196,215   $ 181,965   $ 521,797   $ 490,797 During the three months ended  September 30, 2019 , restructuring charges of  $ 6.7  million  were recognized, of which  $ 2.0  million ,  $ 2.9  million ,  $ 1.7  million  and  $0.1 million  related to the Company’s U.S., Swiss, Western European and Chinese Operations, respectively. Restructuring charges of  $ 2.2  million  were recognized during the three months ended  September 30, 2018 , of which  $ 0.6  million ,  $ 0.7  million ,  $ 0.7  million ,  $0.1 million  and  $ 0.1  million , related to the Company’s U.S., Swiss, Western European, Chinese and Other Operations, respectively. Restructuring charges of  $ 11.1  million  were recognized during the  nine  months ended  September 30, 2019 , of which  $ 3.6  million ,  $ 3.2  million ,  $ 3.8  million , and  $0.5 million  related to the Company’s U.S., Swiss, Western European, and Chinese  -  25  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  Operations, respectively. Restructuring charges of  $ 14.0  million  were recognized during the  nine  months ended  September 30, 2018 , of which  $ 10.6  million ,  $ 1.5  million ,  $ 1.6  million ,  $0.1 million  and $ 0.2  million  related to the Company’s U.S., Swiss, Western European, Chinese and Other Operations, respectively. 16. LEASES The Company adopted ASC 842 "Leases" with an effective date of January 1, 2019. The operating lease right-of-use asset was  $ 92.7  million , and the lease liability was  $ 93.5  million  at inception. The Company elected the practical expedients package under ASC 842 and accordingly did not reassess any previously expired or existing arrangements, and related classification under ASC 840.  The Company's operating leases primarily comprise real estate and vehicles. Real estate leases are largely related to sales and marketing, service and administrative offices, while vehicle leases are primarily related to the Company's field sales and service organization. The consolidated balance sheet included the following balances as of September 30:   2019   Balance Sheet Location Right-of-use assets, net $ 88,201   Other non-current assets         Current lease liability $ 26,861   Accrued and other liabilities Non-current lease liability 62,043   Other non-current liabilities Total operating lease liability $ 88,904     The lease right-of-use asset, net increased total assets as of September 30, 2019 for U.S. Operations by  $ 38.9  million , Swiss Operations by  $ 1.1  million , Western European Operations by  $ 19.3  million , Chinese Operations by  $ 3.4  million , Other by  $ 23.7  million , and Eliminations and Corporate by  $ 1.8  million . As of September 30, 2019, the Company has entered into additional real estate operating leases of  $ 7.4  million  that are expected to commence in 2019 and 2020. For the three and nine months ended September 30, 2019 the Company had the following recorded in selling, general and administrative associated with leasing arrangements:     Three Months Ended   Nine Months Ended Operating lease expense   $ 8,004   $ 24,634 Variable lease expense   1,118   2,746 Short-term lease expense   196   1,016 Total lease expense   $ 9,318   $ 28,396           Weighted average remaining lease term       6.5  years Weighted average discount rate       3.0 % Accruals and other on the Consolidated Statement of Cash Flows includes the amortization of the lease right-of-use asset of  $ 22.8  million , offset by a change in the lease liability of  $ 22.4  million  for the nine months ended September 30, 2019. Lease payments within operating activities were  $ 24.4  million  for the nine months ended September 30, 2019. The Company also had non-cash lease right-of-use assets in exchange for lease liabilities of  $ 18.5  million  for the nine months ended September 30, 2019. -  26  - Table of Contents METTLER-TOLEDO INTERNATIONAL INC. NOTES TO THE INTERIM CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) (In thousands, except share data, unless otherwise stated)  The following is a maturity analysis of the annual undiscounted cash flows for the annual periods ended September 30: 2020   $ 29,151 2021   21,637 2022   13,102 2023   8,548 2024   4,949 Thereafter   21,748 Total lease payments   99,135 Less imputed interest   ( 10,231 ) Total operating lease liability   $ 88,904 The future minimum lease payments under non-cancellable leases as of December 31, 2018: 2019   $ 32,113 2020   23,771 2021   16,986 2022   9,855 2023   7,435 Thereafter   5,081 Total lease payments   $ 95,241 17.     CONTINGENCIES The Company is party to various legal proceedings, including certain environmental matters, incidental to the normal course of business. Management does not expect that any of such proceedings, either individually or in the aggregate, will have a material adverse effect on the Company’s financial condition, results of operations or cash flows. -  27  - Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations The following discussion and analysis of our financial condition and results of operations should be read in conjunction with the Unaudited Interim Consolidated Financial Statements included herein. General Our interim consolidated financial statements have been prepared in accordance with accounting principles generally accepted in the United States of America. Operating results for the  three  and  nine  months ended  September 30, 2019  are not necessarily indicative of the results to be expected for the full year ending  December 31, 2019 .  Changes in local currency exclude the effect of currency exchange rate fluctuations. Local currency amounts are determined by translating current and previous year consolidated financial information at an index utilizing historical currency exchange rates. We believe local currency information provides a helpful assessment of business performance and a useful measure of results between periods. We do not, nor do we suggest that investors should, consider such non-GAAP financial measures in isolation from, or as a substitute for, financial information prepared in accordance with GAAP. We present non-GAAP financial measures in reporting our financial results to provide investors with an additional analytical tool to evaluate our operating results. We also include in the discussion below disclosures of immaterial qualitative factors that are not quantified. Although the impact of such factors is not considered material, we believe these disclosures can be useful in evaluating our operating results. Results of Operations – Consolidated The following tables set forth certain items from our interim consolidated statements of operations for the  three  and  nine  month periods ended  September 30, 2019  and  2018  (amounts in thousands).   Three months ended September 30,   Nine months ended September 30,   2019   2018   2019   2018   (unaudited)   %   (unaudited)   %   (unaudited)   %   (unaudited)   % Net sales $ 753,866   100.0   $ 734,846   100.0   $ 2,164,684   100.0   $ 2,117,663   100.0 Cost of sales 318,810   42.3   315,592   42.9   921,771   42.6   910,851   43.0 Gross profit 435,056   57.7   419,254   57.1   1,242,913   57.4   1,206,812   57.0 Research and development 36,015   4.8   34,838   4.7   108,650   5.0   104,866   5.0 Selling, general and administrative 202,826   26.9   202,451   27.6   612,466   28.3   611,149   28.9 Amortization 12,329   1.6   11,856   1.6   36,877   1.7   35,561   1.7 Interest expense 9,800   1.3   9,003   1.2   27,776   1.3   25,671   1.2 Restructuring charges 6,732   0.9   2,222   0.3   11,146   0.5   13,956   0.6 Other charges (income), net (2,005 )   (0.3 )   (1,479 )   (0.1 )   (4,253 )   (0.2 )   (5,795 )   (0.3 ) Earnings before taxes 169,359   22.5   160,363   21.8   450,251   20.8   421,404   19.9 Provision for taxes 39,964   5.3   33,710   4.6   81,891   3.8   89,979   4.2 Net earnings $ 129,395   17.2   $ 126,653   17.2   $ 368,360   17.0   $ 331,425   15.7 Net sales Net sales were  $753.9 million  and  $734.8 million  for the  three  months ended  September 30, 2019 , and 2018, and  $2.2 billion  and  $2.1 billion  for the  nine  months ended  September 30, 2019  and  2018 , respectively. This represents an increase of  3%  and  2%  in U.S. dollars for the  three  and  nine  months ended  September 30, 2019 . Excluding the effect of currency exchange rates fluctuations, or in local currencies, net sales increased  4%  and  5%  for the three and nine months ended September 30, 2019. Net sales were reduced by 2% in both the three and nine month periods  -  28  - ended September 30, 2019 related to a significant decline in food retailing as further explained below. Global market conditions were generally favorable during the first nine months of 2019 and we continue to benefit from the execution of our global sales and marketing programs, our innovative product portfolio, and investments in our field resources. However, we remain cautious due to greater uncertainty in the global macroeconomic environment. Economic conditions can also change quickly, particularly in emerging markets. We will also face more difficult prior year comparisons in the fourth quarter of 2019 related to our strong previous year growth. Net sales by geographic destination for the  three  and  nine  months ended  September 30, 2019  in U.S. dollars increased in the Americas  6%  and  5% , in Asia/Rest of World  2%  and  3%  and decreased in Europe  2%  for both periods, respectively. Our net sales by geographic destination for the three and nine months ended  September 30, 2019  in local currencies increased in the Americas  7%  and  5% , in Europe  2%  and  3%  and in Asia/Rest of World  4%  and  7% , respectively. Net sales in the Americas was reduced by 2% and 3% and in Europe by 2% and 1% for the three and nine months ended September 30, 2019 related to a significant decline in food retailing sales primarily due to unfavorable market conditions and the timing of project activity. A discussion of sales by operating segment is included below.   As described in Note 18 to our consolidated financial statements for the year ended December 31, 2018, our net sales comprise product sales of precision instruments and related services. Service revenues are primarily derived from repair and other services, including regulatory compliance qualification, calibration, certification, preventative maintenance and spare parts. Net sales of products increased  2%  in U.S. dollars and  4%  in local currencies for the three months ended  September 30, 2019  and increased  2%  in U.S. dollars and  5%  in local currencies for the  nine  months ended  September 30, 2019 , compared to the corresponding periods in  2018 . Service revenue (including spare parts) increased by  5%  in U.S. dollars and  7%  in local currencies for the three months ended  September 30, 2019  and increased  4%  in U.S. dollars and  7%  in local currencies for the  nine  months ended  September 30, 2019 , compared to the corresponding periods in  2018 .  Net sales of our laboratory products and services, which represented approximately  52%  of our total net sales increased  5%  in U.S. dollars and  7%  in local currencies for both the three and nine months ended  September 30, 2019 . The local currency increase in net sales of our laboratory-related products for the three and nine months ended September 30, 2019 includes solid growth in most product categories, especially analytical instruments, pipettes and process analytics. Net sales of our industrial products and services, which represented approximately  41%  of our total net sales decreased  3%  in U.S. dollars and increased  5%  in local currencies for the three months ended September 30, 2019, and increased  2%  in U.S. dollars and  5%  in local currencies for the  nine  months ended  September 30, 2019 . The local currency increase in net sales of our industrial-related products for the three and nine months ended September 30, 2019 included strong growth in core industrial products.  Net sales in our food retailing products and services, which represented approximately  7%  of our total net sales decreased  17%  in U.S. dollars and  15%  in local currencies for the three months ended  September 30, 2019 , and decreased  13%  in U.S. dollars and  10%  in local currencies for the  nine  months ended  September 30, 2019 . The decline in food retailing is primarily due to unfavorable market conditions and the timing of project activity. Gross profit Gross profit as a percentage of net sales was  57.7%  and  57.1%  for the  three  months ended  September 30, 2019  and  2018 , and  57.4%  and  57.0%  for the  nine  months ended  September 30, 2019  and  2018 , respectively. -  29  - Gross profit as a percentage of net sales for products was  60.2%  and  59.6%  for the  three  months ended  September 30, 2019  and  2018 , respectively, and  60.0%  and  60.2%  for the  nine  months ended  September 30, 2019  and  2018 , respectively.  Gross profit as a percentage of net sales for services (including spare parts) was  48.9%  and  47.8%  for the  three  months ended  September 30, 2019  and  2018 , respectively, and  48.5%  and  45.8%  for the  nine  months ended  September 30, 2019  and  2018 , respectively. The increase in gross profit as a percentage of net sales for the three and  nine  months ended  September 30, 2019  reflects favorable price realization, productivity and business mix, partially offset by tariff costs and initial costs associated with new product introductions. In 2018, the U.S. government enacted tariffs on certain products imported from China. The tariffs became effective at various points during 2018. We estimate the associated annualized cost increase is approximately $25 million (assuming a 25% tariff rate). We continue to implement various actions to mitigate the effects of these tariffs. Research and development and selling, general and administrative expenses Research and development expenses as a percentage of net sales was  4.8%  and 4.7% for the  three  months ended  September 30, 2019  and  2018 , and was  5.0%   for both the  nine  months ended  September 30, 2019  and 2018, respectively. Research and development expenses increased  3%  in U.S. dollars and  4%  in local currencies for the  three  months ended  September 30, 2019 , and increased  5%  in U.S. dollars and  7%  in local currencies for the  nine  months ended  September 30, 2019 , respectively, compared to the corresponding periods in  2018  relating to increased project activity. Selling, general and administrative expenses as a percentage of net sales were  26.9%  and 27.6% for the  three  months ended  September 30, 2019  and  2018 , and was  28.3%  and 28.9% for the  nine  months ended  September 30, 2019  and  2018 , respectively. Selling, general and administrative expenses was flat in U.S. dollars and increased 2% in local currencies for the  three  months ended  September 30, 2019 , and were flat in U.S. dollars and increased  3%  in local currencies for the  nine  months ended  September 30, 2019 . The local currency increase includes investments in our field sales organization and growth initiatives, offset in part by benefits from our cost savings initiatives. Amortization, interest expense, other charges (income), net and taxes Amortization expense was  $12.3 million  and  $11.9 million  for the  three  months ended  September 30, 2019  and  2018 , respectively, and  $36.9 million  and  $35.6 million  for the  nine  months ended  September 30, 2019  and  2018 , respectively. Interest expense was  $9.8 million  and  $9.0 million  for the  three  months ended  September 30, 2019  and  2018 , respectively, and  $27.8 million  and  $25.7 million  for the  nine  months ended  September 30, 2019  and  2018 , respectively.  Other charges (income), net includes non-service pension costs (benefits), (gains) losses from foreign currency transactions and related hedging activities, interest income and other items. Nonservice pension benefits was $1.2 million and $1.6 million for the three months ended September 30, 2019 and 2018, respectively, and $3.5 million and $4.7 million and for the nine months ended September 30, 2019 and 2018, respectively.  Our reported tax rate was 23.6% and 21.0% during the three months ended September 30, 2019 and 2018, respectively, and was 18.2% and 21.4% during the nine months ended September 30, 2019 and 2018, respectively. The provision for taxes is based upon using our projected annual effective tax rate of 20% and 22% before non-recurring discrete tax items for the three and nine months ended September 30, 2019 and 2018, respectively. The difference between our projected annual effective tax rate and the reported tax rate is primarily related to the timing of excess tax benefits associated with stock option exercises.  -  30  - In May 2019, a public referendum was held in Switzerland that approved Swiss federal tax reform proposals previously approved by Swiss Parliament. The changes in Swiss federal tax had an immaterial effect on our financial statements. Additional changes in Swiss cantonal law were enacted in October 2019. We expect to recognize a discrete non-cash deferred tax benefit as a result of the enactment of the cantonal law in the fourth quarter; however we are currently unable to reasonably estimate such amount as the Swiss authorities are still providing interpretive guidance on the new law and related transitional methodology. Results of Operations – by Operating Segment The following is a discussion of the financial results of our operating segments. We currently have five reportable segments: U.S. Operations, Swiss Operations, Western European Operations, Chinese Operations and Other. A more detailed description of these segments is outlined in Note 18 to our consolidated financial statements for the year ended  December 31, 2018 . U.S. Operations (amounts in thousands)   Three months ended September 30,   Nine months ended September 30,   2019   2018   %   2019   2018   % Total net sales $ 297,113   $ 280,429   6 %   $ 852,369   $ 808,801   5 % Net sales to external customers $ 269,038   $ 255,379   5 %   $ 771,578   $ 736,598   5 % Segment profit $ 54,628   $ 41,890   30 %   $ 146,599   $ 118,141   24 % Total net sales and net sales to external customers increased  6%  and  5%  for the three months ended September 30, 2019 compared with the corresponding period in 2018. Total net sales and net sales to external customers both increased  5%  for the nine months ended September 30, 2019 compared with the corresponding period in 2018. The increase in total net sales and net sales to external customers includes particularly strong growth in laboratory-related products, partially offset by a significant decline in food retailing primarily due to unfavorable market conditions and the timing of project activity which reduced total net sales and net sales to external customers by 3% and 2% for the three and nine months ended September 30, 2019, respectively. The increase during the three month period also included strong growth in core industrial products. Segment profit increased  $12.7 million  and  $28.5 million  for the three and  nine  months ended  September 30, 2019 , respectively, compared to the corresponding periods in  2018 . The segment profit increase includes higher net sales volume and benefits from our margin expansion and facility consolidation initiatives, offset in part by investments in our sales and service organization and initial costs of new product introductions. Swiss Operations (amounts in thousands)   Three months ended September 30,   Nine months ended September 30,   2019   2018   % 1)   2019   2018   % 1) Total net sales $ 194,151   $ 179,881   8 %   $ 564,748   $ 537,041   5 % Net sales to external customers $ 33,415   $ 31,463   6 %   $ 98,350   $ 96,082   2 % Segment profit $ 54,226   $ 44,542   22 %   $ 156,361   $ 138,254   13 % 1) Represents U.S. dollar growth (decline) for net sales and segment profit.      Total net sales increased  8%  in both U.S. dollars and local currency for the three months ended  September 30, 2019 , and increased  5%  in U.S. dollars and 8% in local currency for the nine months ended  September 30, 2019  compared to the corresponding periods in  2018 . Net sales to external customers increased  6%  in both U.S. dollars and local currency for the three months ended  September 30, 2019  and increased 2% in U.S. dollars and 4% in local currency for the nine months ended  September 30, 2019 , compared to the corresponding periods in  2018 . Local currency net  -  31  - sales to external customers for the three and nine months ended September 30, 2019 includes strong growth in industrial-related products. Segment profit increased  $9.7 million  and  $18.1 million  for the three and  nine  month periods ended  September 30, 2019 , compared to the corresponding periods in  2018 . Segment profit during the nine months ended  September 30, 2019  includes benefits from our increased net sales volume and margin expansion and cost savings initiatives, offset in part by unfavorable foreign currency translation and higher research and development activity. Western European Operations (amounts in thousands)   Three months ended September 30,   Nine months ended September 30,   2019   2018   % 1)   2019   2018   % 1) Total net sales $ 211,446   $ 215,093   (2 )%   $ 624,290   $ 640,390   (3 )% Net sales to external customers $ 168,652   $ 173,170   (3 )%   $ 498,240   $ 512,314   (3 )% Segment profit $ 29,888   $ 30,046   (1 )%   $ 77,842   $ 75,661   3  % 1) Represents U.S. dollar growth (decline) for net sales and segment profit. Total net sales decreased  2%  in U.S. dollars and increased 3% in local currencies for the three months ended  September 30, 2019  and decreased  3%  in U.S. dollars and increased 4% in local currencies for the nine months ended  September 30, 2019 , compared to the corresponding periods in  2018 . Net sales to external customers decreased  3%  in U.S. dollars and increased 2% in local currencies for the three months ended  September 30, 2019 , and decreased  3%  in U.S. dollars and increased 4% in local currencies for the nine months ended  September 30, 2019 , compared to the corresponding periods in  2018 . Local currency net sales to external customers for the three and nine months ended  September 30, 2019  includes strong growth in core industrial products, pipettes and process analytics, offset in part by a decline in food retailing. The decline in food retailing reduced net sales by 2% and 1% for the three and nine months ended September 30, 2019, respectively. Segment profit decreased  $0.2 million  and increased  $2.2 million  for the three and  nine  month periods ended  September 30, 2019 , respectively, compared to the corresponding periods in  2018 . Segment profit for the three and nine months ended September 30, 2019 includes increased research and development and sales and marketing investments, initial costs associated with new product introductions and unfavorable currency translation, offset in part by higher net sales and benefits from our margin expansion initiatives. Segment profit for the nine months ended September 30, 2018 also included Blue Ocean roll-in costs. Chinese Operations (amounts in thousands)   Three months ended September 30,   Nine months ended September 30,   2019   2018   % 1)   2019   2018   % 1) Total net sales $ 203,002   $ 204,177   (1 )%   $ 570,608   $ 570,375   0  % Net sales to external customers $ 142,292   $ 140,098   2  %   $ 400,473   $ 387,301   3  % Segment profit $ 72,745   $ 75,762   (4 )%   $ 197,718   $ 201,199   (2 )% 1) Represents U.S. dollar growth for net sales and segment profit. Total net sales decreased  1%  in U.S. dollars and increased 2% in local currency for the three months ended  September 30, 2019  and were flat in U.S. dollars and increased 5% in local currency for the nine months ended  September 30, 2019 , compared to the corresponding periods in  2018 . Net sales to external customers increased  2%  in U.S. dollars and 5% in local currency for the three months ended  September 30, 2019  and increased  3%  in U.S. dollars and 9% in local currency during the nine months ended  September 30, 2019 , compared to the corresponding periods in  2018 . The increase in local currency net sales to external customers during the three and nine months ended September 30, 2019 reflects solid growth in laboratory and core industrial products. Total net sales for the three months ended September 30, 2019 is partially offset by a decline in food  -  32  - retailing. While Chinese market conditions are currently favorable, the Chinese economy has historically been volatile and market conditions may change unfavorably due to various factors. Segment profit decreased  $3.0 million  and  $3.5 million  for the three and  nine  month periods ended  September 30, 2019 , respectively, compared to the corresponding periods in  2018 . The decrease in segment profit for the three and nine months ended September 30, 2019 includes unfavorable foreign currency translation, increased sales and service investments, and higher research and development activity, offset in part by increased sales volume and benefits from our margin expansion initiatives.  Other (amounts in thousands)   Three months ended September 30,   Nine months ended September 30,   2019   2018   % 1)   2019   2018   % 1) Total net sales $ 141,982   $ 136,070   4  %   $ 400,151   $ 389,804   3  % Net sales to external customers $ 140,469   $ 134,736   4  %   $ 396,043   $ 385,368   3  % Segment profit $ 17,938   $ 19,179   (6 )%   $ 45,425   $ 50,702   (10 )% 1) Represents U.S. dollar growth for net sales and segment profit. Total net sales and net sales to external customers increased 4% in U.S. dollars and 5% in local currencies for the three months ended  September 30, 2019  and increased  3%  in U.S. dollars and 5% in local currencies for the nine months ended  September 30, 2019 , compared to the corresponding periods in  2018 . Local currency growth in net sales to external customers included solid growth in most product categories. Segment profit decreased  $1.2 million  and  $5.3 million  for the three and  nine  months ended  September 30, 2019 , respectively, compared to the corresponding periods in  2018 . The decrease in segment profit is primarily related to investments in field sales and service and unfavorable currency translation, offset in part by increased local currency net sales. Liquidity and Capital Resources Liquidity is our ability to generate sufficient cash flows from operating activities to meet our obligations and commitments. In addition, liquidity includes the ability to obtain appropriate financing. Currently, our financing requirements are primarily driven by working capital requirements, capital expenditures, share repurchases and acquisitions.   Cash provided by operating activities totaled  $401.7 million  during the  nine  months ended  September 30, 2019 , compared to  $366.4 million  in the corresponding period in  2018 . The increase in  2019  includes higher net earnings and lower cash incentive payments of $18 million, offset in part by the timing of working capital outflows. Capital expenditures are made primarily for investments in information systems and technology, machinery, equipment and the purchase and expansion of facilities. Our capital expenditures totaled  $71.6 million  for the  nine  months ended  September 30, 2019  compared to  $96.7 million  in the corresponding period in  2018 . The decrease is primarily related to prior year investments in manufacturing facilities. We expect to make net investments in new or expanded manufacturing facilities of $10 million to $15 million over the next two years. We recorded charges of $3.6 million and $72 million in 2018 and 2017, respectively, for the estimated income tax effects of the Transition Tax associated with the Tax Cuts and Jobs Act of which $62 million is expected to be paid over a period of up to eight years. We also plan to continue to repatriate earnings from China, Switzerland, Germany, the United Kingdom, and certain other countries in future years and expect the only additional cost associated with the repatriation of such foreign earnings will be withholding taxes. All other undistributed earnings are considered to be permanently reinvested. We believe the ongoing tax impact associated with repatriating our undistributed foreign earnings will not have a material effect on our liquidity. -  33  - Senior Notes and Credit Facility Agreement Our debt consisted of the following at  September 30, 2019 :   September 30, 2019   U.S. Dollar   Other Principal Trading Currencies   Total 3.67% $50 million Senior Notes due December 17, 2022 50,000   —   50,000 4.10% $50 million Senior Notes due September 19, 2023 50,000   —   50,000 3.84% $125 million Senior Notes due September 19, 2024 125,000   —   125,000 4.24% $125 million Senior Notes due June 25, 2025 125,000   —   125,000 3.91% $75 million Senior Notes due June 25 2029 75,000   —   75,000 1.47% EUR 125 million Senior Notes due June 17, 2030 —   136,747   136,747 Debt issuance costs, net (1,111 )   (307 )   (1,418 ) Total Senior Notes 423,889   136,440   560,329 $1.1 billion Credit Agreement, interest at LIBOR plus 87.5 basis points 485,016   78,934   563,950 Other local arrangements 1,058   47,519   48,577 Total debt 909,963   262,893   1,172,856 Less: current portion (1,058 )   (47,519 )   (48,577 ) Total long-term debt $ 908,905   $ 215,374   $ 1,124,279 As of  September 30, 2019 , approximately  $529.2 million  was available under the Credit Agreement.  Changes in exchange rates between the currencies in which we generate cash flows and the currencies in which our borrowings are denominated affect our liquidity. In addition, because we borrow in a variety of currencies, our debt balances fluctuate due to changes in exchange rates. We currently believe that cash flow from operating activities, together with liquidity available under our credit facility and local working capital facilities, will be sufficient to fund currently anticipated working capital needs and capital spending requirements for at least the foreseeable future. 1.30% Euro-Senior Notes and 3.19% Senior Notes In November 2019, we entered into an agreement to issue and sell EUR 135 million of fifteen-year 1.30% Euro-Senior Notes ("1.30% Senior Notes") and $50 million of fifteen-year 3.19% Senior Notes ("3.19% Senior Notes") in a private placement. The proceeds will be used to repay outstanding amounts on our credit facility and fund operational expenses. We also entered into a forward contract to receive $149.9 million at the time of issuing the EUR 135 million Euro-Senior Notes. We issued the 1.30% Euro-Senior Notes with a fixed interest rate of 1.30% in November 2019. The 1.30% Euro-Senior Notes are unsecured obligations of the Company and will mature in November 2034. Interest on the 1.30% Euro-Senior Notes is payable semi-annually in April and November of each year. We will issue the 3.19% Senior Notes with a fixed interest rate of 3.19% in January 2020. The 3.19% Senior Notes are unsecured obligations of the Company and will mature in January 2035. Interest on the 3.19% Senior Notes is payable semi-annually in January and July of each year.  We will designate the 1.30% Euro-Senior Notes as a hedge of a portion of its net investment in euro-denominated foreign subsidiaries to reduce foreign currency risk associated with the net investment in these operations. Changes in the fair value of this debt resulting from fluctuations in the euro to U.S. dollar exchange rates will be recorded as foreign currency translation adjustments  -  34  - within other comprehensive income (loss). We may at any time prepay the Senior Notes, in whole or in part, at a price equal to 100% of the principal amount thereof plus accrued and unpaid interest, and if applicable a "make-whole" prepayment premium and a swap related currency loss. 3.91%  Senior Notes In April 2019, the Company entered into an agreement to issue and sell  $75 million  of ten-year Senior Notes in a private placement. The Company issued the Senior Notes with a fixed interest rate of  3.91%  (" 3.91%  Senior Notes") in June 2019. The  3.91%  Senior Notes are unsecured obligations of the Company and will mature in  June 2029 . Interest on the  3.91%  Senior Notes is payable semi-annually in June and December of each year. The proceeds were used to repay outstanding amounts on the Company's credit facility. The  3.91%  Senior Notes, the 1.30% Euro-Senior Notes and the 3.19% Senior Notes contain customary affirmative and negative covenants for agreements of this type that are substantially similar to those contained in previously issued debt of the Company. The 3.91% Senior Notes, 1.30% Euro-Senior Notes and the 3.19% Senior Notes also contain customary events of default with customer grace periods, as applicable. Other Local Arrangements In April 2018, two of our non-U.S. pension plans issued loans totaling  $39.6 million  (Swiss franc  38 million ) to a wholly owned subsidiary of the Company. The loans have the same terms and conditions which include an interest rate of Swiss franc LIBOR plus  87.5  basis points. The loans were renewed for one year in April 2019 and, as such are classified as short-term debt on our consolidated balance sheet.  We continue to explore potential acquisitions.  In connection with any acquisition, we may incur additional indebtedness.  Share Repurchase Program We have a share repurchase program of which there was  $1.5 billion  of remaining common shares to be repurchased under the program as of  September 30, 2019 . The share repurchases are expected to be funded from cash generated from operating activities, borrowings, and existing cash balances. Repurchases will be made through open market transactions, and the amount and timing of purchases will depend on business and market conditions, stock price, trading restrictions, the level of acquisition activity, and other factors.  We have purchased  28.3 million  shares since the inception of the program through  September 30, 2019 . During the  nine  months ended  September 30, 2019  and  2018 , we spent  $558.7 million  and  $356.2 million  on the repurchase of  794,603  and  598,539  shares at an average price per share of  $703.16  and  $595.18 , respectively. We also reissued  226,841  shares and  102,174  shares held in treasury for the exercise of stock options and restricted stock units during the  nine  months ended  September 30, 2019  and  2018 , respectively.   -  35  - Effect of Currency on Results of Operations Our earnings are affected by changing exchange rates. We are most sensitive to changes in the exchange rates between the Swiss franc, euro, and U.S. dollar. We have more Swiss franc expenses than we do Swiss franc sales because we develop and manufacture products in Switzerland that we sell globally, and have a number of corporate functions located in Switzerland. When the Swiss franc strengthens against our other trading currencies, particularly the U.S. dollar and euro, our earnings go down. We also have significantly more sales in the euro than we do expenses. When the euro weakens against the U.S. dollar and Swiss franc, our earnings also go down. We estimate a 1% strengthening of the Swiss franc against the euro would reduce our earnings before tax by approximately $1.6 million to $1.8 million annually. We also conduct business in many geographies throughout the world, including Asia Pacific, the United Kingdom, Eastern Europe, Latin America, and Canada. Fluctuations in these currency exchange rates against the U.S. dollar can also affect our operating results. The most significant of these currency exposures is the Chinese Renminbi. The impact on our earnings before tax of the Chinese Renminbi weakening 1% against the U.S. dollar is a reduction of approximately $1.3 million to $1.5 million annually. In addition to the effects of exchange rate movements on operating profits, our debt levels can fluctuate due to changes in exchange rates, particularly between the U.S. dollar and the Swiss franc. Based on our outstanding debt at September 30, 2019, we estimate that a 10% weakening of the U.S. dollar against the currencies in which our debt is denominated would result in an increase of approximately $29.2 million in the reported U.S. dollar value of our debt. -  36  - Forward-Looking Statements Disclaimer You should not rely on forward-looking statements to predict our actual results. Our actual results or performance may be materially different than reflected in forward-looking statements because of various risks and uncertainties. You can identify forward-looking statements by terminology such as “may,” “will,” “could,” “would,” “should,” “expect,” “plan,” “anticipate,” “intend,” “believe,” “estimate,” “predict,” “potential” or “continue”. We make forward-looking statements about future events or our future financial performance, including earnings and sales growth, earnings per share, strategic plans and contingency plans, growth opportunities or economic downturns, our ability to respond to changes in market conditions, planned research and development efforts and product introductions, adequacy of facilities, access to and the costs of raw materials, shipping and supplier costs, gross margins, customer demand, our competitive position , capital expenditures, cash flow, tax-related matters, compliance with laws, and effects of acquisitions. Our forward-looking statements may not be accurate or complete, and we do not intend to update or revise them in light of actual results. New risks also periodically arise. Please consider the risks and factors that could cause our results to differ materially from what is described in our forward-looking statements.  See in particular “Factors Affecting Our Future Operating Results” and “Management’s Discussion and Analysis of Financial Condition and Results of Operations” of our 2018 Annual Report on Form 10-K. Item 3. Quantitative and Qualitative Disclosures About Market Risk As of  September 30, 2019 , there was no material change in the information provided under Item 7A in the Company’s Annual Report on Form 10-K for the year ended December 31, 2018. Item 4. Controls and Procedures Under the supervision and with the participation of our management, including the Chief Executive Officer and Chief Financial Officer, we have evaluated the effectiveness of our disclosure controls and procedures as required by Exchange Act Rule 13a-15(b) as of the end of the period covered by this report. Based upon that evaluation, the Chief Executive Officer and Chief Financial Officer, have concluded that these disclosure controls and procedures are effective. There were no changes in our internal control over financial reporting during the quarter ended  September 30, 2019  that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting.        -  37  - PART II.  OTHER INFORMATION Item 1. Legal Proceedings.     None Item 1A. Risk Factors. For the nine months ended  September 30, 2019  there were no material changes from risk factors disclosed in Part I, Item 1A of the Company’s Annual Report on Form 10-K for the year ended December 31, 2018. Item 2. Unregistered Sales of Equity Securities and Use of Proceeds. Issuer Purchases of Equity Securities     (a) (b) (c) (d)   Total Number of Shares Purchased Average Price Paid per Share Total Number of Shares Purchased as Part of Publicly Announced Program Approximate Dollar Value (in thousands) of Shares that may yet be Purchased under the Program       July 1 to July 31, 2019 73,681 $ 828.63 73,681 $ 1,674,868   August 1 to August 31, 2019 96,058 $ 688.00 96,058 $ 1,608,778   September 1 to September 30, 2019 85,538 $ 690.95 85,538 $ 1,549,674   Total 255,277 $ 729.58 255,277 $ 1,549,674 The Company has a share repurchase program of which there is  $1.5 billion  of remaining to repurchase common shares as of  September 30, 2019 . We have purchased  28.3 million  shares since the inception of the program through  September 30, 2019 . During the  nine  months ended  September 30, 2019  and  2018 , we spent  $558.7 million  and  $356.2 million  on the repurchase of  794,603  and  598,539  shares at an average price per share of  $703.16  and  $595.18 , respectively. We also reissued  226,841  shares and  102,174  shares held in treasury for the exercise of stock options and restricted stock units during the  nine  months ended  September 30, 2019  and  2018 , respectively.   Item 3.   Defaults Upon Senior Securities.    None Item 5. Other information.    None Item 6. Exhibits.   See Exhibit Index below. -  38  - EXHIBIT INDEX Exhibit No.   Description           31.1* Certification of the Chief Executive Officer Pursuant to Section 302 of the Sarbanes — Oxley Act of 2002           31.2* Certification of the Chief Financial Officer Pursuant to Section 302 of the Sarbanes — Oxley Act of 2002           32* Certification Pursuant to Section 906 of the Sarbanes — Oxley Act of 2002           101.INS* XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document           101.SCH* XBRL Taxonomy Extension Schema Document           101.CAL* XBRL Taxonomy Extension Calculation Linkbase Document           101.LAB* XBRL Taxonomy Extension Label Linkbase Document           101.PRE* XBRL Taxonomy Extension Presentation Linkbase Document           101.DEF* XBRL Taxonomy Extension Definition Linkbase Document _______________________ *    Filed herewith -  39  - SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.            Mettler-Toledo International Inc. Date: November 8, 2019   By:   /s/ Shawn P. Vadala                         Shawn P. Vadala           Chief Financial Officer     -  40  - 	 
+ 

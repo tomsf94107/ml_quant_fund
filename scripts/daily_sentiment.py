@@ -131,32 +131,12 @@ def _get_headlines(ticker: str, days_back: int = 3) -> list[str]:
     except Exception as e:
         log.debug(f"Google News RSS failed for {ticker}: {e}")
 
-    # --- Source 3: yfinance via resilient wrapper ---
-    try:
-        from features.yf_resilient import _retry_yf_call
-        def _get_news():
-            import yfinance as yf
-            return yf.Ticker(ticker).news or []
-        news = _retry_yf_call(_get_news, label=f"yf.Ticker({ticker}).news") or []
-        t = None  # not needed below
-        for item in news[:15]:
-            inner   = item.get("content", item)
-            pub_str = inner.get("pubDate", "") or inner.get("displayTime", "")
-            title   = inner.get("title", "") or item.get("title", "")
-            if not title:
-                continue
-            if pub_str:
-                try:
-                    pub_dt = datetime.fromisoformat(
-                        pub_str.replace("Z", "+00:00")
-                    ).replace(tzinfo=None)
-                    if pub_dt < cutoff:
-                        continue
-                except Exception:
-                    pass
-            _add(title)
-    except Exception as e:
-        log.debug(f"yfinance news failed for {ticker}: {e}")
+    # --- Source 3: yfinance news — DISABLED Jun 29 2026 ---
+    # XProtect 5347 blocks the yfinance/curl_cffi fetch path as malware at
+    # execution, killing the whole sentiment run. Sources 1 & 2 (Yahoo Finance
+    # RSS + Google News RSS) use feedparser/urllib, NOT curl_cffi, so they stay
+    # active and sentiment still scores off them. Re-enable when Apple ships a
+    # corrected XProtect signature, or route yfinance news via a non-curl_cffi path.
 
     return headlines[:10]  # top 10 unique headlines across all sources
 

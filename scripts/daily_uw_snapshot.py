@@ -174,7 +174,8 @@ ETF_LIST = {"SPY","QQQ","GLD","SLV","XLF","XLE","XLV","XLI","XLU"}
 
 def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = None):
     if snapshot_date is None:
-        snapshot_date = str(date.today() - timedelta(days=1))
+        from features.massive_client import _last_completed_session as _lcs
+        snapshot_date = _lcs().strftime("%Y-%m-%d")
 
     print(f"\n{'='*60}")
     print(f"  UW Daily Snapshot — {snapshot_date}")

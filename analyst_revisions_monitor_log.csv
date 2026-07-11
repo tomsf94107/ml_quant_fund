@@ -1,0 +1,4 @@
+date,n_dates,triggered,field,n_obs,mean_ic,nw_t,null_z,verdict
+2026-06-25,3,no,,,,,,insufficient_dates
+2026-07-01,4,no,,,,,,insufficient_dates
+2026-07-08,4,no,,,,,,insufficient_dates

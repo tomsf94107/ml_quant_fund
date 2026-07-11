@@ -1,0 +1,2352 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q2 2019 false 0000029989 1185000000 1143700000 26800000 24900000 0.60 0.65 0.0445 0.0625 0.03625 0.0360 0.0365 2020-08-15 2019-07-15 2022-05-01 2026-04-15 2024-11-01 us-gaap:OtherLiabilitiesCurrent us-gaap:OtherLiabilitiesNoncurrent us-gaap:OtherLiabilitiesCurrent us-gaap:OperatingLeaseLiabilityNoncurrent 
+		 
+			 0000029989 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:A1.400SeniorNotesdueJuly82031Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:A0.800SeniorNotesdue2027Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CommonStock0.15ParValueMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2019-07-10 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:PublicrelationsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdvertisingMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMConsumerExperienceMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdvertisingMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:HealthcareDisciplineMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMExecutionSupportMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:PublicrelationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:HealthcareDisciplineMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMConsumerExperienceMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMConsumerExperienceMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdvertisingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMExecutionSupportMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMExecutionSupportMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:HealthcareDisciplineMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:PublicrelationsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMExecutionSupportMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:PublicrelationsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AdvertisingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:HealthcareDisciplineMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:CRMConsumerExperienceMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:MiddleEastandAfricaMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:MiddleEastandAfricaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AsiaPacificMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AsiaPacificMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AsiaPacificMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:MiddleEastandAfricaMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AsiaPacificMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:MiddleEastandAfricaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesdueNovember12024Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueAugust152020Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueAugust152020Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueJuly152019Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesdueApril152026Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesdueNovember12024Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueMay12022Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueJuly152019Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesdueApril152026Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueMay12022Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:InterestRateSwapson2024NotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueAugust152020Member 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-02 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:A1.400SeniorNotesdueJuly82031Member 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-08 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:A0.08SeniorNotesdueJuly82027Member 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-08 
+			 2019-07-08 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:A0.08SeniorNotesdueJuly82027Member 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-08 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:InterestRateSwapson2026NotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueJuly152019Member 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-15 
+			 2019-07-15 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:A1.400SeniorNotesdueJuly82031Member 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-08 
+			 2019-07-08 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-02 
+			 2019-07-02 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:UncommittedLinesOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ShorttermSeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-07-08 
+			 2019-07-08 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:UncommittedLinesOfCreditMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesdueApril152026Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueJuly152019Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueAugust152020Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesDueMay12022Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:SeniorNotesdueNovember12024Member 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AsiaPacificMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AsiaPacificMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 srt:AmericasMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:RealEstateLeaseMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:EquipmentLeaseMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ContingentPurchasePriceObligationsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ContingentPurchasePriceObligationsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ContingentPurchasePriceObligationsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ContingentPurchasePriceObligationsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ContingentPurchasePriceObligationsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 omc:ContingentPurchasePriceObligationsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000029989 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 iso4217:EUR 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 xbrli:pure 
+	 
+		 xbrli:shares 
+	 
+		 iso4217:USD 
+	 
+		 utreg:Rate 
+	 ___________________________________________________________________________________________________  UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 _________________________ FORM  10-Q   ☑  QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 FOR THE QUARTERLY PERIOD ENDED  JUNE 30, 2019   _________________________ Commission File Number:  1-10551   OMNICOM GROUP INC.   (Exact name of registrant as specified in its charter) New York 13-1514814 (State or other jurisdiction of incorporation or organization) (IRS Employer Identification No.)     437 Madison Avenue   New York   New York 10022 (Address of principal executive offices) (Zip Code) Registrant’s telephone number, including area code: ( 212 )  415-3600   Not Applicable (Former name, former address and former fiscal year, if changed since last report) ____________________________________________________________ Securities Registered Pursuant to Section 12(b) of the Act: Title of each class Trading Symbols Name of each exchange on which registered Common Stock, $0.15 Par Value OMC New York Stock Exchange 0.800% Senior Notes due 2027 OMC/27 New York Stock Exchange 1.400% Senior Notes due 2031 OMC/31 New York Stock Exchange ____________________________________________________________ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.    Yes   ☑   No  ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).    Yes   ☑   No  ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,”  and “emerging growth company” in Rule 12b-2 of the Exchange Act. Large accelerated filer ☑ Accelerated filer ☐ Non-accelerated filer ☐ Smaller reporting company ☐     Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).   Yes  ☐   No  ☑ _________________________ As of  July 10, 2019 , there were  217,523,691  shares of Omnicom Group Inc. Common Stock outstanding. OMNICOM GROUP INC. QUARTERLY REPORT ON FORM 10-Q FOR THE QUARTER ENDED  JUNE 30, 2019   TABLE OF CONTENTS PART I. FINANCIAL INFORMATION Page Item 1. Financial Statements     Consolidated Balance Sheets - June 30, 2019 and December 31, 2018  1   Consolidated Statements of Income - Three and Six Months Ended June 30, 2019 and 2018  2   Consolidated Statements of Comprehensive Income - Three and Six Months Ended June 30, 2019 and 2018  3   Consolidated Statements of Equity - Three and Six Months Ended June 30, 2019  4   Consolidated Statements of Equity - Three and Six Months Ended June 30, 2018  5   Consolidated Statements of Cash Flows - Six Months Ended June 30, 2019 and 2018  6   Notes to Con solidated Financial Statements  7 Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations  18 Item 3. Quantitative and Qualitative Disclosures About Market Risk  35 Item 4. Controls and Procedures  35       PART II. OTHER INFORMATION   Item 1. Legal Proceedings  35 Item 1A. Risk Factors  35 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds  36 Item 6. Exhibits  36       SIGNATURES    36 FORWARD-LOOKING STATEMENTS Certain statements in this Quarterly Report on Form 10-Q constitute forward-looking statements, including statements within the meaning of the Private Securities Litigation Reform Act of 1995. In addition, from time to time, the Company or its representatives have made, or may make, forward-looking statements, orally or in writing. These statements may discuss goals, intentions and expectations as to future plans, trends, events, results of operations or financial condition, or otherwise, based on current beliefs of the Company’s management as well as assumptions made by, and information currently available to, the Company’s management. Forward-looking statements may be accompanied by words such as “aim,” “anticipate,” “believe,” “plan,” “could,” “should,” “would,” “estimate,” “expect,” “forecast,” “future,” “guidance,” “intend,” “may,” “will,” “possible,” “potential,” “predict,” “project” or similar words, phrases or expressions. These forward-looking statements are subject to various risks and uncertainties, many of which are outside the Company’s control. Therefore, you should not place undue reliance on such statements. Factors that could cause actual results to differ materially from those in the forward-looking statements include: international, national or local economic conditions that could adversely affect the Company or its clients; losses on media purchases and production costs incurred on behalf of clients; reductions in client spending, a slowdown in client payments and a deterioration in the credit markets; the ability to attract new clients and retain existing clients in the manner anticipated; changes in client advertising, marketing and corporate communications requirements; failure to manage potential conflicts of interest between or among clients; unanticipated changes relating to competitive factors in the advertising, marketing and corporate communications industries; the ability to hire and retain key personnel; currency exchange rate fluctuations; reliance on information technology systems; changes in legislation or governmental regulations affecting the Company or its clients; risks associated with assumptions the Company makes in connection with its critical accounting estimates and legal proceedings; and the Company’s international operations, which are subject to the risks of currency repatriation restrictions, social or political conditions and regulatory environment. The foregoing list of factors is not exhaustive. You should carefully consider the foregoing factors and the other risks and uncertainties that may affect the Company’s business, including those described in Item 1A, “Risk Factors” and Item 7, “Management’s Discussion and Analysis of Financial Condition and Results of Operations” in our Annual Report on Form 10-K for the year ended  December 31, 2018  and in Item 2 “Management’s Discussion and Analysis of Financial Condition and Results of Operations” in this report. Except as required under applicable law, the Company does not assume any obligation to update these forward-looking statements. i PART I. FINANCIAL INFORMATION Item 1.  Financial Statements OMNICOM GROUP INC. AND SUBSIDIARIES CONSOLIDATED BALANCE SHEETS (In millions)   June 30, 2019   December 31, 2018   (Unaudited)     ASSETS       Current Assets:       Cash and cash equivalents $ 2,898.1   $ 3,652.4 Short-term investments, at cost 5.4   5.5 Accounts receivable, net of allowance for doubtful accounts of $24.9 and $26.8 7,244.9   7,666.1 Work in process 1,363.5   1,161.5 Other current assets 1,290.9   1,241.4 Total Current Assets 12,802.8   13,726.9 Property and Equipment at cost, less accumulated depreciation of $1,143.7 and $1,185.0 679.8   694.4 Operating Lease Right-Of-Use Assets 1,435.3   — Equity Method Investments 111.7   120.9 Goodwill 9,364.7   9,384.3 Intangible Assets, net of accumulated amortization of $748.2 and $737.4 353.5   382.8 Other Assets 294.3   307.7 TOTAL ASSETS $ 25,042.1   $ 24,617.0 LIABILITIES AND EQUITY       Current Liabilities:       Accounts payable $ 10,445.9   $ 11,464.3 Customer advances 1,094.1   1,159.0 Current portion of debt 899.5   499.6 Short-term debt 608.5   8.1 Taxes payable 123.4   180.6 Other current liabilities 1,896.7   1,958.6 Total Current Liabilities 15,068.1   15,270.2 Long-Term Liabilities 975.1   1,197.8 Long-Term Liability - Operating Leases 1,317.9   — Long-Term Debt 4,025.9   4,384.1 Deferred Tax Liabilities 438.0   413.7 Commitments and Contingent Liabilities (Note 13)   Temporary Equity - Redeemable Noncontrolling Interests 257.7   244.3 Equity:       Shareholders’ Equity:       Preferred stock —   — Common stock 44.6   44.6 Additional paid-in capital 726.2   728.8 Retained earnings 7,384.7   7,016.1 Accumulated other comprehensive income (loss) ( 1,234.9 )   ( 1,228.5 ) Treasury stock, at cost ( 4,510.4 )   ( 4,013.9 ) Total Shareholders’ Equity 2,410.2   2,547.1 Noncontrolling interests 549.2   559.8 Total Equity 2,959.4   3,106.9 TOTAL LIABILITIES AND EQUITY $ 25,042.1   $ 24,617.0 The accompanying notes to the consolidated financial statements are an integral part of these statements.  1 OMNICOM GROUP INC. AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF INCOME (In millions, except per share amounts) (Unaudited)   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Revenue $ 3,719.8   $ 3,859.6   $ 7,188.7   $ 7,489.2 Operating Expenses:                  Salary and service costs 2,665.2   2,772.9   5,232.8   5,485.7    Occupancy and other costs 315.4   319.6   624.7   639.9 Cost of services 2,980.6   3,092.5   5,857.5   6,125.6    Selling, general and administrative expenses 107.7   117.4   211.2   222.9    Depreciation and amortization 57.8   67.4   117.4   136.8   3,146.1   3,277.3   6,186.1   6,485.3 Operating Profit 573.7   582.3   1,002.6   1,003.9 Interest Expense 66.6   66.4   129.6   128.6 Interest Income 16.4   13.9   33.4   29.3 Income Before Income Taxes and Income From Equity     Method Investments 523.5   529.8   906.4   904.6 Income Tax Expense 130.6   136.7   233.2   227.7 Income From Equity Method Investments 1.2   1.7   0.7   2.6 Net Income 394.1   394.8   673.9   679.5 Net Income Attributed To Noncontrolling Interests 23.4   30.6   40.0   51.2 Net Income - Omnicom Group Inc. $ 370.7   $ 364.2   $ 633.9   $ 628.3 Net Income Per Share - Omnicom Group Inc.:               Basic $ 1.69   $ 1.61   $ 2.86   $ 2.75 Diluted $ 1.68   $ 1.60   $ 2.85   $ 2.73                 Dividends Declared Per Common Share $ 0.65   $ 0.60   $ 1.30   $ 1.20 The accompanying notes to the consolidated financial statements are an integral part of these statements.  2 OMNICOM GROUP INC. AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (In millions) (Unaudited)   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Net Income $ 394.1   $ 394.8   $ 673.9   $ 679.5 Other Comprehensive Income:               Cash flow hedge:               Amortization of loss included in interest expense 1.4   1.4   2.8   2.8 Income tax effect ( 0.4 )   ( 0.4 )   ( 0.8 )   ( 0.8 )   1.0   1.0   2.0   2.0 Defined benefit pension plans and postemployment arrangements:               Amortization of prior service cost 1.3   1.9   2.6   3.9 Amortization of actuarial losses 0.5   2.2   1.0   4.2 Income tax effect ( 0.9 )   ( 1.3 )   ( 1.6 )   ( 2.4 )   0.9   2.8   2.0   5.7 Available-for-sale securities:               Reclassification —   —   —   0.3   —   —   —   0.3                 Foreign currency translation adjustment ( 18.8 )   ( 325.8 )   12.9   ( 237.1 )                 Other Comprehensive Income ( 16.9 )   ( 322.0 )   16.9   ( 229.1 )                 Comprehensive Income 377.2   72.8   690.8   450.4 Comprehensive Income Attributed To Noncontrolling Interests 23.4   0.9   41.0   26.5 Comprehensive Income - Omnicom Group Inc. $ 353.8   $ 71.9   $ 649.8   $ 423.9 The accompanying notes to the consolidated financial statements are an integral part of these statements.  3 OMNICOM GROUP INC. AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF EQUITY Three and Six Months Ended June 30, 2019   (In millions, except per share amounts) (Unaudited)   Omnicom Group Inc.           Common Stock   Additional Paid-in Capital   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Treasury Stock   Shareholders’ Equity   Noncontrolling  Interests   Total Equity   Shares   Par Value           Balance as of December 31, 2018 297.2   $ 44.6   $ 728.8   $ 7,016.1   $ ( 1,228.5 )   $ ( 4,013.9 )   $ 2,547.1   $ 559.8   $ 3,106.9 Cumulative effect of accounting change             22.3   ( 22.3 )       —   —   — Net income             263.2           263.2   16.5   279.7 Other comprehensive income (loss)                 32.8       32.8   1.0   33.8 Dividends to noncontrolling interests                             ( 17.0 )   ( 17.0 ) Acquisition of noncontrolling interests         0.4               0.4   ( 5.0 )   ( 4.6 ) Increase in noncontrolling interests from business combinations                             1.0   1.0 Change in temporary equity         ( 18.2 )               ( 18.2 )     ( 18.2 ) Common stock dividends declared ($0.65 per share)             ( 144.6 )           ( 144.6 )     ( 144.6 ) Share-based compensation         16.8               16.8     16.8 Stock issued, share-based compensation         ( 9.8 )           11.7   1.9     1.9 Common stock repurchased                     ( 286.1 )   ( 286.1 )     ( 286.1 ) Balance as of March 31, 2019 297.2   44.6   718.0   7,157.0   ( 1,218.0 )   ( 4,288.3 )   2,413.3   556.3   $ 2,969.6 Net income             370.7           370.7   23.4   394.1 Other comprehensive income (loss)                 ( 16.9 )       ( 16.9 )   —   ( 16.9 ) Dividends to noncontrolling interests                             ( 29.1 )   ( 29.1 ) Acquisition of noncontrolling interests         1.7               1.7   ( 1.4 )   0.3 Increase in noncontrolling interests from business combinations                             —   — Change in temporary equity         6.1               6.1       6.1 Common stock dividends declared ($0.65 per share)             ( 143.0 )           ( 143.0 )       ( 143.0 ) Share-based compensation         17.5               17.5       17.5 Stock issued, share-based compensation         ( 17.1 )           19.4   2.3       2.3 Common stock repurchased                     ( 241.5 )   ( 241.5 )       ( 241.5 ) Balance as of June 30, 2019 297.2   $ 44.6   $ 726.2   $ 7,384.7   $ ( 1,234.9 )   $ ( 4,510.4 )   $ 2,410.2   $ 549.2   $ 2,959.4 The accompanying notes to the consolidated financial statements are an integral part of these statements.  4 OMNICOM GROUP INC. AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF EQUITY Three and Six Months Ended June 30, 2018   (In millions, except per share amounts) (Unaudited)   Omnicom Group Inc.           Common Stock   Additional Paid-in Capital   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Treasury Stock   Shareholders’ Equity   Noncontrolling  Interests   Total Equity   Shares   Par Value           Balance as of December 31, 2017 297.2   $ 44.6   $ 828.3   $ 6,210.6   $ ( 963.0 )   $ ( 3,505.4 )   $ 2,615.1   $ 537.1   $ 3,152.2 Cumulative effect of accounting changes             23.6           23.6   0.4   24.0 Net income             264.1           264.1   20.6   284.7 Other comprehensive income (loss)                 87.9       87.9   5.0   92.9 Dividends to noncontrolling interests                             ( 16.3 )   ( 16.3 ) Acquisition of noncontrolling interests         ( 22.8 )               ( 22.8 )   ( 11.7 )   ( 34.5 ) Increase in noncontrolling interests from business combinations                             55.3   55.3 Change in temporary equity         9.1               9.1     9.1 Common stock dividends declared ($0.60 per share)             ( 138.2 )           ( 138.2 )       ( 138.2 ) Share-based compensation         17.5               17.5       17.5 Stock issued, share-based compensation         0.9           1.9   2.8       2.8 Common stock repurchased                     ( 232.7 )   ( 232.7 )       ( 232.7 ) Balance as of March 31, 2018 297.2   44.6   833.0   6,360.1   ( 875.1 )   ( 3,736.2 )   2,626.4   590.4   3,216.8 Net income             364.2           364.2   30.6   394.8 Other comprehensive income (loss)                 ( 292.2 )       ( 292.2 )   ( 29.8 )   ( 322.0 ) Dividends to noncontrolling interests                             ( 41.0 )   ( 41.0 ) Acquisition of noncontrolling interests         ( 15.0 )               ( 15.0 )   ( 13.1 )   ( 28.1 ) Increase in noncontrolling interests from business combinations                             0.4   0.4 Change in temporary equity         ( 11.1 )               ( 11.1 )       ( 11.1 ) Common stock dividends declared ($0.60 per share)             ( 136.6 )           ( 136.6 )       ( 136.6 ) Share-based compensation         17.6               17.6       17.6 Stock issued, share-based compensation         ( 13.0 )           17.6   4.6       4.6 Common stock repurchased                     ( 236.5 )   ( 236.5 )       ( 236.5 ) Balance as of June 30, 2018 297.2   $ 44.6   $ 811.5   $ 6,587.7   $ ( 1,167.3 )   $ ( 3,955.1 )   $ 2,321.4   $ 537.5   $ 2,858.9 The accompanying notes to the consolidated financial statements are an integral part of these statements.  5 OMNICOM GROUP INC. AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF CASH FLOWS (In millions) (Unaudited)   Six Months Ended June 30,   2019   2018 Cash Flows from Operating Activities:       Net income $ 673.9   $ 679.5 Adjustments to reconcile net income to net cash used in operating activities:       Depreciation and amortization of right-of-use assets 74.6   82.3 Amortization of intangible assets 42.8   54.5 Amortization of net deferred gain on interest rate swaps ( 6.4 )   ( 6.4 ) Share-based compensation 34.3   35.1 Other, net ( 5.5 )   13.9 Use of operating capital ( 1,306.6 )   ( 1,431.8 ) Net Cash Used In Operating Activities ( 492.9 )   ( 572.9 ) Cash Flows from Investing Activities:       Capital expenditures ( 48.8 )   ( 89.8 ) Acquisition of businesses and interests in affiliates, net of cash acquired ( 0.7 )   ( 207.3 ) Proceeds from disposition of subsidiaries and sale of investments 74.2   4.0 Net Cash Provided By (Used In) Investing Activities 24.7   ( 293.1 ) Cash Flows from Financing Activities:       Change in short-term debt 611.1   9.7 Dividends paid to common shareholders ( 280.4 )   ( 278.1 ) Repurchases of common stock ( 527.6 )   ( 469.2 ) Proceeds from stock plans 3.9   6.5 Acquisition of additional noncontrolling interests ( 3.1 )   ( 40.3 ) Dividends paid to noncontrolling interest shareholders ( 46.1 )   ( 57.3 ) Payment of contingent purchase price obligations ( 30.2 )   ( 51.3 ) Other, net ( 24.3 )   ( 22.4 ) Net Cash Used In Financing Activities ( 296.7 )   ( 902.4 ) Effect of foreign exchange rate changes on cash and cash equivalents 10.6   ( 114.3 )         Net Decrease in Cash and Cash Equivalents ( 754.3 )   ( 1,882.7 ) Cash and Cash Equivalents at the Beginning of Period 3,652.4   3,796.0 Cash and Cash Equivalents at the End of Period $ 2,898.1   $ 1,913.3 The accompanying notes to the consolidated financial statements are an integral part of these statements.  6 OMNICOM GROUP INC. AND SUBSIDIARIES NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) 1.    Presentation of Financial Statements The terms “Omnicom,” “the Company,” “we,” “our” and “us” each refer to Omnicom Group Inc. and its subsidiaries, unless the context indicates otherwise. The accompanying unaudited consolidated financial statements were prepared in accordance with generally accepted accounting principles in the United States, or U.S. GAAP or GAAP, for interim financial information and Article 10 of Regulation S-X of the Securities and Exchange Commission, or SEC. Accordingly, certain information and footnote disclosure have been condensed or omitted. In our opinion, the accompanying unaudited consolidated financial statements reflect all adjustments, consisting of normal recurring accruals, considered necessary for a fair presentation, in all material respects, of the information contained herein. These unaudited consolidated financial statements should be read in conjunction with our Annual Report on Form 10-K for the year ended  December 31, 2018 , or  2018  10-K. Results for the interim periods are not necessarily indicative of results that may be expected for the year. Accounting Changes Except for the changes discussed below, Omnicom has consistently applied the accounting policies to all periods presented in these unaudited consolidated financial statements. Adoption of ASC 842 On January 1, 2019, we adopted FASB Accounting Standards Codification, or ASC, Topic 842,  Leases , or ASC 842, which requires the recognition of the right-of-use assets and related operating and finance lease liabilities on the balance sheet. As permitted by ASC 842, we elected the adoption date of January 1, 2019, which is the date of initial application. As a result, the consolidated balance sheet prior to January 1, 2019 was not restated, continues to be reported under ASC Topic 840,  Leases , or ASC 840, which did not require the recognition of operating lease liabilities on the balance sheet, and is not comparative. Under ASC 842, all leases are required to be recorded on the balance sheet and are classified as either operating leases or finance leases. The lease classification affects the expense recognition in the income statement. Operating lease charges are recorded entirely in operating expenses. Finance lease charges are split, where amortization of the right-of-use asset is recorded in operating expenses and an implied interest component is recorded in interest expense. The expense recognition for operating leases and finance leases under ASC 842 is substantially consistent with ASC 840. As a result, there is no significant difference in our results of operations presented in our consolidated income statement and consolidated statement of comprehensive income for each period presented. We adopted ASC 842 using a modified retrospective approach for all leases existing at January 1, 2019. The adoption of ASC 842 had a substantial impact on our balance sheet. The most significant impact was the recognition of the operating lease right-of-use assets and the liability for operating leases. The accounting for finance leases (capital leases) was substantially unchanged. Accordingly, upon adoption, leases that were classified as operating leases under ASC 840 were classified as operating leases under ASC 842, and we recorded an adjustment of  $ 1,490.1  million  to operating lease right-of-use assets and the related lease liability. The lease liability is based on the present value of the remaining minimum lease payments, determined under ASC 840, discounted using our secured incremental borrowing rate at the effective date of January 1, 2019, using the original lease term as the tenor. As permitted under ASC 842, we elected several practical expedients that permit us to not reassess (1) whether a contract is or contains a lease, (2) the classification of existing leases, and (3) whether previously capitalized costs continue to qualify as initial indirect costs. The application of the practical expedients did not have a significant impact on the measurement of the operating lease liability. The impact of the adoption of ASC 842 on the balance sheet at December 31, 2018 was (in millions):   As Reported December 31, 2018   Adoption of ASC 842 Increase (Decrease)   Balance January 1, 2019 Other current assets $ 1,241.4   $ ( 29.2 )   $ 1,212.2 Operating lease right-of-use assets —   1,306.5   1,306.5 Total assets 24,617.0   1,277.3   25,894.3 Other current liabilities 1,958.6   172.5   2,131.1 Long-term liability - Operating leases —   1,258.5   1,258.5 Long-term liabilities 1,197.8   ( 153.7 )   1,044.1 Total liabilities and equity 24,617.0   1,277.3   25,894.3  7 We lease substantially all our office space, office furniture and technology equipment used to conduct our business. We adopted ASC 842 effective January 1, 2019. For contracts entered into on or after the effective date, at the inception of a contract we assess whether the contract is, or contains, a lease. Our assessment is based on: (1) whether the contract involves the use of a distinct identified asset, (2) whether we obtain the right to substantially all the economic benefit from the use of the asset throughout the period, and (3) whether we have the right to direct the use of the asset. At inception of a lease, we allocate the consideration in the contract to each lease component based on its relative stand-alone price to determine the lease payments. Leases entered into prior to January 1, 2019, were accounted for under ASC 840 and were not reassessed. Leases are classified as either finance leases or operating leases. A lease is classified as a finance lease if any one of the following criteria are met: the lease transfers ownership of the asset by the end of the lease term, the lease contains an option to purchase the asset that is reasonably certain to be exercised, the lease term is for a major part of the remaining useful life of the asset or the present value of the lease payments equals or exceeds substantially all of the fair value of the asset. A lease is classified as an operating lease if it does not meet any one of the criteria. Substantially all our operating leases represent office space leases, and substantially all our finance leases represent office furniture and technology equipment leases. For all leases a right-of-use asset and lease liability are recognized at the lease commencement date. The right-of-use asset represents the right to use the leased asset for the lease term. The lease liability represents the present value of the lease payments under the lease. The right-of-use asset is initially measured at cost, which includes the initial lease liability, plus any initial direct costs incurred, consisting mainly of brokerage commissions, less any lease incentives received. All right-of-use assets are reviewed for impairment. The lease liability is initially measured at the present value of the lease payments, discounted using the interest rate implicit in the lease or, if that rate cannot be readily determined, our secured incremental borrowing rate for the same term as the underlying lease. For our real estate and other operating leases, we use our secured incremental borrowing rate. For our finance leases, we use the rate implicit in the lease or our secured incremental borrowing rate if the implicit lease rate cannot be determined. Lease payments included in the measurement of the lease liability comprise: the fixed noncancelable lease payments, payments for optional renewal periods where it is reasonably certain the renewal period will be exercised, and payments for early termination options unless it is reasonably certain the lease will not be terminated early. Some of our real estate leases contain variable lease payments, including payments based on an index or rate. Variable lease payments based on an index or rate are initially measured using the index or rate in effect at lease commencement. Lease components are included in the measurement of the initial lease liability, including fixed payments for real estate taxes and insurance for certain office space leases. Additional payments based on the change in an index or rate, or payments based on a change in our portion of the operating expenses, including real estate taxes and insurance, are recorded as a period expense when incurred. Lease modifications result in remeasurement of the lease liability. Operating lease expense consists of the lease payments plus any initial direct costs, primarily brokerage commissions, and is recognized on a straight-line basis over the lease term. Included in lease expense are any variable lease payments incurred in the period that were not included in the initial lease liability. Finance lease expense consists of the amortization of the right-of-use asset on a straight-line basis over the lease term and interest expense determined on an amortized cost basis, and finance lease payments are allocated between a reduction of the lease liability and interest expense. We have elected not to recognize right-of-use assets and lease liabilities for short-term leases that have a term of 12 months or less. The effect of short-term leases on our right-of-use asset and lease liability was not material. Adoption of ASU 2018-02 On January 1, 2019, we adopted ASU 2018-02,  Income Statement - Reporting Comprehensive Income: Reclassification of Certain Tax effects from Accumulated Other Comprehensive Income , or ASU 2018-02, which requires the reclassification from accumulated other comprehensive income to retained earnings for the stranded tax effects arising from the change in the reduction of the U.S. federal statutory income tax rate to 21% from 35%. The tax effects of items included in accumulated comprehensive income at December 31, 2017 did not reflect the appropriate tax rate. The adoption of ASU 2018-02 resulted in reclassification between accumulated other comprehensive income and retained earnings of  $ 22.3  million , and had no impact on our results of operations or financial position.  8 2.    Revenue Nature of our services We provide an extensive range of advertising, marketing and corporate communications services through various client-centric networks that are organized to meet specific client objectives. Our branded networks and agencies operate in all major markets and provide services in the following fundamental disciplines: advertising, customer relationship management, or CRM, which includes CRM Consumer Experience and CRM Execution & Support, public relations and healthcare. Advertising includes creative services, as well as strategic media planning and buying and data analytics services. CRM Consumer Experience includes Omnicom’s Precision Marketing Group and digital/direct agencies, as well as our branding, shopper marketing and experiential marketing agencies, and CRM Execution & Support includes field marketing, sales support, merchandising and point of sale, as well as other specialized marketing and custom communications services. Public relations services include corporate communications, crisis management, public affairs and media and media relations services. Healthcare includes advertising and media services to global healthcare clients. At the core of all our services is the ability to create or develop a client’s marketing or corporate communications message into content that can be delivered to a target audience across different communications mediums. Our client-centric business model requires that multiple agencies within Omnicom collaborate in formal and informal virtual client networks utilizing our key client matrix organization structure. This collaboration allows us to cut across our internal organizational structures to execute our clients’ marketing requirements in a consistent and comprehensive manner.  In addition to collaborating through our client service models, our agencies and networks collaborate across internally developed technology platforms. Annalect, our proprietary data and analytics platform, serves as the strategic resource for all of our agencies and networks to share when developing client service strategies across our virtual networks. Omni, our people-based precision marketing and insights platform, identifies and defines personalized consumer experiences at scale across creative, media and CRM, as well as other disciplines. Revenue by discipline for the  three and six  months ended  June 30, 2019  and  2018  was (in millions):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Advertising $ 2,093.9   $ 2,067.6   $ 4,015.3   $ 3,968.9 CRM Consumer Experience 659.5   660.0   1,265.3   1,294.9 CRM Execution & Support 326.1   498.7   675.6   1,007.2 Public Relations 349.3   362.7   683.4   709.1 Healthcare 291.0   270.6   549.1   509.1   $ 3,719.8   $ 3,859.6   $ 7,188.7   $ 7,489.2 Economic factors affecting our revenue Global economic conditions have a direct impact on our revenue. Adverse economic conditions pose a risk that our clients may reduce, postpone or cancel spending for our services, which would impact our revenue. Revenue in our principal geographic markets for the  three and six  months ended  June 30, 2019  and  2018  was (in millions):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Americas:               North America $ 2,118.4   $ 2,097.4   $ 4,107.6   $ 4,083.1 Latin America 96.9   115.1   185.8   223.5 EMEA:               Europe 1,035.9   1,142.6   1,981.4   2,212.7 Middle East and Africa 61.0   70.2   140.0   143.6 Asia-Pacific 407.6   434.3   773.9   826.3   $ 3,719.8   $ 3,859.6   $ 7,188.7   $ 7,489.2 The Americas comprises North America, which includes the United States, Canada and Puerto Rico, and Latin America, which includes South America and Mexico. EMEA comprises Europe, the Middle East and Africa. Asia-Pacific comprises Australia, China, India, Japan, Korea, New Zealand, Singapore and other Asian countries.  9 Contract assets and liabilities Work in process includes contract assets, unbilled fees and costs, and media and production costs. Contract liabilities primarily consist of customer advances.  At  June 30, 2019 ,  December 31, 2018  and  June 30, 2018  work in process and contract liabilities were (in millions):   June 30, 2019   December 31, 2018   June 30, 2018 Work in process:              Contract assets and unbilled fees and costs $ 785.7   $ 540.1   $ 709.2    Media and production costs 577.8   621.4   644.3   $ 1,363.5   $ 1,161.5   $ 1,353.5 Contract liabilities:              Customer advances $ 1,094.1   $ 1,159.0   $ 1,147.1 Work in process represents accrued costs incurred on behalf of customers, including media and production costs, and fees and other third-party costs that have not yet been billed. Media and production costs are billed during the production process in accordance with the terms of the client contract. Contract assets, which primarily include incentive fees, are not material and will be billed to clients in accordance with the terms of the client contract. Substantially all unbilled fees and costs will be billed within the next 30 days. The contract liability primarily represents advance billings to customers in accordance with the terms of the client contracts, primarily for the reimbursement of third-party costs that are generally incurred in the near term. There were no impairment losses to the contract assets recorded in  2019 . 3.    New Accounting Standards In June 2016, the FASB issued ASU 2016-13,  Financial Instruments - Credit Losses: Measurement of Credit Losses on Financial Instruments , or ASU 2016-13, which changes the impairment model for most financial assets. The new model uses a forward-looking expected loss method, which will generally result in earlier recognition of allowances for losses. ASU 2016-13 is effective for annual and interim periods beginning after December 15, 2019 and early adoption is permitted for annual and interim periods beginning after December 15, 2018. We will adopt ASU 2016-13 on January 1, 2020. However, we are not yet in a position to assess the impact of the new standard on our results of operations or financial position. In August 2018, the FASB issued ASU 2018-15,  Intangibles - Goodwill and Other, Internal-Use Software , or ASU 2018-15, which aligns the accounting for implementation costs incurred in a cloud computing arrangement that is a service contract with the requirements for capitalizing implementation costs incurred to develop or obtain internal-use software. ASU 2018-15 is effective for annual and interim periods beginning after December 15, 2019 and early adoption is permitted at any interim period. ASU 2018-15 may be adopted either on a prospective basis, either upon early adoption or the effective date for implementation costs for new or existing arrangements incurred on or after the adoption date, or on a full retrospective basis to the earliest period presented. We are not yet in a position to assess the adoption date or the adoption method or to assess impact of the new standard on our results of operations or financial position. 4.    Net Income per Share The computations of basic and diluted net income per share for the  three and six  months ended  June 30, 2019  and  2018  were (in millions, except per share amounts):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Net Income Available for Common Shares:               Net income - Omnicom Group Inc. $ 370.7   $ 364.2   $ 633.9   $ 628.3 Weighted Average Shares:               Basic 219.6   226.8   221.4   228.5 Dilutive stock options and restricted shares 1.3   1.3   1.1   1.3 Diluted 220.9   228.1   222.5   229.8                 Anti-dilutive stock options and restricted shares 0.9   1.0   0.9   1.0 Net Income per Share - Omnicom Group Inc.:               Basic $ 1.69   $ 1.61   $ 2.86   $ 2.75 Diluted $ 1.68   $ 1.60   $ 2.85   $ 2.73  10 5.    Goodwill and Intangible Assets Goodwill and intangible assets at  June 30, 2019  and  December 31, 2018  were (in millions):   2019   2018   Gross Carrying Value   Accumulated Amortization   Net Carrying Value   Gross Carrying Value   Accumulated Amortization   Net Carrying Value Goodwill $ 9,878.3   $ ( 513.6 )   $ 9,364.7   $ 9,898.6   $ ( 514.3 )   $ 9,384.3 Intangible assets:                       Purchased and internally developed software $ 352.3   $ ( 298.9 )   $ 53.4   $ 356.4   $ ( 302.2 )   $ 54.2 Customer related and other 749.4   ( 449.3 )   300.1   763.8   ( 435.2 )   328.6   $ 1,101.7   $ ( 748.2 )   $ 353.5   $ 1,120.2   $ ( 737.4 )   $ 382.8 Changes in goodwill for the  six  months ended  June 30, 2019  and  2018  were (in millions):   2019   2018 January 1 $ 9,384.3   $ 9,337.5 Acquisitions 0.5   164.9 Noncontrolling interests in acquired businesses 0.7   55.7 Contingent purchase price of acquired businesses 0.2   57.5 Dispositions ( 19.1 )   ( 0.8 ) Foreign currency translation ( 1.9 )   ( 172.2 ) June 30 $ 9,364.7   $ 9,442.6 6.    Debt Credit Facilities At  June 30, 2019 , our short-term liquidity sources include a  $ 2.5  billion  revolving credit facility, or Credit Facility, expiring on  July 31, 2021 , uncommitted credit lines aggregating  $ 1.5  billion  and the ability to issue up to  $ 2  billion  of commercial paper. There were  no  outstanding commercial paper issuances or borrowings under the Credit Facility or the uncommitted credit lines at  June 30, 2019  and  December 31, 2018 .  Available and unused credit lines at  June 30, 2019  and  December 31, 2018  were (in millions):   2019   2018 Credit Facility $ 2,500.0   $ 2,500.0 Uncommitted credit lines 1,488.2   1,231.6 Available and unused credit lines $ 3,988.2   $ 3,731.6 The Credit Facility contains financial covenants that require us to maintain a Leverage Ratio of consolidated indebtedness to consolidated EBITDA of no more than 3 times for the most recently ended 12-month period (EBITDA is defined as earnings before interest, taxes, depreciation and amortization) and an Interest Coverage Ratio of consolidated EBITDA to interest expense of at least 5 times for the most recently ended 12-month period.   At June 30, 2019 we were in compliance with these covenants as our Leverage Ratio was 2.4 times and our Interest Coverage Ratio was 9.6 times.  The Credit Facility does not limit our ability to declare or pay dividends or repurchase our common stock. Short-Term Debt In February 2019, Omnicom Finance Limited, or OFL, a wholly owned subsidiary of Omnicom, issued  € 520  million  of short-term senior notes in a private placement to an investor outside the United States. The notes are unsecured, non-interest bearing and mature on August 14, 2019. The notes are fully and unconditionally guaranteed by Omnicom and rank equal in right of payment with all existing and future unsecured senior indebtedness of OFL. Short-term debt at  June 30, 2019  and  December 31, 2018  was  $ 608.5  million  and  $ 8.1  million , respectively. Due to its short-term nature, the carrying value of the short-term debt approximates fair value.  11 Long-Term Debt Long-term debt at  June 30, 2019  and  December 31, 2018  was (in millions):   2019   2018 6.25% Senior Notes due 2019 $ 500.0   $ 500.0 4.45% Senior Notes due 2020 1,000.0   1,000.0 3.625% Senior Notes due 2022 1,250.0   1,250.0 3.65% Senior Notes due 2024 750.0   750.0 3.60% Senior Notes due 2026 1,400.0   1,400.0   4,900.0   4,900.0 Unamortized premium (discount), net 4.2   4.9 Unamortized debt issuance costs ( 14.4 )   ( 16.4 ) Unamortized deferred gain from settlement of interest rate swaps 38.9   48.0 Fair value adjustment attributed to outstanding interest rate swaps ( 3.3 )   ( 52.8 )   4,925.4   4,883.7 Current portion ( 899.5 )   ( 499.6 ) Long-term debt $ 4,025.9   $ 4,384.1 Omnicom and its wholly owned finance subsidiary, Omnicom Capital Inc., or OCI, are co-obligors under all the senior notes (other than the OFL notes). The senior notes are a joint and several liability of Omnicom and OCI, and Omnicom unconditionally guarantees OCI’s obligations with respect to the senior notes. OCI provides funding for our operations by incurring debt and lending the proceeds to our operating subsidiaries. OCI’s assets primarily consist of cash and cash equivalents and intercompany loans made to our operating subsidiaries, and the related interest receivable. There are no restrictions on the ability of OCI or Omnicom to obtain funds from our subsidiaries through dividends, loans or advances. The senior notes are senior unsecured obligations that rank equal in right of payment with all existing and future unsecured senior indebtedness. At  June 30, 2019 , we recorded a long-term receivable of  $ 4.7  million  in connection with the  $ 750  million  fixed-to-floating interest rate swap on our 3.65% Senior Notes due 2024, or 2024 Notes, and a long-term liability of  $ 8.0  million  in connection with the  $ 500  million  fixed-to-floating interest rate swap on our 3.60% Senior Notes due 2026, or 2026 Notes. The receivable and liability represent the fair values of the swaps on the 2024 Notes and 2026 Notes that were substantially offset by the change in the fair values of the notes. The fixed-to-floating interest rate swaps have the economic effect of converting our debt portfolio to approximately  75%  fixed rate obligations and  25%  floating rate obligations. Our  $ 500  million   6.25% Senior Notes due 2019 , or 2019 Notes, matured on July 15, 2019 and were retired. As of  June 30, 2019 , the 2019 Notes were classified as current. On July 8, 2019, Omnicom Finance Holdings plc, or OFHP, a U.K. based wholly owned subsidiary of Omnicom, issued  € 500  million   0.80 %  Senior Notes due  July 8, 2027  and  € 500  million   1.40 %  Senior Notes due  July 8, 2031 , collectively the Euro Notes. The U.S. Dollar equivalent of the net proceeds, after deducting the underwriting discount and offering expenses, was  $ 1.1  billion . A portion of the net proceeds was used to retire the outstanding 2019 Notes at maturity. The remaining net proceeds will be used to redeem  $ 400  million  aggregate principal amount of the outstanding  $ 1  billion  4.45% Senior Notes due 2020, or the 2020 Notes, on August 1, 2019 and for general corporate purposes, which could include working capital expenditures and repayment of short-term or long-term debt. Omnicom and OCI have, jointly and severally, fully and unconditionally guaranteed OFHP’s obligations with respect to the Euro Notes. OFHP’s assets consist of its investments in several wholly owned finance companies that function as treasury centers, which provide funding for various operating companies in Europe, Brazil, Australia and other countries in the Asia-Pacific region. The finance companies’ assets consist of intercompany loans that they make or have made to the operating companies in their respective regions and the related interest receivables. There are no restrictions on the ability of Omnicom, OCI or OFHP to obtain funds from their subsidiaries through dividends, loans or advances. The Euro Notes and the related guarantees are senior unsecured obligations that rank equal in right of payment with all existing and future unsecured senior indebtedness of OFHP and each of Omnicom and OCI, respectively. On July 2, 2019, Omnicom announced the partial redemption of  $ 400  million  aggregate principal amount of the outstanding 2020 Notes for redemption on  August 1, 2019  at a price equal to  100%  of the principal amount of the 2020 Notes being redeemed plus accrued interest and a make-whole premium as specified in the indenture. At  June 30, 2019 , we classified  $ 400  million  of the 2020 Notes as current.  12 7.    Segment Reporting Our five branded agency networks operate in the advertising, marketing and corporate communications services industry, and are organized into agency networks, virtual client networks, regional reporting units and operating groups or practice areas. Our networks, virtual client networks and agencies increasingly share clients and provide clients with integrated services. The main economic components of each agency are employee compensation and related costs and direct service costs and occupancy and other costs which include rent and occupancy costs, technology costs and other overhead expenses. Therefore, given these similarities, we aggregate our operating segments, which are our five agency networks, into one reporting segment. The agency networks' regional reporting units comprise three principal regions; the Americas, EMEA and Asia-Pacific. The regional reporting units monitor the performance and are responsible for the agencies in their region. Agencies within the regional reporting units serve similar clients in similar industries and in many cases the same clients and have similar economic characteristics. Revenue and long-lived assets and goodwill by geographic region at and for the  three and six  months ended  June 30, 2019  and  2018  were (in millions):   Americas   EMEA   Asia-Pacific 2019           Revenue - Three months ended $ 2,215.3   $ 1,096.9   $ 407.6 Revenue - Six months ended 4,293.4   2,121.4   773.9 Long-lived assets and goodwill 7,853.9   2,985.0   640.9 2018           Revenue - Three months ended $ 2,212.5   $ 1,212.8   $ 434.3 Revenue - Six months ended 4,306.6   2,356.3   826.3 Long-lived assets and goodwill 6,825.4   2,757.9   556.5 The Americas comprises North America, which includes the United States, Canada and Puerto Rico, and Latin America, which includes South America and Mexico. EMEA comprises Europe, the Middle East and Africa. Asia-Pacific comprises Australia, China, India, Japan, Korea, New Zealand, Singapore and other Asian countries. Revenue in the United States for the  three and six  months ended  June 30, 2019  was  $ 2,005.2  million  and  $ 3,889.4  million , respectively, and for the  three and six  months ended  June 30, 2018  was  $ 1,990.8  million  and  $ 3,871.9  million , respectively. The increase in long-lived assets and goodwill from  2018  to  2019  is primarily the result of recording the operating lease right-of-use assets upon the adoption of ASC 842 on January 1, 2019 (see Note 1) partially offset by the impact of changes in the value of foreign currencies against the U.S. Dollar during the periods. 8.    Income Taxes Our effective tax rate for the  six  months ended  June 30, 2019   increased  period-over-period to  25.7 %  from  25.2 % . The effective tax rate for  2019  reflects a benefit of  $ 10.8  million  primarily from the net favorable settlements of uncertain tax positions in certain jurisdictions, which resulted in the recognition of net deferred tax assets in the  second  quarter of  2019 . At  June 30, 2019 , our unrecognized tax benefits were  $ 176.6  million . Of this amount, approximately  $ 170.1  million  would affect our effective tax rate upon resolution of the uncertain tax positions. 9.    Pension and Other Postemployment Benefits Defined Benefit Pension Plans The components of net periodic benefit expense for the  six  months ended  June 30, 2019  and  2018  were (in millions):   2019   2018 Service cost $ 4.3   $ 4.0 Interest cost 3.2   3.6 Expected return on plan assets ( 0.7 )   ( 1.4 ) Amortization of prior service cost 0.4   2.2 Amortization of actuarial losses 0.5   3.3   $ 7.7   $ 11.7 We contributed  $ 0.7  million  and  $ 1.1  million  to our defined benefit pension plans in the  six  months ended  June 30, 2019  and  2018 , respectively.  13 Postemployment Arrangements The components of net periodic benefit expense for the  six  months ended  June 30, 2019  and  2018  were (in millions):   2019   2018 Service cost $ 2.2   $ 2.4 Interest cost 2.2   1.8 Amortization of prior service cost 2.2   1.7 Amortization of actuarial losses 0.5   0.9   $ 7.1   $ 6.8 10.   Repositioning Liabilities At  June 30, 2019  and  December 31, 2018 , the liability for incremental severance and office lease consolidation and termination incurred in connection with our repositioning actions taken in the third quarter of  2018  was  $ 42.3  million  and  $ 78.9  million , respectively. We expect that substantially all the liabilities will be paid by the end of  2019 . 11.    Supplemental Cash Flow Data The use of operating capital for the  six  months ended  June 30, 2019  and  2018  was (in millions):   2019   2018 (Increase) decrease in accounts receivable $ 419.2   $ 1,173.6 (Increase) decrease in work in process and other current assets ( 305.0 )   ( 354.4 ) Increase (decrease) in accounts payable ( 1,044.9 )   ( 1,803.2 ) Increase (decrease) in customer advances, taxes payable and other current liabilities ( 396.2 )   ( 459.3 ) Change in other assets and liabilities, net 20.3   11.5   $ ( 1,306.6 )   $ ( 1,431.8 )         Income taxes paid $ 241.9   $ 276.4 Interest paid $ 119.8   $ 115.4 Supplemental non-cash information for the  six  months ended  June 30, 2019  (in millions):   Operating Leases   Finance Leases Net increase in lease liability $ 1,703.8   $ 28.7 12.   Leases Substantially all our operating lease right-of-use assets and operating lease liability represent leases for office space used to conduct our business. Substantially all our finance leases represent office furniture and technology equipment leases. Lease cost for the  six  months ended  June 30, 2019  was comprised of (in millions):   Six Months Ended June 30,   2019 Operating leases:      Lease cost $ 157.6    Variable lease cost 16.8    Sublease income ( 2.7 ) Operating lease expense 171.7     Short-term lease rent expense 2.5 Finance leases:      Amortization of right-of-use assets 20.7    Interest on lease liability 2.5   23.2     Total lease cost $ 197.4  14 The right-of-use assets at  June 30, 2019  were comprised of (in millions):   Real Estate   Equipment    Total Operating leases $ 1,410.2   $ 25.1   $ 1,435.3 Finance leases —   131.7   131.7   $ 1,410.2   $ 156.8   $ 1,567.0 The weighted average remaining lease term and the weighted average discount rate for operating and finance leases at  June 30, 2019  was:   Operating Leases   Finance Leases Weighted average remaining lease term (years) 8.4   3.0 Weighted average discount rate 3.9 %   4.2 % The following table reconciles the undiscounted cash flows for the operating and finance leases at  June 30, 2019  to the operating and finance lease liabilities recorded on the balance sheet (in millions):   Operating Leases   Finance Leases 2019 Remainder $ 173.0   $ 23.7 2020 317.5   44.5 2021 264.5   35.7 2022 213.2   22.1 2023 166.5   10.4 2024 145.3   4.3 Thereafter 615.3   3.0 Total undiscounted lease payments 1,895.3   143.7 Less: Imputed interest 298.3   10.1 Present value of lease payments $ 1,597.0   $ 133.6         Other current liabilities $ 279.1   $ 42.8 Long-term liability - Operating leases 1,317.9   Long-term liabilities   90.8   $ 1,597.0   $ 133.6 13.    Commitments and Contingent Liabilities In the ordinary course of business, we are involved in various legal proceedings. We do not presently expect that these proceedings will have a material adverse effect on our results of operations or financial position.  15 14.    Equity Changes in accumulated other comprehensive income (loss), net of income taxes, for the  six  months ended  June 30, 2019  and  2018  were (in millions): 2019 Cash Flow Hedge   Available-for-Sale Securities   Defined Benefit Pension Plans and Postemployment Arrangements   Foreign  Currency Translation   Total January 1 $ ( 22.3 )   $ —   $ ( 69.3 )   $ ( 1,136.9 )   $ ( 1,228.5 ) Cumulative effect of accounting change ( 5.6 )   —   ( 16.7 )   —   ( 22.3 ) Other comprehensive income (loss) before reclassifications —   —   —   11.9   11.9 Reclassification from accumulated other comprehensive income (loss) 2.0   —   2.0   —   4.0 June 30 $ ( 25.9 )   $ —   $ ( 84.0 )   $ ( 1,125.0 )   $ ( 1,234.9 ) 2018                   January 1 $ ( 26.3 )   $ ( 0.3 )   $ ( 88.4 )   $ ( 848.0 )   $ ( 963.0 ) Other comprehensive income (loss) before reclassifications —   —   —   ( 212.3 )   ( 212.3 ) Reclassification from accumulated other comprehensive income (loss) 2.0   0.3   5.7   —   8.0 June 30 $ ( 24.3 )   $ —   $ ( 82.7 )   $ ( 1,060.3 )   $ ( 1,167.3 ) 15.    Fair Value Financial assets and liabilities measured at fair value on a recurring basis at  June 30, 2019  and  December 31, 2018  were (in millions): 2019 Level 1   Level 2   Level 3   Total Assets:               Cash and cash equivalents $ 2,898.1           $ 2,898.1 Short-term investments 5.4           5.4 Marketable equity investments 1.5           1.5 Interest rate and foreign currency derivative instruments     $ 4.9       4.9 Liabilities:               Interest rate and foreign currency derivative instruments     $ 8.4       $ 8.4 Contingent purchase price obligations         $ 120.7   120.7 2018               Assets:               Cash and cash equivalents $ 3,652.4           $ 3,652.4 Short-term investments 5.5           5.5 Marketable equity investments 1.5           1.5 Liabilities:               Interest rate and foreign currency derivative instruments     $ 52.9       $ 52.9 Contingent purchase price obligations         $ 146.5   146.5  16 Changes in contingent purchase price obligations for the  six  months ended  June 30, 2019  and  2018  were (in millions):   2019   2018 January 1 $ 146.5   $ 215.6 Acquisitions 1.8   79.7 Revaluation and interest 1.5   4.9 Payments ( 28.9 )   ( 51.3 ) Foreign currency translation ( 0.2 )   ( 13.6 ) June 30 $ 120.7   $ 235.3 The carrying amount and fair value of our financial assets and liabilities at  June 30, 2019  and  December 31, 2018  were (in millions):   2019   2018   Carrying Amount   Fair Value   Carrying Amount   Fair Value Assets:                 Cash and cash equivalents $ 2,898.1   $ 2,898.1   $ 3,652.4   $ 3,652.4   Short-term investments 5.4   5.4   5.5   5.5 Marketable equity investments 1.5   1.5   1.5   1.5   Interest rate and foreign currency derivative instruments 4.9   4.9   —   —   Non-marketable equity securities 10.3   10.3   11.8   11.8 Liabilities:                 Short-term debt $ 608.5   $ 608.5   $ 8.1   $ 8.1   Interest rate and foreign currency derivative instruments 8.4   8.4   52.9   52.9   Contingent purchase price obligations 120.7   120.7   146.5   146.5   Long-term debt, including current portion 4,925.4   5,031.3   4,883.7   4,821.3 The estimated fair value of the foreign currency and interest rate derivative instruments is determined using model-derived valuations, taking into consideration foreign currency rates for the foreign currency derivatives and readily observable inputs for LIBOR interest rates and yield curves to derive the present value of the future cash flows for the interest rate swap derivatives and counterparty credit risk for each. The estimated fair value of the contingent purchase price obligations is calculated in accordance with the terms of each acquisition agreement and is discounted. The fair value of debt is based on quoted market prices. 16.    Subsequent Events We have evaluated events subsequent to the balance sheet date and determined other than as described in Note 6 above, there have not been any events that have occurred that would require adjustment to or disclosure in the consolidated financial statements.  17 Item 2.  Management's Discussion and Analysis of Financial Condition and Results of Operations EXECUTIVE SUMMARY We are a strategic holding company providing advertising, marketing and corporate communications services to clients through our branded networks and agencies around the world. On a global, pan-regional and local basis, our networks and agencies provide a comprehensive range of services in the following fundamental disciplines: advertising, CRM, which includes CRM Consumer Experience and CRM Execution & Support, public relations and healthcare. Our business model was built and continues to evolve around our clients. While our networks and agencies operate under different names and frame their ideas in different disciplines, we organize our services around our clients. Our fundamental business principle is that our clients’ specific marketing requirements are the central focus of how we structure our service offerings and allocate our resources. This client-centric business model requires that multiple agencies within Omnicom collaborate in formal and informal virtual client networks utilizing our key client matrix organization structure. This collaboration allows us to cut across our internal organizational structures to execute our clients’ marketing requirements in a consistent and comprehensive manner. We use our client-centric approach to grow our business by expanding our service offerings to existing clients, moving into new markets and obtaining new clients. In addition, we pursue selective acquisitions of complementary companies with strong entrepreneurial management teams that typically currently serve or could serve our existing clients. As a leading global advertising, marketing and corporate communications company, we operate in all major markets and have a large and diverse client base. For the  six  months ended  June 30, 2019 , our largest client accounted for  3.0%  of our revenue and our 100 largest clients, which represent many of the world's major marketers, accounted for approximately  52%  of our revenue. Our business is spread across a number of industry sectors with no one industry comprising more than  14%  of our revenue for the  six  months ended  June 30, 2019 . Although our revenue is generally balanced between the United States and international markets and we have a large and diverse client base, we are not immune to general economic downturns. As described in more detail below, for the  six  months ended  June 30, 2019 , revenue  decreased   $300.5 million , or  4.0% , compared to the  six  months ended  June 30, 2018 . Changes in foreign exchange rates  reduced  revenue  $222.4 million , or  3.0% , acquisition revenue, net of disposition revenue,  reduced  revenue  $277.7 million , or  3.7% , reflecting the disposition of certain non-strategic businesses, and organic growth  increased  revenue  $199.6 million , or  2.7% . Global economic conditions have a direct impact on our business and financial performance. Adverse global or regional economic conditions pose a risk that our clients may reduce, postpone or cancel spending on advertising, marketing and corporate communications services, which would reduce the demand for our services. Revenue is typically lower in the first and third quarters a nd higher i n the second and fourth quarters, reflecting client spending patterns during the year and additional project work that usually occurs in the fourth quarter. Additionally, certain global events targeted by major marketers for advertising expenditures, such as the FIFA World Cup and the Olympics, and certain national events, such as the U.S. election process, may affect our revenue period-over-period in certain businesses. Typically, these events do not have a significant impact on our revenue in any period. In the first  six  months of  2019 , as compared to the first  six  months of  2018 , improved organic growth in our advertising and media and healthcare businesses in North America was partially offset by negative performance and disposition activity primarily in our CRM Execution & Support disciplines. In Europe, most of our major markets had modest organic growth primarily driven by our advertising and media businesses, which was offset by the disposition of Sellbytel in the third quarter of  2018 , the negative impact of changes in foreign exchange rates and negative performance in our CRM Consumer Experience businesses. The economic and political conditions in the E.U., including the status of Brexit, remain uncertain. In Latin America, continued unstable economic and political conditions in Brazil contributed to weak performance in the region and offset modest growth in Mexico. In Asia-Pacific, modest organic growth in most countries was partially offset by negative performance in China, which faced a difficult comparison to the prior year period. The economic and fiscal issues facing the countries in which we operate can cause economic uncertainty and volatility; however, the impact on our business varies by country. We monitor economic conditions closely, as well as client revenue levels and other factors and, in response to reductions in our client revenue, if necessary, we will take actions available to us to align our cost structure and manage our working capital. There can be no assurance whether, or to what extent, our efforts to mitigate any impact of future adverse economic conditions, reductions in client revenue, changes in client creditworthiness and other developments will be effective. Certain business trends have had a positive impact on our business and industry. These trends include clients increasingly expanding the focus of their brand strategies from national markets to pan-regional and global markets and integrating traditional and non-traditional marketing channels, as well as utilizing new communications technologies and emerging digital platforms. As clients increase their demands for marketing effectiveness and efficiency, they have made it a practice to consolidate their business within one service provider in the pursuit of a single engagement covering all consumer touch points. We have structured our business around these trends. We believe that our key client matrix organization structure approach to collaboration and integration of our services and solutions has provided a competitive advantage to our business in the past and we expect this to continue over the medium and long term.  18 Driven by our clients’ continuous demand for more effective and efficient marketing activities, we strive to provide an extensive range of advertising, marketing and corporate communications services through various client-centric networks that are organized to meet specific client objectives. These services include, among others, advertising, branding, content marketing, corporate social responsibility consulting, crisis communications, custom publishing, data analytics, database management, digital/direct marketing, digital transformation, entertainment marketing, experiential marketing, field marketing, financial/corporate business-to-business advertising, graphic arts/digital imaging, healthcare marketing and communications, in-store design, interactive marketing, investor relations, marketing research, media planning and buying, merchandising and point of sale, mobile marketing, multi-cultural marketing, non-profit marketing, organizational communications, package design, product placement, promotional marketing, public affairs, public relations, retail marketing, sales support, search engine marketing, shopper marketing, social media marketing and sports and event marketing. In the near term, barring unforeseen events and excluding the impact of changes in foreign exchange rates, because of continued improvement in the operating performance of many of our agencies, as well as new business activities, we expect our organic revenue to increase modestly for the remainder of  2019  and over the long term to be in excess of the weighted average nominal GDP growth in our major markets. We also expect to continue to identify acquisition opportunities intended to build upon the core capabilities of our strategic disciplines and business platforms, expand our operations in high-growth and emerging markets and enhance our capabilities to leverage new technologies that are being used by marketers today. We continually evaluate our portfolio of businesses to identify areas for investment and acquisition opportunities, as well as to identify non-strategic or underperforming businesses for disposition. In the first quarter of  2019  and in  2018 , we disposed of certain businesses, primarily in our CRM Execution & Support discipline, and in the third quarter of  2018  we took certain repositioning actions in an effort to continue to improve our strategic position and achieve operating efficiencies. We expect the reduction to our earnings from our disposition activity to be substantially offset by the savings achieved from the operating efficiency and cost reduction activities, as well as any incremental earnings from new acquisition activity, and we expect a net reduction to revenue from net disposition activity of 3% for the current year. Given our size and breadth, we manage our business by monitoring several financial indicators. The key indicators that we focus on are revenue and operating expenses. We analyze revenue growth by reviewing the components and mix of the growth, including growth by principal regional market and marketing discipline, the impact from foreign currency exchange rate changes, growth from acquisitions, net of dispositions and growth from our largest clients. Operating expenses are comprised of cost of services, selling, general and administrative expenses, or SG&A, and depreciation and amortization. For the quarter ended  June 30, 2019 , our revenue  decreased   3.6%  compared to the quarter ended  June 30, 2018 . Changes in foreign exchange rates  reduced  revenue  2.6% , acquisition revenue, net of disposition revenue,  reduced  revenue  3.8%  and organic growth  increased  revenue  2.8% . Across our principal regional markets, the changes in revenue were: North America  increased   1.0% , Europe  decreased   9.3% , Asia-Pacific  decreased   6.1%  and Latin America  decreased   15.8% . In North America, improved organic growth in the United States and Canada was substantially offset by a decrease in revenue primarily resulting from net disposition activity in the United States and the weakening of the Canadian Dollar against the U.S. Dollar. Organic revenue growth in the United States was led by our advertising and media, healthcare and CRM Consumer Experience businesses, partially offset by a decrease in organic revenue growth in our CRM Execution & Support businesses. In Europe, modest organic growth in the region was offset by the weakening of substantially all currencies in the region against the U.S. Dollar, disposition activity and negative performance in France, which faced a difficult comparison to the prior year period, and Germany. The decrease in revenue in Latin America was primarily a result of the weakening of most currencies in the region against the U.S. Dollar, negative performance in Brazil and disposition activity. In Asia-Pacific, growth in most countries in the region, especially Japan and New Zealand, was offset by the weakening of all currencies in the region against the U.S. Dollar, as well as disposition activity, and negative performance in China, which faced a difficult comparison to the  second  quarter of  2018 . The change in revenue in the  second  quarter of  2019  compared to the  second  quarter of  2018  in our four fundamental disciplines was: Advertising  increased   1.3% , CRM Consumer Experience  decreased   0.1% , CRM Execution & Support  decreased   34.6% , Public Relations  decreased   3.7%  and Healthcare  increased   7.5% . For the  six  months ended  June 30, 2019 , our revenue  decreased   4.0%  compared to the  six  months ended  June 30, 2018 . Changes in foreign exchange rates  reduced  revenue  3.0% , acquisition revenue, net of disposition revenue,  reduced  revenue  3.7% , and organic growth  increased  revenue  2.7% . Across our principal regional markets, the changes in revenue were: North America  increased   0.6% , Europe  decreased   10.5% , Asia-Pacific  decreased   6.3%  and Latin America  decreased   16.9% . In North America, improved growth in the United States and Canada was substantially offset by a decrease in revenue primarily resulting from net disposition activity in the United States and the weakening of the Canadian Dollar against the U.S. Dollar. Organic revenue growth in the United States was led by our advertising and media and healthcare businesses, partially offset by a decrease in organic revenue growth in our CRM Execution & Support businesses. In Europe, moderate organic growth in the region was   19 offset by the weakening of substantially all currencies in the region against the U.S. Dollar, disposition activity, and weaker performance in France. The decrease in revenue in Latin America was primarily a result of the weakening of most currencies in the region against the U.S. Dollar, negative performance in Brazil and disposition activity. In Asia-Pacific, organic growth in most countries in the region, especially Australia, New Zealand and Japan, was offset by the weakening of all currencies in the region against the U.S. Dollar, disposition activity, and negative performance in China, which faced a difficult comparison to  2018 .  The change in revenue in the  six  months of  2019  compared to the  six  months of  2018 , in our four fundamental disciplines was: Advertising  increased   1.2% , CRM Consumer Experience  decreased   2.3% , CRM Execution & Support  decreased   32.9% , Public Relations  decreased   3.6%  and Healthcare  increased   7.9% . We measure cost of services in two distinct categories: salary and service costs and occupancy and other costs. As a service business, salary and service costs make up the significant portion of our operating expenses and substantially all these costs comprise the essential components directly linked to the delivery of our services. Salary and service costs include employee compensation and benefits, freelance labor and direct service costs, which include third-party supplier costs and client-related travel costs. Occupancy and other costs consist of the indirect costs related to the delivery of our services, including office rent and other occupancy costs, equipment rent, technology costs, general office expenses and other expenses. SG&A expenses, which  decreased  slightly year-over-year, primarily consist of third-party marketing costs, professional fees and compensation and benefits and occupancy and other costs of our corporate and executive offices, which includes group-wide finance and accounting, treasury, legal and governance, human resource oversight and similar costs. Operating expenses in the  second  quarter of  2019   decreased   4.0%  period-over-period, primarily as a result of our disposition activity and the weakening of substantially all foreign currencies against the U.S. Dollar. Salary and service costs, which tend to fluctuate with changes in revenue,  decreased   $107.7 million , or  3.9% , in the  second  quarter of  2019  compared to the  second  quarter of  2018 . Occupancy and other costs, which are less directly linked to changes in revenue than salary and service costs,  decreased   $4.2 million , or  1.3% , in the  second  quarter of  2019  compared to the  second  quarter of  2018 . Operating margin for the  second  quarter of  2019  was  15.4%  compared to  15.1%  for the  second  quarter of  2018 . The period-over-period increase primarily reflects a change in the mix of our business during the current period, including the positive effects following the disposition of underperforming businesses in the current and prior year and our repositioning activity in the third quarter of  2018 , as well as our ongoing efforts to manage our cost structure and increase the efficiency of the operations of our agencies. Earnings before interest, taxes and amortization of intangible assets, or EBITA, margin for the  second  quarter of  2019  was  16.0%  compared to  15.8%  for the  second  quarter of  2018 . Operating expenses in the  six  months of  2019   decreased   4.6%  period-over-period, primarily as a result of our disposition activity and the weakening of most foreign currencies against the U.S. Dollar. Salary and service costs, which tend to fluctuate with changes in revenue,  decreased   $252.9 million , or  4.6% , in the  six  months of  2019  compared to the  six  months of  2018 . Occupancy and other costs, which are less directly linked to changes in revenue than salary and service costs,  decreased   $15.2 million , or  2.4% , in the  six  months of  2019  compared to the  six  months of  2018 . Operating margin  increased  period-over-period to  13.9%  from  13.4% . The period-over-period increase primarily reflects a change in the mix of our business during the current period, including the positive effects following the disposition of underperforming businesses in the current and prior year and our repositioning activity in the third quarter of  2018 , as well as our ongoing efforts to manage our cost structure and increase the efficiency of the operations of our agencies. In addition, a net gain on the sale of certain businesses during the period, partially offset by the negative impact of changes in foreign exchange rates, marginally improved EBITA margin and operating profit in the current period. EBITA margin in the  six  months of  2019  was  14.5%   compared to  14.1%  in the  six  months of  2018 . Net interest expense in the  second  quarter of  2019   decreased   $2.3 million  period-over-period to $ 50.2 million , and net interest expense in the  six  months of  2019   decreased   $3.1 million  period-over-period to  $96.2 million . Interest expense on debt  increased  $ 2.2 million  to $ 62.5 million  in the  second  quarter of  2019  and  increased   $5.4 million  to  $121.7 million  in the  six  months of  2019 ,  reflecting higher rates on the floating leg of our fixed-to-floating interest rate swaps, partially offset by a decrease in interest expense on commercial paper issuances compared to the prior period. In February 2019, OFL, a U.K. based wholly owned subsidiary of the Company, issued €520 million of short-term senior notes in a private placement to an investor outside the United States. The notes are unsecured, non-interest bearing and mature on August 14, 2019. As a result, in the second quarter and six months of 2019, we were able to substantially reduce our commercial paper issuances, which reduced interest expense in the periods. Interest income in the  second  quarter and  six  months of  2019   increased   $2.5 million  and  $4.1 million  period-over-period to  $16.4 million  and  $33.4 million , respectively, reflecting higher cash balances available for investment.  20 Our effective tax rate for the  six  months of  2019 ,  increased  period-over-period to  25.7%  from  25.2% . The effective tax rate for  2019  reflects a benefit of  $10.8 million  primarily from the net favorable settlements of uncertain tax positions in certain jurisdictions, which resulted in the recognition of net deferred tax assets in the  second  quarter of  2019 . Included in income tax expense for  2018  is a reduction of approximately  $13 million  for the successful resolution of foreign tax claims in the first quarter of  2018 , which lowered our effective tax rate to  25.2% . Net income - Omnicom Group Inc. in the  second  quarter of  2019   increased   $6.5 million , or  1.8% , to  $370.7 million  from  $364.2 million  in the  second  quarter of  2018 , and net income - Omnicom Group Inc. in the  six  months of  2019   increased   $5.6 million , or  0.9% , to  $633.9 million  from  $628.3 million  in the  six  months of  2018 . The period-over-period  increase  is due to the factors described above. Diluted net income per share - Omnicom Group Inc.  increased   5.0%  to  $1.68  in the  second  quarter of  2019 , compared to  $1.60  in the  second  quarter of  2018 , and diluted net income per share - Omnicom Group Inc.  increased   4.4%  to  $2.85  in the  six  months of  2019 , compared to  $2.73  in the  six  months of  2018 , due to the factors described above, as well as the impact of the reduction in our weighted average common shares outstanding resulting from repurchases of our common stock, net of shares issued for restricted stock awards, stock option exercises and employee stock purchase plan.  21 RESULTS OF OPERATIONS -  Second  Quarter  2019  Compared to  Second  Quarter  2018  (in millions):   2019   2018 Revenue $ 3,719.8   $ 3,859.6 Operating Expenses:       Salary and service costs 2,665.2   2,772.9 Occupancy and other costs 315.4   319.6 Cost of services 2,980.6   3,092.5 Selling, general and administrative expenses 107.7   117.4 Depreciation and amortization 57.8   67.4   3,146.1   3,277.3 Operating Profit 573.7   582.3 Operating Margin % 15.4 %   15.1 % Interest Expense 66.6   66.4 Interest Income 16.4   13.9 Income Before Income Taxes and Income From Equity Method Investments 523.5   529.8 Income Tax Expense 130.6   136.7 Income From Equity Method Investments 1.2   1.7 Net Income 394.1   394.8 Net Income Attributed To Noncontrolling Interests 23.4   30.6 Net Income - Omnicom Group Inc. $ 370.7   $ 364.2 Non-GAAP Financial Measures We use EBITA and EBITA Margin as additional operating performance measures that exclude the non-cash amortization expense of intangible assets, which primarily consists of amortization of intangible assets arising from acquisitions. We define EBITA as earnings before interest, taxes and amortization of intangible assets, and EBITA Margin as EBITA divided by revenue. EBITA and EBITA Margin are non-GAAP Financial measures. We believe that EBITA and EBITA Margin are useful measures for investors to evaluate the performance of our business. Non-GAAP financial measures should not be considered in isolation from, or as a substitute for, financial information presented in compliance with U.S. GAAP. Non-GAAP financial measures reported by us may not be comparable to similarly titled amounts reported by other companies. The following table reconciles the U.S. GAAP financial measure of Net Income - Omnicom Group Inc. to EBITA and EBITA Margin for the periods presented (in millions):   2019   2018 Net Income - Omnicom Group Inc. $ 370.7   $ 364.2 Net Income Attributed To Noncontrolling Interests 23.4   30.6 Net Income 394.1   394.8 Income From Equity Method Investments 1.2   1.7 Income Tax Expense 130.6   136.7 Income Before Income Taxes and Income From Equity Method Investments 523.5   529.8 Interest Expense 66.6   66.4 Interest Income 16.4   13.9 Operating Profit 573.7   582.3 Add back: Amortization of intangible assets 21.2   27.0 Earnings before interest, taxes and amortization of intangible assets (“EBITA”) $ 594.9   $ 609.3         Revenue $ 3,719.8   $ 3,859.6 EBITA $ 594.9   $ 609.3 EBITA Margin % 16.0 %   15.8 % Revenue For the three months ended  June 30, 2019  compared to the prior year period, revenue  decreased   $139.8 million , or  3.6% , to  $3,719.8 million  from  $3,859.6 million  in the  second  quarter of  2018 . Changes in foreign exchange rates  reduced  revenue  $100.3   22 million , acquisition revenue, net of disposition revenue,  reduced  revenue  $147.6 million , and organic growth  increased  revenue  $108.1 million .  The impact of changes in foreign exchange rates  reduced  revenue  2.6% , or  $100.3 million , compared to the  second  quarter of  2018 , primarily resulting from the weakening of substantially all foreign currencies, especially the Euro, British Pound and Australian Dollar, against the U.S. Dollar. The components of revenue change for the  second  quarter of  2019  in the United States (“Domestic”) and the remainder of the world (“International”) were (in millions):   Total   Domestic   International   $   %   $   %   $   % June 30, 2018 $ 3,859.6       $ 1,990.8       $ 1,868.8      Components of revenue change:                       Foreign exchange rate impact (100.3 )   (2.6 )%   —   —  %   (100.3 )   (5.4 )% Acquisition revenue, net of disposition revenue (147.6 )   (3.8 )%   (48.8 )   (2.5 )%   (98.8 )   (5.3 )% Organic growth 108.1   2.8  %   63.2   3.2  %   44.9   2.4  % June 30, 2019 $ 3,719.8   (3.6 )%   $ 2,005.2   0.7  %   $ 1,714.6   (8.3 )% The components and percentages are calculated as follows: • Foreign exchange rate impact is calculated by translating the current period’s local currency revenue using the prior period average exchange rates to derive current period constant currency revenue (in this case  $3,820.1 million  for the Total column). The foreign exchange impact is the difference between the current period revenue in U.S. Dollars and the current period constant currency revenue ( $3,719.8 million  less  $3,820.1 million  for the Total column). • Acquisition revenue is calculated as if the acquisition occurred twelve months prior to the acquisition date by aggregating the comparable prior period revenue of acquisitions through the acquisition date. As a result, acquisition revenue excludes the positive or negative difference between our current period revenue subsequent to the acquisition date and the comparable prior period revenue and the positive or negative growth after the acquisition is attributed to organic growth. Disposition revenue is calculated as if the disposition occurred twelve months prior to the disposition date by aggregating the comparable prior period revenue of dispositions through the disposition date. The acquisition revenue and disposition revenue amounts are netted in the table. • Organic growth is calculated by subtracting the foreign exchange rate impact, and the acquisition revenue, net of disposition revenue components from total revenue growth. • The percentage change is calculated by dividing the individual component amount by the prior period revenue base of that component ( $3,859.6 million  for the Total column). Changes in the value of foreign currencies against the U.S. Dollar affect our results of operations and financial position. For the most part, because the revenue and expense of our foreign operations are both denominated in the same local currency, the economic impact on operating margin is minimized. Assuming exchange rates at  July 11, 2019  remain unchanged, we expect the impact of changes in foreign exchange rates to  reduce  revenue by approximately  2.0%  for the year and  1.0%  in the  third  quarter. Revenue and organic growth, expressed as a percentage in our principal regional markets were (in millions):   Three Months Ended June 30,   2019   2018   $ Change   % Organic Growth Americas:               North America $ 2,118.4   $ 2,097.4   $ 21.0   3.6  % Latin America 96.9   115.1   (18.2 )   (2.4 )% EMEA:               Europe 1,035.9   1,142.6   (106.7 )   2.8  % Middle East and Africa 61.0   70.2   (9.2 )   (8.3 )% Asia-Pacific 407.6   434.3   (26.7 )   1.9  %   $ 3,719.8   $ 3,859.6   $ (139.8 )   2.8  % Revenue in Europe, which includes our primary markets of the U.K. and the Euro Zone,  decreased   $106.7 million  for the  second  quarter of  2019 . Revenue in the U.K., representing  9.7%  of total revenue,  decreased   $2.5 million  primarily due to the weakening of the British Pound against the U.S. Dollar. Revenue in Continental Europe, which comprises the Euro Zone and the   23 other European countries, representing  18.2%  of total revenue,  decreased   $104.2 million  primarily due to disposition activity and the unfavorable impact from changes in foreign exchange rates. In North America, improved organic growth in the United States and Canada was substantially offset by a decrease in revenue primarily resulting from net disposition activity in the United States and the weakening of the Canadian Dollar against the U.S. Dollar. Organic revenue growth in the United States was led by our advertising and media, healthcare and CRM Consumer Experience businesses, partially offset by a decrease in organic revenue growth in our CRM Execution & Support businesses. In Europe, modest organic growth in the region was offset by the weakening of substantially all currencies in the region against the U.S. Dollar, disposition activity and negative performance in France, which faced a difficult comparison to the prior year period, and Germany. The decrease in revenue in Latin America was primarily a result of the weakening of most currencies in the region against the U.S. Dollar, negative performance in Brazil and disposition activity. In Asia-Pacific, growth in most countries in the region, especially Japan and New Zealand, was offset by the weakening of all currencies in the region against the U.S. Dollar, disposition activity, and negative performance in China, which faced a difficult comparison to the  second  quarter of  2018 .  In the normal course of business, our agencies both gain and lose business from clients each year due to a variety of factors. The net change  in  the  second  quarter of  2019  was an overall gain in new business. Under our client-centric approach, we seek to broaden our relationships with all of our clients. Our largest client represented  2.9%  and  2.8%  of our revenue for the  second  quarter of  2019  and  2018 , respectively. Our ten largest and 100 largest clients represented  19.5%  and  52.0%  of our revenue for the  second  quarter of  2019 , respectively, and  19.1%  and  51.0%  of our revenue for the  second  quarter of  2018 , respectively. In an effort to monitor the changing needs of our clients and to further expand the scope of our services to key clients, we monitor revenue across a broad range of disciplines and group them into the following categories: advertising, CRM, which includes CRM Consumer Experience and CRM Execution & Support, public relations and healthcare. Revenue for the  second  quarter of   2019  and  2018  and the change in revenue and organic growth from the  second  quarter of  2018  by discipline were (in millions):   Three Months Ended June 30,   2019   2018   2019 vs. 2018   $   % of Revenue   $   % of Revenue   $ Change   % Organic Growth Advertising $ 2,093.9   56.3 %   $ 2,067.6   53.6 %   $ 26.3   4.4  % CRM Consumer Experience 659.5   17.7 %   660.0   17.1 %   (0.5 )   1.9  % CRM Execution & Support 326.1   8.8 %   498.7   12.9 %   (172.6 )   (2.6 )% Public Relations 349.3   9.4 %   362.7   9.4 %   (13.4 )   (1.3 )% Healthcare 291.0   7.8 %   270.6   7.0 %   20.4   8.4  %   $ 3,719.8       $ 3,859.6       $ (139.8 )   2.8  % We provide services to clients that operate in various industry sectors. Revenue by sector for the  second  quarter of  2019  and  2018  was:   2019   2018 Food and Beverage 13 %   13 % Consumer Products 9 %   9 % Pharmaceuticals and Health Care 14 %   13 % Financial Services 9 %   8 % Technology 7 %   9 % Auto 10 %   10 % Travel and Entertainment 7 %   7 % Telecommunications 5 %   5 % Retail 5 %   6 % Other 21 %   20 %  24 Operating Expenses Operating expenses for the  second  quarter of  2019  compared to the  second  quarter of  2018  were (in millions):   Three Months Ended June 30,   2019   2018   2019 vs. 2018   $   % of Revenue   $   % of Revenue   $ Change   % Change Revenue $ 3,719.8       $ 3,859.6       $ (139.8 )   (3.6 )% Operating Expenses:                       Salary and service costs 2,665.2   71.6 %   2,772.9   71.8 %   (107.7 )   (3.9 )% Occupancy and other costs 315.4   8.5 %   319.6   8.3 %   (4.2 )   (1.3 )%     Cost of services 2,980.6       3,092.5       (111.9 )   (3.6 )% Selling, general and administrative expenses 107.7   2.9 %   117.4   3.0 %   (9.7 )   (8.3 )% Depreciation and amortization 57.8   1.6 %   67.4   1.7 %   (9.6 )   (14.2 )%   3,146.1   84.6 %   3,277.3   84.9 %   (131.2 )   (4.0 )% Operating Profit $ 573.7   15.4 %   $ 582.3   15.1 %   $ (8.6 )   (1.5 )% Operating expenses in the  second  quarter of  2019   decreased   $131.2 million , or  4.0% , period-over-period, primarily as a result of our disposition activity and the weakening of substantially all foreign currencies against the U.S. Dollar. Salary and service costs, which tend to fluctuate with changes in revenue,  decreased   $107.7 million , or  3.9% , in the  second  quarter of  2019  compared to the  second  quarter of  2018 . Occupancy and other costs, which are less directly linked to changes in revenue than salary and service costs,  decreased   $4.2 million , or  1.3% , in the  second  quarter of  2019  compared to the  second  quarter of  2018 . Operating margin for the  second  quarter of  2019  was  15.4%  compared to  15.1%  for the  second  quarter of  2018 . The period-over-period increase primarily reflects a change in the mix of our business during the current period, including the positive effects following the disposition of underperforming businesses in the current and prior year and our repositioning activity in the third quarter of  2018 , as well as our ongoing efforts to manage our cost structure and increase the efficiency of the operations of our agencies. Earnings before interest, taxes and amortization of intangible assets, or EBITA, margin for the  second  quarter of  2019  was  16.0%  compared to  15.8%  for the  second  quarter of  2018 . Net Interest Expense Net interest expense in the  second  quarter of  2019   decreased   $2.3 million  period-over-period to $ 50.2 million . Interest expense on debt  increased  $ 2.2 million  to $ 62.5 million  in the  second  quarter of  2019 ,  reflecting higher rates on the floating leg of our fixed-to-floating interest rate swaps, partially offset by a decrease in interest expense on commercial paper issuances compared to the prior period. In February 2019, OFL issued €520 million of short-term senior notes in a private placement to an investor outside the United States. The notes are unsecured, non-interest bearing and mature on August 14, 2019. As a result, in the   second  quarter of  2019 , we were able to substantially reduce our commercial paper issuances, which reduced interest expense in the period. Interest income  increased   $2.5 million  to  $16.4 million  period-over-period, reflecting higher cash balances available for investment. Income Taxes Our effective tax rate for the  second  quarter of  2019   decreased  period-over-period to  24.9%  from  25.8% . In the second quarter of  2019 , income tax expense was reduced by  $10.8 million  primarily from the net favorable settlements of uncertain tax positions in certain jurisdictions, which resulted in the recognition of a deferred tax asset in the current period. Net Income Per Share - Omnicom Group Inc. Net income - Omnicom Group Inc. in the  second  quarter of  2019   increased   $6.5 million , or  1.8% , to  $370.7 million  from  $364.2 million  in the  second  quarter of  2018 . The period-over-period  increase  is due to the factors described above. Diluted net income per share - Omnicom Group Inc.  increased   5.0%  to  $1.68  in the  second  quarter of  2019 , compared to  $1.60  in the  second  quarter of  2018 , due to the factors described above, as well as the impact of the reduction in our weighted average common shares outstanding resulting from repurchases of our common stock, net of shares issued for restricted stock awards, stock option exercises and the employee stock purchase plan.  25 RESULTS OF OPERATIONS -  Six  Months of  2019  Compared to  Six  Months of  2018  (in millions):   2019   2018 Revenue $ 7,188.7   $ 7,489.2 Operating Expenses:       Salary and service costs 5,232.8   5,485.7 Occupancy and other costs 624.7   639.9 Cost of services 5,857.5   6,125.6 Selling, general and administrative expenses 211.2   222.9 Depreciation and amortization 117.4   136.8   6,186.1   6,485.3 Operating Profit 1,002.6   1,003.9 Operating Margin % 13.9 %   13.4 % Interest Expense 129.6   128.6 Interest Income 33.4   29.3 Income Before Income Taxes and Income From Equity Method Investments 906.4   904.6 Income Tax Expense 233.2   227.7 Income From Equity Method Investments 0.7   2.6 Net Income 673.9   679.5 Net Income Attributed To Noncontrolling Interests 40.0   51.2 Net Income - Omnicom Group Inc. $ 633.9   $ 628.3 Non-GAAP Financial Measures We use EBITA and EBITA Margin as additional operating performance measures that exclude the non-cash amortization expense of intangible assets, which primarily consists of amortization of intangible assets arising from acquisitions. We define EBITA as earnings before interest, taxes and amortization of intangible assets, and EBITA Margin as EBITA divided by revenue. EBITA and EBITA Margin are non-GAAP Financial measures. We believe that EBITA and EBITA Margin are useful measures for investors to evaluate the performance of our business. Non-GAAP financial measures should not be considered in isolation from, or as a substitute for, financial information presented in compliance with U.S. GAAP. Non-GAAP financial measures reported by us may not be comparable to similarly titled amounts reported by other companies. The following table reconciles the U.S. GAAP financial measure of Net Income - Omnicom Group Inc. to EBITA and EBITA Margin for the periods presented (in millions):   2019   2018 Net Income - Omnicom Group Inc. $ 633.9   $ 628.3 Net Income Attributed To Noncontrolling Interests 40.0   51.2 Net Income 673.9   679.5 Income From Equity Method Investments 0.7   2.6 Income Tax Expense 233.2   227.7 Income Before Income Taxes and Income From Equity Method Investments 906.4   904.6 Interest Expense 129.6   128.6 Interest Income 33.4   29.3 Operating Profit 1,002.6   1,003.9 Add back: Amortization of intangible assets 42.8   54.5 Earnings before interest, taxes and amortization of intangible assets (“EBITA”) $ 1,045.4   $ 1,058.4         Revenue $ 7,188.7   $ 7,489.2 EBITA $ 1,045.4   $ 1,058.4 EBITA Margin % 14.5 %   14.1 % Revenue In the  six  months of  2019 , revenue  decreased   $300.5 million , or  4.0% , to  $7,188.7 million  from  $7,489.2 million  in the  six  months of  2018 . Changes in foreign exchange rates  reduced  revenue  $222.4 million , acquisition revenue, net of disposition revenue,  reduced  revenue  $277.7 million , and organic growth  increased  revenue  $199.6 million .  26 The impact of changes in foreign exchange rates  reduced  revenue  3.0% , or  $222.4 million , compared to the  six  months of  2018 , primarily resulting from the weakening of substantially all foreign currencies, especially the Euro, British Pound, Australian Dollar and Canadian Dollar, against the U.S. Dollar. The components of revenue change for the  six  months of  2019  in the United States (“Domestic”) and the remainder of the world (“International”) were (in millions):   Total   Domestic   International   $   %   $   %   $   % June 30, 2018 $ 7,489.2       $ 3,871.9       $ 3,617.3      Components of revenue change:                       Foreign exchange rate impact (222.4 )   (3.0 )%   —   —  %   (222.4 )   (6.1 )% Acquisition revenue, net of disposition revenue (277.7 )   (3.7 )%   (83.2 )   (2.1 )%   (194.5 )   (5.4 )% Organic growth 199.6   2.7  %   100.7   2.6  %   98.9   2.7  % June 30, 2019 $ 7,188.7   (4.0 )%   $ 3,889.4   0.5  %   $ 3,299.3   (8.8 )% The components and percentages are calculated as follows: • Foreign exchange rate impact is calculated by translating the current period’s local currency revenue using the prior period average exchange rates to derive current period constant currency revenue (in this case  $7,411.1 million  for the Total column). The foreign exchange impact is the difference between the current period revenue in U.S. Dollars and the current period constant currency revenue ( $7,188.7 million  less  $7,411.1 million  for the Total column). • Acquisition revenue is calculated as if the acquisition occurred twelve months prior to the acquisition date by aggregating the comparable prior period revenue of acquisitions through the acquisition date. As a result, acquisition revenue excludes the positive or negative difference between our current period revenue subsequent to the acquisition date and the comparable prior period revenue and the positive or negative growth after the acquisition is attributed to organic growth. Disposition revenue is calculated as if the disposition occurred twelve months prior to the disposition date by aggregating the comparable prior period revenue of dispositions through the disposition date. The acquisition revenue and disposition revenue amounts are netted in the table. • Organic growth is calculated by subtracting the foreign exchange rate impact, and the acquisition revenue, net of disposition revenue components from total revenue growth. • The percentage change is calculated by dividing the individual component amount by the prior period revenue base of that component ( $7,489.2 million  for the Total column). Revenue and organic growth, expressed as a percentage in our principal regional markets were (in millions):   2019   2018   $ Change   % Organic Growth Americas:               North America $ 4,107.6   $ 4,083.1   $ 24.5   2.9  % Latin America 185.8   223.5   (37.7 )   (2.7 )% EMEA:               Europe 1,981.4   2,212.7   (231.3 )   3.0  % Middle East and Africa 140.0   143.6   (3.6 )   2.5  % Asia-Pacific 773.9   826.3   (52.4 )   2.0  %   $ 7,188.7   $ 7,489.2   $ (300.5 )   2.7  % Revenue in Europe, which includes our primary markets of the U.K. and the Euro Zone,  decreased   $231.3 million  for the  six  months of  2019  as compared to the prior year period. Revenue in the U.K., representing  9.7%  of total revenue,  decreased   $21.7 million , primarily due to the weakening of the British Pound against the U.S. Dollar. Revenue in Continental Europe, which comprises the Euro Zone and the other European countries, representing  17.8%  of total revenue,  decreased   $209.6 million  primarily due to disposition activity and the unfavorable impact from changes in foreign exchange rates.  In North America, improved growth in the United States and Canada was substantially offset by a decrease in revenue primarily resulting from net disposition activity in the United States and the weakening of the Canadian Dollar against the U.S. Dollar. Organic revenue growth in the United States was led by our advertising and media and healthcare businesses, partially offset by a decrease in organic revenue growth in our CRM Execution & Support businesses. In Europe, moderate organic growth in the region was offset by the weakening of substantially all currencies in the region against the U.S. Dollar, disposition activity, and weaker performance in France. The decrease in revenue in Latin America was primarily a result of the weakening of most currencies in the region against the U.S. Dollar, negative performance in Brazil and disposition activity. In Asia-Pacific, organic   27 growth in most countries in the region, especially Australia, New Zealand and Japan, was offset by the weakening of all currencies in the region against the U.S. Dollar, disposition activity, and negative performance in China, which faced a difficult comparison to  2018 . In the normal course of business, our agencies both gain and lose business from clients each year due to a variety of factors. The net change through the  six  months of  2019  was an overall gain in new business. Under our client-centric approach, we seek to broaden our relationships with all of our clients. Our largest client represented  3.0%  and  2.9%  of our revenue for the  six  months of  2019  and  2018 , respectively. Our ten largest and 100 largest clients represented  19.3%  and  51.7%  of our revenue for the  six  months of  2019 , respectively, and  19.3%  and  51.3%  of our revenue for the  six  months of  2018 , respectively. In an effort to monitor the changing needs of our clients and to further expand the scope of our services to key clients, we monitor revenue across a broad range of disciplines and group them into the following categories: advertising, CRM, which includes CRM Consumer Experience and CRM Execution & Support, public relations and healthcare. Revenue for the  six  months of  2019  and  2018  and the change in revenue and organic growth from the  six  months of  2018  by discipline were (in millions):   Six Months Ended June 30,   2019   2018       $   % of Revenue   $   % of Revenue   $ Change   % Organic Growth Advertising $ 4,015.3   55.9 %   $ 3,968.9   53.0 %   $ 46.4   4.7  % CRM Consumer Experience 1,265.3   17.6 %   1,294.9   17.3 %   (29.6 )   0.7  % CRM Execution & Support 675.6   9.4 %   1,007.2   13.4 %   (331.6 )   (2.9 )% Public Relations 683.4   9.5 %   709.1   9.5 %   (25.7 )   (0.9 )% Healthcare 549.1   7.6 %   509.1   6.8 %   40.0   7.6  %   $ 7,188.7       $ 7,489.2       $ (300.5 )   2.7  % We provide services to clients that operate in various industry sectors. Revenue by sector for the  six  months of  2019  and  2018  was:   2019   2018 Food and Beverage 13 %   13 % Consumer Products 9 %   9 % Pharmaceuticals and Health Care 14 %   13 % Financial Services 8 %   8 % Technology 7 %   9 % Auto 11 %   10 % Travel and Entertainment 7 %   7 % Telecommunications 5 %   5 % Retail 5 %   6 % Other 21 %   20 % Operating Expenses Operating expenses for the  six  months of  2019  compared to the  six  months of  2018  were (in millions):   Six Months Ended June 30,   2019   2018   2019 vs. 2018   $   % of Revenue   $   % of Revenue   $ Change   % Change Revenue $ 7,188.7       $ 7,489.2       $ (300.5 )   (4.0 )% Operating Expenses:                       Salary and service costs 5,232.8   72.8 %   5,485.7   73.2 %   (252.9 )   (4.6 )% Occupancy and other costs 624.7   8.7 %   639.9   8.5 %   (15.2 )   (2.4 )%     Cost of services 5,857.5       6,125.6       (268.1 )     Selling, general and administrative expenses 211.2   2.9 %   222.9   3.0 %   (11.7 )   (5.2 )% Depreciation and amortization 117.4   1.6 %   136.8   1.8 %   (19.4 )   (14.2 )%   6,186.1   86.1 %   6,485.3   86.6 %   (299.2 )   (4.6 )% Operating Profit $ 1,002.6   13.9 %   $ 1,003.9   13.4 %   $ (1.3 )   (0.1 )%  28 Operating expenses in the  six  months of  2019   decreased   $299.2 million , or  4.6% , period-over-period, primarily as a result of our disposition activity and the weakening of most foreign currencies against the U.S. Dollar. Salary and service costs, which tend to fluctuate with changes in revenue,  decreased   $252.9 million , or  4.6% , in the  six  months of  2019  compared to the  six  months of  2018 . Occupancy and other costs, which are less directly linked to changes in revenue than salary and service costs,  decreased   $15.2 million , or  2.4% , in the  six  months of  2019  compared to the  six  months of  2018 . Operating margin  increased  period-over-period to  13.9%  from  13.4% . The period-over-period increase primarily reflects a change in the mix of our business during the current period, including the positive effects following the disposition of underperforming businesses in the current and prior year and our repositioning activity in the third quarter of  2018 , as well as our ongoing efforts to manage our cost structure and increase the efficiency of the operations of our agencies. In addition, a net gain on the sale of certain businesses during the period, partially offset by the negative impact of changes in foreign exchange rates, marginally improved EBITA margin and operating profit in the current period. EBITA margin in the  six  months of  2019  was  14.5%   compared to  14.1%  in the  six  months of  2018 . Net Interest Expense Net interest expense in the  six  months of  2019   decreased   $3.1 million  period-over-period to  $96.2 million . Interest expense on debt  increased   $5.4 million  to  $121.7 million  in the  six  months of  2019 , reflecting higher rates on the floating leg of our fixed-to-floating interest rate swaps, partially offset by a decrease in interest expense on commercial paper issuances compared to the prior period. In February 2019, OFL issued €520 million of short-term senior notes in a private placement to an investor outside the United States. The notes are unsecured, non-interest bearing and mature on August 14, 2019. As a result, in the  six  months of  2019 , we were able to substantially reduce our commercial paper issuances, which reduced interest expense in the period. Interest income in the  six  months of  2019   increased   $4.1 million  period-over-period to  $33.4 million  due to higher interest earned on cash held by our international treasury centers. Income Taxes Our effective tax rate for the  six  months of  2019 ,  increased  period-over-period to  25.7%  from  25.2% . The effective tax rate for  2019  reflects a benefit of  $10.8 million  primarily from the net favorable settlements of uncertain tax positions in certain jurisdictions, which resulted in the recognition of net deferred tax assets in the  second  quarter of  2019 . Included in income tax expense for  2018  is a reduction of approximately  $13 million  for the successful resolution of foreign tax claims in the first quarter of  2018 , which lowered our effective tax rate to  25.2% . Net Income Per Share - Omnicom Group Inc. Net income - Omnicom Group Inc. in the  six  months of  2019   increased   $5.6 million , or  0.9% , to  $633.9 million  from  $628.3 million  in the  six  months of  2018 . The period-over-period  increase  is due to the factors described above. Diluted net income per share - Omnicom Group Inc.  increased   4.4%  to  $2.85  in the  six  months of  2019 , compared to  $2.73  in the  six  months of  2018 , due to the factors described above, as well as the impact of the reduction in our weighted average common shares outstanding resulting from repurchases of our common stock, net of shares issued for restricted stock awards, stock option exercises and the employee stock purchase plan.  29 CRITICAL ACCOUNTING POLICIES For a more complete understanding of our accounting policies, the unaudited consolidated financial statements and the related Management’s Discussion and Analysis of Financial Condition and Results of Operations, readers are encouraged to consider this information together with our discussion of our critical accounting policies under the heading “Management’s Discussion and Analysis of Financial Condition and Results of Operations” in our  2018  10-K. Acquisitions and Goodwill We have made and expect to continue to make selective acquisitions. The evaluation of potential acquisitions is based on various factors, including specialized know-how, reputation, geographic coverage, competitive position and service offerings of the target businesses, as well as our experience and judgment. Our acquisition strategy is focused on acquiring the expertise of an assembled workforce in order to continue to build upon the core capabilities of our various strategic business platforms and agency brands through the expansion of their geographic reach or their service capabilities to better serve our clients. Additional key factors we consider include the competitive position and specialized know-how of the acquisition targets. Accordingly, as is typical in most service businesses, a substantial portion of the assets we acquire are intangible assets primarily consisting of the know-how of the personnel, which is treated as part of goodwill and under U.S. GAAP is not required to be valued separately. For each acquisition, we undertake a detailed review to identify other intangible assets that are required to be valued separately. A significant portion of the identifiable intangible assets acquired is derived from customer relationships, including the related customer contracts, as well as trade names. In valuing these identified intangible assets, we typically use an income approach and consider comparable market participant measurements. We evaluate goodwill for impairment at least annually at the end of the second quarter of the year and whenever events or circumstances indicate the carrying value may not be recoverable. Under FASB ASC Topic 350,  Intangibles - Goodwill and Other , we have the option of either assessing qualitative factors to determine whether it is more-likely-than-not that the carrying value of our reporting units exceeds their respective fair value or proceeding directly to the goodwill impairment test. Although not required, we performed the annual impairment test and compared the fair value of each of our reporting units to its respective carrying value, including goodwill. We identified our regional reporting units as components of our operating segments, which are our five global agency networks. The regional reporting units of each agency network are responsible for the agencies in their region. They report to the segment managers and facilitate the administrative and logistical requirements of our key client matrix organization structure for delivering services to clients in their regions. We have concluded that for each of our operating segments, their regional reporting units have similar economic characteristics and should be aggregated for purposes of testing goodwill for impairment at the operating segment level. Our conclusion was based on a detailed analysis of the aggregation criteria set forth in FASB ASC Topic 280,  Segment Reporting , and in FASB ASC Topic 350. Consistent with our fundamental business strategy, the agencies within our regional reporting units serve similar clients in similar industries, and in many cases the same clients. In addition, the agencies within our regional reporting units have similar economic characteristics. The main economic components of each agency are employee compensation and related costs and direct service costs and occupancy and other costs, which include rent and occupancy costs, technology costs that are generally limited to personal computers, servers and off-the-shelf software and other overhead expenses. Finally, the expected benefits of our acquisitions are typically shared by multiple agencies in various regions as they work together to integrate the acquired agency into our virtual client network strategy. Goodwill Impairment Review - Estimates and Assumptions We use the following valuation methodologies to determine the fair value of our reporting units: (1) the income approach, which utilizes discounted expected future cash flows, (2) comparative market participant multiples for EBITDA (earnings before interest, taxes, depreciation and amortization) and (3) when available, consideration of recent and similar acquisition transactions. In applying the income approach, we use estimates to derive the discounted expected cash flows (“DCF”) for each reporting unit that serves as the basis of our valuation. These estimates and assumptions include revenue growth and operating margin, EBITDA, tax rates, capital expenditures, weighted average cost of capital and related discount rates and expected long-term cash flow growth rates. All of these estimates and assumptions are affected by conditions specific to our businesses, economic conditions related to the industry we operate in, as well as conditions in the global economy. The assumptions that have the most significant effect on our valuations derived using a DCF methodology are: (1) the expected long-term growth rate of our reporting units' cash flows and (2) the weighted average cost of capital (“WACC”) for each reporting unit. The assumptions used for the long-term growth rate and WACC in our evaluations as of  June 30, 2019  and  2018  were:   June 30,   2019   2018 Long-Term Growth Rate 3.5%   4% WACC 10.1% - 10.6%   10.5% - 11.1%  30 Long -term growth rate represents our estimate of the long-term growth rate for our industry and the markets of the global economy we operate in. For the past ten years, the average historical revenue growth rate of our reporting units and the Average Nominal GDP, or NGDP, growth of the countries comprising the major markets that account for substantially all of our revenue was approximately   3.2%   and   3.6% , respectively. We considered this history when determining the long-term growth rates used in our annual impairment test at  June 30, 2019 . We believe marketing expenditures over the long term have a high correlation to NGDP. Based on our historical performance, we also believe that our long-term growth rate will exceed NGDP growth in the markets we operate in, which are similar across our reporting units. For our annual test as of  June 30, 2019 , we used an estimated long-term growth rate of  3.5% . When performing the annual impairment test as of  June 30, 2019  and estimating the future cash flows of our reporting units, we considered the current macroeconomic environment, as well as industry and market specific conditions at mid-year  2019 . In the first half of  2019 , our revenue increased  2.7% , which excluded our net disposition activity and the impact from changes in foreign exchange rates. While our businesses in Europe had improved performance, the continuing uncertain economic and political conditions in the EU have been further complicated by the United Kingdom's ongoing negotiations with the European Council to withdraw from the EU. During the first half of   2019 , weakness in certain Latin American economies we operate in has the potential to affect our near-term performance in that region. We considered the effect of these conditions in our annual impairment test. The WACC is comprised of: (1) a risk-free rate of return, (2) a business risk index ascribed to us and to companies in our industry comparable to our reporting units based on a market derived variable that measures the volatility of the share price of equity securities relative to the volatility of the overall equity market, (3) an equity risk premium that is based on the rate of return on equity of publicly traded companies with business characteristics comparable to our reporting units, and (4) a current after-tax market rate of return on debt of companies with business characteristics similar to our reporting units, each weighted by the relative market value percentages of our equity and debt. Our five reporting units vary in size with respect to revenue and the amount of debt allocated to them. These differences drive variations in fair value among our reporting units. In addition, these differences as well as differences in book value, including goodwill, cause variations in the amount by which fair value exceeds book value among the reporting units. The reporting unit goodwill balances and debt vary by reporting unit primarily because our three legacy agency networks were acquired at the formation of Omnicom and were accounted for as a pooling of interests that did not result in any additional debt or goodwill being recorded. The remaining two agency networks were built through a combination of internal growth and acquisitions that were accounted for using the acquisition method and as a result, they have a relatively higher amount of goodwill and debt. Goodwill Impairment Review - Conclusion Based on the results of our impairment test, we concluded that our goodwill at  June 30, 2019  was not impaired, because the fair value of each of our reporting units was substantially in excess of its respective net book value. The minimum decline in fair value that one of our reporting units would need to experience in order to fail the goodwill impairment test was approximately  65% . Notwithstanding our belief that the assumptions we used for WACC and long-term growth rate in our impairment testing are reasonable, we performed a sensitivity analysis for each of our reporting units. The results of this sensitivity analysis on our impairment test as of  June 30, 2019  revealed that if the WACC increased by 1% and/or the long-term growth rate decreased by 1%, the fair value of each of our reporting units would continue to be substantially in excess of its respective net book value and would pass the impairment test. We will continue to perform our impairment test at the end of the second quarter of each year unless events or circumstances trigger the need for an interim impairment test. The estimates used in our goodwill impairment test do not constitute forecasts or projections of future results of operations, but rather are estimates and assumptions based on historical results and assessments of macroeconomic factors affecting our reporting units as of the valuation date. We believe that our estimates and assumptions are reasonable, but they are subject to change from period to period. Actual results of operations and other factors will likely differ from the estimates used in our discounted cash flow valuation, and it is possible that differences could be significant. A change in the estimates we use could result in a decline in the estimated fair value of one or more of our reporting units from the amounts derived as of our latest valuation and could cause us to fail our goodwill impairment test if the estimated fair value for the reporting unit is less than the carrying value of the net assets of the reporting unit, including its goodwill. A large decline in estimated fair value of a reporting unit could result in a non-cash impairment charge and may have an adverse effect on our results of operations and financial condition.  31 NEW ACCOUNTING STANDARDS On January 1, 2019, we adopted FASB Accounting Standards Codification, or ASC, Topic 842,  Leases , or ASC 842, which had a substantial impact on total assets and liabilities, but had no impact on our results of operations or equity. Notes  1  and  3  to the unaudited consolidated financial statements provide information regarding new accounting standards. LIQUIDITY AND CAPITAL RESOURCES Cash Sources and Requirements Our primary liquidity sources are our operating cash flow, cash and cash equivalents and short-term investments. Additional liquidity sources include our credit facilities and commercial paper program, and access to the capital markets. At  June 30, 2019 , we have a  $2.5 billion  revolving Credit Facility expiring on  July 31, 2021 , uncommitted credit lines aggregating  $1.5 billion , and the ability to issue up to  $2 billion  of commercial paper. Our liquidity funds our non-discretionary cash requirements and our discretionary spending. Working capital is our principal non-discretionary funding requirement. In addition, we have contractual obligations related to our senior notes, recurring business operations, primarily related to lease obligations, and contingent purchase price obligations (earn-outs) from prior acquisitions. Our principal discretionary cash spending includes dividend payments to common shareholders, capital expenditures, strategic acquisitions and repurchases of our common stock. As a result, we typically have a short-term borrowing requirement normally peaking during the second quarter of the year due to the timing of payments for incentive compensation, income taxes and contingent purchase price obligations. On January 1, 2019, we adopted ASC 842, which had a substantial impact on total assets and liabilities, but had no impact on our results of operations or equity. The adoption of ASC 842 will not have a significant impact on our non-discretionary funding requirement. Based on past performance and current expectations, we believe that our operating cash flow will be sufficient to meet our non-discretionary cash requirements and our discretionary spending for the next twelve months. Cash and cash equivalents  decreased   $754.3 million  from  December 31, 2018 , and short-term investments  decreased   $0.1 million  from  December 31, 2018 . During the first  six  months of  2019 , we  used   $492.9 million  of cash in operating activities, which included the use for operating capital of  $1,306.6 million , reflecting our typical working capital requirement during the period. Our discretionary spending during the first  six  months of  2019  was: capital expenditures of  $48.8 million ; dividends paid to common shareholders of  $280.4 million ; dividends paid to shareholders of noncontrolling interests of  $46.1 million ; repurchases of our common stock, net of proceeds from stock option exercises and related tax benefits and common stock sold to our employee stock purchase plan, of  $523.7 million ; and acquisition payments, including payment of contingent purchase price obligations and acquisition of additional shares of noncontrolling interests, net of cash acquired, of  $34.0 million . Our  $500 million   6.25% Senior Notes due 2019  matured on July 15, 2019 and were retired. As of  June 30, 2019 , the 2019 Notes were classified as current. In addition, because of the current low interest rate environment in the European capital markets, in the first quarter of  2019 , OFL issued €520 million of short-term senior notes in a private placement to an investor outside the United States (see Note  6  to the unaudited consolidated financial statements). The notes are unsecured, non-interest bearing and mature on August 14, 2019. As a result, the Company was able to substantially reduce its commercial paper issuances  in the first half of the year  compared to the first half of 2018, which reduced interest expense in the period. On July 8, 2019, OFHP, a U.K. based wholly owned subsidiary of Omnicom, issued  €500 million   0.80%  Senior Notes due  July 8, 2027  and  €500 million   1.40%  Senior Notes due  July 8, 2031 . The U.S. Dollar equivalent of the net proceeds, after deducting the underwriting discount and offering expenses, was  $1.1 billion , resulting in an effective interest rate of 0.92% and 1.53%, respectively. A portion of the net proceeds was used to retire the outstanding 2019 Notes at maturity. The remaining net proceeds will be used to redeem  $400 million  aggregate principal amount of the outstanding  $1 billion  4.45% Senior Notes due 2020 on August 1, 2019 and for general corporate purposes, which could include working capital expenditures and repayment of short-term or long-term debt. On July 2, 2019, Omnicom announced the partial redemption of  $400 million  aggregate principal amount of the outstanding 2020 Notes for redemption on  August 1, 2019  at a price equal to  100%  of the principal amount of the 2020 Notes being redeemed plus accrued interest and a make-whole premium as specified in the indenture. At  June 30, 2019 , we classified  $400 million  of the 2020 Notes as current. At  June 30, 2019 , on a pro forma basis giving effect to these transactions using current foreign exchange rates, Omnicom would have had $5.1 billion aggregate principal amount of long-term debt.  32 Cash Management Our regional treasury centers in North America, Europe and Asia manage our cash and liquidity. Each day, operations with excess funds invest these funds with their regional treasury center. Likewise, operations that require funds borrow from their regional treasury center. The treasury centers aggregate the net position which is either invested with or borrowed from third parties. To the extent that our treasury centers require liquidity, they have the ability to issue up to a total of  $2 billion  of U.S. Dollar-denominated commercial paper or borrow under the Credit Facility or the uncommitted credit lines. This process enables us to manage our debt more efficiently and utilize our cash more effectively, as well as manage our risk to foreign exchange rate imbalances. In countries where we either do not conduct treasury operations or it is not feasible for one of our treasury centers to fund net borrowing requirements on an intercompany basis, we arrange for local currency uncommitted credit lines. We have a policy governing counterparty credit risk with financial institutions that hold our cash and cash equivalents and we have deposit limits for each institution. In countries where we conduct treasury operations, generally the counterparties are either branches or subsidiaries of institutions that are party to the Credit Facility. These institutions generally have credit ratings equal to or better than our credit ratings. In countries where we do not conduct treasury operations, all cash and cash equivalents are held by counterparties that meet specific minimum credit standards. At  June 30, 2019 , our foreign subsidiaries held approximately  $970 million  of our total cash and cash equivalents of  $2.9 billion . Most of the cash is available to us, net of any foreign withholding taxes payable upon repatriation to the United States. Our net debt position, which we define as total debt, including short-term debt, less cash and cash equivalents and short-term investments, at  June 30, 2019   increased   $1.4 billion  as compared to  December 31, 2018 . The  increase  in net debt is due to a  decrease  in cash and cash equivalents and short-term investments of  $754.4 million  primarily arising from the unfavorable change in our operating capital of  $1,306.6 million , which typically occurs  in the first half of the year . The components of net debt as of  June 30, 2019 ,  December 31, 2018  and  June 30, 2018  were (in millions):   June 30, 2019   December 31, 2018   June 30, 2018 Short- term debt $ 608.5   $ 8.1   $ 20.8 Long-term debt, including current portion 4,925.4   4,883.7   4,866.8 Total debt 5,533.9   4,891.8   4,887.6 Less: Cash and cash equivalents and short-term investments 2,903.5   3,657.9   1,918.7 Net debt $ 2,630.4   $ 1,233.9   $ 2,968.9 Net debt is a Non-GAAP liquidity measure. This presentation, together with the comparable U.S. GAAP liquidity measures, reflects one of the key metrics used by us to assess our cash management. Non-GAAP liquidity measures should not be considered in isolation from, or as a substitute for, financial information presented in compliance with U.S. GAAP. Non-GAAP liquidity measures as reported by us may not be comparable to similarly titled amounts reported by other companies. Debt Instruments and Related Covenants At  June 30, 2019 , the total principal amount of our fixed rate senior notes was  $4.9 billion  and the total notional amount of the fixed-to-floating interest rate swaps was  $1.25 billion . The interest rate swaps have the economic effect of converting our debt portfolio to approximately  75%  fixed rate obligations and  25%  floating rate obligations. In addition, during the first quarter of  2019 , OFL issued, and Omnicom guaranteed, €520 million of short-term senior notes (see Note  6  to the unaudited consolidated financial statements). Omnicom and its wholly owned finance subsidiary OCI are co-obligors under all the senior notes (other than the OFL notes). The senior notes are a joint and several liability of us and OCI, and we unconditionally guarantee OCI’s obligations with respect to the senior notes. OCI provides funding for our operations by incurring debt and lending the proceeds to our operating subsidiaries. OCI’s assets primarily consist of cash and cash equivalents and intercompany loans made to our operating subsidiaries, and the related interest receivable. There are no restrictions on the ability of OCI or us to obtain funds from our subsidiaries through dividends, loans or advances. Our senior notes are senior unsecured obligations that rank equal in right of payment with all existing and future unsecured senior indebtedness. Omnicom and OCI have, jointly and severally, fully and unconditionally guaranteed OFHP’s obligations with respect to the Euro Notes. OFHP’s assets consist of its investments in several wholly owned finance companies that function as treasury centers, which provide funding for various operating companies in Europe, Brazil, Australia and other countries in the Asia-Pacific region. The finance companies’ assets consist of intercompany loans that they make or have made to the operating companies in their respective regions and the related interest receivables. There are no restrictions on the ability of Omnicom, OCI or OFHP to obtain funds from their subsidiaries through dividends, loans or advances. The Euro Notes and the related guarantees are senior unsecured obligations that rank equal in right of payment with all existing and future unsecured senior indebtedness of OFHP and each of Omnicom and OCI, respectively.  33 The Credit Facility contains financial covenants that require us to maintain a Leverage Ratio of consolidated indebtedness to consolidated EBITDA of no more than 3 times for the most recently ended 12-month period (EBITDA is defined as earnings before interest, taxes, depreciation and amortization) and an Interest Coverage Ratio of consolidated EBITDA to interest expense of at least 5 times for the most recently ended 12-month period.  At  June 30, 2019 , we were in compliance with these covenants as our Leverage Ratio was  2.4  times and our Interest Coverage Ratio was  9.6  times. The Credit Facility does not limit our ability to declare or pay dividends or repurchase our common stock. At  June 30, 2019 , our long-term and short-term debt was rated  BBB+  and  A2  by S&P and  Baa1  and  P2  by Moody's. Our access to the commercial paper market and the cost of these borrowings are affected by our credit ratings and market conditions. Our senior notes and Credit Facility do not contain provisions that require acceleration of cash payments in the event our debt credit ratings are downgraded. Credit Markets and Availability of Credit We have typically funded our day-to-day liquidity by issuing commercial paper. Additional liquidity sources include our Credit Facility or the uncommitted credit lines. At  June 30, 2019 , there were no outstanding commercial paper issuances or borrowings under the Credit Facility or the uncommitted credit lines. Commercial paper activity for the three months ended  June 30, 2019  and  2018  was (dollars in millions):   2019   2018 Average amount outstanding during the quarter $ 246.6   $ 717.0 Maximum amount outstanding during the quarter $ 666.0   $ 1,218.7 Average days outstanding 3.0   12.7 Weighted average interest rate 2.64 %   2.28 % We may continue to fund our day-to-day liquidity by issuing commercial paper. However, disruptions in the credit markets may lead to periods of illiquidity in the commercial paper market and higher credit spreads. To mitigate any future disruption in the credit markets and to fund our liquidity, we may borrow under the Credit Facility or access the capital markets if favorable conditions exist. We will continue to monitor closely our liquidity and conditions in the credit markets. We cannot predict with any certainty the impact on us of any future disruptions in the credit markets. In such circumstances, we may need to obtain additional financing to fund our day-to-day working capital requirements. Such additional financing may not be available on favorable terms, or at all. CREDIT RISK We provide advertising, marketing and corporate communications services to several thousand clients who operate in nearly every sector of the global economy and we grant credit to qualified clients in the normal course of business. Due to the diversified nature of our client base, we do not believe that we are exposed to a concentration of credit risk as our largest client represented  3.0%  of our revenue for the first  six  months of  2019 . However, during periods of economic downturn, the credit profiles of our clients could change. In the normal course of business, our agencies enter into contractual commitments with media providers and production companies on behalf of our clients at levels that can substantially exceed the revenue from our services. These commitments are included in accounts payable when the services are delivered by the media providers or production companies. If permitted by local law and the client agreement, many of our agencies purchase media and production services for our clients as an agent for a disclosed principal. In addition, while operating practices vary by country, media type and media vendor, in the United States and certain foreign markets, many of our agencies’ contracts with media and production providers specify that our agencies are not liable to the media and production providers under the theory of sequential liability until and to the extent we have been paid by our client for the media or production services. Where purchases of media and production services are made by our agencies as a principal or are not subject to the theory of sequential liability, the risk of a material loss as a result of payment default by our clients could increase significantly and such a loss could have a material adverse effect on our business, results of operations and financial position. In addition, our methods of managing the risk of payment default, including obtaining credit insurance, requiring payment in advance, mitigating the potential loss in the marketplace or negotiating with media providers, may be less available or unavailable during a severe economic downturn.  34 ITEM 3.  QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK We manage our exposure to foreign exchange and interest rate risk through various strategies, including the use of derivative financial instruments. We use forward foreign exchange contracts as economic hedges to manage the cash flow volatility arising from foreign exchange rate fluctuations. We use interest rate swaps to manage our interest expense and structure our long-term debt portfolio to achieve a mix of fixed rate and floating rate debt. We do not use derivatives for trading or speculative purposes. Using derivatives exposes us to the risk that counterparties to the derivative contracts will fail to meet their contractual obligations. We manage that risk through careful selection and ongoing evaluation of the counterparty financial institutions based on specific minimum credit standards and other factors. Our  2018  10-K provides a detailed discussion of the market risks affecting our operations. No material change has occurred in our market risks since the disclosure contained in our  2018  10-K. See our discussion regarding current economic conditions in Item 2 - Management’s Discussion and Analysis of Financial Condition and Results of Operations, in the Executive Summary and Liquidity and Capital Resources sections. ITEM 4. CONTROLS AND PROCEDURES We maintain disclosure controls and procedures designed to ensure that information required to be disclosed in reports we file with the SEC is recorded, processed, summarized and reported within applicable time periods. Disclosure controls and procedures include, without limitation, controls and procedures designed to ensure that information required to be disclosed by us in the reports we file or submit under the Securities Exchange Act of 1934, as amended, or the Exchange Act, is accumulated and communicated to management, including our Chief Executive Officer, or CEO, and Chief Financial Officer, or CFO, as appropriate to allow timely decisions regarding required disclosure. Management, including our CEO and CFO, conducted an evaluation of the effectiveness of our disclosure controls and procedures as of  June 30, 2019 . Based on that evaluation, our CEO and CFO concluded that, as of  June 30, 2019 , our disclosure controls and procedures are effective to ensure that decisions can be made timely with respect to required disclosures, as well as ensuring that the recording, processing, summarization and reporting of information required to be included in our Quarterly Report on Form 10-Q for the quarter ended  June 30, 2019  are appropriate. Our management is responsible for establishing and maintaining adequate internal control over financial reporting, as such term is defined in Exchange Act Rule 13a-15(f). Management, with the participation of our CEO, CFO and our agencies, conducted an evaluation of the effectiveness of our internal control over financial reporting based on the framework in  Internal Control – Integrated Framework (2013)  issued by the Committee of Sponsoring Organizations of the Treadway Commission. Based on that evaluation, our CEO and CFO concluded that our internal control over financial reporting was effective as of  June 30, 2019 . There have not been any changes in our internal control over financial reporting during our most recent fiscal quarter that have materially affected or are reasonably likely to materially affect our internal control over financial reporting. KPMG LLP, an independent registered public accounting firm that audited our consolidated financial statements included in our  2018  10-K, has issued an attestation report on Omnicom’s internal control over financial reporting as of  December 31, 2018 , dated  February 12, 2019 . PART II. OTHER INFORMATION Item 1.  Legal Proceedings In the ordinary course of business, we are involved in various legal proceedings. We do not presently expect that these proceedings will have a material adverse effect on our results of operations or financial position. Item 1A.  Risk Factors There have been no material changes to the risk factors disclosed in Item 1A in our  2018  10-K.  35 Item 2.  Unregistered Sales of Equity Securities and Use of Proceeds Common stock repurchases during the three months ended  June 30, 2019  were: Period   Total Number of Shares Purchased   Average Price Paid Per Share   Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs   Maximum Number of Shares that May Yet Be Purchased Under the Plans or Programs April 1 - 30, 2019   144,829   $ 82.43   —   — May 1 - 31, 2019   1,262,933   78.96   —   — June 1 - 30, 2019   1,638,084   79.24   —   —     3,045,846   $ 79.28   —   — During the three months ended  June 30, 2019 , we purchased  2,965,000  shares of our common stock in the open market for general corporate purposes and withheld  80,846  shares from employees to satisfy estimated statutory income tax obligations related to stock option exercises and vesting of restricted stock. The value of the common stock withheld was based on the closing price of our common stock on the applicable exercise or vesting date. There were no unregistered sales of our equity securities during the three months ended  June 30, 2019 . Item 6. Exhibits 31.1 Certification of the Chairman and Chief Executive Officer required by Rule 13a-14(a) under the Securities Exchange Act of 1934, as amended. 31.2 Certification of the Executive Vice President and Chief Financial Officer required by Rule 13a-14(a) under the Securities Exchange Act of 1934, as amended. 32 Certification of the Chairman and Chief Executive Officer and the Executive Vice President and Chief Financial Officer required by Rule 13a-14(b) under the Securities Exchange Act of 1934, as amended, and 18 U.S.C. Section 1350. 101 Interactive Data Files. SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.     OMNICOM GROUP INC. Date: July 17, 2019 /s/ P HILIP  J. A NGELASTRO     Philip J. Angelastro Executive Vice President and Chief Financial Officer (Principal Financial Officer and Authorized Signatory)  36 	 
+ 

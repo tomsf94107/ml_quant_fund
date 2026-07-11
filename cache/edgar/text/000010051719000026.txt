@@ -1,0 +1,3916 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q3 2019 0000100517 0000319687 412000000 412000000 403000000 403000000 8000000 8000000 11000000 11000000 0.01 0.01 0.01 0.01 1000000000 1000 1000000000 1000 1000 1000 269914769 1000 253624406 1000 1380000000 1380000000 1425000000 1425000000 651000000 76000000 269000000 31000000 25000000 1052000000 
+		 
+			 0000100517 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2019-10-11 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2019-10-11 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ProductAndServiceOtherMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:CargoAndFreightMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:PassengerMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:ReceivablesFromStockholderMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:RestatementAdjustmentMember 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:RestatementAdjustmentMember 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ScenarioPreviouslyReportedMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ScenarioPreviouslyReportedMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:RestatementAdjustmentMember 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ScenarioPreviouslyReportedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:PassengerAncillaryFeesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:PassengerAncillaryFeesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:PassengerAncillaryFeesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AdvanceTicketSalesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:PassengerAncillaryFeesMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:DomesticDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PacificDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AtlanticDestinationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:LatinAmericaDestinationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FrequentFlyerProgramMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:July2019ShareRepurchaseProgramMember 
+			 
+		 
+		 
+			 2019-07-15 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:OpenMarketRepurchaseMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:OpenMarketRepurchaseMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:DefinedBenefitPostretirementHealthCoverageMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:PerformanceBasedRestrictedStockUnitsRSUsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:DefinedBenefitPostretirementHealthCoverageMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:TimeVestedRestrictedStockUnitsRSUsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:BRWAviationHoldingLLCAndBRWAviationLLCBRWMember 
+			 
+		 
+		 
+			 2018-11-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:USGovernmentAgenciesDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FairValueMeasurementsRecurringMember 
+				 ual:OtherInvestmentsMeasuredAtNetAssetValueMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MinimumMember 
+				 ual:UsGovernmentAgenciesDebtSecuritiesAndOtherFixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:PreferredStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MaximumMember 
+				 us-gaap:FixedIncomeSecuritiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MaximumMember 
+				 us-gaap:CorporateDebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MinimumMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MaximumMember 
+				 us-gaap:AssetBackedSecuritiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MaximumMember 
+				 us-gaap:CertificatesOfDepositMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:NonAircraftMember 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:MainlineMember 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:MainlineMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:EmbraerERJ145Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:MainlineMember 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:NonAircraftMember 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:RegionalCarrierMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AircraftMortgageDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:FloatingRateDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:KingslandHoldingsLimitedMember 
+			 
+		 
+		 
+			 2018-11-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:KingslandHoldingsLimitedMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirlineHoldingsAndKingslandHoldingsLimitedLendersMember 
+				 ual:AVHSeniorSecuredConvertibleLoanMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-10-04 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AirbusA319sMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:LoansAndLeasesFromNonUSEntitiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:EmbraerERJ145Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:LoansAndLeasesFromNonUSEntitiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:Boeing737700Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:Boeing737MaxMember 
+			 
+		 
+		 
+			 2019-03-12 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:TaxExemptBondsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:Boeing737MaxMember 
+			 
+		 
+		 
+			 2019-03-13 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AVHSeniorSecuredConvertibleLoanMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2019-10-04 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:Boeing737MaxMember 
+				 srt:ScenarioForecastMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:Boeing737MaxMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AirbusMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:Boeing787Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:B777300Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:EmbraerE175Member 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAPassThroughCertificatesIssuedSeptember2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAAPassThroughCertificatesIssuedSeptember2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAPassThroughCertificatesIssuedFebruary2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassBPassThroughCertificatesIssuedSeptember2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAAPassThroughCertificatesIssuedFebruary2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAAPassThroughCertificatesIssuedFebruary2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAAPassThroughCertificatesIssuedSeptember2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAPassThroughCertificatesIssuedSeptember2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:EnhancedEquipmentTrustCertificateMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassBPassThroughCertificatesIssuedSeptember2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:ClassAPassThroughCertificatesIssuedFebruary2019Member 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UalAndUnitedMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:A4.875SeniorNotesDue2025Member 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-05-01 
+			 2019-05-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:UnitedAirLinesIncMember 
+				 ual:A20191PassThroughCertificatesMember 
+				 ual:PassThroughCertificatesMember 
+			 
+		 
+		 
+			 2019-02-01 
+			 2019-02-28 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:A4.875SeniorNotesDue2025Member 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-05-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 us-gaap:UseRightsMember 
+			 
+		 
+		 
+			 2018-05-01 
+			 2018-05-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:InternationalBrotherhoodOfTeamstersMember 
+				 ual:VoluntaryEarlyOutProgramMember 
+			 
+		 
+		 
+			 2017-01-01 
+			 2017-03-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AzulMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:InternationalBrotherhoodOfTeamstersMember 
+				 ual:VoluntaryEarlyOutProgramMember 
+			 
+		 
+		 
+			 2017-03-31 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:InternationalBrotherhoodOfTeamstersMember 
+				 ual:VoluntaryEarlyOutProgramMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:InternationalBrotherhoodOfTeamstersMember 
+				 ual:VoluntaryEarlyOutProgramMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AzulMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AircraftEnginesMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ManagementMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AzulMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ManagementMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ManagementMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:InternationalBrotherhoodOfTeamstersMember 
+				 ual:VoluntaryEarlyOutProgramMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 ual:AzulMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000100517 
+			 
+				 srt:ManagementMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 iso4217:USD 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 xbrli:shares 
+	 
+		 ual:Aircraft 
+	 
+		 xbrli:pure 
+	 
+		 ual:Employee 
+	 
+		 ual:flight 
+	 
+		 ual:employee 
+	 
+		 ual:commitment 
+	 
+		 ual:aircraft 
+	 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549   FORM 10-Q   (Mark One) ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  September 30, 2019   OR  ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from                to                           Commission File Number   Exact Name of Registrant as Specified in its Charter,   Principal Executive Office Address and Telephone Number   State of Incorporation   I.R.S. Employer Identification No.   001-06033   United Airlines Holdings, Inc.   Delaware   36-2675207       233 South Wacker Drive, Chicago, Illinois 60606               (872)  825-4000                                             001-10323   United Airlines, Inc.   Delaware   74-2099724       233 South Wacker Drive,  Chicago, Illinois 60606               (872) 825-4000                           Securities registered pursuant to Section 12(b) of the Act Registrant   Title of Each Class   Trading Symbol   Name on Each Exchange on Which Registered United Airlines Holdings, Inc.   Common Stock,  $0.01 par value   UAL   The Nasdaq Stock Market LLC United Airlines, Inc.   None     None   None Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.   United Airlines Holdings, Inc.   Yes ☒ No ☐   United Airlines, Inc.   Yes ☒ No ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this Chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).    United Airlines Holdings, Inc.   Yes ☒ No ☐   United Airlines, Inc.   Yes ☒ No ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of "large accelerated filer," "accelerated filer," "smaller reporting company," and "emerging growth company" in Rule 12b-2 of the Exchange Act.   United Airlines Holdings, Inc. Large accelerated filer ☒ Accelerated filer ☐ Non-accelerated filer ☐ Smaller reporting company ☐ Emerging growth company ☐ United Airlines, Inc. Large accelerated filer ☐ Accelerated filer ☐ Non-accelerated filer ☒ Smaller reporting company ☐ Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. United Airlines Holdings, Inc.   ☐ United Airlines, Inc.   ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).   United Airlines Holdings, Inc.   Yes     ☐ No ☒ United Airlines, Inc.    Yes ☐ No ☒ The number of shares outstanding of each of the issuer's classes of common stock as of  October 11, 2019  is shown below:   United Airlines Holdings, Inc.   253,043,650 shares of common stock ($0.01 par value)  United Airlines, Inc.    1,000 shares of common stock ($0.01 par value) (100% owned by United Airlines Holdings, Inc.) OMISSION OF CERTAIN INFORMATION  This combined Quarterly Report on Form 10-Q is separately filed by United Airlines Holdings, Inc. and United Airlines, Inc. United Airlines, Inc. meets the conditions set forth in General Instruction H(1)(a) and (b) of Form 10-Q and is therefore filing this form with the reduced disclosure format allowed under that General Instruction.  United Airlines Holdings, Inc. United Airlines, Inc. Quarterly Report on Form 10-Q  For the Quarterly Period Ended  September 30, 2019   Table of Contents     Page PART I. FINANCIAL INFORMATION       Item 1. Financial Statements   United Airlines Holdings, Inc.:   Statements of Consolidated Operations  3 Statements of Consolidated Comprehensive Income  4 Consolidated Balance Sheets   5 Condensed Statements of Consolidated Cash Flows   7 Statement of Consolidated Stockholders' Equity  8     United Airlines, Inc.:   Statements of Consolidated Operations  9 Statements of Consolidated Comprehensive Income  10 Consolidated Balance Sheets   11 Condensed Statements of Consolidated Cash Flows  13 Statement of Consolidated Stockholder's Equity  14     Combined Notes to Condensed Consolidated Financial Statements (United Airlines Holdings, Inc. and United Airlines, Inc.)  15     Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations  28 Item 3. Quantitative and Qualitative Disclosures About Market Risk  37 Item 4. Controls and Procedures  37     PART II. OTHER INFORMATION       Item 1. Legal Proceedings  38 Item 1A. Risk Factors  38 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds  39 Item 6. Exhibits  40 Exhibit Index  40     Signatures  41 Table of Contents     PART I. FINANCIAL INFORMATION  ITEM 1. FINANCIAL STATEMENTS.  UNITED AIRLINES HOLDINGS, INC. STATEMENTS OF CONSOLIDATED OPERATIONS (UNAUDITED ) (In millions, except per share amounts)    Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018 (a)   2019   2018 (a) Operating revenue:               Passenger revenue $ 10,481   $ 10,120   $ 29,692   $ 28,150 Cargo 282   296   863   903 Other operating revenue 617   587   1,816   1,759 Total operating revenue 11,380   11,003   32,371   30,812                 Operating expense:               Salaries and related costs 3,063   2,930   8,993   8,534 Aircraft fuel 2,296   2,572   6,704   6,927 Regional capacity purchase 721   676   2,124   1,999 Landing fees and other rent 645   618   1,893   1,822 Depreciation and amortization 575   545   1,682   1,607 Aircraft maintenance materials and outside repairs 490   455   1,319   1,333 Distribution expenses 432   427   1,234   1,162 Aircraft rent 67   109   221   355 Special charges 27   17   116   186 Other operating expenses 1,591   1,467   4,645   4,293 Total operating expenses 9,907   9,816   28,931   28,218 Operating income  1,473   1,187   3,440   2,594                 Nonoperating income (expense):               Interest expense ( 191 )   ( 172 )   ( 570 )   ( 497 ) Interest capitalized 22   16   65   46 Interest income 36   28   103   70 Miscellaneous, net  9   ( 1 )   32   ( 118 ) Total nonoperating expense, net ( 124 )   ( 129 )   ( 370 )   ( 499 ) Income before income taxes 1,349   1,058   3,070   2,095 Income tax expense 325   225   702   434 Net income  $ 1,024   $ 833   $ 2,368   $ 1,661 Earnings per share, basic $ 4.01   $ 3.06   $ 9.07   $ 6.00 Earnings per share, diluted $ 3.99   $ 3.05   $ 9.04   $ 5.98 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  3 Table of Contents     UNITED AIRLINES HOLDINGS, INC. STATEMENTS OF CONSOLIDATED COMPREHENSIVE INCOME (UNAUDITED) (In millions)    Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018 (a)   2019   2018 (a) Net income  $ 1,024   $ 833   $ 2,368   $ 1,661                 Other comprehensive income (loss), net of tax:               Employee benefit plans 304   12   294   54 Investments and other ( 1 )   1   5   ( 3 ) Total other comprehensive income (loss), net of tax 303   13   299   51                 Total comprehensive income, net $ 1,327   $ 846   $ 2,667   $ 1,712 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  4 Table of Contents     UNITED AIRLINES HOLDINGS, INC. CONSOLIDATED BALANCE SHEETS (UNAUDITED) (In millions, except shares)     September 30, 2019   December 31, 2018 (a) ASSETS       Current assets:       Cash and cash equivalents $ 2,959   $ 1,694 Short-term investments 2,167   2,256 Receivables, less allowance for doubtful accounts (2019 — $11; 2018 — $8) 1,617   1,426 Aircraft fuel, spare parts and supplies, less obsolescence allowance (2019 — $403; 2018 — $412) 1,065   985 Prepaid expenses and other 725   733 Total current assets 8,533   7,094 Operating property and equipment:       Flight equipment 34,413   32,599 Other property and equipment 7,626   6,889 Purchase deposits for flight equipment 1,446   1,177 Total operating property and equipment, at cost 43,485   40,665 Less — Accumulated depreciation and amortization ( 14,153 )   ( 13,266 ) Total operating property and equipment, net 29,332   27,399         Operating lease right-of-use assets 4,937   5,262         Other assets:       Goodwill 4,523   4,523 Intangibles, less accumulated amortization (2019 — $1,425; 2018 — $1,380) 3,114   3,159 Restricted cash 100   105 Notes receivable, net 529   516 Investments in affiliates and other, net 1,131   966 Total other assets 9,397   9,269 Total assets $ 52,199   $ 49,024 (continued on next page)  5 Table of Contents     UNITED AIRLINES HOLDINGS, INC. CONSOLIDATED BALANCE SHEETS (UNAUDITED) (In millions, except shares)    September 30, 2019   December 31, 2018 (a) LIABILITIES AND STOCKHOLDERS' EQUITY       Current liabilities:       Advance ticket sales $ 5,515   $ 4,381 Accounts payable 2,848   2,363 Frequent flyer deferred revenue 2,537   2,286 Accrued salaries and benefits 2,104   2,184 Current maturities of long-term debt 1,243   1,230 Current maturities of finance leases 92   123 Current maturities of operating leases 778   719 Other 574   553 Total current liabilities 15,691   13,839         Long-term debt 12,900   12,215 Long-term obligations under finance leases 186   224 Long-term obligations under operating leases 4,941   5,276         Other liabilities and deferred credits:       Frequent flyer deferred revenue 2,682   2,719 Postretirement benefit liability 836   1,295 Pension liability 1,087   1,576 Deferred income taxes 1,594   828 Other 981   1,010 Total other liabilities and deferred credits 7,180   7,428 Commitments and contingencies   Stockholders' equity:       Preferred stock —   — Common stock at par, $0.01 par value; authorized 1,000,000,000 shares; outstanding 253,624,406 and 269,914,769 shares at September 30, 2019 and December 31, 2018, respectively 3   3 Additional capital invested 6,111   6,120 Retained earnings 9,075   6,715 Stock held in treasury, at cost ( 3,384 )   ( 1,993 ) Accumulated other comprehensive loss ( 504 )   ( 803 ) Total stockholders' equity 11,301   10,042 Total liabilities and stockholders' equity $ 52,199   $ 49,024 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  6 Table of Contents     UNITED AIRLINES HOLDINGS, INC. CONDENSED STATEMENTS OF CONSOLIDATED CASH FLOWS (UNAUDITED) (In millions)    Nine Months Ended September 30,   2019   2018 (a) Cash Flows from Operating Activities:       Net cash provided by operating activities $ 5,728   $ 5,035         Cash Flows from Investing Activities:       Capital expenditures ( 3,336 )   ( 2,496 ) Purchases of short-term and other investments ( 2,168 )   ( 1,975 ) Proceeds from sale of short-term and other investments 2,282   1,979 Investment in affiliates ( 36 )   ( 139 ) Proceeds from sale of property and equipment 47   30 Loans made to affiliates ( 10 )   ( 10 ) Other, net ( 10 )   104 Net cash used in investing activities ( 3,231 )   ( 2,507 )         Cash Flows from Financing Activities:       Proceeds from issuance of long-term debt 1,109   1,241 Payments of long-term debt ( 726 )   ( 1,519 ) Repurchases of common stock ( 1,431 )   ( 1,010 ) Principal payments under finance leases ( 105 )   ( 57 ) Capitalized financing costs ( 51 )   ( 31 ) Other, net ( 29 )   ( 17 ) Net cash used in financing activities ( 1,233 )   ( 1,393 ) Net increase in cash, cash equivalents and restricted cash 1,264   1,135 Cash, cash equivalents and restricted cash at beginning of the period 1,799   1,591 Cash, cash equivalents and restricted cash at end of the period (b) $ 3,063   $ 2,726         Investing and Financing Activities Not Affecting Cash:       Property and equipment acquired through the issuance of debt $ 306   $ 125 Operating lease conversions to finance lease 36   52 Right-of-use assets acquired through operating leases 344   537 Property and equipment acquired through finance leases 8   — (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. (b)  The following table provides a reconciliation of cash, cash equivalents and restricted cash to amounts reported within the consolidated balance sheet: Cash and cash equivalents $ 2,959   $ 2,621 Restricted cash (included in Prepaid expenses and other) 4   — Restricted cash 100   105 Total cash, cash equivalents and restricted cash  $ 3,063   $ 2,726 The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  7 Table of Contents     UNITED AIRLINES HOLDINGS, INC.  STATEMENTS OF CONSOLIDATED STOCKHOLDERS' EQUITY (In millions)   Common Stock   Additional Capital Invested   Treasury Stock   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Total   Shares   Amount           Balance at June 30, 2019 257.7   $ 3   $ 6,096   $ ( 3,022 )   $ 8,050   $ ( 807 )   $ 10,320 Net income —   —   —   —   1,024   —   1,024 Other comprehensive loss —   —   —   —   —   303   303 Stock settled share-based compensation —   —   18   —   —   —   18 Repurchases of common stock ( 4.1 )   —   —   ( 363 )   —   —   ( 363 ) Net treasury stock issued for share-based awards —   —   ( 3 )   1   1   —   ( 1 ) Balance at September 30, 2019 253.6   $ 3   $ 6,111   $ ( 3,384 )   $ 9,075   $ ( 504 )   $ 11,301                             Balance at December 31, 2018 (a) 269.9   $ 3   $ 6,120   $ ( 1,993 )   $ 6,715   $ ( 803 )   $ 10,042 Net income —   —   —   —   2,368   —   2,368 Other comprehensive loss —   —   —   —   —   299   299 Stock settled share-based compensation —   —   49   —   —   —   49 Repurchases of common stock ( 16.8 )   —   —   ( 1,426 )   —   —   ( 1,426 ) Net treasury stock issued for share-based awards 0.5   —   ( 58 )   35   ( 8 )   —   ( 31 ) Balance at September 30, 2019 253.6   $ 3   $ 6,111   $ ( 3,384 )   $ 9,075 $ ( 504 )   $ 11,301                             Balance at June 30, 2018 (a) 273.0   $ 3   $ 6,091   $ ( 1,720 )   $ 5,419   $ ( 1,102 )   $ 8,691 Net income (a) —   —   —   —   833   —   833 Other comprehensive income —   —   —   —   —   13   13 Stock settled share-based compensation —   —   16   —   —   —   16 Repurchases of common stock ( 0.5 )   —   —   ( 34 )   —   —   ( 34 ) Net treasury stock issued for share-based awards —   —   ( 2 )   1   —   —   ( 1 ) Balance at September 30, 2018 (a) 272.5   $ 3   $ 6,105   $ ( 1,753 )   $ 6,252   $ ( 1,089 )   $ 9,518                             Balance at December 31, 2017 (a) 287.0   $ 3   $ 6,098   $ ( 769 )   $ 4,603   $ ( 1,147 )   $ 8,788 Net income (a) —   —   —   —   1,661   —   1,661 Other comprehensive income —   —   —   —   —   51   51 Stock settled share-based compensation —   —   45   —   —   —   45 Repurchases of common stock ( 14.7 )   —   —   ( 1,010 )   —   —   ( 1,010 ) Net treasury stock issued for share-based awards 0.2   —   ( 38 )   26   ( 5 )   —   ( 17 ) Adoption of accounting standard related to equity investments —   —   —   —   ( 7 )   7   — Balance at September 30, 2018 (a) 272.5   $ 3   $ 6,105   $ ( 1,753 )   $ 6,252   $ ( 1,089 )   $ 9,518 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  8 Table of Contents     UNITED AIRLINES, INC. STATEMENTS OF CONSOLIDATED OPERATIONS (UNAUDITED) (In millions)   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018 (a)   2019   2018 (a) Operating revenue:               Passenger revenue $ 10,481   $ 10,120   $ 29,692   $ 28,150 Cargo 282   296   863   903 Other operating revenue 617   587   1,816   1,759 Total operating revenue 11,380   11,003   32,371   30,812                 Operating expense:               Salaries and related costs 3,063   2,930   8,993   8,534 Aircraft fuel 2,296   2,572   6,704   6,927 Regional capacity purchase 721   676   2,124   1,999 Landing fees and other rent 645   618   1,893   1,822 Depreciation and amortization 575   545   1,682   1,607 Aircraft maintenance materials and outside repairs 490   455   1,319   1,333 Distribution expenses 432   427   1,234   1,162 Aircraft rent 67   109   221   355 Special charges 27   17   116   186 Other operating expenses 1,590   1,467   4,643   4,292 Total operating expense 9,906   9,816   28,929   28,217 Operating income  1,474   1,187   3,442   2,595                 Nonoperating income (expense):               Interest expense ( 191 )   ( 172 )   ( 570 )   ( 497 ) Interest capitalized 22   16   65   46 Interest income 36   28   103   70 Miscellaneous, net  9   ( 1 )   32   ( 118 ) Total nonoperating expense, net ( 124 )   ( 129 )   ( 370 )   ( 499 ) Income before income taxes 1,350   1,058   3,072   2,096 Income tax expense 326   224   703   434 Net income $ 1,024   $ 834   $ 2,369   $ 1,662 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  9 Table of Contents     UNITED AIRLINES, INC. STATEMENTS OF CONSOLIDATED COMPREHENSIVE INCOME (UNAUDITED) (In millions)    Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018 (a)   2019   2018 (a) Net income $ 1,024   $ 834   $ 2,369   $ 1,662                 Other comprehensive income (loss), net of tax:               Employee benefit plans 304   12   294   54 Investments and other ( 1 )   1   5   ( 3 ) Total other comprehensive income (loss), net of tax 303   13   299   51                 Total comprehensive income, net $ 1,327   $ 847   $ 2,668   $ 1,713 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  10 Table of Contents     UNITED AIRLINES, INC. CONSOLIDATED BALANCE SHEETS (UNAUDITED) (In millions, except shares)      September 30, 2019   December 31, 2018 (a) ASSETS       Current assets:       Cash and cash equivalents $ 2,953   $ 1,688 Short-term investments 2,167   2,256 Receivables, less allowance for doubtful accounts (2019 — $11; 2018 — $8) 1,617   1,426 Aircraft fuel, spare parts and supplies, less obsolescence allowance (2019 — $403; 2018 — $412) 1,065   985 Prepaid expenses and other 725   733 Total current assets 8,527   7,088 Operating property and equipment:       Flight equipment 34,413   32,599 Other property and equipment 7,626   6,889 Purchase deposits for flight equipment 1,446   1,177 Total operating property and equipment, at cost 43,485   40,665 Less — Accumulated depreciation and amortization ( 14,153 )   ( 13,266 ) Total operating property and equipment, net 29,332   27,399         Operating lease right-of-use assets 4,937   5,262         Other assets:       Goodwill 4,523   4,523 Intangibles, less accumulated amortization (2019 — $1,425; 2018 — $1,380) 3,114   3,159 Restricted cash 100   105 Notes receivable, net 529   516 Investments in affiliates and other, net 1,131   966 Total other assets 9,397   9,269 Total assets $ 52,193   $ 49,018 (continued on next page)  11 Table of Contents     UNITED AIRLINES, INC. CONSOLIDATED BALANCE SHEETS (UNAUDITED) (In millions, except shares)      September 30, 2019   December 31, 2018 (a) LIABILITIES AND STOCKHOLDER'S EQUITY       Current liabilities:       Advance ticket sales $ 5,515   $ 4,381 Accounts payable 2,848   2,363 Frequent flyer deferred revenue 2,537   2,286 Accrued salaries and benefits 2,104   2,184 Current maturities of long-term debt 1,243   1,230 Current maturities of finance leases 92   123 Current maturities of operating leases 778   719 Other 579   558 Total current liabilities 15,696   13,844         Long-term debt 12,900   12,215 Long-term obligations under finance leases 186   224 Long-term obligations under operating leases 4,941   5,276         Other liabilities and deferred credits:       Frequent flyer deferred revenue 2,682   2,719 Postretirement benefit liability 836   1,295 Pension liability 1,087   1,576 Deferred income taxes 1,622   855 Other 980   1,010 Total other liabilities and deferred credits 7,207   7,455 Commitments and contingencies   Stockholder's equity:       Common stock at par, $0.01 par value; authorized 1,000 shares; issued and outstanding 1,000 shares at both September 30, 2019 and December 31, 2018 —   — Additional capital invested —   598 Retained earnings 11,909   10,319 Accumulated other comprehensive loss ( 504 )   ( 803 ) Receivable from related parties ( 142 )   ( 110 ) Total stockholder's equity 11,263   10,004 Total liabilities and stockholder's equity $ 52,193   $ 49,018 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  12 Table of Contents     UNITED AIRLINES, INC. CONDENSED STATEMENTS OF CONSOLIDATED CASH FLOWS (UNAUDITED)  (In millions)   Nine Months Ended September 30,   2019   2018 (a)         Cash Flows from Operating Activities:       Net cash provided by operating activities $ 5,698   $ 5,018         Cash Flows from Investing Activities:       Capital expenditures ( 3,336 )   ( 2,496 ) Purchases of short-term investments and other investments ( 2,168 )   ( 1,975 ) Proceeds from sale of short-term and other investments 2,282   1,979 Investment in affiliates ( 36 )   ( 139 ) Proceeds from sale of property and equipment 47   30 Loans made to affiliates ( 10 )   ( 10 ) Other, net ( 10 )   104 Net cash used in investing activities ( 3,231 )   ( 2,507 )         Cash Flows from Financing Activities:       Proceeds from issuance of long-term debt 1,109   1,241 Payments of long-term debt ( 726 )   ( 1,519 ) Dividend to UAL ( 1,431 )   ( 1,010 ) Principal payments under finance leases ( 105 )   ( 57 ) Capitalized financing costs ( 51 )   ( 31 ) Other, net 1   — Net cash used in financing activities ( 1,203 )   ( 1,376 ) Net increase in cash, cash equivalents and restricted cash 1,264   1,135 Cash, cash equivalents and restricted cash at beginning of the period 1,793   1,585 Cash, cash equivalents and restricted cash at end of the period (b) $ 3,057   $ 2,720         Investing and Financing Activities Not Affecting Cash:       Property and equipment acquired through the issuance of debt $ 306   $ 125 Operating lease conversions to finance lease 36   52 Right-of-use assets acquired through operating leases 344   537 Property and equipment acquired through finance leases 8   — (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. (b)  The following table provides a reconciliation of cash, cash equivalents and restricted cash to amounts reported within the consolidated balance sheet: Cash and cash equivalents $ 2,953   $ 2,615 Restricted cash (included in Prepaid expenses and other) 4   — Restricted cash 100   105 Total cash, cash equivalents and restricted cash  $ 3,057   $ 2,720 The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  13 Table of Contents     UNITED AIRLINES, INC.  STATEMENTS OF CONSOLIDATED STOCKHOLDER'S EQUITY (In millions)   Additional Capital Invested   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Receivable from Related Parties, Net   Total           Balance at June 30, 2019 $ —   $ 11,230   $ ( 807 )   $ ( 141 )   $ 10,282 Net income —   1,024   —   —   1,024 Other comprehensive loss —   —   303   —   303 Dividend to UAL ( 18 )   ( 345 )   —   —   ( 363 ) Share-based compensation 18   —   —   —   18 Other —   —   —   ( 1 )   ( 1 ) Balance at September 30, 2019 $ —   $ 11,909   $ ( 504 )   $ ( 142 )   $ 11,263                     Balance at December 31, 2018 (a) $ 598   $ 10,319   $ ( 803 )   $ ( 110 )   $ 10,004 Net income —   2,369   —   —   2,369 Other comprehensive loss —   —   299   —   299 Dividend to UAL ( 647 )   ( 779 )   —   —   ( 1,426 ) Stock settled share-based compensation 49   —   —   —   49 Other —   —   —   ( 32 )   ( 32 ) Balance at September 30, 2019 $ —   $ 11,909   $ ( 504 )   $ ( 142 )   $ 11,263                     Balance at June 30, 2018 (a) $ 841   $ 9,022   $ ( 1,102 )   $ ( 108 )   $ 8,653 Net income —   834   —   —   834 Other comprehensive income —   —   13   —   13 Dividend to UAL ( 34 )   —   —   —   ( 34 ) Share-based compensation 16   —   —   —   16 Other ( 1 )   —   —   ( 1 )   ( 2 ) Balance at September 30, 2018 (a) $ 822   $ 9,856   $ ( 1,089 )   $ ( 109 )   $ 9,480                     Balance at December 31, 2017 (a) $ 1,787   $ 8,201   $ ( 1,147 )   $ ( 90 )   $ 8,751 Net income (a) —   1,662   —   —   1,662 Other comprehensive income —   —   51   —   51 Dividend to UAL ( 1,010 )   —   —   —   ( 1,010 ) Stock settled share-based compensation 45   —   —   —   45 Other —   ( 7 )   7   ( 19 )   ( 19 ) Balance at September 30, 2018 (a) $ 822   $ 9,856   $ ( 1,089 )   $ ( 109 )   $ 9,480 (a)  Amounts adjusted due to the adoption of Accounting Standards Update No. 2016-02,  Leases (Topic 842).  See Note 1 to the financial statements contained in Part I, Item 1 of this report for additional information. The accompanying Combined Notes to Condensed Consolidated Financial Statements are an integral part of these statements.  14 Table of Contents     UNITED AIRLINES HOLDINGS, INC. AND UNITED AIRLINES, INC. COMBINED NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (UNAUDITED) United Airlines Holdings, Inc. (together with its consolidated subsidiaries, "UAL" or the "Company") is a holding company and its principal, wholly-owned subsidiary is United Airlines, Inc. (together with its consolidated subsidiaries, "United"). This Quarterly Report on Form 10-Q is a combined report of UAL and United, including their respective consolidated financial statements. As UAL consolidates United for financial statement purposes, disclosures that relate to activities of United also apply to UAL, unless otherwise noted. United's operating revenues and operating expenses comprise nearly 100% of UAL's revenues and operating expenses. In addition, United comprises approximately the entire balance of UAL's assets, liabilities and operating cash flows. When appropriate, UAL and United are named specifically for their individual contractual obligations and related disclosures and any significant differences between the operations and results of UAL and United are separately disclosed and explained. We sometimes use the words "we," "our," "us," and the "Company" in this report for disclosures that relate to all of UAL and United. The UAL and United unaudited condensed consolidated financial statements shown here have been prepared as required by the U.S. Securities and Exchange Commission (the "SEC"). Some information and footnote disclosures normally included in financial statements that comply with accounting principles generally accepted in the United States ("GAAP") have been condensed or omitted as permitted by the SEC. The financial statements include all adjustments, including normal recurring adjustments and other adjustments, which are considered necessary for a fair presentation of the Company's financial position and results of operations. The UAL and United financial statements should be read together with the information included in the Company's Annual Report on Form 10-K for the year ended  December 31, 2018 . The Company's quarterly financial data is subject to seasonal fluctuations and historically its second and third quarter financial results, which reflect higher travel demand, are better than its first and fourth quarter financial results. NOTE 1 -  RECENTLY ISSUED ACCOUNTING STANDARDS The Company adopted Financial Accounting Standards Board ("FASB") Accounting Standards Codification Topic 842,  Leases  (the "New Lease Standard"), effective January 1, 2019. The Company used the modified retrospective approach for all leases existing at or commencing after January 1, 2017 and elected the package of transition practical expedients for expired or existing contracts, which does not require reassessment of: (1) whether any of our contracts are or contain leases, (2) lease classification and (3) initial direct costs. The New Lease Standard prescribes that an entity should recognize a right-of-use asset and a lease liability for all leases at the commencement date of each lease and recognize expenses on their income statements similar to the prior FASB Accounting Standards Codification Topic 840,  Leases  ("Topic 840"). The adoption of the New Lease Standard had the same impact on the financial statements of United as it had on the financial statements of UAL.  The table below presents the impact of the adoption of the New Lease Standard on select accounts and captions of UAL's statement of consolidated operations (in millions, except per share amounts):   Three Months Ended September 30, 2018   Nine Months Ended September 30, 2018   As Reported   New Lease Standard Adjustments   As Adjusted   As Reported   New Lease Standard Adjustments   As Adjusted Regional capacity purchase $ 663   $ 13   $ 676   $ 1,963   $ 36   $ 1,999 Landing fees and other rent 596   22   618   1,757   65   1,822 Depreciation and amortization 564   ( 19 )   545   1,662   ( 55 )   1,607 Interest expense ( 187 )   15   ( 172 )   ( 540 )   43   ( 497 ) Interest capitalized 18   ( 2 )   16   51   ( 5 )   46 Net income  836   ( 3 )   833   1,667   ( 6 )   1,661 Earnings per share, basic 3.07   ( 0.01 )   3.06   6.02   ( 0.02 )   6.00 Earnings per share, diluted 3.06   ( 0.01 )   3.05   5.99   ( 0.01 )   5.98 The expense for leases under the New Lease Standard will continue to be classified in their historical income statement captions (primarily in Aircraft rent, Landing fees and other rent and Regional capacity purchase in our statements of consolidated operations). The adoption of the New Lease Standard resulted in the recharacterization of certain leases from capital leases under Topic 840 to operating leases under the New Lease Standard. This change resulted in less depreciation and amortization and interest expense associated with capital leases offset by higher lease expense associated with operating leases. The recharacterization is associated with leases of certain airport facilities that were derecognized as part of the build-to-suit   15 Table of Contents     transition guidance under the New Lease Standard. The reduction in capitalized interest is also associated with the same airport facilities leases. The table below presents the impact of the adoption of the New Lease Standard on UAL's balance sheet accounts and captions (in millions):   December 31, 2018   As Reported   New Lease Standard Adjustments   As Adjusted Receivables, less allowance for doubtful accounts $ 1,346   $ 80   $ 1,426 Prepaid expenses and other 913   ( 180 )   733 Flight equipment, owned and finance leases (a) 32,636   ( 37 )   32,599 Other property and equipment, owned and finance leases (a) 7,930   ( 1,041 )   6,889 Accumulated depreciation and amortization, owned and finance leases (a) ( 13,414 )   148   ( 13,266 ) Operating lease right-of-use assets —   5,262   5,262 Current maturities of finance leases (a) 149   ( 26 )   123 Current maturities of operating leases —   719   719 Other current liabilities 619   ( 66 )   553 Long-term obligations under finance leases (a) 1,134   ( 910 )   224 Long-term obligations under operating leases —   5,276   5,276 Deferred income taxes 814   14   828 Other long-term liabilities 1,832   ( 822 )   1,010 Retained earnings 6,668   47   6,715 (a) Finance leases, under the New Lease Standard, are the equivalent of capital leases under Topic 840. The table below presents the impact of the adoption of the New Lease Standard on select line items of UAL's statement of consolidated cash flows (in millions):   Nine Months Ended September 30, 2018   As Reported   New Lease Standard Adjustments   As Adjusted Cash Flows from Operating Activities:           Net cash provided by operating activities $ 5,080   $ ( 45 )   $ 5,035           Cash Flows from Investing Activities:         Capital expenditures ( 2,592 )   96   ( 2,496 )             Cash Flows from Financing Activities:           Proceeds from issuance of long-term debt 1,332   ( 91 )   1,241 Principal payments under finance leases ( 98 )   41   ( 57 ) The adoption of the New Lease Standard primarily resulted in the recording of assets and liabilities of our operating leases on our consolidated balance sheets. Certain amounts recorded for prepaid and accrued rent associated with historical operating leases were reclassified to the newly captioned Operating lease right-of-use assets in the consolidated balance sheets. Also, certain leases designated under Topic 840 as owned assets and capital leases are not considered to be assets under the New Lease Standard and have been removed from the consolidated balance sheets, along with the related capital lease liability, due to the leases having variable lease payments. In June 2016, the FASB issued Accounting Standards Update No. 2016-13,  Financial Instruments—Credit Losses  ("ASU 2016-13"). The main objective is to provide financial statement users with more decision-useful information about the expected credit losses on financial instruments and other commitments to extend credit held by a reporting entity at each reporting date. The new accounting replaces the incurred loss methodology with a methodology that reflects expected credit losses and   16 Table of Contents     requires consideration of a broader range of reasonable and supportable information to calculate credit loss estimates. For trade receivables, loans and held-to-maturity debt securities, entities will be required to estimate lifetime expected credit losses. For available-for-sale debt securities, entities will be required to recognize an allowance for credit losses rather than a reduction to the carrying value of the asset. The new accounting is effective for fiscal years and interim periods beginning after December 15, 2019 and early adoption is permitted as of the fiscal years beginning after December 15, 2018, including interim periods within those fiscal years. The Company does not expect the adoption of ASU 2016-13 to have a material impact on its consolidated financial statements. NOTE 2 -  REVENUE Revenue by Geography.   The following table presents operating revenue by geographic region (in millions):   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018 Domestic (U.S. and Canada) $ 7,094   $ 6,762   $ 20,056   $ 18,927 Atlantic 2,103   2,073   5,627   5,427 Pacific 1,280   1,339   3,867   3,855 Latin America 903   829   2,821   2,603 Total $ 11,380   $ 11,003   $ 32,371   $ 30,812 Advance Ticket Sales.  All tickets sold at any given point of time have travel dates extending up to 12 months. The Company defers amounts related to future travel in its Advance ticket sales liability account. As a result, the balance of the Company's Advance ticket sales liability represents activity that will be recognized in the next 12 months. In the  three and nine  months ended  September 30, 2019 , the Company recognized approximately  $ 4.1  billion  and  $ 3.4  billion , respectively, and in the  three and nine  months ended  September 30, 2018 , the Company recognized approximately  $ 4.1  billion  and  $ 3.0  billion , respectively, of passenger revenue for tickets that were included in Advance ticket sales at the beginning of those periods.  Ancillary Fees.  The Company charges fees, separately from ticket sales, for certain ancillary services that are directly related to passengers' travel, such as ticket change fees, baggage fees, inflight amenities fees, and other ticket-related fees. These ancillary fees are part of the travel performance obligation and, as such, are recognized as passenger revenue when the travel occurs. The Company recorded  $ 645  million  and  $ 1.9  billion  of ancillary fees within passenger revenue in the  three and nine  months ended  September 30, 2019 , respectively. The Company recorded  $ 572  million  and  $ 1.6  billion  of ancillary fees within passenger revenue in the  three and nine  months ended  September 30, 2018 , respectively. Frequent Flyer Accounting.   The table below presents a roll forward of Frequent flyer deferred revenue (in millions):   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018 Total Frequent flyer deferred revenue - beginning balance $ 5,198   $ 4,989   $ 5,005   $ 4,783 Miles awarded 662   616   1,951   1,826 Travel miles redeemed (Passenger revenue) ( 607 )   ( 580 )   ( 1,634 )   ( 1,508 ) Non-travel miles redeemed (Other operating revenue) ( 34 )   ( 38 )   ( 103 )   ( 114 ) Total Frequent flyer deferred revenue - ending balance $ 5,219   $ 4,987   $ 5,219   $ 4,987 In the  three and nine  months ended  September 30, 2019 , the Company recognized, in Other operating revenue,  $ 489  million  and  $ 1.5  billion , respectively, related to the marketing, advertising, non-travel miles redeemed (net of related costs) and other travel-related benefits of the mileage revenue associated with our various partner agreements including, but not limited to, our Chase co-brand agreement. The Company recognized  $ 480  million  and  $ 1.5  billion , respectively, in the  three and nine  months ended  September 30, 2018 , related to those revenues. The portion related to the MileagePlus miles awarded of the total amounts received from our various partner agreements is deferred and presented in the table above as an increase to the frequent flyer liability.  17 Table of Contents     NOTE 3 -  EARNINGS PER SHARE  The computations of UAL's basic and diluted earnings per share are set forth below (in millions, except per share amounts):   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018 Earnings available to common stockholders $ 1,024   $ 833   $ 2,368   $ 1,661                 Basic weighted-average shares outstanding 255.3   272.4   261.0   277.0 Effect of employee stock awards 1.1   1.2   1.0   1.0 Diluted weighted-average shares outstanding 256.4   273.6   262.0   278.0                 Earnings per share, basic $ 4.01   $ 3.06   $ 9.07   $ 6.00 Earnings per share, diluted $ 3.99   $ 3.05   $ 9.04   $ 5.98 In the  three and nine  months ended  September 30, 2019 , UAL repurchased approximately  4.1  million  and  16.8  million  shares, respectively, of UAL common stock in open market transactions for  $ 0.4  billion  and  $ 1.4  billion , respectively. On July 15, 2019, UAL's Board of Directors authorized a new  $ 3.0  billion  share repurchase program to acquire UAL's common stock. As of  September 30, 2019 , the Company had approximately  $ 3.3  billion  remaining to purchase shares under its December 2017 and July 2019 share repurchase programs. UAL may repurchase shares through the open market, privately negotiated transactions, block trades or accelerated share repurchase transactions from time to time in accordance with applicable securities laws. UAL will repurchase shares of UAL common stock subject to prevailing market conditions, and may discontinue such repurchases at any time. See Part II, Item 2, Unregistered Sales of Equity Securities and Use of Proceeds of this report for additional information.   NOTE 4 -  ACCUMULATED OTHER COMPREHENSIVE INCOME (LOSS) The tables below present the components of the Company's accumulated other comprehensive income (loss), net of tax ("AOCI") (in millions):   UAL   Pension and Other Postretirement Liabilities Investments and Other Deferred Taxes Total     Balance at June 30, 2019   $ ( 675 )   $ 3   $ ( 135 )   $ ( 807 )   Changes in value   394   —   ( 87 )   307   Amounts reclassified to earnings   ( 4 ) (a) ( 1 )   1   ( 4 )   Balance at September 30, 2019   $ ( 285 ) $ 2 $ ( 221 ) $ ( 504 )   Balance at December 31, 2018   $ ( 663 ) $ ( 4 ) $ ( 136 ) $ ( 803 )   Changes in value   370   7   ( 83 )   294   Amounts reclassified to earnings   8 (a) ( 1 )   ( 2 )   5   Balance at September 30, 2019   $ ( 285 ) $ 2 $ ( 221 ) $ ( 504 )                       Balance at June 30, 2018   $ ( 1,048 )   $ ( 2 )   $ ( 52 )   $ ( 1,102 )   Changes in value   —   1   —   1   Amounts reclassified to earnings   15 (a) —   ( 3 )   12   Balance at September 30, 2018   $ ( 1,033 )   $ ( 1 )   $ ( 55 )   $ ( 1,089 )   Balance at December 31, 2017   $ ( 1,102 )   $ ( 6 )   $ ( 39 )   $ ( 1,147 )   Changes in value   24   ( 2 )   ( 6 )   16   Amounts reclassified to earnings   45 (a) —   ( 10 )   35   Amounts reclassified to retained earnings   —   7   —   7   Balance at September 30, 2018   $ ( 1,033 )   $ ( 1 )   $ ( 55 )   $ ( 1,089 ) (a) This AOCI component is included in the computation of net periodic pension and other postretirement costs (See Note 6 to the financial statements included in Part I, Item 1 for additional information).  18 Table of Contents     NOTE 5 -  INCOME TAXES The Company's effective tax rate for the  three and nine  months ended  September 30, 2019  was  24.1 %  and  22.9 % , respectively. The effective tax rate for the  three and nine  months ended  September 30, 2018  was  21.3 %  and  20.7 % , respectively. The effective tax rate represents a blend of federal, state and foreign taxes and includes the impact of certain nondeductible items and the impact of a change in the Company's mix of domestic and foreign earnings. NOTE 6 -  EMPLOYEE BENEFIT PLANS Defined Benefit Pension and Other Postretirement Benefit Plans.   The Company's net periodic benefit cost includes the following components for the three months ended  September 30  (in millions):     Pension Benefits   Other Postretirement Benefits   Affected Line Item  in the Statements of  Consolidated Operations     2019   2018   2019   2018     Service cost   $ 46   $ 57   $ 2   $ 3   Salaries and related costs Interest cost   56   54   10   16   Miscellaneous, net Expected return on plan assets   ( 73 )   ( 73 )   —   ( 1 )   Miscellaneous, net Amortization of unrecognized (gain) loss    29   32   ( 12 )   ( 8 )   Miscellaneous, net Amortization of prior service credit   —   —   ( 23 )   ( 9 )   Miscellaneous, net Settlement loss   2   —   —   —   Miscellaneous, net Total   $ 60   $ 70   $ ( 23 )   $ 1     The Company's net periodic benefit cost includes the following components for the  nine  months ended  September 30  (in millions):     Pension Benefits   Other Postretirement Benefits   Affected Line Item  in the Statements of  Consolidated Operations     2019   2018   2019   2018     Service cost   $ 138   $ 171   $ 7   $ 9   Salaries and related costs Interest cost   170   162   39   46   Miscellaneous, net Expected return on plan assets   ( 218 )   ( 219 )   ( 1 )   ( 1 )   Miscellaneous, net Amortization of unrecognized (gain) loss    87   97   ( 42 )   ( 24 )   Miscellaneous, net Amortization of prior service credit   —   —   ( 42 )   ( 28 )   Miscellaneous, net Settlement loss   5   —     —   Miscellaneous, net Total   $ 182   $ 211   $ ( 39 )   $ 2     During the  three and nine  months ended  September 30, 2019 , the Company contributed  $ 335  million  and  $ 635  million , respectively, to its U.S. domestic tax-qualified defined benefit pension plans. During the third quarter of 2019, United notified participants of a refresh to the plan options offered under its retiree medical benefit program. Current non-HMO (health maintenance organization) medical plan options for post-Medicare retirees will be converted to fully-insured Medicare Advantage plans. The plan design changes will impact all current and future eligible post-Medicare retirees, through updates in plan design and/or premium rate/contribution setting refinements. Benefit levels have not been reduced as a result of this change, and in many cases the refresh will result in reduced retiree contributions. As a result of this modification to its retiree medical plan options, the Company remeasured retiree medical benefit program liabilities using a discount rate of  3.39 % . The projected benefit obligation of the retiree medical benefit program decreased by  $ 421  million  with an offset to Accumulated other comprehensive loss ( $ 597  million  in prior service credits, partially offset by  $ 176  million  in actuarial losses), which will be amortized over the average years of future service to full eligibility for the participants in the retiree medical benefit program (approximately  seven years ). Share-Based Compensation.  In the  nine  months ended  September 30, 2019 , UAL granted share-based compensation awards pursuant to the United Continental Holdings, Inc. 2017 Incentive Compensation Plan. These share-based compensation awards include  1.1  million  restricted stock units ("RSUs"), consisting of  0.8  million  time-vested RSUs and  0.3  million  performance-based RSUs. The time-vested RSUs vest pro-rata, on February 28th of each year, over a period of  three years  from the date of   19 Table of Contents     grant. The amount of performance-based RSUs vest based on the Company's relative improvement in pre-tax margin, as compared to a group of industry peers, for the  three years  ending December 31,  2021 . RSUs are generally equity awards settled in stock for domestic employees and liability awards settled in cash for international employees. The cash payments are based on the  20 -day average closing price of UAL common stock immediately prior to the vesting date. The table below presents information related to share-based compensation (in millions):   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018 Share-based compensation expense $ 33   $ 29   $ 70   $ 73                   September 30, 2019   December 31, 2018         Unrecognized share-based compensation $ 90   $ 68         NOTE 7 -  BRW TERM LOAN In November 2018, United, as lender, entered into a Term Loan Agreement (the "BRW Loan Agreement") with, among others, BRW Aviation Holding LLC and BRW Aviation LLC ("BRW"), as guarantor and borrower, respectively, affiliates of Synergy Aerospace Corporation ("Synergy"), the majority shareholder of Avianca Holdings S.A. ("AVH"). Pursuant to the BRW Loan Agreement, United provided a  $ 456  million  term loan to BRW (the "BRW Term Loan"), secured by a pledge of BRW's equity, as well as BRW's  516  million  shares of common stock of AVH (having an implied value equivalent to  64.5  million  American Depositary Receipts ("ADRs"), the class of AVH securities that trades on the New York Stock Exchange (the "NYSE")). BRW is currently in default under the BRW Loan Agreement.  On May 13, 2019, S&P Global Ratings downgraded its AVH issuer level credit ratings from B to CCC+, together with accompanying downgrades for AVH's frequent flyer subsidiary LifeMiles Ltd. ("LifeMiles") and for certain outstanding debt of both AVH and LifeMiles. Following these downgrades, and in order to protect the value of its collateral, on May 24, 2019, United began to exercise remedies available to it under the terms of the BRW Loan Agreement and related documents. In connection with the delivery by United of a notice of default to BRW, Kingsland Holdings Limited ("Kingsland"), AVH's largest minority shareholder, was granted, in accordance with the agreements related to the BRW Loan Agreement, independent authority to manage BRW, which remains the majority shareholder of AVH. In addition, Kingsland is pursuing a foreclosure process which is expected to result in a judicially supervised sale of the collateral, following the grant of summary judgment by a NY court on September 26, 2019. United evaluated the  $ 494  million  carrying value of the BRW Term Loan as of  September 30, 2019  using the fair value of the collateral (and taking into consideration the secured convertible loan commitment disclosed in Note 10) and determined that the value of the collateral is sufficient to recover the carrying value of the loan. As a result, the Company concluded that the BRW Term Loan is not impaired. The carrying value of the BRW Term Loan represents the original loan amount plus accrued and unpaid interest and certain expenses associated with the loan origination. The fair market value of AVH equity was estimated using an income approach and a market approach with equal weight applied to each approach. Under the income approach, the value was estimated by discounting expected future cash flows at a weighted average cost of capital to a single present value amount. Under the market approach, the value was estimated by reference to multiples of enterprise value to earnings before interest, taxes, depreciation, amortization and rent ("EBITDAR") for a group of publicly-traded market comparable companies, along with AVH's own EBITDAR levels.  20 Table of Contents     NOTE 8 -  FINANCIAL INSTRUMENTS AND FAIR VALUE MEASUREMENTS The table below presents disclosures about the financial assets and liabilities measured at fair value on a recurring basis in UAL's financial statements (in millions):   September 30, 2019   December 31, 2018   Total   Level 1   Level 2   Level 3   Total   Level 1   Level 2   Level 3 Cash and cash equivalents $ 2,959   $ 2,959   $ —   $ —   $ 1,694   $ 1,694   $ —   $ — Short-term investments:                               Corporate debt 1,016   —   1,016   —   1,023   —   1,023   — Asset-backed securities 706   —   706   —   746   —   746   — U.S. government and agency notes 131   —   131   —   108   —   108   — Certificates of deposit placed through an account registry service ("CDARS") 42   —   42   —   75   —   75   — Other fixed-income securities 80   —   80   —   116   —   116   — Other investments measured at net asset value ("NAV") 192   —   —   —   188   —   —   — Restricted cash 104   104   —   —   105   105   —   — Long-term investments:                             Equity securities 322   322   —   —   249   249   —   — AVH Derivative Assets (defined below) 6   —   —   6   11   —   —   11 Available-for-sale investment maturities  - The short-term investments shown in the table above are classified as available-for-sale, with the exception of investments measured at NAV. As of  September 30, 2019 , asset-backed securities have remaining maturities of less than  one year  to approximately  15  years , corporate debt securities have remaining maturities of  three years  or less and CDARS have maturities of less than  one year . U.S. government and agency notes have maturities of approximately  three years  or less and other fixed-income securities have maturities of  two years  or less. Restricted cash  - Restricted cash primarily includes collateral for letters of credit and collateral associated with facility leases and other insurance-related obligations. Equity securities  - Equity securities represent United's investment in Azul Linhas Aéreas Brasileiras S.A. ("Azul"), consisting of a preferred equity stake of approximately  8 %  (approximately  2 %  of the total capital stock of Azul). The Company recognizes changes to the fair market value of its equity investment in Azul in Nonoperating income (expense): Miscellaneous, net in its statements of consolidated operations. AVH Derivative Assets -  As part of the BRW Loan Agreement and related agreements with Kingsland, United obtained AVH share call options, AVH share appreciation rights, and an AVH share-based upside sharing agreement (collectively, the "AVH Derivative Assets"). The AVH Derivative Assets are recorded at fair value as Other assets on the Company's balance sheet and are included in the table above. Changes in the fair value of the AVH Derivative Assets are recorded as part of Nonoperating income (expense): Miscellaneous, net on the Company's statements of consolidated operations. Investments presented in the table above have the same fair value as their carrying value.  The table below presents the carrying values and estimated fair values of financial instruments not presented in the tables above (in millions):   September 30, 2019   December 31, 2018   Carrying Amount   Fair Value   Carrying Amount   Fair Value       Total   Level 1   Level 2   Level 3       Total   Level 1   Level 2   Level 3 Long-term debt $ 14,143   $ 14,832   $ —   $ 11,131   $ 3,701   $ 13,445   $ 13,450   $ —   $ 9,525   $ 3,925  21 Table of Contents      Fair value of the financial instruments included in the tables above was determined as follows: Description Fair Value Methodology Cash and cash equivalents The carrying amounts approximate fair value because of the short-term maturity of these assets. Short-term investments,  Equity securities and Restricted cash Fair value is based on (a) the trading prices of the investment or similar instruments, (b) an income approach, which uses valuation techniques to convert future amounts into a single present amount based on current market expectations about those future amounts when observable trading prices are not available, or (c) broker quotes obtained by third-party valuation services. Other investments measured at NAV In accordance with the relevant accounting standards, certain investments that are measured at fair value using the NAV per share (or its equivalent) practical expedient have not been classified in the fair value hierarchy. The fair value amounts presented in the table above are intended to permit reconciliation of the fair value hierarchy to the amounts presented in the statement of financial position. The investments measured using NAV are shares of mutual funds that invest in fixed-income instruments including bonds, debt securities, and other similar instruments issued by various U.S. and non-U.S. public- or private-sector entities. The Company can redeem its shares at any time at NAV subject to a three-day settlement period.  Long-term debt Fair values were based on either market prices or the discounted amount of future cash flows using our current incremental rate of borrowing for similar liabilities or assets.  AVH Derivative Assets Fair values are calculated using a Monte Carlo simulation approach. Unobservable inputs include expected volatility, expected dividend yield and control and acquisition premiums. NOTE 9 -  LEASES United leases aircraft, airport passenger terminal space, aircraft hangars and related maintenance facilities, cargo terminals, other airport facilities, other commercial real estate, office and computer equipment and vehicles, among other items. Certain of these leases include provisions for variable lease payments which are based on several factors, including, but not limited to, relative leased square footage, available seat miles, enplaned passengers, passenger facility charges, terminal equipment usage fees, departures, and airports' annual operating budgets. Due to the variable nature of the rates, these leases are not recorded on our balance sheet as a right-of-use asset and lease liability. For leases with terms greater than 12 months, we record the related right-of-use asset and lease liability at the present value of lease payments over the lease term. Leases with an initial term of 12 months or less with purchase options or extension options that are not reasonably certain to be exercised are not recorded on the balance sheet; we recognize lease expense for these leases on a straight-line basis over the term of the lease. We combine lease and non-lease components, such as common area maintenance costs, in calculating the right-of-use assets and lease liabilities for all asset groups except for our capacity purchase agreements ("CPAs"), which contain embedded leases for regional aircraft. In addition to the lease component cost for regional aircraft, our CPAs also include non-lease components primarily related to the regional carriers' operating costs incurred in providing regional aircraft services. We allocate consideration for the lease components and non-lease components of each CPA based on their relative standalone values. Lease Cost .  The Company's lease cost for the  three and nine  months ended  September 30  included the following components (in millions):     Three Months Ended September 30,   Nine Months Ended September 30,     2019   2018   2019   2018 Operating lease cost   $ 255   $ 302   $ 786   $ 940 Variable and short-term lease cost   643   664   1,910   1,944 Amortization of finance lease assets   15   17   51   57 Interest on finance lease liabilities   27   17   86   26 Sublease income   ( 8 )   ( 9 )   ( 25 )   ( 30 ) Total lease cost   $ 932   $ 991   $ 2,808   $ 2,937  22 Table of Contents     Lease terms and commitments . United's leases include aircraft leases for aircraft that are directly leased by United and aircraft that are operated by regional carriers on United's behalf under CPAs (but excluding aircraft owned by United) and non-aircraft leases. Aircraft operating leases relate to leases of  117  mainline and  325  regional aircraft while finance leases relate to leases of  26  mainline and  28  regional aircraft. United's aircraft leases have remaining lease terms of  one month  to  10  years  with expiration dates ranging from  2019  through  2029 . Under the terms of most aircraft leases, United has the right to purchase the aircraft at the end of the lease term, in some cases at fair market value, and in others, at a percentage of cost. Non-aircraft leases have remaining lease terms of  one month  to  34  years , with expiration dates ranging from  2019  through  2053 . The table below summarizes the Company's scheduled future minimum lease payments under operating and finance leases, recorded on the balance sheet, as of  September 30, 2019  (in millions):     Operating Leases   Finance Leases Last three months of 2019   $ 195   $ 80 2020   1,004   58 2021   788   54 2022   660   44 2023   647   33 After 2023   4,611   70 Minimum lease payments   7,905   339 Imputed interest   ( 2,186 )   ( 61 ) Present value of minimum lease payments   5,719   278 Less: current maturities of lease obligations   ( 778 )   ( 92 ) Long-term lease obligations   $ 4,941   $ 186 As of  September 30, 2019 , we have additional leases of approximately  $ 915  million  for several mainline aircraft, regional jets under a CPA and a maintenance facility that have not yet commenced. These leases will commence between  2019  and  2020  with lease terms of up to  34  years . To the extent a lease agreement includes an extension option that is reasonably certain to be exercised, we have recognized those amounts as part of our right-of-use assets and lease liabilities. Our lease agreements do not provide a readily determinable implicit rate nor is it available to us from our lessors. Instead, we estimate United's incremental borrowing rate based on information available at lease commencement in order to discount lease payments to present value.  The table below presents additional information related to our leases as of  September 30 :     2019   2018   Weighted-average remaining lease term - operating leases   11  years   11  years   Weighted-average remaining lease term - finance leases   5  years   5  years   Weighted-average discount rate - operating leases   5.3 %   5.2 %   Weighted-average discount rate - finance leases   44.8 % (a) 39.5 % (a) (a) During the third quarter of 2018, United entered into an agreement with the lessor of  54  Embraer ERJ 145 aircraft to purchase those aircraft in 2019. The provisions of these lease agreements resulted in a change in accounting classification of these leases from operating leases to finance leases up until the purchase date. The discount rates used for these leases were adjusted so that the present value of lease payments did not exceed the fair value of the asset being recognized. The table below presents supplemental cash flow information related to leases during the  nine months ended September 30  (in millions):   2019   2018 Cash paid for amounts included in the measurement of lease liabilities:       Operating cash flows for operating leases $ 743   $ 842 Operating cash flows for finance leases 63   30 Financing cash flows for finance leases 105   57  23 Table of Contents     NOTE 10 -  COMMITMENTS AND CONTINGENCIES Commitments.  As of  September 30, 2019 , United had firm commitments and options to purchase aircraft from The Boeing Company ("Boeing"), Airbus S.A.S. ("Airbus") and Embraer S.A. ("Embraer") presented in the table below:         Scheduled Aircraft Deliveries Aircraft Type   Number of Firm  Commitments (a)   Last Three Months of 2019   2020   After 2020 Airbus A350   45   —   —   45 Boeing 737 MAX   171   16   28   127 Boeing 777-300ER   4   2   2   — Boeing 787   18   2   15   1 Embraer E175   29   9   20   — (a) United also has options and purchase rights for additional aircraft.                 The aircraft listed in the table above are scheduled for delivery through  2027 . To the extent the Company and the aircraft manufacturers with whom the Company has existing orders for new aircraft agree to modify the contracts governing those orders, the amount and timing of the Company's future capital commitments could change. United also has agreements to purchase  20  used Airbus A319 aircraft with expected delivery dates through  2022  and  20  used Boeing 737-700 aircraft with expected delivery dates in  2019  through  2021 .   On  March 13, 2019 , the Federal Aviation Administration issued an emergency order prohibiting the operation of Boeing 737 MAX series airplanes by U.S. certificated operators (the "FAA Order"). As a result, the Company grounded all  14  Boeing 737 MAX 9 aircraft in its fleet. Prior to the grounding, the Company operated approximately  50  flights a day on these aircraft, and expected, given the anticipated delivery schedule, to operate approximately  110  flights a day by the end of the year. The FAA Order also resulted in Boeing suspending delivery of new Boeing 737 MAX series aircraft. The extent of the delay to the scheduled deliveries of the 737 MAX aircraft included in the table above is expected to be impacted by the length of time the FAA Order remains in place, Boeing's production rate and the pace at which Boeing can deliver aircraft following the lifting of the FAA Order, among other factors. During the third quarter of 2018, United entered into an agreement with the lessor of  54  Embraer ERJ 145 aircraft to purchase those aircraft in 2019. As of  September 30, 2019 , United had purchased  36  of those aircraft. The table below summarizes United's commitments as of  September 30, 2019 , which include aircraft and related spare engines, aircraft improvements and all non-aircraft capital commitments (in billions): Last three months of 2019   $ 1.5 2020 (a)   6.1 2021   3.8 2022   2.9 2023   2.3 After 2023   7.0     $ 23.6 (a)  Commitments for 2020 are expected to be higher than other years displayed in the table above due to the large number of wide-body aircraft deliveries ( 17  new aircraft) scheduled in that year. Amounts are not adjusted for any potential changes in the delivery schedule of the Boeing 737 MAX aircraft.    24 Table of Contents     Regional CPAs.  The table below summarizes the Company's expected future payments through the end of the terms of our CPAs, excluding aircraft ownership costs and variable pass-through costs such as fuel and landing fees, among others (in billions): Last three months of 2019   $ 0.6 2020   2.2 2021   2.1 2022   1.8 2023   1.1 After 2023   4.5     $ 12.3 Guarantees.  As of  September 30, 2019 , United is the guarantor of approximately  $ 1.9  billion  in aggregate principal amount of tax-exempt special facilities revenue bonds and interest thereon. These bonds, issued by various airport municipalities, are payable solely from rentals paid under long-term agreements with the respective governing bodies. The leasing arrangements associated with these obligations are accounted for as operating leases recognized on the Company's balance sheet with the associated expense recorded on a straight-line basis resulting in ratable accrual of the lease obligation over the expected lease term. The obligations associated with these tax-exempt special facilities revenue bonds are included in our lease commitments disclosed in Note 9 of this report. All of these bonds are due between  2020  and  2038 . In connection with funding the BRW Loan Agreement, the Company entered into an agreement with Kingsland, pursuant to which, in return for Kingsland's pledge of its  144.8  million  shares of AVH common stock (having an implied value equivalent to  18.1  million  ADRs) and its consent to Synergy's pledge of its AVH common stock to United under the BRW Loan Agreement and related agreements, United (1) granted to Kingsland the right to put its shares of AVH common stock to United at market price on the fifth anniversary of the BRW Loan Agreement, and (2) guaranteed Synergy's obligation to pay Kingsland the difference (which amount, if paid by United, will increase United's secured loan to Synergy by such amount) if the market price of AVH common stock on the fifth anniversary is less than  $ 12  per ADR on the NYSE, for an aggregate maximum possible combined put payment and guarantee amount on the fifth anniversary of  $ 217  million . In 2018, the Company recorded a liability of  $ 31  million  for the fair value of its guarantee to loan additional funds to Synergy if required. Any such additional loans to Synergy would be collateralized by BRW's shares of AVH stock and other collateral. A completed foreclosure of that collateral, as described in Note 7 of this report, might accelerate the exercise of the put option described above.  On October 4, 2019, United and Kingsland delivered to AVH a commitment to provide AVH at least a  $ 250  million  senior secured convertible loan (of which United’s portion would be a maximum of  $ 150  million ), which  $ 250  million  will become fully binding on United and Kingsland subject to the satisfaction of certain conditions, including the successful completion of AVH's debt restructuring plan.  Increased Cost Provisions.  In United's financing transactions that include loans in which United is the borrower, United typically agrees to reimburse lenders for any reduced returns with respect to the loans due to any change in capital requirements and, in the case of loans with respect to which the interest rate is based on the London Interbank Offered Rate, for certain other increased costs that the lenders incur in carrying these loans as a result of any change in law, subject, in most cases, to obligations of the lenders to take certain limited steps to mitigate the requirement for, or the amount of, such increased costs. At  September 30, 2019 , the Company had  $ 3.4  billion  of floating rate debt with remaining terms of up to  11  years that are subject to these increased cost provisions. In several financing transactions involving loans or leases from non-U.S. entities, with remaining terms of up to  11  years and an aggregate balance of  $ 3.1  billion , the Company bears the risk of any change in tax laws that would subject loan or lease payments thereunder to non-U.S. entities to withholding taxes, subject to customary exclusions. As of  September 30, 2019 , United is the guarantor of  $ 136  million  of aircraft mortgage debt issued by one of United's regional carriers. The aircraft mortgage debt is subject to similar increased cost provisions as described above for the Company's debt, and the Company would potentially be responsible for those costs under the guarantees. Labor Negotiations.  As of  September 30, 2019 , the Company had approximately  95,000  employees, of whom approximately  84 %  were represented by various U.S. labor organizations. On February 1, 2019, the collective bargaining agreement with the Air Line Pilots Association ("ALPA"), the labor union representing United's pilots, became amendable. The Company and ALPA are in negotiations for an amended agreement. The Company and UNITE HERE, the labor union representing United's Catering Operations employees, started negotiations for a first collective bargaining agreement in March 2019.  25 Table of Contents     NOTE 11 -  DEBT As of  September 30, 2019 , United had its entire capacity of  $ 2.0  billion  available under the revolving credit facility of the Amended and Restated Credit and Guaranty Agreement. As of  September 30, 2019 , UAL and United were in compliance with their respective debt covenants.  EETCs .  In February and September 2019, United created new enhanced equipment trust certificates ("EETC") pass-through trusts, each of which issued pass-through certificates. The proceeds from the issuance of the pass-through certificates are used to purchase equipment notes issued by United and secured by its aircraft financed with the proceeds of such notes. The Company records the debt obligation upon issuance of the equipment notes rather than upon the initial issuance of the pass-through certificates. The pass-through certificates represent fractional undivided interests in the respective pass-through trusts and are not obligations of United. The payment obligations under the equipment notes are those of United. Proceeds received from the sale of pass-through certificates are initially held by a depositary in escrow for the benefit of the certificate holders until United issues equipment notes to the trust, which purchases such notes with a portion of the escrowed funds. These escrowed funds are not guaranteed by United and are not reported as debt on our consolidated balance sheet because the proceeds held by the depositary are not United's assets.  Certain details of the pass-through trusts with proceeds received from issuance of debt in  2019  are as follows (in millions, except stated interest rate): EETC Issuance Date   Class   Face Amount   Final expected distribution date   Stated interest rate   Total proceeds received from issuance of debt during 2019 and recorded as debt as of September 30, 2019   Remaining proceeds from issuance of certificates to be received in future periods September 2019   AA   $ 702   May 2032   2.70 %   $ 76   $ 626 September 2019   A   287   May 2028   2.90 %   31   256 September 2019   B   232   May 2028   3.50 %   25   207 February 2019   AA   717   August 2031   4.15 %   651   66 February 2019   A   296   August 2031   4.55 %   269   27         $ 2,234           $ 1,052   $ 1,182 Approximately  $ 93  million  of the proceeds from the issuance of the February 2019 pass-through certificates (such certificates, the "2019-1 Pass Through Certificates")  were expected to be used to purchase equipment notes issued by United and secured by three Boeing 737 MAX aircraft, which aircraft were scheduled for delivery by Boeing in March, April and May of 2019. However, as a result of the FAA Order, United has not yet taken delivery of these three aircraft. If United is not in a position to take delivery of such 737 MAX aircraft on or prior to November 30, 2019, any funds remaining with the depositary in escrow at such time, together with accrued and unpaid interest thereon but without premium, will be distributed to the holders of the 2019-1 Pass Through Certificates.   4.875 %  Senior Note due  2025 .  In May 2019, UAL issued  $ 350  million  aggregate principal amount of  4.875 %  Senior Notes due  January 15, 2025  (the " 4.875 %  Senior Notes due  2025 "), which are fully and unconditionally guaranteed and recorded by United on its balance sheet. The indenture for the  4.875 %  Senior Notes due  2025  requires that, if certain changes of control of UAL occur, UAL offer to repurchase the  4.875 %  Senior Notes due  2025  for cash at a purchase price equal to  101 %  of the principal amount of such notes repurchased plus accrued and unpaid interest. The table below presents the Company's contractual principal payments (not including debt discount or debt issuance costs) at  September 30, 2019  under then-outstanding long-term debt agreements (in millions):   Last three months of 2019   $ 511 2020   1,363 2021   1,355 2022   1,708 2023   758 After 2023   8,629     $ 14,324  26 Table of Contents     NOTE 12 -  SPECIAL CHARGES AND MARK-TO-MARKET ("MTM") ADJUSTMENTS For the  three and nine  months ended  September 30,  special charges and MTM adjustments consisted of the following (in millions):   Three Months Ended September 30,   Nine Months Ended September 30,   2019   2018   2019   2018 Severance and benefit costs $ 2   $ 9   $ 14   $ 34 Impairment of assets —   11   69   145 (Gains) losses on sale of assets and other special charges 25   ( 3 )   33   7 Total operating special charges 27   17   116   186 Nonoperating MTM (gains) losses on financial instruments ( 21 )   ( 29 )   ( 72 )   61 Total special charges and MTM (gains) losses on financial instruments 6   ( 12 )   44   247 Income tax expense (benefit)  ( 2 )   3   ( 10 )   ( 55 ) Total special charges and MTM (gains) losses on financial instruments, net of income tax $ 4 $ ( 9 )   $ 34   $ 192 2019 During the three and nine months ended  September 30, 2019 , the Company recorded management severance of  $ 2  million  and  $ 12  million , respectively. During the nine months ended  September 30, 2019 , the Company recorded  $ 2  million  of severance and benefit costs related to a voluntary early-out program for its technicians and related employees represented by the International Brotherhood of Teamsters. In the first quarter of  2017 , approximately  1,000  technicians and related employees elected to voluntarily separate from the Company and received a severance payment, with a maximum value of  $ 100,000  per participant, based on years of service, with retirement dates through early 2019.  During the nine months ended  September 30, 2019 , the Company recorded a  $ 47  million  impairment for aircraft engines removed from operations, an  $ 8  million   f air value adjustment for aircraft purchased off lease, a  $ 6  million  charge for the early termination of several regional aircraft finance leases and  $ 8  million  in other miscellaneous impairments. During the three months ended  September 30, 2019 , the Company recorded charges of  $ 18  million  for the settlement of certain legal matters and  $ 15  million  related to a contract termination, along with an  $ 8  million  gain primarily related to the sale and disposition of certain assets. During the nine months ended  September 30, 2019 , the Company recorded  $ 8  million  of losses on the sale of assets. During the three and nine months ended  September 30, 2019 , the Company recorded gains of  $ 25  million  and  $ 77  million , respectively, for the change in market value of certain of its equity investments, primarily Azul. Also, during the three and nine months ended  September 30, 2019 , the Company recorded losses of  $ 4  million  and  $ 5  million , respectively, for the change in fair value of the AVH Derivative Assets. 2018 During the three and nine months ended  September 30, 2018 , the Company recorded  $ 5  million  and  $ 19  million , respectively, of severance and benefit costs related to the early-out program described above and management severance of  $ 4  million  and  $ 15  million , respectively. In May 2018, the Brazil–United States open skies agreement was ratified, which provides air carriers with unrestricted access between the United States and Brazil. The Company determined that the approval of the open skies agreement impaired the entire value of its Brazil route authorities because the agreement removed all limitations or reciprocity requirements for flights between the United States and Brazil. Accordingly, the Company recorded a  $ 105  million  special charge to write off the entire value of the intangible asset associated with its Brazil routes. Also, during the three and nine months ended  September 30, 2018 , the Company recorded  $ 11  million  and  $ 40  million , respectively, of fair value adjustments for aircraft purchased off lease, write-off of unexercised aircraft purchase options and other impairments related to certain fleet types and international slots no longer in use. During the three and nine months ended  September 30, 2018 , the Company recorded  $ 3  million  of gains primarily related to the sale of aircraft engines and  $ 7  million  of losses primarily related to contract termination of regional aircraft operations in Guam, respectively.  During the three and nine months ended  September 30, 2018 , the Company recorded gains of  $ 29  million  and losses of  $ 61  million , respectively, for the change in market value of certain of its equity investments.    27 Table of Contents     ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS. Overview United Airlines Holdings, Inc. (together with its consolidated subsidiaries, "UAL" or the "Company") is a holding company and its principal, wholly-owned subsidiary is United Airlines, Inc. (together with its consolidated subsidiaries, "United"). This Quarterly Report on Form 10-Q is a combined report of UAL and United including their respective consolidated financial statements. As UAL consolidates United for financial statement purposes, disclosures that relate to activities of United also apply to UAL, unless otherwise noted. United's operating revenues and operating expenses comprise nearly 100% of UAL's revenues and operating expenses. In addition, United comprises approximately the entire balance of UAL's assets, liabilities and operating cash flows. When appropriate, UAL and United are named specifically for their individual contractual obligations and related disclosures and any significant differences between the operations and results of UAL and United are separately disclosed and explained. We sometimes use the words "we," "our," "us," and the "Company" in this report for disclosures that relate to all of UAL and United. The Company transports people and cargo through its mainline operations, which utilize jet aircraft with at least 126 seats, and regional operations, which utilize smaller aircraft that are operated under contract by United Express carriers. The Company serves virtually every major market around the world, either directly or through participation in Star Alliance ® , the world's largest airline alliance. UAL, through United and its regional carriers, operates approximately 4,900 flights a day to 358 airports across five continents. Third  Quarter Highlights • Third  quarter  2019  net income was  $1.0 billion , or  $3.99  diluted earnings per share, as compared to net income of  $833 million , or diluted earnings per share of  $3.05 , in the  third  quarter of  2018 . • Passenger revenue increased  3.6%  to  $10.5 billion  during the  third  quarter of  2019  as compared to the  third  quarter of  2018 .  • Traffic and capacity increased  1.9%  during the  third  quarter of  2019  as compared to the  third  quarter of  2018 . The Company's passenger load factor for the  third  quarter of  2019  was  86.1% . Outlook Set forth below is a discussion of matters that we believe could impact our financial and operating performance and cause our results of operations in future periods to differ materially from our historical operating results and/or from our anticipated results of operations described in the forward-looking statements in this report. See Part I, Item 1A., Risk Factors, of the Company's Annual Report on Form 10-K for the fiscal year ended December 31, 2018 (the "2018 Annual Report") and Part II, Item 1A., Risk Factors, of this report for a detailed discussion of the risk factors affecting UAL and United, and the factors described under "Forward-Looking Information" below for additional discussion of these and other factors that could affect us. Growth Strategy.  Our priorities for 2019 are delivering top-tier operational reliability and customer service while continuing to execute on our growth plan by strengthening our domestic network through strategic and efficient growth and investing in our people and product.  Fuel.  The price of jet fuel remains volatile. Based on projected fuel consumption in  2019 , a one-dollar change in the price of a barrel of crude oil would change the Company's annual fuel expense by approximately  $102 million .   28 Table of Contents     RESULTS OF OPERATIONS The following discussion provides an analysis of our results of operations and reasons for material changes therein for the three months ended  September 30, 2019  as compared to the corresponding period in  2018 . Third  Quarter  2019  Compared to  Third  Quarter  2018   The Company recorded net income of  $1.0 billion  in the  third  quarter of  2019  as compared to net income of  $833 million  in the  third  quarter of  2018 . The Company considers a key measure of its performance to be operating income, which was  $1.5 billion  for the  third  quarter of  2019 , as compared to  $1.2 billion  for the  third  quarter of  2018 , a  $286 million  increase year-over-year. Significant components of the Company's operating results for the three months ended  September 30  are as follows (in millions, except percentage changes):     2019   2018   Increase (Decrease)   % Change Operating revenue   $ 11,380   $ 11,003   $ 377   3.4 Operating expense   9,907   9,816   91   0.9 Operating income   1,473   1,187   286   24.1 Nonoperating income (expense)   (124 )   (129 )   (5 )   (3.9 ) Income tax expense   325   225   100   44.4 Net income    $ 1,024   $ 833   $ 191   22.9 Certain consolidated statistical information for the Company's operations for the three months ended  September 30  is as follows:    2019   2018   Increase (Decrease)   % Change Passengers (thousands) (a) 43,091   42,886   205   0.5 Revenue passenger miles ("RPMs" or "traffic") (millions) (b) 64,629   63,393   1,236   1.9 Available seat miles ("ASMs" or "capacity") (millions) (c) 75,076   73,681   1,395   1.9 Passenger load factor (d) 86.1 %   86.0 %   0.1 pts.   N/A Passenger revenue per available seat mile ("PRASM") (cents) 13.96   13.73   0.23   1.7 Average yield per revenue passenger mile ("Yield") (cents) (e) 16.22   15.96   0.26   1.6 Cargo ton miles ("CTM") (millions) (f) 804   851   (47 )   (5.5 ) Cost per available seat mile ("CASM") (cents) 13.20   13.32   (0.12 )   (0.9 ) Average price per gallon of fuel, including fuel taxes $ 2.02   $ 2.32   $ (0.30 )   (12.9 ) Fuel gallons consumed (millions) 1,134   1,111   23   2.1 Average full-time equivalent employees 90,591   89,022   1,569   1.8 (a) The number of revenue passengers measured by each flight segment flown.               (b) The number of scheduled miles flown by revenue passengers. (c) The number of seats available for passengers multiplied by the number of scheduled miles those seats are flown. (d) Revenue passenger miles divided by available seat miles. (e) The average passenger revenue received for each revenue passenger mile flown. (f) The number of cargo revenue tons transported multiplied by the number of miles flown.                29 Table of Contents     Operating Revenue.  The table below shows year-over-year comparisons by type of operating revenue for the three months ended  September 30  (in millions, except for percentage changes):   2019   2018   Increase (Decrease)   % Change Passenger revenue $ 10,481   $ 10,120   $ 361   3.6 Cargo 282   296   (14 )   (4.7 ) Other operating revenue 617   587   30   5.1 Total operating revenue $ 11,380   $ 11,003   $ 377   3.4 The table below presents selected  third  quarter passenger revenue and operating data, broken out by geographic region, expressed as year-over-year changes:   Increase (decrease) from 2018:   Domestic   Atlantic   Pacific   Latin   Total Average fare per passenger 4.7 %   (1.6 )%   (8.6 )%   9.4  %   3.1 % Passengers 0.1 %   3.2  %   5.5  %   (0.2 )%   0.5 % RPMs (traffic) 1.5 %   2.6  %   3.0  %   1.6  %   1.9 % ASMs (capacity) 1.7 %   2.8  %   2.3  %   0.4  %   1.9 % Passenger load factor (points) (0.1 )   (0.2 )   0.4   1.0   0.1 Passenger revenue increased  $361 million , or  3.6% , in the  third  quarter of  2019  as compared to the year-ago period primarily due to a  1.9%  increase in traffic, a  3.1%  increase in average fares, primarily in the Domestic and Latin markets, the continued roll-out of United's Premium Plus product, as well as increases in ancillary fees.  Operating Expenses.  The table below includes data related to the Company's operating expenses for the three months ended  September 30  (in millions, except for percentage changes):   2019   2018   Increase (Decrease)   % Change Salaries and related costs $ 3,063   $ 2,930   $ 133   4.5 Aircraft fuel 2,296   2,572   (276 )   (10.7 ) Regional capacity purchase 721   676   45   6.7 Landing fees and other rent 645   618   27   4.4 Depreciation and amortization 575   545   30   5.5 Aircraft maintenance materials and outside repairs 490   455   35   7.7 Distribution expenses 432   427   5   1.2 Aircraft rent 67   109   (42 )   (38.5 ) Special charges 27   17   10   NM Other operating expenses 1,591   1,467   124   8.5 Total operating expenses $ 9,907   $ 9,816   $ 91   0.9 Salaries and related costs increased  $133 million , or  4.5% , in the  third  quarter of  2019  as compared to the year-ago period primarily due to contractually higher pay rates, higher benefit expenses and a  1.8%  increase in average full-time equivalent employees. Aircraft fuel expense decreased by  $276 million , or  10.7% , in the  third  quarter of  2019  as compared to the year-ago period. During the third quarter of 2019, the Company obtained a $35 million state fuel tax refund.  30 Table of Contents     The table below presents the significant changes in aircraft fuel cost per gallon in the three months ended  September 30, 2019  as compared to the year-ago period:    (In millions)       Average price per gallon   2019   2018   % Change   2019   2018   % Change Fuel expense $ 2,296   $ 2,572   (10.7 )%   $ 2.02   $ 2.32   (12.9 )% Total fuel consumption (gallons) 1,134   1,111   2.1  %             Regional capacity purchase increased  $45 million , or  6.7% , in the  third  quarter of  2019  as compared to the year-ago period primarily due to a 2.6% increase in 50-seat aircraft capacity and rate increases under various capacity purchase agreements with regional carriers. Depreciation and amortization increased  $30 million , or  5.5% , in the  third  quarter of  2019  as compared to the year-ago period primarily due to additions of new and used aircraft and increases in technology infrastructure. Aircraft maintenance materials and outside repairs increased  $35 million , or  7.7% , in the  third  quarter of  2019  as compared to the year-ago period primarily due to the timing of regular airframe maintenance checks and component part repairs.  Aircraft rent decreased  $42 million , or  38.5 %, in the  third  quarter of  2019  as compared to the year-ago period, primarily due to the purchase of leased aircraft and the conversion of certain operating leases to finance leases.  Details of the Company's special charges include the following for the three months ended  September 30  (in millions):   2019   2018 Severance and benefit costs $ 2   $ 9 Impairment of assets —   11 (Gains) losses on sale of assets and other special charges 25   (3 ) Special charges $ 27   $ 17 See Note 12 to the financial statements included in Part I, Item 1 of this report for additional information. Other operating expenses increased  $124 million , or  8.5% , in the  third  quarter of  2019  as compared to the year-ago period, primarily due to an increase in purchased services related to our airport operations, technology initiatives, facility projects and crew-related expenses. Nonoperating Income (Expense ).  The following table illustrates the year-over-year dollar and percentage changes in the Company's nonoperating income (expense) for the three months ended  September 30  (in millions, except for percentage changes):    2019   2018   Increase (Decrease)   % Change Interest expense $ (191 )   $ (172 )   $ 19   11.0 Interest capitalized 22   16   6   37.5 Interest income 36   28   8   28.6 Miscellaneous, net 9   (1 )   (10 )   NM Total $ (124 )   $ (129 )   $ (5 )   (3.9 ) I ncome Taxes.   See Note 5 to the financial statements included in Part I, Item 1 of this report for information related to income taxes.  31 Table of Contents     First  Nine Months   2019  Compared to First  Nine Months   2018   The Company recorded net income of  $2.4 billion  in the first  nine  months of  2019  as compared to net income of  $1.7 billion  in the first  nine  months of  2018 . The Company considers a key measure of its performance to be operating income, which was  $3.4 billion  for the first  nine  months of  2019 , as compared to  $2.6 billion  for the first  nine  months of  2018 , an  $846 million  increase year-over-year. Significant components of the Company's operating results for the  nine  months ended  September 30  are as follows (in millions, except percentage changes):     2019   2018   Increase (Decrease)   % Change Operating revenue   $ 32,371   $ 30,812   $ 1,559   5.1 Operating expense   28,931   28,218   713   2.5 Operating income   3,440   2,594   846   32.6 Nonoperating income (expense)   (370 )   (499 )   (129 )   (25.9 ) Income tax expense   702   434   268   61.8 Net income    $ 2,368   $ 1,661   $ 707   42.6 Certain consolidated statistical information for the Company's operations for the  nine  months ended  September 30  is as follows:    2019   2018   Increase (Decrease)   % Change Passengers (thousands) 122,137   118,439   3,698   3.1 RPMs (millions) 180,727   173,187   7,540   4.4 ASMs (millions) 213,961   206,360   7,601   3.7 Passenger load factor 84.5 %   83.9 %   0.6 pts.   N/A PRASM (cents) 13.88   13.64   0.24   1.8 Yield (cents) 16.43   16.25   0.18   1.1 CTM (millions) 2,440   2,523   (83 )   (3.3 ) CASM (cents) 13.52   13.67   (0.15 )   (1.1 ) Average price per gallon of fuel, including fuel taxes $ 2.08   $ 2.23   $ (0.15 )   (6.7 ) Fuel gallons consumed (millions) 3,221   3,101   120   3.9 Average full-time equivalent employees 90,071   87,112   2,959   3.4 Operating Revenue.  The table below shows year-over-year comparisons by type of operating revenue for the  nine  months ended  September 30  (in millions, except for percentage changes):   2019   2018   Increase (Decrease)   % Change Passenger revenue $ 29,692   $ 28,150   $ 1,542   5.5 Cargo 863   903   (40 )   (4.4 ) Other operating revenue 1,816   1,759   57   3.2 Total operating revenue $ 32,371   $ 30,812   $ 1,559   5.1 The table below presents selected passenger revenue and operating data, broken out by geographic region, expressed as year-over-year changes for the  nine  months ended  September 30, 2019  compared to the  nine  months ended  September 30, 2018 :   Increase (decrease) from 2018:   Domestic   Atlantic   Pacific   Latin   Consolidated Average fare per passenger 3.2 %   (2.1 )%   (3.5 )%   5.9 %   2.3 % Passengers 2.8 %   6.4  %   5.0  %   3.1 %   3.1 % RPMs (traffic) 4.1 %   6.3  %   3.2  %   3.8 %   4.4 % ASMs (capacity) 4.2 %   5.3  %   0.9  %   2.4 %   3.7 % Passenger load factor (points) —   0.9   1.8   1.0   0.6  32 Table of Contents     Passenger revenue in the first  nine  months of  2019  increased  $1.5 billion , or  5.5% , as compared to the year-ago period primarily due to a  4.4%  increase in traffic, a  2.3%  increase in average fares, primarily in the Domestic and Latin markets, and the continued roll-out of United's Premium Plus product, as well as increases in ancillary fees.  Operating Expenses.  The table below includes data related to the Company's operating expenses for the  nine  months ended  September 30  (in millions, except for percentage changes):   2019   2018   Increase (Decrease)   % Change Salaries and related costs $ 8,993   $ 8,534   $ 459   5.4 Aircraft fuel 6,704   6,927   (223 )   (3.2 ) Regional capacity purchase 2,124   1,999   125   6.3 Landing fees and other rent 1,893   1,822   71   3.9 Depreciation and amortization 1,682   1,607   75   4.7 Aircraft maintenance materials and outside repairs 1,319   1,333   (14 )   (1.1 ) Distribution expenses 1,234   1,162   72   6.2 Aircraft rent 221   355   (134 )   (37.7 ) Special charges 116   186   (70 )   NM Other operating expenses 4,645   4,293   352   8.2 Total operating expenses $ 28,931   $ 28,218   $ 713   2.5 Salaries and related costs increased  $459 million , or  5.4% , in the first  nine  months of  2019  as compared to the year-ago period primarily due to contractually higher pay rates, higher benefit expenses and a  3.4%  increase in average full-time equivalent employees. Aircraft fuel expense decreased  $223 million , or  3.2% , in the first  nine  months of  2019  as compared to the year-ago period. The table below presents the significant changes in aircraft fuel cost per gallon in the  nine  months ended  September 30, 2019  as compared to the year-ago period:    (In millions)       Average price per gallon   2019   2018   % Change   2019   2018   % Change Fuel expense $ 6,704   $ 6,927   (3.2 )%   $ 2.08   $ 2.23   (6.7 )% Total fuel consumption (gallons) 3,221   3,101   3.9  %             Regional capacity purchase increased  $125 million , or  6.3% , in the first  nine  months of  2019  as compared to the year-ago period primarily due to a 4.3% increase in 50-seat aircraft capacity and rate increases under various capacity purchase agreements with regional carriers. Aircraft rent decreased  $134 million , or  37.7% , in the first  nine  months of  2019  as compared to the year-ago period, primarily due to the purchase of leased aircraft and the conversion of certain operating leases to finance leases.  Details of the Company's special charges include the following for the  nine  months ended  September 30  (in millions):   2019   2018 Severance and benefit costs $ 14   $ 34 Impairment of assets 69   145 (Gains) losses on sale of assets and other special charges 33   7 Special charges $ 116   $ 186 See Note 12 to the financial statements included in Part I, Item 1 of this report for additional information. Other operating expenses increased  $352 million , or  8.2% , in the first  nine  months of  2019  as compared to the year-ago period primarily due to an increase in purchased services related to our airport operations, technology initiatives, facility projects and crew-related expenses.  33 Table of Contents     Nonoperating Income (Expense).   The following table illustrates the year-over-year dollar and percentage changes in the Company's nonoperating income (expense) for the  nine  months ended  September 30  (in millions, except for percentage changes):    2019   2018   Increase (Decrease)   % Change Interest expense $ (570 )   $ (497 )   $ 73   14.7 Interest capitalized 65   46   19   41.3 Interest income 103   70   33   47.1 Miscellaneous, net 32   (118 )   (150 )   NM Total $ (370 )   $ (499 )   $ (129 )   (25.9 ) Interest expense increased  $73 million , or  14.7% , in the first  nine  months of  2019  as compared to the year-ago period, primarily due to the conversion of certain operating leases to finance leases and debt issued for the acquisition of new aircraft. Miscellaneous, net decreased  $150 million  in the first  nine  months of  2019  as compared to the year-ago period, primarily due to fluctuation in the mark-to-market of certain financial instruments.  Income Taxes.  See Note 5 to the financial statements included in Part I, Item 1 of this report for information related to income taxes. LIQUIDITY AND CAPITAL RESOURCES Current Liquidity As of  September 30, 2019 , the Company had  $5.1 billion  in unrestricted cash, cash equivalents and short-term investments, as compared to  $4.0 billion  at  December 31, 2018 . As of  September 30, 2019 , the Company had its entire commitment capacity of  $2.0 billion  under the revolving credit facility of the Amended and Restated Credit and Guaranty Agreement available for borrowings. At  September 30, 2019 , the Company also had  $104 million  of restricted cash and cash equivalents, which is primarily collateral for letters of credit and collateral associated with facility leases and other insurance-related obligations. We have a significant amount of fixed obligations, including debt and leases of aircraft, airport and other facilities, and pension funding obligations. As of  September 30, 2019 , the Company had approximately  $14.4 billion  of debt and finance lease obligations, including  $1.3 billion  that will become due in the next 12 months. In addition, we have substantial noncancelable commitments for capital expenditures, including the acquisition of certain new aircraft and related spare engines. As of  September 30, 2019 , our current liabilities exceeded our current assets by approximately  $7.2 billion . However, approximately  $8.1 billion  of our current liabilities are related to our advance ticket sales and frequent flyer deferred revenue, both of which largely represent revenue to be recognized for travel in the near future and not actual cash outlays. The deficit in working capital does not have an adverse impact to our cash flows, liquidity or operations. As of  September 30, 2019 , United had firm commitments and options to purchase aircraft from The Boeing Company ("Boeing"), Airbus S.A.S. ("Airbus") and Embraer S.A. ("Embraer") presented in the table below:         Scheduled Aircraft Deliveries Aircraft Type   Number of Firm  Commitments (a)   Last Three Months of 2019   2020   After 2020 Airbus A350   45   —   —   45 Boeing 737 MAX   171   16   28   127 Boeing 777-300ER   4   2   2   — Boeing 787   18   2   15   1 Embraer E175   29   9   20   — (a) United also has options and purchase rights for additional aircraft.                 The aircraft listed in the table above are scheduled for delivery through  2027 . To the extent the Company and the aircraft manufacturers with whom the Company has existing orders for new aircraft agree to modify the contracts governing those orders, the amount and timing of the Company's future capital commitments could change. United also has agreements to purchase  20  used Airbus A319 aircraft with expected delivery dates through  2022  and  20  used Boeing 737-700 aircraft with expected delivery dates in  2019  through  2021 .  34 Table of Contents     On  March 13, 2019 , the Federal Aviation Administration issued an emergency order prohibiting the operation of Boeing 737 MAX series airplanes by U.S. certificated operators (the "FAA Order"). As a result, the Company grounded all  14  Boeing 737 MAX 9 aircraft in its fleet. Prior to the grounding, the Company operated approximately  50  flights a day on these aircraft, and expected, given the anticipated delivery schedule, to operate approximately  110  flights a day by the end of the year. The FAA Order also resulted in Boeing suspending delivery of new Boeing 737 MAX series aircraft. The extent of the delay to the scheduled deliveries of the 737 MAX aircraft included in the table above is expected to be impacted by the length of time the FAA Order remains in place, Boeing's production rate and the pace at which Boeing can deliver aircraft following the lifting of the FAA Order, among other factors. As of  September 30, 2019 , United had  $1.2 billion  in financing available through enhanced equipment trust certificates ("EETC") transactions that it intends to use for the financing of certain aircraft deliveries scheduled through the first quarter of 2020. Approximately  $93 million  of the proceeds from the February 2019 pass through certificates (such certificates, the "2019-1 Pass Through Certificates")  were expected to be used to purchase equipment notes issued by United and secured by three Boeing 737 MAX aircraft, which aircraft were scheduled for delivery by Boeing in March, April and May of 2019. However, as a result of the FAA Order, United has not yet taken delivery of these three aircraft. If United is not in a position to take delivery of such 737 MAX aircraft on or prior to November 30, 2019, any funds remaining with the depositary in escrow at such time, together with accrued and unpaid interest thereon but without premium, will be distributed to the holders of the 2019-1 Pass Through Certificates.  See Note 11 to the financial statements included in Part I, Item 1 of this report for additional information on aircraft financing. As of  September 30, 2019 , UAL and United have total capital commitments related to the acquisition of aircraft and related spare engines, aircraft improvements and all non-aircraft capital commitments for approximately  $23.6 billion , of which approximately  $1.5 billion ,  $6.1 billion ,  $3.8 billion ,  $2.9 billion ,  $2.3 billion  and  $7 billion  are due in the last three months of  2019  and for the full year for  2020 ,  2021 ,  2022 ,  2023  and thereafter, respectively. Commitments for 2020 are expected to be higher than other years listed above due to the large number of wide-body aircraft deliveries ( 17  new aircraft) scheduled in that year. Amounts are not adjusted for any potential changes in the delivery schedule of the Boeing 737 MAX aircraft. Financing may be necessary to satisfy the Company's capital commitments for its firm order aircraft and other related capital expenditures. The Company has backstop financing commitments available from certain of its aircraft manufacturers for a limited number of its future aircraft deliveries, subject to certain customary conditions. See Note 11 to the financial statements included in Part I, Item 1 of this report for additional information on aircraft financing. As of  September 30, 2019 , a substantial portion of the Company's assets, principally aircraft, certain route authorities and airport slots, was pledged under various loan and other agreements. We must sustain our profitability and/or access the capital markets to meet our significant long-term debt and finance lease obligations and future commitments for capital expenditures, including the acquisition of aircraft and related spare engines. Credit Ratings.  As of the filing date of this report, UAL and United had the following corporate credit ratings:   S&P   Moody's   Fitch UAL BB   Ba2   BB United BB   *   BB  * The credit agency does not issue corporate credit ratings for subsidiary entities. These credit ratings are below investment grade levels; however, the Company has been able to secure financing with investment grade credit ratings for certain enhanced equipment trust certificates and term loans. Downgrades from current rating levels, among other things, could restrict the availability and/or increase the cost of future financing for the Company. Sources and Uses of Cash Operating Activities.   Cash flows provided by operations were  $5.7 billion  for the  nine  months ended  September 30, 2019  compared to  $5.0 billion  in the same period in  2018 . The increase is primarily attributable to an increase in operating income which was  $3.4 billion  for the first  nine  months of  2019  as compared to  $2.6 billion  in the same period in  2018 . Investing Activities.   Capital expenditures were approximately  $3.3 billion  and  $2.5 billion  in the  nine  months ended  September 30, 2019  and  2018 , respectively. Capital expenditures for the  nine  months ended  September 30, 2019  were primarily attributable to additions of new aircraft, aircraft improvements, and increases in facility and information technology assets.  Financing Activities.   During the  nine  months ended  September 30, 2019 , the Company made debt and finance lease payments of  $831 million .  35 Table of Contents     In the  nine  months ended  September 30, 2019 , United received and recorded  $1.1 billion  of proceeds as debt from the EETC pass-through trusts established in February and September 2019. See Note 11 to the financial statements included in Part I, Item 1 of this report for additional information. In the  nine  months ended  September 30, 2019 , United received and recorded $350 million of proceeds from the 4.875% Senior Notes due January 15, 2025. Share Repurchase Programs.  In the  three and nine  months ended  September 30, 2019 , UAL repurchased approximately  4.1 million  and  16.8 million  shares, respectively, of UAL common stock in open market transactions for  $0.4 billion  and  $1.4 billion , respectively. On July 15, 2019, UAL's Board of Directors authorized a new  $3.0 billion  share repurchase program to acquire UAL's common stock. As of  September 30, 2019 , the Company had approximately  $3.3 billion  remaining to purchase shares under its December 2017 and July 2019 share repurchase programs. UAL may repurchase shares through the open market, privately negotiated transactions, block trades or accelerated share repurchase transactions from time to time in accordance with applicable securities laws. UAL will repurchase shares of UAL common stock subject to prevailing market conditions, and may discontinue such repurchases at any time. See Part II, Item 2, Unregistered Sales of Equity Securities and Use of Proceeds of this report for additional information. Commitments, Contingencies and Liquidity Matters.  As described in the  2018  Annual Report, the Company's liquidity may be adversely impacted by a variety of factors, including, but not limited to, pension funding obligations, reserve requirements associated with credit card processing agreements, guarantees, commitments and contingencies.  See the  2018  Annual Report and Notes 6, 7, 8, 9, 10 and 11 to the financial statements contained in Part I, Item 1 of this report for additional information. CRITICAL ACCOUNTING POLICIES See "Critical Accounting Policies" in Part II, Item 7, Management's Discussion and Analysis of Financial Condition and Results of Operations in the  2018  Annual Report. FORWARD-LOOKING INFORMATION Certain statements throughout Part I, Item 2, Management's Discussion and Analysis of Financial Condition and Results of Operations, and elsewhere in this report are forward-looking and thus reflect the Company's current expectations and beliefs with respect to certain current and future events and anticipated financial and operating performance. Such forward-looking statements are and will be subject to many risks and uncertainties relating to the Company's operations and business environment that may cause actual results to differ materially from any future results expressed or implied in such forward-looking statements. Words such as "expects," "will," "plans," "anticipates," "indicates," "believes," "estimates," "forecast," "guidance," "outlook," "goals", "targets" and similar expressions are intended to identify forward-looking statements. Additionally, forward-looking statements include statements that do not relate solely to historical facts, such as statements which identify uncertainties or trends, discuss the possible future effects of current known trends or uncertainties, or which indicate that the future effects of known trends or uncertainties cannot be predicted, guaranteed or assured. All forward-looking statements in this report are based upon information available to us on the date of this report. We undertake no obligation to publicly update or revise any forward-looking statement, whether as a result of new information, future events, changed circumstances or otherwise, except as required by applicable law. Our actual results could differ materially from these forward-looking statements due to numerous factors including, without limitation, the following: our ability to execute our strategic operating plan, including our growth, revenue-generating and cost-control initiatives; general economic conditions (including interest rates, foreign currency exchange rates, investment or credit market conditions, crude oil prices, costs of aircraft fuel and energy refining capacity in relevant markets); risks of doing business globally, including instability and political developments that may impact our operations in certain countries; demand for travel and the impact that global economic and political conditions have on customer travel patterns; our capacity decisions and the capacity decisions of our competitors; competitive pressures on pricing and on demand; changes in aircraft fuel prices; disruptions in our supply of aircraft fuel; our ability to cost-effectively hedge against increases in the price of aircraft fuel, if we decide to do so; the effects of any technology failures or cybersecurity breaches; disruptions to services provided by third-party service providers; potential reputational or other impact from adverse events involving our aircraft or operations, the aircraft or operations of our regional carriers or our code share partners or the aircraft or operations of another airline; our ability to attract and retain customers; the effects of any terrorist attacks, international hostilities or other security events, or the fear of such events; the mandatory grounding of aircraft in our fleet; disruptions to our regional network; the impact of regulatory, investigative and legal proceedings and legal compliance risks; the success of our investments in other airlines, including in   36 Table of Contents     other parts of the world; industry consolidation or changes in airline alliances; the ability of other air carriers with whom we have alliances or partnerships to provide the services contemplated by the respective arrangements with such carriers; costs associated with any modification or termination of our aircraft orders; disruptions in the availability of aircraft, parts or support from our suppliers; our ability to maintain satisfactory labor relations and the results of any collective bargaining agreement process with our union groups; any disruptions to operations due to any potential actions by our labor groups; labor costs; an outbreak of a disease that affects travel demand or travel behavior; the impact of any management changes; extended interruptions or disruptions in service at major airports where we operate; U.S. or foreign governmental legislation, regulation and other actions (including Open Skies agreements, environmental regulations and the United Kingdom's withdrawal from the European Union); the seasonality of the airline industry; weather conditions; the costs and availability of aviation and other insurance; the costs and availability of financing; our ability to maintain adequate liquidity; our ability to comply with the terms of our various financing arrangements; our ability to realize the full value of our intangible assets and long-lived assets; and other risks and uncertainties set forth under Part I, Item 1A., Risk Factors, of our 2018 Annual Report, and Part II, Item 1A., Risk Factors, of this report, as well as other risks and uncertainties set forth from time to time in the reports we file with the U.S. Securities and Exchange Commission (the "SEC"). ITEM 3.     QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK. There have been no material changes in market risk from the information provided in Part II, Item 7A, Quantitative and Qualitative Disclosures About Market Risk, in our  2018  Annual Report.  ITEM 4.     CONTROLS AND PROCEDURES.  Evaluation of Disclosure Control and Procedures UAL and United each maintain controls and procedures that are designed to ensure that information required to be disclosed in the reports filed or submitted by UAL and United to the SEC is recorded, processed, summarized and reported, within the time periods specified by the SEC's rules and forms, and is accumulated and communicated to management, including the Chief Executive Officer and Chief Financial Officer, as appropriate, to allow timely decisions regarding required disclosure. The management of UAL and United, including the Chief Executive Officer and Chief Financial Officer, performed an evaluation to conclude with reasonable assurance that UAL's and United's disclosure controls and procedures were designed and operating effectively to report the information each company is required to disclose in the reports they file with the SEC on a timely basis. Based on that evaluation, the Chief Executive Officer and the Chief Financial Officer of UAL and United have concluded that as of  September 30, 2019 , disclosure controls and procedures were effective. Changes in Internal Control over Financial Reporting during the Quarter Ended  September 30, 2019 During the third quarter of 2019, UAL and United converted to a new revenue accounting software system and established new controls related to the revenue accounting process in connection with the conversion. Except for the preceding change, during the three months ended  September 30, 2019 , there were no changes in UAL's or United's internal control over financial reporting that materially affected, or are reasonably likely to materially affect, their internal control over financial reporting (as defined in rules 13a-15(f) and 15d-15(f) under the Securities Exchange Act of 1934).  37 Table of Contents     PART II. OTHER INFORMATION  ITEM 1. LEGAL PROCEEDINGS  See Part I, Item 3, Legal Proceedings, of the  2018  Annual Report for a description of legal proceedings.  ITEM 1A. RISK FACTORS See Part I, Item 1A, Risk Factors, of the  2018  Annual Report for a detailed discussion of the risk factors affecting UAL and United, and as set forth below:  The mandatory grounding of our Boeing 737 MAX 9 aircraft may have a material adverse effect on our business, operating results and financial condition.  On March 13, 2019, the Federal Aviation Administration issued an emergency order prohibiting the operation of Boeing 737 MAX series airplanes by U.S. certificated operators (the "FAA Order"). As a result, the Company grounded all 14 Boeing 737 MAX 9 aircraft in its fleet. Prior to the grounding, the Company operated approximately 50 flights a day on these aircraft and expected, given the anticipated delivery schedule, to operate approximately 110 flights a day by the end of the year.  The long-term operational and financial impact of this action is uncertain and could negatively affect the Company based on a number of factors, including, among others, the period of time the aircraft are unavailable, the availability of replacement aircraft, to the extent needed, and the circumstances of any reintroduction of the grounded aircraft to service. This grounding has affected the status of the scheduled delivery of the 16 Boeing 737 MAX 9 aircraft that were scheduled for delivery in the second and third quarters of 2019 and is also expected to affect the timing of future Boeing 737 MAX aircraft deliveries. The extent of the delay of future deliveries is expected to be impacted by the length of time the FAA Order remains in place, Boeing's production rate and the pace at which Boeing can deliver aircraft following the lifting of the FAA Order, among other factors. Our significant investments in other airlines, including in other parts of the world, and the commercial relationships that we have with those carriers may not produce the returns or results we expect. An important part of our strategy to expand our global network includes making significant investments in airlines in other parts of the world and expanding our commercial relationships with these carriers. For example, in November 2018, United entered into a revenue-sharing joint business agreement ("JBA") with Aerovías del Continente Americano S.A. ("Avianca"), Copa Airlines and several of their respective affiliates, subject to regulatory approval. Concurrently with this transaction, United, as lender, entered into a Term Loan Agreement (the "BRW Loan Agreement") with, among others, BRW Aviation Holding LLC and BRW Aviation LLC ("BRW"), as guarantor and borrower, respectively, affiliates of Synergy Aerospace Corporation, the majority shareholder of Avianca Holdings S.A. ("AVH"). Pursuant to the BRW Loan Agreement, United provided a $456 million term loan to BRW, secured by a pledge of BRW's equity, as well as BRW's 516 million shares of common stock of AVH (having an implied value equivalent to 64.5 million American Depositary Receipts, the class of AVH securities that trades on the New York Stock Exchange). BRW is currently in default under the BRW Loan Agreement. Additionally, on May 13, 2019, S&P Global Ratings downgraded its AVH issuer level credit ratings from B to CCC+, together with accompanying downgrades for AVH's frequent flyer subsidiary, LifeMiles Ltd. ("LifeMiles"), and for certain outstanding debt of both AVH and LifeMiles. Following these downgrades, and in order to protect the value of its collateral, on May 24, 2019, United began to exercise remedies available to it under the terms of the BRW Loan Agreement and related documents. In connection with the delivery by United of a notice of default to BRW, Kingsland Holdings Limited ("Kingsland"), AVH's largest minority shareholder, was granted, in accordance with the agreements related to the BRW Loan Agreement, independent authority to manage BRW, which remains the majority shareholder of AVH. AVH announced a debt restructuring plan in July 2019, which resulted in a credit rating downgrade to RD by Fitch Ratings. On October 4, 2019, United and Kingsland delivered to AVH a commitment to provide AVH at least a $250 million senior secured convertible loan, which $250 million will become fully binding on United and Kingsland subject to the satisfaction of certain conditions, including the successful completion of AVH's debt restructuring plan.  We also have an equity investment in Azul Linhas Aéreas Brasileiras S.A. ("Azul"). See Note 9 to the financial statements included in Part II, Item 8 of the Company's Annual Report on Form 10-K for the year ended December 31, 2018 and Note 7 and Note 8 to the financial statements included in Part I, Item 1 of this report for additional information regarding our investments in Avianca and Azul. We also have investments in several domestic regional airlines. In January 2019, we completed the acquisition of a 49.9% interest in ManaAir LLC, which, as of immediately following the closing of that investment, owns 100% of the equity interests in ExpressJet Airlines, Inc., a domestic regional airline. We also have minority equity interests in Champlain Enterprises, LLC   38 Table of Contents     d/b/a CommutAir and Republic Airways Holdings, Inc. See Note 9 to the financial statements included in Part II, Item 8 of the Company's Annual Report on Form 10-K for the year ended December 31, 2018 for additional information regarding our investments in regional airlines.  We expect to continue exploring similar non-controlling investments in, and entering into JBAs, commercial agreements, loan transactions and strategic alliances with, other carriers as part of our regional and global business strategy. These transactions and relationships involve significant challenges and risks. We are dependent on these other carriers for significant aspects of our network in the regions in which they operate. While we work closely with these carriers, each is a separately certificated commercial air carrier and we do not have control over their operations, strategy, management or business methods. These airlines also are subject to a number of the same risks as our business, which are described in the Company's Annual Report on Form 10-K for the year ended December 31, 2018 and Part II, Item 1A, Risk Factors, of this report, including competitive pressures on pricing, demand and capacity; changes in aircraft fuel pricing; and the impact of global and local political and economic conditions on operations and customer travel patterns, among others.  As a result of these and other factors, we may not realize a satisfactory return on our investment, and we may not receive repayment of any invested or loaned funds. Further, these investments may not generate the revenue or operational synergies we expect, and they may distract management focus from our operations or other strategic options. Finally, our reliance on these other carriers in the regions in which they operate may negatively impact our regional and global operations and results if those carriers are impacted by general business risks or perform below our expectations or needs. Any one or more of these events could have a material adverse effect on our operating results or financial condition.  We may also be subject to consequences from any improper behavior of JBA partners, including for failure to comply with anti-corruption laws such as the U.S. Foreign Corrupt Practices Act. Furthermore, our relationships with these carriers may be subject to the laws and regulations of non-U.S. jurisdictions in which these carriers are located or conduct business. Any political or regulatory change in these jurisdictions that negatively impact or prohibit our arrangements with these carriers could have an adverse effect on our operating results or financial condition. To the extent that the operations of any of these carriers are disrupted over an extended period of time or their actions subject us to the consequences of failure to comply with laws and regulations, our operating results may be adversely affected. ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS. (a) None (b) None (c) The following table presents repurchases of UAL common stock made in the  third  quarter of fiscal year  2019 : Period   Total number of shares purchased  (a)(b)   Average price paid per share  (b)(c)   Total number of shares purchased as part of publicly announced plans or programs  (a)   Approximate dollar value of shares that may yet be purchased under the plans or programs (in millions)  (a) July 2019   1,535,766   $ 91.76   1,535,766   $ 3,547 August 2019   1,438,718   84.57   1,438,718   3,425 September 2019   1,135,494   88.07   1,135,494   3,325 Total   4,109,978       4,109,978     (a) In December 2017, UAL's Board of Directors authorized a $3.0 billion share repurchase program to acquire UAL's common stock. On July 15, 2019, UAL's Board of Directors authorized a new  $3.0 billion  share repurchase program to acquire UAL's common stock. As of September 30, 2019, the Company had approximately  $3.3 billion  remaining to purchase shares under its repurchase programs. UAL may repurchase shares through the open market, privately negotiated transactions, block trades or accelerated share repurchase transactions from time to time in accordance with applicable securities laws.  (b) The table does not include shares withheld from employees to satisfy certain tax obligations due upon the vesting of restricted stock awards and restricted stock units. The United Continental Holdings, Inc. 2017 Incentive Compensation Plan and the United Continental Holdings, Inc. 2008 Incentive Compensation Plan each provide for the withholding of shares to satisfy tax obligations due upon the vesting of restricted stock. However, these plans do not specify a maximum number of shares that may be withheld for this purpose. A total of 10,977 shares were withheld under these plans in the  third  quarter of  2019  at an average price per share of $83.97. These shares of common stock withheld to satisfy tax withholding obligations may be deemed to be "issuer purchases" of shares that are required to be disclosed pursuant to this Item. (c) Average price paid per share is calculated on a settlement basis and excludes commission.   39 Table of Contents     ITEM 6. EXHIBITS.  EXHIBIT INDEX  Exhibit No. Registrant Exhibit       ^ 10.1 UAL United Amendment No. 1, dated as of July 18, 2019, to the Amended and Restated A350-900 Purchase Agreement, dated as of September 1, 2017, between Airbus S.A.S. and United Airlines, Inc.       31.1 UAL Certification of the Principal Executive Officer of United Airlines Holdings, Inc. Pursuant to 15U.S.C. 78m(a) or 78o(d) (Section 302 of the Sarbanes-Oxley Act of 2002)       31.2 UAL Certification of the Principal Financial Officer of United Airlines Holdings, Inc. Pursuant to 15U.S.C. 78m(a) or 78o(d) (Section 302 of the Sarbanes-Oxley Act of 2002)       31.3 United Certification of the Principal Executive Officer of United Airlines, Inc. Pursuant to 15 U.S.C. 78m(a) or 78o(d) (Section 302 of the Sarbanes-Oxley Act of 2002)       31.4 United Certification of the Principal Financial Officer of United Airlines, Inc. Pursuant to 15 U.S.C. 78m(a) or 78o(d) (Section 302 of the Sarbanes-Oxley Act of 2002)       32.1 UAL Certification of the Chief Executive Officer and Chief Financial Officer of United Airlines Holdings, Inc. Pursuant to 18 U.S.C. 1350 (Section 906 of the Sarbanes-Oxley Act of 2002)       32.2 United Certification of the Chief Executive Officer and Chief Financial Officer of United Airlines, Inc. Pursuant to 18 U.S.C. 1350 (Section 906 of the Sarbanes-Oxley Act of 2002)       101 UAL United The following financial statements from the combined Quarterly Report of UAL and United on Form 10-Q for the quarter ended September 30, 2019, formatted in Inline XBRL: (i) Statements of Consolidated Operations, (ii) Statements of Consolidated Comprehensive Income, (iii) Consolidated Balance Sheets, (iv) Condensed Statements of Consolidated Cash Flows, (v) Statements of Consolidated Stockholders' Equity and (vi) Combined Notes to Condensed Consolidated Financial Statements, tagged as blocks of text and including detailed tags.       104 UAL United Cover Page Interactive Data File - the cover page XBRL tags are embedded within the Inline XBRL document. ^ Portions of the referenced exhibit have been omitted pursuant to Item 601(b) of Regulation S-K.  40 Table of Contents     SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, each registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.                    United Airlines Holdings, Inc.       (Registrant)         Date: October 16, 2019   By: /s/ Gerald Laderman         Gerald Laderman  Executive Vice President and Chief Financial Officer (Principal Financial Officer)       Date: October 16, 2019   By: /s/ Chris Kenny         Chris Kenny Vice President and Controller (Principal Accounting Officer)                           United Airlines, Inc.       (Registrant)           Date: October 16, 2019   By: /s/ Gerald Laderman         Gerald Laderman Executive Vice President and Chief Financial Officer (Principal Financial Officer)         Date: October 16, 2019   By: /s/ Chris Kenny         Chris Kenny Vice President and Controller (Principal Accounting Officer)  41 	 
+ 

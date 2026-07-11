@@ -1,0 +1,4 @@
+date,n_dates,triggered,is_n,oos_n,is_sharpe,oos_sharpe,oos_ci_lo,oos_ci_hi,verdict
+2026-06-25,60,yes,39,19,0.93,1.31,-0.22,3.27,inconclusive
+2026-06-25,124,yes,80,41,0.87,2.02,1.04,3.19,CONFIRMED
+2026-06-30,124,no,,,,,,,

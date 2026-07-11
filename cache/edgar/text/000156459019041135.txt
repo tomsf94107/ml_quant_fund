@@ -1,0 +1,14293 @@
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+fox-10q_20190930.htm
+ 
+ 
+ 
+ 
+	 
+		 
+			 false 
+			 2020 
+			 Q1 
+			 0001754301 
+			 --06-30 
+			 Non-accelerated Filer 
+			 true 
+			 P1Y 
+			 P2Y 
+			 2024-03-31 
+			 P5Y 
+			 P3Y 
+			 P3Y 
+			 P3Y 
+			 
+			 
+		 
+		 
+			 
+		 
+		 
+			 
+				 
+					 0001754301 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SeriesAPreferredStockMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 xbrli:shares 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2019-11-04 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2019-11-04 
+				 
+			 
+			 
+				 iso4217:USD 
+			 
+			 
+				 
+					 0001754301 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 
+						 iso4217:USD 
+					 
+					 
+						 xbrli:shares 
+					 
+				 
+			 
+			 
+				 
+					 0001754301 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TwentyFirstCenturyFoxIncInvestmentMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TwentyFirstCenturyFoxIncInvestmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TwentyFirstCenturyFoxIncInvestmentMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TwentyFirstCenturyFoxIncInvestmentMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TwentyFirstCenturyFoxIncInvestmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TwentyFirstCenturyFoxIncInvestmentMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdditionalPaidInCapitalMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RetainedEarningsMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ParentMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:NoncontrollingInterestMember 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2019-03-19 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2019-03-19 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AccountingStandardsUpdate201602Member 
+					 
+				 
+				 
+					 2019-07-01 
+				 
+			 
+			 
+				 xbrli:pure 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:StarsGroupSUSBusinessMember 
+					 
+				 
+				 
+					 2019-05-31 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TheStarsGroupMember 
+					 
+				 
+				 
+					 2019-05-01 
+					 2019-05-31 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:TheStarsGroupMember 
+					 
+				 
+				 
+					 2019-05-31 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:CaffeineIncorporationAndCaffeineStudioLLCMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueInputsLevel1Member 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueInputsLevel2Member 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueInputsLevel3Member 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+						 us-gaap:FairValueInputsLevel1Member 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+						 us-gaap:FairValueInputsLevel2Member 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:FairValueMeasurementsRecurringMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2018-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+						 us-gaap:FairValueInputsLevel3Member 
+					 
+				 
+				 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:RedeemableNoncontrollingInterestsMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 fox:RedeemableNoncontrollingInterestsMember 
+					 
+				 
+				 
+					 2019-10-01 
+					 2019-12-31 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CreditConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CreditConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2019-06-30 
+				 
+			 
+			 
+				 fox:Customer 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CreditConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CreditConcentrationRiskMember 
+						 us-gaap:AccountsReceivableMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RevolvingCreditFacilityMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:OfficeFacilityMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:ProductionAndOfficeSpaceMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 fox:Option 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:ProductionAndOfficeSpaceMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:PerformanceSharesMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:PerformanceSharesMember 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:PerformanceSharesMember 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:RestrictedStockUnitsRSUMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:EmployeeStockOptionMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:EmployeeStockOptionMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:IndemnificationGuaranteeMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:IndemnificationGuaranteeMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:ProfitsParticipantsLitigationMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 fox:Fullpowertvstation 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 country:US 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 fox:Duopoly 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 country:US 
+						 fox:TelevisionSegmentMember 
+						 fox:FoxNetworkMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 country:US 
+						 fox:TelevisionSegmentMember 
+						 fox:MyNetworkTelevisionMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 country:US 
+						 fox:TelevisionSegmentMember 
+						 fox:IndependentStationMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:CorporateAndEliminationsMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:CorporateAndEliminationsMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:AffiliateFeeMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:AffiliateFeeMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdvertisingMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdvertisingMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ProductAndServiceOtherMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ProductAndServiceOtherMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdvertisingMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:AdvertisingMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:AffiliateFeeMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:AffiliateFeeMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ProductAndServiceOtherMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:ProductAndServiceOtherMember 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2018-07-01 
+					 2018-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 
+							 2019-10-01 
+						 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 
+							 2019-10-01 
+						 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 
+							 2019-10-01 
+						 
+						 srt:MinimumMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 
+							 2019-10-01 
+						 
+						 srt:MaximumMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:CableNetworkProgrammingSegmentMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:OperatingSegmentsMember 
+						 fox:TelevisionSegmentMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:CorporateAndEliminationsMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 fox:CorporateAndEliminationsMember 
+					 
+				 
+				 
+					 2019-06-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+						 fox:SemiAnnualDividendMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+						 fox:SemiAnnualDividendMember 
+					 
+				 
+				 
+					 2019-07-01 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassAMember 
+						 fox:SemiAnnualDividendMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:CommonClassBMember 
+						 fox:SemiAnnualDividendMember 
+					 
+				 
+				 
+					 2019-09-30 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 fox:CommonClassAAndBMember 
+					 
+				 
+				 
+					 2019-11-06 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 us-gaap:CommonClassAMember 
+					 
+				 
+				 
+					 2019-11-06 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 us-gaap:CommonClassBMember 
+					 
+				 
+				 
+					 2019-11-06 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 us-gaap:CommonClassBMember 
+						 srt:MaximumMember 
+						 fox:MurdochFamilyTrustMember 
+						 fox:StockholdersAgreementMember 
+					 
+				 
+				 
+					 2019-11-06 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 us-gaap:CommonClassBMember 
+						 srt:MaximumMember 
+						 fox:MurdochFamilyTrustMember 
+						 fox:StockholdersAgreementMember 
+					 
+				 
+				 
+					 2019-11-06 
+					 2019-11-06 
+				 
+			 
+			 
+				 fox:TelevisionStation 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 fox:NexstarMediaGroupMember 
+						 fox:PendingTransactionNotYetCompletedMember 
+					 
+				 
+				 
+					 2019-11-06 
+					 2019-11-06 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 fox:NexstarMediaGroupMember 
+						 fox:PendingTransactionNotYetCompletedMember 
+					 
+				 
+				 
+					 2019-11-06 
+				 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 fox:CredibleLabsIncMember 
+					 
+				 
+				 
+					 2019-10-31 
+				 
+			 
+			 
+				 iso4217:AUD 
+			 
+			 
+				 
+					 0001754301 
+					 
+						 us-gaap:SubsequentEventMember 
+						 fox:CredibleLabsIncMember 
+					 
+				 
+				 
+					 2019-10-01 
+					 2019-10-31 
+				 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		 
+	 
+ 
+
+ UNITED STATES 
+ SECURITIES AND EXCHANGE COMMISSION 
+ WASHINGTON, DC 20549  
+   
+ FORM  10-Q   
+   
+ (Mark One)  
+ 
+ 
+ 
+ 
+ ☒ 
+ 
+ Quarterly report pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 for the quarterly period ended  September 30, 2019 
+ 
+ 
+ or  
+ 
+ 
+ 
+ 
+ ☐ 
+ 
+ Transition report pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 for the transition period from               to                 
+ 
+ 
+ Commission file number  001-38776   
+   
+ FOX CORPORATION 
+ (Exact Name of Registrant as Specified in its Charter)  
+   
+ 
+ 
+ 
+ 
+ Delaware 
+ 
+   
+ 
+ 83-1825597 
+ 
+ 
+ 
+ (State or Other Jurisdiction  of Incorporation or Organization) 
+ 
+   
+ 
+ (I.R.S. Employer  Identification No.) 
+ 
+ 
+ 
+   
+ 1211 Avenue of the Americas ,  New York ,  New York 
+ 
+   
+ 
+ 10036 
+ 
+ 
+ 
+ (Address of Principal Executive Offices) 
+ 
+   
+ 
+ (Zip Code) 
+ 
+ 
+ Registrant’s telephone number, including area code ( 212 )  852-7000   
+   
+ Securities registered pursuant to Section 12(b) of the Act: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Title of Each Class 
+ 
+ Trading Symbols 
+ 
+ Name of Each Exchange  on Which Registered 
+ 
+ 
+ 
+ Class A  Common Stock, par value $0.01 per share 
+ 
+ FOXA 
+ 
+ The Nasdaq Global Select Market 
+ 
+ 
+ 
+ Class B  Common Stock, par value $0.01 per share 
+ 
+ FOX 
+ 
+ The Nasdaq Global Select Market 
+ 
+ 
+ 
+ Rights to Purchase Series A Junior Participating Preferred Stock 
+ 
+ N/A 
+ 
+ The Nasdaq Global Select Market 
+ 
+ 
+ Indicate by check mark whether the registrant: (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.      Yes    ☒     No   ☐ 
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§ 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).      Yes    ☒       No   ☐ 
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule 12b-2 of the Exchange Act.  
+   
+ 
+ 
+ 
+ 
+ Large accelerated filer 
+ 
+ ☐ 
+ 
+ Accelerated filer 
+ 
+ ☐ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Non-accelerated filer 
+ 
+ ☒ 
+ 
+ Smaller reporting company 
+ 
+ ☐ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Emerging growth company 
+ 
+ ☐ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.   ☐ 
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).     Yes   ☐      No   ☒   
+ As of November 4, 2019,  354,511,048  shares of Class A Common Stock, par value $0.01 per share, and  266,173,651  shares of Class B Common Stock, par value $0.01 per share, were outstanding. 
+   
+   
+ 
+ FOX CORPORATION 
+ FORM 10-Q  
+ TABLE OF CONTENTS  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Page 
+ 
+ 
+ 
+ Part I. Financial Information 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ Item 1. 
+ 
+   
+ 
+ Financial Statements 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Unaudited Consolidated and Combined Statements of Operations for the three months ended September 30, 2019 and 2018  
+ 
+ 1 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Unaudited Consolidated and Combined Statements of Comprehensive Income for the three months ended September 30, 2019 and 2018 
+ 
+ 2 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Consolidated Balance Sheets as of September 30, 2019 (unaudited) and June 30, 2019 (audited) 
+ 
+ 3 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Unaudited Consolidated and Combined Statements of Cash Flows for the three months ended September 30, 2019 and 2018    
+ 
+ 4 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Unaudited Consolidated and Combined Statements of Equity for the three months ended September 30, 2019 and 2018 
+ 
+ 5 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Notes to the Unaudited Consolidated and Combined Financial Statements 
+ 
+ 6 
+ 
+ 
+ 
+   
+ 
+ Item 2. 
+ 
+   
+ 
+ Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+ 
+ 21 
+ 
+ 
+ 
+   
+ 
+ Item 3. 
+ 
+   
+ 
+ Quantitative and Qualitative Disclosures About Market Risk 
+ 
+ 31 
+ 
+ 
+ 
+   
+ 
+ Item 4. 
+ 
+   
+ 
+ Controls and Procedures 
+ 
+ 31 
+ 
+ 
+ 
+ Part II. Other Information 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ Item 1. 
+ 
+   
+ 
+ Legal Proceedings 
+ 
+ 32 
+ 
+ 
+ 
+   
+ 
+ Item 1A. 
+ 
+   
+ 
+ Risk Factors 
+ 
+ 33 
+ 
+ 
+ 
+   
+ 
+ Item 2. 
+ 
+   
+ 
+ Unregistered Sales of Equity Securities and Use of Proceeds 
+ 
+ 35 
+ 
+ 
+ 
+   
+ 
+ Item 3. 
+ 
+   
+ 
+ Defaults Upon Senior Securities 
+ 
+ 35 
+ 
+ 
+ 
+   
+ 
+ Item 4. 
+ 
+   
+ 
+ Mine Safety Disclosures 
+ 
+ 35 
+ 
+ 
+ 
+   
+ 
+ Item 5. 
+ 
+   
+ 
+ Other Information 
+ 
+ 35 
+ 
+ 
+ 
+   
+ 
+ Item 6. 
+ 
+   
+ 
+ Exhibits 
+ 
+ 36 
+ 
+ 
+ 
+   
+ 
+ Signature 
+ 
+ 37 
+ 
+ 
+   
+   
+ 
+   
+ FOX CORPORATION 
+ UNAUDITED CONSOLIDATED AND COMBINED STATEMENTS OF OPERATIONS  
+ (IN MILLIONS, EXCEPT PER SHARE AMOUNTS)  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+ $ 
+ 
+ 2,667 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,541 
+ 
+   
+ 
+ 
+ 
+ Operating expenses 
+ 
+   
+ 
+   
+ 
+ ( 1,468 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 1,491 
+ 
+ ) 
+ 
+ 
+ 
+ Selling, general and administrative 
+ 
+   
+ 
+   
+ 
+ ( 352 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 299 
+ 
+ ) 
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+   
+ 
+ ( 50 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 43 
+ 
+ ) 
+ 
+ 
+ 
+ Impairment and restructuring charges 
+ 
+   
+ 
+   
+ 
+ ( 9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Interest expense 
+ 
+   
+ 
+   
+ 
+ ( 90 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 16 
+ 
+ ) 
+ 
+ 
+ 
+ Interest income 
+ 
+   
+ 
+   
+ 
+ 17 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Other, net 
+ 
+   
+ 
+   
+ 
+ ( 15 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 139 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Income before income tax expense 
+ 
+   
+ 
+   
+ 
+ 700 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 831 
+ 
+   
+ 
+ 
+ 
+ Income tax expense 
+ 
+   
+ 
+   
+ 
+ ( 187 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 216 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ 513 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 615 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Less: Net income attributable to noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ ( 14 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 11 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income attributable to Fox Corporation stockholders 
+ 
+   
+ 
+ $ 
+ 
+ 499 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 604 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ EARNINGS PER SHARE DATA 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Weighted average shares 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Basic 
+ 
+   
+ 
+   
+ 
+ 622 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 621 
+ 
+   
+ 
+ 
+ 
+ Diluted 
+ 
+   
+ 
+   
+ 
+ 624 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 621 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income attributable to Fox Corporation stockholders per share - basic and diluted 
+ 
+   
+ 
+ $ 
+ 
+ 0.80 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 0.97 
+ 
+   
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ The accompanying notes are an integral part of these Unaudited Consolidated and Combined Financial Statements. 
+ 1 
+ 
+   
+ FOX CORPORATION  
+ UNAUDITED CONSOLIDATED AND COMBINED STATEMENTS OF COMPREHENSIVE INCOME  
+ (IN MILLIONS)  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+ $ 
+ 
+ 513 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 615 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive income, net of tax 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Benefit plan adjustments 
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Other comprehensive income, net of tax 
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Comprehensive income 
+ 
+   
+ 
+   
+ 
+ 517 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 616 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Less: Net income attributable to noncontrolling interests (a) 
+ 
+   
+ 
+   
+ 
+ ( 14 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 11 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Comprehensive income attributable to Fox Corporation stockholders 
+ 
+   
+ 
+ $ 
+ 
+ 503 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 605 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Net income attributable to noncontrolling interests includes $ 9  million and $ 11  million for the three months ended September 30, 2019 and 2018, respectively, relating to redeemable noncontrolling interests.   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ The accompanying notes are an integral part of these Unaudited Consolidated and Combined Financial Statements.   
+ 2 
+ 
+   
+ FOX CORPORATION  
+ CONSOLIDATED BALANCE SHEETS  
+ (IN MILLIONS, EXCEPT SHARE AND PER SHARE AMOUNTS)  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (unaudited) 
+ 
+   
+ 
+   
+ 
+ (audited) 
+ 
+   
+ 
+ 
+ 
+ ASSETS 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current assets 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents 
+ 
+   
+ 
+ $ 
+ 
+ 3,340 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3,234 
+ 
+   
+ 
+ 
+ 
+ Receivables, net 
+ 
+   
+ 
+   
+ 
+ 2,108 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,967 
+ 
+   
+ 
+ 
+ 
+ Inventories, net 
+ 
+   
+ 
+   
+ 
+ 1,463 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,129 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ 138 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 148 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total current assets 
+ 
+   
+ 
+   
+ 
+ 7,049 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,478 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Non-current assets 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment, net 
+ 
+   
+ 
+   
+ 
+ 1,314 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,313 
+ 
+   
+ 
+ 
+ 
+ Intangible assets, net 
+ 
+   
+ 
+   
+ 
+ 2,848 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,851 
+ 
+   
+ 
+ 
+ 
+ Goodwill 
+ 
+   
+ 
+   
+ 
+ 2,707 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,691 
+ 
+   
+ 
+ 
+ 
+ Deferred tax assets 
+ 
+   
+ 
+   
+ 
+ 4,485 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4,651 
+ 
+   
+ 
+ 
+ 
+ Other non-current assets 
+ 
+   
+ 
+   
+ 
+ 2,131 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,525 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total assets 
+ 
+   
+ 
+ $ 
+ 
+ 20,534 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 19,509 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ LIABILITIES AND EQUITY 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current liabilities 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Accounts payable, accrued expenses and other current liabilities 
+ 
+   
+ 
+ $ 
+ 
+ 1,890 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,712 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total current liabilities 
+ 
+   
+ 
+   
+ 
+ 1,890 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,712 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Non-current liabilities 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Borrowings 
+ 
+   
+ 
+   
+ 
+ 6,752 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,751 
+ 
+   
+ 
+ 
+ 
+ Other liabilities 
+ 
+   
+ 
+   
+ 
+ 1,355 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 899 
+ 
+   
+ 
+ 
+ 
+ Redeemable noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ 207 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 189 
+ 
+   
+ 
+ 
+ 
+ Commitments and contingencies 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Equity 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Class A common stock (a) 
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+ 
+ 
+ Class B common stock (b) 
+ 
+   
+ 
+   
+ 
+ 3 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 3 
+ 
+   
+ 
+ 
+ 
+ Additional paid-in capital 
+ 
+   
+ 
+   
+ 
+ 9,921 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9,891 
+ 
+   
+ 
+ 
+ 
+ Retained earnings 
+ 
+   
+ 
+   
+ 
+ 696 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 357 
+ 
+   
+ 
+ 
+ 
+ Accumulated other comprehensive loss 
+ 
+   
+ 
+   
+ 
+ ( 304 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 308 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Fox Corporation stockholders' equity 
+ 
+   
+ 
+   
+ 
+ 10,320 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9,947 
+ 
+   
+ 
+ 
+ 
+ Noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ 10 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 11 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total equity 
+ 
+   
+ 
+   
+ 
+ 10,330 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9,958 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total liabilities and equity 
+ 
+   
+ 
+ $ 
+ 
+ 20,534 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 19,509 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Class A common stock , $ 0.01  par value per share,  2,000,000,000  shares authorized,  354,475,255  shares and  354,422,419  shares issued and outstanding  at par as of September 30, 2019 and June 30, 2019, respectively. 
+ 
+ 
+ 
+ 
+ (b) 
+ 
+ Class B common stock , $ 0.01  par value per share,  1,000,000,000  shares authorized,  266,173,651  shares issued and outstanding at par as of September 30, 2019 and June 30, 2019.   
+   
+   
+   
+   
+   
+ The accompanying notes are an integral part of these Unaudited Consolidated and Combined Financial Statements. 
+ 3 
+ 
+   
+ FOX CORPORATION  
+ UNAUDITED CONSOLIDATED AND COMBINED STATEMENTS OF CASH FLOWS  
+ (IN MILLIONS)  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended 
+ September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ OPERATING ACTIVITIES 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+ $ 
+ 
+ 513 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 615 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Adjustments to reconcile net income to cash provided by operating activities 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+   
+ 
+ 50 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 43 
+ 
+   
+ 
+ 
+ 
+ Amortization of cable distribution investments 
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10 
+ 
+   
+ 
+ 
+ 
+ Impairment and restructuring charges 
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Equity-based compensation 
+ 
+   
+ 
+   
+ 
+ 27 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Other, net 
+ 
+   
+ 
+   
+ 
+ 15 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 139 
+ 
+ ) 
+ 
+ 
+ 
+ Deferred income taxes 
+ 
+   
+ 
+   
+ 
+ 165 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 72 
+ 
+   
+ 
+ 
+ 
+ Change in operating assets and liabilities, net of acquisitions and dispositions 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Receivables and other assets 
+ 
+   
+ 
+   
+ 
+ ( 79 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 100 
+ 
+ ) 
+ 
+ 
+ 
+ Inventories net of program rights payable 
+ 
+   
+ 
+   
+ 
+ ( 358 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 202 
+ 
+ ) 
+ 
+ 
+ 
+ Accounts payable and other liabilities 
+ 
+   
+ 
+   
+ 
+ ( 149 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 52 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net cash provided by operating activities 
+ 
+   
+ 
+   
+ 
+ 202 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 247 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ INVESTING ACTIVITIES 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Property, plant and equipment 
+ 
+   
+ 
+   
+ 
+ ( 39 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 42 
+ 
+ ) 
+ 
+ 
+ 
+ Purchase of investments 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 100 
+ 
+ ) 
+ 
+ 
+ 
+ Other investing activities, net 
+ 
+   
+ 
+   
+ 
+ ( 1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 65 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net cash used in investing activities 
+ 
+   
+ 
+   
+ 
+ ( 40 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 207 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ FINANCING ACTIVITIES 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net transfers from Twenty-First Century Fox, Inc. 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 229 
+ 
+   
+ 
+ 
+ 
+ Other financing activities, net 
+ 
+   
+ 
+   
+ 
+ ( 56 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 13 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net cash (used in) provided by financing activities 
+ 
+   
+ 
+   
+ 
+ ( 56 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 216 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net increase in cash and cash equivalents 
+ 
+   
+ 
+   
+ 
+ 106 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 256 
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents, beginning of year 
+ 
+   
+ 
+   
+ 
+ 3,234 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,500 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash and cash equivalents, end of period 
+ 
+   
+ 
+ $ 
+ 
+ 3,340 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,756 
+ 
+   
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ The accompanying notes are an integral part of these Unaudited Consolidated and Combined Financial Statements. 
+   
+   
+ 4 
+ 
+   
+ FOX CORPORATION  
+ UNAUDITED CONSOLIDATED AND COMBINED STATEMENTS OF EQUITY  
+ (IN MILLIONS)  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Class A 
+ 
+   
+ 
+   
+ 
+ Class B 
+ 
+   
+ 
+   
+ 
+ Twenty-First Century 
+ 
+   
+ 
+   
+ 
+ Additional 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ Accumulated Other 
+ 
+   
+ 
+   
+ 
+ Total Fox Corporation 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Common Stock 
+ 
+   
+ 
+   
+ 
+ Common Stock 
+ 
+   
+ 
+   
+ 
+ Fox, Inc. 
+ 
+   
+ 
+   
+ 
+ Paid-in 
+ 
+   
+ 
+   
+ 
+ Retained 
+ 
+   
+ 
+   
+ 
+ Comprehensive 
+ 
+   
+ 
+   
+ 
+ Stockholders' 
+ 
+   
+ 
+   
+ 
+ Noncontrolling 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Shares 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ Shares 
+ 
+   
+ 
+   
+ 
+ Amount 
+ 
+   
+ 
+   
+ 
+ Investment 
+ 
+   
+ 
+   
+ 
+ Capital 
+ 
+   
+ 
+   
+ 
+ Earnings 
+ 
+   
+ 
+   
+ 
+ (Loss) Income 
+ 
+   
+ 
+   
+ 
+ Equity 
+ 
+   
+ 
+   
+ 
+ Interests (a) 
+ 
+   
+ 
+   
+ 
+ Equity 
+ 
+   
+ 
+ 
+ 
+ Balance, June 30, 2019 
+ 
+   
+ 
+   
+ 
+ 354 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 266 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,891 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 357 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 308 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 9,947 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 11 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,958 
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 499 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 499 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 504 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive income 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+ 
+ 
+ Dividends declared 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 143 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 143 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 143 
+ 
+ ) 
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 30 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 17 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 7 
+ 
+   
+ 
+ 
+ 
+ Balance, September 30, 2019 
+ 
+   
+ 
+   
+ 
+ 354 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 4 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 266 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,921 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 696 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 304 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 10,320 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 10 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 10,330 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Balance, June 30, 2018 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,513 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 81 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,594 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9,594 
+ 
+   
+ 
+ 
+ 
+ Adoption of new accounting standards (b) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 143 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 143 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 604 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 604 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 604 
+ 
+   
+ 
+ 
+ 
+ Other comprehensive income 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 181 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 181 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 190 
+ 
+   
+ 
+ 
+ 
+ Net increase in Twenty-First Century Fox, Inc. investment 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 665 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 665 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 665 
+ 
+   
+ 
+ 
+ 
+ Balance, September 30, 2018 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 11,106 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 61 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 11,045 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 11,054 
+ 
+   
+ 
+ 
+   
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Excludes Redeemable noncontrolling interests which are reflected in temporary equity (See Note 4—Fair Value under the heading “Redeemable Noncontrolling Interests”). 
+ 
+ 
+ 
+ 
+ (b) 
+ 
+ Reflects the adoption of ASU 2016-01 and ASU 2018-02 as defined in Note 2—Summary of Significant Accounting Policies in the Company’s Annual Report on Form 10-K for the fiscal year ended June 30, 2019 as filed with the Securities and Exchange Commission on August 9, 2019 under the heading “Recently Adopted and Recently Issued Accounting Guidance and U.S. Tax Reform”. 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ The accompanying notes are an integral part of these Unaudited Consolidated and Combined Financial Statements. 
+   
+ 5 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ NOTE 1. DESCRIPTION OF BUSINESS AND BASIS OF PRESENTATION  
+ Fox Corporation, a Delaware corporation (“FOX” or the “Company”), is a news, sports and entertainment company, which manages and reports its businesses in the following segments: Cable Network Programming, Television and Other, Corporate and Eliminations. 
+ The Distribution 
+ On March  19, 2019, the Company became a standalone publicly traded company through the pro rata distribution by Twenty-First Century Fox, Inc. (now known as TFCF Corporation) (“21CF”) of  all of the issued and outstanding common stock of FOX to 21CF stockholders (other than holders that were subsidiaries of 21CF) (the “Distribution”) in accordance with the Amended and Restated Distribution Agreement and Plan of Merger, dated as of June 20, 2018, by and between 21CF and 21CF Distribution Merger Sub, Inc. Following the Distribution,  354  million and  266  million shares of the Company’s Class A Common Stock, par value $ 0.01  per share (the “Class A Common Stock”), and Class B Common Stock, par value $ 0.01  per share (the “Class B Common Stock” and, together with the Class A Common Stock, the “Common Stock”), respectively, began trading independently on The Nasdaq Global Select Market. In connection with the Distribution, the Company entered into the Separation and Distribution Agreement, dated as of March 19, 2019 (the “Separation Agreement”), with 21CF, which effected the internal restructuring (the “Separation”) whereby 21CF transferred to FOX a portfolio of 21CF’s news, sports and broadcast businesses, including FOX News Media (consisting of FOX News and FOX Business), FOX  Entertainment , FOX Sports, FOX Television Stations, and sports cable networks FS1, FS2, FOX Deportes and Big Ten Network, and certain other assets, and FOX assumed from 21CF the liabilities associated with such businesses and certain other liabilities. The Separation and the Distribution were effected as part of a series of transactions contemplated by the Amended and Restated Merger Agreement and Plan of Merger, dated as of June 20, 2018, by and among 21CF, The Walt Disney Company (“Disney”) and certain subsidiaries of Disney, pursuant to which, among other things, 21CF became a wholly-owned subsidiary of Disney. 
+ In connection with the Separation, the Company entered into several agreements that govern certain aspects of the Company’s relationship with 21CF and Disney following the Separation. These include the Separation Agreement, a tax matters agreement, a transition services agreement, as well as agreements relating to intellectual property licenses, employee matters, commercial arrangements and a studio lot lease (See Note 1—Description of Business and Basis of Presentation in the 2019 Form 10-K, as defined below, for further discussion). 
+ Basis of Presentation  
+ The Unaudited Consolidated and Combined Financial Statements of FOX have been prepared  in accordance with United States (“U.S.”) generally accepted accounting principles (“GAAP”)  for interim financial information and with the instructions to Form 10-Q and Article 10 of Regulation S-X .  In the opinion of management, all adjustments consisting only of normal recurring adjustments necessary for a fair presentation have been reflected in these Unaudited Consolidated and Combined Financial Statements. Operating results for the interim periods presented are not necessarily indicative of the results that may be expected for the fiscal year ending June 30, 2020. 
+ These interim Unaudited Consolidated and Combined Financial Statements and notes thereto should be read in conjunction with the audited consolidated and combined financial statements and notes thereto included in the Company’s Annual Report on Form 10-K for the fiscal year ended June 30, 2019 as filed with the Securities and Exchange Commission (the “SEC”) on August 9, 2019 (the “2019 Form 10-K”). 
+ The Company became a separate consolidated group as a result of the Distribution, and the Company’s financial statements for the three months ended September 30, 2019 and as of September 30, 2019 and June 30, 2019 are presented on a consolidated basis.  Prior to the Distribution, the Company’s Unaudited Combined Financial Statements were derived from the unaudited consolidated financial statements and accounting records of 21CF. The Company’s financial statements for the three months ended September 30, 2018 are presented on a combined basis as the Company was not a separate consolidated group prior to the Distribution. These financial statements reflect the combined historical results of operations and cash flows of 21CF’s domestic news, national sports and broadcast businesses and certain other assets and liabilities associated with such businesses .  
+ 6 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ The Unaudited Combined Statement of Operations  for the three months ended September 30, 2018  include s  allocations for certain support functions that were provided on a centralized basis within 21CF prior to the Distribution and not recorded at the business unit level, such as certain expenses related to finance, legal, insurance, information technology, compliance and human resources management activities, among others. 21CF did not routinely allocate these costs to any of its business units. These expenses have been allocated to FOX on the basis of direct usage when identifiable, with the remainder allocated on a pro rata basis of combined revenues, headcount or other relevant measures. Management believes the assumptions underlying the Unaudited Combined Financial Statements, including the assumptions regarding allocating general corporate expenses from 21CF, are reasonable. Nevertheless, the Unaudited Combined Financial Statements may not include all of the actual expenses that would have been incurred by FOX and may not reflect FOX’s consolidated results of operations and cash flows had it been a standalone company during the period presented. Actual costs that would have been incurred if FOX had been a standalone company would depend on multiple factors, including organizational structure and strategic decisions made in various areas, including information technology and infrastructure.  
+ For purposes of the Company’s financial statements for the period prior to the Distribution,   the income tax provision in the Unaudited Combined Statement of Operations was calculated as if FOX filed a separate tax return and was operating as a standalone business. Therefore, cash tax payments and items of current and deferred taxes may not be reflective of FOX’s actual tax balances prior to or subsequent to the Distribution. Prior to the Distribution, the Company’s operating results were included in 21CF’s consolidated U.S. federal and state income tax returns. 
+ Intercompany transactions with 21CF or its affiliates and the Company are reflected in the historical Unaudited Combined Financial Statements for the period prior to the Distribution. All significant intracompany transactions and accounts within the Company’s consolidated and combined businesses have been eliminated.  Investments in and advances to entities or joint ventures in which the Company has significant influence, but less than a controlling financial interest, are accounted for using the equity method. Significant influence is generally presumed to exist when the Company owns an interest between 20% and 50% and exercises significant influence.  In accordance with  Accounting Standards Codification (“ASC”)  321 “Investments—Equity Securities” (“ASC 321”), equity securities  in  which the Company has no significant influence (generally less than a 20% ownership interest)  with readily determinable fair values are accounted for  at fair value based on quoted market prices. Equity securities  without readily determinable fair values  are accounted for either at fair value or using the measurement alternative  which is at cost minus impairment, if any, plus or minus changes resulting from observable price changes in orderly transactions for the identical or a similar investment of the same issuer . All gains and losses on  investments in equity securities are recognized in  the Unaudited Consolidated and Combined Statements of Operations . 
+ The preparation of the Company’s Unaudited Consolidated and Combined Financial Statements in conformity with GAAP requires management to make estimates and assumptions that affect the amounts that are reported in the Unaudited Consolidated and Combined Financial Statements and accompanying disclosures. Although these estimates are based on management’s best knowledge of current events and actions that the Company may undertake in the future, actual results may differ from those estimates.  
+ The Company’s fiscal year ends on June 30 of each year. Certain fiscal 2019 amounts have been reclassified to conform to the fiscal 2020 presentation. 
+ The unaudited and audited consolidated and combined financial statements are referred to as the “Financial Statements” herein. The unaudited consolidated and combined statements of operations are referred to as the “Statements of Operations” herein. The unaudited and audited consolidated balance sheets are referred to as the “Balance Sheets” herein. 
+ 7 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Recently Adopted and Recently Issued Accounting Guidance  
+ Adopted  
+ In February 2016, the Financial Accounting Standards Board issued Accounting Standards Update 2016-02, “Leases (Topic 842)” (“Topic 842”), as amended. Topic 842 requires recognition of lease liabilities and right-of-use (“ROU”) assets on the balance sheet and disclosure of key information about leasing arrangements. On July 1, 2019, the Company adopted Topic 842 on a modified retrospective basis and recorded operating lease liabilities and ROU assets of approximately $ 635  million and $ 585  million, respectively, at the date of adoption (See Note 6—Leases). The difference between the Company’s initial recognition of operating lease liabilities and ROU assets, at the date of adoption, was primarily a result of the reclassification of the deferred rent liability. The adoption of Topic 842 did not have a significant impact on the Statements of Operations. In accordance with the guidance in Topic 842, the Company elected not to reassess (i) whether any existing contracts are or contain leases, (ii) lease classification for existing leases or (iii) capitalization of initial direct costs for existing leases. 
+ NOTE 2. ACQUISITIONS, DISPOSALS AND OTHER TRANSACTIONS  
+ The Stars Group 
+ In May 2019 , the Company and The Stars Group Inc. (“The Stars Group”)  announced plans to launch FOX Bet, a national media and sports wagering partnership in the U.S., which was launched in the first quarter of fiscal 2020. FOX Sports and The Stars Group have entered into a long-term commercial arrangement through which FOX Sports provides The Stars Group with an exclusive license to use certain FOX Sports trademarks. Prior to the tenth anniversary of the commercial agreement, and subject to certain conditions and applicable gaming regulatory approvals, FOX Sports has an option to acquire up to  50 % of the equity in   The Stars Group’s U.S. business. In addition, the Company invested $ 236  million to acquire a  4.99 % equity interest in The Stars Group. The common shares issued to the Company are subject to certain transfer restrictions for a period ending in  May 2021 , subject to customary exceptions. The Company accounts for the investment in The Stars Group at fair value (See Note 4—Fair Value). 
+ Caffeine and Caffeine Studios 
+ In the first quarter of fiscal 2019, the Company invested, in the aggregate, approximately $ 100  million in cash for a minority equity interest in Caffeine, Inc. (“Caffeine”), a social broadcasting platform for gaming, entertainment and other creative content, and Caffeine Studio, LLC (“Caffeine Studios”), a newly formed venture that is jointly owned by the Company and Caffeine. The Company accounts for the investments in Caffeine  using the measurement alternative in accordance with ASC 321  and Caffeine Studios using the equity method. 
+ NOTE 3. INVENTORIES, NET  
+ The Company’s inventories were comprised of the following : 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Sports programming rights 
+ 
+   
+ 
+ $ 
+ 
+ 1,258 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 954 
+ 
+   
+ 
+ 
+ 
+ Entertainment programming rights 
+ 
+   
+ 
+   
+ 
+ 413 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 380 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total inventories, net 
+ 
+   
+ 
+   
+ 
+ 1,671 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,334 
+ 
+   
+ 
+ 
+ 
+ Less: current portion of inventories, net 
+ 
+   
+ 
+   
+ 
+ ( 1,463 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 1,129 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total non-current inventories, net 
+ 
+   
+ 
+ $ 
+ 
+ 208 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 205 
+ 
+   
+ 
+ 
+   
+ NOTE 4. FAIR VALUE  
+ In accordance with ASC 820, “Fair Value Measurement,” fair value measurements are required to be disclosed using a three-tiered fair value hierarchy which distinguishes market participant assumptions into the following categories: (i) inputs that are quoted prices in active markets (“Level 1”); (ii) inputs other than quoted prices included within Level 1 that are observable, including quoted prices for similar assets or liabilities (“Level 2”); and (iii) inputs that require the entity to use its own assumptions about market participant assumptions (“Level 3”). 
+ 8 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ The following tables present information about financial assets and liabilities carried at fair value on a recurring basis: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Fair value measurements 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of September 30, 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+   
+ 
+ Level 1 
+ 
+   
+ 
+   
+ 
+ Level 2 
+ 
+   
+ 
+   
+ 
+ Level 3 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Assets 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Investments (a) 
+ 
+   
+ 
+ $ 
+ 
+ 804 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 613 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 191 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Liabilities 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Contingent consideration (b) 
+ 
+   
+ 
+   
+ 
+ ( 6 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 6 
+ 
+ ) 
+ 
+ 
+ 
+ Redeemable noncontrolling interests (b) 
+ 
+   
+ 
+   
+ 
+ ( 207 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 207 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 591 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 613 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 191 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 213 
+ 
+ ) 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Fair value measurements 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of June 30, 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ Total 
+ 
+   
+ 
+   
+ 
+ Level 1 
+ 
+   
+ 
+   
+ 
+ Level 2 
+ 
+   
+ 
+   
+ 
+ Level 3 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Assets 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Investments (a) 
+ 
+   
+ 
+ $ 
+ 
+ 761 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 545 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 216 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Redeemable noncontrolling interests (b) 
+ 
+   
+ 
+   
+ 
+ ( 189 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 189 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total 
+ 
+   
+ 
+ $ 
+ 
+ 572 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 545 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 216 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ ( 189 
+ 
+ ) 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ The investment categorized as Level 1 represents an investment in equity securities of Roku, Inc. (“Roku”) with a readily determinable fair value. The investment categorized as Level 2 represents an investment in equity securities of The Stars Group estimated using the quoted market price of The Stars Group common stock less a discount due to a lack of marketability (“DLOM”). The DLOM was derived based on the remaining term of the lock up period and the volatility of The Stars Group common stock (See Note 2—Acquisitions, Disposals and Other Transactions under the heading “The Stars Group” for further discussion). 
+ 
+ 
+ 
+ 
+ ( b ) 
+ 
+ The Company utilizes the market approach valuation technique for its Level 3 fair value measures. Inputs to such measures could include observable market data obtained from independent sources such as broker quotes and recent market transactions for similar assets. It is the Company’s policy to maximize the use of observable inputs in the measurement of its Level 3 fair value measurements. To the extent observable inputs are not available, the Company utilizes unobservable inputs based upon the assumptions market participants would use in valuing the liability. Examples of utilized unobservable inputs are future cash flows and long-term growth rates. 
+ Redeemable Noncontrolling Interests  
+ The Company accounts for redeemable noncontrolling interests in accordance with ASC 480-10-S99-3A, “Distinguishing Liabilities from Equity”, because their exercise is outside the control of the Company. The redeemable noncontrolling interests recorded at fair value are put rights held by the minority shareholder in  one of the Company’s majority-owned sports networks . 
+ 9 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ The changes in redeemable noncontrolling interests classified as Level 3 measurements were as follows:  
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+ 
+ 
+ Beginning of period 
+ 
+   
+ 
+ $ 
+ 
+ ( 189 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 275 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ ( 9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 11 
+ 
+ ) 
+ 
+   
+ 
+ 
+ 
+ Distributions 
+ 
+   
+ 
+   
+ 
+ 8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 13 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Accretion and other 
+ 
+   
+ 
+   
+ 
+ ( 17 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 190 
+ 
+   
+ 
+ (a) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ End of period 
+ 
+   
+ 
+ $ 
+ 
+ ( 207 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 83 
+ 
+ ) 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ As a result of the expiration of a portion of the minority shareholder’s put right, approximately $ 200  million was reclassified into  equity . 
+ As of September 30, 2019, a portion of the minority shareholder’s put right was exercisable. In October 2019, this portion of the minority shareholder’s put right expired and, as a result, approximately $ 120  million will be reclassified into equity in the Company’s consolidated financial statements for the three months ending December 31, 2019.  
+ Another portion of the minority shareholder’s put right will become exercisable in July 2020 and the remaining portion will become exercisable in July 2021. 
+ Financial Instruments  
+ The carrying value of the Company’s financial instruments, such as cash and cash equivalents, receivables, payables and investments accounted for using the measurement alternative in accordance with ASC 321, approximates fair value. 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Borrowings 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Fair value 
+ 
+   
+ 
+ $ 
+ 
+ 7,889 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 7,643 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Carrying value 
+ 
+   
+ 
+ $ 
+ 
+ 6,752 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 6,751 
+ 
+   
+ 
+ 
+ Fair value is generally determined by reference to market values resulting from trading on a national securities exchange or in an over-the-counter market (a Level 1 measurement). 
+ Concentrations of Credit Risk  
+ Cash and cash equivalents are maintained with several financial institutions. The Company has deposits held with banks that exceed the amount of insurance provided on such deposits. Generally, these deposits may be redeemed upon demand and are maintained with financial institutions of reputable credit and, therefore, bear minimal credit risk. 
+ Generally, the Company does not require collateral to secure receivables. As of September 30, 2019, the Company had  one  customer that accounted for approximately  10 % of the Company’s receivables. As of June 30, 2019, the Company had  no  individual customers that accounted for  10 % or more of the Company’s receivables. 
+ NOTE 5. BORROWINGS  
+ Borrowings include senior notes (See Note 9—Borrowings in the 2019 Form 10-K under the heading “Senior Notes Issued Under the January 2019 Indenture”). In addition, the Company is party to a credit agreement providing a $ 1.0  billion unsecured revolving credit facility with a sub-limit of $ 150  million available for the issuance of letters of credit and a maturity date of March 2024 (See Note 9—Borrowings in the 2019 Form 10-K under the heading “Revolving Credit Agreement”).  As of September 30, 2019, there were  no  borrowings outstanding under the revolving credit agree ment.   
+ 10 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ NOTE 6. LEASES  
+ Lessee Arrangements 
+ The Company has lease agreements primarily  for office facilities, transponder agreements and other equipment leases.  At contract inception, the Company determines if a contract is or contains a lease and whether it is an operating or finance lease. The Company does not separate lease components from nonlease components for real estate leases. 
+ For operating leases that have a lease term of greater than one year, the Company initially recognizes operating lease liabilities and ROU assets at the lease commencement date, which is the date that the lessor makes an underlying asset available for use by the Company. ROU assets represent the Company’s right to use an underlying asset for the lease term and lease liabilities represent the present value of the Company’s obligation to make lease payments, primarily escalating fixed payments, over the lease term. The discount rate used to determine the present value of the lease payments is generally the Company’s incremental borrowing rate because the rate implicit in the lease is generally not readily determinable. The incremental borrowing rate for the lease term is determined by adjusting the Company’s unsecured borrowing rate for a similar term to approximate a collateralized borrowing rate. The Company's lease terms for each of its leases represents the noncancelable period for which the Company has the right to use an underlying asset, together with all of the following: (i) periods covered by an option to extend the lease if the Company is reasonably certain to exercise that option; (ii) periods covered by an option to terminate the lease if the Company is reasonably certain not to exercise that option; and (iii) periods covered by an option to extend (or not to terminate) the lease in which exercise of the option is controlled by the lessor. The Company recognizes lease payments as lease expense on a straight-line basis over the lease term. 
+ The Company’s operating ROU assets are included in Other non-current assets and the Company’s current and non-current operating lease liabilities are included in Accounts payable, accrued expenses and other current liabilities and Other liabilities, respectively, in the Company’s Balance Sheet (See Note 12—Additional Financial Information). 
+ The following amounts were recorded in the Company’s Balance Sheet relating to its operating leases and other supplemental information: 
+ 
+ 
+ 
+ 
+   
+ 
+ As of September 30, 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ ROU assets 
+ 
+ $ 
+ 
+ 560 
+ 
+   
+ 
+ 
+ 
+ Lease liabilities 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Current lease liabilities 
+ 
+ $ 
+ 
+ 145 
+ 
+   
+ 
+ 
+ 
+ Non-current lease liabilities 
+ 
+   
+ 
+ 460 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total lease liabilities 
+ 
+ $ 
+ 
+ 605 
+ 
+   
+ 
+ 
+ 
+ Other supplemental information 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Weighted average remaining lease term 
+ 
+ 7  years 
+ 
+   
+ 
+ 
+ 
+ Weighted average discount rate 
+ 
+   
+ 
+ 3 
+ 
+ % 
+ 
+ 
+ The following table presents information about the Company’s lease costs and supplemental cash flows information for leases: 
+ 
+ 
+ 
+ 
+   
+ 
+ For the three months ended 
+ September 30, 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Lease costs 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total lease costs (a) 
+ 
+ $ 
+ 
+ 30 
+ 
+   
+ 
+ 
+ 
+ Supplemental cash flows information 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Operating cash flows from operating leases 
+ 
+ $ 
+ 
+ 38 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Total lease costs of $ 30  million are net of sublease income of approximately $ 10  million. 
+ 11 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ The following table presents the lease payments relating to the Company’s operating leases: 
+ 
+ 
+ 
+ 
+   
+ 
+ As of September 30, 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Fiscal Year 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 2020 
+ 
+ $ 
+ 
+ 119 
+ 
+   
+ 
+ 
+ 
+ 2021 
+ 
+   
+ 
+ 123 
+ 
+   
+ 
+ 
+ 
+ 2022 
+ 
+   
+ 
+ 91 
+ 
+   
+ 
+ 
+ 
+ 2023 
+ 
+   
+ 
+ 86 
+ 
+   
+ 
+ 
+ 
+ 2024 
+ 
+   
+ 
+ 82 
+ 
+   
+ 
+ 
+ 
+ Thereafter 
+ 
+   
+ 
+ 194 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total lease payments (a) 
+ 
+   
+ 
+ 695 
+ 
+   
+ 
+ 
+ 
+ Less: imputed interest 
+ 
+   
+ 
+ ( 90 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Present value of operating lease liabilities 
+ 
+ $ 
+ 
+ 605 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ In addition to the total lease payments presented above, the Company has a lease for an office facility with lease payments of approximately $ 55  million that has not yet commenced as of September 30, 2019. 
+ Lessor Arrangements 
+ The Company’s lessor arrangements primarily  relate to its owned production and office facilities at the FOX Studios lot, which is located  in Los Angeles, California .  The Company is responsible for the management of the  FOX Studios lot , which includes managing and providing facilities, studio operations, and production services, which until 2026 will predominantly be utilized by Disney productions. The Company leases production and office space on the FOX Studios lot to 21CF for an initial term of  seven years , subject to  two  five-year renewal options exercisable by 21CF.  The Company will receive approximately $ 50  million annually in lease payments over the lease term. 
+ The Company recorded total lease income of approximately $ 15  million for the three months ended September 30, 2019 which is included in Revenues in the Statement of Operations. The Company recognizes lease payments for operating leases as revenue on a straight-line basis over the lease term and variable lease payments as revenue in the period incurred. 
+ NOTE 7. EQUITY-BASED COMPENSATION 
+ In connection with the Distribution, the Company adopted the Fox Corporation 2019 Shareholder Alignment Plan (the “SAP”), under which equity-based compensation, including stock options, stock appreciation rights, restricted and unrestricted stock,  restricted stock units (“RSUs”), performance stock units (“PSUs”)  and other types of FOX equity awards may be granted. The Company’s officers, directors and employees are eligible to participate in the SAP.  
+ Performance Stock Units  
+ PSUs are fair valued on the date of grant and expensed over the service period using a straight-line method as the awards cliff vest at the end of the three-year performance period. The Company also estimates the number of shares expected to vest which is based on management’s determination of the probable outcome of the performance conditions, which requires considerable judgment. The Company records a cumulative adjustment in periods that the Company’s estimate of the number of shares expected to vest changes. Additionally, the Company ultimately adjusts the expense recognized to reflect the actual vested shares following the resolution of the performance conditions. The number of shares that will be issued upon vesting of PSUs can range from  0 % to  200 % of the target award, based on (i) the Company’s average annual adjusted earnings per share growth, (ii) the Company’s average annual adjusted free cash flow growth and (iii) the Company’s three-year total shareholder return (“TSR”) as measured against the three-year TSR of the companies that comprise the Standard and Poor’s 500 Index. The fair value of the TSR condition is determined using a Monte Carlo simulation model. 
+ During the three months ended September 30, 2019, approximately  0.4  million PSUs were granted, which have a three-year performance measurement period beginning in July 2019. The awards are subject to the achievement of three pre-established objective performance measures determined by the Compensation Committee of the Company’s Board of  
+ 12 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Directors. The awards issued will be settled in shares of Class A Common Stock upon vesting and are subject to the participants’ continued employment with the Company. Any person who holds PSUs shall have no ownership interest in the shares of Class A Common Stock to which such PSUs relate until and unless shares of Class A Common Stock are delivered to the holder. All shares of Class A Common Stock awards that are cancelled or forfeited become available for future grants. Certain of these awards have a graded vesting provision and the expense recognition is accelerated. 
+ Restricted Stock Units  
+ During the three months ended September 30, 2019, approximately  0.3  million RSUs were granted, which vest in equal annual installments over a three-year period subject to the participants’ continued employment with the Company. 
+ Stock Options 
+ During the three months ended September 30, 2019, approximately  1.1  million stock options were granted, which have a term of  seven years  and vest in equal annual installments over a three-year period subject to the participants’ continued employment with the Company. As of September 30, 2019, the Company had approximately  4  million stock options outstanding. Because the stock options’ exercise price was greater than the average market price of the Class A Common Stock for the three months ended September 30, 2019, they were not included in the computation of diluted earnings per share. 
+ The following table summarizes the Company’s equity-based compensation:  
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Equity-based compensation (a) 
+ 
+   
+ 
+ $ 
+ 
+ 32 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 21 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Intrinsic value of all settled equity-based awards 
+ 
+   
+ 
+ $ 
+ 
+ 3 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 102 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Prior to the Distribution, equity-based compensation included allocated expense for both executive directors and corporate executives of 21CF, allocated using a proportional allocation driver, which management deemed to be reasonable. 
+ The Company’s stock based awards are settled in Class A Common Stock. As of September 30, 2019, the Company’s total estimated compensation cost, not yet recognized, related to non-vested equity awards held by the Company’s employees was approximately $ 180  million and is expected to be recognized over a weighted average period between one and two years. 
+ NOTE 8. RELATED PARTY TRANSACTIONS AND TWENTY-FIRST CENTURY FOX, INC. INVESTMENT  
+ Related Party Transactions 
+ In the ordinary course of business, the Company enters into transactions with related parties, which prior to the Distribution included subsidiaries and equity affiliates of 21CF.  
+ The following table sets forth the net revenue from related parties included in the Statement of Operations for the three months ended September 30, 2018: 
+ 
+ 
+ 
+ 
+   
+ 
+ For the three months ended September 30, 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Related party revenue 
+ 
+ $ 
+ 
+ 71 
+ 
+   
+ 
+ 
+ 
+ Related party expense 
+ 
+   
+ 
+ ( 31 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Related party revenue, net of expense 
+ 
+ $ 
+ 
+ 40 
+ 
+   
+ 
+ 
+ For the three months ended September 30, 2019, the related party revenue and expense were not material. 
+ 13 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Corporate Allocations and  Twenty-First Century Fox, Inc.  Investment  
+ Prior to the Distribution, 21CF provided services to and funded certain expenses for the Company such as: global real estate and occupancy costs and employee benefits (“Direct Corporate Expenses”). In addition, the Company’s Unaudited Combined Financial Statements include general corporate expenses of 21CF which were not historically allocated to the Company for certain support functions that were provided on a centralized basis within 21CF and not recorded at the business unit level, such as certain expenses related to finance, legal, insurance, information technology, compliance and human resources management activities, among others (“General Corporate Expenses”). For purposes of the Unaudited Combined Financial Statements for the three months ended September 30, 2018, the General Corporate Expenses have been allocated to the Company. The General Corporate Expenses are included in the Unaudited Combined Statement of Operations in Selling, general and administrative expenses and Other, net, as appropriate. These expenses have been allocated to the Company on the basis of direct usage when identifiable, with the remainder allocated on a pro rata basis of combined revenues, headcount or other relevant measures of the Company. Management believes the assumptions underlying the Unaudited Combined Financial Statements, including the assumptions regarding allocating General Corporate Expenses from 21CF are reasonable. Nevertheless, the Unaudited Combined Financial Statements may not include all of the actual expenses that would have been incurred by FOX and may not reflect the Company’s consolidated results of operations and cash flows had it been a standalone company prior to the Distribution. Actual costs that would have been incurred if the Company had been a standalone company would depend on multiple factors, including organizational structure and strategic decisions made in various areas, including information technology and infrastructure. For the purposes of the Unaudited Combined Statement of Operations, the Company recorded approximately $ 75  million of General Corporate Expenses within Selling, general and administrative expenses and the remaining balance of the Corporate allocations presented in the table below within Other, net for the three months ended September 30, 2018. 
+ Intercompany transactions with 21CF or its affiliates and the Company are reflected in the historical Unaudited Combined Financial Statements for the period prior to the Distribution. All significant intercompany balances between 21CF and the Company, for the period prior to the Distribution, have been reflected in the Unaudited Combined Statement of Cash Flows as a financing activity. 
+ The following table summarizes the components of the net increase in the  Twenty-First Century Fox, Inc.  investment for the three months ended September 30, 2018: 
+ 
+ 
+ 
+ 
+   
+ 
+ For the three months ended September 30, 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Cash pooling, general financing activities and other (a) 
+ 
+ $ 
+ 
+ 580 
+ 
+   
+ 
+ 
+ 
+ Corporate allocations 
+ 
+   
+ 
+ 85 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net increase in Twenty-First Century Fox, Inc. investment 
+ 
+ $ 
+ 
+ 665 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ The nature of activities included in the line item ‘Cash pooling, general financing activities and other’ includes financing activities, capital transfers, cash sweeps, other treasury services and Direct Corporate Expenses. 
+ NOTE 9. COMMITMENTS AND CONTINGENCIES  
+ Commitments  
+ The Company has commitments under certain firm contractual arrangements (“firm commitments”) to make future payments. These firm commitments secure the future rights to various assets and services to be used in the normal course of operations. The total firm commitments and future debt payments as of September 30, 2019 and June 30, 2019 were approximately $ 40  billion and $ 41  billion, respectively. The decrease from June 30, 2019 was primarily due to sports programming rights payments. 
+ The commitments above do not include obligations and commitments related to the transactions disclosed in Note 13—Subsequent Events. 
+ 14 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Contingencies 
+ Profits Participants Litigation  
+ In November 2015, Wark Entertainment, Inc., Temperance Brennan, L.P., Snooker Doodle Productions, Inc., and Bertha Blue, Inc. filed lawsuits against 21CF, Fox Entertainment Group, Twentieth Century Fox Film Corporation, Twentieth Century Fox Television (“TCFTV”), and Fox Broadcasting Corporation in Superior Court of Los Angeles. The plaintiffs are profits participants in the  Bones  television series and alleged that TCFTV, which produced the show, breached its contracts with the plaintiffs and committed fraud concerning certain of those contracts, and that 21CF, Fox Entertainment Group, and Fox Broadcasting Corporation induced TCFTV’s breach of contract and intentionally interfered with the plaintiffs’ contracts with TCFTV. As of September 30, 2019, the parties have amicably resolved the lawsuits, and the Company has contributed $ 34  million pursuant to a settlement agreement with the plaintiffs and The Walt Disney Company as successor to 21CF, Fox Entertainment Group, Twentieth Century Fox Film Corporation, and TCFTV.  
+ Profits participation litigation is subject to uncertainty and it is possible that there could be adverse developments in pending or future cases that could involve a FOX subsidiary. As of September 30, 2019, the Company does not believe that it has incurred a probable material loss for any other activities. 
+ FOX News 
+ The Company and certain of its current and former employees have been subject to allegations of sexual harassment and discrimination and racial discrimination relating to alleged misconduct at the Company’s FOX News business. The Company has resolved many of these claims and is contesting other claims in litigation. The Company has also received regulatory and investigative inquiries relating to these matters. To date, none of the amounts paid in settlements or reserved for pending or future claims, is individually or in the aggregate, material to the Company. The amount of liability, if any, that may result from these or related matters cannot be estimated at this time. However, the Company does not currently anticipate that the ultimate resolution of any such pending matters will have a material adverse effect on its business, financial condition, results of operations or cash flows. 
+ U.K. Newspaper Matters Indemnity  
+ In connection with the separation of 21CF and News Corporation in June 2013, 21CF agreed to indemnify News Corporation, on an after-tax basis, for payments made after the separation arising out of civil claims and investigations relating to phone hacking, illegal data access and inappropriate payments to public officials that occurred at subsidiaries of News Corporation, as well as legal and professional fees and expenses paid in connection with the related criminal matters, other than fees, expenses and costs relating to employees who are not (i) directors, officers or certain designated employees or (ii) with respect to civil matters, co-defendants with News Corporation (the “U.K. Newspaper Matters Indemnity”). In accordance with the Separation Agreement, certain costs and liabilities related to the U.K. Newspaper Matters Indemnity were assumed by the Company. The liability recorded in the Balance Sheets related to the indemnity was approximately $ 50  million as of September 30, 2019 and June 30, 2019. 
+ Other  
+ The Company establishes an accrued liability for legal claims when the Company determines that a loss is both probable and the amount of the loss can be reasonably estimated. Once established, accruals are adjusted from time to time, as appropriate, in light of additional information. The amount of any loss ultimately incurred in relation to matters for which an accrual has been established may be higher or lower than the amounts accrued for such matters. Any fees, expenses, fines, penalties, judgments or settlements which might be incurred by the Company in connection with the various proceedings could affect the Company’s results of operations and financial condition. For the contingencies disclosed above for which there is at least a reasonable possibility that a loss may be incurred, other than the accrual provided, the Company was unable to estimate the amount of loss or range of loss. 
+ The Company’s operations are subject to tax in various domestic jurisdictions and as a matter of course, the Company is regularly audited by federal and state tax authorities. The Company believes it has appropriately accrued for the expected outcome of all pending tax matters and does not currently anticipate that the ultimate resolution of pending tax matters will have a material adverse effect on its consolidated financial condition, future results of operations or liquidity. Each member of the 21CF consolidated group, which includes 21CF, the Company (prior to the Distribution) and 21CF’s other subsidiaries, is jointly and severally liable for the U.S. federal income   and, in certain jurisdictions, state tax liabilities of each other member of the consolidated group. Consequently, the Company could be liable in the event any  
+ 15 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ such liability is incurred, and not discharged, by any other member of the 21CF consolidated group. The tax matters agreement  require s  21CF and/or Disney to indemnify the Company for any such liability. Disputes or assessments could arise during future audits by the Internal Revenue Service in amounts that the Company cannot  quantify. 
+   
+ NOTE 10. PENSION AND OTHER POSTRETIREMENT BENEFITS  
+ The Company participates in and/or sponsors various pension, savings and postretirement benefit plans. Pension plans and postretirement benefit plans are closed to new participants with the exception of a small group covered by collective bargaining agreements.  The net periodic benefit cost was $ 14  million and $ 13  million for the three months ended September 30, 2019 and 2018, respectively. 
+ NOTE 11. SEGMENT INFORMATION  
+ The Company is a news, sports and entertainment company, which manages and reports its businesses in the following segments:  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Cable Network Programming , which principally consists of the production and licensing of news and sports content distributed primarily through traditional cable television systems, direct broadcast satellite operators and telecommunication companies (“traditional MVPDs”) and online multi-channel video programming distributors (“digital MVPDs”), primarily in the U.S. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Television , which principally consists of the acquisition, marketing and distribution of broadcast network programming nationally under the FOX brand and the operation of  28  full power broadcast television stations, including  11  duopolies, in the U.S. Of these stations,  17  are affiliated with the FOX Network,  10  are affiliated with MyNetworkTV and  one  is an independent station. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Other, Corporate and Eliminations , which principally consists of corporate overhead costs, intracompany eliminations and the FOX Studios lot. The FOX Studios lot, located in Los Angeles, California, provides television and film production services along with office space, studio operation services and includes all operations of the facility.  
+ The Company’s operating segments have been determined in accordance with the Company’s internal management structure, which is organized based on operating activities. The Company evaluates performance based upon several factors, of which the primary financial measure is segment operating income before depreciation and amortization, or Segment EBITDA. Due to the integrated nature of these operating segments, estimates and judgments are made in allocating certain assets, revenues and expenses. 
+ Beginning with the announcement of the Company’s financial results for the third quarter of fiscal 2019, the Company has renamed as “Segment EBITDA” the measure that it previously referred to as “Segment OIBDA”. The definition of this measure has not changed: Segment EBITDA is defined as Revenues less Operating expenses and Selling, general and administrative expenses. Segment EBITDA does not include: Amortization of cable distribution investments, Depreciation and amortization, Impairment and restructuring charges, Interest expense, Interest income, Other, net and Income tax expense. Management believes that Segment EBITDA is an appropriate measure for evaluating the operating performance of the Company’s business segments because it is the primary measure used by the Company’s chief operating decision maker to evaluate the performance of and allocate resources to the Company’s businesses. 
+ 16 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ The following tables set forth the Company’s Revenues and Segment EBITDA for the three months ended September 30, 2019 and 2018: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+ $ 
+ 
+ 1,285 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,265 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+ 1,356 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,277 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ 26 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 1 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+ $ 
+ 
+ 2,667 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,541 
+ 
+   
+ 
+ 
+ 
+ Segment EBITDA 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+ $ 
+ 
+ 684 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 633 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+ 251 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 171 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ ( 79 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 43 
+ 
+ ) 
+ 
+ 
+ 
+ Amortization of cable distribution investments 
+ 
+   
+ 
+   
+ 
+ ( 9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 10 
+ 
+ ) 
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+   
+ 
+ ( 50 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 43 
+ 
+ ) 
+ 
+ 
+ 
+ Impairment and restructuring charges 
+ 
+   
+ 
+   
+ 
+ ( 9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Interest expense 
+ 
+   
+ 
+   
+ 
+ ( 90 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 16 
+ 
+ ) 
+ 
+ 
+ 
+ Interest income 
+ 
+   
+ 
+   
+ 
+ 17 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Other, net 
+ 
+   
+ 
+   
+ 
+ ( 15 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 139 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Income before income tax expense 
+ 
+   
+ 
+   
+ 
+ 700 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 831 
+ 
+   
+ 
+ 
+ 
+ Income tax expense 
+ 
+   
+ 
+   
+ 
+ ( 187 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 216 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ 513 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 615 
+ 
+   
+ 
+ 
+ 
+ Less: Net income attributable to noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ ( 14 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 11 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income attributable to Fox Corporation stockholders 
+ 
+   
+ 
+ $ 
+ 
+ 499 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 604 
+ 
+   
+ 
+ 
+   
+ Revenues by Segment by Component 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Affiliate fee 
+ 
+   
+ 
+ $ 
+ 
+ 939 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 939 
+ 
+   
+ 
+ 
+ 
+ Advertising 
+ 
+   
+ 
+   
+ 
+ 254 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 264 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ 92 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 62 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Cable Network Programming revenues 
+ 
+   
+ 
+   
+ 
+ 1,285 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,265 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Advertising 
+ 
+   
+ 
+   
+ 
+ 787 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 799 
+ 
+   
+ 
+ 
+ 
+ Affiliate fee 
+ 
+   
+ 
+   
+ 
+ 455 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 398 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ 114 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 80 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total Television revenues 
+ 
+   
+ 
+   
+ 
+ 1,356 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,277 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ 26 
+ 
+   
+ 
+   
+ 
+   
+ 
+ ( 1 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+ $ 
+ 
+ 2,667 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,541 
+ 
+   
+ 
+ 
+ 17 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Future Performance Obligations  
+ As of September 30, 2019, approximately $ 4.5  billion of  revenues are expected to be recognized primarily over the next  one  to  three  years . The Company’s most significant remaining performance obligations relate to affiliate contracts and sports rights sublicensing contracts with fixed fees. The amount disclosed does not include (i) revenues related to performance obligations that are part of a contract whose original expected duration is one year or less, (ii) revenues that are in the form of sales- or usage-based royalties and (iii) revenues related to performance obligations for which the Company elects to recognize revenue in the amount it has a right to invoice.  
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+ $ 
+ 
+ 13 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 11 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+ 15 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 26 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ 22 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total depreciation and amortization 
+ 
+   
+ 
+ $ 
+ 
+ 50 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 43 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Assets 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+ $ 
+ 
+ 2,642 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,584 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+ 7,086 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6,598 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ 9,901 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9,462 
+ 
+   
+ 
+ 
+ 
+ Investments 
+ 
+   
+ 
+   
+ 
+ 905 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 865 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total assets 
+ 
+   
+ 
+ $ 
+ 
+ 20,534 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 19,509 
+ 
+   
+ 
+ 
+   
+ NOTE 12. ADDITIONAL FINANCIAL INFORMATION  
+ Other, net  
+ The following table sets forth the components of Other, net included in the Statements of Operations:  
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Transaction costs (a) 
+ 
+   
+ 
+ $ 
+ 
+ ( 45 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 40 
+ 
+ ) 
+ 
+ 
+ 
+ Unrealized gains on investments (b) 
+ 
+   
+ 
+   
+ 
+ 43 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 183 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ ( 13 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ ( 4 
+ 
+ ) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total other, net 
+ 
+   
+ 
+ $ 
+ 
+ ( 15 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 139 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ The transaction costs for the three months   ended September 30, 2019 and 2018 are primarily related to the Separation and the Distribution and include retention related costs and for the three months ended September 30, 2019 also includes costs associated with the profits participants litigation (See Note 9—Commitments and Contingencies under the heading “Profits Participants Litigation”). 
+ 
+ 
+ 
+ 
+ (b) 
+ 
+ Represents the net unrealized gains related to changes in fair value of the Company’s investments in Roku and The Stars Group which are recognized in the Statements of Operations  in accordance with ASC 321 (See  Note 4—Fair Value) . 
+ 18 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Other Non-Current Assets  
+ The following table sets forth the components of Other non-current assets included in the Balance Sheets:  
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Investments (a) 
+ 
+   
+ 
+ $ 
+ 
+ 905 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 865 
+ 
+   
+ 
+ 
+ 
+ Operating lease ROU assets 
+ 
+   
+ 
+   
+ 
+ 560 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Inventories, net 
+ 
+   
+ 
+   
+ 
+ 208 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 205 
+ 
+   
+ 
+ 
+ 
+ Other (b) 
+ 
+   
+ 
+   
+ 
+ 458 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 455 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total other non-current assets 
+ 
+   
+ 
+ $ 
+ 
+ 2,131 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,525 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Includes investments accounted for at fair value on a recurring basis of $ 804  million and $ 761  million as of September 30, 2019 and June 30, 2019, respectively (See Note 4—Fair Value). 
+ 
+ 
+ 
+ 
+ (b) 
+ 
+ Includes $ 247  million and $ 249  million of assets in the Grantor Trust (as defined in Note 14—Pension and Other Postretirement Benefits in the 2019 Form 10-K) as of September 30, 2019 and June 30, 2019, respectively. 
+ Accounts Payable, Accrued Expenses and Other Current Liabilities  
+ The following table sets forth the components of Accounts payable, accrued expenses and other current liabilities included in the Balance Sheets: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Accrued expenses 
+ 
+   
+ 
+ $ 
+ 
+ 911 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 835 
+ 
+   
+ 
+ 
+ 
+ Program rights payable 
+ 
+   
+ 
+   
+ 
+ 476 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 514 
+ 
+   
+ 
+ 
+ 
+ Deferred revenue 
+ 
+   
+ 
+   
+ 
+ 217 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 169 
+ 
+   
+ 
+ 
+ 
+ Operating lease liabilities 
+ 
+   
+ 
+   
+ 
+ 145 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Other current liabilities 
+ 
+   
+ 
+   
+ 
+ 141 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 194 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total accounts payable, accrued expenses and other current liabilities 
+ 
+   
+ 
+ $ 
+ 
+ 1,890 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,712 
+ 
+   
+ 
+ 
+ Other Liabilities  
+ The following table sets forth the components of Other liabilities included in the Balance Sheets: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ As of 
+ September 30, 
+ 2019 
+ 
+   
+ 
+   
+ 
+ As of 
+ June 30, 
+ 2019 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Accrued non-current pension/postretirement liabilities 
+ 
+   
+ 
+ $ 
+ 
+ 548 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 543 
+ 
+   
+ 
+ 
+ 
+ Non-current operating lease liabilities 
+ 
+   
+ 
+   
+ 
+ 460 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ 
+ 
+ Other non-current liabilities 
+ 
+   
+ 
+   
+ 
+ 347 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 356 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total other liabilities 
+ 
+   
+ 
+ $ 
+ 
+ 1,355 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 899 
+ 
+   
+ 
+ 
+ Supplemental Cash Flows Information 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions) 
+ 
+   
+ 
+ 
+ 
+ Supplemental cash flows information 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cash paid for interest 
+ 
+   
+ 
+ $ 
+ 
+ ( 171 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ ( 7 
+ 
+ ) 
+ 
+ 
+ 19 
+ 
+ FOX CORPORATION 
+ NOTES TO THE UNAUDITED CONSOLIDATED AND COMBINED FINANCIAL STATEMENTS 
+   
+ Dividends 
+ The following table summarizes the dividends declared per share on both the Company’s Class A Common Stock and Class B Common Stock: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ Cash dividend per share 
+ 
+   
+ 
+ $ 
+ 
+ 0.23 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+ 
+ The Company declared a semi-annual dividend of $ 0.23  per share on both the Class A Common Stock and the Class B Common Stock in the three months ended September 30, 2019, which was paid in  October 2019  to stockholders of record on  September 4, 2019 . 
+ NOTE 13. SUBSEQUENT EVENTS 
+ Stock Repurchase Program and Stockholders Agreement 
+ On November 6, 2019, the Company announced a stock repurchase program providing for the repurchase of $ 2  billion of Class A Common Stock and Class B Common Stock. The program has no time limit and may be modified, suspended or discontinued at any time. The Company also announced on November 6, 2019 that it had entered into an accelerated share repurchase transaction to repurchase $ 350  million of Class A Common Stock and that it also intends to promptly repurchase $ 150  million of Class B Common Stock.  At the same time, the Company announced that it had entered into a stockholders agreement by and between the Company and the Murdoch Family Trust pursuant to which the Company and the Murdoch Family Trust have agreed not to take actions that would result in the Murdoch Family Trust and Murdoch family members together owning more than  44 % of the outstanding voting power of the shares of Class B Common Stock or would increase the Murdoch Family Trust’s voting power by more than  1.75 % in any rolling twelve-month period. The Murdoch Family Trust would forfeit votes to the extent necessary to ensure that the Murdoch Family Trust and the Murdoch family collectively do not exceed  44 % of the outstanding voting power of the Class B shares, except where a Murdoch family member votes their own shares differently from the Murdoch Family Trust on any matter. 
+ Acquisitions and Disposals 
+ The transactions described below support the Company’s strategy to strengthen its core brands and leverage its sports broadcasting rights and expand their reach beyond their traditional linear businesses. 
+ Television Stations Acquisition and Divestiture 
+ In November 2019, the Company announced the entry into an agreement with Nexstar Media Group (“Nexstar”) to acquire  three  television stations (FOX-affiliate KCPQ and MyNetworkTV-affiliate KZJO located in Seattle, Washington and FOX-affiliate WITI located in Milwaukee, Wisconsin) for approximately $ 350  million. As part of this transaction, the Company has agreed to sell Nexstar  two  television stations located in Charlotte, North Carolina, FOX-affiliate WJZY and MyNetworkTV-affiliate WMYT, for approximately $ 45  million. Completion of the transaction is expected to occur during the first half of calendar year 2020, subject to regulatory approvals and the satisfaction or waiver of customary closing conditions. 
+ Credible Acquisition 
+ In October 2019, the Company acquired  67 % of the equity in Credible Labs Inc. (“Credible”), a U.S. consumer finance marketplace, for approximately A$ 390  million (approximately $ 260  million) in cash (the “Credible Acquisition”). In addition, the Company has agreed to commit up to $ 75  million of capital to Credible over approximately  two years  following the closing of the Credible Acquisition.  
+   
+   
+ 20 
+ 
+   
+ 
+ 
+ 
+ 
+ ITEM 2. 
+ 
+ MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS  
+ Readers should carefully review this document and the other documents filed by Fox Corporation with the Securities and Exchange Commission (the “SEC”). This section should be read together with the unaudited interim consolidated and combined financial statements and related notes appearing elsewhere in this Quarterly Report on Form 10-Q and the  Annual Report on Form 10-K for the fiscal year ended June 30, 2019  as filed with the SEC on August 9, 2019 (the “2019 Form 10-K”). 
+ INTRODUCTION  
+ The Distribution 
+ On March  19, 2019, Fox Corporation  (“FOX” or the “Company”)  became a standalone publicly traded company through the pro rata distribution by Twenty-First Century Fox, Inc. (now known as TFCF Corporation) (“21CF”) of all of the issued and outstanding common stock of FOX to 21CF stockholders (other than holders that were subsidiaries of 21CF) (the “Distribution”) in accordance with the Amended and Restated Distribution Agreement and Plan of Merger, dated as of June 20, 2018, by and between 21CF and 21CF Distribution Merger Sub, Inc. Following the Distribution, 354 million and 266 million shares of the Company’s Class A Common Stock, par value $0.01 per share (the “Class A Common Stock”), and Class B Common Stock, par value $0.01 per share (the “Class B Common Stock” and, together with the Class A Common Stock, the “Common Stock”), respectively, began trading independently on The Nasdaq Global Select Market. In connection with the Distribution, the Company entered into the Separation and Distribution Agreement, dated as of March 19, 2019 (the “Separation Agreement”), with 21CF, which effected the internal restructuring (the “Separation”) whereby 21CF transferred to FOX a portfolio of 21CF’s news, sports and broadcast businesses, including FOX News Media (consisting of FOX News and FOX Business),  FOX  Entertainment , FOX Sports, FOX Television Stations, and sports cable networks FS1, FS2, FOX Deportes and Big Ten Network, and certain other assets, and FOX assumed from 21CF the liabilities associated with such businesses and certain other liabilities. The Separation and the Distribution were effected as part of a series of transactions contemplated by the Amended and Restated Merger Agreement and Plan of Merger, dated as of June 20, 2018, by and among 21CF, The Walt Disney Company (“Disney”) and certain subsidiaries of Disney, pursuant to which, among other things, 21CF became a wholly-owned subsidiary of Disney. 
+ In connection with the Separation, the Company entered into several agreements that govern certain aspects of the Company’s relationship with 21CF and Disney following the Separation. These include the Separation Agreement, a tax matters agreement, a transition services agreement, as well as agreements relating to intellectual property licenses, employee matters, commercial arrangements and a studio lot lease (See Note 1—Description of Business and Basis of Presentation in the 2019 Form 10-K for additional information). 
+ Management’s discussion and analysis of financial condition and results of operations is intended to help provide an understanding of the Company’s financial condition, changes in financial condition and results of operations. This discussion is organized as follows:  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Overview of the Company’s Business — This section provides a general description of the Company’s businesses, as well as developments that occurred during the three months ended September 30, 2019 and 2018 that the Company believes are important in understanding its results of operations and financial condition or to disclose known trends.  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Results of Operations — This section provides an analysis of the Company’s results of operations for the three months ended September 30, 2019 and 2018. This analysis is presented on both a consolidated/combined and a segment basis. In addition, a brief description is provided of significant transactions and events that impact the comparability of the results being analyzed.  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Liquidity and Capital Resources — This section provides an analysis of the Company’s cash flows for the three months ended September 30, 2019 and 2018, as well as a discussion of the Company’s outstanding debt and commitments that existed as of September 30, 2019. Included in the discussion of outstanding debt is a discussion of the amount of financial capacity available to fund the Company’s future commitments and obligations, as well as a discussion of other financing arrangements. 
+ 21 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Caution Concerning Forward-Looking Statements — This section provides a description of the use of forward-looking information appearing in this  Quarterly  Report on Form 10- Q , including in Management’s Discussion and Analysis of Financial Condition and Results of Operations. Such information is based on management’s current expectations about future events which are subject to change and to inherent risks and uncertainties. Refer to  Part I., Item 1A, “Risk Factors” in the 2019 Form 10-K and  Part II.,  Item 1A. “Risk Factors” in this  Quarterly  Report for a discussion of the risk factors applicable to the Company. 
+ OVERVIEW OF THE COMPANY’S BUSINESS  
+ The Company is a news, sports and entertainment company, which manages and reports its businesses in the following segments: 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Cable Network Programming , which principally consists of the production and licensing of news and sports content distributed primarily through traditional cable television systems, direct broadcast satellite operators and telecommunication companies (“traditional MVPDs”), and online multi-channel video programming distributors (“digital MVPDs”), primarily in the U.S. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Television , which principally consists of the acquisition, marketing and distribution of broadcast network programming nationally under the FOX brand and the operation of 28 full power broadcast television stations, including 11 duopolies, in the U.S. Of these stations, 17 are affiliated with the FOX Network, 10 are affiliated with MyNetworkTV and one is an independent station. 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ Other, Corporate and Eliminations , which principally consists of corporate overhead costs, intracompany eliminations and the FOX Studios lot. The FOX Studios lot, located in Los Angeles, California, provides television and film production services along with office space, studio operation services and includes all operations of the facility. 
+ Other Business Developments 
+ On November 6, 2019, the Company announced a stock repurchase program providing for the repurchase of $2 billion of Class A Common Stock and Class B Common Stock. The program has no time limit and may be modified, suspended or discontinued at any time. The Company also announced on November 6, 2019 that it had entered into an accelerated share repurchase transaction to repurchase $350 million of Class A Common Stock and that it also intends to promptly repurchase $150 million of Class B Common Stock. At the same time, the Company announced that it had entered into a stockholders agreement by and between the Company and the Murdoch Family Trust pursuant to which the Company and the Murdoch Family Trust have agreed not to take actions that would result in the Murdoch Family Trust and Murdoch family members together owning more than 44% of the outstanding voting power of the shares of Class B Common Stock or would increase the Murdoch Family Trust’s voting power by more than 1.75% in any rolling twelve-month period. The Murdoch Family Trust would forfeit votes to the extent necessary to ensure that the Murdoch Family Trust and the Murdoch family collectively do not exceed 44% of the outstanding voting power of the Class B shares, except where a Murdoch family member votes  their own shares  differently from the Murdoch Family Trust on any matter. 
+ In November 2019, the Company announced the entry into an agreement with Nexstar Media Group (“Nexstar”) to acquire three television stations (FOX-affiliate KCPQ and MyNetworkTV-affiliate KZJO located in Seattle, Washington and FOX-affiliate WITI located in Milwaukee, Wisconsin) for approximately $350 million. As part of this transaction, the Company has agreed to sell Nexstar two television stations located in Charlotte, North Carolina, FOX-affiliate WJZY and MyNetworkTV-affiliate WMYT, for approximately $45 million. Completion of the transaction is expected to occur during the first half of calendar year 2020, subject to regulatory approvals and the satisfaction or waiver of customary closing conditions. 
+ In October 2019, the Company acquired 67% of the equity in Credible Labs Inc. (“Credible”), a U.S. consumer finance marketplace, for approximately A$390 million (approximately $260 million) in cash (the “Credible Acquisition”). In addition, the Company has agreed to commit up to $75 million of capital to Credible over approximately two years following the closing of the Credible Acquisition. 
+ 22 
+ 
+   
+ RESULTS OF OPERATIONS  
+ Results of Operations—For the three months ended September 30, 2019 versus the three months ended September 30, 2018  
+ The following table sets forth the Company’s operating results for the three months ended September 30, 2019, as compared to the three months ended September 30, 2018:  
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Affiliate fee 
+ 
+   
+ 
+ $ 
+ 
+ 1,394 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,337 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 57 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 4 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Advertising 
+ 
+   
+ 
+   
+ 
+ 1,041 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,063 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (22 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (2 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ 232 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 141 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 91 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 65 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+   
+ 
+ 2,667 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2,541 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 126 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Operating expenses 
+ 
+   
+ 
+   
+ 
+ (1,468 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (1,491 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 23 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (2 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Selling, general and administrative 
+ 
+   
+ 
+   
+ 
+ (352 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (299 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (53 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 18 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+   
+ 
+ (50 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (43 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (7 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 16 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Impairment and restructuring charges 
+ 
+   
+ 
+   
+ 
+ (9 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (9 
+ 
+ ) 
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Interest expense 
+ 
+   
+ 
+   
+ 
+ (90 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (16 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ (74 
+ 
+ ) 
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Interest income 
+ 
+   
+ 
+   
+ 
+ 17 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 17 
+ 
+   
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Other, net 
+ 
+   
+ 
+   
+ 
+ (15 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 139 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (154 
+ 
+ ) 
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Income before income tax expense 
+ 
+   
+ 
+   
+ 
+ 700 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 831 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (131 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (16 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Income tax expense 
+ 
+   
+ 
+   
+ 
+ (187 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (216 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 29 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (13 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+   
+ 
+ 513 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 615 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (102 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (17 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Less: Net income attributable to noncontrolling interests 
+ 
+   
+ 
+   
+ 
+ (14 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (11 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (3 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 27 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Net income attributable to Fox Corporation stockholders 
+ 
+   
+ 
+ $ 
+ 
+ 499 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 604 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ (105 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (17 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ ** 
+ 
+ not meaningful 
+ Overview — The Company’s revenues increased 5% for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019. The increase in affiliate fee revenue was primarily  due to higher average rates per subscriber and higher fees received from television stations that are affiliated with the FOX Network, partially offset by the impact of a lower average number of subscribers .  The decrease in advertising revenue was primarily due to lower political advertising revenue at FOX Television Stations due to the U.S. midterm elections in November 2018, fewer broadcasts of Fédération Internationale de Football Association (“FIFA”)  World Cup  events and lower ratings for entertainment programming on the FOX Network, partially offset by higher pricing for entertainment programming and the broadcast of the  71st Annual Primetime Emmy Awards   on the FOX Network and increased digital advertising revenue.  The increase in other revenues was primarily due to higher digital content licensing revenue at the FOX Network and revenues generated from the operation of the FOX Studios lot for third parties and from  Premier Boxing Champions (“PBC”) pay-per-view events. 
+ Operating expenses decreased 2% for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019,  primarily due to lower sports programming rights amortization and production costs at the Cable Network Programming and Television segments. The decrease in sports programming rights amortization and production costs was the result of fewer broadcasts of FIFA  World Cup  events and the absence of  Ultimate Fighting Championship (“UFC”) content, partially offset by contractual rate increases for  the National Football League (“NFL”), Major League Baseball (“MLB”), college football and PBC content.  Partially offsetting these decreases in operating expenses were higher broadcast costs related to operating as a standalone public company. 
+ 23 
+ 
+   
+ Selling, general and administrative expenses increased  18 %  for the three months ended  September 30 , 201 9 ,  as compared to corresponding period of fiscal 201 9 , primarily due to  higher costs  in fiscal 2020  related to operating as a standalone public company  as compared to  allocated costs in fiscal 2019  ( See Note 1 — Description of Business and Basis of Presentation  to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX under the heading “ Basis of Presentation ”   for additional information) .   In addition,  the three months ended September 30, 2019  includes  equity-based compensation costs of approximately $15 million related to the  grant of restricted stock units and stock options , in c onnection with the Distribution,  under the Fox Corporation 2019 Shareholder Alignment Plan (See Note 11 — Equity-Based Compensation in the 2019 Form 10-K for additional information). 
+ Interest expense — Interest expense increased $74 million for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, primarily due to  the issuance of $6.8 billion of senior notes in January 2019 ( See Note 9—Borrowings in the 2019 Form 10-K under the heading “Senior Notes Issued Under the January 2019 Indenture”  for additional information) . 
+ Interest income — Interest income increased $17 million for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, primarily due to  a higher average cash balance. 
+ Other, net — See Note 12 — Additional Financial Information to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX under the heading “Other, net.” 
+ Income tax expense — The Company’s tax provision and related effective tax rate of 27% and 26% for the three months ended September 30, 2019 and 2018, respectively, was higher than the statutory rate of 21% primarily due to state taxes and other permanent items. 
+ Net income — Net income decreased 17% for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, primarily due to a decrease in unrealized gains on investments (See Note 12—Additional Financial Information to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX under the heading “Other, net”) and higher interest expense due to the issuance of $6.8 billion of senior notes in January 2019 (See Note 9—Borrowings in the 2019 Form 10-K under the heading “Senior Notes Issued Under the January 2019 Indenture”  for additional information) , partially offset by improved Segment EBITDA (as defined below). 
+ Segment Analysis  
+ The Company’s operating segments have been determined in accordance with the Company’s internal management structure, which is organized based on operating activities. The Company evaluates performance based upon several factors, of which the primary financial measure is segment operating income before depreciation and amortization, or Segment EBITDA. Due to the integrated nature of these operating segments, estimates and judgments are made in allocating certain assets, revenues and expenses. 
+ Beginning with the announcement of the Company’s financial results for the third quarter of fiscal 2019, the Company has renamed as “Segment EBITDA” the measure that it previously referred to as “Segment OIBDA”. The definition of this measure has not changed: Segment EBITDA is defined as Revenues less Operating expenses and Selling, general and administrative expenses. Segment EBITDA does not include: Amortization of cable distribution investments, Depreciation and amortization, Impairment and restructuring charges, Interest expense, Interest income, Other, net and Income tax expense. Management believes that Segment EBITDA is an appropriate measure for evaluating the operating performance of the Company’s business segments because it is the primary measure used by the Company’s chief operating decision maker to evaluate the performance of and allocate resources to the Company’s businesses.  
+ 24 
+ 
+   
+ The following tables set fo r th the Company’s Revenues and Segment  EBITDA   for  the three months ended  September 30 , 201 9 , as compared to the three months ended  September 30 , 201 8 : 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+ $ 
+ 
+ 1,285 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 1,265 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 20 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+ 1,356 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,277 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 79 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ 26 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 27 
+ 
+   
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+ $ 
+ 
+ 2,667 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,541 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 126 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ ** 
+ 
+ not meaningful 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Segment EBITDA 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Cable Network Programming 
+ 
+   
+ 
+ $ 
+ 
+ 684 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 633 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 51 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Television 
+ 
+   
+ 
+   
+ 
+ 251 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 171 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 80 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 47 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Other, Corporate and Eliminations 
+ 
+   
+ 
+   
+ 
+ (79 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (43 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (36 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 84 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Adjusted EBITDA (a) 
+ 
+   
+ 
+ $ 
+ 
+ 856 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 761 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 95 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ For a discussion of Adjusted EBITDA and a reconciliation of Net income to Adjusted EBITDA, see “Non-GAAP Financial Measures” below. 
+ Cable Network Programming  ( 48%  and 50%  of the Company’s   revenues  for   the  first  three  months of   fiscal 2020 and 2019, respectively) 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Affiliate fee 
+ 
+   
+ 
+ $ 
+ 
+ 939 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 939 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Advertising 
+ 
+   
+ 
+   
+ 
+ 254 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 264 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (10 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (4 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ 92 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 62 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 30 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 48 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+   
+ 
+ 1,285 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,265 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 20 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Operating expenses 
+ 
+   
+ 
+   
+ 
+ (520 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (541 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 21 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (4 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Selling, general and administrative 
+ 
+   
+ 
+   
+ 
+ (90 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (101 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 11 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (11 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Amortization of cable distribution investments 
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (10 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Segment EBITDA 
+ 
+   
+ 
+ $ 
+ 
+ 684 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 633 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 51 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 8 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+   
+ Revenues at the Cable Network Programming segment increased 2% for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019. Affiliate fee revenue remained consistent with the corresponding period of fiscal 2019, as higher average rates per subscriber, led by contractual rate increases on existing affiliate agreements and from affiliate agreement renewals, were offset by the impact of a lower average number of subscribers. The decrease in the average number of subscribers was due to a reduction in subscribers to traditional MVPDs, partially offset by an increase in digital MVPD subscribers. The decrease in advertising revenue was due to lower linear advertising revenue, including the effect of fewer broadcasts of FIFA  World Cup  events and the absence of UFC content, partially offset by higher digital advertising revenue. The increase in other revenues was primarily attributable to the revenues generated from PBC pay-per-view events and higher sports sublicensing revenue. 
+ 25 
+ 
+   
+ Cable Network Programming Segment EBITDA increased  8%  for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, primarily due to the revenue increases noted above and lower expenses. Operating expenses decreased for  the three months ended September 30, 2019, primarily due to lower sports programming rights amortization and production costs, including  fewer broadcasts of  FIFA  World Cup  events and  the absence of  UFC  content,  partially offset by  contractual rate increases  for  MLB  and PBC content .   Partially offsetting these decreases in operating expenses were  higher costs  incurred in connection with FOX Nation which was launched in the second quarter of fiscal 2019. 
+ Television  (51 % and 50%   of the Company’s   revenues  for   the  first  three  months of   fiscal 2020 and   2019, respectively) 
+   
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Advertising 
+ 
+   
+ 
+ $ 
+ 
+ 787 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 799 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ (12 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (2 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Affiliate fee 
+ 
+   
+ 
+   
+ 
+ 455 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 398 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 57 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 14 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Other 
+ 
+   
+ 
+   
+ 
+ 114 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 80 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 34 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 43 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Total revenues 
+ 
+   
+ 
+   
+ 
+ 1,356 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 1,277 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 79 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 6 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Operating expenses 
+ 
+   
+ 
+   
+ 
+ (943 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (951 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 8 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (1 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Selling, general and administrative 
+ 
+   
+ 
+   
+ 
+ (162 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ (155 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (7 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 5 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Segment EBITDA 
+ 
+   
+ 
+ $ 
+ 
+ 251 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 171 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 80 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 47 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ Revenues at the Television segment increased 6% for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019. The decrease in advertising revenue was primarily due to lower political advertising revenue at the FOX Television Stations due to the U.S. midterm elections in November 2018, fewer broadcasts of FIFA  World Cup  events and lower ratings for entertainment programming on the FOX Network. Partially offsetting these decreases in advertising revenue were higher pricing for entertainment programming and the broadcast of the  71st Annual Primetime Emmy Awards  on the FOX Network, higher ratings for college football and increased digital advertising revenue. The increase in affiliate fee revenue was primarily due to higher fees received from television stations that are affiliated with the FOX Network and higher average rates per subscriber for the Company’s owned and operated television stations. The increase in other revenues was primarily due to higher digital content licensing revenue at the FOX Network. 
+ Television Segment EBITDA increased 47% for the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, primarily due to the revenue increases noted above. Expenses remained consistent with the corresponding period of fiscal 2019, as the decrease in operating expenses was offset by an increase in selling, general and administrative expenses. Operating expenses decreased primarily due to lower sports programming rights amortization and production costs principally as a result of fewer broadcasts of FIFA  World Cup  events, partially offset by contractual rate increases for NFL and college football content. Partially offsetting these decreases in expenses were higher costs related to operating as a standalone public company. 
+ Non-GAAP Financial Measures 
+ Beginning with the announcement of the Company’s financial results for the first quarter of fiscal 2020, the Company has renamed as “Adjusted EBITDA” the measure that it had previously referred to as “Total Segment EBITDA” and, prior to the announcement of the Company’s financial results for the third quarter of fiscal 2019, as “Total Segment OIBDA.” The definition of this measure has not changed: Adjusted EBITDA is defined as Revenues less Operating expenses and Selling, general and administrative expenses. Adjusted EBITDA does not include: Amortization of cable distribution investments, Depreciation and amortization, Impairment and restructuring charges, Interest expense, Interest income, Other, net and Income tax expense. 
+ 26 
+ 
+   
+ Management believes that information about Adjusted EBITDA assists all users of the Company’s  Unaudited Consolidated and Combined  Financial Statements by allowing them to evaluate changes in the operating results of the Company’s portfolio of businesses separate from non-operational factors that affect  Net  income, thus providing insight into both operations and the other factors that affect reported results. Adjusted EBITDA provides management, investors and equity analysts a measure to analyze the operating performance of the Company’s business and its enterprise value against historical data and competitors’ data, although historical results, including Adjusted EBITDA, may not be indicative of future results (as operating performance is highly contingent on many factors, including customer tastes and preferences). 
+ Adjusted EBITDA is considered a non-GAAP financial measure and should be considered in addition to, not as a substitute for, net income, cash flow and other measures of financial performance reported in accordance with U.S. generally accepted accounting principles (“GAAP”). In addition, this measure does not reflect cash available to fund requirements and excludes items, such as depreciation and amortization and impairment charges, which are significant components in assessing the Company’s financial performance. Adjusted EBITDA may not be comparable to similarly titled measures reported by other companies. 
+ The following table reconciles Net income to Adjusted EBITDA for the three months ended September 30, 2019, as compared to the three months ended September 30, 2018: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Net income 
+ 
+   
+ 
+ $ 
+ 
+ 513 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 615 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ (102 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (17 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Add 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Amortization of cable distribution investments 
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (10 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Depreciation and amortization 
+ 
+   
+ 
+   
+ 
+ 50 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 43 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 7 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Impairment and restructuring charges 
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Interest expense 
+ 
+   
+ 
+   
+ 
+ 90 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 16 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 74 
+ 
+   
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Interest income 
+ 
+   
+ 
+   
+ 
+ (17 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ - 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (17 
+ 
+ ) 
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Other, net 
+ 
+   
+ 
+   
+ 
+ 15 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (139 
+ 
+ )  
+ 
+   
+ 
+   
+ 
+ 154 
+ 
+   
+ 
+   
+ 
+ ** 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Income tax expense 
+ 
+   
+ 
+   
+ 
+ 187 
+ 
+   
+ 
+   
+ 
+   
+ 
+  216 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (29 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (13 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Adjusted EBITDA 
+ 
+   
+ 
+ $ 
+ 
+ 856 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 761 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 95 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ ** 
+ 
+ not meaningful 
+ The following table sets forth the computation of Adjusted EBITDA for the three months ended September 30, 2019, as compared to the three months ended September 30, 2018: 
+ 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ For the three months ended September 30, 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+   
+ 
+ Change 
+ 
+   
+ 
+   
+ 
+ % Change 
+ 
+ 
+ 
+   
+ 
+   
+ 
+ (in millions, except %) 
+ 
+ 
+ 
+ Revenues 
+ 
+   
+ 
+ $ 
+ 
+ 2,667 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 2,541 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 126 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 5 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Operating expenses 
+ 
+   
+ 
+   
+ 
+ (1,468 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (1,491 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 23 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (2 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Selling, general and administrative 
+ 
+   
+ 
+   
+ 
+ (352 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (299 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (53 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ 18 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+ Amortization of cable distribution investments 
+ 
+   
+ 
+   
+ 
+ 9 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 10 
+ 
+   
+ 
+   
+ 
+   
+ 
+ (1 
+ 
+ ) 
+ 
+   
+ 
+   
+ 
+ (10 
+ 
+ ) 
+ 
+ % 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ Adjusted EBITDA 
+ 
+   
+ 
+ $ 
+ 
+ 856 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 761 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 95 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 12 
+ 
+   
+ 
+ % 
+ 
+   
+ 
+ 
+   
+ LIQUIDITY AND CAPITAL RESOURCES  
+ Current Financial Condition  
+ The Company’s principal source of liquidity is internally generated funds which are highly dependent upon the continuation of affiliate agreements and the state of the advertising markets. The Company has an unused five-year $1.0 billion unsecured revolving credit facility (See Note 5—Borrowings to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX) and has access to the worldwide capital markets, subject to market conditions.  As of September 30, 2019, the Company was in compliance with all of the covenants under the revolving credit facility, and it does not anticipate any noncompliance with such covenants. 
+ 27 
+ 
+   
+ The principal uses of cash that affect the Company’s liquidity position include the following:  the  acquisition of rights and related payments for entertainment and sports programming; operational expenditures including marketing and promotional expenses; expenses related  to  broadcasting the Company’s programming   along with  investing approximately $150 million to $200 million in establishing standalone technical facilities  over the   two years f ollowing  the Distribution ; employee and facility costs; capital expenditures; acquisitions; interest and dividend payments ; debt repayments ; and stock repurchases . 
+ In addition to the acquisitions, sales and possible acquisitions disclosed elsewhere, the Company has evaluated, and expects to continue to evaluate, possible acquisitions and dispositions of certain businesses and assets. Such transactions may be material and may involve cash, the Company’s securities or the assumption of additional indebtedness (See Note 13—Subsequent Events to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX). 
+ Sources and Uses of Cash  
+ Net cash provided by operating activities for the three months ended September 30, 2019 and 2018 was as follows (in millions):  
+ 
+ 
+ 
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ Net cash provided by operating activities 
+ 
+   
+ 
+ $ 
+ 
+ 202 
+ 
+   
+ 
+   
+ 
+ $ 
+ 
+ 247 
+ 
+   
+ 
+ 
+ The decrease in net cash provided by operating activities during the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, was primarily due to higher cash paid for interest as a result of the senior notes issued in January 2019 and increased seasonal cash payments for sports programming rights at the Television segment, partially offset by higher Segment EBITDA. 
+ Net cash used in investing activities for the three months ended September 30, 2019 and 2018 was as follows (in millions):  
+ 
+ 
+ 
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ Net cash used in investing activities 
+ 
+   
+ 
+ $ 
+ 
+ (40 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ (207 
+ 
+ ) 
+ 
+ 
+ The decrease in net cash used in investing activities during the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, was primarily due to the investments in Caffeine, Inc. and Caffeine Studio, LLC in the first quarter of fiscal 2019 (See Note 2—Acquisitions, Disposals and Other Transactions to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX under the heading “Caffeine and Caffeine Studios”). 
+ Net cash (used in) provided by financing activities for the three months ended September 30, 2019 and 2018 was as follows (in millions):  
+ 
+ 
+ 
+ 
+ For the three months ended September 30, 
+ 
+   
+ 
+ 2019 
+ 
+   
+ 
+   
+ 
+ 2018 
+ 
+   
+ 
+ 
+ 
+ Net cash (used in) provided by financing activities 
+ 
+   
+ 
+ $ 
+ 
+ (56 
+ 
+ ) 
+ 
+   
+ 
+ $ 
+ 
+ 216 
+ 
+   
+ 
+ 
+ The change in net cash (used in) provided by financing activities during the three months ended September 30, 2019, as compared to the corresponding period of fiscal 2019, was primarily due  to the net transfers from Twenty-First Century Fox, Inc. of $229  million in the three months ended September 30, 2018.  The nature of activities included in net transfers from Twenty-First Century Fox, Inc. includes financing activities, capital transfers, cash sweeps, other treasury services and corporate expenses. 
+ Dividends   
+ The Company declared a semi-annual dividend of $0.23 per share on both the Class A Common Stock and the Class B Common Stock in the three months ended September 30, 2019, which was paid in October 2019 to stockholders of record on September 4, 2019. 
+ Debt Instruments 
+ Borrowings include senior notes (See Note 9—Borrowings in the 2019 Form 10-K under the heading “Senior Notes Issued Under the January 2019 Indenture”). 
+ 28 
+ 
+   
+ Ratings of the  senior notes 
+ The following table summarizes the Company’s credit ratings as of September 30, 2019: 
+ 
+ 
+ 
+ 
+ Rating Agency 
+ 
+   
+ 
+ Senior Debt 
+ 
+   
+ 
+ Outlook 
+ 
+ 
+ 
+ Moody's 
+ 
+   
+ 
+ Baa2 
+ 
+   
+ 
+ Stable 
+ 
+ 
+ 
+ Standard & Poor's 
+ 
+   
+ 
+ BBB 
+ 
+   
+ 
+ Stable 
+ 
+ 
+ Revolving Credit Agreement 
+ The Company has an unused five-year $1.0 billion unsecured revolving credit facility (See Note 5—Borrowings to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX). 
+ Commitments and Contingencies  
+ See Note 9—Commitments and Contingencies to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX. 
+ Recent Accounting Pronouncements  
+ See Note 1—Description of Business and Basis of Presentation to the accompanying Unaudited Consolidated and Combined Financial Statements of FOX under the heading “Recently Adopted and Recently Issued Accounting Guidance.”  
+ Caution Concerning Forward-Looking Statements 
+ This document contains “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933, as amended, and Section 21E of the Securities Exchange Act of 1934, as amended. All statements other than statements of historical or current fact are “forward-looking statements” for purposes of federal and state securities laws, including any statements regarding (i) future earnings, revenues or other measures of the Company’s financial performance; (ii) the Company’s plans, strategies and objectives for future operations; (iii) proposed new programming or other offerings; (iv) future economic conditions or performance; (v) estimated annual recurring costs relating to FOX operating as a standalone, publicly traded company; and (vi) assumptions underlying any of the foregoing. Forward-looking statements may include, among others, the words “may,” “will,” “should,” “likely,” “anticipates,” “expects,” “intends,” “plans,” “projects,” “believes,” “estimates,” “outlook” or any other similar words. 
+ Although the Company’s management believes that the expectations reflected in any of the Company’s forward-looking statements are reasonable, actual results could differ materially from those projected or assumed in any forward-looking statements. The Company’s future financial condition and results of operations, as well as any forward-looking statements, are subject to change and to inherent risks and uncertainties, such as those disclosed or incorporated by reference in our filings with the SEC. Important factors that could cause the Company’s actual results, performance and achievements to differ materially from those estimates or projections contained in the Company’s forward-looking statements include, but are not limited to, government regulation, economic, strategic, political and social conditions and the following factors: 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ recent and future changes in technology, including alternative methods for the delivery and storage of digital content, and in consumer behavior, including changes in when, where and how they consume content; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ changes in the Company’s strategies and initiatives and the acceptance thereof by consumers, distributors of the Company’s content, affiliates, advertisers and other parties with which the Company does business; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the highly competitive nature of the industry in which the Company’s businesses operate; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ declines in advertising expenditures due to various factors such as the economic prospects of advertisers or the economy in general, technological developments and changes in consumer behavior, and shifts in advertisers’ spending toward digital and mobile offerings and away from more traditional media; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the loss of affiliation or carriage agreements or arrangements where the Company makes its content available for viewing through online video platforms; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the popularity of the Company’s content, including special sports events, and the continued popularity of the sports franchises, leagues and teams for which the Company has acquired programming rights; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the Company’s ability to renew programming rights, particularly sports programming rights, on sufficiently favorable terms; 
+ 29 
+ 
+   
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ damage to the Company’s brands or reputation; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the inability to realize the anticipated benefits of the Company’s strategic investments and acquisitions; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ a degradation, failure or misuse of the Company’s network and information systems and other technology relied on by the Company that causes a disruption of services or improper disclosure of personal data or other confidential information;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ content piracy and signal theft and the Company’s ability to protect its intellectual property rights;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the loss of key personnel; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the effect of labor disputes, including labor disputes involving professional sports leagues whose games or events the Company has the right to broadcast; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ changes in tax, federal communications or other laws, regulations, practices or the interpretations thereof; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the impact of any investigations or fines from governmental authorities, including  Federal Communications Commission (“FCC”)  rules and policies and FCC decisions regarding revocation, renewal or grant of station licenses; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the failure or destruction of satellites or transmitter facilities the Company depends on to distribute its programming;  
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ lower than expected valuations associated with one of the Company’s reporting units, indefinite-lived intangible assets, investments or long-lived assets; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ changes in GAAP or other applicable accounting standards and policies; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the Company’s very limited operating history as a standalone, publicly traded company and the risk that the Company is unable to make, on a timely or cost-effective basis, the changes necessary to operate effectively as a standalone, publicly traded company; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ increased costs in connection with the Company operating as a standalone, publicly traded company following the Distribution and the loss of synergies the Company enjoyed from operating as part of 21CF; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the Company’s reliance on 21CF to provide the Company various services during a transition period under the transition services agreement including broadcast operations, sports production, information and technology, and other services, and the risks that 21CF does not properly provide the services under this agreement or that the Company is unable to provide or obtain such services following the transition period (or during the transition period, if 21CF does not properly provide them in a timely and cost effective manner); 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the Company’s ability to secure additional capital on acceptable terms; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the impact of any payments the Company is required to make or liabilities it is required to assume under the Separation Agreement and the indemnification arrangements entered into in connection with the Separation and the Distribution; and 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the other risks and uncertainties detailed in Part II., Item 1A. “Risk Factors” in this Quarterly Report on Form 10-Q and in Part I., Item 1A. “Risk Factors” in the 2019 Form 10-K. 
+ Forward-looking statements in this Quarterly Report on Form 10-Q speak only as of the date hereof, and forward-looking statements in documents that are incorporated by reference hereto speak only as of the date of those documents. The Company does not undertake any obligation to update or release any revisions to any forward-looking statement made herein or to report any events or circumstances after the date hereof or to reflect the occurrence of unanticipated events or to conform such statements to actual results or changes in our expectations, except as required by law. 
+ 30 
+ 
+   
+ 
+ 
+ 
+ 
+ ITEM 3. 
+ 
+ QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK  
+ There have been no material changes in the reported market risks since the 2019 Form 10-K. 
+ 
+ 
+ 
+ 
+ ITEM 4. 
+ 
+ CONTROLS AND PROCEDURES 
+ 
+ 
+ 
+ 
+   
+ 
+ (a) 
+ 
+ Disclosure Controls and Procedures 
+ The Company’s management, with the participation of the Company’s Chief Executive Officer and Chief Financial Officer, has evaluated the effectiveness of the Company’s disclosure controls and procedures (as such term is defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended (the “Exchange Act”)) as of the end of the period covered by this quarterly report. Based on such evaluation, the Company’s Chief Executive Officer and Chief Financial Officer have concluded that, as of the end of such period, the Company’s disclosure controls and procedures were effective in recording, processing, summarizing and reporting on a timely basis, information required to be disclosed by the Company in the reports that it files or submits under the Exchange Act and were effective in ensuring that information required to be disclosed by the Company in the reports that it files or submits under the Exchange Act is accumulated and communicated to the Company’s management, including the Company’s Chief Executive Officer and Chief Financial Officer, as appropriate to allow timely decisions regarding required disclosure. 
+ 
+ 
+ 
+ 
+   
+ 
+ (b) 
+ 
+ Changes in Internal Control over Financial Reporting 
+ There were no changes in the Company’s internal control over financial reporting (as such term is defined in Rules 13a-15(f) and 15d-15(f) under the Exchange Act) during the Company’s first quarter of fiscal 2020 that have materially affected, or are reasonably likely to materially affect, the Company’s internal control over financial reporting. 
+   
+ 31 
+ 
+   
+ PART II 
+ 
+ 
+ 
+ 
+ ITEM 1. 
+ 
+ LEGAL PROCEEDINGS  
+ The following information supplements and amends the disclosure set forth in the section titled “Legal Proceedings” in the Company’s Annual Report on Form 10-K (File No. 001-38776), as filed with the Securities and Exchange Commission on August 9, 2019 (the “Form 10-K”). 
+ Profits Participants Litigation  
+ Reference is made to the lawsuits (the “Lawsuits”) filed in the Superior Court of the State of California, County of Los Angeles in November 2015 by Wark Entertainment, Inc. and Temperance Brennan, L.P., Snooker Doodle Productions, Inc., and Bertha Blue, Inc. described on page 78 of the Form 10-K. As of September 30, 2019, the parties have amicably resolved the Lawsuits, and the Company has contributed $34 million pursuant to a settlement agreement with the plaintiffs and The Walt Disney Company as successor to 21CF, Fox Entertainment Group, Twentieth Century Fox Film Corporation, and Twentieth Century Fox Television. 
+   
+ 32 
+ 
+   
+ 
+ 
+ 
+ 
+ ITEM  1A. 
+ 
+ RISK FACTORS 
+ There have been no material changes to the risk factors described in the section titled “Risk Factors” in the Form 10‑K, except as set forth below. 
+ The following updates and replaces in its entirety the risk factor titled “Certain provisions of the Company’s amended and restated certificate of incorporation, amended and restated by-laws, Delaware law,   the Company’s stockholder rights agreement and the ownership of the Company’s common stock by the Murdoch Family Trust may discourage takeovers and the concentration of ownership will affect the voting results of matters submitted for stockholder approval” included in the Form 10-K. 
+ Certain provisions of the Company’s amended and restated certificate of incorporation, amended and restated by-laws, Delaware law, the Company’s stockholder rights agreement and the ownership of the Company’s common stock by the Murdoch Family Trust may discourage takeovers and the concentration of ownership will affect the voting results of matters submitted for stockholder approval. 
+ The Company’s amended and restated certificate of incorporation and amended and restated by-laws contain certain anti-takeover provisions that may make more difficult or expensive a tender offer, change in control, or takeover attempt that is opposed by the Company’s Board of Directors or certain stockholders holding a significant percentage of the voting power of the Company’s outstanding voting stock. In particular, the amended and restated certificate of incorporation and amended and restated by-laws provide for, among other things: 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ a dual class common equity capital structure, in which holders of FOX class A common stock can vote only in very specific, limited circumstances; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ a prohibition on stockholders taking any action by written consent without a meeting (unless there are three record holders or fewer); 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ special stockholders’ meeting to be called only by a majority of the Board of Directors, the Chairman or vice or deputy chairman, or upon the written request of holders of not less than 20% of the voting power of our outstanding voting stock; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the requirement that stockholders give the Company advance notice to nominate candidates for election to the Board of Directors or to make stockholder proposals at a stockholders’ meeting; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the requirement of an affirmative vote of at least 65% of the voting power of the Company’s outstanding voting stock to amend or repeal our amended and restated by-laws; 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ restrictions on the transfer of the Company’s shares; and 
+ 
+ 
+ 
+ 
+   
+ 
+ • 
+ 
+ the Board of Directors to issue, without stockholder approval, preferred stock and series common stock with such terms as the Board of Directors may determine. 
+ These provisions could discourage potential acquisition proposals and could delay or prevent a change in control of FOX, even in the case where a majority of the stockholders may consider such proposals, if effective, desirable. 
+ In addition, in connection with the separation from Twenty-First Century Fox, Inc., the Company’s Board of Directors adopted a stockholder rights agreement pursuant to which each outstanding share of the Company’s common stock has attached to it a right entitling its holder to purchase from the Company additional shares of its class A common stock and class B common stock, as applicable, in the event that a person or group acquires beneficial ownership of 15% or more of the then outstanding class B common stock or 15% of the combined class A common stock and class B common stock, without approval of the Company’s Board of Directors, subject to certain exceptions, including for persons beneficially owning 15% or more of the Company’s class B common stock as of the date of adoption of the rights agreement. The stockholder rights agreement could make it more difficult for a third-party to acquire the Company’s voting common stock without the approval of its Board of Directors. The rights expire on November 15, 2019. 
+ 33 
+ 
+   
+ Further, as a result of his ability to appoint certain members of the board of directors of the corporate trustee of the Murdoch Family Trust, which beneficially owns less than one percent of the outstanding FOX class A common stock and 38.4% of FOX class B common stock, K. Rupert Murdoch may be deemed to be a beneficial owner of the shares beneficially owned by the Murdoch Family Trust. K. Rupert Murdoch, however, disclaims any beneficial ownership of these shares. Also, K. Rupert Murdoch beneficially owns or may be deemed to beneficially own an additional less than one percent of FOX class B common stock and approximately one percent of FOX class A common stock. Thus, K. Rupert Murdoch may be deemed to beneficially own in the aggregate approximately one percent of FOX class A common stock and 38.9% of FOX class B common stock.  
+ This concentration of voting power could discourage third parties from making proposals involving an acquisition of FOX. Additionally, the ownership concentration of FOX class B common stock by the Murdoch Family Trust increases the likelihood that proposals submitted for stockholder approval that are supported by the Murdoch Family Trust will be adopted and proposals that the Murdoch Family Trust does not support will not be adopted, whether or not such proposals to stockholders are also supported by the other holders of FOX class B common stock. Furthermore, the adoption of the stockholder rights agreement prevents, unless the Company’s board of directors otherwise determines at the time, other potential stockholders from acquiring a similar ownership position in the Company’s class B common stock and, accordingly, could prevent a meaningful challenge to the Murdoch Family Trust’s influence over matters submitted for stockholder approval. 
+ On November 6, 2019, FOX announced that the Company’s Board of Directors approved a $2 billion stock repurchase program for the FOX class A common stock and FOX class B common stock, which could increase the percentage of FOX class B common stock held by the Murdoch Family Trust. At the same time, FOX also announced that it had entered into a stockholders agreement by and between FOX and the Murdoch Family Trust pursuant to which FOX and the Murdoch Family Trust have agreed not to take actions that would result in the Murdoch Family Trust and Murdoch family members together owning more than 44% of the outstanding voting power of the shares of FOX class B common stock or would increase the Murdoch Family Trust’s voting power by more than 1.75% in any rolling 12-month period. The Murdoch Family Trust would forfeit votes to the extent necessary to ensure that the Murdoch Family Trust and the Murdoch family collectively do not exceed 44% of the outstanding voting power of the Class B shares, except where a Murdoch family member votes their own shares differently from the Murdoch Family Trust on any matter. 
+ 34 
+ 
+   
+ 
+ 
+ 
+ 
+ ITEM 2. 
+ 
+ UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS 
+ Not applicable 
+ 
+ 
+ 
+ 
+ ITEM 3. 
+ 
+ DEFAULTS UPON SENIOR SECURITIES 
+ Not applicable 
+ 
+ 
+ 
+ 
+ ITEM 4. 
+ 
+ MINE SAFETY DISCLOSURES 
+ Not applicable 
+ 
+ 
+ 
+ 
+ ITEM 5. 
+ 
+ OTHER INFORMATION 
+ Not applicable 
+ 35 
+ 
+   
+ 
+ 
+ 
+ 
+ ITEM 6. 
+ 
+ EXHIBITS 
+ 
+ 
+ 
+ 
+ (a) 
+ 
+ Exhibits. 
+ 
+ 
+ 
+ 
+ 31.1 
+ 
+   
+ 
+ Chief Executive Officer Certification required by Rules 13a-14 and 15d-14 under the Securities Exchange Act of 1934, as amended.* 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 31.2 
+ 
+    
+ 
+ Chief Financial Officer Certification required by Rules 13a-14 and 15d-14 under the Securities Exchange Act of 1934, as amended.* 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 32.1 
+ 
+    
+ 
+ Certification of Chief Executive Officer and Chief Financial Officer pursuant to 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of Sarbanes Oxley Act of 2002.** 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 101 
+ 
+    
+ 
+ The following financial information from the Company’s Quarterly Report on Form 10-Q for the quarter ended September 30, 2019 formatted in Inline XBRL (eXtensible Business Reporting Language): (i) Unaudited Consolidated and Combined Statements of Operations for the three months ended September 30, 2019 and 2018; (ii) Unaudited Consolidated and Combined Statements of Comprehensive Income for the three months ended September 30, 2019 and 2018; (iii) Consolidated Balance Sheets as of September 30, 2019 (unaudited) and June 30, 2019 (audited); (iv) Unaudited Consolidated and Combined Statements of Cash Flows for the three months ended September 30, 2019 and 2018;  (v) Unaudited Consolidated and Combined Statements of Equity  for the three months ended September 30, 2019 and 2018; and (vi) Notes to the Unaudited Consolidated and Combined Financial Statements.* 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 104 
+ 
+   
+ 
+ Cover Page Interactive Data File (formatted in Inline XBRL and contained in Exhibit 101). 
+ 
+ 
+ _________________________ 
+ 
+ 
+ 
+ 
+ * 
+ 
+ Filed herewith.  
+ 
+ 
+ 
+ 
+ ** 
+ 
+ Furnished herewith. 
+ 36 
+ 
+   
+ SIGNATURE  
+ Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.  
+   
+ 
+ 
+ 
+ 
+   
+ 
+ Fox Corporation 
+ 
+ 
+ 
+   
+ 
+ (Registrant) 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+   
+ 
+ 
+ 
+   
+ 
+ By: 
+ 
+   
+ 
+ /s/ Steven Tomsic 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Steven Tomsic 
+ 
+ 
+ 
+   
+ 
+   
+ 
+   
+ 
+ Chief Financial Officer 
+ 
+ 
+   
+ Date: November 6, 2019 
+ 37 
+ 

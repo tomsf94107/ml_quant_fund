@@ -145,8 +145,15 @@ def build_intraday_features(ticker: str) -> pd.DataFrame:
     Fetch today's 5-min bars and compute intraday features.
     Returns DataFrame with one row per 5-min bar.
     """
+    # During market hours, fetch through TODAY so current_price is the live
+    # 15-min-delayed tick (Polygon serves intraday-today, no 403). Outside
+    # market hours, leave end unset so mc.download caps at last completed
+    # session (avoids the 403 on not-yet-traded bars). Fix Jul 1 2026.
+    import datetime as _dt
+    from utils.timezone import now_et as _now_et
+    _end_today = _now_et().date() if is_market_open() else None
     data = mc.download(
-        ticker, period="2d", interval="5m",
+        ticker, period="2d", interval="5m", end=_end_today,
         progress=False, auto_adjust=True
     )
     if data.empty:

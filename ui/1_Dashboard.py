@@ -373,6 +373,7 @@ if _use_cache:
             ticker=s["ticker"], horizon=horizon,
             today_signal=_sig, today_prob=s.get("prob",0),
             today_prob_eff=_peff,
+            today_prob_global=s.get("prob_global"),
             current_price=s.get("current_price"),
             price_date=s.get("price_date"),
             price_target_up=s.get("price_target_up"),
@@ -783,6 +784,9 @@ with tab_forecast:
             "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
             "Prob Raw":     f"{r.today_prob:.1%}",
             "Prob Eff":     f"{r.today_prob_eff:.1%}",
+            "Prob Global":  (("\u2705 " + f"{r.today_prob_global:.1%}") if getattr(r, "today_prob_global", None) is not None and r.today_prob_global >= 0.55 else (f"{r.today_prob_global:.1%}" if getattr(r, "today_prob_global", None) is not None else "\u2014")),
+            "\u0394 Global":  (f"{(r.today_prob_eff - r.today_prob_global):+.1%}" if getattr(r, "today_prob_global", None) is not None and r.today_prob_eff is not None else "\u2014"),
+            "Agree":        (("\u2713" if ((r.today_prob_eff >= 0.5) == (r.today_prob_global >= 0.5)) else "\u2717") if getattr(r, "today_prob_global", None) is not None and r.today_prob_eff is not None else "\u2014"),
             "Rec Weight":   rec_weight_str,
             "A8":           a8_str,
             "Blend":        blend_str,
@@ -817,12 +821,12 @@ with tab_forecast:
       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
       *{{box-sizing:border-box;margin:0;padding:0;}}
       .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:clip;}}
-      .ft-head{{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:7% 6% 8% 11% 7% 6% 7% 7% 9% 9% 8% 7% 8%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+      .ft-head{{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:6% 5% 7% 10% 8% 7% 6% 7% 7% 9% 9% 7% 6% 6%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
       .ft-head span{{text-align:right;cursor:pointer;user-select:none;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
       .ft-head span:hover{{color:#94a3b8;}}
       .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
       .ft-head span.sort-desc::after{{content:" ▼";font-size:8px;}}
-      .ft-row{{display:grid;grid-template-columns:7% 6% 8% 11% 7% 6% 7% 7% 9% 9% 8% 7% 8%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+      .ft-row{{display:grid;grid-template-columns:6% 5% 7% 10% 8% 7% 6% 7% 7% 9% 9% 7% 6% 6%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
       .ft-row:hover{{background:#13131f;}}
       .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
       .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
@@ -842,7 +846,7 @@ with tab_forecast:
     <div class="ft">
       <div class="ft-head">
         <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
-        <span>PROB EFF</span><span>REC % <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Recommended Weight — % of trading budget to allocate to this BUY relative to other BUYs today.&#10;&#10;Formula: (prob_raw - 0.5) / sum_of_all_BUY_convictions&#10;&#10;Interpretation:&#10;  &gt; 15% = top conviction, strongest BUY of the day&#10;  8-15% = high conviction, well above average&#10;  4-8%  = average conviction&#10;  &lt; 4% = low conviction, barely above 0.5&#10;&#10;Example: $10,000 budget, ADSK at 25.8% = $2,580&#10;&#10;Note: No max-weight cap. Your risk tolerance overrides.&#10;Most retail traders cap at 10-15% per single position.&#10;&#10;A/B test result (May 27 2026, 89 buckets):&#10;Conviction-weight ≈ equal-weight on real BUY portfolios.&#10;Diff: -1pp to +1pp over ~30 days. Treat as guidance, not edge.">&#9432;</span></span><span>RANK <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Phase 2H Rank — ⚠ MODEL KILLED May 31 2026 (ranker leak + A8 ceiling, 5 tests). MONITORING ONLY, not traded. Position in blend score ranking among today's BUYs.&#10;&#10;🥇 #1-5  = top 5 BUYs (highest combined conviction)&#10;🥈 #6-10 = next 5 BUYs&#10;#11+    = lower-tier BUYs&#10;&#10;Backtest (33 days, Apr-May 2026):&#10;Top-5 by blend score: +174% cum return vs +117% baseline&#10;w_prob=0.3, w_a8=0.7, stable across H1/H2 splits">&#9432;</span></span><span>A8 <span style="cursor:help;color:#3b82f6;font-size:11px;" title="A8 prob — ⚠ KILLED/at-ceiling (5 overlay tests failed, struck off 1.8). MONITORING ONLY, not traded. A8 model's prob(top decile cross-sectional return).&#10;&#10;Where ticker ranks in universe by 5-day fwd return.&#10;&#10;Interpretation:&#10;  &gt; 20% = strong cross-sectional standout&#10;  10-20% = above-average universe rank&#10;  &lt; 10% = below-average rank&#10;&#10;IC = 0.111 (real cross-sectional alpha)">&#9432;</span></span><span>BLEND <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Blend score — ⚠ KILLED May 31 2026. The H1/H2 stability claims below were refuted by five later tests (A8 ceiling). MONITORING ONLY, not traded. Cross-sectional z-scored combination.&#10;&#10;Formula: 0.3 × prob_raw_z + 0.7 × a8_z&#10;&#10;Higher = better candidate among today's BUYs&#10;&#10;Optimal weights validated by stability test:&#10;  H1 (Mar-Apr): +68% cum&#10;  H2 (Apr-May): +72% cum">&#9432;</span></span>
+        <span>PROB EFF</span><span>PROB GLOBAL <span style="cursor:help;color:#3b82f6;font-size:11px;" title="GLOBAL ensemble prob(up) - cross-sectional pooled model (all tickers, 100 features). DISPLAY/COMPARISON ONLY, NOT in the live signal (prob_eff = per-ticker x multipliers). Weak standalone (~46-49% dir acc); shown to compare vs per-ticker Prob Eff. Retrained nightly in Pipeline B Stage 2.7.">&#9432;</span></span><span>REC % <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Recommended Weight — % of trading budget to allocate to this BUY relative to other BUYs today.&#10;&#10;Formula: (prob_raw - 0.5) / sum_of_all_BUY_convictions&#10;&#10;Interpretation:&#10;  &gt; 15% = top conviction, strongest BUY of the day&#10;  8-15% = high conviction, well above average&#10;  4-8%  = average conviction&#10;  &lt; 4% = low conviction, barely above 0.5&#10;&#10;Example: $10,000 budget, ADSK at 25.8% = $2,580&#10;&#10;Note: No max-weight cap. Your risk tolerance overrides.&#10;Most retail traders cap at 10-15% per single position.&#10;&#10;A/B test result (May 27 2026, 89 buckets):&#10;Conviction-weight ≈ equal-weight on real BUY portfolios.&#10;Diff: -1pp to +1pp over ~30 days. Treat as guidance, not edge.">&#9432;</span></span><span>RANK <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Phase 2H Rank — ⚠ MODEL KILLED May 31 2026 (ranker leak + A8 ceiling, 5 tests). MONITORING ONLY, not traded. Position in blend score ranking among today's BUYs.&#10;&#10;🥇 #1-5  = top 5 BUYs (highest combined conviction)&#10;🥈 #6-10 = next 5 BUYs&#10;#11+    = lower-tier BUYs&#10;&#10;Backtest (33 days, Apr-May 2026):&#10;Top-5 by blend score: +174% cum return vs +117% baseline&#10;w_prob=0.3, w_a8=0.7, stable across H1/H2 splits">&#9432;</span></span><span>A8 <span style="cursor:help;color:#3b82f6;font-size:11px;" title="A8 prob — ⚠ KILLED/at-ceiling (5 overlay tests failed, struck off 1.8). MONITORING ONLY, not traded. A8 model's prob(top decile cross-sectional return).&#10;&#10;Where ticker ranks in universe by 5-day fwd return.&#10;&#10;Interpretation:&#10;  &gt; 20% = strong cross-sectional standout&#10;  10-20% = above-average universe rank&#10;  &lt; 10% = below-average rank&#10;&#10;IC = 0.111 (real cross-sectional alpha)">&#9432;</span></span><span>BLEND <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Blend score — ⚠ KILLED May 31 2026. The H1/H2 stability claims below were refuted by five later tests (A8 ceiling). MONITORING ONLY, not traded. Cross-sectional z-scored combination.&#10;&#10;Formula: 0.3 × prob_raw_z + 0.7 × a8_z&#10;&#10;Higher = better candidate among today's BUYs&#10;&#10;Optimal weights validated by stability test:&#10;  H1 (Mar-Apr): +68% cum&#10;  H2 (Apr-May): +72% cum">&#9432;</span></span>
         <span>TARGET ▲</span><span>TARGET ▼</span><span>EXP RETURN</span><span>ATR</span><span>SHARPE <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Sharpe ratio — annualized risk-adjusted return (return &#247; volatility, scaled to 252 trading days).&#10;&#10;Ranges:&#10;  &lt; 0   = losing money (avg return negative)&#10;  0-1   = mediocre&#10;  1-2   = good&#10;  2-3   = very good&#10;  &gt; 3   = excellent — but verify (suspiciously high can mean overfit or leakage)&#10;&#10;IMPORTANT: high probability + low/negative Sharpe = wins often but the few big losses make it net-negative. Trust prob and Sharpe TOGETHER, not probability alone.">&#9432;</span></span>
       </div>
       <div id="tbody"></div>
@@ -860,7 +864,7 @@ with tab_forecast:
       let sortDir = 1;
       const tbody = document.getElementById('tbody');
       const headers = document.querySelectorAll('.ft-head span');
-      const colKeys = ['Ticker','Signal','Price','Prob Eff','Rec Weight','Rank','A8','Blend','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
+      const colKeys = ['Ticker','Signal','Price','Prob Eff','Prob Global','Rec Weight','Rank','A8','Blend','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
 
       function parseVal(v) {{
         if (!v || v === '—') return -Infinity;
@@ -891,6 +895,7 @@ with tab_forecast:
               <span style="font-size:9px;color:#2d3748">threshold: 65%</span>
             </div>
           </span>
+          <span style="color:#60a5fa;font-weight:500">${{r['Prob Global']}}</span>
           <span style="color:${{sig==='BUY'?'#22c55e':'#475569'}};font-weight:600">${{r['Rec Weight']}}</span>
           <span style="color:${{r.Rank && r.Rank.indexOf('🥇')>=0?'#fbbf24':r.Rank && r.Rank.indexOf('🥈')>=0?'#94a3b8':'#475569'}};font-weight:500">${{r.Rank}}</span>
           <span style="color:#a78bfa;font-weight:500">${{r.A8}}</span>
@@ -1277,6 +1282,15 @@ with tab_detail:
     # ══════════════════════════════════════════════════════════════════════════════
 
 with tab_accuracy:
+
+    # Horizon health panel (shared function; reads horizon_health table). Added Jul 9 2026.
+    try:
+        from ui._horizon_health_panel import render_horizon_health
+        render_horizon_health()
+        st.divider()
+    except Exception as _hh_e:
+        st.caption(f"(horizon health panel unavailable: {_hh_e})")
+
 
     # ── EOD + Intraday Accuracy Tables ───────────────────────────────────────────
     acc_tab1, acc_tab2 = st.tabs(["📅 EOD Model Accuracy", "⚡ Intraday Accuracy"])

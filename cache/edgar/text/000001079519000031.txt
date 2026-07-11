@@ -1,0 +1,4808 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ 478000000 false --09-30 Q3 2019 0000010795 1200000000 0.75 0.75 0.77 0.77 0.037 0.04685 0.04875 0.05 308000000 
+		 
+			 0000010795 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes1.000dueDecember152022Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes1.401dueMay242023Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:DepositarysharesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes0.174dueJune42021Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes1.208dueJune42026Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes3.020dueMay242025Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes0.632dueJune42023Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 exch:XNYS 
+				 bdx:Notes1.900dueDecember152026Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DeferredCompensationShareBasedPaymentsMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ConvertiblePreferredStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ConvertiblePreferredStockMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ConvertiblePreferredStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ConvertiblePreferredStockMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:WomensHealthProductClaimsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-04-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PunitiveMember 
+				 bdx:WomensHealthProductClaimsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-04-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:WomensHealthProductClaimsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CompensatoryMember 
+				 bdx:WomensHealthProductClaimsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-04-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:FilterProductClaimsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:FilterProductClaimsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:HerniaProductClaimsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherOperatingIncomeExpenseMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 
+					 2019-07-01 
+				 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:ProductsandorServicesMember 
+				 
+					 2019-07-01 
+				 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:NonUsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:NonUsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:NonUsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:UrologyandCriticalCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:BiosciencesMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationManagementSolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiagnosticSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:SurgeryMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:NonUsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicationDeliverySolutionsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PreanalyticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 country:US 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:DiabetesCareMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NonUsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PeripheralInterventionMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:PharmaceuticalSystemsMember 
+				 us-gaap:OperatingSegmentsMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:AdvancedBioprocessingMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DisposalGroupHeldforsaleNotDiscontinuedOperationsMember 
+				 bdx:AdvancedBioprocessingMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherRestructuringMember 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:EmployeeSeveranceMember 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:EmployeeSeveranceMember 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:EmployeeSeveranceMember 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherRestructuringMember 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherRestructuringMember 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:EmployeeSeveranceMember 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:EmployeeSeveranceMember 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherRestructuringMember 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherRestructuringMember 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:OtherRestructuringMember 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:CRBardIncMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:EmployeeSeveranceMember 
+				 bdx:OtherInitiativesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:ProductRightsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DevelopedTechnologyRightsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DevelopedTechnologyRightsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:ProductRightsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:IntellectualPropertyMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:UnclassifiedIndefinitelivedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:UnclassifiedIndefinitelivedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:IntellectualPropertyMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:LifeSciencesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:InterventionalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:MedicalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DebtMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CurrencySwapMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:DebtMember 
+				 us-gaap:NetInvestmentHedgingMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:FixedToFloatingMember 
+				 us-gaap:FairValueHedgingMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CurrencySwapMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CurrencySwapMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CurrencySwapMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:CurrencySwapMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeForwardMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:FixedToFloatingMember 
+				 us-gaap:FairValueHedgingMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:USD 
+				 bdx:Notes0.632dueJune42023Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:FloatingRateNotesDueDecember292020Member 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:FloatingRateNotesDueDecember292020Member 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:USD 
+				 bdx:Notes0.174dueJune42021Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:USD 
+				 bdx:Notes1.208dueJune42026Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:EUR 
+				 bdx:Notes1.208dueJune42026Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes0.368dueJune62019Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:EUR 
+				 bdx:Notes0.368dueJune62019Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:EUR 
+				 bdx:Notes0.632dueJune42023Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:EUR 
+				 bdx:Notes0.174dueJune42021Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes0.174dueJune42021Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 currency:USD 
+				 bdx:Notes0.368dueJune62019Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 us-gaap:LongTermDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes1.208dueJune42026Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes0.632dueJune42023Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes5.000dueNovember122040Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes4.685dueDecember152044Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes3.700dueJune62027Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000010795 
+			 
+				 bdx:Notes4.875dueMay152044Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 bdx:segment 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 xbrli:pure 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:shares 
+	 
+		 iso4217:EUR 
+	 Table of Contents   UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM  10-Q   (Mark One) ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  June 30, 2019   OR ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from                        to                       Commission file number  001-4802   Becton, Dickinson and Company   (Exact name of registrant as specified in its charter) New Jersey   22-0760120 (State or other jurisdiction of incorporation or organization)   (I.R.S. Employer Identification No.)               1 Becton Drive, Franklin Lakes, New Jersey 07417-1880   (201) 847-6800 (Address of principal executive offices) (Zip Code)   (Registrant’s telephone number, including area code)  Securities registered pursuant to Section 12(b) of the Act: Title of Each Class   Trading Symbol   Name of Each Exchange on Which Registered  Common stock, par value $1.00   BDX   New York Stock Exchange Depositary Shares, each representing 1/20th of a share of 6.125% Cumulative Preferred Stock Series A   BDXA   New York Stock Exchange 1.000% Notes due December 15, 2022   BDX22A   New York Stock Exchange 1.900% Notes due December 15, 2026   BDX26   New York Stock Exchange 1.401% Notes due May 24, 2023   BDX23A   New York Stock Exchange 3.020% Notes due May 24, 2025   BDX25   New York Stock Exchange 0.174% Notes due June 4, 2021   BDX/21   New York Stock Exchange 0.632% Notes due June 4, 2023   BDX/23A   New York Stock Exchange 1.208% Notes due June 4, 2026   BDX/26A   New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes   ☒    No  ☐ Indicate by check mark whether the registrant has submitted electronically and posted on its corporate Web site, if any, every Interactive Data File required to be submitted and posted pursuant to Rule 405 of Regulation S-T (§ 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit and post such files).     Yes   ☒    No   ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See the definitions of large accelerated filer, accelerated filer, smaller reporting company, and emerging growth company in Rule 12b-2 of the Exchange Act.  Large accelerated filer   ☒    Accelerated filer   ☐ Non-accelerated filer   ☐   Smaller reporting company   ☐ Emerging growth company   ☐                       If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.   ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes   ☐     No  ☒ There were  269,954,141  shares of Common Stock, $1.00 par value, outstanding at  June 30, 2019 .   BECTON, DICKINSON AND COMPANY FORM 10-Q For the quarterly period ended  June 30, 2019 TABLE OF CONTENTS     Page Number Part I. FINANCIAL INFORMATION         Item 1. Financial Statements (Unaudited)     Condensed Consolidated Balance Sheets 3   Condensed Consolidated Statements of Income 4   Condensed Consolidated Statements of Comprehensive Income 5   Condensed Consolidated Statements of Cash Flows 6   Notes to Condensed Consolidated Financial Statements 7 Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 24 Item 3. Quantitative and Qualitative Disclosures About Market Risk 38 Item 4. Controls and Procedures 38       Part II. OTHER INFORMATION         Item 1. Legal Proceedings 39 Item 1A. Risk Factors 40 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 40 Item 3. Defaults Upon Senior Securities 41 Item 4. Mine Safety Disclosures 41 Item 5. Other Information 41 Item 6. Exhibits 41       Signatures   42       Exhibits   43 2 ITEM 1. FINANCIAL STATEMENTS BECTON, DICKINSON AND COMPANY CONDENSED CONSOLIDATED BALANCE SHEETS Millions of dollars   June 30,  2019   September 30,  2018 Assets (Unaudited)     Current Assets:       Cash and equivalents $ 523   $ 1,140 Restricted cash 71   96 Short-term investments 12   17 Trade receivables, net 2,220   2,319 Inventories:       Materials 569   510 Work in process 317   297 Finished products 1,743   1,644   2,629   2,451 Assets held for sale —   137 Prepaid expenses and other 1,326   1,251 Total Current Assets 6,781   7,411 Property, Plant and Equipment 11,040   10,485 Less allowances for depreciation and amortization 5,491   5,111 Property, Plant and Equipment, Net 5,550   5,375 Goodwill 23,498   23,600 Developed Technology, Net 11,334   12,184 Customer Relationships, Net 3,507   3,723 Other Intangibles, Net 500   534 Other Assets 1,063   1,078 Total Assets $ 52,233   $ 53,904 Liabilities and Shareholders’ Equity       Current Liabilities:       Short-term debt $ 2,168   $ 2,601 Payables and accrued expenses 4,069   4,615 Total Current Liabilities 6,237   7,216 Long-Term Debt 18,016   18,894 Long-Term Employee Benefit Obligations 862   1,056 Deferred Income Taxes and Other 5,621   5,743 Commitments and Contingencies (See Note 5)   Shareholders’ Equity       Preferred stock 2   2 Common stock 347   347 Capital in excess of par value 16,227   16,179 Retained earnings 12,997   12,596 Deferred compensation 23   22 Common stock in treasury - at cost ( 6,201 )   ( 6,243 ) Accumulated other comprehensive loss ( 1,897 )   ( 1,909 ) Total Shareholders’ Equity 21,497   20,994 Total Liabilities and Shareholders’ Equity $ 52,233   $ 53,904 Amounts may not add due to rounding. See notes to condensed consolidated financial statements 3 BECTON, DICKINSON AND COMPANY CONDENSED CONSOLIDATED STATEMENTS OF INCOME Millions of dollars, except per share data (Unaudited)   Three Months Ended June 30,   Nine Months Ended June 30,   2019   2018   2019   2018 Revenues $ 4,350   $ 4,278   $ 12,706   $ 11,581 Cost of products sold 2,276   2,262   6,684   6,405 Selling and administrative expense 1,076   1,086   3,238   2,915 Research and development expense 282   277   792   727 Acquisitions and other restructurings 90   142   281   600 Other operating expense, net —   —   61   — Total Operating Costs and Expenses 3,725   3,767   11,056   10,647 Operating Income 626   512   1,649   933 Interest expense ( 156 )   ( 182 )   ( 498 )   ( 525 ) Interest income 2   8   8   55 Other (expense) income, net ( 11 )   310   19   295 Income Before Income Taxes 460   647   1,178   759 Income tax provision 9   53   107   313 Net Income 451   594   1,071   446 Preferred stock dividends ( 38 )   ( 38 )   ( 114 )   ( 114 ) Net income applicable to common shareholders $ 413   $ 556   $ 957   $ 332                                 Basic Earnings per Share $ 1.53   $ 2.08   $ 3.55   $ 1.30 Diluted Earnings per Share $ 1.51   $ 2.03   $ 3.49   $ 1.27 Dividends per Common Share $ 0.77   $ 0.75   $ 2.31   $ 2.25 Amounts may not add due to rounding. See notes to condensed consolidated financial statements 4 BECTON, DICKINSON AND COMPANY CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME Millions of dollars (Unaudited)   Three Months Ended June 30,   Nine Months Ended June 30,   2019   2018   2019   2018 Net Income $ 451   $ 594   $ 1,071   $ 446 Other Comprehensive (Loss) Income, Net of Tax               Foreign currency translation adjustments ( 68 )   ( 214 )   ( 27 )   ( 122 ) Defined benefit pension and postretirement plans 12   16   40   ( 57 ) Cash flow hedges ( 3 )   1   ( 2 )   — Other Comprehensive (Loss) Income, Net of Tax ( 58 )   ( 197 )   12   ( 179 ) Comprehensive Income $ 393   $ 397   $ 1,082   $ 267 Amounts may not add due to rounding. See notes to condensed consolidated financial statements 5 BECTON, DICKINSON AND COMPANY CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS Millions of dollars (Unaudited)   Nine Months Ended June 30,   2019   2018 Operating Activities       Net income  $ 1,071   $ 446 Adjustments to net income to derive net cash provided by operating activities:       Depreciation and amortization 1,700   1,412 Share-based compensation 208   261 Deferred income taxes ( 172 )   ( 472 ) Change in operating assets and liabilities ( 661 )   430 Pension obligation ( 150 )   ( 228 ) Excess tax benefits from payments under share-based compensation plans 45   63 Gain on sale of Vyaire interest —   ( 308 ) Gain on sale of business ( 336 )   — Product liability-related charge 331   — Other, net ( 77 )   ( 45 ) Net Cash Provided by Operating Activities 1,959   1,559 Investing Activities       Capital expenditures ( 599 )   ( 588 ) Proceeds from sale of investments, net 4   13 Acquisitions of businesses, net of cash acquired —   ( 14,998 ) Proceeds from divestitures, net 477   534 Other, net ( 182 )   ( 133 ) Net Cash Used for Investing Activities ( 300 )   ( 15,173 ) Financing Activities       Change in credit facility borrowings 300   200 Proceeds from long-term debt and term loans 2,224   4,335 Payments of debt and term loans ( 3,882 )   ( 2,723 ) Dividends paid ( 737 )   ( 687 ) Other, net ( 204 )   ( 176 ) Net Cash (Used for) Provided by Financing Activities ( 2,300 )   949 Effect of exchange rate changes on cash and equivalents and restricted cash ( 1 )   ( 5 ) Net decrease in cash and equivalents and restricted cash ( 642 )   ( 12,670 ) Opening Cash and Equivalents and Restricted Cash 1,236   14,179 Closing Cash and Equivalents and Restricted Cash $ 594   $ 1,509         Non-Cash Investing Activities       Fair value of shares issued as acquisition consideration $ —   $ 8,004 Fair value of equity awards issued as acquisition consideration $ —   $ 613 Amounts may not add due to rounding. See notes to condensed consolidated financial statements 6 BECTON, DICKINSON AND COMPANY NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS June 30, 2019 Note 1 –  Basis of Presentation The accompanying unaudited condensed consolidated financial statements have been prepared in accordance with the instructions to Form 10-Q and, in the opinion of the management of Becton, Dickinson and Company (the "Company" or "BD"), include all adjustments which are of a normal recurring nature, necessary for a fair presentation of the financial position and the results of operations and cash flows for the periods presented.  However, the financial statements do not include all information and accompanying notes required for a presentation in accordance with U.S. generally accepted accounting principles ("U.S. GAAP").  These condensed consolidated financial statements should be read in conjunction with the consolidated financial statements and the notes thereto included in the Company’s  2018  Annual Report on Form 10-K.  Within the financial statements and tables presented, certain columns and rows may not add due to the use of rounded numbers for disclosure purposes.  Percentages and earnings per share amounts presented are calculated from the underlying amounts.  The results of operations for the interim periods are not necessarily indicative of the results of operations to be expected for the full year. Note  2  –  Accounting Changes New Accounting Principles Adopted On October 1, 2018, the Company adopted Accounting Standards Codification Topic 606, "Revenue from Contracts with Customers" ("ASC 606") using the modified retrospective method.  Under ASC 606, revenue is recognized upon the transfer of control of goods or services to customers and reflects the amount of consideration to which a reporting entity expects to be entitled in exchange for those goods or services.  The Company assessed the impact of this new standard on its consolidated financial statements based upon a review of contracts that were not completed as of October 1, 2018.  Amounts presented in the Company's financial statements for the prior-year periods have not been revised and are reflective of the revenue recognition requirements which were in effect for those periods.  This accounting standard adoption, which is further discussed in Note 6, did not materially impact any line items of the Company's consolidated income statements and balance sheet. On October 1, 2018, the Company retrospectively adopted an accounting standard update which requires all components of net periodic pension and postretirement benefit costs to be disaggregated from the service cost component and to be presented on the income statement outside a subtotal of income from operations, if one is presented.  Upon the Company's adoption of the accounting standard update, which did not have a material impact on its consolidated financial statements, all components of the Company’s net periodic pension and postretirement benefit costs, aside from service cost, are recorded to  Other income (expense), net  on its consolidated income statements for all periods presented.  Revisions of prior-year period amounts were estimated based upon previously disclosed amounts. On October 1, 2018, the Company adopted an accounting standard update which requires that the income tax effects of intercompany sales or transfers of assets, except those involving inventory, be recognized in the income statement as income tax expense (or benefit) in the period that the sale or transfer occurs.  The Company adopted this accounting standard update, which did not have a material impact on its consolidated financial statements, using the modified retrospective method. New Accounting Principle Not Yet Adopted In February 2016, the FASB issued a new lease accounting standard which requires lessees to recognize lease assets and lease liabilities on the balance sheet.  The new standard also requires expanded disclosures regarding leasing arrangements.  The Company is in the process of evaluating the impact on its consolidated financial statements and anticipates most of its current operating leases will result in the recognition of right-of-use assets and corresponding lease liabilities on its consolidated balance sheet.  The new standard is not expected to materially impact the Company's results of operations.  The Company will adopt the standard on October 1, 2019 and will elect the transition method that allows application of the new standard at its adoption date, rather than at the earliest comparative period presented in the financial statements. 7 Note  3  –  Shareholders' Equity Changes in certain components of shareholders' equity for the first three quarters of fiscal years  2019  and  2018  were as follows:   Common Stock  Issued at Par Value   Capital in Excess of Par Value   Retained Earnings   Deferred Compensation   Treasury Stock (Millions of dollars) Shares (in thousands)   Amount Balance at September 30, 2018 $ 347   $ 16,179   $ 12,596   $ 22   ( 78,463 )   $ ( 6,243 ) Net income —   —   599   —   —   — Common dividends ($0.77 per share) —   —   ( 207 )   —   —   — Preferred dividends —   —   ( 38 )   —   —   — Common stock issued for share-based compensation and other plans, net —   ( 97 )   —   2   851   9 Share-based compensation —   92   —   —   —   — Common stock held in trusts, net (a) —   —   —   —   ( 12 )   — Effect of changes in accounting principles (see Note 2) —   —   68   —   —   — Balance at December 31, 2018 $ 347   $ 16,174   $ 13,018   $ 24   ( 77,624 )   $ ( 6,235 ) Net income —   —   20   —   —   — Common dividends ($0.77 per share) —   —   ( 208 )   —   —   — Preferred dividends —   —   ( 38 )   —   —   — Common stock issued for share-based compensation and other plans, net —   ( 57 )   ( 1 )   ( 1 )   618   42 Share-based compensation —   60   —   —   —   — Common stock held in trusts, net (a) —   —   —   —   50   — Balance at March 31, 2019 $ 347   $ 16,177   $ 12,792   $ 23   ( 76,955 )   $ ( 6,192 ) Net income —   —   451   —   —   — Common dividends ($0.77 per share) —   —   ( 208 )   —   —   — Preferred dividends —   —   ( 38 )   —   —   — Common stock issued for share-based compensation and other plans, net —   ( 6 )   —   —   219   ( 8 ) Share-based compensation —   56   —   —   —   — Common stock held in trusts, net (a) —   —   —   —   4   — Balance at June 30, 2019 $ 347   $ 16,227   $ 12,997   $ 23   ( 76,733 )   $ ( 6,201 ) 8   Common Stock  Issued at Par Value   Capital in Excess of Par Value   Retained Earnings   Deferred Compensation   Treasury Stock (Millions of dollars) Shares (in thousands)   Amount Balance at September 30, 2017 $ 347   $ 9,619   $ 13,111   $ 19   ( 118,745 )   $ ( 8,427 ) Net loss —   —   ( 136 )   —   —   — Common dividends ($0.75 per share) —   —   ( 172 )   —   —   — Preferred dividends —   —   ( 38 )   —   —   — Common stock issued for acquisition —   6,487   —   —   37,306   2,121 Common stock issued for share-based compensation and other plans, net —   ( 51 )   —   —   1,021   ( 37 ) Share-based compensation —   142   —   —   —   — Common stock held in trusts, net (a) —   —   —   —   ( 27 )   — Balance at December 31, 2017 $ 347   $ 16,197   $ 12,765   $ 19   ( 80,445 )   $ ( 6,343 ) Net loss —   —   ( 12 )   —   —   — Common dividends ($0.75 per share) —   —   ( 201 )   —   —   — Preferred dividends —   —   ( 38 )   —   —   — Common stock issued for acquisition —   ( 9 )   —   —   —   — Common stock issued for share-based compensation and other plans, net —   ( 94 )   ( 1 )   2   943   44 Share-based compensation —   76   —   —   —   — Common stock held in trusts, net (a) —   —   —   —   17   — Effect of changes in accounting principles —   —   103   —   —   — Balance at March 31, 2018 $ 347   $ 16,170   $ 12,616   $ 21   ( 79,485 )   $ ( 6,300 ) Net income —   —   594   —   —   — Common dividends ($0.75 per share) —   —   ( 201 )   —   —   — Preferred dividends —   —   ( 38 )   —   —   — Common stock issued for share-based compensation and other plans, net —   ( 25 )   ( 1 )   1   364   24 Share-based compensation —   48   —   —   —   — Common stock held in trusts, net (a) —   —   —   —   ( 2 )   — Balance at June 30, 2018 $ 347   $ 16,193   $ 12,971   $ 22   ( 79,124 )   $ ( 6,275 ) (a) Common stock held in trusts represents rabbi trusts in connection with deferred compensation under the Company’s employee salary and bonus deferral plan and directors’ deferral plan. 9 The components and changes of  Accumulated other comprehensive income (loss)  for the first three quarters of fiscal years  2019  and  2018  were as follows: (Millions of dollars) Total   Foreign Currency Translation   Benefit Plans   Cash Flow Hedges Balance at September 30, 2018 $ ( 1,909 )   $ ( 1,162 )   $ ( 729 )   $ ( 17 ) Other comprehensive (loss) income before reclassifications, net of taxes ( 32 )   ( 35 )   3   ( 1 ) Amounts reclassified into income, net of taxes 14   —   13   1 Balance at December 31, 2018 $ ( 1,927 )   $ ( 1,197 )   $ ( 714 )   $ ( 16 ) Other comprehensive income (loss) before reclassifications, net of taxes 74   76   —   ( 2 ) Amounts reclassified into income, net of taxes 14   —   13   1 Balance at March 31, 2019 $ ( 1,839 )   $ ( 1,121 )   $ ( 701 )   $ ( 17 ) Other comprehensive loss before reclassifications, net of taxes ( 68 )   ( 68 )   —   — Amounts reclassified into income, net of taxes 10   —   12   ( 2 ) Balance at June 30, 2019 $ ( 1,897 )   $ ( 1,189 )   $ ( 689 )   $ ( 19 ) (Millions of dollars) Total   Foreign Currency Translation   Benefit Plans   Cash Flow Hedges Balance at September 30, 2017 $ ( 1,723 )   $ ( 1,001 )   $ ( 703 )   $ ( 18 ) Other comprehensive loss before reclassifications, net of taxes ( 36 )   ( 36 )   —   — Amounts reclassified into income, net of taxes 18   —   17   1 Balance at December 31, 2017 $ ( 1,740 )   $ ( 1,037 )   $ ( 686 )   $ ( 17 ) Other comprehensive income before reclassifications, net of taxes 128   128   —   — Amounts reclassified into income, net of taxes 11   —   9   2 Tax effects reclassified into retained earnings ( 103 )   —   ( 99 )   ( 4 ) Balance at March 31, 2018 $ ( 1,704 )   $ ( 909 )   $ ( 776 )   $ ( 20 ) Other comprehensive (loss) income before reclassifications, net of taxes ( 210 )   ( 214 )   4   — Amounts reclassified into income, net of taxes 13   —   12   1 Balance at June 30, 2018 $ ( 1,902 )   $ ( 1,123 )   $ ( 760 )   $ ( 18 ) The amount of foreign currency translation recognized in other comprehensive income during the three and  nine  months ended  June 30, 2019  and  2018  included net gains (losses) relating to net investment hedges, as further discussed in Note  13 .  During the second quarter of 2018, as permitted under U.S. GAAP guidance, the Company reclassified stranded income tax effects on items within  Accumulated other comprehensive income (loss)  resulting from the enactment of new U.S. tax legislation to  Retained earnings.   The reclassified tax effects related to prior service credits and net actuarial losses relating to benefit plans, as well as to terminated cash flow hedges.  The tax effects relating to these items are generally recognized as such amounts are amortized into earnings.                  10 Note 4 –  Earnings per Share The weighted average common shares used in the computations of basic and diluted earnings per share (shares in thousands) were as follows:   Three Months Ended June 30,   Nine Months Ended June 30,   2019   2018   2019   2018 Average common shares outstanding 270,249   267,836   269,719   254,934 Dilutive share equivalents from share-based plans 4,087   6,089   4,791   5,926 Average common and common equivalent shares outstanding – assuming dilution 274,336   273,925   274,510   260,860                 Share equivalents excluded from the diluted shares outstanding calculation because the result would have been antidilutive:               Mandatory convertible preferred stock 11,685   11,685   11,685   11,685 Note  5  –  Contingencies Given the uncertain nature of litigation generally, the Company is not able, in all cases, to estimate the amount or range of loss that could result from an unfavorable outcome of the litigation to which the Company is a party.  In accordance with U.S. GAAP, the Company establishes accruals to the extent probable future losses are estimable (in the case of environmental matters, without considering possible third-party recoveries).  With respect to putative class action lawsuits in the United States and certain of the Canadian lawsuits described below relating to product liability matters, the Company is unable to estimate a range of reasonably possible losses for the following reasons: (i) all or certain of the proceedings are in early stages; (ii) the Company has not received and reviewed complete information regarding all or certain of the plaintiffs and their medical conditions; and/or (iii) there are significant factual issues to be resolved.  In addition, there is uncertainty as to the likelihood of a class being certified or the ultimate size of the class.  With respect to the civil investigative demand served by the Department of Justice, as discussed below, the Company is unable to estimate a range of reasonably possible losses for the following reasons: (i) all or certain of the proceedings are in early stages; and/or (ii) there are significant factual and legal issues to be resolved.  In view of the uncertainties discussed below, the Company could incur charges in excess of any currently established accruals and, to the extent available, liability insurance.  In the opinion of management, any such future charges, individually or in the aggregate, could have a material adverse effect on the Company’s consolidated results of operations and consolidated cash flows. Product Liability Matters The Company believes that certain settlements and judgments, as well as legal defense costs, relating to product liability matters are or may be covered in whole or in part under its product liability insurance policies with a limited number of insurance carriers, or, in some circumstances, indemnification obligations to the Company from other parties, which if disputed, the Company intends to vigorously contest.  Amounts recovered under the Company’s product liability insurance policies or indemnification arrangements may be less than the stated coverage limits or less than otherwise expected and may not be adequate to cover damages and/or costs relating to claims.  In addition, there is no guarantee that insurers or other parties will pay claims or that coverage or indemnity will be otherwise available. Hernia Product Claims As of  June 30, 2019 , the Company is defending approximately  8,795  product liability claims involving the Company’s line of hernia repair devices (collectively, the “Hernia Product Claims”).  The majority of those claims are currently pending in a coordinated proceeding in Rhode Island State Court, but claims are also pending in other state and/or federal court jurisdictions. In addition, those claims include multiple putative class actions in Canada.  Generally, the Hernia Product Claims seek damages for personal injury allegedly resulting from use of the products.  From time to time, the Company engages in resolution discussions with plaintiffs’ law firms regarding certain of the Hernia Product Claims, but the Company also intends to vigorously defend Hernia Product Claims that do not settle, including through litigation.  Trials are scheduled throughout 2020 in various state and/or federal courts.  The Company expects additional trials of Hernia Product Claims to take place over the next 12 months.  In August 2018, a new hernia multi-district litigation (“MDL”) was ordered to be established in the Southern District of Ohio.  The Company cannot give any assurances that the resolution of the Hernia Product Claims that have not settled, including asserted and unasserted claims and the putative class action lawsuits, will not have a material adverse effect  11 on the Company’s business, results of operations, financial condition and/or liquidity. Women’s Health Product Claims As of  June 30, 2019 , the Company is defending approximately  985  product liability claims involving the Company’s line of pelvic mesh devices.  The majority of those claims are currently pending in either the federal MDL in the United States District Court for the Southern District of West Virginia, or a coordinated proceeding in New Jersey State Court, but claims are also pending in other state and/or federal court jurisdictions.  In addition, those claims include putative class actions filed in the United States.  Not included in the figures above are approximately  1,010  filed and unfiled claims that have been asserted or threatened against the Company but lack sufficient information to determine whether a pelvic mesh device of the Company is actually at issue.  The claims identified above also include products manufactured by both the Company and two subsidiaries of Medtronic plc (as successor in interest to Covidien plc) (“Medtronic”), each a supplier of the Company.  Medtronic has an obligation to defend and indemnify the Company with respect to any product defect liability relating to products its subsidiaries had manufactured.  As described below, in July 2015 the Company reached an agreement with Medtronic (which was amended in June 2017) regarding certain aspects of Medtronic’s indemnification obligation.  The foregoing lawsuits, unfiled claims, putative class actions, and other claims, together with claims that have settled or are the subject of agreements or agreements in principle to settle, are referred to collectively as the “Women’s Health Product Claims.”  The Women’s Health Product Claims generally seek damages for personal injury allegedly resulting from use of the products. As of  June 30, 2019 , the Company has reached agreements or agreements in principle with various plaintiffs’ law firms to settle their respective inventories of cases totaling approximately  15,160  of the Women’s Health Product Claims.  The Company believes that these Women’s Health Product Claims are not the subject of Medtronic’s indemnification obligation.  These settlement agreements and agreements in principle include unfiled and previously unknown claims held by various plaintiffs’ law firms, which are not included in the approximate number of lawsuits set forth in the first paragraph of this section. Each agreement is subject to certain conditions, including requirements for participation in the proposed settlements by a certain minimum number of plaintiffs.  The Company continues to engage in discussions with other plaintiffs’ law firms regarding potential resolution of unsettled Women’s Health Product Claims, which may include additional inventory settlements. Starting in 2014 in the MDL, the court entered certain pre-trial orders requiring trial work up and remand of a significant number of Women’s Health Product Claims, including an order entered in the MDL on January 30, 2018, that requires the work up and remand of all remaining unsettled cases (the “WHP Pre-Trial Orders”).  The WHP Pre-Trial Orders may result in material additional costs or trial verdicts in future periods in defending Women’s Health Product Claims.  Trials are anticipated throughout 2019 in state courts.  A trial in the New Jersey coordinated proceeding began in March 2018, and in April 2018 a jury entered a verdict against the Company in the total amount of  $ 68  million  ( $ 33  million  compensatory;  $ 35  million  punitive).  The Company is in the process of appealing that verdict.  A consolidated trial involving two plaintiffs is scheduled to begin in September 2019 in the New Jersey coordinated proceeding.  The Company expects additional trials of Women’s Health Product Claims to take place over the next 12 months, which may potentially include consolidated trials. In July 2015, as part of the agreement with Medtronic noted above, Medtronic agreed to take responsibility for pursuing settlement of certain of the Women’s Health Product Claims that relate to products distributed by the Company under supply agreements with Medtronic, and the Company has paid Medtronic  $ 121  million  towards these potential settlements.  In June 2017, the Company amended the agreement with Medtronic to transfer responsibility for settlement of additional Women’s Health Product Claims to Medtronic on terms similar to the July 2015 agreement, including with respect to the obligation to make payments to Medtronic towards these potential settlements.  The Company also may, in its sole discretion, transfer responsibility for settlement of additional Women’s Health Product Claims to Medtronic on similar terms.  The agreements do not resolve the dispute between the Company and Medtronic with respect to Women’s Health Product Claims that do not settle, if any.   During the course of engaging in settlement discussions with plaintiffs’ law firms, the Company has learned, and may in future periods learn, additional information regarding these and other unfiled claims, or other lawsuits, which could materially impact the Company’s estimate of the number of claims or lawsuits against the Company. Filter Product Claims As of  June 30, 2019 , the Company is defending approximately  4,525  product liability claims involving the Company’s line of inferior vena cava filters (collectively, the “Filter Product Claims”).  The majority of those claims are currently pending in an MDL in the United States District Court for the District of Arizona, but claims are also pending in other state and/or federal court jurisdictions, including a coordinated proceeding in Arizona State Court.  In addition, those claims include putative class actions filed in the United States and Canada.  The Filter Product Claims generally seek damages for personal injury allegedly resulting from use of the products.  The Company has limited information regarding the nature and quantity of certain of the Filter Product Claims.  The Company continues to receive claims and lawsuits and may in future periods learn additional  12 information regarding other unfiled or unknown claims, or other lawsuits, which could materially impact the Company’s estimate of the number of claims or lawsuits against the Company.  On May 31, 2019, the MDL Court ceased accepting direct filings or transfers into the Filter Product Claims MDL and remands for non-settled cases are expected to begin within the next three to six months.  The MDL trials are scheduled throughout 2019 and 2020 in certain state and federal courts.  As of June 30, 2019, the Company entered into settlement agreements and/or settlement agreements in principle for approximately  4,200  cases.  On March 30, 2018, a jury in the first MDL trial found the Company liable for negligent failure to warn and entered a verdict in favor of plaintiffs.  The jury found the Company was not liable for (a) strict liability design defect; (b) strict liability failure to warn; and (c) negligent design.  The Company has appealed that verdict.  On June 1, 2018, a jury in the second MDL trial unanimously found in favor of the Company on all claims.  On August 17, 2018, the Court entered summary judgment in favor of the Company on all claims in the third MDL trial.  On October 5, 2018, a jury in the fourth MDL trial unanimously found in favor of the Company on all claims.  The Company expects additional trials of Filter Product Claims may take place over the next 12 months. In most product liability litigations (like those described above), plaintiffs allege a wide variety of claims, ranging from allegations of serious injury caused by the products to efforts to obtain compensation notwithstanding the absence of any injury. In many of these cases, the Company has not yet received and reviewed complete information regarding the plaintiffs and their medical conditions and, consequently, is unable to fully evaluate the claims.  The Company expects that it will receive and review additional information regarding any remaining unsettled product liability matters. In January 2017, the Company reached an agreement to resolve litigation filed in the Southern District of New York by its insurance carriers in connection with Women’s Health Product Claims and Filter Product Claims.  The agreement requires the insurance carriers to reimburse the Company for certain future costs incurred in connection with Filter Product Claims up to an agreed amount.  For certain product liability claims or lawsuits, the Company does not maintain or has limited remaining insurance coverage. Other Legal Matters Since early 2013, the Company has received subpoenas or Civil Investigative Demands from a number of State Attorneys General seeking information related to the sales and marketing of certain of the Company’s products that are the subject of the Hernia Product Claims and the Women’s Health Product Claims.  The Company is cooperating with these requests.  Although the Company has had, and continues to have, discussions with the State Attorneys General with respect to overall potential resolution of this matter, there can be no assurance that a resolution will be reached or what the terms of any such resolution may be. In July 2017, a civil investigative demand was served by the Department of Justice seeking documents and information relating to an investigation into possible violations of the False Claims Act in connection with the sales and marketing of FloChec ®  and QuantaFlo TM  devices.  The Company is cooperating with these requests.  Since it is not feasible to predict the outcome of these matters, the Company cannot give any assurances that the resolution of these matters will not have a material adverse effect on the Company’s business, results of operations, financial condition and/or liquidity. The Company is a potentially responsible party to a number of federal administrative proceedings in the United States brought under the Comprehensive Environment Response, Compensation and Liability Act, also known as “Superfund,” and similar state laws.  The affected sites are in varying stages of development.  In some instances, the remedy has been completed, while in others, environmental studies are underway or commencing.  For several sites, there are other potentially responsible parties that may be jointly or severally liable to pay all or part of cleanup costs.  While it is not feasible to predict the outcome of these proceedings, based upon the Company’s experience, current information and applicable law, the Company does not expect these proceedings to have a material adverse effect on its financial condition and/or liquidity.  However, one or more of the proceedings could be material to the Company’s business and/or results of operations. The Company is also involved both as a plaintiff and a defendant in other legal proceedings and claims that arise in the ordinary course of business.  The Company believes that it has meritorious defenses to these suits pending against the Company and is engaged in a vigorous defense of each of these matters. Litigation Reserves The Company regularly monitors and evaluates the status of product liability and other legal matters, and may, from time-to-time, engage in settlement and mediation discussions taking into consideration developments in the matters and the risks and uncertainties surrounding litigation.  These discussions could result in settlements of one or more of these claims at any time. In the second quarter of 2019, the Company recorded a pre-tax charge to  Other operating expense, net , of approximately  $ 331  million  related to certain of the product liability matters discussed above under the heading “Product Liability Matters,”  13 including the related legal defense costs.  The Company recorded this charge based on additional information obtained during the quarter, including but not limited to: the allegations and documentation supporting or refuting such allegations; publicly available information regarding similar medical device mass tort settlements; historical information regarding other product liability settlements involving the Company; and the stage of litigation. Accruals for the Company's product liability claims which are specifically discussed above, as well as the related legal defense costs, amounted to approximately  $ 1.9  billion  at  June 30, 2019  and  $ 2.0  billion  at  September 30, 2018 .  As of  June 30, 2019  and  September 30, 2018 , the Company had  $ 70  million  and  $ 94  million , respectively, in qualified settlement funds (“QSFs”), subject to certain settlement conditions, for certain product liability matters.  Payments to QSFs are recorded as a component of  Restricted cash .  The Company's expected recoveries related to product liability claims and related legal defense costs were approximately  $ 152  million  and  $ 343  million  at  June 30, 2019  and  September 30, 2018 , respectively.  A substantial amount of these expected recoveries at  June 30, 2019  and  September 30, 2018  related to the Company’s agreements with Medtronic related to certain Women’s Health Product Claims.  During the  nine  months ended  June 30, 2019 , Medtronic provided the Company with releases from liability for certain claims that were the subject of the agreement discussed further above.  Accordingly, adjustments to reduce accruals for the Company's product liability claims, as well as the balance recorded for expected recoveries related to product liability claims, were recorded during the  nine  months ended  June 30, 2019 . The terms of the Company’s agreements with Medtronic are substantially consistent with the assumptions underlying, and the manner in which, the Company has recorded expected recoveries related to the indemnification obligation.  The expected recoveries at  June 30, 2019  related to the indemnification obligation are not in dispute with respect to claims that Medtronic settles pursuant to the agreements.  As described above, the agreements do not resolve the dispute between the Company and Medtronic with respect to Women’s Health Product Claims that do not settle, if any, and the Company also may, in its sole discretion, transfer responsibility for settlement of additional Women’s Health Product Claims to Medtronic on similar terms. Note  6  –  Revenues As previously discussed in Note  2 , the Company adopted ASC 606 using the modified retrospective method.  The Company sells a broad range of medical supplies, devices, laboratory equipment and diagnostic products which are distributed through independent distribution channels and directly by BD through sales representatives.  End-users of the Company's products include healthcare institutions, physicians, life science researchers, clinical laboratories, the pharmaceutical industry and the general public. Timing of Revenue Recognition The Company's revenues are primarily recognized when the customer obtains control of the product sold, which is generally upon shipment or delivery, depending on the delivery terms specified in the sales agreement.  Revenues associated with certain instruments and equipment for which installation is complex, and therefore significantly affects the customer’s ability to use and benefit from the product, are recognized when customer acceptance of these installed products has been confirmed.  For certain service arrangements, including extended warranty and software maintenance contracts, revenue is recognized ratably over the contract term.  The majority of revenues relating to extended warranty contracts associated with certain instruments and equipment is generally recognized within a few years whereas deferred revenue relating to software maintenance contracts is generally recognized over a longer period. Measurement of Revenues The Company acts as the principal in substantially all of its customer arrangements and as such, generally records revenues on a gross basis.  Revenues exclude any taxes that the Company collects from customers and remits to tax authorities.  The Company considers its shipping and handling costs to be costs of contract fulfillment and has made the accounting policy election to record these costs within  Selling and administrative expense . Payment terms extended to the Company's customers are based upon commercially reasonable terms for the markets in which the Company's products are sold.  Because the Company generally expects to receive payment within one year or less from when control of a product is transferred to the customer, the Company does not generally adjust its revenues for the effects of a financing component.  The Company’s estimate of probable credit losses relating to trade receivables is determined based on historical experience and other specific account data.  Amounts are written off against the allowances for doubtful accounts when the Company determines that a customer account is uncollectible.  Such amounts are not material to the Company's consolidated financial results. The Company's gross revenues are subject to a variety of deductions which are recorded in the same period that the underlying revenues are recognized.  Such variable consideration include rebates, sales discounts and sales returns.  Because these deductions represent estimates of the related obligations, judgment is required when determining the impact of these revenue  14 deductions on gross revenues for a reporting period.  Rebates provided by the Company are based upon prices determined under the Company's agreements with its end-user customers.  Additional factors considered in the estimate of the Company's rebate liability include the quantification of inventory that is either in stock at or in transit to the Company's distributors, as well as the estimated lag time between the sale of product and the payment of corresponding rebates.  The impact of other forms of variable consideration, including sales discounts and sales returns, is not material to the Company's revenues. The Company's agreements with customers within certain organizational units including Medication Management Solutions, Diagnostic Systems and Biosciences, contain multiple performance obligations including both products and certain services noted above.  The transaction price for these agreements is allocated to each performance obligation based upon its relative standalone selling price.  Standalone selling price is the amount at which the Company would sell a promised good or service separately to a customer.  The Company generally estimates standalone selling prices using its list prices and a consideration of typical discounts offered to customers.  Effects of Revenue Arrangements on Consolidated Balance Sheet Due to the nature of the majority of the Company's products and services, the Company typically does not incur costs to fulfill a contract in advance of providing the customer with goods or services.  Capitalized contract costs associated with the costs to fulfill contracts for certain products in the Medication Management Solutions organizational unit are immaterial to the Company's consolidated balance sheets.  The Company's costs to obtain contracts are comprised of sales commissions which are paid to the Company's employees or third party agents.  The majority of the sales commissions incurred by the Company relate to revenue that is recognized over a period that is less than one year and as such, the Company has elected a practical expedient provided under ASC 606 to record the majority of its expense associated with sales commissions as it is incurred.  Commissions relating to revenues recognized over a period longer than one year are recorded as assets which are amortized over the period over which the revenues underlying the commissions are recognized.  Capitalized contract costs related to such commissions are immaterial to the Company's consolidated balance sheets. The Company records contract liabilities for unearned revenue that is allocable to performance obligations, such as extended warranty and software maintenance contracts, which are performed over time as discussed further above.  These contract liabilities are immaterial to the Company's consolidated financial results.  The Company's liability for product warranties provided under its agreements with customers is not material to its consolidated balance sheets.  Remaining Performance Obligations The Company's obligations relative to service contracts, which are further discussed above, and pending installations of equipment, primarily in the Company's Medication Management Solutions unit, represent unsatisfied performance obligations of the Company.  The revenues under existing and noncancelable contracts which are attributable to products and/or services that have not yet been installed or provided are estimated to be approximately  $ 1.7  billion  at  June 30, 2019  and the Company expects to recognize the majority of this revenue over the next  three years .   Within the Company's Medication Management Solutions, Medication Delivery Solutions, Diagnostic Systems, and Biosciences units, some contracts also contain minimum purchase commitments of reagents or other consumables and the future sales of these consumables represent additional unsatisfied performance obligations of the Company.  The revenue attributable to the unsatisfied minimum purchase commitment-related performance obligations will be recognized over the customer relationship period, which usually encompasses the current agreement term and subsequent renewal terms.  Disaggregation of Revenues A disaggregation of the Company's revenues by segment, organizational unit and geographic region is provided in Note  7 . 15 Note  7  –  Segment Data The Company's organizational structure is based upon  three  principal business segments: BD Medical (“Medical”), BD Life Sciences (“Life Sciences”) and BD Interventional ("Interventional").  The Company's segments are strategic businesses that are managed separately because each one develops, manufactures and markets distinct products and services.  Segment disclosures are on a performance basis consistent with internal management reporting.  The Company evaluates performance of its business segments and allocates resources to them primarily based upon segment operating income, which represents revenues reduced by product costs and operating expenses.  Revenues by segment, organizational unit and geographical areas for the three and  nine -month periods are detailed below.  The Company has no material intersegment revenues.  On December 29, 2017, the Company completed its acquisition of C.R. Bard, Inc. ("Bard"), which is further discussed in Note 9.  Bard's operating results were included in the Company’s consolidated results of operations beginning on January 1, 2018 and as such, are not included in the financial results detailed below for the first quarter of the prior-year  nine -month period.    Three Months Ended June 30, (Millions of dollars) 2019   2018   United States   International   Total   United States   International   Total Medical                       Medication Delivery Solutions  $ 524   $ 460   $ 984   $ 505   $ 471   $ 977 Medication Management Solutions 528   129   658   483   127   610 Diabetes Care 139   136   275   138   138   276 Pharmaceutical Systems 108   286   394   103   279   383 Total segment revenues $ 1,299   $ 1,011   $ 2,311   $ 1,230   $ 1,016   $ 2,246                         Life Sciences                       Preanalytical Systems $ 203   $ 204   $ 407   $ 199   $ 205   $ 404 Diagnostic Systems 155   212   368   151   211   362 Biosciences 117   167   284   126   188   314 Total segment revenues $ 475   $ 583   $ 1,058   $ 476   $ 603   $ 1,079                         Interventional                       Surgery $ 273   $ 76   $ 349   $ 259   $ 77   $ 336 Peripheral Intervention 195   155   350   195   157   353 Urology and Critical Care 198   85   283   178   87   265 Total segment revenues $ 666   $ 316   $ 981   $ 632   $ 322   $ 954                         Total Company revenues $ 2,440   $ 1,910   $ 4,350   $ 2,338   $ 1,941   $ 4,278 16   Nine Months Ended June 30, (Millions of dollars) 2019   2018   United States   International   Total   United States   International   Total Medical                       Medication Delivery Solutions $ 1,528   $ 1,344   $ 2,871   $ 1,379   $ 1,298   $ 2,677 Medication Management Solutions 1,531   365   1,896   1,415   364   1,778 Diabetes Care 421   397   819   415   405   820 Pharmaceutical Systems 269   771   1,040   239   755   994 Total segment revenues $ 3,750   $ 2,877   $ 6,626   $ 3,448   $ 2,822   $ 6,270                         Life Sciences                       Preanalytical Systems $ 574   $ 591   $ 1,165   $ 565   $ 595   $ 1,160 Diagnostic Systems 510   628   1,138   518   634   1,152 Biosciences 345   517   862   350   559   910 Total segment revenues $ 1,430   $ 1,736   $ 3,166   $ 1,433   $ 1,789   $ 3,222                         Interventional                       Surgery $ 819   $ 223   $ 1,042   $ 687   $ 177   $ 864 Peripheral Intervention 580   449   1,029   393   303   697 Urology and Critical Care 590   253   843   358   171   529 Total segment revenues $ 1,989   $ 925   $ 2,914   $ 1,438   $ 651   $ 2,089                         Total Company revenues $ 7,168   $ 5,538   $ 12,706   $ 6,319   $ 5,261   $ 11,581 Segment income for the three and  nine -month periods was as follows:   Three Months Ended June 30,   Nine Months Ended June 30, (Millions of dollars) 2019   2018   2019   2018 Income Before Income Taxes               Medical (a) (b) $ 744   $ 732   $ 2,008   $ 1,943 Life Sciences (c) 304   241   902   893 Interventional (b) (d) 183   175   623   102 Total Segment Operating Income 1,230   1,148   3,533   2,938 Acquisitions and other restructurings ( 90 )   ( 142 )   ( 281 )   ( 600 ) Net interest expense ( 154 )   ( 174 )   ( 490 )   ( 470 ) Other unallocated items (e) ( 526 )   ( 184 )   ( 1,584 )   ( 1,110 ) Income Before Income Taxes $ 460   $ 647   $ 1,178   $ 759 (a) The amount for the  nine  months ended  June 30, 2019  included  $ 65  million  of estimated remediation costs recorded to  Other operating expense, net  relating to a recall of a product component, which generally pre-dated the Company's acquisition of CareFusion in fiscal year 2015, within the Medication Management Solutions unit's infusion systems platform.  (b) The amounts in 2018 included expense related to the recognition of a  $ 478  million  fair value step-up adjustment related to Bard's inventory on the acquisition date.  The step-up adjustments recognized by the Medical and Interventional segments for the three months ended  June 30, 2018  were  $ 7  million  and  $ 49  million , respectively, and the adjustments recognized by the Medical and Interventional segments for the  nine  months ended  June 30, 2018  were  $ 60  million  and  $ 418  million , respectively. (c) The amounts in 2018 included charges recorded to write down the carrying value of certain intangible and other assets in the Biosciences unit. 17 (d) The amounts in 2019 included a charge recorded to write down the carrying value of certain intangible assets in the Surgery unit.  (e) Primarily comprised of foreign exchange, certain general and administrative expenses and share-based compensation expense.  The amount for the  nine  months ended  June 30, 2019  included a pre-tax charge of  $ 331  million  related to certain product liability matters, which is further discussed in Note 5, and also included the pre-tax gain recognized on the Company's sale of its Advanced Bioprocessing business of approximately  $ 336  million , which is further discussed in Note 10.  The amounts for the three and  nine  months ended  June 30, 2018  included the pre-tax gain recognized on the Company's sale of its non-controlling interest in Vyaire Medical of approximately  $ 308  million . Note  8  –  Benefit Plans The Company has defined benefit pension plans covering certain employees in the United States and certain international locations.  The measurement date used for these plans is September 30. Net pension cost included the following components for the  three and nine  months ended  June 30 :   Three Months Ended June 30,   Nine Months Ended June 30, (Millions of dollars) 2019   2018   2019   2018 Service cost $ 33   $ 43   $ 101   $ 107 Interest cost 26   29   80   70 Expected return on plan assets ( 44 )   ( 52 )   ( 135 )   ( 125 ) Amortization of prior service credit ( 3 )   ( 3 )   ( 10 )   ( 10 ) Amortization of loss 19   20   58   59 Settlements —   4   —   6 Net pension cost $ 30   $ 39   $ 93   $ 107 The amounts provided above for amortization of prior service credit and amortization of loss represent the reclassifications of prior service credits and net actuarial losses that were recognized in  Accumulated other comprehensive income (loss)  in prior periods. As further discussed in Note 2, upon adopting an accounting standard update on October 1, 2018, all components of the Company’s net periodic pension and postretirement benefit costs, aside from service cost, are recorded to  Other income (expense), net  on its consolidated statements of income, for all periods presented.   Note  9  –  Acquisition Bard On December 29, 2017, the Company completed its acquisition of Bard.  The operating activities of Bard from the acquisition date through December 31, 2017 were not material to the Company’s consolidated results of operations.  As such, Bard's operating results were included in the Company’s consolidated results of operations beginning on January 1, 2018.  During the  first quarter of fiscal year 2019, the Company finalized its allocation of the fair value of consideration transferred to the individual assets acquired and liabilities assumed in this acquisition, which resulted in no material adjustments to the allocation. Note  10  –  Divestiture The Company completed the sale of its Life Sciences segment's Advanced Bioprocessing business in October 2018 pursuant to a definitive agreement that was signed in September 2018.  Assets held for sale on the consolidated balance sheet at  September 30, 2018 , subject to this agreement, were approximately  $ 137  million .  Liabilities held for sale under the agreement were immaterial.  The Company recognized a pre-tax gain on the sale of approximately  $ 336  million  which was recorded as a component of  Other operating expense, net .  The historical financial results for the Advanced Bioprocessing business have not been classified as a discontinued operation.   18 Note  11  –  Business Restructuring Charges The Company incurred restructuring costs during the  nine  months ended  June 30, 2019 , largely in connection with its acquisition of Bard, which were recorded as  Acquisitions and other restructurings .   Restructuring liability activity for the  nine  months ended  June 30, 2019  was as follows: (Millions of dollars) Employee Termination   Other   Total   Bard   Other Initiatives   Bard (a)   Other Initiatives   Bard   Other Initiatives Balance at September 30, 2018 $ 33   $ 23   $ —   $ 4   $ 33   $ 27 Charged to expense 12   8   57   22   69   30 Cash payments ( 25 )   ( 21 )   ( 4 )   ( 20 )   ( 29 )   ( 41 ) Non-cash settlements —   —   ( 52 )   ( 3 )   ( 52 )   ( 3 ) Balance at June 30, 2019 $ 20   $ 10   1   $ 3   $ 21   $ 13 (a) Largely represents the cost associated with certain pre-acquisition equity awards of Bard which, to encourage post-acquisition employee retention, were converted to BD equity awards with substantially the same terms and conditions as were applicable under such Bard awards immediately prior to the acquisition date.   Note  12  –  Intangible Assets Intangible assets consisted of:   June 30, 2019   September 30, 2018 (Millions of dollars) Gross Carrying Amount   Accumulated Amortization   Gross Carrying Amount   Accumulated Amortization Amortized intangible assets               Developed technology $ 13,972   $ 2,638   $ 13,966   $ 1,782 Customer relationships 4,610   1,102   4,584   861 Product rights 115   60   121   58 Trademarks 407   97   407   84 Patents and other 433   301   397   288 Amortized intangible assets $ 19,537   $ 4,198   $ 19,475   $ 3,073 Unamortized intangible assets               Acquired in-process research and development (a) $ 1       $ 37     Trademarks 2       2     Unamortized intangible assets $ 3       $ 39     (a) The decrease in the carrying value of assets at  June 30, 2019  primarily reflects a write-down recorded in the third quarter by the Interventional segment's Surgery unit. Intangible amortization expense for the three months ended  June 30, 2019  and  2018  was  $ 378  million  and  $ 375  million , respectively.  Intangible amortization expense for the  nine  months ended  June 30, 2019  and  2018  was  $ 1,132  million  and  $ 879  million , respectively.  The increase in intangible amortization expense for the  nine  months ended  June 30, 2019  was attributable to assets acquired in the Bard transaction, which is further discussed in Note 9.  19 The following is a reconciliation of goodwill by business segment: (Millions of dollars) Medical   Life Sciences   Interventional   Total Goodwill as of September 30, 2018 $ 10,054    $ 775   $ 12,771    $ 23,600 Divestiture-related adjustments —   3   —   3 Purchase accounting adjustments (a) ( 15 )   —   ( 75 )   ( 90 ) Currency translation ( 12 )   ( 3 )   —   ( 14 ) Goodwill as of June 30, 2019 $ 10,027    $ 775   $ 12,696    $ 23,498 (a) The purchase accounting adjustments were primarily driven by adjustments to tax-related balances recorded upon the finalization of the Bard acquisition allocation within one year of the transaction's closing.   Note  13  –  Derivative Instruments and Hedging Activities The Company uses derivative instruments to mitigate certain exposures.  The Company does not enter into derivative financial instruments for trading or speculative purposes.  The effects these derivative instruments and hedged items have on financial position, financial performance, and cash flows are provided below. Foreign Currency Risks and Related Strategies The Company has foreign currency exposures throughout Europe, Greater Asia, Canada and Latin America.  Transactional currency exposures that arise from entering into transactions, generally on an intercompany basis, in non-hyperinflationary countries that are denominated in currencies other than the functional currency are mitigated primarily through the use of forward contracts.  In order to mitigate foreign currency exposure relating to its investments in certain foreign subsidiaries, the Company has hedged the currency risk associated with those investments with instruments, such as foreign currency-denominated debt, cross-currency swaps and currency exchange contracts, which are designated as net investment hedges.   Hedges of the transactional foreign exchange exposures resulting primarily from intercompany payables and receivables are undesignated hedges.   As such, the gains or losses on these instruments are recognized immediately in income.  These gains and losses are largely offset by gains and losses on the underlying hedged items, as well as the hedging costs associated with the derivative instruments.  The net amounts recognized in  Other (expense) income, net , during the three and  nine  months ended  June 30, 2019  and  2018  were immaterial to the Company's consolidated financial results.  The total notional amounts of the Company’s outstanding foreign exchange contracts as of  June 30, 2019  and  September 30, 2018  were  $ 933  million  and  $ 3.1  billion , respectively.  Certain of the Company's foreign currency-denominated long-term notes outstanding, which had a total carrying value of  $ 1.8  billion  and  $ 3.0  billion , as of  June 30, 2019  and  September 30, 2018 , respectively, were designated as, and were effective as, economic hedges of net investments in certain of the Company's foreign subsidiaries.  In connection with the Company's issuance of Euro-denominated notes during the third quarter of fiscal year 2019, the Company entered into cross-currency swaps, as well as a forward contract, which were designated and effective as economic hedges of net investments in certain of the Company's foreign subsidiaries.  The notional amount of the cross-currency swaps was  $ 2.3  billion  as of June 30, 2019.  The forward contract was terminated in the third quarter, in conjunction with the Company's issuance of the Euro-denominated notes.  Additional disclosures regarding the Company's issuance of Euro-denominated notes in the third quarter of fiscal year 2019 are provided in Note 15. Net gains or losses relating to the net investment hedges, which are attributable to changes in the foreign currencies to U.S. dollar spot exchange rates, are recorded as accumulated foreign currency translation in  Other comprehensive income (loss) .  Upon the termination of a net investment hedge, any net gain or loss included in  Accumulated other comprehensive income (loss)  relative to the investment hedge remains until the foreign subsidiary investment is disposed of or is substantially liquidated.   Net gains (losses) recorded to  Accumulated other comprehensive income (loss)  relating to the Company's net investment hedges for the three and  nine-month  periods were as follows:   Three Months Ended June 30,   Nine Months Ended June 30, (Millions of dollars) 2019   2018   2019   2018 Foreign currency-denominated debt $ 39   $ 158   $ 81   $ 53 Cross-currency swaps $ ( 14 )   $ —   $ ( 14 )   $ — Foreign currency forward contract $ ( 9 )   $ —   $ ( 9 )   $ — 20 Interest Rate Risks and Related Strategies The Company’s primary interest rate exposure results from changes in U.S. dollar interest rates.   The Company’s policy is to manage interest cost using a mix of fixed and variable rate debt.  The Company periodically uses interest rate swaps to manage such exposures.  Under these interest rate swaps, the Company exchanges, at specified intervals, the difference between fixed and floating interest amounts calculated by reference to an agreed-upon notional principal amount.  These swaps are designated as either fair value or cash flow hedges. For interest rate swaps designated as fair value hedges (i.e., hedges against the exposure to changes in the fair value of an asset or a liability or an identified portion thereof that is attributable to a particular risk), changes in the fair value of the interest rate swaps offset changes in the fair value of the fixed rate debt due to changes in market interest rates. Changes in the fair value of the interest rate swaps designated as cash flow hedges (i.e., hedging the exposure to variability in expected future cash flows that is attributable to a particular risk) are offset by amounts recorded in  Other comprehensive income (loss) .  If interest rate derivatives designated as cash flow hedges are terminated, the balance in  Accumulated other comprehensive income (loss)  attributable to those derivatives is reclassified into earnings over the remaining life of the hedged debt.   The net realized loss related to terminated interest rate swaps expected to be reclassified and recorded in  Interest expense  within the next 12 months is  $ 6  million , net of tax. The total notional amount of the Company’s outstanding interest rate swaps designated as fair value hedges was  $ 1.2  billion  at  June 30, 2019  and  September 30, 2018 .  The outstanding swaps represent fixed-to-floating interest rate swap agreements the Company entered into to convert the interest payments on certain long-term notes from the fixed rate to a floating interest rate based on LIBOR.  Changes in the fair value of the interest rate swaps offset changes in the fair value of the fixed rate debt.  The amounts recorded during the three and  nine  months ended  June 30, 2019  and  2018  for changes in the fair value of these hedges were immaterial to the Company's consolidated financial results.                 Other Risk Exposures The Company purchases resins, which are oil-based components used in the manufacture of certain products.  Significant increases in world oil prices that lead to increases in resin purchase costs could impact future operating results.  From time to time, the Company has managed price risks associated with these commodity purchases through commodity derivative forward contracts.  The Company's outstanding commodity derivative forward contracts at  June 30, 2019  were immaterial to the Company's consolidated financial results.  The Company had no outstanding commodity derivative forward contracts at  September 30, 2018 . Financial Statement Effects The fair values of derivative instruments outstanding at  June 30, 2019  and  September 30, 2018  were not material to the Company's consolidated balance sheets.   The amounts reclassified from accumulated other comprehensive income relating to cash flow hedges during the three and  nine  months ended  June 30, 2019  and  2018  were not material to the Company's consolidated financial results.                                     Note  14  –  Financial Instruments and Fair Value Measurements The following reconciles cash and equivalents and restricted cash reported within the Company's consolidated balance sheets at  June 30, 2019  and  September 30, 2018  to the total of these amounts shown on the Company's consolidated statements of cash flows: (Millions of dollars) June 30, 2019   September 30, 2018 Cash and equivalents $ 523   $ 1,140 Restricted cash 71   96 Cash and equivalents and restricted cash $ 594   $ 1,236 Cash equivalents consist of all highly liquid investments with a maturity of three months or less at time of purchase.  Restricted cash consists of cash restricted from withdrawal and usage except for certain product liability matters. The Company’s cash and equivalents includes institutional money market accounts which permit daily redemption and the fair values of these investments are based upon the quoted prices in active markets provided by the holding financial institutions, which are considered Level 1 inputs in the fair value hierarchy.  The fair value of these accounts was immaterial at  June 30, 2019  and the fair value of these accounts at  September 30, 2018  was  $ 228  million .  The Company’s remaining cash and  21 equivalents, excluding restricted cash, were  $ 523  million  and  $ 913  million  at  June 30, 2019  and  September 30, 2018 , respectively.    Short-term investments are held to their maturities and are carried at cost, which approximates fair value.  The short-term investments consist of instruments with maturities greater than  three months  and less than  one year . Long-term debt is recorded at amortized cost.  The fair value of long-term debt is measured based upon quoted prices in active markets for similar instruments, which are considered Level 2 inputs in the fair value hierarchy.  The fair value of long-term debt was  $ 18.9  billion  and  $ 18.8  billion  at  June 30, 2019  and  September 30, 2018 , respectively.  The fair value of the current portion of long-term debt was  $ 2.1  billion  and  $ 1.9  billion  at  June 30, 2019  and  September 30, 2018 , respectively. All other instruments measured by the Company at fair value, including derivatives and contingent consideration liabilities, are immaterial to the Company's consolidated balance sheets. Note  15  –  Debt Second Fiscal Quarter Ended March 31, 2019-Debt Redemption In March 2019, the Company redeemed an aggregate principal amount of  $ 250  million  of its outstanding floating rate senior unsecured U.S. notes due December 29, 2020.  Based upon the  $ 249  million  carrying value of the notes redeemed and the  $ 250  million  the Company paid to redeem the aggregate principal amount of the notes, the Company recorded a loss on this debt extinguishment transaction in the second quarter of fiscal year 2019 of  $ 1  million  as  Other (expense) income, net , on its consolidated statements of income. Third Fiscal Quarter Ended June 30, 2019-Debt-Related Transactions  In June 2019, Becton Dickinson Euro Finance S.à r.l., a private limited liability company (société à responsabilité limitée), which is an indirect, wholly-owned finance subsidiary of the Company, issued Euro-denominated debt consisting of  600  million  Euros ( $ 672  million ) of  0.174 %  notes due June 4, 2021,  800  million  Euros ( $ 896  million ) of  0.632 %  notes due June 4, 2023, and  600  million  Euros ( $ 672  million ) of  1.208 %  notes due June 4, 2026.  The notes are fully and unconditionally guaranteed on a senior unsecured basis by the Company.  No other of the Company's subsidiaries provide any guarantees with respect to these notes.  The indenture covenants include a limitation on liens and a restriction on sale and leasebacks, change of control and consolidation, merger and sale of assets covenants.  These covenants are subject to a number of exceptions, limitations and qualifications. The indenture does not restrict the Company, Becton Dickinson Euro Finance S.à r.l., or any other of the Company's subsidiaries from incurring additional debt or other liabilities, including additional senior debt.  Additionally, the indenture does not restrict Becton Dickinson Euro Finance S.à r.l. and the Company from granting security interests over its assets. The Company used the net proceeds from this long-term debt offering, together with cash on hand, to repay all the  1.000  billion  Euros ( $ 1.120  billion ) of principal outstanding on  0.368 %  notes due June 6, 2019, as well as to fund the Company's repurchase of certain of its long-term senior notes outstanding.   Under this cash tender offer, the Company repurchased the following aggregate principal amounts of its long-term debt at an aggregate market price of  $ 1.169  billion : Interest Rate and Maturity   Aggregate Principal Amount (Millions of dollars) 3.700% Notes due June 6, 2027   $ 675 5.000% Notes due November 12, 2040   175 4.875% Notes due May 15, 2044   75 4.685% Notes due December 15, 2044   175 Total notes purchased   $ 1,100 The carrying value of these long-term notes was  $ 1.112  billion , and the Company recognized a loss on this debt extinguishment of  $ 57  million , which was recorded in June 2019 as  Other (expense) income, net , on the Company’s condensed consolidated statements of income. Note  16  –  Income Taxes New U.S. tax legislation, which is commonly referred to as the Tax Cuts and Jobs Act (the "Act"), was enacted on December 22, 2017.  The Act subjects a U.S. shareholder to tax on global intangible low-taxed income ("GILTI") earned by certain foreign subsidiaries.  The Company has elected to account for its GILTI tax due as a period expense in the year the tax is incurred. 22 Upon completing its accounting for the tax effects of the Act during fiscal year 2019, the Company recognized a net charge of  $ 10  million , which is reflected in the Company's consolidated statement of income within  Income tax provision , to adjust   its one-time transition tax liability for all of its foreign subsidiaries.  Also during fiscal year 2019, the Company recorded a  $ 67  million  decrease to  Income tax provision  to adjust the Company's reevaluation of the permanent reinvestment assertion regarding foreign earnings, as well as an increase to  Income tax provision  of  $ 2  million  relating to the Company's re-measurement of deferred tax balances.    23 Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations The following commentary should be read in conjunction with the condensed consolidated financial statements and accompanying notes presented in this report.  Within the tables presented throughout this discussion, certain columns may not add due to the use of rounded numbers for disclosure purposes.  Percentages and earnings per share amounts presented are calculated from the underlying amounts. Company Overview Becton, Dickinson and Company (“BD”) is a global medical technology company engaged in the development, manufacture and sale of a broad range of medical supplies, devices, laboratory equipment and diagnostic products used by healthcare institutions, physicians, life science researchers, clinical laboratories, the pharmaceutical industry and the general public.  The Company's organizational structure is based upon three principal business segments, BD Medical (“Medical”), BD Life Sciences (“Life Sciences”) and BD Interventional (“Interventional”). BD’s products are manufactured and sold worldwide.  Our products are marketed in the United States and internationally through independent distribution channels and directly to end-users by BD and independent sales representatives. We organize our operations outside the United States as follows: Europe; EMA (which includes the Commonwealth of Independent States, the Middle East and Africa); Greater Asia (which includes Japan and Asia Pacific); Latin America (which includes Mexico, Central America, the Caribbean, and South America); and Canada. We continue to pursue growth opportunities in emerging markets, which include the following geographic regions: Eastern Europe, the Middle East, Africa, Latin America and certain countries within Asia Pacific.  We are primarily focused on certain countries whose healthcare systems are expanding. Overview of Financial Results and Financial Condition For the three months ended  June 30, 2019 , worldwide revenues of  $4.350 billion   increased   1.7%  from the prior-year period which reflected volume growth of approximately 6%, an unfavorable impact from foreign currency translation of approximately  3.0%  and pricing pressures of approximately 0.4%.  Revenues for the three months ended  June 30, 2019  also reflected an unfavorable impact of approximately 1% attributable to the Biosciences unit's divestiture of its Advanced Bioprocessing business at the end of October 2018, as is further discussed in Note 10 in the Notes to Condensed Consolidated Financial Statements.  Volume growth in the  third  quarter of fiscal year  2019  was as follows: • Medical segment growth in the  third  quarter was driven by the segment's Medication Management Solutions, Medication Delivery Solutions and Pharmaceutical Systems units. • Life Sciences segment growth in the  third  quarter reflected growth in all of the segment's units. • Interventional segment growth in the  third  quarter reflected sales growth in all units, particularly in the Urology and Critical Care unit as well as in the Surgery unit. We continue to invest in research and development, geographic expansion, and new product market programs to drive further revenue and profit growth.  Our ability to sustain our long-term growth will depend on a number of factors, including our ability to expand our core business (including geographical expansion), develop innovative new products, and continue to improve operating efficiency and organizational effectiveness.  While the economic environment for the healthcare industry and healthcare utilization in the United States is generally stable, destabilization in the future could adversely impact our businesses. Additionally, macroeconomic challenges in Europe continue to constrain healthcare utilization, although we currently view the environment as stable.  In emerging markets, the Company’s growth is dependent primarily on government funding for healthcare systems.  In addition, pricing pressure exists globally which could adversely impact our businesses.  Cash flows from operating activities were  $1.959 billion  in the first  nine  months of fiscal year  2019 .  At  June 30, 2019 , we had  $606 million  in cash and equivalents and short-term investments, including restricted cash.  We continued to return value to our shareholders in the form of dividends.  During the first  nine  months of fiscal year  2019 , we paid cash dividends of  $737 million , including $624 million paid to common shareholders and $114 million paid to preferred shareholders. Each reporting period, we face currency exposure that arises from translating the results of our worldwide operations to the U.S. dollar at exchange rates that fluctuate from the beginning of such period.  A stronger U.S. dollar, compared to the prior-year period, resulted in an unfavorable foreign currency translation impact to our revenues and earnings during the  third  quarter of fiscal year  2019 .  We evaluate our results of operations on both a reported and a foreign currency-neutral basis, which excludes the impact of fluctuations in foreign currency exchange rates.  As exchange rates are an important factor in understanding period-to-period comparisons, we believe the presentation of results on a foreign currency-neutral basis in addition to reported results helps improve investors’ ability to understand our operating results and evaluate our performance in comparison to prior periods.  Foreign currency-neutral ("FXN") information compares results between periods as if exchange rates had remained constant period-over-period.  We use results on a foreign currency-neutral basis as one measure to evaluate  24 our performance.  We calculate foreign currency-neutral percentages by converting our current-period local currency financial results using the prior-period foreign currency exchange rates and comparing these adjusted amounts to our current-period results.  These results should be considered in addition to, not as a substitute for, results reported in accordance with U.S. generally accepted accounting principles ("GAAP").  Results on a foreign currency-neutral basis, as we present them, may not be comparable to similarly titled measures used by other companies and are not measures of performance presented in accordance with U.S. GAAP. Results of Operations Medical Segment The following summarizes  third  quarter Medical revenues by organizational unit:   Three months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change Medication Delivery Solutions $ 984   $ 977   0.8  %   (3.3 )%   4.1 % Medication Management Solutions 658   610   7.7  %   (1.5 )%   9.2 % Diabetes Care 275   276   (0.4 )%   (3.3 )%   2.9 % Pharmaceutical Systems 394   383   3.1  %   (4.7 )%   7.8 % Total Medical Revenues $ 2,311   $ 2,246   2.9  %   (3.1 )%   6.0 % Third  quarter Medical segment revenues reflected sales growth attributable to the Medication Management Solutions unit's installations of infusion systems and sales of disposables.  Revenues in the Medication Delivery Solutions unit reflected growth in global sales of vascular access devices.  The Pharmaceutical Systems unit's  third  quarter revenue growth was driven by sales of self-injection systems.  Strength in the Diabetes Care unit's sales of pen needles in emerging markets was partially offset by weaker U.S. sales in the current-year period compared with sales in the prior-year period.  Medical segment total revenues for the  nine-month  period are below.  Revenues in the current-year period were favorably impacted by the inclusion of revenues, resulting from our acquisition of C.R. Bard, Inc. ("Bard") in December 2017, associated with certain Bard products within the Medication Delivery Solutions unit in the first quarter of fiscal year  2019  but not in the first quarter of the prior-year period as operating activities of the acquired business were not included in our consolidated results of operations until January 1, 2018.   Nine months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change Total Medical Revenues $ 6,626   $ 6,270   5.7 %   (2.6 )%   8.3 % Medical segment operating income for the three and  nine-month  periods is provided below. Operating income in the current year's  nine-month  period reflects the inclusion of results associated with certain Bard products in the first quarter of  2019 , as noted above.   Three months ended June 30,   Nine months ended June 30, (Millions of dollars) 2019   2018   2019   2018 Medical segment operating income $ 744   $ 732   $ 2,008   $ 1,943                 Segment operating income as % of Medical revenues 32.2 %   32.6 %   30.3 %   31.0 % The Medical segment's operating income in the  third  quarter was driven by its performance with respect to gross profit margin and operating expenses.   • Gross profit margin was lower in the  third  quarter of  2019  as compared with the  third  quarter of  2018  primarily due to unfavorable foreign currency translation, unfavorable product mix, pricing pressures and higher raw material costs.  These unfavorable impacts to the Medical segment's gross margin were partially offset by lower manufacturing costs resulting from continuous improvement projects which enhanced the efficiency of our operations, as well as the unfavorable prior-year impact of recognizing a fair value step-up adjustment relating to Bard's inventory on the acquisition date.  25 • Selling and administrative expense as a percentage of revenues was lower in the  third  quarter of  2019  as compared with the prior-year period primarily due to lower selling expenses. • Research and development expense as a percentage of revenues was lower in the  third  quarter of  2019  as compared with the  third  quarter of  2018  due to recent completion of projects and the timing of project spending. Life Sciences Segment The following summarizes  third  quarter Life Sciences revenues by organizational unit:   Three months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change Preanalytical Systems $ 407   $ 404   0.7  %   (4.0 )%   4.7  % Diagnostic Systems 368   362   1.7  %   (3.9 )%   5.6  % Biosciences 284   314   (9.6 )%   (2.9 )%   (6.7 )% Total Life Sciences Revenues $ 1,058   $ 1,079   (2.0 )%   (3.7 )%   1.7  % The Life Sciences segment's revenues in the  third  quarter reflected continued strength in sales of the Diagnostic Systems unit's  BD   MAX TM  molecular platform as well as growth in sales of core microbiology products.  The Preanalytical Systems unit's  third  quarter revenues reflected growth in sales of core products in emerging markets.   Third  quarter revenues in the Biosciences unit reflected growth in research reagent sales, as well as growth in U.S. research instrument sales, but were unfavorably impacted by the divestiture of the Advanced Bioprocessing business, as previously discussed.  The Biosciences unit's results for the prior-year period included revenues associated with the Advanced Bioprocessing business of $35 million. Life Sciences segment total revenues for the  nine-month  period were as follows:   Nine months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change Total Life Sciences Revenues $ 3,166   $ 3,222   (1.7 )%   (3.0 )%   1.3 % Life Sciences segment operating income for the three and  nine-month  periods was as follows:   Three months ended June 30,   Nine months ended June 30, (Millions of dollars) 2019   2018   2019   2018 Life Sciences segment operating income $ 304   $ 241   $ 902   $ 893                 Segment operating income as % of Life Sciences revenues 28.7 %   22.4 %   28.5 %   27.7 % The Life Sciences segment's operating income in the  third  quarter was driven by its performance with respect to gross profit margin and operating expenses.   • Gross profit margin in the  third  quarter of fiscal year  2019  was higher compared with the  third  quarter of  2018  primarily due to the unfavorable prior-year impact of the Biosciences unit's write-down of certain intangible and other assets.  Gross margin in the  third  quarter of  2019  was also favorably impacted by lower manufacturing costs resulting from continuous improvement projects which enhanced the efficiency of our operations.  These favorable impacts to the Life Sciences segment's gross margin were partially offset by unfavorable foreign currency translation and unfavorable product mix. • Selling and administrative expense as a percentage of revenues in the  third  quarter of  2019  was lower compared with the prior-year period primarily due to the timing of marketing program spending, offset by unfavorable foreign currency translation.   • Research and development expense as a percentage of revenues was lower in the  third  quarter of  2019  as compared with the  third  quarter of  2018  primarily due to the Biosciences unit's recognition of write-downs in the prior-year period and also due to the timing of project spending. 26 Interventional Segment The following summarizes  third  quarter Interventional revenues by organizational unit:   Three months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change Surgery $ 349   $ 336   3.9  %   (1.5 )%   5.4 % Peripheral Intervention 350   353   (0.8 )%   (3.1 )%   2.3 % Urology and Critical Care 283   265   6.5  %   (2.0 )%   8.5 % Total Interventional Revenues $ 981   $ 954   2.9  %   (2.3 )%   5.2 % The Interventional segment's revenues in the  third  quarter reflected growth in the Urology and Critical Care unit's sales of acute urology products and sales by the unit's home care and targeted temperature management businesses.   Third  quarter revenues in the Surgery unit reflected growth in sales of the unit's biosurgery and infection prevention products.  The Peripheral Intervention unit's  third  quarter revenues reflected growth in emerging market sales.  This growth was partially offset by an unfavorable impact related to a letter issued in March 2019 by the U.S. Food and Drug Administration ("FDA") to healthcare professionals regarding the use of paclitaxel-coated devices in the treatment of peripheral artery disease, which impacted sales of our drug-coated balloon products.   Interventional segment total revenues for the  nine-month  period are provided below. Revenues in the current-year period were favorably impacted by the inclusion of revenues associated with Bard's products in the segment's results for the first quarter of fiscal year  2019 , as further discussed above.   Nine months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change Total Interventional Revenues $ 2,914   $ 2,089   39.5 %   (2.2 )%   41.7 % Interventional segment operating income for the three and  nine-month  periods is provided below.  Operating income in the current year's  nine-month  period reflects the inclusion of Bard results in the first quarter of  2019 , as further discussed above.   Three months ended June 30,   Nine months ended June 30, (Millions of dollars) 2019   2018   2019   2018 Interventional segment operating income $ 183   $ 175   $ 623   $ 102                 Segment operating income as % of Interventional revenues 18.6 %   18.3 %   21.4 %   4.9 % The Interventional segment's operating income in the  third  quarter was driven by its performance with respect to gross profit margin and operating expenses.   • Gross profit margin was higher in the  third  quarter of  2019  as compared with the  third  quarter of  2018  primarily due to the unfavorable prior-year impact of recognizing a fair value step-up adjustment relating to Bard's inventory on the acquisition date and lower manufacturing costs resulting from continuous improvement projects, which enhanced the efficiency of our operations, and synergy initiatives.   These favorable impacts to the Interventional segment's gross margin were partially offset by unfavorable foreign currency translation and unfavorable product mix. • Selling and administrative expense as a percentage of revenues in the  third  quarter of  2019  was relatively flat compared with the prior-year period.   • Research and development expense as a percentage of revenues was higher in the  third  quarter of  2019  as compared with the  third  quarter of  2018  primarily due to the Surgery unit's recognition of a write-down in the current-year period, as further discussed below. 27 Geographic Revenues BD’s worldwide  third  quarter revenues by geography were as follows:   Three months ended June 30, (Millions of dollars) 2019   2018   Total Change   Estimated FX Impact   FXN Change United States $ 2,440   $ 2,338   4.4  %   —  %   4.4 % International 1,910   1,941   (1.6 )%   (6.7 )%   5.1 % Total Revenues $ 4,350   $ 4,278   1.7  %   (3.0 )%   4.7 % Third  quarter U.S. revenues reflected growth in all three segments.  Revenue growth in the current-year period was largely attributable to sales in the Medical segment's Medication Management Solutions unit as well as to sales in the Interventional segment's Urology and Critical Care unit.  U.S. revenue growth in the  third  quarter of  2019  was unfavorably impacted by results in the Medical segment's Diabetes Care unit and the Interventional segment's Peripheral Intervention unit, as previously noted in the discussions above. International revenues in the  third  quarter of  2019  reflected growth in all three segments.   Third  quarter international revenue growth in the Medical segment was particularly driven by growth in the Pharmaceutical Systems and Medication Delivery Solutions units as well as by growth in the Life Sciences segment's Diagnostic Systems and Preanalytical Systems units.  Emerging market revenues for the  third  quarter were  $703 million , compared with  $689 million  in the prior year’s quarter.  Emerging market revenues in the current-year period also included an estimated  $47 million  unfavorable impact due to foreign currency translation.   Third  quarter revenue growth in emerging markets was particularly driven by sales in China and EMA. Specified Items Reflected in the financial results for the three and  nine-month  periods of fiscal years  2019  and  2018  were the following specified items:   Three months ended June 30,   Nine months ended June 30, (Millions of dollars) 2019   2018   2019   2018 Integration costs (a) $ 63    $ 103   $ 206   $ 255 Restructuring costs (a) 27    33   99   288 Transaction costs (a) —    11   1   61 Financing impacts (b) —   —   —   49 Purchase accounting adjustments (c) 378   433   1,135   1,358 Transaction gain/loss and product-related matters (d) —   —   61   — European regulatory initiative-related costs (e) 14   —   29   — Impacts of debt extinguishment (f) 52   3   53   16 Net impact of gain on sale of investment and asset impairments (g) 30   (214 )   30   (214 ) Hurricane recovery-related impacts (10 )   3   (10 )   15 Total specified items 553    372   1,604   1,830 Less: tax impact of specified items and tax reform (h) 120    130   263   133 After-tax impact of specified items $ 432    $ 242   $ 1,341   $ 1,697 (a) Represents integration, restructuring and transaction costs which are primarily recorded in  Acquisitions and other restructurings  and are further discussed below. (b) Represents financing impacts associated with the Bard acquisition, which were recorded in  Interest income  and  Interest expense . (c) Primarily represents non-cash amortization expense associated with acquisition-related identifiable intangible assets.  BD’s amortization expense is primarily recorded in  Cost of products sold .  The three and  nine-month  amounts in 2018 also included fair value step-up adjustments of $56 million and $478 million, respectively, relating to Bard's inventory on the acquisition date. 28 (d) Represents amounts relating to certain product liability matters and the estimated cost of a product recall, as well as the pre-tax gain recognized on BD's sale of its Advanced Bioprocessing business.  Further discussion regarding these amounts recorded to  Other operating expense, net  is provided below. (e) Represents initial costs required to develop processes and systems to comply with emerging regulations such as the European Union Medical Device Regulation ("EUMDR") and General Data Protection Regulation ("GDPR").  These costs were recorded in  Cost of products sold  and  Research and development expense. (f) Represents the impacts, which were primarily recorded in  Other income (expense), net,  of our extinguishment of certain long-term senior notes. (g) The amounts in 2019 represented a non-cash charge recorded to write down the carrying value of certain intangible assets in the Surgery unit.  The amounts in 2018 included the net amount, recognized in the period and recorded to  Other income (expense), net,  related to BD's sale of its non-controlling interest in Vyaire Medical, partially offset by $81 million of charges recorded to write down the carrying value of certain intangible and other assets in the Biosciences unit. (h) The amounts in the  nine-month  periods of fiscal years  2019  and  2018  included tax (benefit) expense, net, of $(54) million and $275 million, respectively, relating to new U.S. tax legislation, as further discussed below.  Gross Profit Margin Gross profit margin for the three and  nine-month  periods of fiscal year  2019  compared with the prior-year periods in fiscal year  2018  reflected the following impacts:   Three-month period   Nine-month period June 30, 2018 gross profit margin %  47.1  %   44.7  % Impact of purchase accounting adjustments and other specified items 3.1  %   3.6  % Operating performance (1.2 )%   0.2  % Foreign currency translation (1.3 )%   (1.1 )% June 30, 2019 gross profit margin % 47.7  %   47.4  % The impact of purchase accounting adjustments and other specified items on the current-year three and  nine-month  periods was favorable due to a comparison to the prior-year periods, which included the recognition of fair value step-up adjustments relating to Bard's inventory on the acquisition date, as well as write-downs of certain intangible and other assets in the Biosciences unit, as previously discussed above.  Operating performance for the three-month period primarily reflected the impact of unfavorable product mix, partially offset by lower manufacturing costs resulting from continuous operations improvement projects and synergy initiatives.  Operating performance in the current-year  nine-month  period primarily reflected the favorable impact of Bard on product mix as well as lower manufacturing costs resulting from continuous operations improvement projects and synergy initiatives, partially offset by higher raw material costs and pricing pressures.  29 Operating Expenses A summary of operating expenses for the three and  nine-month  periods of fiscal years  2019  and  2018  is as follows:   Three months ended June 30,   Increase (decrease) in basis points   Nine months ended June 30,   Increase (decrease) in basis points   2019   2018     2019   2018   (Millions of dollars)                       Selling and administrative expense $ 1,076   $ 1,086       $ 3,238   $ 2,915     % of revenues 24.7 %   25.4 %   (70 )   25.5 %   25.2 %   30                         Research and development expense $ 282   $ 277       $ 792   $ 727     % of revenues 6.5 %   6.5 %   —   6.2 %   6.3 %   (10 )                         Acquisitions and other restructurings $ 90   $ 142       $ 281   $ 600                             Other operating expense, net $ —   $ —       $ 61   $ —     Selling and administrative expense The decrease in selling and administrative expense as a percentage of revenues in the current three-month period primarily reflected higher revenues and the achievement of cost synergies in the current year's quarter.  The increase in selling and administrative expense as a percentage of revenues in the current  nine-month  period compared with the prior-year period primarily reflected higher selling and general administrative costs attributable to Bard, which had a higher selling and administrative spending profile than BD, in the current-year's first quarter results.  Research and development expense Research and development expense as a percentage of revenues in the current three and  nine-month  periods was relatively flat compared with the prior-year periods.  Spending in both the current and prior-year periods reflected our continued commitment to invest in new products and platforms.  Expense in the current-year periods also included a charge recorded to write down the carrying value of certain intangible assets in the Surgery unit and expense in the prior-year periods included certain write-down charges in the Biosciences unit, as noted above. Acquisitions and other restructurings Costs relating to acquisitions and other restructurings in the current year's three and  nine-month  periods largely represented integration and restructuring costs incurred due to our acquisition of Bard in the first quarter of fiscal year 2018.  Costs relating to acquisitions and other restructurings in the prior year's  three and nine -month periods included restructuring, integration and transaction costs incurred due to our acquisition of Bard as well as integration and restructuring costs related to our CareFusion acquisition and other portfolio rationalization initiatives.  For further disclosures regarding restructuring costs, refer to Note 11 in the Notes to Condensed Consolidated Financial Statements. Other operating expense, net Other operating expense in the current  nine-month  period included a charge of approximately  $331 million  relating to certain product liability matters as further discussed in Note 5 in the Notes to Condensed Consolidated Financial Statements, as well as the estimated costs of $65 million relating to a product recall in the Medical segment.  Net other operating expense in the current  nine-month  period additionally included the pre-tax gain of  $336 million  recognized on BD's sale of its Advanced Bioprocessing business.  Additional disclosures regarding this divestiture transaction are provided in Note 10 in the Notes to Condensed Consolidated Financial Statements. 30 Nonoperating Income Net interest expense The components for the three and  nine-month  periods of fiscal years  2019  and  2018  were as follows:   Three months ended June 30,   Nine months ended June 30, (Millions of dollars) 2019   2018   2019   2018 Interest expense $ (156 )   $ (182 )   $ (498 )   $ (525 ) Interest income 2   8   8   55 Net interest expense $ (154 )   $ (174 )   $ (490 )   $ (470 ) Lower interest expense in the current year's three and  nine-month  periods compared with the prior-year periods primarily reflected higher fees incurred in the prior-year period to draw from our term loan facility, which is further discussed below.  Interest expense in the current-year periods was also favorably impacted by debt repayments during the current year, as well as lower overall interest rates on debt outstanding during the current-year period as a result of refinancing activities. Interest income was not material to our consolidated financial results in the current and prior-year three-month periods. The  decrease  in interest income for the  nine-month  period of fiscal year  2019  reflected higher levels of cash on hand in the first quarter of fiscal year 2018 in anticipation of closing the Bard acquisition at the end of the quarter.  Other income (expense), net The components of  Other income (expense), net  for the three and  nine-month  periods of fiscal years  2019  and  2018  were largely not material to our consolidated financial results. Other income in the three and  nine-month  periods of fiscal year  2018   included a net amount  related to BD's sale of its non-controlling interest in Vyaire Medical, as noted above. Income Taxes The income tax rates for the three and  nine-month  periods of fiscal years  2019  and  2018  are provided below.     Three months ended June 30,   Nine months ended June 30,   2019   2018   2019   2018 Effective income tax rate 2.0 %   8.2 %   9.1 %   41.2 %                 Impact, in basis points, from specified items and tax reform (1,080 )   (980 )   (420 )   2,400 The effective income tax rate for the three-month period of fiscal year  2019  reflected a more favorable tax impact from specified items and tax reform compared with the benefit associated with specified items recognized in the prior-year period.  The effective income tax rate for the  nine-month  period of fiscal year  2019  reflected a favorable impact relating to the timing of certain discrete items, as well as the recognition of $54 million of tax benefit recorded to adjust our consolidated balance sheet for the impacts of U.S. tax legislation that was enacted in December 2017, compared with additional tax expense of $275 million that was recognized as a result of this legislation in the prior-year period.  For further disclosures regarding the finalization of our accounting for this U.S. tax legislation, refer to Note 16 in the Notes to Condensed Consolidated Financial Statements.   Net Income and Diluted Earnings per Share Net Income and Diluted Earnings per Share for the three and  nine-month  periods of fiscal years  2019  and  2018  were as follows:   Three months ended June 30,   Nine months ended June 30,   2019   2018   2019   2018 Net Income (Millions of dollars) $ 451   $ 594   $ 1,071   $ 446 Diluted Earnings per Share $ 1.51   $ 2.03   $ 3.49   $ 1.27                 Unfavorable impact-specified items $ (1.58 )   $ (0.88 )   $ (4.88 )   $ (6.51 ) Dilutive impact of BD shares $ —   $ —   $ —   $ (0.31 ) Unfavorable impact-foreign currency translation $ (0.25 )       $ (0.64 )     31 The dilutive impact for the  nine-month  period of fiscal year  2018  included the unfavorable impact of BD shares issued through public offerings of equity securities in the third quarter of fiscal year 2017, in anticipation of the Bard acquisition, and BD shares issued as consideration transferred in the first quarter of fiscal year 2018 for the Bard acquisition. Liquidity and Capital Resources The following table summarizes our condensed consolidated statements of cash flows:   Nine months ended June 30, (Millions of dollars) 2019   2018 Net cash provided by (used for)       Operating activities $ 1,959   $ 1,559 Investing activities $ (300 )   $ (15,173 ) Financing activities $ (2,300 )   $ 949 Cash generated from operations, along with available cash and cash equivalents, is expected to be sufficient to fund our normal operating needs for the remainder of fiscal year  2019 .  Normal operating needs in fiscal year  2019  include working capital, capital expenditures, and cash dividends.   Net Cash Flows from Operating Activities Cash flows from operating activities in the first  nine months  of fiscal year  2019  reflected net income, adjusted by a change in operating assets and liabilities that was a net use of cash.  This net use of cash primarily reflected lower levels of accounts payable and accrued expenses and higher levels of inventory, partially offset by lower levels of trade receivables.  Accounts payable and accrued expenses were lower primarily due to the timing and amount of interest payments due as well as cash paid related to our product liability matters and income taxes payable. Cash flows from operating activities in the current-year period were adjusted by the charge of  $331 million  relating to certain product liability matters, which is noted above and further discussed in Note 5 in the Notes to Condensed Consolidated Financial Statements. Cash flows from operating activities in the current-year period additionally reflected an adjustment for a gain of  $336 million  on our sale of a business, which is further discussed in Note 10 in the Notes to Condensed Consolidated Financial Statements, as well as $200 million of discretionary cash contributions to fund our pension obligation.  Cash flows from operating activities in the prior-year period reflected a non-cash change to deferred tax asset and liability balances which were remeasured during the prior-year period under new tax legislation, as further discussed above.  Cash flows from operating activities in the prior-year period additionally reflected a change in operating assets and liabilities that was a net source of cash, a $308 million gain on the sale of our remaining interest in the Vyaire Medical venture, as well as discretionary cash contributions to fund our pension obligation of $287 million. Net Cash Flows from Investing Activities Our investments in capital expenditures are focused on projects that enhance our cost structure and manufacturing capabilities, and support our strategy of geographic expansion with select investments in growing markets.  Net outflows from investing activities in the first  nine months  of fiscal year  2019  included capital expenditure-related outflows of  $599 million , compared with  $588 million  in the prior-year period. Net cash flows from investing activities in the first  nine months  of fiscal year  2019  also included  $477 million  of proceeds from our sale of a business during the period, as further discussed above, compared with  $534 million  of proceeds from divestitures in the prior-year period.  Cash outflows for acquisitions in the prior-year period of  $15.0 billion  related to our acquisition of Bard.  32 Net Cash Flows from Financing Activities Net cash from financing activities in the first  nine months  of fiscal years  2019  and  2018  included the following significant cash flows:   Nine months ended June 30, (Millions of dollars) 2019   2018 Cash inflow (outflow)       Change in credit facility borrowings $ 300   $ 200 Proceeds from long-term debt and term loans $ 2,224   $ 4,335 Payments of debt and term loans $ (3,882 )   $ (2,723 ) Dividends paid $ (737 )   $ (687 ) Certain measures relating to our total debt were as follows: (Millions of dollars) June 30, 2019   September 30, 2018 Total debt $ 20,184   $ 21,496         Short-term debt as a percentage of total debt 10.7 %   12.1 % Weighted average cost of total debt 2.9 %   3.2 % Total debt as a percentage of total capital* 45.9 %   47.8 % *    Represents shareholders’ equity, net non-current deferred income tax liabilities, and debt. The decrease in the ratio of short-term debt as a percentage of total debt at  June 30, 2019  was primarily driven by the payment of certain short-term notes as well as the issuance of long-term notes in 2019.  Further disclosures regarding these transactions are provided in Note 15 in the Notes to Condensed Consolidated Financial Statements. Cash and Short-term Investments At  June 30, 2019 , total worldwide cash and short-term investments, including restricted cash, were approximately  $606 million , which were primarily held in jurisdictions outside of the United States.  Financing Facilities In September 2018, we entered into a 364-day $750 million senior unsecured term loan facility.  Borrowings outstanding under the term loan facility were  $35 million  at  June 30, 2019 .  We also have a five-year senior unsecured revolving credit facility in place which provides borrowing of up to $2.25 billion.  This facility will expire in December 2022.  We are able to issue up to $100 million in letters of credit under this new revolving credit facility and it also includes a provision that enables BD, subject to additional commitments made by the lenders, to access up to an additional $500 million in financing through the facility for a maximum aggregate commitment of $2.75 billion.  We use proceeds from this facility to fund general corporate needs.  Borrowings outstanding under the revolving credit facility at  June 30, 2019  were  $300 million . The agreements for our term loan and revolving credit facility contained the following financial covenants.  We were in compliance with these covenants as of  June 30, 2019 . • We are required to maintain an interest expense coverage ratio of not less than 4-to-1 as of the last day of each fiscal quarter.   • We are required to have a leverage coverage ratio, as applicable depending upon commencement and maturity of the facility, of no more than: ◦ 6-to-1 from the closing date of the Bard acquisition until and including the first fiscal quarter-end thereafter; ◦ 5.75-to-1 for the subsequent four fiscal quarters thereafter; ◦ 5.25-to-1 for the subsequent four fiscal quarters thereafter; ◦ 4.5-to-1 for the subsequent four fiscal quarters thereafter; ◦ 4-to-1 for the subsequent four fiscal quarters thereafter; ◦ 3.75-to-1 thereafter.   We also have informal lines of credit outside the United States.  The Company had no commercial paper borrowings outstanding as of  June 30, 2019 .  We may, from time to time, sell certain trade receivable assets to third parties as we manage working capital over the normal course of our business activities. 33 Access to Capital and Credit Ratings Our corporate credit ratings with the rating agencies Standard & Poor's Ratings Services and Fitch Ratings at  June 30, 2019  were unchanged compared with our ratings at  September 30, 2018 .  In May 2019, Moody's Investor Service reaffirmed our  September 30, 2018  ratings and revised the agency's outlook regarding the likely direction of these ratings over the medium term from Stable to Positive. Lower corporate debt ratings and downgrades of our corporate credit ratings or other credit ratings may increase our cost of borrowing.  We believe that given our debt ratings, our financial management policies, our ability to generate cash flow and the non-cyclical, geographically diversified nature of our businesses, we would have access to additional short-term and long-term capital should the need arise.  A rating reflects only the view of a rating agency and is not a recommendation to buy, sell or hold securities.  Ratings can be revised upward or downward at any time by a rating agency if such rating agency decides that circumstances warrant such a change. Concentrations of Credit Risk We continually evaluate our accounts receivables for potential collection risks, particularly those resulting from sales to government-owned or government-supported healthcare facilities in certain countries, as payment may be dependent upon the financial stability and creditworthiness of those countries’ national economies. We continually evaluate all governmental receivables for potential collection risks associated with the availability of government funding and reimbursement practices. We believe the current reserves related to all governmental receivables are adequate and that these receivables will not have a material adverse impact on our financial position or liquidity. Regulatory Matters In January 2018, BD received a Warning Letter from the U.S. FDA, citing certain alleged violations of quality system regulations and of law with respect to our Preanalytical Systems facility in Franklin Lakes, New Jersey. The Warning Letter states that, until BD resolves the outstanding issues covered by the Warning Letter, the FDA will not clear or approve any premarket submissions for Class III devices to which the non-conformances are reasonably related or grant requests for certificates to foreign governments. BD is working closely with the FDA and intends to fully implement corrective actions to address the concerns identified in the Warning Letter. However, BD cannot give any assurances that the FDA will be satisfied with its responses to the Warning Letter or as to the expected date of resolution of matters included in the Warning Letter. While BD does not believe that the issues identified in the Warning Letter will have a material impact on BD’s operation, no assurances can be given that the resolution of this matter will not have a material adverse effect on BD’s business, results of operations, financial conditions and/or liquidity. Cautionary Statement Regarding Forward-Looking Statements BD and its representatives may from time to time make certain forward-looking statements in publicly released materials, both written and oral, including statements contained in filings with the Securities and Exchange Commission, press releases, and our reports to shareholders. Forward-looking statements may be identified by the use of words such as “plan,” “expect,” “believe,” “intend,” “will,”, “may”, “anticipate,” “estimate” and other words of similar meaning in conjunction with, among other things, discussions of future operations and financial performance (including volume growth, pricing, sales and earnings per share growth, and cash flows) and statements regarding our strategy for growth, future product development, regulatory approvals, competitive position and expenditures.  All statements that address our future operating performance or events or developments that we expect or anticipate will occur in the future are forward-looking statements. Forward-looking statements are, and will be, based on management’s then-current views and assumptions regarding future events, developments and operating performance, and speak only as of their dates.  Investors should realize that if underlying assumptions prove inaccurate, or risks or uncertainties materialize, actual results could vary materially from our expectations and projections.  Investors are therefore cautioned not to place undue reliance on any forward-looking statements.  Furthermore, we undertake no obligation to update or revise any forward-looking statements after the date they are made, whether as a result of new information, future events and developments or otherwise, except as required by applicable law or regulations. The following are some important factors that could cause our actual results to differ from our expectations in any forward-looking statements.  For further discussion of certain of these factors, see Item 1A.  Risk Factors in our  2018  Annual Report on Form 10-K. • Weakness in the global economy and financial markets, which could increase the cost of operating our business, weaken demand for our products and services, negatively impact the prices we can charge for our products and services, or impair our ability to produce our products. 34 • Competitive factors that could adversely affect our operations, including new product introductions and technologies (for example, new forms of drug delivery) by our current or future competitors, consolidation or strategic alliances among healthcare companies, distributors and/or payers of healthcare to improve their competitive position or develop new models for the delivery of healthcare, increased pricing pressure due to the impact of low-cost manufacturers, patents attained by competitors (particularly as patents on our products expire), and new entrants into our markets. • Risks relating to our acquisition of Bard, including our ability to successfully combine and integrate the Bard operations in order to obtain the anticipated benefits and costs savings from the transaction, and the significant additional indebtedness we incurred in connection with the financing of the acquisition and the impact this increased indebtedness may have on our ability to operate the combined company. • The adverse financial impact resulting from unfavorable changes in foreign currency exchange rates.  • Regional, national and foreign economic factors, including inflation, deflation, and fluctuations in interest rates, and their potential effect on our operating performance. • Our ability to achieve our projected level or mix of product sales, as our earnings forecasts are based on projected sales volumes and pricing of many product types, some of which are more profitable than others. • Changes in reimbursement practices of third-party payers or adverse decisions relating to our products by such payers, which could reduce demand for our products or the price we can charge for such products. • The impact of the medical device excise tax under the Patient Protection and Affordable Care Act in the United States.  While this tax has been suspended through December 31, 2019, it is uncertain whether the suspension will be extended beyond that date. • Healthcare reform in the U.S. or in other countries in which we do business that may involve changes in government pricing and reimbursement policies or other cost containment reforms. • Changes in the domestic and foreign healthcare industry or in medical practices that result in a reduction in procedures using our products or increased pricing pressures, including the continued consolidation among healthcare providers and trends toward managed care and healthcare cost containment.   • The impact of changes in U.S. federal laws and policy that could affect fiscal and tax policies, healthcare, and international trade, including import and export regulation and international trade agreements.  Recently, the U.S., China and other countries have imposed tariffs on certain products imported into their respective countries.  Additional tariffs or other trade barriers imposed by the U.S., China or other countries could adversely impact our supply chain costs or otherwise adversely impact our results of operations. • Fluctuations in the cost and availability of oil-based resins and other raw materials, as well as certain components, used in our products, the ability to maintain favorable supplier arrangements and relationships (particularly with respect to sole-source suppliers), and the potential adverse effects of any disruption in the availability of such items. • Security breaches of our information technology systems or our products, which could impair our ability to conduct business, result in the loss of BD trade secrets or otherwise compromise sensitive information of BD or its customers, suppliers and other business partners, or of customers' patients, or result in product efficacy or safety concerns for certain of our products, and result in actions by regulatory bodies or civil litigation. • Difficulties inherent in product development, including the potential inability to successfully continue technological innovation, successfully complete clinical trials, obtain regulatory approvals in the United States and abroad, obtain intellectual property protection for our products, obtain coverage and adequate reimbursement for new products, or gain and maintain market approval of products, as well as the possibility of infringement claims by competitors with respect to patents or other intellectual property rights, all of which can preclude or delay commercialization of a product.  Delays in obtaining necessary approvals or clearances from FDA or other regulatory agencies or changes in the regulatory process may also delay product launches and increase development costs. • The impact of business combinations or divestitures, including any volatility in earnings relating to acquisition-related costs, and our ability to successfully integrate any business we may acquire. • Our ability to penetrate or expand our operations in emerging markets, which depends on local economic and political conditions, and how well we are able to make necessary infrastructure enhancements to production facilities and distribution networks. Our international operations also increase our compliance risks, including risks under the Foreign Corrupt Practices Act and other anti-corruption laws, as well as regulatory and privacy laws. • Conditions in international markets, including social and political conditions, civil unrest, terrorist activity, governmental changes, trade barriers, restrictions on the ability to transfer capital across borders, difficulties in  35 protecting and enforcing our intellectual property rights and governmental expropriation of assets.  This includes the possible impact of the United Kingdom's exit from the European Union ("Brexit"), which has created uncertainties affecting our business operations in the United Kingdom and the EU, and possibly other countries, including with respect to compliance with the regulatory regimes regarding the labeling and registration of the products we sell in these markets.  The limited progress in the negotiations of the terms of the U.K.’s withdraw and the possibility that the U.K. may exit the EU without a formal withdrawal agreement in place has increased the uncertainty around Brexit.  While we have taken proactive steps to mitigate any disruption to our operations, we could face increased regulatory costs, volatility in exchange rates, market instability and other risks, depending on the final terms of the U.K.’s exit from the EU.  • Deficit reduction efforts or other actions that reduce the availability of government funding for healthcare and research, which could weaken demand for our products and result in additional pricing pressures, as well as create potential collection risks associated with such sales. • Fluctuations in university or U.S. and international governmental funding and policies for life sciences research. • Fluctuations in the demand for products we sell to pharmaceutical companies that are used to manufacture, or are sold with, the products of such companies, as a result of funding constraints, consolidation or otherwise. • The effects of weather, regulatory or other events that adversely impact our supply chain, including our ability to manufacture our products (particularly where production of a product line is concentrated in one or more plants) or source materials or components from suppliers (including sole-source suppliers) that are needed for such manufacturing, or our ability to provide products to our customers, including events that impact  key distributors.  • Pending and potential future litigation or other proceedings asserting, and/or subpoenas seeking information with respect to, alleged violations of law (including in connection with federal and/or state healthcare programs such as Medicare or Medicaid, and/or sales and marketing practices such as investigative subpoenas and the civil investigative demands received by BD and Bard), antitrust claims, product liability claims (which may involve lawsuits seeking class action status or seeking to establish multi-district litigation proceedings, including claims relating to our hernia repair implant products, surgical continence products for women and vena cava filter products), claims with respect to environmental matters, and patent infringement actions, and the availability or collectability of insurance relating to any such claims. • New or changing laws and regulations affecting our domestic and foreign operations, or changes in enforcement practices, including laws relating to trade, monetary and fiscal policies, taxation (including tax reforms that could adversely impact multinational corporations), sales practices, environmental protection, price controls, and licensing and regulatory requirements for new products and products in the postmarketing phase. In particular, the U.S. and other countries may impose new requirements regarding registration, labeling or prohibited materials that may require us to re-register products already on the market or otherwise impact our ability to market our products. Environmental laws, particularly with respect to the emission of greenhouse gases, are also becoming more stringent throughout the world, which may increase our costs of operations or necessitate changes in our manufacturing plants or processes or those of our suppliers, or result in liability to BD. • Product efficacy or safety concerns regarding our products resulting in product holds or recalls, regulatory action on the part of the FDA or foreign counterparts (including restrictions on future product clearances and civil penalties), declining sales and product liability claims, and damage to our reputation. As a result of the CareFusion acquisition, we are operating under a consent decree with the FDA relating to our U.S. infusion pump business. The consent decree authorizes the FDA, in the event of any violations in the future, to order us to cease manufacturing and distributing products, recall products or take other actions, and we may be required to pay significant monetary damages if we fail to comply with any provision of the consent decree.  Also, in March 2019, the FDA issued a letter to healthcare professionals regarding the use of paclitaxel-coated devices in the treatment of peripheral artery disease, advising clinicians to consider using alternative treatments.  We estimate that the FDA letter will lead to a fifty percent decrease in sales of BD’s drug-coated balloons for the balance of fiscal year 2019 compared to our original forecast, although the actual impact could be greater.  The extent and duration of the impact from the FDA letter beyond fiscal year 2019, and the likelihood of FDA approval of new drug-coated devices, is difficult to predict, and no assurance can be given that it will not have a material impact on our results of operations in future periods.   • The effect of adverse media exposure or other publicity regarding BD’s business or operations, including the effect on BD’s reputation or demand for its products. • The effect of market fluctuations on the value of assets in BD’s pension plans and on actuarial interest rate and asset return assumptions, which could require BD to make additional contributions to the plans or increase our pension plan expense. 36 • Our ability to obtain the anticipated benefits of restructuring programs, if any, that we may undertake. • Issuance of new or revised accounting standards by the Financial Accounting Standards Board or the Securities and Exchange Commission. The foregoing list sets forth many, but not all, of the factors that could impact our ability to achieve results described in any forward-looking statements. Investors should understand that it is not possible to predict or identify all such factors and should not consider this list to be a complete statement of all potential risks and uncertainties. 37 Item 3.     Quantitative and Qualitative Disclosures About Market Risk There have been no material changes in information reported since the end of the fiscal year ended  September 30, 2018 . Item 4.     Controls and Procedures An evaluation was carried out by BD’s management, with the participation of BD’s Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of BD’s disclosure controls and procedures (as defined in Rule 13a-15(e) under the Securities Exchange Act of 1934) as of  June 30, 2019 .  Based upon that evaluation, the Chief Executive Officer and Chief Financial Officer concluded that the design and operation of these disclosure controls and procedures were, as of the end of the period covered by this report, effective and designed to ensure that material information relating to BD and its consolidated subsidiaries would be made known to them by others within these entities. There were no changes in our internal control over financial reporting during the fiscal quarter ended  June 30, 2019  identified in connection with the above-referenced evaluation that have materially affected, or are reasonably likely to materially affect, BD’s internal control over financial reporting.  On December 29, 2017, BD completed the acquisition of Bard and in our  2018  Annual Report on Form 10-K, we excluded Bard from our evaluation of internal control over financial reporting.  This exclusion was in accordance with the U.S. Securities and Exchange Commission's general guidance that a recently acquired business may be omitted from the assessment scope for up to one year from the date of acquisition.  BD has extended its oversight and monitoring processes that support our internal control over financial reporting, as well as our disclosure controls and procedures, to the acquired operations of Bard and we will incorporate Bard into our annual assessment of internal control over financial reporting for our fiscal year ending September 30, 2019.  38 PART II - OTHER INFORMATION Item 1.     Legal Proceedings We are involved, both as a plaintiff and a defendant, in various legal proceedings which arise in the ordinary course of business, including product liability and environmental matters as set forth in our  2018  Annual Report on Form 10-K and in Note  5  of the Notes to Condensed Consolidated Financial Statements in this report.  Since  March 31,   2019 , there have been no material developments with respect to the legal proceedings in which we are involved, except as provided below. Filter Product Claims On May 31, 2019, the multi-district litigation (“MDL”) Court ceased accepting direct filings or transfers into the Filter Product Claims MDL and remands for non-settled cases are expected to begin within the next three to six months.  Trials are scheduled throughout 2019 and 2020 in certain state and federal courts.  As of June 30, 2019, the Company entered into settlement agreements and/or settlement agreements in principle for approximately 4,200 cases.   Given the uncertain nature of litigation generally, BD is not able in all cases to estimate the amount or range of loss that could result from an unfavorable outcome of the litigation to which BD is a party.  In accordance with U.S. generally accepted accounting principles, BD establishes accruals to the extent probable future losses are estimable (in the case of environmental matters, without considering possible third-party recoveries).  In view of the uncertainties discussed above, BD could incur charges in excess of any currently established accruals and, to the extent available, excess liability insurance.  In the opinion of management, any such future charges, individually or in the aggregate, could have a material adverse effect on BD’s consolidated results of operations and consolidated cash flows. 39 Item 1A.     Risk Factors There were no material changes during the period covered by this report in the risk factors previously disclosed in Part I, Item 1A, of our  2018  Annual Report on Form 10-K. Item 2.     Unregistered Sales of Equity Securities and Use of Proceeds The table below sets forth certain information regarding our purchases of common stock of BD during the quarter ended  June 30, 2019 . Issuer Purchases of Equity Securities For the three months ended June 30, 2019   Total Number of Shares Purchased (1)   Average Price Paid per Share   Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs   Maximum Number of Shares that May Yet Be Purchased Under the Plans or Programs (2) April 1 – 30, 2019   2,838   $ 251.16   —   7,857,742 May 1 – 31, 2019   222   224.17   —   7,857,742 June 1 – 30, 2019   —   —   —   7,857,742 Total   3,060   $ 249.20   —   7,857,742 (1) Consists of  3,060  shares purchased during the quarter in open market transactions by the trust relating to BD’s Deferred Compensation and Retirement Benefit Restoration Plan and 1996 Directors’ Deferral Plan. (2) Represents shares available under a repurchase program authorized by the Board of Directors on September 24, 2013 for 10 million shares, for which there is no expiration date. 40 Item 3.     Defaults Upon Senior Securities Not applicable. Item 4.     Mine Safety Disclosures Not applicable. Item 5.     Other Information Not applicable. Item 6.     Exhibits Exhibit 31 Certifications of Chief Executive Officer and Chief Financial Officer, pursuant to SEC Rule 13a - 14(a). Exhibit 32 Certifications of Chief Executive Officer and Chief Financial Officer, pursuant to Rule 13a - 14(b) and Section 1350 of Chapter 63 of Title 18 of the U.S. Code. Exhibit 101 The following materials from this report, formatted in iXBRL (Inline eXtensible Business Reporting Language): (i) the Condensed Consolidated Balance Sheets, (ii) the Condensed Consolidated Statements of Income, (iii) the Condensed Consolidated Statements of Comprehensive Income, (iv) the Condensed Consolidated Statements of Cash Flows, and (v) Notes to Condensed Consolidated Financial Statements. 41 SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.   Becton, Dickinson and Company   (Registrant) Dated:  August 6, 2019     /s/ Christopher Reidy   Christopher Reidy   Executive Vice President, Chief Financial Officer and Chief Administrative Officer   (Principal Financial Officer)       /s/ Charles Bodner   Charles Bodner   Senior Vice President, Corporate Finance, and Chief Accounting Officer   (Principal Accounting Officer) 42 INDEX TO EXHIBITS Exhibit Number    Description of Exhibits             31    Certifications of Chief Executive Officer and Chief Financial Officer, pursuant to SEC Rule 13a - 14(a).       32    Certifications of Chief Executive Officer and Chief Financial Officer, pursuant to Rule 13a - 14(b) and Section 1350 of Chapter 63 of Title 18 of the U.S. Code.       101    The following materials from this report, formatted in iXBRL (Inline eXtensible Business Reporting Language): (i) the Condensed Consolidated Balance Sheets, (ii) the Condensed Consolidated Statements of Income, (iii) the Condensed Consolidated Statements of Comprehensive Income, (iv) the Condensed Consolidated Statements of Cash Flows, and (v) Notes to Condensed Consolidated Financial Statements. 43 	 
+ 

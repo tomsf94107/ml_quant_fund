@@ -1,0 +1,4005 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --09-30 Q3 2019 0000731802 0.485 0.485 0.525 0.525 0.005 0.005 200000000 200000000 111273683 118196113 111273683 118196113 200000000 0.0667 0.0675 0.03 0.0595 0.055 0.0415 0.04125 0.0667 0.04125 0.043 0.0675 0.03 0.0595 0.055 0.0415 0.04125 P1Y 2460000 8486000 312000 7093000 92000 246000 27000 56000 
+		 
+			 0000731802 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 stpr:VA 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:NaturalGasUsRegulatedMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherRegulatoryAssetsLiabilitiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AssetRetirementObligationCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredIncomeTaxChargesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionAndOtherPostretirementPlansCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AssetRetirementObligationCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:LossOnReacquiredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredFuelCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:RegulatoryClauseRevenuesToReturnMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:RegulatoryClauseRevenuesToReturnMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:LossOnReacquiredDebtMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredFuelCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherRegulatoryAssetsLiabilitiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RemovalCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RemovalCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredProjectCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:InfrastructureMechanismsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherRegulatoryAssetsLiabilitiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredFuelCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredProjectCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionAndOtherPostretirementPlansCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:RateCaseCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:RegulatoryCostofServiceReserveMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredIncomeTaxChargesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:RateCaseCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:RegulatoryCostofServiceReserveMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionAndOtherPostretirementPlansCostsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherRegulatoryAssetsLiabilitiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:InfrastructureMechanismsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DeferredFuelCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionAndOtherPostretirementPlansCostsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-10-01 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:DeferredIncomeTaxChargesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:DeferredIncomeTaxChargesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:NaturalGasUsRegulatedMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+				 us-gaap:IntersubsegmentEliminationsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:IndustrialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:IndustrialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:TransportationrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommercialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:IndustrialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:IndustrialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ResidentialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ResidentialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MiscellaneousrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ResidentialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommercialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PublicAuthorityandOtherCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:TransportationrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PublicAuthorityandOtherCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommercialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MiscellaneousrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ResidentialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommercialCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MiscellaneousrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:TransportationrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PublicAuthorityandOtherCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:TransportationrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:PublicAuthorityandOtherCustomersMember 
+				 ato:GassalesrevenueMember 
+				 ato:PipelineandStorageSegmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MiscellaneousrevenueMember 
+				 ato:DistributionSegmentMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2034Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MediumTermNotesDue2025Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MultiDrawTermLoanMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.125SeniorNotesdue2049Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredDebenturesDue2028Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2044Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2044Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2041Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2034Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2043Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2027Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.30SeniorNotesdue2048Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.125SeniorNotesdue2049Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2043Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MediumTermNotesDue2025Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2027Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2019Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.30SeniorNotesdue2048Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2041Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2019Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredDebenturesDue2028Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:MultiDrawTermLoanMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 ato:A10MillionRevolvingCreditNoteMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.125SeniorNotesdue2049Member 
+			 
+		 
+		 
+			 2019-03-04 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.30SeniorNotesdue2048Member 
+			 
+		 
+		 
+			 2018-10-04 
+			 2018-10-04 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:FiveYearUnsecuredRevolvingCreditAgreementMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:FiveYearUnsecuredRevolvingCreditAgreementMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MaximumMember 
+				 us-gaap:CommercialPaperMember 
+				 ato:FiveYearUnsecuredRevolvingCreditAgreementMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.30SeniorNotesdue2048Member 
+			 
+		 
+		 
+			 2018-10-04 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:Unsecured4.125SeniorNotesdue2049Member 
+			 
+		 
+		 
+			 2019-03-04 
+			 2019-03-04 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:LineOfCreditMember 
+				 ato:A25MillionBankLoanAgreementMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommercialPaperMember 
+				 ato:FiveYearUnsecuredRevolvingCreditAgreementMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MinimumMember 
+				 us-gaap:CommercialPaperMember 
+				 ato:FiveYearUnsecuredRevolvingCreditAgreementMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-10-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2019-05-28 
+			 2019-05-28 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-02-14 
+			 2019-02-19 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-05-13 
+			 2019-05-24 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-02-14 
+			 2019-02-19 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2017-10-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-02-14 
+			 2019-02-19 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-05-13 
+			 2019-05-24 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2019-05-28 
+			 2019-05-28 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2018-11-30 
+			 2018-11-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-05-13 
+			 2019-05-24 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2019-05-28 
+			 2019-05-28 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2018-11-30 
+			 2018-11-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturitySeptember2020Member 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2018-11-30 
+			 2018-11-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ForwardSalesEquityMaturityMarch2020Member 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ShelfRegistrationStatementMember 
+			 
+		 
+		 
+			 2018-11-13 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:CommonStockBlockTradeMember 
+			 
+		 
+		 
+			 2017-11-30 
+			 2017-11-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:AtTheMarketMember 
+			 
+		 
+		 
+			 2018-11-19 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ShelfRegistrationStatementMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-10-01 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-10-01 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-10-01 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-10-01 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:AccumulatedNetUnrealizedInvestmentGainLossMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2017-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2017-10-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:PensionPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherPostretirementBenefitPlansDefinedBenefitMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:LongTermContractWithCustomerMember 
+				 us-gaap:SupplyCommitmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:ShortTermContractWithCustomerMember 
+				 us-gaap:SupplyCommitmentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherNoncurrentLiabilitiesMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherNoncurrentAssetsMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MaximumMember 
+				 us-gaap:CommodityContractMember 
+				 ato:GasPurchasesMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 srt:MinimumMember 
+				 us-gaap:CommodityContractMember 
+				 ato:GasPurchasesMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommodityContractMember 
+				 ato:GasPurchasesMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:LongMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommodityContractMember 
+				 ato:GasPurchasesMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:UnsecuredSeniorNotesDue2019Member 
+				 us-gaap:InterestRateSwapMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:CommodityContractMember 
+				 ato:GasPurchasesMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2018-10-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:ThereafterMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 ato:NextTwelveMonthsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherNoncurrentLiabilitiesMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:OtherNoncurrentAssetsMember 
+				 us-gaap:CommodityContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:EquitySecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:MoneyMarketFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:FixedIncomeFundsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000731802 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:DebtSecuritiesMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 xbrli:pure 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 ato:customer 
+	 
+		 ato:state 
+	 
+		 xbrli:shares 
+	 
+		 iso4217:USD 
+	 
+		 ato:regulated_distribution_division 
+	 
+		 utreg:Bcf 
+	 
+		 utreg:MMcf 
+	 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 Form  10-Q   (Mark One) ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended  June 30, 2019   or ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from                    to                     Commission File Number  1-10042   Atmos Energy Corp oration (Exact name of registrant as specified in its charter) Texas and Virginia   75-1743247 (State or other jurisdiction of incorporation or organization)   (IRS employer identification no.)         1800 Three Lincoln Centre     5430 LBJ Freeway     Dallas Texas   75240 (Address of principal executive offices)   (Zip code) ( 972 )  934-9227   (Registrant’s telephone number, including area code) Title of each class Trading Symbol Name of each exchange on which registered Common stock No Par Value ATO New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes    þ      No    ¨ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§ 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes     þ      No    ¨ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and "emerging growth company" in Rule 12b-2 of the Exchange Act. (Check one): Large accelerated filer þ Accelerated filer ¨ Non-accelerated filer ¨ Smaller reporting company ☐ Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ¨ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act)    Yes    ☐      No    þ Number of shares outstanding of each of the issuer’s classes of common stock, as of  July 31, 2019 . Class   Shares Outstanding Common stock No Par Value   118,200,689 GLOSSARY OF KEY TERMS       Adjusted diluted net income per share Non-GAAP measure defined as diluted net income per share before the one-time, non-cash income tax benefit Adjusted net income Non-GAAP measure defined as net income before the one-time, non-cash income tax benefit AEC Atmos Energy Corporation AOCI Accumulated other comprehensive income ARM Annual Rate Mechanism ASC Accounting Standards Codification Bcf Billion cubic feet Contribution Margin Non-GAAP measure defined as operating revenues less purchased gas cost DARR Dallas Annual Rate Review ERISA Employee Retirement Income Security Act of 1974 FASB Financial Accounting Standards Board FERC Federal Energy Regulatory Commission GAAP Generally Accepted Accounting Principles GRIP Gas Reliability Infrastructure Program GSRS Gas System Reliability Surcharge Mcf Thousand cubic feet MMcf Million cubic feet Moody’s Moody’s Investors Services, Inc. NTSB National Transportation Safety Board PPA Pension Protection Act of 2006 PRP Pipeline Replacement Program RRC Railroad Commission of Texas RRM Rate Review Mechanism RSC Rate Stabilization Clause S&P Standard & Poor’s Corporation SAVE Steps to Advance Virginia Energy SEC United States Securities and Exchange Commission SIR System Integrity Rider SRF Stable Rate Filing SSIR System Safety and Integrity Rider TCJA Tax Cuts and Jobs Act of 2017 WNA Weather Normalization Adjustment 2 PART I. FINANCIAL INFORMATION Item 1. Financial Statements ATMOS ENERGY CORPORATION CONDENSED CONSOLIDATED BALANCE SHEETS     June 30,  2019   September 30,  2018   (Unaudited)       (In thousands, except share data) ASSETS       Property, plant and equipment $ 13,687,833   $ 12,567,373 Less accumulated depreciation and amortization 2,347,237   2,196,226 Net property, plant and equipment 11,340,596   10,371,147 Current assets       Cash and cash equivalents 46,163   13,771 Accounts receivable, net 285,433   253,295 Gas stored underground 106,014   165,732 Other current assets 65,924   46,055 Total current assets 503,534   478,853 Goodwill 730,419   730,419 Deferred charges and other assets 306,549   294,018   $ 12,881,098   $ 11,874,437 CAPITALIZATION AND LIABILITIES       Shareholders’ equity       Common stock, no par value (stated at $0.005 per share); 200,000,000 shares authorized; issued and outstanding: June 30, 2019 — 118,196,113 shares; September 30, 2018 — 111,273,683 shares $ 591   $ 556 Additional paid-in capital 3,599,724   2,974,926 Accumulated other comprehensive loss ( 115,663 )   ( 83,647 ) Retained earnings 2,157,344   1,878,116 Shareholders’ equity 5,641,996   4,769,951 Long-term debt 3,529,135   2,493,665 Total capitalization 9,171,131   7,263,616 Current liabilities       Accounts payable and accrued liabilities 206,500   217,283 Other current liabilities 494,932   547,068 Short-term debt 74,942   575,780 Current maturities of long-term debt 125,000   575,000 Total current liabilities 901,374   1,915,131 Deferred income taxes 1,280,307   1,154,067 Regulatory excess deferred taxes (See Note 13) 709,974   739,670 Regulatory cost of removal obligation 464,855   466,405 Pension and postretirement liabilities 177,602   177,520 Deferred credits and other liabilities 175,855   158,028   $ 12,881,098   $ 11,874,437 See accompanying notes to condensed consolidated financial statements. 3 ATMOS ENERGY CORPORATION CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME     Three Months Ended June 30   2019   2018   (Unaudited) (In thousands, except per share data) Operating revenues       Distribution segment $ 444,944   $ 535,488 Pipeline and storage segment 149,198   127,633 Intersegment eliminations ( 108,404 )   ( 100,876 ) Total operating revenues 485,738   562,245         Purchased gas cost       Distribution segment 139,518   230,887 Pipeline and storage segment ( 96 )   561 Intersegment eliminations ( 108,096 )   ( 100,562 ) Total purchased gas cost 31,326   130,886         Operation and maintenance expense 164,545   143,748 Depreciation and amortization expense 97,700   90,671 Taxes, other than income 69,965   72,620 Operating income 122,202   124,320 Other non-operating income (expense) 1,645   ( 3,330 ) Interest charges 19,592   23,349 Income before income taxes 104,255   97,641 Income tax expense 23,789   26,448 Net income $ 80,466   $ 71,193 Basic net income per share $ 0.68   $ 0.64 Diluted net income per share $ 0.68   $ 0.64 Cash dividends per share $ 0.525   $ 0.485 Basic weighted average shares outstanding 118,075   111,851 Diluted weighted average shares outstanding 118,430   111,851         Net income $ 80,466   $ 71,193 Other comprehensive income, net of tax       Net unrealized holding gains on available-for-sale securities, net of tax of $27 and $92 (See Note 2) 94   310 Cash flow hedges:       Amortization and unrealized gain on interest rate agreements, net of tax of $312 and $2,460 1,053   8,320 Total other comprehensive income 1,147   8,630 Total comprehensive income $ 81,613   $ 79,823 See accompanying notes to condensed consolidated financial statements. 4 ATMOS ENERGY CORPORATION CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME   Nine Months Ended June 30   2019   2018   (Unaudited) (In thousands, except per share data) Operating revenues       Distribution segment $ 2,341,668   $ 2,595,571 Pipeline and storage segment 419,318   375,051 Intersegment eliminations ( 302,821 )   ( 299,776 ) Total operating revenues 2,458,165   2,670,846         Purchased gas cost       Distribution segment 1,147,598   1,421,698 Pipeline and storage segment ( 544 )   1,906 Intersegment eliminations ( 301,887 )   ( 298,841 ) Total purchased gas cost 845,167   1,124,763         Operation and maintenance expense 452,572   431,952 Depreciation and amortization expense 290,537   268,426 Taxes, other than income 213,546   208,400 Operating income 656,343   637,305 Other non-operating expense ( 1,846 )   ( 8,054 ) Interest charges 74,390   82,162 Income before income taxes 580,107   547,089 Income tax expense (benefit) 127,107   ( 17,228 ) Net income $ 453,000   $ 564,317 Basic net income per share $ 3.89   $ 5.09 Diluted net income per share $ 3.88   $ 5.09 Cash dividends per share $ 1.575   $ 1.455 Basic weighted average shares outstanding 116,485   110,707 Diluted weighted average shares outstanding 116,673   110,707         Net income $ 453,000   $ 564,317 Other comprehensive income (loss), net of tax       Net unrealized holding gains (losses) on available-for-sale securities, net of tax of $56 and $(246) (See Note 2) 191   ( 736 ) Cash flow hedges:       Amortization and unrealized gain (loss) on interest rate agreements, net of tax of $(7,093) and $8,486 ( 23,997 )   29,609 Total other comprehensive income (loss) ( 23,806 )   28,873 Total comprehensive income $ 429,194   $ 593,190 See accompanying notes to condensed consolidated financial statements. 5 ATMOS ENERGY CORPORATION CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOWS     Nine Months Ended June 30   2019   2018   (Unaudited) (In thousands) Cash Flows From Operating Activities       Net income $ 453,000   $ 564,317 Adjustments to reconcile net income to net cash provided by operating activities:       Depreciation and amortization expense 290,537   268,426 Deferred income taxes 120,220   139,852 One-time income tax benefit —   ( 165,522 ) Other 9,649   18,007 Net assets / liabilities from risk management activities ( 1,976 )   912 Net change in operating assets and liabilities ( 62,502 )   209,304 Net cash provided by operating activities 808,928   1,035,296 Cash Flows From Investing Activities       Capital expenditures ( 1,199,199 )   ( 1,088,472 ) Proceeds from the sale of discontinued operations 4,000   3,000 Debt and equity securities activities, net ( 4,041 )   ( 7,857 ) Other, net 3,839   6,105 Net cash used in investing activities ( 1,195,401 )   ( 1,087,224 ) Cash Flows From Financing Activities       Net decrease in short-term debt ( 500,838 )   ( 202,968 ) Net proceeds from equity offering 593,731   395,092 Issuance of common stock through stock purchase and employee retirement plans 14,128   15,850 Proceeds from issuance of long-term debt 1,045,221   — Settlement of interest rate swaps ( 90,141 )   — Repayment of long-term debt ( 450,000 )   — Cash dividends paid ( 181,982 )   ( 160,007 ) Debt issuance costs ( 11,254 )   — Other —   ( 1,518 ) Net cash provided by financing activities 418,865   46,449 Net increase (decrease) in cash and cash equivalents 32,392   ( 5,479 ) Cash and cash equivalents at beginning of period 13,771   26,409 Cash and cash equivalents at end of period $ 46,163   $ 20,930 See accompanying notes to condensed consolidated financial statements. 6 ATMOS ENERGY CORPORATION NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (Unaudited) June 30, 2019   1.     Nature of Business Atmos Energy Corporation (“Atmos Energy” or the “Company”) and its subsidiaries are engaged in the regulated natural gas distribution and pipeline and storage businesses.  Our distribution business is subject to federal and state regulation and/or regulation by local authorities in each of the states in which our regulated divisions and subsidiaries operate. Our distribution business delivers natural gas through sales and transportation arrangements to over  three million  residential, commercial, public authority and industrial customers through our  six  regulated distribution divisions, which at  June 30, 2019 , covered service areas located in  eight  states.  Our pipeline and storage business, which is also subject to federal and state regulations, includes the transportation of natural gas to our Texas and Louisiana distribution systems and the management of our underground storage facilities used to support our distribution business in various states. 2.     Unaudited Financial Information These consolidated interim-period financial statements have been prepared in accordance with accounting principles generally accepted in the United States on the same basis, aside from accounting policy changes noted below, as those used for the Company’s audited consolidated financial statements included in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 . In the opinion of management, all material adjustments (consisting of normal recurring accruals) necessary for a fair presentation have been made to the unaudited consolidated interim-period financial statements. These consolidated interim-period financial statements are condensed as permitted by the instructions to Form 10-Q and should be read in conjunction with the audited consolidated financial statements of Atmos Energy Corporation included in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 . Because of seasonal and other factors, the results of operations for the  nine -month period ended  June 30, 2019  are not indicative of our results of operations for the full  2019  fiscal year, which ends  September 30, 2019 . No events have occurred subsequent to the balance sheet date that would require recognition or disclosure in the condensed consolidated financial statements.  Significant accounting policies Our accounting policies are described in Note 2 to the consolidated financial statements in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 .  During the second quarter of fiscal 2019, we completed our annual goodwill impairment assessment. Based on the assessment performed, we determined that our goodwill was not impaired. Accounting pronouncements adopted in fiscal 2019 During the first quarter of fiscal 2019, we adopted the following accounting guidance updates, effective October 1, 2018.  The adoption of this new guidance, individually and collectively, did not have a material impact on our financial position, results of operations or cash flows. • Revenue recognition  - Under the new guidance, we are required to recognize revenue when we transfer promised goods or services to customers in an amount that reflects the consideration to which we expect to be entitled in exchange for those goods or services.  See Note 5 for our discussion of the effects of implementing this standard.  • Classification and measurement of financial instruments  - The new guidance requires that we recognize changes in the fair value of our equity securities formerly designated as available-for-sale in other non-operating income (expense) in our condensed consolidated statement of comprehensive income on a prospective basis from the date of adoption. However, we continue to classify cash flows from purchases and sales of equity securities within investing activities given the nature of these securities. Additionally, in accordance with the guidance, we reclassified a net  $ 8.2  million  unrealized gain related to these equity securities from accumulated other comprehensive income (AOCI) to retained earnings. The accounting for debt securities designated as available-for-sale did not change as a result of this new guidance. Accordingly, changes in the fair value of these securities will continue to be recorded as a component of AOCI. • Presentation of the Components of Net Periodic Benefit Cost  - The new guidance requires us to present only the current service cost component of the net benefit cost within operations and maintenance expense in the statement of  7 comprehensive income. The remaining components of net benefit cost are now recorded in other non-operating income (expense) in our condensed consolidated statements of comprehensive income. The change in presentation of these costs was implemented on a retrospective basis as required by the guidance. In lieu of determining how each component of the net periodic benefit cost was actually reflected in the prior periods’ condensed statement of comprehensive income, we elected to utilize a practical expedient that permits the use of the amounts disclosed for these costs in our pension and post-retirement benefit plans footnote as the basis to retroactively apply this standard.  In addition, under the new guidance, only the service cost component of net benefit cost is eligible for capitalization (e.g., as part of inventory or property, plant, and equipment).  We continue to capitalize these costs into property, plant and equipment. However, the Federal Energy Regulatory Commission (FERC), which establishes the regulatory accounting practices for rate-regulated entities, issued guidance that permits such entities the option to continue to capitalize non-service benefit costs for regulatory purposes.   Since the accounting guidelines by the FERC are typically followed by our state regulatory authorities, for U.S. GAAP reporting purposes, we are prospectively deferring into a regulatory asset the portion of non-service components of net periodic benefit cost that are capitalizable for regulatory purposes. • Accounting for Implementation Costs Incurred in A Hosting Arrangement That Is A Service Contract  - The new guidance aligns the requirements for capitalizing implementation costs incurred for these contracts with the requirements for capitalizing implementation costs incurred to develop or obtain internal-use software (and hosting arrangements that include an internal-use software license). We elected to early adopt the new guidance on a prospective basis. Accordingly, we will capitalize the up-front costs incurred for cloud computing arrangements had they been capitalizable in a similar on-premise software solution. Accounting pronouncements that will be effective after fiscal 2019 In February 2016, the Financial Accounting Standards Board (FASB) issued a comprehensive new leasing standard that will require lessees to recognize a lease liability and a right-of-use asset for all leases, including operating leases, with a term greater than 12 months on its balance sheet. Subsequently, the FASB issued practical expedients to 1) allow entities to not evaluate existing or expired land easements that were not previously accounted for as leases under the current guidance and 2) allow entities the option to adopt the standard and recognize a cumulative–effect adjustment to the opening balance of retained earnings in the period of adoption rather than applying the new guidance at the beginning of the earliest comparative period presented in the year of adoption. The new standard will be effective for us beginning on October 1, 2019.  The impact of this change on our financial position is not reasonably estimable at this time. We do not anticipate the adoption of this standard will have a material impact to our results of operations or cash flows. We continue to evaluate our adoption of certain practical expedients, however we currently anticipate adopting the following practical expedients: • land easements under the provisions of ASU 2018-01, as described above, • package of three practical expedients described in ASC 842-10-65-1 and • transition method practical expedient provided in ASU 2018-11, as described above. We are implementing a new lease accounting system, which we will utilize to capture, track and account for lease data. The new system will also aid in automating the compilation of disclosure information. In June 2016, the FASB issued new guidance which will require credit losses on most financial assets measured at amortized cost and certain other instruments to be measured using an expected credit loss model. Under this model, entities will estimate credit losses over the entire contractual term of the instrument from the date of initial recognition of that instrument. In contrast, current U.S. GAAP is based on an incurred loss model that delays recognition of credit losses until it is probable the loss has been incurred. The new guidance also introduces a new impairment recognition model for available-for-sale debt securities that will require credit losses for available-for-sale debt securities to be recorded through an allowance account. The new standard will be effective for us beginning on October 1, 2020; early adoption is permitted. We are currently evaluating the potential impact of this new guidance on our financial position, results of operations and cash flows.  In August 2018, the FASB issued new guidance that modifies the disclosure requirements for employers that sponsor defined benefit pension or other postretirement plans. The guidance removes the disclosure requirements for the amounts of gain/loss and prior service cost/credit amortization expected in the following year and the disclosure of the effect of a one-percentage-point change in the health care cost trend rate, among other changes. The guidance adds certain disclosures including the weighted average interest crediting rate for cash balance plans and a narrative description for the significant change in gains and losses as well as any other significant change in the plan obligations or assets. The new guidance is effective for us in the fiscal year beginning October 1, 2020 and should be applied on a retrospective basis to all periods  8 presented. Early adoption is permitted. The adoption of this new guidance impacts only our disclosures. We intend to early adopt the guidance as of September 30, 2019.  Regulatory assets and liabilities Accounting principles generally accepted in the United States require cost-based, rate-regulated entities that meet certain criteria to reflect the authorized recovery of costs due to regulatory decisions in their financial statements. As a result, certain costs are permitted to be capitalized rather than expensed because they can be recovered through rates. We record certain costs as regulatory assets when future recovery through customer rates is considered probable. Regulatory liabilities are recorded when it is probable that revenues will be reduced for amounts that will be credited to customers through the ratemaking process. Substantially all of our regulatory assets are recorded as a component of deferred charges and other assets and our regulatory liabilities are recorded as a component of other current liabilities and deferred credits and other liabilities. Deferred gas costs are recorded either in other current assets or liabilities and our regulatory excess deferred taxes and regulatory cost of removal obligation are reported separately. Significant regulatory assets and liabilities as of  June 30, 2019  and  September 30, 2018  included the following:   June 30,  2019   September 30,  2018   (In thousands) Regulatory assets:       Pension and postretirement benefit costs $ 8,007   $ 6,496 Infrastructure mechanisms (1) 111,211   96,739 Deferred gas costs 7,227   1,927 Recoverable loss on reacquired debt 7,000   8,702 Deferred pipeline record collection costs 25,347   20,467 Rate case costs 1,413   2,741 Other 4,465   6,739   $ 164,670   $ 143,811 Regulatory liabilities:       Regulatory excess deferred taxes (2) $ 731,837   $ 744,895 Regulatory cost of service reserve (3) 6,079   22,508 Regulatory cost of removal obligation 526,403   522,175 Deferred gas costs 66,171   94,705 Asset retirement obligation 12,887   12,887 APT annual adjustment mechanism 63,130   35,228 Pension and postretirement benefit costs 80,330   69,113 Other 3,038   9,486   $ 1,489,875   $ 1,510,997   (1) Infrastructure mechanisms in Texas and Louisiana allow for the deferral of all eligible expenses associated with capital expenditures incurred pursuant to these rules, including the recording of interest on deferred expenses until the next rate proceeding (rate case or annual rate filing), at which time investment and costs would be recoverable through base rates. (2) The TCJA resulted in the remeasurement of the net deferred tax liability included in our rate base. Of this amount,  $ 21.9  million  as of June 30, 2019 and  $ 5.2  million  as of September 30, 2018 is recorded in other current liabilities. The period and timing of the return of the excess deferred taxes is being determined by regulators in each of our jurisdictions. See Note  13  for further information. (3) Effective January 1, 2018, regulators in each of our service areas required us to establish a regulatory liability for the difference in recoverable federal taxes included in revenues based on the former  35%  federal statutory rate and the new  21%  federal statutory rate for service provided on or after January 1, 2018.  The period and timing of the return of this liability to utility customers is being determined by regulators in each of our jurisdictions.  See Note  13  for further information.   3 .     Segment Information  We manage and review our consolidated operations through the following reportable segments:  • The  distribution  segment  is primarily comprised of our regulated natural gas distribution and related sales operations in eight states. 9 • The  pipeline and storage  segment  is comprised primarily of the pipeline and storage operations of our Atmos Pipeline-Texas division and our natural gas transmission operations in Louisiana. The accounting policies of the segments are the same as those described in the summary of significant accounting policies found in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 .  Income statements and capital expenditures for the  three and nine months ended   June 30, 2019  and  2018  by segment are presented in the following tables:   Three Months Ended June 30, 2019   Distribution   Pipeline and Storage   Eliminations   Consolidated   (In thousands) Operating revenues from external parties $ 444,287   $ 41,451   $ —   $ 485,738 Intersegment revenues 657   107,747   ( 108,404 )   — Total operating revenues 444,944   149,198   ( 108,404 )   485,738 Purchased gas cost 139,518   ( 96 )   ( 108,096 )   31,326 Operation and maintenance expense 123,998   40,855   ( 308 )   164,545 Depreciation and amortization expense 70,611   27,089   —   97,700 Taxes, other than income 62,134   7,831   —   69,965 Operating income 48,683   73,519   —   122,202 Other non-operating income (expense) 3,005   ( 1,360 )   —   1,645 Interest charges 10,597   8,995   —   19,592 Income before income taxes 41,091   63,164   —   104,255 Income tax expense 8,693   15,096   —   23,789 Net income $ 32,398   $ 48,068   $ —   $ 80,466 Capital expenditures $ 316,825   $ 104,788   $ —   $ 421,613   Three Months Ended June 30, 2018   Distribution   Pipeline and Storage   Eliminations   Consolidated   (In thousands) Operating revenues from external parties $ 534,816   $ 27,429   $ —   $ 562,245 Intersegment revenues 672   100,204   ( 100,876 )   — Total operating revenues 535,488   127,633   ( 100,876 )   562,245 Purchased gas cost 230,887   561   ( 100,562 )   130,886 Operation and maintenance expense 110,568   33,494   ( 314 )   143,748 Depreciation and amortization expense 66,504   24,167   —   90,671 Taxes, other than income 64,420   8,200   —   72,620 Operating income 63,109   61,211   —   124,320 Other non-operating expense ( 2,518 )   ( 812 )   —   ( 3,330 ) Interest charges 13,315   10,034   —   23,349 Income before income taxes 47,276   50,365   —   97,641 Income tax expense 11,932   14,516   —   26,448 Net income $ 35,344   $ 35,849   $ —   $ 71,193 Capital expenditures $ 284,209   $ 110,285   $ —   $ 394,494 10   Nine Months Ended June 30, 2019   Distribution   Pipeline and Storage   Eliminations   Consolidated   (In thousands) Operating revenues from external parties $ 2,339,660   $ 118,505   $ —   $ 2,458,165 Intersegment revenues 2,008   300,813   ( 302,821 )   — Total operating revenues 2,341,668   419,318   ( 302,821 )   2,458,165 Purchased gas cost 1,147,598   ( 544 )   ( 301,887 )   845,167 Operation and maintenance expense 347,386   106,120   ( 934 )   452,572 Depreciation and amortization expense 210,224   80,313   —   290,537 Taxes, other than income 189,377   24,169   —   213,546 Operating income 447,083   209,260   —   656,343 Other non-operating income (expense) 1,791   ( 3,637 )   —   ( 1,846 ) Interest charges 44,703   29,687   —   74,390 Income before income taxes 404,171   175,936   —   580,107 Income tax expense 85,195   41,912   —   127,107 Net income $ 318,976   $ 134,024   $ —   $ 453,000 Capital expenditures $ 912,640   $ 286,559   $ —   $ 1,199,199   Nine Months Ended June 30, 2018   Distribution   Pipeline and Storage   Eliminations   Consolidated   (In thousands) Operating revenues from external parties $ 2,593,578   $ 77,268   $ —   $ 2,670,846 Intersegment revenues 1,993   297,783   ( 299,776 )   — Total operating revenues 2,595,571   375,051   ( 299,776 )   2,670,846 Purchased gas cost 1,421,698   1,906   ( 298,841 )   1,124,763 Operation and maintenance expense 343,860   89,027   ( 935 )   431,952 Depreciation and amortization expense 197,587   70,839   —   268,426 Taxes, other than income 184,219   24,181   —   208,400 Operating income 448,207   189,098   —   637,305 Other non-operating expense ( 5,961 )   ( 2,093 )   —   ( 8,054 ) Interest charges 51,581   30,581   —   82,162 Income before income taxes 390,665   156,424   —   547,089 Income tax (benefit) expense ( 39,021 )   21,793   —   ( 17,228 ) Net income $ 429,686   $ 134,631   $ —   $ 564,317 Capital expenditures $ 749,693   $ 338,779   $ —   $ 1,088,472   11 Balance sheet information at  June 30, 2019  and  September 30, 2018  by segment is presented in the following tables:   June 30, 2019   Distribution   Pipeline and Storage   Eliminations   Consolidated   (In thousands) Property, plant and equipment, net $ 8,404,238   $ 2,936,358   $ —   $ 11,340,596 Total assets $ 12,083,315   $ 3,174,516   $ ( 2,376,733 )   $ 12,881,098   September 30, 2018   Distribution   Pipeline and Storage   Eliminations   Consolidated   (In thousands) Property, plant and equipment, net $ 7,644,693   $ 2,726,454   $ —   $ 10,371,147 Total assets $ 11,109,128   $ 2,963,480   $ ( 2,198,171 )   $ 11,874,437   4.     Earnings Per Share We use the two-class method of computing earnings per share because we have participating securities in the form of non-vested restricted stock units with a nonforfeitable right to dividend equivalents, for which vesting is predicated solely on the passage of time. The calculation of earnings per share using the two-class method excludes income attributable to these participating securities from the numerator and excludes the dilutive impact of those shares from the denominator. Basic weighted average shares outstanding is calculated based upon the weighted average number of common shares outstanding during the periods presented. Also, this calculation includes fully vested stock awards that have not yet been issued as common stock. Additionally, the weighted average shares outstanding for diluted EPS includes the incremental effects of the forward sale agreements, discussed in Note  7 , when the impact is dilutive.   Basic and diluted earnings per share for the  three and nine months ended June 30, 2019  and  2018  are calculated as follows:   Three Months Ended June 30   Nine Months Ended June 30   2019   2018   2019   2018   (In thousands, except per share amounts) Basic Earnings Per Share               Net income $ 80,466   $ 71,193   $ 453,000   $ 564,317 Less: Income allocated to participating securities 64   59   386   545 Income available to common shareholders $ 80,402   $ 71,134   $ 452,614   $ 563,772 Basic weighted average shares outstanding 118,075   111,851   116,485   110,707 Net income per share — Basic $ 0.68   $ 0.64   $ 3.89   $ 5.09 Diluted Earnings Per Share               Income available to common shareholders $ 80,402   $ 71,134   $ 452,614   $ 563,772 Effect of dilutive shares —   —   —   — Income available to common shareholders $ 80,402   $ 71,134   $ 452,614   $ 563,772 Basic weighted average shares outstanding 118,075   111,851   116,485   110,707 Dilutive shares 355   —   188   — Diluted weighted average shares outstanding 118,430   111,851   116,673   110,707 Net income per share - Diluted $ 0.68   $ 0.64   $ 3.88   $ 5.09 5 .     Revenue Effective October 1, 2018, we adopted the new guidance under Accounting Standards Codification (ASC) Topic 606. The implementation of the new guidance did not have a material impact on our financial position, results of operations, cash flow or  12 business processes. However, the guidance introduced new disclosures which are presented below.  The following table disaggregates our revenue from contracts with customers by customer type and segment and provides a reconciliation to total revenues for the period presented.    Three Months Ended June 30, 2019   Nine Months Ended June 30, 2019   Distribution   Pipeline and Storage   Distribution   Pipeline and Storage   (In thousands) Gas sales revenues:               Residential $ 269,484   $ —   $ 1,513,239   $ — Commercial 113,591   —   611,474   — Industrial 25,277   —   95,701   — Public authority and other 6,305   —   36,677   — Total gas sales revenues 414,657   —   2,257,091   — Transportation revenues 22,923   166,864   76,005   456,558 Miscellaneous revenues 6,125   2,407   20,439   6,862 Revenues from contracts with customers 443,705   169,271   2,353,535   463,420 Alternative revenue program revenues 748   ( 20,073 )   ( 13,388 )   ( 44,102 ) Other revenues 491   —   1,521   — Total operating revenues $ 444,944   $ 149,198   $ 2,341,668   $ 419,318 Distribution Revenues Distribution revenues represent the delivery of natural gas to residential, commercial, industrial and public authority customers at prices based on tariff rates established by regulatory authorities in the states in which we operate.  Revenue is recognized and our performance obligation is satisfied over time when natural gas is delivered and simultaneously consumed by our customer.  We have elected to use the invoice practical expedient and recognize revenue for volumes delivered that we have the right to invoice our customers.  We read meters and bill our customers on a monthly cycle basis.  Accordingly, we estimate volumes from the last meter read to the balance sheet date and accrue revenue for gas delivered but not yet billed. In our Texas and Mississippi jurisdictions, we pay franchise fees and gross receipt taxes to operate in these service areas.  These franchise fees and gross receipts taxes are required to be paid regardless of our ability to collect from our customers. Accordingly, we account for these amounts on a gross basis in revenue and we record the associated tax expense as a component of taxes, other than income. Pipeline and Storage Revenues Pipeline and storage revenues primarily represent the transportation and storage of natural gas on our Atmos Pipeline-Texas (APT) system and the transmission of natural gas through our 21-mile pipeline in Louisiana.  APT provides transportation and storage services to our Mid-Tex Division, other third party local distribution companies and certain industrial customers under tariff rates approved by the Railroad Commission of Texas (RRC).  APT also provides certain transportation and storage services to industrial and electric generation customers, as well as marketers and producers, under negotiated rates.  Our pipeline in Louisiana is primarily used to aggregate gas supply for our Louisiana Division under a long-term contract and on a more limited basis to third parties.  The demand fee charged to our Louisiana Division is subject to regulatory approval by the Louisiana Public Service Commission.  We also manage two asset management plans with distribution affiliates of the Company at terms that have been approved by the applicable state regulatory commissions.  The performance obligations for these transportation customers are satisfied by means of transporting customer-supplied gas to the designated location. Revenue is recognized and our performance obligation is satisfied over time when natural gas is delivered to the customer. Management determined that these arrangements qualify for the invoice practical expedient for recognizing revenue. For demand fee arrangements, revenue is recognized and our performance obligation is satisfied by standing ready to transport natural gas over the period of each individual month.   13 Alternative Revenue Program Revenues In our distribution segment, we have weather-normalization adjustment mechanisms that serve to minimize the effects of weather on our contribution margin.  Additionally, APT has a regulatory mechanism that requires that we share with its tariffed customers  75 %  of the difference between the total non-tariffed revenues earned during a test period and a revenue benchmark of  $ 69.4  million  that was established in its most recent rate case. Differences between actual revenues and revenues calculated under these mechanisms adjust the amount billed to customers. These mechanisms are considered to be alternative revenue programs under accounting standards generally accepted in the United States as they are deemed to be contracts between us and our regulator. Accordingly, revenue under these mechanisms are excluded from revenue from contracts with customers. 6 .     Debt The nature and terms of our debt instruments and credit facilities are described in detail in Note 5 to the consolidated financial statements in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 . Other than as described below, there were no material changes in the terms of our debt instruments during the  nine months ended June 30, 2019 . Long-term debt at  June 30, 2019  and  September 30, 2018  consisted of the following:     June 30, 2019   September 30, 2018   (In thousands) Unsecured 8.50% Senior Notes, due March 2019 $ —   $ 450,000 Unsecured 3.00% Senior Notes, due 2027 500,000   500,000 Unsecured 5.95% Senior Notes, due 2034 200,000   200,000 Unsecured 5.50% Senior Notes, due 2041 400,000   400,000 Unsecured 4.15% Senior Notes, due 2043 500,000   500,000 Unsecured 4.125% Senior Notes, due 2044 750,000   750,000 Unsecured 4.30% Senior Notes, due 2048 600,000   — Unsecured 4.125% Senior Notes, due 2049 450,000   — Medium-term note Series A, 1995-1, 6.67%, due 2025 10,000   10,000 Unsecured 6.75% Debentures, due 2028 150,000   150,000 Floating-rate term loan, due September 2019 (1) 125,000   125,000 Total long-term debt 3,685,000   3,085,000 Less:       Original issue (premium) / discount on unsecured senior notes and debentures 225   ( 4,439 ) Debt issuance cost 30,640   20,774 Current maturities 125,000   575,000   $ 3,529,135   $ 2,493,665      (1)   Up to  $ 200  million  can be drawn under this term loan. On March 4, 2019, we completed a public offering of  $ 450  million  of  4.125 %  senior notes due 2049. The effective interest rate of these notes is  4.86 % , after giving effect to the offering costs and the settlement of the associated forward starting interest rate swaps. The net proceeds, after the underwriting discount and offering expenses, of  $ 443.4  million , together with available cash, was used to repay at maturity our  $ 450  million   8.50 %  unsecured senior notes due  March 15, 2019  and the related settlement of our interest rate swaps. On October 4, 2018, we completed a public offering of  $ 600  million  of  4.30 %  senior notes due 2048. We received net proceeds from the offering, after the underwriting discount and offering expenses, of  $ 590.6  million , that were used to repay working capital borrowings pursuant to our commercial paper program. The effective interest rate of these notes is  4.37 %  after giving effect to the offering costs. We utilize short-term debt to provide cost-effective, short-term financing until it can be replaced with a balance of long-term debt and equity financing that achieves the Company’s desired capital structure with an equity-to-total-capitalization ratio between  50 %  and  60 % , inclusive of long-term and short-term debt. Our short-term borrowing requirements are driven primarily by construction work in progress and the seasonal nature of the natural gas business. Changes in the price of natural gas and the  14 amount of natural gas we need to supply our customers’ needs could significantly affect our borrowing requirements. Our short-term borrowings typically reach their highest levels in the winter months.  Currently, our short-term borrowing requirements are satisfied through a combination of a  $ 1.5  billion  commercial paper program and three committed revolving credit facilities with third-party lenders that provide approximately  $ 1.5  billion  of total working capital funding.  The primary source of our funding is our commercial paper program, which is supported by a five-year unsecured  $ 1.5  billion  credit facility. On March 29, 2019, we executed our final one-year extension option which extended the maturity date from  September 25, 2022  to  September 25, 2023 .  The facility bears interest at a base rate or at a LIBOR-based rate for the applicable interest period, plus a margin ranging from  zero  percent  to  1.25  percent , based on the Company’s credit ratings.  Additionally, the facility contains a  $ 250  million  accordion feature, which provides the opportunity to increase the total committed loan to  $ 1.75  billion .  At  June 30, 2019  and  September 30, 2018 , a total of  $ 74.9  million  and  $ 575.8  million  was outstanding under our commercial paper program.  Additionally, we have a  $ 25  million  364-day unsecured facility, which was renewed effective April 1, 2019 and expires March 31, 2020, and a  $ 10  million  364-day unsecured revolving credit facility, which is used primarily to issue letters of credit. At  June 30, 2019 , there were  no  borrowings outstanding under either of these facilities; however, outstanding letters of credit reduced the total amount available to us under our  $ 10  million  facility to  $ 4.4  million . The availability of funds under these credit facilities is subject to conditions specified in the respective credit agreements, all of which we currently satisfy. These conditions include our compliance with financial covenants and the continued accuracy of representations and warranties contained in these agreements. We are required by the financial covenants in each of these facilities to maintain, at the end of each fiscal quarter, a ratio of total-debt-to-total-capitalization of no greater than  70  percent . At  June 30, 2019 , our total-debt-to-total-capitalization ratio, as defined in the agreements, was  41  percent . In addition, both the interest margin and the fee that we pay on unused amounts under certain of these facilities are subject to adjustment depending upon our credit ratings. These credit facilities and our public indentures contain usual and customary covenants for our business, including covenants substantially limiting liens, substantial asset sales and mergers. Additionally, our public debt indentures relating to our senior notes and debentures, as well as certain of our revolving credit agreements, each contain a default provision that is triggered if outstanding indebtedness arising out of any other credit agreements in amounts ranging from in excess of  $ 15  million  to in excess of  $ 100  million  becomes due by acceleration or if not paid at maturity. We were in compliance with all of our debt covenants as of  June 30, 2019 . If we were unable to comply with our debt covenants, we would likely be required to repay our outstanding balances on demand, provide additional collateral or take other corrective actions. 15 7 .     Shareholders' Equity The following tables present a reconciliation of changes in stockholders' equity for the  three and nine months ended June 30, 2019  and  2018 .   Common stock   Additional Paid-in Capital   Accumulated Other Comprehensive Income (Loss)   Retained Earnings   Total   Number of Shares   Stated Value     (In thousands, except share and per share data) Balance, September 30, 2018 111,273,683   $ 556   $ 2,974,926   $ ( 83,647 )   $ 1,878,116   $ 4,769,951 Net income —   —   —   —   157,646   157,646 Other comprehensive loss —   —   —   ( 22,258 )   —   ( 22,258 ) Cash dividends ($0.525 per share) —   —   —   —   ( 58,722 )   ( 58,722 ) Cumulative effect of accounting change (See Note 2) —   —   —   ( 8,210 )   8,210   — Common stock issued:                       Public and other stock offerings 5,434,812   27   498,948   —   —   498,975 Stock-based compensation plans 184,464   1   2,602   —   —   2,603 Balance, December 31, 2018 116,892,959   584   3,476,476   ( 114,115 )   1,985,250   5,348,195 Net income —   —   —   —   214,888   214,888 Other comprehensive loss —   —   —   ( 2,695 )   —   ( 2,695 ) Cash dividends ($0.525 per share) —   —   —   —   ( 61,606 )   ( 61,606 ) Common stock issued:                       Public and other stock offerings 61,006   1   5,453   —   —   5,454 Stock-based compensation plans 28,938   —   3,865   —   —   3,865 Balance, March 31, 2019 116,982,903   585   3,485,794   ( 116,810 )   2,138,532   5,508,101 Net income —   —   —   —   80,466   80,466 Other comprehensive income —   —   —   1,147   —   1,147 Cash dividends ($0.525 per share) —   —   —   —   ( 61,654 )   ( 61,654 ) Common stock issued:                       Public and other stock offerings 1,127,244   5   103,425   —   —   103,430 Stock-based compensation plans 85,966   1   10,505   —   —   10,506 Balance, June 30, 2019 118,196,113   $ 591   $ 3,599,724   $ ( 115,663 )   $ 2,157,344   $ 5,641,996 16   Common stock   Additional Paid-in Capital   Accumulated Other Comprehensive Income (Loss)   Retained Earnings   Total   Number of Shares   Stated Value     (In thousands, except share and per share data) Balance, September 30, 2017 106,104,634   $ 531   $ 2,536,365   $ ( 105,254 )   $ 1,467,024   $ 3,898,666 Net income —   —   —   —   314,132   314,132 Other comprehensive loss —   —   —   ( 1,062 )   —   ( 1,062 ) Cash dividends ($0.485 per share) —   —   —   —   ( 51,837 )   ( 51,837 ) Common stock issued:                       Public and other stock offerings 4,621,518   22   400,737   —   —   400,759 Stock-based compensation plans 235,960   2   2,960   —   —   2,962 Balance, December 31, 2017 110,962,112   555   2,940,062   ( 106,316 )   1,729,319   4,563,620 Net income —   —   —   —   178,992   178,992 Other comprehensive income —   —   —   21,305   —   21,305 Cash dividends ($0.485 per share) —   —   —   —   ( 54,054 )   ( 54,054 ) Common stock issued:                       Public and other stock offerings 76,776   —   6,235   —   —   6,235 Stock-based compensation plans 21,440   —   5,248   —   —   5,248 Balance, March 31, 2018 111,060,328   555   2,951,545   ( 85,011 )   1,854,257   4,721,346 Net income —   —   —   —   71,193   71,193 Other comprehensive income —   —   —   8,630   —   8,630 Cash dividends ($0.485 per share) —   —   —   —   ( 54,116 )   ( 54,116 ) Common stock issued:                       Public and other stock offerings 45,307   1   3,947   —   —   3,948 Stock-based compensation plans 89,813   —   8,551   —   —   8,551 Balance, June 30, 2018 111,195,448   $ 556   $ 2,964,043   $ ( 76,381 )   $ 1,871,334   $ 4,759,552 Shelf Registration, At-the-Market Equity Sales Program and Equity Issuances On  November 13, 2018 , we filed a registration statement with the Securities and Exchange Commission (SEC) to issue, from time to time, up to  $ 3.0  billion  in common stock and/or debt securities, which expires November 13, 2021. This registration statement replaced our previous registration statement that was effectively exhausted in October 2018. At  June 30, 2019 , approximately  $ 1.3  billion  of securities remained available for issuance under the shelf registration statement.  On  November 19, 2018 , we filed a prospectus supplement under the registration statement relating to an at-the-market (ATM) equity sales program under which we may issue and sell shares of our common stock up to an aggregate offering price of  $ 500  million  (including shares of common stock that may be sold pursuant to a forward sale agreement entered into concurrently with the ATM equity sales program), which expires November 13, 2021. As of  June 30, 2019 , the ATM program had approximately  $ 231  million  of equity available for issuance. On  November 30, 2018 , we filed a prospectus supplement under the registration statement relating to an underwriting agreement to sell  5,390,836  shares of our common stock for  $ 500  million . After expenses, net proceeds from the offering were  $ 494.1  million . Concurrently, we entered into separate forward sale agreements with two forward sellers, collectively referred to as the block. 17 The following table presents information relevant to the forward sales during fiscal year 2019. Maturity   September 30, 2020   March 31, 2020   Total     Shares Price (1) Proceeds  (in millions)   Shares Price (1) Proceeds  (in millions)   Shares Price (1) Proceeds  (in millions) Available Balance  September 30, 2018   — $ — $ —   — $ — $ —   — $ — $ — Issued via Block   — —     2,668,464 91.77     2,668,464 91.77   Available Balance  December 31, 2018  (2)   — — —   2,668,464 91.90 245.2   2,668,464 91.90 245.2 Issued via ATM   — —     1,670,509 95.46     1,670,509 95.46   Available Balance  March 31, 2019  (2)   — — —   4,338,973 93.08 403.9   4,338,973 93.08 403.9 Issued via ATM   1,050,563 101.41     — —     1,050,563 101.41   Settled Block   — —     ( 1,089,700 ) 91.44     ( 1,089,700 ) 91.44   Available Balance  June 30, 2019  (2)   1,050,563 $ 101.11 $ 106.2   3,249,273 $ 93.34 $ 303.3   4,299,836 $ 95.24 $ 409.5 (1) Issued price as disclosed is calculated as the weighted average price for activity occurring during the quarter. (2) If we had settled all shares available under the forward agreements as of the period end, including forward price adjustments, we would receive proceeds based on the stated net price. On November 30, 2017, we filed a prospectus supplement under the previous registration statement relating to an underwriting agreement to sell  4,558,404  shares of our common stock for  $ 400  million .  After expenses, net proceeds from the offering were  $ 395.1  million .  Accumulated Other Comprehensive Income (Loss) We record deferred gains (losses) in AOCI related to available-for-sale debt securities and interest rate agreement cash flow hedges. Deferred gains (losses) for our available-for-sale debt securities are recognized in earnings upon settlement, while deferred gains (losses) related to our interest rate agreement cash flow hedges are recognized in earnings as they are amortized.  The following tables provide the components of our accumulated other comprehensive income (loss) balances, net of the related tax effects allocated to each component of other comprehensive income (loss).    Available- for-Sale Securities (1)   Interest Rate Agreement Cash Flow Hedges   Total   (In thousands) September 30, 2018 $ 8,124   $ ( 91,771 )   $ ( 83,647 ) Other comprehensive income (loss) before reclassifications 192   ( 25,966 )   ( 25,774 ) Amounts reclassified from accumulated other comprehensive income ( 1 )   1,969   1,968 Net current-period other comprehensive income (loss) 191   ( 23,997 )   ( 23,806 ) Cumulative effect of accounting change (See Note 2) ( 8,210 )   —   ( 8,210 ) June 30, 2019 $ 105   $ ( 115,768 )   $ ( 115,663 )     Available- for-Sale Securities (1)   Interest Rate Agreement Cash Flow Hedges   Total   (In thousands) September 30, 2017 $ 7,048   $ ( 112,302 )   $ ( 105,254 ) Other comprehensive income before reclassifications 148   28,315   28,463 Amounts reclassified from accumulated other comprehensive income ( 884 )   1,294   410 Net current-period other comprehensive income (loss) ( 736 )   29,609   28,873 June 30, 2018 $ 6,312   $ ( 82,693 )   $ ( 76,381 ) (1) Available-for-sale-securities reported in fiscal 2018 include both debt and equity securities, while fiscal 2019 includes only debt securities. See Note 2 for further discussion regarding our adoption of the new accounting standard. 18 8 .      Interim Pension and Other Postretirement Benefit Plan Information The components of our net periodic pension cost for our pension and other postretirement benefit plans for the  three and nine months ended   June 30, 2019  and  2018  are presented in the following tables. Most of these costs are recoverable through our tariff rates.  A portion of these costs is capitalized into our rate base or deferred as a regulatory asset or liability. The remaining costs are recorded as a component of operation and maintenance expense or other non-operating expense.    Three Months Ended June 30   Pension Benefits   Other Benefits   2019   2018   2019   2018   (In thousands) Components of net periodic pension cost:               Service cost $ 4,044   $ 4,794   $ 2,702   $ 3,020 Interest cost (1) 6,799   6,448   2,960   2,726 Expected return on assets (1) ( 7,113 )   ( 6,917 )   ( 2,664 )   ( 2,002 ) Amortization of prior service cost (credit) (1) ( 57 )   ( 57 )   43   2 Amortization of actuarial (gain) loss (1) 1,606   3,050   ( 2,045 )   ( 1,618 ) Settlements (1) —   888   —   — Net periodic pension cost $ 5,279   $ 8,206   $ 996   $ 2,128   Nine Months Ended June 30   Pension Benefits   Other Benefits   2019   2018   2019   2018   (In thousands) Components of net periodic pension cost:               Service cost $ 12,134   $ 13,929   $ 8,107   $ 9,059 Interest cost (1) 20,399   19,311   8,879   8,180 Expected return on assets (1) ( 21,339 )   ( 20,750 )   ( 7,994 )   ( 6,005 ) Amortization of prior service cost (credit) (1) ( 173 )   ( 173 )   130   8 Amortization of actuarial (gain) loss (1) 4,821   9,224   ( 6,134 )   ( 4,855 ) Settlements (1) —   3,303   —   — Net periodic pension cost $ 15,842   $ 24,844   $ 2,988   $ 6,387 (1) The components of net periodic cost other than the service cost component are included in the line item other non-operating expense in the condensed consolidated statement of comprehensive income or are capitalized on the condensed consolidated balance sheets as a regulatory asset or liability, as described in Note 2.   9 .     Commitments and Contingencies Litigation and Environmental Matters In the normal course of business, we are subject to various legal and regulatory proceedings. For such matters, we record liabilities when they are considered probable and estimable, based on currently available facts, our historical experience and our estimates of the ultimate outcome or resolution of the liability in the future.  While the outcome of these proceedings is uncertain and a loss in excess of the amount we have accrued is possible though not reasonably estimable, it is the opinion of management that any amounts exceeding the accruals will not have a material adverse impact on our financial position, results of operations or cash flows. We maintain liability insurance for various risks associated with the operation of our natural gas pipelines and facilities, including for property damage and bodily injury. These liability insurance policies generally require us to be responsible for the first  $ 1.0  million  (self-insured retention) of each incident.  The National Transportation Safety Board (NTSB) is investigating an incident that occurred at a Dallas, Texas residence on February 23, 2018 that resulted in one fatality and injuries to four other residents. Together with the Railroad Commission of  19 Texas (RRC) and the Pipeline and Hazardous Materials Safety Administration, Atmos Energy is a party to the investigation and in that capacity is working closely with the NTSB to help determine the cause of this incident.  On  March 29, 2018 , a civil action was filed in Dallas, Texas against Atmos Energy in response to the February 23rd incident. In May 2019, the parties resolved the civil action to their mutual satisfaction subject to our self-insured retention noted above. We are a party to various other litigation and environmental-related matters or claims that have arisen in the ordinary course of our business. While the results of such litigation and response actions to such environmental-related matters or claims cannot be predicted with certainty, we continue to believe the final outcome of such litigation and matters or claims will not have a material adverse effect on our financial condition, results of operations or cash flows. Purchase Commitments Our distribution divisions maintain supply contracts with several vendors that generally cover a period of up to one year. Commitments for estimated base gas volumes are established under these contracts on a monthly basis at contractually negotiated prices. Commitments for incremental daily purchases are made as necessary during the month in accordance with the terms of the individual contract. Our Mid-Tex Division also maintains a limited number of long-term supply contracts to ensure a reliable source of gas for our customers in its service area, which obligate it to purchase specified volumes at prices indexed to natural gas hubs. These purchase commitment contracts are detailed in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 . At  June 30, 2019 , we were committed to purchase  53.9  Bcf within one year and  1.8  Bcf within two to three years under indexed contracts.  Leases  We have entered into operating leases for towers, office and warehouse space, vehicles and heavy equipment used in our operations. During the  nine months ended June 30, 2019 , we executed amendments to some of our lease agreements that impacted terms as well as our future minimum lease payments. As of  June 30, 2019 , the remaining lease terms range from one to  20  years and generally provide for the payment of taxes, insurance and maintenance by the lessee. Renewal options exist for certain of these leases. The related future minimum lease payments at  June 30, 2019  totaled  $ 194.9  million . Rate Regulatory Proceedings Except for routine rate regulatory proceedings as discussed below, there were no material changes to rate regulatory proceedings for the  nine months ended June 30, 2019 . As of  June 30, 2019 , rate regulatory proceedings were in progress in some of our service areas. These rate regulatory proceedings are discussed in further detail below in  Management’s Discussion and Analysis — Recent Ratemaking Developments . Additionally, as discussed in further detail in Note  13 , all jurisdictions are addressing impacts of the Tax Cuts and Jobs Act of 2017 (the "TCJA").   10.     Financial Instruments We currently use financial instruments to mitigate commodity price risk and in the past have also used financial instruments to mitigate interest rate risk.  The objectives and strategies for using financial instruments and the related accounting for these financial instruments are fully described in Notes 2 and 13 to the consolidated financial statements in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 . During the  nine months ended June 30, 2019 , there were no material changes in our objectives, strategies and accounting for using financial instruments.  Our financial instruments do not contain any credit-risk-related or other contingent features that could cause payments to be accelerated when our financial instruments are in net liability positions. The following summarizes those objectives and strategies.   Commodity Risk Management Activities Our purchased gas cost adjustment mechanisms essentially insulate our distribution segment from commodity price risk; however, our customers are exposed to the effects of volatile natural gas prices. We manage this exposure through a combination of physical storage, fixed-price forward contracts and financial instruments, primarily over-the-counter swap and option contracts, in an effort to minimize the impact of natural gas price volatility on our customers during the winter heating season. We typically seek to hedge between  25  and  50  percent  of anticipated heating season gas purchases using financial instruments. For the  2018 - 2019  heating season (generally October through March), in the jurisdictions where we are permitted  20 to utilize financial instruments, we hedged approximately  33  percent , or  18.9  Bcf of the winter flowing gas requirements. We have not designated these financial instruments as hedges for accounting purposes. Interest Rate Risk Management Activities Historically, we managed interest rate risk by periodically entering into financial instruments to effectively fix the Treasury yield component of the interest cost associated with anticipated financings.  In fiscal 2014 and 2015, we entered into forward starting interest rate swaps to fix the Treasury yield component associated with  $ 450  million  of the then anticipated issuance of  $ 450  million  unsecured senior notes in fiscal 2019.  These notes were issued as planned in March 2019 and we settled the swaps with the payment of  $ 90.1  million .  Because the swaps were effective, the realized loss was recorded as a component of AOCI and is being recognized as a component of interest expense over the 30-year life of the senior notes. As of  June 30, 2019 , we had  $ 115.8  million  of net realized losses in AOCI associated with the settlement of financial instruments used to fix the Treasury yield component of the interest cost of financing various issuances of long-term debt and senior notes, which will be recognized as a component of interest expense over the life of the associated notes from the date of settlement. The remaining amortization periods for these settled amounts extend through fiscal 2049.    Quantitative Disclosures Related to Financial Instruments The following tables present detailed information concerning the impact of financial instruments on our condensed consolidated balance sheet and statements of comprehensive income. As of  June 30, 2019 , our financial instruments were comprised of both long and short commodity positions. A long position is a contract to purchase the commodity, while a short position is a contract to sell the commodity. As of  June 30, 2019 , we had  16,784  MMcf of net long commodity contracts outstanding. These contracts have not been designated as hedges. Financial Instruments on the Balance Sheet The following tables present the fair value and balance sheet classification of our financial instruments as of  June 30, 2019  and  September 30, 2018 .  The gross amounts of recognized assets and liabilities are netted within our unaudited condensed consolidated balance sheets to the extent that we have netting arrangements with our counterparties.  However, for  June 30, 2019  and  September 30, 2018 ,  no  gross amounts and  no  cash collateral were netted within our consolidated balance sheet.            Balance Sheet Location   Assets   Liabilities        (In thousands) June 30, 2019           Not Designated As Hedges:           Commodity contracts Other current assets /  Other current liabilities   $ 2,408   $ ( 3,358 ) Commodity contracts Deferred charges and other assets /  Deferred credits and other liabilities   149   ( 513 ) Total     2,557   ( 3,871 ) Gross / Net Financial Instruments     $ 2,557   $ ( 3,871 )   21           Balance Sheet Location   Assets   Liabilities        (In thousands) September 30, 2018           Designated As Hedges:           Interest rate swaps Other current assets /  Other current liabilities   $ —   $ ( 56,499 ) Total     —   ( 56,499 ) Not Designated As Hedges:           Commodity contracts Other current assets /  Other current liabilities   1,369   ( 235 ) Commodity contracts Deferred charges and other assets /  Deferred credits and other liabilities   250   ( 103 ) Total     1,619   ( 338 ) Gross / Net Financial Instruments     $ 1,619   $ ( 56,837 )   Impact of Financial Instruments on the Statement of Comprehensive Income Cash Flow Hedges As discussed above, in the past our distribution segment had interest rate agreements, which we designated as cash flow hedges at the time the agreements were executed. The net loss on settled interest rate agreements reclassified from AOCI into interest charges on our condensed consolidated statements of comprehensive income for the  three months ended June 30, 2019  and  2018  was  $ 1.4  million  and  $ 0.6  million  and for the  nine months ended June 30, 2019  and  2018  was  $ 2.6  million  and  $ 1.8  million . The following table summarizes the gains and losses arising from hedging transactions that were recognized as a component of other comprehensive income (loss), net of taxes, for the  three and nine months ended June 30, 2019  and  2018 . The amounts included in the table below exclude gains and losses arising from ineffectiveness because those amounts are immediately recognized in the statement of comprehensive income as incurred.   Three Months Ended June 30   Nine Months Ended June 30   2019   2018   2019   2018   (In thousands) Increase (decrease) in fair value:               Interest rate agreements $ —   $ 7,861   $ ( 25,966 )   $ 28,315 Recognition of losses in earnings due to settlements:               Interest rate agreements 1,053   459   1,969   1,294 Total other comprehensive income (loss) from hedging, net of tax $ 1,053   $ 8,320   $ ( 23,997 )   $ 29,609 Deferred gains (losses) recorded in AOCI associated with our interest rate agreements are recognized in earnings as they are amortized over the terms of the underlying debt instruments.  The following amounts, net of deferred taxes, represent the expected recognition in earnings, as of  June 30, 2019 , of the deferred losses recorded in AOCI associated with our financial instruments, based upon the fair values of these financial instruments at the date of settlement.   Interest Rate Agreements   (In thousands) Next twelve months $ ( 4,212 ) Thereafter ( 111,556 ) Total $ ( 115,768 ) 22 Financial Instruments Not Designated as Hedges As discussed above, commodity contracts which are used in our distribution segment are not designated as hedges. However, there is no earnings impact on our distribution segment as a result of the use of these financial instruments because the gains and losses arising from the use of these financial instruments are recognized in the consolidated statement of comprehensive income as a component of purchased gas cost when the related costs are recovered through our rates and recognized in revenue. Accordingly, the impact of these financial instruments is excluded from this presentation. 11 .     Fair Value Measurements We report certain assets and liabilities at fair value, which is defined as the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date (exit price). We record cash and cash equivalents, accounts receivable and accounts payable at carrying value, which substantially approximates fair value due to the short-term nature of these assets and liabilities. For other financial assets and liabilities, we primarily use quoted market prices and other observable market pricing information to minimize the use of unobservable pricing inputs in our measurements when determining fair value. The methods used to determine fair value for our assets and liabilities are fully described in Note 2 to the financial statements in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 . During the  nine months ended June 30, 2019 , there were no changes in these methods. Fair value measurements also apply to the valuation of our pension and postretirement plan assets. Current accounting guidance requires employers to annually disclose information about fair value measurements of the assets of a defined benefit pension or other postretirement plan. The fair value of these assets is presented in Note 7 to the financial statements in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 .  Quantitative Disclosures Financial Instruments The classification of our fair value measurements requires judgment regarding the degree to which market data is observable or corroborated by observable market data. Authoritative accounting literature establishes a fair value hierarchy that prioritizes the inputs used to measure fair value based on observable and unobservable data. The hierarchy categorizes the inputs into three levels, with the highest priority given to unadjusted quoted prices in active markets for identical assets and liabilities (Level 1), with the lowest priority given to unobservable inputs (Level 3).  The following tables summarize, by level within the fair value hierarchy, our assets and liabilities that were accounted for at fair value on a recurring basis as of  June 30, 2019  and  September 30, 2018 . Assets and liabilities are categorized in their entirety based on the lowest level of input that is significant to the fair value measurement.   Quoted Prices in Active Markets (Level 1)   Significant Other Observable Inputs (Level 2) (1)   Significant Other Unobservable Inputs (Level 3)   Netting and Cash Collateral   June 30, 2019   (In thousands) Assets:                   Financial instruments $ —   $ 2,557   $ —   $ —   $ 2,557 Debt and equity securities                   Registered investment companies 43,798   —   —   —   43,798 Bond mutual funds 25,778   —   —   —   25,778 Bonds (2) —   31,097   —   —   31,097 Money market funds —   1,369   —   —   1,369 Total debt and equity securities 69,576   32,466   —   —   102,042 Total assets $ 69,576   $ 35,023   $ —   $ —   $ 104,599 Liabilities:                   Financial instruments $ —   $ 3,871   $ —   $ —   $ 3,871 23   Quoted Prices in Active Markets (Level 1)   Significant Other Observable Inputs (Level 2) (1)   Significant Other Unobservable Inputs (Level 3)   Netting and Cash Collateral   September 30, 2018   (In thousands) Assets:                   Financial instruments $ —   $ 1,619   $ —   $ —   $ 1,619 Debt and equity securities                   Registered investment companies 42,644   —   —   —   42,644 Bond mutual funds 21,507   —   —   —   21,507 Bonds (2) —   31,400   —   —   31,400 Money market funds —   3,834   —   —   3,834 Total debt and equity securities 64,151   35,234   —   —   99,385 Total assets $ 64,151   $ 36,853   $ —   $ —   $ 101,004 Liabilities:                   Financial instruments $ —   $ 56,837   $ —   $ —   $ 56,837   (1) Our Level 2 measurements consist of over-the-counter options and swaps, which are valued using a market-based approach in which observable market prices are adjusted for criteria specific to each instrument, such as the strike price, notional amount or basis differences, municipal and corporate bonds, which are valued based on the most recent available quoted market prices and money market funds that are valued at cost. (2) Our investments in bonds are considered available-for-sale debt securities in accordance with current accounting guidance as described in Note 2. Debt and equity securities are comprised of our available-for-sale debt securities and our equity securities. We regularly evaluate the performance of our available-for-sale debt securities on an investment by investment basis for impairment, taking into consideration the investment’s purpose, volatility and current returns. If a determination is made that a decline in fair value is other than temporary, the related investment is written down to its estimated fair value and the other-than-temporary impairment is recognized in the statement of comprehensive income. At  June 30, 2019  and  September 30, 2018 , our available-for-sale debt securities amortized cost was  $ 31.0  million  and  $ 31.5  million . At  June 30, 2019 , we maintained investments in bonds that have contractual maturity dates ranging from July 2019 through February 2022. Other Fair Value Measures Our debt is recorded at carrying value. The fair value of our debt is determined using third party market value quotations, which are considered Level 1 fair value measurements for debt instruments with a recent, observable trade or Level 2 fair value measurements for debt instruments where fair value is determined using the most recent available quoted market price.  The following table presents the carrying value and fair value of our debt as of  June 30, 2019  and  September 30, 2018 :   June 30, 2019   September 30, 2018   (In thousands) Carrying Amount $ 3,685,000   $ 3,085,000 Fair Value $ 4,144,253   $ 3,161,679 12.     Concentration of Credit Risk Information regarding our concentration of credit risk is disclosed in Note 16 to the financial statements in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 .  During the  nine months ended June 30, 2019 , there were no material changes in our concentration of credit risk. 13 .     Impact of the Tax Cuts and Jobs Act of 2017 On December 22, 2017, the Tax Cuts and Jobs Act of 2017 (the "TCJA") was signed into law. As a result of the implementation of the TCJA, we recognized a  $ 165.5  million  income tax benefit in our condensed consolidated statement of comprehensive income during the  nine months ended June 30, 2018  related to a change in deferred taxes that were not related to our cost of service ratemaking. The change in deferred taxes related to our cost of service ratemaking (referred to as excess deferred taxes) was reclassified into a regulatory liability and will be returned to ratepayers in accordance with regulatory requirements. As of  June 30, 2019  and  September 30, 2018 , this liability totaled  $ 731.8  million  and  $ 744.9  million . 24 We have worked and continue to work with our regulators in each jurisdiction to fully incorporate the effects of the TCJA into customer bills. As of  June 30, 2019 , we have received approval from regulators to update our cost of service rates to reflect the decrease in the statutory income tax rate in all of our service areas. Regulators in all of our service areas issued accounting orders that required us to establish, effective January 1, 2018, a separate regulatory liability for the difference in taxes included in our rates that were calculated based on a 35% statutory income tax rate and rates based on the new 21% statutory income tax rate until the new rates could be established. As of  June 30, 2019 , we received approval from substantially all regulators to return these liabilities to customers. This regulatory liability totaled  $ 6.1  million  and  $ 22.5  million  as of  June 30, 2019  and  September 30, 2018 .  As of  June 30, 2019 , we received approval from regulators to return excess deferred taxes in most of our jurisdictions in accordance with regulatory proceedings on a provisional basis over periods ranging from  13  to  51  years. In our remaining jurisdictions, the treatment of the effects of the TCJA in rates is being addressed in ongoing or will be addressed in future regulatory proceedings.  The SEC issued guidance in Staff Accounting Bulletin 118 (SAB 118), which allowed us to record provisional amounts during a one-year measurement period, similar to the measurement period in accounting for business combinations. The Company recorded provisional amounts for the income tax effects of the TCJA for the fiscal year ended September 30, 2018. Although the Company no longer considers the accounting effects of the TCJA to be provisional under SAB 118, many aspects of the TCJA remain unclear and its impact on the Company's income tax balances may change following further interpretation of TCJA provisions by issuance of U.S. Treasury regulations or guidance from the Internal Revenue Service.  We continue to monitor and assess the accounting implications of the TCJA developments on the consolidated financial statements. 25 REPORT OF INDEPENDENT REGISTERED PUBLIC ACCOUNTING FIRM The Board of Directors and Shareholders of Atmos Energy Corporation Results of Review of Interim Financial Statements We have reviewed the accompanying condensed consolidated balance sheet of Atmos Energy Corporation as of  June 30, 2019 , the related condensed consolidated statements of comprehensive income for the  three and nine month  periods ended  June 30, 2019  and  2018 , the condensed consolidated statements of cash flows for the  nine  month periods ended  June 30, 2019  and  2018  and the related notes (collectively referred to as the "condensed consolidated interim financial statements"). Based on our reviews, we are not aware of any material modifications that should be made to the condensed consolidated interim financial statements for them to be in conformity with U.S. generally accepted accounting principles. We have previously audited, in accordance with the standards of the Public Company Accounting Oversight Board (United States) (PCAOB), the consolidated balance sheet of the Company as of  September 30, 2018 , the related consolidated statements of income, comprehensive income, shareholders’ equity, and cash flows for the year then ended, and related notes and schedule (not presented herein); and in our report dated November 13, 2018, we expressed an unqualified opinion on those consolidated financial statements. In our opinion, the information set forth in the accompanying condensed consolidated balance sheet as of  September 30, 2018 , is fairly stated, in all material respects, in relation to the consolidated balance sheet from which it has been derived. Basis for Review Results These financial statements are the responsibility of the Company's management. We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the SEC and the PCAOB. We conducted our review in accordance with the standards of the PCAOB. A review of interim financial statements consists principally of applying analytical procedures and making inquiries of persons responsible for financial and accounting matters. It is substantially less in scope than an audit conducted in accordance with the standards of the PCAOB, the objective of which is the expression of an opinion regarding the financial statements taken as a whole. Accordingly, we do not express such an opinion. /s/    ERNST & YOUNG LLP Dallas, Texas August 7, 2019   26 Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations INTRODUCTION The following discussion should be read in conjunction with the condensed consolidated financial statements in this Quarterly Report on Form 10-Q and Management’s Discussion and Analysis in our Annual Report on Form 10-K for the year ended  September 30, 2018 .  Cautionary Statement for the Purposes of the Safe Harbor under the Private Securities Litigation Reform Act of 1995 The statements contained in this Quarterly Report on Form 10-Q may contain “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933 and Section 21E of the Securities Exchange Act of 1934. All statements other than statements of historical fact included in this Report are forward-looking statements made in good faith by us and are intended to qualify for the safe harbor from liability established by the Private Securities Litigation Reform Act of 1995. When used in this Report, or any other of our documents or oral presentations, the words “anticipate”, “believe”, “estimate”, “expect”, “forecast”, “goal”, “intend”, “objective”, “plan”, “projection”, “seek”, “strategy” or similar words are intended to identify forward-looking statements. Such forward-looking statements are subject to risks and uncertainties that could cause actual results to differ materially from those expressed or implied in the statements relating to our strategy, operations, markets, services, rates, recovery of costs, availability of gas supply and other factors. These risks and uncertainties include the following: state and local regulatory trends and decisions, including the impact of rate proceedings before various state regulatory commissions; increased federal regulatory oversight and potential penalties; possible increased federal, state and local regulation of the safety of our operations; the inherent hazards and risks involved in distributing, transporting and storing natural gas; the capital-intensive nature of our business; our ability to continue to access the credit and capital markets to execute our business strategy; market risks beyond our control affecting our risk management activities, including commodity price volatility, counterparty performance or creditworthiness and interest rate risk; the concentration of our operations in Texas; the impact of adverse economic conditions on our customers; changes in the availability and price of natural gas; the availability and accessibility of contracted gas supplies, interstate pipeline and/or storage services; increased competition from energy suppliers and alternative forms of energy; adverse weather conditions; increased costs of providing health care benefits, along with pension and postretirement health care benefits and increased funding requirements; the inability to continue to hire, train and retain operational, technical and managerial personnel; the impact of climate change or related additional legislation or regulation in the future; the threat of cyber-attacks or acts of cyber-terrorism that could disrupt our business operations and information technology systems or result in the loss or exposure of confidential or sensitive customer, employee or Company information; natural disasters, terrorist activities or other events and other risks and uncertainties discussed herein, all of which are difficult to predict and many of which are beyond our control. Accordingly, while we believe these forward-looking statements to be reasonable, there can be no assurance that they will approximate actual experience or that the expectations derived from them will be realized. Further, we undertake no obligation to update or revise any of our forward-looking statements whether as a result of new information, future events or otherwise. OVERVIEW Atmos Energy and our subsidiaries are engaged in the regulated natural gas distribution and pipeline and storage businesses. We distribute natural gas through sales and transportation arrangements to over three million residential, commercial, public authority and industrial customers throughout our six distribution divisions, which at  June 30, 2019  covered service areas located in eight states. In addition, we transport natural gas for others through our distribution and pipeline systems.  We manage and review our consolidated operations through the following reportable segments:  • The  distribution segment  is primarily comprised of our regulated natural gas distribution and related sales operations in eight states.  • The  pipeline and storage segment  is comprised primarily of the pipeline and storage operations of our Atmos Pipeline-Texas division and our natural gas transmission operations in Louisiana. 27 CRITICAL ACCOUNTING ESTIMATES AND POLICIES Our condensed consolidated financial statements were prepared in accordance with accounting principles generally accepted in the United States. Preparation of these financial statements requires us to make estimates and judgments that affect the reported amounts of assets, liabilities, revenues and expenses and the related disclosures of contingent assets and liabilities. We based our estimates on historical experience and various other assumptions that we believe to be reasonable under the circumstances. On an ongoing basis, we evaluate our estimates, including those related to risk management and trading activities, the allowance for doubtful accounts, legal and environmental accruals, insurance accruals, pension and postretirement obligations, deferred income taxes and the valuation of goodwill, indefinite-lived intangible assets and other long-lived assets. Actual results may differ from such estimates. Our critical accounting policies used in the preparation of our consolidated financial statements are described in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018  and include the following: • Regulation • Unbilled revenue • Pension and other postretirement plans • Impairment assessments Our critical accounting policies are reviewed periodically by the Audit Committee of our Board of Directors. There were no significant changes to these critical accounting policies during the  nine months ended June 30, 2019 . Non-GAAP Financial Measures Our operations are affected by the cost of natural gas, which is passed through to our customers without markup and includes commodity price, transportation, storage, injection and withdrawal fees and settlements of financial instruments used to mitigate commodity price risk.  These costs are reflected in the condensed consolidated statements of comprehensive income as purchased gas cost. Therefore, increases in the cost of gas are offset by a corresponding increase in revenues. Accordingly, we believe Contribution Margin, a non-GAAP financial measure, defined as operating revenues less purchased gas cost, is a more useful and relevant measure to analyze our financial performance than operating revenues. As such, the following discussion and analysis of our financial performance will reference Contribution Margin rather than operating revenues and purchased gas cost individually. Further, the term Contribution Margin is not intended to represent operating income, the most comparable GAAP financial measure, as an indicator of operating performance and is not necessarily comparable to similarly titled measures reported by other companies. As described further in Note  13 , the enactment of the Tax Cuts and Jobs Act of 2017 (the "TCJA") required us to remeasure our deferred tax assets and liabilities at our new federal statutory income tax rate as of December 22, 2017. The remeasurement of our net deferred tax liabilities resulted in the recognition of a non-cash income tax benefit of  $165.5 million  for the  nine months ended June 30, 2018 . Due to the non-recurring nature of this benefit, we believe that net income and diluted net income per share before the non-cash income tax benefit provide a more relevant measure to analyze our financial performance than net income and diluted net income per share in order to allow investors to better analyze our core results and allow the information to be presented on a comparative basis to the prior year. Accordingly, the following discussion and analysis of our financial performance will reference adjusted net income and adjusted diluted earnings per share, non-GAAP financial measures, which are calculated as follows:               Nine Months Ended June 30   2019   2018   Change   (In thousands, except per share data) Net income $ 453,000   $ 564,317   $ (111,317 ) TCJA non-cash income tax benefit —   (165,522 )   165,522 Adjusted net income $ 453,000   $ 398,795   $ 54,205             Diluted net income per share $ 3.88   $ 5.09   $ (1.21 ) Diluted EPS from TCJA non-cash income tax benefit —   (1.49 )   1.49 Adjusted diluted net income per share $ 3.88   $ 3.60   $ 0.28 28 RESULTS OF OPERATIONS Executive Summary Atmos Energy strives to operate our businesses safely and reliably while delivering superior shareholder value.  Our commitment to modernizing our natural gas distribution and transmission systems requires a significant level of capital spending.  We have the ability to begin recovering a significant portion of these investments timely through rate designs and mechanisms that reduce or eliminate regulatory lag and separate the recovery of our approved rate from customer usage patterns.  The execution of our capital spending program, the ability to recover these investments timely and our ability to access the capital markets to satisfy our financing needs are the primary drivers that affect our financial performance. During the  nine months ended June 30, 2019 , we recorded net income of  $453.0 million , or  $3.88  per diluted share, compared to net income of  $564.3 million , or  $5.09  per diluted share for the  nine months ended June 30, 2018 . After adjusting for the nonrecurring benefit recognized after implementing the TCJA in fiscal 2018, we recorded adjusted net income of  $398.8 million , or  $3.60  per diluted share for the  nine months ended June 30, 2018 . The period-over-period increase in adjusted net income of  $54.2 million , or 14 percent, largely reflects positive rate outcomes, customer growth in our distribution business, positive Contribution Margins in our pipeline and storage business due to positive supply and demand dynamics affecting the Permian Basin primarily due to wider spreads and the impact of the TCJA on our effective income tax rate. During the  nine months ended June 30, 2019 , we implemented ratemaking regulatory actions which resulted in an increase in annual operating income of  $102.9 million  and had  seven  ratemaking efforts in progress at  June 30, 2019 , seeking a total increase in annual operating income of  $79.9 million . Capital expenditures for the  nine months ended June 30, 2019  increased 10 percent period-over-period, to  $1.2 billion . Over 80 percent was invested to improve the safety and reliability of our distribution and transportation systems, with a significant portion of this investment incurred under regulatory mechanisms that reduce lag to six months or less. We expect our capital expenditures to range from $1.65 billion to $1.75 billion for fiscal  2019 . We funded our capital expenditures program primarily through operating cash flows of  $808.9 million .  Additionally, we completed over $2 billion in external financing during the  nine months ended June 30, 2019  with the issuance of $1.1 billion in 30-year senior notes and approximately $1.0 billion of common stock, of which approximately $417 million was allocated to forward sale agreements which have not yet been settled.  The net proceeds from these issuances, together with available cash, were used to repay at maturity our $450 million 8.50% unsecured senior notes, to repay short-term debt under our commercial paper program, to fund capital spending and for general corporate purposes. As a result of our sustained financial performance, improved cash flows and capital structure, our Board of Directors increased the quarterly dividend by 8.2 percent for fiscal  2019 . The following discusses the results of operations for each of our operating segments. Distribution  Segment The distribution segment is primarily comprised of our regulated natural gas distribution and related sales operations in eight states. The primary factors that impact the results of this segment are our ability to earn our authorized rates of return, competitive factors in the energy industry and economic conditions in our service areas. Our ability to earn our authorized rates of return is based primarily on our ability to improve the rate design in our various ratemaking jurisdictions to minimize regulatory lag and, ultimately, separate the recovery of our approved rates from customer usage patterns. Improving rate design is a long-term process and is further complicated by the fact that we operate in multiple rate jurisdictions. Seasonal weather patterns can also affect our  distribution  operations. However, the effect of weather that is above or below normal is substantially offset through weather normalization adjustments, known as WNA, which have been approved by state regulatory commissions for approximately 97 percent of our residential and commercial meters in the following states for the following time periods:     Kansas, West Texas October — May Tennessee October — April Kentucky, Mississippi, Mid-Tex November — April Louisiana December — March Virginia January — December Our  distribution  operations are also affected by the cost of natural gas. We are generally able to pass the cost of gas through to our customers without markup under purchased gas cost adjustment mechanisms; therefore, increases in the cost of  29 gas are offset by a corresponding increase in revenues. Contribution Margin in our Texas and Mississippi service areas includes franchise fees and gross receipts taxes, which are calculated as a percentage of revenue (inclusive of gas costs). Therefore, the amount of these taxes included in revenues is influenced by the cost of gas and the level of gas sales volumes. We record the associated tax expense as a component of taxes, other than income. Although changes in revenue-related taxes arising from changes in gas costs affect Contribution Margin, over time the impact is offset within operating income. Although the cost of gas typically does not have a direct impact on our Contribution Margin, higher gas costs may adversely impact our accounts receivable collections, resulting in higher bad debt expense, and may require us to increase borrowings under our credit facilities, resulting in higher interest expense. In addition, higher gas costs, as well as competitive factors in the industry and general economic conditions may cause customers to conserve or, in the case of industrial consumers, to use alternative energy sources. Currently, gas cost risk has been mitigated by rate design that allows us to collect from our customers the gas cost portion of our bad debt expense on approximately 76 percent of our residential and commercial margins. Three Months Ended June 30, 2019  compared with  Three Months Ended June 30, 2018   Financial and operational highlights for our  distribution  segment for the three months ended  June 30, 2019  and  2018  are presented below.   Three Months Ended June 30   2019   2018   Change   (In thousands, unless otherwise noted) Operating revenues $ 444,944   $ 535,488   $ (90,544 ) Purchased gas cost 139,518   230,887   (91,369 ) Contribution Margin 305,426   304,601   825 Operating expenses 256,743   241,492   15,251 Operating income 48,683   63,109   (14,426 ) Other non-operating income (expense) 3,005   (2,518 )   5,523 Interest charges 10,597   13,315   (2,718 ) Income before income taxes 41,091   47,276   (6,185 ) Income tax expense 8,693   11,932   (3,239 ) Net income $ 32,398   $ 35,344   $ (2,946 ) Consolidated distribution sales volumes — MMcf 41,683   49,369   (7,686 ) Consolidated distribution transportation volumes — MMcf 34,509   33,079   1,430 Total consolidated distribution throughput — MMcf 76,192   82,448   (6,256 ) Consolidated distribution average cost of gas per Mcf sold $ 3.35   $ 4.68   $ (1.33 ) Income before income taxes for our  distribution  segment decreased 13 percent, primarily due to a  $15.3 million  increase in operating expenses, slightly offset by an  $0.8 million  increase in Contribution Margin and a  $5.5 million  increase in other non-operating income. The quarter-over-quarter increase in Contribution Margin primarily reflects: • a $7.1 million net increase in rate adjustments, after the effect of the TCJA, primarily in our Mid-Tex and West Texas Divisions. • a $2.9 million increase from customer growth primarily in our Mid-Tex Division. • a $3.8 million decrease in residential and commercial net consumption, primarily due to warmer weather than the prior year period.  • a $4.6 million decrease in revenue-related taxes primarily in our Mid-Tex Division, offset by a corresponding $7.1 million decrease in the related tax expense. Operating expenses, which includes operation and maintenance expense, provision for doubtful accounts, depreciation and amortization expense and taxes, other than income, increased  $15.3 million , primarily due to: • a $9.0 million increase in pipeline maintenance and related activities.  • a $7.4 million increase in depreciation expense and property taxes associated with increased capital investments. • a $4.5 million increase in employee and training costs as we have increased service-related headcount to support operations in our fastest growing service territories. These increases are partially offset by a decrease in revenue-related taxes of $7.1 million, corresponding to the decrease in revenue-related taxes within Contribution Margin as described above. 30 Additionally, the quarter-over-quarter increase in other non-operating income primarily reflects the adoption of new accounting standards. As discussed further in Note 2, we are now required to recognize changes in the fair value of our equity securities formerly designated as available-for-sale on our condensed consolidated statement of comprehensive income and the components of net periodic cost other than the service cost component are included in the line item other non-operating expense in the condensed consolidated statement of comprehensive income. The following table shows our operating income by  distribution  division, in order of total rate base, for the three months ended  June 30, 2019  and  2018 . The presentation of our  distribution  operating income is included for financial reporting purposes and may not be appropriate for ratemaking purposes.   Three Months Ended June 30   2019   2018   Change   (In thousands) Mid-Tex $ 23,757   $ 24,612   $ (855 ) Kentucky/Mid-States 10,486   11,546   (1,060 ) Louisiana 8,517   10,821   (2,304 ) West Texas 5,053   5,135   (82 ) Mississippi 1,694   5,421   (3,727 ) Colorado-Kansas 2,399   2,043   356 Other (3,223 )   3,531   (6,754 ) Total $ 48,683   $ 63,109   $ (14,426 ) Nine Months Ended June 30, 2019  compared with  Nine Months Ended June 30, 2018   Financial and operational highlights for our  distribution  segment for the nine months ended  June 30, 2019  and  2018  are presented below.   Nine Months Ended June 30   2019   2018   Change   (In thousands, unless otherwise noted) Operating revenues $ 2,341,668   $ 2,595,571   $ (253,903 ) Purchased gas cost 1,147,598   1,421,698   (274,100 ) Contribution Margin 1,194,070   1,173,873   20,197 Operating expenses 746,987   725,666   21,321 Operating income 447,083   448,207   (1,124 ) Other non-operating income (expense) 1,791   (5,961 )   7,752 Interest charges 44,703   51,581   (6,878 ) Income before income taxes 404,171   390,665   13,506 TCJA non-cash income tax benefit  —   (143,789 )   143,789 Income tax expense 85,195   104,768   (19,573 ) Net income $ 318,976   $ 429,686   $ (110,710 ) Consolidated distribution sales volumes — MMcf 282,623   269,722   12,901 Consolidated distribution transportation volumes — MMcf 121,747   117,061   4,686 Total consolidated distribution throughput — MMcf 404,370   386,783   17,587 Consolidated distribution average cost of gas per Mcf sold $ 4.06   $ 5.27   $ (1.21 ) Income before income taxes for our  distribution  segment increased three percent, primarily due to a  $20.2 million  increase in Contribution Margin, a combined $14.6 million decrease in other non-operating expense and interest charges, partially offset by a  $21.3 million  increase in operating expenses.  The year-over-year increase in Contribution Margin primarily reflects: • a $23.8 million net increase in rate adjustments, after the effect of the TCJA, primarily in our Mid-Tex and Mississippi Divisions. • a $10.6 million increase from customer growth primarily in our Mid-Tex Division. 31 • an $8.7 million decrease in revenue-related taxes primarily in our Mid-Tex Division, partially offset by a corresponding $7.8 million decrease in the related tax expense. • a $4.7 million decrease in residential and commercial net consumption. Operating expenses increased  $21.3 million  primarily due to: • a $22.8 million increase in depreciation expense and property taxes associated with increased capital investments. • an $11.7 million increase in pipeline maintenance and related activities.    • a $6.6 million increase in employee and training costs as we have increased service-related headcount to support operations in our fastest growing service territories.  • a $3.0 million increase in software licensing fees. These increases are partially offset by a $24 million decrease in nonrecurring expenses related to the planned outage of our natural gas distribution system in Northwest Dallas in March 2018. The year-over-year increase in other non-operating income primarily reflects the adoption of new accounting standards. As discussed further in Note 2, we are now required to recognize changes in the fair value of our equity securities formerly designated as available-for-sale on our condensed consolidated statement of comprehensive income and the components of net periodic cost other than the service cost component are included in the line item other non-operating expense in the condensed consolidated statement of comprehensive income.  Additionally, the year-over-year decrease in interest charges reflects higher capitalized interest associated with increased capital spending.  The decrease in income tax expense reflects a reduction in our effective tax rate from 26.8% to 21.1%, as a result of the TCJA, as described above. The following table shows our operating income by  distribution  division, in order of total rate base, for the  nine months ended June 30, 2019  and  2018 . The presentation of our  distribution  operating income is included for financial reporting purposes and may not be appropriate for ratemaking purposes.   Nine Months Ended June 30   2019   2018   Change   (In thousands) Mid-Tex $ 189,294   $ 175,727   $ 13,567 Kentucky/Mid-States 69,960   76,204   (6,244 ) Louisiana 63,571   64,849   (1,278 ) West Texas 41,797   42,326   (529 ) Mississippi 48,392   48,792   (400 ) Colorado-Kansas 35,892   32,448   3,444 Other (1,823 )   7,861   (9,684 ) Total $ 447,083   $ 448,207   $ (1,124 ) Recent Ratemaking Developments The amounts described in the following sections represent the operating income that was requested or received in each rate filing, which may not necessarily reflect the stated amount referenced in the final order, as certain operating costs may have changed as a result of a commission’s or other governmental authority’s final ruling.  During the first  nine  months of fiscal  2019 , we implemented  twenty  regulatory proceedings, resulting in a  $53.7 million  increase in annual operating income as summarized below. The ratemaking outcomes for rate case activity in fiscal  2019  include the effect of tax reform legislation enacted effective January 1, 2018 and do not reflect the true economic benefit of the outcomes because they do not include the corresponding income tax benefit we will receive due to the decrease in our statutory tax rate.  Rate Action   Annual Increase in Operating Income     (In thousands) Annual formula rate mechanisms   $ 51,870 Rate case filings   1,656 Other rate activity   214     $ 53,740 32 The following ratemaking efforts seeking  $79.9 million  in increased annual operating income were in progress as of  June 30, 2019 : Division   Rate Action   Jurisdiction   Operating Income Requested             (In thousands) Colorado-Kansas   Rate Case   Kansas   $ 3,697 Kentucky/Mid-States   Infrastructure Mechanism   Virginia   85 Louisiana   Formula Rate Mechanism   LGS  (1)   7,124 Mid-Tex   Formula Rate Mechanism   Mid-Tex Cities   47,733 Mid-Tex   Infrastructure Mechanism   ATM Cities   6,591 Mississippi   Infrastructure Mechanism   Mississippi  (2)   8,433 West Texas   Formula Rate Mechanism   West Texas Cities   6,226             $ 79,889 (1)  On June 19, 2019, the Louisiana Public Service Commission approved this filing with rates to be implemented beginning July 1, 2019. (2)  On July 1, 2019, we updated this filing to increase the amount requested to $8.6 million. Annual Formula Rate Mechanisms As an instrument to reduce regulatory lag, formula rate mechanisms allow us to refresh our rates on an annual basis without filing a formal rate case. However, these filings still involve discovery by the appropriate regulatory authorities prior to the final determination of rates under these mechanisms. We currently have formula rate mechanisms in our Louisiana, Mississippi and Tennessee operations and in substantially all the service areas in our Texas divisions. Additionally, we have specific infrastructure programs in substantially all of our distribution divisions with tariffs in place to permit the investment associated with these programs to have their surcharge rate adjusted annually to recover approved capital costs incurred in a prior test-year period. The following table summarizes our annual formula rate mechanisms by state:     Annual Formula Rate Mechanisms State   Infrastructure Programs   Formula Rate Mechanisms           Colorado   System Safety and Integrity Rider (SSIR)   — Kansas   Gas System Reliability Surcharge (GSRS)   — Kentucky   Pipeline Replacement Program (PRP)   — Louisiana   (1)   Rate Stabilization Clause (RSC) Mississippi   System Integrity Rider (SIR)   Stable Rate Filing (SRF) Tennessee    —   Annual Rate Mechanism (ARM) Texas   Gas Reliability Infrastructure Program (GRIP), (1)   Dallas Annual Rate Review (DARR), Rate Review Mechanism (RRM) Virginia   Steps to Advance Virginia Energy (SAVE)   — (1) Infrastructure mechanisms in Texas and Louisiana allow for the deferral of all expenses associated with capital expenditures incurred pursuant to these rules, which primarily consists of interest, depreciation and other taxes (Texas only), until the next rate proceeding (rate case or annual rate filing), at which time investment and costs would be recoverable through base rates. 33 The following annual formula rate mechanisms, which reflect a 21% federal income tax rate resulting from the TCJA, were approved during the  nine months ended June 30, 2019 : Division   Jurisdiction   Test Year Ended   Increase (Decrease) in Annual Operating Income   Effective Date         (In thousands) 2019 Filings:                 Mid-Tex   Environs   12/31/2018   $ 2,435   06/04/2019 West Texas   Environs   12/31/2018   1,005   06/04/2019 Mid-Tex   DARR  (1)   09/30/2018   9,452   06/01/2019 Kentucky/Mid-States   Tennessee ARM   05/31/2020   2,393   06/01/2019 West Texas   Amarillo, Lubbock, Dalhart and Channing   12/31/2018   5,692   05/01/2019 Colorado-Kansas   Kansas GSRS   12/31/2018   1,562   05/01/2019 Louisiana   Trans La   09/30/2018   4,719   04/01/2019 Colorado-Kansas   Colorado GIS   12/31/2019   87   04/01/2019 Colorado-Kansas   Colorado SSIR   12/31/2019   2,147   01/01/2019 Mississippi   Mississippi - SIR   10/31/2019   7,135   11/01/2018 Mississippi   Mississippi - SRF   10/31/2019   (118 )   11/01/2018 Kentucky/Mid-States   Tennessee ARM   05/31/2019   (5,032 )   10/15/2018 Mid-Tex   Mid-Tex RRM Cities   12/31/2017   17,633   10/01/2018 West Texas   West Texas Cities RRM   12/31/2017   2,760   10/01/2018 Total 2019 Filings           $ 51,870     (1)  The Company and the City of Dallas were unable to arrive at a mutually agreeable settlement; therefore the DARR rates were implemented subject to refund, pending the outcome of an appeal filed with the Texas Railroad Commission. Rate Case Filings A rate case is a formal request from Atmos Energy to a regulatory authority to increase rates that are charged to our customers. Rate cases may also be initiated when the regulatory authorities request us to justify our rates. This process is referred to as a “show cause” action. Adequate rates are intended to provide for recovery of the Company’s costs as well as a fair rate of return and ensure that we continue to deliver reliable, reasonably priced natural gas service safely to our customers. The following table summarizes the rate cases, which reflect a 21% federal income tax rate resulting from the TCJA, that were completed during the  nine months ended June 30, 2019 . Division   State   Increase (Decrease) in Annual Operating Income   Effective Date         (In thousands)     2019 Rate Case Filings:             Mid-Tex (ATM Cities)   Texas   $ 2,113   06/01/2019 Kentucky/Mid-States   Kentucky   3,441   05/08/2019 Kentucky/Mid-States   Virginia   (400 )   04/01/2019 Mid-Tex (Environs)   Texas   (2,674 )   01/01/2019 West Texas (Environs)   Texas   (824 )   01/01/2019 Total 2019 Rate Case Filings       $ 1,656     34 Other Ratemaking Activity The following table summarizes other ratemaking activity during the  nine months ended June 30, 2019 . Division   Jurisdiction   Rate Activity   Increase in Annual Operating Income   Effective Date             (In thousands)     2019 Other Rate Activity:                 Colorado-Kansas   Kansas   Ad Valorem  (1)   $ 214   02/01/2019 Total 2019 Other Rate Activity           $ 214     (1)  The Ad Valorem filing relates to property taxes that are either over or undercollected compared to the amount included in our Kansas service area's base rates. Pipeline and Storage  Segment Our  pipeline and storage  segment consists of the pipeline and storage operations of our Atmos Pipeline–Texas Division (APT) and our natural gas transmission operations in Louisiana. APT is one of the largest intrastate pipeline operations in Texas with a heavy concentration in the established natural gas producing areas of central, northern and eastern Texas, extending into or near the major producing areas of the Barnett Shale, the Texas Gulf Coast and the Delaware and Midland Basins of West Texas. APT provides transportation and storage services to our Mid-Tex Division, other third-party local distribution companies, industrial and electric generation customers, as well as marketers and producers. As part of its pipeline operations, APT owns and operates five underground storage facilities in Texas.  Our natural gas transmission operations in Louisiana are comprised of a 21-mile pipeline located in the New Orleans, Louisiana area that is primarily used to aggregate gas supply for our distribution division in Louisiana under a long-term contract and, on a more limited basis, to third parties. The demand fee charged to our Louisiana distribution division for these services is subject to regulatory approval by the Louisiana Public Service Commission. We also manage two asset management plans, which have been approved by applicable state regulatory commissions. Generally, these asset management plans require us to share with our distribution customers a significant portion of the cost savings earned from these arrangements. Our  pipeline and storage  segment is impacted by seasonal weather patterns, competitive factors in the energy industry and economic conditions in our Texas and Louisiana service areas. Natural gas prices do not directly impact the results of this segment as revenues are derived from the transportation and storage of natural gas. However, natural gas prices and demand for natural gas could influence the level of drilling activity in the supply areas that we serve, which may influence the level of throughput we may be able to transport on our pipelines. Further, natural gas price differences between the various hubs that we serve in Texas could influence the volumes of gas transported for shippers through our Texas pipeline system and rates for such transportation.  The results of APT are also significantly impacted by the natural gas requirements of its local distribution company customers. Additionally, its operations may be impacted by the timing of when costs and expenses are incurred and when these costs and expenses are recovered through its tariffs.   APT annually uses GRIP to recover capital costs incurred in the prior calendar year. On February 15, 2019, APT made a GRIP filing that covered changes in net investment from January 1, 2018 through December 31, 2018 with a requested increase in operating income of $49.2 million. On May 7, 2019, the Texas Railroad Commission approved the Company's GRIP filing .  35 Three Months Ended  June 30, 2019  compared with Three Months Ended  June 30, 2018   Financial and operational highlights for our  pipeline and storage  segment for the three months ended  June 30, 2019  and  2018  are presented below.    Three Months Ended June 30   2019   2018   Change   (In thousands, unless otherwise noted) Mid-Tex / Affiliate transportation revenue $ 94,092   $ 83,592   $ 10,500 Third-party transportation revenue 50,801   40,515   10,286 Other revenue 4,305   3,526   779 Total operating revenues 149,198   127,633   21,565 Total purchased gas cost (96 )   561   (657 ) Contribution Margin 149,294   127,072   22,222 Operating expenses 75,775   65,861   9,914 Operating income 73,519   61,211   12,308 Other non-operating expense (1,360 )   (812 )   (548 ) Interest charges 8,995   10,034   (1,039 ) Income before income taxes 63,164   50,365   12,799 Income tax expense 15,096   14,516   580 Net income $ 48,068   $ 35,849   $ 12,219 Gross pipeline transportation volumes — MMcf 214,627   215,775   (1,148 ) Consolidated pipeline transportation volumes — MMcf 181,292   180,371   921 Income before income taxes for our  pipeline and storage  segment  increased   25 percent , primarily due to a  $22.2 million   increase  in Contribution Margin, partially offset by a  $9.9 million   increase  in operating expenses.  The quarter-over-quarter increase in Contribution Margin primarily reflects: • a $16.5 million net increase in rate adjustments, after the effect of the TCJA, primarily from the approved GRIP filings approved in May 2018 and May 2019. The increase in rates was driven primarily by increased safety and reliability spending. • a net increase of $4.5 million from positive supply and demand dynamics affecting the Permian Basin, primarily due to wider spreads. Operating expenses increased  $9.9 million , primarily due to higher depreciation expense associated with increased capital investments and higher system maintenance expense of $6.7 million primarily due to spending on hydro testing and in-line inspections. 36 Nine Months Ended June 30, 2019  compared with  Nine Months Ended June 30, 2018   Financial and operational highlights for our  pipeline and storage  segment for the  nine months ended June 30, 2019  and  2018  are presented below.    Nine Months Ended June 30   2019   2018   Change   (In thousands, unless otherwise noted) Mid-Tex / Affiliate transportation revenue $ 276,815   $ 267,121   $ 9,694 Third-party transportation revenue 131,623   97,860   33,763 Other revenue 10,880   10,070   810 Total operating revenues 419,318   375,051   44,267 Total purchased gas cost (544 )   1,906   (2,450 ) Contribution Margin 419,862   373,145   46,717 Operating expenses 210,602   184,047   26,555 Operating income 209,260   189,098   20,162 Other non-operating expense (3,637 )   (2,093 )   (1,544 ) Interest charges 29,687   30,581   (894 ) Income before income taxes 175,936   156,424   19,512 TCJA non-cash income tax benefit  —   (21,733 )   21,733 Income tax expense 41,912   43,526   (1,614 ) Net income $ 134,024   $ 134,631   $ (607 ) Gross pipeline transportation volumes — MMcf 708,315   666,079   42,236 Consolidated pipeline transportation volumes — MMcf 517,188   484,456   32,732 Income before income taxes for our  pipeline and storage  segment  increased   12 percent , primarily due to a  $46.7 million   increase  in Contribution Margin, partially offset by a  $26.6 million   increase  in operating expenses. The year-over-year increase in Contribution Margin primarily reflects: • a $33.3 million net increase in rate adjustments, after the effect of the TCJA, from the approved GRIP filings approved in December 2017, May 2018 and May 2019. The increase in rates was driven primarily by increased safety and reliability spending. • a net increase of $9.4 million primarily from positive supply and demand dynamics affecting the Permian Basin, primarily due to wider spreads. Operating expenses increased  $26.6 million , primarily due to higher depreciation expense of $9.5 million associated with increased capital investments and higher system maintenance expense of $13.8 million primarily due to spending on hydro testing and in-line inspections. Liquidity and Capital Resources The liquidity required to fund our working capital, capital expenditures and other cash needs is provided from a combination of internally generated cash flows and external debt and equity financing. External debt financing is provided primarily through the issuance of long-term debt, a $1.5 billion commercial paper program and three committed revolving credit facilities with a total availability from third-party lenders of approximately $1.5 billion. The commercial paper program and credit facilities provide cost-effective, short-term financing until it can be replaced with a balance of long-term debt and equity financing that achieves the Company's desired capital structure with an equity-to-total-capitalization ratio between  50%  and  60% , inclusive of long-term and short-term debt. Additionally, we have various uncommitted trade credit lines with our gas suppliers that we utilize to purchase natural gas on a monthly basis. The liquidity provided by these sources is expected to be sufficient to fund the Company's working capital needs and capital expenditure program for the remainder of fiscal year  2019  and beyond. To continue to support our capital market activities, we filed a registration statement with the SEC on  November 13, 2018  that permits us to issue a total of  $3.0 billion  in common stock and/or debt securities. This registration statement replaced our previous registration statement that was effectively exhausted in October 2018. At  June 30, 2019 , approximately  $1.3 billion  of securities remained available for issuance under the shelf registration statement. On  November 19, 2018 , we filed a prospectus supplement under the registration statement relating to an at-the-market (ATM) equity sales program under which we may issue and sell shares of our common stock up to an aggregate offering price  37 of  $500 million  (including shares of common stock that may be sold pursuant to forward sale agreements entered into concurrently with the ATM equity sales program). At  June 30, 2019 , approximately  $231 million  remained available under the ATM equity sales program. During the nine months ended  June 30, 2019 , we completed over $2 billion of long-term debt and equity financing. • In October 2018, we completed the public offering of  $600 million  of 30-year  4.30%  senior notes.  The net proceeds of  $590.6 million  were used to repay working capital borrowings pursuant to our commercial paper program. • In November 2018, we sold  5,390,836  shares of common stock for  $500 million .  The net proceeds of  $494.1 million  were used to fund our capital expenditure program and for general corporate purposes. • In March 2019, we completed the public offering of  $450 million  of 30-year  4.125%  senior notes.  The net proceeds of  $443.4 million , together with available cash, were used to repay at maturity our  $450 million   8.50%  10-year unsecured senior notes due  March 15, 2019  and the related settlement of our interest rate swaps for  $90.1 million . • In November 2018, February 2019 and May 2019, we executed forward sales with various forward sellers who borrowed and sold 5,389,536 million shares of our common stock for initial aggregate proceeds of approximately $516 million.   • In May 2019, we settled forward sale agreements for 1,089,700 million shares of common stock based on a net price of $91.44 per share for net proceeds of $99.6 million. The following table summarizes the remaining availability under our various forward sales as of  June 30, 2019 : Issue Quarter Issued Under Shares Available Net Proceeds Available (In thousands) Maturity Forward Price December 31, 2018 Block 1,578,764 $ 144,608 3/31/2020 $ 91.60 March 31, 2019 ATM 1,670,509 158,684 3/31/2020 $ 94.99 June 30, 2019 ATM 1,050,563 106,219 9/30/2020 $ 101.11 Total   4,299,836 $ 409,511     The following table presents our capitalization inclusive of short-term debt and the current portion of long-term debt as of  June 30, 2019 ,  September 30, 2018  and  June 30, 2018 :     June 30, 2019   September 30, 2018   June 30, 2018   (In thousands, except percentages) Short-term debt $ 74,942   0.8 %   $ 575,780   6.8 %   $ 244,777   3.0 % Long-term debt (1) 3,654,135   39.0 %   3,068,665   36.5 %   3,068,315   38.0 % Shareholders’ equity 5,641,996   60.2 %   4,769,951   56.7 %   4,759,552   59.0 % Total $ 9,371,073   100.0 %   $ 8,414,396   100.0 %   $ 8,072,644   100.0 % (1) In September 2019, our $125 million term loan, which we plan to refinance, will mature. Cash Flows Our internally generated funds may change in the future due to a number of factors, some of which we cannot control. These factors include regulatory changes, the price for our services, demand for such products and services, margin requirements resulting from significant changes in commodity prices, operational risks and other factors.  38 Cash flows from operating, investing and financing activities for the  nine months ended June 30, 2019  and  2018  are presented below.   Nine Months Ended June 30   2019   2018   Change   (In thousands) Total cash provided by (used in)           Operating activities $ 808,928   $ 1,035,296   $ (226,368 ) Investing activities (1,195,401 )   (1,087,224 )   (108,177 ) Financing activities 418,865   46,449   372,416 Change in cash and cash equivalents 32,392   (5,479 )   37,871 Cash and cash equivalents at beginning of period 13,771   26,409   (12,638 ) Cash and cash equivalents at end of period $ 46,163   $ 20,930   $ 25,233 Cash flows from operating activities For the  nine months ended June 30, 2019 , we generated cash flow from operating activities of  $808.9 million  compared with  $1,035.3 million  for the  nine months ended June 30, 2018 . The  $226.4 million  decrease in operating cash flows is primarily attributable to the change in net income and working capital changes, particularly in our distribution segment resulting from the timing of payments for natural gas purchases and deferred gas cost recoveries. Cash flows from investing activities Our capital expenditures are primarily used to improve the safety and reliability of our distribution and transmission system through pipeline replacement and system modernization and to enhance and expand our system to meet customer needs. Over the last three fiscal years, approximately 82 percent of our capital spending has been committed to improving the safety and reliability of our system.  We allocate our capital spending among our service areas using risk management models and subject matter experts to identify, assess and develop a plan of action to address our highest risk facilities.  We have regulatory mechanisms in most of our service areas that provide the opportunity to include approved capital costs in rate base on a periodic basis without being required to file a rate case.  These mechanisms permit us a reasonable opportunity to earn a fair return on our investment without compromising safety or reliability.  For the  nine months ended June 30, 2019 , cash used for investing activities was  $1.2 billion  compared to  $1.1 billion  for the  nine months ended June 30, 2018 . Capital spending increased by $110.7 million, or 10 percent, as a result of planned increases in our distribution segment to repair and replace vintage pipe and increases in spending in our pipeline and storage segment to improve the reliability of gas service to our local distribution company customers. Cash flows from financing activities For the  nine months ended June 30, 2019 , our financing activities provided  $418.9 million  of cash compared with  $46.4 million  of cash provided by financing activities in the prior-year period. In the  nine months ended June 30, 2019 , we received $1.6 billion in net proceeds from the issuance of long-term debt and equity.  The net proceeds were used primarily to support capital spending, reduce short term debt, repay at maturity our  $450 million  8.50% unsecured senior notes and the settlement of related interest rate swaps for  $90.1 million  and for other general corporate purposes. Cash dividends increased due to an 8.2 percent increase in our dividend rate and an increase in shares outstanding.  In the  nine months ended June 30, 2018 , we used $395.1 million in net proceeds from equity financing to reduce short-term debt, to support our capital spending and for other general corporate purposes. 39 The following table summarizes our share issuances for the  nine months ended June 30, 2019  and  2018 :   Nine Months Ended June 30   2019   2018 Shares issued:       Direct Stock Purchase Plan 78,697   111,727 1998 Long-Term Incentive Plan 299,368   347,213 Retirement Savings Plan and Trust 63,829   73,470 Equity Issuance 6,480,536   4,558,404 Total shares issued 6,922,430   5,090,814 Credit Ratings Our credit ratings directly affect our ability to obtain short-term and long-term financing, in addition to the cost of such financing. In determining our credit ratings, the rating agencies consider a number of quantitative factors, including but not limited to, debt to total capitalization, operating cash flow relative to outstanding debt, operating cash flow coverage of interest and pension liabilities. In addition, the rating agencies consider qualitative factors such as consistency of our earnings over time, the quality of our management and business strategy, the risks associated with our businesses and the regulatory structures that govern our rates in the states where we operate. Our debt is rated by two rating agencies: Standard & Poor’s Corporation (S&P) and Moody’s Investors Service (Moody’s).  On December 14, 2018, Moody's affirmed our debt ratings and improved their outlook from stable to positive, citing improvements to our regulatory construct that reduce investment recovery lag and our balanced fiscal policy.  As of  June 30, 2019 , S&P maintained a stable outlook. Our current debt ratings are all considered investment grade and are as follows:   S&P   Moody’s Senior unsecured long-term debt A    A2 Short-term debt A-1    P-1 A significant degradation in our operating performance or a significant reduction in our liquidity caused by more limited access to the private and public credit markets as a result of deteriorating global or national financial and credit conditions could trigger a negative change in our ratings outlook or even a reduction in our credit ratings by the two credit rating agencies. This would mean more limited access to the private and public credit markets and an increase in the costs of such borrowings. A credit rating is not a recommendation to buy, sell or hold securities. The highest investment grade credit rating is AAA for S&P and Aaa for Moody’s. The lowest investment grade credit rating is BBB- for S&P and Baa3 for Moody’s. Our credit ratings may be revised or withdrawn at any time by the rating agencies, and each rating should be evaluated independently of any other rating. There can be no assurance that a rating will remain in effect for any given period of time or that a rating will not be lowered, or withdrawn entirely, by a rating agency if, in its judgment, circumstances so warrant. Debt Covenants We were in compliance with all of our debt covenants as of  June 30, 2019 . Our debt covenants are described in greater detail in Note  6  to the unaudited condensed consolidated financial statements. Contractual Obligations and Commercial Commitments Except as noted in Note  9  to the unaudited condensed consolidated financial statements, there were no significant changes in our contractual obligations and commercial commitments during the  nine months ended June 30, 2019 . Risk Management Activities In our distribution and pipeline and storage segments, we use a combination of physical storage, fixed physical contracts and fixed financial contracts to reduce our exposure to unusually large winter-period gas price increases.  In the past we managed interest rate risk by entering into financial instruments to effectively fix the Treasury yield component of the interest cost associated with anticipated financings.  40 The following table shows the components of the change in fair value of our financial instruments for the  three and nine months ended June 30, 2019  and  2018 :   Three Months Ended June 30   Nine Months Ended June 30   2019   2018   2019   2018   (In thousands) Fair value of contracts at beginning of period $ 1,573   $ (86,342 )   $ (55,218 )   $ (109,159 ) Contracts realized/settled 6   (13 )   96,380   (1,213 ) Fair value of new contracts (1,226 )   109   (337 )   (607 ) Other changes in value (1,667 )   10,719   (42,139 )   35,452 Fair value of contracts at end of period (1,314 )   (75,527 )   (1,314 )   (75,527 ) Netting of cash collateral —   —   —   — Cash collateral and fair value of contracts at period end $ (1,314 )   $ (75,527 )   $ (1,314 )   $ (75,527 ) The fair value of our financial instruments at  June 30, 2019  is presented below by time period and fair value source:   Fair Value of Contracts at June 30, 2019   Maturity in Years     Source of Fair Value Less Than 1   1-3   4-5   Greater Than 5   Total Fair Value   (In thousands) Prices actively quoted $ (950 )   $ (364 )   $ —   $ —   $ (1,314 ) Prices based on models and other valuation methods —   —   —   —   — Total Fair Value $ (950 )   $ (364 )   $ —   $ —   $ (1,314 ) Pension and Postretirement Benefits Obligations For the  nine months ended June 30, 2019  and  2018 , our total net periodic pension and other postretirement benefits costs were  $18.8 million  and  $31.2 million . Most of these costs are recoverable through our rates.  A portion of these costs is capitalized into our rate base or deferred as a regulatory asset or liability. The remaining costs are recorded as a component of operation and maintenance expense or other non-operating expense as discussed in Note  8 . Our fiscal 2019 costs were determined using a September 30, 2018 measurement date. As of September 30, 2018, interest and corporate bond rates were higher than the rates as of September 30, 2017. Therefore, we increased the discount rate used to measure our fiscal 2019 net periodic cost from 3.89 percent to 4.38 percent. The expected return on plan assets remained consistent with prior year at 6.75 percent in the determination of our fiscal 2019 net periodic pension cost based upon expected market returns for our targeted asset allocation. As a result of the net impact of changes in these and other assumptions, we expect our fiscal 2019 net periodic pension cost to be lower than fiscal 2018. The amount of funding required for our defined benefit plan is determined in accordance with the Pension Protection Act of 2006 (PPA) and is influenced by the funded position of the plan when the funding requirements are determined on January 1 of each year. Based upon the determination as of January 1, 2019, we were not required to make a minimum contribution to our defined benefit plan during fiscal 2019. However, we may consider whether a voluntary contribution is prudent to maintain certain funding levels.  For the  nine months ended June 30, 2019  we contributed  $10.1 million  to our postretirement medical plans. We anticipate contributing a total of between $10 million and $20 million to our postretirement plans during fiscal  2019 . The projected pension liability, future funding requirements and the amount of pension expense or income recognized for the plans are subject to change, depending upon the actuarial value of plan assets in the plans and the determination of future benefit obligations as of each subsequent actuarial calculation date. These amounts will be determined by actual investment returns, changes in interest rates, values of assets in the plans and changes in the demographic composition of the participants in the plans. 41 OPERATING STATISTICS AND OTHER INFORMATION The following tables present certain operating statistics for our  distribution  and  pipeline and storage  segments for the three and  nine  month periods ended  June 30, 2019  and  2018 .  Distribution  Sales and Statistical Data   Three Months Ended June 30   Nine Months Ended June 30   2019   2018   2019   2018 METERS IN SERVICE, end of period               Residential 3,001,552   2,969,270   3,001,552   2,969,270 Commercial 272,942   270,455   272,942   270,455 Industrial 1,668   1,667   1,668   1,667 Public authority and other 8,560   8,388   8,560   8,388 Total meters 3,284,722   3,249,780   3,284,722   3,249,780                 INVENTORY STORAGE BALANCE — Bcf 49.1   47.5   49.1   47.5 SALES VOLUMES — MMcf (1)               Gas sales volumes               Residential 17,469   21,399   162,090   150,872 Commercial 15,838   17,368   90,395   85,273 Industrial 7,389   9,325   24,290   27,491 Public authority and other 987   1,277   5,848   6,086 Total gas sales volumes 41,683   49,369   282,623   269,722 Transportation volumes 36,367   34,989   127,453   122,691 Total throughput 78,050   84,358   410,076   392,413 OPERATING REVENUES (000’s) (1)(2)               Gas sales revenues               Residential $ 270,237   $ 318,501   $ 1,492,043   $ 1,680,155 Commercial 113,848   145,685   605,939   687,577 Industrial 25,226   31,283   95,677   104,300 Public authority and other 6,352   8,581   36,482   41,150 Total gas sales revenues 415,663   504,050   2,230,141   2,513,182 Transportation revenues 22,686   23,965   75,568   79,266 Other gas revenues (3) 6,595   7,473   35,959   3,123 Total operating revenues $ 444,944   $ 535,488   $ 2,341,668   $ 2,595,571 Average cost of gas per Mcf sold $ 3.35   $ 4.68   $ 4.06   $ 5.27 See footnote following these tables. 42 Pipeline and Storage  Operations Sales and Statistical Data   Three Months Ended June 30   Nine Months Ended June 30   2019   2018   2019   2018 CUSTOMERS, end of period               Industrial 93   93   93   93 Other 234   237   234   237 Total 327   330   327   330                 INVENTORY STORAGE BALANCE — Bcf 1.3   0.5   1.3   0.5 PIPELINE TRANSPORTATION VOLUMES — MMcf (1) 214,627   215,775   708,315   666,079 OPERATING REVENUES (000’s) (1)(2) $ 149,198   $ 127,633   $ 419,318   $ 375,051 Note to preceding tables: (1)   Sales volumes and revenues reflect segment operations, including intercompany sales and transportation amounts. (2)   Operating revenues include revenues from our alternative revenue programs as defined in Note  5 .  (3)   Other gas revenues include impacts of the TCJA. RECENT ACCOUNTING DEVELOPMENTS Recent accounting developments and their impact on our financial position, results of operations and cash flows are described in Note 2 to the unaudited condensed consolidated financial statements.   Item 3. Quantitative and Qualitative Disclosures About Market Risk Information regarding our quantitative and qualitative disclosures about market risk are disclosed in Item 7A in our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 .  During the  nine months ended June 30, 2019 , there were no material changes in our quantitative and qualitative disclosures about market risk. Item 4. Controls and Procedures Management’s Evaluation of Disclosure Controls and Procedures We carried out an evaluation, under the supervision and with the participation of our management, including our principal executive officer and principal financial officer, of the effectiveness of the Company’s disclosure controls and procedures, as such term is defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended (Exchange Act). Based on this evaluation, the Company’s principal executive officer and principal financial officer have concluded that the Company’s disclosure controls and procedures were effective as of  June 30, 2019  to provide reasonable assurance that information required to be disclosed by us, including our consolidated entities, in the reports that we file or submit under the Exchange Act is recorded, processed, summarized, and reported within the time periods specified by the SEC’s rules and forms, including a reasonable level of assurance that such information is accumulated and communicated to our management, including our principal executive and principal financial officers, as appropriate to allow timely decisions regarding required disclosure. Changes in Internal Control over Financial Reporting      We did not make any changes in our internal control over financial reporting (as defined in Rules 13a-15(f) and 15d-15(f) under the Exchange Act) during the  third  quarter of the fiscal year ended  September 30, 2019  that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting.   43 PART II. OTHER INFORMATION Item 1 . Legal Proceedings During the  nine months ended June 30, 2019 , except as noted in Note  9  to the unaudited condensed consolidated financial statements, there were no material changes in the status of the litigation and other matters that were disclosed in Note 11 to our Annual Report on Form 10-K for the fiscal year ended  September 30, 2018 .  We continue to believe that the final outcome of such litigation and other matters or claims will not have a material adverse effect on our financial condition, results of operations or cash flows. Item 6. Exhibits The following exhibits are filed as part of this Quarterly Report.   Exhibit Number    Description Page Number or Incorporation by Reference to 3.1   Restated Articles of Incorporation of Atmos Energy Corporation - Texas (As Amended Effective February 3, 2010) Exhibit 3.1 to Form 10-Q dated March 31, 2010 (File No. 1-10042) 3.2   Restated Articles of Incorporation of Atmos Energy Corporation - Virginia (As Amended Effective February 3, 2010) Exhibit 3.2 to Form 10-Q dated March 31, 2010 (File No. 1-10042) 3.3   Amended and Restated Bylaws of Atmos Energy Corporation (as of February 5, 2019) Exhibit 3.1 to Form 8-K dated February 5, 2019 (File No. 1-10042) 15    Letter regarding unaudited interim financial information   31    Rule 13a-14(a)/15d-14(a) Certifications   32    Section 1350 Certifications*   101.INS    XBRL Instance Document - the Instance Document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 101.SCH    Inline XBRL Taxonomy Extension Schema   101.CAL    Inline XBRL Taxonomy Extension Calculation Linkbase   101.DEF    Inline XBRL Taxonomy Extension Definition Linkbase   101.LAB    Inline XBRL Taxonomy Extension Labels Linkbase   101.PRE    Inline XBRL Taxonomy Extension Presentation Linkbase     * These certifications, which were made pursuant to 18 U.S.C. Section 1350 by the Company’s Chief Executive Officer and Chief Financial Officer, furnished as Exhibit 32 to this Quarterly Report on Form 10-Q, will not be deemed to be filed with the Commission or incorporated by reference into any filing by the Company under the Securities Act of 1933 or the Securities Exchange Act of 1934, except to the extent that the Company specifically incorporates such certifications by reference. 44 SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned, thereunto duly authorized.         A TMOS  E NERGY  C ORPORATION                (Registrant)       By:  /s/    CHRISTOPHER T. FORSYTHE       Christopher T. Forsythe Senior Vice President and Chief Financial Officer (Duly authorized signatory) Date:  August 7, 2019   45 	 
+ 

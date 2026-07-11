@@ -1,0 +1,7960 @@
+
+	 jbht20230930_10q.htm 
+
+
+	 
+ 
+ 
+ Q3 
+ 2023 
+ --12-31 
+ false 
+ 0000728535 
+ 5 
+ 5 
+ 1 
+ 5 
+ 
+ 
+ 
+ 0000728535 2023-01-01 2023-09-30 
+ iso4217:USD 
+ 0000728535 2022-01-01 2022-09-30 
+ 0000728535 2022-07-01 2022-09-30 
+ 0000728535 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember 2023-07-01 2023-09-30 
+ 0000728535 2022-12-31 
+ 0000728535 2023-09-30 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2022-12-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2022-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2022-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2022-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2022-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2023-09-30 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2022-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2023-09-30 
+ xbrli:pure 
+ utr:Y 
+ 0000728535 us-gaap:TradeNamesMember 2023-09-30 
+ 0000728535 us-gaap:TradeNamesMember 2022-12-31 
+ 0000728535 us-gaap:NoncompeteAgreementsMember 2023-09-30 
+ 0000728535 us-gaap:NoncompeteAgreementsMember 2022-12-31 
+ 0000728535 us-gaap:CustomerRelationshipsMember 2023-09-30 
+ 0000728535 us-gaap:CustomerRelationshipsMember 2022-12-31 
+ 0000728535 jbht:IntermodalBusinessSegmentsMember 2023-09-30 
+ 0000728535 jbht:IntegratedCapacitySolutionsMember 2023-09-30 
+ 0000728535 jbht:FinalMileServicesMember 2023-09-30 
+ 0000728535 jbht:BNSFLogisticsLlcMember 2023-09-30 
+ 0000728535 jbht:BNSFLogisticsLlcMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:FairValueMeasurementsNonrecurringMember us-gaap:SeniorNotesMember 2022-12-31 
+ 0000728535 us-gaap:FairValueMeasurementsNonrecurringMember us-gaap:SeniorNotesMember 2023-09-30 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2022-12-31 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2023-09-30 
+ iso4217:USD xbrli:shares 
+ 0000728535 us-gaap:SubsequentEventMember 2023-10-19 2023-10-19 
+ 0000728535 2023-07-19 2023-07-19 
+ xbrli:shares 
+ 0000728535 2022-07-20 
+ 0000728535 jbht:SeniorNotesSecondIssuanceMember us-gaap:SeniorNotesMember 2023-09-30 
+ 0000728535 jbht:SeniorNotesFirstIssuanceMember us-gaap:SeniorNotesMember 2023-09-30 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2023-09-30 
+ 0000728535 jbht:CommittedTermLoansMember 2023-09-30 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2023-09-30 2023-09-30 
+ 0000728535 jbht:NewCreditFacilityMember 2023-09-30 
+ 0000728535 us-gaap:SeniorNotesMember 2022-12-31 
+ 0000728535 us-gaap:SeniorNotesMember 2023-09-30 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2022-12-31 
+ 0000728535 us-gaap:PerformanceSharesMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2022-01-01 2023-09-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2023-09-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2023-09-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:PerformanceSharesMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2022-07-01 2022-09-30 
+ 0000728535 2022-09-30 
+ 0000728535 2021-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2023-09-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2023-09-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2023-09-30 
+ 0000728535 us-gaap:CommonStockMember 2023-09-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:CommonStockMember 2023-01-01 2023-09-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2022-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-12-31 
+ 0000728535 us-gaap:CommonStockMember 2022-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2022-09-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-09-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-09-30 
+ 0000728535 us-gaap:CommonStockMember 2022-09-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:CommonStockMember 2022-01-01 2022-09-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2021-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2021-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2021-12-31 
+ 0000728535 us-gaap:CommonStockMember 2021-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2023-07-01 2023-09-30 
+ 0000728535 us-gaap:CommonStockMember 2023-07-01 2023-09-30 
+ 0000728535 2023-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2023-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2023-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2023-06-30 
+ 0000728535 us-gaap:CommonStockMember 2023-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-07-01 2022-09-30 
+ 0000728535 us-gaap:CommonStockMember 2022-07-01 2022-09-30 
+ 0000728535 2022-06-30 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2022-06-30 
+ 0000728535 us-gaap:RetainedEarningsMember 2022-06-30 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2022-06-30 
+ 0000728535 us-gaap:CommonStockMember 2022-06-30 
+ 0000728535 jbht:FuelSurchargeMember 2022-01-01 2022-09-30 
+ 0000728535 jbht:FuelSurchargeMember 2023-01-01 2023-09-30 
+ 0000728535 jbht:FuelSurchargeMember 2022-07-01 2022-09-30 
+ 0000728535 jbht:FuelSurchargeMember 2023-07-01 2023-09-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2022-01-01 2022-09-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2023-01-01 2023-09-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2022-07-01 2022-09-30 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2023-07-01 2023-09-30 
+ thunderdome:item 
+ 
+   
+
+ 
+ UNITED STATES 
+
+ SECURITIES AND EXCHANGE COMMISSION 
+
+ Washington, D.C. 20549 
+
+   
+
+ FORM  10-Q 
+
+ (Mark One) 
+
+ ☒           QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+
+   
+
+ For the quarterly period ended  September 30, 2023 
+
+   
+
+ OR 
+
+   
+
+ ☐           TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+
+ Commission File Number:  0-11757 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+ (Exact name of registrant as specified in its charter) 
+
+   
+
+ 
+
+		 
+			 
+			 Arkansas 
+			 
+			 
+			 71-0335111 
+			 
+		 
+		 
+			 
+			 (State or other jurisdiction 
+			 
+			 
+			 (I.R.S. Employer 
+			 
+		 
+		 
+			 
+			 of incorporation or 
+			 
+			 
+			 Identification No.) 
+			 
+		 
+		 
+			 
+			 organization) 
+			 
+			 
+			   
+			 
+		 
+
+ 
+
+   
+
+ 615 J.B. Hunt Corporate Drive ,  Lowell ,  Arkansas   72745 
+
+ (Address of principal executive offices) 
+
+   
+
+ 479 - 820-0000 
+
+ (Registrant's telephone number, including area code) 
+
+   
+
+ www.jbhunt.com 
+
+ (Registrant's web site) 
+
+   
+
+ Securities registered pursuant to Section 12(b) of the Exchange Act: 
+
+   
+
+ 
+
+		 
+			 
+			 Title of each class 
+			 
+			 
+			 Trading Symbol(s) 
+			 
+			 
+			 Name of each exchange on which registered 
+			 
+		 
+		 
+			 
+			 Common Stock, $0.01 par value 
+			 
+			 
+			 JBHT 
+			 
+			 
+			 NASDAQ 
+			 
+		 
+
+ 
+
+   
+
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to the filing requirements for the past 90 days. 
+
+   
+
+ Yes     ☒              No  ☐ 
+
+   
+
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). 
+
+ Yes     ☒              No  ☐   
+
+   
+
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company.    See the definitions of  “ large accelerated filer, ”   “ accelerated filer, ”   “ smaller reporting company ”  and  “ emerging growth company ”  in Rule 12b-2 of the Exchange Act. 
+
+   
+
+ Large accelerated filer     ☒     Accelerated filer  ☐   Non-accelerated filer  ☐   
+
+ Smaller reporting company  ☐  Emerging growth company  ☐ 
+
+   
+
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐ 
+
+   
+
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). 
+
+   
+
+ Yes   ☐       No    ☒               
+
+   
+
+ The number of shares of the registrant ’ s $0.01 par value common stock outstanding on September 30, 2023 was  103,142,805 . 
+
+   
+
+ 
+ 
+ 
+   
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+ 
+
+   
+
+ 
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Form 10-Q 
+
+ For The Quarterly Period Ended September 30, 2023 
+
+ Table of Contents 
+
+   
+
+ 
+
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 Page 
+			 
+		 
+		 
+			 
+			 Part I.      Financial Information 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1. 
+			 
+			 
+			 Financial Statements 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Statements of Earnings for the Three and Nine Months Ended September 30, 2023 and 2022 
+			 
+			 
+			 3 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Balance Sheets as of September 30, 2023 and December 31, 2022 
+			 
+			 
+			 4 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			   
+			 Condensed Consolidated Statements of Stockholders’ Equity for the Three and Nine Months Ended September 30, 2023 and 2022 
+			 5 
+		 
+		 
+			   
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Statements of Cash Flows for the Nine Months Ended September 30, 2023 and 2022 
+			 
+			 
+			 6 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Notes to Condensed Consolidated Financial Statements as of September 30, 2023 
+			 
+			 
+			 7 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 2. 
+			 
+			 
+			 Management's Discussion and Analysis of Financial Condition and Results of Operations 
+			 
+			 
+			 13 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 3. 
+			 
+			 
+			 Quantitative and Qualitative Disclosures About Market Risk 
+			 
+			 
+			 21 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 4. 
+			 
+			 
+			 Controls and Procedures 
+			 
+			 
+			 22 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Part II.      Other Information 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1. 
+			 
+			 
+			 Legal Proceedings 
+			 
+			 
+			 22 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1A. 
+			 
+			 
+			 Risk Factors 
+			 
+			 
+			 22 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 2. 
+			 
+			 
+			 Unregistered Sales of Equity Securities and Use of Proceeds 
+			 
+			 
+			 23 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 3. 
+			 
+			 
+			 Defaults Upon Senior Securities 
+			 
+			 
+			 23 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 Item 4. 
+			 
+			 
+			 Mine Safety Disclosures 
+			 
+			 
+			 23 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 Item 5. 
+			 
+			 
+			 Other Information 
+			 
+			 
+			 23 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 6. 
+			 
+			 
+			 Exhibits 
+			 
+			 
+			 23 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Exhibits 
+			 
+			 
+			 24 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Signatures 
+			 
+			 
+			 25 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+   
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+ 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			 Part I.      Financial Information 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 ITEM 1.     FINANCIAL STATEMENTS 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Statements of Earnings 
+			 
+		 
+		 
+			 
+			 (in thousands, except per share amounts) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+			 
+			   
+			   
+			 
+			 Nine Months Ended 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 September 30, 
+			 
+			   
+			   
+			 
+			 September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating revenues, excluding fuel surcharge revenues 
+			 
+			   
+			 $ 
+			 2,690,890 
+			   
+			   
+			 $ 
+			 3,162,106 
+			   
+			   
+			 $ 
+			 8,140,959 
+			   
+			   
+			 $ 
+			 9,364,082 
+			   
+		 
+		 
+			 
+			 Fuel surcharge revenues 
+			 
+			   
+			   
+			 472,863 
+			   
+			   
+			   
+			 676,151 
+			   
+			   
+			   
+			 1,385,006 
+			   
+			   
+			   
+			 1,800,295 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 3,163,753 
+			   
+			   
+			   
+			 3,838,257 
+			   
+			   
+			   
+			 9,525,965 
+			   
+			   
+			   
+			 11,164,377 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 1,443,197 
+			   
+			   
+			   
+			 1,891,848 
+			   
+			   
+			   
+			 4,315,581 
+			   
+			   
+			   
+			 5,650,011 
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 803,187 
+			   
+			   
+			   
+			 887,723 
+			   
+			   
+			   
+			 2,450,062 
+			   
+			   
+			   
+			 2,493,139 
+			   
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 195,962 
+			   
+			   
+			   
+			 242,379 
+			   
+			   
+			   
+			 563,642 
+			   
+			   
+			   
+			 697,481 
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 187,714 
+			   
+			   
+			   
+			 166,580 
+			   
+			   
+			   
+			 543,498 
+			   
+			   
+			   
+			 472,914 
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 130,905 
+			   
+			   
+			   
+			 138,346 
+			   
+			   
+			   
+			 388,213 
+			   
+			   
+			   
+			 371,668 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 62,675 
+			   
+			   
+			   
+			 60,189 
+			   
+			   
+			   
+			 196,896 
+			   
+			   
+			   
+			 193,577 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 69,413 
+			   
+			   
+			   
+			 62,815 
+			   
+			   
+			   
+			 191,291 
+			   
+			   
+			   
+			 160,026 
+			   
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 18,739 
+			   
+			   
+			   
+			 17,082 
+			   
+			   
+			   
+			 55,797 
+			   
+			   
+			   
+			 49,154 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 10,245 
+			   
+			   
+			   
+			 9,067 
+			   
+			   
+			   
+			 31,067 
+			   
+			   
+			   
+			 26,802 
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 2,922,037 
+			   
+			   
+			   
+			 3,476,029 
+			   
+			   
+			   
+			 8,736,047 
+			   
+			   
+			   
+			 10,114,772 
+			   
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 241,716 
+			   
+			   
+			   
+			 362,228 
+			   
+			   
+			   
+			 789,918 
+			   
+			   
+			   
+			 1,049,605 
+			   
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 12,586 
+			   
+			   
+			   
+			 13,562 
+			   
+			   
+			   
+			 41,980 
+			   
+			   
+			   
+			 38,991 
+			   
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 229,130 
+			   
+			   
+			   
+			 348,666 
+			   
+			   
+			   
+			 747,938 
+			   
+			   
+			   
+			 1,010,614 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 41,699 
+			   
+			   
+			   
+			 79,284 
+			   
+			   
+			   
+			 173,186 
+			   
+			   
+			   
+			 242,566 
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			 $ 
+			 187,431 
+			   
+			   
+			 $ 
+			 269,382 
+			   
+			   
+			 $ 
+			 574,752 
+			   
+			   
+			 $ 
+			 768,048 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Weighted average basic shares outstanding 
+			 
+			   
+			   
+			 103,302 
+			   
+			   
+			   
+			 103,757 
+			   
+			   
+			   
+			 103,528 
+			   
+			   
+			   
+			 104,297 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Basic earnings per share 
+			 
+			   
+			 $ 
+			 1.81 
+			   
+			   
+			 $ 
+			 2.60 
+			   
+			   
+			 $ 
+			 5.55 
+			   
+			   
+			 $ 
+			 7.36 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Weighted average diluted shares outstanding 
+			 
+			   
+			   
+			 104,394 
+			   
+			   
+			   
+			 104,924 
+			   
+			   
+			   
+			 104,562 
+			   
+			   
+			   
+			 105,458 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Diluted earnings per share 
+			 
+			   
+			 $ 
+			 1.80 
+			   
+			   
+			 $ 
+			 2.57 
+			   
+			   
+			 $ 
+			 5.50 
+			   
+			   
+			 $ 
+			 7.28 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 See Notes to Condensed Consolidated Financial Statements. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 3 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Balance Sheets 
+			 
+		 
+		 
+			 
+			 (in thousands) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 September 30, 2023 
+			 
+			   
+			   
+			 
+			 December 31, 2022 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 ASSETS 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current assets: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents 
+			 
+			   
+			 $ 
+			 75,198 
+			   
+			   
+			 $ 
+			 51,927 
+			   
+		 
+		 
+			 
+			 Trade accounts receivable, net 
+			 
+			   
+			   
+			 1,369,974 
+			   
+			   
+			   
+			 1,528,075 
+			   
+		 
+		 
+			 
+			 Prepaid expenses and other 
+			 
+			   
+			   
+			 525,002 
+			   
+			   
+			   
+			 631,776 
+			   
+		 
+		 
+			 
+			 Total current assets 
+			 
+			   
+			   
+			 1,970,174 
+			   
+			   
+			   
+			 2,211,778 
+			   
+		 
+		 
+			 
+			 Property and equipment, at cost 
+			 
+			   
+			   
+			 8,660,207 
+			   
+			   
+			   
+			 7,999,480 
+			   
+		 
+		 
+			 
+			 Less accumulated depreciation 
+			 
+			   
+			   
+			 2,942,438 
+			   
+			   
+			   
+			 3,019,663 
+			   
+		 
+		 
+			 
+			 Net property and equipment 
+			 
+			   
+			   
+			 5,717,769 
+			   
+			   
+			   
+			 4,979,817 
+			   
+		 
+		 
+			 
+			 Goodwill and intangible assets, net 
+			 
+			   
+			   
+			 276,046 
+			   
+			   
+			   
+			 236,390 
+			   
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 408,981 
+			   
+			   
+			   
+			 358,597 
+			   
+		 
+		 
+			 
+			 Total assets 
+			 
+			   
+			 $ 
+			 8,372,970 
+			   
+			   
+			 $ 
+			 7,786,582 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 LIABILITIES AND STOCKHOLDERS' EQUITY 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current liabilities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current portion of long-term debt 
+			 
+			   
+			 $ 
+			 249,902 
+			   
+			   
+			 $ 
+			 - 
+			   
+		 
+		 
+			 
+			 Trade accounts payable 
+			 
+			   
+			   
+			 808,803 
+			   
+			   
+			   
+			 798,776 
+			   
+		 
+		 
+			 
+			 Claims accruals 
+			 
+			   
+			   
+			 480,963 
+			   
+			   
+			   
+			 452,149 
+			   
+		 
+		 
+			 
+			 Accrued payroll 
+			 
+			   
+			   
+			 98,438 
+			   
+			   
+			   
+			 188,252 
+			   
+		 
+		 
+			 
+			 Other accrued expenses 
+			 
+			   
+			   
+			 140,970 
+			   
+			   
+			   
+			 129,054 
+			   
+		 
+		 
+			 
+			 Total current liabilities 
+			 
+			   
+			   
+			 1,779,076 
+			   
+			   
+			   
+			 1,568,231 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Long-term debt 
+			 
+			   
+			   
+			 1,195,708 
+			   
+			   
+			   
+			 1,261,738 
+			   
+		 
+		 
+			 
+			 Other long-term liabilities 
+			 
+			   
+			   
+			 393,564 
+			   
+			   
+			   
+			 369,314 
+			   
+		 
+		 
+			 
+			 Deferred income taxes 
+			 
+			   
+			   
+			 986,520 
+			   
+			   
+			   
+			 920,531 
+			   
+		 
+		 
+			 
+			 Stockholders' equity 
+			 
+			   
+			   
+			 4,018,102 
+			   
+			   
+			   
+			 3,666,768 
+			   
+		 
+		 
+			 
+			 Total liabilities and stockholders' equity 
+			 
+			   
+			 $ 
+			 8,372,970 
+			   
+			   
+			 $ 
+			 7,786,582 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 See Notes to Condensed Consolidated Financial Statements. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 4 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Statements of Stockholders' Equity 
+			 
+		 
+		 
+			 
+			 (in thousands, except per share amounts) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended September 30, 2023 and 2022 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			 Additional 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			 
+			 Common 
+			 
+			   
+			   
+			 
+			 Paid-in 
+			 
+			   
+			   
+			 
+			 Retained 
+			 
+			   
+			   
+			 
+			 Treasury 
+			 
+			   
+			   
+			 
+			 Stockholders 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Capital 
+			 
+			   
+			   
+			 
+			 Earnings 
+			 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Equity 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at June 30, 2022 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 483,109 
+			   
+			   
+			 $ 
+			 6,036,095 
+			   
+			   
+			 $ 
+			 ( 3,196,011 
+			 ) 
+			   
+			 $ 
+			 3,324,864 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 269,382 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 269,382 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.40  per share) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 41,554 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 41,554 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 60,690 
+			 ) 
+			   
+			   
+			 ( 60,690 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 20,153 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 20,153 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 5,806 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 1,240 
+			 ) 
+			   
+			   
+			 ( 7,046 
+			 ) 
+		 
+		 
+			 
+			 Balances at September 30, 2022 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 497,456 
+			   
+			   
+			 $ 
+			 6,263,923 
+			   
+			   
+			 $ 
+			 ( 3,257,941 
+			 ) 
+			   
+			 $ 
+			 3,505,109 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at June 30, 2023 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 532,503 
+			   
+			   
+			 $ 
+			 6,723,938 
+			   
+			   
+			 $ 
+			 ( 3,346,189 
+			 ) 
+			   
+			 $ 
+			 3,911,923 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 187,431 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 187,431 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.42  per share) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 43,431 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 43,431 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 51,101 
+			 ) 
+			   
+			   
+			 ( 51,101 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 20,673 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 20,673 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 5,543 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 1,850 
+			 ) 
+			   
+			   
+			 ( 7,393 
+			 ) 
+		 
+		 
+			 
+			 Balances at September 30, 2023 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 547,633 
+			   
+			   
+			 $ 
+			 6,867,938 
+			   
+			   
+			 $ 
+			 ( 3,399,140 
+			 ) 
+			   
+			 $ 
+			 4,018,102 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Nine Months Ended September 30, 2023 and 2022 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			 Additional 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			 
+			 Common 
+			 
+			   
+			   
+			 
+			 Paid-in 
+			 
+			   
+			   
+			 
+			 Retained 
+			 
+			   
+			   
+			 
+			 Treasury 
+			 
+			   
+			   
+			 
+			 Stockholders 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Capital 
+			 
+			   
+			   
+			 
+			 Earnings 
+			 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Equity 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at December 31, 2021 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 448,217 
+			   
+			   
+			 $ 
+			 5,621,103 
+			   
+			   
+			 $ 
+			 ( 2,953,175 
+			 ) 
+			   
+			 $ 
+			 3,117,816 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 768,048 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 768,048 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 1.20  per share) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 125,228 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 125,228 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 300,030 
+			 ) 
+			   
+			   
+			 ( 300,030 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 59,737 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 59,737 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 10,498 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 4,736 
+			 ) 
+			   
+			   
+			 ( 15,234 
+			 ) 
+		 
+		 
+			 
+			 Balances at September 30, 2022 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 497,456 
+			   
+			   
+			 $ 
+			 6,263,923 
+			   
+			   
+			 $ 
+			 ( 3,257,941 
+			 ) 
+			   
+			 $ 
+			 3,505,109 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at December 31, 2022 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 499,897 
+			   
+			   
+			 $ 
+			 6,423,730 
+			   
+			   
+			 $ 
+			 ( 3,258,530 
+			 ) 
+			   
+			 $ 
+			 3,666,768 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 574,752 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 574,752 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 1.26  per share) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 130,544 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 130,544 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 135,036 
+			 ) 
+			   
+			   
+			 ( 135,036 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 60,518 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 60,518 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 12,782 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 5,574 
+			 ) 
+			   
+			   
+			 ( 18,356 
+			 ) 
+		 
+		 
+			 
+			 Balances at September 30, 2023 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 547,633 
+			   
+			   
+			 $ 
+			 6,867,938 
+			   
+			   
+			 $ 
+			 ( 3,399,140 
+			 ) 
+			   
+			 $ 
+			 4,018,102 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 See Notes to Condensed Consolidated Financial Statements. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 5 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Statements of Cash Flows 
+			 
+		 
+		 
+			 
+			 (in thousands) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Nine Months Ended September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from operating activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			 $ 
+			 574,752 
+			   
+			   
+			 $ 
+			 768,048 
+			   
+		 
+		 
+			 
+			 Adjustments to reconcile net earnings to net cash provided by operating activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 543,498 
+			   
+			   
+			   
+			 472,914 
+			   
+		 
+		 
+			 
+			 Noncash lease expense 
+			 
+			   
+			   
+			 71,766 
+			   
+			   
+			   
+			 61,656 
+			   
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 60,518 
+			   
+			   
+			   
+			 59,737 
+			   
+		 
+		 
+			 
+			 (Gain)/loss on sale of revenue equipment and other 
+			 
+			   
+			   
+			 17,244 
+			   
+			   
+			   
+			 ( 20,970 
+			 ) 
+		 
+		 
+			 
+			 Deferred income taxes 
+			 
+			   
+			   
+			 65,989 
+			   
+			   
+			   
+			 90,463 
+			   
+		 
+		 
+			 
+			 Changes in operating assets and liabilities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Trade accounts receivable 
+			 
+			   
+			   
+			 224,387 
+			   
+			   
+			   
+			 ( 212,325 
+			 ) 
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 165,622 
+			   
+			   
+			   
+			 102,506 
+			   
+		 
+		 
+			 
+			 Trade accounts payable 
+			 
+			   
+			   
+			 ( 7,564 
+			 ) 
+			   
+			   
+			 55,640 
+			   
+		 
+		 
+			 
+			 Income taxes payable or receivable 
+			 
+			   
+			   
+			 ( 2,366 
+			 ) 
+			   
+			   
+			 ( 7,616 
+			 ) 
+		 
+		 
+			 
+			 Claims accruals 
+			 
+			   
+			   
+			 ( 8,510 
+			 ) 
+			   
+			   
+			 34,322 
+			   
+		 
+		 
+			 
+			 Accrued payroll and other accrued expenses 
+			 
+			   
+			   
+			 ( 175,724 
+			 ) 
+			   
+			   
+			 ( 48,969 
+			 ) 
+		 
+		 
+			 
+			 Net cash provided by operating activities 
+			 
+			   
+			   
+			 1,529,612 
+			   
+			   
+			   
+			 1,355,406 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from investing activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Additions to property and equipment 
+			 
+			   
+			   
+			 ( 1,558,587 
+			 ) 
+			   
+			   
+			 ( 1,087,881 
+			 ) 
+		 
+		 
+			 
+			 Net proceeds from sale of equipment 
+			 
+			   
+			   
+			 238,682 
+			   
+			   
+			   
+			 69,853 
+			   
+		 
+		 
+			 
+			 Business acquisitions 
+			 
+			   
+			   
+			 ( 85,000 
+			 ) 
+			   
+			   
+			 ( 118,101 
+			 ) 
+		 
+		 
+			 
+			 Net cash used in investing activities 
+			 
+			   
+			   
+			 ( 1,404,905 
+			 ) 
+			   
+			   
+			 ( 1,136,129 
+			 ) 
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from financing activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Payments on long-term debt 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 350,000 
+			 ) 
+		 
+		 
+			 
+			 Proceeds from revolving lines of credit and other 
+			 
+			   
+			   
+			 2,093,600 
+			   
+			   
+			   
+			 1,035,200 
+			   
+		 
+		 
+			 
+			 Payments on revolving lines of credit and other 
+			 
+			   
+			   
+			 ( 1,911,100 
+			 ) 
+			   
+			   
+			 ( 735,200 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury stock 
+			 
+			   
+			   
+			 ( 135,036 
+			 ) 
+			   
+			   
+			 ( 300,030 
+			 ) 
+		 
+		 
+			 
+			 Stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 ( 18,356 
+			 ) 
+			   
+			   
+			 ( 15,234 
+			 ) 
+		 
+		 
+			 
+			 Dividends paid 
+			 
+			   
+			   
+			 ( 130,544 
+			 ) 
+			   
+			   
+			 ( 125,228 
+			 ) 
+		 
+		 
+			 
+			 Net cash used in financing activities 
+			 
+			   
+			   
+			 ( 101,436 
+			 ) 
+			   
+			   
+			 ( 490,492 
+			 ) 
+		 
+		 
+			 
+			 Net change in cash and cash equivalents 
+			 
+			   
+			   
+			 23,271 
+			   
+			   
+			   
+			 ( 271,215 
+			 ) 
+		 
+		 
+			 
+			 Cash and cash equivalents at beginning of period 
+			 
+			   
+			   
+			 51,927 
+			   
+			   
+			   
+			 355,549 
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents at end of period 
+			 
+			   
+			 $ 
+			 75,198 
+			   
+			   
+			 $ 
+			 84,334 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Supplemental disclosure of cash flow information: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash paid during the period for: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Interest 
+			 
+			   
+			 $ 
+			 56,189 
+			   
+			   
+			 $ 
+			 48,694 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			 $ 
+			 115,145 
+			   
+			   
+			 $ 
+			 156,304 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Noncash investing activities 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Accruals for equipment received 
+			 
+			   
+			 $ 
+			 75,348 
+			   
+			   
+			 $ 
+			 70,903 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+
+		 
+			 
+			 See Notes to Condensed Consolidated Financial Statements. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 6 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Notes to Condensed Consolidated Financial Statements 
+
+ (Unaudited) 
+
+   
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 1. 
+			 
+			 
+			 General 
+			 
+		 
+
+ 
+
+   
+
+ Basis of Presentation 
+
+   
+
+ The accompanying unaudited interim Condensed Consolidated Financial Statements have been prepared in accordance with U.S. generally accepted accounting principles (GAAP) for interim financial information. We believe such statements include all adjustments (consisting only of normal recurring adjustments) necessary for the fair statement of our financial position, results of operations and cash flows at the dates and for the periods indicated. Pursuant to the requirements of the Securities and Exchange Commission (SEC) applicable to quarterly reports on Form 10-Q, the accompanying financial statements do not include all disclosures required by GAAP for annual financial statements. While we believe the disclosures presented are adequate to make the information not misleading, these unaudited interim Condensed Consolidated Financial Statements should be read in conjunction with the audited Consolidated Financial Statements and related notes included in our Annual Report on Form 10-K for the year ended December 31, 2022. Operating results for the periods presented in this report are not necessarily indicative of the results that may be expected for the calendar year ending December 31, 2023, or any other interim period. Our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load freight transportation business. 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 2. 
+			 
+			 
+			 Earnings Per Share 
+			 
+		 
+
+ 
+
+   
+
+ We compute basic earnings per share by dividing net earnings available to common stockholders by the actual weighted average number of common shares outstanding for the reporting period. Diluted earnings per share reflects the potential dilution that could occur if holders of unvested restricted and performance share units converted their holdings into common stock. The dilutive effect of restricted and performance share units was  1.1  million and  1.0  million shares during the three and nine months ended September 30, 2023, compared to  1.2  million shares during the three and nine months ended September 30, 2022. 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 3. 
+			 
+			 
+			 Share-based Compensation  
+			 
+		 
+
+ 
+
+   
+
+ The following table summarizes the components of our share-based compensation program expense (in thousands): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+
+			 September 30, 
+			 
+			   
+			   
+			 
+			 Nine Months Ended 
+
+			 September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			 
+			 Restricted share units: 
+			 
+			   
+		 
+		 
+			 
+			 Pretax compensation expense 
+			 
+			   
+			 $ 
+			 14,433 
+			   
+			   
+			 $ 
+			 14,655 
+			   
+			   
+			 $ 
+			 41,886 
+			   
+			   
+			 $ 
+			 42,550 
+			   
+		 
+		 
+			 
+			 Tax benefit 
+			 
+			   
+			   
+			 3,722 
+			   
+			   
+			   
+			 3,664 
+			   
+			   
+			   
+			 10,802 
+			   
+			   
+			   
+			 10,638 
+			   
+		 
+		 
+			 
+			 Restricted share unit expense, net of tax 
+			 
+			   
+			 $ 
+			 10,711 
+			   
+			   
+			 $ 
+			 10,991 
+			   
+			   
+			 $ 
+			 31,084 
+			   
+			   
+			 $ 
+			 31,912 
+			   
+		 
+		 
+			 
+			 Performance share units: 
+			 
+			   
+		 
+		 
+			 
+			 Pretax compensation expense 
+			 
+			   
+			 $ 
+			 6,240 
+			   
+			   
+			 $ 
+			 5,498 
+			   
+			   
+			 $ 
+			 18,632 
+			   
+			   
+			 $ 
+			 17,187 
+			   
+		 
+		 
+			 
+			 Tax benefit 
+			 
+			   
+			   
+			 1,609 
+			   
+			   
+			   
+			 1,375 
+			   
+			   
+			   
+			 4,805 
+			   
+			   
+			   
+			 4,297 
+			   
+		 
+		 
+			 
+			 Performance share unit expense, net of tax 
+			 
+			   
+			 $ 
+			 4,631 
+			   
+			   
+			 $ 
+			 4,123 
+			   
+			   
+			 $ 
+			 13,827 
+			   
+			   
+			 $ 
+			 12,890 
+			   
+		 
+
+ 
+ 
+
+   
+
+ As of September 30, 2023, we had $ 69.1  million and $ 32.8  million of total unrecognized compensation expense related to restricted share units and performance share units, respectively, that is to be recognized over the remaining weighted average period of approximately  2.7  years for restricted share units and  2.3  years for performance share units. During the nine months ended September 30, 2023, we issued  120,798  shares for vested restricted share units and  142,346  shares for vested performance share units. Of this total,  102,141  shares for vested restricted share units and  3,465  shares for vested performance share units were issued during the third quarter 2023. 
+
+   
+
+ 
+ 7 
+
+ 
+   
+ 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 4.  
+			 
+			 
+			 Financing Arrangements  
+			 
+		 
+
+ 
+
+   
+
+ Outstanding borrowings, net of unamortized discount and unamortized debt issuance cost, under our current financing arrangements consist of the following (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 September 30, 2023 
+			 
+			   
+			   
+			 
+			 December 31, 2022 
+			 
+			   
+		 
+		 
+			 
+			 Senior credit facility 
+			 
+			   
+			 $ 
+			 497.8 
+			   
+			   
+			 $ 
+			 314.7 
+			   
+		 
+		 
+			 
+			 Senior notes 
+			 
+			   
+			   
+			 947.8 
+			   
+			   
+			   
+			 947.0 
+			   
+		 
+		 
+			 
+			 Less current portion of long-term debt 
+			 
+			   
+			   
+			 ( 249.9 
+			 ) 
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Total long-term debt 
+			 
+			   
+			 $ 
+			 1,195.7 
+			   
+			   
+			 $ 
+			 1,261.7 
+			   
+		 
+
+ 
+ 
+
+   
+
+ Senior Credit Facility 
+
+   
+
+ At September 30, 2023, we were authorized to borrow up to $ 1.5  billion through a revolving line of credit and committed term loans, which is supported by a credit agreement with a group of banks. The revolving line of credit authorizes us to borrow up to $ 1.0  billion under a  five-year  term expiring September 2027, and allows us to request an increase in the revolving line of credit total commitment by up to $ 300  million and to request two  one-year  extensions of the maturity date. The committed term loans authorized us to borrow up to an additional $ 500  million during the nine-month period beginning September 27, 2022, due September 2025, which we exercised in June 2023. The applicable interest rates under this agreement are based on either the Secured Overnight Financing Rate (SOFR), or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At September 30, 2023, we had  no  outstanding balance on the revolving line of credit and a $ 500.0  million outstanding balance of term loans, at an average interest rate of  6.43 %, under this agreement.   
+
+   
+
+ Senior Notes 
+
+   
+
+ Our senior notes consist of two separate issuances. The first is $ 250  million of  3.85 % senior notes due March 2024, issued in March 2014. Interest payments under these notes are due semiannually in March and September of each year, beginning September 2014. The second is $ 700  million of  3.875 % senior notes due March 2026, issued in March 2019. Interest payments under these notes are due semiannually in March and September of each year beginning September 2019. Both senior notes were issued by J.B. Hunt Transport Services, Inc., a parent-level holding company with no significant tangible assets or operations. The notes are guaranteed on a full and unconditional basis by our wholly-owned operating subsidiary. All other subsidiaries of the parent are minor. We registered these offerings and the sale of the notes under the Securities Act of 1933, pursuant to shelf registration statements filed in February 2014 and January 2019. Both notes are unsecured obligations and rank equally with our existing and future senior unsecured debt. We may redeem for cash some or all of the notes based on a redemption price set forth in the note indenture. 
+
+   
+
+ Our financing arrangements require us to maintain certain covenants and financial ratios.  We were in compliance with all covenants and financial ratios at September 30, 2023. 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 5.  
+			 
+			 
+			 Capital Stock  
+			 
+		 
+
+ 
+
+   
+
+ On July 20, 2022, our Board of Directors authorized the purchase of up to $ 500  million of our common stock. At September 30, 2023, $ 416  million of these authorizations were remaining. We purchased approximately  765,000  shares, or $ 135.0  million, of our common stock under our repurchase authorization during the nine months ended September 30, 2023, of which  267,000  shares, or $ 51.1  million, were purchased in third quarter 2023. On July 19, 2023, our Board of Directors declared a regular quarterly dividend of $ 0.42  per common share, which was paid on August 18, 2023, to stockholders of record on August 4, 2023. On October 19, 2023, our Board of Directors declared a regular quarterly dividend of $ 0.42  per common share, which will be paid on November 24, 2023, to stockholders of record on November 10, 2023. 
+
+   
+
+ 
+ 8 
+
+ 
+   
+ 
+
+   
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 6.  
+			 
+			 
+			 Fair Value Measurements 
+			 
+		 
+
+ 
+
+   
+
+ Our assets and liabilities measured at fair value are based on valuation techniques which consider prices and other relevant information generated by market transactions involving identical or comparable assets and liabilities. These valuation methods are based on either quoted market prices (Level 1) or inputs, other than quoted prices in active markets, that are observable either directly or indirectly (Level 2). 
+
+   
+
+ Assets Measured at Fair Value on a Recurring Basis 
+
+   
+
+ The following assets are measured at fair value on a recurring basis (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Asset 
+
+			 Balance 
+			 
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			 
+			 September 30, 2023 
+			 
+			   
+			   
+			 
+			 December 31, 2022 
+			 
+			   
+			   
+			 
+			 Input Level 
+			 
+			   
+		 
+		 
+			 
+			 Trading investments 
+			 
+			   
+			 $ 
+			 29.1 
+			   
+			   
+			 $ 
+			 25.1 
+			   
+			   
+			   
+			 1 
+			   
+		 
+
+ 
+ 
+
+   
+
+ The fair value of trading investments has been measured using the market approach (Level 1) and reflects quoted market prices. Trading investments are classified in other assets in our Condensed Consolidated Balance Sheets. 
+
+   
+
+ Financial Instruments 
+
+   
+
+ The carrying amount of our senior credit facility and senior notes was $ 1.45  billion and $ 1.26  billion at September 30, 2023 and December 31, 2022, respectively. The estimated fair value of these liabilities using the income approach (Level 2), based on their net present value, discounted at our current borrowing rate, was $ 1.42  billion and $ 1.24  billion at September 30, 2023 and December 31, 2022, respectively. 
+
+   
+
+ The carrying amounts of all other instruments at September 30, 2023, approximate their fair value due to the short maturity of these instruments. 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 7.  
+			 
+			 
+			 Income Taxes 
+			 
+		 
+
+ 
+
+   
+
+ Our effective income tax rate was  18.2 % for the three months ended September 30, 2023, compared to  22.7 % for the three months ended September 30, 2022. Our effective income tax rate was  23.2 % for the first nine months of 2023, compared to  24.0 % in 2022. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ At September 30, 2023, we had a total of $ 81.3  million in gross unrecognized tax benefits, which are a component of other long-term liabilities on our Condensed Consolidated Balance Sheets. Of this amount, $ 65.5  million represents the amount of unrecognized tax benefits that, if recognized, would impact our effective tax rate. The total amount of accrued interest and penalties for such unrecognized tax benefits was $ 9.3  million at September 30, 2023. 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 8.  
+			 
+			 
+			 Commitments and Contingencies 
+			 
+		 
+
+ 
+
+   
+
+ As the result of state use tax audits, we have been assessed amounts owed from which we are vigorously appealing. We have recorded a liability for the estimated probable exposure under these audits and await resolution of the matter. 
+
+   
+
+ We purchase insurance coverage for a portion of expenses related to vehicular collisions and accidents. These policies include a level of self-insurance (deductible) coverage applicable to each claim as well as certain coverage-layer-specific, aggregated reimbursement limits of covered excess claims. Our claims from time to time exceed some of these existing coverage layer aggregate reimbursement limits, and accordingly, we have recorded a liability for the estimated probable exposure for these occurrences. 
+
+   
+
+ 
+ 
+ 
+ 9 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ We are involved in certain other claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 9.  
+			 
+			 
+			 Acquisitions 
+			 
+		 
+
+ 
+
+   
+
+ On September 14, 2023, we entered into an asset purchase agreement to acquire substantially all of the brokerage assets and assume certain specified liabilities of BNSF Logistics, LLC (BNSFL), an affiliate of Burlington Northern Santa Fe, LLC, subject to customary closing conditions.  The closing of the transaction was effective on September 30, 2023, with a purchase price and total consideration paid in cash of $ 85.0  million. Transaction costs incurred were not material. The BNSFL acquisition was accounted for as a business combination and will operate within our Integrated Capacity Solutions business segment. Assets acquired and liabilities assumed were recorded in our Condensed Consolidated Balance Sheet at their estimated fair values, as of the closing date, using cost, market data and valuation techniques that reflect management’s judgment and estimates. As a result of the acquisition, we recorded approximately $ 41.9  million of definite-lived intangible assets and approximately $ 12.4  million of goodwill. Goodwill consists of acquiring and retaining the BNSFL existing brokerage network and expected synergies from the combination of operations. The following table outlines the consideration transferred and preliminary purchase price allocation at their respective estimated fair values as of September 30, 2023 (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 Consideration 
+			 
+			   
+			 $ 
+			 85.0 
+			   
+		 
+		 
+			 
+			 Accounts receivable 
+			 
+			   
+			   
+			 66.3 
+			   
+		 
+		 
+			 
+			 Other current assets 
+			 
+			   
+			   
+			 1.8 
+			   
+		 
+		 
+			 
+			 Property and equipment 
+			 
+			   
+			   
+			 14.5 
+			   
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 0.1 
+			   
+		 
+		 
+			 
+			 Right-of-use assets 
+			 
+			   
+			   
+			 9.1 
+			   
+		 
+		 
+			 
+			 Intangibles 
+			 
+			   
+			   
+			 41.9 
+			   
+		 
+		 
+			 
+			 Accounts payable and accrued liabilities 
+			 
+			   
+			   
+			 ( 52.0 
+			 ) 
+		 
+		 
+			 
+			 Lease liabilities 
+			 
+			   
+			   
+			 ( 9.1 
+			 ) 
+		 
+		 
+			 
+			 Goodwill 
+			 
+			   
+			 $ 
+			 12.4 
+			   
+		 
+
+ 
+ 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 10.  
+			 
+			 
+			 Goodwill and Other Intangible Assets 
+			 
+		 
+
+ 
+
+   
+
+ As discussed in Note 9, Acquisitions, in 2023, we recorded additional goodwill of approximately $ 12.4  million and additional finite-lived intangible assets of approximately $ 41.9  million in connection with the BNSFL acquisition. Total goodwill was $ 132.8  million and $ 120.4  million at September 30, 2023, and December 31, 2022, respectively. At September 30, 2023, $ 111.6  million, $ 12.4  million and $ 8.8  million of our goodwill was assigned to our Final Mile Services®, Integrated Capacity Solutions and Intermodal business segments, respectively. No impairment losses have been recorded for goodwill as of September 30, 2023. Prior to the BNSFL acquisition, our intangible assets consisted of those arising from previous business acquisitions within our Final Mile Services and Intermodal business segments. Identifiable intangible assets consist of the following (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			 Weighted Average 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 September 30, 
+			 
+			   
+			   
+			 December 31, 
+			   
+			   
+			 
+			 Amortization 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 Period 
+			 
+			   
+		 
+		 
+			 
+			 Finite-lived intangibles: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Customer relationships 
+			 
+			   
+			 $ 
+			 210.4 
+			   
+			   
+			 $ 
+			 169.0 
+			   
+			   
+			   
+			 10.7 
+			   
+		 
+		 
+			 
+			 Non-competition agreements 
+			 
+			   
+			   
+			 10.1 
+			   
+			   
+			   
+			 9.6 
+			   
+			   
+			   
+			 6.1 
+			   
+		 
+		 
+			 
+			 Trade names 
+			 
+			   
+			   
+			 6.4 
+			   
+			   
+			   
+			 6.4 
+			   
+			   
+			   
+			 2.1 
+			   
+		 
+		 
+			 
+			 Total finite-lived intangibles 
+			 
+			   
+			   
+			 226.9 
+			   
+			   
+			   
+			 185.0 
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Less accumulated amortization 
+			 
+			   
+			   
+			 ( 83.7 
+			 ) 
+			   
+			   
+			 ( 69.1 
+			 ) 
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total identifiable intangible assets, net 
+			 
+			   
+			 $ 
+			 143.2 
+			   
+			   
+			 $ 
+			 115.9 
+			   
+			   
+			   
+			   
+			   
+		 
+
+ 
+ 
+
+   
+
+ Our finite-lived intangible assets have  no  assigned residual values. 
+
+   
+
+ 
+ 
+ 
+ 10 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Intangible asset amortization expense was $ 4.9  million during the third quarter 2023, compared to $ 4.8  million during third quarter 2022. During the nine months ended September 30, 2023 and 2022, intangible asset amortization expense was $ 14.6  million and $ 13.4  million, respectively. Estimated amortization expense for our finite-lived intangible assets is expected to be approximately $ 20.5  million for 2023, $ 22.6  million for 2024, $ 22.3  million for 2025, $ 21.5  million for 2026, and $ 17.6  million for 2027. Actual amounts of amortization expense may differ from estimated amounts due to additional intangible asset acquisitions, impairment or accelerated amortization of intangible assets, and other events. 
+
+   
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 11.  
+			 
+			 
+			 Business Segments 
+			 
+		 
+
+ 
+
+   
+
+ We reported  five  distinct business segments during the nine months ended September 30, 2023 and 2022. These segments included Intermodal (JBI), Dedicated Contract Services® (DCS®), Integrated Capacity Solutions (ICS), Final Mile Services (FMS), and Truckload (JBT). The operation of each of these businesses is described in Note 13, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2022. 
+
+   
+
+ On January 1, 2023, we transferred the majority of the company owned trucking operations in our JBT business segment to our DCS business segment and transferred our less-than-truckload brokerage operations from our ICS business segment to our FMS business segment. Accordingly, the prior period segment information reported below has been reclassified to conform to the current period presentation. These reclassifications have no impact on our historical consolidated balance sheets, statements of earnings or cash flows. 
+
+   
+
+ A summary of certain segment information is presented below (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Assets 
+
+			 (Excludes intercompany accounts) 
+
+			 As of 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 September 30, 2023 
+			 
+			   
+			   
+			 
+			 December 31, 2022 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 3,441 
+			   
+			   
+			 $ 
+			 3,270 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 2,359 
+			   
+			   
+			   
+			 1,952 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 370 
+			   
+			   
+			   
+			 311 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 627 
+			   
+			   
+			   
+			 620 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 452 
+			   
+			   
+			   
+			 474 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 1,124 
+			   
+			   
+			   
+			 1,160 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 8,373 
+			   
+			   
+			 $ 
+			 7,787 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Operating Revenues 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+
+			 September 30, 
+			 
+			   
+			   
+			 
+			 Nine Months Ended 
+
+			 September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 1,555 
+			   
+			   
+			 $ 
+			 1,837 
+			   
+			   
+			 $ 
+			 4,584 
+			   
+			   
+			 $ 
+			 5,273 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 892 
+			   
+			   
+			   
+			 931 
+			   
+			   
+			   
+			 2,659 
+			   
+			   
+			   
+			 2,611 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 298 
+			   
+			   
+			   
+			 575 
+			   
+			   
+			   
+			 1,026 
+			   
+			   
+			   
+			 1,840 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 226 
+			   
+			   
+			   
+			 265 
+			   
+			   
+			   
+			 675 
+			   
+			   
+			   
+			 775 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 196 
+			   
+			   
+			   
+			 237 
+			   
+			   
+			   
+			 594 
+			   
+			   
+			   
+			 694 
+			   
+		 
+		 
+			 
+			 Subtotal 
+			 
+			   
+			   
+			 3,167 
+			   
+			   
+			   
+			 3,845 
+			   
+			   
+			   
+			 9,538 
+			   
+			   
+			   
+			 11,193 
+			   
+		 
+		 
+			 
+			 Inter-segment eliminations 
+			 
+			   
+			   
+			 ( 3 
+			 ) 
+			   
+			   
+			 ( 7 
+			 ) 
+			   
+			   
+			 ( 12 
+			 ) 
+			   
+			   
+			 ( 29 
+			 ) 
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 3,164 
+			   
+			   
+			 $ 
+			 3,838 
+			   
+			   
+			 $ 
+			 9,526 
+			   
+			   
+			 $ 
+			 11,164 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 11 
+
+ 
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+
+			 September 30, 
+			 
+			   
+			   
+			 
+			 Nine Months Ended 
+
+			 September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 128.0 
+			   
+			   
+			 $ 
+			 217.0 
+			   
+			   
+			 $ 
+			 439.5 
+			   
+			   
+			 $ 
+			 620.5 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 102.4 
+			   
+			   
+			   
+			 107.2 
+			   
+			   
+			   
+			 318.6 
+			   
+			   
+			   
+			 281.0 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 ( 9.4 
+			 ) 
+			   
+			   
+			 13.4 
+			   
+			   
+			   
+			 ( 19.2 
+			 ) 
+			   
+			   
+			 60.8 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 13.0 
+			   
+			   
+			   
+			 9.8 
+			   
+			   
+			   
+			 34.4 
+			   
+			   
+			   
+			 23.6 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 7.7 
+			   
+			   
+			   
+			 14.9 
+			   
+			   
+			   
+			 16.5 
+			   
+			   
+			   
+			 63.9 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 0.1 
+			 ) 
+			   
+			   
+			 0.1 
+			   
+			   
+			   
+			 ( 0.2 
+			 ) 
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 241.7 
+			   
+			   
+			 $ 
+			 362.2 
+			   
+			   
+			 $ 
+			 789.9 
+			   
+			   
+			 $ 
+			 1,049.6 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Depreciation and Amortization Expense 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+
+			 September 30, 
+			 
+			   
+			   
+			 
+			 Nine Months Ended 
+
+			 September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 64.7 
+			   
+			   
+			 $ 
+			 58.0 
+			   
+			   
+			 $ 
+			 188.8 
+			   
+			   
+			 $ 
+			 165.9 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 84.8 
+			   
+			   
+			   
+			 71.5 
+			   
+			   
+			   
+			 240.5 
+			   
+			   
+			   
+			 205.6 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 11.9 
+			   
+			   
+			   
+			 11.4 
+			   
+			   
+			   
+			 35.8 
+			   
+			   
+			   
+			 32.1 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 10.9 
+			   
+			   
+			   
+			 9.1 
+			   
+			   
+			   
+			 32.8 
+			   
+			   
+			   
+			 24.7 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 15.4 
+			   
+			   
+			   
+			 16.6 
+			   
+			   
+			   
+			 45.6 
+			   
+			   
+			   
+			 44.6 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 187.7 
+			   
+			   
+			 $ 
+			 166.6 
+			   
+			   
+			 $ 
+			 543.5 
+			   
+			   
+			 $ 
+			 472.9 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 
+ 
+ 12 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+ 
+
+   
+
+ ITEM 2. MANAGEMENT ’ S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND   RESULTS OF   OPERATIONS  
+
+   
+
+ You should refer to the attached interim Condensed Consolidated Financial Statements and related notes and also to our Annual Report (Form 10-K) for the year ended December 31, 2022, as you read the following discussion. We may make statements in this report that reflect our current expectation regarding future results of operations, performance, and achievements. These are “forward-looking” statements as defined in the Private Securities Litigation Reform Act of 1995 and are based on our belief or interpretation of information currently available. When we use words like “may,” “plan,” “contemplate,” “anticipate,” “believe,” “intend,” “continue,” “expect,” “project,” “goals,” “strategy,” “future,” “predict,” “seek,” “estimate,” “likely,” “could,” “should,” “would,” and similar expressions, you should consider them as identifying forward-looking statements, although we may use other phrasing. Forward-looking statements are inherently uncertain, subject to risks, and should be viewed with caution. These statements are based on our belief or interpretation of information currently available. Stockholders and prospective investors are cautioned that actual results and future events may differ materially from these forward-looking statements as a result of many factors. Some of the factors and events that are not within our control and that could have a material impact on future operating results include the following: general economic and business conditions; potential business or operational disruptions resulting from the effects of a national or international health pandemic; competition and competitive rate fluctuations; excess capacity in the intermodal or trucking industries; a loss of one or more major customers; cost and availability of diesel fuel; interference with or termination of our relationships with certain railroads; rail service delays; disruptions to U.S. port-of-call activity; ability to attract and retain qualified drivers, delivery personnel, independent contractors, and third-party carriers; retention of key employees; insurance costs and availability; litigation and claims expense; determination that independent contractors are employees; new or different environmental or other laws and regulations; volatile financial credit markets or interest rates; terrorist attacks or actions; acts of war; adverse weather conditions; disruption or failure of information systems; inability to keep pace with technological advances affecting our information technology platforms; operational disruption or adverse effects of business acquisitions; increased costs for and availability of new revenue equipment; increased tariffs assessed on or disruptions in the procurement of imported revenue equipment; decreases in the value of used equipment; and the ability of revenue equipment manufacturers to perform in accordance with agreements for guaranteed equipment trade-in values. Additionally, our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load transportation business. You should also refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2022, for additional information on risk factors and other events that are not within our control. Our future financial and operating results may fluctuate as a result of these and other risk factors as described from time to time in our filings with the SEC. We assume no obligation to update any forward-looking statement to the extent we become aware that it will not be achieved for any reason. 
+
+   
+
+ GENERAL 
+
+   
+
+ We are one of the largest surface transportation, delivery, and logistics companies in North America. We operate five distinct, but complementary, business segments and provide a wide range of reliable transportation, brokerage, and delivery services to a diverse group of customers and consumers throughout the continental United States, Canada, and Mexico. Our service offerings include transportation of full-truckload containerized freight, which we directly transport utilizing our company-controlled revenue equipment and company drivers, independent contractors, or third-party carriers. We have arrangements with most of the major North American rail carriers to transport freight in containers or trailers, while we perform the majority of the pickup and delivery services. We also provide customized freight movement, revenue equipment, labor, systems, and delivery services that are tailored to meet individual customers’ requirements and typically involve long-term contracts. These arrangements are generally referred to as dedicated services and may include multiple pickups and drops, freight handling, specialized equipment, and freight network design. In addition, we provide or arrange for local and home delivery services, generally referred to as last-mile delivery services, to customers through a network of cross-dock and other delivery system locations throughout the continental United States. Utilizing thousands of reliable third-party carriers, we also provide comprehensive freight transportation brokerage and logistics services. In addition to dry-van, full-load operations, we also arrange for these unrelated outside carriers to provide flatbed, refrigerated, less-than-truckload (LTL), and other specialized equipment, drivers, and services. Also, we utilize a combination of company-owned and contracted power units to provide traditional over-the-road full truckload delivery services. Our customers, who include many Fortune 500 companies, have extremely diverse businesses. Many of them are served by J.B. Hunt 360°®, an online platform that offers shippers and carriers greater access, visibility and transparency of the supply chain. We account for our business on a calendar year basis, with our full year ending on December 31 and our quarterly reporting periods ending on March 31, June 30, and September 30. The operation of each of our five business segments is described in Note 11, Business Segments, in our Condensed Consolidated Financial Statements included in this Quarterly Report on Form 10-Q and in Note 13, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2022. 
+
+   
+
+ 
+ 
+ 
+ 13 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Critical Accounting Policies and Estimates 
+
+   
+
+ The preparation of our financial statements in conformity with U.S. GAAP requires us to make estimates and assumptions that impact the amounts reported in our Condensed Consolidated Financial Statements and accompanying notes. Therefore, the reported amounts of assets, liabilities, revenues, expenses, and associated disclosures of contingent liabilities are affected by these estimates. We evaluate these estimates on an ongoing basis, utilizing historical experience, consultation with experts, and other methods considered reasonable in the particular circumstances. Nevertheless, actual results may differ significantly from our estimates. Any effects on our business, financial position, or results of operations resulting from revisions to these estimates are recognized in the accounting period in which the facts that give rise to the revision become known. 
+
+   
+
+ Information regarding our Critical Accounting Policies and Estimates can be found in our Annual Report (Form 10-K). The critical accounting policies that we believe require us to make more significant judgments and estimates when we prepare our financial statements include those relating to self-insurance accruals, revenue equipment, revenue recognition and income taxes. We have discussed the development and selection of these critical accounting policies and estimates with the Audit Committee of our Board of Directors. In addition, Note 2,  Summary of Significant Accounting Policies , to the financial statements in our Annual Report (Form 10-K) for the year ended December 31, 2022, contains a summary of our critical accounting policies. There have been no material changes to the methodology we apply for critical accounting estimates as previously disclosed in our Annual Report on Form 10-K. 
+
+   
+
+ RESULTS OF OPERATIONS 
+
+   
+
+ Comparison of Three Months Ended September 30, 2023 to Three Months Ended September 30, 2022 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Summary of Operating Segment Results 
+
+			 For the Three Months Ended September 30, 
+
+			 (in millions) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Operating Revenues 
+			 
+			   
+			   
+			 
+			 Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 1,555 
+			   
+			   
+			 $ 
+			 1,837 
+			   
+			   
+			 $ 
+			 128.0 
+			   
+			   
+			 $ 
+			 217.0 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 892 
+			   
+			   
+			   
+			 931 
+			   
+			   
+			   
+			 102.4 
+			   
+			   
+			   
+			 107.2 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 298 
+			   
+			   
+			   
+			 575 
+			   
+			   
+			   
+			 (9.4 
+			 ) 
+			   
+			   
+			 13.4 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 226 
+			   
+			   
+			   
+			 265 
+			   
+			   
+			   
+			 13.0 
+			   
+			   
+			   
+			 9.8 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 196 
+			   
+			   
+			   
+			 237 
+			   
+			   
+			   
+			 7.7 
+			   
+			   
+			   
+			 14.9 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 (0.1 
+			 ) 
+		 
+		 
+			 
+			 Subtotal 
+			 
+			   
+			   
+			 3,167 
+			   
+			   
+			   
+			 3,845 
+			   
+			   
+			   
+			 241.7 
+			   
+			   
+			   
+			 362.2 
+			   
+		 
+		 
+			 
+			 Inter-Segment eliminations 
+			 
+			   
+			   
+			 (3 
+			 ) 
+			   
+			   
+			 (7 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 3,164 
+			   
+			   
+			 $ 
+			 3,838 
+			   
+			   
+			 $ 
+			 241.7 
+			   
+			   
+			 $ 
+			 362.2 
+			   
+		 
+
+ 
+
+   
+
+ Total consolidated operating revenues decreased to $3.16 billion for the third quarter 2023, an 18% decrease from $3.84 billion in the third quarter 2022. This decrease was primarily the result of decreased revenue per load in JBI and JBT, lower volumes in ICS, a decline in stop count in FMS, and a reduction in DCS average revenue producing trucks when compared to the third quarter 2022. These items were partially offset by increased volumes in JBI and JBT in the current quarter. Total consolidated operating revenue, excluding fuel surcharge revenue, decreased 15%. 
+
+   
+
+ 
+ 
+ 
+ 14 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ JBI segment revenue decreased 15% to $1.56 billion during the third quarter 2023, compared with $1.84 billion in 2022. Load volumes during the third quarter 2023 increased 1% over the same period 2022. Transcontinental loads increased 4%, while eastern network load volume was down 3% when compared to the third quarter 2022. Revenue per load, which is determined by the combination of customer rates, fuel surcharges and freight mix, decreased 16% during the third quarter 2023. Revenue per load, excluding fuel surcharge revenue, decreased 14% compared to the third quarter 2022. JBI segment operating income decreased 41%, to $128.0 million in the third quarter 2023, from $217.0 million in 2022. The decrease is primarily due to the decrease in revenue and higher driver and non-driver wages and increased equipment-related and maintenance costs as a percentage of gross revenue. The current quarter ended with approximately 117,400 units of trailing capacity and 6,400 power units assigned to the dray fleet. 
+
+   
+
+ DCS segment revenue decreased 4% to $892 million in the third quarter 2023 from $931 million in 2022. Productivity, defined as revenue per truck per week, decreased 2% when compared to the third quarter 2022. Productivity excluding fuel surcharge revenue increased 2%, primarily due to contractual index-based rate increases. On a net basis, revenue-producing trucks in the fleet at the end of the third quarter 2023 decreased 370 compared to the prior year period. DCS segment operating income decreased 4% to $102.4 million in the third quarter 2023, from $107.2 million in 2022. The decrease is primarily due to increased equipment-related and maintenance costs, higher insurance and claims expense and an increase in loss on sale of equipment, partially offset by the maturing of new long-term customer contracts when compared to the third quarter 2022. 
+
+   
+
+ ICS segment revenue decreased 48% to $298 million in the third quarter 2023, from $575 million in 2022. Overall volumes decreased 38% compared to the third quarter 2022, while revenue per load decreased 17%, primarily due to lower contractual and spot rates as well as changes in customer freight mix. Contractual business represented approximately 68% of total load volume and 67% of total revenue in the third quarter 2023, compared to 49% and 52%, respectively, in 2022. Approximately $169 million of third quarter 2023 ICS revenue was executed through the Marketplace for J.B. Hunt 360 compared to $391 million in the third quarter 2022. ICS segment had an operating loss of $9.4 million in the third quarter 2023, compared to operating income of $13.4 million in 2022. The decrease is primarily due to lower revenue and a 53% decrease in gross profit, partially offset by lower personnel salary and wages expense and decreased technology cost. Gross profit margin decreased to 12.8% in the third quarter 2023, compared to 14.2% in 2022. ICS’s carrier base decreased 17% compared to third quarter 2022, primarily due to changes in carrier qualification requirements. 
+
+   
+
+ FMS segment revenue decreased 15% to $226 million in the third quarter 2023 from $265 million in 2022, primarily due to decreased customer demand and the effects of internal efforts to improve revenue quality across certain accounts, partially offset by the addition of multiple new customer contracts implemented over the past year and improved revenue quality at underperforming accounts. FMS segment operating income increased to $13.0 million in the third quarter of 2023 compared to $9.8 million in 2022. This increase was primarily due to improvements in revenue quality and overall cost management, partially offset by higher equipment-related and maintenance expenses, increased technology costs, and inflationary increases in facility rental expenses compared to the third quarter 2022. 
+
+   
+
+ JBT segment revenue totaled $196 million for the third quarter 2023, a decrease of 17% from $237 million in third quarter 2022. Revenue excluding fuel surcharge decreased 18% primarily due to a 22% decrease in revenue per load excluding fuel surcharge revenue, partially offset by a 6% increase in load volume compared to third quarter 2022. Load volume growth was primarily related to the expansion of J.B. Hunt 360box®, which leverages the J.B. Hunt 360 platform to provide customers access to drop-trailer capacity across our transportation network. JBT average effective trailer count increased to 12,869 in the third quarter 2023, compared to 10,938 in 2022. At the end of the third quarter 2023, the JBT power fleet consisted of 1,989 tractors, predominantly independent contractors, compared to 2,140 tractors at September 30, 2022. Trailer turns in the third quarter of 2023 decreased 9% compared to third quarter 2022 due to freight mix and the decrease in freight demand. JBT segment operating income decreased to $7.7 million in 2023, compared with $14.9 million during third quarter 2022. The decrease is primarily due to the decrease in revenue and higher network, technology, insurance, and equipment-related costs as a percentage of gross revenue. 
+
+   
+
+ 
+ 15 
+
+ 
+   
+ 
+
+   
+
+ Consolidated Operating Expenses 
+
+   
+
+ The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended September 30, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Dollar Amounts as a 
+
+			 Percentage of Total 
+
+			 Operating Revenues 
+			 
+			   
+			   
+			 
+			 Percentage Change 
+
+			 of Dollar Amounts Between Quarters 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 vs. 2022 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 100.0 
+			 
+			 % 
+			 
+			   
+			   
+			 100.0 
+			 
+			 % 
+			 
+			   
+			   
+			 (17.6 
+			 )% 
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 45.6 
+			   
+			   
+			   
+			 49.3 
+			   
+			   
+			   
+			 (23.7 
+			 ) 
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 25.4 
+			   
+			   
+			   
+			 23.1 
+			   
+			   
+			   
+			 (9.5 
+			 ) 
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 6.2 
+			   
+			   
+			   
+			 6.3 
+			   
+			   
+			   
+			 (19.2 
+			 ) 
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 5.9 
+			   
+			   
+			   
+			 4.3 
+			   
+			   
+			   
+			 12.7 
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 4.1 
+			   
+			   
+			   
+			 3.6 
+			   
+			   
+			   
+			 (5.4 
+			 ) 
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 2.0 
+			   
+			   
+			   
+			 1.6 
+			   
+			   
+			   
+			 4.1 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 2.3 
+			   
+			   
+			   
+			 1.8 
+			   
+			   
+			   
+			 10.5 
+			   
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 9.7 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 0.3 
+			   
+			   
+			   
+			 0.2 
+			   
+			   
+			   
+			 13.0 
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 92.4 
+			   
+			   
+			   
+			 90.6 
+			   
+			   
+			   
+			 (15.9 
+			 ) 
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 7.6 
+			   
+			   
+			   
+			 9.4 
+			   
+			   
+			   
+			 (33.3 
+			 ) 
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 0.3 
+			   
+			   
+			   
+			 (7.2 
+			 ) 
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 7.2 
+			   
+			   
+			   
+			 9.1 
+			   
+			   
+			   
+			 (34.3 
+			 ) 
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 1.3 
+			   
+			   
+			   
+			 2.1 
+			   
+			   
+			   
+			 (47.4 
+			 ) 
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 5.9 
+			 
+			 % 
+			 
+			   
+			   
+			 7.0 
+			 
+			 % 
+			 
+			   
+			   
+			 (30.4 
+			 )% 
+		 
+
+ 
+
+   
+
+ Total operating expenses decreased 15.9%, while operating revenues decreased 17.6% during the third quarter 2023, from the comparable period 2022. Operating income decreased to $241.7 million during the third quarter 2023 from $362.2 million in 2022. 
+
+   
+
+ Rents and purchased transportation costs decreased 23.7% in the third quarter 2023. This decrease was primarily the result of a decrease in rail and truck carrier purchased transportation rates within JBI, ICS and JBT segments and decreased ICS load volume, which decreased services provided by third-party truck carriers during the third quarter 2023 compared to 2022. 
+
+   
+
+ Salaries, wages and employee benefits costs decreased 9.5% during the third quarter 2023, compared with 2022. This decrease was primarily driven by a decrease in employee headcounts and lower incentive compensation. 
+
+   
+
+ Fuel costs decreased 19.2% in the third quarter 2023, compared with 2022, due primarily to a decrease in the price of fuel and decreased road miles. Depreciation and amortization expense increased 12.7% in third quarter 2023, primarily due to equipment purchases related to new DCS long-term customer contracts, the addition of trailing equipment within our JBI and JBT segments, and increased truck and tractor trades. 
+
+   
+
+ Operating supplies and expenses decreased 5.4%, driven primarily by lower equipment maintenance costs and lower travel and entertainment expenses. Insurance and claims expenses increased 4.1% in 2023 compared with 2022, primarily due to increased cost per claim and higher insurance policy premium expense. General and administrative expenses increased 10.5% for the current quarter from the comparable period in 2022, primarily due to a decrease in net gains from sale or disposal of assets and an increase in building and yard rentals, partially offset by lower advertising costs and professional service expenses. Net loss from sale or disposal of assets was $7.7 million in 2023, compared to a net gain from sale or disposal of assets of $0.3 million in 2022. 
+
+   
+
+ 
+ 
+ 
+ 16 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Net interest expense decreased 7.2% in the third quarter 2023 primarily due to the interest component of a discrete income tax benefit recognized in the current quarter, partially offset by an increase in our average debt balance and effective interest rates on our debt compared to third quarter 2022. Income tax expense decreased 47.4% in the third quarter 2023, compared with 2022, primarily due to lower taxable earnings and the recording of a discrete benefit in the current quarter. Our effective income tax rate was 18.2% for the third quarter of 2023, compared to 22.7% in 2022. Our annual tax rate for 2023 is expected to be between 22.0% and 23.0%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items.  This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ Comparison of Nine Months Ended September 30, 2023 to Nine Months Ended September 30, 2022 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Summary of Operating Segment Results 
+
+			 For the Nine Months Ended September 30, 
+
+			  (in millions) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Operating Revenues 
+			 
+			   
+			   
+			 
+			 Operating Income/(loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+			   
+			 
+			 2023 
+			 
+			   
+			   
+			 
+			 2022 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 4,584 
+			   
+			   
+			 $ 
+			 5,273 
+			   
+			   
+			 $ 
+			 439.5 
+			   
+			   
+			 $ 
+			 620.5 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 2,659 
+			   
+			   
+			   
+			 2,611 
+			   
+			   
+			   
+			 318.6 
+			   
+			   
+			   
+			 281.0 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 1,026 
+			   
+			   
+			   
+			 1,840 
+			   
+			   
+			   
+			 (19.2 
+			 ) 
+			   
+			   
+			 60.8 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 675 
+			   
+			   
+			   
+			 775 
+			   
+			   
+			   
+			 34.4 
+			   
+			   
+			   
+			 23.6 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 594 
+			   
+			   
+			   
+			 694 
+			   
+			   
+			   
+			 16.5 
+			   
+			   
+			   
+			 63.9 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 0.1 
+			   
+			   
+			   
+			 (0.2 
+			 ) 
+		 
+		 
+			 
+			 Subtotal 
+			 
+			   
+			   
+			 9,538 
+			   
+			   
+			   
+			 11,193 
+			   
+			   
+			   
+			 789.9 
+			   
+			   
+			   
+			 1,049.6 
+			   
+		 
+		 
+			 
+			 Inter-segment eliminations 
+			 
+			   
+			   
+			 (12 
+			 ) 
+			   
+			   
+			 (29 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 9,526 
+			   
+			   
+			 $ 
+			 11,164 
+			   
+			   
+			 $ 
+			 789.9 
+			   
+			   
+			 $ 
+			 1,049.6 
+			   
+		 
+
+ 
+
+   
+
+ Total consolidated operating revenues decreased to $9.53 billion for the first nine months of 2023, a 15% decrease from $11.16 billion for the comparable period 2022. Fuel surcharge revenue decreased to $1.39 billion during the first nine months of 2023, compared with $1.80 billion in 2022. Total consolidated operating revenue, excluding fuel surcharge revenue, decreased 13% for the first nine months of 2023 compared to the prior year period. 
+
+   
+
+ JBI segment revenue decreased 13% to $4.58 billion during the first nine months of 2023, compared with $5.27 billion in 2022. Load volume during the first nine months of 2023 decreased 4% and revenue per load decreased 10%, which is determined by the combination of changes in freight mix, customer rate changes, and fuel surcharge revenue, compared to a year ago. Revenue per load, excluding fuel surcharge revenue, decreased 7% compared to the first nine months of 2022. JBI segment operating income decreased 29% to $439.5 million in the first nine months of 2023, from $620.5 million in 2022. The decrease is primarily due to decreased revenue and lower net gains from the sale of equipment, together with higher driver and non-driver wages and increased network and equipment-related costs as a percentage of gross revenue during the first nine months of 2023, partially offset by lower rail and third-party dray purchased transportation expense. 
+
+   
+
+ DCS segment revenue increased 2%, to $2.66 billion during the first nine months of 2023, from $2.61 billion in 2022. Productivity, defined as revenue per truck per week decreased 1% compared to the first nine months of 2023. Productivity excluding fuel surcharge revenue for the first nine months of 2023 increased 3% from a year ago. The increase in productivity was primarily due to contractual index-based rate increases and improved utilization of equipment during the current period. Operating income of our DCS segment increased to $318.6 million in the first nine months of 2023, from $281.0 million in 2022. The increase is primarily due to increased revenue and the maturing of new long-term customer contracts, partially offset by higher driver and non-driver wages and benefits, increased equipment-related and maintenance costs, higher insurance and claims expense and an increase in loss on sale of equipment, when compared to the first nine months of 2022. 
+
+   
+
+ ICS revenue decreased 44% to $1.03 billion during the first nine months of 2023, from $1.84 billion in 2022. Overall volumes decreased 30%, while revenue per load decreased 21% primarily due to lower contractual and spot rates as well as changes in customer freight mix compared to 2022. Approximately $644 million of ICS revenue for the first nine months of 2023 was executed through the Marketplace for J.B. Hunt 360 compared to $1.21 billion in 2022. Gross profit margin decreased to 13.1% in the current period compared to 14.3% in 2022. The ICS segment had an operating loss of $19.2 million in the first nine months of 2023 compared to operating income of $60.8 million in 2022, primarily due to decreased revenue and lower gross profit margins, partially offset by lower personnel costs, decreased technology cost, and lower insurance and claims expenses during the first nine months of 2023. 
+
+   
+
+ 
+ 
+ 
+ 17 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ FMS revenue decreased 13% to $675 million during the first nine months of 2023, from $775 million in 2022, primarily due to decreased customer demand and the effects of internal efforts to improve revenue quality across certain accounts, partially offset by the full period operations of Zenith Freight Lines, LLC acquired in 2022 and the addition of multiple new customer contracts implemented over the past year. FMS segment had operating income of $34.4 million in the first nine months of 2023 compared to $23.6 million in 2022. This increase was primarily due to improvements in revenue quality and overall cost management, partially offset by higher equipment-related and maintenance expenses, increased technology costs, and inflationary increases in facility rental expenses compared to the first nine months of 2023. 
+
+   
+
+ JBT segment revenue decreased 14% to $594 million for the first nine months of 2023, from $694 million in 2022. Revenue excluding fuel surcharge revenue decreased 16%, primarily due to a 21% decrease in revenue per load excluding fuel surcharge revenue, partially offset by a 7% increase in load volume compared to the first nine months of 2022. Operating income of our JBT segment decreased to $16.5 million in the first nine months of 2023, from $63.9 million in 2022. The decrease in operating income was driven primarily by the decrease in revenue and higher network, technology, and equipment-related costs as a percentage of gross revenue. 
+
+   
+
+ Consolidated Operating Expenses 
+
+   
+
+ The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 Nine Months Ended September 30, 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Dollar Amounts as a 
+
+			 Percentage of Total 
+
+			 Operating Revenues 
+			 
+			   
+			   
+			 
+			 Percentage Change 
+
+			 of Dollar Amounts Between Periods 
+			 
+			   
+		 
+		 
+			   
+			   
+			 2023 
+			   
+			   
+			 2022 
+			   
+			   
+			 2023 vs. 2022 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 100.0 
+			 
+			 % 
+			 
+			   
+			   
+			 100.0 
+			 
+			 % 
+			 
+			   
+			   
+			 (14.7 
+			 
+			 )% 
+			 
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 45.3 
+			   
+			   
+			   
+			 50.6 
+			   
+			   
+			   
+			 (23.6 
+			 ) 
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 25.7 
+			   
+			   
+			   
+			 22.3 
+			   
+			   
+			   
+			 (1.7 
+			 ) 
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 5.9 
+			   
+			   
+			   
+			 6.2 
+			   
+			   
+			   
+			 (19.2 
+			 ) 
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 5.7 
+			   
+			   
+			   
+			 4.2 
+			   
+			   
+			   
+			 14.9 
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 4.1 
+			   
+			   
+			   
+			 3.3 
+			   
+			   
+			   
+			 4.5 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 2.1 
+			   
+			   
+			   
+			 1.7 
+			   
+			   
+			   
+			 1.7 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 2.0 
+			   
+			   
+			   
+			 1.7 
+			   
+			   
+			   
+			 19.5 
+			   
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 13.5 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 0.3 
+			   
+			   
+			   
+			 0.2 
+			   
+			   
+			   
+			 15.9 
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 91.7 
+			   
+			   
+			   
+			 90.6 
+			   
+			   
+			   
+			 (13.6 
+			 ) 
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 8.3 
+			   
+			   
+			   
+			 9.4 
+			   
+			   
+			   
+			 (24.7 
+			 ) 
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 0.3 
+			   
+			   
+			   
+			 7.7 
+			   
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 7.9 
+			   
+			   
+			   
+			 9.1 
+			   
+			   
+			   
+			 (26.0 
+			 ) 
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 1.9 
+			   
+			   
+			   
+			 2.2 
+			   
+			   
+			   
+			 (28.6 
+			 ) 
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 6.0 
+			 
+			 % 
+			 
+			   
+			   
+			 6.9 
+			 
+			 % 
+			 
+			   
+			   
+			 (25.2 
+			 
+			 )% 
+			 
+		 
+
+ 
+
+   
+
+ Total operating expenses decreased 13.6%, while operating revenues decreased 14.7%, during the first nine months of 2023, from the comparable period of 2022. Operating income decreased to $789.9 million during the first nine months of 2023, from $1.05 billion in 2022. 
+
+   
+
+ Rents and purchased transportation costs decreased 23.6% in 2023. This decrease was primarily the result of a decrease in rail and truck carrier purchased transportation rates within JBI, ICS and JBT segments and decreased JBI and ICS load volume, which decreased services provided by third-party rail and truck carriers during the current period. 
+
+   
+
+ 
+ 
+ 
+ 18 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Salaries, wages and employee benefits costs decreased 1.7% in 2023 from 2022. This decrease was primarily related to a decrease in employee headcounts and lower incentive compensation, partially offset by increased base driver pay and office personnel compensation in 2023. In addition, an $11.6 million workers’ compensation insurance return of premium benefit was present in the prior year period. 
+
+   
+
+ Fuel costs decreased 19.2% in 2023, compared with 2022, due primarily to a decrease in the price of fuel. Depreciation and amortization expense increased 14.9% in 2023 primarily due to equipment purchases related to new DCS long-term customer contracts, the addition of trailing equipment within our JBI and JBT segments, and increased truck and tractor trades. 
+
+   
+
+ Operating supplies and expenses increased 4.5% primarily due to higher equipment maintenance costs, increased tire expense, increased towing costs, and higher tolls expense. Insurance and claims expense increased 1.7% in 2023 compared with 2022, primarily due to increased cost per claim and higher insurance policy premium expense, partially offset by lower claim volume in the current period and the inclusion of a $30 million expense in 2022 for additional reserves of claims subject to insurance coverage layer specific aggregated limits. General and administrative expenses increased 19.5% from the comparable period in 2022, primarily due to a decrease in net gains from sale or disposal of assets and an increase in building and yard rentals, partially offset by lower advertising costs and professional service expenses. Net loss from sale or disposal of assets was $17.2 million in 2023, compared to a net gain from sale or disposal of assets of $21.0 million in 2022. 
+
+   
+
+ Net interest expense increased 7.7% in 2023, due primarily to an increase in our average debt balance and higher effective interest rates on our debt. Income tax expense decreased 28.6% during the first nine months of 2023, compared with 2022, primarily due to decreased taxable earnings in the first nine months of 2023. Our effective income tax rate was 23.2% for the first nine months of 2023, compared to 24.0% in 2022. Our annual tax rate for 2023 is expected to be between 22.0% and 23.0%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ Liquidity and Capital Resources 
+
+   
+
+ Cash Flow 
+
+   
+
+ Net cash provided by operating activities totaled $1.53 billion during the first nine months of 2023, compared with $1.36 billion for the same period 2022. Operating cash flows increased primarily due to the timing of general working capital activities, partially offset by decreased earnings. Net cash used in investing activities totaled $1.40 billion in 2023, compared with $1.14 billion in 2022. The increase resulted from an increase in equipment purchases, net of proceeds from the sale of equipment, partially offset by a reduction in business acquisition expenditures in the current period. Net cash used in financing activities was $101.4 million in 2023, compared with $490.5 million in 2022. This decrease resulted primarily from a decrease in treasury stock purchased, partially offset by the net proceeds from our senior credit facility in 2023, which was the result of electing to draw funds available to us under the term portion of our credit facility. 
+
+   
+
+ Liquidity 
+
+   
+
+ Our need for capital has typically resulted from the acquisition of containers and chassis, trucks, tractors, and trailers required to support our growth and the replacement of older equipment as well as periodic business acquisitions and real estate transactions. We are frequently able to accelerate or postpone a portion of equipment replacements or other capital expenditures depending on market and overall economic conditions. In recent years, we have obtained capital through cash generated from operations, revolving lines of credit and long-term debt issuances. We have also periodically utilized operating leases to acquire revenue equipment. For our senior notes maturing in 2024, it is our intent to pay the entire outstanding balances in full, on or before the maturity dates, using our existing cash balance, revolving line of credit or other sources of long-term financing. 
+
+   
+
+ 
+ 
+ 
+ 19 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ We believe our liquid assets, cash generated from operations, and revolving line of credit will provide sufficient funds for our operating and capital requirements for the foreseeable future. At September 30, 2023, we were authorized to borrow up to $1.5 billion through a revolving line of credit and committed term loans, which is supported by a credit agreement with a group of banks. The revolving line of credit authorizes us to borrow up to $1.0 billion under a five-year term expiring September 2027, and allows us to request an increase in the revolving line of credit total commitment by up to $300 million and to request two one-year extensions of the maturity date. The committed term loans authorized us to borrow up to an additional $500 million during the nine-month period beginning September 27, 2022, due September 2025, which we exercised in June 2023. The applicable interest rates under this agreement are based on either the Secured Overnight Financing Rate (SOFR), or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At September 30, 2023, we had a cash balance of $75.2 million. Under our senior credit facility, we had no outstanding balance on our revolving line of credit and a $500.0 million outstanding balance of term loans at an average interest rate of 6.43%. 
+
+   
+
+ We continue to evaluate the possible effects of current economic conditions and reasonable and supportable economic forecasts on operational cash flows, including the risks of declines in the overall freight market and our customers' liquidity and ability to pay. We regularly monitor working capital and maintain frequent communication with our customers, suppliers and service providers. A large portion of our cost structure is variable. Purchased transportation expense represents more than half of our total costs but is heavily tied to load volumes. Our second largest cost item is salaries and wages, the largest portion of which is driver pay, which includes a large variable component. 
+
+   
+
+ Our financing arrangements require us to maintain certain covenants and financial ratios. At September 30, 2023, we were compliant with all covenants and financial ratios. 
+
+   
+
+ Our net capital expenditures were approximately $1.32 billion during the first nine months of 2023, compared with $1.02 billion for the same period 2022. Our net capital expenditures include net additions to revenue equipment and non-revenue producing assets that are necessary to contribute to and support the future growth of our various business segments. Capital expenditures in the third quarter 2023 were primarily for tractors, intermodal containers and chassis, and other trailing equipment. We are currently committed to spend approximately $1.2 billion during the years 2023 and 2024, as well as an additional $380 million thereafter. We expect to spend in the range of $1.5 billion to $1.7 billion for net capital expenditures during the calendar year 2023. These expenditures will relate primarily to the acquisition of tractors, containers, chassis, and other trailing equipment. At September 30, 2023, our aggregate future minimum lease payments under operating lease obligations which relate primarily to the rental of maintenance and support facilities, cross-dock and delivery system facilities, office space, parking yards, and equipment totaled $388.2 million. 
+
+   
+
+ Off-Balance Sheet Arrangements 
+
+   
+
+ We had no off-balance sheet arrangements, other than our net purchase commitments of $1.6 billion, as of September 30, 2023. 
+
+   
+
+ Risk Factors 
+
+   
+
+ You should refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2022, under the caption “Risk Factors” for specific details on the following factors and events that are not within our control and could affect our financial results. 
+
+   
+
+ Risks Related to Our Industry 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our business is significantly impacted by economic conditions, customer business cycles, and seasonal factors. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our business is significantly impacted by the effects of national or international health pandemics on general economic conditions and the operations of our customers and third-party suppliers and service providers. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Extreme or unusual weather conditions can disrupt our operations, impact freight volumes, and increase our costs, all of which could have a material adverse effect on our business results. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 20 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our operations are subject to various environmental laws and regulations, including legislative and regulatory responses to climate change. Compliance with environmental requirements could result in significant expenditures and the violation of these regulations could result in substantial fines or penalties. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We depend on third parties in the operation of our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Rapid changes in fuel costs could impact our periodic financial results. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Insurance and claims expenses could significantly reduce our earnings. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We operate in a regulated industry, and increased direct and indirect costs of compliance with, or liability for violation of, existing or future regulations could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Difficulty in attracting and retaining drivers, delivery personnel and third-party carriers could affect our profitability and ability to grow. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We operate in a competitive and highly fragmented industry. Numerous factors could impair our ability to maintain our current profitability and to compete with other carriers and private fleets. 
+			 
+		 
+
+ 
+
+   
+
+ Risks Related to Our Business 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We derive a significant portion of our revenue from a few major customers, the loss of one or more of which could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 A determination that independent contractors are employees could expose us to various liabilities and additional costs. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We may be subject to litigation claims that could result in significant expenditures. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We rely significantly on our information technology systems, a disruption, failure, or security breach of which could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Acquisitions or business combinations may disrupt or have a material adverse effect on our operations or earnings. 
+			 
+		 
+
+ 
+
+   
+
+ ITEM 3.  QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK 
+
+   
+
+ Our outstanding debt at September 30, 2023 consists of both fixed and variable interest rate facilities. Our senior notes have fixed interest rates ranging from 3.85% to 3.875%. These fixed rate facilities reduce the impact of changes to market interest rates on future interest expense. Our senior credit facility has variable interest rates, which are based on either SOFR or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At September 30, 2023, the average interest rate under our senior credit facility was 6.43%. Risk can be quantified by measuring the financial impact of a near-term adverse increase in short-term interest rates. Our earnings would be affected by changes in these short-term variable interest rates on variable-rate debt outstanding. At our current level of borrowing, a one percentage point increase in our applicable rate would reduce annual pretax earnings by $5.0 million. 
+
+   
+
+ Although we conduct business in foreign countries, international operations are not material to our consolidated financial position, results of operations, or cash flows. Additionally, foreign currency transaction gains and losses were not material to our results of operations for the three or nine months ended September 30, 2023. Accordingly, we are not currently subject to material foreign currency exchange rate risks from the effects that exchange rate movements of foreign currencies would have on our future costs or on future cash flows we would receive from our foreign investment. As of September 30, 2023, we had no foreign currency forward exchange contracts or other derivative financial instruments to hedge the effects of adverse fluctuations in foreign currency exchange rates. 
+
+   
+
+ The price and availability of diesel fuel are subject to fluctuations due to changes in the level of global oil production, seasonality, weather, and other market factors. Historically, we have been able to recover a majority of fuel price increases from our customers in the form of fuel surcharges. We cannot predict the extent to which high fuel price levels may occur in the future or the extent to which fuel surcharges could be collected to offset such increases. As of September 30, 2023, we had no derivative financial instruments to reduce our exposure to fuel price fluctuations. 
+
+   
+
+ 
+ 
+ 
+ 21 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ ITEM 4.  CONTROLS AND PROCEDURES 
+
+   
+
+ We maintain controls and procedures designed to ensure that the information we are required to disclose in the reports we file with the SEC is recorded, processed, summarized and reported, within the time periods specified in the SEC rules, and that such information is accumulated and communicated to our management, including our Chief Executive Officer and Chief Financial Officer, as appropriate, to allow timely decisions regarding required disclosure. As of the end of the period covered by this report, we carried out an evaluation, under the supervision and with the participation of our management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended). Based upon that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that our disclosure controls and procedures were effective as of September 30, 2023. 
+
+   
+
+ There were no changes in our internal control over financial reporting during the third quarter of 2023 that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 
+
+   
+
+ Part II. Other Information 
+
+   
+
+   
+
+ ITEM 1. LEGAL PROCEEDINGS 
+
+   
+
+ We are involved in certain claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+
+   
+
+ ITEM 1A. RISK FACTORS 
+
+   
+
+ Information regarding risk factors appears in Part I, Item 2, Management’s Discussion and Analysis of Financial Condition and Results of Operations of this report on Form 10-Q and in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2022. 
+
+   
+
+ 
+ 22 
+
+ 
+   
+ 
+
+   
+
+ ITEM 2.           UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS 
+
+   
+
+ Purchases of Equity Securities 
+
+   
+
+ The following table summarizes purchases of our common stock during the three months ended September 30, 2023: 
+
+   
+
+ 
+
+		 
+			 
+			   
+
+			   
+
+			 Period 
+			 
+			   
+			 
+			 Number of 
+
+			 Common 
+
+			 Shares 
+
+			 Purchased 
+			 
+			   
+			   
+			 
+			 Average Price 
+
+			 Paid Per 
+
+			 Common Share Purchased 
+			 
+			   
+			   
+			 
+			 Total Number of Shares 
+
+			 Purchased as 
+
+			 Part of a 
+
+			 Publicly 
+
+			 Announced Plan 
+
+			 (1) 
+			 
+			   
+			   
+			 
+			 Maximum 
+
+			 Dollar 
+
+			 Amount 
+
+			 of Shares That 
+
+			 May Yet Be Purchased 
+
+			 Under the Plan 
+
+			 (in millions)  (1) 
+			 
+			   
+		 
+		 
+			 
+			 July 1 through July 31, 2023 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			 $ 
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			 $ 
+			 467 
+			   
+		 
+		 
+			 
+			 August 1 through August 31, 2023 
+			 
+			   
+			   
+			 131,741 
+			   
+			   
+			   
+			 193.82 
+			   
+			   
+			   
+			 131,741 
+			   
+			   
+			   
+			 442 
+			   
+		 
+		 
+			 
+			 September 1 through September 30, 2023 
+			 
+			   
+			   
+			 135,525 
+			   
+			   
+			   
+			 188.65 
+			   
+			   
+			   
+			 135,525 
+			   
+			   
+			   
+			 416 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			   
+			 267,266 
+			   
+			   
+			 $ 
+			 191.20 
+			   
+			   
+			   
+			 267,266 
+			   
+			   
+			 $ 
+			 416 
+			   
+		 
+
+ 
+
+   
+
+ (1)         On July 20, 2022, our Board of Directors authorized the purchase of up to $500 million of our common stock. This stock repurchase program has no expiration date. 
+
+   
+
+ ITEM 3.           DEFAULTS UPON SENIOR SECURITIES 
+
+   
+
+ Not applicable. 
+
+   
+
+ ITEM 4.         MINE SAFETY DISCLOSURES 
+
+   
+
+ Not applicable. 
+
+   
+
+ ITEM 5.           OTHER INFORMATION 
+
+   
+
+ During the three months ended September 30, 2023, none of our directors or officers adopted or terminated a “Rule 10b5-1 trading arrangement” or “non-Rule 10b5-1 trading arrangement,” as each term is defined in Item 408(a) of Regulation S-K. 
+
+   
+
+ ITEM 6.           EXHIBITS  
+
+   
+
+ Index to Exhibits 
+
+   
+
+ 
+ 23 
+
+ 
+   
+ 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			 Exhibit 
+
+			 Number 
+			 
+			   
+			 Exhibits 
+		 
+		 
+			 3.1 
+			   
+			 Amended and Restated Articles of Incorporation of J.B. Hunt Transport Services, Inc. dated May 19, 1988 (incorporated by reference from Exhibit 3.1 of the Company’s quarterly report on Form 10-Q for the period ended March 31, 2005, filed April 29, 2005) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.2 
+			   
+			 Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc. dated October 21, 2021 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 27, 2021) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.3 
+			   
+			 Amendment No. 1 to the Second Amended and Restated Bylaws J.B. Hunt Transport Services, Inc. dated July 20, 2022 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed July 26, 2022) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.4 
+			   
+			 Amendment No. 2 to the Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc., dated January 19, 2023 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed January 24, 2023) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.5 
+			   
+			 Amendment No. 3 to the Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc., dated October 19, 2023 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 24, 2023) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 22.1 
+			   
+			 List of Guarantor Subsidiaries of J.B. Hunt Transport Services, Inc. (incorporated by reference from Exhibit 22.1 of the Company’s annual report on Form 10-K for the year ended December 31, 2021, filed February 25, 2022) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 31.1 
+			   
+			 Rule 13a-14(a)/15d-14(a) Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 31.2 
+			   
+			 Rule 13a-14(a)/15d-14(a) Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 32.1 
+			   
+			 Section 1350 Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 32.2 
+			   
+			 Section 1350 Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.INS 
+			   
+			 Inline XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.SCH 
+			   
+			 Inline XBRL Taxonomy Extension Schema Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.CAL 
+			   
+			 Inline XBRL Taxonomy Extension Calculation Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.DEF 
+			   
+			 Inline XBRL Taxonomy Extension Definition Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.LAB 
+			   
+			 Inline XBRL Taxonomy Extension Label Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.PRE 
+			   
+			 Inline XBRL Taxonomy Extension Presentation Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 104 
+			   
+			 Cover Page Interactive Data File (embedded within the Inline XBRL Document and include in Exhibit 101) 
+		 
+
+ 
+
+   
+
+ 
+ 24 
+
+ 
+   
+ 
+
+   
+
+ SIGNATURES 
+
+   
+
+   
+
+ Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized, in the city of Lowell, Arkansas, on the 27th day of October 2023. 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			   
+			 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC.   
+			 
+			 
+			   
+			 
+		 
+		 
+			   
+			 (Registrant) 
+			   
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 BY:  
+			 
+			 
+			 /s/  John N. Roberts, III 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 John N. Roberts, III   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 Chief Executive Officer   
+			 
+			 
+			   
+			 
+		 
+		 
+			   
+			   
+			 (Principal Executive Officer) 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			 BY: 
+			 /s/ John Kuhlow 
+			   
+		 
+		 
+			   
+			   
+			 John Kuhlow 
+			   
+		 
+		 
+			   
+			   
+			 Chief Financial Officer, 
+			   
+		 
+		 
+			   
+			   
+			 Executive Vice President 
+			   
+		 
+		 
+			   
+			   
+			 (Principal Financial and Accounting Officer) 
+			   
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 25 
+ 
+ 
+ 
+
+
+ 

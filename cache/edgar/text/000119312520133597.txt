@@ -1,0 +1,5487 @@
+
+ 
+ 
+ 10-Q 
+ 
+ 
+ 
+  false 2020 Q1 0001037868 --12-31 AMETEK INC/ Includes $6.5 million in accounts receivable, whose fair value, contractual cash flows and expected cash flows are approximately equal. Includes U.S. export sales of $305.2 million. Includes U.S. export sales of $325.4 million.     0001037868       2020-01-01   2020-03-31         0001037868       2019-01-01   2019-03-31         0001037868       2020-03-31         0001037868       2019-12-31         0001037868       2019-03-31         0001037868       2019-01-01   2019-12-31         0001037868       2018-12-31         0001037868       2020-04-24         0001037868     us-gaap:CommonStockMember         2019-01-01   2019-03-31         0001037868     us-gaap:TreasuryStockMember         2019-01-01   2019-03-31         0001037868     us-gaap:AdditionalPaidInCapitalMember         2019-01-01   2019-03-31         0001037868     us-gaap:RetainedEarningsMember         2019-01-01   2019-03-31         0001037868     us-gaap:AccumulatedTranslationAdjustmentMember         2019-01-01   2019-03-31         0001037868     us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember         2019-01-01   2019-03-31         0001037868     country:US   ame:ElectronicInstrumentsGroupMember         2019-01-01   2019-03-31         0001037868     country:US   ame:ElectromechanicalGroupMember         2019-01-01   2019-03-31         0001037868     country:US         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   country:GB         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   country:GB         2019-01-01   2019-03-31         0001037868     country:GB         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   us-gaap:EuropeanUnionMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   us-gaap:EuropeanUnionMember         2019-01-01   2019-03-31         0001037868     us-gaap:EuropeanUnionMember         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   srt:AsiaMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   srt:AsiaMember         2019-01-01   2019-03-31         0001037868     srt:AsiaMember         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   ame:OtherForeignCountriesMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   ame:OtherForeignCountriesMember         2019-01-01   2019-03-31         0001037868     ame:OtherForeignCountriesMember         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   ame:InternationalMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   ame:InternationalMember         2019-01-01   2019-03-31         0001037868     ame:InternationalMember         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   ame:ProcessAndAnalyticalInstrumentationMember         2019-01-01   2019-03-31         0001037868     ame:ProcessAndAnalyticalInstrumentationMember         2019-01-01   2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   ame:AerospaceAndPowerMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   ame:AerospaceAndPowerMember         2019-01-01   2019-03-31         0001037868     ame:AerospaceAndPowerMember         2019-01-01   2019-03-31         0001037868     ame:ElectromechanicalGroupMember   ame:AutomationAndEngineeredSolutionsMember         2019-01-01   2019-03-31         0001037868     ame:AutomationAndEngineeredSolutionsMember         2019-01-01   2019-03-31         0001037868     us-gaap:TransferredAtPointInTimeMember   ame:ElectronicInstrumentsGroupMember         2019-01-01   2019-03-31         0001037868     us-gaap:TransferredAtPointInTimeMember   ame:ElectromechanicalGroupMember         2019-01-01   2019-03-31         0001037868     us-gaap:TransferredAtPointInTimeMember         2019-01-01   2019-03-31         0001037868     us-gaap:TransferredOverTimeMember   ame:ElectronicInstrumentsGroupMember         2019-01-01   2019-03-31         0001037868     us-gaap:TransferredOverTimeMember   ame:ElectromechanicalGroupMember         2019-01-01   2019-03-31         0001037868     us-gaap:TransferredOverTimeMember         2019-01-01   2019-03-31         0001037868     us-gaap:NonUsMember         2019-01-01   2019-03-31         0001037868     ame:TwoThousandAndTwentyConsolidatedAcquisitionMember         2020-01-01   2020-03-31         0001037868     srt:MinimumMember   ame:PerformanceRestrictedStockUnitsMember   ame:OfficersAndKeyManagementEmployeesMember         2020-01-01   2020-03-31         0001037868     srt:MaximumMember   ame:PerformanceRestrictedStockUnitsMember   ame:OfficersAndKeyManagementEmployeesMember         2020-01-01   2020-03-31         0001037868     ame:ReductionInWorkforceMember         2020-01-01   2020-03-31         0001037868     ame:ReductionInWorkforceMember   us-gaap:CostOfSalesMember         2020-01-01   2020-03-31         0001037868     ame:ReductionInWorkforceMember   us-gaap:SellingGeneralAndAdministrativeExpensesMember         2020-01-01   2020-03-31         0001037868     us-gaap:OperatingSegmentsMember   ame:ReductionInWorkforceMember   ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:OperatingSegmentsMember   ame:ReductionInWorkforceMember   ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:RestrictedStockMember         2020-01-01   2020-03-31         0001037868     ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:ForeignExchangeContractMember   us-gaap:DesignatedAsHedgingInstrumentMember         2020-01-01   2020-03-31         0001037868     ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     ame:RestrictedStockGrantedPriorDateMember         2020-01-01   2020-03-31         0001037868     ame:NonEmployeeDirectorsRestrictedStockMember         2020-01-01   2020-03-31         0001037868     us-gaap:ShareBasedCompensationAwardTrancheOneMember         2020-01-01   2020-03-31         0001037868     us-gaap:ShareBasedCompensationAwardTrancheTwoMember         2020-01-01   2020-03-31         0001037868     ame:TwoThousandAndTwentyConsolidatedAcquisitionMember   us-gaap:TradeNamesMember         2020-01-01   2020-03-31         0001037868     ame:TwoThousandAndTwentyConsolidatedAcquisitionMember   us-gaap:CustomerRelationshipsMember         2020-01-01   2020-03-31         0001037868     ame:TwoThousandAndTwentyConsolidatedAcquisitionMember   ame:PurchasedTechnologyMember         2020-01-01   2020-03-31         0001037868     us-gaap:CommonStockMember         2020-01-01   2020-03-31         0001037868     us-gaap:TreasuryStockMember         2020-01-01   2020-03-31         0001037868     us-gaap:AdditionalPaidInCapitalMember         2020-01-01   2020-03-31         0001037868     ame:HccMember         2020-01-01   2020-03-31         0001037868     us-gaap:RetainedEarningsMember         2020-01-01   2020-03-31         0001037868     us-gaap:EmployeeStockOptionMember         2020-01-01   2020-03-31         0001037868     us-gaap:AccumulatedTranslationAdjustmentMember         2020-01-01   2020-03-31         0001037868     us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember         2020-01-01   2020-03-31         0001037868     country:US   ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     country:US   ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     country:US         2020-01-01   2020-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   country:GB         2020-01-01   2020-03-31         0001037868     ame:ElectromechanicalGroupMember   country:GB         2020-01-01   2020-03-31         0001037868     country:GB         2020-01-01   2020-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   us-gaap:EuropeanUnionMember         2020-01-01   2020-03-31         0001037868     ame:ElectromechanicalGroupMember   us-gaap:EuropeanUnionMember         2020-01-01   2020-03-31         0001037868     us-gaap:EuropeanUnionMember         2020-01-01   2020-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   srt:AsiaMember         2020-01-01   2020-03-31         0001037868     ame:ElectromechanicalGroupMember   srt:AsiaMember         2020-01-01   2020-03-31         0001037868     srt:AsiaMember         2020-01-01   2020-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   ame:OtherForeignCountriesMember         2020-01-01   2020-03-31         0001037868     ame:ElectromechanicalGroupMember   ame:OtherForeignCountriesMember         2020-01-01   2020-03-31         0001037868     ame:OtherForeignCountriesMember         2020-01-01   2020-03-31         0001037868     ame:ElectronicInstrumentsGroupMember   ame:InternationalMember         2020-01-01   2020-03-31         0001037868     ame:ElectromechanicalGroupMember   ame:InternationalMember         2020-01-01   2020-03-31         0001037868     ame:InternationalMember         2020-01-01   2020-03-31         0001037868     ame:ProcessAndAnalyticalInstrumentationMember   ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     ame:ProcessAndAnalyticalInstrumentationMember         2020-01-01   2020-03-31         0001037868     ame:AerospaceAndPowerMember   ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     ame:AerospaceAndPowerMember   ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     ame:AerospaceAndPowerMember         2020-01-01   2020-03-31         0001037868     ame:AutomationAndEngineeredSolutionsMember   ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     ame:AutomationAndEngineeredSolutionsMember         2020-01-01   2020-03-31         0001037868     us-gaap:TransferredAtPointInTimeMember   ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:TransferredAtPointInTimeMember   ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:TransferredAtPointInTimeMember         2020-01-01   2020-03-31         0001037868     us-gaap:TransferredOverTimeMember   ame:ElectronicInstrumentsGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:TransferredOverTimeMember   ame:ElectromechanicalGroupMember         2020-01-01   2020-03-31         0001037868     us-gaap:TransferredOverTimeMember         2020-01-01   2020-03-31         0001037868     ame:OfficersAndKeyManagementEmployeesMember   ame:PerformanceRestrictedStockUnitsMember         2020-01-01   2020-03-31         0001037868     us-gaap:NonUsMember         2020-01-01   2020-03-31         0001037868     us-gaap:ForeignExchangeForwardMember   currency:CAD         2020-01-01   2020-03-31         0001037868     us-gaap:ForeignExchangeForwardMember   currency:GBP         2020-01-01   2020-03-31         0001037868     us-gaap:AccountingStandardsUpdate201613Member         2020-01-01   2020-03-31         0001037868     ame:KymeraInternationalMember         2020-01-01   2020-03-31         0001037868     ame:KymeraInternationalMember   us-gaap:OtherIncomeMember         2020-01-01   2020-03-31         0001037868     us-gaap:FairValueMeasurementsRecurringMember         2019-12-31         0001037868     us-gaap:CarryingReportedAmountFairValueDisclosureMember         2019-12-31         0001037868     us-gaap:EstimateOfFairValueFairValueDisclosureMember         2019-12-31         0001037868     ame:HccMember         2019-12-31         0001037868     us-gaap:OtherNoncurrentLiabilitiesMember         2019-12-31         0001037868     us-gaap:FairValueMeasurementsRecurringMember         2020-03-31         0001037868     us-gaap:CarryingReportedAmountFairValueDisclosureMember         2020-03-31         0001037868     us-gaap:EstimateOfFairValueFairValueDisclosureMember         2020-03-31         0001037868     us-gaap:ForeignExchangeContractMember   us-gaap:DesignatedAsHedgingInstrumentMember   ame:BritishPoundDenominatedLoansMember         2020-03-31         0001037868     us-gaap:ForeignExchangeContractMember   us-gaap:DesignatedAsHedgingInstrumentMember   ame:EuroLoanMember         2020-03-31         0001037868     ame:TwoThousandAndTwentyConsolidatedAcquisitionMember         2020-03-31         0001037868     us-gaap:ForeignExchangeForwardMember   currency:CAD         2020-03-31         0001037868     us-gaap:ForeignExchangeForwardMember   currency:GBP         2020-03-31         0001037868     ame:PerformanceRestrictedStockUnitsMember         2020-03-31         0001037868     ame:HccMember         2020-03-31         0001037868     ame:NonVestedStockOptionsMember         2020-03-31         0001037868     us-gaap:RestrictedStockMember         2020-03-31         0001037868     us-gaap:OtherNoncurrentLiabilitiesMember         2020-03-31         0001037868     us-gaap:CommonStockMember         2018-12-31         0001037868     us-gaap:AdditionalPaidInCapitalMember         2018-12-31         0001037868     us-gaap:RetainedEarningsMember         2018-12-31         0001037868     us-gaap:AccumulatedTranslationAdjustmentMember         2018-12-31         0001037868     us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember         2018-12-31         0001037868     us-gaap:TreasuryStockMember         2018-12-31         0001037868     us-gaap:AccumulatedTranslationAdjustmentMember         2019-03-31         0001037868     us-gaap:RetainedEarningsMember         2019-03-31         0001037868     us-gaap:AdditionalPaidInCapitalMember         2019-03-31         0001037868     us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember         2019-03-31         0001037868     us-gaap:AccumulatedOtherComprehensiveIncomeMember         2019-03-31         0001037868     us-gaap:CommonStockMember         2019-03-31         0001037868     us-gaap:TreasuryStockMember         2019-03-31         0001037868     ame:ElectronicInstrumentsGroupMember         2019-12-31         0001037868     ame:ElectromechanicalGroupMember         2019-12-31         0001037868     us-gaap:RestrictedStockMember         2019-12-31         0001037868     ame:ElectronicInstrumentsGroupMember         2020-03-31         0001037868     ame:ElectromechanicalGroupMember         2020-03-31         0001037868     us-gaap:CommonStockMember         2019-12-31         0001037868     us-gaap:AdditionalPaidInCapitalMember         2019-12-31         0001037868     us-gaap:RetainedEarningsMember         2019-12-31         0001037868     us-gaap:AccumulatedTranslationAdjustmentMember         2019-12-31         0001037868     us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember         2019-12-31         0001037868     us-gaap:TreasuryStockMember         2019-12-31         0001037868     us-gaap:AccumulatedTranslationAdjustmentMember         2020-03-31         0001037868     us-gaap:RetainedEarningsMember         2020-03-31         0001037868     us-gaap:AdditionalPaidInCapitalMember         2020-03-31         0001037868     us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember         2020-03-31         0001037868     us-gaap:AccumulatedOtherComprehensiveIncomeMember         2020-03-31         0001037868     us-gaap:CommonStockMember         2020-03-31         0001037868     us-gaap:TreasuryStockMember         2020-03-31       iso4217:USD     xbrli:pure     xbrli:shares     iso4217:CAD     iso4217:GBP         iso4217:USD       xbrli:shares         ame:Site     Table of Contents                       UNITED STATES    SECURITIES AND EXCHANGE COMMISSION    Washington, D.C. 20549            FORM  10-Q             (Mark One)  
+ 
+ 
+ ☒ 
+ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934                         For the quarterly period ended  March 31, 2020     OR    
+ 
+ 
+ ☐ 
+ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934                           For the transition period from                     to                          Commission File Number  1-12981             AMETEK, Inc.     (Exact name of registrant as specified in its charter)          
+ 
+ 
+   
+   
+     
+ 
+   Delaware     
+   
+   14-1682544         
+ 
+   (State or other jurisdiction of    incorporation or organization)    
+   
+   (I.R.S. Employer    Identification No.)      
+ 
+   
+   
+     
+ 
+   1100 Cassatt Road     Berwyn ,  Pennsylvania     
+   
+   19312-1177       
+ 
+   (Address of principal executive offices)    
+   
+   (Zip Code)                          Registrant’s telephone number, including area code: ( 610 )   647-2121             Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes    ☒     No   ☐     Indicate by check mark whether the registrant has submitted electronically and posted on its corporate Web site, if any, every Interactive Data File required to be submitted and posted pursuant to Rule 405 of Regulation  S-T  (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit and post such files).     Yes    ☒     No   ☐     Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a  non-accelerated  filer, smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and “emerging growth company” in Rule  12b-2  of the Exchange Act.  
+ 
+ 
+   
+   
+   
+   
+   
+   
+     
+ 
+   Large accelerated filer     
+   
+   ☒     
+   
+   Accelerated filer   
+   
+   ☐       
+ 
+   
+   
+   
+   
+   
+   
+     
+ 
+   Non-accelerated  filer   
+   
+   ☐   (Do not check if a smaller reporting company)    
+   
+   Smaller reporting company   
+   
+   ☐     
+ 
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+     
+   
+   Emerging growth company   
+   
+   ☐           If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.   ☐   Indicate by check mark whether the registrant is a shell company (as defined in Rule  12b-2  of the Exchange Act).    Yes   ☐     No   ☒           Securities registered pursuant to Section 12(b) of the Act:  
+ 
+ 
+   
+   
+   
+   
+     
+ 
+   Title of each class    
+   
+   Trading   Symbol(s)    
+   
+   Name of each exchange   on which registered      
+ 
+   Common Stock     
+   
+   AME     
+   
+   New York Stock Exchange                             The number of shares of the registrant’s common stock outstanding as of the latest practicable date was: Common Stock, $0.01 Par Value, outstanding at April 24, 2020 was  229,432,094  shares.                                  Table of Contents     AMETEK, Inc.    Form  10-Q    Table of Contents  
+ 
+ 
+   
+   
+   
+   
+     
+ 
+     
+   
+   Page    
+     
+ 
+   
+   
+   
+   
+     
+ 
+   PART I. FINANCIAL INFORMATION     
+   
+   
+     
+     
+ 
+   
+   
+   
+   
+     
+ 
+   Item 1.  Financial Statements   
+   
+   
+     
+     
+ 
+   
+   
+   
+   
+     
+ 
+   Consolidated Statement of Income for the three months ended March 31, 2020 and 2019     
+   
+   
+   2   
+     
+ 
+   Condensed Consolidated Statement of Comprehensive Income for the three months ended March 31, 2020 and 2019     
+   
+   
+   3   
+     
+ 
+   Consolidated Balance Sheet at March 31, 2020 and December 31, 2019     
+   
+   
+   4   
+     
+ 
+   Consolidated Statement of Stockholders’ Equity for the three months ended March 31, 2020 and 2019     
+   
+   
+   5   
+     
+ 
+   Condensed Consolidated Statement of Cash Flows for the three months ended March 31, 2020 and 2019     
+   
+   
+   6   
+     
+ 
+   Notes to Consolidated Financial Statements     
+   
+   
+   7   
+     
+ 
+   
+   
+   
+   
+     
+ 
+   Item 2.  Management’s Discussion and Analysis of Financial Condition and Results of Operations   
+   
+   
+   22   
+     
+ 
+   Item 4.  Controls and Procedures   
+   
+   
+   26   
+     
+ 
+   
+   
+   
+   
+     
+ 
+   PART II. OTHER INFORMATION     
+   
+   
+     
+     
+ 
+   
+   
+   
+   
+     
+ 
+   Item 1A.  Risk Factors   
+   
+   
+   27   
+     
+ 
+   Item 2.  Unregistered Sales of Equity Securities and Use of Proceeds   
+   
+   
+   28   
+     
+ 
+   Item 6.  Exhibits   
+   
+   
+   29   
+     
+ 
+   
+   
+   
+   
+     
+ 
+   SIGNATURES     
+   
+   
+   30   
+                           Table of Contents           PART I. FINANCIAL INFORMATION    Item 1. Financial Statements    AMETEK, Inc.    Consolidated Statement of Income    (In thousands, except per share amounts)    (Unaudited)    
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   Three Months Ended    
+     
+ 
+     
+   
+   March 31,    
+     
+ 
+     
+   
+   2020    
+   
+   
+   2019    
+     
+ 
+   Net sales    
+   
+ $ 
+   1,202,218     
+   
+   
+ $ 
+   1,287,691     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Cost of sales    
+   
+   
+   824,647     
+   
+   
+   
+   851,307     
+     
+ 
+   Selling, general and administrative    
+   
+   
+   145,531     
+   
+   
+   
+   153,125     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total operating expenses    
+   
+   
+   970,178     
+   
+   
+   
+   1,004,432     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Operating income    
+   
+   
+   232,040     
+   
+   
+   
+   283,259     
+     
+ 
+   Interest expense    
+   
+   
+   ( 22,741   
+ )  
+   
+   
+   ( 22,653   
+ )   
+ 
+   Other income (expense), net    
+   
+   
+   141,776     
+   
+   
+   
+   ( 3,668   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Income before income taxes    
+   
+   
+   351,075     
+   
+   
+   
+   256,938     
+     
+ 
+   Provision for income taxes    
+   
+   
+   70,459     
+   
+   
+   
+   52,670     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Net income    
+   
+ $ 
+   280,616     
+   
+   
+ $ 
+   204,268     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Basic earnings per share    
+   
+ $ 
+   1.23     
+   
+   
+ $ 
+   0.90     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Diluted earnings per share    
+   
+ $ 
+   1.22     
+   
+   
+ $ 
+   0.89     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Weighted average common shares outstanding:    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Basic shares    
+   
+   
+   228,962     
+   
+   
+   
+   226,861     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Diluted shares    
+   
+   
+   230,872     
+   
+   
+   
+   228,686     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Dividends declared and paid per share    
+   
+ $ 
+   0.18     
+   
+   
+ $ 
+   0.14     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+                     See accompanying notes.          2             Table of Contents           AMETEK, Inc.    Condensed Consolidated Statement of Comprehensive Income    (In thousands)    (Unaudited)    
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   Three Months Ended    
+     
+ 
+     
+   
+   March 31,    
+     
+ 
+     
+   
+   2020    
+   
+   
+   2019    
+     
+ 
+   Total comprehensive income    
+   
+ $ 
+   238,017   
+   
+   
+ $ 
+   215,281   
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+                     See accompanying notes.          3             Table of Contents           AMETEK, Inc.    Consolidated Balance Sheet    (In thousands)    
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   March 31,    
+   
+   
+   December 31,    
+     
+ 
+     
+   
+   2020    
+   
+   
+   2019    
+     
+ 
+     
+   
+   (Unaudited)    
+   
+   
+     
+     
+ 
+   ASSETS    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Current assets:    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Cash and cash equivalents    
+   
+ $ 
+   1,253,382     
+   
+   
+ $ 
+   393,030     
+     
+ 
+   Receivables, net    
+   
+   
+   712,195     
+   
+   
+   
+   744,760     
+     
+ 
+   Inventories, net    
+   
+   
+   654,298     
+   
+   
+   
+   624,567     
+     
+ 
+   Other current assets    
+   
+   
+   154,616     
+   
+   
+   
+   263,414     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total current assets    
+   
+   
+   2,774,491     
+   
+   
+   
+   2,025,771     
+     
+ 
+   Property, plant and equipment, net    
+   
+   
+   534,786     
+   
+   
+   
+   548,908     
+     
+ 
+   Right of use assets, net    
+   
+   
+   168,543   
+   
+   
+   
+   179,679   
+     
+ 
+   Goodwill    
+   
+   
+   4,075,633     
+   
+   
+   
+   4,047,539     
+     
+ 
+   Other intangibles, net    
+   
+   
+   2,768,204     
+   
+   
+   
+   2,762,872     
+     
+ 
+   Investments and other assets    
+   
+   
+   280,289     
+   
+   
+   
+   279,790     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total assets    
+   
+ $ 
+   10,601,946     
+   
+   
+ $ 
+   9,844,559     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   LIABILITIES AND STOCKHOLDERS’ EQUITY    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Current liabilities:    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Short-term borrowings and current portion of long-term debt, net    
+   
+ $ 
+   510,792     
+   
+   
+ $ 
+   497,449     
+     
+ 
+   Accounts payable    
+   
+   
+   373,900     
+   
+   
+   
+   377,219     
+     
+ 
+   Customer advanced payments    
+   
+   
+   174,890     
+   
+   
+   
+   156,818     
+     
+ 
+   Income taxes payable    
+   
+   
+   76,630     
+   
+   
+   
+   30,292     
+     
+ 
+   Accrued liabilities and other    
+   
+   
+   341,459     
+   
+   
+   
+   364,080     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total current liabilities    
+   
+   
+   1,477,671     
+   
+   
+   
+   1,425,858     
+     
+ 
+   Long-term debt, net    
+   
+   
+   2,741,798     
+   
+   
+   
+   2,271,292     
+     
+ 
+   Deferred income taxes    
+   
+   
+   553,658     
+   
+   
+   
+   536,140     
+     
+ 
+   Other long-term liabilities    
+   
+   
+   502,816     
+   
+   
+   
+   495,777     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total liabilities    
+   
+   
+   5,275,943     
+   
+   
+   
+   4,729,067     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Stockholders’ equity:    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Common stock    
+   
+   
+   2,664     
+   
+   
+   
+   2,662     
+     
+ 
+   Capital in excess of par value    
+   
+   
+   837,755     
+   
+   
+   
+   832,821     
+     
+ 
+   Retained earnings    
+   
+   
+   6,626,703     
+   
+   
+   
+   6,387,612     
+     
+ 
+   Accumulated other comprehensive loss    
+   
+   
+   ( 575,738   
+ )  
+   
+   
+   ( 533,139   
+ )   
+ 
+   Treasury stock    
+   
+   
+   ( 1,565,381   
+ )  
+   
+   
+   ( 1,574,464   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total stockholders’ equity    
+   
+   
+   5,326,003     
+   
+   
+   
+   5,115,492     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total liabilities and stockholders’ equity    
+   
+ $ 
+   10,601,946     
+   
+   
+ $ 
+   9,844,559     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+                     See accompanying notes.          4             Table of Contents           AMETEK, Inc.    Consolidated Statement of Stockholders’ Equity    (In thousands)    (Unaudited)    
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   Three months ended    
+     
+ 
+     
+   
+   March 31,    
+     
+ 
+     
+   
+   2020    
+   
+   
+   2019    
+     
+ 
+   Capital stock    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Preferred stock, $ 0.01  par value    
+   
+ $ 
+   —     
+   
+   
+ $ 
+   —     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Common stock, $ 0.01  par value    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Balance at the beginning of the period    
+   
+   
+   2,662     
+   
+   
+   
+   2,640     
+     
+ 
+   Shares issued    
+   
+   
+   2   
+   
+   
+   
+   7     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Balance at the end of the period    
+   
+   
+   2,664     
+   
+   
+   
+   2,647     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Capital in excess of par value    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Balance at the beginning of the period    
+   
+   
+   832,821     
+   
+   
+   
+   706,743     
+     
+ 
+   Issuance of common stock under employee stock plans    
+   
+   
+   ( 2,914   
+ )  
+   
+   
+   24,309     
+     
+ 
+   Share-based compensation costs    
+   
+   
+   7,848     
+   
+   
+   
+   7,121     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Balance at the end of the period    
+   
+   
+   837,755     
+   
+   
+   
+   738,173     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Retained earnings    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Balance at the beginning of the period    
+   
+   
+   6,387,612     
+   
+   
+   
+   5,653,811     
+     
+ 
+   Net income    
+   
+   
+   280,616     
+   
+   
+   
+   204,268     
+     
+ 
+   Cash dividends paid    
+   
+   
+   ( 41,165   
+ )  
+   
+   
+   ( 31,766   
+ )   
+ 
+   Adoption of ASU  2016-13    
+   
+   
+   ( 360   
+ )  
+   
+   
+   —     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Balance at the end of the period    
+   
+   
+   6,626,703     
+   
+   
+   
+   5,826,313     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Accumulated other comprehensive (loss) income    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Foreign currency translation:    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Balance at the beginning of the period    
+   
+   
+   ( 286,248   
+ ) 
+   
+   
+   ( 302,138   
+ )   
+ 
+   Translation adjustments    
+   
+   
+   ( 67,089   
+ )  
+   
+   
+   8,964     
+     
+ 
+   Change in long-term intercompany notes    
+   
+   
+   ( 5,501   
+ )  
+   
+   
+   ( 4,416   
+ )   
+ 
+   Net investment hedge instruments gain (loss), net of tax of  ( $ 9,117 )  and ($ 1,130 ) for the period ended March 31, 2020 and 2019, respectively    
+   
+   
+   28,308     
+   
+   
+   
+   3,508     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Balance at the end of the period    
+   
+   
+   ( 330,530   
+ )  
+   
+   
+   ( 294,082   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Defined benefit pension plans:    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Balance at the beginning of the period    
+   
+   
+   ( 246,891   
+ ) 
+   
+   
+   ( 248,950   
+ )   
+ 
+   Amortization of net actuarial loss (gain) and other, net of tax of ($ 531 ) and ($ 873 ) for the period ended March 31, 2020 and 2019, respectively    
+   
+   
+   1,683     
+   
+   
+   
+   2,957     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Balance at the end of the period    
+   
+   
+   ( 245,208   
+ )  
+   
+   
+   ( 245,993   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Accumulated other comprehensive loss at the end of the period    
+   
+   
+   ( 575,738   
+ )  
+   
+   
+   ( 540,075   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Treasury stock    
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Balance at the beginning of the period    
+   
+   
+   ( 1,574,464   
+ ) 
+   
+   
+   ( 1,570,184   
+ )   
+ 
+   Issuance of common stock under employee stock plans    
+   
+   
+   9,184     
+   
+   
+   
+   ( 116   
+ )   
+ 
+   Purchase of treasury stock    
+   
+   
+   ( 101   
+ )  
+   
+   
+   ( 137   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Balance at the end of the period    
+   
+   
+   ( 1,565,381   
+ )  
+   
+   
+   ( 1,570,437   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total stockholders’ equity    
+   
+ $ 
+   5,326,003     
+   
+   
+ $ 
+   4,456,621     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+                     See accompanying notes.          5             Table of Contents     AMETEK, Inc.  Condensed Consolidated Statement of Cash Flows  (In thousands)  (Unaudited)  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended  
+   
+ 
+ 
+   
+ March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ Cash provided by (used for):  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Operating activities:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Net income  
+   
+ $ 
+ 280,616   
+   
+   
+ $ 
+ 204,268   
+   
+ 
+ Adjustments to reconcile net income to total operating activities:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Depreciation and amortization  
+   
+   
+ 66,067   
+   
+   
+   
+ 57,500   
+   
+ 
+ Deferred income taxes  
+   
+   
+ ( 4,042 
+ )  
+   
+   
+ 12,739   
+   
+ 
+ Share-based compensation expense  
+   
+   
+ 7,848   
+   
+   
+   
+ 7,121   
+   
+ 
+ Gain on sale of business  
+   
+   
+ ( 141,020 
+ )  
+   
+   
+ —   
+   
+ 
+ Gain on sale of facilities  
+   
+   
+ ( 4,592 
+ )  
+   
+   
+ ( 735 
+ ) 
+ 
+ Net change in assets and liabilities, net of acquisitions  
+   
+   
+ 71,199   
+   
+   
+   
+ ( 84,167 
+ ) 
+ 
+ Pension contributions  
+   
+   
+ ( 1,505 
+ )  
+   
+   
+ ( 715 
+ ) 
+ 
+ Other, net  
+   
+   
+ ( 3,819 
+ )  
+   
+   
+ 246   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total operating activities  
+   
+   
+ 270,752   
+   
+   
+   
+ 196,257   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Investing activities:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Additions to property, plant and equipment  
+   
+   
+ ( 16,931 
+ )  
+   
+   
+ ( 21,417 
+ ) 
+ 
+ Purchases of businesses, net of cash acquired  
+   
+   
+ ( 116,605 
+ )  
+   
+   
+ —   
+   
+ 
+ Proceeds from sale of business  
+   
+   
+ 245,311 
+   
+   
+   
+ —   
+   
+ 
+ Proceeds from sale of facilities  
+   
+   
+ 5,463   
+   
+   
+   
+ 765   
+   
+ 
+ Other, net  
+   
+   
+ ( 1,681 
+ )  
+   
+   
+ 2,902   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total investing activities  
+   
+   
+ 115,557   
+   
+   
+   
+ ( 17,750 
+ ) 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Financing activities:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Net change in short-term borrowings  
+   
+   
+ 22,251   
+   
+   
+   
+ ( 256,286 
+ ) 
+ 
+ Proceeds from long-term borrowings  
+   
+   
+ 500,000   
+   
+   
+   
+ 100,000 
+   
+ 
+ Repurchases of common stock  
+   
+   
+ ( 101 
+ )  
+   
+   
+ ( 137 
+ ) 
+ 
+ Cash dividends paid  
+   
+   
+ ( 41,165 
+ )  
+   
+   
+ ( 31,766 
+ ) 
+ 
+ Proceeds from stock option exercises  
+   
+   
+ 6,977   
+   
+   
+   
+ 24,929   
+   
+ 
+ Other, net  
+   
+   
+ ( 1,313 
+ )  
+   
+   
+ ( 2,605 
+ ) 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total financing activities  
+   
+   
+ 486,649   
+   
+   
+   
+ ( 165,865 
+ ) 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Effect of exchange rate changes on cash and cash equivalents  
+   
+   
+ ( 12,606 
+ )  
+   
+   
+ 1,448   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Increase in cash and cash equivalents  
+   
+   
+ 860,352   
+   
+   
+   
+ 14,090   
+   
+ 
+ Cash and cash equivalents:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Beginning of period  
+   
+   
+ 393,030   
+   
+   
+   
+ 353,975   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ End of period  
+   
+ $ 
+ 1,253,382   
+   
+   
+ $ 
+ 368,065   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   See accompanying notes.  6 Table of Contents   AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  
+ 
+ 
+ 1.  
+ Basis of Presentation The accompanying consolidated financial statements are unaudited. AMETEK, Inc. (the “Company”) believes that all adjustments (which primarily consist of normal recurring accruals) necessary for a fair presentation of the consolidated financial position of the Company at March 31, 2020, the consolidated results of its operations for the three months ended March 31, 2020 and 2019 and its cash flows for the three months ended March 31, 2020 and 2019 have been included. Quarterly results of operations are not necessarily indicative of results for the full year. The accompanying consolidated financial statements should be read in conjunction with the audited consolidated financial statements and related notes presented in the Company’s Annual Report on Form  10-K  for the year ended December 31, 2019 as filed with the U.S. Securities and Exchange Commission. COVID-19    On March 11, 2020, the World Health Organization declared the outbreak of a novel coronavirus  (COVID-19)  as a pandemic. As a result of market and economic conditions, in accordance with the guidelines set forth in ASC 350 and ASC 360, the Company performed an analysis for potential interim impairment indicators of its intangible and other long-lived assets. As of March 31, 2020, the Company concluded there were no indicators of impairment that resulted in a triggering event to perform an interim test of impairment of goodwill, other indefinite-lived intangibles, or long-lived assets. The Company will continue to monitor its assets for potential impairment through the remainder of 2020.    
+ 
+ 
+ 2.  
+ Recent Accounting Pronouncements Recently Adopted Accounting Pronouncements  Effective January 1, 2020, the Company adopted ASU No.  2016-13,  Financial Instruments—Credit Losses (Topic 326): Measurement of Credit Losses on Financial Instruments  (“ASU  2016-13”),  using the modified retrospective transition method. ASU  2016-13  provides guidance on the estimation of current expected credit losses on financial instruments, including trade receivables. ASU  2016-13  requires entities to consider a broad range of information to estimate expected credit losses, including increased forward-looking information, which may result in earlier recognition of losses when compared to prior standards. The adoption of ASU  2016-13  was a decrease to net Account s  Receivable and a decrease to Retained Earnings of $ 0.4  million. See Note 3 – Revenues, for further discussion. In August 2018, the FASB issued ASU No.  2018-13,    Fair Value Measurement  (“ASU  2018-13”),  which changes the fair value measurement disclosure requirements of ASC Topic 820,  Fair Value Measurement  (“ASC 820”), by eliminating, modifying and adding to those requirements. ASU  2018-13  also modifies the disclosure objective paragraphs of ASC 820 to eliminate (1) “at a minimum” from the phrase “an entity shall disclose at a minimum” and (2) other similar “open ended” disclosure requirements to promote the appropriate exercise of discretion by entities. The Company prospectively adopted ASU  2018-13,  effective January 1, 2020, and the adoption did not have a significant impact on the Company’s consolidated results of operations, financial position, cash flows and financial statement disclosures. In August 2018, the FASB issued ASU No.  2018-15,    Intangibles–Goodwill and Other–Internal-Use Software  (“ASU  2018-15”),   that requires implementation costs incurred by customers in cloud computing arrangements to be deferred and recognized over the term of the arrangement, if those costs would be capitalized by the customer in a software licensing arrangement under the  internal-use  software guidance in ASC Topic 350,  Intangibles–Goodwill and Other . ASU  2018-15  requires a customer to disclose the nature of its hosting arrangements that are service contracts and provide disclosures as if the deferred implementation costs were a separate, major depreciable asset class. The Company adopted ASU  2018-15,  effective January 1, 2020, and the adoption did not have a significant impact on the Company’s consolidated results of operations, financial position, cash flows and financial statement disclosures. 7 Table of Contents AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  Recent Accounting Pronouncements  In December 2019, the FASB issued ASU No.  2019-12,    Income Taxes (Topic 740): Simplifying the Accounting for Income Taxes  (“ASU  2019-12”),  which simplifies the accounting for income taxes by removing certain exceptions to the general principles in ASC Topic 740. ASU  2019-12  is effective for fiscal years beginning after December 15, 2021. Early adoption is permitted and the amendments in this ASU should be applied on a retrospective basis to all periods presented. The Company has not determined the impact ASU  2019-12  may have on the Company’s consolidated results of operations, financial position, cash flows or financial statement disclosures. In August 2018, the FASB issued ASU No.  2018-14,    Compensation–Retirement Benefits–Defined Benefit Plans–General  (“ASU  2018-14”),  which changes the disclosure requirements of ASC Topic 715,  Compensation – Retirement Benefits , by eliminating, modifying and adding to those requirements. ASU  2018-14  is effective for fiscal years beginning after December 15, 2020. Early adoption is permitted and the amendments in this ASU should be applied on a retrospective basis to all periods presented. The Company has not determined the impact ASU  2018-14  may have on the Company’s consolidated financial statement disclosures. 
+ 
+ 
+ 3.  
+ Revenues The outstanding contract asset and liability accounts were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Contract assets—January 1  
+   
+ $ 
+ 73,039   
+   
+   
+ $ 
+ 58,266 
+   
+ 
+ Contract assets – March 31  
+   
+   
+ 80,796   
+   
+   
+   
+ 76,323 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Change in contract assets – increase  
+   
+   
+ 7,757   
+   
+   
+   
+ 18,057 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Contract liabilities – January 1  
+   
+   
+ 167,306   
+   
+   
+   
+ 146,162 
+   
+ 
+ Contract liabilities – March 31  
+   
+   
+ 194,433   
+   
+   
+   
+ 147,776 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Change in contract liabilities – increase  
+   
+   
+ ( 27,127 
+ ) 
+   
+   
+ ( 1,614 
+ ) 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Net change  
+   
+ $ 
+ ( 19,370 
+ )  
+   
+ $ 
+ 16,443 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     The net change for the three months ended March 31, 2020  was primarily driven by the receipt of advance payments from customers exceeding the recognition of revenue as performance obligations were satisfied prior to billing. For the three months  ended March 31, 2020 and 2019, the Company recognized revenue of $ 87.4  million and $ 77.2  million, respectively, that was previously included in the beginning balance of contract liabilities.  Contract assets are reported as a component of Other current assets in the consolidated balance sheet. At March 31, 2020 and December 31, 2019, $ 19.5  million and $ 10.6  million of Customer advanced payments (contract liabilities), respectively, were recorded in Other long-term liabilities in the consolidated balance sheets.  Applying the practical expedient available under ASC 606, the remaining performance obligations exceeding one year as of March 31, 2020 and December 31, 2019 were $ 208.6  million and $ 233.3  million, respectively. Remaining performance obligations represent the transaction price of firm, noncancelable orders, with expected delivery dates to customers greater than one year from the balance sheet date, for which the performance obligation is unsatisfied or partially unsatisfied. These performance obligations will be substantially satisfied within two to three years.    8 Table of Contents   AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  Geographic Areas  Information about the Company’s operations in different geographic areas for the three months ended March 31, 2020 is shown below. Net sales were attributed to geographic areas based on the location of the customer.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three months ended March 31, 2020  
+   
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ United States  
+   
+ $ 
+ 406,545   
+   
+   
+ $ 
+ 234,689   
+   
+   
+ $ 
+ 641,234   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ International (1) :  
+   
+   
+ 
+   
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ United Kingdom  
+   
+   
+ 14,793   
+   
+   
+   
+ 33,138   
+   
+   
+   
+ 47,931   
+   
+ 
+ European Union countries  
+   
+   
+ 105,676   
+   
+   
+   
+ 88,766   
+   
+   
+   
+ 194,442   
+   
+ 
+ Asia  
+   
+   
+ 164,745   
+   
+   
+   
+ 43,830   
+   
+   
+   
+ 208,575   
+   
+ 
+ Other foreign countries  
+   
+   
+ 82,466   
+   
+   
+   
+ 27,570   
+   
+   
+   
+ 110,036   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total international  
+   
+   
+ 367,680   
+   
+   
+   
+ 193,304   
+   
+   
+   
+ 560,984   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 774,225   
+   
+   
+ $ 
+ 427,993   
+   
+   
+ $ 
+ 1,202,218   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+ 
+ (1) 
+ Includes U.S. export sales of $ 305.2  million. Information about the Company’s operations in different geographic areas for the three months ended March 31, 2019 is shown below. Net sales were attributed to geographic areas based on the location of the customer.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three months ended March 31, 2019  
+   
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ United States  
+   
+ $ 
+ 403,392   
+   
+   
+ $ 
+ 260,754   
+   
+   
+ $ 
+ 664,146   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ International (1) :  
+   
+   
+ 
+   
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ United Kingdom  
+   
+   
+ 15,427   
+   
+   
+   
+ 33,888   
+   
+   
+   
+ 49,315   
+   
+ 
+ European Union countries  
+   
+   
+ 102,785   
+   
+   
+   
+ 106,419   
+   
+   
+   
+ 209,204   
+   
+ 
+ Asia  
+   
+   
+ 193,847   
+   
+   
+   
+ 47,111   
+   
+   
+   
+ 240,958   
+   
+ 
+ Other foreign countries  
+   
+   
+ 91,460   
+   
+   
+   
+ 32,608   
+   
+   
+   
+ 124,068   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total international  
+   
+   
+ 403,519   
+   
+   
+   
+ 220,026   
+   
+   
+   
+ 623,545   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 806,911   
+   
+   
+ $ 
+ 480,780   
+   
+   
+ $ 
+ 1,287,691   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+ 
+ (1) 
+ Includes U.S. export sales of $ 325.4  million.   9 Table of Contents AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  Major Products and Services  The Company’s major products and services in the reportable segments were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three months ended March 31, 2020  
+   
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Process and analytical instrumentation  
+   
+ $ 
+ 548,440   
+   
+   
+ $ 
+ — 
+   
+   
+ $ 
+ 548,440   
+   
+ 
+ Aerospace and power  
+   
+   
+ 225,785   
+   
+   
+   
+ 127,251   
+   
+   
+   
+ 353,036   
+   
+ 
+ Automation and engineered solutions  
+   
+   
+ — 
+   
+   
+   
+ 300,742   
+   
+   
+   
+ 300,742   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 774,225   
+   
+   
+ $ 
+ 427,993   
+   
+   
+ $ 
+ 1,202,218   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three months ended March 31, 2019  
+   
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Process and analytical instrumentation  
+   
+ $ 
+ 577,340   
+   
+   
+ $ 
+ —   
+   
+   
+ $ 
+ 577,340   
+   
+ 
+ Aerospace and power  
+   
+   
+ 229,571   
+   
+   
+   
+ 118,878   
+   
+   
+   
+ 348,449   
+   
+ 
+ Automation and engineered solutions  
+   
+   
+ — 
+   
+   
+   
+ 361,902   
+   
+   
+   
+ 361,902   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 806,911   
+   
+   
+ $ 
+ 480,780   
+   
+   
+ $ 
+ 1,287,691   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     Timing of Revenue Recognition    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three months ended March 31, 2020  
+   
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Products transferred at a point in time  
+   
+ $ 
+ 633,540   
+   
+   
+ $ 
+ 379,059   
+   
+   
+ $ 
+ 1,012,599   
+   
+ 
+ Products and services transferred over time  
+   
+   
+ 140,685   
+   
+   
+   
+ 48,934   
+   
+   
+   
+ 189,619   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 774,225   
+   
+   
+ $ 
+ 427,993   
+   
+   
+ $ 
+ 1,202,218   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three months ended March 31, 2019  
+   
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Products transferred at a point in time  
+   
+ $ 
+ 677,833   
+   
+   
+ $ 
+ 435,605   
+   
+   
+ $ 
+ 1,113,438   
+   
+ 
+ Products and services transferred over time  
+   
+   
+ 129,078   
+   
+   
+   
+ 45,175   
+   
+   
+   
+ 174,253   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 806,911   
+   
+   
+ $ 
+ 480,780   
+   
+   
+ $ 
+ 1,287,691   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     Product Warranties  The Company provides limited warranties in connection with the sale of its products. The warranty periods for products sold vary among the Company’s operations, but the majority do not exceed one year.  The Company calculates its warranty expense provision based on its historical warranty experience and adjustments are made periodically to reflect actual warranty expenses. Product warranty obligations are reported as a component of Accrued liabilities  and other  in the consolidated balance sheet.  10 Table of Contents   AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  Changes in the accrued product warranty obligation were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended  
+   
+ 
+ 
+   
+ March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Balance at the beginning of the period  
+   
+ $ 
+ 27,611 
+   
+   
+ $ 
+ 23,482   
+   
+ 
+ Accruals for warranties issued during the period  
+   
+   
+ 3,252   
+   
+   
+   
+ 5,003   
+   
+ 
+ Settlements made during the period  
+   
+   
+ ( 4,217 
+ )  
+   
+   
+ ( 4,789 
+ ) 
+ 
+ Warranty accruals related to acquired businesses and other during the period  
+   
+   
+ 288   
+   
+   
+   
+ ( 81 
+ ) 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Balance at the end of the period  
+   
+ $ 
+ 26,934   
+   
+   
+ $ 
+ 23,615   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     Accounts Receivable  The Company maintains allowances for estimated losses resulting from the inability of customers to meet their financial obligations to the Company. The Company recognizes an allowance for doubtful accounts, on all accounts receivable, which considers the length of time receivables are past due, customers’ billing exposure, ability to pay, and contract terms. The Company also considers general and market business conditions, country, and political risk. Balances are written off when determined to be uncollectible.      At March 31, 2020, the Company recorded $ 712.2  million of accounts and notes receivable, net of allowances of $ 11.9  million. Changes in the allowance were not material for the three months ended March 31, 2020.    
+ 
+ 
+ 4.  
+ Earnings Per Share The calculation of basic earnings per share is based on the weighted average number of common shares considered outstanding during the periods. The calculation of diluted earnings per share reflects the effect of all potentially dilutive securities (principally outstanding stock options and restricted stock grants). Securities that are anti-dilutive have been excluded and are not significant.  The number of weighted average shares used in the calculation of basic earnings per share and diluted earnings per share was as follows:   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended  
+   
+ 
+ 
+   
+ March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Weighted average shares:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Basic shares  
+   
+   
+ 228,962   
+   
+   
+   
+ 226,861   
+   
+ 
+ Equity-based compensation plans  
+   
+   
+ 1,910   
+   
+   
+   
+ 1,825   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Diluted shares  
+   
+   
+ 230,872   
+   
+   
+   
+ 228,686   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+       
+ 
+ 
+ 5.  
+ Fair Value Measurements Fair value is defined as the exchange price that would be received for an asset or paid to transfer a liability (an exit price) in the principal or most advantageous market for the asset or liability in an orderly transaction between market participants on the measurement date.  The Company utilizes a valuation hierarchy for disclosure of the inputs to the valuations used to measure fair value. This hierarchy prioritizes the inputs into three broad levels as follows. Level 1 inputs are quoted prices (unadjusted) in active markets for identical assets or liabilities. Level 2 inputs are quoted prices for similar assets and liabilities in active markets or inputs that are observable for the asset or liability, either directly or indirectly through market corroboration, for substantially the full term of the financial instrument. Level 3 inputs are unobservable inputs based on the Company’s own assumptions used to measure assets and liabilities at fair value. A financial asset or liability’s classification within the hierarchy is determined based on the lowest level input that is significant to the fair value measurement.    11 Table of Contents AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  The following table provides the Company’s assets that are measured at fair value on a recurring basis, consistent with the fair value hierarchy, at March 31, 2020 and December 31, 2019:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ March 31,   2020  
+   
+   
+ December 31,   2019  
+   
+ 
+ 
+   
+ Fair Value  
+   
+   
+ Fair Value  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Mutual fund investments  
+   
+ $ 
+ 7,212   
+   
+   
+ $ 
+ 8,390 
+     The fair value of mutual fund investments, which are valued as level 1 investments, was based on quoted market prices. The mutual fund investments are shown as a component of investments and other assets on the consolidated balance sheet.  For the three months ended March 31, 2020 and 2019, gains and losses on the investments noted above were not significant.  No  transfers between level 1 and level 2 investments occurred during the three months ended March 31, 2020 and 2019.  Financial Instruments  Cash, cash equivalents and mutual fund investments are recorded at fair value at March 31, 2020 and December 31, 2019 in the accompanying consolidated balance sheet.    The following table provides the estimated fair values of the Company’s financial instrument liabilities, for which fair value is measured for disclosure purposes only, compared to the recorded amounts at March 31, 2020 and December 31, 2019:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ March 31, 2020  
+   
+   
+ December 31, 2019  
+   
+ 
+ 
+   
+ Recorded Amount  
+   
+   
+ Fair   Value  
+   
+   
+ Recorded Amount  
+   
+   
+ Fair   Value 
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Long-term debt, net (including current portion)  
+   
+ $ 
+ ( 2,845,880 
+ )  
+   
+ $ 
+ ( 2,831,990 
+ )  
+   
+ $ 
+ ( 2,382,041 
+ ) 
+   
+ $ 
+ ( 2,531,549 
+ )   The fair value of net  short-term  borrowings approximates the carrying value. Net short-term borrowings are valued as level 2 liabilities as they are corroborated by observable market data. The Company’s net long-term debt is all privately held with no public market for this debt, therefore, the fair value of net long-term debt was computed based on comparable current market data for similar debt instruments and is considered a level 3 liability. Foreign Currency  At March 31, 2020, the Company had a Canadian dollar forward contract for a total notional value of  24 .0 million Canadian dollars ($ 0.5  million fair value unrealized  loss  at March 31, 2020) and a British Pound forward contract for a total notional value of  10 .0 million British pounds ($ 1.0  million fair value unrealized gain at March 31, 2020) outstanding. For the three months ended March 31, 2020 and 2019, realized gains and losses on foreign currency forward contracts were not significant. The Company does not typically designate its foreign currency forward contracts as hedges.  
+ 
+ 
+ 6.  
+ Hedging Activities The Company has designated certain foreign-currency-denominated long-term borrowings as hedges of the net investment in certain foreign operations. As of March 31, 2020, these net investment hedges included  British-pound-and  Euro-denominated long-term debt. These borrowings were designed to create net investment hedges in each of the designated foreign subsidiaries. The Company designated the British-pound- and Euro-denominated loans referred to above as hedging instruments to offset translation gains or losses on the net investment due to changes in the British pound and Euro exchange rates. These net investment hedges are evidenced by management’s contemporaneous documentation supporting the hedge  12 Table of Contents   AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  designation. Any gain or loss on the hedging instruments (the debt) following hedge designation is reported in accumulated other comprehensive income in the same manner as the translation adjustment on the hedged investment based on changes in the spot rate, which is used to measure hedge effectiveness.  At March 31, 2020, the Company had $ 367.4  million of British-pound-denominated loans, which were designated as a hedge against the net investment in British pound functional currency foreign subsidiaries. At March 31, 2020, the Company had $ 633.9  million in Euro-denominated loans, which were designated as a hedge against the net investment in Euro functional currency foreign subsidiaries. As a result of the British-pound- and Euro-denominated loans designated and  100 % effective as net investment hedges, $ 37.4  million of  pre-tax  currency remeasurement gains have been included in the foreign currency translation component of other comprehensive income for the three months ended March 31, 2020. 
+ 
+ 
+ 7.  
+ Inventories, net 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ March 31,  
+   
+   
+ December 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Finished goods and parts  
+   
+ $ 
+ 103,227   
+   
+   
+ $ 
+ 99,773   
+   
+ 
+ Work in process  
+   
+   
+ 130,275 
+   
+   
+   
+ 118,240   
+   
+ 
+ Raw materials and purchased parts  
+   
+   
+ 420,796   
+   
+   
+   
+ 406,554   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total inventories, net  
+   
+ $ 
+ 654,298   
+   
+   
+ $ 
+ 624,567   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+       
+ 
+ 
+ 8.  
+ Leases The Company determines if an arrangement is a lease at inception. This determination generally depends on whether the arrangement conveys to the Company the right to control the use of an explicitly or implicitly identified fixed asset for a period of time in exchange for consideration. Control of an underlying asset is conveyed to the Company if the Company obtains the rights to direct the use of and to obtain substantially all of the economic benefits from using the underlying asset. The Company has lease agreements which include lease and  non-lease  components, which the Company has elected to account for as a single lease component for all classes of underlying assets. Lease expense for variable lease components are recognized when the obligation is probable. Operating leases are included in right of use assets, accrued liabilities and other, and other long-term liabilities on our consolidated balance sheets. Operating lease right of use assets and liabilities are recognized at commencement date based on the present value of lease payments over the lease term. Operating lease payments are recognized as lease expense on a straight-line basis over the lease term. The Company has no material finance leases. The Company primarily leases buildings (real estate) and automobiles which are classified as operating leases.  ASC 842 requires a lessee to discount its unpaid lease payments using the interest rate implicit in the lease or, if that rate cannot be readily determined, its incremental borrowing rate. As an implicit interest rate is not readily determinable in our leases, we use our incremental borrowing rate based on the information available at commencement date in determining the present value of lease payments.  The lease term for all of the Company’s leases includes the  non-cancellable  period of the lease plus any additional periods covered by either a Company option to extend (or not to terminate) the lease that the Company is reasonably certain to exercise, or an option to extend (or not to terminate) the lease controlled by the lessor. Options for lease renewals have been excluded from the lease term (and lease liability) for the majority of the Company’s leases as the reasonably certain threshold is not met. In a small number of the Company’s leases, the options for renewals have been included in the lease term as the reasonably certain threshold is met due to the Company having significant economic incentive for extending the lease. Lease payments included in the measurement of the lease liability are comprised of fixed payments, variable payments that depend on an index or rate and amounts probable to be payable under the exercise of the Company option to purchase the underlying asset if reasonably certain.    13 Table of Contents AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  Variable lease payments not dependent on a rate or index associated with the Company’s leases are recognized when the events, activities, or circumstances in the lease agreement on which those payments are assessed are probable. Variable lease payments are presented as operating expense in the Company’s income statement in the same line item as expense arising from fixed lease payments.  The Company has commitments under operating leases for certain facilities, vehicles and equipment used in its operations. Cash used in operations for operating leases was not materially different from operating lease expense for the three months ended March 31, 2020 and March 31, 2019. Our leases have initial lease terms ranging from one month  to 14 years. Certain lease agreements contain provisions for future rent increases.  The components of lease expense were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended  
+   
+ 
+ 
+   
+ March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Operating lease cost  
+   
+ $ 
+ 10,705   
+   
+   
+ $ 
+ 8,671   
+   
+ 
+ Variable lease cost  
+   
+   
+ 1,114 
+   
+   
+   
+ 1,631   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total lease cost  
+   
+ $ 
+ 11,819   
+   
+   
+ $ 
+ 10,302   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     Supplemental balance sheet information related to leases was as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ March 31,  
+   
+   
+ December 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Right of use assets, net  
+   
+ $ 
+ 168,543   
+   
+   
+ $ 
+ 179,679 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Lease liabilities included in Accrued Liabilities and other  
+   
+   
+ 42,001   
+   
+   
+   
+ 43,025 
+   
+ 
+ Lease liabilities included in Other long-term liabilities  
+   
+   
+ 132,360 
+   
+   
+   
+ 142,620 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total lease liabilities  
+   
+ $ 
+ 174,361   
+   
+   
+ $ 
+ 185,645 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     Supplemental cash flow information and other information related to leases was as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended  
+   
+ 
+ 
+   
+ March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Right-of-use  assets obtained in exchange for new operating liabilities 
+   
+ $   
+ 8,451   
+   
+   
+ $   
+ 1,325 
+   
+ 
+ Weighted-average remaining lease terms—operating leases (years)  
+   
+   
+ 5.76   
+   
+   
+   
+ 6.26   
+   
+ 
+ Weighted-average discount rate—operating leases  
+   
+   
+ 3.70 
+ %  
+   
+   
+ 3.88 
+ %   14 Table of Contents   AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  Maturities of lease liabilities as of March 31, 2020 were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Lease Liability Maturity Analysis  
+   
+ Operating Leases  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Remaining 2020  
+   
+ $ 
+ 36,470   
+   
+ 
+ 2021  
+   
+   
+ 42,132   
+   
+ 
+ 2022  
+   
+   
+ 34,354   
+   
+ 
+ 2023  
+   
+   
+ 26,243   
+   
+ 
+ 2024  
+   
+   
+ 17,781   
+   
+ 
+ Thereafter  
+   
+   
+ 37,719 
+   
+ 
+   
+   
+   
+   
+   
+ 
+ Total lease payments  
+   
+   
+ 194,699   
+   
+ 
+ Less: imputed interest  
+   
+   
+ 20,338 
+   
+ 
+   
+   
+   
+   
+   
+ 
+ 
+   
+ $ 
+ 174,361   
+   
+ 
+   
+   
+   
+   
+     The Company does not have any significant leases that have not yet commenced.      
+ 
+ 
+ 9.  
+ Acquisition and Divestiture Acquisition  The Company spent $ 116.6  million in cash, net of cash acquired, to acquire IntelliPower in January 2020. IntelliPower designs and manufactures a broad portfolio of ruggedized solutions including uninterruptable power systems, external battery packs, power distribution units and power conditioners. IntelliPower was privately held and is headquartered in Orange, California. IntelliPower is part of EIG.  The following table represents the preliminary allocation of the purchase price for the net assets of the IntelliPower acquisition based on the estimated fair values at acquisition (in millions):  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Property, plant and equipment  
+   
+ $ 
+ 2.3   
+   
+ 
+ Goodwill  
+   
+   
+ 55.0   
+   
+ 
+ Other intangible assets  
+   
+   
+ 58.7   
+   
+ 
+ Deferred income taxes  
+   
+   
+ ( 14.2 
+ )  
+ 
+ Net working capital and other (1) 
+   
+   
+ 14.8 
+   
+ 
+   
+   
+   
+   
+   
+ 
+ Total cash paid  
+   
+ $       
+ 116.6   
+   
+ 
+   
+   
+   
+   
+     
+ 
+ 
+ (1) 
+ Includes $ 6.5  million in accounts receivable, whose fair value, contractual cash flows and expected cash flows are approximately equal.   The amount allocated to goodwill is reflective of the benefits the Company expects to realize as IntelliPower’s products and solutions broaden the Company’s differentiated product offerings in the power systems and instruments sectors.      At March 31, 2020, the purchase price allocated to other intangible assets of $ 58.7  million consists of $ 8.1  million of indefinite-lived intangible trade names, which are not subject to amortization. The remaining $ 50.6  million of other intangible assets consists of $ 41.4  million of customer relationships, which are being amortized over a period of  18  years, and $ 9.2  million of purchased technology, which is being amortized over a period of  18  years. Amortization expense for each of the next five years for the 2020 acquisition is expected to approximate $ 3  million per year.    15 Table of Contents AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  The Company is in the process of finalizing the measurement of certain tangible and intangible assets and liabilities for its 2020 acquisition of IntelliPower and its fourth quarter 2019 acquisition of Gatan including inventory, property, plant and equipment, goodwill, trade names, customer relationships and purchased technology, and the accounting for income taxes.  The IntelliPower acquisition had an immaterial impact on reported net sales, net income and diluted earnings per share for the three months ended March 31, 2020. Had the acquisition been made at the beginning of 2020 or 2019, unaudited pro forma net sales, net income and diluted earnings per share for the three months ended March 31, 2020 and 2019, respectively ,  would not have been materially different than the amounts reported.  Divestiture  The Company completed its sale of Reading Alloys to Kymera International in March 2020 for net cash proceeds of  $ 245.3  million in cash. The sale resulted in a pretax gain of $ 141.0   million, recorded in Other income(expense), net in the Consolidated Statement of Income, and income tax expense of approximately  $ 31.4   million in connection with the sale. Reading Alloys revenue and costs were reported within the EMG segment through the date of sale.  
+ 
+ 
+ 10.  
+ Goodwill The changes in the carrying amounts of goodwill by segment were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ EIG  
+   
+   
+ EMG  
+   
+   
+ Total  
+   
+ 
+ 
+   
+ (In millions)  
+   
+ 
+ Balance at December 31, 2019  
+   
+ $ 
+ 2,892.2   
+   
+   
+ $ 
+ 1,155.3   
+   
+   
+ $ 
+ 4,047.5   
+   
+ 
+ Goodwill acquired  
+   
+   
+ 55.0   
+   
+   
+   
+ —   
+   
+   
+   
+ 55.0   
+   
+ 
+ Purchase price allocation adjustments and other  
+   
+   
+ 0.6   
+   
+   
+   
+ 1.1   
+   
+   
+   
+ 1.7   
+   
+ 
+ Foreign currency translation adjustments  
+   
+   
+ ( 15.7 
+ )  
+   
+   
+ ( 12.9 
+ )  
+   
+   
+ ( 28.6 
+ )  
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Balance at March 31, 2020  
+   
+ $ 
+ 2,932.1   
+   
+   
+ $ 
+ 1,143.5   
+   
+   
+ $ 
+ 4,075.6   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+       
+ 
+ 
+ 11.  
+ Income Taxes At March 31, 2020, the Company had gross un certain  tax benefits of $ 114.6  million, of which $ 69.7  million, if recognized, would impact the effective tax rate.  The following is a reconciliation of the liability for uncertain tax positions (in millions):  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Balance at December 31, 2019  
+   
+ $ 
+ 109.1   
+   
+ 
+ Additions for tax positions  
+   
+   
+ 6.1   
+   
+ 
+ Reductions for tax positions  
+   
+   
+ ( 0.6 
+ )   
+ 
+   
+   
+   
+   
+   
+ 
+ Balance at March 31, 2020  
+   
+ $ 
+ 114.6   
+   
+ 
+   
+   
+   
+   
+     The Company recognizes interest and penalties accrued related to uncertain tax positions in income tax expense. The amounts recognized in income tax expense for interest and penalties during the three months ended March 31, 2020 and 2019 were not significant.  The effective tax rate for the three months ended March 31, 2020 was  20.1 %, compared with  20.5 % for the three months ended March 31, 2019. The lower rate for 2020  reflects the results of tax planning initiatives and lower  mix-related  foreign tax expense partially offset by lower year over year tax benefits related to share-based payment transactions.    16 Table of Contents       AMETEK, Inc.    Notes to Consolidated Financial Statements    March 31, 2020    (Unaudited)        
+ 
+ 
+ 12.  
+ Share-Based Compensation                   Under the terms of the Company’s stockholder-approved share-based plans, performance restricted stock units (“PRSUs”), incentive and  non-qualified  stock options and restricted stock have been, and may be, issued to the Company’s officers, management-level employees and members of its Board of Directors. Stock options granted prior to 2018 generally vest at a rate of  one-fourth  on each of the first four anniversaries of the grant date and have a maximum contractual term of  seven years . Beginning in 2018, stock options granted generally vest at a rate of  one-third  on each of the first three anniversaries of the grant date and have a maximum contractual term of  ten years .  Restricted stock granted to employees prior to 2018 generally vests  four years  after the grant date (cliff vesting) and is subject to accelerated vesting due to certain events, including doubling of the grant price of the Company’s common stock as of the close of business during any five consecutive trading days . Beginning in 2018, restricted stock granted to employees generally vests  one-third  on each of the first three anniversaries of the grant date.  Restricted stock granted to  non-employee  directors generally vests  two years  after the grant date (cliff vesting) and is subject to accelerated vesting due to certain events, including doubling of the grant price of the Company’s common stock as of the close of business during any five consecutive trading days.   Total share-based compensation expense was as follows:  
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   Three Months Ended    
+     
+ 
+     
+   
+   March 31,    
+     
+ 
+     
+   
+   2020    
+   
+   
+   2019    
+     
+ 
+     
+   
+   (In thousands)    
+     
+ 
+   Stock option expense    
+   
+ $ 
+   3,373     
+   
+   
+ $ 
+   2,773     
+     
+ 
+   Restricted stock expense    
+   
+   
+   3,542     
+   
+   
+   
+   3,717     
+     
+ 
+   PRSU expense    
+   
+   
+   933   
+   
+   
+   
+   631     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total  pre-tax  expense   
+   
+ $ 
+   7,848     
+   
+   
+ $ 
+   7,121     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+                 Pre-tax  share-based compensation expense is included in the consolidated statement of income in either Cost of sales or Selling, general and administrative expenses, depending on where the recipient’s cash compensation is reported.       17             Table of Contents     AMETEK, Inc.    Notes to Consolidated Financial Statements    March 31, 2020    (Unaudited)          The fair value of each stock option grant is estimated on the grant date using a  Black-Scholes-Merton  option pricing model.  The following weighted average assumptions were used in the  Black-Scholes-Merton  model to estimate the fair values of stock options granted during the periods indicated:   
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   Three Months Ended    
+   
+   
+   Year Ended    
+     
+ 
+     
+   
+   March 31, 2020    
+   
+   
+   December 31, 2019    
+     
+ 
+   Expected volatility    
+   
+   
+   22.2   
+ %  
+   
+   
+   19.1   
+ %   
+ 
+   Expected term (years)    
+   
+   
+   5.0     
+   
+   
+   
+   5.0     
+     
+ 
+   Risk-free interest rate    
+   
+   
+   0.52   
+ %  
+   
+   
+   2.25   
+ %   
+ 
+   Expected dividend yield    
+   
+   
+   1.14   
+ %  
+   
+   
+   0.66   
+ %   
+ 
+   Black-Scholes-Merton fair value per stock option granted    
+   
+ $ 
+   11.01     
+   
+   
+ $ 
+   16.85     
+                   Expected volatility is based on the historical volatility of the Company’s stock over the stock options’ expected term. The Company used historical exercise data to estimate the stock options’ expected term, which represents the period of time that the stock options granted are expected to be outstanding. Management anticipates that the future stock option holding periods will be similar to the historical stock option holding periods. The risk-free interest rate for periods within the expected term of the stock option is based on the U.S. Treasury yield curve at the time of grant. The expected dividend yield is calculated by dividing the Company’s annual dividend, based on the most recent quarterly dividend rate, by the Company’s closing common stock price on the grant date. Compensation expense recognized for all share-based awards is net of estimated forfeitures. The Company’s estimated forfeiture rates are based on its historical experience.    The following is a summary of the Company’s stock option activity and related information:  
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   Shares    
+   
+   
+   Weighted  Average  Exercise    Price    
+   
+   
+   Weighted  Average  Remaining  Contractual    Life    
+   
+   
+   Aggregate  Intrinsic    Value    
+     
+ 
+     
+   
+   (In thousands)    
+   
+   
+     
+   
+   
+   (Years)    
+   
+   
+   (In millions)    
+     
+ 
+   Outstanding at December 31, 2019    
+   
+   
+   4,303     
+   
+   
+ $ 
+   62.50     
+   
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Granted    
+   
+   
+   963     
+   
+   
+   
+   63.37     
+   
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Exercised    
+   
+   
+   ( 129   
+ )  
+   
+   
+   49.26     
+   
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   Forfeited    
+   
+   
+   ( 56   
+ )  
+   
+   
+   72.12     
+   
+   
+   
+     
+   
+   
+   
+     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Outstanding at March 31, 2020    
+   
+   
+   5,081     
+   
+   
+ $ 
+   62.89     
+   
+   
+   
+   6.0     
+   
+   
+ $ 
+   57.6     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Exercisable at March 31, 2020    
+   
+   
+   2,112     
+   
+   
+ $ 
+   54.58     
+   
+   
+   
+   3.3     
+   
+   
+ $ 
+   37.3     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+                 The aggregate intrinsic value of stock options exercised during the three months ended March 31, 2020 was $ 6.3  million. The total fair value of stock options vested during the three months ended March 31, 2020 was $ 0.1  million. As of March 31, 2020, there was approximately $ 24.7  million of expected future  pre-tax  compensation expense related to the  3.0  million nonvested stock options outstanding, which is expected to be recognized over a weighted average period of approximately  two years .   The fair value of restricted shares under the Company’s restricted stock arrangement is determined by the product of the number of shares granted and the Company’s closing common stock price on the grant date. Upon the grant of restricted stock, the fair value of the restricted shares (unearned compensation) at the grant date is charged as a reduction of capital in excess of par value in the Company’s consolidated balance sheet and is amortized to expense on a straight-line basis over the vesting period, which is the same as the calculated derived service period as determined on the grant date.          18             Table of Contents     AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  The following is a summary of the Company’s nonvested restricted stock activity and related information:   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Shares  
+   
+   
+ Weighted  Average  Grant Date  Fair Value  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+   
+ 
+   
+ 
+ Nonvested restricted stock outstanding at December 31, 2019  
+   
+   
+ 561   
+   
+   
+ $ 
+ 72.46   
+   
+ 
+ Granted  
+   
+   
+ 240   
+   
+   
+   
+ 63.60   
+   
+ 
+ Vested  
+   
+   
+ ( 3 
+ )  
+   
+   
+ 64.05   
+   
+ 
+ Forfeited  
+   
+   
+ ( 15 
+ )  
+   
+   
+ 71.34   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Nonvested restricted stock outstanding at March 31, 2020  
+   
+   
+ 783 
+   
+   
+ $ 
+ 69.80 
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     The total fair value of restricted stock vested during the three months ended March 31, 2020 was $ 0.2  million. As of March 31, 2020, there was approximately $ 34.7  million of expected future  pre-tax  compensation expense related to the  0.8  million nonvested restricted shares outstanding, which is expected to be recognized over a weighted average period of approximately  two years . In March 2020, the Company granted PRSUs to officers and certain key management-level employees an aggregate target award of approximately  119,000  shares of its common stock. The PRSUs vest over a period up to three years from the grant date based on continuous service, with the number of shares earned ( 0 % to  200 % of the target award) depending upon the extent to which the Company achieves certain financial and market performance targets measured over the period from January 1, 2020 through December 31, 2022. Half of the PRSUs were valued in a manner similar to restricted stock as the financial targets are based on the Company’s operating results, which represents a performance condition. The grant date fair value of these PRSUs are recognized as compensation expense over the vesting period based on the probable number of awards to vest at each reporting date. The other half of the PRSUs were valued using a Monte Carlo model as the performance target is related to the Company’s total shareholder return compared to a group of peer companies, which represents a market condition. The Company recognizes the grant date fair value of these awards as compensation expense ratably over the vesting period. Total PRSUs outstanding at March 31, 2020 were approximately  266,000 .  
+ 
+ 
+ 13.  
+ Retirement and Pension Plans The components of net periodic pension benefit expense (income) were as follows:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended  
+   
+ 
+ 
+   
+ March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Defined benefit plans:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Service cost  
+   
+ $ 
+ 1,950   
+   
+   
+ $ 
+ 1,713   
+   
+ 
+ Interest cost  
+   
+   
+ 5,636   
+   
+   
+   
+ 6,762   
+   
+ 
+ Expected return on plan assets  
+   
+   
+ ( 13,650 
+ )  
+   
+   
+ ( 13,126 
+ ) 
+ 
+ Amortization of net actuarial loss and other  
+   
+   
+ 3,976   
+   
+   
+   
+ 3,287   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Pension income  
+   
+   
+ ( 2,088 
+ )  
+   
+   
+ ( 1,364 
+ ) 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Other plans:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Defined contribution plans  
+   
+   
+ 10,025   
+   
+   
+   
+ 9,108   
+   
+ 
+ Foreign plans and other  
+   
+   
+ 2,041   
+   
+   
+   
+ 1,562   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total other plans  
+   
+   
+ 12,066   
+   
+   
+   
+ 10,670   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total net pension expense  
+   
+ $ 
+ 9,978   
+   
+   
+ $ 
+ 9,306   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     For defined benefit plans, the net periodic benefit expense(income), other than the service cost component, is included in “Other income(expense), net” in the consolidated statement of income.      For the three months ended March 31, 2020 and 2019, contributions to the Company’s defined benefit pension plans were $ 1.5  million and $ 0.7  million, respectively. The Company’s current estimate of 2020 contributions to its worldwide defined benefit pension plans is in line with the range disclosed in the Company’s Annual Report on Form  10-K  for the year ended December 31, 2019. 19 Table of Contents AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  
+ 
+ 
+ 14.  
+ Contingencies Asbestos Litigation  The Company (including its subsidiaries) has been named as a defendant in a number of asbestos-related lawsuits. Certain of these lawsuits relate to a business which was acquired by the Company and do not involve products which were manufactured or sold by the Company. In connection with these lawsuits, the seller of such business has agreed to indemnify the Company against these claims (the “Indemnified Claims”). The Indemnified Claims have been tendered to, and are being defended by, such seller. The seller has met its obligations, in all respects, and the Company does not have any reason to believe such party would fail to fulfill its obligations in the future. To date, no judgments have been rendered against the Company as a result of any asbestos-related lawsuit. The Company believes that it has good and valid defenses to each of these claims and intends to defend them vigorously.  Environmental Matters  Certain historic processes in the manufacture of products have resulted in environmentally hazardous waste  by-products  as defined by federal and state laws and regulations. At March 31, 2020, the Company is named a Potentially Responsible Party (“PRP”) at  13   non-AMETEK-owned  former waste disposal or treatment sites (the  “non-owned”  sites). The Company is identified as a “de minimis” party in  12  of these sites based on the low volume of waste attributed to the Company relative to the amounts attributed to other named PRPs. In eight of these sites, the Company has reached a tentative agreement on the cost of the de minimis settlement to satisfy its obligation and is awaiting executed agreements. The tentatively  agreed-to  settlement amounts are fully reserved. In the other four sites, the Company is continuing to investigate the accuracy of the alleged volume attributed to the Company as estimated by the parties primarily responsible for remedial activity at the sites to establish an appropriate settlement amount. At the remaining site where the Company is a  non-de  minimis PRP, the Company is participating in the investigation and/or related required remediation as part of a PRP Group and reserves have been established to satisfy the Company’s expected obligations. The Company historically has resolved these issues within established reserve levels and reasonably expects this result will continue. In addition to these  non-owned  sites, the Company has an ongoing practice of providing reserves for probable remediation activities at certain of its current or previously owned manufacturing locations (the “owned” sites). For claims and proceedings against the Company with respect to other environmental matters, reserves are established once the Company has determined that a loss is probable and estimable. This estimate is refined as the Company moves through the various stages of investigation, risk assessment, feasibility study and corrective action processes. In certain instances, the Company has developed a range of estimates for such costs and has recorded a liability based on the best estimate. It is reasonably possible that the actual cost of remediation of the individual sites could vary from the current estimates and the amounts accrued in the consolidated financial statements; however, the amounts of such variances are not expected to result in a material change to the consolidated financial statements. In estimating the Company’s liability for remediation, the Company also considers the likely proportionate share of the anticipated remediation expense and the ability of the other PRPs to fulfill their obligations. Total environmental reserves at March 31, 2020 and December 31, 2019 were $ 29.4  million and $ 28.9  million, respectively, for both  non-owned  and owned sites. For the three months ended March 31, 2020, the Company recorded $ 2.0  million in reserves. Additionally, the Company spent $ 1.2  million on environmental matters and the reserve decreased $ 0.3  million due to foreign currency translation for the three months ended March 31, 2020. The Company’s reserves for environmental liabilities at March 31, 2020 and December 31, 2019 included reserves of $ 8.7  million and $ 9.0  million, respectively, for an owned site acquired in connection with the 2005 acquisition of HCC Industries (“HCC”). The Company is the designated performing party for the performance of remedial activities for one of several operating units making up a Superfund site in the San Gabriel Valley of California. The Company has obtained indemnifications and other financial assurances from the former owners of HCC related to the costs of the required remedial activities. The Company has agreements with other former owners of certain of its acquired businesses, as well as new owners of previously owned businesses. Under certain of the agreements, the former or new owners retained, or assumed and agreed to indemnify the Company against, certain environmental and other liabilities under certain circumstances. The Company and some of these other parties also carry insurance coverage for some environmental matters. To date, these parties have met their obligations in all material respects.    20 Table of Contents   AMETEK, Inc.  Notes to Consolidated Financial Statements  March 31, 2020  (Unaudited)  The Company believes it has established reserves for the environmental matters described above, which are sufficient to perform all known responsibilities under existing claims and consent orders. The Company has no reason to believe that other third parties would fail to perform their obligations in the future. In the opinion of management, based on presently available information and the Company’s historical experience related to such matters, an adequate provision for probable costs has been made and the ultimate cost resulting from these actions is not expected to materially affect the consolidated results of operations, financial position or cash flows of the Company.  The Company has been remediating groundwater contamination for several contaminants, including trichloroethylene (“TCE”), at a formerly owned site in El Cajon, California. Several lawsuits have been filed against the Company alleging damages resulting from the groundwater contamination, including property damages and funds for medical monitoring to detect causally related personal injury, and seeking compensatory and punitive damages. While the Company believes that it has good and valid defenses to each of these claims and intends to defend them vigorously if pursued through trial, the parties agreed to terms to globally settle the cases. After extensive negotiations, the Company entered into a global settlement of these lawsuits for an aggregate amount of $6.8 million, for which the Company had previously established reserves sufficient to cover this settlement. The global settlement is subject to court approval in two class action cases. The class representative plaintiffs have filed motions to preliminarily approve the settlements, which the court recently granted. The court also scheduled a final fairness hearing for August 24, 2020.  
+ 
+ 
+ 15.  
+ Realignment Costs During the first quarter of 2020, the Company recorded  pre-tax  realignment costs totaling $ 43.9  million, which had the effect of reducing net income by $ 33.6  million ($ 0.15  per diluted share). The realignment costs were reported in the consolidated statement of income as follows: $ 43.7  million in Cost of sales and $ 0.2  million in Selling, general and administrative expenses. The realignment costs were reported in segment operating income as follows: $ 22.8  million in EIG, $ 20.9  million in EMG.  The realignment actions primarily related to a reduction in workforce and asset write-downs in response to the weak global economy as a result of the  COVID-19  pandemic. The realignment activities have been broadly implemented across the Company’s various businesses with substantially all actions expected to be completed by end of 2020.  Accrued liabilities and other in the Company’s consolidated balance sheet included amounts related to the realignment costs as follows (in millions):      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ First Quarter of 2020 realignment costs  
+   
+ 
+ Balance at December 31, 2019  
+   
+ $ 
+ — 
+   
+ 
+ Pre-tax  charges 
+   
+   
+ 43.9 
+   
+ 
+ Utilization  
+   
+   
+ ( 7.3 
+ )  
+ 
+ Foreign currency translation and other  
+   
+   
+ ( 0.1 
+ )  
+ 
+   
+   
+   
+   
+   
+ 
+ Balance at March 31, 2020  
+   
+ $ 
+ 36.5 
+   
+ 
+   
+   
+   
+   
+       21 Table of Contents Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations  Results of Operations  The following table sets forth net sales and income by reportable segment and on a consolidated basis:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ Three Months Ended March 31,  
+   
+ 
+ 
+   
+ 2020  
+   
+   
+ 2019  
+   
+ 
+ 
+   
+ (In thousands)  
+   
+ 
+ Net sales:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Electronic Instruments  
+   
+ $ 
+ 774,225  
+   
+   
+ $ 
+ 806,911  
+   
+ 
+ Electromechanical  
+   
+   
+ 427,993  
+   
+   
+   
+ 480,780  
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated net sales  
+   
+ $ 
+ 1,202,218  
+   
+   
+ $ 
+ 1,287,691  
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Operating income and income before income taxes:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Segment operating income:  
+   
+   
+ 
+   
+   
+   
+ 
+   
+ 
+ Electronic Instruments  
+   
+ $ 
+ 171,271  
+   
+   
+ $ 
+ 203,084  
+   
+ 
+ Electromechanical  
+   
+   
+ 76,564  
+   
+   
+   
+ 98,813  
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Total segment operating income  
+   
+   
+ 247,835  
+   
+   
+   
+ 301,897  
+   
+ 
+ Corporate administrative expenses  
+   
+   
+ (15,795 
+ )  
+   
+   
+ (18,638 
+ )  
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated operating income  
+   
+   
+ 232,040  
+   
+   
+   
+ 283,259  
+   
+ 
+ Interest expense  
+   
+   
+ (22,741 
+ )  
+   
+   
+ (22,653 
+ )  
+ 
+ Other income (expense), net  
+   
+   
+ 141,776  
+   
+   
+   
+ (3,668 
+ )  
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ Consolidated income before income taxes  
+   
+ $ 
+ 351,075  
+   
+   
+ $ 
+ 256,938  
+   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   Impact of  COVID-19  Pandemic on our Business  In the first quarter of 2020, the  COVID-19  pandemic has resulted in significant economic disruption and we expect it will continue to adversely affect our businesses in 2020. As of the date of this filing, significant uncertainty exists concerning the magnitude of the impact and duration of the  COVID-19  pandemic. Despite experiencing strong customer demand from select end markets providing critical solutions to assist in the fight against  COVID-19,  our broader customer demand weakened as the spread of the virus led to supply and demand disruptions. With respect to liquidity, we are evaluating and taking actions to reduce costs and spending across our organization. This includes reducing hiring activities, adjusting pay programs, limiting discretionary spending, as well as the first quarter 2020 realignment of our businesses (described further throughout the Results of Operations). We have also reduced anticipated spending on capital investment projects. In the first quarter of 2020, the Company borrowed approximately $519 million under its revolving credit facility in order to increase cash on hand and enhance financial flexibility in light of the global markets uncertainty resulting from the  COVID-19  pandemic. We will continue to actively monitor the situation moving forward. See Risk Factors, included in Part II, Item 1A of this Quarterly Report on Form  10-Q,  for further discussion of the possible impact of the  COVID-19  pandemic on our business.  Results of operations for the first quarter of 2020 compared with the first quarter of 2019  For the quarter ended March 31, 2020, the Company was impacted by a weak global economy as a result of the  COVID-19   pandemic. Contributions from the acquisitions of Pacific Design Technologies, Inc. (“PDT”) in September 2019, Gatan in October 2019, and IntelliPower in January 2020 had a positive impact on first quarter 2020 results. The full year impact of the 2019 and 2020 acquisitions and continued focus on and implementation of Operational Excellence initiatives, including the first quarter 2020 realignment actions, are expected to have a positive impact on the Company’s 2020 results. While we expect benefits from the realignment actions and the recent acquisitions, we anticipate continuing challenges due to uncertain market conditions related to the  COVID-19  pandemic throughout the remainder of 2020.  22 Table of Contents       In March 2020, the Company completed the sale of its Reading Alloys business (“Reading”) to Kymera International for net proceeds of $245.3 million in cash. The sale resulted in a  pre-tax  gain of $141.0 million recorded in other income, net and income tax expense of $31.4 million.   Net sales for the first quarter of 2020 were $1,202.2 million, a decrease of $85.5 million or 6.6%, compared with net sales of $1,287.7 million for the first quarter of 2019. The decrease in net sales for the first quarter of 2020 was due to an 8% organic sales decline, an unfavorable 1% effect of foreign currency translation, a favorable 4% increase from acquisitions as well as an unfavorable 2% from the Reading divestiture.    Total international sales for the first quarter of 2020 were $561.0 million or 46.7% of net sales, a decrease of $62.5 million or 10.0%, compared with international sales of $623.5 million or 48.4% of net sales for the first quarter of 2019. The decrease in international sales was primarily driven from lower sales in Europe and Asia during the quarter.    Orders for the first quarter of 2020 were $1,210.0 million, a decrease of $168.1 million or 12.2%, compared with $1,378.1 million for the first quarter of 2019. The decrease in orders for the first quarter of 2020 was due to a 9% organic order decline, an unfavorable 2% effect of foreign currency translation, a favorable 4% increase from acquisitions as well as an unfavorable 5% impact from the Reading divestiture.    The Company recorded 2020 realignment costs totaling $43.9 million in the first quarter of 2020 (the “2020 realignment costs”). The 2020 realignment costs were composed of $35.5 million in severance costs for a reduction in workforce and $8.4 million of asset write-downs, primarily inventory, in response to the impact of a weak global economy as a result of the  COVID-19  pandemic. See Note 15 to the Consolidated Financial Statements included in Part I, Item 1 of this Quarterly Report on Form  10-Q  for further details.   The 2020 realignment costs (in millions) reported in the consolidated statement of income as well as the impact on segment operating margins (in basis points) are as follows:  
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+     
+   
+   2020    
+     
+ 
+     
+   
+   Realignment  Costs    
+   
+   
+   Operating  Margins    
+     
+ 
+   EIG    
+   
+ $ 
+   22.8    
+   
+   
+   
+   (300   
+ )   
+ 
+   EMG    
+   
+   
+   20.9    
+   
+   
+   
+   (490   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total reported in segment operating income    
+   
+   
+   43.7    
+   
+   
+   
+   (370   
+ )   
+ 
+   Selling, general and administrative expenses    
+   
+   
+   0.2    
+   
+   
+   
+     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total reported in the consolidated statement of income    
+   
+ $ 
+   43.9    
+   
+   
+   
+   (370   
+ )   
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+                 The expected annualized cash savings from the 2020 realignment costs is expected to be approximately $86 million, with approximately $33 million expected to be realized in 2020.    Segment operating income for the first quarter of 2020 was $247.8 million, a decrease of $54.1 million or 17.9%, compared with segment operating income of $301.9 million for the first quarter of 2019. The decrease in segment operating income was primarily due to the lower sales discussed above and the $43.7 million of 2020 realignment costs recorded during the quarter, partially offset by the benefits of the Company’s Operational Excellence initiatives. Segment operating margins, as a percentage of net sales, decreased to 20.6% for the first quarter of 2020, compared with 23.4% for the first quarter of 2019. The first quarter of 2020 segment operating margins were negatively impacted by 370 basis points due to the 2020 realignment costs discussed above, partially offset by the benefits of the Company’s Operational Excellence initiatives.    Cost of sales for the first quarter of 2020 was $824.6 million or 68.6% of net sales, a decrease of $26.7 million or 3.1%, compared with $851.3 million or 66.1% of net sales for the first quarter of 2019. The cost of sales decrease was primarily due to the net sales decrease discussed above partially offset by the increase from the 2020 realignment costs discussed above.          23             Table of Contents     Selling, general and administrative expenses for the first quarter of 2020 were $145.5 million or 12.1% of net sales, a decrease of $7.6 million or 5.0%, compared with $153.1 million or 11.9% of net sales for the first quarter of 2019. Selling, general and administrative expenses decreased primarily due to the decrease in net sales discussed above.    Consolidated operating income was $232.0 million or 19.3% of net sales for the first quarter of 2020, a decrease of $51.3 million or 18.1%, compared with $283.3 million or 22.0% of net sales for the first quarter of 2019. The consolidated operating income margins were negatively impacted by 370 basis points due to the 2020 realignment costs discussed above.    Other income, net was $141.8 million for the first quarter of 2020, compared with $3.7 million of other expense, net for the first quarter of 2019, an increase of $145.5 million. The increase in other income in the first quarter of 2020 was primarily due to the gain on the sale of Reading of $141.0 million as well as lower acquisition-related expenses during the quarter.    The effective tax rate for the first quarter of 2020 was 20.1%, compared with 20.5% for the first quarter of 2019. The lower rate for 2020 reflects the results of tax planning initiatives and lower  mix-related  foreign tax expense partially offset by lower year over year tax benefits related to share-based payment transactions. See Note 11 to the Consolidated Financial Statements included in Part I, Item 1 of this Quarterly Report on Form  10-Q.    Net income for the first quarter of 2020 was $280.6 million, an increase of $76.3 million or 37.4%, compared with $204.3 million for the first quarter of 2019.    Diluted earnings per share for the first quarter of 2020 were $1.22, an increase of $0.33 or 37.1%, compared with $0.89 per diluted share for the first quarter of 2019.    Segment Results    EIG’s  net   sales totaled $774.2 million for the first quarter of 2020, a decrease of $32.7 million or 4.1%, compared with $806.9 million for the first quarter of 2019. The net sales decrease was due to a 9% organic sales decline, partially offset by the acquisitions of Gatan and IntelliPower.   EIG’s operating income was $171.3 million for the first quarter of 2020, a decrease of $31.8 million or 15.7%, compared with $203.1 million for the first quarter of 2019. EIG’s decrease in operating income was primarily due to the decrease in sales discussed above as well as the $22.8 million of 2020 realignment costs recorded during the quarter. EIG’s operating margins were 22.1% of net sales for the first quarter of 2020, compared with 25.2% for the first quarter of 2019. EIG’s 2020 operating margins were negatively impacted by 300 basis points due to the 2020 realignment costs discussed above.    EMG’s  net sales totaled $428.0 million for the first quarter of 2020, a decrease of $52.8 million or 11.0%, compared with $480.8 million for the first quarter of 2019. The net sales decrease was due to a 7% organic sales decline, an unfavorable 1% effect of foreign currency translation, a favorable 3% impact from the PDT acquisition as well as an unfavorable 6% impact from the Reading divestiture.   EMG’s operating income was $76.6 million for the first quarter of 2020, a decrease of $22.2 million or 22.5%, compared with $98.8 million for the first quarter of 2019. EMG’s decrease in operating income was primarily due to the decrease in sales discussed above as well as the $20.9 million of 2020 realignment costs recorded during the quarter, partially offset by benefits from the Group’s Operating Excellence initiatives. EMG’s operating margins were 17.9% of net sales for the first quarter of 2020, compared with 20.6% for the first quarter of 2019. EMG’s 2020 operating margins were negatively impacted by 490 basis points due to the 2020 realignment costs discussed above.    Financial Condition    Liquidity and Capital Resources    Cash provided by operating activities totaled $270.8 million for the first three months of 2020, an increase of $74.5 million or 38.0%, compared with $196.3 million for the first three months of 2019. The increase in cash provided by operating activities for the first three months of 2020 was primarily due to reduced investments in working capital.          24             Table of Contents     Free cash flow (cash flow provided by operating activities less capital expenditures) was $253.8 million for the first three months of 2020, compared with $174.8 million for the first three months of 2019. EBITDA (earnings before interest, income taxes, depreciation and amortization) was $439.2 million for the first three months of 2020, compared with $336.7 million for the first three months of 2019. Free cash flow and EBITDA are presented because the Company is aware that they are measures used by third parties in evaluating the Company.    Cash provided by investing activities totaled $115.6 million for the first three months of 2020, compared with cash used by investing activities of $17.8 million for the first three months of 2019. Additions to property, plant and equipment totaled $16.9 million for the first three months of 2020, compared with $21.4 million for the first three months of 2019. For the first three months of 2020, the Company paid $116.6 million, net of cash acquired, to acquire IntelliPower in January 2020 and received proceeds of $245.3 million from the sale of its Reading business.    Cash provided by financing activities totaled $486.6 million for the first three months of 2020, compared with cash used by financing activities of $165.9 million for the first three months of 2019. At March 31, 2020, total debt, net was $3,252.6 million, compared with $2,768.7 million at December 31, 2019. For the first three months of 2020, total borrowings increased by $522.3 million, compared with a $156.3 million decrease for the first three months of 2019. At March 31, 2020, the Company had available borrowing capacity of $1,067.3 million under its revolving credit facility, including the $500 million accordion feature.    The  debt-to-capital  ratio was 37.9% at March 31, 2020, compared with 35.1% at December 31, 2019. The net  debt-to-capital   ratio (total debt, net less cash and cash equivalents divided by the sum of net debt and stockholders’ equity) was 27.3% at March 31, 2020, compared with 31.7% at December 31, 2019. The net  debt-to-capital  ratio is presented because the Company is aware that this measure is used by third parties in evaluating the Company.   Additional financing activities for the first three months of 2020 included cash dividends paid of $41.2 million, compared with $31.8 million for the first three months of 2019. Effective February 12, 2020, the Company’s Board of Directors approved a 29% increase in the quarterly cash dividend on the Company’s common stock to $0.18 per common share from $0.14 per common share. Proceeds from stock option exercises were $7.0 million for the first three months of 2020, compared with $24.9 million for the first three months of 2019.    As a result of all the Company’s cash flow activities for the first three months of 2020, cash and cash equivalents at March 31, 2020 totaled $1,253.4 million, compared with $393.0 million at December 31, 2019. At March 31, 2020, the Company had $303.6 million in cash outside the United States, compared with $357.9 million at December 31, 2019. The Company utilizes this cash to fund its international operations, as well as to acquire international businesses. The Company is in compliance with all covenants, including financial covenants, for all of its debt agreements. The Company believes it has sufficient cash-generating capabilities from domestic and unrestricted foreign sources, available credit facilities and access to long-term capital funds to enable it to meet its operating needs and contractual obligations in the foreseeable future.    Critical Accounting Policies    The Company’s critical accounting policies are detailed in Part II, Item 7, Management’s Discussion and Analysis of Financial Condition of its Annual Report on Form  10-K  for the year ended December 31, 2019. Primary disclosure of the Company’s significant accounting policies is also included in Note 1 to the Consolidated Financial Statements included in Part II, Item 8 of its Annual Report on Form  10-K.    Forward-Looking Information    Information contained in this discussion, other than historical information, is considered “forward-looking statements” and is subject to various factors and uncertainties that may cause actual results to differ significantly from expectations. These factors and uncertainties include risks related to the  COVID-19  pandemic and its potential impact on AMETEK’s operations, supply chain, and demand across key end markets; general economic conditions affecting the industries the Company serves; changes in the competitive environment or the effects of competition in the Company’s markets; risks associated with international sales and operations; the Company’s ability to consummate and successfully integrate future acquisitions; the Company’s ability to successfully develop new products, open new facilities or transfer product lines; the price and availability of raw materials; compliance with government regulations, including environmental regulations; and the ability to maintain adequate liquidity and financing sources. A detailed discussion of these and other factors that may         25             Table of Contents     affect the Company’s future results is contained in AMETEK’s filings with the U.S. Securities and Exchange Commission, including its most recent reports on Form  10-K,   10-Q  and  8-K.  AMETEK disclaims any intention or obligation to update or revise any forward-looking statements, unless required by the securities laws to do so.   Item 4. Controls and Procedures    The Company maintains a system of disclosure controls and procedures that is designed to provide reasonable assurance that information, which is required to be disclosed, is accumulated and communicated to management in a timely manner. Under the supervision and with the participation of our management, including the Company’s principal executive officer and principal financial officer, we have evaluated the effectiveness of our system of disclosure controls and procedures as required by Exchange Act Rule  13a-15(b)  as of March 31, 2020. Based on that evaluation, the Company’s principal executive officer and principal financial officer concluded that the Company’s disclosure controls and procedures are effective at the reasonable assurance level.   Such evaluation did not identify any change in the Company’s internal control over financial reporting during the quarter ended March 31, 2020 that has materially affected, or is reasonably likely to materially affect, the Company’s internal control over financial reporting.          26             Table of Contents         PART II. OTHER INFORMATION    
+ 
+ 
+ Item 1A.  
+ Risk Factors           The coronavirus global pandemic could have a material adverse effect on our ability to operate, results of operations, financial condition, liquidity and ability to consummate future acquisitions.    In March 2020, the World Health Organization declared the current coronavirus  (“COVID-19”)  outbreak to be a global pandemic. The recent outbreak of  COVID-19,  and any other significant outbreak of epidemic, pandemic or contagious disease, could have a negative effect on our ability to operate, results of operations, financial condition, liquidity and ability to consummate future acquisitions. In addition, the outbreak of  COVID-19  has resulted in a widespread health crisis that is adversely affecting the economies and financial markets of many countries and the end markets for many of our products, which could result in an economic downturn that may negatively affect demand for our products. The extent to which  COVID-19  will impact our business, results of operations and financial condition is highly uncertain and will depend on future developments. Such developments may include the geographic spread and duration of the virus, the severity of the disease and the actions that may be taken by various governmental authorities and other third parties in response to the outbreak.   Our global manufacturing facilities remain open, though a range of external factors related to the pandemic that are not within our control have restricted our ability to keep our manufacturing facilities fully operational. Additionally, while our global supply chains are currently not materially affected, it is unknown whether and to what extent they may be affected if the  COVID-19  pandemic persists for an extended period. Any decline or lower than expected demand in our served markets could diminish demand for our products and services, which would adversely affect our financial condition and results of operations. Moreover, the  COVID-19   pandemic may adversely affect the financial condition of our customers and suppliers in the future or their ability to purchase Company products, may delay customers’ purchasing decisions, result in a shift to lower-priced products or away from discretionary products, and may result in longer payment terms or inability to collect customer payments. These issues may also materially affect our future access to our sources of liquidity, particularly our cash flows from operations, financial condition and ability to consummate future acquisitions.   In compliance with  stay-at-home  orders issued in connection with the  COVID-19  pandemic, a significant subset of our employees have transitioned to working from home. As a result, more of our employees are working from locations where our cybersecurity program may be less effective and IT security may be less robust. This change may create increased vulnerability to cybersecurity incidents, including breaches of information systems security, which could result in a disruption of our operations, customer dissatisfaction, damage to our reputation and a loss of customers or revenues.   If significant portions of our workforce are unable to work effectively, including because of illness, quarantines or absenteeism; government actions; facility closures; work slowdowns or stoppages; limited supplies or resources; or other circumstances related to  COVID-19,  our operations will be further impacted. We may be unable to perform fully on our customer obligations and we may incur liabilities and suffer losses as a result. The continued spread of  COVID-19  may also affect our ability to hire, develop and retain our talented and diverse workforce, and to maintain our corporate culture.   A scarcity of resources or other hardships caused by the  COVID-19  pandemic may result in increased nationalism, protectionism and political tensions which may cause governments and/or other entities to take actions that may have significant negative impact on the Company, its suppliers, and its customers to conduct business in the future. Risks related to consumers and businesses lowering or changing spending, which impact domestic and cross-border spend, are described in our risk factor titled “Foreign and domestic economic, political, legal, compliance and business factors could negatively affect our international sales and operations” in our 2019 Form  10-K.    The duration and intensity of the impact of the  COVID-19  pandemic and the resulting disruption to our operations is uncertain but could have a material impact on our operations, cash flows, and financial condition. While not yet quantifiable, we will continue to assess the financial impact for the full 2020 fiscal year and beyond.   Other than the item listed above, there have been no material changes in our risk factors from those disclosed in Part I, Item 1A. “Risk Factors” filed on the Company’s Annual Report on Form  10-K.          27             Table of Contents     Item 2. Unregistered Sales of Equity Securities and Use of Proceeds    (c) Purchase of equity securities by the issuer and affiliated purchasers.    The following table reflects purchases of AMETEK, Inc. common stock by the Company during the three months ended March 31, 2020:  
+ 
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Period    
+   
+   Total Number    of Shares    Purchased (1)   
+   
+   
+   Average Price    Paid per Share    
+   
+   
+   Total Number    of Shares    Purchased as    Part of Publicly    Announced    Plan    
+   
+   
+   Approximate    Dollar Value of    Shares that    May Yet Be    Purchased Under    the Plan    
+     
+ 
+   January 1, 2020 to January 31, 2020    
+   
+   
+   —     
+   
+   
+ $ 
+   —     
+   
+   
+   
+   —     
+   
+   
+ $ 
+   489,125,278    
+     
+ 
+   February 1, 2020 to February 29, 2020    
+   
+   
+   612    
+   
+   
+   
+   101.40    
+   
+   
+   
+   612    
+   
+   
+   
+   489,063,223    
+     
+ 
+   March 1, 2020 to March 31, 2020    
+   
+   
+   399    
+   
+   
+   
+   97.81    
+   
+   
+   
+   399    
+   
+   
+   
+   489,024,195    
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+ 
+   Total    
+   
+   
+   1,011    
+   
+   
+   
+   99.98    
+   
+   
+   
+   1,011    
+   
+   
+   
+     
+     
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+                   
+ 
+ 
+ (1) 
+ Represents shares surrendered to the Company to satisfy tax withholding obligations in connection with employees’ share-based compensation awards.                 28             Table of Contents     Item 6. Exhibits  
+ 
+ 
+   
+   
+   
+   
+     
+ 
+   Exhibit    Number    
+   
+   
+   Description      
+ 
+   
+   
+   
+   
+     
+ 
+   
+       3.2*    
+   
+   
+   By-Laws of AMETEK, Inc. as amended to and including November 9, 2018        
+ 
+   
+   
+   
+   
+     
+ 
+   
+     31.1*    
+   
+   
+   Certification of Chief Executive Officer, Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.        
+ 
+   
+   
+   
+   
+     
+ 
+   
+     31.2*    
+   
+   
+   Certification of Chief Financial Officer, Pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.        
+ 
+   
+   
+   
+   
+     
+ 
+   
+     32.1*    
+   
+   
+   Certification of Chief Executive Officer, Pursuant to Section 906 of the Sarbanes-Oxley Act of 2002.        
+ 
+   
+   
+   
+   
+     
+ 
+   
+     32.2*    
+   
+   
+   Certification of Chief Financial Officer, Pursuant to Section 906 of the Sarbanes-Oxley Act of 2002.        
+ 
+   
+   
+   
+   
+     
+ 
+   
+   101.INS*    
+   
+   
+   XBRL Instance Document.      
+ 
+   
+   
+   
+   
+     
+ 
+   
+   101.SCH*    
+   
+   
+   XBRL Taxonomy Extension Schema Document.      
+ 
+   
+   
+   
+   
+     
+ 
+   
+   101.CAL*    
+   
+   
+   XBRL Taxonomy Extension Calculation Linkbase Document.      
+ 
+   
+   
+   
+   
+     
+ 
+   
+   101.DEF*    
+   
+   
+   XBRL Taxonomy Extension Definition Linkbase Document.      
+ 
+   
+   
+   
+   
+     
+ 
+   
+   101.LAB*    
+   
+   
+   XBRL Taxonomy Extension Label Linkbase Document.      
+ 
+   
+   
+   
+   
+     
+ 
+   
+   101.PRE*    
+   
+   
+   XBRL Taxonomy Extension Presentation Linkbase Document.      
+ 
+   
+   
+   
+   
+     
+ 
+   
+   104    
+   
+   
+   Cover Page Interactive Data File (formatted as inline XBRL with applicable taxonomy extension information contained in Exhibits 101).                    
+ 
+ 
+ * 
+ Filed electronically herewith.                 29             Table of Contents     SIGNATURES    Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.    
+ 
+ 
+   
+   
+     
+ 
+   AMETEK, Inc.   (Registrant)      
+ 
+   
+   
+     
+ 
+   By:    
+   
+   /s/  Thomas M. Montgomery      
+ 
+     
+   
+   Thomas M. Montgomery      
+ 
+     
+   
+   Senior Vice President – Comptroller      
+ 
+     
+   
+   (Principal Accounting Officer)                  May 5, 2020          30       
+ 

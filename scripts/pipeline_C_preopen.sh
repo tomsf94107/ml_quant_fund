@@ -1,4 +1,6 @@
 #!/bin/bash
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # scripts/pipeline_C_preopen.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # PRE-OPEN FRESH RUNFUND
@@ -23,7 +25,7 @@ LOGDIR=$ROOT/logs/pipeline_C_$DATE_TAG
 mkdir -p "$LOGDIR"
 
 cd $ROOT
-export PYTHONPATH=$ROOT:$PYTHONPATH
+export PYTHONPATH="$ROOT:${PYTHONPATH:-}"
 source /Users/atomnguyen/.zshrc 2>/dev/null || true
 
 log() {
@@ -46,7 +48,7 @@ log "=== PIPELINE C START ==="
 # still aborts the DIRECTION-MODEL publish (Stages 1-2) on RED.
 log "Stage -2: Momentum shadow signal (cross-sectional, shadow-only)"
 MOM_START=$(date +%s)
-if timeout 600 $PYTHON -m scripts.momentum_shadow \
+if $PYTHON -m scripts.momentum_shadow \
     > "$LOGDIR/03_momentum_shadow.log" 2>&1; then
     MOM_DUR=$(($(date +%s) - MOM_START))
     log "Stage -2 OK (${MOM_DUR}s) — momentum shadow picks logged"
@@ -96,7 +98,7 @@ fi
 # ── Stage 0: Daily sentiment (non-critical, 45-min timeout (394 names; was 15min at 149)) ──────────────────
 log "Stage 0: Daily sentiment scoring"
 SENT_START=$(date +%s)
-if timeout 2700 $PYTHON -m scripts.daily_sentiment \
+if $PYTHON -m scripts.daily_sentiment \
     > "$LOGDIR/00_sentiment.log" 2>&1; then
     SENT_DUR=$(($(date +%s) - SENT_START))
     log "Stage 0 OK (${SENT_DUR}s)"

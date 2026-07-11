@@ -1,0 +1,7817 @@
+
+ 
+  
+   10-Q 
+   
+  
+  
+   Q2 0000313927 P20Y P20Y false --12-31 P2Y http://fasb.org/us-gaap/2023#OtherAssetsNoncurrent http://fasb.org/us-gaap/2023#OtherAssetsNoncurrent http://fasb.org/us-gaap/2023#AccountsPayableAndOtherAccruedLiabilitiesCurrent http://fasb.org/us-gaap/2023#AccountsPayableAndOtherAccruedLiabilitiesCurrent http://fasb.org/us-gaap/2023#OtherLiabilitiesNoncurrent http://fasb.org/us-gaap/2023#OtherLiabilitiesNoncurrent P2Y 0000313927 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:ForeignExchangeContractMember 2022-12-31 0000313927 us-gaap:TreasuryStockCommonMember 2022-04-01 2022-06-30 0000313927 us-gaap:PatentsMember 2022-12-31 0000313927 srt:MaximumMember chd:TheraBreathAcquisitionMember 2023-01-01 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerInternationalMember 2022-01-01 2022-06-30 0000313927 us-gaap:IntersegmentEliminationMember 2022-01-01 2022-06-30 0000313927 us-gaap:CorporateNonSegmentMember 2023-04-01 2023-06-30 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2023-06-30 0000313927 2021-12-31 0000313927 us-gaap:TradeNamesMember 2023-06-30 0000313927 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:CommodityContractMember 2022-12-31 0000313927 chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2022-12-31 0000313927 us-gaap:RetainedEarningsMember 2022-03-31 0000313927 us-gaap:BuildingAndBuildingImprovementsMember 2022-12-31 0000313927 us-gaap:IntersegmentEliminationMember 2023-01-01 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2021-12-31 0000313927 us-gaap:AccumulatedTranslationAdjustmentMember 2022-01-01 2022-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerInternationalMember 2023-04-01 2023-06-30 0000313927 us-gaap:CommonStockMember 2022-01-01 2022-03-31 0000313927 chd:ArmaKleenCompanyMember 2023-06-30 0000313927 chd:TheraBreathAcquisitionMember 2021-12-24 0000313927 us-gaap:AdditionalPaidInCapitalMember 2022-12-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2022-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-03-31 0000313927 us-gaap:OperatingSegmentsMember chd:SpecialtyProductsDivisionMember 2023-01-01 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember chd:HouseholdProductsMember 2022-01-01 2022-06-30 0000313927 chd:ArmandProductsCompanyAndArmaKleenCompanyMember 2023-01-01 2023-03-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2023-04-01 2023-06-30 0000313927 chd:TrojanTradeNameMember country:US 2023-01-01 2023-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:FivePointSixPercentSeniorNotesDueNovember152032Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2022-12-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember 2022-12-31 0000313927 us-gaap:FairValueInputsLevel2Member chd:FivePointSixPercentSeniorNotesDueNovember152032Member 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember 2022-01-01 2022-06-30 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember 2022-01-01 2022-12-31 0000313927 us-gaap:FairValueInputsLevel2Member us-gaap:EstimateOfFairValueFairValueDisclosureMember chd:TermLoanDueInDecemberTwentyTwoTwoThousandAndTwentyFourMember 2022-12-31 0000313927 us-gaap:TreasuryStockCommonMember 2023-01-01 2023-03-31 0000313927 chd:FivePointSixPercentSeniorNotesDueNovember152032Member 2023-01-01 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember chd:PersonalCareProductsMember 2022-04-01 2022-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:SpecialtyProductsDivisionMember 2023-04-01 2023-06-30 0000313927 chd:ArmandProductsCompanyMember 2023-06-30 0000313927 us-gaap:AdditionalPaidInCapitalMember 2022-01-01 2022-03-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember us-gaap:CarryingReportedAmountFairValueDisclosureMember 2022-12-31 0000313927 us-gaap:TradeNamesMember 2022-10-01 2022-10-01 0000313927 us-gaap:OperatingSegmentsMember chd:SpecialtyProductsDivisionMember 2022-01-01 2022-06-30 0000313927 us-gaap:TradeNamesMember 2022-10-01 0000313927 2022-12-31 0000313927 us-gaap:TreasuryStockCommonMember 2022-12-31 0000313927 chd:FivePointZeroZeroPercentSeniorNotesDueJuneFifteenTwoThousandFiftyTwoMember 2023-06-30 0000313927 us-gaap:AccumulatedTranslationAdjustmentMember 2022-06-30 0000313927 chd:ZicamAcquisitionMember chd:ConsumerInternationalMember 2023-06-30 0000313927 us-gaap:RetainedEarningsMember 2022-04-01 2022-06-30 0000313927 chd:PerformanceStockUnitsPsusMember srt:MinimumMember 2023-06-30 0000313927 srt:MinimumMember 2023-06-30 0000313927 2023-03-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2023-01-01 2023-03-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember us-gaap:FairValueInputsLevel2Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 chd:ArmandProductsCompanyMember 2023-01-01 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember 2022-01-01 2022-06-30 0000313927 us-gaap:PatentsMember 2023-06-30 0000313927 us-gaap:SoftwareDevelopmentMember 2023-06-30 0000313927 chd:ZicamAcquisitionMember chd:ConsumerInternationalMember 2022-12-31 0000313927 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2022-06-30 0000313927 us-gaap:CommonStockMember 2022-03-31 0000313927 chd:ArmandProductsCompanyAndArmaKleenCompanyMember 2023-01-01 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember 2023-04-01 2023-06-30 0000313927 chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2023-06-30 0000313927 chd:TherabreathMember 2023-06-30 0000313927 chd:TheraBreathAcquisitionMember chd:ConsumerInternationalMember 2023-01-01 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-01-01 2022-03-31 0000313927 us-gaap:CustomerRelationshipsMember 2023-06-30 0000313927 2022-04-01 2022-06-30 0000313927 chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2023-01-01 2023-06-30 0000313927 2023-01-01 2023-03-31 0000313927 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 2021-12-31 0000313927 us-gaap:RestrictedStockUnitsRSUMember 2022-10-01 2022-10-01 0000313927 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2021-12-31 0000313927 chd:ArmandProductsCompanyMember 2022-06-30 0000313927 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2022-01-01 2022-06-30 0000313927 srt:MinimumMember chd:TheraBreathAcquisitionMember 2023-01-01 2023-06-30 0000313927 us-gaap:OtherCapitalizedPropertyPlantAndEquipmentMember 2022-12-31 0000313927 us-gaap:AccumulatedTranslationAdjustmentMember 2023-01-01 2023-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 us-gaap:RetainedEarningsMember 2023-01-01 2023-03-31 0000313927 us-gaap:LandMember 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-01-01 2023-03-31 0000313927 2022-01-01 2022-03-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2022-03-31 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember 2022-12-31 0000313927 chd:ConsumerDomesticMember chd:ZicamAcquisitionMember 2022-12-31 0000313927 us-gaap:MachineryAndEquipmentMember 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:HouseholdProductsMember chd:ConsumerDomesticMember 2022-04-01 2022-06-30 0000313927 us-gaap:CommonStockMember 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-03-31 0000313927 us-gaap:OperatingSegmentsMember 2022-04-01 2022-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2023-06-30 0000313927 us-gaap:CommonStockMember 2021-12-31 0000313927 chd:WaterpikMember 2022-10-01 2022-10-01 0000313927 us-gaap:NondesignatedMember us-gaap:ForeignExchangeContractMember 2022-12-31 0000313927 chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2022-01-01 2022-12-31 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember chd:PersonalCareProductsMember 2023-04-01 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-06-30 0000313927 us-gaap:RetainedEarningsMember 2023-06-30 0000313927 chd:TheraBreathAcquisitionMember chd:SpecialtyProductsDivisionMember 2023-01-01 2023-06-30 0000313927 2023-06-30 0000313927 us-gaap:EnergyRelatedDerivativeMember us-gaap:DesignatedAsHedgingInstrumentMember 2023-06-30 0000313927 chd:FivePointZeroZeroPercentageNotesDueJuneFifteenTwoThousandFiftyTwoMember 2023-01-01 2023-06-30 0000313927 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2023-01-01 2023-06-30 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember chd:TermLoanDueInDecemberTwentyTwoTwoThousandAndTwentyFourMember 2022-12-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2022-04-01 2022-06-30 0000313927 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 2022-01-01 2022-06-30 0000313927 2022-01-01 2022-12-31 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember us-gaap:EstimateOfFairValueFairValueDisclosureMember 2022-12-31 0000313927 us-gaap:RetainedEarningsMember 2022-06-30 0000313927 us-gaap:RestrictedStockUnitsRSUMember 2023-01-01 2023-06-30 0000313927 chd:ArmaKleenCompanyMember 2022-01-01 2022-06-30 0000313927 srt:MaximumMember chd:ZicamAcquisitionMember 2020-11-29 2020-12-01 0000313927 2023-04-01 2023-06-30 0000313927 us-gaap:OtherCapitalizedPropertyPlantAndEquipmentMember 2023-06-30 0000313927 us-gaap:CustomerRelationshipsMember srt:MaximumMember 2022-12-31 0000313927 srt:MaximumMember 2019-05-01 2019-05-01 0000313927 chd:ZicamAcquisitionMember chd:SpecialtyProductsDivisionMember 2022-12-31 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2022-12-31 0000313927 us-gaap:RestrictedStockUnitsRSUMember 2023-06-30 0000313927 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 2022-12-31 0000313927 srt:MaximumMember 2023-06-30 0000313927 us-gaap:NondesignatedMember us-gaap:ForeignExchangeContractMember 2023-06-30 0000313927 chd:TermLoanDueInDecemberTwentyTwoTwoThousandAndTwentyFourMember 2022-12-31 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2022-12-31 0000313927 chd:ArmandProductsCompanyAndArmaKleenCompanyMember 2022-01-01 2022-03-31 0000313927 us-gaap:TradeNamesMember 2022-12-31 0000313927 chd:ShareRepurchaseProgramMember 2023-01-01 2023-06-30 0000313927 chd:ArmandProductsCompanyAndArmaKleenCompanyMember 2022-01-01 2022-06-30 0000313927 chd:ZicamAcquisitionMember 2023-01-01 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-12-31 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember 2023-06-30 0000313927 us-gaap:IntersegmentEliminationMember 2023-01-01 2023-03-31 0000313927 us-gaap:ConstructionInProgressMember 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember 2023-01-01 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:HouseholdProductsMember chd:ConsumerDomesticMember 2023-01-01 2023-06-30 0000313927 us-gaap:FairValueInputsLevel1Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember us-gaap:FairValueInputsLevel2Member 2022-12-31 0000313927 chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2023-06-30 0000313927 us-gaap:EquityContractMember us-gaap:NondesignatedMember 2023-06-30 0000313927 2021-10-28 0000313927 chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2023-01-01 2023-06-30 0000313927 us-gaap:TreasuryStockCommonMember 2022-06-30 0000313927 srt:MinimumMember us-gaap:PatentsMember 2022-12-31 0000313927 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2022-12-31 0000313927 us-gaap:AccumulatedTranslationAdjustmentMember 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerInternationalMember 2023-01-01 2023-06-30 0000313927 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 2023-06-30 0000313927 chd:HeroAcquisitionMember 2023-01-01 2023-06-30 0000313927 us-gaap:CustomerRelationshipsMember 2022-01-01 2022-12-31 0000313927 chd:FivePointZeroZeroPercentageNotesDueJuneFifteenTwoThousandFiftyTwoMember 2022-01-01 2022-12-31 0000313927 chd:PerformanceStockUnitsPsusMember 2023-06-30 0000313927 chd:FivePointZeroZeroPercentSeniorNotesDueJuneFifteenTwoThousandFiftyTwoMember 2022-12-31 0000313927 us-gaap:BuildingAndBuildingImprovementsMember 2023-06-30 0000313927 chd:FivePointSixPercentSeniorNotesDueNovember152032Member 2022-12-31 0000313927 chd:ArmaKleenCompanyMember 2022-06-30 0000313927 us-gaap:FairValueInputsLevel2Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 us-gaap:CommonStockMember 2022-12-31 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2023-04-01 2023-06-30 0000313927 chd:ArmaKleenCompanyMember 2022-06-30 0000313927 us-gaap:CommonStockMember 2022-06-30 0000313927 us-gaap:AccumulatedGainLossNetCashFlowHedgeParentMember 2023-06-30 0000313927 chd:ArmandProductsCompanyMember 2022-01-01 2022-06-30 0000313927 2022-06-30 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2023-06-30 0000313927 srt:MaximumMember us-gaap:TradeNamesMember 2022-12-31 0000313927 us-gaap:EnergyRelatedDerivativeMember us-gaap:DesignatedAsHedgingInstrumentMember 2022-12-31 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointNineFivePercentSeniorNotesDueAugustOneTwoThousandAndFortySevenMember 2023-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:FivePointSixPercentSeniorNotesDueNovember152032Member 2022-12-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember 2023-01-01 2023-06-30 0000313927 chd:FivePointSixPercentSeniorNotesDueNovember152032Member us-gaap:CarryingReportedAmountFairValueDisclosureMember 2023-06-30 0000313927 srt:MaximumMember us-gaap:PatentsMember 2022-12-31 0000313927 us-gaap:RetainedEarningsMember 2023-03-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember us-gaap:CarryingReportedAmountFairValueDisclosureMember 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:HouseholdProductsMember chd:ConsumerDomesticMember 2023-04-01 2023-06-30 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember chd:TermLoanDueInDecemberTwentyTwoTwoThousandAndTwentyFourMember 2023-06-30 0000313927 2022-03-31 0000313927 us-gaap:TreasuryStockCommonMember 2023-03-31 0000313927 us-gaap:FairValueInputsLevel2Member chd:FivePointSixPercentSeniorNotesDueNovember152032Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:TermLoanDueInDecemberTwentyTwoTwoThousandAndTwentyFourMember us-gaap:EstimateOfFairValueFairValueDisclosureMember 2023-06-30 0000313927 chd:ZicamAcquisitionMember chd:SpecialtyProductsDivisionMember 2023-06-30 0000313927 us-gaap:AdditionalPaidInCapitalMember 2021-12-31 0000313927 us-gaap:TreasuryStockCommonMember 2023-06-30 0000313927 chd:ConsumerDomesticMember chd:ZicamAcquisitionMember 2023-06-30 0000313927 us-gaap:EquityContractMember us-gaap:NondesignatedMember 2022-12-31 0000313927 chd:FivePointSixPercentSeniorNotesDueNovember152032Member 2022-01-01 2022-12-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2023-03-31 0000313927 us-gaap:FairValueInputsLevel1Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2022-12-31 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-04-01 2022-06-30 0000313927 chd:TherabreathMember 2022-06-30 0000313927 us-gaap:FairValueInputsLevel2Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2022-12-31 0000313927 chd:ConsumerDomesticMember chd:TheraBreathAcquisitionMember 2023-01-01 2023-06-30 0000313927 us-gaap:IntersegmentEliminationMember 2022-01-01 2022-03-31 0000313927 us-gaap:CorporateNonSegmentMember 2023-01-01 2023-06-30 0000313927 us-gaap:RetainedEarningsMember 2023-04-01 2023-06-30 0000313927 us-gaap:MachineryAndEquipmentMember 2022-12-31 0000313927 chd:FivePointZeroZeroPercentageNotesDueJuneFifteenTwoThousandFiftyTwoMember 2022-12-31 0000313927 us-gaap:NonUsMember chd:TrojanTradeNameMember 2023-01-01 2023-06-30 0000313927 us-gaap:AccumulatedTranslationAdjustmentMember 2021-12-31 0000313927 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:CommodityContractMember 2023-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember us-gaap:EstimateOfFairValueFairValueDisclosureMember 2022-12-31 0000313927 chd:ArmandProductsCompanyMember 2022-06-30 0000313927 2023-07-26 0000313927 chd:TheraBreathAcquisitionMember 2023-01-01 2023-06-30 0000313927 us-gaap:CustomerRelationshipsMember srt:MinimumMember 2022-12-31 0000313927 us-gaap:DesignatedAsHedgingInstrumentMember us-gaap:ForeignExchangeContractMember 2023-06-30 0000313927 us-gaap:TreasuryStockCommonMember 2022-03-31 0000313927 us-gaap:TradeNamesMember 2022-01-01 2022-12-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember us-gaap:FairValueInputsLevel2Member us-gaap:EstimateOfFairValueFairValueDisclosureMember 2022-12-31 0000313927 chd:TheraBreathAcquisitionMember 2023-06-30 0000313927 us-gaap:LandMember 2022-12-31 0000313927 us-gaap:RetainedEarningsMember 2022-12-31 0000313927 us-gaap:RetainedEarningsMember 2022-01-01 2022-03-31 0000313927 2023-01-01 2023-06-30 0000313927 us-gaap:TreasuryStockCommonMember 2023-04-01 2023-06-30 0000313927 chd:FivePointSixPercentSeniorNotesDueNovember152032Member 2023-06-30 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerInternationalMember 2022-04-01 2022-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember chd:PersonalCareProductsMember 2023-01-01 2023-06-30 0000313927 chd:ArmandProductsCompanyMember 2023-06-30 0000313927 us-gaap:PatentsMember 2022-01-01 2022-12-31 0000313927 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 2023-01-01 2023-06-30 0000313927 chd:ArmaKleenCompanyMember 2023-06-30 0000313927 chd:PerformanceStockUnitsPsusMember srt:MaximumMember 2023-06-30 0000313927 chd:FivePointZeroZeroPercentSeniorNotesDueJuneFifteenTwoThousandFiftyTwoMember us-gaap:FairValueInputsLevel2Member 2023-06-30 0000313927 us-gaap:CorporateNonSegmentMember 2022-04-01 2022-06-30 0000313927 us-gaap:TreasuryStockCommonMember 2021-12-31 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember 2022-04-01 2022-06-30 0000313927 chd:ZicamAcquisitionMember 2022-12-31 0000313927 us-gaap:CommonStockMember 2022-04-01 2022-06-30 0000313927 us-gaap:RetainedEarningsMember 2021-12-31 0000313927 chd:TwoPointsThreePercentSeniorNotesDueDecemberFifteenTwoThousandAndThirtyOneMember us-gaap:FairValueInputsLevel2Member 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember 2023-01-01 2023-06-30 0000313927 chd:PerformanceStockUnitsPsusMember 2023-01-01 2023-06-30 0000313927 2022-01-01 2022-06-30 0000313927 chd:FivePointZeroZeroPercentSeniorNotesDueJuneFifteenTwoThousandFiftyTwoMember us-gaap:FairValueInputsLevel2Member 2022-12-31 0000313927 us-gaap:OperatingSegmentsMember chd:ConsumerDomesticMember chd:PersonalCareProductsMember 2022-01-01 2022-06-30 0000313927 chd:TrojanTradeNameMember 2023-01-01 2023-06-30 0000313927 chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2022-01-01 2022-12-31 0000313927 chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2022-12-31 0000313927 us-gaap:AccumulatedTranslationAdjustmentMember 2022-12-31 0000313927 us-gaap:RestrictedStockUnitsRSUMember 2022-10-01 0000313927 us-gaap:CarryingReportedAmountFairValueDisclosureMember chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2022-12-31 0000313927 us-gaap:CustomerRelationshipsMember 2022-12-31 0000313927 us-gaap:CommonStockMember 2023-03-31 0000313927 chd:ArmaKleenCompanyMember 2023-01-01 2023-06-30 0000313927 us-gaap:TreasuryStockCommonMember 2022-01-01 2022-03-31 0000313927 us-gaap:AdditionalPaidInCapitalMember 2023-06-30 0000313927 us-gaap:CorporateNonSegmentMember 2022-01-01 2022-06-30 0000313927 chd:FivePointZeroZeroPercentageNotesDueJuneFifteenTwoThousandFiftyTwoMember 2023-06-30 0000313927 srt:MinimumMember us-gaap:TradeNamesMember 2022-12-31 0000313927 us-gaap:OperatingSegmentsMember chd:SpecialtyProductsDivisionMember 2022-04-01 2022-06-30 0000313927 us-gaap:SoftwareDevelopmentMember 2022-12-31 0000313927 chd:FivePointSixPercentSeniorNotesDueNovember152032Member us-gaap:CarryingReportedAmountFairValueDisclosureMember 2022-12-31 0000313927 chd:TermLoanDueInDecemberTwentyTwoTwoThousandAndTwentyFourMember 2023-06-30 0000313927 us-gaap:OperatingSegmentsMember 2023-04-01 2023-06-30 0000313927 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 2022-06-30 0000313927 us-gaap:FairValueInputsLevel2Member chd:ThreePointOneFivePercentSeniorNotesDueAugustOneTwoThousandAndTwentySevenMember 2022-12-31 0000313927 chd:TrojanTradeNameMember 2023-06-30 0000313927 us-gaap:CommonStockMember 2023-04-01 2023-06-30 0000313927 us-gaap:AccumulatedOtherComprehensiveIncomeMember 2022-06-30 0000313927 us-gaap:CommonStockMember 2023-01-01 2023-03-31 0000313927 us-gaap:ConstructionInProgressMember 2022-12-31 iso4217:USD xbrli:shares xbrli:pure utr:lb xbrli:shares chd:Tons iso4217:USD chd:Segment utr:gal 
+     
+   UNITED STATES   
+   SECURITIES AND EXCHANGE COMMISSION   
+   Washington, D.C. 20549   
+     
+   FORM  10-Q   
+     
+   (MARK ONE) 
+   
+    
+     
+     
+    
+    
+     ☒ 
+     QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+    
+   
+     
+   For the quarter ended  June 30,  2023 
+   OR 
+     
+   
+    
+     
+     
+    
+    
+     ☐ 
+     TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+    
+   
+   c 
+   For the transition period from                        to                         
+   Commission file number  1-10585 
+     
+     
+   CHURCH & DWIGHT CO., INC. 
+   (Exact name of registrant as specified in its charter)   
+     
+     
+   
+    
+     
+     
+     
+    
+    
+     Delaware 
+       
+     13-4996950 
+    
+    
+     (State or other jurisdiction of incorporation or organization) 
+       
+     (I.R.S. Employer Identification No.) 
+    
+   
+   500 Charles Ewing Boulevard ,  Ewing ,  NJ   08628   
+   (Address of principal executive offices)   
+   Registrant’s telephone number, including area code: ( 609 )  806-1200   
+     
+   
+    
+     
+    
+    
+       
+    
+   
+   Securities registered pursuant to Section 12(b) of the Act:   
+   
+    
+     
+     
+     
+     
+    
+    
+     Title of each class 
+       
+     Trading Symbol(s) 
+     Name of each exchange on which registered 
+    
+    
+     Common Stock, $1 par value 
+       
+     CHD 
+     New York Stock Exchange 
+    
+   
+   Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding twelve months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes   ☒    No  ☐   
+   Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§ 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes   ☒    No  ☐   
+   Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer”, “smaller reporting company” and “emerging growth company” in Rule 12b-2 of the Exchange Act.   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+    
+    
+     Large accelerated filer 
+       
+     ☒ 
+        
+     Accelerated filer 
+       
+     ☐ 
+    
+    
+     Non-accelerated filer 
+       
+     ☐ 
+        
+     Smaller reporting company 
+       
+     ☐ 
+    
+    
+     Emerging growth company 
+       
+     ☐ 
+       
+       
+       
+       
+    
+   
+   If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. ☐    
+   Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes   ☐     No   ☒ 
+   As of July 26, 2023, there were  246,046,990  shares of Common Stock outstanding.   
+     
+     
+   
+     
+   TABLE OF CONTENTS 
+   PART I   
+     
+   
+    
+     
+     
+     
+     
+     
+    
+    
+     Item 
+       
+       
+       
+     Page 
+    
+    
+     1. 
+       
+     Financial Statements 
+       
+     3 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     2. 
+       
+     Management’s Discussion and Analysis of Financial Condition and Results of Operations 
+       
+     22 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     3. 
+       
+     Quantitative and Qualitative Disclosures about Market Risk 
+       
+     29 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     4. 
+       
+     Controls and Procedures 
+       
+     29 
+    
+   
+   PART II 
+     
+   
+    
+     
+     
+     
+     
+     
+    
+    
+     1. 
+       
+     Legal Proceedings 
+       
+       30 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     1A. 
+       
+     Risk Factors 
+       
+     31 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     2. 
+       
+     Unregistered Sales of Equity Securities and Use of Proceeds 
+       
+     31 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     5. 
+       
+     Other Information   
+       
+     31 
+    
+    
+       
+       
+       
+       
+       
+    
+    
+     6. 
+       
+     Exhibits 
+       
+     32 
+    
+    
+       
+       
+       
+       
+       
+    
+   
+     
+     
+     
+   2 
+   
+     
+     
+   PART I – FINANCIAL INFORMATION   
+   ITEM 1:  FINANCIAL STATEMENTS   
+   CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES   
+   CONDENSED CONSOLIDATED STATEMENTS OF INCOME   
+   (Unaudited)   
+   (In millions, except per share data)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+     Three Months Ended 
+       
+       
+     Six Months Ended 
+       
+       
+    
+    
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+       
+    
+    
+       
+     2023 
+       
+       
+     2022 
+       
+       
+     2023 
+       
+       
+     2022 
+       
+       
+    
+    
+     Net Sales 
+     $ 
+     1,454.2 
+       
+       
+     $ 
+     1,325.1 
+       
+       
+     $ 
+     2,884.0 
+       
+       
+     $ 
+     2,622.3 
+       
+       
+    
+    
+     Cost of sales 
+       
+     815.3 
+       
+       
+       
+     779.8 
+       
+       
+       
+     1,623.1 
+       
+       
+       
+     1,524.5 
+       
+       
+    
+    
+     Gross Profit 
+       
+     638.9 
+       
+       
+       
+     545.3 
+       
+       
+       
+     1,260.9 
+       
+       
+       
+     1,097.8 
+       
+       
+    
+    
+     Marketing expenses 
+       
+     132.2 
+       
+       
+       
+     102.9 
+       
+       
+       
+     254.5 
+       
+       
+       
+     204.8 
+       
+       
+    
+    
+     Selling, general and administrative expenses 
+       
+     213.1 
+       
+       
+       
+     180.8 
+       
+       
+       
+     420.9 
+       
+       
+       
+     350.7 
+       
+       
+    
+    
+     Income from Operations 
+       
+     293.6 
+       
+       
+       
+     261.6 
+       
+       
+       
+     585.5 
+       
+       
+       
+     542.3 
+       
+       
+    
+    
+     Equity in earnings of affiliates 
+       
+     2.0 
+       
+       
+       
+     3.9 
+       
+       
+       
+     6.4 
+       
+       
+       
+     6.3 
+       
+       
+    
+    
+     Other income (expense), net 
+       
+     1.7 
+       
+       
+       
+     0.3 
+       
+       
+       
+     3.0 
+       
+       
+     0.0 
+       
+       
+    
+    
+     Interest expense 
+       
+     ( 27.9 
+     ) 
+       
+       
+     ( 19.3 
+     ) 
+       
+       
+     ( 56.7 
+     ) 
+       
+       
+     ( 35.9 
+     ) 
+       
+    
+    
+     Income before Income Taxes 
+       
+     269.4 
+       
+       
+       
+     246.5 
+       
+       
+       
+     538.2 
+       
+       
+       
+     512.7 
+       
+       
+    
+    
+     Income taxes 
+       
+     48.2 
+       
+       
+       
+     59.4 
+       
+       
+       
+     113.8 
+       
+       
+       
+     121.2 
+       
+       
+    
+    
+     Net Income 
+     $ 
+     221.2 
+       
+       
+     $ 
+     187.1 
+       
+       
+     $ 
+     424.4 
+       
+       
+     $ 
+     391.5 
+       
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Weighted average shares outstanding - Basic 
+       
+     245.0 
+       
+       
+       
+     242.6 
+       
+       
+       
+     244.4 
+       
+       
+       
+     242.6 
+       
+       
+    
+    
+     Weighted average shares outstanding - Diluted 
+       
+     247.9 
+       
+       
+       
+     246.4 
+       
+       
+       
+     247.4 
+       
+       
+       
+     246.5 
+       
+       
+    
+    
+     Net income per share - Basic 
+     $ 
+     0.90 
+       
+       
+     $ 
+     0.77 
+       
+       
+     $ 
+     1.74 
+       
+       
+     $ 
+     1.61 
+       
+       
+    
+    
+     Net income per share - Diluted 
+     $ 
+     0.89 
+       
+       
+     $ 
+     0.76 
+       
+       
+     $ 
+     1.72 
+       
+       
+     $ 
+     1.59 
+       
+       
+    
+    
+     Cash dividends per share 
+     $ 
+     0.27 
+       
+       
+     $ 
+     0.26 
+       
+       
+     $ 
+     0.54 
+       
+       
+     $ 
+     0.53 
+       
+       
+    
+   
+   CONDENSED CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME   
+   (Unaudited)   
+   (In millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+     Three Months Ended 
+       
+       
+     Six Months Ended 
+       
+       
+    
+    
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+       
+    
+    
+       
+     2023 
+       
+       
+     2022 
+       
+       
+     2023 
+       
+       
+     2022 
+       
+       
+    
+    
+     Net Income 
+     $ 
+     221.2 
+       
+       
+     $ 
+     187.1 
+       
+       
+     $ 
+     424.4 
+       
+       
+     $ 
+     391.5 
+       
+       
+    
+    
+     Other comprehensive income, net of tax: 
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+     Foreign exchange translation adjustments 
+       
+     3.3 
+       
+       
+       
+     ( 12.3 
+     ) 
+       
+       
+     5.7 
+       
+       
+       
+     ( 14.5 
+     ) 
+       
+    
+    
+     Defined benefit plan adjustments gain 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     1.5 
+       
+       
+       
+     1.9 
+       
+       
+    
+    
+     Income (loss) from derivative agreements 
+       
+     ( 4.9 
+     ) 
+       
+       
+     18.4 
+       
+       
+       
+     ( 5.7 
+     ) 
+       
+       
+     33.7 
+       
+       
+    
+    
+     Other comprehensive (loss) income 
+       
+     ( 1.6 
+     ) 
+       
+       
+     6.1 
+       
+       
+       
+     1.5 
+       
+       
+       
+     21.1 
+       
+       
+    
+    
+     Comprehensive income 
+     $ 
+     219.6 
+       
+       
+     $ 
+     193.2 
+       
+       
+     $ 
+     425.9 
+       
+       
+     $ 
+     412.6 
+       
+       
+    
+   
+     
+   See Notes to Condensed Consolidated Financial Statements (Unaudited).   
+     
+     
+     
+   3 
+   
+     
+   CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES   
+   CONDENSED CONSOLIDATED BALANCE SHEETS   
+   (Unaudited)   
+   (In millions, except share and per share data)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+     June 30, 
+       
+       
+     December 31, 
+       
+    
+    
+       
+     2023 
+       
+       
+     2022 
+       
+    
+    
+     Assets 
+       
+       
+       
+       
+       
+    
+    
+     Current Assets 
+       
+       
+       
+       
+       
+    
+    
+     Cash and cash equivalents 
+     $ 
+     396.9 
+       
+       
+     $ 
+     270.3 
+       
+    
+    
+     Accounts receivable, less allowances of $ 3.5  and $ 3.5 
+       
+     460.9 
+       
+       
+       
+     422.0 
+       
+    
+    
+     Inventories 
+       
+     675.4 
+       
+       
+       
+     646.6 
+       
+    
+    
+     Other current assets 
+       
+     43.2 
+       
+       
+       
+     57.0 
+       
+    
+    
+     Total Current Assets 
+       
+     1,576.4 
+       
+       
+       
+     1,395.9 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+    
+    
+     Property, Plant and Equipment, Net 
+       
+     802.4 
+       
+       
+       
+     761.1 
+       
+    
+    
+     Equity Investment in Affiliates 
+       
+     14.7 
+       
+       
+       
+     12.7 
+       
+    
+    
+     Trade Names and Other Intangibles, Net 
+       
+     3,369.8 
+       
+       
+       
+     3,431.6 
+       
+    
+    
+     Goodwill 
+       
+     2,430.3 
+       
+       
+       
+     2,426.8 
+       
+    
+    
+     Other Assets 
+       
+     317.4 
+       
+       
+       
+     317.5 
+       
+    
+    
+     Total Assets 
+     $ 
+     8,511.0 
+       
+       
+     $ 
+     8,345.6 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+    
+    
+     Liabilities and Stockholders' Equity 
+       
+       
+       
+       
+       
+    
+    
+     Current Liabilities 
+       
+       
+       
+       
+       
+    
+    
+     Short-term borrowings 
+     $ 
+     4.0 
+       
+       
+     $ 
+     74.0 
+       
+    
+    
+     Accounts payable 
+       
+     677.7 
+       
+       
+       
+     666.7 
+       
+    
+    
+     Accrued expenses and other liabilities 
+       
+     432.4 
+       
+       
+       
+     436.1 
+       
+    
+    
+     Income taxes payable 
+       
+     7.7 
+       
+       
+       
+     7.0 
+       
+    
+    
+     Total Current Liabilities 
+       
+     1,121.8 
+       
+       
+       
+     1,183.8 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+    
+    
+     Long-term Debt 
+       
+     2,400.9 
+       
+       
+       
+     2,599.5 
+       
+    
+    
+     Deferred Income Taxes 
+       
+     754.0 
+       
+       
+       
+     757.0 
+       
+    
+    
+     Deferred and Other Long-term Liabilities 
+       
+     281.3 
+       
+       
+       
+     273.4 
+       
+    
+    
+     Business Acquisition Liabilities 
+       
+     42.0 
+       
+       
+       
+     42.0 
+       
+    
+    
+     Total Liabilities 
+       
+     4,600.0 
+       
+       
+       
+     4,855.7 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+    
+    
+     Commitments and Contingencies 
+       
+       
+       
+       
+       
+    
+    
+     Stockholders' Equity 
+       
+       
+       
+       
+       
+    
+    
+     Preferred Stock, $ 1.00  par value, Authorized  2,500,000  shares;  none  issued 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+    
+    
+     Common Stock, $ 1.00  par value, Authorized  600,000,000  shares and  293,709,982  shares issued        as of June 30, 2023 and December 31, 2022 
+       
+     293.7 
+       
+       
+       
+     293.7 
+       
+    
+    
+     Additional paid-in capital 
+       
+     422.6 
+       
+       
+       
+     366.2 
+       
+    
+    
+     Retained earnings 
+       
+     5,815.3 
+       
+       
+       
+     5,524.6 
+       
+    
+    
+     Accumulated other comprehensive loss 
+       
+     ( 27.8 
+     ) 
+       
+       
+     ( 29.3 
+     ) 
+    
+    
+     Common stock in treasury, at cost:  47,710,884  shares as of June 30, 2023 and  49,814,106  shares as of December 31, 2022 
+       
+     ( 2,592.8 
+     ) 
+       
+       
+     ( 2,665.3 
+     ) 
+    
+    
+     Total Stockholders' Equity 
+       
+     3,911.0 
+       
+       
+       
+     3,489.9 
+       
+    
+    
+     Total Liabilities and Stockholders' Equity 
+     $ 
+     8,511.0 
+       
+       
+     $ 
+     8,345.6 
+       
+    
+   
+     
+   See Notes to Condensed Consolidated Financial Statements (Unaudited). 
+     
+     
+   4 
+   
+     
+   CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES   
+   CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOW   
+   (Unaudited)   
+   (In millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+     Six Months Ended 
+       
+    
+    
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+    
+    
+       
+     2023 
+       
+       
+     2022 
+       
+    
+    
+     Cash Flow From Operating Activities 
+       
+       
+       
+       
+       
+    
+    
+     Net Income 
+     $ 
+     424.4 
+       
+       
+     $ 
+     391.5 
+       
+    
+    
+     Adjustments to reconcile net income to net cash provided by operating activities: 
+       
+       
+       
+       
+       
+    
+    
+     Depreciation expense 
+       
+     34.6 
+       
+       
+       
+     33.4 
+       
+    
+    
+     Amortization expense 
+       
+     76.1 
+       
+       
+       
+     73.9 
+       
+    
+    
+     Deferred income taxes 
+       
+     ( 1.9 
+     ) 
+       
+       
+     2.4 
+       
+    
+    
+     Equity in net earnings of affiliates 
+       
+     ( 6.4 
+     ) 
+       
+       
+     ( 6.3 
+     ) 
+    
+    
+     Distributions from unconsolidated affiliates 
+       
+     4.4 
+       
+       
+       
+     3.2 
+       
+    
+    
+     Non-cash compensation expense 
+       
+     39.5 
+       
+       
+       
+     17.9 
+       
+    
+    
+     Other 
+       
+     0.2 
+       
+       
+       
+     ( 3.3 
+     ) 
+    
+    
+     Change in assets and liabilities: 
+       
+       
+       
+       
+       
+    
+    
+     Accounts receivable 
+       
+     ( 32.4 
+     ) 
+       
+       
+     ( 7.5 
+     ) 
+    
+    
+     Inventories 
+       
+     ( 24.3 
+     ) 
+       
+       
+     ( 133.0 
+     ) 
+    
+    
+     Other current assets 
+       
+     8.8 
+       
+       
+       
+     10.0 
+       
+    
+    
+     Accounts payable, accrued and other liabilities 
+       
+     ( 17.1 
+     ) 
+       
+       
+     ( 62.1 
+     ) 
+    
+    
+     Income taxes payable 
+       
+     6.6 
+       
+       
+       
+     2.0 
+       
+    
+    
+     Other operating assets and liabilities, net 
+       
+     ( 3.3 
+     ) 
+       
+       
+     ( 11.7 
+     ) 
+    
+    
+     Net Cash Provided By Operating Activities 
+       
+     509.2 
+       
+       
+       
+     310.4 
+       
+    
+    
+     Cash Flow From Investing Activities 
+       
+       
+       
+       
+       
+    
+    
+     Additions to property, plant and equipment 
+       
+     ( 63.2 
+     ) 
+       
+       
+     ( 38.8 
+     ) 
+    
+    
+     Other 
+       
+     ( 6.0 
+     ) 
+       
+       
+     ( 1.0 
+     ) 
+    
+    
+     Net Cash Used In Investing Activities 
+       
+     ( 69.2 
+     ) 
+       
+       
+     ( 39.8 
+     ) 
+    
+    
+     Cash Flow From Financing Activities 
+       
+       
+       
+       
+       
+    
+    
+     Long-term debt borrowings 
+       
+     0.0 
+       
+       
+       
+     499.8 
+       
+    
+    
+     Long-term debt (repayments) 
+       
+     ( 200.0 
+     ) 
+       
+       
+     0.0 
+       
+    
+    
+     Short-term debt (repayments), net of borrowings 
+       
+     ( 70.6 
+     ) 
+       
+       
+     ( 249.5 
+     ) 
+    
+    
+     Proceeds from stock options exercised 
+       
+     88.3 
+       
+       
+       
+     16.9 
+       
+    
+    
+     Payment of cash dividends 
+       
+     ( 133.0 
+     ) 
+       
+       
+     ( 127.4 
+     ) 
+    
+    
+     Deferred financing and other 
+       
+     ( 0.1 
+     ) 
+       
+       
+     ( 7.6 
+     ) 
+    
+    
+     Net Cash Provided By (Used In) Financing Activities 
+       
+     ( 315.4 
+     ) 
+       
+       
+     132.2 
+       
+    
+    
+     Effect of exchange rate changes on cash and cash equivalents 
+       
+     2.0 
+       
+       
+       
+     ( 3.7 
+     ) 
+    
+    
+     Net Change In Cash and Cash Equivalents 
+       
+     126.6 
+       
+       
+       
+     399.1 
+       
+    
+    
+     Cash and Cash Equivalents at Beginning of Period 
+       
+     270.3 
+       
+       
+       
+     240.6 
+       
+    
+    
+     Cash and Cash Equivalents at End of Period 
+     $ 
+     396.9 
+       
+       
+     $ 
+     639.7 
+       
+    
+   
+     
+   See Notes to Condensed Consolidated Financial Statements (Unaudited) . 
+     
+     
+   5 
+   
+     
+   CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES   
+   CONDENSED CONSOLIDATED STATEMENTS OF CASH FLOW-CONTINUED   
+   (Unaudited)   
+   (In millions)   
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+     Six Months Ended 
+       
+    
+    
+       
+     June 30, 
+       
+       
+     June 30, 
+       
+    
+    
+       
+     2023 
+       
+       
+     2022 
+       
+    
+    
+     Cash paid during the period for: 
+       
+       
+       
+       
+       
+    
+    
+     Interest (net of amounts capitalized) 
+     $ 
+     57.9 
+       
+       
+     $ 
+     32.4 
+       
+    
+    
+     Income taxes 
+     $ 
+     109.2 
+       
+       
+     $ 
+     117.6 
+       
+    
+    
+     Supplemental disclosure of non-cash investing activities: 
+       
+       
+       
+       
+       
+    
+    
+     Property, plant and equipment expenditures included in Accounts Payable 
+     $ 
+     25.4 
+       
+       
+     $ 
+     17.5 
+       
+    
+   
+     
+   See Notes to Condensed Consolidated Financial Statements (Unaudited).   
+     
+     
+     
+   6 
+   
+     
+   CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES 
+   CONDENSED CONSOLIDATED STATEMENTS OF STOCKHOLDERS’ EQUITY   
+    (Unaudited)   
+   (In millions)     
+     
+   
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+    
+    
+       
+     Number of Shares 
+       
+       
+     Amounts 
+       
+    
+    
+       
+     Common Stock 
+       
+       
+     Treasury Stock 
+       
+       
+     Common Stock 
+       
+       
+     Additional Paid-In Capital 
+       
+       
+     Retained Earnings 
+       
+       
+     Accumulated Other Comprehensive Income (Loss) 
+       
+       
+     Treasury Stock 
+       
+       
+     Total Stockholders' Equity 
+       
+    
+    
+     December 31, 2021 
+       
+     292.8 
+       
+       
+       
+     ( 50.3 
+     ) 
+       
+     $ 
+     292.8 
+       
+       
+     $ 
+     310.3 
+       
+       
+     $ 
+     5,366.0 
+       
+       
+     $ 
+     ( 68.2 
+     ) 
+       
+     $ 
+     ( 2,667.7 
+     ) 
+       
+     $ 
+     3,233.2 
+       
+    
+    
+     Net income 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     204.4 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     204.4 
+       
+    
+    
+     Other comprehensive    income (loss) 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     15.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     15.0 
+       
+    
+    
+     Cash dividends 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 63.7 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 63.7 
+     ) 
+    
+    
+     Stock purchases 
+       
+     0.0 
+       
+       
+       
+     ( 0.2 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     20.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 20.0 
+     ) 
+       
+       
+     0.0 
+       
+    
+    
+     Stock based compensation expense and      stock option plan transactions 
+       
+     0.0 
+       
+       
+       
+     0.3 
+       
+       
+       
+     0.0 
+       
+       
+       
+     3.9 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     10.1 
+       
+       
+       
+     14.0 
+       
+    
+    
+     March 31, 2022 
+       
+     292.8 
+       
+       
+       
+     ( 50.2 
+     ) 
+       
+     $ 
+     292.8 
+       
+       
+     $ 
+     334.2 
+       
+       
+     $ 
+     5,506.7 
+       
+       
+     $ 
+     ( 53.2 
+     ) 
+       
+     $ 
+     ( 2,677.6 
+     ) 
+       
+     $ 
+     3,402.9 
+       
+    
+    
+     Net income 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     187.1 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     187.1 
+       
+    
+    
+     Other comprehensive    income (loss) 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     6.1 
+       
+       
+       
+     0.0 
+       
+       
+       
+     6.1 
+       
+    
+    
+     Cash dividends 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 63.7 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 63.7 
+     ) 
+    
+    
+     Stock based compensation expense and      stock option plan transactions 
+       
+     0.0 
+       
+       
+       
+     0.2 
+       
+       
+       
+     0.0 
+       
+       
+       
+     15.9 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     6.1 
+       
+       
+       
+     22.0 
+       
+    
+    
+     June 30, 2022 
+       
+     292.8 
+       
+       
+       
+     ( 50.0 
+     ) 
+       
+     $ 
+     292.8 
+       
+       
+     $ 
+     350.1 
+       
+       
+     $ 
+     5,630.1 
+       
+       
+     $ 
+     ( 47.1 
+     ) 
+       
+     $ 
+     ( 2,671.5 
+     ) 
+       
+     $ 
+     3,554.4 
+       
+    
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    
+    
+       
+     Number of Shares 
+       
+       
+     Amounts 
+       
+    
+    
+       
+     Common Stock 
+       
+       
+     Treasury Stock 
+       
+       
+     Common Stock 
+       
+       
+     Additional Paid-In Capital 
+       
+       
+     Retained Earnings 
+       
+       
+     Accumulated Other Comprehensive Income (Loss) 
+       
+       
+     Treasury Stock 
+       
+       
+     Total Stockholders' Equity 
+       
+    
+    
+     December 31, 2022 
+       
+     293.7 
+       
+       
+       
+     ( 49.8 
+     ) 
+       
+     $ 
+     293.7 
+       
+       
+     $ 
+     366.2 
+       
+       
+     $ 
+     5,524.6 
+       
+       
+     $ 
+     ( 29.3 
+     ) 
+       
+     $ 
+     ( 2,665.3 
+     ) 
+       
+     $ 
+     3,489.9 
+       
+    
+    
+     Net income 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     203.2 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     203.2 
+       
+    
+    
+     Other comprehensive    income (loss) 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     3.1 
+       
+       
+       
+     0.0 
+       
+       
+       
+     3.1 
+       
+    
+    
+     Cash dividends 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 66.3 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 66.3 
+     ) 
+    
+    
+     Stock based compensation expense and      stock option plan transactions 
+       
+     0.0 
+       
+       
+       
+     0.3 
+       
+       
+       
+     0.0 
+       
+       
+       
+     27.8 
+       
+       
+       
+     ( 0.3 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     10.3 
+       
+       
+       
+     37.8 
+       
+    
+    
+     March 31, 2023 
+       
+     293.7 
+       
+       
+       
+     ( 49.5 
+     ) 
+       
+     $ 
+     293.7 
+       
+       
+     $ 
+     394.0 
+       
+       
+     $ 
+     5,661.2 
+       
+       
+     $ 
+     ( 26.2 
+     ) 
+       
+     $ 
+     ( 2,655.0 
+     ) 
+       
+     $ 
+     3,667.7 
+       
+    
+    
+     Net income 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     221.2 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     221.2 
+       
+    
+    
+     Other comprehensive    income (loss) 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 1.6 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     ( 1.6 
+     ) 
+    
+    
+     Cash dividends 
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 66.7 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     0.0 
+       
+       
+       
+     ( 66.7 
+     ) 
+    
+    
+     Stock based compensation expense and      stock option plan transactions 
+       
+     0.0 
+       
+       
+       
+     1.8 
+       
+       
+       
+     0.0 
+       
+       
+       
+     28.6 
+       
+       
+       
+     ( 0.4 
+     ) 
+       
+       
+     0.0 
+       
+       
+       
+     62.2 
+       
+       
+       
+     90.4 
+       
+    
+    
+     June 30, 2023 
+       
+     293.7 
+       
+       
+       
+     ( 47.7 
+     ) 
+       
+     $ 
+     293.7 
+       
+       
+     $ 
+     422.6 
+       
+       
+     $ 
+     5,815.3 
+       
+       
+     $ 
+     ( 27.8 
+     ) 
+       
+     $ 
+     ( 2,592.8 
+     ) 
+       
+     $ 
+     3,911.0 
+       
+    
+   
+     
+     
+   See Notes to Condensed Consolidated Financial Statements (Unaudited). 
+   7 
+   
+     
+   CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES 
+   NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS 
+   (Unaudited) 
+   (In millions, except per share data) 
+     
+   1. Basis of Presentation  These condensed consolidated financial statements have been prepared by Church & Dwight Co., Inc. (the “Company”).  In the opinion of management, all adjustments (which include only normal recurring adjustments) necessary to present fairly the financial position and results of operations and cash flows for all periods presented have been made.  Results of operations for interim periods may not be representative of results to be expected for the full year. Certain information and footnote disclosures normally included in financial statements prepared in accordance with generally accepted accounting principles (“GAAP”) in the United States have been condensed or omitted.  These condensed consolidated financial statements should be read in conjunction with the financial statements and notes thereto included in the Company’s Annual Report on Form 10-K for the year ended December 31, 2022 (the “Form 10-K”).       The Company incurred research and development expenses in the second quarter of 2023 and 2022  of $ 30.2  and $ 27.2 , respectively.   The Company incurred research and development expenses in the first six months of 2023 and 2022  of $ 56.9  and $ 51.7 , respectively.    These expenses are included in selling, general and administrative (“SG&A”) expenses. 
+   	 
+   2. New Accounting Pronouncements  Recently Adopted Accounting Pronouncements In September 2022, the FASB issued new accounting guidance intended to add certain qualitative and quantitative disclosure requirements for a buyer in a supplier finance program. The amendments require a buyer that uses supplier finance programs to make annual disclosures about the program’s key terms, the balance sheet presentation of related amounts, the confirmed amount outstanding at the end of the period, and associated rollforward information. Only the amount outstanding at the end of the period must be disclosed in interim periods. The amendments are effective for all entities for fiscal years beginning after December 15, 2022 on a retrospective basis, including interim periods within those fiscal years, except for the requirement to disclose rollforward information, which is effective prospectively for fiscal years beginning after December 15, 2023. The Company has adopted the standard which resulted in additional disclosures.  Refer to Note 13.    
+   There have been no other accounting pronouncements issued but not yet adopted by the Company which are expected to have a material impact on the Company’s consolidated financial position, results of operations or cash flows.    
+         
+   3. Inventories  Inventories consist of the following:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         June 30, 
+           
+           
+         December 31, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Raw materials and supplies 
+         $ 
+         150.0 
+           
+           
+         $ 
+         149.5 
+           
+        
+        
+         Work in process 
+           
+         41.8 
+           
+           
+           
+         46.8 
+           
+        
+        
+         Finished goods 
+           
+         483.6 
+           
+           
+           
+         450.3 
+           
+        
+        
+         Total 
+         $ 
+         675.4 
+           
+           
+         $ 
+         646.6 
+           
+        
+       
+     
+      
+     
+   8 
+   
+     
+   4. Property, Plant and Equipment, Net (“PP&E”)  PP&E consists of the following: 
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         June 30, 
+           
+           
+         December 31, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Land 
+         $ 
+         28.3 
+           
+           
+         $ 
+         28.1 
+           
+        
+        
+         Buildings and improvements 
+           
+         305.8 
+           
+           
+           
+         299.1 
+           
+        
+        
+         Machinery and equipment 
+           
+         879.9 
+           
+           
+           
+         856.5 
+           
+        
+        
+         Software 
+           
+         117.5 
+           
+           
+           
+         109.1 
+           
+        
+        
+         Office equipment and other assets 
+           
+         103.3 
+           
+           
+           
+         96.9 
+           
+        
+        
+         Construction in progress 
+           
+         240.7 
+           
+           
+           
+         211.5 
+           
+        
+        
+         Gross PP&E 
+           
+         1,675.5 
+           
+           
+           
+         1,601.2 
+           
+        
+        
+         Less accumulated depreciation and amortization 
+           
+         873.1 
+           
+           
+           
+         840.1 
+           
+        
+        
+         Net PP&E 
+         $ 
+         802.4 
+           
+           
+         $ 
+         761.1 
+           
+        
+         
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         Three Months Ended 
+           
+           
+         Six Months Ended 
+           
+        
+        
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Depreciation expense on PP&E 
+         $ 
+         17.7 
+           
+           
+         $ 
+         16.8 
+           
+           
+         $ 
+         34.6 
+           
+           
+         $ 
+         33.4 
+           
+        
+       
+     
+     
+   5. Earnings Per Share (“EPS”)  Basic EPS is calculated based on income available to holders of the Company’s common stock (“Common Stock”) and the weighted average number of shares outstanding during the reported period. Diluted EPS includes additional dilution from potential Common Stock issuable pursuant to the Company's stock-based compensation plans.   The following table sets forth a reconciliation of the weighted average number of shares of Common Stock outstanding to the weighted average number of shares outstanding on a diluted basis:     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         Three Months Ended 
+           
+           
+         Six Months Ended 
+           
+        
+        
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Weighted average common shares outstanding - basic 
+           
+         245.0 
+           
+           
+           
+         242.6 
+           
+           
+           
+         244.4 
+           
+           
+           
+         242.6 
+           
+        
+        
+         Dilutive effect of stock options 
+           
+         2.9 
+           
+           
+           
+         3.8 
+           
+           
+           
+         3.0 
+           
+           
+           
+         3.9 
+           
+        
+        
+         Weighted average common shares outstanding - diluted 
+           
+         247.9 
+           
+           
+           
+         246.4 
+           
+           
+           
+         247.4 
+           
+           
+           
+         246.5 
+           
+        
+        
+         Antidilutive stock options outstanding 
+           
+         2.5 
+           
+           
+           
+         3.0 
+           
+           
+           
+         3.9 
+           
+           
+           
+         2.9 
+           
+        
+       
+     
+   6. Stock Based Compensation Plans    In the first quarter of 2023, the Company updated its Long-Term Incentive Program (“LTIP”) to provide employees with an award of stock options and initial grants of restricted stock units (“RSUs”), and made an initial grant of performance share units ("PSUs") to members of the Company's Executive Leadership Team ("ELT").  In connection with this update, the awards, which were granted in the second quarter in previous years, were granted in the first quarter of 2023 and are expected to be granted in the first quarter in subsequent years.  The stock option terms remain unchanged and are summarized in more detail in the Stock Based Compensation footnote within the Company’s 2022 Form 10-K. The Company recognizes the grant-date fair value for each of these awards, less estimated forfeitures, as compensation expense ratably over the vesting period.   9 
+        Stock Options The following table provides a summary of option activity:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+           
+           
+           
+           
+           
+         Weighted 
+           
+           
+           
+           
+        
+        
+           
+           
+           
+           
+           
+           
+           
+         Average 
+           
+           
+           
+           
+        
+        
+           
+           
+           
+           
+         Weighted 
+           
+           
+         Remaining 
+           
+           
+           
+           
+        
+        
+           
+           
+           
+           
+         Average 
+           
+           
+         Contractual 
+           
+           
+         Aggregate 
+           
+        
+        
+           
+           
+           
+           
+         Exercise 
+           
+           
+         Term 
+           
+           
+         Intrinsic 
+           
+        
+        
+           
+         Options 
+           
+           
+         Price (per share) 
+           
+           
+         (in Years) 
+           
+           
+         Value 
+           
+        
+        
+         Outstanding at December 31, 2022 
+           
+         11.9 
+           
+           
+         $ 
+         62.64 
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Granted 
+           
+         1.0 
+           
+           
+           
+         83.55 
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Exercised 
+           
+         ( 2.1 
+         ) 
+           
+           
+         42.91 
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Cancelled 
+           
+         ( 0.2 
+         ) 
+           
+           
+         81.10 
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Outstanding at June 30, 2023 
+           
+         10.6 
+           
+           
+         $ 
+         68.16 
+           
+           
+           
+         6.2 
+           
+           
+         $ 
+         343.2 
+           
+        
+        
+         Exercisable at June 30, 2023 
+           
+         6.8 
+           
+           
+         $ 
+         58.74 
+           
+           
+           
+         4.8 
+           
+           
+         $ 
+         282.3 
+           
+        
+         The following table provides information regarding the intrinsic value of stock options exercised and stock compensation expense related to stock option awards:      
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         Three Months Ended 
+           
+           
+         Six Months Ended 
+           
+        
+        
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Intrinsic Value of Stock Options Exercised 
+         $ 
+         97.0 
+           
+           
+         $ 
+         9.5 
+           
+           
+         $ 
+         107.7 
+           
+           
+         $ 
+         26.3 
+           
+        
+        
+         Stock Compensation Expense Related to Stock Option Awards 
+         $ 
+         4.4 
+           
+           
+         $ 
+         14.7 
+           
+           
+         $ 
+         18.9 
+           
+           
+         $ 
+         17.5 
+           
+        
+        
+         Issued Stock Options 
+           
+         0.0 
+           
+           
+           
+         1.5 
+           
+           
+           
+         1.0 
+           
+           
+           
+         1.5 
+           
+        
+        
+         Weighted Average Fair Value of Stock Options issued (per share) 
+         $ 
+         0.0 
+           
+           
+         $ 
+         21.43 
+           
+           
+         $ 
+         24.03 
+           
+           
+         $ 
+         21.45 
+           
+        
+        
+         Fair Value of Stock Options Issued 
+         $ 
+         0.0 
+           
+           
+         $ 
+         31.3 
+           
+           
+         $ 
+         24.7 
+           
+           
+         $ 
+         31.6 
+           
+        
+         The following table provides a summary of the assumptions used in the valuation of issued stock options:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         Three Months Ended 
+           
+           
+         Six Months Ended 
+           
+        
+        
+           
+         June 30, 
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+           
+         June 30, 
+           
+        
+        
+           
+         2023 
+           
+         2022 
+           
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Risk-free interest rate 
+         N/A 
+           
+           
+         2.9 
+         % 
+           
+           
+         4.0 
+         % 
+           
+           
+         2.9 
+         % 
+        
+        
+         Expected life in years 
+         N/A 
+           
+           
+         7.1 
+           
+           
+           
+         7.3 
+           
+           
+           
+         7.1 
+           
+        
+        
+         Expected volatility 
+         N/A 
+           
+           
+         21.7 
+         % 
+           
+           
+         22.4 
+         % 
+           
+           
+         21.7 
+         % 
+        
+        
+         Dividend yield 
+         N/A 
+           
+           
+         1.2 
+         % 
+           
+           
+         1.3 
+         % 
+           
+           
+         1.2 
+         % 
+        
+         Restricted Stock Units   The Company updated its LTIP in the first quarter of 2023 to add RSUs to its annual employee compensation program. As a result of this update, the Company granted employees exactly  117,920  RSUs with a total fair value of $ 10.1  at a weighted average grant date fair value of $ 85.99  per RSU during the six months ended June 30, 2023.  The annual RSU grants vest one-third on each of the first, second and third anniversaries of the grant date, subject to the recipient’s continued employment with the Company from the grant date through the applicable vesting date, and are settled with shares of the Company’s Common Stock within 60 days following the applicable vesting date. Additionally, in connection with the Hero Acquisition (see Note 10), exactly  854,882  shares of restricted stock were issued in October 2022 with a total fair value of $ 61.5 .  The restricted stock will be recognized as compensation expense as the stock is subject to vesting requirements for individuals who received the restricted stock and will continue to be employed by the Company. The vesting requirements are satisfied at various dates over a  three-year  period from the date of the acquisition.    10 
+          Performance Stock Units      In the first quarter of 2023, the Company granted PSUs to members of the ELT including the CEO, with an aggregate award fair value equal to $ 2.2 .  Exactly  19,650  PSUs were issued at a weighted average grant date fair value equal to $ 110.95  per PSU using a Monte Carlo model. The performance target is based on the Company's total shareholder return ("TSR") relative to a Company selected peer group.  The PSUs vest on the later of (i) the third anniversary of the grant date, and (ii) the date that the Compensation & Human Capital Committee certifies the achievement of the applicable performance goals, in each case, subject to the recipient’s continued employment with the Company from the grant date through the vesting date. The number of shares that may be issued ranges from  0 % to  200 % based on relative TSR during the three-year performance period.  Vested PSUs will be settled into shares of the Company’s Common Stock, if at all, within 60 days following the vesting date.    
+     
+   7. Share Repurchases On October 28, 2021, the Board authorized a share repurchase program, under which the Company may repurchase up to $ 1,000.0  in shares of Common Stock (the “2021 Share Repurchase Program”).  The 2021 Share Repurchase Program does not have an expiration and replaced the 2017 Share Repurchase Program. The 2021 Share Repurchase Program did not modify the Company’s evergreen share repurchase program, authorized by the Board on January 29, 2014, under which the Company may repurchase, from time to time, Common Stock to reduce or eliminate dilution associated with issuances of Common Stock under its incentive plans.     As a result of the Company’s stock repurchases, there remains $ 729.7  of share repurchase availability under the 2021 Share Repurchase Program as of June 30, 2023 . 
+     
+   8. Fair Value Measurements  The following table presents the carrying amounts and estimated fair values of the Company’s other financial instruments at  June 30, 2023 and December 31, 2022:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+           
+         June 30, 2023 
+           
+           
+         December 31, 2022 
+           
+        
+        
+           
+         Input 
+           
+         Carrying 
+           
+           
+         Fair 
+           
+           
+         Carrying 
+           
+           
+         Fair 
+           
+        
+        
+           
+         Level 
+           
+         Amount 
+           
+           
+         Value 
+           
+           
+         Amount 
+           
+           
+         Value 
+           
+        
+        
+         Financial Assets: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Cash equivalents 
+         Level 1 
+           
+         $ 
+         256.0 
+           
+           
+         $ 
+         256.0 
+           
+           
+         $ 
+         153.9 
+           
+           
+         $ 
+         153.9 
+           
+        
+        
+         Financial Liabilities: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Short-term borrowings 
+         Level 2 
+           
+           
+         4.0 
+           
+           
+           
+         4.0 
+           
+           
+           
+         74.0 
+           
+           
+           
+         74.0 
+           
+        
+        
+         Term loan due December 22, 2024 
+         Level 2 
+           
+           
+         200.0 
+           
+           
+           
+         200.0 
+           
+           
+           
+         400.0 
+           
+           
+           
+         400.0 
+           
+        
+        
+         3.15 % Senior notes due August 1, 2027 
+         Level 2 
+           
+           
+         424.8 
+           
+           
+           
+         399.5 
+           
+           
+           
+         424.8 
+           
+           
+           
+         397.3 
+           
+        
+        
+         2.3 % Senior notes due December 15, 2031 
+         Level 2 
+           
+           
+         399.3 
+           
+           
+           
+         329.0 
+           
+           
+           
+         399.3 
+           
+           
+           
+         321.3 
+           
+        
+        
+         5.6 % Senior notes due November 15, 2032 
+         Level 2 
+           
+           
+         499.1 
+           
+           
+           
+         526.5 
+           
+           
+           
+         499.1 
+           
+           
+           
+         518.9 
+           
+        
+        
+         3.95 % Senior notes due August 1, 2047 
+         Level 2 
+           
+           
+         397.7 
+           
+           
+           
+         333.3 
+           
+           
+           
+         397.6 
+           
+           
+           
+         316.7 
+           
+        
+        
+         5.00 % Senior notes due June 15, 2052 
+         Level 2 
+           
+           
+         499.8 
+           
+           
+           
+         488.2 
+           
+           
+           
+         499.7 
+           
+           
+           
+         464.7 
+           
+        
+       The Company recognizes transfers between input levels as of the actual date of the event.  There were no transfers between input levels during the six months ended June 30, 2023.   Refer to Note 2 in the Form 10-K for a description of the methods and assumptions used to estimate the fair value of each class of financial instruments reflected in the condensed consolidated balance sheets.      The carrying amounts of Accounts Receivable, Accounts Payable, and Accrued and Other Liabilities, approximated estimated fair values as of June 30, 2023 and December 31, 2022 .    
+   11 
+   
+     
+   9. Derivative Instruments and Risk Management Changes in interest rates, foreign exchange rates, the price of the Company's Common Stock and commodity prices expose the Company to market risk.  The Company manages these risks by the use of derivative instruments, such as cash flow and fair value hedges, diesel and commodity hedge contracts, equity derivatives and foreign exchange forward contracts.  The Company does not use derivatives for trading or speculative purposes.  Refer to Note 3 in the Form 10-K for a discussion of each of the Company’s derivative instruments in effect as of December 31, 2022.    The notional amount of a derivative instrument is the nominal or face amount used to calculate payments made on that instrument.  Notional amounts are presented in the following table: 
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Notional 
+           
+           
+         Notional 
+           
+        
+        
+           
+           
+         Amount 
+           
+           
+         Amount 
+           
+        
+        
+           
+           
+         June 30, 2023 
+           
+           
+         December 31, 2022 
+           
+        
+        
+         Derivatives designated as hedging instruments 
+           
+           
+           
+           
+           
+           
+        
+        
+         Foreign exchange contracts 
+           
+         $ 
+         217.8 
+           
+           
+         $ 
+         231.5 
+           
+        
+        
+         Diesel fuel contracts 
+           
+         4.0  gallons 
+           
+           
+         5.0  gallons 
+           
+        
+        
+         Commodities contracts 
+           
+         12.2  pounds 
+           
+           
+         26.8  pounds 
+           
+        
+        
+         Derivatives not designated as hedging instruments 
+           
+           
+           
+           
+           
+           
+        
+        
+         Foreign exchange contracts 
+           
+         $ 
+         1.6 
+           
+           
+         $ 
+         1.6 
+           
+        
+        
+         Equity derivatives 
+           
+         $ 
+         20.6 
+           
+           
+         $ 
+         22.5 
+           
+        
+         The fair values and amount of gain (loss) recognized in income and Other Comprehensive Income (“OCI”) associated with the derivative instruments disclosed above did not have a material impact on the Company’s condensed consolidated financial statements during the three and six months ended June 30, 2023.   
+     
+   10. Acquisitions On October 13, 2022, the Company acquired all of the issued and outstanding shares of capital stock of Hero Cosmetics, Inc. ("Hero"), the developer of the HERO® brand which includes the MIGHTY PATCH® acne treatment products (the “Hero Acquisition”).   The Company paid $ 546.8 , net of cash acquired, at closing, and deferred an additional cash payment of $ 8.0  for five years to satisfy certain indemnification obligations, if necessary. The Company also issued $ 61.5  of restricted stock which will be recognized as compensation expense as the vesting requirements for individuals who received the restricted stock, and will continue to be employed by the Company, are satisfied. The vesting requirements are satisfied at various dates over a three-year period from the date of the acquisition. Hero’s annual net sales for the year ended December 31, 2022 were approximately $ 179.0 . The Hero Acquisition was financed with cash on hand and commercial paper borrowings and is managed in the Consumer Domestic segment. In the first quarter of 2023, the Company made a net cash payment of $ 3.5  primarily associated with final working capital adjustments.     The preliminary fair values of the net assets at acquisition are set forth as follows:   
+       
+        
+         
+         
+         
+         
+        
+        
+         Accounts receivable 
+         $ 
+         19.5 
+           
+        
+        
+         Inventory 
+           
+         25.4 
+           
+        
+        
+         Other current assets 
+           
+         1.2 
+           
+        
+        
+         Property, plant and equipment 
+           
+         0.4 
+           
+        
+        
+         Trade name 
+           
+         400.0 
+           
+        
+        
+         Other intangible assets 
+           
+         71.9 
+           
+        
+        
+         Goodwill 
+           
+         156.1 
+           
+        
+        
+         Accounts payable, accrued and other liabilities 
+           
+         ( 1.1 
+         ) 
+        
+        
+         Deferred and Other Long-term Liabilities 
+           
+         ( 1.4 
+         ) 
+        
+        
+         Deferred income taxes 
+           
+         ( 117.2 
+         ) 
+        
+        
+         Business acquisition liabilities - long-term 
+           
+         ( 8.0 
+         ) 
+        
+        
+         Cash purchase price (net of cash acquired) 
+         $ 
+         546.8 
+           
+        
+             The trade name and other intangible assets were valued using a discounted cash flow model. The trade name and other intangible assets recognized from the Hero Acquisition have useful lives which range from  10  -  20  years. The goodwill is a result of expected synergies from combined operations of the acquired business and the Company. Pro forma results are not presented because the impact of the acquisition is not material to the Company’s consolidated financial results. The goodwill and other intangible assets associated with the Hero Acquisition are not deductible for U.S. tax purposes. 12 
+        On December 24, 2021, the Company acquired all of the outstanding equity of Dr. Harold Katz, LLC and HK-IP International, Inc. , the owners of the THERABREATH® brand of oral care products business (the “TheraBreath Acquisition”).  The Company paid $ 556.0 , net of cash acquired, at closing and deferred an additional cash payment of $ 14.0  related to certain  indemnity obligations provided by the seller.  The additional amount, to the extent not used in satisfaction of such indemnity obligations, is payable in installments between  two  and  four years  from the closing.   THERABREATH’s annual net sales for the year ended December 31, 2021 were approximately $ 100.0 .  The acquisition was financed by the proceeds from a $ 400.0   three-year  term loan and the Company’s underwritten public offering of $ 400.0  aggregate principal Senior Notes due on December 15, 2031 completed on December 10, 2021.  The THERABREATH business is managed in the Consumer Domestic and Consumer International segments.  In 2022, the Company made net cash payments of $ 3.8  primarily associated with final working capital adjustments.   The fair values of the net assets at acquisition are set forth as follows:   
+       
+        
+         
+         
+         
+         
+        
+        
+         Accounts receivable 
+         $ 
+         11.3 
+           
+        
+        
+         Inventory 
+           
+         12.9 
+           
+        
+        
+         Trade name (indefinite lived) 
+           
+         487.0 
+           
+        
+        
+         Other intangible assets 
+           
+         30.1 
+           
+        
+        
+         Goodwill 
+           
+         43.7 
+           
+        
+        
+         Accounts payable and accrued expenses 
+           
+         ( 15.0 
+         ) 
+        
+        
+         Business acquisition liabilities - long-term 
+           
+         ( 14.0 
+         ) 
+        
+        
+         Cash purchase price (net of cash acquired) 
+         $ 
+         556.0 
+           
+        
+           The trade names and other intangible assets were valued using a discounted cash flow model. The life of the amortizable intangible assets recognized from the TheraBreath Acquisition have a useful life which ranges from  10  -  20  years. The goodwill is a result of expected synergies from combined operations of the acquired business and the Company. Pro forma results are not presented because the impact of the acquisition is not material to the Company’s consolidated financial results. The goodwill and other intangible assets associated with the TheraBreath Acquisition are deductible for U.S. tax purposes. 
+     
+   11. Goodwill and Other Intangibles, Net  The Company has intangible assets of substantial value on its condensed consolidated balance sheet. These intangible assets are generally related to intangible assets with a useful life, indefinite-lived trade names and goodwill. The Company determines whether an intangible asset (other than goodwill) has a useful life based on multiple factors, including how long the Company intends to generate cash flows from the asset. These intangible assets are more fully explained in the following sections.     Intangible Assets With a Useful Life   The following table provides information related to the carrying value of intangible assets with a useful life:     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         June 30, 2023 
+           
+           
+           
+           
+         December 31, 2022 
+           
+        
+        
+           
+         Gross 
+           
+           
+           
+           
+           
+           
+           
+           
+         Amortization 
+           
+         Gross 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+           
+         Carrying 
+           
+           
+         Accumulated 
+           
+           
+           
+           
+           
+         Period 
+           
+         Carrying 
+           
+           
+         Accumulated 
+           
+           
+           
+           
+           
+           
+           
+        
+        
+           
+         Amount 
+           
+           
+         Amortization 
+           
+           
+         Net 
+           
+           
+         (Years) 
+           
+         Amount 
+           
+           
+         Amortization 
+           
+           
+         Impairments 
+           
+           
+         Net 
+           
+        
+        
+         Amortizable intangible assets: 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Trade Names 
+         $ 
+         1,385.3 
+           
+           
+         $ 
+         ( 364.0 
+         ) 
+           
+         $ 
+         1,021.3 
+           
+           
+         3 - 20 
+           
+         $ 
+         1,785.8 
+           
+           
+         $ 
+         ( 406.2 
+         ) 
+           
+         $ 
+         ( 319.0 
+         ) 
+           
+         $ 
+         1,060.6 
+           
+        
+        
+         Customer Relationships 
+           
+         644.9 
+           
+           
+           
+         ( 356.5 
+         ) 
+           
+           
+         288.4 
+           
+           
+         15 - 20 
+           
+           
+         723.4 
+           
+           
+           
+         ( 358.9 
+         ) 
+           
+           
+         ( 59.3 
+         ) 
+           
+           
+         305.2 
+           
+        
+        
+         Patents/Formulas 
+           
+         208.3 
+           
+           
+           
+         ( 110.0 
+         ) 
+           
+           
+         98.3 
+           
+           
+         4 - 20 
+           
+           
+         251.7 
+           
+           
+           
+         ( 114.6 
+         ) 
+           
+           
+         ( 32.7 
+         ) 
+           
+           
+         104.4 
+           
+        
+        
+         Total 
+         $ 
+         2,238.5 
+           
+           
+         $ 
+         ( 830.5 
+         ) 
+           
+         $ 
+         1,408.0 
+           
+           
+           
+           
+         $ 
+         2,760.9 
+           
+           
+         $ 
+         ( 879.7 
+         ) 
+           
+         $ 
+         ( 411.0 
+         ) 
+           
+         $ 
+         1,470.2 
+           
+        
+         Intangible amortization expense was $ 31.1  and $ 29.3  for the sec ond quarter of 2023 and 2022, respectively.  Intangible amortization expense amounted to $ 62.2  and $ 58.8  for the first six months of 2023 and 2022, respectively.  The Company estimates that intangible amortization expense will be appr oximately $ 124.0  in  2023 a nd approximately $ 123.0  to $ 94.0  a nnually over the next five years. In  the fourth quarter of 2022, the Company determined that a review of our ability to recover the carrying values of the global FINISHING TOUCH FLAWLESS intangible assets was necessary based on the discontinuance of certain products at a major retailer. The FINISHING TOUCH FLAWLESS assets consist of the definite-lived trade name, customer relationships and technology assets recorded at acquisition. The Company evaluated our ability to recover the intangible assets by comparing the carrying amount to the   13 
+        future  undiscounted cash flows and determined that the cash flows would not be sufficient to recover the carrying value of the assets. After determining the estimated fair value of the assets, which included a reduction in cash flows due to the loss of distribution mentioned above along with an expected continued decline in discretionary consumption and higher interest rates, a non-cash impairment charge of $ 411.0  was recorded in the fourth quarter of 2022. The impairment charge was applied as a full impairment of the customer relationship and technology assets and a partial impairment of the trade name. The remaining net book value of the trade name as of December 31, 2022 is $ 46.3  and will be amortized over a remaining useful life of  three years . The estimated fair value of the intangible assets was determined using the income approach with Level 3 inputs. The Level 3 inputs include the discount rate of  8.5 % applied to management’s estimates of future cash flows based on projections of revenue, gross margin, marketing expense and tax rates considering the loss of product distribution and the reduction in customer demand that FINISHING TOUCH FLAWLESS had been experiencing through December 31, 2022. The Company is implementing strategies to address the decline in profitability. However, if unsuccessful, a further decline could trigger a future impairment charge.   Indefinite-Lived Intangible Assets   The following table presents the carrying value of indefinite-lived intangible assets: 
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         June 30, 
+           
+           
+         December 31, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Trade Names 
+         $ 
+         1,961.8 
+           
+           
+         $ 
+         1,961.4 
+           
+        
+       The Company’s indefinite lived intangible impairment review is completed in the fourth quarter of each year.   Fair value for indefinite-lived intangible assets was estimated based on a “relief from royalty” or “excess earnings” discounted cash flow method, which contains numerous variables that are subject to change as business conditions change, and therefore could impact fair values in the future.  The key assumptions used in determining fair value are sales growth, profitability margins, tax rates, discount rates and royalty rates. The Company determined that the fair value of all indefinite lived intangible assets for each of the years in the three-year period ended December 31, 2022 exceeded their respective carrying values based upon the forecasted cash flows and profitability. In recent years the Company’s global TROJAN® business, specifically the condom category, has not grown and competition has increased. In addition, profitability was negatively impacted by inflation throughout 2022, resulting in higher input costs and discount rates, and supply shortages for packaging materials. As a result, the TROJAN business has experienced declining sales and profits resulting in a reduction in expected future cash flows which have eroded a portion of the excess between the fair and carrying value of the trade name. This indefinite-lived intangible asset may be susceptible to impairment and a continued decline in fair value could trigger a future impairment charge of the TROJAN trade name. The carrying value of the TROJAN trade name is $ 176.4  and fair value exceeded carrying value by  46 % as of October 1, 2022.  The key assumptions used in the projections from the Company’s October 1, 2022 impairment analysis include discount rates of  8.0 % in the U.S. and  9.5 % internationally, revenue assumptions based on recent trends adjusted for management’s estimates of the success of its growth strategies and the impact of improvement in the supply chain, and an average royalty rate of approximately  10 %. While management has implemented strategies to address the risk, including lowering production costs, investing in new product ideas, and developing new creative advertising, significant changes in operating plans or adverse changes in the future could reduce the underlying cash flows used to estimate fair value.  Due to the results of the Company's annual impairment test of the TROJAN trade name, the company monitors the performance of this business on at least a quarterly basis. Based on that review, the Company's expectations regarding the profitability of the global TROJAN® business has not substantially changed since the Company's last impairment test.     The Company’s global WATERPIK business has recently experienced a significant decline in customer demand for many of its products, primarily due to lower consumer spending for discretionary products from inflation and a growing number of water flosser consumers switching to more value-branded products.  As a result, the WATERPIK business has experienced declining sales and profits resulting in a reduction in expected future cash flows which have eroded a substantial portion of the excess between the fair and carrying value of the trade name. This indefinite-lived intangible asset may be susceptible to impairment and a continued decline in fair value could trigger a future impairment charge of the WATERPIK trade name. The carrying value of the WATERPIK trade name is $ 644.7  and fair value exceeded carrying value by  7 % as of October 1, 2022. The key assumptions used in the projections from the Company’s October 1, 2022 impairment analysis include a discount rate of  8.4 %,  revenue growth rates between 0% and 6% and EBITA margins between 18% and 21%. These assumptions are based on current market conditions, recent trends and management’s expectation of the success of initiatives to lower costs (including tariffs) and to develop lower-cost water flosser alternatives as well as improvement in the supply chain.  While management has implemented strategies to address the risk, significant changes in operating plans or adverse changes in the future could reduce the underlying cash flows used to estimate fair value. Due to the results of the Company's annual impairment test of the WATERPIK trade name, the company monitors the performance of this business on at least   14 
+        a  quarterly basis. Based on that review, the Company's expectations regarding the profitability of the global WATERPIK business has not substantially changed since the Company's last impairment test.      Goodwill The carrying amount of goodwill is as follows:     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         Consumer 
+           
+           
+         Consumer 
+           
+           
+         Specialty 
+           
+           
+           
+           
+        
+        
+           
+         Domestic 
+           
+           
+         International 
+           
+           
+         Products 
+           
+           
+         Total 
+           
+        
+        
+         Balance at December 31, 2022 
+         $ 
+         2,056.4 
+           
+           
+         $ 
+         234.4 
+           
+           
+         $ 
+         136.0 
+           
+           
+         $ 
+         2,426.8 
+           
+        
+        
+         Hero working capital adjustment 
+           
+         3.5 
+           
+           
+           
+         0.0 
+           
+           
+           
+         0.0 
+           
+           
+           
+         3.5 
+           
+        
+        
+         Balance at June 30, 2023 
+         $ 
+         2,059.9 
+           
+           
+         $ 
+         234.4 
+           
+           
+         $ 
+         136.0 
+           
+           
+         $ 
+         2,430.3 
+           
+        
+         The result of the Company’s annual goodwill impairment test, performed in the beginning of the second quarter of 2023, determined that the estimated fair value substantially exceeded the carrying values of all reporting units. The determination of fair value contains numerous variables that are subject to change as business conditions change and therefore could impact fair value in the future. 
+     
+     
+   12. Leases  The Company leases certain manufacturing facilities, warehouses, office space, railcars and equipment. Leases with an initial term of twelve months or less are not recorded on the condensed consolidated balance sheet.  All recorded leases are classified as operating leases and lease expense is recognized on a straight-line basis over the lease term. For leases beginning in 2019, lease components (base rental costs) are accounted for separately from the nonlease components (e.g., common-area maintenance costs).  For leases that do not provide an implicit rate, the Company uses its estimated secured incremental borrowing rate based on the information available at commencement date in determining the present value of lease payments.   15 
+        A summary of the Company’s lease information is as follows:   
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         June 30, 
+           
+         December 31, 
+           
+        
+        
+           
+         Classification 
+         2023 
+           
+         2022 
+           
+        
+        
+         Assets 
+           
+           
+           
+           
+           
+        
+        
+         Right of use assets 
+         Other Assets 
+         $ 
+         156.3 
+           
+         $ 
+         162.6 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+        
+        
+         Liabilities 
+           
+           
+           
+           
+           
+        
+        
+         Current lease liabilities 
+         Accrued and other liabilities 
+         $ 
+         23.1 
+           
+         $ 
+         21.9 
+           
+        
+        
+         Long-term lease liabilities 
+         Deferred and Other Long-term Liabilities 
+           
+         145.9 
+           
+           
+         151.9 
+           
+        
+        
+         Total lease liabilities 
+           
+         $ 
+         169.0 
+           
+         $ 
+         173.8 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+        
+        
+         Other information 
+           
+           
+           
+           
+           
+        
+        
+         Weighted-average remaining lease term (years) 
+           
+           
+         8.5 
+           
+           
+         8.9 
+           
+        
+        
+         Weighted-average discount rate 
+           
+           
+         4.5 
+         % 
+           
+         4.4 
+         % 
+        
+           
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         Three Months 
+           
+           
+         Three Months 
+           
+           
+         Six Months 
+           
+           
+         Six Months 
+           
+        
+        
+           
+         Ended 
+           
+           
+         Ended 
+           
+           
+         Ended 
+           
+           
+         Ended 
+           
+        
+        
+           
+         June 30, 2023 
+           
+           
+         June 30, 2022 
+           
+           
+         June 30, 2023 
+           
+           
+         June 30, 2022 
+           
+        
+        
+         Statement of Income 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Lease cost (1) 
+         $ 
+         7.9 
+           
+           
+         $ 
+         7.5 
+           
+           
+         $ 
+         15.6 
+           
+           
+         $ 
+         15.4 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Other information 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+        
+        
+         Leased assets obtained in exchange for new lease liabilities net of modifications (2) 
+         $ 
+         4.1 
+           
+           
+         $ 
+         15.8 
+           
+           
+         $ 
+         5.1 
+           
+           
+         $ 
+         17.3 
+           
+        
+        
+         Cash paid for amounts included in the measurement of lease liabilities 
+         $ 
+         7.9 
+           
+           
+         $ 
+         8.0 
+           
+           
+         $ 
+         15.5 
+           
+           
+         $ 
+         15.5 
+           
+        
+       (1) Lease expense is included in cost of sales or SG&A expenses based on the nature of the leased item.  Short-term lease expense is excluded from this amount and is not material.  The Company also has certain variable leases which are not material.  The non-cash component of lease expense for the first six months of 2023 and 2022 was  $ 11.9  a nd  $ 12.1 ,  respectively, and is included in the Amortization caption in the condensed consolidated statement of cash flows.  (2) In June 2022, the Company amended its contract at one of its leased manufacturing facilities.  This resulted in an increase to the Company’s right of use assets and corresponding lease liabilities of approximately $ 15.2  recorded in the second quarter of 2022.   The Company’s minimum annual rentals including reasonably assured renewal options under lease agreements are as follows:   
+       
+        
+         
+         
+         
+         
+         
+        
+        
+           
+           
+         Operating 
+           
+        
+        
+           
+           
+         Leases 
+           
+        
+        
+         2023 
+           
+         $ 
+         15.1 
+           
+        
+        
+         2024 
+           
+           
+         30.0 
+           
+        
+        
+         2025 
+           
+           
+         28.2 
+           
+        
+        
+         2026 
+           
+           
+         19.9 
+           
+        
+        
+         2027 
+           
+           
+         18.8 
+           
+        
+        
+         2028 and thereafter 
+           
+           
+         94.9 
+           
+        
+        
+         Total future minimum lease commitments 
+           
+           
+         206.9 
+           
+        
+        
+         Less: Imputed interest 
+           
+           
+         ( 37.9 
+         ) 
+        
+        
+         Present value of lease liabilities 
+           
+         $ 
+         169.0 
+           
+        
+         
+     
+     
+   16 
+   
+     
+   13. Accounts Payable, Accrued and Other Liabilities Accounts payable, accrued and other liabilities consist of the following:     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         June 30, 
+           
+           
+         December 31, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Trade accounts payable 
+         $ 
+         677.7 
+           
+           
+         $ 
+         666.7 
+           
+        
+        
+         Accrued marketing and promotion costs 
+           
+         225.3 
+           
+           
+           
+         234.4 
+           
+        
+        
+         Accrued wages and related benefit costs 
+           
+         78.1 
+           
+           
+           
+         66.8 
+           
+        
+        
+         Other accrued current liabilities 
+           
+         129.0 
+           
+           
+           
+         134.9 
+           
+        
+        
+         Total 
+         $ 
+         1,110.1 
+           
+           
+         $ 
+         1,102.8 
+           
+        
+         In 2015, the Company initiated a Supply Chain Finance program (“SCF Program”). Under the SCF Program, qualifying suppliers may elect to sell their receivables from the Company for early payment. Participating suppliers negotiate their receivables sales arrangements directly with a third party. The Company is not party to those agreements and do not have an economic interest in the suppliers' decisions to sell their receivables and has not been required to pledge any assets as security nor to provide any guarantee to third-party finance providers or intermediaries .  The SCF Program may allow suppliers to obtain more favorable terms than they could secure on their own. The terms of the Company's payment obligations are not impacted by a supplier’s participation in the SCF Program.  The Company's payment terms with suppliers are consistent between suppliers that elect to participate in the SCF Program and those that do not participate. As a result, the program does not have an impact to the Company's average days outstanding . As of June 30, 2023, the obligations outstanding related to the SCF program amount to  $ 83.2 ,  recorded within Accounts Payable in the Condensed Consolidated Balance Sheets and  $ 183.9  payments included in operating activities within the Company's Condensed Consolidated Statements of Cash Flows.   
+     
+     
+   17 
+   
+     
+   14. Short-Term Borrowings and Long-Term Debt  Short-term borrowings and long-term debt consist of the following:     
+       
+        
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+           
+         June 30, 
+           
+           
+         December 31, 
+           
+        
+        
+           
+         2023 
+           
+           
+         2022 
+           
+        
+        
+         Short-term borrowings 
+           
+           
+           
+           
+           
+        
+        
+         Commercial paper issuances 
+         $ 
+         0.0 
+           
+           
+         $ 
+         70.6 
+           
+        
+        
+         Various debt due to international banks 
+           
+         4.0 
+           
+           
+           
+         3.4 
+           
+        
+        
+         Total short-term borrowings 
+         $ 
+         4.0 
+           
+           
+         $ 
+         74.0 
+           
+        
+        
+           
+           
+           
+           
+           
+           
+        
+        
+         Long-term debt 
+           
+           
+           
+           
+           
+        
+        
+         Term loan due December 22, 2024 
+         $ 
+         200.0 
+           
+           
+         $ 
+         400.0 
+           
+        
+        
+         3.15 % Senior notes due  August 1, 2027 
+           
+         425.0 
+           
+           
+           
+         425.0 
+           
+        
+        
+         Less: Discount 
+           
+         ( 0.2 
+         ) 
+           
+           
+         ( 0.2 
+         ) 
+        
+        
+         2.3 % Senior notes due  December 15, 2031 
+           
+         400.0 
+           
+           
+           
+         400.0 
+           
+        
+        
+         Less: Discount 
+           
+         ( 0.7 
+         ) 
+           
+           
+         ( 0.7 
+         ) 
+        
+        
+         5.6 % Senior notes due  November 15, 2032 
+           
+         500.0 
+           
+           
+           
+         500.0 
+           
+        
+        
+         Less: Discount 
+           
+         ( 0.9 
+         ) 
+           
+           
+         ( 0.9 
+         ) 
+        
+        
+         3.95 % Senior notes due  August 1, 2047 
+           
+         400.0 
+           
+           
+           
+         400.0 
+           
+        
+        
+         Less: Discount 
+           
+         ( 2.3 
+         ) 
+           
+           
+         ( 2.4 
+         ) 
+        
+        
+         5.00 % Senior notes due  June 15, 2052 
+           
+         500.0 
+           
+           
+           
+         500.0 
+           
+        
+        
+         Less: Discount 
+           
+         ( 0.2 
+         ) 
+           
+           
+         ( 0.3 
+         ) 
+        
+        
+         Debt issuance costs, net 
+           
+         ( 19.8 
+         ) 
+           
+           
+         ( 21.0 
+         ) 
+        
+        
+         Net long-term debt 
+         $ 
+         2,400.9 
+           
+           
+         $ 
+         2,599.5 
+           
+        
+             18 
+        15. Accumulated Other Comprehensive Income (Loss) The components of changes in accumulated other comprehensive income (loss) are as follows:       
+         
+          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+           Accumulated 
+             
+          
+          
+             
+           Foreign 
+             
+             
+           Defined 
+             
+             
+             
+             
+             
+           Other 
+             
+          
+          
+             
+           Currency 
+             
+             
+           Benefit 
+             
+             
+           Derivative 
+             
+             
+           Comprehensive 
+             
+          
+          
+             
+           Adjustments 
+             
+             
+           Plans 
+             
+             
+           Agreements 
+             
+             
+           Income (Loss) 
+             
+          
+          
+           Balance at December 31, 2021 
+           $ 
+           ( 30.2 
+           ) 
+             
+           $ 
+           ( 0.6 
+           ) 
+             
+           $ 
+           ( 37.4 
+           ) 
+             
+           $ 
+           ( 68.2 
+           ) 
+          
+          
+           Other comprehensive income (loss) before reclassifications 
+             
+           ( 14.5 
+           ) 
+             
+             
+           2.5 
+             
+             
+             
+           46.2 
+             
+             
+             
+           34.2 
+             
+          
+          
+           Amounts reclassified to consolidated statement of     income  (a) (b) 
+             
+           0.0 
+             
+             
+             
+           0.0 
+             
+             
+             
+           ( 0.3 
+           ) 
+             
+             
+           ( 0.3 
+           ) 
+          
+          
+           Tax benefit (expense) 
+             
+           0.0 
+             
+             
+             
+           ( 0.6 
+           ) 
+             
+             
+           ( 12.2 
+           ) 
+             
+             
+           ( 12.8 
+           ) 
+          
+          
+           Other comprehensive income (loss) 
+             
+           ( 14.5 
+           ) 
+             
+             
+           1.9 
+             
+             
+             
+           33.7 
+             
+             
+             
+           21.1 
+             
+          
+          
+           Balance at June 30, 2022 
+           $ 
+           ( 44.7 
+           ) 
+             
+           $ 
+           1.3 
+             
+             
+           $ 
+           ( 3.7 
+           ) 
+             
+           $ 
+           ( 47.1 
+           ) 
+          
+          
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+          
+          
+           Balance at December 31, 2022 
+           $ 
+           ( 46.4 
+           ) 
+             
+           $ 
+           1.7 
+             
+             
+           $ 
+           15.4 
+             
+             
+           $ 
+           ( 29.3 
+           ) 
+          
+          
+           Other comprehensive income (loss) before reclassifications 
+             
+           5.7 
+             
+             
+             
+           2.0 
+             
+             
+             
+           ( 3.9 
+           ) 
+             
+             
+           3.8 
+             
+          
+          
+           Amounts reclassified to condensed consolidated statement of income   (a) (b) 
+             
+           0.0 
+             
+             
+             
+           0.0 
+             
+             
+             
+           ( 3.7 
+           ) 
+             
+             
+           ( 3.7 
+           ) 
+          
+          
+           Tax benefit (expense) 
+             
+           0.0 
+             
+             
+             
+           ( 0.5 
+           ) 
+             
+             
+           1.9 
+             
+             
+             
+           1.4 
+             
+          
+          
+           Other comprehensive income (loss) 
+             
+           5.7 
+             
+             
+             
+           1.5 
+             
+             
+             
+           ( 5.7 
+           ) 
+             
+             
+           1.5 
+             
+          
+          
+           Balance at June 30, 2023 
+           $ 
+           ( 40.7 
+           ) 
+             
+           $ 
+           3.2 
+             
+             
+           $ 
+           9.7 
+             
+             
+           $ 
+           ( 27.8 
+           ) 
+          
+           (a) Amounts reclassified to cost of sales, selling, general and administrative expenses or interest expense. (b) The Company reclassified a gain  of $ 2.8  and a l oss o f $ 0.1   to the condensed consolidated statements of income during the three months ended June 30, 2023 and 2022, respectively.      16.	Commitments, Contingencies and Guarantees     Commitments     a. The Company has a partnership with a supplier of raw materials that mines and processes sodium-based mineral deposits.   The Company purchases the majority of its sodium-based raw material requirements from the partnership.  The partnership agreement terminates upon two years’ written notice by either partner.  Under the partnership agreement, the Company has an annual commitment to purchase  240,000  tons of sodium-based raw materials at the prevailing market price.  The Company is not engaged in any other material transactions with the partnership or the partner supplier.       b. As of June 30, 2023 , the Company had commitments of approximately $ 363.4 .  These commitments include the purchase of raw materials, packaging supplies and services from its vendors at market prices to enable the Company to respond quickly to changes in customer orders or requirements, as well as costs associated with licensing and promotion agreements.   c. As of June 30, 2023 , the Company had various guarantees and letters of credit totaling $ 6.4 .   d.    In connection with the Zicam Acquisition, the Company deferred an additional cash payment of $ 20.0  related to certain indemnifications provided by the seller.  Any amount that may be due is payable  five years  from the closing. In connection with the TheraBreath Acquisition, the Company deferred an additional cash payment of $ 14.0  related to certain indemnity obligations provided by the seller.  The additional amount, to the extent not used in satisfaction of such indemnity obligations, is payable in installments between  two  and  four years  from the closing. In connection with the Hero Acquisition, the Company deferred an additional cash payment of $ 8.0  to satisfy certain indemnification obligations.  Any amount that may be due is payable  five years  from the closing.     19 
+          Legal proceedings     e. In addition, in conjunction with the Company’s acquisition and divestiture activities, the Company entered into select guarantees and indemnifications of performance with respect to the fulfillment of the Company’s commitments under applicable purchase and sale agreements.  The arrangements generally indemnify the buyer or seller for damages associated with breach of contract, inaccuracies in representations and warranties surviving the closing date and satisfaction of liabilities and commitments retained under the applicable contract.  Representations and warranties that survive the closing date generally survive for periods up to five years or the expiration of the applicable statutes of limitations.  Potential losses under the indemnifications are generally limited to a portion of the original transaction price, or to other lesser specific dollar amounts for select provisions.  With respect to sale transactions, the Company also routinely enters into non-competition agreements for varying periods of time.  Guarantees and indemnifications with respect to acquisition and divestiture activities, if triggered, could have a materially adverse impact on the Company’s financial condition, results of operations and cash flows. f. In addition to the matters described above, from time to time in the ordinary course of its business the Company is the subject of, or party to, various pending or threatened legal, regulatory or governmental actions or other proceedings, including, without limitation, those relating to, intellectual property, commercial transactions, product liability, purported consumer class actions, employment matters, antitrust, environmental, health, safety and other compliance related matters.  Such proceedings are generally subject to considerable uncertainty and their outcomes, and any related damages, may not be reasonably predictable or estimable.   Any such proceedings could result in a material adverse outcome negatively impacting the Company’s business, financial condition, results of operations or cash flows.   17. Related Party Transactions  The following summarizes the balances and transactions between the Company and Armand Products Company (“Armand”) and the ArmaKleen Company (“ArmaKleen”), in each of which the Company holds a  50 % ownership interest:        
+         
+          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
+             
+           Armand 
+             
+             
+           ArmaKleen 
+             
+          
+          
+             
+           Six Months Ended 
+             
+             
+           Six Months Ended 
+             
+          
+          
+             
+           June 30, 
+             
+             
+           June 30, 
+             
+             
+           June 30, 
+             
+             
+           June 30, 
+             
+          
+          
+             
+           2023 
+             
+             
+           2022 
+             
+             
+           2023 
+             
+             
+           2022 
+             
+          
+          
+           Purchases by Company 
+           $ 
+           7.6 
+             
+             
+           $ 
+           6.7 
+             
+             
+           $ 
+           0.0 
+             
+             
+           $ 
+           0.0 
+             
+          
+          
+           Sales by Company 
+           $ 
+           0.0 
+             
+             
+           $ 
+           0.0 
+             
+             
+           $ 
+           0.6 
+             
+             
+           $ 
+           0.3 
+             
+          
+          
+           Outstanding Accounts Receivable 
+           $ 
+           0.4 
+             
+             
+           $ 
+           0.6 
+             
+             
+           $ 
+           1.4 
+             
+             
+           $ 
+           1.0 
+             
+          
+          
+           Outstanding Accounts Payable 
+           $ 
+           1.6 
+             
+             
+           $ 
+           1.9 
+             
+             
+           $ 
+           0.0 
+             
+             
+           $ 
+           0.0 
+             
+          
+          
+           Administration & Management Oversight Services  (1) 
+           $ 
+           1.1 
+             
+             
+           $ 
+           1.1 
+             
+             
+           $ 
+           1.0 
+             
+             
+           $ 
+           1.0 
+             
+          
+           (1) Billed by the Company and recorded as a reduction of SG&A expenses .     18. Segments  Segment Information   The Company operates  three  reportable segments: Consumer Domestic, Consumer International and Specialty Products Division.  These segments are determined based on differences in the nature of products and organizational structure.  The Company also has a Corporate segment. Segment revenues are derived from the sale of the following products:     
+       
+        
+         
+         
+         
+         
+         
+        
+        
+         Segment 
+           
+           
+         Products 
+           
+        
+        
+         Consumer Domestic 
+           
+         Household and personal care products 
+        
+        
+         Consumer International 
+           
+         Primarily personal care products 
+        
+        
+         SPD 
+           
+         Specialty chemical products 
+        
+         The Corporate segment income consists of equity in earnings of affiliates. As of June 30, 2023 , the Company held  50 % ownership interests in each of Armand and ArmaKleen, respectively .   The Company’s equity in earnings of Armand and ArmaKleen, totaled $ 2.0  and $ 3.9  for the three months ended  June 30, 2023  and 2022, respectively, and $ 6.4  and $ 6.3  for the six months ended June 30, 2023 and 2022, respectively, are included in the Corporate segment.    20 
+          Certain subsidiaries that are included in the Consumer International segment manufacture and sell personal care products to the Consumer Domestic segment.  These sales are eliminated from the Consumer International segment results set forth in the table below.   Segment net sales and income before income taxes are as follows:     
+         
+          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
+             
+           Consumer 
+             
+             
+           Consumer 
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+          
+          
+             
+           Domestic 
+             
+             
+           International 
+             
+             
+           SPD 
+             
+             
+           Corporate (3) 
+             
+             
+           Total 
+             
+          
+          
+           Net Sales (1) 
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+          
+          
+           Second Quarter 2023 
+           $ 
+           1,128.2 
+             
+             
+           $ 
+           241.9 
+             
+             
+           $ 
+           84.1 
+             
+             
+           $ 
+           0.0 
+             
+             
+           $ 
+           1,454.2 
+             
+          
+          
+           Second Quarter 2022 
+             
+           1,004.7 
+             
+             
+             
+           230.5 
+             
+             
+             
+           89.9 
+             
+             
+             
+           0.0 
+             
+             
+             
+           1,325.1 
+             
+          
+          
+           First Six Months of 2023 
+           $ 
+           2,245.1 
+             
+             
+           $ 
+           472.5 
+             
+             
+           $ 
+           166.4 
+             
+             
+           $ 
+           0.0 
+             
+             
+           $ 
+           2,884.0 
+             
+          
+          
+           First Six Months of 2022 
+             
+           1,999.8 
+             
+             
+             
+           445.1 
+             
+             
+             
+           177.4 
+             
+             
+             
+           0.0 
+             
+             
+             
+           2,622.3 
+             
+          
+          
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+          
+          
+           Income before Income Taxes (2) 
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+          
+          
+           Second Quarter 2023 
+           $ 
+           230.7 
+             
+             
+           $ 
+           27.5 
+             
+             
+           $ 
+           9.2 
+             
+             
+           $ 
+           2.0 
+             
+             
+           $ 
+           269.4 
+             
+          
+          
+           Second Quarter 2022 
+             
+           201.7 
+             
+             
+             
+           28.5 
+             
+             
+             
+           12.4 
+             
+             
+             
+           3.9 
+             
+             
+             
+           246.5 
+             
+          
+          
+           First Six Months of 2023 
+           $ 
+           459.4 
+             
+             
+           $ 
+           56.4 
+             
+             
+           $ 
+           16.0 
+             
+             
+           $ 
+           6.4 
+             
+             
+           $ 
+           538.2 
+             
+          
+          
+           First Six Months of 2022 
+             
+           424.4 
+             
+             
+             
+           58.1 
+             
+             
+             
+           23.9 
+             
+             
+             
+           6.3 
+             
+             
+             
+           512.7 
+             
+          
+           (1) Intersegment sales from Consumer International to Consumer Domestic, which are not reflected in the table, were  $ 3.4  an d $ 3.8   for the three months ended June 30, 2023 and June 30, 2022, respectively, and wer e $ 7.0  and  $ 8.6  f or the six months ended June 30, 2023 and June 30, 2022, respectively. (2) In determining income before income taxes, interest expense, investment earnings and certain aspects of other income and expense were allocated among segments based upon each segment’s relative income from operations. (3) The Corporate segment consists of equity in earnings of affiliates from Armand and ArmaKleen for the three and six months ended June 30, 2023 and June 30, 2022.      Product line revenues from external customers are as follows:      
+         
+          
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+          
+             
+           Three Months Ended 
+             
+             
+           Six Months Ended 
+             
+          
+          
+             
+           June 30, 
+             
+             
+           June 30, 
+             
+             
+           June 30, 
+             
+             
+           June 30, 
+             
+          
+          
+             
+           2023 
+             
+             
+           2022 
+             
+             
+           2023 
+             
+             
+           2022 
+             
+          
+          
+           Household Products 
+           $ 
+           619.2 
+             
+             
+           $ 
+           572.8 
+             
+             
+           $ 
+           1,220.8 
+             
+             
+           $ 
+           1,093.3 
+             
+          
+          
+           Personal Care Products 
+             
+           509.0 
+             
+             
+             
+           431.9 
+             
+             
+             
+           1,024.3 
+             
+             
+             
+           906.5 
+             
+          
+          
+           Total Consumer Domestic 
+             
+           1,128.2 
+             
+             
+             
+           1,004.7 
+             
+             
+             
+           2,245.1 
+             
+             
+             
+           1,999.8 
+             
+          
+          
+           Total Consumer International 
+             
+           241.9 
+             
+             
+             
+           230.5 
+             
+             
+             
+           472.5 
+             
+             
+             
+           445.1 
+             
+          
+          
+           Total SPD 
+             
+           84.1 
+             
+             
+             
+           89.9 
+             
+             
+             
+           166.4 
+             
+             
+             
+           177.4 
+             
+          
+          
+           Total Consolidated Net Sales 
+           $ 
+           1,454.2 
+             
+             
+           $ 
+           1,325.1 
+             
+             
+           $ 
+           2,884.0 
+             
+             
+           $ 
+           2,622.3 
+             
+          
+           Household Products include laundry, deodorizing and cleaning products.  Personal Care Products include condoms, pregnancy kits, oral care products, skin care and hair care products, cold and remedy products, and gummy dietary supplements.                  21 
+              CHURCH & DWIGHT CO., INC. AND SUBSIDIARIES  (In millions, except per share data)   ITEM 2.   MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS   Recent Developments Supply Chain, Inflation, Labor, Consumer Demand and Competition Significant broad-based cost inflation and higher interest rates continue to affect input costs and consumer demand for our discretionary products. To attempt to offset some of these cost pressures, we have enacted, and continue to evaluate, price increases in certain categories. While conditions are improving and we expect pricing and productivity to offset inflation in the near term, we expect some raw material and labor shortages and input cost inflation to continue.   Inflation and recessionary concerns are driving a decline in consumer spending for our most discretionary brands, Waterpik and Flawless, as consumers reduce spending in these categories and shift to lower cost alternatives. Most notably, a growing number of water flosser consumers have switched to more value-branded products. To address these demand shifts, we are taking steps to better manage production schedules and inventory levels for those products along with increasing promotional activities and marketing spend, as well as continuing efforts to develop lower cost water flosser alternatives. Our portfolio being comprised of 40% value products and our low exposure to private label should help us mitigate against a potential recessionary environment. In our vitamin business, we have experienced residual impacts from previous vitamin-specific supply chain challenges that, in some cases, have resulted in reduced shelf space at certain retailers. In addition, our Specialty Products business has been negatively impacted by the entrance of new foreign competition in the United States dairy market. We expect that low-priced imports will continue to enter the market.   For additional discussion of how we are addressing decreased consumer demand for discretionary brands, as well as lower growth and increased competition in the vitamin category, please refer to  Management's Discussion and Analysis of Financial Condition and Results of Operations  in our Annual Report on Form 10-K.    Looking forward, the impact that these challenges will continue to have on our operational and financial performance will depend on future developments, including inflationary impacts, retail customers' acceptance of all or a portion of any price increases, the spread and severity of new COVID-19 variants, and the long-term impact of vaccines. Additionally, we may be impacted by our ability to recruit and retain a workforce and engage third-parties to manufacture and distribute our products, as well as any future government actions affecting employers and employees, consumers and the economy in general. The impact of any of these potential future developments are uncertain and difficult to predict considering the rapidly evolving landscape.   We are monitoring the impact of both inflation and recessionary indicators including the effect of corresponding government actions, such as raising interest rates to counteract inflation, that may negatively impact consumer spending, and how these factors will potentially influence future cash flows for the short and long term.  While we expect that many of these effects will be transitory and that our value focused portfolio positions us well in inflationary and slowing economic environments, it is impossible to predict their impact.      22 
+        Results of Operations   Consolidated results     
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Three Months Ended 
+         
+         
+       Change vs. 
+         
+       Three Months Ended 
+         
+      
+      
+         
+       June 30, 2023 
+         
+         
+       Prior Year 
+         
+       June 30, 2022 
+         
+      
+      
+       Net Sales 
+       $ 
+       1,454.2 
+         
+         
+       9.7% 
+         
+       $ 
+       1,325.1 
+         
+      
+      
+       Gross Profit 
+       $ 
+       638.9 
+         
+         
+       17.2% 
+         
+       $ 
+       545.3 
+         
+      
+      
+       Gross Margin 
+         
+       43.9 
+       % 
+         
+       270 basis points 
+         
+         
+       41.2 
+       % 
+      
+      
+       Marketing Expenses 
+       $ 
+       132.2 
+         
+         
+       28.5% 
+         
+       $ 
+       102.9 
+         
+      
+      
+       Percent of Net Sales 
+         
+       9.1 
+       % 
+         
+       130 basis points 
+         
+         
+       7.8 
+       % 
+      
+      
+       Selling, General & Administrative Expenses 
+       $ 
+       213.1 
+         
+         
+       17.9% 
+         
+       $ 
+       180.8 
+         
+      
+      
+       Percent of Net Sales 
+         
+       14.6 
+       % 
+         
+       100 basis points 
+         
+         
+       13.6 
+       % 
+      
+      
+       Income from Operations 
+       $ 
+       293.6 
+         
+         
+       12.2% 
+         
+       $ 
+       261.6 
+         
+      
+      
+       Operating Margin 
+         
+       20.2 
+       % 
+         
+       40 basis points 
+         
+         
+       19.8 
+       % 
+      
+      
+       Net income per share - Diluted 
+       $ 
+       0.89 
+         
+         
+       17.1% 
+         
+       $ 
+       0.76 
+         
+      
+      
+         
+         
+         
+         
+         
+         
+         
+         
+      
+      
+         
+       Six Months Ended 
+         
+         
+       Change vs. 
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 2023 
+         
+         
+       Prior Year 
+         
+       June 30, 2022 
+         
+      
+      
+       Net Sales 
+       $ 
+       2,884.0 
+         
+         
+       10.0% 
+         
+       $ 
+       2,622.3 
+         
+      
+      
+       Gross Profit 
+       $ 
+       1,260.9 
+         
+         
+       14.9% 
+         
+       $ 
+       1,097.8 
+         
+      
+      
+       Gross Margin 
+         
+       43.7 
+       % 
+         
+       180 basis points 
+         
+         
+       41.9 
+       % 
+      
+      
+       Marketing Expenses 
+       $ 
+       254.5 
+         
+         
+       24.3% 
+         
+       $ 
+       204.8 
+         
+      
+      
+       Percent of Net Sales 
+         
+       8.8 
+       % 
+         
+       100 basis points 
+         
+         
+       7.8 
+       % 
+      
+      
+       Selling, General & Administrative Expenses 
+       $ 
+       420.9 
+         
+         
+       20.0% 
+         
+       $ 
+       350.7 
+         
+      
+      
+       Percent of Net Sales 
+         
+       14.6 
+       % 
+         
+       120 basis points 
+         
+         
+       13.4 
+       % 
+      
+      
+       Income from Operations 
+       $ 
+       585.5 
+         
+         
+       8.0% 
+         
+       $ 
+       542.3 
+         
+      
+      
+       Operating Margin 
+         
+       20.3 
+       % 
+         
+       -40 basis points 
+         
+         
+       20.7 
+       % 
+      
+      
+       Net income per share - Diluted 
+       $ 
+       1.72 
+         
+         
+       8.2% 
+         
+       $ 
+       1.59 
+         
+      
+       Diluted Net Income per share was $0.89 in the second quarter of 2023 as compared to $0.76 in the second quarter of 2022. Diluted Net Income per share was $1.72 in the first six months of 2023 as compared to $1.59 in the same period in 2022.    Net Sales   Net sales for the quarter ended June 30, 2023 were $1,454.2, an increase of $129.1 or 9.7% as compared to the same period in 2022.  Net sales for the six months ended June 30, 2023 were $2,884.0, an increase of $261.7 or 10.0% over the comparable six month period of 2022. The components of the net sales increase are as follows:     
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Three Months Ended 
+         
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+      
+      
+       Net Sales - Consolidated 
+       2023 
+         
+         
+       2023 
+         
+      
+      
+       Product volumes sold 
+         
+       (0.4 
+       %) 
+         
+         
+       (0.2 
+       %) 
+      
+      
+       Pricing/Product mix 
+         
+       5.8 
+       % 
+         
+         
+       5.8 
+       % 
+      
+      
+       Foreign exchange rate fluctuations 
+         
+       (0.2 
+       %) 
+         
+         
+       (0.4 
+       %) 
+      
+      
+       Acquired product lines  (1) 
+         
+       4.5 
+       % 
+         
+         
+       4.8 
+       % 
+      
+      
+       Net Sales increase 
+         
+       9.7 
+       % 
+         
+         
+       10.0 
+       % 
+      
+       (1) On October 13, 2022, we completed the Hero Acquisitio n . Hero is included in our results since the date of acquisition.      For both the three and six months ended June 30, 2023, the volume change reflects increased product unit sales in the Consumer International segment, offset by decreased product unit sales in the Consumer Domestic and the SPD segments. For both the three and six months ended June 30, 2023, price/mix was favorable in the Consumer Domestic and Consumer International segments partially offset by the SPD segment.   23 
+           Gross Profit / Gross Margin Our gross profit was $638.9 for the three months ended June 30, 2023, a $93.6 increase as compared to the same period in 2022.  Gross margin increased 270 basis points (“bps”) in the second quarter of 2023 compared to the same period in 2022, due to favorable price/mix/volume of 280 bps, the impact of productivity programs of 160 bps, business acquisition mix benefits of 120 bps, lower transportation costs of 110 bps, and favorable foreign exchange of 10 bps, offset by the impact of higher manufacturing costs, including labor, of 310 bps, and higher commodities of 100 bps.  Gross profit was $1,260.9 for the six months ended June 30, 2023, a $163.1 increase compared to the same period in 2022.  Gross margin increased 180 bps in the first six months of 2023 compared to the same period in 2022, due to favorable price/mix/volume of 210 bps, the impact of productivity programs of 160 bps, business acquisition mix benefits of 120 bps, lower transportation costs of 90 bps, and favorable foreign exchange of 10 bps, offset by the impact of higher manufacturing costs, including labor of 330 bps, and higher commodities of 80 bps.    Operating Expenses Marketing expenses for the three months ended June 30, 2023 were $132.2, an increase of $29.3 or 28.5% as compared to the same period in 2022. Marketing expenses as a percentage of net sales in the second quarter of 2023 increased by 130 bps to 9.1% as compared to 7.8% in the same period in 2022 due to 200 bps on higher expense, as we increased marketing spend as fill rates improved, offset by 70 bps of leverage on higher net sales.   Marketing expenses for the six months ended June 30, 2023 were $254.5, an increase of $49.7 or 24.3% as compared to the same period in 2022. Marketing expenses as a percentage of net sales for the first six months of 2023 increased by 100 bps to 8.8% as compared to 7.8% in the same period in 2022 due to 170 bps on higher expense, as we increased marketing spend as fill rates improved, offset by 70 bps of leverage on higher net sales. SG&A expenses were $213.1 in the second quarter of 2023, an increase of $32.3 or 17.9% as compared to the same period in 2022.  SG&A as a percentage of net sales increased 100 bps to 14.6% in the second quarter of 2023 as compared to 13.6% in the same period in 2022.  The increase is due to 220 bps on higher expenses, primarily due to the HERO acquisition, higher incentive compensation costs as well as new product and technology investments, offset by 120 bps of leverage associated with higher sales.  SG&A expenses for the first six months of 2023 were $420.9, an increase of $70.2 or 20.0% as compared to the same period in 2022. SG&A as a percentage of net sales increased 120 bps to 14.6% in the first six months of 2023 compared to 13.4% in 2022 due to 240 bps on higher expenses, primarily due to the HERO acquisition, higher incentive compensation costs as well as new product and technology investments, offset by 120 bps of leverage associated with higher sales.     Other (income) expense, net was nominal for the three and six months ended June 30, 2023 and 2022.   Interest expense for the three and six months ended June 30, 2023 increased $8.6 and $20.8 to $27.9 and $56.7, respectively, as compared to the same periods in 2022, primarily due to higher average interest rates on outstanding debt . Income Taxes   The effective tax rate for the three months ended June 30, 2023 was 17.9%, compared to 24.1% in the same period in 2022.    The effective tax rate for the six months ended June 30, 2023 was 21.1%, compared to 23.6% in the same period in 2022.    The decrease in the tax rate for both periods is primarily due to the tax benefit on higher stock option exercises.   Segment results   We operate three reportable segments: Consumer Domestic, Consumer International and SPD.    These segments are determined based on differences in the nature of products and organizational structure.  We also have a Corporate segment.     
+     
+      
+       
+       
+       
+       
+       
+      
+      
+       Segment 
+         
+         
+       Products 
+         
+      
+      
+       Consumer Domestic 
+         
+       Household and personal care products 
+      
+      
+       Consumer International 
+         
+       Primarily personal care products 
+      
+      
+       SPD 
+         
+       Specialty chemical products 
+      
+         24 
+        The Corporate segment income consists of equity in earnings of affiliates.  As of June 30, 2023, we held 50% ownership interests in each of Armand and ArmaKleen, respectively. Our equity in earnings of Armand and ArmaKleen, totaling $2.0 and $3.9 for the three months ended June 30, 2023 and 2022, respectively, and $6.4 and $6.3 for the six months ended June 30, 2023 and 2022, respectively, are included in the Corporate segment. Certain subsidiaries that are included in the Consumer International segment manufacture and sell personal care products to the Consumer Domestic segment. These sales are eliminated from the Consumer International segment results set forth below.   Segment net sales and income before income taxes for the three and six months ended June 30, 2023 and June 30, 2022 are as follows:     
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Consumer 
+         
+         
+       Consumer 
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+      
+         
+       Domestic 
+         
+         
+       International 
+         
+         
+       SPD 
+         
+         
+       Corporate (3) 
+         
+         
+       Total 
+         
+      
+      
+       Net Sales (1) 
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+      
+       Second Quarter 2023 
+       $ 
+       1,128.2 
+         
+         
+       $ 
+       241.9 
+         
+         
+       $ 
+       84.1 
+         
+         
+       $ 
+       0.0 
+         
+         
+       $ 
+       1,454.2 
+         
+      
+      
+       Second Quarter 2022 
+         
+       1,004.7 
+         
+         
+         
+       230.5 
+         
+         
+         
+       89.9 
+         
+         
+         
+       0.0 
+         
+         
+         
+       1,325.1 
+         
+      
+      
+       First Six Months of 2023 
+       $ 
+       2,245.1 
+         
+         
+       $ 
+       472.5 
+         
+         
+       $ 
+       166.4 
+         
+         
+       $ 
+       0.0 
+         
+         
+       $ 
+       2,884.0 
+         
+      
+      
+       First Six Months of 2022 
+         
+       1,999.8 
+         
+         
+         
+       445.1 
+         
+         
+         
+       177.4 
+         
+         
+         
+       0.0 
+         
+         
+         
+       2,622.3 
+         
+      
+      
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+      
+       Income before Income Taxes (2) 
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      
+      
+       Second Quarter 2023 
+       $ 
+       230.7 
+         
+         
+       $ 
+       27.5 
+         
+         
+       $ 
+       9.2 
+         
+         
+       $ 
+       2.0 
+         
+         
+       $ 
+       269.4 
+         
+      
+      
+       Second Quarter 2022 
+         
+       201.7 
+         
+         
+         
+       28.5 
+         
+         
+         
+       12.4 
+         
+         
+         
+       3.9 
+         
+         
+         
+       246.5 
+         
+      
+      
+       First Six Months of 2023 
+       $ 
+       459.4 
+         
+         
+       $ 
+       56.4 
+         
+         
+       $ 
+       16.0 
+         
+         
+       $ 
+       6.4 
+         
+         
+       $ 
+       538.2 
+         
+      
+      
+       First Six Months of 2022 
+         
+       424.4 
+         
+         
+         
+       58.1 
+         
+         
+         
+       23.9 
+         
+         
+         
+       6.3 
+         
+         
+         
+       512.7 
+         
+      
+       (1) Intersegment sales from Consumer International to Consumer Domestic, which are not reflected in the table, were $3.4 and $3.8 for the three months ended June 30, 2023 and June 30, 2022, respectively, and were $7.0 and $8.6 for the six months ended June 30, 2023 and June 30, 2022, respectively.  (2) In determining income before income taxes, interest expense, investment earnings and certain aspects of other income and expense were allocated among the segments based upon each segment’s relative income from operations.  (3) Corporate segment consists of equity in earnings of affiliates from Armand and ArmaKleen for the three and six months ended June 30, 2023 and June 30, 2022. Product line revenues from external customers are as follows:   
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Three Months Ended 
+         
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+      
+      
+         
+       2023 
+         
+         
+       2022 
+         
+         
+       2023 
+         
+         
+       2022 
+         
+      
+      
+       Household Products 
+       $ 
+       619.2 
+         
+         
+       $ 
+       572.8 
+         
+         
+       $ 
+       1,220.8 
+         
+         
+       $ 
+       1,093.3 
+         
+      
+      
+       Personal Care Products 
+         
+       509.0 
+         
+         
+         
+       431.9 
+         
+         
+         
+       1,024.3 
+         
+         
+         
+       906.5 
+         
+      
+      
+       Total Consumer Domestic 
+         
+       1,128.2 
+         
+         
+         
+       1,004.7 
+         
+         
+         
+       2,245.1 
+         
+         
+         
+       1,999.8 
+         
+      
+      
+       Total Consumer International 
+         
+       241.9 
+         
+         
+         
+       230.5 
+         
+         
+         
+       472.5 
+         
+         
+         
+       445.1 
+         
+      
+      
+       Total SPD 
+         
+       84.1 
+         
+         
+         
+       89.9 
+         
+         
+         
+       166.4 
+         
+         
+         
+       177.4 
+         
+      
+      
+       Total Consolidated Net Sales 
+       $ 
+       1,454.2 
+         
+         
+       $ 
+       1,325.1 
+         
+         
+       $ 
+       2,884.0 
+         
+         
+       $ 
+       2,622.3 
+         
+      
+         Household Products include laundry, deodorizing, and cleaning products.  Personal Care Products include condoms, pregnancy kits, oral care products, skin care and hair care products, cold and remedy products, and gummy dietary supplements.     25 
+        Consumer Domestic   Consumer Domestic net sales in the second quarter of 2023 were $1,128.2, an increase of $123.5 or 12.3% as compared to the same period in 2022. Consumer Domestic net sales for the six months ended June 30, 2023 were $2,245.1, an increase of $245.3 or 12.3% as compared to the same period in 2022.  The components of the net sales change are the following:     
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Three Months Ended 
+         
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+      
+      
+       Net Sales - Consumer Domestic 
+       2023 
+         
+         
+       2023 
+         
+      
+      
+       Product volumes sold 
+         
+       (0.2 
+       %) 
+         
+         
+       (0.6 
+       %) 
+      
+      
+       Pricing/Product mix 
+         
+       6.5 
+       % 
+         
+         
+       6.5 
+       % 
+      
+      
+       Acquired product lines  (1) 
+         
+       6.0 
+       % 
+         
+         
+       6.4 
+       % 
+      
+      
+       Net Sales increase 
+         
+       12.3 
+       % 
+         
+         
+       12.3 
+       % 
+      
+       (1) Hero is included in our results since the date of acquisition. The increase in net sales for the three months ended June 30, 2023, reflects the impact of the HERO acquisition, and the impact of higher sales of THERABREATH® mouth wash, ARM & HAMMER® Cat Litter, ARM & HAMMER® Liquid Detergent, and ARM & HAMMER® unit dose laundry detergent partially offset by declines in FINISHING TOUCH FLAWLESS® Hair Removal Products, WATERPIK® Shower Heads and  FIRST RESPONSE® . The increase in net sales for the six-month period ending June 30, 2023, reflects the impact of the HERO acquisition, and the impact of higher sales of THERABREATH® mouth wash, ARM & HAMMER® Liquid Detergent, ARM & HAMMER® Cat Litter, and BATISTE® Dry Shampoo partially offset by declines in WATERPIK® Shower Heads, VITAFUSION® and L’IL CRITTERS® gummy vitamins, and FINISHING TOUCH FLAWLESS® Hair Removal Products.   Consumer Domestic income before income taxes for the second quarter of 2023 was $230.7, a $29.0 increase as compared to the second quarter of 2022. The increase is due primarily to favorable price/mix of $66.6 and the gross margin benefit of higher sales volumes related to the HERO acquisition of $34.6, offset by higher marketing expenses of $30.5, higher SG&A expenses of $30.2, higher interest and other expenses of $6.9 and higher manufacturing and distribution expenses of $4.6.  For the six-month period ended June 30, 2023, income before income taxes was $459.4, a $35.0 increase as compared to the first six months of 2022.  The increase is due primarily to favorable price/mix of $122.3 and the gross margin benefit of higher sales volumes related to the HERO acquisition of $61.4, offset by higher SG&A expenses of $66.2, higher marketing expenses of $49.7, higher interest and other expenses of $16.7 and higher manufacturing and distribution expenses of $16.2.   Consumer International   Consumer International net sales were $241.9 in the second quarter of 2023, an increase of $11.4 or 4.9% as compared to the same period in 2022. Consumer International net sales in the first six months of 2023 were $472.5, an increase of $27.4 or 6.2% as compared to the same period in 2022. The components of the net sales change are the following:      
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Three Months Ended 
+         
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+      
+      
+       Net Sales - Consumer International 
+       2023 
+         
+         
+       2023 
+         
+      
+      
+       Product volumes sold 
+         
+       0.6 
+       % 
+         
+         
+       3.6 
+       % 
+      
+      
+       Pricing/Product mix 
+         
+       5.5 
+       % 
+         
+         
+       5.3 
+       % 
+      
+      
+       Foreign exchange rate fluctuations 
+         
+       (1.2 
+       %) 
+         
+         
+       (2.7 
+       %) 
+      
+      
+       Net Sales increase 
+         
+       4.9 
+       % 
+         
+         
+       6.2 
+       % 
+      
+         Excluding the impact of foreign exchange rates, sales growth in the second quarter ended June 30, 2023 is driven by WATERPIK, THERABREATH, and BATISTE in GMG, BATISTE and STERIMAR in Europe, BATISTE and OXICLEAN in Canada, and STERIMAR, A&H DENTAL CARE, and BAKING SODA in Mexico. The increase in net sales for the six-month period ending June 30,2023, is driven by BATISTE, THERABREATH, FEMFRESH, and OXICLEAN in GMG, BATISTE, GRAVOL, THERABREATH, and OXICLEAN in Canada, BATISTE and STERIMAR in Europe, and STERIMAR and A&H Dental CARE in Mexico. 26 
+        Consumer International income before income taxes was $27.5 in the second quarter of 2023, a $1.0 decrease as compared to the second quarter of 2022.  Higher manufacturing and commodity costs of $9.8, higher SG&A expenses of $4.2, higher interest and other expenses of $0.5 and unfavorable foreign exchange rates of $0.1, were offset by a favorable price/mix of $12.2, the impact of higher sales volumes of $0.7 and lower marketing expenses of $0.6.  For the first six months of 2023, income before income taxes was $56.4, an $1.7 decrease as compared to the same period in 2022.  Higher manufacturing and commodity costs of $20.9, higher SG&A expenses of $6.5, unfavorable foreign exchange rates of $1.7, higher interest and other expenses of $1.2 and higher marketing expenses of $0.1, were offset by a favorable price/mix of $21.2 and the impact of higher sales volumes of $7.5.   Specialty Products (“SPD”) SPD net sales were $84.1 in the second quarter of 2023, a decrease of $5.8 or 6.5% as compared to the same period in 2022. SPD net sales were $166.4 for the first six months of 2023, a decrease of $11.0, or 6.2% as compared to the same period in 2022. The components of the net sales change are the following:   
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Three Months Ended 
+         
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+      
+      
+       Net Sales - SPD 
+       2023 
+         
+         
+       2023 
+         
+      
+      
+       Product volumes sold 
+         
+       (4.2 
+       %) 
+         
+         
+       (5.8 
+       %) 
+      
+      
+       Pricing/Product mix 
+         
+       (2.3 
+       %) 
+         
+         
+       (0.4 
+       %) 
+      
+      
+       Net Sales decrease 
+         
+       (6.5 
+       %) 
+         
+         
+       (6.2 
+       %) 
+      
+       Net sales decreased in the three and six months ended June 30, 2023 primarily due to competitive imports within our domestic dairy business. SPD income before income taxes was $9.2 in the second quarter of 2023, a decrease of $3.2 as compared to the same period in 2022 due to unfavorable price/product mix of $2.1, higher SG&A expenses and other expenses of $2.1, and lower volumes of $1.1, partially offset by favorable manufacturing costs of $1.4, and lower marketing costs of $0.6. SPD income before income taxes was $16.0 in the first six months of 2023, a decrease of $7.9 as compared to the same period in 2022 due primarily to higher SG&A and other costs of $4.7, lower volumes of $3.0, unfavorable price/mix of $0.7, partially offset by favorable manufacturing costs of $0.5.     Corporate   The Corporate segment includes equity in earnings of affiliates from Armand and ArmaKleen in the three and six months of 2023 and 2022.  The Corporate segment income before income taxes was $2.0 in the second quarter of 2023, as compared to $3.9 in the same period in 2022. The Corporate segment income before income taxes was $6.4 for the first six months of 2023, as compared to $6.3 in the same period in 2022.     27 
+        Liquidity and Capital Resources     On June 16, 2022, we entered into a credit agreement (the “Credit Agreement”) that provides for our $1,500.0 unsecured revolving credit facility (the “Revolving Credit Facility”) that matures on June 16, 2027, unless extended. The Credit Agreement replaced our prior credit agreement that was entered into on March 29, 2018 which included a $1,000.0 unsecured revolving credit facility maturing on March 29, 2024. We have the ability to increase our borrowing up to an additional $750.0, subject to lender commitments and certain conditions as described in the Credit Agreement.  Borrowings under the Credit Agreement are available for general corporate purposes and are used to support our $1,500.0 commercial paper program.        As of June 30, 2023, we had $396.9 in cash and cash equivalents, and approximately $1,495.0 available through the Revolving Credit Facility and our commercial paper program. To preserve our liquidity, we invest cash primarily in government money market funds, prime money market funds, short-term commercial paper and short-term bank deposits.   In the first quarter of 2023, we repaid $200.0 of our $400.0 Term Loan due December 22, 2024 with cash on hand and commercial paper borrowings.      The current economic environment presents risks that could have adverse consequences for our liquidity. See “Unfavorable economic conditions could adversely affect demand for our products” under “Risk Factors” in Item 1A of our Form 10-K.  We continue to manage all aspects of our business including, but not limited to, monitoring the financial health of our customers, suppliers and other third-party relationships, implementing gross margin enhancement strategies and developing new opportunities for growth. We do not anticipate that current economic conditions will adversely affect our ability to comply with the financial covenant in the Credit Agreement because we currently are, and anticipate that we will continue to be, in compliance with the requirements under the Credit Agreement.     On October 28, 2021, the Board authorized a share repurchase program, under which we may repurchase up to $1,000.0 in shares of Common Stock (the “2021 Share Repurchase Program”). The 2021 Share Repurchase Program does not have an expiration and replaced the 2017 Share Repurchase Program. The 2021 Share Repurchase Program did not modify our evergreen share repurchase program, authorized by the Board on January 29, 2014, under which we may repurchase, from time to time, Common Stock to reduce or eliminate dilution associated with issuances of Common Stock under its incentive plans.     As of June 30, 2023, there remains $729.7 of share repurchase availability under the 2021 Share Repurchase Program.     On February 1, 2023, the Board declared a 4% increase in the regular quarterly dividend from $0.2625 to $0.2725 per share, equivalent to an annual dividend of $1.09 per share payable to stockholders of record as of February 15, 2023. The increase raises the annual dividend payout from $255.0 to approximately $265.0.        We anticipate that our cash from operations, together with our current borrowing capacity, will be sufficient to fund our share repurchase programs, pay debt and interest as it comes due, fund dividends, and meet our capital expenditure program costs. Capital expenditures in 2023 are expected to be approximately $250.0 primarily for manufacturing capacity investments in laundry, litter and vitamins to support expected future sales growth. Cash, together with our current borrowing capacity, may be used for acquisitions that would complement our existing product lines or geographic markets .   Cash Flow Analysis     
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       Six Months Ended 
+         
+      
+      
+         
+       June 30, 
+         
+         
+       June 30, 
+         
+      
+      
+         
+       2023 
+         
+         
+       2022 
+         
+      
+      
+       Net cash provided by operating activities 
+       $ 
+       509.2 
+         
+         
+       $ 
+       310.4 
+         
+      
+      
+       Net cash used in investing activities 
+       $ 
+       (69.2 
+       ) 
+         
+       $ 
+       (39.8 
+       ) 
+      
+      
+       Net cash used in financing activities 
+       $ 
+       (315.4 
+       ) 
+         
+       $ 
+       132.2 
+         
+      
+       Net Cash Provided by Operating Activities  – Our primary source of liquidity is the cash flow provided by operating activities, which is dependent on net income and changes in working capital.  Our net cash provided by operating activities in the six months ended June 30, 2023 increased by $198.8 to $509.2 as compared to $310.4 in the same period in 2022 due to an improvement in working capital and an increase in cash earnings (net income adjusted for non-cash items) including the impact of recent acquisitions. The improvement in working capital is primarily related to lower investment in inventory for our discretionary brands.  We measure working capital effectiveness based on our cash conversion cycle.  The following table presents our cash conversion cycle information for the quarters ended June 30, 2023 and 2022: 28 
+        
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+         
+       As of 
+         
+         
+         
+         
+      
+      
+         
+       June 30, 2023 
+         
+         
+       June 30, 2022 
+         
+         
+       Change 
+         
+      
+      
+       Days of sales outstanding in accounts receivable ("DSO") 
+         
+       28 
+         
+         
+         
+       27 
+         
+         
+         
+       1 
+         
+      
+      
+       Days of inventory outstanding ("DIO") 
+         
+       73 
+         
+         
+         
+       73 
+         
+         
+       0 
+         
+      
+      
+       Days of accounts payable outstanding ("DPO") 
+         
+       73 
+         
+         
+         
+       76 
+         
+         
+         
+       3 
+         
+      
+      
+       Cash conversion cycle 
+         
+       28 
+         
+         
+         
+       24 
+         
+         
+         
+       4 
+         
+      
+       Our cash conversion cycle (defined as the sum of DSO and DIO less DPO) which is calculated using a two-period average method, increased four days from the prior year. The decrease in DPO is a result of the timing of inventory purchase for most of our brands and a reduction in inventory purchases related to our discretionary brands. We continue to focus on reducing our working capital requirements.   Net Cash Used in Investing Activities  – Net cash used in investing activities during the first six months of 2023 was $69.2, primarily reflecting $63.2 for property, plant and equipment additions.  Net cash used in investing activities during the first six months of 2022 was $39.8, primarily reflecting $38.8 for property, plant and equipment additions.   Net Cash Used in Financing Activities  – Net cash used in financing activities during the first six months of 2023 was $315.4 reflecting $270.6 of net debt payments and $133.0 of cash dividend payments, partially offset by $88.3 of proceeds from stock option exercises. Net cash provided by financing activities during the first six months of 2022 was $132.2 reflecting $250.3 of net debt borrowings, and $16.9 of proceeds from stock option exercises, less $127.4 of cash dividend payments and $7.6 of deferred financing costs.   ITEM 3.  QUANTITATIVE AND QUALITATIVE DISCLOSURE ABOUT MARKET RISK   Market risk   For quantitative and qualitative disclosures about market risk affecting the Company, see “Quantitative and Qualitative Disclosures About Market Risk” in Item 7A of Part II in the Form 10-K.      ITEM 4.   CONTROLS AND PROCEDURES   a) Evaluation of Disclosure Controls and Procedures   The Company’s management, with the participation of the Company’s Chief Executive Officer and Chief Financial Officer, evaluated the effectiveness of the Company’s disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended (the “Exchange Act”)) at the end of the period covered by this report.  Based on that evaluation, the Chief Executive Officer and Chief Financial Officer concluded that the Company’s disclosure controls and procedures, as of the end of the period covered by this report, are effective to provide reasonable assurance that the information required to be disclosed by the Company in reports filed under the Exchange Act is (i) recorded, processed, summarized and reported within the time periods specified in the rules and forms of the United States Securities and Exchange Commission (the “Commission”), and (ii) accumulated and communicated to the Company’s management, including the Chief Executive Officer and Chief Financial Officer, as appropriate to allow timely decisions regarding the disclosure.   b) Change in Internal Control over Financial Reporting   There were no changes in the Company’s internal control over financial reporting (as defined in Rules 13a-15(f) and 15d-15(f) under the Exchange Act) occurring during the Company’s most recent fiscal quarter that have materially affected, or are reasonably likely to materially affect, the Company’s internal control over financial reporting.   CAUTIONARY NOTE ON FORWARD-LOOKING INFORMATION   This report contains forward-looking statements, including, among others, statements relating to net sales and earnings growth; gross margin changes; trade, marketing and SG&A spending; marketing expense as a percentage of net sales; sufficiency of cash flows from operations; earnings per share; the impact of new accounting pronouncements; cost savings programs; recessionary conditions; interest rates; inflation; consumer demand and spending; the effects of competition; the effect of product mix; volume growth, including the effects of new product launches into new and existing categories; the decline of condom usage; the Company’s hedge programs; the impact of foreign exchange, and commodity price fluctuations; impairments and other charges; the Company’s investments in joint ventures; the impact of acquisitions (including earn-outs) and divestitures; capital expenditures; the Company’s effective tax rate; the impact of tax audits; tax changes; the effect of the credit environment on the Company’s liquidity and capital   29 
+        resources; the Company’s fixed rate debt; compliance with covenants under the Company’s debt instruments; the Company’s commercial paper program; the Company’s current and anticipated future borrowing capacity to meet capital expenditure program costs; the Company’s share repurchase programs; payment of dividends; environmental and regulatory matters; the availability and adequacy of raw materials, including trona reserves and the conversion of such reserves; and the customers and consumer acceptance of certain ingredients in our products.  Other forward-looking statements in this report are generally identified by the use of such terms as “may,” “could,” “expect,” “intend,” “believe,” “plan,” “estimate,” “forecast,” “project,” “anticipate,” “to be,” “to make” or other comparable terms.  These statements represent the intentions, plans, expectations and beliefs of the Company, and are based on assumptions that the Company believes are reasonable but may prove to be incorrect.  In addition, these statements are subject to risks, uncertainties and other factors, many of which are outside the Company’s control and could cause actual results to differ materially from such forward-looking statements.  Factors that could cause such differences include a decline in market growth, retailer distribution and consumer demand (as a result of, among other things, political, economic and marketplace conditions and events), including those relating to the outbreak of contagious diseases; other impacts of the COVID-19 pandemic and its impact on the Company’s operations, customers, suppliers, employees, and other constituents, and market volatility and impact on the economy (including contributions to recessionary conditions), resulting from global, nationwide or local or regional outbreaks or increases in infections, new variants, and the risk that the Company will not be able to successfully execute its response plans with respect to the pandemic or localized outbreaks and the corresponding uncertainty; the impact of regulatory changes or policies associated with the COVID-19 pandemic, including continuing or renewed shutdowns of retail and other businesses in various jurisdictions; the impact of new legislation such as the U.S. CARES Act, the EU Medical Device Regulation, new cosmetic and device regulations in Mexico, and the U.S. Modernization of Cosmetic Regulation Act; the impact on the global economy of the Russia/Ukraine war, including the impact of export controls and other economic sanctions; potential recessionary conditions or economic uncertainty; the impact of continued shifts in consumer behavior, including accelerating shifts to on-line shopping; unanticipated increases in raw material and energy prices, including as a result of the Russia/Ukraine war or other inflationary pressures; delays and increased costs in manufacturing and distribution; increases in transportation costs; labor shortages; the impact of price increases for our products; the impact of inflationary conditions; the impact of supply chain and labor disruptions; the impact of severe or inclement weather on raw material and transportation costs; adverse developments affecting the financial condition of major customers and suppliers; competition; changes in marketing and promotional spending; growth or declines in various product categories and the impact of customer actions in response to changes in consumer demand and the economy, including increasing shelf space or on-line share of private label and retailer-branded products or other changes in the retail environment; consumer and competitor reaction to, and customer acceptance of, new product introductions and features; the Company’s ability to maintain product quality and characteristics at a level acceptable to our customers and consumers; disruptions in the banking system and financial markets; the Company’s borrowing capacity and ability to finance its operations and potential acquisitions; higher interest rates; foreign currency exchange rate fluctuations; implications of the United Kingdom’s withdrawal from the European Union; transition to, and shifting economic policies in the United States; potential changes in export/import and trade laws, regulations and policies of the United States and other countries, including any increased trade restrictions or tariffs; increased or changing regulation regarding the Company’s products and its suppliers in the United States and other countries where it or its suppliers operate; market volatility; issues relating to the Company’s information technology and controls; the impact of natural disasters, including those related to climate change, on the Company and its customers and suppliers, including third party information technology service providers; integrations of acquisitions or divestiture of assets; the outcome of contingencies, including litigation, pending regulatory proceedings and environmental matters; and changes in the regulatory environment in the countries where we do business.   The Company undertakes no obligation to publicly update any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by the United States federal securities laws.  You are advised, however, to consult any further disclosures the Company makes on related subjects in its filings with the United States Securities and Exchange Commission (the “Commission”).   PART II – OTHER INFORMATION   ITEM 1.   LEGAL PROCEEDINGS   General   The Company, in the ordinary course of its business, is subject of, or party to, various pending or threatened legal actions, government investigations and proceedings from time to time, including, without limitation, those relating to commercial transactions, product liability, purported consumer class actions, employment matters, antitrust, environmental, health, safety and other compliance related matters.  Such proceedings are subject to many uncertainties and the outcome of certain pending or threatened legal actions may not be reasonably predictable and any related damages may not be estimable.  Certain legal actions could result in an adverse outcome for us, and any such adverse outcome could have a material adverse effect on our business, financial condition, results of operations, and cash flows.   30 
+        ITEM 1A.  RISK FACTORS   In addition to the other information set forth in this report, you should carefully consider the factors discussed in Item 1A, “Risk Factors” in the Form 10-K, which could materially affect the Company’s business, financial condition or future results.   ITEM 2.  UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS     The Company repurchases shares of its Common Stock from time to time pursuant to its publicly announced share repurchase programs.    During the second quarter of 2023 the Company did not repurchase any shares of Common Stock pursuant to its share repurchase programs. The following table contains information for shares repurchased during the second quarter of 2023, which was solely due to shares of Common Stock withheld by the Company to satisfy tax withholding obligations in connection with the vesting of restricted stock. As a result of the Company’s stock repurchases, there remains $729.7 of share repurchase availability under the 2021 Share Repurchase Program as of June 30, 2023.   
+     
+      
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+       Period 
+         
+       Total Number of Shares Purchased 
+         
+         
+       Average Price Paid per Share 
+         
+         
+       Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs 
+         
+         
+       Approximate Dollar Value of Shares that May Yet Be Purchased Under All Programs 
+         
+      
+      
+       4/1/2023 to 4/30/2023 
+         
+         
+       391 
+         
+         
+       $ 
+       83.63 
+         
+         
+         
+       - 
+         
+         
+       $ 
+       729,727,297 
+         
+      
+      
+       5/1/2023 to 5/31/2023 
+         
+         
+       381 
+         
+         
+         
+       94.79 
+         
+         
+         
+       - 
+         
+         
+       $ 
+       729,727,297 
+         
+      
+      
+       6/1/2023 to 6/30/2023 
+         
+         
+       438 
+         
+         
+         
+       94.10 
+         
+         
+         
+       - 
+         
+         
+       $ 
+       729,727,297 
+         
+      
+      
+       Total 
+         
+         
+       1,210 
+         
+         
+       $ 
+       90.93 
+         
+         
+         
+       - 
+         
+         
+         
+         
+      
+         ITE M 5.  OTHER INFORMATION   Securities Trading Plans of Directors and Executive Officers   During the three months ended June 30, 2023, none of our directors or executive officers  adopted  or  terminated  any contract, instruction or written plan for the purchase or sale of AAG securities that was intended to satisfy the affirmative defense conditions of Rule 10b5-1(c) or any “ non-Rule 10b5-1  trading arrangement.”   
+     
+      
+       
+       
+      
+      
+         
+         
+      
+         31 
+        ITE M 6.  EXHIBITS   Exhibit Index   
+     
+      
+       
+       
+       
+       
+       
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (3.1) 
+         
+       Amended and Restated Certificate of Incorporation of the Company, incorporated by reference to Exhibit 3.1 to the Company’s quarterly report on Form 10-Q filed on June 30, 2020.   
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (3.2) 
+         
+       Amendment to the Company’s Amended and Restated Certificate of Incorporation, incorporated by reference to Exhibit 3.1 to the Company’s current report on Form 8-K filed on April 30, 2021. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (3.3) 
+         
+       By-laws of the Company, amended and restated as of December 23, 2022, incorporated by reference to Exhibit 3.1 to the Company’s current report on Form 8-K filed on December 23, 2022. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+        
+         
+       (31.1) 
+         
+       Certification of the Chief Executive Officer of the Company pursuant to Rule 13a-14(a) under the Securities Exchange Act. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+        
+         
+       (31.2) 
+         
+       Certification of the Chief Financial Officer of the Company pursuant to Rule 13a-14(a) under the Securities Exchange Act. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+        
+         
+       (32.1) 
+         
+       Certification of the Chief Executive Officer of the Company pursuant to Rule 13a-14(b) under the Exchange Act and 18 U.S.C. Section 1350. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+        
+         
+       (32.2) 
+         
+       Certification of the Chief Financial Officer of the Company pursuant to Rule 13a-14(b) under the Exchange Act and 18 U.S.C. Section 1350. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (101.INS) 
+         
+       Inline XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (101.SCH) 
+         
+       Inline XBRL Taxonomy Extension Schema Document.   
+      
+      
+         
+         
+       (101.CAL) 
+         
+       Inline XBRL Taxonomy Extension Calculation Linkbase Document. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (101.DEF) 
+         
+       Inline XBRL Taxonomy Extension Definition Linkbase Document.   
+      
+      
+         
+         
+       (101.LAB) 
+         
+       Inline XBRL Taxonomy Extension Label Linkbase Document. 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+         
+         
+       (101.PRE) 
+         
+       Inline XBRL Taxonomy Extension Presentation Linkbase Document. 
+      
+      
+         
+         
+         
+         
+      
+      
+         
+         
+       (104) 
+         
+       Cover Page Interactive Data File (formatted as inline XBRL and contained in Exhibit 101)   
+      
+       
+     
+      
+       
+      
+      
+         
+      
+     • Indicates documents filed herewith.        32 
+          SIGNATURES   Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.     
+     
+      
+       
+       
+       
+       
+       
+      
+      
+         
+         
+         
+         
+       CHURCH & DWIGHT CO., INC . 
+      
+      
+         
+         
+         
+         
+       (REGISTRANT) 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+       DATE: 
+         
+       July 28, 2023 
+         
+       /s/ Richard A. Dierker 
+      
+      
+         
+         
+         
+         
+       RICHARD A. DIERKER 
+      
+      
+         
+         
+         
+         
+       Executive Vice President 
+      
+      
+         
+         
+         
+         
+       and Chief Financial Officer 
+      
+      
+         
+         
+         
+         
+       (Principal Financial Officer) 
+      
+      
+         
+         
+         
+         
+         
+      
+      
+       DATE: 
+         
+       July 28, 2023 
+         
+       /s/ Joseph J. Longo 
+      
+      
+         
+         
+         
+         
+       JOSEPH J. LONGO 
+      
+      
+         
+         
+         
+         
+       VICE PRESIDENT AND 
+      
+      
+         
+         
+         
+         
+       CONTROLLER 
+      
+      
+         
+         
+         
+         
+       (PRINCIPAL ACCOUNTING OFFICER) 
+      
+           33 
+      
+  
+ 

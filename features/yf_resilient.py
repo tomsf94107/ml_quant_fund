@@ -195,8 +195,9 @@ def safe_yf_download(tickers, start=None, end=None, **kwargs) -> Optional[pd.Dat
     kwargs.setdefault("progress", False)
     kwargs.setdefault("auto_adjust", False)
 
-    def _call():
-        import yfinance as yf
-        return yf.download(tickers, start=start, end=end, **kwargs)
-
-    return _retry_yf_call(_call, label=f"yf.download({tickers})")
+    # XProtect 5347 SIGKILLs the process on yfinance/curl_cffi exec (Jun 30
+    # 2026), uncatchable by try/except. Disabled at the primitive so all
+    # callers fail-soft. Restore when Apple ships a corrected signature.
+    import logging as _lg
+    _lg.getLogger(__name__).warning(f"safe_yf_download disabled (XProtect block): {tickers}")
+    return None

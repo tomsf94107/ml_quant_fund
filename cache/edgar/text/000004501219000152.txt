@@ -1,0 +1,1791 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q3 2019 0000045012 0.10 0.10 0.10 0.10 0.10 0.10 1 1 0 0 1 1 13153000000 13841000000 738000000 762000000 0.18 0.18 0.18 0.18 0.18 0.18 2.50 2.50 2000000000 2000000000 1069000000 1068000000 10000000 33000000 6000000 18000000 0 198000000 192000000 
+		 
+			 0000045012 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-10-18 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ProductMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:ServiceMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 country:VE 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 country:VE 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:DrillingAndEvaluationMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:CompletionAndProductionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:DrillingAndEvaluationMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:CompletionAndProductionMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:CompletionAndProductionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:CompletionAndProductionMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:DrillingAndEvaluationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OperatingSegmentsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:MaterialReconcilingItemsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:DrillingAndEvaluationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 country:US 
+				 us-gaap:AccountsReceivableMember 
+				 us-gaap:GeographicConcentrationRiskMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 country:US 
+				 us-gaap:AccountsReceivableMember 
+				 us-gaap:GeographicConcentrationRiskMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 country:US 
+				 us-gaap:SalesRevenueNetMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 country:US 
+				 us-gaap:SalesRevenueNetMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:MiddleEastAsiaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:MiddleEastAsiaMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:EuropeAfricaCISMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:EuropeAfricaCISMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:EuropeAfricaCISMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:NorthAmericaMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:MiddleEastAsiaMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:EuropeAfricaCISMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:MiddleEastAsiaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 srt:LatinAmericaMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OtherCurrentLiabilitiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:OtherAssetsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FinancialGuaranteeMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 hal:SuperfundSitesMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-07-01 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FairValueInputsLevel1Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:CarryingReportedAmountFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FairValueInputsLevel2Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2019-09-30 
+		 
+	 
+		 
+			 0000045012 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+				 us-gaap:EstimateOfFairValueFairValueDisclosureMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 hal:Division 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 hal:Countries 
+	 
+		 hal:Customers 
+	 
+		 xbrli:pure 
+	 
+		 iso4217:USD 
+	 
+		 hal:Superfund_Sites 
+	 
+		 xbrli:shares 
+	 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM  10-Q   ☒ Quarterly Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 For the quarterly period ended  September 30, 2019   OR ☐ Transition Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 For the transition period from _____ to _____ Commission File Number  001-03492   HALLIBURTON COMPANY   (a  Delaware  corporation) 75-2677995   3000 North Sam Houston Parkway East   Houston ,  Texas   77032   (Address of Principal Executive Offices) Telephone Number – Area Code ( 281 )  871-2699   Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading Symbol Name of each exchange on which registered Common Stock, par value $2.50 per share HAL New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days. Yes ☒ No ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§ 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). Yes ☒ No ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,”  “smaller reporting company,” and "emerging growth company" in Rule 12b-2 of the Exchange Act.   Large Accelerated Filer ☒ Accelerated Filer ☐   Non-accelerated Filer ☐ Emerging Growth Company ☐   Smaller Reporting Company ☐     If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.   Yes ☐ No ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes ☐ No ☒ As of  October 18, 2019 , there were  877,804,397  shares of Halliburton Company common stock, $2.50 par value per share, outstanding. HALLIBURTON COMPANY Index     Page No. PART I. FINANCIAL INFORMATION 1       Item 1. Financial Statements 1         -        Condensed Consolidated Statements of Operations 1   -        Condensed Consolidated Statements of Comprehensive Income 2   -        Condensed Consolidated Balance Sheets 3   -        Condensed Consolidated Statements of Cash Flows 4   -        Notes to Condensed Consolidated Financial Statements 5       Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 16       Item 3. Quantitative and Qualitative Disclosures About Market Risk 26       Item 4. Controls and Procedures 26       PART II. OTHER INFORMATION 27       Item 1. Legal Proceedings 27       Item 1(a). Risk Factors 27       Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 27       Item 3. Defaults Upon Senior Securities 27       Item 4. Mine Safety Disclosures 27       Item 5. Other Information 27       Item 6. Exhibits 28       SIGNATURES   29 Table of Contents PART I.   FINANCIAL INFORMATION   Item 1.   Financial Statements   HALLIBURTON COMPANY Condensed Consolidated Statements of Operations (Unaudited)   Three Months Ended September 30 Nine Months Ended September 30 Millions of dollars and shares except per share data 2019 2018 2019 2018 Revenue:         Services $ 4,207 $ 4,800 $ 13,118 $ 13,996 Product sales 1,343 1,372 4,099 4,063 Total revenue 5,550 6,172 17,217 18,059 Operating costs and expenses:         Cost of services 3,860 4,280 12,220 12,508 Cost of sales 1,101 1,104 3,317 3,232 Impairments and other charges — — 308 265 General and administrative 53 72 168 195 Total operating costs and expenses 5,014 5,456 16,013 16,200 Operating income  536 716 1,204 1,859 Interest expense, net of interest income of $6, $10, $18 and $33 ( 141 ) ( 140 ) ( 428 ) ( 417 ) Other, net ( 23 ) ( 42 ) ( 61 ) ( 86 ) Income before income taxes 372 534 715 1,356 Income tax provision ( 76 ) ( 100 ) ( 190 ) ( 367 ) Net income $ 296 $ 434 $ 525 $ 989 Net (income) loss attributable to noncontrolling interest ( 1 ) 1 ( 3 ) 3 Net income attributable to company $ 295 $ 435 $ 522 $ 992           Basic and diluted net income per share $ 0.34 $ 0.50 $ 0.60 $ 1.13 Basic weighted average common shares outstanding 876 877 874 876 Diluted weighted average common shares outstanding 876 878 875 879      See notes to condensed consolidated financial statements.           1 Table of Contents HALLIBURTON COMPANY Condensed Consolidated Statements of Comprehensive Income (Unaudited)   Three Months Ended September 30 Nine Months Ended September 30 Millions of dollars 2019 2018 2019 2018 Net income  $ 296 $ 434 $ 525 $ 989 Other comprehensive income, net of income taxes — 7 2 6 Comprehensive income  $ 296 $ 441 $ 527 $ 995 Comprehensive (income) loss attributable to noncontrolling interest ( 1 ) 1 ( 3 ) 3 Comprehensive income attributable to company shareholders $ 295 $ 442 $ 524 $ 998      See notes to condensed consolidated financial statements.         2 Table of Contents HALLIBURTON COMPANY Condensed Consolidated Balance Sheets (Unaudited) Millions of dollars and shares except per share data September 30,  2019 December 31,  2018 Assets Current assets:     Cash and equivalents $ 1,571 $ 2,008 Receivables (net of allowances for bad debts of $762 and $738) 5,290 5,234 Inventories 3,380 3,028 Other current assets 979 881 Total current assets 11,220 11,151 Property, plant and equipment (net of accumulated depreciation of $13,841 and $13,153) 8,721 8,873 Goodwill 2,832 2,825 Deferred income taxes 1,344 1,384 Operating lease right-of-use assets 985 — Other assets 1,687 1,749 Total assets $ 26,789 $ 25,982 Liabilities and Shareholders’ Equity Current liabilities:     Accounts payable $ 2,733 $ 3,018 Accrued employee compensation and benefits 657 714 Current portion of operating lease liabilities 208 — Other current liabilities 1,094 1,070 Total current liabilities 4,692 4,802 Long-term debt 10,313 10,312 Operating lease liabilities 762 — Employee compensation and benefits 476 483 Other liabilities 784 841 Total liabilities 17,027 16,438 Shareholders’ equity:     Common shares, par value $2.50 per share (authorized 2,000 shares,  issued 1,068 and 1,069 shares) 2,670 2,671 Paid-in capital in excess of par value 108 211 Accumulated other comprehensive loss ( 353 ) ( 355 ) Retained earnings 13,800 13,739 Treasury stock, at cost (192 and 198 shares) ( 6,480 ) ( 6,744 ) Company shareholders’ equity 9,745 9,522 Noncontrolling interest in consolidated subsidiaries 17 22 Total shareholders’ equity 9,762 9,544 Total liabilities and shareholders’ equity $ 26,789 $ 25,982      See notes to condensed consolidated financial statements.     3 Table of Contents HALLIBURTON COMPANY Condensed Consolidated Statements of Cash Flows (Unaudited)   Nine Months Ended September 30 Millions of dollars 2019 2018 Cash flows from operating activities:     Net income $ 525 $ 989 Adjustments to reconcile net income to cash flows from operating activities:     Depreciation, depletion and amortization 1,253 1,184 Impairments and other charges 308 265 Changes in assets and liabilities:     Inventories ( 380 ) ( 542 ) Accounts payable ( 283 ) 601 Receivables 7 ( 431 ) Other operating activities ( 152 ) 239 Total cash flows provided by (used in) operating activities 1,278 2,305 Cash flows from investing activities:     Capital expenditures ( 1,190 ) ( 1,475 ) Proceeds from sales of property, plant and equipment 143 158 Payments to acquire businesses ( 31 ) ( 166 ) Other investing activities ( 52 ) 44 Total cash flows provided by (used in) investing activities ( 1,130 ) ( 1,439 ) Cash flows from financing activities:     Dividends to shareholders ( 472 ) ( 473 ) Stock repurchase program ( 100 ) ( 200 ) Payments on long-term borrowings ( 11 ) ( 436 ) Other financing activities 33 28 Total cash flows provided by (used in) financing activities ( 550 ) ( 1,081 ) Effect of exchange rate changes on cash ( 35 ) ( 65 ) Decrease in cash and equivalents ( 437 ) ( 280 ) Cash and equivalents at beginning of period 2,008 2,337 Cash and equivalents at end of period $ 1,571 $ 2,057 Supplemental disclosure of cash flow information:     Cash payments during the period for:     Interest $ 394 $ 415 Income taxes $ 288 $ 191      See notes to condensed consolidated financial statements.     4 Table of Contents HALLIBURTON COMPANY Notes to Condensed Consolidated Financial Statements (Unaudited) Note 1.  Basis of Presentation The accompanying unaudited condensed consolidated financial statements were prepared using generally accepted accounting principles for interim financial information and the instructions to Form 10-Q and Regulation S-X. Accordingly, these financial statements do not include all information or notes required by generally accepted accounting principles for annual financial statements and should be read together with our  2018  Annual Report on Form 10-K. Our accounting policies are in accordance with United States generally accepted accounting principles. The preparation of financial statements in conformity with these accounting principles requires us to make estimates and assumptions that affect: - the reported amounts of assets and liabilities and disclosure of contingent assets and liabilities at the date of the financial statements; and - the reported amounts of revenue and expenses during the reporting period. Ultimate results could differ from our estimates. In our opinion, the condensed consolidated financial statements included herein contain all adjustments necessary to present fairly our financial position as of  September 30, 2019  and the results of our operations for the  three and nine months ended   September 30, 2019  and  2018 , and our cash flows for the  nine months ended   September 30, 2019  and  2018 . Such adjustments are of a normal recurring nature.  In addition, certain reclassifications of prior period balances have been made to conform to the current period presentation. In conjunction with our adoption of the new lease accounting standard, capital leases, which are now referred to as finance leases, have been reclassified on our balance sheet as of December 31, 2018. This consisted of  $ 88  million  reclassified from property, plant and equipment to other assets and  $ 109  million  reclassified from long-term debt to other liabilities. See  Note 5  and  Note 11  for further information on the new lease standard.  The results of our operations for the  three and nine months ended   September 30, 2019  may not be indicative of results for the full year. Note 2 .  Impairments and Other Charges      During the  nine months ended   September 30, 2019 , we recognized certain impairments and other charges as we continue to adjust our cost structure and footprint to the current operating environment.  The following table presents various pre-tax charges we recorded during the  nine months ended   September 30, 2019  and  2018 , which are reflected within "impairments and other charges" on our condensed consolidated statements of operations. There were  no  impairments and other charges recorded during the three months ended  September 30, 2019  or  2018 .   Nine Months Ended Millions of dollars September 30, 2019 September 30, 2018 Long-lived asset impairments $ 150 $ — Severance costs 77 — Inventory write-downs 33 — Venezuela investment write-down — 265 Other 48 — Total impairments and other charges $ 308 $ 265 5 Table of Contents Note 3 .  Business Segment and Geographic Information We operate under  two  divisions, which form the basis for the  two  operating segments we report: the Completion and Production segment and the Drilling and Evaluation segment. Intersegment revenue was immaterial. Our equity in earnings and losses of unconsolidated affiliates that are accounted for using the equity method of accounting are included within cost of services and cost of sales on our statements of operations, which is part of operating income of the applicable segment. The following table presents information on our business segments.   Three Months Ended September 30 Nine Months Ended September 30 Millions of dollars 2019 2018 2019 2018 Revenue:         Completion and Production $ 3,506 $ 4,170 $ 10,973 $ 12,141 Drilling and Evaluation 2,044 2,002 6,244 5,918 Total revenue $ 5,550 $ 6,172 $ 17,217 $ 18,059 Operating income:         Completion and Production $ 446 $ 613 $ 1,284 $ 1,782 Drilling and Evaluation 150 181 418 560 Total operations 596 794 1,702 2,342 Corporate and other (a) ( 60 ) ( 78 ) ( 190 ) ( 218 ) Impairments and other charges (b) — — ( 308 ) ( 265 ) Total operating income  $ 536 $ 716 $ 1,204 $ 1,859 Interest expense, net of interest income ( 141 ) ( 140 ) ( 428 ) ( 417 ) Other, net ( 23 ) ( 42 ) ( 61 ) ( 86 ) Income before income taxes $ 372 $ 534 $ 715 $ 1,356 (a)  Corporate and other includes certain expenses not attributable to a particular business segment, such as costs related to support functions and corporate executives. (b)  For the nine months ended September 30, 2019, amount includes  $ 127  million  attributable to Completion and Production,  $ 153  million  attributable to Drilling and Evaluation, and  $ 28  million  attributable to Corporate and other. During the nine months ended  September 30, 2018 , we recognized a pre-tax charge of  $ 265  million  related to a write-down of all of our remaining investment in Venezuela. See  Note 2  for further discussion on these impairments and other charges. There were  no  such impairments and other charges recorded during the three months ended  September 30, 2019  or  2018 . Receivables As of  September 30, 2019 ,  39 %  of our net trade receivables were from customers in the United States. As of  December 31, 2018 ,  43 %  of our net trade receivables were from customers in the United States. Other than the United States, no other country or single customer accounted for more than 10% of our trade receivables at these dates. We routinely monitor the financial stability of our customers and employ an extensive process to evaluate the collectability of outstanding receivables. This process, which involves a high degree of judgment utilizing significant assumptions, includes analysis of our customers’ historical time to pay, financial condition and various financial metrics, debt structure, credit agency ratings, and production profile, as well as political and economic factors in countries of operations and other customer-specific factors.   Note 4 .  Revenue Revenue is recognized based on the transfer of control or our customers' ability to benefit from our services and products in an amount that reflects the consideration we expect to receive in exchange for those services and products.  The vast majority of our service and product contracts are short-term in nature. In recognizing revenue for our services and products, we determine the transaction price of purchase orders or contracts with our customers, which may consist of fixed and variable consideration. We also assess our customers' ability and intention to pay, which is based on a variety of factors, including our customers' historical payment experience and financial condition. Payment terms and conditions vary by contract type, although terms generally include a requirement of payment within  20  to  60  days. Other judgments involved in recognizing revenue include an assessment of progress towards completion of performance obligations for certain long-term contracts, which involve estimating total costs to determine our progress towards contract completion and calculating the corresponding amount of revenue to recognize.       6 Table of Contents Disaggregation of revenue We disaggregate revenue from contracts with customers into types of services or products, consistent with our  two  reportable segments, in addition to geographical area. Based on the location of services provided and products sold,  53 %  and  59 %  of our consolidated revenue was from the United States for the  nine  months ended  September 30, 2019  and 2018, respectively.  No other country accounted for more than 10% of our revenue.   The following table presents information on our disaggregated revenue. Millions of dollars Three Months Ended September 30 Nine Months Ended September 30 Revenue by segment: 2019 2018 2019 2018 Completion and Production $ 3,506 $ 4,170 $ 10,973 $ 12,141 Drilling and Evaluation 2,044 2,002 6,244 5,918 Total revenue $ 5,550 $ 6,172 $ 17,217 $ 18,059 Revenue by geographic region:         North America $ 2,949 $ 3,739 $ 9,551 $ 11,090 Latin America 608 522 1,766 1,458 Europe/Africa/CIS 831 757 2,402 2,199 Middle East/Asia 1,162 1,154 3,498 3,312 Total revenue $ 5,550 $ 6,172 $ 17,217 $ 18,059 Contract balances We perform our obligations under contracts with our customers by transferring services and products in exchange for consideration. The timing of our performance often differs from the timing of our customer’s payment, which results in the recognition of receivables and deferred revenue. Deferred revenue represents advance consideration received from customers for contracts where revenue is recognized on future performance of service. Deferred revenue, as well as revenue recognized during the period relating to amounts included as deferred revenue at the beginning of the period, was not material to our condensed consolidated financial statements. Transaction price allocated to remaining performance obligations Remaining performance obligations represent firm contracts for which work has not been performed and future revenue recognition is expected. We have elected the practical expedient permitting the exclusion of disclosing remaining performance obligations for contracts that have an original expected duration of  one year  or less. We have some long-term contracts related to software and integrated project management services such as lump sum turnkey contracts. For software contracts, revenue is generally recognized over time throughout the license period when the software is considered to be a right to access our intellectual property. For lump sum turnkey projects, we recognize revenue over time using an input method, which requires us to exercise judgment. Revenue allocated to remaining performance obligations for these long-term contracts is not material. Note 5 .  Leases  We adopted a comprehensive new lease accounting standard effective January 1, 2019. The details of the significant changes to our accounting policies resulting from the adoption of the new standard are set out below. We adopted the standard using the optional modified retrospective transition method; accordingly, the comparative information as of December 31, 2018 and for the three and nine months ending  September 30, 2018  has not been adjusted and continues to be reported under the previous lease standard. Under the new lease standard, assets and liabilities that arise from all leases are required to be recognized on the balance sheet for lessees. Previously, only capital leases, which are now referred to as finance leases, were recorded on the balance sheet. The adoption of this standard resulted in the recognition of approximately  $ 1.1  billion  of operating lease right-of-use assets and operating lease liabilities on our condensed consolidated balance sheet as of January 1, 2019. The adoption of this standard did not materially impact our condensed consolidated results of operations   for the  three and nine months ended   September 30, 2019 . See  Note 11  for additional information about the new accounting standard. 7 Table of Contents Beginning January 1, 2019, for all leases with a term in excess of 12 months, we recognized a lease liability equal to the present value of the lease payments and a right-of-use asset representing our right to use the underlying asset for the lease term. For operating leases, lease expense for lease payments is recognized on a straight-line basis over the lease term, while finance leases include both an operating expense and an interest expense component. For all leases with a term of 12 months or less, we elected the practical expedient to not recognize lease assets and liabilities. We recognize lease expense for these short-term leases on a straight-line basis over the lease term.  We are a lessee for numerous operating leases, primarily related to real estate, transportation and equipment. The vast majority of our operating leases have remaining lease terms of  10  years  or less, some of which include options to extend the leases, and some of which include options to terminate the leases. We generally do not include renewal or termination options in our assessment of the leases unless extension or termination for certain assets is deemed to be reasonably certain. The accounting for some of our leases may require judgment, which includes determining whether a contract contains a lease, determining the incremental borrowing rates to utilize in our net present value calculation of lease payments for lease agreements which do not provide an implicit rate, and assessing the likelihood of renewal or termination options. We also have some lease agreements with lease and non-lease components, which are generally accounted for as a single lease component. For certain equipment leases, such as offshore vessels and drilling rigs, we account for the lease and non-lease components separately.  The following tables illustrate the financial impact of our leases as of and for the  three and nine months ended   September 30, 2019 , along with other supplemental information about our existing leases: Millions of dollars Three Months Ended September 30, 2019 Nine Months Ended September 30, 2019 Components of lease expense:     Finance lease cost:     Amortization of right-of-use assets $ 5 $ 14 Interest on lease liabilities 12 40 Operating lease cost 80 266 Short-term lease cost 8 23 Sublease income ( 1 ) ( 4 ) Total lease cost $ 104 $ 339 Millions of dollars As of  September 30, 2019 Components of balance sheet:   Operating leases:   Operating lease right-of-use assets (non-current) $ 985 Current portion of operating lease liabilities  208 Operating lease liabilities (non-current) 762 Finance leases:   Other assets (non-current)  $ 136 Other current liabilities 18 Other liabilities (non-current) 128 8 Table of Contents Millions of dollars except years and percentages Nine Months Ended September 30, 2019 Other supplemental information:   Cash paid for amounts included in the measurement of lease liabilities:   Operating cash flows from operating leases $ 236 Operating cash flows from finance leases 40 Financing cash flows from finance leases 19 Right-of-use assets obtained in exchange for lease obligations:   Operating leases (a) $ 1,220 Finance leases 69 Weighted-average remaining lease term:   Operating leases 9.4  years Finance leases 5.7  years Weighted-average discount rate for operating leases 4.5 % (a)  Primarily consists of operating lease right-of-use assets exchanged for lease obligations upon implementation of the  new lease accounting standard on January 1, 2019.   The following table summarizes the maturity of our operating and finance leases as of  September 30, 2019 : Millions of dollars Operating Leases Finance Leases 2019 $ 75 $ 15 2020 218 62 2021 172 63 2022 143 63 2023 107 62 Thereafter 524 137 Total lease payments 1,239 402 Less imputed interest ( 269 ) ( 256 ) Total $ 970 $ 146 As of December 31, 2018, future total rentals on our noncancellable operating leases were  $ 975  million  in the aggregate, which consisted of the following:  $ 275  million  in  2019 ;  $ 146  million  in  2020 ;  $ 122  million  in  2021 ;  $ 100  million  in  2022 ;  $ 78  million  in  2023 ; and  $ 254  million  thereafter.   9 Table of Contents Note 6.  Inventories Inventories are stated at the lower of cost and net realizable value.  In the United States, we manufacture certain finished products and parts inventories for drill bits, completion products, bulk materials and other tools that are recorded using the last-in, first-out method, which totaled  $ 177  million  as of  September 30, 2019  and  $ 186  million  as of  December 31, 2018 . If the average cost method had been used, total inventories would have been  $ 12  million  higher than reported as of  September 30, 2019  and  $ 24  million  higher as of  December 31, 2018 . The cost of the remaining inventory was recorded using the average cost method. We had  $ 3.4  billion  of inventory as of  September 30, 2019 , a  12 %  increase from  December 31, 2018 , primarily associated with a build-up of our artificial lift, completion tools and directional drilling inventory.  Inventories consisted of the following: Millions of dollars September 30,  2019 December 31,  2018 Finished products and parts $ 2,122 $ 1,947 Raw materials and supplies 1,114 934 Work in process 144 147 Total $ 3,380 $ 3,028 All amounts in the table above are reported net of obsolescence reserves of  $ 179  million  as of  September 30, 2019  and  $ 219  million  as of  December 31, 2018 . 10 Table of Contents Note 7.  Shareholders’ Equity The following tables summarize our shareholders’ equity activity for the  three and nine months ended   September 30, 2019  and  September 30, 2018 , respectively: Millions of dollars Common Shares Paid-in Capital in Excess of Par Value Treasury Stock Retained Earnings Accumulated Other Comprehensive Income (Loss) Noncontrolling Interest in Consolidated Subsidiaries Total Balance at December 31, 2018 $ 2,671 $ 211 $ ( 6,744 ) $ 13,739 $ ( 355 ) $ 22 $ 9,544 Comprehensive income (loss):               Net income — — — 152 — — 152 Other comprehensive income — — — — 1 — 1 Cash dividends ($0.18 per share) — — — ( 157 ) — — ( 157 ) Stock plans — 13 74 — — — 87 Other — — — — — ( 2 ) ( 2 ) Balance at March 31, 2019 $ 2,671 $ 224 $ ( 6,670 ) $ 13,734 $ ( 354 ) $ 20 $ 9,625 Comprehensive income (loss):           Net income — — — 75 — 2 77 Other comprehensive income — — — — 1 — 1 Cash dividends ($0.18 per share) — — — ( 157 ) — — ( 157 ) Stock repurchase program — — ( 100 ) — — — ( 100 ) Stock plans ( 1 ) ( 166 ) 250 — — — 83 Other — — — — 1 ( 6 ) ( 5 ) Balance at June 30, 2019 $ 2,670 $ 58 $ ( 6,520 ) $ 13,652 $ ( 352 ) $ 16 $ 9,524 Comprehensive income (loss):             Net income — — — 295 — 1 296 Other comprehensive income — — — — — — — Cash dividends ($0.18 per share) — — — ( 158 ) — — ( 158 ) Stock plans — 50 40 — — — 90 Other — — — 11 ( 1 ) — 10 Balance at September 30, 2019 $ 2,670 $ 108 $ ( 6,480 ) $ 13,800 $ ( 353 ) $ 17 $ 9,762      11 Table of Contents Millions of dollars Common Shares Paid-in Capital in Excess of Par Value Treasury Stock Retained Earnings Accumulated Other Comprehensive Income (Loss) Noncontrolling Interest in Consolidated Subsidiaries Total Balance at December 31, 2017 $ 2,673 $ 207 $ ( 6,757 ) $ 12,668 $ ( 469 ) $ 27 $ 8,349 Comprehensive income (loss):               Net Income — — — 46 — 1 47 Other comprehensive income — — — — ( 2 ) — ( 2 ) Cash dividends ($0.18 per share) — — — ( 158 ) — — ( 158 ) Stock plans ( 1 ) 15 113 — — — 127 Other — — — 30 — ( 2 ) 28 Balance at March 31, 2018 $ 2,672 $ 222 $ ( 6,644 ) $ 12,586 $ ( 471 ) $ 26 $ 8,391 Comprehensive income (loss):             Net Income — — — 511 — ( 3 ) 508 Other comprehensive income — — — — 1 — 1 Cash dividends ($0.18 per share) — — — ( 158 ) — — ( 158 ) Stock plans — ( 97 ) 201 — — — 104 Other — — — — — ( 3 ) ( 3 ) Balance at June 30, 2018 $ 2,672 $ 125 $ ( 6,443 ) $ 12,939 $ ( 470 ) $ 20 $ 8,843 Comprehensive income (loss):               Net Income — — — 435 — ( 1 ) 434 Other comprehensive income — — — — 7 — 7 Cash dividends ($0.18 per share) — — — ( 157 ) — — ( 157 ) Stock repurchase program — — ( 200 ) — — — ( 200 ) Stock plans — 45 46 — — — 91 Other — — — ( 1 ) — — ( 1 ) Balance at September 30, 2018 $ 2,672 $ 170 $ ( 6,597 ) $ 13,216 $ ( 463 ) $ 19 $ 9,017               Our Board of Directors has authorized a program to repurchase our common stock from time to time. During the nine months ended  September 30, 2019 , under that program we repurchased approximately  4.5  million  shares of our common stock for a total cost of  $ 100  million . Approximately  $ 5.2  billion  remained authorized for repurchases as of  September 30, 2019 . From the inception of this program in February 2006 through  September 30, 2019 , we repurchased approximately  217  million  shares of our common stock for a total cost of approximately  $ 8.9  billion .  Accumulated other comprehensive loss consisted of the following: Millions of dollars September 30,  2019 December 31,  2018 Defined benefit and other postretirement liability adjustments $ ( 203 ) $ ( 203 ) Cumulative translation adjustments ( 83 ) ( 82 ) Other ( 67 ) ( 70 ) Total accumulated other comprehensive loss $ ( 353 ) $ ( 355 ) 12 Table of Contents Note 8 .  Commitments and Contingencies Environmental  We are subject to numerous environmental, legal and regulatory requirements related to our operations worldwide. In the United States, these laws and regulations include, among others: - the Comprehensive Environmental Response, Compensation, and Liability Act; - the Resource Conservation and Recovery Act; - the Clean Air Act; - the Federal Water Pollution Control Act; - the Toxic Substances Control Act; and - the Oil Pollution Act. In addition to the federal laws and regulations, states and other countries where we do business often have numerous environmental, legal, and regulatory requirements by which we must abide. We evaluate and address the environmental impact of our operations by assessing and remediating contaminated properties in order to avoid future liabilities and comply with environmental, legal and regulatory requirements. Our Health, Safety and Environment group has several programs in place to maintain environmental leadership and to help prevent the occurrence of environmental contamination. On occasion, we are involved in environmental litigation and claims, including the remediation of properties we own or have operated, as well as efforts to meet or correct compliance-related matters. We do not expect costs related to those claims and remediation requirements to have a material adverse effect on our liquidity, consolidated results of operations, or consolidated financial position. Our accrued liabilities for environmental matters were  $ 64  million  as of  September 30, 2019  and  $ 42  million  as of  December 31, 2018 . Because our estimated liability is typically within a range and our accrued liability may be the amount on the low end of that range, our actual liability could eventually be well in excess of the amount accrued. Our total liability related to environmental matters covers numerous properties. Additionally, we have subsidiaries that have been named as potentially responsible parties along with other third parties for  six  federal and state Superfund sites for which we have established reserves. As of  September 30, 2019 , those  six  sites accounted for approximately  $ 14  million  of our  $ 64  million  total environmental reserve. Despite attempts to resolve these Superfund matters, the relevant regulatory agency may at any time bring suit against us for amounts in excess of the amount accrued. With respect to some Superfund sites, we have been named a potentially responsible party by a regulatory agency; however, in each of those cases, we do not believe we have any material liability. We also could be subject to third-party claims with respect to environmental matters for which we have been named as a potentially responsible party. Guarantee arrangements In the normal course of business, we have agreements with financial institutions under which approximately  $ 2.1  billion  of letters of credit, bank guarantees or surety bonds were outstanding as of  September 30, 2019 . Some of the outstanding letters of credit have triggering events that would entitle a bank to require cash collateralization. None of these off balance sheet arrangements either has, or is likely to have, a material effect on our condensed consolidated financial statements. 13 Table of Contents Note 9.  Income per Share Basic income per share is based on the weighted average number of common shares outstanding during the period. Diluted income per share includes additional common shares that would have been outstanding if potential common shares with a dilutive effect had been issued. Antidilutive shares represent potential common shares which are excluded from the computation of diluted income per share as their impact would be antidilutive.  A reconciliation of the number of shares used for the basic and diluted income per share computations is as follows:   Three Months Ended September 30 Nine Months Ended September 30 Millions of shares 2019 2018 2019 2018 Basic weighted average common shares outstanding 876 877 874 876 Dilutive effect of awards granted under our stock incentive plans — 1 1 3 Diluted weighted average common shares outstanding 876 878 875 879           Antidilutive shares:         Options with exercise price greater than the average market price 26 15 23 7 Total antidilutive shares 26 15 23 7 Note 10 .  Fair Value of Financial Instruments The carrying amount of cash and equivalents, receivables and accounts payable, as reflected in the condensed consolidated balance sheets, approximates fair value due to the short maturities of these instruments. The carrying amount and fair value of our total debt, including short-term borrowings and current maturities of long-term debt, is as follows:   September 30, 2019   December 31, 2018 Millions of dollars Level 1 Level 2 Total fair value Carrying value   Level 1 Level 2 Total fair value Carrying value Total debt $ 11,012 $ 782 $ 11,794 $ 10,327   $ 6,726 $ 4,041 $ 10,767 $ 10,348 Our debt categorized within level 1 on the fair value hierarchy is calculated using quoted prices in active markets for identical liabilities with transactions occurring on the last  two days  of period-end. Our debt categorized within level 2 on the fair value hierarchy is calculated using significant observable inputs for similar liabilities where estimated values are determined from observable data points on our other bonds and on other similarly rated corporate debt or from observable data points of transactions occurring prior to  two days  from period-end and adjusting for changes in market conditions. Differences between the periods presented in our level 1 and level 2 classification of our long-term debt relate to the timing of when third party market transactions on our debt are executed. We have  no  debt categorized within level 3 on the fair value hierarchy. Note 11 .  New Accounting Pronouncements      Leases Effective January 1, 2019, we adopted an accounting standard update issued by the Financial Accounting Standards Board (FASB) related to accounting for leases, which requires lessees to record assets and liabilities that arise for all leases on their balance sheet and expanded financial statement disclosures for both lessees and lessors. Previously, only capital leases were recorded on the balance sheet. This update requires lessees to recognize a lease liability equal to the present value of its lease payments and a right-of-use asset representing its right to use the underlying asset for the lease term for all leases longer than 12 months. For leases with a term of 12 months or less, a lessee is permitted to make an accounting policy election by class of underlying asset not to recognize lease assets and liabilities and instead recognize lease expense for such leases generally on a straight-line basis over the lease term. Leases with a term of longer than 12 months will be classified as finance or operating, with classification affecting the pattern and classification of expense recognition in the income statement.  14 Table of Contents We adopted this standard using the optional modified retrospective transition method. As such, the comparative financial information has not been restated and continues to be reported under the lease standard in effect during those periods. We also elected other practical expedients provided by the new standard, including the package of practical expedients, the short-term lease recognition practical expedient in which leases with a term of 12 months or less are not recognized on the balance sheet, and the practical expedient to not separate lease and non-lease components for the majority of our leases. The adoption of this standard resulted in the recognition of approximately  $ 1.1  billion  of operating lease right-of-use assets and operating lease liabilities on our balance sheet as of January 1, 2019. Additionally, capital leases have been reclassified on our condensed consolidated balance sheet as of December 31, 2018 to conform to current period presentation. This consisted of  $ 88  million  reclassified from property, plant and equipment to other assets and  $ 109  million  reclassified from long-term debt to other liabilities. The adoption of this standard did not materially impact our condensed consolidated statements of operations for the three and nine months ended September 30, 2019. See  Note 5  for our expanded lease disclosures required by the new standard. 15 Table of Contents Item 2.   Management's Discussion and Analysis of Financial Condition and Results of Operations    EXECUTIVE OVERVIEW  Organization We are one of the world's largest providers of products and services to the energy industry. We help our customers maximize value throughout the lifecycle of the reservoir - from locating hydrocarbons and managing geological data, to drilling and formation evaluation, well construction and completion, and optimizing production throughout the life of the asset. Activity levels within our operations are significantly impacted by spending on upstream exploration, development and production programs by major, national and independent oil and natural gas companies. We report our results under two segments, the Completion and Production segment and the Drilling and Evaluation segment: - our Completion and Production segment delivers cementing, stimulation, intervention, pressure control, specialty chemicals, artificial lift, and completion products and services. The segment consists of Production Enhancement, Cementing, Completion Tools, Production Solutions, Pipeline and Process Services, Multi-Chem and Artificial Lift. - our Drilling and Evaluation segment provides field and reservoir modeling, drilling, evaluation and precise wellbore placement solutions that enable customers to model, measure, drill and optimize their well construction activities. The segment consists of Baroid, Sperry Drilling, Wireline and Perforating, Drill Bits and Services, Landmark Software and Services, Testing and Subsea, and Consulting and Project Management. The business operations of our segments are organized around four primary geographic regions: North America, Latin America, Europe/Africa/CIS and Middle East/Asia. We have manufacturing operations in various locations, the most significant of which are located in the United States, Canada, Malaysia, Singapore and the United Kingdom. With approximately  60,000  employees, we operate in more than  80  countries around the world, and our corporate headquarters are in Houston, Texas. Financial results  We continued to manage challenging market dynamics during the third quarter of 2019 as a divergence of the U.S. and international markets remained prevalent. We generated total company revenue of  $5.6 billion  during the  third  quarter of  2019 , a 10% decrease as compared to the third quarter of 2018. Total company operating income was  $536 million  during the  third  quarter of  2019 , compared to operating income of  $716 million  in the  third  quarter of  2018 . Our Completion and Production segment revenue decreased 16% from the  third  quarter of  2018 , primarily driven by lower activity and pricing for stimulation services in North America land, while our Drilling and Evaluation segment revenue increased  2 % from the  third  quarter of  2018  with higher activity for drilling-related services in Europe/Africa/CIS more than offsetting lower project management and drilling activity in the Middle East. International activity growth is gaining momentum across multiple regions and both of our divisions are meaningfully contributing to our international growth. While our Drilling and Evaluation segment has traditionally had the most exposure to international markets, our Completion and Production segment revenue has grown 13% internationally for the first nine months of 2019 as compared to the first nine months of 2018. In North America, the market for both drilling and completion services softened during the third quarter of 2019, impacting activity for the oilfield services industry. Additionally, pricing pressures continued as operators tried to lower overall costs in order to meet their cash flow objectives. As a result, our North America revenue decreased 21% in the  third  quarter of  2019 , as compared to the  third  quarter of  2018 , primarily associated with stimulation services in North America land. Customer spending in North America has decreased and is concentrated in the first half of the year. For the first time in ten years, the U.S. land rig count declined approximately 11% from the second to the third quarter, and while the third quarter historically has been the busiest in terms of hydraulic fracturing in the United States, stage counts declined in every month during the third quarter of 2019. We stacked more equipment during the third quarter than we did during the first six months of the year. Revenue in our international markets increased 7% in the  third  quarter of  2019 , as compared to the  third  quarter of  2018 . We experienced revenue growth across all international regions, particularly in Europe, Asia and Australia, with strong activity growth in our Completion Tools and Cementing businesses. We also continued to experience unconventional activity growth in several international regions, with a significant uptick over the last couple of years in several Middle Eastern countries, Argentina and Australia. Additionally, our Production Enhancement business demonstrated strong international growth in the first nine months of 2019 as compared to the first nine months of 2018. We leveraged our experience in U.S. shales to provide a customized application of technology, logistics management and operational excellence to maximize asset value for our international customers. 16 Table of Contents Business outlook Our industry is going through a transformation brought on by the shale revolution and the down-cycle from earlier this decade. The industry has removed substantial costs from the system and introduced significant efficiencies. Many of our customers in North America have shifted their strategy from production growth to operating within cash flow and generating returns. These customers are focused on maximizing production per every dollar of capital spending, and technology that can improve well productivity will be key to their success. While the North America and international markets continue to diverge, we believe we are well positioned in this dynamic market by executing on our value proposition of collaborating with our customers to engineer solutions that deliver the lowest cost per barrel.     In North America, we expect activity to further decline in the fourth quarter of 2019 across all basins in the land market given the reduction in customer spending that we see, which will impact both our business segments. These declines are attributed not only to holiday and potential weather impacts, but also to cash flow generation commitments by our customers, an oversupplied gas market, and concerns surrounding oil demand softness in 2020. We anticipate that the rig count and completions activity during the fourth quarter of 2019 will be lower than in the fourth quarter of 2018. Earlier this year we restructured our North America organization by removing several layers of management, which has changed our cost profile and increased our market responsiveness. In the fourth quarter, we plan to undertake further cost reductions by streamlining our operations and corporate functions. We will also continue deploying new technologies that lower our cost and improve margins.  Internationally, we expect activity improvement to continue at a steady pace. The offshore rig count increased 19% from the third quarter of 2018 to the third quarter of 2019, and a broader offshore recovery should add momentum to international growth going forward. Our pipeline of projects is strong and we are reallocating assets to the markets where we can earn the highest returns. We will continue to focus on the international mature fields market, and we are growing our Production Group business, which comprises artificial lift, specialty chemicals and well intervention solutions. All of these efforts provide us with a strong base to capitalize on the international recovery. As such, we expect more revenue and margin growth opportunities coming from mature international fields and shallow water international markets.   During the first nine months of  2019 , we had  $1.2 billion  of capital expenditures, a decrease of 19% from the first nine months of 2018, as we adjusted to market conditions. These capital expenditures were predominantly in our  Sperry Drilling ,  Production Enhancement ,  Wireline and Perforating ,  Artificial Lift , and  Production Solutions  product service lines. We expect our full year 2019 capital expenditures will be $1.6 billion, a 20% decrease from 2018, with the majority of the reduction coming from North America. The capital spend for this year in the U.S. is mostly directed towards increasing efficiency, reducing emissions and investing in new technologies. We intend to significantly reduce our capital expenditures again in 2020. We are monitoring the market dynamics in North America and will adjust our capital spending according to anticipated activity levels next year. We intend to continue to strengthen our product service lines through a combination of organic growth, investment and selective acquisitions. We plan to continue executing the following strategies through the end of 2019:  - directing capital and resources that differentiate our service and product offerings into strategic markets around the world; - collaborating with, and engineering solutions to maximize asset value for, our customers;  - leveraging our broad technology offerings to provide value to our customers and enable them to more efficiently drill and complete their wells; - investing in technology that will help our customers reduce reservoir uncertainty, increase operational efficiency and improve well productivity; - improving working capital and managing our balance sheet to maximize our financial flexibility;  - seeking additional ways to be one of the most cost-efficient service providers in the industry by optimizing costs, maintaining capital discipline and leveraging our scale and breadth of operations; and - striving to achieve superior returns and cash flow generation for our shareholders.   Our operating performance and business outlook are described in more detail in “Business Environment and Results of Operations.” 17 Table of Contents Financial markets, liquidity, and capital resources  We believe we have invested our cash balances conservatively and secured sufficient financing to help mitigate any near-term negative impact on our operations from adverse market conditions. As of  September 30, 2019 , we had  $1.6 billion  of cash and equivalents and  $3.5 billion  of available committed bank credit under our revolving credit facility. We believe this provides us with sufficient liquidity to address the challenges and opportunities of the current market. For additional information on market conditions, see “Liquidity and Capital Resources” and “Business Environment and Results of Operations.” 18 Table of Contents LIQUIDITY AND CAPITAL RESOURCES As of  September 30, 2019 , we had  $1.6 billion  of cash and equivalents, compared to  $2.0 billion  of cash and equivalents at December 31, 2018.  Significant sources and uses of cash during the first  nine  months of  2019 Sources of cash: - Cash flows from operating activities were  $1.3 billion . This included a negative impact from the primary components of our working capital (receivables, inventories and accounts payable) of a net  $656 million , primarily associated with reduced payables and a build-up of inventory related to our strategic technology deployments.  Uses of cash: - Capital expenditures were  $1.2 billion  and were predominantly made in our  Sperry Drilling ,  Production Enhancement ,  Wireline and Perforating ,  Artificial Lift , and  Production Solutions  product service lines.  - We paid  $472 million  in dividends to our shareholders. - We repurchased approximately  4.5 million  shares of our common stock under our share repurchase program at a total cost of  $100 million . Future sources and uses of cash  We manufacture most of our own equipment, which allows us flexibility to increase or decrease our capital expenditures based on market conditions. Capital spending for the full year  2019  is currently expected to be approximately     $1.6 billion, a decrease of 20% from 2018, as we remain committed to maintaining capital discipline. We intend to significantly reduce our capital expenditures again in 2020. We are monitoring the market dynamics in North America and will adjust our capital spending according to anticipated activity levels next year.   Currently, our quarterly dividend rate is  $0.18  per common share, or approximately  $158 million . Subject to Board of Directors approval, our intention is to continue paying dividends at our current rate during  2019 . Our Board of Directors has authorized a program to repurchase our common stock from time to time. Approximately  $5.2 billion  remained authorized for repurchases as of  September 30, 2019  and may be used for open market and other share purchases.  Other factors affecting liquidity Financial position in current market.  As of  September 30, 2019 , we had  $1.6 billion  of cash and equivalents and  $3.5 billion  of available committed bank credit under our revolving credit facility. Furthermore, we have no financial covenants or material adverse change provisions in our bank agreements, and our debt maturities extend over a long period of time. We believe our cash on hand, cash flows generated from operations and our available credit facility will provide sufficient liquidity to address the challenges and opportunities of the current market and our global cash needs, including capital expenditures, working capital investments, dividends, if any, and contingent liabilities.  Guarantee agreements.  In the normal course of business, we have agreements with financial institutions under which approximately  $2.1 billion  of letters of credit, bank guarantees or surety bonds were outstanding as of  September 30, 2019 . Some of the outstanding letters of credit have triggering events that would entitle a bank to require cash collateralization. Credit ratings.  Our credit ratings with Standard & Poor’s (S&P) remain A- for our long-term debt and A-2 for our short-term debt, with a negative outlook. Our credit ratings with Moody’s Investors Service (Moody's) remain Baa1 for our long-term debt and P-2 for our short-term debt, with a stable outlook.   Customer receivables . In line with industry practice, we bill our customers for our services in arrears and are, therefore, subject to our customers delaying or failing to pay our invoices. In weak economic environments, we may experience increased delays and failures to pay our invoices due to, among other reasons, a reduction in our customers’ cash flow from operations and their access to the credit markets as well as unsettled political conditions. If our customers delay paying or fail to pay us a significant amount of our outstanding receivables, it could have a material adverse effect on our liquidity, consolidated results of operations and consolidated financial condition.  19 Table of Contents BUSINESS ENVIRONMENT AND RESULTS OF OPERATIONS  We operate in more than  80  countries throughout the world to provide a comprehensive range of services and products to the energy industry. Our revenue is generated from the sale of services and products to major, national, and independent oil and natural gas companies worldwide. The industry we serve is highly competitive with many substantial competitors in each segment of our business. During the first  nine  months of  2019 , based upon the location of the services provided and products sold,  53%  of our consolidated revenue was from the United States, compared to  59%  of consolidated revenue from the United States in the first  nine  months of 2018.  No other country accounted for more than 10% of our revenue.   Operations in some countries may be adversely affected by unsettled political conditions, acts of terrorism, civil unrest, force majeure, war or other armed conflict, sanctions, expropriation or other governmental actions, inflation, changes in foreign currency exchange rates, foreign currency exchange restrictions and highly inflationary currencies, as well as other geopolitical factors. We believe the geographic diversification of our business activities reduces the risk that an interruption of operations in any one country, other than the United States, would be materially adverse to our consolidated results of operations. Activity within our business segments is significantly impacted by spending on upstream exploration, development and production programs by our customers. Also impacting our activity is the status of the global economy, which impacts oil and natural gas consumption.  Some of the more significant determinants of current and future spending levels of our customers are oil and natural gas prices and our customers' expectations about future prices, global oil supply and demand, completions intensity, the world economy, the availability of credit, government regulation and global stability, which together drive worldwide drilling and completions activity. Additionally, many of our customers in North America have shifted their strategy from production growth to operating within cash flow and generating returns. Lower oil and natural gas prices usually translate into lower exploration and production budgets and lower rig count, while the opposite is usually true for higher oil and natural gas prices. Our financial performance is therefore significantly affected by oil and natural gas prices and worldwide rig activity, which are summarized in the tables below.  The following table shows the average oil and natural gas prices for West Texas Intermediate (WTI), United Kingdom Brent crude oil, and Henry Hub natural gas:    Three Months Ended September 30 Year Ended December 31   2019 2018 2018 Oil price - WTI  (1) $ 56.37 $ 69.76 $ 64.94 Oil price - Brent  (1) 61.93 75.22 71.08 Natural gas price - Henry Hub  (2) 2.38 2.93 3.17 (1)  Oil price measured in dollars per barrel (2)  Natural gas price measured in dollars per million British thermal units (Btu), or MMBtu The historical average rig counts based on the weekly Baker Hughes rig count data were as follows:    Three Months Ended September 30 Nine Months Ended September 30   2019 2018 2019 2018 U.S. Land 894 1,032 961 1,001 U.S. Offshore  26 19 23 18 Canada 132 209 132 195 North America 1,052 1,260 1,116 1,214 International  1,144 1,003 1,094 981 Worldwide total 2,196 2,263 2,210 2,195 20 Table of Contents Crude oil prices have been extremely volatile over the past five years. WTI oil spot prices declined significantly beginning in 2014 from a peak price of $108 per barrel in June 2014 to a low of $26 per barrel in February 2016, a level which had not been experienced since 2003. Since the low point experienced in early 2016, oil prices increased substantially, with WTI oil spot prices reaching a high of $77 per barrel in June 2018. In late 2018, oil prices again declined with WTI oil spot prices reaching a low of $44 per barrel in December, but rising to a high of $66 per barrel in April 2019 while averaging  $56  per barrel during the  third  quarter of 2019. In the United States Energy Information Administration (EIA) October 2019 "Short Term Energy Outlook," the EIA projects Brent prices to average $59 per barrel in the fourth quarter of 2019 and then fall to $57 per barrel by the second quarter of 2020, while WTI prices are projected to average $54 per barrel in the fourth quarter of 2019 and in 2020. Crude oil production in the United States is now projected to average 12.3 million barrels per day in 2019, a 12% increase from 2018. Additionally, the EIA projects that U.S. production will increase 7% in 2020 to an average of 13.2 million barrels per day. The International Energy Agency's (IEA) October 2019 "Oil Market Report" forecasts 2019 global demand to average approximately 100.3 million barrels per day, which is up 1% from 2018 demand, driven by an increase in the Asia Pacific region, while all other regions remain approximately the same. The Henry Hub natural gas spot price averaged  $2.38  per MMBtu in the  third  quarter of 2019, a decrease of $0.55 per MMBtu, or 19%, from the  third  quarter of 2018. The EIA October 2019 “Short Term Energy Outlook” projects Henry Hub natural gas prices to average $2.43 per MMBtu in the fourth quarter of 2019 and $2.52 per MMBtu in 2020. North America operations During the  third  quarter of 2019, the average United States land rig count decreased  13% , as compared to the  third  quarter of 2018. The market for both drilling and completion services softened during the third quarter of 2019 and we expect customer activity to further decline in the fourth quarter. Customers remain focused on staying within their capital spending budgets with some customers expected to slow down and scale back their completion programs for the rest of the year. Some of the other factors for expected activity reductions include holidays and potential weather impacts, an oversupplied gas market, and concerns about oil demand softness in 2020. Overall, we expect customer spending for the full year 2019 to decrease in North America as compared to 2018.  International operations The average international rig count for the  third  quarter of 2019 was up  14%  compared to the  third  quarter of 2018. We continue to see a broad-based recovery across numerous international geographies, and we expect more revenue and margin growth opportunities coming from mature fields and shallow water markets in 2020. Barring a global economic slowdown, broader offshore recovery should add momentum to the international growth.  Venezuela.  The general license issued by the Office of Foreign Assets Control (OFAC) of the U.S. Department of Treasury, which allows us to continue operating in Venezuela despite OFAC sanctions imposed against the Venezuelan energy industry, was set to expire on July 27, 2019, and we received several extensions through January 22, 2020. Consequently, unless OFAC further extends the term of the general license, we will cease operations in Venezuela on that date in order to comply with the sanctions. In that event, it is unlikely that we will be able to remove our assets that remain in Venezuela and those assets may be expropriated. Since we have previously written down all of our investment in Venezuela and have maintained limited operations in this country during the general license period, we do not expect the expiration of the license to have a material adverse effect on our business, consolidated results of operations and consolidated financial condition. 21 Table of Contents RESULTS OF OPERATIONS IN  2019  COMPARED TO  2018    Three Months Ended   September 30, 2019  Compared with  Three Months Ended   September 30, 2018    Revenue: Three Months Ended September 30 Favorable Percentage Millions of dollars 2019 2018 (Unfavorable) Change Completion and Production $ 3,506 $ 4,170 $ (664 ) (16 )% Drilling and Evaluation 2,044 2,002 42 2 Total revenue $ 5,550 $ 6,172 $ (622 ) (10 )%           By geographic region:         North America $ 2,949 $ 3,739 $ (790 ) (21 )% Latin America 608 522 86 16 Europe/Africa/CIS 831 757 74 10 Middle East/Asia 1,162 1,154 8 1 Total revenue $ 5,550 $ 6,172 $ (622 ) (10 )% Operating income (loss): Three Months Ended September 30 Favorable Percentage Millions of dollars 2019 2018 (Unfavorable) Change Completion and Production $ 446 $ 613 $ (167 ) (27 )% Drilling and Evaluation 150 181 (31 ) (17 ) Total 596 794 (198 ) (25 ) Corporate and other (60 ) (78 ) 18 23 Total operating income $ 536 $ 716 $ (180 ) (25 )% Consolidated revenue was  $5.6 billion  in the  third  quarter of  2019 , a decrease of  $622 million , or  10% , as compared to the  third  quarter of  2018 . Consolidated operating income was  $536 million  during the  third  quarter of  2019 , a  25%  decrease from operating income of  $716 million  in the  third  quarter of  2018 . These results were primarily driven by lower activity and pricing for stimulation services in North America land, partially offset by higher stimulation activity in Latin America and increased well construction activity in Europe/Africa/CIS. Revenue from North America was  53%  of consolidated revenue in the  third  quarter of  2019  compared to  61%  of consolidated revenue in the  third  quarter of  2018 .  OPERATING SEGMENTS Completion and Production   Completion and Production revenue in the  third  quarter of  2019  was  $3.5 billion , a decrease of  $664 million , or  16% , from the  third  quarter of  2018 . Operating income in the  third  quarter of  2019  was  $446 million , a decrease of  $167 million , or  27% , from the  third  quarter of  2018 . These results were primarily driven by lower activity and pricing for stimulation services in North America land, partially offset by higher stimulation activity in Latin America, improved cementing activity and completion tool sales internationally, and increased artificial lift activity in North America land. Drilling and Evaluation   Drilling and Evaluation revenue in the  third  quarter of  2019  was $ 2.0 billion , an increase of  $42 million , or  2 %, from the  third  quarter of  2018 . Higher activity for drilling-related services in Europe/Africa/CIS more than offset lower project management and drilling activity in the Middle East. Operating income in the  third  quarter of  2019  was  $150 million , a decrease of  $31 million , or  17 %, compared to the  third  quarter of  2018 , resulting primarily from lower profitability across all product service lines in the Middle East. 22 Table of Contents GEOGRAPHIC REGIONS North America North America revenue in the  third  quarter of  2019  was $ 2.9 billion , a  21%  decrease compared to the  third  quarter of  2018 , as a result of reduced activity and pricing for our services in North America land, primarily associated with lower pressure pumping activity, partially offset by increased artificial lift activity.  Latin America Latin America revenue in the  third  quarter of  2019  was $ 608 million , a  16 % increase compared to the  third  quarter of  2018 , resulting primarily from higher activity across multiple product service lines in Mexico and increased stimulation activity in Argentina. These results were partially offset by lower well construction activity in Brazil. Europe/Africa/CIS Europe/Africa/CIS revenue in the  third  quarter of  2019  was $ 831 million , a  10 % increase compared to the  third  quarter of  2018 , primarily driven by increased well construction activity across the region and higher activity across multiple product service lines in the North Sea.  Middle East/Asia Middle East/Asia revenue in the  third  quarter of  2019  was $ 1.2 billion , essentially flat compared to the  third  quarter of  2018 . Increased activity across multiple product service lines in Indonesia and higher completion tool sales across the region offset the decline in drilling and project management activity in the Middle East. NONOPERATING ITEMS  Effective tax rate . During the three months ended  September 30, 2019 , we recorded a total income tax provision of $ 76 million  on pre-tax income of $ 372 million , resulting in an effective tax rate of 20.4%. During the three months ended  September 30, 2018 , we recorded a total income tax provision of $ 100 million  on pre-tax income of $ 534 million , resulting in an effective tax rate of 18.8%. Our effective tax rates for both periods were impacted by certain discrete tax benefits and the geographic mix of earnings during the respective periods. 23 Table of Contents Nine Months Ended   September 30, 2019  Compared with  Nine Months Ended   September 30, 2018   Revenue: Nine Months Ended September 30 Favorable Percentage Millions of dollars 2019 2018 (Unfavorable) Change Completion and Production $ 10,973 $ 12,141 $ (1,168 ) (10 )% Drilling and Evaluation 6,244 5,918 326 6 Total revenue $ 17,217 $ 18,059 $ (842 ) (5 )%           By geographic region:         North America $ 9,551 $ 11,090 $ (1,539 ) (14 )% Latin America 1,766 1,458 308 21 Europe/Africa/CIS 2,402 2,199 203 9 Middle East/Asia 3,498 3,312 186 6 Total revenue $ 17,217 $ 18,059 $ (842 ) (5 )% Operating income (loss): Nine Months Ended September 30 Favorable Percentage Millions of dollars 2019 2018 (Unfavorable) Change Completion and Production $ 1,284 $ 1,782 $ (498 ) (28 )% Drilling and Evaluation 418 560 (142 ) (25 ) Total 1,702 2,342 (640 ) (27 ) Corporate and other (190 ) (218 ) 28 13 Impairments and other charges (308 ) (265 ) (43 ) (16 ) Total operating income  $ 1,204 $ 1,859 $ (655 ) (35 )% Consolidated revenue was  $17.2 billion  in the first  nine  months of  2019 , a decrease of  $842 million , or  5% , as compared to the first  nine  months of  2018 . Consolidated operating income was  $1.2 billion  in the first  nine  months of  2019 , a  35%  decrease from operating income of  $1.9 billion  during the first  nine  months of  2018 . This decline was primarily driven by lower activity and pricing for stimulation services in North America land, partially offset by increased well construction activity globally. Operating results in the first  nine  months of 2019 were also impacted by  $308 million  of impairments and other charges, while operating results in the first  nine  months of 2018 included  $265 million  of impairments and other charges related to Venezuela. See  Note 2  to the condensed consolidated financial statements for further discussion on these charges. Revenue from North America was  55%  of consolidated revenue in the first  nine  months of  2019 , compared to  61%  of consolidated revenue in the first  nine  months of  2018 .  OPERATING SEGMENTS Completion and Production   Completion and Production revenue in the first  nine  months of  2019  was  $11.0 billion , a decrease of  $1.2 billion , or  10% , compared to the first  nine  months of  2018 . Operating income in the first  nine  months of  2019  was  $1.3 billion , a decrease of  $498 million , or  28% , compared to the first  nine  months of  2018 . These results were primarily driven by lower activity and pricing for stimulation services in North America land, partially offset by higher cementing activity globally, increased completion tool sales internationally, higher artificial lift activity in North America land and improved stimulation activity in Latin America.      Drilling and Evaluation   Drilling and Evaluation revenue in the first  nine  months of  2019  was  $6.2 billion , an increase of  $326 million , or  6% , compared to the first  nine  months of  2018 , primarily related to higher activity for drilling-related services in Europe/Africa/CIS and Latin America and improved wireline activity globally, partially offset by a decline in project management and drilling-related activity in the Middle East. Operating income in the first  nine  months of  2019  was  $418 million , a decrease of  $142 million , or  25% , compared to the first  nine  months of  2018 , resulting primarily from reduced profitability across all product service lines in the Middle East. 24 Table of Contents GEOGRAPHIC REGIONS North America North America revenue in the first  nine  months of  2019  was  $9.6 billion , a  14%  decrease compared to the first  nine  months of  2018 . These results were driven by lower activity and pricing for stimulation services in North America land,  partially offset by higher artificial lift activity. Latin America Latin America revenue in the first  nine  months of  2019  was  $1.8 billion , a  21%  increase compared to the first  nine  months of  2018 , resulting primarily from higher activity for the majority of our product service lines in Mexico, Argentina and Ecuador. These results were partially offset by reduced well construction activity in Brazil. Europe/Africa/CIS Europe/Africa/CIS revenue in the first  nine  months of  2019  was  $2.4 billion , a  9%  increase from the first  nine  months of  2018 , primarily due to increased well construction activity across the region and higher activity across multiple product service lines in Israel and the North Sea. Middle East/Asia Middle East/Asia revenue in the first  nine  months of  2019  was  $3.5 billion , a  6%  increase from the first  nine  months of  2018 , primarily resulting from increased completion tool sales throughout the region, increased project management activity in India, higher stimulation activity in the Middle East, and improved drilling and wireline activity in Asia Pacific. These results were partially offset by reduced fluids and project management activity in the Middle East. OTHER OPERATING ITEMS  Impairments and other charges  were  $308 million  in the  nine  months ended  September 30, 2019 , primarily related to asset impairments and severance costs. This compares to $ 265 million  of charges in the  nine  months ended  September 30, 2018 , representing a write-down of all of our remaining investment in Venezuela. See  Note 2  to the condensed consolidated financial statements for further discussion on these charges.  NONOPERATING ITEMS Effective tax rate . During the  nine  months ended  September 30, 2019 , we recorded a total income tax provision of  $190 million  on pre-tax income of  $715 million , resulting in an effective tax rate of 26.6%. During the  nine  months ended  September 30, 2018 , we recorded a total income tax provision of  $367 million  on pre-tax income of  $1.4 billion , resulting in an effective tax rate of 27.1%. Our effective tax rate for these periods were significantly impacted by the impairments and other charges recorded during the respective periods as we did not recognize a corresponding financial statement tax benefit for the majority of these charges. Additionally, our effective tax rate for both periods were impacted by a geographic mix of earnings during the respective periods. 25 Table of Contents ENVIRONMENTAL MATTERS We are subject to numerous environmental, legal and regulatory requirements related to our operations worldwide. For information related to environmental matters, see  Note 8  to the condensed consolidated financial statements. FORWARD-LOOKING INFORMATION The Private Securities Litigation Reform Act of 1995 provides safe harbor provisions for forward-looking information. Forward-looking information is based on projections and estimates, not historical information. Some statements in this Form 10-Q are forward-looking and use words like “may,” “may not,” “believe,” “do not believe,” “plan,” “estimate,” “intend,” “expect,” “do not expect,” “anticipate,” “do not anticipate,” “should,” “likely” and other expressions. We may also provide oral or written forward-looking information in other materials we release to the public. Forward-looking information involves risk and uncertainties and reflects our best judgment based on current information. Our results of operations can be affected by inaccurate assumptions we make or by known or unknown risks and uncertainties. In addition, other factors may affect the accuracy of our forward-looking information. As a result, no forward-looking information can be guaranteed. Actual events and the results of our operations may vary materially. We do not assume any responsibility to publicly update any of our forward-looking statements regardless of whether factors change as a result of new information, future events or for any other reason. You should review any additional disclosures we make in our press releases and Forms 10-K, 10-Q and 8-K filed with or furnished to the SEC. We also suggest that you listen to our quarterly earnings release conference calls with financial analysts. Item 3.   Quantitative and Qualitative Disclosures About Market Risk   For quantitative and qualitative disclosures about market risk, see Part II, Item 7(a), “Quantitative and Qualitative Disclosures About Market Risk,” in our  2018  Annual Report on Form 10-K. Our exposure to market risk has not changed materially since  December 31, 2018 . Item 4.   Controls and Procedures   In accordance with the Securities Exchange Act of 1934 Rules 13a-15 and 15d-15, we carried out an evaluation, under the supervision and with the participation of management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of our disclosure controls and procedures as of the end of the period covered by this report. Based on that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that our disclosure controls and procedures were effective as of  September 30, 2019  to provide reasonable assurance that information required to be disclosed in our reports filed or submitted under the Exchange Act is recorded, processed, summarized and reported within the time periods specified in the Securities and Exchange Commission’s rules and forms. Our disclosure controls and procedures include controls and procedures designed to ensure that information required to be disclosed in reports filed or submitted under the Exchange Act is accumulated and communicated to our management, including our Chief Executive Officer and Chief Financial Officer, as appropriate, to allow timely decisions regarding required disclosure. There has been no change in our internal control over financial reporting that occurred during the quarter ended  September 30, 2019  that has materially affected, or is reasonably likely to materially affect, our internal control over financial reporting. 26 Table of Contents PART II.   OTHER INFORMATION   Item 1.   Legal Proceedings   Information related to  Item 1.   Legal Proceedings  is included in  Note 8  to the condensed consolidated financial statements. Item 1(a).   Risk Factors   The statements in this section describe the known material risks to our business and should be considered carefully. As of  September 30, 2019 , there have been no material changes in risk factors previously disclosed in our Annual Report on Form 10-K for the fiscal year ended December 31, 2018. Item 2.   Unregistered Sales of Equity Securities and Use of Proceeds   Following is a summary of our repurchases of our common stock during the three months ended  September 30, 2019 . Period Total Number of Shares Purchased (a) Average Price Paid per Share Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs (b) Maximum Number (or Approximate Dollar Value) of Shares that may yet be Purchased Under the Program (b) July 1 - 31 30,342 $22.25 — $5,200,008,050 August 1 - 31 157,456 $18.94 — $5,200,008,050 September 1 - 30 27,783 $18.98 — $5,200,008,050 Total 215,581 $19.41 —   (a) All of the  215,581  shares purchased during the three-month period ended  September 30, 2019  were acquired from employees in connection with the settlement of income tax and related benefit withholding obligations arising from vesting in restricted stock grants. These shares were not part of a publicly announced program to purchase common stock. (b) Our Board of Directors has authorized a program to repurchase our common stock from time to time. Approximately  $5.2 billion  remained authorized for repurchases as of  September 30, 2019 . From the inception of this program in February 2006 through  September 30, 2019 , we repurchased approximately  217 million  shares of our common stock for a total cost of approximately  $8.9 billion .  Item 3.   Defaults Upon Senior Securities   None. Item 4.   Mine Safety Disclosures   Our barite and bentonite mining operations, in support of our fluid services business, are subject to regulation by the federal  Mine Safety and Health Administration  under the  Federal Mine Safety and Health Act of 1977 . Information concerning mine safety violations or other regulatory matters required by section 1503(a) of the Dodd-Frank Wall Street Reform and Consumer Protection Act and Item 104 of Regulation S-K (17 CFR 229.104) is included in Exhibit  95  to this quarterly report. Item 5.   Other Information   None. 27 Table of Contents Item 6.   Exhibits * 31.1 Certification of Chief Executive Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.       * 31.2 Certification of Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.       ** 32.1 Certification of Chief Executive Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002.       ** 32.2 Certification of Chief Financial Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002.       * 95 Mine Safety Disclosures       * 101.INS XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document * 101.SCH XBRL Taxonomy Extension Schema Document * 101.CAL XBRL Taxonomy Extension Calculation Linkbase Document * 101.LAB XBRL Taxonomy Extension Label Linkbase Document * 101.PRE XBRL Taxonomy Extension Presentation Linkbase Document * 101.DEF XBRL Taxonomy Extension Definition Linkbase Document * 104 Cover Page Interactive Data File - the cover page interactive data file does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document         * Filed with this Form 10-Q.   ** Furnished with this Form 10-Q. 28 Table of Contents   SIGNATURES   As required by the Securities Exchange Act of 1934, the registrant has authorized this report to be signed on behalf of the registrant by the undersigned authorized individuals. HALLIBURTON COMPANY /s/ Lance Loeffler /s/ Charles E. Geer, Jr. Lance Loeffler Charles E. Geer, Jr. Executive Vice President and  Vice President and  Chief Financial Officer Corporate Controller Date:  October 25, 2019   29 	 
+ 

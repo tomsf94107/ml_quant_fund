@@ -85,8 +85,10 @@ def get_25delta_skew_massive(ticker: str, current_price: float = None,
         if current_price is None:
             from features import massive_client as _mc
             from datetime import date as _date_p, timedelta as _td_p
-            _p_end = _date_p.today().strftime("%Y-%m-%d")
-            _p_start = (_date_p.today() - _td_p(days=10)).strftime("%Y-%m-%d")
+            from features.massive_client import _last_completed_session as _lcs_p
+            _p_anchor = _lcs_p()
+            _p_end = _p_anchor.strftime("%Y-%m-%d")
+            _p_start = (_p_anchor - _td_p(days=10)).strftime("%Y-%m-%d")
             try:
                 hist = _mc.download(ticker, start=_p_start, end=_p_end,
                                     auto_adjust=True, progress=False)

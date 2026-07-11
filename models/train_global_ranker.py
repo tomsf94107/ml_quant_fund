@@ -101,6 +101,22 @@ def train_ranker(df_pooled, horizon, save=True, verbose=True):
     valid_dates = date_counts[date_counts >= 2].index
     df_pooled = df_pooled[df_pooled['date'].isin(valid_dates)].copy()
     df_pooled = df_pooled.sort_values('date').reset_index(drop=True)
+
+    # ── LEAK FIX (Jul 9 2026): embargo the most recent EMBARGO_DAYS before fitting. ──
+    # Original bug: fit on ALL data incl. today -> model saw outcomes it then 'predicted'
+    # (fake +5.6 Sharpe). Now train only on data old enough it cannot leak into recent/
+    # today's shadow prediction. B retrains nightly, so each day's model is embargoed
+    # 5d back from that day. SHADOW ONLY — prob_up_global_ranker is NOT in prob_eff.
+    try:
+        from analysis.walk_forward import EMBARGO_DAYS as _EMB
+    except Exception:
+        _EMB = 5
+    import pandas as _pd
+    _d = _pd.to_datetime(df_pooled['date'])
+    _cutoff = _d.max() - _pd.Timedelta(days=_EMB)
+    _before = len(df_pooled)
+    df_pooled = df_pooled[_d <= _cutoff].copy().reset_index(drop=True)
+    log.info(f"  h={horizon}d: EMBARGO last {_EMB}d -> {_before}-{len(df_pooled)} rows (honest; no leak into recent/today)")
     
     # Group sizes for ranker
     group_sizes = df_pooled.groupby('date').size().values.tolist()

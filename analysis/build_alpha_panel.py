@@ -394,3 +394,60 @@ if __name__ == "__main__":
     print(f"\nSummary: {summary['dates_written']} dates, "
           f"{summary['alphas_written']} alphas, "
           f"{len(summary['output_files'])} files")
+# ── INCREMENTAL ALPHA PANEL (appended to analysis/build_alpha_panel.py) ──────
+# Rebuilds ONLY the latest trading session's parquet instead of all ~595 dates.
+# Historical parquets are immutable -> never reopened, never at risk.
+# Explode runs on a warmup window (default 150 cal days >= 60 trading-day min)
+# sufficient for MA50/ts_decay; parity-gated against full rebuild before trust.
+
+def build_alpha_panel_incremental(
+    tickers=None,
+    warmup_days: int = 150,
+    output_dir=None,
+    ts_windows=(5, 10, 20),
+    bucket_map=None,
+    verbose: bool = True,
+    parallel: bool = True,
+    target_date: str = None,
+) -> dict:
+    """Write only the newest session's alpha parquet. Reads recent window only.
+
+    target_date: explicit YYYY-MM-DD to build (default: latest available from
+                 the base-feature panel, i.e. last completed session).
+    """
+    from datetime import date as _date, timedelta as _td
+    if output_dir is None:
+        output_dir = DEFAULT_OUTPUT_DIR
+    if tickers is None:
+        tickers = load_tickers()
+    if bucket_map is None:
+        try:
+            bucket_map = load_bucket_map()
+        except Exception as e:
+            log.warning(f"Could not load bucket_map: {e} — skipping group ops")
+            bucket_map = None
+
+    start_date = (_date.today() - _td(days=warmup_days)).strftime("%Y-%m-%d")
+    log.info(f"[INCREMENTAL] base panels from {start_date} (warmup {warmup_days}d) "
+             f"for {len(tickers)} tickers")
+    panels = build_panels_from_tickers(tickers, start_date, None, verbose)
+    if not panels:
+        log.error("No base panels built — aborting")
+        return {"dates_written": 0, "alphas_written": 0, "output_files": [],
+                "error": "no_base_panels"}
+
+    # latest available date in the panel = last completed session
+    sample = next(iter(panels.values()))
+    latest = pd.Timestamp(sample.index.max()).strftime("%Y-%m-%d")
+    tgt = target_date or latest
+    log.info(f"[INCREMENTAL] exploding window, writing ONLY {tgt}")
+
+    if parallel:
+        from analysis.explode_parallel import explode_panels_parallel
+        alphas = explode_panels_parallel(panels, bucket_map=bucket_map,
+                                         ts_windows=ts_windows, verbose=verbose)
+    else:
+        alphas = explode_panels(panels, bucket_map=bucket_map,
+                                ts_windows=ts_windows, verbose=verbose)
+
+    return write_alpha_panel(alphas, output_dir, target_dates=[tgt], verbose=verbose)

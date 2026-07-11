@@ -1,0 +1,1984 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --10-31 Q1 2020 0000711404 16400000 15200000 0.1 0.1 120000000 120000000 53200000 53300000 P5Y 0 0 0 0.1 0.1 1000000 1000000 0 0 0 0 226.3 254.77 254.77 4100000 4100000 
+		 
+			 0000711404 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2020-02-26 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CommonStockExcludingTreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CommonStockExcludingTreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CommonStockExcludingTreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccountingStandardsUpdate201616Member 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccountingStandardsUpdate201616Member 
+			 
+		 
+		 
+			 2018-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CommonStockExcludingTreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CommonStockExcludingTreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CommonStockExcludingTreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TreasuryStockParNetValueMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:Acquisitions2019Member 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:Acquisitions2018Member 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2018-11-01 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2019-05-01 
+			 2019-07-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:LicenseAndDistributionRightsAndOtherMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TechnologyBasedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:LicenseAndDistributionRightsAndOtherMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CompositeMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CompositeMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:LicenseAndDistributionRightsAndOtherMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CompositeMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MaximumMember 
+				 coo:RevolvingCreditFacilityAndTermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:BaseRateMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:RevolvingCreditFacilityAndTermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MinimumMember 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2017-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MinimumMember 
+				 coo:RevolvingCreditFacilityAndTermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019And2017AndCreditAgreement2016Member 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MinimumMember 
+				 coo:RevolvingCreditFacilityAndTermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:BaseRateMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019Member 
+				 coo:TermLoansMember 
+				 us-gaap:BaseRateMember 
+			 
+		 
+		 
+			 2019-09-27 
+			 2019-09-27 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MinimumMember 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+				 us-gaap:BaseRateMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2017-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MinimumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MaximumMember 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2018Member 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2018-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+			 
+		 
+		 
+			 2017-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MaximumMember 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+				 us-gaap:BaseRateMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2017-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019Member 
+				 coo:TermLoansMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2019-09-27 
+			 2019-09-27 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019Member 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2019-09-27 
+			 2019-09-27 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019Member 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2019-09-27 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019Member 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MaximumMember 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2017-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2019Member 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:MaximumMember 
+				 coo:RevolvingCreditFacilityAndTermLoanFacility2016Member 
+				 coo:CreditAgreement2016Member 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2016-03-01 
+			 2016-03-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:OverdraftAndOtherCreditFacilitiesMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:MediumTermNotesMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:MediumTermNotesMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoansMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:OtherDebtMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:OverdraftAndOtherCreditFacilitiesMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:OtherDebtMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:TermLoanAgreement2017Member 
+				 us-gaap:MediumTermNotesMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2017-11-01 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:RestrictedStockUnitsRSUMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:ResearchAndDevelopmentExpenseMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:ResearchAndDevelopmentExpenseMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2017-11-01 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2017-11-01 
+			 2018-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2020-02-10 
+			 2020-02-10 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2017-03-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2011-12-31 
+		 
+	 
+		 
+			 0000711404 
+		 
+		 
+			 2015-03-01 
+			 2015-06-30 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionLitigationMember 
+			 
+		 
+		 
+			 2018-07-01 
+			 2018-07-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:RestOfWorldExcludingUnitedStatesAndEuropeMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:RestOfWorldExcludingUnitedStatesAndEuropeMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:RestOfWorldExcludingUnitedStatesAndEuropeMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2019-10-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 srt:EuropeMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:RestOfWorldExcludingUnitedStatesAndEuropeMember 
+			 
+		 
+		 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:SingleUseSphereLensMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:NonSingleUseSphereAndOtherMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:ToricLensMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:FertilityMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:SingleUseSphereLensMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:MultifocalLensMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:OfficeAndSurgicalProductsMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:MultifocalLensMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:FertilityMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:NonSingleUseSphereAndOtherMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:ToricLensMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 coo:OfficeAndSurgicalProductsMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopersurgicalSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 coo:CoopervisionSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2018-11-01 
+			 2019-01-31 
+		 
+	 
+		 
+			 0000711404 
+			 
+				 us-gaap:CorporateNonSegmentMember 
+			 
+		 
+		 
+			 2019-11-01 
+			 2020-01-31 
+		 
+	 
+		 coo:segment 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:shares 
+	 
+		 coo:action 
+	 
+		 xbrli:pure 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 _____________________________________________________________ FORM  10-Q   _____________________________________________________________ ☒ Quarterly Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 For the quarterly period ended  January 31, 2020   ☐ Transition Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934 For the transition period from              to              Commission File Number  1-8597   _____________________________________________________________ The Cooper Companies, Inc.   (Exact name of registrant as specified in its charter) _____________________________________________________________ Delaware 94-2657368 (State or other jurisdiction of incorporation or organization) (I.R.S. Employer Identification No.) 6101 Bollinger Canyon Road ,  Suite 500 , San Ramon ,  California   94583   (Address of principal executive offices) (Zip Code) Registrant’s telephone number, including area code ( 925 )  460-3600   _____________________________________________________________ Securities registered pursuant to Section 12(b) of the Act: Title of each class   Trading Symbol   Name of each exchange on which registered Common Stock, $.10 par value   COO   The New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes    ☒     No   ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes    ☒     No   ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or emerging growth company. See definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company” and "emerging growth company" in Rule 12b-2 of the Exchange Act. Large accelerated filer ☒   Accelerated filer ☐ Non-accelerated filer ☐   Smaller reporting company ☐ Emerging growth company ☐       If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act.):    Yes   ☐     No   ☒ Indicate the number of shares outstanding of each of issuer’s classes of common stock, as of the latest practicable date. On February 26, 2020,  53,330,450  shares of Common Stock, $.10 par value, were outstanding.       INDEX       Page No. PART I. FINANCIAL INFORMATION         Item 1. Unaudited Financial Statements           Consolidated Statements of Income 3         Consolidated Statements of Comprehensive Income 4         Consolidated Condensed Balance Sheets 5         Consolidated Condensed Statements of Stockholders' Equity 6         Consolidated Condensed Statements of Cash Flows 7         Notes to Consolidated Condensed Financial Statements 8       Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 21       Item 3. Quantitative and Qualitative Disclosure About Market Risk 34       Item 4. Controls and Procedures 35       PART II. OTHER INFORMATION         Item 1. Legal Proceedings 36       Item 1A. Risk Factors 36       Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 38       Item 3. Defaults Upon Senior Securities 38       Item 4. Mine Safety Disclosures 38       Item 5. Other Information 38       Item 6. Exhibits 38     Signature 39 2       PART I. FINANCIAL INFORMATION Item 1. Unaudited Financial Statements THE COOPER COMPANIES, INC. AND SUBSIDIARIES Consolidated Statements of Income  Three Months Ended January 31,   (In millions, except for earnings per share) (Unaudited)     2020   2019 Net sales $ 646.2   $ 628.1 Cost of sales 219.7   209.6 Gross profit 426.5   418.5 Selling, general and administrative expense 258.3   250.0 Research and development expense 22.2   21.0 Amortization of intangibles 34.9   36.6 Operating income 111.1   110.9 Interest expense 11.6 18.2 Other expense (income), net  2.1 ( 1.1 ) Income before income taxes 97.4   93.8 Provision (benefit) for income taxes (Note 7) 6.9   ( 9.4 ) Net income  $ 90.5   $ 103.2 Earnings per share - basic (Note 8) $ 1.84   $ 2.09 Earnings per share - diluted (Note 8) $ 1.82   $ 2.07 Number of shares used to compute earnings per share:   Basic 49.1   49.3 Diluted 49.7   49.9 The accompanying notes are an integral part of these Consolidated Financial Statements. 3                      THE COOPER COMPANIES, INC. AND SUBSIDIARIES Consolidated Statements of Comprehensive Income Three Months Ended January 31,   (In millions) (Unaudited)    2020   2019 Net income  $ 90.5   $ 103.2 Other comprehensive income:       Foreign currency translation adjustment, net of tax 16.7   32.7 Comprehensive income $ 107.2   $ 135.9 The accompanying notes are an integral part of these Consolidated Financial Statements. 4       THE COOPER COMPANIES, INC. AND SUBSIDIARIES Consolidated Condensed Balance Sheets (In millions) (Unaudited)   January 31, 2020   October 31, 2019 ASSETS       Current assets:       Cash and cash equivalents $ 76.8   $ 89.0 Trade accounts receivable, net of allowance for doubtful accounts of $15.2 at January 31, 2020 and $16.4 at October 31, 2019 408.0   435.3 Inventories 526.5   506.9 Prepaid expense and other current assets 138.6   132.2 Total current assets 1,149.9   1,163.4 Property, plant and equipment, at cost 2,266.9   2,193.9 Less: accumulated depreciation and amortization 1,098.4   1,061.8   1,168.5   1,132.1 Operating lease right-of-use assets (Note 2) 264.0   — Goodwill (Note 5) 2,445.9   2,428.9 Other intangibles, net (Note 5) 1,374.4   1,405.3 Deferred tax assets  75.9   78.0 Other assets 69.9   66.8 Total assets $ 6,548.5   $ 6,274.5 LIABILITIES AND STOCKHOLDERS’ EQUITY       Current liabilities:       Short-term debt (Note 6) $ 543.0   $ 563.7 Accounts payable 141.7   150.1 Employee compensation and benefits 92.5   104.7 Operating lease liabilities 31.5   — Other current liabilities 259.8   292.1 Total current liabilities 1,068.5   1,110.6 Long-term debt (Note 6) 1,233.7   1,262.6 Deferred tax liabilities 27.6   28.0 Long-term tax payable 176.2   124.8 Operating lease liabilities 241.2   — Accrued pension liability and other 70.4   119.9 Total liabilities $ 2,817.6   $ 2,645.9 Contingencies (Note 13)   Stockholders’ equity:       Preferred stock, 10 cents par value, shares authorized: 1.0; zero shares issued or outstanding —   — Common stock, 10 cents par value, shares authorized: 120.0; issued 53.3 at January 31, 2020 and 53.2 at October 31, 2019 5.3   5.3 Additional paid-in capital 1,611.6   1,615.0 Accumulated other comprehensive loss ( 430.4 )   ( 447.1 ) Retained earnings 3,115.4   3,026.4 Treasury stock at cost: 4.1 shares at January 31, 2020 and October 31, 2019 ( 571.2 )   ( 571.2 ) Total Cooper stockholders’ equity 3,730.7   3,628.4 Noncontrolling interests 0.2   0.2 Stockholders’ equity (Note 10) 3,730.9   3,628.6 Total liabilities and stockholders’ equity $ 6,548.5   $ 6,274.5 The accompanying notes are an integral part of these Consolidated Condensed Financial Statements. 5 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Consolidated Condensed Statements of Stockholders' Equity (In millions) (Unaudited)   Common Shares   Treasury Stock   Additional Paid-In Capital   Accumulated Other Comprehensive Income (Loss)   Retained Earnings   Treasury Stock   Noncontrolling Interests   Total Stockholders' Equity (In millions) Shares   Amount   Shares   Amount             Balance at November 1, 2018 49.2   $ 5.0   3.6   $ 0.3   $ 1,572.1   $ ( 430.7 )   $ 2,576.0   $ ( 415.1 )   $ 0.2   $ 3,307.8 Net income —   —   —   —   —   —   103.2   —   —   103.2 Other comprehensive income, net of tax —   —   —   —   —   32.7   —   —   —   32.7 Issuance of common stock for stock plans, net 0.1   —   —   —   ( 9.0 )   —   —   —   —   ( 9.0 ) Treasury stock repurchase —   —   —   —   —   —   —   ( 6.1 )   —   ( 6.1 ) Dividends on common stock ($0.03 per share) —   —   —   —   —   —   ( 1.5 )   —   —   ( 1.5 ) Share-based compensation expense —   —   —   —   11.7   —   —   —   —   11.7 ASU 2016-16 adoption —   —   —   —   —   —   ( 13.3 )   —   —   ( 13.3 ) Balance at January 31, 2019 49.3   $ 5.0   3.6   $ 0.3   $ 1,574.8   $ ( 398.0 )   $ 2,664.4   $ ( 421.2 )   $ 0.2   $ 3,425.5                                         Balance at November 1, 2019 49.1   $ 4.9   4.1   $ 0.4   $ 1,615.0   $ ( 447.1 )   $ 3,026.4   $ ( 571.2 )   $ 0.2   $ 3,628.6 Net income  —   —   —   —   —   —   90.5   —   —   90.5 Other comprehensive income, net of tax —   —   —   —   —   16.7   —   —   —   16.7 Issuance of common stock for stock plans, net 0.1   —   —   —   ( 13.2 )   —   —   —   —   ( 13.1 ) Dividends on common stock ($0.03 per share) —   —   —   —   —   —   ( 1.5 )   —   —   ( 1.5 ) Share-based compensation expense —   —   —   —   9.7   —   —   —   —   9.7 Balance at January 31, 2020 49.2   $ 4.9   4.1   $ 0.4   $ 1,611.6   $ ( 430.4 )   $ 3,115.4   $ ( 571.2 )   $ 0.2   $ 3,730.9 The accompanying notes are an integral part of these Consolidated Condensed Financial Statements. 6       THE COOPER COMPANIES, INC. AND SUBSIDIARIES Consolidated Condensed Statements of Cash Flows Three Months Ended January 31,   (In millions) (Unaudited)   2020   2019 Cash flows from operating activities:       Net income  $ 90.5   $ 103.2 Depreciation and amortization 70.6   68.8 Increase in operating capital ( 50.6 )   ( 53.3 ) Other non-cash items 19.2   ( 16.9 ) Net cash provided by operating activities 129.7   101.8 Cash flows from investing activities:       Purchases of property, plant and equipment ( 69.0 )   ( 79.2 ) Acquisitions of businesses and assets, net of cash acquired, and other ( 9.4 )   ( 50.0 ) Net cash used in investing activities ( 78.4 )   ( 129.2 ) Cash flows from financing activities:       Proceeds from long-term debt 234.0   261.8 Repayments of long-term debt ( 263.1 )   ( 560.8 ) Net (repayments) proceeds from short-term debt ( 20.8 )   407.5 Net payments related to share-based compensation awards ( 13.2 )   ( 9.0 ) Repurchase of common stock —   ( 6.1 ) Debt acquisition costs ( 0.1 )   ( 0.2 ) Net cash (used in) provided by financing activities ( 63.2 )   93.2 Effect of exchange rate changes on cash, cash equivalents and restricted cash ( 0.2 )   0.9 Net (decrease) increase in cash, cash equivalents and restricted cash ( 12.1 )   66.7 Cash, cash equivalents and restricted cash at beginning of period 89.5   80.2 Cash, cash equivalents and restricted cash at end of period $ 77.4   $ 146.9 Reconciliation of cash flow information:       Cash and cash equivalents $ 76.8   $ 146.6 Restricted cash included in other current assets 0.6   0.3 Total cash, cash equivalents and restricted cash $ 77.4   $ 146.9 The accompanying notes are an integral part of these Consolidated Condensed Financial Statements. 7 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Note 1.  General The accompanying unaudited interim consolidated condensed financial statements and related notes should be read in conjunction with the audited Consolidated Financial Statements of the Cooper Companies, Inc. and its subsidiaries (the Company) and related notes as contained in the Company’s Annual Report on Form 10-K for the fiscal year ended October 31, 2019. The unaudited interim financial statements include all adjustments (consisting only of normal recurring adjustments) and accruals necessary in the judgment of management for a fair statement of the results for the periods presented. Readers should not assume that the results reported here either indicate or guarantee future performance. The terms "the Company", "we", "us", and "our" are used to refer collectively to the Cooper Companies, Inc. and its subsidiaries. Accounting Policies There have been no material changes to our significant accounting policies described in our Annual Report on Form 10-K for the fiscal year ended October 31, 2019, except as it relates to the adoption of Accounting Standards Update (ASU) 2016-02,  Leases (Topic 842) , which is described below.  Leases We consider an arrangement a lease if the arrangement transfers the right to control the use of an identified asset in exchange for consideration. We have operating leases, but do not have material financing leases. Lease right-of-use assets represent the right to use an underlying asset for the lease term, and lease liabilities represent the obligation to make payments arising from the lease agreement. These assets and liabilities are recognized at the commencement of the lease based upon the present value of the future minimum lease payments over the lease term. The lease term reflects the noncancelable period of the lease together with periods covered by an option to extend or terminate the lease when management is reasonably certain that it will exercise such option. Changes in the lease term assumption could impact the right-of-use assets and lease liabilities recognized on the balance sheet. As our leases typically do not contain a readily determinable implicit rate, we determine the present value of the lease liability using our incremental borrowing rate at the lease commencement date based on the lease term on a collateralized basis.  Accounting Pronouncements Recently Adopted I n February 2016, the Financial Accounting Standards Board (FASB) issued ASU 2016-02,  Leases (Topic 842) . ASU 2016-02 requires that a lessee recognize the assets and liabilities that arise from operating leases. A lessee should recognize in the statement of financial position a liability to make lease payments (the lease liability) and a right-of-use (ROU) asset representing its right to use the underlying asset for the lease term. For leases with a term of 12 months or less, a lessee is permitted to make an accounting policy election by class of underlying asset not to recognize lease assets and lease liabilities. In transition, lessees and lessors are required to recognize and measure leases at the beginning of the earliest period presented using a modified retrospective approach. In July 2018, the FASB issued ASU 2018-10,  Codification Improvements to Topic 842, Leases and ASU 2018-11, Leases Topic 842 Target improvements,  which provides an additional (and optional) transition method whereby the new lease standard is applied at the adoption date and recognized as an adjustment to retained earnings. In March 2019, the FASB issued ASU 2019-01,  Leases (Topic 842) Codification Improvements , which further clarifies the determination of fair value of the underlying asset by lessors that are not manufacturers or dealers and modifies transition disclosure requirements for changes in accounting principles and other technical updates.   We adopted this standard using the optional transition method and recorded an adjustment to the Consolidated Condensed Balance Sheet on November 1, 2019. We have implemented changes to certain business processes, systems and internal controls to support adoption of the new standard and the related disclosure requirements, including the implementation of a third-party leasing software solution. We elected the package of transition expedients, which allows us to keep our existing lease classifications and not reassess whether any existing contracts as of the date of adoption are leases or contain leases and not reassess initial direct cost. In addition, we elected the practical expedients to combine lease and non-lease components for our leases, and for leases with an initial term of 12 months or less to recognize the associated lease payments in the Consolidated Statements of Income on a straight-line basis over the  8 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) lease term.  As of  January 31, 2020 , the aggregate balances of lease right-of-use assets and lease liabilities were  $ 264.0  million  and  $ 272.7  million , respectively. The standard did not affect our Consolidated Statements of Income or Consolidated Condensed Statements of Cash Flows. We will continue to disclose comparative reporting periods prior to November 1, 2019 under the previous accounting guidance, ASC 840 Leases.  Accounting Pronouncements Issued Not Yet Adopted In June 2016, the FASB issued ASU No. 2016-13,  “Financial Instruments-Credit Losses (Topic 326): Measurement of Credit Losses on Financial Instruments ” and subsequent amendments to the initial guidance: ASU 2018-19  “Codification Improvements to Topic 326, Financial Instruments-Credit Losses ”, ASU 2019-04 “ Codification Improvements to Topic 326, Financial Instruments-Credit Losses, Topic 815, Derivatives and Hedging, and Topic 825, Financial Instruments” , ASU 2019-05 “ Financial Instruments-Credit Losses ”, ASU 2019-11 “ Codification Improvements to Topic 326, Financial Instruments - Credit Losses” (collectively, “Topic 326”)  and ASU 2020-02  Financial Instruments—Credit Losses (Topic 326) and Leases (Topic 842).  Topic 326 requires measurement and recognition of expected credit losses for financial assets held. Topic 326 is effective for fiscal years and interim periods within those fiscal years beginning after December 15, 2019, which means it will be effective for our fiscal year beginning November 01, 2020. Early adoption is permitted. We are currently evaluating the impact of Topic 326 on our consolidated financial statements. In November 2018, the FASB issued ASU 2018-18,  Collaborative Arrangements (Topic 808), Clarifying the Interaction between Topic 808 and Topic 606.  This guidance amended Topic 808 and Topic 606 to clarify that transactions in a collaborative arrangement should be accounted for under Topic 606 when the counterparty is a customer for a distinct good or service (i.e., unit of account). The amendments preclude an entity from presenting consideration from a transaction in a collaborative arrangement as revenue from contracts with customers if the counterparty is not a customer for that transaction. This guidance is effective for fiscal years, and interim periods within those fiscal years, beginning after December 15, 2019, which means it will be effective for our fiscal year beginning November 1, 2020. Early adoption is permitted. The adoption of this guidance will not have a material impact on our Consolidated Financial Statements. In December 2019, the FASB issued ASU 2019-12,  Income Taxes (Topic 740): Simplifying the Accounting for Income Taxes.  This guidance removes certain exceptions to the general principles in Topic 740 and enhances and simplifies various aspects of the income tax accounting guidance, including requirements such as tax basis step-up in goodwill obtained in a transaction that is not a business combination, ownership changes in investments, and interim-period accounting for enacted changes in tax law. This standard is effective for fiscal years and interim periods within those fiscal years beginning after December 15, 2020. Early adoption is permitted. We are currently evaluating the impact of ASU 2019-12 on our consolidated financial statements, which is effective for the Company in our fiscal year and interim periods beginning on November 1, 2021. In January 2020, the FASB issued ASU 2020-01  Investments-Equity Securities (Topic 321), Investments-Equity Method and Joint Ventures (Topic 323), and Derivatives and Hedging (Topic 815) - Clarifying the Interactions between Topic 321, Topic 323, and Topic 815.  This guidance addresses accounting for the transition into and out of the equity method and provides clarification of the interaction of rules for equity securities, the equity method of accounting, and forward contracts and purchase options on certain types of securities. This standard is effective for fiscal years and interim periods within those fiscal years beginning after December 15, 2020. Early adoption is permitted. We are currently evaluating the impact of ASU 2020-01 which is effective for the Company in our fiscal year and interim periods beginning on November 1, 2021. 9 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Note 2.  Leases The Company primarily has operating leases for office, manufacturing and warehouse space, vehicles, and office equipment. Our leases expire on various dates between 2021 and 2046, some of which could include options to extend the lease. Lease right-of-use assets and liabilities are recognized at the commencement date based on the present value of lease payments over the lease term. As these leases do not provide an implicit rate, we use our incremental borrowing rate based on the information available at the lease's commencement date in determining the present value of lease payments. We consider information including, but not limited to, the lease term, our credit rating and interest rates of similar debt instruments with comparable credit ratings and security interests. The lease right-of-use assets are increased by any lease prepayments made and reduced by any lease incentives such as tenant improvement allowances. Options to extend the lease term are included in the lease term when it is reasonably certain that we will exercise the extension option. The Company’s operating leases typically include non-lease components such as common-area maintenance costs. We have elected to include non-lease components with lease payments for the purpose of calculating lease right-of-use assets and liabilities, to the extent that they are fixed. Non-lease components that are not fixed are expensed as incurred as variable lease payments. Leases with a term of one year or less are not recognized on our Consolidated Condensed Balance Sheet, while the associated lease payments are recorded in the Consolidated Statements of Income on a straight-line basis over the lease term. Commitments under finance lease arrangements of  $ 2.2  million  as of  January 31, 2020  are not significant and are not included in the disclosure tables below. The following table presents information about leases on the Consolidated Condensed Balance Sheet:  (In millions) January 31, 2020 Operating Leases   Operating lease right-of-use assets $ 264.0     Operating lease liabilities, current 31.5 Operating lease liabilities, non-current  241.2 Total operating lease liabilities $ 272.7 As of  January 31, 2020 , the weighted average remaining lease term was  11.8  years  and the weighted average discount rate was  3.0 % . The following table presents information about lease expense in our Consolidated Statements of Income: Three Months Ended January 31,   (In millions) 2020 Operating lease expense $ 9.9 Short-term lease expense 1.1 Variable lease expense 0.4 10 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) The following table presents supplemental cash flow information about the Company’s leases: Three Months Ended January 31,   (In millions) 2020 Cash paid for amounts included in the measurement of lease liabilities:      Operating cash flows from operating leases  $ 9.9 Maturity of Lease Liabilities  The minimum rental payments required under operating leases that have initial or remaining noncancelable lease terms in excess of one year as of  January 31, 2020  are:  (In millions)   Remainder of 2020 $ 29.0 2021 36.1 2022 32.3 2023 29.0 2024 27.3 2025 and thereafter 175.7 Total lease payments 329.4 Less: interest 56.7 Present value of lease liabilities $ 272.7 As previously disclosed in the Company’s Annual Report on Form 10-K for the year ended October 31, 2019, and under previous lease accounting standard ASC 840, Leases, the aggregate future noncancelable minimum rental payments on its operating leases, as of October 31, 2019, are as follows: (In millions)   2020 $ 38.5 2021 34.9 2022 31.2 2023 28.0 2024 26.5 2025 and thereafter 173.6 Total future minimum lease payments $ 332.7 11 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Note 3.  Acquisitions The following is a summary of the allocation of the total purchase consideration for business and asset acquisitions that the Company completed during fiscal 2020 and 2019: (In millions) January 31, 2020   October 31, 2019 Technology $ —   $ 12.3 Customer relationships 3.4   7.5 Trademarks —   10.2 Other —   0.1 Total identifiable intangible assets $ 3.4   $ 30.1 Goodwill 4.0   29.8 Net tangible assets 1.8   7.3 Total purchase price $ 9.2   $ 67.2 All the acquisitions were funded by cash generated from operations or facility borrowings.  For business acquisitions, we recorded the tangible and intangible assets acquired and liabilities assumed at their fair values as of the applicable date of acquisition. For assets acquisitions, we recorded the tangible and intangible assets acquired and liabilities assumed at their estimated and relative fair values as of the applicable date of acquisition.  We believe these acquisitions strengthen CooperSurgical's and CooperVision's businesses through the addition of new distributors or complementary products and services. Fiscal Year 2020 On December 13, 2019, CooperSurgical completed the acquisition of a privately-held distributor of in vitro fertilization (IVF) medical devices and systems. The purchase price allocation is preliminary and we are in the process of finalizing information and the corresponding impact on goodwill. The pro forma results of operations of this acquisition has not been presented because the effect of the business combination described above was not material to our consolidated results of operations.  Fiscal Year 2019 On December 28, 2018, CooperVision completed the acquisition of Blanchard Contact Lenses. Blanchard is a privately-held scleral lens company, which expands CooperVision's specialty and scleral lens portfolio. On December 31, 2018, CooperSurgical completed the acquisition of Incisive Surgical Inc., a privately-held U.S. medical device company that develops mechanical surgical solutions for skin closure.   The pro forma results of operations of these acquisitions have not been presented because the effects of the business combinations described above, individually and in the aggregate, were not material to our reported consolidated financial results. Note 4.  Inventories (In millions) January 31, 2020   October 31, 2019 Raw materials $ 133.3   $ 131.4 Work-in-process 12.5   13.3 Finished goods 380.7   362.2 Total inventories $ 526.5   $ 506.9 Inventories are stated at the lower of cost and net realizable value. Cost is computed using standard cost that approximates actual cost, on a first-in, first-out basis. 12 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Note 5.  Intangible Assets Goodwill (In millions) CooperVision   CooperSurgical   Total Balance at October 31, 2018 $ 1,742.9   $ 649.2   $ 2,392.1 Net additions  14.1   22.0   36.1 Translation 8.4   ( 7.7 )   0.7 Balance at October 31, 2019 1,765.4   663.5   2,428.9 Net additions —   4.0   4.0 Translation 13.3   ( 0.3 )   13.0 Balance at January 31, 2020 $ 1,778.7   $ 667.2   $ 2,445.9 The Company evaluates goodwill for impairment annually during the fiscal third quarter and when an event occurs or circumstances change such that it is reasonably possible that impairment may exist. The Company accounts for goodwill, evaluates and tests goodwill balances for impairment in accordance with related accounting standards. The Company performed an annual impairment assessment in third quarter of fiscal 2019, and its analysis indicated that there was  no  impairment of goodwill in reporting units. Other Intangible Assets   January 31, 2020   October 31, 2019     (In millions) Gross Carrying Amount   Accumulated Amortization   Gross Carrying Amount   Accumulated Amortization   Weighted Average Amortization Period        (in years) Intangible assets with definite lives:                   Trademarks $ 148.5   $ 29.8   $ 148.5   $ 27.3   14 Composite intangible asset 1,061.9   159.3   1,061.9   141.6   15 Technology 400.2   229.1   399.9   221.2   11 Customer relationships 361.4   200.1   357.6   194.0   13 License and distribution rights and other  27.8   16.0   27.9   15.3   11   1,999.8   $ 634.3   1,995.8   $ 599.4   14 Less: accumulated amortization and translation 634.3       599.4         Intangible assets with definite lives, net 1,365.5       1,396.4                             Intangible assets with indefinite lives, net  (1) 8.9       8.9                             Total other intangibles, net $ 1,374.4       $ 1,405.3         (1)  Intangible assets with indefinite lives include  technology and trademarks. Balances include foreign currency translation adjustments.  13 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) As of  January 31, 2020 , the estimation of amortization expenses for intangible assets with definite lives is as follows: Fiscal years: (In millions) Remainder of 2020 $ 101.5 2021 135.0 2022 133.1 2023 130.9 2024 126.6 Thereafter 738.4 Total remaining amortization for intangible assets with definite lives $ 1,365.5 The Company assesses indefinite-lived intangible assets annually during the fiscal third quarter and both indefinite-lived and definite-lived intangible assets, when an event occurs or change in circumstances indicate that the carrying amount of an intangible asset may not be recoverable, in accordance with related accounting standards. The Company performed an annual impairment assessment in third quarter of fiscal 2019 and did not recognize any material intangible asset impairment charges. Note 6.  Debt (In millions) January 31, 2020   October 31, 2019 Overdraft and other credit facilities $ 43.0   $ 63.7 Term loans 500.0   500.0 Short-term debt $ 543.0   $ 563.7         Revolving credit 235.0   264.0 Term loans 1,000.0   1,000.0 Other 0.2   0.2 Less: unamortized debt issuance cost ( 1.5 )   ( 1.6 ) Long-term debt 1,233.7   1,262.6 Total debt $ 1,776.7   $ 1,826.3 $ 500  million  Term Loan on September 27, 2019 On  September 27, 2019 , the Company amended its existing senior unsecured term loan agreement entered into on November 1, 2018 (the 2018 Term Loan Agreement) to establish a new  364 -day senior unsecured term loan (the 2019 Term Loan Agreement) with the same parties as the 2018 Term Loan Agreement. The 2019 Term Loan Agreement modifies certain provisions of the 2018 Term Loan Agreement which, among other things, extended the maturity date to  September 25, 2020  and increased the aggregate principal amount of the term loan facility from an original amount of  $ 400  million  to  $ 500  million . The Company used the additional funds to partially repay outstanding borrowings under the 2017 Term Loan Agreement (as defined below). At  January 31, 2020 , the Company had  $ 500.0  million  outstanding under the 2019 Term Loan Agreement. Amounts outstanding under the 2019 Term Loan Agreement will bear interest, at the Company's option, at either the base rate, or the adjusted LIBOR (each as defined in the 2019 Term Loan Agreement), plus, in each case, an applicable rate of  0.00 %  in respect of base rate loans and  0.60 %  in respect of adjusted LIBOR loans. The weighted average interest rate for the three months ended  January 31, 2020  was  2.35 % .  The 2019 Term Loan Agreement contains customary restrictive covenants, as well as financial covenants that require the Company to maintain a certain Total Leverage Ratio and Interest Coverage Ratio (each as defined in the 2019 Term Loan Agreement) consistent with the 2016 Credit Agreement discussed below. 14 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) $ 1.425  billion  Term Loan on November 1, 2017  On November 1, 2017, in connection with the PARAGARD acquisition, the Company entered into a  five -year,  $ 1.425  billion , senior unsecured term loan agreement (the 2017 Term Loan Agreement) by and among the Company, the lenders party thereto and DNB Bank ASA, New York Branch, as administrative agent which matures on November 1, 2022. The Company used part of the facility to fund the PARAGARD acquisition and used the remainder of the funds to partially repay outstanding borrowings under our revolving credit agreement. Amounts outstanding under the 2017 Term Loan Agreement will bear interest, at our option, at either the base rate, or the adjusted LIBOR (each as defined in the 2017 Term Loan Agreement), plus, in each case, an applicable rate of, between  0.00 %  and  0.75 %  in respect of base rate loans and between  1.00 %  and  1.75 %  in respect of adjusted LIBOR loans, in each case in accordance with a pricing grid tied to the Total Leverage Ratio as defined in the 2017 Term Loan Agreement. The 2017 Term Loan Agreement contains customary restrictive covenants, as well as financial covenants that require the Company to maintain a certain Total Leverage Ratio and Interest Coverage Ratio (each as defined in the 2017 Term Loan Agreement) consistent with the 2016 Credit Agreement discussed below. At  January 31, 2020 , the Company had  $ 1.0  billion  outstanding under the 2017 Term Loan Agreement. The interest rate on the 2017 Term Loan was  2.91 %  at  January 31, 2020 . Revolving Credit and Term Loan Agreement on March 1, 2016 On  March 1, 2016 , the Company entered into a Revolving Credit and Term Loan Agreement (the 2016 Credit Agreement), among the Company, CooperVision International Holding Company, LP, the lenders party thereto and KeyBank National Association, as administrative agent. The 2016 Credit Agreement provides for a multi-currency revolving credit facility in an aggregate principal amount of  $ 1.0  billion  (the 2016 Revolving Credit Facility) and a term loan facility in an aggregate principal amount of  $ 830.0  million  (the 2016 Term Loan Facility), each of which, unless terminated earlier, mature on  March 1, 2021 . In addition, the Company has the ability from time to time to request an increase to the size of the 2016 Revolving Credit Facility or establish one or more new term loans under the 2016 Term Loan Facility in an aggregate amount up to  $ 750.0  million , subject to the discretionary participation of the lenders.  Amounts outstanding under the 2016 Credit Agreement will bear interest, at our option, at either the base rate, or the adjusted LIBOR or adjusted foreign currency rate (each as defined in the 2016 Credit Agreement), plus, in each case, an applicable rate of between  0.00 %  and  0.75 %  in respect of base rate loans and between  1.00 %  and  1.75 %  in respect of adjusted LIBOR or adjusted foreign currency rate loans, in each case in accordance with a pricing grid tied to the Total Leverage Ratio, as defined in the 2016 Credit Agreement. The Company pays an annual commitment fee that ranges from  0.125 %  to  0.25 %  of the unused portion of the 2016 Revolving Credit Facility depending on certain financial ratios. In addition to the annual commitment fee, the Company is also required to pay certain letter of credit and related fronting fees and other administrative fees pursuant to the terms of the 2016 Credit Agreement. At  January 31, 2020 , the Company had  no  outstanding balance under the 2016 Term Loan Facility and  $ 235.0  million   outstanding under the 2016 Revolving Credit Facility.   $ 763.8  million  was available under the 2016 Revolving Credit Facility. The 2016 Credit Agreement contains customary restrictive covenants, as well as financial covenants that require us to maintain a certain Total Leverage Ratio and Interest Coverage Ratio, each as defined in the 2016 Credit Agreement: • Interest Coverage Ratio, as defined, to be at least  3.00  to  1.00  at all times. • Total Leverage Ratio, as defined, to be no higher than  3.75  to  1.00 .  At  January 31, 2020 , the Company was in compliance with the Interest Coverage Ratio at  15.26  to  1.00  and the Total Leverage Ratio at  1.82  to  1.00  for 2019 Term Loan Agreement, 2017 Term Loan Agreement, and 2016 Credit Agreement.  Refer to our Annual Report on Form 10-K for the fiscal year ended October 31, 2019 for more details.   15 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Note 7.  Income Taxes Effective Tax Rate The Company's effective tax rates were an expense of  7.1 %  and a benefit of  10.0 %  for the first quarter of fiscal 2020 and fiscal 2019, respectively. The increase in our effective tax rate for the first quarter of fiscal 2020 compared to fiscal 2019 was primarily due to tax benefits for settlement of tax audits and revisions to the provisional tax charges related to the 2017 Tax Cuts and Jobs Act during fiscal 2019. Our effective tax rate for the first quarter of fiscal 2020 was lower than the U.S. statutory tax rate because of discrete tax benefits and a favorable mix of income from our foreign jurisdictions with preferential tax rates. Total discrete tax benefits for the first quarter of fiscal 2020 were  $ 3.8  million  primarily relating to excess tax benefits from share-based compensation. Our effective tax rate for the first quarter of fiscal 2019 was lower than the U.S. statutory rate because of discrete tax benefits and favorable mix of income from our foreign jurisdictions with lower tax rates.  We recognize the benefit from a tax position only if it is more likely than not that the position would be sustained upon audit based solely on the technical merits of the tax position. As of  January 31, 2020 , and October 31, 2019, Cooper had unrecognized tax benefits of  $ 54.8  million  and  $ 49.7  million , respectively. The increase is primarily related to additions to current and prior period transfer pricing reserves, partially offset by release of reserves due to lapse of the statute of limitations. It is our policy to recognize interest and penalties directly related to income taxes as additional income tax expense. It is reasonably possible that  $ 14.8  million  of unrecognized tax benefits could be settled during the next twelve months. The Company is subject to U.S. federal income tax examinations for fiscal 2015 through 2019 and the Internal Revenue Service is currently auditing our U.S. Consolidated Corporation Income Tax Returns for fiscal 2015 and 2016. The Company remains subject to income tax examinations in other significant tax jurisdictions including United Kingdom, Japan, France and Australia for the tax years 2014 through 2019. The Company is currently under audit in the United Kingdom for fiscal 2015 through 2018. Note 8.  Earnings Per Share Three Months Ended January 31,   (In millions, except per share amounts) 2020   2019 Net income $ 90.5   $ 103.2 Basic:       Weighted average common shares 49.1   49.3 Basic earnings per share $ 1.84   $ 2.09 Diluted:       Weighted average common shares 49.1   49.3 Effect of dilutive stock options 0.6   0.6 Diluted weighted average common shares 49.7   49.9 Diluted earnings per share  $ 1.82   $ 2.07 The following table sets forth stock options to purchase our common stock and restricted stock units that were not included in the diluted earnings per share calculation because their effect would have been antidilutive for the periods presented: Three Months Ended January 31,   (In thousands, except exercise prices) 2020   2019 Stock option shares excluded 198   377 Range of exercise prices $ 254.77   $226.30-$254.77 Restricted stock units excluded 1   17 16 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Note 9.  Share-Based Compensation Plans The Company has several share-based compensation plans that are described in the Company’s Annual Report on Form 10‑K for the fiscal year ended  October 31, 2019 .  The compensation expense and related income tax benefit recognized in our Consolidated Statements of Income for share-based awards were as follows: Three Months Ended January 31,   (In millions) 2020   2019 Selling, general and administrative expense $ 8.7   $ 9.3 Cost of sales 1.0   1.5 Research and development expense 0.6   0.9 Total share-based compensation expense $ 10.3   $ 11.7 Related income tax benefit $ 1.4   $ 1.7 Note 10.  Stockholders’ Equity Analysis of Changes in Accumulated Other Comprehensive (Loss) Income: (In millions) Foreign Currency Translation Adjustment   Minimum Pension Liability   Total Balance at October 31, 2018 $ ( 412.2 )   $ ( 18.5 )   $ ( 430.7 ) Gross change in value 9.0   ( 33.4 )   ( 24.4 ) Tax effect for the period —   8.0   8.0 Balance at October 31, 2019 $ ( 403.2 )   $ ( 43.9 )   $ ( 447.1 ) Gross change in value 16.7   —   16.7 Balance at January 31, 2020 $ ( 386.5 )   $ ( 43.9 )   $ ( 430.4 ) Share Repurchases In December 2011, our Board of Directors authorized the 2012 Share Repurchase Program and through subsequent amendments, the most recent in March 2017, the total repurchase authorization was increased from  $ 500.0  million  to  $ 1.0  billion  of the Company's common stock. This program has no expiration date and may be discontinued at any time. Purchases under the 2012 Share Repurchase Program are subject to a review of the circumstances in place at the time and may be made from time to time as permitted by securities laws and other legal requirements.  There was  no  share repurchase activity during the first quarter ended  January 31, 2020 . During fiscal year ended  October 31, 2019 , we repurchased  537  thousand  shares of our common stock for  $ 156.1  million  under the 2012 Share Repurchase Program. At  January 31, 2020 ,  $ 407.4  million  remained authorized for repurchase under the program.  Dividends We paid a semiannual dividend of approximately  $ 1.5  million  or  3  cents  per share on February 10, 2020, to stockholders of record on  January 23, 2020 . Note 11.  Fair Value Measurements Accounting standards define fair value as the price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date. The fair value hierarchy prioritizes the inputs to valuation techniques used to measure fair value. An asset’s or liability’s level is based on the lowest level of input that is significant to the fair value measurement. Assets and liabilities carried at fair value are valued and disclosed in one of the following three levels of the valuation hierarchy: Level 1: Quoted market prices in active markets for identical assets or liabilities. 17 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) Level 2: Observable market-based inputs or unobservable inputs that are corroborated by market data. Level 3: Unobservable inputs reflecting the reporting entity’s own assumptions. At  January 31, 2020  and  October 31, 2019 , the carrying value of cash and cash equivalents, accounts receivable, prepaid expense and other current assets, lines of credit, accounts payable and other current liabilities approximate fair value due to the short-term nature of such instruments and the ability to obtain financing on similar terms. The carrying value of our revolving credit facility and term loans approximates fair value estimated based on current market rates (Level 2). The Company did  no t have any derivative assets or liabilities including no interest rate swaps, cross currency swaps or foreign currency forward contracts as of  January 31, 2020  and  October 31, 2019 . Nonrecurring fair value measurements The Company uses fair value measures when determining assets and liabilities acquired in an acquisition as described in Note 3. Acquisitions which are considered a Level 3 measurement.   Note 12.  Employee Benefits Cooper’s Retirement Income Plan (the Plan), a defined benefit plan, covers substantially all full-time United States employees. Cooper's contributions are designed to fund normal cost on a current basis and to fund the estimated prior service cost of benefit improvements. The unit credit actuarial cost method is used to determine the annual cost. Cooper pays the entire cost of the Plan and funds such costs as they accrue. Virtually all of the assets of the Plan are comprised of equities and participation in equity and fixed income funds. Our results of operations for the three months ended  January 31, 2020  and  2019 , reflect the following components of net periodic defined benefit costs: Three Months Ended January 31,   (In millions) 2020   2019 Service cost  $ 3.5   $ 2.5 Interest cost 1.2   1.5 Expected return on plan assets ( 2.7 )   ( 2.4 ) Recognized net actuarial loss 1.0   0.2 Net periodic defined benefit plan cost $ 3.0   $ 1.8 We did  no t contribute to the Plan in the first quarter of fiscal 2020 and expect to contribute  $ 10.0  million  during the remainder of fiscal 2020. We did  no t contribute to the Plan in the first quarter of fiscal 2019. The expected rate of return on Plan assets for determining net periodic benefit plan cost is  8 % . Note 13.  Contingencies Since March 2015, over  50  putative class action complaints were filed by contact lens consumers alleging that contact lens manufacturers, in conjunction with their respective Unilateral Pricing Policy (UPP), conspired to reach agreements between each other and certain distributors and retailers regarding the prices at which certain contact lenses could be sold to consumers. The plaintiffs are seeking damages against CooperVision, Inc., other contact lens manufacturers, distributors and retailers, in various courts around the United States. In June 2015, all of the class action cases were consolidated and transferred to the United States District Court for the Middle District of Florida. In August 2017, CooperVision entered into a settlement agreement with the plaintiffs, without any admission of liability, to settle all claims against CooperVision. In July 2018, the Court approved the plaintiffs’ motion for preliminary approval of the settlement, and the Company paid the  $ 3.0  million  settlement amount into an escrow account. In March 2020, the Court issued an order providing final approval of the settlement and dismissing CooperVision from the class action. The Company is involved in various lawsuits, claims and other legal matters from time to time that arise in the ordinary course of conducting business, including matters involving our products, intellectual property, supplier relationships, distributors, competitor relationships, employees and other matters. The Company does not believe that the ultimate resolution of these proceedings or claims pending against it could have a material adverse effect on its financial condition or  18 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) results of operations. At each reporting period, the Company evaluates whether or not a potential loss amount or a potential range of loss is probable and reasonably estimable under ASC 450,  Contingencies . Legal fees are expensed as incurred. Note 14.  Business Segment Information The Company discloses information about its operating segments, which were established based on the way that management organizes segments within the Company for making operating decisions and assessing financial performance. The Company's  two  operating segments are described below.  • CooperVision.  Competes in the worldwide contact lens market by developing, manufacturing and marketing a broad range of products for contact lens wearers, featuring advanced materials and optics. CooperVision designs its products to solve vision challenges such as astigmatism, presbyopia, myopia, ocular dryness and eye fatigues, with a broad collection of spherical, toric and multifocal contact lenses. • CooperSurgical.  Competes in the general health care market with a focus on advancing the health of women, babies and families through a diversified portfolio of products and services focusing on women's health, fertility, diagnostics and contraception. Cooper uses operating income, as presented in our financial reports, as the primary measure of segment profitability. We do not allocate costs from corporate functions to segment operating income. Items below operating income are not considered when measuring the profitability of a segment. We use the same accounting policies to generate segment results as we do for our consolidated results. Total identifiable assets are those used in continuing operations except cash and cash equivalents, which we include as corporate assets.  Segment information: Three Months Ended January 31,   (In millions) 2020   2019 CooperVision net sales by category:       Toric lens $ 155.1   $ 146.0 Multifocal lens 51.8   49.1 Single-use sphere lens 138.1   132.1 Non single-use sphere, other 140.2   142.9 Total CooperVision net sales $ 485.2   $ 470.1 CooperSurgical net sales by category:       Office and surgical products 98.5   95.7 Fertility 62.5   62.3 CooperSurgical net sales 161.0   158.0 Total net sales $ 646.2   $ 628.1 Operating income:       CooperVision $ 122.9   $ 116.3 CooperSurgical 1.7   7.2 Corporate ( 13.5 )   ( 12.6 ) Total operating income 111.1   110.9 Interest expense 11.6   18.2 Other expense (income), net  2.1   ( 1.1 ) Income before income taxes $ 97.4   $ 93.8 19 THE COOPER COMPANIES, INC. AND SUBSIDIARIES Notes to Consolidated Condensed Financial Statements (Unaudited) (In millions) January 31, 2020   October 31, 2019 Total identifiable assets:       CooperVision $ 4,163.2   $ 3,911.6 CooperSurgical 2,226.6   2,189.8 Corporate 158.7   173.1 Total $ 6,548.5   $ 6,274.5 Geographic information: Three Months Ended January 31,   (In millions) 2020   2019 Net sales to unaffiliated customers by country of domicile:       United States $ 293.5   $ 278.9 Europe 213.4   209.7 Rest of world 139.3   139.5 Total $ 646.2   $ 628.1 (In millions) January 31, 2020   October 31, 2019 Net property, plant and equipment by country of domicile:       United States $ 649.6   $ 626.5 Europe 361.9   358.8 Rest of world 157.0   146.8 Total $ 1,168.5   $ 1,132.1   20 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Note numbers refer to “Notes to Consolidated Condensed Financial Statements” in Item 1. Unaudited Financial Statements. Forward-Looking Statements This Quarterly Report on Form 10-Q contains “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933, Section 21E of the Securities Exchange Act of 1934 and the Private Securities Litigation Reform Act of 1995. These include statements relating to plans, prospects, goals, strategies, future actions, events or performance and other statements which are other than statements of historical fact, including all statements regarding acquisitions including the acquired companies' financial position, market position, product development and business strategy, expected cost synergies, expected timing and benefits of the transaction, difficulties in integrating entities or operations, as well as estimates of our and the acquired entities' future expenses, sales and earnings per share are forward-looking. In addition, all statements regarding anticipated growth in our revenue, anticipated effects of any product recalls, anticipated market conditions, planned product launches and expected results of operations and integration of any acquisition are forward-looking. To identify these statements, look for words like “believes,” “outlook,” “probable,” “expects,” “may,” “will,” “should,” “could,” “seeks,” “intends,” “plans,” “estimates” or “anticipates” and similar words or phrases. Forward-looking statements necessarily depend on assumptions, data or methods that may be incorrect or imprecise and are subject to risks and uncertainties. Among the factors that could cause our actual results and future actions to differ materially from those described in forward-looking statements are: • Adverse changes in global political and economic conditions, and related uncertainty caused by the United Kingdom’s election to withdraw from the European Union and its potential impact on, among other things, the movement of goods and materials in our supply chain, additional regulatory approvals and requirements, and increased tariffs and duties. • Adverse changes in the global or regional general business, political and economic conditions, including the impact of continuing uncertainty and instability of certain countries, that could adversely affect our global markets, and the potential adverse economic impact and related uncertainty caused by these items, including but not limited to, escalating global trade barriers including additional tariffs, by countries such as China, and the recent outbreak of the coronavirus referred to as COVID-19 and its potential impact on our sales, operations and supply chain. • Changes in tax laws or their interpretation and changes in statutory tax rates, including but not limited to, the U.S., the United Kingdom and other countries may affect our taxation of earnings recognized in foreign jurisdictions and/or negatively impact our effective tax rate. • Foreign currency exchange rate and interest rate fluctuations including the risk of fluctuations in the value of foreign currencies or interest rates that would decrease our revenues and earnings. • Our existing indebtedness and associated interest expense, most of which is variable and impacted by rate increases, which could adversely affect our financial health or limit our ability to borrow additional funds. • Acquisition-related adverse effects including the failure to successfully obtain the anticipated revenues, margins and earnings benefits of acquisitions, integration delays or costs and the requirement to record significant adjustments to the preliminary fair value of assets acquired and liabilities assumed within the measurement period, required regulatory approvals for an acquisition not being obtained or being delayed or subject to conditions that are not anticipated, adverse impacts of changes to accounting controls and reporting procedures, contingent liabilities or indemnification obligations, increased leverage and lack of access to available financing (including financing for the acquisition or refinancing of debt owed by us on a timely basis and on reasonable terms). • Compliance costs and potential liability in connection with U.S. and foreign laws and health care regulations pertaining to privacy and security of third- party information, such as HIPAA and the California Consumer Privacy Act in the U.S. and the General Data Protection Regulation requirements in Europe, including but not limited to those resulting from data security breaches. • A major disruption in the operations of our manufacturing, accounting and financial reporting, research and development, distribution facilities or raw material supply chain due to integration of acquisitions, man-made or natural disasters, cybersecurity incidents or other causes. 21 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations • A major disruption in the operations of our manufacturing, accounting and financial reporting, research and development or distribution facilities due to technological problems, including any related to our information systems maintenance, enhancements or new system deployments, integrations or upgrades. • Market consolidation of large customers globally through mergers or acquisitions resulting in a larger proportion or concentration of our business being derived from fewer customers. • Disruptions in supplies of raw materials, particularly components used to manufacture our silicone hydrogel lenses. • New U.S. and foreign government laws and regulations, and changes in existing laws, regulations and enforcement guidance, which affect areas of our operations including, but not limited to, those affecting the health care industry, including the contact lens industry specifically and the medical device or pharmaceutical industries generally, including but not limited to the EU Medical Devices Regulation (MDR), the EU In Vitro Diagnostic Medical Devices Regulation (IVDR), and the medical device excise tax under the U.S. Affordable Care Act.  • Legal costs, insurance expenses, settlement costs and the risk of an adverse decision, prohibitive injunction or settlement related to product liability, patent infringement or other litigation. • Limitations on sales following product introductions due to poor market acceptance. • New competitors, product innovations or technologies, including but not limited to, technological advances by competitors, new products and patents attained by competitors, and competitors' expansion through acquisitions. • Reduced sales, loss of customers and costs and expenses related to product recalls and warning letters. • Failure to receive, or delays in receiving, regulatory approvals for products. • Failure of our customers and end users to obtain adequate coverage and reimbursement from third-party payors for our products and services. • The requirement to provide for a significant liability or to write off, or accelerate depreciation on, a significant asset, including goodwill, other intangible assets and idle manufacturing facilities and equipment. • The success of our research and development activities and other start-up projects. • Dilution to earnings per share from acquisitions or issuing stock. • Impact and costs incurred from changes in accounting standards and policies. • Environmental risks, including increasing environmental legislation and the broader impacts of climate change. • Other events described in our Securities and Exchange Commission filings, including the “Business” and “Risk Factors” sections in our Annual Report on Form 10-K for the fiscal year ended October 31, 2019, as such Risk Factors may be updated in quarterly filings including updates made in this filing. We caution investors that forward-looking statements reflect our analysis only on their stated date. We disclaim any intent to update them except as required by law. 22 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Results of Operations In this section, we discuss the results of our operations for the  first  quarter of fiscal 2020 ended  January 31, 2020  and compare them with the same period of fiscal 2019. We discuss our cash flows and current financial condition under “Capital Resources and Liquidity.” Within the tables presented, percentages are calculated based on the underlying whole-dollar amounts and, therefore, may not recalculate exactly from the rounded numbers used for disclosure purposes.              Non-GAAP Financial Measures The succeeding sections of Management’s Discussion and Analysis (MD&A) may include certain financial measures that are not defined by accounting principles generally accepted in the United States of America (U.S. GAAP). These measures, which are referred to as non-GAAP measures, are listed below: • Free Cash Flow  - Free cash flow is calculated as net cash provided by operating activities less capital expenditures. • Constant currency  - Constant currency is defined as excluding the effect of foreign currency fluctuations. For a discussion of these measures and the reasons management believes they are useful to investors, refer to “Summary of Non-GAAP Financial Measures” below. To the extent applicable, this MD&A includes reconciliations of these non-GAAP measures to the most directly comparable financial measures calculated and presented in accordance with U.S. GAAP. First  Quarter Highlights • Gross profit  $426.5 million , up  2%  from  $418.5 million  in the prior year period  • Operating income  $111.1 million  remained relatively flat compared to  $110.9 million  in the prior year period • Diluted earnings per share of $1.82, down 12% from  $2.07  per share in the prior year period, primarily due to tax benefits for settlement of tax audits and revisions to the provisional tax charges related to the 2017 Tax Cuts and Jobs Act during the prior year period • Cash provided by operations $129.7 million, compared to $ 101.8 million  in the prior year period. Outlook Overall, we remain optimistic about the long-term prospects for the worldwide contact lens and general health care markets. However, events affecting the economy as a whole, including but not limited to the uncertainty and instability of global markets driven by foreign currency volatility, changes in tax legislation, debt concerns, the uncertainty during and after the transition period following the United Kingdom's withdrawal from the European Union, changes to existing regulations and  23 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations new regulations, global trade barriers including additional tariffs, the trend of consolidations within the health care industry and uncertainty regarding the scope and impact of the recent outbreak of the coronavirus referred to as COVID-19 on our sales and operations and on the operations of our significant suppliers and customers could impact our current performance and continue to represent a risk to our future performance. CooperVision  - We compete in the worldwide contact lens market with our spherical, toric and multifocal contact lenses offered in a variety of materials including using silicone hydrogel Aquaform ®  technology and phosphorylcholine (PC) Technology™. We believe that there will be lower contact lens wearer dropout rates as technology improves and enhances the wearing experience through a combination of improved designs and materials and the growth of preferred modalities such as single-use and monthly wearing options. CooperVision also competes in the myopia management and specialty eye care markets with products such as orthokeratology (ortho-k) and scleral lenses. In November 2019, CooperVision received United States Food & Drug Administration (FDA) approval for its MiSight ®  1 day lens, which is the first and only FDA-approved product indicated to slow the progression of myopia in children with treatment initiated between the ages of 8-12 and became available in the United States during fiscal 2020. CooperVision is focused on greater worldwide market penetration using recently introduced products, and we continue to expand our presence in existing and emerging markets, including through acquisitions.  CooperVision acquired the following entity during the three months ended January 31, 2019: • Blanchard Contact Lenses on December 28, 2018 - a privately-held scleral lens company, which expands CooperVision's specialty and scleral lens portfolio. Our ability to compete successfully with a full range of silicone hydrogel products is an important factor to achieving our desired future levels of sales growth and profitability. CooperVision manufactures and markets a wide variety of silicone hydrogel contact lenses. Our single-use silicone hydrogel product franchises, clariti ®  and MyDay ® , remain a focus as we expect increasing demand for these products as well as future single-use products as the global contact lens market continues to shift to this modality. Outside of single-use, the Biofinity ®  and Avaira Vitality ®  product families comprise our focus in the FRP, or frequent replacement product, market which encompasses the 2-week and monthly modalities. Included in this segment are unique products such as Biofinity Energys ® , which helps individuals with digital eye fatigue. CooperSurgical -  Our CooperSurgical business competes in the general health care market with a commitment to advancing the health of women, babies and families through its diversified portfolio of products and services focusing on women's health, fertility, diagnostics and contraception. CooperSurgical has established its market presence and distribution system by developing products and acquiring companies, products and services that complement its business model.  CooperSurgical acquired the following entity during the  three months  ended  January 31, 2020 : • A privately-held distributor of IVF medical devices and systems on December 13, 2019. CooperSurgical acquired the following entity during the three months ended  January 31, 2019 : • Incisive Surgical Inc. on December 31, 2018 - a privately-held U.S. medical device company that develops mechanical surgical solutions for skin closure.  Capital Resources -  At  January 31, 2020 , we had  $76.8 million  in unrestricted cash, primarily held outside the United States, and  $763.8 million  available under our 2016 Revolving Credit Facility (as defined below).  Debt outstanding at  January 31, 2020  consisted of: • $1.0 billion outstanding on a $1.425 billion syndicated Term Loan Agreement (the 2017 Term Loan Agreement) used to fund the acquisition of PARAGARD, which matures on November 1, 2022 • A $500.0 million 364-day senior unsecured term loan agreement (the 2019 Term Loan Agreement), which matures on September 25, 2020 •  $235.0 million outstanding on a $1.0 billion multi-currency revolving credit facility (the 2016 Revolving Credit Facility), which matures on March 1, 2021. 24 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations See Note 6. Debt of the Consolidated Financial Statements for additional information. We believe that current cash, cash equivalents and future cash flow from operating activities will be sufficient to meet our anticipated cash needs, including working capital needs, capital expenditures and contractual obligations for at least 12 months from the issuance date of the financial statements included in this quarterly report. To the extent additional funds are necessary to meet our liquidity needs such as that for acquisitions, share repurchases, cash dividends or other activities as we execute our business strategy, we anticipate that additional funds will be obtained through the incurrence of additional indebtedness, additional equity financings or a combination of these potential sources of funds; however, such financing may not be available on favorable terms, or at all. Transition from LIBOR The United Kingdom’s Financial Conduct Authority, which regulates the London Interbank Offered Rate (LIBOR), announced in July 2017 that it will no longer persuade or require banks to submit rates for LIBOR after 2021. We have undertaken an assessment of contracts that will be impacted by the transition away from LIBOR. To date, we have identified that substantially all of our term loan and credit facility agreements include an adjusted LIBOR option. We are continuing to evaluate the scope of impacted contracts and the potential impact. We are also monitoring the developments regarding alternative rates and may amend certain contracts to accommodate those rates if the contract does not already specify a replacement rate. While the notional value of agreements potentially indexed to LIBOR is material, we are not yet able to reasonably estimate the expected impact. Selected Statistical Information – Percentage of Net Sales   Percentage of Net Sales   2020 vs 2019 % Change in Absolute Values Three Months Ended January 31, 2020   2019   Net sales 100 %   100 %   3  % Cost of sales 34 %   33 %   5  % Gross profit 66 %   67 %   2  % Selling, general and administrative expense 40 %   40 %   3  % Research and development expense 3 %   3 %   6  % Amortization of intangibles 5 %   6 %   (5 )% Operating income 17 %   18 %   —  % Net Sales Growth by Business Unit Three Months Ended January 31, ($ in millions) 2020   2019   Increase  2020 vs 2019 % Change  CooperVision $ 485.2   $ 470.1   $ 15.1 3 % CooperSurgical 161.0   158.0   3.0 2 % Net sales $ 646.2   $ 628.1   $ 18.1 3 % CooperVision Net Sales The contact lens market has two major product categories: • Spherical lenses including lenses that correct near- and farsightedness uncomplicated by more complex visual defects • Toric and multifocal lenses including lenses that, in addition to correcting near- and farsightedness, address more complex visual defects such as astigmatism and presbyopia by adding optical properties of cylinder and axis, which correct for irregularities in the shape of the cornea. CooperVision Net Sales by Category  25 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Three Months Ended January 31, ($ in millions) 2020   2019   2020 vs 2019 % Change Toric $ 155.1   $ 146.0   6  % Multifocal 51.8   49.1   6  % Single-use spheres 138.1   132.1   5  % Non single-use sphere, other 140.2   142.9   (2 )%   $ 485.2   $ 470.1   3  % In the three months ended  January 31, 2020 : • Toric lenses grew primarily through the success of Biofinity, clariti and MyDay • Multifocal lenses grew primarily due to higher Biofinity and clariti sales • Single-use sphere lenses growth was primarily attributed to clariti and MyDay lenses partially offset by a decrease in Proclear and Biomedics sales • Non-single-use spheres decreased due to lower Biofinity and Biomedics sphere sales • "Other" products primarily include lens care which represented approximately 2% of net sales in the first quarter of both fiscal 2020 and 2019 • Increased sales of silicone hydrogel products were partially offset by lower sales of older hydrogel products. Total silicone hydrogel products grew 7% in the first quarter of fiscal 2020, representing 73% of net sales compared to 71% in the prior year period • Foreign exchange rates negatively impacted sales by approximately $2.1 million in the first quarter of fiscal 2020 and $13.3 million in the prior year period, primarily attributable to fluctuations in the Euro. In the first quarter of 2020, net sales increased 4% in constant currency over the prior year period. • Sales growth was primarily driven by increases in the volume of lenses sold. Average realized prices by product did not materially influence sales growth. CooperVision Net Sales by Geography 26 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations CooperVision competes in the worldwide soft contact lens market and services in three primary regions: the Americas, EMEA (Europe, Middle East and Africa) and Asia Pacific. Three Months Ended January 31, ($ in millions) 2020 2019 2020 vs 2019 % Change  Americas $ 189.4 $ 176.0 8  % EMEA 187.0 184.3 1  % Asia Pacific 108.8 109.8 (1 )% $ 485.2 $ 470.1 3  % CooperVision's regional growth in Americas and EMEA was primarily attributable to market gains of silicone hydrogel contact lenses. However, Asia Pacific remained relatively flat. Refer to CooperVision Net Sales by Category above for further discussion. CooperSurgical Net Sales by Category  CooperSurgical supplies the family health care market with a diversified portfolio of products and services. Our office and surgical offerings include products that facilitate surgical and non-surgical procedures that are commonly performed primarily by obstetricians and gynecologists in hospitals, surgical centers, fertility clinics and medical offices. Fertility offerings include highly specialized products and services that target the IVF process, including diagnostics testing with a goal to make fertility treatment safer, more efficient and convenient. The chart below shows the percentage of net sales of office and surgical products and fertility. Three Months Ended January 31, ($ in millions)   2020   2019   2020 vs 2019 % Change Office and surgical products   $ 98.5   $ 95.7   3 % Fertility   62.5   62.3   — %     $ 161.0   $ 158.0   2 % In the three months ended  January 31, 2020 : • Office and surgical products increased compared to the prior year periods due to continued growth in surgical products, primarily Endosee, Uterine Manipulators, Surgical Retractors and acquired products of Incisive Surgical, partially offset by a decrease in revenue from the Filshie Clip system. On February 1, 2019, we agreed to the early  27 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations termination of an exclusive distribution agreement which had given CooperSurgical the rights to distribute the Filshie Clip System in the United States. • Fertility net sales remained relatively flat. • Foreign exchange rates negatively impacted sales by approximately $0.7 million in the first quarter of fiscal 2020 and $2.4 million in the prior year period, primarily attributable to fluctuations in the Euro. In the first quarter of 2020, net sales increased 2% in constant currency over the prior year period. • Unit growth and product mix positively impacted sales growth. Gross Margin Three Months Ended January 31,   2020   2019 CooperVision   65 %   66 % CooperSurgical   68 %   69 % Consolidated   66 %   67 % CooperVision's gross margin decreased in the first quarter of fiscal 2020 compared to fiscal 2019 due to: • $5.7 million of primarily incremental costs associated with the impact of the earthquake on our Puerto Rico manufacturing facility and other manufacturing related costs • the unfavorable impact to margin from changes in product mix • partially offset by an increase in sales of higher margin products including Biofinity • first quarter of fiscal 2019 included $1.2 million of costs consisting primarily of acquisition, integration and manufacturing related costs. CooperSurgical's gross margin decreased in the first quarter of fiscal 2020 compared to fiscal 2019 due to: • $5.4 million of primarily integration and manufacturing related costs including temporary manufacturing inefficiencies • the first quarter of fiscal 2019 included $4.2 million of costs primarily acquisition, integration and manufacturing related costs. Selling, General and Administrative Expense (SGA) Three Months Ended January 31, ($ in millions)   2020   % Net Sales   2019   % Net Sales   2020 vs 2019 % Change  CooperVision   $ 172.4   36 %   $ 168.7   36 %   2 % CooperSurgical   72.4   45 %   68.7   44 %   5 % Corporate   13.5   —   12.6   —   8 %     $ 258.3   40 %   $ 250.0   40 %   3 % CooperVision's SGA increased in the first quarter of fiscal 2020 compared to fiscal 2019 due to investments to support our long-term objectives, including increased headcount in SGA and higher distribution and selling expenses to support revenue growth. CooperVision's SGA in the first quarter of fiscal 2020 included $0.7 million of costs primarily related to integration activities. CooperVision's SGA in the first quarter of fiscal 2019 included $2.4 million of integration and third-party consulting costs. The increase in CooperSurgical's SGA in the first quarter of fiscal 2020 compared to fiscal 2019 was primarily due to higher selling expenses to support revenue growth. CooperSurgical's SGA in the first quarter of fiscal 2020, included $6.1 million of integration expenses and European Medical Devices Regulation costs. CooperSurgical's SGA in the first quarter of fiscal 2019 included $8.4 million of acquisition and integration expenses of acquired companies as well as third-party consulting costs. 28 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations The increase in Corporate SGA in the first quarter of fiscal 2020 compared to fiscal 2019 was primarily due to share-based compensation expense. Research and Development Expense (R&D) Three Months Ended January 31, ($ in millions)   2020   % Net Sales   2019   % Net Sales   2020 vs 2019 % Change CooperVision   $ 13.1   3 %   $ 13.5   3 %   (3 )% CooperSurgical   9.1   6 %   7.5   5 %   25  %     $ 22.2   3 %   $ 21.0   3 %   6  % In the three months ended  January 31, 2020 : • CooperVision's R&D decrease in the first quarter of fiscal 2020 compared to fiscal 2019 was mainly due to timing of clinical studies. As a percentage of sales, R&D expense remained flat. CooperVision's R&D activities are primarily focused on the development of contact lenses, manufacturing technology and process enhancements. • The increase in CooperSurgical's R&D in the first quarter of fiscal 2020 compared to fiscal 2019 was primarily due to increased investment and activities in developing new products and services and upgrades of existing products. As a percentage of sales, R&D expense remained relatively flat. CooperSurgical's R&D activities include diagnostics, IVF product development and the design and upgrade of surgical procedure devices. Amortization Expense Three Months Ended January 31, ($ in millions) 2020   % Net Sales   2019   % Net Sales   2020 vs 2019 % Change CooperVision $ 8.7   2 %   $ 10.5   2 %   (17 )% CooperSurgical 26.2   16 %   26.1   17 %   —  %   $ 34.9   5 %   $ 36.6   6 %   (5 )% CooperVision amortization expense decreased in the first quarter of fiscal 2020 compared to fiscal 2019 due to certain intangible assets becoming fully amortized. CooperSurgical's amortization expense remained relatively flat. Operating Income  Three Months Ended January 31, ($ in millions)   2020   % Net Sales   2019   % Net Sales   2020 vs 2019 % Change CooperVision   $ 122.9   25 %   $ 116.3   25 %   6  % CooperSurgical   1.7   1 %   7.2   5 %   (76 )% Corporate   (13.5 )   —   (12.6 )   —   8  %     $ 111.1   17 %   $ 110.9   18 %   —  % CooperVision operating income remained flat as a percentage of net sales but increased in absolute dollars in the first quarter of fiscal 2020 compared to fiscal 2019 primarily due to net sales increasing more than operating expenses and a decrease in amortization expenses partially offset by the negative impact of foreign exchange rates.  CooperSurgical operating income decreased in the first quarter of fiscal 2020 compared to fiscal 2019 due to higher selling and R&D expenses to support growth.  The increase of Corporate operating loss in the first quarter of fiscal 2020 compared to fiscal 2019 was primarily due to higher stock-based compensation expense. On a consolidated basis, operating income increased in absolute dollars and remained relatively flat as a percentage of net sales due to the factors above. 29 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Interest Expense Three Months Ended January 31, ($ in millions) 2020   % Net Sales   2019   % Net Sales   2020 vs 2019 % Change Interest expense $ 11.6   2 %   $ 18.2   3 %   (36 )% Interest expense remained relatively flat as a percentage of net sales and decreased in absolute dollars primarily due to lower average debt balances and lower interest rates compared to the prior year period. Other Expense (Income), Net Three Months Ended January 31, ($ in millions)   2020   2019 Foreign exchange loss (gain)   $ 1.4   $ (0.5 ) Other expense (income), net   0.7   (0.6 )     $ 2.1   $ (1.1 ) Foreign exchange loss (gain) primarily resulted from the revaluation and settlement of foreign currency-denominated balances.  Provision for Income Taxes The Company's effective tax rates were an expense of 7.1% and a benefit of 10.0% for the first quarter of fiscal 2020 and fiscal 2019, respectively. The increase in our effective tax rate for the first quarter of fiscal 2020 compared to the first quarter of fiscal 2019 was primarily attributable to tax benefits for settlement of tax audits and revisions to the provisional tax charges related to the 2017 Tax Cuts and Jobs Act during the prior year period. Our effective tax rate for the first quarter of fiscal 2020 was lower than the U.S. statutory tax rate because of discrete tax benefits and a favorable mix of income from our foreign jurisdictions with preferential tax rates. Total discrete tax benefits for the first quarter of fiscal 2020 were $3.8 million primarily relating to excess tax benefits from share-based compensation. Our effective tax rate for the first quarter of fiscal 2019 was lower than the U.S. statutory rate due to discrete tax benefits and a favorable mix of income from our foreign jurisdictions with lower tax rates.  Share-Based Compensation Plans The Company has several share-based compensation plans that are described in our Annual Report on Form 10-K for the fiscal year ended October 31, 2019. The compensation expense and related income tax benefit recognized in our Consolidated Statements of Income for share-based awards were as follows: Three Months Ended January 31, ($ in millions)   2020   2019 Selling, general and administrative expense   $ 8.7   $ 9.3 Cost of sales   1.0   1.5 Research and development expense   0.6   0.9 Total share-based compensation expense   $ 10.3   $ 11.7 Related income tax benefit   $ 1.4   $ 1.7 30 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations Capital Resources and Liquidity First Quarter Highlights • Operating cash flow was $129.7 million compared to $101.8 million in the prior year period • Expenditures for purchases of property, plant and equipment were $69.0 million compared to $79.2 million in the prior year period • Cash payments for acquisitions and others, of $9.4 million, compared to $50.0 million in the prior year period • Cash provided by operations $129.7 million offset by capital expenditures $69.0 million resulted in free cash flow of $60.7 million, up 169% compared to the prior year period.  Comparative Statistics ($ in millions)   January 31, 2020   October 31, 2019 Cash and cash equivalents   $ 76.8   $ 89.0 Total assets   $ 6,548.5   $ 6,274.5 Working capital   $ 81.4   $ 52.8 Total debt   $ 1,776.7   $ 1,826.3 Stockholders' equity   $ 3,730.9   $ 3,628.5 Ratio of debt to equity   0.48:1   0.50:1 Debt as a percentage of total capitalization   32 %   33 % Working Capital The increase in working capital at  January 31, 2020  from the end of fiscal 2019 was primarily due to:  • decrease in other current liabilities $32.3 million due to timing of payments • decrease in short-term debt $20.7 million due to payment of overdraft and other credit facilities • decrease in employee compensation and benefits $12.2 million • increase in inventories $19.6 million, partially offset by: • recognition of current operating lease liabilities $31.5 million on adoption of ASC 842 Leases • decrease in trade accounts receivable $27.3 million primarily due to timing of collections • decrease in cash $12.2 million. At  January 31, 2020 , our inventory months on hand were 7.2 compared to 6.4 at October 31, 2019. The $19.6 million increase in inventories was primarily due to increase in finished goods and raw materials to support demand and production levels.  Our days sales outstanding (DSO) increased to 60 days at  January 31, 2020 , compared to 56 days at October 31, 2019, primarily due to increased revenue and timing of collections Operating Cash Flow Cash provided by operating activities increased by $27.9 million from $101.8 million in the first quarter of fiscal 2019 to $129.7 million in the first quarter of fiscal 2020. This increase in cash flow provided by operating activities primarily consists of: • increase of $36.1 million in non-cash items, from $(16.9) million in the first quarter of fiscal 2019 to $19.2 million in the first quarter of fiscal 2020 31 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations • increase of $2.7 million in net cash flow from changes in operating capital, from $53.3 million outflow in the first quarter of fiscal 2019 to $50.6 million outflow in the first quarter of fiscal 2020, partially offset by; • decrease in net income of $12.7 million from a net income of $103.2 million in the first quarter of fiscal 2019 to $90.5 million in the first quarter of fiscal 2020  The decrease in net income of $12.7 million is due to an increase in tax expense in the first quarter of fiscal 2020 compared to a tax benefit in the first quarter of fiscal 2019 primarily attributable to tax benefits for settlement of tax audits and revisions to the provisional tax charges related to the 2017 Tax Cuts and Jobs Act during the prior year period. The $36.1 million increase in non-cash items compared to the prior year period is primarily due to: • increase of $29.9 million driven by net changes in long term tax liabilities, deferred taxes and defined benefit pension • $8.2 million in non-cash lease expense. The $2.7 million increase in the net cash flow from changes in operating capital compared to the prior year period is primarily due to:  • $53.8 million increase in the net changes in trade and other receivables primarily from increased revenue and timing of collections • $13.5 million increase in the net changes in inventories, partially offset by; • $22.2 million decrease in the net changes in prepayments and other assets primarily due to the refund of the prepayment made to the U.K. Tax Authorities in the prior year period • $15.9 million decrease in the net changes in accrued liabilities & other • $14.5 million decrease in the net changes in income tax payable. Investing Cash Flow Cash used in investing activities decreased by $50.8 million to $78.4 million in the first quarter of fiscal 2020 from $129.2 million in the first quarter of fiscal 2019 due to: • decrease of $40.6 million in payments made for acquisitions in the first quarter of fiscal 2020 compared to the prior year period, largely due to the acquisition of Incisive Surgical Inc. and Blanchard Contact Lenses   in the first quarter of fiscal 2019 • decrease of $10.2 million in capital expenditures. Financing Cash Flow Cash flows from financing activities decreased by $156.4 million to $63.2 million cash outflow in the first quarter of fiscal 2020 compared to $93.2 million inflow in the first quarter of fiscal 2019, primarily due to: • $428.3 million decrease in net proceeds from short-term debt, primarily due to $400 million short term loan taken on November 1, 2018 partially offset by; • $269.9 million decrease in net repayments of long-term debt. The 2019 Term Loan Agreement and the 2017 Term Loan Agreement contain customary restrictive covenants, as well as financial covenants that require the Company to maintain a certain Total Leverage Ratio and Interest Coverage Ratio (each as defined in the 2019 Term Loan Agreement and 2017 Term Loan Agreement) consistent with the 2016 Credit Agreement. As defined, in the 2019 Term Loan Agreement, the 2017 Term Loan Agreement and the 2016 Credit Agreement, we are required to maintain an Interest Coverage Ratio of at least 3.00 to 1.00, and a Total Leverage Ratio of no higher than 3.75 to  32 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 1.00. At  January 31, 2020 , we were in compliance with the Interest Coverage Ratio at 15.26 to  1.00  and the Total Leverage Ratio at 1.82 to  1.00 . At  January 31, 2020 , we had $500.0 million outstanding under the 2019 Term Loan Agreement, $1.0 billion outstanding under the 2017 Term Loan Agreement, $235.0 million outstanding under the 2016 Revolving Credit Facility and $763.8   million available under the 2016 Revolving Credit Facility. Share Repurchase In December 2011, our Board of Directors authorized the 2012 Share Repurchase Program and through subsequent amendments, the most recent in March 2017, the total repurchase authorization was increased from $500.0 million to $1.0 billion of the Company's common stock. The program has no expiration date and may be discontinued at any time. Purchases under the 2012 Share Repurchase Program are subject to a review of the circumstances in place at the time and may be made from time to time as permitted by securities laws and other legal requirements.  There was  no  share repurchase activity during the first quarter ended  January 31, 2020 . In the first quarter of fiscal 2019, we repurchased 24.5 thousand shares of our common stock for $6.1 million at an average purchase price of $248.70 per share. At  January 31, 2020 , $407.4 million remains authorized for repurchase under the program.  Summary of Non-GAAP Financial Measures The non-GAAP financial measures that may be included in this MD&A and the reasons management believes they are useful to investors are described below. These measures should be considered supplemental in nature and are not intended to be a substitute for the related financial information prepared in accordance with U.S. GAAP. In addition, these measures may not be the same as similarly named measures presented by other companies. Free cash flow is defined as cash provided by operating activities less capital expenditures. Management believes free cash flow is useful for investors as an additional measure of liquidity because it represents cash that is available to grow the business, make strategic acquisitions, repay debt, buyback common stock or fund the dividend. We use free cash flow internally to understand, manage, make operating decisions and evaluate our business. In addition, we use free cash flow to help plan and forecast future periods. Constant currency is defined as excluding the effect of foreign currency rate fluctuations. In order to assist with the assessment of how our underlying businesses performed, we compare the percentage change in revenues from one period to another, excluding the effect of foreign currency fluctuations. To present this information, current period revenue for entities reporting in currencies other than the United States dollar are converted into United States dollars at the average foreign exchange rates for the corresponding period in the prior year.  Estimates and Critical Accounting Policies Information regarding estimates and critical accounting policies is included in Management's Discussion and Analysis on Form 10-K for the fiscal year ended October 31, 2019. There have been no material changes in our policies from those previously discussed in our Form 10-K for the fiscal year October 31, 2019. Accounting Pronouncements  Information regarding new accounting pronouncements is included in Note 1. General of the Condensed Consolidated Financial Statements of this Quarterly Report on Form 10-Q. Trademarks Aquaform ® , Avaira ® , Avaira Vitality ® ,   Biofinity ® , MyDay ® , MiSight ® , ActiveControl ®  and Proclear ®  are registered trademarks of The Cooper Companies, Inc., its affiliates and/or subsidiaries. PC Technology™ and FIPS™ are trademarks of The Cooper Companies, Inc., its affiliates and/or subsidiaries. The clariti ®  mark is a registered trademark of The Cooper Companies, Inc., its affiliates and/or subsidiaries worldwide except in the United States where the use of clariti ®  is licensed. PARAGARD ®  is a registered trademark of CooperSurgical, Inc. 33 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 3. Quantitative and Qualitative Disclosure About Market Risk Most of our operations outside the United States have their local currency as their functional currency. We are exposed to risks caused by changes in foreign exchange, principally our British pound sterling, euro, Japanese yen, Danish krone, Swedish krona and Australian dollar denominated debt and receivables denominated in currencies other than the United States dollar, and from operations in other foreign currencies. Although we may enter into foreign exchange agreements with financial institutions to reduce our exposure to fluctuations in foreign currency values relative to our debt or receivables obligations, these hedging transactions do not eliminate that risk entirely. We are also exposed to risks associated with changes in interest rates, as the interest rates on our revolving lines of credit and term loans may vary with the federal funds rate and LIBOR. We may decrease this interest rate risk by hedging a portion of variable rate debt effectively converting it to fixed rate debt for varying periods. The Company did not have any derivative assets or liabilities that may include interest rate swaps, cross currency swaps or foreign currency forward contracts as of  January 31, 2020  and  October 31, 2019 . On September 27, 2019, we extended the maturity of the 2018 Term Loan Agreement to September 25, 2020 and increased the amount to $500.0 million (as so amended, the 2019 Term Loan Agreement). We used the additional funds to partially repay outstanding borrowings under the 2017 Term Loan Agreement. At  January 31, 2020 , the Company had  $500 million  outstanding under the 2019 Term Loan Agreement. On  November 1, 2017 , in connection with the PARAGARD acquisition, we entered into a  five -year,  $1.425 billion , senior unsecured term loan agreement (the 2017 Term Loan Agreement) by and among us, the lenders party thereto and DNB Bank ASA, New York Branch, as administrative agent which matures on November 1, 2022. We used part of the facility to fund the PARAGARD acquisition and used the remainder of the funds to partially repay outstanding borrowings under our revolving credit agreement. At  January 31, 2020 , we had $1.0 billion outstanding under the 2017 Term Loan Agreement. On  March 1, 2016 , the Company entered into a Revolving Credit and Term Loan Agreement (the 2016 Credit Agreement), among the Company, CooperVision International Holding Company, LP, the lenders party thereto and KeyBank National Association, as administrative agent. The 2016 Credit Agreement provides for a multi-currency revolving credit facility in an aggregate principal amount of  $1.0 billion  (the 2016 Revolving Credit Facility) and a term loan facility in an aggregate principal amount of  $830.0 million  (the 2016 Term Loan Facility), each of which, unless terminated earlier, mature on  March 1, 2021 . In addition, the Company has the ability from time to time to request an increase to the size of the 2016 Revolving Credit Facility or establish one or more new term loans under the 2016 Term Loan Facility in an aggregate amount up to  $750.0 million , subject to the discretionary participation of the lenders. At  January 31, 2020 , the Company had  no  outstanding balance under the 2016 Term Loan Facility and  $235.0 million   outstanding under the 2016 Revolving Credit Facility.   $763.8 million  was available under the 2016 Revolving Credit Facility. If interest rates were to increase or decrease by 1% or 100 basis points, quarterly interest expense would increase or decrease by approximately $4.6 million based on average debt outstanding for the first quarter of fiscal 2020. See Note 6. Debt of the Consolidated Financial Statements for additional information. 34 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 4. Controls and Procedures Evaluation of Disclosure Controls and Procedures Based on management’s evaluation (with the participation of our Chief Executive Officer (our Principal Executive Officer) and Chief Financial Officer (our Principal Financial Officer)), as of the end of the period covered by this report, our Chief Executive Officer and Chief Financial Officer have concluded that our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended, (the Exchange Act)) are effective to provide reasonable assurance that information required to be disclosed by us in reports that we file or submit under the Exchange Act is recorded, processed, summarized and reported within the time periods specified in Securities and Exchange Commission rules and forms and is accumulated and communicated to management, including our Chief Executive Officer and Chief Financial Officer, as appropriate to allow timely decisions regarding required disclosure.  Changes in Internal Control over Financial Reporting Effective November 1, 2019, we adopted ASU No. 2016-02,  Leases (Topic 842) . Changes were made to the relevant business processes and the related control activities, including information systems, in order to monitor and maintain appropriate controls over financial reporting. There were no other changes in our internal control over financial reporting identified in connection with the evaluation required by Rule 13a-15(d) and 15d-15(d) of the Exchange Act that occurred during the first quarter of fiscal 2020, that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 35 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES PART II—OTHER INFORMATION Item 1. Legal Proceedings Information regarding legal proceedings is included in Note 13. Contingencies of this Quarterly Report on Form 10-Q. Item 1A. Risk Factors Our business faces significant risks. These risks include those described below and may include additional risks and uncertainties not presently known to us or that we currently deem immaterial. Our business, financial condition and results of operations could be materially adversely affected by any of these risks, and the trading prices of our common stock could decline by virtue of these risks. These risks should be read in conjunction with the other information in this report. Risk factors describing the major risks to our business can be found under Item 1A. Risk Factors in our Annual Report on Form 10-K for the fiscal year ended October 31, 2019. In the first quarter of fiscal 2020, we updated some of our risk factors as described below. There are no other material changes in our risk factors from those previously discussed in our Form 10-K for the fiscal year ended October 31, 2019. Our substantial and expanding international operations are subject to uncertainties which could affect our operating results. A significant portion of our current operations are conducted and located outside the United States, and our growth strategy involves expanding our existing foreign operations and entering into new foreign jurisdictions. We have significant manufacturing and distribution sites in North America, Latin America and Europe. Over half of our net sales for the fiscal years ended October 31, 2019 and 2018, were derived from the sale of products outside the United States. We believe that sales outside the United States will continue to account for a material portion of our total net sales for the foreseeable future. International operations and business expansion plans are subject to numerous additional risks, including: • we may have difficulty enforcing intellectual property rights in some foreign countries; • we may have difficulty gaining market share in countries such as Japan and China because of regulatory restrictions and customer preferences; • we may find it difficult to grow in emerging markets such as China, India, Russia, Brazil and other developing nations due to, among other things, customer acceptance, undeveloped and/or unfamiliar distribution channels, regulatory restrictions and changes, and business knowledge of these new markets; • tax rates in some foreign countries may exceed those of the United States, and foreign earnings may be subject to withholding requirements or the imposition of tariffs, exchange controls or other restrictions, including the tariffs enacted by the U.S. government on various imports from China and by the Chinese government on certain U.S. goods, the scope and duration of which remain uncertain; • we may find it difficult to comply with a variety of United States and foreign legal, compliance and regulatory requirements such as the Foreign Corrupt Practices Act, the Dodd-Frank Wall Street Reform and Consumer Protection Act, the United Kingdom (U.K.) Bribery Act and international data security and privacy laws and MDR and IVDR; • we may find it difficult to manage a large organization spread throughout various countries; • fluctuations in currency exchange rates could adversely affect our results; • foreign customers may have longer payment cycles than customers in the United States; • failure to comply with United States Department of Commerce and other nations' import-export controls may result in fines and/or penalties; • general economic and political conditions in the countries where we operate may have an adverse effect on our operations in those countries or not be favorable to our growth strategy; • natural disasters (including pandemics), war, terrorism, labor disruptions and international conflicts may cause significant economic disruption and political and social instability, resulting in decreased demand for our products, adversely affecting our manufacturing and distribution capabilities, or causing interruptions in our supply chain;  36       • foreign governments may adopt regulations, including those similar to MDR and IVDR or take other actions that would have a direct or indirect adverse impact on our business and market opportunities, including but not limited to increased enforcement of potentially conflicting and ambiguous anti-bribery laws; • we may have difficulty enforcing agreements and collecting receivables through some foreign legal systems; and • we may be subject to unforeseen economic or political events in certain countries that may have an impact on our customers' ability or preferences to buy our products. The recent outbreak of a strain of the coronavirus referred to as COVID-19, which has begun to spread globally, will have a negative impact on our near-term financial results as a result of deferred or lost sales and disrupted supply chain and operations. The longer-term impact is difficult to assess or predict at this time and depending on the scope of the spread and intensity of this coronavirus outbreak, it could have a material adverse effect on other aspects of our operations or the operations of our significant suppliers and customers. As we continue to expand our business globally, our success will depend, in large part, on our ability to anticipate and effectively manage these and other risks associated with our international operations. However, any of these factors could adversely affect our international operations and, consequently, our operating results. The results of the United Kingdom’s withdrawal from the European Union may have a negative effect on global economic conditions, financial markets and our business. We are a multinational company headquartered in the United States with worldwide operations, with significant business operations in Europe, including in the United Kingdom. In June 2016, a majority of voters in the United Kingdom elected to withdraw from the European Union in a national referendum (Brexit). In March 2017, the government of the United Kingdom formally gave notice of its intent to withdraw from the European Union (EU). On  January 31, 2020 , the United Kingdom ceased to be a member state of the EU. EU law applicable to the United Kingdom continues to apply to and in the United Kingdom for the duration of a transition period which is presently scheduled to expire on December 31, 2020 (the “Transition Period”). During the Transition Period, the EU and the United Kingdom will negotiate the terms of their future relationship. There is no assurance that such negotiations will be successful and it is uncertain what, if any, laws similar to those of the EU will continue to apply in and to the United Kingdom following the expiration of the Transition Period. Since a significant proportion of the United Kingdom’s regulatory framework is derived from EU directives and regulations, EU law ceasing to apply in and to the United Kingdom following the expiration of the Transition Period could materially impact the regulatory regime with respect to the movement and approval of our products to and from the United Kingdom and EU. We could face new regulatory costs and challenges that could have a material adverse effect on our business, financial condition, cash flows and results of operations. Until expiration of the Transition Period and the future relationship between the EU and the United Kingdom is established, it is difficult to anticipate Brexit’s potential impact. Cybersecurity threats continue to increase in frequency and sophistication; a successful cybersecurity attack could interrupt or disrupt our information technology systems or cause the loss of confidential or protected data which could disrupt our business, force us to incur excessive costs or cause reputational harm. The size and complexity of our information systems make such systems potentially vulnerable to service interruptions or to security breaches from inadvertent or intentional actions by our employees or vendors, or from attacks by malicious third parties. Such attacks are of ever-increasing levels of sophistication and are made by groups and individuals with a wide range of motives and expertise. Like many other companies, we experience attempted cybersecurity actions on a frequent basis, and the frequency of such attempts could increase in the future. While we have invested in the protection of data and information technology, there can be no assurance that our efforts will prevent or quickly identify service interruptions or security breaches. Any such interruption or breach of our systems could adversely affect our business operations and/or result in the loss of critical or sensitive confidential information or intellectual property, and could result in financial, legal, business and reputational harm to us. We maintain cyber liability insurance; however, this insurance may not be sufficient to cover the financial, legal, business or reputational losses that may result from an interruption or breach of our systems. 37 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES Item 2. Unregistered Sales of Equity Securities and Use of Proceeds Issuer Purchases of Equity Securities There was  no  share repurchase activity during the first quarter ended  January 31, 2020 . The Share Repurchase Program was approved by the Company’s Board of Directors in December 2011 (the 2012 Share Repurchase Program). The program as amended in December 2012, December 2013 and March 2017 provides authorization to repurchase up to a total of $1.0 billion of the Company's common stock. Purchases under the 2012 Share Repurchase Program may be made from time-to-time on the open market at prevailing market prices or in privately negotiated transactions and are subject to a review of the circumstances in place at the time and will be made from time to time as permitted by securities laws and other legal requirements. This program has no expiration date and may be discontinued at any time.  At  January 31, 2020 , approximately  $407.4 million  remained authorized under the 2012 Share Repurchase Program. Item 3. Defaults Upon Senior Securities None. Item 4. Mine Safety Disclosures Not applicable. Item 5. Other Information None. Item 6. Exhibits Exhibit Number Description     10.1 The Cooper Companies, Inc. 2020 Incentive Payment Plan, incorporated by reference to Exhibit 10.1 to the Company's Current Report on form 8-K dated December 16, 2019     10.2 Transition and Retirement Agreement entered into by and between The Cooper Companies, Inc. and Randal L. Golden as of February 15, 2020     31.1 Certification of the Chief Executive Officer, pursuant to Rule 13a-14(a) under the Securities Exchange Act of 1934     31.2 Certification of the Chief Financial Officer, pursuant to Rule 13a-14(a) under the Securities Exchange Act of 1934     32.1 Certification of the Chief Executive Officer, pursuant to 18 U.S.C. Section 1350     32.2 Certification of the Chief Financial Officer, pursuant to 18 U.S.C. Section 1350     101.1 The following materials from the Company's Quarterly Report on Form 10-Q for the three months period ended January 31, 2020, formatted in Inline XBRL (Extensible Business Reporting Language): (i) Consolidated Statements of Income, (ii) Consolidated Statements of Comprehensive Income, (iii) Consolidated Condensed Balance Sheets, (iv) Consolidated Condensed Statements of Stockholders' Equity, (v) Consolidated Condensed Statements of Cash Flows and (vi) related Notes to Consolidated Condensed Financial Statements.     104.1 Cover Page Interactive Data File (embedded within the Inline XBRL document) 38 Table of Contents THE COOPER COMPANIES, INC. AND SUBSIDIARIES SIGNATURE Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.   The Cooper Companies, Inc.   (Registrant)     Date: March 6, 2020 /s/ Brian G. Andrews   Brian G. Andrews   Senior Vice President, Chief Financial Officer & Treasurer (Principal Financial Officer)             Date: March 6, 2020 /s/ Agostino Ricupati   Agostino Ricupati   Chief Accounting Officer & Senior Vice President, Finance & Tax (Principal Accounting Officer) 39 	 
+ 

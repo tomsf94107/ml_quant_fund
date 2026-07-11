@@ -1,0 +1,3427 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q1 2020 0000051434 2000000 5000000 0.5000 0.5000 0.5000 0.5125 0.5125 0.5125 1 1 448900000 448900000 0 56800000 56100000 
+		 
+			 0000051434 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IlimHoldingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2020-04-24 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DomesticPlanMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DomesticPlanMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201613Member 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 ip:AmericasOtherThanUSMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:EuropeanPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:EMEAIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:BrazilianIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:ReportableGeographicalComponentsMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EMEAIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:BrazilianPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EuropeanPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EuropeanCoatedPaperboardMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:IndiaPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:NorthAmericanPrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:NorthAmericanIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:NorthAmericanIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:ReportableGeographicalComponentsMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 country:US 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:ReportableGeographicalComponentsMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:EuropeanCoatedPaperboardMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:BrazilianPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndiaPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:BrazilianIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:NorthAmericanPrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:BrazilianPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:IndiaPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:BrazilianIndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 ip:AmericasOtherThanUSMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:NorthAmericanPrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndiaPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EuropeanCoatedPaperboardMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:BrazilianIndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:EuropeanCoatedPaperboardMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:NorthAmericanIndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 country:US 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:EMEAIndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 country:US 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:ReportableGeographicalComponentsMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:AmericasOtherThanUSMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:BrazilianPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 us-gaap:IntersegmentEliminationMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EMEAIndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:EuropeanPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:ReportableGeographicalComponentsMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EMEAMember 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+				 ip:NorthAmericanIndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EuropeanPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntersegmentEliminationMember 
+				 us-gaap:EMEAMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:ReportableGeographicalComponentsMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+				 ip:NorthAmericanPrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:AsiaMember 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201613Member 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TreasuryStockCommonMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TreasuryStockCommonMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TreasuryStockCommonMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201613Member 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TreasuryStockCommonMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TreasuryStockCommonMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+				 us-gaap:ParentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TreasuryStockCommonMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountingStandardsUpdate201802Member 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedForeignCurrencyAdjustmentIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedForeignCurrencyAdjustmentIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromCashFlowHedgesIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentNetGainLossIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromCashFlowHedgesIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentNetPriorServiceIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:AccumulatedNetGainLossFromCashFlowHedgesIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentNetGainLossIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:AccumulatedNetGainLossFromCashFlowHedgesIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentNetPriorServiceIncludingPortionAttributableToNoncontrollingInterestMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedDefinedBenefitPlansAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedNetGainLossFromDesignatedOrQualifyingCashFlowHedgesMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccumulatedTranslationAdjustmentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:PerformanceSharesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:PerformanceSharesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:EarlydebtextinguishmentcostsMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:DSSmithPackagingMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:DSSmithPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DisposalGroupHeldforsaleNotDiscontinuedOperationsMember 
+				 ip:BrazilianIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:APPMMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DisposalGroupHeldforsaleNotDiscontinuedOperationsMember 
+				 ip:BrazilianIndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:APPMMember 
+			 
+		 
+		 
+			 2019-10-01 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:APPMMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+		 
+		 
+			 2019-01-01 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TradeAccountsReceivableMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountsReceivableMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:TradeAccountsReceivableMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccountsReceivableMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:MinimumMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 srt:MaximumMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IlimHoldingMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IlimHoldingMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IlimHoldingMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IlimHoldingMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GraphicPackagingLLCMember 
+				 us-gaap:ReportableSubsegmentsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OtherIntangibleAssetsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:UseRightsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntellectualPropertyMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:UseRightsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ComputerSoftwareIntangibleAssetMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:IntellectualPropertyMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CustomerRelatedIntangibleAssetsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:SecretariatOfTheFederalRevenueBureauOfBrazilMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SignatureIndustrialServicesLLCetal.v.InternationalPaperMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:NorthernImpoundmentMember 
+				 ip:SanJacintoRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SouthernImpoundmentMemberMember 
+				 ip:SanJacintoRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:KalamazooRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SignatureIndustrialServicesLLCetal.v.InternationalPaperMember 
+			 
+		 
+		 
+			 2017-04-01 
+			 2017-06-30 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:ItalianCompetitionAuthorityMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GeorgiaPacificConsumerProductsLPFortJamesCorporationandGeorgiaPacificLLCCostRecoveryActionMember 
+				 ip:KalamazooRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TwoThousandSevenFinancingEntitiesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TwoThousandFifteenFinancingEntitiesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SanJacintoRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SignatureIndustrialServicesLLCetal.v.InternationalPaperMember 
+			 
+		 
+		 
+			 2017-01-01 
+			 2017-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:CassLakeMinnesotaMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SignatureIndustrialServicesLLCetal.v.InternationalPaperMember 
+			 
+		 
+		 
+			 2014-09-30 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TimeCriticalRemovalActionMember 
+				 ip:KalamazooRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2015-01-01 
+			 2015-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:NorthernImpoundmentMember 
+				 ip:SanJacintoRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:SouthernImpoundmentMemberMember 
+				 ip:SanJacintoRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TimeCriticalRemovalActionMember 
+				 ip:KalamazooRiverSuperfundSiteMember 
+			 
+		 
+		 
+			 2016-01-01 
+			 2016-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TwoThousandSevenFinancingEntitiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TwoThousandFifteenFinancingEntitiesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TwoThousandSevenFinancingEntitiesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:TwoThousandFifteenFinancingEntitiesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:ReceivablesSecuritizationProgramMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:A364DayRevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:ReceivablesSecuritizationProgramMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CommercialPaperMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:ReceivablesSecuritizationProgramMember 
+			 
+		 
+		 
+			 2020-04-01 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:DeferredchargesandotherassetsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OtherCurrentAssetsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:SubsequentEventMember 
+			 
+		 
+		 
+			 2020-06-30 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:DeferredchargesandotherassetsMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:AccruedLiabilitiesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:OtherLiabilitiesMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:OtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:NetInvestmentHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:FairValueHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:CashFlowHedgingMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:ForeignExchangeContractMember 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DebtMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:InterestExpenseMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:InterestExpenseMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:InterestExpenseMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DebtMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:InterestExpenseMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:EnergyRelatedDerivativeMember 
+				 us-gaap:NondesignatedMember 
+				 us-gaap:CostOfSalesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:InterestRateContractMember 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:InterestExpenseMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+				 us-gaap:InterestExpenseMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:NondesignatedMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:DesignatedAsHedgingInstrumentMember 
+			 
+		 
+		 
+			 2019-12-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:SupplementalEmployeeRetirementPlanDefinedBenefitMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:StockCompensationPlanMember 
+			 
+		 
+		 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 us-gaap:SellingGeneralAndAdministrativeExpensesMember 
+			 
+		 
+		 
+			 2020-01-01 
+			 2020-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:IndustrialPackagingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:PrintingPapersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0000051434 
+			 
+				 ip:GlobalCelluloseFibersMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 iso4217:BRL 
+	 
+		 iso4217:USD 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 xbrli:pure 
+	 
+		 iso4217:EUR 
+	 
+		 xbrli:shares 
+	 Table of Contents UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON, D.C. 20549 FORM  10-Q   ☒   QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the Quarterly Period Ended  March 31, 2020     ☐   TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the Transition Period From              to               _________________________________________ Commission File Number  001-03157   INTERNATIONAL PAPER COMPANY   (Exact name of registrant as specified in its charter)   New York 13-0872805 (State or other jurisdiction of (I.R.S. Employer incorporation of organization) Identification No.)         6400 Poplar Avenue Memphis, TN 38197 (Address of principal executive offices) (Zip Code) Registrant’s telephone number, including area code: ( 901 )  419-7000   Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading Symbol(s) Name of each exchange on which registered Common Shares IP New York Stock Exchange Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.     Yes   ☒    No   ¨ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§ 232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes   ☒   No   ¨ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or and emerging growth company. See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and "emerging growth company" in Rule 12b-2 of the Exchange Act.   Large accelerated filer ☒ Accelerated filer ☐ Non-accelerated filer ☐ Smaller reporting company ☐     Emerging growth company ☐ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13 (a) of the Exchange  Act.  ¨   Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes   ¨     No   ☐   The number of shares outstanding of the registrant’s common stock, par value $1.00 per share, as of  April 24, 2020  was  393,041,293 . Table of Contents INDEX       PAGE NO.   PART I. FINANCIAL INFORMATION         Item 1. Financial Statements           Condensed Consolidated Statement of Operations  - Three Months Ended March 31, 2020 and 2019 1         Condensed Consolidated Statement of Comprehensive Income - Three Months Ended March 31, 2020 and 2019 2         Condensed Consolidated Balance Sheet - March 31, 2020 and December 31, 2019 3         Condensed Consolidated Statement of Cash Flows - Three Months Ended March 31, 2020 and 2019 4         Condensed Notes to Consolidated Financial Statements 5       Item 2. Management’s Discussion and Analysis of Financial Condition and Results of Operations 26       Item 3. Quantitative and Qualitative Disclosures About Market Risk 42       Item 4. Controls and Procedures 42         PART II. OTHER INFORMATION         Item 1. Legal Proceedings 43       Item 1A. Risk Factors 43       Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 44       Item 6. Exhibits 45     Signatures 46 Table of Contents PART I. FINANCIAL INFORMATION   ITEM 1. FINANCIAL STATEMENTS INTERNATIONAL PAPER COMPANY Condensed Consolidated Statement of Operations (Unaudited) (In millions, except per share amounts)     Three Months Ended March 31,   2020   2019 Net Sales $ 5,352   $ 5,643 Costs and Expenses       Cost of products sold 3,746   3,929 Selling and administrative expenses 418   413 Depreciation, amortization and cost of timber harvested 323   315 Distribution expenses 407   389 Taxes other than payroll and income taxes 44   43 Restructuring and other charges, net 8   — Net (gains) losses on sales and impairments of businesses 344   ( 7 ) Net (gains) losses on sales of equity method investments ( 33 )   — Interest expense, net 117   133 Non-operating pension expense (income) ( 6 )   10 Earnings (Loss) Before Income Taxes and Equity Earnings ( 16 )   418 Income tax provision (benefit) 94   106 Equity earnings (loss), net of taxes ( 31 )   114 Net Earnings (Loss) ( 141 )   426 Less: Net earnings (loss) attributable to noncontrolling interests —   2 Net Earnings (Loss) Attributable to International Paper Company $ ( 141 )   $ 424 Basic Earnings (Loss) Per Share Attributable to International Paper Company Common Shareholders       Net earnings (loss) $ ( 0.36 )   $ 1.06 Diluted Earnings (Loss) Per Share Attributable to International Paper Company Common Shareholders       Net earnings (loss) $ ( 0.36 )   $ 1.05 Average Shares of Common Stock Outstanding – assuming dilution 392.6   403.2 The accompanying notes are an integral part of these condensed financial statements. 1 Table of Contents INTERNATIONAL PAPER COMPANY Condensed Consolidated Statement of Comprehensive Income (Unaudited) (In millions)     Three Months Ended March 31,   2020   2019 Net Earnings (Loss) $ ( 141 )   $ 426 Other Comprehensive Income (Loss), Net of Tax:       Amortization of pension and post-retirement prior service costs and net loss:       U.S. plans 46   41 Change in cumulative foreign currency translation adjustment ( 544 )   12 Net gains/losses on cash flow hedging derivatives:       Net gains (losses) arising during the period ( 30 )   — Reclassification adjustment for (gains) losses included in net earnings (loss) 11   1 Total Other Comprehensive Income (Loss), Net of Tax ( 517 )   54 Comprehensive Income (Loss) ( 658 )   480 Net (earnings) loss attributable to noncontrolling interests —   ( 2 ) Other comprehensive (income) loss attributable to noncontrolling interests 1   — Comprehensive Income (Loss) Attributable to International Paper Company $ ( 657 )   $ 478 The accompanying notes are an integral part of these condensed financial statements. 2 Table of Contents INTERNATIONAL PAPER COMPANY Condensed Consolidated Balance Sheet (In millions)   March 31,  2020   December 31,  2019   (unaudited)     Assets       Current Assets       Cash and temporary investments $ 1,239   $ 511 Accounts and notes receivable, net 3,226   3,280 Contract assets 423   393 Inventories 2,002   2,208 Assets held for sale 112   — Other current assets 213   247 Total Current Assets 7,215   6,639 Plants, Properties and Equipment, net 12,691   13,004 Forestlands 308   391 Investments 1,370   1,721 Financial Assets of Variable Interest Entities (Note 16) 7,093   7,088 Goodwill 3,304   3,347 Right of Use Assets 422   434 Deferred Charges and Other Assets 812   847 Total Assets $ 33,215   $ 33,471 Liabilities and Equity       Current Liabilities       Notes payable and current maturities of long-term debt $ 664   $ 168 Current nonrecourse financial liabilities of variable interest entities (Note 16) 4,220   4,220 Accounts payable 2,379   2,423 Accrued payroll and benefits 355   466 Liabilities held for sale 364   — Other current liabilities 1,360   1,369 Total Current Liabilities 9,342   8,646 Long-Term Debt 9,561   9,597 Long-Term Nonrecourse Financial Liabilities of Variable Interest Entities (Note 16) 2,087   2,085 Deferred Income Taxes 2,662   2,633 Pension Benefit Obligation 1,521   1,578 Postretirement and Postemployment Benefit Obligation 252   270 Long-Term Lease Obligations 293   304 Other Liabilities 636   640 Equity       Common stock, $1 par value, 2020 – 448.9 shares and 2019 – 448.9 shares 449   449 Paid-in capital 6,252   6,297 Retained earnings 8,062   8,408 Accumulated other comprehensive loss ( 5,255 )   ( 4,739 )   9,508   10,415 Less: Common stock held in treasury, at cost, 2020 – 56.1 shares and 2019 – 56.8 shares 2,651   2,702 Total International Paper Shareholders’ Equity 6,857   7,713 Noncontrolling interests 4   5 Total Equity 6,861   7,718 Total Liabilities and Equity $ 33,215   $ 33,471 The accompanying notes are an integral part of these condensed financial statements. 3 Table of Contents INTERNATIONAL PAPER COMPANY Condensed Consolidated Statement of Cash Flows (Unaudited) (In millions)   Three Months Ended March 31,   2020   2019 Operating Activities       Net earnings (loss) $ ( 141 )   $ 426 Depreciation, amortization and cost of timber harvested 323   315 Deferred income tax provision (benefit), net 35   22 Restructuring and other charges, net 8   — Net (gains) losses on sales and impairments of businesses 344   ( 7 ) Net (gains) losses on sales of equity method investments ( 33 )   — Equity method dividends received 5   6 Equity (earnings) losses, net 31   ( 114 ) Periodic pension expense, net 11   26 Other, net 166   46 Changes in current assets and liabilities       Accounts and notes receivable ( 107 )   26 Contract assets ( 33 )   ( 15 ) Inventories 60   ( 22 ) Accounts payable and accrued liabilities ( 31 )   34 Interest payable ( 12 )   ( 25 ) Other 23   15 Cash Provided By (Used For) Operations 649   733 Investment Activities       Invested in capital projects, net of insurance recoveries ( 286 )   ( 293 ) Acquisitions, net of cash acquired —   ( 17 ) Proceeds from sales of businesses, net of cash divested —   17 Proceeds from sales of equity method investments 250   — Proceeds from sale of fixed assets 1   3 Other —   ( 4 ) Cash Provided By (Used For) Investment Activities ( 35 )   ( 294 ) Financing Activities       Repurchases of common stock and payments of restricted stock tax withholding ( 41 )   ( 229 ) Issuance of debt 560   208 Reduction of debt ( 136 )   ( 142 ) Change in book overdrafts ( 9 )   ( 25 ) Dividends paid ( 202 )   ( 201 ) Other ( 7 )   — Cash Provided By (Used For) Financing Activities 165   ( 389 ) Cash Included in Assets Held for Sale ( 9 )   — Effect of Exchange Rate Changes on Cash ( 42 )   2 Change in Cash and Temporary Investments 728   52 Cash and Temporary Investments       Beginning of period 511   589 End of period $ 1,239   $ 641 The accompanying notes are an integral part of these condensed financial statements. 4 Table of Contents INTERNATIONAL PAPER COMPANY Condensed Notes to Consolidated Financial Statements (Unaudited) NOTE 1 - BASIS OF PRESENTATION The accompanying unaudited condensed financial statements have been prepared in conformity with accounting principles generally accepted in the United States and in accordance with the instructions to Form 10-Q and, in the opinion of management, include all adjustments that are necessary for the fair presentation of International Paper Company’s (International Paper’s, the Company’s or our) financial position, results of operations, and cash flows for the interim periods presented. Except as disclosed herein, such adjustments are of a normal, recurring nature. Results for the first  three  months of the year may not necessarily be indicative of full year results. It is suggested that these condensed financial statements be read in conjunction with the audited financial statements and the notes thereto included in the Company’s Annual Report on Form 10-K for the year ended  December 31, 2019 , which have previously been filed with the Securities and Exchange Commission.  On March 11, 2020 the World Health Organization declared the novel strain of coronavirus (COVID-19) a global pandemic and recommended containment and mitigation measures worldwide.  Governments of countries in which we operate have generally considered forest products and the supply chain on which we depend to be “essential industries” that should remain operational during this pandemic. Accordingly, our manufacturing and converting facilities remain open; however, we have seen a significant negative impact on demand for our printing papers products and demand for our pulp, containerboard and corrugated box products is expected to be unfavorably impacted if the negative economic conditions associated with COVID-19 persist or continue to deteriorate.   There continue to be significant uncertainties associated with the COVID-19 pandemic, including with respect to the severity of the disease, the duration of the outbreak, actions that may be taken by governmental authorities and private businesses to attempt to contain the COVID-19 outbreak or to mitigate its impact; the extent and duration of social distancing and the adoption of stay-at-home orders; and the ongoing impact of COVID-19 on economic activity and consumer confidence. As a result, we are unable to fully quantify the impact that the COVID-19 pandemic will have on our financial results during 2020, but developments related to COVID-19 are significantly adversely affecting our business, and could have a material adverse effect on our financial condition, results of operations and cash flows, particularly if negative global economic conditions persist for a significant period of time or continue to deteriorate. NOTE 2 - RECENT ACCOUNTING DEVELOPMENTS Recently Adopted Accounting Pronouncements Financial Instruments - Credit Losses In June 2016, the FASB issued ASU 2016-13, "Financial Instruments - Credit Losses (Topic 326): Measurement of Credit Losses on Financial Instruments." This guidance replaces the current incurred loss impairment method with a method that reflects expected credit losses. The Company adopted this guidance using the modified retrospective approach on January 1, 2020. As a result of using this approach, the Company recognized a cumulative effect adjustment of  $ 2  million  to the opening balance of retained earnings representing the adjustment to our opening allowance for doubtful accounts required to state our trade receivables and contract assets net of their expected credit losses, net of deferred taxes. Recently Issued Accounting Pronouncements Not Yet Adopted Reference Rate Reform In March 2020, the FASB issued ASU 2020-04, "Reference Rate Reform (Topic 848): Facilitation of the Effects of Reference Rate Reform on Financial Reporting." This guidance provides companies with optional guidance to ease the potential accounting burden associated with transitioning away from reference rates that are expected to be discontinued. This guidance is effective upon issuance and generally can be applied through December 31, 2022. The Company is currently evaluating the provisions of this guidance. Income Taxes In December 2019, the FASB issued ASU 2019-12, "Income Taxes (Topic 740): Simplifying the Accounting for Income Taxes." This guidance removes certain exceptions from recognizing deferred taxes for investments, performing intraperiod  5 Table of Contents allocation and calculating income taxes in interim periods. It also adds guidance to reduce complexity in certain areas, including recognizing deferred taxes for tax goodwill and allocating taxes to members of a consolidated group. This guidance is effective for annual reporting periods beginning after December 15, 2020, and interim periods within those years. Early adoption of the amendments is permitted, including adoption in any interim period for public business entities for periods for which financial statements have not yet been issued. The Company is currently evaluating the provisions of this guidance. NOTE 3 - REVENUE RECOGNITION Generally, the Company recognizes revenue on a point-in-time basis when the customer takes title to the goods and assumes the risks and rewards for the goods. For customized goods where the Company has a legally enforceable right to payment for the goods, the Company recognizes revenue over time which, generally, is as the goods are produced.  Disaggregated Revenue A geographic disaggregation of revenues across our company segmentation in the following tables provides information to assist in evaluating the nature, timing and uncertainty of revenue and cash flows and how they may be impacted by economic factors.     Three Months Ended March 31, 2020 In millions   Industrial Packaging   Global Cellulose Fibers   Printing Papers   Corporate and Inter-segment Sales   Total Primary Geographical Markets  (a)                      United States   $ 3,130   $ 494   $ 444   $ 58   $ 4,126 EMEA   440   56   302   ( 2 )   796 Pacific Rim and Asia   12   18   8   3   41 Americas, other than U.S.   237   —   154   ( 2 )   389 Total   $ 3,819   $ 568   $ 908   $ 57   $ 5,352                       Operating Segments                     North American Industrial Packaging   $ 3,355   $ —   $ —   $ —   $ 3,355 EMEA Industrial Packaging   350   —   —   —   350 Brazilian Industrial Packaging   54   —   —   —   54 European Coated Paperboard   92   —   —   —   92 Global Cellulose Fibers   —   568   —   —   568 North American Printing Papers   —   —   446   —   446 Brazilian Papers   —   —   176   —   176 European Papers   —   —   287   —   287 Indian Papers   —   —   —   —   — Intra-segment Eliminations   ( 32 )   —   ( 1 )   —   ( 33 ) Corporate & Inter-segment Sales     —   —   57   57 Total   $ 3,819   $ 568   $ 908   $ 57   $ 5,352 (a)   Net sales are attributed to countries based on the location of the seller. 6 Table of Contents     Three Months Ended March 31, 2019 In millions   Industrial Packaging   Global Cellulose Fibers   Printing Papers   Corporate and Inter-segment Sales   Total Primary Geographical Markets  (a)                      United States   $ 3,146   $ 570   $ 488   $ 60   $ 4,264 EMEA   428   81   330   ( 2 )   837 Pacific Rim and Asia   18   38   59   4   119 Americas, other than U.S.   240   —   188   ( 5 )   423 Total   $ 3,832   $ 689   $ 1,065   $ 57   $ 5,643                       Operating Segments                     North American Industrial Packaging   $ 3,376   $ —   $ —   $ —   $ 3,376 EMEA Industrial Packaging   339   —   —   —   339 Brazilian Industrial Packaging   57   —   —   —   57 European Coated Paperboard   91   —   —   —   91 Global Cellulose Fibers   —   689   —   —   689 North American Printing Papers   —   —   496   —   496 Brazilian Papers   —   —   215   —   215 European Papers   —   —   309   —   309 Indian Papers   —   —   53   —   53 Intra-segment Eliminations   ( 31 )   —   ( 8 )   —   ( 39 ) Corporate & Inter-segment Sales   —   —   —   57   57 Total   $ 3,832   $ 689   $ 1,065   $ 57   $ 5,643 (a)   Net sales are attributed to countries based on the location of the seller. Revenue Contract Balances A contract asset is created when the Company recognizes revenue on its customized products prior to having an unconditional right to payment from the customer, which generally does not occur until title and risk of loss passes to the customer. A contract liability is created when customers prepay for goods prior to the Company transferring those goods to the customer. The contract liability is reduced once control of the goods is transferred to the customer. The majority of our customer prepayments are received during the fourth quarter each year for goods that will be transferred to customers over the following twelve months. Contract liabilities of  $ 44  million  and  $ 56  million  are included in Other current liabilities in the accompanying condensed consolidated balance sheet as of  March 31, 2020  and  December 31, 2019 , respectively. The difference between the opening and closing balances of the Company's contract assets and contract liabilities primarily results from the difference between the price and quantity at comparable points in time for goods for which we have an unconditional right to payment or receive pre-payment from the customer, respectively. 7 Table of Contents NOTE 4 - EQUITY A summary of the changes in equity for the  three  months ended  March 31, 2020  and  2019  is provided below:   Three Months Ended March 31, 2020 In millions, except per share amounts Common Stock Issued   Paid-in Capital   Retained Earnings Accumulated Other Comprehensive Income (Loss)   Common Stock Held In Treasury, At Cost   Total International Paper Shareholders’ Equity   Noncontrolling Interests   Total Equity   Balance, January 1 $ 449   $ 6,297   $ 8,408 $ ( 4,739 )   $ 2,702   $ 7,713   $ 5   $ 7,718   Adoption of ASU 2016-13 measurement of credit losses on financial instruments —   —   ( 2 ) —   —   ( 2 )   —   ( 2 )   Issuance of stock for various plans, net —   ( 51 )   — —   ( 92 )   41   —   41   Repurchase of stock —   —   — —   41   ( 41 )   —   ( 41 )   Common stock dividends  ($0.5125 per share) —   —   ( 203 ) —   —   ( 203 )   —   ( 203 )   Transactions of equity method investees —   6   — —   —   6   —   6   Comprehensive income (loss) —   —   ( 141 ) ( 516 )   —   ( 657 )   ( 1 )   ( 658 )   Ending Balance, March 31 $ 449   $ 6,252   $ 8,062 $ ( 5,255 )   $ 2,651   $ 6,857   $ 4   $ 6,861     Three Months Ended March 31, 2019 In millions, except per share amounts Common Stock Issued   Paid-in Capital   Retained Earnings Accumulated Other Comprehensive Income (Loss)   Common Stock Held In Treasury, At Cost   Total International Paper Shareholders’ Equity   Noncontrolling Interests   Total Equity   Balance, January 1 $ 449   $ 6,280   $ 7,465 $ ( 4,500 )   $ 2,332   $ 7,362   $ 21   $ 7,383   Adoption of ASU 2018-02 reclassification of stranded tax effects resulting from Tax Reform —   —   529 ( 529 )   —   —   —   —   Issuance of stock for various plans, net —   ( 118 )   — —   ( 163 )   45   —   45   Repurchase of stock —   —   — —   229   ( 229 )   —   ( 229 )   Common stock dividends ($0.5000 per share) —   —   ( 207 ) —   —   ( 207 )   —   ( 207 )   Transactions of equity method investees —   ( 3 )   — —   —   ( 3 )   —   ( 3 )   Comprehensive income (loss) —   —   424 54   —   478   2   480   Ending Balance, March 31 $ 449   $ 6,159   $ 8,211 $ ( 4,975 )   $ 2,398   $ 7,446   $ 23   $ 7,469        8 Table of Contents NOTE 5 - OTHER COMPREHENSIVE INCOME The following table presents changes in accumulated other comprehensive income (AOCI) for the  three  months ended  March 31, 2020  and  2019 :     Three Months Ended March 31, In millions   2020   2019 Defined Benefit Pension and Postretirement Adjustments         Balance at beginning of period   $ ( 2,277 )   $ ( 1,916 ) Reclassification of stranded tax effects   —   ( 527 ) Amounts reclassified from accumulated other comprehensive income   46   41 Balance at end of period   ( 2,231 )   ( 2,402 ) Change in Cumulative Foreign Currency Translation Adjustments         Balance at beginning of period   ( 2,465 )   ( 2,581 ) Other comprehensive income (loss) before reclassifications   ( 544 )   8 Amounts reclassified from accumulated other comprehensive income   —   4 Other comprehensive income (loss) attributable to noncontrolling interest   1   — Balance at end of period   ( 3,008 )   ( 2,569 ) Net Gains and Losses on Cash Flow Hedging Derivatives         Balance at beginning of period   3   ( 3 ) Other comprehensive income (loss) before reclassifications   ( 30 )   — Reclassification of stranded tax effects   —   ( 2 ) Amounts reclassified from accumulated other comprehensive income   11   1 Balance at end of period   ( 16 )   ( 4 ) Total Accumulated Other Comprehensive Income (Loss) at End of Period   $ ( 5,255 )   $ ( 4,975 ) 9 Table of Contents The following table presents details of the reclassifications out of AOCI for the  three  months ended  March 31, 2020  and  2019 : In millions:   Amounts Reclassified from Accumulated Other Comprehensive Income Location of Amount Reclassified from AOCI    Three Months Ended March 31,       2020   2019     Defined benefit pension and postretirement items:               Prior-service costs   $ ( 5 )   $ ( 3 )   (a) Non-operating pension expense Actuarial gains (losses)   ( 56 )   ( 52 )   (a) Non-operating pension expense Total pre-tax amount   ( 61 )   ( 55 )       Tax (expense) benefit   15   14       Net of tax   ( 46 )   ( 41 )       Reclassification of stranded tax effects   —   527   Retained Earnings Total, net of tax   ( 46 )   486                       Change in cumulative foreign currency translation adjustments:               Business acquisitions/divestitures   —   ( 4 )     Cost of products sold Tax (expense) benefit   —   —       Net of tax   —   ( 4 )                       Net gains and losses on cash flow hedging derivatives:               Foreign exchange contracts   ( 17 )   ( 1 )   (b) Cost of products sold Total pre-tax amount   ( 17 )   ( 1 )       Tax (expense)/benefit   6   —       Net of tax   ( 11 )   ( 1 )       Reclassification of stranded tax effects   —   2   Retained Earnings Total, net of tax   ( 11 )   1       Total reclassifications for the period   $ ( 57 )   $ 483       (a) These accumulated other comprehensive income components are included in the computation of net periodic pension cost (see  Note 19  for additional details). (b) This accumulated other comprehensive income component is included in our derivatives and hedging activities (see  Note 18  for additional details). NOTE 6 - EARNINGS PER SHARE ATTRIBUTABLE TO INTERNATIONAL PAPER COMPANY COMMON SHAREHOLDERS Basic earnings per share is computed by dividing earnings by the weighted average number of common shares outstanding. Diluted earnings per share is computed assuming that all potentially dilutive securities were converted into common shares. There are no adjustments required to be made to net income for purposes of computing basic and diluted earnings per share.  A reconciliation of the amounts included in the computation of basic earnings (loss) per share and diluted earnings (loss) per share is as follows:     Three Months Ended March 31, In millions, except per share amounts 2020   2019 Earnings (loss) attributable to International Paper Company common shareholders $ ( 141 )   $ 424 Weighted average common shares outstanding 392.6   400.5 Effect of dilutive securities (a)       Restricted performance share plan —   2.7 Weighted average common shares outstanding – assuming dilution 392.6   403.2 Basic earnings (loss) per share attributable to International Paper Company Common Shareholders $ ( 0.36 )   $ 1.06 Diluted earnings (loss) per share attributable to International Paper Company Common Shareholders $ ( 0.36 )   $ 1.05 (a)   Securities are not included in the table in periods when antidilutive. 10 Table of Contents NOTE 7 - RESTRUCTURING AND OTHER CHARGES, NET 2020:  During the three months ended March 31, 2020, the Company recorded an  $ 8  million  pre-tax charge in Corporate related to early debt extinguishment costs. 2019:  There were no restructuring and other charges recorded during the three months ended March 31, 2019. NOTE 8 - ACQUISITIONS On June 28, 2019, the Company closed on the previously announced acquisition of two packaging businesses located in Portugal (Ovar) and France (Torigni and Cabourg) from DS Smith Packaging. The total purchase consideration, inclusive of working capital adjustments, was approximately   € 71  million  (approximately  $ 81  million  at June 30, 2019 exchange rates).  The following table summarizes the provisional fair value assigned to assets and liabilities acquired as of June 28, 2019: In millions   Cash and temporary investments $ 2 Accounts and notes receivable 22 Inventory 8 Plants, properties and equipment 40 Goodwill 26 Intangible assets 15 Right of use assets 3 Deferred charges and other assets 2 Total assets acquired 118 Short-term debt 2 Accounts payable and accrued liabilities 20 Other current liabilities 3 Deferred income taxes 5 Other liabilities 1 Postretirement and postemployment benefit obligation 3 Long-term lease obligations 3 Total liabilities assumed 37 Net assets acquired $ 81 The allocation of the consideration paid is preliminary and could be revised as a result of additional information obtained regarding assets acquired and liabilities assumed, and revisions of provisional estimates of fair values, including, but not limited to, the completion of independent appraisals and valuations related to inventory, property, plant and equipment and acquired intangible assets. Adjustments to provisional amounts will be finalized as new information becomes available, but within the adjustment period of up to one year from the acquisition date. Pro forma information has not been included as it is impracticable to obtain the information due to the lack of availability of historical U.S. GAAP financial data. The results of the operations of these businesses do not have a material effect on the Company's condensed consolidated results of operations. NOTE 9 - DIVESTITURES AND IMPAIRMENTS 2020:  On March 29, 2020, the Company announced that it had entered into an agreement to sell its Brazilian Industrial  Packaging business for  R$ 330  million  (approximately  $ 63.5  million  using the March 31, 2020 exchange rate), with  R$ 280  million  to be paid at closing and  R$ 50  million  one year thereafter, subject to final working capital adjustments. This business includes  three  containerboard mills and  four  box plants and the agreement follows International Paper's previously announced strategic review of the Brazilian Industrial Packaging business. This transaction is expected to close in the second half of 2020, subject to certain closing conditions and regulatory approvals. 11 Table of Contents In conjunction with the announced agreement, a preliminary pre-tax charge of  $ 344  million  ( $ 337  million  after taxes) was recorded during the first quarter of 2020. This charge included a  $ 20  million  loss ( $ 13  million  after taxes) related to the write down of the long-lived assets of the Brazilian Industrial Packaging business to their estimated fair value and a  $ 324  million  loss related to the cumulative foreign currency translation adjustment. This charge is included in the Net (gains) losses on sales and impairments of businesses in the accompanying condensed consolidated statement of operations and is included in the results for the Industrial Packaging segment. At March 31, 2020, all assets and liabilities related to the Brazilian Industrial Packaging business are classified as current assets held for sale and current liabilities held for sale in the accompanying condensed consolidated balance sheet.  The following summarizes the major classes of assets and liabilities of this business reconciled to total Assets held for sale and total Liabilities held for sale in the accompanying condensed consolidated balance sheet: In millions March 31, 2020 Cash and temporary investments $ 9 Accounts and notes receivable 38 Inventories 23 Other current assets 2 Plants, properties and equipment (net of impairment) 29 Deferred charges and other assets 11 Total Assets Held for Sale $ 112     Accounts payable and accrued liabilities $ 27 Deferred income taxes 3 Other liabilities 10 Impairment reserve (cumulative foreign currency translation) 324 Total Liabilities Held for Sale $ 364 2019:  On October 30, 2019, the Company closed the previously announced sale of its controlling interest in International Paper APPM Limited (APPM) to West Coast Paper Mills (WCPM). International Paper remains a passive investor retaining a  20 %  interest in APPM until such time that IP sells its remaining shares. The Company is accounting for its retained investment at fair value and recorded a loss of   $ 17  million  during the first quarter of 2020. The fair value of the Company's retained investment in APPM was  $ 15  million  at March 31, 2020. NOTE 10 - SUPPLEMENTAL FINANCIAL STATEMENT INFORMATION Temporary Investments   Temporary investments with an original maturity of three months or less and money market funds with greater than three month maturities but with the right to redeem without notices are treated as cash equivalents and are stated at cost, which approximates market value. Temporary investments totaled  $ 954  million  and  $ 335  million  at  March 31, 2020  and  December 31, 2019 , respectively.        Accounts and Notes Receivable In millions March 31, 2020   December 31, 2019 Accounts and notes receivable, net:       Trade $ 2,959   $ 3,020 Other 267   260 Total $ 3,226   $ 3,280 12 Table of Contents The allowance for expected credit losses was  $ 90  million  at  March 31, 2020  and the allowance for doubtful accounts was  $ 73  million  at  December 31, 2019 . Based on the Company's accounting estimates and the facts and circumstances available as of the reporting date, we believe our allowance for expected credit losses is adequate. While we have taken into account certain impacts of COVID-19 in connection with our estimate of the allowance for expected credit losses, it is reasonably possible that additional expected credit losses in excess of such allowance will occur in the coming months as the full extent of the COVID-19 impact becomes more apparent; however, currently, we are unable to reasonably estimate our loss or range of loss in excess of such allowance.    Inventories   In millions March 31, 2020   December 31, 2019 Raw materials $ 254   $ 298 Finished pulp, paper and packaging 1,081   1,192 Operating supplies 615   659 Other 52   59 Total $ 2,002   $ 2,208 Plants, Properties and Equipment    Accumulated depreciation was  $ 20.4  billion  and  $ 20.5  billion  at  March 31, 2020  and  December 31, 2019 , respectively. Depreciation expense was  $ 309  million  and  $ 297  million  for the  three  months ended  March 31, 2020  and  2019 , respectively. Non-cash additions to plants, property and equipment included within accounts payable were  $ 119  million  and  $ 164  million  at  March 31, 2020  and  December 31, 2019 , respectively. Amounts invested in capital projects in the accompanying condensed consolidated statement of cash flows are presented net of insurance recoveries of  $ 30  million  received during the three months ended  March 31, 2020 . There were no insurance recoveries received during the three months ended  March 31, 2019 . Interest Interest payments made during the  three  months ended  March 31, 2020  and  2019  were  $ 184  million  and  $ 214  million , respectively.  Amounts related to interest were as follows:     Three Months Ended March 31, In millions 2020   2019 Interest expense $ 163   $ 184 Interest income 46   51 Capitalized interest costs 9   5 Asset Retirement Obligations The Company had recorded liabilities of  $ 98  million  and  $ 96  million  related to asset retirement obligations at  March 31, 2020  and  December 31, 2019 , respectively. NOTE 11 - LEASES International Paper leases various real estate, including certain operating facilities, warehouses, office space and land. The Company also leases material handling equipment, vehicles, and certain other equipment. The Company's leases have remaining lease terms of less than  one year  to  96  years . Total lease cost for the three months ended March 31, 2020 and 2019 was  $ 67  million  and  $ 75  million , respectively. 13 Table of Contents Supplemental Balance Sheet Information Related to Leases In millions   Classification   March 31, 2020   December 31, 2019 Assets             Operating lease assets   Right-of-use assets   $ 422   $ 434 Finance lease assets   Plants, properties and equipment, net (a)   100   103 Total leased assets       $ 522   $ 537 Liabilities             Current             Operating   Other current liabilities   $ 132   $ 134 Finance   Notes payable and current maturities of long-term debt   12   12 Noncurrent             Operating   Long-term lease obligations   293   304 Finance   Long-term debt   85   88 Total lease liabilities       $ 522   $ 538 (a) Finance leases are recorded net of accumulated amortization of  $ 43  million  and  $ 40  million  as of March 31, 2020 and December 31, 2019. NOTE 12 - EQUITY METHOD INVESTMENTS The Company accounts for the following investments under the equity method of accounting. Graphic Packaging International Partners, LLC  The Company completed the transfer of its North American Consumer Packaging business in exchange for an initial  20.5 %  ownership interest ( 79,911,511  units) in Graphic Packaging International Partners, LLC (GPIP) in 2018. GPIP subsequently transferred the North American Consumer Packaging business to Graphic Packaging International, LLC (GPI), a wholly-owned subsidiary of GPIP that holds the assets of the combined business. On January 29, 2020, the Company exchanged  15,150,784  units of the aggregate units owned by the Company for an aggregated price of  $ 250  million , resulting in a pre-tax gain of  $ 33  million  ( $ 25  million  after taxes) which was recorded in the first quarter of 2020. As of March 31, 2020, the Company's ownership interest in GPIP was  18.7 % . The Company recorded equity earnings of  $ 7  million  and  $ 13  million  for the  three  months ended  March 31, 2020  and  2019 , respectively. The Company received cash dividends from GPIP of  $ 5  million  and  $ 6  million  during the first three months of 2020 and 2019, respectively. The Company's investment in GPIP was  $ 920  million  and  $ 1.1  billion  at  March 31, 2020  and  December 31, 2019 , respectively, which was  $ 440  million  and  $ 529  million , respectively, more than the Company's proportionate share of the entity's underlying net assets. The difference primarily relates to the basis difference between the fair value of our investment and the underlying net assets, and is generally amortized in equity earnings over a period consistent with the underlying long-lived assets. The Company is party to various agreements with GPI under which it sells fiber and other products to GPI. Sales under these agreements were  $ 70  million  and  $ 69  million  for the  three  months ended  March 31, 2020  and  2019 , respectively.  The Company continues to evaluate its investment in GPI relative to options available to further monetize this investment. We currently do not have near-term plans to further liquidate our investment. Summarized financial information for GPIP is presented in the following tables:  Balance Sheet In millions March 31, 2020   December 31, 2019 Current assets $ 1,932   $ 1,796 Noncurrent assets 5,507   5,482 Current liabilities 1,020   1,178 Noncurrent liabilities 3,848   3,244 14 Table of Contents Income Statement   Three Months Ended March 31, In millions 2020   2019 Net sales $ 1,599   $ 1,506 Gross profit 321   266 Income (loss) from continuing operations ( 24 )   95 Net income (loss) ( 24 )   95 Ilim S.A. The Company has a  50 %  equity interest in Ilim S.A. (Ilim), which has subsidiaries whose primary operations are in Russia. The Company recorded equity earnings (losses), net of taxes, of  $( 35 ) million  and  $ 101  million  for the  three  months ended  March 31, 2020  and  2019 , respectively. At  March 31, 2020  and  December 31, 2019 , the Company's investment in Ilim was  $ 401  million  and  $ 508  million , respectively, which was  $ 130  million  and  $ 136  million , respectively, more than the Company's proportionate share of the joint venture's underlying net assets. The differences primarily relate to currency translation adjustments and the basis difference between the fair value of our investment at acquisition and the underlying net assets. The Company is party to a joint marketing agreement with JSC Ilim Group, a subsidiary of Ilim, under which the Company purchases, markets and sells paper produced by JSC Ilim Group. Purchases under this agreement were  $ 51  million  and  $ 53  million  for the  three  months ended  March 31, 2020  and  2019 , respectively. Summarized financial information for Ilim is presented in the following tables:  Balance Sheet In millions March 31, 2020   December 31, 2019 Current assets $ 922   $ 804 Noncurrent assets 2,333   2,813 Current liabilities 840   1,015 Noncurrent liabilities 1,861   1,844 Noncontrolling interests 11   16 Income Statement   Three Months Ended March 31, In millions 2020   2019 Net sales $ 482   $ 620 Gross profit 195   336 Income (loss) from continuing operations ( 61 )   205 Net income (loss)  ( 58 )   199 15 Table of Contents NOTE 13 - GOODWILL AND OTHER INTANGIBLES Goodwill The following table presents changes in goodwill balances as allocated to each business segment for the  three  months ended  March 31, 2020 :   In millions Industrial Packaging   Global Cellulose Fibers   Printing Papers   Total Balance as of January 1, 2020               Goodwill $ 3,410   $ 52    $ 1,998    $ 5,460 Accumulated impairment losses  ( 296 )   ( 52 )    ( 1,765 )   ( 2,113 )   3,114   —    233    3,347 Currency translation and other (a) ( 5 )   —   ( 41 )   ( 46 ) Goodwill additions/reductions  3 (b) —   —   3 Balance as of March 31, 2020               Goodwill 3,408   52    1,957    5,417 Accumulated impairment losses  ( 296 )   ( 52 )    ( 1,765 )   ( 2,113 ) Total $ 3,112   $ —    $ 192    $ 3,304   (a) Represents the effects of foreign currency translations. (b) Reflects the changes to provisional goodwill for the acquisitions of Industrial Packaging box plants in EMEA. Other Intangibles Identifiable intangible assets comprised the following:     March 31, 2020   December 31, 2019 In millions Gross Carrying Amount   Accumulated Amortization   Net Intangible Assets   Gross Carrying Amount   Accumulated Amortization   Net Intangible Assets Customer relationships and lists $ 537   $ 266   $ 271   $ 560   $ 275   $ 285 Tradenames, patents and trademarks, and developed technology 170   105   65   170   102   68 Land and water rights 8   2   6   8   2   6 Software 25   24   1   26   25   1 Other 17   10   7   18   10   8 Total $ 757   $ 407   $ 350   $ 782   $ 414   $ 368 The Company recognized the following amounts as amortization expense related to intangible assets:     Three Months Ended March 31, In millions 2020   2019 Amortization expense related to intangible assets $ 10   $ 12 NOTE 14 - INCOME TAXES International Paper made income tax payments, net of refunds, of  $ 16  million  and received a net income tax refund of  $ 51  million  for the  three  months ended  March 31, 2020  and  2019 , respectively. The Company currently estimates, that as a result of ongoing discussions, pending tax settlements and expirations of statutes of limitations, the amount of unrecognized tax benefits could be reduced by approximately  $ 67  million  during the next 12 months. The Brazilian Federal Revenue Service has challenged the deductibility of goodwill amortization generated in a 2007 acquisition by International Paper do Brasil Ltda., a wholly-owned subsidiary of the Company. The Company received assessments for the tax years 2007-2015 totaling approximately  $ 115  million  in tax, and  $ 365  million  in interest, penalties, and fees as of March 31, 2020 (adjusted for variation in currency exchange rates). After a previous favorable ruling challenging the basis for these assessments, we received unfavorable decisions in October 2018 and November 2019 from the Brazilian  16 Table of Contents Administrative Council of Tax Appeals. The Company has appealed and intends to further appeal these and any future unfavorable administrative judgments to the Brazilian federal courts; however, this tax litigation matter may take many years to resolve. The Company believes that it has appropriately evaluated the transaction underlying these assessments, and has concluded based on Brazilian tax law, that its position would be sustained. The Company intends to vigorously defend its position against the current assessments and any similar assessments that may be issued for tax years subsequent to 2015. On March 27th, 2020, the U.S. government enacted the Coronavirus Aid, Relief, and Economic Security (CARES) Act ("the CARES Act."). The CARES Act provides various types of economic relief for individuals and businesses due to the COVID-19 pandemic, including temporary corporate tax relief.  We currently do not believe there to be a material impact to the income tax provision resulting from the CARES Act. NOTE 15 - COMMITMENTS AND CONTINGENCIES Environmental International Paper has been named as a potentially responsible party (PRP) in environmental remediation actions under various federal and state laws, including the Comprehensive Environmental Response, Compensation and Liability Act (CERCLA). Many of these proceedings involve the cleanup of hazardous substances at large commercial landfills that received waste from many different sources. While joint and several liability is authorized under CERCLA and equivalent state laws, as a practical matter, liability for CERCLA cleanups is typically allocated among the many PRPs. There are other remediation costs typically associated with the cleanup of hazardous substances at the Company’s current, closed or formerly-owned facilities, and recorded as liabilities in the balance sheet. Remediation costs are recorded in the consolidated financial statements when they become probable and reasonably estimable. International Paper has estimated the probable liability associated with these environmental remediation matters, including those described herein, to be approximately   $ 196  million  ( $ 204  million  undiscounted) in the aggregate as of  March 31, 2020 . Other than as described below, completion of required remedial actions is not expected to have a material effect on our consolidated financial statements.  Cass Lake:  One of the matters included above arises out of a closed wood-treating facility located in Cass Lake, Minnesota. In June 2011, the United States Environmental Protection Agency (EPA) selected and published a proposed soil remedy at the site with an estimated cost of  $ 46  million  as of March 31, 2020. In April 2020, the EPA issued a final plan concerning clean-up standards at a portion of the site, the estimated cost of which is included within the reserve referenced above. In October 2012, the Natural Resource Trustees for this site provided notice to International Paper and other PRPs of their intent to perform a Natural Resource Damage Assessment. It is premature to predict the outcome of the assessment or to estimate a loss or range of loss, if any, in excess of the liability noted above which may be incurred. Kalamazoo River:  The Company is a PRP with respect to the Allied Paper, Inc./Portage Creek/Kalamazoo River Superfund Site in Michigan. The EPA asserts that the site is contaminated by polychlorinated biphenyls (PCBs) primarily as a result of discharges from various paper mills located along the Kalamazoo River, including a paper mill (the Allied Paper Mill) formerly owned by St. Regis Paper Company (St. Regis). The Company is a successor in interest to St. Regis.  • Operable Unit 5, Area 1: In March 2016, the Company and other PRPs received a special notice letter from the EPA (i) inviting participation in implementing a remedy for a portion of the site known as Operable Unit 5, Area 1, and (ii) demanding reimbursement of EPA past costs totaling  $ 37  million , including  $ 19  million   in past costs previously demanded by the EPA. In December 2016, the EPA issued a unilateral administrative order to the Company and other PRPs to perform the remedy. The Company responded to the unilateral administrative order, agreeing to comply with the order subject to its sufficient cause defenses. • Operable Unit 5, Area 2:  In September 2017, the EPA issued a Record of Decision selecting the final remedy for a portion of the site known as Operable Unit 5, Area 2, but has not yet issued a special notice letter for implementing the remedy. • Operable Unit 1: In October 2016, the Company and another PRP received a special notice letter from the EPA inviting participation in the remedial design component of the landfill remedy for the Allied Paper Mill, which is also known as Operable Unit 1. The Record of Decision establishing the final landfill remedy for the Allied Paper Mill was issued by the EPA in September 2016. The Company responded to the Allied Paper Mill special notice letter in  17 Table of Contents December 2016. In February 2017, the EPA informed the Company that it would make other arrangements for the performance of the remedial design. As noted below, the Company is involved in allocation/ apportionment litigation with regard to the site. In addition, in December 2019, the United States published notice in the Federal Register of a proposed consent decree with NCR Corporation (one of the parties to the allocation/apportionment litigation described below), the State of Michigan and natural resource trustees under which NCR would make payments of more than  $ 100  million  and perform work at the Site at an estimated cost of  $ 135.7  million . The public comment period with respect to the proposed consent decree closed in February 2020 and we are awaiting the court's final decision. The Company’s CERCLA liability has not been finally determined with respect to any other portions of the site, and except as noted above, the Company has declined to perform any work or reimburse the EPA at this time. As noted below, the Company is involved in allocation/apportionment litigation with regard to the site. Accordingly, it is premature to predict the outcome or estimate our maximum reasonably possible loss or range of loss with respect to this site. We have recorded a liability for future remediation costs at the site that are probable and reasonably estimable, and it remains reasonably possible that additional losses in excess of this recorded liability could be material.         The Company was named as a defendant by Georgia-Pacific Consumer Products LP, Fort James Corporation and Georgia Pacific LLC in a contribution and cost recovery action for alleged pollution at the site. NCR Corporation and Weyerhaeuser Company are also named as defendants in the suit. The suit seeks contribution under CERCLA for costs purportedly expended by plaintiffs ( $ 79  million  as of the filing of the complaint) and for future remediation costs. In June 2018, the Court issued its Final Judgment and Order, which fixed the past cost amount at approximately  $ 50  million  (plus interest to be determined) and allocated to the Company a  15 %  share of responsibility for those past costs. The Court did not address responsibility for future costs in its decision. In July 2018, the Company and each of the other parties filed notices appealing the Final Judgment and prior orders incorporated into that Judgment. The proposed consent decree with NCR described above, if entered, would result in the termination of NCR’s involvement in the appeal.  Harris County:   International Paper and McGinnis Industrial Maintenance Corporation (MIMC), a subsidiary of Waste Management, Inc. (WMI), are PRPs at the San Jacinto River Waste Pits Superfund Site in Harris County, Texas. The PRPs have been actively participating in the activities at the site and share the costs of these activities. In October 2017, the EPA issued a Record of Decision (ROD) selecting the final remedy for the site: removal and relocation of the waste material from both the northern and southern impoundments. The EPA did not specify the methods or practices needed to perform this work. The EPA’s selected remedy was accompanied by a cost estimate of approximately  $ 115  million  ( $ 105  million  for the northern impoundment, and  $ 10  million  for the southern impoundment). Subsequent to the issuance of the ROD, there have been numerous meetings between the EPA and the PRPs, and the Company continues to work with the EPA and MIMC/WMI to develop the remedial design.  To this end, in April 2018, the PRPs entered into an Administrative Order on Consent (AOC) with the EPA, agreeing to work together to develop the remedial design over the subsequent  29  months . The AOC does not include any agreement to perform waste removal or other construction activity at the site. Rather, it involves adaptive management techniques and a pre-design investigation, the objectives of which include filling data gaps (including but not limited to post-Hurricane Harvey technical data generated prior to the ROD and not incorporated into the selected remedy), refining areas and volumes of materials to be addressed, determining if an excavation remedy is able to be implemented in a manner protective of human health and the environment, and investigating potential impacts of remediation activities to infrastructure in the vicinity. During the first quarter of 2020, through a series of meetings among the Company, MIMC/WMI, our consultants, the EPA and the Texas Commission on Environmental Quality (TCEQ), progress was made to resolve key technical issues previously preventing the Company from determining the manner in which the selected remedy for the northern impoundment would be feasibly implemented.   As a result of these developments, as of March 31, 2020, the Company has reserved the following amounts in relation to remediation at this site: (a)  $ 10  million  for the southern impoundment (this reserve was established in the quarter ended December 31, 2019); and (b)  $ 55  million  for the northern impoundment, which represents the Company's  50 %  share of our estimate of the low end of the range of probable remediation costs ( $ 41  million  of this reserve was established in the quarter ended March 31, 2020). Although key technical issues have been resolved, we still face significant challenges remediating the northern impoundment in a cost-efficient manner and without a release to the environment and therefore our discussions with the EPA on the best approach to remediation will continue.  Because of ongoing questions regarding cost effectiveness, timing and gathering other technical data, additional losses in excess of our recorded liability are possible. We are currently unable to reasonably estimate  18 Table of Contents any further adjustment to our recorded liability or any loss or range of loss in excess of such liability; however, we believe it is unlikely any adjustment would be material. Antitrust Italy:  In March 2017, the Italian Competition Authority (ICA) commenced an investigation into the Italian packaging industry to determine whether producers of corrugated sheets and boxes violated the applicable European competition law. In April 2019, the ICA concluded its investigation and issued initial findings alleging that over  30  producers, including our Italian packaging subsidiary (IP Italy), improperly coordinated the production and sale of corrugated sheets and boxes. On August 6, 2019, the ICA issued its decision and assessed IP Italy a fine of  € 29  million  (approximately  $ 32  million  at current exchange rates) which was recorded in the third quarter of 2019. However, we are vigorously appealing this decision of the ICA to the Italian courts and have numerous and strong bases for our appeal. Contract Signature:  In August 2014, a lawsuit captioned  Signature Industrial Services LLC et al. v. International Paper Company  was filed in state court in Texas. The  Signature  lawsuit arises out of approximately  $ 1  million  in disputed invoices related to the installation of new equipment at the Company's Orange, Texas mill. In addition to the invoices in dispute,  Signature  and its president allege consequential damages arising from the Company's nonpayment of those invoices. The lawsuit was tried before a jury in Beaumont, Texas, in May 2017. On June 1, 2017, the jury returned a verdict awarding approximately  $ 125  million  in damages to the plaintiffs. The Court issued a judgment on December 14, 2017, awarding the plaintiffs a total of approximately  $ 137  million  in actual and consequential damages, fees, costs and pre-judgment interest, and awarding post-judgment interest. The Company appealed this judgment and, on April 30, 2020, the Court of Appeals for the Thirteenth District of Texas issued a decision affirming in part and reversing and rendering judgment in favor of the Company in part. The Court affirmed approximately  $ 14.8  million  of the judgment. Otherwise, the Court rendered judgment in favor of the Company on the remainder of the jury’s verdict. The Company continues to have strong bases by which to challenge the affirmed portions of the award and plans to present those arguments on appeal to the Supreme Court of Texas. The plaintiffs may also appeal the decision of the appellate court. We do not expect that potential losses, if any, related to this lawsuit will be material, and any potential future payments in connection with this lawsuit will be recorded as a liability at such time that we determine that any such losses are probable and reasonably estimable.   Taxes Other Than Payroll and Income Taxes In 2017, the Brazilian Federal Supreme Court decided that the state value-added tax (VAT) should not be included in the basis of federal VAT calculations. In 2018 and 2019, the Brazilian tax authorities published both an internal consultation and a normative ruling with a narrow interpretation of the effects of the case. We have determined that any related federal VAT refunds should be recognized when they are both probable and reasonably estimable. Based upon the best information available to us, we have determined that the amount of refund that is probable of being realized is limited to that determined by the tax authorities’ narrow interpretation, for which we have recognized a receivable of  $ 9  million  as of March 31, 2020. Upcoming court decisions and guidance from the tax authorities could expand the scope of the federal VAT refunds. General The Company is involved in various other inquiries, administrative proceedings and litigation relating to environmental and safety matters, personal injury, product liability, labor and employment, contracts, sales of property, intellectual property, tax and other matters, some of which allege substantial monetary damages. See Note 14 for details regarding a tax matter. Assessments of lawsuits and claims can involve a series of complex judgments about future events, can rely heavily on estimates and assumptions, and are otherwise subject to significant uncertainties. As a result, there can be no certainty that the Company will not ultimately incur charges in excess of presently recorded liabilities. The Company believes that loss contingencies arising from pending matters, including the matters described herein, will not have a material effect on the consolidated financial position or liquidity of the Company. However, in light of the inherent uncertainties involved in pending or threatened legal matters, some of which are beyond the Company’s control, and the large or indeterminate damages sought in some of these matters, a future adverse ruling, settlement, unfavorable development, or increase in accruals with respect to these matters could result in future charges that could be material to the Company’s results of operations or cash flows in any particular reporting period. 19 Table of Contents NOTE 16 - VARIABLE INTEREST ENTITIES Variable Interest Entities As of  March 31, 2020 , the fair value of the Timber Notes and Extension Loans is  $ 4.89  billion  and  $ 4.27  billion , respectively, for the 2015 Financing Entities. The Timber Notes and Extension Loans are classified as Level 2 within the fair value hierarchy, which is further defined in Note 15 in the Company's Annual Report on Form 10-K for the year ended December 31, 2019.     A ctivity between the Company and the 2015 Financing Entities was as follows:   Three Months Ended March 31, In millions 2020   2019 Revenue (a) $ 24   $ 24 Expense (a) 32   32 Cash receipts (b) 47   47 Cash payments (c) 64   64   (a) The revenue and expense are included in Interest expense, net in the accompanying condensed consolidated statement of operations.  (b) The cash receipts are interest received on the Financial assets of variable interest entities.   (c) The cash payments represent interest paid on Nonrecourse financial liabilities of variable interest entities.  As of  March 31, 2020 , the fair value of the Timber Notes and Extension Loans is  $ 2.15  billion  and  $ 1.98  billion , respectively, for the 2007 Financing Entities. The Timber Notes and Extension Loans are classified as Level 2 within the fair value hierarchy, which is further defined in Note 15 in the Company’s Annual Report on Form 10-K for the year ended  December 31, 2019 .     Activity between the Company and the 2007 Financing Entities was as follows:     Three Months Ended March 31, In millions 2020   2019 Revenue (a) $ 16   $ 21 Expense (b) 16   21 Cash receipts (c) 12   16 Cash payments (d) 15   18   (a) The revenue is included in Interest expense, net in the accompanying condensed consolidated statement of operations and includes approximately  $ 5  million  for both of the  three  months ended  March 31, 2020  and  2019  of accretion income for the amortization of the basis difference adjustment on the Financial assets of variable interest entities. (b) The expense is included in Interest expense, net in the accompanying condensed consolidated statement of operations and includes approximately  $ 2  million  for both of the  three  months ended  March 31, 2020  and  2019  of accretion expense for the amortization of the basis difference adjustment on the Nonrecourse financial liabilities of variable interest entities. (c) The cash receipts are interest received on the Financial assets of variable interest entities. (d) The cash payments are interest paid on Nonrecourse financial liabilities of variable interest entities. NOTE 17 - DEBT On March 25, 2020, the Company entered into a  $ 750  million  contractually committed 364-day revolving credit agreement with a syndicate of banks and other financial institutions which augments the Company's access to liquidity due to current macroeconomic conditions and supplements the Company's  $ 1.5  billion  five-year credit agreement expiring in December 2021. The borrowing capacity of International Paper's commercial paper program is  $ 1.0  billion . Under the terms of the program, individual maturities on borrowings may vary, but not exceed one year from the date of issue. Interest bearing notes may be issued either as fixed or floating rate notes. As of  March 31, 2020 , the Company had no borrowings outstanding under the program. International Paper has up to  $ 600  million  of uncommitted financings based on eligible receivable balances under a receivables securitization program that expires in March 2021. At March 31, 2020,  $ 557  million  was outstanding at a weighted-average interest rate of  1.65 %  which represented the maximum borrowing based on eligible receivables under the receivables  20 Table of Contents securitization program at that time. The remaining capacity of  $ 43  million  is subject to additional eligible receivables in the program.  On April 28, 2020, the receivable securitization program was amended from an uncommitted financing arrangement to a committed financing arrangement with a borrowing limit up to  $ 550  million  based on eligible receivable balances, and the maturity date of the program was extended for two years until April 2022. Also, subsequent to March 31, 2020, we repaid the  $ 557  million  outstanding under the receivables securitization program. The Company’s financial covenants require the maintenance of a minimum net worth, as defined in our debt agreements, of  $ 9  billion  and a total debt-to-capital ratio of less than  60 % . Net worth is defined as the sum of common stock, paid-in capital and retained earnings, less treasury stock plus any cumulative goodwill impairment charges. The calculation also excludes accumulated other comprehensive income/loss and both the current and long-term Nonrecourse Financial Liabilities of Variable Interest Entities. The total debt-to-capital ratio is defined as total debt divided by the sum of total debt plus net worth. As of  March 31, 2020 , we were in compliance with our debt covenants. At  March 31, 2020 , the fair value of International Paper’s  $ 10.2  billion  of debt was approximately  $ 11.0  billion . The fair value of the Company’s long-term debt is estimated based on the quoted market prices for the same or similar issues. International Paper’s long-term debt is classified as Level 2 within the fair value hierarchy, which is further defined in Note 16 in the Company’s Annual Report on Form 10-K for the year ended  December 31, 2019 . NOTE 18 - DERIVATIVES AND HEDGING ACTIVITIES As a multinational company International Paper is exposed to market risks, such as changes in interest rates, currency exchange rates and commodity prices.  The notional amounts of qualifying and non-qualifying financial instruments used in hedging transactions were as follows: In millions March 31, 2020   December 31, 2019 Derivatives in Cash Flow Hedging Relationships:       Foreign exchange contracts $ 337   $ 407 Derivatives in Fair Value Hedging Relationships:       Interest rate contracts —   700 Derivatives in Net Investment Hedging Relationships:       Interest rate contracts 340   475 Derivatives Not Designated as Hedging Instruments:       Electricity contract 8   16 Foreign exchange contracts —   7 21 Table of Contents During the first quarter of 2020, International Paper terminated its interest rate contracts in fair value hedging relationships. These contracts had a notional value of   $ 700  million  and an approximate fair value of  $ 85  million  at the time of termination. Subsequent to the termination of the interest rate swaps, the fair value basis adjustment is accounted for as a debt premium for the previously hedged debt. International Paper also terminated interest rate contracts in net investment hedging relationships with a notional value of  $ 135  million  during the first quarter of 2020. These contracts had an approximate fair value of  $ 8  million  at the time of termination. Subsequent to March 31, 2020, International Paper terminated the remaining interest rate contracts in net investment hedging relationships. These contracts had an approximate fair value  $ 25  million  at the time of termination. Subsequent to the termination of the net investment hedges,  the fair value is accounted for in other comprehensive income as cumulative translation adjustment for the previously hedged net investments. The following table shows gains or losses recognized in AOCI, net of tax, related to derivative instruments:     Gain (Loss) Recognized in AOCI on Derivatives (Effective Portion)   Three Months Ended March 31, In millions 2020   2019 Derivatives in Cash Flow Hedging Relationships:       Foreign exchange contracts $ ( 30 )   $ — Total $ ( 30 )   $ — Derivatives in Net Investment Hedging Relationships:       Interest rate contracts $ 20   $ — Total $ 20   $ — During the next 12 months, the amount of the  March 31, 2020  AOCI balance, after tax, that is expected to be reclassified to earnings is a loss of  $ 13  million . The amounts of gains and losses recognized in the statement of operations on qualifying and non-qualifying financial instruments used in hedging transactions were as follows:   Gain (Loss) Reclassified from AOCI (Effective Portion)   Location of Gain (Loss) Reclassified from AOCI (Effective Portion)   Three Months Ended March 31,     In millions 2020   2019     Derivatives in Cash Flow Hedging Relationships:           Foreign exchange contracts $ ( 11 )   $ ( 1 )   Cost of products sold Total $ ( 11 )   $ ( 1 )       Gain (Loss) Recognized   Location of Gain (Loss) In  Statement of Operations   Three Months Ended March 31,     In millions 2020   2019     Derivatives in Fair Value Hedging Relationships:           Interest rate contracts $ 38   $ 12   Interest expense, net Debt ( 38 )   ( 12 )   Interest expense, net Total $ —   $ —     Derivatives Not Designated as Hedging Instruments:           Electricity contract $ ( 3 )   $ 4   Cost of products sold Total $ ( 3 )   $ 4     22 Table of Contents Fair Value Measurements The Company has not changed its valuation techniques for measuring the fair value of any financial assets or liabilities during the quarter. Transfers between levels, if any, are recognized at the end of the reporting period. The following table provides a summary of the impact of our derivative instruments in the balance sheet: Fair Value Measurements Level 2 – Significant Other Observable Inputs     Assets   Liabilities   In millions March 31, 2020   December 31, 2019   March 31, 2020   December 31, 2019   Derivatives designated as hedging instruments                 Foreign exchange contracts – cash flow $ 2 $ 10 $ 33   $ 4   Interest rate contracts - net investment  27   11   —   —   Interest rate contracts - fair value —   47   —   —   Total derivatives designated as hedging instruments 29 68 33 4 Derivatives not designated as hedging instruments                 Electricity contract — — 3 2   Foreign exchange contracts  — —   —   1   Total derivatives not designated as hedging instruments —    —   3 3 Total derivatives $ 29 (a) $ 68 (b) $ 36 (c) $ 7 (d)   (a) Includes  $ 10  million  recorded in Other current assets and  $ 19  million  recorded in Deferred charges and other assets in the accompanying condensed consolidated balance sheet. (b) Includes  $ 14  million  recorded in Other current assets and  $ 54  million  recorded in Deferred charges and other assets in the accompanying condensed consolidated balance sheet. (c) Includes  $ 33  million  recorded in Other accrued liabilities and  $ 3  million  recorded in Other liabilities in the accompanying condensed consolidated balance sheet.  (d) Included in Other current liabilities in the accompanying condensed consolidated balance sheet. The above contracts are subject to enforceable master netting arrangements that provide rights of offset with each counterparty when amounts are payable on the same date in the same currency or in the case of certain specified defaults. Management has made an accounting policy election to not offset the fair value of recognized derivative assets and derivative liabilities in the balance sheet. The amounts owed to the counterparties and owed to the Company are considered immaterial with respect to each counterparty and in the aggregate with all counterparties. NOTE 19 - RETIREMENT PLANS International Paper sponsors and maintains the Retirement Plan of International Paper Company (the Pension Plan), a tax-qualified defined benefit pension plan that provides retirement benefits to substantially all U.S. salaried, hourly and union employees who work at a participating business unit.  The Pension Plan provides defined pension benefits based on years of credited service and either final average earnings (salaried employees and hourly employees receiving salaried benefits), hourly job rates or specified benefit rates (hourly and union employees).  Effective January 1, 2019, the Company froze participation, including credited service and compensation, for salaried employees under the Pension Plan, the Pension Restoration Plan and the SERP plan. This change does not affect benefits accrued through December 31, 2018. For service after December 31, 2018, employees affected by the freeze receive a company contribution to their individual Retirement Savings Account.   23 Table of Contents Net periodic pension expense for our qualified and nonqualified U.S. defined benefit plans comprised the following:     Three Months Ended March 31, In millions 2020   2019 Service cost $ 20   $ 18 Interest cost 98   110 Expected return on plan assets ( 167 )   ( 157 ) Actuarial loss 55   51 Amortization of prior service cost 5   4 Net periodic pension expense $ 11   $ 26 The components of net periodic pension expense other than the service cost component are included in Non-operating pension expense in the accompanying condensed consolidated statement of operations. The Company’s funding policy for our pension plans is to contribute amounts sufficient to meet legal funding requirements, plus any additional amounts that the Company may determine to be appropriate considering the funded status of the plan, tax deductibility, the cash flows generated by the Company, and other factors. The Company made no voluntary cash contributions to the qualified pension plan in the first three months of 2020 or 2019. The nonqualified defined benefit plans are funded to the extent of benefit payments, which totaled  $ 5  million  for the  three  months ended  March 31, 2020 . NOTE 20 - STOCK-BASED COMPENSATION International Paper has an Incentive Compensation Plan (ICP) which is administered by the Management Development and Compensation Committee of the Board of Directors (the Committee). The ICP authorizes the grants of restricted stock, restricted or deferred stock units, performance awards payable in cash or stock upon the attainment of specified performance goals, dividend equivalents, stock options, stock appreciation rights, other stock-based awards and cash-based awards at the discretion of the Committee. As of  March 31, 2020 ,  8.4  million  shares were available for grant under the ICP. Stock-based compensation expense and related income tax benefits were as follows:     Three Months Ended March 31, In millions 2020   2019 Total stock-based compensation expense (selling and administrative) $ 26   $ 27 Income tax benefits related to stock-based compensation 17   34 At  March 31, 2020 ,  $ 144  million , net of estimated forfeitures, of compensation cost related to unvested restricted performance shares, executive continuity awards and restricted stock attributable to future service had not yet been recognized. This amount will be recognized in expense over a weighted-average period of  2.0  years. Performance Share Plan During the first  three  months of  2020 , the Company granted  2.2  million  performance units at an average grant date fair value of  $ 49.15 . NOTE 21 - BUSINESS SEGMENT INFORMATION International Paper’s business segments, Industrial Packaging, Global Cellulose Fibers and Printing Papers, are consistent with the internal structure used to manage these businesses. All segments are differentiated on a common product, common customer basis consistent with the business segmentation generally used in the Forest Products industry.  24 Table of Contents Business segment operating profits are used by International Paper's management to measure the earnings performance of its businesses. Management believes that this measure allows a better understanding of trends in costs, operating efficiencies, prices and volumes. Business segment operating profits are defined as earnings (loss) before income taxes and equity earnings, but including the impact of equity earnings and noncontrolling interests, excluding interest expense, net, corporate items, net, corporate special items, net, business special items, net, and non-operating pension expense. In the fourth quarter of 2019, the Company changed its measure of business segment operating profits to exclude items considered by management to be unusual (business special items, net) from the normal operations of the business segment. As a result, all prior periods have been restated to reflect the current measure.  Sales by business segment for the  three  months ended  March 31, 2020  and  2019  were as follows:     Three Months Ended March 31, In millions 2020   2019 Industrial Packaging $ 3,819   $ 3,832 Global Cellulose Fibers 568   689 Printing Papers 908   1,065 Corporate and Intersegment Sales 57   57 Net Sales $ 5,352   $ 5,643 Operating profit by business segment for the  three  months ended  March 31, 2020  and  2019  were as follows:     Three Months Ended March 31, In millions 2020   2019 Industrial Packaging $ 470   $ 421 Global Cellulose Fibers ( 54 )   35 Printing Papers 96   144 Business Segment Operating Profits $ 512    $ 600         Earnings (loss) before income taxes and equity earnings $ ( 16 )   $ 418 Interest expense, net 117   133 Noncontrolling interests/equity earnings adjustment —    ( 3 ) Corporate expenses, net 32   21 Corporate special items, net 33   — Business special items, net 352   21 Non-operating pension expense (income) ( 6 )   10 Business Segment Operating Profits $ 512    $ 600 25 Table of Contents ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS The following discussion and analysis of our financial condition and results of operations should be read in conjunction with our condensed consolidated financial statements and related notes included in “Financial Statements and Supplementary Data” of this Quarterly Report on Form 10-Q (this "Form 10-Q") and the Company's Annual Report on Form 10-K for the year ended December 31, 2019 (our "Annual Report"). In addition to historical consolidated financial information, the following discussion contains forward-looking statements that reflect our plans, estimates, and beliefs that involve significant risks and uncertainties. Our actual results could differ materially from those discussed in the forward-looking statements. Factors that could cause or contribute to those differences include those discussed herein and elsewhere in our Annual Report, particularly in “Risk Factors” and “Forward-Looking Statements” of this Form 10-Q and our Annual Report. EXECUTIVE SUMMARY Net earnings (loss) attributable to International Paper common shareholders were  $(141) million  ( $(0.36)  per diluted share) in the  first  quarter of  2020 , compared with  $165 million  ( $0.42  per diluted share) in the  fourth  quarter of  2019  and  $424 million  ( $1.05  per diluted share) in the  first  quarter of  2019 . International Paper generated Adjusted Operating Earnings Attributable to International Paper Common Shareholders (a non-GAAP measure defined below) of  $226 million  ( $0.57  per diluted share) in the  first  quarter of  2020 , compared with  $430 million  ( $1.09  per diluted share) in the  fourth  quarter of  2019  and  $447 million  ( $1.11  per diluted share) in the  first  quarter of  2019 . During the first quarter of 2020, International Paper successfully navigated a rapidly changing environment as the impact of the COVID-19 pandemic and measures to contain its spread accelerated. First and foremost in these uncertain times, International Paper remains committed to the health and safety of our employees and contractors. The commitment of our 50,000 employees worldwide, especially those in our manufacturing and converting facilities, ensures that our customers continue to supply essential products to consumers around the world. We enter this crisis with world-class manufacturing and supply chain capabilities. Our scale, flexibility and geographic reach allows us to meet our customers’ rapidly changing needs. We also enter this crisis with a strong balance sheet and liquidity position that provides us financial flexibility to navigate through this period of great uncertainty. Nevertheless ,  we are taking prudent actions to further strengthen the Company’s liquidity due to the unprecedented uncertainty regarding the ultimate economic impact of COVID-19. We test a variety of potential macroeconomic conditions to understand possible implications to our business to ensure we make informed decisions. Turning to the first quarter 2020 results, we delivered solid earnings and cash generation in a rapidly changing environment due to the COVID-19 pandemic and related containment measures. Our mill and converting teams delivered strong operational performance and managed costs under unprecedented circumstances. In our North America Industrial Packaging business, we were able to manage successfully unplanned production losses at our Rome and Bogalusa mills. Through outstanding collaboration across our commercial, supply chain and manufacturing organizations, we adapted quickly to meet our customers’ rapidly changing needs. All of which contributed to a solid performance in the first quarter, and positions us well to navigate the uncertainty that lies ahead. Also of note during the first quarter 2020, we entered into an agreement to sell our Brazilian Industrial Packaging business for approximately $63 million based on quarter-end exchange rates. Comparing performance in the first quarter 2020 to the fourth quarter 2019, price and mix were lower, primarily driven by prior price announcements in our North American Industrial Packaging and Global Cellulose Fibers businesses. Volumes were mixed compared to the fourth quarter of 2019, as strong demand for corrugated packaging and pulp was offset by a sharp decline in demand for printing papers, as stay-at-home measures accelerated. Operations and costs were favorable as our mills and converting plants performed well, which largely mitigated the impact of incidents at our Bogalusa and Rome mills in the first quarter of 2020. The first quarter 2020 results also reflect lower employee benefit costs across all businesses. Maintenance outage costs were sequentially higher primarily driven by costs in our North American Industrial Packaging, Global Cellulose Fibers and North American Printing Papers businesses. Input costs were favorable driven by lower energy, distribution and chemicals costs. Recovered fiber costs increased rapidly in the latter part of the first quarter as generation decreased, but did not have a material impact on the first quarter earnings. Corporate expense and taxes were unfavorable compared to the fourth quarter of 2019, reflecting higher one-time costs for each. Equity earnings decreased from the fourth quarter of 2019 primarily due to a $51 million loss associated with foreign currency translation on Ilim’s US dollar denominated net debt. Looking ahead to the second quarter of 2020, as compared to the first quarter of 2020, we expect lower price and mix on the flow-through of prior price index movements in our Industrial Packaging business. Volume is expected to be lower sequentially on lower demand for non-essential goods and lower expected volume following elevated first quarter demand in North America and Europe in response to COVID-19, as well as one less shipping day in the second quarter. Operations and costs are expected  26 Table of Contents to be negatively impacted by the non-repeat of favorable employee benefit costs in the first quarter, as well as higher costs related to the Rome mill. Maintenance outage expense is expected to be lower, and input costs are expected to be higher driven by higher recovered fiber costs. In our Global Cellulose Fibers business, we expect price and mix to improve following recent price index movements. Volume is expected to be sequentially flat. Operations and costs are expected to negatively impact earnings due to the non-repeat of favorable employee benefit costs recognized in the first quarter. Maintenance outage expenses are expected to decrease while input costs are expected to remain stable. In our Printing Papers business, we expect price and mix to be flat. Volume is expected to be significantly lower as a result of the sharp demand drop caused by COVID-19. Operations and costs are also expected to significantly lower earnings in the business due to the impact of unabsorbed fixed costs. Maintenance outage expenses are expected to decrease while input costs are expected to remain stable. Lastly for our Ilim joint venture, we expect improved results on the non-repeat of the foreign currency loss on US denominated debt recognized in the first quarter. There continue to be significant uncertainties associated with the COVID-19 pandemic, including with respect to the severity of the disease, the duration of the outbreak, actions that may be taken by governmental authorities and private businesses to attempt to contain the COVID-19 outbreak or to mitigate its impact; the extent and duration of social distancing and the adoption of stay-at-home orders; and the ongoing impact of COVID-19 on economic activity and consumer confidence. As a result, we are unable to fully quantify the impact that the COVID-19 pandemic will have on our financial results during 2020, but developments related to COVID-19 are significantly adversely affecting our business, and could have a material adverse effect on our financial condition, results of operations and cash flows, particularly if negative global economic conditions persist for a significant period of time or continue to deteriorate. Adjusted Operating Earnings and Adjusted Operating Earnings Per Share are non-GAAP measures and are defined as net earnings (loss) attributable to International Paper (a GAAP measure) excluding special items and non-operating pension expense (income). Net earnings (loss) and Diluted earnings (loss) per share attributable to common shareholders are the most directly comparable GAAP measures. The Company calculates Adjusted Operating Earnings by excluding the after-tax effect of non-operating pension expense (income) and items considered by management to be unusual from the earnings reported under GAAP. Adjusted Operating Earnings Per Share is calculated by dividing Adjusted Operating Earnings by diluted average shares of common stock outstanding. Management uses this measure to focus on on-going operations, and believes that it is useful to investors because it enables them to perform meaningful comparisons of past and present consolidated operating results. The Company believes that using this information, along with the most directly comparable GAAP measure, provides for a more complete analysis of the results of operations.  The following are reconciliations of Earnings (loss) attributable to shareholders to Adjusted Operating Earnings (Loss) attributable to shareholders.   Three Months Ended March 31,   Three Months Ended December 31, In millions 2020   2019   2019 Net Earnings (Loss) Attributable to Shareholders $ (141 )   $ 424   $ 165 Add Back - Non-operating pension expense (income) (6 )   10   9 Add Back - Net special items expense (income) 384   21   136 Income tax effect - Non-operating pension and special items expense (11 )   (8 )   120 Adjusted Operating Earnings (Loss) Attributable to Shareholders $ 226   $ 447   $ 430   Three Months Ended March 31,   Three Months Ended December 31,   2020   2019   2019 Diluted Earnings (Loss) Per Share Attributable to Shareholders $ (0.36 )   $ 1.05   $ 0.42 Add Back - Non-operating pension expense (income) per share (0.01 )   0.02   0.02 Add Back - Net special items expense (income) per share 0.97   0.05   0.34 Income tax effect per share - Non-operating pension and special items expense (0.03 )   (0.01 )   0.31 Adjusted Operating Earnings (Loss) Per Share Attributable to Shareholders $ 0.57   $ 1.11   $ 1.09 Cash provided by operations totaled  $649 million  and  $733 million  for the first  three  months of  2020  and  2019 , respectively. The Company generated free cash flow of approximately  $363 million  and  $440 million  in the first  three  months of  2020  and  2019 , respectively. Free cash flow is a non-GAAP measure and the most directly comparable GAAP measure is cash provided by operations. Management utilizes this measure in connection with managing our business and believes that free cash flow is useful to investors as a liquidity measure because it measures the amount of cash generated that is available, after reinvesting in  27 Table of Contents the business, to maintain a strong balance sheet, pay dividends, repurchase stock, service debt and make investments for future growth. It should not be inferred that the entire free cash flow amount is available for discretionary expenditures. By adjusting for certain items that are not indicative of the Company's ongoing performance, we believe that free cash flow also enables investors to perform meaningful comparisons between past and present periods. The following is a reconciliation of cash provided by operations to free cash flow:     Three Months Ended March 31, In millions 2020   2019 Cash provided by operations $ 649   $ 733 Adjustments:       Cash invested in capital projects, net of insurance recoveries (286 )   (293 ) Free Cash Flow $ 363   $ 440 The non-GAAP financial measures presented in this Quarter Report on Form 10-Q as referenced above have limitations as analytical tools and should not be considered in isolation or as a substitute for an analysis of our results calculated in accordance with GAAP. In addition, because not all companies utilize identical calculations, the Company's presentation of non-GAAP measures in this Quarterly Report on Form 10-Q may not be comparable to similarly titled measures disclosed by other companies, including companies in the same industry as the Company. RESULTS OF OPERATIONS For the  first  quarter of  2020 , International Paper Company reported net sales of  $5.4 billion , compared with  $5.5 billion  in the  fourth  quarter of  2019  and  $5.6 billion  in the  first  quarter of  2019 .  Net earnings (loss) attributable to International Paper totaled  $(141) million , or  $(0.36)  per diluted share, in the  first  quarter of  2020 . This compared with  $165 million , or  $0.42  per diluted share, in the  fourth  quarter of  2019  and  $424 million , or  $1.05  per diluted share, in the  first  quarter of  2019 .    Compared with the  fourth  quarter of  2019 , earnings benefited from lower operating costs ( $14 million ), lower raw material and freight costs ( $20 million ) and lower non-operating pension expense ( $12 million ). These benefits were offset by lower average sales prices and an unfavorable mix ( $57 million ), lower sales volumes ( $16 million ), higher mill maintenance outage costs  28 Table of Contents ( $76 million ), higher corporate and other items ( $17 million ), higher net interest expense ( $1 million ) and higher tax expense ( $11 million ). Equity earnings, net of taxes, relating to International Paper’s investments in Ilim S.A., Graphic Packaging International Partners, LLC, and other investments were  $60 million  lower than in the  fourth  quarter of  2019 . Net special items in the  first  quarter of  2020  were a loss of $372 million compared with a loss of $258 million in the  fourth  quarter of  2019 .   Compared with the  first  quarter of  2019 , the  first  quarter of  2020  reflects higher sales volumes ( $30 million ), lower operating costs ( $68 million ), lower raw material and freight costs ( $120 million ), lower mill maintenance outage costs ( $1 million ), lower net interest expense ( $11 million ) and lower non-operating pension expense ( $13 million ). These benefits were offset by lower average sales prices and an unfavorable mix ($ 285 million ), higher corporate and other costs ( $9 million ) and higher tax expense ( $12 million ). Equity earnings, net of taxes, relating to International Paper’s investments in Ilim S.A., Graphic Packaging International Partners, LLC, and other investments were  $145 million  lower in the  first  quarter of  2020  than in the  first  quarter of  2019 . Net special items in the  first  quarter of  2020  were a loss of $372 million compared with a loss of $15 million in the  first  quarter of  2019 . Business Segment Operating Profits are used by International Paper's management to measure the earnings performance of its businesses. Management uses this measure to focus on on-going operations, and believes that it is useful to investors because it enables them to perform meaningful comparisons of past and present operating results. International Paper believes that using this information, along with net earnings, provides a more complete analysis of the results of operations by quarter. Business Segment Operating Profits are defined as earnings (loss) before income taxes and equity earnings, but including the impact of equity earnings and noncontrolling interests, and excluding interest expense, net, corporate expenses, net, corporate special items, net, business special items, net and non-operating pension expense. Business Segment Operating Profits is a measure reported to our management for purposes of making decisions about allocating resources to our business segments and assessing the performance of our business segments and is presented in our financial statement footnotes in accordance with ASC 280. International Paper operates in three segments: Industrial Packaging, Global Cellulose Fibers and Printing Papers. 29 Table of Contents The following table presents a reconciliation of net earnings (loss) attributable to International Paper Company to its Total Business Segment Operating Profit:     Three Months Ended   March 31,   December 31, In millions 2020   2019   2019 Net Earnings (Loss) Attributable to International Paper Company $ (141 )   $ 424   $ 165 Add back (deduct):           Income tax provision (benefit) 94   106   263 Equity (earnings) loss, net of taxes 31   (114 )   (29 ) Noncontrolling interests, net of taxes —   2   1 Earnings (Loss) Before Income Taxes and Equity Earnings (16 )   418   400 Interest expense, net 117   133   113 Noncontrolling interests / equity earnings included in operations —   (3 )   (1 ) Corporate expenses, net 32   21   9 Corporate special items, net 33   —   56 Business special items, net 352   21   83 Non-operating pension expense (income) (6 )   10   9 Business Segment Operating Profit $ 512   $ 600   $ 669 Business Segment Operating Profit (Loss):           Industrial Packaging $ 470   $ 421   $ 605 Global Cellulose Fibers (54 )   35   (45 ) Printing Papers 96   144   109 Total Business Segment Operating Profit $ 512   $ 600   $ 669 30 Table of Contents Business Segment Operating Profit Total business segment operating profits were  $512 million  in the  first  quarter of  2020 ,  $669 million  in the  fourth  quarter of  2019  and  $600 million  in the  first  quarter of  2019 . Compared with the  fourth  quarter of  2019 , operating profits benefited from lower operating costs ( $19 million ) and lower raw material and freight costs ( $27 million ). These benefits were offset by lower average sales prices and an unfavorable mix ( $78 million ), lower sales volumes ( $22 million ) and higher mill outage costs ( $103 million ). 31 Table of Contents Compared with the  first  quarter of  2019 , operating profits in the current quarter benefited from higher sales volumes ( $40 million ), lower operating costs ( $91 million ), lower raw material and freight costs ($ 160 million ) and lower mill outage costs ( $2 million ). These benefits were offset by lower average sales prices and an unfavorable mix ($ 381 million ). Economic downtime results from the amount of production required to meet our customer demand. Planned maintenance downtime is taken periodically throughout the year. The following table details North American planned maintenance and economic-related downtime: in thousands of tons Three Months Ended March 31, 2020 Three Months Ended March 31, 2019 Three Months Ended December 31, 2019 Economic-related downtime 83 484 149 Maintenance downtime 170 156 28 32 Table of Contents Sales Volumes by Product (a) Sales volumes of major products for the  three  months ended  March 31, 2020  and  2019  were as follows:     Three Months Ended March 31, In thousands of short tons (except as noted) 2020   2019 Industrial Packaging       Corrugated Packaging (b) 2,624   2,535 Containerboard 827   697 Recycling 416   609 Saturated Kraft 48   41 Gypsum/Release Kraft 56   51 Bleached Kraft 7   7 EMEA Packaging (b) 441   370 Brazilian Packaging (b) 90   85 European Coated Paperboard 111   104 Industrial Packaging 4,620   4,499 Global Cellulose Fibers  (in thousands of metric tons)  (c) 901   859 Printing Papers       U.S. Uncoated Papers 415   448 European and Russian Uncoated Papers 360   354 Brazilian Uncoated Papers 240   244 Indian Uncoated Papers —   68 Printing Papers 1,015   1,114   (a) Sales volumes include third party and inter-segment sales and exclude sales of equity investees. (b) Volumes for corrugated box sales reflect consumed tons sold (CTS). Board sales for these businesses reflect invoiced tons. (c) Includes North American, European and Brazilian volumes and internal sales to mills. Income Taxes An income tax provision of  $94 million  was recorded for the  first  quarter of  2020  and the reported effective income tax rate was  (588)% . Excluding a benefit of  $12 million  related to the tax effects of special items and an expense of  $1 million  related to the tax effects of non-operating pension income, the effective income tax rate was  29%  for the quarter. An income tax provision of  $263 million  was recorded for the  fourth  quarter of  2019  and the reported effective income tax rate was  66% . Excluding an expense of  $122 million  related to the tax effects of special items and a benefit of  $2 million  related to the tax effects of non-operating pension expense, the effective income tax rate was  26%  for the quarter. An income tax provision of  $106 million  was recorded for the  first  quarter of  2019  and the reported effective income tax rate was  25% . Excluding a benefit of  $6 million  related to the tax effects of special items and a benefit of  $2 million  related to the tax effects of non-operating pension expense, the effective income tax rate was  25%  for the quarter. Interest Expense  Net interest expense was  $117 million  in the  first  quarter of  2020 , compared with  $113 million  in the  fourth  quarter of  2019  and  $133 million  in the  first  quarter of  2019 .    33 Table of Contents Effects of Special Items and Non-Operating Pension Expense (Income) Details of special items and non-operating pension expense (income) for the  three  months ended are as follows:     Three Months Ended        March 31,   December 31,       2020   2019   2019   In millions   Before Tax   After Tax   Before Tax   After Tax   Before Tax   After Tax   Business Segments                           Brazil Packaging impairment   $ 344   $ 337 (a) $ —   $ —   $ —   $ —   Abandoned property removal   9   7 (b) 11   8 (b) 15   12 (b) Riverdale mill conversion   1   1 (c) 1   1 (c) 2   1 (c) Multi-employer pension plan exit liability   —   —   16   12 (a) —   —   Global Cellulose Fibers goodwill impairment   —   —   —   —   52   42 (d) EMEA Packaging optimization   —   —   —   —   17   14 (a) Foreign value-added tax refund accrual   (2 )   (1 ) (a) —   —   (3 )   (2 ) (c) Gain on sale of EMEA Packaging box plant   —   —   (7 )   (6 ) (a) 1   1 (a) India impairment   —   —   —   —   (1 )   (1 ) (c) Business Segments Total   352   344   21   15   83   67   Corporate                           Environmental remediation reserve adjustment   41   31   —   —   10   8   India investment fair value adjustment   17   17   —   —   3   3   Debt extinguishment costs   8   6   —   —   21   16   Litigation reserves   —   —   —   —   19   14   India transaction costs   —   —   —   —   3   2   Gain on sale of portion of equity investment in Graphic Packaging   (33 )   (25 )   —   —   —   —   Other   (1 )   (1 )   —   —   (3 )   (2 )   Corporate Total   32   28   —   —   53   41   Total special items   384   372   21   15   136   108   Non-operating pension expense (income)   (6 )   (5 )   10   8   9   7   Total special items and non-operating pension expense (income)   $ 378   $ 367   $ 31   $ 23   $ 145   $ 115   (a) Recorded in the Industrial Packaging segment. (b) Includes $6 million ($5 million after taxes), $8 million ($6 million after taxes) and $10 million ($8 million after taxes) for the three months ended March 31, 2020, March 31, 2019 and December 31, 2019, respectively, recorded in the Industrial Packaging segment; $3 million ($2 million after taxes), $3 million ($2 million after taxes) and $4 million ($3 million after taxes) for the three months ended March 31, 2020, March 31, 2019 and December 31, 2019, respectively, recorded in the Global Cellulose Fibers segment; $1 million (before and after taxes) for the three months ended December 31, 2019 recorded in the Printing Papers segment. (c) Recorded in the Printing Papers segment. (d) Recorded in the Global Cellulose Fibers segment. Special items include the following tax expenses (benefits):     Three Months Ended      March 31,   December 31, In millions   2020   2019   2019 Foreign deferred tax valuation allowance   —   —   203 Internal investment restructuring   —   —   (53 ) Total   $ —   $ —   $ 150 34 Table of Contents BUSINESS SEGMENT OPERATING RESULTS The following tables present net sales and business segment operating profit (loss) which is the Company's measure of segment profitability.  Industrial Packaging   Total Industrial Packaging 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 3,819   $ 3,832   $ 3,810 Operating Profit $ 470   $ 421   $ 605 Industrial Packaging net sales for the  first  quarter of  2020  were slightly higher compared with the  fourth  quarter of  2019  and slightly lower compared with the  first  quarter of  2019 . Operating profit was  22%   lower  in the  first  quarter of  2020  than in the  fourth  quarter of  2019  and  12%   higher  than in the  first  quarter of  2019 . North American Industrial Packaging 2020 2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales (a) $ 3,355   $ 3,376   $ 3,351 Operating Profit $ 437   $ 419   $ 584 (a) Includes intra-segment sales of $32 million, $31 million and $31 million for the three months ended March 31, 2020, March 31, 2019 and December 31, 2019, respectively. North American Industrial Packaging  sales volumes in the  first  quarter of  2020  increased compared to the  fourth  quarter of  2019 , as higher export containerboard volumes were slightly offset by seasonally lower shipments for boxes. Box demand increased late in the quarter reflecting COVID-19 impacts in certain customer segments including food and beverage, non- durables and e-commerce. Total maintenance and economic downtime was about 58,000 tons higher in the first quarter of 2020 compared with the fourth quarter of 2019, primarily driven by maintenance downtime. Average sales prices were lower for boxes and export containerboard, reflecting price index movement early in the first quarter. Operating costs were higher driven by the Riverdale conversion, a recovery boiler event at the Bogalusa mill and a fire at the Rome mill. Planned maintenance downtime costs were $72 million higher in the  first  quarter of  2020  compared with the  fourth  quarter of  2019 . Input costs were favorable, primarily for energy, chemicals and fuel slightly offset by higher recovered fiber costs. Earnings were negatively impacted by the non-repeat of a favorable inventory valuation adjustment in the fourth quarter of 2019.  Compared with the  first  quarter of  2019 , sales volumes were higher in the  first  quarter of  2020  for export containerboard and boxes reflecting stronger demand. Total maintenance and economic downtime was about 351,000 tons lower in the first quarter of 2020 compared with the first quarter of 2019, primarily driven by economic downtime. Export containerboard and box prices were significantly lower reflecting prior index movements throughout 2019 and early 2020. Operating costs were higher. Planned maintenance downtime costs were $19 million lower in the  first  quarter of  2020  compared with the  first  quarter of  2019 . Input costs were significantly lower, driven by recovered fiber, energy and wood. Entering the  second  quarter of  2020 , sales volumes for boxes and export containerboard are expected to be lower, reflecting one less shipping day and the expected negative demand impacts of COVID-19. Average sales prices for boxes are expected to be lower due to prior index movements in early 2020. Export containerboard prices are expected to be higher. Operating costs are expected to be slightly higher, including impacts from COVID-19. Planned maintenance downtime costs are expected to be $29 million lower in the second quarter of 2020 than in the  first  quarter of  2020 . Input costs are expected to be higher, primarily for significantly higher recovered fiber prices driven by lack of availability.   EMEA Industrial Packaging 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 350   $ 339   $ 341 Operating Profit (Loss) $ 10   $ (15 )   $ 6 EMEA Industrial Packaging  sales volumes for boxes in the  first  quarter of  2020  were higher than in the  fourth  quarter of  2019 , primarily driven by higher seasonal box demand in Morocco and improving economic conditions in Turkey, slightly offset by lower volumes in the Eurozone reflecting the negative demand impacts of the COVID-19 pandemic. Average sales margins were lower driven by an unfavorable mix. Operating costs were lower, reflecting the continued improved performance at the Madrid mill. Planned maintenance downtime costs were flat in the  first  quarter of  2020  compared with the  fourth  quarter of  2019 . Input costs were favorable. Earnings were negatively impacted by unfavorable foreign currency impacts, primarily in Morocco. 35 Table of Contents Compared with the  first  quarter of  2019 , sales volumes in the  first  quarter of  2020  were slightly lower as higher volumes in Morocco and Turkey were more than offset by lower volumes in the Eurozone reflecting the negative demand impacts of COVID-19. Average sales margins for boxes improved significantly, reflecting stable box prices and lower containerboard costs. Operating costs significantly improved from the ramp-up of the Madrid mill and improved box plant operations. Earnings also benefited from the box plant acquisitions completed in the first half of 2019. Planned maintenance downtime costs were $1 million higher in the  first  quarter of  2020  compared to the  first  quarter of  2019 . Input costs were favorable. Earnings were negatively impacted by unfavorable foreign currency impacts. Looking ahead to the  second  quarter of  2020 , sales volumes for boxes are expected to be lower in all regions reflecting the negative demand impacts of COVID-19 and seasonality in Morocco. Average sales margins are expected to be higher in Turkey and Morocco partially offset by lower sales margins in the Eurozone. Operating and input costs are expected to be higher due to the COVID-19 pandemic. Planned maintenance downtime costs are expected to be lower in the second quarter of  2020  as there are no planned outages. Brazilian Industrial Packaging 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 54   $ 57   $ 59 Operating Profit (Loss) $ (1 )   $ (5 )   $ (2 ) Brazilian Industrial Packaging  sales volumes in the  first  quarter of  2020  compared with the  fourth  quarter of  2019  were lower for both boxes and containerboard. Average sales prices were higher for boxes and containerboard. There were no planned maintenance downtime outages in either the  first  quarter of  2020  or the  fourth  quarter of  2019 . Input costs were lower, primarily for recovered fiber. Compared with the  first  quarter of  2019 , sales volumes in the  first  quarter of  2020  were higher for boxes, partially offset by lower volumes for containerboard. Average sales prices increased for boxes and containerboard. Operating costs were favorable. Input costs were stable as lower recovered fiber costs were offset by higher energy and rollstock costs. There were no planned maintenance downtime outages in the  first  quarter of  2019 . Looking ahead to the  second  quarter of  2020 , sales volumes for boxes and containerboard are expected to be seasonally higher, but the COVID-19 pandemic is expected to adversely impact demand for durables and discretionary segments partially offset by food and beverage and ecommerce. Average sales margins are expected to be slightly lower, reflecting an unfavorable mix. There are no planned maintenance downtime outages expected in the second quarter of 2020. Input costs are expected to be lower for recovered fiber. European Coated Paperboard 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 92   $ 91   $ 90 Operating Profit $ 24   $ 22   $ 17 European Coated Paperboard  sales volumes in the  first  quarter of  2020  compared with the  fourth  quarter of  2019  were higher in both Europe and Russia. Average sales margins were stable as higher sales prices in Russia were offset by an unfavorable mix in both regions. Lower operating costs in Russia were more than offset by higher operating costs in Europe. There were no planned maintenance downtime outages in either the  first  quarter of  2020  or the  fourth  quarter of  2019 . Input costs were lower in Europe primarily for purchased pulp, wood and energy. In Russia, input costs were stable. Earnings benefited from favorable foreign currency impacts, primarily in Russia. Compared with the  first  quarter of  2019 , sales volumes increased in both Europe and Russia. Average sales margins improved in Europe driven by a favorable mix and were stable in Russia. Operating costs were higher in both regions. There were no planned maintenance downtime costs in either the  first  quarter of  2020  or the  first  quarter of  2019 . Input costs were lower in Europe for purchased pulp, wood and energy. In Russia, input costs were stable. Earnings benefited from favorable foreign currency impacts in Russia partially offset by unfavorable foreign currency impacts in Europe.  Entering the  second  quarter of  2020 , sales volumes are expected to be lower in both Europe and Russia. Average sales margins are expected to be stable in both regions. Planned maintenance downtime costs are expected to be $3 million higher in the second quarter of 2020 compared to the  first  quarter of  2020  with an outage scheduled in Russia. Operating costs are expected to be higher in Europe and stable in Russia. Input costs are expected to be higher in both regions, primarily for chemicals and energy in Europe and wood in Russia.  36 Table of Contents Global Cellulose Fibers Total Global Cellulose Fibers 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 568   $ 689   $ 577 Operating Profit (Loss) $ (54 )   $ 35   $ (45 ) Global Cellulose Fibers  net sales were  2%   lower  in the  first  quarter of  2020  than in the  fourth  quarter of  2019  and  18%   lower  than in the  first  quarter of  2019 . Operating profit in the  first  quarter of  2020  was  20%   lower  than the  fourth  quarter of  2019  and significantly  lower  than in the  first  quarter of  2019 .   Sales volumes in the  first  quarter of  2020  compared with the  fourth  quarter of  2019  were stable, reflecting solid demand due to the COVID-19 pandemic. Total maintenance and economic downtime was about 12,000 tons higher in the  first  quarter of  2020  compared with the fourth quarter of 2019, primarily driven by maintenance downtime. Average sales margins decreased, reflecting lower average pulp prices partially offset by a favorable product mix. Operating costs were favorable, reflecting improved mill reliability and reduced spending. Planned maintenance downtime costs in the  first  quarter of  2020  were $23 million higher than in the  fourth  quarter of  2019 . Earnings benefited in the first quarter of 2020 from a favorable inventory valuation adjustment. Input costs were slightly favorable, primarily for wood, chemicals and energy. In Europe and Russia, sales volumes were lower in Russia and stable in Europe. Average sales prices were stable as higher sales prices in Russia were mostly offset by an unfavorable mix in both regions. Planned maintenance downtime costs in the  first  quarter of  2020  were $7 million lower than in the  fourth  quarter of  2019  in Europe and Russia. Operating costs were flat in both Europe and Russia. Input costs were stable in both Europe and Russia.  Compared with the  first  quarter of  2019 , sales volumes in the  first  quarter of  2020  were higher, driven by solid demand entering the COVID-19 pandemic and commercial gains. Total maintenance and economic downtime was about 69,000 tons lower in the  first  quarter of  2020  compared with the first quarter of 2019, primarily driven by economic downtime. Average sales prices were significantly lower for both fluff and market pulp, reflecting the price decreases throughout 2019. Operating costs were favorable. Planned maintenance downtime costs in the  first  quarter of  2020  were $8 million lower than in the  first  quarter of  2019 . Input costs were favorable, primarily for wood, chemicals and energy. In Europe and Russia, sales volumes decreased. Average sales prices were also lower in both regions. Operating costs were lower in Europe, but higher in Russia. There were no planned maintenance downtime costs in either the  first  quarter of  2020  or the  first  quarter of  2019  in Europe and Russia. Input costs were flat in both Europe and Russia. Earnings were negatively impacted by unfavorable foreign currency impacts in Russia.  Entering the  second  quarter of  2020 , sales volumes are expected to be stable as the COVID-19 related surge buying moderates. Average sales margins are expected to be higher, reflecting flow through of previously announced price increases. Planned maintenance downtime costs in the second quarter of 2020 are expected to be $28 million lower than in the  first  quarter of  2020 . Input costs are expected to be stable. Earnings will be negatively impacted by the non-repeat of the favorable inventory valuation adjustment in the first quarter of 2020. In Europe and Russia, sales volumes are expected to be stable in Europe and higher in Russia. Average sales margins are expected to be stable in both regions. Operating costs are expected to be lower in both Europe and Russia. Planned maintenance downtime costs in the second quarter of 2020 should be $3 million higher than in the  first  quarter of  2020  with an outage planned in Russia. Printing Papers   Total Printing Papers 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 908   $ 1,065   $ 1,067 Operating Profit $ 96   $ 144   $ 109 Printing Papers net sales for the  first  quarter of  2020  were  15%   lower  than in the  fourth  quarter of  2019  and  15%   lower  than in  the  first  quarter of  2019 . Operating profit in the  first  quarter of  2020  was  12%   lower  than in the  fourth  quarter of  2019  and  33%   lower  than in the  first  quarter of  2019 . North American Papers 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 446   $ 496   $ 482 Operating Profit $ 23   $ 57   $ 37 North American Papers  sales volumes in the  first  quarter of  2020  were lower than in the  fourth  quarter of  2019  for uncoated freesheet paper due to seasonal demand for imaging and exports. Total maintenance and economic downtime was about 6,000 tons higher in the  first  quarter of  2020  compared with the fourth quarter of 2019, primarily driven by maintenance downtime.  37 Table of Contents Average sales margins were stable, reflecting lower sales prices net of a favorable geographic mix. Operating costs were seasonally higher. Planned maintenance downtime costs were $27 million higher in the  first  quarter of  2020 , compared with the  fourth  quarter of  2019 . Input costs were stable. Earnings benefited by the non-repeat of an unfavorable inventory valuation adjustment in the fourth quarter of 2019. Compared with the  first  quarter of  2019 , sales volumes in the  first  quarter of  2020  were lower for uncoated freesheet paper, primarily driven by year over year market decline as well as the Riverdale conversion. Total maintenance and economic downtime was about 33,000 tons higher in the  first  quarter of  2020  compared with the first quarter of 2019, primarily due to maintenance downtime. Average sales margins were lower, reflecting lower sales prices and an unfavorable geographic mix. Operating costs were higher. Planned maintenance downtime costs were $24 million higher than in the  first  quarter of  2019  compared with the first quarter of 2019, primarily driven by maintenance downtime. Input costs were lower, primarily for wood. Entering the  second  quarter of  2020 , sales volumes are expected to be significantly lower, reflecting the ongoing unprecedented decline in demand due to the COVID-19 pandemic. Average sales prices are expected to be stable. Operating costs are expected to be higher. Planned maintenance downtime costs are expected to be $21 million lower in the second quarter of 2020. Input costs are expected to be stable. European Papers 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ 287   $ 309   $ 321 Operating Profit $ 41   $ 47   $ 27 European Papers  sales volumes for uncoated freesheet paper in the  first  quarter of  2020  compared with the  fourth  quarter of  2019  were stable in Europe, but lower in Russia. Average sales prices for uncoated freesheet paper were lower in both regions. Operating costs were lower in both regions. Planned maintenance downtime costs were $9 million lower in the  first  quarter of  2020  compared to the  fourth  quarter of  2019 . Input costs were lower in Europe, primarily for wood and energy. Input costs were stable in Russia. Earnings benefited from favorable foreign currency impacts in both Europe and Russia. Sales volumes for uncoated freesheet paper in the  first  quarter of  2020 , compared with the  first  quarter of  2019 , were lower in Europe and higher in Russia. Average sales margins for uncoated freesheet paper decreased in both regions, reflecting lower sales prices and an unfavorable mix in both regions. Operating costs were lower in Europe and higher in Russia. There were no planned maintenance downtime outages in either the  first  quarter of  2020  or the  first  quarter of  2019 . In Europe, input costs were lower for wood, purchased pulp and energy. In Russia, input costs were stable. Earnings benefited from favorable foreign currency impacts in Russia. Looking forward to the  second  quarter of  2020 , sales volumes for uncoated freesheet paper are expected to be significantly lower in both Europe and Russia, reflecting the ongoing negative demand impacts of the COVID-19 pandemic. Average sales prices are expected to be stable in both regions. Operating costs are expected to be higher in both Europe and Russia. Planned maintenance downtime costs are expected be $8 million higher in the second quarter of 2020 with an outage planned in Russia. Input costs are expected to be stable in Europe and higher in Russia, primarily for wood.  Brazilian Papers 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales (a) $ 176   $ 215   $ 265 Operating Profit $ 32   $ 33   $ 41 (a) Includes intra-segment sales of $1 million, $8 million and $17 million for the three months ended March 31, 2020, March 31, 2019 and December 31, 2019, respectively. Brazilian Papers  sales volumes in the  first  quarter of  2020 , compared with the  fourth  quarter of  2019 , were seasonally lower for both domestic and export shipments of uncoated freesheet. Sales volumes were also negatively impacted by the COVID-19 pandemic starting late in the quarter. Average sales margins were lower, reflecting lower export sales prices to other Latin American markets and an unfavorable geographic mix. Domestic sales prices were stable. Operating costs were favorable. Planned maintenance outage downtime costs were $3 million lower in the  first  quarter of  2020 , compared with the  fourth  quarter of  2019 . Input costs were lower, primarily for pulp and virgin fiber.  Compared with the  first  quarter of  2019 , sales volumes for uncoated freesheet paper in the  first  quarter of  2020  were slightly lower as higher volumes for export markets were more than offset by lower domestic volumes. Average sales prices for domestic markets were stable, while export sales prices were lower. An unfavorable geographic mix also negatively impacted the quarter. Operating costs were favorable. There were no planned maintenance downtime outages in either the  first  quarter of  2020  or the  first  quarter of  2019 . Input costs were lower, primarily for pulp.  38 Table of Contents Entering the  second  quarter of  2020 , sales volumes for uncoated freesheet paper are expected to be significantly lower for both domestic and export markets, reflecting the unprecedented decline in demand related to the COVID-19 pandemic. Average sales prices are expected to be lower but offset by a favorable mix. Operating costs are expected to be higher. Planned maintenance outage expenses are expected to be slightly higher in the second quarter of 2020. Input costs are expected to be higher, primarily for virgin fiber.  Indian Papers 2020   2019 In millions 1st Quarter   1st Quarter   4th Quarter Sales $ —   $ 53   $ 16 Operating Profit $ —   $ 7   $ 4 On May 29, 2019, International Paper announced it had entered into an agreement to sell its controlling interest in its Indian Papers business.  The transaction closed on October 30, 2019. Equity Earnings, Net of Taxes – Ilim  International Paper accounts for its 50% equity interest in Ilim S.A. (Ilim) using the equity method of accounting. Ilim is a separate reportable industry segment whose primary operations are in Russia. The Company recorded equity earnings (loss), net of taxes, of  $(35) million  in the  first  quarter of  2020 , compared with  $21 million  in the  fourth  quarter of  2019  and  $101 million  in the  first  quarter of  2019 . In the first quarter of 2020, the after-tax foreign exchange impact primarily on the remeasurement of U.S. dollar-denominated net debt was a loss of $51 million, compared with a gain of $8 million in the fourth quarter of 2019. Compared with the fourth quarter of 2019, sales volumes were solid in the first quarter of 2020, finishing only 1% lower overall, primarily for sales of hardwood pulp in China, Russia and other export markets, partially offset by higher sales of containerboard in China. Average sales price realizations were lower for softwood pulp, hardwood pulp and containerboard in China, Russia and other export markets. Input costs for wood and electricity were higher. Compared with the first quarter of 2019, sales volumes in the first quarter of 2020 decreased overall by 3%, primarily for sales of softwood pulp in China, Russia and other export markets, partially offset by higher sales of containerboard in Russia and other export markets.  Average sales price realizations for softwood pulp, hardwood pulp and containerboard were lower in all markets.   Input costs, primarily for wood were higher, but fuel and distribution costs were lower.  An after-tax foreign exchange gain of $21 million primarily on the remeasurement of U.S. dollar denominated net debt was recorded in the first quarter of 2019. Looking forward to the second quarter of 2020, sales volumes are expected to be higher. Average sales price realizations are projected to increase compared with the first quarter of 2020.  Input costs for wood are expected to be seasonally higher.  Maintenance mill outages are scheduled to occur at the Koryzhama, Bratsk and Ust Ilmsk mills. Equity Earnings – GPIP  International Paper recorded equity earnings of  $7 million  in the  first  quarter of  2020 , compared with  $9 million  in the  fourth  quarter of  2019  and  $13 million  in the  first  quarter of  2019 . As of  March 31, 2020 , the Company's ownership interest in GPIP was  18.7% . LIQUIDITY AND CAPITAL RESOURCES Cash provided by operations totaled  $649 million  for the first  three  months of  2020 , compared with  $733 million  for the comparable  2019   three -month period. Investments in capital projects, net of insurance recoveries, totaled  $286 million  in the first  three  months of  2020 , compared to  $293 million  in the first  three  months of  2019 . Full-year  2020  capital spending is currently expected to be approximately  $600 million , which represents a reduction of approximately $350 million  from our initial plan. This represents  46%  of depreciation and amortization, including approximately  $240 million  of strategic investments. Financing activities for the first  three  months of  2020  included a  $424 million  net increase in debt versus a  $66 million  net increase in debt during the comparable  2019   three -month period.  Amounts related to early debt extinguishment during the  three  months ended  March 31, 2020  and  2019  were as follows:    Three Months Ended March 31, In millions 2020   2019 Early debt reductions (a) $ 72   $ 94 Pre-tax early debt extinguishment (gain) loss, net 8   (1 ) 39 Table of Contents (a) Reductions related to notes with interest rates ranging from  3.00%  to  4.40%  with original maturities from  2026  to  2048  and from  3.00%  to  9.50%  with original maturities from  2024  to  2033  for the  three  months ended  March 31, 2020  and  2019 , respectively. At  March 31, 2020 , contractual obligations for future payments of debt maturities (including finance lease liabilities disclosed in  Note 11 - Leases  and excluding the timber monetization structures disclosed in  Note 16 - Variable Interest Entities ) by calendar year were as follows:  $656 million  in  2020 ;  $438 million  in  2021 ;  $142 million  in  2022 ;  $362 million  in  2023 ;  $807 million  in  2024 ; and  $7.8 billion  thereafter. Subsequent to March 31, 2020, we repaid $557 million outstanding under the receivables securitization program and refinanced $87 million of debt due in 2020 to 2022. Maintaining an investment-grade credit rating is an important element of International Paper’s financing strategy. At  March 31, 2020 , the Company held long-term credit ratings of BBB (stable outlook) and Baa2 (stable outlook) by S&P and Moody’s, respectively. In addition, the Company held short-term credit ratings of A2 and P2 by S&P and Moody's, respectively, for borrowings under the Company's commercial paper program. On March 25, 2020, the Company entered into a $750 million contractually committed 364-day revolving credit agreement with a syndicate of banks and other financial institutions which augments the Company's access to liquidity due to current macroeconomic conditions and supplements the Company's $1.5 billion five-year credit agreement expiring in December 2021. At March 31, 2020, International Paper’s credit agreements totaled  $2.9 billion , which is comprised of the $750 million contractually committed revolving credit agreement, the  $1.5 billion  contractually committed bank credit agreement, and up to  $600 million  under the receivables securitization program. Management believes these credit agreements are adequate to cover expected operating cash flow variability during the current economic cycle. The credit agreements generally provide for interest rates at a floating rate index plus a pre-determined margin dependent upon International Paper’s credit rating. At March 31, 2020, the Company had no borrowings outstanding under either the $750 million revolving credit agreement or the  $1.5 billion  credit agreement.  The receivables securitization program with up to  $600 million  of uncommitted financings based on eligible receivable balances expires in March 2021. At  March 31, 2020 ,  $557 million  was outstanding at a weighted-average interest rate of  1.65%  which represented the maximum borrowing based on eligible receivables under the program at that time. The remaining capacity of  $43 million  is subject to additional eligible receivables in the program. On April 28, 2020, the receivable securitization program was amended from an uncommitted financing arrangement to a committed financing arrangement with a borrowing limit up to $550 million based on eligible receivable balances, and the maturity date of the program was extended for two years until April 2022. The Company’s credit agreements are not subject to any restrictive covenants other than the financial covenants as disclosed in  Note 17 - Debt , and the borrowings under receivables securitization program being limited by eligible receivables. The Company was in compliance with all its debt covenants at  March 31, 2020  and was well below the thresholds stipulated under the covenants as defined in the credit agreements. Further the financial covenants do not restrict any borrowings under the credit agreements. In addition to the  $2.9 billion  in credit agreements, International Paper has a commercial paper program with a borrowing capacity of  $1.0 billion . Under the terms of the program, individual maturities on borrowings may vary, but not exceed one year from the date of issue. Interest bearing notes may be issued either as fixed or floating rate notes. As of  March 31, 2020 , the Company had no borrowings outstanding under the program. International Paper expects to be able to meet projected capital expenditures, service existing debt and meet working capital and dividend requirements during the remainder of 2020 with current cash balances and cash from operations, supplemented as required by its existing credit facilities. The Company will continue to rely on debt and capital markets for the majority of any necessary long-term funding not provided by operating cash flows. Funding decisions will be guided by our capital structure planning objectives. The primary goals of the Company’s capital structure planning are to maximize financial flexibility and maintain appropriate levels of liquidity to meet our needs while managing balance sheet debt and interest expense. The majority of International Paper’s debt is accessed through global public capital markets where we have a wide base of investors. The COVID-19 pandemic has negatively impacted the global economy and created significant volatility and disruption of capital and financial markets. As a result of the current economic environment, management has taken various actions to further strengthen the Company’s liquidity position. In addition to the Company entering into a $750 million revolving credit agreement and the Company amending the receivable securitization program from uncommitted to committed financing, the Company also plans to reduce capital expenditures by approximately $350 million in 2020, has indefinitely suspended the Company’s share repurchase program beginning April 2020, and has been deferring the payment of our payroll taxes as allowed under CARES Act. The CARES Act allows for the deferral of the payment of the employer portion of Social Security taxes accrued between March 27, 2020, and December 31, 2020. Under the CARES Act 50% of the deferred taxes will be paid by December 31, 2021 and the remainder will be paid by December 31, 2022. We believe that these actions provide us with sufficient liquidity to operate in this uncertain environment; however, an extended period of economic disruption could impact our access to additional sources of liquidity. During the first  three  months of  2020 , International Paper used  2.0 million  shares of treasury stock for various incentive plans. International Paper also acquired  1.2 million  shares of treasury stock, including restricted stock tax withholdings. Repurchases  40 Table of Contents of common stock and payments of restricted stock withholding taxes totaled  $41 million , including  $14 million  related to shares repurchased under the Company's repurchase program. During the first  three  months of  2019 , International Paper used approximately  3.4 million  shares of treasury stock for various incentive plans. International Paper also acquired  5.0 million  shares of treasury stock, including restricted stock tax withholding. Repurchases of common stock and payments of restricted stock withholding taxes totaled  $229 million .  On October 9, 2018, the Company announced an authorization to repurchase $2 billion of the Company's common stock to supplement remaining amounts under prior share repurchase authorizations, bringing total share repurchase authorizations since 2013 to $5.0 billion. Under the $5.0 billion share repurchase program, the Company has repurchased  69.5 million  shares at an average price of $47.03, for a total of approximately $3.3 billion, as of  March 31, 2020 . As noted above, the Company has indefinitely suspended its repurchase program beginning April 2020.  Cash dividend payments related to common stock totaled  $202 million  and  $201 million  for the first  three  months of  2020  and  2019 , respectively. Dividends were  $0.5125  per share and  $0.50  per share for the first  three  months in  2020  and  2019 , respectively. Currently there are no plans to make changes to our dividend policy.  Our pension plan is currently sufficiently funded and we do not anticipate any required contributions in 2020. Variable Interest Entities Information concerning variable interest entities is set forth in Note 15 in the Company's Annual Report on Form 10-K for the year ended December 31, 2019. In connection with the 2006 International Paper installment sale of forestlands, we received $4.8 billion of installment notes. These installment notes were used by variable interest entities as collateral for borrowings from third-party lenders. These variable interest entities were restructured in 2015 when the installment notes and third-party loans were extended. The restructured variable interest entities hold installment notes of $4.8 billion that mature in August 2021 (unless extended) and third-party loans of $4.2 billion that mature in the fourth quarter of 2020 (unless extended). These third-party loans are shown in Current nonrecourse financial liabilities of variable interest entities on the accompanying consolidated balance sheet. We are evaluating alternatives for extending the installment notes and refinancing the third-party loans.  Failure to extend, renew or refinance these third-party loans prior to their stated maturity, which we believe is unlikely, could necessitate a disposition of the installment notes to facilitate the $4.2 billion debt payment, which we are confident could be achieved. Ilim S.A. Shareholders’ Agreement In October 2007, in connection with the formation of the Ilim S.A. joint venture (Ilim), International Paper entered into a shareholders' agreement that includes provisions relating to the reconciliation of disputes among the partners. This agreement provides that at any time, either the Company or its partners may commence procedures specified under the deadlock agreement. If these or any other deadlock procedures under the shareholders' agreement are commenced, although it is not obligated to do so, the Company may in certain situations choose to purchase its partners' 50% interest in Ilim. Any such transaction would be subject to review and approval by Russian and other relevant anti-trust authorities. Based on the provisions of the agreement, the Company estimates that the current purchase price for its partners' 50% interest would be approximately $1.3 billion, which could be satisfied by payment of cash or International Paper common stock, or some combination of the two, at the Company's option. The purchase by the Company of its partners’ 50% interest in Ilim would result in the consolidation of Ilim's financial position and results of operations in all subsequent periods. The parties have informed each other that they have no current intention to commence procedures specified under the deadlock provisions of the shareholders' agreement. CRITICAL ACCOUNTING POLICIES AND SIGNIFICANT ACCOUNTING ESTIMATES The preparation of financial statements in conformity with accounting principles generally accepted in the United States requires International Paper to establish accounting policies and to make estimates that affect both the amounts and timing of the recording of assets, liabilities, revenues and expenses. Some of these estimates require judgments about matters that are inherently uncertain. Accounting policies whose application may have a significant effect on the reported results of operations and financial position of International Paper, and that can require judgments by management that affect their application, include accounting for contingencies, impairment or disposal of long-lived assets, goodwill and other intangible assets, pensions and income taxes. The Company has included in its  2019  Form 10-K a discussion of these critical accounting policies, which are important to the portrayal of the Company’s financial condition and results of operations and require management’s judgments. The Company has not made any changes in these critical accounting policies during the first  three  months of  2020 . While we have taken into account certain impacts arising from COVID-19 in connection with the accounting estimates reflected in this Quarterly Report on Form 10-Q, the full impact of COVID-19 is unknown and cannot be reasonably estimated.  41 Table of Contents However, we have made appropriate accounting estimates based on the facts and circumstances available as of the reporting date. To the extent there are differences between these estimates and actual results, our consolidated financial statements may be affected. FORWARD-LOOKING STATEMENTS Certain statements in this Quarterly Report on Form 10-Q that are not historical in nature may be considered “forward-looking” statements within the meaning of the Private Securities Litigation Reform Act of 1995. These statements are often identified by the words “will,” “may,” “should,” “continue,” “anticipate,” “believe,” “expect,” “plan,” “appear,” “project,” “estimate,” “intend” and words of a similar nature. These statements are not guarantees of future performance and reflect management’s current views with respect to future events, which are subject to risks and uncertainties that could cause actual results to differ materially from those expressed or implied in these statements. Factors which could cause actual results to differ include but are not limited to: (i) developments related to the COVID-19 pandemic, including the severity, magnitude and duration of the pandemic, negative global economic conditions arising from the pandemic,  impacts of governments’ responses to the pandemic on our operations, impacts of the pandemic on commercial activity, our customers and business partners and consumer preferences and demand,  supply chain disruptions, and disruptions in the capital or financial markets; (ii) the level of indebtedness and changes in interest rates; (iii) industry conditions, including but not limited to changes in the cost or availability of raw materials, energy and transportation costs, competition International Paper faces, cyclicality and changes in consumer preferences, demand and pricing for International Paper products (including changes resulting from the COVID-19 pandemic); (iv) domestic and global economic conditions and political changes,  changes in currency exchange rates, trade protectionist policies, downgrades in International Paper’s credit ratings, and/or the credit ratings of banks issuing certain letters of credit, issued by recognized credit rating organizations; (v) the amount of International Paper’s future pension funding obligations, and pension and health care costs; (vi) unanticipated expenditures or other adverse developments related to the cost of compliance with existing and new environmental, tax, labor and employment, privacy and other U.S. and non-U.S. governmental laws and regulations (including new legal requirements arising from the COVID-19 pandemic); (vii) any material disruption at  any of International Paper’s manufacturing facilities (including as the result of the COVID-19 pandemic); (viii) risks inherent in conducting business through joint ventures; (ix) International Paper’s ability to achieve the benefits expected from, and other risks associated with, acquisitions, joint ventures, divestitures and other corporate transactions, (x) information technology risks, and (xi) loss contingencies and pending, threatened or future litigation, including with respect to environmental related matters. These and other factors that could cause or contribute to actual results differing materially from such forward-looking statements can be found in International Paper’s press releases and U.S. Securities and Exchange Commission filings. In addition, other risks and uncertainties not presently known to International Paper or that it currently believes to be immaterial could affect the accuracy of any forward-looking statements. International Paper undertakes no obligation to publicly update any forward-looking statements, whether as a result of new information, future events or otherwise. ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK Information relating to quantitative and qualitative disclosures about market risk is shown on page 36 of International Paper’s 2019 Form 10-K, which information is incorporated herein by reference. There have been no material changes in the Company’s exposure to market risk since  December 31, 2019 .  ITEM 4. CONTROLS AND PROCEDURES Evaluation of Disclosure Controls and Procedures: Disclosure controls and procedures are controls and other procedures that are designed to ensure that information required to be disclosed in our reports filed or submitted under the Securities Exchange Act of 1934, as amended (Exchange Act), is recorded, processed, summarized and reported (and accumulated and communicated to management, including our Chief Executive Officer and Chief Financial Officer, to allow timely decisions regarding required disclosure) within the time periods specified in the Securities and Exchange Commission’s rules and forms. As of the end of the period covered by this report, we conducted an evaluation, under the supervision and with the participation of our management, including the Chief Executive Officer and Chief Financial Officer, of the effectiveness of our disclosure controls and procedures pursuant to Rules 13a-15 and 15d-15 of the Exchange Act. Based upon that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that the Company’s disclosure controls and procedures were effective as of  March 31, 2020  (the end of the period covered by this report). Changes in Internal Control over Financial Reporting: There have been no changes in our internal control over financial reporting during the quarter ended  March 31, 2020  that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 42 Table of Contents PART II. OTHER INFORMATION   ITEM 1. LEGAL PROCEEDINGS A discussion of material developments in the Company’s litigation matters occurring in the period covered by this report is found in  Note 15  of the  Condensed Notes to the Consolidated Financial Statements  in this Form 10-Q, which is incorporated herein by reference.  Additionally, in April 2020, the Florida Department of Environmental Protection and the Company entered into a settlement of violations by the Company’s Pensacola mill of its wastewater effluent discharge permit chronic toxicity limit. The settlement includes penalties totaling $1.2 million and requires the mill to engage in certain corrective actions. ITEM 1A. RISK FACTORS There have been no material changes from the risk factors disclosed in our Annual Report on Form 10-K for the fiscal year ended December 31, 2019 (Part I, Item 1A) other than as discussed below. The current COVID-19 pandemic is significantly affecting our business, and may have material adverse effects on our business, financial condition, results of operations and cash flows. The COVID-19 pandemic has resulted in authorities throughout the world implementing widespread measures attempting to contain the spread and impact of COVID-19, such as travel bans and restrictions, quarantines, stay-at-home orders, the promotion of social distancing and limitations on business activity, including business closures. These measures and the pandemic are causing significant global economic downturn, disrupting supply chains, significantly increasing unemployment and underemployment levels, and adversely impacting consumer confidence and spending. The continued spread of COVID-19 has also led to significant disruption and volatility in the global capital and financial markets, which increases the cost of capital and may adversely impact our access to such markets. In addition, the negative impacts arising from the pandemic may continue or worsen in the future, amplifying the negative impact on global economic conditions and global financial markets.   Although governments of countries in which we operate have generally considered forest products and the supply chain on which we depend to be “essential industries” that should remain operational during this pandemic, any significant disruption in operations at one or more of our mills, plants, distribution centers or other facilities as a result of the COVID-19 pandemic, including precautionary measures we take or taken by governmental authorities that limits in-person workplace contact at any of our facilities to reduce the potential for employee exposure to COVID-19, could have an adverse effect on our business or operations. If a significant portion of our workforce is unable to work effectively due to measures taken in response to the COVID-19 pandemic such as those described herein, our operations will likely be negatively impacted.    The COVID-19 pandemic is having a significant negative impact on demand for our printing papers products and could accelerate the underlying secular decline in demand for these products. If negative economic conditions with respect to COVID-19 persist or continue to deteriorate, these conditions are expected to impact demand for other products we sell, such as our pulp, containerboard and corrugated box products, which would be more significant to our enterprise as a whole. In addition, the COVID-19 pandemic may cause supply chain disruptions. Conditions related to the pandemic could also limit the ability of our suppliers, customers, third-party service providers, joint venture and other business partners and other counterparties to fulfill their commitments and responsibilities in a timely manner and in accordance with agreed upon terms, as well as limit our ability to perform fully on our contracts. Moreover, we may incur additional costs as the result of the pandemic arising from measures to keep our employees safe and expenditures to enable our office workers to work remotely. Likewise, an extended period of remote work arrangements could strain our business continuity plans, introduce operational risk, including but not limited to cybersecurity risks, and impair our ability to manage our business. Finally, if negative economic conditions arising from the pandemic persist and continue to significantly adversely affect economic conditions, this could give rise to an impairment in the value of our tangible or intangible assets, or result in a continued significant decrease in our pension plan assets or also a negative impact to pension plan liabilities. There continue to be significant uncertainties associated with the COVID-19 pandemic, including with respect to the severity of the disease, the duration of the outbreak, actions that may be taken by governmental authorities and private businesses to attempt to contain the COVID-19 outbreak or to mitigate its impact; the extent and duration of social distancing and the adoption of stay-at-home orders; and the ongoing impact of COVID-19 on economic activity and consumer confidence. Moreover, COVID-19 developments continue to evolve quickly, and additional developments may occur which we are unable to predict.  As a result, we are unable to fully quantify the impact that the COVID-19 pandemic will have on our financial  43 Table of Contents results during 2020, but developments related to COVID-19 are significantly adversely affecting our business, and could have a material adverse effect on our business, financial condition, results of operations and cash flows, particularly if negative global economic conditions persist for a significant period of time or continue to deteriorate. In addition, if conditions related to the pandemic continue to create disruptions or turmoil in the capital or financial markets, or negatively impact our credit ratings, it could adversely affect our ability to access capital on favorable terms and continue to meet our liquidity needs. Finally, the impact of COVID-19 may exacerbate other risks discussed in Part I, Item 1A. Risk Factors in our Annual Report on Form 10-K, any of which could have a material effect on us. ITEM 2.  UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS PURCHASES OF EQUITY SECURITIES BY THE ISSUER AND AFFILIATED PURCHASERS. Period Total Number of Shares Purchased (a)  Average Price Paid per Share Total Number of Shares Purchased as Part of a Publicly Announced Plan or Program Maximum Number (or Approximate Dollar Value) of Shares that May Yet Be Purchased Under the Plans or Programs                      (in billions) January 1, 2020 - January 31, 2020 3,705 $45.71 — $1.75 February 1, 2020 - February 29, 2020 720,203 42.87 102,000 1.74 March 1, 2020 - March 31, 2020 495,268 20.48 491,100 1.73 Total 1,219,176       (a)      626,076  shares were acquired from employees or board members as a result of share withholdings to pay income taxes under the Company's restricted stock programs. The remainder were purchased under a share repurchase program that was approved and increased twice by our Board of Directors and announced on September 10, 2013, July 8, 2014 and October 9, 2018. Through this program, which does not have an expiration date, we were authorized to purchase, in open market transactions (including block trades), privately negotiated transactions or otherwise, up to $5 billion of shares of our common stock. As of March 31, 2020, approximately $1.73 billion aggregate amount of shares of our common stock remained authorized for purchase under this program. The Company has indefinitely suspended its repurchase program beginning April 2020. 44 Table of Contents ITEM 6. EXHIBITS 3.1   Restated Certificate of Incorporation of the Company (incorporated by reference to Exhibit 3.1 to the Company's Current Report on Form 8-K dated May 13, 2013).       3.2   By-laws of International Paper Company, as amended through February 9, 2016 (incorporated by reference to Exhibit 3.1 to the Company's Current Report on Form 8-K dated February 8, 2016).       10.1   Amendment Number Six to the International Paper Company Pension Restoration Plan for Salaried Employees,  effective January 1, 2020.       10.2   Credit Agreement, dated March 25, 2020, by and among the Company, Sumitomo Mitsui Banking Corporation; Banco Bilbao Vizcaya Argentaria, S.A., New York Branch; BNP Paribas and Credit Agricole Corporate and Investment Bank, as lenders and Sumitomo Mitsui Banking Corporation, as administrative agent (incorporated by reference to Exhibit 10.1 to the Company’s Current Report on Form 8-K/A dated March 26, 2020).       31.1    Certification of principal executive officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002 .     31.2    Certification of principal financial officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002.     32    Certification pursuant to 18 U.S.C. Section 1350, as adopted pursuant to Section 906 of the Sarbanes-Oxley Act of 2002.     101.INS    XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the inline XBRL document.     101.SCH    XBRL Taxonomy Extension Schema.     101.CAL    XBRL Taxonomy Extension Calculation Linkbase.     101.DEF    XBRL Taxonomy Extension Definition Linkbase.     101.LAB    XBRL Taxonomy Extension Label Linkbase.     101.PRE    XBRL Extension Presentation Linkbase.       104   Cover Page Interactive Data File (formatted as Inline XBRL, and contained in Exhibit 101). 45 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized.   INTERNATIONAL PAPER COMPANY                         (Registrant)                                May 1, 2020 By /s/ Tim S. Nicholls     Tim S. Nicholls     Senior Vice President and Chief Financial Officer       May 1, 2020 By /s/ Vincent P. Bonnot     Vincent P. Bonnot     Vice President – Finance and Controller 46 	 
+ 

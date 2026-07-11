@@ -1,0 +1,6401 @@
+
+ 
+	 jbht20260331_10q.htm 
+
+
+	 
+ 
+ 
+ Q1 
+ 2026 
+ --12-31 
+ false 
+ 0000728535 
+ 5 
+ 5 
+ 1 
+ 5 
+ 
+ 
+ 
+ 0000728535 2026-01-01 2026-03-31 
+ thunderdome:item 
+ iso4217:USD 
+ 0000728535 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:IntersegmentEliminationMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember 2026-01-01 2026-03-31 
+ 0000728535 2025-12-31 
+ 0000728535 2026-03-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2025-12-31 
+ 0000728535 us-gaap:MaterialReconcilingItemsMember 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember 2025-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2025-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBTMember 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2025-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:FMSMember 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2025-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:ICSMember 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2025-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:DCSMember 2026-03-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2025-12-31 
+ 0000728535 us-gaap:OperatingSegmentsMember jbht:JBIMember 2026-03-31 
+ xbrli:pure 
+ 0000728535 us-gaap:FairValueMeasurementsRecurringMember jbht:SeniorCreditFacilityAndSeniorNotesMember 2025-12-31 
+ 0000728535 us-gaap:FairValueMeasurementsRecurringMember jbht:SeniorCreditFacilityAndSeniorNotesMember 2026-03-31 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2025-12-31 
+ 0000728535 us-gaap:FairValueInputsLevel1Member us-gaap:FairValueMeasurementsRecurringMember 2026-03-31 
+ iso4217:USD xbrli:shares 
+ 0000728535 us-gaap:SubsequentEventMember 2026-04-23 2026-04-23 
+ xbrli:shares 
+ 0000728535 jbht:SeniorNotesMaturingInMarch2026Member us-gaap:SeniorNotesMember 2026-03-31 
+ 0000728535 jbht:SeniorNotesMaturingInMarch2026Member us-gaap:SeniorNotesMember 2026-01-01 2026-03-31 
+ 0000728535 jbht:SeniorNotesIssuedInMarch2025Member us-gaap:SeniorNotesMember 2026-03-31 
+ 0000728535 jbht:RevolvingCreditFacilityAndTermLoansMember 2026-03-31 
+ 0000728535 jbht:TermLoansMember 2026-03-31 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2026-03-31 
+ 0000728535 jbht:CommittedTermLoansMember 2026-03-31 
+ utr:Y 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:SeniorNotesMember 2025-12-31 
+ 0000728535 us-gaap:SeniorNotesMember 2026-03-31 
+ 0000728535 us-gaap:RevolvingCreditFacilityMember 2025-12-31 
+ 0000728535 us-gaap:PerformanceSharesMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:PerformanceSharesMember 2026-03-31 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2026-03-31 
+ 0000728535 us-gaap:PerformanceSharesMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:RestrictedStockUnitsRSUMember 2025-01-01 2025-03-31 
+ 0000728535 2025-03-31 
+ 0000728535 2024-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2026-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2026-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2026-03-31 
+ 0000728535 us-gaap:CommonStockMember 2026-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:CommonStockMember 2026-01-01 2026-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-12-31 
+ 0000728535 us-gaap:CommonStockMember 2025-12-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-03-31 
+ 0000728535 us-gaap:CommonStockMember 2025-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:CommonStockMember 2025-01-01 2025-03-31 
+ 0000728535 us-gaap:TreasuryStockCommonMember 2024-12-31 
+ 0000728535 us-gaap:RetainedEarningsMember 2024-12-31 
+ 0000728535 us-gaap:AdditionalPaidInCapitalMember 2024-12-31 
+ 0000728535 us-gaap:CommonStockMember 2024-12-31 
+ 0000728535 jbht:FuelSurchargeMember 2025-01-01 2025-03-31 
+ 0000728535 jbht:FuelSurchargeMember 2026-01-01 2026-03-31 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2025-01-01 2025-03-31 
+ 0000728535 jbht:ServiceExcludingFuelSurchargeMember 2026-01-01 2026-03-31 
+ 
+ 
+ 
+ 
+   
+
+ 
+ UNITED STATES 
+
+ SECURITIES AND EXCHANGE COMMISSION 
+
+ Washington, D.C. 20549 
+
+   
+
+ FORM  10-Q 
+
+ (Mark One) 
+
+ ☒           QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+
+   
+
+ For the quarterly period ended  March 31, 2026 
+
+   
+
+ OR 
+
+   
+
+ ☐           TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 
+
+ Commission File Number:  0-11757 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+ (Exact name of registrant as specified in its charter) 
+
+   
+
+ 
+
+		 
+			 
+			 Arkansas 
+			 
+			 
+			 71-0335111 
+			 
+		 
+		 
+			 
+			 (State or other jurisdiction 
+			 
+			 
+			 (I.R.S. Employer 
+			 
+		 
+		 
+			 
+			 of incorporation or 
+			 
+			 
+			 Identification No.) 
+			 
+		 
+		 
+			 
+			 organization) 
+			 
+			 
+			   
+			 
+		 
+
+ 
+
+   
+
+ 615 J.B. Hunt Corporate Drive ,  Lowell ,  Arkansas    72745 
+
+ (Address of principal executive offices) 
+
+   
+
+ 479 - 820-0000 
+
+ (Registrant's telephone number, including area code) 
+
+   
+
+ www.jbhunt.com 
+
+ (Registrant's web site) 
+
+   
+
+ Securities registered pursuant to Section 12(b) of the Exchange Act: 
+
+   
+
+ 
+
+		 
+			 
+			 Title of each class 
+			 
+			 
+			 Trading Symbol(s) 
+			 
+			 
+			 Name of each exchange on which registered 
+			 
+		 
+		 
+			 
+			 Common Stock, $0.01 par value 
+			 
+			 
+			 JBHT 
+			 
+			 
+			 The  NASDAQ  Stock Market LLC 
+
+			 Nasdaq Texas, LLC 
+			 
+		 
+
+ 
+
+   
+
+ Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports), and (2) has been subject to the filing requirements for the past 90 days. 
+
+ Yes  ☒           No  ☐ 
+
+   
+
+ Indicate by check mark whether the registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T during the preceding 12 months (or for such shorter period that the registrant was required to submit such files). 
+
+ Yes  ☒           No  ☐ 
+
+   
+
+ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company or an emerging growth company.  See the definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company” and “emerging growth company” in Rule 12b-2 of the Exchange Act. 
+
+   
+
+ 
+
+		 
+			 Large accelerated filer   ☒ 
+			 Accelerated filer  ☐ 
+			 Non-accelerated filer  ☐ 
+		 
+		 
+			 Smaller reporting company  ☐ 
+			 Emerging growth company  ☐ 
+			   
+		 
+
+ 
+
+   
+
+ If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ 
+
+   
+
+ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). 
+
+ Yes   ☐            No  ☒ 
+
+   
+
+ The number of shares of the registrant ’ s $0.01 par value common stock outstanding on March 31, 2026 was  94,299,203 . 
+
+   
+
+ 
+ 
+ 
+   
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+ 
+
+   
+
+ 
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Form 10-Q 
+
+ For The Quarterly Period Ended March 31, 2026 
+
+ Table of Contents 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 Page 
+			 
+		 
+		 
+			 
+			 Part I.      Financial Information 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1. 
+			 
+			 
+			 Financial Statements 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Statements of Earnings for the Three Months Ended March 31, 2026 and 2025 
+			 
+			 
+			 3 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Balance Sheets as of March 31, 2026 and December 31, 2025 
+			 
+			 
+			 4 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			   
+			 Condensed Consolidated Statements of Shareholders’ Equity for the Three Months Ended March 31, 2026 and 2025 
+			 5 
+		 
+		 
+			   
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Condensed Consolidated Statements of Cash Flows for the Three Months Ended March 31, 2026 and 2025 
+			 
+			 
+			 6 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 Notes to Condensed Consolidated Financial Statements as of March 31, 2026 
+			 
+			 
+			 7 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 2. 
+			 
+			 
+			 Management's Discussion and Analysis of Financial Condition and Results of Operations 
+			 
+			 
+			 12 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 3. 
+			 
+			 
+			 Quantitative and Qualitative Disclosures About Market Risk 
+			 
+			 
+			 18 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 4. 
+			 
+			 
+			 Controls and Procedures 
+			 
+			 
+			 18 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Part II.      Other Information 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1. 
+			 
+			 
+			 Legal Proceedings 
+			 
+			 
+			 18 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 1A. 
+			 
+			 
+			 Risk Factors 
+			 
+			 
+			 19 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 2. 
+			 
+			 
+			 Unregistered Sales of Equity Securities and Use of Proceeds 
+			 
+			 
+			 19 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 3. 
+			 
+			 
+			 Defaults Upon Senior Securities 
+			 
+			 
+			 19 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 Item 4. 
+			 
+			 
+			 Mine Safety Disclosures 
+			 
+			 
+			 19 
+			 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 
+			 Item 5. 
+			 
+			 
+			 Other Information 
+			 
+			 
+			 19 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Item 6. 
+			 
+			 
+			 Exhibits 
+			 
+			 
+			 19 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Exhibits 
+			 
+			 
+			 20 
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			 Signatures 
+			 
+			 
+			 21 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+   
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+ 
+
+   
+
+ 
+
+		 
+			 
+			 Part I.      Financial Information 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 ITEM 1.           FINANCIAL STATEMENTS 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Statements of Earnings 
+			 
+		 
+		 
+			 
+			 (in thousands, except per share amounts) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 March 31, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2026 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating revenues, excluding fuel surcharge revenues 
+			 
+			   
+			 $ 
+			 2,648,493 
+			   
+			   
+			 $ 
+			 2,559,729 
+			   
+		 
+		 
+			 
+			 Fuel surcharge revenues 
+			 
+			   
+			   
+			 407,998 
+			   
+			   
+			   
+			 361,663 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 3,056,491 
+			   
+			   
+			   
+			 2,921,392 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 1,404,900 
+			   
+			   
+			   
+			 1,293,328 
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 785,596 
+			   
+			   
+			   
+			 799,648 
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 179,410 
+			   
+			   
+			   
+			 179,476 
+			   
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 175,059 
+			   
+			   
+			   
+			 159,933 
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 125,261 
+			   
+			   
+			   
+			 123,452 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 87,750 
+			   
+			   
+			   
+			 85,017 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, including asset dispositions 
+			 
+			   
+			   
+			 61,853 
+			   
+			   
+			   
+			 72,971 
+			   
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 18,533 
+			   
+			   
+			   
+			 17,480 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 11,081 
+			   
+			   
+			   
+			 11,407 
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 2,849,443 
+			   
+			   
+			   
+			 2,742,712 
+			   
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 207,048 
+			   
+			   
+			   
+			 178,680 
+			   
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 17,900 
+			   
+			   
+			   
+			 18,597 
+			   
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 189,148 
+			   
+			   
+			   
+			 160,083 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 47,595 
+			   
+			   
+			   
+			 42,343 
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			 $ 
+			 141,553 
+			   
+			   
+			 $ 
+			 117,740 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Weighted average basic shares outstanding 
+			 
+			   
+			   
+			 94,540 
+			   
+			   
+			   
+			 99,905 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Basic earnings per share 
+			 
+			   
+			 $ 
+			 1.50 
+			   
+			   
+			 $ 
+			 1.18 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Weighted average diluted shares outstanding 
+			 
+			   
+			   
+			 95,204 
+			   
+			   
+			   
+			 100,489 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Diluted earnings per share 
+			 
+			   
+			 $ 
+			 1.49 
+			   
+			   
+			 $ 
+			 1.17 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 3 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Balance Sheets 
+			 
+		 
+		 
+			 
+			 (in thousands) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 March 31, 2026 
+			 
+			   
+			   
+			 
+			 December 31, 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 ASSETS 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current assets: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents 
+			 
+			   
+			 $ 
+			 4,563 
+			   
+			   
+			 $ 
+			 17,284 
+			   
+		 
+		 
+			 
+			 Trade accounts receivable, net 
+			 
+			   
+			   
+			 1,327,455 
+			   
+			   
+			   
+			 1,160,371 
+			   
+		 
+		 
+			 
+			 Prepaid expenses and other 
+			 
+			   
+			   
+			 385,417 
+			   
+			   
+			   
+			 426,535 
+			   
+		 
+		 
+			 
+			 Total current assets 
+			 
+			   
+			   
+			 1,717,435 
+			   
+			   
+			   
+			 1,604,190 
+			   
+		 
+		 
+			 
+			 Property and equipment, at cost 
+			 
+			   
+			   
+			 9,330,847 
+			   
+			   
+			   
+			 9,348,370 
+			   
+		 
+		 
+			 
+			 Less accumulated depreciation 
+			 
+			   
+			   
+			 3,895,731 
+			   
+			   
+			   
+			 3,810,269 
+			   
+		 
+		 
+			 
+			 Net property and equipment 
+			 
+			   
+			   
+			 5,435,116 
+			   
+			   
+			   
+			 5,538,101 
+			   
+		 
+		 
+			 
+			 Goodwill and intangible assets, net 
+			 
+			   
+			   
+			 205,319 
+			   
+			   
+			   
+			 210,357 
+			   
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 572,670 
+			   
+			   
+			   
+			 574,507 
+			   
+		 
+		 
+			 
+			 Total assets 
+			 
+			   
+			 $ 
+			 7,930,540 
+			   
+			   
+			 $ 
+			 7,927,155 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 LIABILITIES AND SHAREHOLDERS' EQUITY 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current liabilities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Current portion of long-term debt 
+			 
+			   
+			 $ 
+			 - 
+			   
+			   
+			 $ 
+			 699,859 
+			   
+		 
+		 
+			 
+			 Trade accounts payable 
+			 
+			   
+			   
+			 751,878 
+			   
+			   
+			   
+			 655,604 
+			   
+		 
+		 
+			 
+			 Claims accruals 
+			 
+			   
+			   
+			 322,618 
+			   
+			   
+			   
+			 310,339 
+			   
+		 
+		 
+			 
+			 Accrued payroll 
+			 
+			   
+			   
+			 127,369 
+			   
+			   
+			   
+			 110,388 
+			   
+		 
+		 
+			 
+			 Other accrued expenses 
+			 
+			   
+			   
+			 163,163 
+			   
+			   
+			   
+			 159,153 
+			   
+		 
+		 
+			 
+			 Total current liabilities 
+			 
+			   
+			   
+			 1,365,028 
+			   
+			   
+			   
+			 1,935,343 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Long-term debt 
+			 
+			   
+			   
+			 1,302,838 
+			   
+			   
+			   
+			 766,938 
+			   
+		 
+		 
+			 
+			 Long-term claims accruals 
+			 
+			   
+			   
+			 480,696 
+			   
+			   
+			   
+			 444,479 
+			   
+		 
+		 
+			 
+			 Other long-term liabilities 
+			 
+			   
+			   
+			 298,895 
+			   
+			   
+			   
+			 307,005 
+			   
+		 
+		 
+			 
+			 Deferred income taxes 
+			 
+			   
+			   
+			 888,725 
+			   
+			   
+			   
+			 908,305 
+			   
+		 
+		 
+			 
+			 Shareholders' equity 
+			 
+			   
+			   
+			 3,594,358 
+			   
+			   
+			   
+			 3,565,085 
+			   
+		 
+		 
+			 
+			 Total liabilities and shareholders' equity 
+			 
+			   
+			 $ 
+			 7,930,540 
+			   
+			   
+			 $ 
+			 7,927,155 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 4 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Statements of Shareholders' Equity 
+			 
+		 
+		 
+			 
+			 (in thousands, except per share amounts) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			 
+			 Additional 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			 
+			 Common 
+			 
+			   
+			   
+			 
+			 Paid-in 
+			 
+			   
+			   
+			 
+			 Retained 
+			 
+			   
+			   
+			 
+			 Treasury 
+			 
+			   
+			   
+			 
+			 Shareholders’ 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Capital 
+			 
+			   
+			   
+			 
+			 Earnings 
+			 
+			   
+			   
+			 
+			 Stock 
+			 
+			   
+			   
+			 
+			 Equity 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at December 31, 2024 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 583,945 
+			   
+			   
+			 $ 
+			 7,373,462 
+			   
+			   
+			 $ 
+			 ( 3,944,573 
+			 ) 
+			   
+			 $ 
+			 4,014,505 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 117,740 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 117,740 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.44  per share) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 44,004 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 44,004 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 234,129 
+			 ) 
+			   
+			   
+			 ( 234,129 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 18,444 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 18,444 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 5,256 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 627 
+			 ) 
+			   
+			   
+			 ( 5,883 
+			 ) 
+		 
+		 
+			 
+			 Balances at March 31, 2025 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 597,133 
+			   
+			   
+			 $ 
+			 7,447,198 
+			   
+			   
+			 $ 
+			 ( 4,179,329 
+			 ) 
+			   
+			 $ 
+			 3,866,673 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Balances at December 31, 2025 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 627,280 
+			   
+			   
+			 $ 
+			 7,800,696 
+			   
+			   
+			 $ 
+			 ( 4,864,562 
+			 ) 
+			   
+			 $ 
+			 3,565,085 
+			   
+		 
+		 
+			 
+			 Comprehensive income: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 141,553 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 141,553 
+			   
+		 
+		 
+			 
+			 Cash dividend declared and paid ($ 0.45  per share) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 42,595 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 42,595 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury shares 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 80,063 
+			 ) 
+			   
+			   
+			 ( 80,063 
+			 ) 
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 18,048 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 18,048 
+			   
+		 
+		 
+			 
+			 Restricted share issuances, net of stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 8,386 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 716 
+			   
+			   
+			   
+			 ( 7,670 
+			 ) 
+		 
+		 
+			 
+			 Balances at March 31, 2026 
+			 
+			   
+			 $ 
+			 1,671 
+			   
+			   
+			 $ 
+			 636,942 
+			   
+			   
+			 $ 
+			 7,899,654 
+			   
+			   
+			 $ 
+			 ( 4,943,909 
+			 ) 
+			   
+			 $ 
+			 3,594,358 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 5 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+   
+
+ 
+
+		 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+			 
+		 
+		 
+			   
+		 
+		 
+			 
+			 Condensed Consolidated Statements of Cash Flows 
+			 
+		 
+		 
+			 
+			 (in thousands) 
+			 
+		 
+		 
+			 
+			 (unaudited) 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended March 31, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2026 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from operating activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			 $ 
+			 141,553 
+			   
+			   
+			 $ 
+			 117,740 
+			   
+		 
+		 
+			 
+			 Adjustments to reconcile net earnings to net cash provided by operating activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 179,410 
+			   
+			   
+			   
+			 179,476 
+			   
+		 
+		 
+			 
+			 Noncash lease expense 
+			 
+			   
+			   
+			 23,803 
+			   
+			   
+			   
+			 24,404 
+			   
+		 
+		 
+			 
+			 Share-based compensation 
+			 
+			   
+			   
+			 18,048 
+			   
+			   
+			   
+			 18,444 
+			   
+		 
+		 
+			 
+			 Loss on sale of revenue equipment and other 
+			 
+			   
+			   
+			 324 
+			   
+			   
+			   
+			 6,476 
+			   
+		 
+		 
+			 
+			 Deferred income taxes 
+			 
+			   
+			   
+			 ( 19,581 
+			 ) 
+			   
+			   
+			 ( 36,058 
+			 ) 
+		 
+		 
+			 
+			 Changes in operating assets and liabilities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Trade accounts receivable 
+			 
+			   
+			   
+			 ( 167,085 
+			 ) 
+			   
+			   
+			 21,337 
+			   
+		 
+		 
+			 
+			 Other assets 
+			 
+			   
+			   
+			 30,443 
+			   
+			   
+			   
+			 35,870 
+			   
+		 
+		 
+			 
+			 Trade accounts payable 
+			 
+			   
+			   
+			 99,754 
+			   
+			   
+			   
+			 ( 3,408 
+			 ) 
+		 
+		 
+			 
+			 Income taxes payable or receivable 
+			 
+			   
+			   
+			 58,881 
+			   
+			   
+			   
+			 72,573 
+			   
+		 
+		 
+			 
+			 Claims accruals 
+			 
+			   
+			   
+			 11,113 
+			   
+			   
+			   
+			 16,444 
+			   
+		 
+		 
+			 
+			 Accrued payroll and other accrued expenses 
+			 
+			   
+			   
+			 ( 23,625 
+			 ) 
+			   
+			   
+			 ( 49,106 
+			 ) 
+		 
+		 
+			 
+			 Net cash provided by operating activities 
+			 
+			   
+			   
+			 353,038 
+			   
+			   
+			   
+			 404,192 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from investing activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Additions to property and equipment 
+			 
+			   
+			   
+			 ( 110,271 
+			 ) 
+			   
+			   
+			 ( 245,812 
+			 ) 
+		 
+		 
+			 
+			 Net proceeds from sale of equipment 
+			 
+			   
+			   
+			 39,540 
+			   
+			   
+			   
+			 20,762 
+			   
+		 
+		 
+			 
+			 Net cash used in investing activities 
+			 
+			   
+			   
+			 ( 70,731 
+			 ) 
+			   
+			   
+			 ( 225,050 
+			 ) 
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash flows from financing activities: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Proceeds from issuances of long-term debt 
+			 
+			   
+			   
+			 475,000 
+			   
+			   
+			   
+			 750,000 
+			   
+		 
+		 
+			 
+			 Payments on long-term debt 
+			 
+			   
+			   
+			 ( 700,000 
+			 ) 
+			   
+			   
+			 ( 500,000 
+			 ) 
+		 
+		 
+			 
+			 Proceeds from revolving lines of credit and other 
+			 
+			   
+			   
+			 536,500 
+			   
+			   
+			   
+			 656,900 
+			   
+		 
+		 
+			 
+			 Payments on revolving lines of credit and other 
+			 
+			   
+			   
+			 ( 476,200 
+			 ) 
+			   
+			   
+			 ( 805,602 
+			 ) 
+		 
+		 
+			 
+			 Purchase of treasury stock 
+			 
+			   
+			   
+			 ( 80,063 
+			 ) 
+			   
+			   
+			 ( 234,129 
+			 ) 
+		 
+		 
+			 
+			 Stock repurchased for payroll taxes and other 
+			 
+			   
+			   
+			 ( 7,670 
+			 ) 
+			   
+			   
+			 ( 5,883 
+			 ) 
+		 
+		 
+			 
+			 Dividends paid 
+			 
+			   
+			   
+			 ( 42,595 
+			 ) 
+			   
+			   
+			 ( 44,004 
+			 ) 
+		 
+		 
+			 
+			 Net cash used in financing activities 
+			 
+			   
+			   
+			 ( 295,028 
+			 ) 
+			   
+			   
+			 ( 182,718 
+			 ) 
+		 
+		 
+			 
+			 Net change in cash and cash equivalents 
+			 
+			   
+			   
+			 ( 12,721 
+			 ) 
+			   
+			   
+			 ( 3,576 
+			 ) 
+		 
+		 
+			 
+			 Cash and cash equivalents at beginning of period 
+			 
+			   
+			   
+			 17,284 
+			   
+			   
+			   
+			 46,983 
+			   
+		 
+		 
+			 
+			 Cash and cash equivalents at end of period 
+			 
+			   
+			 $ 
+			 4,563 
+			   
+			   
+			 $ 
+			 43,407 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Supplemental disclosure of cash flow information: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Cash paid during the period for: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Interest 
+			 
+			   
+			 $ 
+			 36,149 
+			   
+			   
+			 $ 
+			 26,307 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			 $ 
+			 2,980 
+			   
+			   
+			 $ 
+			 3,747 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Noncash investing activities 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Accruals for equipment received 
+			 
+			   
+			 $ 
+			 20,690 
+			   
+			   
+			 $ 
+			 72,117 
+			   
+		 
+
+ 
+ 
+
+   
+
+ See Notes to Condensed Consolidated Financial Statements. 
+
+   
+
+ 
+ 
+ 
+ 6 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ J.B. HUNT TRANSPORT SERVICES, INC. 
+
+   
+
+ Notes to Condensed Consolidated Financial Statements 
+
+ (Unaudited) 
+
+   
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 1. 
+			 
+			 
+			 General 
+			 
+		 
+
+ 
+
+   
+
+ Basis of Presentation 
+
+   
+
+ The accompanying unaudited interim Condensed Consolidated Financial Statements have been prepared in accordance with U.S. generally accepted accounting principles (GAAP) for interim financial information. We believe such statements include all adjustments (consisting only of normal recurring adjustments) necessary for the fair statement of our financial position, results of operations and cash flows at the dates and for the periods indicated. Pursuant to the requirements of the Securities and Exchange Commission (SEC) applicable to quarterly reports on Form 10-Q, the accompanying financial statements do not include all disclosures required by GAAP for annual financial statements. While we believe the disclosures presented are adequate to make the information not misleading, these unaudited interim Condensed Consolidated Financial Statements should be read in conjunction with the audited Consolidated Financial Statements and related notes included in our Annual Report on Form 10-K for the year ended December 31, 2025. Operating results for the periods presented in this report are not necessarily indicative of the results that may be expected for the calendar year ending December 31, 2026, or any other interim period. Our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load freight transportation business. 
+
+   
+
+ Recent Accounting Pronouncements 
+
+   
+
+ In November 2024, the FASB issued ASU 2024-03, Income Statement-Reporting Comprehensive Income-Expense Disaggregation Disclosures, which requires public business entities to disclose, on an annual and interim basis, disaggregated information about certain income statement expense line items in the notes to the financial statements. The new standard is effective prospectively for us on January 1, 2027, for annual periods, and January 1, 2028, for interim periods, with retrospective adoption permitted. We are currently evaluating the impact of the adoption of this accounting pronouncement on our consolidated financial statements. 
+
+   
+
+ In September 2025, the FASB issued ASU 2025-06, Intangibles - Goodwill and Other - Internal-Use Software: Targeted Improvements to the Accounting for Internal-Use Software, which clarified and modernizes the accounting for costs related to internal-use software. The amendments in the standard remove all previous references to project stages and clarify the threshold entities apply to begin capitalizing costs. The standard becomes effective for us on January 1, 2028, for annual and interim periods and may be adopted on a prospective basis, a modified basis for in-process projects, or a retrospective basis. We are currently evaluating the impact of the adoption of this accounting pronouncement on our consolidated financial statements. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 2. 
+			 
+			 
+			 Earnings Per Share 
+			 
+		 
+
+ 
+
+   
+
+ We compute basic earnings per share by dividing net earnings available to common shareholders by the actual weighted average number of common shares outstanding for the reporting period. Diluted earnings per share reflects the potential dilution that could occur if holders of unvested restricted and performance share units converted their holdings into common stock. The dilutive effect of restricted and performance share units was  0.7  million shares during the three months ended March 31, 2026, compared to  0.6  million shares during the three months ended March 31, 2025. 
+
+   
+
+ 
+ 7 
+
+ 
+   
+ 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 3. 
+			 
+			 
+			 Share-based Compensation  
+			 
+		 
+
+ 
+
+   
+
+ The following table summarizes the components of our share-based compensation program expense (in thousands): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended 
+
+			 March 31, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2026 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+		 
+		 
+			 
+			 Restricted share units: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Pretax compensation expense 
+			 
+			   
+			 $ 
+			 12,105 
+			   
+			   
+			 $ 
+			 12,043 
+			   
+		 
+		 
+			 
+			 Tax benefit 
+			 
+			   
+			   
+			 3,111 
+			   
+			   
+			   
+			 3,175 
+			   
+		 
+		 
+			 
+			 Restricted share unit expense, net of tax 
+			 
+			   
+			 $ 
+			 8,994 
+			   
+			   
+			 $ 
+			 8,868 
+			   
+		 
+		 
+			 
+			 Performance share units: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Pretax compensation expense 
+			 
+			   
+			 $ 
+			 5,943 
+			   
+			   
+			 $ 
+			 6,401 
+			   
+		 
+		 
+			 
+			 Tax benefit 
+			 
+			   
+			   
+			 1,527 
+			   
+			   
+			   
+			 1,687 
+			   
+		 
+		 
+			 
+			 Performance share unit expense, net of tax 
+			 
+			   
+			 $ 
+			 4,416 
+			   
+			   
+			 $ 
+			 4,714 
+			   
+		 
+
+ 
+ 
+
+   
+
+ As of March 31, 2026, we had $ 96.8  million and $ 49.5  million of total unrecognized compensation expense related to restricted share units and performance share units, respectively, that is to be recognized over the remaining weighted average period of approximately  3.2  years for restricted share units and  2.4  years for performance share units. During the three months ended March 31, 2026, we issued  43,421  shares for vested restricted share units and  81,508  shares for vested performance share units. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 4.  
+			 
+			 
+			 Financing Arrangements  
+			 
+		 
+
+ 
+
+   
+
+ Outstanding borrowings, net of unamortized discount and unamortized debt issuance cost, under our current financing arrangements consist of the following (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 March 31, 2026 
+			 
+			   
+			   
+			 
+			 December 31, 2025 
+			 
+			   
+		 
+		 
+			 
+			 Senior credit facility 
+			 
+			   
+			 $ 
+			 559.1 
+			   
+			   
+			 $ 
+			 23.6 
+			   
+		 
+		 
+			 
+			 Senior notes 
+			 
+			   
+			   
+			 743.7 
+			   
+			   
+			   
+			 1,443.2 
+			   
+		 
+		 
+			 
+			 Less current portion of long-term debt 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 ( 699.9 
+			 ) 
+		 
+		 
+			 
+			 Total long-term debt 
+			 
+			   
+			 $ 
+			 1,302.8 
+			   
+			   
+			 $ 
+			 766.9 
+			   
+		 
+
+ 
+ 
+
+   
+
+ Senior Credit Facility 
+
+   
+
+ At March 31, 2026, we were authorized to borrow through a revolving line of credit, which is supported by a credit agreement with a group of banks. The revolving line of credit authorizes us to borrow up to $ 1.0  billion under a  five-year  term expiring November 2030 and allows us to request an increase in the revolving line of credit total commitment by up to $ 400  million and to request two  one-year  extensions of the maturity date. In addition, the credit agreement authorizes us to borrow up to an additional $ 700  million through committed term loans during the six-month period beginning November 25, 2025, due November 2028, of which we partially exercised in February 2026. The applicable interest rates under this agreement are based on either the Secured Overnight Financing Rate (SOFR), or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At March 31, 2026, we had $ 87.1  million outstanding on the revolving line of credit and a $ 475.0  million balance of term loans, at an average interest rate of  4.66 %, under this agreement.   
+
+   
+
+ 
+ 8 
+
+ 
+   
+ 
+
+   
+
+ Senior Notes 
+
+   
+
+ Our senior notes consist of $ 750  million of  4.90 % senior notes due March 2030, issued in March 2025. Interest payments under these notes are due semiannually in March and September of each year beginning September 2025. These senior notes were issued by J.B. Hunt Transport Services, Inc., a parent-level holding company with no significant tangible assets or operations. The notes are guaranteed on a full and unconditional basis by our wholly-owned operating subsidiary. All other subsidiaries of the parent are minor. We registered these offerings and the sale of the notes under the Securities Act of 1933, pursuant to a shelf registration statement filed in February 2023. These notes are unsecured obligations and rank equally with our existing and future senior unsecured debt. We may redeem for cash some or all of the notes based on a redemption price set forth in the note indenture. Our $ 700  million of  3.875 % senior notes matured in March 2026. The entire outstanding balance was paid in full at maturity. 
+
+   
+
+ Our financing arrangements require us to maintain certain covenants and financial ratios. We were in compliance with all covenants and financial ratios at March 31, 2026. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 5.  
+			 
+			 
+			 Capital Stock 
+			 
+		 
+
+ 
+
+   
+
+ During the three months ended March 31, 2026, we purchased approximately  383,000  shares, or $ 80.1  million, of our common stock in accordance with plans authorized by our Board. At March 31, 2026, we had $ 888.2  million available under an authorized plan to purchase our common stock. On January 22, 2026, our Board of Directors declared a regular quarterly cash dividend of $ 0.45 , which was paid February 20, 2026, to shareholders of record on February 6, 2026. On April 23, 2026, our Board of Directors declared a regular quarterly dividend of $ 0.45  per common share, which will be paid on May 22, 2026, to shareholders of record on May 8, 2026. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 6.  
+			 
+			 
+			 Fair Value Measurements 
+			 
+		 
+
+ 
+
+   
+
+ Our assets and liabilities measured at fair value are based on valuation techniques which consider prices and other relevant information generated by market transactions involving identical or comparable assets and liabilities. These valuation methods are based on either quoted market prices (Level 1) or inputs, other than quoted prices in active markets, that are observable either directly or indirectly (Level 2). 
+
+   
+
+ Assets Measured at Fair Value on a Recurring Basis 
+
+   
+
+ The following assets are measured at fair value on a recurring basis (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Asset 
+
+			 Balance 
+			 
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			   
+			 
+			 March 31, 2026 
+			 
+			   
+			   
+			 
+			 December 31, 2025 
+			 
+			   
+			   
+			 
+			 Input Level 
+			 
+			   
+		 
+		 
+			 
+			 Trading investments 
+			 
+			   
+			 $ 
+			 37.4 
+			   
+			   
+			 $ 
+			 36.3 
+			   
+			   
+			   
+			 1 
+			   
+		 
+
+ 
+ 
+
+   
+
+ The fair value of trading investments has been measured using the market approach (Level 1) and reflects quoted market prices. Trading investments are classified in other assets in our Condensed Consolidated Balance Sheets. 
+
+   
+
+ Financial Instruments 
+
+   
+
+ The carrying amount of our senior credit facility and senior notes was $ 1.30  billion and $ 1.47  billion at March 31, 2026 and December 31, 2025, respectively. The estimated fair value of these liabilities using the income approach (Level 2), based on their net present value, discounted at our current borrowing rate, was $ 1.32  billion and $ 1.51 billion at March 31, 2026 and December 31, 2025, respectively. 
+
+   
+
+ The carrying amounts of all other instruments at March 31, 2026, approximate their fair value due to the short maturity of these instruments. 
+
+   
+
+ 
+ 9 
+
+ 
+   
+ 
+
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			 
+			 7.  
+			 
+			 
+			 Income Taxes 
+			 
+		 
+
+ 
+
+   
+
+ Our effective income tax rate was  25.2 % for the three months ended March 31, 2026, compared to  26.5 % for the three months ended March 31, 2025. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ At March 31, 2026, we had a total of $ 69.5  million in gross unrecognized tax benefits, which are a component of other long-term liabilities on our Condensed Consolidated Balance Sheets. Of this amount, $ 56.2  million represents the amount of unrecognized tax benefits that, if recognized, would impact our effective tax rate. The total amount of accrued interest and penalties for such unrecognized tax benefits was $ 15.1  million at March 31, 2026. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 8.  
+			 
+			 
+			 Commitments and Contingencies 
+			 
+		 
+
+ 
+
+   
+
+ As the result of state use tax audits, we have been assessed amounts owed from which we are vigorously appealing. We have recorded a liability for the estimated probable exposure under these audits and await resolution of the matter. 
+
+   
+
+ We purchase insurance coverage for a portion of expenses related to vehicular collisions and accidents. These policies include a level of self-insurance (deductible) coverage applicable to each claim as well as certain coverage-layer-specific, aggregated reimbursement limits of covered excess claims. Our claims from time to time exceed some of these existing coverage layer aggregate reimbursement limits and can effectuate additional premium provisions. Accordingly, we have recorded a liability for the estimated probable exposure for these occurrences. 
+
+   
+
+ We are involved in certain other claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			 
+			 9.  
+			 
+			 
+			 Business Segments 
+			 
+		 
+
+ 
+
+   
+
+ We reported  five  distinct business segments during the three months ended March 31, 2026 and 2025. These segments included Intermodal (JBI), Dedicated Contract Services® (DCS®), Integrated Capacity Solutions (ICS), Final Mile Services® (FMS), and Truckload (JBT). The operation of each of these businesses is described in Note 13, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2025. A summary of certain segment information is presented below (in millions): 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Assets 
+
+			 (Excludes intercompany accounts) 
+
+			 As of 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 March 31, 2026 
+			 
+			   
+			   
+			 
+			 December 31, 2025 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 3,339 
+			   
+			   
+			 $ 
+			 3,324 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 2,097 
+			   
+			   
+			   
+			 2,070 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 317 
+			   
+			   
+			   
+			 286 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 471 
+			   
+			   
+			   
+			 485 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 372 
+			   
+			   
+			   
+			 364 
+			   
+		 
+		 
+			 
+			 Total segment assets 
+			 
+			   
+			   
+			 6,596 
+			   
+			   
+			   
+			 6,529 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 1,335 
+			   
+			   
+			   
+			 1,398 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 7,931 
+			   
+			   
+			 $ 
+			 7,927 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+ 10 
+
+ 
+   
+ 
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Net Capital Expenditures (1) 
+
+			 For The Three Months Ended 
+
+			 March 31, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2026 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 ( 6.2 
+			 ) 
+			   
+			 $ 
+			 53.9 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 61.7 
+			   
+			   
+			   
+			 77.3 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 0.2 
+			   
+			   
+			   
+			 0.2 
+			   
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 1.2 
+			   
+			   
+			   
+			 6.1 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 0.3 
+			   
+			   
+			   
+			 ( 0.3 
+			 ) 
+		 
+		 
+			 
+			 Total segment net capital expenditures 
+			 
+			   
+			   
+			 57.2 
+			   
+			   
+			   
+			 137.2 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 13.5 
+			   
+			   
+			   
+			 87.9 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 70.7 
+			   
+			   
+			 $ 
+			 225.1 
+			   
+		 
+
+ 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Revenues and Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 For The Three Months ended March 31, 2026 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 JBI 
+			 
+			   
+			   
+			 
+			 DCS 
+			 
+			   
+			   
+			 
+			 ICS 
+			 
+			   
+			   
+			 
+			 FMS 
+			 
+			   
+			   
+			 
+			 JBT 
+			 
+			   
+			   
+			 
+			 Intersegment Eliminations 
+			 
+			   
+			   
+			 
+			 Consolidated 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			 $ 
+			 1,504.8 
+			   
+			   
+			 $ 
+			 840.6 
+			   
+			   
+			 $ 
+			 322.7 
+			   
+			   
+			 $ 
+			 188.0 
+			   
+			   
+			 $ 
+			 205.4 
+			   
+			   
+			 $ 
+			 ( 5.0 
+			 ) 
+			   
+			 $ 
+			 3,056.5 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents, purchased transportation, and fuel 
+			 
+			   
+			   
+			 943.8 
+			   
+			   
+			   
+			 119.4 
+			   
+			   
+			   
+			 287.6 
+			   
+			   
+			   
+			 70.4 
+			   
+			   
+			   
+			 163.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 214.1 
+			   
+			   
+			   
+			 374.7 
+			   
+			   
+			   
+			 17.4 
+			   
+			   
+			   
+			 64.6 
+			   
+			   
+			   
+			 10.3 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 61.6 
+			   
+			   
+			   
+			 80.2 
+			   
+			   
+			   
+			 1.9 
+			   
+			   
+			   
+			 11.1 
+			   
+			   
+			   
+			 5.6 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 63.4 
+			   
+			   
+			   
+			 69.8 
+			   
+			   
+			   
+			 2.4 
+			   
+			   
+			   
+			 9.2 
+			   
+			   
+			   
+			 7.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 32.2 
+			   
+			   
+			   
+			 46.7 
+			   
+			   
+			   
+			 4.0 
+			   
+			   
+			   
+			 3.3 
+			   
+			   
+			   
+			 6.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 66.7 
+			   
+			   
+			   
+			 47.6 
+			   
+			   
+			   
+			 14.0 
+			   
+			   
+			   
+			 20.2 
+			   
+			   
+			   
+			 9.1 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Other segment items (2) 
+			 
+			   
+			   
+			 8.5 
+			   
+			   
+			   
+			 14.8 
+			   
+			   
+			   
+			 0.1 
+			   
+			   
+			   
+			 2.0 
+			   
+			   
+			   
+			 0.5 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 1,390.3 
+			   
+			   
+			   
+			 753.2 
+			   
+			   
+			   
+			 327.4 
+			   
+			   
+			   
+			 180.8 
+			   
+			   
+			   
+			 202.7 
+			   
+			   
+			   
+			 ( 4.9 
+			 ) 
+			   
+			   
+			 2,849.5 
+			   
+		 
+		 
+			 
+			 Operating Income/(Loss) (3) 
+			 
+			   
+			 $ 
+			 114.5 
+			   
+			   
+			 $ 
+			 87.4 
+			   
+			   
+			 $ 
+			 ( 4.7 
+			 ) 
+			   
+			 $ 
+			 7.2 
+			   
+			   
+			 $ 
+			 2.7 
+			   
+			   
+			 $ 
+			 ( 0.1 
+			 ) 
+			   
+			 $ 
+			 207.0 
+			   
+		 
+
+ 
+ 
+
+   
+
+   
+
+ 
+ 
+
+		 
+			   
+			   
+			 
+			 Revenues and Operating Income/(Loss) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 For The Three Months ended March 31, 2025 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 JBI 
+			 
+			   
+			   
+			 
+			 DCS 
+			 
+			   
+			   
+			 
+			 ICS 
+			 
+			   
+			   
+			 
+			 FMS 
+			 
+			   
+			   
+			 
+			 JBT 
+			 
+			   
+			   
+			 
+			 Intersegment Eliminations 
+			 
+			   
+			   
+			 
+			 Consolidated 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			 $ 
+			 1,469.3 
+			   
+			   
+			 $ 
+			 822.3 
+			   
+			   
+			 $ 
+			 268.0 
+			   
+			   
+			 $ 
+			 200.7 
+			   
+			   
+			 $ 
+			 166.6 
+			   
+			   
+			 $ 
+			 ( 5.5 
+			 ) 
+			   
+			 $ 
+			 2,921.4 
+			   
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents, purchased transportation, and fuel 
+			 
+			   
+			   
+			 927.0 
+			   
+			   
+			   
+			 109.2 
+			   
+			   
+			   
+			 229.0 
+			   
+			   
+			   
+			 71.9 
+			   
+			   
+			   
+			 121.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 219.0 
+			   
+			   
+			   
+			 371.4 
+			   
+			   
+			   
+			 16.8 
+			   
+			   
+			   
+			 70.6 
+			   
+			   
+			   
+			 10.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 60.6 
+			   
+			   
+			   
+			 79.8 
+			   
+			   
+			   
+			 2.0 
+			   
+			   
+			   
+			 11.3 
+			   
+			   
+			   
+			 8.7 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 62.2 
+			   
+			   
+			   
+			 70.4 
+			   
+			   
+			   
+			 1.5 
+			   
+			   
+			   
+			 10.1 
+			   
+			   
+			   
+			 6.8 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 28.7 
+			   
+			   
+			   
+			 44.0 
+			   
+			   
+			   
+			 4.6 
+			   
+			   
+			   
+			 6.3 
+			   
+			   
+			   
+			 5.6 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 69.2 
+			   
+			   
+			   
+			 52.6 
+			   
+			   
+			   
+			 16.6 
+			   
+			   
+			   
+			 23.7 
+			   
+			   
+			   
+			 11.3 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Other segment items (2) 
+			 
+			   
+			   
+			 8.2 
+			   
+			   
+			   
+			 14.6 
+			   
+			   
+			   
+			 0.2 
+			   
+			   
+			   
+			 2.1 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 1,374.9 
+			   
+			   
+			   
+			 742.0 
+			   
+			   
+			   
+			 270.7 
+			   
+			   
+			   
+			 196.0 
+			   
+			   
+			   
+			 164.6 
+			   
+			   
+			   
+			 ( 5.5 
+			 ) 
+			   
+			   
+			 2,742.7 
+			   
+		 
+		 
+			 
+			 Operating Income/(Loss) (3) 
+			 
+			   
+			 $ 
+			 94.4 
+			   
+			   
+			 $ 
+			 80.3 
+			   
+			   
+			 $ 
+			 ( 2.7 
+			 ) 
+			   
+			 $ 
+			 4.7 
+			   
+			   
+			 $ 
+			 2.0 
+			   
+			   
+			 $ 
+			 - 
+			   
+			   
+			 $ 
+			 178.7 
+			   
+		 
+
+ 
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 (1) 
+			 
+			 
+			 Net capital expenditures report the additions to property and equipment, net of proceeds from the sale of property and equipment. 
+			 
+		 
+
+ 
+
+ 
+
+		 
+			   
+			 
+			 (2) 
+			 
+			 
+			 Other segment items include communication, utilities, and operating taxes and licenses expense items. 
+			 
+		 
+
+ 
+
+ 
+
+		 
+			   
+			 
+			 (3) 
+			 
+			 
+			 Refer to the Condensed Consolidated Statements of Earnings for the reconciliation of consolidated operating income to earnings before income taxes. 
+			 
+		 
+
+ 
+
+   
+
+ 
+ 
+ 
+ 11 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+ 
+
+   
+
+ ITEM 2.           MANAGEMENT ’ S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND   RESULTS OF   OPERATIONS  
+
+   
+
+ You should refer to the attached interim Condensed Consolidated Financial Statements and related notes and also to our Annual Report (Form 10-K) for the year ended December 31, 2025, as you read the following discussion. We may make statements in this report that reflect our current expectation regarding future results of operations, performance, and achievements. These are “forward-looking” statements as defined in the Private Securities Litigation Reform Act of 1995 and are based on our belief or interpretation of information currently available. When we use words like “may,” “plan,” “contemplate,” “anticipate,” “believe,” “intend,” “continue,” “expect,” “project,” “goals,” “strategy,” “future,” “predict,” “seek,” “estimate,” “likely,” “could,” “should,” “would,” and similar expressions, you should consider them as identifying forward-looking statements, although we may use other phrasing. Forward-looking statements are inherently uncertain, subject to risks, and should be viewed with caution. These statements are based on our belief or interpretation of information currently available. Shareholders and prospective investors are cautioned that actual results and future events may differ materially from these forward-looking statements as a result of many factors. Some of the factors and events that are not within our control and that could have a material impact on future operating results include the following: general economic and business conditions; competition and competitive rate fluctuations; excess capacity in the intermodal or trucking industries; a loss of one or more major customers; cost and availability of diesel fuel; interference with or termination of our relationships with certain railroads; rail service delays; disruptions to U.S. port-of-call activity; ability to attract and retain qualified drivers, delivery personnel, independent contractors, and third-party carriers; retention of key employees; insurance costs and availability; litigation and claims expense; determination that independent contractors are employees; new or different environmental or other laws and regulations; volatile financial credit markets or interest rates; the impacts of recent or future changes in border or trade policies, including tariffs; terrorist attacks or actions; acts of war; political instability; adverse weather conditions; disruption or failure of information systems due to cybersecurity threats or other incidents; inability to keep pace with technological advances affecting our business and our information technology platforms; potential business or operational disruptions resulting from the effects of a national or international health pandemic; operational disruption or adverse effects of business acquisitions; increased costs for and availability of new revenue equipment; disruptions in the procurement of domestic or imported revenue equipment; decreases in the value of used equipment; and the ability of revenue equipment manufacturers to perform in accordance with agreements for guaranteed equipment trade-in values. Additionally, our business is somewhat seasonal with slightly higher freight volumes typically experienced during August through early November in our full-load transportation business. You should also refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2025, for additional information on risk factors and other events that are not within our control. Our future financial and operating results may fluctuate as a result of these and other risk factors or events as described from time to time in our filings with the SEC. We assume no obligation to update any forward-looking statement to the extent we become aware that it will not be achieved for any reason. 
+
+   
+
+ GENERAL 
+
+   
+
+ We are one of the largest surface transportation, delivery, and logistics companies in North America. We operate five distinct, but complementary, business segments and provide a wide range of reliable transportation, brokerage, and delivery services to a diverse group of customers and consumers throughout the continental United States, Canada, and Mexico. Our service offerings include transportation of full-truckload containerized freight, which we directly transport utilizing our company-controlled revenue equipment and company drivers, independent contractors, or third-party carriers. We have arrangements with most of the major North American rail carriers to transport freight in containers or trailers, while we perform the majority of the pickup and delivery services. We also provide customized freight movement, revenue equipment, labor, systems, and delivery services that are tailored to meet individual customers’ requirements and typically involve long-term contracts. These arrangements are generally referred to as dedicated services and may include multiple pickups and drops, freight handling, specialized equipment, and freight network design. In addition, we provide or arrange for local and home delivery services, generally referred to as last-mile delivery services, to customers through a network of cross-dock and other delivery system locations throughout the continental United States. Utilizing thousands of reliable third-party carriers, we also provide comprehensive freight transportation brokerage and logistics services. In addition to dry-van, full-load operations, we also arrange for these unrelated outside carriers to provide flatbed, refrigerated, less-than-truckload (LTL), and other specialized equipment, drivers, and services. Also, we utilize contracted power units to provide traditional over-the-road full truckload delivery services. Our customers, who include many Fortune 500 companies, have extremely diverse businesses. Many of them are served by J.B. Hunt 360°®, an online platform that offers shippers and carriers greater access, visibility and transparency of the supply chain. We account for our business on a calendar year basis, with our full year ending on December 31 and our quarterly reporting periods ending on March 31, June 30, and September 30. The operation of each of our five business segments is described in Note 9, Business Segments, in our Condensed Consolidated Financial Statements included in this Quarterly Report on Form 10-Q and in Note 13, Segment Information, of our Annual Report (Form 10-K) for the year ended December 31, 2025.          
+
+   
+
+ 
+ 
+ 
+ 12 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Critical Accounting Policies and Estimates 
+
+   
+
+ The preparation of our financial statements in conformity with U.S. GAAP requires us to make estimates and assumptions that impact the amounts reported in our Condensed Consolidated Financial Statements and accompanying notes. Therefore, the reported amounts of assets, liabilities, revenues, expenses, and associated disclosures of contingent liabilities are affected by these estimates. We evaluate these estimates on an ongoing basis, utilizing historical experience, consultation with experts, and other methods considered reasonable in particular circumstances. Nevertheless, actual results may differ significantly from our estimates. Any effects on our business, financial position, or results of operations resulting from revisions to these estimates are recognized in the accounting period in which the facts that give rise to the revision become known. 
+
+   
+
+ Information regarding our Critical Accounting Policies and Estimates can be found in our Annual Report (Form 10-K). The critical accounting policies that we believe require us to make more significant judgments and estimates when we prepare our financial statements include those relating to self-insurance accruals, revenue equipment, revenue recognition and income taxes. We have discussed the development and selection of these critical accounting policies and estimates with the Audit Committee of our Board of Directors. In addition, Note 2, Summary of Significant Accounting Policies, to the financial statements in our Annual Report (Form 10-K) for the year ended December 31, 2025, contains a summary of our critical accounting policies. There have been no material changes to the methodology we apply for critical accounting estimates as previously disclosed in our Annual Report on Form 10-K. 
+
+   
+
+ RESULTS OF OPERATIONS 
+
+   
+
+ Comparison of Three Months Ended March 31, 2026 to Three Months Ended March 31, 2025 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Summary of Operating Segment Results 
+
+			 For the Three Months Ended March 31, 
+
+			 (in millions) 
+			 
+			   
+		 
+		 
+			   
+			   
+			 Operating Revenues 
+			   
+			   
+			 Operating Income/(Loss) 
+			   
+		 
+		 
+			   
+			   
+			 2026 
+			   
+			   
+			 2025 
+			   
+			   
+			 2026 
+			   
+			   
+			 2025 
+			   
+		 
+		 
+			 
+			 JBI 
+			 
+			   
+			 $ 
+			 1,505 
+			   
+			   
+			 $ 
+			 1,469 
+			   
+			   
+			 $ 
+			 114.5 
+			   
+			   
+			 $ 
+			 94.4 
+			   
+		 
+		 
+			 
+			 DCS 
+			 
+			   
+			   
+			 841 
+			   
+			   
+			   
+			 822 
+			   
+			   
+			   
+			 87.4 
+			   
+			   
+			   
+			 80.3 
+			   
+		 
+		 
+			 
+			 ICS 
+			 
+			   
+			   
+			 323 
+			   
+			   
+			   
+			 268 
+			   
+			   
+			   
+			 (4.7 
+			 ) 
+			   
+			   
+			 (2.7 
+			 ) 
+		 
+		 
+			 
+			 FMS 
+			 
+			   
+			   
+			 188 
+			   
+			   
+			   
+			 201 
+			   
+			   
+			   
+			 7.2 
+			   
+			   
+			   
+			 4.7 
+			   
+		 
+		 
+			 
+			 JBT 
+			 
+			   
+			   
+			 205 
+			   
+			   
+			   
+			 167 
+			   
+			   
+			   
+			 2.7 
+			   
+			   
+			   
+			 2.0 
+			   
+		 
+		 
+			 
+			 Other (includes corporate) 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 (0.1 
+			 ) 
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Subtotal 
+			 
+			   
+			   
+			 3,062 
+			   
+			   
+			   
+			 2,927 
+			   
+			   
+			   
+			 207.0 
+			   
+			   
+			   
+			 178.7 
+			   
+		 
+		 
+			 
+			 Inter-Segment eliminations 
+			 
+			   
+			   
+			 (6 
+			 ) 
+			   
+			   
+			 (6 
+			 ) 
+			   
+			   
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			 $ 
+			 3,056 
+			   
+			   
+			 $ 
+			 2,921 
+			   
+			   
+			 $ 
+			 207.0 
+			   
+			   
+			 $ 
+			 178.7 
+			   
+		 
+
+ 
+
+   
+
+ Total consolidated operating revenues were $3.06 billion for the first quarter 2026, a 5% increase from $2.92 billion in the first quarter 2025. This increase was primarily the result of higher load volumes in JBI, JBT, and ICS, increased revenue per load in ICS and JBT, and improved productivity in DCS, when compared to the first quarter 2025. Total consolidated operating revenue excluding fuel surcharge revenue increased 3% compared to the first quarter 2025. 
+
+   
+
+ JBI segment revenue increased 2% to $1.50 billion during the first quarter 2026, compared with $1.47 billion in 2025. Load volumes during the first quarter 2026 increased 3% compared to the same period 2025, with gross revenue per load remaining relatively flat, which is determined by the combination of customer rates, fuel surcharges and freight mix. Eastern network loads increased 7% reflecting increased customer demand to convert over-the-road shipments to intermodal in that region, while transcontinental load volume remained flat compared to the first quarter 2025. Revenue per load excluding fuel surcharge revenue decreased 2% compared to the first quarter 2025. JBI segment operating income increased 21%, to $114.5 million in the first quarter 2026, from $94.4 million in 2025. The increase is primarily due to increased network efficiency, higher productivity in our drayage operations, and improvements associated with our overall cost management initiatives, partially offset by disruptions from severe winter weather and higher insurance premium and claims expense, when compared to the first quarter 2025. The current quarter ended with approximately 124,000 units of trailing capacity and 6,200 power units assigned to the dray fleet. 
+
+   
+
+ 
+ 
+ 
+ 13 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ DCS segment revenue increased 2% to $841 million in the first quarter 2026 from $822 million in 2025. The average number of revenue producing trucks was consistent with the first quarter 2025, while productivity, defined as revenue per truck per week, increased 2% when compared to the prior year period. Productivity excluding fuel surcharges increased 1%, primarily due to contractual index-based rate increases. DCS segment operating income increased 9% to $87.4 million in the first quarter 2026, from $80.3 million in 2025. The increase is primarily due to increased revenue, lower equipment-related costs, continued execution on the initiative to lower our cost to serve, and the maturing of new business onboarded over the past year, partially offset by increased personnel-related costs and higher insurance premium expense when compared to the first quarter 2025. 
+
+   
+
+ ICS segment revenue increased 20% to $323 million in the first quarter 2026, from $268 million in 2025. Overall volumes increased 10% compared to the first quarter 2025. Revenue per load increased 9%, primarily due to higher contractual and spot customer rates compared to first quarter 2025. Contractual business represented approximately 67% of total load volume and 66% of total revenue in the first quarter 2026, compared to 65% and 63%, respectively, in 2025. ICS segment operating loss was $4.7 million in the first quarter 2026, compared to an operating loss of $2.7 million in 2025. The decline in operating performance is primarily due to a 6% decrease in gross profit, driven by increased purchased transportation costs compared to the prior year period. Gross profit margin decreased to 12.0% in the first quarter 2026, compared to 15.3% in the first quarter 2025. Excluding purchased transportation expense, ICS operating expense decreased 1% compared to the first quarter 2025. 
+
+   
+
+ FMS segment revenue decreased 6% to $188 million in the first quarter 2026 from $201 million in 2025, primarily due to the impact of lost business and the effects of demand stabilization, marginally offset by the addition of multiple new customer contracts implemented over the past year and internal efforts to improve revenue quality across certain accounts. FMS segment operating income increased 53% to $7.2 million in the first quarter 2026 compared to $4.7 million in 2025. This increase was primarily due to improved revenue quality, decreased personnel-related costs, and decreased insurance claim expense compared to the first quarter of 2025. 
+
+   
+
+ JBT segment revenue totaled $205 million for the first quarter 2026, an increase of 23% from $167 million in first quarter 2025. Revenue excluding fuel surcharge revenue increased 23% primarily due to a 19% increase in load volume and a 3% increase in revenue per load excluding fuel surcharge revenue compared to first quarter 2025. Trailer turns in the first quarter 2026 increased 15% compared to first quarter 2025 due to increased asset utilization and improvements in network balance and velocity. JBT average effective trailer count increased to 12,515 in the first quarter 2026, compared to 12,096 in 2025. At the end of the first quarter 2026, the JBT power fleet consisted of 1,881 tractors, compared to 1,852 tractors in 2025. JBT segment operating income increased 33% to $2.7 million in 2026, compared with $2.0 million during first quarter 2025. This increase was primarily due to continued focus on cost management and productivity, reduced personnel-related expenses, and lower equipment-related expenses as a percentage of gross revenue, partially offset by an increase in purchased transportation costs. 
+
+   
+
+ 
+ 14 
+
+ 
+   
+ 
+
+   
+
+ Consolidated Operating Expenses 
+
+   
+
+ The following table sets forth items in our Condensed Consolidated Statements of Earnings as a percentage of operating revenues and the percentage increase or decrease of those items as compared with the prior period. 
+
+   
+
+ 
+
+		 
+			   
+			   
+			 
+			 Three Months Ended March 31, 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 Dollar Amounts as a 
+
+			 Percentage of Total 
+
+			 Operating Revenues 
+			 
+			   
+			   
+			 
+			 Percentage Change 
+
+			 of Dollar Amounts Between Quarters 
+			 
+			   
+		 
+		 
+			   
+			   
+			 
+			 2026 
+			 
+			   
+			   
+			 
+			 2025 
+			 
+			   
+			   
+			 
+			 2026 vs. 2025 
+			 
+			   
+		 
+		 
+			 
+			 Total operating revenues 
+			 
+			   
+			   
+			 100.0 
+			 % 
+			   
+			   
+			 100.0 
+			 % 
+			   
+			   
+			 4.6 
+			 % 
+		 
+		 
+			 
+			 Operating expenses: 
+			 
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+			   
+		 
+		 
+			 
+			 Rents and purchased transportation 
+			 
+			   
+			   
+			 46.0 
+			   
+			   
+			   
+			 44.3 
+			   
+			   
+			   
+			 8.6 
+			   
+		 
+		 
+			 
+			 Salaries, wages and employee benefits 
+			 
+			   
+			   
+			 25.7 
+			   
+			   
+			   
+			 27.4 
+			   
+			   
+			   
+			 (1.8 
+			 ) 
+		 
+		 
+			 
+			 Depreciation and amortization 
+			 
+			   
+			   
+			 5.9 
+			   
+			   
+			   
+			 6.1 
+			   
+			   
+			   
+			 - 
+			   
+		 
+		 
+			 
+			 Fuel and fuel taxes 
+			 
+			   
+			   
+			 5.7 
+			   
+			   
+			   
+			 5.5 
+			   
+			   
+			   
+			 9.5 
+			   
+		 
+		 
+			 
+			 Operating supplies and expenses 
+			 
+			   
+			   
+			 4.1 
+			   
+			   
+			   
+			 4.2 
+			   
+			   
+			   
+			 1.5 
+			   
+		 
+		 
+			 
+			 Insurance and claims 
+			 
+			   
+			   
+			 2.9 
+			   
+			   
+			   
+			 2.9 
+			   
+			   
+			   
+			 3.2 
+			   
+		 
+		 
+			 
+			 General and administrative expenses, net of asset dispositions 
+			 
+			   
+			   
+			 1.9 
+			   
+			   
+			   
+			 2.5 
+			   
+			   
+			   
+			 (15.2 
+			 ) 
+		 
+		 
+			 
+			 Operating taxes and licenses 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 6.0 
+			   
+		 
+		 
+			 
+			 Communication and utilities 
+			 
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 0.4 
+			   
+			   
+			   
+			 (2.9 
+			 ) 
+		 
+		 
+			 
+			 Total operating expenses 
+			 
+			   
+			   
+			 93.2 
+			   
+			   
+			   
+			 93.9 
+			   
+			   
+			   
+			 3.9 
+			   
+		 
+		 
+			 
+			 Operating income 
+			 
+			   
+			   
+			 6.8 
+			   
+			   
+			   
+			 6.1 
+			   
+			   
+			   
+			 15.9 
+			   
+		 
+		 
+			 
+			 Net interest expense 
+			 
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 0.6 
+			   
+			   
+			   
+			 (3.8 
+			 ) 
+		 
+		 
+			 
+			 Earnings before income taxes 
+			 
+			   
+			   
+			 6.2 
+			   
+			   
+			   
+			 5.5 
+			   
+			   
+			   
+			 18.2 
+			   
+		 
+		 
+			 
+			 Income taxes 
+			 
+			   
+			   
+			 1.6 
+			   
+			   
+			   
+			 1.5 
+			   
+			   
+			   
+			 12.4 
+			   
+		 
+		 
+			 
+			 Net earnings 
+			 
+			   
+			   
+			 4.6 
+			 % 
+			   
+			   
+			 4.0 
+			 % 
+			   
+			   
+			 20.2 
+			 % 
+		 
+
+ 
+
+   
+
+ Total operating expenses increased 3.9%, while operating revenues increased 4.6% during the first quarter 2026, from the comparable period 2025. Operating income increased to $207.0 million during the first quarter 2026 from $178.7 million in 2025. 
+
+   
+
+ Rents and purchased transportation costs increased 8.6% in the first quarter 2026. This increase was primarily the result of increased JBI, ICS and JBT load volume, which increased services provided by third-party rail and truck carriers as well as higher carrier purchased transportation rates within ICS and JBT, partially offset by the mix of third-party rail carriers and reduced empty repositioning within JBI during the first quarter 2026 compared to 2025. 
+
+   
+
+ Salaries, wages and employee benefits costs decreased 1.8% during the first quarter 2026, compared with 2025. This decrease was primarily due to a decrease in employee headcounts, partially offset by an increase in group medical benefit expenses and wage increases. 
+
+   
+
+ Depreciation and amortization expense remained flat in the first quarter 2026, primarily due to increased asset costs, offset by reductions in truck and tractor counts and the prior year increase in the expected useful lives of our trailer fleets. Fuel costs increased 9.5% in 2026, compared with 2025, due primarily to an increase in the price of fuel, partially offset by decreased road miles. 
+
+   
+
+ Operating supplies and expenses increased 1.5%, driven primarily by higher equipment maintenance costs, increased tire expense, and higher toll costs, partially offset by lower travel and entertainment expenses. Insurance and claims expense increased 3.2% in 2026 compared with 2025, primarily due to higher cost per claim and increased insurance policy premiums expense, partially offset by lower claim volume. General and administrative expenses decreased 15.2% for the current quarter from the comparable period in 2025, primarily due to decreased building and yard rental expense, lower technology costs, and a decrease in net loss from sale or disposal of assets. Net loss from sale or disposal of assets was $0.3 million in 2026, compared to $6.5 million in 2025. 
+
+   
+
+ 
+ 
+ 
+ 15 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ Net interest expense decreased 3.8% in 2026 due to a lower average debt balance and lower average interest rate compared to first quarter 2025. Income tax expense increased 12.4% in 2026, compared with 2025, primarily due to higher taxable earnings, partially offset by a lower effective income tax rate. Our effective income tax rate decreased to 25.2% for the first quarter 2026, compared with 26.5% for the first quarter 2025, due to discrete tax items. Our annual tax rate for 2026 is expected to be between 24.0% and 25.0%. In determining our quarterly provision for income taxes, we use an estimated annual effective tax rate, adjusted for discrete items. This rate is based on our expected annual income, statutory tax rates, best estimate of nontaxable and nondeductible items of income and expense, and the ultimate outcome of tax audits. 
+
+   
+
+ Liquidity and Capital Resources 
+
+   
+
+ Cash Flow 
+
+   
+
+ Net cash provided by operating activities totaled $353.0 million during the first quarter 2026, compared with $404.2 million for the same period 2025. Operating cash flows decreased primarily due to the timing of general working capital activities, partially offset by increased earnings. Net cash used in investing activities totaled $70.7 million in 2026, compared with $225.1 million in 2025. The decrease resulted primarily from a decrease in equipment purchases, net of proceeds from the sale of equipment, compared to the first quarter 2025. Net cash used in financing activities was $295.0 million in 2026, compared with $182.7 million in 2025. This increase resulted primarily from the retirement in March 2026 of our $700 million in senior notes partially offset by net proceeds from our senior credit facility and a decrease in treasury stock purchases. 
+
+   
+
+ Liquidity 
+
+   
+
+ Our need for capital has typically resulted from the acquisition of containers and chassis, trucks, tractors, and trailers required to support our growth and the replacement of older equipment as well as periodic business acquisitions and real estate transactions. We are frequently able to accelerate or postpone a portion of equipment replacements or other capital expenditures depending on market and overall economic conditions. In recent years, we have obtained capital through cash generated from operations, revolving lines of credit and long-term debt issuances. We have also periodically utilized operating leases to acquire revenue equipment. 
+
+   
+
+ We believe our liquid assets, cash generated from operations, and revolving line of credit will provide sufficient funds for our operating and capital requirements for the foreseeable future. At March 31, 2026, we were authorized to borrow through a revolving line of credit, which is supported by a credit agreement with a group of banks. The revolving line of credit authorizes us to borrow up to $1.0 billion under a five-year term expiring November 2030, and allows us to request an increase in the revolving line of credit total commitment by up to $400 million and to request two one-year extensions of the maturity date. In addition, the credit agreement authorizes us to borrow up to an additional $700 million through committed term loans during the six-month period beginning November 25, 2025, due November 2028, of which we exercised $475 million in February 2026. The applicable interest rates under this agreement are based on either the Secured Overnight Financing Rate (SOFR), or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At March 31, 2026, we had a combined $562.1 million outstanding balance under our senior credit facility, at an average interest rate of 4.66% and a cash balance of $4.6 million. 
+
+   
+
+ We continue to evaluate the possible effects of current economic conditions and reasonable and supportable economic forecasts on operational cash flows, including the risks of declines in the overall freight market and our customers' liquidity and ability to pay. We regularly monitor working capital and maintain frequent communication with our customers, suppliers and service providers. A large portion of our cost structure is variable. Purchased transportation expense represents more than half of our total costs and is heavily tied to load volumes. Our second largest cost item is salaries and wages, the largest portion of which is driver pay, which includes a large variable component. 
+
+   
+
+ Our financing arrangements require us to maintain certain covenants and financial ratios. At March 31, 2026, we were compliant with all covenants and financial ratios. 
+
+   
+
+ Our net capital expenditures were approximately $70.7 million during the first three months of 2026, compared with $225.1 million for the same period 2025. Our net capital expenditures include net additions to revenue equipment and non-revenue producing assets that are necessary to contribute to and support the future growth of our various business segments. Capital expenditures in the first quarter 2026 were primarily for tractors, trailing equipment and related enhancements, and real estate. We expect to spend in the range of $600 million to $800 million for net capital expenditures during the full calendar year 2026. We are currently committed to spend approximately $616.8 million, net of proceeds from sales or trade-ins, during the years 2026 and 2027. At March 31, 2026, our aggregate future minimum lease payments under operating lease obligations related primarily to the rental of maintenance and support facilities, cross-dock and delivery system facilities, office space, parking yards, and equipment totaled $265.1 million. 
+
+   
+
+ Off-Balance Sheet Arrangements 
+
+   
+
+ We had no off-balance sheet arrangements, other than our net purchase commitments of $616.8 million, as of March 31, 2026. 
+
+   
+
+ 
+ 16 
+
+ 
+   
+ 
+
+   
+
+ Risk Factors 
+
+   
+
+ You should refer to Part I, Item 1A of our Annual Report (Form 10-K) for the year ended December 31, 2025, under the caption “Risk Factors” for specific details on the following factors and events that are not within our control and could affect our financial results. 
+
+   
+
+ Risks Related to Our Industry 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our business can be significantly impacted by economic conditions, customer business cycles, government policies, and seasonal factors. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Extreme or unusual weather conditions can disrupt our operations, impact freight volumes, and increase our costs, all of which could have a material adverse effect on our business results. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our operations are subject to various environmental laws and regulations, including legislative and regulatory responses to climate change. Compliance with environmental requirements could result in significant expenditures and the violation of these regulations could result in substantial fines or penalties. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We depend on third parties in the operation of our business, particularly rail service providers, transportation equipment manufacturers, third party carriers and independent contractors. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Rapid changes in fuel costs could impact our periodic financial results. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Insurance and claims expenses could significantly reduce our earnings. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We operate in a regulated industry, and increased direct and indirect costs of compliance with, or liability for violation of, existing or future regulations could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Difficulty in attracting and retaining drivers and delivery personnel could affect our profitability and ability to grow. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We operate in a competitive and highly fragmented industry. Numerous factors could impair our ability to maintain our current profitability and to compete with other carriers and private fleets. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Our business can be significantly impacted by the effects of national or international health pandemics on general economic conditions and the operations of our customers and third-party suppliers and service providers. 
+			 
+		 
+
+ 
+
+   
+
+ Risks Related to Our Business 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We derive a significant portion of our revenue from a few major customers, the loss of one or more of which could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 A determination that independent contractors are employees could expose us to various liabilities and additional costs. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We may be subject to litigation claims that could result in significant expenditures. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 We rely significantly on our information technology systems, a disruption, failure or security breach of which could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 An inability to develop, adopt, and integrate new or enhanced technologies, including rapidly evolving artificial intelligence, could have a material adverse effect on our business. 
+			 
+		 
+
+ 
+
+   
+
+ 
+
+		 
+			   
+			 
+			 ● 
+			 
+			 
+			 Acquisitions or business combinations may disrupt or have a material adverse effect on our operations or earnings. 
+			 
+		 
+
+ 
+
+   
+
+   
+
+ 
+ 
+ 
+ 17 
+ 
+ 
+
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
+   
+
+ ITEM 3.           QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK 
+
+   
+
+ Interest rate risk can be quantified by measuring the financial impact of a near-term adverse increase in short-term interest rates on variable-rate debt outstanding. Our total long-term debt consists of both fixed and variable interest rate facilities. Our senior notes have a fixed interest rate of 4.90%. This fixed-rate facility reduces the impact of changes to market interest rates on future interest expense. Our senior credit facility has variable interest rates, which are based on either SOFR or a Base Rate, depending upon the specific type of borrowing, plus an applicable margin and other fees. At March 31, 2026, the average interest rate under our senior credit facility was 4.66%. Our earnings would be affected by changes in these short-term variable interest rates. At our current level of borrowing, a one-percentage-point increase in our applicable rate would reduce annual pretax earnings by $5.6 million. 
+
+   
+
+ Although we conduct business in foreign countries, foreign currency transaction gains and losses were not material to our results of operations for the three months ended March 31, 2026. Accordingly, we are not currently subject to material foreign currency exchange rate risks from the effects that exchange rate movements of foreign currencies would have on our future costs or on future cash flows we would receive from our foreign investment. As of March 31, 2026, we had no foreign currency forward exchange contracts or other derivative financial instruments to hedge the effects of adverse fluctuations in foreign currency exchange rates. 
+
+   
+
+ The price and availability of diesel fuel are subject to fluctuations due to changes in the level of global oil production, seasonality, weather, and other market factors. Historically, we have been able to recover a majority of fuel price increases from our customers in the form of fuel surcharges. We cannot predict the extent to which high fuel price levels may occur in the future or the extent to which fuel surcharges could be collected to offset such increases. As of March 31, 2026, we had no derivative financial instruments to reduce our exposure to fuel price fluctuations. 
+
+   
+
+ ITEM 4.           CONTROLS AND PROCEDURES 
+
+   
+
+ We maintain controls and procedures designed to ensure that the information we are required to disclose in the reports we file with the SEC is recorded, processed, summarized and reported, within the time periods specified in the SEC rules, and that such information is accumulated and communicated to our management, including our Chief Executive Officer and Chief Financial Officer, as appropriate, to allow timely decisions regarding required disclosure. As of the end of the period covered by this report, we carried out an evaluation, under the supervision and with the participation of our management, including our Chief Executive Officer and Chief Financial Officer, of the effectiveness of the design and operation of our disclosure controls and procedures (as defined in Rules 13a-15(e) and 15d-15(e) under the Securities Exchange Act of 1934, as amended). Based upon that evaluation, our Chief Executive Officer and Chief Financial Officer concluded that our disclosure controls and procedures were effective as of March 31, 2026. 
+
+   
+
+ There were no changes in our internal control over financial reporting during the first quarter 2026 that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 
+
+   
+
+ Part II. Other Information 
+
+   
+
+ ITEM 1.           LEGAL PROCEEDINGS 
+
+   
+
+ We are involved in certain claims and pending litigation arising from the normal conduct of business. Based on present knowledge of the facts and, in certain cases, opinions of outside counsel, we believe the resolution of these claims and pending litigation will not have a material adverse effect on our financial condition, results of operations or liquidity. 
+
+   
+
+ 
+ 18 
+
+ 
+   
+ 
+
+   
+
+ ITEM 1A.        RISK FACTORS 
+
+   
+
+ Information regarding risk factors appears in Part I, Item 2, Management’s Discussion and Analysis of Financial Condition and Results of Operations of this report on Form 10-Q and in Part I, Item 1A of our Annual Report on Form 10-K for the year ended December 31, 2025. 
+
+   
+
+ ITEM 2.           UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS 
+
+   
+
+ Purchases of Equity Securities 
+
+   
+
+ The following table summarizes purchases of our common stock during the three months ended March 31, 2026: 
+
+   
+
+ 
+
+		 
+			 
+			   
+
+			 Period 
+			 
+			   
+			 
+			 Number of Common Shares Purchased 
+			 
+			   
+			   
+			 
+			 Average Price Paid Per Common Share Purchased 
+			 
+			   
+			   
+			 
+			 Total Number of Shares 
+
+			 Purchased as 
+
+			 Part of a Publicly Announced Plan 
+
+			 (1) 
+			 
+			   
+			   
+			 
+			 Maximum 
+
+			 Dollar Amount 
+
+			 of Shares That 
+
+			 May Yet Be Purchased 
+
+			 Under the Plan 
+
+			 (in millions)  (1) 
+			 
+			   
+		 
+		 
+			 
+			 January 1 through January 31, 2026 
+			 
+			   
+			   
+			 - 
+			   
+			   
+			 $ 
+			 - 
+			   
+			   
+			   
+			 - 
+			   
+			   
+			 $ 
+			 968 
+			   
+		 
+		 
+			 
+			 February 1 through February 28, 2026 
+			 
+			   
+			   
+			 52,104 
+			   
+			   
+			   
+			 211.24 
+			   
+			   
+			   
+			 52,104 
+			   
+			   
+			   
+			 957 
+			   
+		 
+		 
+			 
+			 March 1 through March 31, 2026 
+			 
+			   
+			   
+			 330,825 
+			   
+			   
+			   
+			 208.74 
+			   
+			   
+			   
+			 330,825 
+			   
+			   
+			   
+			 888 
+			   
+		 
+		 
+			 
+			 Total 
+			 
+			   
+			   
+			 382,929 
+			   
+			   
+			 $ 
+			 209.08 
+			   
+			   
+			   
+			 382,929 
+			   
+			   
+			 $ 
+			 888 
+			   
+		 
+
+ 
+
+   
+
+ (1)         On October 22, 2025, our Board of Directors authorized the purchase of up to $1 billion of our common stock. This stock repurchase program has no expiration date. 
+
+   
+
+ ITEM 3.           DEFAULTS UPON SENIOR SECURITIES 
+
+   
+
+ Not applicable. 
+
+   
+
+ ITEM 4.           MINE SAFETY DISCLOSURES 
+
+   
+
+ Not applicable. 
+
+   
+
+   
+
+ 
+ ITEM 5.           OTHER INFORMATION 
+
+   
+
+ During the three months ended March 31, 2026,  none  of our directors or officers adopted or terminated a “Rule 10b5-1 trading arrangement” or “non-Rule 10b5-1 trading arrangement,” as each term is defined in Item 408(a) of Regulation S-K. 
+ 
+
+   
+
+   
+
+ ITEM 6.           EXHIBITS  
+
+   
+
+ Index to Exhibits 
+
+   
+
+ 
+ 19 
+
+ 
+   
+ 
+
+      
+
+ 
+
+		 
+			 
+			 Exhibit 
+
+			 Number 
+			 
+			   
+			 Exhibits 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.1 
+			   
+			 Amended and Restated Articles of Incorporation of J.B. Hunt Transport Services, Inc. dated May 19, 1988 (incorporated by reference from Exhibit 3.1 of the Company’s quarterly report on Form 10-Q for the period ended March 31, 2005, filed April 29, 2005) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.2 
+			   
+			 Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc. dated October 21, 2021 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 27, 2021) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.3 
+			   
+			 Amendment No. 1 to the Second Amended and Restated Bylaws J.B. Hunt Transport Services, Inc., dated July 20, 2022 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed July 26, 2022) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.4 
+			   
+			 Amendment No. 2 to the Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc., dated January 19, 2023 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed January 24, 2023) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 3.5 
+			   
+			 Amendment No. 3 to the Second Amended and Restated Bylaws of J.B. Hunt Transport Services, Inc., dated October 19, 2023 (incorporated by reference from Exhibit 3.1 of the Company’s current report on Form 8-K, filed October 24, 2023) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 22.1 
+			   
+			 List of Guarantor Subsidiaries of J.B. Hunt Transport Services, Inc. (incorporated by reference from Exhibit 22.1 of the Company’s annual report on Form 10-K for the year ended December 31, 2021, filed February 25, 2022) 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 31.1 
+			   
+			 Rule 13a-14(a)/15d-14(a) Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 31.2 
+			   
+			 Rule 13a-14(a)/15d-14(a) Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 32.1 
+			   
+			 Section 1350 Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 32.2 
+			   
+			 Section 1350 Certification 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.INS 
+			   
+			 Inline XBRL Instance Document - the instance document does not appear in the Interactive Data File because its XBRL tags are embedded within the Inline XBRL document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.SCH 
+			   
+			 Inline XBRL Taxonomy Extension Schema Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.CAL 
+			   
+			 Inline XBRL Taxonomy Extension Calculation Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.DEF 
+			   
+			 Inline XBRL Taxonomy Extension Definition Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.LAB 
+			   
+			 Inline XBRL Taxonomy Extension Label Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 101.PRE 
+			   
+			 Inline XBRL Taxonomy Extension Presentation Linkbase Document 
+		 
+		 
+			   
+			   
+			   
+		 
+		 
+			 104 
+			   
+			 Cover Page Interactive Data File (embedded within the Inline XBRL Document and include in Exhibit 101) 
+		 
+
+ 
+
+    
+
+ 
+ 20 
+
+ 
+   
+ 
+
+   
+
+ SIGNATURES 
+
+   
+
+   
+
+ Pursuant to the requirements of the Securities Exchange Act of 1934, the Registrant has duly caused this report to be signed on its behalf by the undersigned thereunto duly authorized, in the city of Lowell, Arkansas, on the 24th day of April 2026. 
+
+   
+
+ 
+
+		 
+			 
+			   
+			 
+			 
+			 J.B. HUNT TRANSPORT SERVICES, INC. 
+
+			 (Registrant) 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			 BY:  
+			 
+			 
+			 /s/  Shelley Simpson 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 Shelley Simpson 
+			 
+			 
+			   
+			 
+		 
+		 
+			 
+			   
+			 
+			 
+			   
+			 
+			 
+			 President and Chief Executive Officer 
+			 
+			 
+			   
+			 
+		 
+		 
+			   
+			   
+			 (Principal Executive Officer) 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			 BY: 
+			 /s/ A. Brad Delco 
+			   
+		 
+		 
+			   
+			   
+			 A. Brad Delco 
+			   
+		 
+		 
+			   
+			   
+			 Chief Financial Officer, 
+			   
+		 
+		 
+			   
+			   
+			 Executive Vice President 
+			   
+		 
+		 
+			   
+			   
+			 (Principal Financial Officer) 
+			   
+		 
+		 
+			   
+			   
+			   
+			   
+		 
+		 
+			   
+			 BY:  
+			 /s/ John Kuhlow 
+			   
+		 
+		 
+			   
+			   
+			 John Kuhlow 
+			   
+		 
+		 
+			   
+			   
+			 Chief Accounting Officer, 
+			   
+		 
+		 
+			   
+			   
+			 Senior Vice President 
+			   
+		 
+		 
+			   
+			   
+			 (Principal Accounting Officer) 
+			   
+		 
+
+ 
+
+   
+
+   
+
+ 
+ 
+ 
+ 21 
+ 
+ 
+ 
+
+
+ 

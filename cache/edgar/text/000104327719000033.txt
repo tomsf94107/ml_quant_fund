@@ -1,0 +1,2385 @@
+
+ 
+ 
+ 
+ 
+ 
+	 
+		 
+		 Document 
+	 
+	 
+ false --12-31 Q2 2019 0001043277 41131000 39175000 0 0.46 0.46 0.50 0.50 0.10 0.10 480000000 480000000 179400000 179423000 137284000 135731000 0 0 0.10 0.10 20000000 20000000 0 0 0 0 P5Y P5Y 42116000 43692000 
+		 
+			 0001043277 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2019-08-06 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-01-01 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2017-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CommonStockMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TreasuryStockMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccumulatedOtherComprehensiveIncomeMember 
+			 
+		 
+		 
+			 2019-03-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AdditionalPaidInCapitalMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RetainedEarningsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:AccountingStandardsUpdate201602Member 
+			 
+		 
+		 
+			 2019-01-01 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CustomerContractsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CustomerContractsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:NoncompeteAgreementsMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:NoncompeteAgreementsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:TrademarksMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:FairValueInputsLevel3Member 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeriesANotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeriesCNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:ReceivablesSecuritizationFacilityMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:ReceivablesSecuritizationFacilityMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeriesCNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeriesBNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeriesANotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeriesBNotesMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeniorNotesDue2028Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:RevolvingCreditFacilityMember 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeniorNotesDue2028Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 srt:MaximumMember 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 srt:MinimumMember 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:NotePurchaseAgreementMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeniorNotesDue2028Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-04-09 
+			 2018-04-09 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeniorNotesDue2028Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2018-04-09 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SeniorUnsecuredRevolvingCreditFacility2019TermLoanMember 
+				 us-gaap:LineOfCreditMember 
+			 
+		 
+		 
+			 2018-09-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:FederalFundsEffectiveSwapRateMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:NotePurchaseAgreementMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:UnsecuredDebtMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:NotePurchaseAgreementMember 
+				 us-gaap:SeniorNotesMember 
+			 
+		 
+		 
+			 2013-08-27 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:WellsFargoBankNAAndBankOfAmericaNAMember 
+				 chrw:ReceivablesSecuritizationFacilityMember 
+				 us-gaap:SecuredDebtMember 
+			 
+		 
+		 
+			 2018-12-17 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:AmendedCreditAgreementDue2023Member 
+				 us-gaap:LineOfCreditMember 
+				 us-gaap:LondonInterbankOfferedRateLIBORMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:StockCompensationPlanMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:StockAwardsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:StockAwardsMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:StockCompensationPlanMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:StockCompensationPlanMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:EmployeeStockOptionMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:StockAwardsMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:StockCompensationPlanMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:StockAwardsMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 srt:MinimumMember 
+				 chrw:FullValueAwardsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:FullValueAwardsMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 srt:MaximumMember 
+				 chrw:FullValueAwardsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:StockOptionMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+		 
+		 
+			 2019-05-09 
+			 2019-05-09 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:StockOptionMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:FullValueAwardsMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:DemaServiceS.pAMember 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-05-22 
+			 2019-05-22 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:DemaServiceS.pAMember 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-05-22 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:DemaServiceS.pAMember 
+			 
+		 
+		 
+			 2019-05-22 
+			 2019-05-22 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TheSpaceCargoGroupMember 
+			 
+		 
+		 
+			 2019-02-28 
+			 2019-02-28 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TheSpaceCargoGroupMember 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-02-28 
+			 2019-02-28 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TheSpaceCargoGroupMember 
+				 us-gaap:CustomerRelationshipsMember 
+			 
+		 
+		 
+			 2019-02-28 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-01-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-01-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:SourcingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:GlobalForwardingMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:TransportationCustomersFreightMember 
+				 chrw:GlobalForwardingMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:TransportationCustomersFreightMember 
+				 us-gaap:TransferredOverTimeMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 us-gaap:CorporateAndOtherMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+			 
+		 
+		 
+			 2018-04-01 
+			 2018-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 us-gaap:OperatingSegmentsMember 
+				 chrw:SourcingMember 
+				 chrw:NorthAmericanServiceTransportationNASTMember 
+				 us-gaap:TransferredAtPointInTimeMember 
+			 
+		 
+		 
+			 2019-04-01 
+			 2019-06-30 
+		 
+	 
+		 
+			 0001043277 
+			 
+				 chrw:OfficeSpaceChicagoIllinoisMember 
+			 
+		 
+		 
+			 2018-12-31 
+		 
+	 
+		 chrw:employee 
+	 
+		 xbrli:shares 
+	 
+		 
+			 
+				 iso4217:USD 
+			 
+			 
+				 xbrli:shares 
+			 
+		 
+	 
+		 chrw:segment 
+	 
+		 iso4217:USD 
+	 
+		 xbrli:pure 
+	 Table of Contents     UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549 FORM  10-Q   ☒ QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the Quarterly Period Ended  June 30, 2019   ☐ TRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the Transition Period From         to         Commission File Number:  000-23189   C.H. ROBINSON WORLDWIDE, INC. (Exact name of registrant as specified in its charter)   Delaware   41-1883630     (State or other jurisdiction of incorporation or organization)   (I.R.S. Employer Identification No.)   14701 Charlson Road   Eden Prairie ,  MN   55347   (Address of principal executive officers, including zip code)  952 - 937-8500   Registrant’s telephone number, including area code Securities registered pursuant to Section 12(b) of the Act: Title of each class Trading Symbol(s) Name of each exchange on which registered Common Stock, $0.10 par value CHRW Nasdaq Global Select Market Indicate by check mark whether the registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the registrant was required to file such reports) and (2) has been subject to such filing requirements for the past 90 days.     Yes    ☒     No   ☐ Indicate by check mark whether the registrant has submitted electronically every Interactive Date File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the registrant was required to submit such files).     Yes    ☒     No   ☐ Indicate by check mark whether the registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, or a smaller reporting company. See definitions of “large accelerated filer,” “accelerated filer,” “smaller reporting company,” and "emerging growth company" in Rule 12b-2 of the Exchange Act.  Large accelerated filer ☒   Accelerated filer ☐   Emerging Growth Company ☐                 Non-accelerated filer ☐   Smaller reporting company ☐       If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act.  ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act).    Yes   ☐     No   ☒ As of  August 6, 2019 , the number of shares outstanding of the registrant’s Common Stock, par value $0.10 per share, was  135,377,884 . Table of Contents C.H. ROBINSON WORLDWIDE, INC. TABLE OF CONTENTS           PART I. Financial Information         Item 1. Financial Statements (Unaudited) 3   Condensed Consolidated Balance Sheets as of June 30, 2019, and December 31, 2018 3   Condensed Consolidated Statements of Operations and Comprehensive Income for the Three and Six Months Ended June 30, 2019 and 2018 4   Consolidated Statements of Stockholders' Investment for the Three and Six Months Ended June 30, 2019 and 2018 5   Condensed Consolidated Statements of Cash Flows for the Six Months Ended June 30, 2019 and 2018 6   Notes to Condensed Consolidated Financial Statements 7 Item 2. Management's Discussion and Analysis of Financial Condition and Results of Operations 19 Item 3. Quantitative and Qualitative Disclosures About Market Risk 29 Item 4. Controls and Procedures 29         PART II. Other Information         Item 1. Legal Proceedings 30 Item 1A. Risk Factors 30 Item 2. Unregistered Sales of Equity Securities and Use of Proceeds 30 Item 3. Defaults on Senior Securities 30 Item 4. Mine Safety Disclosures 30 Item 5. Other Information 31 Item 6.  Exhibits 31 2 Table of Contents PART I - FINANCIAL INFORMATION ITEM 1. FINANCIAL STATEMENTS C.H. ROBINSON WORLDWIDE, INC. Condensed Consolidated Balance Sheets (In thousands, except per share data)     June 30, 2019   December 31, 2018 ASSETS (unaudited)     Current assets:       Cash and cash equivalents $ 355,307   $ 378,615 Receivables, net of allowance for doubtful accounts of $39,175 and $41,131 2,100,246   2,162,438 Contract assets 179,015   159,635 Prepaid expenses and other 72,005   52,386 Total current assets 2,706,573   2,753,074 Property and equipment, net 222,390   228,301 Goodwill 1,291,715   1,258,922 Other intangible assets, net 110,869   108,822 Right-of-use lease assets 262,355   — Deferred tax assets 12,957   9,993 Other assets 77,250   68,300 Total assets $ 4,684,109   $ 4,427,412         LIABILITIES AND STOCKHOLDERS’ INVESTMENT       Current liabilities:       Accounts payable $ 1,064,432   $ 971,023 Outstanding checks 58,213   92,084 Accrued expenses:       Compensation 92,676   153,626 Transportation expense 138,970   119,820 Income taxes 25,309   28,360 Other accrued liabilities 61,948   63,410 Current lease liabilities 54,792   — Current portion of debt —   5,000 Total current liabilities 1,496,340   1,433,323         Long-term debt 1,253,849   1,341,352 Noncurrent lease liabilities 215,830   — Noncurrent income taxes payable 22,063   21,463 Deferred tax liabilities 36,344   35,757 Other long-term liabilities 372   430 Total liabilities 3,024,798   2,832,325 Stockholders’ investment:       Preferred stock, $0.10 par value, 20,000 shares authorized; no shares issued or outstanding —   — Common stock, $0.10 par value, 480,000 shares authorized; 179,423 and 179,400 shares issued, 135,731 and 137,284 outstanding 13,573   13,728 Additional paid-in capital 541,090   521,486 Retained earnings 4,037,610   3,845,593 Accumulated other comprehensive loss ( 72,326 )   ( 71,935 ) Treasury stock at cost (43,692 and 42,116 shares) ( 2,860,636 )   ( 2,713,785 ) Total stockholders’ investment 1,659,311   1,595,087 Total liabilities and stockholders’ investment $ 4,684,109   $ 4,427,412 See accompanying notes to the condensed consolidated financial statements. 3 Table of Contents C.H. ROBINSON WORLDWIDE, INC. Condensed Consolidated Statements of Operations and Comprehensive Income  (unaudited, in thousands except per share data)     Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Revenues:               Transportation $ 3,638,612   $ 3,953,139   $ 7,143,544   $ 7,590,779 Sourcing 270,228   322,898   516,506   610,585 Total revenues 3,908,840   4,276,037   7,660,050   8,201,364 Costs and expenses:             Purchased transportation and related services 2,972,998   3,313,196   5,826,254   6,354,798 Purchased products sourced for resale 240,626   291,358   459,780   549,158 Personnel expenses 338,886   340,630   678,984   668,927 Other selling, general, and administrative expenses 128,795   111,845   242,947   217,888 Total costs and expenses 3,681,305   4,057,029   7,207,965   7,790,771 Income from operations 227,535   219,008   452,085   410,593 Interest and other expense ( 6,615 )   ( 5,128 )   ( 23,755 )   ( 15,828 ) Income before provision for income taxes 220,920   213,880   428,330   394,765 Provision for income taxes 51,740   54,717   97,362   93,305 Net income 169,180 159,163   330,968   301,460 Other comprehensive loss ( 5,688 )   ( 27,512 )   ( 391 )   ( 28,077 ) Comprehensive income $ 163,492   $ 131,651   $ 330,577   $ 273,383                 Basic net income per share $ 1.23   $ 1.14   $ 2.41   $ 2.16 Diluted net income per share $ 1.22   $ 1.13   $ 2.39   $ 2.14                 Basic weighted average shares outstanding 137,185   139,464   137,518   139,745 Dilutive effect of outstanding stock awards 1,071   1,147   1,149   1,215 Diluted weighted average shares outstanding 138,256   140,611   138,667   140,960 See accompanying notes to the condensed consolidated financial statements. 4 Table of Contents C.H. ROBINSON WORLDWIDE, INC. Consolidated Statements of Stockholders’ Investment (unaudited, in thousands, except per share data)   Common Shares Outstanding   Amount   Additional Paid-in Capital   Retained Earnings   Accumulated Other Comprehensive Income (Loss)   Treasury Stock   Total Stockholders’ Investment Balance December 31, 2018 137,284   $ 13,728   $ 521,486   $ 3,845,593   $ ( 71,935 )   $ ( 2,713,785 )   $ 1,595,087 Net income             161,788           161,788 Foreign currency translation                 5,297       5,297 Dividends declared, $0.50 per share             ( 69,683 )           ( 69,683 ) Stock issued for employee benefit plans 342   34   ( 11,520 )           19,059   7,573 Issuance of restricted stock, net of forfeitures ( 3 )   —   —               — Stock-based compensation expense —   —   17,123           —   17,123 Repurchase of common stock ( 734 )   ( 73 )               ( 64,551 )   ( 64,624 ) Balance March 31, 2019 136,889   13,689   527,089   3,937,698   ( 66,638 )   ( 2,759,277 )   1,652,561 Net income             169,180           169,180 Foreign currency translation                 ( 5,688 )       ( 5,688 ) Dividends declared, $0.50 per share             ( 69,268 )           ( 69,268 ) Stock issued for employee benefit plans 129   13   ( 681 )           8,367   7,699 Issuance of restricted stock, net of forfeitures 23   2   ( 2 )               — Stock-based compensation expense —   —   14,684           —   14,684 Repurchase of common stock ( 1,310 )   ( 131 )               ( 109,726 )   ( 109,857 ) Balance June 30, 2019 135,731   $ 13,573   $ 541,090   $ 4,037,610   $ ( 72,326 )   $ ( 2,860,636 )   $ 1,659,311   Common Shares Outstanding   Amount   Additional Paid-in Capital   Retained Earnings   Accumulated Other Comprehensive Loss   Treasury Stock   Total Stockholders’ Investment Balance December 31, 2017 139,542   $ 13,954   $ 444,280   $ 3,437,093   $ ( 18,460 )   $ ( 2,451,122 )   $ 1,425,745 Net income             142,297           142,297 Cumulative effect change - revenue recognition             9,239           9,239 Foreign currency translation                 ( 565 )       ( 565 ) Dividends declared, $0.46 per share             ( 65,384 )           ( 65,384 ) Stock issued for employee benefit plans 370   37   ( 10,441 )           16,810   6,406 Issuance of restricted stock, net of forfeitures ( 2 )   —   —               — Stock-based compensation expense —   —   18,127           7   18,134 Repurchase of common stock ( 557 )   ( 56 )               ( 51,144 )   ( 51,200 ) Balance March 31, 2018 139,353   13,935   451,966   3,523,245   ( 19,025 )   ( 2,485,449 )   1,484,672 Net income             159,163           159,163 Foreign currency translation                 ( 27,512 )       ( 27,512 ) Dividends declared, $0.46 per share             ( 65,084 )           ( 65,084 ) Stock issued for employee benefit plans 174   17   ( 85 )           10,615   10,547 Issuance of restricted stock, net of forfeitures 1   —   —               — Stock-based compensation expense —   —   26,570           —   26,570 Repurchase of common stock ( 784 )   ( 78 )               ( 70,119 )   ( 70,197 ) Balance June 30, 2018 138,744   $ 13,874   $ 478,451   $ 3,617,324   $ ( 46,537 )   $ ( 2,544,953 )   $ 1,518,159 See accompanying notes to the condensed consolidated financial statements. 5 Table of Contents C.H. ROBINSON WORLDWIDE, INC. Condensed Consolidated Statements of Cash Flows (in thousands, unaudited)     Six Months Ended June 30,   2019   2018 OPERATING ACTIVITIES       Net income $ 330,968   $ 301,460 Adjustments to reconcile net income to net cash provided by operating activities:       Depreciation and amortization 49,642   48,479 Provision for doubtful accounts 3,224   9,055 Stock-based compensation 31,807   44,704 Deferred income taxes ( 5,322 )   ( 9,014 ) Excess tax benefit on stock-based compensation ( 5,353 )   ( 7,502 ) Other operating activities 961   668 Changes in operating elements (net of acquisitions):       Receivables 89,175   ( 214,620 ) Contract assets ( 19,380 )   ( 34,483 ) Prepaid expenses and other ( 16,404 )   5,326 Accounts payable and outstanding checks 37,378   101,770 Accrued compensation ( 60,976 )   ( 7,381 ) Accrued transportation expense 19,149   45,420 Accrued income taxes ( 3,051 )   12,068 Other accrued liabilities 4,166   9,277 Other assets and liabilities 542   3,243 Net cash provided by operating activities 456,526   308,470         INVESTING ACTIVITIES       Purchases of property and equipment ( 16,774 )   ( 20,569 ) Purchases and development of software ( 14,790 )   ( 9,514 ) Acquisitions, net of cash acquired ( 58,379 )   ( 1,315 ) Other investing activities 8   ( 1,546 ) Net cash used for investing activities ( 89,935 )   ( 32,944 )         FINANCING ACTIVITIES       Proceeds from stock issued for employee benefit plans 27,952   35,846 Stock tendered for payment of withholding taxes ( 12,680 )   ( 18,893 ) Repurchase of common stock ( 173,622 )   ( 119,497 ) Cash dividends ( 139,010 )   ( 130,559 ) Proceeds from long-term borrowings 473,000   591,012 Payments on long-term borrowings ( 561,000 )   — Proceeds from short-term borrowings 14,000   2,418,000 Payments on short-term borrowings ( 19,000 )   ( 3,067,000 ) Net cash used for financing activities ( 390,360 )   ( 291,091 )         Effect of exchange rates on cash 461   ( 7,750 ) Net change in cash and cash equivalents ( 23,308 )   ( 23,315 ) Cash and cash equivalents, beginning of period 378,615   333,890 Cash and cash equivalents, end of period $ 355,307   $ 310,575         Noncash transactions from financing activities:       Accrued share repurchases held in other accrued liabilities $ 3,860   $ 2,400 See accompanying notes to the condensed consolidated financial statements. 6 Table of Contents C.H. ROBINSON WORLDWIDE, INC. NOTES TO CONDENSED CONSOLIDATED FINANCIAL STATEMENTS NOTE 1.   BASIS OF PRESENTATION C.H. Robinson Worldwide, Inc., and our subsidiaries (“the company,” “we,” “us,” or “our”) are a global provider of transportation services and logistics solutions operating through a network of offices located in North America, Europe, Asia, Oceania, and South America. The consolidated financial statements include the accounts of C.H. Robinson Worldwide, Inc., and our majority owned and controlled subsidiaries. Our minority interests in subsidiaries are not significant. All intercompany transactions and balances have been eliminated in the consolidated financial statements.  On January 1, 2019, we reorganized our enterprise transportation services structure to combine our North American Surface Transportation (“NAST”) and Robinson Fresh transportation networks. The newly combined transportation network will be managed by and reported under the NAST reportable segment. Our reportable segments are NAST and Global Forwarding with all other segments included in All Other and Corporate. We have determined that the remaining Robinson Fresh segment no longer meets the requirements of a reportable segment. Robinson Fresh will be included in the All Other and Corporate reportable segment with Managed Services, Other Surface Transportation outside of North America, and other miscellaneous revenues and unallocated corporate expenses. Prior period information has been reclassified to conform with this presentation. For financial information concerning our reportable segments, refer to Note 9,  Segment Reporting .  The condensed consolidated financial statements, which are unaudited, have been prepared pursuant to the rules and regulations of the Securities and Exchange Commission (“SEC”). In our opinion, these financial statements include all adjustments (consisting only of normal recurring adjustments) necessary for a fair presentation of the financial statements for the interim periods presented. Interim results are not necessarily indicative of results for a full year. Consistent with SEC rules and regulations, we have condensed or omitted certain information and footnote disclosures normally included in annual financial statements prepared in accordance with accounting principles generally accepted in the United States. You should read the condensed consolidated financial statements and related notes in conjunction with the consolidated financial statements and notes in our Annual Report on Form 10-K for the year ended December 31, 2018. RECENTLY ADOPTED ACCOUNTING STANDARDS  In February 2016, the Financial Accounting Standards Board (“FASB”) issued ASU 2016-02,  Leases   (Topic 842) . This update requires a lessee to recognize on the balance sheet a liability to make lease payments and a corresponding right-of-use lease asset. The guidance also requires certain qualitative and quantitative disclosures about the amount, timing, and uncertainty of cash flows arising from leases. In July 2018, the FASB issued ASU 2018-11,  Leases (Topic 842) : Targeted Improvements, which provides another transition method no longer requiring application to previously reported periods. Therefore, prior period balances will not be restated. We adopted Topic 842 during the first quarter of 2019 by recognizing right-of-use lease assets and lease liabilities of approximately  $ 265.4  million  and  $ 273.3  million , respectively, on January 1, 2019. The adoption of this standard did not have a significant impact on our consolidated results of operations or consolidated statements of cash flows. Refer to Note 11,  Leases , for further information.  In February 2018, the FASB issued ASU 2018-02,  Reclassification of Certain Tax Effects From Accumulated Other Comprehensive Income , which amends existing guidance for reporting comprehensive income to reflect changes resulting from the Tax Cuts and Jobs Act of 2017 (“Tax Act”). The amendment provides the option to reclassify stranded tax effects resulting from the Tax Act within accumulated other comprehensive income (“AOCI”) to retained earnings. This amendment became effective for us on January 1, 2019. The adoption of this standard did not have a material impact on our consolidated financial statements and disclosures. RECENTLY ISSUED ACCOUNTING STANDARDS In June 2016, the FASB issued ASU 2016-13,  Financial Instruments - Credit Losses (Topic 326): Measurement of Credit Losses on Financial Instruments , and in November 2018 issued a subsequent amendment, ASU 2018-19,  Codification Improvements to Topic 326, Financial Instruments - Credit Losses . This update significantly changes how entities will measure credit losses for most financial assets and certain other instruments that are not measured at fair value through net income. The update will replace today’s “incurred loss” approach with an “expected loss” model for instruments measured at amortized cost. ASU 2018-19 will affect loans, debt securities, trade receivables, net investments in leases, off balance sheet credit exposures, reinsurance receivables, and any other financial assets not excluded from the scope of this amendment that have the contractual right to receive cash. This update is effective for fiscal years and interim periods beginning after December 15, 2019, and is effective for our fiscal year beginning January 1, 2020. We are evaluating the impact of the new standard on our consolidated financial position, results of operations, and cash flows. 7 Table of Contents SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES Note 1 of the Notes to Consolidated Financial Statements in our Annual Report on Form 10-K for the year ended  December 31, 2018 , includes a summary of the significant accounting policies and methods used in the preparation of our consolidated financial statements. We have expanded these policies below to effect the adoption of Accounting Standards Codification (“ASC”) 842 in the first quarter of 2019.  RIGHT-OF-USE LEASE ASSETS.  Right-of-use lease assets are recognized upon lease commencement and represent our right to use an underlying asset for the lease term.  LEASE LIABILITIES.  Lease liabilities are recognized at commencement date and represent our obligation to make the lease payments arising from a lease, measured on a discounted basis.   NOTE 2.  GOODWILL AND OTHER INTANGIBLE ASSETS The change in carrying amount of goodwill is as follows (in thousands):   NAST   Global Forwarding   All Other and Corporate   Total Balance December 31, 2018 (1) $ 1,016,784   $ 182,029   $ 60,109   $ 1,258,922 Acquisitions —   24,636   7,771   32,407 Translation ( 685 )   962   109   386 Balance June 30, 2019 $ 1,016,099   $ 207,627   $ 67,989   $ 1,291,715 ____________________________________________ (1)  Amounts have been reclassified related to the reorganization of the NAST and Robinson Fresh transportation networks discussed in Note 9,  Segment Reporting . Goodwill is tested at least annually for impairment on November 30, or more frequently if events or changes in circumstances indicate that the asset might be impaired. We first perform a qualitative assessment to determine whether it is more likely than not that the fair value of our reporting units is less than their respective carrying value (“Step Zero Analysis”). If the Step Zero Analysis indicates it is more likely than not that the fair value of our reporting units is less than their respective carrying value, an additional impairment assessment is performed (“Step One Analysis”).  As a result of the segment reorganization discussed in Note 9,  Segment Reporting , we determined the fair value of each of our reporting units to further support our qualitative assessment and determined the more likely than not criteria had not been met, and therefore a Step One Analysis was not required as of  June 30, 2019 .  Identifiable intangible assets consisted of the following (in thousands):   June 30, 2019   December 31, 2018   Cost   Accumulated Amortization   Net   Cost   Accumulated Amortization   Net Finite-lived intangibles                       Customer relationships $ 275,243   $ ( 174,879 )   $ 100,364   $ 254,293   $ ( 156,006 )   $ 98,287 Non-competition agreements 300   ( 270 )   30   300   ( 240 )   60 Total finite-lived intangibles 275,543   ( 175,149 )   100,394   254,593   ( 156,246 )   98,347 Indefinite-lived intangibles                       Trademarks 10,475   —   10,475   10,475   —   10,475 Total intangibles $ 286,018   $ ( 175,149 )   $ 110,869   $ 265,068   $ ( 156,246 )   $ 108,822 8 Table of Contents Amortization expense for other intangible assets is as follows (in thousands):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Amortization expense $ 9,675   $ 9,196   $ 18,968   $ 18,595 Definite-lived intangible assets, by reportable segment, as of  June 30, 2019 , will be amortized over their remaining lives as follows (in thousands):   NAST   Global Forwarding   All Other and Corporate   Total Remainder of 2019 $ 3,907   $ 15,040   $ 310   $ 19,257 2020 250   28,071   620   28,941 2021 250   14,551   620   15,421 2022 250   14,551   620   15,421 2023 250   11,938   620   12,808 Thereafter 164   6,884   1,498   8,546 Total             $ 100,394 NOTE 3.  FAIR VALUE MEASUREMENT Accounting guidance on fair value measurements for certain financial assets and liabilities requires that assets and liabilities carried at fair value be classified and disclosed in one of the following three categories: • Level 1 — Quoted market prices in active markets for identical assets or liabilities. • Level 2 — Observable market-based inputs or unobservable inputs that are corroborated by market data. • Level 3 — Unobservable inputs reflecting the reporting entity’s own assumptions or external inputs from inactive markets. A financial asset or liability’s classification within the hierarchy is determined based on the lowest level of input that is significant to the fair value measurement. We had  no  Level 3 assets or liabilities as of and during the periods ended  June 30, 2019 , and  December 31, 2018 . There were no transfers between levels during the period.   9 Table of Contents NOTE 4.  FINANCING ARRANGEMENTS The components of our short-term and long-term debt and the associated interest rates were as follows (dollars in thousands):     Average interest rate as of       Carrying value as of     June 30, 2019   December 31, 2018   Maturity   June 30, 2019   December 31, 2018 Revolving credit facility   — %   3.64 %   October 2023   $ —   $ 5,000 Senior Notes, Series A   3.97 %   3.97 %   August 2023   175,000   175,000 Senior Notes, Series B   4.26 %   4.26 %   August 2028   150,000   150,000 Senior Notes, Series C   4.60 %   4.60 %   August 2033   175,000   175,000 Receivables securitization facility  (1)   3.05 %   3.15 %   December 2020   161,823   249,744 Senior Notes  (1)   4.20 %   4.20 %   April 2028   592,026   591,608 Total debt               1,253,849   1,346,352 Less: Current maturities and short-term borrowing               —   ( 5,000 ) Long-term debt               $ 1,253,849   $ 1,341,352 ____________________________________________ (1)  Net of unamortized discounts and issuance costs. SENIOR UNSECURED REVOLVING CREDIT FACILITY We have a senior unsecured revolving credit facility (the "Credit Agreement"). On October 24, 2018, the Credit Agreement was amended to increase the total availability from  $ 900  million  to  $ 1  billion  and extend the maturity date from December 31, 2019, to October 24, 2023. Borrowings under the Credit Agreement generally bear interest at a variable rate determined by a pricing schedule or the base rate (which is the highest of (a) the administrative agent's prime rate, (b) the federal funds rate plus  0.50  percent , or (c) the sum of one-month LIBOR plus a specified margin). As of  June 30, 2019 , the variable rate equaled LIBOR plus  1.13  percent . In addition, there is a commitment fee on the average daily undrawn stated amount under each letter of credit issued under the facility ranging from  0.075  percent  to  0.200  percent . The recorded amount of borrowings outstanding approximates fair value because of the short maturity period of the debt; therefore, we consider these borrowings to be a Level 2 financial liability.  The Credit Agreement contains various restrictions and covenants that require us to maintain certain financial ratios, including a maximum leverage ratio of  3.50  to  1.00 . The Credit Agreement also contains customary events of default. If an event of default under the Credit Agreement occurs and is continuing, then the administrative agent may declare any outstanding obligations under the Credit Agreement to be immediately due and payable. In addition, if we become the subject of voluntary or involuntary proceedings under any bankruptcy, insolvency, or similar law, then any outstanding obligations under the Credit Agreement will automatically become immediately due and payable.  NOTE PURCHASE AGREEMENT On August 23, 2013, we entered into a Note Purchase Agreement with certain institutional investors (the “Purchasers”). On August 27, 2013, the Purchasers purchased an aggregate principal amount of  $ 500  million  of our Senior Notes, Series A, Senior Notes Series B, and Senior Notes Series C, collectively (the “Notes”). Interest on the Notes is payable semi-annually in arrears. The fair value of the Notes approximated  $ 527.7  million  at  June 30, 2019 . We estimate the fair value of the Notes primarily using an expected present value technique, which is based on observable market inputs using interest rates currently available to companies of similar credit standing for similar terms and remaining maturities, and considering our own risk. If the Notes were recorded at fair value, they would be classified as Level 2.  The Note Purchase Agreement contains various restrictions and covenants that require us to maintain certain financial ratios, including a maximum leverage ratio of  3.00  to  1.00 , a minimum interest coverage ratio of  2.00  to  1.00 , and a maximum consolidated priority debt to consolidated total asset ratio of  15  percent . The Note Purchase Agreement provides for customary events of default. The occurrence of an event of default would permit certain Purchasers to declare certain Notes then outstanding to be immediately due and payable. Under the terms of the Note Purchase Agreement, the Notes are redeemable, in whole or in part, at  100  percent  of the principal amount being redeemed together with a “make-whole amount” (as defined in the Note Purchase Agreement), and accrued and unpaid interest with  10 Table of Contents respect to each Note. The obligations of the company under the Note Purchase Agreement and the Notes are guaranteed by C.H. Robinson Company, a Delaware corporation and a wholly-owned subsidiary of the company, and by C.H. Robinson Company, Inc., a Minnesota corporation and an indirect wholly-owned subsidiary of the company.  U.S. TRADE ACCOUNTS RECEIVABLE SECURITIZATION  On April 26, 2017, we entered into a receivables purchase agreement and related transaction documents with The Bank of Tokyo-Mitsubishi UFJ, Ltd., New York Branch and Wells Fargo Bank, N.A. to provide a receivables securitization facility (the “Receivables Securitization Facility”). On December 17, 2018, we entered into an amended Receivables Securitization Facility with Wells Fargo Bank, N.A. and Bank of America, N.A. to extend the maturity date from April 26, 2019, to December 17, 2020. The Receivables Securitization Facility is based on the securitization of our U.S. trade accounts receivable and provides funding of up to  $ 250  million . The interest rate on borrowings under the Receivables Securitization Facility is based on 30-day LIBOR plus a margin. There is also a commitment fee we are required to pay on any unused portion of the facility. The Receivables Securitization Facility expires on December 17, 2020, unless extended by the parties. The recorded amount of borrowings outstanding on the Receivables Securitization Facility approximates fair value because it can be redeemed on short notice and the interest rate floats, therefore, we consider these borrowings to be a Level 2 financial liability.  The Receivables Securitization Facility contains various customary affirmative and negative covenants, and it also contains customary default and termination provisions which provide for acceleration of amounts owed under the Receivables Securitization Facility upon the occurrence of certain specified events.  SENIOR NOTES On April 9, 2018, we issued senior unsecured notes ("Senior Notes") through a public offering. The Senior Notes bear an annual interest rate of  4.20  percent  payable semi-annually on April 15 and October 15, until maturity on April 15, 2028. The proceeds from the Senior Notes were utilized to pay down the balance on our Credit Agreement. Taking into effect the amortization of the original issue discount and all underwriting and issuance expenses, the Senior Notes have an effective yield to maturity of approximately  4.39  percent  per annum. The fair value of the Senior Notes, excluding debt discounts and issuance costs, approximated  $ 640.9  million  as of  June 30, 2019 , based primarily on the market prices quoted from external sources. The carrying value of the Senior Notes was  $ 592.0  million  as of  June 30, 2019 . If the Senior Notes were measured at fair value in the financial statements, they would be classified as Level 2 in the fair value hierarchy.  We may redeem the Senior Notes, in whole or in part, at any time and from time to time prior to their maturity at the applicable redemption prices described in the Senior Notes. Upon the occurrence of a “change of control triggering event” as defined in the Senior Notes (generally, a change of control of us accompanied by a reduction in the credit rating for the Senior Notes), we will generally be required to make an offer to repurchase the Senior Notes from holders at  101  percent  of their principal amount plus accrued and unpaid interest to the date of repurchase.  The Senior Notes were issued under an indenture that contains covenants imposing certain limitations on our ability to incur liens, enter into sales and leaseback transactions and consolidate, or merge or transfer substantially all of our assets and those of our subsidiaries on a consolidated basis. It also provides for customary events of default (subject in certain cases to customary grace and cure periods), which include among other things nonpayment, breach of covenants in the indenture, and certain events of bankruptcy and insolvency. If an event of default occurs and is continuing with respect to the Senior Notes, the trustee or holders of at least  25  percent  in principal amount outstanding of the Senior Notes may declare the principal and the accrued and unpaid interest, if any, on all of the outstanding Senior Notes to be due and payable. These covenants and events of default are subject to a number of important qualifications, limitations, and exceptions that are described in the indenture. The indenture does not contain any financial ratios or specified levels of net worth or liquidity to which we must adhere. As of  June 30, 2019 , we were in compliance with all of the covenants under the Credit Agreement, Note Purchase Agreement, Receivables Securitization Facility, and Senior Notes.   11 Table of Contents NOTE 5.  INCOME TAXES C.H. Robinson Worldwide, Inc., and its  80  percent (or more) owned U.S. subsidiaries file a consolidated federal return. We file unitary or separate state returns based on state filing requirements. With few exceptions, we are no longer subject to audits of U.S. federal, state and local, or non-U.S. income tax returns before 2012. We are currently under an Internal Revenue Service audit for the 2015 tax year.  Our effective tax rate for the three months ended  June 30, 2019 , and  2018  was  23.4  percent  and  25.6  percent , respectively, and our effective tax rate for the  six months ended   June 30, 2019 , and  2018  was  22.7  percent  and  23.6  percent , respectively. The effective income tax rate for the  three and six months ended   June 30, 2019 , was higher than the statutory federal income tax rate due to state income taxes, net of federal benefit, and foreign income taxes, but was partially offset by the tax impact of share-based payment awards. Additionally, the  six months ended June 30, 2018 , included net income tax expense of  $ 1.0  million  related to adjustments to the one-time transition tax required as part of the Tax Act. We have asserted that we will indefinitely reinvest earnings of foreign subsidiaries to support expansion of our international business. If we repatriated all foreign earnings, the estimated effect on income taxes payable would be an increase of approximately  $ 16.5  million  as of  June 30, 2019 . Global Intangible Low-tax Income (“GILTI”) and Foreign Derived Intangible Income (“FDII”) were enacted as part of the Tax Act on December 22, 2017. Although enacted more than a year ago, regulatory guidance on the application of FDII has not been finalized. We have included the tax impact of both GILTI and FDII in our income tax expense for the  six months ended June 30, 2019 , based on our understanding of the rules available at the time of this filing. However, our calculations could be impacted by future regulations as guidance is finalized. We will continue to monitor any new guidance related to FDII and determine any impact it may have on our calculations. As of  June 30, 2019 , we have  $ 39.6  million  of unrecognized tax benefits and related interest and penalties. It is possible the amount of unrecognized tax benefit could change in the next 12 months as a result of a lapse of the statute of limitations and settlements with taxing authorities. The total liability for unrecognized tax benefits is expected to decrease by approximately  $ 3.0  million  in the next 12 months due to lapsing of statutes. NOTE 6.  STOCK AWARD PLANS Stock-based compensation cost is measured at the grant date based on the value of the award and is recognized as expense as it vests.  A summary of our total compensation expense recognized in our condensed consolidated statements of operations and comprehensive income for stock-based compensation is as follows (in thousands):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Stock options $ 4,461   $ 7,263   $ 8,710   $ 12,265 Stock awards 9,584   18,692   21,328   30,904 Company expense on ESPP discount 639   615   1,769   1,535 Total stock-based compensation expense $ 14,684   $ 26,570   $ 31,807   $ 44,704 On May 9, 2019, our shareholders approved an amendment and restatement of our 2013 Equity Incentive Plan to increase the number of shares authorized for award by  4,000,000  shares. The 2013 Equity Incentive Plan allows us to grant certain stock awards, including stock options at fair market value and performance shares and restricted stock units, to our key employees and outside directors. A maximum of  17,041,803  shares can be granted under this plan following the amendment and restatement. Approximately  5,207,623  shares were available for stock awards under the plan as of  June 30, 2019 . Shares subject to awards that expire or are canceled without delivery of shares or that are settled in cash generally become available again for issuance under the plan.  Stock Options -  We have awarded time-based and performance-based stock options to certain key employees. These options are subject to certain vesting requirements over a  five -year period based on the company’s earnings growth or on the employees continued employment. Any options remaining unvested at the end of the  five -year vesting period are forfeited to the company. Although participants can exercise options via a stock swap exercise, we do not issue reloads (restoration options) on the grants.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       12 Table of Contents The fair value of these options is established based on the market price on the date of grant, discounted for post-vesting holding restrictions, calculated using the Black-Scholes option pricing model. Changes in measured stock price volatility and interest rates are the primary reasons for changes in the discount. These grants are being expensed based on the terms of the awards. As of  June 30, 2019 , unrecognized compensation expense related to stock options was  $ 48.4  million . The amount of future expense to be recognized will be based on the passage of time, the company’s earnings growth, and certain other conditions. Full Value Awards -  We have awarded performance-based shares and restricted stock units to certain key employees and non-employee directors. These awards are subject to certain vesting requirements over a  five -year period, based on our earnings growth. The awards also contain restrictions on the awardees’ ability to sell or transfer vested awards for a specified period of time. The fair value of these awards is established based on the market price on the date of grant, discounted for post-vesting holding restrictions. The discounts on outstanding grants vary from  15  percent  to  21  percent  and are calculated using the Black-Scholes option pricing model-protective put method. Changes in measured stock price volatility and interest rates are the primary reasons for changes in the discount. These grants are being expensed based on the terms of the awards. We have also awarded time-based restricted shares and restricted stock units to certain key employees that vest primarily based on their continued employment. The value of these awards is established by the market price on the date of the grant, discounted for post-vesting holding restrictions, and is being expensed over the vesting period of the award.  We have also issued restricted stock units to certain key employees and non-employee directors, which are fully vested upon issuance. These units contain restrictions on the awardees’ ability to sell or transfer vested units for a specified period of time. The fair value of these units is established using the same method discussed above. These grants have been expensed during the year they were earned. As of  June 30, 2019 , there was unrecognized compensation expense of  $ 100.2  million  related to previously granted full value awards. The amount of future expense to be recognized will be based on the passage of time, the company’s earnings growth, and certain other conditions. Employee Stock Purchase Plan -  Our 1997 Employee Stock Purchase Plan ("ESPP") allows our employees to contribute up  $ 10,000  of their annual cash compensation to purchase company stock. Purchase price is determined using the closing price on the last day of each quarter discounted by  15  percent . Shares vest immediately.  The following is a summary of the employee stock purchase plan activity:   Three Months Ended June 30, 2019 Shares purchased by employees   Aggregate cost to employees   Expense recognized by the company 53,503   $ 3,621,065   $ 639,011 NOTE 7.  LITIGATION We are not subject to any pending or threatened litigation other than routine litigation arising in the ordinary course of our business operations, including certain contingent auto liability cases. For some legal proceedings, we have accrued an amount that reflects the aggregate liability deemed probable and estimable, but this amount is not material to our condensed consolidated financial position, results of operations, or cash flows. Because of the preliminary nature of many of these proceedings, the difficulty in ascertaining the applicable facts relating to many of these proceedings, the inconsistent treatment of claims made in many of these proceedings, and the difficulty of predicting the settlement value of many of these proceedings, we are often unable to estimate an amount or range of any reasonably possible additional losses. However, based upon our historical experience, the resolution of these proceedings is not expected to have a material effect on our consolidated financial position, results of operations, or cash flows. 13 Table of Contents NOTE 8.  ACQUISITIONS On May 22, 2019, we acquired all of the outstanding shares of Dema Service S.p.A. (“Dema Service”) to strengthen our existing footprint in Italy. Total purchase consideration, net of cash acquired was  $ 14.2  million , which was paid in cash.  Identifiable intangible assets and estimated useful lives are as follows (dollars in thousands):   Estimated Life (years)     Customer relationships 7   $ 4,252 There was  $ 7.8  million  of goodwill recorded related to the acquisition of Dema Service. The Dema Service goodwill is a result of acquiring and retaining the Dema Service workforce and expected synergies from integrating its business into ours. Purchase accounting is considered preliminary. No goodwill was recognized for Italian tax purposes from the acquisition. Th e results of operations of Dema Service have been included as part of the All Other and Corporate segment in our consolidated financial statements since May 23, 2019.   On February 28, 2019, we acquired all of the outstanding shares of The Space Cargo Group (“Space Cargo”) for the purpose of expanding our presence and capabilities in Spain and Colombia. Total purchase consideration, net of cash acquired, was  $ 44.1  million , which was paid in cash.  Identifiable intangible assets and estimated useful lives are as follows (dollars in thousands):   Estimated Life (years)     Customer relationships 7   $ 16,439 There was  $ 24.6  million  of goodwill recorded related to the acquisition of Space Cargo. The Space Cargo goodwill is a result of acquiring and retaining the Space Cargo workforce and expected synergies from integrating its business into ours. Purchase accounting is considered preliminary. No goodwill was recognized for Spanish tax purposes from the acquisition. The results of operations of Space Cargo have been included as part of the Global Forwarding segment in our consolidated financial statements since March 1, 2019.   NOTE 9.  SEGMENT REPORTING On January 1, 2019, we reorganized our enterprise transportation services structure to combine our NAST and Robinson Fresh transportation networks. The newly combined transportation network will be managed by and reported under the NAST reportable segment. We have determined that the remaining Robinson Fresh segment no longer meets the requirements of a reportable segment and will be included in the All Other and Corporate reportable segment. Prior period information has been reclassified to conform with this presentation. Our reportable segments are based on our method of internal reporting, which generally segregates the segments by service line and the primary services they provide to our customers. We identify  two  reportable segments as follows:   • North American Surface Transportation— NAST provides freight transportation services across North America through a network of offices in the United States, Canada, and Mexico. The primary services provided by NAST include truckload, temperature-controlled transportation, LTL, and intermodal.  • Global Forwarding— Global Forwarding provides global logistics services through an international network of offices in North America, Asia, Europe, Oceania, and South America and also contracts with independent agents worldwide. The primary services provided by Global Forwarding include ocean freight services, air freight services, and customs brokerage. • All Other and Corporate— All Other and Corporate includes our Robinson Fresh and Managed Services segments, as well as Other Surface Transportation outside of North America and other miscellaneous revenues and unallocated corporate expenses. Robinson Fresh provides sourcing services including the buying, selling, and marketing of fresh fruits, vegetables, and other perishable items. Managed Services provides Transportation Management Services, or Managed TMS ® . Other Surface Transportation revenues are primarily earned by Europe Surface Transportation. Europe Surface Transportation provides services similar to NAST across Europe.  14 Table of Contents The internal reporting of segments is defined, based in part, on the reporting and review process used by our chief operating decision maker (“CODM”), our Chief Executive Officer. The accounting policies of our reportable segments are the same as those described in the summary of significant accounting policies. We do not report our intersegment revenues by reportable segment to our CODM and do not believe they are a meaningful metric for evaluating the performance of our reportable segments.  Reportable segment information as of, and for the three and  six months ended June 30, 2019 , and  2018 , is as follows (dollars in thousands):   NAST   Global Forwarding   All Other and Corporate   Consolidated Three Months Ended June 30, 2019               Total revenues $ 2,872,053   $ 592,483   $ 444,304   $ 3,908,840 Net revenues 486,418   141,936   66,862   695,216 Income (loss) from operations 204,732   26,618   ( 3,815 )   227,535 Depreciation and amortization 6,131   9,315   9,636   25,082 Total assets (1) 2,685,477   1,014,235   984,397   4,684,109 Average headcount 7,533   4,770   3,409   15,712                   NAST   Global Forwarding   All Other and Corporate   Consolidated Three Months Ended June 30, 2018 (2)               Total revenues $ 3,163,185   $ 617,597   $ 495,255   $ 4,276,037 Net revenues 459,706   144,031   67,746   671,483 Income from operations 188,244   29,788   976   219,008 Depreciation and amortization 6,288   8,753   9,197   24,238 Total assets (1) 2,692,908   861,080   899,296   4,453,284 Average headcount 7,401   4,736   3,092   15,229   NAST   Global Forwarding   All Other and Corporate   Consolidated Six Months Ended June 30, 2019               Total revenues $ 5,668,837   $ 1,130,050   $ 861,163   $ 7,660,050 Net revenues 972,968   269,172   131,876   1,374,016 Income (loss) from operations 416,015   40,821   ( 4,751 )   452,085 Depreciation and amortization 12,390   18,241   19,011   49,642 Total assets (1) 2,685,477   1,014,235   984,397   4,684,109 Average headcount 7,486   4,728   3,343   15,557                   NAST   Global Forwarding   All Other and Corporate   Consolidated Six Months Ended June 30, 2018 (2)               Total revenues $ 6,071,604   $ 1,171,351   $ 958,409   $ 8,201,364 Net revenues 898,108   267,068   132,232   1,297,408 Income from operations 367,881   38,009   4,703   410,593 Depreciation and amortization 12,619   17,662   18,198   48,479 Total assets (1) 2,692,908   861,080   899,296   4,453,284 Average headcount 7,368   4,743   3,066   15,177 ____________________________________________ (1)  All cash and cash equivalents are included in All Other and Corporate.  (2)  Amounts have been reclassified to reflect the segment reorganization announced in the first quarter of 2019. 15 Table of Contents NOTE 10:  REVENUE FROM CONTRACTS WITH CUSTOMERS A summary of our total revenues disaggregated by major service line and timing of revenue recognition is presented below for each of our reportable segments for the  three and six  months ended  June 30, 2019 , and  2018  (in thousands):    Three Months Ended June 30, 2019   NAST   Global Forwarding   All Other and Corporate   Total Major Service Lines               Transportation and logistics services $ 2,872,053   $ 592,483   $ 174,076   $ 3,638,612 Sourcing —   —   270,228   270,228 Total $ 2,872,053   $ 592,483   $ 444,304   $ 3,908,840                 Timing of Revenue Recognition               Performance obligations completed over time $ 2,872,053   $ 592,483   $ 174,076   $ 3,638,612 Performance obligations completed at a point in time —   —   270,228   270,228 Total $ 2,872,053   $ 592,483   $ 444,304   $ 3,908,840                   Three Months Ended June 30, 2018   NAST   Global Forwarding   All Other and Corporate   Total Major Service Lines               Transportation and logistics services $ 3,163,185   $ 617,597   $ 172,357   $ 3,953,139 Sourcing —   —   322,898   322,898 Total $ 3,163,185   $ 617,597   $ 495,255   $ 4,276,037                 Timing of Revenue Recognition               Performance obligations completed over time $ 3,163,185   $ 617,597   $ 172,357   $ 3,953,139 Performance obligations completed at a point in time —   —   322,898   322,898 Total $ 3,163,185   $ 617,597   $ 495,255   $ 4,276,037 16 Table of Contents   Six Months Ended June 30, 2019   NAST   Global Forwarding   All Other and Corporate   Total Major Service Lines               Transportation and logistics services $ 5,668,837   $ 1,130,050   $ 344,657   $ 7,143,544 Sourcing —   —   516,506   516,506 Total $ 5,668,837   $ 1,130,050   $ 861,163   $ 7,660,050                 Timing of Revenue Recognition               Performance obligations completed over time $ 5,668,837   $ 1,130,050   $ 344,657   $ 7,143,544 Performance obligations completed at a point in time —   —   516,506   516,506 Total $ 5,668,837   $ 1,130,050   $ 861,163   $ 7,660,050                   Six Months Ended June 30, 2018   NAST   Global Forwarding   All Other and Corporate   Total Major Service Lines               Transportation and logistics services $ 6,071,604   $ 1,171,351   $ 347,824   $ 7,590,779 Sourcing —   —   610,585   610,585 Total $ 6,071,604   $ 1,171,351   $ 958,409   $ 8,201,364                 Timing of Revenue Recognition               Performance obligations completed over time $ 6,071,604   $ 1,171,351   $ 347,824   $ 7,590,779 Performance obligations completed at a point in time —   —   610,585   610,585 Total $ 6,071,604   $ 1,171,351   $ 958,409   $ 8,201,364 We typically do not receive consideration and amounts are not due from our customer prior to the completion of our performance obligation and as such contract liabilities as of  June 30, 2019 , and revenue recognized in the  three and six  months ended  June 30, 2019  and  2018  resulting from contract liabilities was not significant. Contract assets and accrued expenses-transportation expense fluctuate from period to period primarily based upon shipments in-transit at period end. NOTE 11.  LEASES We adopted ASU 2016-02, Leases (Topic 842), as of January 1, 2019. Prior period information was not restated and continues to be presented under ASC 840,  Leases . We elected the package of practical expedients permitted under the transition guidance within the new standard, which among other things, allowed us to not reassess existing contracts to determine if they contain a lease and to carry forward their historical lease classification upon transition. In addition, we have made a policy election to not apply the guidance of ASC 842 to leases with a term of 12 months or less as allowed by the standard. These leases are recognized as expense on a straight-line basis over the lease term.  Adoption of the new standard resulted in the recording of right-of-use lease assets and lease liabilities of  $ 265.4  million  and  $ 273.3  million , respectively, as of January 1, 2019. The adoption of this standard did not materially impact our consolidated statement of operations or consolidated statements of cash flows.  We determine if our contractual agreements contain a lease at inception. A lease is identified when a contract allows us the right to control an identified asset for a period of time in exchange for consideration. Our lease agreements consist primarily of operating leases for office space, warehouses, office equipment, and a small number of intermodal containers. We do not have material financing leases. Frequently, we enter into contractual relationships with a wide variety of transportation companies for freight capacity, and utilize those relationships to efficiently and cost-effectively arrange the transport of our customers’ freight. These contracts typically have a term of 12 months or less and do not allow us to direct the use or obtain substantially all of the economic benefits of a specifically identified asset. Accordingly, these agreements are not considered leases. Our operating leases are included on the consolidated balance sheets as right-of-use lease assets and lease liabilities. A right-of-use lease asset represents our right to use an underlying asset over the term of a lease while a lease liability represents our obligation to make lease payments arising from the lease. Current and noncurrent lease liabilities are recognized at  17 Table of Contents commencement date at the present value of lease payments, including non-lease components, which consist primarily of common area maintenance charges. Right-of-use lease assets are also recognized at commencement date as the total lease liability plus prepaid rents and less any deferred rent liability that existed under ASC 840,  Leases,  upon transition. As most of our leases do not provide an implicit rate, we use our fully collateralized incremental borrowing rate based on the information available at commencement date in determining the present value of lease payments. The incremental borrowing rate is influenced by our credit rating and lease term and as such may differ for individual leases.  Our lease agreements typically do not contain variable lease payments, residual value guarantees, purchase options, or restrictive covenants. Many of our leases include the option to renew for a period of months to several years. The term of our leases may include the option to renew when it is reasonably certain that we will exercise that option although these occurrences are seldom. We have lease agreements with lease components (e.g., payments for rent) and non-lease components (e.g., payments for common area maintenance and parking), which are all accounted for as a single lease component. We do not have material lease agreements that have not yet commenced that are expected to create significant rights or obligations as of  June 30, 2019 . Information regarding lease expense, remaining lease term, discount rate, and other select lease information is presented below as of  June 30, 2019 , and for the  three and six months ended   June 30, 2019  (dollars in thousands): Lease Costs Three Months Ended June 30, 2019   Six Months Ended June 30, 2019 Operating lease expense $ 16,957   $ 33,779 Short-term lease expense 3,076   5,417 Total lease expense $ 20,033   $ 39,196 Other Lease Information Six Months Ended June 30, 2019 Operating cash flows from operating leases $ 33,376 Right-of-use lease assets obtained in exchange for new lease liabilities 26,198 Lease Term and Discount Rate As of June 30, 2019 Weighted average remaining lease term (in years) (1) 7.8 Weighted average discount rate 3.6 % ____________________________________________ (1)  The weighted average remaining lease term is significantly impacted by a  15 -year lease related to office space in Chicago, IL, that commenced in 2018. Excluding this lease, the weighted average remaining lease term of our agreements is  4.3  years .  The maturity of lease liabilities as of  June 30, 2019 , were as follows (in thousands): Maturity of Lease Liabilities   Operating Leases Remaining 2019   $ 32,490 2020   61,449 2021   49,061 2022   35,940 2023   25,550 Thereafter   109,909 Total lease payments   314,399 Less: Interest   ( 43,777 ) Present value of lease liabilities   $ 270,622 18 Table of Contents Minimum future lease commitments under noncancelable lease agreements in excess of one year as of  December 31, 2018 , are as follows (in thousands): 2019   $ 53,675 2020   47,680 2021   36,832 2022   27,644 2023   19,406 Thereafter   81,465 Total lease payments   $ 266,702 In addition to minimum lease payments, we are typically responsible under our lease agreements to pay our pro rata share of maintenance expenses, common charges, and real estate taxes of the buildings in which we lease space. Under ASC 842 we have elected to account for non-lease components such as common area maintenance and parking as a single lease component.   NOTE 12.  CHANGES IN ACCUMULATED OTHER COMPREHENSIVE LOSS Accumulated other comprehensive loss is included in Stockholders' investment on our condensed consolidated balance sheets. The recorded balance at  June 30, 2019 , and  December 31, 2018 , was  $ 72.3  million  and  $ 71.9  million , respectively. Accumulated other comprehensive loss is comprised solely of foreign currency adjustments at  June 30, 2019 , and  December 31, 2018 . ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS You should read the following discussion of our financial condition and results of operations in conjunction with our condensed consolidated financial statements and related notes. FORWARD-LOOKING INFORMATION  Our quarterly report on Form 10-Q, including this discussion and analysis of our financial condition and results of operations and our disclosures about market risk, contains certain “forward-looking statements.” These statements represent our expectations, beliefs, intentions, or strategies concerning future events that, by their nature, involve risks and uncertainties. Forward-looking statements include, among others, statements about our future performance, the continuation of historical trends, the sufficiency of our sources of capital for future needs, the effects of acquisitions or dispositions, the expected impact of recently issued accounting pronouncements, and the outcome or effects of litigation. Risks that could cause actual results to differ materially from our current expectations include, but are not limited to, changes in economic conditions, including uncertain consumer demand; changes in market demand and pressures on the pricing for our services; competition and growth rates within the third party logistics industry; freight levels and increasing costs and availability of truck capacity or alternative means of transporting freight; changes in relationships with existing contracted truck, rail, ocean, and air carriers; changes in our customer base due to possible consolidation among our customers; our ability to successfully integrate the operations of acquired companies with our historic operations; risks associated with litigation, including contingent auto liability and insurance coverage; risks associated with operations outside of the United States; risks associated with the potential impact of changes in government regulations; risks associated with the produce industry, including food safety and contamination issues; fuel price increases or decreases, or fuel shortages; cyber-security related risks; the impact of war on the economy; changes to our capital structure; risks related to the elimination of LIBOR; and other risks and uncertainties detailed in our Annual and Quarterly Reports. Therefore, actual results may differ materially from our expectations based on these and other risks and uncertainties, including those described in Item 1A. Risk Factors of our Annual Report on Form 10-K for the year ended December 31, 2018, filed with the Securities and Exchange Commission on February 25, 2019.  Any forward-looking statement speaks only as of the date on which such statement is made, and we undertake no obligation to update such statement to reflect events or circumstances arising after such date. 19 Table of Contents OVERVIEW Three Months Ended  June 30, 2019 , Compared to Three Months Ended  June 30, 2018 Our consolidated total revenues  decreased   8.6 percent  to  $3.9 billion  in the  second quarter  of  2019  from  $4.3 billion  in the  second quarter  of  2018  due to a  decrease  in transportation revenues driven by decreased pricing and volumes in truckload and to a lesser extent decreased volumes in intermodal services. The decrease in truckload pricing and volumes reflects the current state of the North America truckload market which is experiencing weakening demand and excess capacity. Sourcing revenues  decreased   16.3 percent  to  $270.2 million  in the  second quarter  of  2019  from  $322.9 million  in the  second quarter  of  2018  which was due to lower pricing per case and lower case volume. Net revenues  increased   3.5 percent  to  $695.2 million  in the  second quarter  of  2019  from  $671.5 million  in the  second quarter  of  2018  driven by margin improvement in truckload. Net revenues is a Non-GAAP financial measure defined below. Income from operations  increased   3.9 percent  to  $227.5 million  in the  second quarter  of 2019 from  $219.0 million  in the  second quarter  of  2018  driven by the  increase  in net revenues and was slightly offset by an increase in other selling, general, and administrative expenses. Diluted net income per share  increased   8.0 percent  to  $1.22  in the  second quarter  of  2019  from  $1.13  in the  second quarter  of  2018 . Six Months Ended June 30, 2019 , Compared to  Six Months Ended June 30, 2018 Our consolidated total revenues  decreased   6.6 percent  to  $7.7 billion  in the  six months ended June 30, 2019 , from  $8.2 billion  in the  six months ended June 30, 2018 , primarily due to a  decrease  in truckload pricing and to a lesser extent intermodal volumes and decreased pricing and volumes in air transportation services. Sourcing revenues also  decreased   15.4 percent  to  $516.5 million  in the  six months ended June 30, 2019 , from  $610.6 million  in the  six months ended June 30, 2018 , which was due to lower pricing per case and lower case volume. Net revenues  increased   5.9 percent  to  $1.4 billion  in the  six months ended June 30, 2019 , from  $1.3 billion  in the  six months ended June 30, 2018 , driven by margin improvement in truckload. Income from operations  increased   10.1 percent  to  $452.1 million  in the  six months ended June 30, 2019 , from  $410.6 million  in the  six months ended June 30, 2018 , driven by the  increase  in net revenues and was slightly offset by an increase in other selling, general, and administrative expenses and, to a lesser extent, personnel expenses. Our cash flow from operations  increased   48.0 percent  to  $456.5 million  in the  six months ended June 30, 2019 , from  $308.5 million  in the  six months ended June 30, 2018 , driven primarily by improved working capital performance and the impact of decreasing total transportation revenues and purchased transportation on our accounts receivable and accounts payable balances in addition to growth in income from operations. Diluted net income per share  increased   11.7 percent  to  $2.39  in the  six months ended June 30, 2019 , from  $2.14  in the  six months ended June 30, 2018 . On February 28, 2019, we acquired The Space Cargo Group (“Space Cargo”) for the purpose of expanding our presence and capabilities in Spain and Colombia. Our consolidated results include the results of Space Cargo as of March 1, 2019. On May 22, 2019, we acquired Dema Service S.p.A (“Dema Service”) to strengthen our existing footprint in Italy. Our consolidated results include the results of Dema Service as of May 23, 2019.  Net revenues are a non-GAAP financial measure calculated as total revenues less the cost of purchased transportation and related services and the cost of purchased products sourced for resale. We believe net revenues are a useful measure of our ability to source, add value, and sell services and products that are provided by third parties, and we consider net revenues to be our primary performance measurement. Accordingly, the discussion of our results of operations often focuses on the changes in our net revenues. The reconciliation of total revenues to net revenues is presented below (in thousands):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Revenues:               Transportation $ 3,638,612   $ 3,953,139   $ 7,143,544   $ 7,590,779 Sourcing 270,228   322,898   516,506   610,585 Total revenues 3,908,840   4,276,037   7,660,050   8,201,364 Costs and expenses:               Purchased transportation and related services 2,972,998   3,313,196   5,826,254   6,354,798 Purchased products sourced for resale 240,626   291,358   459,780   549,158 Total costs and expenses 3,213,624   3,604,554   6,286,034   6,903,956 Net revenues $ 695,216   $ 671,483   $ 1,374,016   $ 1,297,408 20 Table of Contents RESULTS OF OPERATIONS The following table summarizes our total revenues (dollars in thousands):   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   % change   2019   2018   % change Transportation $ 3,638,612   $ 3,953,139   (8.0 )%   $ 7,143,544   $ 7,590,779   (5.9 )% Sourcing 270,228   322,898   (16.3 )%   516,506   610,585   (15.4 )% Total $ 3,908,840   $ 4,276,037   (8.6 )%   $ 7,660,050   $ 8,201,364   (6.6 )% The following table illustrates our net revenue margins for our transportation and sourcing services:   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Transportation 18.3 %   16.2 %   18.4 %   16.3 % Sourcing 11.0 %   9.8 %   11.0 %   10.1 % Total 17.8 %   15.7 %   17.9 %   15.8 % The following table summarizes our net revenues by service line. The service line net revenues in the table differ from the segment service line revenues discussed below as our segments have revenues from multiple service lines (in thousands):      Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   % change   2019   2018   % change Transportation                       Truckload $ 371,351   $ 341,442   8.8  %   $ 749,344   $ 671,733   11.6  % LTL (1) 122,991   119,189   3.2  %   239,220   231,333   3.4  % Intermodal 6,298   9,181   (31.4 )%   12,374   15,513   (20.2 )% Ocean 85,472   87,035   (1.8 )%   157,005   155,879   0.7  % Air 26,134   30,905   (15.4 )%   53,716   59,788   (10.2 )% Customs 23,306   20,794   12.1  %   45,184   41,449   9.0  % Other Logistics Services 30,062   31,397   (4.3 )%   60,447   60,286   0.3  % Total Transportation 665,614   639,943   4.0  %   1,317,290   1,235,981   6.6  % Sourcing 29,602   31,540   (6.1 )%   56,726   61,427   (7.7 )% Total $ 695,216   $ 671,483   3.5  %   $ 1,374,016   $ 1,297,408   5.9  % ____________________________________________ (1)   Less than truckload ("LTL"). 21 Table of Contents The following table represents certain statements of operations data, shown as percentages of our net revenues:   Three Months Ended June 30,   Six Months Ended June 30,   2019   2018   2019   2018 Net revenues 100.0  %   100.0  %   100.0  %   100.0  % Operating expenses:               Personnel expenses 48.7  %   50.7  %   49.4  %   51.6  % Other selling, general, and administrative expenses 18.5  %   16.7  %   17.7  %   16.8  % Total operating expenses 67.3  %   67.4  %   67.1  %   68.4  % Income from operations 32.7  %   32.6  %   32.9  %   31.6  % Interest and other expense (1.0 )%   (0.8 )%   (1.7 )%   (1.2 )% Income before provision for income taxes 31.8  %   31.9  %   31.2  %   30.4  % Provision for income taxes 7.4  %   8.1  %   7.1  %   7.2  % Net income 24.3  %   23.7  %   24.1  %   23.2  % The following table summarizes our results by reportable segment (dollars in thousands):   NAST   Global Forwarding   All Other and Corporate   Consolidated Three Months Ended June 30, 2019               Total revenues $ 2,872,053   $ 592,483   $ 444,304   $ 3,908,840 Net revenues 486,418   141,936   66,862   695,216 Income from operations 204,732   26,618   (3,815 )   227,535                   NAST   Global Forwarding   All Other and Corporate   Consolidated Three Months Ended June 30, 2018  (1)               Total revenues $ 3,163,185   $ 617,597   $ 495,255   $ 4,276,037 Net revenues 459,706   144,031   67,746   671,483 Income from operations 188,244   29,788   976   219,008   NAST   Global Forwarding   All Other and Corporate   Consolidated Six Months Ended June 30, 2019               Total revenues $ 5,668,837   $ 1,130,050   $ 861,163   $ 7,660,050 Net revenues 972,968   269,172   131,876   1,374,016 Income from operations 416,015   40,821   (4,751 )   452,085                   NAST   Global Forwarding   All Other and Corporate   Consolidated Six Months Ended June 30, 2018  (1)               Total revenues $ 6,071,604   $ 1,171,351   $ 958,409   $ 8,201,364 Net revenues 898,108   267,068   132,232   1,297,408 Income from operations 367,881   38,009   4,703   410,593 ____________________________________________ (1)  Amounts have been reclassified to reflect the segment reorganization announced in the first quarter of 2019. 22 Table of Contents Consolidated Results of Operations—Three Months Ended  June 30, 2019  Compared to Three Months Ended  June 30, 2018 Total revenues and direct costs.  Our consolidated total revenues  decreased   8.6 percent  to  $3.9 billion  in the  second quarter  of  2019  compared to  $4.3 billion  in the  second quarter  of  2018 . Total transportation revenues  decreased   8.0 percent  to  $3.6 billion  in the  second quarter  of  2019  compared to  $4.0 billion  in the  second quarter  of  2018 . The  decrease  was driven by lower pricing and volumes in truckload and, to a lesser extent, decreased intermodal volumes. Total purchased transportation and related services  decreased   10.3 percent  to  $3.0 billion  in the  second quarter  of  2019  compared to  $3.3 billion  in the  second quarter  of  2018 . The  decrease  was due to decreased cost of transportation in most of our transportation services resulting from softening market demand. Our sourcing total revenue  decreased   16.3 percent  to  $270.2 million  in the  second quarter  of  2019  from  $322.9 million  in the  second quarter  of  2018  due to lower pricing per case and lower case volume. Purchased products sourced for resale  decreased   17.4 percent  in the  second quarter  of  2019  to  $240.6 million  from  $291.4 million  in the  second quarter  of  2018 .  Net revenues.  Total transportation net revenues  increased   4.0 percent  to  $665.6 million  in the  second quarter  of  2019  from  $639.9 million  in the  second quarter  of  2018 . Our transportation net revenue margin  increased  to  18.3 percent  in the  second quarter  of  2019  from  16.2 percent  in the  second quarter  of  2018  driven by margin expansion in truckload services as we benefited from a shift to contractual volume in a falling cost market. Sourcing net revenues  decreased   6.1 percent  to  $29.6 million  in the  second quarter  of  2019  from  $31.5 million  in the  second quarter  of  2018 . Our sourcing net revenue margin  increased  to  11.0 percent  in the  second quarter  of  2019  from  9.8 percent  in the  second quarter  of  2018  driven by the strategic decision to exit unprofitable business.  Operating expenses.  Operating expenses  increased   3.4 percent  to  $467.7 million  in the  second quarter  of  2019  from  $452.5 million  in the  second quarter  of  2018  driven by selling, general, and administrative expenses as discussed below. Operating expenses as a percentage of net revenues  decreased  to  67.3 percent  in the  second quarter  of  2019  from  67.4 percent  in the  second quarter  of  2018 . For the  second quarter , personnel expenses  decreased   0.5 percent  to  $338.9 million  in  2019  from  $340.6 million  in  2018 . The  decrease  in personnel expense was primarily due to declines in performance-based compensation, partially offset by an  increase  of  3.2 percent  in average headcount in the  second quarter  of  2019  compared to the  second quarter  of  2018 . For the  second quarter  of  2019 , other selling, general, and administrative expenses  increased   15.2 percent  to  $128.8 million  in  2019  from  $111.8 million  in the  second quarter  of  2018 , driven primarily by increases in purchased services and occupancy costs. Income from operations.  Income from operations  increased   3.9 percent  to  $227.5 million  in the  second quarter  of  2019  from  $219.0 million  in the  second quarter  of  2018 . This  increase  was driven by an increase in income from operations in NAST, partially offset by declines in Global Forwarding and All Other and Corporate. Income from operations as a percentage of net revenues  increased  to  32.7 percent  in the  second quarter  of  2019  from  32.6 percent  in the  second quarter  of  2018 .  Interest and other expense.  Interest and other expense was  $6.6 million  in the  second quarter  of  2019  compared to  $5.1 million  in the  second quarter  of  2018 . The  increase  included a  $2.8 million  favorable impact of foreign currency revaluation and realized foreign currency gains and losses in the  second quarter  of  2019  compared to an  $8.0 million  favorable impact in the  second quarter  of  2018 . Interest expense decreased modestly driven by a lower average debt balance in the  second quarter  of  2019  compared to the  second quarter  of  2018 . Provision for income taxes.  Our effective income tax rate was  23.4 percent  for the  second quarter  of  2019  and  25.6 percent  for the  second quarter  of  2018 . The effective income tax rate for the three months ended  June 30, 2019 , was higher than the statutory federal income tax rate due to state income taxes, net of federal benefit, and foreign income taxes, but was partially offset by the tax impact of share-based payment awards, which resulted in a decrease in our provision for income taxes for the  three months ended June 30, 2019 , and  2018  of  $0.9 million  and  $1.3 million , respectively. Net income.  Net income  increased   6.3 percent  to  $169.2 million  in the  second quarter  of  2019  from  $159.2 million  in the  second quarter  of  2018 . Basic net income per share  increased   7.9 percent  to  $1.23  from  $1.14  in the  second quarter  of  2019  compared to the  second quarter  of  2018 . Diluted net income per share  increased   8.0 percent  to  $1.22  from  $1.13  in the  second quarter  of  2019  compared to the  second quarter  of  2018 . 23 Table of Contents Segment Results of Operations—Three Months Ended  June 30, 2019 , Compared to Three Months Ended  June 30, 2018 North American Surface Transportation.  NAST revenues  decreased   9.2 percent  to  $2.9 billion  in the  second quarter  of  2019  from  $3.2 billion  in the  second quarter  of  2018 . This  decrease  was primarily driven by lower pricing and volumes in truckload and, to a lesser extent, decreased intermodal volume. These decreases were partially offset by increased LTL volumes. NAST cost of transportation and related services  decreased   11.8 percent  to  $2.4 billion  in the  second quarter  of  2019  from  $2.7 billion  in the  second quarter  of  2018 , driven by lower cost per mile in truckload services. NAST net revenues  increased   5.8 percent  to  $486.4 million  in the  second quarter  of  2019  from  $459.7 million  in the  second quarter  of  2018 . This was primarily driven by an  increase  in truckload net revenues as discussed below. NAST truckload net revenues  increased   8.6 percent  to  $352.9 million  in the  second quarter  of  2019  from  $325.0 million  in the  second quarter  of  2018  driven by net revenue margin expansion as we benefited from a shift to contractual volume in a falling cost market. As supply and demand in the freight market becomes more balanced, as was the case in the first half of 2019, we typically see our volume shift more heavily toward contractual business, accompanied by net revenue margin expansion. NAST truckload volumes  decreased   2.5 percent  in the  second quarter  of  2019  compared to the  second quarter  of  2018 .  Excluding the estimated impacts of the decrease in fuel costs, our average truckload rate per mile charged to our customers  decreased  approximately  11.5 percent  in the  second quarter  of  2019  compared to the  second quarter  of  2018  reflecting pricing changes related to the marketplace conditions discussed above. Our truckload transportation costs  decreased  approximately  14.5 percent , excluding the estimated decrease in fuel costs.  NAST LTL net revenues  increased   2.8 percent  to  $121.5 million  in the  second quarter  of  2019  from  $118.2 million  in the  second quarter  of  2018 . This  increase  was primarily due to a volume increase of  3.5 percent  in the  second quarter  of  2019  compared to the  second quarter  of  2018 . NAST intermodal net revenues  decreased   33.8 percent  to  $6.0 million  in the  second quarter  of  2019  from  $9.1 million  in the  second quarter  of  2018 . NAST intermodal net revenues  decreased  primarily due to a volume decrease of  30.5 percent  resulting from a combination of lane reductions related to precision scheduled railroading and the decline in truckload pricing driving an industry volume shift from intermodal to truckload.  NAST operating expenses  increased   3.8 percent  in the  second quarter  of  2019  to  $281.7 million  compared to  $271.5 million  in the  second quarter  of  2018 . This was primarily due to  increased  selling, general, and administrative expenses, partially offset by a  decrease  in personnel expenses. The  increase  in selling, general, and administrative expense is primarily related to continued investments in technology and higher occupancy costs. The  decrease  in personnel expense is primarily related to reduced performance-based compensation in the  second quarter  of  2019  compared to the  second quarter  of  2018  but was partially offset by the impact of a  1.8 percent   increase  in average headcount in the  second quarter  of  2019 . The operating expenses of NAST and all other segments include allocated corporate expenses. NAST income from operations  increased   8.8 percent  to  $204.7 million  in the  second quarter  of  2019  from  $188.2 million  in the  second quarter  of  2018  due primarily to the increase in net revenues discussed above. Global Forwarding.  Global Forwarding revenues  decreased   4.1 percent  to  $592.5 million  in the  second quarter  of  2019  compared to  $617.6 million  in the  second quarter  of  2018  driven by decreased pricing and volume in the air service line and, to a lesser extent, ocean pricing decreases as both service lines are being impacted by tariff activity. Global Forwarding costs of transportation and related services  decreased   4.9 percent  to  $450.5 million  in the  second quarter  of  2019  from  $473.6 million  in the  second quarter  of  2018 . Global Forwarding net revenues  decreased   1.5 percent  to  $141.9 million  in the  second quarter  of  2019  compared to  $144.0 million  in the  second quarter  of  2018  as the pricing and volume declines discussed above more than offset the net revenue growth from Space Cargo. The acquisition of Space Cargo contributed approximately three percentage points of net revenue growth in Global Forwarding for the  second quarter  of  2019 . Global Forwarding ocean transportation net revenues  decreased   1.6 percent  to  $85.4 million  in the  second quarter  of  2019  from  $86.8 million  in the  second quarter  of  2018  as decreased margins were partially offset by the impact of Space Cargo. Space Cargo contributed  two percentage points  of net revenue growth in ocean transportation for the  second quarter  of  2019 . Ocean transportation volumes experienced a modest increase in the  second quarter  of  2019  compared to the same period of  2018 .  Global Forwarding air transportation net revenues  decreased   12.2 percent  to  $25.2 million  in the  second quarter  of  2019  from  $28.7 million  in the  second quarter  of  2018 , as margin expansion and the addition of Space Cargo adding  six percentage points  was more than offset by a  7.5 percent  volume decline in the  second quarter  of  2019  compared to the same period of  2018 .  24 Table of Contents Global Forwarding customs net revenues  increased   12.0 percent  to  $23.3 million  in the  second quarter  of  2019  from  $20.8 million  in  2018  driven by improved pricing due to mix but were partially offset by reduced volumes in the  second quarter  of  2019  compared to the same period of  2018 . Global Forwarding operating expenses  increased   0.9 percent  in the  second quarter  of  2019  to  $115.3 million  from  $114.2 million  in the  second quarter  of  2018 . This  increase  was due to  increased  selling, general, and administrative expenses of  12.4 percent , which was driven by increased investments in technology. Personnel expenses  decreased   5.1 percent  driven by reduced performance-based compensation but was partially offset by the impact of a  0.7 percent   increase  in average headcount in the  second quarter  of  2019 . Global Forwarding income from operations  decreased   10.6 percent  to  $26.6 million  in the  second quarter  of  2019  from  $29.8 million  in the  second quarter  of  2018 . This was primarily due to the decrease in net revenues discussed above. All Other and Corporate.  All Other and Corporate includes our Robinson Fresh and Managed Services segment, as well as Other Surface Transportation outside of North America and other miscellaneous revenues and unallocated corporate expenses. Robinson Fresh provides sourcing services including the buying, selling, and marketing of fresh fruits, vegetables, and other perishable items. Managed Services provides Transportation Management Services, or Managed TMS. Other Surface Transportation revenues are primarily earned by Europe Surface Transportation. Europe Surface Transportation provides services similar to NAST across Europe.  Robinson Fresh net revenues  decreased   4.3 percent  to  $31.2 million  in the  second quarter  of  2019  compared to  $32.6 million  in the  second quarter  of  2018 , driven by strategic decisions to exit unprofitable business.  Managed Services net revenues  remained flat   at  $20.1 million  in the  second quarter  of  2019  consistent with the  second quarter  of  2018 .  Other Surface Transportation net revenues  increased   3.3 percent  in the  second quarter  of  2019  to  $15.5 million  compared to  $15.0 million  in the  second quarter  of  2018 , primarily driven by the acquisition of Dema Service, which contributed four percentage points of growth.  Consolidated Results of Operations— Six Months Ended June 30, 2019 , Compared to  Six Months Ended June 30, 2018   Total revenues and direct costs.  Our consolidated total revenues  decreased   6.6 percent  to  $7.7 billion  in the  six months ended June 30, 2019 , compared to  $8.2 billion  in the  six months ended June 30, 2018 . Total transportation revenues  decreased   5.9 percent  to  $7.1 billion  in the  six months ended June 30, 2019 , from  $7.6 billion  in the  six months ended June 30, 2018 . The  decrease  in total transportation revenues was primarily driven by decreased truckload pricing and, to a lesser extent, lower intermodal volumes and decreased pricing and volumes in the air service line. Total purchased transportation and related services  decreased   8.3 percent  in the  six months ended June 30, 2019  to  $5.8 billion  from  $6.4 billion  in the  six months ended June 30, 2018 . The  decrease  was primarily due to decreased cost of transportation in most of our transportation services resulting from softening market demand and volume decreases in most transportation service lines. Sourcing revenue  decreased   15.4 percent  to  $516.5 million  in the  six months ended June 30, 2019 , compared to  $610.6 million  in the  six months ended June 30, 2018 . Purchased products sourced for resale  decreased   16.3 percent  to  $459.8 million  in the  six months ended June 30, 2019 , compared to  $549.2 million  in the  six months ended June 30, 2018 .  Net revenues.  Total transportation net revenues  increased   6.6 percent  to  $1.3 billion  in the  six months ended June 30, 2019  from  $1.2 billion  in the  six months ended June 30, 2018 , driven by improved truckload margins and, to a lesser extent, increased LTL volumes and margin expansion. Our transportation net revenue margin  increased  to  18.4 percent  in the  six months ended June 30, 2019 , from  16.3 percent  in the  six months ended June 30, 2018 , driven by truckload services as we benefited from a shift to contractual volume in a falling cost market. Sourcing net revenues  decreased   7.7 percent  to  $56.7 million  in the  six months ended June 30, 2019 , from  $61.4 million  in the  six months ended June 30, 2018 . Our sourcing net revenue margin  increased  in the  six months ended June 30, 2019 , to  11.0 percent  from  10.1 percent  in the  six months ended June 30, 2018 . Operating expenses.  Operating expenses  increased   4.0 percent  in the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 . Operating expenses as a percentage of net revenues  decreased  to  67.1 percent  in the  six months ended June 30, 2019  from  68.4 percent  in the  six months ended June 30, 2018 .  Personnel expenses  increased   1.5 percent  to  $679.0 million  in the  six months ended June 30, 2019 , from  $668.9 million  in the  six months ended June 30, 2018 , driven by the impact of a  2.5 percent   increase  in average headcount, partially offset by declines in performance-based compensation.  25 Table of Contents Other selling, general, and administrative expenses  increased   11.5 percent  to  $242.9 million  in the  six months ended June 30, 2019 , from  $217.9 million  in the  six months ended June 30, 2018 . This  increase  was primarily driven by increased purchased services and occupancy expenses, partially offset by a decline in the provision for bad debt. Income from operations.  Income from operations  increased   10.1 percent  to  $452.1 million  in the  six months ended June 30, 2019 , from  $410.6 million  in the  six months ended June 30, 2018 . Income from operations as a percentage of net revenues  increased  to  32.9 percent  in the  six months ended June 30, 2019 , from  31.6 percent  in the  six months ended June 30, 2018 . Interest and other expense.  Interest and other expense was  $23.8 million  for the  six months ended June 30, 2019 , compared to $15.8 million  for the  six months ended June 30, 2018 . The  six months ended June 30, 2019 , included a  $2.2 million  unfavorable impact of foreign currency revaluation and realized foreign currency gains and losses compared to a  $7.7 million  favorable impact for the  six months ended June 30, 2018 . Interest expense increased for the  six months ended June 30, 2019 , due to a higher average interest rate compared to the  six months ended June 30, 2018 .  Provision for income taxes.  Our effective income tax rate was  22.7 percent  for the  six months ended June 30, 2019 , and  23.6 percent  for the  six months ended June 30, 2018 . The effective income tax rate for the  six months ended June 30, 2019 , was higher than the statutory federal income tax rate due to state income taxes, net of federal benefit, and foreign income taxes, but was partially offset by the tax impact of share-based payment awards, which resulted in a decrease in our provision for income taxes for the  six months ended June 30, 2019 , and  2018  of  $5.4 million  and  $7.5 million , respectively. Net income.  Net income  increased   9.8 percent  to  $331.0 million  in the  six months ended June 30, 2019 , from  $301.5 million  in the  six months ended June 30, 2018 . Basic net income per share  increased   11.6 percent  to  $2.41  in the  six months ended June 30, 2019 , from  $2.16  in the  six months ended June 30, 2018 . Diluted net income per share  increased   11.7 percent  to  $2.39  in the  six months ended June 30, 2019  from  $2.14  in the  six months ended June 30, 2018 . Segment Results of Operations— Six Months Ended June 30, 2019  Compared to  Six Months Ended June 30, 2018   North American Surface Transportation.  NAST revenues  decreased   6.6 percent  to  $5.7 billion  during the  six months ended June 30, 2019 , from  $6.1 billion  during the  six months ended June 30, 2018 . This  decrease  was driven by decreased truckload pricing and volumes and, to a lesser extent, lower intermodal volumes. NAST cost of transportation and related services  decreased   9.2 percent  to  $4.7 billion  in the  six months ended June 30, 2019 , from  $5.2 billion  in the  six months ended June 30, 2018 . The decreased cost of transportation and related services was also driven by truckload and intermodal services. NAST net revenues  increased   8.3 percent  to  $973.0 million  in the  six months ended June 30, 2019 , from  $898.1 million  in the  six months ended June 30, 2018 . This  increase  was driven by an increase in truckload and LTL net revenues as discussed below. NAST truckload net revenues  increased   11.6 percent  to  $711.9 million  during the  six months ended June 30, 2019 , from  $638.0 million  in the  six months ended June 30, 2018 . NAST truckload net revenue margin increased in the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 . NAST truckload volumes  decreased  approximately  one percent  during the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 .  Excluding the impacts of fuel costs, our average truckload rate per mile charged to our customers  decreased  approximately  14.0 percent  in the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 . Our truckload transportation costs  decreased   16.5 percent , excluding the impact of fuel costs. NAST LTL net revenues  increased   3.2 percent  to  $236.4 million  in the  six months ended June 30, 2019 , from  $229.1 million  in the  six months ended June 30, 2018 . This increase was primarily due to a volume increase of approximately  two percent  during the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 , and an increase in net revenue margin.  NAST intermodal net revenues  decreased   21.7 percent  to  $12.0 million  in the  six months ended June 30, 2019 , from  $15.3 million  in the  six months ended June 30, 2018 . Intermodal volumes  decreased   25.0 percent  in the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 . NAST operating expenses  increased   5.0 percent  during the  six months ended June 30, 2019 , to  $557.0 million  compared to  $530.2 million  during the  six months ended June 30, 2018 . This  increase  was driven by increases in selling, general, and administrative expenses and, to a lesser extent, personnel expenses. The increase in selling, general, and administrative expenses was driven by an increase in occupancy expenses and continued investment in technology and was partially offset by a decline in the provision for bad debt. The increase in personnel expense is related to the impact of an  increase  of  1.6 percent  in average headcount and was partially offset by declines in performance-based compensation.  NAST income from operations  increased   13.1 percent  to  $416.0 million  during the  six months ended June 30, 2019 , from  $367.9 million  in the  six months ended June 30, 2018 . This was primarily due to the  increase  in truckload and LTL net revenues discussed above. 26 Table of Contents Global Forwarding.  Global Forwarding total revenues  decreased   3.5 percent  to  $1.1 billion  in the  six months ended June 30, 2019 , compared to  $1.2 billion  in the  six months ended June 30, 2018 , driven by decreased pricing and volumes in the air service line, and to a lesser extent decreases in ocean pricing. Global Forwarding costs of transportation and related services  decreased   4.8 percent  to  $860.9 million  in the  six months ended June 30, 2019 , from  $904.3 million  in the  six months ended June 30, 2018 . Global Forwarding net revenues  increased   0.8 percent  to  $269.2 million  in the  six months ended June 30, 2019 , compared to  $267.1 million  in the  six months ended June 30, 2018 . The acquisition of Space Cargo accounted for approximately  two percentage points  of the net revenue growth in Global Forwarding during the  six months ended June 30, 2019 . Global Forwarding ocean transportation net revenues  increased   0.9 percent  to  $156.8 million  in the  six months ended June 30, 2019 , from  $155.5 million  in the  six months ended June 30, 2018 , driven by the acquisition of Space Cargo, which contributed approximately  two percentage points . Ocean transportation volumes and margins both increased modestly during the  six months ended June 30, 2019 , compared to the same period of  2018 . Global Forwarding air transportation net revenues  decreased   6.2 percent  to  $51.3 million  in the  six months ended June 30, 2019 , from  $54.8 million  in the  six months ended June 30, 2018 , driven by a volume decrease of approximately six percent, which was partially offset by the impact of Space Cargo, which contributed approximately  four percentage points .  Global Forwarding customs net revenues  increased   9.0 percent  to  $45.2 million  in the  six months ended June 30, 2019 , from  $41.4 million  in  2018  driven by improved pricing due to mix. Customs transaction volumes were approximately flat during the  six months ended June 30, 2019 , compared to the same period of  2018 . Global Forwarding operating expenses  decreased  modestly by  0.3 percent  in the  six months ended June 30, 2019 , to  $228.4 million  from  $229.1 million  in the  six months ended June 30, 2018 . This  decrease  was due to a decrease in personnel, partially offset by an increase in selling, general, and administrative expenses. The personnel  decrease  was driven by the impact of a  decrease  in average headcount of  0.3 percent , despite the acquisition of Space Cargo adding approximately  3.5 percentage points . Global Forwarding income from operations  increased   7.4 percent  to  $40.8 million  in the  six months ended June 30, 2019 , from  $38.0 million  in the  six months ended June 30, 2018 . This was primarily due to the  increase  in net revenues and  decrease  in operating expenses discussed above. In addition, the acquisition of Space Cargo added approximately  3.6 percentage points  to the Global Forwarding income from operations.  All Other and Corporate.  Robinson Fresh net revenues  decreased   4.8 percent  to  $59.9 million  in the  six months ended June 30, 2019 , compared to  $62.9 million  in the  six months ended June 30, 2018 , primarily due to strategic decisions to exit unprofitable business.  Managed Services net revenues  increased   5.3 percent  in the  six months ended June 30, 2019 , to  $40.4 million  compared to  $38.4 million  in the  six months ended June 30, 2018 , driven by a combination of selling additional service lines to existing customers and new customer wins. Other Surface Transportation  increased   2.0 percent  in the  six months ended June 30, 2019 , to  $31.6 million  compared to  $31.0 million  in the  six months ended June 30, 2018 , primarily driven by the acquisition of Dema Service, which contributed two percentage points of growth.  27 Table of Contents LIQUIDITY AND CAPITAL RESOURCES We have historically generated substantial cash from operations, which has enabled us to fund our organic growth while paying cash dividends and repurchasing stock. In addition, we maintain the following debt facilities as described in Note 4 (dollars in thousands): Description   Carrying Value as of June 30, 2019   Borrowing Capacity   Maturity Revolving credit facility   $ —   $ 1,000,000   October 2023 Senior Notes, Series A   175,000   175,000   August 2023 Senior Notes, Series B   150,000   150,000   August 2028 Senior Notes, Series C   175,000   175,000   August 2033 Receivables securitization facility  (1)   161,823   250,000   December 2020 Senior Notes  (1)   592,026   600,000   April 2028 Total debt   $ 1,253,849   $ 2,350,000     ______________________________________________ (1)  Net of unamortized discounts and issuance costs. We expect to use our current debt facilities and potentially other indebtedness incurred in the future to assist us in continuing to fund working capital, capital expenditures, possible acquisitions, dividends, and share repurchases. Cash and cash equivalents totaled  $355.3 million  as of  June 30, 2019 , and  $378.6 million  as of  December 31, 2018 . Cash and cash equivalents held outside the United States totaled  $298.0 million  as of  June 30, 2019 , and  $320.0 million  as of  December 31, 2018 . If we repatriated all foreign earnings, the estimated effect on income taxes payable would be an increase of approximately  $16.5 million  as of  June 30, 2019 . Working capital decreased from  $1.3 billion  at  December 31, 2018 , to  $1.2 billion  at  June 30, 2019 . We prioritize our investments to grow the business, as we require some working capital and a relatively small amount of capital expenditures to grow. We are continually looking for acquisitions, but those acquisitions must fit our culture and enhance our growth opportunities. Cash flow from operating activities.  We generated  $456.5 million  and  $308.5 million  of cash flow from operations during the  six months ended June 30, 2019 , and  June 30, 2018 , respectively, an  increase  of  $148.0 million . This  increase  was primarily driven by improved working capital performance and the impact of decreasing total transportation revenues and purchased transportation on our accounts receivable and accounts payable balances in addition to growth in income from operations. Cash used for investing activities.  We used  $89.9 million  and  $32.9 million  of cash during the  six months ended June 30, 2019 , and  June 30, 2018 , for investing activities.  We used  $44.1 million  for the acquisition of Space Cargo and  $14.2 million  for the acquisition of Dema Service during the  six months ended June 30, 2019 .  We used  $31.6 million  and  $30.1 million  for capital expenditures during the  six months ended June 30, 2019 , and  June 30, 2018 . During the  six months ended June 30, 2019 , our capital expenditures consisted primarily of investments in information technology, which are intended to increase employee productivity, automate interactions with our customers and contracted carriers, and improve our internal workflows to help expand our operating margins and grow the business.  Cash used for financing activities.  We used  $390.4 million  and  $291.1 million  of cash flow for financing activities during the  six months ended June 30, 2019 , and  June 30, 2018 . During the  six months ended June 30, 2019 , we had net repayments on short-term borrowings of  $5.0 million . There was  no  balance outstanding on the revolving credit facility as of  June 30, 2019 . During the  six months ended June 30, 2019 , we had net repayments on long-term borrowings of  $88.0 million  to reduce the outstanding balance on the Receivables Securitization Facility.  We used  $139.0 million  and  $130.6 million  to pay cash dividends during the  six months ended June 30, 2019 , and  June 30, 2018 . The  increase  was primarily due to a  $0.04  dividend rate  increase  in  2019  compared to  2018 , partially offset by a  decrease  in shares outstanding during the  six months ended June 30, 2019 , compared to the  six months ended June 30, 2018 . 28 Table of Contents We used  $173.6 million  and  $119.5 million  on share repurchases during the  six months ended June 30, 2019 , and  June 30, 2018 . The change was due to an increase in the number of shares repurchased during the  six months ended June 30, 2019 , partially offset by a decrease in the average price paid per share compared to the same period of  2018 . In May 2018, the Board of Directors increased the number of shares authorized for repurchase by 15,000,000 shares. As of  June 30, 2019 , there were  11,624,985  shares remaining for future repurchases under the repurchase authorization. The number of shares we repurchase, if any, during future periods will vary based on our cash position, other potential uses of our cash, and market conditions.  As of  June 30, 2019 , we have an asset held for sale on our balance sheet of approximately  $11 million  related to a property we own in Chicago, Illinois, with an estimated fair value of  $17 million . We anticipate the sale of this property to be completed later in 2019. Assuming no change in our current business plan, management believes that our available cash, together with expected future cash generated from operations, the amount available under our credit facilities, and credit available in the market will be sufficient to satisfy our anticipated needs for working capital, capital expenditures, and cash dividends for at least the next 12 months. We also believe we could obtain funds under lines of credit or other forms of indebtedness on short notice, if needed. Recently Issued Accounting Pronouncements  Refer to Note 1,  Basis of Presentation , contained in this quarterly report and in the Company's 2018 Annual Report on Form 10-K for a discussion of recently issued accounting pronouncements.  CRITICAL ACCOUNTING POLICIES AND ESTIMATES Refer to the Company's 2018 Annual Report on Form 10-K for a complete discussion regarding our critical accounting policies and estimates. As of  June 30, 2019 , there were no material changes to our critical accounting policies and estimates.  ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK Refer to the Company’s Annual Report on Form 10-K for the year ended December 31, 2018, for a complete discussion on the Company’s market risk. There have been no material changes in market risk from those disclosed in the Company’s Form 10-K for the year ended December 31, 2018. ITEM 4. CONTROLS AND PROCEDURES (a) Evaluation of disclosure controls and procedures.  Our disclosure controls and procedures (as defined in Rule 13a-15(e) and Rule 15d-15(e) under the Securities Exchange Act of 1934 (the “Exchange Act”)) are designed to provide reasonable assurance that the information required to be disclosed in reports filed or submitted under the Exchange Act is recorded, processed, summarized, and reported within the time periods specified in rules and forms adopted by the SEC, and that such information is accumulated and communicated to management, including the Chief Executive Officer and the Interim Chief Financial Officer, to allow timely decisions regarding required disclosures. Our management, under the supervision and with the participation of the Chief Executive officer and Interim Chief Financial Officer, evaluated the effectiveness of the design and operation of our disclosure controls and procedures as of June 30, 2019. Based on this evaluation, the Chief Executive Officer and Interim Chief Financial Officer have concluded that our disclosure controls and procedures were effective as of June 30, 2019, at the reasonable assurance level.  (b) Changes in internal controls over financial reporting.  There were no changes in our internal control over financial reporting (as such term is defined in Exchange Act Rules 13a-15(f) and 15d-15(f)) that occurred during the  three months ended June 30, 2019 , that have materially affected, or are reasonably likely to materially affect, our internal control over financial reporting. 29 Table of Contents PART II-OTHER INFORMATION ITEM 1. LEGAL PROCEEDINGS We are not subject to any pending or threatened litigation other than routine litigation arising in the ordinary course of our business operations. For some legal proceedings, we have accrued an amount that reflects the aggregate liability deemed probable and estimable, but this amount is not material to our consolidated financial position, results of operations, or cash flows. Because of the preliminary nature of many of these proceedings, the difficulty in ascertaining the applicable facts relating to many of these proceedings, the inconsistent treatment of claims made in many of these proceedings, and the difficulty of predicting the settlement value of many of these proceedings, we are often unable to estimate an amount or range of any reasonably possible additional losses. However, based upon our historical experience, the resolution of these proceedings is not expected to have a material effect on our consolidated financial position, results of operations, or cash flows. ITEM 1A. RISK FACTORS In addition to the other information set forth in this report, you should carefully consider the factors discussed in Part I, "Item 1A. Risk Factors" in our Annual Report on Form 10-K for the year ended December 31, 2018, which could materially affect our business, financial condition, or future results. The risks described in our Annual Report on Form 10-K are not the only risks facing our company. Additional risks and uncertainties not currently known to us or that we currently deem to be immaterial also may materially adversely affect our business, financial condition, and/or operating results.  ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AND USE OF PROCEEDS The following table provides information about purchases by the company during the quarter ended  June 30, 2019 , of shares of the company's common stock.   Total Number of Shares (or Units) Purchased  (a)   Average Price Paid Per Share (or Unit)   Total Number of Shares (or Units) Purchased as Part of Publicly Announced Plans or Programs  (b)   Maximum Number of Shares (or Units) That May Yet Be Purchased Under the Plans or Programs  (b) April 2019 338,284   $ 88.72   336,054   12,602,992 May 2019 511,806   81.52   508,351   12,094,641 June 2019 471,619   82.19   469,656   11,624,985 Second Quarter 2019 1,321,709   $ 83.60   1,314,061   11,624,985 (a) The total number of shares purchased includes: (i)  1,314,061  shares of common stock purchased under the authorization described below; and (ii) 7,648 shares of common stock surrendered to satisfy minimum statutory tax obligations under our stock incentive plans. (b) In May 2018, the Board of Directors increased the number of shares authorized for repurchase by 15,000,000 shares. As of  June 30, 2019 , there were  11,624,985  shares remaining for future repurchases. Purchases can be made in the open market or in privately negotiated transactions, including Rule 10b5-1 plans and accelerated repurchase programs. ITEM 3. DEFAULTS ON SENIOR SECURITIES None. ITEM 4. MINE SAFETY DISCLOSURES Not applicable.   30 Table of Contents ITEM 5. OTHER INFORMATION None. ITEM 6. EXHIBITS     Exhibits filed with, or incorporated by reference into, this report: 10.1 Amended and Restated C.H. Robinson Worldwide, Inc. 2013 Equity Incentive Plan (incorporated by reference to Appendix A to the Proxy Statement on Form DEF14A filed on March 29, 2019, on file no. 000-23189)     31.1 Certification of the Chief Executive Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002     31.2 Certification of the Interim Chief Financial Officer pursuant to Section 302 of the Sarbanes-Oxley Act of 2002     32.1 Certification of the Chief Executive Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002     32.2 Certification of the Interim Chief Financial Officer pursuant to Section 906 of the Sarbanes-Oxley Act of 2002     101 Financial statements from the Quarterly Report on Form 10-Q of the Company for the period ended June 30, 2019 formatted in Inline XBRL     104 The cover page from the Quarterly Report on Form 10-Q of the Company for the period ended June 30, 2019 formatted in Inline XBRL 31 Table of Contents SIGNATURES Pursuant to the requirements of the Securities Exchange Act of 1934, the registrant has duly caused this Report to be signed on its behalf by the undersigned, thereunto duly authorized on  August 8, 2019 .   C.H. ROBINSON WORLDWIDE, INC.       By:   /s/ Robert C. Biesterfeld, Jr.      Robert C. Biesterfeld, Jr.      Chief Executive Officer             By:   /s/ Scott S. Hagen     Scott S. Hagen     Interim Chief Financial Officer and Corporate Controller 32 	 
+ 
