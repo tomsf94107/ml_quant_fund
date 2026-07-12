@@ -43,6 +43,12 @@ FEEDS = [
     # A gap here is permanent -- the data is simply gone. Tighter budget than most.
     ("options_greeks",       "accuracy.db",                 "options_greeks",       "date",            4, "daily GEX pull (Tue-Sat 05:30 VN) -- CANNOT be backfilled, gaps are PERMANENT"),
     ("vix_history",          "accuracy.db",                 "vix_history",          "date",            4, "VIXY via Massive -- risk_gate spike detector reads this"),
+    # THE ONLY PATH to ever promoting momentum to real money. It stopped writing on
+    # 2026-06-26 while Pipeline C kept reporting SUCCESS -- the stage is non-fatal
+    # by design ("shadow failing must never break signal publish"), so a silent
+    # write of zero rows looked identical to a healthy run. Two weeks of promotion
+    # evidence lost. Watch the TABLE, not the job.
+    ("momentum_shadow",      "accuracy.db",                 "momentum_shadow_predictions", "prediction_date", 4, "Pipeline C stage 3 -- momentum promotion evidence"),
 ]
 
 def _max_duckdb(p, table, col):
