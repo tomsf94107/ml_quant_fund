@@ -747,6 +747,30 @@ with tab_forecast:
         else:
             st.caption(f"💲 Prices as of close {_maxpd}")
 
+    # ── SHORT INTEREST (days_to_cover) — the ONE validated brick ─────────────
+    # Per-stock, from the latest FINRA settlement. Low DTC = few shorts = the long leg.
+    # ETFs are EXCLUDED: short interest in an ETF is market-making / hedging /
+    # creation-redemption flow, not a directional view. QQQ's low DTC says QQQ is
+    # liquid, not that the Nasdaq will rise.
+    _DTC_ETF = {"SPY","QQQ","IWM","DIA","SMH","SOXX","IGV","ARKK","IBIT","GLD","SLV",
+                "USO","TLT","HYG","LQD","AGG","VIXY","XLB","XLC","XLE","XLF","XLI",
+                "XLK","XLP","XLRE","XLU","XLV","XLY","XBI","IBB","KRE","JETS"}
+    _dtc_lookup, _si_settlement = {}, None
+    try:
+        import sqlite3 as _sq
+        _c = _sq.connect(f"file:{os.path.join(_ROOT,'short_interest.db')}?mode=ro", uri=True, timeout=10)
+        _si_settlement = _c.execute("SELECT MAX(settlement_date) FROM short_interest").fetchone()[0]
+        for _tk, _v in _c.execute(
+                "SELECT ticker, days_to_cover FROM short_interest "
+                "WHERE settlement_date=? AND days_to_cover IS NOT NULL AND days_to_cover<=50",
+                (_si_settlement,)):
+            _u = _tk.upper()
+            if _u not in _DTC_ETF:
+                _dtc_lookup[_u] = float(_v)
+        _c.close()
+    except Exception:
+        pass
+
     forecast_rows = []
     for r in signal_summary:
         exp_ret = r.expected_return or 0.0
@@ -780,6 +804,7 @@ with tab_forecast:
         forecast_rows.append({
             "Ticker":       r.ticker,
             "Signal":       r.today_signal,
+            "DTC":          (f"{_dtc_lookup[r.ticker]:.1f}" if r.ticker in _dtc_lookup else "—"),
             "Lean":         lean,
             "Price":        f"${r.current_price:.2f}"    if r.current_price   else "—",
             "Prob Raw":     f"{r.today_prob:.1%}",
@@ -821,12 +846,12 @@ with tab_forecast:
       @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
       *{{box-sizing:border-box;margin:0;padding:0;}}
       .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:clip;}}
-      .ft-head{{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:6% 5% 7% 10% 8% 7% 6% 7% 7% 9% 9% 7% 6% 6%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
-      .ft-head span{{text-align:right;cursor:pointer;user-select:none;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
+      .ft-head{{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:6% 5% 4% 6% 9% 7% 6% 6% 5% 6% 8% 8% 8% 5% 7%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
+      .ft-head span{{text-align:right;cursor:pointer;user-select:none;white-space:nowrap;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
       .ft-head span:hover{{color:#94a3b8;}}
       .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
       .ft-head span.sort-desc::after{{content:" ▼";font-size:8px;}}
-      .ft-row{{display:grid;grid-template-columns:6% 5% 7% 10% 8% 7% 6% 7% 7% 9% 9% 7% 6% 6%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
+      .ft-row{{display:grid;grid-template-columns:6% 5% 4% 6% 9% 7% 6% 6% 5% 6% 8% 8% 8% 5% 7%;padding:11px 14px;border-bottom:1px solid #0f0f1a;transition:background .12s;}}
       .ft-row:hover{{background:#13131f;}}
       .ft-row span{{font-size:12px;color:#cbd5e1;display:flex;align-items:center;justify-content:flex-end;}}
       .ft-row span:first-child{{font-weight:600;color:#f8fafc;font-size:13px;justify-content:flex-start;}}
@@ -845,7 +870,7 @@ with tab_forecast:
     </style>
     <div class="ft">
       <div class="ft-head">
-        <span>TICKER</span><span>SIGNAL</span><span>PRICE</span>
+        <span>TICKER</span><span>SIGNAL</span><span>DTC <span style="cursor:help;color:#22c55e;font-size:11px;" title="DAYS TO COVER (short interest) — the ONE validated brick in this system.&#10;&#10;shares short / average daily volume. LOW = almost nobody is betting against it.&#10;&#10;🔴 CRITICAL — THE HORIZONS DO NOT MATCH:&#10;DTC predicts outperformance over ~40 TRADING DAYS (about 2 months).&#10;It has NO predictive power at 1-5 days: h=1 IC -0.018 (NW-t -1.97, NOT significant),&#10;h=5 IC -0.019 (NOT significant). Only h=10/20/40 are real.&#10;&#10;So a low DTC next to a BUY flag is NOT two signals agreeing. The BUY is a 3-5 day&#10;call; the DTC is a 2-month call. Different clocks, different questions.&#10;Do NOT read low DTC as short-term confirmation.&#10;&#10;SIGNAL HEALTH (validate_si_v2.py, h=40):&#10;  mean IC     -0.053  (negative = low DTC predicts HIGH return = it works)&#10;  Newey-West t  -4.76  (|t| &gt; 2 = significant; this is very solid)&#10;  right-sign  74% of 122 settlement dates&#10;  negative EVERY year 2021-2026 — not a regime artifact&#10;&#10;HOW IT IS TRADED: separately, NOT in this model. Rank all ~395 names by DTC,&#10;buy the lowest 20%, hold 40 trading days. See si_positions_live.py.&#10;XGBoost with 121 features CANNOT beat that one-line sort (tested 2026-07-12).&#10;&#10;HONEST EXPECTATION: beta-hedged Sharpe +0.57, maxDD -9.4%. The raw +38%/yr is&#10;mostly MARKET BETA (beta 1.16) — about 74% of it. Do not size as if it is alpha.&#10;&#10;ETFs are excluded: their short interest is market-making, not a view.&#10;Source: FINRA, published ~8 business days AFTER settlement (the lag is priced in;&#10;the edge survives it, 92% retained).">&#9432;</span></span><span>PRICE</span>
         <span>PROB EFF</span><span>PROB GLOBAL <span style="cursor:help;color:#3b82f6;font-size:11px;" title="GLOBAL ensemble prob(up) - cross-sectional pooled model (all tickers, 100 features). DISPLAY/COMPARISON ONLY, NOT in the live signal (prob_eff = per-ticker x multipliers). Weak standalone (~46-49% dir acc); shown to compare vs per-ticker Prob Eff. Retrained nightly in Pipeline B Stage 2.7.">&#9432;</span></span><span>REC % <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Recommended Weight — % of trading budget to allocate to this BUY relative to other BUYs today.&#10;&#10;Formula: (prob_raw - 0.5) / sum_of_all_BUY_convictions&#10;&#10;Interpretation:&#10;  &gt; 15% = top conviction, strongest BUY of the day&#10;  8-15% = high conviction, well above average&#10;  4-8%  = average conviction&#10;  &lt; 4% = low conviction, barely above 0.5&#10;&#10;Example: $10,000 budget, ADSK at 25.8% = $2,580&#10;&#10;Note: No max-weight cap. Your risk tolerance overrides.&#10;Most retail traders cap at 10-15% per single position.&#10;&#10;A/B test result (May 27 2026, 89 buckets):&#10;Conviction-weight ≈ equal-weight on real BUY portfolios.&#10;Diff: -1pp to +1pp over ~30 days. Treat as guidance, not edge.">&#9432;</span></span><span>RANK <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Phase 2H Rank — ⚠ MODEL KILLED May 31 2026 (ranker leak + A8 ceiling, 5 tests). MONITORING ONLY, not traded. Position in blend score ranking among today's BUYs.&#10;&#10;🥇 #1-5  = top 5 BUYs (highest combined conviction)&#10;🥈 #6-10 = next 5 BUYs&#10;#11+    = lower-tier BUYs&#10;&#10;Backtest (33 days, Apr-May 2026):&#10;Top-5 by blend score: +174% cum return vs +117% baseline&#10;w_prob=0.3, w_a8=0.7, stable across H1/H2 splits">&#9432;</span></span><span>A8 <span style="cursor:help;color:#3b82f6;font-size:11px;" title="A8 prob — ⚠ KILLED/at-ceiling (5 overlay tests failed, struck off 1.8). MONITORING ONLY, not traded. A8 model's prob(top decile cross-sectional return).&#10;&#10;Where ticker ranks in universe by 5-day fwd return.&#10;&#10;Interpretation:&#10;  &gt; 20% = strong cross-sectional standout&#10;  10-20% = above-average universe rank&#10;  &lt; 10% = below-average rank&#10;&#10;IC = 0.111 (real cross-sectional alpha)">&#9432;</span></span><span>BLEND <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Blend score — ⚠ KILLED May 31 2026. The H1/H2 stability claims below were refuted by five later tests (A8 ceiling). MONITORING ONLY, not traded. Cross-sectional z-scored combination.&#10;&#10;Formula: 0.3 × prob_raw_z + 0.7 × a8_z&#10;&#10;Higher = better candidate among today's BUYs&#10;&#10;Optimal weights validated by stability test:&#10;  H1 (Mar-Apr): +68% cum&#10;  H2 (Apr-May): +72% cum">&#9432;</span></span>
         <span>TARGET ▲</span><span>TARGET ▼</span><span>EXP RETURN</span><span>ATR</span><span>SHARPE <span style="cursor:help;color:#3b82f6;font-size:11px;" title="Sharpe ratio — annualized risk-adjusted return (return &#247; volatility, scaled to 252 trading days).&#10;&#10;Ranges:&#10;  &lt; 0   = losing money (avg return negative)&#10;  0-1   = mediocre&#10;  1-2   = good&#10;  2-3   = very good&#10;  &gt; 3   = excellent — but verify (suspiciously high can mean overfit or leakage)&#10;&#10;IMPORTANT: high probability + low/negative Sharpe = wins often but the few big losses make it net-negative. Trust prob and Sharpe TOGETHER, not probability alone.">&#9432;</span></span>
       </div>
@@ -864,7 +889,7 @@ with tab_forecast:
       let sortDir = 1;
       const tbody = document.getElementById('tbody');
       const headers = document.querySelectorAll('.ft-head span');
-      const colKeys = ['Ticker','Signal','Price','Prob Eff','Prob Global','Rec Weight','Rank','A8','Blend','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
+      const colKeys = ['Ticker','Signal','DTC','Price','Prob Eff','Prob Global','Rec Weight','Rank','A8','Blend','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
 
       function parseVal(v) {{
         if (!v || v === '—') return -Infinity;
@@ -882,11 +907,19 @@ with tab_forecast:
         const bc   = prob >= 65 ? '#22c55e' : prob >= 55 ? '#f59e0b' : '#3b82f6';
         const sc   = sh >= 2 ? '#22c55e' : sh >= 1 ? '#f59e0b' : '#ef4444';
         const badgeClass = sig==='BUY' ? 'buy' : sig==='SELL' ? 'sell' : 'hold';
+        // DTC colour: LOW days-to-cover is the favourable end (that is the long leg).
+        // Thresholds are the quintile boundaries of the live universe, not round numbers.
+        const dtc = parseFloat(r.DTC);
+        const dtcColor = isNaN(dtc) ? '#475569'
+                       : dtc <= 2.0 ? '#22c55e'      // low  = few shorts  = BUY side
+                       : dtc <= 4.0 ? '#94a3b8'      // mid  = no view
+                       : '#ef4444';                  // high = crowded short = avoid
         const row = document.createElement('div');
         row.className = 'ft-row';
         row.innerHTML = `
           <span>${{r.Ticker}}</span>
           <span><span class="badge ${{badgeClass}}">${{sig}}</span></span>
+          <span style="color:${{dtcColor}};font-weight:600">${{r.DTC}}</span>
           <span>${{r.Price}}</span>
           <span>
             <div class="prob-col">
