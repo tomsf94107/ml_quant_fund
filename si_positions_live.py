@@ -355,11 +355,39 @@ def main():
         # at 100% of capital you ARE ~2.7x levered, and that is the -84.5% drawdown in
         # si_book_diagnostic (vs -27% at 1x). A ledger that cannot tell a duplicate
         # entry from a real second cohort makes that mistake invisible.
-        _existing = set()
+        # LEVERAGE GUARD. The first version of this guard checked only for a DUPLICATE
+        # SETTLEMENT -- which was the wrong bug. The real danger is stacking FULL-SIZE
+        # cohorts from DIFFERENT settlements: settlements arrive every ~15 days, the
+        # hold is 40 TRADING days, so ~2.7 cohorts legitimately overlap. Each one at
+        # 100% of capital = ~2.7x LEVERED. That is the -84.5% maxDD in
+        # si_book_diagnostic, versus -27% at 1x. It looks completely reasonable at
+        # every individual step, which is exactly what makes it dangerous.
+        #
+        # So the guard is on DEPLOYED CAPITAL, not on the settlement date.
+        _open_usd = 0.0; _open_cohorts = set()
         if os.path.isfile(led):
             with open(led) as _f:
                 for _r in csv.DictReader(_f):
-                    _existing.add(_r.get("settlement"))
+                    try: _open_usd += float(_r.get("usd") or 0)
+                    except Exception: pass
+                    _open_cohorts.add((_r.get("generated_on"), _r.get("settlement")))
+        _new_usd = sum(x[3] for x in log if isinstance(x[3], (int, float)))
+        if a.capital and (_open_usd + _new_usd) > a.capital * 1.05 and not a.force:
+            print("\n  [BLOCKED — LEVERAGE] the ledger already has ${:,.0f} open across {} cohort(s)."
+                  .format(_open_usd, len(_open_cohorts)))
+            print("  Logging this book would take you to ${:,.0f} on ${:,.0f} of capital = {:.1f}x."
+                  .format(_open_usd + _new_usd, a.capital, (_open_usd + _new_usd)/a.capital))
+            print("")
+            print("  Settlements come every ~15 days; the hold is 40 TRADING days. So ~2.7")
+            print("  cohorts overlap. Full-size cohorts = ~2.7x levered = the -84.5% drawdown")
+            print("  in si_book_diagnostic (vs -27% at 1x). Every individual step looks fine.")
+            print("")
+            print("  Either:")
+            print("    (a) wait for the open cohort to hit 40 trading days and EXIT first, or")
+            print("    (b) size overlapping cohorts with --gross 0.37 so ~2.7 of them sum to 1x.")
+            print("  Override with --force only if you know what you are doing.")
+            return
+        _existing = {c[1] for c in _open_cohorts}
         if latest in _existing and not a.force:
             print("\n  [SKIP LEDGER] settlement %s is ALREADY logged." % latest)
             print("  Re-running the generator does NOT create a new cohort -- one")
