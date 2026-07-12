@@ -64,6 +64,15 @@ def main():
     ap.add_argument("--quantile",type=float,default=0.2)
     ap.add_argument("--min-names",type=int,default=20)
     ap.add_argument("--max-weight",type=float,default=0.05)
+    ap.add_argument("--vol-target",action="store_true",
+        help="size by 1/vol (equal RISK per name) instead of equal DOLLARS. "
+             "Equal-dollar means a 90%%-vol name contributes ~7x the portfolio "
+             "variance of a 12%%-vol name: the book's risk is then dominated by "
+             "whichever handful of names happen to be most volatile, which is NOT "
+             "a decision anyone made. Predicting vol is the one thing this system "
+             "does well (OOS Spearman +0.71), so use it where it pays: sizing.")
+    ap.add_argument("--vol-window",type=int,default=20,
+        help="trailing days for the realized-vol estimate used by --vol-target")
     ap.add_argument("--max-stale-days",type=int,default=30)
     ap.add_argument("--force",action="store_true",help="emit positions even if the settlement is stale")
     ap.add_argument("--log-ledger",action="store_true")
@@ -124,10 +133,89 @@ def main():
     shorts=uni[-q:]          # high DTC
     print("  rankable universe: %d names | quintile size: %d"%(len(uni),q))
 
-    # weights: long gross = a.gross (of capital); short gross = short_frac * long gross
+    # ── SIZING ───────────────────────────────────────────────────────────────
+    # DEFAULT (equal weight): every name gets the same DOLLARS. That means a
+    # 90%-vol name contributes ~7x the portfolio variance of a 12%-vol name, so
+    # the book's realized risk is dominated by whichever handful of names happen
+    # to be most volatile. Nobody decided that; it is an accident of the sizing.
+    #
+    # --vol-target: every name gets the same RISK. w_i proportional to 1/vol_i.
+    # Justification (measured 2026-07-12, not assumed):
+    #   log(trailing_vol_20d) -> log(forward_vol_5d), OOS Spearman +0.623
+    #   the full 118-feature XGB model                              +0.706
+    # Forward vol is the ONE thing this system predicts well -- direction sits at
+    # 0.51 in and out of sample. Use the good forecast where it actually pays.
+    #
+    # WHY TRAILING VOL AND NOT THE XGB MODEL: this script moves real money. The
+    # model is only +0.08 Spearman better, and it drags in xgboost, the feature
+    # builder, and ~400 API calls -- any of which can fail at 3am and silently
+    # emit a broken book. Trailing realized vol is one line of SQL, cannot fail,
+    # and captures ~90% of the benefit. Defensive by design (see RULE 1 above).
     long_gross=a.gross; short_gross=a.gross*a.short_frac
-    wl=min(a.max_weight, long_gross/len(longs)) if longs else 0
-    ws=min(a.max_weight, short_gross/len(shorts)) if shorts else 0
+
+    def _vols(names):
+        """Trailing realized vol per ticker from daily_prices. Returns {} on any
+        problem -- the caller then falls back to equal weight rather than sizing
+        on a number it could not compute."""
+        if not names: return {}
+        c2=ro(prices_db)
+        try:
+            out={}
+            for tk in names:
+                r=Q(c2,"SELECT adj_close FROM daily_prices WHERE ticker=? "
+                       "ORDER BY date DESC LIMIT ?",(tk,a.vol_window+1))
+                if len(r)<a.vol_window//2: continue
+                px=[float(x[0]) for x in r][::-1]
+                rets=[(px[i]/px[i-1]-1.0) for i in range(1,len(px)) if px[i-1]>0]
+                if len(rets)<5: continue
+                m=sum(rets)/len(rets)
+                sd=(sum((x-m)**2 for x in rets)/(len(rets)-1))**0.5
+                if sd>1e-6: out[tk]=sd*(252**0.5)          # annualised
+            return out
+        finally: c2.close()
+
+    def _weights(names, gross):
+        """Equal weight, or 1/vol with the cap applied and the excess REDISTRIBUTED.
+
+        Capping without redistributing silently under-deploys: if 5 names hit a 5%
+        cap you lose that gross entirely and the book is smaller than you asked for.
+        Iterate until nothing else binds.
+        """
+        if not names: return {}
+        tks=[t for t,_ in names]
+        if not a.vol_target:
+            w=min(a.max_weight, gross/len(tks))
+            return {t:w for t in tks}
+        vols=_vols(tks)
+        if len(vols)<len(tks)*0.8:
+            print("  [WARN] vol available for only %d/%d names -> EQUAL WEIGHT fallback"
+                  %(len(vols),len(tks)))
+            w=min(a.max_weight, gross/len(tks))
+            return {t:w for t in tks}
+        med=sorted(vols.values())[len(vols)//2]
+        inv={t: 1.0/max(vols.get(t,med),0.05) for t in tks}      # floor vol at 5%
+        raw={t: gross*inv[t]/sum(inv.values()) for t in tks}
+        # iterative cap + redistribute
+        capped={}; free=dict(raw)
+        for _ in range(20):
+            over=[t for t,w in free.items() if w>a.max_weight]
+            if not over: break
+            for t in over:
+                capped[t]=a.max_weight; free.pop(t)
+            rem=gross-a.max_weight*len(capped)
+            if rem<=0 or not free: break
+            fi=sum(inv[t] for t in free)
+            free={t: rem*inv[t]/fi for t in free}
+        out={**capped, **free}
+        lo=min(out.values()); hi=max(out.values())
+        print("  [VOL-TARGET] vols %.0f%%-%.0f%% (median %.0f%%) -> weights %.2f%%-%.2f%%"
+              %(100*min(vols.values()),100*max(vols.values()),100*med,100*lo,100*hi))
+        return out
+
+    W_long  = _weights(longs,  long_gross)
+    W_short = _weights(shorts, short_gross)
+    wl = (sum(W_long.values())/len(W_long))   if W_long  else 0
+    ws = (sum(W_short.values())/len(W_short)) if W_short else 0
     # renormalize if cap binds
     actual_long=wl*len(longs); actual_short=ws*len(shorts)
 
@@ -136,27 +224,43 @@ def main():
           %(100*actual_long,100*a.short_frac,"long-only" if a.short_frac==0 else ("dollar-neutral" if abs(a.short_frac-1)<1e-9 else "tilted")))
     print("-"*78)
 
-    def emit(side, items, w):
-        print("\n  %s — %d names @ %.2f%% each%s:"%(side,len(items),100*w," of capital" if True else ""))
+    def emit(side, items, W):
+        """W is a PER-NAME dict {ticker: weight}. It used to be a scalar, and the
+        first cut of --vol-target computed the dict and then averaged it back into
+        a scalar before emitting -- so the vol weights were calculated, printed in
+        the header, and then thrown away. Every name still got equal dollars. The
+        book would have been identical with and without the flag.
+        (A float is still accepted so nothing else that calls emit() breaks.)
+        """
+        if not isinstance(W, dict):
+            W = {tk: float(W) for tk, _ in items}
+        gross = sum(W.get(tk, 0.0) for tk, _ in items)
+        mode = "1/vol RISK-parity" if a.vol_target else "equal DOLLARS"
+        print("\n  %s — %d names, %.0f%% gross (%s):"%(side, len(items), 100*gross, mode))
         hdr="    %-8s %10s"%("ticker","weight")
         if a.capital: hdr+=" %12s %10s"%("$ alloc","shares")
+        if a.vol_target: hdr+=" %8s"%"vol"
         print(hdr)
+        vmap = _vols([t for t,_ in items]) if a.vol_target else {}
         rowlog=[]
         for tk,v in items:
+            w = W.get(tk, 0.0)
             line="    %-8s %9.2f%%"%(tk,100*w)
             if a.capital:
                 dollars=w*a.capital; px=last_px[tk]; sh=int(round(dollars/px)) if px>0 else 0
-                line+=" %12s %10d"%("$%,.0f"%dollars if False else ("$%.0f"%dollars), sh)
+                line+=" %12s %10d"%("$%.0f"%dollars, sh)
                 rowlog.append((tk,side,round(w,5),round(dollars,2),sh,round(px,2)))
             else:
                 rowlog.append((tk,side,round(w,5),"","",round(last_px[tk],2)))
+            if a.vol_target and tk in vmap:
+                line+=" %7.0f%%"%(100*vmap[tk])
             print(line+"   (DTC %.1f)"%v)
         return rowlog
 
     log=[]
-    log+=emit("LONG  (low DTC)", longs, wl)
+    log+=emit("LONG  (low DTC)", longs, W_long)
     if a.short_frac>0 and shorts:
-        log+=emit("SHORT (high DTC)", shorts, ws)
+        log+=emit("SHORT (high DTC)", shorts, W_short)
     else:
         print("\n  SHORT leg: OFF (long-only).")
 
