@@ -61,7 +61,43 @@ def main():
     ap.add_argument("--capital",type=float,default=None,help="account capital for $ + share sizing")
     ap.add_argument("--gross",type=float,default=1.0,help="fraction of capital to deploy as LONG gross (default 1.0)")
     ap.add_argument("--short-frac",type=float,default=0.3,help="short gross as fraction of long gross (0=long-only, 1=dollar-neutral)")
-    ap.add_argument("--quantile",type=float,default=0.2)
+    # QUANTILE SWEEP (2026-07-12, ETFs excluded, 40d hold, 10bps, 8BD lag).
+    # The column that matters is the BETA-HEDGED Sharpe -- the raw Sharpe is inflated
+    # by a 1.1-1.5 beta you could buy with SPY for free.
+    #
+    #     q     names   hedgeSharpe   hedgeMaxDD   beta
+    #   0.05      18       +0.42        -22.2%     1.46
+    #   0.07      26       +0.32        -22.4%     1.38   <-- WAS LIVE. THE WORST.
+    #   0.10      37       +0.39        -17.6%     1.30
+    #   0.15      56       +0.52        -13.7%     1.21
+    #   0.20      76       +0.57         -9.4%     1.16
+    #   0.25      95       +0.58         -7.4%     1.11   <-- NEW DEFAULT
+    #   0.30     114       +0.59         -5.7%     1.08
+    #
+    # MONOTONE: more names -> more alpha, less drawdown, less beta. No peak. This is
+    # Grinold (IR = IC x sqrt(breadth)) doing exactly what it says: the SI edge is
+    # DIFFUSE across the whole low-DTC quintile, not concentrated in the extreme tail.
+    # Concentrating to 26 names threw away breadth and nearly HALVED the alpha while
+    # TRIPLING the drawdown. The prior note "concentrate to ~25 names via --quantile
+    # 0.07" was a share-ROUNDING argument, not a returns argument, and it was costly.
+    # 0.25 over 0.30 only because the alpha is flat past 0.25 and 95 names is already
+    # a lot to execute.
+    # FINAL: 0.20. The sweep (ETFs excluded, $150k, WHOLE shares) shows q=0.20 is not
+    # a compromise -- it DOMINATES. It has both a higher hedged Sharpe AND lower
+    # whole-share rounding drift than 0.15:
+    #
+    #     q     names   $/pos    drift   hedgeSharpe   hedgeMaxDD
+    #   0.07      27    $5,556    1.6%      +0.32        -22.4%   <-- was live. worst.
+    #   0.15      59    $2,542    3.7%      +0.52        -13.7%
+    #   0.20      79    $1,899    3.4%      +0.57         -9.4%   <-- DOMINATES 0.15
+    #   0.25      98    $1,531    6.0%      +0.58         -7.4%   <-- +0.01 Sharpe for
+    #   0.30     118    $1,271    6.2%      +0.59         -5.7%       +2.6% drift. No.
+    #
+    # Above ~5% drift, whole-share rounding silently reweights the book away from the
+    # one that was validated -- an implementation cost the backtest does not model.
+    # 0.20 is also the ORIGINAL validated default; the 0.07 concentration note was the
+    # deviation, and it cost roughly half the alpha and tripled the drawdown.
+    ap.add_argument("--quantile",type=float,default=0.20)
     ap.add_argument("--min-names",type=int,default=20)
     ap.add_argument("--max-weight",type=float,default=0.05)
     ap.add_argument("--vol-target",action="store_true",
@@ -117,14 +153,42 @@ def main():
         newest_px=max(last_dt.values()); pxage=(today-newest_px).days
         print("  latest price date: %s  (%d days old)%s"%(newest_px,pxage," — WARNING: prices look stale" if pxage>5 else ""))
 
+    # ── ETF EXCLUSION (added 2026-07-12) ───────────────────────────────────
+    # Short interest in an ETF is NOT a directional view. It is market-making,
+    # hedging and creation/redemption mechanics. QQQ having low days-to-cover tells
+    # you QQQ is liquid, not that the Nasdaq will rise. The signal does not apply.
+    #
+    # This is not academic: the 2026-06-30 book was 24% ETFs (QQQ, XLC, XLV, XLB,
+    # XLRE, XLU, SLV) -- a quarter of the capital -- while the BACKTESTED book was
+    # historically only ~1% ETFs. The live book had silently drifted onto a
+    # different strategy than the validated one.
+    #
+    # HARDCODED, not read from tickers_metadata.csv, because the metadata is WRONG:
+    # it tags only 7 ETFs (QQQ, SPY, XLE, XLF, XLI, XLU, XLV) and mislabels SLV,
+    # XLB, XLC and XLRE as ordinary sector names. A metadata-driven filter would let
+    # them straight through. Verify against the metadata, do not trust it.
+    ETF_EXCLUDE = {
+        "SPY","QQQ","IWM","DIA","VOO","VTI","VTV","VUG","EFA","EEM","VEA","VWO",
+        "SMH","SOXX","ARKK","ARKG","IBIT","GBTC","BITO",
+        "GLD","SLV","USO","UNG","DBC","TLT","IEF","SHY","HYG","LQD","AGG","BND",
+        "VIXY","VXX","UVXY","SVXY",
+        "XLB","XLC","XLE","XLF","XLI","XLK","XLP","XLRE","XLU","XLV","XLY",
+        "XBI","IBB","KRE","KBE","ITB","XHB","JETS","TAN","ICLN","LIT","URA",
+    }
+
     # rankable universe: has DTC at latest settlement (clip junk) AND a price
-    uni=[]
+    uni=[]; skipped_etf=[]
     for tk,dtc in rows:
         try: v=float(dtc)
         except Exception: continue
         if v>50.0: continue
         tku=tk.upper()
+        if tku in ETF_EXCLUDE:
+            skipped_etf.append(tku); continue
         if tku in last_px: uni.append((tku,v))
+    if skipped_etf:
+        print("  excluded %d ETFs (short interest in an ETF is market-making, not a view): %s"
+              %(len(skipped_etf), ", ".join(sorted(skipped_etf)[:12])))
     if len(uni)<a.min_names:
         print("\n  [STOP] only %d rankable names (need %d)."%(len(uni),a.min_names)); return
     uni.sort(key=lambda x:x[1])  # ascending DTC
