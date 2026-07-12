@@ -42,6 +42,7 @@ FEEDS = [
     # GEX: UW serves a ROLLING ~250-day window and cannot be backfilled further.
     # A gap here is permanent -- the data is simply gone. Tighter budget than most.
     ("options_greeks",       "accuracy.db",                 "options_greeks",       "date",            4, "daily GEX pull (Tue-Sat 05:30 VN) -- CANNOT be backfilled, gaps are PERMANENT"),
+    ("vix_history",          "accuracy.db",                 "vix_history",          "date",            4, "VIXY via Massive -- risk_gate spike detector reads this"),
 ]
 
 def _max_duckdb(p, table, col):
