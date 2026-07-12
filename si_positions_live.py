@@ -343,6 +343,30 @@ def main():
 
     if a.log_ledger and a.capital:
         led=os.path.join(a.root,"si_live_ledger.csv"); new=not os.path.isfile(led)
+        # DEDUPE GUARD (added 2026-07-12). --log-ledger APPENDED blindly, so re-running
+        # the generator on the same settlement logged a SECOND cohort. It happened
+        # twice: settlement 2026-05-29 got logged on Jun 25 (78 names, q=0.20) AND
+        # Jun 26 (27 names, q=0.07), and 2026-07-12 got logged twice in one evening.
+        # si_track then marked BOTH to market and reported $255,000 deployed on
+        # $150,000 of capital -- i.e. it looked like 1.7x leverage that did not exist.
+        #
+        # This matters beyond bookkeeping: settlements arrive every ~15 days and the
+        # hold is 40 TRADING days, so ~2.7 cohorts genuinely overlap. If each is sized
+        # at 100% of capital you ARE ~2.7x levered, and that is the -84.5% drawdown in
+        # si_book_diagnostic (vs -27% at 1x). A ledger that cannot tell a duplicate
+        # entry from a real second cohort makes that mistake invisible.
+        _existing = set()
+        if os.path.isfile(led):
+            with open(led) as _f:
+                for _r in csv.DictReader(_f):
+                    _existing.add(_r.get("settlement"))
+        if latest in _existing and not a.force:
+            print("\n  [SKIP LEDGER] settlement %s is ALREADY logged." % latest)
+            print("  Re-running the generator does NOT create a new cohort -- one")
+            print("  settlement produces one book. Logging it twice would double-count")
+            print("  your deployed capital and hide real leverage.")
+            print("  To replace it: remove those rows from %s, or pass --force." % led)
+            return
         with open(led,"a",newline="") as f:
             w=csv.writer(f)
             if new: w.writerow(["generated_on","settlement","ticker","side","weight","usd","shares","ref_px","hold_days"])
