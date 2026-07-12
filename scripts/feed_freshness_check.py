@@ -30,6 +30,15 @@ FEEDS = [
     ("economic_calendar",    "accuracy.db",                 "economic_calendar",    "event_date",      6,  "M/W/F refresh"),
     ("short_interest",       "short_interest.db",           "short_interest",       "settlement_date", 35, "FINRA bi-monthly (3-4wk gaps NORMAL)"),
     ("daily_prices",         "prices.db",                   "daily_prices",         "date",            10, "PEAD cache (fetch_and_pead, NOT daily cron; momentum_shadow reads this)"),
+    # Added Jul 12 2026 after walk_forward_history was found DEAD since Jun 29 and
+    # nothing alerted. Root causes: cron said `* * 1` (Monday) not `* * 0` (Sunday);
+    # it fired 01:00-03:00 VN while the Mac wakes at 06:50; and `timeout 3600` killed
+    # every run at exactly 60 min. Three failures, zero alarms, two weeks of silence.
+    # The point of a freshness check is to watch the TABLE, not trust the job.
+    ("walk_forward_history", "accuracy.db",                 "walk_forward_history", "run_date",       10, "weekly Sun 08/10/12 VN — the honest-OOS harness"),
+    ("predictions",          "accuracy.db",                 "predictions",          "prediction_date", 4, "daily (Pipeline B Stage 3)"),
+    ("outcomes",             "accuracy.db",                 "outcomes",             "prediction_date", 9, "daily reconcile (h=5 needs 5 sessions to mature)"),
+    ("raw_bars",             "prices.db",                   "raw_bars",             "d",               4, "daily (price_cache via Pipeline A/B)"),
 ]
 
 def _max_duckdb(p, table, col):

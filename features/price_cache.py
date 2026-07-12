@@ -104,7 +104,15 @@ def cached_daily(ticker, start, end, fetch_raw_fn, fetch_splits_fn) -> pd.DataFr
             #  into ~400 API calls per pipeline run -> HTTP 429. Fixed Jul 11 2026.)
             REFETCH_TAIL_DAYS = 5
             FRONTIER_WINDOW_DAYS = 10
-            _recent = (pd.Timestamp(end_s) >= pd.Timestamp.today().normalize()
+            # RESEARCH ESCAPE HATCH (Jul 12 2026). Walk-forward / ranker runs build
+            # panels over YEARS of history for ~400 tickers. The frontier tail
+            # re-fetch then fires ~400 needless API calls for the last 5 days --
+            # days the embargo discards anyway -- and 429s the whole run into the
+            # ground. ML_QUANT_NO_TAIL_REFETCH=1 skips it.
+            # NEVER set this in production: the tail is what heals partial bars.
+            import os as _os
+            _no_tail = _os.environ.get('ML_QUANT_NO_TAIL_REFETCH', '0') == '1'
+            _recent = (not _no_tail) and (pd.Timestamp(end_s) >= pd.Timestamp.today().normalize()
                                     - pd.Timedelta(days=FRONTIER_WINDOW_DAYS))
             if _recent:
                 gap_start = (last - pd.Timedelta(days=REFETCH_TAIL_DAYS)).strftime("%Y-%m-%d")

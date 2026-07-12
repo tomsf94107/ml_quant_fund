@@ -115,3 +115,18 @@ logs/
 data/alpha_panel/
 *.db-wal
 *.db-shm
+
+# regenerable caches / artifacts (Jul 12 2026)
+cache/
+_archived_duplicates/
+models/saved/_retired/
+data/signals_cache*.json
+data/watchlist_cache.json
+data/sentiment.db
+models/saved/training_report.csv
+reports/*.json
+*.db.broken.*
+*.db.bak.*
+*.bak.*
+*.bak[0-9]
+logs/
