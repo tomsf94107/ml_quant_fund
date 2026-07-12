@@ -28,6 +28,19 @@ cd $ROOT
 export PYTHONPATH="$ROOT:${PYTHONPATH:-}"
 source /Users/atomnguyen/.zshrc 2>/dev/null || true
 
+# .env is the CANONICAL key source (pipeline A and B both use it). This script
+# relied only on ~/.zshrc, which is a user SHELL file, not config -- it works today
+# because .zshrc happens to export the keys, but the two can drift and a missing key
+# would 401 silently. Belt and braces: source .env too, and FAIL LOUDLY if the keys
+# are still absent rather than making unauthenticated calls that write nothing.
+if [ -f "$ROOT/.env" ]; then
+    set -a
+    source "$ROOT/.env"
+    set +a
+fi
+: "${UW_API_KEY:?FATAL: UW_API_KEY not set (checked .env and .zshrc)}"
+: "${MASSIVE_API_KEY:?FATAL: MASSIVE_API_KEY not set (checked .env and .zshrc)}"
+
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOGDIR/pipeline.log"
 }

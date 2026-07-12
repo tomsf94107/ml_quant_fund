@@ -108,16 +108,39 @@ def build_risk_features(start_date, end_date) -> pd.DataFrame:
     # risk_next_1d/3d (those features encoded "VIX will spike in N days").
     # Now: VIX spikes only feed risk_prev_1d (strictly past). risk_today and
     # risk_next_* contain ONLY calendar-known events.
+    # ── VIX spike source (REWIRED 2026-07-12) ───────────────────────────────
+    # WAS: safe_yf_download(["^VIX"]). yfinance is XProtect-BLOCKED on this machine,
+    # so that call returned EMPTY on every single invocation, the loop below never
+    # executed, and risk_prev_1d has NEVER once recorded a VIX spike. Silent, total,
+    # months-long failure -- the same shape as the 18 credential-less crons.
+    #
+    # NOW: accuracy.db.vix_history, populated by backfill_vix.py from VIXY (the VIX
+    # short-term futures ETF) via Massive. Polygon returns 403 on I:VIX (index data
+    # is a higher tier) and empty on ^VIX/VIX; VIXY comes through cleanly.
+    #
+    # CRITICAL CALIBRATION NOTE: VIXY tracks VIX FUTURES, not spot VIX. Futures move
+    # far less -- a 20% spot move might be an 8-10% VIXY move. The old
+    # VIX_SPIKE_PCT=0.20 would fire ZERO times on VIXY, leaving this gate dead in a
+    # NEW way, which is worse than dead in an obvious way. So is_spike is computed
+    # in the table as a SELF-CALIBRATING percentile: a spike is a day in the top 1%
+    # of |daily move| over the trailing 252 days. No knowledge of the VIX/VIXY beta
+    # is needed, and it adapts if the feed ever changes again.
+    #
+    # Reading a TABLE, not the wire: build_risk_features is called once per ticker
+    # (~400x per pipeline run). Hitting an API 400 times for the same market-wide
+    # series is how you get 429'd.
     try:
-        from features.yf_resilient import safe_yf_download
-        vix = safe_yf_download(["^VIX"], start=str(start_date), end=str(end_date),
-                               progress=False, auto_adjust=True)
-        if vix is not None and not vix.empty:
-            if hasattr(vix.columns, "get_level_values"):
-                vix.columns = vix.columns.get_level_values(0)
-            vix_close = vix["Close"].squeeze()
-            vix_ret = vix_close.pct_change().abs()
-            for d in vix_ret[vix_ret > VIX_SPIKE_PCT].index:
+        import sqlite3 as _sq
+        from pathlib import Path as _P
+        _db = _P(__file__).resolve().parent.parent / "accuracy.db"
+        _c = _sq.connect(f"file:{_db}?mode=ro", uri=True, timeout=30)
+        _rows = _c.execute(
+            "SELECT date FROM vix_history WHERE is_spike=1 AND date BETWEEN ? AND ?",
+            (str(start_date), str(end_date))).fetchall()
+        _c.close()
+        if _rows:
+            vix_ret = pd.Series(1.0, index=pd.to_datetime([r[0] for r in _rows]))
+            for d in vix_ret.index:
                 # Shift forward by 1 day: today's spike becomes tomorrow's
                 # "previous-day spike" — strictly retrospective.
                 d_plus_1 = d + pd.tseries.offsets.BDay(1)

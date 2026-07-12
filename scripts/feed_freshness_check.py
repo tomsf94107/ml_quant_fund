@@ -39,6 +39,9 @@ FEEDS = [
     ("predictions",          "accuracy.db",                 "predictions",          "prediction_date", 4, "daily (Pipeline B Stage 3)"),
     ("outcomes",             "accuracy.db",                 "outcomes",             "prediction_date", 9, "daily reconcile (h=5 needs 5 sessions to mature)"),
     ("raw_bars",             "prices.db",                   "raw_bars",             "d",               4, "daily (price_cache via Pipeline A/B)"),
+    # GEX: UW serves a ROLLING ~250-day window and cannot be backfilled further.
+    # A gap here is permanent -- the data is simply gone. Tighter budget than most.
+    ("options_greeks",       "accuracy.db",                 "options_greeks",       "date",            4, "daily GEX pull (Tue-Sat 05:30 VN) -- CANNOT be backfilled, gaps are PERMANENT"),
 ]
 
 def _max_duckdb(p, table, col):
