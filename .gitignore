@@ -130,3 +130,5 @@ reports/*.json
 *.bak.*
 *.bak[0-9]
 logs/
+prices.db.BACKUP*
+*.db.bak*
