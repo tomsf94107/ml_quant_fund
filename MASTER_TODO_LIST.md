@@ -12,3 +12,17 @@ still net negative. A hit-rate edge with no payoff magnitude.
 LESSON: walk_forward_history stores hit rates; a hit rate cannot tell you if a signal
 makes money. EVERY future signal goes through analysis/wf_returns_test.py first.
 TOOLING: analysis/wf_returns_dump.py + analysis/wf_returns_test.py (parity-checked).
+
+## MOMENTUM -- PASSED THE 18-YEAR MONEY GATE 2026-07-13 (PROVISIONAL: survivor-only data)
+Same validated definition (signals/momentum_signal.py), daily_prices 2008->2026,
+20td hold, top decile EW, beta-stripped vs EW universe, 10bps x measured turnover,
+t clustered by year.
+- mom_6_1 : NET +1.130%/rebal, t=+3.09, 14/18 yrs+. 2022+ sub: +1.917% t=+4.17.
+- mom_12_1: NET +1.212%/rebal, t=+3.19, 13/17 yrs+. 2022+ sub: +2.472% t=+3.33.
+- 2009 crash visible in L/S (-4.2%/-6.9%); long-only top-decile dodges it. L/S fails.
+- Weak years = textbook momentum-hostile (2011/2016/2021). 2009-10 resid = beta
+  artifact (12-obs expanding window), trust L/S there.
+- CAVEATS: survivor-only universe (pass = provisional); 2022+ splice div-adjustment.
+- DECISION: 12-week shadow CONTINUES as the promotion gate, per pre-committed table.
+  Direction died at +0.04% net; momentum clears at +1.2% net. 30x scale difference.
+Evidence: reports/momentum_18yr_mom_6_1.csv, reports/momentum_18yr_mom_12_1.csv
