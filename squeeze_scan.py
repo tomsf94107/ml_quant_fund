@@ -97,7 +97,14 @@ def compute_signals(df, cfg=CFG):
     df["ret_3d"] = df["close"].pct_change(3)
     df["gap"]    = df["open"] / df["close"].shift(1) - 1
     mp = max(5, cfg["vol_win"] // 2)
-    df["vol20"]  = df["volume"].rolling(cfg["vol_win"], min_periods=mp).mean()
+    def _mech_clean_mean(w):
+        med = w.median()
+        kept = w[w <= 3.0 * med] if med > 0 else w
+        return kept.mean() if len(kept) else float("nan")
+    _prior = df["volume"].shift(1).rolling(cfg["vol_win"], min_periods=mp)
+    df["_med20"] = _prior.median()
+    df["vol20"]  = _prior.apply(_mech_clean_mean, raw=False)
+    df["mech_day"] = (df["_med20"] > 0) & (df["volume"] > 3.0 * df["_med20"])
     df["rvol"]   = df["volume"] / df["vol20"]
     df["red"]    = df["close"] < df["open"]
     df["vol_max20"] = df["volume"] == df["volume"].rolling(cfg["vol_win"], min_periods=mp).max()
@@ -113,7 +120,7 @@ def compute_signals(df, cfg=CFG):
         (df["ret_1d"] >= cfg["ig_ret1"])
         | (df["ret_2d"] >= cfg["ig_ret2"])
         | (df["ret_3d"] >= cfg["ig_ret3"])
-    ) & (df["rvol"] >= cfg["ig_rvol"]) & (df["ret_1d"] > 0)   # ignition is an up-move
+    ) & (df["rvol"] >= cfg["ig_rvol"]) & (df["ret_1d"] > 0) & ~df["mech_day"]   # ignition is an up-move
     df["FLAG_top"] = df["vol_max20"] & df["red"]
     return df
 
