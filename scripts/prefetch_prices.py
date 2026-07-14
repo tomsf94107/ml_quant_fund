@@ -47,7 +47,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-os.environ.setdefault("ML_QUANT_NO_TAIL_REFETCH", "1")   # never re-fetch what we have
 
 import pandas as pd  # noqa: E402
 
