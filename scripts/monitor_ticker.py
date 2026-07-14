@@ -1440,7 +1440,6 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         if n_usable < 3:
             print(f"  ⚠️  only {n_usable} usable session(s) — treat the aggregate as noise")
         print("  [note] NBBO-midpoint signing (Lee-Ready-lite, no tick test). At-mid prints neutral; pre-May-29 rows fall back to VWAP.")
-              f"Above-VWAP prints may still be sells (caller-driven).")
 
 
 # ---------------------------------------------------------------------------
