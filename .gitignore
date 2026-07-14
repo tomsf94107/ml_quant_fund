@@ -123,7 +123,6 @@ models/saved/_retired/
 data/signals_cache*.json
 data/watchlist_cache.json
 data/sentiment.db
-models/saved/training_report.csv
 reports/*.json
 *.db.broken.*
 *.db.bak.*
