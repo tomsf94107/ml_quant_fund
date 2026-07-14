@@ -464,21 +464,15 @@ def _interval_to_massive(interval):
 
 def _last_completed_session():
     """Last US trading day whose 17:00 ET close + publish margin has passed.
-    Mirrors builder._last_completed_session() so both modules agree. Replaces
-    date.today() (Mac VN local date = a day ahead of US calendar), which caused
-    requests for not-yet-traded / plan-unauthorized bars (403 NOT_AUTHORIZED)."""
-    from datetime import timedelta as _td
-    try:
-        from utils.timezone import now_et as _now_et
-        _et = _now_et()
-    except Exception:
-        _et = datetime.datetime.now()  # last resort; better than VN date.today()
-    _d = _et.date()
-    if _et.hour < 17:
-        _d = _d - _td(days=1)
-    while _d.weekday() >= 5:
-        _d = _d - _td(days=1)
-    return _d
+
+    2026-07-14: was weekends-only (`while _d.weekday() >= 5`). It returned
+    Juneteenth and July-4-observed as trading days -> 785 predictions and 2,324
+    outcomes written for sessions that never happened. Now delegates to
+    utils.market_calendar, which is HOLIDAY-AWARE and validated against 1,134
+    real sessions in raw_bars (zero disagreements, both directions).
+    """
+    from utils.market_calendar import last_completed_session as _lcs
+    return _lcs()
 
 
 def _download_single(ticker, start_str, end_str, mult, span, auto_adjust):

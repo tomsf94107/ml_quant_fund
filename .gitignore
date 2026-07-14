@@ -132,3 +132,10 @@ reports/*.json
 logs/
 prices.db.BACKUP*
 *.db.bak*
+
+# Jul 14 2026: .env was LITERAL, .env.BACKUP_* was NOT ignored
+.env*
+!.env.example
+accuracy.db.BACKUP*
+squeeze_*.csv
+squeeze_*.db

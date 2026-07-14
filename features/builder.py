@@ -705,19 +705,14 @@ _TICKER_OHLCV_CACHE: dict[str, "pd.DataFrame"] = {}
 
 
 def _last_completed_session():
-    """Last US trading day whose close has passed (17:00 ET, with publish-delay
-    margin). Replaces _date.today(), which used the Mac's VN local date — a day
-    ahead of the US trading calendar — causing requests for not-yet-traded /
-    plan-unauthorized bars (the 403 NOT_AUTHORIZED storm)."""
-    from datetime import timedelta as _td
-    from utils.timezone import now_et as _now_et
-    _et = _now_et()
-    _d = _et.date()
-    if _et.hour < 17:
-        _d = _d - _td(days=1)
-    while _d.weekday() >= 5:  # Sat=5, Sun=6 -> walk back to Friday
-        _d = _d - _td(days=1)
-    return _d
+    """Last US trading day whose close has passed (17:00 ET + publish margin).
+
+    2026-07-14: was a DUPLICATE of massive_client._last_completed_session, and
+    both were weekends-only. Now both delegate to utils.market_calendar --
+    one source of truth, holiday-aware, validated against raw_bars.
+    """
+    from utils.market_calendar import last_completed_session as _lcs
+    return _lcs()
 
 
 def _download(ticker: str, start: str, end: str) -> pd.DataFrame:

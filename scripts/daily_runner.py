@@ -81,12 +81,14 @@ SLEEP_BETWEEN = 2.0      # seconds between tickers (avoid rate limits)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def is_trading_day() -> bool:
-    """Return True if today is a weekday (basic check, ignores holidays)."""
-    from datetime import date as _date
-    t = today_et()
-    if isinstance(t, str):
-        return _date.fromisoformat(t).weekday() < 5
-    return t.weekday() < 5
+    """Return True if today (ET) is a US trading day -- HOLIDAYS INCLUDED.
+
+    2026-07-14: the old body was `weekday() < 5` and its own docstring said
+    "ignores holidays". It let the runner fire on Juneteenth and July-4-observed,
+    producing 785 predictions with no entry price. Now holiday-aware.
+    """
+    from utils.market_calendar import is_trading_day as _itd
+    return _itd(today_et())
 
 
 def load_tickers() -> list[str]:
@@ -403,6 +405,24 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                     failed.append(ticker)
                     time.sleep(SLEEP_BETWEEN)
                     continue
+                # ── STALE-PANEL GUARD (added 2026-07-14) ─────────────────────
+                # The .empty check above asks "is there ANY data?". On a 429,
+                # massive_client returns an empty frame WITHOUT raising, and
+                # price_cache then serves the last good bars. The frame is NOT
+                # empty -- it is STALE. On 2026-07-13, 225 of 337 predictions
+                # were computed from 2026-07-10 prices and published as Monday's
+                # signals. Every job reported OK and exited 0.
+                # The right question is: does the newest bar equal run_date?
+                try:
+                    _last_bar = _check_df.index[-1].strftime("%Y-%m-%d")
+                except Exception:
+                    _last_bar = str(_check_df.index[-1])[:10]
+                if _last_bar != run_date:
+                    log.error(f"  🔴 {ticker} STALE PANEL: newest bar {_last_bar} "
+                              f"!= run_date {run_date} — REFUSING to predict")
+                    failed.append(ticker)
+                    time.sleep(SLEEP_BETWEEN)
+                    continue
             except Exception as _check_e:
                 log.warning(f"  ⚠ {ticker} pre-check failed: {_check_e} — skipping")
                 failed.append(ticker)
@@ -714,6 +734,17 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                 from features.builder import build_feature_dataframe
                 from signals.generator import generate_signals
                 df = build_feature_dataframe(ticker, start_date=TRAIN_START)
+                # ── STALE-PANEL GUARD (added 2026-07-14) ─────────────────────
+                # RULE-8: the main loop's pre-check never existed here at all.
+                # A guard on one of two identical paths is not a guard.
+                if df is None or df.empty:
+                    log.error(f"  🔴 {ticker} watchlist: empty panel — skipping")
+                    continue
+                _wl_last = str(df["date"].iloc[-1])[:10]
+                if _wl_last != run_date:
+                    log.error(f"  🔴 {ticker} watchlist STALE PANEL: newest bar "
+                              f"{_wl_last} != run_date {run_date} — REFUSING")
+                    continue
                 for horizon in HORIZONS:
                     try:
                         sig = generate_signals(ticker, df, horizon=horizon,
