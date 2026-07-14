@@ -233,3 +233,52 @@ def validate_against_db(db: str | Path | None = None) -> int:
 
 if __name__ == "__main__":
     sys.exit(validate_against_db())
+
+
+def early_closes(year: int) -> set:
+    """NYSE 13:00 ET early closes, derived. Rules verified against NYSE published
+    2024-2028 calendars (ICE press release + nyse.com/trade/hours-calendars):
+    day-after-Thanksgiving always; Dec 24 when it is a trading day (excludes
+    Dec-25-on-Saturday years, when Dec 24 is the observed full holiday);
+    Jul 3 when it is a trading day AND Jul 4 falls Mon-Fri (excludes
+    Jul-4-on-Saturday years like 2026, when Jul 3 is the observed FULL closure,
+    and Jul-4-on-Sunday years, when Fri Jul 3 is a regular full session)."""
+    from datetime import date as _d, timedelta as _td
+    nov1 = _d(year, 11, 1)
+    first_thu = nov1 + _td(days=(3 - nov1.weekday()) % 7)
+    ec = {first_thu + _td(weeks=3, days=1)}
+    dec24 = _d(year, 12, 24)
+    if is_trading_day(dec24):
+        ec.add(dec24)
+    jul3 = _d(year, 7, 3)
+    if is_trading_day(jul3) and _d(year, 7, 4).weekday() < 5:
+        ec.add(jul3)
+    return {d for d in ec if is_trading_day(d)}
+
+
+def close_time_et(d):
+    """Session close for date d: 13:00 on early-close days, else 16:00."""
+    from datetime import date as _d, time as _t
+    if isinstance(d, str):
+        d = _d.fromisoformat(d)
+    return _t(13, 0) if d in early_closes(d.year) else _t(16, 0)
+
+
+def is_market_open(now=None) -> bool:
+    """RTH open test: trading day AND 09:30 <= ET time <= session close
+    (early-close aware). Injectable clock for tests. Canonical replacement
+    for the three holiday-blind copies in intraday_builder / uw_client /
+    intraday_kill_switch."""
+    from datetime import datetime as _dt, time as _t
+    from zoneinfo import ZoneInfo as _Z
+    et = _Z("America/New_York")
+    if now is None:
+        now = _dt.now(et)
+    elif now.tzinfo is None:
+        now = now.replace(tzinfo=et)
+    else:
+        now = now.astimezone(et)
+    d = now.date()
+    if not is_trading_day(d):
+        return False
+    return _t(9, 30) <= now.time() <= close_time_et(d)
