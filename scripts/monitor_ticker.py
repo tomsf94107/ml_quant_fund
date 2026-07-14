@@ -1439,7 +1439,7 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
               f"(buy ${skew_buy_total:,.0f} vs sell ${skew_sell_total:,.0f})")
         if n_usable < 3:
             print(f"  ⚠️  only {n_usable} usable session(s) — treat the aggregate as noise")
-        print(f"  ⚠️  VWAP heuristic — coarse approximation of Lee-Ready. "
+        print("  [note] NBBO-midpoint signing (Lee-Ready-lite, no tick test). At-mid prints neutral; pre-May-29 rows fall back to VWAP.")
               f"Above-VWAP prints may still be sells (caller-driven).")
 
 

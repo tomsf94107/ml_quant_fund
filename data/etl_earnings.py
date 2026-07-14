@@ -305,7 +305,7 @@ def load_earnings_features(
               AND e.announce_date <= ?
             ORDER BY e.announce_date
         """
-        _cut = str(as_of) if as_of is not None else datetime.utcnow().strftime("%Y-%m-%d")
+        _cut = str(as_of) if as_of is not None else __import__("datetime").datetime.now(__import__("zoneinfo").ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
         hist = pd.read_sql(_PIT_SQL, conn, params=(ticker.upper(), _cut))
         # RESIDUAL-LEAK FIX: most large caps announce AMC (after the close). A number
         # released at 16:05 on day D is NOT actionable against a close(D)->close(D+1)
