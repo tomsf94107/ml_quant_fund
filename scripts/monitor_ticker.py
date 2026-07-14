@@ -1182,88 +1182,84 @@ def section_institutional(conn: sqlite3.Connection, ticker: str) -> None:
 def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     print(f"\n=== DARK POOL PRINTS — {ticker} (since {since}) ===")
 
-    # UW's per-ticker darkpool endpoint 403s with `newer_than` parameter.
-    # The /recent endpoint works fine without it. Hypothesis: the per-ticker
-    # endpoint expects a single explicit `date=YYYY-MM-DD` parameter.
-    # Workaround: loop dates ourselves, hitting one trading day at a time.
-    # We persist into the DB so we only fetch each date once across runs.
-
+    # CURSOR WALK (Jul 14 2026). UW serves newest-500 descending; `older_than`
+    # is an EXCLUSIVE cursor (verified). Step +1s and let the tracking_id PK
+    # absorb re-served boundary rows. Replaces the per-date loop, which froze
+    # each day at first fetch (9.2% of tape stored), re-fetched holidays
+    # forever (weekday()<5), and hardcoded EDT (utcnow()-4h).
+    from zoneinfo import ZoneInfo
+    ET_TZ = ZoneInfo("America/New_York")
     cur = conn.cursor()
-    existing_dates = {row[0] for row in cur.execute(
-        "SELECT DISTINCT substr(executed_at, 1, 10) "
-        "FROM darkpool_prints WHERE ticker = ?", (ticker,)
-    )}
-
-    today = (datetime.utcnow() - timedelta(hours=4)).date()  # ET-anchored
     try:
-        start_date = date.fromisoformat(since)
-    except ValueError:
-        start_date = today - timedelta(days=60)
-
-    # Build list of trading days to fetch (skip weekends + already-fetched)
-    dates_to_fetch: list[str] = []
-    d = start_date
-    while d <= today:
-        if d.weekday() < 5:  # Mon-Fri
-            iso = d.isoformat()
-            if iso not in existing_dates:
-                dates_to_fetch.append(iso)
-        d += timedelta(days=1)
-
-    # Cap new fetches per run to be polite on rate limits
-    # (40k daily limit is huge but we share it with other endpoints)
-    MAX_NEW_DATES_PER_RUN = 30
-    if len(dates_to_fetch) > MAX_NEW_DATES_PER_RUN:
-        # Prioritize the most recent dates first
-        dates_to_fetch = dates_to_fetch[-MAX_NEW_DATES_PER_RUN:]
-
-    if dates_to_fetch:
-        print(f"  Fetching {len(dates_to_fetch)} new trading day(s)...")
-    elif existing_dates:
-        print(f"  All trading days in window already fetched ({len(existing_dates)} cached).")
-
-    # Fetch each new date
+        since_date = date.fromisoformat(str(since))
+    except (ValueError, TypeError):
+        since_date = datetime.now(ET_TZ).date() - timedelta(days=60)
+    older = None
+    prev_oldest = None
+    pages = 0
     fetch_failed = 0
     fetch_succeeded = 0
-    for iso in dates_to_fetch:
-        data = uw_get(f"/api/darkpool/{ticker}",
-                      params={"date": iso, "limit": 500})
+    MAX_PAGES = 600
+    while pages < MAX_PAGES:
+        params = {"limit": 500}
+        if older:
+            params["older_than"] = older
+        data = uw_get(f"/api/darkpool/{ticker}", params=params)
         if data is None:
             fetch_failed += 1
-            # If first 3 fail, assume tier issue and stop hammering
-            if fetch_failed >= 3 and fetch_succeeded == 0:
-                print(f"  [info] Aborting darkpool fetch after {fetch_failed} consecutive "
-                      f"failures (likely a UW plan/access issue on per-ticker darkpool).")
-                break
-            continue
+            break
+        rows_page = data.get("data") or []
+        if not rows_page:
+            break
         fetch_succeeded += 1
-        rows_today = data.get("data") or []
-        for r in rows_today:
+        for r in rows_page:
+            ts = r.get("executed_at") or r.get("trf_executed_at") or r.get("trade_time")
+            if not ts:
+                continue
             try:
+                et_dt = datetime.fromisoformat(str(ts).replace("Z", "+00:00")).astimezone(ET_TZ)
                 sz = float(r.get("size") or 0)
                 px = float(r.get("price") or 0)
-                v = sz * px
-                cur.execute("""
-                    INSERT OR IGNORE INTO darkpool_prints
-                    (ticker, executed_at, size, price, value_usd, venue, tracking_id)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)
-                """, (
-                    ticker,
-                    r.get("executed_at") or r.get("trf_executed_at") or r.get("trade_time"),
-                    sz, px, v,
-                    r.get("market_center") or r.get("venue"),
-                    str(r.get("tracking_id")) if r.get("tracking_id") else
-                    f"{ticker}-{r.get('executed_at')}-{sz}-{px}",
-                ))
+            except (TypeError, ValueError):
+                continue
+            try:
+                cur.execute(
+                    "INSERT OR IGNORE INTO darkpool_prints "
+                    "(ticker, executed_at, size, price, value_usd, venue, tracking_id, "
+                    " nbbo_bid, nbbo_ask, canceled, ext_hours, et_date) "
+                    "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                    (ticker, ts, sz, px, sz * px,
+                     r.get("market_center") or r.get("venue"),
+                     str(r.get("tracking_id")) if r.get("tracking_id")
+                         else f"{ticker}-{ts}-{sz}-{px}",
+                     float(r["nbbo_bid"]) if r.get("nbbo_bid") else None,
+                     float(r["nbbo_ask"]) if r.get("nbbo_ask") else None,
+                     1 if r.get("canceled") else 0,
+                     r.get("ext_hour_sold_codes"),
+                     et_dt.date().isoformat()))
             except sqlite3.Error as e:
                 print(f"  [warn] insert failed: {e}")
-        conn.commit()
-
+        pages += 1
+        oldest = min((r.get("executed_at") for r in rows_page if r.get("executed_at")),
+                     default=None)
+        if oldest is None or len(rows_page) < 500:
+            break
+        oldest_dt = datetime.fromisoformat(oldest.replace("Z", "+00:00"))
+        if oldest_dt.astimezone(ET_TZ).date() < since_date:
+            break
+        if oldest == prev_oldest:
+            raise RuntimeError(f"darkpool cursor stalled at {oldest} for {ticker}")
+        prev_oldest = oldest
+        older = (oldest_dt + timedelta(seconds=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if pages:
+        print(f"  Dark pool: walked {pages} page(s) back to {since_date}.")
+    conn.commit()
     # Now query the DB for the full window and analyze
     rows = list(cur.execute("""
-        SELECT executed_at, size, price, value_usd, venue
+        SELECT executed_at, size, price, value_usd, venue,
+               nbbo_bid, nbbo_ask, ext_hours, et_date
         FROM darkpool_prints
-        WHERE ticker = ? AND substr(executed_at, 1, 10) >= ?
+        WHERE ticker = ? AND et_date >= ? AND COALESCE(canceled, 0) = 0
         ORDER BY executed_at DESC
     """, (ticker, since)))
 
@@ -1279,8 +1275,8 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
 
     # Aggregate by day
     by_day: dict[str, dict] = {}
-    for executed_at, size, price, value, venue in rows:
-        day = (executed_at or "")[:10]
+    for executed_at, size, price, value, venue, nbbo_bid, nbbo_ask, ext_hours, et_date in rows:
+        day = et_date or (executed_at or "")[:10]
         if not day:
             continue
         b = by_day.setdefault(day, {"prints": 0, "shares": 0.0,
@@ -1334,7 +1330,7 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     # Top 10 single prints in window
     big = sorted(rows, key=lambda r: float(r[3] or 0), reverse=True)[:10]
     print("  Top 10 single prints:")
-    for executed_at, size, price, value, venue in big:
+    for executed_at, size, price, value, venue, _nb, _na, _xh, _ed in big:
         if (value or 0) < DARKPOOL_BLOCK_MIN_USD:
             continue
         print(f"    {(executed_at or '')[:19]}  {size:>10,.0f} @ ${price:>7,.2f}  "
@@ -1348,7 +1344,7 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     #   price < VWAP * 0.9995 → sell-side (took a haircut)
     #   else → neutral (at VWAP)
     # Report the dollar-weighted skew per day for the most recent 7.
-    print(f"\n  Signed flow estimate (VWAP heuristic, NOT Lee-Ready):")
+    print(f"\n  Signed flow estimate (NBBO midpoint; VWAP fallback for pre-May-29 rows; RTH only):")
     # COVERAGE GUARD (Jul 11 2026). A skew without its coverage is not a number.
     # Gate on ABSOLUTE classified flow, not the ratio: MSFT Jun 26 had $161M
     # classified (a normal sample) but 0.8% coverage only because the denominator
@@ -1360,10 +1356,13 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     n_days = 0
     print(f"  {'Date':<12} {'Buy $':>16} {'Sell $':>16} {'Net':>14} {'Skew':>8} {'Cover':>7}")
     by_day_signed: dict[str, dict] = {}
-    for executed_at, size, price, value, venue in rows:
-        day = (executed_at or "")[:10]
+    for executed_at, size, price, value, venue, nbbo_bid, nbbo_ask, ext_hours, et_date in rows:
+        day = et_date or (executed_at or "")[:10]
         if not day:
             continue
+        if ext_hours:
+            continue  # RTH-only signing: AH/pre-market tape is thin and the
+                      # 16:00+ closing-cross mega-prints land here by venue rule
         d = by_day_signed.setdefault(day, {"prints": [], "total_val": 0.0,
                                            "total_sh": 0.0})
         try:
@@ -1373,7 +1372,7 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         except (TypeError, ValueError):
             continue
         if sh and px:
-            d["prints"].append((px, v))
+            d["prints"].append((px, v, nbbo_bid, nbbo_ask))
             d["total_val"] += v
             d["total_sh"] += sh
 
@@ -1388,16 +1387,24 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         if not vwap:
             continue
         buy_val = sell_val = neutral_val = 0.0
-        for px, v in d["prints"]:
-            if px > vwap * 1.0005:
+        for px, v, _bid, _ask in d["prints"]:
+            # NBBO MIDPOINT SIGNING (Jul 14 2026). Lee-Ready-lite: the print's
+            # own quote context, not the day's VWAP (which mega-prints dominate
+            # by construction). VWAP band kept only as fallback for rows
+            # missing NBBO (pre-2026-05-29 unhealable slices).
+            if _bid and _ask and _ask >= _bid:
+                mid = (_bid + _ask) / 2.0
+                if px > mid:
+                    buy_val += v
+                elif px < mid:
+                    sell_val += v
+                else:
+                    neutral_val += v
+            elif px > vwap * 1.0005:
                 buy_val += v
             elif px < vwap * 0.9995:
                 sell_val += v
             else:
-                # AT-VWAP prints. Previously dropped SILENTLY. Closing-auction
-                # mega-prints execute at one price AND dominate the day's VWAP,
-                # so they land here by construction -- which is why coverage
-                # collapsed to <1% on exactly the days that mattered most.
                 neutral_val += v
         net = buy_val - sell_val
         denom = buy_val + sell_val
