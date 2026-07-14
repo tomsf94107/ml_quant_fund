@@ -145,5 +145,12 @@ def main(as_of=None):
 
 
 if __name__ == "__main__":
-    _as_of = sys.argv[1] if len(sys.argv) > 1 else None
+    # 2026-07-14: as_of used to default to None, which DISARMED the guard at
+    # line ~118 (`if as_of is not None and pred_date != as_of: skip`). During the
+    # 429 storm daily_prices froze at 2026-06-23; momentum_shadow trimmed the
+    # sparse tail, fell back to 06-23, and INSERT OR REPLACE'd the SAME picks
+    # every night from 07-06 to 07-09 -- exit 0, four 436-byte logs, no alarm.
+    # Anchoring to the real last session makes a frozen feed a LOUD skip.
+    from utils.market_calendar import last_completed_session as _lcs
+    _as_of = sys.argv[1] if len(sys.argv) > 1 else str(_lcs())
     sys.exit(main(_as_of))

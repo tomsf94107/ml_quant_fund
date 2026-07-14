@@ -102,8 +102,8 @@ XLU,Sector ETF,tactical,0.0,Utilities sector
 COIN,Crypto,lotto,4.0,High beta — crypto/AI narrative
 AVGO,Custom Silicon,core,2.0,Google TPU + Meta MTIA ASICs — multi-year backlog
 ANET,Networking,core,2.0,Scale-out ethernet — AI data center spine
-AMAT,Semi Equipment,core,1.0,Etch/deposition — every fab needs it
-LRCX,Semi Equipment,core,1.0,Etch equipment — HBM manufacturing
+AMAT,Semiconductor Equipment,core,1.0,Etch/deposition — every fab needs it
+LRCX,Semiconductor Equipment,core,1.0,Etch equipment — HBM manufacturing
 VRT,Power/Cooling,core,1.0,Data center cooling — sold out 2026
 ETN,Power/Industrial,core,1.0,Power management — AI data centers
 NOW,Enterprise Software,secondary,4.0,AI capturer — workflow automation moat
@@ -111,7 +111,7 @@ EQIX,DC REIT,secondary,1.0,Data center REIT — AI infrastructure
 DLR,DC REIT,secondary,1.0,Data center REIT — AI infrastructure
 WDC,Memory,secondary,1.0,NAND/HDD — AI storage
 STX,Memory,secondary,1.0,HDD — AI storage at scale
-ASML,Semi Equipment,core,1.0,EUV monopoly — 18-month lead times
+ASML,Semiconductor Equipment,core,1.0,EUV monopoly — 18-month lead times
 GEV,Power,core,1.0,GE Vernova — gas turbines sold out 2028
 CEG,Nuclear,core,1.0,Constellation Energy — nuclear power for AI
 VST,Power,secondary,1.0,Vistra — power generation for AI
