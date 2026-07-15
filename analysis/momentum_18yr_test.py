@@ -48,6 +48,9 @@ from signals.momentum_signal import compute_momentum, LOOKBACKS, SKIP, MOM_HORIZ
 HOLD      = MOM_HORIZON          # 20 trading days, matches validation
 DECILE    = 0.10
 COST_RT   = float(os.environ.get("ML_QUANT_COST_BPS", "10.0")) / 10_000.0
+FACTOR    = os.environ.get("ML_QUANT_FACTOR", "ff").lower()    # ff | ew
+NULL_RUN  = os.environ.get("ML_QUANT_NULL", "0") == "1"
+_RNG      = np.random.default_rng(int(os.environ.get("ML_QUANT_NULL_SEED", "42")))
 MIN_NAMES = 60                   # skip a rebalance date with fewer scored names
 BETA_MIN  = 12                   # expanding-window obs needed before stripping
 
@@ -60,6 +63,15 @@ def load_panel() -> pd.DataFrame:
     panel = df.pivot(index="date", columns="ticker", values="adj_close").sort_index()
     panel.index = pd.to_datetime(panel.index)
     return panel
+
+
+def load_ff() -> pd.DataFrame:
+    con = sqlite3.connect(f"file:{ROOT/'prices.db'}?mode=ro", uri=True)
+    ff = pd.read_sql("SELECT date, mkt_rf, rf FROM ff_factors_daily", con,
+                     index_col="date")
+    con.close()
+    ff.index = pd.to_datetime(ff.index)
+    return ff.sort_index()
 
 
 def run_kind(panel: pd.DataFrame, kind: str) -> pd.DataFrame:
@@ -77,6 +89,8 @@ def run_kind(panel: pd.DataFrame, kind: str) -> pd.DataFrame:
         if len(score) < MIN_NAMES:
             continue
 
+        if NULL_RUN:
+            score = pd.Series(_RNG.permutation(score.values), index=score.index)
         k = max(1, int(len(score) * DECILE))
         ranked = score.sort_values(ascending=False)
         top, bot = set(ranked.head(k).index), set(ranked.tail(k).index)
@@ -93,6 +107,7 @@ def run_kind(panel: pd.DataFrame, kind: str) -> pd.DataFrame:
 
         rows.append({
             "date":     panel.index[i],
+            "end_date": panel.index[i + HOLD],
             "year":     panel.index[i].year,
             "n_scored": len(fwd),
             "top_ret":  fwd[t_in].mean(),
@@ -106,17 +121,38 @@ def run_kind(panel: pd.DataFrame, kind: str) -> pd.DataFrame:
         return d
 
     # walk-forward beta of the top basket vs the EW universe (expanding, no lookahead)
+    if FACTOR == "ff":
+        ff = load_ff()
+        _mkt, _rf = [], []
+        for _, r in d.iterrows():
+            w = ff.loc[(ff.index > r["date"]) & (ff.index <= r["end_date"])]
+            if len(w) < HOLD - 3:
+                _mkt.append(np.nan); _rf.append(np.nan)
+            else:
+                _mkt.append(float((1 + w.mkt_rf).prod() - 1))
+                _rf.append(float((1 + w.rf).prod() - 1))
+        d["fac_ret"], d["rf_ret"] = _mkt, _rf
+        d["dep_ret"] = d.top_ret - d.rf_ret
+        _nd = int(d.fac_ret.isna().sum())
+        if _nd:
+            print(f"  [note] {_nd} rebalance(s) lack full FF coverage "
+                  f"(table ends {ff.index.max().date()}); dropped from stripped lines")
+    else:
+        d["fac_ret"] = d.univ_ret
+        d["dep_ret"] = d.top_ret
     d["beta"] = np.nan
     for j in range(len(d)):
         if j >= BETA_MIN:
             h = d.iloc[:j]
             if h.univ_ret.std() > 0:
-                d.iloc[j, d.columns.get_loc("beta")] = float(
-                    np.polyfit(h.univ_ret, h.top_ret, 1)[0])
+                hh = h.dropna(subset=["fac_ret", "dep_ret"])
+                if len(hh) >= BETA_MIN and hh.fac_ret.std() > 0:
+                    d.iloc[j, d.columns.get_loc("beta")] = float(
+                        np.polyfit(hh.fac_ret, hh.dep_ret, 1)[0])
     d["raw_spread"]   = d.top_ret - d.univ_ret
     # residual of the top basket vs the EW-universe factor; the factor's own
     # residual is 0 by construction, so this IS the beta-stripped spread
-    d["resid_spread"] = d.top_ret - d.beta * d.univ_ret
+    d["resid_spread"] = d.dep_ret - d.beta * d.fac_ret
     d["net_spread"]   = d.resid_spread - COST_RT * d.turnover
     d["ls_spread"]    = d.top_ret - d.bot_ret
     return d
@@ -143,6 +179,8 @@ def report(d: pd.DataFrame, kind: str):
     print(f"  MOMENTUM {kind}  --  {d.date.min().date()} -> {d.date.max().date()}"
           f"   ({len(d)} rebalances, {HOLD}td hold, top decile EW)")
     print("=" * 78)
+    print(f"  factor = {'FF daily Mkt-RF, excess' if FACTOR == 'ff' else 'EW universe'}"
+          + ("   *** NULL RUN: scores shuffled ***" if NULL_RUN else ""))
     print(f"  cost = {COST_RT*1e4:.0f} bps round-trip x measured turnover "
           f"(median turnover {d.turnover.median():.0%})")
 

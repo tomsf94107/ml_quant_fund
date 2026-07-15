@@ -17,3 +17,22 @@
 **Fixed & pushed:** ad14ca25 (cursor-walk fetch, et_date, NBBO-midpoint signing, canceled/ext_hours), 7b4c49f7 (footer + etl_earnings PIT cutoff UTC->ET; NOTE: monitor_ticker.py is BROKEN at this commit — skip when bisecting), e78ea4b8 (repair). scripts/repair_darkpool_days.py = gap healer.
 
 **monitor_ticker.py importers (all break if it doesn't compile):** squeeze_live.py, squeeze_scan.py, borrow_fetch.py, monitor shell fn (.zshrc), squeezeselect.
+
+## MOMENTUM 18-YEAR GAUNTLET (2026-07-15) — PASSED, PROVISIONAL
+Same gate that killed direction: beta-strip -> net of cost -> year-clustered t -> null control.
+- Momentum-specific edge (EW strip, vs own investable universe):
+    mom_12_1: +1.212%/20d net, t=+3.19, 13/17 yrs+ @10bps; survives 20bps (t=+3.13)
+    mom_6_1:  +1.130%/20d net, t=+3.09, 14/18 yrs+ @10bps; FAILS 20bps by 0.01
+- FF Mkt-RF strip confirms (t=3.5+ both) but INCLUDES a measured survivor-universe
+  premium: null-shuffle vs FF market = +0.25%/20d (t=2.78) -- a random basket of the
+  418 survivors beats the market by ~3%/yr. FF-minus-null reconciles to EW numbers.
+- Null under EW: resid ~0, net = -cost x turnover to the third decimal. Harness clean.
+- 2009 signature correct: crash lives in the L/S short leg (-4.15/-6.93%); long-only
+  top decile held. CAVEAT: mom_12_1's net line starts 2010 (BETA_MIN warm-up eats
+  2009); mom_6_1's 2009 IS included (+2.23 net).
+- PASS is PROVISIONAL: survivor bias beyond the measured universe premium cannot be
+  bounded on this panel. Shadow book (clock from 06-11) remains confirmatory.
+- Candidate: mom_12_1 (22% turnover, robust at 20bps on both factors).
+- Data: ff_factors_daily table in prices.db (Ken French daily, 1926 -> 2026-05-29,
+  monthly publication lag). Flags: ML_QUANT_FACTOR=ff|ew, ML_QUANT_NULL=1.
+Contrast: direction model = -0.122%/trade, t=-3.28, killed 07-14 on the same gate.
