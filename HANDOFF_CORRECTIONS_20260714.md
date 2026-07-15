@@ -72,3 +72,14 @@ contained the announcement jump (etl_earnings' own measurement: SUE-vs-jump IC +
 - Leak-fixed: pead_oos.py, combine_pead_si.py. Still leaked: pead_sue, walkforward,
   book_fullhistory, audit_combination (sweep in progress). pead_monitor +
   combined_40d_monitor crons watch leaked constructions -- output void until re-pointed.
+
+## 2026-07-15 LATE SESSION — TWO RESULTS
+1. HONEST PEAD BOOK IS NEGATIVE: pead_book_fullhistory [LEAK-FIXED], n=222 monthly
+   rebalances, net 10bps: Sharpe -0.46, HAC 95% CI [-0.92, +0.00]. The announce-dated
+   PEAD book construction loses money. PEAD refuted at IC, OOS, and book level.
+2. MOMENTUM GATE (recalibrated, honest clock >=06-11): mom_6_1 edge -6.79pp @ k=2
+   (above kill by 0.15pp); mom_12_1 edge -10.06pp @ k=2 -- KILL LINE FIRED (99% bound
+   -7.12). CAVEAT before concluding: shadow applies bucket_cap=3, the 18yr gauntlet
+   does not -- capped vs uncapped portfolios are not like-for-like. Decisive test =
+   capped-construction gauntlet run. Ladder-in (option B) OFF regardless. Gate now
+   env-switchable: MOMENTUM_KIND=mom_12_1.
