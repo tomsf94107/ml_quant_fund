@@ -36,3 +36,24 @@ Same gate that killed direction: beta-strip -> net of cost -> year-clustered t -
 - Data: ff_factors_daily table in prices.db (Ken French daily, 1926 -> 2026-05-29,
   monthly publication lag). Flags: ML_QUANT_FACTOR=ff|ew, ML_QUANT_NULL=1.
 Contrast: direction model = -0.122%/trade, t=-3.28, killed 07-14 on the same gate.
+
+## BRICK HUNT — PEER PRE-ANNOUNCEMENT: KILLED (2026-07-15)
+Same-quarter same-bucket peer mean-SUE (PIT, min-4-priors, usable +1BD) vs later
+announcer. 4,490 Y-events, 249 tickers, 2017-2026, per-week Spearman IC, NW-t lag 4,
+within-week shuffle null (clean, -0.5ish).
+- Through-print: IC +0.008, NW-t +0.25. Pre-print drift: IC +0.026, NW-t +0.92.
+- Bar was |t|>=3; sign flips across years; no bucket carries it. NOT a brick.
+- Fifth axis closed (Lazy Prices, idio vol, vol-gate, gross profitability, this).
+- Corollary: peer pre-announcements (e.g. IBM->MSFT Jul-2026) are anecdote, not signal.
+
+## PIPELINE B DEEP-RETRAIN VERIFIED (2026-07-15)
+First 2018-start retrain: 42 min (old 2.5h was free-tier 429 sleep), 1,200 models,
+0 failed. BUT n_train ~1,270 rows = effective panel starts ~2021-07: the feature
+NaN-intersection truncates to the youngest feature (SI 2021-04, UW similar).
+TRAIN_START=2018 is cosmetic. "6yr regime diversity" never achieved. Direction model
+dead anyway; matters only if anyone retries deeper training.
+
+## SELL SIGNAL — PERMANENTLY CLOSED (2026-07-15)
+n=1,234 outcomes at prob_up<0.30: acc 51.7% (bar >60%), avg_ret +0.186% (bar: negative;
+May n=72 read -0.314% -- sign FLIPPED as n grew 17x). prob_up carries no monetizable
+info in either tail. Strike the monthly re-eval.
