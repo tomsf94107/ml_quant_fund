@@ -622,12 +622,20 @@ def reconcile_outcomes(
     # Filter to predictions whose outcome date has passed
     pending["prediction_date"] = pd.to_datetime(pending["prediction_date"]).dt.date
     def _add_trading_days(start_date, n_days):
-        """Add n trading days (Mon-Fri) to a date, skipping weekends."""
+        """Add n trading SESSIONS, holiday-aware via utils.market_calendar.
+        Old body counted weekdays: Juneteenth / July-4-observed / Memorial Day
+        counted as sessions, landing outcome windows 1-2 sessions short --
+        same class as reconcile_momentum_shadow BUG 1 (fixed 2026-07-14)."""
+        import os as _os, sys as _sys
+        _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        if _R not in _sys.path:
+            _sys.path.insert(0, _R)
+        from utils.market_calendar import is_trading_day
         d = start_date
         added = 0
         while added < n_days:
             d += timedelta(days=1)
-            if d.weekday() < 5:  # Mon-Fri
+            if is_trading_day(d):
                 added += 1
         return d
 

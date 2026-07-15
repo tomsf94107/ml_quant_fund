@@ -182,7 +182,12 @@ def main():
         # Score on next week's dates [cutoff, cutoff+7)
         next_week_end = cutoff + timedelta(days=7)
         score_dates_range = pd.date_range(cutoff, next_week_end - timedelta(days=1))
-        score_dates = [d for d in score_dates_range if d.weekday() < 5]  # business days only
+        import os as _os, sys as _sys
+        _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        if _R not in _sys.path:
+            _sys.path.insert(0, _R)
+        from utils.market_calendar import is_trading_day as _itd
+        score_dates = [d for d in score_dates_range if _itd(d.date())]  # trading sessions (holiday-aware)
         
         oos_chunk = score_on_dates(panel, result, score_dates, horizon=args.horizon)
         oos_chunk['cutoff'] = cutoff
