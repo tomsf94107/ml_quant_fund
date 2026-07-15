@@ -115,6 +115,15 @@ def main():
         if have_components: sel+=",eps_actual,eps_estimate"
         if have_pct: sel+=",eps_surprise_pct"
         ev=Q(ce,"SELECT "+sel+" FROM earnings_surprises WHERE report_date IS NOT NULL")
+        _n_ev = Q(ce, "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='earnings_events'")[0][0]
+        _n_ev = Q(ce, "SELECT COUNT(*) FROM earnings_events WHERE eps_surprise IS NOT NULL")[0][0] if _n_ev else 0
+        if _n_ev > 1000:
+            comp = False
+            ev = Q(ce, "SELECT ticker, announce_date, eps_surprise FROM earnings_events "
+                       "WHERE eps_surprise IS NOT NULL AND announce_date IS NOT NULL")
+            print("  PEAD source: earnings_events.announce_date (%d rows) [LEAK-FIXED]" % len(ev))
+        else:
+            print("  PEAD source: earnings_surprises (fallback -- KNOWN LEAKED DATES)")
     finally:
         ce.close()
     if not require(have_components or have_pct,"need eps_actual/eps_estimate or eps_surprise_pct"): return
