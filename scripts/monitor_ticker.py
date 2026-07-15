@@ -3140,6 +3140,10 @@ def section_price_volume(ticker: str, since: str) -> None:
             if live_price:
                 pct = ((live_price - prev_close) / prev_close * 100) if prev_close else 0
                 vol_str = f"   vol={float(live_vol):,.0f}" if live_vol else ""
+                import os as _os, sys as _sys
+                _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+                if _R not in _sys.path:
+                    _sys.path.insert(0, _R)
                 from utils.market_calendar import is_market_open as _rth_open
                 _lbl = "Live (intraday)" if _rth_open() else "Last quote (market CLOSED)"
                 print(f"  {_lbl}: ${live_price:.2f}   "
