@@ -40,12 +40,13 @@ log = logging.getLogger("kill_switch")
 
 
 def is_market_open() -> bool:
-    now = datetime.now(ET)
-    if now.weekday() >= 5:
-        return False
-    open_  = now.replace(hour=9,  minute=30, second=0, microsecond=0)
-    close_ = now.replace(hour=16, minute=0,  second=0, microsecond=0)
-    return open_ <= now <= close_
+    # Delegates to utils.market_calendar: holiday- and early-close-aware.
+    import os as _os, sys as _sys
+    _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    if _R not in _sys.path:
+        _sys.path.insert(0, _R)
+    from utils.market_calendar import is_market_open as _mc_open
+    return _mc_open()
 
 
 def send_alert(title: str, message: str, level: str = "WARNING"):

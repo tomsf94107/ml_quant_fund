@@ -58,7 +58,9 @@ import requests
 UW_BASE = "https://api.unusualwhales.com"
 MASSIVE_BASE = "https://api.massive.com"
 
-DB_PATH = Path(os.environ.get("EARNINGS_DB", "earnings_monitor.db"))
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+DB_PATH = Path(os.environ.get("EARNINGS_DB",
+                              str(_REPO_ROOT / "earnings_monitor.db")))
 
 # Default ticker universe with sector benchmark and earnings context.
 # Confirm earnings dates via the company's IR page before relying on them.

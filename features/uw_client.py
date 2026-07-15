@@ -98,16 +98,14 @@ SAFETY_BUFFER = 500  # stop calling when within this many of the daily limit
 
 
 def is_market_open(now: Optional[datetime] = None) -> bool:
-    """True if US equity regular session is open. Does NOT account for holidays."""
-    if now is None:
-        now = datetime.now(ET)
-    elif now.tzinfo is None:
-        now = now.replace(tzinfo=ET)
-    else:
-        now = now.astimezone(ET)
-    if now.weekday() >= 5:  # Sat, Sun
-        return False
-    return MARKET_OPEN <= now.time() <= MARKET_CLOSE
+    """True if US equity regular session is open. Holiday- and early-close-aware
+    (delegates to utils.market_calendar; injectable clock preserved)."""
+    import os as _os, sys as _sys
+    _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    if _R not in _sys.path:
+        _sys.path.insert(0, _R)
+    from utils.market_calendar import is_market_open as _mc_open
+    return _mc_open(now)
 
 
 class UWDailyLimitError(RuntimeError):

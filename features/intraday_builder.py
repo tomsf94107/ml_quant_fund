@@ -126,12 +126,14 @@ def _dp_skew_to_mult(dp_ratio: float, skew_25d: float) -> float:
 
 
 def is_market_open() -> bool:
-    now = datetime.now(ET)
-    if now.weekday() >= 5:
-        return False
-    market_open  = now.replace(hour=9,  minute=30, second=0, microsecond=0)
-    market_close = now.replace(hour=16, minute=0,  second=0, microsecond=0)
-    return market_open <= now <= market_close
+    # Delegates to utils.market_calendar: holiday- and early-close-aware
+    # (old body was weekday()-only and hardcoded a 16:00 close).
+    import os as _os, sys as _sys
+    _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    if _R not in _sys.path:
+        _sys.path.insert(0, _R)
+    from utils.market_calendar import is_market_open as _mc_open
+    return _mc_open()
 
 
 def minutes_since_open() -> int:
