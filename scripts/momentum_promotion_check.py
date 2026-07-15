@@ -37,7 +37,20 @@ KIND = "mom_6_1"
 JOIN = ("FROM momentum_shadow_outcomes o "
         "JOIN momentum_shadow_predictions p "
         "  ON o.prediction_date=p.prediction_date AND o.ticker=p.ticker AND o.kind=p.kind "
-        "WHERE o.kind=?")
+        "WHERE o.kind=? AND o.prediction_date >= '2026-06-11'")  # honest clock: pre-06-11 sample invalidated (overlapping daily entries, 149-name universe)
+
+# GATE RECALIBRATION (2026-07-15). Old fixed bar (+2.0pp) sat ABOVE the 18yr
+# backtest mean; a correctly-performing signal cleared it ~38% of the time over
+# 3 rebalances. New bar: consistency with the backtest distribution (90% one-
+# sided), mirror KILL at 99%. Constants from reports/momentum_18yr_*.csv
+# (EW-strip net, real run 2026-07-15).
+BT_STATS = {'mom_6_1': (1.068, 4.859), 'mom_12_1': (1.116, 5.001)}
+
+def _bounds(kind, k):
+    import math
+    m, s = BT_STATS.get(kind, BT_STATS["mom_6_1"])
+    se = s / math.sqrt(max(k, 1))
+    return m - 1.28 * se, m - 2.33 * se
 
 def main():
     con = sqlite3.connect(DB); cur = con.cursor()
@@ -69,13 +82,17 @@ def main():
 
     print(f"Live pick return:  {pick_ret:+.2f}pp")
     print(f"Live field return: {field_ret:+.2f}pp  (the non-picks)")
-    print(f"Live EDGE:         {edge:+.2f}pp  (need > +{MIN_EDGE_PP}pp)")
+    k_dates = max(len(week_edges), 1)
+    lo90, lo99 = _bounds(KIND, k_dates)
+    print(f"Live EDGE:         {edge:+.2f}pp  (consistency bar {lo90:+.2f}pp @ k={k_dates}; old fixed bar +{MIN_EDGE_PP}pp)")
     print(f"Live win rate:     {pick_win:.1f}%")
     print(f"Week consistency:  {wpos}/{len(week_edges)} positive ({wcons*100:.0f}%, need >= {MIN_WEEK_CONSISTENCY*100:.0f}%)")
     print("-" * 60)
-    c1, c2, c3, c4 = n>=MIN_SAMPLE, edge>MIN_EDGE_PP, pick_ret>0, wcons>=MIN_WEEK_CONSISTENCY
+    c1, c2, c3, c4 = n>=MIN_SAMPLE, edge>lo90, pick_ret>0, wcons>=MIN_WEEK_CONSISTENCY
+    if edge < lo99:
+        print(f"  !! KILL LINE: edge {edge:+.2f}pp < 99% bound {lo99:+.2f}pp -- shadow INCONSISTENT with 18yr backtest, not merely unlucky")
     print(f"  [{'PASS' if c1 else 'FAIL'}] sample >= {MIN_SAMPLE}     ({n})")
-    print(f"  [{'PASS' if c2 else 'FAIL'}] edge > +{MIN_EDGE_PP}pp   ({edge:+.2f})")
+    print(f"  [{'PASS' if c2 else 'FAIL'}] edge consistent w/ backtest (> {lo90:+.2f}pp @ k={k_dates})   ({edge:+.2f})")
     print(f"  [{'PASS' if c3 else 'FAIL'}] return > 0      ({pick_ret:+.2f})")
     print(f"  [{'PASS' if c4 else 'FAIL'}] weeks >= {int(MIN_WEEK_CONSISTENCY*100)}%   ({wcons*100:.0f}%)")
     print("=" * 60)

@@ -229,7 +229,8 @@ def main():
             print(f"\n{kind}: no valid rebalances -- data problem, stop.")
             continue
         report(d, kind)
-        out = ROOT / "reports" / f"momentum_18yr_{kind}.csv"
+        _tag = ("_null" if NULL_RUN else "") + ("_ew" if FACTOR == "ew" else "")
+        out = ROOT / "reports" / f"momentum_18yr_{kind}{_tag}.csv"
         d.to_csv(out, index=False)
         print(f"\n  per-rebalance rows -> {out}")
 

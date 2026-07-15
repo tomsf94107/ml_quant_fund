@@ -111,6 +111,19 @@ def main():
         have_comp="eps_actual" in cols and "eps_estimate" in cols
         sel="ticker,report_date"+(",eps_actual,eps_estimate" if have_comp else ",eps_surprise_pct")
         ev=Q(ce,"SELECT "+sel+" FROM earnings_surprises WHERE report_date IS NOT NULL")
+        # LEAK FIX (Jul 15 2026): earnings_surprises.report_date = FISCAL PERIOD END,
+        # 14-30d BEFORE the announcement (verified AAPL/MSFT/JNJ; only 625/21064 rows
+        # coincide with announce). Entry at report_date+2 traded the surprise before
+        # it was public. Override with announce-dated events when available.
+        _n_ev = Q(ce, "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='earnings_events'")[0][0]
+        _n_ev = Q(ce, "SELECT COUNT(*) FROM earnings_events WHERE eps_surprise IS NOT NULL")[0][0] if _n_ev else 0
+        if _n_ev > 1000:
+            have_comp = False
+            ev = Q(ce, "SELECT ticker, announce_date, eps_surprise FROM earnings_events "
+                       "WHERE eps_surprise IS NOT NULL AND announce_date IS NOT NULL")
+            print("  PEAD source: earnings_events.announce_date (%d rows) [LEAK-FIXED]" % len(ev))
+        else:
+            print("  PEAD source: earnings_surprises (fallback -- KNOWN LEAKED DATES)")
     finally:
         ce.close()
 

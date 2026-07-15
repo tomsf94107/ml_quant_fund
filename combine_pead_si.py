@@ -164,10 +164,22 @@ def main():
     # ---- PEAD monthly stream ----
     ce=ro(earnp)
     try:
-        cl=cols_of(ce,"earnings_surprises")
-        comp="eps_actual" in cl and "eps_estimate" in cl
-        sel="ticker,report_date"+(",eps_actual,eps_estimate" if comp else ",eps_surprise_pct")
-        ev=Q(ce,"SELECT "+sel+" FROM earnings_surprises WHERE report_date IS NOT NULL")
+        # SOURCE FIX (Jul 15 2026): earnings_surprises is sparse (~25 usable
+        # months); earnings_events holds eps_surprise to 1996. Prefer the deep
+        # table at runtime; fall back to the old path if it's missing/empty.
+        n_ev = Q(ce, "SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='earnings_events'")[0][0]
+        n_ev = Q(ce, "SELECT COUNT(*) FROM earnings_events WHERE eps_surprise IS NOT NULL")[0][0] if n_ev else 0
+        if n_ev > 1000:
+            comp = False
+            ev = Q(ce, "SELECT ticker, announce_date, eps_surprise FROM earnings_events "
+                       "WHERE eps_surprise IS NOT NULL AND announce_date IS NOT NULL")
+            print("  PEAD source: earnings_events (%d surprise rows)" % n_ev)
+        else:
+            cl=cols_of(ce,"earnings_surprises")
+            comp="eps_actual" in cl and "eps_estimate" in cl
+            sel="ticker,report_date"+(",eps_actual,eps_estimate" if comp else ",eps_surprise_pct")
+            ev=Q(ce,"SELECT "+sel+" FROM earnings_surprises WHERE report_date IS NOT NULL")
+            print("  PEAD source: earnings_surprises (fallback)")
     finally: ce.close()
     by_tkr=defaultdict(list)
     for row in ev:

@@ -57,3 +57,18 @@ dead anyway; matters only if anyone retries deeper training.
 n=1,234 outcomes at prob_up<0.30: acc 51.7% (bar >60%), avg_ret +0.186% (bar: negative;
 May n=72 read -0.314% -- sign FLIPPED as n grew 17x). prob_up carries no monetizable
 info in either tail. Strike the monthly re-eval.
+
+## PEAD BRICK VOID — LOOK-AHEAD LEAK (2026-07-15)
+earnings_surprises.report_date = FISCAL PERIOD END, 14-30d before the announcement
+(AAPL/MSFT/JNJ verified; 625/21,064 rows coincide with announce). Entire PEAD suite
+entered at report_date+2 = traded surprises before they were public; the "40d drift"
+contained the announcement jump (etl_earnings' own measurement: SUE-vs-jump IC +0.26).
+- Jun 25 brick validation (OOS IC +0.20-0.24) VOID. Honest announce-dated re-run:
+  IS IC +0.025 t=1.35, OOS IC +0.030 t=-1.13, net NEGATIVE, mono 4/9. NOT a brick.
+- Jun 25 Sharpe-level combination evidence VOID (same stream). Honest n=62 months:
+  combined 0.78 < SI alone 1.01 -- LIMITED BENEFIT. Combination question closed
+  unless a new brick appears.
+- Fund has ONE validated brick: SI (clean -- FINRA settlement dates, separate pipeline).
+- Leak-fixed: pead_oos.py, combine_pead_si.py. Still leaked: pead_sue, walkforward,
+  book_fullhistory, audit_combination (sweep in progress). pead_monitor +
+  combined_40d_monitor crons watch leaked constructions -- output void until re-pointed.
