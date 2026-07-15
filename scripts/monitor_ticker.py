@@ -1769,6 +1769,19 @@ def _extract_atm_straddle(chain_rows: list, earnings_date: str, spot: float) -> 
     (expiry, strike, call_mid, put_mid) for the ATM straddle of the
     nearest expiry on or after earnings_date. Returns None if shape
     doesn't yield a usable straddle."""
+    import re as _re
+    def _occ(c):
+        """Parse OCC option_symbol -> (expiry 'YYYY-MM-DD', 'C'|'P', strike float).
+        UW rows carry strike/type ONLY in option_symbol, e.g.
+        MSFT260828C00345000 -> ('2026-08-28','C',345.0). Root up to 6 chars."""
+        sym = _f(c, "option_symbol", "symbol", "osi")
+        if not isinstance(sym, str):
+            return (None, None, None)
+        m = _re.match(r'^([A-Z]{1,6})(\d{6})([CP])(\d{8})$', sym.strip())
+        if not m:
+            return (None, None, None)
+        _root, ymd, cp, strike = m.groups()
+        return (f"20{ymd[:2]}-{ymd[2:4]}-{ymd[4:6]}", cp, int(strike) / 1000.0)
     if not chain_rows:
         return None
 
@@ -1777,7 +1790,9 @@ def _extract_atm_straddle(chain_rows: list, earnings_date: str, spot: float) -> 
     for c in chain_rows:
         if not isinstance(c, dict):
             continue
-        exp = _f(c, "expiry", "expiration", "expiration_date", "expires_at")
+        exp = _f(c, "expires", "expiry", "expiration", "expiration_date", "expires_at")
+        if not exp:
+            exp = _occ(c)[0]
         if not exp:
             continue
         exp_str = exp[:10] if isinstance(exp, str) else str(exp)[:10]
@@ -1792,6 +1807,9 @@ def _extract_atm_straddle(chain_rows: list, earnings_date: str, spot: float) -> 
     expiry_rows = by_expiry[chosen_exp]
 
     def get_strike(c):
+        _e, _cp, _k = _occ(c)
+        if _k is not None:
+            return _k
         s = _f(c, "strike", "strike_price")
         try:
             return float(s) if s is not None else None
@@ -1820,10 +1838,11 @@ def _extract_atm_straddle(chain_rows: list, earnings_date: str, spot: float) -> 
         return (chosen_exp, chosen_strike, call_mid, put_mid)
 
     # Schema 2: rows are individual call/put options, with type field
-    calls = [(r, s) for r, s in rows_with_strikes
-             if (_f(r, "type", "option_type") or "").lower().startswith("c")]
-    puts = [(r, s) for r, s in rows_with_strikes
-            if (_f(r, "type", "option_type") or "").lower().startswith("p")]
+    def _cp(r):
+        _e, cp, _k = _occ(r)
+        return cp or (_f(r, "type", "option_type") or "")[:1].upper()
+    calls = [(r, s) for r, s in rows_with_strikes if _cp(r) == "C"]
+    puts = [(r, s) for r, s in rows_with_strikes if _cp(r) == "P"]
     if calls and puts:
         calls.sort(key=lambda x: abs(x[1] - spot))
         puts.sort(key=lambda x: abs(x[1] - spot))
@@ -1903,7 +1922,7 @@ def section_implied_move(ticker: str) -> None:
     for r in expiry_rows:
         if not isinstance(r, dict):
             continue
-        exp = _f(r, "expiry", "expiration", "expiration_date")
+        exp = _f(r, "expires", "expiry", "expiration", "expiration_date")
         if exp:
             exp_str = exp[:10] if isinstance(exp, str) else str(exp)[:10]
             expiries.append(exp_str)
