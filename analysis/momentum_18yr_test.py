@@ -50,6 +50,7 @@ DECILE    = 0.10
 COST_RT   = float(os.environ.get("ML_QUANT_COST_BPS", "10.0")) / 10_000.0
 FACTOR    = os.environ.get("ML_QUANT_FACTOR", "ff").lower()    # ff | ew
 NULL_RUN  = os.environ.get("ML_QUANT_NULL", "0") == "1"
+BUCKET_CAP = int(os.environ.get("ML_QUANT_BUCKET_CAP", "0"))   # 3 = mirror the shadow
 _RNG      = np.random.default_rng(int(os.environ.get("ML_QUANT_NULL_SEED", "42")))
 MIN_NAMES = 60                   # skip a rebalance date with fewer scored names
 BETA_MIN  = 12                   # expanding-window obs needed before stripping
@@ -93,7 +94,21 @@ def run_kind(panel: pd.DataFrame, kind: str) -> pd.DataFrame:
             score = pd.Series(_RNG.permutation(score.values), index=score.index)
         k = max(1, int(len(score) * DECILE))
         ranked = score.sort_values(ascending=False)
-        top, bot = set(ranked.head(k).index), set(ranked.tail(k).index)
+        if BUCKET_CAP:
+            from signals.momentum_signal import _load_bucket_map
+            _bmap = _load_bucket_map()
+            _top, _per = [], {}
+            for _t in ranked.index:
+                _b = _bmap.get(str(_t).upper(), "UNK")
+                if _per.get(_b, 0) < BUCKET_CAP:
+                    _top.append(_t)
+                    _per[_b] = _per.get(_b, 0) + 1
+                if len(_top) >= k:
+                    break
+            top = set(_top)
+        else:
+            top = set(ranked.head(k).index)
+        bot = set(ranked.tail(k).index)   # L/S diag only; shadow has no short leg
 
         fwd = panel.iloc[i + HOLD] / panel.iloc[i] - 1.0
         fwd = fwd.reindex(score.index).dropna()
@@ -179,6 +194,7 @@ def report(d: pd.DataFrame, kind: str):
     print(f"  MOMENTUM {kind}  --  {d.date.min().date()} -> {d.date.max().date()}"
           f"   ({len(d)} rebalances, {HOLD}td hold, top decile EW)")
     print("=" * 78)
+    print(f"  bucket_cap = {BUCKET_CAP or 'none (plain decile)'}")
     print(f"  factor = {'FF daily Mkt-RF, excess' if FACTOR == 'ff' else 'EW universe'}"
           + ("   *** NULL RUN: scores shuffled ***" if NULL_RUN else ""))
     print(f"  cost = {COST_RT*1e4:.0f} bps round-trip x measured turnover "
@@ -229,7 +245,8 @@ def main():
             print(f"\n{kind}: no valid rebalances -- data problem, stop.")
             continue
         report(d, kind)
-        _tag = ("_null" if NULL_RUN else "") + ("_ew" if FACTOR == "ew" else "")
+        _tag = (("_null" if NULL_RUN else "") + ("_ew" if FACTOR == "ew" else "")
+                + (f"_cap{BUCKET_CAP}" if BUCKET_CAP else ""))
         out = ROOT / "reports" / f"momentum_18yr_{kind}{_tag}.csv"
         d.to_csv(out, index=False)
         print(f"\n  per-rebalance rows -> {out}")

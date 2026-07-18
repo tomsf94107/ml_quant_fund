@@ -24,6 +24,7 @@ ALL must pass for GO.
 
     python -m scripts.momentum_promotion_check
 """
+import os
 import sqlite3, sys
 from pathlib import Path
 
@@ -32,7 +33,7 @@ DB = ROOT / "accuracy.db"
 MIN_SAMPLE = 20
 MIN_EDGE_PP = 2.0
 MIN_WEEK_CONSISTENCY = 0.60
-KIND = "mom_6_1"
+KIND = os.environ.get("MOMENTUM_KIND", "mom_6_1")
 
 JOIN = ("FROM momentum_shadow_outcomes o "
         "JOIN momentum_shadow_predictions p "
@@ -44,7 +45,7 @@ JOIN = ("FROM momentum_shadow_outcomes o "
 # 3 rebalances. New bar: consistency with the backtest distribution (90% one-
 # sided), mirror KILL at 99%. Constants from reports/momentum_18yr_*.csv
 # (EW-strip net, real run 2026-07-15).
-BT_STATS = {'mom_6_1': (1.068, 4.859), 'mom_12_1': (1.116, 5.001)}
+BT_STATS = {'mom_6_1': (1.015, 4.673), 'mom_12_1': (1.064, 4.76)}  # cap3 EW-strip constants (like-for-like with shadow), 2026-07-15
 
 def _bounds(kind, k):
     import math
