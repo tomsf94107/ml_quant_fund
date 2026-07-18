@@ -1201,7 +1201,12 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     pages = 0
     fetch_failed = 0
     fetch_succeeded = 0
-    MAX_PAGES = 600
+    MAX_PAGES   = int(os.environ.get("ML_QUANT_DP_MAX_PAGES", "800"))
+    MAX_SECONDS = float(os.environ.get("ML_QUANT_DP_MAX_SECONDS", "600"))
+    _t0 = time.time()
+    _reached = None
+    _dry = 0
+    _exhausted = False
     while pages < MAX_PAGES:
         params = {"limit": 500}
         if older:
@@ -1214,6 +1219,7 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         if not rows_page:
             break
         fetch_succeeded += 1
+        _before = conn.total_changes
         for r in rows_page:
             ts = r.get("executed_at") or r.get("trf_executed_at") or r.get("trade_time")
             if not ts:
@@ -1244,17 +1250,40 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         pages += 1
         oldest = min((r.get("executed_at") for r in rows_page if r.get("executed_at")),
                      default=None)
+        if oldest is not None:
+            _reached = oldest
         if oldest is None or len(rows_page) < 500:
+            _exhausted = True
             break
         oldest_dt = datetime.fromisoformat(oldest.replace("Z", "+00:00"))
         if oldest_dt.astimezone(ET_TZ).date() < since_date:
             break
-        if oldest == prev_oldest:
-            raise RuntimeError(f"darkpool cursor stalled at {oldest} for {ticker}")
+        if prev_oldest is not None and oldest >= prev_oldest:
+            print(f"    [warn] cursor reset at page {pages} (feed re-served newer rows); stopping")
+            break
+        if time.time() - _t0 > MAX_SECONDS:
+            print(f"    [warn] {MAX_SECONDS:.0f}s budget hit at page {pages}")
+            break
+        if conn.total_changes == _before:
+            _dry += 1
+            if _dry >= 2:
+                print(f"    2 pages, 0 new prints -- window already cached, stopping.")
+                break
+        else:
+            _dry = 0
+        if pages % 25 == 0:
+            print(f"    ... {pages} pages, {time.time()-_t0:.0f}s, back to {oldest[:10]}")
         prev_oldest = oldest
         older = (oldest_dt + timedelta(seconds=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
     if pages:
-        print(f"  Dark pool: walked {pages} page(s) back to {since_date}.")
+        _r = (datetime.fromisoformat(_reached.replace("Z", "+00:00")).astimezone(ET_TZ).date()
+              if _reached else None)
+        _done = "complete" if (_r and _r <= since_date) else "PARTIAL (feed exhausted)" if _exhausted else "PARTIAL"
+        print(f"  Dark pool: {pages} page(s) in {time.time()-_t0:.0f}s; reached {_r}, "
+              f"requested {since_date} -- {_done}.")
+        if _r and _r > since_date:
+            print(f"  [note] days before {_r} are whatever was cached earlier -- "
+                  f"heal with: python scripts/repair_darkpool_days.py --ticker {ticker}")
     conn.commit()
     # Now query the DB for the full window and analyze
     rows = list(cur.execute("""
@@ -1295,8 +1324,20 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     # Then "heavy" = today is >2x that average. Switching from absolute USD
     # threshold to relative ratio so liquid names (NVDA, DDOG) don't flag
     # every single day; they only flag genuinely unusual days.
-    all_values = [by_day[d]["value"] for d in sorted_days]
-    avg_20d = sum(all_values[1:21]) / max(1, min(20, len(all_values) - 1)) if len(all_values) > 1 else 0
+    # PARTIAL-DAY EXCLUSION (Jul 18 2026). Days fetched before the cursor-walk fix
+    # are frozen ~500-print slices (~9% of tape). Averaging them with full days
+    # understates the baseline ~4x and fires false HEAVY flags. Signature: <=550
+    # prints on a ticker whose full days run into the thousands.
+    _maxp = max((by_day[d]["prints"] for d in sorted_days), default=0)
+    def _partial(day):
+        return _maxp >= 5000 and by_day[day]["prints"] <= 550
+    _clean_days = [d for d in sorted_days[1:21] if not _partial(d)]
+    _n_part = len([d for d in sorted_days[1:21] if _partial(d)])
+    all_values = [by_day[d]["value"] for d in _clean_days]
+    avg_20d = (sum(all_values) / len(all_values)) if all_values else 0
+    if _n_part:
+        print(f"  [note] {_n_part} partial day(s) excluded from the HEAVY baseline "
+              f"(pre-fix ~500-print slices); run repair_darkpool_days.py to heal them")
     HEAVY_THRESHOLD = max(DARKPOOL_DAILY_AGGREGATE_USD, avg_20d * 2)
 
     for day in sorted_days[:15]:
@@ -1415,13 +1456,16 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         skew_pct = (net / denom * 100) if denom else 0
         usable = (denom >= MIN_CLASSIFIED_USD
                   and len(d["prints"]) >= MIN_CLASSIFIED_PRINTS
-                  and coverage >= MIN_COVERAGE_PCT)
+                  and coverage >= MIN_COVERAGE_PCT
+                  and not _partial(day))   # coverage is classified/stored, NOT
+                  # stored/actual -- a frozen 500-print slice reports high coverage
+                  # on ~2% of the tape. Exclude it from the aggregate outright.
         n_days += 1
         if usable:
             n_usable += 1
             skew_buy_total += buy_val
             skew_sell_total += sell_val
-        mark = "" if usable else "  THIN"
+        mark = "" if usable else ("  PARTIAL" if _partial(day) else "  THIN")
         print(f"  {day:<12} {buy_val:>16,.0f} {sell_val:>16,.0f} "
               f"{net:>+14,.0f} {skew_pct:>+7.1f}% {coverage:>6.1f}%{mark}")
 
