@@ -2296,10 +2296,7 @@ def section_sector_cohort(ticker: str) -> None:
     sector_etf = cfg.get("sector_etf", "")
 
     def fetch_returns(t: str) -> dict:
-        data = uw_get(f"/api/stock/{t}/ohlc/1d", params={"limit": 30})
-        rows = (data or {}).get("data") or []
-        rows.sort(key=lambda r: r.get("date") or r.get("market_time") or "")
-        return _ohlc_returns(rows)
+        return _daily_returns(t)
 
     print(f"  {'Ticker':<10} {'1d':>8} {'5d':>8} {'20d':>8}")
     self_ret = fetch_returns(ticker)
@@ -3126,6 +3123,35 @@ def _ohlc_returns(rows: list[dict]) -> dict:
     return out
 
 
+def _daily_returns(t: str) -> dict:
+    """1d/5d/20d from CANONICAL daily closes (prices.db adj_close), never UW
+    /ohlc/1d. That endpoint returns THREE rows per session (pr/po/r, order
+    varying by ticker) and ignores limit -> 1d was regular-close vs post-close
+    (sign-flipping), closes[-21] was 7 sessions. Verified Jul 21 probe.
+    Massive daily aggs fallback for tickers absent from daily_prices."""
+    closes: list = []
+    try:
+        import sqlite3 as _sq
+        _con = _sq.connect(f"file:{_REPO_ROOT / 'prices.db'}?mode=ro", uri=True)
+        _rows = _con.execute(
+            "SELECT adj_close FROM daily_prices WHERE ticker=? "
+            "AND adj_close IS NOT NULL ORDER BY date DESC LIMIT 22",
+            (t.upper(),)).fetchall()
+        _con.close()
+        closes = [float(r[0]) for r in _rows][::-1]
+    except Exception as _e:
+        print(f"  [warn] daily_prices read failed for {t}: {_e}")
+    if len(closes) < 21:
+        _end = _today_et().isoformat()
+        _start = (_today_et() - timedelta(days=45)).isoformat()
+        _data = massive_get(f"/v2/aggs/ticker/{t}/range/1/day/{_start}/{_end}",
+                            params={"adjusted": "true"})
+        _res = (_data or {}).get("results") or []
+        if len(_res) > len(closes):
+            closes = [float(r.get("c") or 0) for r in _res if r.get("c")]
+    return _ohlc_returns([{"close": c} for c in closes])
+
+
 def section_peer_relative(ticker: str) -> None:
     """Compares ticker returns to its sector ETF + SPY. Pre-earnings drift is
     a documented anomaly: stocks tend to drift in the direction of the upcoming
@@ -3134,13 +3160,11 @@ def section_peer_relative(ticker: str) -> None:
     print(f"\n=== PEER-RELATIVE PRICE — {ticker} ===")
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
-    sector_etf = cfg.get("sector_etf", "IWM")  # fallback to small-cap ETF
+    sector_etf = cfg.get("sector_etf", "SPY")  # default SPY. The old IWM
+    # fallback benchmarked megacaps against small-caps (10 of 12 tickers).
 
     def fetch_returns(t: str) -> dict:
-        data = uw_get(f"/api/stock/{t}/ohlc/1d", params={"limit": 30})
-        rows = (data or {}).get("data") or []
-        rows.sort(key=lambda r: r.get("date") or r.get("market_time") or "")
-        return _ohlc_returns(rows)
+        return _daily_returns(t)
 
     t = fetch_returns(ticker)
     sec = fetch_returns(sector_etf)
