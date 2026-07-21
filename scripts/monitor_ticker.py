@@ -103,9 +103,15 @@ TICKER_CONFIG: dict[str, dict] = {
         "shares_out": 24_300_000_000,  # ~24.3B (verify quarterly)
         "news_search_term": "NVIDIA NVDA",
     },
+    "PLTR": {
+        "sector_etf": "IGV",
+        "earnings_date": "2026-08-03",  # AMC, confirmed via company press release Jul 13
+        "earnings_time": "AMC",
+        "news_search_term": "Palantir PLTR",
+    },
     "SMCI": {
         "sector_etf": "SMH",     # Server hardware tracks semis
-        "earnings_date": "2026-05-05",  # AMC, confirmed
+        "earnings_date": "2026-08-11",  # AMC, Q4 FY26 (was 2026-05-05 -- stale, anchored implied move on a weekly)
         "earnings_time": "AMC",
         "fiscal_q": "Q3 FY26",
         "shares_out": 600_000_000,
@@ -183,6 +189,12 @@ def days_until_earnings(ticker: str) -> Optional[int]:
         return None
     try:
         ed = date.fromisoformat(cfg["earnings_date"])
+        if (ed - _today_et()).days < -2:
+            print(f"  [warn] {ticker.upper()}: configured earnings_date {ed} is in the PAST "
+                  f"-- config STALE; treating as unconfigured (SMCI-class bug: a past date "
+                  f"silently anchors the implied move on the nearest weekly)")
+            flag("MED", ticker.upper(), f"earnings_date {ed} in config is STALE -- update TICKER_CONFIG")
+            return None
         return (ed - _today_et()).days
     except ValueError:
         return None
@@ -588,6 +600,7 @@ def parse_form4_xml(xml_text: str) -> dict:
         "filer_name": "", "filer_cik": "",
         "is_director": False, "is_officer": False,
         "is_ten_percent_owner": False, "officer_title": "",
+        "issuer_symbol": "", "issuer_cik": "",
         "transactions": [],
     }
     try:
@@ -596,6 +609,14 @@ def parse_form4_xml(xml_text: str) -> dict:
     except ET.ParseError as e:
         print(f"  [warn] Form 4 XML parse failed: {e}")
         return out
+    # Issuer identity. EDGAR surfaces Form 4s under BOTH issuer and reporting-
+    # owner CIKs, so a venture arm's portfolio dispositions (GV -> Alphabet)
+    # appear in the parent's feed. Without these fields the consumer cannot
+    # tell GV selling a portfolio company from insiders selling GOOG.
+    _iss = root.find("issuer")
+    if _iss is not None:
+        out["issuer_symbol"] = (_iss.findtext("issuerTradingSymbol") or "").strip().upper()
+        out["issuer_cik"] = (_iss.findtext("issuerCik") or "").strip()
 
     # Reporting owner
     owner = root.find(".//reportingOwner")
