@@ -59,6 +59,15 @@ UW_BASE = "https://api.unusualwhales.com"
 MASSIVE_BASE = "https://api.massive.com"
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _today_et():
+    """ET-anchored 'today'. _today_et() on a UTC+7 machine is a day ahead of
+    the US session from ~11:00 VN onward -- the class bug behind the AMZN
+    days-to-earnings off-by-one and every stale news-cutoff window."""
+    from datetime import datetime as _dt
+    from zoneinfo import ZoneInfo as _Z
+    return _dt.now(_Z("America/New_York")).date()
 DB_PATH = Path(os.environ.get("EARNINGS_DB",
                               str(_REPO_ROOT / "earnings_monitor.db")))
 
@@ -174,7 +183,7 @@ def days_until_earnings(ticker: str) -> Optional[int]:
         return None
     try:
         ed = date.fromisoformat(cfg["earnings_date"])
-        return (ed - date.today()).days
+        return (ed - _today_et()).days
     except ValueError:
         return None
 
@@ -2190,7 +2199,7 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
         return
 
     cur = conn.cursor()
-    cutoff = (date.today() - timedelta(days=30)).isoformat()
+    cutoff = (_today_et() - timedelta(days=30)).isoformat()
     rows = list(cur.execute("""
         SELECT accession_number, filing_date, primary_doc
         FROM edgar_filings
@@ -2530,7 +2539,7 @@ def section_macro_news() -> None:
     print(f"#  (single fetch, applies to all tickers in this run)")
     print(f"{'#' * 78}")
 
-    cutoff_iso = (date.today() - timedelta(days=3)).isoformat()
+    cutoff_iso = (_today_et() - timedelta(days=3)).isoformat()
 
     for label, query in MACRO_NEWS_QUERIES:
         items = _fetch_google_news_rss(query, max_items=8)
@@ -2565,7 +2574,7 @@ def section_news(ticker: str) -> None:
     print(f"\n=== RECENT NEWS — {ticker} ===")
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
-    cutoff = (date.today() - timedelta(days=14)).isoformat()
+    cutoff = (_today_et() - timedelta(days=14)).isoformat()
 
     # Try UW first (will likely 404 on Basic plan for these endpoints —
     # the section_news function used to give up here. Now we fall through
@@ -2630,7 +2639,7 @@ def section_news(ticker: str) -> None:
     # stock" — picks up macro stories that affect this name uniquely.
     # E.g. NVDA gets China chip export controls; NVMI gets semi-cycle headlines.
     macro_queries = TICKER_MACRO_CONTEXT.get(ticker.upper(), [])
-    macro_cutoff = (date.today() - timedelta(days=7)).isoformat()
+    macro_cutoff = (_today_et() - timedelta(days=7)).isoformat()
     for query in macro_queries:
         macro_items = _fetch_google_news_rss(query, max_items=6)
         print(f"\n  [Macro context: {query}]")
@@ -2906,7 +2915,7 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
     _age = None
     if _s_last:
         try:
-            _age = (date.today() - date.fromisoformat(_s_last)).days
+            _age = (_today_et() - date.fromisoformat(_s_last)).days
         except Exception:
             _age = None
     if (s_value >= 5_000_000 and s_filers <= 3 and
@@ -2948,8 +2957,8 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
               f"{value or 0:>12,.0f}  {plan_display:<14}{tag}")
 
     # Recent material transactions (last 14 days, regardless of size)
-    today = date.today().isoformat()
-    fourteen_days_ago = (date.today() - timedelta(days=14)).isoformat()
+    today = _today_et().isoformat()
+    fourteen_days_ago = (_today_et() - timedelta(days=14)).isoformat()
     recent_material = [t for t in non_deriv
                        if t[0] and t[0] >= fourteen_days_ago
                        and t[1] in ("P", "S")
@@ -3309,7 +3318,7 @@ def section_massive_blocks(ticker: str, since: str) -> None:
     print(f"\n=== MASSIVE LIT-BLOCK CROSS-CHECK — {ticker} (since {since}) ===")
     # Daily aggregates to find unusually heavy days; tick-level scan would be
     # rate-prohibitive on Starter. This is a coarse confirmation pass.
-    data = massive_get(f"/v2/aggs/ticker/{ticker}/range/1/day/{since}/{date.today().isoformat()}",
+    data = massive_get(f"/v2/aggs/ticker/{ticker}/range/1/day/{since}/{_today_et().isoformat()}",
                        params={"adjusted": "true", "limit": 120})
     if not data or not data.get("results"):
         print("  Massive returned no aggregates.")
@@ -3562,8 +3571,8 @@ def print_header(args) -> None:
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     # Default lookbacks are computed relative to today
-    default_since = (date.today() - timedelta(days=60)).isoformat()
-    default_dp_since = (date.today() - timedelta(days=30)).isoformat()
+    default_since = (_today_et() - timedelta(days=60)).isoformat()
+    default_dp_since = (_today_et() - timedelta(days=30)).isoformat()
     p.add_argument("--since", default=default_since,
                    help=f"ISO date; lookback start for time-windowed sections "
                         f"(default: 60 days back = {default_since})")
