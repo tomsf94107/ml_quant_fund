@@ -1967,7 +1967,17 @@ def section_implied_move(ticker: str) -> None:
         print(f"  Spot price unavailable.")
         return
 
-    print(f"  Spot:           ${spot:.2f}")
+    # SPOT = latest completed close from canonical daily series (was quote-first:
+    # produced quote-anchored implied ranges in 4/4 Jul-21 reports; the OHLC
+    # fallback was worse -- reverse-stable sort landed on the PRE-MARKET row).
+    _quote_ctx = spot
+    _dc = (_daily_returns(ticker) or {}).get("latest")
+    if _dc:
+        spot = float(_dc)
+    if _quote_ctx and abs(_quote_ctx - spot) > 0.005:
+        print(f"  Spot:           ${spot:.2f}  (latest close; live quote ${_quote_ctx:.2f})")
+    else:
+        print(f"  Spot:           ${spot:.2f}  (latest close)")
 
     # Step 1: discover available expiries via expiry-breakdown (which returns
     # the list of expirations with volume/OI per expiry — no extra param needed)
