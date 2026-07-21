@@ -47,6 +47,31 @@ JOIN = ("FROM momentum_shadow_outcomes o "
 # (EW-strip net, real run 2026-07-15).
 BT_STATS = {'mom_6_1': (1.015, 4.673), 'mom_12_1': (1.064, 4.76)}  # cap3 EW-strip constants (like-for-like with shadow), 2026-07-15
 
+def _effective_k(dates, hold_sessions=20):
+    """Prediction dates inside one hold window overlap ~19/20 -- they are NOT
+    independent draws. The backtest comparator uses NON-overlapping rebalances,
+    so counting raw dates divides by a sqrt(k) the sample hasn't earned (the
+    same pooling error as Two_Brick 5.1 and the 9-rebalance shadow sample).
+    Collapse dates to non-overlapping 20-session clusters."""
+    import os as _os, sys as _sys
+    _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    if _R not in _sys.path:
+        _sys.path.insert(0, _R)
+    from datetime import date as _d, timedelta as _td
+    from utils.market_calendar import is_trading_day
+    ds = sorted({_d.fromisoformat(str(x)[:10]) for x in dates})
+    if not ds:
+        return 0
+    k, anchor = 1, ds[0]
+    for cur in ds[1:]:
+        sess = sum(1 for i in range((cur - anchor).days)
+                   if is_trading_day(anchor + _td(days=i + 1)))
+        if sess >= hold_sessions:
+            k += 1
+            anchor = cur
+    return k
+
+
 def _bounds(kind, k):
     import math
     m, s = BT_STATS.get(kind, BT_STATS["mom_6_1"])
@@ -77,13 +102,17 @@ def main():
     by_date = {}
     for d, isbuy, avg in rows:
         by_date.setdefault(d, {})[isbuy] = avg
-    week_edges = [v[1]-v.get(0,0.0) for v in by_date.values() if 1 in v]
+    _edge_dates = [d for d, v in by_date.items() if 1 in v]
+    week_edges = [by_date[d][1] - by_date[d].get(0, 0.0) for d in _edge_dates]
     wpos = sum(1 for e in week_edges if e > 0)
     wcons = wpos/len(week_edges) if week_edges else 0.0
 
     print(f"Live pick return:  {pick_ret:+.2f}pp")
     print(f"Live field return: {field_ret:+.2f}pp  (the non-picks)")
-    k_dates = max(len(week_edges), 1)
+    k_dates = max(_effective_k(_edge_dates), 1)
+    if k_dates != len(week_edges):
+        print(f"Effective k:       {k_dates}  (from {len(week_edges)} prediction dates; "
+              f"dates inside one 20-session hold overlap and are not independent)")
     lo90, lo99 = _bounds(KIND, k_dates)
     print(f"Live EDGE:         {edge:+.2f}pp  (consistency bar {lo90:+.2f}pp @ k={k_dates}; old fixed bar +{MIN_EDGE_PP}pp)")
     print(f"Live win rate:     {pick_win:.1f}%")
