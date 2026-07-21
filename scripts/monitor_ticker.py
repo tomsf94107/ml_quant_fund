@@ -2767,8 +2767,10 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
 
     if rows:
         print(f"  Fetching and parsing {len(rows)} Form 4 filing(s) from EDGAR...")
+    # (other-issuer exclusion note printed after the loop, see below)
     new_parsed = 0
     parse_failures = 0
+    other_issuer_excluded = 0
     for acc, fdate, primary in rows:
         xml_text = fetch_form4_xml(cik, acc, primary)
         if not xml_text:
@@ -2782,6 +2784,36 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
         # the filing as parsed, so we'll retry next run with better logic)
         if not parsed.get("filer_name") and not txs:
             parse_failures += 1
+            continue
+
+        # OTHER-ISSUER FILTER (Jul 21 2026). EDGAR lists Form 4s under BOTH
+        # issuer and reporting-owner CIKs, so a venture arm's dispositions of
+        # PORTFOLIO-COMPANY stock surface in the parent's feed (specimen: GV
+        # 2019 GP $1.8M flagged as a GOOG quiet-period insider SELL, T-1 to
+        # earnings). Exclude non-matching issuers BEFORE persist/flags. If the
+        # XML carried no issuer symbol, keep the row (fail-open, old behavior).
+        # CIK match, NOT symbol match: Alphabet files under GOOGL while the
+        # monitor tracks GOOG (dual class) -- symbol comparison condemned all
+        # 50 legitimate insider filings on 2026-07-21. Issuer CIK is class-
+        # invariant: Alphabet=1652044 for both GOOG and GOOGL.
+        _isym = parsed.get("issuer_symbol") or ""
+        _icik = (parsed.get("issuer_cik") or "").strip().lstrip("0")
+        _want = str(cik).lstrip("0")
+        if _icik and _want and _icik != _want:
+            other_issuer_excluded += 1
+            try:
+                cur.execute("""
+                    INSERT OR REPLACE INTO form4_parsed
+                    (accession_number, ticker, parsed_at, filer_name, filer_cik,
+                     officer_title, is_director, is_officer, is_ten_percent_owner,
+                     transaction_count, aggregate_p_value, aggregate_s_value)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (acc, ticker, now_iso(),
+                      f"[OTHER ISSUER {_isym}] " + (parsed.get("filer_name") or ""),
+                      parsed.get("filer_cik"), parsed.get("officer_title"),
+                      0, 0, 0, 0, 0.0, 0.0))
+            except sqlite3.Error as e:
+                print(f"  [warn] form4_parsed insert: {e}")
             continue
 
         # Aggregate P (open-market buy) and S (open-market sell) values
