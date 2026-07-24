@@ -1557,6 +1557,34 @@ def section_options_flow(conn: sqlite3.Connection, ticker: str, since: str) -> N
     print(f"  Put premium:  ${put_prem:,.0f}")
     print(f"  Put/Call premium ratio: {pc_prem:.2f}")
 
+    # AGGRESSOR TILT (2026-07-24). The UW payload carries per-alert
+    # total_ask_side_prem / total_bid_side_prem -- side-of-trade premium the
+    # monitor previously dropped, forcing every position-type read to [inf].
+    # Ask-side = paid the offer = aggressive buying of that contract type.
+    # DESCRIPTIVE ONLY: zero validation history; inherits the dark-pool scope
+    # rule verbatim (never leads a signal; feature-sink only via full RULE-1
+    # checklist after a null-controlled per-date IC test).
+    def _sides(sub):
+        a = sum(float(x.get("total_ask_side_prem") or 0) for x in sub)
+        b = sum(float(x.get("total_bid_side_prem") or 0) for x in sub)
+        return a, b
+    _calls = [x for x in rows if (x.get("type") or x.get("option_type") or "").lower() == "call"]
+    _puts = [x for x in rows if (x.get("type") or x.get("option_type") or "").lower() == "put"]
+    _ca, _cb = _sides(_calls)
+    _pa, _pb = _sides(_puts)
+    _tot = call_prem + put_prem
+    _cov = ((_ca + _cb + _pa + _pb) / _tot * 100) if _tot else 0.0
+    def _tilt(a, b):
+        return ((a - b) / (a + b) * 100) if (a + b) else 0.0
+    print(f"  Aggressor tilt (ask=aggr buy): "
+          f"CALLS {_tilt(_ca, _cb):+.1f}% (ask ${_ca:,.0f} / bid ${_cb:,.0f})  "
+          f"PUTS {_tilt(_pa, _pb):+.1f}% (ask ${_pa:,.0f} / bid ${_pb:,.0f})")
+    print(f"  Side coverage: {_cov:.1f}% of premium classified "
+          f"(rest at-mid/unclassified){'  [LOW -- wide error bars]' if _cov < 70 else ''}")
+    if _cov > 105:
+        print(f"  [warn] side sums exceed total premium by {_cov - 100:.0f}% -- "
+              f"field scaling suspect, do not trust tilt until reconciled")
+
     # Top single alerts
     big = sorted(rows, key=lambda r: float(r.get("total_premium") or r.get("premium") or 0), reverse=True)[:10]
     print("  Top alerts by premium:")
@@ -1567,9 +1595,15 @@ def section_options_flow(conn: sqlite3.Connection, ticker: str, since: str) -> N
         otype = (r.get("type") or r.get("option_type") or "?").upper()
         strike = r.get("strike")
         exp = r.get("expiry") or r.get("expiration")
+        _a = float(r.get("total_ask_side_prem") or 0)
+        _b = float(r.get("total_bid_side_prem") or 0)
+        _ashare = f"A%={_a / p * 100:.0f}" if p and (_a or _b) else "A%=?"
+        _op = r.get("all_opening_trades")
+        _optag = "OPENING" if _op in (True, "true", 1) else ("mixed" if _op in (False, "false", 0) else "?")
         print(f"    {(r.get('executed_at') or r.get('created_at') or '')[:19]}  "
               f"{otype:<5} ${strike} {exp}  prem=${p:,.0f}  "
-              f"vol={r.get('volume') or '?'}  oi={r.get('open_interest') or '?'}")
+              f"vol={r.get('volume') or '?'}  oi={r.get('open_interest') or '?'}  "
+              f"{_ashare}  [{_optag}]")
 
 
 # ---------------------------------------------------------------------------
