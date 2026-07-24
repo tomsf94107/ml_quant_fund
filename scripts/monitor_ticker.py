@@ -175,10 +175,19 @@ DEFAULT_TICKERS = list(TICKER_CONFIG.keys())
 # main() prints a consolidated summary at the end so signals don't get lost
 # in the per-section verbose output.
 TODAY_FLAGS: list[tuple[str, str, str]] = []  # (severity, ticker, message)
+_STALE_WARNED: set[str] = set()  # tickers already warned about stale earnings_date this run
+# EPS rows known contaminated by GAAP equity marks (vendor feeds GAAP for some
+# names, adjusted for others). MIRROR of the set in daily_uw_snapshot.py --
+# update BOTH. List, not threshold: the 04-29 row (+94%) evades any sane bound.
+EPS_QUARANTINE: set[tuple[str, str]] = {("GOOG", "2026-07-22"), ("GOOG", "2026-04-29")}
 
 
 def flag(severity: str, ticker: str, message: str) -> None:
-    """Severity: 'HIGH', 'MED', 'INFO'. Ticker can be '*' for cross-cutting."""
+    """Severity: 'HIGH', 'MED', 'INFO'. Ticker can be '*' for cross-cutting.
+    Dedupes exact repeats -- the stale-earnings warning fired 4-5x/run
+    (one per days_until_earnings call site). Class fix, not site fix."""
+    if (severity, ticker, message) in TODAY_FLAGS:
+        return
     TODAY_FLAGS.append((severity, ticker, message))
 
 
@@ -190,9 +199,11 @@ def days_until_earnings(ticker: str) -> Optional[int]:
     try:
         ed = date.fromisoformat(cfg["earnings_date"])
         if (ed - _today_et()).days < -2:
-            print(f"  [warn] {ticker.upper()}: configured earnings_date {ed} is in the PAST "
-                  f"-- config STALE; treating as unconfigured (SMCI-class bug: a past date "
-                  f"silently anchors the implied move on the nearest weekly)")
+            if ticker.upper() not in _STALE_WARNED:
+                _STALE_WARNED.add(ticker.upper())
+                print(f"  [warn] {ticker.upper()}: configured earnings_date {ed} is in the PAST "
+                      f"-- config STALE; treating as unconfigured (SMCI-class bug: a past date "
+                      f"silently anchors the implied move on the nearest weekly)")
             flag("MED", ticker.upper(), f"earnings_date {ed} in config is STALE -- update TICKER_CONFIG")
             return None
         return (ed - _today_et()).days
@@ -1768,7 +1779,11 @@ def section_earnings_calendar(ticker: str) -> None:
                      "eps_act")
         eps_est = _f(r, "expected_eps", "eps_estimate", "eps_consensus",
                      "consensus_eps", "estimated_eps", "eps_est",
-                     "eps_consensus_estimate", "estimate_eps")
+                     "eps_consensus_estimate", "estimate_eps",
+                     "street_mean_est")  # actual UW key -- without it every Est
+                                         # rendered "?" and no surprise computed
+        if (ticker.upper(), rdate) in EPS_QUARANTINE:
+            eps_act = None  # renders "?" -- see EPS_QUARANTINE note
         rev_act = _f(r, "actual_revenue", "revenue_actual", "revenue",
                      "total_revenue", "revenue_act")
         rev_est = _f(r, "expected_revenue", "revenue_estimate",
@@ -1787,6 +1802,14 @@ def section_earnings_calendar(ticker: str) -> None:
                     surprise = (float(eps_act) - float(eps_est)) / abs(float(eps_est)) * 100
             except (TypeError, ValueError):
                 pass
+        # Sanity tripwire, not a defense: 5.3% of rows exceed |100%| legitimately
+        # (near-zero estimates), and the GOOG 04-29 contamination sat at +94%,
+        # under any bound. Known-bad rows are quarantined by list in
+        # daily_uw_snapshot.py; this only surfaces NEW suspects for review.
+        if surprise is not None and abs(float(surprise)) > 100:
+            flag("MED", ticker,
+                 f"EPS surprise {float(surprise):+.0f}% on {rdate} exceeds sanity bound "
+                 f"-- GAAP/equity-mark contamination? Verify basis before trusting")
         rev_surprise = _f(r, "revenue_surprise", "rev_surprise_pct")
         if rev_surprise is None:
             try:
@@ -1955,8 +1978,14 @@ def section_implied_move(ticker: str) -> None:
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
     earnings_date = cfg.get("earnings_date")
+    # Route through the stale-date guard (days_until_earnings returns None for
+    # unconfigured AND stale dates). Before this, a stale config date silently
+    # anchored the straddle on the front weekly -- NVDA specimen, Jul 24 report:
+    # guard warned but this section read cfg directly and mis-anchored anyway.
+    if earnings_date and days_until_earnings(ticker) is None:
+        earnings_date = None
     if not earnings_date:
-        print(f"  No earnings date configured.")
+        print(f"  No earnings date configured (or config date is stale).")
         return
 
     # Live spot price — try realtime first, fall back to most recent OHLC

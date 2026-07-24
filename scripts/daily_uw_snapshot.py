@@ -318,6 +318,15 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
                         est_eps    = float(e.get("street_mean_est") or 0) if e.get("street_mean_est") else None
                     except Exception:
                         actual_eps = est_eps = None
+                    # EPS QUARANTINE (2026-07-24). UW feeds GAAP EPS inflated by
+                    # unrealized equity marks for some names (GOOG 07-22: 9.11 vs
+                    # 2.87 est = +217% "surprise" on a -6.89% session; 04-29: 5.11
+                    # vs 2.64 = +94%, which evades any numeric bound -- hence an
+                    # explicit list, not a threshold). INSERT OR REPLACE would
+                    # resurrect these on every run without this guard.
+                    # MIRROR of EPS_QUARANTINE in monitor_ticker.py -- update BOTH.
+                    if (ticker, rd) in {("GOOG", "2026-07-22"), ("GOOG", "2026-04-29")}:
+                        actual_eps = None
                     conn.execute("""
                         INSERT OR REPLACE INTO earnings_cache
                             (ticker, report_date, report_time, expected_move,
