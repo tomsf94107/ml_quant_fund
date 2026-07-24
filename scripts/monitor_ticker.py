@@ -1414,11 +1414,24 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     # Top 10 single prints in window
     big = sorted(rows, key=lambda r: float(r[3] or 0), reverse=True)[:10]
     print("  Top 10 single prints:")
+    # TAG, don't hide (SMCI same-universe lesson): AH closing crosses and
+    # known-mechanical dates rank as "top prints" but are auction plumbing,
+    # not organic blocks -- AMZN's entire Top-10 was eight Jun-26 Russell
+    # crosses at one price. They stay listed, labeled.
+    try:
+        from scripts.mechanical_block_filter import KNOWN_MECHANICAL_DATES as _MECH_DATES
+    except Exception:
+        _MECH_DATES = {"2026-06-26"}  # fallback: Russell recon
     for executed_at, size, price, value, venue, _nb, _na, _xh, _ed in big:
         if (value or 0) < DARKPOOL_BLOCK_MIN_USD:
             continue
+        _tags = ""
+        if _xh:
+            _tags += " AH"
+        if _ed in _MECH_DATES:
+            _tags += " MECH"
         print(f"    {(executed_at or '')[:19]}  {size:>10,.0f} @ ${price:>7,.2f}  "
-              f"= ${value:>12,.0f}  ({venue or '?'})")
+              f"= ${value:>12,.0f}  ({venue or '?'}{_tags})")
 
     # ----- Signed dark pool flow (VWAP heuristic) -----
     # True Lee-Ready needs NBBO at print time (UW Premium tier). As an
@@ -1513,6 +1526,13 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
     if skew_buy_total or skew_sell_total:
         denom = skew_buy_total + skew_sell_total
         agg_skew = ((skew_buy_total - skew_sell_total) / denom * 100) if denom else 0
+        # SIGNED-UNIVERSE LINE (SMCI specimen: +0.9% skew silently described
+        # only 57% of a $407M day). Headline and signed values on the same
+        # line so no report can mistake the skew's universe again.
+        _headline7 = sum(by_day.get(_d, {}).get("value", 0.0) for _d in sorted_days[:7])
+        if _headline7:
+            print(f"  Signed universe: ${denom:,.0f} of ${_headline7:,.0f} headline "
+                  f"({denom / _headline7 * 100:.0f}%) -- remainder is AH/neutral/unclassified")
         # Flag persistent skew > 30% across the 7-day window
         if abs(agg_skew) >= 30 and denom >= 10_000_000 and n_usable >= 3:
             direction = "BUY" if agg_skew > 0 else "SELL"
