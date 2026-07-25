@@ -2389,18 +2389,41 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
 
     print(f"  Scanning {len(rows)} 8-K filing(s) from last 30 days...")
     for acc, fdate, primary in rows[:5]:  # cap at 5 most recent
-        # Locate the primary document, prefer txt/htm formats over xml
+        # Prefer EX-99 exhibits (the press release with actual financials);
+        # filer naming varies: ex99, ex-99, exhibit99, exhibit991q22026...
         text = None
-        if primary:
+        _src = None
+        import re as _re9
+        acc_clean = acc.replace("-", "")
+        _base = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc_clean}"
+        edgar_throttle()
+        try:
+            _r = requests.get(f"{_base}/index.json",
+                              headers={"User-Agent": EDGAR_UA}, timeout=REQUEST_TIMEOUT)
+            _r.raise_for_status()
+            _items = (_r.json().get("directory") or {}).get("item") or []
+            _exs = [it for it in _items
+                    if _re9.search(r"ex(hibit)?[-_.]?99", (it.get("name") or "").lower())
+                    and (it.get("name") or "").lower().endswith((".htm", ".html", ".txt"))]
+            _exs.sort(key=lambda it: int(it.get("size") or 0), reverse=True)
+            if _exs:
+                _src = _exs[0].get("name")
+                text = edgar_get_text(f"{_base}/{_src}")
+        except Exception:
+            pass
+        if not text and primary:
             url = build_form4_url(cik, acc, primary)  # reuse the URL builder
             text = edgar_get_text(url)
+            _src = _src or primary
         if not text:
-            # Try via index.json discovery
             xml_url = find_form4_xml_url(cik, acc)
             if xml_url:
                 text = edgar_get_text(xml_url)
+                _src = _src or "xml"
         if not text:
             continue
+        if _src:
+            print(f"  [source: {_src}]")
 
         # Crude HTML strip — drop tags, collapse whitespace
         import re as _re
