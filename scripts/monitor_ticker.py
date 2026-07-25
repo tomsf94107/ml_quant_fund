@@ -2113,12 +2113,14 @@ def section_implied_move(ticker: str) -> None:
     # unconfigured AND stale dates). Before this, a stale config date silently
     # anchored the straddle on the front weekly -- NVDA specimen, Jul 24 report:
     # guard warned but this section read cfg directly and mis-anchored anyway.
+    _generic_prior = False
     if earnings_date and days_until_earnings(ticker) is None:
         earnings_date = None
     _du = days_until_earnings(ticker) if earnings_date else None
     if not earnings_date or (_du is not None and _du > 15):
         earnings_date = (_today_et() + timedelta(days=5)).isoformat()
         print(f"  Generic prior (no earnings within 15d): anchor {earnings_date} = today ET +5d.")
+        _generic_prior = True
 
     # Live spot price — try realtime first, fall back to most recent OHLC
     spot = None
@@ -2245,6 +2247,10 @@ def section_implied_move(ticker: str) -> None:
         flag("MED", ticker, f"Implied-move chain fails parity by ${_fpar:.2f} at {chosen_exp}")
 
     hist = cfg.get("_avg_abs_move")
+    if hist and _generic_prior:
+        print(f"  Historical avg: ±{hist:.1f}% is EARNINGS-DAY history -- not comparable "
+              f"to a non-earnings weekly straddle; RICH/CHEAP comparison suppressed.")
+        hist = None
     if hist:
         ratio = implied_pct / hist
         if ratio >= 1.4:
@@ -2517,6 +2523,7 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
 # Define peer cohorts. Each ticker maps to ~3-4 peers in the same business.
 # Used to differentiate "is this a stock-specific move or a sector move?"
 SECTOR_COHORTS: dict[str, list[str]] = {
+    "GOOG": ["MSFT", "AMZN", "META"],
     # AMZN (Jul 11 2026): XLY is 28.5% AMZN (Tesla 18.3%; the top two are ~47% of
     # the fund), so "AMZN vs XLY" is partly Amazon measured against itself and the
     # excess return is mechanically compressed. Amazon's economics live in cloud +
@@ -3962,6 +3969,23 @@ def main() -> int:
         print("\n" + "#" * 78)
         print(f"#  {ticker}")
         print("#" * 78)
+        # LIVE-BOOK LINE (owed since the report-audit batch; every report's
+        # 16.2 was blocked on it). Reads si_live_ledger.csv; states membership
+        # so no report ever has to say "not verifiable from the report layer".
+        try:
+            _led = (_REPO_ROOT / "si_live_ledger.csv").read_text().strip().splitlines()
+            _gen = _led[1].split(",")[0] if len(_led) > 1 else "?"
+            _mine = [l.split(",") for l in _led[1:]
+                     if len(l.split(",")) > 6 and l.split(",")[2].upper() == ticker.upper()]
+            if _mine:
+                _usd = sum(float(r[5]) for r in _mine)
+                _sh = sum(float(r[6]) for r in _mine)
+                print(f"  LIVE BOOK: HELD ${_usd:,.0f} / {_sh:,.0f} sh "
+                      f"({_mine[0][3].strip()}) -- ledger generated {_gen}")
+            else:
+                print(f"  LIVE BOOK: not in si_live_ledger (generated {_gen})")
+        except Exception as _e:
+            print(f"  LIVE BOOK: ledger unreadable ({_e})")
 
         # Earnings-specific sections come first — calendar context frames
         # everything that follows.
