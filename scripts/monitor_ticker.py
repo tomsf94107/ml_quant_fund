@@ -82,7 +82,7 @@ TICKER_CONFIG: dict[str, dict] = {
     },
     "GOOG": {
         "sector_etf": "IGV",
-        "earnings_date": "2026-07-22",
+        "earnings_date": "2026-11-04",
         "earnings_time": "AMC",
         "news_search_term": "Alphabet Google GOOG",
     },
@@ -1324,7 +1324,9 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
               f"requested {since_date} -- {_done}.")
         if _r and _r > since_date:
             print(f"  [note] days before {_r} are whatever was cached earlier -- "
-                  f"heal with: python scripts/repair_darkpool_days.py --ticker {ticker}")
+                  f"heal with: python scripts/repair_darkpool_days.py --ticker {ticker} "
+                  f"(if the daily table below is gapless, the window is already healed -- "
+                  f"PARTIAL describes the live walk, which stops at cached data by design)")
     conn.commit()
     # Now query the DB for the full window and analyze
     rows = list(cur.execute("""
@@ -1917,7 +1919,7 @@ def section_earnings_calendar(ticker: str) -> None:
 # This tells us how much the options market thinks the stock will move on
 # the print, regardless of direction.
 
-def _extract_atm_straddle(chain_rows: list, earnings_date: str, spot: float) -> Optional[tuple]:
+def _extract_atm_straddle(chain_rows: list, on_or_after: str, spot: float) -> Optional[tuple]:
     """Given option chain rows from any UW endpoint shape, return
     (expiry, strike, call_mid, put_mid) for the ATM straddle of the
     nearest expiry on or after earnings_date. Returns None if shape
@@ -1949,7 +1951,7 @@ def _extract_atm_straddle(chain_rows: list, earnings_date: str, spot: float) -> 
         if not exp:
             continue
         exp_str = exp[:10] if isinstance(exp, str) else str(exp)[:10]
-        if exp_str < earnings_date:
+        if exp_str < on_or_after:
             continue
         by_expiry.setdefault(exp_str, []).append(c)
 
@@ -2038,9 +2040,10 @@ def section_implied_move(ticker: str) -> None:
     # guard warned but this section read cfg directly and mis-anchored anyway.
     if earnings_date and days_until_earnings(ticker) is None:
         earnings_date = None
-    if not earnings_date:
-        print(f"  No earnings date configured (or config date is stale).")
-        return
+    _du = days_until_earnings(ticker) if earnings_date else None
+    if not earnings_date or (_du is not None and _du > 15):
+        earnings_date = (_today_et() + timedelta(days=5)).isoformat()
+        print(f"  Generic prior (no earnings within 15d): anchor {earnings_date} = today ET +5d.")
 
     # Live spot price — try realtime first, fall back to most recent OHLC
     spot = None
