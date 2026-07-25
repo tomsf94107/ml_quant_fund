@@ -2179,6 +2179,10 @@ def section_implied_move(ticker: str) -> None:
     print(f"  Straddle cost:  ${straddle:.2f}")
     print(f"  Implied move:   ±{implied_pct:.2f}%")
     print(f"  Implied range:  ${spot - straddle:.2f}  to  ${spot + straddle:.2f}")
+    _fpar = abs((call_mid - put_mid) - (spot - chosen_strike))
+    if _fpar > max(0.015 * spot, 0.50):
+        print(f"  [warn] Put-call parity gap ${_fpar:.2f} -- stale/crossed chain; do NOT anchor to this straddle.")
+        flag("MED", ticker, f"Implied-move chain fails parity by ${_fpar:.2f} at {chosen_exp}")
 
     hist = cfg.get("_avg_abs_move")
     if hist:
@@ -2195,6 +2199,37 @@ def section_implied_move(ticker: str) -> None:
                  f"{hist:.1f}% historical ({ratio:.2f}x)")
         else:
             print(f"  Historical avg: ±{hist:.1f}% — implied is {ratio:.2f}x (fair)")
+    print(f"  Term structure (ATM straddle per horizon):")
+    _seen_exp = {chosen_exp}
+    for _lbl, _days in (("1m", 30), ("3m", 91), ("6m", 182), ("12m", 365)):
+        _anchor = (_today_et() + timedelta(days=_days)).isoformat()
+        _texp = next((e for e in expiries if e >= _anchor), None)
+        if not _texp:
+            print(f"    {_lbl:>3}: no listed expiry >= {_anchor}")
+            continue
+        if _texp in _seen_exp:
+            print(f"    {_lbl:>3}: exp {_texp} (same as prior bucket)")
+            continue
+        _ch = uw_get(f"/api/stock/{ticker}/atm-chains", params={"expirations[]": _texp})
+        _cd = (_ch or {}).get("data") if isinstance(_ch, dict) else _ch
+        if not _cd:
+            _ch = uw_get(f"/api/stock/{ticker}/atm-chains", params={"expirations": _texp})
+            _cd = (_ch or {}).get("data") if isinstance(_ch, dict) else _ch
+        if not _cd:
+            print(f"    {_lbl:>3}: exp {_texp} -- no chain data")
+            continue
+        if not isinstance(_cd, list):
+            _cd = [_cd]
+        _res = _extract_atm_straddle(_cd, _texp, spot)
+        if not _res:
+            print(f"    {_lbl:>3}: exp {_texp} -- no usable straddle")
+            continue
+        _e, _k, _c, _pm = _res
+        _st = _c + _pm
+        _par = abs((_c - _pm) - (spot - _k))
+        _ptag = "" if _par <= max(0.015 * spot, 0.50) else f"  [PARITY FAIL {_par:.2f}]"
+        _seen_exp.add(_e)
+        print(f"    {_lbl:>3}: exp {_e}  K ${_k:.2f}  straddle ${_st:.2f}  ±{(_st/spot)*100:.2f}%{_ptag}")
 
 
 # ---------------------------------------------------------------------------
@@ -3625,6 +3660,22 @@ def get_squeeze_data(ticker: str, older_than: Optional[str] = None) -> dict:
             av = r0.get("short_shares_available")
             avail = int(av) if av is not None else None
 
+    if dtc is None and older_than is None:
+        import os as _os
+        _si_db = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "short_interest.db")
+        if _os.path.exists(_si_db):
+            try:
+                _con = sqlite3.connect(_si_db)
+                _row = _con.execute(
+                    "SELECT settlement_date, days_to_cover FROM short_interest "
+                    "WHERE ticker=? ORDER BY settlement_date DESC LIMIT 1",
+                    (ticker,)).fetchone()
+                _con.close()
+                if _row:
+                    mkt_date = mkt_date or _row[0]
+                    dtc = float(_row[1]) if _row[1] else None
+            except sqlite3.Error:
+                pass
     return {"fee": fee, "avail": avail, "fee_prev": fee_prev,
             "si_pct": si_pct, "dtc": dtc, "date": mkt_date, "float": total_float}
 
