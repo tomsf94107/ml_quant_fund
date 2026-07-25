@@ -851,7 +851,7 @@ CREATE INDEX IF NOT EXISTS idx_form4_tx_ticker_date
 
 
 def get_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.executescript(SCHEMA)
     # Add new columns if upgrading from an older schema version. SQLite
     # is happy to silently ignore the failure if columns already exist.
@@ -1850,6 +1850,40 @@ def section_earnings_calendar(ticker: str) -> None:
     ), reverse=True)[:8]
 
     moves: list[float] = []
+    # 1D-MOVE BACKFILL (Jul 25 2026). UW's move field is absent for most rows
+    # (8 of 8 rendered "?" on PLTR/GOOG) -- the implied-vs-realized ledger had
+    # no denominator. Compute from canonical closes when the vendor is silent:
+    # AMC print -> next session close / print-day close; BMO -> print-day /
+    # prior. Computed values carry a * marker.
+    _px: dict = {}
+    try:
+        import sqlite3 as _sq3
+        _c = _sq3.connect(f"file:{_REPO_ROOT / 'prices.db'}?mode=ro", uri=True)
+        for _d, _cl in _c.execute(
+                "SELECT date, adj_close FROM daily_prices WHERE ticker=? "
+                "AND adj_close IS NOT NULL ORDER BY date", (ticker.upper(),)):
+            _px[str(_d)[:10]] = float(_cl)
+        _c.close()
+    except Exception as _e:
+        print(f"  [warn] backfill closes unavailable: {_e}")
+    _pdates = sorted(_px)
+    def _move_from_prices(rd: str, rtime: str):
+        if not _px or not rd or rd not in _px:
+            return None
+        import bisect as _bi
+        _i = _bi.bisect_left(_pdates, rd)
+        _amc = "post" in (rtime or "").lower() or "amc" in (rtime or "").lower()                or "after" in (rtime or "").lower()
+        try:
+            if _amc:
+                if _i + 1 >= len(_pdates):
+                    return None
+                return (_px[_pdates[_i + 1]] / _px[rd] - 1) * 100
+            if _i == 0:
+                return None
+            return (_px[rd] / _px[_pdates[_i - 1]] - 1) * 100
+        except (KeyError, ZeroDivisionError):
+            return None
+    _any_backfilled = False
     for r in sorted_rows:
         rdate = (_f(r, "report_date", "date", "earnings_date",
                     "fiscal_period_end", "report_period", default="?") or "?")[:10]
@@ -1871,6 +1905,13 @@ def section_earnings_calendar(ticker: str) -> None:
         move = _f(r, "post_earnings_move", "price_change_pct", "reaction_1d",
                   "price_reaction", "post_earnings_drift", "next_day_return",
                   "1d_change", "post_earnings_change_pct", "next_day_change_pct")
+        _computed_move = False
+        if move is None:
+            _bf = _move_from_prices(rdate, str(_f(r, "report_time", "time", default="") or ""))
+            if _bf is not None:
+                move = _bf
+                _computed_move = True
+                _any_backfilled = True
 
         # Compute surprises if not provided directly
         surprise = _f(r, "eps_surprise", "surprise_pct", "eps_surprise_pct",
@@ -1899,8 +1940,11 @@ def section_earnings_calendar(ticker: str) -> None:
 
         try:
             move_f = float(move) if move is not None else None
-            if move_f is not None and abs(move_f) < 1.5:
-                # Normalize decimal (0.05) to percent (5.0)
+            if move_f is not None and abs(move_f) < 1.5 and not _computed_move:
+                # Normalize decimal (0.05) to percent (5.0). Vendor fields are
+                # decimals; the prices.db backfill is ALREADY percent -- without
+                # the _computed_move gate a real +1.4% computed move would
+                # render +140%.
                 move_f *= 100
             if move_f is not None:
                 moves.append(move_f)
@@ -1918,11 +1962,14 @@ def section_earnings_calendar(ticker: str) -> None:
         except (TypeError, ValueError):
             rev_act_s = "?"
         rev_sur_s = f"{float(rev_surprise):+.1f}%" if rev_surprise is not None else "?"
-        move_s = f"{move_f:+.2f}%" if move_f is not None else "?"
+        move_s = ((f"{move_f:+.2f}%*" if _computed_move else f"{move_f:+.2f}%")
+                  if move_f is not None else "?")
 
         print(f"  {rdate:<12} {eps_act_s:>10} {eps_est_s:>10} {sur_s:>10} "
               f"{rev_act_s:>14} {rev_sur_s:>10} {move_s:>10}")
 
+    if _any_backfilled:
+        print(f"  (* = 1d move computed from prices.db closes, not vendor-supplied)")
     if moves:
         avg_abs = sum(abs(m) for m in moves) / len(moves)
         max_up = max(moves)
@@ -2179,7 +2226,15 @@ def section_implied_move(ticker: str) -> None:
     print(f"  Straddle cost:  ${straddle:.2f}")
     print(f"  Implied move:   ±{implied_pct:.2f}%")
     print(f"  Implied range:  ${spot - straddle:.2f}  to  ${spot + straddle:.2f}")
-    _fpar = abs((call_mid - put_mid) - (spot - chosen_strike))
+    # CARRY-ADJUSTED PARITY (Jul 26 2026). C - P = S - K*e^(-rT), not S - K:
+    # the undiscounted check flagged pure cost-of-carry as failure (GOOG 6m
+    # "FAIL 7.59" vs K*(1-e^(-rT)) ~= $8.1 at r=4.5% -- the "failure" WAS the
+    # carry). r approximates the 3m bill [fact? Jul 2026]; dividend yield
+    # ignored (GOOG/MSFT <1%, absorbed by tolerance). Refresh r if regime moves.
+    import math as _m
+    _RF = 0.045
+    _T0 = max((date.fromisoformat(str(chosen_exp)[:10]) - _today_et()).days, 0) / 365.0
+    _fpar = abs((call_mid - put_mid) - (spot - chosen_strike * _m.exp(-_RF * _T0)))
     if _fpar > max(0.015 * spot, 0.50):
         print(f"  [warn] Put-call parity gap ${_fpar:.2f} -- stale/crossed chain; do NOT anchor to this straddle.")
         flag("MED", ticker, f"Implied-move chain fails parity by ${_fpar:.2f} at {chosen_exp}")
@@ -2226,8 +2281,9 @@ def section_implied_move(ticker: str) -> None:
             continue
         _e, _k, _c, _pm = _res
         _st = _c + _pm
-        _par = abs((_c - _pm) - (spot - _k))
-        _ptag = "" if _par <= max(0.015 * spot, 0.50) else f"  [PARITY FAIL {_par:.2f}]"
+        _Tt = max((date.fromisoformat(str(_e)[:10]) - _today_et()).days, 0) / 365.0
+        _par = abs((_c - _pm) - (spot - _k * _m.exp(-_RF * _Tt)))
+        _ptag = "" if _par <= max(0.015 * spot, 0.50) else f"  [PARITY FAIL {_par:.2f} carry-adj]"
         _seen_exp.add(_e)
         print(f"    {_lbl:>3}: exp {_e}  K ${_k:.2f}  straddle ${_st:.2f}  ±{(_st/spot)*100:.2f}%{_ptag}")
 
@@ -3106,6 +3162,25 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
     p_value = by_code.get("P", {}).get("value", 0)
     s_value = by_code.get("S", {}).get("value", 0)
     p_count = by_code.get("P", {}).get("count", 0)
+    # FIXED-WINDOW TOTALS (Jul 25 2026). The rolling window silently rolled
+    # past PLTR's May-22 filings and the printed total fell $154.5M -> $29.0M
+    # while selling never stopped -- a denominator artifact reading as a
+    # regime change. Fixed 90d/365d anchors don't move between runs.
+    try:
+        _fw = {}
+        for _lbl, _days in (("90d", 90), ("365d", 365)):
+            _cut = (_today_et() - timedelta(days=_days)).isoformat()
+            _row = cur.execute(
+                "SELECT SUM(CASE WHEN code='S' THEN value_usd END), "
+                "       SUM(CASE WHEN code='P' THEN value_usd END) "
+                "FROM form4_transactions WHERE ticker=? AND is_derivative=0 "
+                "AND transaction_date >= ?", (ticker, _cut)).fetchone()
+            _fw[_lbl] = (_row[0] or 0.0, _row[1] or 0.0)
+        print(f"  Fixed windows (window-roll-proof): "
+              f"90d SELL ${_fw['90d'][0]:,.0f} / BUY ${_fw['90d'][1]:,.0f}   "
+              f"365d SELL ${_fw['365d'][0]:,.0f} / BUY ${_fw['365d'][1]:,.0f}")
+    except Exception as _e:
+        print(f"  [warn] fixed-window totals failed: {_e}")
     s_count = by_code.get("S", {}).get("count", 0)
     p_filers = len(by_code.get("P", {}).get("filers", set()))
     s_filers = len(by_code.get("S", {}).get("filers", set()))
