@@ -81,7 +81,7 @@ TICKER_CONFIG: dict[str, dict] = {
         "news_search_term": "Microsoft MSFT",
     },
     "GOOG": {
-        "sector_etf": "IGV",
+        "sector_etf": "XLC",
         "earnings_date": "2026-11-04",
         "earnings_time": "AMC",
         "news_search_term": "Alphabet Google GOOG",
@@ -1638,7 +1638,30 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
     data = uw_get(f"/api/shorts/{ticker}/interest-float/v2")
     rows = (data or {}).get("data") or []
     if not rows:
-        print("  No short interest data returned.")
+        import os as _os
+        _si_db = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "short_interest.db")
+        fin = []
+        if _os.path.exists(_si_db):
+            try:
+                _con = sqlite3.connect(_si_db)
+                fin = list(_con.execute(
+                    "SELECT settlement_date, current_short, avg_daily_vol, days_to_cover "
+                    "FROM short_interest WHERE ticker=? ORDER BY settlement_date DESC LIMIT 8",
+                    (ticker,)))
+                _con.close()
+            except sqlite3.Error as e:
+                print(f"  [warn] FINRA fallback read failed: {e}")
+        if not fin:
+            print("  No short interest data returned (UW empty; no FINRA rows either).")
+            return
+        print("  UW endpoint empty -- FINRA fallback (short_interest.db, bi-monthly settlements):")
+        print(f"  {'Settlement':<12} {'Short shares':>14} {'Avg daily vol':>14} {'DTC':>7}")
+        for i, (sd, cs, adv, dtc) in enumerate(fin):
+            chg = ""
+            if i + 1 < len(fin) and fin[i+1][1]:
+                chg = f"   ({(cs - fin[i+1][1]) / fin[i+1][1] * 100:+.1f}% shares vs prior)"
+            print(f"  {sd:<12} {cs:>14,.0f} {adv:>14,.0f} {dtc:>7.2f}{chg}")
+        print("  [note] DTC = shares/ADV -- check BOTH columns before reading a DTC move as positioning.")
         return
 
     cur = conn.cursor()
@@ -2955,8 +2978,9 @@ def section_form4_details(conn: sqlite3.Connection, ticker: str, since: str) -> 
     conn.commit()
 
     if rows:
+        _skipped = len(rows) - new_parsed - parse_failures
         print(f"  Successfully parsed: {new_parsed}/{len(rows)} "
-              f"(failures: {parse_failures})")
+              f"(failures: {parse_failures}, already parsed/skipped: {_skipped})")
 
     # Now query the database for everything in window and analyze
     all_txs = list(cur.execute("""
