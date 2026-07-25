@@ -122,3 +122,10 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 0 5 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_polygon_revenue --all >> logs/revenue_weekly.log 2>&1
 */15 * * * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/ensure_dashboard_up.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dashboard_cron.log 2>&1
 0 9 1 * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/check_accrual_retests.sh
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dark-pool skew validation gate — monthly re-run while UNDERPOWERED
+# (kill/accumulate decision; first meaningful read ~Aug 12 when h=1 hits ~20 dates)
+# 08:00 VN = 21:00 ET prev day (EDT) — after Pipeline B, DB quiet. Offline script:
+# read-only on both DBs, no network, no .env needed.
+0 8 12 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_darkpool_skew.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/skew_gate.log 2>&1
