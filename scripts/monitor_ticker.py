@@ -180,6 +180,11 @@ _STALE_WARNED: set[str] = set()  # tickers already warned about stale earnings_d
 # names, adjusted for others). MIRROR of the set in daily_uw_snapshot.py --
 # update BOTH. List, not threshold: the 04-29 row (+94%) evades any sane bound.
 EPS_QUARANTINE: set[tuple[str, str]] = {("GOOG", "2026-07-22"), ("GOOG", "2026-04-29")}
+# Ticker-level: basis mismatch is SYSTEMATIC (GAAP actual vs adjusted consensus,
+# every quarter). DDOG specimen: DB -66% "miss" on the May-7 +30% day; actual
+# non-GAAP $0.60 BEAT $0.51 [fact, 3 sources Jul 26]. A date list would grow
+# forever -- quarantine the ticker until vendor basis is fixed.
+EPS_QUARANTINE_TICKERS: set[str] = {"DDOG"}
 
 
 def flag(severity: str, ticker: str, message: str) -> None:
@@ -1895,7 +1900,7 @@ def section_earnings_calendar(ticker: str) -> None:
                      "eps_consensus_estimate", "estimate_eps",
                      "street_mean_est")  # actual UW key -- without it every Est
                                          # rendered "?" and no surprise computed
-        if (ticker.upper(), rdate) in EPS_QUARANTINE:
+        if (ticker.upper(), rdate) in EPS_QUARANTINE or ticker.upper() in EPS_QUARANTINE_TICKERS:
             eps_act = None  # renders "?" -- see EPS_QUARANTINE note
         rev_act = _f(r, "actual_revenue", "revenue_actual", "revenue",
                      "total_revenue", "revenue_act")

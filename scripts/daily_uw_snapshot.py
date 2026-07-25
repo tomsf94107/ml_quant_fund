@@ -325,7 +325,8 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
                     # explicit list, not a threshold). INSERT OR REPLACE would
                     # resurrect these on every run without this guard.
                     # MIRROR of EPS_QUARANTINE in monitor_ticker.py -- update BOTH.
-                    if (ticker, rd) in {("GOOG", "2026-07-22"), ("GOOG", "2026-04-29")}:
+                    if ticker in {"DDOG"} or \
+                       (ticker, rd) in {("GOOG", "2026-07-22"), ("GOOG", "2026-04-29")}:
                         actual_eps = None
                     conn.execute("""
                         INSERT OR REPLACE INTO earnings_cache
