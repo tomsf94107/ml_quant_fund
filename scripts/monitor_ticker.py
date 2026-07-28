@@ -93,11 +93,11 @@ TICKER_CONFIG: dict[str, dict] = {
         "news_search_term": "Amazon AMZN",
     },
     "BYND": {
-        "earnings_date": "2026-08-05",  # AMC, Q2 2026; sources disagree (Aug 5 vs 12) — verify closer
+        "earnings_date": "2026-08-05",  # AMC, CONFIRMED by company PR Jul 22 (GlobeNewswire) -- Q2 ended Jun 27
     },
     "NVDA": {
         "sector_etf": "SMH",     # VanEck Semiconductors
-        "earnings_date": "2026-05-20",  # AMC; sources disagree (May 20 vs 27)
+        "earnings_date": "2026-08-26",  # AMC, CONFIRMED (Wall Street Horizon + TipRanks, Jul 28) -- Q2 FY27
         "earnings_time": "AMC",
         "fiscal_q": "Q1 FY27",
         "shares_out": 24_300_000_000,  # ~24.3B (verify quarterly)
@@ -119,7 +119,8 @@ TICKER_CONFIG: dict[str, dict] = {
     },
     "DDOG": {
         "sector_etf": "IGV",     # iShares Software ETF
-        "earnings_date": "2026-05-07",  # BMO 8 AM ET, confirmed
+        "earnings_date": "2026-08-06",  # BMO, CONFIRMED company IR PR Jul 16 (call 8:00 AM ET) -- was 2026-05-07
+        "earnings_time": "BMO",  # BMO 8 AM ET, confirmed
         "earnings_time": "BMO",
         "fiscal_q": "Q1 2026",
         "shares_out": 345_000_000,
@@ -2155,13 +2156,15 @@ def section_implied_move(ticker: str) -> None:
     # produced quote-anchored implied ranges in 4/4 Jul-21 reports; the OHLC
     # fallback was worse -- reverse-stable sort landed on the PRE-MARKET row).
     _quote_ctx = spot
-    _dc = (_daily_returns(ticker) or {}).get("latest")
+    _dr = _daily_returns(ticker) or {}
+    _dc = _dr.get("latest")
+    _spot_bar = _dr.get("bar_date") or "?"
     if _dc:
         spot = float(_dc)
     if _quote_ctx and abs(_quote_ctx - spot) > 0.005:
-        print(f"  Spot:           ${spot:.2f}  (latest close; live quote ${_quote_ctx:.2f})")
+        print(f"  Spot:           ${spot:.2f}  (close {_spot_bar}; live quote ${_quote_ctx:.2f})")
     else:
-        print(f"  Spot:           ${spot:.2f}  (latest close)")
+        print(f"  Spot:           ${spot:.2f}  (close {_spot_bar})")
 
     # Step 1: discover available expiries via expiry-breakdown (which returns
     # the list of expirations with volume/OI per expiry — no extra param needed)
@@ -2523,12 +2526,14 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
 # Define peer cohorts. Each ticker maps to ~3-4 peers in the same business.
 # Used to differentiate "is this a stock-specific move or a sector move?"
 SECTOR_COHORTS: dict[str, list[str]] = {
+    "MSFT": ["GOOG", "AMZN", "META"],
+    "PLTR": ["NOW", "SNOW", "DDOG"],
     "GOOG": ["MSFT", "AMZN", "META"],
     # AMZN (Jul 11 2026): XLY is 28.5% AMZN (Tesla 18.3%; the top two are ~47% of
     # the fund), so "AMZN vs XLY" is partly Amazon measured against itself and the
     # excess return is mechanically compressed. Amazon's economics live in cloud +
     # ads + platform scale, not in Home Depot and McDonald's.
-    "AMZN": ["MSFT", "GOOGL", "META"],
+    "AMZN": ["MSFT", "GOOG", "META"],
     "NVDA": ["AVGO", "AMD", "MRVL", "TSM"],
     "SMCI": ["DELL", "HPE", "ANET", "AVGO"],
     "DDOG": ["MDB", "SNOW", "NET", "TEAM"],
@@ -3438,26 +3443,53 @@ def _daily_returns(t: str) -> dict:
     (sign-flipping), closes[-21] was 7 sessions. Verified Jul 21 probe.
     Massive daily aggs fallback for tickers absent from daily_prices."""
     closes: list = []
+    _bar_date = None
     try:
         import sqlite3 as _sq
         _con = _sq.connect(f"file:{_REPO_ROOT / 'prices.db'}?mode=ro", uri=True)
         _rows = _con.execute(
-            "SELECT adj_close FROM daily_prices WHERE ticker=? "
+            "SELECT date, adj_close FROM daily_prices WHERE ticker=? "
             "AND adj_close IS NOT NULL ORDER BY date DESC LIMIT 22",
             (t.upper(),)).fetchall()
         _con.close()
-        closes = [float(r[0]) for r in _rows][::-1]
+        closes = [float(r[1]) for r in _rows][::-1]
+        _bar_date = str(_rows[0][0])[:10] if _rows else None
     except Exception as _e:
         print(f"  [warn] daily_prices read failed for {t}: {_e}")
-    if len(closes) < 21:
+    # STALENESS FALL-THROUGH (Jul 28 2026). Fallback used to fire only on
+    # len<21, never on stale bars -- a pull before Pipeline A ingested the
+    # latest session served 2-session-stale spot/peer/cohort while the header
+    # was current (NVDA: 206.84/196.51/194.25, three prices in one run,
+    # on a -4.99% day).
+    _exp = None
+    try:
+        import sys as _sy, os as _os
+        _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        if _R not in _sy.path:
+            _sy.path.insert(0, _R)
+        from features import massive_client as _mc2
+        _e2 = _mc2._last_completed_session()
+        _exp = _e2.strftime("%Y-%m-%d") if hasattr(_e2, "strftime") else str(_e2)[:10]
+    except Exception:
+        _exp = None
+    _stale = bool(_exp and _bar_date and _bar_date < _exp)
+    if len(closes) < 21 or _stale:
         _end = _today_et().isoformat()
         _start = (_today_et() - timedelta(days=45)).isoformat()
         _data = massive_get(f"/v2/aggs/ticker/{t}/range/1/day/{_start}/{_end}",
                             params={"adjusted": "true"})
         _res = (_data or {}).get("results") or []
-        if len(_res) > len(closes):
-            closes = [float(r.get("c") or 0) for r in _res if r.get("c")]
-    return _ohlc_returns([{"close": c} for c in closes])
+        if len(_res) > len(closes) or _stale:
+            _new = [float(r.get("c") or 0) for r in _res if r.get("c")]
+            if _new:
+                closes = _new
+                _bar_date = _exp or _bar_date
+    if _exp and _bar_date and _bar_date < _exp:
+        print(f"  [warn] {t}: daily bar {_bar_date} is STALE vs last completed "
+              f"session {_exp} -- returns/spot computed on old data")
+    out = _ohlc_returns([{"close": c} for c in closes])
+    out["bar_date"] = _bar_date
+    return out
 
 
 def section_peer_relative(ticker: str) -> None:
