@@ -37,3 +37,5 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 | UW news 404 / Massive session_reset | COSMETIC | — | vendor-plan / log-only |
 | Cohort peer-residual factor | RESEARCH | — | REV3 candidate; goes through the standard gate (null control, HLZ t>3) before any sink |
 | Aggressor-tilt validation | BLOCKED | — | needs flow-alert persistence build first; then reuses skew gate via --signal |
+| Block desynchronization (3 prices/run) | FIXED | (this commit) | staleness fall-through + bar-date print; universal via _daily_returns |
+| NVDA/DDOG/BYND earnings dates | FIXED | (this commit) | all company-PR/WSH confirmed; OKLO QUBT CRWD SNOW NVMI remain stale-guarded, batch-source before windows |
