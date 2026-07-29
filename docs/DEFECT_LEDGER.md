@@ -39,3 +39,5 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 | Aggressor-tilt validation | BLOCKED | — | needs flow-alert persistence build first; then reuses skew gate via --signal |
 | Block desynchronization (3 prices/run) | FIXED | (this commit) | staleness fall-through + bar-date print; universal via _daily_returns |
 | NVDA/DDOG/BYND earnings dates | FIXED | (this commit) | all company-PR/WSH confirmed; OKLO QUBT CRWD SNOW NVMI remain stale-guarded, batch-source before windows |
+| RZLV dark-pool 7-session gap (13-22 Jul) | FIXED | repair Jul 29 (347 rows, 0 partials) | RZLV not in DEFAULT_TICKERS -- monthly repair skips it, heal manually or add |
+| si_live_ledger staleness (all reports) | DATA-REFRESH | hand-maintained CSV, no generator; stamped Jun-26 | NOT a code defect -- Atom re-dates/refreshes; report threads must stop flagging as monitor bug |
