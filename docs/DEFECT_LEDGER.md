@@ -41,3 +41,7 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 | NVDA/DDOG/BYND earnings dates | FIXED | (this commit) | all company-PR/WSH confirmed; OKLO QUBT CRWD SNOW NVMI remain stale-guarded, batch-source before windows |
 | RZLV dark-pool 7-session gap (13-22 Jul) | FIXED | repair Jul 29 (347 rows, 0 partials) | RZLV not in DEFAULT_TICKERS -- monthly repair skips it, heal manually or add |
 | si_live_ledger staleness (all reports) | DATA-REFRESH | hand-maintained CSV, no generator; stamped Jun-26 | NOT a code defect -- Atom re-dates/refreshes; report threads must stop flagging as monitor bug |
+| Implied-move published on broken chains | FIXED | (this commit) | parity before print; number suppressed, not caveated |
+| Spot/chain clock mismatch post-event | FIXED | (this commit) | re-anchor to live quote past 2pct divergence |
+| earnings_date coverage (13 hand names) | FIXED | (this commit) | earnings_calendar fallback = 312 tickers; hand config wins when fresh |
+| AMD + MRVL HELD in si_live_ledger | NOTED | grep Jul-31 | 7sh AMD / 14sh MRVL, SI long leg -- those reports ARE position-relevant |
