@@ -222,6 +222,28 @@ def _calendar_earnings_date(ticker: str) -> Optional[str]:
         return None
 
 
+def _calendar_earnings_time(ticker: str) -> Optional[str]:
+    """report_time from earnings_calendar ('premarket'/'postmarket'), mapped to
+    the config vocabulary. Calendar-sourced tickers printed '?' for time, but
+    AMC-vs-BMO drives quiet-period math and the 1d-move backfill direction."""
+    try:
+        import sqlite3 as _sq
+        _con = _sq.connect(f"file:{_REPO_ROOT / 'accuracy.db'}?mode=ro", uri=True)
+        _row = _con.execute(
+            "SELECT next_time FROM earnings_calendar WHERE ticker=? "
+            "AND next_date >= date('now') ORDER BY next_date LIMIT 1",
+            (ticker.upper(),)).fetchone()
+        _con.close()
+        _t = (str(_row[0]).lower() if _row and _row[0] else "")
+        if "post" in _t or "after" in _t:
+            return "AMC"
+        if "pre" in _t or "before" in _t:
+            return "BMO"
+        return None
+    except Exception:
+        return None
+
+
 def earnings_date_for(ticker: str) -> tuple:
     """(date_str_or_None, source) -- hand config if fresh, else calendar."""
     cfg = TICKER_CONFIG.get(ticker.upper()) or {}
@@ -1853,7 +1875,7 @@ def section_earnings_calendar(ticker: str) -> None:
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
     earnings_date, _ed_src = earnings_date_for(ticker)
-    earnings_time = cfg.get("earnings_time", "?")
+    earnings_time = cfg.get("earnings_time") or _calendar_earnings_time(ticker) or "?"
     fiscal_q = cfg.get("fiscal_q", "?")
 
     if earnings_date:
@@ -2604,6 +2626,33 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
 
 # Define peer cohorts. Each ticker maps to ~3-4 peers in the same business.
 # Used to differentiate "is this a stock-specific move or a sector move?"
+def _bucket_cohort(ticker: str, max_peers: int = 4) -> list:
+    """Same-bucket peers from tickers_metadata.csv (ticker,bucket,tier,...).
+    Returns [] when the bucket has fewer than 3 other members -- a 2-name
+    'cohort' is noise, and padding it with unrelated tickers is worse than
+    printing nothing."""
+    try:
+        import csv as _csv
+        _p = _REPO_ROOT / "tickers_metadata.csv"
+        if not _p.exists():
+            return []
+        _rows = list(_csv.DictReader(_p.open()))
+        _me = next((r for r in _rows
+                    if (r.get("ticker") or "").strip().upper() == ticker.upper()), None)
+        if not _me or not (_me.get("bucket") or "").strip():
+            return []
+        _b = _me["bucket"].strip()
+        _peers = [(r.get("ticker") or "").strip().upper() for r in _rows
+                  if (r.get("bucket") or "").strip() == _b
+                  and (r.get("ticker") or "").strip().upper() != ticker.upper()]
+        _peers = [p for p in _peers if p]
+        if len(_peers) < 3:
+            return []
+        return _peers[:max_peers]
+    except Exception:
+        return []
+
+
 SECTOR_COHORTS: dict[str, list[str]] = {
     "MSFT": ["GOOG", "AMZN", "META"],
     "PLTR": ["NOW", "SNOW", "DDOG"],
@@ -2628,8 +2677,19 @@ def section_sector_cohort(ticker: str) -> None:
     print(f"\n=== SECTOR COHORT — {ticker} ===")
 
     cohort = SECTOR_COHORTS.get(ticker.upper(), [])
+    _cohort_src = "hand-defined"
     if not cohort:
-        print(f"  No cohort defined for {ticker}.")
+        # UNIVERSE-WIDE COHORT FALLBACK (Jul 31 2026). SECTOR_COHORTS is
+        # hand-maintained (~10 names), so every other ticker printed "No cohort
+        # defined" and the peer panel benched against SPY twice (AMD/MRVL/RZLV
+        # specimens) -- a 20d vs-SPY spread that is undecomposed beta+alpha.
+        # tickers_metadata.csv carries a bucket for the whole universe; peers
+        # come from the same bucket. Buckets with <3 members give no honest
+        # cohort -- we say so rather than padding with unrelated names.
+        cohort, _cohort_src = _bucket_cohort(ticker), "bucket-derived"
+    if not cohort:
+        print(f"  No cohort defined for {ticker} (no hand cohort; bucket peers "
+              f"unavailable or too few) -- sector ETF comparison only.")
         return
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
@@ -2638,6 +2698,9 @@ def section_sector_cohort(ticker: str) -> None:
     def fetch_returns(t: str) -> dict:
         return _daily_returns(t)
 
+    if _cohort_src != "hand-defined":
+        print(f"  Cohort peers {_cohort_src} from tickers_metadata.csv bucket "
+              f"(no hand cohort configured): {', '.join(cohort)}")
     print(f"  {'Ticker':<10} {'1d':>8} {'5d':>8} {'20d':>8}")
     self_ret = fetch_returns(ticker)
 
