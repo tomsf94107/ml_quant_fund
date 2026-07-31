@@ -197,11 +197,53 @@ def flag(severity: str, ticker: str, message: str) -> None:
     TODAY_FLAGS.append((severity, ticker, message))
 
 
-def days_until_earnings(ticker: str) -> Optional[int]:
-    """Returns None if no earnings date configured for this ticker."""
-    cfg = TICKER_CONFIG.get(ticker.upper())
-    if not cfg or not cfg.get("earnings_date"):
+def _calendar_earnings_date(ticker: str) -> Optional[str]:
+    """Forward earnings date from accuracy.db.earnings_calendar (materialized on
+    cron from earnings_cache by refresh_earnings_calendar.py).
+
+    UNIVERSE-WIDE FALLBACK (Jul 31 2026). TICKER_CONFIG is hand-maintained and
+    covered 13 names: every uncovered ticker printed "No earnings date
+    configured" (AMD specimen) and every covered one went stale after its print
+    (AMZN still showed 2026-07-30 a day later; 5 names stale for months). The
+    calendar carries 312 forward-dated tickers and independently matched every
+    date hand-sourced from company IR / Wall Street Horizon (NVDA 08-26,
+    AMD 08-04). Hand config still WINS when present and fresh -- it encodes
+    IR-confirmed dates; this only fills the gaps."""
+    try:
+        import sqlite3 as _sq
+        _con = _sq.connect(f"file:{_REPO_ROOT / 'accuracy.db'}?mode=ro", uri=True)
+        _row = _con.execute(
+            "SELECT next_date FROM earnings_calendar WHERE ticker=? "
+            "AND next_date >= date('now') ORDER BY next_date LIMIT 1",
+            (ticker.upper(),)).fetchone()
+        _con.close()
+        return str(_row[0])[:10] if _row and _row[0] else None
+    except Exception:
         return None
+
+
+def earnings_date_for(ticker: str) -> tuple:
+    """(date_str_or_None, source) -- hand config if fresh, else calendar."""
+    cfg = TICKER_CONFIG.get(ticker.upper()) or {}
+    _hand = cfg.get("earnings_date")
+    if _hand:
+        try:
+            if (date.fromisoformat(_hand) - _today_et()).days >= -2:
+                return _hand, "config"
+        except ValueError:
+            pass
+    _cal = _calendar_earnings_date(ticker)
+    if _cal:
+        return _cal, "earnings_calendar"
+    return (_hand, "config-STALE") if _hand else (None, "none")
+
+
+def days_until_earnings(ticker: str) -> Optional[int]:
+    """Returns None if no earnings date from config OR calendar."""
+    _ed_s, _src = earnings_date_for(ticker)
+    if not _ed_s:
+        return None
+    cfg = {"earnings_date": _ed_s}
     try:
         ed = date.fromisoformat(cfg["earnings_date"])
         if (ed - _today_et()).days < -2:
@@ -212,6 +254,11 @@ def days_until_earnings(ticker: str) -> Optional[int]:
                       f"silently anchors the implied move on the nearest weekly)")
             flag("MED", ticker.upper(), f"earnings_date {ed} in config is STALE -- update TICKER_CONFIG")
             return None
+        if _src != "config" and ("EDSRC:" + ticker.upper()) not in _STALE_WARNED:
+            _STALE_WARNED.add("EDSRC:" + ticker.upper())
+            print(f"  [note] {ticker.upper()}: earnings date {ed} sourced from "
+                  f"{_src} (no fresh TICKER_CONFIG entry) -- vendor-derived; "
+                  f"confirm against company IR before it anchors a report")
         return (ed - _today_et()).days
     except ValueError:
         return None
@@ -1805,7 +1852,7 @@ def section_earnings_calendar(ticker: str) -> None:
     print(f"\n=== EARNINGS CALENDAR — {ticker} ===")
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
-    earnings_date = cfg.get("earnings_date")
+    earnings_date, _ed_src = earnings_date_for(ticker)
     earnings_time = cfg.get("earnings_time", "?")
     fiscal_q = cfg.get("fiscal_q", "?")
 
@@ -2109,7 +2156,7 @@ def section_implied_move(ticker: str) -> None:
     print(f"\n=== IMPLIED EARNINGS MOVE — {ticker} ===")
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
-    earnings_date = cfg.get("earnings_date")
+    earnings_date, _ed_src = earnings_date_for(ticker)
     # Route through the stale-date guard (days_until_earnings returns None for
     # unconfigured AND stale dates). Before this, a stale config date silently
     # anchored the straddle on the front weekly -- NVDA specimen, Jul 24 report:
@@ -2161,10 +2208,32 @@ def section_implied_move(ticker: str) -> None:
     _spot_bar = _dr.get("bar_date") or "?"
     if _dc:
         spot = float(_dc)
+    # CLOCK-MATCH GUARD (Jul 31 2026). Option mids AND atm-chains strike
+    # centring are LIVE; spot was the anchor close. Post-event the close is
+    # stale by the entire gap -- AMZN Jul-31: close 235.50 vs live 257.96
+    # mixed a live-relative call mid with a stale-relative put mid and printed
+    # +/-11.56%, range 208-263. Rule: divergence beyond tolerance means the
+    # two are on DIFFERENT CLOCKS -> re-anchor spot to the live quote (the
+    # mids' own clock) and say so. Small divergences keep the close for
+    # report reproducibility.
+    _SPOT_CLOCK_TOL = 0.02
+    _spot_src = f"close {_spot_bar}"
+    if _quote_ctx and spot:
+        _div = abs(_quote_ctx - spot) / spot
+        if _div > _SPOT_CLOCK_TOL:
+            print(f"  [warn] {ticker}: live quote ${_quote_ctx:.2f} is "
+                  f"{_div*100:.1f}% from anchor close ${spot:.2f} ({_spot_bar}) "
+                  f"-- different clocks; re-anchoring spot to the live quote "
+                  f"(post-event/stale-close guard)")
+            flag("MED", ticker,
+                 f"Implied-move spot re-anchored: close {_spot_bar} ${spot:.2f} "
+                 f"vs live ${_quote_ctx:.2f} ({_div*100:.1f}% apart)")
+            spot = float(_quote_ctx)
+            _spot_src = f"live quote; close {_spot_bar} STALE"
     if _quote_ctx and abs(_quote_ctx - spot) > 0.005:
-        print(f"  Spot:           ${spot:.2f}  (close {_spot_bar}; live quote ${_quote_ctx:.2f})")
+        print(f"  Spot:           ${spot:.2f}  ({_spot_src}; live quote ${_quote_ctx:.2f})")
     else:
-        print(f"  Spot:           ${spot:.2f}  (close {_spot_bar})")
+        print(f"  Spot:           ${spot:.2f}  ({_spot_src})")
 
     # Step 1: discover available expiries via expiry-breakdown (which returns
     # the list of expirations with volume/OI per expiry — no extra param needed)
@@ -2230,26 +2299,36 @@ def section_implied_move(ticker: str) -> None:
     chosen_exp, chosen_strike, call_mid, put_mid = result
     straddle = call_mid + put_mid
     implied_pct = (straddle / spot) * 100
-    print(f"  Strike:         ${chosen_strike:.2f}")
-    print(f"  Call mid:       ${call_mid:.2f}")
-    print(f"  Put mid:        ${put_mid:.2f}")
-    print(f"  Straddle cost:  ${straddle:.2f}")
-    print(f"  Implied move:   ±{implied_pct:.2f}%")
-    print(f"  Implied range:  ${spot - straddle:.2f}  to  ${spot + straddle:.2f}")
-    # CARRY-ADJUSTED PARITY (Jul 26 2026). C - P = S - K*e^(-rT), not S - K:
-    # the undiscounted check flagged pure cost-of-carry as failure (GOOG 6m
-    # "FAIL 7.59" vs K*(1-e^(-rT)) ~= $8.1 at r=4.5% -- the "failure" WAS the
-    # carry). r approximates the 3m bill [fact? Jul 2026]; dividend yield
-    # ignored (GOOG/MSFT <1%, absorbed by tolerance). Refresh r if regime moves.
+    # PARITY COMPUTED BEFORE PRINTING (Jul 31 2026). A warn printed UNDER a
+    # number does not work -- AMZN Jul-31 published "+/-12.05%" off a same-day
+    # chain whose put mid ($30.42) still carried intrinsic from a pre-print
+    # spot (mixed-clock legs), and the number got anchored on anyway. A failed
+    # chain now SUPPRESSES the move instead of caveating it.
     import math as _m
     _RF = 0.045
     _T0 = max((date.fromisoformat(str(chosen_exp)[:10]) - _today_et()).days, 0) / 365.0
     _fpar = abs((call_mid - put_mid) - (spot - chosen_strike * _m.exp(-_RF * _T0)))
-    if _fpar > max(0.015 * spot, 0.50):
-        print(f"  [warn] Put-call parity gap ${_fpar:.2f} -- stale/crossed chain; do NOT anchor to this straddle.")
-        flag("MED", ticker, f"Implied-move chain fails parity by ${_fpar:.2f} at {chosen_exp}")
-
+    _parity_ok = _fpar <= max(0.015 * spot, 0.50)
+    print(f"  Strike:         ${chosen_strike:.2f}")
+    print(f"  Call mid:       ${call_mid:.2f}")
+    print(f"  Put mid:        ${put_mid:.2f}")
+    print(f"  Straddle cost:  ${straddle:.2f}")
+    if _parity_ok:
+        print(f"  Implied move:   ±{implied_pct:.2f}%")
+        print(f"  Implied range:  ${spot - straddle:.2f}  to  ${spot + straddle:.2f}")
+    else:
+        print(f"  Implied move:   SUPPRESSED -- put-call parity gap ${_fpar:.2f} "
+              f"(tolerance ${max(0.015 * spot, 0.50):.2f})")
+        print(f"  Implied range:  SUPPRESSED -- chain legs stale/crossed or on mixed "
+              f"clocks; the straddle above is NOT a usable implied move. Do not "
+              f"anchor scenario bands to it.")
+        flag("MED", ticker, f"Implied-move chain fails parity by ${_fpar:.2f} at "
+                            f"{chosen_exp} -- move SUPPRESSED, no number published")
     hist = cfg.get("_avg_abs_move")
+    if hist and not _parity_ok:
+        print(f"  Historical avg: RICH/CHEAP comparison suppressed -- the straddle "
+              f"failed parity, so implied_pct is not a real implied move.")
+        hist = None
     if hist and _generic_prior:
         print(f"  Historical avg: ±{hist:.1f}% is EARNINGS-DAY history -- not comparable "
               f"to a non-earnings weekly straddle; RICH/CHEAP comparison suppressed.")
