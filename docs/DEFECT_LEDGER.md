@@ -45,3 +45,9 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 | Spot/chain clock mismatch post-event | FIXED | (this commit) | re-anchor to live quote past 2pct divergence |
 | earnings_date coverage (13 hand names) | FIXED | (this commit) | earnings_calendar fallback = 312 tickers; hand config wins when fresh |
 | AMD + MRVL HELD in si_live_ledger | NOTED | grep Jul-31 | 7sh AMD / 14sh MRVL, SI long leg -- those reports ARE position-relevant |
+| DB locks (Jul-17, Jul-25) | FIXED | dfa50620 | 108 bare sqlite3.connect sites, 65 files -- default 5s timeout meant collisions crashed instead of waiting; ui/ concentration matches the dashboard long-read note |
+| Scheduler duplicates | FIXED | 245c4e5e + inventory | 3 jobs double-owned Jul 26-Aug 1 (my install resurrected them); chain now holds an atomic lock |
+| Destroyed crontab jobs (Jul-26) | FIXED | 800b6f8a | 11 jobs restored incl. feed_freshness_check; install_crontab.sh refuses destructive installs, crontab_drift_check.sh on launchd |
+| health_check false alarms | FIXED | 9f26efcd + 02ddf15b | 77 consecutive false failures, 0 passes ever; maturity-aware now, status file + pipecheck age display |
+| cron_canary | REMOVED | dfa50620 | echo-only stub, 2880 runs/day |
+| 24-vs-50 form4 count | UNEXPLAINED | -- | overwrite hypothesis REFUTED (5 quarantine markers durable, 3 new catches). No replacement story |
