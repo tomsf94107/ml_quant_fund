@@ -3766,6 +3766,24 @@ def section_peer_relative(ticker: str) -> None:
         print(f"  Insufficient OHLC data for {ticker}.")
         return
 
+    # BAR-DATE ASSERTION (Aug 1 2026). The old sign-inversion defect (a
+    # post-market quote substituted for the prior close) died when every row
+    # here started routing through _daily_returns -- there is no second code
+    # path left to disagree, which is why 5 runs came back clean. The residual
+    # risk is different: if the ticker and its benchmarks resolve to DIFFERENT
+    # bar dates, this table silently compares different sessions. Nothing
+    # caught that before; now it says so.
+    _bars = {ticker.upper(): t.get("bar_date"),
+             sector_etf.upper(): sec.get("bar_date") if sec else None,
+             "SPY": spy.get("bar_date") if spy else None}
+    _seen = {b for b in _bars.values() if b}
+    if len(_seen) > 1:
+        print(f"  [warn] {ticker}: peer panel spans DIFFERENT bar dates "
+              f"{_bars} -- rows are not same-session comparable")
+        flag("MED", ticker, f"Peer-relative bar-date mismatch: {_bars}")
+    elif _seen:
+        print(f"  (all rows on close {_seen.pop()})")
+
     print(f"  {'':<14} {'1d':>8} {'5d':>8} {'20d':>8}")
     def row(label: str, d: dict) -> None:
         cells = []
