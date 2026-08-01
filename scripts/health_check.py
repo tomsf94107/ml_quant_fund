@@ -62,7 +62,17 @@ def main():
         "SELECT COUNT(*) FROM predictions WHERE prediction_date=?",
         (str(last_date),)
     ).fetchone()[0]
-    ok = check("Predictions", n_pred >= 300, f"{n_pred} rows for {last_date} (expect ~303)")
+    # Universe-derived, not a frozen constant: "expect ~303" dated from a
+    # smaller universe; the panel is now ~399 tickers x 3 horizons.
+    _uni = con.execute(
+        "SELECT COUNT(DISTINCT ticker) FROM predictions WHERE prediction_date=?",
+        (str(last_date),)).fetchone()[0] or 0
+    _hz = con.execute(
+        "SELECT COUNT(DISTINCT horizon) FROM predictions WHERE prediction_date=?",
+        (str(last_date),)).fetchone()[0] or 1
+    _exp = _uni * _hz
+    ok = check("Predictions", n_pred >= max(300, int(_exp * 0.95)),
+               f"{n_pred} rows for {last_date} ({_uni} tickers x {_hz} horizons, expect ~{_exp})")
     all_ok = all_ok and ok
 
     # 2. prediction_features populated
@@ -70,15 +80,35 @@ def main():
         "SELECT COUNT(*) FROM prediction_features WHERE prediction_date=?",
         (str(last_date),)
     ).fetchone()[0]
-    ok = check("prediction_features", n_feat >= 300, f"{n_feat} rows for {last_date} (expect ~303)")
+    ok = check("prediction_features", n_feat >= max(300, int(_exp * 0.95)),
+               f"{n_feat} rows for {last_date} (expect ~{_exp}; "
+               f"{_exp - n_feat} short)" if n_feat < _exp else
+               f"{n_feat} rows for {last_date} (expect ~{_exp})")
     all_ok = all_ok and ok
 
-    # 3. Outcomes reconciled (previous day should have outcomes by now)
-    n_out = con.execute(
-        "SELECT COUNT(*) FROM outcomes WHERE prediction_date=?",
+    # 3. Outcomes reconciled -- MATURITY-AWARE (Aug 1 2026).
+    # WAS: counted outcomes for last_date, the PREDICTION RUN date. An h=1
+    # outcome needs the NEXT session's close, so that row cannot exist yet by
+    # construction -- the check only passed when the pipeline happened to lag.
+    # Result: 77 "ISSUES DETECTED" lines in logs/health_check.log, i.e. the
+    # health check cried wolf routinely, which is why nobody read it, which is
+    # how four dead feeds went unnoticed for six days (Jul 26 - Aug 1).
+    # NOW: check the newest prediction date that has had time to mature at
+    # h=1 -- one completed session before the latest prediction date.
+    _mature = con.execute(
+        "SELECT MAX(prediction_date) FROM predictions WHERE prediction_date < ?",
         (str(last_date),)
     ).fetchone()[0]
-    ok = check("Outcomes reconciled", n_out >= 50, f"{n_out} rows for {last_date}")
+    if _mature:
+        n_out = con.execute(
+            "SELECT COUNT(*) FROM outcomes WHERE prediction_date=? AND horizon=1",
+            (str(_mature),)
+        ).fetchone()[0]
+        ok = check("Outcomes reconciled", n_out >= 50,
+                   f"{n_out} h=1 rows for {_mature} (latest MATURED date; "
+                   f"{last_date} cannot have outcomes yet -- h=1 needs the next close)")
+    else:
+        ok = check("Outcomes reconciled", True, "no prior prediction date to mature yet")
     all_ok = all_ok and ok
 
     # 4. Retrain log is fresh
