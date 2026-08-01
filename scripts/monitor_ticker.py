@@ -1457,6 +1457,21 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         print(f"  [note] {_n_part} partial day(s) excluded from the HEAVY baseline "
               f"(pre-fix ~500-print slices); run repair_darkpool_days.py to heal them")
     HEAVY_THRESHOLD = max(DARKPOOL_DAILY_AGGREGATE_USD, avg_20d * 2)
+    # RELATIVE BLOCK THRESHOLD (Aug 1 2026). HEAVY was already scaled to the
+    # ticker's own tape; the per-print BLOCK test was not -- a flat $1M meant
+    # MSFT (~$3.35T) tripped BLOCK on EVERY session while a genuinely unusual
+    # print on a thin name (NVMI) never flagged. Same defect class as the old
+    # IWM benchmark default: one constant across a 400-name universe.
+    # A print is a BLOCK when it is large FOR THIS TICKER -- 3x the window's
+    # median daily max print -- with the absolute value kept as a floor so
+    # sub-$1M prints never qualify anywhere.
+    _maxes = sorted(b["max_print"] for b in by_day.values() if b.get("max_print"))
+    _med_max = (_maxes[len(_maxes) // 2] if _maxes else 0)
+    BLOCK_THRESHOLD = max(DARKPOOL_BLOCK_MIN_USD, _med_max * 3)
+    if _med_max:
+        print(f"  Block threshold: ${BLOCK_THRESHOLD:,.0f} "
+              f"(max(${DARKPOOL_BLOCK_MIN_USD:,.0f} floor, 3x median daily max "
+              f"${_med_max:,.0f}) -- relative to this ticker's own tape)")
 
     for day in sorted_days[:15]:
         b = by_day[day]
@@ -1470,7 +1485,7 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
                 flag("MED", ticker,
                      f"Heavy dark pool day {day}: ${b['value']:,.0f} on {b['prints']} prints"
                      + (f" ({ratio:.1f}x 20d avg)" if ratio else ""))
-        if b["max_print"] >= DARKPOOL_BLOCK_MIN_USD:
+        if b["max_print"] >= BLOCK_THRESHOLD:
             tags += "  BLOCK"
             # Only flag block prints in the last 3 days
             if day in sorted_days[:3] and "HEAVY" not in tags:
@@ -1501,7 +1516,9 @@ def section_darkpool(conn: sqlite3.Connection, ticker: str, since: str) -> None:
         _MECH_DATES = {"2026-06-26"}  # fallback: Russell recon
     for executed_at, size, price, value, venue, _nb, _na, _xh, _ed in big:
         if (value or 0) < DARKPOOL_BLOCK_MIN_USD:
-            continue
+            continue  # absolute floor only -- the Top-10 is a LIST, not a flag;
+                      # applying the relative threshold here would empty it on
+                      # quiet names, which is the opposite of what it is for.
         _tags = ""
         if _xh:
             _tags += " AH"
