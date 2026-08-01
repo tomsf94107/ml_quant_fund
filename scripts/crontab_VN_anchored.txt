@@ -43,7 +43,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PIPELINE A — post-close ingest (3 AM VN = 4 PM ET prev day, Tue-Sat)
-0 3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_chain_ADB.sh
+# MIGRATED TO LAUNCHD (agent created 2026-06-30, cron line never removed; commented 2026-08-01) -- 0 3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_chain_ADB.sh
 # CHAINED into pipeline_chain_ADB.sh (Jun 12): 0 4 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_D_alpha_panel.sh
 # Economic calendar refresh — Mon/Wed/Fri 15:55 ET (5 min before Pipeline A)
 # Populates accuracy.db.economic_calendar (45 days forward) for risk_gate + Events page
@@ -58,7 +58,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # CHAINED into pipeline_chain_ADB.sh (Jun 12): 0 7 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_B_train_predict.sh
 
 # PIPELINE C — pre-open fresh runfund (8 PM VN = 9 AM ET, Mon-Fri)
-0 18 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_C_preopen.sh
+# MIGRATED TO LAUNCHD (agent created 2026-06-30, cron line never removed; commented 2026-08-01) -- 0 18 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/pipeline_C_preopen.sh
 
 # WEEKLY full insider ETL (Sun 4 AM VN) — full 365-day rebuild
 
@@ -102,7 +102,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 0 3 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 5 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h5.log 2>&1
 
 # 05:00 weekly insider full ETL (~3 min)
-0 4 * * 1 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/weekly_insider_full.sh
+# MIGRATED TO LAUNCHD (agent created 2026-06-30, cron line never removed; commented 2026-08-01) -- 0 4 * * 1 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/weekly_insider_full.sh
 
 # 06:00 fitness_scorer (~5 min) — naturally extends Step 3 BUY-suppression
 # filter as h=3/h=5 cross MIN_OBS=30 (~May 22)
@@ -120,7 +120,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 
 # Weekly revenue refresh (Sun 5 AM VN = Sat eve ET; was nightly Stage 4 in pipeline A — 87min for 0 rows on non-earnings days)
 0 5 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_polygon_revenue --all >> logs/revenue_weekly.log 2>&1
-*/15 * * * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/ensure_dashboard_up.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dashboard_cron.log 2>&1
+# MIGRATED TO LAUNCHD (agent created 2026-06-30, cron line never removed; commented 2026-08-01) -- */15 * * * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/ensure_dashboard_up.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dashboard_cron.log 2>&1
 0 9 1 * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/check_accrual_retests.sh
 
 # ─────────────────────────────────────────────────────────────────────────────

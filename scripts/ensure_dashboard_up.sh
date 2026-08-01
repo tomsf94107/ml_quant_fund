@@ -12,7 +12,14 @@ LOG="$LOGDIR/dashboard_ensure.log"
 ts() { date '+%Y-%m-%d %H:%M:%S'; }
 mkdir -p "$LOGDIR"
 
-if lsof -nP -iTCP:$PORT -sTCP:LISTEN >/dev/null 2>&1; then
+# ABSOLUTE PATH (Aug 1 2026). lsof lives in /usr/sbin, which is NOT on cron's
+# PATH (/usr/bin:/bin) -- verified: `env -i /bin/bash -c 'lsof -v'` exits 127.
+# Unqualified lsof -> command-not-found -> non-zero -> the else branch fired and
+# spawned a doomed duplicate streamlit EVERY 15 MINUTES: 2,854 false "dashboard
+# DOWN" lines vs 3 correct "already up", while pid 56574 held :8501 since Jul 14.
+LSOF=/usr/sbin/lsof
+[ -x "$LSOF" ] || LSOF=$(command -v lsof || echo /usr/sbin/lsof)
+if "$LSOF" -nP -iTCP:$PORT -sTCP:LISTEN >/dev/null 2>&1; then
     echo "[$(ts)] dashboard already up on :$PORT" >> "$LOG"
 else
     echo "[$(ts)] dashboard DOWN — starting on :$PORT" >> "$LOG"
