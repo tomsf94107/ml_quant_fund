@@ -30,7 +30,7 @@ def repair(ticker: str, days: int, db: str) -> None:
         sys.exit("UW_API_KEY not set (run: set -a && . ./.env && set +a)")
     h = {"Authorization": f"Bearer {key}"}
     url = f"https://api.unusualwhales.com/api/darkpool/{ticker}"
-    con = sqlite3.connect(db)
+    con = sqlite3.connect(db, timeout=30)
     end = datetime.now(ET).date() - timedelta(days=1)
     d = end - timedelta(days=days)
     total = 0

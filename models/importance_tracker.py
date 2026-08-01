@@ -11,7 +11,7 @@ import pandas as pd
 DB_PATH = Path("accuracy.db")
 
 def _get_conn() -> sqlite3.Connection:
-    return sqlite3.connect(DB_PATH)
+    return sqlite3.connect(DB_PATH, timeout=30)
 
 def init_importance_table() -> None:
     with _get_conn() as conn:

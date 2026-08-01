@@ -48,7 +48,7 @@ def load_active_tickers() -> set:
 
 def load_predictions_outcomes(days: int | None = None,
                                horizon: int | None = None) -> pd.DataFrame:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     where_clauses = []
     if days is not None:
         cutoff = (date.today() - timedelta(days=days)).isoformat()

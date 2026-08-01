@@ -31,7 +31,7 @@ def _facts_for(ticker, db_path):
     key = (str(db_path), ticker)
     if key in _cache:
         return _cache[key]
-    conn = sqlite3.connect(str(db_path))
+    conn = sqlite3.connect(str(db_path), timeout=30)
     df = pd.read_sql(
         "SELECT concept, filed_date, period_end, value FROM xbrl_facts "
         "WHERE ticker = ? AND concept IN (%s)" % ",".join("?" * len(CONCEPTS)),

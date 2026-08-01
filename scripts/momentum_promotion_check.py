@@ -79,7 +79,7 @@ def _bounds(kind, k):
     return m - 1.28 * se, m - 2.33 * se
 
 def main():
-    con = sqlite3.connect(DB); cur = con.cursor()
+    con = sqlite3.connect(DB, timeout=30); cur = con.cursor()
     print("=" * 60); print("MOMENTUM PROMOTION GATE"); print("=" * 60)
 
     n = cur.execute(f"SELECT COUNT(*) {JOIN} AND p.is_buy_candidate=1", (KIND,)).fetchone()[0]

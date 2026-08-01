@@ -90,7 +90,7 @@ def main() -> int:
                     help="print what would change; write nothing")
     a = ap.parse_args()
 
-    con = sqlite3.connect(str(DB))
+    con = sqlite3.connect(str(DB), timeout=30)
     con.executescript(DDL)
 
     if a.rebuild:

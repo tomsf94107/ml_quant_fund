@@ -27,7 +27,7 @@ def load_importance(horizon: int = 1, days: int = 30) -> pd.DataFrame:
         return pd.DataFrame()
     try:
         cutoff = str(date.today() - timedelta(days=days))
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         df = pd.read_sql(
             """SELECT * FROM feature_importance_history
                WHERE horizon=? AND retrain_date>=?

@@ -44,7 +44,7 @@ def main():
         print(f"DB not found: {DB}")
         return
 
-    conn = sqlite3.connect(str(DB))
+    conn = sqlite3.connect(str(DB), timeout=30)
 
     # 1. Count predictions logged with prob_pct7
     n_preds = conn.execute("""

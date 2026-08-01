@@ -142,7 +142,7 @@ def _get_ticker_stats(ticker: str, lookback_days: int = 90) -> dict:
 
     cutoff = (date.today() - timedelta(days=lookback_days)).isoformat()
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         row = conn.execute("""
             SELECT
                 COUNT(*) as n,

@@ -54,7 +54,7 @@ def migrate(db_path: str) -> dict:
     if not Path(db_path).exists():
         raise FileNotFoundError(f"Database not found: {db_path}")
     
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     try:
         # Verify predictions table exists
         cur = conn.execute(

@@ -38,7 +38,7 @@ def today_str() -> str:
 
 def init_table(db_path: Path = DB_PATH) -> None:
     """Create earnings_calendar table if it doesn't exist."""
-    with sqlite3.connect(db_path) as conn:
+    with sqlite3.connect(db_path, timeout=30) as conn:
         conn.execute("""
             CREATE TABLE IF NOT EXISTS earnings_calendar (
                 id            INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -73,7 +73,7 @@ def refresh(db_path: Path = DB_PATH, verbose: bool = False) -> tuple[int, int]:
     today = today_str()
     now_iso = datetime.now().isoformat()
 
-    with sqlite3.connect(db_path) as conn:
+    with sqlite3.connect(db_path, timeout=30) as conn:
         # Source query: per-ticker FRESHEST future entry.
         #
         # UW maintains multiple rows per ticker when earnings dates shift
@@ -156,7 +156,7 @@ def main() -> int:
     print(f"[refresh_earnings_calendar] Wrote {inserted}/{total} tickers")
 
     # Verify
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         n_rows, earliest, latest = conn.execute("""
             SELECT COUNT(*), MIN(next_date), MAX(next_date)
             FROM earnings_calendar

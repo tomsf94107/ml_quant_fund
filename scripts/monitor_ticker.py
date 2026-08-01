@@ -1718,7 +1718,7 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
         fin = []
         if _os.path.exists(_si_db):
             try:
-                _con = sqlite3.connect(_si_db)
+                _con = sqlite3.connect(_si_db, timeout=30)
                 fin = list(_con.execute(
                     "SELECT settlement_date, current_short, avg_daily_vol, days_to_cover "
                     "FROM short_interest WHERE ticker=? ORDER BY settlement_date DESC LIMIT 8",
@@ -3949,7 +3949,7 @@ def get_squeeze_data(ticker: str, older_than: Optional[str] = None) -> dict:
         _si_db = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "short_interest.db")
         if _os.path.exists(_si_db):
             try:
-                _con = sqlite3.connect(_si_db)
+                _con = sqlite3.connect(_si_db, timeout=30)
                 _row = _con.execute(
                     "SELECT settlement_date, days_to_cover FROM short_interest "
                     "WHERE ticker=? ORDER BY settlement_date DESC LIMIT 1",

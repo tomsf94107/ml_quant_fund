@@ -35,7 +35,7 @@ QUIVER_BASE    = "https://api.quiverquant.com/beta"
 
 def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
     """Create congress_flows table if it doesn't exist."""
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS congress_flows (
             id                       INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -239,7 +239,7 @@ def load_congress_flows(
     if not db_path.exists():
         return pd.DataFrame()
 
-    conn  = sqlite3.connect(db_path)
+    conn  = sqlite3.connect(db_path, timeout=30)
     query = "SELECT * FROM congress_flows WHERE ticker = ?"
     params: list = [ticker.upper()]
 

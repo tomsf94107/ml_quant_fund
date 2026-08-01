@@ -37,7 +37,7 @@ def main():
     print(f"DuckDB max id: {max_id:,}")
 
     # Source count of new rows
-    src = sqlite3.connect(SRC_DB)
+    src = sqlite3.connect(SRC_DB, timeout=30)
     new_count = src.execute(
         "SELECT COUNT(*) FROM institutional_trades WHERE id > ?",
         (max_id,)
@@ -105,7 +105,7 @@ def main():
 
     # Verify
     new_dst_count = dst.execute("SELECT COUNT(*) FROM institutional_trades").fetchone()[0]
-    src = sqlite3.connect(SRC_DB)
+    src = sqlite3.connect(SRC_DB, timeout=30)
     new_src_count = src.execute("SELECT COUNT(*) FROM institutional_trades").fetchone()[0]
     src.close()
     print(f"Total rows: SQLite={new_src_count:,} DuckDB={new_dst_count:,}")

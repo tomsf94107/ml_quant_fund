@@ -112,7 +112,7 @@ def main() -> int:
         print("MASSIVE_API_KEY not set (did you `set -a && . ./.env && set +a`?)")
         return 1
 
-    con = sqlite3.connect(str(DB))
+    con = sqlite3.connect(str(DB), timeout=30)
     con.execute("PRAGMA busy_timeout=60000")
 
     if a.tickers:

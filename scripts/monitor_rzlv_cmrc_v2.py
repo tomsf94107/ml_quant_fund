@@ -240,7 +240,7 @@ CREATE TABLE IF NOT EXISTS short_interest_snapshots (
 
 
 def get_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.executescript(SCHEMA)
     return conn
 

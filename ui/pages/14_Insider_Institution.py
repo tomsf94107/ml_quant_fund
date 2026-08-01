@@ -103,7 +103,7 @@ def load_tickers() -> list[str]:
 def load_insider_filings(start_date: str, end_date: str) -> pd.DataFrame:
     if not INSIDER_DB.exists():
         return pd.DataFrame()
-    conn = sqlite3.connect(INSIDER_DB)
+    conn = sqlite3.connect(INSIDER_DB, timeout=30)
     try:
         df = pd.read_sql(
             """
@@ -127,7 +127,7 @@ def load_insider_filings(start_date: str, end_date: str) -> pd.DataFrame:
 def load_alerts_7d() -> pd.DataFrame:
     if not INSIDER_DB.exists():
         return pd.DataFrame()
-    conn = sqlite3.connect(INSIDER_DB)
+    conn = sqlite3.connect(INSIDER_DB, timeout=30)
     try:
         cutoff = (datetime.utcnow() - timedelta(days=7)).isoformat()
         df = pd.read_sql(
@@ -171,7 +171,7 @@ def get_insider_state_db() -> dict:
     """
     if not INSIDER_DB.exists():
         return {}
-    conn = sqlite3.connect(INSIDER_DB)
+    conn = sqlite3.connect(INSIDER_DB, timeout=30)
     try:
         # Preferred: raw scraper state
         try:
@@ -207,7 +207,7 @@ def get_insider_state_db() -> dict:
 def load_institutional(start_date: str, end_date: str, min_notional: float) -> pd.DataFrame:
     if not INSTITUTIONAL_DB.exists():
         return pd.DataFrame()
-    conn = sqlite3.connect(INSTITUTIONAL_DB)
+    conn = sqlite3.connect(INSTITUTIONAL_DB, timeout=30)
     try:
         df = pd.read_sql(
             """
@@ -234,7 +234,7 @@ def load_institutional(start_date: str, end_date: str, min_notional: float) -> p
 def get_inst_state_db() -> dict:
     if not INSTITUTIONAL_DB.exists():
         return {}
-    conn = sqlite3.connect(INSTITUTIONAL_DB)
+    conn = sqlite3.connect(INSTITUTIONAL_DB, timeout=30)
     try:
         row = conn.execute(
             """

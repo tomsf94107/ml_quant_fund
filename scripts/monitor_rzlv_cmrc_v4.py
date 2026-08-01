@@ -564,7 +564,7 @@ CREATE INDEX IF NOT EXISTS idx_form4_tx_ticker_date
 
 
 def get_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.executescript(SCHEMA)
     return conn
 

@@ -40,7 +40,7 @@ def section(title):
 
 
 def main():
-    con = sqlite3.connect(DB)
+    con = sqlite3.connect(DB, timeout=30)
 
     # ── (A) NaN COVERAGE — THE VALIDITY GATE ──────────────────────────────
     section("(A) NaN COVERAGE — validity gate")

@@ -34,7 +34,7 @@ sys.path.insert(0, str(ROOT))
 def load_data(horizon=5):
     """Load BUYs with outcomes + a8 panel, join."""
     # 1. Historical BUYs with mature outcomes
-    conn = sqlite3.connect(ROOT / "accuracy.db")
+    conn = sqlite3.connect(ROOT / "accuracy.db", timeout=30)
     buys = pd.read_sql("""
         SELECT p.prediction_date, p.ticker, p.horizon, p.prob_up, p.prob_raw,
                o.actual_return

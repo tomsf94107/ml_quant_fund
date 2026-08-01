@@ -54,7 +54,7 @@ def compare():
             print(f"    {t:6s}: {pa:.3f} → {pb:.3f} ({'↑' if pb > pa else '↓'}) ({pb-pa:+.3f})")
 
     date_str = da.get('date')
-    conn = sqlite3.connect(ROOT / "accuracy.db")
+    conn = sqlite3.connect(ROOT / "accuracy.db", timeout=30)
 
     def score(sigs):
         correct = total = 0

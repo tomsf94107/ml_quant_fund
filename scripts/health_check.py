@@ -19,7 +19,7 @@ def get_last_trading_date():
     Filters out test/sentinel rows from manual pipeline runs.
     """
     import sqlite3
-    con = sqlite3.connect(DB)
+    con = sqlite3.connect(DB, timeout=30)
     result = con.execute("""
         SELECT prediction_date FROM predictions
         GROUP BY prediction_date
@@ -60,7 +60,7 @@ def main():
     print(f"  Health check time: {datetime.now().strftime('%Y-%m-%d %H:%M')} VN")
     print("=" * 60)
 
-    con = sqlite3.connect(DB)
+    con = sqlite3.connect(DB, timeout=30)
 
     # 1. Predictions populated
     n_pred = con.execute(

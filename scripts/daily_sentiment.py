@@ -191,7 +191,7 @@ def run_monday_sentiment():
     log.info(f"Scoring {len(tickers)} tickers")
 
     client = anthropic.Anthropic()
-    conn   = sqlite3.connect(DB_PATH)
+    conn   = sqlite3.connect(DB_PATH, timeout=30)
     _init_db(conn)
 
     scored  = 0

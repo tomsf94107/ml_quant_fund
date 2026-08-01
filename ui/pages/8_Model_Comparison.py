@@ -17,7 +17,7 @@ if not DB.exists():
     DB = Path.home() / "Desktop" / "ML_Quant_Fund" / "accuracy.db"
 
 def q(sql):
-    con = sqlite3.connect(str(DB))
+    con = sqlite3.connect(str(DB), timeout=30)
     try:
         return pd.read_sql(sql, con)
     finally:

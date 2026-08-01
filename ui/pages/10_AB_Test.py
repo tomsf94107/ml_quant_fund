@@ -36,7 +36,7 @@ def _load_json(path: Path) -> dict:
 
 def _score_signals(sigs: dict, date_str: str) -> tuple:
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         correct = total = buy_correct = buy_total = 0
         for t, s in sigs.items():
             row = conn.execute(

@@ -39,7 +39,7 @@ TRADING_DAYS_PER_YEAR = 252
 
 def load_data(horizon: int, n_days: int, use_prob_raw: bool = False) -> tuple[pd.DataFrame, dict]:
     """Load predictions+outcomes joined on (ticker, prediction_date, horizon)."""
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         # Use prob_raw if requested (honest, multiplier-free)
         # COALESCE allows fallback to prob_up when prob_raw is NULL (old rows)
         prob_col = "COALESCE(p.prob_raw, p.prob_up)" if use_prob_raw else "p.prob_up"

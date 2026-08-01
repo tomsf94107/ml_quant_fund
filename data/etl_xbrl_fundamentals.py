@@ -114,7 +114,7 @@ def main():
         tickers = [l.strip().upper() for l in open(args.tickers_file)
                    if l.strip() and not l.startswith("#")]
 
-    conn = sqlite3.connect(args.db)
+    conn = sqlite3.connect(args.db, timeout=30)
     conn.executescript(SCHEMA)
     print(f"XBRL companyfacts ingest: {len(tickers)} tickers -> {args.db}")
 

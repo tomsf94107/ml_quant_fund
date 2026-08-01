@@ -19,7 +19,7 @@ def main():
     a = ap.parse_args()
     tkr = a.ticker.upper()
 
-    con = sqlite3.connect(str(DB_PATH))
+    con = sqlite3.connect(str(DB_PATH), timeout=30)
     cur = con.cursor()
     accs = [r[0] for r in cur.execute(
         "SELECT accession_number FROM form4_parsed WHERE ticker=? "

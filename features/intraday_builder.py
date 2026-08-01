@@ -46,7 +46,7 @@ def _fetch_and_save_uw_today(ticker: str) -> dict:
 
             from datetime import datetime as _dt
             now = _dt.now().isoformat()
-            with sqlite3.connect(_DB_PATH) as conn:
+            with sqlite3.connect(_DB_PATH, timeout=30) as conn:
                 conn.execute("""
                     INSERT OR REPLACE INTO dark_pool_history
                         (date, ticker, dp_ratio, dp_volume, total_volume, dp_signal, created_at)
@@ -99,7 +99,7 @@ def _fetch_and_save_uw_today(ticker: str) -> dict:
 
                 from datetime import datetime as _dt2
                 now2 = _dt2.now().isoformat()
-                with sqlite3.connect(_DB_PATH) as conn:
+                with sqlite3.connect(_DB_PATH, timeout=30) as conn:
                     conn.execute("""
                         INSERT OR REPLACE INTO options_skew_history
                             (date, ticker, skew_25d, put_iv_25d, call_iv_25d,

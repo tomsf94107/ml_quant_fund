@@ -91,7 +91,7 @@ def migrate(db_path: Path) -> dict:
     if not db_path.exists():
         print(f"  ⓘ  {db_path} doesn't exist yet — creating fresh DB.")
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     try:
         # Run each statement separately so a failure in one doesn't silently abort others.
         for statement in [s.strip() for s in SCHEMA.split(";") if s.strip()]:
@@ -134,7 +134,7 @@ def verify(db_path: Path) -> bool:
         "idx_alerts_signal",
     }
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     try:
         actual_tables = {
             r[0] for r in conn.execute(

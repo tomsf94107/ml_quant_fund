@@ -936,7 +936,7 @@ def log_intraday_snapshot():
     skipped_missing_keys = []
     skipped_db_error = []
     try:
-        conn = sqlite3.connect("accuracy.db")
+        conn = sqlite3.connect("accuracy.db", timeout=30)
         logged = 0
         for s in signals:
             if s.get("error"):

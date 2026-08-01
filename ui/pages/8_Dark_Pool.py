@@ -44,7 +44,7 @@ def load_dark_pool(days: int = 30):
         # Minimum 4-day lookback so weekends/holidays still catch last trading day
         effective_days = max(days, 4)
         cutoff = str(date.today() - timedelta(days=effective_days))
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         df = pd.read_sql(
             "SELECT * FROM dark_pool_history WHERE date >= ? ORDER BY date DESC, dp_ratio DESC",
             conn, params=[cutoff]
@@ -65,7 +65,7 @@ def load_skew(days: int = 30):
     try:
         effective_days = max(days, 4)
         cutoff = str(date.today() - timedelta(days=effective_days))
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         df = pd.read_sql(
             "SELECT * FROM options_skew_history WHERE date >= ? ORDER BY date DESC",
             conn, params=[cutoff]

@@ -34,7 +34,7 @@ def get_outcomes(date_str: str, horizon: int) -> dict:
     if not ACCURACY_DB.exists():
         return {}
 
-    conn = sqlite3.connect(ACCURACY_DB)
+    conn = sqlite3.connect(ACCURACY_DB, timeout=30)
     try:
         rows = conn.execute("""
             SELECT ticker, prediction_date, horizon_days, signal_pred, prob,

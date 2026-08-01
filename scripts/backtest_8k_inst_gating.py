@@ -28,7 +28,7 @@ EARN_DB = "earnings.db"
 
 def load_buys() -> pd.DataFrame:
     """Load all closed BUY predictions with their inst features and outcomes."""
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     df = pd.read_sql("""
         SELECT 
             p.ticker, p.prediction_date, p.horizon,
@@ -81,7 +81,7 @@ def attach_eightk(df: pd.DataFrame) -> pd.DataFrame:
 
 def attach_earnings(df: pd.DataFrame) -> pd.DataFrame:
     """For each row, compute days_since_earnings."""
-    conn = sqlite3.connect(EARN_DB)
+    conn = sqlite3.connect(EARN_DB, timeout=30)
     earn = pd.read_sql("""
         SELECT ticker, date(report_date) AS report_date
         FROM earnings_surprises

@@ -47,7 +47,7 @@ def upsert_events(events: list[dict], verbose: bool = False) -> tuple[int, int]:
     inserted = 0
     skipped = 0
 
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         cur = conn.cursor()
         for e in events:
             # UW returns "time" as full ISO datetime: "2026-05-15T13:15:00Z"
@@ -126,7 +126,7 @@ def main():
     print(f"[refresh_economic_calendar] Inserted/replaced {inserted}/{total} events")
 
     # Verify
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         n_rows, earliest, latest = conn.execute("""
             SELECT COUNT(*), MIN(event_date), MAX(event_date)
             FROM economic_calendar

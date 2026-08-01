@@ -51,7 +51,7 @@ def get_vix_history(days: int = 10) -> list[float]:
 @st.cache_data(ttl=300)
 def get_sleeve_drawdown() -> float:
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         rows = conn.execute("""
             SELECT prediction_date,
                    ROUND(100.0*SUM(CASE WHEN (prob_up>0.5 AND o.actual_return>0)
@@ -79,7 +79,7 @@ def get_sleeve_drawdown() -> float:
 @st.cache_data(ttl=300)
 def get_recent_accuracy() -> float:
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         row = conn.execute("""
             SELECT ROUND(100.0*SUM(CASE WHEN (p.prob_up>0.5 AND o.actual_return>0)
                                          OR (p.prob_up<=0.5 AND o.actual_return<0)

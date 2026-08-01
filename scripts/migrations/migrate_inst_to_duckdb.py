@@ -36,7 +36,7 @@ def main():
 
     # Source row counts
     print(f"=== Reading source: {SRC_DB} ===")
-    src = sqlite3.connect(SRC_DB)
+    src = sqlite3.connect(SRC_DB, timeout=30)
     src_main = src.execute("SELECT COUNT(*) FROM institutional_trades").fetchone()[0]
     src_cursor = src.execute("SELECT COUNT(*) FROM ingest_cursor").fetchone()[0]
     src_state = src.execute("SELECT COUNT(*) FROM institutional_scraper_state").fetchone()[0]
@@ -155,7 +155,7 @@ def main():
 
     # Sample data spot-check
     print(f"\n=== Sample verification ===")
-    src_sample = sqlite3.connect(SRC_DB).execute(
+    src_sample = sqlite3.connect(SRC_DB, timeout=30).execute(
         "SELECT id, ticker, trade_ts, notional_usd FROM institutional_trades ORDER BY id LIMIT 3"
     ).fetchall()
     dst_sample = dst.execute(
@@ -169,7 +169,7 @@ def main():
         print(f"  {r}")
 
     # Date range
-    src_range = sqlite3.connect(SRC_DB).execute(
+    src_range = sqlite3.connect(SRC_DB, timeout=30).execute(
         "SELECT MIN(trade_ts), MAX(trade_ts) FROM institutional_trades"
     ).fetchone()
     dst_range = dst.execute(

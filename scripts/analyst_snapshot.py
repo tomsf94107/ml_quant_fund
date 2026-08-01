@@ -28,7 +28,7 @@ def main():
 
     tickers = [l.strip().upper() for l in open(ROOT / "tickers.txt")
                if l.strip() and not l.startswith("#")]
-    conn = sqlite3.connect(str(ROOT / "accuracy.db"))
+    conn = sqlite3.connect(str(ROOT / "accuracy.db"), timeout=30)
     conn.executescript(SCHEMA)
     snap_date = time.strftime("%Y-%m-%d")
     ok = err = 0

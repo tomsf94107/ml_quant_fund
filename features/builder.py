@@ -987,7 +987,7 @@ def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None)
     """Load insider net_shares + 7d/21d/60d/90d rolling sums from SQLite."""
     zeros = pd.Series(0.0, index=dates)
     try:
-        conn = sqlite3.connect(INSIDER_DB)
+        conn = sqlite3.connect(INSIDER_DB, timeout=30)
         if as_of is not None:
             # Point-in-time honesty: filter by created_at (γ backfill: trade_date + 2 BD)
             df = pd.read_sql(
@@ -1023,7 +1023,7 @@ def _load_congress(ticker: str, dates: pd.Index) -> pd.Series:
     """Load congressional net shares from SQLite."""
     zeros = pd.Series(0.0, index=dates, name="congress_net_shares")
     try:
-        conn = sqlite3.connect(CONGRESS_DB)
+        conn = sqlite3.connect(CONGRESS_DB, timeout=30)
         df = pd.read_sql(
             "SELECT ds as date, congress_net_shares FROM congress_flows WHERE ticker = ? ORDER BY date",
             conn, params=(ticker.upper(),), parse_dates=["date"]
@@ -1254,7 +1254,7 @@ def build_feature_dataframe(
 
     # Monday sentiment score (Anthropic API — scored Sunday night)
     try:
-        conn_sent = sqlite3.connect("data/sentiment.db")
+        conn_sent = sqlite3.connect("data/sentiment.db", timeout=30)
         sent_row = conn_sent.execute("""
             SELECT sentiment_score, confidence FROM monday_sentiment
             WHERE ticker=? ORDER BY score_date DESC LIMIT 1

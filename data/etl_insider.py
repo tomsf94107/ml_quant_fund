@@ -63,7 +63,7 @@ DEFAULT_WEIGHT = 1.0
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS insider_flows (
             id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -419,7 +419,7 @@ def load_insider_flows(
     if end_date:
         q += " AND date <= ?"; params.append(str(end_date))
     q += " ORDER BY date"
-    with sqlite3.connect(db_path) as conn:
+    with sqlite3.connect(db_path, timeout=30) as conn:
         return pd.read_sql(q, conn, params=params, parse_dates=["date"])
 
 

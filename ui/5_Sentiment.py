@@ -37,7 +37,7 @@ def _load_latest_scores() -> pd.DataFrame:
     if not DB_PATH.exists():
         return pd.DataFrame()
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         df = pd.read_sql("""
             SELECT ticker, date, time_slot, score,
                    positive_pct, negative_pct, neutral_pct,
@@ -59,7 +59,7 @@ def _load_history(ticker: str, days: int = 14) -> pd.DataFrame:
     if not DB_PATH.exists():
         return pd.DataFrame()
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
         df = pd.read_sql("""
             SELECT date, time_slot, score, positive_pct, negative_pct, n_headlines
             FROM sentiment_scores

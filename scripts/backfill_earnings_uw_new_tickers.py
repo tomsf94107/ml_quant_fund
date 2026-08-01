@@ -108,7 +108,7 @@ def main():
     args = ap.parse_args()
 
     key = _load_uw_key()
-    conn = sqlite3.connect(EARNINGS_DB)
+    conn = sqlite3.connect(EARNINGS_DB, timeout=30)
     cur = conn.cursor()
 
     total_written = 0

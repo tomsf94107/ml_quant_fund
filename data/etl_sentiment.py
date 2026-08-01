@@ -49,7 +49,7 @@ DEFAULT_SOURCES = ["Google", "Yahoo", "EDGAR", "Reddit"]  # StockTwits removed â
 
 def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
     """Create sentiment_scores table if it doesn't exist."""
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS sentiment_scores (
             id           INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -271,7 +271,7 @@ def load_sentiment_scores(
     if not db_path.exists():
         return pd.DataFrame()
 
-    conn  = sqlite3.connect(db_path)
+    conn  = sqlite3.connect(db_path, timeout=30)
     # Get latest score per day (most recent time_slot wins)
     # Filter is_corrupted=1 rows (257 FinBERT-bug rows Feb 4 -> Mar 8 2026)
     # IS NULL covers rows from before the column was added.
@@ -331,7 +331,7 @@ def get_sentiment_score(
     if not db_path.exists():
         return 0.0
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     try:
         # Try exact date first
         row = conn.execute(
@@ -388,7 +388,7 @@ def get_sentiment_score_detailed(
     if not db_path.exists():
         return result
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     try:
         row = conn.execute("""
             SELECT time_slot FROM sentiment_scores

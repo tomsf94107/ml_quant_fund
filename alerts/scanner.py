@@ -90,7 +90,7 @@ CRASH_KEYWORDS = [
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _init_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(ALERTS_DB)
+    conn = sqlite3.connect(ALERTS_DB, timeout=30)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS alerts (
             id          INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -474,7 +474,7 @@ def load_recent_alerts(hours: int = 24) -> pd.DataFrame:
         return pd.DataFrame()
     cutoff = (now_et() - timedelta(hours=hours)).strftime('%Y-%m-%dT%H:%M:%S')
     try:
-        conn = sqlite3.connect(ALERTS_DB)
+        conn = sqlite3.connect(ALERTS_DB, timeout=30)
         df   = pd.read_sql("""
             SELECT timestamp, trigger_type, severity, ticker,
                    headline, detail, value
@@ -564,7 +564,7 @@ def check_intraday_flip_alerts(tickers: list[str] = None) -> int:
     if tickers is None:
         tickers = [t.strip() for t in open("tickers.txt").readlines() if t.strip()]
 
-    conn = sqlite3.connect("alerts.db")
+    conn = sqlite3.connect("alerts.db", timeout=30)
     fired = 0
 
     # Get current intraday signals

@@ -594,7 +594,7 @@ with _tab_calib:
         import sqlite3
         import numpy as np
 
-        conn = sqlite3.connect("accuracy.db")
+        conn = sqlite3.connect("accuracy.db", timeout=30)
         cal_df = pd.read_sql("""
             SELECT
                 ROUND(p.prob_up, 1) as prob_bucket,
@@ -755,7 +755,7 @@ with _tab_sectors:
             _meta_df = pd.read_csv(_meta_csv)
             _meta_df["ticker"] = _meta_df["ticker"].str.upper().str.strip()
 
-            _conn = sqlite3.connect(str(Path("accuracy.db")))
+            _conn = sqlite3.connect(str(Path("accuracy.db")), timeout=30)
             _outcomes = pd.read_sql(
                 """
                 SELECT p.ticker, o.actual_up

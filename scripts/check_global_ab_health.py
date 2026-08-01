@@ -32,7 +32,7 @@ def main():
     ap.add_argument("--db", default="accuracy.db")
     args = ap.parse_args()
 
-    conn = sqlite3.connect(args.db)
+    conn = sqlite3.connect(args.db, timeout=30)
     
     # Base query
     where_clauses = ["prob_up IS NOT NULL"]

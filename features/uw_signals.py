@@ -436,7 +436,7 @@ def get_short_interest_score(ticker: str) -> dict:
     try:
         from datetime import timedelta
         cutoff = str(date.today() - timedelta(days=14))
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=30) as conn:
             row = conn.execute("""
                 SELECT si_float, days_to_cover, si_signal
                 FROM short_interest_cache WHERE ticker=? AND market_date>=?
@@ -572,7 +572,7 @@ def get_seasonality_features(ticker: str) -> dict:
     }
     month = date.today().month
     try:
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=30) as conn:
             row = conn.execute("""
                 SELECT avg_change, positive_months_perc, seasonal_signal
                 FROM seasonality_cache WHERE ticker=? AND month=?
@@ -605,7 +605,7 @@ def get_analyst_score(ticker: str) -> dict:
     try:
         from datetime import timedelta
         cutoff = str(date.today() - timedelta(days=7))
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=30) as conn:
             row = conn.execute("""
                 SELECT analyst_score, upgrades_30d, downgrades_30d,
                        avg_target, analyst_signal
@@ -639,7 +639,7 @@ def get_ftd_score(ticker: str) -> dict:
     try:
         from datetime import timedelta
         cutoff = str(date.today() - timedelta(days=7))
-        with sqlite3.connect(DB_PATH) as conn:
+        with sqlite3.connect(DB_PATH, timeout=30) as conn:
             row = conn.execute("""
                 SELECT ftd_shares, ftd_signal FROM ftd_cache
                 WHERE ticker=? AND date>=? ORDER BY date DESC LIMIT 1

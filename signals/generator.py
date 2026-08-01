@@ -80,7 +80,7 @@ def _check_fitness_filter(ticker: str, horizon: int) -> "Optional[float]":
         _db = _Path(__file__).parent.parent / "accuracy.db"
         if not _db.exists():
             return None
-        _conn = sqlite3.connect(str(_db))
+        _conn = sqlite3.connect(str(_db), timeout=30)
         try:
             _row = _conn.execute(
                 "SELECT fitness FROM fitness_scores WHERE ticker=? AND horizon=?",

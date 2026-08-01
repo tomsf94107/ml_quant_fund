@@ -306,7 +306,7 @@ CREATE INDEX IF NOT EXISTS idx_edgar_filings_ticker_date
 
 
 def get_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.executescript(SCHEMA)
     return conn
 

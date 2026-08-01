@@ -19,7 +19,7 @@ def check(name, ok, detail=""):
 
 def q(db, sql):
     try:
-        conn = sqlite3.connect(str(ROOT / db))
+        conn = sqlite3.connect(str(ROOT / db), timeout=30)
         r = conn.execute(sql).fetchall()
         conn.close()
         return r

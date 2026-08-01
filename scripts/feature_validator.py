@@ -284,7 +284,7 @@ def check_earnings_calendar() -> dict:
 
     try:
         import sqlite3
-        conn = sqlite3.connect("accuracy.db")
+        conn = sqlite3.connect("accuracy.db", timeout=30)
         # Check if we have an earnings table
         tables = conn.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
         table_names = [t[0] for t in tables]

@@ -44,7 +44,7 @@ ACCURACY_DB_PATH = Path(os.getenv("ACCURACY_DB_PATH", "accuracy.db"))
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _init_db(db_path: Path = DB_PATH) -> sqlite3.Connection:
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     conn.execute("""
         CREATE TABLE IF NOT EXISTS earnings_surprises (
             id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -269,7 +269,7 @@ def load_earnings_features(
         return default
 
     try:
-        conn = sqlite3.connect(db_path)
+        conn = sqlite3.connect(db_path, timeout=30)
 
         # Load surprise history (point-in-time honest when as_of is set)
         # PIT REWIRE (Jul 11 2026).
@@ -348,7 +348,7 @@ def load_earnings_features(
         # almost no information. The original design already accepted this.
         cal = pd.DataFrame()
         try:
-            cal_conn = sqlite3.connect(ACCURACY_DB_PATH)
+            cal_conn = sqlite3.connect(ACCURACY_DB_PATH, timeout=30)
             cal = pd.read_sql(
                 "SELECT report_date AS next_date FROM earnings_cache "
                 "WHERE ticker = ? AND report_date IS NOT NULL ORDER BY report_date",

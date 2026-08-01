@@ -32,7 +32,7 @@ CREATE INDEX IF NOT EXISTS idx_sim_tk ON sec_10k_similarity(ticker);
 
 
 def fetch_all(tickers, days_back=2600):
-    con = sqlite3.connect(str(DB)); con.executescript(DDL)
+    con = sqlite3.connect(str(DB), timeout=30); con.executescript(DDL)
     for i, tk in enumerate(tickers, 1):
         cik = get_cik(tk)
         if not cik:
@@ -79,7 +79,7 @@ def _jaccard(a, b):
 
 
 def compute_similarity():
-    con = sqlite3.connect(str(DB)); con.executescript(DDL)
+    con = sqlite3.connect(str(DB), timeout=30); con.executescript(DDL)
     tickers = [r[0] for r in con.execute("SELECT DISTINCT ticker FROM sec_10k_sections").fetchall()]
     n_pairs = 0
     for tk in tickers:

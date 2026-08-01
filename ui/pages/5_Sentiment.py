@@ -27,7 +27,7 @@ ACC_DB  = _PROJECT_ROOT / "accuracy.db"
 def _load_latest() -> pd.DataFrame:
     if not SENT_DB.exists(): return pd.DataFrame()
     try:
-        conn = sqlite3.connect(SENT_DB)
+        conn = sqlite3.connect(SENT_DB, timeout=30)
         df = pd.read_sql("""
             SELECT ticker, score_date, sentiment_score, sentiment_label,
                    confidence, headlines
@@ -44,7 +44,7 @@ def _load_history(days: int = 30) -> pd.DataFrame:
     if not SENT_DB.exists(): return pd.DataFrame()
     try:
         cutoff = (date.today() - timedelta(days=days)).isoformat()
-        conn = sqlite3.connect(SENT_DB)
+        conn = sqlite3.connect(SENT_DB, timeout=30)
         df = pd.read_sql("""
             SELECT ticker, score_date, sentiment_score, sentiment_label, confidence
             FROM monday_sentiment WHERE score_date >= ?
@@ -59,8 +59,8 @@ def _load_accuracy_by_sentiment() -> pd.DataFrame:
     """Compare accuracy on days with bullish vs bearish sentiment."""
     if not SENT_DB.exists() or not ACC_DB.exists(): return pd.DataFrame()
     try:
-        conn_s = sqlite3.connect(SENT_DB)
-        conn_a = sqlite3.connect(ACC_DB)
+        conn_s = sqlite3.connect(SENT_DB, timeout=30)
+        conn_a = sqlite3.connect(ACC_DB, timeout=30)
         sent = pd.read_sql("SELECT ticker, score_date, sentiment_label, sentiment_score FROM monday_sentiment", conn_s)
         preds = pd.read_sql("""
             SELECT p.ticker, p.prediction_date, p.prob_up,

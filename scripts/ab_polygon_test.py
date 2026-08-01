@@ -198,7 +198,7 @@ def compare():
 
     # Score both vs outcomes
     try:
-        conn = sqlite3.connect(DB_PATH)
+        conn = sqlite3.connect(DB_PATH, timeout=30)
 
         def score(sigs):
             correct = total = 0

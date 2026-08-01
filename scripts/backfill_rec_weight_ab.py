@@ -77,7 +77,7 @@ def main():
     ap.add_argument("--horizon", type=int, choices=[1, 3, 5], help="Only this horizon")
     args = ap.parse_args()
     
-    conn = sqlite3.connect(DB)
+    conn = sqlite3.connect(DB, timeout=30)
     q = """
         SELECT p.prediction_date, p.ticker, p.horizon, p.prob_up, p.prob_raw,
                p.signal, o.actual_return

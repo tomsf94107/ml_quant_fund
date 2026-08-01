@@ -25,7 +25,7 @@ sys.path.insert(0, str(ROOT))
 
 
 def init_tables():
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
 
         conn.execute("""
             CREATE TABLE IF NOT EXISTS dark_pool_history (
@@ -197,7 +197,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
 
     dp_ok = dp_fail = skew_ok = skew_fail = 0
 
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         for i, ticker in enumerate(tickers, 1):
             print(f"  [{i:3d}/{len(tickers)}] {ticker:<6}", end=" ", flush=True)
 
@@ -294,7 +294,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
     uw_hdrs = {"Authorization": f"Bearer {uw_key}"}
     earn_ok = earn_fail = 0
 
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         for ticker in tickers:
             try:
                 r = requests.get(
@@ -348,7 +348,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
     # ── Short interest cache ──────────────────────────────────────────────
     print("  Fetching short interest...")
     si_ok = si_fail = 0
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         for ticker in tickers:
             try:
                 r = requests.get(
@@ -386,7 +386,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
     from datetime import date as _date
     current_month = _date.today().month
     seas_ok = seas_fail = 0
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         for ticker in tickers:
             try:
                 r = requests.get(
@@ -422,7 +422,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
     from datetime import datetime as _dt, timedelta as _td
     cutoff_dt = (_dt.now() - _td(days=30)).isoformat()
     anal_ok = anal_fail = 0
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         for ticker in tickers:
             try:
                 r = requests.get(
@@ -461,7 +461,7 @@ def run_snapshot(snapshot_date: str = None, mode: str = "full", tickers: list = 
     # ── FTD cache ─────────────────────────────────────────────────────────
     print("  Fetching FTDs...")
     ftd_ok = ftd_fail = 0
-    with sqlite3.connect(DB_PATH) as conn:
+    with sqlite3.connect(DB_PATH, timeout=30) as conn:
         for ticker in tickers:
             try:
                 r = requests.get(

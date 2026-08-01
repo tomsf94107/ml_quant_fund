@@ -68,7 +68,7 @@ def main():
           {h_filter}
     """
     
-    conn = sqlite3.connect(args.db)
+    conn = sqlite3.connect(args.db, timeout=30)
     rows = conn.execute(sql, (args.since,)).fetchall()
     conn.close()
 

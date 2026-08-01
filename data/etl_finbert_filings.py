@@ -309,7 +309,7 @@ def main():
     print(f"Forms: {SESSION_A_FORMS}")
     print()
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     total_rows = total_filings = 0
     for i, ticker in enumerate(tickers):
         print(f"[{i+1}/{len(tickers)}] {ticker}")
