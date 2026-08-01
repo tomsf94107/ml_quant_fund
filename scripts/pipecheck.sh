@@ -2,7 +2,12 @@
 # scripts/pipecheck.sh
 # ─────────────────────────────────────────────────────────────────────────────
 # Status check for Pipelines A, B, C, D
-# All times displayed in ET (system tz is ET via crontab TZ=America/New_York)
+# Times displayed in ET. NOTE (Aug 1 2026): the old header claimed the crontab
+# sets TZ=America/New_York -- it does NOT. macOS BSD cron ignores TZ entirely,
+# which is why scripts/crontab_VN_anchored.txt encodes VN local times. The chain
+# (A->D->B) is owned by launchd com.atom.pipeline-chain at 04:00 VN = 17:00 ET;
+# Pipeline C by com.atom.pipeline-c at 17:00 VN = 06:00 ET. See
+# docs/SCHEDULER_INVENTORY.md (generated from live state).
 # ─────────────────────────────────────────────────────────────────────────────
 DATE=$(date +%Y%m%d)
 NOW_HOUR=$(TZ=America/New_York date +%H)
@@ -40,11 +45,15 @@ check_pipeline() {
     echo ""
 }
 
+# ET hours below match ACTUAL launchd schedules, not the pre-migration plan.
+# Chain starts 04:00 VN = 17:00 ET: A ~17:00-17:45, D ~17:45-19:50, B ~19:50-21:50.
+# C starts 17:00 VN = 06:00 ET and finishes ~07:30 ET (kept ahead of the 09:30
+# open; the old 08:00 ET start would have landed at the bell at current runtime).
 #                  P   ET_HOUR  LABEL
-check_pipeline    A    16       "16:00 ET (Mon-Fri)"
-check_pipeline    D    17       "17:00 ET (Mon-Fri) — alpha panel"
-check_pipeline    B    20       "20:00 ET (Mon-Fri)"
-check_pipeline    C    8        "08:00 ET (Mon-Fri) — pre-open"
+check_pipeline    A    17       "17:00 ET (Tue-Sat VN 04:00) — ingest"
+check_pipeline    D    18       "~17:45 ET (chained after A) — alpha panel"
+check_pipeline    B    20       "~19:50 ET (chained after D) — train+predict"
+check_pipeline    C    6        "06:00 ET (Mon-Fri VN 17:00) — pre-open"
 
 echo "── Health check ──"
 ~/.pyenv/versions/ml_quant_310/bin/python - <<'PYEOF'

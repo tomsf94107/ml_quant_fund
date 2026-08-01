@@ -1958,6 +1958,35 @@ def section_earnings_calendar(ticker: str) -> None:
             return (_px[rd] / _px[_pdates[_i - 1]] - 1) * 100
         except (KeyError, ZeroDivisionError):
             return None
+    # BASIS-MISMATCH DETECTOR (Aug 1 2026). The vendor's actual_eps and its
+    # street_mean_est are on DIFFERENT BASES for any company with material SBC /
+    # intangible amortization -- actual lands between GAAP and non-GAAP while the
+    # estimate is street non-GAAP, so every quarter prints a fake double-digit
+    # miss. MRVL specimen: DB -26.3% for Q1 FY27 when the company reported
+    # non-GAAP $0.80 vs $0.80 consensus (GAAP was $0.04) [fact, company PR].
+    # 37 tickers show the signature -- 4+ quarters, ALL negative, avg < -10%.
+    # A hand blocklist (GOOG dates, DDOG) does not scale to that, so detect the
+    # signature instead: real companies do not miss every quarter by 20%.
+    _basis_suspect = False
+    try:
+        import sqlite3 as _sq
+        _c = _sq.connect(f"file:{_REPO_ROOT / 'accuracy.db'}?mode=ro", uri=True, timeout=30)
+        _r = _c.execute(
+            "SELECT COUNT(*), SUM(actual_eps < est_eps), AVG((actual_eps/est_eps-1)*100) "
+            "FROM earnings_cache WHERE ticker=? AND report_date >= '2025-01-01' "
+            "AND actual_eps IS NOT NULL AND est_eps > 0", (ticker.upper(),)).fetchone()
+        _c.close()
+        if _r and _r[0] and _r[0] >= 4 and _r[1] == _r[0] and (_r[2] or 0) < -10:
+            _basis_suspect = True
+            print(f"  [warn] {ticker.upper()}: {_r[0]} of {_r[0]} quarters negative, "
+                  f"avg {_r[2]:+.0f}% -- vendor actual/estimate BASIS MISMATCH "
+                  f"(GAAP-ish actual vs street non-GAAP estimate). EPS actuals and "
+                  f"surprises SUPPRESSED; use the company release, not this table.")
+            flag("MED", ticker, "EPS basis mismatch: every stored quarter negative "
+                                "-- actuals suppressed, surprise column unusable")
+    except Exception as _e:
+        print(f"  [warn] basis check failed: {_e}")
+
     _any_backfilled = False
     for r in sorted_rows:
         rdate = (_f(r, "report_date", "date", "earnings_date",
@@ -1970,7 +1999,8 @@ def section_earnings_calendar(ticker: str) -> None:
                      "eps_consensus_estimate", "estimate_eps",
                      "street_mean_est")  # actual UW key -- without it every Est
                                          # rendered "?" and no surprise computed
-        if (ticker.upper(), rdate) in EPS_QUARANTINE or ticker.upper() in EPS_QUARANTINE_TICKERS:
+        if (_basis_suspect or (ticker.upper(), rdate) in EPS_QUARANTINE
+                or ticker.upper() in EPS_QUARANTINE_TICKERS):
             eps_act = None  # renders "?" -- see EPS_QUARANTINE note
         rev_act = _f(r, "actual_revenue", "revenue_actual", "revenue",
                      "total_revenue", "revenue_act")
