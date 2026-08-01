@@ -51,3 +51,5 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 | health_check false alarms | FIXED | 9f26efcd + 02ddf15b | 77 consecutive false failures, 0 passes ever; maturity-aware now, status file + pipecheck age display |
 | cron_canary | REMOVED | dfa50620 | echo-only stub, 2880 runs/day |
 | 24-vs-50 form4 count | UNEXPLAINED | -- | overwrite hypothesis REFUTED (5 quarantine markers durable, 3 new catches). No replacement story |
+| momentum_shadow 6/29-7/9 hole | RECOVERED | Aug-1 | 8 sessions never written (Jun 429-storm froze the panel; the frozen-panel bug re-wrote 6/23 picks nightly, fixed 7-14 but gap never backfilled). Regenerated + 4 windows matured |
+| momentum_shadow membership drift | CAVEAT | Aug-1 | Regenerated dates use load_universe() = TODAY (785 rows) vs June-era dates (769); 16 tickers added, 2 dropped, 6/26 is a merged 787. Price panel is PIT (panel[index<=cutoff]) but MEMBERSHIP is not. Cross-sectional decile cuts span different populations pre/post 6/26 -- read any gate verdict with this in view |
