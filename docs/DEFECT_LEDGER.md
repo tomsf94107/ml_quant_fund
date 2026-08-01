@@ -61,3 +61,5 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 ## RESEARCH PRECONDITION (Aug 1 2026)
 
 PEAD/SUE work: `earnings_cache.actual_eps` is UNUSABLE as a surprise input for ~37 of 400 tickers -- the vendor actual is GAAP-ish while est_eps is street non-GAAP, producing 4-7 consecutive fake double-digit misses (SNOW -440pct, NET -135, CRWD -104, MRVL -22, AMD -19). Any SUE construction must source actual and estimate from the SAME basis. PEAD is already VOID for look-ahead; this is a second, independent poisoning of the same input.
+| Earnings-quality items unparsed (10-K/10-Q) | OPEN | found by MSFT report Aug-1 | Monitor missed a $3.2B Anthropic equity gain and a 15->25yr useful-life change in MSFT FY26 10-K -- both materially alter how GAAP EPS reads. Same family as 10-Q extraction; raises its priority |
+| Ledger unreachable from report threads | FIXED | scripts/ledger_digest.sh | Report chats have no repo access; digest prints OPEN rows + commit hash, pipe to pbcopy and paste |
