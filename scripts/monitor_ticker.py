@@ -922,6 +922,29 @@ CREATE TABLE IF NOT EXISTS form4_transactions (
 );
 CREATE INDEX IF NOT EXISTS idx_form4_tx_ticker_date
     ON form4_transactions(ticker, transaction_date);
+
+-- FLOW-ALERT PERSISTENCE (Aug 1 2026). The UW payload carries per-alert
+-- ask/bid side premium; the monitor rendered it live and threw it away, so the
+-- aggressor tilt could never face a validation gate for want of history.
+-- Accumulates FORWARD ONLY -- no vendor backfill window is known for flow
+-- alerts, and coverage is limited to tickers the monitor is actually run on.
+CREATE TABLE IF NOT EXISTS flow_alerts (
+    ticker          TEXT NOT NULL,
+    executed_at     TEXT NOT NULL,
+    et_date         TEXT,
+    option_type     TEXT,
+    strike          REAL,
+    expiry          TEXT,
+    total_premium   REAL,
+    ask_side_prem   REAL,
+    bid_side_prem   REAL,
+    all_opening     INTEGER,
+    volume          REAL,
+    open_interest   REAL,
+    seen_ts         TEXT,
+    PRIMARY KEY (ticker, executed_at, strike, option_type, expiry)
+);
+CREATE INDEX IF NOT EXISTS idx_flow_ticker_date ON flow_alerts(ticker, et_date);
 """
 
 
@@ -1682,6 +1705,46 @@ def section_options_flow(conn: sqlite3.Connection, ticker: str, since: str) -> N
         a = sum(float(x.get("total_ask_side_prem") or 0) for x in sub)
         b = sum(float(x.get("total_bid_side_prem") or 0) for x in sub)
         return a, b
+    # Persist every alert in the window so the tilt can eventually be gated the
+    # same way skew is (scripts/validate_darkpool_skew.py --signal). Descriptive
+    # today; this is what starts the history clock.
+    try:
+        _fc = conn.cursor()
+        _n_new = 0
+        for _a in rows:
+            _ts = (_a.get("executed_at") or _a.get("created_at") or "")
+            if not _ts:
+                continue
+            try:
+                _etd = (datetime.fromisoformat(str(_ts).replace("Z", "+00:00"))
+                        .astimezone(ET_TZ).date().isoformat())
+            except Exception:
+                _etd = str(_ts)[:10]
+            _fc.execute(
+                "INSERT OR IGNORE INTO flow_alerts (ticker, executed_at, et_date, "
+                "option_type, strike, expiry, total_premium, ask_side_prem, "
+                "bid_side_prem, all_opening, volume, open_interest, seen_ts) "
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                (ticker, str(_ts), _etd,
+                 (_a.get("type") or _a.get("option_type") or "").upper(),
+                 float(_a.get("strike") or 0),
+                 str(_a.get("expiry") or _a.get("expiration") or ""),
+                 float(_a.get("total_premium") or _a.get("premium") or 0),
+                 float(_a.get("total_ask_side_prem") or 0),
+                 float(_a.get("total_bid_side_prem") or 0),
+                 1 if _a.get("all_opening_trades") in (True, "true", 1) else 0,
+                 float(_a.get("volume") or 0),
+                 float(_a.get("open_interest") or 0),
+                 now_iso()))
+            _n_new += _fc.rowcount
+        conn.commit()
+        _tot = _fc.execute("SELECT COUNT(*), COUNT(DISTINCT et_date) FROM flow_alerts "
+                           "WHERE ticker=?", (ticker,)).fetchone()
+        print(f"  Persisted: +{_n_new} new alert(s); {_tot[0]:,} rows over "
+              f"{_tot[1]} session(s) accumulated (forward-only, for the tilt gate)")
+    except sqlite3.Error as _e:
+        print(f"  [warn] flow_alerts persist failed: {_e}")
+
     _calls = [x for x in rows if (x.get("type") or x.get("option_type") or "").lower() == "call"]
     _puts = [x for x in rows if (x.get("type") or x.get("option_type") or "").lower() == "put"]
     _ca, _cb = _sides(_calls)
@@ -3846,6 +3909,22 @@ def section_price_volume(ticker: str, since: str) -> None:
         avg20 = (sum(_clean) / len(_clean)) if _clean else 0.0
         latest_vol = vols[-1]
         ratio = latest_vol / avg20 if avg20 else 0
+        # SESSION H/L (Aug 1 2026). raw_bars has carried high/low for 420
+        # tickers all along (0 nulls); reports were sourcing them EXTERNALLY and
+        # flagging the class mismatch. Close-position-in-range is the read that
+        # matters: a close at the top of a wide range is a different tape than
+        # one at the bottom.
+        try:
+            _lr = rows_sorted[-1]
+            _hi, _lo = float(_lr.get("high") or 0), float(_lr.get("low") or 0)
+            if _hi > 0 and _lo > 0 and _hi >= _lo:
+                _rng = (_hi - _lo) / _lo * 100
+                _pos = ((closes[-1] - _lo) / (_hi - _lo) * 100) if _hi > _lo else 50.0
+                print(f"  Session H/L:  ${_lo:,.2f} - ${_hi:,.2f}   "
+                      f"range {_rng:.2f}%   close at {_pos:.0f}% of range   "
+                      f"open ${float(_lr.get('open') or 0):,.2f}")
+        except Exception as _e:
+            print(f"  [warn] session H/L unavailable: {_e}")
         print(f"  Latest close: ${closes[-1]:.2f}   "
               f"Latest volume: {latest_vol:,.0f}   "
               f"20d avg vol: {avg20:,.0f}"
