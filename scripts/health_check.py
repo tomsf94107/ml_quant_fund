@@ -36,12 +36,17 @@ def get_last_trading_date():
     today = datetime.now().date()
     return today - timedelta(days=1)
 
+_FAILURES: list = []
+
+
 def check(label, passed, detail=""):
     status = "✅" if passed else "❌"
     msg = f"  {status} {label}"
     if detail:
         msg += f" — {detail}"
     print(msg)
+    if not passed:
+        _FAILURES.append(label)
     return passed
 
 def main():
@@ -176,13 +181,33 @@ def main():
     con.close()
 
     print("=" * 60)
+    # STATUS FILE (Aug 1 2026) so `pipecheck` can show health without re-running
+    # three DB queries -- and, critically, can show the AGE of the last check.
+    # A detector that stopped running looks identical to one reporting "fine":
+    # that is exactly how feed_freshness_check vanished for six days.
+    import json as _json
+    _status = {"status": "ok" if all_ok else "fail",
+               "failures": _FAILURES,
+               "checked_at": datetime.now().isoformat(timespec="seconds"),
+               "last_date": str(last_date)}
+    try:
+        with open(os.path.expanduser(
+                "~/Desktop/ML_Quant_Fund/logs/health_status.json"), "w") as _f:
+            _json.dump(_status, _f, indent=1)
+    except Exception as _e:
+        print(f"  [warn] health_status.json write failed: {_e}")
+
     if all_ok:
         print("  ✅ ALL CHECKS PASSED — system healthy")
-        # Desktop notification
-        os.system('osascript -e \'display notification "All checks passed" with title "ML Quant Fund ✅ Healthy"\'')
+        # NO success notification. It fired EVERY day regardless of state --
+        # zero information, and half the alert-fatigue mechanism (the other
+        # half was 77 consecutive false failures from the outcomes-maturity
+        # bug; ALL CHECKS PASSED had never once appeared in the log).
     else:
         print("  ❌ ISSUES DETECTED — review above")
-        os.system('osascript -e \'display notification "Pipeline issues detected — check logs" with title "ML Quant Fund ❌ Alert"\'')
+        _msg = "FAILED: " + ", ".join(_FAILURES) if _FAILURES else "issues detected"
+        os.system("osascript -e 'display notification \"" + _msg.replace('"', "'")
+                  + "\" with title \"ML Quant Fund ALERT\"'")
     print("=" * 60)
 
     sys.exit(0 if all_ok else 1)

@@ -46,6 +46,30 @@ check_pipeline    D    17       "17:00 ET (Mon-Fri) — alpha panel"
 check_pipeline    B    20       "20:00 ET (Mon-Fri)"
 check_pipeline    C    8        "08:00 ET (Mon-Fri) — pre-open"
 
+echo "── Health check ──"
+~/.pyenv/versions/ml_quant_310/bin/python - <<'PYEOF'
+import json, os, datetime as dt
+p = os.path.expanduser('~/Desktop/ML_Quant_Fund/logs/health_status.json')
+try:
+    d = json.load(open(p))
+    ts = dt.datetime.fromisoformat(d['checked_at'])
+    mins = (dt.datetime.now() - ts).total_seconds() / 60
+    age = f"{mins:.0f}m ago" if mins < 120 else f"{mins/60:.1f}h ago"
+    if mins > 30 * 60:
+        print(f"⚠️  STALE — last health check {age} ({ts:%Y-%m-%d %H:%M}). "
+              f"Is the 13:00 VN cron running?")
+    if d.get('status') == 'ok':
+        print(f"✅ all checks passed   (checked {ts:%H:%M}, {age}, for {d.get('last_date')})")
+    else:
+        print(f"❌ {', '.join(d.get('failures') or ['unknown'])}   "
+              f"(checked {ts:%H:%M}, {age}, for {d.get('last_date')})")
+except FileNotFoundError:
+    print("○ no health_status.json yet — run scripts/health_check.py once")
+except Exception as e:
+    print(f"health status read error: {e}")
+PYEOF
+echo ""
+
 echo "── DB predictions today ──"
 TODAY=$(~/.pyenv/versions/ml_quant_310/bin/python -c 'from utils.timezone import today_et; print(today_et())')
 sqlite3 ~/Desktop/ML_Quant_Fund/accuracy.db <<SQL
