@@ -2729,6 +2729,87 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
             print(f"  Snippet: {snippet[:500]}{'...' if len(snippet) > 500 else ''}")
 
 
+def section_periodic_content(conn: sqlite3.Connection, ticker: str) -> None:
+    """Scan the most recent 10-K / 10-Q for earnings-quality items the cover
+    page and press release omit.
+
+    WHY (Aug 1 2026): MSFT's FY26 10-K carried a $3.2B Anthropic equity gain
+    and a 15->25yr useful-life change -- both materially alter how GAAP EPS
+    reads, both invisible to the 8-K scanner (which reads the press-release
+    exhibit) and to the XBRL cover page. Same family as the EPS basis-mismatch
+    work: a GAAP number inflated by a one-time mark is not an operating result.
+
+    Deliberately NOT parsing HTML financial tables (brittle across filers);
+    targeted text extraction reaches both target classes. See
+    scripts/section_periodic_content.py for the extractor and its rationale."""
+    print(f"\n=== 10-K / 10-Q CONTENT SCAN — {ticker} ===")
+    try:
+        # This file runs AS A SCRIPT, so sys.path[0] is scripts/, not the repo
+        # root -- "from scripts.x import y" fails with No module named 'scripts'.
+        # Import by sibling name, with a root-path fallback (the pattern the
+        # Massive block already uses).
+        try:
+            from section_periodic_content import scan_periodic_text, fmt_usd
+        except ImportError:
+            import sys as _sy, os as _os
+            _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+            if _R not in _sy.path:
+                _sy.path.insert(0, _R)
+            from scripts.section_periodic_content import scan_periodic_text, fmt_usd
+    except Exception as _e:
+        print(f"  [warn] extractor unavailable: {_e}")
+        return
+
+    cik = get_cik(ticker)
+    if cik is None:
+        print(f"  No CIK for {ticker}; skipping.")
+        return
+    cur = conn.cursor()
+    rows = list(cur.execute("""
+        SELECT accession_number, filing_date, primary_doc, form_type
+        FROM edgar_filings
+        WHERE ticker = ? AND form_type IN ('10-Q','10-K','10-Q/A','10-K/A')
+        ORDER BY filing_date DESC LIMIT 2
+    """, (ticker,)))
+    if not rows:
+        print("  No 10-K/10-Q on file for this ticker.")
+        return
+
+    import re as _rp
+    for acc, fdate, primary, ftype in rows[:1]:  # newest only; these are 5-15MB
+        if not primary:
+            print(f"  {ftype} {fdate}: no primary document recorded.")
+            continue
+        url = build_form4_url(cik, acc, primary)
+        text = edgar_get_text(url)
+        if not text:
+            print(f"  {ftype} {fdate}: could not fetch {primary}.")
+            continue
+        cleaned = _rp.sub(r"\s+", " ", _rp.sub(r"<[^>]+>", " ", text)).strip()
+        print(f"  --- {ftype} {fdate} (accession {acc}, {len(cleaned):,} chars) ---")
+        inc, pol = scan_periodic_text(cleaned)
+        if inc:
+            print("  Non-operating / one-time income items (>= $500M):")
+            for v, sent in inc:
+                print(f"    {fmt_usd(v):>8}  {sent[:230]}")
+            _big = inc[0][0]
+            if _big >= 1e9:
+                flag("MED", ticker,
+                     f"{ftype} carries a {fmt_usd(_big)} non-operating item -- "
+                     f"GAAP EPS is not an operating result this period")
+        else:
+            print("  No non-operating income items >= $500M detected.")
+        if pol:
+            print("  Accounting estimate / policy changes:")
+            for k, sent in pol:
+                print(f"    [{k}] {sent[:230]}")
+            flag("MED", ticker,
+                 f"{ftype} reports an accounting-estimate change "
+                 f"({pol[0][0]}) -- comparability across periods affected")
+        else:
+            print("  No accounting-estimate changes detected.")
+
+
 # ---------------------------------------------------------------------------
 # Section: sector cohort (peer comparison — distinguishes idiosyncratic
 # moves from sector-wide rotation)
@@ -4262,7 +4343,7 @@ def main() -> int:
     p.add_argument("--skip", nargs="+", default=[],
                    choices=["insiders", "institutional", "darkpool", "options",
                             "shorts", "ohlc", "massive", "edgar", "peer", "form4",
-                            "calendar", "implied", "eightk", "cohort", "news",
+                            "calendar", "implied", "eightk", "periodic", "cohort", "news",
                             "macro", "squeeze"],
                    help="Skip one or more sections")
     args = p.parse_args()
@@ -4316,6 +4397,8 @@ def main() -> int:
             section_edgar(conn, ticker, args.since)
         if "eightk" not in args.skip:
             section_eightk_content(conn, ticker)
+        if "periodic" not in args.skip:
+            section_periodic_content(conn, ticker)
         if "form4" not in args.skip:
             section_form4_details(conn, ticker, args.since)
         if "insiders" not in args.skip:
