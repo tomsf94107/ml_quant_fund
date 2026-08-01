@@ -57,9 +57,16 @@ def build_panel(tickers, start=HISTORY_START):
     # features.builder._download. WHY: XProtect 5347 (Jun 2026) flags certain
     # ETF fetches (SPY, SLV, ...) as malware at the network layer, killing the
     # whole run. Reading cached adj_close runs zero network fetches, so nothing
-    # trips XProtect — and uncached names (index/commodity ETFs) are correctly
-    # excluded from an equity-momentum cross-section anyway. adj_close is the
-    # right series for momentum (split/div adjusted).
+    # trips XProtect. adj_close is the right series for momentum (split/div
+    # adjusted).
+    # CORRECTED Aug 1 2026: this comment used to claim index/commodity ETFs were
+    # "correctly excluded" as uncached. FALSE -- prices.db has carried SPY/QQQ/
+    # SLV since 2022-01-03, and all 9 ETFs in tickers.txt have been in the shadow
+    # book since its first date (2026-05-29). Measured impact: 2.3% of the
+    # cross-section, ONE ETF BUY candidate in the entire history (SLV, 06-12).
+    # analysis/momentum_18yr_test.py pivots the SAME daily_prices with no ticker
+    # filter, so backtest and shadow share the universe -- no parity gap, no
+    # action needed. The comment was the only defect.
     import sqlite3
     PRICES_DB = ROOT / "prices.db"
     want = [t.strip().upper() for t in tickers if t and t.strip()]
