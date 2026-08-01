@@ -57,3 +57,7 @@ alone is NOT sufficient evidence a defect is open — several fixes are invisibl
 | EPS vendor basis mismatch | FIXED (detector) | Aug-1 | 37 tickers show 4+ quarters ALL negative avg < -10pct -- vendor actual is GAAP-ish, estimate is street non-GAAP. Per-ticker signature detection at render; hand blocklist does not scale. Landmine for any future SUE work: 37 of ~400 names carry systematic fake-negative surprises |
 | AMZN Form-4 undercount | RETRACTED | Aug-1 | 0.51M = 14-day window, 37.72M = 90-day window, both correct. Parser fine; the report compared different denominators |
 | WAL journal mode | DONE | Aug-1 | earnings_monitor.db + short_interest.db were the only rollback-mode DBs; the former is where both lock crashes occurred. Backups must copy .db + -wal + -shm |
+
+## RESEARCH PRECONDITION (Aug 1 2026)
+
+PEAD/SUE work: `earnings_cache.actual_eps` is UNUSABLE as a surprise input for ~37 of 400 tickers -- the vendor actual is GAAP-ish while est_eps is street non-GAAP, producing 4-7 consecutive fake double-digit misses (SNOW -440pct, NET -135, CRWD -104, MRVL -22, AMD -19). Any SUE construction must source actual and estimate from the SAME basis. PEAD is already VOID for look-ahead; this is a second, independent poisoning of the same input.
