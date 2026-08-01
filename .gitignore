@@ -138,3 +138,5 @@ prices.db.BACKUP*
 accuracy.db.BACKUP*
 squeeze_*.csv
 squeeze_*.db
+
+scripts/crontab_*.broken.*
