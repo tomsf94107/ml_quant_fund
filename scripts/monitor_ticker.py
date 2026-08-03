@@ -2441,13 +2441,43 @@ def section_implied_move(ticker: str) -> None:
     _T0 = max((date.fromisoformat(str(chosen_exp)[:10]) - _today_et()).days, 0) / 365.0
     _fpar = abs((call_mid - put_mid) - (spot - chosen_strike * _m.exp(-_RF * _T0)))
     _parity_ok = _fpar <= max(0.015 * spot, 0.50)
-    print(f"  Strike:         ${chosen_strike:.2f}")
+    # INTRINSIC STRIP (Aug 3 2026). A straddle is only an implied MOVE when the
+    # strike sits at spot. Off-strike, straddle = |S-K| intrinsic + time value,
+    # and only the time value is the market's move estimate. Parity CANNOT catch
+    # this -- an off-ATM chain satisfies C-P = S-K perfectly, which is exactly
+    # why the guard passed on the specimen. BYND Aug-3: spot $0.62, strike $0.50
+    # (nearest listed; penny-name strike grids are coarse), straddle $0.155 of
+    # which $0.12 was intrinsic -> printed +/-25.08% and flagged "RICH 2.57x"
+    # when the true time-value move was ~5.6%, i.e. CHEAP ~0.57x. The verdict
+    # was inverted, on a name printing in 2 days. Universal; worst on low-priced
+    # tickers where one strike increment is a large % of spot.
+    _intrinsic = abs(spot - chosen_strike)
+    _tv = max(straddle - _intrinsic, 0.0)
+    _tv_pct = (_tv / spot) * 100 if spot else 0.0
+    _off_atm = (_intrinsic / straddle * 100) if straddle else 0.0
+    print(f"  Strike:         ${chosen_strike:.2f}"
+          + (f"   [OFF-ATM: ${_intrinsic:.2f} intrinsic = {_off_atm:.0f}% of the "
+             f"straddle; strike is {abs(spot-chosen_strike)/spot*100:.1f}% from spot]"
+             if _off_atm >= 5 else ""))
     print(f"  Call mid:       ${call_mid:.2f}")
     print(f"  Put mid:        ${put_mid:.2f}")
     print(f"  Straddle cost:  ${straddle:.2f}")
     if _parity_ok:
-        print(f"  Implied move:   ±{implied_pct:.2f}%")
-        print(f"  Implied range:  ${spot - straddle:.2f}  to  ${spot + straddle:.2f}")
+        if _off_atm >= 5:
+            print(f"  Implied move:   ±{_tv_pct:.2f}%  (TIME VALUE ${_tv:.2f} of a "
+                  f"${straddle:.2f} straddle; raw straddle/spot would read "
+                  f"±{implied_pct:.2f}% but ${_intrinsic:.2f} of it is intrinsic)")
+            print(f"  Implied range:  ${spot - _tv:.2f}  to  ${spot + _tv:.2f}  "
+                  f"(time-value based)")
+            if _off_atm >= 20:
+                flag("MED", ticker,
+                     f"Implied move computed off an OFF-ATM strike "
+                     f"(${chosen_strike:.2f} vs spot ${spot:.2f}): {_off_atm:.0f}% of "
+                     f"the straddle is intrinsic. Move is ±{_tv_pct:.1f}% on time "
+                     f"value, not ±{implied_pct:.1f}%")
+        else:
+            print(f"  Implied move:   ±{implied_pct:.2f}%")
+            print(f"  Implied range:  ${spot - straddle:.2f}  to  ${spot + straddle:.2f}")
     else:
         print(f"  Implied move:   SUPPRESSED -- put-call parity gap ${_fpar:.2f} "
               f"(tolerance ${max(0.015 * spot, 0.50):.2f})")
@@ -2456,6 +2486,9 @@ def section_implied_move(ticker: str) -> None:
               f"anchor scenario bands to it.")
         flag("MED", ticker, f"Implied-move chain fails parity by ${_fpar:.2f} at "
                             f"{chosen_exp} -- move SUPPRESSED, no number published")
+    # RICH/CHEAP must compare like with like: historical avg |move| is a pure
+    # move, so the implied side has to be time value, not straddle-with-intrinsic.
+    _cmp_pct = _tv_pct if _off_atm >= 5 else implied_pct
     hist = cfg.get("_avg_abs_move")
     if hist and not _parity_ok:
         print(f"  Historical avg: RICH/CHEAP comparison suppressed -- the straddle "
@@ -2466,7 +2499,7 @@ def section_implied_move(ticker: str) -> None:
               f"to a non-earnings weekly straddle; RICH/CHEAP comparison suppressed.")
         hist = None
     if hist:
-        ratio = implied_pct / hist
+        ratio = _cmp_pct / hist
         if ratio >= 1.4:
             print(f"  Historical avg: ±{hist:.1f}% — implied is {ratio:.2f}x (RICH)")
             flag("INFO", ticker,
