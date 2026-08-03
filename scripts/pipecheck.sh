@@ -64,9 +64,21 @@ try:
     ts = dt.datetime.fromisoformat(d['checked_at'])
     mins = (dt.datetime.now() - ts).total_seconds() / 60
     age = f"{mins:.0f}m ago" if mins < 120 else f"{mins/60:.1f}h ago"
-    if mins > 30 * 60:
-        print(f"⚠️  STALE — last health check {age} ({ts:%Y-%m-%d %H:%M}). "
-              f"Is the 13:00 VN cron running?")
+    # SCHEDULE-AWARE (Aug 3 2026). health_check runs `0 13 * * 2-6` = Tue-Sat,
+    # so a Sat 13:00 -> Tue 13:00 gap is 72h and completely normal. The flat 30h
+    # threshold cried STALE every Sunday and Monday -- the exact false-alarm
+    # class this display exists to end. Compare against the most recent
+    # SCHEDULED run instead of a fixed age.
+    _now = dt.datetime.now()
+    _exp, _probe = None, _now.replace(hour=13, minute=0, second=0, microsecond=0)
+    for _ in range(9):
+        if _probe <= _now and _probe.weekday() in (1, 2, 3, 4, 5):  # Tue..Sat
+            _exp = _probe
+            break
+        _probe -= dt.timedelta(days=1)
+    if _exp and ts < _exp - dt.timedelta(hours=1):
+        print(f"⚠️  STALE — last health check {age} ({ts:%Y-%m-%d %H:%M}); "
+              f"expected a run at {_exp:%a %Y-%m-%d 13:00}. Is the cron firing?")
     if d.get('status') == 'ok':
         print(f"✅ all checks passed   (checked {ts:%H:%M}, {age}, for {d.get('last_date')})")
     else:
