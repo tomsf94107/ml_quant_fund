@@ -2348,7 +2348,14 @@ def section_implied_move(ticker: str) -> None:
     # two are on DIFFERENT CLOCKS -> re-anchor spot to the live quote (the
     # mids' own clock) and say so. Small divergences keep the close for
     # report reproducibility.
-    _SPOT_CLOCK_TOL = 0.02
+    # TIGHTENED 0.02 -> 0.01 (Aug 3 2026). The clock guard exists to prevent the
+    # very mismatch the parity guard then punishes, so its threshold must be
+    # STRICTLY TIGHTER than parity's (1.5% of spot). At 2% they were ordered
+    # backwards and left a dead band: PLTR on its print day moved 1.88% -- too
+    # small to re-anchor, large enough to break parity -- so the implied move AND
+    # all four term-structure horizons were SUPPRESSED for a reason that was not
+    # real. Re-anchoring collapses the gap from $2.38 to ~$0.07.
+    _SPOT_CLOCK_TOL = 0.01
     _spot_src = f"close {_spot_bar}"
     if _quote_ctx and spot:
         _div = abs(_quote_ctx - spot) / spot
