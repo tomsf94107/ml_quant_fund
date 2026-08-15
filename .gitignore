@@ -140,3 +140,10 @@ squeeze_*.csv
 squeeze_*.db
 
 scripts/crontab_*.broken.*
+_archive/
+
+# one-off validation outputs (reproducible from scripts/)
+confidence_*.csv
+crwv_highconf.csv
+horizon_decay.csv
+prob_col_*.csv

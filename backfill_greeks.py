@@ -56,6 +56,14 @@ con.execute("""CREATE TABLE IF NOT EXISTS options_greeks (
 con.commit()
 
 tks = [l.strip().upper() for l in open("tickers.txt") if l.strip() and not l.startswith("#")]
+# Watchlist names (ECHO, CBRS, AAAU, NTDOY) were never fetched: this read
+# tickers.txt only, while the fund keeps THREE universe files. 2026-08-15.
+try:
+    tks += [l.strip().upper() for l in open("tickers_watchlist.txt")
+            if l.strip() and not l.startswith("#")]
+    tks = list(dict.fromkeys(tks))
+except FileNotFoundError:
+    pass
 print(f"  {len(tks)} tickers, ~250 trading days each -> ~{len(tks)*250:,} rows expected")
 
 def f(x):
@@ -71,7 +79,11 @@ for i, t in enumerate(tks, 1):
         if fail <= 5: print(f"    {t}: {str(e)[:45]}")
         continue
     if not data:
-        fail += 1; continue
+        fail += 1
+        # was SILENT: 3 failures per run, never named. Same silent-fallback
+        # class as price_cache's empty-gap no-op. 2026-08-15.
+        print(f'    {t}: EMPTY data (vendor returned no rows)')
+        continue
     batch = []
     for x in data:
         d = str(x.get("date") or "")[:10]

@@ -847,7 +847,7 @@ with tab_forecast:
       *{{box-sizing:border-box;margin:0;padding:0;}}
       .ft{{font-family:'IBM Plex Mono',monospace;background:#0a0a0f;border:1px solid #1e1e2e;border-radius:8px;overflow:clip;}}
       .ft-head{{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:6% 5% 4% 6% 9% 7% 6% 6% 5% 6% 8% 8% 8% 5% 7%;padding:8px 14px;background:#0d0d18;font-size:10px;color:#4a5568;letter-spacing:.08em;border-bottom:1px solid #1e1e2e;}}
-      .ft-head span{{text-align:right;cursor:pointer;user-select:none;white-space:nowrap;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
+      .ft-head > span{{text-align:right;cursor:pointer;user-select:none;white-space:nowrap;}} .ft-head span:first-child,.ft-head span:nth-child(2){{text-align:left;}}
       .ft-head span:hover{{color:#94a3b8;}}
       .ft-head span.sort-asc::after{{content:" ▲";font-size:8px;}}
       .ft-head span.sort-desc::after{{content:" ▼";font-size:8px;}}
@@ -888,7 +888,7 @@ with tab_forecast:
       let sortCol = null;
       let sortDir = 1;
       const tbody = document.getElementById('tbody');
-      const headers = document.querySelectorAll('.ft-head span');
+      const headers = document.querySelectorAll('.ft-head > span');
       const colKeys = ['Ticker','Signal','DTC','Price','Prob Eff','Prob Global','Rec Weight','Rank','A8','Blend','Target ▲','Target ▼','Exp Return','ATR','Sharpe'];
 
       function parseVal(v) {{

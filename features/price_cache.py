@@ -122,6 +122,14 @@ def cached_daily(ticker, start, end, fetch_raw_fn, fetch_splits_fn) -> pd.DataFr
                 gap = fetch_raw_fn(ticker, gap_start, end_s)
                 if gap is not None and not gap.empty:
                     _write_raw(con, ticker, gap)
+                else:
+                    # An empty gap fetch means the vendor served nothing for a window
+                    # we believe should have bars. Silent before Aug 2026: 10 tickers
+                    # went stale undetected, CYBR for ~6 months (delisted 2026-02-11).
+                    log.warning(
+                        "price_cache: EMPTY gap fetch %s %s..%s (last=%s) -- "
+                        "feed may be dead/delisted; run repair_stale_feeds.py",
+                        ticker, gap_start, end_s, last)
         try:
             sl = fetch_splits_fn(ticker)
             if sl:

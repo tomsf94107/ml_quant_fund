@@ -144,3 +144,21 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 0 8 12 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_darkpool_skew.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/skew_gate.log 2>&1
 # Dark-pool partial-day self-heal -- monthly, 12th 09:00 VN
 0 9 12 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/repair_all_darkpool.py --max-tickers 40 --days 45 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/repair_all_darkpool.log 2>&1
+
+# Per-ticker trailing-edge feed repair (added 2026-08-15).
+# Fills the gap neither backfill_raw_bars.py (earliest-date depth) nor
+# price_cache (silent empty-gap no-op) covered. Zero API calls when nothing
+# is stale. Runs 30min before feed_freshness_check so that acts as verifier.
+0 12 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && ML_QUANT_ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/repair_stale_feeds.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/repair_stale_feeds.log 2>&1
+
+# Monthly IC log (added 2026-08-15). Option C: the recent-window confidence
+# signal is ~74 dates short of t>3. The answer comes from ACCUMULATION, not
+# from re-running on the same data. Logs raw + bucket-neutral to ic_history.
+0 11 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_confidence_filter.py --days 80 --horizons 1,3,5 --thresholds 0.60 --shuffles 200 --bootstrap 2000 --prob-col prob_up --cost-bps 10 --log >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/ic_history.log 2>&1
+30 11 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_confidence_filter.py --days 80 --horizons 1,3,5 --thresholds 0.60 --shuffles 200 --bootstrap 2000 --prob-col prob_up --sector-neutral --cost-bps 10 --log >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/ic_history.log 2>&1
+
+# Walk-forward breadth alert (added 2026-08-15). walk_forward_history runs weekly
+# but NOTHING read it -- h=5 breadth fell 38.1% -> 27.5% unnoticed. --since
+# 2026-07-19 excludes two contaminated eras: the shallow 2022+ panel (free-tier
+# key, ~9 folds / one regime) and the 2026-07-13 stale-panel incident.
+0 14 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/wf_breadth_alert.py --since 2026-07-19 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/wf_breadth.log 2>&1
