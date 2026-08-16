@@ -878,8 +878,8 @@ with tab_forecast:
     </div>
     <div class="legend">
       📖 &nbsp;
-      <span style="color:#22c55e">▲ Target = price + ATR</span> &nbsp;·&nbsp;
-      <span style="color:#ef4444">▼ Target = price − ATR</span> &nbsp;·&nbsp;
+      <span style="color:#22c55e">▲ Target = price + ATR×√h</span> &nbsp;·&nbsp;
+      <span style="color:#ef4444">▼ Target = price − ATR×√h</span> &nbsp;·&nbsp;
       <span style="color:#94a3b8">Exp Return = prob-weighted gain/loss</span> &nbsp;·&nbsp;
       <span style="color:#3b82f6">Bar = prob vs threshold</span>
     </div>

@@ -14,7 +14,7 @@ TIME-CRITICAL: dark-pool history is a ~44-day perishable UW window -> runs FIRST
 import argparse, csv, os, shutil, sqlite3, subprocess, sys
 from datetime import datetime, timezone
 
-VERSION = "add_ticker v2.3"
+VERSION = "add_ticker v2.4"
 
 ROOT = os.path.expanduser(os.environ.get("ML_QUANT_ROOT", "~/ML_Quant_Fund"))
 META = os.path.join(ROOT, "tickers_metadata.csv")
@@ -138,11 +138,27 @@ def seed_prices(ticker, start, dry):
         from features import massive_client as mc
         from features import price_cache as pc
     except Exception as e:
-        return f"IMPORT-FAIL {e.__class__.__name__}"
+        return f"IMPORT-FAIL {e.__class__.__name__}: {str(e)[:60]}"
+    # end=None raised ValueError for every ticker on 2026-08-16 -- the manual path
+    # that works passes an EXPLICIT end date. Use the last completed ET session.
     try:
-        raw = mc.download(ticker, start=start, end=None, auto_adjust=False)
+        from zoneinfo import ZoneInfo
+        from datetime import datetime as _dtm, timedelta as _td
+        _now = _dtm.now(ZoneInfo("America/New_York"))
+        _d = _now.date() - (_td(days=1) if _now.hour < 17 else _td(days=0))
+        while _d.weekday() >= 5:
+            _d -= _td(days=1)
+        end = _d.isoformat()
+    except Exception:
+        from datetime import date as _dte
+        end = _dte.today().isoformat()
+    try:
+        raw = mc.download(ticker, start=start, end=end, auto_adjust=False)
     except Exception as e:
-        return f"FETCH-FAIL {e.__class__.__name__}"
+        # Print the MESSAGE, not just the class. "FETCH-FAIL ValueError" told us
+        # nothing and cost a round trip -- the same silent-failure pattern this
+        # script exists to prevent.
+        return f"FETCH-FAIL {e.__class__.__name__}: {str(e)[:60]}"
     n = 0 if raw is None else len(raw)
     if not n:
         return "NO-VENDOR-DATA (check symbol / corporate action)"
@@ -152,7 +168,7 @@ def seed_prices(ticker, start, dry):
         con.commit()
         con.close()
     except Exception as e:
-        return f"WRITE-FAIL {e.__class__.__name__}"
+        return f"WRITE-FAIL {e.__class__.__name__}: {str(e)[:60]}"
     return f"SEEDED {n} rows"
 
 
@@ -299,6 +315,20 @@ def main():
             for t, r in seeded.items():
                 print(f"#   {t:8s} {r}")
             print()
+
+    # HARD GATE: never enrol a ticker whose price seed failed. On 2026-08-16 all
+    # 12 seeds failed and all 12 were still written to tickers.txt, which is the
+    # exact stale-panel condition the seed ordering was meant to prevent.
+    if not args.no_seed and not args.dry_run:
+        failed = [t for t, r in seeded.items()
+                  if not (r.startswith("SEEDED") or r.startswith("DRY"))]
+        if failed:
+            print(f"# SEED FAILED for {', '.join(failed)} -- NOT enrolling them.")
+            print("#   A ticker in tickers.txt with no bars trips the stale-panel")
+            print("#   guard on every run. Fix the seed, or pass --no-seed to")
+            print("#   enrol deliberately without data.")
+            new_names = [t for t in new_names if t not in failed]
+            to_add = [t for t in to_add if t not in failed]
 
     enrolled = []
     if not args.dry_run:
