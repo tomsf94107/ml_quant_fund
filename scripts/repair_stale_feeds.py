@@ -83,9 +83,31 @@ def retired_set():
     return out
 
 
+def _read_meta_tickers():
+    """Tickers in tickers_metadata.csv.
+
+    These MUST be in scope even when absent from tickers.txt: monitor_ticker.py's
+    _bucket_cohort() selects peers FROM THE METADATA FILE, so a metadata-only
+    ticker can be chosen as a peer for a traded name. If its feed goes stale the
+    peer-relative panel silently compares against stale prices. WCC is exactly
+    this case -- metadata-only, one of the 10 dead feeds found 2026-08-15, and
+    skipped by the original scoping."""
+    import csv as _csv, os as _os
+    p = _os.path.join(ROOT, "tickers_metadata.csv")
+    if not _os.path.isfile(p):
+        return set()
+    out = set()
+    for i, r in enumerate(_csv.reader(open(p, newline=""))):
+        if i == 0 or not r or not r[0].strip():
+            continue
+        out.add(r[0].strip().upper())
+    return out
+
+
 def active_set():
-    """The universe that SHOULD be fresh: runner + watchlist."""
-    return _read_lines("tickers.txt") | _read_lines("tickers_watchlist.txt")
+    """Everything that SHOULD be fresh: runner + watchlist + metadata (peers)."""
+    return (_read_lines("tickers.txt") | _read_lines("tickers_watchlist.txt")
+            | _read_meta_tickers())
 
 
 def stale_tickers(max_age_days, only=None):
@@ -195,7 +217,7 @@ def main():
     if skipped_retired:
         print(f"# RETIRED (skipped, will never refresh): {', '.join(sorted(skipped_retired))}")
     if skipped_inactive:
-        print(f"# not in active universe (skipped): {', '.join(sorted(skipped_inactive)[:12])}"
+        print(f"# not in universe or metadata (skipped): {', '.join(sorted(skipped_inactive)[:12])}"
               + (" ..." if len(skipped_inactive) > 12 else ""))
     if args.dry_run:
         print("# DRY-RUN: no fetches, no writes")
