@@ -14,7 +14,7 @@ TIME-CRITICAL: dark-pool history is a ~44-day perishable UW window -> runs FIRST
 import argparse, csv, os, shutil, sqlite3, subprocess, sys
 from datetime import datetime, timezone
 
-VERSION = "add_ticker v2.4"
+VERSION = "add_ticker v2.5"
 
 ROOT = os.path.expanduser(os.environ.get("ML_QUANT_ROOT", "~/ML_Quant_Fund"))
 META = os.path.join(ROOT, "tickers_metadata.csv")
@@ -109,14 +109,35 @@ def load_meta():
     return header, tcol, existing
 
 
+SECTOR_COLS = ("sector", "bucket", "industry", "group")
+COHORT_COLS = ("cohort", "tier")
+
+
 def append_meta(header, tcol, ticker, sector, cohort):
+    """Write a metadata row, mapping --sector / --cohort to whatever the file
+    actually calls those columns.
+
+    BUG FIXED 2026-08-17: v2.x looked for a column literally named "sector" and
+    mapped --cohort to "cohort" OR "bucket". This file's header is
+    ticker,bucket,tier,thesis,notes -- so --sector was SILENTLY DISCARDED and
+    --cohort landed in the BUCKET column. Result: 18 tickers added with empty
+    buckets (invisible to every sector-neutral run) and SPCX written as
+    'SPCX,lotto,,,'. Both column families are now resolved by candidate list,
+    and a requested value that cannot be placed FAILS LOUDLY."""
+    hl = [h.strip().lower() for h in header]
+    scol = next((i for i, h in enumerate(hl) if h in SECTOR_COLS and i != tcol), None)
+    ccol = next((i for i, h in enumerate(hl) if h in COHORT_COLS and i not in (tcol, scol)), None)
+    if sector and scol is None:
+        sys.exit(f"FATAL: --sector '{sector}' given but {META} has no column from "
+                 f"{SECTOR_COLS}. Columns: {', '.join(header)}")
+    if cohort and ccol is None:
+        sys.exit(f"FATAL: --cohort '{cohort}' given but {META} has no column from "
+                 f"{COHORT_COLS}. Columns: {', '.join(header)}")
     shutil.copy2(META, META + ".bak")
     row = [""] * len(header)
     row[tcol] = ticker
-    for i, h in enumerate(header):
-        hl = h.strip().lower()
-        if hl == "sector" and sector: row[i] = sector
-        elif hl in ("cohort", "bucket") and cohort: row[i] = cohort
+    if sector and scol is not None: row[scol] = sector
+    if cohort and ccol is not None: row[ccol] = cohort
     with open(META, "a", newline="") as f:
         csv.writer(f).writerow(row)
 
