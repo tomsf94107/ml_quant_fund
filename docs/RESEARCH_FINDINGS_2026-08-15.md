@@ -35,7 +35,7 @@ BH-FDR). Horizons 1/3/5, thresholds 0.55–0.70, 365-day window, full universe.
 
 ### 1.1 The decisive test — group-neutralisation
 
-| Horizon | raw IC | bucket-neutral (48 grp) | retained |
+| Horizon | raw IC | bucket-neutral (45 grp) | retained |
 |---|---|---|---|
 | h=1 | +0.01389 | +0.00749 | 54% |
 | **h=3** | **+0.02228** | **+0.00241** | **11%** |
@@ -65,7 +65,7 @@ Started from CRWV showing 100% accuracy (11/11) at `prob_up≥0.60`, h=3:
 | Pooled hit rate | z = 4.97 | — |
 | Dependence-corrected | z = **0.36** | cross-sectional dependence |
 | Per-date, beta-neutral | t = 1.32 → NW ~1.0 | market drift |
-| Group-neutral | 11% retention | bucket exposure |
+| Group-neutral | 12.4% retention | bucket exposure |
 
 **Beta, quantified:** the LOW-confidence bucket averaged **+0.672% per 3 days**
 over the window. Accuracy in a rising tape is mostly drift.
