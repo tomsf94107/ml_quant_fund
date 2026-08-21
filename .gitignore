@@ -152,3 +152,7 @@ prob_col_*.csv
 *" ("[0-9]")".py
 universe_all.txt
 universe_dump.txt
+
+# validation outputs (regenerable from scripts/validate_signal.py)
+gex_*.csv
+vanna_*.csv
