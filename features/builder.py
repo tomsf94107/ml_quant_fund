@@ -524,6 +524,106 @@ SECTOR_ETF_MAP = {
     "SPY":"SPY","QQQ":"QQQ","GLD":"GLD","SLV":"SLV",
     "XLF":"XLF","XLE":"XLE","XLV":"XLV","XLI":"XLI","XLU":"XLU",
 }
+
+# ── Bucket-derived sector ETF fallback (added 2026-08-21) ───────────────────
+# SECTOR_ETF_MAP is hand-maintained and therefore always behind the universe:
+# 16 of 411 tickers were unmapped, all added in the prior two days, and every
+# one silently fell back to the MARKET etf -- making "sector-relative" identical
+# to "market-relative". add_ticker writes tickers_metadata.csv on every add, so
+# resolving through the bucket keeps new tickers covered automatically.
+BUCKET_ETF_MAP = {
+    "AI": "XLK",
+    "Ad Tech": "XLC",
+    "Automotive": "XLY",
+    "Biotech": "XLV",
+    "Commodities": "XLB",
+    "Consumer": "XLY",
+    "Consumer Disc": "XLY",
+    "Consumer Staples": "XLP",
+    "Consumer Tech": "XLK",
+    "Core Silicon": "SMH",
+    "Crypto": "XLF",
+    "Custom Silicon": "SMH",
+    "Cybersecurity": "XLK",
+    "DC REIT": "XLRE",
+    "Defense": "XLI",
+    "E-commerce": "XLY",
+    "Energy": "XLE",
+    "Energy Storage": "XLI",
+    "Enterprise Software": "IGV",
+    "Financials": "XLF",
+    "Fintech": "XLF",
+    "Healthcare": "XLV",
+    "Hyperscaler": "XLK",
+    "Industrial Gases": "XLB",
+    "Industrials": "XLI",
+    "Infrastructure": "XLI",
+    "Market ETF": "SPY",
+    "Materials": "XLB",
+    "Memory": "SMH",
+    "Neoclouds": "XLK",
+    "Networking": "XLK",
+    "Nuclear": "XLU",
+    "Physical AI": "XLI",
+    "Power": "XLU",
+    "Power/Industrial": "XLI",
+    "PropTech": "XLRE",
+    "Quantum Computing": "XLK",
+    "REITs": "XLRE",
+    "SaaS Victim": "IGV",
+    "Scientific Instruments": "XLV",
+    "Sector ETF": "SPY",
+    "Semiconductor Equipment": "SMH",
+    "Server Hardware": "XLK",
+    "Space Tech": "XLI",
+    "Telecom": "XLC",
+}
+
+
+def _bucket_etf_lookup():
+    """{TICKER: etf} derived from tickers_metadata.csv buckets. Cached."""
+    global _BUCKET_ETF_CACHE
+    try:
+        return _BUCKET_ETF_CACHE
+    except NameError:
+        pass
+    import csv as _csv, os as _os
+    out = {}
+    _p = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                       "tickers_metadata.csv")
+    try:
+        with open(_p, newline="") as _f:
+            _rows = list(_csv.reader(_f))
+        _hdr = [h.strip().lower() for h in _rows[0]]
+        _tc = next((i for i, h in enumerate(_hdr) if h in ("ticker", "symbol")), 0)
+        _bc = next((i for i, h in enumerate(_hdr)
+                    if h in ("bucket", "sector", "industry", "group")), None)
+        if _bc is not None:
+            for _r in _rows[1:]:
+                if _r and len(_r) > max(_tc, _bc) and _r[_tc].strip():
+                    _e = BUCKET_ETF_MAP.get(_r[_bc].strip())
+                    if _e:
+                        out[_r[_tc].strip().upper()] = _e
+    except Exception as _e:
+        log.warning("bucket ETF lookup unavailable (%s); sector falls back to market", _e)
+    _BUCKET_ETF_CACHE = out
+    return out
+
+
+def resolve_sector_etf(ticker):
+    """SECTOR_ETF_MAP -> bucket -> market. Never silently duplicates the market."""
+    _t = (ticker or "").upper()
+    _e = SECTOR_ETF_MAP.get(_t)
+    if _e:
+        return _e
+    _e = _bucket_etf_lookup().get(_t)
+    if _e:
+        return _e
+    log.warning("no sector ETF for %s (not in SECTOR_ETF_MAP, no usable bucket) "
+                "-- sector-relative will equal market-relative", _t)
+    return SECTOR_ETF
+# ────────────────────────────────────────────────────────────────────────────
+
 INSIDER_DB      = os.getenv("INSIDER_DB_PATH", "insider_trades.db")
 CONGRESS_DB     = os.getenv("CONGRESS_DB_PATH", "congress_trades.db")
 
@@ -1560,7 +1660,7 @@ def build_feature_dataframe(
             df["pc_ratio_snap"] = 1.0
 
     # Sector-relative return (stock 1d return minus its sector ETF return)
-    sector_sym = SECTOR_ETF_MAP.get(ticker, SECTOR_ETF)
+    sector_sym = resolve_sector_etf(ticker)
     try:
         import signal as _signal
         def _timeout_handler(signum, frame): raise TimeoutError()
@@ -1571,7 +1671,12 @@ def build_feature_dataframe(
             df["sector_rel_ret"] = df["return_1d"].values - sec_ret.values
         finally:
             _signal.alarm(0)
-    except Exception:
+    except Exception as _sec_e:
+        # was SILENT: an 8s SIGALRM timeout wrote a real-looking 0.0
+        # that the model consumed as data. Value kept (changing it to
+        # NaN would alter model input); it just stops being invisible.
+        log.warning("sector_rel_ret failed for %s vs %s (%s) -- set 0.0",
+                    ticker, sector_sym, type(_sec_e).__name__)
         df["sector_rel_ret"] = 0.0
 
     # Calendar effects

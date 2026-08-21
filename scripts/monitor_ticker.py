@@ -2924,7 +2924,18 @@ def section_sector_cohort(ticker: str) -> None:
         return
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
+    # TICKER_CONFIG carries sector_etf for only 12 of 411 tickers, so the peer
+    # panel benched "vs sector" against SPY for 97% of the universe -- SPY twice.
+    # Fall back to the bucket-derived resolver (features/builder.py, 2026-08-21):
+    # TICKER_CONFIG still wins where set; everything else inherits its bucket ETF.
     sector_etf = cfg.get("sector_etf", "")
+    if not sector_etf:
+        try:
+            from features.builder import resolve_sector_etf as _rse
+            sector_etf = _rse(ticker)
+        except Exception as _e:
+            print(f"  [warn] sector ETF resolver unavailable ({type(_e).__name__});"
+                  f" peer panel will bench vs SPY")
 
     def fetch_returns(t: str) -> dict:
         return _daily_returns(t)
