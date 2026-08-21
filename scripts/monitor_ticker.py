@@ -1239,7 +1239,7 @@ def section_institutional(conn: sqlite3.Connection, ticker: str) -> None:
         print(f"  [note] no prior 13F snapshot (current report_date {_cur_rd}); "
               f"'Delta vs prev' reads +0 until the next filing lands")
     else:
-        print(f"  [note] deltas vs report_date {_prev_rd}")
+        print(f"  [note] snapshot report_date {_cur_rd}; deltas vs prior {_prev_rd}")
 
     # Save current snapshot
     for r in rows:
