@@ -2320,8 +2320,16 @@ def section_implied_move(ticker: str) -> None:
         spot_data = uw_get(f"/api/stock/{ticker}/ohlc/1d", params={"limit": 5})
         spot_rows = (spot_data or {}).get("data") or []
         if spot_rows:
-            spot_rows.sort(key=lambda r: (r.get("date") or r.get("market_time") or
-                                          r.get("start_time") or ""), reverse=True)
+            # /ohlc/1d returns THREE rows per date -- 'pr' (pre), 'r' (regular),
+            # 'po' (post). Keying on date alone made all three TIE, and a stable
+            # sort under reverse=True returns the first in API order: PRE-MARKET.
+            # Rank the session so the REGULAR row wins its date. (2026-08-21)
+            _SESSION_RANK = {"r": 0, "regular": 0, "po": 1, "post": 1,
+                             "pr": 2, "pre": 2, "premarket": 2}
+            spot_rows.sort(key=lambda r: (
+                r.get("date") or r.get("start_time") or "",
+                -_SESSION_RANK.get(str(r.get("market_time") or "r").lower(), 3),
+            ), reverse=True)
             try:
                 spot = float(_f(spot_rows[0], "close", "market_price", "last") or 0)
             except (TypeError, ValueError):
@@ -2335,6 +2343,11 @@ def section_implied_move(ticker: str) -> None:
     # produced quote-anchored implied ranges in 4/4 Jul-21 reports; the OHLC
     # fallback was worse -- reverse-stable sort landed on the PRE-MARKET row).
     _quote_ctx = spot
+    # Session of the live quote. /stock-state -> "regular"; /ohlc/1d -> "r".
+    try:
+        _mkt_sess = str((rt or {}).get("market_time") or "").lower()
+    except Exception:
+        _mkt_sess = ""
     _dr = _daily_returns(ticker) or {}
     _dc = _dr.get("latest")
     _spot_bar = _dr.get("bar_date") or "?"
@@ -2356,6 +2369,17 @@ def section_implied_move(ticker: str) -> None:
     # all four term-structure horizons were SUPPRESSED for a reason that was not
     # real. Re-anchoring collapses the gap from $2.38 to ~$0.07.
     _SPOT_CLOCK_TOL = 0.01
+    # SESSION GATE (2026-08-21). Re-anchoring is correct POST-event, when the
+    # close is stale by the whole gap. It is wrong PRE-MARKET, where a thin
+    # print is less reliable than the settled close -- MP anchored to a
+    # pre-market $56.55 over a settled $58.51 (3.4%). Require a much larger
+    # divergence before a pre-market/closed quote may override the close.
+    # Blocks by NAME so an unrecognised spelling of "post" cannot silently
+    # disable the post-earnings re-anchor this guard exists for.
+    if _mkt_sess.startswith("pr") or _mkt_sess in ("closed", "c", "clsd"):
+        _SPOT_CLOCK_TOL = 0.05
+        print(f"  [note] {ticker}: live quote is {_mkt_sess or 'off-session'} "
+              f"-- re-anchor tolerance widened 1% -> 5% (settled close preferred)")
     _spot_src = f"close {_spot_bar}"
     if _quote_ctx and spot:
         _div = abs(_quote_ctx - spot) / spot
@@ -3884,7 +3908,21 @@ def section_peer_relative(ticker: str) -> None:
     print(f"\n=== PEER-RELATIVE PRICE — {ticker} ===")
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
-    sector_etf = cfg.get("sector_etf", "SPY")  # default SPY. The old IWM
+    # TICKER_CONFIG carries sector_etf for only 12 of 411 tickers, so this
+    # panel benched "vs sector" against SPY for 97% of the universe -- SPY
+    # printed twice, which three reports (OPEN/UNH/MRVL 2026-08-21) logged as
+    # a defect. Resolve through the bucket-derived map instead; TICKER_CONFIG
+    # still wins where set. (features/builder.py resolve_sector_etf)
+    sector_etf = cfg.get("sector_etf", "")
+    if not sector_etf:
+        try:
+            from features.builder import resolve_sector_etf as _rse
+            sector_etf = _rse(ticker)
+        except Exception as _e:
+            print(f"  [warn] sector ETF resolver unavailable "
+                  f"({type(_e).__name__}); benching vs SPY")
+            sector_etf = "SPY"
+    _sector_etf_unused = None  # default SPY. The old IWM
     # fallback benchmarked megacaps against small-caps (10 of 12 tickers).
 
     def fetch_returns(t: str) -> dict:
