@@ -1162,6 +1162,10 @@ def _load_risk_flags(dates: pd.Index) -> pd.DataFrame:
 #  PUBLIC API  ←  THE ONLY FUNCTION YOU SHOULD IMPORT FROM THIS MODULE
 # ══════════════════════════════════════════════════════════════════════════════
 
+import logging
+log = logging.getLogger(__name__)
+
+
 def build_feature_dataframe(
     ticker: str,
     start_date: str | date = "2018-01-01",
