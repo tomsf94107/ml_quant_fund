@@ -261,6 +261,19 @@ def do_retire(tickers, reason, dry):
         print("  tickers.txt              not present (already out of runner universe)")
     _remove_from_line_file(watchlist_path(), "tickers_watchlist.txt", want, dry)
 
+    already = set()
+    if os.path.isfile(rp):
+        for _i, _r in enumerate(csv.reader(open(rp))):
+            if _i == 0 and _r and _r[0].strip().lower() in ("ticker", "symbol"):
+                continue
+            if _r and _r[0].strip():
+                already.add(_r[0].strip().upper())
+    to_write = sorted(want - already)
+    dupes = sorted(want & already)
+    print(f"  tickers_retired.csv      PLAN +{len(to_write)}: "
+          f"{', '.join(to_write) if to_write else '(none)'}"
+          + (f"   [already retired: {', '.join(dupes)}]" if dupes else ""))
+
     if dry:
         print("\n# re-run without --dry-run to apply")
         return 0
@@ -271,14 +284,31 @@ def do_retire(tickers, reason, dry):
         w.writerow(header)
         w.writerows(keep)
 
+    # Record the retirement REGARDLESS of universe-file presence. Keying this
+    # on `moved` (rows removed from metadata) meant a ticker already absent from
+    # the CSV got NO row -- exactly the case that most needs one. CYBR was
+    # "retired" 2026-08-15 and left unrecorded; its name survived only inside
+    # EA's reason string, because a comma list shares a single --reason.
     new_file = not os.path.isfile(rp)
     with open(rp, "a", newline="") as f:
         w = csv.writer(f)
         if new_file:
             w.writerow(["ticker", "retired_date", "reason"])
-        for r in moved:
-            w.writerow([r[0].strip().upper(), date.today().isoformat(), reason])
-    print(f"  tickers_retired.csv      +{len(moved)} row(s)")
+        for t in to_write:
+            w.writerow([t, date.today().isoformat(), reason])
+
+    # ASSERT ON THE RESULT, not on the write completing. Re-read from disk.
+    after = set()
+    for _i, _r in enumerate(csv.reader(open(rp))):
+        if _i == 0 and _r and _r[0].strip().lower() in ("ticker", "symbol"):
+            continue
+        if _r and _r[0].strip():
+            after.add(_r[0].strip().upper())
+    unrecorded = want - after
+    print(f"  tickers_retired.csv      +{len(to_write)} row(s), verified on disk")
+    if unrecorded:
+        print(f"\n! FAILED to record: {', '.join(sorted(unrecorded))}")
+        return 1
 
     return 0
 
