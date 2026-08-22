@@ -73,6 +73,67 @@ def _merge_outcomes(panel: pd.DataFrame, db_path: Path, horizon: int) -> pd.Data
     return m
 
 
+
+def _decile_mono(a, r, dates, n_dec: int = 10):
+    """Spearman(decile index, decile mean return), computed PER DATE then averaged.
+
+    Separates tradeable IC from mid-book IC. Equal-weight per date: pooling
+    stock-date rows overweights dates with more names and has twice produced a
+    spurious result in this system (SI brick t=-20; decile spread +0.96% vs the
+    correct -0.10%). Returns None when there are too few usable dates.
+    """
+    try:
+        df = pd.DataFrame({"a": np.asarray(a, dtype=float),
+                           "r": np.asarray(r, dtype=float),
+                           "d": np.asarray(dates)}).dropna()
+        if df.empty:
+            return None
+        # TIE GUARD (2026-08-22). Deciles are only meaningful if the signal can
+        # actually separate names. is_squeeze_setup has an 86.5% modal share, so
+        # a stable sort orders 8 of 10 deciles by ORIGINAL ROW POSITION
+        # (alphabetical by ticker after _load_panel) -- not by signal. It scored
+        # mono +0.94 on what is effectively a 2-point ladder, and appeared at the
+        # top of the survivor list across every transform. ma5_above_ma20 is 62%.
+        # Binary/flag features cannot be decile-ranked; say so rather than
+        # returning a confident number computed off ties.
+        _modal = df["a"].value_counts(normalize=True).iloc[0]
+        if _modal > 0.30:
+            return None
+        sums = np.zeros(n_dec)
+        cnts = np.zeros(n_dec)
+        used = 0
+        for _d, g in df.groupby("d", sort=False):
+            n = len(g)
+            if n < n_dec * 3:            # need ~3 names per decile to be meaningful
+                continue
+            g = g.sort_values("a", kind="mergesort")
+            idx = np.minimum((np.arange(n) * n_dec) // n, n_dec - 1)
+            rv = g["r"].to_numpy()
+            for k in range(n_dec):
+                m = idx == k
+                if m.any():
+                    sums[k] += rv[m].mean()
+                    cnts[k] += 1
+            used += 1
+        if used < 10 or (cnts == 0).any():
+            return None
+        means = sums / cnts
+        rk_i = pd.Series(np.arange(1, n_dec + 1)).rank()
+        rk_m = pd.Series(means).rank()
+        sd_i, sd_m = rk_i.std(), rk_m.std()
+        if not sd_i or not sd_m:
+            return None
+        return round(float(np.corrcoef(rk_i, rk_m)[0, 1]), 4)
+    except Exception as _e:
+        # was a bare except returning None -- indistinguishable from 'ran
+        # and found nothing'. That is the exact failure this column exists
+        # to expose, reintroduced inside the fix for it. 2026-08-22.
+        import os as _os
+        if _os.environ.get('ML_QUANT_MONO_DEBUG'):
+            raise
+        print(f'  [warn] _decile_mono failed: {type(_e).__name__}: {_e}')
+        return None
+
 def _score_one(a: pd.Series, r: pd.Series, dates: pd.Series) -> dict | None:
     """Daily-IC IR method (Grinold): compute cross-sectional rank-IC PER DATE,
     then t-stat the time series of daily ICs. This treats each DAY as one obs
@@ -108,9 +169,14 @@ def _score_one(a: pd.Series, r: pd.Series, dates: pd.Series) -> dict | None:
     vol = rp.std() * np.sqrt(TRADING_DAYS)
     sharpe = net / vol if vol and vol > 0 else 0.0
     fit = np.sqrt(abs(net) / max(turn, TURNOVER_FLOOR)) * sharpe
+    # DECILE MONOTONICITY (added 2026-08-21): rank_ic scores the FULL
+    # cross-section, sharpe scores the EXTREMES. When they disagree in sign this
+    # is the metric that says which. Diagnostic only -- no existing field moves.
+    mono = _decile_mono(a, r, d)
     return {"n_obs": n, "n_days": n_days, "rank_ic": round(ic, 5),
             "ic_t": round(ic_t, 2), "sharpe": round(sharpe, 4),
-            "turnover": round(turn, 4), "fitness": round(fit, 4)}
+            "turnover": round(turn, 4), "fitness": round(fit, 4),
+            "mono": mono}
 
 
 def score_cross_sectional(panel_dir: Path, db_path: Path, horizon: int) -> pd.DataFrame:

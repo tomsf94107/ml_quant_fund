@@ -79,6 +79,7 @@ def _bounds(kind, k):
     return m - 1.28 * se, m - 2.33 * se
 
 def main():
+    _kill_fired = False
     con = sqlite3.connect(DB, timeout=30); cur = con.cursor()
     print("=" * 60); print("MOMENTUM PROMOTION GATE"); print("=" * 60)
 
@@ -120,6 +121,7 @@ def main():
     print("-" * 60)
     c1, c2, c3, c4 = n>=MIN_SAMPLE, edge>lo90, pick_ret>0, wcons>=MIN_WEEK_CONSISTENCY
     if edge < lo99:
+        _kill_fired = True
         print(f"  !! KILL LINE: edge {edge:+.2f}pp < 99% bound {lo99:+.2f}pp -- shadow INCONSISTENT with 18yr backtest, not merely unlucky")
     print(f"  [{'PASS' if c1 else 'FAIL'}] sample >= {MIN_SAMPLE}     ({n})")
     print(f"  [{'PASS' if c2 else 'FAIL'}] edge consistent w/ backtest (> {lo90:+.2f}pp @ k={k_dates})   ({edge:+.2f})")
@@ -130,6 +132,15 @@ def main():
         print("VERDICT: ✅ GO — criteria met. Promotion is JUSTIFIED.")
         print("Deliberate manual step to go live: set MOMENTUM_LIVE=1. Review numbers first.")
         con.close(); return 0
+    if _kill_fired:
+        print("VERDICT: ❌ KILLED — the pre-registered kill line was breached.")
+        print("  The shadow is INCONSISTENT with the backtest, not merely unlucky.")
+        print("  This is a TERMINAL condition, not a deferral: 're-run weekly' after")
+        print("  a kill-line breach lets the signal fail its own test indefinitely.")
+        print("  Retire momentum, or record an explicit written override with a reason.")
+        print("  NOTE the sample: ~2 INDEPENDENT bets (20-session holds, overlapping")
+        print("  dates). The bound above is computed AT k=2 and was still breached.")
+        return 1
     print("VERDICT: ⏳ NOT YET — keep momentum in shadow. Re-run weekly.")
     con.close(); return 1
 

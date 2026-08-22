@@ -18,14 +18,38 @@ def classify_bases(tickers=None, start_date="2025-06-01", n_sample=40):
     """Build base panels for a ticker sample, classify each base feature by
     median distinct-values-across-tickers-per-date. Returns dict[base -> class]."""
     if tickers is None:
-        tickers = load_tickers()[:n_sample]
+        # SAMPLE FIX (2026-08-22): was load_tickers()[:n_sample] -- the first N
+        # ALPHABETICALLY. For a sparse feature that is a biased sample:
+        # inst_signed_flow_30d covers ~47 of 411 names per date, so most of the
+        # first 40 are NaN, distinct-count collapses, and it was classified
+        # market_wide despite 46.6 distinct values/date on the full panel.
+        # It carried IC +0.034, t 3.24, Sharpe +0.55, mono 0.697 and was
+        # excluded from every survivor list.
+        import random as _rnd
+        _all = load_tickers()
+        tickers = (_rnd.Random(17).sample(_all, min(n_sample, len(_all)))
+                   if len(_all) > n_sample else _all)
     panels = build_panels_from_tickers(tickers, start_date, None, verbose=False)
     out = {}
     for base, p in panels.items():
         if p.shape[1] < 5:
             out[base] = "per_ticker"; continue
+        # COVERAGE GUARD: too few names carrying a value makes distinct-count
+        # meaningless. Default to per_ticker (keeps it in the pool) rather than
+        # silently excluding a sparse stock-level signal.
+        _cov = p.notna().sum(axis=1).median()
+        if _cov < 5:
+            out[base] = "per_ticker"; continue
         med = p.nunique(axis=1).median()
-        out[base] = "market_wide" if med <= 2 else "per_ticker"
+        # THRESHOLD FIX (2026-08-22): was `med <= 2`, which cannot distinguish a
+        # genuine market-wide feature from a BINARY PER-TICKER FLAG.
+        # Measured on the live panel, distinct-values-per-date:
+        #   vix_close / oil_ret / xlv_ret_5d          = 1   market-wide
+        #   ma5_above_ma20 / is_squeeze_setup /
+        #   post_earnings_1d                          = 2   PER-TICKER 0/1 flags
+        # At <=2 every binary stock-level flag was excluded from the
+        # stock-picking pool. A market-wide feature is CONSTANT: exactly 1.
+        out[base] = "market_wide" if med <= 1 else "per_ticker"
     return out
 
 
