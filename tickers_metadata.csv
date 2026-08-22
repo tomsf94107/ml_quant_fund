@@ -414,3 +414,18 @@ CCJ,Nuclear,expansion,,
 LEU,Nuclear,lotto,,
 POWL,Power/Industrial,expansion,,
 NVT,Power/Industrial,expansion,,
+JPM,Financials,expansion,,
+IBM,Server Hardware,expansion,,
+XLB,Sector ETF,tactical,0.0,Materials sector
+XLC,Sector ETF,tactical,0.0,Communication Services sector
+XLK,Sector ETF,tactical,0.0,Technology sector
+XLP,Sector ETF,tactical,0.0,Consumer Staples sector
+XLRE,Sector ETF,tactical,0.0,Real Estate sector
+XLY,Sector ETF,tactical,0.0,Consumer Discretionary sector
+SMH,Sector ETF,tactical,0.0,Semiconductors
+IGV,Sector ETF,tactical,0.0,Software — MSFT sector_etf
+USO,Commodities,tactical,0.0,Crude oil — oil_spy_corr source
+HYG,Market ETF,tactical,0.0,High-yield credit — risk appetite
+LQD,Market ETF,tactical,0.0,IG credit — risk appetite
+TLT,Market ETF,tactical,0.0,Long Treasuries — rates
+VIXY,Market ETF,tactical,0.0,Short-term VIX futures

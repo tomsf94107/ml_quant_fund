@@ -8,3 +8,5 @@ MYR,2026-08-16,no vendor data on any endpoint; verify symbol (MYR Group?)
 SPCX,2026-08-17,"SpaceX IPO 2026-06-12; 44 bars < 60-row training floor; ticker reused from prior SPAC ETF (1,330 spliced rows removed)"
 AVB,2026-08-21,merged into EQR->VMRK (Vivmark Residential) 2026-08-17; 2.793 EQR shares per AVB share
 CYBR,2026-08-22,delisted: PANW merger 2026-02-11
+BNED,2026-08-22,"no longer tracked; ad-hoc analysis only, absent from all universe files"
+RC,2026-08-22,"no longer tracked; ad-hoc analysis only, absent from all universe files"
