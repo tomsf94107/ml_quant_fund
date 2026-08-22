@@ -198,6 +198,7 @@ def main():
         if len(g) < args.min_names:
             continue
         row = {}
+        staged = {}
         ok = True
         for k, colname in cand.items():
             sub = g[[colname, "actual_return", "ticker"]].dropna()
@@ -219,11 +220,12 @@ def main():
             gross = sum(w * r for w, r in zip(wv, rr)) / sw
             cur = frozenset(tks)
             to = 1.0 if not prev[k] else len(cur ^ prev[k]) / max(len(cur | prev[k]), 1)
-            prev[k] = cur
+            staged[k] = cur
             row[k] = gross - to * args.cost_bps / 10000.0
             ok = ok and True
         if not ok or len(row) != len(cand):
             continue
+        prev.update(staged)
         for k, v in row.items():
             books[k].append(v)
         rdates.append(d)
