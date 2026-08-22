@@ -156,3 +156,11 @@ universe_dump.txt
 # validation outputs (regenerable from scripts/validate_signal.py)
 gex_*.csv
 vanna_*.csv
+
+# run artifacts (controls + superseded)
+c1_books.csv
+c1_nested.csv
+c1_revorder.csv
+c1_extract.csv
+c1_legs_ctrl.csv
+beta_long_ctrl.csv
