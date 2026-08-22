@@ -2472,3 +2472,30 @@ WRONG WAY because we asked direction when the data wants REVERSION. This is a RE
 NEXT: build a short-term reversal / PCA-residual-reversal test (B14). Question changes from "will
 this go up?" to "has this deviated from its factor-implied value and will it snap back?" Market-
 neutral, fits the data, no new data needed.
+
+## MOMENTUM — PROMOTION CLOSED, SHADOW CONTINUES (2026-08-22)
+
+The pre-registered kill line fired: live edge -10.95pp vs a 99% bound of -6.68pp,
+"INCONSISTENT with the 18yr backtest, not merely unlucky". Win rate 29.6%, weeks
+3/29. momentum_promotion_check.py now prints KILLED and exits 1.
+
+DECISION — the two questions are separate:
+  PROMOTION CANDIDACY: CLOSED. Momentum is not sized, and it no longer gates C1,
+    promotion mechanics, or vol-sizing. Those proceed without it.
+  SHADOW LOGGING: CONTINUES. It costs nothing and k grows ~12/year.
+
+RE-OPEN CONDITION (written 2026-08-22, BEFORE more data arrives, so it cannot be
+quietly moved later):
+    reconsider ONLY when k >= 10 AND live edge clears the consistency bar at k=10.
+  k is currently 2. At ~12 independent bets/year that is roughly mid-2027. Any
+  re-open before k >= 10 requires a written override with a reason.
+
+WHY k MATTERS HERE: 1,128 resolved picks are ~2 INDEPENDENT bets -- 20-session
+holds drawn from 29 dates overlap almost completely. The -6.68pp bound was
+computed AT k=2, so the thin sample was already priced in when the bar was
+breached. Overriding it because two observations feels like too few is the
+reasoning pre-registration exists to prevent; the thinness was knowable in June.
+
+DESIGN LESSON: three months of shadow produced k=2. A verdict was scheduled for
+Jun 29 for a test that could not possibly have enough data by Jun 29. Future
+shadow books must end on K, never on a calendar date.
