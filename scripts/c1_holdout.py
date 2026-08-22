@@ -190,45 +190,15 @@ def main():
     print(f"# rebalances={len(reb)}  test starts {str(split_date)[:10]} "
           f"(last {args.test_dates} dates held out)")
 
-    books = defaultdict(list)
-    rdates = []
-    prev = {k: frozenset() for k in cand}
-    for d in reb:
-        g = m[m["date"] == d]
-        if len(g) < args.min_names:
-            continue
-        row = {}
-        staged = {}
-        ok = True
-        for k, colname in cand.items():
-            sub = g[[colname, "actual_return", "ticker"]].dropna()
-            if len(sub) < args.min_names:
-                ok = False
-                break
-            sub = sub.sort_values(colname)
-            n = len(sub)
-            top = sub.iloc[n - max(1, n // args.decile):]
-            tks = list(top["ticker"])
-            rr = list(top["actual_return"])
-            wv = []
-            for t in tks:
-                v = vol.get((t.upper(), d)) or vol.get((t.upper(), str(d)[:10]))
-                wv.append(1.0 / v if v and v > 0 else 0.0)
-            if sum(wv) <= 0:
-                wv = [1.0] * len(tks)
-            sw = sum(wv)
-            gross = sum(w * r for w, r in zip(wv, rr)) / sw
-            cur = frozenset(tks)
-            to = 1.0 if not prev[k] else len(cur ^ prev[k]) / max(len(cur | prev[k]), 1)
-            staged[k] = cur
-            row[k] = gross - to * args.cost_bps / 10000.0
-            ok = ok and True
-        if not ok or len(row) != len(cand):
-            continue
-        prev.update(staged)
-        for k, v in row.items():
-            books[k].append(v)
-        rdates.append(d)
+    from analysis.book_build import build_books
+    books, rdates, diag = build_books(m, cand, vol, reb,
+                                      decile=args.decile,
+                                      cost_bps=args.cost_bps,
+                                      min_names=args.min_names)
+    print(f"# book diag: zero-vol names {dict(diag['zero_wt'])} of "
+          f"{dict(diag['names'])} | eq-wt fallback {dict(diag['eq_fallback'])} "
+          f"| skipped thin-date {diag['skip_thin_date']} "
+          f"thin-alpha {diag['skip_thin_alpha']}")
 
     n_reb = len(rdates)
     per_year = 252.0 / args.horizon
