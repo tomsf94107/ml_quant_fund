@@ -7,11 +7,17 @@
 # base feature panel is where oil_ret is genuinely 1-value-per-date and
 # fund_op_equity is genuinely per-ticker. Classify there, map transforms by base.
 #
-# market_wide: base panel has median distinct-across-tickers-per-date <= 2
-# per_ticker:  median distinct >> 2 (≈ n_tickers)
+# market_wide: median share of names holding the modal value >= MW_SHARE
+# per_ticker:  modal value held by a minority of names
+# unknown:     panel too thin/empty to classify -- EXCLUDED, never admitted
 # Each alpha 'base__op__w' maps to its base's class via prefix.
 
 from analysis.build_alpha_panel import build_panels_from_tickers, load_tickers
+
+MW_SHARE  = 0.90   # modal share above which a base cannot meaningfully rank a cross-section
+MW_CONST  = 0.999  # effectively constant -> market-wide regardless of modal behaviour
+MW_MOVES  = 0.50   # share of dates with a DISTINCT modal value; separates a moving
+                   # market series (0.72-0.93) from a fixed sentinel (0.014)
 
 
 def classify_bases(tickers=None, start_date="2025-06-01", n_sample=40):
@@ -33,23 +39,60 @@ def classify_bases(tickers=None, start_date="2025-06-01", n_sample=40):
     out = {}
     for base, p in panels.items():
         if p.shape[1] < 5:
-            out[base] = "per_ticker"; continue
-        # COVERAGE GUARD: too few names carrying a value makes distinct-count
-        # meaningless. Default to per_ticker (keeps it in the pool) rather than
-        # silently excluding a sparse stock-level signal.
+            out[base] = "unknown"; continue
+        # COVERAGE GUARD (2026-08-23): was "per_ticker", which ADMITTED the base
+        # to the pool -- alpha_select keeps only == "per_ticker", so a panel that
+        # failed to BUILD was scored as a stock-picking signal. Sparse and ABSENT
+        # are indistinguishable here and absent was the live failure mode
+        # (^VIX3M / ES=F returning empty). "unknown" excludes; it does not judge.
         _cov = p.notna().sum(axis=1).median()
         if _cov < 5:
-            out[base] = "per_ticker"; continue
-        med = p.nunique(axis=1).median()
-        # THRESHOLD FIX (2026-08-22): was `med <= 2`, which cannot distinguish a
-        # genuine market-wide feature from a BINARY PER-TICKER FLAG.
-        # Measured on the live panel, distinct-values-per-date:
-        #   vix_close / oil_ret / xlv_ret_5d          = 1   market-wide
-        #   ma5_above_ma20 / is_squeeze_setup /
-        #   post_earnings_1d                          = 2   PER-TICKER 0/1 flags
-        # At <=2 every binary stock-level flag was excluded from the
-        # stock-picking pool. A market-wide feature is CONSTANT: exactly 1.
-        out[base] = "market_wide" if med <= 1 else "per_ticker"
+            out[base] = "unknown"; continue
+        # METRIC FIX (2026-08-23): distinct-count replaced by MAX VALUE SHARE.
+        # `med <= 2` wrongly excluded binary per-ticker flags; `med <= 1` then
+        # wrongly ADMITTED market-wide bases carrying a single odd ticker.
+        # Measured 2026-07-01, share of names holding the modal value:
+        #   semi_etf_momentum_60d  0.998 (409/410, odd name BNY)  market-wide
+        #   igv_vs_sp500_ret_30d   0.998 (409/410, odd name BNY)  market-wide
+        #   ma5_above_ma20         0.593 (243/167)                per-ticker flag
+        #   rsi_14                 0.002 (all distinct)           per-ticker
+        # Distinct-count reads the first two as 2 and cannot separate a 243/167
+        # split from a 409/1 one. Share separates them by 0.4. It is also
+        # SAMPLE-ROBUST: a 40-name sample gives 1.00 or 0.975, both >= the bar.
+        # Why it matters: build_books does sort_values(col).iloc[n-cut:]. On a
+        # fully-tied column the "top decile" is an arbitrary fixed basket with a
+        # real-looking return series.
+        # SENTINEL FIX (2026-08-23): share alone flipped volume_spike -- a RARE-EVENT
+        # per-ticker flag whose modal value is the sentinel 0 on ~94% of names --
+        # into market_wide. A market-wide base's modal value IS the series and moves
+        # every date; a sentinel-dominated flag's modal value never moves.
+        # Measured on 40-ticker base panels, 141 dates from 2026-01-02:
+        #   base                   share  modal_uniq/dates
+        #   vix_close              1.000  0.94   market-wide (clause 1)
+        #   spy_ret                1.000  1.00   market-wide (clause 1)
+        #   day_of_week            1.000  0.035  market-wide (clause 1, constant)
+        #   igv_vs_sp500_ret_30d   0.995  0.93   market-wide (clause 2)
+        #   semi_etf_momentum_60d  0.989  0.72   market-wide (clause 2)
+        #   volume_spike           0.943  0.014  PER-TICKER  -- sentinel mode
+        #   ma5_above_ma20         0.618  0.014  per-ticker
+        # 0.72/0.93 vs 0.014 is a 50x gap; 0.5 sits in neither cluster.
+        # NOTE: must be computed on the BASE panel. `scale` divides by sum-of-abs,
+        # so an identical cross-section becomes exactly 1/n on every date and the
+        # modal value stops moving -- classifying on transforms inverts this test.
+        _sh, _md = [], []
+        for _, _r in p.iterrows():
+            _vc = _r.value_counts(dropna=True)
+            if not len(_vc):
+                continue
+            _sh.append(_vc.iloc[0] / _r.notna().sum())
+            _md.append(round(float(_vc.index[0]), 10))
+        if not _sh:
+            out[base] = "unknown"; continue
+        share = sorted(_sh)[len(_sh) // 2]
+        moves = len(set(_md)) / len(_md)
+        out[base] = ("market_wide"
+                     if share >= MW_CONST or (share >= MW_SHARE and moves >= MW_MOVES)
+                     else "per_ticker")
     return out
 
 
@@ -59,16 +102,25 @@ def alpha_base(alpha_name: str) -> str:
 
 
 def classify_alpha(alpha_name: str, base_classes: dict) -> str:
-    """Map a transformed alpha to its base's class. Unknown base -> per_ticker
-    (conservative: keep it in the stock-picking pool rather than wrongly drop)."""
-    return base_classes.get(alpha_base(alpha_name), "per_ticker")
+    """Map a transformed alpha to its base's class. Unknown base -> "unknown".
+
+    FIX 2026-08-23: defaulted to "per_ticker", which ADMITTED any base missing
+    from the map. Paired with the guard fix above -- both halves are needed, or
+    a base that never classified still reaches the gate."""
+    return base_classes.get(alpha_base(alpha_name), "unknown")
 
 
 def _selftest():
     bc = classify_bases(n_sample=30)
     expect = {"oil_ret": "market_wide", "dxy_ret": "market_wide",
               "fund_op_equity": "per_ticker", "fund_ni_margin": "per_ticker",
-              "vix_close": "market_wide", "return_1d": "per_ticker"}
+              "vix_close": "market_wide", "return_1d": "per_ticker",
+              # 2026-08-23 regression guards for the share metric
+              "semi_etf_momentum_60d": "market_wide",
+              "igv_vs_sp500_ret_30d": "market_wide",
+              "ma5_above_ma20": "per_ticker",
+              "volume_spike": "per_ticker",   # sentinel-mode regression guard
+              "spy_ret": "market_wide"}
     ok = True
     for base, want in expect.items():
         got = bc.get(base, "MISSING")

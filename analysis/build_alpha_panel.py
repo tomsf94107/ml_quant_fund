@@ -111,6 +111,10 @@ def build_panels_from_tickers(
     start_date: str = "2024-01-01",
     end_date: Optional[str] = None,
     verbose: bool = True,
+    training_mode: bool = False,
+    include_sentiment: bool = True,
+    feature_whitelist: Optional[list[str]] = None,
+    strict: bool = False,
 ) -> dict[str, pd.DataFrame]:
     """
     Build per-feature wide panels by calling build_feature_dataframe
@@ -141,7 +145,9 @@ def build_panels_from_tickers(
         try:
             t_start = time.time()
             df = build_feature_dataframe(t, start_date=start_date,
-                                         end_date=end_date)
+                                         end_date=end_date,
+                                         training_mode=training_mode,
+                                         include_sentiment=include_sentiment)
             if df is None or df.empty:
                 if verbose:
                     log.warning(f"[{i}/{len(tickers)}] {t}: empty, skip")
@@ -149,6 +155,15 @@ def build_panels_from_tickers(
             # Standard column set on first valid ticker
             if feature_cols is None:
                 feature_cols = [c for c in df.columns if c not in NON_FEATURE_COLS]
+                if feature_whitelist is not None:
+                    want = [c for c in feature_whitelist if c in feature_cols]
+                    miss = [c for c in feature_whitelist if c not in feature_cols]
+                    if miss:
+                        raise ValueError(
+                            f"feature_whitelist names not produced by builder: {miss}")
+                    feature_cols = want
+                    log.info(f"whitelist: {len(feature_cols)} of "
+                             f"{len(df.columns)} columns retained")
             # Ensure date index
             if "date" in df.columns:
                 df = df.set_index("date")
@@ -157,6 +172,8 @@ def build_panels_from_tickers(
                 log.info(f"[{i}/{len(tickers)}] {t}: {len(df)} rows "
                          f"({time.time()-t_start:.1f}s)")
         except Exception as e:
+            if strict:
+                raise RuntimeError(f"{t} failed and strict=True") from e
             log.warning(f"[{i}/{len(tickers)}] {t}: FAILED {e}")
 
     if not per_ticker or feature_cols is None:
