@@ -60,16 +60,28 @@ def _load_panel(panel_dir: Path) -> pd.DataFrame:
     return pd.concat(frames, ignore_index=True)
 
 
-def _merge_outcomes(panel: pd.DataFrame, db_path: Path, horizon: int) -> pd.DataFrame:
+def _merge_outcomes(panel: pd.DataFrame, db_path: Path, horizon: int,
+                    table: str = "outcomes") -> pd.DataFrame:
+    """table="outcomes" (default, unchanged) or "deep_outcomes".
+
+    They differ in the date column AND in what they cover. `outcomes` is written
+    by accuracy/sink.py from LOGGED PREDICTIONS: 2020-01 onward, 126-159 names
+    (~401 after the Jun-2026 universe expansion). `deep_outcomes` is computed
+    from adjusted prices over tickers.txt: 2016-07 onward, 323-410 names.
+    Validated 2024-25 h=5: 99.32% agree to 1e-9, 0 outcome_date mismatches,
+    worst 2.3bp confined to OPEN (sub-$1) and WMT (3:1 split 2024-02-26)."""
+    _DATECOL = {"outcomes": "prediction_date", "deep_outcomes": "date"}
+    if table not in _DATECOL:
+        raise ValueError(f"unknown outcomes table: {table}")
     con = sqlite3.connect(db_path)
     out = pd.read_sql(
-        "SELECT ticker, prediction_date AS date, actual_return "
-        "FROM outcomes WHERE horizon=?", con, params=(horizon,))
+        f"SELECT ticker, {_DATECOL[table]} AS date, actual_return "
+        f"FROM {table} WHERE horizon=?", con, params=(horizon,))
     con.close()
     out["date"] = pd.to_datetime(out["date"])
     m = panel.merge(out, on=["ticker", "date"], how="inner")
     if m.empty:
-        raise SystemExit("no overlap panel<->outcomes — check horizon/dates")
+        raise SystemExit(f"no overlap panel<->{table} — check horizon/dates")
     return m
 
 

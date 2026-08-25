@@ -20,7 +20,11 @@ MW_MOVES  = 0.50   # share of dates with a DISTINCT modal value; separates a mov
                    # market series (0.72-0.93) from a fixed sentinel (0.014)
 
 
-def classify_bases(tickers=None, start_date="2025-06-01", n_sample=40):
+def classify_bases(tickers=None, start_date="2024-01-01", n_sample=120):
+    # DEFAULTS (2026-08-23): start_date must precede the classified window by
+    # >= 252 trading days or every 52-week feature is all-NaN and reads ABSENT.
+    # n_sample 40 -> 120: an 11%-coverage feature (inst_signed_flow_30d, ~47 of
+    # 411 names) expects ~4.6 covered names at 40, below the floor of 5; ~13.7 at 120.
     """Build base panels for a ticker sample, classify each base feature by
     median distinct-values-across-tickers-per-date. Returns dict[base -> class]."""
     if tickers is None:
@@ -35,19 +39,32 @@ def classify_bases(tickers=None, start_date="2025-06-01", n_sample=40):
         _all = load_tickers()
         tickers = (_rnd.Random(17).sample(_all, min(n_sample, len(_all)))
                    if len(_all) > n_sample else _all)
-    panels = build_panels_from_tickers(tickers, start_date, None, verbose=False)
+    # training_mode=True (2026-08-23): default False made LIVE UW calls per ticker,
+    # out of market hours, burning quota -- and classified panels containing
+    # UW features that a training_mode build will not have.
+    panels = build_panels_from_tickers(tickers, start_date, None, verbose=False,
+                                       training_mode=True, include_sentiment=False)
     out = {}
     for base, p in panels.items():
         if p.shape[1] < 5:
             out[base] = "unknown"; continue
-        # COVERAGE GUARD (2026-08-23): was "per_ticker", which ADMITTED the base
-        # to the pool -- alpha_select keeps only == "per_ticker", so a panel that
-        # failed to BUILD was scored as a stock-picking signal. Sparse and ABSENT
-        # are indistinguishable here and absent was the live failure mode
-        # (^VIX3M / ES=F returning empty). "unknown" excludes; it does not judge.
+        # COVERAGE GUARD, 3rd pass (2026-08-23). History:
+        #   "per_ticker"  ADMITTED absent bases -- alpha_select keeps only
+        #                 == per_ticker, so a panel that failed to BUILD was
+        #                 scored as a stock-picking signal (^VIX3M / ES=F).
+        #   "unknown"     then EXCLUDED merely-sparse bases: the 4 inst_* family
+        #                 (~47 of 411 names -> ~4.6 covered in a 40-name sample)
+        #                 and low/high_52w_ratio (all-NaN when start_date leaves
+        #                 no room for their 252-day warm-up).
+        # DISCRIMINATOR: a market-wide feature is ONE series broadcast across the
+        # cross-section, so it is non-null for EVERY ticker. Low coverage
+        # therefore IMPLIES per-ticker. Only a wholly empty panel is "absent".
+        _tot = p.notna().sum().sum()
+        if _tot == 0:
+            out[base] = "unknown"; continue      # ABSENT: nothing built
         _cov = p.notna().sum(axis=1).median()
         if _cov < 5:
-            out[base] = "unknown"; continue
+            out[base] = "per_ticker"; continue   # SPARSE: broadcast is never sparse
         # METRIC FIX (2026-08-23): distinct-count replaced by MAX VALUE SHARE.
         # `med <= 2` wrongly excluded binary per-ticker flags; `med <= 1` then
         # wrongly ADMITTED market-wide bases carrying a single odd ticker.

@@ -41,21 +41,62 @@ ROOT = os.path.expanduser(os.environ.get("ML_QUANT_ROOT", "~/ML_Quant_Fund"))
 PRICES = os.path.join(ROOT, "prices.db")
 ACC = os.path.join(ROOT, "accuracy.db")
 WINDOWS = (20, 50, 100, 200)
+START = "2016-07-18"   # vendor history floor
 
 
 def load_closes(con, tickers=None):
-    """{ticker: [(d, close)] ascending}. Uses raw_bars: split-adjusted on write,
-    same series outcomes are computed from (verified via parity 2026-08-15)."""
-    q = ("SELECT ticker, d, close FROM raw_bars "
-         "WHERE close IS NOT NULL AND close > 0")
-    args = []
-    if tickers:
-        q += f" AND ticker IN ({','.join('?' * len(tickers))})"
-        args = list(tickers)
-    q += " ORDER BY ticker, d"
-    out = {}
-    for tk, d, c in con.execute(q, args):
-        out.setdefault(tk.upper(), []).append((d, float(c)))
+    """{ticker: [(d, close)] ascending}, SPLIT-ADJUSTED.
+
+    CORRECTION 2026-08-25. The previous body read raw_bars, on a docstring claim
+    that raw_bars was split-adjusted on write and was the same series outcomes is
+    computed from. BOTH CLAUSES WERE FALSE:
+      - raw_bars is UNADJUSTED. AAPL 2020-08-31 stores 499.23 -> 129.04 across a
+        4:1; the adjusted series runs 124.81 -> 129.04.
+      - outcomes comes from accuracy/sink.py:666 via mc.download(auto_adjust=True),
+        a DIFFERENT series.
+    Consequence: 18 of 439 tickers had a split inside the trailing 200 sessions,
+    so their MAs averaged pre- and post-split prices. BKNG SMA200 read 2531.80
+    against a 213.36 close (11.9x); KLAC 1195.83 vs 181.57; CRWD 445.35 vs 190.68
+    AND its SMA50 330.16 -- the 50-day is poisoned too where the split is recent,
+    which also fabricates cross_state (BKNG printed "50<200" off a bogus 200).
+
+    Now uses mc.download(auto_adjust=True): the same series outcomes uses,
+    verified split-correct on AAPL's 4:1 and validated at 99.32% agreement to
+    1e-9 against stored outcomes (2024-25, h=5). Serves from price_cache; 410
+    tickers in ~10s. `con` is used only to enumerate tickers and pin the end
+    date, so a stale bar_date is REPORTED rather than hidden."""
+    import sys as _sys, os as _os
+    _R = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    if _R not in _sys.path:
+        _sys.path.insert(0, _R)
+    from features import massive_client as _mc
+    import pandas as _pd
+
+    tks = ([t.upper() for t in tickers] if tickers else
+           [r[0].upper() for r in con.execute(
+               "SELECT DISTINCT ticker FROM raw_bars ORDER BY ticker")])
+    end = con.execute("SELECT MAX(d) FROM raw_bars").fetchone()[0]
+    out, failed = {}, []
+    for t in tks:
+        try:
+            df = _mc.download(t, start=START, end=end, auto_adjust=True, progress=False)
+            if df is None or df.empty:
+                failed.append((t, "empty")); continue
+            if isinstance(df.columns, _pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            cs = df["Close"]
+            if isinstance(cs, _pd.DataFrame):
+                cs = cs.iloc[:, 0]
+            cs.index = _pd.to_datetime(cs.index).tz_localize(None)
+            cs = cs[~cs.index.duplicated(keep="last")].sort_index().dropna()
+            if cs.empty:
+                failed.append((t, "all-nan")); continue
+            out[t] = [(str(d.date()), float(v)) for d, v in cs.items()]
+        except Exception as e:
+            failed.append((t, repr(e)[:60]))
+    if failed:
+        print(f"# WARNING: {len(failed)} ticker(s) had no usable adjusted series: "
+              f"{failed[:10]}", file=_sys.stderr)
     return out
 
 
@@ -141,8 +182,11 @@ def main():
     if args.json:
         print(json.dumps(results, indent=2))
     else:
+        # ma100 was COMPUTED and STORED but never displayed -- which is how a
+        # 100-day average reached a report labelled "the 200-DMA" (NVDA, Aug 25:
+        # "live 200-DMA ~$206.23" vs the true SMA200 of 195.34; SMA100 was 206.99).
         hdr = (f"{'ticker':<7}{'date':<12}{'close':>9}{'20DMA':>9}{'50DMA':>9}"
-               f"{'200DMA':>9}{'vs50':>8}{'vs200':>8}  cross")
+               f"{'100DMA':>9}{'200DMA':>9}{'vs50':>8}{'vs200':>8}  cross")
         print(hdr)
         print("-" * len(hdr))
         for tk, r in results.items():
@@ -153,7 +197,7 @@ def main():
             if r.get("ma200") is None:
                 note = f"n/a ({r['bars']} bars)"
             print(f"{tk:<7}{r['date']:<12}{r['close']:>9.2f}{f('ma20')}{f('ma50')}"
-                  f"{f('ma200')}{f('d50',8,1)}{f('d200',8,1)}  {note}")
+                  f"{f('ma100')}{f('ma200')}{f('d50',8,1)}{f('d200',8,1)}  {note}")
 
     if args.write:
         acon = sqlite3.connect(ACC, timeout=30)

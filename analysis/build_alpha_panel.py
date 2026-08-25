@@ -3,7 +3,7 @@ analysis/build_alpha_panel.py
 ─────────────────────────────────────────────────────────────────────────────
 Build full alpha panel via 17-operator explode of base 83-feature universe.
 
-Sprint 2 Stage 2 implementation per Gap_Check_and_Roadmap(04292026.md) Lever 2.
+Sprint 2 Stage 2 implementation per docs/archive/Gap_Check_and_Roadmap(04292026).md Lever 2 [ARCHIVED — stale, see HANDOFF §0].
 
 PIPELINE:
   1. Load tickers from tickers.txt (default 125 tickers)
@@ -359,6 +359,10 @@ def build_alpha_panel(
     bucket_map: Optional[dict] = None,
     verbose: bool = True,
     parallel: bool = False,
+    training_mode: bool = False,
+    include_sentiment: bool = True,
+    feature_whitelist: Optional[list[str]] = None,
+    strict: bool = False,
 ) -> dict:
     """
     End-to-end: build base panels, explode via 17 operators, write parquet.
@@ -376,7 +380,11 @@ def build_alpha_panel(
 
     log.info(f"Building base panels for {len(tickers)} tickers "
              f"({start_date} → {end_date or 'today'})...")
-    panels = build_panels_from_tickers(tickers, start_date, end_date, verbose)
+    panels = build_panels_from_tickers(tickers, start_date, end_date, verbose,
+                                       training_mode=training_mode,
+                                       include_sentiment=include_sentiment,
+                                       feature_whitelist=feature_whitelist,
+                                       strict=strict)
     if not panels:
         log.error("No base panels built — aborting")
         return {"dates_written": 0, "alphas_written": 0, "output_files": [],

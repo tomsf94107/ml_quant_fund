@@ -176,6 +176,50 @@ def main():
         else:
             print(f"  DRIFT     none (TICKER_CONFIG={len(cfg)})\n")
 
+    # TWO TIERS (2026-08-23). One tier at ratio-outside-[0.5,2] fired 41 times,
+    # nearly all real market moves: GME 2.35x (Jan-2021 squeeze), VKTX 2.21x
+    # (data readout), OXY/APA/TRGP 0.46x (2020-03-09 oil crash). A control that
+    # cries wolf 41 times gets ignored -- that is rule 5.5.
+    # The discriminator is the GAP, not the ratio: real moves happen on
+    # consecutive sessions (gap <= 4, weekend/holiday); a reuse splice spans a
+    # hole. Confirmed splices ran gap 47-2032 days.
+    #   SPLICE     ratio outside [0.5, 2.0]  AND gap > 5   -- ticker reuse
+    #   SPLIT_GAP  ratio outside [0.25, 4.0] AND gap <= 5  -- MISSING splits row
+    # SPLIT_GAP is not reuse; it breaks back-adjustment. Known false positive:
+    # AMC 2021-01-27 at 4.01x, a genuine one-day move.
+    con = sqlite3.connect(DB, timeout=30)
+    rows = con.execute("""
+      with j as (select ticker, d, close,
+                        lag(close) over (partition by ticker order by d) p,
+                        lag(d)     over (partition by ticker order by d) pd
+                 from raw_bars where close > 0),
+           k as (select ticker, d, p, close, close/p ratio,
+                        cast(julianday(d)-julianday(pd) as int) g from j
+                 where p is not null and p > 0)
+      select k.ticker, k.d, round(k.p,2), round(k.close,2), round(k.ratio,3), k.g,
+             case when k.g > 5 then 'SPLICE' else 'SPLIT_GAP' end kind
+      from k left join splits s on s.ticker=k.ticker and s.exec_date=k.d
+      where s.ticker is null
+        and ((k.g >  5 and (k.ratio > 2.0 or k.ratio < 0.5))
+          or (k.g <= 5 and (k.ratio > 4.0 or k.ratio < 0.25)))
+      order by kind, k.ticker, k.d""").fetchall()
+    con.close()
+
+    for kind, blurb in (("SPLICE", "candidate TICKER REUSE -- price break across a gap"),
+                        ("SPLIT_GAP", "extreme same-session jump, no splits row -- MISSING split")):
+        hits = [r for r in rows if r[6] == kind]
+        if hits:
+            alerts += 1
+            print(f"! {kind:9s} {len(hits)} row(s) -- {blurb}:")
+            for t, d, a, b, r, g, _ in hits[:25]:
+                print(f"    {t:8s} {d}  {a} -> {b}  ({r}x, gap {g}d)")
+            if len(hits) > 25:
+                print(f"    ... {len(hits)-25} more")
+            print()
+        else:
+            print(f"  {kind:9s} none\n")
+
+
     if alerts:
         print(f"# {alerts} ALERT(S)")
         return 1

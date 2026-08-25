@@ -5,7 +5,7 @@ scripts/correlation_cull.py
 Identifies redundant features via pairwise correlation. Reports pairs with
 |ρ| > threshold (default 0.7) so you can decide which to drop.
 
-Per Finding Alphas Ch. 10 / Gap_Check_and_Roadmap(04292026).md Lever 4.
+Per Finding Alphas Ch. 10 / docs/archive/Gap_Check_and_Roadmap(04292026).md Lever 4 [ARCHIVED].
 
 Does NOT auto-drop. Output is a ranked console report + CSV. You review.
 
