@@ -131,6 +131,8 @@ def main():
     ap.add_argument("--cost-bps", type=float, default=10.0)
     ap.add_argument("--min-names", type=int, default=30)
     ap.add_argument("--vol-window", type=int, default=20)
+    ap.add_argument("--panel-dir", default="data/alpha_panel")
+    ap.add_argument("--outcomes-table", default="outcomes")
     ap.add_argument("--csv")
     ap.add_argument("--root")
     args = ap.parse_args()
@@ -151,8 +153,9 @@ def main():
             k, _, v = tok.partition("=")
             cand[k.strip() or v.strip()] = (v or k).strip()
 
-    m = _merge_outcomes(_load_panel(Path(ROOT) / "data" / "alpha_panel"),
-                        Path(ROOT) / "accuracy.db", args.horizon)
+    m = _merge_outcomes(_load_panel(Path(ROOT) / args.panel_dir),
+                        Path(ROOT) / "accuracy.db", args.horizon,
+                        table=args.outcomes_table)
     missing = [v for v in cand.values() if v not in m.columns]
     if missing:
         sys.exit(f"FATAL: alpha column(s) not in panel: {missing}")
