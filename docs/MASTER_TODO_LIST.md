@@ -127,9 +127,17 @@ KILL-REVIVE TEST (May 31): momentum is NOT a filter for the broken model's BUYs 
 revived acc 54.7% vs stay-dead 58.8%. => Architecture is TWO SEPARATE PATHS: broken model stays
 globally dead; no source-aware switch, no revive logic. Momentum now runs its own REFERENCE book.
 
-RE-OPEN CONDITION (the override, stated as a gate not a hope): k>=10 independent 20-session cohorts,
-~mid-2027. At that point specify WHICH universe is being tested -- the shadow now logs 391 names, so
-a default re-run tests the expanded construction, not the one the backtest validated.
+RE-OPEN CONDITION (the override, stated as a gate not a hope): k>=10 independent 20-session cohorts
+AND live edge clearing the consistency bar AT k=10. Currently k=2; at ~12 independent bets/year that
+is roughly mid-2027. Any re-open before k>=10 requires a written override with a reason.
+At re-open, specify WHICH universe -- the shadow now logs 391 names, so a default re-run tests the
+expanded construction, not the 149-name one the backtest validated.
+PROMOTION MECHANICS, if it ever re-opens (carried from the original STEP 4, do not lose): promote via
+momentum's OWN path -- a MOMENTUM_LIVE gate on its own writer, NOT the generator -- WITH sector caps
+(1.4's concentration caveat: semi/memory names cluster in the top decile).
+DUPLICATE NOTICE: the fuller decision record, including the DESIGN LESSON, is the dated section
+"MOMENTUM — PROMOTION CLOSED, SHADOW CONTINUES (2026-08-22)" below. This block is the top-section
+summary; that block is the audit trail. Update BOTH or neither.
 
 ### 1.5 THE FIX — phased, each gated, NO TRADING until its gate passes
 STEP 1 — STOP THE BLEEDING. DONE. Global kill switch (ML_QUANT_DISABLE_BUY, defaults ON) forces
