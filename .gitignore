@@ -168,3 +168,4 @@ beta_long_ctrl.csv
 # deep alpha panel — rebuild with scripts/build_deep_panel.py, never track
 data/alpha_panel_deep/
 dma_truth.csv
+deep_survivors.csv

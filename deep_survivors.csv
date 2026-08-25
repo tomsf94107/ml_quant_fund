@@ -1,8 +1,0 @@
-n_obs,n_days,rank_ic,ic_t,sharpe,turnover,fitness,mono,alpha,base
-633105,1757,0.01654,5.01,0.1256,0.6779,0.0485,0.7697,high_52w_ratio__ts_argmax__w5,high_52w_ratio
-725463,1991,0.01118,3.74,0.0096,0.6879,0.001,0.5152,bb_pct__ts_argmax__w5,bb_pct
-633105,1761,0.0158,3.32,0.1324,0.2741,0.0674,0.6242,low_52w_ratio__ts_min__w10,low_52w_ratio
-633105,1761,0.01795,3.71,0.1158,0.2815,0.0545,0.503,low_52w_ratio__ts_min__w20,low_52w_ratio
-633105,1757,0.0139,4.14,0.1584,0.6618,0.0692,0.7212,low_52w_ratio__ts_argmax__w5,low_52w_ratio
-725463,1991,0.01101,3.52,0.0754,0.667,0.0226,0.6121,rsi_14__ts_argmax__w5,rsi_14
-725463,1991,0.01229,3.82,0.1126,0.6639,0.0415,0.5879,vwap_dev_eod__ts_argmax__w5,vwap_dev_eod
