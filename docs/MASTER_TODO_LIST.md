@@ -80,23 +80,56 @@ DIFFERENT data axis.
 KEY FINDING: short-horizon (1-5d) cross-sectional prediction — direction OR reversion, simple OR ML
 — is NOT tradeable here. No price or earnings signal complements momentum.
 
-### 1.4 THE ONE VALIDATED SIGNAL — MOMENTUM (longer horizon)
-Cross-sectional momentum, the only survivor. mom_6_1 (126d ret minus last 21d), mom_12_1 (252d minus
-21d), 20d hold / 20d rebalance, long top decile of 149. Strict purged-WF (5d embargo, daily folds):
-mom_6_1 positive 4/4 OOS folds mean net Sh +0.96 (+0.09/+0.54/+1.51/+1.72, 2021-26); mom_12_1 4/4
-mean +1.00. PASS, strongest in recent/current regime — NOT a single-regime artifact. Beats the ML
-ranker on the same harness (4/4 +0.96 vs 2/4 +0.09).
-UNIVERSE EDGE (May 31): momentum BUYs avg +7.90% fwd vs the field's +3.91% = +3.99pp REAL edge,
-roughly DOUBLE the broken model's ~zero edge. BUT high-precision / LOW-RECALL: of all +20% up-moves
-it flags only ~20% beforehand (misses 80%); blind to V-shaped recoveries (caught MU early, missed
-MRVL until after the run, completely missed AMD).
-KILL-REVIVE TEST (May 31): momentum is NOT a filter for the broken model's BUYs — 10.5% overlap,
-revived acc 54.7% vs stay-dead 58.8% (no improvement). Momentum runs its OWN independent book.
-=> Architecture is TWO SEPARATE PATHS: broken model stays globally dead; no source-aware switch, no
-revive logic.
-CAVEATS: n=16/fold; crowded/decays so live < backtest; mom_6/mom_12 correlated (ONE signal);
-semi/memory CONCENTRATED so sector caps required; fixed rule so validation not perfectly
-apples-to-apples with retrain-per-fold models — honestly stated, still the pick.
+### 1.4 MOMENTUM — BACKTEST PASSED, LIVE SHADOW KILLED (Aug 25 2026)
+STATUS: promotion CLOSED, kill line breached. RETAINED as a reference book benchmarked against the
+directional model — an explicit written override of the retire instruction, with a named re-open
+condition (k>=10, ~mid-2027), not indefinite re-running.
+
+WHAT WAS VALIDATED (May 31, the backtest — kept as the record of what the live test refuted):
+mom_6_1 (126d ret minus last 21d), mom_12_1 (252d minus 21d), 20d hold / 20d rebalance, long top
+decile of 149. Strict purged-WF, 5d embargo, daily folds: mom_6_1 positive 4/4 OOS folds mean net
+Sh +0.96 (+0.09/+0.54/+1.51/+1.72, 2021-26); mom_12_1 4/4 mean +1.00. Beat the ML ranker on the same
+harness (4/4 +0.96 vs 2/4 +0.09). Universe edge +7.90% fwd vs the field's +3.91% = +3.99pp.
+
+WHAT THE LIVE SHADOW SHOWED (39 resolved dates, 2026-05-29..2026-07-27, momentum_shadow_outcomes):
+  mom_6_1   picks -7.29pp   field +3.24pp   EDGE -10.53pp   win 30.8%   weeks 3/31 positive (10%)
+  mom_12_1  picks -7.86pp   field +3.26pp   EDGE -11.12pp   win 28.8%
+Kill line: -10.53pp against a 99% bound of -6.68pp, computed AT k=2 (the widest, most forgiving
+count). Consistency bar at k=2 is -3.21pp. BREACHED on every gate except sample size. Line 2478
+recorded -10.95pp on less data; today -10.53pp -- roughly flat, not deteriorating.
+
+NOT "no edge" -- INVERTED. The rejected names returned +3.24pp over the same 20-day windows while
+the picks lost 7.29pp: a 10.5pp spread in the WRONG direction. Same shape as 1.1b (market rose, the
+signal picked the part that did not). "Flip it" is NOT a live hypothesis -- 1.3 already killed 5d
+reversion and PCA residual reversal, and any inversion trade needs its own pre-registered test.
+
+UNIVERSE EXPANSION RULED OUT AS THE CAUSE (Aug 25). The shadow began at exactly the validated
+universe and grew mid-test: 149 names on 2026-05-29, 393 on 2026-06-11, 391 by 2026-07-20. Split by
+era, both are negative:
+  era        dates  mom_6_1 edge   mom_12_1 edge   win%
+  149-name       8       -5.02pp        -9.69pp    35.7 / 37.5
+  391-name      31      -10.53pp       -11.12pp    30.8 / 28.8
+mom_12_1 is WORSE at 149 names than at 391 -- the opposite of a breadth story. The 149-name era is
+the exact construction 1.4 validated, and it is negative on both signals.
+CAVEAT: 8 dates at a 20-session hold is ~0.4 independent bets. That row shows a SIGN, not
+significance. The kill rests on the 31-date result where the bound was computed and breached.
+This CLOSES the never-run checkpoint "momentum re-validation at ~394 names (IR x sqrt-breadth)"
+with an answer instead of leaving it pending.
+
+INVERSE-VOL WEIGHTING (1.3's "first validated IMPROVEMENT"): improved the outcome on 6 of 6 cuts --
+mom_6_1 -2.93 vs -4.56 (149) and -6.06 vs -7.29 (391); mom_12_1 -5.69 vs -8.56 and -7.04 vs -7.86.
+Consistent across both signals and both eras, so the scheme is doing something real: the top
+decile's high-vol names lost more and inverse-vol underweighted them. FOOTNOTE REQUIRED: it REDUCED
+A LOSS. It has never been tested on a profitable book. Validated as risk-weighting, not as alpha.
+
+STILL TRUE AND LOAD-BEARING:
+KILL-REVIVE TEST (May 31): momentum is NOT a filter for the broken model's BUYs -- 10.5% overlap,
+revived acc 54.7% vs stay-dead 58.8%. => Architecture is TWO SEPARATE PATHS: broken model stays
+globally dead; no source-aware switch, no revive logic. Momentum now runs its own REFERENCE book.
+
+RE-OPEN CONDITION (the override, stated as a gate not a hope): k>=10 independent 20-session cohorts,
+~mid-2027. At that point specify WHICH universe is being tested -- the shadow now logs 391 names, so
+a default re-run tests the expanded construction, not the one the backtest validated.
 
 ### 1.5 THE FIX — phased, each gated, NO TRADING until its gate passes
 STEP 1 — STOP THE BLEEDING. DONE. Global kill switch (ML_QUANT_DISABLE_BUY, defaults ON) forces
@@ -117,9 +150,22 @@ was DEAD ON ARRIVAL; the 20-day promotion wait was waiting for data that would n
 momentum runs as Stage -2 BEFORE the guard now, logs every night regardless of guard verdict; guard
 still aborts the direction publish. First new forward date logs next trading-day run. ***
 
-STEP 4 — VALIDATE LIVE BEFORE RE-ENABLING. Let momentum_shadow_predictions + outcomes accumulate
-(~20 trading days, now actually collecting post-fix). Confirm live tracks +0.96. Promote via
-momentum's OWN path (a MOMENTUM_LIVE gate on its own writer — NOT the generator) WITH sector caps.
+STEP 4 — VALIDATE LIVE BEFORE RE-ENABLING. **COMPLETE Aug 25 2026. ANSWER: NEGATIVE.**
+The wait is over and it resolved against the signal. 59 logged dates, 39 resolved, both signals:
+edge -10.53pp (mom_6_1) / -11.12pp (mom_12_1) vs a 99% bound of -6.68pp computed at k=2. Kill line
+breached on every gate except sample size. Full evidence in 1.4.
+The direction model stays permanently dead (ML_QUANT_DISABLE_BUY defaults ON, unchanged by this).
+Momentum does NOT get re-enabled; it is retained as a REFERENCE book benchmarked against the
+directional model, under a written override with a named re-open gate (k>=10, ~mid-2027).
+NOTE FOR WHOEVER READS THIS NEXT: the shadow pipeline itself worked. momentum runs at Pipeline C
+Stage -2 (before the always-RED guard, per b567b66) and logged every session since 2026-05-29;
+reconcile_momentum_shadow is incremental and correctly refuses immature picks -- "matured & written:
+0" means CAUGHT UP, not broken. The apparatus did its job; the signal failed it.
+CONSEQUENCE: the system now has ONE live signal (the SI brick) and no promotion candidate. Nine
+things have been tested and killed. That is the correct output of a working gate, not a failure of
+the programme -- but it means the next unit of work has to open a NEW data axis, not re-test a
+price-derived one (see L2, and the Aug 25 deep-panel KILL which closed the price-technical family
+at 8-year depth: 1,077 alphas, 1,993 dates -> 2 survivors at Sharpe 0.158 and 0.010).
 
 STEP 5 — GUARD PERMANENTLY. signal_sanity_guard stays in cron, blocks the direction publish on RED.
 
@@ -914,9 +960,9 @@ HYPOTHESIS: A8 ranking-as-selector may add value in a future long-short book.
 | Wed Jun 18 | Fitness re-run h=3 |
 | Wed Jun 25 | Fitness re-run h=5 |
 | Tue Jun 24 | MU earnings print (pre-earnings layer: trim rule if positioned) |
-| **~Mon Jun 29** | MOMENTUM LIVE VERDICT — first cohort resolved. Promotion gate decision (R1). Run scripts/momentum_promotion_check.py |
+| ~~Mon Jun 29~~ | **RESOLVED Aug 25 (8wk late)** — MOMENTUM LIVE VERDICT: **KILLED**, kill line breached at k=2 (edge -10.53pp vs -6.68pp bound, win 30.8%, 3/31 positive weeks). Promotion CLOSED; retained as reference book vs the directional model. Re-open k>=10 ~mid-2027. See 1.4 |
 | Sun Jun 23 | Path A A/B decision review (per path_a_ab_test_plan.md) |
-| ~Jul 2026 (event-gated: expansion integrated + new-name backfills done) | POST-EXPANSION RE-TEST BATTERY: (1) insider event study on SP400 adds (denser buying; extend Form-4 backfill to new names first), (2) momentum re-validation at ~394 names (IR x sqrt-breadth check), (3) qv gp/op/ep re-validation at breadth, (4) C1 combiner RE-OPEN if stream IRs lift or insider validates as 5th stream |
+| ~Jul 2026 (event-gated: expansion integrated + new-name backfills done) | POST-EXPANSION RE-TEST BATTERY: (1) insider event study on SP400 adds (denser buying; extend Form-4 backfill to new names first), (2) ~~momentum re-validation at ~394 names~~ ANSWERED Aug 25: shadow ran 149 -> 391 names mid-test; BOTH eras negative (-5.02/-10.53pp mom_6_1), so breadth is NOT the cause of the kill — see 1.4, (3) qv gp/op/ep re-validation at breadth, (4) C1 combiner RE-OPEN if stream IRs lift or insider validates as 5th stream |
 | Jul 12 2026 | SELL signal monthly re-eval. Jun 12 result: NO-SHIP, DEGRADED — n=608, acc 52.6pct, avg_ret +0.837pct POSITIVE (counter-signal; May was -0.314). If still counter-signal in Jul, CLOSE the cadence. |
 | ~Sep-Dec 2026 | Analyst-revisions signal first testable (weekly snapshots accruing since Jun 12, scripts/analyst_snapshot.py, Sun 7:20 cron) |
 | ~Aug 2026 | VRP / IV-skew-change test (B8) — IV history sufficient |
