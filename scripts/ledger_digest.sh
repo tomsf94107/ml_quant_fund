@@ -5,7 +5,13 @@
 ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund
 L="$ROOT/docs/DEFECT_LEDGER.md"
 cd "$ROOT" || exit 1
-CLOSED='\| *(FIXED|DEAD|REMOVED|DONE|NOTED|RETRACTED|NOT A DEFECT|POLICY|CORRECTION) *\|'
+# Resolved-class statuses, filtered OUT of the digest. Added 2026-08-26:
+#   CLOSED     -- was missing entirely; 'Peer-relative DORMANT root-cause | CLOSED'
+#                 rendered into section 4 as if still open.
+#   RECOVERED  -- momentum_shadow 6/29-7/9 hole, resolved Aug-1.
+# Trailing (...) qualifiers now tolerated: 'FIXED (detector)' did not match a
+# pattern anchored on ' *\|' immediately after the status word.
+CLOSED='\| *(FIXED|CLOSED|RECOVERED|DEAD|REMOVED|DONE|NOTED|RETRACTED|NOT A DEFECT|POLICY|CORRECTION)( *\([^)]*\))? *\|'
 echo "LEDGER DIGEST -- $(date '+%Y-%m-%d %H:%M %Z') -- repo $(git rev-parse --short HEAD)"
 echo "Source: docs/DEFECT_LEDGER.md. Render section 4 from THIS. Carry ONLY the rows below."
 echo ""
