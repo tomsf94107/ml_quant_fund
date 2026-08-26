@@ -282,8 +282,13 @@ def main():
     if _focus:
         universe = sorted(set(universe) | set(_focus))
     n_raw = len(universe)
-    if not a.keep_etf and not a.only:
-        universe = [t for t in universe if t not in ETF_EXCLUDE]
+    # Exclude ETFs from the RANKING population always -- gating this on --only
+    # made squeezeselect rank against 441 names while squeeze ranked against 423,
+    # so the same ticker read a different fuel percentile depending on the call.
+    # Explicitly-named ETFs are still kept so squeezeselect SPY shows something.
+    if not a.keep_etf:
+        universe = [t for t in universe
+                    if t not in ETF_EXCLUDE or (_focus and t in _focus)]
     n_etf = n_raw - len(universe)
 
     t0 = time.time()
@@ -334,8 +339,15 @@ def main():
         n_probe = len(_focus)
     probed = []
     if n_probe:
+        # Probe by PROVISIONAL SCORE, not fuel. The board ranks on score, so
+        # selecting probes on fuel systematically skipped the igniting names:
+        # RZLV (2026-08-26) scored #2 overall on ignition 100 but sat ~131st by
+        # fuel (69th pct), so --probe 60 left its fee blank on the one row that
+        # most needed it.
+        _prov = df["fuel"] * (IGNITION_FLOOR + (1 - IGNITION_FLOOR) * df["ignition"] / 100.0)
         order = (_focus if _focus else
-                 df.sort_values("fuel", ascending=False)["ticker"].head(n_probe).tolist())
+                 df.assign(_prov=_prov).sort_values("_prov", ascending=False)
+                   ["ticker"].head(n_probe).tolist())
         order = [t for t in order if t in set(df["ticker"])]
         print(f"  probing live borrow fee for {len(order)} names ...")
         for i, t in enumerate(order, 1):
@@ -435,7 +447,8 @@ def main():
                  f"{_sic}{g(r['fee'],'%.2f',7)} {fee_tier(r['fee']):<9}"
                  f"{_avail}{g(_r3d,'%+.1f%%',8)}{g(r['rvol'],'%.2f',6)}  {tag(r)}"
                  + ("  RAMP" if r["ramp"] else "") + ("  TOP" if r["top"] else "")
-                 + (f"  SPLIT-adj x{r['split_factor']:.2f}" if r["split_adj"] else "")
+                 + (f"  SPLIT-adj x{r['split_factor']:.2f}"
+                    if r["split_adj"] and abs(r["split_factor"] - 1.0) >= 0.10 else "")
                  + (f"  !! SUSPECT GAP {r['suspect_date']} x{r['suspect_ratio']:.1f}"
                     " -- unrecorded split? row suppressed" if r["suspect_date"] else ""))
     L.append("  " + "-" * 100)
