@@ -626,6 +626,16 @@ def resolve_sector_etf(ticker):
 
 INSIDER_DB      = os.getenv("INSIDER_DB_PATH", "insider_trades.db")
 CONGRESS_DB     = os.getenv("CONGRESS_DB_PATH", "congress_trades.db")
+SHORT_INTEREST_DB = os.getenv("SHORT_INTEREST_DB_PATH", "short_interest.db")
+
+# FINRA publishes each semi-monthly short-interest file on the 7th BUSINESS day
+# after the reporting settlement date (FINRA reporting schedule; Cboe spec
+# agrees). Observed delivery has run later. We offset by 9 WEEKDAYS
+# (holiday-blind) as a deliberately conservative proxy: this must never claim a
+# number was knowable earlier than it actually was.
+# NOTE: FINRA has proposed weekly reporting at T+5 business days. If adopted,
+# change this constant and rebuild the panel.
+SI_PUBLISH_LAG_WEEKDAYS = 9
 
 PANDEMIC_START  = pd.Timestamp("2020-03-01")
 PANDEMIC_END    = pd.Timestamp("2023-12-31")
@@ -1083,6 +1093,73 @@ def _load_insider_uw(ticker: str, dates: pd.Index) -> tuple[pd.Series, pd.Series
         return _load_insider(ticker, dates)
 
 
+def _load_short_interest_pit(
+    ticker: str,
+    dates: pd.Index,
+    as_of: "str | date | None" = None,
+) -> "tuple[pd.Series, pd.Series]":
+    """PIT-honest FINRA short interest, per-row (NOT a single broadcast).
+
+    Replaces the pre-2026-08-26 block that assigned mc.get_short_interest()'s
+    CURRENT value as a scalar to every row -- inert in per-ticker fits, a
+    look-ahead oracle in pooled fits (models/train_global_ranker.py:67).
+
+    short_ratio     = FINRA days_to_cover, joined on PUBLICATION date.
+    short_pct_float = ALL-NaN. short_interest.db has no float column, and the
+                      only vendor field available (UW total_float) is shares
+                      OUTSTANDING mislabelled as float -- verified 2026-08-26
+                      against GME (448,691,257 = outstanding; float 409.39M).
+                      A wrong denominator is worse than none.
+
+    NaN (not 0.0) is the missing fill, per the institutional-features note at
+    section 11c: days_to_cover=0.0 codes as "no shorts at all".
+    """
+    nan_ratio = pd.Series(np.nan, index=dates, name="short_ratio")
+    nan_float = pd.Series(np.nan, index=dates, name="short_pct_float")
+    try:
+        conn = sqlite3.connect(SHORT_INTEREST_DB, timeout=30)
+        si = pd.read_sql(
+            "SELECT settlement_date, days_to_cover FROM short_interest "
+            "WHERE ticker = ? AND days_to_cover IS NOT NULL "
+            "ORDER BY settlement_date",
+            conn, params=(ticker.upper(),),
+        )
+        conn.close()
+    except Exception:
+        return nan_ratio, nan_float
+    if si.empty:
+        return nan_ratio, nan_float
+
+    si.loc[si["days_to_cover"] > 50, "days_to_cover"] = np.nan
+    si = si.dropna(subset=["days_to_cover"])
+    if si.empty:
+        return nan_ratio, nan_float
+
+    sd = pd.to_datetime(si["settlement_date"], errors="coerce")
+    si = si.assign(_sd=sd).dropna(subset=["_sd"])
+    if si.empty:
+        return nan_ratio, nan_float
+    si["publish_date"] = pd.to_datetime(np.busday_offset(
+        si["_sd"].values.astype("datetime64[D]"),
+        SI_PUBLISH_LAG_WEEKDAYS, roll="forward")).astype("datetime64[ns]")
+
+    if as_of is not None:
+        si = si[si["publish_date"] <= pd.Timestamp(str(as_of))]
+        if si.empty:
+            return nan_ratio, nan_float
+
+    left = pd.DataFrame({"_d": pd.to_datetime(pd.Series(list(dates)))
+                                .astype("datetime64[ns]")})
+    left["_pos"] = np.arange(len(left))
+    left = left.sort_values("_d")
+    right = si[["publish_date", "days_to_cover"]].sort_values("publish_date")
+    merged = pd.merge_asof(left, right, left_on="_d",
+                           right_on="publish_date", direction="backward")
+    merged = merged.sort_values("_pos")
+    return (pd.Series(merged["days_to_cover"].values, index=dates,
+                      name="short_ratio"), nan_float)
+
+
 def _load_insider(ticker: str, dates: pd.Index, as_of: str | date | None = None) -> tuple[pd.Series, pd.Series, pd.Series, pd.Series, pd.Series]:
     """Load insider net_shares + 7d/21d/60d/90d rolling sums from SQLite."""
     zeros = pd.Series(0.0, index=dates)
@@ -1388,18 +1465,12 @@ def build_feature_dataframe(
     except Exception:
         df["beta_60d"] = 1.0
 
-    # Short interest ratio (from yfinance — updates bi-weekly)
-    try:
-        if not training_mode:
-            _info = mc.get_short_interest(ticker)
-            df["short_ratio"]   = float(_info.get("shortRatio") or 0.0)
-            df["short_pct_float"] = float(_info.get("shortPercentOfFloat") or 0.0)
-        else:
-            df["short_ratio"]   = 0.0
-            df["short_pct_float"] = 0.0
-    except Exception:
-        df["short_ratio"]   = 0.0
-        df["short_pct_float"] = 0.0
+    # Short interest -- PIT per-row join (replaces scalar broadcast, 2026-08-26)
+    # One path, correct in training_mode and live mode -- mirrors section 11c
+    # institutional features. No training_mode branch by design.
+    _si_ratio, _si_pct = _load_short_interest_pit(ticker, date_index, as_of=end_str)
+    df["short_ratio"]     = _si_ratio.values
+    df["short_pct_float"] = _si_pct.values
 
     # ── 7. Sentiment — reads from SQLite cache (run etl_sentiment.py daily) ────
     # Historical rows default to 0.0 (no past headlines available).
