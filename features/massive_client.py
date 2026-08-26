@@ -698,7 +698,14 @@ def get_quote_at(ticker: str, sip_ts_ns: int,
 
 
 _SPLITS_DB = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "prices.db")
-_SPLITS_TTL_DAYS = 30
+_SPLITS_TTL_DAYS = 30        # POSITIVE result: settled history, safe to cache long
+_SPLITS_TTL_DAYS_EMPTY = 2   # NEGATIVE result: a claim about the FUTURE, not history
+# Asymmetry added 2026-08-26. "CRWD split 4:1 on 2026-07-02" stays true forever.
+# "BYND has no splits" is falsifiable tomorrow -- and was: cached [] on 2026-08-03,
+# 1-for-30 reverse split effective 2026-08-14 (SEC 8-K), invisible until 2026-09-02.
+# daily_prices carried a fake +3,110% single-day return into validate_si_v2,
+# momentum_shadow, combine_mom_si and audit_ic. Expected miss window under a flat
+# 30d TTL is ~15 days; BYND was the base rate, not bad luck.
 
 def _splits_cache_get(ticker):
     """Return (rows, fresh). fresh=False if missing or older than TTL."""
@@ -715,7 +722,9 @@ def _splits_cache_get(ticker):
             return None, False
         payload, fetched_at = row
         age = (datetime.now() - datetime.fromisoformat(fetched_at)).days
-        return json.loads(payload), (age < _SPLITS_TTL_DAYS)
+        rows = json.loads(payload)
+        ttl = _SPLITS_TTL_DAYS if rows else _SPLITS_TTL_DAYS_EMPTY
+        return rows, (age < ttl)
     except Exception:
         return None, False
 
@@ -730,7 +739,7 @@ def _splits_cache_put(ticker, rows):
             )
             con.execute(
                 "INSERT OR REPLACE INTO splits_cache(ticker,payload,fetched_at) VALUES (?,?,?)",
-                (ticker, json.dumps(rows), datetime.now().isoformat()),
+                (ticker.upper().strip(), json.dumps(rows), datetime.now().isoformat()),
             )
             con.commit()
         finally:
@@ -743,6 +752,8 @@ def get_splits(ticker: str) -> list:
     Returns [{'execution_date','split_from','split_to'}, ...].
     Cached in prices.db (splits_cache, 30d TTL) — splits are immutable history;
     re-fetching 400x/run was generating ~980 needless 429s. Fix Jul 1 2026."""
+    ticker = ticker.upper().strip()   # splits_cache held 'SMCi' and 'MSFt' as
+                                      # separate keys from SMCI/MSFT (2026-08-26)
     _cached, _fresh = _splits_cache_get(ticker)
     if _fresh:
         return _cached

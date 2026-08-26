@@ -145,38 +145,63 @@ def load_si(si_db):
     return out
 
 
-def adjust_splits(g):
-    """raw_bars is UNADJUSTED and prices.db:splits is incomplete -- BYND's ~1:33
-    reverse split of 2026-08-14 has no row there. Detect discontinuities from the
-    bars themselves and rebase prior history onto the post-split basis.
-
-    Separator: on a split, price and volume move INVERSELY by the same factor, so
-    price_ratio * volume_ratio ~ 1. On a real move both rise together. Measured
-    2026-08-26 over 12 events >=60% since February: splits fell in 0.60-1.66,
-    real moves in 11.9-1390. No overlap.
-
-    Earliest-first, so multiple events compound correctly.
+def load_splits(prices_db):
+    """prices.db:splits is AUTHORITATIVE -- 330 rows/193 tickers, maintained from
+    Massive's splits endpoint by price_cache / massive_client / backfill_raw_bars.
+    Convention (verified 2026-08-26 against CRWD 4:1 = 1.0|4.0):
+        adj_price(d) = close(d) * (split_from/split_to) for exec_date > d
     """
+    con = sqlite3.connect(prices_db)
+    rows = con.execute("SELECT ticker, exec_date, split_from, split_to FROM splits "
+                       "WHERE split_from > 0 AND split_to > 0").fetchall()
+    con.close()
+    out = {}
+    for tk, ed, sf, st in rows:
+        out.setdefault(tk, []).append((str(ed)[:10], float(sf) / float(st)))
+    for v in out.values():
+        v.sort()
+    return out
+
+
+def apply_splits(g, splits):
+    """Rebase raw (UNADJUSTED) bars onto the current basis using TABLE data only."""
     g = g.copy()
-    pr = g["close"] / g["close"].shift(1)
-    vr = g["volume"] / g["volume"].shift(1)
-    ev = []
-    for i in range(1, len(g)):
-        p, v = pr.iat[i], vr.iat[i]
-        if p != p or v != v or v <= 0 or abs(p - 1.0) < SPLIT_RET_MIN:
+    applied = []
+    d0 = g["date"].iloc[0].strftime("%Y-%m-%d")
+    for ed, f in splits:
+        if ed <= d0 or f == 1.0:
             continue
-        if SPLIT_PROD_LO <= p * v <= SPLIT_PROD_HI:
-            ev.append((i, g["date"].iat[i], float(p)))
-    for i, _d, p in ev:
-        idx = g.index[:i]
+        idx = g.index[g["date"] < pd.Timestamp(ed)]
+        if not len(idx):
+            continue
         for c in ("open", "high", "low", "close"):
-            g.loc[idx, c] = g[c].iloc[:i] * p
-        g.loc[idx, "volume"] = g["volume"].iloc[:i] / p
-    return g, [(d, p) for _i, d, p in ev]
+            g.loc[idx, c] = g.loc[idx, c] * f
+        g.loc[idx, "volume"] = g.loc[idx, "volume"] / f
+        applied.append((ed, f))
+    return g, applied
 
 
-def bar_metrics(g):
-    g, _splits = adjust_splits(g)
+def residual_discontinuity(g):
+    """FLAG-ONLY. Never adjusts.
+
+    A prior version inferred splits from bars via price_ratio*volume_ratio ~ 1.
+    Over full history that flagged GME 2021-01-26/27/29 and AMC 2021-06-02 --
+    the canonical short squeezes -- as splits, in a short-squeeze scanner.
+    Implied ratios were 1.60-2.35; real split ratios are round. The heuristic
+    does not generalize and must never rewrite prices. It now only reports a
+    suspected gap so the row can be SUPPRESSED rather than silently wrong.
+    """
+    pr = g["close"] / g["close"].shift(1)
+    for i in range(max(1, len(g) - 25), len(g)):
+        p = pr.iat[i]
+        if p == p and (p >= 5.0 or p <= 0.20):
+            return g["date"].iat[i].strftime("%Y-%m-%d"), float(p)
+    return None, None
+
+
+def bar_metrics(g, splits):
+    g, _splits = apply_splits(g, splits)
+    _sd, _sr = residual_discontinuity(g)
     s = compute_signals(g)
     last = s.iloc[-1]
     f = lambda k: float(last[k]) if pd.notna(last[k]) else np.nan
@@ -194,8 +219,9 @@ def bar_metrics(g):
             "vol20d": float(v) if pd.notna(v) else np.nan,
             "adv20": f("vol20"), "up_streak": int(last["up_streak"]),
             "ramp": bool(last["FLAG_ramp"]), "top": bool(last["FLAG_top"]),
-            "split_dates": [d.strftime("%Y-%m-%d") for d, _ in _splits],
+            "split_dates": [d for d, _ in _splits],
             "split_factor": float(np.prod([p for _, p in _splits])) if _splits else 1.0,
+            "suspect_date": _sd, "suspect_ratio": _sr,
             "bar_date": last["date"].strftime("%Y-%m-%d")}
 
 
@@ -262,6 +288,7 @@ def main():
 
     t0 = time.time()
     bars = load_bars(prices_db, universe)
+    splits_map = load_splits(prices_db)
     si = load_si(si_db)
 
     rows = []
@@ -270,7 +297,7 @@ def main():
         if g is None:
             continue
         try:
-            m = bar_metrics(g)
+            m = bar_metrics(g, splits_map.get(t, []))
         except Exception:
             continue
         s = si.get(t, {})
@@ -340,6 +367,12 @@ def main():
     else:
         fuel_basis = "DTC only (--probe 0, no API calls)"
 
+    # Suppress rows with an unexplained price discontinuity: rvol / DTC_live /
+    # ignition are all corrupt when the bars straddle an unrecorded split.
+    _susp = df["suspect_date"].notna()
+    if _susp.any():
+        df.loc[_susp, ["dtc_live", "rvol", "ret_3d", "ignition"]] = np.nan
+    df["ignition"] = df["ignition"].fillna(0.0)
     n_ranked = len(df)
     _ign_hi  = int((df["ignition"] >= 50).sum())
     _ign_mid = int(((df["ignition"] >= 10) & (df["ignition"] < 50)).sum())
@@ -402,7 +435,9 @@ def main():
                  f"{_sic}{g(r['fee'],'%.2f',7)} {fee_tier(r['fee']):<9}"
                  f"{_avail}{g(_r3d,'%+.1f%%',8)}{g(r['rvol'],'%.2f',6)}  {tag(r)}"
                  + ("  RAMP" if r["ramp"] else "") + ("  TOP" if r["top"] else "")
-                 + (f"  SPLIT-adj x{r['split_factor']:.2f}" if r["split_adj"] else ""))
+                 + (f"  SPLIT-adj x{r['split_factor']:.2f}" if r["split_adj"] else "")
+                 + (f"  !! SUSPECT GAP {r['suspect_date']} x{r['suspect_ratio']:.1f}"
+                    " -- unrecorded split? row suppressed" if r["suspect_date"] else ""))
     L.append("  " + "-" * 100)
     L.append(f"  DTC_live = shares_short / trailing-20d ADV (raw_bars). DTC_fin = FINRA as-published.")
     L.append(f"  scan {time.time()-t0:.0f}s")
