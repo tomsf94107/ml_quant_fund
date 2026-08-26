@@ -31,7 +31,15 @@ import argparse
 import os
 import sqlite3
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
+
+
+def _et_today():
+    """Massive 403s on future windows. VN local date runs AHEAD of ET from
+    00:00-11:00 VN (= 13:00-24:00 ET), so date.today() requests a bar that does
+    not exist yet. Anchor every default to the US/Eastern calendar date."""
+    return datetime.now(ZoneInfo("America/New_York")).date()
 
 import pandas as pd
 
@@ -164,15 +172,15 @@ def enrich_fuel(ticker, si_db=None):
     else:
         ctx["short_interest"] = "pass --si-db /path/to/short_interest.db to include"
 
-    # ---- UW options flow + dark pool: reuse your monitor ----
-    try:
-        # WIRING: replace with your actual monitor function names.
-        from scripts.monitor_ticker import fetch_options_flow, fetch_darkpool  # noqa
-        ctx["options_flow"] = fetch_options_flow(ticker)
-        ctx["darkpool"]     = fetch_darkpool(ticker)
-    except Exception:
-        ctx["options_flow"] = "WIRING: import your monitor's UW flow fetcher (or just run `monitor BYND`)"
-        ctx["darkpool"]     = "WIRING: import your monitor's UW darkpool fetcher (or just run `monitor BYND`)"
+    # ---- UW options flow + dark pool ----
+    # VERIFIED 2026-08-26: fetch_options_flow / fetch_darkpool DO NOT EXIST in
+    # scripts/monitor_ticker.py. What exists there: assess_squeeze() (line 4283)
+    # and section_squeeze() (line 4343). The previous bare `except Exception`
+    # swallowed the ImportError and printed a WIRING note that READ LIKE DATA in
+    # the FUEL CONTEXT panel on every run since this file was written.
+    # section_squeeze() needs a live sqlite3 conn -- wiring it is its own task.
+    ctx["options_flow"] = "NOT WIRED -- no such fetcher in monitor_ticker.py"
+    ctx["darkpool"]     = "NOT WIRED -- no such fetcher in monitor_ticker.py"
 
     # Borrow fee IS available from UW; monitor's section_squeeze fetches it live.
     # This standalone scanner can call /api/shorts/{ticker}/data the same way.
@@ -220,12 +228,14 @@ def render(df, ticker, splits, ctx, tail=60):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("ticker")
-    p.add_argument("--start", default=(date.today() - timedelta(days=180)).isoformat())
-    p.add_argument("--end", default=date.today().isoformat())
+    p.add_argument("--start", default=(_et_today() - timedelta(days=180)).isoformat())
+    p.add_argument("--end", default=_et_today().isoformat())
     p.add_argument("--si-db", default=None, help="path to short_interest.db (optional)")
     p.add_argument("--out-dir", default=".")
     p.add_argument("--tail", type=int, default=60)
     args = p.parse_args()
+    # clamp explicit --end as well: a user-supplied future date 403s identically
+    args.end = min(args.end, _et_today().isoformat())
 
     df = compute_signals(get_ohlcv(args.ticker, args.start, args.end))
     splits = detect_splits(df)
