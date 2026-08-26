@@ -726,20 +726,30 @@ def generate_signals(
     # ── Short interest / squeeze multiplier ───────────────────────────────────
     # High short interest + BUY signal = potential squeeze → boost probability
     # Shorts rapidly increasing = bearish trap → cut probability
+    # -- Short interest / squeeze multiplier -- DISABLED 2026-08-26 -----------
+    # Contradicts the validated SI brick: 71% of SI edge is in the LOW-DTC LONG
+    # leg; the high-DTC short leg (Sharpe +0.67) was NOT significant. This
+    # overlay boosted prob_eff by up to 1.15x on HIGH short interest -- opposite
+    # sign. Hand-weighted, never gated (no per-date IC / NW-t / shuffle null).
+    # Measured 2026-05-08..2026-08-25: 432 signals crossed the ENTRY threshold
+    # ONLY because of this multiplier (h=1:7, h=3:203, h=5:222) across 12
+    # tickers (ORIC, AI, LYFT, ALT, BYND, VKTX, QUBT, ASAN, ECHO, FOXA, GEMI, LEU).
+    # Re-enable: ML_QUANT_ENABLE_SQUEEZE_MULT=1 only after the gate is passed.
     squeeze_mult = 1.0
-    try:
-        if _is_etf: raise Exception('ETF skip')
-        import signal as _sig2
-        def _timeout2(s,f): raise TimeoutError()
-        _sig2.signal(_sig2.SIGALRM, _timeout2)
-        _sig2.alarm(5)
+    if os.environ.get("ML_QUANT_ENABLE_SQUEEZE_MULT", "0") == "1":
         try:
-            from features.short_interest import short_interest_to_multiplier
-            squeeze_mult = short_interest_to_multiplier(ticker)
-        finally:
-            _sig2.alarm(0)
-    except Exception:
-        squeeze_mult = 1.0
+            if _is_etf: raise Exception('ETF skip')
+            import signal as _sig2
+            def _timeout2(s,f): raise TimeoutError()
+            _sig2.signal(_sig2.SIGALRM, _timeout2)
+            _sig2.alarm(5)
+            try:
+                from features.short_interest import short_interest_to_multiplier
+                squeeze_mult = short_interest_to_multiplier(ticker)
+            finally:
+                _sig2.alarm(0)
+        except Exception:
+            squeeze_mult = 1.0
 
     # ── Intraday momentum multiplier ─────────────────────────────────────────
     # If stock is moving UP intraday → boost prob_eff slightly
