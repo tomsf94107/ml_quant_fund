@@ -148,45 +148,57 @@ def main():
     ap.add_argument("--out", default="data/raw")
     ap.add_argument("--scrape-daily-pages", action="store_true",
                     help="also scrape Cboe per-day pages 1997-2019 (slow, one-shot)")
+    ap.add_argument("--only", default="all",
+                    help="comma-separated legs to run: fred,alfred,cboe,cfe,french,ritter "
+                         "or 'all' (default). Phase 0 = --only fred; weekly cron = --only fred "
+                         "(re-pulling Cboe/CFE weekly is wasteful and rude to the source).")
     args = ap.parse_args()
+    legs = {l.strip().lower() for l in args.only.split(",")}
+    run = lambda leg: ("all" in legs) or (leg in legs)
     conn = sqlite3.connect(args.db)
     today = date.today().isoformat()
 
-    print("[FRED]")
-    for s in FRED:
+    if run("fred"):
+        print("[FRED]")
+        for s in FRED:
+            try:
+                upsert_fred(conn, s, fred_csv(s), today)
+            except Exception as e:
+                print(f"  [fail] {s}: {e}")
+
+    if run("alfred"):
+        print("[ALFRED vintages]")
+        for s in ALFRED:
+            blob = alfred_all_vintages(s)
+            if blob:
+                save(args.out, f"alfred_{s}_{today}.json", blob)
+
+    if run("cboe"):
+        print("[Cboe csvs]")
+        for name, url in CBOE_CSVS.items():
+            try:
+                save(os.path.join(args.out, "cboe"), name, get(url, binary=name.endswith(".xls")))
+            except Exception as e:
+                print(f"  [fail] {name}: {e}")
+
+    if run("cfe"):
+        print("[CFE settles]")
+        cfe_all(args.out)
+
+    if run("french"):
+        print("[French daily factors]")
         try:
-            upsert_fred(conn, s, fred_csv(s), today)
+            save(args.out, "F-F_Research_Data_Factors_daily_CSV.zip", get(FRENCH, binary=True))
         except Exception as e:
-            print(f"  [fail] {s}: {e}")
+            print(f"  [fail] French: {e}")
 
-    print("[ALFRED vintages]")
-    for s in ALFRED:
-        blob = alfred_all_vintages(s)
-        if blob:
-            save(args.out, f"alfred_{s}_{today}.json", blob)
-
-    print("[Cboe csvs]")
-    for name, url in CBOE_CSVS.items():
-        try:
-            save(os.path.join(args.out, "cboe"), name, get(url, binary=name.endswith(".xls")))
-        except Exception as e:
-            print(f"  [fail] {name}: {e}")
-
-    print("[CFE settles]")
-    cfe_all(args.out)
-
-    print("[French daily factors]")
-    try:
-        save(args.out, "F-F_Research_Data_Factors_daily_CSV.zip", get(FRENCH, binary=True))
-    except Exception as e:
-        print(f"  [fail] French: {e}")
-
-    print("[Ritter PDFs]")
-    for url in RITTER:
-        try:
-            save(os.path.join(args.out, "ritter"), url.rsplit("/", 1)[-1], get(url, binary=True))
-        except Exception as e:
-            print(f"  [fail] {url}: {e}")
+    if run("ritter"):
+        print("[Ritter PDFs]")
+        for url in RITTER:
+            try:
+                save(os.path.join(args.out, "ritter"), url.rsplit("/", 1)[-1], get(url, binary=True))
+            except Exception as e:
+                print(f"  [fail] {url}: {e}")
 
     print(f"[note] Shiller ie_data: download via {SHILLER} (link target moves)")
     print(f"[note] FINRA margin stats: xlsx linked from {FINRA_MARGIN}")
