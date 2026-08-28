@@ -712,3 +712,79 @@ def test_business_day_staleness_spans_a_normal_weekend():
     # nothing visible at all -- None, not 0. That is rule #1, not staleness.
     assert pit.staleness_bdays(con, "X", "2026-08-28") is None
     assert pit.staleness_bdays(con, "NOPE", "2026-08-31") is None
+
+
+# --------------------------------------------------------------- F3
+
+from builders import f3_vix_term_slope as F3B  # noqa: E402
+
+
+def _load_pair(con, vix, vix3m, start="2008-01-01"):
+    from datetime import date, timedelta
+    d = date.fromisoformat(start); i = 0
+    while i < len(vix):
+        if d.weekday() < 5:
+            pub = (d + timedelta(days=1)).isoformat()
+            put(con, "VIXCLS", d.isoformat(), pub, vix[i])
+            put(con, "VXVCLS", d.isoformat(), pub, vix3m[i])
+            i += 1
+        d += timedelta(days=1)
+    return d.isoformat()
+
+
+def test_f3_green_in_contango():
+    con = db()
+    asof = _load_pair(con, [15.0] * 10, [18.0] * 10)
+    r = F3B.compute(con, asof)
+    assert r["state"] == "G"
+    assert r["detail"]["inverted"] is False
+    assert r["detail"]["slope_pct"] == 20.0
+
+
+def test_f3_arms_on_a_single_inverted_day():
+    con = db()
+    asof = _load_pair(con, [15.0] * 9 + [22.0], [18.0] * 10)
+    r = F3B.compute(con, asof)
+    assert r["detail"]["inverted_run_days"] == 1
+    assert r["state"] == F3B.AMBER_STATE
+
+
+def test_f3_reds_only_after_five_consecutive_inverted_days():
+    con = db()
+    asof4 = _load_pair(con, [15.0] * 6 + [22.0] * 4, [18.0] * 10)
+    assert F3B.compute(con, asof4)["state"] == F3B.AMBER_STATE
+    con2 = db()
+    asof5 = _load_pair(con2, [15.0] * 5 + [22.0] * 5, [18.0] * 10)
+    r = F3B.compute(con2, asof5)
+    assert r["detail"]["inverted_run_days"] == 5
+    assert r["state"] == "R"
+
+
+def test_f3_run_resets_on_a_single_contango_day():
+    """The run must be CONSECUTIVE and end at the latest observation."""
+    con = db()
+    asof = _load_pair(con, [22.0] * 4 + [15.0] + [22.0] * 3, [18.0] * 8)
+    r = F3B.compute(con, asof)
+    assert r["detail"]["inverted_run_days"] == 3, "an intervening contango day resets"
+    assert r["state"] == F3B.AMBER_STATE
+
+
+def test_f3_declares_the_missing_futures_leg():
+    con = db()
+    asof = _load_pair(con, [15.0] * 10, [18.0] * 10)
+    d = F3B.compute(con, asof)["detail"]
+    assert d["futures_leg"] is None
+    assert "CFE" in d["futures_note"]
+    assert d["legs_used"] == ["VXVCLS", "VIXCLS"]
+
+
+def test_f3_na_without_vix3m():
+    con = db()
+    from datetime import date, timedelta
+    for i in range(10):
+        d = date(2008, 1, 7) + timedelta(days=i)
+        if d.weekday() < 5:
+            put(con, "VIXCLS", d.isoformat(),
+                (d + timedelta(days=1)).isoformat(), 15.0)
+    r = F3B.compute(con, "2008-01-25")
+    assert r["state"] == "NA" and "VXVCLS" in r["detail"]["reason"]

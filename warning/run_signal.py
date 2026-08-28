@@ -17,8 +17,9 @@ from builders import s1_term_spread as S1          # noqa: E402
 from builders import s2_credit as S2               # noqa: E402
 from builders import f2_vix_percentile as F2       # noqa: E402
 from builders import s4_funding as S4              # noqa: E402
+from builders import f3_vix_term_slope as F3       # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -36,6 +37,14 @@ ANCHORS = {
            ("2007-10-09", "SPX peak: registry VIX 16.12 -- 'the trap' (report line 424)"),
            ("2020-02-19", "COVID peak: registry 14.38 exhibit"),
            ("2022-01-03", "SPX 2022 peak"),
+           ("2026-08-28", "today")],
+    "F3": [("2007-08-15", "registry: Aug-07 inversion during the funding rupture"),
+           ("2007-10-09", "registry: 'contango at top' -- F3 calm at the SPX peak"),
+           ("2008-09-30", "post-Lehman"),
+           ("2010-05-20", "registry notes: inverts in every correction"),
+           ("2011-08-08", "2011 correction"),
+           ("2018-02-06", "2018 volmageddon"),
+           ("2020-03-20", "COVID"),
            ("2026-08-28", "today")],
     "S4": [("1998-10-30", "LTCM funding stress -- registry notes 1998 as a false fire for S2"),
            ("2007-08-15", "Aug-2007 funding rupture: the report's defining S4 event"),
@@ -75,6 +84,11 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "F3":
+        print(f"    VIX {d['vix']}  VIX3M {d['vix3m']}  slope {d['slope_pct']:+.2f}%"
+              f"  inverted={d['inverted']} run {d['inverted_run_days']}d"
+              f" (red at {d['red_at_days']})")
+        print(f"    legs {d['legs_used']}  futures leg: absent")
     elif sig == "S4":
         print(f"    mode={d['mode']} ({d['series']})")
         if d["mode"] == "historic":

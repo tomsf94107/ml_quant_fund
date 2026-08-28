@@ -48,6 +48,7 @@ from builders import s1_term_spread as S1                    # noqa: E402
 from builders import s2_credit as S2                         # noqa: E402
 from builders import f2_vix_percentile as F2                 # noqa: E402
 from builders import s4_funding as S4                        # noqa: E402
+from builders import f3_vix_term_slope as F3                 # noqa: E402
 from builders import l4_propagation as L4                    # noqa: E402
 
 # The 15 shortlist signals and their layers, from signal_registry.csv.
@@ -59,7 +60,7 @@ ROSTER = {
     "S4": "L3", "S14": "L3",
 }
 BUILT = {"S1": S1, "S2": S2, "S4": S4}       # composite inputs implemented so far
-DASHBOARD = {"F2": F2}                       # tier 'dashboard', computed after
+DASHBOARD = {"F2": F2, "F3": F3}             # tier 'dashboard', computed after
 
 
 def load_state(con) -> EngineState:
@@ -151,7 +152,12 @@ def main():
     # dashboard features, downstream of the engine
     dash = {}
     for sid, mod in DASHBOARD.items():
-        dash[sid] = mod.compute(con, args.asof, l2_score=res.layer_scores.get("L2"))
+        # F2's red condition needs the L2 layer score; F3 does not take one.
+        try:
+            dash[sid] = mod.compute(con, args.asof,
+                                    l2_score=res.layer_scores.get("L2"))
+        except TypeError:
+            dash[sid] = mod.compute(con, args.asof)
 
     built = [s for s in ROSTER if s in BUILT]
     print(f"as of {args.asof}   composite inputs built: {len(built)}/{len(ROSTER)} "
@@ -186,8 +192,15 @@ def main():
     print("\n  dashboard (not in the composite):")
     for sid, r in dash.items():
         d = r["detail"]
-        print(f"    {sid:<5} {r['state']:<3}  VIX {d.get('vix')} "
-              f"pct {d.get('percentile_504d')}  L2 passed = {d.get('l2_score')}")
+        if "reason" in d:
+            print(f"    {sid:<5} {r['state']:<3}  {d['reason'][:70]}")
+        elif sid == "F2":
+            print(f"    {sid:<5} {r['state']:<3}  VIX {d.get('vix')} "
+                  f"pct {d.get('percentile_504d')}  L2 passed = {d.get('l2_score')}")
+        else:
+            print(f"    {sid:<5} {r['state']:<3}  VIX {d.get('vix')} "
+                  f"VIX3M {d.get('vix3m')}  slope {d.get('slope_pct')}%  "
+                  f"inverted {d.get('inverted_run_days')}d")
 
     if res.alerts:
         print("\n  alerts:")
