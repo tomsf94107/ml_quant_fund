@@ -478,7 +478,7 @@ def test_driver_emits_na_for_unbuilt_so_coverage_is_honest():
     # every UNBUILT signal must be NA. (Built ones are also NA here because this
     # fixture db has no data -- which is itself correct behaviour.)
     unbuilt = {sid for sid in DD.ROSTER if sid not in DD.BUILT}
-    assert len(unbuilt) == 13
+    assert unbuilt, "derived, not hardcoded: this count changes as builders land"
     na = {r.signal_id for r in readings if r.state == "NA"}
     assert unbuilt <= na
     res = step("2026-08-28", readings, EngineState())
@@ -612,3 +612,103 @@ def test_insufficient_data_currently_suppresses_the_l4_crisis_override():
     assert res.l4_override is True              # the override DID fire
     assert res.band == "INSUFFICIENT_DATA"      # ...and was suppressed
     assert res.action["hedge"] == "freeze"
+
+
+# --------------------------------------------------------------- S4
+
+from builders import s4_funding as S4B  # noqa: E402
+
+
+def test_s4_historic_needs_both_z_and_sustained_level():
+    con = db()
+    # 252 calm days then a spike: z is huge but the level held >100bp only 1 day
+    vals = [0.20] * 252 + [1.60]
+    asof = _load_daily(con, "TEDRATE", vals, start="2007-01-01")
+    r = S4B.compute(con, asof, mode="historic")
+    d = r["detail"]
+    assert d["mode"] == "historic" and d["z"] > S4B.RED_Z
+    assert d["above_100bp_for_5d"] is False
+    assert r["state"] == S4B.AMBER_STATE, "z alone must not fire red"
+
+
+def test_s4_historic_fires_red_when_level_is_sustained():
+    con = db()
+    vals = [0.20] * 252 + [1.60] * 5
+    asof = _load_daily(con, "TEDRATE", vals, start="2007-01-01")
+    r = S4B.compute(con, asof, mode="historic")
+    assert r["detail"]["above_100bp_for_5d"] is True
+    assert r["state"] == "R"
+
+
+def test_s4_refuses_to_composite_a_single_funding_leg():
+    """MIN_MODERN_LEGS: one market is not 'funding stress'."""
+    con = db()
+    _load_daily(con, "RIFSPPFAAD90NB",
+                [0.30 + 0.01 * (i % 5) for i in range(300)], start="2024-01-01")
+    asof = _load_daily(con, "DTB3", [0.1] * 300, start="2024-01-01")
+    r = S4B.compute(con, asof, mode="modern")
+    assert r["state"] == "NA"
+    assert "needs >=2 funding legs" in r["detail"]["reason"]
+
+
+def test_s4_modern_composites_available_legs():
+    con = db()
+    n = 300
+    _load_daily(con, "RIFSPPFAAD90NB",
+                [0.30 + 0.01 * (i % 5) for i in range(n - 1)] + [2.5], start="2024-01-01")
+    _load_daily(con, "DTB3", [0.1] * n, start="2024-01-01")
+    _load_daily(con, "SOFR",
+                [0.50 + 0.01 * (i % 5) for i in range(n - 1)] + [2.0], start="2024-01-01")
+    asof = _load_daily(con, "IORB", [0.4] * n, start="2024-01-01")
+    r = S4B.compute(con, asof, mode="modern")
+    d = r["detail"]
+    assert d["mode"] == "modern" and d["n_legs"] == 2
+    assert set(d["legs"]) == {"cp_tbill", "sofr_iorb"}
+    assert r["state"] == "R", d
+
+
+def test_s4_abcp_contraction_counts_as_stress_not_relief():
+    """ABCP shrinking is funding withdrawal; the leg's sign must be flipped."""
+    con = db()
+    n = 400
+    vals = [1000.0] * (n - 1) + [200.0]          # sharp contraction
+    _load_daily(con, "ABCOMP", vals, start="2023-01-01")
+    # the CP-Tbill leg must VARY: a constant spread has zero variance and _z
+    # correctly returns None, which would drop the leg and trip MIN_MODERN_LEGS
+    _load_daily(con, "RIFSPPFAAD90NB", [0.30 + 0.01 * (i % 7) for i in range(n)],
+                start="2023-01-01")
+    asof = _load_daily(con, "DTB3", [0.1] * n, start="2023-01-01")
+    r = S4B.compute(con, asof, mode="modern")
+    leg = r["detail"]["legs"]["abcp_4wk"]
+    assert leg["z_raw"] < 0 and leg["z_stress"] > 0, "contraction must read as stress"
+
+
+def test_s4_auto_mode_prefers_ted_only_while_it_is_fresh():
+    con = db()
+    asof = _load_daily(con, "TEDRATE", [0.2] * 260, start="2007-01-01")
+    fresh = S4B.compute(con, asof)
+    assert fresh["detail"]["mode"] == "historic"
+    # years later TEDRATE is discontinued -> auto must not keep using it
+    stale = S4B.compute(con, "2026-08-28")
+    assert stale["detail"]["mode"] == "modern"
+
+
+def test_staleness_is_counted_in_business_days_not_calendar_days():
+    """REGRESSION (real data 2026-08-28): on 2007-10-09, the trading day after
+    Columbus Day, S4's last TED print was Friday 2007-10-05 -- 4 calendar days
+    back, past max_staleness_days=3 -- so S4 went NA and fell back to modern mode
+    mid-crisis. Counted in business days it is 2, comfortably fresh."""
+    con = db()
+    put(con, "TEDRATE", "2007-10-05", "2007-10-06", 1.0)
+    assert pit.staleness_days(con, "TEDRATE", "2007-10-09") == 4      # calendar
+    assert pit.staleness_bdays(con, "TEDRATE", "2007-10-09") == 2     # business
+
+
+def test_business_day_staleness_spans_a_normal_weekend():
+    con = db()
+    put(con, "X", "2026-08-28", "2026-08-29", 1.0)            # Fri obs, Sat pub
+    assert pit.staleness_bdays(con, "X", "2026-08-31") == 1   # Monday: 1 bday
+    # on the observation date itself the row is not yet published, so there is
+    # nothing visible at all -- None, not 0. That is rule #1, not staleness.
+    assert pit.staleness_bdays(con, "X", "2026-08-28") is None
+    assert pit.staleness_bdays(con, "NOPE", "2026-08-31") is None

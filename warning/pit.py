@@ -72,6 +72,37 @@ def staleness_days(con, series_id: str, asof) -> int | None:
     return (a - o).days
 
 
+def staleness_bdays(con, series_id: str, asof) -> int | None:
+    """Staleness in BUSINESS days (weekends excluded).
+
+    WHY NOT CALENDAR DAYS (found on real data 2026-08-28):
+      S4 carries max_staleness_days = 3. Read as calendar days, the Tuesday after
+      any Monday holiday is already stale: the last observation is the preceding
+      Friday, four calendar days back. On 2007-10-09 -- the trading day after
+      Columbus Day -- S4 went NA and silently fell back to its modern mode during
+      the 2007 funding crisis. A three-day limit that cannot survive a public
+      holiday is a unit error, not a threshold: the registry's "3" is unchanged,
+      it is simply counted in the unit that makes it usable.
+
+    Still approximate: exchange holidays inside the span are counted as business
+    days, so a Thanksgiving week can add one. Removing that needs a real trading
+    calendar, which no ingested source provides.
+    """
+    last = latest_obs_asof(con, series_id, asof)
+    if last is None:
+        return None
+    a = datetime.fromisoformat(_d(asof)).date()
+    o = datetime.fromisoformat(last[0]).date()
+    if a <= o:
+        return 0
+    n, cur = 0, o
+    while cur < a:
+        cur += timedelta(days=1)
+        if cur.weekday() < 5:
+            n += 1
+    return n
+
+
 def monthly_mean(rows: list[tuple[str, float]]) -> list[tuple[str, float]]:
     """Collapse daily [(obs_date, value)] to [('YYYY-MM', mean)], sorted.
 

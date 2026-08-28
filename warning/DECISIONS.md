@@ -8,7 +8,7 @@ These are NOT threshold changes (rule #3). No frozen threshold has been altered.
 They are choices the frozen documents do not make.
 
 Status as of 2026-08-28: **D1 RATIFIED** (evidence-backed by the 64-year scan).
-D2, D3 in force. D4, D8, D10 OPEN. D5-D7, D9 in force.
+D2, D3 in force. D4, D8, D10, D12 OPEN. D5-D7, D9, D11 in force.
 
 ---
 
@@ -286,3 +286,62 @@ change would alter crisis behaviour. A candidate fix, if ratified: let an L4
 override set the band even when insufficient, while still reporting coverage and
 flagging that the composite is unavailable -- CRISIS on observation, with the
 data caveat printed alongside.
+
+
+---
+
+## D11 — S4 modern red drops the historic "& level" conjunct
+
+**Where:** `warning/builders/s4_funding.py`
+
+**Gap.** The historic rule is explicit: `TED z>2 AND >100bp for >=5d`. The modern
+composite is a mean of z-scores over CP-Tbill, SOFR-IORB and the ABCP 4-week
+delta; it has no natural basis-point level, and the registry supplies none.
+
+**Default.** Modern red = `z>2` alone. This DROPS a conjunct rather than adding
+one, so **modern red is easier to reach than historic red**. Any evaluation
+spanning the 2022 changeover must carry that asymmetry rather than treating S4 as
+one homogeneous series.
+
+**Also encoded:** `MIN_MODERN_LEGS = 2` -- one funding market is not "funding
+stress", so fewer than two available legs returns NA. And the ABCP leg's sign is
+flipped: a CONTRACTING ABCP market is funding withdrawal, so contraction reads as
+stress. Without the flip that leg would point the wrong way and partly cancel the
+others. Pinned by `test_s4_abcp_contraction_counts_as_stress_not_relief`.
+
+---
+
+## D12 — z-scored signals self-neutralize during a sustained crisis
+
+**Status: OPEN. Property of the frozen thresholds, not a defect. No fix applied.**
+
+**Observed on real data, twice, in two unrelated signals:**
+
+| Signal | Date | Absolute level | Relative reading | State |
+|---|---|---|---|---|
+| S4 | 2007-08-31 | TED 1.84pp | z **+4.35** | **R** |
+| S4 | 2007-12-31 | TED 1.63pp | z +1.20 | G |
+| S4 | **2008-11-30** | **TED 2.21pp** | z **+0.83** | **G** |
+| F2 | 2007-01-31 | VIX 10.96 | 12.7th pctile | Y |
+| F2 | **2007-10-09** | VIX 17.46 | **85.9th pctile** | G |
+
+S4 reads GREEN in November 2008 with TED at 221bp, because its own 252-day window
+had absorbed the crisis. F2 reads GREEN at the October 2007 peak because the
+August 2007 vol shock lifted its 504-day window.
+
+**Why this is faithful and still dangerous.** Both formulas are implemented as
+written (`z>2 (1y)`, `vs 504d percentile`). A trailing-window normalization
+measures CHANGE, not LEVEL, so a regime that persists becomes the new normal.
+The historic S4 rule has a level guard -- `AND >100bp` -- but it is a conjunct
+for RED only; it cannot stop the signal decaying to G when z falls.
+
+**Direct consequence for L4A.** L4A is defined as "S4 red + breadth-of-stress
+across >=2 funding markets". If S4 cannot hold red through a crisis, L4A cannot
+fire through one either -- precisely when crash propagation is the thing being
+measured.
+
+**Not fixed here.** A level floor (e.g. S4 cannot fall below amber while TED
+exceeds 100bp) would fix it, but that is a new threshold, and rule #3 forbids
+inventing one. Raised for a ruling, and it belongs in the Phase 4 evaluation as a
+falsifiable question: does a level-floored variant beat the pure-z form on
+PR-AUC over the 2007-09 and 2020 windows?

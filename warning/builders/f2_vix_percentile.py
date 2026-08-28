@@ -41,7 +41,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pit import series_asof, staleness_days  # noqa: E402
+from pit import series_asof, staleness_bdays  # noqa: E402
 
 SIGNAL_ID = "F2"
 LAYER = "L1"
@@ -74,7 +74,7 @@ def compute(con, asof, l2_score=None):
     window = [v for _, v in rows[-WINDOW:]]
     vix = window[-1]
     pct = percentile_of_last(window)
-    stale_days = staleness_days(con, SERIES, asof)
+    stale_days = staleness_bdays(con, SERIES, asof)
 
     armed = pct < ARM_PCTILE
     red_pct = pct < RED_PCTILE

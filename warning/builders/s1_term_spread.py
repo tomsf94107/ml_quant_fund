@@ -39,7 +39,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pit import (series_asof, monthly_mean_complete, align,  # noqa: E402
-                 staleness_days)
+                 staleness_bdays)
 
 SIGNAL_ID = "S1"
 LAYER = "L2"
@@ -91,7 +91,7 @@ def compute(con, asof, full_history: bool = False):
                          f"need >=3 for the 2-of-3 rule")
 
     # staleness: worst of the two inputs
-    st = [staleness_days(con, s, asof) for s in SERIES]
+    st = [staleness_bdays(con, s, asof) for s in SERIES]
     stale_days = max(x for x in st if x is not None)
     stale = stale_days > MAX_STALENESS_DAYS
 

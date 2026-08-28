@@ -48,7 +48,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pit import series_asof, monthly_mean_complete, staleness_days  # noqa: E402
+from pit import series_asof, monthly_mean_complete, staleness_bdays  # noqa: E402
 
 SIGNAL_ID = "S2"
 LAYER = "L2"
@@ -91,7 +91,7 @@ def compute(con, asof, mode: str = "auto", spx_near_high=None):
         values = [v for _, v in daily]
         series_used, ma_n, low_n = DAILY_SERIES, DAILY_MA, DAILY_LOW
         last_label = daily[-1][0]
-        stale_days = staleness_days(con, DAILY_SERIES, asof)
+        stale_days = staleness_bdays(con, DAILY_SERIES, asof)
     else:
         rows = series_asof(con, MONTHLY_SERIES, asof)
         if not rows:
@@ -103,7 +103,7 @@ def compute(con, asof, mode: str = "auto", spx_near_high=None):
         values = [v for _, v in months]
         series_used, ma_n, low_n = MONTHLY_SERIES, MONTHLY_MA, MONTHLY_LOW
         last_label = months[-1][0]
-        stale_days = staleness_days(con, MONTHLY_SERIES, asof)
+        stale_days = staleness_bdays(con, MONTHLY_SERIES, asof)
 
     spread = values[-1]
     ma = sum(values[-ma_n:]) / ma_n

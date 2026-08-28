@@ -33,7 +33,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pit import series_asof, staleness_days  # noqa: E402
+from pit import series_asof, staleness_bdays  # noqa: E402
 
 LAYER = "L4"
 MAX_STALENESS_DAYS = 3
@@ -82,7 +82,7 @@ def spread_blowout(con, asof):
     cur = rows[-1][1]
     prior = rows[-1 - BLOWOUT_WINDOW][1]
     delta = cur - prior
-    stale = staleness_days(con, BLOWOUT_SERIES, asof)
+    stale = staleness_bdays(con, BLOWOUT_SERIES, asof)
     fired = delta >= BLOWOUT_BP
     return {
         "signal_id": "L4B", "layer": LAYER, "asof": str(asof),
@@ -110,7 +110,7 @@ def correlation_spike(con, asof):
     pct = 100.0 * sum(1 for v in window if v <= cur) / len(window)
     prior = rows[-1 - CORR_JUMP_WINDOW][1] if len(rows) > CORR_JUMP_WINDOW else cur
     jumped = (cur - prior) > CORR_JUMP_MIN
-    stale = staleness_days(con, CORR_SERIES, asof)
+    stale = staleness_bdays(con, CORR_SERIES, asof)
     fired = pct >= CORR_TOP_DECILE and jumped
     return {
         "signal_id": "L4C", "layer": LAYER, "asof": str(asof),

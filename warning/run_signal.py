@@ -16,8 +16,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from builders import s1_term_spread as S1          # noqa: E402
 from builders import s2_credit as S2               # noqa: E402
 from builders import f2_vix_percentile as F2       # noqa: E402
+from builders import s4_funding as S4              # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -36,6 +37,13 @@ ANCHORS = {
            ("2020-02-19", "COVID peak: registry 14.38 exhibit"),
            ("2022-01-03", "SPX 2022 peak"),
            ("2026-08-28", "today")],
+    "S4": [("1998-10-30", "LTCM funding stress -- registry notes 1998 as a false fire for S2"),
+           ("2007-08-15", "Aug-2007 funding rupture: the report's defining S4 event"),
+           ("2007-10-09", "SPX peak"),
+           ("2008-09-30", "post-Lehman"),
+           ("2020-03-20", "COVID funding stress"),
+           ("2022-01-03", "SPX 2022 peak -- TED discontinued around here"),
+           ("2026-08-28", "today (modern mode)")],
     "S2": [("2000-02-29", "reads Jan-2000 data month: registry weak fire begins"),
            ("2000-04-30", "reads Mar-2000: the +44bp peak of the weak fire (D8)"),
            ("2007-07-31", "reads Jun-2007: registry strong fire begins (D8)"),
@@ -67,6 +75,16 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S4":
+        print(f"    mode={d['mode']} ({d['series']})")
+        if d["mode"] == "historic":
+            k=[x for x in d if x.startswith("above_")][0]
+            print(f"    TED {d['ted_pp']:+.4f}pp  z {d['z']:+.2f}  {k}={d[k]}")
+        else:
+            print(f"    composite z {d['composite_z']:+.2f} from {d['n_legs']} legs")
+            for name, v in (d.get("legs") or {}).items():
+                print(f"      {name:<12} z {v.get('z', v.get('z_stress')):+.2f}"
+                      f"  {v}")
     elif sig == "F2":
         print(f"    VIX {d['vix']:.2f}  percentile(504d) {d['percentile_504d']:.1f}"
               f"  window {d['window_low']:.2f}..{d['window_high']:.2f}")
