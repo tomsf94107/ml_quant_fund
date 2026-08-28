@@ -69,6 +69,9 @@ MONTHLY_MA = 10              # months ~= 200 trading days   (D7)
 MONTHLY_LOW = 6              # months ~= 126 trading days   (D7)
 
 
+EQUITY_SERIES = "SPY_CLOSE"      # PROXY for SPX; see ingest_spx.py
+
+
 def compute(con, asof, mode: str = "auto", spx_near_high=None):
     """Compute S2 as of `asof`.
 
@@ -110,6 +113,14 @@ def compute(con, asof, mode: str = "auto", spx_near_high=None):
     off_low = spread >= low + WIDEN_BP
     credit_leg = above_ma and off_low
 
+    # Equity leg: computed from the ingested proxy unless the caller overrides.
+    equity_source = None
+    if spx_near_high is None:
+        closes = series_asof(con, EQUITY_SERIES, asof)
+        if closes:
+            spx_near_high = equity_leg_from_prices(closes, asof)
+            equity_source = EQUITY_SERIES
+
     if not credit_leg:
         state = "G"
     elif spx_near_high is True:
@@ -138,9 +149,12 @@ def compute(con, asof, mode: str = "auto", spx_near_high=None):
             "off_low": off_low,
             "credit_leg": credit_leg,
             "equity_leg": spx_near_high,
-            "equity_note": (None if spx_near_high is not None else
-                            "SPX series not wired -- full condition cannot be "
-                            "evaluated, so S2 can arm but not fire red"),
+            "equity_source": equity_source,
+            "equity_note": (
+                None if spx_near_high is not None else
+                f"{EQUITY_SERIES} absent or too short at this date (needs 273 "
+                f"sessions; coverage starts 2016-07-18) -- the full condition "
+                f"cannot be evaluated, so S2 can arm but not fire red"),
         },
     }
 

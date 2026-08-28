@@ -46,6 +46,10 @@ SERIES_META = {
                                "Rolling 3y window."),
     "SOFR":         (False, 1, "NY Fed published next business day. Revisions are rare "
                                "and pre-announced; treated as final."),
+    "SPY_CLOSE":    (False, 1, "SPY daily close from prices.db/raw_bars. A settled "
+                               "close is not restated (splits are handled upstream). "
+                               "PROXY for SPX -- labelled in every S2 reading. "
+                               "Coverage from 2016-07-18 only."),
 
     # ---- REVISED: statistical estimates. Require true ALFRED vintages. ----
     "CSUSHPINSA":   (True,  60, "Case-Shiller: revised monthly. ALFRED required."),

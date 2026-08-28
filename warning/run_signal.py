@@ -67,7 +67,8 @@ def show(sig, r):
               f"  spread {d['spread']:+.3f}  {ma} {d[ma]:+.3f}  {lo} {d[lo]:+.3f}")
         print(f"    above_ma={d['above_ma']}  off_low {d['off_low_by_bp']}bp"
               f" (need {int(S2.WIDEN_BP*100)}) -> credit_leg={d['credit_leg']}"
-              f"  equity_leg={d['equity_leg']}")
+              f"  equity_leg={d['equity_leg']}"
+              f"{' via '+d['equity_source'] if d.get('equity_source') else ''}")
         if d.get("equity_note"):
             print(f"    NOTE: {d['equity_note']}")
 

@@ -287,7 +287,7 @@ def test_s2_arms_on_credit_leg_alone_when_equity_unknown():
     d = r["detail"]
     assert d["credit_leg"] is True and d["equity_leg"] is None
     assert r["state"] == S2.AMBER_STATE, "must ARM, not fire, without SPX"
-    assert "not wired" in d["equity_note"]
+    assert "absent or too short" in d["equity_note"]
 
 
 def test_s2_fires_red_only_with_the_equity_leg():
@@ -313,3 +313,46 @@ def test_s2_declares_its_mode_and_refuses_short_history():
 def test_s2_equity_leg_returns_none_on_short_history():
     closes = [(f"2020-01-{d:02d}", 100.0) for d in range(1, 29)]
     assert S2.equity_leg_from_prices(closes, "2020-01-28") is None
+
+
+def _load_spy(con, start="2016-07-18", n=400, base=200.0, drop_at=None):
+    """Synthetic SPY_CLOSE: rising, optionally with a drawdown near the end."""
+    from datetime import date, timedelta
+    d = date.fromisoformat(start); i = 0
+    while i < n:
+        if d.weekday() < 5:
+            v = base + i * 0.1
+            if drop_at is not None and i >= drop_at:
+                v = (base + drop_at * 0.1) * 0.85        # 15% below the high
+            put(con, "SPY_CLOSE", d.isoformat(),
+                (d + timedelta(days=1)).isoformat(), v)
+            i += 1
+        d += timedelta(days=1)
+    return d.isoformat()
+
+
+def test_s2_equity_leg_autoloads_and_fires_red():
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 10 + [2.2, 2.5, 2.8, 3.1])
+    asof = _load_spy(con, start="1989-01-02", n=300)     # at highs, no drawdown
+    r = S2.compute(con, "1991-04-02")
+    d = r["detail"]
+    assert d["equity_source"] == "SPY_CLOSE"
+    assert d["equity_leg"] is True
+    assert r["state"] == "R", d
+
+
+def test_s2_equity_leg_false_when_index_is_off_its_high():
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 10 + [2.2, 2.5, 2.8, 3.1])
+    _load_spy(con, start="1989-01-02", n=300, drop_at=270)
+    r = S2.compute(con, "1991-04-02")
+    assert r["detail"]["equity_leg"] is False
+    assert r["state"] == S2.AMBER_STATE, "credit widening with equity already down is not the divergence"
+
+
+def test_s2_equity_leg_none_when_spy_history_too_short():
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 10 + [2.2, 2.5, 2.8, 3.1])
+    _load_spy(con, start="1990-10-01", n=40)
+    r = S2.compute(con, "1991-04-02")
+    assert r["detail"]["equity_leg"] is None
+    assert "too short" in r["detail"]["equity_note"]
+    assert r["state"] == S2.AMBER_STATE
