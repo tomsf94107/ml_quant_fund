@@ -474,7 +474,7 @@ def test_driver_emits_na_for_unbuilt_so_coverage_is_honest():
     from warning_engine import EngineState, step
     con = db()
     readings, details = DD.build_readings(con, "2026-08-28")
-    assert len(readings) == 15
+    assert len(readings) == 20        # 15 shortlist + 5 L4 propagation conditions
     # every UNBUILT signal must be NA. (Built ones are also NA here because this
     # fixture db has no data -- which is itself correct behaviour.)
     unbuilt = {sid for sid in DD.ROSTER if sid not in DD.BUILT}
@@ -517,3 +517,98 @@ def test_driver_l4_has_no_registry_signals():
     from warning_engine import LAYER_WEIGHTS
     assert "L4" in LAYER_WEIGHTS and LAYER_WEIGHTS["L4"] == 0.25
     assert not [s for s, L in DD.ROSTER.items() if L == "L4"]
+
+
+# --------------------------------------------------------------- L4
+
+from builders import l4_propagation as L4  # noqa: E402
+
+
+def _load_daily(con, series, values, start="2024-01-01"):
+    from datetime import date, timedelta
+    d = date.fromisoformat(start); i = 0
+    while i < len(values):
+        if d.weekday() < 5:
+            put(con, series, d.isoformat(),
+                (d + timedelta(days=1)).isoformat(), values[i])
+            i += 1
+        d += timedelta(days=1)
+    return d.isoformat()
+
+
+def test_l4_has_five_conditions_three_unbuilt():
+    con = db()
+    res = L4.compute_all(con, "2026-08-28")
+    assert set(res) == {"L4A", "L4B", "L4C", "L4D", "L4E"}
+    for sid in ("L4A", "L4D", "L4E"):
+        assert res[sid]["state"] == "NA"
+    assert "S4" in res["L4A"]["detail"]["reason"]
+    assert "S10" in res["L4D"]["detail"]["reason"]
+
+
+def test_l4b_fires_on_150bp_widening_in_21_days():
+    con = db()
+    asof = _load_daily(con, "BAMLH0A0HYM2", [3.0] * 21 + [4.6])
+    r = L4.spread_blowout(con, asof)
+    assert r["state"] == "B" and r["detail"]["delta_bp"] >= 150
+
+
+def test_l4b_silent_on_a_smaller_widening():
+    con = db()
+    asof = _load_daily(con, "BAMLH0A0HYM2", [3.0] * 21 + [4.2])
+    r = L4.spread_blowout(con, asof)
+    assert r["state"] == "G" and r["detail"]["delta_bp"] == 120.0
+
+
+def test_l4c_needs_both_top_decile_and_a_jump():
+    con = db()
+    # a high level that has NOT risen over 21d must not fire
+    asof = _load_daily(con, "CBOE_COR3M", [10.0] * 480 + [60.0] * 24)
+    r = L4.correlation_spike(con, asof)
+    assert r["detail"]["top_decile"] is True
+    assert r["detail"]["jumped"] is False
+    assert r["state"] == "G", "a plateau at a high level is not a spike"
+
+
+def test_l4c_fires_on_a_jump_into_the_top_decile():
+    con = db()
+    asof = _load_daily(con, "CBOE_COR3M", [10.0] * 503 + [60.0])
+    r = L4.correlation_spike(con, asof)
+    assert r["detail"]["top_decile"] and r["detail"]["jumped"]
+    assert r["state"] == "B"
+
+
+def test_l4_single_B_drives_crisis_when_coverage_is_adequate():
+    """Report line 601: 'stress underway -> overrides composite to B'. With the
+    layers covered, one B bypasses persistence and goes straight to CRISIS."""
+    from warning_engine import SignalReading, EngineState, step
+    import daily_driver as DD
+    readings = [SignalReading(s, L, "G") for s, L in DD.ROSTER.items()]
+    readings += [SignalReading("L4A", "L4", "G"), SignalReading("L4B", "L4", "B"),
+                 SignalReading("L4C", "L4", "G")]
+    res = step("2026-08-28", readings, EngineState())
+    assert res.l4_override is True
+    assert res.band == "CRISIS" and res.action["gross"] == 0.40
+
+
+def test_insufficient_data_currently_suppresses_the_l4_crisis_override():
+    """DECISIONS.md D10 -- SPEC CONFLICT, pinned so it cannot be forgotten.
+
+    step() tests `insufficient` BEFORE hysteresis_step, so when coverage is poor
+    the band freezes and the L4 override never reaches it: l4_override is True
+    while the band reads INSUFFICIENT_DATA and the action is 'freeze'.
+
+    Report line 601 says L4 'overrides composite to B'; the Part VI honesty rule
+    says an under-covered composite makes Part VIII's do-nothing rule bind. Both
+    cannot hold at once. This test asserts CURRENT behaviour, not desired
+    behaviour -- with 2 of 15 builders live, a 150bp HY blowout would print
+    'freeze' rather than 'CRISIS'. Awaiting a ruling."""
+    from warning_engine import SignalReading, EngineState, step
+    import daily_driver as DD
+    readings = [SignalReading(s, L, "NA", stale=True) for s, L in DD.ROSTER.items()]
+    readings += [SignalReading("L4A", "L4", "G"), SignalReading("L4B", "L4", "B"),
+                 SignalReading("L4C", "L4", "G")]
+    res = step("2026-08-28", readings, EngineState())
+    assert res.l4_override is True              # the override DID fire
+    assert res.band == "INSUFFICIENT_DATA"      # ...and was suppressed
+    assert res.action["hedge"] == "freeze"

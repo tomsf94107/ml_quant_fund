@@ -38,7 +38,14 @@ FRED = ["DGS10", "DTB3", "BAA", "AAA", "BAA10YM", "ABCOMP", "DRTSCILM",
         # substitute dataset. History matches the registry exactly:
         #   VIXCLS 1990-01-02+ (F2)   VXVCLS 2007-12-04+ (F3 VIX3M)
         #   VXOCLS 1986-01-02..2021-09-23 (VXO, discontinued; covers the 2000 era)
-        "VIXCLS", "VXVCLS", "VXOCLS"]
+        "VIXCLS", "VXVCLS", "VXOCLS",
+        # OPEN ITEM 1 RESOLVED 2026-08-28. F10's primary leg is
+        # "3m AA financial CP - 3m Tbill". FRED's own CPFF series is documented
+        # as the spread between RIFSPPFAAD90NB and the effective fed funds rate,
+        # which pins the CP series id. DTB3 is already pulled.
+        "RIFSPPFAAD90NB",   # 3m AA financial CP, daily (Commercial Paper release)
+        "TEDRATE",          # S4 historic leg. DISCONTINUED 2022.
+        "IORB"]             # F10 secondary: SOFR position in the IORB corridor
 ALFRED = ["PAYEMS", "GDPC1", "INDPRO", "UNRATE"]
 
 CBOE_CSVS = {

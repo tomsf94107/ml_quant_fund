@@ -50,6 +50,14 @@ SERIES_META = {
     # Cboe archive copies, loaded by parse_cboe.py. All are published index levels
     # or exchange-reported volume ratios: not restated. Prefer the FRED copies of
     # VIX/VIX3M/VXO where both exist (FRED VXVCLS reaches 2007-12 vs Cboe 2009-09).
+    "RIFSPPFAAD90NB": (False, 1, "3-month AA financial commercial paper rate, daily. "
+                                 "Market-quoted, not restated. F10 primary leg "
+                                 "(CP minus DTB3); S4 modern leg. OPEN ITEM 1."),
+    "TEDRATE":      (False, 1, "TED spread. DISCONTINUED 2022 (LIBOR removal) -- do "
+                               "not treat a missing value after that as staleness. "
+                               "S4's historic leg; the modern leg is F10."),
+    "IORB":         (False, 1, "Interest on reserve balances, daily. 2021-07+ "
+                               "(IOER before that). F10 secondary leg."),
     "CBOE_VIX":     (False, 1, "Cboe VIX close, direct archive. 1990-01-02+."),
     "CBOE_VIX3M":   (False, 1, "Cboe VIX3M close. 2009-09-18+ -- SHORTER than FRED VXVCLS."),
     "CBOE_VIX6M":   (False, 1, "Cboe VIX6M close. 2008-01-02+."),

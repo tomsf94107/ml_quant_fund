@@ -47,6 +47,7 @@ from warning_engine import SignalReading, EngineState, step  # noqa: E402
 from builders import s1_term_spread as S1                    # noqa: E402
 from builders import s2_credit as S2                         # noqa: E402
 from builders import f2_vix_percentile as F2                 # noqa: E402
+from builders import l4_propagation as L4                    # noqa: E402
 
 # The 15 shortlist signals and their layers, from signal_registry.csv.
 # "L1+trigger" (S10) scores as L1; the trigger role is a separate concern.
@@ -83,8 +84,12 @@ def save_state(con, st: EngineState):
 
 
 def build_readings(con, asof):
-    """One reading per shortlist signal. Unbuilt -> NA. Returns (readings, details)."""
+    """One reading per shortlist signal, plus the five L4 propagation conditions.
+    Unbuilt -> NA so layer coverage stays honest. Returns (readings, details)."""
     readings, details = [], {}
+    for sid, r in L4.compute_all(con, asof).items():
+        readings.append(L4.to_reading(r))
+        details[sid] = r
     for sid, layer in ROSTER.items():
         mod = BUILT.get(sid)
         if mod is None:
@@ -158,9 +163,18 @@ def main():
     print(f"  {'layer':<7}{'score':>8}{'coverage':>10}   signals")
     for L in ("L1", "L2", "L3", "L4"):
         s, c = res.layer_scores.get(L), res.layer_coverage.get(L)
-        ids = [k for k, v in ROSTER.items() if v == L] or ["-- none in registry --"]
+        ids = ([k for k, v in ROSTER.items() if v == L]
+               or (list(L4.compute_all.__doc__ and ["L4A", "L4B", "L4C", "L4D", "L4E"])
+                   if L == "L4" else ["-- none --"]))
         print(f"  {L:<7}{'NA' if s is None else format(s, '.3f'):>8}{c:>9.0%}   "
               f"{','.join(ids)}")
+
+    print("\n  L4 propagation conditions (derived; report line 601):")
+    for sid in ("L4A", "L4B", "L4C", "L4D", "L4E"):
+        r = details[sid]
+        d = r["detail"]
+        extra = d.get("condition", d.get("reason", ""))
+        print(f"    {sid:<5} {r['state']:<3}  {extra[:70]}")
 
     print("\n  composite inputs:")
     for sid in ROSTER:

@@ -8,7 +8,7 @@ These are NOT threshold changes (rule #3). No frozen threshold has been altered.
 They are choices the frozen documents do not make.
 
 Status as of 2026-08-28: **D1 RATIFIED** (evidence-backed by the 64-year scan).
-D2, D3 in force. D4 open. D5, D6, D7 added below.
+D2, D3 in force. D4, D8, D10 OPEN. D5-D7, D9 in force.
 
 ---
 
@@ -228,3 +228,61 @@ proxies as a mitigation. A price-based HY proxy could cover 2007-08 but not 2000
 and would be a proxy -- it must be labeled as one and validated separately before
 any verdict rests on it. Requires checking whether HYG history exists in
 `prices.db`.
+
+
+---
+
+## D9 — L4C's "top-decile" lookback is 504 trading days
+
+**Where:** `warning/builders/l4_propagation.py::CORR_WINDOW`
+
+**Gap.** Report line 601 specifies "correlation spike (avg pairwise 63d corr
+top-decile jump)" but gives no lookback over which "top-decile" is measured.
+
+**Default and why.** 504 trading days, matching F2's percentile window, so the
+two percentile-based conditions in this system share one convention rather than
+each inventing its own. Also: Cboe's 3-month implied correlation index is used as
+the measure, since 3 months is approximately the stated 63 trading days, and the
+report's Part VII F8 already names the Cboe COR files as the documented proxy for
+average pairwise correlation. Both the window and the proxy are declared in every
+reading.
+
+**Also encoded:** "spike" requires a JUMP, not merely a high level. A plateau at
+a high correlation does not fire. Pinned by
+`test_l4c_needs_both_top_decile_and_a_jump`.
+
+---
+
+## D10 — INSUFFICIENT_DATA currently suppresses the L4 crisis override
+
+**Status: SPEC CONFLICT. Current behaviour pinned by test. Engine NOT changed.**
+
+**The conflict.** Two rules in Part VI cannot both hold:
+- Line 601: L4 is "stress underway -> **overrides composite** to B", and
+  `warning_engine.l4_propagation_red` is written to bypass persistence entirely.
+- The honesty rule: when a layer's coverage is inadequate "the layer reports NA,
+  the composite prints a coverage %, and Part VIII's **do nothing** rule binds."
+
+`step()` evaluates `insufficient` before `hysteresis_step`, so today the honesty
+rule wins: `l4_override` is computed as True, the band freezes at
+INSUFFICIENT_DATA, and the action is `freeze`.
+
+**Why it matters NOW rather than eventually.** With 2 of 15 builders live, every
+layer is NA. If HY OAS widened 150bp over 21 days tomorrow -- an observable,
+unambiguous crisis condition needing no composite -- the system would print
+"INSUFFICIENT_DATA / freeze" instead of "CRISIS / gross 0.40". The do-nothing
+rule exists to prevent acting on a number you cannot compute; an L4 condition is
+not a computed number, it is a direct observation of stress underway.
+
+**The argument each way.**
+- *Override should win:* L4 needs no composite. Freezing at NORMAL while credit
+  gaps 150bp is the worst available failure mode, and it is the one the whole
+  four-layer design exists to avoid.
+- *Honesty should win:* acting on a system that cannot see 13 of its 15 inputs is
+  precisely what the insufficient-data state was built to stop.
+
+**Not decided unilaterally.** `warning_engine.py` is shipped, tested code and the
+change would alter crisis behaviour. A candidate fix, if ratified: let an L4
+override set the band even when insufficient, while still reporting coverage and
+flagging that the composite is unavailable -- CRISIS on observation, with the
+data caveat printed alongside.
