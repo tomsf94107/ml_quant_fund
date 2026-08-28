@@ -30,7 +30,15 @@ BANDS = [                        # (name, entry floor)
     ("DEFENSIVE", 60.0),
     ("CRISIS", 80.0),
 ]
-EXIT_OFFSET = 15.0               # exit only 15 pts below the entry floor
+# Exit levels are GRADUATED, per report Part VIII (lines 639-642):
+#   WATCH 20-39 / exit <15 | ELEVATED 40-59 / exit <30
+#   DEFENSIVE 60-79 / exit <45 | CRISIS >=80 / exit <55
+# i.e. offsets of 5/10/15/25 -- hysteresis WIDENS with severity: easy to relax
+# from WATCH, hard to relax from CRISIS. A uniform offset inverts that at both
+# ends; at CRISIS it exits at 65 instead of 55, de-risking back into a live
+# crisis, which is the exact failure hysteresis exists to prevent.
+EXIT_LEVELS = {"WATCH": 15.0, "ELEVATED": 30.0, "DEFENSIVE": 45.0, "CRISIS": 55.0}
+EXIT_OFFSET = 15.0               # fallback only (NORMAL has no exit level)
 PERSIST_DAYS_DEFAULT = 10        # consecutive days before a band change sticks
 PERSIST_DAYS_DEFENSIVE = 21      # stricter for DEFENSIVE and above
 STALE_COVERAGE_MIN = 0.70        # layer coverage below this -> layer NA
@@ -179,6 +187,11 @@ def band_floor(name):
     return dict(BANDS)[name]
 
 
+def exit_level(name):
+    """Composite must fall BELOW this for band `name` to step down (Part VIII)."""
+    return EXIT_LEVELS.get(name, band_floor(name) - EXIT_OFFSET)
+
+
 def target_band(composite):
     tb = BANDS[0][0]
     for name, floor in BANDS:
@@ -204,7 +217,7 @@ def hysteresis_step(st: EngineState, composite: Optional[float],
     order = [b for b, _ in BANDS]
     if order.index(tgt) > order.index(cur):
         candidate = tgt                        # upgrade path
-    elif composite < band_floor(cur) - EXIT_OFFSET:
+    elif composite < exit_level(cur):
         candidate = tgt                        # downgrade only past exit level
     else:
         candidate = cur                        # inside hysteresis corridor

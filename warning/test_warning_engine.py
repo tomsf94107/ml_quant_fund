@@ -156,3 +156,53 @@ def test_reentry_ladder_is_ordered():
     assert we.reentry_steps(True, False, True, True) == 0.25
     assert we.reentry_steps(True, True, False, False) == 0.50
     assert we.reentry_steps(True, True, True, True) == 1.00
+
+
+# ------------------------------------------------- graduated exit levels (Part VIII)
+
+def test_exit_levels_match_report_part_viii():
+    """Report Part VIII: WATCH exit <15, ELEVATED <30, DEFENSIVE <45, CRISIS <55.
+    A uniform offset gives 5/25/45/65 -- only DEFENSIVE coincides. This test
+    pins all four so the divergence cannot silently reappear."""
+    assert we.exit_level("WATCH") == 15.0
+    assert we.exit_level("ELEVATED") == 30.0
+    assert we.exit_level("DEFENSIVE") == 45.0
+    assert we.exit_level("CRISIS") == 55.0
+
+
+def test_crisis_does_not_exit_above_55():
+    """The consequential case: at composite 60 a CRISIS book must STAY at CRISIS.
+    Under a uniform-15 offset it would exit at <65 and re-risk into a live
+    crisis. Held for well beyond the 21d DEFENSIVE persistence gate."""
+    st = EngineState()
+    st.band = "CRISIS"
+    for i in range(40):
+        res = step(f"x{i:03d}", mk({}), st)          # composite drives the band
+        st.band = "CRISIS" if i == 0 else st.band     # seed only on first day
+    # drive an explicit mid-band composite through the hysteresis logic directly
+    st2 = EngineState(); st2.band = "CRISIS"
+    alerts = []
+    for _ in range(30):
+        band = we.hysteresis_step(st2, 60.0, False, alerts)
+    assert band == "CRISIS", "exited CRISIS at composite 60 -- exit must be <55"
+    # and below 55 it does step down, after persistence
+    st3 = EngineState(); st3.band = "CRISIS"
+    alerts3 = []
+    for _ in range(30):
+        band3 = we.hysteresis_step(st3, 50.0, False, alerts3)
+    assert band3 != "CRISIS", "failed to exit CRISIS at composite 50"
+
+
+def test_watch_exit_is_stickier_than_uniform_offset():
+    """WATCH exit <15 (not <5): a book at composite 10 steps down to NORMAL."""
+    st = EngineState(); st.band = "WATCH"
+    alerts = []
+    for _ in range(15):
+        band = we.hysteresis_step(st, 10.0, False, alerts)
+    assert band == "NORMAL"
+    # but at 17 it holds inside the corridor
+    st2 = EngineState(); st2.band = "WATCH"
+    alerts2 = []
+    for _ in range(15):
+        band2 = we.hysteresis_step(st2, 17.0, False, alerts2)
+    assert band2 == "WATCH"
