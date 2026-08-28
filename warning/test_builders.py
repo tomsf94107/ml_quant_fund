@@ -356,3 +356,102 @@ def test_s2_equity_leg_none_when_spy_history_too_short():
     assert r["detail"]["equity_leg"] is None
     assert "too short" in r["detail"]["equity_note"]
     assert r["state"] == S2.AMBER_STATE
+
+
+# --------------------------------------------------------------- F2
+
+from builders import f2_vix_percentile as F2  # noqa: E402
+
+
+def _load_vix(con, values, start="2000-01-03"):
+    from datetime import date, timedelta
+    d = date.fromisoformat(start); i = 0
+    while i < len(values):
+        if d.weekday() < 5:
+            put(con, "VIXCLS", d.isoformat(),
+                (d + timedelta(days=1)).isoformat(), values[i])
+            i += 1
+        d += timedelta(days=1)
+    return d.isoformat()
+
+
+def test_f2_percentile_maths():
+    assert F2.percentile_of_last([1, 2, 3, 4, 10]) == 100.0
+    assert F2.percentile_of_last([10, 2, 3, 4, 1]) == 20.0
+
+
+def test_f2_green_at_mid_distribution():
+    con = db(); asof = _load_vix(con, [10 + (i % 40) for i in range(504)])
+    r = F2.compute(con, asof)
+    assert r["state"] == "G" and r["detail"]["armed_below_20th"] is False
+
+
+def test_f2_arms_in_the_bottom_quintile_low_vol_is_the_warning():
+    con = db(); asof = _load_vix(con, [30.0] * 503 + [9.0])
+    r = F2.compute(con, asof)
+    assert r["detail"]["percentile_504d"] < F2.ARM_PCTILE
+    assert r["state"] == F2.AMBER_STATE, "low VIX must ARM: direction is complacency"
+
+
+def test_f2_cannot_fire_red_without_the_l2_score():
+    con = db(); asof = _load_vix(con, [30.0] * 503 + [9.0])
+    r = F2.compute(con, asof)
+    assert r["detail"]["below_10th"] is True
+    assert r["state"] == F2.AMBER_STATE
+    assert "cannot be evaluated" in r["detail"]["l2_note"]
+
+
+def test_f2_red_requires_both_bottom_decile_and_l2():
+    con = db(); asof = _load_vix(con, [30.0] * 503 + [9.0])
+    assert F2.compute(con, asof, l2_score=0.6)["state"] == "R"
+    assert F2.compute(con, asof, l2_score=0.4)["state"] == F2.AMBER_STATE
+    assert F2.compute(con, asof, l2_score=0.0)["state"] == F2.AMBER_STATE
+
+
+def test_f2_high_vix_is_not_a_warning_even_with_hot_l2():
+    con = db(); asof = _load_vix(con, [10.0] * 503 + [80.0])
+    assert F2.compute(con, asof, l2_score=1.0)["state"] == "G"
+
+
+def test_f2_refuses_short_window():
+    con = db(); asof = _load_vix(con, [20.0] * 100)
+    r = F2.compute(con, asof)
+    assert r["state"] == "NA" and "need 504 obs" in r["detail"]["reason"]
+
+
+# --------------------------------------------------------------- Cboe parser
+
+def test_cboe_date_parser_handles_padded_and_unpadded():
+    import parse_cboe as PC
+    assert PC.parse_date("01/02/1990") == "1990-01-02"
+    assert PC.parse_date("1/2/2004") == "2004-01-02"
+    assert PC.parse_date(" 10/04/2019 ") == "2019-10-04"
+    assert PC.parse_date("DATE") is None
+    assert PC.parse_date("") is None
+    assert PC.parse_date("13/45/1990") is None       # invalid, not coerced
+
+
+def test_cboe_parser_skips_preamble_and_coerces_padded_values(tmp_path):
+    import parse_cboe as PC
+    p = tmp_path / "totalpc.csv"
+    p.write_text("disclaimer,,,,\n, PRODUCT: TOTAL,,EXCHANGE: Cboe,\n"
+                 "DATE,CALLS,PUTS,TOTAL,P/C Ratio\n"
+                 "11/1/2006,1401036,1271445,2672481,0.91\n"
+                 "10/04/2019, 2175006, 2289715, 4464721, 1.05\n")
+    recs, skipped = PC.parse_file(str(p), "pre3", {"CBOE_PC_TOTAL": 4})
+    assert skipped == 0
+    assert recs == [("CBOE_PC_TOTAL", "2006-11-01", 0.91),
+                    ("CBOE_PC_TOTAL", "2019-10-04", 1.05)]
+
+
+def test_cboe_parser_survives_non_utf8_and_multiline_header(tmp_path):
+    import parse_cboe as PC
+    p = tmp_path / "pcratioarchive.csv"
+    p.write_bytes(b'disclaimer \xa0 byte,,,,\nCboe PUT/CALL RATIO ARCHIVE,,,,\n'
+                  b'DATE,TOTAL,INDEX,EQUITY,"multi\nline\n"\n'
+                  b'12/31/2003,1.25,2.96,0.95\n')
+    recs, skipped = PC.parse_file(str(p), "pre3",
+                                  {"CBOE_PC_TOTAL": 1, "CBOE_PC_INDEX": 2})
+    assert skipped == 0
+    assert ("CBOE_PC_TOTAL", "2003-12-31", 1.25) in recs
+    assert ("CBOE_PC_INDEX", "2003-12-31", 2.96) in recs

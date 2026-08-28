@@ -15,8 +15,9 @@ from datetime import date, timedelta
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from builders import s1_term_spread as S1          # noqa: E402
 from builders import s2_credit as S2               # noqa: E402
+from builders import f2_vix_percentile as F2       # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -29,6 +30,12 @@ ANCHORS = {
            ("2022-01-03", "SPX 2022 peak -- registry: post-peak only")],
     # NOTE: an as-of date reads the last FULLY PUBLISHED month (DECISIONS.md D3),
     # so anchors sit one month AFTER the data month they are meant to sample.
+    "F2": [("2000-03-24", "SPX 2000 peak: registry says VXO mid-20s"),
+           ("2007-01-31", "registry: VIX 9.89 Jan-07 -- the complacency low"),
+           ("2007-10-09", "SPX peak: registry VIX 16.12 -- 'the trap' (report line 424)"),
+           ("2020-02-19", "COVID peak: registry 14.38 exhibit"),
+           ("2022-01-03", "SPX 2022 peak"),
+           ("2026-08-28", "today")],
     "S2": [("2000-02-29", "reads Jan-2000 data month: registry weak fire begins"),
            ("2000-04-30", "reads Mar-2000: the +44bp peak of the weak fire (D8)"),
            ("2007-07-31", "reads Jun-2007: registry strong fire begins (D8)"),
@@ -60,6 +67,13 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "F2":
+        print(f"    VIX {d['vix']:.2f}  percentile(504d) {d['percentile_504d']:.1f}"
+              f"  window {d['window_low']:.2f}..{d['window_high']:.2f}")
+        print(f"    <20th={d['armed_below_20th']}  <10th={d['below_10th']}"
+              f"  L2={d['l2_score']}")
+        if d.get("l2_note"):
+            print(f"    NOTE: {d['l2_note']}")
     else:
         ma = [k for k in d if k.startswith("ma")][0]
         lo = [k for k in d if k.startswith("low")][0]

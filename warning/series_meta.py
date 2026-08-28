@@ -46,6 +46,31 @@ SERIES_META = {
                                "Rolling 3y window."),
     "SOFR":         (False, 1, "NY Fed published next business day. Revisions are rare "
                                "and pre-announced; treated as final."),
+    "VIXCLS":       (False, 1, "Cboe VIX close via FRED. Index level, not restated."),
+    # Cboe archive copies, loaded by parse_cboe.py. All are published index levels
+    # or exchange-reported volume ratios: not restated. Prefer the FRED copies of
+    # VIX/VIX3M/VXO where both exist (FRED VXVCLS reaches 2007-12 vs Cboe 2009-09).
+    "CBOE_VIX":     (False, 1, "Cboe VIX close, direct archive. 1990-01-02+."),
+    "CBOE_VIX3M":   (False, 1, "Cboe VIX3M close. 2009-09-18+ -- SHORTER than FRED VXVCLS."),
+    "CBOE_VIX6M":   (False, 1, "Cboe VIX6M close. 2008-01-02+."),
+    "CBOE_VIX9D":   (False, 1, "Cboe VIX9D close. 2011-01-04+."),
+    "CBOE_SKEW":    (False, 1, "Cboe SKEW index. 1990-01-02+. F4, Phase 5."),
+    "CBOE_VVIX":    (False, 1, "Cboe VVIX. 2006-03+. Earliest rows erratic "
+                               "(2006-03-06 71.73 then 2006-03-15 15.71) -- loaded "
+                               "as-is, not cleaned."),
+    "CBOE_COR1M":   (False, 1, "Cboe 1-month implied correlation. 2006-01-03+."),
+    "CBOE_COR3M":   (False, 1, "Cboe 3-month implied correlation. 2006-01-03+."),
+    "CBOE_VXO":     (False, 1, "Cboe VXO close. 1993-01-29+. FRED VXOCLS is longer."),
+    "CBOE_VXO_CURRENT": (False, 1, "Cboe VXO 2004-2021 file."),
+    "CBOE_PC_TOTAL":  (False, 1, "Cboe total put/call ratio. ENDS 2019-10-04; "
+                                 "2004-01..2006-10 hole between archive files."),
+    "CBOE_PC_INDEX":  (False, 1, "Cboe index put/call ratio. ENDS 2019-10-04."),
+    "CBOE_PC_EQUITY": (False, 1, "Cboe equity put/call ratio. ENDS 2019-10-04."),
+    "CBOE_PC_VIX":    (False, 1, "Cboe VIX put/call ratio. ENDS 2019-10-04."),
+    "VXVCLS":        (False, 1, "Cboe VIX3M close via FRED. Not restated."),
+    "VXOCLS":       (False, 1, "Cboe VXO close via FRED. Not restated. "
+                               "DISCONTINUED 2021-09-23 -- do not treat a missing "
+                               "value after that date as staleness."),
     "SPY_CLOSE":    (False, 1, "SPY daily close from prices.db/raw_bars. A settled "
                                "close is not restated (splits are handled upstream). "
                                "PROXY for SPX -- labelled in every S2 reading. "
