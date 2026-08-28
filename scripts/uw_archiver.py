@@ -10,7 +10,7 @@ RUN ON YOUR MACHINE (this was written in a sandbox with no network access —
 endpoints listed below are the ones your Basic plan exposes; adjust
 ENDPOINTS to match your actual entitlements before first run):
 
-    export UW_TOKEN=...            # never hardcode
+    export UW_API_KEY=...          # never hardcode (repo convention; .env already has it)
     python uw_archiver.py --db warning.db
 
 Cron (Vietnam morning, beside check_kill_switches.py — market close ≈ 3am ICT):
@@ -28,26 +28,45 @@ import argparse, json, os, sqlite3, sys, time, urllib.request, urllib.error
 from datetime import date
 
 BASE = "https://api.unusualwhales.com"          # verify path prefix in your docs
-TOKEN = os.environ.get("UW_TOKEN")
+# Repo convention is UW_API_KEY (set in .env, used by monitor_ticker.py and every
+# other UW caller). UW_TOKEN kept as a fallback only. Verified 2026-08-28: .env
+# defines UW_API_KEY and NOT UW_TOKEN -- reading UW_TOKEN alone made this script
+# exit "not set" on every cron run.
+TOKEN = os.environ.get("UW_API_KEY") or os.environ.get("UW_TOKEN")
 
 # (endpoint, params) pairs to snapshot daily. EDIT to your plan's entitlements.
 # Keep index/ETF options context + market-wide aggregates + your universe.
 UNIVERSE_FILE = "universe_tickers.txt"           # one ticker per line (optional)
 
 ENDPOINTS = [
+    # VERIFIED 2026-08-28 by scripts/uw_probe.py: all 13 returned HTTP 200 on the
+    # live account (0 dropped). Measured payload ~0.9 MB/day at probe limits,
+    # ~1.2 MB/day at the production limits below => ~0.4 GB/yr. Append-only
+    # forever (rule #8), so this cadence is a permanent commitment; it was sized
+    # deliberately, not by default.
+    #
     # market-wide / index level (dashboard features F2-F9, F11)
-    ("/api/market/total-options-volume", {}),
     ("/api/market/market-tide", {}),
+    ("/api/market/total-options-volume", {}),
     ("/api/darkpool/recent", {"limit": 200}),
     ("/api/option-trades/flow-alerts", {"limit": 200}),
-    # per-index chains for skew/term features (F3, F4)
+    # per-index chains for skew/term/gamma features (F3, F4, F9)
     ("/api/stock/SPY/option-chains", {}),
-    ("/api/stock/SPY/greek-exposure", {}),       # gamma proxy (F9) — assumption-laden
+    ("/api/stock/SPY/greek-exposure", {}),        # gamma proxy (F9) -- assumption-laden
     ("/api/stock/SPY/volatility/term-structure", {}),
+    ("/api/stock/SPY/volatility/realized", {}),
+    ("/api/stock/SPY/greeks", {}),
+    ("/api/stock/SPY/options-volume", {}),
+    ("/api/darkpool/SPY", {"limit": 200}),
     ("/api/stock/QQQ/option-chains", {}),
     ("/api/stock/IWM/option-chains", {}),
 ]
 
+# PER_TICKER is DORMANT by design. This is an INDEX-LEVEL regime system; the
+# per-name legs it would feed (S5-S8 breadth/concentration/rotation/epicenter)
+# come from the Massive universe, not UW. UNIVERSE_FILE below is deliberately
+# NOT tickers.txt -- creating universe_tickers.txt would fire 3 calls x N names
+# every morning. Do that only as a conscious decision.
 PER_TICKER = [                                    # applied to universe file if present
     "/api/stock/{t}/volatility/realized",
     "/api/stock/{t}/greeks",
@@ -93,7 +112,7 @@ def main():
     ap.add_argument("--db", default="warning.db")
     args = ap.parse_args()
     if not TOKEN:
-        sys.exit("UW_TOKEN not set")
+        sys.exit("UW_API_KEY (or UW_TOKEN) not set -- check .env")
     conn = sqlite3.connect(args.db)
     conn.execute("""CREATE TABLE IF NOT EXISTS uw_archive(
         endpoint TEXT NOT NULL, query_params TEXT NOT NULL,

@@ -172,3 +172,9 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Never overwrite, never delete -- these rows are the only OAS history that exists.
 # --only fred: do NOT re-scrape Cboe/CFE weekly.
 0 16 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/fetch_free_history.py --db warning.db --out data/raw --only fred >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/fred_weekly.log 2>&1
+
+# Crash early-warning: daily UW snapshot (added 2026-08-28).
+# UW lookback is capped (~44d), so this archive IS the options history -- every
+# morning it does not run is history that cannot be recovered. Append-only (rule 8).
+# 13 endpoints verified 2026-08-28 via scripts/uw_probe.py, all HTTP 200. ~1.2 MB/day.
+30 6 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/uw_archiver.py --db warning.db >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/uw_archiver.log 2>&1
