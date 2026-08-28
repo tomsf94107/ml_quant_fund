@@ -788,3 +788,101 @@ def test_f3_na_without_vix3m():
                 (d + timedelta(days=1)).isoformat(), 15.0)
     r = F3B.compute(con, "2008-01-25")
     assert r["state"] == "NA" and "VXVCLS" in r["detail"]["reason"]
+
+
+# --------------------------------------------------------------- CFE parser
+
+def test_cfe_contract_key_from_filename():
+    import parse_cfe as PF
+    assert PF.contract_key("CFE_F05_VX.csv") == (2005, 1, "F05")
+    assert PF.contract_key("CFE_Z26_VX.csv") == (2026, 12, "Z26")
+    assert PF.contract_key("CFE_H07_VX.csv") == (2007, 3, "H07")
+    assert PF.contract_key("notacontract.csv") is None
+
+
+def test_cfe_parse_file_reads_settle_and_skips_header(tmp_path):
+    import parse_cfe as PF
+    p = tmp_path / "CFE_F05_VX.csv"
+    p.write_text("Trade Date,Futures,Open,High,Low,Close,Settle,Change,"
+                 "Total Volume,EFP,Open Interest\n"
+                 "10/21/2004,F (Jan 05),168.1,168.9,168,168.5,167,167,13,0,13\n"
+                 "10/22/2004,F (Jan 05),166.7,170,166.3,170,169.4,2.4,74,0,87\n")
+    rows, skipped = PF.parse_file(str(p))
+    assert skipped == 1                       # the header
+    assert rows == [("2004-10-21", 167.0), ("2004-10-22", 169.4)]
+
+
+def test_cfe_front_and_second_need_no_expiry_calendar(tmp_path):
+    """The set of files containing a date IS the set of live contracts."""
+    import parse_cfe as PF
+    hdr = ("Trade Date,Futures,Open,High,Low,Close,Settle,Change,"
+           "Total Volume,EFP,Open Interest\n")
+    (tmp_path / "CFE_H07_VX.csv").write_text(
+        hdr + "01/05/2007,H,0,0,0,0,11.0,0,1,0,1\n")          # Mar-07: front
+    (tmp_path / "CFE_J07_VX.csv").write_text(
+        hdr + "01/05/2007,J,0,0,0,0,12.0,0,1,0,1\n")          # Apr-07: second
+    (tmp_path / "CFE_Z07_VX.csv").write_text(
+        hdr + "01/05/2007,Z,0,0,0,0,15.0,0,1,0,1\n")          # Dec-07: back
+    per, front, second, _ = PF.build(str(tmp_path))
+    assert front == [("2007-01-05", 11.0)]
+    assert second == [("2007-01-05", 12.0)]
+    assert set(per) == {"VX_H07", "VX_J07", "VX_Z07"}
+
+
+def test_cfe_year_rollover_orders_correctly(tmp_path):
+    """A Jan-08 contract must sort AFTER Dec-07, not before it."""
+    import parse_cfe as PF
+    hdr = ("Trade Date,Futures,Open,High,Low,Close,Settle,Change,"
+           "Total Volume,EFP,Open Interest\n")
+    (tmp_path / "CFE_Z07_VX.csv").write_text(
+        hdr + "12/03/2007,Z,0,0,0,0,22.0,0,1,0,1\n")
+    (tmp_path / "CFE_F08_VX.csv").write_text(
+        hdr + "12/03/2007,F,0,0,0,0,23.0,0,1,0,1\n")
+    _, front, second, _ = PF.build(str(tmp_path))
+    assert front == [("2007-12-03", 22.0)], "Dec-07 is front, not Jan-08"
+    assert second == [("2007-12-03", 23.0)]
+
+
+def test_cfe_scale_report_surfaces_the_multiplier(tmp_path):
+    """The 10x-quoted era must show a ratio near 10 against VIXCLS."""
+    import parse_cfe as PF
+    con = db()
+    put(con, "VIXCLS", "2004-10-21", "2004-10-22", 16.7)
+    put(con, "VIXCLS", "2010-06-01", "2010-06-02", 35.0)
+    con.commit()
+    rep = dict((y, r) for y, _, r in PF.scale_report(
+        con, [("2004-10-21", 167.0), ("2010-06-01", 35.4)]))
+    assert 9.5 < rep["2004"] < 10.5, "multiplied era should read ~10x"
+    assert 0.9 < rep["2010"] < 1.1, "de-multiplied era should read ~1x"
+
+
+def test_cfe_normalize_classifies_each_row_on_its_own_evidence():
+    """D13: no changeover date is asserted; the ratio decides per row."""
+    import parse_cfe as PF
+    con = db()
+    put(con, "VIXCLS", "2006-06-01", "2006-06-02", 16.0)
+    put(con, "VIXCLS", "2007-06-01", "2007-06-02", 13.0)
+    con.commit()
+    rows = [("2006-06-01", 168.0), ("2007-06-01", 13.4)]
+    out, dropped, switch = PF.normalize(con, rows)
+    assert out == [("2006-06-01", 16.8), ("2007-06-01", 13.4)]
+    assert dropped == 0 and switch == "2007-06-01"
+
+
+def test_cfe_normalize_carries_classification_over_a_missing_vix_day():
+    import parse_cfe as PF
+    con = db()
+    put(con, "VIXCLS", "2006-06-01", "2006-06-02", 16.0)
+    con.commit()
+    out, dropped, _ = PF.normalize(
+        con, [("2006-06-01", 168.0), ("2006-06-02", 170.0)])
+    assert out == [("2006-06-01", 16.8), ("2006-06-02", 17.0)]
+    assert dropped == 0
+
+
+def test_cfe_normalize_drops_rows_it_cannot_classify():
+    """An unclassifiable settle is worse than a missing one."""
+    import parse_cfe as PF
+    con = db()
+    out, dropped, _ = PF.normalize(con, [("2004-03-26", 168.0)])
+    assert out == [] and dropped == 1

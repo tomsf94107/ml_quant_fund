@@ -8,7 +8,7 @@ These are NOT threshold changes (rule #3). No frozen threshold has been altered.
 They are choices the frozen documents do not make.
 
 Status as of 2026-08-28: **D1 RATIFIED** (evidence-backed by the 64-year scan).
-D2, D3 in force. D4, D8, D10, D12 OPEN. D5-D7, D9, D11 in force.
+D2, D3 in force. D4, D8, D10, D12 OPEN. D5-D7, D9, D11, D13 in force.
 
 ---
 
@@ -345,3 +345,43 @@ exceeds 100bp) would fix it, but that is a new threshold, and rule #3 forbids
 inventing one. Raised for a ruling, and it belongs in the Phase 4 evaluation as a
 falsifiable question: does a level-floored variant beat the pure-z form on
 PR-AUC over the 2007-09 and 2020 windows?
+
+
+---
+
+## D13 — CFE VIX futures are scale-normalized per row, not by an asserted date
+
+**Where:** `warning/parse_cfe.py::normalize`
+
+**The problem.** CFE's original VIX futures were quoted on a multiplied index and
+were later de-multiplied. Measured against same-day VIXCLS on the real files:
+
+| Year | n | median VX_FRONT / VIX |
+|---|---|---|
+| 2004 | 194 | **10.685** |
+| 2005 | 252 | **10.275** |
+| 2006 | 251 | **10.222** |
+| 2007 | 251 | 1.020 |
+| 2008–2018 | ~250/yr | 1.00–1.14 |
+
+Feeding both eras into F3's `front - second` unnormalized would produce a term
+structure that is pure artifact.
+
+**Decision.** Classify EACH ROW by its own ratio to same-day VIXCLS: above 5.0 the
+row is multiplied-era and is divided by 10, otherwise it is left alone. The two
+regimes sit at ~1 and ~10, so a split at 5 separates them with enormous margin.
+
+**Why not a changeover date.** Hardcoding one would be an assertion about CFE
+contract history that no ingested source states. Per-row classification decides
+on evidence that is in the data, and the observed switch date is printed for the
+record rather than assumed in advance. Rows with no same-day VIXCLS inherit the
+previous classification; if none exists yet they are DROPPED, because an
+unclassifiable settle is worse than a missing one.
+
+**Coverage finding, recorded not repaired.** The CFE archive URL pattern resolved
+for 152 of 276 attempted contracts, giving VX_FRONT/VX_SECOND from
+**2004-03-26 to 2018-02-23** only; CFE appears to have reorganized the archive
+after that. This is sufficient for the leg's purpose -- the futures leg exists to
+cover 2004-2007, before VIX3M starts on 2007-12-04 -- and 2007 is fully covered
+(n=251), which is what makes F3's registry verdict testable at all. For dates
+after 2018-02 F3 runs on the VIX3M leg alone, as it already does.
