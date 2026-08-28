@@ -102,17 +102,42 @@ def alfred_all_vintages(series):
 
 
 def upsert_fred(conn, series, csv_text, pub_date):
+    """pub_date semantics: the date the value became PUBLICLY KNOWABLE.
+
+    For series that are never revised (series_meta.derivable_pub_date), that is
+    obs_date + publication_lag -- deriving it reproduces exactly what ALFRED
+    would return. Stamping the pull date instead makes every historical
+    point-in-time read return NA, which is what broke the first S1 replay.
+
+    For revisable series the pull date is retained: only true ALFRED vintages
+    can say what the first print was, and inventing one would be fabrication.
+    `pulled_at` (schema default) records when we actually fetched, either way.
+    """
+    try:
+        from series_meta import derivable_pub_date, pub_lag_days
+    except ImportError:                       # keep the script standalone-runnable
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                        "..", "warning"))
+        from series_meta import derivable_pub_date, pub_lag_days
+
+    derive = derivable_pub_date(series)
+    lag = pub_lag_days(series)
     rows = list(csv.reader(io.StringIO(csv_text)))
     n = 0
     for obs_date, value in rows[1:]:
         if value in (".", ""):
             continue
+        if derive:
+            pd_ = (date.fromisoformat(obs_date) + timedelta(days=lag)).isoformat()
+        else:
+            pd_ = pub_date
         conn.execute("INSERT OR IGNORE INTO data_vintages "
                      "(series_id, obs_date, pub_date, value, source) VALUES (?,?,?,?,?)",
-                     (series, obs_date, pub_date, float(value), "FRED"))
+                     (series, obs_date, pd_, float(value), "FRED"))
         n += 1
     conn.commit()
-    print(f"  FRED {series}: {n} obs (pub {pub_date})")
+    how = f"pub=obs+{lag}d derived" if derive else f"pub {pub_date} (revisable: needs ALFRED)"
+    print(f"  FRED {series}: {n} obs ({how})")
 
 
 def daily_page_range(out, start, end, sleep=0.4):
