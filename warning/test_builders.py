@@ -487,14 +487,24 @@ def test_driver_emits_na_for_unbuilt_so_coverage_is_honest():
     assert res.action["hedge"] == "freeze"
 
 
-def test_driver_state_round_trips_through_schema_meta():
+def test_driver_state_survives_close_and_reopen(tmp_path):
+    """Durability, not just round-trip. The original version of this test called
+    save_state then read back on the SAME open connection with its own commit,
+    so it passed while save_state was missing con.commit() and every day's state
+    was silently discarded on close. Cross the connection boundary."""
     import daily_driver as DD
     from warning_engine import EngineState
-    con = db()
+    path = str(tmp_path / "state.db")
+    con = sqlite3.connect(path)
+    con.executescript(open(SCHEMA).read())
     st = EngineState(band="ELEVATED", candidate_band="DEFENSIVE", candidate_days=7)
     st.persistence = {"S1": ("Y", 3, "G")}
-    DD.save_state(con, st); con.commit()
-    back = DD.load_state(con)
+    DD.save_state(con, st)
+    con.close()                                   # no explicit commit here
+
+    con2 = sqlite3.connect(path)
+    back = DD.load_state(con2)
+    con2.close()
     assert back.band == "ELEVATED"
     assert back.candidate_band == "DEFENSIVE" and back.candidate_days == 7
     assert back.persistence["S1"] == ("Y", 3, "G")

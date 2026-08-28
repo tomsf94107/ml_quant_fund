@@ -77,6 +77,9 @@ def save_state(con, st: EngineState):
                 (json.dumps({"band": st.band, "candidate_band": st.candidate_band,
                              "candidate_days": st.candidate_days,
                              "persistence": {k: list(v) for k, v in st.persistence.items()}}),))
+    con.commit()          # without this the write is discarded on close, and the
+                          # engine restarts from NORMAL with empty persistence
+                          # counters every single day (found 2026-08-28)
 
 
 def build_readings(con, asof):

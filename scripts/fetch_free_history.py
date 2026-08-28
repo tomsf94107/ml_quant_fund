@@ -31,7 +31,14 @@ import argparse, csv, io, os, sqlite3, sys, time, urllib.request
 from datetime import date, timedelta
 
 FRED = ["DGS10", "DTB3", "BAA", "AAA", "BAA10YM", "ABCOMP", "DRTSCILM",
-        "SOFR", "CSUSHPINSA", "HOUST", "BAMLH0A0HYM2", "BAMLC0A0CM"]
+        "SOFR", "CSUSHPINSA", "HOUST", "BAMLH0A0HYM2", "BAMLC0A0CM",
+        # Cboe-originated volatility indices, redistributed by FRED. Added
+        # 2026-08-28 because cdn.cboe.com is DNS-blackholed to 127.0.0.1 from
+        # this host; FRED is the same Cboe data via a reachable route, NOT a
+        # substitute dataset. History matches the registry exactly:
+        #   VIXCLS 1990-01-02+ (F2)   VXVCLS 2007-12-04+ (F3 VIX3M)
+        #   VXOCLS 1986-01-02..2021-09-23 (VXO, discontinued; covers the 2000 era)
+        "VIXCLS", "VXVCLS", "VXOCLS"]
 ALFRED = ["PAYEMS", "GDPC1", "INDPRO", "UNRATE"]
 
 CBOE_CSVS = {
