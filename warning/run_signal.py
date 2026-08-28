@@ -38,8 +38,12 @@ ANCHORS = {
            ("2020-02-19", "COVID peak: registry 14.38 exhibit"),
            ("2022-01-03", "SPX 2022 peak"),
            ("2026-08-28", "today")],
-    "F3": [("2007-08-15", "registry: Aug-07 inversion during the funding rupture"),
-           ("2007-10-09", "registry: 'contango at top' -- F3 calm at the SPX peak"),
+    # NOTE: the registry's 2008 verdict ("Aug-07 inversion; contango at top") is
+    # NOT checkable from the VIX3M leg -- VXVCLS starts 2007-12-04, and the
+    # registry's own history_start says "2004 (futures) / 2007-12 (VIX3M)". Only
+    # the CFE front-second futures leg reaches Aug-2007, and it is not ingested.
+    # Anchors below are all inside the VIX3M leg's real coverage.
+    "F3": [("2008-01-22", "first testable stress: Jan-08 breakdown"),
            ("2008-09-30", "post-Lehman"),
            ("2010-05-20", "registry notes: inverts in every correction"),
            ("2011-08-08", "2011 correction"),

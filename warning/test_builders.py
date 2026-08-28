@@ -769,13 +769,54 @@ def test_f3_run_resets_on_a_single_contango_day():
     assert r["state"] == F3B.AMBER_STATE
 
 
-def test_f3_declares_the_missing_futures_leg():
+def test_f3_names_its_primary_leg_and_what_was_available():
     con = db()
     asof = _load_pair(con, [15.0] * 10, [18.0] * 10)
     d = F3B.compute(con, asof)["detail"]
-    assert d["futures_leg"] is None
-    assert "CFE" in d["futures_note"]
-    assert d["legs_used"] == ["VXVCLS", "VIXCLS"]
+    assert d["leg"] == "vix3m"
+    assert d["legs_available"] == ["vix3m"]
+    assert d["slope_futures_pct"] is None
+
+
+def test_f3_falls_back_to_futures_before_vix3m_exists():
+    """D14: the futures leg carries 2004-03..2007-12, which the vix3m leg cannot
+    reach. This is the only reason the registry's Aug-07 verdict is testable."""
+    con = db()
+    from datetime import date, timedelta
+    d0, i = date(2007, 7, 2), 0
+    while i < 10:
+        if d0.weekday() < 5:
+            pub = (d0 + timedelta(days=1)).isoformat()
+            put(con, "VX_FRONT", d0.isoformat(), pub, 20.0)     # front > second
+            put(con, "VX_SECOND", d0.isoformat(), pub, 18.0)    # = backwardation
+            i += 1
+        d0 += timedelta(days=1)
+    r = F3B.compute(con, d0.isoformat())
+    assert r["detail"]["leg"] == "futures"
+    assert r["detail"]["inverted"] is True
+    assert r["state"] == "R", "10 inverted days is well past the 5-day threshold"
+
+
+def test_f3_prefers_vix3m_when_both_legs_are_fresh():
+    """Never averaged: two term-structure measures with different tenors would
+    produce a number matching neither."""
+    con = db()
+    from datetime import date, timedelta
+    d0, i = date(2010, 1, 4), 0
+    while i < 10:
+        if d0.weekday() < 5:
+            pub = (d0 + timedelta(days=1)).isoformat()
+            put(con, "VIXCLS", d0.isoformat(), pub, 15.0)
+            put(con, "VXVCLS", d0.isoformat(), pub, 18.0)       # contango
+            put(con, "VX_FRONT", d0.isoformat(), pub, 20.0)     # backwardation
+            put(con, "VX_SECOND", d0.isoformat(), pub, 18.0)
+            i += 1
+        d0 += timedelta(days=1)
+    d = F3B.compute(con, d0.isoformat())["detail"]
+    assert d["leg"] == "vix3m"
+    assert sorted(d["legs_available"]) == ["futures", "vix3m"]
+    assert d["slope_vix3m_pct"] == 20.0 and d["slope_futures_pct"] == -10.0
+    assert d["inverted"] is False, "the primary leg decides, not the other one"
 
 
 def test_f3_na_without_vix3m():

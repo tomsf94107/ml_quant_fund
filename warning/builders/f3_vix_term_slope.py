@@ -27,13 +27,17 @@ DATA ROUTE
     longer history via the redistributor. CBOE_VIX3M is loaded and available as a
     cross-check.
 
-THE FUTURES LEG IS NOT BUILT
-    "futures front-second" needs CFE per-contract settlement files (2004+), which
-    fetch_free_history pulls only under --only cfe (~276 requests) and which no
-    parser yet loads into data_vintages. Without it F3 cannot reach back to 2004,
-    and the 2000-era verdict is "impossible (no futures)" regardless. The reading
-    declares which legs were used; the futures leg is reported as absent rather
-    than silently omitted.
+TWO LEGS, ONE PRIMARY (DECISIONS.md D14)
+    vix3m     (VIX3M - VIX) / VIX          2007-12-04 onward
+    futures   (SECOND - FRONT) / FRONT     2004-03-26 .. 2018-02-23, D13-normalized
+
+    The registry's thresholds ("slope<0 1d", "inverted >=5d") are written against
+    the VIX3M formula, so the vix3m leg is PRIMARY wherever it has fresh data.
+    The futures leg carries dates before 2007-12 that the vix3m leg cannot reach
+    -- which is the only reason F3's 2008 verdict ("Aug-07 inversion; contango at
+    top") is testable at all. Where both exist, both are reported and the primary
+    is named; they are never averaged, because averaging two term-structure
+    measures with different tenors would produce a number matching neither.
 """
 
 from __future__ import annotations
@@ -52,25 +56,37 @@ AMBER_STATE = "Y"                 # DECISIONS.md D1
 
 VIX_SERIES = "VIXCLS"
 VIX3M_SERIES = "VXVCLS"           # FRED copy: 2007-12-04+, longer than the Cboe file
+FUT_FRONT = "VX_FRONT"            # CFE, 2004-03-26..2018-02-23, D13-normalized
+FUT_SECOND = "VX_SECOND"
 RED_INVERTED_DAYS = 5             # registry: "inverted >=5d"
 ARM_INVERTED_DAYS = 1             # registry: "slope<0 1d"
 
 
+def _slopes(con, asof, long_s, short_s):
+    """(date, slope) where slope = (longer_tenor - shorter) / shorter."""
+    a, b = series_asof(con, long_s, asof), series_asof(con, short_s, asof)
+    if not a or not b:
+        return []
+    return [(d, (x - y) / y) for d, x, y in align(a, b) if y]
+
+
 def compute(con, asof):
-    vix = series_asof(con, VIX_SERIES, asof)
-    v3m = series_asof(con, VIX3M_SERIES, asof)
-    if not vix or not v3m:
-        missing = [s for s, r in ((VIX_SERIES, vix), (VIX3M_SERIES, v3m)) if not r]
-        return _na(asof, f"no visible observations for {','.join(missing)}")
+    csv_slopes = _slopes(con, asof, VIX3M_SERIES, VIX_SERIES)
+    fut_slopes = _slopes(con, asof, FUT_SECOND, FUT_FRONT)
 
-    joined = align(v3m, vix)                       # (date, vix3m, vix)
-    if len(joined) < RED_INVERTED_DAYS:
-        return _na(asof, f"need {RED_INVERTED_DAYS} overlapping obs of "
-                         f"{VIX3M_SERIES}/{VIX_SERIES}, have {len(joined)}")
+    csv_fresh = bool(csv_slopes) and _fresh(con, asof, VIX3M_SERIES, VIX_SERIES)
+    if csv_fresh:
+        slopes, leg = csv_slopes, "vix3m"
+    elif fut_slopes:
+        slopes, leg = fut_slopes, "futures"
+    else:
+        return _na(asof, f"neither leg has data: {VIX3M_SERIES}/{VIX_SERIES} "
+                         f"({len(csv_slopes)} obs) and {FUT_SECOND}/{FUT_FRONT} "
+                         f"({len(fut_slopes)} obs)")
 
-    slopes = [(d, (a - b) / b) for d, a, b in joined if b]
-    if not slopes:
-        return _na(asof, f"{VIX_SERIES} is zero on every overlapping date")
+    if len(slopes) < RED_INVERTED_DAYS:
+        return _na(asof, f"{leg} leg has {len(slopes)} obs, "
+                         f"need {RED_INVERTED_DAYS}")
 
     cur_date, cur_slope = slopes[-1]
     # consecutive inverted days ending at the latest observation
@@ -81,8 +97,9 @@ def compute(con, asof):
         else:
             break
 
-    stale = max(x for x in (staleness_bdays(con, VIX_SERIES, asof),
-                            staleness_bdays(con, VIX3M_SERIES, asof)) if x is not None)
+    pair = (VIX3M_SERIES, VIX_SERIES) if leg == "vix3m" else (FUT_SECOND, FUT_FRONT)
+    stale = max(x for x in (staleness_bdays(con, pair[0], asof),
+                            staleness_bdays(con, pair[1], asof)) if x is not None)
 
     if run >= RED_INVERTED_DAYS:
         state = "R"
@@ -91,7 +108,10 @@ def compute(con, asof):
     else:
         state = "G"
 
-    v3m_v, vix_v = joined[-1][1], joined[-1][2]
+    def _last(series):
+        r = series_asof(con, series, asof)
+        return round(r[-1][1], 2) if r else None
+
     return {
         "signal_id": SIGNAL_ID, "layer": LAYER, "asof": str(asof),
         "state": state, "raw_value": cur_slope, "zscore": None,
@@ -99,19 +119,31 @@ def compute(con, asof):
         "persistence_days": PERSISTENCE_DAYS,
         "source_asof": cur_date,
         "detail": {
-            "vix": round(vix_v, 2), "vix3m": round(v3m_v, 2),
+            "leg": leg, "legs_available": [n for n, s in
+                                           (("vix3m", csv_slopes),
+                                            ("futures", fut_slopes)) if s],
+            "vix": _last(VIX_SERIES), "vix3m": _last(VIX3M_SERIES),
+            "vx_front": _last(FUT_FRONT), "vx_second": _last(FUT_SECOND),
             "slope": round(cur_slope, 4),
             "slope_pct": round(cur_slope * 100, 2),
+            "slope_vix3m_pct": (round(csv_slopes[-1][1] * 100, 2)
+                                if csv_slopes else None),
+            "slope_futures_pct": (round(fut_slopes[-1][1] * 100, 2)
+                                  if fut_slopes else None),
             "inverted": cur_slope < 0,
             "inverted_run_days": run,
             "red_at_days": RED_INVERTED_DAYS,
-            "legs_used": [VIX3M_SERIES, VIX_SERIES],
-            "futures_leg": None,
-            "futures_note": "CFE front-second settles not ingested; the futures "
-                            "leg of the formula is absent, so F3 starts 2007-12 "
-                            "rather than 2004",
         },
     }
+
+
+def _fresh(con, asof, *series):
+    """True when every named series has a published obs inside the stale limit."""
+    for s in series:
+        d = staleness_bdays(con, s, asof)
+        if d is None or d > MAX_STALENESS_DAYS:
+            return False
+    return True
 
 
 def _na(asof, reason):

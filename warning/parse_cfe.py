@@ -221,8 +221,11 @@ def main():
         for series, rows in per_contract.items():
             write(series, rows)
     con.commit()
-    n = con.execute("SELECT COUNT(*) FROM data_vintages "
-                    "WHERE series_id LIKE 'VX_%'").fetchone()[0]
+    # NB: '_' is a single-char wildcard in SQL LIKE, so 'VX_%' also matches
+    # VXOCLS and VXVCLS. Escape it or the count silently includes the FRED
+    # volatility series (found 2026-08-28: reported 20720 instead of 7006).
+    n = con.execute(r"SELECT COUNT(*) FROM data_vintages "
+                    r"WHERE series_id LIKE 'VX\_%' ESCAPE ''").fetchone()[0]
     con.close()
     print(f"\nwrote VX_FRONT/VX_SECOND"
           f"{' + per-contract' if args.per_contract else ''}; "
