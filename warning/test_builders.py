@@ -455,3 +455,55 @@ def test_cboe_parser_survives_non_utf8_and_multiline_header(tmp_path):
     assert skipped == 0
     assert ("CBOE_PC_TOTAL", "2003-12-31", 1.25) in recs
     assert ("CBOE_PC_INDEX", "2003-12-31", 2.96) in recs
+
+
+# --------------------------------------------------------------- daily driver
+
+def test_driver_roster_matches_the_registry_shortlist():
+    import csv, daily_driver as DD
+    sl = {r["id"] for r in csv.DictReader(open(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "signal_registry.csv")))
+        if r["tier"] == "shortlist"}
+    assert set(DD.ROSTER) == sl, "driver roster drifted from the registry shortlist"
+    assert len(DD.ROSTER) == 15
+
+
+def test_driver_emits_na_for_unbuilt_so_coverage_is_honest():
+    """The point of the full roster: 2 of 15 built must NOT look fully covered."""
+    import daily_driver as DD
+    from warning_engine import EngineState, step
+    con = db()
+    readings, details = DD.build_readings(con, "2026-08-28")
+    assert len(readings) == 15
+    # every UNBUILT signal must be NA. (Built ones are also NA here because this
+    # fixture db has no data -- which is itself correct behaviour.)
+    unbuilt = {sid for sid in DD.ROSTER if sid not in DD.BUILT}
+    assert len(unbuilt) == 13
+    na = {r.signal_id for r in readings if r.state == "NA"}
+    assert unbuilt <= na
+    res = step("2026-08-28", readings, EngineState())
+    assert res.band == "INSUFFICIENT_DATA"
+    assert res.composite is None
+    assert res.action["hedge"] == "freeze"
+
+
+def test_driver_state_round_trips_through_schema_meta():
+    import daily_driver as DD
+    from warning_engine import EngineState
+    con = db()
+    st = EngineState(band="ELEVATED", candidate_band="DEFENSIVE", candidate_days=7)
+    st.persistence = {"S1": ("Y", 3, "G")}
+    DD.save_state(con, st); con.commit()
+    back = DD.load_state(con)
+    assert back.band == "ELEVATED"
+    assert back.candidate_band == "DEFENSIVE" and back.candidate_days == 7
+    assert back.persistence["S1"] == ("Y", 3, "G")
+
+
+def test_driver_l4_has_no_registry_signals():
+    """Structural gap: the engine weights L4 at 0.25 and gives it the crisis
+    override, but no registry row is L4. Pinned so the gap cannot be forgotten."""
+    import daily_driver as DD
+    from warning_engine import LAYER_WEIGHTS
+    assert "L4" in LAYER_WEIGHTS and LAYER_WEIGHTS["L4"] == 0.25
+    assert not [s for s, L in DD.ROSTER.items() if L == "L4"]
