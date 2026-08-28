@@ -43,7 +43,9 @@ ANCHORS = {
     # registry's own history_start says "2004 (futures) / 2007-12 (VIX3M)". Only
     # the CFE front-second futures leg reaches Aug-2007, and it is not ingested.
     # Anchors below are all inside the VIX3M leg's real coverage.
-    "F3": [("2008-01-22", "first testable stress: Jan-08 breakdown"),
+    "F3": [("2007-08-15", "registry: Aug-07 inversion -- FUTURES leg only"),
+           ("2007-10-09", "registry: 'contango at top' -- the self-critical claim"),
+           ("2008-01-22", "Jan-08 breakdown"),
            ("2008-09-30", "post-Lehman"),
            ("2010-05-20", "registry notes: inverts in every correction"),
            ("2011-08-08", "2011 correction"),
@@ -92,7 +94,8 @@ def show(sig, r):
         print(f"    VIX {d['vix']}  VIX3M {d['vix3m']}  slope {d['slope_pct']:+.2f}%"
               f"  inverted={d['inverted']} run {d['inverted_run_days']}d"
               f" (red at {d['red_at_days']})")
-        print(f"    legs {d['legs_used']}  futures leg: absent")
+        print(f"    leg={d['leg']}  available {d['legs_available']}"
+              f"  vix3m {d['slope_vix3m_pct']}  futures {d['slope_futures_pct']}")
     elif sig == "S4":
         print(f"    mode={d['mode']} ({d['series']})")
         if d["mode"] == "historic":
