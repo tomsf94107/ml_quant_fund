@@ -256,3 +256,60 @@ def test_escalation_fires_once_the_inversion_actually_ends():
     r = S1.compute(con, "2023-10-02")
     assert r["state"] == "R", r["detail"]
     assert r["detail"]["resteepen"]["ongoing"] is False
+
+
+# --------------------------------------------------------------- S2
+
+from builders import s2_credit as S2  # noqa: E402
+
+
+def _load_monthly(con, series, vals, start="1990-01"):
+    """vals: list of monthly spreads starting at `start`."""
+    from datetime import date, timedelta
+    y, m = int(start[:4]), int(start[5:7])
+    for v in vals:
+        obs = f"{y:04d}-{m:02d}-01"
+        pub = (date.fromisoformat(obs) + timedelta(days=1)).isoformat()
+        put(con, series, obs, pub, v)
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+
+
+def test_s2_green_when_credit_leg_fails():
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 14)
+    r = S2.compute(con, "1991-04-02")
+    assert r["state"] == "G" and r["detail"]["credit_leg"] is False
+
+
+def test_s2_arms_on_credit_leg_alone_when_equity_unknown():
+    """Credit widens 100bp off its 6m low and sits above the 10m MA."""
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 10 + [2.2, 2.5, 2.8, 3.1])
+    r = S2.compute(con, "1991-04-02")
+    d = r["detail"]
+    assert d["credit_leg"] is True and d["equity_leg"] is None
+    assert r["state"] == S2.AMBER_STATE, "must ARM, not fire, without SPX"
+    assert "not wired" in d["equity_note"]
+
+
+def test_s2_fires_red_only_with_the_equity_leg():
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 10 + [2.2, 2.5, 2.8, 3.1])
+    assert S2.compute(con, "1991-04-02", spx_near_high=True)["state"] == "R"
+    assert S2.compute(con, "1991-04-02", spx_near_high=False)["state"] == S2.AMBER_STATE
+
+
+def test_s2_needs_75bp_not_merely_above_ma():
+    """Above the MA but only 40bp off the low -> half-condition not met."""
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 10 + [2.1, 2.2, 2.3, 2.4])
+    d = S2.compute(con, "1991-04-02")["detail"]
+    assert d["above_ma"] is True and d["off_low"] is False and d["credit_leg"] is False
+
+
+def test_s2_declares_its_mode_and_refuses_short_history():
+    con = db(); _load_monthly(con, "BAA10YM", [2.0] * 4)
+    r = S2.compute(con, "1990-06-02")
+    assert r["state"] == "NA" and r["detail"]["mode"] == "monthly"
+    assert "needs 10 complete months" in r["detail"]["reason"]
+
+
+def test_s2_equity_leg_returns_none_on_short_history():
+    closes = [(f"2020-01-{d:02d}", 100.0) for d in range(1, 29)]
+    assert S2.equity_leg_from_prices(closes, "2020-01-28") is None
