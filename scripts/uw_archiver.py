@@ -14,7 +14,16 @@ ENDPOINTS to match your actual entitlements before first run):
     python uw_archiver.py --db warning.db
 
 Cron (Vietnam morning, beside check_kill_switches.py — market close ≈ 3am ICT):
-    30 7 * * 2-6  cd ~/quant && /usr/bin/python3 uw_archiver.py --db warning.db >> logs/uw_archiver.log 2>&1
+    30 6 * * 2-6  cd ~/quant && /usr/bin/python3 uw_archiver.py --db warning.db >> logs/uw_archiver.log 2>&1
+
+  06:30 ICT = 19:30 ET the PREVIOUS day, i.e. after the 16:00 ET close. Tue-Sat
+  ICT therefore covers Mon-Fri ET. Rows are stamped with the ET date (see
+  et_today below), so snapshot_date names the session actually captured.
+
+  The payload also carries its own date -- market-tide rows include
+  {"date": "2026-08-27", "timestamp": "...-04:00"}. A parse step should prefer
+  that per-endpoint date over snapshot_date; the raw JSON is stored verbatim
+  precisely so parsing stays separate and re-runnable.
 
 Design rules:
   - INSERT OR IGNORE on (endpoint, params, snapshot_date): re-runs are safe.
@@ -25,7 +34,27 @@ Design rules:
 """
 
 import argparse, json, os, sqlite3, sys, time, urllib.request, urllib.error
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
+
+# snapshot_date is the EASTERN date, not the local one.
+#
+# WHY (found 2026-08-28): date.today() returns the VN date, which runs a day
+# ahead of ET. The cron fires 06:30 ICT = 19:30 ET the PREVIOUS day, so every run
+# captures a US session and then labels it with tomorrow's date. Meanwhile every
+# other series in warning.db is ET-dated -- data_vintages.obs_date, SPY_CLOSE,
+# and pit.series_asof, which compares date strings directly. A join from
+# uw_archive to any of them would be silently off by one: no error, just
+# misalignment. uw_archive is append-only (rule #8), so a wrong label is
+# permanent.
+#
+# ZoneInfo rather than a fixed offset: ET is UTC-4 or UTC-5 depending on DST, and
+# hardcoding either would be wrong for half the year.
+ET = ZoneInfo("America/New_York")
+
+
+def et_today() -> str:
+    return datetime.now(ET).date().isoformat()
 
 BASE = "https://api.unusualwhales.com"          # verify path prefix in your docs
 # Repo convention is UW_API_KEY (set in .env, used by monitor_ticker.py and every
@@ -119,7 +148,7 @@ def main():
         snapshot_date TEXT NOT NULL, payload_json TEXT NOT NULL,
         pulled_at TEXT NOT NULL DEFAULT (datetime('now')),
         PRIMARY KEY (endpoint, query_params, snapshot_date))""")
-    day = date.today().isoformat()
+    day = et_today()
 
     jobs = list(ENDPOINTS)
     if os.path.exists(UNIVERSE_FILE):
