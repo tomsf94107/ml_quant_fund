@@ -160,7 +160,22 @@ def _resteepen(months):
         detail["reason"] = (f"last inversion run only {len(run)}m "
                             f"(<{MIN_INVERSION_MONTHS}m)")
         return False, detail
-    if not ongoing and age > ESCALATE_WINDOW_MONTHS:
+    if ongoing:
+        # The re-steepening is measured only AFTER the inversion ends.
+        # Registry 2008 verdict: "fired Aug06-May07 + Jun07 re-steepen" -- the
+        # arm period IS the inversion run and the re-steepen follows it.
+        # Measuring the rise off a RUNNING trough turns ordinary noise inside a
+        # deep inversion into an escalation. Found on real data 2026-08-28:
+        #   1974-01 R at spread -0.710 ("rise 55.9bp"), -> Y, -> R, -> Y, -> R
+        #   1980-03/1981-05 the same flapping at -0.44 / -0.01
+        #   2023-10 R at spread -0.941, then Y/R/Y/R through 2024-10
+        # In every spurious case the curve was still deeply inverted. In the one
+        # documented true case (Jun-07) it had normalized to +0.492.
+        detail["reason"] = (f"inversion still ongoing ({len(run)}m, latest "
+                            f"{round(latest_v, 4)}) -- re-steepening is only "
+                            f"measured after the run ends")
+        return False, detail
+    if age > ESCALATE_WINDOW_MONTHS:
         detail["reason"] = (f"inversion ended {age}m ago "
                             f"(>{ESCALATE_WINDOW_MONTHS}m window) -- stale, cannot escalate")
         return False, detail

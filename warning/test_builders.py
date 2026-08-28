@@ -86,9 +86,12 @@ def test_s1_single_inverted_month_does_not_arm():
 
 
 def test_s1_escalates_on_resteepening_after_long_inversion():
-    """6 inverted months troughing at -0.60, then +50bp off the trough."""
+    """6 inverted months troughing at -0.60, then the curve NORMALIZES and rises
+    >50bp off the trough. Note 2025-07 must be POSITIVE: an escalation while the
+    curve is still inverted is the bug fixed on 2026-08-28, and the original
+    version of this test asserted exactly that -- it encoded the defect."""
     sp = {"2025-01": -0.2, "2025-02": -0.3, "2025-03": -0.45, "2025-04": -0.6,
-          "2025-05": -0.5, "2025-06": -0.4, "2025-07": -0.05}
+          "2025-05": -0.5, "2025-06": -0.4, "2025-07": 0.05}
     con = db(); _load(con, sp)
     r = S1.compute(con, "2025-08-02")
     assert r["state"] == "R", r["detail"]
@@ -225,3 +228,31 @@ def test_incomplete_month_is_excluded_until_published():
     # asof 2026-09-01: August is fully published -> included
     assert [m for m, _ in pit.monthly_mean_complete(rows, "2026-09-01", 1)] == \
 ["2026-07", "2026-08"]
+
+
+def test_no_escalation_while_inversion_is_ongoing():
+    """REGRESSION (real data 2026-08-28): S1 flapped Y->R->Y->R through 1974,
+    1980-81 and 2023-24, escalating at spreads like -0.941 while the curve was
+    still deeply inverted. Re-steepening is measured only after the run ends."""
+    sp = {}
+    for i, m in enumerate(["2023-01", "2023-02", "2023-03", "2023-04", "2023-05",
+                           "2023-06", "2023-07", "2023-08", "2023-09", "2023-10"]):
+        sp[m] = -1.60 if m == "2023-05" else -0.95     # +65bp off trough, still inverted
+    con = db(); _load(con, sp)
+    r = S1.compute(con, "2023-11-02")
+    assert r["state"] != "R", f"escalated mid-inversion: {r['detail']}"
+    rs = r["detail"]["resteepen"]
+    assert rs["ongoing"] is True and "ongoing" in rs["reason"]
+    assert rs["rise_bp"] >= 50            # the rise is real; the context is not
+
+
+def test_escalation_fires_once_the_inversion_actually_ends():
+    """Same shape, but the curve normalizes -> this IS the 2007 pattern."""
+    sp = {m: (-1.60 if m == "2023-05" else -0.95)
+          for m in ["2023-01", "2023-02", "2023-03", "2023-04", "2023-05",
+                    "2023-06", "2023-07", "2023-08"]}
+    sp["2023-09"] = 0.20                    # inversion ends
+    con = db(); _load(con, sp)
+    r = S1.compute(con, "2023-10-02")
+    assert r["state"] == "R", r["detail"]
+    assert r["detail"]["resteepen"]["ongoing"] is False
