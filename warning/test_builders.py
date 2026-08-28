@@ -68,21 +68,21 @@ def _load(con, spreads):
 
 def test_s1_green_when_not_inverted():
     con = db(); _load(con, {"2026-06": 0.5, "2026-07": 0.4, "2026-08": 0.6})
-    r = S1.compute(con, "2026-08-28")
+    r = S1.compute(con, "2026-09-02")
     assert r["state"] == "G"
     assert r["detail"]["inverted_of_last3"] == 0
 
 
 def test_s1_arms_on_two_of_three_inverted_months():
     con = db(); _load(con, {"2026-06": -0.2, "2026-07": 0.1, "2026-08": -0.3})
-    r = S1.compute(con, "2026-08-28")
+    r = S1.compute(con, "2026-09-02")
     assert r["state"] == S1.AMBER_STATE
     assert r["detail"]["armed"] and not r["detail"]["escalated"]
 
 
 def test_s1_single_inverted_month_does_not_arm():
     con = db(); _load(con, {"2026-06": 0.2, "2026-07": 0.1, "2026-08": -0.3})
-    assert S1.compute(con, "2026-08-28")["state"] == "G"
+    assert S1.compute(con, "2026-09-02")["state"] == "G"
 
 
 def test_s1_escalates_on_resteepening_after_long_inversion():
@@ -90,7 +90,7 @@ def test_s1_escalates_on_resteepening_after_long_inversion():
     sp = {"2025-01": -0.2, "2025-02": -0.3, "2025-03": -0.45, "2025-04": -0.6,
           "2025-05": -0.5, "2025-06": -0.4, "2025-07": -0.05}
     con = db(); _load(con, sp)
-    r = S1.compute(con, "2025-07-28")
+    r = S1.compute(con, "2025-08-02")
     assert r["state"] == "R", r["detail"]
     assert r["detail"]["resteepen"]["rise_bp"] >= 50
 
@@ -101,7 +101,7 @@ def test_s1_short_inversion_does_not_escalate():
     registry's >=6m floor, so the +55bp rise off the trough must NOT fire."""
     sp = {"2025-04": -0.6, "2025-05": -0.5, "2025-06": -0.4, "2025-07": -0.05}
     con = db(); _load(con, sp)
-    r = S1.compute(con, "2025-07-28")
+    r = S1.compute(con, "2025-08-02")
     assert r["state"] != "R"
     assert r["detail"]["resteepen"]["run_len"] == 4
 
@@ -123,7 +123,7 @@ def test_s1_flags_staleness_past_registry_limit():
 
 def test_s1_to_reading_shape():
     con = db(); _load(con, {"2026-06": -0.2, "2026-07": 0.1, "2026-08": -0.3})
-    rd = S1.to_reading(S1.compute(con, "2026-08-28"))
+    rd = S1.to_reading(S1.compute(con, "2026-09-02"))
     assert rd.signal_id == "S1" and rd.layer == "L2" and rd.min_persistence == 21
 
 
@@ -201,7 +201,7 @@ def test_recent_resteepen_still_escalates_inside_the_window():
           "2006-12": -0.3, "2007-01": -0.35, "2007-02": -0.37, "2007-03": -0.375,
           "2007-04": -0.2, "2007-05": 0.0, "2007-06": 0.5}
     con = db(); _load(con, sp)
-    r = S1.compute(con, "2007-06-29")
+    r = S1.compute(con, "2007-07-02")
     assert r["state"] == "R", r["detail"]
     assert r["detail"]["resteepen"]["months_since_run_end"] <= S1.ESCALATE_WINDOW_MONTHS
 
@@ -210,6 +210,18 @@ def test_short_run_detail_is_complete_not_partial():
     """The detail dict must always carry run_start/trough, even when the run is
     too short to escalate -- the display printed 'None..None (1m)' before."""
     con = db(); _load(con, {"2026-06": 0.2, "2026-07": 0.1, "2026-08": -0.3})
-    d = S1.compute(con, "2026-08-28")["detail"]["resteepen"]
+    d = S1.compute(con, "2026-09-02")["detail"]["resteepen"]
     assert d["run_start"] is not None and d["trough"] is not None
     assert d["run_len"] == 1
+
+
+def test_incomplete_month_is_excluded_until_published():
+    """REGRESSION (real data 2026-08-28): S1 went Y->R->G across 2001-01/02
+    because January was half-published (mean -0.001) at the 1/31 read and
+    positive once complete. A month must not count until fully published."""
+    rows = [("2026-08-03", 1.0), ("2026-08-31", 1.0), ("2026-07-15", 2.0)]
+    # asof 2026-08-31: August's last print (lag 1d) is not out yet -> excluded
+    assert [m for m, _ in pit.monthly_mean_complete(rows, "2026-08-31", 1)] == ["2026-07"]
+    # asof 2026-09-01: August is fully published -> included
+    assert [m for m, _ in pit.monthly_mean_complete(rows, "2026-09-01", 1)] == \
+["2026-07", "2026-08"]

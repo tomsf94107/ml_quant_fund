@@ -38,13 +38,15 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from pit import series_asof, monthly_mean, align, staleness_days  # noqa: E402
+from pit import (series_asof, monthly_mean_complete, align,  # noqa: E402
+                 staleness_days)
 
 SIGNAL_ID = "S1"
 LAYER = "L2"
 SERIES = ("DGS10", "DTB3")
 MAX_STALENESS_DAYS = 7
 PERSISTENCE_DAYS = 21
+PUB_LAG_DAYS = 1           # registry publication_lag for DGS10/DTB3
 
 AMBER_STATE = "Y"          # see docstring -- awaiting ratification
 INVERSION_MONTHS_OF_3 = 2  # registry: "<0 for >=2 of 3 consecutive months"
@@ -81,9 +83,12 @@ def compute(con, asof, full_history: bool = False):
         return _na(asof, "DGS10 and DTB3 have no overlapping observation dates")
 
     spread_daily = [(d, a - b) for d, a, b in joined]
-    months = monthly_mean(spread_daily)
+    # Only fully-published months. A half-published month flipped S1 in and out
+    # of R across the 2001-01/2001-02 reads; see pit.monthly_mean_complete.
+    months = monthly_mean_complete(spread_daily, asof, PUB_LAG_DAYS)
     if len(months) < 3:
-        return _na(asof, f"only {len(months)} monthly obs; need >=3 for the 2-of-3 rule")
+        return _na(asof, f"only {len(months)} complete monthly obs; "
+                         f"need >=3 for the 2-of-3 rule")
 
     # staleness: worst of the two inputs
     st = [staleness_days(con, s, asof) for s in SERIES]

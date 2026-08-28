@@ -85,6 +85,41 @@ def monthly_mean(rows: list[tuple[str, float]]) -> list[tuple[str, float]]:
     return sorted((m, sum(vs) / len(vs)) for m, vs in buckets.items())
 
 
+def month_end(ym: str) -> str:
+    """Last calendar day of 'YYYY-MM'."""
+    y, m = int(ym[:4]), int(ym[5:7])
+    ny, nm = (y + 1, 1) if m == 12 else (y, m + 1)
+    return (date(ny, nm, 1) - timedelta(days=1)).isoformat()
+
+
+def monthly_mean_complete(rows, asof, pub_lag_days: int = 1):
+    """monthly_mean, but ONLY for months whose observations are all published.
+
+    A month is usable when asof >= month_end + publication_lag. Anything later is
+    dropped, INCLUDING a month that has ended on the calendar but whose final
+    prints have not yet been released.
+
+    WHY THIS IS NOT COSMETIC (found on real data 2026-08-28):
+      At the 2001-01-31 read, January's last observation was not yet published,
+      so the January mean was -0.001 -- fractionally inverted. S1 counted January
+      in the inversion run, reached the 6-month floor, and fired R. By the
+      2001-02-28 read the full month was in, January was positive, the run shrank
+      to 5 months, and the escalation vanished. A signal must not enter and leave
+      a state because a month was half-counted.
+
+    Cost: one extra month of lag. Immaterial for S1, whose documented lead is
+    14-16 months, and the registry's verdicts name DATA months, not read dates.
+    """
+    asof = _d(asof)
+    out = []
+    for ym, v in monthly_mean(rows):
+        ready = (datetime.fromisoformat(month_end(ym)).date()
+                 + timedelta(days=pub_lag_days)).isoformat()
+        if asof >= ready:
+            out.append((ym, v))
+    return out
+
+
 def align(a: list[tuple[str, float]],
           b: list[tuple[str, float]]) -> list[tuple[str, float, float]]:
     """Inner-join two series on obs_date. Returns [(obs_date, a_val, b_val)]."""
