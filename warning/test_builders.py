@@ -927,3 +927,45 @@ def test_cfe_normalize_drops_rows_it_cannot_classify():
     con = db()
     out, dropped, _ = PF.normalize(con, [("2004-03-26", 168.0)])
     assert out == [] and dropped == 1
+
+
+def test_uw_archive_keeps_multiple_pulls_of_one_session(tmp_path):
+    """REGRESSION (2026-08-28, caught before the first cron run): with pulled_at
+    outside the primary key, two pulls covering one ET session collide and
+    INSERT OR IGNORE silently discards the second. The pre-open pull at 08:18 ET
+    would have locked out the post-close cron pull for that session, permanently,
+    in an append-only table."""
+    path = str(tmp_path / "uw.db")
+    con = sqlite3.connect(path)
+    con.executescript(open(SCHEMA).read())
+    ins = ("INSERT OR IGNORE INTO uw_archive "
+           "(endpoint, query_params, snapshot_date, payload_json, pulled_at) "
+           "VALUES (?,?,?,?,?)")
+    con.execute(ins, ("/api/market/market-tide", "{}", "2026-08-28",
+                      '{"stale":"pre-open"}', "2026-08-28 12:18:40"))
+    con.execute(ins, ("/api/market/market-tide", "{}", "2026-08-28",
+                      '{"fresh":"post-close"}', "2026-08-28 23:30:00"))
+    con.commit()
+    rows = con.execute("SELECT pulled_at, payload_json FROM uw_archive "
+                       "ORDER BY pulled_at").fetchall()
+    con.close()
+    assert len(rows) == 2, "both vintages of one session must persist"
+    assert "post-close" in rows[-1][1], "latest pulled_at is the freshest view"
+
+
+def test_uw_archive_still_dedupes_an_identical_rerun(tmp_path):
+    """Idempotency must survive the key change: re-running the same pull is a
+    no-op, only a genuinely later pull adds a row."""
+    path = str(tmp_path / "uw2.db")
+    con = sqlite3.connect(path)
+    con.executescript(open(SCHEMA).read())
+    ins = ("INSERT OR IGNORE INTO uw_archive "
+           "(endpoint, query_params, snapshot_date, payload_json, pulled_at) "
+           "VALUES (?,?,?,?,?)")
+    for _ in range(3):
+        con.execute(ins, ("/api/darkpool/recent", '{"limit":200}', "2026-08-28",
+                          '{"x":1}', "2026-08-28 23:30:00"))
+    con.commit()
+    n = con.execute("SELECT COUNT(*) FROM uw_archive").fetchone()[0]
+    con.close()
+    assert n == 1

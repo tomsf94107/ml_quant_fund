@@ -52,11 +52,18 @@ CREATE INDEX IF NOT EXISTS ix_vintages_series_obs ON data_vintages (series_id, o
 CREATE TABLE IF NOT EXISTS uw_archive (
     endpoint      TEXT NOT NULL,
     query_params  TEXT NOT NULL,        -- canonical sorted JSON of params
-    snapshot_date TEXT NOT NULL,
+    snapshot_date TEXT NOT NULL,        -- the ET SESSION being captured
     payload_json  TEXT NOT NULL,
     pulled_at     TEXT NOT NULL DEFAULT (datetime('now')),
-    PRIMARY KEY (endpoint, query_params, snapshot_date)
+    -- pulled_at is IN the key. snapshot_date names the session, pulled_at names
+    -- the observation of it, exactly as data_vintages separates obs_date from
+    -- pub_date. Without it, two pulls covering one ET session collide and
+    -- INSERT OR IGNORE silently discards the second -- which is how a stale
+    -- pre-open payload would have locked out the post-close one on 2026-08-28.
+    -- A parser takes the latest pulled_at at or before its own as-of moment.
+    PRIMARY KEY (endpoint, query_params, snapshot_date, pulled_at)
 );
+CREATE INDEX IF NOT EXISTS ix_uw_session ON uw_archive (snapshot_date, endpoint);
 
 -- ---------------------------------------------------------------------------
 -- 3. signal_values  [engine-pinned by SignalReading + registry columns]

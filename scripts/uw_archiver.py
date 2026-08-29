@@ -147,7 +147,7 @@ def main():
         endpoint TEXT NOT NULL, query_params TEXT NOT NULL,
         snapshot_date TEXT NOT NULL, payload_json TEXT NOT NULL,
         pulled_at TEXT NOT NULL DEFAULT (datetime('now')),
-        PRIMARY KEY (endpoint, query_params, snapshot_date))""")
+        PRIMARY KEY (endpoint, query_params, snapshot_date, pulled_at))""")
     day = et_today()
 
     jobs = list(ENDPOINTS)
