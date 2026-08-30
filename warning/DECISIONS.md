@@ -816,7 +816,10 @@ stand as written and **none of their fires counts as validation.**
 
 ## D21 — S7's thresholds clear a century test, and the signal has a partial record
 
-**Status: FINDING, recorded 2026-08-30. No code changed.**
+**Status: SUPERSEDED within the hour by the base-rate test in D23. The
+thresholds ARE cleared -- that part stands -- but the "partial record" below
+does not survive comparison with chance. Kept because the firing dates are
+correct; the interpretation was premature.**
 
 S7F applies S7's unchanged +3%/+5% thresholds to French's NoDur/Utils/Hlth
 against the CRSP value-weighted market, 1930-2026, 1,179 month-ends.
@@ -887,3 +890,56 @@ none control for the base rate of drawdowns following any random month-end, and
 "3 hits in 13" has not been tested against what chance would produce. The next
 honest step for S7 is exactly the analysis run on S5: forward returns and
 drawdowns after each fire, against the unconditional base rate.
+
+
+---
+
+## D23 — against the base rate, no French-testable signal has any edge
+
+**Status: FINDING, 2026-08-30. This supersedes D21's "partial record".**
+
+D21 counted 3 apparent hits in 13 S7F fires and called it a weak but real
+record. D22 immediately noted that number was meaningless without a base rate.
+Running it, over 1,167 month-ends with a full forward window, 1926-2026:
+
+| | fwd 126d mean | fwd 126d MEDIAN | worst 252d mean | worst 252d MEDIAN |
+|---|---|---|---|---|
+| ALL month-ends (n=1167) | +5.73% | **+6.48%** | -9.47% | **-5.31%** |
+| S7F RED (n=13) | +2.62% | **+7.18%** | -9.52% | **-5.52%** |
+| S8F RED (n=6) | +0.33% | +2.98% | **-7.82%** | -4.99% |
+
+**S7F is indistinguishable from chance.** Its forward drawdown matches the
+unconditional distribution almost exactly (-9.52% vs -9.47% mean; -5.52% vs
+-5.31% median), and its MEDIAN forward return is HIGHER than the base rate
+(+7.18% vs +6.48%). The lower mean is two observations -- 1929 and 1946 --
+pulling the average; the typical fire is followed by an ordinary six months.
+
+**S8F is worse than useless**: its fires precede SHALLOWER drawdowns than
+average (-7.82% vs -9.47%).
+
+**So 1929, 1946 and 2011 were coincidence.** Thirteen fires spread across a
+century that contains 1929, 1937, 1946, 1973, 1987, 2000, 2008 and 2020 will
+land near a peak sometimes. D21's reading was the same error this project keeps
+finding in its own data: counting hits without the denominator.
+
+**Every outcome-testable signal in this build has now failed.**
+
+| Signal | Test | Result |
+|---|---|---|
+| S5 breadth | 11 reds vs all new-high days | indistinguishable (-8.94% vs -8.05%) |
+| S7 defensive rotation | 13 reds vs all month-ends, century | indistinguishable, median WORSE for the signal |
+| S8 epicenter fracture | 6 reds, century | inverted -- shallower drawdowns than chance |
+| S9 aggregate SI | 6 reds | all false, one at the bear-market low |
+| S11 issuance | 2000-03 fire | not contradicted, n=1 |
+
+**What this does and does not mean.** It does NOT mean the report's thesis is
+wrong or that these signals cannot work: none of this is a point-in-time replay
+(D20), the composite has never been evaluated (only individual signals), and the
+report's whole design claim is that no SINGLE signal works -- that the four-layer
+CONJUNCTION is what carries information. Testing components individually and
+finding them weak is consistent with that claim rather than a refutation of it.
+
+It does mean that **when the composite turns on, no component behind it has
+demonstrated standalone value**, and the band must not be read as though it had.
+Part V's false-positive accounting should be built and run on the composite
+before any band is treated as advice.
