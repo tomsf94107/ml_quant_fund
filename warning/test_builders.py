@@ -1363,15 +1363,23 @@ def test_s9_fires_on_a_short_interest_spike():
     assert r["state"] == "R"
 
 
-def test_s9_panel_is_point_in_time_not_full_sample():
-    """Names must be selected from the trailing window only. A full-sample
-    intersection would presume knowledge of which tickers stayed covered."""
+def test_s9_panel_intersects_all_visible_dates_and_excludes_late_arrivals():
+    """The panel is the intersection over every VISIBLE date -- point-in-time,
+    since nothing after asof is read. A name that appears late never joins, so
+    it cannot inflate the aggregate; that is the conservative direction.
+
+    An earlier version intersected only the trailing z-window, which starved the
+    trend fit whenever coverage had grown and left S9 NA at nearly every anchor.
+    """
     con = db()
-    asof = _load_si(con, n_dates=60, n_tickers=200, drop_after=30)
     from datetime import date, timedelta
+    # 100 core names throughout, 50 more only from halfway
+    asof = _load_si(con, n_dates=60, n_tickers=100)
+    _load_si(con, n_dates=30, n_tickers=150, start_year=2022)
     r = S9B.compute(con, (date.fromisoformat(asof) + timedelta(days=20)).isoformat())
-    # after the drop only 100 names persist, and the trailing window sees those
-    assert r["state"] == "NA" or r["detail"]["panel_names"] == 100, r["detail"]
+    if r["state"] != "NA":
+        assert r["detail"]["panel_names"] == 100, r["detail"]
+        assert r["detail"]["obs_used"] >= S9B.MIN_TREND_OBS
 
 
 def test_s9_refuses_a_tiny_panel():

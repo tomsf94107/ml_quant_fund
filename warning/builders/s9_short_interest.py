@@ -102,18 +102,28 @@ def compute(con, asof):
         return _na(asof, f"need {MIN_TREND_OBS} settlement dates for the "
                          f"expanding trend, have {len(dates)}")
 
-    # POINT-IN-TIME panel: names present on every date inside the trailing
-    # z-window. Never the full-sample intersection, which would be look-ahead.
-    window_dates = dates[-Z_WINDOW_OBS:]
-    panel = set(by_date[window_dates[0]])
-    for d in window_dates[1:]:
+    # POINT-IN-TIME panel: names present on EVERY date visible at `asof`.
+    #
+    # An earlier version intersected only the trailing z-window. Because
+    # coverage grows, that panel contained names absent in 2021, so few older
+    # dates carried it -- the trend fit was starved and S9 read NA at almost
+    # every anchor ("only 26 dates carry the full panel; need 36").
+    #
+    # Intersecting the whole VISIBLE history is still point-in-time: nothing
+    # after `asof` is consulted. The panel anchors to the earliest date, so it
+    # shrinks slowly and every visible date carries it by construction. A name
+    # added later never joins the panel, which is the conservative direction --
+    # it cannot inflate the aggregate.
+    panel = set(by_date[dates[0]])
+    for d in dates[1:]:
         panel &= set(by_date[d])
     if len(panel) < MIN_PANEL:
         return _na(asof, f"point-in-time panel is {len(panel)} names "
-                         f"(<{MIN_PANEL}) over the trailing {Z_WINDOW_OBS} dates")
+                         f"(<{MIN_PANEL}) across {len(dates)} visible dates")
 
     # The trend is fitted on the same panel across every visible date, so a
-    # changing universe cannot tilt it. Dates missing a panel member are dropped.
+    # changing universe cannot tilt it. By construction of the intersection
+    # above, every visible date carries the panel.
     agg = []
     for d in dates:
         row = by_date[d]
