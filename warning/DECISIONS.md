@@ -618,3 +618,51 @@ waiting on the blocked L1 downloads.
 **Coverage after this:** L4 goes 2/5 to 3/5 (60%). Still below the 70% floor, so
 L4 remains an NA layer -- L4D needs S10 (FINRA margin) and L4E needs F9
 (negative-gamma, Phase 5). The composite still cannot turn on.
+
+
+---
+
+## D19 — S6's thresholds assume a distribution the 2016-2026 sample does not have
+
+**Status: OPEN. Property of the frozen thresholds. No code changed.**
+
+**Measured on 449 sampled readings, 2017-2026:**
+
+| statistic | value |
+|---|---|
+| mean EW-CW 126d | **-1.67%** |
+| median | -1.48% |
+| below -2% (the ARM level) | **41% of the time** |
+| below -4% (the RED level) | **23% of the time** |
+| above zero | 29% |
+
+S6 fires red on roughly a quarter of all readings and sits at or past its arm
+level on 41%. A signal meant to flag anomalous narrowing instead describes the
+baseline of the mega-cap era.
+
+**The mechanism.** The registry's -2%/-4% thresholds are absolute levels, which
+presume EW-CW oscillates around zero. Across 2016-2026 equal-weight has
+persistently lagged cap-weight, so the distribution is shifted roughly -1.7%
+below where the thresholds assume it sits. What the signal reads as narrowing is
+mostly the era's constant.
+
+**Distinct from D16, though the consequence is the same.** S9's defect is a
+misspecified TREND -- a linear fit chasing accelerating growth. S6's is a
+misspecified LOCATION -- a stationary threshold against a shifted mean. Neither
+is a coding error and neither can be fixed without changing a frozen number.
+
+**Not patched.** Detrending, demeaning, or z-scoring EW-CW would each fix it and
+each replaces the registry's specification, which rule #3 forbids. The registry
+also anticipates a longer history (RSP from 2003, French size portfolios before
+that) in which the pre-2016 era may well be better centred -- so the thresholds
+may be right for the full sample and wrong for the decade available here.
+
+**One reading that may be real.** 2021-10-31 fired R at -4.05%, roughly two
+months before the January 2022 peak. That is the second genuine pre-peak fire in
+the build after S11's 2000-03. It should not be counted as validation while the
+signal also fires 23% of the time.
+
+**For the ruling.** Either extend the history (RSP 2003+ is fetchable from
+Massive; French size portfolios are in the Ken French library), or accept S6 as
+descriptive-only until it can be calibrated on a sample that includes an era of
+even breadth.
