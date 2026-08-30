@@ -1396,3 +1396,95 @@ def test_s9_ols_residual_is_zero_on_a_perfect_line():
     resid, a, b = S9B._ols_residual_last(ys)
     assert abs(b - 0.5) < 1e-9 and abs(a - 1.0) < 1e-9
     assert all(abs(r) < 1e-9 for r in resid)
+
+
+# --------------------------------------------------------------- S5
+
+from builders import s5_breadth as S5B  # noqa: E402
+
+
+def _s5_load(con, bench, ad=None, pct200=None, newlows=None,
+             start="2020-01-01"):
+    from datetime import date, timedelta
+    def _put(name, vals):
+        d = date.fromisoformat(start); i = 0
+        while i < len(vals):
+            if d.weekday() < 5:
+                put(con, name, d.isoformat(),
+                    (d + timedelta(days=1)).isoformat(), vals[i])
+                i += 1
+            d += timedelta(days=1)
+        return d.isoformat()
+    asof = _put("SPY_CLOSE", bench)
+    n = len(bench)
+    _put("BREADTH_AD_CUM", ad if ad is not None else [float(i) for i in range(n)])
+    _put("BREADTH_PCT_200DMA", pct200 if pct200 is not None else [75.0] * n)
+    _put("BREADTH_NEW_LOWS_PCT", newlows if newlows is not None else [0.5] * n)
+    return asof
+
+
+def test_s5_green_when_breadth_confirms_the_high():
+    con = db()
+    n = 300
+    asof = _s5_load(con, [100.0 + i * 0.1 for i in range(n)])
+    r = S5B.compute(con, asof)
+    assert r["detail"]["legs_fired"] == 0
+    assert r["state"] == "G"
+
+
+def test_s5_leg_b_needs_the_index_at_a_high_not_merely_thin_breadth():
+    """Thin breadth in a FALLING market is the market falling, not a divergence."""
+    con = db()
+    n = 300
+    falling = [100.0 + i * 0.1 for i in range(n - 40)] + [80.0] * 40
+    asof = _s5_load(con, falling, pct200=[30.0] * n)
+    d = S5B.compute(con, asof)["detail"]
+    assert d["leg_b_pct_above_200dma"]["pct_above_200dma"] == 30.0
+    assert d["leg_b_pct_above_200dma"]["index_at_52w_high"] is False
+    assert d["leg_b_pct_above_200dma"]["fired"] is False
+
+
+def test_s5_leg_b_fires_on_thin_breadth_at_a_high():
+    con = db()
+    n = 300
+    asof = _s5_load(con, [100.0 + i * 0.1 for i in range(n)], pct200=[45.0] * n)
+    d = S5B.compute(con, asof)["detail"]
+    assert d["leg_b_pct_above_200dma"]["fired"] is True
+    assert d["legs_fired"] == 1
+
+
+def test_s5_two_of_three_fires_red():
+    con = db()
+    n = 300
+    rising = [100.0 + i * 0.1 for i in range(n)]
+    # A/D rises to a peak then DECLINES, so its recent high is lower than its
+    # prior one while the index keeps making new highs. A flat A/D would not
+    # qualify: "lower high" uses strict <, and flat is non-confirmation rather
+    # than a lower high.
+    peak = n - 150
+    ad = [float(i) for i in range(peak)] + \
+         [float(peak - j * 0.5) for j in range(n - peak)]
+    asof = _s5_load(con, rising, ad=ad, pct200=[45.0] * n)
+    r = S5B.compute(con, asof)
+    d = r["detail"]
+    assert d["leg_a_ad_divergence"]["fired"] is True, d["leg_a_ad_divergence"]
+    assert d["leg_b_pct_above_200dma"]["fired"] is True
+    assert d["legs_fired"] == 2
+    assert r["state"] == "R"
+
+
+def test_s5_leg_c_counts_days_not_the_latest_value():
+    con = db()
+    n = 300
+    rising = [100.0 + i * 0.1 for i in range(n)]
+    spikes = [0.5] * (n - 21) + [3.0] * 6 + [0.5] * 15    # 6 of the last 21
+    asof = _s5_load(con, rising, newlows=spikes)
+    d = S5B.compute(con, asof)["detail"]["leg_c_new_lows"]
+    assert d["days_above_2p5pct_of_21"] == 6 and d["fired"] is True
+
+
+def test_s5_always_reports_the_survivorship_caveat():
+    con = db()
+    asof = _s5_load(con, [100.0 + i * 0.1 for i in range(300)])
+    d = S5B.compute(con, asof)["detail"]
+    assert "delisted names absent" in d["SURVIVORSHIP"]

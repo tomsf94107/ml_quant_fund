@@ -22,8 +22,9 @@ from builders import s14_vol_structure as S14      # noqa: E402
 from builders import s7_defensive_rotation as S7   # noqa: E402
 from builders import s8_epicenter_fracture as S8   # noqa: E402
 from builders import s9_short_interest as S9      # noqa: E402
+from builders import s5_breadth as S5             # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -55,6 +56,11 @@ ANCHORS = {
            ("2011-08-08", "2011 correction"),
            ("2018-02-06", "2018 volmageddon"),
            ("2020-03-20", "COVID"),
+           ("2026-08-28", "today")],
+    "S5": [("2020-02-19", "COVID peak"),
+           ("2021-12-31", "registry: fired late-2021 (literature-sourced)"),
+           ("2022-01-03", "SPX 2022 peak"),
+           ("2024-09-30", "the date S7 fired"),
            ("2026-08-28", "today")],
     "S9": [("2022-01-03", "SPX 2022 peak -- registry says 2022 REPRODUCIBLE"),
            ("2022-06-16", "2022 bear low"),
@@ -117,6 +123,19 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S5":
+        print(f"    legs fired {d['legs_fired']}/3 (arm 1, red 2)  "
+              f"computable {d['legs_computable']}  index "
+              f"{d['index_pct_below_52w_high']:.2f}% below its 52w high")
+        for key, label in (("leg_a_ad_divergence", "a A/D lower high"),
+                           ("leg_b_pct_above_200dma", "b %>200DMA<60 at high"),
+                           ("leg_c_new_lows", "c new lows >2.5%")):
+            v = d.get(key) or {}
+            if "reason" in v:
+                print(f"    {label:<26} NA: {v['reason'][:48]}")
+            else:
+                bits = {k: x for k, x in v.items() if k != "fired"}
+                print(f"    {label:<26} fired={v['fired']}  {bits}")
     elif sig == "S9":
         print(f"    z {d['z']:+.2f} (arm >{d['arm_z']}, red >{d['red_z']})  "
               f"aggregate {d['aggregate_short_bn']}bn over {d['panel_names']} names")
