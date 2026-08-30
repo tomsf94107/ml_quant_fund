@@ -662,7 +662,28 @@ months before the January 2022 peak. That is the second genuine pre-peak fire in
 the build after S11's 2000-03. It should not be counted as validation while the
 signal also fires 23% of the time.
 
-**For the ruling.** Either extend the history (RSP 2003+ is fetchable from
-Massive; French size portfolios are in the Ken French library), or accept S6 as
-descriptive-only until it can be calibrated on a sample that includes an era of
-even breadth.
+**For the ruling.** Extending the history from Massive is NOT available --
+tested 2026-08-30 and recorded below. So the choice is between accepting S6 as
+descriptive-only, or sourcing equity history elsewhere.
+
+### Massive's history is capped at 2016-07-18 (tested 2026-08-30)
+
+Requesting RSP from 2003-01-08, 2008-01-01 and 2012-01-01 each returned the
+SAME 2,511 rows beginning 2016-09-01. SPY, XLK, XLP and AAPL each returned 2,544
+rows beginning 2016-07-18 for a 2003 request. The `start` parameter is ignored
+below the plan's floor.
+
+**This is a plan limit, not a collection gap.** prices.db's 2016 start is
+therefore the data available, not an unfinished backfill -- and no amount of
+re-ingesting will extend it.
+
+**Consequences, which reach well beyond S6.** Every price-derived signal in this
+build is confined to 2016-2026 by the same limit: S2's equity leg, S5, S6, S7,
+S8 and S14's leg (a). None of them can see 2008, and the sample they share
+contains no credit crisis. That is the mechanical cause of D17, and it cannot be
+fixed inside this data source.
+
+**What would actually fix it.** Shiller `ie_data` supplies monthly S&P back to
+1871, which addresses the index-level signals (S2's gate, S13, D12) but not the
+sector or breadth signals, which need per-constituent daily bars. Those would
+need a different vendor or the Ken French portfolios as a coarse substitute.
