@@ -19,8 +19,9 @@ from builders import f2_vix_percentile as F2       # noqa: E402
 from builders import s4_funding as S4              # noqa: E402
 from builders import f3_vix_term_slope as F3       # noqa: E402
 from builders import s14_vol_structure as S14      # noqa: E402
+from builders import s7_defensive_rotation as S7   # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -52,6 +53,12 @@ ANCHORS = {
            ("2011-08-08", "2011 correction"),
            ("2018-02-06", "2018 volmageddon"),
            ("2020-03-20", "COVID"),
+           ("2026-08-28", "today")],
+    "S7": [("2018-01-26", "SPX at its high before the Feb-2018 break"),
+           ("2020-02-19", "COVID peak -- the canonical near-high test"),
+           ("2021-12-31", "SPX at its 2021 high"),
+           ("2022-01-03", "SPX 2022 peak"),
+           ("2025-02-19", "recent high"),
            ("2026-08-28", "today")],
     "S14": [("2008-10-15", "post-Lehman: RV regime + curve inversion, both legs"),
             ("2011-08-08", "2011 correction"),
@@ -97,6 +104,15 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S7":
+        print(f"    mean RS 63d {d['mean_rs_63d_pct']:+.2f}% "
+              f"(need >{d['threshold_pct']:.0f}%)  from {d['n_defensive']} ETFs "
+              f"{d['per_etf_rs_pct']}")
+        print(f"    {d['bench']} {d['bench_last']} vs 52w high "
+              f"{d['bench_52w_high']} = {d['pct_below_high']:.2f}% below")
+        print(f"    rs_leg={d['rs_leg']}  near_high_leg={d['near_high_leg']}")
+        if d.get("omitted"):
+            print(f"    omitted: {d['omitted']}")
     elif sig == "S14":
         la = d.get("leg_a_rv_regime", {}); lb = d.get("leg_b_futures_inversion", {})
         print(f"    legs available {d.get('legs_available')}  fired {d.get('legs_fired')}")

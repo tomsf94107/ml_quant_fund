@@ -1097,3 +1097,98 @@ def test_s14_stale_futures_alone_yields_NA_not_a_stale_reading():
     assert r["state"] == "NA"
     assert "neither leg available" in r["detail"]["reason"]
     assert "stale" in r["detail"]["reason"]
+
+
+# --------------------------------------------------------------- S7
+
+from builders import s7_defensive_rotation as S7B  # noqa: E402
+
+
+def _load_px(con, name, values, start="2020-01-01"):
+    from datetime import date, timedelta
+    d = date.fromisoformat(start); i = 0
+    while i < len(values):
+        if d.weekday() < 5:
+            put(con, name, d.isoformat(),
+                (d + timedelta(days=1)).isoformat(), values[i])
+            i += 1
+        d += timedelta(days=1)
+    return d.isoformat()
+
+
+def _s7_fixture(con, defensive_gain, bench_path):
+    """bench_path: bench closes. Defensives ride it plus a linear tilt.
+
+    NOTE the tilt is spread over the WHOLE path, so the relative move over the
+    trailing 63 days is roughly defensive_gain * 63/len(path). A 0.30 tilt over
+    320 days gives only ~4.9% -- just under the +5% threshold. Sized here to
+    clear it unambiguously rather than sit on the line.
+    """
+    n = len(bench_path)
+    _load_px(con, "SPY_CLOSE", bench_path)
+    for name in ("XLP_CLOSE", "XLU_CLOSE", "XLV_CLOSE"):
+        vals = [bench_path[i] * (1 + defensive_gain * i / n) for i in range(n)]
+        asof = _load_px(con, name, vals)
+    return asof
+
+
+def test_s7_needs_BOTH_legs_to_fire():
+    """Defensives outperforming in a DECLINE is arithmetic. The signal is
+    defensives leading while the index is still at its high."""
+    con = db()
+    # index 20% off its high, defensives strongly ahead -> RS leg only
+    path = [100.0] * 260 + [80.0] * 60
+    asof = _s7_fixture(con, 0.80, path)
+    r = S7B.compute(con, asof)
+    d = r["detail"]
+    assert d["rs_leg"] is True, d
+    assert d["near_high_leg"] is False, d
+    assert r["state"] == S7B.AMBER_STATE, "one leg arms, does not fire"
+
+
+def test_s7_fires_when_defensives_lead_at_the_high():
+    con = db()
+    path = [100.0 + i * 0.05 for i in range(320)]      # index grinding to highs
+    asof = _s7_fixture(con, 0.80, path)
+    r = S7B.compute(con, asof)
+    d = r["detail"]
+    assert d["rs_leg"] and d["near_high_leg"], d
+    assert r["state"] == "R"
+
+
+def test_s7_green_when_defensives_lag_at_the_high():
+    con = db()
+    path = [100.0 + i * 0.05 for i in range(320)]
+    asof = _s7_fixture(con, -0.10, path)               # defensives BEHIND
+    r = S7B.compute(con, asof)
+    assert r["detail"]["rs_leg"] is False
+    assert r["state"] == S7B.AMBER_STATE, "near-high alone still arms"
+
+
+def test_s7_refuses_to_call_one_sector_a_rotation():
+    con = db()
+    path = [100.0 + i * 0.05 for i in range(320)]
+    _load_px(con, "SPY_CLOSE", path)
+    asof = _load_px(con, "XLP_CLOSE", [p * 1.3 for p in path])
+    r = S7B.compute(con, asof)
+    assert r["state"] == "NA"
+    assert "need >=2 defensive ETFs" in r["detail"]["reason"]
+
+
+def test_s7_declares_a_partial_mean_rather_than_hiding_it():
+    con = db()
+    path = [100.0 + i * 0.05 for i in range(320)]
+    _load_px(con, "SPY_CLOSE", path)
+    _load_px(con, "XLP_CLOSE", [p * 1.3 for p in path])
+    asof = _load_px(con, "XLU_CLOSE", [p * 1.3 for p in path])
+    d = S7B.compute(con, asof)["detail"]
+    assert d["n_defensive"] == 2
+    assert any("XLV" in m for m in d["omitted"])
+
+
+def test_s7_rel_strength_arithmetic():
+    """+10% sector against +2% bench over the window is +8pp relative."""
+    sect = [(f"2020-01-{i+1:02d}", 100.0) for i in range(63)] + [("2020-04-01", 110.0)]
+    bench = [(f"2020-01-{i+1:02d}", 50.0) for i in range(63)] + [("2020-04-01", 51.0)]
+    v = S7B._rel_strength(sect, bench)
+    assert abs(v - 0.08) < 1e-12

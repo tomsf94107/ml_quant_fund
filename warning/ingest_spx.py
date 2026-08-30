@@ -38,7 +38,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prices", default="prices.db")
     ap.add_argument("--db", default="warning.db")
-    ap.add_argument("--ticker", default="SPY")
+    ap.add_argument("--ticker", default="SPY",
+                    help="one ticker, or a comma-separated list "
+                         "(e.g. SPY,XLP,XLU,XLV)")
     ap.add_argument("--table", default="raw_bars",
                     help="raw_bars (unadjusted close, preferred: closest to a "
                          "price index) or daily_prices (adj_close, dividend-"
@@ -46,20 +48,26 @@ def main():
                          "highs earlier and biases a 52w-high test)")
     args = ap.parse_args()
 
+    tickers = [t.strip().upper() for t in args.ticker.split(",") if t.strip()]
+    for tkr in tickers:
+        _ingest_one(args, tkr)
+
+
+def _ingest_one(args, ticker):
     src = sqlite3.connect(f"file:{args.prices}?mode=ro", uri=True)
     if args.table == "raw_bars":
         rows = src.execute("SELECT d, close FROM raw_bars WHERE ticker=? "
-                           "AND close IS NOT NULL ORDER BY d", (args.ticker,)).fetchall()
+                           "AND close IS NOT NULL ORDER BY d", (ticker,)).fetchall()
     else:
         rows = src.execute("SELECT date, adj_close FROM daily_prices WHERE ticker=? "
                            "AND adj_close IS NOT NULL ORDER BY date",
-                           (args.ticker,)).fetchall()
+                           (ticker,)).fetchall()
     src.close()
 
     if not rows:
-        raise SystemExit(f"no rows for {args.ticker} in {args.prices}.{args.table}")
+        print(f"  !! no rows for {ticker} in {args.prices}.{args.table}"); return
 
-    series = args.ticker + SERIES_SUFFIX
+    series = ticker + SERIES_SUFFIX
     con = sqlite3.connect(args.db)
     before = con.execute("SELECT COUNT(*) FROM data_vintages WHERE series_id=?",
                          (series,)).fetchone()[0]
@@ -81,8 +89,9 @@ def main():
     print(f"  data_vintages rows {before} -> {after} (+{after - before}); "
           f"obs range {rng[0]}..{rng[1]}")
     print(f"  pub_date = obs_date + 1 day. Re-runs are idempotent.")
-    print(f"  NOTE: {args.ticker} is a PROXY for SPX and is labelled as such in "
-          f"every S2 reading.")
+    if ticker == "SPY":
+        print(f"  NOTE: SPY is a PROXY for SPX and is labelled as such in "
+              f"every reading that uses it.")
 
 
 if __name__ == "__main__":
