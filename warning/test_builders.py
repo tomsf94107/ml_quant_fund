@@ -1812,3 +1812,44 @@ def test_s8f_always_carries_the_calibration_caveat():
     assert r["state"] != "NA", r["detail"]
     assert "calibration-grade" in r["detail"]["CAVEAT"]
     assert r["detail"]["n_industries"] == 12
+
+
+# --------------------------------------------------------------- S7F
+
+from builders import s7f_defensive_french as S7F  # noqa: E402
+
+
+def test_s7f_reuses_s7s_thresholds():
+    from builders import s7_defensive_rotation as S7M
+    assert S7F.RS_ARM is S7M.RS_ARM and S7F.RS_RED is S7M.RS_RED
+    assert S7F.NEAR_HIGH_PCT is S7M.NEAR_HIGH_PCT
+
+
+def test_s7f_maps_to_the_defensive_trio():
+    assert set(S7F.DEFENSIVE) == {"NoDur", "Utils", "Hlth"}
+    assert S7F.DEFENSIVE["NoDur"] == "~XLP"
+
+
+def test_s7f_na_without_market_data():
+    con = db()
+    assert S7F.compute(con, "2026-06-30")["state"] == "NA"
+
+
+def test_s7f_carries_the_calibration_caveat():
+    con = db()
+    from datetime import date, timedelta
+    d, i = date(2018, 1, 1), 0
+    while i < 400:
+        if d.weekday() < 5:
+            pub = (d + timedelta(days=1)).isoformat()
+            put(con, "FR_F:Mkt-RF", d.isoformat(), pub, 0.02)
+            put(con, "FR_F:RF", d.isoformat(), pub, 0.01)
+            for n in S7F.DEFENSIVE:
+                put(con, S7F.IND_PREFIX + n, d.isoformat(), pub, 0.09)
+            i += 1
+        d += timedelta(days=1)
+    r = S7F.compute(con, d.isoformat())
+    assert r["state"] != "NA", r["detail"]
+    assert "calibration-grade" in r["detail"]["CAVEAT"]
+    # defensives compounding faster than the market -> positive RS at a high
+    assert r["detail"]["mean_rs_63d_pct"] > 0

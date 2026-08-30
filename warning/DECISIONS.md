@@ -810,3 +810,80 @@ amendment should target the LEADER, not the thresholds -- for example requiring
 the leader to have been within some distance of its own high recently, so a
 sector already in multi-year decline cannot qualify. Until ruled, S8 and S8F
 stand as written and **none of their fires counts as validation.**
+
+
+---
+
+## D21 — S7's thresholds clear a century test, and the signal has a partial record
+
+**Status: FINDING, recorded 2026-08-30. No code changed.**
+
+S7F applies S7's unchanged +3%/+5% thresholds to French's NoDur/Utils/Hlth
+against the CRSP value-weighted market, 1930-2026, 1,179 month-ends.
+Calibration-grade only (D20).
+
+**Firing rate: 15 month-ends red (1.3%), 47 amber (4.0%), 13 distinct episodes.**
+
+| Fire | Outcome |
+|---|---|
+| **1929-06-29** | **the crash, ~3 months later** |
+| **1946-04-30** | the 1946 bear (-27%), ~1 month later |
+| 1985-04-30 | nothing |
+| 1986-06-30, 1986-08-29 | nothing |
+| 1991-12-31 | nothing |
+| 1995-01-31 | nothing |
+| 1997-12-31 | ~2 years before the 2000 peak -- too early to call a hit |
+| 2006-08-31 | ~14 months before the 2007 peak |
+| **2011-05-31** | the 2011 correction (-19%), ~2 months later |
+| 2013-04-30 | nothing |
+| 2024-09-30 | ~5 months before a >9% drawdown (the SPDR version's only fire) |
+| 2026-01-30 | open |
+
+**Thresholds cleared.** 1.3% over a century is a defensible rate. The +3%/+5%
+levels are not too loose, which was the open question after S7 fired only once
+in the SPDR decade.
+
+**Roughly 3 hits in 13, plus 2006 as early warning.** That is a weak record, not
+a validated signal -- and 1929 and 1946 were near-coincident with the peak rather
+than leading it, while the registry positions S7 as a PREDICTOR. But it is the
+first signal in this build whose century record is not empty.
+
+---
+
+## D22 — the century test separates S7 from S8 decisively
+
+**Status: FINDING. The comparison is the point.**
+
+Same registry, same era, same construction discipline, same French data, same
+scan:
+
+| | red rate | distinct episodes | hits at major peaks |
+|---|---|---|---|
+| S7 defensive rotation | 1.3% | 13 | **1929, 1946, 2011** |
+| S8 epicenter fracture | 0.6% | 6 | **none in 96 years** |
+
+Both signals' THRESHOLDS are sound -- neither fires often enough to be noise.
+The difference is entirely in what they measure.
+
+S8's leader definition selects the previous cycle's winner, which decays on
+schedule while the market advances (D15). Four of its six century episodes have
+that shape: Enrgy 1981, Hlth 1992, Enrgy 2023, Durbl 1994/2026. It has never
+fired before a major peak.
+
+S7 measures rotation INTO defensives at a high, which is a positioning change
+rather than a lagging performance statistic -- and it lands at real peaks
+sometimes.
+
+**Method note, now established across four decisions.** D15, D19, D21 and D22
+were all settled by running frozen thresholds against a century rather than
+arguing from a decade. The answers were not uniform: D19 vindicated S6's
+thresholds and blamed the recent decade; D15 cleared S8's thresholds and
+indicted its construction; D21 cleared S7's and found a partial record. A
+verdict reached from the 2016-2026 sample alone would have been wrong in at
+least two of those cases.
+
+**What this does NOT establish.** None of these are point-in-time replays (D20),
+none control for the base rate of drawdowns following any random month-end, and
+"3 hits in 13" has not been tested against what chance would produce. The next
+honest step for S7 is exactly the analysis run on S5: forward returns and
+drawdowns after each fire, against the unconditional base rate.
