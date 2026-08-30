@@ -24,8 +24,9 @@ from builders import s8_epicenter_fracture as S8   # noqa: E402
 from builders import s9_short_interest as S9      # noqa: E402
 from builders import s5_breadth as S5             # noqa: E402
 from builders import s3_sloos as S3               # noqa: E402
+from builders import s11_issuance as S11          # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5, "S3": S3}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5, "S3": S3, "S11": S11}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -61,6 +62,13 @@ ANCHORS = {
     # DRTSCILM vintages start 2010-04-20, so the pre-2010 anchors MUST read NA.
     # They are kept deliberately: an NA there is the correct answer and proves
     # the point-in-time reader is not silently using today's revisions.
+    "S11": [("1999-06-30", "pre-mania: 1998 data is the latest published"),
+            ("2000-06-30", "SPX peaked Mar-2000; 1999's record year now visible"),
+            ("2001-06-30", "2000 data published -- the mania year in full"),
+            ("2007-06-30", "2006 data; pre-crisis"),
+            ("2008-06-30", "2007 data published"),
+            ("2022-06-30", "2021's 311 IPOs now visible"),
+            ("2026-08-28", "today (2025 data)")],
     "S3": [("2000-06-30", "registry: REPRODUCIBLE 1999-2000 -- expect NA, pre-vintage"),
            ("2007-10-31", "registry: fired Oct-07 +19.2 -- expect NA, pre-vintage"),
            ("2008-12-31", "registry verified print 83.6 -- expect NA, pre-vintage"),
@@ -134,6 +142,13 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S11":
+        print(f"    year {d['reference_year']}: {d['ipo_count']} IPOs "
+              f"(pctile {d['ipo_count_pctile']:.0f}), first-day "
+              f"{d['first_day_return_pct']:.1f}% (pctile {d['first_day_pctile']:.0f})")
+        print(f"    binding pctile {d['binding_pctile']:.0f} "
+              f"(arm {d['arm_at']:.0f}, red {d['red_at']:.0f}) over "
+              f"{d['years_in_history']} years of history-to-date")
     elif sig == "S3":
         print(f"    C&I net tightening {d['ci_net_tightening']:+.1f} "
               f"(arm >{d['arm_above']:.0f}, red >{d['red_above']:.0f})  "

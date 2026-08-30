@@ -55,6 +55,7 @@ from builders import s8_epicenter_fracture as S8            # noqa: E402
 from builders import s9_short_interest as S9                # noqa: E402
 from builders import s5_breadth as S5                       # noqa: E402
 from builders import s3_sloos as S3                         # noqa: E402
+from builders import s11_issuance as S11                    # noqa: E402
 from builders import l4_propagation as L4                    # noqa: E402
 
 # The 15 shortlist signals and their layers, from signal_registry.csv.
@@ -66,7 +67,7 @@ ROSTER = {
     "S4": "L3", "S14": "L3",
 }
 BUILT = {"S1": S1, "S2": S2, "S4": S4, "S14": S14, "S7": S7, "S8": S8,
-         "S9": S9, "S5": S5, "S3": S3}
+         "S9": S9, "S5": S5, "S3": S3, "S11": S11}
 DASHBOARD = {"F2": F2, "F3": F3}             # tier 'dashboard', computed after
 
 

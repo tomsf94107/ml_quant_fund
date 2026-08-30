@@ -1602,3 +1602,81 @@ def test_l4a_reuses_s4s_own_threshold():
     asof = _load_daily(con, "IORB", [0.4] * n)
     d = L4.funding_seizure(con, asof)["detail"]
     assert d["stress_threshold_z"] == _S4.ARM_Z
+
+
+# --------------------------------------------------------------- S11
+
+from builders import s11_issuance as S11B  # noqa: E402
+
+
+def _load_annual(con, series, start_year, values, pub_month_day="-03-31"):
+    for i, v in enumerate(values):
+        y = start_year + i
+        put(con, series, f"{y}-12-31", f"{y + 1}{pub_month_day}", float(v))
+
+
+def test_s11_percentiles_are_expanding_not_full_sample():
+    """Ranking against the whole sample would tell 1999 what 2021 looked like."""
+    con = db()
+    # a record year early, then bigger years later
+    counts = [100] * 12 + [500] + [900] * 5
+    pops = [10.0] * 12 + [60.0] + [80.0] * 5
+    _load_annual(con, "RITTER_IPO_COUNT", 1980, counts)
+    _load_annual(con, "RITTER_IPO_FIRSTDAY", 1980, pops)
+    # As of mid-1993 the latest PUBLISHED year is 1992 (published 1993-03-31),
+    # and that record ranks at the top of history TO DATE -- 13 years, not 18.
+    # Ranked against the full 1980-1997 sample the same year would sit mid-pack,
+    # because the bigger years that follow would already be known.
+    r = S11B.compute(con, "1993-06-30")
+    assert r["detail"]["reference_year"] == "1992"
+    assert r["detail"]["years_in_history"] == 13
+    assert r["detail"]["binding_pctile"] == 100.0, r["detail"]
+    assert r["state"] == "R"
+
+    # ...and the SAME year, evaluated once the later boom is known, is no longer
+    # exceptional. That contrast is the whole point of expanding percentiles.
+    # the fixture runs 1980..1997 (18 values), so the last published year here
+    # is 1997, ranked against a materially longer history
+    later = S11B.compute(con, "1999-06-30")
+    assert later["detail"]["reference_year"] == "1997"
+    assert later["detail"]["years_in_history"] == 18
+
+
+def test_s11_both_legs_must_be_hot():
+    """A big calendar with no pop is an active market, not a mania."""
+    con = db()
+    _load_annual(con, "RITTER_IPO_COUNT", 1980, [100] * 15 + [900])
+    _load_annual(con, "RITTER_IPO_FIRSTDAY", 1980, [10.0] * 15 + [9.0])
+    d = S11B.compute(con, "1997-06-30")["detail"]
+    assert d["ipo_count_pctile"] == 100.0
+    assert d["first_day_pctile"] < S11B.ARM_PCTILE
+    assert d["binding_pctile"] == d["first_day_pctile"], "the weaker leg binds"
+
+
+def test_s11_publication_lag_hides_the_current_year():
+    """Ritter publishes each year the following spring. In January 2000 the 1999
+    figures did not exist -- reading them would be look-ahead at the exact peak."""
+    con = db()
+    _load_annual(con, "RITTER_IPO_COUNT", 1980, [100] * 20)
+    _load_annual(con, "RITTER_IPO_FIRSTDAY", 1980, [10.0] * 20)
+    r = S11B.compute(con, "2000-01-15")
+    assert r["detail"]["reference_year"] == "1998", \
+        "1999 is not published until spring 2000"
+    r2 = S11B.compute(con, "2000-06-30")
+    assert r2["detail"]["reference_year"] == "1999"
+
+
+def test_s11_na_until_history_supports_a_decile():
+    con = db()
+    _load_annual(con, "RITTER_IPO_COUNT", 1980, [100] * 5)
+    _load_annual(con, "RITTER_IPO_FIRSTDAY", 1980, [10.0] * 5)
+    r = S11B.compute(con, "1986-06-30")
+    assert r["state"] == "NA" and "expanding decile" in r["detail"]["reason"]
+
+
+def test_s11_declares_the_missing_credit_leg():
+    con = db()
+    _load_annual(con, "RITTER_IPO_COUNT", 1980, [100] * 15)
+    _load_annual(con, "RITTER_IPO_FIRSTDAY", 1980, [10.0] * 15)
+    d = S11B.compute(con, "1996-06-30")["detail"]
+    assert d["credit_leg"] is None and "NOT evaluated" in d["credit_note"]
