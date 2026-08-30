@@ -433,3 +433,50 @@ target, and `warning.db` holds equity data only from 2016-07-18 (SPY_CLOSE).
 
 **D12 cannot be resolved until Shiller `ie_data` is loaded** (monthly S&P back
 to 1871). Recorded here so the blocker is explicit rather than rediscovered.
+
+
+---
+
+## D15 — S8's leader definition cannot distinguish an epicenter from a rotation
+
+**Status: OPEN. Property of the frozen formula. No code changed.**
+
+**Observed on real data, 2019-01 to 2026-08.** S8 fired exactly once:
+
+| Date | Leader | Drawdown | Index | State |
+|---|---|---|---|---|
+| 2023-05-31 | XLE | -17.13%, below 200DMA | 2.22% below high | **R** |
+
+**That is a false positive.** May 2023 was the start of a large rally, not a
+peak. XLE held top trailing-2y RS from the 2021-22 energy cycle, then fell
+through 2023 while the index rose on an unrelated theme. The formula saw
+"the leader broke while the index held"; what happened was sector rotation.
+
+The registry defines the leader as "sector/theme with top trailing-2y RS". That
+selects the best PAST performer, which is not the same as the epicenter of the
+CURRENT cycle. When leadership changes hands between cycles, the outgoing leader
+decays while the market advances -- and S8 reads that as a fracture.
+
+**Second property, same root.** At 2026-08-28 the leader is XLI with a 2-year RS
+of **+1.1%**. When no sector meaningfully leads, "the leader" is whichever is
+marginally ahead, and the signal is measuring noise. S8 assumes an epicenter
+exists; it has no way to report that none does.
+
+**Not patched.** A minimum-leadership threshold (e.g. "leader RS must exceed
+X%") would be a new number, which rule #3 forbids. So would a rule requiring the
+leader to have led recently rather than over the full two years.
+
+**For the ruling.** Two candidate amendments, both requiring ratification:
+1. Require a minimum RS gap between the leader and the second-place sector, so
+   "no clear leadership" reports NA instead of picking a marginal winner.
+2. Require the leader to also be within some distance of its own high at the
+   START of the drawdown window, which would exclude a sector already in
+   multi-year decline.
+
+Until ruled, S8 stands as written and its single historical fire is recorded as
+a false positive rather than a hit. **Do not count it as validation.**
+
+**Also pinned by test:** a sector that collapses far enough loses its 2-year
+leadership, so S8 goes quiet once a fracture completes. It has a window --
+deep enough to breach -15% and the 200DMA, shallow enough to remain the leader.
+See `test_s8_loses_sight_of_an_epicenter_that_has_fully_collapsed`.
