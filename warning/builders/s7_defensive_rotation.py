@@ -56,7 +56,14 @@ AMBER_STATE = "Y"                    # DECISIONS.md D1
 DEFENSIVE = ["XLP_CLOSE", "XLU_CLOSE", "XLV_CLOSE"]
 BENCH = "SPY_CLOSE"                  # PROXY for SPX
 RS_WINDOW = 63                       # registry: "63td"
-RS_THRESHOLD = 0.05                  # registry: "> +5%"
+# The registry gives EXPLICIT numeric thresholds for S7 -- arm '+3%', red '+5%'
+# -- not S2's "half-condition" rule. An earlier version of this builder carried
+# the S2 pattern across without checking, which let the near-high leg ALONE
+# produce amber. That put S7 at amber through most of any bull market, because
+# "the index is near its high" is the ordinary state of a rising market, not a
+# warning. The near-high condition GATES both levels; the RS value sets which.
+RS_ARM = 0.03                        # registry threshold_arm: "+3%"
+RS_RED = 0.05                        # registry threshold_red: "+5%"
 NEAR_HIGH_PCT = 0.03                 # registry: "within 3% of high"
 HIGH_WINDOW = 252                    # 52 weeks
 MIN_DEFENSIVE_ETFS = 2               # one sector is not a rotation
@@ -107,13 +114,13 @@ def compute(con, asof):
     last = bench[-1][1]
     near_high = last >= high * (1.0 - NEAR_HIGH_PCT)
 
-    rs_leg = mean_rs > RS_THRESHOLD
-    if rs_leg and near_high:
+    if near_high and mean_rs > RS_RED:
         state = "R"                  # the divergence: defensives lead AT the high
-    elif rs_leg or near_high:
+    elif near_high and mean_rs > RS_ARM:
         state = AMBER_STATE
     else:
         state = "G"
+    rs_leg = mean_rs > RS_RED
 
     stale = max(x for x in (staleness_bdays(con, BENCH, asof),
                             *(staleness_bdays(con, n, asof) for n in rs))
@@ -127,7 +134,7 @@ def compute(con, asof):
         "source_asof": bench[-1][0],
         "detail": {
             "mean_rs_63d_pct": round(mean_rs * 100, 2),
-            "threshold_pct": RS_THRESHOLD * 100,
+            "arm_pct": RS_ARM * 100, "red_pct": RS_RED * 100,
             "per_etf_rs_pct": {k.replace("_CLOSE", ""): round(v * 100, 2)
                                for k, v in rs.items()},
             "n_defensive": len(rs), "omitted": missing or None,

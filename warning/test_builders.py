@@ -1143,7 +1143,8 @@ def test_s7_needs_BOTH_legs_to_fire():
     d = r["detail"]
     assert d["rs_leg"] is True, d
     assert d["near_high_leg"] is False, d
-    assert r["state"] == S7B.AMBER_STATE, "one leg arms, does not fire"
+    assert r["state"] == "G", ("near-high GATES the signal: strong defensive RS "
+                               "in a decline is arithmetic and must not arm")
 
 
 def test_s7_fires_when_defensives_lead_at_the_high():
@@ -1162,7 +1163,20 @@ def test_s7_green_when_defensives_lag_at_the_high():
     asof = _s7_fixture(con, -0.10, path)               # defensives BEHIND
     r = S7B.compute(con, asof)
     assert r["detail"]["rs_leg"] is False
-    assert r["state"] == S7B.AMBER_STATE, "near-high alone still arms"
+    assert r["state"] == "G", ("near-high ALONE must not arm -- an index at its "
+                               "high is an ordinary bull market, not a warning")
+
+
+def test_s7_arms_between_the_registry_thresholds():
+    """Registry gives arm '+3%' and red '+5%', not a leg-count rule."""
+    con = db()
+    path = [100.0 + i * 0.05 for i in range(320)]
+    asof = _s7_fixture(con, 0.20, path)                # ~ +3.3% over 63d
+    r = S7B.compute(con, asof)
+    rs = r["detail"]["mean_rs_63d_pct"]
+    assert S7B.RS_ARM * 100 < rs <= S7B.RS_RED * 100, rs
+    assert r["detail"]["near_high_leg"] is True
+    assert r["state"] == S7B.AMBER_STATE
 
 
 def test_s7_refuses_to_call_one_sector_a_rotation():

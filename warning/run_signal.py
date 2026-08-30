@@ -106,8 +106,8 @@ def show(sig, r):
             print(f"    {rs['reason']}")
     elif sig == "S7":
         print(f"    mean RS 63d {d['mean_rs_63d_pct']:+.2f}% "
-              f"(need >{d['threshold_pct']:.0f}%)  from {d['n_defensive']} ETFs "
-              f"{d['per_etf_rs_pct']}")
+              f"(arm >{d['arm_pct']:.0f}%, red >{d['red_pct']:.0f}%)  "
+              f"from {d['n_defensive']} ETFs {d['per_etf_rs_pct']}")
         print(f"    {d['bench']} {d['bench_last']} vs 52w high "
               f"{d['bench_52w_high']} = {d['pct_below_high']:.2f}% below")
         print(f"    rs_leg={d['rs_leg']}  near_high_leg={d['near_high_leg']}")
