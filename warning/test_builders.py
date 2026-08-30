@@ -591,27 +591,45 @@ def test_l4_single_B_drives_crisis_when_coverage_is_adequate():
     assert res.band == "CRISIS" and res.action["gross"] == 0.40
 
 
-def test_insufficient_data_currently_suppresses_the_l4_crisis_override():
-    """DECISIONS.md D10 -- SPEC CONFLICT, pinned so it cannot be forgotten.
+def test_l4_override_survives_low_coverage():
+    """DECISIONS.md D10, RESOLVED 2026-08-30.
 
-    step() tests `insufficient` BEFORE hysteresis_step, so when coverage is poor
-    the band freezes and the L4 override never reaches it: l4_override is True
-    while the band reads INSUFFICIENT_DATA and the action is 'freeze'.
+    Before the fix, step() tested `insufficient` before hysteresis_step, so a
+    fired L4 override was computed and then discarded: the band froze and the
+    action was `freeze`. With 3 of 15 builders live that meant a 150bp HY
+    blowout would print "freeze" while credit gapped.
 
-    Report line 601 says L4 'overrides composite to B'; the Part VI honesty rule
-    says an under-covered composite makes Part VIII's do-nothing rule bind. Both
-    cannot hold at once. This test asserts CURRENT behaviour, not desired
-    behaviour -- with 2 of 15 builders live, a 150bp HY blowout would print
-    'freeze' rather than 'CRISIS'. Awaiting a ruling."""
+    An L4 propagation condition is a DIRECT OBSERVATION -- "HY OAS widened
+    >=150bp over 21 sessions" is true or false on its own. The do-nothing rule
+    exists to stop the system acting on a COMPOSITE it cannot compute, not to
+    discard a measurement it took successfully.
+    """
     from warning_engine import SignalReading, EngineState, step
     import daily_driver as DD
     readings = [SignalReading(s, L, "NA", stale=True) for s, L in DD.ROSTER.items()]
     readings += [SignalReading("L4A", "L4", "G"), SignalReading("L4B", "L4", "B"),
                  SignalReading("L4C", "L4", "G")]
     res = step("2026-08-28", readings, EngineState())
-    assert res.l4_override is True              # the override DID fire
-    assert res.band == "INSUFFICIENT_DATA"      # ...and was suppressed
+    assert res.l4_override is True
+    assert res.band == "CRISIS", "the override must reach the band"
+    assert res.action["gross"] == 0.40
+    # honesty is preserved: no composite was computable, and the alert says so
+    assert res.composite is None
+    assert "L4_OVERRIDE_LOW_COVERAGE" in [a[0] for a in res.alerts]
+
+
+def test_low_coverage_without_l4_still_freezes():
+    """The fix must be surgical: with no L4 condition firing, an under-covered
+    stack behaves exactly as before."""
+    from warning_engine import SignalReading, EngineState, step
+    import daily_driver as DD
+    readings = [SignalReading(s, L, "NA", stale=True) for s, L in DD.ROSTER.items()]
+    readings += [SignalReading("L4A", "L4", "G"), SignalReading("L4B", "L4", "G"),
+                 SignalReading("L4C", "L4", "G")]
+    res = step("2026-08-28", readings, EngineState())
+    assert res.band == "INSUFFICIENT_DATA"
     assert res.action["hedge"] == "freeze"
+    assert res.composite is None
 
 
 # --------------------------------------------------------------- S4

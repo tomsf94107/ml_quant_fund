@@ -264,7 +264,25 @@ def step(asof: str, readings: list[SignalReading], st: EngineState) -> DayResult
     l4_red = l4_propagation_red(readings, effective)
     path = classify_path(readings, effective)
 
-    if insufficient:
+    if insufficient and l4_red:
+        # DECISIONS.md D10. An L4 propagation condition is a DIRECT OBSERVATION
+        # of stress underway -- "HY OAS widened >=150bp over 21 sessions" is true
+        # or false on its own and needs no other layer. The do-nothing rule
+        # exists to stop the system acting on a COMPOSITE it cannot compute, not
+        # to discard a measurement it successfully took. Before this fix, a 150bp
+        # blowout with the stack under-covered printed "freeze".
+        # The composite stays None and coverage is still reported: the alert
+        # below marks that CRISIS was reached on an observation, not a score.
+        prev = st.band
+        band = "CRISIS"
+        st.band = "CRISIS"
+        st.candidate_band = None
+        st.candidate_days = 0
+        alerts.append(("L4_OVERRIDE_LOW_COVERAGE", prev, "CRISIS",
+                       f"L4 propagation fired with NA layers {na_layers}; "
+                       f"composite unavailable, acting on the observation"))
+        action = dict(ACTION_TABLE["CRISIS"])
+    elif insufficient:
         band = st.band                      # frozen
         alerts.append(("INSUFFICIENT_DATA", st.band, st.band,
                        f"NA layers: {na_layers}"))
@@ -284,7 +302,11 @@ def step(asof: str, readings: list[SignalReading], st: EngineState) -> DayResult
                      for r in readings}
     return DayResult(asof, scores, coverage,
                      None if insufficient else composite,
-                     "INSUFFICIENT_DATA" if insufficient else band,
+                     # D10: a fired L4 override reports CRISIS even when the
+                     # composite is unavailable. Without l4_red, an under-covered
+                     # stack still reports INSUFFICIENT_DATA exactly as before.
+                     ("INSUFFICIENT_DATA" if (insufficient and not l4_red)
+                      else band),
                      path, do_nothing, l4_red, action, contributions, alerts)
 
 

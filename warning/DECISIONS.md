@@ -8,7 +8,8 @@ These are NOT threshold changes (rule #3). No frozen threshold has been altered.
 They are choices the frozen documents do not make.
 
 Status as of 2026-08-28: **D1 RATIFIED** (evidence-backed by the 64-year scan).
-D2, D3 in force. D4, D8, D10, D12 OPEN. D5-D7, D9, D11, D13 in force.
+D2, D3 in force. D4, D8, D12 OPEN. D5-D7, D9-D11, D13, D14 in force.
+D10 RESOLVED 2026-08-30.
 
 ---
 
@@ -253,9 +254,9 @@ a high correlation does not fire. Pinned by
 
 ---
 
-## D10 — INSUFFICIENT_DATA currently suppresses the L4 crisis override
+## D10 — INSUFFICIENT_DATA suppressed the L4 crisis override   [RESOLVED 2026-08-30]
 
-**Status: SPEC CONFLICT. Current behaviour pinned by test. Engine NOT changed.**
+**Status: RESOLVED. The override now reaches the band; engine patched.**
 
 **The conflict.** Two rules in Part VI cannot both hold:
 - Line 601: L4 is "stress underway -> **overrides composite** to B", and
@@ -385,3 +386,50 @@ after that. This is sufficient for the leg's purpose -- the futures leg exists t
 cover 2004-2007, before VIX3M starts on 2007-12-04 -- and 2007 is fully covered
 (n=251), which is what makes F3's registry verdict testable at all. For dates
 after 2018-02 F3 runs on the VIX3M leg alone, as it already does.
+
+
+### D10 resolution (2026-08-30)
+
+**Ruling: the override wins, and the reporting stays honest.**
+
+The two rules are not symmetric. The do-nothing rule exists to stop the system
+ACTING ON A NUMBER IT CANNOT COMPUTE -- a composite assembled from layers that
+are mostly NA. An L4 propagation condition is not a computed number: L4B is
+"HY OAS widened >=150bp over 21 sessions", true or false on its own, needing no
+other layer to be valid. Suppressing it was not caution; it discarded a
+measurement that had been taken successfully.
+
+**Change:** `step()` now tests `insufficient and l4_red` before the plain
+`insufficient` branch. That path sets the band to CRISIS, advances EngineState,
+and emits a new alert type `L4_OVERRIDE_LOW_COVERAGE`.
+
+**What did NOT change**, verified by running the old and new engines side by side
+across five scenarios -- exactly one differs:
+
+| scenario | before | after |
+|---|---|---|
+| all layers NA + L4B fires B | INSUFFICIENT_DATA / freeze | **CRISIS / gross 0.40** |
+| all layers NA, no L4 fire | INSUFFICIENT_DATA / freeze | unchanged |
+| all layers NA, L4 also NA | INSUFFICIENT_DATA / freeze | unchanged |
+| covered + L4B fires B | CRISIS | unchanged |
+| covered, no L4 fire | NORMAL | unchanged |
+
+The composite still returns None, coverage is still reported per layer, and the
+LAYER_NA alerts still fire. Only the SUPPRESSION was removed -- a reader can
+always tell that CRISIS was reached on an observation rather than a score.
+
+**Tests:** `test_l4_override_survives_low_coverage` and
+`test_low_coverage_without_l4_still_freezes` (the second pins that the fix is
+surgical). The previous test, which pinned the old suppressing behaviour, was
+replaced.
+
+---
+
+## D12 — still OPEN, and currently UNTESTABLE
+
+D12 asks whether a level-floored variant beats the pure-z form on PR-AUC over
+the 2007-09 and 2020 windows. That question needs an SPX series to define the
+target, and `warning.db` holds equity data only from 2016-07-18 (SPY_CLOSE).
+
+**D12 cannot be resolved until Shiller `ie_data` is loaded** (monthly S&P back
+to 1871). Recorded here so the blocker is explicit rather than rediscovered.
