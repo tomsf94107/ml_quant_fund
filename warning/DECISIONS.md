@@ -480,3 +480,62 @@ a false positive rather than a hit. **Do not count it as validation.**
 leadership, so S8 goes quiet once a fracture completes. It has a window --
 deep enough to breach -15% and the 200DMA, shallow enough to remain the leader.
 See `test_s8_loses_sight_of_an_epicenter_that_has_fully_collapsed`.
+
+
+---
+
+## D16 — S9's linear detrend is misspecified, and its fires are all false so far
+
+**Status: OPEN. Property of the frozen formula plus a data limitation. No code
+changed.**
+
+**Firing record, 2022-06 to 2026-08 (the whole computable sample):**
+
+| Date | z | What followed |
+|---|---|---|
+| 2022-10-31 | +1.66 | **the bear-market low** |
+| 2024-06-30 | +3.34 | market rose |
+| 2024-09-30 | +1.60 | market rose |
+| 2024-11-30 | +1.55 | market rose |
+| 2025-12-31 | +2.08 | no decline |
+| 2026-05-31 | +2.15 | no decline |
+
+Six reds, zero preceding declines. The 2022-10 fire is the worst case a
+`rising_SI_bearish` signal can produce: maximum bearishness at the bottom. It is
+also the only era the registry considers checkable -- 2000 and 2008 are already
+marked UNDECIDABLE -- so S9's single testable verdict is a miss.
+
+**THE SPECIFICATION PROBLEM.** The fitted trend slope rises monotonically across
+the scan: 0.00262 -> 0.00283 -> 0.00311 -> 0.00349 -> 0.00471 -> 0.00589 per
+observation. Aggregate short interest is not growing at a constant exponential
+rate; it is ACCELERATING. An expanding linear fit of log(aggregate) on time
+therefore leaves systematically POSITIVE residuals at the endpoint, because the
+line is always catching up to a curve that keeps steepening.
+
+That biases z upward and toward firing. The reds above are substantially an
+artifact of fitting a straight line to a convex series, not a measurement of
+positioning stress.
+
+**Why it is not patched.** The registry says "detrended log aggregate SI (linear
+trend to date)". A quadratic term, a rolling-window trend, or first-differencing
+would each fix the bias and each is a new specification -- rule #3 forbids
+choosing one unilaterally.
+
+**Compounding data limitation.** short_interest.db starts 2021-04-15, not the
+registry's 2014. The whole computable sample is one regime of rising short
+interest, so there is no period of flat or falling aggregate SI against which to
+calibrate. Even a correctly specified trend would be estimated on a monotone
+sample.
+
+**For the ruling.** Candidates, in rough order of how little they invent:
+1. First-difference the log aggregate and z-score the CHANGE. Removes any trend
+   without choosing a functional form.
+2. Rolling-window linear trend rather than expanding, so the fit tracks
+   acceleration instead of lagging it.
+3. Leave as written and treat S9 as descriptive-only until FINRA history back to
+   2014 is loaded, which would at least span more than one regime.
+
+Until ruled, **S9's reds must not be counted as validation of anything.** The
+signal is computable and its plumbing is correct -- point-in-time panel,
+publication lag, expanding fit -- but its output in this sample is dominated by
+a fitting artifact.
