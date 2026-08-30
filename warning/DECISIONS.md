@@ -539,3 +539,46 @@ Until ruled, **S9's reds must not be counted as validation of anything.** The
 signal is computable and its plumbing is correct -- point-in-time panel,
 publication lag, expanding fit -- but its output in this sample is dominated by
 a fitting artifact.
+
+
+---
+
+## D17 — no signal built from local data has a demonstrated hit rate
+
+**Status: FINDING, recorded 2026-08-30. Not a defect. No code changed.**
+
+Eight composite inputs are now built. The four whose fires can be evaluated on
+the available sample have produced nineteen fires and no validated hit.
+
+| Signal | Fires | Outcome |
+|---|---|---|
+| S5 breadth | 11 red (8 episodes) | mean 126d drawdown -8.94% vs -8.05% for ALL new-high days, n=11. Indistinguishable. AMBER (-6.95%) shows LESS drawdown than GREEN (-8.52%) -- backwards for a signal with real ordering. |
+| S7 defensive rotation | 1 (2024-09-30) | ~5 months before a >9% drawdown. Plausible, n=1. |
+| S8 epicenter fracture | 1 (2023-05-31) | False positive: XLE rotation, not a fracture. See D15. |
+| S9 aggregate SI | 6 | All false; the 2022-10-31 fire landed on the bear-market low. See D16. |
+
+**Why this is expected rather than alarming.**
+- The computable sample is 2016-2026 for price-derived signals and 2021-2026 for
+  short interest. It contains no major credit crisis -- exactly the regime these
+  thresholds were specified against.
+- The registry's own verdicts concede this: S5's 1998 and 2007 anchors predate
+  the data, S9's 2000 and 2008 are UNDECIDABLE, and S2's 2007 fire was
+  established on HY OAS the stack no longer has (D8).
+- S5's survivorship bias runs AGAINST firing, so its record is an undercount.
+
+**Why it still matters.** When L2 completes, the composite will be assembled from
+components with no demonstrated hit rate on any data this project can see. The
+band will start producing numbers that LOOK like a measurement. Before that
+happens, the honest position must be recorded: these signals are correctly
+implemented and point-in-time clean, and that is a different claim from
+validated.
+
+**What would change this.** Shiller `ie_data` (extends the equity record to
+1871), FINRA short-interest history to 2014, and a delisting-inclusive universe
+for S5. Until then, Part V's false-positive accounting has a numerator and no
+usable denominator.
+
+**Explicitly NOT concluded:** that these signals do not work. A sample with no
+credit crisis cannot disprove a crisis detector. The finding is that the sample
+cannot support a verdict either way, and that no verdict should be implied by
+the composite once it turns on.
