@@ -489,8 +489,10 @@ See `test_s8_loses_sight_of_an_epicenter_that_has_fully_collapsed`.
 
 ## D16 — S9's linear detrend is misspecified, and its fires are all false so far
 
-**Status: OPEN. Property of the frozen formula plus a data limitation. No code
-changed.**
+**Status: CONFIRMED BY MEASUREMENT 2026-08-30. See the endpoint-residual test at
+the end of this entry. I had also claimed this could not be tested without FINRA
+history back to 2014; that was wrong -- the bias is a property of the FIT, not of
+the sample length.**
 
 **Firing record, 2022-06 to 2026-08 (the whole computable sample):**
 
@@ -943,3 +945,45 @@ It does mean that **when the composite turns on, no component behind it has
 demonstrated standalone value**, and the band must not be read as though it had.
 Part V's false-positive accounting should be built and run on the composite
 before any band is treated as advice.
+
+
+### D16 confirmed (2026-08-30): the endpoint residual is positive 82% of the time
+
+**The test.** At every settlement date, run S9's own expanding OLS over the
+history visible to that date and record the SIGN of the final residual. Under a
+correctly specified trend that is a mean-zero fluctuation, positive about half
+the time. Under a straight line fitted to convex growth, the line always lags and
+the newest point sits above it.
+
+**Result over 94 evaluation dates, fixed 362-name panel:**
+
+    endpoint residual POSITIVE on 77/94 (81.9%)
+    95% interval [72.9%, 88.4%]
+
+The interval is nowhere near 50%. **The fit is biased upward by construction.**
+
+**Independent corroboration.** The fitted slope rises monotonically across the
+sample -- +0.00235 to +0.00589 per observation, a 2.5x increase. Log-space growth
+that accelerates is convex, which is precisely the condition under which a linear
+fit lags.
+
+**Test validity.** Run against known-truth series first: a purely convex series
+gave 100% positive, linear-plus-noise gave 50%, pure linear gave 9% (floating
+point around zero). The test discriminates.
+
+**Consequence.** S9's six reds are substantially an artifact of the fit catching
+up to a curve, not a measurement of positioning stress. That explains the
+otherwise baffling 2022-10-31 fire at the bear-market low: the residual was
+positive because the trend line was behind, not because shorting had surged.
+
+**Still not patched.** The registry specifies "detrended log aggregate SI (linear
+trend to date)". A quadratic term, a rolling-window trend, or first-differencing
+would each remove the bias and each replaces the specification, which rule #3
+forbids choosing unilaterally. The ruling is now well informed: the defect is
+measured, not suspected, and first-differencing is the amendment that invents
+least -- it removes any trend without asserting a functional form.
+
+**Method note.** Fourth specification question settled by measurement today.
+Score so far: D19 reversed my conclusion, D21 was overturned within the hour by
+D23, D15 was confirmed, D16 confirmed. Two of four went against what I had
+written down before testing.

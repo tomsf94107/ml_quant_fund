@@ -11,7 +11,7 @@ which described 3 builders and 4 decisions. Branch `research-track`, HEAD
 
 | | |
 |---|---|
-| Composite inputs built | **12 of 15** — S1 S2 S3 S4 S5 S6 S7 S8 S9 S11 S14, plus S6 |
+| Composite inputs built | **11 of 15** — S1 S2 S3 S4 S5 S6 S7 S8 S9 S11 S14 |
 | Not built | S10 (FINRA), S13 (Shiller), S15 (Shiller + Z.1), S12 (EDGAR Form 4 to 2003) |
 | Dashboard | F2 VIX percentile, F3 VIX term slope |
 | L4 propagation | 3 of 5 — L4A funding seizure, L4B spread blowout, L4C correlation spike |
