@@ -39,7 +39,10 @@ import json
 import os
 import sqlite3
 import sys
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
+
+ET = ZoneInfo("America/New_York")
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -149,7 +152,17 @@ def persist(con, asof, res, details, dash):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", default="warning.db")
-    ap.add_argument("--asof", default=date.today().isoformat())
+    # ET, not local. date.today() returns the VN date, a day ahead of ET, and
+    # the cron fires 06:00 VN = 19:00 ET the PREVIOUS day -- so an unqualified
+    # today() would stamp Monday's US session with Tuesday's date. Every other
+    # series in warning.db is ET-dated (data_vintages.obs_date, SPY_CLOSE,
+    # pit.series_asof compares date strings directly), so the composite row
+    # would carry a date one ahead of its own inputs.
+    #
+    # Same defect class as the uw_archive collision fixed 2026-08-30. ZoneInfo
+    # rather than a fixed offset because ET is UTC-4 or UTC-5 depending on DST.
+    ap.add_argument("--asof", default=datetime.now(ET).date().isoformat(),
+                    help="evaluation date; defaults to TODAY IN NEW YORK")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
