@@ -624,7 +624,10 @@ L4 remains an NA layer -- L4D needs S10 (FINRA margin) and L4E needs F9
 
 ## D19 — S6's thresholds assume a distribution the 2016-2026 sample does not have
 
-**Status: OPEN. Property of the frozen thresholds. No code changed.**
+**Status: RESOLVED 2026-08-30, AGAINST my original reading. See the resolution
+at the end of this entry -- the thresholds are sound and the DECADE is the
+anomaly. The analysis below is kept because the measurements are correct; only
+the conclusion drawn from them was wrong.**
 
 **Measured on 449 sampled readings, 2017-2026:**
 
@@ -687,3 +690,64 @@ fixed inside this data source.
 1871, which addresses the index-level signals (S2's gate, S13, D12) but not the
 sector or breadth signals, which need per-constituent daily bars. Those would
 need a different vendor or the Ken French portfolios as a coarse substitute.
+
+
+### D19 resolution (2026-08-30): the thresholds are right, the decade is not
+
+Ken French's size portfolios give equal- and value-weighted returns for the SAME
+portfolios, daily from 1926-07-01 -- survivorship-safe, and the fallback S6's own
+registry row names ("French size pre-2003"). Compounding both into indices and
+taking 126-day relative returns over 26,148 overlapping days:
+
+| Era | mean EW-CW | median | below -2% | below -4% |
+|---|---|---|---|---|
+| 1926-1959 | **+1.63%** | +0.87% | 10% | 2% |
+| 1960-1989 | **+0.83%** | +0.72% | 12% | 4% |
+| 1990-2009 | **+0.96%** | +0.94% | 25% | 11% |
+| 2010-2016 | **+0.93%** | +1.18% | 17% | 3% |
+| **2016-2026** | **-1.11%** | -0.91% | **35%** | **18%** |
+| **full century** | **+0.96%** | +0.68% | 16% | **6%** |
+
+**Equal-weight outperformed by about +1% per 126 days for ninety years** -- the
+small-cap premium, sitting where theory says it should. Against that
+distribution the registry's -2%/-4% thresholds fire 6% of the time across the
+full century, which is a defensible rate for a warning signal.
+
+**My original conclusion was backwards.** I called the thresholds misspecified
+because the 2016-2026 sample sits ~1.7pp below them. The century says the
+thresholds are calibrated correctly and the RECENT DECADE is the outlier: the
+sign of EW-CW flips, and red frequency triples from 6% to 18%.
+
+So S6 firing often in the RSP era is plausibly the signal WORKING. Persistent
+narrowness is what it exists to detect, and this decade has had it persistently.
+That is a different claim from "S6 predicts drawdowns", which remains untested --
+but it removes the specification objection.
+
+**What this does not settle.** The French series is a size-decile proxy, not
+RSP-vs-SPY, and French restates history when CRSP is revised, so `pub_date =
+obs_date + 1` is a simplification (see D20). The calibration finding holds --
+the distribution is a distributional fact, not a point-in-time claim -- but no
+statement of the form "S6 would have fired in 1973" can rest on this data.
+
+**Method note worth keeping.** This is the first threshold in the build checked
+against a sample containing multiple crises rather than argued about. Both D16
+and D19 were raised as specification defects; D19 turned out to be a regime
+observation. D16's accelerating-trend problem in S9 has not had the same test and
+should not be assumed to share the outcome.
+
+---
+
+## D20 — French history is restated, so its pub_date is a simplification
+
+**Status: recorded, not blocking.**
+
+`parse_french.py` stamps `pub_date = obs_date + 1 day`, matching every other
+non-revised daily series. That is not strictly true: French recomputes the
+portfolios each June and republishes the entire history whenever CRSP is
+revised, so the value shown today for 1973-06-01 is not necessarily the value
+that would have been published then. No source provides French vintages.
+
+**Consequence.** French data is sound for CALIBRATION -- a distribution over
+ninety years is a distributional fact -- but not for real-time replay. A claim
+of the form "S6 would have fired on this date in 1973" cannot rest on it.
+Anything built on French series must say which of the two it is doing.
