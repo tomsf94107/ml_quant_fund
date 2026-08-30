@@ -49,6 +49,7 @@ from builders import s2_credit as S2                         # noqa: E402
 from builders import f2_vix_percentile as F2                 # noqa: E402
 from builders import s4_funding as S4                        # noqa: E402
 from builders import f3_vix_term_slope as F3                 # noqa: E402
+from builders import s14_vol_structure as S14                # noqa: E402
 from builders import l4_propagation as L4                    # noqa: E402
 
 # The 15 shortlist signals and their layers, from signal_registry.csv.
@@ -59,7 +60,7 @@ ROSTER = {
     "S7": "L2", "S8": "L2", "S9": "L2", "S12": "L2",
     "S4": "L3", "S14": "L3",
 }
-BUILT = {"S1": S1, "S2": S2, "S4": S4}       # composite inputs implemented so far
+BUILT = {"S1": S1, "S2": S2, "S4": S4, "S14": S14}   # composite inputs so far
 DASHBOARD = {"F2": F2, "F3": F3}             # tier 'dashboard', computed after
 
 

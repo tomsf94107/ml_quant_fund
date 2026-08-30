@@ -18,8 +18,9 @@ from builders import s2_credit as S2               # noqa: E402
 from builders import f2_vix_percentile as F2       # noqa: E402
 from builders import s4_funding as S4              # noqa: E402
 from builders import f3_vix_term_slope as F3       # noqa: E402
+from builders import s14_vol_structure as S14      # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -52,6 +53,12 @@ ANCHORS = {
            ("2018-02-06", "2018 volmageddon"),
            ("2020-03-20", "COVID"),
            ("2026-08-28", "today")],
+    "S14": [("2008-10-15", "post-Lehman: RV regime + curve inversion, both legs"),
+            ("2011-08-08", "2011 correction"),
+            ("2018-02-06", "volmageddon -- futures leg's last months of coverage"),
+            ("2020-03-20", "COVID: leg (a) only, futures coverage ended 2018-02"),
+            ("2022-06-16", "2022 bear low"),
+            ("2026-08-28", "today")],
     "S4": [("1998-10-30", "LTCM funding stress -- registry notes 1998 as a false fire for S2"),
            ("2007-08-15", "Aug-2007 funding rupture: the report's defining S4 event"),
            ("2007-10-09", "SPX peak"),
@@ -90,6 +97,20 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S14":
+        la = d.get("leg_a_rv_regime", {}); lb = d.get("leg_b_futures_inversion", {})
+        print(f"    legs available {d.get('legs_available')}  fired {d.get('legs_fired')}")
+        if "reason" in la:
+            print(f"    (a) RV regime      NA: {la['reason'][:66]}")
+        else:
+            print(f"    (a) RV regime      rv {la['rv_annualized']:.3f} "
+                  f"pct2y {la['rv_pctile_2y']:.0f}  run {la['top_quartile_run_days']}d"
+                  f"  below200dma={la['below_200dma']}  fired={la['fired']}")
+        if "reason" in lb:
+            print(f"    (b) futures curve  NA: {lb['reason'][:66]}")
+        else:
+            print(f"    (b) futures curve  front {lb['front']} second {lb['second']}"
+                  f"  inverted run {lb['inverted_run_days']}d  fired={lb['fired']}")
     elif sig == "F3":
         print(f"    VIX {d['vix']}  VIX3M {d['vix3m']}  slope {d['slope_pct']:+.2f}%"
               f"  inverted={d['inverted']} run {d['inverted_run_days']}d"

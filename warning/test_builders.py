@@ -987,3 +987,113 @@ def test_uw_archive_still_dedupes_an_identical_rerun(tmp_path):
     n = con.execute("SELECT COUNT(*) FROM uw_archive").fetchone()[0]
     con.close()
     assert n == 1
+
+
+# --------------------------------------------------------------- S14
+
+from builders import s14_vol_structure as S14B  # noqa: E402
+
+
+def _load_series(con, name, values, start="2020-01-01"):
+    from datetime import date, timedelta
+    d = date.fromisoformat(start); i = 0
+    while i < len(values):
+        if d.weekday() < 5:
+            put(con, name, d.isoformat(),
+                (d + timedelta(days=1)).isoformat(), values[i])
+            i += 1
+        d += timedelta(days=1)
+    return d.isoformat()
+
+
+def test_s14_leg_b_needs_five_consecutive_inverted_days():
+    con = db()
+    _load_series(con, "VX_FRONT", [20.0] * 6 + [25.0] * 4)
+    asof = _load_series(con, "VX_SECOND", [22.0] * 10)
+    fired, d = S14B.leg_b(con, asof)
+    assert d["inverted_run_days"] == 4 and fired is False
+    con2 = db()
+    _load_series(con2, "VX_FRONT", [20.0] * 5 + [25.0] * 5)
+    asof2 = _load_series(con2, "VX_SECOND", [22.0] * 10)
+    fired2, d2 = S14B.leg_b(con2, asof2)
+    assert d2["inverted_run_days"] == 5 and fired2 is True
+
+
+def test_s14_leg_b_run_resets_on_one_contango_day():
+    con = db()
+    _load_series(con, "VX_FRONT", [25.0] * 4 + [20.0] + [25.0] * 3)
+    asof = _load_series(con, "VX_SECOND", [22.0] * 8)
+    _fired, d = S14B.leg_b(con, asof)
+    assert d["inverted_run_days"] == 3, "an intervening contango day resets"
+
+
+def test_s14_one_leg_arms_both_legs_fire():
+    """Legs are never averaged: either arms, both together fire."""
+    con = db()
+    _load_series(con, "VX_FRONT", [25.0] * 10)
+    asof = _load_series(con, "VX_SECOND", [22.0] * 10)
+    r = S14B.compute(con, asof)
+    assert r["detail"]["legs_available"] == ["b"]
+    assert r["detail"]["legs_fired"] == 1
+    assert r["state"] == S14B.AMBER_STATE, "one leg arms, does not fire red"
+
+
+def test_s14_na_when_neither_leg_has_data():
+    con = db()
+    r = S14B.compute(con, "2026-08-28")
+    assert r["state"] == "NA"
+    assert "neither leg available" in r["detail"]["reason"]
+
+
+def test_s14_leg_a_reports_its_coverage_limit():
+    """Leg (a) needs SPY_CLOSE, which starts 2016-07-18; before that it is NA
+    and says so rather than silently contributing nothing."""
+    con = db()
+    _load_series(con, "SPY_CLOSE", [100.0] * 50)
+    fired, d = S14B.leg_a(con, "2020-04-01")
+    assert fired is None and "needs" in d["reason"]
+
+
+def test_s14_realized_vol_matches_a_known_value():
+    """Constant returns -> zero vol; alternating +/-1% -> a computable value."""
+    rets = [(f"d{i}", 0.0) for i in range(30)]
+    assert S14B._realized_vol(rets)[-1][1] == 0.0
+    alt = [(f"d{i}", 0.01 if i % 2 else -0.01) for i in range(30)]
+    rv = S14B._realized_vol(alt)[-1][1]
+    # Compute the expectation from the DEFINITION rather than a closed form.
+    # A 21-day window of alternating returns has 11 of one sign and 10 of the
+    # other, so the mean is not zero (0.01/21) -- assuming it was is what made
+    # the first version of this test fail against correct code.
+    import math as _m
+    w = [r for _, r in alt[-21:]]
+    m = sum(w) / len(w)
+    var = sum((x - m) ** 2 for x in w) / (len(w) - 1)
+    assert abs(rv - _m.sqrt(var * 252)) < 1e-12
+
+
+def test_s14_leg_b_goes_na_once_futures_coverage_ends():
+    """REGRESSION (real data 2026-08-30): leg (b) reported the 2018-02-23 curve
+    verbatim at 2020-03-20, 2022-06-16 and 2026-08-28 -- identical front/second
+    on three dates years apart. series_asof returns the last published row, so a
+    dead feed reads as a live one unless staleness is checked PER LEG."""
+    con = db()
+    _load_series(con, "VX_FRONT", [25.0] * 10, start="2018-02-01")
+    _load_series(con, "VX_SECOND", [22.0] * 10, start="2018-02-01")
+    fresh, d_fresh = S14B.leg_b(con, "2018-02-16")
+    assert fresh is True, d_fresh
+    stale, d_stale = S14B.leg_b(con, "2020-03-20")
+    assert stale is None, "a two-year-old curve must not be reported as current"
+    assert "stale" in d_stale["reason"]
+
+
+def test_s14_stale_futures_alone_yields_NA_not_a_stale_reading():
+    """With only dead futures data the signal must report NA, not the last
+    curve it happens to hold. Before the per-leg staleness gate this returned a
+    confident G built on 2018 prices."""
+    con = db()
+    _load_series(con, "VX_FRONT", [25.0] * 10, start="2018-02-01")
+    _load_series(con, "VX_SECOND", [22.0] * 10, start="2018-02-01")
+    r = S14B.compute(con, "2020-03-20")
+    assert r["state"] == "NA"
+    assert "neither leg available" in r["detail"]["reason"]
+    assert "stale" in r["detail"]["reason"]
