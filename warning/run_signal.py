@@ -21,8 +21,9 @@ from builders import f3_vix_term_slope as F3       # noqa: E402
 from builders import s14_vol_structure as S14      # noqa: E402
 from builders import s7_defensive_rotation as S7   # noqa: E402
 from builders import s8_epicenter_fracture as S8   # noqa: E402
+from builders import s9_short_interest as S9      # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -54,6 +55,11 @@ ANCHORS = {
            ("2011-08-08", "2011 correction"),
            ("2018-02-06", "2018 volmageddon"),
            ("2020-03-20", "COVID"),
+           ("2026-08-28", "today")],
+    "S9": [("2022-01-03", "SPX 2022 peak -- registry says 2022 REPRODUCIBLE"),
+           ("2022-06-16", "2022 bear low"),
+           ("2023-05-31", "the date S8 falsely fired"),
+           ("2024-09-30", "the date S7 fired"),
            ("2026-08-28", "today")],
     "S8": [("2020-02-19", "COVID peak"),
            ("2021-11-19", "SPX near high; ARKK/growth already fracturing"),
@@ -111,6 +117,12 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S9":
+        print(f"    z {d['z']:+.2f} (arm >{d['arm_z']}, red >{d['red_z']})  "
+              f"aggregate {d['aggregate_short_bn']}bn over {d['panel_names']} names")
+        print(f"    settlement {d['settlement_date']} "
+              f"({d['days_since_settlement']}d ago)  obs used {d['obs_used']}"
+              f"  trend {d['trend_slope_per_obs']:+.5f}/obs")
     elif sig == "S8":
         print(f"    leader {d['leader']} (2y RS {d['leader_rs_2y_pct']:+.1f}% "
               f"vs bench, from {d['n_sectors']} sectors)")

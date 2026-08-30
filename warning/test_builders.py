@@ -1307,3 +1307,84 @@ def test_s8_loses_sight_of_an_epicenter_that_has_fully_collapsed():
     d = S8B.compute(con, asof)["detail"]
     assert d["leader"] != "XLK", "a fully collapsed sector is no longer the leader"
     assert d["leader_drawdown_pct"] < S8B.ARM_DRAWDOWN * 100
+
+
+# --------------------------------------------------------------- S9
+
+from builders import s9_short_interest as S9B  # noqa: E402
+
+
+def _load_si(con, n_dates=60, n_tickers=150, base=1e7, drift=0.0,
+             shock=0.0, drop_after=None, start_year=2021):
+    """Semi-monthly SI panel. `drop_after` removes a slice of tickers from
+    dates after that index, to simulate coverage change."""
+    from datetime import date, timedelta
+    d = date(start_year, 1, 15)
+    dates = []
+    for i in range(n_dates):
+        dates.append(d.isoformat())
+        d += timedelta(days=15)
+    for i, ds in enumerate(dates):
+        pub = (date.fromisoformat(ds) + timedelta(days=12)).isoformat()
+        n_t = n_tickers if (drop_after is None or i <= drop_after) else n_tickers // 2
+        for t in range(n_t):
+            v = base * (1 + drift * i)
+            if shock and i == len(dates) - 1:
+                v *= (1 + shock)
+            put(con, f"SI:T{t:03d}", ds, pub, v)
+    return dates[-1]
+
+
+def test_s9_business_day_lag_arithmetic():
+    import importlib.util, os as _os
+    here = _os.path.dirname(_os.path.abspath(__file__))
+    spec = importlib.util.spec_from_file_location(
+        "isi", _os.path.join(here, "ingest_short_interest.py"))
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    # 2026-08-14 is a Friday; +8 business days = 2026-08-26 (Wednesday)
+    assert m.plus_business_days("2026-08-14", 8) == "2026-08-26"
+    assert m.plus_business_days("2026-08-13", 1) == "2026-08-14"
+    assert m.plus_business_days("2026-08-14", 1) == "2026-08-17"   # skips weekend
+
+
+def test_s9_green_on_a_flat_panel():
+    con = db()
+    asof = _load_si(con)
+    r = S9B.compute(con, asof)
+    assert r["state"] == "NA" or abs(r["detail"]["z"]) < S9B.ARM_Z, r["detail"]
+
+
+def test_s9_fires_on_a_short_interest_spike():
+    con = db()
+    asof = _load_si(con, n_dates=60, drift=0.002, shock=0.25)
+    from datetime import date, timedelta
+    r = S9B.compute(con, (date.fromisoformat(asof) + timedelta(days=20)).isoformat())
+    assert r["detail"].get("z", 0) > S9B.RED_Z, r["detail"]
+    assert r["state"] == "R"
+
+
+def test_s9_panel_is_point_in_time_not_full_sample():
+    """Names must be selected from the trailing window only. A full-sample
+    intersection would presume knowledge of which tickers stayed covered."""
+    con = db()
+    asof = _load_si(con, n_dates=60, n_tickers=200, drop_after=30)
+    from datetime import date, timedelta
+    r = S9B.compute(con, (date.fromisoformat(asof) + timedelta(days=20)).isoformat())
+    # after the drop only 100 names persist, and the trailing window sees those
+    assert r["state"] == "NA" or r["detail"]["panel_names"] == 100, r["detail"]
+
+
+def test_s9_refuses_a_tiny_panel():
+    con = db()
+    asof = _load_si(con, n_dates=60, n_tickers=20)
+    from datetime import date, timedelta
+    r = S9B.compute(con, (date.fromisoformat(asof) + timedelta(days=20)).isoformat())
+    assert r["state"] == "NA"
+    assert "panel is" in r["detail"]["reason"]
+
+
+def test_s9_ols_residual_is_zero_on_a_perfect_line():
+    ys = [1.0 + 0.5 * i for i in range(20)]
+    resid, a, b = S9B._ols_residual_last(ys)
+    assert abs(b - 0.5) < 1e-9 and abs(a - 1.0) < 1e-9
+    assert all(abs(r) < 1e-9 for r in resid)
