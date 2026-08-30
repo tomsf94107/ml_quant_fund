@@ -1680,3 +1680,63 @@ def test_s11_declares_the_missing_credit_leg():
     _load_annual(con, "RITTER_IPO_FIRSTDAY", 1980, [10.0] * 15)
     d = S11B.compute(con, "1996-06-30")["detail"]
     assert d["credit_leg"] is None and "NOT evaluated" in d["credit_note"]
+
+
+# --------------------------------------------------------------- S6
+
+from builders import s6_concentration as S6B  # noqa: E402
+
+
+def _s6_load(con, cw_path, ew_lag_pct, start="2020-01-01"):
+    """CW follows cw_path; EW trails it by ew_lag_pct over the whole span."""
+    n = len(cw_path)
+    _load_px(con, "SPY_CLOSE", cw_path, start=start)
+    ew = [cw_path[i] * (1 + ew_lag_pct * i / n) for i in range(n)]
+    return _load_px(con, "RSP_CLOSE", ew, start=start)
+
+
+def test_s6_green_when_breadth_is_even_at_the_high():
+    con = db()
+    asof = _s6_load(con, [100.0 + i * 0.05 for i in range(320)], 0.0)
+    r = S6B.compute(con, asof)
+    assert abs(r["detail"]["ew_minus_cw_126d_pct"]) < 1.0
+    assert r["state"] == "G"
+
+
+def test_s6_fires_when_equal_weight_lags_badly_at_the_high():
+    con = db()
+    asof = _s6_load(con, [100.0 + i * 0.05 for i in range(320)], -0.30)
+    r = S6B.compute(con, asof)
+    d = r["detail"]
+    assert d["near_high"] is True
+    assert d["ew_minus_cw_126d_pct"] < S6B.RED_LEVEL * 100, d
+    assert r["state"] == "R"
+
+
+def test_s6_silent_when_the_index_has_already_fallen():
+    """EW lagging in a decline is ordinary -- large caps are defensive."""
+    con = db()
+    path = [100.0 + i * 0.05 for i in range(280)] + [80.0] * 40
+    asof = _s6_load(con, path, -0.30)
+    r = S6B.compute(con, asof)
+    assert r["detail"]["near_high"] is False
+    assert r["state"] == "G"
+
+
+def test_s6_arm_sits_between_the_registry_thresholds():
+    con = db()
+    asof = _s6_load(con, [100.0 + i * 0.05 for i in range(320)], -0.075)
+    d = S6B.compute(con, asof)["detail"]
+    rel = d["ew_minus_cw_126d_pct"]
+    assert S6B.RED_LEVEL * 100 <= rel < S6B.ARM_LEVEL * 100, rel
+    assert S6B.compute(con, asof)["state"] == S6B.AMBER_STATE
+
+
+def test_s6_reports_the_overlap_between_two_unequal_series():
+    """Massive returns 2,511 RSP bars against SPY's 2,544, so the series do not
+    align perfectly and the overlap must be visible."""
+    con = db()
+    _load_px(con, "SPY_CLOSE", [100.0 + i * 0.05 for i in range(320)])
+    asof = _load_px(con, "RSP_CLOSE", [100.0 + i * 0.05 for i in range(300)])
+    d = S6B.compute(con, asof)["detail"]
+    assert d["overlapping_obs"] == 300

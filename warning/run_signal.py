@@ -25,8 +25,9 @@ from builders import s9_short_interest as S9      # noqa: E402
 from builders import s5_breadth as S5             # noqa: E402
 from builders import s3_sloos as S3               # noqa: E402
 from builders import s11_issuance as S11          # noqa: E402
+from builders import s6_concentration as S6       # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5, "S3": S3, "S11": S11}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5, "S3": S3, "S11": S11, "S6": S6}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -62,6 +63,12 @@ ANCHORS = {
     # DRTSCILM vintages start 2010-04-20, so the pre-2010 anchors MUST read NA.
     # They are kept deliberately: an NA there is the correct answer and proves
     # the point-in-time reader is not silently using today's revisions.
+    "S6": [("2018-01-26", "SPX high before the Feb-2018 break"),
+           ("2020-02-19", "COVID peak"),
+           ("2021-12-31", "SPX 2021 high -- mega-cap narrowness era"),
+           ("2024-09-30", "the date S7 fired"),
+           ("2025-02-19", "recent high"),
+           ("2026-08-28", "today")],
     "S11": [("1999-06-30", "pre-mania: 1998 data is the latest published"),
             ("2000-06-30", "SPX peaked Mar-2000; 1999's record year now visible"),
             ("2001-06-30", "2000 data published -- the mania year in full"),
@@ -142,6 +149,12 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S6":
+        print(f"    EW-CW 126d {d['ew_minus_cw_126d_pct']:+.2f}% "
+              f"(arm <{d['arm_below_pct']:.0f}%, red <{d['red_below_pct']:.0f}%)"
+              f"   EW {d['ew_126d_pct']:+.2f}%  CW {d['cw_126d_pct']:+.2f}%")
+        print(f"    index {d['index_pct_below_high']:.2f}% below high -> "
+              f"near_high={d['near_high']}   overlap {d['overlapping_obs']} obs")
     elif sig == "S11":
         print(f"    year {d['reference_year']}: {d['ipo_count']} IPOs "
               f"(pctile {d['ipo_count_pctile']:.0f}), first-day "
