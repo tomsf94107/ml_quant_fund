@@ -53,6 +53,8 @@ EW_MARK = "Average Equal Weighted Returns -- Daily"
 MISSING = {-99.99, -999.0, -999.99}
 
 FILES = {
+    "F-F_Research_Data_Factors_daily.CSV": "FR_F",
+    "12_Industry_Portfolios_daily.csv": "FR_I12",
     "49_Industry_Portfolios_Daily.csv": "FR_IND",
     "Portfolios_Formed_on_ME_daily.csv": "FR_ME",
 }
@@ -68,7 +70,12 @@ def parse(path):
     with open(path, encoding="utf-8", errors="replace") as f:
         lines = f.read().split("\n")
 
-    out, weighting, header = {}, None, None
+    # Single-table files (the research factors) carry no weighting marker at
+    # all: prose, then a header row, then data. Detect that up front rather than
+    # returning nothing, which is what a marker-only parser would do.
+    single_table = not any(VW_MARK in l or EW_MARK in l for l in lines)
+
+    out, weighting, header = {}, ("" if single_table else None), None
     for line in lines:
         s = line.strip()
         if not s:
@@ -137,7 +144,7 @@ def main():
         for (w, name), rows in sorted(tables.items()):
             if wanted and name not in wanted:
                 continue
-            sid = f"{prefix}_{w}:{name}"
+            sid = f"{prefix}_{w}:{name}" if w else f"{prefix}:{name}"
             print(f"  {sid:<24} {len(rows):>7} rows  "
                   f"{rows[0][0]}..{rows[-1][0]}")
             grand += len(rows)

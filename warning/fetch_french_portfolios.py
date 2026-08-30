@@ -49,8 +49,21 @@ import zipfile
 
 BASE = ("https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/")
 FILES = {
-    "49_Industry_Portfolios_daily_CSV.zip": "S8: industry RS and leader",
+    # 12 industries, not 49. S8 identifies a LEADER among sectors and the SPDR
+    # set it normally runs on has 11. French's 12-industry portfolios are
+    # separately aggregated (not a subset of the 49) and map far closer to that
+    # concept. They are also a quarter the size: 49 industries x 2 weightings x
+    # 26,274 days is 2.6M rows, which would quadruple warning.db to store a
+    # granularity the signal does not use.
+    "12_Industry_Portfolios_daily_CSV.zip": "S8: industry RS and leader, 1926+",
+    "49_Industry_Portfolios_daily_CSV.zip": "S8 alternative, finer but 4x larger",
     "Portfolios_Formed_on_ME_daily_CSV.zip": "S6: size portfolios, EW vs VW",
+    # Mkt-RF + RF is the CRSP value-weighted market total return, daily from
+    # 1926 -- the genuine market benchmark S8's index gate needs, rather than a
+    # synthetic composite built from the industry portfolios. It is also the
+    # series prices.db's ff_factors_daily holds, which has been stale since
+    # 2026-05-29 with no writer in the repo (audit, T0.4).
+    "F-F_Research_Data_Factors_daily_CSV.zip": "market benchmark + ff_factors",
 }
 UA = {"User-Agent": "warning-system/1.0"}
 

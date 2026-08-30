@@ -439,7 +439,10 @@ to 1871). Recorded here so the blocker is explicit rather than rediscovered.
 
 ## D15 — S8's leader definition cannot distinguish an epicenter from a rotation
 
-**Status: OPEN. Property of the frozen formula. No code changed.**
+**Status: CONFIRMED 2026-08-30 on 96 years of independent data. See the
+century test at the end of this entry. The THRESHOLDS are fine -- that part of
+my original worry was wrong -- but the leader definition fails exactly as
+described.**
 
 **Observed on real data, 2019-01 to 2026-08.** S8 fired exactly once:
 
@@ -751,3 +754,59 @@ that would have been published then. No source provides French vintages.
 ninety years is a distributional fact -- but not for real-time replay. A claim
 of the form "S6 would have fired on this date in 1973" cannot rest on it.
 Anything built on French series must say which of the two it is doing.
+
+
+### D15 century test (2026-08-30): thresholds vindicated, construction indicted
+
+S8F runs S8's unchanged thresholds on French's 12 industry portfolios against
+the CRSP value-weighted market, 1930-2026, 1,164 month-ends. Calibration-grade
+only (D20).
+
+**Firing rate: 7 month-ends red, 0.6% of the sample; 5 distinct episodes.**
+
+| Date | Leader | Leader drawdown | Market below high |
+|---|---|---|---|
+| 1981-03-31 | Enrgy | 22.5% | 1.97% |
+| 1981-07-31 | Enrgy | 22.0% | 2.88% |
+| 1992-04-30 | Hlth | 17.9% | 2.75% |
+| 2023-05-31 | Enrgy | 16.6% | 1.85% |
+| 2026-04-30 | Durbl | 19.2% | 0.68% |
+
+**The thresholds are sound.** 0.6% over a century is a defensible rate for a
+warning signal, and it settles the half of D15 that suspected they were too
+loose. That suspicion was wrong.
+
+**The leader definition is not.** Three of five episodes are the PREVIOUS
+CYCLE'S leader decaying while the market advances:
+- Enrgy 1981, after the 1980 oil peak
+- Hlth 1992, after the 1991 biotech/pharma run
+- Enrgy 2023, after the 2021-22 energy cycle -- the same fire the SPDR version
+  produced, now reproduced on entirely different data
+
+That is the exact mechanism this decision identified from a single observation.
+It is not a small-sample artifact: it recurs across four decades and two
+independent datasets.
+
+**And the misses are as damning as the fires.** Nothing in 1929, 1937, 1973,
+1987, 2000 or 2008. S8's rule did not fire before a single major peak in
+ninety-six years. Whatever it detects, it is not the epicenter of a mania.
+
+**Why "top trailing-2y RS" fails.** It selects the best PAST performer. When
+leadership changes hands between cycles the outgoing leader declines while the
+new one carries the index higher -- producing precisely "leader broken, market
+at its high" without any of the stress the signal is meant to capture. The
+mania's actual epicenter is usually still rising at the peak, so it is never the
+thing being measured.
+
+**Contrast with D19, and the method point.** The same century test VINDICATED
+S6's thresholds and showed the recent decade was the anomaly. Here it confirms a
+construction defect. Two thresholds tested against a long sample rather than
+argued about; the answers went opposite ways. Neither could have been settled
+from the 2016-2026 data alone.
+
+**Ruling still required, and now better informed.** Amending the leader
+definition is a specification change (rule #3). The century test says the
+amendment should target the LEADER, not the thresholds -- for example requiring
+the leader to have been within some distance of its own high recently, so a
+sector already in multi-year decline cannot qualify. Until ruled, S8 and S8F
+stand as written and **none of their fires counts as validation.**

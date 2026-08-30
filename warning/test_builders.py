@@ -1740,3 +1740,75 @@ def test_s6_reports_the_overlap_between_two_unequal_series():
     asof = _load_px(con, "RSP_CLOSE", [100.0 + i * 0.05 for i in range(300)])
     d = S6B.compute(con, asof)["detail"]
     assert d["overlapping_obs"] == 300
+
+
+# --------------------------------------------------------------- S8F
+
+from builders import s8f_epicenter_french as S8F  # noqa: E402
+
+
+def test_s8f_reuses_s8s_thresholds_rather_than_restating_them():
+    """The two must not drift apart: S8F imports S8's numbers."""
+    from builders import s8_epicenter_fracture as S8M
+    assert S8F.RED_DRAWDOWN is S8M.RED_DRAWDOWN
+    assert S8F.ARM_DRAWDOWN is S8M.ARM_DRAWDOWN
+    assert S8F.INDEX_NEAR_HIGH is S8M.INDEX_NEAR_HIGH
+    assert S8F.RS_WINDOW is S8M.RS_WINDOW
+
+
+def test_s8f_compounding_is_scale_invariant():
+    """Every test applied to the compounded index is a ratio, so the arbitrary
+    base of 100 cannot affect the verdict."""
+    rows = [("d1", 1.0), ("d2", -2.0), ("d3", 3.0)]
+    idx = S8F._compound(rows)
+    assert abs(idx[0][1] - 101.0) < 1e-9
+    assert abs(idx[1][1] - 101.0 * 0.98) < 1e-9
+    # drawdown from the running high is unchanged if the base doubles
+    def dd(seq):
+        hi = max(v for _, v in seq)
+        return (hi - seq[-1][1]) / hi
+    doubled = [(d, v * 2) for d, v in idx]
+    assert abs(dd(idx) - dd(doubled)) < 1e-12
+
+
+def test_s8f_market_is_mkt_rf_plus_rf():
+    con = db()
+    from datetime import date, timedelta
+    d, i = date(2020, 1, 1), 0
+    while i < 300:
+        if d.weekday() < 5:
+            pub = (d + timedelta(days=1)).isoformat()
+            put(con, "FR_F:Mkt-RF", d.isoformat(), pub, 0.04)
+            put(con, "FR_F:RF", d.isoformat(), pub, 0.01)
+            i += 1
+        d += timedelta(days=1)
+    mkt = S8F._market(con, d.isoformat())
+    assert len(mkt) == 300
+    # 0.05% per day compounded over 300 days
+    assert abs(mkt[-1][1] - 100.0 * (1.0005 ** 300)) < 1e-6
+
+
+def test_s8f_na_without_enough_industries():
+    con = db()
+    r = S8F.compute(con, "2026-06-30")
+    assert r["state"] == "NA"
+
+
+def test_s8f_always_carries_the_calibration_caveat():
+    con = db()
+    from datetime import date, timedelta
+    d, i = date(2018, 1, 1), 0
+    while i < 800:
+        if d.weekday() < 5:
+            pub = (d + timedelta(days=1)).isoformat()
+            put(con, "FR_F:Mkt-RF", d.isoformat(), pub, 0.03)
+            put(con, "FR_F:RF", d.isoformat(), pub, 0.01)
+            for k, name in enumerate(S8F.INDUSTRIES):
+                put(con, S8F.IND_PREFIX + name, d.isoformat(), pub,
+                    0.04 + 0.001 * k)
+            i += 1
+        d += timedelta(days=1)
+    r = S8F.compute(con, d.isoformat())
+    assert r["state"] != "NA", r["detail"]
+    assert "calibration-grade" in r["detail"]["CAVEAT"]
+    assert r["detail"]["n_industries"] == 12
