@@ -1206,3 +1206,104 @@ def test_s7_rel_strength_arithmetic():
     bench = [(f"2020-01-{i+1:02d}", 50.0) for i in range(63)] + [("2020-04-01", 51.0)]
     v = S7B._rel_strength(sect, bench)
     assert abs(v - 0.08) < 1e-12
+
+
+# --------------------------------------------------------------- S8
+
+from builders import s8_epicenter_fracture as S8B  # noqa: E402
+
+
+def _s8_fixture(con, n=600, leader="XLK_CLOSE", leader_dd=0.0,
+                bench_dd=0.0, leader_below_dma=False):
+    """Bench rises steadily; every sector tracks it. `leader` gets extra 2y RS,
+    then optionally a drawdown at the end."""
+    bench = [100.0 + i * 0.10 for i in range(n)]
+    if bench_dd:
+        bench = bench[:-40] + [bench[-40] * (1 - bench_dd)] * 40
+    _load_px(con, "SPY_CLOSE", bench)
+    asof = None
+    for name in S8B.SECTORS:
+        if name == leader:
+            vals = [bench[i] * (1 + 0.60 * i / n) for i in range(n)]
+            if leader_dd:
+                peak = vals[-60]
+                tail = [peak * (1 - leader_dd)] * 60
+                vals = vals[:-60] + tail
+            if leader_below_dma:
+                vals = vals[:-5] + [vals[-1] * 0.7] * 5
+        else:
+            vals = [bench[i] * (1 - 0.05 * i / n) for i in range(n)]
+        asof = _load_px(con, name, vals)
+    return asof
+
+
+def test_s8_identifies_the_leader_point_in_time():
+    con = db()
+    asof = _s8_fixture(con, leader="XLK_CLOSE")
+    d = S8B.compute(con, asof)["detail"]
+    assert d["leader"] == "XLK", d["rs_ranking_pct"]
+    assert d["leader_rs_2y_pct"] > 0
+    assert d["n_sectors"] == len(S8B.SECTORS)
+
+
+def test_s8_green_when_the_leader_is_intact():
+    con = db()
+    asof = _s8_fixture(con, leader="XLE_CLOSE")
+    r = S8B.compute(con, asof)
+    assert r["detail"]["leader_drawdown_pct"] < S8B.ARM_DRAWDOWN * 100
+    assert r["state"] == "G"
+
+
+def test_s8_fires_when_the_leader_breaks_while_the_index_holds():
+    """NOTE the drawdown is sized at 16%: enough to clear the 15% red threshold
+    and to put the leader below its 200DMA, but not so deep that it destroys the
+    trailing-2y RS that made it the leader. A crash large enough to cost a
+    sector its leadership makes S8 look elsewhere -- see
+    test_s8_loses_sight_of_an_epicenter_that_has_fully_collapsed."""
+    con = db()
+    asof = _s8_fixture(con, leader="XLK_CLOSE", leader_dd=0.16)
+    r = S8B.compute(con, asof)
+    d = r["detail"]
+    assert d["leader_below_200dma"] is True, d
+    assert d["index_near_high"] is True, d
+    assert d["leader_drawdown_pct"] >= S8B.RED_DRAWDOWN * 100
+    assert r["state"] == "R"
+
+
+def test_s8_silent_when_the_index_has_already_broken():
+    """The point is the index has NOT confirmed. A leader falling in a market
+    that is already down 20% is just a bear market."""
+    con = db()
+    asof = _s8_fixture(con, leader="XLK_CLOSE", leader_dd=0.16, bench_dd=0.20)
+    r = S8B.compute(con, asof)
+    assert r["detail"]["index_near_high"] is False
+    assert r["state"] == "G"
+
+
+def test_s8_refuses_to_pick_a_leader_from_too_few_sectors():
+    con = db()
+    bench = [100.0 + i * 0.10 for i in range(600)]
+    _load_px(con, "SPY_CLOSE", bench)
+    asof = _load_px(con, "XLK_CLOSE", [b * 1.5 for b in bench])
+    r = S8B.compute(con, asof)
+    assert r["state"] == "NA"
+    assert "need >=6 sectors" in r["detail"]["reason"]
+
+
+def test_s8_loses_sight_of_an_epicenter_that_has_fully_collapsed():
+    """A PROPERTY of the frozen formula, pinned so it is not rediscovered.
+
+    The leader is whichever sector has the top trailing-2y RS at the evaluation
+    date. A sector that falls far enough loses that status, and S8 then measures
+    a different, intact sector and reads G. So S8 has a WINDOW in which it can
+    see a fracture -- deep enough to breach -15% and the 200DMA, shallow enough
+    to remain the 2y leader -- and goes quiet once the collapse is complete.
+
+    That is not a defect to patch: the registry defines the leader this way and
+    the thresholds are frozen. It is a limit on what the signal can be asked."""
+    con = db()
+    asof = _s8_fixture(con, leader="XLK_CLOSE", leader_dd=0.22,
+                       leader_below_dma=True)          # -22% then a further -30%
+    d = S8B.compute(con, asof)["detail"]
+    assert d["leader"] != "XLK", "a fully collapsed sector is no longer the leader"
+    assert d["leader_drawdown_pct"] < S8B.ARM_DRAWDOWN * 100

@@ -20,8 +20,9 @@ from builders import s4_funding as S4              # noqa: E402
 from builders import f3_vix_term_slope as F3       # noqa: E402
 from builders import s14_vol_structure as S14      # noqa: E402
 from builders import s7_defensive_rotation as S7   # noqa: E402
+from builders import s8_epicenter_fracture as S8   # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -53,6 +54,12 @@ ANCHORS = {
            ("2011-08-08", "2011 correction"),
            ("2018-02-06", "2018 volmageddon"),
            ("2020-03-20", "COVID"),
+           ("2026-08-28", "today")],
+    "S8": [("2020-02-19", "COVID peak"),
+           ("2021-11-19", "SPX near high; ARKK/growth already fracturing"),
+           ("2022-01-03", "SPX 2022 peak"),
+           ("2024-09-30", "the date S7 fired"),
+           ("2025-02-19", "recent high"),
            ("2026-08-28", "today")],
     "S7": [("2018-01-26", "SPX at its high before the Feb-2018 break"),
            ("2020-02-19", "COVID peak -- the canonical near-high test"),
@@ -104,6 +111,16 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S8":
+        print(f"    leader {d['leader']} (2y RS {d['leader_rs_2y_pct']:+.1f}% "
+              f"vs bench, from {d['n_sectors']} sectors)")
+        print(f"    leader {d['leader_last']} vs 52w high {d['leader_52w_high']}"
+              f" = -{d['leader_drawdown_pct']:.2f}% "
+              f"(arm {d['arm_at_pct']:.0f}%, red {d['red_at_pct']:.0f}%)"
+              f"  below200dma={d['leader_below_200dma']}")
+        print(f"    index {d['bench_pct_below_high']:.2f}% below its high -> "
+              f"near_high={d['index_near_high']}")
+        print(f"    RS rank {list(d['rs_ranking_pct'].items())[:4]}")
     elif sig == "S7":
         print(f"    mean RS 63d {d['mean_rs_63d_pct']:+.2f}% "
               f"(arm >{d['arm_pct']:.0f}%, red >{d['red_pct']:.0f}%)  "
