@@ -1545,3 +1545,60 @@ def test_s3_cre_can_fire_independently_once_ingested():
     r = S3B.compute(con, "2026-08-28")
     assert r["state"] == "R"
     assert r["detail"]["cre_net_tightening"] == 35.0
+
+
+def test_l4a_needs_s4_red_AND_two_stressed_markets():
+    """Report line 601: 'S4 red + breadth-of-stress across >=2 funding markets'.
+    One market at extreme stress is not a seizure."""
+    con = db()
+    n = 300
+    # CP-Tbill blows out; SOFR-IORB stays calm -> S4 red is possible but breadth is 1
+    _load_daily(con, "RIFSPPFAAD90NB",
+                [0.30 + 0.01 * (i % 5) for i in range(n - 1)] + [9.0])
+    _load_daily(con, "DTB3", [0.1] * n)
+    _load_daily(con, "SOFR", [0.50 + 0.01 * (i % 5) for i in range(n)])
+    asof = _load_daily(con, "IORB", [0.4] * n)
+    r = L4.funding_seizure(con, asof)
+    d = r["detail"]
+    assert d["s4_state"] == "R", d
+    assert len(d["markets_stressed"]) < L4.MIN_STRESSED_MARKETS, d
+    assert r["state"] == "G", "one market is not a seizure"
+
+
+def test_l4a_fires_when_two_markets_are_stressed_together():
+    con = db()
+    n = 300
+    _load_daily(con, "RIFSPPFAAD90NB",
+                [0.30 + 0.01 * (i % 5) for i in range(n - 1)] + [6.0])
+    _load_daily(con, "DTB3", [0.1] * n)
+    _load_daily(con, "SOFR",
+                [0.50 + 0.01 * (i % 5) for i in range(n - 1)] + [6.0])
+    asof = _load_daily(con, "IORB", [0.4] * n)
+    r = L4.funding_seizure(con, asof)
+    d = r["detail"]
+    assert d["s4_state"] == "R" and len(d["markets_stressed"]) >= 2, d
+    assert r["state"] == "B", "a fired propagation condition emits B"
+
+
+def test_l4a_na_in_historic_mode_because_breadth_is_unmeasurable():
+    """TED alone is one market. A single spread cannot confirm itself."""
+    con = db()
+    asof = _load_daily(con, "TEDRATE", [0.2] * 252 + [1.6] * 6, start="2007-01-01")
+    r = L4.funding_seizure(con, asof)
+    assert r["state"] == "NA"
+    assert "HISTORIC mode" in r["detail"]["reason"]
+
+
+def test_l4a_reuses_s4s_own_threshold():
+    """No new number: per-market stress uses S4's frozen threshold_arm."""
+    from builders import s4_funding as _S4
+    con = db()
+    n = 300
+    _load_daily(con, "RIFSPPFAAD90NB",
+                [0.30 + 0.01 * (i % 5) for i in range(n - 1)] + [6.0])
+    _load_daily(con, "DTB3", [0.1] * n)
+    _load_daily(con, "SOFR",
+                [0.50 + 0.01 * (i % 5) for i in range(n - 1)] + [6.0])
+    asof = _load_daily(con, "IORB", [0.4] * n)
+    d = L4.funding_seizure(con, asof)["detail"]
+    assert d["stress_threshold_z"] == _S4.ARM_Z

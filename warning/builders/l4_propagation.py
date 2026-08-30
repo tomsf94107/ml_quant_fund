@@ -62,14 +62,68 @@ CORR_JUMP_MIN = 0.0        # must have risen over the window
 def compute_all(con, asof):
     """Returns {condition_id: result-dict} for all five L4 conditions."""
     return {
-        "L4A": _na("L4A", asof, "funding seizure needs S4 (builder not implemented) "
-                                "plus breadth-of-stress across >=2 funding markets"),
+        "L4A": funding_seizure(con, asof),
         "L4B": spread_blowout(con, asof),
         "L4C": correlation_spike(con, asof),
         "L4D": _na("L4D", asof, "forced deleveraging needs S10 margin data "
                                 "(FINRA xlsx not ingested) + vol clustering"),
         "L4E": _na("L4E", asof, "hedging feedback needs F3 (VIX curve) and F9 "
                                 "(negative-gamma estimate, experimental)"),
+    }
+
+
+# --- L4A: funding seizure ----------------------------------------------------
+# Report line 601: "funding seizure (S4 red + breadth-of-stress across >=2
+# funding markets)".
+#
+# BREADTH IS MEASURED WITH S4'S OWN ARM THRESHOLD, NOT A NEW ONE.
+# The report does not quantify "stress" per market. Inventing a number would
+# breach rule #3, so a leg counts as stressed when its z exceeds S4's own
+# threshold_arm (z>1.5) -- a frozen value already in the registry, reused rather
+# than replaced. Recorded as DECISIONS.md D18.
+#
+# Only S4's MODERN mode exposes separate markets (CP-Tbill, SOFR-IORB, ABCP).
+# Historic mode is TED alone: one market, so breadth is unmeasurable and L4A
+# reports NA rather than treating a single spread as its own confirmation.
+MIN_STRESSED_MARKETS = 2
+
+
+def funding_seizure(con, asof):
+    from builders import s4_funding as _S4
+    s4 = _S4.compute(con, asof)
+    d = s4.get("detail", {})
+
+    if s4["state"] == "NA":
+        return _na("L4A", asof, f"S4 unavailable: {d.get('reason', 'unknown')}")
+    if d.get("mode") != "modern":
+        return _na("L4A", asof,
+                   "S4 is in HISTORIC mode (TED only). Breadth across >=2 "
+                   "funding markets cannot be measured from a single spread, "
+                   "and one market is not a seizure.")
+
+    legs = d.get("legs") or {}
+    stressed = {}
+    for name, v in legs.items():
+        z = v.get("z", v.get("z_stress"))
+        if z is not None and z > _S4.ARM_Z:
+            stressed[name] = z
+
+    fired = (s4["state"] == "R" and len(stressed) >= MIN_STRESSED_MARKETS)
+    return {
+        "signal_id": "L4A", "layer": LAYER, "asof": str(asof),
+        "state": "B" if fired else "G",
+        "raw_value": float(len(stressed)), "zscore": s4.get("zscore"),
+        "stale": bool(s4.get("stale")), "stale_days": s4.get("stale_days"),
+        "persistence_days": 1, "source_asof": s4.get("source_asof"),
+        "detail": {"condition": "funding seizure",
+                   "s4_state": s4["state"], "s4_composite_z": d.get("composite_z"),
+                   "markets_available": sorted(legs),
+                   "markets_stressed": {k: round(v, 2) for k, v in stressed.items()},
+                   "needs_stressed": MIN_STRESSED_MARKETS,
+                   "stress_threshold_z": _S4.ARM_Z,
+                   "threshold_note": "per-market stress uses S4's own "
+                                     "threshold_arm; no new number invented",
+                   "fired": fired},
     }
 
 

@@ -582,3 +582,39 @@ usable denominator.
 credit crisis cannot disprove a crisis detector. The finding is that the sample
 cannot support a verdict either way, and that no verdict should be implied by
 the composite once it turns on.
+
+
+---
+
+## D18 — L4A measures "breadth of stress" with S4's own arm threshold
+
+**Where:** `warning/builders/l4_propagation.py::funding_seizure`
+
+**Gap.** Report line 601 defines L4A as "funding seizure (S4 red +
+breadth-of-stress across >=2 funding markets)". It quantifies neither what makes
+an individual market "stressed" nor which markets count.
+
+**Default and why.** A market counts as stressed when its own z exceeds S4's
+`threshold_arm` (z>1.5) -- a value already frozen in the registry for exactly
+this data, reused rather than replaced. Inventing a fresh number would breach
+rule #3; borrowing the one the registry already applies to these same series
+does not.
+
+The markets are S4's modern legs: CP-Tbill, SOFR-IORB, and the ABCP 4-week
+delta. Those are the three funding markets the registry itself names for S4.
+
+**Historic mode returns NA, deliberately.** S4's historic mode is TED alone.
+One spread cannot supply breadth across two markets, and treating it as its own
+confirmation would be circular. L4A therefore reports NA whenever S4 is in
+historic mode rather than degrading to "S4 red" with the breadth condition
+quietly dropped -- the same discipline applied to S4's own D11.
+
+**Operational significance.** Under D10 an L4 condition reaches the band even
+when coverage is inadequate. With L1 at 0% and the composite frozen at
+INSUFFICIENT_DATA, L4A is one of the few paths by which this system can say
+anything at all today. Building it materially improves live usefulness without
+waiting on the blocked L1 downloads.
+
+**Coverage after this:** L4 goes 2/5 to 3/5 (60%). Still below the 70% floor, so
+L4 remains an NA layer -- L4D needs S10 (FINRA margin) and L4E needs F9
+(negative-gamma, Phase 5). The composite still cannot turn on.
