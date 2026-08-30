@@ -28,7 +28,9 @@ USAGE
     python warning/ingest_spx.py --prices prices.db --db warning.db --ticker SPY
 """
 import argparse
+import os
 import sqlite3
+import sys
 from datetime import date, timedelta
 
 SERIES_SUFFIX = "_CLOSE"
@@ -72,6 +74,13 @@ def _from_massive(ticker, start):
     intraday reconciler on 2026-08-30 -- so only the DATE is taken here, which is
     all a daily close needs.
     """
+    # This file lives in warning/, so Python puts THAT directory on sys.path,
+    # not the repo root -- `from features import ...` fails here even though the
+    # same import works from a one-liner run at the root. Add the parent
+    # explicitly rather than depending on the caller's working directory.
+    _root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if _root not in sys.path:
+        sys.path.insert(0, _root)
     from features import massive_client as mc
     from datetime import date as _date
     h = mc.download(ticker, start=start, end=_date.today().isoformat(),
