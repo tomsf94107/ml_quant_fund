@@ -1488,3 +1488,60 @@ def test_s5_always_reports_the_survivorship_caveat():
     asof = _s5_load(con, [100.0 + i * 0.1 for i in range(300)])
     d = S5B.compute(con, asof)["detail"]
     assert "delisted names absent" in d["SURVIVORSHIP"]
+
+
+# --------------------------------------------------------------- S3
+
+from builders import s3_sloos as S3B  # noqa: E402
+
+
+def test_s3_level_thresholds():
+    con = db()
+    for level, want in ((5.0, "G"), (10.0, "G"), (10.1, S3B.AMBER_STATE),
+                        (20.0, S3B.AMBER_STATE), (20.1, "R"), (83.6, "R")):
+        put(con, "DRTSCILM", "2026-07-01", "2026-08-05", level)
+        r = S3B.compute(con, "2026-08-28")
+        assert r["state"] == want, f"level {level} -> {r['state']}, want {want}"
+        con.execute("DELETE FROM data_vintages WHERE series_id='DRTSCILM'")
+
+
+def test_s3_is_a_level_not_a_zscore():
+    """Immune to D12's self-neutralization: a level threshold cannot be absorbed
+    by its own trailing window. +25 reads red whether or not the recent history
+    was calm or already extreme."""
+    con = db()
+    for q in range(1, 13):
+        put(con, "DRTSCILM", f"2024-{q:02d}-01" if q <= 12 else "2024-12-01",
+            f"2024-{q:02d}-15", 60.0)          # a sustained extreme regime
+    put(con, "DRTSCILM", "2026-07-01", "2026-08-05", 25.0)
+    r = S3B.compute(con, "2026-08-28")
+    assert r["state"] == "R", "a level of +25 is red regardless of context"
+
+
+def test_s3_returns_NA_before_alfred_vintages_exist():
+    """The observations run to 1990 but ALFRED's earliest DRTSCILM vintage is
+    2010-04-20. A point-in-time read before then must see NOTHING -- silently
+    using today's revision would be the pub_date bug all over again."""
+    con = db()
+    put(con, "DRTSCILM", "2007-10-01", "2010-04-20", 19.2)
+    assert S3B.compute(con, "2007-12-31")["state"] == "NA"
+    r = S3B.compute(con, "2012-01-01")
+    assert r["state"] == S3B.AMBER_STATE
+    assert r["detail"]["ci_net_tightening"] == 19.2
+
+
+def test_s3_declares_the_missing_cre_leg():
+    con = db()
+    put(con, "DRTSCILM", "2026-07-01", "2026-08-05", 5.0)
+    d = S3B.compute(con, "2026-08-28")["detail"]
+    assert d["cre_net_tightening"] is None
+    assert "NOT evaluated" in d["cre_note"]
+
+
+def test_s3_cre_can_fire_independently_once_ingested():
+    con = db()
+    put(con, "DRTSCILM", "2026-07-01", "2026-08-05", 2.0)     # C&I benign
+    put(con, "DRTSCRE", "2026-07-01", "2026-08-05", 35.0)     # CRE past +30
+    r = S3B.compute(con, "2026-08-28")
+    assert r["state"] == "R"
+    assert r["detail"]["cre_net_tightening"] == 35.0

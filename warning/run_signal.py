@@ -23,8 +23,9 @@ from builders import s7_defensive_rotation as S7   # noqa: E402
 from builders import s8_epicenter_fracture as S8   # noqa: E402
 from builders import s9_short_interest as S9      # noqa: E402
 from builders import s5_breadth as S5             # noqa: E402
+from builders import s3_sloos as S3               # noqa: E402
 
-BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5}
+BUILDERS = {"S1": S1, "S2": S2, "F2": F2, "S4": S4, "F3": F3, "S14": S14, "S7": S7, "S8": S8, "S9": S9, "S5": S5, "S3": S3}
 
 ANCHORS = {
     "S1": [("2000-02-29", "registry: fired Feb 2000 -- see DECISIONS.md D4"),
@@ -56,6 +57,16 @@ ANCHORS = {
            ("2011-08-08", "2011 correction"),
            ("2018-02-06", "2018 volmageddon"),
            ("2020-03-20", "COVID"),
+           ("2026-08-28", "today")],
+    # DRTSCILM vintages start 2010-04-20, so the pre-2010 anchors MUST read NA.
+    # They are kept deliberately: an NA there is the correct answer and proves
+    # the point-in-time reader is not silently using today's revisions.
+    "S3": [("2000-06-30", "registry: REPRODUCIBLE 1999-2000 -- expect NA, pre-vintage"),
+           ("2007-10-31", "registry: fired Oct-07 +19.2 -- expect NA, pre-vintage"),
+           ("2008-12-31", "registry verified print 83.6 -- expect NA, pre-vintage"),
+           ("2012-01-01", "first era ALFRED vintages cover"),
+           ("2020-04-30", "COVID credit tightening"),
+           ("2022-01-03", "SPX 2022 peak -- registry says silent"),
            ("2026-08-28", "today")],
     "S5": [("2020-02-19", "COVID peak"),
            ("2021-12-31", "registry: fired late-2021 (literature-sourced)"),
@@ -123,6 +134,12 @@ def show(sig, r):
                   f"trough {rs.get('trough')}  rise {rs.get('rise_bp')}bp")
         if rs.get("reason"):
             print(f"    {rs['reason']}")
+    elif sig == "S3":
+        print(f"    C&I net tightening {d['ci_net_tightening']:+.1f} "
+              f"(arm >{d['arm_above']:.0f}, red >{d['red_above']:.0f})  "
+              f"survey {d['survey_quarter']} ({d['days_since_survey']}d ago)")
+        if d.get("cre_note"):
+            print(f"    {d['cre_note']}")
     elif sig == "S5":
         print(f"    legs fired {d['legs_fired']}/3 (arm 1, red 2)  "
               f"computable {d['legs_computable']}  index "
