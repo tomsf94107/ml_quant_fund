@@ -130,7 +130,7 @@ What runs, in order:
 |---|---|---|
 | 1. Dark pool | `initiate_darkpool_universe.py` | **First — perishable.** Walks all unwalked tickers within budget. |
 | 2. OHLCV | `backfill_raw_bars.py` | No-op if §3 already seeded |
-| 3. Short interest | `finra_short_interest.py` | **NOT automatic.** Universe = `earnings_surprises` union `tickers.txt` (union added 2026-08-31). `fetch_log` caches per QUARTER, so cached quarters skip new tickers: `sqlite3 short_interest.db "DELETE FROM fetch_log;"` then re-fetch. **VPN REQUIRED** -- FINRA is ISP-filtered like cboe.com; a blocked fetch logs EMPTY and still prints DONE with unchanged row counts. |
+| 3. Short interest | `finra_short_interest.py` | **NOT automatic.** Universe = `earnings_surprises` union `tickers.txt` (union added 2026-08-31). `fetch_log` caches per QUARTER, so cached quarters skip new tickers: `sqlite3 short_interest.db "DELETE FROM fetch_log;"` then re-fetch -- and run `python apply_entity_dates.py` afterwards, because REPLACE INTO restores purged pre-entity rows for recycled tickers. **VPN REQUIRED** -- FINRA is ISP-filtered like cboe.com; a blocked fetch logs EMPTY and still prints DONE with unchanged row counts. |
 | 4. Monitor | `monitor_ticker.py` | Form 4 insider + peer panel + institutional |
 | Options / greeks | — | **Not wired.** Shows `VERIFY-CMD` |
 | Earnings | — | **Not wired.** Shows `NEEDS-BUILD` |
