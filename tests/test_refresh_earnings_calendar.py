@@ -65,15 +65,19 @@ def test_refresh_populates_rows():
 
 
 def test_nvda_has_next_earnings():
-    """NVDA reports 2026-05-20 — verify it's in the calendar."""
+    """NVDA must have a FUTURE next_date — verify it's in the calendar."""
     REC.refresh(DB_PATH, verbose=False)
     with sqlite3.connect(DB_PATH) as conn:
         row = conn.execute(
             "SELECT ticker, next_date, days_until FROM earnings_calendar WHERE ticker='NVDA'"
         ).fetchone()
     assert row is not None, "NVDA missing from earnings_calendar"
-    assert row[1] == "2026-05-20", f"Expected NVDA next 2026-05-20, got {row[1]}"
-    assert 0 < row[2] < 30, f"NVDA days_until should be small, got {row[2]}"
+    import datetime as _dt
+    from zoneinfo import ZoneInfo as _ZI
+    _today = _dt.datetime.now(_ZI("America/New_York")).date()
+    _nxt = _dt.date.fromisoformat(row[1])
+    assert _nxt >= _today, f"NVDA next_date {row[1]} is in the past (today ET {_today})"
+    assert 0 <= row[2] <= 120, f"NVDA days_until out of range: {row[2]}"
 
 
 def test_no_past_earnings_in_calendar():
