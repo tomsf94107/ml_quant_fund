@@ -33,11 +33,28 @@ with open(led, newline="") as f:
     rd = csv.DictReader(f); fields = rd.fieldnames; rows = list(rd)
 if not rows: print("  ledger empty; nothing to close"); sys.exit(0)
 
-cal = []
-if os.path.isfile(pdb):
-    c = sqlite3.connect("file:" + os.path.abspath(pdb) + "?mode=ro", uri=True, timeout=30)
-    try: cal = [r[0] for r in c.execute("SELECT DISTINCT date FROM daily_prices ORDER BY date")]
-    finally: c.close()
+def _load_calendar(p):
+    ap_ = os.path.abspath(p)
+    attempts = [("file:%s?mode=ro" % ap_, True),
+                ("file:%s?mode=ro&immutable=1" % ap_, True),
+                (p, False)]
+    for target, as_uri in attempts:
+        try:
+            c = sqlite3.connect(target, uri=True, timeout=30) if as_uri else sqlite3.connect(target, timeout=30)
+            try:
+                return [r[0] for r in c.execute("SELECT DISTINCT date FROM daily_prices ORDER BY date")]
+            finally:
+                c.close()
+        except sqlite3.OperationalError:
+            continue
+    return []
+
+cal = _load_calendar(pdb) if os.path.isfile(pdb) else []
+if not cal:
+    print("[STOP] could not read a trading calendar from %s" % pdb)
+    print("  Without it, elapsed trading days cannot be verified and a cohort")
+    print("  could be closed before its hold completes. Refusing.")
+    sys.exit(1)
 cal_idx = {d: i for i, d in enumerate(cal)}
 
 def elapsed_td(gen):
