@@ -110,6 +110,8 @@ def main():
     ap.add_argument("--vol-window",type=int,default=20,
         help="trailing days for the realized-vol estimate used by --vol-target")
     ap.add_argument("--max-stale-days",type=int,default=30)
+    ap.add_argument("--max-px-lag-td",type=int,default=5,
+                    help="drop a ticker whose latest price lags the newest close by more than N trading days")
     ap.add_argument("--force",action="store_true",help="emit positions even if the settlement is stale")
     ap.add_argument("--log-ledger",action="store_true")
     a=ap.parse_args(); a.root=os.path.expanduser(a.root)
@@ -176,8 +178,42 @@ def main():
         "XBI","IBB","KRE","KBE","ITB","XHB","JETS","TAN","ICLN","LIT","URA",
     }
 
+    _meta_p = os.path.join(a.root, "tickers_metadata.csv")
+    _meta_etf = set()
+    if os.path.isfile(_meta_p):
+        try:
+            with open(_meta_p, newline="") as _mf:
+                _mrows = list(csv.reader(_mf))
+            _mh = [h.strip().lower() for h in _mrows[0]]
+            _mt = next((k for k, h in enumerate(_mh) if h in ("ticker", "symbol")), 0)
+            _mb = next((k for k, h in enumerate(_mh) if h in ("bucket", "sector")), None)
+            if _mb is not None:
+                for _r in _mrows[1:]:
+                    if _r and len(_r) > max(_mt, _mb) and _r[_mt].strip():
+                        if _r[_mb].strip().lower() in ("market etf", "sector etf", "etf"):
+                            _meta_etf.add(_r[_mt].strip().upper())
+        except Exception as _e:
+            print("  [WARN] metadata ETF scan failed (%s); hardcoded list only" % _e)
+    _drift = _meta_etf - ETF_EXCLUDE
+    if _drift:
+        print("  metadata-tagged ETFs missing from the hardcoded list: %s" % ", ".join(sorted(_drift)))
+    ETF_EXCLUDE = ETF_EXCLUDE | _meta_etf
+
     # rankable universe: has DTC at latest settlement (clip junk) AND a price
-    uni=[]; skipped_etf=[]
+    _cal=[]
+    try:
+        _cc=ro(prices_db)
+        try: _cal=[r[0] for r in Q(_cc,"SELECT DISTINCT date FROM daily_prices ORDER BY date")]
+        finally: _cc.close()
+    except Exception: _cal=[]
+    _cal_idx={d:i for i,d in enumerate(_cal)}
+    def _lag_td(dobj):
+        try:
+            i=_cal_idx.get(dobj.isoformat())
+            if i is not None: return len(_cal)-1-i
+        except Exception: pass
+        return None
+    uni=[]; skipped_etf=[]; skipped_nopx=[]; skipped_stale=[]
     for tk,dtc in rows:
         try: v=float(dtc)
         except Exception: continue
@@ -185,10 +221,21 @@ def main():
         tku=tk.upper()
         if tku in ETF_EXCLUDE:
             skipped_etf.append(tku); continue
-        if tku in last_px: uni.append((tku,v))
+        if tku not in last_px:
+            skipped_nopx.append(tku); continue
+        _lg=_lag_td(last_dt.get(tku)) if tku in last_dt else None
+        if _lg is not None and _lg > a.max_px_lag_td:
+            skipped_stale.append("%s(%dtd)"%(tku,_lg)); continue
+        uni.append((tku,v))
     if skipped_etf:
         print("  excluded %d ETFs (short interest in an ETF is market-making, not a view): %s"
               %(len(skipped_etf), ", ".join(sorted(skipped_etf)[:12])))
+    if skipped_nopx:
+        print("  dropped %d name(s) with NO price in daily_prices: %s"
+              %(len(skipped_nopx), ", ".join(sorted(skipped_nopx)[:15])))
+    if skipped_stale:
+        print("  dropped %d name(s) on STALE prices (> %d td behind newest close): %s"
+              %(len(skipped_stale), a.max_px_lag_td, ", ".join(sorted(skipped_stale))))
     if len(uni)<a.min_names:
         print("\n  [STOP] only %d rankable names (need %d)."%(len(uni),a.min_names)); return
     uni.sort(key=lambda x:x[1])  # ascending DTC
