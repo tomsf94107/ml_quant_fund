@@ -42,9 +42,9 @@ cal_idx = {d: i for i, d in enumerate(cal)}
 
 def elapsed_td(gen):
     if not cal: return None
-    if gen in cal_idx: return len(cal) - 1 - cal_idx[gen]
+    if gen in cal_idx: return len(cal) - cal_idx[gen]
     nxt = [d for d in cal if d >= gen]
-    return (len(cal) - 1 - cal_idx[nxt[0]]) if nxt else None
+    return (len(cal) - cal_idx[nxt[0]]) if nxt else None
 
 cohorts = {}
 for r in rows: cohorts.setdefault((r.get("generated_on"), r.get("settlement")), []).append(r)
