@@ -216,6 +216,10 @@ def main():
     try:
         if not require(has_table(ce,"earnings_surprises"),"no earnings_surprises"): return
         universe=set(r[0].upper() for r in Q(ce,"SELECT DISTINCT ticker FROM earnings_surprises WHERE ticker IS NOT NULL"))
+        import os as _os
+        _tt=_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),"tickers.txt")
+        if _os.path.exists(_tt):
+            universe|={ln.strip().upper() for ln in open(_tt) if ln.strip() and not ln.lstrip().startswith("#")}
     finally:
         ce.close()
     print("  universe: %d tickers (from earnings_surprises)"%len(universe))

@@ -429,3 +429,7 @@ HYG,Market ETF,tactical,0.0,High-yield credit — risk appetite
 LQD,Market ETF,tactical,0.0,IG credit — risk appetite
 TLT,Market ETF,tactical,0.0,Long Treasuries — rates
 VIXY,Market ETF,tactical,0.0,Short-term VIX futures
+CRDO,Core Silicon,secondary,,
+PURR,Crypto,lotto,,
+OKTA,Enterprise Software,tactical,,
+BE,Power/Industrial,lotto,,

@@ -2104,7 +2104,7 @@ def section_earnings_calendar(ticker: str) -> None:
         if surprise is None:
             try:
                 if eps_act is not None and eps_est not in (None, 0):
-                    surprise = (float(eps_act) - float(eps_est)) / abs(float(eps_est)) * 100
+                    surprise = ((float(eps_act) - float(eps_est)) / abs(float(eps_est)) * 100 if float(eps_est) else None)
             except (TypeError, ValueError):
                 pass
         # Sanity tripwire, not a defense: 5.3% of rows exceed |100%| legitimately
@@ -2119,7 +2119,7 @@ def section_earnings_calendar(ticker: str) -> None:
         if rev_surprise is None:
             try:
                 if rev_act is not None and rev_est not in (None, 0):
-                    rev_surprise = (float(rev_act) - float(rev_est)) / abs(float(rev_est)) * 100
+                    rev_surprise = ((float(rev_act) - float(rev_est)) / abs(float(rev_est)) * 100 if float(rev_est) else None)
             except (TypeError, ValueError):
                 pass
 
