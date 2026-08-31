@@ -169,8 +169,8 @@ def main():
     # them straight through. Verify against the metadata, do not trust it.
     ETF_EXCLUDE = {
         "SPY","QQQ","IWM","DIA","VOO","VTI","VTV","VUG","EFA","EEM","VEA","VWO",
-        "SMH","SOXX","ARKK","ARKG","IBIT","GBTC","BITO",
-        "GLD","SLV","USO","UNG","DBC","TLT","IEF","SHY","HYG","LQD","AGG","BND",
+        "IGV","SMH","SOXX","ARKK","ARKG","IBIT","GBTC","BITO",
+        "AAAU","GLD","SLV","USO","UNG","DBC","TLT","IEF","SHY","HYG","LQD","AGG","BND",
         "VIXY","VXX","UVXY","SVXY",
         "XLB","XLC","XLE","XLF","XLI","XLK","XLP","XLRE","XLU","XLV","XLY",
         "XBI","IBB","KRE","KBE","ITB","XHB","JETS","TAN","ICLN","LIT","URA",
