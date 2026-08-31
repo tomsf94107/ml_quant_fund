@@ -13,7 +13,7 @@ to the current pipeline setup. Worked example uses **WDAY**; substitute any symb
 |---|---|
 | **Data BEFORE enrollment** | A ticker in `tickers.txt` with no price data trips the stale-panel guard and logs `REFUSING` on every run. |
 | **Dark pool is perishable** | UW serves ~44 days and nothing older. Unfetched days are **permanently lost**. Backfill it first, same day. |
-| **`tickers.txt` is the universe** | `daily_runner.load_tickers()` reads it. `tickers_metadata.csv` is metadata only and enrols nothing. |
+| **`tickers.txt` is the universe** | `daily_runner.load_tickers()` reads it. `tickers_metadata.csv` enrols nothing BUT is load-bearing: its `bucket` drives `resolve_sector_etf` tier-2 AND `ETF_EXCLUDE` (since 2026-08-31). An unmapped bucket silently falls back to XLK -- not the market. |
 | **Always `--dry-run` first** | Prints the exact commands and the classification before anything is written. |
 
 ### The three universe files
@@ -78,6 +78,34 @@ sqlite3 prices.db "SELECT COUNT(*), MIN(d), MAX(d) FROM raw_bars WHERE ticker='W
 
 Set `end` to the last completed trading day.
 
+### 3b. Sync raw_bars into daily_prices -- REQUIRED, easy to miss
+
+`raw_bars` is NOT what the book reads. `si_positions_live.py` ranks on
+`daily_prices.adj_close`; a ticker absent there is dropped SILENTLY (this cost a
+full session on 2026-08-31 -- BE/CRDO were invisible with 271 rows each).
+
+`sync_prices_from_rawbars.py` is incremental on a GLOBAL date watermark, so a new
+ticker whose history sits below it is never synced. **NEVER** run
+`--rebuild-from` with an early date: it DELETEs the range across the whole table,
+and `daily_prices` (1.59M rows, back to 2008) is LARGER than `raw_bars` (1.02M,
+back to 2016). A deep rebuild destroys history raw cannot reproduce. A
+`--rebuild-from 2025-08-01` on 2026-08-31 wiped dividend adjustment from 52,991
+rows across 300 tickers; recovered only because a pre-rebuild backup existed.
+
+```bash
+python backfill_daily_prices_tickers.py --tickers WDAY --dry-run
+python backfill_daily_prices_tickers.py --tickers WDAY
+```
+
+Do NOT backfill DOW, FOX, FOXA, IR -- `raw_bars` carries predecessor entities.
+
+**Basis warning.** Rows written before the 2026-06-29 yfinance->Polygon migration
+are split AND dividend adjusted. Everything written since is SPLIT ONLY:
+`massive_client.py:481` maps `auto_adjust` to Polygon's `adjusted=` param, and
+Polygon's `/v2/aggs` adjustment is split-only. The comment at
+`fetch_and_pead.py:100` claiming equivalent `auto_adjust=True` semantics is
+WRONG. No dividend-adjusted source exists in the stack today.
+
 **Expected:** ~2,500 rows for a mature large-cap, back to 2016-08.
 
 **Stop if:**
@@ -102,7 +130,7 @@ What runs, in order:
 |---|---|---|
 | 1. Dark pool | `initiate_darkpool_universe.py` | **First — perishable.** Walks all unwalked tickers within budget. |
 | 2. OHLCV | `backfill_raw_bars.py` | No-op if §3 already seeded |
-| 3. Short interest | `finra_short_interest.py` | Whole-dataset pull; new ticker included automatically |
+| 3. Short interest | `finra_short_interest.py` | **NOT automatic.** Universe = `earnings_surprises` union `tickers.txt` (union added 2026-08-31). `fetch_log` caches per QUARTER, so cached quarters skip new tickers: `sqlite3 short_interest.db "DELETE FROM fetch_log;"` then re-fetch. **VPN REQUIRED** -- FINRA is ISP-filtered like cboe.com; a blocked fetch logs EMPTY and still prints DONE with unchanged row counts. |
 | 4. Monitor | `monitor_ticker.py` | Form 4 insider + peer panel + institutional |
 | Options / greeks | — | **Not wired.** Shows `VERIFY-CMD` |
 | Earnings | — | **Not wired.** Shows `NEEDS-BUILD` |
@@ -142,7 +170,7 @@ python scripts/ticker_lifecycle.py --status WDAY
 | `repair_stale_feeds --dry-run` | `stale=0` |
 | `--status` | `tickers.txt (RUNNER)  PRESENT` |
 | Dark pool `MAX` | last trading day |
-| Short interest | may be `0` until the next FINRA cron — **expected, not a failure** |
+| Short interest | **must be non-zero.** `0` does NOT self-heal -- see step 3. A `0` means the ticker cannot enter the SI book at all. |
 | Form 4 | non-zero for a US domestic filer; `0` is normal for an ADR |
 
 ---
@@ -238,6 +266,11 @@ python scripts/dump_universe.py
 | Earnings date config manual | `No earnings date configured` | Open |
 | `ticker_lifecycle --retire` only logs if ticker was in the CSV | Incomplete retirement record | Open |
 | No `--move-to-watchlist` mode | Moves are logged as retirements | Open |
+| SI universe keyed to a data table, not the runner | New tickers silently get no SI | PARTIAL -- union patched 2026-08-31; `fetch_log` clear still manual |
+| `sync_prices_from_rawbars` global watermark | New tickers never reach `daily_prices` | Open -- use `backfill_daily_prices_tickers.py` |
+| `ETF_EXCLUDE` hand-maintained | Untagged funds rank into the book (AAAU, IGV, RSP found 2026-08-31) | PARTIAL -- now unions metadata-tagged ETFs |
+| Ticker reuse (4th corporate-action class) | SPCX, BETR splice two entities on one symbol | Open -- see HANDOFF_2026-08-22:238 |
+| No dividend-adjusted price source | `adj_close` is split-only since 2026-06-29 | Open -- needs Polygon `/v3/reference/dividends` build |
 
 ---
 
