@@ -222,7 +222,7 @@ def main():
             universe|={ln.strip().upper() for ln in open(_tt) if ln.strip() and not ln.lstrip().startswith("#")}
     finally:
         ce.close()
-    print("  universe: %d tickers (from earnings_surprises)"%len(universe))
+    print("  universe: %d tickers (from earnings_surprises + tickers.txt)"%len(universe))
 
     # auth
     token=a.token or get_token(a.client_id,a.client_secret)
