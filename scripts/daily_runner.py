@@ -128,6 +128,72 @@ def load_watchlist() -> list[str]:
     ]
 
 
+# Tickers whose generator has already failed this run. Keeps the log to
+# one line per ticker instead of one per ticker-horizon.
+_PREDICT_ERRORS_SEEN: set = set()
+
+# Minimum daily bars for a ticker to be eligible for a HIGH confidence
+# label. Measured 2026-09-01 on h=5 July+August: names with 250-999 bars
+# had a top-decile edge of -6.6pp against their OWN base rate -- their
+# most confident calls were worse than random -- while 1000+ names ran
+# +0.5 to +1.1pp. The boundary sits between 999 and 1000 bars, roughly
+# four years, which is also about what train_model needs for a 60/20/20
+# split to leave a usable training set.
+#
+# This changes ONLY the label. prob_up, prob_raw, prob_cal and the signal
+# are untouched; thin-history names are still predicted and still logged,
+# they are simply not eligible for the tier that horizon_health and the
+# dashboard select on.
+MIN_BARS_FOR_HIGH_CONF = 1000
+_BAR_COUNTS: dict = {}
+_GATE_LOGGED: set = set()
+
+
+def _bar_count(ticker: str) -> int:
+    """Daily bars for a ticker. Cached; 0 if unknown.
+
+    Returning 0 on failure is the safe direction: an unknown ticker is
+    treated as thin-history and loses HIGH eligibility rather than
+    silently keeping it.
+    """
+    if ticker in _BAR_COUNTS:
+        return _BAR_COUNTS[ticker]
+    n = 0
+    try:
+        import sqlite3 as _sq
+        _c = _sq.connect('file:prices.db?mode=ro', uri=True)
+        _r = _c.execute('SELECT COUNT(*) FROM raw_bars WHERE ticker=?',
+                        (ticker,)).fetchone()
+        _c.close()
+        n = int(_r[0]) if _r else 0
+    except Exception as _e:
+        print(f'[predict] bar-count lookup failed for {ticker}: {_e}')
+    _BAR_COUNTS[ticker] = n
+    return n
+
+
+def _confidence_for(ticker: str, prob_eff) -> str:
+    """Confidence label, gated on training history.
+
+    A ticker below MIN_BARS_FOR_HIGH_CONF can reach MEDIUM but never
+    HIGH, however extreme its probability. The label only ever moves
+    DOWN; the probability itself is never altered.
+    """
+    if prob_eff is None:
+        return 'LOW'
+    if prob_eff >= 0.70:
+        bars = _bar_count(ticker)
+        if bars < MIN_BARS_FOR_HIGH_CONF:
+            if ticker not in _GATE_LOGGED:
+                _GATE_LOGGED.add(ticker)
+                print(f'[predict] {ticker}: prob {prob_eff:.3f} would be '
+                      f'HIGH but only {bars} bars '
+                      f'(<{MIN_BARS_FOR_HIGH_CONF}) -> MEDIUM')
+            return 'MEDIUM'
+        return 'HIGH'
+    return 'MEDIUM' if prob_eff >= 0.55 else 'LOW'
+
+
 def log_prediction_to_db(
     ticker: str, horizon: int, signal: str,
     prob: float, prob_eff: float, run_date: str,
@@ -148,8 +214,21 @@ def log_prediction_to_db(
     prob_pct7:         float | None = None,
     overlay_downgraded: int   | None = None,
     overlay_reason:    str   | None = None,
+    error:             str   | None = None,
 ):
-    """Log prediction to accuracy.db for later reconciliation."""
+    """Log prediction to accuracy.db for later reconciliation.
+
+    If `error` is set the generator FAILED and its 0.0 is a placeholder,
+    not a probability. Writing it produces a row indistinguishable from a
+    maximum-confidence DOWN call. Found 2026-08-30: 60 such rows for CBRS
+    and SPCX, neither of which has ever been trained. An error is not a
+    prediction -- log it and write nothing.
+    """
+    if error:
+        if ticker not in _PREDICT_ERRORS_SEEN:
+            _PREDICT_ERRORS_SEEN.add(ticker)
+            print(f"[predict] SKIP {ticker}: {error}", flush=True)
+        return
     try:
         from accuracy.sink import log_prediction
         log_prediction(
@@ -159,7 +238,7 @@ def log_prediction_to_db(
             prob_up=prob_eff,
             prob_raw=prob,
             signal=signal,
-            confidence="HIGH" if prob_eff >= 0.70 else "MEDIUM" if prob_eff >= 0.55 else "LOW",
+            confidence=_confidence_for(ticker, prob_eff),
             is_watchlist=is_watchlist,
             tier=tier,
             # Schema v2 pass-through:
@@ -482,6 +561,7 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                     from signals.generator import _TICKER_METADATA
                     _tier = _TICKER_METADATA.get(ticker, {}).get("tier", "tactical")
                     log_prediction_to_db(
+                        error=getattr(sig, "error", None),
                         ticker=ticker, horizon=horizon,
                         signal=sig.today_signal,
                         prob=sig.today_prob,
@@ -771,6 +851,7 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                         from signals.generator import _TICKER_METADATA
                         _tier = _TICKER_METADATA.get(ticker, {}).get("tier", "tactical")
                         log_prediction_to_db(
+                            error=getattr(sig, "error", None),
                             ticker=ticker,
                             horizon=horizon,
                             signal=sig.today_signal,

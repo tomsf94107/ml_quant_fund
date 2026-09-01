@@ -231,6 +231,10 @@ def probe_borrow(ticker):
     if not rows:
         return None
     r = rows[0]
+    # UW returns newest-first; rows[0] is correct. What was missing is the
+    # OBSERVATION time -- without it the caller stamped its own clock and a
+    # 20-hour-old snapshot was recorded as a fresh reading.
+    obs_ts = r.get("timestamp")
     try:
         fee = float(r.get("fee_rate")) if r.get("fee_rate") is not None else None
     except (TypeError, ValueError):
@@ -239,19 +243,44 @@ def probe_borrow(ticker):
         av = int(r.get("short_shares_available")) if r.get("short_shares_available") is not None else None
     except (TypeError, ValueError):
         av = None
-    return {"fee": fee, "avail": av}
+    stale_h = None
+    if obs_ts:
+        try:
+            from datetime import datetime as _dt, timezone as _tz
+            _o = _dt.fromisoformat(str(obs_ts).replace("Z", "+00:00"))
+            stale_h = (_dt.now(_tz.utc) - _o).total_seconds() / 3600.0
+        except Exception:
+            stale_h = None
+    return {"fee": fee, "avail": av, "obs_ts": obs_ts, "stale_h": stale_h}
 
 
 def log_borrow_live(borrow_db, rows, ts):
-    """Point-in-time borrow series. CANNOT be honestly backfilled later."""
+    """Point-in-time borrow series. CANNOT be honestly backfilled later.
+
+    ts_utc is UW'S OBSERVATION TIME, not our probe time. Recording the probe
+    time made three probes of one unchanged 20-hour-old snapshot look like
+    three separate observations (found 2026-09-01). Since ts_utc is in the
+    primary key, repeat probes of unchanged data now collapse to a single row,
+    which is what a point-in-time series is supposed to do.
+
+    probed_at keeps our own clock, so the two are separable and the lag is
+    always recoverable.
+    """
     con = sqlite3.connect(borrow_db, timeout=30)
     con.execute("""CREATE TABLE IF NOT EXISTS borrow_live(
         ticker TEXT NOT NULL, ts_utc TEXT NOT NULL, fee_bps REAL,
         shares_avail INTEGER, source TEXT, PRIMARY KEY(ticker, ts_utc))""")
+    cols = [c[1] for c in con.execute("PRAGMA table_info(borrow_live)")]
+    if "probed_at" not in cols:
+        con.execute("ALTER TABLE borrow_live ADD COLUMN probed_at TEXT")
     con.executemany(
-        "INSERT OR REPLACE INTO borrow_live VALUES (?,?,?,?,?)",
-        [(r["ticker"], ts, (r["fee"] * 100.0) if r["fee"] is not None else None,
-          r["avail"], "UW:/api/shorts/{t}/data") for r in rows
+        "INSERT OR REPLACE INTO borrow_live "
+        "(ticker, ts_utc, fee_bps, shares_avail, source, probed_at) "
+        "VALUES (?,?,?,?,?,?)",
+        [(r["ticker"],
+          r.get("obs_ts") or ts,          # UW's clock, falling back to ours
+          (r["fee"] * 100.0) if r["fee"] is not None else None,
+          r["avail"], "UW:/api/shorts/{t}/data", ts) for r in rows
          if r.get("fee") is not None or r.get("avail") is not None])
     con.commit(); con.close()
 
