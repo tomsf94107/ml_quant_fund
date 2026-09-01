@@ -41,6 +41,23 @@ WHERE p.prob_up IS NOT NULL {extra}
 GROUP BY p.horizon;
 """
 
+def wilson(k, n, z=1.96):
+    """95% Wilson score interval for a proportion, as percentages.
+
+    Wilson rather than the normal approximation: it stays inside [0,1]
+    and does not collapse at small n, which is precisely the regime
+    these high-confidence cohorts live in (n=35 to n=61 on 30d windows).
+    """
+    import math
+    if not n:
+        return (None, None)
+    p = k / n
+    d = 1 + z * z / n
+    c = p + z * z / (2 * n)
+    s = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return (100.0 * (c - s) / d, 100.0 * (c + s) / d)
+
+
 def main():
     run_date = date.today().isoformat()
     con = sqlite3.connect(str(DB))
@@ -66,8 +83,34 @@ def main():
         for h in (1, 3, 5):
             if h in hd:
                 n, acc, ret = hd[h]
-                parts.append(f"h{h}: {acc}% (n={n}, ret={ret:+.2f}%)")
+                lo, hi = wilson(round(n * acc / 100.0), n) \
+                    if (acc is not None and n) else (None, None)
+                ci = f" [{lo:.1f}-{hi:.1f}]" if lo is not None else ""
+                parts.append(
+                    f"h{h}: {acc}%{ci} (n={n}, ret={ret:+.2f}%)")
         print(f"  [{band:8s} {win}d] " + "  |  ".join(parts))
+    # Flag horizons where the 30d interval CONTAINS the 90d point
+    # estimate. That is the comparison that prompted this: 49.2% (n=61)
+    # against 60.3% (n=847) looked like a collapse, but the 30d interval
+    # spans it, so the two windows are not distinguishable from these
+    # numbers alone.
+    _hc30, _hc90 = (summary.get(("highconf", 30), {}),
+                    summary.get(("highconf", 90), {}))
+    _overlap = []
+    for _h in sorted(set(_hc30) & set(_hc90)):
+        _n30, _a30, _ = _hc30[_h]
+        _n90, _a90, _ = _hc90[_h]
+        if None in (_a30, _a90) or not _n30:
+            continue
+        _lo, _hi = wilson(round(_n30 * _a30 / 100.0), _n30)
+        if _lo is not None and _lo <= _a90 <= _hi:
+            _overlap.append(f"h{_h}")
+    if _overlap:
+        print(f"  note: 30d interval contains the 90d value for "
+              f"{', '.join(_overlap)} -- those windows are NOT\n"
+              f"        distinguishable from these numbers. Use "
+              f"analysis/pooled_accuracy.py for a real read.")
+
     hc30 = summary.get(("highconf", 30), {})
     if 1 in hc30:
         n1, acc1, ret1 = hc30[1]
