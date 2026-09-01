@@ -346,7 +346,8 @@ def main():
         rows.append({"ticker": t, **m, "settle": s.get("settle"), "split_adj": bool(m["split_dates"]),
                      "dtc_finra": s.get("dtc_finra", np.nan),
                      "dtc_live": dtc_live, "si_chg": s.get("si_chg", np.nan),
-                     "fee": np.nan, "avail": np.nan})
+                     "fee": np.nan, "avail": np.nan,
+                     "stale_h": np.nan})
 
     if not rows:
         sys.exit("  no rows -- check raw_bars coverage and --si-db path")
@@ -378,7 +379,10 @@ def main():
                  df.assign(_prov=_prov).sort_values("_prov", ascending=False)
                    ["ticker"].head(n_probe).tolist())
         order = [t for t in order if t in set(df["ticker"])]
-        print(f"  probing live borrow fee for {len(order)} names ...")
+        # NOT "live": the UW feed updates 05:00-11:23 ET only, then
+        # stops for the day. See the freshness block below.
+        print(f"  probing borrow fee for {len(order)} names "
+              f"(UW feed updates 05:00-11:23 ET only) ...")
         for i, t in enumerate(order, 1):
             try:
                 p = probe_borrow(t)
@@ -387,6 +391,10 @@ def main():
             if p:
                 df.loc[df["ticker"] == t, "fee"] = p["fee"]
                 df.loc[df["ticker"] == t, "avail"] = p["avail"]
+                # stale_h too, or the freshness block below has nothing
+                # to read. probe_borrow returns it; only fee and avail
+                # were being copied across (found 2026-09-01).
+                df.loc[df["ticker"] == t, "stale_h"] = p.get("stale_h")
                 probed.append({"ticker": t, **p})
             if i % 50 == 0:
                 print(f"    ... {i}/{len(order)}")
@@ -451,6 +459,33 @@ def main():
     L.append("  SCREEN ONLY -- hand-set weights, never gated. Not a buy signal, not a brick.")
     L.append("  SI %-of-float withheld: no honest float source (UW total_float = outstanding).")
     L.append("=" * 104)
+    # BORROW FRESHNESS. The radar exists to catch borrow drying up, so
+    # serving yesterday's availability without saying so is the worst
+    # failure it can have. On 2026-09-01 it showed RZLV at 3,500,000
+    # while the true figure that morning was 0 -- the number was 20
+    # hours old and nothing said so.
+    #
+    # The age comes from the "stale_h" COLUMN of df (probe_borrow now
+    # returns it). An earlier version of this patch read _fees, which is
+    # a pandas Series of floats, not a dict of probe results -- it would
+    # have found nothing even where it did not crash outright.
+    if "stale_h" in df.columns:
+        _ages = df["stale_h"].dropna()
+        if len(_ages):
+            _newest = float(_ages.min())
+            if _newest >= 18:
+                L.append(f"  !! BORROW DATA IS {_newest:.1f}h OLD -- the "
+                         f"UW feed has produced nothing for today.")
+                L.append("     AVAIL and FEE% below are STALE. Borrow can "
+                         "vanish overnight; treat every availability "
+                         "figure here as unverified.")
+            elif _newest >= 4:
+                L.append(f"  ! borrow data {_newest:.1f}h old (UW feed "
+                         f"stops 11:23 ET; run before then for "
+                         f"~30-min-old data)")
+            else:
+                L.append(f"  borrow data {_newest*60:.0f} min old")
+
     _fees = df["fee"].dropna()
     if len(_fees):
         _tc = _fees.map(fee_tier).value_counts()
