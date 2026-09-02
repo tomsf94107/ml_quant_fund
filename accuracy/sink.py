@@ -653,9 +653,82 @@ def reconcile_outcomes(
 
     # Fetch actual returns
     written = 0
+    skipped_bounds = 0
+    split_adjusted = 0
+    row_errors = 0
     now = ts_et()
 
+    # Sanity bound on a computed return, after split adjustment. A move
+    # beyond this in a liquid name over <=5 sessions is a data error, not
+    # a price. Deliberately loose: it is a backstop for unrecorded
+    # corporate actions, not a filter on genuine volatility.
+    # 1000%, not 300%. At 300% this guard would have discarded GME's
+    # January 2021 squeeze (+788%), AMC (+570%), SMMT (+431%), BNED
+    # (+495%), QURE (+330%) and QUBT (+301%) -- all real. Dropping
+    # squeeze outcomes biases the record against the fund's one
+    # validated brick, which is a short-interest signal. 1000% still
+    # catches every artifact seen: AI +4862%, META +1398%, BYND +2908%.
+    MAX_ABS_RETURN = 10.0         # 1000%
+
+    _first_bar_cache = {}
+
+    def _first_bar(_tkr):
+        """Earliest session for the ticker in prices.db, or None.
+
+        Catches ticker reuse: a prediction dated before the instrument's
+        first bar cannot be scored, because the price series belongs to a
+        different company. Found 2026-08-30: 32 rows across AI, S and FIG
+        (plus META, which this cannot see) carried returns of +420% to
+        +4862% from exactly this.
+
+        Bounded by collection start (~2016-07-18 for most names), so it
+        detects recent listings only -- not a general survivorship fix.
+        """
+        if _tkr in _first_bar_cache:
+            return _first_bar_cache[_tkr]
+        val = None
+        try:
+            import sqlite3 as _sq
+            _c = _sq.connect('file:prices.db?mode=ro', uri=True)
+            _r = _c.execute('SELECT MIN(d) FROM raw_bars WHERE ticker=?',
+                            (_tkr,)).fetchone()
+            _c.close()
+            val = _r[0] if _r and _r[0] else None
+        except Exception as _e:
+            print(f'  [outcomes] first-bar lookup failed for {_tkr}: {_e}')
+        _first_bar_cache[_tkr] = val
+        return val
+
+    def _load_splits(_tkr):
+        """[(exec_date, factor)] from prices.db.splits_cache.
+
+        factor = split_from / split_to, the multiple the PRICE moves by:
+        1-for-30 reverse (from=30, to=1) -> price x30, factor 30.
+        2-for-1 forward  (from=1, to=2)  -> price x0.5, factor 0.5.
+        Massive's auto_adjust=True did not apply BYND's reverse split, so
+        the provider cannot be relied on for this.
+        """
+        try:
+            import json as _json, sqlite3 as _sq
+            _c = _sq.connect('file:prices.db?mode=ro', uri=True)
+            _r = _c.execute('SELECT payload FROM splits_cache WHERE ticker=?',
+                            (_tkr,)).fetchone()
+            _c.close()
+            if not _r or not _r[0]:
+                return []
+            out = []
+            for _s in _json.loads(_r[0]):
+                _f, _t = float(_s['split_from']), float(_s['split_to'])
+                if _t:
+                    out.append((str(_s['execution_date'])[:10], _f / _t))
+            return out
+        except Exception as _e:
+            print(f'  [outcomes] split lookup failed for {_tkr}: {_e}')
+            return []
+
     for ticker, group in due.groupby("ticker"):
+        _splits = _load_splits(ticker)
+        _listed = _first_bar(ticker)
         min_date = group["prediction_date"].min() - timedelta(days=2)
         max_date  = group["outcome_date"].max() + timedelta(days=6)
 
@@ -704,13 +777,41 @@ def reconcile_outcomes(
                         continue
                     if price_at_outcome != price_at_outcome:
                         continue
-                    actual_ret = (price_at_outcome - price_at_pred) / price_at_pred
+                    # Rescale the ENTRY price for any split executing inside
+                    # the holding window, so both prices sit on one basis.
+                    _pp = price_at_pred
+                    _pd_s = str(pred_date)[:10]
+                    _od_s = str(outcome_date)[:10]
+                    # Predicted before the instrument existed under this
+                    # symbol: the price series is a different company.
+                    if _listed and _pd_s < _listed:
+                        skipped_bounds += 1
+                        print(f"  [outcomes] SKIP {ticker} {_pd_s}: "
+                              f"predates first bar {_listed} "
+                              f"-- ticker reuse?")
+                        continue
+                    for _ex, _factor in _splits:
+                        if _pd_s < _ex <= _od_s:
+                            _pp *= _factor
+                            split_adjusted += 1
+                    actual_ret = (price_at_outcome - _pp) / _pp
                     if actual_ret != actual_ret:
                         continue
-                    if actual_ret == 0.0:
+                    # A flat close is a REAL outcome (actual_up = 0).
+                    # Dropping it biased the base rate upward.
+                    if abs(actual_ret) > MAX_ABS_RETURN:
+                        skipped_bounds += 1
+                        print(f"  [outcomes] SKIP {ticker} {_pd_s} "
+                              f"h={int(row['horizon'])}: return "
+                              f"{actual_ret*100:+.0f}% exceeds bound -- "
+                              f"unrecorded corporate action?")
                         continue
                     actual_up = int(actual_ret > 0)
-                except Exception:
+                except Exception as _row_err:
+                    row_errors += 1
+                    if row_errors <= 5:
+                        print(f"  [outcomes] FAIL {ticker} {pred_date}: "
+                              f"{type(_row_err).__name__}: {_row_err}")
                     continue
 
                 cur.execute(f"""
@@ -957,12 +1058,46 @@ if __name__ == "__main__":
             print("  No data yet — run predictions first")
 
 
+# ── intraday bar cache ────────────────────────────────────────────────────────
+# Horizons 1/2/4 of one prediction need the SAME day's bars, and ticker-days
+# repeat across predictions, so the uncached version made three identical API
+# calls per ticker per day. Negative results are cached too: Massive's 1-minute
+# history has a limited lookback, and without this every row for an out-of-range
+# date paid a round-trip to learn it was empty (~390 calls for 2026-04-03 alone).
+_INTRADAY_BAR_CACHE = {}
+_INTRADAY_DEAD_DATES = {}
+_DEAD_DATE_AFTER = 3          # empty results before a whole date is abandoned
+
+
+def _intraday_bars(mc, ticker, day, next_day):
+    """Cached 1-minute download. Returns a DataFrame or None.
+
+    No lookback window is hardcoded -- the real limit is not documented in any
+    source this project has verified, so the cutoff is learned from the data:
+    once a date has come back empty for _DEAD_DATE_AFTER distinct tickers, the
+    rest of that date is skipped without an API call.
+    """
+    if _INTRADAY_DEAD_DATES.get(day, 0) >= _DEAD_DATE_AFTER:
+        return None
+    key = (ticker, day)
+    if key in _INTRADAY_BAR_CACHE:
+        return _INTRADAY_BAR_CACHE[key]
+    hist = mc.download(ticker, start=day, end=next_day,
+                       interval="1m", auto_adjust=True, progress=False)
+    if hist is None or hist.empty:
+        _INTRADAY_DEAD_DATES[day] = _INTRADAY_DEAD_DATES.get(day, 0) + 1
+        _INTRADAY_BAR_CACHE[key] = None
+        return None
+    _INTRADAY_BAR_CACHE[key] = hist
+    return hist
+
+
 def reconcile_intraday_outcomes():
     """
     Match intraday predictions with actual prices 1hr/2hr/4hr later.
     Run this periodically during market hours.
     """
-    import sqlite3, yfinance as yf
+    import sqlite3, os      # yfinance import dropped: body uses massive_client
     from datetime import datetime, timedelta
     from utils.timezone import now_et, ET
     now = now_et()
@@ -976,10 +1111,31 @@ def reconcile_intraday_outcomes():
             ON p.ticker=o.ticker AND p.prediction_ts=o.prediction_ts
                AND p.horizon_hr=o.horizon_hr
         WHERE o.id IS NULL
+        ORDER BY p.prediction_ts DESC
     """).fetchall()
+    # Newest first. Old rows whose 1-minute bars have aged out of the
+    # provider's window can never be scored, so processing them first
+    # spends the whole run on work that cannot succeed.
+    _max_rows = int(os.environ.get("RECONCILE_MAX_ROWS", "0") or 0)
+    if _max_rows > 0:
+        rows = rows[:_max_rows]
 
     reconciled = 0
+    errors = 0
+    skipped_empty = 0
+    first_errors = []
+    _INTRADAY_BAR_CACHE.clear()
+    _INTRADAY_DEAD_DATES.clear()
+    processed = 0
+    COMMIT_EVERY = 100
+    PROGRESS_EVERY = 250
     for ticker, pred_ts, horizon_hr, price_at_pred, signal in rows:
+        processed += 1
+        if processed % PROGRESS_EVERY == 0:
+            print(f"[reconcile_intraday] {processed}/{len(rows)} "
+                  f"reconciled={reconciled} empty={skipped_empty} "
+                  f"errors={errors} downloads={len(_INTRADAY_BAR_CACHE)} "
+                  f"dead_dates={len(_INTRADAY_DEAD_DATES)}", flush=True)
         try:
             pred_dt  = ET.localize(datetime.fromisoformat(pred_ts))
             outcome_dt = pred_dt + timedelta(hours=horizon_hr)
@@ -989,15 +1145,25 @@ def reconcile_intraday_outcomes():
             # Fetch actual price at outcome time
             import pandas as pd
             from features import massive_client as mc
-            hist = mc.download(ticker,
-                               start=outcome_dt.strftime("%Y-%m-%d"),
-                               end=(outcome_dt + timedelta(days=1)).strftime("%Y-%m-%d"),
-                               interval="1m", auto_adjust=True, progress=False)
-            if hist.empty:
+            hist = _intraday_bars(
+                mc, ticker,
+                outcome_dt.strftime("%Y-%m-%d"),
+                (outcome_dt + timedelta(days=1)).strftime("%Y-%m-%d"))
+            if hist is None or hist.empty:
+                skipped_empty += 1
                 continue
             if isinstance(hist.columns, pd.MultiIndex):
                 hist.columns = hist.columns.get_level_values(0)
-            hist.index = hist.index.tz_convert(ET)
+            # Massive returns tz-NAIVE UTC; yfinance returned tz-aware.
+            # Verified 2026-08-30: AAPL 1-min bars span 08:00-23:59 with
+            # volume peaks at 13:30 and 19:59-20:00 = the 09:30 and
+            # 15:59-16:00 ET session boundaries. tz_convert on a naive
+            # index raises TypeError, which the bare except below
+            # swallowed on every row for months.
+            if hist.index.tz is None:
+                hist.index = hist.index.tz_localize("UTC").tz_convert(ET)
+            else:
+                hist.index = hist.index.tz_convert(ET)
             close = hist["Close"].squeeze()
             if outcome_dt.tzinfo is None:
                 outcome_dt = ET.localize(outcome_dt)
@@ -1023,10 +1189,27 @@ def reconcile_intraday_outcomes():
                   price_at_pred, price_at_outcome,
                   actual_return, actual_up, ts_now))
             reconciled += 1
-        except Exception:
-            pass
+            if reconciled % COMMIT_EVERY == 0:
+                db.commit()      # durability: the single commit after
+                                 # the loop meant a Ctrl-C discarded
+                                 # every row the run had scored
+        except Exception as e:
+            # Never swallow silently again: a bare `except: pass` here
+            # hid a one-line timezone bug for months and left 15,692
+            # predictions unscored with no error anywhere.
+            errors += 1
+            if len(first_errors) < 5:
+                first_errors.append(
+                    f"{ticker} {pred_ts} h={horizon_hr}: "
+                    f"{type(e).__name__}: {e}")
 
     db.commit()
+    print(f"[reconcile_intraday] candidates={len(rows)} "
+          f"reconciled={reconciled} empty={skipped_empty} "
+          f"errors={errors} dead_dates={len(_INTRADAY_DEAD_DATES)} "
+          f"downloads={len(_INTRADAY_BAR_CACHE)}")
+    for _msg in first_errors:
+        print(f"[reconcile_intraday] FAIL {_msg}")
 
     # Update accuracy cache
     tickers = [r[0] for r in db.execute("SELECT DISTINCT ticker FROM intraday_outcomes").fetchall()]
