@@ -106,10 +106,8 @@ def main():
         if _lo is not None and _lo <= _a90 <= _hi:
             _overlap.append(f"h{_h}")
     if _overlap:
-        print(f"  note: 30d interval contains the 90d value for "
-              f"{', '.join(_overlap)} -- those windows are NOT\n"
-              f"        distinguishable from these numbers. Use "
-              f"analysis/pooled_accuracy.py for a real read.")
+        print(f"  note: 30d CI contains 90d for {', '.join(_overlap)}"
+              f" -- not distinguishable; see pooled_accuracy.py")
 
     hc30 = summary.get(("highconf", 30), {})
     if 1 in hc30:

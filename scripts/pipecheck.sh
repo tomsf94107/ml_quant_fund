@@ -24,7 +24,7 @@ check_pipeline() {
     echo "── Pipeline $P (scheduled $SCHED_LABEL) ──"
 
     if [ -d "$LOGDIR" ] && [ -f "$LOGDIR/pipeline.log" ]; then
-        tail -8 "$LOGDIR/pipeline.log"
+        tail -14 "$LOGDIR/pipeline.log"
         ERR=$(grep -lE "FAILED|ERROR|Traceback" $LOGDIR/*.log 2>/dev/null | wc -l | tr -d ' ')
         if [ "$ERR" -gt 0 ]; then
             echo "⚠️ $ERR log file(s) with errors"
