@@ -41,6 +41,27 @@ WHERE p.prob_up IS NOT NULL {extra}
 GROUP BY p.horizon;
 """
 
+def base_rate(cur, horizon, window_days):
+    """Unconditional up-rate for this horizon and window.
+
+    Computed over ALL predictions with outcomes -- not only those above the
+    confidence gate -- because it is the bar the gated cohort is judged
+    against. Without it, a market-wide selloff is indistinguishable from a
+    model failure: on 2026-08-25 the model scored 30.1% while only 25.2% of the
+    universe rose. That is skill at the base rate, not skill lost.
+    """
+    row = cur.execute(
+        "SELECT COUNT(*), SUM(o.actual_up) FROM predictions p "
+        "JOIN outcomes o ON p.ticker=o.ticker "
+        "AND p.prediction_date=o.prediction_date AND p.horizon=o.horizon "
+        "WHERE p.horizon=? AND o.actual_up IS NOT NULL "
+        "AND p.prediction_date >= date('now', ?)",
+        (horizon, f"-{window_days} days")).fetchone()
+    if not row or not row[0]:
+        return None
+    return 100.0 * (row[1] or 0) / row[0]
+
+
 def wilson(k, n, z=1.96):
     """95% Wilson score interval for a proportion, as percentages.
 
@@ -77,6 +98,14 @@ def main():
             summary.setdefault((band, win), {})[h] = (n, acc, ret)
     con.commit()
     con.close()
+    # Base rates per (horizon, window). Computed once, reused on every line.
+    _BASE = {}
+    with sqlite3.connect(DB) as _bc:
+        _bcur = _bc.cursor()
+        for _h in (1, 3, 5):
+            for _w in (30, 90):
+                _BASE[(_h, _w)] = base_rate(_bcur, _h, _w)
+
     print(f"[horizon_health] run_date={run_date} rows_written={rows_written}")
     for (band, win), hd in sorted(summary.items()):
         parts = []
@@ -86,8 +115,11 @@ def main():
                 lo, hi = wilson(round(n * acc / 100.0), n) \
                     if (acc is not None and n) else (None, None)
                 ci = f" [{lo:.1f}-{hi:.1f}]" if lo is not None else ""
+                br = _BASE.get((h, win))
+                bl = (f", base {br:.1f}%, lift {acc - br:+.1f}pp"
+                      if (br is not None and acc is not None) else "")
                 parts.append(
-                    f"h{h}: {acc}%{ci} (n={n}, ret={ret:+.2f}%)")
+                    f"h{h}: {acc}%{ci} (n={n}{bl}, ret={ret:+.2f}%)")
         print(f"  [{band:8s} {win}d] " + "  |  ".join(parts))
     # Flag horizons where the 30d interval CONTAINS the 90d point
     # estimate. That is the comparison that prompted this: 49.2% (n=61)
