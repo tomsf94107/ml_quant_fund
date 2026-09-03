@@ -303,6 +303,20 @@ with _tab_overview:
     st.markdown("---")
 
 with _tab_metrics:
+    # Per-ticker high-confidence accuracy. Shared with 1_Dashboard.py via
+    # ui/_highconf_panel.py so the two cannot diverge.
+    try:
+        import os as _os
+        import sys as _sys
+        _ui = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+        if _ui not in _sys.path:
+            _sys.path.insert(0, _ui)
+        from _highconf_panel import render as _render_highconf
+        _render_highconf(key_prefix="acc", default_expanded=True)
+        st.divider()
+    except Exception as _e:
+        st.warning(f"High-confidence panel unavailable: {_e}")
+
     st.subheader("📈 Model Accuracy Cache")
     st.caption("Direction model · baselines: accuracy 50% · ROC-AUC 0.50 · Brier 0.25 (all = random)")
     if acc_df.empty:

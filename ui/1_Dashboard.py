@@ -1324,6 +1324,23 @@ with tab_accuracy:
     except Exception as _hh_e:
         st.caption(f"(horizon health panel unavailable: {_hh_e})")
 
+    # Per-ticker high-confidence accuracy, collapsed. A DIAGNOSTIC -- what each
+    # ticker has done lately -- not a watchlist. Rank persistence measured
+    # 2026-09-02 was rho ~ +0.2, so the ordering barely predicts the next
+    # window. Collapsed so it does not read as a recommendation surface.
+    with st.expander("High-confidence accuracy by ticker", expanded=False):
+        try:
+            import os as _os
+            import sys as _sys
+            _ui = _os.path.dirname(_os.path.abspath(__file__))
+            if _ui not in _sys.path:
+                _sys.path.insert(0, _ui)
+            from _highconf_panel import render as _render_highconf
+            _render_highconf(key_prefix="dash", default_expanded=False)
+        except Exception as _e:
+            st.warning(f"High-confidence panel unavailable: {_e}")
+    st.divider()
+
 
     # ── EOD + Intraday Accuracy Tables ───────────────────────────────────────────
     acc_tab1, acc_tab2 = st.tabs(["📅 EOD Model Accuracy", "⚡ Intraday Accuracy"])
