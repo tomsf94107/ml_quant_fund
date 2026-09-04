@@ -67,6 +67,16 @@ FEATURE_COLUMNS: list[str] = [
     "volatility_5d", "volatility_10d",
     # Momentum
     "rsi_14", "macd",
+    # Fundamentals — wired 2026-09-04. Built since May 2026, never in a trained
+    # model: feature_importance_history had zero rows for any fund_* column.
+    # Orthogonalised against beta_60d/short_ratio/return_20d/rsi_14/atr/
+    # sector_rel_ret on 120 tickers, fund_ep retained 65-67% (orth t +1.93 at
+    # h=5, +2.13 at h=20) and fund_ni_margin 24-35%. The three pure
+    # balance-sheet ratios collapsed to 2-28% — the price features already
+    # encode profitability. fund_ep survives because the EARNINGS half is not
+    # in the price set. If importance stays 0.000 after a week of nightly
+    # retrains, they are spanned in practice too and should come back out.
+    "fund_ep", "fund_ni_margin",
     # Mean reversion
     "bb_upper", "bb_lower", "bb_width",
     # Volume
