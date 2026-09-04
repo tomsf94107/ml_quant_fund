@@ -1394,9 +1394,36 @@ def build_feature_dataframe(
         from features.yf_resilient import safe_yf_download
 
         _vix_s = fred_get_as_series("VIXCLS", start=start_str, end=end_str)
-        # Use cached fetch instead of safe_yf_download (60s TTL was too short
-        # for full Pipeline B run; module cache lasts the whole process)
-        _vix3m_raw = _get_macro_cached("^VIX3M", start_str, end_str)
+
+        # LOCAL FIRST (2026-09-04). yfinance is XProtect-blocked on this
+        # machine and prints "^VIX3M: yfinance disabled ... returning empty"
+        # on every build, so the else-branch below pinned this feature to the
+        # literal 1.0 for every ticker on every date. warning.db already holds
+        # CBOE_VIX3M -- 4,261 observations, 2009-09-18 to 2026-08-27 -- so the
+        # data was local all along and the builder was asking a blocked vendor.
+        _vix3m_raw = None
+        try:
+            import sqlite3 as _sq3
+            _wpath = os.path.join(os.path.dirname(os.path.dirname(
+                os.path.abspath(__file__))), "warning.db")
+            if os.path.exists(_wpath):
+                _wc = _sq3.connect("file:" + _wpath + "?mode=ro", uri=True)
+                _wrows = _wc.execute(
+                    "SELECT obs_date, value FROM data_vintages "
+                    "WHERE series_id='CBOE_VIX3M' AND obs_date >= ? "
+                    "AND obs_date <= ? ORDER BY obs_date",
+                    (start_str, end_str)).fetchall()
+                _wc.close()
+                if _wrows:
+                    _vix3m_raw = pd.DataFrame(
+                        {"Close": [r[1] for r in _wrows]},
+                        index=pd.to_datetime([r[0] for r in _wrows]))
+        except Exception:
+            _vix3m_raw = None
+
+        # fall back to the original path only if the local lookup found nothing
+        if _vix3m_raw is None or _vix3m_raw.empty:
+            _vix3m_raw = _get_macro_cached("^VIX3M", start_str, end_str)
 
         if (_vix_s is not None and not _vix_s.empty
             and _vix3m_raw is not None and not _vix3m_raw.empty):
@@ -1846,7 +1873,18 @@ def build_feature_dataframe(
     try:
         # Option A: raw-value interactions (heavy-tailed but XGB can handle)
         _vol = df["volatility_10d"].fillna(0.0)
-        _short = df["short_pct_float"].fillna(0.0)
+        # days_to_cover, not short_pct_float. short_pct_float is 100% NaN
+        # universe-wide because UW's total_float returns shares OUTSTANDING,
+        # so the ratio never computes -- and six features died with it
+        # (vol_x_short, is_squeeze_setup, its ts_argmax, plus short_self_rank
+        # and short_zscore_60d which were deleted outright, see the comments
+        # below). days_to_cover covers 450 tickers and is the measure this
+        # project's SI brick validated at NW-t -4.46.
+        # short_ratio IS days_to_cover -- see _load_short_interest_pit's
+        # docstring, line ~1109: "short_ratio = FINRA days_to_cover, joined on
+        # PUBLICATION date". No new column needed; the working measure was
+        # already in the frame while these features read the dead one.
+        _short = df["short_ratio"].fillna(0.0)
         _rev = df["rev_growth_yoy"].fillna(0.0)
         _low52 = df["low_52w_ratio"].fillna(1.0)  # 1.0 = neutral (1x from 52w low)
 
@@ -1864,7 +1902,12 @@ def build_feature_dataframe(
         df["vol_zscore_60d"] = ((_vol - _vol_mean) / _vol_std).fillna(0.0).clip(-5, 5)
 
         # Option E: binary squeeze setup indicator
-        df["is_squeeze_setup"] = ((_vol > 0.04) & (_short > 0.10)).astype(float)
+        # Threshold changes with the input: "short > 10% of float" becomes
+        # "days_to_cover > 5", a conventional squeeze bar. These are different
+        # quantities. 5.0 is stated, not tuned -- tuning it against the outcome
+        # would be fitting.
+        _sq_bar = 5.0   # days_to_cover, conventional squeeze bar
+        df["is_squeeze_setup"] = ((_vol > 0.04) & (_short > _sq_bar)).astype(float)
 
         # ── P3.5 panel transforms (gated; match alpha_transformations defs) ──
         if _PANEL_TRANSFORMS_ENABLED:
