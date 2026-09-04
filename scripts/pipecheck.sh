@@ -9,7 +9,7 @@
 # Pipeline C by com.atom.pipeline-c at 17:00 VN = 06:00 ET. See
 # docs/SCHEDULER_INVENTORY.md (generated from live state).
 # ─────────────────────────────────────────────────────────────────────────────
-DATE=$(date +%Y%m%d)
+DATE=$(TZ=America/New_York date +%Y%m%d)
 NOW_HOUR=$(TZ=America/New_York date +%H)
 
 echo "=== $(TZ=America/New_York date '+%Y-%m-%d %H:%M %Z') ==="
