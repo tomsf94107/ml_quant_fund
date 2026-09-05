@@ -676,6 +676,14 @@ OUTPUT_COLUMNS = [
     "vix_close", "vix_ret",              # market fear gauge
     "oil_ret", "oil_spy_corr",           # crude oil price signal
     "dxy_ret", "yield_10y", "fear_greed", "beta_60d",
+    # Boulton dark-pool cell (2026-09-05). dp_volume_share is the
+    # trailing-20d dark-pool dollar volume over consolidated dollar
+    # volume -- NO SIGN, because FINRA ATS data never reveals buy vs
+    # sell and any signed skew is a coincident inference. Heavily
+    # shorted names with high dark volume underperform: -7.145pp at
+    # h=40, 0/3 seeds positive, and excluding them adds +1.118pp to
+    # the cap-3 book, 3/3 seeds.
+    "dp_volume_share", "boulton_cell",
     "short_ratio", "short_pct_float", "vix_term_structure", "monday_sentiment",
     "sector_rel_ret",                    # stock return - sector ETF return
     "day_of_week", "is_month_end",       # calendar effects
@@ -1501,6 +1509,38 @@ def build_feature_dataframe(
             f"{type(_se).__name__}: {_se}")
         df["monday_sentiment"] = np.nan
 
+    try:
+        _dc = sqlite3.connect("file:institutional_trades.db?mode=ro",
+                              uri=True, timeout=30)
+        _r = _dc.execute(
+            "SELECT trade_date, SUM(notional_usd) FROM institutional_trades "
+            "WHERE ticker = ? AND is_dark_pool = 1 AND is_canceled = 0 "
+            "GROUP BY trade_date", (ticker.upper(),)).fetchall()
+        _dc.close()
+        _m = {str(d)[:10]: float(v or 0) for d, v in _r}
+        _i = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
+        # NaN, not 0.0, for dates with no dark-pool coverage. Zero would code
+        # as "no dark trading occurred" when the truth is "the feed does not
+        # reach this date" -- dark-pool history starts 2026-03-19. Filling zero
+        # made the share non-null on all 653 rows of a 2024-start build and
+        # pinned the rolling quantile at 0.0. Same defect class as
+        # days_to_cover=0.0 and monday_sentiment=0.0, both found the same day.
+        _first = min(_m) if _m else None
+        _dps = pd.Series(
+            [(_m.get(d, 0.0) if (_first and d >= _first) else float("nan"))
+             for d in _i], index=df.index)
+        _dol = (df["close"] * df["volume"]).fillna(0.0)
+        df["dp_volume_share"] = (
+            _dps.shift(1).rolling(20, min_periods=10).sum()
+            / _dol.shift(1).rolling(20, min_periods=10).sum())
+    except Exception as _e:
+        import logging as _blg
+        _blg.getLogger(__name__).warning(
+            f"boulton block failed for {ticker}: "
+            f"{type(_e).__name__}: {_e}")
+        df["dp_volume_share"] = np.nan
+        df["boulton_cell"] = np.nan
+
     # 60-day rolling beta vs SPY
     try:
         _spy_ret = pd.Series(spy.values, index=df.index)
@@ -1516,6 +1556,34 @@ def build_feature_dataframe(
     # institutional features. No training_mode branch by design.
     _si_ratio, _si_pct = _load_short_interest_pit(ticker, date_index, as_of=end_str)
     df["short_ratio"]     = _si_ratio.values
+
+    # boulton_cell must be computed AFTER short_ratio is assigned (line above).
+    # It was originally placed with dp_volume_share ~33 lines earlier, where
+    # df["short_ratio"] does not exist yet, so it silently took the else branch
+    # and wrote NaN on every row -- 49 rows satisfy its conditions and 7 fire
+    # for MU once the ordering is right.
+    # "High" is against this ticker's OWN 12-month history. The tests cut
+    # cross-sectionally per date; builder.py runs per ticker and cannot see the
+    # panel, so this is the per-ticker analogue and will not reproduce the
+    # test's numbers exactly. dp_volume_share is emitted raw so a
+    # cross-sectional cut stays possible downstream.
+    try:
+        if "dp_volume_share" in df.columns:
+            _sr = df["short_ratio"]
+            _ps = df["dp_volume_share"]
+            _sq = _sr.rolling(252, min_periods=60).quantile(0.67)
+            _pq = _ps.rolling(252, min_periods=60).quantile(0.67)
+            df["boulton_cell"] = ((_sr >= _sq) & (_ps >= _pq)).astype(
+                float).where(_sr.notna() & _ps.notna()
+                             & _sq.notna() & _pq.notna())
+        else:
+            df["boulton_cell"] = np.nan
+    except Exception as _bce:
+        import logging as _bcl
+        _bcl.getLogger(__name__).warning(
+            f"boulton_cell failed for {ticker}: "
+            f"{type(_bce).__name__}: {_bce}")
+        df["boulton_cell"] = np.nan
     df["short_pct_float"] = _si_pct.values
 
     # ── 7. Sentiment — reads from SQLite cache (run etl_sentiment.py daily) ────
