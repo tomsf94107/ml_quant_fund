@@ -655,6 +655,74 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                     except Exception as _fe:
                         pass  # feature logging is best-effort
 
+                    # ── FULL FEATURE SNAPSHOT (added 2026-09-05) ─────────────
+                    # The INSERT above records 31 curated columns plus 4
+                    # institutional ones bolted on later, while builder.py emits
+                    # 119. Adding a feature there needs three coordinated edits
+                    # -- column list, placeholders, value tuple -- which is why
+                    # the table stopped tracking the feature set long ago.
+                    #
+                    # It also coerces every missing value to a plausible default
+                    # (rsi_14 -> 50, vix_term_structure -> 1, beta_60d -> 1).
+                    # vix_term_structure was pinned to the literal 1.0 for ten
+                    # weeks after yfinance was XProtect-blocked, and this table
+                    # logged 1.0 the whole time, indistinguishable from a real
+                    # reading. A missing value written as a plausible default
+                    # destroys the evidence an investigation needs.
+                    #
+                    # This writes the WHOLE row as JSON with NULLs preserved, to
+                    # a SEPARATE table. Nothing above changes, so no existing
+                    # query breaks and a failure here cannot affect the curated
+                    # INSERT.
+                    try:
+                        import json as _json_snap
+                        from accuracy.sink import _get_conn as _gc_snap
+                        with _gc_snap() as _sc:
+                            _sc.execute("""
+                                CREATE TABLE IF NOT EXISTS
+                                prediction_feature_snapshot (
+                                    ticker          TEXT NOT NULL,
+                                    prediction_date TEXT NOT NULL,
+                                    horizon         INTEGER NOT NULL,
+                                    n_features      INTEGER,
+                                    n_null          INTEGER,
+                                    features_json   TEXT NOT NULL,
+                                    created_at      TEXT NOT NULL,
+                                    PRIMARY KEY (ticker, prediction_date,
+                                                 horizon)
+                                )
+                            """)
+                            _snap = {}
+                            _nulls = 0
+                            for _k, _v in dict(last).items():
+                                if _k in ("date", "ticker"):
+                                    continue
+                                try:
+                                    _f = float(_v)
+                                except (TypeError, ValueError):
+                                    _snap[_k] = None
+                                    _nulls += 1
+                                    continue
+                                if _f != _f:          # NaN stays NULL
+                                    _snap[_k] = None
+                                    _nulls += 1
+                                else:
+                                    _snap[_k] = _f
+                            _sc.execute(
+                                "INSERT OR REPLACE INTO "
+                                "prediction_feature_snapshot (ticker, "
+                                "prediction_date, horizon, n_features, n_null, "
+                                "features_json, created_at) "
+                                "VALUES (?,?,?,?,?,?,?)",
+                                (ticker, str(run_date), horizon, len(_snap),
+                                 _nulls, _json_snap.dumps(_snap),
+                                 str(run_date)))
+                    except Exception as _se:
+                        # Best-effort like the block above, but SAY SO. A silent
+                        # pass is how the 35-column INSERT could break unnoticed.
+                        log.warning(f"  feature snapshot failed for {ticker} "
+                                    f"h={horizon}: {type(_se).__name__}: {_se}")
+
                     if sig.today_signal == "BUY":
                         # Add position sizing
                         try:
