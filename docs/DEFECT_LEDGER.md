@@ -93,3 +93,29 @@ PEAD/SUE work: `earnings_cache.actual_eps` is UNUSABLE as a surprise input for ~
 | Sub-$1 names in the ranked book | DECISION | Aug-31 | CERO $0.0106 = 119,684 shares for a $1,265 slot. `validate_signal.py` has NO price filter, so the brick was validated INCLUDING these. A floor is a deliberate deviation, not a fix. 4 names under $1, 16 under $5. |
 | Ticker reuse: entity-date registry | SHIPPED | 41c43f12 | `ticker_entity_dates.csv` + `apply_entity_dates.py`. Purges rows predating a ticker's current entity across short_interest, daily_prices, raw_bars. SPCX (38 SI rows) and BETR (583 daily_prices rows) registered. MUST run after every SI fetch -- REPLACE INTO restores them otherwise, demonstrated same session. VXRT suspected (3x step 2011-07-18, 2018 reverse merger) but handover date unconfirmed -- not registered. |
 
+
+## rev_surprise — blocked, TWO-STEP fix (2026-09-05)
+
+`rev_surprise` is flat 0.0 universe-wide. Two independent causes, and fixing
+only the first would reintroduce a known leak.
+
+**1. No consensus revenue estimates.** `rev_estimate` is 0 of 4,255 rows since
+2024. yfinance supplied revenue until removed 2026-05-22 ("fields don't exist
+in earnings_history"). Its replacement, `data/etl_polygon_revenue.py`, inserts
+`VALUES (?, ?, NULL, NULL, NULL, NULL, ?, NULL, NULL, ?)` — Massive supplies
+reported revenue (`rev_actual`, 3,758 rows) but not analyst consensus, which is
+a separate paid product. A surprise needs both.
+
+**2. Revenue is keyed on the fiscal period end, not the announcement.**
+`etl_polygon_revenue.py` writes `report_date = Polygon end_date` — the exact
+field the 2026-07-11 PIT rewire proved untrustworthy: 75% land on a quarter-end,
+35% on a weekend, and MSFT's `post_earnings_1d` fired 2026-03-31 while MSFT
+announced 2026-04-29, a four-week leak measured at IC +0.2612 (t=+30). EPS was
+migrated to `earnings_events.announce_date` (SEC 8-K Item 2.02, verified 8/8
+against `eightk_items`). **Revenue was not.**
+
+**Consequence:** acquiring an estimates feed and writing it into
+`earnings_surprises` would produce a leaking feature. The re-key to
+`announce_date` must happen too, following the EPS pattern.
+
+Until both are done, `rev_surprise = 0.0` is correct behaviour, not a bug.
