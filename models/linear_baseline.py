@@ -24,6 +24,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
 from sklearn.metrics import roc_auc_score
 
 from features.builder import build_feature_dataframe, add_forecast_targets
@@ -36,13 +38,26 @@ def _fit_eval_linear(X, y, train_end, test_start, test_end, horizon, C):
     X_te, y_te = X.iloc[test_start:test_end], y.iloc[test_start:test_end]
     if y_tr.nunique() < 2 or y_te.nunique() < 2:
         return None
-    scaler = StandardScaler()
-    X_tr_s = scaler.fit_transform(X_tr)
-    X_te_s = scaler.transform(X_te)
-    clf = LogisticRegression(penalty="l2", C=C, max_iter=1000)
-    clf.fit(X_tr_s, y_tr)
-    p_tr = clf.predict_proba(X_tr_s)[:, 1]
-    p_te = clf.predict_proba(X_te_s)[:, 1]
+    # NaN FIX (2026-09-05). This script had never run: LogisticRegression
+    # raises on NaN while XGBoost handles it natively, so the harness that
+    # works for the tree crashed for the linear model on every ticker.
+    # The NaNs are real data states, not corruption -- short_pct_float is 100%
+    # NaN universe-wide, the four inst_* are ~94% NaN because their source only
+    # starts 2026-03-19, several fund_* run 21-40%. Dropping rows with any NaN
+    # would delete the entire panel.
+    # Pipeline fits imputer and scaler on the TRAIN fold only and applies them
+    # to test, so no test information reaches training. Median, not mean: the
+    # panel is heavy-tailed (returns, volume z-scores, ATR).
+    # A column that is 100% NaN in the train fold is dropped by SimpleImputer;
+    # that is correct and worth knowing when reading the AUCs.
+    pipe = Pipeline([
+        ("imp", SimpleImputer(strategy="median")),
+        ("sc", StandardScaler()),
+        ("lr", LogisticRegression(C=C, max_iter=1000)),
+    ])
+    pipe.fit(X_tr, y_tr)
+    p_tr = pipe.predict_proba(X_tr)[:, 1]
+    p_te = pipe.predict_proba(X_te)[:, 1]
     try:
         tr_auc = roc_auc_score(y_tr, p_tr)
         te_auc = roc_auc_score(y_te, p_te)
