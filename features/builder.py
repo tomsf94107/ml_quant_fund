@@ -1460,27 +1460,46 @@ def build_feature_dataframe(
     # Kept as constant in df so OUTPUT_COLUMNS / prediction_features schema unchanged.
     df["fear_greed"] = 0.5
 
-    # Monday sentiment score (Anthropic API — scored Sunday night)
+    # Sentiment -- PIT per-row join (replaces scalar broadcast, 2026-09-05).
+    # WAS: SELECT ... ORDER BY score_date DESC LIMIT 1, assigning TODAY'S value
+    # to every row of the panel including 2016 -- inert in per-ticker fits, a
+    # look-ahead oracle in pooled fits (models/train_global_ranker.py:67). Same
+    # bug class as the pre-2026-08-26 short-interest block, and the reason
+    # analysis/feature_break_audit.py found this feature CONSTANT on 25 of 25
+    # tickers: it could not vary within a build.
+    # The weekday decay is also gone. It was computed from now_et().weekday(),
+    # i.e. TODAY'S day of week applied to every historical row, and scores
+    # update daily anyway so fading through the week double-counts recency.
+    # created_at lands ~06:00 ET on the same day as score_date and the writer is
+    # scripts/pipeline_C_preopen.sh -- pre-open, so no lag is needed.
+    # NaN, not 0.0, for dates with no reading: 0.0 would code as "neutral"
+    # when the truth is "no score exists", the same reasoning as the
+    # short-interest note about days_to_cover=0.0.
     try:
-        conn_sent = sqlite3.connect("data/sentiment.db", timeout=30)
-        sent_row = conn_sent.execute("""
-            SELECT sentiment_score, confidence FROM monday_sentiment
-            WHERE ticker=? ORDER BY score_date DESC LIMIT 1
-        """, (ticker,)).fetchone()
-        conn_sent.close()
-        if sent_row:
-            # Decay sentiment signal over the week — full strength Monday, zero by Friday
-            from utils.timezone import now_et
-            dow = now_et().weekday()  # 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri, 5=Sat, 6=Sun
-            if dow >= 5:  # weekend — treat as Monday (preparing for next week)
-                decay = 1.0
-            else:
-                decay = max(0.0, 1.0 - (dow * 0.25))  # Mon=1.0, Tue=0.75, Wed=0.5, Thu=0.25, Fri=0.0
-            df["monday_sentiment"] = sent_row[0] * sent_row[1] * decay
+        _sconn = sqlite3.connect("data/sentiment.db", timeout=30)
+        _sdf = pd.read_sql(
+            "SELECT score_date, sentiment_score, confidence FROM "
+            "monday_sentiment WHERE ticker = ? ORDER BY score_date",
+            _sconn, params=(ticker.upper(),))
+        _sconn.close()
+        if _sdf.empty:
+            df["monday_sentiment"] = np.nan
         else:
-            df["monday_sentiment"] = 0.0
-    except Exception:
-        df["monday_sentiment"] = 0.0
+            _sdf["score_date"] = pd.to_datetime(_sdf["score_date"],
+                                                errors="coerce")
+            _sdf = _sdf.dropna(subset=["score_date"])
+            _sser = pd.Series(
+                (_sdf["sentiment_score"] * _sdf["confidence"]).values,
+                index=_sdf["score_date"].dt.normalize()).groupby(level=0).last()
+            _aligned = _sser.reindex(pd.to_datetime(date_index).normalize())
+            _aligned = _aligned.ffill()          # carry across weekends only
+            df["monday_sentiment"] = _aligned.values
+    except Exception as _se:
+        import logging as _slg
+        _slg.getLogger(__name__).warning(
+            f"monday_sentiment PIT load failed for {ticker}: "
+            f"{type(_se).__name__}: {_se}")
+        df["monday_sentiment"] = np.nan
 
     # 60-day rolling beta vs SPY
     try:
