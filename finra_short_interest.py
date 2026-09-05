@@ -188,6 +188,8 @@ def main():
     ap.add_argument("--client-secret",default=None)
     ap.add_argument("--token",default=None)
     ap.add_argument("--years-back",type=int,default=5)
+    ap.add_argument("--tickers-file",default=None,
+                    help="override tickers.txt for the keep-filter")
     ap.add_argument("--dataset",default=None,help="force a FINRA dataset name")
     ap.add_argument("--status",action="store_true")
     a=ap.parse_args(); a.root=os.path.expanduser(a.root)
@@ -217,7 +219,13 @@ def main():
         if not require(has_table(ce,"earnings_surprises"),"no earnings_surprises"): return
         universe=set(r[0].upper() for r in Q(ce,"SELECT DISTINCT ticker FROM earnings_surprises WHERE ticker IS NOT NULL"))
         import os as _os
-        _tt=_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),"tickers.txt")
+        # --tickers-file widens the filter without touching tickers.txt, which
+        # every cron job reads. FINRA serves whole settlement files covering all
+        # US equities; this set only decides which rows are KEPT, so the new
+        # names had zero rows because they were never in the filter, not because
+        # the data was missing.
+        _tt=a.tickers_file or _os.path.join(
+            _os.path.dirname(_os.path.abspath(__file__)),"tickers.txt")
         if _os.path.exists(_tt):
             universe|={ln.strip().upper() for ln in open(_tt) if ln.strip() and not ln.lstrip().startswith("#")}
     finally:
