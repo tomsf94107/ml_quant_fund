@@ -50,6 +50,7 @@ CHECKS=(
   "dark-pool extra|dp_extra_daily.log|48"
   # quarterly: 92 days plus slack
   "dp feature A/B|dp_feature_ab.log|2400"
+  "GEX gauntlet|validate_gex.log|2400"
 )
 
 printf "%-20s %-28s %8s %10s  %s\n" MONITOR LOG AGE_H SIZE STATUS
