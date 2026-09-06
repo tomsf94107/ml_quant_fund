@@ -48,6 +48,7 @@ METHOD
     python analysis/h40_book_test.py --seeds 3 --tickers 80
 """
 import argparse
+import os
 import math
 import statistics as st
 import sys
@@ -80,6 +81,7 @@ def main():
     ap.add_argument("--horizon", type=int, default=40)
     ap.add_argument("--start", default="2021-06-01")
     ap.add_argument("--min-names", type=int, default=25)
+    ap.add_argument("--universe", default="tickers.txt")
     args = ap.parse_args()
     H = args.horizon
 
@@ -88,7 +90,10 @@ def main():
     from xgboost import XGBClassifier
     import random
 
-    uni_all = [l.strip().upper() for l in open("tickers.txt") if l.strip()]
+    # --universe lets the expanded set be tested WITHOUT swapping tickers.txt,
+    # which every cron job reads. The h=40 shadow book in particular is frozen
+    # on the current 415 names and changing its universe would void it.
+    uni_all = [l.strip().upper() for l in open(args.universe) if l.strip()]
     print(f"h={H} book test — {args.seeds} seeds x {args.tickers} tickers\n")
 
     agg_cap = defaultdict(list)
@@ -109,7 +114,20 @@ def main():
                     continue
                 num = df.select_dtypes("number")
                 num = num.drop(columns=[c for c in num.columns
-                                        if c.startswith("target_")],
+                                        if c.startswith("target_")
+                                        # ML_QUANT_NO_DARKPOOL=1 drops these so
+                                        # their contribution can be isolated.
+                                        # This script builds its matrix from
+                                        # select_dtypes("number"), NOT from
+                                        # FEATURE_COLUMNS, so the flag in
+                                        # models/classifier.py has no effect
+                                        # here -- a first A/B returned figures
+                                        # identical to three decimals because
+                                        # both runs used the same columns.
+                                        or (os.environ.get(
+                                            "ML_QUANT_NO_DARKPOOL") == "1"
+                                            and c in ("dp_volume_share",
+                                                      "boulton_cell"))],
                                errors="ignore")
                 ds = [str(d)[:10] for d in df["date"]]
                 cl = list(df["close"])
