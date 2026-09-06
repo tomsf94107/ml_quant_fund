@@ -135,6 +135,23 @@ FEATURE_COLUMNS: list[str] = [
     "vix_term_structure",
     # Risk/positioning
     "beta_60d", "short_ratio", "short_pct_float",
+    # Boulton dark-pool cell (2026-09-06). dp_volume_share is trailing-20d
+    # dark-pool dollar volume over consolidated dollar volume, no sign inferred
+    # -- FINRA ATS data never reveals buy vs sell, which is why signed skew
+    # failed 10+ directional tests. boulton_cell fires when both days-to-cover
+    # and dp_volume_share exceed the ticker's own 12-month 67th percentile.
+    # Boulton et al. predict heavily shorted names with heavy dark volume
+    # underperform; measured here at -7.145pp over 40 days, 0 of 3 seeds
+    # positive, and EXCLUDING the cell improves the h=40 cap-3 book by
+    # +1.118pp, 3/3 seeds. Direction was predicted by the paper before the test.
+    # BOTH are wired: the share is the more informative continuous input, the
+    # cell is the tested construction. Note the cell here is a PER-TICKER
+    # percentile while the test cut cross-sectionally per date -- builder.py
+    # cannot see the panel, so the two are not identical.
+    # Expect boulton_cell to be mostly NaN until ~March 2027: it needs 60
+    # observations of a 252-day rolling quantile and dark-pool history starts
+    # 2026-03-19.
+    "dp_volume_share", "boulton_cell",
     # Sentiment
     "monday_sentiment",
     # Relative performance
