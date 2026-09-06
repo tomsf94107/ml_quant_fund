@@ -151,7 +151,13 @@ FEATURE_COLUMNS: list[str] = [
     # Expect boulton_cell to be mostly NaN until ~March 2027: it needs 60
     # observations of a 252-day rolling quantile and dark-pool history starts
     # 2026-03-19.
+    # ML_QUANT_NO_DARKPOOL=1 drops both, so an A/B needs no source edit between
+    # runs. Added because the first top-400 measurement changed three things at
+    # once -- sample size, universe construction and these features -- and the
+    # +3.351pp against group_large's +1.601pp could not be attributed.
+] + ([] if os.environ.get("ML_QUANT_NO_DARKPOOL") == "1" else [
     "dp_volume_share", "boulton_cell",
+]) + [
     # Sentiment
     "monday_sentiment",
     # Relative performance
