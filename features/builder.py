@@ -610,6 +610,35 @@ def _bucket_etf_lookup():
     return out
 
 
+def _sic_etf_lookup():
+    """{TICKER: etf} from data/sector_etf_sic.csv. Cached. Built once by
+    analysis/build_sector_map_sic.py; 1,885 of 1,920 expanded-universe names
+    resolve, spread XLI 342 / XLK 326 / XLF 277 / XLV 242 / XLY 201 / XLB 126 /
+    XLRE 97 / XLP 83 / XLU 79 / XLE 72 / XLC 40."""
+    global _SIC_ETF_CACHE
+    try:
+        return _SIC_ETF_CACHE
+    except NameError:
+        pass
+    import csv as _csv, os as _os
+    out = {}
+    _p = _os.path.join(
+        _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+        "data", "sector_etf_sic.csv")
+    try:
+        with open(_p, newline="") as _f:
+            for _r in _csv.DictReader(_f):
+                _t = (_r.get("ticker") or "").strip().upper()
+                _e = (_r.get("etf") or "").strip().upper()
+                if _t and _e:
+                    out[_t] = _e
+    except Exception as _e:
+        log.warning("SIC ETF lookup unavailable (%s); sector falls back to "
+                    "bucket then market", _e)
+    _SIC_ETF_CACHE = out
+    return out
+
+
 def resolve_sector_etf(ticker):
     """SECTOR_ETF_MAP -> bucket -> market. Never silently duplicates the market."""
     _t = (ticker or "").upper()
@@ -617,6 +646,20 @@ def resolve_sector_etf(ticker):
     if _e:
         return _e
     _e = _bucket_etf_lookup().get(_t)
+    if _e:
+        return _e
+    # Tier 3: SIC-derived, built by analysis/build_sector_map_sic.py from SEC's
+    # submissions endpoint. On the expanded universe 1,496 of 1,920 names have
+    # no tickers_metadata.csv row and are not in the hand-curated
+    # SECTOR_ETF_MAP, so sector_rel_ret was falling through to market-relative
+    # for 78% of the universe -- silently duplicating a feature the model
+    # already has. The leave-one-out test put [sector] at -0.515pp with both
+    # seeds agreeing, so that degradation costs money.
+    # SIC is not GICS: coarser, last revised 1987, classifies by primary product
+    # rather than by how the market trades a name. Adequate for a sector-
+    # RELATIVE baseline, which asks "did this beat its sector", not "what is
+    # this company". The hand-curated map above stays authoritative.
+    _e = _sic_etf_lookup().get(_t)
     if _e:
         return _e
     log.warning("no sector ETF for %s (not in SECTOR_ETF_MAP, no usable bucket) "

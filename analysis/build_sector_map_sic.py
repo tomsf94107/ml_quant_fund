@@ -137,7 +137,14 @@ SIC_OVERRIDE = {
     3021: "XLY",   # rubber and plastics footwear
 }
 TICKER_OVERRIDE = {
-    "DIS": "XLC",  # GICS 2018 reshuffle; SIC 7990 still says services
+    "DIS": "XLC",   # GICS 2018 reshuffle; SIC 7990 still says services
+    # SIC 5331 "Retail-Variety Stores" covers COST, WMT and TGT alike, but GICS
+    # splits them on revenue mix: warehouse clubs and supercentres are staples,
+    # general merchandise is discretionary. No code-level rule can separate
+    # them, so these are pinned by ticker.
+    "COST": "XLP", "WMT": "XLP", "BJ": "XLP",
+    "DG": "XLP", "DLTR": "XLP",
+    "TGT": "XLY",
 }
 
 
