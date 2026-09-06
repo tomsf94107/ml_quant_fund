@@ -37,6 +37,16 @@ echo "     a research report, not from introspection. Between them they found"
 echo "     four frozen feeds and reversed four conclusions reached the same"
 echo "     day from importance rankings alone."
 echo
+echo "  4b. QUARTERLY: re-run the dark-pool feature A/B."
+echo "     analysis/darkpool_feature_ab.py --seeds 3 --tickers 80"
+echo "     dp_volume_share was non-NaN on 1% of a 2016-start panel when first"
+echo "     tested (2026-09-07): the feed begins 2026-03-19, so the A/B could"
+echo "     not have found a positive even if one existed. Coverage grows ~1.4pp"
+echo "     a month. Re-run each quarter; the moment the diff turns positive"
+echo "     with seed agreement, the columns have started earning their place."
+echo "     The Boulton EXCLUSION FILTER is separate and already works: -7.1pp"
+echo "     in the high-DTC/high-share cell measured on populated dates only."
+echo
 echo "  5. CHECK WHAT THE MONITORS CANNOT SEE."
 echo "     docs/coverage_gaps.md lists the known holes in cost order."
 echo
