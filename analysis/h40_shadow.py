@@ -125,7 +125,17 @@ def main():
         con.close()
         return
 
-    universe = [l.strip().upper() for l in open("tickers.txt") if l.strip()]
+    # Pinned to its OWN file, not tickers.txt. The frozen model was trained
+    # 2026-09-05 on 410 tickers drawn from the then-current universe; if
+    # tickers.txt is later swapped for the expanded 1,920 the book would start
+    # ranking a different pool, and the out-of-sample record would no longer be
+    # one continuous experiment. The model can stay frozen while its CANDIDATE
+    # SET changes underneath it -- that is the subtler way this evidence could
+    # be lost.
+    _uf = "tickers_h40_shadow.txt"
+    if not os.path.exists(_uf):
+        _uf = "tickers.txt"
+    universe = [l.strip().upper() for l in open(_uf) if l.strip()]
     from features.builder import build_feature_dataframe
 
     if args.train:
