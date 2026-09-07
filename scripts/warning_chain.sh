@@ -19,7 +19,7 @@ set -a; . ./.env; set +a
 
 PY=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python
 LOG=logs/warning_chain.log
-DONE="logs/pipeline_ADB.$(date +%F).done"
+DONE="logs/pipeline_A.$(date +%F).done"   # A writes prices.db and ends ~04:55; the full A->D->B chain runs to ~08:24
 
 ts() { date "+%Y-%m-%dT%H:%M:%S%z"; }
 step() { echo "[$(ts)] STEP $*" >> "$LOG"; }
@@ -31,18 +31,18 @@ echo "[$(ts)] === warning_chain start ===" >> "$LOG"
 # 1. Gate on the upstream chain's completion marker.
 #
 #    Requires this as the LAST line of scripts/pipeline_chain_ADB.sh:
-#        touch logs/pipeline_ADB.$(date +%F).done
+#        touch logs/pipeline_A.$(date +%F).done
 #
 #    A done-file is used instead of grepping a log for today's date: a date string
 #    can appear in a FAILURE line, so a grep gate can green-light a broken chain.
 #    Waits up to 60 min, then gives up rather than running on stale prices.
 # ---------------------------------------------------------------------------
 step "waiting for $DONE"
-for i in {1..60}; do
+for i in {1..90}; do
   [[ -f "$DONE" ]] && break
   sleep 60
 done
-[[ -f "$DONE" ]] || fail "pipeline_ADB done-file absent after 60 min -- prices.db not refreshed; aborting rather than ingesting stale rows"
+[[ -f "$DONE" ]] || fail "pipeline_A done-file absent after 90 min -- prices.db not refreshed; aborting rather than ingesting stale rows"
 step "upstream chain complete"
 
 # ---------------------------------------------------------------------------
@@ -50,7 +50,7 @@ step "upstream chain complete"
 #    Fixes: S4, S5-S8, S14, L4A  (last rows 2026-08-29 = last manual run)
 # ---------------------------------------------------------------------------
 step "ingest_spx"
-$PY warning/ingest_spx.py --db warning.db                             >> "$LOG" 2>&1 \
+$PY warning/ingest_spx.py --db warning.db --table raw_bars                            >> "$LOG" 2>&1 \
   || fail "ingest_spx"
 
 step "ingest_spx RSP (not in prices.db -- must come from Massive)"

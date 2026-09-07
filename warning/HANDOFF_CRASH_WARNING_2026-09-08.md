@@ -178,9 +178,9 @@ Same class, already in `data_vintages`:
 | `VX_FRONT` / `VX_SECOND` | 2018-02-24 | Scraper points at a URL Cboe retired ~2018 — fixable |
 | `CBOE_PC_*` | 2019-10-05 | Cboe stopped the free daily P/C files; F1 needs the new site or UW |
 | `CBOE_VXO` / `VXOCLS` | 2021-09-24 | Covered by the brief's backfill guard |
-| `TEDRATE` | 2022-01-22 | **Not** in the backfill guard. If any builder reads it live, replace with F10's CP − T-bill or SOFR − T-bill at a version bump |
+| `TEDRATE` | 2022-01-22 | **GUARDED — not a defect.** `series_meta.py:56` flags it False; `s4_funding.py:19,79-80` runs historic/modern modes and reads its staleness; `test_builders.py:706-720` tests that auto mode stops using it. Corrects the source ledger. |
 
-**One driver-level invariant kills the class:** *no source past its staleness limit may emit a
+Live exposure is **F3 only** — S4 and S14 both handle their dead legs correctly. The invariant is still worth having as a guard against future builders: *no source past its staleness limit may emit a
 state — the builder returns NA.* Applies to every leg of every fallback chain. Enforce centrally,
 then the per-builder patches are belt-and-braces. `[inf]`
 
@@ -211,10 +211,11 @@ table. `[fact]`
 
 ### P1 — ELEVATED from the source ledger's P2/unconfirmed
 
-**B10 — `prediction_features` receives a NULL composite.** This is the only item that crosses out
-of CEWS into the **live trading stack**. If the ML consumer imputes 0 or `NORMAL` instead of
-masking, a frozen crash-warning silently becomes a "market is normal" feature in the main fund's
-models. That is a rule-2 violation in production, not a dashboard cosmetic. `[inf]`
+**B10 — NOT YET WIRED.** `grep -rn composite_score features/ signals/` returns nothing: the emit
+does not exist, so there is no live contamination today. This is a build-it-right requirement, not
+an active leak — my earlier present-tense framing was wrong. When it is built: the consumer must
+**mask** a NULL composite, never impute 0 or `NORMAL`, or a frozen crash-warning becomes a
+"market is normal" feature in the fund's models. `[fact — grep returned empty]`
 
 Verify before touching anything else in the emit path:
 ```
@@ -232,7 +233,7 @@ grep -rn "composite_score" features/ signals/ | head
 - **A5 / OAS** — pull the two OAS series daily (cheap); weekly cadence stays for everything else.
 - **B7 — `zscore`** needs the Phase 1 backfill. Until then: split `raw_sub_score` /
   `effective_sub_score`, and write **NULL, never 0**, with the dashboard saying so.
-- **C3 — dashboard export** automated after the engine step in the same wrapper.
+- **C3 — ALREADY AUTOMATED.** `exports/cews_engine_json.py` runs 06:05 VN Tue–Sat (crontab line 359), after the driver. Corrects the source ledger. Fold into the wrapper and delete the standalone line, or it fires on its own clock.
 - **French / Ritter files** last pulled 1 Jul / 31 Mar — not covered by the `--only fred` cron.
   Monthly job.
 
