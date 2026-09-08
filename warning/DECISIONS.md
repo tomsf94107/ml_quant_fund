@@ -437,6 +437,14 @@ to 1871). Recorded here so the blocker is explicit rather than rediscovered.
 
 ---
 
+## D14 — never assigned
+
+No D14 exists. The numbering runs D13 -> D15; the entry between them is a
+status continuation of D12, not a new decision. Recorded so the next reader
+does not hunt for a missing ruling. Numbers are not retrofitted.
+
+---
+
 ## D15 — S8's leader definition cannot distinguish an epicenter from a rotation
 
 **Status: CONFIRMED 2026-08-30 on 96 years of independent data. See the
@@ -987,3 +995,95 @@ least -- it removes any trend without asserting a functional form.
 Score so far: D19 reversed my conclusion, D21 was overturned within the hour by
 D23, D15 was confirmed, D16 confirmed. Two of four went against what I had
 written down before testing.
+
+
+## D24 — a missed run is an operational failure; the driver refuses rather than backfilling   [APPLIED 2026-09-08]
+
+**Where:** `warning/daily_driver.py`, `missing_sessions()`. Commit 928240b9.
+
+**The situation.** A scheduled run that does not fire leaves a trading session
+with no row. Three options: continue the persistence run across it, reset the
+run to 1, or refuse to proceed.
+
+**Decision: refuse.** The driver detects sessions between the last stored
+`asof_date` and the target that have no row, prints the exact re-step command
+for each, and exits 3. `--allow-gap` proceeds deliberately.
+
+**Why not auto-backfill**, which is technically sound: `pit.series_asof`
+filters `pub_date <= asof` and takes the max `pub_date` per `obs_date`, so a
+re-step genuinely sees only what was visible then. Two reasons against. A
+missing session is a cron that did not fire, and replaying it silently makes
+that failure invisible. And any cap on how far back to backfill unattended
+would be a number invented at the keyboard, which rule 3 forbids. The file
+already refuses twice rather than guessing -- FEED_STALE exits 2,
+`market_calendar` raises past `HORIZON_YEAR`. This is the third, same shape.
+
+**What a gap does to a persistence run, if left unfilled.**
+`apply_persistence` counts consecutive OBSERVATIONS, not calendar sessions. A
+skipped day does not reset a run; it is never counted. A signal at 13 days
+that misses a session resumes at 14, one session later in wall-clock time than
+it should have been. This is the same mechanism as the NA freeze at
+`warning_engine.py:119`, which returns before touching `st.persistence`.
+
+**Consequence, accepted.** Persistence measures observed days, not elapsed
+days. Under a long outage a 21-day signal takes longer than 21 sessions to
+become effective. The alternative -- counting unobserved days -- would assert a
+state that was never measured.
+
+---
+
+## D25 — persistence should be DERIVED from signal_values, not accumulated in a counter   [PROPOSED, NOT RATIFIED]
+
+**Status: OPEN. Phase 1 applied; Phase 2 needs a ruling.**
+
+**The defect (fixed).** `schema_meta.engine_state` carried per-signal counts up
+to 13 against six real `asof_dates`. The counter increments once per
+INVOCATION; `persist()` uses `INSERT OR REPLACE`, so re-stepping a date
+collapses the row while the counter increments anyway. Rows are idempotent, the
+counter is not. Persistence gates hysteresis, so an inflated count makes a
+signal reach effective state early. 2026-08-28 had been stepped six times.
+
+**Phase 1, applied 2026-09-08** (`warning/rebuild_persistence.py`, commit
+aab085b7). Replays stored states through the real `warning_engine.step()` and
+writes `effective_state` back to `signal_values`, which `persist()` had always
+written as literal NULL -- so no history existed of what the engine concluded
+on any past date. Replay rather than recompute: a gaps-and-islands SQL query
+looks equivalent and is not, because `apply_persistence` returns early on NA
+and freezes the run rather than resetting it. Result: S1 fell from 13 days to
+6, still G against its 21-day requirement. F2 crossed on 2026-09-03 and now
+shows G,G,G,G,Y,Y -- the first per-date transition in the record. Layer
+coverage unchanged at 25/78/100/40.
+
+**Phase 2, proposed.** The engine derives persistence from `signal_values` at
+step time; the JSON blob becomes a cache rather than the source of truth.
+
+- *For:* re-stepping any date auto-corrects everything downstream, and the gap
+  policy lives in one visible place instead of an implicit accumulator. The
+  rebuild script stops being needed.
+- *Against:* `warning_engine.py` is shipped, tested code and this alters
+  hysteresis, which alters crisis behaviour. Same objection D10 raised.
+
+**Not decided unilaterally.** Until ratified, `rebuild_persistence.py` must be
+re-run after any re-step, or the counter drifts again.
+
+**Note.** `candidate_days` in `hysteresis_step` (`:228-237`) has the same
+per-invocation property and the same fix applies. It is 0, so nothing is
+corrupted today.
+
+---
+
+## D26 — left-censoring: no 21-day signal can be effective before roughly 2026-09-28   [RECORDED, NOT A DECISION]
+
+`signal_values` holds six `asof_dates` (2026-08-28 .. 2026-09-04).
+`PERSIST_DAYS_DEFAULT = 10`, `PERSIST_DAYS_DEFENSIVE = 21`, and S1 and S6 both
+carry `persistence_days = 21`.
+
+S1 -- the term-spread inversion, the longest-lead predictor in the roster --
+reads R on all six dates and contributes G to L2, because six is not 21. It
+cannot become effective before roughly 2026-09-28, assuming daily runs resume
+without gaps.
+
+**L2's 0.000 score must not be read as "nothing happening".** It means no
+signal has yet been observed long enough to count. The dashboard should
+distinguish "not persisted yet" from "insufficient history to know", and until
+it does, this entry is the record.
