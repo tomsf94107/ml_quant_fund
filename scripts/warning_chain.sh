@@ -83,6 +83,19 @@ $PY scripts/fetch_free_history.py --db warning.db --out data/raw --only fred,cbo
   || fail "fetch_free_history"
 
 # ---------------------------------------------------------------------------
+# 3b. Parse the Cboe CSVs into data_vintages.
+#
+#     fetch_free_history --only cboe DOWNLOADS the files and stops; parse_cboe.py
+#     is a separate CLI and nothing invoked it. That is why every CBOE_* series
+#     sat at 2026-08-27 while COR1M_History.csv on disk was current. L4C was not
+#     reading NA -- it was reading G off week-old correlation data, which is
+#     worse. Parsing took L4 coverage from 40% to 60%.
+# ---------------------------------------------------------------------------
+step "parse_cboe"
+$PY warning/parse_cboe.py --dir data/raw/cboe --db warning.db          >> "$LOG" 2>&1 \
+  || fail "parse_cboe"
+
+# ---------------------------------------------------------------------------
 # 4. UW snapshot BEFORE the driver.
 #    Current crontab has the driver at 06:00 and the archiver at 06:30 -- the driver
 #    reads yesterday's snapshot. Harmless while no UW-fed signal is live; wrong the
