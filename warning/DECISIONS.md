@@ -1087,3 +1087,137 @@ without gaps.
 signal has yet been observed long enough to count. The dashboard should
 distinguish "not persisted yet" from "insufficient history to know", and until
 it does, this entry is the record.
+
+
+## D27 — S10's "3m decline from peak" is CUMULATIVE, and "first" is an EVENT   [APPLIED 2026-09-08]
+
+**Where:** `warning/builders/s10_margin_debt.py`. Commit 4d24a2da.
+
+**The registry text.** `red: YoY>+40% then 3m reversal`, formula
+`trigger: first 3m decline from peak (as of publication date)`.
+
+**Two readings of "3m decline", and the first one tried was wrong.** Three
+CONSECUTIVE down months does not reproduce a single recorded verdict. On FINRA's
+own series the Mar-00 peak of 299,933 fell to 268,716 in April and 256,862 in
+May, then rose to 264,471 in June. The Jul-07 peak of 416,403 fell in August and
+September, then rose to 376,979 in October. Neither streak reaches three, so a
+consecutive reading never fires in 2000 or 2007.
+
+Read CUMULATIVELY -- three published months elapsed since the peak and the level
+still below it -- 2000 fires at 2000-07-31 and 2007 at 2007-11-30. The registry
+says trigger ~Jun-Jul00. It is also the better economics: the claim is that
+leverage has turned, not that it fell every month without exception.
+
+**"FIRST" is read as an event: red only in the month the condition confirms.**
+The alternative, holding red until a new all-time peak, was measured and is
+unusable: the Mar-00 peak was not exceeded until 2006-12 and the Jul-07 peak not
+until 2013-09. Six years of red through a recovery is not a signal. "First" is in
+the registry text and is doing work, `persistence_days` is 1, and the registry
+calls S10 a confirmer -- a trigger marks a moment.
+
+**Fragility is tested AT THE PEAK, not at the current month.** By month three the
+YoY reading has rolled over on its own: Mar-00 peaked at +80.5% YoY but by July
+the current reading was +40.9%. Testing late would make red nearly unreachable.
+Peak-anchored gives +80.5% in 2000, +62.6% in 2007 and +41.9% in 2021 -- above
+the +40% threshold in all three episodes.
+
+**Verified.** Fires 2000-07-31, 2007-11-30 and 2022-02-28, one month each. Live
+reading is amber: peak Jun-26 at +49.0% YoY, one month elapsed, 5.6% below peak.
+
+**This is a rule-3 reading of compressed phrasing, not a ratified threshold.**
+No new number was invented, but three words were interpreted. Recorded so the
+interpretation is visible and reversible rather than buried in a builder.
+
+---
+
+## D28 — the registry's 2008 margin peak is the INDEX peak, not the margin peak   [FLAGGED, NOT PATCHED]
+
+**Status: NOT patched. Flagged only. No code was tuned to fit it.** Same handling
+as D4.
+
+**The conflict.** S10's `historical_verdict_2008` reads *"peak Oct-07; trigger
+~Jan-08 with 49% remaining"*. FINRA's own series peaks at **Jul-07, 416,403**.
+Oct-07 is 376,979 -- 9.5% lower, and not even a local maximum, since Nov-07 is
+379,593.
+
+| month | debit balances, $M |
+|---|---|
+| 2007-06 | 408,444 |
+| **2007-07** | **416,403** |
+| 2007-08 | 362,475 |
+| 2007-09 | 359,104 |
+| 2007-10 | 376,979 |
+| 2007-11 | 379,593 |
+
+**Reading.** 2007-10-09 is the S&P 500 peak. The registry cell appears to record
+the index date rather than the margin date. The registry's own 2021 row supports
+this: *"peak Oct-21 led index peaks 1-2mo"* -- margin leads, so the two peaks are
+different months by the registry's own account, and the 2008 row took the wrong
+one.
+
+**Consequence.** The builder fires 2007-11-30, three published months after the
+Jul-07 peak. The registry's ~Jan-08 is three months after Oct-07. The difference
+is entirely the peak date; the construction is identical.
+
+**Ruling needed.** Either
+(a) the cell is corrected to "peak Jul-07; trigger ~Nov-07", or
+(b) some other margin series is intended, in which case S10's source is wrong.
+
+FINRA's file is the only US customer margin debt series and the registry names it
+directly, so (a) is the likely resolution -- but the cell is not edited here.
+Editing `signal_registry.csv` bumps `registry_version`, currently `e73fd303705e`,
+which should be a deliberate act rather than a side effect.
+
+---
+
+## D29 — L4D is one ruling from buildable; "vol clustering" is unspecified   [PROPOSED, NOT RATIFIED]
+
+**Status: OPEN. Margin leg specified and ready. Vol leg needs a ruling.**
+
+**Report line 601, verbatim:** `forced-deleveraging evidence (margin -10%/3m +
+vol clustering)`.
+
+**The margin leg needs nothing.** Minus 10% over three months on
+`FINRA_MARGIN_DEBIT`, ingested back to 1997-01. It fires in 26 of 352 months,
+roughly 8-10 distinct episodes -- 1998-10, the 2000-01 cluster, 2018-12,
+2020-03, 2022, 2023-10. Real deleveraging events. But 7.4% of months is far too
+frequent for a condition that emits B and bypasses persistence straight to
+CRISIS, so the vol conjunct carries most of the discrimination. Its threshold
+therefore matters a great deal, which is exactly why it cannot be invented.
+
+**Current reading is the opposite of stress:** +8.7% over three months, +23.0%
+as recently as June.
+
+**"Vol clustering" has no threshold, window or series in the report.** Same gap
+as D9 (correlation lookback) and D18 (stress per market), both resolved by
+reusing an existing frozen value rather than inventing one.
+
+**What the term means.** The literature is consistent: volatility clustering is
+the PERSISTENCE of volatility -- large changes followed by large changes, calm
+followed by calm -- measured on realized volatility and described as stress
+duration rather than volatility magnitude. It is not a level.
+
+**Three candidates.**
+
+| candidate | history | objection |
+|---|---|---|
+| Realized vol of `SPY_CLOSE` | 2016-07-18 only | Correct construction, but the Massive floor means no 2000 and no 2008. Covers 2020, 2018-12, 2022 |
+| `F2` percentile | 1990 | Measures LEVEL, not persistence. And D12: F2 read G at the October 2007 peak because the August shock lifted its own 504-day window. A self-neutralising input is a poor conjunct for a crisis override |
+| Duration above a threshold on `VIXCLS` | **1990** | A persistence measure, matching the definition, and an absolute-duration count does not drift with its own window the way a z-score or trailing percentile does. Covers 2000, 2008, 2020, 2022. Implied rather than realized volatility -- a proxy, but with 36 years against realized vol's 10 |
+
+**Recommendation, not a decision: the third.** It measures persistence rather
+than level, it is testable against every episode in the registry's verdict
+columns, and it avoids the D12 failure that already afflicts L4A. The open
+question is narrow -- what absolute level counts as elevated -- and the D9/D18
+pattern says reuse a frozen number rather than pick one.
+
+**Impact of leaving L4D unbuilt, measured rather than assumed.** L4 needs four of
+five conditions for 80%; only L4D and L4E remain, and L4E needs F9, which does
+not exist. So without L4D, **L4 never passes its gate** -- the composite runs on
+three of four layers permanently, with L1/L2/L3 silently renormalised upward.
+
+But the CRISIS override SURVIVES. `warning_engine.l4_propagation_red` iterates
+individual readings filtered on `r.layer == "L4"`, not the layer score, so L4A,
+L4B and L4C still escalate on any single B. Not building L4D removes one of five
+detection routes; it does not disable the crisis path.
+
