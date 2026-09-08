@@ -82,7 +82,16 @@ MONTH_CODES = "FGHJKMNQUVXZ"
 
 
 def get(url, binary=False):
-    req = urllib.request.Request(url, headers={"User-Agent": "warning-system/1.0"})
+    # UA matters. FRED sits behind Akamai, which allowlists known client UAs and
+    # STALLS unknown ones -- TCP connects, TLS completes, the request is sent, and
+    # no response line ever arrives, surfacing as "read operation timed out" after
+    # the full timeout. "warning-system/1.0" is in the stalled class, which is why
+    # all 18 series failed identically in fred_weekly.log regardless of size.
+    # Measured 2026-09-08: curl/8.4.0 and bare urllib return 200 in ~1.2s;
+    # "warning-system/1.0" and "Mozilla/5.0" both hang, DGS10 at 268KB arrives in
+    # 1.73s. Not payload size, not a network block -- curl reached the host fine
+    # throughout. If this regresses, re-test the UA before touching timeouts.
+    req = urllib.request.Request(url, headers={"User-Agent": "curl/8.4.0"})
     with urllib.request.urlopen(req, timeout=60) as r:
         data = r.read()
     return data if binary else data.decode("utf-8", errors="replace")
