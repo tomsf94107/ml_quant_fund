@@ -1,3 +1,4 @@
+# VOID 2026-09-08: computed against leaked report_date (fiscal period end, not announce date). Monitor cron disabled. Do not read as signal.
 date,n,triggered,full_sharpe,early_sharpe,recent_sharpe
 2026-06-25,24,yes,0.99,-0.64,3.23
 2026-06-29,24,no,,,
