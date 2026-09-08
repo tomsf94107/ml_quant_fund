@@ -39,6 +39,7 @@ USAGE
     python warning/ingest_breadth.py --prices prices.db --db warning.db
     python warning/ingest_breadth.py --prices prices.db --db warning.db --dry-run
 """
+import os
 import argparse
 import sqlite3
 from collections import defaultdict
@@ -52,7 +53,8 @@ MIN_NAMES = 50
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prices", default="prices.db")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 

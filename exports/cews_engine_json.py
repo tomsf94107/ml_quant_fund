@@ -8,6 +8,7 @@ The dashboard renders the engine panel from this JSON verbatim; the scheduled re
 block into the published page. Edit BLOCKERS / NAMES below when the situation changes — this file is the
 editorial source for those sections.
 """
+import os
 import argparse, collections, hashlib, json, os, re, sqlite3, sys
 from datetime import datetime, timezone, date
 
@@ -79,7 +80,8 @@ def read_note(latest_by_sig):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--out", default="exports/engine-data.json")
     ap.add_argument("--registry", default="warning/signal_registry.csv")
     a = ap.parse_args()

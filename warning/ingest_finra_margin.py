@@ -100,7 +100,8 @@ def load_rows(path: str):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--xlsx", default="data/raw/finra/margin-statistics.xlsx")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-age-days", type=int, default=DEFAULT_MAX_AGE_DAYS)
     args = ap.parse_args()

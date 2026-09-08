@@ -68,7 +68,8 @@ def fetch_all_vintages(series, key, timeout=60):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--series", default=",".join(REVISABLE))
     args = ap.parse_args()

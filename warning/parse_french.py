@@ -112,7 +112,8 @@ def parse(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="data/raw/french")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--columns", default=",".join(DEFAULT_COLUMNS),
                     help="comma-separated column names to write; 'ALL' writes "
                          "every column (millions of rows)")

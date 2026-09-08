@@ -219,7 +219,8 @@ def persist(con, asof, res, details, dash):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     # ET, not local. date.today() returns the VN date, a day ahead of ET, and
     # the cron fires 06:00 VN = 19:00 ET the PREVIOUS day -- so an unqualified
     # today() would stamp Monday's US session with Tuesday's date. Every other

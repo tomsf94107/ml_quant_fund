@@ -37,6 +37,7 @@ USAGE
     python warning/parse_ritter.py --pdf data/raw/ritter/IPO-Statistics.pdf
     python warning/parse_ritter.py --pdf ... --db warning.db --apply
 """
+import os
 import argparse
 import re
 import sqlite3
@@ -65,7 +66,8 @@ def parse_page(pdf_path, page_index):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pdf", default="data/raw/ritter/IPO-Statistics.pdf")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
 

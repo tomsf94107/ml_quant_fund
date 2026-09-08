@@ -167,7 +167,8 @@ def normalize(con, rows):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="data/raw/cfe")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--per-contract", action="store_true",
                     help="also write the 150+ VX_<CODE><YY> per-contract series")

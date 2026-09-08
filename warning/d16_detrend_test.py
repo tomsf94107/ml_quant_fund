@@ -50,7 +50,8 @@ def wilson(k, n, z=1.96):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     args = ap.parse_args()
     con = sqlite3.connect(f"file:{args.db}?mode=ro", uri=True)
 

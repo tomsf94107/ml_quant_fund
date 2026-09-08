@@ -33,6 +33,7 @@ Design rules:
   - Respect rate limits: simple sleep between calls; exponential backoff on 429.
 """
 
+import os
 import argparse, json, os, sqlite3, sys, time, urllib.request, urllib.error
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
@@ -138,7 +139,8 @@ def snapshot(conn, endpoint, params, day):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     args = ap.parse_args()
     if not TOKEN:
         sys.exit("UW_API_KEY (or UW_TOKEN) not set -- check .env")

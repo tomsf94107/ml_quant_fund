@@ -33,6 +33,7 @@ USAGE
     python warning/migrate_uw_archive.py --db warning.db
     python warning/migrate_uw_archive.py --db warning.db --apply
 """
+import os
 import argparse
 import sqlite3
 
@@ -56,7 +57,8 @@ def current_pk(con):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args()
     con = sqlite3.connect(args.db)

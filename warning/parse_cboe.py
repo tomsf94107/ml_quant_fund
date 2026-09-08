@@ -114,7 +114,8 @@ def parse_file(path, kind, cols):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dir", default="data/raw/cboe")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 

@@ -30,6 +30,7 @@ USAGE
     python warning/restamp_vintages.py --db warning.db
     python warning/restamp_vintages.py --db warning.db --apply
 """
+import os
 import argparse, os, sqlite3, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -58,7 +59,8 @@ def plan(con):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--apply", action="store_true", help="write (default is dry-run)")
     args = ap.parse_args()
     con = sqlite3.connect(args.db)

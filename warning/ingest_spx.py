@@ -39,7 +39,8 @@ SERIES_SUFFIX = "_CLOSE"
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prices", default="prices.db")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--ticker", default="SPY",
                     help="one ticker, or a comma-separated list "
                          "(e.g. SPY,XLP,XLU,XLV)")

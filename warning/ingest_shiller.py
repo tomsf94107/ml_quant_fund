@@ -111,7 +111,8 @@ def load_rows(xls_path: str):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--xls", default="data/raw/shiller/ie_data.xls")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--include-partial", action="store_true",
                     help="keep the trailing incomplete month (default: drop)")

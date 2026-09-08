@@ -15,6 +15,7 @@ If the builder does not reproduce those from point-in-time data, the builder is
 wrong (or the registry's verdict is) -- either way it is a finding, printed as
 one. Nothing here writes to the database.
 """
+import os
 import argparse, os, sqlite3, sys
 from datetime import date
 
@@ -89,7 +90,8 @@ ANCHORS = [
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--asof", default=date.today().isoformat())
     ap.add_argument("--validate", action="store_true",
                     help="replay the registry's documented anchor months")

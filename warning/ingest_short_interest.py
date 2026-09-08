@@ -32,6 +32,7 @@ USAGE
     python warning/ingest_short_interest.py --src short_interest.db --db warning.db
     python warning/ingest_short_interest.py --src short_interest.db --db warning.db --dry-run
 """
+import os
 import argparse
 import sqlite3
 from datetime import date, timedelta
@@ -52,7 +53,8 @@ def plus_business_days(iso: str, n: int) -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", default="short_interest.db")
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 

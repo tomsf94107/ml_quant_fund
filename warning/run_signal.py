@@ -9,6 +9,7 @@ run_signal.py — compute / scan / validate any signal builder. Read-only.
 --validate replays the registry's OWN ex-ante verdicts. A mismatch is a finding:
 report it, do not tune the builder. Thresholds are frozen (rule #3).
 """
+import os
 import argparse, os, sys
 from datetime import date, timedelta
 
@@ -269,7 +270,8 @@ def month_ends(start, end):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--signal", default="S1", choices=sorted(BUILDERS))
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--asof", default=date.today().isoformat())
     ap.add_argument("--scan", nargs=2, metavar=("START", "END"))
     ap.add_argument("--validate", action="store_true")

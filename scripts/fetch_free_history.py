@@ -27,6 +27,7 @@ Idempotent: every artifact lands in --out with a dated filename; FRED/ALFRED
 rows upsert into data_vintages keyed by (series, obs_date, pub_date).
 """
 
+import os
 import argparse, csv, io, os, sqlite3, sys, time, urllib.request
 from datetime import date, timedelta
 
@@ -192,7 +193,8 @@ def cfe_all(out, y0=2004, y1=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default="warning.db")
+    ap.add_argument("--db", default=os.environ.get("WARNING_DB",
+                                               "warning.db"))
     ap.add_argument("--out", default="data/raw")
     ap.add_argument("--scrape-daily-pages", action="store_true",
                     help="also scrape Cboe per-day pages 1997-2019 (slow, one-shot)")
