@@ -69,6 +69,7 @@ from builders import s5_breadth as S5                       # noqa: E402
 from builders import s3_sloos as S3                         # noqa: E402
 from builders import s11_issuance as S11                    # noqa: E402
 from builders import s13_valuation as S13                   # noqa: E402
+from builders import s10_margin_debt as S10                 # noqa: E402
 from builders import s6_concentration as S6                 # noqa: E402
 from builders import l4_propagation as L4                    # noqa: E402
 
@@ -82,7 +83,7 @@ ROSTER = {
 }
 BUILT = {"S1": S1, "S2": S2, "S4": S4, "S14": S14, "S7": S7, "S8": S8,
          "S9": S9, "S5": S5, "S3": S3, "S11": S11, "S6": S6,
-         "S13": S13}
+         "S13": S13, "S10": S10}
 DASHBOARD = {"F2": F2, "F3": F3}             # tier 'dashboard', computed after
 
 
