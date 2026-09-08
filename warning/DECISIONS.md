@@ -1130,10 +1130,18 @@ interpretation is visible and reversible rather than buried in a builder.
 
 ---
 
-## D28 — the registry's 2008 margin peak is the INDEX peak, not the margin peak   [FLAGGED, NOT PATCHED]
+## D28 — the registry's 2008 margin peak is the INDEX peak, not the margin peak   [CORRECTED 2026-09-08]
 
-**Status: NOT patched. Flagged only. No code was tuned to fit it.** Same handling
-as D4.
+**Status: RESOLVED via option (a). The registry cell is corrected; no code was
+tuned to fit it.** The builder was written and verified BEFORE this edit, and is
+unchanged by it -- the correction moves the registry to match the data and the
+builder, not the other way round.
+
+`historical_verdict_2008` now reads: *peak Jul-07 (416403); trigger ~Nov-07 with
+49% remaining*. `registry_version` moves **e73fd303705e -> 71be58b37720**. Rows
+written before the edit keep the old stamp, which is the point of stamping them.
+
+Original finding follows.
 
 **The conflict.** S10's `historical_verdict_2008` reads *"peak Oct-07; trigger
 ~Jan-08 with 49% remaining"*. FINRA's own series peaks at **Jul-07, 416,403**.
