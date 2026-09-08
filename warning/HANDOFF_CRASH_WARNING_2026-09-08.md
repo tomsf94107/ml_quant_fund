@@ -3,9 +3,11 @@
 
 > ## STATUS AT END OF SESSION, 2026-09-08
 >
-> **THE COMPOSITE COMPUTES.** `BAND NORMAL · composite 14.8 · path SPECULATIVE ·
-> gross 1.0 · hedge none`, on six asof_dates 2026-08-28 to 09-04. The system has
-> never produced a number before today.
+> **THE COMPOSITE COMPUTES ON COMPLETE COVERAGE.** `BAND NORMAL · composite 11.1 ·
+> path SPECULATIVE · gross 1.0 · hedge none`, on six asof_dates 2026-08-28 to
+> 09-04, with **`na_layers` empty — all four layers pass their gates**. The system
+> produced no number at all before today. It first read 14.8 on three layers; 11.1
+> is the honest figure once L4 enters at 0.000 with weight 0.25.
 >
 > Everything below this box was written in the MORNING, when L1 was 25% and the
 > composite was NULL. It is kept as the reconciliation record. **Most of its
@@ -16,7 +18,7 @@
 > | L1 | 25% | **75%** | passes |
 > | L2 | 78% | 78% | passes |
 > | L3 | 100% | 100% | passes |
-> | L4 | 40% | 60% | **fails** |
+> | L4 | 40% | **80%** | passes |
 >
 > **Built today**
 >
@@ -29,6 +31,8 @@
 > | B3 alerts | `f3ea3573` | Unique index with COALESCE + `INSERT OR REPLACE`. Was the only non-idempotent table |
 > | FRED feed | `cf796020` | **Ten-week outage was a User-Agent string.** Akamai stalls unknown UAs. All 18 series in 33.9s |
 > | Cboe → L4C | `bbabc1f2` | **Downloaded but never parsed.** `parse_cboe.py` was a separate CLI nothing invoked. 73,738 rows, **L4 40% → 60%** |
+> | **L4D** forced deleveraging | `3840884e` | Margin −10%/3m AND S14 leg (a) clustering, borrowed whole per D29. 46 fire-days in ~1,800: a contiguous 2020 block, four 2022 clusters. **L4 60% → 80%** |
+> | D28 resolved | `baea79bf` | Registry's 2008 peak corrected to Jul-07. `registry_version` → `71be58b37720` |
 > | Cron | `bbabc1f2`, `537d0c19` | One scheme, gated on Pipeline A's done-file. Driver and export steps STAGED OFF for the first night |
 > | D24–D29 | `8eb9a4eb`, `10167563` | Gap policy, derived-persistence proposal, left-censoring, S10's readings, the registry's wrong 2008 peak, L4D's open ruling |
 >
@@ -36,26 +40,22 @@
 >
 > | Item | Blocker |
 > |---|---|
-> | **D29 — L4D** | **Ruling.** "Vol clustering" is unspecified. Margin leg ready. Would take L4 to 80% and put all four layers in the composite |
-> | **D28** | **Ruling.** Registry's 2008 margin peak is Oct-07; FINRA peaks Jul-07. Flagged, not patched, per D4 |
-> | S15 credit-boom | FRED Z.1 + Case-Shiller. Would take L1 to 100% |
+> | S15 credit-boom | FRED Z.1 + Case-Shiller. Would take L1 to 100%. Hardest remaining build |
 > | L4E | Needs F9, a negative-gamma estimate that does not exist |
 > | B2 `runs` table | Not destructive, but its absence forced row deletion twice today |
 > | C2 dev-db env var | Not destructive |
 > | Wrapper steps 5/6 | Uncomment after the first clean cron pass Wed 05:45 VN; delete the 06:00 and 06:05 lines in the same edit |
 > | `warning.db` backup | Gitignored, untracked, one 263MB `.bak` on the same disk |
 >
-> **Three cautions on the 14.8, in order of weight.**
+> **Two cautions on the 11.1.**
 >
-> 1. **L4 is NA**, so the composite runs on three of four layers with L1/L2/L3
->    renormalised upward. `NA_LAYER_LIMIT` permits it. The CRISIS override still
->    works — `l4_propagation_red` iterates individual L4 readings, not the layer
->    score — so L4A/B/C escalate on any single B.
-> 2. **L2 = 0.000 with S1 reading R** is D26, left-censoring. Six asof_dates
+> 1. **L2 = 0.000 with S1 reading R** is D26, left-censoring. Six asof_dates
 >    against a 21-day persistence requirement. Not "nothing happening";
 >    "not yet countable". Resolves ~2026-09-28.
-> 3. **`gross 1.0` is live action output**, NULL to actionable in one step. This
->    is the least informed number the system will ever produce.
+> 2. **`gross 1.0` is live action output**, NULL to actionable in one day. Six
+>    asof_dates of history. L4D has one validated episode (2020) plus a
+>    fragmented 2022 — D17 applies, that is a plausibility check, not a track
+>    record.
 >
 > **Ten claims in the source ledger were wrong**, each overturned by reading code
 > rather than documents: TEDRATE is guarded; C3 was already automated at 06:05;
