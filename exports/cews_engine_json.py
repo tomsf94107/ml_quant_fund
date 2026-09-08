@@ -129,14 +129,17 @@ def main():
         "holiday_rows": [d for d in dates if d in NYSE_HOLIDAYS_2026 or datetime.strptime(d, "%Y-%m-%d").weekday() >= 5],
         "blockers": BLOCKERS,
         "read_note": read_note(latest_by_sig),
-        "runlog_note": "28 Aug carries 30 alerts from six re-runs (dev iterations persisted to the production alert table). "
-                       "Rows marked hol fall on a US market holiday or weekend and carry prior-session data (defect B8).",
+        "runlog_note": "Both defects this note described are fixed (2026-09-08). B3 gave alerts a unique index and INSERT OR REPLACE, "
+                       "so re-stepping a date no longer accumulates rows; 28 Aug held 30 from six dev re-runs. B8 derives asof_date "
+                       "from utils.market_calendar.last_completed_session(); the Sunday and Labor Day rows were deleted and no "
+                       "non-trading date can be written.",
         "actions": {"action_gross": latest["action_gross"], "action_hedge": latest["action_hedge"],
                     "action_carry_bps": latest["action_carry_bps"], "candidate_band": latest["candidate_band"],
                     "candidate_days": latest["candidate_days"], "do_nothing": latest["do_nothing"], "l4_override": latest["l4_override"]},
-        "assumptions": "Gate = 0.70 read from warning_engine.py [confirmed]. The engine computes usable ÷ total weight; the bars count "
-                       "signals and match only if registry weights are equal [unconfirmed]. F-signals assumed uncounted from the ratios "
-                       "[unconfirmed]. Names from builder files, the driver log and signal_registry.csv; S1, S4 unnamed.",
+        "assumptions": "Gate = 0.70 read from warning_engine.py [confirmed]. Counting signals equals the engine's weight ratio: no builder "
+                       "passes weight, so every reading uses the 1.0 default [confirmed 2026-09-08 by grep of warning/builders/]. "
+                       "F-signals assumed uncounted from the ratios [unconfirmed]. Names from builder files, the driver log and "
+                       "signal_registry.csv; S1, S4 unnamed.",
     }
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     json.dump(out, open(a.out, "w"), ensure_ascii=False, indent=1)

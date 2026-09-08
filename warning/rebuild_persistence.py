@@ -31,9 +31,11 @@ WHAT THIS DOES
 SAFETY
     - Refuses to run without --write; default is a dry-run diff.
     - Refuses to run if any asof_date is not a real trading session.
-    - Deletes alerts for the replayed span first, because persist() uses a
-      plain INSERT for alerts (no OR REPLACE) and replay would otherwise
-      duplicate them. This is a workaround for B3, not a fix.
+    - No longer deletes alerts. It used to, because persist() used a plain
+      INSERT and replay would duplicate them -- which destroyed real history:
+      F2's 2026-09-03 transition survived in effective_state with no alert.
+      B3 made alerts idempotent via a unique index and INSERT OR REPLACE, so
+      the workaround is gone.
 
 USAGE
     python warning/rebuild_persistence.py --db warning.db
@@ -147,8 +149,6 @@ def main():
               f"none written. Re-run with --write to apply.")
         return
 
-    con.execute("DELETE FROM alerts WHERE asof_date BETWEEN ? AND ?",
-                (dates[0], dates[-1]))
     con.executemany(
         "UPDATE signal_values SET effective_state=? "
         "WHERE asof_date=? AND signal_id=?", updates)
@@ -160,8 +160,8 @@ def main():
                 "VALUES ('engine_state', ?)", (blob,))
     con.commit()
     print(f"\nwrote {len(updates)} effective_state values; engine_state reset "
-          f"to date-derived counts; alerts for the span cleared "
-          f"(persist() re-inserts on the next run).")
+          f"to date-derived counts. Alerts untouched -- "
+          f"idempotent since B3.")
 
 
 if __name__ == "__main__":

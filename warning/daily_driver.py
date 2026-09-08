@@ -196,7 +196,20 @@ def persist(con, asof, res, details, dash):
            r.get("persistence_days", 1), None, r.get("source_asof"), rv))
 
     for a in res.alerts:
-        con.execute("""INSERT INTO alerts (asof_date,alert_type,from_state,to_state,reason)
+        # B3. Alerts were the only non-idempotent table: every other write uses
+        # INSERT OR REPLACE, so re-stepping a date collapsed its rows while
+        # alerts accumulated. 2026-08-28 reached 33 rows across six runs, and
+        # 2026-09-04 held two contradictory sets -- one asserting L2 at 67% and
+        # L3 at 50%, the other showing both passing, with only the second
+        # surviving in signal_values. An alert log that disagrees with the
+        # signal log is worse than no alert log.
+        #
+        # The unique index uses COALESCE because LAYER_NA carries to_state NULL
+        # and SQLite treats NULLs as distinct in a unique index, so a plain
+        # index would never collide on exactly the rows that duplicated most.
+        # `reason` is deliberately outside the key: it varies between runs of
+        # the same alert, and REPLACE keeping the latest matches signal_values.
+        con.execute("""INSERT OR REPLACE INTO alerts (asof_date,alert_type,from_state,to_state,reason)
           VALUES (?,?,?,?,?)""", (str(asof), a[0], a[1], a[2], a[3]))
     con.commit()
 
