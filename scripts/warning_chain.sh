@@ -78,12 +78,23 @@ $PY warning/ingest_breadth.py --db warning.db                         >> "$LOG" 
 #    Until a --series filter exists, the daily pull is the full leg -- cheap enough.
 # ---------------------------------------------------------------------------
 step "fetch_free_history fred,cboe"
-$PY scripts/fetch_free_history.py --db warning.db --out data/raw --only fred,cboe \
+$PY scripts/fetch_free_history.py --db warning.db --out data/raw_live --only fred,cboe \
                                                                       >> "$LOG" 2>&1 \
   || fail "fetch_free_history"
 
 # ---------------------------------------------------------------------------
 # 3b. Parse the Cboe CSVs into data_vintages.
+#
+#     Fetch writes to data/raw_live, which is gitignored. data/raw/cboe stays
+#     as the COMMITTED point-in-time archive from 2026-08-28 and is not
+#     overwritten by cron. warning.db is gitignored and its only backup is on
+#     this same disk, so those 16 files are the only off-machine copy of the
+#     Cboe history. Today's Shiller lesson: the Yale mirror is frozen at
+#     2023-08 and still serves a valid file, so a CDN that works today is not
+#     insurance. The commit that added them said re-fetch needs a VPN because
+#     the ISP SNI-filters cboe.com -- both halves are now false, cdn.cboe.com
+#     resolves normally and the wrapper pulls all 16 without one, but the
+#     archive is worth keeping regardless.
 #
 #     fetch_free_history --only cboe DOWNLOADS the files and stops; parse_cboe.py
 #     is a separate CLI and nothing invoked it. That is why every CBOE_* series
@@ -92,7 +103,7 @@ $PY scripts/fetch_free_history.py --db warning.db --out data/raw --only fred,cbo
 #     worse. Parsing took L4 coverage from 40% to 60%.
 # ---------------------------------------------------------------------------
 step "parse_cboe"
-$PY warning/parse_cboe.py --dir data/raw/cboe --db warning.db          >> "$LOG" 2>&1 \
+$PY warning/parse_cboe.py --dir data/raw_live/cboe --db warning.db          >> "$LOG" 2>&1 \
   || fail "parse_cboe"
 
 # ---------------------------------------------------------------------------
