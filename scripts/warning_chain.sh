@@ -180,6 +180,30 @@ $PY scripts/uw_archiver.py --db warning.db                            >> "$LOG" 
 #                                                                     >> "$LOG" 2>&1 \
 #   || fail "cews_engine_json"
 
+# ---------------------------------------------------------------------------
+# 7. Weekly core dump to iCloud, Saturdays only.
+#
+#    warning.db is gitignored and untracked. The full file is 266MB but 70% of
+#    that is Ken French portfolio data that re-downloads freely; the core
+#    tables gzip to about 10MB. What is genuinely hard to reacquire is small:
+#    the Shiller CAPE history, whose live URL is a CDN blob with a version
+#    parameter and whose Yale mirror is frozen at 2023-08, the Cboe archive,
+#    and the engine's own state.
+#
+#    Keeps the four most recent dumps. VACUUM INTO would give a consistent
+#    binary copy but at 266MB; the SQL dump is smaller and restores with
+#    gzcat FILE | sqlite3 new.db.
+# ---------------------------------------------------------------------------
+if [[ "$(date +%u)" == "6" ]]; then
+  BK="$HOME/Library/Mobile Documents/com~apple~CloudDocs/ml_quant_backups"
+  mkdir -p "$BK"
+  step "weekly core dump"
+  /usr/bin/sqlite3 warning.db ".dump data_vintages signal_values composite_scores alerts schema_meta runs" \
+    | gzip > "$BK/warning_core_$(date +%F).sql.gz" 2>> "$LOG" \
+    || fail "core dump"
+  ls -1t "$BK"/warning_core_*.sql.gz | tail -n +5 | while read -r f; do rm -f "$f"; done
+fi
+
 echo "[$(ts)] === warning_chain OK ===" >> "$LOG"
 
 
