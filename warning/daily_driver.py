@@ -53,7 +53,8 @@ sys.path.insert(0, _HERE)
 # this file directly, so sys.path[0] is warning/ and utils/ is otherwise unseen.
 sys.path.insert(0, os.path.dirname(_HERE))
 
-from utils.market_calendar import last_completed_session     # noqa: E402
+from utils.market_calendar import (last_completed_session,   # noqa: E402
+                                   is_trading_day)
 from warning_engine import SignalReading, EngineState, step  # noqa: E402
 from builders import s1_term_spread as S1                    # noqa: E402
 from builders import s2_credit as S2                         # noqa: E402
@@ -135,6 +136,37 @@ def registry_version():
         return hashlib.sha256(fh.read()).hexdigest()[:12]
 
 
+def missing_sessions(con, target: str) -> list[str]:
+    """Trading sessions between the last stored asof_date and `target` with no row.
+
+    A missing session is an OPERATIONAL failure -- a cron that did not fire, a
+    machine asleep -- not a market event. The driver refuses rather than
+    silently stepping over it, matching the FEED_STALE exit and
+    market_calendar's refusal to guess past HORIZON_YEAR. Auto-backfill would
+    be defensible, since pit.series_asof is genuinely PIT-honest and a re-step
+    sees only what was visible then, but it would make the upstream failure
+    invisible, and any cap on how far back to go would be an invented number.
+
+    For whoever reads this during an outage: NOT re-stepping is also a choice.
+    apply_persistence counts consecutive OBSERVATIONS, not calendar sessions,
+    so a skipped day does not reset a run -- it is never counted. A signal at
+    13 days that misses a session resumes at 14, one session later in
+    wall-clock time than it should be.
+    """
+    row = con.execute("SELECT MAX(asof_date) FROM signal_values").fetchone()
+    last = row[0] if row and row[0] else None
+    if not last or last >= target:
+        return []
+    d = date.fromisoformat(last)
+    end = date.fromisoformat(target)
+    out = []
+    while d < end:
+        d = date.fromordinal(d.toordinal() + 1)
+        if d < end and is_trading_day(d):
+            out.append(d.isoformat())
+    return out
+
+
 def persist(con, asof, res, details, dash):
     rv = registry_version()
     con.execute("""INSERT OR REPLACE INTO composite_scores
@@ -191,13 +223,27 @@ def main():
                     help="evaluation date; defaults to the last completed "
                          "US session. Pass explicitly to re-step a past date.")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--allow-gap", action="store_true",
+                    help="proceed despite missing sessions rather than exiting 3")
     args = ap.parse_args()
 
     con = sqlite3.connect(args.db)
 
     explicit_asof = args.asof is not None
+    last_session = last_completed_session().isoformat()
     if not explicit_asof:
-        args.asof = last_completed_session().isoformat()
+        args.asof = last_session
+
+    # An explicit --asof exists to RE-STEP A PAST DATE. It must never reach
+    # forward: on 2026-09-08 a --asof of that date wrote a row for a session
+    # that had not begun in New York, since VN early morning is the previous
+    # ET afternoon. The FEED_STALE check below is deliberately bypassed for
+    # explicit dates, so without this there is no upper bound at all.
+    if args.asof > last_session:
+        sys.exit(f"--asof {args.asof} is beyond the last completed session "
+                 f"({last_session}). Sessions are labelled after they close.")
+    if not is_trading_day(args.asof):
+        sys.exit(f"--asof {args.asof} is not a US trading session.")
 
     # The calendar says which session to LABEL; SPY_CLOSE says which session we
     # actually HOLD, PIT-honest via pub_date. Disagreement means a feed is
@@ -215,6 +261,21 @@ def main():
               f"{have}. Refusing to write. Run the ingests, or pass --asof to "
               f"re-step a past date deliberately.", file=sys.stderr)
         sys.exit(2)
+
+    gaps = missing_sessions(con, args.asof)
+    if gaps and not explicit_asof and not args.dry_run:
+        print(f"GAP: {len(gaps)} trading session(s) between the last stored "
+              f"asof_date and {args.asof} have no row:", file=sys.stderr)
+        for g in gaps:
+            print(f"  python warning/daily_driver.py --db {args.db} --asof {g}",
+                  file=sys.stderr)
+        print("Run those in order, then re-run this. Or pass --allow-gap to "
+              "proceed and leave them unfilled -- persistence runs continue "
+              "across a gap, they do not reset.", file=sys.stderr)
+        if not args.allow_gap:
+            sys.exit(3)
+    elif gaps:
+        print(f"GAP: {len(gaps)} unfilled session(s): {gaps}")
 
     st = load_state(con)
     readings, details = build_readings(con, args.asof)
