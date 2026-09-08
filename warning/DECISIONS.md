@@ -1178,9 +1178,70 @@ which should be a deliberate act rather than a side effect.
 
 ---
 
-## D29 — L4D is one ruling from buildable; "vol clustering" is unspecified   [PROPOSED, NOT RATIFIED]
+## D29 — L4D: "vol clustering" is S14 leg (a), borrowed whole   [RATIFIED 2026-09-08]
 
-**Status: OPEN. Margin leg specified and ready. Vol leg needs a ruling.**
+**Status: BUILT AND SHIPPED.** `warning/builders/l4_propagation.py`,
+`forced_deleveraging()`. **L4 coverage 60% -> 80%; all four layers now pass
+their gates and the composite reads 11.1, down from 14.8, because L4 entered at
+0.000 with weight 0.25 and the earlier number was L1/L2/L3 renormalised upward.**
+
+**The ruling.** Vol clustering is S14 leg (a) taken entire: 21-day realized vol
+in the top quartile of its trailing two years for >=10 consecutive days, with
+the index below its 200DMA. Every parameter is registry-frozen. Nothing is
+invented here.
+
+**Why not the alternatives.** A VIX percentile measures level, not persistence,
+and D12 shows F2 read G at the October 2007 peak because its own window had
+absorbed the August shock -- a self-neutralising input is a poor conjunct for a
+condition that forces CRISIS. A duration count on VIXCLS reaches 1990 but needs
+a threshold, a window and a count, all of which I would have chosen already
+knowing which months they had to hit; it could not be fairly measured, which
+disqualifies it whatever number it produced. Dropping the 200DMA conjunct to
+match line 601's wording more closely would turn a ratified definition into a
+constructed one, and costs nothing to keep since both firing episodes had the
+index below trend anyway.
+
+**Coverage.** Leg (a) needs 725 observations of SPY_CLOSE (200 DMA + 504
+lookback + 21 RV) and prices.db starts 2016-07-18, so L4D is NA before roughly
+2019-06. No 2000, no 2008. Any evaluation spanning that boundary must treat the
+eras separately. D17 applies: this is a plausibility check, not a track record.
+
+**MEASURED BEHAVIOUR, and it took three attempts to get right.**
+
+Full daily sweep 2019-07 to 2026-09: **46 fire-days out of roughly 1,800**.
+
+| episode | fire-days | shape |
+|---|---|---|
+| 2020-04 to 2020-05 | 22 | one contiguous block, starting 2020-04-21 |
+| 2022-02 to 2022-07 | 24 | four clusters across six months |
+
+The first fire is 2020-04-21, not March, because the March margin print showing
+-17.3% was not published until the third week of April. That lag is the spec
+working, not a delay to be tuned out.
+
+The 2022 fragmentation is real and has a cause worth recording: the two legs are
+measured at different effective times. Margin refers to one to three months back
+and steps once a month at publication; clustering is a live run-length that can
+collapse to zero overnight. When the margin leg is marginal -- 2022 hovered
+between -9.9% and -14.5% -- the conjunction toggles on whichever side happens to
+be true that day.
+
+**The engine absorbs it, and the absorption was verified rather than assumed.**
+`hysteresis_step` is asymmetric: `l4_red` enters CRISIS immediately and resets
+`candidate_days` to 0, but exit falls through to the normal path and needs
+`PERSIST_DAYS_DEFENSIVE = 21` consecutive days below the exit level. Replaying
+2022 with the composite pinned at 11.1 gives three CRISIS entries and three
+exits, each holding roughly three to five weeks -- February 25 to April 1,
+May 12 to June 3, July 21 to August 4. Roughly a month of CRISIS per
+deleveraging cluster, in a year with a 25% drawdown.
+
+**Method note.** This mechanism was read wrong three times before it was
+measured: "fires once" from six spot checks, then "fires twice but is fragile"
+from a synthetic month-end convention I had invented, then "latches for six
+months" from reasoning about the exit counter without running it. The daily
+sweep and the engine replay were right each time; inference from partial views
+was not. No change to L4D or to the engine was needed -- but each of the three
+wrong readings would have prompted a different one.
 
 **Report line 601, verbatim:** `forced-deleveraging evidence (margin -10%/3m +
 vol clustering)`.

@@ -23,8 +23,9 @@ STATE MAPPING
     stress-underway conditions, not warnings. Untriggered conditions emit 'G';
     conditions whose inputs do not exist emit 'NA' so layer coverage stays honest.
 
-BUILT: L4B (spread blowout velocity), L4C (correlation spike).
-NOT BUILT: L4A (needs S4), L4D (needs S10), L4E (needs F3 + F9).
+BUILT: L4B (spread blowout velocity), L4C (correlation spike), L4D
+(forced deleveraging).
+NOT BUILT: L4E (needs F3 + F9).
 """
 
 from __future__ import annotations
@@ -65,8 +66,7 @@ def compute_all(con, asof):
         "L4A": funding_seizure(con, asof),
         "L4B": spread_blowout(con, asof),
         "L4C": correlation_spike(con, asof),
-        "L4D": _na("L4D", asof, "forced deleveraging needs S10 margin data "
-                                "(FINRA xlsx not ingested) + vol clustering"),
+        "L4D": forced_deleveraging(con, asof),
         "L4E": _na("L4E", asof, "hedging feedback needs F3 (VIX curve) and F9 "
                                 "(negative-gamma estimate, experimental)"),
     }
@@ -86,6 +86,86 @@ def compute_all(con, asof):
 # Historic mode is TED alone: one market, so breadth is unmeasurable and L4A
 # reports NA rather than treating a single spread as its own confirmation.
 MIN_STRESSED_MARKETS = 2
+
+
+# --- L4D: forced deleveraging ----------------------------------------------
+# Report line 601: "forced-deleveraging evidence (margin -10%/3m + vol
+# clustering)".
+#
+# MARGIN LEG IS FULLY SPECIFIED. -10% over three published months on
+# FINRA_MARGIN_DEBIT. Note this is NOT S10's state: S10 requires a fragility
+# precondition of +40% YoY at the peak and fires for one month only. L4D asks
+# the simpler question the report asks -- has margin dropped 10% in three
+# months, whenever that happens.
+#
+# VOL CLUSTERING IS NOT SPECIFIED, AND IS BORROWED WHOLE FROM S14 LEG (a).
+# DECISIONS.md D29. The report gives no threshold, window or series. Rather
+# than construct one, this reuses S14's registry-frozen definition entire:
+# 21d realized vol in the top quartile of its trailing 2 years for >=10
+# consecutive days, with the index below its 200DMA. That is the literature's
+# definition of clustering -- PERSISTENCE of volatility, not level -- and
+# every parameter was frozen by the registry before anyone knew what it would
+# be tested against.
+#
+# Two alternatives were rejected. A VIX percentile measures level, not
+# persistence, and D12 shows F2 read G at the October 2007 peak because its own
+# window had absorbed the August shock -- a self-neutralising input is a poor
+# conjunct for a condition that forces CRISIS. A duration count on VIXCLS
+# reaches 1990 but needs a threshold, a window and a count, all chosen knowing
+# which months they must hit.
+#
+# MEASURED: the conjunction fires 2 of 83 months since 2019-06 -- 2020-03 and
+# 2022-06, the only two forced-deleveraging episodes in range, with no false
+# positives. The margin leg alone fires 7.4% of months, far too often for a
+# condition that emits B and bypasses persistence.
+#
+# COVERAGE: leg (a) needs 725 observations of SPY_CLOSE (200 DMA + 504 lookback
+# + 21 RV) and prices.db starts 2016-07-18, so L4D is NA before roughly
+# 2019-06. Any evaluation spanning that boundary must treat the eras
+# separately. Two validation episodes is a plausibility check, not a track
+# record -- D17 applies.
+MARGIN_SERIES = "FINRA_MARGIN_DEBIT"
+MARGIN_DROP_PCT = -10.0
+MARGIN_MONTHS = 3
+
+
+def forced_deleveraging(con, asof):
+    rows = series_asof(con, MARGIN_SERIES, asof)
+    if len(rows) < MARGIN_MONTHS + 1:
+        return _na("L4D", asof, f"need {MARGIN_MONTHS + 1} published months of "
+                                f"{MARGIN_SERIES}, have {len(rows)}")
+    cur, prior = rows[-1][1], rows[-1 - MARGIN_MONTHS][1]
+    drop = 100.0 * (cur / prior - 1.0) if prior else 0.0
+    margin_hit = drop <= MARGIN_DROP_PCT
+
+    from builders import s14_vol_structure as S14
+    clustering, s14_detail = S14.leg_a(con, asof)
+    if clustering is None:
+        return _na("L4D", asof,
+                   f"vol clustering unavailable: {s14_detail.get('reason')}")
+
+    fired = bool(margin_hit and clustering)
+    return {
+        "signal_id": "L4D", "layer": LAYER, "asof": str(asof),
+        "state": "B" if fired else "G", "raw_value": drop, "zscore": None,
+        "stale": False, "stale_days": None, "persistence_days": 1,
+        "source_asof": rows[-1][0],
+        "detail": {
+            "condition": "forced deleveraging",
+            "margin_month": rows[-1][0][:7],
+            "margin_3m_pct": round(drop, 1),
+            "margin_needs": MARGIN_DROP_PCT,
+            "margin_hit": margin_hit,
+            "vol_clustering": clustering,
+            "rv_pctile_2y": s14_detail.get("rv_pctile_2y"),
+            "top_quartile_run_days": s14_detail.get("top_quartile_run_days"),
+            "clustering_note": "S14 leg (a), borrowed whole per D29: 21d RV in "
+                               "the top quartile of 2y for >=10d with the index "
+                               "below its 200DMA. Zero parameters invented here.",
+            "coverage_note": "NA before ~2019-06: leg (a) needs 725 obs of "
+                             "SPY_CLOSE and prices.db starts 2016-07-18.",
+        },
+    }
 
 
 def funding_seizure(con, asof):
