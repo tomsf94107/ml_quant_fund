@@ -170,7 +170,52 @@ def missing_sessions(con, target: str) -> list[str]:
     return out
 
 
-def persist(con, asof, res, details, dash):
+def git_sha():
+    """Short HEAD sha, or None outside a checkout. Records WHICH CODE ran."""
+    try:
+        import subprocess
+        return subprocess.run(["git", "rev-parse", "--short", "HEAD"],
+                              cwd=os.path.dirname(_HERE), capture_output=True,
+                              text=True, timeout=5).stdout.strip() or None
+    except Exception:
+        return None
+
+
+def open_run(con, asof, db_path):
+    """B2 audit trail. Every write path stamps run_id.
+
+    The tables use INSERT OR REPLACE on (asof_date, signal_id), so a re-step
+    OVERWRITES its predecessor -- created_at included, since it is a column
+    default that refreshes on rewrite. That is why the six 2026-08-28 runs left
+    no trace and were only found when the persistence counter reached 13
+    against six asof_dates.
+
+    This does NOT retain superseded row contents; those are gone by design.
+    Retaining them means putting run_id in the primary key, which changes every
+    read in the engine, the exporter and the tests -- a larger change than the
+    forensic gap warrants. What this gives is WHEN each run happened, WHICH code
+    and registry produced it, and WHICH database it wrote to. db_path is
+    recorded because six dev re-runs reached production before C2 existed.
+    """
+    cur = con.execute(
+        "INSERT INTO runs (asof_date, started_at, status, registry_version, "
+        "git_sha, db_path) VALUES (?, datetime('now'), 'running', ?, ?, ?)",
+        (str(asof), registry_version(), git_sha(), os.path.abspath(db_path)))
+    con.commit()
+    return cur.lastrowid
+
+
+def close_run(con, run_id, status, res=None, n_signals=None):
+    con.execute(
+        "UPDATE runs SET finished_at=datetime('now'), status=?, n_signals=?, "
+        "band=?, composite=? WHERE run_id=?",
+        (status, n_signals,
+         res.band if res else None,
+         res.composite if res else None, run_id))
+    con.commit()
+
+
+def persist(con, asof, res, details, dash, run_id=None):
     rv = registry_version()
     con.execute("""INSERT OR REPLACE INTO composite_scores
       (asof_date,composite,band,path,do_nothing,l4_override,insufficient_data,
@@ -187,6 +232,8 @@ def persist(con, asof, res, details, dash):
        json.dumps([L for L, s in res.layer_scores.items() if s is None]),
        res.action.get("gross"), res.action.get("hedge"),
        res.action.get("carry_bps_mo"), None, 0, rv))
+    con.execute("UPDATE composite_scores SET run_id=? WHERE asof_date=?",
+                (run_id, str(asof)))
 
     for sid, r in list(details.items()) + list(dash.items()):
         d = r.get("detail", {})
@@ -197,6 +244,8 @@ def persist(con, asof, res, details, dash):
           (str(asof), sid, r.get("layer", ROSTER.get(sid, "L1")), r.get("raw_value"),
            r["state"], res.contributions.get(sid), int(bool(r.get("stale", True))),
            r.get("persistence_days", 1), None, r.get("source_asof"), rv))
+    con.execute("UPDATE signal_values SET run_id=? WHERE asof_date=?",
+                (run_id, str(asof)))
 
     for a in res.alerts:
         # B3. Alerts were the only non-idempotent table: every other write uses
@@ -214,6 +263,8 @@ def persist(con, asof, res, details, dash):
         # the same alert, and REPLACE keeping the latest matches signal_values.
         con.execute("""INSERT OR REPLACE INTO alerts (asof_date,alert_type,from_state,to_state,reason)
           VALUES (?,?,?,?,?)""", (str(asof), a[0], a[1], a[2], a[3]))
+    con.execute("UPDATE alerts SET run_id=? WHERE asof_date=?",
+                (run_id, str(asof)))
     con.commit()
 
 
@@ -359,7 +410,13 @@ def main():
     if args.dry_run:
         print("\nDRY RUN -- nothing written.")
     else:
-        persist(con, args.asof, res, details, dash)
+        run_id = open_run(con, args.asof, args.db)
+        try:
+            persist(con, args.asof, res, details, dash, run_id)
+            close_run(con, run_id, "ok", res, len(details) + len(dash))
+        except Exception:
+            close_run(con, run_id, "failed")
+            raise
         save_state(con, st)
         print(f"\nwrote composite_scores/signal_values/alerts for {args.asof}")
     con.close()
