@@ -96,6 +96,22 @@ $PY warning/parse_cboe.py --dir data/raw/cboe --db warning.db          >> "$LOG"
   || fail "parse_cboe"
 
 # ---------------------------------------------------------------------------
+# 3c. Shiller CAPE -> data_vintages (S13).
+#
+#     Monthly series, so this is a no-op most days; running it daily costs
+#     nothing and means a new release lands the day it appears. The xls itself
+#     is NOT downloaded here: the live file is a GoDaddy CDN blob linked from
+#     shillerdata.com with a ?ver= parameter that will change, and the Yale
+#     mirror at econ.yale.edu is FROZEN at 2023-08 while still downloading and
+#     parsing cleanly. ingest_shiller.py refuses a file whose newest complete
+#     month is over 120 days old rather than ingesting a dead mirror.
+# ---------------------------------------------------------------------------
+step "ingest_shiller"
+$PY warning/ingest_shiller.py --xls data/raw/shiller/ie_data.xls --db warning.db \
+                                                                      >> "$LOG" 2>&1 \
+  || fail "ingest_shiller"
+
+# ---------------------------------------------------------------------------
 # 4. UW snapshot BEFORE the driver.
 #    Current crontab has the driver at 06:00 and the archiver at 06:30 -- the driver
 #    reads yesterday's snapshot. Harmless while no UW-fed signal is live; wrong the
