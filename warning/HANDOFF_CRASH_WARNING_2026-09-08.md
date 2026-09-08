@@ -3,48 +3,68 @@
 
 > ## STATUS AT END OF SESSION, 2026-09-08
 >
-> Everything below was written in the MORNING and is kept as the reconciliation record.
-> Much of its action list is now DONE. Read this box first.
+> **THE COMPOSITE COMPUTES.** `BAND NORMAL · composite 14.8 · path SPECULATIVE ·
+> gross 1.0 · hedge none`, on six asof_dates 2026-08-28 to 09-04. The system has
+> never produced a number before today.
 >
-> **Closed today**
+> Everything below this box was written in the MORNING, when L1 was 25% and the
+> composite was NULL. It is kept as the reconciliation record. **Most of its
+> action list is done.** Read this box first.
+>
+> | layer | morning | now | gate 0.70 |
+> |---|---|---|---|
+> | L1 | 25% | **75%** | passes |
+> | L2 | 78% | 78% | passes |
+> | L3 | 100% | 100% | passes |
+> | L4 | 40% | 60% | **fails** |
+>
+> **Built today**
 >
 > | Item | Commit | Note |
 > |---|---|---|
-> | B8 `asof_date` | `aab085b7` | Derives from `utils.market_calendar.last_completed_session()`. Four refusals: future `--asof`, non-trading `--asof`, FEED_STALE (exit 2), unfilled gap (exit 3). Sunday 08-30 and Labor Day 09-07 rows deleted, 08-28 re-stepped |
-> | B1 persistence | `aab085b7` | `rebuild_persistence.py` replays through the real `step()`. S1 13d → 6d. `effective_state` now written per row; F2 crossed on 09-03 |
-> | B3 alerts | `f3ea3573` | Unique index with COALESCE + `INSERT OR REPLACE`. Verified: 3 alerts across two driver runs and a rebuild |
-> | B4 interim | `aab085b7` | `registry_version` = sha256[:12] of the registry, currently `e73fd303705e` |
-> | Gap policy | `8eb9a4eb` | D24. Refuse, print re-step commands, exit 3 |
-> | FRED feed | `cf796020` | **Cause was the User-Agent, not a timeout.** Akamai stalls unknown UAs. All 18 series now land in 33.9s |
-> | Cboe → L4C | `bbabc1f2` | **Cause was the missing parse step, not scheduling.** `parse_cboe.py` was never invoked. 73,738 rows. **L4 40% → 60%** |
-> | Massive bridge | `bbabc1f2` | Scheduled in the wrapper. `SPY_CLOSE` advanced to 09-04 without a manual run |
-> | Cron | `bbabc1f2` | One scheme. Wrapper at 05:45 VN gates on Pipeline A's done-file. Driver and export steps STAGED OFF for the first night |
-> | Dashboard calendar | `ee081f3c` | Second hardcoded holiday list removed |
+> | **S13** valuation gate | `cea8ec68` | Shiller CAPE, expanding percentile. Reads R at 40.01, 98.7th pctile. Reproduces every registry verdict: Dec-99 R at 99.9, 2008 G at 54.7, 2021-22 R at 37.44-38.58 |
+> | **S10** margin debt | `4d24a2da` | FINRA margin, stateful peak tracking. Fires 2000-07-31, 2007-11-30, 2022-02-28, one month each. Live: amber, peak Jun-26 at +49.0% YoY |
+> | B8 `asof_date` | `aab085b7` | `last_completed_session()`. Four refusals: future `--asof`, non-trading `--asof`, FEED_STALE (exit 2), unfilled gap (exit 3) |
+> | B1 persistence | `aab085b7` | Replays through the real `step()`. S1 13d → 6d. `effective_state` now written per row |
+> | B3 alerts | `f3ea3573` | Unique index with COALESCE + `INSERT OR REPLACE`. Was the only non-idempotent table |
+> | FRED feed | `cf796020` | **Ten-week outage was a User-Agent string.** Akamai stalls unknown UAs. All 18 series in 33.9s |
+> | Cboe → L4C | `bbabc1f2` | **Downloaded but never parsed.** `parse_cboe.py` was a separate CLI nothing invoked. 73,738 rows, **L4 40% → 60%** |
+> | Cron | `bbabc1f2`, `537d0c19` | One scheme, gated on Pipeline A's done-file. Driver and export steps STAGED OFF for the first night |
+> | D24–D29 | `8eb9a4eb`, `10167563` | Gap policy, derived-persistence proposal, left-censoring, S10's readings, the registry's wrong 2008 peak, L4D's open ruling |
 >
 > **Still open**
 >
 > | Item | Blocker |
 > |---|---|
-> | **S13** valuation gate | Shiller `ie_data.xls` → `data/raw/shiller/`. Manual download. Also unblocks D12 |
-> | **S10** margin debt | FINRA margin xlsx → `data/raw/finra/`. Manual, VPN. Gates L1 **and** L4D |
-> | S15 credit-boom | FRED Z.1 + Case-Shiller. Hardest |
+> | **D29 — L4D** | **Ruling.** "Vol clustering" is unspecified. Margin leg ready. Would take L4 to 80% and put all four layers in the composite |
+> | **D28** | **Ruling.** Registry's 2008 margin peak is Oct-07; FINRA peaks Jul-07. Flagged, not patched, per D4 |
+> | S15 credit-boom | FRED Z.1 + Case-Shiller. Would take L1 to 100% |
+> | L4E | Needs F9, a negative-gamma estimate that does not exist |
 > | B2 `runs` table | Not destructive, but its absence forced row deletion twice today |
 > | C2 dev-db env var | Not destructive |
-> | F3 stale fallback | Dashboard tier. CFE scraper URL dead since 2018 |
-> | S9 date stamp | Builder stamps settlement, not `pub_date` |
-> | Wrapper steps 5/6 | Uncomment after the first clean cron pass; delete the 06:00 and 06:05 lines in the same edit |
+> | Wrapper steps 5/6 | Uncomment after the first clean cron pass Wed 05:45 VN; delete the 06:00 and 06:05 lines in the same edit |
+> | `warning.db` backup | Gitignored, untracked, one 263MB `.bak` on the same disk |
 >
-> **L1 is still 25% and no feed repair can move it.** Three of its four signals have no
-> builder. S13 + S10 take L1 to 75%, past the 0.70 gate — that is the composite unfreezing.
+> **Three cautions on the 14.8, in order of weight.**
 >
-> **Nine claims in the source ledger were wrong**, each overturned by reading code rather than
-> documents: TEDRATE is guarded (`series_meta.py:56`, `s4_funding.py`, tested at
-> `test_builders.py:706-720`); C3 was already automated at 06:05; B10 is unwired
-> (`grep composite_score features/ signals/` is empty); `--table` already defaults to
-> `raw_bars`; `conn.commit()` is already per-series inside `upsert_fred`; the FRED failure was
-> a UA string, not a connection stall; `cdn.cboe.com` resolves fine and is not blackholed;
-> L4C was blocked by the missing parse, not the fetch schedule; and D5 does not constrain B1.
-> **Verify against code before acting on any remaining item here.**
+> 1. **L4 is NA**, so the composite runs on three of four layers with L1/L2/L3
+>    renormalised upward. `NA_LAYER_LIMIT` permits it. The CRISIS override still
+>    works — `l4_propagation_red` iterates individual L4 readings, not the layer
+>    score — so L4A/B/C escalate on any single B.
+> 2. **L2 = 0.000 with S1 reading R** is D26, left-censoring. Six asof_dates
+>    against a 21-day persistence requirement. Not "nothing happening";
+>    "not yet countable". Resolves ~2026-09-28.
+> 3. **`gross 1.0` is live action output**, NULL to actionable in one step. This
+>    is the least informed number the system will ever produce.
+>
+> **Ten claims in the source ledger were wrong**, each overturned by reading code
+> rather than documents: TEDRATE is guarded; C3 was already automated at 06:05;
+> B10 is unwired; `--table` already defaults to `raw_bars`; `conn.commit()` is
+> already per-series; the FRED failure was a UA string, not a connection stall;
+> `cdn.cboe.com` is not blackholed; L4C was blocked by the missing parse, not the
+> fetch schedule; D5 does not constrain B1; and the Cboe archive commit's claim
+> that re-fetch needs a VPN is false. **Verify against code before acting on any
+> remaining item here.**
 
 **Supersedes `warning/CEWS_DEFECT_LEDGER_2026-09-07.md` §1–§11 as the *actionable* document.**
 
