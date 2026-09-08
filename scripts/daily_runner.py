@@ -1007,7 +1007,12 @@ if __name__ == "__main__":
     # Guard: only run on US trading days (Mon-Fri ET, excluding holidays)
     from utils.timezone import now_et
     now = now_et()
-    if now.weekday() >= 5:  # Saturday=5, Sunday=6 in ET
+    # 2026-09-08: was weekday()>=5, so this fired on Labor Day and wrote 1,242
+    # predictions for a session that never happened. is_trading_day() at line 83
+    # has been holiday-aware since 2026-07-14 -- that fix repaired the call sites
+    # at 339 and 342 and missed this one and the one in log_intraday_snapshot.
+    # The comment above already claimed 'excluding holidays'.
+    if not is_trading_day():
         print(f"Skipping — not a trading day ({now.strftime('%A %Y-%m-%d ET')})")
         exit(0)
     run_daily()
@@ -1031,8 +1036,10 @@ def log_intraday_snapshot():
     from utils.timezone import now_et as _now_et, today_et, ts_et
     now_et_dt = _now_et()
     # Guard: only run during market hours (9:30am - 4:00pm ET, Mon-Fri)
-    if now_et_dt.weekday() >= 5:
-        print(f"Skipping snapshot — weekend ({now_et_dt.strftime('%A ET')})")
+    # Same defect as the guard in __main__; see the note there.
+    if not is_trading_day():
+        print(f"Skipping snapshot — not a US trading session "
+              f"({now_et_dt.strftime('%A %Y-%m-%d ET')})")
         return
     market_open_hour = now_et_dt.hour * 60 + now_et_dt.minute
     if market_open_hour < 9*60+30 or market_open_hour > 16*60:
