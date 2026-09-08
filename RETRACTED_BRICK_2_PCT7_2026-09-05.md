@@ -1,3 +1,7 @@
+> **RETRACTED 2026-09-05, same day.** The +1.46% is name-weighted, not tradeable; holding
+> every selection daily gives -1.97% per cohort. See `CORRECTION_PCT7_not_a_brick_2026-09-05.md`.
+> Nothing was deployed. The fund has ONE validated brick (SI/DTC). Retained for the record.
+
 # BRICK #2 — PCT7: P(forward 5-day return ≥ +7%)
 
 **Validated 2026-09-05.** Second validated signal in this fund, after the

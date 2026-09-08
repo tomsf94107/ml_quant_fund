@@ -169,3 +169,5 @@ beta_long_ctrl.csv
 data/alpha_panel_deep/
 dma_truth.csv
 deep_survivors.csv
+cews_export.json
+exports/engine-data.json
