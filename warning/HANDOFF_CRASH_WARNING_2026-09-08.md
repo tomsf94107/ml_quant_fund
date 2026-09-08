@@ -1,5 +1,51 @@
 # CEWS — Reconciled Current State & Action List
 **2026-09-08 · successor to `warning/HANDOFF_CRASH_WARNING_2026-08-30.md`.**
+
+> ## STATUS AT END OF SESSION, 2026-09-08
+>
+> Everything below was written in the MORNING and is kept as the reconciliation record.
+> Much of its action list is now DONE. Read this box first.
+>
+> **Closed today**
+>
+> | Item | Commit | Note |
+> |---|---|---|
+> | B8 `asof_date` | `aab085b7` | Derives from `utils.market_calendar.last_completed_session()`. Four refusals: future `--asof`, non-trading `--asof`, FEED_STALE (exit 2), unfilled gap (exit 3). Sunday 08-30 and Labor Day 09-07 rows deleted, 08-28 re-stepped |
+> | B1 persistence | `aab085b7` | `rebuild_persistence.py` replays through the real `step()`. S1 13d → 6d. `effective_state` now written per row; F2 crossed on 09-03 |
+> | B3 alerts | `f3ea3573` | Unique index with COALESCE + `INSERT OR REPLACE`. Verified: 3 alerts across two driver runs and a rebuild |
+> | B4 interim | `aab085b7` | `registry_version` = sha256[:12] of the registry, currently `e73fd303705e` |
+> | Gap policy | `8eb9a4eb` | D24. Refuse, print re-step commands, exit 3 |
+> | FRED feed | `cf796020` | **Cause was the User-Agent, not a timeout.** Akamai stalls unknown UAs. All 18 series now land in 33.9s |
+> | Cboe → L4C | `bbabc1f2` | **Cause was the missing parse step, not scheduling.** `parse_cboe.py` was never invoked. 73,738 rows. **L4 40% → 60%** |
+> | Massive bridge | `bbabc1f2` | Scheduled in the wrapper. `SPY_CLOSE` advanced to 09-04 without a manual run |
+> | Cron | `bbabc1f2` | One scheme. Wrapper at 05:45 VN gates on Pipeline A's done-file. Driver and export steps STAGED OFF for the first night |
+> | Dashboard calendar | `ee081f3c` | Second hardcoded holiday list removed |
+>
+> **Still open**
+>
+> | Item | Blocker |
+> |---|---|
+> | **S13** valuation gate | Shiller `ie_data.xls` → `data/raw/shiller/`. Manual download. Also unblocks D12 |
+> | **S10** margin debt | FINRA margin xlsx → `data/raw/finra/`. Manual, VPN. Gates L1 **and** L4D |
+> | S15 credit-boom | FRED Z.1 + Case-Shiller. Hardest |
+> | B2 `runs` table | Not destructive, but its absence forced row deletion twice today |
+> | C2 dev-db env var | Not destructive |
+> | F3 stale fallback | Dashboard tier. CFE scraper URL dead since 2018 |
+> | S9 date stamp | Builder stamps settlement, not `pub_date` |
+> | Wrapper steps 5/6 | Uncomment after the first clean cron pass; delete the 06:00 and 06:05 lines in the same edit |
+>
+> **L1 is still 25% and no feed repair can move it.** Three of its four signals have no
+> builder. S13 + S10 take L1 to 75%, past the 0.70 gate — that is the composite unfreezing.
+>
+> **Nine claims in the source ledger were wrong**, each overturned by reading code rather than
+> documents: TEDRATE is guarded (`series_meta.py:56`, `s4_funding.py`, tested at
+> `test_builders.py:706-720`); C3 was already automated at 06:05; B10 is unwired
+> (`grep composite_score features/ signals/` is empty); `--table` already defaults to
+> `raw_bars`; `conn.commit()` is already per-series inside `upsert_fred`; the FRED failure was
+> a UA string, not a connection stall; `cdn.cboe.com` resolves fine and is not blackholed;
+> L4C was blocked by the missing parse, not the fetch schedule; and D5 does not constrain B1.
+> **Verify against code before acting on any remaining item here.**
+
 **Supersedes `warning/CEWS_DEFECT_LEDGER_2026-09-07.md` §1–§11 as the *actionable* document.**
 
 The source ledger is a chronological record of five diagnostic pastes. Later pastes overturned
