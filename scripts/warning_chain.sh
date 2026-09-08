@@ -112,6 +112,22 @@ $PY warning/ingest_shiller.py --xls data/raw/shiller/ie_data.xls --db warning.db
   || fail "ingest_shiller"
 
 # ---------------------------------------------------------------------------
+# 3d. FINRA margin statistics -> data_vintages (S10, and L4D when built).
+#
+#     Monthly, published in the third week of the month FOLLOWING the reference
+#     month, so this is a no-op most days. Unlike Shiller, the URL is stable
+#     with no version parameter, and reachable from Vietnam without a VPN as of
+#     2026-09-08 -- contrary to a note elsewhere in this crontab. The download
+#     is still not automated here: the ingest refuses a file whose newest
+#     observation is over 75 days old, and a silent re-download would defeat
+#     that check.
+# ---------------------------------------------------------------------------
+step "ingest_finra_margin"
+$PY warning/ingest_finra_margin.py --xlsx data/raw/finra/margin-statistics.xlsx \
+                                   --db warning.db                  >> "$LOG" 2>&1 \
+  || fail "ingest_finra_margin"
+
+# ---------------------------------------------------------------------------
 # 4. UW snapshot BEFORE the driver.
 #    Current crontab has the driver at 06:00 and the archiver at 06:30 -- the driver
 #    reads yesterday's snapshot. Harmless while no UW-fed signal is live; wrong the
