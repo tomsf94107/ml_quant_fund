@@ -105,18 +105,23 @@ def normalize_row(ticker: str, row: dict) -> dict | None:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true", help="Fetch + report, don't write")
+    ap.add_argument("--tickers", nargs="+", default=None,
+                    help="Tickers to backfill (default: the hardcoded NEW_TICKERS list)")
+    ap.add_argument("--cutoff", default=CUTOFF_DATE,
+                    help=f"Earliest report_date to keep (default {CUTOFF_DATE})")
     args = ap.parse_args()
+    targets = [t.strip().upper() for t in args.tickers] if args.tickers else NEW_TICKERS
 
     key = _load_uw_key()
     conn = sqlite3.connect(EARNINGS_DB, timeout=30)
     cur = conn.cursor()
 
     total_written = 0
-    print(f"Backfilling earnings for {len(NEW_TICKERS)} new tickers (>= {CUTOFF_DATE})")
+    print(f"Backfilling earnings for {len(targets)} ticker(s) (>= {args.cutoff})")
     print(f"{'ticker':8s} {'fetched':>8s} {'usable':>7s} {'written':>8s}  range")
     print("-" * 60)
 
-    for ticker in NEW_TICKERS:
+    for ticker in targets:
         try:
             rows = fetch_uw_earnings(ticker, key)
         except Exception as e:

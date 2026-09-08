@@ -262,7 +262,7 @@ python scripts/dump_universe.py
 |---|---|---|
 | Price seed not in `add_ticker` | §3 is manual | Open — fold into v2.3 |
 | `backfill_greeks` interface unknown | No options data on add | Open |
-| `backfill_earnings_uw_new_tickers.py` hardcoded to 30 names | No earnings on add | Open — needs `--tickers` |
+| `backfill_earnings_uw_new_tickers.py` hardcoded to 30 names | No earnings on add | FIXED 2026-09-08 — `--tickers` and `--cutoff` added |
 | Earnings date config manual | `No earnings date configured` | Open |
 | `ticker_lifecycle --retire` only logs if ticker was in the CSV | Incomplete retirement record | Open |
 | No `--move-to-watchlist` mode | Moves are logged as retirements | Open |
