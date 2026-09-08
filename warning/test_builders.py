@@ -536,14 +536,23 @@ def _load_daily(con, series, values, start="2024-01-01"):
     return d.isoformat()
 
 
-def test_l4_has_five_conditions_three_unbuilt():
+def test_l4_has_five_conditions_na_without_inputs():
+    """L4A and L4D are BUILT (2026-09-08); they report NA here because the
+    fixture DB is empty, not because the code is missing. L4E is genuinely
+    unbuilt -- it needs F9, a negative-gamma estimate that does not exist.
+
+    Renamed from ..._three_unbuilt, which stopped describing the code once L4D
+    landed. The reason-string assertion for L4D was matching a hardcoded stub
+    message; it now checks the series the builder actually reports as absent.
+    """
     con = db()
     res = L4.compute_all(con, "2026-08-28")
     assert set(res) == {"L4A", "L4B", "L4C", "L4D", "L4E"}
     for sid in ("L4A", "L4D", "L4E"):
         assert res[sid]["state"] == "NA"
     assert "S4" in res["L4A"]["detail"]["reason"]
-    assert "S10" in res["L4D"]["detail"]["reason"]
+    assert "FINRA_MARGIN_DEBIT" in res["L4D"]["detail"]["reason"]
+    assert "F9" in res["L4E"]["detail"]["reason"]
 
 
 def test_l4b_fires_on_150bp_widening_in_21_days():
