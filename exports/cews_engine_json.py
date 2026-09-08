@@ -9,7 +9,12 @@ block into the published page. Edit BLOCKERS / NAMES below when the situation ch
 editorial source for those sections.
 """
 import argparse, collections, hashlib, json, os, re, sqlite3, sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date
+
+# Repo root, so utils/ is importable when this runs from cron with exports/ as
+# sys.path[0]. Same insert daily_driver.py needs for the same reason.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from utils.market_calendar import is_trading_day
 
 GATE = 0.70  # STALE_COVERAGE_MIN in warning/warning_engine.py — keep in sync
 
@@ -42,9 +47,13 @@ BLOCKERS = [
      "clears": "Builder stamps pub_date; no registry change needed"},
 ]
 
-# NYSE full-day closures 2026 (best effort; Good Friday 3 Apr, Independence Day observed 3 Jul)
-NYSE_HOLIDAYS_2026 = {"2026-01-01", "2026-01-19", "2026-02-16", "2026-04-03", "2026-05-25", "2026-06-19",
-                      "2026-07-03", "2026-09-07", "2026-11-26", "2026-12-25"}
+# Holidays come from utils.market_calendar, which computes NYSE rules rather
+# than listing dates. The literal set that was here covered 2026 only and was
+# labelled best effort -- it would have gone silently wrong on 2027-01-01, the
+# exact failure mode that module was written to kill after 785 predictions and
+# 2,324 outcomes were logged against Juneteenth and July 4. It also duplicated
+# the calendar the driver now uses for asof_date, so the dashboard and the
+# engine could have disagreed about which days were sessions.
 
 
 def sig_key(s):
@@ -126,7 +135,7 @@ def main():
         "gate": GATE, "dates": dates, "layers": lay, "signals": signals, "runlog": runlog,
         "alerts_total": len(alerts), "alerts_layer_na": kinds.get("LAYER_NA", 0),
         "alerts_insufficient": kinds.get("INSUFFICIENT_DATA", 0), "alerts_transitions": transitions,
-        "holiday_rows": [d for d in dates if d in NYSE_HOLIDAYS_2026 or datetime.strptime(d, "%Y-%m-%d").weekday() >= 5],
+        "holiday_rows": [d for d in dates if not is_trading_day(d)],
         "blockers": BLOCKERS,
         "read_note": read_note(latest_by_sig),
         "runlog_note": "Both defects this note described are fixed (2026-09-08). B3 gave alerts a unique index and INSERT OR REPLACE, "
