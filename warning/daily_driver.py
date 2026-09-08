@@ -37,6 +37,7 @@ ENGINE STATE PERSISTENCE
 import argparse
 import json
 import os
+import hashlib
 import sqlite3
 import sys
 from datetime import date, datetime
@@ -44,8 +45,15 @@ from zoneinfo import ZoneInfo
 
 ET = ZoneInfo("America/New_York")
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _HERE)
+# Repo root as well. utils.market_calendar is the ONE holiday-aware US calendar
+# in this repo -- rules-computed, not hardcoded, and validated against 2,549
+# real raw_bars sessions with zero disagreements in either direction. Cron runs
+# this file directly, so sys.path[0] is warning/ and utils/ is otherwise unseen.
+sys.path.insert(0, os.path.dirname(_HERE))
 
+from utils.market_calendar import last_completed_session     # noqa: E402
 from warning_engine import SignalReading, EngineState, step  # noqa: E402
 from builders import s1_term_spread as S1                    # noqa: E402
 from builders import s2_credit as S2                         # noqa: E402
@@ -116,7 +124,19 @@ def build_readings(con, asof):
     return readings, details
 
 
+def registry_version():
+    """B4 interim. Every row carried the literal "unversioned", so no reading
+    could be tied to the thresholds that produced it. The signal_registry table
+    (B4/B9) remains the full fix; this closes the unenforceable half."""
+    p = os.path.join(_HERE, "signal_registry.csv")
+    if not os.path.exists(p):
+        raise SystemExit(f"signal_registry.csv missing at {p}; refusing to run.")
+    with open(p, "rb") as fh:
+        return hashlib.sha256(fh.read()).hexdigest()[:12]
+
+
 def persist(con, asof, res, details, dash):
+    rv = registry_version()
     con.execute("""INSERT OR REPLACE INTO composite_scores
       (asof_date,composite,band,path,do_nothing,l4_override,insufficient_data,
        l1_score,l2_score,l3_score,l4_score,l1_cov,l2_cov,l3_cov,l4_cov,na_layers,
@@ -131,7 +151,7 @@ def persist(con, asof, res, details, dash):
        res.layer_coverage.get("L3"), res.layer_coverage.get("L4"),
        json.dumps([L for L, s in res.layer_scores.items() if s is None]),
        res.action.get("gross"), res.action.get("hedge"),
-       res.action.get("carry_bps_mo"), None, 0, "unversioned"))
+       res.action.get("carry_bps_mo"), None, 0, rv))
 
     for sid, r in list(details.items()) + list(dash.items()):
         d = r.get("detail", {})
@@ -141,7 +161,7 @@ def persist(con, asof, res, details, dash):
           VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
           (str(asof), sid, r.get("layer", ROSTER.get(sid, "L1")), r.get("raw_value"),
            r["state"], res.contributions.get(sid), int(bool(r.get("stale", True))),
-           r.get("persistence_days", 1), None, r.get("source_asof"), "unversioned"))
+           r.get("persistence_days", 1), None, r.get("source_asof"), rv))
 
     for a in res.alerts:
         con.execute("""INSERT INTO alerts (asof_date,alert_type,from_state,to_state,reason)
@@ -161,12 +181,41 @@ def main():
     #
     # Same defect class as the uw_archive collision fixed 2026-08-30. ZoneInfo
     # rather than a fixed offset because ET is UTC-4 or UTC-5 depending on DST.
-    ap.add_argument("--asof", default=datetime.now(ET).date().isoformat(),
-                    help="evaluation date; defaults to TODAY IN NEW YORK")
+    #
+    # B8 amendment 2026-09-08: the ET fix above was necessary and not
+    # sufficient. Right timezone, wrong calendar -- an ET date still labels
+    # weekends (a Sunday 2026-08-30 row exists), holidays, and the current day
+    # mid-session (six 2026-08-28 rows written 09:31-13:47 ET). The default is
+    # now the last COMPLETED session, which also carries a 17:00 ET guard.
+    ap.add_argument("--asof", default=None,
+                    help="evaluation date; defaults to the last completed "
+                         "US session. Pass explicitly to re-step a past date.")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
     con = sqlite3.connect(args.db)
+
+    explicit_asof = args.asof is not None
+    if not explicit_asof:
+        args.asof = last_completed_session().isoformat()
+
+    # The calendar says which session to LABEL; SPY_CLOSE says which session we
+    # actually HOLD, PIT-honest via pub_date. Disagreement means a feed is
+    # behind -- fail loudly. A driver whose asof silently stops advancing when
+    # an upstream ingest dies is the same class of defect as the mislabelled
+    # rows this replaces. An explicit --asof bypasses this, for deliberate
+    # re-steps from archived vintages.
+    row = con.execute(
+        "SELECT MAX(obs_date) FROM data_vintages "
+        "WHERE series_id='SPY_CLOSE' AND pub_date <= ?",
+        (datetime.now(ET).date().isoformat(),)).fetchone()
+    have = row[0] if row else None
+    if not explicit_asof and (have is None or have < args.asof):
+        print(f"FEED_STALE: calendar session {args.asof}, SPY_CLOSE available "
+              f"{have}. Refusing to write. Run the ingests, or pass --asof to "
+              f"re-step a past date deliberately.", file=sys.stderr)
+        sys.exit(2)
+
     st = load_state(con)
     readings, details = build_readings(con, args.asof)
     res = step(str(args.asof), readings, st)

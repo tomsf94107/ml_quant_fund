@@ -30,8 +30,8 @@ recorded decision is worse than no fix.
 | L4 | 40% | 0.70 | **NA** | L4C stale (Cboe COR); L4D ← S10; L4E ← F9 |
 
 Gate: `STALE_COVERAGE_MIN = 0.70`, coverage = usable **weight** ÷ total weight
-(`warning_engine.py:44,135-150`). `[fact]` Count ≈ weight only if registry weights are equal
-`[unconfirmed]`.
+(`warning_engine.py:44,135-150`). No builder passes `weight`, so every reading uses the dataclass
+default of 1.0 and coverage is a plain fraction of signals. `[fact — grep of warning/builders/]`
 
 Composite is **NULL / frozen**. That freeze is correct behaviour, not a defect. `[fact]`
 
@@ -98,6 +98,22 @@ git_sha, is_latest)`. Every `signal_values` / `composite_scores` / `alerts` row 
 `is_latest = 1`. Then mark the 28 Aug and 30 Aug rows `is_latest = 0`.
 
 **B1 — persistence becomes derived, not a mutable counter.** `[fact]`
+
+> **Two counters, not one.** `apply_persistence` (`warning_engine.py:114-127`) counts per-signal
+> days toward `min_persistence`; `hysteresis_step` (`:228-237`) counts `candidate_days` toward
+> `PERSIST_DAYS_DEFAULT=10` / `PERSIST_DAYS_DEFENSIVE=21` for band changes. Both live in the same
+> `engine_state` blob and both increment per *invocation*. A fix that addresses only the first
+> leaves half the defect. `candidate_days` is 0 today, so nothing is currently corrupted. `[fact]`
+>
+> **NA does not reset a run** — `apply_persistence:119` returns before touching `st.persistence`,
+> so the counter freezes rather than resetting. This is shipped, tested behaviour: reproduce it,
+> do not "fix" it. `[fact]`
+>
+> **Left-censoring is live.** After the rebuild, 6 real `asof_dates` exist. S1 (`persistence_days`
+> = 21, currently R on all 6) needs 21 consecutive sessions, so no 21-day signal can reach
+> effective state before **2026-09-28** at the earliest, assuming daily runs resume with no gaps.
+> Until then S1 contributes G to L2 while reading R — L2's 0.000 score must not be read as
+> "nothing happening". `[inf]`
 `schema_meta.engine_state` holds counts up to 10 against only **7 distinct asof_dates**;
 28 Aug ran six times. The counter increments per *run*, not per *asof_date*. This is the
 engine's core hysteresis input, so `effective_state` will fire early for whatever was re-run most.
