@@ -1290,3 +1290,69 @@ individual readings filtered on `r.layer == "L4"`, not the layer score, so L4A,
 L4B and L4C still escalate on any single B. Not building L4D removes one of five
 detection routes; it does not disable the crisis path.
 
+
+## D30 — S15 is vintage-blocked, not data-blocked, and should not be built as a signal   [RECORDED 2026-09-08]
+
+**Status: NOT BUILT. The data exists; the point-in-time history does not.**
+
+**The registry row.** Business leg: 3-year change in nonfinancial business
+credit/GDP in its top quintile AND 3-year real equity return in its top
+quintile. Household leg: the same with household credit and real house prices.
+Arm on one condition, red on both within either leg. Quarterly, ~10-week lag,
+`max_staleness_days` 120, history from 1952. GHSS 2022 mechanism, roughly 40%
+crisis probability in the R-zone.
+
+**All four inputs exist and were confirmed reachable 2026-09-08:**
+
+| input | series | coverage |
+|---|---|---|
+| nonfin business credit | `BCNSDODNS` | 322 quarters, 1945-10 onward |
+| household credit | `CMDEBT` | 322 quarters, 1945-10 |
+| GDP | `GDP` | 318 quarters, 1947-01 |
+| real equity return | Shiller `ie_data` real price | 1871 |
+| real house prices | `CSUSHPINSA` deflated by Shiller CPI | 1975 |
+
+**So it is not a data problem. It is a VINTAGE problem.**
+
+Z.1 aggregates are revised. `series_meta.py:16` rules that deriving `pub_date`
+for a revisable series "is NOT legitimate", and line 100 defaults unknown series
+to revisable -- "the safe direction (yields NA)". An honest ingest therefore
+returns NA for every date before ALFRED's vintage coverage begins.
+
+Measured: `CSUSHPINSA` holds **145 real ALFRED vintages, the earliest
+2014-11-25**. Z.1 will be no better; the 2026-08-30 handoff records ALFRED
+vintages starting 2010-2014 for everything except HOUST.
+
+**Consequence: S15 would validate against nothing.** Its registry verdicts are
+2000 ("business leg REPRODUCIBLE") and 2008 ("household leg per GHSS-class
+evidence"). Both predate the vintage floor by fifteen years. The 2022 cell says
+"moderate - silent". A PIT-honest S15 has **zero** testable episodes.
+
+That is weaker than every signal built today. S13 reproduced four registry
+anchors including Dec-99 and the 2008 non-fire; S10 reproduced three; L4D had
+one clean episode (2020) plus a fragmented one (2022). D17 -- no signal built
+from local data has a demonstrated hit rate -- applies here at its strongest.
+
+**And the coverage gain buys nothing operationally.** L1 already passes its 0.70
+gate at 75% with S11, S13 and S10. Adding S15 takes it to 100%, which changes no
+gate, no band and no action. The only effect is a fourth contributor to the L1
+score -- an unvalidatable one.
+
+**The tempting workaround does not hold.** Deriving `pub_date = obs + 10 weeks`
+and citing D20 is the obvious move. D20's argument is that NO SOURCE PROVIDES
+French vintages, so a derived date is the only option and the result is
+calibration-grade. ALFRED *does* provide Z.1 vintages -- just not far enough
+back. Choosing a simplification when the honest source exists is a materially
+weaker case than D20's, and it would override a shipped ruling in
+`series_meta.py` to manufacture history that was never real.
+
+**Reopen when**, and only when: ALFRED vintage coverage extends earlier, a
+vintage archive is acquired, or a first-print Z.1 dataset is found. The build
+itself is straightforward once the vintages exist -- four series, two
+conjunctions, expanding quintiles in the S11/S13 pattern.
+
+**A calibration-grade build remains legitimate** under D20's own framing, as a
+research object contributing to no layer and labelled as such: useful for
+distributional work on the GHSS mechanism, not for any claim of the form "S15
+would have fired on this date in 1999". Not undertaken here.
+
