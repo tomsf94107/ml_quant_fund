@@ -59,6 +59,23 @@ step "ingest_spx"
 $PY warning/ingest_spx.py --db warning.db --table raw_bars                            >> "$LOG" 2>&1 \
   || fail "ingest_spx"
 
+# ---------------------------------------------------------------------------
+# 2b. Sector ETFs. S7 reads XLP/XLU/XLV against SPY; S8 ranks all eleven.
+#
+#     These were NOT in the original wrapper -- ingest_spx defaults to SPY
+#     alone -- so they stopped advancing when the manual backfill did and sat
+#     at 2026-08-28 while SPY_CLOSE moved to 09-08. S7 and S8 then computed
+#     relative strength between an 11-day-old numerator and a current
+#     denominator, both reading G with stale=False because stale_days of 7 is
+#     inside their limit. That is worse than a stale reading: it is a
+#     comparison across mismatched dates. Same class as the L4C failure, where
+#     a signal read G off week-old correlation data.
+# ---------------------------------------------------------------------------
+step "ingest_spx sectors"
+$PY warning/ingest_spx.py --db warning.db --table raw_bars \
+    --ticker XLB,XLC,XLE,XLF,XLI,XLK,XLP,XLRE,XLU,XLV,XLY                 >> "$LOG" 2>&1 \
+  || fail "ingest_spx sectors"
+
 step "ingest_spx RSP (not in prices.db -- must come from Massive)"
 $PY warning/ingest_spx.py --db warning.db --ticker RSP --from-massive >> "$LOG" 2>&1 \
   || fail "ingest_spx RSP"
