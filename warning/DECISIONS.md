@@ -1356,3 +1356,70 @@ research object contributing to no layer and labelled as such: useful for
 distributional work on the GHSS mechanism, not for any claim of the form "S15
 would have fired on this date in 1999". Not undertaken here.
 
+
+## D31 — staleness is measured from obs_date, which is the wrong basis for lagged series   [PROPOSED, NOT APPLIED]
+
+**Status: OPEN. Measured, not patched. S9 is already being discarded because of it.**
+
+**What staleness currently means.** `pit.staleness_days` returns
+`asof - obs_date`, and `s9_short_interest.py:160` computes the same thing
+inline. Both answer "how long since the observation period ended". Every
+consumer is actually asking "how long since this became knowable", and for any
+series with a publication lag those differ by exactly that lag.
+
+**S9 is the first to cross its limit.** FINRA short interest settles on the
+15th and publishes about eight business days later. At asof 2026-09-08 the
+newest settlement is 2026-08-14, published 2026-08-26.
+
+    stale_by_obs   25 days   -> exceeds max_staleness_days 20 -> DISCARDED
+    stale_by_pub   13 days   -> comfortably inside
+
+The signal was thrown out for being 25 days old when the data was 13 days old.
+L2 coverage fell from 8/9 to 7/9 on 2026-09-04 and has stayed there. It still
+clears the 0.70 gate at 0.778, so nothing is broken -- but S12 is already NA,
+and two more stale signals would take L2 below its gate and cost the composite
+a layer.
+
+**Measured across every lagged series at asof 2026-09-08:**
+
+| series | obs | pub | by_obs | by_pub | diff | limit | headroom |
+|---|---|---|---|---|---|---|---|
+| `SI:*` (S9) | 2026-08-14 | 2026-08-26 | **25** | 13 | 12 | 20 | **BREACHED** |
+| `FINRA_MARGIN_DEBIT` (S10) | 2026-07-31 | 2026-08-21 | 39 | 18 | 21 | 45 | **6 days** |
+| `RITTER_IPO_COUNT` (S11) | 2025-12-31 | 2026-03-31 | 251 | 161 | 90 | 550 | safe |
+| `SHILLER_CAPE` (S13) | 2026-08-31 | 2026-09-05 | 8 | 3 | 5 | 45 | safe |
+| `BAMLH0A0HYM2` | 2026-09-07 | 2026-09-08 | 1 | 0 | 1 | — | safe |
+
+**S10 is the exposure that matters.** It gates L1 *and* feeds L4D. Six days of
+headroom on a monthly release means one slow FINRA publication takes L1 from
+75% to 50%, below its gate, and the composite loses a layer -- for data that
+would be 18 days old, not 39.
+
+**A naive switch to pub_date would break the revisable series.** Measured in
+the same run:
+
+    DRTSCILM     obs 2026-07-01  pub 2026-09-09  by_pub  -1
+    CSUSHPINSA   obs 2026-06-01  pub 2026-09-09  by_pub  -1
+
+Negative, because for revisable series `pub_date` is the PULL date, not a first
+print -- `upsert_fred`'s docstring says so and D20 covers the same ground for
+French. Measuring those from `pub_date` would make them permanently fresh, zero
+days old forever, which is worse than the current bias.
+
+**Proposed fix, which invents nothing.** Measure from `pub_date` when
+`series_meta.derivable_pub_date(series_id)` is True, and from `obs_date` when it
+is not. That classification already exists and is already the basis on which
+vintages are stamped; this reuses it rather than adding a rule. Same pattern as
+D9, D18 and D29.
+
+**Why it is not applied here.** It changes staleness for every builder
+simultaneously, and each `max_staleness_days` in the registry was calibrated
+against the current behaviour. S9's 20 was presumably chosen knowing it
+measured from settlement; under the fix the same limit becomes far looser than
+intended. So the fix is a two-part change -- semantics plus a limits review at a
+registry version bump -- and the second part is a specification change under
+rule 3.
+
+**Interim.** S9 stays discarded. L2 holds at 0.778 and clears its gate. Watch
+S10: if FINRA publishes late, L1 drops below its gate before this is settled.
+
