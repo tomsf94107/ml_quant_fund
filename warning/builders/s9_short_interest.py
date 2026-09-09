@@ -158,8 +158,34 @@ def compute(con, asof):
         state = "G"
 
     last_obs = agg[-1][0]
+
+    # STALENESS IS MEASURED FROM pub_date, NOT FROM SETTLEMENT. D31.
+    #
+    # FINRA settles short interest on the 15th and publishes about eight
+    # business days later. Measuring from the settlement date makes the signal
+    # look ~12 calendar days older than its data actually is, and with
+    # max_staleness_days = 20 that discards it while the data is still fresh.
+    # Measured 2026-09-08: settlement 08-14, published 08-26 -- 25 days by
+    # settlement, 13 by publication. S9 was dropped from L2 on 2026-09-04 and
+    # coverage fell 8/9 to 7/9 for exactly this reason.
+    #
+    # source_asof keeps the settlement date: that field records WHICH
+    # observation was used, and settlement is the right answer there. Only the
+    # staleness basis changes.
+    #
+    # NOTE THE INCONSISTENCY, deliberately. Every other builder still measures
+    # from obs_date via pit.staleness_days. D31 proposes fixing that globally
+    # -- measure from pub_date when series_meta.derivable_pub_date is True --
+    # but that moves staleness for every signal at once and each
+    # max_staleness_days was calibrated against the current behaviour. This is
+    # the contained fix for the one signal already being discarded; it is not
+    # yet the established pattern.
+    _pub = con.execute(
+        "SELECT MAX(pub_date) FROM data_vintages "
+        "WHERE series_id LIKE 'SI:%' AND obs_date = ?", (last_obs,)).fetchone()
+    _basis = (_pub[0] if _pub and _pub[0] else last_obs)
     stale = (__import__("datetime").date.fromisoformat(_d(asof))
-             - __import__("datetime").date.fromisoformat(last_obs)).days
+             - __import__("datetime").date.fromisoformat(_basis)).days
 
     return {
         "signal_id": SIGNAL_ID, "layer": LAYER, "asof": str(asof),
