@@ -182,9 +182,9 @@ $PY scripts/uw_archiver.py --db warning.db                            >> "$LOG" 
 #    non-zero status as fatal and stops the chain. That is the intended behaviour:
 #    a gap needs a human.
 # ---------------------------------------------------------------------------
-# step "daily_driver"
-# $PY warning/daily_driver.py --db warning.db               >> logs/warning_daily.log 2>&1 \
-#   || fail "daily_driver"
+step "daily_driver"
+$PY warning/daily_driver.py --db warning.db                 >> logs/warning_daily.log 2>&1 \
+  || fail "daily_driver"
 
 # ---------------------------------------------------------------------------
 # 6. Dashboard export (C3). The script already exists and already runs on its own
@@ -192,10 +192,23 @@ $PY scripts/uw_archiver.py --db warning.db                            >> "$LOG" 
 #    Enable here in the SAME edit that deletes that line, and only after the driver
 #    step above is live: exporting before the engine steps publishes yesterday.
 # ---------------------------------------------------------------------------
-# step "cews_engine_json"
-# $PY exports/cews_engine_json.py --db warning.db --out exports/engine-data.json \
-#                                                                     >> "$LOG" 2>&1 \
-#   || fail "cews_engine_json"
+step "cews_engine_json"
+$PY exports/cews_engine_json.py --db warning.db --out exports/engine-data.json \
+                                                                    >> "$LOG" 2>&1 \
+  || fail "cews_engine_json"
+
+# ---------------------------------------------------------------------------
+# 6b. Push the export to Drive, where the Crash Odds Desk artifact reads it.
+#
+#     Was a standalone cron line at 07:07 VN -- 81 minutes after the wrapper
+#     writes the file, on a fixed clock. It worked, but if the wrapper ever ran
+#     long the upload would carry the PREVIOUS day's file, and the artifact
+#     would show stale data while reporting a fresh fetch. Sequenced here so
+#     the upload cannot precede the write.
+# ---------------------------------------------------------------------------
+step "rclone -> gdrive:CEWS"
+/opt/homebrew/bin/rclone copy exports/engine-data.json gdrive:CEWS/  >> "$LOG" 2>&1 \
+  || fail "rclone copy"
 
 # ---------------------------------------------------------------------------
 # 7. Weekly core dump to iCloud, Saturdays only.
