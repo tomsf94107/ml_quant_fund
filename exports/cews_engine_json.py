@@ -26,26 +26,32 @@ NAMES = {"S2": "credit", "S3": "SLOOS", "S5": "breadth", "S6": "concentration", 
          "L4A": "funding seizure", "L4B": "spread blowout velocity", "L4C": "correlation spike",
          "L4D": "forced deleveraging", "L4E": "hedging feedback"}
 
-# Editorial: what keeps the composite NULL. Update as items close. effect_class: crit | warn | neutral | good
+# Editorial: open items. The composite no longer freezes -- all four layers
+# passed their gates on 2026-09-08 -- so this is a list of what is not built
+# and what is imprecise, not a list of blocks. Update as items close.
+# effect_class: crit | warn | neutral | good
 BLOCKERS = [
-    {"item": "L1 unbuilt", "evidence": "S10, S13, S15 = NA in every run; only S11 live → L1 coverage 25%.",
-     "effect": "Hard block", "effect_class": "crit",
-     "clears": "Any two of S10 / S13 / S15 flowing (3 of 4 = 75% ≥ 70%). Order: S13 (Shiller CAPE) → S10 (FINRA margin xlsx, manual, VPN) → S15 later"},
-    {"item": "L4 gaps", "evidence": "L4D (forced deleveraging) needs S10 margin data; L4E (hedging feedback) needs F3 and F9 — F9 is Phase 5. L4C (Cboe COR) stale until the Cboe leg runs daily. 4 of 5 needed.",
-     "effect": "Hard block", "effect_class": "crit",
-     "clears": "L4A + L4B + L4C + L4D live — Cboe leg daily for L4C, S10 for L4D. L4E stays unbuilt until F9 exists"},
-    {"item": "Ingest schedule", "evidence": "ingest_spx.py / ingest_breadth.py were unscheduled until the 7 Sep manual backfill; FRED weekly leg timed out on 30 Aug and 6 Sep.",
-     "effect": "Fixed by hand", "effect_class": "warn",
-     "clears": "The sequenced wrapper (ingests → UW → driver) is in cron and has produced two consecutive clean runs"},
-    {"item": "F3 fallback", "evidence": "2–4 Sep F3 used its CFE-futures leg (last row 23 Feb 2018) because the FRED spot leg aged past 3 days; the futures leg has no freshness check.",
+    {"item": "S15 not built", "evidence": "Inputs all exist and are reachable (BCNSDODNS, CMDEBT, GDP from 1945; Shiller real prices 1871; CSUSHPINSA 1975). Z.1 is revisable, so an honest ingest returns NA before ALFRED vintage coverage, and CSUSHPINSA's earliest vintage is 2014-11-25. The registry's verdicts are 2000 and 2008.",
+     "effect": "Deliberate", "effect_class": "neutral",
+     "clears": "D30. Not a defect and not scheduled: a PIT-honest S15 has ZERO testable episodes. L1 already passes at 75%, so 100% changes no gate, no band and no action. Reopen if ALFRED extends earlier or a vintage archive is acquired"},
+    {"item": "S12 not built", "evidence": "EDGAR Form-4 insider breadth. The axis was closed twice -- CLOSED_AXIS_insider_selling_2026-09-03 and CLOSED_AXIS_insider_breadth_2026-09-07, the latter after seven constructions over 365,910 filings with nothing clearing NW t = 3.0.",
+     "effect": "Deliberate", "effect_class": "neutral",
+     "clears": "Not scheduled. Insider features stay wired inside models; no standalone insider signal exists. A future attempt should test INTERACTIONS, not an eighth univariate construction"},
+    {"item": "L4E not built", "evidence": "Hedging feedback needs F3 (VIX curve, exists) and F9 (negative-gamma estimate, does not). F9 needs options open interest and dealer positioning with no feed in the stack.",
+     "effect": "Data gap", "effect_class": "neutral",
+     "clears": "A positioning data source. L4 passes at 80% without it (4 of 5)"},
+    {"item": "Staleness semantics", "evidence": "pit.staleness_days measures asof - obs_date, i.e. time since the observation period ended, not since the data became knowable. For a lagged series those differ by the publication lag. S9 was discarded at 25 days on data that was 13 days old.",
      "effect": "Defect", "effect_class": "warn",
-     "clears": "<code>_fresh()</code> required on the futures leg too, else NA; test added"},
-    {"item": "Unversioned", "evidence": "daily_driver.py writes the literal \"unversioned\"; signal_registry.csv has no version column.",
-     "effect": "Rule 3", "effect_class": "warn",
-     "clears": "sha256[:12] of the CSV stamped per run; loader refuses to run without the file"},
-    {"item": "S9 date stamp", "evidence": "s9_short_interest.py stamps the FINRA settlement date as source_asof; the registry's 20-day limit assumes the publication date.",
+     "clears": "D31. S9 patched in isolation (commit cf89c73c) and is back in L2 at 8/9. The global fix -- measure from pub_date when series_meta.derivable_pub_date is True, from obs_date when not, since revisable series carry the pull date -- moves every signal at once and needs a limits review at a registry version bump. <strong>Watch S10: 39 days by obs against a 45 limit, 18 by pub. One late FINRA release drops L1 to 50%</strong>"},
+    {"item": "Persistence left-censoring", "evidence": "S1 (term-spread inversion) and S6 (concentration) both read R. Both carry persistence_days = 21 and only seven asof_dates exist, so both contribute G and L2 scores 0.000.",
+     "effect": "Structural", "effect_class": "warn",
+     "clears": "D26. Roughly 2026-09-28, when the window fills. L2's 0.000 means NOT YET COUNTABLE, not nothing happening -- and both become eligible on the same day, so L2 may move sharply rather than gradually"},
+    {"item": "F3 stale fallback", "evidence": "F3 has a primary (VIX3M/VIX) to fallback (CFE VX futures, last row 2018-02-23) chain, and the fallback has no freshness check. 2-4 Sep it served 2018 data.",
      "effect": "Defect", "effect_class": "warn",
-     "clears": "Builder stamps pub_date; no registry change needed"},
+     "clears": "A staleness check on every leg of the chain, not just the primary -- s14_vol_structure.py:146-154 is the reference implementation. Dashboard tier, so coverage is unaffected"},
+    {"item": "Derived persistence", "evidence": "The engine accumulates persistence in a mutable counter in schema_meta rather than deriving it from signal_values. Rebuilt by hand after every re-step.",
+     "effect": "Proposed", "effect_class": "neutral",
+     "clears": "D25 Phase 2, unratified. It alters hysteresis and therefore crisis behaviour, which is the objection D10 raised. Until then rebuild_persistence.py must be re-run after any re-step"},
 ]
 
 # Holidays come from utils.market_calendar, which computes NYSE rules rather
@@ -62,11 +68,16 @@ def sig_key(s):
     return ({"S": 0, "F": 1, "L": 2}[m.group(1)[0]], int(m.group(2) or 0), m.group(3))
 
 
-def read_note(latest_by_sig):
+def read_note(latest_by_sig, composite=None):
     reds = sorted([s for s, r in latest_by_sig.items() if r["state"] == "R"], key=sig_key)
     ambers = sorted([s for s, r in latest_by_sig.items() if r["state"] == "Y"], key=sig_key)
     nm = lambda s: s + (" (" + NAMES[s] + ")" if s in NAMES else "")
-    parts = ["<strong>Read despite the freeze.</strong>"]
+    # Heading follows the state rather than asserting one. "Read despite the
+    # freeze" was hardcoded from the period when every run printed
+    # INSUFFICIENT_DATA. The composite has computed since 2026-09-08 and the
+    # line survived into the PDF as a false claim.
+    parts = ["<strong>Under the composite.</strong>" if composite is not None
+             else "<strong>Read despite the freeze.</strong>"]
     if reds:
         parts.append("Red on the latest run: " + ", ".join("<strong>" + nm(s) + "</strong>" for s in reds) + ".")
     if ambers:
@@ -74,6 +85,20 @@ def read_note(latest_by_sig):
     eff = sorted([s for s, r in latest_by_sig.items() if r.get("effective_state") not in (None, "", "G")], key=sig_key)
     parts.append(("Effective (persistence met): " + ", ".join(eff) + ".") if eff else
                  "Nothing has reached its persistence requirement, so no state is effective and the layer scores are 0.")
+    # The thing a reader most needs and the signal table does not show:
+    # which signals are red but not yet countable.
+    pend = sorted([s for s, r in latest_by_sig.items()
+                   if r["state"] == "R"
+                   and r.get("effective_state") in (None, "", "G")], key=sig_key)
+    if pend:
+        many = len(pend) > 1
+        parts.append("<strong>" + ", ".join(nm(s) for s in pend) + "</strong> "
+                     + ("read R but are" if many else "reads R but is")
+                     + " not yet countable -- the persistence window is not "
+                       "full, so " + ("they contribute" if many
+                                      else "it contributes") + " G. A layer "
+                       "score of 0.000 here means NOT YET COUNTABLE, not "
+                       "nothing happening.")
     parts.append("Per the brief, no single signal is acted on.")
     return " ".join(parts)
 
@@ -139,11 +164,16 @@ def main():
         "alerts_insufficient": kinds.get("INSUFFICIENT_DATA", 0), "alerts_transitions": transitions,
         "holiday_rows": [d for d in dates if not is_trading_day(d)],
         "blockers": BLOCKERS,
-        "read_note": read_note(latest_by_sig),
-        "runlog_note": "Both defects this note described are fixed (2026-09-08). B3 gave alerts a unique index and INSERT OR REPLACE, "
-                       "so re-stepping a date no longer accumulates rows; 28 Aug held 30 from six dev re-runs. B8 derives asof_date "
-                       "from utils.market_calendar.last_completed_session(); the Sunday and Labor Day rows were deleted and no "
-                       "non-trading date can be written.",
+        "read_note": read_note(latest_by_sig, latest["composite"]),
+        "runlog_note": "Run log is complete since 2026-09-08: every write carries a run_id "
+                       "and the runs table records when each ran, under which code and registry, "
+                       "and against which database (B2). Alerts are idempotent via a unique index "
+                       "and INSERT OR REPLACE (B3), so re-stepping a date no longer accumulates "
+                       "rows -- 28 Aug had held 30 from six dev re-runs. asof_date derives from "
+                       "utils.market_calendar.last_completed_session() and the driver refuses a "
+                       "future date, a non-trading date, an unfilled gap and a session whose "
+                       "prices are not ingested (B8, D24). The Sunday and Labor Day rows were "
+                       "deleted.",
         "actions": {"action_gross": latest["action_gross"], "action_hedge": latest["action_hedge"],
                     "action_carry_bps": latest["action_carry_bps"], "candidate_band": latest["candidate_band"],
                     "candidate_days": latest["candidate_days"], "do_nothing": latest["do_nothing"], "l4_override": latest["l4_override"]},
