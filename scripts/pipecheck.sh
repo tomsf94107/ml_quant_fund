@@ -9,10 +9,21 @@
 # Pipeline C by com.atom.pipeline-c at 17:00 VN = 06:00 ET. See
 # docs/SCHEDULER_INVENTORY.md (generated from live state).
 # ─────────────────────────────────────────────────────────────────────────────
-DATE=$(TZ=America/New_York date +%Y%m%d)
+# LOG DIRECTORIES ARE VN-DATED, NOT ET-DATED (fixed 2026-09-10).
+# The comment above is right that BSD cron ignores TZ and runs in VN local
+# time -- which means it creates logs/pipeline_A_YYYYMMDD using the VN date.
+# Reading that path with an ET date misses the current run for the 11 hours
+# each day where VN is a day ahead, so every VN morning this report showed
+# yesterday's chain while its own "Alpha panel today" line showed today's
+# output. Two halves of one report disagreeing.
+#
+# $DATE is now VN, because it addresses a filesystem path cron created.
+# $NOW_HOUR stays ET, because it is compared against ET schedule hours.
+DATE=$(date +%Y%m%d)
 NOW_HOUR=$(TZ=America/New_York date +%H)
 
-echo "=== $(TZ=America/New_York date '+%Y-%m-%d %H:%M %Z') ==="
+echo "=== $(date '+%Y-%m-%d %H:%M') VN  ·  $(TZ=America/New_York date '+%Y-%m-%d %H:%M %Z') ==="
+echo "    logs are VN-dated (cron's clock); parquet and predictions are ET-dated (the session's clock)"
 echo ""
 
 check_pipeline() {
