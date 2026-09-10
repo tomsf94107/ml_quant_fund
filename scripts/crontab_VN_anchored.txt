@@ -420,3 +420,12 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # the rule that exactly one process may touch prices.db at a time.
 0 10 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 2700 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/universe_fetch.py --min-bars 999999 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/universe_fetch_daily.log 2>&1
 
+# Crontab snapshot, 11:00 VN Sundays. ADDED 2026-09-10.
+#
+# scripts/crontab_VN_anchored.txt drifted 261 lines behind the live crontab
+# because nothing regenerated it -- the same failure shape as the
+# wide-universe fetch that was never scheduled, and the health check that
+# stopped without notice. A record maintained by hand goes stale silently.
+# This writes it; committing it stays deliberate.
+0 11 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && crontab -l > scripts/crontab_VN_anchored.txt 2>> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/crontab_snapshot.log
+
