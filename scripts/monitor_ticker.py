@@ -4600,6 +4600,15 @@ def main() -> int:
                       f"({_mine[0][3].strip()}) -- ledger generated {_gen}")
             else:
                 print(f"  LIVE BOOK: not in si_live_ledger (generated {_gen})")
+        except FileNotFoundError:
+            # Expected: the SI brick is validated but not deployed (decision
+            # 2026-09-12), so si_positions_live.py has never run and there is
+            # no ledger to read. This branch said "ledger unreadable", which
+            # four of five deep-dive reports carried as an integrity flag and
+            # listed as a defect to restore -- work that does not exist. A
+            # routine condition in the same section as real flags is how the
+            # real ones get skimmed.
+            print("  LIVE BOOK: none — SI brick validated but not deployed")
         except Exception as _e:
             print(f"  LIVE BOOK: ledger unreadable ({_e})")
 

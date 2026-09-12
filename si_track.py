@@ -49,7 +49,17 @@ def main():
     ledger=a.ledger or os.path.join(a.root,"si_live_ledger.csv")
     prices_db=a.prices_db or os.path.join(a.root,"prices.db")
     print("\n"+LINE+"\nSI BOOK TRACKER — mark-to-market + exit flags\n"+LINE)
-    if not os.path.isfile(ledger): print("  [STOP] ledger not found: %s\n  (run si_positions_live.py --log-ledger first)"%ledger); return
+    # No ledger is the EXPECTED state: the SI brick is validated but has never
+    # been deployed (decision 2026-09-12), so si_positions_live.py has never
+    # been run and there is nothing to track. Printing [STOP] made this read as
+    # a failure, and it surfaced as an integrity flag in four of five deep-dive
+    # reports, whose authors then listed "restore si_live_ledger.csv" as a
+    # defect to fix -- work that does not exist. That is the alert-fatigue
+    # pattern: a routine condition dressed as a fault, in the same section as
+    # real flags.
+    if not os.path.isfile(ledger):
+        print("  No live book — the SI brick is validated but not deployed. "
+              "Not an error."); return
     if not os.path.isfile(prices_db): print("  [STOP] prices.db not found"); return
 
     with open(ledger) as f: rows=list(csv.DictReader(f))

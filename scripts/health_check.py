@@ -243,7 +243,39 @@ def main():
     except Exception as _e:
         all_ok = check("SPY_CLOSE recency", False, f"could not read warning.db: {_e}") and all_ok
 
-    # (c) Crontab snapshot age. The tracked copy drifted 261 lines behind the
+    # (c) short_interest.db currency. This became load-bearing on 2026-09-12:
+    # the monitor now prefers FINRA over UW for short interest whenever FINRA
+    # is ahead, because UW lags by a full settlement and the stale row flagged
+    # the PRIOR period's direction -- RDDT showed "covering wave -12.2%" when
+    # 8/14 -> 8/31 was a +19.9% build. If this fetch stops, the preference
+    # silently reverses and nothing says so.
+    #
+    # Settlements are semi-monthly and FINRA publishes ~8 business days later,
+    # so the age of the newest settlement cycles between roughly 8 and 25 days.
+    # 30 clears both ends. si_fetch_v2 logs ten ConnectionResetError(54) AUTH
+    # ERRORs interleaved with successes -- the feed is flaky and self-recovers
+    # on its every-third-day schedule, so this must not fire on one bad run.
+    SI_MAX_AGE_DAYS = 30
+    try:
+        _c = _sq.connect(f"file:{ROOT / 'short_interest.db'}?mode=ro", uri=True, timeout=30)
+        _sd, _age = _c.execute(
+            "SELECT MAX(settlement_date), "
+            "julianday('now') - julianday(MAX(settlement_date)) FROM short_interest"
+        ).fetchone()
+        _c.close()
+        ok = check("short_interest currency", _age is not None and _age <= SI_MAX_AGE_DAYS,
+                   f"newest settlement {_sd}, {_age:.0f} days old (limit "
+                   f"{SI_MAX_AGE_DAYS}; normal cycle 8-25)"
+                   + ("" if _age is not None and _age <= SI_MAX_AGE_DAYS else
+                      " -- si_fetch_v2 has stopped; the monitor will fall back "
+                      "to UW, which lags a full settlement and flags the prior "
+                      "period's direction"))
+        all_ok = all_ok and ok
+    except Exception as _e:
+        all_ok = check("short_interest currency", False,
+                       f"could not read short_interest.db: {_e}") and all_ok
+
+    # (d) Crontab snapshot age. The tracked copy drifted 261 lines behind the
     # live crontab because nothing regenerated it. A weekly job now writes it
     # Sundays 11:00 VN; 8 days is one cycle plus slack.
     try:

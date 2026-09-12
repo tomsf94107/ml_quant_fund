@@ -40,9 +40,10 @@ log "settlement after fetch:  $AFTER"
 # ── 3. NEW SETTLEMENT -> rebalance alert ──────────────────────────────────
 if [ "$AFTER" != "$BEFORE" ]; then
     log "*** NEW SETTLEMENT: $AFTER ***"
-    notify "SI BOOK — NEW SETTLEMENT" "$AFTER published. Regenerate the book: si_positions_live.py"
+    notify "SI BOOK — NEW SETTLEMENT" "$AFTER published (brick not deployed; informational)"
     echo ""
-    echo "  Run:  python3 si_positions_live.py --root . --capital 150000 --short-frac 0 --log-ledger"
+    echo "  The SI brick is VALIDATED but NOT DEPLOYED (decision recorded 2026-09-12)."
+    echo "  si_positions_live.py is available if that changes; read the sizing note below first."
     echo ""
     echo "  🔴 SIZING: settlements come every ~15 days, the hold is 40 TRADING days,"
     echo "     so ~2.7 cohorts overlap. Each cohort must be sized at ~1/2.7 of capital,"
