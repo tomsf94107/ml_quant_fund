@@ -1877,6 +1877,48 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
 
     data = uw_get(f"/api/shorts/{ticker}/interest-float/v2")
     rows = (data or {}).get("data") or []
+
+    # PREFER FINRA WHEN IT IS AHEAD OF THE VENDOR (2026-09-12).
+    #
+    # The FINRA fallback below already existed but only fired when UW returned
+    # NOTHING. UW is not empty -- it is LATE. Measured on RDDT: the endpoint
+    # returned 58 rows ending market_date 2026-08-14, while short_interest.db
+    # held 2026-08-31 at 20,238,916 shares, fetched from FINRA directly by the
+    # every-third-day cron.
+    #
+    # The consequence is not a missing row, it is a WRONG SIGN. The monitor
+    # flagged "Significant covering wave: -12.2%" -- which is 7/31 -> 8/14,
+    # the PRIOR period -- while 8/14 -> 8/31 is a +19.9% BUILD to a series
+    # high. Two reports called this recurring and material, and it is: FINRA
+    # publishes about eight business days after settlement and UW lags that,
+    # so every settlement desyncs the headline for as long as the gap lasts.
+    # This is the input series to the fund's one validated brick.
+    #
+    # short_interest.db covers 1,942 tickers through 2026-08-31 -- broader and
+    # fresher than the vendor. UW is kept for its float and borrow fields,
+    # which FINRA does not carry, and is used whole when it is not behind.
+    if rows:
+        try:
+            import os as _os
+            _db = _os.path.join(_os.path.dirname(_os.path.dirname(
+                _os.path.abspath(__file__))), "short_interest.db")
+            if _os.path.exists(_db):
+                _c = sqlite3.connect(_db, timeout=30)
+                _fin_max = _c.execute(
+                    "SELECT MAX(settlement_date) FROM short_interest WHERE ticker=?",
+                    (ticker,)).fetchone()[0]
+                _c.close()
+                _uw_max = max((r.get("market_date") or r.get("settlement_date") or "")
+                              for r in rows)
+                if _fin_max and _uw_max and _fin_max > _uw_max:
+                    print(f"  [note] UW is behind FINRA: newest UW settlement "
+                          f"{_uw_max}, FINRA has {_fin_max}. Using FINRA "
+                          f"(short_interest.db) for the trend; a stale vendor "
+                          f"row would flag the PRIOR period's direction.")
+                    rows = []
+        except sqlite3.Error as _e:
+            print(f"  [warn] FINRA currency check failed: {_e}")
+
     if not rows:
         import os as _os
         _si_db = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "short_interest.db")
@@ -1894,7 +1936,8 @@ def section_short_interest(conn: sqlite3.Connection, ticker: str) -> None:
         if not fin:
             print("  No short interest data returned (UW empty; no FINRA rows either).")
             return
-        print("  UW endpoint empty -- FINRA fallback (short_interest.db, bi-monthly settlements):")
+        print("  FINRA source (short_interest.db, bi-monthly settlements)"
+              " -- UW was empty or behind:")
         print(f"  {'Settlement':<12} {'Short shares':>14} {'Avg daily vol':>14} {'DTC':>7}")
         for i, (sd, cs, adv, dtc) in enumerate(fin):
             chg = ""
