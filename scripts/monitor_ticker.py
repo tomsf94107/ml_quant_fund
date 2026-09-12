@@ -114,7 +114,7 @@ TICKER_CONFIG: dict[str, dict] = {
         "earnings_date": "2026-08-11",  # AMC, Q4 FY26 (was 2026-05-05 -- stale, anchored implied move on a weekly)
         "earnings_time": "AMC",
         "fiscal_q": "Q3 FY26",
-        "shares_out": 600_000_000,
+        "shares_out": 660_000_000,  # FLOOR: >= UW total_float 656,965,384 (2026-09-12)
         "news_search_term": "Super Micro Computer SMCI",
     },
     "DDOG": {
@@ -131,7 +131,9 @@ TICKER_CONFIG: dict[str, dict] = {
         "earnings_date": "2026-05-12",  # AMC, confirmed (Q1 2026)
         "earnings_time": "AMC",
         "fiscal_q": "Q1 2026",
-        "shares_out": 150_000_000,  # ~150M (verify; share count grows post-SPAC)
+        "shares_out": 186_500_000,  # FLOOR, not a verified count: >= UW total_float
+                                    # 186,017,650 on 2026-09-12. Was 150M, set
+                                    # pre-ATM. Confirm on the next 10-Q cover.
         "news_search_term": "Oklo nuclear OKLO stock",
     },
     "QUBT": {
@@ -150,7 +152,8 @@ TICKER_CONFIG: dict[str, dict] = {
         "earnings_date": "2026-12-01",  # Q3 FY27, ~Dec 1 AMC (confirm with IR)
         "earnings_time": "AMC",
         "fiscal_q": "Q3 FY27",
-        "shares_out": 1_020_000_000,  # post 4:1 split 2026-07-02; 10-Q wtd-avg
+        "shares_out": 1_024_000_000,  # post 4:1 split 2026-07-02; >= UW total_float
+                                      # 1,023,934,842. 10-Q wtd-avg
                                       # 1,014,928K. Was 260M pre-split, which
                                       # produced 273.8% aggregate 13F ownership.
         "news_search_term": "CrowdStrike CRWD",
@@ -160,7 +163,7 @@ TICKER_CONFIG: dict[str, dict] = {
         "earnings_date": "2026-05-27",  # AMC 2 PM PT, confirmed via PR
         "earnings_time": "AMC",
         "fiscal_q": "Q1 FY27",
-        "shares_out": 335_000_000,
+        "shares_out": 347_000_000,  # FLOOR: >= UW total_float 346,600,000 (2026-09-12)
         "news_search_term": "Snowflake SNOW stock",
     },
     "NVMI": {
@@ -1307,6 +1310,40 @@ def section_institutional(conn: sqlite3.Connection, ticker: str) -> None:
     # file's own docstring calls "unreliable on Basic plan". These guards
     # cover the whole universe and every future split, restatement or coverage
     # change without needing to know about any of them in advance.
+    # GUARD 0 -- shares outstanding cannot be below the free float.
+    #
+    # Guard 1 below only fires when aggregate 13F ownership exceeds 100%, so it
+    # catches a 4:1 split and sleeps through an ATM raise. OKLO sat at 53.7%
+    # ownership on a denominator 19% too small: config 150,000,000 against a
+    # float of 186,017,650, set pre-ATM with the comment "verify; share count
+    # grows post-SPAC" and never verified. SMCI and SNOW were understated too.
+    #
+    # Float excludes insider and restricted holdings, so shares_out < float is
+    # arithmetically impossible -- no threshold, nothing chosen. Measured on the
+    # eight configured tickers 2026-09-12, legitimate ratios run 1.01 to 1.08
+    # while the four stale ones ran 0.81 to 1.00.
+    #
+    # The float comes from the UW short-interest payload the monitor already
+    # fetches, so this costs no extra call. It is a FLOOR check only: passing
+    # means the count is not impossible, not that it is right.
+    _float = 0.0
+    try:
+        _si = uw_get(f"/api/shorts/{ticker}/interest-float/v2") or {}
+        _sr = (_si.get("data") or [])
+        _float = float(_sr[0].get("total_float") or 0) if _sr else 0.0
+    except Exception:
+        pass
+    if shares_out and _float and shares_out < _float:
+        print(f"  [SUPPRESSED] configured shares outstanding {shares_out:,.0f} is "
+              f"BELOW the free float {_float:,.0f}. Float excludes insider and "
+              f"restricted holdings, so this cannot be right.")
+        print(f"               TICKER_CONFIG['{ticker.upper()}']['shares_out'] is "
+              f"stale -- dilution, an ATM or a secondary since it was set. Use "
+              f"the latest 10-Q cover page.")
+        flag("HIGH", ticker,
+             f"shares_out {shares_out:,.0f} < float {_float:,.0f}: config stale")
+        shares_out = None
+
     BASIS_RATIO_MAX = 2.0
     _agg = sum(get_shares(r) or 0 for r in rows)
     _own_ok = True
@@ -2084,7 +2121,25 @@ def section_earnings_calendar(ticker: str) -> None:
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
     earnings_date, _ed_src = earnings_date_for(ticker)
     earnings_time = cfg.get("earnings_time") or _calendar_earnings_time(ticker) or "?"
-    fiscal_q = cfg.get("fiscal_q", "?")
+    # fiscal_q FOLLOWS THE DATE'S SOURCE (2026-09-12).
+    #
+    # earnings_date_for() above resolves to the calendar whenever the config
+    # entry is stale, but this line took the label from config regardless. NVDA
+    # printed "Next earnings: 2026-11-18 AMC (Q1 FY27)" -- the correct
+    # calendar date beside the label for a quarter that reported on 2026-08-26.
+    # Its own deep-dive flagged it as "fix the Q3-label mapping".
+    #
+    # Eleven of thirteen configured earnings_date values are in the past, from
+    # 17 to 124 days, and fiscal_q carries three formats across eight tickers
+    # -- "Q1 FY27", "Q3 FY26", "Q1 2026". Nothing maintains or checks it, and
+    # unlike shares_out there is no arithmetic impossibility to test a label
+    # against. So it is printed only when the DATE came from the same config
+    # block that set it; when the calendar supplied the date, the label refers
+    # to a different quarter and is omitted rather than guessed.
+    #
+    # Same shape as the week's other desyncs: a value that travels beside
+    # another, and is not recomputed when that other one is.
+    fiscal_q = cfg.get("fiscal_q") if _ed_src == "config" else None
 
     if earnings_date:
         d_until = days_until_earnings(ticker)
@@ -2099,7 +2154,11 @@ def section_earnings_calendar(ticker: str) -> None:
                 status = f"⚠️  {d_until} days — quiet period"
             else:
                 status = f"{d_until} days out"
-            print(f"  Next earnings:   {earnings_date} {earnings_time}  ({fiscal_q})")
+            _fq = f"  ({fiscal_q})" if fiscal_q else ""
+            print(f"  Next earnings:   {earnings_date} {earnings_time}{_fq}"
+                  + ("" if fiscal_q else
+                     f"   [quarter label omitted -- date came from {_ed_src}, "
+                     f"config label would be a different quarter]"))
             print(f"  Status:          {status}")
             if 0 <= d_until <= 14:
                 flag("INFO", ticker,
@@ -4531,15 +4590,28 @@ def print_header(args) -> None:
     print(f"  Window:  since {args.since}    Tickers: {', '.join(args.tickers)}")
     print(f"  DB:      {DB_PATH}")
     print("=" * 78)
-    print("  Upcoming earnings dates (from config):")
+    # RESOLVED, not raw config (2026-09-12). This read earnings_date and
+    # fiscal_q straight from TICKER_CONFIG while d_until came from
+    # days_until_earnings(), which resolves through earnings_date_for(). The
+    # row therefore mixed a stale date with a resolved countdown: NVDA printed
+    # "2026-08-26 AMC (Q1 FY27) in 67d", where 67 days points at the calendar's
+    # 2026-11-18. A contradiction inside one line, two blocks below the same
+    # contradiction across two lines in section_earnings_calendar.
+    #
+    # Eleven of thirteen configured earnings_date values are in the past, 17 to
+    # 124 days, so this table was wrong for almost every ticker.
+    print("  Upcoming earnings dates (resolved: config if fresh, else calendar):")
     for t in args.tickers:
         cfg = TICKER_CONFIG.get(t.upper(), {})
-        ed = cfg.get("earnings_date", "?")
-        et = cfg.get("earnings_time", "?")
-        fq = cfg.get("fiscal_q", "?")
+        ed, _src = earnings_date_for(t)
+        ed = ed or "?"
+        et = cfg.get("earnings_time") or _calendar_earnings_time(t) or "?"
+        # Label only when the DATE came from the config block that set it.
+        fq = (cfg.get("fiscal_q") or "") if _src == "config" else ""
         d_until = days_until_earnings(t)
         d_str = f"{d_until}d" if d_until is not None else "?"
-        print(f"    {t:<6}  {ed} {et:<5} ({fq:<10})  in {d_str}")
+        _tag = "" if _src == "config" else f"  [{_src}]"
+        print(f"    {t:<6}  {ed} {et:<5} ({fq:<10})  in {d_str}{_tag}")
 
 
 def main() -> int:
