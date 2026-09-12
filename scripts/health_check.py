@@ -180,6 +180,85 @@ def main():
 
     con.close()
 
+    # ── FRESHNESS CHECKS (2026-09-11) ──────────────────────────────────────
+    # Six defects in three days, none of which raised an exception: a crontab
+    # placeholder API key that 401'd every Massive call while h40_shadow still
+    # logged a top-3 indistinguishable from a good run; a wide-universe price
+    # fetch that was never scheduled at all; the warning chain running inside
+    # its own pub_date window; pipecheck reading ET dates against VN-written
+    # logs; sector ETFs absent from the wrapper, leaving S7 comparing an
+    # 11-day-old numerator to a live denominator; and a hardcoded share count
+    # stale after a 4:1 split, printing 273.8% institutional ownership.
+    #
+    # Every one produced normal-shaped output. The common cause was a
+    # hand-maintained value or job with nothing checking it still matched
+    # reality, so these three check exactly that.
+    #
+    # Thresholds are measured, not chosen -- per the comment above about 77
+    # consecutive false failures teaching everyone to ignore this file.
+    import sqlite3 as _sq
+    _PRICES = ROOT / "prices.db"
+    _WARN = ROOT / "warning.db"
+
+    # (a) raw_bars breadth. Measured over 60 sessions: min 1,991, median 2,000,
+    # max 2,004. The two truncations found on 2026-09-10 were 444 and 863. A
+    # floor of 1,500 sits in a ~700-wide empty gap, and anything from roughly
+    # 900 to 1,900 gives the identical answer -- insensitive, not fitted.
+    RAW_BARS_MIN = 1_500
+    try:
+        _c = _sq.connect(f"file:{_PRICES}?mode=ro", uri=True, timeout=30)
+        _d, _n = _c.execute(
+            "SELECT d, COUNT(*) FROM raw_bars GROUP BY d ORDER BY d DESC LIMIT 1"
+        ).fetchone()
+        _c.close()
+        ok = check("raw_bars breadth", _n >= RAW_BARS_MIN,
+                   f"{_n:,} tickers for {_d} (floor {RAW_BARS_MIN:,}; normal ~2,000)"
+                   + ("" if _n >= RAW_BARS_MIN else
+                      " -- wide-universe fetch did not complete; check "
+                      "logs/universe_fetch_daily.log and the 10:00 VN job"))
+        all_ok = all_ok and ok
+    except Exception as _e:
+        all_ok = check("raw_bars breadth", False, f"could not read prices.db: {_e}") and all_ok
+
+    # (b) SPY_CLOSE recency. The warning chain's driver derives asof_date from
+    # this series; if it stops advancing the composite silently freezes on an
+    # old session. Two sessions of slack covers a normal one-session lag plus
+    # a holiday.
+    try:
+        import sys as _sys
+        _sys.path.insert(0, str(ROOT))
+        from utils.market_calendar import last_completed_session, previous_trading_day
+        _c = _sq.connect(f"file:{_WARN}?mode=ro", uri=True, timeout=30)
+        _obs = _c.execute("SELECT MAX(obs_date) FROM data_vintages "
+                          "WHERE series_id='SPY_CLOSE'").fetchone()[0]
+        _c.close()
+        _floor = previous_trading_day(last_completed_session()).isoformat()
+        ok = check("SPY_CLOSE recency", bool(_obs) and _obs >= _floor,
+                   f"latest obs {_obs}, last completed session "
+                   f"{last_completed_session()}"
+                   + ("" if _obs and _obs >= _floor else
+                      " -- ingest_spx has not run; the CEWS driver will refuse "
+                      "to write (FEED_STALE) until it does"))
+        all_ok = all_ok and ok
+    except Exception as _e:
+        all_ok = check("SPY_CLOSE recency", False, f"could not read warning.db: {_e}") and all_ok
+
+    # (c) Crontab snapshot age. The tracked copy drifted 261 lines behind the
+    # live crontab because nothing regenerated it. A weekly job now writes it
+    # Sundays 11:00 VN; 8 days is one cycle plus slack.
+    try:
+        import time as _t
+        _snap = ROOT / "scripts" / "crontab_VN_anchored.txt"
+        _age = (_t.time() - os.path.getmtime(_snap)) / 86400
+        ok = check("crontab snapshot", _age <= 8.0,
+                   f"{_age:.1f} days old"
+                   + ("" if _age <= 8.0 else
+                      " -- the Sunday 11:00 VN snapshot job has not run; the "
+                      "tracked crontab no longer reflects what is scheduled"))
+        all_ok = all_ok and ok
+    except Exception as _e:
+        all_ok = check("crontab snapshot", False, f"{_e}") and all_ok
+
     print("=" * 60)
     # STATUS FILE (Aug 1 2026) so `pipecheck` can show health without re-running
     # three DB queries -- and, critically, can show the AGE of the last check.

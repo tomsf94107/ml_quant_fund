@@ -87,10 +87,28 @@ try:
             _exp = _probe
             break
         _probe -= dt.timedelta(days=1)
-    if _exp and ts < _exp - dt.timedelta(hours=1):
+    # A STALE status SUPPRESSES the cached verdict rather than printing it
+    # underneath (2026-09-12). The previous form printed
+    #   "STALE - last health check 45.5h ago"
+    #   "all checks passed (checked 13:00, 45.5h ago, for 2026-09-04)"
+    # on consecutive lines. The second is not information about now -- it
+    # describes the Tuesday run -- and putting a green tick under a staleness
+    # warning invites reading it as current.
+    #
+    # Third instance of the same shape this week. The CRWD report showed 75%
+    # layer coverage above a table calling the same layer a hard block; this
+    # script showed yesterday's chain above its own line reporting today's
+    # parquet; and the 13F block printed ownership percentages computed off a
+    # denominator it could not trust. Each time the fix was the same: when the
+    # basis is untrustworthy, SUPPRESS the derived figure, do not annotate it.
+    _stale = bool(_exp and ts < _exp - dt.timedelta(hours=1))
+    if _stale:
         print(f"⚠️  STALE — last health check {age} ({ts:%Y-%m-%d %H:%M}); "
               f"expected a run at {_exp:%a %Y-%m-%d 13:00}. Is the cron firing?")
-    if d.get('status') == 'ok':
+        print(f"    verdict SUPPRESSED: that result was computed {age}, on "
+              f"session {d.get('last_date')}. It says nothing about the runs "
+              f"since. Run scripts/health_check.py for a current answer.")
+    elif d.get('status') == 'ok':
         print(f"✅ all checks passed   (checked {ts:%H:%M}, {age}, for {d.get('last_date')})")
     else:
         print(f"❌ {', '.join(d.get('failures') or ['unknown'])}   "
