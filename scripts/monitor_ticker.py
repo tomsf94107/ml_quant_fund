@@ -144,10 +144,15 @@ TICKER_CONFIG: dict[str, dict] = {
     },
     "CRWD": {
         "sector_etf": "CIBR",    # First Trust Cybersecurity ETF
-        "earnings_date": "2026-06-03",  # AMC, estimate (UW: Jun 2, others Jun 9)
+        # All three below were stale together as of 2026-09-11 -- the block had
+        # not been revisited since ~June. Q2 FY27 printed 2026-08-26 AMC and the
+        # 4:1 split went effective 2026-07-02.
+        "earnings_date": "2026-12-01",  # Q3 FY27, ~Dec 1 AMC (confirm with IR)
         "earnings_time": "AMC",
-        "fiscal_q": "Q1 FY27",
-        "shares_out": 260_000_000,  # ~260M diluted (per company guidance)
+        "fiscal_q": "Q3 FY27",
+        "shares_out": 1_020_000_000,  # post 4:1 split 2026-07-02; 10-Q wtd-avg
+                                      # 1,014,928K. Was 260M pre-split, which
+                                      # produced 273.8% aggregate 13F ownership.
         "news_search_term": "CrowdStrike CRWD",
     },
     "SNOW": {
@@ -1269,6 +1274,86 @@ def section_institutional(conn: sqlite3.Connection, ticker: str) -> None:
     # New rule: position is "meaningful" if it represents >= 0.5% of shares
     # outstanding, OR >= $50M for tickers where shares-out couldn't be fetched.
     NEW_HOLDER_PCT_THRESHOLD = 0.005  # 0.5% of shares out
+
+    # ── 13F INTEGRITY GUARDS (2026-09-11) ──────────────────────────────────
+    # A CRWD run printed 273.8% aggregate institutional ownership and a uniform
+    # set of "+75%" accumulation flags. Neither was real. Both came from a
+    # BASIS MISMATCH, and each guard below refuses one class of it.
+    #
+    # GUARD 1 -- aggregate ownership cannot exceed shares outstanding.
+    # TICKER_CONFIG["CRWD"]["shares_out"] was 260,000,000, correct when it was
+    # written and wrong after the 4:1 split on 2026-07-02. The vendor restates
+    # 13F holdings to CURRENT shares, so the 2026-06-30 snapshot came back
+    # split-adjusted at 711.9M against a pre-split denominator: 273.8%.
+    # Measured across the eight configured tickers, the legitimate range is
+    # 9.4% to 81.6%, so a 100% ceiling has real headroom. 13F double-counting
+    # (custodian and beneficial owner both filing) can push a true aggregate
+    # somewhat over 100%, which is why this SUPPRESSES rather than corrects --
+    # it says the denominator is untrustworthy, not that the data is wrong.
+    #
+    # GUARD 2 -- a snapshot cannot change basis between filings.
+    # Measured over 28 consecutive-period pairs: median ratio 1.07, and 24 of
+    # 28 inside 0.67-1.26. Four outliers, all isolated: CRWD x4.23 (the split),
+    # and DELL x0.12, BYND x0.16, NVMI x0.25 -- vendor COVERAGE collapses, not
+    # selling. DELL lost 88% of its reported shares between quarters; a delta
+    # computed across that reads as mass institutional exit.
+    # BASIS_RATIO_MAX = 2.0 catches exactly those four, and so do 1.5 and 3.0 --
+    # the result is insensitive across the range, which is the test for a real
+    # boundary rather than a fitted one.
+    #
+    # WHY GUARDS AND NOT A LOOKUP. The proximate fix is to make shares_out
+    # split-aware from prices.db.splits. That fixes the eight configured
+    # tickers and leaves every other ticker on the UW fallback, which this
+    # file's own docstring calls "unreliable on Basic plan". These guards
+    # cover the whole universe and every future split, restatement or coverage
+    # change without needing to know about any of them in advance.
+    BASIS_RATIO_MAX = 2.0
+    _agg = sum(get_shares(r) or 0 for r in rows)
+    _own_ok = True
+    if shares_out and shares_out > 0 and _agg > shares_out:
+        _own_ok = False
+        _implied = _agg / 0.80          # 80% = top of the measured legitimate range
+        print(f"  [SUPPRESSED] aggregate 13F holdings {_agg:,.0f} exceed shares "
+              f"outstanding {shares_out:,.0f} ({100*_agg/shares_out:.1f}%). The "
+              f"denominator is wrong, not the holdings.")
+        print(f"               implied shares outstanding >= {_implied:,.0f}. "
+              f"Check TICKER_CONFIG['{ticker.upper()}']['shares_out'] against "
+              f"prices.db splits and the latest 10-Q.")
+        flag("HIGH", ticker,
+             f"13F denominator wrong: {100*_agg/shares_out:.0f}% aggregate "
+             f"ownership implies shares_out is stale (split or restatement)")
+        shares_out = None               # every % s/o below now prints as n/a
+
+    # Compared on the OVERLAPPING holder set, not on totals. The API is called
+    # with limit=200 while the stored prior snapshot can hold far more -- 51
+    # ticker-periods currently exceed 200 rows, up to 520 for MSFT -- so a
+    # totals ratio would read the row-count difference as a collapse and fire
+    # on most of the universe. A first version of this guard did exactly that:
+    # DELL, BYND and NVMI looked like x0.12-x0.25 coverage collapses and were
+    # neither; the live run shows BlackRock at DELL down only 655,283 shares.
+    # Summing only institutions present in BOTH snapshots is immune to the
+    # truncation and still catches CRWD, where the same holders quadrupled.
+    if prev:
+        _both = [n for n in (get_inst_name(r) for r in rows) if n in prev]
+        _cur_ov = sum(get_shares(r) or 0 for r in rows
+                      if get_inst_name(r) in prev)
+        _prev_ov = sum(prev[n] for n in set(_both))
+        if _prev_ov > 0 and len(set(_both)) >= 10:
+            _ratio = _cur_ov / _prev_ov
+            if _ratio > BASIS_RATIO_MAX or _ratio < 1.0 / BASIS_RATIO_MAX:
+                print(f"  [SUPPRESSED] holdings of the {len(set(_both))} "
+                      f"institutions present in BOTH snapshots moved x{_ratio:.2f} "
+                      f"from {_prev_rd} ({_prev_ov:,.0f}) to {_cur_rd} "
+                      f"({_cur_ov:,.0f}).")
+                print(f"               The same holders cannot change that much "
+                      f"together. That is a basis change -- a split, a "
+                      f"restatement, or a units change -- not a flow. Deltas are "
+                      f"not comparable and are suppressed.")
+                flag("HIGH", ticker,
+                     f"13F basis change x{_ratio:.2f} on {len(set(_both))} "
+                     f"common holders between {_prev_rd} and {_cur_rd}; "
+                     f"deltas suppressed")
+                prev = {}               # deltas below now read +0, not a false flow
 
     rows_sorted = sorted(rows, key=lambda r: (get_shares(r), get_value_usd(r)), reverse=True)[:15]
     print(f"  Total holders reported: {len(rows)}")
