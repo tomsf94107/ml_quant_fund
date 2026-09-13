@@ -82,6 +82,39 @@ def main():
     ap.add_argument("--start", default="2021-06-01")
     ap.add_argument("--min-names", type=int, default=25)
     ap.add_argument("--universe", default="tickers.txt")
+    # TRAIN WIDE, SCORE NARROW (2026-09-13). Defaults to --universe, so every
+    # existing invocation is unchanged.
+    #
+    # The two arms run on 2026-09-13 could not separate the estimation claim
+    # from the slice. Arm A sampled 400 from tickers.txt and scored +1.543pp;
+    # arm B sampled 400 from tickers_expanded.txt and scored +4.437pp -- but
+    # 1,512 of those 1,924 names are mid and small, and the survivorship bound
+    # had already measured this edge monotone in illiquidity, mega +1.721pp to
+    # small +4.932pp. Arm B landed in the small band. Different names, not a
+    # better estimate.
+    #
+    # With --score-universe the MODEL fits on the wide draw and the RANKING is
+    # restricted to the narrow set, so both arms score the same names and any
+    # difference is the training panel. That is what "train wide, trade narrow"
+    # means in production, and it is what the expansion case actually asserts.
+    #
+    # This touches the TEST keys only. ktr is unchanged, so nothing the model
+    # learned changes -- only which names compete for the cap slots.
+    ap.add_argument("--score-universe", default=None,
+                    help="rank only names in this file; model still trains on "
+                         "the full --universe draw. Default: same as --universe")
+    # WITHOUT THIS, --score-universe IS CONFOUNDED BY SELECTIVITY.
+    # 422 traded names in a 1,924 pool is 22%, so a 400-name draw contains only
+    # ~87 of them (measured: 86, 94, 82 for seeds 1-3). Arm A picks cap-3 from
+    # 400 candidates, 0.75% selectivity; that arm would pick 3 from ~87, 3.4%.
+    # A lower score is then selectivity, not the training panel.
+    # --pin-score puts every scored name in the draw FIRST and fills the rest
+    # at random, so the scored set is held fixed across arms and the only
+    # difference is the extra training names. That is the actual
+    # train-wide/trade-narrow comparison.
+    ap.add_argument("--pin-score", action="store_true",
+                    help="always include every --score-universe name in the "
+                         "training draw; fill the remainder at random")
     args = ap.parse_args()
     H = args.horizon
 
@@ -94,6 +127,13 @@ def main():
     # which every cron job reads. The h=40 shadow book in particular is frozen
     # on the current 415 names and changing its universe would void it.
     uni_all = [l.strip().upper() for l in open(args.universe) if l.strip()]
+    score_set = None
+    if args.score_universe:
+        score_set = {l.strip().upper() for l in open(args.score_universe)
+                     if l.strip()}
+        print(f"  scoring restricted to {len(score_set)} names from "
+              f"{args.score_universe}; model trains on the full "
+              f"{args.universe} draw")
     print(f"h={H} book test — {args.seeds} seeds x {args.tickers} tickers\n")
 
     agg_cap = defaultdict(list)
@@ -105,6 +145,13 @@ def main():
     for seed in range(1, args.seeds + 1):
         u = uni_all[:]
         random.Random(seed).shuffle(u)
+        if args.pin_score and score_set:
+            _pin = [t for t in uni_all if t in score_set]
+            _rest = [t for t in u if t not in score_set]
+            u = _pin + _rest
+            if seed == 1:
+                print(f"  pinned {len(_pin)} scored names into every draw; "
+                      f"{max(0, args.tickers - len(_pin))} random fill")
         X, fwd = {}, {}
         for t in u[:args.tickers]:
             try:
@@ -163,7 +210,12 @@ def main():
         for i in range(len(anchors) - 1):
             tr_end, te_end = anchors[i] + "-01", anchors[i + 1] + "-01"
             ktr = [k for k in X if k[1] < tr_end]
-            kte = [k for k in X if tr_end <= k[1] < te_end]
+            kte = [k for k in X if tr_end <= k[1] < te_end
+                   and (score_set is None or k[0] in score_set)]
+            # NOTE the kte floor. Narrowing the scoring set cuts this count, and
+            # a fold silently skipped here means fewer rebalances and an arm
+            # that is not comparable to the others. The run prints the fold
+            # count so a shortfall is visible rather than inferred.
             if len(ktr) < 4000 or len(kte) < 800:
                 continue
             m = XGBClassifier(n_estimators=200, max_depth=4, learning_rate=0.05,
