@@ -57,7 +57,14 @@ from collections import Counter, defaultdict
 
 warnings.filterwarnings("ignore")
 
-CAPS = (1, 3, 5, 10)
+# Widened 2026-09-14. Eight seeds showed reliability rising monotonically with
+# name count -- cap-3 cleared t>3 in 4 of 8 seeds, cap-5 in 5, cap-10 in 6, and
+# prob>=0.6 at 159 names/day in 8 of 8. The transition from unreliable to
+# dependable happens somewhere between 10 and 159 names and had never been
+# looked at. These intermediate caps locate it, and the smallest cap that holds
+# across seeds is the smallest tradeable book whose edge is measured rather
+# than hoped for.
+CAPS = (1, 3, 5, 10, 15, 25, 40, 60, 100)
 THRESHOLDS = (0.50, 0.55, 0.60, 0.70)
 
 
