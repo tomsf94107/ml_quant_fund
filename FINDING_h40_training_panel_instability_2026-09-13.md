@@ -131,10 +131,38 @@ lock-contention failure mode is silent — `except Exception: continue` swallows
 failed build — so row counts were checked against arms A and B afterward and
 matched, confirming no seed was corrupted.
 
-## Not captured
-Arm D's cost ladder, drawdown, concentration and threshold rows were not in the
-grep used to read the log. They are in `logs/h40_D800.log` and this note should be
-extended with them rather than left inferred.
+## Arm D's full path, and one correction it forces
+
+| bps/leg | D net | A net |
+|---|---|---|
+| 0 | +3.305pp | +1.543pp |
+| 20 | +2.905pp | +1.143pp |
+| 40 | +2.505pp | +0.743pp |
+| 100 | +1.305pp | **-0.457pp** |
+
+D path: max drawdown **-8.5%**, **43%** of rebalances negative, top-5 tickers 29%
+of picks. Against A's -11.0%, 50% and 27%.
+
+**D survives 100bps/leg where A does not.** On the cost ladder alone the wide
+panel looks better on every rung, with a shallower drawdown and fewer losing
+rebalances.
+
+**That does not rescue the expansion case, and the reason is the whole point of
+this note.** D's aggregate is one number drawn from +2.241 / +1.752 / +5.923. At
+seed 2's +1.752pp the 40bps net is roughly +0.95pp -- no better than arm A -- and
+at 100bps it is close to nothing. The aggregate looks robust only because seed 3
+carries it. A cost ladder computed on an unstable mean inherits the instability
+and hides it behind smooth-looking arithmetic.
+
+**The threshold rows say the same thing louder.** `prob>=0.5` is **-0.043pp and
+positive in only 1 of 3 seeds**; `prob>=0.55` is +0.055pp at 2/3. The model's
+probability calibration on the wide panel is close to useless below 0.6 --
+selecting 342 names a day at prob>=0.5 earns nothing. Only `prob>=0.7` (+3.950pp,
+3/3, 49 names/day) and the caps work at all.
+
+So the wide panel does not produce a better-calibrated model. It produces a model
+whose usable output is confined to the extreme tail, with a mean that depends on
+which companies happened to share its training draw.
 
 ## Files
 - `analysis/h40_book_test.py` — all four arms; `--universe`, `--score-universe`, `--pin-score`
