@@ -275,7 +275,84 @@ def main():
         all_ok = check("short_interest currency", False,
                        f"could not read short_interest.db: {_e}") and all_ok
 
-    # (d) Crontab snapshot age. The tracked copy drifted 261 lines behind the
+    # (d) FEATURE LIVENESS. Two invariants, neither with a chosen threshold.
+    #
+    # Found 2026-09-14: vix_ret and dxy_ret had been identically 0.0 in 100% of
+    # stored rows since July, 56% of June, 98% of May for dxy. Nothing broke.
+    # FRED publishes VIXCLS a day late and DTWEXBGS several days late, the
+    # builder forward-fills the gap, and pct_change on a forward-filled
+    # duplicate is zero BY ARITHMETIC. daily_runner stores df.iloc[-1], which is
+    # always that filled row, and .fillna(0.0) turned "unknown" into "no
+    # change". It degraded as the publication lag drifted rather than failing,
+    # so no error ever fired. h=5 prob>=0.60 hit rate fell 61.9% to 37.4% over
+    # the same months with the market-regime channel switched off.
+    #
+    # (i) CONSTANT: a feature with one distinct value over a whole month is
+    #     contributing nothing while the model keeps weighting it. Checked on
+    #     the trailing 30 days, needing >=200 rows so a quiet week cannot fire
+    #     it. No threshold: 1 distinct value is the impossible state.
+    # (ii) PER-TICKER MACRO: vix_close, vix_ret, dxy_ret, fear_greed and
+    #     yield_10y are daily scalars -- the same number for every ticker on a
+    #     date. More than one value on a date means the series was sampled
+    #     per-ticker mid-run, which leaks processing order into the feature set.
+    #     Measured: 26 such dates between April and July, now stopped.
+    _MACRO = ("vix_close", "vix_ret", "dxy_ret", "fear_greed", "yield_10y",
+              "spy_ret", "xlk_ret", "oil_ret", "vix_term_structure")
+    try:
+        _c = _sq.connect(f"file:{DB}?mode=ro", uri=True, timeout=30)
+        _cols = [r[1] for r in _c.execute("PRAGMA table_info(prediction_features)")
+                 if r[2] == "REAL"]
+        _n30 = _c.execute(
+            "SELECT COUNT(*) FROM prediction_features "
+            "WHERE prediction_date >= date('now','-30 days')").fetchone()[0]
+        if _n30 < 200:
+            ok = check("Feature liveness", True,
+                       f"only {_n30} rows in the last 30 days -- not enough to test")
+        else:
+            _dead = []
+            for _col in _cols:
+                _d = _c.execute(
+                    f"SELECT COUNT(DISTINCT {_col}) FROM prediction_features "
+                    f"WHERE prediction_date >= date('now','-30 days') "
+                    f"AND {_col} IS NOT NULL").fetchone()[0]
+                if _d == 1:
+                    _v = _c.execute(
+                        f"SELECT {_col} FROM prediction_features "
+                        f"WHERE prediction_date >= date('now','-30 days') "
+                        f"AND {_col} IS NOT NULL LIMIT 1").fetchone()[0]
+                    _dead.append(f"{_col}={_v}")
+            # fear_greed is a DELIBERATE constant 0.5 -- builder.py line ~1512,
+            # dropped from the model 2026-05-21 with no historical source, kept
+            # only so the schema does not change. Not a failure.
+            _dead = [d for d in _dead if not d.startswith("fear_greed")]
+            ok = check("Feature liveness", not _dead,
+                       f"{len(_cols)} features over {_n30:,} rows, 30d"
+                       + ("" if not _dead else
+                          f" -- CONSTANT: {', '.join(_dead[:4])}"
+                          f"{' and more' if len(_dead) > 4 else ''}. A feature "
+                          f"frozen at one value contributes nothing while the "
+                          f"model still weights it"))
+            all_ok = all_ok and ok
+
+        _bad = _c.execute(
+            "SELECT prediction_date, COUNT(DISTINCT vix_close) "
+            "FROM prediction_features "
+            "WHERE prediction_date >= date('now','-30 days') "
+            "GROUP BY 1 HAVING COUNT(DISTINCT vix_close) > 1").fetchall()
+        ok = check("Macro features are per-date", not _bad,
+                   "one vix_close per session, 30d"
+                   + ("" if not _bad else
+                      f" -- {len(_bad)} date(s) carry several values, newest "
+                      f"{_bad[-1][0]} with {_bad[-1][1]}. A daily scalar that "
+                      f"varies by ticker was sampled mid-run and leaks "
+                      f"processing order into the features"))
+        all_ok = all_ok and ok
+        _c.close()
+    except Exception as _e:
+        all_ok = check("Feature liveness", False,
+                       f"could not read prediction_features: {_e}") and all_ok
+
+    # (e) Crontab snapshot age. The tracked copy drifted 261 lines behind the
     # live crontab because nothing regenerated it. A weekly job now writes it
     # Sundays 11:00 VN; 8 days is one cycle plus slack.
     try:

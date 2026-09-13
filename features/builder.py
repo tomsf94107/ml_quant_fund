@@ -1427,9 +1427,17 @@ def build_feature_dataframe(
         _dxy_series = fred_get_as_series("DTWEXBGS", start=start_str, end=end_str)
         if _dxy_series is not None and not _dxy_series.empty:
             # FRED gives index level — compute daily returns
-            _dxy_ret = _dxy_series.pct_change().fillna(0.0)
+            # Same defect as vix_ret above, worse lag. DTWEXBGS publishes with
+            # several days' delay -- on 2026-09-12 its newest observation was
+            # 09-04 -- so mapping returns by date leaves every recent row NaN,
+            # and .fillna(0.0) turns a MISSING value into a stated "the dollar
+            # did not move". 98% of May rows, 97% of June, 100% from July.
+            # Forward-fill the last real return instead, so the feature carries
+            # the most recent known change rather than a fabricated zero.
+            _dxy_ret = _dxy_series.pct_change()
             _dxy_map = {d.date(): v for d, v in _dxy_ret.items()}
-            df["dxy_ret"] = df["date"].map(_dxy_map).fillna(0.0).values
+            df["dxy_ret"] = (df["date"].map(_dxy_map)
+                             .ffill().fillna(0.0).values)
         else:
             df["dxy_ret"] = 0.0
     except Exception:
@@ -1781,7 +1789,22 @@ def build_feature_dataframe(
             _vix_map = {d.date(): v for d, v in _vixc.items()}
             _vix_close_s = df["date"].map(_vix_map).ffill().bfill()
             df["vix_close"] = _vix_close_s.values
-            df["vix_ret"]   = _vix_close_s.pct_change().fillna(0.0).values
+            # RETURN FROM THE LAST REAL OBSERVATION, NOT THE FFILLED ROW.
+            # 2026-09-14: FRED publishes VIXCLS with a one-day lag, so the final
+            # row of every build duplicates the previous close and pct_change on
+            # two identical values is zero BY CONSTRUCTION. daily_runner logs
+            # features with `last = df.iloc[-1]`, so every stored vix_ret was
+            # that structural zero: 100% of rows in Jul, Aug and Sep, 56% in
+            # Jun. The model has had no volatility-change input for months, and
+            # h=5 prob>=0.60 hit rate fell 61.9% -> 37.4% over the same window.
+            #
+            # Dropping the ffill duplicates before differencing means the last
+            # row carries the last GENUINE change. That is also the PIT-honest
+            # value: at prediction time today's VIX return cannot be known.
+            _vix_real = _vix_close_s[~_vix_close_s.duplicated(keep="first")]
+            df["vix_ret"] = (_vix_real.pct_change()
+                             .reindex(_vix_close_s.index).ffill()
+                             .fillna(0.0).values)
         else:
             df["vix_close"] = 20.0
             df["vix_ret"]   = 0.0
