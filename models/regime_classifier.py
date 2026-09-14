@@ -176,6 +176,39 @@ def _compute_regime_features(close: pd.DataFrame) -> dict:
                           "spy_up_days_pct": 0.5})
 
     # ── VIX ───────────────────────────────────────────────────────────────────
+    # FRED FALLBACK (2026-09-14). _fetch_regime_data asks Massive for "^VIX",
+    # and Massive routes index symbols to yfinance, which XProtect blocks on
+    # this machine -- every run logs 'index symbol ^VIX: yfinance disabled'.
+    # vix_col was therefore None and all four VIX terms fell to the defaults
+    # below: level 20, ma20 20, trend 0, percentile 50.
+    #
+    # _classify_regime needs elevated VIX for VOLATILE and BEAR and low VIX for
+    # BULL, so with VIX pinned at 20 and its percentile at 50 none of the three
+    # can fire on volatility. Every logged regime reads NEUTRAL, confidence 0.5,
+    # signal_multiplier 1.0 -- which is also why the multiplier chain measures
+    # inert at 0.0031 across 91,000 predictions. Not inert by design:
+    # disconnected.
+    #
+    # Same fix already proven twice for vix_term_structure and vix_ret in
+    # features/builder.py. FRED VIXCLS is the official CBOE redistribution and
+    # was returning 29 rows ending 2026-09-10 at 17.84 when this was written.
+    if close is not None and not any("VIX" in c.upper() for c in close.columns):
+        try:
+            from features.fred_client import fred_get_as_series
+            _fv = fred_get_as_series(
+                "VIXCLS",
+                start=(datetime.today() - timedelta(days=400)).strftime("%Y-%m-%d"),
+                end=datetime.today().strftime("%Y-%m-%d"))
+            if _fv is not None and not _fv.empty:
+                close = close.copy()
+                close["VIX"] = _fv.reindex(
+                    pd.to_datetime(close.index)).ffill().values
+                print(f"[RegimeClassifier] VIX from FRED VIXCLS "
+                      f"(last {float(_fv.iloc[-1]):.2f}) -- Massive/yfinance "
+                      f"blocked for index symbols")
+        except Exception as _e:
+            print(f"[RegimeClassifier] FRED VIX fallback failed: {_e}")
+
     vix_col = next((c for c in close.columns if "VIX" in c.upper()), None)
     if vix_col and len(close[vix_col].dropna()) >= 20:
         vix = close[vix_col].dropna()
