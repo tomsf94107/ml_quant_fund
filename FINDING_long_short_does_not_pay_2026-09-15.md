@@ -131,9 +131,13 @@ suggests that is worth attempting.
 
 ## What would change the answer
 
-- **Fewer, larger positions.** The edge is concentrated above 0.70; the ladder
-  dies because it is spread across 71 names. A cap-10 long / cap-10 short book
-  has not been tested and would cost a fraction as much to trade.
+- ~~**Fewer, larger positions.**~~ **TESTED AND WORSE.** At 0.75/0.30 the book
+  runs 10 long and 17 short over 36 dates and gives +0.395% at NW t **+0.62** --
+  the same gross as the wider gate with HALF the t-statistic and half the dates.
+  Concentrating did not sharpen the edge, it shrank the sample, and May reads
+  -3.858% on three dates because one bad day now dominates a month. The edge is
+  DIFFUSE, not concentrated in the tail: 71 positions earned what 27 earned.
+  That closes the cheaper-to-trade variant rather than leaving it open.
 - **A longer hold.** Four crossings per five days is the problem. At h=40 the
   same crossings amortise over eight times the period.
 - **Real execution data.** The ladder is a guess at cost. One month of actual
