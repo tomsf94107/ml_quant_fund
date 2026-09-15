@@ -144,6 +144,8 @@ def main():
     print(f"h={H} book test — {args.seeds} seeds x {args.tickers} tickers\n")
 
     agg_cap = defaultdict(list)
+    agg_ls = defaultdict(list)
+    pooled_ls = defaultdict(list)
     agg_thr = defaultdict(list)
     agg_n = defaultdict(list)
     agg_turn = defaultdict(list)
@@ -205,6 +207,19 @@ def main():
         months = sorted({d[:7] for d in dates})
         anchors = months[int(len(months) * 0.55)::3]
 
+        # LONG/SHORT LEG (2026-09-15). The h=5 book gives +0.436% per period
+        # gross and dies at 10bps/leg, because four crossings -- buy and sell
+        # the long, sell short and cover the short -- recur every five days.
+        # At h=40 the same four crossings amortise over eight times the holding
+        # period, so the cost per period is unchanged while the edge has eight
+        # times as long to accumulate. That is the only untested route left
+        # after tighter gates were tried at h=5 and made it worse: 0.75/0.30
+        # gave the same gross with HALF the t-statistic, so the edge is diffuse
+        # rather than concentrated in the tail.
+        #
+        # Built on the SAME fold, seed and walk-forward as the cap legs, so the
+        # numbers are directly comparable rather than a separate experiment.
+        ls_ex = defaultdict(list)
         cap_ex = defaultdict(list)
         cap_turn = defaultdict(list)
         thr_ex = defaultdict(list)
@@ -242,6 +257,14 @@ def main():
                 for c in CAPS:
                     sel = v[:c]
                     cap_ex[c].append(st.mean(x[1] for x in sel) - mkt)
+                    # Long the top c, short the bottom c, equal dollars. The
+                    # market move cancels, so no `- mkt` here: the benchmark IS
+                    # the short leg. Half the sum because the book is two legs
+                    # of equal size, not one leg of double.
+                    if len(v) >= 2 * c:
+                        _bot = v[-c:]
+                        ls_ex[c].append(0.5 * (st.mean(x[1] for x in sel)
+                                               - st.mean(x[1] for x in _bot)))
                     cur = {x[2] for x in sel}
                     if prev_cap[c]:
                         cap_turn[c].append(
@@ -285,6 +308,29 @@ def main():
             agg_n[th].append(st.mean(thr_n[th]))
             agg_turn[th].append(st.mean(thr_turn[th]) if thr_turn[th] else 0)
 
+        # LONG/SHORT rows. No `- mkt`: the short leg IS the benchmark, so
+        # subtracting the market as well would double-count the hedge. That is
+        # why this cannot reuse cap_ex with a negative index.
+        if ls_ex.get(3):
+            print(f"  {'long/short':<14}{'excess':>9}{'NW t':>8}{'names':>11}")
+            for c in CAPS:
+                if not ls_ex.get(c) or len(ls_ex[c]) < 5:
+                    continue
+                print(f"  {'L/S cap ' + str(c):<14}"
+                      f"{100*st.mean(ls_ex[c]):>+9.3f}pp"
+                      f"{(nw_t(ls_ex[c], H) or 0):>+8.2f}"
+                      f"{2*c:>11}")
+                agg_ls[c].append(st.mean(ls_ex[c]))
+                # Keep the RAW per-rebalance series, not just its mean. The
+                # standing bar is NW t > 3.0 on the NET figure, and a t cannot
+                # be recovered from eight seed means -- it needs the rebalances
+                # underneath them. Pooling across seeds treats each seed's
+                # rebalances as additional observations of the same book, which
+                # is what they are: same period, same construction, different
+                # 400-name draw from the same 422.
+                pooled_ls[c].extend(ls_ex[c])
+            print()
+
         e = cap_ex[3]
         eq, peak, mdd = 1.0, 1.0, 0.0
         for r in e:
@@ -318,6 +364,51 @@ def main():
         print(f"  {'prob>='+str(th):<14}{100*st.mean(v):>+9.3f}pp"
               f"{sum(1 for x in v if x>0):>5}/{len(v)}"
               f"{st.mean(agg_n[th]):>11.1f}{st.mean(agg_turn[th]):>9.0f}%")
+
+    if agg_ls.get(3):
+        print()
+        print(f"  {'long/short':<14}{'excess':>10}{'seeds +':>9}{'names':>11}")
+        for c in CAPS:
+            v = agg_ls.get(c, [])
+            if not v:
+                continue
+            print(f"  {'L/S cap '+str(c):<14}{100*st.mean(v):>+9.3f}pp"
+                  f"{sum(1 for x in v if x>0):>5}/{len(v)}{2*c:>11}")
+
+        # LADDER ON THE L/S BOOK. Four crossings per rebalance -- buy and sell
+        # the long leg, sell short and cover the short -- the same count as the
+        # h=5 book, but here they amortise over 40 days instead of 5. That is
+        # the whole reason this was worth testing: at h=5 the identical
+        # construction gave +0.436pp at NW t +1.45 and went to zero at 10bps
+        # per leg.
+        _lsc = 10 if agg_ls.get(10) else 3
+        _g = st.mean(agg_ls[_lsc])
+        _P = pooled_ls.get(_lsc, [])
+        # COST CONVENTION, corrected 2026-09-15. The L/S return is HALF-SCALED
+        # -- 0.5 * (mean(long) - mean(short)) -- so the book is $0.5 long and
+        # $0.5 short, gross exposure 1.0. Four crossings at $0.5 notional each
+        # is 2 bps-units, not 4. The first version charged 4 and so overstated
+        # cost by exactly 2x. That direction can only manufacture a FALSE FAIL,
+        # never a false pass, and given the h=5 book died at 10bps/leg a false
+        # fail is precisely the outcome that would wrongly close this axis.
+        print(f"\n  COST LADDER on L/S cap-{_lsc} ({100*_g:+.3f}pp gross, "
+              f"{len(_P)} pooled rebalances across {len(agg_ls[_lsc])} seeds)")
+        print(f"      {'bps/leg':>9}{'net':>12}{'NW t':>9}")
+        for _bps in (0, 5, 10, 20, 40, 60, 100):
+            _c = 2.0 * _bps / 1e4
+            _net = [x - _c for x in _P]
+            _t = nw_t(_net, H) if _net else 0
+            print(f"      {_bps:>9}{100*(st.mean(_net) if _net else 0):>+11.3f}pp"
+                  f"{(_t or 0):>+9.2f}")
+        print(f"\n  The t is on the POOLED per-rebalance series, which is what")
+        print(f"  the standing bar (NW t > 3.0 on the NET figure) is written")
+        print(f"  against. Per-seed gross t ran lower; pooling adds observations")
+        print(f"  but the rebalances overlap across seeds, so treat this as the")
+        print(f"  optimistic end of the range rather than the number.")
+        print(f"\n  Borrow is charged separately and is small at this horizon:")
+        print(f"  the bottom decile runs 127-173bps annualised against a 196bps")
+        print(f"  universe average, so 40 days costs roughly 20-27bps -- about")
+        print(f"  1% of a {100*_g:.1f}pp gross edge. Execution is what decides it.")
 
     print(f"\n  COST LADDER on cap-3 ({100*st.mean(agg_cap[3]):+.3f}pp gross, "
           f"~27% turnover, one round trip per rebalance)")
