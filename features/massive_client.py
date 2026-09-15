@@ -142,6 +142,63 @@ INDEX_SYMBOLS = {
 MACRO_ETF_SYMBOLS = set()
 
 
+# FRED SERVES WHAT YAHOO USED TO (2026-09-14).
+#
+# INDEX_SYMBOLS routes to yfinance, and yfinance is dead on this machine --
+# XProtect 5347 SIGKILLs the process on exec, uncatchable by try/except, so
+# download() returns an empty frame and every caller silently takes its
+# fallback. Line 141 already states the intended fix -- "^VIX comes from FRED
+# VIXCLS" -- but nothing implemented it, so consumers were patched one at a
+# time instead: vix_term_structure, then vix_ret and dxy_ret in
+# features/builder.py, then vix_level in models/regime_classifier.py. Three
+# patches for one broken router.
+#
+# Each of these is a real FRED series and the mapping is exact, not a proxy.
+# Futures and international indices have no FRED equivalent and keep returning
+# empty, which is the honest outcome -- there is no source for them here.
+_FRED_FOR_INDEX = {
+    "^VIX":   "VIXCLS",      # CBOE VIX, official redistribution
+    "^VIX3M": "VXVCLS",      # 3-month VIX; reaches back to 2007-12 vs Cboe 2009-09
+    "^VIX9D": "VXDCLS",
+    "^GSPC":  "SP500",       # S&P 500 index level
+    "^IXIC":  "NASDAQCOM",   # NASDAQ Composite
+    "^TNX":   "DGS10",       # 10-year constant maturity
+    "^TYX":   "DGS30",
+    "^FVX":   "DGS5",
+    "^IRX":   "DGS3MO",
+}
+
+
+def _fred_index_frame(symbol, start_str, end_str):
+    """OHLCV-shaped frame for an index FRED carries, else None.
+
+    FRED publishes a single daily value per series, not OHLCV, so Open, High,
+    Low and Close all carry it and Volume is 0. Every consumer of these symbols
+    reads Close; none reads the range. Stating that here rather than leaving a
+    reader to infer that the High equals the Low for a reason.
+    """
+    sid = _FRED_FOR_INDEX.get(symbol)
+    if not sid:
+        return None
+    try:
+        from features.fred_client import fred_get_as_series
+        ser = fred_get_as_series(sid, start=start_str, end=end_str)
+    except Exception as e:
+        log.warning("fred fallback failed for %s (%s): %s", symbol, sid, e)
+        return None
+    if ser is None or ser.empty:
+        log.warning("fred returned nothing for %s (%s)", symbol, sid)
+        return None
+    df = pd.DataFrame({
+        "Open": ser.values, "High": ser.values, "Low": ser.values,
+        "Close": ser.values, "Volume": 0.0,
+    }, index=pd.to_datetime(ser.index))
+    df.index.name = "Date"
+    log.info("massive.fred_route %s -> FRED %s (%d rows, last %.4f)",
+             symbol, sid, len(df), float(ser.iloc[-1]))
+    return df
+
+
 def _is_index(symbol):
     """Return True if symbol should route to yfinance instead of Massive."""
     if symbol in INDEX_SYMBOLS:
@@ -337,10 +394,14 @@ def download(
         # Single ticker — route based on type
         if _is_index(tickers):
             # XProtect 5347 SIGKILLs the process on yfinance/curl_cffi exec
-            # (Jun 30 2026), uncatchable by try/except. Return empty for index
-            # symbols; builder fail-softs macro to NaN. Restore via FRED (VIXCLS).
-            log.warning(f"index symbol {tickers}: yfinance disabled (XProtect block), returning empty")
-            _result = pd.DataFrame()
+            # (Jun 30 2026), uncatchable by try/except. FRED first for the
+            # symbols it carries -- see _FRED_FOR_INDEX -- then empty, and the
+            # builder fail-softs macro to NaN for the rest.
+            _result = _fred_index_frame(tickers, start_str, end_str)
+            if _result is None:
+                log.warning(f"index symbol {tickers}: yfinance disabled "
+                            f"(XProtect block) and no FRED series, returning empty")
+                _result = pd.DataFrame()
         else:
             _check_key()
             mult, span = _interval_to_massive(interval)
