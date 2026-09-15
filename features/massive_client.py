@@ -435,9 +435,22 @@ def download(
         frames = {}
 
         # Indices: yfinance disabled (XProtect 5347 SIGKILLs on curl_cffi exec,
-        # uncatchable). Skip the call entirely; builder fail-softs to NaN.
+        # uncatchable). FRED serves the ones it carries -- see _FRED_FOR_INDEX
+        # -- and the rest fail-soft to NaN in the builder.
+        #
+        # This loop previously did nothing but log. The single-ticker branch
+        # above was patched first and models/regime_classifier.py calls
+        # download() with a LIST, so it kept hitting this path and falling back
+        # to its own FRED lookup. Two branches, one fix, and only one of them
+        # got it -- worth stating because the symptom was a log line that
+        # looked identical to a genuine no-source case.
         for t in indices:
-            log.warning(f"index symbol {t}: yfinance disabled (XProtect block), skipping")
+            _fdf = _fred_index_frame(t, start_str, end_str)
+            if _fdf is not None and not _fdf.empty:
+                frames[t] = _fdf
+            else:
+                log.warning(f"index symbol {t}: yfinance disabled (XProtect "
+                            f"block) and no FRED series, skipping")
 
         # Fetch stocks from Massive
         if stocks:
