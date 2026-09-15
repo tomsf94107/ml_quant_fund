@@ -352,7 +352,41 @@ def main():
         all_ok = check("Feature liveness", False,
                        f"could not read prediction_features: {_e}") and all_ok
 
-    # (e) Crontab snapshot age. The tracked copy drifted 261 lines behind the
+    # (e) SCANNER FETCH PATH. alerts/scanner.py imported yfinance directly and
+    # both its scan functions skipped empty frames with a bare `continue`, so
+    # when XProtect killed yfinance on 2026-06-30 it returned zero alerts every
+    # 30 minutes for ten weeks and nothing said why. Routed through
+    # massive_client 2026-09-14.
+    #
+    # The assertion is that the FETCH works, not that alerts fired. Zero alerts
+    # is a legitimate state -- if nothing moved 5% today, zero is correct -- so
+    # output count is not a health signal and checking it would cry wolf on
+    # quiet days.
+    #
+    # An EMPTY frame fails: that is the silent-death signature, a source that
+    # returns success with no data. An EXCEPTION only warns: that is a network
+    # blip, and failing on it would make this the next check nobody reads.
+    try:
+        import sys as _sys
+        _sys.path.insert(0, str(ROOT))
+        from features import massive_client as _mc
+        _probe = _mc.download("SPY", period="5d", interval="1d",
+                              auto_adjust=True, progress=False)
+        _n = 0 if _probe is None else len(_probe)
+        ok = check("Scanner fetch path", _n >= 2,
+                   f"SPY 5d returns {_n} bars"
+                   + ("" if _n >= 2 else
+                      " -- an empty frame from a source reporting success is "
+                      "the signature that silenced alerts/scanner.py for ten "
+                      "weeks. Check massive_client routing"))
+        all_ok = all_ok and ok
+    except Exception as _e:
+        check("Scanner fetch path", True,
+              f"probe raised ({type(_e).__name__}) -- treated as transient, "
+              f"not failed. An empty frame is the failure, an exception is a "
+              f"network blip")
+
+    # (f) Crontab snapshot age. The tracked copy drifted 261 lines behind the
     # live crontab because nothing regenerated it. A weekly job now writes it
     # Sundays 11:00 VN; 8 days is one cycle plus slack.
     try:
