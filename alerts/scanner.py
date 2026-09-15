@@ -35,7 +35,23 @@ from zoneinfo import ZoneInfo
 import feedparser
 import pandas as pd
 import requests
-import yfinance as yf
+import logging as _logging
+
+log = _logging.getLogger("alerts.scanner")
+
+# ROUTED THROUGH massive_client (2026-09-14). yfinance is dead on this
+# machine -- XProtect 5347 SIGKILLs the process on exec -- so every
+# yf.download here returned an empty frame, and both scan functions skip empty
+# frames with a bare `continue`. This scanner runs every 30 minutes across both
+# halves of the market window and 1.6MB of intraday_alerts.log contains zero
+# commodity alerts. It has been watching nothing since 2026-06-30.
+#
+# massive_client is a drop-in for yf.download: stocks and ETFs route to
+# Massive, index symbols route to FRED where a series exists, and the rest
+# return empty with a logged reason. Verified both call shapes work --
+# period="1d" interval="5m" returns 192 bars for today, and the daily
+# partial-bar clamp does not apply to intraday.
+from features import massive_client as yf
 
 # ── Config ────────────────────────────────────────────────────────────────────
 ALERTS_DB    = Path(os.getenv("ALERTS_DB_PATH", "alerts.db"))
@@ -50,15 +66,23 @@ DEFAULT_COMMODITY_PCT     = 2.0    # % move in oil/gold/silver to trigger alert
 DEFAULT_INTERVAL_MIN      = 30     # scan every 30 minutes by default
 
 # Commodity tickers
+# ETF PROXIES REPLACE THE FUTURES (2026-09-14). Six of the eight entries were
+# futures or Yahoo-format symbols with no source on this machine: CL=F, GC=F,
+# SI=F, NG=F, ZW=F, DX-Y.NYB. Only AAAU and SLV -- both already ETFs -- ever
+# returned data, so this dict was already mixing the two conventions and this
+# completes that rather than changing the design.
+#
+# A future and its ETF do not track identically, but this fires on a 2% DAILY
+# move. At that threshold the tracking difference is immaterial, and an ETF
+# that reports beats a future that does not.
 COMMODITY_TICKERS = {
-    "CL=F":     "Crude Oil (WTI)",
-    "GC=F":     "Gold (Futures)",
-    "AAAU":     "Gold (ETF)",
-    "SI=F":     "Silver (Futures)",
+    "USO":      "Crude Oil (WTI, ETF)",
+    "GLD":      "Gold (ETF)",
+    "AAAU":     "Gold (ETF, alt)",
     "SLV":      "Silver (ETF)",
-    "NG=F":     "Natural Gas",
-    "ZW=F":     "Wheat",
-    "DX-Y.NYB": "US Dollar Index",
+    "UNG":      "Natural Gas (ETF)",
+    "WEAT":     "Wheat (ETF)",
+    "UUP":      "US Dollar Index (ETF)",
 }
 
 # ── Keyword triggers ──────────────────────────────────────────────────────────
@@ -267,7 +291,12 @@ def check_stock_moves(conn: sqlite3.Connection, tickers: list[str],
         try:
             data = yf.download(ticker, period="1d", interval="5m",
                                progress=False, auto_adjust=True)
+            # LOG THE SKIP. A bare continue here is what hid the yfinance
+            # outage for two and a half months: every symbol returned empty,
+            # every scan reported nothing, and nothing said why.
             if data.empty or len(data) < 2:
+                log.warning("stock scan: %s returned %d bars, skipped",
+                            ticker, 0 if data is None else len(data))
                 continue
 
             if isinstance(data.columns, pd.MultiIndex):
@@ -320,6 +349,8 @@ def check_commodities(conn: sqlite3.Connection,
             data = yf.download(sym, period="5d", interval="1d",
                                progress=False, auto_adjust=True)
             if data.empty or len(data) < 2:
+                log.warning("commodity scan: %s (%s) returned %d bars, skipped",
+                            sym, name, 0 if data is None else len(data))
                 continue
 
             if isinstance(data.columns, pd.MultiIndex):
