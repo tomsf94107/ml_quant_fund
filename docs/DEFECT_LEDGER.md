@@ -153,3 +153,17 @@ Until both are done, `rev_surprise = 0.0` is correct behaviour, not a bug.
 - DISPOSITION: WON'T FIX in code (cannot retry past a geo-block). Workaround: US VPN exit when
   the cross-check is wanted; otherwise run with --skip massive. Cross-check is REDUNDANT —
   volume is independently validated via prices.db + Unusual Whales.
+
+### 2026-09-16 — RESOLVED (environmental): Massive lit-block connection error
+- ROOT CAUSE: vendor geo-restriction, not a code bug. From VN egress (42.114.201.81): DNS
+  resolves, TCP 443 connects, but TLS Client Hello gets zero bytes back (silent RST) on both
+  pool IPs (.44/.199); openssl s_client "read 0 bytes, written 213". Other HTTPS unaffected
+  (google 200, SEC 403-with-UA). Via US VPN exit (149.22.84.95): / returns HTTP 404 and the
+  monitor section returns full aggregates (verified GOOG: 2026-07-23 vol 46,751,948, which
+  matches prices.db top-volume day). Territory-based market-data licensing block.
+- CODE FIX RETAINED: massive_get() now has retry+backoff and a reused keep-alive session;
+  failures record MASSIVE_LAST_ERROR and raise a MED flag in TODAY'S FLAGS instead of failing
+  silently. That change is what made this diagnosable in minutes.
+- DISPOSITION: WON'T FIX in code (cannot retry past a geo-block). Workaround: US VPN exit when
+  the cross-check is wanted; otherwise run with --skip massive. Cross-check is REDUNDANT --
+  volume independently validated via prices.db + Unusual Whales.
