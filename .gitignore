@@ -172,3 +172,11 @@ deep_survivors.csv
 cews_export.json
 exports/engine-data.json
 data/raw_live/
+
+# --- added 2026-09-16: keep re-downloadable data & scratch out of git ---
+data/raw/
+reports/archive/
+*_20*.txt
+*.zip
+*.pdf
+crwv_144*.csv

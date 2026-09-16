@@ -128,6 +128,16 @@ TICKER_CONFIG: dict[str, dict] = {
     },
     
 
+
+    "GOOG": {
+        "sector_etf": "XLC",     # Communication Services (GOOG's actual sector)
+        "earnings_date": "2026-11-04",  # AMC estimate; external sources cite Oct 28 — CONFLICTED, verify w/ IR
+        "earnings_time": "AMC",
+        "fiscal_q": "Q3 FY26",
+        "shares_out": 12_200_000_000,  # ~12.2B Class C+A+B; adjust if you track Class C only
+        "news_search_term": "Alphabet Google GOOG stock",
+        "cohort": ["MSFT", "META", "AMZN"],  # mega-cap AI/cloud peers (if your cohort reads this key)
+    },
 }
 
 DEFAULT_TICKERS = list(TICKER_CONFIG.keys())
@@ -318,6 +328,7 @@ def get_cik(ticker: str) -> Optional[int]:
 
 import xml.etree.ElementTree as ET
 import re
+from fundamentals_block import fundamentals_block
 
 _LAST_SEC_REQUEST_TS = 0.0
 SEC_MIN_INTERVAL_SEC = 0.15
@@ -655,20 +666,54 @@ def parse_form4_xml(xml_text: str) -> dict:
     return out
 
 
-def massive_get(path: str, params: Optional[dict] = None) -> Any:
-    """GET against Massive. Soft-fails like uw_get."""
+# Reused session: keep-alive + pooling. Fresh per-call connections were being
+# dropped by the vendor ("connection reset by peer"), killing the cross-check.
+_MASSIVE_SESSION: Optional[Any] = None
+MASSIVE_LAST_ERROR: Optional[str] = None
+
+
+def _massive_session():
+    global _MASSIVE_SESSION
+    if _MASSIVE_SESSION is None:
+        sess = requests.Session()
+        adapter = requests.adapters.HTTPAdapter(pool_connections=4, pool_maxsize=4)
+        sess.mount("https://", adapter)
+        sess.headers.update({"Connection": "keep-alive",
+                             "User-Agent": "ML-Quant-Fund/1.0"})
+        _MASSIVE_SESSION = sess
+    return _MASSIVE_SESSION
+
+
+def massive_get(path: str, params: Optional[dict] = None, attempts: int = 3) -> Any:
+    """GET against Massive with retry+backoff. Soft-fails like uw_get, but
+    records the last error in MASSIVE_LAST_ERROR so callers can flag it."""
+    global _MASSIVE_SESSION, MASSIVE_LAST_ERROR
     key = os.environ.get("MASSIVE_API_KEY")
     if not key:
         return None
     url = f"{MASSIVE_BASE}{path}"
-    try:
-        r = requests.get(url, params={**(params or {}), "apiKey": key},
-                         timeout=REQUEST_TIMEOUT)
-        r.raise_for_status()
-        return r.json()
-    except requests.RequestException as e:
-        print(f"  [warn] Massive {path} failed: {e}", file=sys.stderr)
-        return None
+    MASSIVE_LAST_ERROR = None
+    delay = 1.0
+    for i in range(attempts):
+        try:
+            r = _massive_session().get(url, params={**(params or {}), "apiKey": key},
+                                       timeout=REQUEST_TIMEOUT)
+            r.raise_for_status()
+            MASSIVE_LAST_ERROR = None
+            return r.json()
+        except Exception as e:
+            MASSIVE_LAST_ERROR = f"{type(e).__name__}: {str(e)[:120]}"
+            # connection-level failures: drop the poisoned session and back off
+            _MASSIVE_SESSION = None
+            if i < attempts - 1:
+                print(f"  [retry {i+1}/{attempts-1}] Massive {path}: {MASSIVE_LAST_ERROR}",
+                      file=sys.stderr)
+                time.sleep(delay)
+                delay *= 2
+            else:
+                print(f"  [warn] Massive {path} failed after {attempts} attempts: "
+                      f"{MASSIVE_LAST_ERROR}", file=sys.stderr)
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -2108,6 +2153,7 @@ def section_eightk_content(conn: sqlite3.Connection, ticker: str) -> None:
 # Define peer cohorts. Each ticker maps to ~3-4 peers in the same business.
 # Used to differentiate "is this a stock-specific move or a sector move?"
 SECTOR_COHORTS: dict[str, list[str]] = {
+    "GOOG": ["MSFT", "META", "AMZN"],  # mega-cap AI/cloud peers (sector ETF added by the section)
     "NVDA": ["AVGO", "AMD", "MRVL", "TSM"],
     "SMCI": ["DELL", "HPE", "ANET", "AVGO"],
     "DDOG": ["MDB", "SNOW", "NET", "TEAM"],
@@ -2419,27 +2465,25 @@ def section_news(ticker: str) -> None:
     print(f"\n=== RECENT NEWS — {ticker} ===")
 
     cfg = TICKER_CONFIG.get(ticker.upper(), {})
-    cutoff = (date.today() - timedelta(days=14)).isoformat()
+    cutoff = (date.today() - timedelta(days=30)).isoformat()  # 14d was too tight for this feed
 
     # Try UW first (will likely 404 on Basic plan for these endpoints —
     # the section_news function used to give up here. Now we fall through
     # to Google News RSS, which is free and reliable.)
+    # VERIFIED 2026-09-16: /api/news/headlines is the ONLY working news route on
+    # this plan, and its ?ticker= filter works server-side (20/20 rows matched).
+    # The three legacy paths 404'd on every pull for every ticker — removed.
     uw_rows = []
-    for path in [
-        f"/api/news/{ticker}",
-        f"/api/stock/{ticker}/news",
-        f"/api/stock/{ticker}/news-headlines",
-        f"/api/news/headlines",  # global headlines, may filter by ticker
-    ]:
-        try:
-            data = uw_get(path, params={"ticker": ticker, "limit": 15})
-        except Exception:
-            data = None
-        if data:
-            rows = (data or {}).get("data") or (data if isinstance(data, list) else [])
-            if rows:
-                uw_rows = rows
-                break
+    data = uw_get("/api/news/headlines", params={"ticker": ticker, "limit": 50})
+    rows = (data or {}).get("data") or (data if isinstance(data, list) else [])
+    # Belt-and-braces: filter client-side on the tickers[] array so a future
+    # server-side change can't silently hand us the global feed.
+    tkr = ticker.upper()
+    uw_rows = [r for r in rows if isinstance(r, dict)
+               and (not r.get("tickers") or tkr in [str(x).upper() for x in r.get("tickers") or []])]
+    if rows and not uw_rows:
+        flag("MED", ticker, "UW news returned rows but none matched the ticker "
+                            "— check /api/news/headlines filtering")
 
     items: list[dict] = []
     if uw_rows:
@@ -2452,6 +2496,9 @@ def section_news(ticker: str) -> None:
                 "date": (_f(r, "published_at", "publishedAt", "date",
                             "created_at") or "")[:10],
                 "source": _f(r, "source", "publisher") or "UW",
+                # UW-only catalyst signals (absent on RSS fallback — safe to carry)
+                "is_major": bool(r.get("is_major")),
+                "sentiment": r.get("sentiment") or "",
             })
         source_label = "UnusualWhales"
     else:
@@ -2466,7 +2513,7 @@ def section_news(ticker: str) -> None:
     if not items:
         print(f"  No news available for {ticker}.")
     else:
-        print(f"  Source: {source_label}  (showing items within last 14 days)")
+        print(f"  Source: {source_label}  (showing items since {cutoff})")
         shown = _render_news_items(
             items,
             cutoff_iso=cutoff,
@@ -2478,7 +2525,7 @@ def section_news(ticker: str) -> None:
             flag_max=2,
         )
         if shown == 0:
-            print(f"  No news within last 14 days.")
+            print(f"  No news since {cutoff}.")
 
     # Ticker-specific macro context. Different topic stream from "ticker
     # stock" — picks up macro stories that affect this name uniquely.
@@ -3097,7 +3144,14 @@ def section_massive_blocks(ticker: str, since: str) -> None:
     data = massive_get(f"/v2/aggs/ticker/{ticker}/range/1/day/{since}/{date.today().isoformat()}",
                        params={"adjusted": "true", "limit": 120})
     if not data or not data.get("results"):
-        print("  Massive returned no aggregates.")
+        if MASSIVE_LAST_ERROR:
+            print(f"  Massive returned no aggregates ({MASSIVE_LAST_ERROR}).")
+            flag("MED", ticker,
+                 f"Massive lit-block cross-check UNAVAILABLE — all-venue volume "
+                 f"validation missing ({MASSIVE_LAST_ERROR})")
+        else:
+            print("  Massive returned no aggregates (empty response).")
+            flag("INFO", ticker, "Massive returned an empty aggregate set")
         return
     bars = data["results"]
     bars_sorted = sorted(bars, key=lambda b: b.get("v") or 0, reverse=True)[:5]
@@ -3209,6 +3263,8 @@ def main() -> int:
             section_news(ticker)
         if "massive" not in args.skip:
             section_massive_blocks(ticker, args.since)
+        if "fundamentals" not in args.skip:
+            print(fundamentals_block(ticker))
 
     conn.close()
 

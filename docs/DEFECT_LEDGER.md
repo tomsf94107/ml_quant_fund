@@ -179,3 +179,18 @@ Until both are done, `rev_surprise = 0.0` is correct behaviour, not a bug.
 - SEPARATE FINDING: UW news 404s are NOT geo-related (identical on and off VPN). The endpoints
   /api/news/{t}, /api/stock/{t}/news, /api/stock/{t}/news-headlines are absent from this plan
   or retired. Catalyst detection still requires external web-news backfill. STILL OPEN.
+
+### 2026-09-16 — CLOSED: UW news 404s (was OPEN since the GOOG series began)
+- ROOT CAUSE: two stacked bugs, not missing data. (1) section_news tried 3 non-existent routes
+  (/api/news/{t}, /api/stock/{t}/news, /api/stock/{t}/news-headlines) that 404'd on every pull
+  for every ticker; the working route /api/news/headlines was 4th in the fallback list.
+  (2) the 14-day cutoff was too tight for this feed, trimming output to a single stale item.
+- VERIFIED: /api/news/headlines?ticker=GOOG returns 20/20 ticker-matched rows (server-side filter
+  works). Fields: headline, source, created_at, tickers[], is_major, sentiment.
+- FIX: dead routes removed; single call at limit=50 + client-side tickers[] filter (belt-and-braces
+  vs a future server-side change, with a MED flag if rows return but none match); cutoff widened to
+  30d; is_major/sentiment now carried in items (absent on RSS fallback, safely ignored).
+- RESULT: GOOG went from 1 stale item + 3 404 warnings -> 4 headlines, no warnings. Catalyst
+  detection is now native instead of requiring external web search per report.
+- NOTE: the Berkshire "106M shares / $37.76B" figure that prompted this whole audit was in this
+  feed all along, behind the wrong route.
