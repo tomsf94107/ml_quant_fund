@@ -119,3 +119,23 @@ against `eightk_items`). **Revenue was not.**
 `announce_date` must happen too, following the EPS pattern.
 
 Until both are done, `rev_surprise = 0.0` is correct behaviour, not a bug.
+
+
+## 2026-09-16 — updates
+### CLOSED: 10-Q extraction (was BUILD-PRIORITY)
+- Was: monitor resolved CIK/accession but could NOT parse 10-Q financials; reports carried
+  FCF/cash/capex as [fact?] from press/earnings-call coverage.
+- Now: fundamentals_block.py self-sources revenue/OCF/capex/FCF/cash/debt/EPS from SEC XBRL
+  (data.sec.gov, no key), wired into monitor_earnings.py per-ticker loop. Handles YTD cash-flow
+  differencing, Q4-from-annual, and mid-history tag switches (…ExcludingAssessedTax → Revenues).
+  Verified: GOOG 2026Q2 revenue $119.8B, FCF -$5.9B (capex $44.9B > OCF $39.1B). Universe-wide.
+  Caveat: US XBRL filers only — NVMI (Israeli 6-K filer) may need IFRS/foreign fallback tags.
+
+### OPEN: Massive lit-block connection error
+- Symptom: MASSIVE LIT-BLOCK CROSS-CHECK fails with ConnectionResetError(54, 'Connection reset
+  by peer'); Massive returns no aggregates. Non-fatal (prices from prices.db unaffected), but the
+  all-venue volume cross-check is silently missing.
+- Occurrences: 3 consecutive pulls (2026-09-15, 2026-09-16, 2026-09-16 re-run). Escalated from
+  'transient' to tracked defect.
+- Next: check Massive API key/endpoint/rate-limit; add a retry-with-backoff; if persistent,
+  flag the missing cross-check in TODAY'S FLAGS rather than failing silently.
