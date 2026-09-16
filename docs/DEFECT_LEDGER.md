@@ -167,3 +167,15 @@ Until both are done, `rev_surprise = 0.0` is correct behaviour, not a bug.
 - DISPOSITION: WON'T FIX in code (cannot retry past a geo-block). Workaround: US VPN exit when
   the cross-check is wanted; otherwise run with --skip massive. Cross-check is REDUNDANT --
   volume independently validated via prices.db + Unusual Whales.
+
+### 2026-09-16 — RESOLVED (environmental): Massive lit-block + VPN compatibility
+- ROOT CAUSE: Massive geo-blocks non-approved regions. From VN egress (42.114.201.81) TLS Client
+  Hello gets zero bytes back (silent RST) on both pool IPs; via US VPN exit (149.22.84.95) the
+  section returns full aggregates (GOOG 2026-07-23 vol 46,751,948 = matches prices.db).
+- VPN COMPATIBILITY VERIFIED: UW is UNAFFECTED on the VPN — institutional 200 holders, dark pool
+  9,906 prints, options flow 100 alerts, short interest all normal. No 403s/rate-limiting.
+- DISPOSITION: run pipelines with US VPN enabled by default (gains Massive, no UW cost).
+  If VPN drops, massive_get() retry+MED-flag surfaces it instead of failing silently.
+- SEPARATE FINDING: UW news 404s are NOT geo-related (identical on and off VPN). The endpoints
+  /api/news/{t}, /api/stock/{t}/news, /api/stock/{t}/news-headlines are absent from this plan
+  or retired. Catalyst detection still requires external web-news backfill. STILL OPEN.
