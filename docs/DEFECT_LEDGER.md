@@ -139,3 +139,17 @@ Until both are done, `rev_surprise = 0.0` is correct behaviour, not a bug.
   'transient' to tracked defect.
 - Next: check Massive API key/endpoint/rate-limit; add a retry-with-backoff; if persistent,
   flag the missing cross-check in TODAY'S FLAGS rather than failing silently.
+
+### 2026-09-16 — RESOLVED (environmental): Massive lit-block connection error
+- ROOT CAUSE: vendor geo-restriction, not a code bug. From VN egress (42.114.201.81):
+  DNS resolves, TCP 443 connects, but TLS Client Hello gets zero bytes back (silent RST) on
+  both pool IPs (.44/.199). openssl s_client: "read 0 bytes, written 213". Other HTTPS hosts
+  unaffected (google 200, SEC 403-with-UA). Via US VPN exit (149.22.84.95): api.massive.com
+  returns HTTP 404 on / = TLS+HTTP working. Confirms territory-based blocking (market-data
+  licensing), consistent with silent-RST WAF behaviour.
+- CODE FIX RETAINED: massive_get() now has retry+backoff and a reused keep-alive session;
+  failures record MASSIVE_LAST_ERROR and raise a MED flag in TODAY'S FLAGS instead of failing
+  silently. That change is what made this diagnosable in minutes.
+- DISPOSITION: WON'T FIX in code (cannot retry past a geo-block). Workaround: US VPN exit when
+  the cross-check is wanted; otherwise run with --skip massive. Cross-check is REDUNDANT —
+  volume is independently validated via prices.db + Unusual Whales.
