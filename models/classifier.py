@@ -326,9 +326,43 @@ def _risk_sample_weights(
     n = len(df_train)
 
     # --- Recency weights ---
-    recency_weights = np.ones(n)
-    if n > recency_days:
-        recency_weights[-recency_days:] = recency_factor
+    # STEP (default, unchanged) vs GEOMETRIC DECAY.
+    #
+    # The step gives the last `recency_days` rows `recency_factor` weight and
+    # everything before it 1.0. A row 61 days old and a row from 2018 therefore
+    # weigh the same -- a cliff, not a gradient.
+    #
+    # Measured 2026-09-19 on analysis/h40_book_test.py, 8 seeds x 400 tickers,
+    # identical folds. Geometric decay 0.5**(age/252) against NO weighting:
+    #     cap-10  +2.134pp -> +3.302pp   8/8 both, spread 1.59 -> 1.64pp
+    #     cap-3   +1.610   -> +3.224     7/8 -> 8/8
+    #     L/S 10  +2.181   -> +4.488
+    # Rolling 441d also beat the control (+3.055) but earned less than decay.
+    #
+    # That test compared decay against UNWEIGHTED, which is NOT what production
+    # runs -- production runs this step. Step versus decay has not been
+    # measured on the per-ticker construction, which differs three ways from
+    # the h=40 test: ~2,170 rows per fit rather than ~480,000 pooled, h=1/3/5
+    # rather than 40, and isotonic calibration on the last 20% of train.
+    #
+    # A 252-day half-life on 2,170 rows leaves an effective sample near 600.
+    # That is where this could overfit where the pooled version did not.
+    # Default stays STEP until models/walk_forward.py measures the swap on the
+    # names actually traded.
+    #
+    # Set ML_QUANT_RECENCY_HALFLIFE to a day count to use decay instead.
+    import os as _os
+    _hl = _os.environ.get("ML_QUANT_RECENCY_HALFLIFE")
+    if _hl and float(_hl) > 0:
+        # Newest row weighs 1.0; a row one half-life older weighs 0.5. Position
+        # is used rather than a date column because df_train is already sorted
+        # and the caller does not guarantee a date index here.
+        _age = np.arange(n - 1, -1, -1, dtype=float)
+        recency_weights = 0.5 ** (_age / float(_hl))
+    else:
+        recency_weights = np.ones(n)
+        if n > recency_days:
+            recency_weights[-recency_days:] = recency_factor
     recency_weights = recency_weights / recency_weights.mean()
 
     # --- Risk weights ---

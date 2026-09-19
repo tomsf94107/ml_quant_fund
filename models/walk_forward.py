@@ -118,6 +118,7 @@ def _fit_and_eval_fold(
     X: pd.DataFrame, y: pd.Series, w: Optional[np.ndarray],
     train_end: int, test_start: int, test_end: int,
     ticker: str, horizon: int, calib_frac: float = 0.2,
+    df_full: Optional[pd.DataFrame] = None,
 ) -> dict:
     """Fit on inner-train, calibrate on held-out slice, evaluate on test."""
     X_tr_all, y_tr_all = X.iloc[:train_end], y.iloc[:train_end]
@@ -129,8 +130,28 @@ def _fit_and_eval_fold(
     X_in, y_in = X_tr_all.iloc[:split_in], y_tr_all.iloc[:split_in]
     X_cal, y_cal = X_tr_all.iloc[split_in:], y_tr_all.iloc[split_in:]
 
-    # Sample weights on inner train only
-    w_in = w[:split_in] if w is not None else None
+    # WEIGHTS ON THE INNER SLICE, COMPUTED FROM IT (fixed 2026-09-19).
+    #
+    # This used to slice a pre-computed vector: w[:split_in]. _risk_sample_weights
+    # boosts the LAST 60 rows 3x, and the inner split drops the last 20% of the
+    # training slice for calibration -- so the boosted rows were ALWAYS in the
+    # calibration slice, never in the fit. Simulated across fold sizes 600,
+    # 1200 and 1800: 0 of 60 boosted rows inside inner-train every time, and
+    # w_in came out a single repeated value.
+    #
+    # The recency component therefore never reached a walk-forward fit, for any
+    # ticker, any fold, ever. classifier.train_model does not have this problem
+    # -- it computes weights on X_train and fits the same rows -- so PRODUCTION
+    # gets the boost and the VALIDATOR did not. Every walk_forward number before
+    # today describes a differently-fitted model than the one predicting.
+    #
+    # Recomputing on X_in makes "last 60 rows" mean the last 60 rows OF THE FIT.
+    if df_full is not None:
+        w_in = _risk_sample_weights(df_full.loc[X_in.index],
+                                    RISK_ALPHA, RISK_WEIGHT_FLOOR)
+        w_in = np.asarray(w_in) if w_in is not None else None
+    else:
+        w_in = w[:split_in] if w is not None else None
 
     # Fit base XGB
     params   = _get_xgb_params(ticker, horizon)
@@ -207,9 +228,29 @@ def walk_forward_eval(
             f">= {min_train + test_window + horizon}."
         )
 
-    # Risk weights on full df index matching X
-    w = _risk_sample_weights(df.loc[X.index], RISK_ALPHA, RISK_WEIGHT_FLOOR)
-    w = np.asarray(w) if w is not None else None
+    # WEIGHTS ARE COMPUTED PER FOLD, NOT ONCE (fixed 2026-09-19).
+    #
+    # This used to compute _risk_sample_weights over the WHOLE frame and pass
+    # the same vector to every fold, where _fit_and_eval_fold takes w[:split_in]
+    # for the inner fit. _risk_sample_weights puts a 3x boost on the LAST 60
+    # rows -- "so models adapt faster to current regime", per its own docstring
+    # at classifier.py:321 -- and those rows sit at the very end of the frame.
+    #
+    # Measured on a 2,170-row ticker: the boost covers indices 2110-2169, the
+    # inner-train slice ends at 1735, and ZERO boosted rows land inside it.
+    # w_in came out a single repeated value, 0.9476. The recency component has
+    # never reached a walk-forward fit, for any ticker, any fold.
+    #
+    # classifier.train_model does NOT have this problem: it computes weights on
+    # X_train itself (line 494) and fits on the same rows (511), so the boost
+    # applies. PRODUCTION GETS THE BOOST, THE VALIDATOR DID NOT -- so every
+    # walk_forward number before today describes a differently-fitted model
+    # than the one making predictions. The 2026-09-13 baseline is not
+    # comparable to runs after this fix.
+    #
+    # Passing df through and slicing it per fold is what makes the validator
+    # measure what production does.
+    w = None  # computed per fold below, from df
 
     folds = _make_folds(n, min_train, test_window, step, purge=horizon)
     if not folds:
@@ -218,7 +259,13 @@ def walk_forward_eval(
     rows = []
     for i, (tr_s, tr_e, te_s, te_e) in enumerate(folds):
         try:
-            m = _fit_and_eval_fold(X, y, w, tr_e, te_s, te_e, ticker, horizon)
+            # Weights for THIS fold's training rows only, so the recency
+            # boost lands on the newest rows of the slice being fitted.
+            # df_full lets the fold weight its own INNER slice, so the 3x
+            # recency boost lands on the newest rows actually fitted rather
+            # than in the calibration holdout.
+            m = _fit_and_eval_fold(X, y, None, tr_e, te_s, te_e,
+                                   ticker, horizon, df_full=df)
             m.update({"ticker": ticker, "horizon": horizon, "fold": i,
                       "train_end_idx": tr_e, "test_start_idx": te_s})
             rows.append(m)

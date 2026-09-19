@@ -88,6 +88,20 @@ def main():
     ap.add_argument("--horizon", type=int, default=40)
     ap.add_argument("--start", default="2021-06-01")
     ap.add_argument("--min-names", type=int, default=25)
+    # ROLLING vs EXPANDING vs WEIGHTED. These three are the only difference
+    # between the arms; folds, seeds, universe and horizon are identical, so a
+    # difference in the result is attributable to the training slice alone.
+    ap.add_argument("--window", type=int, default=0,
+                    help="rolling window in CALENDAR days. 0 = expanding, "
+                         "which is what production does (TRAIN_START=2018, no "
+                         "decay). 441 is the ~7-quarter figure from the "
+                         "volatility literature; it is a starting point to "
+                         "measure, not a recommendation to adopt.")
+    ap.add_argument("--half-life", type=int, default=0,
+                    help="recency half-life in calendar days. 0 = uniform. "
+                         "252 means a row one year older counts half as much. "
+                         "Keeps every row, unlike --window, so it has no "
+                         "sample-size cost.")
     ap.add_argument("--universe", default="tickers.txt")
     # TRAIN WIDE, SCORE NARROW (2026-09-13). Defaults to --universe, so every
     # existing invocation is unchanged.
@@ -125,6 +139,7 @@ def main():
     args = ap.parse_args()
     H = args.horizon
 
+    import datetime as _dt
     sys.path.insert(0, ".")
     from features.builder import build_feature_dataframe
     from xgboost import XGBClassifier
@@ -141,7 +156,11 @@ def main():
         print(f"  scoring restricted to {len(score_set)} names from "
               f"{args.score_universe}; model trains on the full "
               f"{args.universe} draw")
-    print(f"h={H} book test — {args.seeds} seeds x {args.tickers} tickers\n")
+    _arm = ("expanding (production)" if args.window == 0 and args.half_life == 0
+            else f"rolling {args.window}d" if args.window > 0
+            else f"recency half-life {args.half_life}d")
+    print(f"h={H} book test — {args.seeds} seeds x {args.tickers} tickers")
+    print(f"training slice: {_arm}\n")
 
     agg_cap = defaultdict(list)
     agg_ls = defaultdict(list)
@@ -231,7 +250,15 @@ def main():
 
         for i in range(len(anchors) - 1):
             tr_end, te_end = anchors[i] + "-01", anchors[i + 1] + "-01"
-            ktr = [k for k in X if k[1] < tr_end]
+            # THE ONE LINE THE ARMS DIFFER AT.
+            # Expanding (production): every row before the anchor.
+            # Rolling: only the trailing --window calendar days.
+            if args.window > 0:
+                _lo = (_dt.date.fromisoformat(tr_end)
+                       - _dt.timedelta(days=args.window)).isoformat()
+                ktr = [k for k in X if _lo <= k[1] < tr_end]
+            else:
+                ktr = [k for k in X if k[1] < tr_end]
             kte = [k for k in X if tr_end <= k[1] < te_end
                    and (score_set is None or k[0] in score_set)]
             # NOTE the kte floor. Narrowing the scoring set cuts this count, and
@@ -243,7 +270,17 @@ def main():
             m = XGBClassifier(n_estimators=200, max_depth=4, learning_rate=0.05,
                               subsample=0.8, colsample_bytree=0.8,
                               eval_metric="logloss", verbosity=0)
-            m.fit([X[k] for k in ktr], [1 if fwd[k] > 0 else 0 for k in ktr])
+            # Recency weights, if asked. 0.5 ** (age / half_life) measured
+            # back from the anchor, so the newest row weighs 1.0 and older rows
+            # decay geometrically. XGBoost takes these directly as
+            # sample_weight -- no resampling, no rows discarded.
+            _w = None
+            if args.half_life > 0:
+                _end = _dt.date.fromisoformat(tr_end)
+                _w = [0.5 ** ((_end - _dt.date.fromisoformat(k[1])).days
+                              / args.half_life) for k in ktr]
+            m.fit([X[k] for k in ktr], [1 if fwd[k] > 0 else 0 for k in ktr],
+                  sample_weight=_w)
             p = [float(v) for v in m.predict_proba([X[k] for k in kte])[:, 1]]
             byd = defaultdict(list)
             for z, k in enumerate(kte):
