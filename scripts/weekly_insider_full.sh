@@ -50,4 +50,12 @@ $PYTHON -m data.etl_insider --days-back $DAYS_BACK > "$LOGDIR/etl_insider.log" 2
     exit 1
 }
 
+# RAW TABLE TOO. etl_insider writes insider_flows (daily aggregates); the
+# per-transaction table insider_filings_raw has a SEPARATE writer that was
+# never scheduled anywhere and consequently died 2026-08-13, unnoticed for 38
+# days. The daily cron resumes from each ticker's cursor so it self-heals, but
+# a weekly --no-cursor pass catches tickers whose cursor advanced past a hole.
+$PYTHON -m data.etl_insider_raw --since "$(date -v-30d +%Y-%m-%d)" --no-cursor \
+    > "$LOGDIR/etl_insider_raw.log" 2>&1 || log "WARN: etl_insider_raw failed"
+
 log "=== WEEKLY INSIDER ETL COMPLETE (days_back=$DAYS_BACK) ==="
