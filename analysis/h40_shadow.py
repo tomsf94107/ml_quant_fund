@@ -60,9 +60,24 @@ from datetime import date
 
 warnings.filterwarnings("ignore")
 
+# PER-BOOK PATHS. --book keeps each frozen model and its prediction log
+# separate, so a second construction can run alongside the first without
+# either one's clock restarting. The default reproduces the original file and
+# table exactly, byte for byte, so the existing book is untouched.
 MODEL_PATH = "models/saved/H40_SHADOW_frozen.joblib"
-DDL = """
-CREATE TABLE IF NOT EXISTS h40_shadow_predictions (
+TABLE = "h40_shadow_predictions"
+
+
+def _paths(book):
+    global MODEL_PATH, TABLE
+    if book and book != "frozen":
+        MODEL_PATH = f"models/saved/H40_SHADOW_{book}.joblib"
+        TABLE = f"h40_shadow_{book}_predictions"
+    return MODEL_PATH, TABLE
+
+
+DDL_T = """
+CREATE TABLE IF NOT EXISTS {t} (
     run_date      TEXT NOT NULL,
     ticker        TEXT NOT NULL,
     prob          REAL NOT NULL,
@@ -91,6 +106,15 @@ def main():
     ap.add_argument("--status", action="store_true")
     ap.add_argument("--horizon", type=int, default=40)
     ap.add_argument("--start", default="2016-08-01")
+    ap.add_argument("--book", default="frozen",
+                    help="names the model file and prediction table. The "
+                         "default reproduces the original book exactly.")
+    ap.add_argument("--half-life", type=int, default=0,
+                    help="geometric recency weighting in CALENDAR days, 0 to "
+                         "disable. hl=126 is the arm that cleared the bar: "
+                         "16 of 16 draws over per-seed NW t 3.0 against 0 of "
+                         "8 for the expanding control, and on a fixed scored "
+                         "set it cut the spread from 4.17pp to 1.117pp.")
     ap.add_argument("--top", type=int, default=10,
                     help="log this many ranks; cap-3 is the studied book but "
                          "logging deeper costs nothing and allows the cap to be "
@@ -99,6 +123,8 @@ def main():
     H = args.horizon
     sys.path.insert(0, ".")
 
+    _paths(args.book)
+    DDL = DDL_T.format(t=TABLE)
     con = sqlite3.connect(args.db, timeout=60)
     con.execute(DDL)
     con.commit()
@@ -107,8 +133,8 @@ def main():
         r = con.execute(
             "SELECT COUNT(*), COUNT(DISTINCT run_date), MIN(run_date), "
             "MAX(run_date), COUNT(DISTINCT model_sha) "
-            "FROM h40_shadow_predictions").fetchone()
-        print(f"h40_shadow_predictions: {r[0]:,} rows, {r[1]} run dates, "
+            f"FROM {TABLE}").fetchone()
+        print(f"{TABLE}: {r[0]:,} rows, {r[1]} run dates, "
               f"{r[2]} .. {r[3]}")
         print(f"  distinct model_sha: {r[4]}"
               + ("   <-- MORE THAN ONE: the frozen claim is void after the "
@@ -147,7 +173,7 @@ def main():
                 f"every observation logged so far.")
         from xgboost import XGBClassifier
         import joblib
-        X, y, cols = [], [], None
+        X, y, cols, rowdates = [], [], None, []
         built = 0
         print(f"training the frozen model on {len(universe)} tickers "
               f"from {args.start}, h={H}")
@@ -174,6 +200,14 @@ def main():
                     X.append([float(v) if v == v else float("nan")
                               for v in num.iloc[j].tolist()])
                     y.append(1 if r > 0 else 0)
+                    # THE DATE, NOT THE ROW POSITION. X is appended ticker by
+                    # ticker, so it is grouped by SYMBOL and not sorted by
+                    # time -- weighting by index would boost whichever ticker
+                    # happened to be built last, which is exactly the bug
+                    # found in train_cross_sectional on 2026-09-20, where an
+                    # alphabetically-concatenated panel sent the entire
+                    # recency boost to one name.
+                    rowdates.append(str(df["date"].iloc[j])[:10])
                 built += 1
                 if i % 50 == 0:
                     print(f"  ...{i} tickers, {len(X):,} rows")
@@ -184,11 +218,22 @@ def main():
         m = XGBClassifier(n_estimators=200, max_depth=4, learning_rate=0.05,
                           subsample=0.8, colsample_bytree=0.8,
                           eval_metric="logloss", verbosity=0)
-        m.fit(X, y)
+        _w = None
+        if args.half_life > 0:
+            _last = max(rowdates)
+            _ld = date.fromisoformat(_last)
+            _w = [0.5 ** (((_ld - date.fromisoformat(d)).days)
+                          / float(args.half_life)) for d in rowdates]
+            print(f"  recency half-life {args.half_life}d on {len(_w):,} rows; "
+                  f"newest {_last} weighs 1.000, oldest {min(rowdates)} "
+                  f"weighs {min(_w):.5f}")
+        m.fit(X, y, sample_weight=_w)
         os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
         joblib.dump({"model": m, "cols": cols, "horizon": H,
                      "trained_on": str(date.today()),
-                     "n_rows": len(X), "n_tickers": built}, MODEL_PATH)
+                     "n_rows": len(X), "n_tickers": built,
+                     "half_life": args.half_life, "book": args.book},
+                    MODEL_PATH)
         print(f"\n  saved {MODEL_PATH}")
         print(f"  {len(X):,} rows, {built} tickers, {len(cols)} features")
         print(f"  sha {sha_of(MODEL_PATH)}")
@@ -237,13 +282,13 @@ def main():
     n = len(rows)
     now = str(date.today())
     con.executemany(
-        "INSERT OR REPLACE INTO h40_shadow_predictions "
+        f"INSERT OR REPLACE INTO {TABLE} "
         "(run_date, ticker, prob, rank_today, universe_n, entry_close, "
         "model_sha, created_at) VALUES (?,?,?,?,?,?,?,?)",
         [(run_date, t, p, i + 1, n, px, sha, now)
          for i, (t, p, px) in enumerate(rows[:args.top])])
     con.commit()
-    tot = con.execute("SELECT COUNT(*) FROM h40_shadow_predictions").fetchone()[0]
+    tot = con.execute(f"SELECT COUNT(*) FROM {TABLE}").fetchone()[0]
     con.close()
     print(f"{run_date}: scored {n} tickers, logged top {min(args.top, n)}")
     print(f"  top 3: " + ", ".join(f"{t} {p:.3f}" for t, p, _ in rows[:3]))
