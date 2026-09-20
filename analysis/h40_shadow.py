@@ -109,6 +109,11 @@ def main():
     ap.add_argument("--book", default="frozen",
                     help="names the model file and prediction table. The "
                          "default reproduces the original book exactly.")
+    ap.add_argument("--cols-from", default=None,
+                    help="JSON list of feature columns to train on, so a "
+                         "second book can be restricted to an earlier book's "
+                         "exact schema. Without it the two books differ in "
+                         "more than the thing under test.")
     ap.add_argument("--half-life", type=int, default=0,
                     help="geometric recency weighting in CALENDAR days, 0 to "
                          "disable. hl=126 is the arm that cleared the bar: "
@@ -173,6 +178,22 @@ def main():
                 f"every observation logged so far.")
         from xgboost import XGBClassifier
         import joblib
+        # SCHEMA LOCK. The first attempt at decay126 trained on 121 columns
+        # against the frozen book's 119: dp_volume_share and boulton_cell were
+        # wired on 2026-09-05, the same day the frozen book trained, and added
+        # to FEATURE_COLUMNS afterwards. That made the live comparison useless
+        # -- the two books would have differed in the training weight AND in
+        # two features, with no way to attribute a difference in outcome.
+        # Worse, dp_volume_share's feed only starts 2026-03-19 and is NaN
+        # before it, so it exists precisely in the recent window that hl=126
+        # weights most heavily. Locking the schema to the earlier book leaves
+        # the weighting as the only difference.
+        _fixed = None
+        if args.cols_from:
+            import json as _json
+            _fixed = _json.load(open(args.cols_from))
+            print(f"  schema locked to {len(_fixed)} columns from "
+                  f"{args.cols_from}")
         X, y, cols, rowdates = [], [], None, []
         built = 0
         print(f"training the frozen model on {len(universe)} tickers "
@@ -187,6 +208,8 @@ def main():
                 num = num.drop(columns=[c for c in num.columns
                                         if c.startswith("target_")],
                                errors="ignore")
+                if _fixed is not None:
+                    num = num.reindex(columns=_fixed)
                 if cols is None:
                     cols = list(num.columns)
                 cl = list(df["close"])
