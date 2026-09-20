@@ -84,6 +84,9 @@ def nw_t(series, lag):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", type=int, default=3)
+    ap.add_argument("--seed-start", type=int, default=1,
+                    help="first seed. Default 1 reproduces every earlier arm; "
+                         "9 gives a fresh, non-overlapping draw set.")
     ap.add_argument("--tickers", type=int, default=80)
     ap.add_argument("--horizon", type=int, default=40)
     ap.add_argument("--start", default="2021-06-01")
@@ -170,7 +173,10 @@ def main():
     agg_turn = defaultdict(list)
     dd_all, neg_all, conc_all = [], [], []
 
-    for seed in range(1, args.seeds + 1):
+    # SEED OFFSET. Seeds are the universe-draw randomisation, and seeds 1-8
+    # have been used for every arm so far. A result that holds on 1-8 and not
+    # on 9-16 was a property of those eight draws, not of the construction.
+    for seed in range(args.seed_start, args.seed_start + args.seeds):
         u = uni_all[:]
         random.Random(seed).shuffle(u)
         if args.pin_score and score_set:
