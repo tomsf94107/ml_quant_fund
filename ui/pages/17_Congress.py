@@ -321,6 +321,87 @@ with c2:
     t["excess"] = (t["excess"] * 100).round(2)
     st.dataframe(t.head(25), use_container_width=True, hide_index=True)
 
+# ------------------------------------------------- every transaction, raw
+
+st.subheader("All transactions")
+st.caption(
+    "One row per disclosed line item — the level the filing is actually made "
+    "at. A filing split across several amount bands appears as several rows. "
+    "Click any column header to sort; use the search box for a ticker or name."
+)
+
+tx = load_trades()
+
+# Same filters as above, applied to the line-item frame. Kept explicit rather
+# than factored into a helper: the two frames have different columns and a
+# shared helper would silently drop a filter when one of them lacks the field.
+if f_branch: tx = tx[tx["branch"].isin(f_branch)]
+if f_cham:   tx = tx[tx["chamber"].isin(f_cham)]
+if f_party:  tx = tx[tx["party"].isin(f_party)]
+if f_member: tx = tx[tx["name"].isin(f_member)]
+if f_dir:    tx = tx[tx["txn_type"].isin(f_dir)]
+if f_tick:   tx = tx[tx["ticker"].isin(f_tick)]
+if f_state:  tx = tx[tx["state"].isin(f_state)]
+if f_lead == "Leadership only":  tx = tx[tx["is_leadership"] == 1]
+elif f_lead == "Rank and file":  tx = tx[tx["is_leadership"] == 0]
+if isinstance(f_range, tuple) and len(f_range) == 2:
+    tx = tx[(tx["filed_at_date"].dt.date >= f_range[0]) &
+            (tx["filed_at_date"].dt.date <= f_range[1])]
+tx = tx[(tx["lag_days"].fillna(0) >= f_lag[0]) &
+        (tx["lag_days"].fillna(0) <= f_lag[1])]
+
+# Attach the forward return. Repeats across line items of one filing by
+# design -- one ticker, one filing date, one forward return.
+_r = rets[["ticker", "filed_at_date", "name", "txn_type",
+           "excess_filed", "ret_filed", "spy_filed", "matured"]]
+tx = tx.merge(_r, on=["ticker", "filed_at_date", "name", "txn_type"], how="left")
+
+q = st.text_input("Search ticker, member, issuer or committee", "")
+if q:
+    ql = q.strip().lower()
+    mask = False
+    for col in ("ticker", "name", "issuer", "committees", "state", "party"):
+        if col in tx:
+            mask = mask | tx[col].fillna("").astype(str).str.lower().str.contains(ql)
+    tx = tx[mask]
+
+show = tx.sort_values("filed_at_date", ascending=False).copy()
+show["Filed"] = show["filed_at_date"].dt.strftime("%Y-%m-%d")
+show["Traded"] = show["transaction_date"].dt.strftime("%Y-%m-%d")
+show["Late"] = show["filed_late"].map({1: "yes", 0: ""})
+show["Size $"] = show["amount_mid"].map(
+    lambda v: f"{v:,.0f}" if v == v and v is not None else "—")
+for c, src in (("Excess %", "excess_filed"), ("Raw %", "ret_filed"),
+               ("SPY %", "spy_filed")):
+    show[c] = (show[src] * 100).round(2) if src in show else None
+show["Scored"] = show["matured"].map({1.0: "yes", 0.0: "not yet"})
+
+COLS = ["Filed", "Traded", "lag_days", "Late", "ticker", "issuer", "txn_type",
+        "amounts", "Size $", "name", "party", "branch", "chamber", "state",
+        "leadership", "committees", "reporter",
+        "Excess %", "Raw %", "SPY %", "Scored"]
+COLS = [c for c in COLS if c in show.columns]
+
+st.dataframe(
+    show[COLS].rename(columns={
+        "lag_days": "Lag d", "ticker": "Ticker", "issuer": "Issuer",
+        "txn_type": "Type", "amounts": "Range", "name": "Member",
+        "party": "Party", "branch": "Branch", "chamber": "Chamber",
+        "state": "State", "leadership": "Title", "committees": "Committees",
+        "reporter": "Filed as"}),
+    use_container_width=True, hide_index=True, height=520)
+
+c_a, c_b = st.columns([3, 1])
+c_a.caption(
+    f"**{len(show):,}** transactions of {len(load_trades()):,}. "
+    f"Excess repeats across line items of one filing — one ticker, one filing "
+    f"date, one forward return. Do not average this column; the panels above "
+    f"deduplicate to the return grain before computing any mean."
+)
+c_b.download_button(
+    "Download CSV", show[COLS].to_csv(index=False).encode(),
+    file_name=f"congress_transactions_{len(show)}.csv", mime="text/csv")
+
 with st.expander("What this page is for, given eight nulls"):
     st.markdown("""
 Nothing measured here supports buying what Congress buys. Tested at the return

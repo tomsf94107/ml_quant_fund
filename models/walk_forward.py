@@ -358,6 +358,13 @@ def main() -> None:
         # Persist to DB (May 6 2026)
         try:
             _write_summary_to_db(summary_df, args.horizon)
+            # NOTE 2026-09-19: this is the ONLY write and it happens after the
+            # whole loop. A segfault on ticker 221 of 414 (BR, in the decay
+            # arm) discarded 220 completed tickers -- the numbers survived only
+            # because they were parseable out of the stdout log. Per-ticker
+            # incremental writes would make a crash cost one ticker, not a run.
+            # Not changed here because the summary_df is assembled after the
+            # loop; doing it properly means restructuring the accumulator.
         except Exception as e:
             print(f"  ⚠ DB write failed: {e}")
         print(f"\nSummary → {out_s}")

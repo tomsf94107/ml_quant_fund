@@ -93,7 +93,7 @@ ET = ZoneInfo("America/New_York")
 MARKET_OPEN = dtime(9, 30)
 MARKET_CLOSE = dtime(16, 0)
 
-DAILY_LIMIT = 20_000
+DAILY_LIMIT = 80_000   # raised 2026-09-20; plan allows 80k/day
 SAFETY_BUFFER = 500  # stop calling when within this many of the daily limit
 
 

@@ -85,9 +85,11 @@ def holdings():
     cols = {r[1] for r in c.execute("PRAGMA table_info(inst_holdings)")}
     pc = "put_call" if "put_call" in cols else "NULL AS put_call"
     uc = "units_change" if "units_change" in cols else "NULL AS units_change"
+    pt = "pct_total" if "pct_total" in cols else "NULL AS pct_total"
     df = pd.read_sql(f"""
         SELECT name, report_date, ticker, units, value, sector,
-               security_type, {pc} AS put_call, {uc} AS units_change
+               security_type, {pc} AS put_call, {uc} AS units_change,
+               {pt} AS pct_total
         FROM inst_holdings
     """, c)
     c.close()
@@ -97,10 +99,24 @@ def holdings():
     # Citadel's AAPL put is $6.2B and 0.7% of its book; Thiel's VST is $59M and
     # 14.1% of his. The second is conviction, the first is inventory -- dollar
     # rank puts them the wrong way round.
-    sh = df.security_type == "Share"
-    df.loc[sh, "_book"] = (df[sh].groupby(["name", "report_date"])["value"]
-                           .transform("sum"))
-    df["pct_book"] = (df["value"] / df["_book"] * 100).round(2)
+    # pct_total IS THE VENDOR'S OWN FIELD and it is a FRACTION -- 0.1482
+    # means 14.82% of the book. Scaled here rather than recomputed, because
+    # the vendor denominates against the WHOLE book including options and
+    # funds, while a local sum over Share rows would silently use a different
+    # denominator and the two would disagree by manager.
+    #
+    # This column is why the page ranks the way it does. Citadel's 2026-06-30
+    # AAPL book is a $9.0B call line and a $6.2B put line -- $15.3B, and
+    # 0.17% of its book, which is dealer inventory. Thiel Macro's VST is $59M
+    # and 14.12%, which is a conviction bet. Sorted by dollars the first
+    # outranks the second by two orders of magnitude.
+    if "pct_total" in df.columns and df["pct_total"].notna().any():
+        df["pct_book"] = (df["pct_total"] * 100).round(2)
+    else:
+        sh = df.security_type == "Share"
+        df.loc[sh, "_book"] = (df[sh].groupby(["name", "report_date"])["value"]
+                               .transform("sum"))
+        df["pct_book"] = (df["value"] / df["_book"] * 100).round(2)
     # 13F is FILED 45 days after quarter end. That is the tradeable date;
     # keying on quarter end embeds 45 days of look-ahead.
     df["filed"] = (pd.to_datetime(df["report_date"])
@@ -325,9 +341,14 @@ if len(crowd):
                  use_container_width=True, hide_index=True, height=300)
 
 # ──────────────────────────────────────────────────────── transactions
-st.subheader("All transactions")
-st.caption("One row per manager × quarter × ticker × security type. Shares and "
-           "options are never pooled.")
+st.subheader("All positions")
+st.caption(
+    "One row per manager × quarter × ticker × security type. **13F contains no "
+    "transaction data** — it is a snapshot of what was held on the last day of "
+    "the quarter, plus a derived quarter-over-quarter delta. A manager who "
+    "bought 1M shares in April, sold 800k in May and bought 500k in June "
+    "appears as one number, +700k: three trades, no dates, no prices. Shares "
+    "and options are never pooled.")
 q = st.text_input("Search ticker, manager, sector or bucket", "")
 tx = d.copy()
 if q:

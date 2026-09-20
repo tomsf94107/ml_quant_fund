@@ -429,3 +429,71 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # This writes it; committing it stays deliberate.
 0 11 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && crontab -l > scripts/crontab_VN_anchored.txt 2>> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/crontab_snapshot.log
 
+# Decile spread, 1st of the month 09:00 VN. ADDED 2026-09-14.
+#
+# The STEP 1 kill switch (signals/generator.py:996) has forced every BUY to
+# HOLD since 2026-05-31 on 'decile spread t=-2.29 at h=5'. That figure is now
+# reproducible -- analysis/decile_spread_test.py computes exactly -2.29 on the
+# pre-switch dates -- and the post-switch reading is +1.59 on 66 dates:
+# positive, not significant, below this fund's t>3.0 bar.
+#
+# The switch lifts when post-switch h=5 clears t>3.0, not before. At +1.59
+# another quarter at July's rate (+2.23, t+2.99) would get there; another
+# quarter at August's (+0.23) would not. Monthly is the right cadence: the
+# statistic moves on ~21 dates a month and reading it weekly is noise.
+0 9 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/decile_spread_test.py --horizon 5 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/decile_spread.log 2>&1
+
+# Recovery tracker, 1st of the month 09:05 VN. ADDED 2026-09-15.
+#
+# Runs five minutes after the decile spread. Three macro inputs were repaired
+# 2026-09-14 -- vix_ret and dxy_ret had been constant 0.0 for months, and the
+# regime classifier's VIX was pinned at its default 20 -- and h=5 prob>=0.60
+# hit rate fell 61.9% to 37.4% over the same window. The timing fits and
+# nothing else does, but it is one sequence of events with no counterfactual.
+#
+# Every row benchmarks the selection against the rest of the same day's
+# universe, because MASTER_TODO_LIST 1.1b records that a raw BUY hit rate of
+# 58% was the market's rising tide, not skill. The EDGE column is the only one
+# that means anything alone.
+#
+# October is the first full month of correct inputs. One good month is not
+# recovery: July read +2.23pp on the decile spread at t+2.99 and August fell
+# back to +0.23. If EDGE keeps falling on correct inputs the macro skew was not
+# the cause, which is a result rather than a failure.
+5 9 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/recovery_tracker.py --horizon 5 --gate 0.70 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/recovery_tracker.log 2>&1
+
+# h=40 long/short re-check, quarterly: 1st of Jan/Apr/Jul/Oct, 11:00 VN.
+# 11:00 not 10:00 -- analysis/universe_fetch.py runs 10:00 VN Tue-Sat and both
+# hold prices.db.
+# ADDED 2026-09-15.
+#
+# 8 seeds x 400 tickers gave L/S cap-10 +2.194pp gross, 8/8 seeds positive,
+# range +1.502 to +2.567. Corrected ladder: +1.794pp at 20bps/leg, +1.394pp at
+# 40. The h=5 version gave +0.436pp and died at 10bps.
+#
+# The t does NOT settle it. Per-seed ran +1.38 to +2.35; pooled across 4,512
+# rebalances gives +4.40 at 20bps. The 3.0 bar sits inside that range, so this
+# is promising and not proven. Quarterly rather than monthly because the
+# statistic needs new rebalances to move and 21 dates a month will not shift an
+# 8-seed mean.
+#
+# Takes ~40 minutes and holds prices.db the whole time. Nothing else may touch
+# it: analysis/universe_fetch.py records four lock incidents on 2026-09-05, one
+# of which corrupted a seed silently.
+0 11 1 1,4,7,10 * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -u analysis/h40_book_test.py --tickers 400 --seeds 8 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/h40_ls_quarterly.log 2>&1
+
+# Congressional disclosure ingest, daily 06:00 VN. ADDED 2026-09-18.
+#
+# Incremental: the script stops once a window yields no new rows, so a daily
+# run costs one or two API calls. The endpoint serves the most recent 200
+# filings and has NO pagination -- page and offset are accepted and silently
+# ignored -- so daily accumulation is the only way to stay current. Missing a
+# day is survivable (the window is ~6 weeks wide), missing three weeks is not.
+#
+# Backfill, if the DB is ever rebuilt: --tickers walks tickers.txt per name,
+# which reaches back to 2013-04 for names with history. ~400 calls, 2 minutes.
+#
+# Reads and writes congress_trades.db only. No prices.db contention, so this
+# is safe beside anything else.
+0 6 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/ingest_congress.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/congress_ingest.log 2>&1
+

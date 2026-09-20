@@ -403,7 +403,13 @@ def main():
             ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             try:
                 log_borrow_live(borrow_db, probed, ts)
-                print(f"  logged {len(probed)} rows -> borrow.db:borrow_live @ {ts}")
+                import datetime as _dt
+                try:
+                    _age=(_dt.datetime.now(_dt.timezone.utc)-_dt.datetime.fromisoformat(ts.replace("Z","+00:00"))).total_seconds()/3600
+                    _tag=f"UW obs {ts}  ({_age:.1f}h old)"
+                except Exception:
+                    _tag=f"UW obs {ts}"
+                print(f"  logged {len(probed)} rows -> borrow.db:borrow_live  [{_tag}]")
             except Exception as e:
                 print(f"  borrow_live LOG FAILED: {e}")
         # fold fee into fuel only if it covers the whole displayed population
@@ -503,12 +509,16 @@ def main():
         # of the line left -- visible as "8%n/a" in the 2026-08-26 --probe 0 run.
         def g(v, fmt, w):
             return (fmt % v).rjust(w) if v == v else "n/a".rjust(w)
-        _avail = (f"{int(r['avail']):,}" if r["avail"] == r["avail"] else "n/a").rjust(11)
+        _stale_row = ("stale_h" in r.index and r["stale_h"] == r["stale_h"] and r["stale_h"] > 24)  # STALE_MARK
+        _feecell = g(r["fee"], "%.2f", 7)  # FEE_MARK
+        if r["fee"] == r["fee"] and _stale_row:
+            _feecell = (g(r["fee"], "%.2f", 6) + "!")
+        _avail = ((f"{int(r['avail']):,}" + ("*" if _stale_row else "")) if r["avail"] == r["avail"] else "n/a").rjust(11)
         _sic = (f"{r['si_chg']*100:+.0f}%" if r["si_chg"] == r["si_chg"] else "n/a").rjust(7)
         _r3d = r["ret_3d"] * 100 if r["ret_3d"] == r["ret_3d"] else np.nan
         L.append(f"  {i:>3} {r['ticker']:<7}{r['score']:>6.0f}{r['fuel']:>6.0f}"
                  f"{r['ignition']:>5.0f}{g(r['dtc_live'],'%.2f',9)}{g(r['dtc_finra'],'%.2f',8)}"
-                 f"{_sic}{g(r['fee'],'%.2f',7)} {fee_tier(r['fee']):<9}"
+                 f"{_sic}{_feecell} {fee_tier(r['fee']):<9}"
                  f"{_avail}{g(_r3d,'%+.1f%%',8)}{g(r['rvol'],'%.2f',6)}  {tag(r)}"
                  + ("  RAMP" if r["ramp"] else "") + ("  TOP" if r["top"] else "")
                  + (f"  SPLIT-adj x{r['split_factor']:.2f}"
@@ -517,6 +527,7 @@ def main():
                     " -- unrecorded split? row suppressed" if r["suspect_date"] else ""))
     L.append("  " + "-" * 100)
     L.append(f"  DTC_live = shares_short / trailing-20d ADV (raw_bars). DTC_fin = FINRA as-published.")
+    L.append(f"  * / ! = borrow obs >24h stale (see banner).")
     L.append(f"  scan {time.time()-t0:.0f}s")
     L.append("=" * 104)
     out = "\n".join(L)

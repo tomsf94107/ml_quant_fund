@@ -342,7 +342,31 @@ RISK_MULTIPLIER: dict[str, float] = {
 
 # ── Signal thresholds ─────────────────────────────────────────────────────────
 DEFAULT_CONFIDENCE_THRESHOLD = 0.70   # Prob_eff must exceed this for BUY (aligned May 8 2026 — was 0.55)
-DEFAULT_BLOCK_TAU             = 3     # block entry when risk_next_3d >= this
+# DO NOT LOWER THIS. It is unreachable and that is load-bearing.
+#
+# risk_next_3d is risk_today.rolling(3).max().shift(-3) -- a BINARY 0/1 flag
+# (risk_gate.py:102). A max of a 0/1 series can never reach 3, so this gate has
+# never fired: 0 of 26,760 predictions, gate_block non-null on all of them.
+#
+# Measured 2026-09-19 on 2,591 high-conviction predictions, reconstructing what
+# the gate WOULD have blocked (any High-impact calendar event in the next 3
+# days) against realised outcomes:
+#
+#        h   not blocked        blocked
+#        1   55.2%  -0.03%      51.6%  +0.44%
+#        3   55.3%  +0.91%      57.9%  +1.10%
+#        5   59.0%  +1.79%      56.6%  +1.51%
+#
+# At h=1 the blocked trades are the ONLY profitable subset. At h=3 they hit
+# better and return more. Only h=5 goes the intended way, by 0.28pp on 415
+# rows. Repairing this gate would cost money at two of three horizons.
+#
+# The reading: high-impact macro events are when risk premium gets paid.
+# Sitting out FOMC and CPI means sitting out the compensated days.
+#
+# Left broken deliberately. If this is ever revisited, re-run the measurement
+# first -- the numbers above, not the intent behind the design, are the reason.
+DEFAULT_BLOCK_TAU             = 3     # unreachable by construction; see above
 
 
 # ══════════════════════════════════════════════════════════════════════════════

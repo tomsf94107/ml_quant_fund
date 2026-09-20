@@ -70,7 +70,27 @@ def build_pooled_panel(
         raise RuntimeError("No tickers produced valid data")
 
     pooled = pd.concat(all_dfs, ignore_index=True)
-    log.info(f"Pooled panel: {len(pooled)} rows across {len(all_dfs)} tickers")
+    # SORT BY DATE (fixed 2026-09-19). concat stacks whole ticker blocks in the
+    # order tickers.txt lists them, so the panel came out grouped by ticker and
+    # NOT monotonic in date.
+    #
+    # ensemble.py:255 calls _risk_sample_weights on this frame, and its recency
+    # component is POSITIONAL: recency_weights[-60:] = 3.0. On a ticker-grouped
+    # panel that boosts the last 60 rows of whichever ticker sorts LAST, and
+    # nothing else. Verified on a 3-ticker panel (AAPL, MSFT, ZM): the final 60
+    # rows were all ZM, is_monotonic_increasing was False. On the live 434-name
+    # panel the 3x lands on one arbitrary ticker's last quarter.
+    #
+    # Small in aggregate -- 60 rows of ~500,000 -- but it is not what the
+    # weighting was written to do, and the whole point of that weight is to
+    # tilt the fit toward the CURRENT REGIME, which requires date order.
+    #
+    # validate_oos is unaffected: it filters on the date COLUMN
+    # (df['date'] < split_date), so the chronological split was always honest
+    # regardless of row order.
+    pooled = pooled.sort_values(["date", "_ticker"]).reset_index(drop=True)
+    log.info(f"Pooled panel: {len(pooled)} rows across {len(all_dfs)} tickers "
+             f"(date-sorted)")
     return pooled
 
 
