@@ -113,11 +113,20 @@ def main():
     ic = sqlite3.connect(f"file:{INS}?mode=ro", uri=True)
     rows = ic.execute("""
         SELECT ticker, filing_date, trade_date, shares, price_per_share,
-               is_csuite, insider_name, notional_usd
+               is_csuite, insider_name, notional_usd, insider_title
         FROM insider_filings_raw
         WHERE transaction_code = 'P'
           AND trade_date >= ? AND filing_date >= trade_date
           AND ticker IS NOT NULL AND shares > 0
+          -- PRICE SANITY. 103 of 8,009 P rows carry a price_per_share above
+          -- 10,000, and on 4 of them price_per_share EQUALS shares -- the
+          -- parser wrote the share count into both columns. AIG shows
+          -- 50,000,000 shares at "50,000,000 per share" for a notional of
+          -- 2.5e15. Every one of those sorts to the top of a notional
+          -- ranking, so the >= $250k cut was built on them. Only BRK.A
+          -- trades above $10,000, and it is not in this data.
+          AND price_per_share > 0 AND price_per_share < 10000
+          AND price_per_share <> shares
         ORDER BY filing_date
     """, (a.start,)).fetchall()
     ic.close()
@@ -137,8 +146,10 @@ def main():
     # days is a different object from one person topping up -- it is the only
     # cut where independent people reach the same conclusion.
     byname = defaultdict(list)
-    for tk, fd, td, sh, px, cs, who, notional in rows:
+    ten = {}
+    for tk, fd, td, sh, px, cs, who, notional, title in rows:
         byname[tk].append((fd, who))
+        ten[(tk, fd, who)] = "10%" in (title or "") or "10 %" in (title or "")
     cluster = set()
     for tk, evs in byname.items():
         evs.sort()
@@ -155,8 +166,16 @@ def main():
         print(f"h={h} trading days from the close AFTER filing_date")
         print(f"  {'cut':26}{'n':>6}{'excess%':>9}{'pos':>8}{'t':>7}"
               f"{'≤2022':>9}{'>2022':>9}")
-        allr, csr, clr, bigr = [], [], [], []
-        for tk, fd, td, sh, px, cs, who, notional in rows:
+        # 10% OWNERS ARE A DIFFERENT ACTOR. 1,615 of 8,009 P rows come from
+        # holders of more than 10% of a class -- institutions, not company
+        # officers. Berkshire files here: 153 P buys across 2 tickers,
+        # including Occidental at $55.78 and $57.38, disclosed at a TWO-DAY
+        # lag instead of the 45 days a 13F would take. A fund adding to a
+        # >10% stake and a director buying a few thousand shares are not the
+        # same claim, and the first test pooled them. Registered as a new cut
+        # with the same bar, not a retune of a failed one.
+        allr, csr, clr, bigr, tenr, offr = [], [], [], [], [], []
+        for tk, fd, td, sh, px, cs, who, notional, title in rows:
             b = B.get(tk)
             if not b:
                 continue
@@ -173,10 +192,16 @@ def main():
                 clr.append((ex, yr))
             if (notional or 0) >= 250_000:
                 bigr.append((ex, yr))
+            if ten.get((tk, fd, who)):
+                tenr.append((ex, yr))
+            else:
+                offr.append((ex, yr))
         summarise("all P buys", allr, h)
         summarise("C-suite only", csr, h)
         summarise("cluster, 2+ insiders 30d", clr, h)
         summarise("notional >= $250k", bigr, h)
+        summarise("10% owners only", tenr, h)
+        summarise("officers/directors only", offr, h)
         print()
 
     print("  BAR, fixed before the run: excess > 1pp, positive in >= 55% of")
