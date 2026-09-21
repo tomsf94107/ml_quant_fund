@@ -79,6 +79,18 @@ DB = ROOT / "accuracy.db"
 # A feature that varies across THESE is alive; one that does not is either a
 # date-level scalar or broken, and the baseline distinguishes them.
 SAMPLE = ["AAPL", "NVDA", "JPM", "XOM", "PFE", "WMT", "BA", "MU", "SLV", "PLTR"]
+# TIME PROBE for the absolute check only. One probe ticker (AAPL) false-fired on
+# rare 8-K item counts every week. Measured 2026-09-20: across 10 probes the
+# most-frozen HEALTHY feature was 9/10 (eightk_other_events_30d) -- one ticker
+# of margin; across 30 it was 23/30 (eightk_material_agreement_30d) -- seven.
+# A dead feed freezes every ticker, so the rule is "frozen on ALL probes".
+# SAMPLE is unchanged so the stored cross-sectional baseline stays comparable.
+try:
+    _uni = [l.strip().upper() for l in open("tickers.txt") if l.strip()]
+except Exception:
+    _uni = []
+TIME_PROBE = list(dict.fromkeys(SAMPLE + _uni[::20]))[:30]
+_TAILS = {}
 
 DDL = """
 CREATE TABLE IF NOT EXISTS feature_liveness (
@@ -113,12 +125,22 @@ def fingerprint(start="2024-01-01"):
                 print(f"  [warn] {t}: empty frame")
                 continue
             last[t] = d.iloc[-1]
+            _TAILS[t] = d.tail(60)
             if series is None:
                 series = d.tail(60)          # time-variance probe, one ticker
         except Exception as e:
             print(f"  [warn] {t}: {type(e).__name__}: {str(e)[:60]}")
     if not last:
         raise SystemExit("no ticker built -- cannot fingerprint")
+    for t in TIME_PROBE:
+        if t in _TAILS:
+            continue
+        try:
+            d = build_feature_dataframe(t, start_date=start, training_mode=True)
+            if d is not None and len(d):
+                _TAILS[t] = d.tail(60)
+        except Exception:
+            pass
 
     df = pd.DataFrame(last).T
     out = {}
@@ -136,6 +158,9 @@ def fingerprint(start="2024-01-01"):
             t_distinct=int(tv.nunique(dropna=True)) if tv is not None else -1,
             nan_rate=float(v.isna().mean()),
             spread=round(spread, 6),
+            frozen_n=sum(1 for s in _TAILS.values() if c in s and
+                         pd.to_numeric(s[c], errors="coerce").nunique() <= 1),
+            probe_n=len(_TAILS),
         )
     return out
 
@@ -206,10 +231,11 @@ def main():
     # model as if it were current.
     alerts = []
     for c, v in fp.items():
-        if 0 <= v.get("t_distinct", -1) <= 1 and v.get("x_distinct", 0) > 1:
+        _pn, _fn = v.get("probe_n", 0), v.get("frozen_n", 0)
+        if _pn >= 20 and _fn == _pn and v.get("x_distinct", 0) > 1:
             alerts.append((c, "FROZEN_ABS",
-                           "one value over 60 days, varies across tickers -- "
-                           "check the feed's max date"))
+                           f"frozen on all {_pn} probe tickers over 60 rows, "
+                           f"varies across tickers -- check the feed's max date"))
     for c, v in fp.items():
         if c not in base:
             alerts.append((c, "NEW", "not in baseline"))
