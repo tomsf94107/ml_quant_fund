@@ -99,6 +99,23 @@ def main():
     check("insider raw current", str(i[0][0]) >= (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d"),
           f"max {i[0][0]}, {i[0][1]} tickers (expansion crawl may still be running)")
 
+    # FROZEN SHADOW BOOKS. Never retrained: the evidence is only worth
+    # anything because nobody could tune them after seeing the outcome. A
+    # second model_sha in a table means a retrain happened and that book's
+    # out-of-sample record is void from that date. The joblibs are chmod 444
+    # and backed up off-repo; this is the check that announces a breach.
+    # expand is the clean control for decay126 -- same feature build, same
+    # rows, same seed, only the recency weighting differs.
+    for _tb in ("h40_shadow_predictions", "h40_shadow_decay126_predictions",
+                "h40_shadow_expand_predictions"):
+        try:
+            _r = q("accuracy.db",
+                   f"SELECT COUNT(DISTINCT model_sha), COUNT(*) FROM {_tb}")
+            check(f"{_tb} single sha", _r[0][0] == 1,
+                  f"{_r[0][0]} sha, {_r[0][1]} rows")
+        except Exception as _e:
+            check(f"{_tb} single sha", False, f"query failed: {_e}")
+
     print("\n[7] FEATURE WIRING SMOKE (fundamentals in builder)")
     try:
         import sys

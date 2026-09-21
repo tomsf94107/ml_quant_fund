@@ -114,6 +114,18 @@ def main():
                          "second book can be restricted to an earlier book's "
                          "exact schema. Without it the two books differ in "
                          "more than the thing under test.")
+    ap.add_argument("--also-book", default=None,
+                    help="train a SECOND model from the SAME feature build and "
+                         "write it as this book. Rows, tickers and newest date "
+                         "are identical by construction; only --also-half-life "
+                         "differs. Two separate --train runs cannot guarantee "
+                         "that: frozen (2026-09-05) and decay126 (2026-09-21) "
+                         "built 410 vs 413 tickers and ended ~16 days apart.")
+    ap.add_argument("--also-half-life", type=int, default=0)
+    ap.add_argument("--seed", type=int, default=42,
+                    help="XGBoost random_state, stored in the joblib. "
+                         "subsample and colsample_bytree are random, so an "
+                         "unfixed seed is a second difference between books.")
     ap.add_argument("--half-life", type=int, default=0,
                     help="geometric recency weighting in CALENDAR days, 0 to "
                          "disable. hl=126 is the arm that cleared the bar: "
@@ -170,6 +182,10 @@ def main():
     from features.builder import build_feature_dataframe
 
     if args.train:
+        if args.also_book:
+            _p2 = f"models/saved/H40_SHADOW_{args.also_book}.joblib"
+            if os.path.exists(_p2):
+                raise SystemExit(f"{_p2} already exists. Refusing to overwrite.")
         if os.path.exists(MODEL_PATH):
             raise SystemExit(
                 f"{MODEL_PATH} already exists. Refusing to overwrite -- the "
@@ -195,7 +211,7 @@ def main():
             print(f"  schema locked to {len(_fixed)} columns from "
                   f"{args.cols_from}")
         X, y, cols, rowdates = [], [], None, []
-        built = 0
+        built, built_tk = 0, []
         print(f"training the frozen model on {len(universe)} tickers "
               f"from {args.start}, h={H}")
         for i, t in enumerate(universe, 1):
@@ -232,15 +248,19 @@ def main():
                     # recency boost to one name.
                     rowdates.append(str(df["date"].iloc[j])[:10])
                 built += 1
+                built_tk.append(t)
                 if i % 50 == 0:
                     print(f"  ...{i} tickers, {len(X):,} rows")
             except Exception:
                 continue
         if len(X) < 20000:
             raise SystemExit(f"only {len(X)} training rows -- too few")
-        m = XGBClassifier(n_estimators=200, max_depth=4, learning_rate=0.05,
-                          subsample=0.8, colsample_bytree=0.8,
-                          eval_metric="logloss", verbosity=0)
+        def _mk():
+            return XGBClassifier(n_estimators=200, max_depth=4,
+                                 learning_rate=0.05, subsample=0.8,
+                                 colsample_bytree=0.8, eval_metric="logloss",
+                                 verbosity=0, random_state=args.seed)
+        m = _mk()
         _w = None
         if args.half_life > 0:
             _last = max(rowdates)
@@ -255,8 +275,29 @@ def main():
         joblib.dump({"model": m, "cols": cols, "horizon": H,
                      "trained_on": str(date.today()),
                      "n_rows": len(X), "n_tickers": built,
-                     "half_life": args.half_life, "book": args.book},
+                     "half_life": args.half_life, "book": args.book,
+                     "newest_row": max(rowdates), "oldest_row": min(rowdates),
+                     "tickers_built": built_tk, "random_state": args.seed,
+                     "pair": args.also_book},
                     MODEL_PATH)
+        if args.also_book:
+            _w2 = None
+            if args.also_half_life > 0:
+                _ld2 = date.fromisoformat(max(rowdates))
+                _w2 = [0.5 ** (((_ld2 - date.fromisoformat(d)).days)
+                               / float(args.also_half_life)) for d in rowdates]
+            m2 = _mk()
+            m2.fit(X, y, sample_weight=_w2)
+            joblib.dump({"model": m2, "cols": cols, "horizon": H,
+                         "trained_on": str(date.today()),
+                         "n_rows": len(X), "n_tickers": built,
+                         "half_life": args.also_half_life,
+                         "book": args.also_book,
+                         "newest_row": max(rowdates), "oldest_row": min(rowdates),
+                         "tickers_built": built_tk, "random_state": args.seed,
+                         "pair": args.book}, _p2)
+            print(f"  saved {_p2}  sha {sha_of(_p2)}  "
+                  f"half_life {args.also_half_life}")
         print(f"\n  saved {MODEL_PATH}")
         print(f"  {len(X):,} rows, {built} tickers, {len(cols)} features")
         print(f"  sha {sha_of(MODEL_PATH)}")
