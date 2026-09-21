@@ -314,8 +314,23 @@ def main():
     m, cols = art["model"], art["cols"]
     sha = sha_of(MODEL_PATH)
     run_date = str(date.today())
+    # PAIRED SCORING. --also-book scores a second model on the SAME built
+    # frame, so a pair logs from identical inputs on every run date. Two
+    # separate runs 25 minutes apart could straddle a writer (universe_fetch
+    # starts 10:00) and see different data.
+    _m2 = _cols2 = _sha2 = _T2 = None
+    if args.also_book:
+        _p2 = f"models/saved/H40_SHADOW_{args.also_book}.joblib"
+        if not os.path.exists(_p2):
+            raise SystemExit(f"{_p2} not found")
+        _a2 = joblib.load(_p2)
+        _m2, _cols2, _sha2 = _a2["model"], _a2["cols"], sha_of(_p2)
+        _T2 = ("h40_shadow_predictions" if args.also_book == "frozen"
+               else f"h40_shadow_{args.also_book}_predictions")
+        con.execute(DDL_T.format(t=_T2))
+        con.commit()
 
-    rows = []
+    rows, rows2 = [], []
     for t in universe:
         try:
             # Scoring uses training_mode=True on purpose: the frozen model was
@@ -334,6 +349,12 @@ def main():
                 vec.append(float(v) if v == v else float("nan"))
             p = float(m.predict_proba([vec])[0][1])
             px = float(df["close"].iloc[-1]) if "close" in df.columns else None
+            if _m2 is not None:
+                vec2 = []
+                for c in _cols2:
+                    v = num[c].iloc[-1] if c in num.columns else float("nan")
+                    vec2.append(float(v) if v == v else float("nan"))
+                rows2.append((t, float(_m2.predict_proba([vec2])[0][1]), px))
             rows.append((t, p, px))
         except Exception:
             continue
@@ -352,6 +373,17 @@ def main():
         [(run_date, t, p, i + 1, n, px, sha, now)
          for i, (t, p, px) in enumerate(rows[:args.top])])
     con.commit()
+    if _m2 is not None and rows2:
+        rows2.sort(key=lambda x: -x[1])
+        con.executemany(
+            f"INSERT OR REPLACE INTO {_T2} "
+            "(run_date, ticker, prob, rank_today, universe_n, entry_close, "
+            "model_sha, created_at) VALUES (?,?,?,?,?,?,?,?)",
+            [(run_date, t, p, i + 1, len(rows2), px, _sha2, now)
+             for i, (t, p, px) in enumerate(rows2[:args.top])])
+        con.commit()
+        print(f"  {args.also_book}: scored {len(rows2)} tickers, top 3: "
+              + ", ".join(f"{t} {p:.3f}" for t, p, _ in rows2[:3]))
     tot = con.execute(f"SELECT COUNT(*) FROM {TABLE}").fetchone()[0]
     con.close()
     print(f"{run_date}: scored {n} tickers, logged top {min(args.top, n)}")
