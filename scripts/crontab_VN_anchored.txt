@@ -27,7 +27,6 @@ MAILTO=""
 # Verify:
 #   crontab -l
 # ─────────────────────────────────────────────────────────────────────────────
-
 # API keys — REPLACE with your new rotated keys
 UW_API_KEY=YOUR_UW_KEY_HERE
 # REMOVED 2026-09-09. This placeholder was exported to every cron job.
@@ -39,14 +38,11 @@ UW_API_KEY=YOUR_UW_KEY_HERE
 #MASSIVE_API_KEY=YOUR_MASSIVE_KEY_HERE
 ANTHROPIC_API_KEY=YOUR_ANTHROPIC_KEY_HERE
 SEC_USER_AGENT=YOUR_NAME your@email.com
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Monday reconcile reminder (keep as-is)
 0 14 * * 0 osascript -e 'display notification "Go to localhost:8501 Accuracy Reconcile outcomes" with title "ML Quant Fund Monday Reconcile"'
-
 # Wake Mac at 2:50 AM Vietnam (before Pipeline A)
 50 2 * * 2-6 caffeinate -t 28800
-
 # ─────────────────────────────────────────────────────────────────────────────
 # PIPELINE A — post-close ingest (3 AM VN = 4 PM ET prev day, Tue-Sat)
 # Economic calendar refresh — Mon/Wed/Fri 15:55 ET (5 min before Pipeline A)
@@ -56,69 +52,48 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Materializes accuracy.db.earnings_calendar from earnings_cache (which Pipeline A
 # populates via daily_uw_snapshot.py). Feeds D6 earnings-proximity gate + Events page.
 45 3 * * 2,4,6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/refresh_earnings_calendar.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/refresh_earnings_cal.log 2>&1
-
 # PIPELINE B — retrain + predict (7 AM VN = 8 PM ET prev day, Tue-Sat)
 # Depends on Pipeline A completing. Will refuse to run if A's marker is missing.
-
 # PIPELINE C — pre-open fresh runfund (8 PM VN = 9 AM ET, Mon-Fri)
-
 # WEEKLY full insider ETL (Sun 4 AM VN) — full 365-day rebuild
-
 # ─────────────────────────────────────────────────────────────────────────────
 # Independent monitors (unchanged — these don't need sequencing)
-
 # Health check — 1 PM Vietnam (2 AM ET)
 0 13 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/health_check.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/health_check.log 2>&1
-
 # Sentiment — 7:30 PM Vietnam (8:30 AM ET)
-
 # Intraday snapshot — 10 PM Vietnam (11 AM ET)
 30 20 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/intraday_snapshot_cron.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_snapshot.log 2>&1
-
 # Intraday alerts — every 30 min during market hours
 */30 20-23 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from alerts.scanner import check_intraday_flip_alerts; check_intraday_flip_alerts()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_alerts.log 2>&1
 */30 0-3 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from alerts.scanner import check_intraday_flip_alerts; check_intraday_flip_alerts()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_alerts.log 2>&1
-
 # Intraday reconcile (3x per day to catch all closes)
 30 21 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from accuracy.sink import reconcile_intraday_outcomes; reconcile_intraday_outcomes()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_reconcile.log 2>&1
 30 22 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from accuracy.sink import reconcile_intraday_outcomes; reconcile_intraday_outcomes()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_reconcile.log 2>&1
 30 0 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -c 'import sys; sys.path.insert(0,"."); from accuracy.sink import reconcile_intraday_outcomes; reconcile_intraday_outcomes()' >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/intraday_reconcile.log 2>&1
-
 # Kill switch — every 5 min during market hours
 */5 20-23 * * 1-5 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/intraday_kill_switch_cron.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/kill_switch_alerts.log 2>&1
 */5 0-3 * * 2-6 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/intraday_kill_switch_cron.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/kill_switch_alerts.log 2>&1
-
 # Walk-forward validation — Sunday 02:00-03:00 VN (off-hours, no pipeline conflict)
 # Each horizon ~16 min. Total ~50 min Sunday compute. Writes to accuracy.db.walk_forward_history
-
 # ─────────────────────────────────────────────────────────────────────────────
 # SUNDAY MAINTENANCE — 1-hour spacing for clean memory reclamation
 # ─────────────────────────────────────────────────────────────────────────────
 # 02:00 walk_forward h=1 (~16 min)
 0 8 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 7200 env ML_QUANT_NO_TAIL_REFETCH=1 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 1 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h1.log 2>&1
-
 # 03:00 walk_forward h=3 (~17 min)
 0 10 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 7200 env ML_QUANT_NO_TAIL_REFETCH=1 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 3 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h3.log 2>&1
-
 # 04:00 walk_forward h=5 (~15 min)
 0 12 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 7200 env ML_QUANT_NO_TAIL_REFETCH=1 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m models.walk_forward_batched --horizon 5 --start 2018-01-01 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/walk_forward_weekly_h5.log 2>&1
-
 # 05:00 weekly insider full ETL (~3 min)
-
 # 06:00 fitness_scorer (~5 min) — naturally extends Step 3 BUY-suppression
 # filter as h=3/h=5 cross MIN_OBS=30 (~May 22)
 0 5 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m analysis.fitness_scorer --db accuracy.db --write-table --csv fitness.csv >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/fitness_scorer_weekly.log 2>&1
-
-
 # Weekly XBRL fundamentals refresh (Sun 4:30 AM VN, ~5min, 394 tickers)
 10 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_xbrl_fundamentals >> logs/xbrl_weekly.log 2>&1
-
 # Recession weekly update (Sun 6 AM VN; Mac wake 5:50 via pmset)
 0 7 * * 0 ML_QUANT_PYTHON=/Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python /Users/atomnguyen/Desktop/ML_Quant_Fund/recession/weekly_update.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/recession_weekly.log 2>&1
-
 # Weekly analyst revisions snapshot (Sun 7:20 AM VN, after xbrl)
 20 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m scripts.analyst_snapshot >> logs/analyst_snapshot.log 2>&1
-
 # Weekly revenue refresh (Sun 5 AM VN = Sat eve ET; was nightly Stage 4 in pipeline A — 87min for 0 rows on non-earnings days)
 0 5 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_polygon_revenue --all >> logs/revenue_weekly.log 2>&1
 # MIGRATED TO LAUNCHD (agent exists since 2026-06-30) -- */15 * * * * /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/ensure_dashboard_up.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dashboard_cron.log 2>&1
@@ -134,7 +109,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 0 9 * * 3 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analyst_revisions_monitor.py --root . >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/analyst_revisions_monitor.log 2>&1
 0 6 */3 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && . /Users/atomnguyen/.finra_creds && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python si_fetch_v2.py --root . --months-back 2 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/si_fetch.log 2>&1
 30 12 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/feed_freshness_check.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/feed_freshness.log 2>&1
-
 # Borrow-fee settlement refresh — every Sunday 9 AM VN (idempotent)
 0 9 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python borrow_fetch.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/borrow_fetch.log 2>&1
 0 9 * * 1-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python sync_prices_from_rawbars.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/sync_prices.log 2>&1
@@ -151,24 +125,20 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Research reminders — fires when an open question becomes ANSWERABLE (data-
 # condition, not a calendar date). Sunday 09:00 VN, after the walk-forward.
 0 9 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/research_reminders.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/research_reminders.log 2>&1
-
 # Dark-pool skew validation gate -- monthly, 12th 08:00 VN
 0 8 12 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_darkpool_skew.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/skew_gate.log 2>&1
 # Dark-pool partial-day self-heal -- monthly, 12th 09:00 VN
 0 9 12 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/repair_all_darkpool.py --max-tickers 40 --days 45 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/repair_all_darkpool.log 2>&1
-
 # Per-ticker trailing-edge feed repair (added 2026-08-15).
 # Fills the gap neither backfill_raw_bars.py (earliest-date depth) nor
 # price_cache (silent empty-gap no-op) covered. Zero API calls when nothing
 # is stale. Runs 30min before feed_freshness_check so that acts as verifier.
 0 12 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && ML_QUANT_ROOT=/Users/atomnguyen/Desktop/ML_Quant_Fund /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/repair_stale_feeds.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/repair_stale_feeds.log 2>&1
-
 # Monthly IC log (added 2026-08-15). Option C: the recent-window confidence
 # signal is ~74 dates short of t>3. The answer comes from ACCUMULATION, not
 # from re-running on the same data. Logs raw + bucket-neutral to ic_history.
 0 11 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_confidence_filter.py --days 80 --horizons 1,3,5 --thresholds 0.60 --shuffles 200 --bootstrap 2000 --prob-col prob_up --cost-bps 10 --log >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/ic_history.log 2>&1
 30 11 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/validate_confidence_filter.py --days 80 --horizons 1,3,5 --thresholds 0.60 --shuffles 200 --bootstrap 2000 --prob-col prob_up --sector-neutral --cost-bps 10 --log >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/ic_history.log 2>&1
-
 # Walk-forward breadth alert (added 2026-08-15). walk_forward_history runs weekly
 # but NOTHING read it -- h=5 breadth fell 38.1% -> 27.5% unnoticed. --since
 # 2026-07-19 excludes two contaminated eras: the shallow 2022+ panel (free-tier
@@ -177,14 +147,12 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Universe reconciliation -- raw_bars vs universe files (added 2026-08-22).
 # Covers per-ticker x unenrolled, the gap between feed_freshness_check (table-level MAX(d)) and repair_stale_feeds (per-ticker but enrolled-only).
 0 15 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/reconcile_universe.py --max-age 6 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/reconcile_universe.log 2>&1
-
 # Crash early-warning: weekly FRED vintage append (added 2026-08-28).
 # FRED serves BAMLH0A0HYM2/BAMLC0A0CM on a ROLLING 3-YEAR WINDOW only; verified
 # 2026-08-28 the history starts 2023-08-28. Each run adds a NEW pub_date vintage.
 # Never overwrite, never delete -- these rows are the only OAS history that exists.
 # --only fred: do NOT re-scrape Cboe/CFE weekly.
 0 16 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/fetch_free_history.py --db warning.db --out data/raw --only fred >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/fred_weekly.log 2>&1
-
 # Crash early-warning: daily UW snapshot (added 2026-08-28).
 # UW lookback is capped (~44d), so this archive IS the options history -- every
 # morning it does not run is history that cannot be recovered. Append-only (rule 8).
@@ -192,7 +160,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Replaced 2026-09-08 by scripts/warning_chain.sh step 4, which sequences the
 # archiver BEFORE the driver instead of 30 min after it.
 #30 6 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/uw_archiver.py --db warning.db >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/uw_archiver.log 2>&1
-
 # Intraday outcome reconciliation. Was UI-only (ui/1_Dashboard.py was the sole
 # caller), so outcomes were written only when someone opened that page. Combined
 # with a bare `except Exception: pass` it stopped silently after the Massive
@@ -201,13 +168,11 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # RECONCILE_MAX_ROWS caps a run so it cannot turn into an hour-long job.
 0 23 * * 1-5 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && RECONCILE_MAX_ROWS=1500 /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/reconcile_intraday.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/reconcile_intraday.log 2>&1
 0 6 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && RECONCILE_MAX_ROWS=1500 /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/reconcile_intraday.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/reconcile_intraday.log 2>&1
-
 # Monthly evaluation of the daily direction program (decision rule D, 2026-08-30).
 # Appends to model_eval_history; never overwrites. Checks graduation (NW-t>=2.5
 # on >=250 dates, positive net of 10bps) and the sign-flip circuit breaker.
 # No auto-retire: the program runs until it graduates or is retired by decision.
 0 8 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python track_model_eval.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/model_eval.log 2>&1
-
 # Crash early-warning daily evaluation. 06:00 VN Tue-Sat = 19:00 ET Mon-Fri,
 # after the US close and just before the UW archiver at 06:30.
 # Until now daily_driver.py ran only when typed by hand -- the same failure that
@@ -223,7 +188,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # which was the precondition for enabling them. Leaving these lines live would
 # double-step the driver and export before the engine has run.
 #0 6 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 1800 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python warning/daily_driver.py --db warning.db >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/warning_daily.log 2>&1
-
 # Probability recalibration. The model is ~5x overconfident: at h=5 predicted
 # decile spread +0.429 against a realised +0.097, so a "HIGH confidence" 0.70 is
 # a 57% event. Cause is the isotonic layer inside CalibratedClassifierCV, fitted
@@ -238,7 +202,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Fit Sunday, apply daily after the prediction run.
 0 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/calibration.py --db accuracy.db --fit --window 365 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/calibration.log 2>&1
 0 9 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/calibration.py --db accuracy.db --apply >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/calibration.log 2>&1
-
 # Daily outcome reconciliation + accuracy cache refresh.
 # Until now accuracy.db.accuracy_cache had exactly ONE writer:
 # ui/pages/2_Accuracy.py line 86, behind a Streamlit button. There was a cron
@@ -251,7 +214,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # NOTE this cache is per ticker x horizon, so cells hold n~40 and a 95% interval
 # spanning ~30 points. Use analysis/pooled_accuracy.py for anything measurable.
 30 8 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m accuracy.sink --window 90 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/accuracy_cache.log 2>&1
-
 # Feature health, Mondays. vix_term_structure scored 4.764 on 2026-06-27 and
 # 0.000 every day for the next ten weeks: builder.py asked yfinance for ^VIX3M,
 # yfinance is XProtect-blocked on this machine, and the else-branch pinned the
@@ -262,7 +224,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Exits 1 on DIED or VANISHED. VANISHED also fires on deliberate culls (commit
 # 8da49533), so it prompts a check of the commit log, not an alarm.
 0 10 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/feature_health_monitor.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/feature_health.log 2>&1
-
 # fund_ep / fund_ni_margin verdict, Mondays. Both were BUILT since May 2026 and
 # never once in a trained model -- feature_importance_history held zero rows for
 # any fund_* column until they were wired 2026-09-04, taking FEATURE_COLUMNS
@@ -273,7 +234,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # fund_ni_margin if importance stays ~0, which its 24-35% orthogonalisation
 # retention predicted. A threshold chosen after seeing the outcome is not a test.
 30 10 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/fund_ep_verdict.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/fund_ep_verdict.log 2>&1
-
 # SI brick figures, first Monday of each month. Recorded IC -0.054 / NW-t -4.46
 # / long-leg Sharpe 1.25; measured 2026-09-05 at -0.037 / -3.12 / 0.83 at the
 # tradeable 8-business-day lag. Not decay -- half-samples match and per-year IC
@@ -281,7 +241,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Watch 2026: IC +0.0201 with 42% right-sign on 12 rebalances (t=+0.30, noise
 # for now). It matters only if the sign persists.
 0 12 1-7 * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/si_period_split.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/si_period_split.log 2>&1
-
 # SI staleness, Mondays. si_cycle.log cannot distinguish a fetch failure from a
 # quiet day -- a VPN outage, an expired OAuth token, a FINRA schema change and a
 # window with genuinely nothing new all print the same "[AUTH ERROR]" line. The
@@ -289,7 +248,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # and nothing in si_cycle.sh checks for it. Exits 1 when a publication was
 # missed.
 45 10 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && ./scripts/si_staleness_check.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/si_staleness.log 2>&1
-
 # 8-K item codes, weekly. The ETL works and was never scheduled: eightk_items
 # stopped at 2026-05-27 and nothing noticed for three months, leaving six
 # eightk_* features constant on 18-20 of 25 sampled tickers. Found by
@@ -299,8 +257,7 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # stale and faded to 0.119 as the trailing 30-day window emptied.
 # This also keeps Item 2.02 current, which is the PIT-honest earnings
 # announcement date the 2026-07-11 rewire depends on.
-0 6 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_eightk_items --all >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/eightk_weekly.log 2>&1
-
+0 7 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_eightk_items --all >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/eightk_weekly.log 2>&1
 # Dark-pool ingest for the EXPANDED universe, daily after Pipeline A.
 # pipeline_A_ingest.sh line 77 already ingests tickers.txt with --days-back 3;
 # this covers the 1,563 names added 2026-09-06 that are not in tickers.txt, so
@@ -311,7 +268,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # direction was predicted by the paper before the test ran.
 # UW serves ~44 days, so a gap of more than 3 days cannot be recovered later.
 30 3 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python features/institutional_ingest.py --tickers-file tickers_darkpool_extra.txt --days-back 3 --no-cursor >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dp_extra_daily.log 2>&1
-
 # Feature break audit, Mondays 11:30. PELT/CUSUM on every feature series,
 # classified by type so trending and zero-crossing series are not graded by a
 # ratio. This is the only check that finds a feed that has gone STALE while its
@@ -320,20 +276,16 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # eightk_items frozen at 2026-05-27 and sentiment_scores at 2026-05-28, three
 # months unnoticed, affecting ten features.
 30 11 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/feature_break_audit.py --tickers 25 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/break_audit.log 2>&1
-
 # Pipeline audit, Mondays 11:45. Source freshness and end-to-end feature health.
 45 11 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/pipeline_audit.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/pipeline_audit.log 2>&1
-
 # Monitor heartbeat, daily. feed_freshness_check's own header records why:
 # two entries watched tables by a column name neither has, errored every run,
 # and were "unwatched with extra steps". Nothing watches the watchers.
 0 13 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && ./scripts/monitor_heartbeat.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/heartbeat.log 2>&1
-
 # h=40 shadow status, Mondays. The out-of-sample claim rests entirely on the
 # model never being retrained; --status flags if more than one model_sha ever
 # appears in the table. A retrain would void every observation SILENTLY.
 0 12 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/h40_shadow.py --status >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/h40_shadow_status.log 2>&1
-
 # h=40 shadow book, daily Tue-Sat 09:15 VN. Frozen model sha 9ef0cdd954dfd6ad,
 # trained once 2026-09-05 on 911,917 rows across 410 tickers. Logs picks, trades
 # nothing, and must NEVER be retrained -- the value is that it cannot be tuned
@@ -344,12 +296,10 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # would never have logged again. Found by scripts/monitor_heartbeat.sh on its
 # first run, which is what that script is for.
 15 9 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/h40_shadow.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/h40_shadow.log 2>&1
-
 # Manual audit prompt, first Sunday monthly. Prints a checklist and checks
 # nothing -- deliberately. Monitors catch known failure shapes; every finding on
 # 2026-09-05 came from a human running an audit that had never been run.
-30 9 1-7 * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && ./scripts/manual_audit_prompt.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/research_reminders.log 2>&1
-
+30 9 * * 0 [ "$(date +\%d)" -le 07 ] && cd /Users/atomnguyen/Desktop/ML_Quant_Fund && ./scripts/manual_audit_prompt.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/research_reminders.log 2>&1
 # Dark-pool feature A/B, quarterly (1st of Jan/Apr/Jul/Oct, 14:00 VN).
 # Paired test on identical panels: both arms in one process, same training
 # rows, same random_state, paired per-date differences.
@@ -361,7 +311,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # The Boulton EXCLUSION FILTER is separate and already works: -7.145pp in the
 # high-DTC/high-dark-share cell, measured only on populated dates.
 0 14 1 1,4,7,10 * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/darkpool_feature_ab.py --seeds 3 --tickers 80 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/dp_feature_ab.log 2>&1
-
 # GEX gauntlet, quarterly (1st of Jan/Apr/Jul/Oct, 14:30 VN). Written
 # 2026-07-12 and never scheduled; first run 2026-09-07 on 121,139 rows across
 # 424 tickers from 2025-07-14.
@@ -382,7 +331,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # immediately after the export is written rather than 81 minutes later on
 # a fixed clock. A long wrapper run would have uploaded yesterday's file.
 #7 6 * * 2-6 cd /Users/atomnguyen/ML_Quant_Fund && /opt/homebrew/bin/rclone copy exports/engine-data.json gdrive:CEWS/ >> logs/cews_export.log 2>&1
-
 # CEWS sequenced chain (2026-09-08). Gates on Pipeline A's done-file rather than a
 # fixed clock, then runs the Massive bridge, the free-source pull and the UW archiver
 # in order. Driver and export steps are commented inside the script for the first
@@ -398,7 +346,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # midnight ET year-round. 11:00 or 11:30 VN would work now and break every
 # November when ET moves to UTC-5 and VN becomes ET+12.
 30 12 * * 2-6 /opt/homebrew/bin/timeout 3600 /Users/atomnguyen/Desktop/ML_Quant_Fund/scripts/warning_chain.sh >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/warning_chain_cron.log 2>&1
-
 # Wide-universe price heal, 10:00 VN Tue-Sat. ADDED 2026-09-10.
 #
 # raw_bars carried ~1,996 tickers through 2026-09-04 and then fell to 863 on
@@ -419,7 +366,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # universe_fetch.py's docstring records four lock incidents on 2026-09-05 and
 # the rule that exactly one process may touch prices.db at a time.
 0 10 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /opt/homebrew/bin/timeout 2700 /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/universe_fetch.py --min-bars 999999 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/universe_fetch_daily.log 2>&1
-
 # Crontab snapshot, 11:00 VN Sundays. ADDED 2026-09-10.
 #
 # scripts/crontab_VN_anchored.txt drifted 261 lines behind the live crontab
@@ -428,7 +374,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # stopped without notice. A record maintained by hand goes stale silently.
 # This writes it; committing it stays deliberate.
 0 11 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && crontab -l > scripts/crontab_VN_anchored.txt 2>> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/crontab_snapshot.log
-
 # Decile spread, 1st of the month 09:00 VN. ADDED 2026-09-14.
 #
 # The STEP 1 kill switch (signals/generator.py:996) has forced every BUY to
@@ -442,7 +387,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # quarter at August's (+0.23) would not. Monthly is the right cadence: the
 # statistic moves on ~21 dates a month and reading it weekly is noise.
 0 9 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/decile_spread_test.py --horizon 5 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/decile_spread.log 2>&1
-
 # Recovery tracker, 1st of the month 09:05 VN. ADDED 2026-09-15.
 #
 # Runs five minutes after the decile spread. Three macro inputs were repaired
@@ -461,7 +405,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # back to +0.23. If EDGE keeps falling on correct inputs the macro skew was not
 # the cause, which is a result rather than a failure.
 5 9 1 * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/recovery_tracker.py --horizon 5 --gate 0.70 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/recovery_tracker.log 2>&1
-
 # h=40 long/short re-check, quarterly: 1st of Jan/Apr/Jul/Oct, 11:00 VN.
 # 11:00 not 10:00 -- analysis/universe_fetch.py runs 10:00 VN Tue-Sat and both
 # hold prices.db.
@@ -481,7 +424,6 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # it: analysis/universe_fetch.py records four lock incidents on 2026-09-05, one
 # of which corrupted a seed silently.
 0 11 1 1,4,7,10 * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -u analysis/h40_book_test.py --tickers 400 --seeds 8 >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/h40_ls_quarterly.log 2>&1
-
 # Congressional disclosure ingest, daily 06:00 VN. ADDED 2026-09-18.
 #
 # Incremental: the script stops once a window yields no new rows, so a daily
@@ -496,4 +438,10 @@ SEC_USER_AGENT=YOUR_NAME your@email.com
 # Reads and writes congress_trades.db only. No prices.db contention, so this
 # is safe beside anything else.
 0 6 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/ingest_congress.py >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/congress_ingest.log 2>&1
-
+30 10 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_insider_raw --days-back 10 >> logs/etl_insider_raw.log 2>&1
+0 13 * * 0 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python scripts/system_audit.py >> logs/system_audit.log 2>&1
+20 9 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/h40_shadow.py --book decay126 --also-book expand >> logs/h40_shadow_decay.log 2>&1
+5 12 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/h40_shadow.py --book decay126 --status >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/h40_shadow_status.log 2>&1
+30 5 * * * cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python -m data.etl_finbert_filings --incremental --days-back 7 >> logs/etl_finbert.log 2>&1
+0 3 * * 2-6 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python rebuild_earnings_from_uw.py >> logs/rebuild_earnings.log 2>&1
+10 12 * * 1 cd /Users/atomnguyen/Desktop/ML_Quant_Fund && set -a && . ./.env && set +a && /Users/atomnguyen/.pyenv/versions/ml_quant_310/bin/python analysis/h40_shadow.py --book expand --status >> /Users/atomnguyen/Desktop/ML_Quant_Fund/logs/h40_shadow_status.log 2>&1
