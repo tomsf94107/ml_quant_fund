@@ -117,6 +117,49 @@ def get_regime_info() -> dict:
                 "signal_multiplier": 1.0, "vix": 20.0}
 
 
+# -- HISTORY SCREEN (2026-09-21) ---------------------------------------------
+# A ticker with under MIN_HISTORY_BARS of price history gets no prediction at
+# all -- it is screened out of the list before any feature build, so no model,
+# cache entry, dashboard card, alert or accuracy row ever sees it.
+# Why a universe screen and not a signal patch: the published convention
+# applies a 252-observation minimum at SAMPLE CONSTRUCTION (Gu et al. 2020 and
+# work following it). Measured 2026-09-21: CBRS (88 bars) had no ensemble and
+# its XGBoost fallback scored AUC 0.500 at every horizon on 13-14 test rows;
+# PURR (199) scored 0.458 / 0.557 / 0.737 on 35-36 rows -- small-sample noise.
+# Names re-enter automatically once they clear the threshold.
+MIN_HISTORY_BARS = int(os.environ.get("ML_QUANT_MIN_HISTORY_BARS", "252"))
+
+
+def screen_history(tickers):
+    """Split tickers into (kept, [(ticker, bars), ...]) by raw_bars count.
+
+    Fails OPEN: if prices.db cannot be read, every ticker is kept and a
+    warning is logged. A database hiccup must not blank the whole forecast.
+    """
+    import sqlite3 as _sq
+    try:
+        _con = _sq.connect(f"file:{ROOT / 'prices.db'}?mode=ro", uri=True, timeout=30)
+    except Exception as _e:
+        log.warning(f"History screen skipped -- prices.db unreadable: {_e}")
+        return list(tickers), []
+    kept, screened = [], []
+    try:
+        for t in tickers:
+            try:
+                n = _con.execute("SELECT COUNT(*) FROM raw_bars WHERE ticker = ?",
+                                 (t,)).fetchone()[0]
+            except Exception:
+                kept.append(t)
+                continue
+            if n < MIN_HISTORY_BARS:
+                screened.append((t, int(n)))
+            else:
+                kept.append(t)
+    finally:
+        _con.close()
+    return kept, screened
+
+
 def load_watchlist() -> list[str]:
     """Load watchlist tickers — predictions only, excluded from accuracy scoring."""
     p = ROOT / "tickers_watchlist.txt"
@@ -388,6 +431,13 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
         log.info(f"Selective run: {len(tickers)} ticker(s): {tickers}")
     else:
         log.info(f"Tickers: {len(tickers)}")
+
+    # HISTORY SCREEN -- after selective-run narrowing, before any build.
+    tickers, _screened_main = screen_history(tickers)
+    if _screened_main:
+        log.warning("History screen: no prediction for "
+                    + ", ".join(f"{t} ({n} bars)" for t, n in _screened_main)
+                    + f" -- under {MIN_HISTORY_BARS} bars")
 
     if watchlist_only:
         tickers = []
@@ -844,6 +894,15 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                 new_keys = {(s.get("ticker"), s.get("horizon")) for s in results}
                 preserved = [s for s in existing["signals"]
                              if (s.get("ticker"), s.get("horizon")) not in new_keys]
+                # MERGE-MODE keeps prior tickers regardless of date, so a name
+                # screened tonight would otherwise sit here with its last
+                # pre-screen prediction indefinitely. Drop those.
+                _, _scr_prev = screen_history(sorted({s.get("ticker") for s in preserved
+                                                      if s.get("ticker")}))
+                if _scr_prev:
+                    _scr_prev_set = {t for t, _ in _scr_prev}
+                    preserved = [s for s in preserved if s.get("ticker") not in _scr_prev_set]
+                    log.info(f"  Cache merge: dropped stale entries for screened {sorted(_scr_prev_set)}")
                 merged_signals = preserved + list(results)
                 _xd = "" if existing.get("date") == run_date else f" (prior date {existing.get('date')} kept)"
                 log.info(f"  Cache merge: {len(preserved)} preserved + {len(results)} new = {len(merged_signals)} total{_xd}")
@@ -854,6 +913,8 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
         "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
         "date":         run_date,
         "signals":      merged_signals,
+        "screened_history": [{"ticker": t, "bars": n} for t, n in _screened_main],
+        "min_history_bars": MIN_HISTORY_BARS,
     }
     with open(cache_path, "w") as f:
         json.dump(dashboard_cache, f, indent=2)
@@ -874,6 +935,11 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
         log.info(f"Watchlist selective: {len(watchlist)} ticker(s): {watchlist}")
     else:
         watchlist = load_watchlist()
+    watchlist, _screened_wl = screen_history(watchlist)
+    if _screened_wl:
+        log.warning("History screen (watchlist): no prediction for "
+                    + ", ".join(f"{t} ({n} bars)" for t, n in _screened_wl)
+                    + f" -- under {MIN_HISTORY_BARS} bars")
     if watchlist:
         log.info(f"Watchlist: {len(watchlist)} tickers")
         watchlist_results = []
@@ -960,6 +1026,8 @@ def run_daily(force: bool = False, start_from: str = None, end_at: str = None, t
                     "generated_at": now_et().strftime("%Y-%m-%dT%H:%M:%S"),
                     "date":         run_date,
                     "signals":      watchlist_results,
+                    "screened_history": [{"ticker": t, "bars": n} for t, n in _screened_wl],
+                    "min_history_bars": MIN_HISTORY_BARS,
                 }, f, indent=2, default=str)
             log.info(f"  Watchlist cache saved → {wl_cache_path}")
 

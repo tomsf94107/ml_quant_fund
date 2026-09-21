@@ -825,6 +825,10 @@ with tab_forecast:
             "Tier":         _TICKER_META.get(r.ticker, {}).get("tier", "—"),
         })
 
+    _scr = _cache.get("screened_history") if isinstance(_cache, dict) else None
+    if _scr:
+        st.caption(f"No forecast — under {_cache.get('min_history_bars', 252)} bars of price history: "
+                   + ", ".join(f"{x['ticker']} ({x['bars']})" for x in _scr))
     fdf = pd.DataFrame(forecast_rows)
 
     def _color_signal(val):
@@ -976,6 +980,10 @@ with tab_watch:
             _wl_sigs = [s for s in _wl_data.get("signals", []) if s.get("horizon") == 1]
             if _wl_sigs:
                 st.caption("Predictions only — excluded from accuracy scoring. Volatile tickers for monitoring.")
+                _wl_scr = _wl_data.get("screened_history") or []
+                if _wl_scr:
+                    st.caption(f"No forecast — under {_wl_data.get('min_history_bars', 252)} bars of price history: "
+                               + ", ".join(f"{x['ticker']} ({x['bars']})" for x in _wl_scr))
                 _wl_rows = []
                 for s in _wl_sigs:
                     _wl_rows.append({
