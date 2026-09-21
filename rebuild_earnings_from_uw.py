@@ -68,11 +68,17 @@ def main():
             act, est = f(x.get("reported_eps")), f(x.get("estimated_eps"))
             sur = f(x.get("surprise"))
             if sur is None and act is not None and est is not None: sur = act - est
+            # report_time IS WRITTEN HERE, not left for overnight_fixes.py.
+            # INSERT OR REPLACE deletes and re-inserts the row, so a column
+            # missing from this list comes back NULL on every re-run. The value
+            # is in this same UW response -- overnight_fixes reads it from the
+            # identical endpoint -- so one pass fills both.
             con.execute("""INSERT OR REPLACE INTO earnings_events
                 (ticker,announce_date,fiscal_end,eps_actual,eps_estimate,
-                 eps_surprise,report_type,source,created_at) VALUES (?,?,?,?,?,?,?,?,?)""",
+                 eps_surprise,report_type,source,created_at,report_time)
+                VALUES (?,?,?,?,?,?,?,?,?,?)""",
                 (tk, str(ad)[:10], str(x.get("fiscal_date_ending") or "")[:10] or None,
-                 act, est, sur, "quarterly", "uw", now_iso()))
+                 act, est, sur, "quarterly", "uw", now_iso(), x.get("report_time")))
             n += 1; ins += 1
         if i % 25 == 0 or i == len(tickers):
             print(f"  [{i}/{len(tickers)}] {tk}: +{n}   total={ins:,}")

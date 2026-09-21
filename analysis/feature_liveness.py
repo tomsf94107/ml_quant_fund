@@ -183,7 +183,33 @@ def main():
 
     # ALERT ON LOSS OF VARIANCE, not on its absence. A feature that was always
     # constant stays quiet; one that HAD variance and lost it is the signal.
+    # ABSOLUTE FLOOR, added 2026-09-20. The diff above cannot see a feature
+    # that was ALREADY DEAD when the baseline was taken, and that is not
+    # hypothetical: finbert_sentiment, finbert_sentiment_earnings and
+    # finbert_mult read data/sentiment.db::finbert_filings, which stopped on
+    # 2026-05-20 across all 108 tickers with no cron entry anywhere. The
+    # baseline was recorded 2026-09-19, four months later, and stored
+    # t_distinct=1 -- so `bt > 1` is False and the FROZEN branch can never
+    # fire for them.
+    #
+    # They are invisible to the cross-ticker check too, and that is the
+    # general case worth naming: an event-driven feature that is dead in TIME
+    # still VARIES across tickers, because each ticker froze at its own last
+    # value. dxy_ret and vix_ret were caught in September only because they
+    # are date-level scalars, identical for every ticker, so x_distinct
+    # collapsed to 1. A per-ticker feed dying is quiet in exactly the way this
+    # design does not hear.
+    #
+    # FROZEN_ABS therefore fires on t_distinct <= 1 regardless of baseline. It
+    # will also name features that are legitimately constant over 60 days; that
+    # is the correct trade against four months of a stale feed reaching the
+    # model as if it were current.
     alerts = []
+    for c, v in fp.items():
+        if 0 <= v.get("t_distinct", -1) <= 1 and v.get("x_distinct", 0) > 1:
+            alerts.append((c, "FROZEN_ABS",
+                           "one value over 60 days, varies across tickers -- "
+                           "check the feed's max date"))
     for c, v in fp.items():
         if c not in base:
             alerts.append((c, "NEW", "not in baseline"))
