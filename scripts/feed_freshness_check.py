@@ -50,6 +50,9 @@ FEEDS = [
     ("analyst_cache",        "accuracy.db",                 "analyst_cache",        "date",            7,  "analyst ratings (weekly-ish)"),
     ("ftd_cache",            "accuracy.db",                 "ftd_cache",            "date",            7,  "fails-to-deliver (SEC, lagged)"),
     ("wiki_pageviews_cache", "accuracy.db",                 "wiki_pageviews_cache", "date",            7,  "wikipedia attention proxy"),
+    ("finbert_filings",      "data/sentiment.db",           "finbert_filings",      "filing_date",     5,  "daily 05:30 VN -- 8-K FinBERT; died 2026-05-20, unseen for 4 months"),
+    ("insider_filings_raw",  "insider_trades.db",           "insider_filings_raw",  "filing_date",     5,  "Tue-Sat 10:30 VN -- Form 4 raw (Insiders page); died 2026-08-13"),
+    ("earnings_events",      "earnings.db",                 "earnings_events",      "created_at",      4,  "Tue-Sat 03:00 VN rebuild -- watches the WRITER: announce_date holds future calendar dates; died 2026-07-11"),
     ("portfolio_returns_ab", "accuracy.db",                 "portfolio_returns_ab", "prediction_date", 14, "REC% A/B framework -- STALE since 2026-05-29, may be retired"),
 ]
 
