@@ -137,6 +137,13 @@ def dark(days):
                COUNT(*) prints
         FROM institutional_trades
         WHERE side IN ('BUY','SELL')
+          -- REGULAR PRINTS ONLY (2026-09-22). Average-price, prior-reference and
+          -- contingent prints (52.5% of notional over 20 days) report a price
+          -- not comparable to the NBBO at report time, and crosses/auctions have
+          -- no aggressor -- Lee-Ready's side is noise for all of them. MU's
+          -- +$6.1B 'net buying' was entirely such prints.
+          AND (sale_cond_codes IS NULL OR sale_cond_codes IN ('', '[]'))
+          AND COALESCE(is_cross, 0) = 0 AND COALESCE(is_closing_auction, 0) = 0
           AND trade_date >= date((SELECT MAX(trade_date) FROM institutional_trades),
                                  '-{days} days')
         GROUP BY ticker
@@ -341,6 +348,97 @@ if len(crowd):
                  use_container_width=True, hide_index=True, height=300)
 
 # ──────────────────────────────────────────────────────── transactions
+# ------------------------------------------------------------------ dark-pool trending
+# DARK-POOL FLOW -- TRENDING (2026-09-22).
+@st.cache_data(ttl=1800)
+def dark_flow(days):
+    """Buy and sell notional per ticker over the window. dark() returns only the
+    signed %, which cannot rank by size. Same side rule as dark(): the ingest's
+    Lee-Ready call; UNKNOWN is dropped, not split."""
+    c = ro(DB_DARK)
+    df = pd.read_sql(f"""
+        SELECT ticker,
+               SUM(CASE WHEN side='BUY'  THEN notional_usd ELSE 0 END) buy_usd,
+               SUM(CASE WHEN side='SELL' THEN notional_usd ELSE 0 END) sell_usd,
+               COUNT(*) prints, MAX(trade_date) last_trade
+        FROM institutional_trades
+        WHERE side IN ('BUY','SELL')
+          -- REGULAR PRINTS ONLY (2026-09-22). Average-price, prior-reference and
+          -- contingent prints (52.5% of notional over 20 days) report a price
+          -- not comparable to the NBBO at report time, and crosses/auctions have
+          -- no aggressor -- Lee-Ready's side is noise for all of them. MU's
+          -- +$6.1B 'net buying' was entirely such prints.
+          AND (sale_cond_codes IS NULL OR sale_cond_codes IN ('', '[]'))
+          AND COALESCE(is_cross, 0) = 0 AND COALESCE(is_closing_auction, 0) = 0
+          AND trade_date >= date((SELECT MAX(trade_date) FROM institutional_trades),
+                                 '-{int(days)} days')
+        GROUP BY ticker
+    """, c)
+    c.close()
+    return df
+
+
+st.subheader("Dark-pool flow — trending")
+st.caption("Side is the ingest's Lee-Ready call on the NBBO carried with each print; "
+           "REGULAR prints only: average-price, prior-reference and contingent prints "
+           "(~52% of notional) and crosses/auctions are excluded, since their reported "
+           "price isn't comparable to the NBBO and their side is noise. UNKNOWN (~2%) "
+           "is dropped, not split. Dated by trade. Context, not "
+           "a signal: whether this flow predicts returns is T4, untestable until "
+           "2026-11-14, and crowding came out opposite to the usual story (T2).")
+_dpa, _dpb, _dpc = st.columns(3)
+_dp_win = _dpa.radio("Window (days)", [5, 20, 60], index=1, horizontal=True, key="dp_trend_win")
+_dp_by = _dpb.radio("Rank by", ["net $", "buy %"], horizontal=True, key="dp_trend_by")
+_dp_min = _dpc.number_input("Min total notional, $M (ticker tables)", min_value=0.0,
+                            value=5.0, step=1.0, key="dp_trend_min")
+_dpF = dark_flow(_dp_win)
+if _dpF.empty:
+    st.info("No dark-pool prints in the window.")
+else:
+    _dpF["total_usd"] = _dpF["buy_usd"] + _dpF["sell_usd"]
+    _dpF["net_usd"] = _dpF["buy_usd"] - _dpF["sell_usd"]
+    _dpF["buy_pct"] = (_dpF["buy_usd"] / _dpF["total_usd"].where(_dpF["total_usd"] > 0) * 100).round(1)
+    _dpH = holdings()
+    if not _dpH.empty:
+        _dps = _dpH[_dpH["sector"].notna() & (_dpH["sector"].astype(str).str.strip() != "")]
+        _dp_sec = (_dps.groupby(["ticker", "sector"]).size().reset_index(name="n")
+                       .sort_values("n", ascending=False).drop_duplicates("ticker")[["ticker", "sector"]])
+    else:
+        _dp_sec = pd.DataFrame(columns=["ticker", "sector"])
+    _dpF = (_dpF.merge(_dp_sec, on="ticker", how="left")
+                .merge(meta()[["ticker", "bucket"]], on="ticker", how="left"))
+    _dp_show = ["ticker", "sector", "bucket", "net_$M", "buy_pct", "total_$M", "prints", "last_trade"]
+    _dpT = _dpF[_dpF["total_usd"] >= _dp_min * 1e6].copy()
+    _dpT["net_$M"] = (_dpT["net_usd"] / 1e6).round(1)
+    _dpT["total_$M"] = (_dpT["total_usd"] / 1e6).round(1)
+    _dp_key = "net_$M" if _dp_by == "net $" else "buy_pct"
+    _dpx, _dpy = st.columns(2)
+    _dpx.markdown(f"**Net buying** — {len(_dpT):,} tickers at or above ${_dp_min:g}M")
+    _dpx.dataframe(_dpT.sort_values(_dp_key, ascending=False).head(15)[_dp_show],
+                   hide_index=True, use_container_width=True)
+    _dpy.markdown("**Net selling**")
+    _dpy.dataframe(_dpT.sort_values(_dp_key, ascending=True).head(15)[_dp_show],
+                   hide_index=True, use_container_width=True)
+
+    def _dp_group(col):
+        f = _dpF.dropna(subset=[col])
+        g = f.groupby(col).agg(buy_usd=("buy_usd", "sum"), sell_usd=("sell_usd", "sum"),
+                               tickers=("ticker", "nunique"))
+        g["buy_$M"] = (g["buy_usd"] / 1e6).round(1)
+        g["sell_$M"] = (g["sell_usd"] / 1e6).round(1)
+        g["net_$M"] = ((g["buy_usd"] - g["sell_usd"]) / 1e6).round(1)
+        g["buy_pct"] = (g["buy_usd"] / (g["buy_usd"] + g["sell_usd"]) * 100).round(1)
+        return (g.sort_values("net_$M", ascending=False).reset_index()
+                 [[col, "buy_$M", "sell_$M", "net_$M", "buy_pct", "tickers"]])
+
+    _dp_tot = _dpF["total_usd"].sum()
+    _dp_cov = lambda col: (_dpF.dropna(subset=[col])["total_usd"].sum() / _dp_tot * 100) if _dp_tot else 0.0
+    _dpu, _dpv = st.columns(2)
+    _dpu.markdown(f"**By sector** — covers {_dp_cov('sector'):.0f}% of notional (13F sector field)")
+    _dpu.dataframe(_dp_group("sector"), hide_index=True, use_container_width=True)
+    _dpv.markdown(f"**By sub-sector** — covers {_dp_cov('bucket'):.0f}% (your buckets; the rest unmapped)")
+    _dpv.dataframe(_dp_group("bucket"), hide_index=True, use_container_width=True)
+
 st.subheader("All positions")
 st.caption(
     "One row per manager × quarter × ticker × security type. **13F contains no "

@@ -146,6 +146,19 @@ with st.container(border=True):
     c1, c2 = st.columns([3, 1])
     c1.markdown(f"**Filed {latest:%Y-%m-%d} — {len(today_rows)} new**")
     c2.caption("ingest 06:00 VN daily")
+    # LAST PULL (2026-09-22): the log's time is when the 06:00 job last RAN;
+    # MAX(fetched_at) is when it last ADDED a row -- fetched_at is written only
+    # for new rows, so a quiet day leaves it unchanged.
+    _cg_log = Path(_ROOT) / "logs" / "congress_ingest.log"
+    if _cg_log.exists():
+        c2.caption(f"last run {pd.Timestamp.fromtimestamp(_cg_log.stat().st_mtime):%Y-%m-%d %H:%M}")
+    try:
+        _cg_con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+        _cg_nf = _cg_con.execute("SELECT MAX(fetched_at) FROM congress_trades").fetchone()[0]
+        _cg_con.close()
+        c2.caption(f"last new row {str(_cg_nf)[:16].replace('T', ' ')}")
+    except Exception:
+        pass
     if len(today_rows):
         chips = []
         for _, r in today_rows.head(8).iterrows():
@@ -322,6 +335,86 @@ with c2:
     st.dataframe(t.head(25), use_container_width=True, hide_index=True)
 
 # ------------------------------------------------- every transaction, raw
+
+# ------------------------------------------------------------------ trending
+# TRENDING (2026-09-22): who is buying and selling what, by filing date.
+st.subheader("Trending — buys vs sells")
+st.caption("Ranked by how many different members filed, then estimated dollars "
+           "(midpoint of the disclosed range). Dated by FILING — when the public "
+           "could first know. Context, not a signal: every angle tested on this "
+           "page came out null.")
+_cg_win = st.radio("Window (days of filings)", [7, 30, 90], index=1,
+                   horizontal=True, key="cg_trend_win")
+_cg = trades.copy()
+_cg = _cg[_cg["ticker"].notna() & (_cg["ticker"].astype(str).str.strip() != "")]
+_cg["side"] = _cg["txn_type"].map({"Buy": "BUY", "Sell": "SELL"})
+_cg = _cg[_cg["side"].notna()].copy()
+_cg["filed"] = pd.to_datetime(_cg["filed_at_date"])
+_cg = _cg[_cg["filed"] > _cg["filed"].max() - pd.Timedelta(days=_cg_win)]
+
+
+@st.cache_data(ttl=3600)
+def _cg_sector_map() -> pd.DataFrame:
+    """One sector per ticker: the most common value across its 13F rows."""
+    p = Path(_ROOT) / "institutions.db"
+    if not p.exists():
+        return pd.DataFrame(columns=["ticker", "sector"])
+    c = sqlite3.connect(f"file:{p}?mode=ro", uri=True)
+    s = pd.read_sql("SELECT ticker, sector, COUNT(*) n FROM inst_holdings "
+                    "WHERE sector IS NOT NULL AND TRIM(sector) <> '' GROUP BY 1, 2", c)
+    c.close()
+    return s.sort_values("n", ascending=False).drop_duplicates("ticker")[["ticker", "sector"]]
+
+
+@st.cache_data(ttl=3600)
+def _cg_bucket_map() -> pd.DataFrame:
+    p = Path(_ROOT) / "tickers_metadata.csv"
+    if not p.exists():
+        return pd.DataFrame(columns=["ticker", "bucket"])
+    return pd.read_csv(p)[["ticker", "bucket"]]
+
+
+def _cg_rank(side):
+    g = (_cg[_cg["side"] == side].groupby("ticker")
+         .agg(members=("name", "nunique"), filings=("name", "size"),
+              est_usd=("amount_mid", "sum"), last_filed=("filed", "max"))
+         .sort_values(["members", "est_usd"], ascending=False).head(15).reset_index())
+    g["est_usd"] = g["est_usd"].round(-3)
+    g["last_filed"] = g["last_filed"].dt.strftime("%Y-%m-%d")
+    return g
+
+
+def _cg_group(frame, col):
+    f = frame.dropna(subset=[col])
+    usd = (f.pivot_table(index=col, columns="side", values="amount_mid", aggfunc="sum",
+                         fill_value=0).reindex(columns=["BUY", "SELL"], fill_value=0))
+    mem = (f.pivot_table(index=col, columns="side", values="name", aggfunc="nunique",
+                         fill_value=0).reindex(columns=["BUY", "SELL"], fill_value=0))
+    out = pd.DataFrame({"buy_usd": usd["BUY"], "sell_usd": usd["SELL"],
+                        "buy_members": mem["BUY"], "sell_members": mem["SELL"]})
+    out["net_usd"] = out["buy_usd"] - out["sell_usd"]
+    for c in ("buy_usd", "sell_usd", "net_usd"):
+        out[c] = out[c].round(-3)
+    return out.sort_values("net_usd", ascending=False).reset_index()
+
+
+if _cg.empty:
+    st.info(f"No Buy/Sell filings with a ticker in the last {_cg_win} days.")
+else:
+    _cga, _cgb = st.columns(2)
+    _cga.markdown(f"**Buys** — {(_cg['side'] == 'BUY').sum():,} filings")
+    _cga.dataframe(_cg_rank("BUY"), hide_index=True, use_container_width=True)
+    _cgb.markdown(f"**Sells** — {(_cg['side'] == 'SELL').sum():,} filings")
+    _cgb.dataframe(_cg_rank("SELL"), hide_index=True, use_container_width=True)
+    _cgm = (_cg.merge(_cg_sector_map(), on="ticker", how="left")
+               .merge(_cg_bucket_map(), on="ticker", how="left"))
+    _cg_tot = _cgm["amount_mid"].sum()
+    _cg_cov = lambda col: (_cgm.dropna(subset=[col])["amount_mid"].sum() / _cg_tot * 100) if _cg_tot else 0.0
+    _cgc, _cgd = st.columns(2)
+    _cgc.markdown(f"**By sector** — covers {_cg_cov('sector'):.0f}% of est. dollars (13F sector field)")
+    _cgc.dataframe(_cg_group(_cgm, "sector"), hide_index=True, use_container_width=True)
+    _cgd.markdown(f"**By sub-sector** — covers {_cg_cov('bucket'):.0f}% (your buckets; the rest unmapped)")
+    _cgd.dataframe(_cg_group(_cgm, "bucket"), hide_index=True, use_container_width=True)
 
 st.subheader("All transactions")
 st.caption(
