@@ -116,6 +116,14 @@ def _redact_url(url: str) -> str:
     return urllib.parse.urlunsplit(parsed._replace(query=urllib.parse.urlencode(q)))
 
 
+def _redact_text(s) -> str:
+    """Mask apiKey values inside arbitrary text. Exception messages carry the
+    full request URL, which _redact_url never sees: on 2026-09-22, 113 log
+    files held the unmasked key via the two warnings that log exceptions."""
+    import re as _re
+    return _re.sub(r"(?i)(api_?key=)[^&\s'\")]+", r"\1REDACTED", str(s))
+
+
 _reset_session("init")
 
 BASE_URL = "https://api.polygon.io"
@@ -297,9 +305,10 @@ def _request_with_retry(url, params, timeout=(5, 20), max_retries=3):
             time.sleep(min(2 ** attempt, 8))
         except requests.RequestException as e:
             last_err = e
-            log.warning(f"massive.request_exception attempt={attempt} err={e!r}")
+            log.warning(f"massive.request_exception attempt={attempt} err={_redact_text(repr(e))}")
             time.sleep(min(2 ** attempt, 8))
-    raise RuntimeError(f"Massive API failed after {max_retries} retries: {last_err}")
+    # from None: the chained HTTPError would reprint the unredacted URL in any traceback.
+    raise RuntimeError(f"Massive API failed after {max_retries} retries: {_redact_text(last_err)}") from None
 
 
 _PRICE_CACHE_ENABLED = True  # persistent daily-bar cache (prices.db)
@@ -563,7 +572,7 @@ def _download_single(ticker, start_str, end_str, mult, span, auto_adjust):
         # Massive failed all retries. Do NOT fall back to yfinance: the
         # curl_cffi browser-impersonation path trips XProtect 5347 script
         # blocking (Jun 30 2026). Return empty same-shape frame; caller skips.
-        log.warning(f"massive failed for {ticker} after retries, returning empty (no yfinance fallback): {e}")
+        log.warning(f"massive failed for {ticker} after retries, returning empty (no yfinance fallback): {_redact_text(e)}")
         return pd.DataFrame(columns=["Open", "High", "Low", "Close", "Volume"])
 
     if data.get("resultsCount", 0) == 0 or not data.get("results"):
