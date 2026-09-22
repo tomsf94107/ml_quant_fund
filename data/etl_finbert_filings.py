@@ -311,17 +311,29 @@ def main():
 
     conn = sqlite3.connect(DB_PATH, timeout=30)
     total_rows = total_filings = 0
+    _cik_fail = 0
     for i, ticker in enumerate(tickers):
         print(f"[{i+1}/{len(tickers)}] {ticker}")
         result = ingest_ticker(conn, ticker, days_back=args.days_back, verbose=args.verbose)
         if "error" in result:
             print(f"  ERROR: {result['error']}")
+            if result["error"] == "cik_lookup_failed":
+                _cik_fail += 1
         else:
             total_filings += result["filings"]
             total_rows += result["rows"]
     conn.close()
     print()
     print(f"Done: {total_rows} rows from {total_filings} filings across {len(tickers)} tickers")
+    # FAIL LOUD (2026-09-22): '0 rows from 0 filings' after 422 failed lookups
+    # used to exit 0 and look like a quiet day. Six ETFs always fail lookup,
+    # so the threshold is half the list, plus the loader's own status.
+    from data.sec_section_parser import ticker_map_status
+    _st = ticker_map_status()
+    if _st == "failed" or (len(tickers) > 20 and _cik_fail > 0.5 * len(tickers)):
+        print(f"FATAL: SEC ticker map status={_st}; {_cik_fail}/{len(tickers)} CIK lookups failed",
+              file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

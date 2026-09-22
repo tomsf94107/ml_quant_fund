@@ -60,28 +60,69 @@ def _throttled_get(url: str, headers: dict = SEC_HEADERS, timeout: int = 15) -> 
 # This replaces the unreliable cgi-bin atom-feed regex approach which silently
 # failed for ~20% of tickers (foreign filers, IPOs, sector-specific names).
 _TICKER_CIK_MAP: Optional[dict] = None
+_TICKER_CIK_MAP_STATUS = "unloaded"   # fetched | disk | failed
 
 
 def _load_ticker_cik_map() -> dict:
     """Fetch and cache the SEC ticker -> CIK JSON map."""
     global _TICKER_CIK_MAP
+    # 2026-09-22: the 05:30 finbert run got ONE failed request for this file,
+    # cached an empty map for the whole process, failed all 422 lookups and
+    # still exited 0. Now: 3 attempts; a good map is also saved to disk and
+    # used when SEC is unreachable; a total failure is reported on stderr and
+    # exposed via ticker_map_status() so callers can exit non-zero. The empty
+    # result is still cached per process -- retrying on every lookup would
+    # cost 25 s x 422 tickers.
+    global _TICKER_CIK_MAP_STATUS
     if _TICKER_CIK_MAP is not None:
         return _TICKER_CIK_MAP
+    import json as _json, sys as _sys
+    from pathlib import Path as _Path
+    cache = _Path(__file__).resolve().parent / "cache" / "sec_company_tickers.json"
     url = "https://www.sec.gov/files/company_tickers.json"
-    r = _throttled_get(url, headers=EDGAR_HEADERS, timeout=30)
-    if r is None:
-        _TICKER_CIK_MAP = {}
+    tmap = {}
+    for wait in (0, 5, 20):
+        if wait:
+            time.sleep(wait)
+        r = _throttled_get(url, headers=EDGAR_HEADERS, timeout=30)
+        if r is None:
+            continue
+        try:
+            data = r.json()
+            tmap = {v["ticker"].upper(): str(v["cik_str"]).zfill(10)
+                    for v in data.values() if "ticker" in v and "cik_str" in v}
+        except Exception:
+            tmap = {}
+        if len(tmap) > 1000:
+            break
+    if len(tmap) > 1000:
+        try:
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(_json.dumps(tmap))
+        except Exception as e:
+            print(f"WARNING: could not save SEC ticker map to {cache}: {e}", file=_sys.stderr)
+        _TICKER_CIK_MAP, _TICKER_CIK_MAP_STATUS = tmap, "fetched"
         return _TICKER_CIK_MAP
-    try:
-        data = r.json()
-        _TICKER_CIK_MAP = {
-            v["ticker"].upper(): str(v["cik_str"]).zfill(10)
-            for v in data.values()
-            if "ticker" in v and "cik_str" in v
-        }
-    except Exception:
-        _TICKER_CIK_MAP = {}
+    if cache.exists():
+        try:
+            tmap = _json.loads(cache.read_text())
+            if len(tmap) > 1000:
+                age = (time.time() - cache.stat().st_mtime) / 86400
+                print(f"WARNING: SEC ticker map fetch failed 3x -- using disk copy, {age:.1f} days old",
+                      file=_sys.stderr)
+                _TICKER_CIK_MAP, _TICKER_CIK_MAP_STATUS = tmap, "disk"
+                return _TICKER_CIK_MAP
+        except Exception:
+            pass
+    print("ERROR: SEC ticker map unavailable (3 fetch attempts, no usable disk copy) "
+          "-- every CIK lookup in this process will fail", file=_sys.stderr)
+    _TICKER_CIK_MAP, _TICKER_CIK_MAP_STATUS = {}, "failed"
     return _TICKER_CIK_MAP
+
+
+def ticker_map_status() -> str:
+    """unloaded | fetched | disk | failed -- see _load_ticker_cik_map."""
+    return _TICKER_CIK_MAP_STATUS
 
 
 def get_cik(ticker: str) -> Optional[str]:
